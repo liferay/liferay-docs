@@ -1,0 +1,71 @@
+Documentation Repository Contents
+=================================
+This repository is intended for storage of Liferay product documentation.
+Documents are to be comprised of chapter source files in Markdown format.
+Images referenced in the documents are to be stored in the appropriate images
+directories.  Document sources are stored in directories for their appropriate
+language (e.g. 'en' for English).
+
+Directory Structure
+===================
+trunk/
+ |____ <document dir>/ (e.g. adminGuide)
+ |      |____ images/ (default images)
+ |            |____ <language dir>/ (e.g. 'en' for English, 'es' for Spanish)
+ |                   |____ images/ (override images - language specific)
+ |                         |____ chapters/
+ |                               |____ [0-9][0-9]-<chapter subject>.markdown
+ |____ build.xml
+ |____ build.properties
+ |____ liferay-book-template.ott
+ |____ liferay-book-template-tradepaperback.ott
+
+Document Format Conversion
+==========================
+Documents can be converted from markdown to HTML and ODT formats using ant and
+the targets found in build.xml. To override common properties found in
+build.properties, create your own properties file
+(e.g. build.<username>.properties) and specify desired property values.
+
+A build directory is created by the targets and holds the Markdown source
+file consisting of all of the document's chapters, the image files used,
+and the resulting document in its newly converted format.
+
+Required Software
+-----------------
+* Ant: Required for executing Ant targets.  Download from ...
+  http://ant.apache.org/bindownload.cgi
+
+* Pandoc: Used in our Ant targets for conversions from Markdown to various
+formats. See installation instructions at ...
+  http://johnmacfarlane.net/pandoc/installing.html
+
+Conversion Steps
+----------------
+1. Concatenate the chapters into the complete Markdown document.
+
+  Example,
+    ant concat-markdown-files -Ddoc.name=adminGuide -Dlang=en
+
+2. Execute the target to produce the desired format of the document.
+
+  Example,
+    ant markdown-to-html -Ddoc.name=adminGuide -Dlang=en
+
+  Example,
+    ant markdown-to-odt -Ddoc.name=adminGuide -Dlang=en
+
+Results are produced in the respective build/<doc.name>/
+  Example,
+
+    trunk/
+     |____ build/
+            |____ adminGuide/
+                   |____ images/
+                   |____ adminGuide.html
+                   |____ adminGuide.markdown
+                   |____ adminGuide.odt
+
+To get a complete listing of targets execute ...
+
+  ant -projecthelp

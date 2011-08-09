@@ -1,0 +1,10 @@
+*~
+*.bak
+*.iml
+*.swp
+
+/*.ipr
+/*.iws
+/*.patch
+/build.*.properties
+
