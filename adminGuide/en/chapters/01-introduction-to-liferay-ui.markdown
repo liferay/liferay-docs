@@ -624,7 +624,7 @@ of the site.
 
 **Site URL:** Lets you set friendly URLs and virtual hosts for your web site.
 
-**Site Template:** Lets you choose a template to apply to your site. The list will be empty until site templates are created for your portal.
+**Site Template:** Lets you choose a template to apply to your site.
 
 **Sitemap:** Lets you use the sitemap protocol to notify search engines that your web site is available for crawling. 
 
@@ -639,33 +639,26 @@ of the site.
 While we're on the subject of sites, it is important to mention
 Site Templates, which is several links down in the Portal category in
 the control panel. These allow you to create web sites within
-communities by selecting from pre-defined templates that you can make
-ahead of time. What this means is that you can create a template
-community that has a pre-defined set of pages and portlets, and then use
-that template to very quickly create multiple communities that are
+sites by selecting from pre-defined templates that you can make
+ahead of time. What this means is that you can create a template that has a pre-defined set of pages and portlets, and then use
+that template to very quickly create multiple sites that are
 pre-populated with those pages and portlets.
 
-![image](../../images/portal-admin-ch3_html_mee5e058.png)\
+![Site Templates](../../images/03-site-templates.png)
 *Illustration 8: Site Templates*
 
-You can create templates for open, restricted, and private communities.
+You can create templates for open, restricted, and private sites.
 Additionally, you can create a default template that applies to all
-kinds of communities. For our example, we will work with a template
-designed for student communities.
-Go to the Control Panel and click *Site Templates*. Click the *Add*
-button and create a site template called *Students*. Make the template
-Active. Now you can select the *Open Site Template* link and begin
-adding content, pages, portlets and configuring the layouts. You'll
-learn more about how to do this in the next chapter. Once you're
-finished, return to the Site Templates portlet and select *Save.*
+kinds of sites. For our example, we will work with a template
+designed for student sites. Go to the control panel and click *Site Templates*. Click the *Add* button and create a site template called *Students*. Check the Active, Allow Modifications, and Allow Layout Additions boxes. Now you can select the *Open Site Template* link and begin adding content, pages, portlets and configuring the layouts. You'll learn more about how to do this in the next chapter. Once you're finished, return to the Site Templates portlet and select *Save.*
 
-To create a community based on the new template, go to the Control Panel
-and click *Communities*. Click the *Add* button and create a community
+To create a site based on the new template, go to the control panel
+and click *Sites*. Click the *Add* button and create a community
 called *Freshmen*. In the Public Pages drop down menu, select *Student
-Template* and then click *Save. *The new community will have all the
+Template* and then click *Save. *The new site will have all the
 pages, content, and portlets you created in the template. This feature
-streamlines the community creation process for administrators, making it
-very easy to quickly create communities.
+streamlines the site creation process for administrators, making it
+very easy to quickly create sites.
 
 ### User Groups
 
@@ -677,10 +670,8 @@ User Groups can be added to Roles. Why would you use User Groups, then?
 They come into play when you have complex security requirements and for
 page templates, which we will discuss below.
 
-Creating a User Group is easy. Click the *User Groups* link and then
-click the *Add* button. There are only two fields to fill out: Name (the
-name of the User Group) and Description (an optional description of what
-the group is for). Click *Save* and you will then be back to the list of
+Creating a User Group is easy. Click the *Users and Organizations* link, then
+click the *Add* button and choose *User Group*. There are only two fields to fill out: Name (the name of the User Group) and Description (an optional description of what the group is for). Click *Save* and you will then be back to the list of
 groups.
 
 As with the other resources in the portal, you can click the *Actions*
@@ -704,7 +695,7 @@ pages. They will then automatically have a blog page that they can use.
 **Assign Members:** Takes you to a screen where you can search for and
 select users in the portal to be assigned to this User Group.
 
-**View Users** **:** Lets you view the users who are in the User Group.
+**View Users:** Lets you view the users who are in the User Group.
 
 **Delete:** Deletes the User Group.
 
