@@ -223,7 +223,7 @@ permissions can be assigned to roles only.
 *Illustration 4: Liferay permissions model. Don't worry, it's not as
 complicated as it seems.*
 
-Teams belong to individual Sites. Roles that appear inside Sites are scoped just for Sites. This means that though each Site in the portal has this Role with its configured permissions, membership in this role is different for each Site.
+Teams belong to individual sites. Roles that appear inside Sites are scoped just for Sites. This means that though each Site in the portal has this Role with its configured permissions, membership in this role is different for each Site.
 
 ### Users
 
@@ -243,6 +243,13 @@ their personal space from users who do not. They can be members of
 communities which draw together common interests. And they can have
 roles which define their permissions in the system, and these roles can
 be scoped by Portal, Organization, or Site.
+
+Individual users can create and maintain their own pages if they have been granted the manage pages permission. They can have a set of public pages which
+include information and applications appropriate for guests or logged in
+users who are not members of the Organization to make use of (such as a
+help desk ticket entry system for an IT page), and they can have a set
+of private pages with applications for the organization's own use (such
+as the back-end portlets of the same ticketing system).
 
 ### User Groups
 
@@ -268,7 +275,7 @@ across the portal, wherever there was a Message Board portlet. An organization r
 
 Roles do not have pages associated to them because they are used strictly for portal security.
 
-Users, user Groups, and sites can be members of a Role.
+Users, user groups, and sites can be members of a Role.
 
 ### Organizations
 
@@ -317,15 +324,17 @@ My Sites portlet added to a page which they can access. A restricted site requir
 administrator. Users may use the control panel or the My Sites
 portlet to request membership. A private site is just like a
 restricted site, with the added concept that it does not show up at
-all in the My Sites portlet or the control panel. Users will have to
+all in the My Sites portlet or in the control panel. Users will have to
 be added to a private site by a site administrator.
 
 ### Teams
 
-Teams are unique within a context of a site. Teams are essentially sets of users that can be created within a site. This makes teams different from site roles because teams appear only in the site in which they are created. This is very useful if you need to create a team of users for a specific purpose within a single organization or site and not for each site in the portal.
+Teams are essentially sets of users that can be created within a site. Teams can be created both within sites that are attached to an organization and within independent sites. Teams are different from site roles since teams appear only in the site in which they are created. This is very useful if you need to create a team of users for a specific purpose within a single organization or site and not for each site in the portal.
 
 Teams can also be essential for some use cases, because they can be
 created by site administrators. Site administrators cannot create roles, so the ability to have teams empowers them to manage permissions at a level they weren't capable of previously.
+
+To 
 
 ## Using the Control Panel
 
@@ -365,8 +374,7 @@ create yourself.
 
 ### Adding Users
 
-![image](../../images/portal-admin-ch3_html_m369939f8.png)![image](../../images/portal-admin-ch3_html_m369939f8.png)*Illustration
-5: The Add User screen. *
+![image](../../images/03-add-user-screen.png)*Illustration 5: The Add User screen.*
 
 Let's begin by adding a user account for yourself. We will then
 configure this account so that it has the same administrative access as
@@ -386,8 +394,7 @@ with the password in it was sent to the user. This of course requires
 that Liferay can properly communicate with your SMTP mail server in your
 organization.
 
-![image](../../images/portal-admin-ch3_html_m463070fd.png)*Illustration 6: Liferay's
-User Account editor. *
+![image](../../images/03-user-account-editor.png)*Illustration 6: Liferay's User Account editor.*
 
 If you haven't yet set up your mail server, you'll need to use this
 screen to change the default password for the user ID to something you
@@ -427,7 +434,7 @@ button next to that user.
 **Edit User:** This takes you back to the Edit User page, where you can
 modify anything about the user.
 
-**Permissions** **: **This allows you to define which Roles have
+**Permissions**: This allows you to define which Roles have
 permissions to edit the user.
 
 **Manage Pages:** If the user has pages, this allows you to edit them.
@@ -457,21 +464,21 @@ kind of site you are building. For example, a corporate site may model
 its own organization hierarchy in Liferay, while a social networking
 site may have users from many separate organizations who access the
 site. Organizations can be organized in a hierarchy to unlimited levels,
-and Users can be members of one or many organizations—inside of a
+and users can be members of one or many organizations—inside of a
 hierarchy or across different hierarchies.
 
-Additionally, Organizations can be associated with Roles. One
+Additionally, Organizations can be associated with roles. One
 application of this in a corporate setting could be an IT Security
 group. You may have an organization within your IT organization that
 handles security for all of the applications company-wide. If you had
-users as members of this organization, you could grant the Administrator
-role you just granted to your own ID to the whole Organization, thereby
+users as members of this organization, you could grant the administrator
+role you just granted to your own ID to the whole organization, thereby
 giving the members of the IT Security organization administrative access
 to the portal. If a user in this organization later was hired by the
 Human Resources department, the simple administrative act of moving the
 user from the IT Security organization to the HR organization would
 remove this privilege from the user, since the user would no longer be
-in an organization that has the Administrator role. By adding the user
+in an organization that has the administrator role. By adding the user
 to the HR organization, any roles the HR organization has (such as
 access to a benefits system in the portal) would be transferred to the
 user. In this manner, you can design your portal to correspond with your
@@ -479,27 +486,15 @@ existing organization chart, and have users' permissions reflect their
 positions in the chart.
 
 Of course, this is only one way to design it. If you have more complex
-requirements, you can combine Organizations with Teams and scoped Roles
+requirements, you can combine organizations with site teams and scoped roles
 to assemble the sets of permissions you wish to grant to particular
 users.
 
-Organizations are one of two types of Liferay resources (the other being
-Communities) that can have its own pages. This allows members of the
-organizations (if they are granted the Manage Pages permission) to
-maintain their own pages. They can have a set of public pages which
-include information and applications appropriate for guests or logged in
-users who are not members of the Organization to make use of (such as a
-help desk ticket entry system for an IT page), and they can have a set
-of private pages with applications for the organization's own use (such
-as the back-end portlets of the same ticketing system).
+To add an organization, click the *Users and Organizations* link on the left side of the Control Panel, then click the Add button and choose Organization. An organization needs to have a site attached to it in order for it to have pages. To attach a site when you create an organization, click the Organization Site tab at the right, and check the Create Site box.
 
-To add an organization, click the *Organizations* link on the left side
-of the Control Panel, and then click the Add button.
+![Adding an organization](../../images/add-organization-screen.png)*Illustration 7: Adding an organization.*
 
-![image](../../images/portal-admin-ch3_html_m48ff4527.png)![image](../../images/portal-admin-ch3_html_m48ff4527.png)*Illustration
-7: Adding an organization. *
-
- **Name:** The name of the organization.
+**Name:** The name of the organization.
 **Type:** Use this to choose whether this is a regular organization or a
 location.
 
@@ -508,7 +503,7 @@ which allows you to select the organization in the system that is the
 direct parent of the organization you are creating. Click the *Remove*
 button to remove the currently configured parent.
 
-![image](../../images/portal-admin-ch3_html_5c790363.png) **Tip:** Note that you are
+![image](../../02-tip.png) **Tip:** Note that you are
 already a member of the organization you created, because you created
 it. By creating an organization, you become both a member and have the
 Organization Owner role, which gives you full rights to the
@@ -530,26 +525,23 @@ this organization.
 
 **Edit:** Lets you edit the organization.
 
-**Manage Pages:** Lets you create and manage public and private pages
-for the Organization.
+**Manage Site:** Lets you create and manage public and private pages
+for the organization's site.
 
 **Manage Teams:** Lets you create teams within this organization, to
 which you can assign users and permissions.
 
-**Assign User Roles:** Lets you assign Organization-scoped roles to
+**Assign Organization Roles:** Lets you assign Organization-scoped roles to
 users. By default, Organizations are created with three roles:
-Organization Administrator, Organization Member, and Organization Owner.
+Organization Administrator, Organization User, and Organization Owner.
 You can assign one or more of these roles to users in the organization.
-All members of the Organization get the Organization Member role.
+All members of the organization automatically get the Organization User role so this role is hidden when you click **Assign Organization Roles**.
 
-**Assign Members:** Takes you to a screen where you can search and
+**Assign Users:** Takes you to a screen where you can search and
 select users in the portal to be assigned to this organization as
 members.
 
 **Add User:** Adds a new user in the portal who will be a member of this
-organization.
-
-**View Users: **Shows a list of users who are members of this
 organization.
 
 **Add Regular Organization: **Lets you add a child organization to this
@@ -559,117 +551,94 @@ parent-child relationships.
 **Add Location: **Lets you add a child Location, which is a special type
 of organization that cannot have any children added to it.
 
-**View Sub** **organizations: **Shows a list of all the organizations
-that are children of this organization.
-
 **Delete: **Deletes this organization from the portal. You will have to
 ensure that the organization has no users in it first.
 
-### Communities
+If you click the **View** button at the top of the **Users and Organizations** page and select **View Hierarchy** you can view both a list of users who are members of this organization and a list of all the suborganizations of this organization.
 
-Communities are very much like Organizations except that they are not
-hierarchical. They are designed instead to be islands to themselves
-which anyone from any organization (or from no organization at all) can
-join. You can use Communities, therefore, in any situation where you
-need to cut across the organizational structure of your portal, or where
-you have a site that would apply to almost anybody.
+### Sites
 
-For example, a corporate Intranet running Liferay may have sites for all
-the organizations in the company: Sales, Marketing, product groups,
-Information Technology, Human Resources, and so on. But what about the
-corporate health and fitness center? That's something that everybody in
-the company—regardless of organization—potentially has an interest in,
-and may want to join. That's a good candidate for a Community. Using the
-same scenario, the home page for the Intranet is probably best placed in
-a community that any member of the portal can access.
+Sites are not hierachical by themselves but they can be attached to organizations to create a hierarchical structure. Independent sites are designed instead to be islands to themselves. Any user in the portal can join an open site regardless of organization membership. You can use open sites, therefore, in any situation where you need to cut across the organizational structure of your portal, or where you are providing content that could be relevant to almost anybody.
 
-For other kinds of web sites, you may want to use communities to bring
+For example, a corporate Intranet running Liferay may have sites for all the organizations in the company: Sales, Marketing, Information Technology, Human Resources, and so on. But what about the corporate health and fitness center? That's something that everybody in the company, regardless of organization, may want to join. That's a good candidate for an independent site. Using the same scenario, the home page for the Intranet is probably best placed in an independent site that any member of the portal can access.
+
+For other kinds of web sites, you may want to use independent sites to bring
 people together who have a common interest. If you were building a photo
 sharing web site out of Liferay, you may have communities based on the
 types of photos people want to share. So those who enjoy taking pictures
-of landscapes can join a Landscapes community, and those who enjoy
-taking pictures of sunsets can join a Sunsets community. And if they
-lose interest, they can leave those communities too.
+of landscapes can join a Landscapes site, and those who enjoy
+taking pictures of sunsets can join a Sunsets site. And if they
+lose interest, they can leave those sites too.
 
-The default home page in Liferay is in a community which by default is
-called *liferay.com *(you can rename it; see the tip below), and this is
+The default home page in Liferay is created in a site which by default is
+called *liferay.com* (you can rename it; see the tip below), and this is
 where you would put your public web site. As you can see, there are
-several scenarios in which you would want to use something like a
-community instead of an organization, and this is why they have distinct
-roles within Liferay Portal.
+many scenarios where you would want to an independent site instead of an organization site, and this is why organizations and sites have distinct roles within Liferay Portal.
 
-![image](../../images/portal-admin-ch3_html_5c790363.png) **Tip:** In previous
-versions of Liferay, the default community where the public pages were
-located was called *Guest* . Starting with Liferay 6, the default public
-community is named dynamically based on whatever the name of the portal
-is. Any time you change the name of your site, the name of this
-community will change. You can set the name in *Portal **→* *Settings* .
+![image](../../images/02-tip.png) **Tip:** Prior to Liferay 6.1, organizations were created with their own sets of pages and did not need to have sites attached to them. Independent sites were called communities and the default community where the public pages were located was called *Guest* . Starting with Liferay 6.0, the default public site is named dynamically based on whatever the name of the portal is. Any time you change the name of your site, the name of this site will change. You can set the name in *Portal Settings*.
 
-Communities can be created and managed in two ways. The first is through
+Sites can be created in two ways. The first is through
 the Control Panel, like every other user/page collection in Liferay. The
-second is through the My Communities portlet, which can be added to any
+second is through the My Sites portlet, which can be added to any
 page in Liferay. Why are there two ways? Because the My Communities
 portlet also doubles as a way to navigate from community to community,
 and allows users to browse the list of communities and select whether or
-not they want to join one (if it is open or restricted). This enables
-you as a portal administrator to provide users with this functionality
-without giving them access to the Control Panel.
+not they want to join one (if it is open or restricted). This enables portal administrators to provide users with this functionality without giving them access to the Control Panel. 
 
-To add a community, click the *Communities* link on the left side of the
-Control Panel in the Portal section, and then click the *Add* button.
+Sites can also be managed from the Manage menu of the dockbar. **Site Settings** lets you modify basic information and details about your site and provides options for search engine optimization and staging. **Site Pages** displays the page hierarchy of your site and provides options for customizing its look and feel as well adding a logo and javascript code to its pages. **Site Memberships** can display either current members or teams. You can switch views using the **View** button. Teams can be created by clicking View, selecting Teams and then using the **Add Team** button. You can also add Users, Organizations, User Groups, and Site Roles within the **Site Memberships** window. The **Site Content** window allows you to create or modify content such as blog entries, calendar events, documents, or images on your site.
 
-**Name:** Enter the name of the community you wish to create.
+To add a site, click the *Sites* link on the left side of the
+Control Panel in the Portal section, and then click the *Add* button. There are a few options you can select to create a site pre-populated with pages and portlets for collaborative or personal use or you can select **Custom Site** to build your site from scratch.
 
-**Description:** Enter some descriptive text about the community.
+![Adding a Site](../../images/03-add-site-screen.png)
 
-**Type:** There are three kinds of communities: Open, Restricted, and
-Private. An open community appears in the My Communities portlet and
-users can join and leave the community whenever they want. A restricted
-community is the same except users can only request membership. A
-community administrator must then explicitly grant or deny users'
-requests to join. A private community does not appear in the My
-Communities portlet and users must be added to it manually by a
-community administrator.
+**Name:** Enter the name of the site you wish to create.
 
-**Active:** Communities can be active or inactive. If a community is
+**Description:** Enter a description of the site's intended use.
+
+**Type:** There are three kinds of sites: Open, Restricted, and
+Private. An open site appears in the My Sites portlet and
+users can join and leave the site whenever they want. A restricted
+site is the same except users can only request membership. A
+site administrator must then explicitly grant or deny users'
+requests to join. A private site does not appear in the My
+Sites portlet and users must be added to it manually by a
+site administrator.
+
+**Active:** Sites can be active or inactive. If a site is
 inactive, no data can be added to it.
 
-**Tags:** You can use Liferay's tagging mechanism on the community. This
-is helpful if the community has a specific, topical purpose within the
+**Tags:** You can use Liferay's tagging mechanism on the site. This
+is helpful if the site has an easily describable purpose within the
 portal.
 
-Once you have created a community, it will appear in the list of
-communities in the Control Panel. The operations you can perform on it
-are very similar to the operations you can perform on organizations.
+Once you have created a site, it will appear in the list of
+sites in the Control Panel. Once the site has been created you can specify more details about the site, which fall under three main categories: Basic Information, Search Engine Optimization, and Advanced.
 
-**Edit:** Lets you edit the community.
+![Editing a Site](../../images/03-site-editor.png)
 
-**Manage Pages: **Lets you create and manage public and private pages
-for the community.
+**Details:** Lets you edit the information you entered when you created the site.
 
-**Manage Teams: **Lets you create and manage teams for the community.
+**Pages:** Lets you create and manage public and private pages
+of the site.
 
-**Assign User Roles:** Lets you assign community-scoped roles to users.
-By default, communities are created with three roles: Community
-Administrator, Community Member, and Community Owner. You can assign one
-or more of these roles to users in the community. All members of the
-community get the Community Member role.
+**Site URL:** Lets you set friendly URLs and virtual hosts for your web site.
 
-**Assign Members: **Takes you to a screen where you can search and
-select users in the portal to be assigned to this community as members.
+**Site Template:** Lets you choose a template to apply to your site. The list will be empty until site templates are created for your portal.
 
-**Join/Leave: **If you are not a member of the community, you will have
-a Join or Request Membership option. If you are a member of the
-community you will see an option to leave the community.
+**Sitemap:** Lets you use the sitemap protocol to notify search engines that your web site is available for crawling. 
 
-**Delete:** Users with administrative access to the portal or who are
-owners of the community can delete it.
+**Robots:** Lets you use a robots.txt file to specify certain pages and links that you do **not** want to be indexed by search engines. You need to set a virtual host before you set a robots.txt file.
+
+**Staging:** Lets you turn on either Local Live staging or Remote Live staging.
+
+**Analytics:** Lets you set a Google Analytics ID that will be used for your site.
 
 #### Site Templates
 
-While we're on the subject of communities, it is important to mention
+While we're on the subject of sites, it is important to mention
 Site Templates, which is several links down in the Portal category in
-the Control Panel. These allow you to create web sites within
+the control panel. These allow you to create web sites within
 communities by selecting from pre-defined templates that you can make
 ahead of time. What this means is that you can create a template
 community that has a pre-defined set of pages and portlets, and then use
