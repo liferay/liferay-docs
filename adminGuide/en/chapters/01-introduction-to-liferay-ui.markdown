@@ -2,8 +2,7 @@
 
 This chapter covers these activities:
 
--   *Liferay's User Interface:* How to navigate around Liferay and make
-    use of the Control Panel.
+-   *Liferay's User Interface:* How to navigate around Liferay and use the Control Panel.
 
 -   *Liferay Administration:* How to administer a Liferay portal.
 
@@ -21,7 +20,7 @@ To achieve this, all of the application functionality within Liferay
 Portal is in fragments of the page called *portlets*. Portlets are web
 applications that run in a portion of a web page. Liferay's core is a
 portlet container, and the container's job is to aggregate the set of
-portlets that are to appear on any particular page and display them
+portlets that should appear on any particular page and display them
 properly to the user. In this way, one or many applications can reside
 on a page, and the user can (at the administrator's discretion) arrange
 them in the way that works best for the user.
@@ -121,57 +120,17 @@ where you want it on the page.
 ![image](../../images/03-add-menu-from-dockbar.png)\
 *Illustration 2: Add Menu from the Dockbar*
 
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
 The next option you'll see is the *Manage* menu. From this menu, you can
-access various settings for the current page and any of its subpages.
-The items available are *Page, Page Layout Sitemap, and Settings.*
-Clicking on *Page Layout *brings up a dialog box which enables you to
-choose the layout template to use for the current page. The other
-settings are the same as their counterparts in the *Control* *Panel*,
-and are covered in detail later in this chapter. The last item in the
-menu is *Control Panel; *clicking on it brings you to the Control Panel.
+access various settings for the current page and site. The page settings available are *Page, Page Layout, and Page Customizations*. Clicking on *Page* brings up a dialog box which enables you to modify details about the current page. *Page Layout* is a shortcut to a tab of this dialog box which lets you choose the layout template for the current page. *Page Customizations* enables you to directly select portions of the page to be customizable. Users with permission to customize your page will then be able to customize the portlets you selected. The site settings are the same as their counterparts in the *Control Panel*, and are covered in detail later in this chapter.
 
-The next thing you'll see is a check box labeled *Toggle Edit Controls.
-*This lets you turn on and off the edit controls in the top of the
+The next thing you'll see is a check box labeled *Toggle Edit Controls*. This lets you turn on and off the edit controls in the top of the
 portlet windows. This is helpful for administrators who want to look at
 a page they're working on and see it the way a regular user would.
 
-If you roll your mouse over *Go to*, the Dockbar** **will expand,
-showing all of the places in the portal to which you have access.
-Initially, the place you are on is highlighted. You will see that you
-are in the *liferay.com*** **community, on the public pages. Liferay
+If you roll your mouse over *Go to*, the *Dockbar* will expand,
+showing all of the places in the portal to which you have access. If you have access to the *Control Panel*, this will be the topmost item in the menu.
+Initially, your current location will be highlighted. You will see that you
+are in the *liferay.com* community, on the public pages. Liferay
 allows for various configurations of pages for end users: you can
 configure it so that some or all users have their own pages, public and
 private (or both), upon which they can place the portlets they need to
@@ -180,7 +139,7 @@ are logged in with an account that has Administrator privileges, you can
 see everything in the portal.
 
 One of the most important tools Liferay offers for managing your portal
-is the aforementioned *Control Panel*. The Control Panel is composed of
+is the aforementioned *Control Panel*. The *Control Panel* is composed of
 administrative portlets that you can use to mange various aspects of the
 portal.
 
@@ -194,15 +153,15 @@ alphabetical order, but the functions are in a logical order.
 space. Here, you can change your account information and manage your own
 personal pages.
 
-![image](../../images/portal-admin-ch3_html_656838bb.png)*Illustration 3: Liferay's
-Control Panel*
+![image](../../images/03-liferay-control-panel.png)*Illustration 3: Liferay's Control Panel*
 
 **Content:** The Content section contains links to all of Liferay's
 content management functions. You can maintain web content, documents,
 images, bookmarks, a calendar, administer a message board, configure a
 wiki, and more. The title of this section appears as the name of the
-community or organization whose content you are currently managing, and
+site whose content you are currently managing, and
 you can switch to another one at any time.
+
 **Portal:** The Portal section allows portal administrators to set up
 and maintain the portal. This is where you can add and edit users,
 organizations, communities, roles, and configure the settings of the
@@ -215,7 +174,7 @@ All of the functions that you will need to maintain the portal or its
 content can be found in the control panel. Additionally, developers can
 write portlets which can also be added to the control panel. For further
 information about this, you can take Liferay's Portal Developer course
-or see the official guide to Liferay development, *Liferay in Action* .
+or see the official guide to Liferay development, *Liferay in Action*.
 
 ## Portal Architecture
 
@@ -232,18 +191,15 @@ Users can belong to Organizations.
 Organizations can be grouped into hierarchies, such as Home Office →
 Regional Office → Satellite Office.
 
-Users, Groups, and Organizations can belong to Communities that have a
-common interest.
+Sites can be created independently or can be attached to Users and Organizations.
 
-Within Organizations and Communities, users can belong to Teams, which
-are groupings of users for specific functions within a community or
-organization.
+Within Sites, users can belong to Teams, which are groupings of users for specific functions within the Site.
 
 The simplest way to think about this is that you have users and various
 ways those users can be grouped together. Some of these groupings follow
 an administratively organized hierarchy, and other groupings may be done
 by the users themselves (such as different users from multiple
-organizations starting a community called “Dog Lovers” that has a common
+organizations starting a site called “Dog Lovers” that has a common
 interest in dogs). And other groupings may be done administratively via
 Roles for other functions that may cut across the portal (such as a
 Message Board Administrators role made up of users from multiple
@@ -255,7 +211,7 @@ the next page.
 
 In the illustration below, each arrow may be read using the words “can
 be a member of.” So this means that Organizations can be members of
-Communities, Communities can be members of Roles, Users can be members
+Sites, Sites can be members of Roles, Users can be members
 of anything, and so on. Though this seems very complex, it provides a
 powerful mechanism for portal administrators to configure portal
 resources and security in a consistent and robust manner. It is
@@ -263,18 +219,12 @@ important to note that the diagram illustrates only users and their
 collections. Permissions do not flow through all of these collections:
 permissions can be assigned to roles only.
 
-![image](../../images/portal-admin-ch3_html_dc9cece.png)\
-![image](../../images/portal-admin-ch3_html_dc9cece.png)\
+![image](../../images/03-liferay-permissions-model.png)\
 *Illustration 4: Liferay permissions model. Don't worry, it's not as
 complicated as it seems.*
 
-Teams are inside individual organizations and communities, and are only
-available as they are created within those organizations and
-communities. Roles that appear inside organizations and communities are
-roles that are scoped just for organizations and communities. This means
-that though each organization and community in the portal has this role
-with its configured permissions, membership in this role is different
-for each organization and community.
+Teams belong to individual Sites. Roles that appear inside Sites are scoped just for Sites. This means that though each Site in the portal has this Role with its configured permissions, membership in this role is different for each Site.
+
 ### Users
 
 Users represent physical users of the system. These are the user
@@ -292,17 +242,13 @@ Bloggers, which could be used to set apart users who get a Blog page in
 their personal space from users who do not. They can be members of
 communities which draw together common interests. And they can have
 roles which define their permissions in the system, and these roles can
-be scoped by Portal, Organization, or Community.
+be scoped by Portal, Organization, or Site.
 
 ### User Groups
 
 User Groups are simple, arbitrary collections of users, created by
-administrators. They can be members of communities or roles. Permissions
-cannot be assigned to User Groups. Though User Groups do not have pages
-like some of the other collections of users (such as Communities or
-Organizations), they do have page templates which can be used to
-customize users' personal sets of pages. This will be fully described
-below.
+administrators. They can be members of Sites or Roles. Permissions
+cannot be assigned to User Groups. Though User Groups do not have Sites, they do have page templates which can be used to customize users' personal sets of pages. This will be fully described below.
 
 ### Roles
 
@@ -312,29 +258,21 @@ There are three kinds of roles:
 
 -   Organization Roles
 
--   Community Roles
+-   Site Roles
 
 These are called role *scopes*. Roles are used to define permissions
 across their scopes: across the portal, across an organization, or
-across a community. For example, consider a role which grants access to
-create a Message Board category. A Portal role would grant that access
-across the portal, wherever there was a Message Board portlet. A
-Community role would grant that access only within a single community.
-An Organization role would grant that access only within an
-Organization.
+across a site. For example, consider a role which grants access to
+create a Message Board category. A portal role would grant that access
+across the portal, wherever there was a Message Board portlet. An organization role would grant that access within any sites attached to the organization. A site role would grant that access only within one site.
 
-Because Roles are used strictly for portal security, they also do not
-have pages, like Communities and Organizations.
+Roles do not have pages associated to them because they are used strictly for portal security.
 
-Users, User Groups, Communities, or Organizations can be members of a
-role.
+Users, user Groups, and sites can be members of a Role.
 
 ### Organizations
 
-Organizations are hierarchical collections of Users. They are one of the
-two types of portal resources that can have pages. There is also a
-special type of Organization called a *location*, which can define where
-users are specifically located.
+Organizations are hierarchical collections of Users. Organizations do not have pages directly associated with them. Instead, sites can be attached to organizations. There is also a special type of organization called a *location*, which can define whereusers are specifically located.
 
 Organizations are handy for defining where a user belongs in a
 particular hierarchy. For example, if you are implementing Liferay for a
@@ -357,47 +295,37 @@ management system. If you tagged your content appropriately, you could
 ensure that Joe Smith gets any announcements that are meant for Sales,
 the North East Division, or the New Jersey location.
 
-Organizations can be members of Communities.
+Sites can be attached to organizations.
 
-### Communities
+### Sites
 
-Communities are collections of Users who have a common interest.
-Liferay's default pages are part of a community named for the portal,
+Sites are collections of users who have a common interest.
+Liferay's default pages are part of a site named for the portal,
 because everyone—whether they are anonymous or members of the portal—has
 a common interest in the default, public pages of your site. There are
-three types of Communities:
+three types of sites:
 
 -   Open
 
 -   Restricted
 
--   Hidden
+-   Private
 
-An Open Community (the default) allows portal users to join and leave
-the Community whenever they want to, using the Control Panel or a
-Communities portlet added to a page which they can access. A Restricted
-Community requires that users be added to the Community by a community
-administrator. Users may use the Control Panel or the Communities
-portlet to request membership. A Hidden community is just like a
-Restricted community, with the added concept that it does not show up at
-all in the Communities portlet or the Control Panel. Users will have to
-be added to a hidden community by a community administrator.
+An open site (the default) allows portal users to join and leave
+the site whenever they want to, using the control panel or a
+My Sites portlet added to a page which they can access. A restricted site requires that users be added to the site by a site
+administrator. Users may use the control panel or the My Sites
+portlet to request membership. A private site is just like a
+restricted site, with the added concept that it does not show up at
+all in the My Sites portlet or the control panel. Users will have to
+be added to a private site by a site administrator.
 
 ### Teams
 
-Teams are unique within a context of a Community or Organization. Teams
-are essentially sets of users that can be created within a community.
-This makes teams different from the Community and Organization Roles
-because teams appear only in the specific community or organization in
-which they are created. This is very useful if you need to create a team
-of users for a specific purpose within a community or organization and
-not for each community or organization in the portal.
+Teams are unique within a context of a site. Teams are essentially sets of users that can be created within a site. This makes teams different from site roles because teams appear only in the site in which they are created. This is very useful if you need to create a team of users for a specific purpose within a single organization or site and not for each site in the portal.
 
 Teams can also be essential for some use cases, because they can be
-created by Community or Organization Administrators. Community and
-Organization Administrators cannot create roles, so the ability to have
-teams empowers them to manage permissions at a level they weren't
-capable of previously.
+created by site administrators. Site administrators cannot create roles, so the ability to have teams empowers them to manage permissions at a level they weren't capable of previously.
 
 ## Using the Control Panel
 
@@ -405,13 +333,13 @@ The Portal section of the Control Panel is used for most administrative
 tasks. You will find there an interface for the creation and maintenance
 of
 
--   Users
+-   Users and Organizations
 
--   Organizations
+-   Sites
 
--   Communities
+-   Site Templates
 
--   User Groups
+-   Page Templates
 
 -   Roles
 
@@ -420,20 +348,17 @@ including:
 
 -   Password Policies
 
--   Authentication options, including Single Sign-On and LDAP
-    integration
+-   Portal Settings, including mail host names, email notifications, and authentication options like including single sign-on and LDAP integration
 
--   Default User Associations
+-   Custom Fields
 
--   Reserved Screen Names
+-   Monitoring
 
--   Mail Host Names
+-   Plugins Configuration
 
--   Email Notifications
-
-You will use the Portal section of the Control Panel to create your
+You will use the Portal section of the control panel to create your
 portal structure, implement security, and administer your users. Note
-that only users with the Administrator role—a portal scoped role—have
+that only users with the administrator role—a portal scoped role—have
 permission to view this section of the Control Panel. You can, of
 course, grant permissions to one or more sections to roles that you
 create yourself.
@@ -574,7 +499,6 @@ of the Control Panel, and then click the Add button.
 ![image](../../images/portal-admin-ch3_html_m48ff4527.png)![image](../../images/portal-admin-ch3_html_m48ff4527.png)*Illustration
 7: Adding an organization. *
 
-\
  **Name:** The name of the organization.
 **Type:** Use this to choose whether this is a regular organization or a
 location.
@@ -589,9 +513,6 @@ already a member of the organization you created, because you created
 it. By creating an organization, you become both a member and have the
 Organization Owner role, which gives you full rights to the
 organization.
-
-\
-\
 
 Fill out the information for your organization and click *Save*.
 As before with users, the form reappears and you can enter more
