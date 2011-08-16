@@ -222,137 +222,67 @@ Note that most users will not be able to perform most of the above (in fact, the
 
 ### Organizations
 
-Organizations in Liferay are modeled after organizations in real life. They can be used to represent different companies, non-profit organizations, churches, schools, clubs, and so on. They have been used
-to represent a sports league, with various sports (soccer, baseball,
-basketball, etc.) and their teams as sub-organizations. If you have a
-collection of users that all belong to the same grouping, you may be
-able to model that as an organization.
+Organizations can be used to represent hierarchical stuctures such as those of companies, non-profit organizations, churches, schools, and clubs. They have been used to represent a sports league, with various sports (soccer, baseball, basketball, etc.) and their teams as sub-organizations. If you have a collection of users that all belong to the same grouping, you may be able to model that as an organization.
 
-Your portal may have only one organization or several, depending on what
-kind of site you are building. For example, a corporate site may model
-its own organization hierarchy in Liferay, while a social networking
-site may have users from many separate organizations who access the
-site. Organizations can be organized in a hierarchy to unlimited levels,
-and users can be members of one or many organizations—inside of a
-hierarchy or across different hierarchies.
+Your portal might not need an organization or it might have one or several, depending on your portal's function. For example, a simple photo-sharing web site might not need any organizations. On the other hand, organizations would be very useful for corporations or educational institutions since their users can be easily placed into a hierarchical structure. In fact, organizations in Liferay can be used to model any group hierarchy, from those of government agencies all the way down to those of small clubs. Of course, your portal can use both organizations and independent sites. For example, a corporation or educational institutional could create a social networking site open to all portal users, even ones from separate organizations. 
 
-Additionally, Organizations can be associated with roles. One
-application of this in a corporate setting could be an IT Security
-group. You may have an organization within your IT organization that
-handles security for all of the applications company-wide. If you had
-users as members of this organization, you could grant the administrator
-role you just granted to your own ID to the whole organization, thereby
-giving the members of the IT Security organization administrative access
-to the portal. If a user in this organization later was hired by the
-Human Resources department, the simple administrative act of moving the
-user from the IT Security organization to the HR organization would
-remove this privilege from the user, since the user would no longer be
-in an organization that has the administrator role. By adding the user
-to the HR organization, any roles the HR organization has (such as
-access to a benefits system in the portal) would be transferred to the
-user. In this manner, you can design your portal to correspond with your
-existing organization chart, and have users' permissions reflect their
-positions in the chart.
+Organizations and suborganizations can be created in a hierarchy to unlimited levels, and users can be members of one or many organizations. These organizations could all reside in a single hierarchy or cut across different hierarchies. Note that the rights of organization administrators apply not only to their organization but also to its suborganizations. By default, members of suborganizations are members of the parent organizations. This behavior can be configured in your portal's portal-ext.properties configuration file.
 
-Of course, this is only one way to design it. If you have more complex
-requirements, you can combine organizations with site teams and scoped roles
-to assemble the sets of permissions you wish to grant to particular
-users.
+Additionally, Organizations can be associated with roles. One application of this in a corporate setting could be an IT Security group. You could have an organization within your IT organization that handles security for all of the applications company-wide. If you had users as members of this organization, you could grant the administrator role you just granted to your own ID to the whole organization, thereby giving the members of the IT Security organization administrative access to the portal. Suppose now that a user in this organization later was hired by the Human Resources department. The simple act of removing the user from the IT Security organization also removes the user's administrative privileges, since the privilege came from the IT Security group's role. By adding the user to the HR organization, any roles the HR organization has (such as access to a benefits system in the portal) would be transferred to the user. In this manner, you can design your portal to correspond with your existing organization chart, and have users' permissions reflect their positions in the chart.
+
+Of course, this is only one way to design it. If you have more complex requirements, you can combine organizations with teams and scoped roles to assemble the sets of permissions you wish to grant to particular users.
 
 To add an organization, click the *Users and Organizations* link on the left side of the Control Panel, then click the Add button and choose Organization. An organization needs to have a site attached to it in order for it to have pages. To attach a site when you create an organization, click the Organization Site tab at the right, and check the Create Site box.
 
 ![Adding an organization](../../images/01-add-organization-screen.png)*Illustration 7: Adding an organization*
 
 **Name:** The name of the organization.
-**Type:** Use this to choose whether this is a regular organization or a
-location.
 
-**Parent Organization:** Click the *Select* link to bring up a window
-which allows you to select the organization in the system that is the
-direct parent of the organization you are creating. Click the *Remove*
-button to remove the currently configured parent.
+**Type:** Use this to choose whether this is a regular organization or a location. A location cannot have any suborganizations.
 
-![tip](../../01-tip.png) **Tip:** Note that you are
-already a member of the organization you created, because you created
-it. By creating an organization, you become both a member and have the
-Organization Owner role, which gives you full rights to the
-organization.
+**Parent Organization:** Click the *Select* link to bring up a window which allows you to select the organization in the system that is the direct parent of the organization you are creating. Click the *Remove* button to remove the currently configured parent.
 
-Fill out the information for your organization and click *Save*.
-As before with users, the form reappears and you can enter more
-information about the organization. Organizations can have multiple
-email addresses, postal addresses, web sites, and phone numbers
-associated with them. The *Services* link can be used to indicate the
-operating hours of the organization, if any.
+![tip](../../01-tip.png) **Tip:** Note that you are already a member of any organizations that you created. By creating an organization, you become both a member and receive the Organization Owner role, which gives you full rights to the organization.
 
-For now, click the *Back* button. This will take you back to the list of
-organizations.
+Fill out the information for your organization and click *Save*. As before with users, the form reappears and you can enter more information about the organization. Organizations can have multiple email addresses, postal addresses, web sites, and phone numbers associated with them. The *Services* link can be used to indicate the operating hours of the organization, if any.
 
-Click the *Actions* button next to the new organization you have
-created. You will then see the many actions you can take to manipulate
-this organization.
+For now, click the *Back* button. This will take you back to the list of organizations.
+
+Click the *Actions* button next to the new organization you have created. You will then see the many actions you can take to manipulate this organization.
 
 **Edit:** Lets you edit the organization.
 
-**Manage Site:** Lets you create and manage public and private pages
-for the organization's site.
+**Manage Site:** Lets you create and manage public and private pages for the organization's site.
 
-**Manage Teams:** Lets you create teams within this organization, to
-which you can assign users and permissions.
+**Manage Teams:** Lets you create teams within this organization, to which you can assign users and permissions.
 
-**Assign Organization Roles:** Lets you assign Organization-scoped roles to
-users. By default, Organizations are created with three roles:
-Organization Administrator, Organization User, and Organization Owner.
-You can assign one or more of these roles to users in the organization.
-All members of the organization automatically get the Organization User role so this role is hidden when you click **Assign Organization Roles**.
+**Assign Organization Roles:** Lets you assign organization-scoped roles to users. By default, Organizations are created with three roles: Organization Administrator, Organization User, and Organization Owner. You can assign one or more of these roles to users in the organization. All members of the organization automatically get the Organization User role so this role is hidden when you click **Assign Organization Roles**.
 
-**Assign Users:** Takes you to a screen where you can search and
-select users in the portal to be assigned to this organization as
-members.
+**Assign Users:** Takes you to a screen where you can search and select users in the portal to be assigned to this organization as members.
 
-**Add User:** Adds a new user in the portal who will be a member of this
-organization.
+**Add User:** Adds a new user in the portal who will be a member of this organization.
 
-**Add Regular Organization: **Lets you add a child organization to this
-organization. This is how you create hierarchies of organizations with
-parent-child relationships.
+**Add Regular Organization: **Lets you add a child organization to this organization. This is how you create hierarchies of organizations with parent-child relationships.
 
-**Add Location: **Lets you add a child Location, which is a special type
-of organization that cannot have any children added to it.
+**Add Location: **Lets you add a child Location, which is a special type of organization that cannot have any children added to it.
 
-**Delete: **Deletes this organization from the portal. You will have to
-ensure that the organization has no users in it first.
+**Delete: **Deletes this organization from the portal. You will have to ensure that the organization has no users in it first.
 
 If you click the **View** button at the top of the **Users and Organizations** page and select **View Hierarchy** you can view both a list of users who are members of this organization and a list of all the suborganizations of this organization.
 
 ### Sites
 
-Sites are not hierachical by themselves but they can be attached to organizations to create a hierarchical structure. Independent sites are designed instead to be islands to themselves. Any user in the portal can join an open site regardless of organization membership. You can use open sites, therefore, in any situation where you need to cut across the organizational structure of your portal, or where you are providing content that could be relevant to almost anybody.
+Sites are not hierachical by themselves but they can be attached to organizations to create a hierarchical structure. Independent sites are stand-alone groups of pages and are not associated with any organization or hierarchy. Open sites are ones that can be joined by any user regardless of organization membership. You can use open independent sites, therefore, in any situation where you need to cut across the organizational structure of your portal, or where you are providing content that could be relevant to anybody.
 
 For example, a corporate Intranet running Liferay may have sites for all the organizations in the company: Sales, Marketing, Information Technology, Human Resources, and so on. But what about the corporate health and fitness center? That's something that everybody in the company, regardless of organization, may want to join. That's a good candidate for an independent site. Using the same scenario, the home page for the Intranet is probably best placed in an independent site that any member of the portal can access.
 
-For other kinds of web sites, you may want to use independent sites to bring
-people together who have a common interest. If you were building a photo
-sharing web site out of Liferay, you may have communities based on the
-types of photos people want to share. So those who enjoy taking pictures
-of landscapes can join a Landscapes site, and those who enjoy
-taking pictures of sunsets can join a Sunsets site. And if they
-lose interest, they can leave those sites too.
+For other kinds of web sites, you may want to use independent sites to bring people together who have a common interest. If you were building a photo sharing web site out of Liferay, you may have indpendent sites based on the types of photos people want to share. So those who enjoy taking pictures of landscapes can join a Landscapes site, and those who enjoy taking pictures of sunsets can join a Sunsets site. And if they lose interest, they can leave those sites too.
 
-The default home page in Liferay is created in a site which by default is
-called *liferay.com* (you can rename it; see the tip below), and this is
-where you would put your public web site. As you can see, there are
-many scenarios where you would want to an independent site instead of an organization site, and this is why organizations and sites have distinct roles within Liferay Portal.
+The default home page in Liferay is created in a site which by default is called *liferay.com* (you can rename it; see the tip below), and this is where you would put your public web site. As you can see, there are many scenarios where you would want to an independent site instead of an organization site, and this is why organizations and sites have distinct roles within Liferay Portal.
 
-![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, organizations were created with their own sets of pages and did not need to have sites attached to them. Independent sites were called communities and the default community where the public pages were located was called *Guest* . Starting with Liferay 6.0, the default public site is named dynamically based on whatever the name of the portal is. Any time you change the name of your site, the name of this site will change. You can set the name in *Portal Settings*.
+![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, organizations were created with their own sets of pages and did not need to have sites attached to them. Independent sites were called communities and the default community where the public pages were located was called *Guest* . Starting with Liferay 6.0, the default public site's name changes dynamically based on the name of the portal. Any time you change the name of your portal, the name of this site will change. You can set the name in *Portal Settings*.
 
-Sites can be created in two ways. The first is through
-the Control Panel, like every other user/page collection in Liferay. The
-second is through the My Sites portlet, which can be added to any
-page in Liferay. Why are there two ways? Because the My Communities
-portlet also doubles as a way to navigate from community to community,
-and allows users to browse the list of communities and select whether or
-not they want to join one (if it is open or restricted). This enables portal administrators to provide users with this functionality without giving them access to the Control Panel. 
+Sites can be created in two ways. The first is through the control panel, like every other user/page collection in Liferay. The second is through the My Sites portlet, which can be added to any page in Liferay. Why are there two ways? Because the My Sites portlet also doubles as a way to navigate from site to site, and allows users to browse the list of sites and select whether or not they want to join one (if it is open or restricted). This enables portal administrators to provide users with this functionality without giving them access to the control panel. 
 
 Sites can also be managed from the Manage menu of the dockbar. **Site Settings** lets you modify basic information and details about your site and provides options for search engine optimization and staging. **Site Pages** displays the page hierarchy of your site and provides options for customizing its look and feel as well adding a logo and javascript code to its pages. **Site Memberships** can display either current members or teams. You can switch views using the **View** button. Teams can be created by clicking View, selecting Teams and then using the **Add Team** button. You can also add Users, Organizations, User Groups, and Site Roles within the **Site Memberships** window. The **Site Content** window allows you to create or modify content such as blog entries, calendar events, documents, or images on your site.
 
