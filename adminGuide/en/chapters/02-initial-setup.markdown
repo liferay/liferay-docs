@@ -83,7 +83,7 @@ Liferay's dependency .jars. Later in this chapter are instructions for
 installing Liferay on many of the major application servers available
 today.
 
-![image](../../images/portal-admin-ch2_html_m5097150b.png)\
+![image](../../images/02-bundle-directory-structure.png)\
 *Illustration 1: Bundle directory structure*
 
 \
@@ -152,7 +152,7 @@ Installing a different bundle is done in exactly the same way: unzip the
 bundle into the folder of your choice, launch the application server,
 and then view the portal in your web browser.
 
-![image](../../images/portal-admin-ch2_html_ma352a1a.png)\
+![image](../../images/02-default-page-in-the-liferay-bundles.png)\
 *Illustration 2: Default Page in the Liferay Bundles*
 
 As you can see, bundles are the easiest way to get started with Liferay.
@@ -237,7 +237,7 @@ permissions, you can skip the next section.
 
 #### Manual Method
 
-![image](../../images/portal-admin-ch2_html_5c790363.png)![image](../../images/portal-admin-ch2_html_5c790363.png)
+![image](../../images/02-tip.png)![image](../../images/02-tip.png)
 **Note:** This is not the recommended set up for Liferay installations,
 but is documented here so that enterprises with more restrictive
 standards can install Liferay with more strict — but suboptimal —
@@ -529,7 +529,7 @@ The following instructions assume an installation on a local machine.
 When installing to a remote server, substitute `localhost`{.western}
 with the host name or IP of the server.
 
-![image](../../images/portal-admin-ch2_html_5c790363.png)![image](../../images/portal-admin-ch2_html_5c790363.png)
+![image](../../images/02-tip.png)![image](../../images/02-tip.png)
 **Tip:** Note that Liferay 5.x and above *requires* JDK 1.5 or greater.
 Do not attempt to install Liferay 6.x on an application server that runs
 under Java 1.4 or lower; it will not work. If you are running an
@@ -589,8 +589,8 @@ can skip this section.
 
 1.  
 
-![image](../../images/portal-admin-ch2_html_4defa0c8.png)\
-![image](../../images/portal-admin-ch2_html_4defa0c8.png)\
+![image](../../images/02-glassfish-jdbc-connection-pool.png)\
+![image](../../images/02-glassfish-jdbc-connection-pool.png)\
     *Illustration 3: Glassfish JDBC Connection Pool*
 
     Go to the GlassFish console URL:
@@ -677,8 +677,8 @@ jdbc.default.password=root
 
 6.  Leave the rest of the defaults and click *OK*.
 
-![image](../../images/portal-admin-ch2_html_80bdf77.png)\
-![image](../../images/portal-admin-ch2_html_80bdf77.png)\
+![image](../../images/02-deploying-liferay-in-glassfish-3.png)\
+![image](../../images/02-deploying-liferay-in-glassfish-3.png)\
     *Illustration 4: Deploying Liferay in GlassFish 3*
 
 Liferay will be deployed and started automatically.
@@ -1391,8 +1391,8 @@ server, and that you have access to the WebLogic console.
 
 4.  
 
-![image](../../images/portal-admin-ch2_html_m4fb2b562.png)\
-![image](../../images/portal-admin-ch2_html_m4fb2b562.png)\
+![image](../../images/02-weblogic-data-sources.png)\
+![image](../../images/02-weblogic-data-sources.png)\
     *Illustration 5: WebLogic: Data Sources*
 
     Create a folder called *endorsed* in
@@ -1465,7 +1465,7 @@ skip this section.
 
 1.  
 
-![image](../../images/portal-admin-ch2_html_m612e8bb3.png)\
+![image](../../images/02-weblogic-mail-sessions.png)\
     *Illustration 6: WebLogic: Mail Sessions*
 
     Click the *Deployments* option in the Domain Structure tree on the
@@ -1531,7 +1531,7 @@ Start WebLogic.
 
 ##### Database Configuration
 
-![image](../../images/portal-admin-ch2_html_b6abee3.png)\
+![image](../../images/portal-admin-ch2_html_02-creating-a-data-source-in-weblogic.png)\
 *Illustration 7: Creating a data source in WebLogic 10.3*
 
 If you want WebLogic to manage your data source, use the following
@@ -1656,7 +1656,7 @@ skip this section.
 
 7.  Click *Finish*. After the deployment finishes, click *Save*.
 
-![image](../../images/portal-admin-ch2_html_5c790363.png) **Tip:** After Liferay
+![image](../../images/02-tip.png) **Tip:** After Liferay
 completes installing, you may see an error initializing the Web Proxy
 portlet. Because the XSL parser configured by default within WebLogic
 cannot compile a style sheet in this portlet, Liferay disables it by
@@ -1671,7 +1671,7 @@ in
 \
 #### WebSphere 6.1
 
-![image](../../images/portal-admin-ch2_html_5c790363.png) **Tip:** Throughout this
+![image](../../images/02-tip.png) **Tip:** Throughout this
 installation and configuration process, WebSphere will prompt you to
 Click Save to apply changes to Master Configuration. Do so
 intermittently to save your changes.
@@ -1799,8 +1799,8 @@ lportal
 
 3.  
 
-![image](../../images/portal-admin-ch2_html_2c4d4a3d.png)\
-![image](../../images/portal-admin-ch2_html_2c4d4a3d.png)\
+![image](../../02-installing-the-liferay-war-file-on-windows.png)\
+![image](../../02-installing-the-liferay-war-file-on-windows.png)\
     *Illustration 8: Installing the Liferay .war file on WebSphere 6.1*
 
     Enter context root */*.
@@ -1828,8 +1828,8 @@ lportal
 
 2.  Click *Enterprise Applications*.
 
-![image](../../images/portal-admin-ch2_html_17ca36d6.png)\
-![image](../../images/portal-admin-ch2_html_17ca36d6.png)\
+![image](../../images/02-starting-liferay-on-websphere.png)\
+![image](../../images/02-starting-liferay-on-websphere.png)\
 *Illustration 9: Starting Liferay on WebSphere 6.1*
 
 \
@@ -1863,7 +1863,7 @@ instructions below.
 
 1.  
 
-![image](../../images/portal-admin-ch2_html_3564d6b5.png)\
+![image](../../images/02-websphere-jdbc-providers.png)\
     *Illustration 10: WebSphere 7.0 JDBC Providers*
 
     Start WebSphere.
@@ -1909,8 +1909,8 @@ instructions below.
 
 18. 
 
-![image](../../images/portal-admin-ch2_html_9c04ff0.png)\
-![image](../../images/portal-admin-ch2_html_9c04ff0.png)\
+![image](../../images/02-modifying-data-source-properties-in-websphere.png)\
+![image](../../images/02-modifying-data-source-properties-in-websphere.png)\
     *Illustration 11: Modifying data source properties in WebSphere 7*
 
     Select the user property and give it the value of the user name to
