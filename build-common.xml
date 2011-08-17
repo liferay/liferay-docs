@@ -14,18 +14,16 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
 
     <property environment="env" />
 
-    <property file="build.${USERNAME}.properties" />
-    <property file="build.${user.name}.properties" />
-    <property file="build.${env.COMPUTERNAME}.properties" />
-    <property file="build.${env.HOST}.properties" />
-    <property file="build.${env.HOSTNAME}.properties" />
-    <property file="build.properties" />
+    <property file="../build.${USERNAME}.properties" />
+    <property file="../build.${user.name}.properties" />
+    <property file="../build.${env.COMPUTERNAME}.properties" />
+    <property file="../build.${env.HOST}.properties" />
+    <property file="../build.${env.HOSTNAME}.properties" />
+    <property file="../build.properties" />
 
     <!-- property "doc.dir" will be specified in the build.xml of the document root directory. -->
     <property name="lang" value="en"/>
     <property name="build.dir" value="./build"/>
-
-    <property name="pandoc.exe" location="/home/jesse/.cabal/bin/pandoc"/>
 
     <target name="display-pandoc-version">
         <exec executable="${pandoc.exe}">
@@ -66,18 +64,17 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
 
     <target name="concat-markdown-files-win" depends="prepare" 
         description="... concatinating markdown files for ${doc.dir} (${lang}) on Windows">
-        <!-- include lang in arg value="(${doc.dir}\\${lang}\\chapters\\*.markdown)" -->
         <exec executable="cmd">
             <arg value="/C" />
             <arg value="for"/>
             <arg value="%f"/>
             <arg value="in"/>
-            <arg value="(${doc.dir}\\${lang}\\chapters\\*.markdown)"/>
+            <arg value="(.\\${lang}\\chapters\\*.markdown)"/>
             <arg value="do"/>
             <arg value="type"/>
             <arg value="&quot;%f&quot;"/>
             <arg value="&gt;&gt;"/>
-            <arg value="${build.dir}/${doc.dir}/${doc.dir}.markdown"/>
+	    <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
         </exec>
     </target>
 
@@ -99,7 +96,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         </exec>      
     </target>
 
-    <target name="markdown-to-html-win" description="convert markdown file to an html file on windows">
+    <target name="markdown-to-html-win" description="converts markdown file to an html file on windows">
         <echo message="... converting ${doc.dir} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html +RTS K64m -RTS -o 01-chapter-02.html  01-chapter-02.markdown -->
         <exec executable="cmd">
@@ -113,9 +110,12 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
             <arg value="${pandoc.mem.2}"/>
             <arg value="${pandoc.mem.3}"/>
             <arg value="-smart"/>
+            <arg value="+RTS"/>
+            <arg value="-K64m"/>
+            <arg value="-RTS"/>
             <arg value="-o"/>
-            <arg value="${build.dir}/${doc.dir}/${doc.dir}.html"/>
-            <arg value="${build.dir}/${doc.dir}/${doc.dir}.markdown"/>
+            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.html"/>
+            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -137,7 +137,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         </exec>      
     </target>
 
-    <target name="markdown-to-odt-win" description="Convert markdown file(s) to an ODT file on Windows">
+    <target name="markdown-to-odt-win" description="converts markdown file to an ODT file on Windows">
         <echo message="... converting ${doc.dir} (${lang}) to odt on windows"/>
         <!-- pandoc -f markdown -t odt +RTS K64m -RTS -o 01-chapter-02.odt 01-chapter-02.markdown -->
         <exec executable="cmd">
@@ -151,10 +151,13 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
             <arg value="${pandoc.mem.2}"/>
             <arg value="${pandoc.mem.3}"/>
             <arg value="-smart"/>
+            <arg value="+RTS"/>
+            <arg value="-K64m"/>
+            <arg value="-RTS"/>
             <arg value="-o"/>
-            <arg value="${build.dir}/${doc.dir}/${doc.dir}.odt"/>
-            <arg value="${build.dir}/${doc.dir}/${doc.dir}.markdown"/>
-      </exec>      
+            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.odt"/>
+            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
+        </exec>      
     </target>
 
     <target name="markdown-to-epub" depends="concat-markdown-files" description="converts markdown file to an epub file">
@@ -175,7 +178,23 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         </exec>      
     </target>
 
-    <target name="markdown-to-epub-win" depends="concat-markdown-files" description="converts markdown file to an epub file on windows"/>
+    <target name="markdown-to-epub-win" depends="concat-markdown-files-win" description="converts markdown file to an epub file on windows">
+        <echo message="... converting ${doc.dir} (${lang}) to epub"/>
+        <exec executable="cmd">
+            <arg value="/C" />
+            <arg value="pandoc"/>
+            <arg value="-f" />
+            <arg value="markdown"/>
+            <arg value="-t"/>
+            <arg value="epub"/>
+            <arg value="+RTS"/>
+            <arg value="-K64m"/>
+            <arg value="-RTS"/>
+            <arg value="-o"/>
+            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.epub"/>
+            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
+        </exec>      
+    </target>
 
     <target name="markdown-to-all" depends="markdown-to-html,markdown-to-odt,markdown-to-epub" description="converts markdown file to html, odt, and epub files" />
 
