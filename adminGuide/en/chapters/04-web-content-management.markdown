@@ -1,33 +1,8 @@
 # Web Content Management
 
-\
-\
+With most products, you would read the previous chapter, understand what the software can do in terms of setting up your environment and security model, and go ahead and build your system. You'd design your infrastructure and get your server environment up and running while your developers would go ahead and write the applications that would live on your web site. Liferay Portal, however, doesn't leave you to start that far behind. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go, and integrated with all the user management and security features you've already learned about.
 
-With most products, you would read the previous chapter, understand what
-the software can do in terms of setting up your environment and security
-model, and go ahead and build your system. You'd design your
-infrastructure and get your server environment up and running while your
-developers would go ahead and write the applications that would live on
-your web site. Liferay Portal, however, doesn't leave you to start that
-far behind. Liferay Portal is more than just a *container* for
-applications with a robust security model. It already includes many of
-the applications you'll need, out of the box, ready to go, and
-integrated with all the user management and security features you've
-already learned about.
-
-Perhaps the key application that ships with Liferay is Liferay's Web
-Content Management system (CMS). We call it the key application because
-it is the one that most everybody uses, because everyone needs to load
-content onto their web sites. Liferay's CMS empowers you to manage all
-of the content on your site quickly, easily, and in the browser. Beyond
-managing existing content, Liferay CMS lets users easily create and
-manage everything from a simple article of text and images to full
-functional web sites. Web publishing works alongside Liferay Portal’s
-larger collection of applications, which means that you can add in
-shopping cart functionality, visitor polls, web forms, community
-collaboration tools and more. Everything is done with our collection of
-easy-to-use tools with familiar rich-text editors and intuitive
-interface.
+Perhaps the key application that ships with Liferay is Liferay's Web Content Management system (CMS). We call it the key application because it is the one that most everybody uses, because everyone needs to load content onto their web sites. Liferay's CMS empowers you to manage all of the content on your site quickly, easily, and in the browser. Beyond managing existing content, Liferay CMS lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal’s larger collection of applications, which means that you can add in shopping cart functionality, visitor polls, web forms, community collaboration tools, and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and intuitive interface.
 
 This chapter covers all aspects of Liferay CMS, including:
 
@@ -51,172 +26,77 @@ This chapter covers all aspects of Liferay CMS, including:
 
 -   Asset publisher
 
-By the time we're done, you should be able to apply all of these
-concepts to your own content. To demonstrate all of Liferay's Content
-Management features, we'll create and manage content on the portal for a
-fictitious company called *Spartan Software*.
+By the time we're done, you should be able to apply all of these concepts to your own content. To demonstrate all of Liferay's Content Management features, we'll create and manage content on the portal for a fictitious company called *Spartan Software*.
 
-First, a little housekeeping. If we're going to be Spartan Software, our
-portal should also be called Spartan Software. To set the general
-information about your portal like the name and mail domain, go to
-*Control Panel **→** Portal **→** Settings.* The configuration for
-Spartan Software might look something like the below screenshot.
+First, a little housekeeping. If we're going to be Spartan Software, our portal should also be called Spartan Software. To set general information about your portal like the name and mail domain, go to the control panel and select *Portal Settings* under the Portal heading. You could set up the configuration for Spartan Software as follows.
 
-![image](../../images/portal-admin-ch4_html_m542dd427.jpg)\
-*Illustration 1: Changing Portal Settings*
+![image](../../images/04-portal-settings.png)*Illustration 1: Changing Portal Settings*
 
-\
-\
-You can also customize the logo in the top left corner of every page by
-selecting *Display Settings* under the *Miscellaneous* tab on the panel
-to the right. Once you've made the changes, we're ready to begin
-creating pages.
+You can also customize the logo in the top left corner of every page by selecting *Display Settings* under the *Miscellaneous* tab on the panel to the right. Once you've made the changes, we can to begin creating pages.
 
 ## Page Creation and Management
 
-Your pages must contain something, right? The reason web pages exist at
-all is to display content. Whether you're using the web to share project
-information, advertise to potential customers, or demonstrate a golf
-swing—you're displaying content. And with Liferay's CMS, you'll find
-that the process of loading your pages up with content is extremely easy
-and straightforward, and you don't ever need to leave your browser.
+Your pages must contain something, right? The reason web pages exist at all is to display content. Use can use the web to share project information, advertise to potential customers, or demonstrate a golf swing. In each case you're displaying content. And with Liferay's CMS, you'll find that the process of loading your pages up with content is extremely easy and straightforward, and you don't ever need to leave your browser.
 
-Essentially, CMS is a suite of various portlets that include
-functionality for creating and displaying various types of content.
-Don't be concerned by the sheer number of applications you see in this
-category in the *Add → More* menu: we'll go over everything in a
-step-by-step fashion. We'll start by taking a look at page creation and
-management.
+Essentially, CMS is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add → More* menu: we'll go over everything in a step-by-step fashion. We'll start by taking a look at page creation and management.
 
 ### Managing Pages
 
-There are three ways to access the Manage Pages interface. If you are
-currently on the set of pages you wish to manage, simply go up to the
-Dockbar and select *Manage*, then *Page*. You can also access the Manage
-Pages tool two other ways in the Control Panel.
+If you are currently viewing the page you wish to manage, simply click *Manage* from the dockbar and select *Page*. If you would like to manage your site's whole set of pages, clink *Manage* and select *Site Pages*. 
 
-![image](../../images/portal-admin-ch4_html_22637189.png)\
-*Illustration 2: Two paths to managing pages*
+![image](../../images/04-managing-single-page.png)*Illustration 2: Managing Individual Pages*
 
-The first way is to simply select the community or organization that you
-want to work with in the Content section, and click on *Pages* in the
-left column. The second way is to select *Actions* and then select
-*Manage Pages *from the community or organization you're working with
-down in the portal section of the Control Panel.
-If you only need to add a single page very quickly, you can simply go to
-*Add → Page* in the Dockbar, and a page will be added immediately. You
-can then click on the page in the navigation and begin working on it
-immediately.
+You can also access the Site Pages window two other ways in the Control Panel. The first way is to simply select the site that you want to work with in the Content section, and click on *Site Pages* in the left column. The second way is to navigate to the Sites page under the Portal section of the control panel and to click *Actions* and select *Manage Pages*. If you just need to quickly add a page, you can click *Add* from the dockbar and select *Page*, and a page will be added immediately. You can then edit the name of the page and begin working on it immediately.
 
-Once you're in Manage Pages, you'll see an interface to create new
-pages, change various settings related to the set of pages you've
-selected, and export or import pages using Liferay Archive (LAR) files.
-We're just going to stay on the first tab under the Public Pages tab for
-now, so we can focus on the set of pages available to anyone visiting
-the site. By default, Liferay contains a single page called *Welcome,*
-and we'll leave it that way.
+![image](../../images/04-managing-site-pages.png)*Illustration 2: Managing Site Pages*
+
+Once you're in the Manage Pages window, you'll see an interface to view existing pages, create new pages, view pages, and export or import pages using Liferay Archive (LAR) files. Note that you can switch between managing a set of pages and managing a single page using the left-hand side navigation menu. Click on *Public Pages* or *Private Pages* to manage the group or click on an individual page to manage. Switching views like this will change this list of available tabs to the right. By default, Liferay contains a single public page called *Welcome* and we'll leave it that way.
 
 ### Understanding Public and Private Pages
 
-Liferay's page groups are always associated with Users, Organizations,
-or Communities. And even under the hood, a user's personal pages are
-part of a private community just for that user.
-
-All sets of pages are divided into two groups: Public Pages and Private
-Pages. Public Pages, by default, are accessible to anyone—including
-those who haven't logged in to the portal.
-
-Private Pages, by default, are only accessible to the users who belong
-to the Organization or Community to which the pages belong. This means
-that an Organization's private pages would only be viewable by members
-of the Organization. The tabs for public and private pages have the same
-interface.
+Liferay's page groups are always associated with sites. Even users' personal pages are part of their personal sites. All pages must belong either to a site's set of public pages or private pages. By default, anyone can access a site's public pages, even users who have not logged in and guests. Private pages, by default, are only accessible to users who are members of the site which owns the pages. This means that the private pages of an organization's site would only be viewable by members of the organization. The tabs for public and private pages have the same interface.
 
 ### Manage Pages Interface
 
-![image](../../images/portal-admin-ch4_html_m3cddc5.png)\
-*Illustration 3: Adding pages to a community is easy to do. *
+![image](../../images/04-adding-new-pages.png)*Illustration 3: Adding pages to a is easy*
 
-As you can see, the screen defaults to the New Page tab. Because the
-name of the community is selected on the left, adding a page here will
-add a top level page next to the Welcome page. But you can nest pages as
-deeply as you wish. If you wanted to create a sub-page under the Welcome
-page, all you'd have to do is select the Welcome page first and then
-create your page. And if you later decide you don't like the order of
-your pages, you can drag and drop them in the list to put them in
-whatever order you want. Let's go ahead and add another top level page
-and name it *Collaboration*. We'll use this page for portlets such as
-Blogs and Wiki.
-When you're finished adding your pages, you can get back to them by
-clicking the *View Pages* button just above the page hierarchy. Let's
-not do that just yet; we've got a few more options to cover.
+To add a new page to a site, you can just click the Add Page button from the Manage Sites window. Because "Public Pages" is selected on the left, clicking Add Page here will add a top level page next to the Welcome page. But you can nest pages as deeply as you wish. If you wanted to create a sub-page under the Welcome page, all you'd have to do is select the Welcome page first and then create your page. And if you later decide you don't like the order of your pages, you can drag and drop them in the list to put them in whatever order you want. Let's go ahead and add another top level page and name it *Collaboration*. We'll use this page for portlets such as Blogs and Wiki.
+
+### Export/Import
+
+If you click *Public Pages* on the left side of the Manage Site Pages window, you will see the Export/Import buttons next to the Add Page button. The Export button allows you to export the pages you create into a single file, called a LAR (Liferay Archive). You can then import this file into any server running Liferay, and all of your pages will be copied. The Import button allows you do do this. Exporting and Importing LARs is a great way to take content from one environment (say, a development or QA environment) and move it all in one shot to your production server.
+
+This is also a good way to back up your site's content. You can export it to a specific location on your server which is backed up, and if you ever have to restore your site, all you need to do is import the latest LAR file. One limitation on LAR files, however, is that they are version dependent, so you can't use an export from an old version of Liferay and import it into a newer version.
+
+Let's be good administrators and export a LAR file for backup purposes. Click on the *Export* button and then name the file `spartansoftwareV1.lar`{.western}. We need to select what to export using the checkboxes. Let's select everything for this initial export. Note that if you select the *More Options* link, the list expands to include data from many of Liferay's applications, including the Document Library and the Wiki. You can also export the theme you're using.
+
+Once you click *Export*, your browser will prompt you to save the file. Once you have the file, you can copy it to a backup location for safe keeping or import it into another installation of Liferay Portal. If you must rebuild or wish to revert back to this version of your site, you can import this file by clicking the *Import* button from the Manage Site Pages window, browsing to it, and selecting it.
 
 ### Look and Feel
 
-If you click the second tab, you'll be presented with an interface which
-allows you to choose a theme for the site upon which you are currently
-working. Themes can transform the entire look of the portal. Themes can
-be created by developers and can be installed very easily by using the
-Plugin Installer from the Control Panel, and this is detailed in Chapter
-6.
+When you open the Manage Site Pages window it defaults to the Look and Feel tab. On this tab, you'll be presented with an interface which allows you to choose a theme for the site upon which you are currently working. Themes can transform the entire look of the portal. They can be created by developers and can be easily installed using the plugins installer from the control panel. The plugins installer was covered in Chapter 3.
 
-![image](../../images/portal-admin-ch4_html_56360dea.png)\
-*Illustration 4: Many themes include more than one color scheme. This
-allows you to keep the existing look and feel, but give your site a bit
-of a different flavor than the default.*
+![Look and Feel Interface](../../images/04-look-and-feel.png)*Illustration 4: Look and Feel Interface* 
 
-\
-\
-Since we don't have any themes beyond the default one installed yet,
-we'll use the default theme for our pages. Some themes have more than
-one color scheme which can be selected, including the default theme.
-Let's change the color scheme by selecting *Themes* and then clicking on
-the *Green *color scheme. If you then go back to the site (by clicking
-*Back to Spartan Internet* in the top left corner of the Control Panel),
-you'll see that some parts of the theme are now tinged in a greenish
-hue.
+The current theme section of the Look and Feel tab lets you choose a theme to apply to your page set. Since we don't have any themes beyond the default one installed yet, we'll use the default theme for our pages. Many themes include more than one color scheme. This allows you to keep the existing look and feel while giving your site a different flavor. Let's change the color scheme from blue to green by selecting *Green* under *Color Schemes*. If you now go back to the site (by clicking *Back to Spartan Internet* in the top left corner of the Control Panel), you'll see that some parts of the theme are now tinged in a greenish hue. 
 
-Also, notice that you can choose themes for regular browsers or mobile
-devices. You might create another community for mobile users attached to
-the `http://m.spartansoftware.com`{.western} address and serve up a page
-that is designed for the smaller screens on phones.
+If you apply a color scheme to a set of public or private pages it will, by default, be applied to each page in the set. However, if you open the Manage Page window for a particular page you can select "Define a specific look and feel for this page" to customize the page. For example, you could choose a different color scheme than the one defined for the set of public or private pages.
 
-The *CSS* tab allows you to enter custom CSS that will also be served up
-by your theme. In this way, you can tweak a theme in real time by adding
-new styles or overriding existing ones.
+There are a few settings that you can configure for your theme. You can switch the bullet style between dots and arrows and you can choose whether or not to show portlet borders by default.
 
-Let's move on to the final tab under *Pages*.
+Also, notice that you can choose themes for regular browsers or mobile devices. You could create another site for mobile users attached to the `http://m.spartansoftware.com`{.western} address and serve up a page that is designed for the smaller screens on phones.
 
-### Export** / **Import
+The *CSS* section allows you to enter custom CSS that will also be served up by your theme. In this way, you can tweak a theme in real time by adding new styles or overriding existing ones.
 
-The Export / Import tab allows you to export the pages you create into a
-single file, called a LAR (Liferay Archive). You can then import this
-file into any server running Liferay, and all of your pages will be
-copied. This is a great way to take your content from one environment
-(say, a development or QA environment) and move it all in one shot to
-your production server.
+### Logo
 
-This is also a good way to back up your site's content. You can export
-it to a specific location on your server which is backed up, and if you
-ever have to restore your site, all you need to do is import the latest
-LAR file. One limitation on LAR files, however, is that they are version
-dependent, so you can't use an export from an old version of Liferay and
-import it into a newer version.
+If you want to use your own logo for a specific site, you can configure an alternate logo in the Logo tab. To add a custom logo, select the Logo tab, and browse to the location of your logo. Be careful to make sure that your logo fits the space in the top left corner of the theme you are using for your web site.
 
-Let's be good admins and export a LAR file for backup purposes. Select
-the *Export** / **Import* tab and then name the file
-`spartansoftwareV1.lar`{.western}. We're asked what we would like to
-export. Let's select everything for this initial export. Note that if
-you select the *More Options* link, the list expands to include data
-from many of Liferay's applications, including the Document Library and
-the Wiki. You can also export the theme you're using.
+In addition to *Look and Feel* and *Logo*, there are also *Javascript* and *Advanced* tabs. You can you these to add javascript code to be executed at the bottom of every page or change any advanced settings that your pages may have.
 
-Once you click the *Export* button, your browser will prompt you to save
-the file. Once you have the file, you can copy it to a backup location
-for safe keeping or import it into another installation of Liferay
-Portal. If you must rebuild or wish to revert back to this version of
-your site, you can import this file be selecting *Export** / **Import
-*and then selecting* Import *and then browsing to the file*. *
+### Additional Tabs of the Manage Page Window
+
+The *Manage Page* window has additional tabs that do not appear in the *Manage Site Pages* window. These include SEO (Search Engine Optimization), layout, custom fields, and customization settings.
 
 ### Settings
 
@@ -247,15 +127,6 @@ the Virtual Host tab for the marketing community.
 
 This can help users quickly access their community without recalling an
 extended URL.
-
-#### Logo
-
-If you want to use your own logo for a specific community or
-organization, you can configure an alternate logo here. To add a custom
-logo, select the *Logo* tab, then browse to the location of your file
-and select the *Use Logo* box. Be careful to make sure that your logo
-fits the space in the top left corner of the theme you are using for
-your web site.
 
 #### Sitemap
 

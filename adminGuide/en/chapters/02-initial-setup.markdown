@@ -1,7 +1,6 @@
 # Initial Setup
 
-Liferay Portal is one of the most flexible applications with regard to
-application server environment on the market today. You can install
+Liferay Portal is one of the most flexible applications on the market today with regard to application server environments. You can install
 Liferay Portal on everything from a shared Tomcat installation to a
 multi-node cluster running a commercial application server, and on
 everything in between. In fact, Liferay is used successfully in all of
