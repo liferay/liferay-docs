@@ -32,8 +32,13 @@ This command will create a blank theme in your *themes* folder. Notice that the 
 
 ### Setting a base Theme
 
+All themes in Liferay are built on top of the *_unstyled* and *_styled* themes, which contain very limited styling. By default, when you create theme, it will be build with only these as a base, however, you can set an existing theme as your base theme, so that you can gain the additional styling from that theme as well as the elements fro *_styled* and *_unstyled*.
 
+When a theme is built, the base themes are added in layers - first *_unstyled* is added, giving you the core of the theme, and *_styled* is added on top of that, adding the most basic elements. If you use a different base theme, that will added on top of *_styled* - overriding the default styling wherever applicable. After the base themes are added, your own custom styling is added on top of that.
 
+[[NEED DIAGRAM]]
+
+If you want to use a different base theme than the default, you can edit the **build.xml** file and change *_styled* in `<property name="theme.parent" value="_styled>` to the name of any theme currently available in your environment that you wish to use.
 
 ### Deploying the Theme
 
