@@ -146,29 +146,13 @@ Liferay now includes its own JavaScript library called Alloy, which is an extens
 
     );
 
-\
-\
-
     Liferay.Portlet.ready(
 
-\
-\
-
-/\*
-
 This function gets loaded after each and every portlet on the page.
-
-\
-\
 
     portletId: the current portlet's id
 
     node: the Alloy Node object of the current portlet
-
-\*/
-
-\
-\
 
     function(portletId, node) {
 
@@ -176,21 +160,11 @@ This function gets loaded after each and every portlet on the page.
 
     );
 
-\
-\
-
     Liferay.on(
 
     'allPortletsReady',
 
-/\*
-
 This function gets loaded when everything, including the portlets, is on the page.
-
-\*/
-
-\
-\
 
     function() {
 
@@ -218,9 +192,6 @@ Each theme can define settings to make it configurable. These settings are defin
 
     <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.0.0//EN"
     "http://www.liferay.com/dtd/liferay-look-and-feel\_6\_0\_0.dtd"\>
-
-\
-\
 
     <look-and-feel\>
 

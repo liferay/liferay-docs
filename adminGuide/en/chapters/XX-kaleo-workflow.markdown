@@ -33,8 +33,6 @@ Generally speaking a state will contain a task and the user input from the task 
 ![image](../../images/portal-admin-ch7_html_m4f6bc60e.png)\
 *Illustration 2: The default single approver workflow. Arrows represent transitions, and boxes represent states and tasks.*
 
-\
-\
 First we define the schema. For Liferay workflows using Kaleo, `liferay-worklow-definition-6_0_0.xsd`{.western} should be your schema. You can find this schema in the `definitions`{.western} folder of the Liferay source or a good XML editor should be able to cache it from Liferay's website.
 
     <workflow-definition
@@ -80,7 +78,7 @@ From the initial state, we transition to a new state where the asset will need t
 
     </transitions\>
 
-   </state\>
+    </state\>
 
 After that, we create a task. The task has several parts, and is the most complex part of the definition. In the task, we first need to choose a role to notify that there's new content which is in need of review. If the role doesn't exist, defining it here causes it to be created automatically.
 
@@ -404,8 +402,6 @@ My Workflow Tasks is a personalized version of the Workflow Tasks, and it is fou
 ![image](../../images/portal-admin-ch7_html_677770ed.png)\
 *Illustration 6: My Workflow Tasks page*
 
-\
-\
 It is here that workflow users review and approve content. By clicking on the actions next to a piece of content, a user can view that content and then choose to approve or reject it and add comments.
 
 ##### My Submissions
@@ -415,8 +411,6 @@ My Submissions is found under your user's personal information in the Control Pa
 ![image](../../images/portal-admin-ch7_html_m320e803c.png)\
 *Illustration 7: The My Submissions page*
 
-\
-\
 Besides viewing your work, you can also withdraw a submission from the review process by clicking on *Withdraw Submission* from the *Pending* tab.
 
 #### Integrating with Users, Communities, Organizations and Roles
@@ -445,8 +439,6 @@ To demonstrate the workflow process, create two users – a Content Creator and 
 ![image](../../images/portal-admin-ch7_html_79402c48.png)\
 *Illustration 9: Before a Content Reviewer can approve content, he must assign it to himself, or have an administrator assign it to them.*
 
-\
-\
 Once the content is approved, it can be posted on the Press Releases page in a web content display portlet.
 
 As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a very robust environment for web content management. Simple workflows can be managed using the default configuration and GUI tools, while more complex workflows can be created to meet the workflow management needs of almost any portal.
