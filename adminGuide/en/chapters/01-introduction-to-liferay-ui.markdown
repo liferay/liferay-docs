@@ -242,7 +242,7 @@ To add an organization, click the *Users and Organizations* link on the left sid
 
 **Parent Organization:** Click the *Select* link to bring up a window which allows you to select the organization in the system that is the direct parent of the organization you are creating. Click the *Remove* button to remove the currently configured parent.
 
-![tip](../../01-tip.png) **Tip:** Note that you are already a member of any organizations that you created. By creating an organization, you become both a member and receive the Organization Owner role, which gives you full rights to the organization.
+![tip](../../images/01-tip.png) **Tip:** Note that you are already a member of any organizations that you created. By creating an organization, you become both a member and receive the Organization Owner role, which gives you full rights to the organization.
 
 Fill out the information for your organization and click *Save*. As before with users, the form reappears and you can enter more information about the organization. Organizations can have multiple email addresses, postal addresses, web sites, and phone numbers associated with them. The *Services* link can be used to indicate the operating hours of the organization, if any.
 
@@ -362,7 +362,7 @@ Liferay version 5.1 introduced the concept of page templates which are tied to u
 
 A user group's page templates can be administered using the control panel. Click *View* and select *User Groups* from the *Users and Organizations* page of the Control Panel to see a list of existing user groups. Click *Actions* to see the list of actions to peform on them that was described above.
 
-![Manage Pages action on a User Group](../../images/01-user-group-manage-pages.png)*Illustration 9: Manage Pages action on a User Group*
+![Manage Pages action on a User Group](../../images/01-user-groups-manage-pages.png)*Illustration 9: Manage Pages action on a User Group*
 
 You can use the Manage Pages action to access the common Liferay UI for creating pages and organizing them in a hierarchy. Note that it is possible to create both public and private pages. Each set will be used as templates to be copied to the user's personal public or private page sets respectively when the user becomes a member of the user group.
 
@@ -445,7 +445,7 @@ You will be back at the list of roles. To see what functions you can perform on 
 
 Roles exist as a bucket for granting permissions to the users who are members of them. So one of the main tasks you will be doing with a role is granting it the permissions that you want members of the role to have.
 
-![defining permissions on a role](../../images/03-defining-permission-on-a-role.png)*Illustration 14: Defining Permissions on a Role*
+![defining permissions on a role](../../images/01-defining-permissions-on-a-role.png)*Illustration 14: Defining Permissions on a Role*
 
 When you click the *Actions* button on portal-scoped role and select *Define Permissions*, you will be shown a list of all the permissions that have been defined for that role. Click the *Add Permissions* drop-down menu to see a list of the permissions that can be defined. As of Liferay version 6.1, these permissions fall into seven categories: Portal, Site Content, Site Application, Control Panel: Personal, Control Panel: Site, Control Panel: Portal, and Control Panel: Server. For non-portal scoped roles, you need to click on the *Options* link on individual portlets, then *Configuration*, then *Permissions* to assign permissions within the site or organization that owns the portlet. 
 
@@ -457,7 +457,7 @@ Site Application permissions affect the application as a whole. So, using our Me
 
 The Control Panel permissions affect how the portlet appears to the user in the control panel. Some Control Panel portlets have a Configuration button, so you can define who gets to see that, as well as who gets to see an application in the Control Panel.
 
-![message board content permissions](../../images/03-message-board-content-permissions.png)*Illustration 15: Message board content permissions*
+![message board content permissions](../../images/01-message-board-content-permissions.png)*Illustration 15: Message board content permissions*
 
 Each possible action to which permissions can be granted is listed. To grant a permission, check the box next to it. If you want to limit the scope of the permission to a particular site, click the *Limit Scope* link, and then choose the site. Once you have chosen the permissions granted to this role, click *Save*. For a portal-scoped Message Boards Administrator role, you might grant content permissions for every action listed. After you click *Save*, you will see a list of all permissions that are currently granted to this role. From here, you can add more permissions or go back by clicking a link in the breadcrumb list or the *Return to Full Page* link.
 
@@ -475,14 +475,13 @@ Teams don't appear as a link in the control panel because they exist *within* si
 
 To create a team within a site, first naviagte to the *Control Panel → Sites* page then and then select *Actions → Manage Memberships* for the site within which you want to create a team. Finally, click *View → Teams* and click the Add Team button.
 
-![creating a team within a site](../../images/03-creating-a-team.png)
+![creating a team within a site](../../images/01-creating-a-team.png)
 *Illustration 16: Creating a team within a site*
 
-After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will
-appear in the list. To add members, simply click on *Actions → Assign Members*.
+After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions → Assign Members*.
 
 Permission management for teams is handled at the individual portlet level, using the *Options → Configuration → Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
 
-[assigning portlet permissions to a team](../../03-assigning-portlet-permissions-to-teams)*Assigning portlet permissions to a team*
+[assigning portlet permissions to a team](../../images/01-assigning-portlet-permissions-to-teams)*Assigning portlet permissions to a team*
 
 To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. Now your team is ready to work!

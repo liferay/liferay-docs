@@ -74,7 +74,7 @@ Once you click *Export*, your browser will prompt you to save the file. Once you
 
 ### Look and Feel
 
-When you open the Manage Site Pages window it defaults to the Look and Feel tab. On this tab, you'll be presented with an interface which allows you to choose a theme for the site upon which you are currently working. Themes can transform the entire look of the portal. They can be created by developers and can be easily installed using the plugins installer from the control panel. The plugins installer was covered in Chapter 3.
+When you open the Manage Site Pages window it defaults to the Look and Feel tab. On this tab, you'll be presented with an interface which allows you to choose a theme for the site which you are currently working on. Themes can transform the entire look of the portal. They can be created by developers and can be easily installed using the plugins installer from the control panel. The plugins installer was covered in Chapter 3.
 
 ![Look and Feel Interface](../../images/04-look-and-feel.png)*Illustration 4: Look and Feel Interface* 
 
@@ -96,15 +96,15 @@ In addition to *Look and Feel* and *Logo*, there are also *Javascript* and *Adva
 
 ### Additional Tabs of the Manage Page Window
 
-The *Manage Page* window has additional tabs that do not appear in the *Manage Site Pages* window. These include SEO (Search Engine Optimization), layout, custom fields, and customization settings.
+The *Manage Page* window has additional tabs that do not appear in the *Manage Site Pages* window. These include SEO (Search Engine Optimization), layout, custom fields, and customization settings. The SEO settings for your site can can be specified from the Sitemaps and Robots tabs of the *Mangage Site Settings* window. The SEO tab of the *Manage Page* is for customizing the search engine properties of an individual page. For example, you could change the priority of a page or remove it from the sitemap altogether. The layout tab is for specifying where portlets will be placed on a page. If custom fields have been defined, (which can be done from the *Custom Fields* page of the control panel) you can add a custom field to a page from the custom fields tab. This custom field serves as metadata about the page so it will not be visible on the page. The customization tab lets you mark specific sections of the page that you want users to be able to customize.
 
-### Settings
+### Site Settings
 
-The Settings tab gives us several powerful tools. In this tab you'll
-find options to customize the logo, stage the content, connect a domain
-to a community or organization, take advantage of the Liferay's
-integration with Google Analytics, and more. Let's take a look at them
-in order.
+The *Manage → Site Settings* window gives us several powerful tools. You'll find options to specify details and metadata about your site, set up friendly URLs and virtual hosts, configure search engine optimization settings, turn staging on or off, and specify a Google Analytics ID. Let's take a closer look.
+
+#### Details
+
+The details tab 
 
 #### Virtual Host
 
@@ -142,44 +142,6 @@ the sitemap XML automatically for all public web sites.
 
 ![image](../../images/portal-admin-ch4_html_7d567151.jpg)\
 *Illustration 5: Site Map Options*
-
-\
-\
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
 
 By selecting one of the search engine links, the sitemap will be sent to
 them. It's only necessary to do this once per community or organization.
@@ -431,7 +393,7 @@ portal for your use.
 
 In order to prepare for the portlets we'll soon be adding, let's change
 the layout of the Collaboration page. To access layouts, go up to the
-Dockbar and select *Manage →* *Page Layou*t.
+Dockbar and select *Manage → Page Layout*.
 
 Now, select the *2 Columns (50/50)* layout and then *Save*. Once saved,
 you'll return to the page and it'll seem as though nothing has happened.
