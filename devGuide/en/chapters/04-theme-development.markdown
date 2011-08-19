@@ -372,3 +372,6 @@ By default themes are based on the **\_styled** theme, which provides only basic
 The `theme.parent`{.western} property determines which built-in theme your theme will inherit from. In addition to the **\_styled** theme, you may also choose to inherit from the **\_unstyled** theme, which contains no styling whatsoever. This involves more work, but in exchange you get full flexibility to design your own CSS files from scratch.
 
 You can also use the default Liferay theme, called **classic**, as the parent of your themes. Using this approach allows you to start with a look and feel that already works and get nice results quickly. The drawback is that since there is so much done already for you, there won't be as much flexibility to build the desired design. It's a compromise between creating a theme as quickly as possible versus having full control of the result. It's your choice.
+
+## Overriding JSPs (new)
+
