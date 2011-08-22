@@ -82,11 +82,9 @@ Liferay's dependency .jars. Later in this chapter are instructions for
 installing Liferay on many of the major application servers available
 today.
 
-![image](../../images/02-bundle-directory-structure.png)\
+![image](../../images/02-bundle-directory-structure.png)
 *Illustration 1: Bundle directory structure*
 
-\
-\
 ## Installing a Bundle
 
 Liferay bundles contain the same directory structure regardless of
@@ -151,7 +149,7 @@ Installing a different bundle is done in exactly the same way: unzip the
 bundle into the folder of your choice, launch the application server,
 and then view the portal in your web browser.
 
-![image](../../images/02-default-page-in-the-liferay-bundles.png)\
+![image](../../images/02-default-page-in-the-liferay-bundles.png)
 *Illustration 2: Default Page in the Liferay Bundles*
 
 As you can see, bundles are the easiest way to get started with Liferay.
@@ -244,8 +242,6 @@ database settings. If it is at all possible, Liferay recommends that you
 use the automatic method as documented above instead of the procedure
 outlined below.
 
-\
-\
 Even though Liferay can create its database automatically, some
 enterprises prefer *not* to allow the user ID configured in an
 application server to have the permissions over the database necessary
@@ -405,11 +401,11 @@ To use the built-in connection pool—based on C3P0*—*add the template
 which is provided in Chapter 6 for your particular database. The
 template for MySQL is provided as an example below.
 
-\#
+#
 
-\# MySQL
+# MySQL
 
-\#
+#
 
 jdbc.default.driverClassName=com.mysql.jdbc.Driver
 
@@ -588,8 +584,8 @@ can skip this section.
 
 1.  
 
-![image](../../images/02-glassfish-jdbc-connection-pool.png)\
-![image](../../images/02-glassfish-jdbc-connection-pool.png)\
+![image](../../images/02-glassfish-jdbc-connection-pool.png)
+![image](../../images/02-glassfish-jdbc-connection-pool.png)
     *Illustration 3: Glassfish JDBC Connection Pool*
 
     Go to the GlassFish console URL:
@@ -662,8 +658,6 @@ jdbc.default.username=root
 
 jdbc.default.password=root
 
-\
-\
 
 2.  Go to the GlassFish console URL: `http://localhost:4848`{.western}
 
@@ -676,8 +670,8 @@ jdbc.default.password=root
 
 6.  Leave the rest of the defaults and click *OK*.
 
-![image](../../images/02-deploying-liferay-in-glassfish-3.png)\
-![image](../../images/02-deploying-liferay-in-glassfish-3.png)\
+![image](../../images/02-deploying-liferay-in-glassfish-3.png)
+![image](../../images/02-deploying-liferay-in-glassfish-3.png)
     *Illustration 4: Deploying Liferay in GlassFish 3*
 
 Liferay will be deployed and started automatically.
@@ -802,38 +796,25 @@ Liferay will be deployed and started automatically.
 
 @echo off
 
-\
-\
-
 if "" == "%JAVA\_HOME%" goto errorJavaHome
 
-\
-\
 
 %JAVA\_HOME%/bin/java -Xmx512m -Dfile.encoding=UTF8 -Duser.timezone=GMT
 -Djava.security.auth.login.config=../etc/jaas.config
 -DSTART=../extra/etc/start-plus.config -jar ../start.jar
 ../etc/jetty.xml
 
-\
-\
 
 goto end
 
-\
-\
 
 :errorJavaHome
 
 echo JAVA\_HOME not defined.
 
-\
-\
 
 goto end
 
-\
-\
 
 :end
 
@@ -1390,8 +1371,8 @@ server, and that you have access to the WebLogic console.
 
 4.  
 
-![image](../../images/02-weblogic-data-sources.png)\
-![image](../../images/02-weblogic-data-sources.png)\
+![image](../../images/02-weblogic-data-sources.png)
+![image](../../images/02-weblogic-data-sources.png)
     *Illustration 5: WebLogic: Data Sources*
 
     Create a folder called *endorsed* in
@@ -1464,7 +1445,7 @@ skip this section.
 
 1.  
 
-![image](../../images/02-weblogic-mail-sessions.png)\
+![image](../../images/02-weblogic-mail-sessions.png)
     *Illustration 6: WebLogic: Mail Sessions*
 
     Click the *Deployments* option in the Domain Structure tree on the
@@ -1530,7 +1511,7 @@ Start WebLogic.
 
 ##### Database Configuration
 
-![image](../../images/portal-admin-ch2_html_02-creating-a-data-source-in-weblogic.png)\
+![image](../../images/portal-admin-ch2_html_02-creating-a-data-source-in-weblogic.png)
 *Illustration 7: Creating a data source in WebLogic 10.3*
 
 If you want WebLogic to manage your data source, use the following
@@ -1555,10 +1536,7 @@ skip this section.
     For MySQL, some additional parameters need to be added to the URL.
     Modify the JDBC URL so that it has the proper parameters:
 
-    jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&
-    \\
-
-    useFastDateParsing=false
+    jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
 
 6.  Click *Test Configuration* to make sure WebLogic can connect to your
     database successfully. If it does, click *Finish*.
@@ -1666,8 +1644,6 @@ in
 
 `[Bea Home]/jrockit_160_05/jre/lib/ext`{.western}.
 
-\
-\
 #### WebSphere 6.1
 
 ![image](../../images/02-tip.png) **Tip:** Throughout this
@@ -1675,8 +1651,6 @@ installation and configuration process, WebSphere will prompt you to
 Click Save to apply changes to Master Configuration. Do so
 intermittently to save your changes.
 
-\
-\
 
 **Liferay Home** is in a folder called `liferay`{.western} in the home
 folder of the user ID that is running WebSphere.
@@ -1761,8 +1735,6 @@ localhost
 
 lportal
 
-\
-\
 
 20. Click *Data Sources* -\> *Test Connection* to test.
 
@@ -1775,9 +1747,6 @@ lportal
 3.  Click *Mail Sessions*.
 
 4.  Click *New*.
-
-\
-\
 
 5.  Click *OK*.
 
@@ -1798,8 +1767,8 @@ lportal
 
 3.  
 
-![image](../../02-installing-the-liferay-war-file-on-windows.png)\
-![image](../../02-installing-the-liferay-war-file-on-windows.png)\
+![image](../../02-installing-the-liferay-war-file-on-windows.png)
+![image](../../02-installing-the-liferay-war-file-on-windows.png)
     *Illustration 8: Installing the Liferay .war file on WebSphere 6.1*
 
     Enter context root */*.
@@ -1827,12 +1796,10 @@ lportal
 
 2.  Click *Enterprise Applications*.
 
-![image](../../images/02-starting-liferay-on-websphere.png)\
-![image](../../images/02-starting-liferay-on-websphere.png)\
+![image](../../images/02-starting-liferay-on-websphere.png)
+![image](../../images/02-starting-liferay-on-websphere.png)
 *Illustration 9: Starting Liferay on WebSphere 6.1*
 
-\
-\
 3.  Uninstall *DefaultApplication*, *PlantsByWebSphere* and
     *SamplesGallery*.
 
@@ -1862,7 +1829,7 @@ instructions below.
 
 1.  
 
-![image](../../images/02-websphere-jdbc-providers.png)\
+![image](../../images/02-websphere-jdbc-providers.png)
     *Illustration 10: WebSphere 7.0 JDBC Providers*
 
     Start WebSphere.
@@ -1908,8 +1875,8 @@ instructions below.
 
 18. 
 
-![image](../../images/02-modifying-data-source-properties-in-websphere.png)\
-![image](../../images/02-modifying-data-source-properties-in-websphere.png)\
+![image](../../images/02-modifying-data-source-properties-in-websphere.png)
+![image](../../images/02-modifying-data-source-properties-in-websphere.png)
     *Illustration 11: Modifying data source properties in WebSphere 7*
 
     Select the user property and give it the value of the user name to
@@ -2060,6 +2027,3 @@ supporting you on your environment of choice. Liferay Portal won't get
 in your way, and you can feel safe knowing that you have the freedom to
 use the software platform that is best for your organization, and
 Liferay Portal will run and perform well on it.
-
-\
-

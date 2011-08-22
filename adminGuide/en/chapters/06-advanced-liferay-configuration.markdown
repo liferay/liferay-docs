@@ -441,8 +441,6 @@ plugin.notifications.packages.ignored=liferay/sample-jsp-portlet
 
 #### Portlet
 
-\
-\
 
 Set this property to define the default virtual path for all hot
 deployed portlets. See liferay-portlet-app\_5\_1\_0.dtd and the
@@ -482,7 +480,6 @@ Set the provider for ORM persistence. If this property is set to
 will be read. If this property is set to `hibernate`{.western}, then the
 properties with the prefix `hibernate`{.western} will be read.
 
-\
 
 persistence.provider=hibernate
 
@@ -508,7 +505,6 @@ jpa.provider=openjpa
 
 jpa.provider=toplink
 
-\
 
 Specify provider specific properties prefixed with
 `jpa.provider.property`{.western}.
@@ -519,7 +515,6 @@ jpa.provider.property.eclipselink.logging.level=FINEST
 
 jpa.provider.property.eclipselink.logging.timestamp=true
 
-\
 
 The `LoadTimeWeaver`{.western} interface is a Spring class that allows
 JPA `ClassTransformer`{.western} instances to be plugged in a specific
@@ -547,7 +542,6 @@ Valid values for the Hibernate and OpenJPA providers are:
 `HSQL, INFORMIX, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER`{.western}, and
 `SYBASE`{.western}.
 
-\
 
 Valid values for the EclipseLink provider are:
 
@@ -571,8 +565,6 @@ org.eclipse.persistence.platform.database.SQLServerPlatform, or
 
 org.eclipse.persistence.platform.database.SybasePlatform.
 
-\
-\
 
 Check with JPA provider's documentation for details and all possible
 
@@ -580,7 +572,6 @@ values.
 
 jpa.database.platform=
 
-\
 
 Liferay will automatically detect the database type by initializing
 `DBUtil`{.western}. You can override the value here if needed. Expected
@@ -613,7 +604,6 @@ transaction.manager.impl=org.springframework.transaction.jta.WebLogicJtaTransact
 
 transaction.manager.impl=org.springframework.transaction.jta.WebSphereUowTransactionManager
 
-\
 
 Additional properties that follow the pattern
 `transaction.manager.property.*`{.western} will be read to call the
@@ -1306,8 +1296,6 @@ javascript.barebone.files,\\
 
 javascript.everything.files
 
-\
-\
 
 Define a bundle directory for each property listed in
 `javascript.bundle.ids`{.western}.
@@ -1658,7 +1646,6 @@ filter
 `com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter`{.western} must
 be referenced in `web.xml`{.western}.
 
-\
 
 ntlm.auth.enabled=false
 
@@ -5230,9 +5217,6 @@ virtual.hosts.ignore.paths=\\
 
 /c/portal/extend\_session\_confirm,\\
 
-\
-\
-
 /c/portal/json\_service,\\
 
 /c/portal/layout,\\
@@ -6526,8 +6510,6 @@ wiki.formats.default=creole
 
 Configure settings for each of the wiki formats.
 
-\
-\
 
 wiki.formats.engine[creole]=com.liferay.portlet.wiki.engines.jspwiki.JSPWikiEngine
 
@@ -6539,15 +6521,9 @@ wiki.formats.help.page[creole]=/html/portlet/wiki/help/creole.jsp
 
 wiki.formats.help.url[creole]=http://www.wikicreole.org/wiki/Creole1.0
 
-\
-\
-
 wiki.formats.engine[html]=com.liferay.portlet.wiki.engines.HtmlEngine
 
 wiki.formats.edit.page[html]=/html/portlet/wiki/edit/html.jsp
-
-\
-\
 
 wiki.formats.engine[plain\_text]=com.liferay.portlet.wiki.engines.TextEngine
 
@@ -6569,8 +6545,6 @@ wiki.email.from.name=Joe Bloggs
 
 wiki.email.from.address=test@liferay.com
 
-\
-\
 
 wiki.email.page.added.enabled=true
 
@@ -6580,8 +6554,6 @@ wiki.email.page.added.body=com/liferay/portlet/wiki/dependencies/email\_page\_ad
 
 wiki.email.page.added.signature=com/liferay/portlet/wiki/dependencies/email\_page\_added\_signature.tmpl
 
-\
-\
 
 wiki.email.page.updated.enabled=true
 
@@ -6621,8 +6593,6 @@ portlets in Liferay 4.4.2, but because the Portlet 2.0 standard is
 backwards-compatible, portlets written to the 1.0 standard will run in
 Liferay 5.x and above.
 
-\
-\
 
 Portlet applications, like servlet applications, have become a Java
 standard which various portal server vendors have implemented. The
@@ -6684,8 +6654,6 @@ provides.
 
 ![image](../../images/portal-admin-ch6_html_m64a2dab6.png)*Illustration 1: Envision
 theme from Liferay's theme repository*
-
-\
 
 Themes are hot deployable plugins which can completely transform the
 look and feel of the portal. Most organizations have their own look and
@@ -6749,11 +6717,9 @@ The default look of the Plugin Installer shows which plugins are already
 installed on the system, whether it is active, and what Portal roles
 have access to it.
 
-![image](../../images/portal-admin-ch6_html_5b4a5b5c.png)\
+![image](../../images/portal-admin-ch6_html_5b4a5b5c.png)
 *Illustration 3: Default plugin installer view*
 
-\
-\
 If you would like to see what plugins are available, you can do so by
 clicking the *Install More [Plugin Type]* button, where [Plugin Type]
 changes based on which tab you are viewing. Please note that the machine
@@ -6769,7 +6735,7 @@ number of items per page and navigate to a specific page if you know
 where a particular plugin appears in the list. This is a standard
 feature of Liferay, and you will see it in most of Liferay's portlets.
 
-![image](../../images/portal-admin-ch6_html_32aba477.png)\
+![image](../../images/portal-admin-ch6_html_32aba477.png)
 *Illustration 4: Installing plugins*
 
 After the *Install More [Plugin Type]* button is clicked, a new view
@@ -6791,11 +6757,9 @@ displayed which describes the portlet plugin in more detail. Below the
 description is an *Install* button. Click this button to install your
 plugin.
 
-![image](../../images/portal-admin-ch6_html_5af016bf.png)\
+![image](../../images/portal-admin-ch6_html_5af016bf.png)
 *Illustration 5: Installing the Web Form plugin*
 
-\
-\
 The plugin chosen will be automatically downloaded and installed on your
 instance of Liferay. If you have the Liferay console open, you can view
 the deployment as it happens. When it is finished, you should be able to
@@ -7030,7 +6994,7 @@ can do that by clicking on the *Configuration* tab. On this page are a
 number of settings you can change, including the default folders for hot
 deploy, where Liferay should look for plugin repositories, and so on.
 
-![image](../../images/portal-admin-ch6_html_m6ef9ebaa.png)\
+![image](../../images/portal-admin-ch6_html_m6ef9ebaa.png)
 *Illustration 6: Changing the hot deploy destination directory*
 
 The setting to change is the field marked *Destination Directory*.
@@ -7204,7 +7168,7 @@ users submitting portlets into the repository, and if you don't want to
 worry about creating the `liferay-plugin-repository.xml`{.western} file
 yourself.
 
-![image](../../images/portal-admin-ch6_html_m2cde1a0b.png)\
+![image](../../images/portal-admin-ch6_html_m2cde1a0b.png)
 *Illustration 7: The Software Catalog with nothing installed*
 
 Each community in your portal can have an instance of the Software
@@ -7223,11 +7187,9 @@ Control Panel from the Dock. If you want to administer the software
 catalog for a different community or organization, you can select it
 from the selection box.
 
-![image](../../images/portal-admin-ch6_html_8a11bd5.png)\
+![image](../../images/portal-admin-ch6_html_8a11bd5.png)
 *Illustration 8: Populated Software Catalog from liferay.com*
 
-\
-\
 The Software Catalog has several tabs. The first tab is labeled
 *Products*. The default view of the portlet, when populated with
 software, displays what plugins are available for install or download.
@@ -7277,11 +7239,9 @@ To create the product record in the Software Catalog portlet, click the
 *Products* tab, and then click the *Add Product* button. Fill out the
 form with information about your product.
 
-![image](../../images/portal-admin-ch6_html_6ce52af5.png)\
+![image](../../images/portal-admin-ch6_html_6ce52af5.png)
 *Illustration 9: Adding a product to the Software Catalog*
 
-\
-\
 **Name: **The name of your software product.
 
 **Type:** Select whether this is a portlet, theme, layout template,
@@ -7367,7 +7327,7 @@ our portlet should work on that version and higher, and
 [http://www.](http://www.liferay.com/)[liferay](http://www.liferay.com/)[.com](http://www.liferay.com/)
 for the URL. Click *Save. *
 
-![image](../../images/portal-admin-ch6_html_5229bbcf.png)\
+![image](../../images/portal-admin-ch6_html_5229bbcf.png)
 *Illustration 10: Adding a product version to the Software Catalog*
 
 Now go back to the *Products* tab and click on your product. You will
@@ -7575,11 +7535,9 @@ interfaces not only for Java code, but also for web services and
 JavaScript. This means that the method calls for storing and retrieving
 portal objects are all the same, and are generated in the same step.
 
-*I![image](../../images/portal-admin-ch6_html_m1232b4ba.png)\
+*I![image](../../images/portal-admin-ch6_html_m1232b4ba.png)
 llustration 11: Liferay SOA's first layer of security. *
 
-\
-\
 Because the actual method calls for retrieving data are the same
 regardless of how one gets access to those methods (i.e., locally or
 through web services), Liferay provides a consistent interface for
@@ -7633,7 +7591,7 @@ If the machine on which the batch job is running has the IP address
 to connect to Liferay's web services and pass in user credentials to be
 used to upload the documents.
 
-![image](../../images/portal-admin-ch6_html_57e67878.png)\
+![image](../../images/portal-admin-ch6_html_57e67878.png)
 *Illustration 12: Liferay SOA's second layer of security. *
 
 The second layer of security is Liferay's security model that it uses
@@ -7754,7 +7712,3 @@ Combined with the preceding chapters, the information you've gained so
 far gives you the ability to competently install and configure a website
 which runs on Liferay. Next, we'll take a look at some of the ways you
 can configure Liferay for the enterprise.
-
-\
-\
-

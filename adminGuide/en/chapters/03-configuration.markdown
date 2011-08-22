@@ -363,7 +363,7 @@ above), click the *Test LDAP*** ***Users*** **button, and Liferay will
 attempt to pull LDAP** **users** **and match them up with their mappings
 as a preview.
 
-![image](../../images/portal-admin-ch3_html_3312b71c.jpg)\
+![image](../../images/portal-admin-ch3_html_3312b71c.jpg)
 *Illustration 17: Testing LDAP Users*
 
 ##### **Groups**
@@ -406,10 +406,8 @@ default object classes are, use an LDAP browser tool such as *Jxplorer*
 to locate a group and view the Object Class attributes that are stored
 in LDAP for that group.
 
-\
-\
 
-![image](../../images/portal-admin-ch3_html_e5994f7.jpg)\
+![image](../../images/portal-admin-ch3_html_e5994f7.jpg)
 *Illustration 18: Mapping LDAP Groups*
 
 Once you've set all your options and tested your connection, click
@@ -824,12 +822,10 @@ To add a custom field simply click on the *Custom Fields* link in the
 Control Panel then click on the *Edit *link and then select *Add Custom
 Field*.
 
-![image](../../images/portal-admin-ch3_html_m12b2fefd.png)\
+![image](../../images/portal-admin-ch3_html_m12b2fefd.png)
 *Illustration 19: The Wiki shows custom fields integrated with the rest
 of the fields on the form. *
 
-\
-\
 From here you will need to add the custom field key. The key appears as
 the label for the field on the form. For some portal assets (like the
 User), custom fields are a separate section of the form. For others, as
@@ -869,12 +865,10 @@ The Page Templates link allows you to create a custom page with the
 layout, portlets and web content you will want to reuse. From this link
 you can also edit existing templates and modify their permissions.
 
-![image](../../images/portal-admin-ch3_html_m2e4371b8.png)\
+![image](../../images/portal-admin-ch3_html_m2e4371b8.png)
 *Illustration 20: You can create page templates with predefined layouts
 and portlets that can be used over and over. *
 
-\
-\
 To add a page template click on the *Page Template* link in the Control
 Panel. From there select *Add* and then enter a name and description for
 your template. Below the description field is a toggle that lets you
@@ -898,12 +892,10 @@ The Site Templates link allows you to define a set of predefined pages
 to include when creating new sites for communities and organizations.
 You may define and edit site templates as well as their permissions.
 
-![image](../../images/portal-admin-ch3_html_4e601928.png)\
+![image](../../images/portal-admin-ch3_html_4e601928.png)
 *Illustration 21: Site templates help you to quickly build many similar
 sites using the same pattern. *
 
-\
-\
 To add a site template click on the *Site Template* link in the Control
 Panel. From there you can select *Add* and then enter a name and
 description for your template. Also, below the description field is
@@ -1178,6 +1170,3 @@ installed.
 
 All of this information was designed to put you on the path to becoming
 a seasoned Liferay Portal Administrator.
-
-\
-

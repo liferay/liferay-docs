@@ -140,7 +140,7 @@ your site.
 Liferay Portal makes this very simple for administrators by generating
 the sitemap XML automatically for all public web sites.
 
-![image](../../images/portal-admin-ch4_html_7d567151.jpg)\
+![image](../../images/portal-admin-ch4_html_7d567151.jpg)
 *Illustration 5: Site Map Options*
 
 By selecting one of the search engine links, the sitemap will be sent to
@@ -198,14 +198,10 @@ First, we'll need to create the community. Go the *Control Panel,
 field, type in *Corporate Headquarters*. Add a description and leave the
 type set to *Open*. After you've completed these steps, select *Save*.
 
-\
-\
 
 ![image](../../images/portal-admin-ch4_html_m34a4d132.jpg)*Illustration 6: Setting up
 an Open Community*
 
-\
-\
 Now we're going to add a page to our new community. Since you're already
 in the *Communities* interface, you can simply select *Actions → Manage
 Pages *for the Corporate Headquarters community.
@@ -219,12 +215,10 @@ is on the Control Panel, and one contains the page you have just
 created. Return to the Control Panel tab where you're editing the page
 structure and select* Settings → Staging*.
 
-![image](../../images/portal-admin-ch4_html_3c9bdfe.png)\
+![image](../../images/portal-admin-ch4_html_3c9bdfe.png)
 *Illustration 7: You can choose what content should be staged and what
 content should not be staged. *
 
-\
-\
 We'll assume we don't have a separate staging server, and so we'll
 select a staging type of *Local Live.* If you were to select *Remote
 Live*, you would also have needed to supply the name or IP of the remote
@@ -267,12 +261,10 @@ page, and the *Staging* link will be in the Dockbar. Select the
 *Staging* button and then *View Staged Area*. The page now has a red
 border.
 
-![image](../../images/portal-admin-ch4_html_m22bf4227.png)\
+![image](../../images/portal-admin-ch4_html_m22bf4227.png)
 *Illustration 8: The live site has an orange border; the staged site has
 a red border.*
 
-\
-\
 Add the wiki portlet and then from the Dockbar select *Staging → View
 Live Page. *Notice that the wiki portlet isn't there. As you can see,
 only the page changes are staged; web content itself can go through a
@@ -300,11 +292,9 @@ someone with the role who reviews the content at this editorial stage.
 To view the proposals, go back up to the Dockbar and select *Staging →
 View Proposals*. You'll then see the proposal you've submitted.
 
-![image](../../images/portal-admin-ch4_html_3f361bd7.png)\
+![image](../../images/portal-admin-ch4_html_3f361bd7.png)
 *Illustration 9: Proposals must be approved or deleted. *
 
-\
-\
 Click on the proposal to view it. Here, you'll be able to change the
 approver, set a due date, select the next reviewer (from the role which
 is configured for that editorial stage), and, of course, the other
@@ -317,11 +307,10 @@ enabled. In order to get the modified pages onto the live site, somebody
 has to push this button; there isn't a way to cause the pages to be
 published automatically upon the last approval.
 
-![image](../../images/portal-admin-ch4_html_32b0aec1.png)\
+![image](../../images/portal-admin-ch4_html_32b0aec1.png)
 *Illustration 10: There's a specific workflow to use when publishing
 content using the staging environment.*
 
-\
 To publish the modified page we simply need to return to the proposal
 and click *Publish to Live. *Once this is done, Liferay will ask you
 what you wish to publish. In our example, we have only one page to
@@ -433,12 +422,10 @@ step further: we've got the Wiki portlet, the Blogs portlet, and then a
 nested portlet with a different layout and the Alerts, Unit Converter,
 and RSS portlets.
 
-![image](../../images/portal-admin-ch4_html_5d108446.png)\
+![image](../../images/portal-admin-ch4_html_5d108446.png)
 *Illustration 11: Yeah, we're showoffs. But as you can see, your page
 layout options are virtually limitless. *
 
-\
-\
 You'll find it is very easy to make your pages look exactly the way you
 want them to. If the layout options provided aren't enough, you can even
 develop your own. More information about that can be found in Liferay's
@@ -479,7 +466,7 @@ We can do this with the following procedure:
 
 9.  Click the *Save* button.
 
-![image](../../images/portal-admin-ch4_html_m5fee13ce.gif)\
+![image](../../images/portal-admin-ch4_html_m5fee13ce.gif)
     *Illustration 12: Permissions for Admin Forums*
 
 Congratulations! You've just changed the permissions for this page so
@@ -612,7 +599,7 @@ create and publish our first pieces of content.
 
 #### Web Content Section of the Control Panel
 
-![image](../../images/portal-admin-ch4_html_6b743467.png)\
+![image](../../images/portal-admin-ch4_html_6b743467.png)
 *Illustration 13: Choosing an organization or community in the Content
 section*
 
@@ -649,8 +636,6 @@ add a short sentence announcing that the web site is up and running.
 ![image](../../images/portal-admin-ch4_html_m209c9399.png)*Illustration 14: Web
 Content Editor*
 
-\
-\
 ##### Images, Fonts, Links, and More
 
 Getting a new web site up and running is an exciting step for any
@@ -669,11 +654,9 @@ bullets, numbering, links to another site, or custom images. You can
 even add an emoticon. Let's add a smiley face at the end of our
 announcement.
 
-![image](../../images/portal-admin-ch4_html_4b063c5.jpg)\
+![image](../../images/portal-admin-ch4_html_4b063c5.jpg)
 *Illustration 15: Customizing Content*
 
-\
-\
 The WYSIWYG editor is a flexible tool that gives you the ability to add
 text, images, tables, links, and more. Additionally, you can modify the
 display to match the purpose of the content. Plus it's integrated with
@@ -694,11 +677,9 @@ permissions in more detail. Select the *More Options* link next to the
 drop down button, and you'll find the different activities you can grant
 or deny to your web content.
 
-![image](../../images/portal-admin-ch4_html_m3868fcb1.jpg)\
+![image](../../images/portal-admin-ch4_html_m3868fcb1.jpg)
 *Illustration 16: Permissions for Web Content*
 
-\
-\
 For this piece of web content, we don't need to change anything. After
 you're finished with permissions, click *Save. *This will save the
 content in draft form. Once you're satisfied with the your changes,
@@ -717,49 +698,8 @@ Spartan Software, it's time to display it. First, we'll need to add the
 *Web Content Display* portlet to our Welcome page. Do this by selecting
 *Add → Web Content Display* from the Dockbar.
 
-![image](../../images/portal-admin-ch4_html_m5a656d59.jpg)\
+![image](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 *Illustration 17: Adding the Web Content Display Portlet*
-
-\
-\
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
-
-\
-\
 
 Once the portlet appears, drag it to the position on the page where you
 want your content to appear. You can use the Web Content Display portlet
@@ -780,14 +720,12 @@ the available locales for your content. If you're working on the page
 for a particular language, you can select the translation of your
 content that goes with your locale.
 
-![image](../../images/portal-admin-ch4_html_m15de5742.png)\
+![image](../../images/portal-admin-ch4_html_m15de5742.png)
 *Illustration 18: Publishing web content is a snap. At a minimum, you
 only have to select the content you wish to publish. You can also enable
 lots of optional features to let your users interact with your content.
 *
 
-\
-\
 If you have enabled OpenOffice.org integration with your portal, you can
 also enable the document conversion. This gives your users the ability
 to download your content in their format of choice. This is especially
@@ -844,14 +782,9 @@ it from the Web Content Display portlet, select the *pencil* icon to the
 lower left of the portlet. This will launch the WYSIWYG editor and from
 there you can make any necessary changes.
 
-\
-\
-
-![image](../../images/portal-admin-ch4_html_334f9d2e.jpg)\
+![image](../../images/portal-admin-ch4_html_334f9d2e.jpg)
 *Illustration 19: Web Content Display Portlet*
 
-\
-\
 When you publish your content this way, it will become immediately
 available on the site (unless, of course, you have a workflow enabled,
 which we'll see below). It's nice to be able to edit the content where
@@ -935,8 +868,6 @@ Structures tab.
 ![image](../../images/portal-admin-ch4_html_m65509029.png)*Illustration 20: Structure
 Editor*
 
-\
-\
 It is very easy to edit structures: all you have to do is drag elements
 into the structure and then give them names. For instance, select the
 *Checkbox *element under the *Form Controls* tab and drag it onto the
@@ -945,11 +876,9 @@ from the structure, simply select the *Delete* icon (black circle with
 X) in the upper right corner of the element. Take a moment to add,
 delete, and rearrange different elements.
 
-![image](../../images/portal-admin-ch4_html_mc441c00.jpg)\
+![image](../../images/portal-admin-ch4_html_mc441c00.jpg)
 *Illustration 21: Structure Elements*
 
-\
-\
 Liferay supports the following elements in structures:
 
 **FORM FIELDS**
@@ -1023,27 +952,17 @@ web content. You can determine who views a structure by selecting from
 the *Viewable By* select box beneath the *Permissions* tab. By default
 the *Anyone (Guest Role)* is selected.
 
-![image](../../images/portal-admin-ch4_html_3f6c0c3.jpg)\
+![image](../../images/portal-admin-ch4_html_3f6c0c3.jpg)
 *Illustration 23: View Permissions for Structure*
 
-\
-\
-\
-\
-
 #### 
-
-\
-\
 
 You will also want to determine how users can interact with the
 structure. You can do this by selecting the *More* link.
 
-![image](../../images/portal-admin-ch4_html_7fa7c55e.jpg)\
+![image](../../images/portal-admin-ch4_html_7fa7c55e.jpg)
 *Illustration 24: More Permissions for Structures*
 
-\
-\
 From the *More* link, you have the ability to grant or deny permissions
 based on Roles. For instance, you can give the Guest role the ability to
 *Add Discussion* or you may want to give a *Community Member* the
@@ -1105,20 +1024,15 @@ on what we've defined. We'll use Velocity for our template, and we'll
 lay out the structure fields systematically to go along with the format
 we've defined for our content.
 
-![image](../../images/portal-admin-ch4_html_702b8685.jpg)\
+![image](../../images/portal-admin-ch4_html_702b8685.jpg)
 *Illustration 25: Adding Template Interface*
 
-\
-\
 1.  Go back to the Web Content section of the Control Panel and click
     *Add Web Content*.
 
 2.  Select *Edit* from the Structure tab.
 
 3.  Remove the Content field and add the following fields:
-
-\
-\
 
 **Variable Name**
 
@@ -1139,9 +1053,6 @@ Image Gallery
 Body
 
 Text Area
-
-\
-\
 
 4.  Select *Save*.
 
@@ -1213,14 +1124,12 @@ parameter is the key to the rest of the script:
 
 When this template is rendered, it looks something like this:
 
-![image](../../images/portal-admin-ch4_html_437339b5.png)\
+![image](../../images/portal-admin-ch4_html_437339b5.png)
 *Illustration 26: By default, the content displays like this. If the
 user clicks the Read More link, the portlet will display the body field
 as well. Note we've also enabled comments and ratings in this Web
 Content Display portlet. *
 
-\
-\
 Of course, there is much, much more you can do with structures and
 templates. Check out the Liferay Wiki
 ([http://wiki.liferay.com](http://wiki.liferay.com/)) for further
@@ -1236,27 +1145,18 @@ not directly writing the scripts. You can determine who views the
 template by selecting from the *Viewable By* select box beneath the
 *Permissions* tab. By default the *Anyone (Guest Role)* is selected.
 
-![image](../../images/portal-admin-ch4_html_3f6c0c3.jpg)\
+![image](../../images/portal-admin-ch4_html_3f6c0c3.jpg)
 *Illustration 27: View Permissions for Templates*
 
-\
-\
-\
-\
 
 #### 
-
-\
-\
 
 You'll also want to determine how users can interact with the template.
 You can do this by selecting the *More* link.
 
-![image](../../images/portal-admin-ch4_html_72d9a7d2.png)\
+![image](../../images/portal-admin-ch4_html_72d9a7d2.png)
 *Illustration 28: More Permissions for Templates*
 
-\
-\
 From the *More* link, you have the ability to grant or deny permissions
 based on Roles. For instance, you may create a* * role with the ability
 to update the template and create a second role that can both update and
@@ -1294,14 +1194,9 @@ perhaps incorrect) information. The scheduler is built right into the
 form that your users make use of to add web content, in the same column
 as the structure and template selectors.
 
-\
-\
-
-![image](../../images/portal-admin-ch4_html_m64edee43.jpg)\
+![image](../../images/portal-admin-ch4_html_m64edee43.jpg)
 *Illustration 29: Schedule for Publishing Content*
 
-\
-\
 **Display Date:** Allows you to determine (within a minute) when content
 will be displayed.
 
@@ -1384,7 +1279,7 @@ bottom of the same form you use to add content. If you open the
 *Categorization* section of the form, you'll be presented with an
 interface for adding tags and categories.
 
-![image](../../images/portal-admin-ch4_html_m69e286ea.png)\
+![image](../../images/portal-admin-ch4_html_m69e286ea.png)
 *Illustration 30: Tagging and categorizing content can be done at the
 same time you create it. *
 
@@ -1415,8 +1310,6 @@ been deployed to Liferay.
 ![image](../../images/portal-admin-ch4_html_692ad1ca.jpg)*Illustration 31: Enabling
 Workflow for Content Management*
 
-\
-\
 As you will discover in Chapter 7, you can design workflows to suit your
 organization's approval process. For Spartan Software's implementation
 we will use the *Single Approver *workflow which ships with the product.
@@ -1441,12 +1334,10 @@ Display portlet. Call it *Sales Goals* and enter some content. Notice
 that the Publish button is now gone. In its place is a *Submit for
 Publication* button. Go ahead and click it.
 
-\
 
-![image](../../images/portal-admin-ch4_html_m1c8ec66d.jpg)\
+![image](../../images/portal-admin-ch4_html_m1c8ec66d.jpg)
 *Illustration 32: Pending Workflow*
 
-\
 
 Next, go to the *Workflow Tasks* in Control Panel and then select *My
 Workflow Tasks*. You will see the option to Review Content for Sales
@@ -1524,13 +1415,11 @@ tell the Asset Publisher that you want to select your content manually.
 You can select what you want to be published within the portlet, or you
 can create new content right from within the Asset Publisher.
 
-![image](../../images/portal-admin-ch4_html_2c5c2c18.png)\
+![image](../../images/portal-admin-ch4_html_2c5c2c18.png)
 *Illustration 34: Selecting assets manually is very similar to the Web
 Content Display portlet, except you have many other content types from
 which to choose.*
 
-\
-\
 Clicking *Add New* gives you a menu of options, enabling you to create
 the content right where you are. You can create blogs, bookmarks,
 calendar entries, documents, images, and of course, web content.
@@ -1565,12 +1454,10 @@ content should be selected.
 of a specific type, such as only web content, only wiki entries, or any
 combinations of multiple types.
 
-![image](../../images/portal-admin-ch4_html_m6a2fb854.png)\
+![image](../../images/portal-admin-ch4_html_m6a2fb854.png)
 *Illustration 35: You can filter by tags and categories, and you can set
 up as many filter rules as you need. *
 
-\
-\
 **Filter Rules:** Add as many filters on tags or categories as you like.
 You can choose whether the content contains or does not contain any or
 all categories or tags that you enter.
@@ -1591,11 +1478,9 @@ called *birds*. You can also group by *Asset* *Type *or *Vocabularies.
 *Categories* section of the Control Panel. Again, we'll see more about
 categories in Chapter 5.
 
-![image](../../images/portal-admin-ch4_html_m4c42bb1c.jpg)\
+![image](../../images/portal-admin-ch4_html_m4c42bb1c.jpg)
 *Illustration 36: Ordering and Grouping*
 
-\
-\
 In the *Ordering and Grouping* section of the Asset Publisher, you have
 great control over how content is ordered and grouped in the list, but
 this is only one aspect of how your content will be displayed. You can
@@ -1611,11 +1496,9 @@ pagination type, and file conversions. Additionally, you can enable
 printing, flags, ratings, comments, and comment ratings, and these work
 the same way they do in the Web Content Display portlet.
 
-![image](../../images/portal-admin-ch4_html_64756a09.jpg)\
+![image](../../images/portal-admin-ch4_html_64756a09.jpg)
 *Illustration 37: Display Settings*
 
-\
-\
 **DISPLAY STYLE**
 
 **Abstracts: **Shows the first 200-500 characters of the content,
@@ -1659,11 +1542,9 @@ portlet: enable print, enable comments, enable ratings, etc.
 **Show Metadata: **Allows you to select from the available metadata
 types (see below).
 
-![image](../../images/portal-admin-ch4_html_m409b2939.jpg)\
+![image](../../images/portal-admin-ch4_html_m409b2939.jpg)
 *Illustration 38: Show Metadata*
 
-\
-\
 **Enable RSS Subscription: **This gives users the ability to subscribe
 to the content via RSS Feeds.
 
@@ -1697,6 +1578,3 @@ rapidly select and configure what and how your content is displayed. And
 by using Liferay's integrated workflow, you can set up custom publishing
 rules to fit your organization. You will find that managing your site
 becomes far easier when using Liferay's Web Content Management system.
-
-\
-

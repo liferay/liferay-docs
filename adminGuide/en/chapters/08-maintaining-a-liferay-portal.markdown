@@ -52,11 +52,9 @@ through the Control Panel by going to either the *Organizations* or
 Manage Pages* for the community or organization you want to analyze.*
 *Click the *Settings* tab.
 
-![image](../../images/portal-admin-ch8_html_m3451b46c.png)\
+![image](../../images/portal-admin-ch8_html_m3451b46c.png)
 *Illustration 1: Setting Up Google Analytics*
 
-\
-\
 Click the **Monitoring** Tab. Put your Google Analytics ID (which should
 have been provided to you when you signed up for the service) in the
 field and click *Save*. All of the pages in the community you selected
@@ -152,11 +150,9 @@ instead of an individual class name. If you do this, messages for every
 class lower in the hierarchy will be displayed in your application
 server's log file.
 
-![image](../../images/portal-admin-ch8_html_3579ac89.png)\
+![image](../../images/portal-admin-ch8_html_3579ac89.png)
 *Illustration 2: Changing Logging Levels*
 
-\
-\
 Be careful when you do this. If you set the log level to DEBUG somewhere
 near the top of the hierarchy (such as `com.liferay`{.western}, for
 example), you may wind up with a lot of messages in your log file. This
@@ -183,11 +179,9 @@ To enable your logging messages to appear in your server's log file via
 the Control Panel, click the *Add Category* tab on the same *Log Levels*
 page.
 
-![image](../../images/portal-admin-ch8_html_m559f0b07.png)\
+![image](../../images/portal-admin-ch8_html_m559f0b07.png)
 *Illustration 3: Adding a Logging Category*
 
-\
-\
 You will see that you can add a logging category. Simply put in the
 fully qualified name of your class or of the package that contains the
 classes whose log messages you want to view, choose a log level, and
@@ -242,8 +236,6 @@ Liferay, you can find these SQL scripts in the source code archive for
 the version of Liferay you are running. They will be in the *SQL* folder
 of the archive.
 
-\
-\
 
 #### Upgrade Steps
 
@@ -315,13 +307,9 @@ Here are the complete contents of that file
 
 resource.repositories.root=${user.home}/liferay
 
-\
-\
 
 theme.portlet.sharing.default=true
 
-\
-\
 
 organizations.country.required[regular]=true
 
@@ -331,23 +319,12 @@ organizations.assignment.strict=false
 
 organizations.membership.strict=true
 
-\
-\
 
 lucene.dir=${resource.repositories.root}/lucene/
 
-\
-\
-
 jcr.jackrabbit.repository.root=${resource.repositories.root}/jackrabbit
 
-\
-\
-
 dl.hook.impl=com.liferay.documentlibrary.util.JCRHook
-
-\
-\
 
 dl.hook.file.system.root.dir=${resource.repositories.root}/document\_library
 
@@ -446,8 +423,6 @@ ServiceContext serviceContext = new ServiceContext();
 
 serviceContext.setScopeGroupId(myGroupId);
 
-\
-\
 
 BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
@@ -462,8 +437,6 @@ ServiceContext serviceContext =
 ServiceContextFactory.getInstance(BlogsEntry.class.getName(),
 portletRequest);
 
-\
-\
 
 BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
@@ -510,11 +483,10 @@ Migration* from the menu along the top of the screen. You should see a
 section entitled *Legacy Permissions Migration* at the bottom of the
 page.
 
-![image](../../images/portal-admin-ch8_html_m7242a796.png)\
+![image](../../images/portal-admin-ch8_html_m7242a796.png)
 *Illustration 4: Dialog to update your permissions algorithm to the
 latest version.*
 
-\
 Algorithms 5 and 6 do not support adding permissions at the user level.
 If you have permissions set to individual users, the converter can
 simulate this for you by auto-generating roles with those permissions,
@@ -575,7 +547,3 @@ Upgrading Liferay is also a snap, because Liferay does most of the work
 automatically. With easy permissions migration tools and automated
 database upgrade scripts, you'll have your new version of Liferay Portal
 up and running in no time.
-
-\
-\
-

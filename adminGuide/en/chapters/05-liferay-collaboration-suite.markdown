@@ -92,8 +92,7 @@ want to change the scope, it only takes a few simple steps.
 ![image](../../images/portal-admin-ch5_html_2c05ad6b.jpg)*Illustration 1: Changing
 the scope for a portlet *
 
-\
-\
+
 That's all it takes to change the scope for a particular portlet
 instance. By setting the scope to *page*, you can add as many of these
 portlets to a particular community or organization as you want, provided
@@ -180,7 +179,7 @@ a Facebook application.
 
 ### 
 
-![image](../../images/portal-admin-ch5_html_m435d3961.png)\
+![image](../../images/portal-admin-ch5_html_m435d3961.png)
 *Illustration 2: Liferay's forums in Facebook*
 
 ### Google Gadget
@@ -629,11 +628,9 @@ you can install the Mail portlet by going to the Control Panel, clicking
 button. Find the *Mail* portlet in the list, click on it, and then click
 *Install*.
 
-![image](../../images/portal-admin-ch5_html_4795fd88.png)\
+![image](../../images/portal-admin-ch5_html_4795fd88.png)
 *Illustration 11: Liferay Mail portlet*
 
-\
-\
 To connect the Mail portlet with an email account, click the *Add a New
 Email Account* link. From there, you are given a choice between a Custom
 email Account or a Gmail Account. Choose the option that you wish, and
@@ -1014,11 +1011,9 @@ Browse the list until you find the Message Boards portlet and then click
 on it. You will then see a screen which allows you to configure the
 various permissions on the portlet.
 
-![image](../../images/portal-admin-ch5_html_m1dfc555f.png)\
+![image](../../images/portal-admin-ch5_html_m1dfc555f.png)
 *Illustration 13: Configuring Message Board Administrators role*
 
-\
-\
 Grant the permissions you wish message board administrators to have and
 then click *Save*. You can then add users to this role and they will
 inherit the permissions.
@@ -1147,7 +1142,7 @@ Gadgets, etc.
 You will also notice that the Communication tab has some additional
 options not seen in the other portlets.
 
-![image](../../images/portal-admin-ch5_html_19eab582.png)\
+![image](../../images/portal-admin-ch5_html_19eab582.png)
 *Illustration 14: Communication tab of Wiki portlet*
 
 The Communication tab allows you to configure communication across
@@ -1265,40 +1260,26 @@ can use this syntax to format your wiki pages. Consider for example the
 following wiki document:
 == Welcome to Our Wiki! ==
 
-\
-\
 
 This is our new wiki, which should allow us to collaborate on
 documentation. Feel free to add pages showing people how to do stuff.
 Below are links to some sections that have already been added.
 
-\
-\
 
 [[Introduction ]]
 
-\
-\
 
 [[Getting Started]]
 
-\
-\
 
 [[Configuration]]
 
-\
-\
 
 [[Development]]
 
-\
-\
 
 [[Support]]
 
-\
-\
 
 [[Community]]
 
@@ -1430,7 +1411,7 @@ There are two ways to create tags: you can do it through the
 administrative console in the control panel, or on the fly as content is
 created.
 
-![image](../../images/portal-admin-ch5_html_73b7305.png)\
+![image](../../images/portal-admin-ch5_html_73b7305.png)
 *Illustration 17: The Add Tag dialog*
 
 To create tags in the control panel, select the community that you want
@@ -1461,7 +1442,7 @@ you've selected the community or organization you want to work on,
 select *Categories *from the content section of the control panel, and
 you will be presented with the categories administration screen.
 
-![image](../../images/portal-admin-ch5_html_203f5177.png)\
+![image](../../images/portal-admin-ch5_html_203f5177.png)
 *Illustration 18: Categories administration*
 
 Clicking on a vocabulary on the left will display any categories that
@@ -1499,7 +1480,7 @@ In order to better show which users are making real, valuable
 contributions, Liferay is introducing the new Social Equity system with
 Liferay 6.
 
-![image](../../images/portal-admin-ch5_html_m6daa4ee7.png)\
+![image](../../images/portal-admin-ch5_html_m6daa4ee7.png)
 *Illustration 20: The Social Equity control panel*
 
 Social Equity enables you to assign values and weight for each
@@ -1593,6 +1574,3 @@ Liferay's collaboration platform is a full suite of integrated
 applications that empower users to work together. You can use them to
 great effect to enhance your web site and to build a vibrant, active
 community.
-
-\
-

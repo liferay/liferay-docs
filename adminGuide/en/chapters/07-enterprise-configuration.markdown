@@ -48,7 +48,7 @@ enterprise.
 
 ## 
 
-![image](../../images/portal-admin-ch7_html_m78881a5b.gif)\
+![image](../../images/portal-admin-ch7_html_m78881a5b.gif)
 *Illustration 1: "Unbreakable" Liferay architecture*
 
 Liferay Clustering
@@ -359,8 +359,6 @@ class="com.liferay.portal.search.solr.server.BasicAuthSolrServer"\>
 <constructor-arg
 type="java.lang.String"value="http://localhost:8080/solr" /\>
 
-\
-\
 
 Modify this value so that they point to the server upon which you are
 running Solr. Then save the file and put it back into the plugin archive
@@ -785,12 +783,10 @@ the task will determine which transition will occur. The transition will
 then move the workflow to the next task. This cycle will continue until
 the end “approved” state is reached.
 
-![image](../../images/portal-admin-ch7_html_m4f6bc60e.png)\
+![image](../../images/portal-admin-ch7_html_m4f6bc60e.png)
 *Illustration 2: The default single approver workflow. Arrows represent
 transitions, and boxes represent states and tasks.*
 
-\
-\
 First we define the schema. For Liferay workflows using Kaleo,
 `liferay-worklow-definition-6_0_0.xsd`{.western} should be your schema.
 You can find this schema in the `definitions`{.western} folder of the
@@ -1146,7 +1142,7 @@ task to transition to your new task, and set the new task to transition
 to the *approved* state, once it is completed. You can also use *forks
 *and *joins * to create more complex workflows.
 
-![image](../../images/portal-admin-ch7_html_6d2265ce.png)\
+![image](../../images/portal-admin-ch7_html_6d2265ce.png)
 *Illustration 3: A possible parallel approval design*
 
 You can transition to a fork from a task or state, and from a fork, you
@@ -1223,7 +1219,7 @@ assigned.
 
 #### Workflow in the Control Panel
 
-![image](../../images/portal-admin-ch7_html_m506bb3c6.png)\
+![image](../../images/portal-admin-ch7_html_m506bb3c6.png)
 *Illustration 4: Adding a workflow definition*
 
 Most of your workflow configuration is done via the Control Panel.
@@ -1259,7 +1255,7 @@ workflow behavior you can go up to *Workflow Configuration* and tweak
 the definitions that you are using for each Community and Organization
 individually.
 
-![image](../../images/portal-admin-ch7_html_191c17d.png)\
+![image](../../images/portal-admin-ch7_html_191c17d.png)
 *Illustration 5: The Workflow Configuration page*
 
 Using the drop down feature on the Control Panel section, you can select
@@ -1273,11 +1269,9 @@ it is found in your personal section of the Control Panel. Here are
 specific tasks which have been assigned to you or assigned to a role of
 which you are a member. You can also view your completed tasks.
 
-![image](../../images/portal-admin-ch7_html_677770ed.png)\
+![image](../../images/portal-admin-ch7_html_677770ed.png)
 *Illustration 6: My Workflow Tasks page*
 
-\
-\
 It is here that workflow users review and approve content. By clicking
 on the actions next to a piece of content, a user can view that content
 and then choose to approve or reject it and add comments.
@@ -1290,11 +1284,9 @@ submitted to review. Those that are currently under review are listed
 under the *Pending* tab, and those that have gone through the review
 process are listed under the *Completed* tab.
 
-![image](../../images/portal-admin-ch7_html_m320e803c.png)\
+![image](../../images/portal-admin-ch7_html_m320e803c.png)
 *Illustration 7: The My Submissions page*
 
-\
-\
 Besides viewing your work, you can also withdraw a submission from the
 review process by clicking on *Withdraw Submission* from the *Pending*
 tab.
@@ -1331,7 +1323,7 @@ the portal are workflow-enabled. If you have created additional
 definitions, you must also define the workflow definition to use for
 each asset that is workflow-enabled.
 
-![image](../../images/portal-admin-ch7_html_m4d3dfbf0.png)\
+![image](../../images/portal-admin-ch7_html_m4d3dfbf0.png)
 *Illustration 8: You can select which community or organization you are
 currently working in by using the drop down menu over the Content
 section.*
@@ -1351,12 +1343,10 @@ Publication*. This triggers the workflow process and notifies the
 Content Reviewer. When the Content Reviewer logs in, he can assign the
 workflow task to himself and approve the content.
 
-![image](../../images/portal-admin-ch7_html_79402c48.png)\
+![image](../../images/portal-admin-ch7_html_79402c48.png)
 *Illustration 9: Before a Content Reviewer can approve content, he must
 assign it to himself, or have an administrator assign it to them.*
 
-\
-\
 Once the content is approved, it can be posted on the Press Releases
 page in a web content display portlet.
 
@@ -1450,10 +1440,9 @@ applied properly. As always, you will need to use a profiler to monitor
 garbage collection during a load test to tune the numbers properly for
 your server hardware, operating system, and application server.
 
-![image](../../images/portal-admin-ch7_html_518957a7.gif)\
+![image](../../images/portal-admin-ch7_html_518957a7.gif)
 *Illustration 10: Java memory*
 
-\
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is
 further divided into three sections: Eden, which is where new objects
@@ -1596,22 +1585,16 @@ Liferay to use, one for reading, and one for writing:
 
 jdbc.read.driverClassName=com.mysql.jdbc.Driver
 
-jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true& \\
-
-characterEncoding=UTF-8&useFastDateParsing=false
+jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
 
 jdbc.read.username=
 
 jdbc.read.password=
 
-\
-\
 
 jdbc.write.driverClassName=com.mysql.jdbc.Driver
 
-jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true& \\
-
-characterEncoding=UTF-8&useFastDateParsing=false
+jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
 
 jdbc.write.username=
 

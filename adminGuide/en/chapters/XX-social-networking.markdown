@@ -20,19 +20,19 @@ There are several social portlets that are designed for use on regular portal pa
 ####Members
 This portlet is simply a list of all of the Members of the current site. The only configuration options you have available are changing it's permission, so that, for example, someone who is not a member of the current site would be unable to view to portlet or any of the user information it contains.
 
-![image](../../images/XX-social-networking-members-portlet.png)\
+![image](../../images/XX-social-networking-members-portlet.png)
 *Illustration 1: The Members Portlet*
 
 ####Meetups
 The Meetups portlet is designed to be a tool for creating casual meetings for users of your portal. Anyone can create a "Meetup" and give it a Title, Description, Date/Time, a maximum number of attendees, Price, and provide an image. Any meetups that are created will be displayed in the portlet for anyone to view. Once a meetup is created, users will be able to register, to help the organizer keep track of who's coming, and ensure that there aren't too many people coming.
 
-![image](../../images/XX-social-networking-meetups.png)\
+![image](../../images/XX-social-networking-meetups.png)
 *Illustration 2: The Meetups Portlet*
 
 ####Activities
 The Activities portlet comes in two varieties: the standard Activities portlet and the Members' Activities portlet. The basic function of the portlet is the same - they both displaya feed of the asset creation and management activities of users on the portal. The difference is that Activities will display what's going on across the entire portal, while Members' Activities will only display what members of the current site have been doing.
 
-![image](../../images/XX-social-networking-activities.png)\
+![image](../../images/XX-social-networking-activities.png)
 *Illustration 3: The Activitiess Portlet*
 
 ####Top Users
@@ -48,7 +48,7 @@ Scores are updated in real time, while ranks are only updated daily, so it's pos
 
 In addition to the portlets available for general use, there are a handful that can only be used on personal pages. These portlets can be used to create a profile page, similar to Facebook or Google+. 
 
-![image](../../images/XX-social-networking-personal-portlets.png)\
+![image](../../images/XX-social-networking-personal-portlets.png)
 *Illustration 5: Social Networking Portlets in a Facebook-like layout*
 
 ####Summary
