@@ -870,11 +870,11 @@ home page.
     `$JBOSS_HOME/server/default/conf/login-config.xml`{.western}* *and
     comment out the entire XML for policy *other *in lines 115-131.
 
-<!--<application-policy name = "other"\>--\>
+<!--<application-policy name = "other"\>-->
 
 ...
 
-<!--<authentication\>
+<!--<authentication-->
 
 <login-module code = "org.jboss.security.
 

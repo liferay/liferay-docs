@@ -366,7 +366,7 @@ as a preview.
 ![image](../../images/portal-admin-ch3_html_3312b71c.jpg)\
 *Illustration 17: Testing LDAP Users*
 
-##### **Groups**
+##### Groups
 
 This section contains settings for mapping LDAP groups to Liferay.
 
