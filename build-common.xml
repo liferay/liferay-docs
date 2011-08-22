@@ -25,7 +25,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     <property name="lang" value="en"/>
     <property name="build.dir" value="./build"/>
 
-    <property name="pandoc.app" location="/home/${user.name}/.cabal/pandoc"/>
+    <property name="pandoc.app" location="/home/${user.name}/.cabal/bin/pandoc"/>
 
     <target name="display-pandoc-version">
         <exec executable="${pandoc.app}">
