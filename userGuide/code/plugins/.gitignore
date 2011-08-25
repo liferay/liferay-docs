@@ -1,0 +1,8 @@
+/*/*/bin
+/*/*/classes
+/*/*/tmp
+
+/*/*/docroot/WEB-INF/classes
+
+/build.*.properties
+/dist
