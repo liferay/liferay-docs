@@ -1,18 +1,8 @@
 # Liferay Collaboration Suite
 
-Liferay Portal ships with a robust suite of collaboration applications
-which you can use to build communities of users for your site. These
-applications are best-of-breed applications with all the features you
-would expect of standalone versions that are outside a portal. The
-difference with Liferay's collaboration suite, however, is that all of
-the applications share a common look and feel, security model, and
-architecture. And they inherit all of the strengths of being a part of
-the Liferay development platform, so you can use them in combination
-with Liferay's user management and Content Management features to build
-a well-integrated, feature-rich web site.
+Liferay Portal ships with a robust suite of collaboration applications which you can use to build communities of users for your site. These applications are best-of-breed applications with all the features you would expect of standalone versions that are outside a portal. The difference with Liferay's collaboration suite, however, is that all of the applications share a common look and feel, security model, and architecture. They inherit the strengths of being part of Liferay's development platform so you can use them in combination with Liferay's user management and content management features to build a well-integrated, feature-rich web site.
 
-This chapter will focus on the use of Liferay's collaboration suite. You
-will learn how to set up and administer:
+This chapter will focus on how to use Liferay's collaboration suite. You will learn how to set up and administer:
 
 -   Blogs
 
@@ -26,58 +16,21 @@ will learn how to set up and administer:
 
 -   Wikis
 
-You will see how all of these features can work together to provide an
-enhanced experience for your users, as well as giving you the tools to
-help build a community that keeps coming back.
+-   Document Libraries
+
+We will discuss how these features can work together to provide an enhanced experience for your users, as well as giving you the tools to help build a community that keeps coming back.
 
 ## Scopes
 
-As we learned earlier, roles can be scoped by the portal, by a
-community, or by an organization. This means that the role only takes
-effect for the scope in which it resides. For example, a Message Boards
-Administrator role with complete access to the Message Boards portlet
-would have different permissions based on the role's scope. If it's a
-portal role, members have permission to administer message boards across
-the portal. If it's a community role, members have permission to
-administer message boards only within the community in which they are
-members of the role. If it's an organization role, members have
-permission to administer message boards only within the organization in
-which they are members of the role.
+As we learned earlier, roles can be scoped by the portal, by a site, or by an organization. A role will only take effect within its scope. For example, a Message Boards Administrator role with complete access to the Message Boards portlet will have different permissions based on the role's scope. If it's a portal role, members will have permission to administer message boards across the entire portal. If it's a site role, members will only have permission to administer message boards within the site that has assigned the role to them. If it's an organization role, members will only have permission to administer message boards only within the site of the organization that has assigned the role to them.
 
-We also use the word *scope* to refer to the data set of a portlet. When
-a portlet is added to a page in a community or organization, it is
-*scoped* for that community or organization. This means that its data
-belongs to that community or organization. If the portlet is added to a
-page in a different community or organization, it will have a completely
-different data set. This is how the Message Boards portlet can be placed
-in one community and have one set of categories and threads, and then be
-placed in a different community and contain a completely different set
-of categories and threads.
+We also use the word *scope* to refer to the data set of a portlet. By default, when a portlet is added to a page in a site, it is *scoped* for that site. This means that its data belongs to that site. If the portlet is added to a page in a different site, it will have a completely different data set. This is how the Message Boards portlet can be placed in one site and have one set of categories and threads, and then be placed in a different site and contain a completely different set of categories and threads.
 
-One limitation of this is that by default, you can have only one Message
-Boards portlet per community or organization. If you have one Message
-Boards portlet on one page in a community and you add the portlet to
-another page in the same community, the second Message Boards portlet
-will contain exactly the same data as the first, and this is because of
-its scope. It is scoped for that community. Many of Liferay's portlets
-work this way.
+One limitation of this is that by default, you can have only one Message Boards portlet per site or organization. If you have one Message Boards portlet on one page in a site and you add the portlet to another page in the same site, the second Message Boards portlet will contain exactly the same data as the first. This is because the portlet has been scoped for the site. Many of Liferay's portlets work this way.
 
-To get around this, some Liferay portlets can have scopes that go beyond
-just the specific community or organization upon which the portlet has
-been placed. You can now scope them by page. If you set the scope of a
-portlet to be the page instead of the whole community or organization,
-you can add any number of these portlets to different pages, and they
-will have different sets of data. This allows you to have more than one
-message board per community or organization if you wish. All portlets,
-however, default to the “native” configuration, and have their scopes
-set to the community or organization where they are placed.
+To get around this, some Liferay portlets can be scoped by page. The data sets of page-scoped portlets serve a single page, not an entire site. If you set the scope of a portlet to *page* instead of *site*, you can add any number of these portlets to different pages, and they will have different sets of data. This allows you to have more than one message board per site if you wish. All portlets, however, default to the “native” configuration, and have their scopes set to the site where they are placed.
 
-Unless otherwise noted, all of the portlets in this chapter support
-scoping by either the page or the community / organization to which they
-belong. This gives you much more flexibility in how you want to set up
-your portal. By default, however, the scope remains the same as it
-always has, and is set to be by the community or organization. If you
-want to change the scope, it only takes a few simple steps.
+Unless otherwise noted, all of the portlets in this chapter support scoping by portal (global), site (default), or page (select layout → current page). This grants you some flexibility in how you want to set up your portal. If you want to change the scope, it only takes a few simple steps.
 
 1.  Click the *Menu* icon in the portlet window (the wrench).
 
@@ -85,562 +38,261 @@ want to change the scope, it only takes a few simple steps.
 
 3.  Select the *Scope* tab.
 
-4.  Modify the Scope to be the current page.
+4.  Use the drop-down menu to set the scope.
 
 5.  Click *Save*.
 
-![image](../../images/portal-admin-ch5_html_2c05ad6b.jpg)*Illustration 1: Changing
-the scope for a portlet *
+![Changing the scope for a portlet](../../images/05-changing-portlet-scope.png)*Illustration 1: Changing the scope for a portlet*
 
-\
-\
-That's all it takes to change the scope for a particular portlet
-instance. By setting the scope to *page*, you can add as many of these
-portlets to a particular community or organization as you want, provided
-they all are added to different pages.
+That's all it takes to change the scope for a particular portlet instance. By setting the scope to *Current Page*, you can add as many of these portlets to a particular community or organization as you want, provided they all are added to different pages.
 
 ## Archived Setups
 
-Another useful feature in Liferay's portlets is Archived Setups. This
-means that once you configure a portlet, you can save those settings in
-an “archive” that the portal will save for you. If someone goes in and
-changes the settings of a particular portlet, it then becomes easy to
-revert those changes back to the original, archived configuration.
+Another useful feature of Liferay's portlets is Archived Setups. Once you have configured a portlet, Archived Setups enable you can save those settings in an “archive”. If someone goes in and changes the settings of a particular portlet, it then becomes easy to revert those changes back to the original, archived configuration.
 
-To create an archived setup, click the *Configuration* option from the
-menu in the portlet's title bar. If the current settings of the portlet
-you are configuring are the ones you want to archive, click the
-*Archived* tab. If not, change and save the settings until you have the
-portlet configured the way you want it, and then click the *Archived*
-tab.
+To create an archived setup, click the *Configuration* option from the menu in the portlet's title bar. If the current settings of the portlet you are configuring are the ones you want to archive, click the *Archive/Restore Setup* link. If not, change and save the settings until you have the portlet configured the way you want it, and then click the *Archive/Restore Setup* link.
 
-There is only one field to fill out: a name for your archive. Create a
-name for your archive and click *Save*. You will now see your archive in
-the list. If for whatever reason you need to revert the portlet to these
-archived settings, you can click *Actions → Restore* next to the
-archived setup you want to restore.
+There is only one field to fill out: a name for your archive. Create a name for your archive and click *Save*. You should now see your archive in the list. If for whatever reason you need to revert the portlet to these archived settings, you can click *Actions → Restore* next to the archived setup you want to restore.
 
-Unless otherwise noted, all of the portlets in this chapter support this
-feature. This is particularly useful for portlets that have a lot of
-configuration options, such as the Message Boards portlet.
+Unless otherwise noted, all of the portlets in this chapter support this feature. This is particularly useful for portlets that have a lot of configuration options, such as the Message Boards portlet.
 
 ## Permissions
 
-All of Liferay's portlets support Liferay's robust, fine-grained
-permissions system. Some higher level permissions can be configured
-here: whether a role can add the portlet to a page, can configure the
-portlet, or whether the role can view the portlet. To set these
-permissions, go to the *Configuration* menu and click on *Permissions*.
-This will show you a table of roles defined in the portal. Select which
-roles are allowed to see the portlet and which roles are allowed to
-configure the portlet, and then click *Submit*.
+All of Liferay's portlets support Liferay's robust, fine-grained permissions system. Some higher level permissions can be configured here: whether a role can add the portlet to a page, can configure the portlet, or whether the role can view the portlet. To set these permissions, go to the *Configuration* menu and click on *Permissions*. This will show you a table of roles defined in the portal. Select which roles you want to be able to perfom the various actions. Click *Submit* after you have made your selections.
 
 ## Sharing
 
-The web was once thought of as a number of islands of applications in a
-vast universe of “cyberspace.” Everybody tried to make their island the
-biggest. Some succeeded and some failed. More recently, the concept of
-the web as an application itself has taken hold, and so widgets have
-become very popular nowadays. This concept is part of the “Web 2.0”
-concept and is very much enabled by widgets. So what is a widget? A
-widget is a small piece of code which provides a piece of functionality,
-can be included on any web site, but does not necessarily have to be
-hosted by that web site. If you have ever embedded a YouTube video on
-your own web site so that users could watch a video without actually
-having to visit [http://youtube.com](http://youtube.com/), then you have
-already used a widget.
+The web was once thought of as a number of islands of applications in a vast universe of “cyberspace.” Many web sites tried to make their island the biggest. Some succeeded and some failed. More recently, the concept of the web as an application itself has taken hold, and so widgets have become very popular nowadays. This concept is part of the “Web 2.0” concept and is very much enabled by widgets. So what is a widget? A widget is a small piece of code which provides a piece of functionality, can be included on any web site, but does not necessarily have to be hosted by that web site. If you have ever embedded a YouTube video on your own web site so that users could watch a video without actually having to visit [http://youtube.com](http://youtube.com/), then you have already used a widget.
 
-Liferay supports serving its portlets as widgets. You can embed a
-particular instance of a portlet running on your site into another site,
-such as Facebook. This opens up a whole new avenue of exposure to your
-web site that you would not otherwise have had. In fact, this is how all
-those Facebook games work.
+Liferay supports serving its portlets as widgets. You can embed a particular instance of a portlet running on your site into another site, such as Facebook. This opens up a whole new avenue of exposure to your web site that you would not otherwise have had. In fact, this is how all those Facebook games work.
 
-To share one of your portlets as a widget, go to the *Configuration*
-option in the menu in the portlet's title bar. Then click the *Sharing*
-tab. There are five subtabs under sharing: Any Web Site, Facebook,
-Google Gadget, Netvibes, and Friends.
+To share one of your portlets as a widget, go to the *Configuration* option in the menu in the portlet's title bar. Then click the *Sharing* tab. There are five subtabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and Friends.
 
 ### Any Web Site
 
-Copy and paste the snippet of code into the web site to which you want
-to add the portlet as a widget. That's all you need to do. When a user
-loads the page on the other web site, the code will pull the relevant
-portlet from your site and display it.
+Copy and paste the provided snippet of code into the web site to which you want to add the portlet as a widget. That's all you need to do. When a user loads the page on the other web site, the code will pull the relevant portlet from your site and display it.
 
 ### Facebook
 
-You can add any Liferay portlet as an application on Facebook. To do
-this, you must first get a developer key. A link for doing this is
-provided to you in the Facebook tab. You will have to create the
-application on Facebook and get the key and canvas page URL from
-Facebook. Once you have done this, you can copy and paste their values
-into the Facebook tab. Your portlet will now be available on Facebook as
-a Facebook application.
+You can add any Liferay portlet as an application on Facebook. To do this, you must first get a developer key. A link for doing this is provided to you in the Facebook tab. You will have to create the application on Facebook and get the key and canvas page URL from Facebook. Once you have done this, you can copy and paste their values into the Facebook tab. Your portlet will now be available on Facebook as a Facebook application.
 
-### 
-
-![image](../../images/portal-admin-ch5_html_m435d3961.png)\
-*Illustration 2: Liferay's forums in Facebook*
+![Liferay's Forums on Facebook](../../images/portal-admin-ch5_html_m435d3961.png)*Illustration 2: Liferay's Forums on Facebook*
 
 ### Google Gadget
 
-iGoogle is service provided by Google that lets users create a
-customizable page and add *Gadgets * to that page. Liferay can serve up
-portlets to be used as Google Gadgets on an iGoogle page.
+iGoogle is a service provided by Google that lets users create a customizable page and add *Gadgets* to that page. Liferay can serve up portlets to be used as Google Gadgets on an iGoogle page.
 
-Check the box labeled *Allow users to add [portlet-name] to iGoogle*.
-Copy and paste the URL provided into Google's *Add a feed or gadget*
-feature on the iGoogle configuration page, and Liferay will serve that
-portlet directly onto your iGoogle page. The URL provided is unique to
-the specific instance of the portlet, so you could serve multiple
-instances of the same portlet as different Google Gadgets.
+Check the box labeled *Allow users to add [portlet-name] to iGoogle*. Copy and paste the URL provided into Google's *Add a feed or gadget* feature on the iGoogle configuration page, and Liferay will serve that portlet directly onto your iGoogle page. The URL provided is unique to the specific instance of the portlet, so you could serve multiple instances of the same portlet as different Google Gadgets.
 
-This feature could be useful to allow users to view what's happening on
-your portal at a glance, with asset publishers or custom RSS feeds. You
-could also use Liferay's API to build your own portlet and provide the
-URL for users to place on their iGoogle pages.
+This feature could be useful to allow users to view what's happening on your portal at a glance, with asset publishers or custom RSS feeds. You could also use Liferay's API to build your own portlet and provide the URL for users to place on their iGoogle pages.
 
 ### Netvibes
 
-Netvibes offers a similar service to iGoogle – users can log in, create
-their own personal portal, called a *dashboard,* and add customizable
-widgets to the dashboard that they create. To set up Netvibes support
-for a particular portlet, check the *Allow users to add [portlet-name]
-to Netvibes pages *box. You can then use the provided URL to create a
-custom Netvibes widget based on the instance of the portlet that you're
-using.
+Netvibes offers a similar service to iGoogle – users can log in, create their own personal portal, called a *dashboard*, and add customizable widgets to the dashboard that they create. To set up Netvibes support for a particular portlet, check the *Allow users to add [portlet-name] to Netvibes pages* box. You can then use the provided URL to create a custom Netvibes widget based on the instance of the portlet that you're using.
 
 ### Friends
 
-The final sub-tab in the *Sharing* tab is called *Friends*. This tab has
-a single check box that allows you to give your friends permission to
-add the application as a widget to another web site. This could be
-particularly useful for your blog or your calendar if you wish to share
-them.
+The final sub-tab in the *Sharing* tab is called *Friends*. This tab has a single check box that allows you to give your friends permission to add the application as a widget to another web site. This could be particularly useful for your blog or your calendar if you wish to share them.
 
 ## Blogs
 
-The word *Blog* is an apostrophe-less contraction of the two words *web
-log*. Blogs were first popularized by web sites such as Slashdot
-([http://slashdot.org](http://slashdot.org/)) which have the format of a
-running list of entries to which users could attach comments. Over time,
-more and more sites such as Digg, del.icio.us, and Newsvine adopted the
-format, empowering users to share their opinions and generating lively
-discussions.
+The word *Blog* is an apostrophe-less contraction of the two words *web* and *log*. Blogs were first popularized by web sites such as Slashdot ([http://slashdot.org](http://slashdot.org/)) which have the format of a running list of entries to which users could attach comments. Over time, more and more sites such as Digg, delicious, and Newsvine adopted the format, empowering users to share their opinions and generating lively discussions.
 
-Over the course of time, blogging sites and applications began to
-appear, such as blogger.com, blogspot.com. TypePad, WordPress, and Web
-Roller. These applications allow *individuals* to run their own web
-sites in the same format: a running list of short articles to which
-readers who are registered with the site can attach threaded comments.
-People who run a blog are called *bloggers*, and sometimes they build a
-whole community of readers who are interested in their blog posts.
-Additionally, there are several famous people who run their own blogs.
-It gives people an outlet for self-expression which they would not
-otherwise have, and the ubiquity and wide reach of the Internet ensures
-that if you have something important and interesting to say, somebody
-will read it.
+Over the course of time, blogging sites and applications began to appear, such as blogger.com, blogspot.com. TypePad, WordPress, and Web Roller. These applications allow *individuals* to run their own web sites in the same format: a running list of short articles to which readers who are registered with the site can attach threaded comments. People who run a blog are called *bloggers*, and sometimes they build a whole community of readers who are interested in their blog posts. Additionally, there are several famous people who run their own blogs. It gives people an outlet for self-expression which they would not otherwise have, and the ubiquity and wide reach of the Internet ensures that if you have something important and interesting to say, somebody will read it.
 
-![image](../../images/portal-admin-ch5_html_6847c073.jpg)*Illustration 3: Slashdot,
-one of the first blogs on the Internet *
+![image](../../images/05-slashdot.jpg)*Illustration 3: Slashdot, one of the first blogs on the Internet*
 
-Liferay Portal has a portlet called the Blogs portlet which allows you
-to provide a blogging service to users of your web site. In fact,
-Liferay extensively uses the Blogs portlet on
-[http://www.liferay.com](http://www.liferay.com/) to provide employees
-with blogs of their own. In addition to the Blogs portlet, there is also
-a** Blogs Aggregator** portlet which can take entries from multiple
-users' blogs and put them all in one larger list. We will go over how to
-use both of these portlets to create a blogging site for your users.
+Liferay Portal has a portlet called the Blogs portlet which allows you to provide a blogging service to users of your web site. In fact, Liferay extensively uses the Blogs portlet on [http://www.liferay.com](http://www.liferay.com/) to provide employees with blogs of their own. In addition to the Blogs portlet, there is also a Blogs Aggregator portlet which can take entries from multiple users' blogs and put them all in one larger list. We will go over how to use both of these portlets to create a blogging site for your users.
+
 ### The Blogs Portlet
 
-![image](../../images/portal-admin-ch5_html_m5350d888.jpg)*Illustration 4: Initial
-view of the Blogs portlet *
+![image](../../images/portal-admin-ch5_html_m5350d888.jpg)*Illustration 4: Initial view of the Blogs portlet*
 
-The Blogs portlet is available from the *Collaboration* section of the
-*Add **→** More* menu. You will notice that it is an Instanceable
-portlet, meaning that it can only be added once to any community or
-organization. This allows you to use the Blogs portlet to create a
-shared blog to build a site like Slashdot or to create multiple personal
-blogs to build a site like [http://blogger.com](http://blogger.com/).
-What's the difference? Adding the Blogs portlet to a Community or
-Organization page creates a shared blog for members of the Community or
-Organization. Adding the Blogs portlet to a user's personal space
-creates a blog for just that user. Either way, the Blogs portlet works
-the same. And of course, you can change the Blog portlet's scope to have
-different blogs on different pages in the same community.
-By default, the Blogs portlet will display the latest entry in its
-entirety. Since we have just added the portlet to a page, we have no
-entries, so the portlet will be empty. Before we start adding entries,
-we'll configure the portlet so that it displays entries according to our
-specifications.
+The Blogs portlet is available from the *Collaboration* section of the *Add → More* menu. You will notice that it is an instanceable portlet, meaning that it can only be added once to a site. This allows you to use the Blogs portlet to create a shared blog to build a site like Slashdot or to create multiple personal blogs to build a site like [http://blogger.com](http://blogger.com/). What's the difference? Adding the Blogs portlet to a site page creates a shared blog for members of the site that the page belongs to. Adding the Blogs portlet to a user's personal site creates a blog for just that user. The Blogs portlet works the same way in both cases. And of course, you can change the Blog portlet's scope to have different blogs on different pages in the same site. By default, the Blogs portlet will display the latest entry in its entirety. Since we have just added the portlet to a page, we have no entries, so the portlet will be empty. Before we start adding entries, we'll configure the portlet so that it displays entries according to our specifications.
 
 #### Configuring the Blogs Portlet
 
-The Blogs portlet is easy to configure. Click on the *Menu* icon in the
-portlet's title bar and select *Configuration*. Beneath the Setup tab,
-you will see another row of options.
+The Blogs portlet is easy to configure. Click on the *Menu* icon in the portlet's title bar and select *Configuration*. Beneath the Setup tab, you will see another row of options.
 
-**Email From: **Selecting the *Email From tab* allows you to define the
-*From:* field in the email messages that users receive from the Blogs
-portlet.
+**Email From**: Selecting this tab allows you to define the *From* field in the email messages that users receive from the Blogs portlet.
 
-**Entry Added Email: **This option allows you to enter a subject and
-body of the emails sent out when a new Blog entry has been added.
+**Entry Added Email**: This tab allows you to enter a subject and body of the emails sent out when a new Blog entry has been added.
 
-**Entry Updated Email:** This option allows you to enter a subject and
-body of the emails sent out when a new Blog entry has been updated.
+**Entry Updated Email**: This tab allows you to enter a subject and body of the emails sent out when a new Blog entry has been updated.
 
-**Display Settings: ** Here, you can configure the various display
-options for the Blogs portlet.
+**Display Settings**: Here, you can configure various display options for the Blogs portlet. You should think about the best way to display your entries as well as how you want your users to interact with bloggers.
 
-![image](../../images/portal-admin-ch5_html_m1aaf3fd4.png)*Illustration 5: Blogs
-Configuration*
+![image](../../images/05-blogs-configuration.png)*Illustration 5: Blogs Configuration*
 
-The *Display Settings* tab lets you configure the formatting of the
-Blogs portlet. You can choose the most optimal ways to display your
-entries as well as configure how you want your users to interact with
-you as you post those entries.
-**Maximum Items to Display:** This allows you to choose the total number
-of blog entries to display on the initial page. You can choose up to 100
-to be displayed.
+*Maximum Items to Display*: This allows you to choose the total number of blog entries to display on the initial page. You can choose up to 100 to be displayed.
 
-**Display Style:** Choose between Full Content, the Abstract, or just
-the Title. Setting this to Abstract causes Liferay to display only the
-first 30 words of your blog entries, with a Read More link at the bottom
-of each to allow users to read the whole entry if they wish.
+*Display Style*: Choose between Full Content, the Abstract, or just the Title. Setting this to Abstract causes Liferay to display only the first 30 words of your blog entries, with a Read More link at the bottom of each to allow users to read the whole entry if they wish.
 
-**Enable Flags: **Allow users to flag content as inappropriate and send
-an email to the administrators.
+*Enable Flags*: Allows users to flag content as inappropriate and send an email to the administrators.
 
-**Enable Ratings:** Allows you to enable your users to rate your blog
-entries from one to five stars.
+*Enable Related Assets*: Allows bloggers to select related content from other portlets to pull into their blog entry for readers to view.
 
-**Enable Comments:** Allows readers to comment on your blog entries.
+[related assets](../../images/05-related-assets.png)*Illustration 6: Related Assets*
 
-**Enable Comment Ratings:** Allows readers to rate the comments which
-are posted to your blog entries.
+*Enable Ratings*: Allows you to enable your users to rate your blog entries from one to five stars.
 
-Click on the *RSS* tab to configure the way in which blogs will display
-to RSS readers. Here, you can choose how you want your blog entries to
-be published to feed readers and outside web sites.
+*Enable Comments*: Allows readers to comment on your blog entries.
 
-**Maximum Items to Display:** Allows you to determine how many blog
-entries will be displayed at once. The default is set to twenty.
+*Enable Comment Ratings*: Allows readers to rate the comments which are posted to your blog entries.
 
-**Display Style**: You can select to display the full content,
-abstracts, or title of your blogs.
+*Enable Social Bookmarks*: Allows users to Tweet, Facebook like, or +1 on Google Plus about blog posts.
 
-**Format: **You can choose which format you want to deliver your blogs:
-RSS 1.0, RSS 2.0, or Atom 1.0.
+*Maximum Items to Display*: Allows you to determine how many blog entries will be displayed at once. The default is set to twenty.
+
+*Display Style*: You can select a simple, vertical, or horizontal display style for your blog posts.
+
+*Display Position*: You can choose a top or a bottom position for your blog posts.
+
+**RSS**: The RSS tab allows you to configure the way in which blogs will display to RSS readers. Here, you can choose how you want your blog entries to be published to feed readers and outside web sites.
+
+*Maximum Items to Display*: This allows you to choose the total number of RSS feeds to display on the initial page. You can choose up to 100 to be displayed.
+
+*Display Style*: You can choose between Full Content, Abstract, and Title. These options work just like the ones above for blog entries.
+
+*Format*: You can choose which format you want to deliver your blogs: RSS 1.0, RSS 2.0, or Atom 1.0.
 
 #### Permissions
 
-Depending on whether this is a personal blog or a shared blog, you may
-want to modify the permissions on the blog. By default, the permissions
-are set up for a personal blog, so only the owner of the community to
-which the portlet has been added will be able to add entries. If you
-want to share a blog with multiple users, it is easy to do.
+Depending on whether this is a personal blog or a shared blog, you may want to modify the permissions on the blog. By default, the permissions are set up for a personal blog, so only the owner of the site to which the portlet has been added will be able to add entries. If you want to share a blog with multiple users, it is easy to do.
 
-First, create a role for your bloggers and add them to the role. Next,
-click the *Permissions* button on the Blogs portlet. You will now see a
-list of both portal and Community / Organization roles, and currently
-only the owner is checked. Check off any other role or team that should
-have the ability to add blog entries, and then click *Save*.
+First, create a role for your bloggers and add them to the role. Next, click the *Permissions* button on the Blogs portlet. You will now see a list of both portal and site roles, and currently only the owner is checked. Check off any other role or team that should have the ability to add blog entries, and then click *Save*.
 
 #### Adding Blog Entries
 
-Now you're ready to begin adding blog entries. Click the *Add Blog
-Entry* button. You will see the following data entry screen:
+Now you're ready to begin adding blog entries. Click the *Add Blog Entry* button. You will see the following data entry screen:
 
-![image](../../images/portal-admin-ch5_html_m7930fe68.jpg)*Illustration 6: Adding a
-Blog entry*
+![Adding a Blog entry](../../images/05-new-blog-entry.png)*Illustration 6: Adding a Blog entry*
 
-There isn't much difference between this screen and any other data entry
-screen within Liferay Portal. You get a title, a way of scheduling when
-the entry is to appear, and a rich editor that allows you to format your
-entry the way you want, complete with embedded images, videos, and the
-like.
-Note also that as you type, the entry is automatically saved as a draft
-at periodic intervals. This gives you peace of mind in using the portlet
-from within your browser, since you won't lose your entry in the event
-of a browser crash or network interruption. You can also tag your
-entries using the same tagging mechanism found everywhere else in the
-portal.
+There isn't much difference between this screen and any other data entry screen within Liferay Portal. You get a title, a way of scheduling when the entry is to appear, and a rich editor that allows you to format your entry the way you want, complete with embedded images, videos, and the like. Note also that as you type, the entry is automatically saved as a draft at periodic intervals. This gives you peace of mind in using the portlet from within your browser, since you won't lose your entry in the event of a browser crash or network interruption. You can also tag your entries using the same tagging mechanism found everywhere else in the portal.
 
-The Blogs portlet also supports trackbacks and pingbacks. Trackbacks are
-special links that let you or another site know if you or if someone
-else linked to a blog entry. For example, if you wanted to write an
-entry in your blog and reference someone else's entry, you might put the
-URL to the other entry in the **Trackbacks to Send** field. Similarly,
-if you want others who link to your blog to let you know about the link
-via trackbacks, leave the **Allow Trackbacks** box checked. This will
-generate a URL that is displayed with your blog entry. Others who want
-to link to your entry can use this URL for the link, and every time the
-link is clicked on, your Liferay-powered site will know about it and
-will be able to keep track of the clicks.
+The Blogs portlet also supports trackbacks and pingbacks. Trackbacks are special links that let you or another site know if you or if someone else linked to a blog entry. For example, if you wanted to write an entry in your blog and reference someone else's entry, you might put the URL to the other entry in the **Trackbacks to Send** field. Similarly, if you want others who link to your blog to let you know about the link via trackbacks, leave the **Allow Trackbacks** box checked. This will generate a URL that is displayed with your blog entry. Others who want to link to your entry can use this URL for the link, and every time the link is clicked on, your Liferay-powered site will know about it and will be able to keep track of the clicks.
 
-Note that trackbacks only work when the protocol is supported by both
-the linker and the linkee. For this reason, the Blogs portlet also
-supports pingbacks. Pingbacks are XML-RPC requests that are similar to
-trackbacks except they are automatically sent when you link to another
-site. So if you link to another site in your blog entry, Liferay will
-send a pingback to that site to notify that site that you linked to it.
-Similarly, if someone links to your blog entry, Liferay can receive a
-pingback from that person's site and record the link.
+Note that trackbacks only work when the protocol is supported by both the linker and the linkee. For this reason, the Blogs portlet also supports pingbacks. Pingbacks are XML-RPC requests that are similar to trackbacks except they are automatically sent when you link to another site. So if you link to another site in your blog entry, Liferay will send a pingback to that site to notify that site that you linked to it. Similarly, if someone links to your blog entry, Liferay can receive a pingback from that person's site and record the link.
 
-Once you have finished your blog entry, click *Publish*. You'll go back
-to the list of entries, and now your entry is displayed. Here is what it
-looks like when the display style is set to *Abstract* and the number of
-entries is set to 10:
+You can enter a description of your post beneath the Abstract heading. You can also tag your entry beneath the Categorization heading or attach to a piece of portal content to be displayed along with your post beneath the Related Assets heading.
 
-![image](../../images/portal-admin-ch5_html_m27a1d62c.jpg)*Illustration 7: First blog
-entry added *
+Once you have finished your blog entry, click *Publish*. You'll go back to the list of entries, and now your entry is displayed. Here is what it looks like when the display style is set to *Abstract* and the number of entries is set to 10:
 
-You can see that in the summary view, you don't see the trackback /
-pingback link, and you only see the number of comments which have been
-added. If you were to click the *Read More* link, you would see the
-entirety of the article, all of the comments in a threaded view, and the
-trackback / pingback link which others can use to link back to your blog
-entry.
-Additionally, the full view of a blog contains convenient links to add
-blog entries to popular aggregating sites such as Digg, del.icio.us, and
-others. This gives your readers an easy way to submit your blog entries
-to these aggregators, potentially driving further traffic to your site.
+![First blog entry added](../../images/05-first-blog-entry-added)*Illustration 7: First blog entry added*
 
-As you can see, the Blogs portlet is a full-featured blogging
-application which gives you and your users the ability to enter the
-blogosphere with an application that supports anything a blogger needs.
+You can see that in the summary view, you don't see the trackback/pingback link, and you only see the number of comments which have been added. If you were to click the *Read More* link, you would see the entirety of the article, all of the comments in a threaded view, and the trackback / pingback link which others can use to link back to your blog entry.
+
+Additionally, the full view of a blog contains convenient links to add blog entries to popular aggregating sites such as Digg, delicious, and others. This gives your readers an easy way to submit your blog entries to these aggregators, potentially driving further traffic to your site. As you can see, the Blogs portlet is a full-featured blogging application which gives you and your users the ability to enter the blogosphere with an application that supports anything a blogger needs.
 
 ### Aggregating Blog Entries
 
-You can set up a whole web site devoted just to blogging if you wish.
-The Blogs Aggregator portlet allows you to publish entries from multiple
-bloggers on one page, giving further visibility to blog entries. This
-portlet is also very easy and straightforward to set up. You can add it
-to a page from the Collaboration category in the *Add **→** More* menu
-in the dock.
+You can set up a whole web site devoted just to blogging if you wish. The Blogs Aggregator portlet allows you to publish entries from multiple bloggers on one page, giving further visibility to blog entries. This portlet is also very easy and straightforward to set up. You can add it to a page from the Collaboration category in the dockbar's *Add → More* menu.
 
-If you click *Configuration* from the menu button in the title bar of
-the portlet, you will see the Blogs Aggregator's configuration page.
-From here, you can set several configuration options.
+If you click *Configuration* from the menu button in the title bar of the portlet, you will see the Blogs Aggregator's configuration page. From here, you can set several configuration options.
 
-![image](../../images/portal-admin-ch5_html_bbaa84e.jpg)*Illustration 8: Blogs
-Aggregator Configuration*
+![Blogs Aggregator Configuration](../../images/05-blogs-aggregator-configuration.png)*Illustration 8: Blogs Aggregator Configuration*
 
-**Selection Method:** You can select Users or Scope here. If you select
-Users, the Blogs Aggregator will aggregate the entries of every blogger
-on your system. If you want to refine the aggregation, you can select an
-Organization by which to filter the users. If you select Scope, the
-Blogs Aggregator will contain only entries of users who are in the
-current scope. This will, in essence, limit the entries to members of
-the Community or Organization upon which the Blogs Aggregator portlet
-resides.
-**Organization:** Allows you to determine which organization's blogs you
-want to aggregate.
+**Selection Method:** You can select Users or Scope here. If you select Users, the Blogs Aggregator will aggregate the entries of every blogger on your system. If you want to refine the aggregation, you can select an Organization by which to filter the users. If you select Scope, the Blogs Aggregator will contain only entries of users who are in the current scope. This will, in essence, limit the entries to members of the site where the Blogs Aggregator portlet resides.
 
-**Display Style:** Just like the Blogs portlet, you can select from
-several different styles for displaying blog entries.
+**Organization:** Allows you to select which organization's blogs you want to aggregate.
 
-**Maximum Items to Display:** Select maximum number of entries the
-portlet will display.
+**Display Style:** You can select from several different styles for displaying blog entries based on what information from blogs you would like the aggregator to display: title, abstract, body, image, quote.
 
-**Enable RSS Subscription:** The aggregated entries can themselves be an
-RSS feed. Leave this box selected if you want people to be able to
-subscribe to your aggregated blog entries.
+**Maximum Items to Display:** Select maximum number of entries the portlet will display.
 
-**Show Tags:** This option will display all the tags associated with the
-blogs.
+**Enable RSS Subscription:** The aggregated entries can themselves be an RSS feed. Leave this box selected if you want people to be able to subscribe to your aggregated blog entries.
 
-When you have finished setting the options in the portlet, click *Save*.
-Then click *Return to Full Page*.
+**Show Tags:** This option will display all the tags associated with the blogs.
 
-As you will see, the Blogs Aggregator looks very much like the Blogs
-portlet, except that the entries come from more than one author.
+When you have finished setting the options in the portlet, click *Save*. Then click *Return to Full Page*. As you will see, the Blogs Aggregator looks very much like the Blogs portlet, except that the entries come from more than one author.
 
 ## Calendar
 
-Liferay's Calendar portlet is a complete calendaring solution. You can
-schedule any number of events of different types, receive alarms via
-email or text message, import and export your calendar, and much more.
-Additionally, you can import and export the calendar to the popular
-iCalendar format for use in other applications.
+Liferay's Calendar portlet is a complete calendaring solution. You can schedule any number of events of different types, receive alarms via email or text message, import and export your calendar, and much more. Additionally, you can import and export the calendar to the popular iCalendar format for use in other applications.
 
-In a similar way to the Blogs portlet, you can use the Calendar portlet
-as a shared calendar on a community or organization's web site, or you
-can use the Calendar portlet as a personal calendar—or both.
+In a similar way to the Blogs portlet, you can use the Calendar portlet as a shared calendar on a community or organization's web site, or you can use the Calendar portlet as a personal calendar—or both.
 
-### 
+![The Liferay Calendar Portlet](../../images/05-calendar-portlet)*Illustration 9: The Liferay Calendar Portlet*
 
-![image](../../images/portal-admin-ch5_html_m227004cd.jpg)*Illustration 9: The
-Liferay Calendar Portlet*
+### Configuring the Calendar Portlet
 
-Configuring the Calendar Portlet
-Go to the *Configuration* option from the menu in the portlet's title
-bar. You have three tabs there which allow you to configure three
-different options: **Email From**, **Event Reminder Email,** and
-**Display Settings**.
+Go to the *Configuration* option from the menu in the portlet's title bar. You have three tabs there which allow you to configure three different options: **Email From**, **Event Reminder Email**, and **Display Settings**.
 
 #### Email From
 
-In this tab, you can set the **Name** and **Email** **Address** that
-will display in system generated reminder emails. The address that you
-enter in the Email Address field must be properly formatted, but it does
-not need to be an address that actually exists. This can work well in
-conjunction with mail rules in your email client that can operate on
-these messages. By default, the name is set to Joe Bloggs and the email
-address is set to test@liferay.com.
+In this tab, you can set the **Name** and **Email Address** that will display in system generated reminder emails. The address that you enter in the Email Address field must be properly formatted, but it does not need to be an address that actually exists. This can work well in conjunction with mail rules in your email client that can operate on these messages. By default, the name is set to Joe Bloggs and the email address is set to test@liferay.com.
 
 #### Event Reminder Email
 
-This tab lets you customize the email message that you receive from the
-portlet when you have an event for which you have configured a reminder.
-It contains the same rich text editor that you see everywhere else in
-Liferay, and this allows you to format your message so that you will be
-able to easily recognize it. Additionally, there are several variables
-which allow you to insert runtime values into the message, and these are
-listed underneath the text editor so that you can use them in the
-appropriate place in your template. For example, you might want the
-event start date and time and the event title included in the email
-reminder that you receive. Inserting the variables that correspond with
-those values into your template will allow you to do that.
+This tab lets you customize the email message that you receive from the portlet when you have an event for which you have configured a reminder. It contains the same rich text editor that you see everywhere else in Liferay, and this allows you to format your message so that you will be able to easily recognize it. Additionally, there are several variables which allow you to insert runtime values into the message, and these are listed underneath the text editor so that you can use them in the appropriate place in your template. For example, you might want the event start date and time and the event title included in the email reminder that you receive. Inserting the variables that correspond with those values into your template will allow you to do that.
 
 #### Display Settings
 
-Display Settings for the calendar allows you to define which tab in the
-calendar is the default when the portlet is first displayed. By default,
-the summary tab is displayed, but you may want the daily, weekly, or
-monthly view to be the default.
+Display Settings for the calendar allows you to define which tab in the calendar is the default when the portlet is first displayed. By default, the summary tab is displayed, but you may want the daily, weekly, or monthly view to be the default.
 
-There are additional settings for the summary tab: you can select
-whether it has a horizontal or vertical layout, select whether it shows
-a mini month, select whether it shows today's events, or select to
-enable comments.
+There are additional settings for the summary tab: you can select whether it has a horizontal or vertical layout, select whether it shows a mini month, select whether it shows today's events, or select to enable related assets, comments, or ratings.
 
 ### Using the Calendar Portlet
 
-The Calendar portlet generally works the way you would expect a calendar
-to work. It inherits its interface from the rest of Liferay's portlet
-library, so you should find common tasks in the same place that you find
-them in other Liferay portlets.
+The Calendar portlet generally works the way you would expect a calendar to work. It inherits its interface from the rest of Liferay's portlet library, so you should find common tasks in the same place that you find them in other Liferay portlets.
 
-To get started, you may want to click the *Permissions* button. Here you
-can find a list of roles with check boxes denoting whether the role has
-the *Add Event* or the *Export All Events* permission. By default, only
-the owner has permissions to do these things, which means that, by
-default, the Calendar portlet is set up to be used in one's personal
-space. Out of the box, Liferay defaults to putting a Calendar portlet on
-all users' private pages, so this is expected. If you are going to be
-using the Calendar as a shared calendar, you may want to modify some
-things here.
+To get started, you may want to click the *Permissions* button. Here you can find a list of roles with check boxes denoting whether the role has the *Add Event* or the *Export All Events* permission. By default, only the owner has permissions to do these things, which means that, by default, the Calendar portlet is set up to be used in one's personal space. Out of the box, Liferay defaults to putting a Calendar portlet on all users' private pages, so this is expected. If you are going to be using the Calendar as a shared calendar, you may want to modify some settings here.
 
-First, create a portal, community, or organization role and add the
-users to whom you wish to grant access to the calendar to the role. Then
-come back to the Calendar portlet and click the *Permissions* button.
-Check the boxes next to the role(s) that should have access to one or
-both of the functions (*Add Event* or *Export All Events*). Then click
-*Submit*.
+First, create a portal or site role. Then add the users who will be using the calendar to the role. Then come back to the Calendar portlet and click the *Permissions* button. Check the boxes next to the role(s) that should have access to one or both of the functions (*Add Event* or *Export All Events*). Then click *Submit*.
 
-Now you are ready to begin using your calendar. Click the *Add Event*
-button. You will see a form that allows you to fill out all the
-information for your event.
+Now you are ready to begin using your calendar. Click the *Add Event* button. You will see a form that allows you to fill out all the information for your event.
 
-**Start Date/Time:** The date and time the event starts.
+**Start Date/Time**: The date and time the event starts.
 
-**Duration:** How long the event will last.
+**Duration**: How long the event will last.
 
-**All Day Event:** Check this box to disassociate time from the event
-and make it last all day.
+**All Day Event**: Check this box to disassociate time from the event and make it last all day.
 
-**Time Zone Sensitive:** Leave this box checked to make sure that the
-portal keeps track of the event regardless of time zone.
+**Time Zone Sensitive**: Leave this box checked to make sure that the portal keeps track of the event regardless of time zone.
 
-**Title:** The title of the event.
+**Title**: The title of the event.
 
-**Description:** A description of the event.
+**Description**: A description of the event.
 
-**Type:** Select from a number of pre-configured event types. You can
-change these in the `portal-`{.western}`ext.properties`{.western} file.
+**Location**: The physical location of the event.
 
-**Permissions:** Determine who can view and edit the event.
+**Type**: Select from a number of pre-configured event types. You can change these in the *portal-ext.properties* file.
 
-**Repeat:** If the event repeats on a schedule, select the schedule
-(daily, weekly, monthly. etc.)
+**Permissions**: Determine who can view and edit the event.
 
-**End Date:** If the event repeats on a schedule but there is an end to
-the set of meetings, enter the end date.
+**Categorizations**: Allows you tag the event.
 
-**Reminders:** Select whether to send a reminder, how long before the
-event to send it, and through what medium (email, SMS text message, or
-instant message) to send it. Note that this feature is integrated with
-your profile on the portal, so you will need to fill out your mobile
-phone number and / or instant messenger IDs in order to use those
-features.
+**Related Assets**: Allows you to attach a piece of content from another portlet to the event.
 
-When you have finished adding your event, click *Save*.
+**Repeat**: If the event repeats on a schedule, select the schedule (daily, weekly, monthly. etc.)
 
-You can view calendar events by day, week, month, year, or in a simple
-list.
+**End Date**: If the event repeats on a schedule but there is an end to the set of meetings, enter the end date.
+
+**Reminders**: Select whether to send a reminder, how long before the event to send it, and through what medium (email, SMS text message, or instant message) to send it. Note that this feature is integrated with your profile on the portal, so you will need to fill out your mobile phone number and / or instant messenger IDs in order to use those features.
+
+When you have finished adding your event, click *Save*. You can view calendar events by day, week, month, year, or in a simple list.
 
 ## Chat
 
-Liferay's Chat portlet gives you a convenient way of allowing your users
-to send each other instant messages when they are logged into your web
-site. It appears as a bar at the bottom of every page, showing who is
-logged on, their statuses, and any chats the logged-in user has had
-open.
+Liferay's Chat portlet gives you a convenient way of allowing your users to send each other instant messages when they are logged into your web site. It appears as a bar at the bottom of every page, showing who is logged on, their statuses, and any chats the logged-in user has had open.
 
-![image](../../images/portal-admin-ch5_html_6ede77e.jpg)*Illustration 10: Liferay's
-Chat Portlet*
+![image](../../images/05-liferay-chat-portlet.jpg)*Illustration 10: Liferay's Chat Portlet*
 
-The Chat portlet is very simple to use. To change the settings, click
-*Settings *(found near the lower right corner next to *Online Friends)*.
-Here you can set your status, whether to show if you are online, and
-whether to play a sound if someone sends you a message while you have
-the window or tab in the background.
-The portlet shows you the number of your friends who are online. To chat
-with one of them, click the *Online Friends* link and then click the
-friend's name. You can then begin chatting with him or her. You can have
-multiple chats open at a time, and even have one or more of them
-minimized.
+The Chat portlet is very simple to use. To change the settings, click *Settings* (found near the lower right corner next to *Online Friends*). Here you can set your status, whether to show if you are online, and whether to play a sound if someone sends you a message while you have the window or tab in the background. The portlet shows you the number of your friends who are online. To chat with one of them, click the *Online Friends* link and then click the friend's name. You can then begin chatting with him or her. You can have multiple chats open at a time, and even have one or more of them minimized.
 
-The Chat portlet is distributed with the Liferay bundles, but is not
-included as part of the .war distribution, as it is a separate plugin.
-If you installed the Liferay .war manually on your application server,
-you can install the Chat portlet by going to the Control Panel, clicking
-*Plugins Installation*, and then clicking the *Install More Portlets*
-button. Find the Chat portlet in the list, click on it, and then click
-*Install*.
+The Chat portlet is distributed with the Liferay bundles, but is not included as part of the .war distribution, as it is a separate plugin. If you installed the Liferay .war manually on your application server, you can install the Chat portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the Chat portlet in the list, click on it, and then click *Install*.
 
 ## Mail
 
-Liferay's Mail portlet enables your users to interact with their email
-using an easy to use, ubiquitous web interface. If your mail system
-supports the IMAP protocol, you can use the Mail portlet to integrate
-your users' mail with the rest of your web site. You can also connect
-the Mail portlet to a mail account provided by Google.
+Liferay's Mail portlet enables your users to interact with their email using an easy to use, ubiquitous web interface. If your mail system supports the IMAP protocol, you can use the Mail portlet to integrate your users' mail with the rest of your web site. You can also connect the Mail portlet to a mail account provided by Google.
 
-The Mail portlet is distributed with the Liferay bundles, but is not
-included as part of the .war distribution, as it is a separate plugin.
-If you installed the Liferay .war manually on your application server,
-you can install the Mail portlet by going to the Control Panel, clicking
-*Plugins Installation*, and then clicking the *Install More Portlets*
-button. Find the *Mail* portlet in the list, click on it, and then click
-*Install*.
+The Mail portlet is distributed with the Liferay bundles, but is not included as part of the .war distribution, as it is a separate plugin. If you installed the Liferay .war manually on your application server, you can install the Mail portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the *Mail* portlet in the list, click on it, and then click *Install*.
 
-![image](../../images/portal-admin-ch5_html_4795fd88.png)\
-*Illustration 11: Liferay Mail portlet*
+![image](../../images/portal-admin-ch5_html_4795fd88.png)*Illustration 11: Liferay Mail portlet*
 
-\
-\
-To connect the Mail portlet with an email account, click the *Add a New
-Email Account* link. From there, you are given a choice between a Custom
-email Account or a Gmail Account. Choose the option that you wish, and
-fill out the form that appears.
+To connect the Mail portlet with an email account, click the *Add a New Email Account* link. From there, you are given a choice between a Custom email Account or a Gmail Account. Choose the option that you wish, and fill out the form that appears.
 
-For a Gmail account, all you need to do is provide your email address
-and your password, and the portlet will take care of the rest.
+For a Gmail account, all you need to do is provide your email address and your password, and the portlet will take care of the rest.
 
 For a Custom Mail Account, the following fields are necessary:
 
@@ -664,25 +316,13 @@ Transfer Protocol) server.
 
 **Outgoing Port:** The port upon which the SMTP service is running.
 
-**Use Secure Outgoing Connection:** Check this box to use an encrypted
-connection to the server, if your server supports it.
+**Use Secure Outgoing Connection:** Check this box to use an encrypted connection to the server, if your server supports it.
 
-When finished, click *Save*. Your new email account now appears as a tab
-at the top of the page along with the button for adding a mail account.
-In this way, you can add as many mail accounts as you want in order to
-view them in the portlet.
+When finished, click *Save*. Your new email account now appears as a tab at the top of the page along with the button for adding a mail account. In this way, you can add as many mail accounts as you want in order to view them in the portlet.
 
-If you click the tab for the mail account you just configured, you will
-be brought to an interface which allows you to read your mail and
-compose new messages. To read a message, click on it. To compose a new
-message, click the *Compose Email* link on the left side of the portlet.
-You will be brought to a form which allows you to compose an email
-message using the same rich text editor that appears everywhere else in
-Liferay. You can read, reply, and create messages, as well as manage all
-of your folders in Liferay's Mail portlet.
+If you click the tab for the mail account you just configured, you will be brought to an interface which allows you to read your mail and compose new messages. To read a message, click on it. To compose a new message, click the *Compose Email* link on the left side of the portlet. You will be brought to a form which allows you to compose an email message using the same rich text editor that appears everywhere else in Liferay. You can read, reply, and create messages, as well as manage all of your folders in Liferay's Mail portlet.
 
-The Mail portlet is a great way to integrate a familiar service with
-other collaboration features that Liferay provides.
+The Mail portlet is a great way to integrate a familiar service with other collaboration features that Liferay provides.
 
 ## Message Boards
 
