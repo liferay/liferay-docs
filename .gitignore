@@ -2,6 +2,7 @@
 *.bak
 *.iml
 *.swp
+*-tmp.html
 
 /*.ipr
 /*.iws

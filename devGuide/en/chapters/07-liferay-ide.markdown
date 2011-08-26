@@ -548,4 +548,5 @@ processes has been successful.
 
 ![image](../../images/07-liferay-ide_html_m593b8c8.png)
 
+## Developing on a Remote Server (new)
 

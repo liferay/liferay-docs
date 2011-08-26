@@ -332,6 +332,10 @@ meet advanced requirements:
 For a complete list of the services available and the methods of each of
 them check the javadocs distributed with your version of Liferay.
 
+## Structs Action Hook (new)
+
+## Servlet Filter Hook (new)
+
 ## Overriding a *Language.properties* File
 
 In addition to the three capabilities of hooks already discussed, it is

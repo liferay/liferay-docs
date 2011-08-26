@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-common-client">
+	<property name="project.dir" value="../.." />
+
+	<import file="../build-common-plugin.xml" />
+
+	<target name="clean">
+		<delete dir="classes" />
+		<delete file="${plugin.file}" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="classes" />
+
+		<copy todir="classes">
+			<fileset dir="src" excludes="**/*.java" />
+		</copy>
+
+		<path id="plugin-lib.classpath">
+			<pathelement location="classes" />
+		</path>
+
+		<antcall target="compile-java">
+			<param name="javac.classpathref" value="plugin.classpath" />
+			<param name="javac.destdir" value="classes" />
+			<param name="javac.srcdir" value="src" />
+			<reference refid="plugin-lib.classpath" torefid="plugin-lib.classpath" />
+		</antcall>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar
+			basedir="classes"
+			jarfile="${plugin.file}"
+		/>
+	</target>
+
+	<target name="war">
+		<antcall target="jar" />
+	</target>
+</project>
