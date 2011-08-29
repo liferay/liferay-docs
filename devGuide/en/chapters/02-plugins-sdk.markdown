@@ -10,7 +10,6 @@ Plugins SDK and a text editor, but you may use whatever tool you are
 comfortable with. In a later chapter we also introduce Liferay IDE, a
 plugin for eclipse that simplifies development for Liferay.
 
-\
 
 ![image](../../images/02-plugins-sdk_html_5c790363.png)**Tip:** If you are an Eclipse
 user and prefer to start working with it from be very beginning, you can
@@ -51,8 +50,6 @@ download the Plugins SDK from the *Additional Files* page:
 
 ./startup.sh
 
-\
-\
 
 Once Liferay starts your browser should open to
 [http://localhost:8080/](http://localhost:8080/) and you can login with
@@ -96,8 +93,6 @@ similar to this:
 
 Apache Ant(TM) version 1.8.2 compiled on December 20 2010
 
-\
-\
 
 If not, check your environment variable settings and make sure they are
 pointing to the directory where you unzipped Ant.

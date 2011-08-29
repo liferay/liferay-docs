@@ -60,7 +60,6 @@ will be able to determine from the *plugin.classpath* and
 *portal.classpath entries*which .jar files are necessary to build your
 newly created portlet project.
 
-\
 
 ![image](../../images/03-portlet-development_html_5c790363.png)**Tip:** If you are
 using a source control system such as Subversion, CVS, Mercurial, Git,
@@ -69,8 +68,7 @@ changes. After building the plugin for deployment several additional
 files will be generated that should not be handled by the source control
 system.
 
-\
-\
+
 
 ### Deploying the Portlet
 
@@ -80,7 +78,6 @@ drop a WAR file into a directory and the portal will take care of making
 any necessary changes specific to Liferay and then deploy it to the
 application server. This will be the method used throughout this guide.
 
-\
 
 ![image](../../images/03-portlet-development_html_5c790363.png)**Tip:** Liferay
 supports a wide variety of application servers. Many of them, such as
@@ -91,8 +88,6 @@ application servers, such as Websphere or Weblogic require the use of
 specific tools to deploy web applications, so Liferay's autodeploy
 process won't work for them.
 
-\
-\
 
 Open a terminal window in your *portlets/my-greeting-portlet* directory
 and enter this command:
@@ -124,8 +119,6 @@ A portlet project is made up at a minimum of three components:
 When using Liferay's Plugins SDK these files are stored in a standard
 directory structure which looks like the following:
 
-\
-\
 
 /PORTLET-NAME/
 
@@ -337,7 +330,6 @@ The security-role-ref element contains the declaration of a security
 role reference in the code of the web application. Specifically in
 Liferay, the role-name references which roles can access the portlet.
 
-\
 
 **docroot/WEB-INF/liferay-portlet.xml** - In addition to the standard
 `portlet.xml`{.western} options, there are optional Liferay-specific
@@ -423,8 +415,6 @@ footer-portlet-javascript
 The path to the .js file for this portlet, to be included at the end of
 the page before </body\>
 
-\
-\
 
 There are many more elements that you should be aware of for more
 advanced development. Please see the DTD for this file in the
@@ -456,8 +446,6 @@ replacing its current contents with the following:
 
 <portlet:defineObjects /\>
 
-\
-\
 
 <%
 
@@ -469,13 +457,9 @@ String greeting = (String)prefs.getValue(
 
 %\>
 
-\
-\
 
 <p\><%= greeting %\></p\>
 
-\
-\
 
 <portlet:renderURL var="editGreetingURL"\>
 
@@ -483,8 +467,6 @@ String greeting = (String)prefs.getValue(
 
 </portlet:renderURL\>
 
-\
-\
 
 <p\><a href="<%= editGreetingURL %\>"\>Edit greeting</a\></p\>
 
@@ -499,20 +481,14 @@ following content:
 
 <portlet:defineObjects /\>
 
-\
-\
 
 <%
 
 PortletPreferences prefs = renderRequest.getPreferences();
 
-\
-\
 
 String greeting = renderRequest.getParameter("greeting");
 
-\
-\
 
 if (greeting != null) {
 
@@ -530,8 +506,6 @@ prefs.store();
 
 %\>
 
-\
-\
 
 <%
 
@@ -541,8 +515,6 @@ greeting = (String)prefs.getValue(
 
 %\>
 
-\
-\
 
 <portlet:renderURL var="editGreetingURL"\>
 
@@ -550,8 +522,6 @@ greeting = (String)prefs.getValue(
 
 </portlet:renderURL\>
 
-\
-\
 
 <aui:form action="<%= editGreetingURL %\>" method="post"\>
 
@@ -562,8 +532,6 @@ greeting %\>" /\>
 
 </aui:form\>
 
-\
-\
 
 <portlet:renderURL var="viewGreetingURL"\>
 
@@ -571,8 +539,6 @@ greeting %\>" /\>
 
 </portlet:renderURL\>
 
-\
-\
 
 <p\><a href="<%= viewGreetingURL %\>"\>&larr; Back</a\></p\>
 
@@ -702,8 +668,6 @@ Our example above could be enhanced by creating the following class:
 
 package com.liferay.samples;
 
-\
-\
 
 import java.io.IOException;
 
@@ -717,13 +681,9 @@ import javax.portlet.PortletPreferences;
 
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
-\
-\
 
 public class MyGreetingPortlet extends MVCPortlet {
 
-\
-\
 
 @Override
 
@@ -733,18 +693,12 @@ ActionRequest actionRequest, ActionResponse actionResponse)
 
 throws IOException, PortletException {
 
-\
-\
 
 PortletPreferences prefs = actionRequest.getPreferences();
 
-\
-\
 
 String greeting = actionRequest.getParameter("greeting");
 
-\
-\
 
 if (greeting != null) {
 
@@ -752,16 +706,14 @@ prefs.setValue("greeting", greeting);
 
 prefs.store();
 
-}\
-\
+}
+
  super.processAction(actionRequest, actionResponse);
 
 }
 
 }
 
-\
-\
 
 The file portlet.xml also needs to be changed so that it points to our
 new class:
@@ -784,8 +736,6 @@ new class:
 
 …
 
-\
-\
 
 Finally, you will need to do a minor change in the *edit.jsp* file and
 change the URL to which the form is sent to let the portal know that it
@@ -823,15 +773,11 @@ the preference:
 
 <portlet:defineObjects /\>
 
-\
-\
 
 <%
 
 PortletPreferences prefs = renderRequest.getPreferences();
 
-\
-\
 
 String greeting = (String)prefs.getValue(
 
@@ -839,8 +785,6 @@ String greeting = (String)prefs.getValue(
 
 %\>
 
-\
-\
 
 <portlet:**actionURL** var="editGreetingURL"\>
 
@@ -848,8 +792,6 @@ String greeting = (String)prefs.getValue(
 
 </portlet:**actionURL**\>
 
-\
-\
 
 <aui:form action="<%= editGreetingURL %\>" method="post"\>
 
@@ -860,8 +802,6 @@ greeting %\>" /\>
 
 </aui:form\>
 
-\
-\
 
 <portlet:renderURL var="viewGreetingURL"\>
 
@@ -869,13 +809,9 @@ greeting %\>" /\>
 
 </portlet:renderURL\>
 
-\
-\
 
 <p\><a href="<%= viewGreetingURL %\>"\>&larr; Back</a\></p\>
 
-\
-\
 
 Try deploying again the portlet after making these changes, everything
 should work exactly like before.
@@ -909,14 +845,13 @@ phase (that is the *processAction* method). In order to pass parameter
 values to the render phase you must read them from the actionRequest and
 then invoke the *setRenderParameter* method for each parameter needed.
 
-\
 
 ![image](../../images/03-portlet-development_html_5c790363.png)**Tip:** Liferay
 offers a convenient extension to the portlet specification through the
 MVCPortlet class to copy all action parameters directly as render
 parameters. You can achieve this just by setting the following
-init-param in your portlet.xml:\
-\
+init-param in your portlet.xml:
+
 <init-param\>
 
 <name\>copy-request-parameters</name\>
@@ -949,8 +884,6 @@ SessionMessages class:
 
 package com.liferay.samples;
 
-\
-\
 
 import java.io.IOException;
 
@@ -966,13 +899,9 @@ import javax.portlet.PortletPreferences;
 
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
-\
-\
 
 public class MyGreetingPortlet extends MVCPortlet {
 
-\
-\
 
 @Override
 
@@ -982,18 +911,14 @@ ActionRequest actionRequest, ActionResponse actionResponse)
 
 throws IOException, PortletException {
 
-\
-\
 
 PortletPreferences prefs = actionRequest.getPreferences();
 
-\
-\
+
 
 String greeting = actionRequest.getParameter("greeting");
 
-\
-\
+
 
 if (greeting != null) {
 
@@ -1003,13 +928,9 @@ prefs.store();
 
 }
 
-\
-\
 
 **SessionMessages.add(actionRequest, "success");**
 
-\
-\
 
 super.processAction(actionRequest, actionResponse);
 
@@ -1035,15 +956,12 @@ the top):
 
 <portlet:defineObjects /\>
 
-\
-\
+
 
 <%
 
 PortletPreferences prefs = renderRequest.getPreferences();
 
-\
-\
 
 String greeting = (String)prefs.getValue(
 
@@ -1051,14 +969,10 @@ String greeting = (String)prefs.getValue(
 
 %\>
 
-\
-\
 
 **<liferay-ui:success key="success" message="Greeting saved
 successfully!" /\>**
 
-\
-\
 
 <portlet:actionURL var="editGreetingURL"\>
 
@@ -1066,8 +980,6 @@ successfully!" /\>**
 
 </portlet:actionURL\>
 
-\
-\
 
 <aui:form action="<%= editGreetingURL %\>" method="post"\>
 
@@ -1078,8 +990,6 @@ greeting %\>" /\>
 
 </aui:form\>
 
-\
-\
 
 <portlet:renderURL var="viewGreetingURL"\>
 
@@ -1087,8 +997,6 @@ greeting %\>" /\>
 
 </portlet:renderURL\>
 
-\
-\
 
 <p\><a href="<%= viewGreetingURL %\>"\>&larr; Back</a\></p\>
 
@@ -1098,8 +1006,6 @@ it. You should see a nice message that looks like this:
 ![image](../../images/03-portlet-development_html_4540959e.png)*Illustration 1: The
 sample “My Greetings” portlet showing a success message*
 
-\
-\
 
 There is also an equivalent util class for notifying errors. This is
 commonly used after catching an exception in the *processAction*. For
@@ -1131,8 +1037,6 @@ portlet:
 ![image](../../images/03-portlet-development_html_m606ce657.png)*Illustration 2: The
 sample “My Greetings” portlet showing an error message*
 
-\
-\
 
 The first message is automatically added by Liferay. The second one is
 the one you entered in the JSP.
@@ -1157,8 +1061,6 @@ action.
 
 public class MyGreetingPortlet extends MVCPortlet {
 
-\
-\
 
 public void **setGreeting**(
 
@@ -1166,18 +1068,12 @@ ActionRequest actionRequest, ActionResponse actionResponse)
 
 throws IOException, PortletException {
 
-\
-\
 
 PortletPreferences prefs = actionRequest.getPreferences();
 
-\
-\
 
 String greeting = actionRequest.getParameter("greeting");
 
-\
-\
 
 if (greeting != null) {
 
@@ -1201,8 +1097,6 @@ SessionErrors.add(actionRequest, "error");
 
 }
 
-\
-\
 
 public void **sendEmail**(
 
@@ -1210,8 +1104,6 @@ ActionRequest actionRequest, ActionResponse actionResponse)
 
 throws IOException, PortletException {
 
-\
-\
 
 // Add code here to send an email
 
@@ -1232,8 +1124,6 @@ the edit.jsp edit the actionURL so that it looks like this:
 
 </portlet:actionURL\>
 
-\
-\
 
 That's it, now you know all the basics of portlets and are ready to use
 your Java knowledge to build portlets that get integrated in Liferay.

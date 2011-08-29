@@ -5,67 +5,67 @@ the Liferay Platform:
 
 -   Liferay specific resources:
 
-    -   **What is a portal?**\
+    -   **What is a portal?**
         [http://www.liferay.com/products/what-is-a-portal](http://www.liferay.com/products/what-is-a-portal)
 
-    -   **Platform Javadocs:** \
+    -   **Platform Javadocs:** 
         [http://docs.liferay.com/portal/6.0/javadocs/](http://docs.liferay.com/portal/6.0/javadocs/)
 
-    -   **Reference documentation for Liferay's XML files:**\
+    -   **Reference documentation for Liferay's XML files:**
         [http://docs.liferay.com/portal/6.0/definitions/](http://docs.liferay.com/portal/6.0/definitions/)
 
-    -   **Reference documentation for Liferay's taglibs:**\
+    -   **Reference documentation for Liferay's taglibs:**
         [http://docs.liferay.com/portal/6.0/taglibs/](http://docs.liferay.com/portal/6.0/taglibs/)
 
     -   Sources for version 6 (use your liferay.com account to access
-        them):\
+        them):
         [http://svn.liferay.com/repos/public/portal/branches/6.0.6/](http://svn.liferay.com/repos/public/portal/branches/6.0.6/)
 
-    -   Sources of the development version:\
+    -   Sources of the development version:
         [http://svn.liferay.com/browse/portal](http://svn.liferay.com/browse/portal)
 
 -   Related specifications and standards:
 
-    -   Java 5 Javadocs: \
+    -   Java 5 Javadocs: 
         [http://download.oracle.com/javase/1.5.0/docs/api/](http://download.oracle.com/javase/1.5.0/docs/api/)
 
-    -   JavaEE 5 Javadocs: \
+    -   JavaEE 5 Javadocs: 
         [http://download.oracle.com/javaee/5/api/](http://download.oracle.com/javaee/5/api/)
 
-    -   JavaEE Overview:\
+    -   JavaEE Overview:
         [http://www.oracle.com/technetwork/java/javaee/tech/index.html](http://www.oracle.com/technetwork/java/javaee/tech/index.html)
 
-    -   Portlet Specification 2.0 (JSR-286): \
+    -   Portlet Specification 2.0 (JSR-286): 
         [http://jcp.org/en/jsr/detail?id=286](http://jcp.org/en/jsr/detail?id=286)
 
-    -   Web Services for Remote Portlets (WSRP): \
+    -   Web Services for Remote Portlets (WSRP): 
         [http://www.oasis-open.org/committees/wsrp/](http://www.oasis-open.org/committees/wsrp/)
 
-    -   Java Content Repository (JSR-170): \
+    -   Java Content Repository (JSR-170): 
         [http://jcp.org/en/jsr/detail?id=170](http://jcp.org/en/jsr/detail?id=170)
 
-    -   Java Server Faces 1.2 (JSR-252): \
+    -   Java Server Faces 1.2 (JSR-252): 
         [http://www.jcp.org/en/jsr/detail?id=252](http://www.jcp.org/en/jsr/detail?id=252)
 
-    -   Java Server Faces 2.0 (JSR-314):\
+    -   Java Server Faces 2.0 (JSR-314):
         [http://www.jcp.org/en/jsr/detail?id=314](http://www.jcp.org/en/jsr/detail?id=314)
 
-    -   OpenSocial: \
+    -   OpenSocial: 
         [http://www.opensocial.org/](http://www.opensocial.org/)
 
-    -   Sitemap protocol: \
+    -   Sitemap protocol: 
         [http://sitemaps.org/](http://sitemaps.org/)
 
-    -   WebDAV: \
+    -   WebDAV: 
         [http://webdav.org/](http://webdav.org/)
 
-    -   SOAP: \
+    -   SOAP: 
         [http://www.w3.org/TR/2007/REC-soap12-part0-20070427/](http://www.w3.org/TR/2007/REC-soap12-part0-20070427/)
 
-    -   HTML 5: \
+    -   HTML 5: 
         [http://html5.org/](http://html5.org/)
 
-    -   WCAG 2.0:\
+    -   WCAG 2.0:
         [http://www.w3.org/WAI/intro/wcag20.php](http://www.w3.org/WAI/intro/wcag20.php)
 
 -   Related and commonly used technologies:

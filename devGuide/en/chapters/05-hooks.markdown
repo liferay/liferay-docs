@@ -108,8 +108,6 @@ the ability to a search provider in the browser:
 
 </liferay-util:buffer\>
 
-\
-\
 
 <%
 
@@ -117,8 +115,6 @@ int x = html.indexOf("<div class=\\"add-search-provider\\"\>");
 
 int y = html.indexOf("</div\>", x);
 
-\
-\
 
 if (x != -1) {
 
@@ -129,8 +125,6 @@ StringPool.BLANK);
 
 %\>
 
-\
-\
 
 <%= html %\>
 
@@ -153,8 +147,6 @@ content:
 
 package com.sample.hook;
 
-\
-\
 
 import com.liferay.portal.kernel.events.Action;
 
@@ -162,8 +154,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import javax.servlet.http.HttpServletResponse;
 
-\
-\
 
 public class LoginAction extends Action {
 
@@ -244,8 +234,6 @@ following content:
 
 package com.sample.hook;
 
-\
-\
 
 import com.liferay.portal.kernel.exception.PortalException;
 
@@ -257,8 +245,6 @@ import com.liferay.portal.service.UserLocalService;
 
 import com.liferay.portal.service.UserLocalServiceWrapper;
 
-\
-\
 
 public class MyUserLocalServiceImpl extends UserLocalServiceWrapper {
 
@@ -268,22 +254,16 @@ super(userLocalService);
 
 }
 
-\
-\
 
 public User getUserById(long userId)
 
 throws PortalException, SystemException {
 
-\
-\
 
 System.out.println(
 
 "\#\# MyUserLocalServiceImpl.getUserById(" + userId + ")");
 
-\
-\
 
 return super.getUserById(userId);
 
@@ -291,7 +271,6 @@ return super.getUserById(userId);
 
 }
 
-\
 
 ![image](../../images/05-hooks_html_5c790363.png)**Tip:**Note that the wrapper class
 (MyUserLocalServiceImpl in this example) will be loaded in the hook's
@@ -299,8 +278,6 @@ class loader. That means that it will have access to any other class
 included within the same WAR file, but it won't have access to internal
 classes of Liferay.
 
-\
-\
 
 Next, edit `liferay-hook.xml`{.western} inside
 `example-hook/docroot/WEB-INF`{.western} and add the following after
@@ -358,6 +335,4 @@ Spanish and French the following two lines would be added to the file:
 
 </hook\>
 
-\
-\
 

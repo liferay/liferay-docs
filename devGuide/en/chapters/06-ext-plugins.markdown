@@ -53,7 +53,6 @@ project name when creating this folder.
 Once the target has been executed successfully you will find a new
 folder called example-ext with the following structure:
 
-\
 
 /ext-example/
 
@@ -91,8 +90,6 @@ folder called example-ext with the following structure:
 
 /ext-web/
 
-\
-\
 
 The most significant directories in this structure are the ones inside
 the `docroot/WEB-INF`{.western} directory. In particular you should be
@@ -317,35 +314,24 @@ this:
 
 <%@ include file="/html/portlet/enterprise\_admin/init.jsp" %\>
 
-\
 <%
 
 User selUser = (User)request.getAttribute("user.selUser");
 
 %\>
 
-\
-\
 
 <liferay-ui:error-marker key="errorSection" value="details" /\>
 
-\
-\
 
 <aui:model-context bean="<%= selUser %\>" model="<%= User.class %\>" /\>
 
-\
-\
 
 <h3\><liferay-ui:message key="details" /\></h3\>
 
-\
-\
 
 <aui:fieldset column="<%= true %\>" cssClass="aui-w50"\>
 
-\
-\
 
 <liferay-ui:error exception="<%= DuplicateUserScreenNameException.class
 %\>"
@@ -361,13 +347,9 @@ message="the-screen-name-you-requested-is-reserved" /\>
 
 message="please-enter-a-valid-screen-name" /\>
 
-\
-\
 
 <aui:input name="screenName" /\>
 
-\
-\
 
 <liferay-ui:error exception="<%=
 DuplicateUserEmailAddressException.class %\>"
@@ -383,13 +365,9 @@ message="the-email-address-you-requested-is-reserved" /\>
 
 message="please-enter-a-valid-email-address" /\>
 
-\
-\
 
 <aui:input name="emailAddress" /\>
 
-\
-\
 
 <liferay-ui:error exception="<%= ContactFirstNameException.class %\>"
 
@@ -399,20 +377,14 @@ message="please-enter-a-valid-first-name" /\>
 
 essage="please-enter-a-valid-first-middle-and-last-name" /\>
 
-\
-\
 
 <aui:input name="firstName" /\>
 
-\
-\
 
 <liferay-ui:error exception="<%= ContactLastNameException.class %\>"
 
 message="please-enter-a-valid-last-name" /\>
 
-\
-\
 
 <aui:input name="lastName" /\>
 
@@ -639,9 +611,7 @@ conflicts and easily merge with a new portal version is to:
 This strategy will help you determine what you will need to merge in the
 future when a new version of Liferay is released.
 
-\
 
-\
 
 ![image](../../images/06-ext-plugins_html_5c790363.png)Tip: This is a very advanced
 technique that may have a high impact on the maintainability of your

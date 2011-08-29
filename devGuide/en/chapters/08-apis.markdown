@@ -136,8 +136,6 @@ liferay-portlet.xml. For example see definition of mapping inside
 
 </role-mapper\>
 
-\
-\
 
 This means that if a portlet definition references the role “power-user”
 it will be mapped to the Liferay role in its database called “Power
@@ -535,8 +533,6 @@ entry.getCompanyId(), BlogsEntry.class.getName(),
 
 Resource.SCOPE\_INDIVIDUAL, entry.getEntryId);
 
-\
-\
 
 Liferay Community Edition 6.0.5 has a known bug
 ([http://issues.liferay.com/browse/LPS-14135](http://issues.liferay.com/browse/LPS-14135))
@@ -578,8 +574,6 @@ var="entryURL"
 
 /\>
 
-\
-\
 
 <liferay-ui:icon image="permissions" url="<%= entryURL %\>" /\>
 
@@ -652,7 +646,6 @@ throw new PrincipalException();
 
 blogsEntryLocalService.addEntry(...);
 
-\
 
 `The`{.western}`PermissionChecker`{.western}` class has a method called `{.western}`hasPermission(…)`{.western}` that checks whether a user making a resource request has the necessary access permission. If the user is not signed in (guest user), it checks for guest permissions. Otherwise, it checks for user permissions.  Let's do a quick review of the parameters of this method:`{.western}
 
@@ -725,8 +718,6 @@ ServiceContext serviceContext)
 
 throws PortalException, SystemException {
 
-\
-\
 
 BlogsPermission.*check*(
 
@@ -734,8 +725,6 @@ getPermissionChecker(), serviceContext.getScopeGroupId(),
 
 ActionKeys.*ADD\_ENTRY*);
 
-\
-\
 
 return blogsEntryLocalService.addEntry(
 

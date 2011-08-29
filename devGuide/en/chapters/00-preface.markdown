@@ -24,14 +24,9 @@ piece of information that affects whatever is being talked about in the
 surrounding text. They are always accompanied by this gray box and the
 icon to the left.
 
-\
-\
-
-\
-\
 
 Source code and configuration file directives are presented like this.\
-\
+
 If source code goes multi-line, the lines will be \\\
 separated by a backslash character like this.
 
@@ -99,8 +94,6 @@ about alternatives for deployment to production.
 -   Minor improvements and fixes based on the comments by community
     members David H Nebinger and Deb Troxel.
 
-\
-\
 
 ### April 7^th^ 2011
 

@@ -471,8 +471,6 @@ Here is a quick summary of the most important parameters of this method:
     something very advanced (look at the code if you are really
     curious).
 
-\
-\
 
 When one of your custom content is deleted you should also let the Asset
 Framework know, to clean up the information stored and also to make sure
@@ -536,7 +534,6 @@ These two taglibs will create appropriate form controls that allow the
 user to enter any tag (even if it doesn't exist) or search and select
 one of the existing categories.
 
-\
 
 ![image](../../images/08-apis-and-frameworks_html_5c790363.png)**Tip:**If you are
 using Liferay's Allow Form taglibs, then creating a field to enter tags
@@ -544,8 +541,6 @@ or categories is even simpler. You just need to use <aui:input
 name="tags" type="assetTags" /\> and <aui:input name="categories"
 type="assetCategories" /\> respectively.
 
-\
-\
 
 Once the tags and categories have been entered you will want to show
 them somewhere along with the content of the asset, there are another
