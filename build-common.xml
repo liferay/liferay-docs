@@ -65,7 +65,8 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     </target>
 
     <target name="concat-markdown-files-win" depends="prepare" 
-        description="... concatinating markdown files for ${doc.dir} (${lang}) on Windows">
+	    description="concatinates multiple markdown files into a single one">
+	<echo message="... concatinating markdown files for ${doc.dir} (${lang}) on Windows"/>
         <exec executable="cmd">
             <arg value="/C" />
             <arg value="for"/>
@@ -108,13 +109,10 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
             <arg value="markdown"/>
             <arg value="-t"/>
             <arg value="html"/>
-            <arg value="${pandoc.mem.1}"/>
-            <arg value="${pandoc.mem.2}"/>
-            <arg value="${pandoc.mem.3}"/>
-            <arg value="-smart"/>
             <arg value="+RTS"/>
             <arg value="-K64m"/>
             <arg value="-RTS"/>
+            <arg value="-smart"/>
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.html"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
@@ -149,13 +147,10 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
             <arg value="markdown"/>
             <arg value="-t"/>
             <arg value="odt"/>
-            <arg value="${pandoc.mem.1}"/>
-            <arg value="${pandoc.mem.2}"/>
-            <arg value="${pandoc.mem.3}"/>
-            <arg value="-smart"/>
             <arg value="+RTS"/>
             <arg value="-K64m"/>
             <arg value="-RTS"/>
+            <arg value="-smart"/>
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.odt"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
