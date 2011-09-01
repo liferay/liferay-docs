@@ -658,7 +658,65 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 **Draft Pages**: Takes you to a list of pages which have not yet been published. Users can edit pages and save their changes as drafts. They can come back later to finish their page changes and publish them once they have been approved.
 
-**Search**: Enter a term here and click the *Search* button to search for items in the wiki. If the search term is not found, a link will be displayed which allows you to create a new wiki page on the topic for which you searched. In general, categories start of with broad terms and eventually
+**Search**: Enter a term here and click the *Search* button to search for items in the wiki. If the search term is not found, a link will be displayed which allows you to create a new wiki page on the topic for which you searched.
+
+## Document Library
+
+Liferay's document library portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. Document libraries grant users the ability to share documents within the portal via uploading and downloading. The document library can be used to store files of any kind, not just "documents." The document library portlet is an instanceable portlet, meaning that each site on your portal can have at most one document library associated to it. However, you can use multiple document library *display* portlets within a site and configure them to point to the site's actual document library. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document library portlets for storing or sharing files.
+
+### Getting Started with the Document Library
+
+Liferay's document library portlet has been redesigned for Liferay 6.1. The new document library supports customizable document types and metadata sets. These document types and metadata sets are an addition to, not a replacement for, the portal's system of tags and categories. Additionally, Liferay 6.1 allows multiple repositories to be mounted into the Document Library. 
+
+![Initial view of the document library portlet](../../images/05-document-library.png)*Initial view of the document library portlet*
+
+The default view of the document library portlet displays the contents of the Documents Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you would like the main window of the portlet to display. Recent Documents displays documents that users have recently interacted with. For example, recently uploaded, edited, or downloaded, would be displayed here. My Documents shows *your* documents, i.e., the documents that you have uploaded. Basic Document, Image, and Video are filters to show text documents, images, and videos, respectively.
+
+### Navigating the Document Library Portlet
+
+In the main document library portlet window, you can click on a document to view details about it. Its version number, version history, status, and content type will be displayed as well as its uploader and the user who last edited it. You can perform several actions on the document here. You can edit the document to change its contents, point it to a different file, change its title, description, or document type, or add tags, categories, or related assets. You can move the document to a new location. You can checkout the document to prevent other users from modifying the document while you are working. You can configure the file-specific permissions of the document. If comments are enabled, you can view comments, add comments, or subscribe to comments about this document.
+
+![Viewing a document](../../images/05-doclib-specific-document-view.png)*Viewing a document*
+
+The menu at the top of the documents library portlet contains Actions, Add, Sort By, and Manage buttons. There are also buttons for switching between icon view, descriptive view, and list view and there is a search field. The actions menu will only be displayed if you have selected one or more documents with the check boxes. Possible actions include cancel checkout, checkin, checkout, move, and delete. You can checkout a document if you would like to edit it and not allow anyone else to modify it while you are working. Other users can view but not edit a checked-out document. When you are done working on the document you can check it back in. Its version number will increment and the previous version will be stored. If you decided not to make any changes to the document, you can cancel the checkout. This will prevent the document library from incrementing the document's version number and saving an identical version of the document. To move a document, you just have to select a new location for it. You can also delete documents.
+
+From the Add button, you can add folders and shortcuts just like on your local filesystem. To add a folder you just need to enter a name for it. To add a shortcut you have to select the document to link to as well as the site it belongs to. Starting with Liferay 6.1, you can add entirely new repositories to your document libraries. To do this you need to specify the repository type and choose an ID (if you are using the AtomPub protocol you'll also have to specify the AtomPub URL). You can choose several documents to upload at once by selecting Multiple documents from the Add menu. To upload a single document you can just select Basic Document from the Add menu. However, if a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields. 
+
+You can sort the items displayed in the main window of the document library portlet using the Sort By window. You can sort by title, create date, modified date, read count, or size.
+
+### Document Types and Metadata Sets
+
+Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields determined by the metadata set of the document type. This can be valuable just to prevent users from forgetting to enter important information about their documents. For example, you could define a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button on the top bar of the document library window. 
+
+![Document types window](../../images/05-document-types.png)*Document types window*
+
+You can add a new document type using the Add button at the top of the screen. To do so, you need to select or define one or more metadata sets to associate with your document type. Let's define a document type called "Syllabus" and define one metadata set. What metadata should we associate with syllabi? We could decide for our syllabi to have course title, professor, and semester fields. All syllabi on our portal will be required to entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for. Multiple metadata sets can be associated with a single document type and multiple document types can include the same metadata set. 
+
+You can view, edit, or add metadata sets from the *Manage &rarr; Metadata* window. A metadata set consists of a group of fields. If you click the Add button, you will be presented with the same UI for defining a metadata set that you used in the Add Document Type window.
+
+![Adding a new metadata set](../../images/05-new-metadata-set.png)*Adding a new metadata set*
+
+All you have to do to define a metadata set is choose fields to use from the area on the right and then drag and drop them into the area on the left. The drag and drop interface allows for nested fields so you need to be careful about where you drop the fields. Default values, mouse-over tips, and widths can be set for most fields. Liferay supports the following kinds of fields for metadata sets:
+
+**Boolean**: This field is just a checkbox.
+
+**Date**: A valid date format is required for the date field. However, you don't have to enter a date manually. When you select the date field a mini-calendar pops up which you can use to select a date.
+
+**Decimal**: This field lets you enter a decimal number.
+
+**Integer**: This field lets you enter an integer.
+
+**Number**: 
+
+**Radio**: The radio field displays several clickable options. The default number is three but this is customizable. Only one option can be selected at a time.
+
+**Select**: This field is just like the radio field except that the options are hidden and have to be accessed from a drop-down menu.
+
+**Text**: The text field lets you enter a single line of text.
+
+**Text Box**: This field is just like the text field except you can enter multiple lines of text or separate paragraphs.
+
+Remember that metadata sets are reusable. Once your metaset has been created it can be included in any number of document types.
 
 ## Tags
 
