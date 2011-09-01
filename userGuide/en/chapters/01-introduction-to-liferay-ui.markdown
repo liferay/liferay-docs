@@ -6,8 +6,6 @@ This chapter covers these activities:
 
 -   *Liferay Administration:* How to administer a Liferay portal.
 
-## Liferay's User Interface
-
 Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a “dashboard” application) so that the end user can see everything he or she interacts with at a glance.
 
 To achieve this, all the application functionality within Liferay Portal is in fragments of the page called *portlets*. Portlets are web applications that run in a portion of a web page. Liferay's core is a portlet container that aggregates portlets on particular pages and displays them to users. In this way, one or many applications can reside on a page, and users can (at the administrator's discretion) arrange them however they like.
@@ -18,9 +16,9 @@ Portal applications generally come in two flavors: 1) multiple portlets can be w
 
 Portlets are not difficult to build, and Java standard portlets can be written by any Java developer with experience in writing web applications. Liferay provides a Plugins Software Development Kit that makes it easy to design new portlet projects. For further information about the Plugins SDK, please see *Liferay Developer's Guide*, which is the companion volume to this one, or *Liferay in Action*, published by Manning Publications, which is the official guide to Liferay development.
 
-Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages are available on Github at  ([https://github.com/liferay/liferay-plugins](https://github.com/liferay/liferay-plugins)).
+Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages are available on Github at  [https://github.com/liferay/liferay-plugins](https://github.com/liferay/liferay-plugins).
 
-### Navigating Liferay
+## Navigating Liferay
 
 Liferay initially presents a very simple interface. Unauthenticated users can navigate the public pages of the portal and see a *Sign In* link in the top right corner of the screen.
 
@@ -34,21 +32,43 @@ To sign into Liferay for the first time, click the *Sign In* link. You'll next s
 
 **Password:** test
 
-![Logging into Liferay Portal](../../images/01-logging-into-liferay-portal.png)*Illustration 1: Logging into Liferay Portal*
+![Figure 1.1: Logging into Liferay Portal](../../images/01-logging-into-liferay-portal.png)
 
-Go ahead and sign in to your new portal using these credentials. As you can see, Liferay users' email addresses are by default used for their user IDs. This can be changed later if you don't like this functionality, but it is generally a good practice to keep it this way. Users' email addresses are not normally things they will forget, and they are unique to each user, so they make good candidates for user IDs.
+Go ahead and sign in to your new portal using these credentials. As you can see, Liferay users' email addresses are by default used for their user IDs. This can be changed later if you don't like this functionality, but it's generally a good practice to keep it this way. Users' email addresses are not normally things they will forget, and they are unique to each user, so they make good candidates for user IDs.
 
-The first page that will be displayed when a user logs in for the first time is the Terms of Use page. By default, users are required to agree to the terms of use before they can access the portal. Scroll to the bottom of the page and click *I Agree* to proceed. Note that as a portal administrator, you can customize the Terms of Use page or disable it altogether. 
+The first page that's displayed when a user logs in for the first time is the Terms of Use page. By default, users must agree to the terms of use before they can access the portal. Scroll to the bottom of the page and click *I Agree* to proceed. Note that as a portal administrator, you can customize the Terms of Use page or disable it altogether. Next, we'll look at how to navigate once you're signed in. 
 
-Once you have logged in as the default administrative user, you will see that the Dockbar has now appeared across the top of the page. The Dockbar is the primary tool logged-in users have for navigating the portal and accessing administrative functions from anywhere on the web site. Depending on the logged-in users' roles and what sections of the website they are viewing, they may see all or only some of the options available in the Dockbar.
+### Using the Dockbar
 
-As an administrator, the first option you will see on the Dockbar is *Add* . Mousing over *Add* will reveal a list of items that you can add. You can add a new page at the current navigation level or add portlets to the current page. When you first pull down the menu, you will see a list of common portlets that you can click on to add to the page. You will also see a *More* option, which will show you all of the currently available portlets. From the expanded *More* menu, you can add portlets to the current page. If you want to add a portlet to the current page, you can click the *Add* button next to a portlet to add it to the first column in the page, or drag the portlet from the menu to where you want it on the page.
+Once you've logged in as the default administrative user, the Dockbar appears across the top of the page. The Dockbar is the primary tool logged-in users have for navigating the portal and accessing administrative functions from anywhere in the portal. Depending on the logged-in users' roles and what sections of the portal they are viewing, they may see all or only some of the options. For each option, a menu appears when you mouse over it. Let's look at what's available in the Dockbar. 
 
-![Add Menu from the Dockbar](../../images/01-add-menu-from-dockbar.png)*Illustration 2: Add Menu from the Dockbar*
+#### Add
 
-The next option you'll see is the *Manage* menu. From this menu, you can access various settings for the current page and site. The page settings available are *Page, Page Layout, and Page Customizations*. Clicking on *Page* brings up a dialog box which enables you to modify details about the current page. *Page Layout* is a shortcut to a tab of this dialog box which lets you choose a layout template for the current page. Layout templates provide visual structure to page contents. *Page Customizations* enables you to directly select portions of the page to be customizable. Users with permission to customize your page will then be able to customize the portlets you selected. The site settings are the same as their counterparts in the *Control Panel*, which is covered later in this chapter.
+As an administrator, the first option you see on the Dockbar is *Add*, which contains a list of items that you can add either to the page or to the current site.
+
+![Figure 1.2 Add Menu from the Dockbar](../../images/01-add-menu-from-dockbar.png)
+
+**Page:** adds a new page at the current navigation level. 
+
+**Applications:** contains a list of common portlets that you can add to the page. These portlets are covered in chapters 3 and 4. 
+
+**More:** shows a list of all the currently deployed portlets. To add a portlet to the current page, click the *Add* button next to a portlet, or drag the portlet from the menu to where you want it on the page.
+
+The Add menu gives you a nice, quick way to build your pages. 
+
+#### Manage
+
+The next option is the *Manage* menu. From here, you can access various settings for the current page and site. 
 
 ![Manage Menu from the Dockbar](../../images/01-manage-menu-from-dockbar.png)*Illustration 2: Manage Menu from the Dockbar*
+
+**Page:** brings up a dialog box containing controls for managing every aspect of the pages on the current site. These include search engine optimization, the theme, layout, and more. Details about this are covered in chapter 2. 
+
+**Page Layout:** lets you choose a layout template for the current page. Layout templates provide visual structure to page contents, and are covered in more detail in chapter 2. 
+
+**Page Customizations:** enables you to directly select portions of the page that users can customize. Users with permission to customize this page can then customize the sections of the page you select. 
+
+**Site Settings:** is a quick interface to the site settings section in the *Control Panel*, which is covered later in this chapter.
 
 The next thing you'll see is a check box labeled *Edit Controls*. This lets you turn on and off the edit controls in the top of the portlet windows. This is helpful for administrators who want to look at a page they're working on and see it the way a regular user would.
 
@@ -62,7 +82,7 @@ Your (or the default user's) name appears at the right side of the dockbar next 
 
 One of the most important tools Liferay offers for managing your portal is the aforementioned *Control Panel*, accessible from the *Go To* menu of the dockbar. The *Control Panel* is composed of administrative pages that you can use to mange various aspects of the portal.
 
-### Navigating the Control Panel
+## Navigating the Control Panel
 
 The control panel is very easy to navigate. On the left side is a list of headings with functions underneath them. The headings are in alphabetical order, but the functions are in a logical order.
 
