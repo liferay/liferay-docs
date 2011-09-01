@@ -8,21 +8,25 @@ This chapter covers these activities:
 
 ## Liferay's User Interface
 
-Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside of the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a “dashboard” application) so that the end user can see everything he or she interacts with at a glance.
+Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a “dashboard” application) so that the end user can see everything he or she interacts with at a glance.
 
-To achieve this, all of the application functionality within Liferay Portal is in fragments of the page called *portlets*. Portlets are web applications that run in a portion of a web page. Liferay's core is a portlet container that aggregates sets of portlets that reside on particular pages and displays them to users. In this way, one or many applications can reside on a page, and users can (at the administrator's discretion) arrange them however they like.
+To achieve this, all the application functionality within Liferay Portal is in fragments of the page called *portlets*. Portlets are web applications that run in a portion of a web page. Liferay's core is a portlet container that aggregates portlets on particular pages and displays them to users. In this way, one or many applications can reside on a page, and users can (at the administrator's discretion) arrange them however they like.
 
-Portlet applications, like servlet applications, have become a Java standard which various portal server vendors have implemented. The Java standard defines the portlet specification. A JSR-168 or JSR-286 standard portlet should be deployable on any portlet container which supports those standards. Portlets are placed on the page in a certain order by the end user and are served up dynamically by the portal server.
+Portlet applications, like servlet applications, are defined by a Java standard which various portal server vendors have implemented. The Java standard defines the portlet specification. A JSR-168 or JSR-286 standard portlet should be deployable on any portlet container which supports those standards. Portlets are placed on the page in a certain order by the end user and are served up dynamically by the portal server.
 
-Portal applications generally come in two flavors: 1) multiple portlets can be written to provide small amounts of functionality and then are aggregated by the portal server into a larger application, or 2) whole applications can be written to reside in only one or a few portlet windows. The choice is up to the application designers. Only developers have to worry about what happens inside of the portlet itself. The portal server handles building out the page as it is presented to users.
+Portal applications generally come in two flavors: 1) multiple portlets can be written to provide small amounts of functionality and then are aggregated by the portal server into a larger application, or 2) whole applications can be written to reside in only one or a few portlet windows. The choice is up to the application designers. Only developers have to worry about what happens inside the portlet itself. The portal server handles building out the page as it is presented to users.
 
-Portlets are not difficult to build, and Java standard portlets can be written by any Java developer with experience in writing web applications. Liferay provides a Plugins Software Development Kit that makes it easy to design new portlet projects. For further information about the Plugins SDK, please see *Liferay in Action*, published by Manning Publications, which is the official guide to Liferay development.
+Portlets are not difficult to build, and Java standard portlets can be written by any Java developer with experience in writing web applications. Liferay provides a Plugins Software Development Kit that makes it easy to design new portlet projects. For further information about the Plugins SDK, please see *Liferay Developer's Guide*, which is the companion volume to this one, or *Liferay in Action*, published by Manning Publications, which is the official guide to Liferay development.
 
-Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages can be checked out from our Subversion repository ([http://svn.liferay.com/repos/public/plugins/trunk/portlets](http://svn.liferay.com/repos/public/plugins/trunk/portlets)).
+Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages are available on Github at  ([https://github.com/liferay/liferay-plugins](https://github.com/liferay/liferay-plugins)).
 
 ### Navigating Liferay
 
-Liferay initially presents a very simple interface. (If your portal initially presents you with the demo web site, 7 Cogs, see Chapter 2 for removal instructions.) Unauthenticated users can navigate the public pages of the portal and will see a *Sign In* link in the top right corner of the screen.
+Liferay initially presents a very simple interface. Unauthenticated users can navigate the public pages of the portal and see a *Sign In* link in the top right corner of the screen.
+
+---
+![tip](../../images/01-tip.png)If your portal initially presents you with the demo web site, 7 Cogs, see Chapter 12 in Part 2 for removal instructions.
+---
 
 To sign into Liferay for the first time, you can click the *Sign In* link. You will then be presented with the **Sign In Portlet**. This portlet allows a user (or a prospective user) to do several things: sign in to Liferay, create a new account on the portal, or have a password reminder emailed if the user has forgotten his or her password. An OpenID sign-in option is also available. To sign in for the first time, don't create an account for yourself. We will do that later. If you were to create a new account on the portal for yourself now, it would be created using Liferay's defaults, which means the account would not have access to the administrative portlets you need in order to set up Liferay for your organization. For this reason, you will need to sign in as the default administrative user. This user's credentials are:
 
@@ -242,7 +246,9 @@ To add an organization, click the *Users and Organizations* link on the left sid
 
 **Parent Organization:** Click the *Select* link to bring up a window which allows you to select the organization in the system that is the direct parent of the organization you are creating. Click the *Remove* button to remove the currently configured parent.
 
+---
 ![tip](../../images/01-tip.png) **Tip:** Note that you are already a member of any organizations that you created. By creating an organization, you become both a member and receive the Organization Owner role, which gives you full rights to the organization.
+---
 
 Fill out the information for your organization and click *Save*. As before with users, the form reappears and you can enter more information about the organization. Organizations can have multiple email addresses, postal addresses, web sites, and phone numbers associated with them. The *Services* link can be used to indicate the operating hours of the organization, if any.
 
