@@ -2,9 +2,9 @@
 
 ##Colaborating on the Social Network
 
-Since MySpace rose to popularity in 2006 certain concepts, such as "Friend" and later "Like," previously reserved for direct human interaction, have taken on new meaning in on always-online, information driven culture. Initially, these concepts were seen as being great for web sites people spent their leisure time on, but not really valuable in the business world. Slowly, more and more organizations are realizing the importance of leveraging social interactions for more than just recreation.
+Since MySpace rose to popularity in 2006, certain concepts such as "Friend" and later "Like"--previously reserved for direct human interaction--have taken on new meaning in on always-online, information driven culture. Initially, these concepts proved highly successful for casual web sites, they didn't take to the business world very quickly. Slowly, more and more organizations are realizing the importance of leveraging social interactions for more than just recreation. Liferay is a great platform for business web sites, casual web sites, and everything in between, and its social features reflect this. 
 
-Liferay has a constantly improving set of social features which will enable you to both encourage social interactions on your own portal, and leverage the power and popularity of other social networks.
+Liferay has a constantly improving set of social features which enable you to both encourage social interactions on your own portal, and leverage the power and popularity of other social networks.
 
 ##Liferay's Social Portlets
 	
