@@ -65,7 +65,8 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     </target>
 
     <target name="concat-markdown-files-win" depends="prepare" 
-        description="... concatinating markdown files for ${doc.dir} (${lang}) on Windows">
+	    description="concatinates multiple markdown files into a single one">
+	<echo message="... concatinating markdown files for ${doc.dir} (${lang}) on Windows"/>
         <exec executable="cmd">
             <arg value="/C" />
             <arg value="for"/>
@@ -108,13 +109,10 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
             <arg value="markdown"/>
             <arg value="-t"/>
             <arg value="html"/>
-            <arg value="${pandoc.mem.1}"/>
-            <arg value="${pandoc.mem.2}"/>
-            <arg value="${pandoc.mem.3}"/>
-            <arg value="-smart"/>
             <arg value="+RTS"/>
             <arg value="-K64m"/>
             <arg value="-RTS"/>
+            <arg value="-smart"/>
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.html"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
@@ -149,13 +147,10 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
             <arg value="markdown"/>
             <arg value="-t"/>
             <arg value="odt"/>
-            <arg value="${pandoc.mem.1}"/>
-            <arg value="${pandoc.mem.2}"/>
-            <arg value="${pandoc.mem.3}"/>
-            <arg value="-smart"/>
             <arg value="+RTS"/>
             <arg value="-K64m"/>
             <arg value="-RTS"/>
+            <arg value="-smart"/>
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.odt"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
@@ -211,7 +206,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     <target name="chapter-to-html" depends="copy-single-chapter" description="converts single markdown chapter to an html file">
         <echo message="... converting ${chapter} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
-        <exec executable="${pandoc.exe}">
+        <exec executable="${pandoc.app}">
             <arg value="-f" />
             <arg value="markdown"/>
             <arg value="-t"/>
@@ -229,7 +224,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     <target name="chapter-to-odt" depends="copy-single-chapter" description="converts single markdown chapter to an odt file">
         <echo message="... converting ${chapter} (${lang}) to odt"/>
         <!-- pandoc -f markdown -t odt -o 01-introduction-to-liferay-ui.odt 01-introduction-to-liferay-ui.markdown -->
-        <exec executable="${pandoc.exe}">
+        <exec executable="${pandoc.app}">
             <arg value="-f" />
             <arg value="markdown"/>
             <arg value="-t"/>
@@ -247,7 +242,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     <target name="chapter-to-epub" depends="copy-single-chapter" description="converts single markdown chapter to an epub file">
         <echo message="... converting ${chapter} (${lang}) to epub"/>
         <!-- pandoc -f markdown -t epub -o 01-introduction-to-liferay-ui.odt 01-introduction-to-liferay-ui.markdown -->
-        <exec executable="${pandoc.exe}">
+        <exec executable="${pandoc.app}">
             <arg value="-f" />
             <arg value="markdown"/>
             <arg value="-t"/>
