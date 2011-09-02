@@ -30,7 +30,7 @@ By the time we're done, you should be able to apply all of these concepts to you
 
 First, a little housekeeping. If we're going to be the *Technical Institute of Semantic Ambiguity*, our portal should also be called Technical Institute of Semantic Ambiguity. To set general information about your portal like the name and mail domain, go to the control panel and select *Portal Settings* under the Portal heading. You could set up the configuration for TISA (Technical Institute of Semantic Ambiguity) as follows.
 
-![image](../../images/04-web-content-changing-settings.png)*Illustration 1: Changing Portal Settings*
+![Figure 4.1 Changing Portal Settings](../../images/04-web-content-changing-settings.png)
 
 You can also customize the logo in the top left corner of every page by selecting *Display Settings* under the *Miscellaneous* tab on the panel to the right. Once you've made the changes, we can to begin creating pages.
 
@@ -44,11 +44,11 @@ Essentially, CMS is a suite of various portlets that include functionality for c
 
 If you are currently viewing the page you wish to manage, simply click *Manage* from the dockbar and select *Page*. If you would like to manage your site's whole set of pages, clink *Manage* and select *Site Pages*. 
 
-![image](../../images/04-web-content-managing-single-page.png)*Illustration 2: Managing Individual Pages*
+![Figure 4.2: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
 
 You can also access the Site Pages window two other ways in the Control Panel. The first way is to simply select the site that you want to work with in the Content section, and click on *Site Pages* in the left column. The second way is to navigate to the Sites page under the Portal section of the control panel and to click *Actions* and select *Manage Pages*. If you just need to quickly add a page, you can click *Add* from the dockbar and select *Page*, and a page will be added immediately. You can then edit the name of the page and begin working on it immediately.
 
-![image](../../images/04-managing-site-pages.png)*Illustration 2: Managing Site Pages*
+![Figure 4.3: Managing Site Pages](../../images/04-managing-site-pages.png)
 
 Once you're in the Manage Pages window, you'll see an interface to view existing pages, create new pages, view pages, and export or import pages using Liferay Archive (LAR) files. Note that you can switch between managing a set of pages and managing a single page using the left-hand side navigation menu. Click on *Public Pages* or *Private Pages* to manage the group or click on an individual page to manage just that one. Switching views like this will change this list of available tabs to the right. By default, liferay.com, which we renamed tisa.edu, contains a single public page called *Welcome* and we'll leave it that way.
 
@@ -62,7 +62,7 @@ To add a new page to a site, you can just click the Add Page button from the Man
 
 Note that when you create a new page, you have the option to either create a blank page, or to have it prepopulated with portlets from a page template. When you're entering the name of the page, you'll be able to select from a list of page templates that are currently available. For more information about page templates, see the Control Panel chapter.
 
-![image](../../images/04-web-content-add-page.png)*Illustration 3: Adding Pages*
+![Figure 4.4: Adding Pages](../../images/04-web-content-add-page.png)
 
 
 ### Export/Import
@@ -79,7 +79,7 @@ Once you click *Export*, your browser will prompt you to save the file. Once you
 
 When you open the Manage Site Pages window it defaults to the Look and Feel tab. On this tab, you'll be presented with an interface which allows you to choose a theme for the site which you are currently working on. Themes can transform the entire look of the portal. They can be created by developers and can be easily installed using the plugins installer from the control panel. The plugins installer was covered in Chapter 3.
 
-![Look and Feel Interface](../../images/04-look-and-feel.png)*Illustration 4: Look and Feel Interface* 
+![Figure 4.5: Look and Feel Interface](../../images/04-look-and-feel.png)
 
 Since we don't have any themes beyond the default one installed yet, we'll use the default theme for our pages. Many themes include more than one color scheme. This allows you to keep the existing look and feel while giving your site a different flavor. Let's change the color scheme from blue to green by selecting *Green* under *Color Schemes*. If you now go back to the site (by clicking *Back to tisa.edu* in the top left corner of the control panel), you'll see that some parts of the page are now tinged in a greenish hue. 
 
@@ -167,7 +167,7 @@ Page Customizations are a new feature in Liferay 6.1. With Page Customizations, 
 
 When an administrator activates Page Customizations for a page, any portlets that are in a *Customizable* row or column can be moved around the page or removed from the page. Users will also be able to add new portlets of their own choosing to the page. If, at any time, a user determines that they don't like their customizations, they can click *Reset My Customizations* to revert their page back to the default. 
 
-![Setting Customizable Columns](../../images/04-web-content-personal-customization.png)*Setting Customizable Columns* 
+![Figure 4.6: Setting Customizable Columns](../../images/04-web-content-personal-customization.png)
 
 ### Modifying Page Layouts
 
@@ -217,8 +217,8 @@ Adding portlets to a page is simple. Let's add some to our Collaboration page.
 
 See how easy it is to add applications to your pages? We've gone one step further: we've got the Wiki portlet, the Blogs portlet, and then a nested portlet with a different layout and the Alerts, Search, and Dictionary portlets.
 
-![image](../../images/04-web-content-portlet-layout.png)
-*Illustration 11: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless. *
+![Figure 4.7: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
+
 
 You'll find it is very easy to make your pages look exactly the way you want them to. If the layout options provided aren't enough, you can even develop your own. More information about that can be found in Liferay's official guide to development, *Liferay in Action*.
 
@@ -238,7 +238,7 @@ So, let's say we wanted to create a page only for administrators to see. We can 
 7.  Uncheck the *View* and *Add Discussion* permissions next to the Site Member role.
 8.  Click the *Save* button.
 
-![image](../../images/04-web-content-page-permissions.png) *Illustration 12: Permissions for Admin Tips*
+![Figure 4.8: Permissions for Admin Tips](../../images/04-web-content-page-permissions.png)
 
 Congratulations! You've just changed the permissions for this page so that only site administrators can view it. Any users you add to this role will now be able to see the page. Other users, even members of this site, won't have the permissions to see it.
 
@@ -298,8 +298,7 @@ We'll begin by creating simple content using Liferay's WYSIWYG Editor and then w
 
 #### Web Content Section of the Control Panel
 
-![image](../../images/04-web-content-context-dropdown.png)
-*Illustration 13: Choosing a site in the Content section*
+![Figure 4.8: Choosing a site in the Content Section](../../images/04-web-content-context-dropdown.png)
 
 When you manage web content from the control panel, you have the ability to select the location where you will be adding or editing the content. For instance, you can add content that will be available to a specific site, or globally across the portal. The Content section of the Control Panel displays the name of the site where you are currently working as its heading. You can change where you're working using the drop down attached to the heading. We will add our first piece of content to the *TISA Internet* site, which we defined earlier in the chapter as the default site.
 
@@ -309,7 +308,7 @@ Once you have the TISA site selected, click on the *Web Content* link in the con
 
 For now, type the words *Welcome to the Technical Institute of Semantic Ambiguity* in the **Name** field. Notice that content can be localized in whatever language you want. If you click the *localize* check box, two select boxes appear which allow you to pick the language you're working in and the language that is the default. You can enter translations of your content for any language in the list. The screenshot below shows this interface but for now, we won't be using it, so you can leave it unchecked. In the content field, add a short sentence announcing that the web site is up and running.
 
-![image](../../images/04-web-content-wysiwyg.png)*Illustration 14: Web Content Editor*
+![Figure 4.9: The Web Content Editor](../../images/04-web-content-wysiwyg.png)
 
 ##### Images, Fonts, Links, and More
 
@@ -319,8 +318,7 @@ Using the editor, select all of the current text, and then change the style to H
 
 You could insert an image here as well as more text with a different style, as demonstrated in the screenshot below. You can also bullets, numbering, links to another site, or custom images. You can even add an emoticon. Let's add a smiley face at the end of our announcement.
 
-![image](../../images/04-web-content-example2.png)
-*Illustration 15: Customizing Content*
+![Figure 4.10: Customizing Content](../../images/04-web-content-example2.png)
 
 The WYSIWYG editor is a flexible tool that gives you the ability to add text, images, tables, links, and more. Additionally, you can modify the display to match the purpose of the content. Plus it's integrated with the rest of Liferay Portal: for example, when you upload an image to be added to a page, that image can be viewed and manipulated in the Image Gallery portlet.
 
@@ -330,8 +328,7 @@ If you're HTML savvy, Liferay CMS doesn't leave you out in the cold. You can cli
 
 You can determine who will and who won't see your content. By default, the content is viewable by Anyone (Guest Role). You can limit viewable permissions by selecting any Role from the drop-down or in the list. Additionally, Liferay Portal provides the ability to customize permissions in more detail. Select the *More Options* link next to the drop down button, and you'll find the different activities you can grant or deny to your web content.
 
-![image](../../images/04-web-content-content-permissions.png)
-*Illustration 16: Permissions for Web Content*
+![Figure 4.11: Permissions for Web Content](../../images/04-web-content-content-permissions.png)
 
 For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save.* This will save the content in draft form. Once you're satisfied with the your changes, select *Publish.* This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay CMS, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. So let's go back to the page where we want the content displayed and add the Web Content Display portlet (in this case, the Welcome page).
 
@@ -339,8 +336,7 @@ For this piece of web content, we don't need to change anything. After you're fi
 
 Now that we've created and published our first piece of web content for TISA, it's time to display it. First, we'll need to add the *Web Content Display* portlet to our Welcome page. Do this by selecting *Add → Web Content Display* from the Dockbar.
 
-![image](../../images/portal-admin-ch4_html_m5a656d59.jpg)
-*Illustration 17: Adding the Web Content Display Portlet*
+![Figure 4.11: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
 Once the portlet appears, drag it to the position on the page where you want your content to appear. You can use the Web Content Display portlet to lay out the content on your pages any way you like. You can have as many Web Content Display portlets on a page as you need.
 
@@ -350,8 +346,7 @@ To add existing web content, select the *gear *icon on the lower left of the por
 
 Naturally, if your content appears in the list, you can simply select it. If there were lots of published content available, you could search for the content by name, ID, type, version, content, and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
 
-![image](../../images/04-web-content-choosing-web-content.png)
-*Illustration 18: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.*
+![Figure 4.12: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also enable the document conversion. This gives your users the ability to download your content in their format of choice. This is especially handy if you are running a research or academically oriented site; users can very quickly download PDFs of your content for their research projects.
 
@@ -371,8 +366,7 @@ To publish new content, select the *page and green plus icon* on the lower left 
 
 Once the content is displayed—whether you've selected content or created it in the Web Content Display portlet—you can edit the content directly from the Web Content Display portlet or from the Control Panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This will launch the WYSIWYG editor and from there you can make any necessary changes.
 
-![image](../../images/portal-admin-ch4_html_334f9d2e.jpg)
-*Illustration 19: Web Content Display Portlet*
+![Figure 4.12: Web Content Display Portlet](../../images/portal-admin-ch4_html_334f9d2e.jpg)
 
 When you publish your content this way, it will become immediately available on the site (unless, of course, you have a workflow enabled, which we'll see below). It's nice to be able to edit the content where it is when you need to, as well as edit it in the Control Panel.
 
@@ -403,8 +397,7 @@ Go back to the Control Panel and the Web Content section. Click *Add* from the W
 
 It is very easy to edit structures: all you have to do is drag elements into the structure and then give them names. For instance, select the *Checkbox *element under the *Form Controls* tab and drag it onto the structure. You can do the same with any of the elements. To remove it from the structure, simply select the *Delete* icon (black circle with X) in the upper right corner of the element. Take a moment to add, delete, and rearrange different elements.
 
-![image](../../images/04-web-content-structure-editor.png)
-*Illustration 21: Structure Elements*
+![Figure 4.13: Structure Elements](../../images/04-web-content-structure-editor.png)
 
 Liferay supports the following elements in structures:
 
@@ -438,8 +431,7 @@ The **Instructions for the User** field is where you can type in instructions fo
 
 Permissions to the structure are straightforward. Generally, you don't want most users editing structures as this often requires a developer to modify the template assigned to the structure. However, you do want to make your structure viewable to everyone that will be using it to add web content.
 
-![image](../../images/04-web-content-structure-permissions.png)
-*Illustration 23: View Permissions for Structure*
+![Figure 4.14: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
 
 You have the ability to grant or deny permissions based on Roles. For instance, you can give the Guest role the ability to *Add Discussion* or you may want to give a *Community Member* the ability to *Delete*. Liferay Portal makes it easy to configure the permissions based on your specific needs for the site.
 
@@ -463,8 +455,7 @@ Liferay supports templates written in four different templating languages. This 
 
 Liferay CMS makes it easy to create structures, templates, and content from the same interface. Let's go through the entire flow of how we'd create a structure, link it to a template, and then create content based on what we've defined. We'll use Velocity for our template, and we'll lay out the structure fields systematically to go along with the format we've defined for our content.
 
-![image](../../images/04-web-content-templates-create.png)
-*Illustration 25: Adding Template Interface*
+![Figure 4.14: Adding Template Interface](../../images/04-web-content-templates-create.png)
 
 1.  Go back to the Web Content section of the Control Panel and click *Add* under *Web Content*.
 2.  Click the *Edit* icon for Structures.
@@ -532,8 +523,8 @@ After this, we attempt to get a request parameter called `read_more`. Whether or
 
 When this template is rendered, it looks something like this:
 
-![image](../../images/portal-admin-ch4_html_437339b5.png)
-*Illustration 26: By default, the content displays like this. If the user clicks the Read More link, the portlet will display the body field as well. Note we've also enabled comments and ratings in this Web Content Display portlet.*
+![Figure 4.15: By default, the content displays like this. If the user clicks the Read More link, the portlet will display the body field as well. Note we've also enabled comments and ratings in this Web Content Display portlet.](../../images/portal-admin-ch4_html_437339b5.png)
+
 
 Of course, there is much, much more you can do with structures and templates. Check out the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)) for further information and examples.
 
@@ -559,8 +550,7 @@ Additionally, you may want the ability to create content and send it through a r
 
 You can publish your content on a schedule. You can determine when the content will be displayed, expired, and/or reviewed. This is an excellent to way to keep your site current and free from outdated (and perhaps incorrect) information. The scheduler is built right into the form that your users make use of to add web content, in the same column as the structure and template selectors.
 
-![image](../../images/04-web-content-schedule.png)
-*Illustration 29: Schedule for Publishing Content*
+![Figure 4.16: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
 
 **Display Date:** Allows you to determine (within a minute) when content will be displayed.
 **Expiration Date:** Allows to set the date when the content will expire. The default is one year.
@@ -592,8 +582,8 @@ Categories are defined by someone with administrative access to the content. The
 
 Tagging and categorizing web content is easy. You can do it at the bottom of the same form you use to add content. If you open the *Categorization* section of the form, you'll be presented with an interface for adding tags and categories.
 
-![image](../../images/04-web-content-categorization.png)
-*Illustration 30: Tagging and categorizing content can be done at the same time you create it. *
+![Figure 4.17: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
+
 
 The Control Panel contains an interface for managing tags and categories for each site in the portal. This interface can be used administratively to manage your tags and categories. We'll take a look at this interface in the next chapter.
 
@@ -619,8 +609,7 @@ Let's first take a look at how we might select content manually. You'll see that
 
 By selecting *Manual* from the select box beneath *Asset Selection*, tell the Asset Publisher that you want to select your content manually. You can select what you want to be published within the portlet, or you can create new content right from within the Asset Publisher.
 
-![image](../../images/04-web-content-asset-publisher-manual.png)
-*Illustration 34: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types from which to choose.*
+![Figure 4.18: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types from which to choose.](../../images/04-web-content-asset-publisher-manual.png)
 
 Clicking *Add New* gives you a menu of options, enabling you to create the content right where you are. You can create blogs, bookmarks, calendar entries, documents, images, and of course, web content. Anything you create here will be added to the list below of assets that will be displayed by the portlet.
 
@@ -638,8 +627,8 @@ The default behavior for the Asset Publisher is to select assets dynamically acc
 
 **Asset Type:** Choose whether you will display any asset or only assets of a specific type, such as only web content, only wiki entries, or any combinations of multiple types.
 
-![image](../../images/04-web-content-asset-publisher-filter.png)
-*Illustration 35: You can filter by tags and categories, and you can set up as many filter rules as you need. *
+![Figure 4.19: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+
 
 **Filter Rules:** Add as many filters on tags or categories as you like. You can choose whether the content contains or does not contain any or all categories or tags that you enter.
 
@@ -683,8 +672,7 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 **Show Metadata:** Allows you to select from the available metadata types (see below).
 
-![image](../../images/portal-admin-ch4_html_m409b2939.jpg)
-*Illustration 38: Show Metadata*
+![Figure 4.20: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
 
 **Enable RSS Subscription:** This gives users the ability to subscribe to the content via RSS Feeds.
 
@@ -708,14 +696,14 @@ The Staging tab allows us to make changes in a staging environment and preview o
 
 First, we'll need to create the site. Go the *Control Panel,* select the *Users and Organizations* tab, and then select *Add -> Location*. In the **Name** field, type in *Main Campus*, and select the appropriate *Country* and *Region*. Next choose the TISA Organization as the parent organiazation. Now click on *Organization site* on the right side of the screen. Check the box for *Create Site*, leave the defaults, and click *Save*. After you've completed these steps, select *Save*.
 
-![image](../../images/04-web-content-creating-location.png)*Illustration 6: Setting up a Location*
+![Figure 4.20: Setting up a Location](../../images/04-web-content-creating-location.png)
 
 Now we're going to add a page to our new site. Select *Main Campus* from the site context menu, and the click on *Site Pages*. Click *Add Page* andname the new page *News and Events.* Next, click the *View Pages* button and add the Alerts and Announcements portlets to it.
 
 Now we're ready to activate the staging feature for this site. You should now have two tabs or windows open in your browser to Liferay: one is on the Control Panel, and one contains the page you have just created. Return to the Control Panel tab where you're editing the page structure and go to *Site Settings* and select *Staging* from under the *Advanced* heading.
 
-![image](../../images/04-web-content-staging.png)
-*Illustration 7: You can chooseto use versioning and what content should be staged and what content should not be staged. *
+![Figure 4.21: You can chooseto use versioning and what content should be staged and what content should not be staged.](../../images/04-web-content-staging.png)
+
 
 We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live.* If you were to select *Remote Live*, you would also have needed to supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions → Edit* on any site in the Control Panel. Either way, once we make a selection (*Local Live* or *Remote Live*), many more options will become available to us.
 
@@ -729,8 +717,7 @@ Enabling *Page Versioning* gives you the ability to work in parallel on multiple
 
 If we navigate back to the News and Events page of the Main Campus site we'll now notice some new items along the top of the screen which will help us manage staged pages, and you'll also notice that most of your page management options have been removed. Click on *Staging* to view the staged area. You will now have your management options restored, and you'll have some new options related to staging.
 
-![image](../../images/04-web-content-staging-live-page.png)
-*Illustration 8: You can see the new bar that staging adds to the top of your screen.*
+![Figure 4.22: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then from the Dockbar click on *Live* Notice that the Calendar portlet isn't there. As you can see, only the page changes are staged; web content itself can go through a whole different workflow process (which we'll get to later). Go back to the staged page, and take a look at the options you have available. From here you can *Undo* changes, view a *History* of changes, *Mark as Ready for Publication*, and *Manage Page Variations*
 
@@ -746,7 +733,7 @@ After you're done making changes to the staged page, click on *Mark as Ready for
 
 * **Schedule Publication** to Live will give you the option to set a specific date to publish, or to setup recurring publishing. You could use this, for example, to publish all changes made during the week every Monday morning without any further intervention.
 
-![image](../../images/04-web-content-staging-publish.png) *Illustration 9: Ready to publish to Live *
+![Figure 4.22: Ready to publish to Live ](../../images/04-web-content-staging-publish.png)
 
 You may have noticed that something appears to be missing from this process, in particular, you might be asking the question "How do I reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's Workflow engine. In order to have a review process for staged pages, you will need to make sure that you have a workflow engine configured, and that you have Staging set up in the workflow. When using a worfklow, clicking *Mark as Ready for Publication* will submit the staged pages into the workflow. Once all necessary approvals have been completed, the *Publish to Live Now* and *Schedule for Publication* options will become available.
 
@@ -756,17 +743,18 @@ Let's say that you're working in an environment where you'll have several major 
 
 To create a new page variation, click on *Manage Page Variations* on the staging menu bar. This will bring you to a list of existing versions of your page. Click *Add* to create a new one. From the *Add Site Pages Variation* screen, you can set a Name, Description, and set your new variation to copy the content from an existing variation.
 
-![image](../../images/04-web-content-add-site-pages-variation.png) *Illustration 9: Creating a new variation.*
+![Figure 4.23: Creating a new variation](../../images/04-web-content-add-site-pages-variation.png)
 
 Site Page Variations are the top level variations, and each one will become it's own **Main Variation**, and each Main Variation can in turn have different variations for each page under it. You can switch between different variations by simply clicking on them from the staging menu bar. It is also possible to set permissions on each variation, so that certain users wouldn't have access to manage some, but not all page variations. Page variations also have different branches, so you could, for example, have three main variations, and then have have three varitions of each of those, resulting in nine different versions of a page. While can be confusing at first, it can all come together when you add **Merging**.
 
 Merging occurs automatically once you click *Merge*, and it will do it's best to preserve all changes made in different branches. For example, if you add two different portlets to a page in two different variations, and then merge them with the main variation, both portlet would be added to the page after the merge. You could then do some tweaking on the final merged product before publishing to live.
+[[Diagram Needed]]
 
 For example, if we want to manage a couple of variations of a page for the Main Campus page for the Fall Semester and Thanksgiving break. Initially we could create a Site Page Variation called *Fall Semester* and make any changes needed for the fall semester there. Once it's ready, we would marge those changes with the Main Variation and publish it.
 
 In the mean time, we could duplicate the pages from the Fall Semester variation in a *Thanksgiving Break* variation, and Make additional changes to the page. Once it gets close to Thanksgiving, we could merge Thanksgiving Break with the Fall Semester, and subsequently merge Fall Semester with the Main Variation again. Once this is complete, we could make any necessary tweaks after the merge, and Publish the pages.
 
-![image](../../images/04-web-content-branch-thanksgiving.png) *Illustration 9: The Thanksgiving branch of the Fall Semester Variation.*
+![Figure 4.24: The Thanksgiving branch of the Fall Semester Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 #### Wrapping up Staging
 
@@ -780,8 +768,8 @@ Liferay's workflow engine is called Kaleo workflow, and it ships with Liferay CE
 
 To enable workflow for Web Content, navigate to the Control Panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
-![image](../../images/04-web-content-workflow-config.png)
-*Illustration 31: Enabling Workflow for Content Management*
+![Figure 4.25: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+
 
 As you will discover in Chapter 7, you can design workflows to suit your organization's approval process. For TISA's implementation we will use the *Single Approver *workflow which ships with the product.
 
@@ -796,8 +784,7 @@ Let's go ahead and set up Liferay's Workflow for the TISA web site.
 
 That's all it takes to set up workflow for web content. Now publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at TISA. Return to the home page and click on the *Add Web Content *icon on the Web Content Display portlet. Call it *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
 
-![image](../../images/04-web-content-workflow-config.png)
-*Illustration 32: Pending Workflow*
+![Figure 4.26: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in Control Panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow, and anyone in this role can approve content as well.
 
