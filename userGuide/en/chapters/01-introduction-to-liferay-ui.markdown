@@ -23,7 +23,7 @@ Additionally, Liferay supports portlets written in other programming languages, 
 Liferay initially presents a very simple interface. Unauthenticated users can navigate the public pages of the portal and see a *Sign In* link in the top right corner of the screen.
 
 ---
-![tip](../../images/01-tip.png)If your portal initially presents you with the demo web site, 7 Cogs, see Chapter 12 in Part 2 for removal instructions.
+![tip](../../images/01-tip.png)Note: If your portal initially presents you with the demo web site, 7 Cogs, see Chapter 12 in Part 2 for removal instructions.
 ---
 
 To sign into Liferay for the first time, click the *Sign In* link. You'll next see the *Sign In Portlet*. This portlet allows a user (or a prospective user) to do several things: sign in to Liferay, create a new account on the portal, or have a password reminder emailed to you. An OpenID sign-in option is also available. You should use the default administrator account to sign in to the portal for the first time. If you were to create a new account on the portal for yourself now, it would be created using Liferay's defaults. This would mean that the account wouldn't have access to the administrative functions in the control panel you'll need in order to set up Liferay for your organization. The credentials of the default administrator user that you should use are:
@@ -42,7 +42,7 @@ The first page that's displayed when a user logs in for the first time is the Te
 
 Once you've logged in as the default administrative user, the dockbar appears across the top of the page. The dockbar is the primary tool logged-in users have for navigating the portal and accessing administrative functions from anywhere in the portal. Clicking on the red pin icon at the left side of the dockbar pins it in place so that it remains visible when you scroll down the page. 
 
-![Figure 1.2: The dockbar](../../images/05-dockbar.png)
+![Figure 1.2: The Dockbar](../../images/05-dockbar.png)
 
 Depending on the logged-in users' roles and what sections of the portal they are viewing, they may see all or only some of the dockbar menus. For each menu, a list of options appears when you mouse over it. Let's look at what's available in the dockbar. 
 
@@ -64,7 +64,7 @@ The Add menu gives you a nice, quick way to build your pages.
 
 The next option is the *Manage* menu. From here, you can access many settings for the current page and site. 
 
-![Figure 1.4: Manage menu from the dockbar](../../images/01-manage-menu-from-dockbar.png)
+![Figure 1.4: Manage Menu from the Dockbar](../../images/01-manage-menu-from-dockbar.png)
 
 **Page:** brings up a window containing controls for managing a specific page of the current site. These include the theme, layout, search engine optimization, and more.
 
@@ -88,7 +88,7 @@ Next on the dockbar is a check box labeled *Edit Controls*. This toggles the edi
 
 This is the topmost item in the menu. Initially, your current location is highlighted. This shows you are in the public pages of the *liferay.com* site.
 
-![Figure 1.5: Go To menu from the Dockbar](../../images/01-go-to-menu-from-dockbar.png)
+![Figure 1.5: Go To Menu from the Dockbar](../../images/01-go-to-menu-from-dockbar.png)
 
 Liferay allows for various configurations of pages for end users: you can configure it so that some or all users have their own personal sites, with public and/or private pages, where they can place the portlets they need to use. The administrator account by default has its own pages. Because you are logged in with an account that has administrator privileges, you can see everything in the portal.
 
@@ -96,7 +96,7 @@ Liferay allows for various configurations of pages for end users: you can config
 
 Your (or the default user's) name appears at the right side of the dockbar next to a sign-out link that logs you out of the portal. Your name itself is a link to the *Manage My Account* dialog box. You can use the left menu to switch between viewing your account information and your personal site pages. You can configure both personal and portal information such as your screen name, password, email address, phone number, physical address, language, and time zone, as well as your organizations, sites, user groups, and roles. 
 
-![Figure 1.6: My Account menu from the Dockbar](../../images/01-my-account-menu-from-dockbar.png)
+![Figure 1.6: My Account Menu from the Dockbar](../../images/01-my-account-menu-from-dockbar.png)
 
 One of the most important tools Liferay offers for managing your portal is the aforementioned control panel, accessible from the *Go to* menu of the dockbar. The control panel is composed of administrative pages that you can use to mange various aspects of the portal.
 
@@ -126,7 +126,7 @@ A simple way to think about this is that your portal has users and various ways 
 
 The following figure illustrates the relationships between these portal concepts. In the figure, each arrow may be read using the words “can be a member of.” So this means that organizations can be members of sites, sites can be members of roles, users can be members of anything, and so on. Though this seems very complex, it provides a powerful mechanism for portal administrators to configure portal resources and security in a consistent and robust manner. It is important to note that the diagram illustrates only users and their collections. Permissions do not flow through all of these collections: permissions can be assigned to roles only.
 
-![Figure 1.8: Liferay permissions model](../../images/01-liferay-permissions-model.png)
+![Figure 1.8: Liferay Permissions Model](../../images/01-liferay-permissions-model.png)
 
 Teams belong to individual sites. Roles that appear inside sites are scoped just for sites. This means that although each site in the portal might have a particular role with its configured permissions, membership in this role can be different for each site and the granted permissions only apply within the site.
 
@@ -225,7 +225,7 @@ Let's add a user account for yourself and configure this account so that it has 
 
 After you submit the form, the page reloads with a message saying that the save was successful. An expanded form appears which allows you to fill out a lot more information about the user. You don't have to fill anything else out right now. Just note that when the user ID was created, a password was automatically generated and, if Liferay was correctly installed (see chapter 11 in part 2), an email message with the password in it will have been sent to the user. This, of course, requires that Liferay can properly communicate with your SMTP mail server.
 
-![Figure 1.10: Liferay's User Account editor](../../images/01-user-account-editor.png)
+![Figure 1.10: Liferay's User Account Editor](../../images/01-user-account-editor.png)
 
 If you haven't yet set up your mail server, you'll need to use this page to change the default password for the user ID to something you can remember. You can do this by clicking on the *Password* link in the box on the right, entering the new password in the two fields, and clicking *Save*. Next, you will want to give your user account the same administrative rights as the default administrator's account. This will allow you to perform administrative tasks with your own ID instead of having to use the default ID. This will also allow you to make your portal more secure by deleting or disabling the default ID.
 
@@ -356,7 +356,6 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 While we're on the subject of sites, we should mention Site Templates, which apppear below the Sites link in the Portal category of the control panel. These allow you to create sites by selecting pre-defined templates that you can make beforehand. A site template consists of a pre-defined set of pages and portlets. You can use templates to quickly create multiple sites that are pre-populated with the pages and portlets defined by the templates.
 
 ![Site Templates](../../images/01-site-templates.png)
-*Illustration 8: Site Templates*
 
 You can create templates for open, restricted, and private sites. Additionally, you can create a default template that applies to any type of site. As an example, we will create and apply a template designed for an educational institution's student sites. Go to the control panel and click *Site Templates*. Click the *Add* button and create a site template called *Students*. Check the Active box to make your template useable. Also check the Allow Modifications and Allow Layout Additions boxes. This will allow you to modify or remove the content introduced to your site from the template. Now you can select the *Open Site Template* link and begin adding content, pages, portlets and configuring the layouts. You'll learn more about how to do this in the next chapter. Once you're finished, return to the Site Templates portlet and select *Save.*
 
@@ -393,11 +392,11 @@ Liferay version 5.1 introduced the concept of page templates which are tied to u
 
 A user group's page templates can be administered using the control panel. Click *View* and select *User Groups* from the *Users and Organizations* page of the Control Panel to see a list of existing user groups. Click *Actions* to see the list of actions to peform on them that we described above.
 
-![Manage Pages action on a User Group](../../images/01-user-groups-manage-pages.png)*Illustration 9: Manage Pages action on a User Group*
+![Manage Pages action on a User Group](../../images/01-user-groups-manage-pages.png)
 
 You can use the Manage Pages action to access the common Liferay UI for creating pages and organizing them in a hierarchy. Note that it is possible to create both public and private pages. Each set will be used as templates to be copied to the user's personal public or private page sets respectively when the user becomes a member of the user group.
 
-![Adding a Page Template](../../images/01-user-groups-adding-page-template.png)*Illustration 10: Adding a Page Template*
+![Adding a Page Template](../../images/01-user-groups-adding-page-template.png)
 
 In the screen shot above, the administrator has created a new private page called *You are a student* within the Students user group. Since the page created is a portlet page, the administrator can now click the *View Pages* button to open the page. Any number of portlets may be added to the page and they can be configured as needed. Let's assume for our example that the Loan Calculator and Calendar portlets are added to the page.
 
@@ -405,11 +404,11 @@ In the screen shot above, the administrator has created a new private page calle
 
 The next step is to assign an existing user to that group to verify that the page template is copied to the user's private page. To do this, click *Actions* &rarr; *Assign Members* in the list of available user groups. Click the *Available* tab to see a list of users that can be assigned to the group.
 
-![Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)*Illustration 11: Assigning Members to a User Group*
+![Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
 
 From that list, one or more users can be selected to make them members of the user group. When the *Update Associations* button is clicked, the users become members of the group and copies of any public or private page templates which are configured for the user group are copied to their page sets.
 
-![Template copied to a user's personal site](../../images/01-template-copied-to-personal-site.png)*Illustration 12: Template copied to a user's personal site*
+![Template Copied to a User's Personal Site](../../images/01-template-copied-to-personal-site.png)
 
 For example, suppose that a user that already had an existing *Welcome* page on his or her personal site. That user will have an additional *You Are A Student* page once he or she has been added to the *Students* user group. The *You are a student* page will contain the Loan Calculator and Calendar portlets that you added to the template page.
 
@@ -427,7 +426,7 @@ We could expand our previous example by dividing the *Students* user group into 
 
 For our example, we will only create a *First Year Students* user group but a *Second Year Students* group could be created the same way. First, navigate to the Site Template page of the control panel. Click *Add* and enter "First Year Students" for the name of the site template and an optional description: "for use by the First Year Students user group". Add a private page called *You are a Student* to this template and add the RSS portlet to this page. Then navigate to the *Users and Organizations* page of the control panel, click *View*, and select *User Groups*. Add a user group with the name "First Year Students" and, optionally, the description "freshmen". Lastly, add the same user who was already assigned to the *Students* group to the *First Year Students* group.
 
-![Portlets combined on page from two user group templates](../../images/01-combined-portlets-from-two-user-groups.png)*Illustration 13: Portlets combined on page from two user group templates*
+![Portlets Combined on Page from Two User Group Templates](../../images/01-combined-portlets-from-two-user-groups.png)
 
 In our example, a user was added to a *Students* group which had a template with a private page called *You are a Student* and to a *First Year Students* group which had a template with an identically named private page. Thus the private page of the user received both the portlets from the *Students* template and from the *First Year Students* template. 
 
@@ -457,7 +456,7 @@ Roles are groupings of users that share a particular function within the portal,
 
 The roles page of the control panel serves as a single interface which lets you create roles, assign permissions to them, and assign users to the roles. Roles can be scoped by portal, site, or organization. To create a role, click the *Roles* link, and then click the *Add* button. You can choose a Regular, Site, or Organization role. A regular role is a portal-scoped role. Make a selection and then type a name for your role, a title, and a description. The name field is required but the title and description are optional. If you enter a name and a title, the title will be displayed in the list of roles on the *Roles* page of the control panel. If you do not enter a title, the name will be displayed. When you have finished, click *Save*.
 
-![Roles page and role actions menu](../../images/01-roles-and-role-actions.png)*Illustration 13: Roles page and role actions menu*
+![Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what functions you can perform on your new role, click the *Actions* button.
 
@@ -477,7 +476,7 @@ After you save, Liferay redirects you to the list of roles. To see what function
 
 Roles serve as repositories of permissions to be assigned to users who belong to them. So, to use a role, you need to assign members to it and define the permissions that you want to grant to members of the role.
 
-![defining permissions on a role](../../images/01-defining-permissions-on-a-role.png)*Illustration 14: Defining Permissions on a Role*
+![Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
 
 When you click the *Actions* button on portal-scoped role and select *Define Permissions*, you will be shown a list of all the permissions that have been defined for that role. Click the *Add Permissions* drop-down menu to see a list of the permissions that can be defined. As of Liferay version 6.1, these permissions fall into seven categories: Portal, Site Content, Site Application, Control Panel: Personal, Control Panel: Site, Control Panel: Portal, and Control Panel: Server. For non-portal scoped roles, you need to click on the *Options* link on individual portlets, then *Configuration*, then *Permissions* to assign permissions within the site or organization that owns the portlet. 
 
@@ -489,7 +488,7 @@ Site Application permissions affect the application as a whole. So, using our Me
 
 The Control Panel permissions affect how the portlet appears to the user in the control panel. Some Control Panel portlets have a Configuration button, so you can define who gets to see that, as well as who gets to see an application in the Control Panel.
 
-![message board content permissions](../../images/01-message-board-content-permissions.png)*Illustration 15: Message board content permissions*
+![Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
 
 Each possible action to which permissions can be granted is listed. To grant a permission, check the box next to it. If you want to limit the scope of the permission to a particular site, click the *Limit Scope* link, and then choose the site. Once you have chosen the permissions granted to this role, click *Save*. For a portal-scoped Message Boards Administrator role, you might grant content permissions for every action listed. After you click *Save*, you will see a list of all permissions that are currently granted to this role. From here, you can add more permissions or go back by clicking a link in the breadcrumb list or the *Return to Full Page* link.
 
@@ -509,13 +508,12 @@ Teams don't appear as a link in the control panel because they exist *within* si
 
 To create a team within a site, first naviagte to the *Control Panel → Sites* page then and then select *Actions → Manage Memberships* for the site within which you want to create a team. Finally, click *View → Teams* and click the Add Team button.
 
-![creating a team within a site](../../images/01-creating-a-team.png)
-*Illustration 16: Creating a team within a site*
+![Creating a Team within a Site](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions → Assign Members*.
 
 Permission management for teams is handled at the individual portlet level, using the *Options → Configuration → Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
 
-[assigning portlet permissions to a team](../../images/01-assigning-portlet-permissions-to-teams)*Assigning portlet permissions to a team*
+[Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams)
 
 To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. Now your team is ready to work!

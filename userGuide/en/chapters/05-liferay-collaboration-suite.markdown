@@ -106,55 +106,57 @@ Liferay Portal has a portlet called the Blogs portlet which allows you to provid
 
 ### The Blogs Portlet
 
-![Initial view of the Blogs portlet](../../images/portal-admin-ch5_html_m5350d888.jpg)*Illustration 4: Initial view of the Blogs portlet*
+The Blogs portlet is available from the *Collaboration* section of the *Add → More* menu. You will notice that it is an instanceable portlet, meaning that it can only be added once to a site. This allows you to use the Blogs portlet to create a shared blog to build a site like Slashdot or to create multiple personal blogs to build a site like [http://blogger.com](http://blogger.com/). What's the difference? Adding the Blogs portlet to a site page creates a shared blog for members of the site that the page belongs to. Adding the Blogs portlet to a user's personal site creates a blog for just that user. The Blogs portlet works the same way in both cases. And of course, you can change the Blog portlet's scope to have different blogs on different pages in the same site.
 
-The Blogs portlet is available from the *Collaboration* section of the *Add → More* menu. You will notice that it is an instanceable portlet, meaning that it can only be added once to a site. This allows you to use the Blogs portlet to create a shared blog to build a site like Slashdot or to create multiple personal blogs to build a site like [http://blogger.com](http://blogger.com/). What's the difference? Adding the Blogs portlet to a site page creates a shared blog for members of the site that the page belongs to. Adding the Blogs portlet to a user's personal site creates a blog for just that user. The Blogs portlet works the same way in both cases. And of course, you can change the Blog portlet's scope to have different blogs on different pages in the same site. By default, the Blogs portlet will display the latest entry in its entirety. Since we have just added the portlet to a page, we have no entries, so the portlet will be empty. Before we start adding entries, we'll configure the portlet so that it displays entries according to our specifications.
+![Initial View of the Blogs portlet](../../images/05-initial-view-blogs-portlet.jpg)*Illustration 4: Initial view of the Blogs portlet*
+
+By default, the Blogs portlet will display the latest entry in its entirety. Since we have just added the portlet to a page, we have no entries, so the portlet will be empty. Before we start adding entries, we'll configure the portlet so that it displays entries according to our specifications.
 
 #### Configuring the Blogs Portlet
 
 The Blogs portlet is easy to configure. Click on the *Menu* icon in the portlet's title bar and select *Configuration*. Beneath the Setup tab, you will see another row of options.
 
-**Email From**: Selecting this tab allows you to define the *From* field in the email messages that users receive from the Blogs portlet.
+**Email From**: allows you to define the *From* field in the email messages that users receive from the Blogs portlet.
 
-**Entry Added Email**: This tab allows you to enter a subject and body of the emails sent out when a new Blog entry has been added.
+**Entry Added Email**: lets you enter a subject and body for the emails sent out when a new Blog entry has been added.
 
-**Entry Updated Email**: This tab allows you to enter a subject and body of the emails sent out when a new Blog entry has been updated.
+**Entry Updated Email**: lets you enter a subject and body of the emails sent out when a new Blog entry has been updated.
 
-**Display Settings**: Here, you can configure various display options for the Blogs portlet. You should think about the best way to display your entries as well as how you want your users to interact with bloggers.
+**Display Settings**: allows you to configure various display options for the Blogs portlet. You should think about the best way to display your entries as well as how you want your users to interact with bloggers.
 
 ![Blogs Configuration](../../images/05-blogs-configuration.png)*Illustration 5: Blogs Configuration*
 
-*Maximum Items to Display*: This allows you to choose the total number of blog entries to display on the initial page. You can choose up to 100 to be displayed.
+*Maximum Items to Display*: allows you to choose the total number of blog entries to display on the initial page. You can choose up to 100 to be displayed.
 
-*Display Style*: Choose between Full Content, the Abstract, or just the Title. Setting this to Abstract causes Liferay to display only the first 30 words of your blog entries, with a Read More link at the bottom of each to allow users to read the whole entry if they wish.
+*Display Style*: lets you choose between Full Content, Abstract, or just the Title. Setting this to Abstract causes Liferay to display only the first 30 words of your blog entries, with a Read More link at the bottom of each to allow users to read the whole entry if they wish.
 
-*Enable Flags*: Allows users to flag content as inappropriate and send an email to the administrators.
+*Enable Flags*: allows users to flag content as inappropriate and send an email to the administrators.
 
-*Enable Related Assets*: Allows bloggers to select related content from other portlets to pull into their blog entry for readers to view.
+*Enable Related Assets*: allows bloggers to select related content from other portlets to pull into their blog entry for readers to view.
 
 [Related Assets](../../images/05-related-assets.png)*Illustration 6: Related Assets*
 
-*Enable Ratings*: Allows you to enable your users to rate your blog entries from one to five stars.
+*Enable Ratings*: allows you to enable your users to rate your blog entries from one to five stars.
 
-*Enable Comments*: Allows readers to comment on your blog entries.
+*Enable Comments*: allows readers to comment on your blog entries.
 
-*Enable Comment Ratings*: Allows readers to rate the comments which are posted to your blog entries.
+*Enable Comment Ratings*: allows readers to rate the comments which are posted to your blog entries.
 
-*Enable Social Bookmarks*: Allows users to Tweet, Facebook like, or +1 on Google Plus about blog posts.
+*Enable Social Bookmarks*: allows users to Tweet, Facebook like, or +1 on Google Plus about blog posts.
 
-*Maximum Items to Display*: Allows you to determine how many blog entries will be displayed at once. The default is set to twenty.
+*Maximum Items to Display*: allows you to determine how many blog entries will be displayed at once. The default is set to twenty.
 
-*Display Style*: You can select a simple, vertical, or horizontal display style for your blog posts.
+*Display Style*: lets you select a simple, vertical, or horizontal display style for your blog posts.
 
-*Display Position*: You can choose a top or a bottom position for your blog posts.
+*Display Position*: lets you choose a top or a bottom position for your blog posts.
 
 **RSS**: The RSS tab allows you to configure the way in which blogs will display to RSS readers. Here, you can choose how you want your blog entries to be published to feed readers and outside web sites.
 
-*Maximum Items to Display*: This allows you to choose the total number of RSS feeds to display on the initial page. You can choose up to 100 to be displayed.
+*Maximum Items to Display*: allows you to choose the total number of RSS feeds to display on the initial page. You can choose up to 100 to be displayed.
 
-*Display Style*: You can choose between Full Content, Abstract, and Title. These options work just like the ones above for blog entries.
+*Display Style*: lets you choose between Full Content, Abstract, and Title. These options work just like the ones above for blog entries.
 
-*Format*: You can choose which format you want to deliver your blogs: RSS 1.0, RSS 2.0, or Atom 1.0.
+*Format*: lets you choose which format you want to deliver your blogs: RSS 1.0, RSS 2.0, or Atom 1.0.
 
 #### Permissions
 
@@ -192,17 +194,17 @@ If you click *Configuration* from the menu button in the title bar of the portle
 
 ![Blogs Aggregator Configuration](../../images/05-blogs-aggregator-configuration.png)*Illustration 8: Blogs Aggregator Configuration*
 
-**Selection Method:** You can select Users or Scope here. If you select Users, the Blogs Aggregator will aggregate the entries of every blogger on your system. If you want to refine the aggregation, you can select an Organization by which to filter the users. If you select Scope, the Blogs Aggregator will contain only entries of users who are in the current scope. This will, in essence, limit the entries to members of the site where the Blogs Aggregator portlet resides.
+**Selection Method:** lets you select Users or Scope here. If you select Users, the Blogs Aggregator will aggregate the entries of every blogger on your system. If you want to refine the aggregation, you can select an Organization by which to filter the users. If you select Scope, the Blogs Aggregator will contain only entries of users who are in the current scope. This will, in essence, limit the entries to members of the site where the Blogs Aggregator portlet resides.
 
 **Organization:** Allows you to select which organization's blogs you want to aggregate.
 
-**Display Style:** You can select from several different styles for displaying blog entries based on what information from blogs you would like the aggregator to display: title, abstract, body, image, quote.
+**Display Style:** lets you select from several different styles for displaying blog entries based on what information from blogs you would like the aggregator to display: title, abstract, body, image, quote.
 
-**Maximum Items to Display:** Select maximum number of entries the portlet will display.
+**Maximum Items to Display:** lets you select maximum number of entries the portlet will display.
 
-**Enable RSS Subscription:** The aggregated entries can themselves be an RSS feed. Leave this box selected if you want people to be able to subscribe to your aggregated blog entries.
+**Enable RSS Subscription:** allows you to use the aggregated entries themselves as an RSS feed. Leave this box selected if you want people to be able to subscribe to your aggregated blog entries.
 
-**Show Tags:** This option will display all the tags associated with the blogs.
+**Show Tags:** displays all the tags associated with the blogs.
 
 When you have finished setting the options in the portlet, click *Save*. Then click *Return to Full Page*. As you will see, the Blogs Aggregator looks very much like the Blogs portlet, except that the entries come from more than one author.
 
@@ -242,33 +244,33 @@ First, create a portal or site role. Then add the users who will be using the ca
 
 Now you are ready to begin using your calendar. Click the *Add Event* button. You will see a form that allows you to fill out all the information for your event.
 
-**Start Date/Time**: The date and time the event starts.
+**Start Date/Time**: lets you enter a date and time for the event.
 
-**Duration**: How long the event will last.
+**Duration**: lets you specify long the event will last.
 
-**All Day Event**: Check this box to disassociate time from the event and make it last all day.
+**All Day Event**: allows you to disassociate time from the event and make it last all day.
 
-**Time Zone Sensitive**: Leave this box checked to make sure that the portal keeps track of the event regardless of time zone.
+**Time Zone Sensitive**: allows you to make sure that the portal keeps track of the event regardless of time zone.
 
-**Title**: The title of the event.
+**Title**: lets you provide a title for the event.
 
-**Description**: A description of the event.
+**Description**: lets you enter a description of the event.
 
-**Location**: The physical location of the event.
+**Location**: lets you specify the physical location of the event.
 
-**Type**: Select from a number of pre-configured event types. You can change these in the *portal-ext.properties* file.
+**Type**: allows you to select a pre-configured event type. You can change these in the *portal-ext.properties* file.
 
-**Permissions**: Determine who can view and edit the event.
+**Permissions**: lets you manage who can view and edit the event.
 
-**Categorizations**: Allows you tag the event.
+**Categorizations**: allows you tag the event.
 
-**Related Assets**: Allows you to attach a piece of content from another portlet to the event.
+**Related Assets**: allows you to attach a piece of content from another portlet to the event.
 
-**Repeat**: If the event repeats on a schedule, select the schedule (daily, weekly, monthly. etc.)
+**Repeat**: lets you select the schedule (daily, weekly, monthly. etc.) for repeatable events.
 
-**End Date**: If the event repeats on a schedule but there is an end to the set of meetings, enter the end date.
+**End Date**: lets you enter the end date for events that repeat on a schedule but have a specified last meeting.
 
-**Reminders**: Select whether to send a reminder, how long before the event to send it, and through what medium (email, SMS text message, or instant message) to send it. Note that this feature is integrated with your profile on the portal, so you will need to fill out your mobile phone number and / or instant messenger IDs in order to use those features.
+**Reminders**: lets you select whether to send a reminder, how long before the event to send it, and through what medium (email, SMS text message, or instant message) to send it. Note that this feature is integrated with your profile on the portal, so you will need to fill out your mobile phone number and/or instant messenger IDs in order to use those features.
 
 When you have finished adding your event, click *Save*. You can view calendar events by day, week, month, year, or in a simple list.
 
@@ -296,27 +298,23 @@ For a Gmail account, all you need to do is provide your email address and your p
 
 For a Custom Mail Account, the following fields are necessary:
 
-**Address**: The email address which receives mail for this account.
+**Address**: lets you enter the email address which receives mail for this account.
 
-**Login**: The user name for logging into the account.
+**Login**: lets you choose a user name for logging into the account.
 
-**Password**: The password for logging into the account.
+**Password**: lets you choose a password for logging into the account.
 
-**Incoming Settings**: The host name for your IMAP (Internet Mail Access
-Protocol) or POP server.
+**Incoming Settings**: allows you to specify the host name for your IMAP (Internet Mail Access Protocol) or POP server.
 
-**Incoming Port**: The port upon which the IMAP or POP service is
-running.
+**Incoming Port**: allows you to specify the port upon which the IMAP or POP service is running.
 
-**Use Secure Incoming Connection**: Check this box to use an encrypted
-connection to the server, if your server supports it.
+**Use Secure Incoming Connection**: allows you to use an encrypted connection to the server provided that your server supports it.
 
-**Outgoing SMTP Server**: The host name of your SMTP (Simple Mail
-Transfer Protocol) server.
+**Outgoing SMTP Server**: lets you enter the host name of your SMTP (Simple Mail Transfer Protocol) server.
 
-**Outgoing Port**: The port upon which the SMTP service is running.
+**Outgoing Port**: allows you to specify the port upon which the SMTP service is running.
 
-**Use Secure Outgoing Connection**: Check this box to use an encrypted connection to the server, if your server supports it.
+**Use Secure Outgoing Connection**: allows you to use an encrypted connection to the server provided that your server supports it.
 
 When finished, click *Save*. Your new email account now appears as a tab at the top of the page along with the button for adding a mail account. In this way, you can add as many mail accounts as you want in order to view them in the portlet.
 
