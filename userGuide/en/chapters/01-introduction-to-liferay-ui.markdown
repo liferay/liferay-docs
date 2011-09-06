@@ -323,75 +323,75 @@ To add a site, click the *Sites* link on the left side of the Control Panel in t
 
 **Name:** is the name of the site you wish to create.
 
-**Description:** describes what the site will be used for.
+**Description:** describes the site's intended function.
 
 **Type:** can be open, restricted, and private. An open site appears in the My Sites portlet and users can join and leave the site whenever they want. A restricted site is the same except that users can only request membership. A site administrator must then explicitly grant or deny users' requests to join. A private site does not appear in the My Sites portlet and users must be added to it manually by a site administrator.
 
 **Active:** determines whether a site is active or inactive. Inactive sites are inaccessible but can be activated whenever a site administrator chooses to active them.
 
-**Tags:** You can use Liferay's tagging mechanism on the site. This is helpful if the site has an easily describable purpose within the portal.
+**Tags:** implement Liferay's tagging mechanism on the site. Tags can be very helpful for sites that have an easily describable purpose within the portal.
 
-Once you have created a site, it will appear in the list of sites in the control panel. Once the site has been created you can specify more details about the site, which fall under three main categories: Basic Information, Search Engine Optimization, and Advanced.
+Once you've created a site, it appears in the list on the Sites page of the control panel. Once the site has been created you can specify more details about the site, which fall under three main categories: Basic Information, Search Engine Optimization, and Advanced.
 
 ![Editing a Site](../../images/01-site-editor.png)
 
-**Details:** Lets you edit the information you entered when you created the site.
+**Details:** lets you edit the information you entered when you created the site.
 
-**Pages:** Lets you create and manage the site's public and private pages.
+**Pages:** lets you create and manage the site's public and private pages.
 
-**Site URL:** Lets you set friendly URLs and virtual hosts for your web site.
+**Site URL:** lets you set friendly URLs and virtual hosts for your web site.
 
-**Site Template:** Lets you choose a template to apply to your site.
+**Site Template:** lets you choose a template to apply to your site.
 
-**Sitemap:** Lets you use the sitemap protocol to notify search engines that your web site is available for crawling. 
+**Sitemap:** lets you use the sitemap protocol to notify search engines that your web site is available for crawling. 
 
-**Robots:** Lets you use a robots.txt file to specify certain pages and links that you do **not** want to be indexed by search engines. You need to set a virtual host before you set a robots.txt file.
+**Robots:** lets you use a robots.txt file to specify certain pages and links that you do **not** want to be indexed by search engines. You need to set a virtual host before you set a robots.txt file.
 
-**Staging:** Lets you turn on either Local Live staging or Remote Live staging.
+**Staging:** lets you turn on either Local Live staging or Remote Live staging.
 
-**Analytics:** Lets you set a Google Analytics ID that will be used for your site.
+**Analytics:** lets you set a Google Analytics ID that will be used for your site.
 
 #### Site Templates
 
-While we're on the subject of sites, it is important to mention Site Templates, which is several links down in the Portal category in the control panel. These allow you to create web sites within sites by selecting from pre-defined templates that you can make ahead of time. What this means is that you can create a template that has a pre-defined set of pages and portlets, and then use that template to quickly create multiple sites that are pre-populated with those pages and portlets.
+While we're on the subject of sites, we should mention Site Templates, which apppear below the Sites link in the Portal category of the control panel. These allow you to create sites by selecting pre-defined templates that you can make beforehand. A site template consists of a pre-defined set of pages and portlets. You can use templates to quickly create multiple sites that are pre-populated with the pages and portlets defined by the templates.
 
 ![Site Templates](../../images/01-site-templates.png)
 *Illustration 8: Site Templates*
 
-You can create templates for open, restricted, and private sites. Additionally, you can create a default template that applies to all kinds of sites. As an example, we will create and apply a template designed for an educational institution's student sites. Go to the control panel and click *Site Templates*. Click the *Add* button and create a site template called *Students*. Check the Active box to make your template useable. Also check the Allow Modifications and Allow Layout Additions boxes. This will allow you to modify or remove the content introduced to your site from the template. Now you can select the *Open Site Template* link and begin adding content, pages, portlets and configuring the layouts. You'll learn more about how to do this in the next chapter. Once you're finished, return to the Site Templates portlet and select *Save.*
+You can create templates for open, restricted, and private sites. Additionally, you can create a default template that applies to any type of site. As an example, we will create and apply a template designed for an educational institution's student sites. Go to the control panel and click *Site Templates*. Click the *Add* button and create a site template called *Students*. Check the Active box to make your template useable. Also check the Allow Modifications and Allow Layout Additions boxes. This will allow you to modify or remove the content introduced to your site from the template. Now you can select the *Open Site Template* link and begin adding content, pages, portlets and configuring the layouts. You'll learn more about how to do this in the next chapter. Once you're finished, return to the Site Templates portlet and select *Save.*
 
-To create a site based on the new template, go to the control panel and click *Sites*. Click the *Add* button and create a site called *Freshmen*. In the Public Pages drop down menu, select *Student Template* and then click *Save*. The new site will have all the pages, content, and portlets you created in the template. This feature streamlines the site creation process for administrators, making it easy to quickly create sites.
+To create a site based on the new template, go to the control panel and click *Sites*. Click the *Add* button and create a site called *Freshmen*. In the Public Pages drop-down menu, select *Student Template* and then click *Save*. The new site will have all the pages, content, and portlets you created in the template. This feature streamlines the site creation process for administrators, making it easy to quickly create sites.
 
 ### User Groups
 
 User Groups are arbitrary groupings of users. These groups are created by portal administrators to group users together who don't have an obvious organizational or site-based attribute which brings them together. Groups cannot have permissions like roles, but user groups can be added to roles. Why, then, would you use user groups? They come into play when you have complex security requirements. They are also useful in conjunction with page templates, which we will discuss below.
 
-Creating a user group is easy. Click the *Users and Organizations* link, then click the *Add* button and choose *User Group*. There are only two fields to fill out: Name (the name of the User Group) and Description (an optional description of what the group is for). Note that you have the option to create a page template for your user group. We will cover page templates for user groups below. Click *Save* and you will be redirected back to the *Users and Organizations* page. Click *View* and select *User Groups* to see the group you created.
+Creating a user group is easy. Click the *Users and Organizations* link, then click the *Add* button and choose *User Group*. There are only two fields to fill out: Name and Description. Note that you have the option to create a page template for your user group. When a user group has page templates, any users added to the group will have their personal pages poplulated by the content of the group's template. This allows you to do things like create a Bloggers user group with a page template that has the Blogs and Recent Bloggers portlets on it. The first time users who are added to this group log in to the portal, this page will get copied to their personal pages. They will then automatically have a blog page that they can use. Click *Save* and you will be redirected back to the *Users and Organizations* page. Click *View* and select *User Groups* to see the group you created.
 
 As with the other resources in the portal, you can click the *Actions*
 button to perform various operations on User Groups.
 
-**Edit:** Allows you to modify the name or description of the user group.
+**Edit:** allows you to modify the name or description of the user group.
 
-**Permissions:** This allows you to define which users, user groups, or roles have permissions to edit the user group.
+**Permissions:** lets you define which users, user groups, or roles have permissions to edit the user group.
 
-**Manage Pages:** Though user groups don't have pages of their own, you can create page templates for a group. When a user group has page templates, any users added to the group will have their personal pages poplulated by the content of the group's template. This allows you to do things like create a Bloggers user group with a page template that has the Blogs and Recent Bloggers portlets on it. The first time users who are added to this group log in to the portal, this page will get copied to their personal pages. They will then automatically have a blog page that they can use.
+**Manage Pages:** allows you to add, define, or remove page templates for a group.
 
-**Assign Members:** Takes you to a screen where you can search for and select users in the portal to be assigned to this User Group.
+**Assign Members:** lets you search for and select users in the portal to be assigned to this user group.
 
-**View Users:** Lets you view the users who are in the User Group.
+**View Users:** lets you view the users who are in the user group.
 
-**Delete:** Deletes the User Group.
+**Delete:** deletes the user group.
 
 #### User Groups and Page Templates
 
 Liferay allows users to each have a personal site consisting of public and private pages. Permissions can be granted to allow to allow users to customize their personal sites at will. The default configuration of those pages can be determined by the portal administrator through the portal-ext.properties file and optionally by providing the configuration in a LAR file. Though this has been a long-time feature of Liferay, it was not very flexible or easy to use.
 
-Liferay version 5.1 introduced the concept of page templates which are tied to user groups. This enables administrators to provide the same configuration for the personal pages of all (or just a subset of) users, using Liferay's GUI instead of the properties file. In some cases you may want to provide a different configuration for each user depending on his or her profile. For example, in a portal for University students, staff and undergraduates would get different default pages and portlets in their personal space. You can also set it up so that different groups are combined together to create the desired default configuration. When a user is assigned to a user group, the configured page templates are copied directly to the user's personal pages.
+Liferay version 5.1 introduced the concept of page templates which are tied to user groups. This enables administrators to provide the same configuration for the personal pages of a group of users, using Liferay's GUI instead of the properties file. In some cases you may want to provide a different configuration for each user depending on his or her profile. For example, in a portal for University students, staff and undergraduates would get different default pages and portlets in their personal space. You can also set it up so that different groups are combined together to create the desired default configuration. When a user is assigned to a user group, the configured page templates are copied directly to the user's personal pages.
 
 ##### User Group Page Templates: Defining page templates for a user group
 
-A user group's page templates can be administered using the control panel. Click *View* and select *User Groups* from the *Users and Organizations* page of the Control Panel to see a list of existing user groups. Click *Actions* to see the list of actions to peform on them that was described above.
+A user group's page templates can be administered using the control panel. Click *View* and select *User Groups* from the *Users and Organizations* page of the Control Panel to see a list of existing user groups. Click *Actions* to see the list of actions to peform on them that we described above.
 
 ![Manage Pages action on a User Group](../../images/01-user-groups-manage-pages.png)*Illustration 9: Manage Pages action on a User Group*
 
@@ -403,7 +403,7 @@ In the screen shot above, the administrator has created a new private page calle
 
 ##### Applying the page templates by assigning members to the user group
 
-The next step is to assign an existing user to that group to verify that the page template is copied to the user's private page. To do this, click *Actions* → *Assign Members* in the list of available user groups. Click the *Available* tab to see a list of users that can be assigned to the group.
+The next step is to assign an existing user to that group to verify that the page template is copied to the user's private page. To do this, click *Actions* &rarr; *Assign Members* in the list of available user groups. Click the *Available* tab to see a list of users that can be assigned to the group.
 
 ![Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)*Illustration 11: Assigning Members to a User Group*
 
@@ -417,20 +417,23 @@ For example, suppose that a user that already had an existing *Welcome* page on 
 
 Once the template pages have been copied to a user's personal site, the copies will be owned by the user. The user will be able to modify the pages and their content if the required permissions have been assigned to the user and the template. When a user is removed from a user group the associated pages won't be removed: they have become part of the user's personal site. However, if a user is removed from a group and is then added back, the pages will not be copied to the user's site a second time.
 
-If an administrator modifies page templates for a User group after users have already been added to the group, those changes will be used when new users are assigned to the user group. Since the pages are templates, however, the changes won't be applied to users that were already members of the user group.
+If an administrator modifies page templates for a user group after users have already been added to the group, those changes will only take effect when new users are assigned to the user group. The changes won't be applied to users that were already members of the user group.
 
 ##### Composing A Page Out of Several User Groups
 
 Users can belong to many user groups. If you have templates defined for a number of groups, this may result in having many page templates copied to users' pages. To prevent this, you can combine pages from different user groups into a single page.
 
-We could expand our previous example by dividing the *Students* user group into *First Year Students* and *Second Year Students*. For each of these types of students we want to have a page with the Loan Calculator and Calendar, but depending on which type, we may want other portlets to be on that page too. This can be achieved by using a naming convention for the pages. If two or more pages of different user groups have the same name, they will be
-combined into a single page when they are copied to a user's personal site. 
+We could expand our previous example by dividing the *Students* user group into *First Year Students* and *Second Year Students*. For each of these types of students we want to have a page with the Loan Calculator and Calendar, but depending on which type, we may want other portlets to be on that page too. This can be achieved by using a naming convention for the pages. If two or more pages of different user groups have the same name, they will be combined into a single page when they are copied to a user's personal site. 
 
 For our example, we will only create a *First Year Students* user group but a *Second Year Students* group could be created the same way. First, navigate to the Site Template page of the control panel. Click *Add* and enter "First Year Students" for the name of the site template and an optional description: "for use by the First Year Students user group". Add a private page called *You are a Student* to this template and add the RSS portlet to this page. Then navigate to the *Users and Organizations* page of the control panel, click *View*, and select *User Groups*. Add a user group with the name "First Year Students" and, optionally, the description "freshmen". Lastly, add the same user who was already assigned to the *Students* group to the *First Year Students* group.
 
 ![Portlets combined on page from two user group templates](../../images/01-combined-portlets-from-two-user-groups.png)*Illustration 13: Portlets combined on page from two user group templates*
 
-In our example, a user was added to a *Students* group which had a template with a private page called *You are a Student* and to a *First Year Students* group which had a template with an identically named private page. Thus the private page of the user received both the portlets from the *Students* template and from the *First Year Students* template. Note: If there are additional pages or portlets on your user's personal site, this means that your portal is configured to add default pages to the personal sites of new users.
+In our example, a user was added to a *Students* group which had a template with a private page called *You are a Student* and to a *First Year Students* group which had a template with an identically named private page. Thus the private page of the user received both the portlets from the *Students* template and from the *First Year Students* template. 
+
+---
+![tip](../../images/01-tip.png) Note: If there are additional pages or portlets on your user's personal site, this means that your portal is configured to add default pages to the personal sites of new users.
+---
 
 ##### Page Combination Rules
 
@@ -446,41 +449,39 @@ The following rules are used when composing a page by combining pages from diffe
 
 -   If the new layout template has portlets in columns that do not exist in the existing page, those portlets will be automatically copied to the first column of the existing layout template.
 
-As you can see, it is possible to have a very flexible configuration for the default pages of portal users. Furthermore, that configuration can be changed at any time using the standard Liferay UI that administrators are used to and then assigning users to new user groups.
-
-While these examples are somewhat simple, the system allows for as many user groups as desired. By using the convention of matching the page names, it is possible to build any default page composition that you want for your users.
+As you can see, it is possible to have a very flexible configuration for the default pages of portal users. Furthermore, that configuration can be changed at any time using the standard Liferay UI that administrators are used to and then assigning users to new user groups. While the examples we looked at are somewhat simple, the system allows for as many user groups as desired. By using the convention of matching the page names, it is possible to build any default page composition that you want for your users.
 
 ### Roles
 
-Roles are groupings of users that share a particular function within the portal, according to a particular scope. Roles can be granted permissions to various functions within portlet applications. Think of a role as a description of a function, such as Message Board Administrators. A role with that name is likely to have permissions relevant to the specific Message Board portlets delegated to it. Users who are placed in this role will inherit these permissions.
+Roles are groupings of users that share a particular function within the portal, according to a particular scope. Roles can be granted permissions to various functions within portlet applications. You can think of a role as a description of a function, such as Message Board Administrators. A role with that name is likely to have permissions relevant to the specific Message Board portlets delegated to it. Users who are placed in this role will inherit these permissions.
 
-The roles page of the control panel serves as a single interface which lets you create roles, assign permissions to them, and assign users to the roles. Roles can be scoped by portal, site, or organization. To create a role, click the *Roles* link, and then click the *Add* button. You can choose a Regular, Site, or Organization role. A regular role is a portal-scoped role. Make a selection and then type a name for your role, a title, and an optional description. The name field is required but the title is optional. If you enter a name and a title, the title will be displayed in the list of roles on the *Roles* page of the control panel. If you do not enter a title, the name will be displayed. When you have finished, click *Save*.
+The roles page of the control panel serves as a single interface which lets you create roles, assign permissions to them, and assign users to the roles. Roles can be scoped by portal, site, or organization. To create a role, click the *Roles* link, and then click the *Add* button. You can choose a Regular, Site, or Organization role. A regular role is a portal-scoped role. Make a selection and then type a name for your role, a title, and a description. The name field is required but the title and description are optional. If you enter a name and a title, the title will be displayed in the list of roles on the *Roles* page of the control panel. If you do not enter a title, the name will be displayed. When you have finished, click *Save*.
 
 ![Roles page and role actions menu](../../images/01-roles-and-role-actions.png)*Illustration 13: Roles page and role actions menu*
 
-You will be back at the list of roles. To see what functions you can perform on your new role, click the *Actions* button.
+After you save, Liferay redirects you to the list of roles. To see what functions you can perform on your new role, click the *Actions* button.
 
-**Edit:** This lets you change the name, title, or description of the role.
+**Edit:** lets you change the name, title, or description of the role.
 
-**Permissions:** This allows you to define which users, user groups, or roles have permissions to edit the role.
+**Permissions:** allows you to define which users, user groups, or roles have permissions to edit the role.
 
-**Define Permissions:** Click this to define what permissions this role grants. This is outlined in the next section.
+**Define Permissions:** defines what permissions this role grants. This is outlined in the next section.
 
-**Assign Members:** This lets you search and select users in the portal to be assigned to this role. These users will inherit any permissions that have been assigned to this role.
+**Assign Members:** lets you search and select users in the portal to be assigned to this role. These users will inherit any permissions that have been assigned to this role.
 
-**View Users:** This allows you to view the users who have been assigned to this role.
+**View Users:** allows you to view the users who have been assigned to this role.
 
-**Delete:** This lets you permanently delete a role from the portal.
+**Delete:** permanently removes a role from the portal.
 
 #### Defining Permissions on a Role
 
-Roles exist as a bucket for granting permissions to the users who are members of them. So one of the main tasks you will be doing with a role is granting it the permissions that you want members of the role to have.
+Roles serve as repositories of permissions to be assigned to users who belong to them. So, to use a role, you need to assign members to it and define the permissions that you want to grant to members of the role.
 
 ![defining permissions on a role](../../images/01-defining-permissions-on-a-role.png)*Illustration 14: Defining Permissions on a Role*
 
 When you click the *Actions* button on portal-scoped role and select *Define Permissions*, you will be shown a list of all the permissions that have been defined for that role. Click the *Add Permissions* drop-down menu to see a list of the permissions that can be defined. As of Liferay version 6.1, these permissions fall into seven categories: Portal, Site Content, Site Application, Control Panel: Personal, Control Panel: Site, Control Panel: Portal, and Control Panel: Server. For non-portal scoped roles, you need to click on the *Options* link on individual portlets, then *Configuration*, then *Permissions* to assign permissions within the site or organization that owns the portlet. 
 
-Portal permissions cover portal-wide activities that comprise several categories, such as site, organization, location, password policy, etc. This allows you to create a role that, for example, can create new site within the portal. This would allow you to grant users that particular permission without making them overall portal administrators.
+Portal permissions cover portal-wide activities that comprise several categories, such as site, organization, location, password policy, etc. This allows you to create a role that, for example, can create new sites within the portal. This would allow you to grant users that particular permission without making them overall portal administrators.
 
 Site Content permissions cover the content that the installed portlets create. If you pick one of the portlets from this list, you'll get options for defining permissions on its content. For example, if you pick Message Boards, you'll see permissions for creating categories or threads, or deleting and moving topics.
 
@@ -496,13 +497,15 @@ Roles are very powerful, and allow portal administrators to define various permi
 
 #### Special Note about the Power Users Role
 
-Prior to Liferay 6.0, the default configurations of many Liferay portlets allowed power users, but not regular users, to access them. In Liferay 6.0 and subsequent versions, power users and regular users are granted the same default permissions. The idea is not to force any portal administrators to use the power users role, but to encourage those who do to create their own custom permissions for the role. 
+Prior to Liferay 6.0, the default configurations of many Liferay portlets allowed power users, but not regular users, to access them. Liferay 6.0 and subsequent versions grant the same default permissions to both power users and regular users. This way, portal administrators are not forced to use the power users role. However, Liferay encourages those who do to create their own custom permissions for the role. 
 
-Note: If you are using Liferay 5.2 or a previous verion and you decide to remove the Power Users role from the default user associations, you will need to modify the permissions on certain portlets. To do this, see the section on Plugins Configuration below.
+---
+![tip](../../images/01-tip.png) Note: If you are using Liferay 5.2 or a previous verion and you decide to remove the Power Users role from the default user associations, you will need to modify the permissions on certain portlets. To do this, see the section on Plugins Configuration below.
+---
 
 ### Teams
 
-Teams don't appear as a link in the control panel because they exist *within* sites. Teams can be used when you need to create a bucket for permissions within a a single site. If you create a team for one site, it will not be available to any other sites. This is beneficial when you want a particular set of users and permissions for a site-specific function.
+Teams don't appear as a link in the control panel because they exist *within* sites. Teams can be used when you need to collect permissions within a a single site. If you create a team for one site, it will not be available to any other sites. Teams serve as a means to create a particular set of users and permissions for a site-specific function.
 
 To create a team within a site, first naviagte to the *Control Panel → Sites* page then and then select *Actions → Manage Memberships* for the site within which you want to create a team. Finally, click *View → Teams* and click the Add Team button.
 

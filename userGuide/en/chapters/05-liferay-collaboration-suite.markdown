@@ -52,7 +52,7 @@ Another useful feature of Liferay's portlets is Archived Setups. Once you have c
 
 To create an archived setup, click the *Configuration* option from the menu in the portlet's title bar. If the current settings of the portlet you are configuring are the ones you want to archive, click the *Archive/Restore Setup* link. If not, change and save the settings until you have the portlet configured the way you want it, and then click the *Archive/Restore Setup* link.
 
-There is only one field to fill out: a name for your archive. Create a name for your archive and click *Save*. You should now see your archive in the list. If for whatever reason you need to revert the portlet to these archived settings, you can click *Actions → Restore* next to the archived setup you want to restore.
+There is only one field to fill out: a name for your archive. Create a name for your archive and click *Save*. You should now see your archive in the list. If you ever need to revert the portlet to these archived settings, you can click *Actions → Restore* next to the archived setup you want to restore.
 
 Unless otherwise noted, all of the portlets in this chapter support this feature. This is particularly useful for portlets that have a lot of configuration options, such as the Message Boards portlet.
 
@@ -76,7 +76,7 @@ Copy and paste the provided snippet of code into the web site to which you want 
 
 You can add any Liferay portlet as an application on Facebook. To do this, you must first get a developer key. A link for doing this is provided to you in the Facebook tab. You will have to create the application on Facebook and get the key and canvas page URL from Facebook. Once you have done this, you can copy and paste their values into the Facebook tab. Your portlet will now be available on Facebook as a Facebook application.
 
-![Liferay's Forums on Facebook](../../images/portal-admin-ch5_html_m435d3961.png)*Illustration 2: Liferay's Forums on Facebook*
+![Liferay's Forums on Facebook](../../images/05-liferay-forum-facebook.png)*Illustration 2: Liferay's Forums on Facebook*
 
 ### Google Gadget
 
@@ -702,11 +702,11 @@ All you have to do to define a metadata set is choose fields to use from the are
 
 **Date**: A valid date format is required for the date field. However, you don't have to enter a date manually. When you select the date field a mini-calendar pops up which you can use to select a date.
 
-**Decimal**: This field lets you enter a decimal number.
+**Decimal**: This field lets you enter a decimal number. The value will be persisted as a double.
 
-**Integer**: This field lets you enter an integer.
+**Integer**: This field lets you enter an integer which will be persisted as an integer.
 
-**Number**: 
+**Number**: This field lets you enter a decimal number or an integer. The value will be persisted either as a double or an integer, depending on the type of input.
 
 **Radio**: The radio field displays several clickable options. The default number is three but this is customizable. Only one option can be selected at a time.
 
