@@ -524,7 +524,7 @@ After this, we attempt to get a request parameter called `read_more`. Whether or
 
 When this template is rendered, it looks something like this:
 
-![Figure 4.15: By default, the content displays like this. If the user clicks the Read More link, the portlet will display the body field as well. Note we've also enabled comments and ratings in this Web Content Display portlet.](../../images/portal-admin-ch4_html_437339b5.png)
+![Figure 4.15: By default, the content displays like this. If the user clicks the Read More link, the portlet will display the body field as well.](../../images/04-web-content-advanced-wcm.png)
 
 
 Of course, there is much, much more you can do with structures and templates. Check out the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)) for further information and examples.
@@ -749,13 +749,14 @@ To create a new page variation, click on *Manage Page Variations* on the staging
 Site Page Variations are the top level variations, and each one will become it's own **Main Variation**, and each Main Variation can in turn have different variations for each page under it. You can switch between different variations by simply clicking on them from the staging menu bar. It is also possible to set permissions on each variation, so that certain users wouldn't have access to manage some, but not all page variations. Page variations also have different branches, so you could, for example, have three main variations, and then have have three varitions of each of those, resulting in nine different versions of a page. While can be confusing at first, it can all come together when you add **Merging**.
 
 Merging occurs automatically once you click *Merge*, and it will do it's best to preserve all changes made in different branches. For example, if you add two different portlets to a page in two different variations, and then merge them with the main variation, both portlet would be added to the page after the merge. You could then do some tweaking on the final merged product before publishing to live.
-[[Diagram Needed]]
+
+![Figure 4.24: Our branching example](../../images/04-web-content-staging-forking.png)
 
 For example, if we want to manage a couple of variations of a page for the Main Campus page for the Fall Semester and Thanksgiving break. Initially we could create a Site Page Variation called *Fall Semester* and make any changes needed for the fall semester there. Once it's ready, we would marge those changes with the Main Variation and publish it.
 
 In the mean time, we could duplicate the pages from the Fall Semester variation in a *Thanksgiving Break* variation, and Make additional changes to the page. Once it gets close to Thanksgiving, we could merge Thanksgiving Break with the Fall Semester, and subsequently merge Fall Semester with the Main Variation again. Once this is complete, we could make any necessary tweaks after the merge, and Publish the pages.
 
-![Figure 4.24: The Thanksgiving branch of the Fall Semester Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 4.25: The Thanksgiving branch of the Fall Semester Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 #### Wrapping up Staging
 
@@ -769,7 +770,7 @@ Liferay's workflow engine is called Kaleo workflow, and it ships with Liferay CE
 
 To enable workflow for Web Content, navigate to the Control Panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
-![Figure 4.25: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 4.26: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
 
 As you will discover in Chapter 7, you can design workflows to suit your organization's approval process. For TISA's implementation we will use the *Single Approver *workflow which ships with the product.
@@ -785,7 +786,7 @@ Let's go ahead and set up Liferay's Workflow for the TISA web site.
 
 That's all it takes to set up workflow for web content. Now publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at TISA. Return to the home page and click on the *Add Web Content *icon on the Web Content Display portlet. Call it *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
 
-![Figure 4.26: Pending Workflow](../../images/04-web-content-workflow-config.png)
+![Figure 4.27: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in Control Panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow, and anyone in this role can approve content as well.
 
