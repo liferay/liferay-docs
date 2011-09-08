@@ -539,33 +539,31 @@ Once you have set the options the way you want them, click *Save*.
 
 ### Managing Wikis
 
-The Wiki portlet can contain many wikis. By default, it contains only one, called *Main*. To manage Wikis, navigate to the *Control Panel* and select the *Wiki* tab. You will then be brought to a screen that allows you to add, modify, and delete wikis. You will see that the Main wiki has already been added for you.
+The Wiki portlet can contain many wikis. By default, it contains only one, called *Main*. To manage Wikis, navigate to the *Control Panel* and select *Wiki*. This page allows you to add, modify, and delete wikis. The Main wiki has already been added for you.
 
-At the top of this screen is a *Permissions* button. Clicking this allows you to define what roles have access to create wikis. If you have created a specific role for creating wikis, you can click the box in the *Add Node* column and then click *Submit, *and that role will have access to create new wikis in this portlet.
+At the top of this screen is a *Permissions* button. Clicking this allows you to define which roles have access to create wikis. If you have created a specific role for creating wikis, you can click the box in the *Add Node* column and then click *Submit*, and that role will have access to create new wikis in this portlet.
 
-Clicking the *Add Wiki* button brings you to a screen which allows you to give the wiki a name and a description. You can also set up some default permissions. When you create a new wiki, it will appear in a list at the top of the main page of the portlet.
+Clicking the *Add Wiki* button prompts you to enter a name and description for the new wiki. You can also set up some default permissions. When you create a new wiki, it appears in a list at the top of the main page of the Wiki portlet.
 
 Next to each wiki in the list of wiki nodes is an *Actions* button. This button contains several options:
 
-**Edit**: lets you edit the name and description of the wiki.
+**Edit:** lets you edit the name and description of the wiki.
 
-**Permissions**: lets you define what roles can add attachments to wiki pages, add pages to the wiki, delete pages, import pages to the wiki, set permissions on the wiki, subscribe to the wiki, update existing pages, and view the wiki.
+**Permissions:** lets you define what roles can add attachments to wiki pages, add pages to the wiki, delete pages, import pages to the wiki, set permissions on the wiki, subscribe to the wiki, update existing pages, and view the wiki.
 
-**Import Pages**: allows you to import data from other wikis. This lets you migrate off of another wiki which you may be using and use the Liferay wiki instead. You might wish to do this if you are migrating your site from a set of disparate applications (i.e. a separate forum, a separate wiki, a separate content management system) to Liferay, which provides all of these features. Currently, MediaWiki is the only wiki that is supported, but others are likely to be supported in the future.
+**Import Pages:** allows you to import data from other wikis. This lets you migrate off of another wiki which you may be using and use the Liferay wiki instead. You might wish to do this if you are migrating your site from a set of disparate applications (i.e. a separate forum, a separate wiki, a separate content management system) to Liferay, which provides all of these features. Currently, MediaWiki is the only wiki that is supported, but others are likely to be supported in the future.
 
-**RSS**: opens a new page where you can subscribe to an RSS feed using Live Bookmarks, Google, or Yahoo.
+**RSS:** opens a new page where you can subscribe to an RSS feed using Live Bookmarks, Google, or Yahoo.
 
-**Subscribe**: allows you to subscribe to a wiki node, and any time a page is added or updated Liferay will send you an email informing you what happened.
+**Subscribe:** allows you to subscribe to a wiki node, and any time a page is added or updated Liferay will send you an email informing you what happened.
 
-**Delete**: deletes the wiki node.
+**Delete:** deletes the wiki node.
 
-To go back to your wiki, click on its name in the list of wikis.
-
-Note that there is also a wrench icon leading to a configuration menu on this portlet in the control panel. This contains several other options which you may have seen on other portlets.
+To go back to your wiki, click on its name in the list of wikis. Note that there is also a wrench icon leading to a configuration menu on this portlet in the control panel. This contains several other options which you may have seen on other portlets.
 
 The *Email From*, *Page Added Email*, and *Page Updated Email* tabs are similar to the ones for notification email settings for other portlets, allowing you to customize who wiki emails come from and the format and text of the email that is sent when a page is added or updated.
 
-The *Display Settings* tab gives you several options for how the wiki should be displayed. *Enable Related Assets*, *Enable Page Ratings*, *Enable Comments*, and *Enable Comment Ratings* are similar to the same options in other portlets. They give you the ability to set how you want users to interact with wiki documents: a little, a lot, or not at all. Below this, you can set which wikis are visible in the Wiki portlet by default and which are hidden. You might host two wikis in any given community, exposing one to the public and keeping one of them private for community members.
+The *Display Settings* tab gives you several options for how the wiki should be displayed. *Enable Related Assets*, *Enable Page Ratings*, *Enable Comments*, and *Enable Comment Ratings* are similar to the same options in other portlets. They give you the ability to set how you want users to interact with wiki documents: a little, a lot, or not at all. Below this, you can set which wikis are visible in the Wiki portlet by default and which are hidden. You might host two wikis on a given site, exposing one to the public and keeping the other private for site members.
 
 Finally, the Wiki portlet also supports RSS feeds as the other collaboration portlets do, and you can configure its options in the *RSS* tab.
 
@@ -599,7 +597,7 @@ This would produce the following wiki page:
 
 ![Figure 4.17: Wiki Text Added to Front Page](../../images/05-wiki-front-page.png)
 
-This adds a simple heading, a paragraph of text, and several links to the page. Since the pages behind these links have not been created yet, if you click one of those links, you will be brought to an editing screen to create the page. This editing screen will look just like the one you used previously when you wrote the front page. Liferay will display a notice at the top of the page stating that the page does not exist yet, and that you are creating it right now. As you can see, it is very easy to create wiki pages. All you have to do is create a link from an existing page. Note that at the top of the screen you can select from the Creole wiki format and the HTML editor that comes with Liferay. We recommend that you stick with the Creole format, as it allows for a much cleaner separation of content and code. If you want all of your users to use the Creole format, you can disable the HTML format using the portal-ext.properties file. See the next chapter for further information on how to configure this.
+This adds a simple heading, a paragraph of text, and several links to the page. Since the pages behind these links have not been created yet, clicking one of those links brings you to an editing screen to create the page. This editing screen looks just like the one you used previously when you wrote the front page. Liferay displays a notice at the top of the page stating that the page does not exist yet, and that you are creating it right now. As you can see, it is very easy to create wiki pages. All you have to do is create a link from an existing page. Note that at the top of the screen you can select from the Creole wiki format and the HTML editor that comes with Liferay. We recommend that you stick with the Creole format, as it allows for a much cleaner separation of content and code. If you want all of your users to use the Creole format, you can disable the HTML format using the portal-ext.properties file. See the next chapter for further information on how to configure this.
 
 At the bottom of the page editing screen, you can select *Categories* for the article. Categories are hierarchical lists of headings under which you can create wiki pages. This allows you to organize your content in a more formal fashion. You can create categories using the Control Panel, in the *Categories* section.
 
@@ -609,25 +607,25 @@ When viewing a page, you can view its details by clicking the *Details* link whi
 
 #### Details
 
-The Details tab shows various statistics about the page, and also contains a few actions that you can perform on the page.
+The Details tab shows various statistics about the page, and also allows you to perfom some actions on the page.
 
-**Title**: displays the title of the page.
+**Title:** displays the title of the page.
 
-**Format**: displays the format for the page—either Creole or HTML.
+**Format:** displays the format for the page—either Creole or HTML.
 
-**Latest Version**: displays the latest version of the page. The wiki portlet automatically keeps track of page versions whenever a page has been edited.
+**Latest Version:** displays the latest version of the page. The wiki portlet automatically keeps track of page versions whenever a page has been edited.
 
-**Created By**: displays the user who created the page.
+**Created By:** displays the user who created the page.
 
-**Last Changed By**: displays the user who last modified the page.
+**Last Changed By:** displays the user who last modified the page.
 
-**Attachments**: displays the number of attachments to the page.
+**Attachments:** displays the number of attachments to the page.
 
-**RSS Subscription**: displays links which allow you to subscribe to the page as an RSS feed in three formats: RSS 1.0, RSS 2.0, and Atom 1.0.
+**RSS Subscription:** displays links which allow you to subscribe to the page as an RSS feed in three formats: RSS 1.0, RSS 2.0, and Atom 1.0.
 
-**Email Subscription**: contains links allowing you to subscribe to the entire wiki or just to this page.
+**Email Subscription:** contains links allowing you to subscribe to the entire wiki or just to this page.
 
-**Advanced Actions**: contains links allowing you to modify the permissions on the page, make a copy of the page, move (rename) the page, or delete the page.
+**Advanced Actions:** contains links allowing you to modify the permissions on the page, make a copy of the page, move (rename) the page, or delete the page.
 
 #### History
 
@@ -645,17 +643,17 @@ The last tab is for attachments. You can attach any file to the wiki. This is mo
 
 At the top of the portlet is a list of links which allow you to navigate around the wiki. Next to the *Manage Wikis* button is a list of wikis that are currently created in the portlet. Simply click on the wiki's name to begin browsing that wiki. After this is a set of navigation links:
 
-**FrontPage**: takes you to the main page of the main wiki.
+**FrontPage:** takes you to the main page of the main wiki.
 
-**Recent Changes**: takes you to a page which shows all of the recently updated pages.
+**Recent Changes:** takes you to a page which shows all of the recently updated pages.
 
-**All Pages**: takes you to a flat, alphabetical list of all pages currently stored in the wiki.
+**All Pages:** takes you to a flat, alphabetical list of all pages currently stored in the wiki.
 
-**Orphan Pages**: takes you to a list of pages that have no links to them. This can happen if you take a link out of a wiki page in an edit without realizing it's the only link to a certain page. This area allows you to review wiki pages that are orphaned in this way so that you can re-link to them or delete them from the wiki if they are no longer relevant.
+**Orphan Pages:** takes you to a list of pages that have no links to them. This can happen if you take a link out of a wiki page in an edit without realizing it's the only link to a certain page. This area allows you to review wiki pages that are orphaned in this way so that you can re-link to them or delete them from the wiki if they are no longer relevant.
 
-**Draft Pages**: takes you to a list of pages which have not yet been published. Users can edit pages and save their changes as drafts. They can come back later to finish their page changes and publish them once they have been approved.
+**Draft Pages:** takes you to a list of pages which have not yet been published. Users can edit pages and save their changes as drafts. They can come back later to finish their page changes and publish them once they have been approved.
 
-**Search**: allows you to a term here and click the *Search* button to search for items in the wiki. If the search term is not found, a link will be displayed which allows you to create a new wiki page on the topic for which you searched.
+**Search:** allows you to a term here and click the *Search* button to search for items in the wiki. If the search term is not found, a link will be displayed which allows you to create a new wiki page on the topic for which you searched.
 
 ## Document Library
 
@@ -689,29 +687,29 @@ Customizable document types and metadata sets are new features in Liferay 6.1. W
 
 You can add a new document type using the Add button at the top of the screen. To do so, you need to select or define one or more metadata sets to associate with your document type. Let's define a document type called "Syllabus" and define one metadata set. What metadata should we associate with syllabi? Let's decide for our syllabi to have course title, professor, and semester fields. All syllabi in our portal will be required to maintain entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for.
 
-You can view, edit, or add metadata sets from the *Manage &rarr; Metadata* window. A metadata set consists of a group of fields. If you click the Add button, you will be presented with the same UI for defining a metadata set that you used in the Add Document Type window.
+You can view, edit, or add metadata sets from the *Manage &rarr; Metadata* window. A metadata set consists of a group of fields. If you click the Add button, can use same UI for defining a metadata set that you used in the Add Document Type window.
 
 ![Figure 4.21: Adding a New Metadata Set](../../images/05-new-metadata-set.png)
 
 All you have to do to define a metadata set is choose fields to use from the area on the right and then drag and drop them into the area on the left. The drag and drop interface allows for nested fields so you need to be careful about where you drop the fields. Default values, mouse-over tips, and widths can be set for most fields. Liferay supports the following kinds of fields for metadata sets:
 
-**Boolean**: is just a checkbox.
+**Boolean:** is just a checkbox.
 
-**Date**: lets you enter a date. A valid date format is required for the date field. However, you don't have to enter a date manually. When you select the date field a mini-calendar pops up which you can use to select a date.
+**Date:** lets you enter a date. A valid date format is required for the date field. However, you don't have to enter a date manually. When you select the date field a mini-calendar pops up which you can use to select a date.
 
-**Decimal**: lets you enter a decimal number. The value will be persisted as a double.
+**Decimal:** lets you enter a decimal number. The value will be persisted as a double.
 
-**Integer**: lets you enter an integer. The value will be persisted as an int.
+**Integer:** lets you enter an integer. The value will be persisted as an int.
 
-**Number**: lets you enter a decimal number or an integer. The value will be persisted either as a double or an int, depending on the type of input.
+**Number:** lets you enter a decimal number or an integer. The value will be persisted either as a double or an int, depending on the type of input.
 
-**Radio**: displays several clickable options. The default number is three but this is customizable. Only one option can be selected at a time.
+**Radio:** displays several clickable options. The default number is three but this is customizable. Only one option can be selected at a time.
 
-**Select**: is just like the radio field except that the options are hidden and have to be accessed from a drop-down menu.
+**Select:** is just like the radio field except that the options are hidden and have to be accessed from a drop-down menu.
 
-**Text**: lets you enter a single line of text.
+**Text:** lets you enter a single line of text.
 
-**Text Box**: is just like the text field except you can enter multiple lines of text or separate paragraphs.
+**Text Box:** is just like the text field except you can enter multiple lines of text or separate paragraphs.
 
 Remember that metadata sets are reusable. Once your metaset has been created it can be included in any number of document types.
 
@@ -721,11 +719,11 @@ Tags are an important tool that you can use to help organize information on your
 
 ![Figure 4.22: The Add Tag Dialog](../../images/05-add-tag.png)
 
-To create tags in the control panel, select the site that you want to create tags for, and select *Tags*. From this screen, you will be able to view any existing tags and make new ones. To create a new tag, simply click *Add Tag*. You'll then be asked for the name of the tag, and you'll have the ability to set permissions for viewing or managing the tag. You can also add properties to a tag. Basically, properties act as tags for your tags. Structurally, properties are key-value pairs associated with specific tags that provide information about your tags. You can edit existing tags from the *Tags* window of on the control panel. You can change the tag name, change the tag's permissions, delete the tag, or add properties.
+To create tags in the control panel, select the site that you want to create tags for, and select *Tags*. From this screen, you will be able to view any existing tags and make new ones. To create a new tag, simply click *Add Tag*. You'll then be asked for the name of the tag, and you'll have the ability to set permissions for viewing or managing the tag. You can also add properties to a tag. Properties basically act like tags for your tags. Structurally, properties are key-value pairs associated with specific tags that provide information about your tags. You can edit existing tags from the *Tags* window of on the control panel. You can change the tag name, change the tag's permissions, delete the tag, or add properties.
 
 ## Categories
 
-Categories are similar in concept to tags, but are designed with the administrator in mind, not the end user. Hierarchies of categories can be created, and categories can be grouped together in *vocabularies*. Where tags represent an ad hoc method for users to group content together, categories exist to allow administrators to organize content in a more official, hierarchical structure. As has been said in Chapter 3, think of tags like the index to a book and categories like the table of contents. Both serve the same purpose: to help the user find the information he or she seeks.
+Categories are similar in concept to tags, but are designed for use by administrators, not regular users. Hierarchies of categories can be created, and categories can be grouped together in *vocabularies*. Where tags represent an ad hoc method for users to group content together, categories exist to allow administrators to organize content in a more official, hierarchical structure. You can think of tags like the index of a book and categories like its table of contents. Both serve the same purpose: to help the user find the information he or she seeks.
 
 Adding vocabularies and categories is similar to adding tags. Once you've selected the site you want to work on, select *Categories* from the content section of the control panel, and you will be presented with the categories administration page.
 
@@ -737,23 +735,23 @@ Once you have created a hierarchy of categories, your content creators will have
 
 ## Social Equity
 
-When you have a lot of user interaction on your web site, sometimes it is helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. In order to better show which users are making real, valuable contributions, Liferay is introducing the new Social Equity system with Liferay 6.
+When you have a lot of user interaction on your web site, it can be helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. In order to better show which users are making real, valuable contributions, Liferay is introducing the new Social Equity system with Liferay 6.
 
 ![Figure 4.24: The Social Equity Page of the Control Panel](../../images/05-social-equity.png)
 
 To use Social Equity for your portal, check the Enable Social Equity box. Social Equity enables you to assign values and weight for each contribution that a user makes. Points are given to users for *Information* and *Participation*. This way, a user who writes several blogs and wiki articles can be shown as having a higher rank than a user who has only written comments and message board replies. The purpose of this is to better indicate which users on a web site are knowledgeable contributors, and to reward those users. Social Equity is available for Blogs, Message Boards, Wikis, and Web Content. Each category has a check box labeled "Unique." When this box is checked, users can only gain social equity points one time for an action. For example, if this box were checked for viewing blog entries, users could only gain points one time for viewing a given blog entry. If the box were unchecked, users could view a blog entry multiple times and gain social equity points each time. Each category also contains a rating for *Information Value*, *Information Lifespan*, *Daily Limit*, *Participation Value*, *Participation Lifespan*, and *Daily Limit*.
 
-**Information Value**: indicates how many points a user receives for the information content of a specific action.
+**Information Value:** indicates how many points a user receives for the information content of a specific action.
 
-**Information Lifespan**: indicates, in number of days, how long it will be before the information points expire. Setting it to 0 means that they will never expire.
+**Information Lifespan:** indicates, in number of days, how long it will be before the information points expire. Setting it to 0 means that they will never expire.
 
-**Daily Limit**: is the maximum number of actions of this type that a user will receive information points for in a given day.
+**Daily Limit:** is the maximum number of actions of this type that a user will receive information points for in a given day.
 
-**Participation Value**: indicates how many points a user receives for the participating in the content creation of the website.
+**Participation Value:** indicates how many points a user receives for the participating in the content creation of the website.
 
-**Participation Lifespan**: indicates, in number of days, how long it will be before the participation points expire. Setting it to 0 means that they will never expire.
+**Participation Lifespan:** indicates, in number of days, how long it will be before the participation points expire. Setting it to 0 means that they will never expire.
 
-**Daily Limit**: is the maximum number of actions of this type that a user will receive participation points for in a given day.
+**Daily Limit:** is the maximum number of actions of this type that a user will receive participation points for in a given day.
 
 The actions available that you can provide credit for are wide ranging. Users can receive credit for everything from writing wiki pages to simply viewing content. You can also easily tweak these numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
 
@@ -772,6 +770,8 @@ Integrating mail with your portal is easy with the Mail portlet. You can add as 
 Discussion becomes easy with Liferay's Message Boards portlet. This portlet can be used to manage heavily trafficked discussion forums with ease. It inherits all of the security features of the Liferay platform and includes administrative functions for thread priorities, moving threads, nested discussion categories, banning users, and more.
 
 Liferay's Wiki portlet is a state of the art wiki application that users can make use of to collaborate on web pages. Again, it inherits the strengths of the Liferay platform in the form of security, interface, and search. You can use the wiki portlet to manage several wiki nodes or use many wiki portlets to manage one node each.
+
+Liferay's Document Library portlet allows users to store information online in the same type of directory structure that they use locally. The Document Library portlet supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Document Library portlet.
 
 Tying all of these applications together are tags and categories. Tags can be added to any content by end users, and hierarchies of categories can be added to the system by administrators to be applied to content anywhere in the portal. These help your users to find the content that is most relevant to them, empowering the search to be as accurate as possible.
 
