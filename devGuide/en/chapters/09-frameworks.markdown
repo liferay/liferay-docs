@@ -36,11 +36,14 @@ Java RMI.
 
 The first step in using Service Builder is to define your model classes
 and their attributes in a `service.xml` file. For convenience,
-we will define the service within the **my-greeting** portlet, although
+we will define the service within the *my-greeting* portlet, although
 it should be placed inside a new portlet. Create a file named
 `service.xml` in
 `portlets/my-greeting-portlet/docroot/WEB-INF` within the
 Plugins SDK and add the following content:
+
+\  
+\  
 
     <?xml version="1.0"?>
     <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder
@@ -79,14 +82,23 @@ Plugins SDK and add the following content:
 This specifies the package path to which the class will be generated. In this
 example, classes will generate to `WEB-INF/src/com/sample/portlet/library/`
 
+\  
+\  
+
     <namespace>Library</namespace>
 \
 The namespace element must be a unique namespace for this component.
 Table names will be prepended with this namepace.
 
+\  
+\  
+
     <entity name="Book" local-service="true" remote-service="false">
 \
 The entity name is the database table you want to create.
+
+\  
+\  
 
     <column name="title" type="String" />
 \
@@ -97,15 +109,17 @@ in the model class will automatically be generated for these attributes.
 **Tip**: Always consider adding two long fields called *groupId* and
 *companyId* to your data models. These two fields will allow your
 portlet to support the multi-tenancy features of Liferay so that each
-community or organization (for each portal instance) can have its own
+organization (for each portal instance) can have its own
 independent data.
 
 ### Generate the Service
 
 Open a terminal window in your `portlets/my-greeting-portlet`
 directory and enter this command:
-\
-\
+
+\  
+\  
+
 	ant build-service
 \
 \
@@ -187,21 +201,24 @@ BookLocalServiceImpl, BookServiceImpl and BookImpl.
 
 ### Write the Local Service Class
 
-In the file overview above, you will see that **BookLocalService** is
+In the file overview above, you will see that `BookLocalService` is
 the interface for the local service. It contains the signatures of every
-method in **BookLocalServiceBaseImpl** and **BookLocalServiceImpl**.
-**BookLocalServiceBaseImpl** contains a few automatically generated
+method in `BookLocalServiceBaseImpl` and `BookLocalServiceImpl`.
+`BookLocalServiceBaseImpl` contains a few automatically generated
 methods providing common functionality. Since this class is generated,
 you should never modify it, or your changes will be overwritten the next
 time you run Service Builder. Instead, all custom code should be placed
-in **BookLocalServiceImpl**.
+in `BookLocalServiceImpl`.
 
 Open the following file:
 
-`/docroot/WEB-INF/src/com/sample/portlet/library/service/impl/BookLocalServiceImpl.java`
-
+    /docroot/WEB-INF/src/com/sample/portlet/library/service/impl/BookLocalServiceImpl.java
+\
 We will add the database interaction methods to this service layer
-class. Add the following method to the **BookLocalServiceImpl** class:
+class. Add the following method to the `BookLocalServiceImpl` class:
+
+\  
+\  
 
     public Book addBook(long userId, String title)
         throws PortalException, SystemException {
@@ -222,21 +239,24 @@ class. Add the following method to the **BookLocalServiceImpl** class:
         return bookPersistence.update(book);
     }
 \
-\
 Before you can use this new method, you must add its signature to the
-**BookLocalService** interface by running service builder again.
+`BookLocalService` interface by running service builder again.
 
 Navigate to the root directory of your portlet in the terminal and run:
-\
-\
+
+\  
+\  
+
     ant build-service
 \
 \
-Service Builder looks through **BookLocalServiceImpl** and automatically
+Service Builder looks through `BookLocalServiceImpl` and automatically
 copies the signatures of each method into the interface. You can now add
 a new book to the database by making the following call
-\
-\
+
+\  
+\  
+
     BookLocalServiceUtil.addBook(userId, “A new title");
 
 ### Overview of *service.properties*
@@ -291,8 +311,8 @@ Javadocs.
 The asset framework provides a set of functionalities that are common to
 several different content types. It was initially created to be able to
 add tags to blog entries, wiki pages, web content, etc without having to
-reimplement this same functionality over and over. Since then, it has
-grown to add more functionalities and it has been made possible to use
+re-implement this same functionality over and over. Since then, it has
+grown to include more functionalities and it has been made possible to use
 the framework for custom applications even if they are implemented
 within a plugin.
 
@@ -315,7 +335,7 @@ to the asset framework:
 -   Manage tags from the control panel (including merging tags)
 
 -   Manage categories from the control panel (including creating complex
-    hierachies).
+    hierarchies).
 
 -   Keep track of the number of visualizations of an asset.
 
@@ -350,77 +370,49 @@ let the framework know about the tags and/or categories of the content
 that was just authored.
 
 All the methods that you will need to invoke are part of the
-AssetEntryLocalService. In particular you should access these methods
-using either the static methods of AssetLocalServiceUtil or by using an
-instance of the AssetEntryLocalService injected by Spring. To make this
+`AssetEntryLocalService`. In particular you should access these methods
+using either the static methods of `AssetLocalServiceUtil` or by using an
+instance of the `AssetEntryLocalService` injected by Spring. To make this
 section simpler we will be using the former, since it doesn't require
 any special setup in your application.
 
 The method that you need to invoke when one of your custom content has
-been added or updated is the same and is called updateAsset. Here is the
+been added or updated is the same and is called `updateEntry`. Here is the
 full signature:
 
-[AssetEntry](http://cdn.docs.liferay.com/portal/6.0/javadocs/com/liferay/portlet/asset/model/AssetEntry.html)
-[updateEntry](http://cdn.docs.liferay.com/portal/6.0/javadocs/src-html/com/liferay/portlet/asset/service/AssetEntryLocalService.html#line.343)(
+\  
+\  
 
-long userId, long groupId,
-[String](http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true)
-className, long classPK,
-[String](http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true)
-classUuid, long[] categoryIds,
+    AssetEntry updateEntry(
+            long userId, long groupId, String className, long classPK,
+            String classUuid, long classTypeId, long[] categoryIds,
+            String[] tagNames, boolean visible, Date startDate, Date endDate,
+            Date publishDate, Date expirationDate, String mimeType,
+            String title, String description, String summary, String url,
+            String layoutUuid, int height, int width, Integer priority,
+            boolean sync)
+        throws PortalException, SystemException
+\
+Here is an example invocation of this method extracted from the
+blogs portlet that comes bundled with Liferay:
 
-[String](http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true)[]
-tagNames, boolean visible,
-[Date](http://java.sun.com/javase/6/docs/api/java/util/Date.html?is-external=true)
-startDate,
-[Date](http://java.sun.com/javase/6/docs/api/java/util/Date.html?is-external=true)
-endDate,
+\  
+\  
 
-[Date](http://java.sun.com/javase/6/docs/api/java/util/Date.html?is-external=true)
-publishDate,
-[Date](http://java.sun.com/javase/6/docs/api/java/util/Date.html?is-external=true)
-expirationDate,
-[String](http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true)
-mimeType,
-[String](http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true)
-title,
-
-[String](http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true)
-description,
-[String](http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true)
-summary,
-[String](http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true)
-url, int height, int width,
-
-[Integer](http://java.sun.com/javase/6/docs/api/java/lang/Integer.html?is-external=true)
-priority, boolean sync)
-
-throws
-[PortalException](http://cdn.docs.liferay.com/portal/6.0/javadocs/com/liferay/portal/kernel/exception/PortalException.html),
-[SystemException](http://cdn.docs.liferay.com/portal/6.0/javadocs/com/liferay/portal/kernel/exception/SystemException.html)
-
-Here is an example invocation to this method extracted out from the
-blogs portlets that comes bundled with Liferay:
-
-assetEntryLocalService.updateEntry(
-
-userId, entry.getGroupId(), BlogsEntry.class.getName(),
-
-entry.getEntryId(), entry.getUuid(), assetCategoryIds,
-
-assetTagNames, visible, null, null, entry.getDisplayDate(), null,
-
-ContentTypes.TEXT\_HTML, entry.getTitle(), null, summary, null, 0, 0,
-
-null, false);
-
+    assetEntryLocalService.updateEntry(
+            userId, entry.getGroupId(), BlogsEntry.class.getName(),
+            entry.getEntryId(), entry.getUuid(), 0, assetCategoryIds,
+            assetTagNames, visible, null, null, entry.getDisplayDate(), null,
+            ContentTypes.TEXT_HTML, entry.getTitle(), null, summary, null, null,
+            0, 0, null, false);
+\
 Here is a quick summary of the most important parameters of this method:
 
 -   *userId*: is the identifier of the user who created the content
 
 -   *groupId*: identifies the scope in which the content has been
     created. If your content does not support scopes, you can just pass
-    0 as the value.
+    `0` as the value.
 
 -   *className*: identifies the type of asset. By convention we
     recommend that it is the name of the Java class that represents your
@@ -431,8 +423,8 @@ Here is a quick summary of the most important parameters of this method:
     other of the same type. It is usually the primary key of the table
     where the custom content is stored. The *classUuid* parameter can
     optionally be used to specify a secondary identifier that is
-    guaranteed to be unique universally. Having this type of identifier
-    is specially useful if your contents will be exported and imported
+    guaranteed to be universally unique. This type of identifier
+    is especially useful if your contents will be exported and imported
     across separate portals.
 
 -   *assetCategoryIds* and *assetTagNames*: represent the categories and
@@ -446,590 +438,377 @@ Here is a quick summary of the most important parameters of this method:
     will be used by the Asset Publisher when displaying entries of your
     content type.
 
--   *publishDate* and *expirationDate:* can be optionally specified to
-    let Asset Publisher know that it should not show the content before
+-   *publishDate* and *expirationDate:* can optionally be specified to
+    let the Asset Publisher know that it should not show the content before
     a given publication date of after a given expiration date.
 
--   All other fields are optional and might not make sense in all cases.
+-   All other fields are optional and might not make sense to include in some cases.
     The *sync* parameter should always be false unless you are doing
     something very advanced (look at the code if you are really
     curious).
 
-\
-\
-
 When one of your custom content is deleted you should also let the Asset
 Framework know, to clean up the information stored and also to make sure
-that the Asset Publisher doesn't show any information for a content that
-has been deleted. The signature of method to do this is:
+that the Asset Publisher doesn't show any information for the content that
+has been deleted. The signature of method to delete an asset entry is:
 
-void
-[deleteEntry](http://cdn.docs.liferay.com/portal/6.0/javadocs/src-html/com/liferay/portlet/asset/service/AssetEntryLocalService.html#line.218)(
+\  
+\  
 
-[String](http://java.sun.com/javase/6/docs/api/java/lang/String.html?is-external=true)
-className, long classPK)
-
-throws
-[PortalException](http://cdn.docs.liferay.com/portal/6.0/javadocs/com/liferay/portal/kernel/exception/PortalException.html),
-[SystemException](http://cdn.docs.liferay.com/portal/6.0/javadocs/com/liferay/portal/kernel/exception/SystemException.html)
-
+    void deleteEntry(String className, long classPK)
+\
+\
 Here is an example invocation extracted again from the blogs portlet:
 
-assetEntryLocalService.deleteEntry(
+\  
+\  
 
-BlogsEntry.class.getName(), entry.getEntryId());
+    assetEntryLocalService.deleteEntry(
+        BlogsEntry.class.getName(), entry.getEntryId());
 
 #### Entering and displaying tags and categories
 
 The previous section showed how you can let the asset framework know
 about the tags and categories that have been associated with a given
-asset, but how does a content author specify such tags and categories?
+asset; but how does a content author specify such tags and categories?
 
 The answer is that you can choose any method that you prefer, but
 Liferay provides a set of JSP tags that you can use to make this task
-very easy. The following tags can be used within the form you have
-created to create your type of content to allow entering tags or
-selecting a predefined category:
+very easy. The following Liferay UI tags can be used within your forms to
+create content that can be associated with new/existing tags or predefined
+categories:
 
-<label>Tags</label>
+\  
+\  
 
-<liferay-ui:asset-tags-selector
+    <label>Tags</label>
+    <liferay-ui:asset-tags-selector
+        className="<%= entry.getClass().getName() %>"
+        classPK="<%= entry.getPrimaryKey() %>"
+    />
 
-className="<%= entry.getClass().getName() %>"
-
-classPK="<%= entry.getPrimaryKey() %>"
-
-/>\
+    <label>Categories</label>
+        <liferay-ui:asset-categories-selector
+            className="<%= entry.getClass().getName() %>"
+            classPK="<%= entry.getPrimaryKey() %>"
+    />
 \
-\
-
-<label>Categories</label>
-
-<liferay-ui:asset-categories-selector
-
-className="<%= entry.getClass().getName() %>"
-
-classPK="<%= entry.getPrimaryKey() %>"
-
-/>
-
-\
-\
-
-These two taglibs will create appropriate form controls that allow the
-user to enter any tag (even if it doesn't exist) or search and select
-one of the existing categories.
-
-\
+These two taglibs create appropriate form controls that allow the
+user to search for a tag or create a new tag, and select
+a existing category.
 
 ![image](../../images/08-apis-and-frameworks_html_5c790363.png)**Tip:**If you are
-using Liferay's Allow Form taglibs, then creating a field to enter tags
-or categories is even simpler. You just need to use <aui:input
+using Liferay's Alloy Form taglibs, creating fields to enter tags
+and categories is even simpler. You just need to use <aui:input
 name="tags" type="assetTags" /> and <aui:input name="categories"
 type="assetCategories" /> respectively.
 
-\
-\
-
 Once the tags and categories have been entered you will want to show
-them somewhere along with the content of the asset, there are another
-pair of tags that you can use to do so:
+them along with the content of the asset. The following demonstrates
+how to display the tags and categories:
 
-<label>Tags</label>
+\  
+\  
 
-<liferay-ui:asset-tags-summary
+    <label>Tags</label>
+    <liferay-ui:asset-tags-summary
+        className="<%= entry.getClass().getName() %>"
+        classPK="<%= entry.getPrimaryKey() %>"
+    />
 
-className="<%= entry.getClass().getName() %>"
-
-classPK="<%= entry.getPrimaryKey() %>"
-
-/>\
+    <label>Categories</label>
+    <liferay-ui:asset-categories-summary
+        className="<%= entry.getClass().getName() %>"
+        classPK="<%= entry.getPrimaryKey() %>"
+    />
 \
-\
-
-<label>Categories</label>
-
-<liferay-ui:asset-categories-summary
-
-className="<%= entry.getClass().getName() %>"
-
-classPK="<%= entry.getPrimaryKey() %>"
-
-/>
-
-In both tags you can also use an optional parameter called portletURL.
-When specifying this parameter each of the tags will be a link built
-with the provided URL and adding a `tag` parameter or a `categoryId`
-parameter. This is very useful in order to provide support for tags
-navigation and categories navigation within your portlet. But you will
-need to take care of implementing this functionality yourself in the
-code of the portlet by reading the values of those two parameters and
-using the AssetEntryService to query the database for entries based on
+In both tags, you can also specify an optional `portletURL` parameter.
+Each tag that uses the `portletURL` parameter will be a link containing
+the `portletURL` *and* `tag` or `categoryId` parameter value respectively.
+This supports tags navigation and categories navigation within your portlet.
+But you will need to implement the look-up functionality in your portlet code
+by reading the values of those two parameters and
+using the `AssetEntryService` to query the database for entries based on
 the specified tag or category.
 
 #### Publishing assets with Asset Publisher
 
-One of the nice benefits of using the asset framework is the possibility
-of using the Asset Publisher portlet, which is part of the Liferay
-distribution, to publish lists of your custom asset types. These lists
-can be dynamic (for example based on the tags or categories that the
-asset has) or manually selected by an administrator.
+One of the nice benefits of using the asset framework is leveraging the Asset
+Publisher portlet to publish lists of your custom asset types. The lists can be
+dynamically specified (for example, based on the asset tags or categories) by
+the user or statically specified by an administrator.  The Asset Publisher
+portlet is part of the Liferay distribution.
 
-In order to be able to display your assets the Asset Publisher needs to
-know how to access some metadata of them and also needs you to provide
-templates for the different type of views that it can display (abstract
-and full view).
+In order to be able to display your assets, the Asset Publisher needs to
+know how to access the metadata of your assets.  Additionally, you need to
+provide the Asset Publisher with templates for the types of views (e.g., *full*
+view and abstract view) available to display your assets.
 
-You can provide all this information to the Asset Publisher through a
-pair of classes that implement the AssetRendererFactory interface and
-the AssetRenderer interface:
+You can provide all this to the Asset Publisher by implementing the following
+pair of interfaces - AssetRendererFactory and AssetRenderer:
 
--   [AssetRendererFactory](http://docs.liferay.com/portal/6.0/javadocs/com/liferay/portlet/asset/model/AssetRendererFactory.html):
-    this is the class that knows how to retrieve specific assets from
-    the persistent storage from the classPK (that is usually the primary
-    key, but can be anything you have chosen when invoking the
-    updateAsset method used to add or update the asset). This class
-    should be able to grab the asset from a groupId (that identifies an
-    scope of data) and a urlTitle (which is a title that can be used in
-    friendly URLs to refer uniquele to the asset within a given scope).
-    Finally, it can also provide a URL that the Asset Publisher can use
-    when a user wants to add a new asset of your custom type. This URL
-    should point to your own portlet. There are other less important
-    methods, but you can avoid implementing them by extending from
-    [BaseAssetRendererFactory](http://docs.liferay.com/portal/6.0/javadocs/com/liferay/portlet/asset/model/BaseAssetRendererFactory.html).
-    Extending from this class, instead of implementing the interface
-    directly will also make your code more robust if there are changes
-    in the interface in future versions of Liferay, since the base
-    implementation will provide custom implementations for them.
+-   [AssetRendererFactory](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portlet/asset/model/AssetRendererFactory.html):
+    this class knows how to retrieve specific assets from
+    the persistent storage via the class `classPK`.
+    The `classPK` is typically the asset's primary 
+    key, but can be anything you have specified to the
+    `updateAsset` method used to add or update the asset. Your factory
+    implementation should be able to grab the asset from a `groupId`
+    (identifies a scope of data) and a `urlTitle` (a title that can be used in
+    friendly URLs to refer uniquely to the asset within a given scope).
+    Finally, the asset renderer factory can provide a URL for the Asset
+    Publisher to use when a user wants to add a new asset of your custom type.
+    This URL should point to your own portlet. There are other less important
+    methods of the interface, but you can avoid implementing them by extending
+    [BaseAssetRendererFactory](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portlet/asset/model/BaseAssetRendererFactory.html).
+    Extending this *base* class, instead of implementing the interface
+    directly, will make your code more robust to possible interface changes
+    in future versions of Liferay, since the base implementation will
+    already be updated to accommodate the interface changes.
 
--   [AssetRenderer](http://docs.liferay.com/portal/6.0/javadocs/com/liferay/portlet/asset/model/AssetRenderer.html):
+-   [AssetRenderer](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portlet/asset/model/AssetRenderer.html):
     this is the class that provides metadata information about one
-    specific asset and is also able to check for permissions to edit or
-    view it for the current user. It is also reponsible for rendering
-    the asset for the different templates (abstract, and full content),
-    by forwarding to an specific JSP. It is also recommended that
-    instead of implementing the interface directly, you extend from the
-    [BaseAssetRenderer](http://docs.liferay.com/portal/6.0/javadocs/com/liferay/portlet/asset/model/BaseAssetRenderer.html)
-    class, that provides with nice defaults and more robustness for
-    methods that could be added to the interface in the future.
+    specific asset. It verifies whether the current user has permission to edit or
+    view the asset. And this class is responsible for rendering
+    the asset for the different templates (e.g. abstract and full content view)
+    by forwarding to a specific an appropriate JSP. It is recommended that
+    you extend the
+    [BaseAssetRenderer](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portlet/asset/model/BaseAssetRenderer.html)
+    class rather than directly implementing the interface. The *base* class
+    provides nice defaults and robustness for methods that could be added to
+    the interface in the future.
 
-Let's seen an example of these two classes. Again we will pick Liferay's
+Let's see an example of these two classes. Again we will pick Liferay's
 Blogs portlet. Lets start with the implementation for the
 AssetRendererFactory:
 
-public class BlogsEntryAssetRendererFactory extends
-BaseAssetRendererFactory {
+\  
+\  
 
-\
-\
+    public class BlogsEntryAssetRendererFactory extends BaseAssetRendererFactory {
 
-public static final String CLASS\_NAME = BlogsEntry.class.getName();
+        public static final String CLASS_NAME = BlogsEntry.class.getName();
 
-\
-\
+        public static final String TYPE = "blog";
 
-public static final String TYPE = "blog";
+        public AssetRenderer getAssetRenderer(long classPK, int type)
+            throws PortalException, SystemException {
 
-\
-\
+            BlogsEntry entry = BlogsEntryLocalServiceUtil.getEntry(classPK);
 
-public AssetRenderer getAssetRenderer(long classPK, int type)
+            return new BlogsEntryAssetRenderer(entry);
+        }
 
-throws PortalException, SystemException {
+        @Override
+        public AssetRenderer getAssetRenderer(long groupId, String urlTitle)
+            throws PortalException, SystemException {
 
-\
-\
+            BlogsEntry entry = BlogsEntryServiceUtil.getEntry(groupId, urlTitle);
 
-BlogsEntry entry = BlogsEntryLocalServiceUtil.getEntry(classPK);
+            return new BlogsEntryAssetRenderer(entry);
+        }
 
-\
-\
+        public String getClassName() {
+            return CLASS_NAME;
+        }
 
-return new BlogsEntryAssetRenderer(entry);
+        public String getType() {
+            return TYPE;
+        }
 
-}
+        @Override
+        public PortletURL getURLAdd(
+                LiferayPortletRequest liferayPortletRequest,
+                LiferayPortletResponse liferayPortletResponse)
+            throws PortalException, SystemException {
 
-\
-\
+            HttpServletRequest request =
+                liferayPortletRequest.getHttpServletRequest();
 
-public AssetRenderer getAssetRenderer(long groupId, String urlTitle)
+            ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
+                WebKeys.THEME_DISPLAY);
 
-throws PortalException, SystemException {
+            if (!BlogsPermission.contains(
+                themeDisplay.getPermissionChecker(),
+                themeDisplay.getScopeGroupId(), ActionKeys.ADD_ENTRY)) {
 
-\
-\
+                return null;
+            }
 
-BlogsEntry entry = BlogsEntryServiceUtil.getEntry(\
- groupId, urlTitle);
+        PortletURL portletURL = PortletURLFactoryUtil.create(
+            request, PortletKeys.BLOGS, getControlPanelPlid(themeDisplay),
+            PortletRequest.RENDER_PHASE);
 
-\
-\
+            portletURL.setParameter("struts_action", "/blogs/edit_entry");
 
-return new BlogsEntryAssetRenderer(entry);
+            return portletURL;
+        }
 
-}
+        @Override
+        public boolean hasPermission(
+                PermissionChecker permissionChecker, long classPK, String actionId)
+            throws Exception {
 
-\
-\
+            return BlogsEntryPermission.contains(
+                permissionChecker, classPK, actionId);
+        }
 
-public String getClassName() {
+        @Override
+        public boolean isLinkable() {
+            return _LINKABLE;
+        }
 
-return CLASS\_NAME;
+        @Override
+        protected String getIconPath(ThemeDisplay themeDisplay) {
+            return themeDisplay.getPathThemeImages() + "/blogs/blogs.png";
+        }
 
-}
-
-\
-\
-
-public String getType() {
-
-return TYPE;
-
-}
-
-\
-\
-
-public PortletURL getURLAdd(
-
-LiferayPortletRequest liferayPortletRequest,
-
-LiferayPortletResponse liferayPortletResponse)
-
-throws PortalException, SystemException {
-
-\
-\
-
-HttpServletRequest request =
-
-liferayPortletRequest.getHttpServletRequest();
-
-\
-\
-
-ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
-
-WebKeys.THEME\_DISPLAY);
-
-\
-\
-
-if (!BlogsPermission.contains(
-
-themeDisplay.getPermissionChecker(),
-
-themeDisplay.getScopeGroupId(), ActionKeys.ADD\_ENTRY)) {
-
-\
-\
-
-return null;
-
-}
-
-\
-\
-
-PortletURL portletURL = PortletURLFactoryUtil.create(
-
-request, PortletKeys.BLOGS, getControlPanelPlid(themeDisplay),
-
-PortletRequest.RENDER\_PHASE);
-
-\
-\
-
-portletURL.setParameter("struts\_action", "/blogs/edit\_entry");
-
-\
-\
-
-return portletURL;
-
-}
-
-\
-\
-
-public boolean hasPermission(
-
-PermissionChecker permissionChecker, long classPK, String actionId)
-
-throws Exception {
-
-\
-\
-
-return BlogsEntryPermission.contains(
-
-permissionChecker, classPK, actionId);
-
-}
-
-\
-\
-
-protected String getIconPath(ThemeDisplay themeDisplay) {
-
-return themeDisplay.getPathThemeImages() + "/blogs/blogs.png";
-
-}
-
-\
-\
-
-}
-
-\
+        private static final boolean _LINKABLE = true;
+    }
 \
 
 And here is the AssetRenderer implementation:
 
-public class BlogsEntryAssetRenderer extends BaseAssetRenderer {
+\  
+\  
 
+    public class BlogsEntryAssetRenderer extends BaseAssetRenderer {
+
+        public BlogsEntryAssetRenderer(BlogsEntry entry) {
+            _entry = entry;
+        }
+
+        public long getClassPK() {
+            return _entry.getEntryId();
+        }
+
+        @Override
+        public String getDiscussionPath() {
+            if (PropsValues.BLOGS_ENTRY_COMMENTS_ENABLED) {
+                return "edit_entry_discussion";
+            }
+            else {
+                return null;
+            }
+        }
+
+        public long getGroupId() {
+            return _entry.getGroupId();
+        }
+
+        public String getSummary(Locale locale) {
+            return HtmlUtil.stripHtml(_entry.getDescription());
+        }
+
+        public String getTitle(Locale locale) {
+            return _entry.getTitle();
+        }
+
+        @Override
+        public PortletURL getURLEdit(
+                LiferayPortletRequest liferayPortletRequest,
+                LiferayPortletResponse liferayPortletResponse)
+            throws Exception {
+
+            PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
+                getControlPanelPlid(liferayPortletRequest), PortletKeys.BLOGS,
+                PortletRequest.RENDER_PHASE);
+
+            portletURL.setParameter("struts_action", "/blogs/edit_entry");
+            portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
+
+            return portletURL;
+        }
+
+        @Override
+        public String getUrlTitle() {
+            return _entry.getUrlTitle();
+        }
+
+        @Override
+        public PortletURL getURLView(
+                LiferayPortletResponse liferayPortletResponse,
+                WindowState windowState)
+            throws Exception {
+
+            PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
+                PortletKeys.BLOGS, PortletRequest.RENDER_PHASE);
+
+            portletURL.setWindowState(windowState);
+
+            portletURL.setParameter("struts_action", "/blogs/view_entry");
+            portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
+
+            return portletURL;
+        }
+
+        @Override
+        public String getURLViewInContext(
+            LiferayPortletRequest liferayPortletRequest,
+            LiferayPortletResponse liferayPortletResponse,
+            String noSuchEntryRedirect) {
+
+            ThemeDisplay themeDisplay =
+                (ThemeDisplay)liferayPortletRequest.getAttribute(
+                    WebKeys.THEME_DISPLAY);
+
+            return themeDisplay.getPortalURL() + themeDisplay.getPathMain() +
+                "/blogs/find_entry?noSuchEntryRedirect=" +
+                    HttpUtil.encodeURL(noSuchEntryRedirect) + "&entryId=" +
+                        _entry.getEntryId();
+        }
+
+        public long getUserId() {
+            return _entry.getUserId();
+        }
+
+        public String getUuid() {
+            return _entry.getUuid();
+        }
+
+        @Override
+        public boolean hasEditPermission(PermissionChecker permissionChecker) {
+            return BlogsEntryPermission.contains(
+                permissionChecker, _entry, ActionKeys.UPDATE);
+        }
+
+        @Override
+        public boolean hasViewPermission(PermissionChecker permissionChecker) {
+            return BlogsEntryPermission.contains(
+                permissionChecker, _entry, ActionKeys.VIEW);
+        }
+
+        @Override
+        public boolean isPrintable() {
+            return true;
+        }
+
+        public String render(
+                RenderRequest renderRequest, RenderResponse renderResponse,
+                String template)
+            throws Exception {
+
+            if (template.equals(TEMPLATE_ABSTRACT) ||
+                template.equals(TEMPLATE_FULL_CONTENT)) {
+
+                renderRequest.setAttribute(WebKeys.BLOGS_ENTRY, _entry);
+
+                return "/html/portlet/blogs/asset/" + template + ".jsp";
+            }
+            else {
+                return null;
+            }
+        }
+
+        @Override
+        protected String getIconPath(ThemeDisplay themeDisplay) {
+            return themeDisplay.getPathThemeImages() + "/blogs/blogs.png";
+        }
+
+        private BlogsEntry _entry;
+
+    }
 \
-\
-
-public BlogsEntryAssetRenderer(BlogsEntry entry) {
-
-\_entry = entry;
-
-}
-
-\
-\
-
-public long getClassPK() {
-
-return \_entry.getEntryId();
-
-}
-
-\
-\
-
-public String getDiscussionPath() {
-
-if (PropsValues.BLOGS\_ENTRY\_COMMENTS\_ENABLED) {
-
-return "edit\_entry\_discussion";
-
-}
-
-else {
-
-return null;
-
-}
-
-}
-
-\
-\
-
-public long getGroupId() {
-
-return \_entry.getGroupId();
-
-}
-
-\
-\
-
-public String getSummary(Locale locale) {
-
-return HtmlUtil.stripHtml(\_entry.getContent());
-
-}
-
-\
-\
-
-public String getTitle(Locale locale) {
-
-return \_entry.getTitle();
-
-}
-
-\
-\
-
-public PortletURL getURLEdit(
-
-LiferayPortletRequest liferayPortletRequest,
-
-LiferayPortletResponse liferayPortletResponse) {
-
-\
-\
-
-PortletURL portletURL = liferayPortletResponse.createRenderURL(
-
-PortletKeys.BLOGS);
-
-\
-\
-
-portletURL.setParameter("struts\_action", "/blogs/edit\_entry");
-
-portletURL.setParameter(\
- "entryId", String.valueOf(\_entry.getEntryId()));
-
-\
-\
-
-return portletURL;
-
-}
-
-\
-\
-
-public String getUrlTitle() {
-
-return \_entry.getUrlTitle();
-
-}
-
-\
-\
-
-public String getURLViewInContext(
-
-LiferayPortletRequest liferayPortletRequest,
-
-LiferayPortletResponse liferayPortletResponse,
-
-String noSuchEntryRedirect) {
-
-\
-\
-
-ThemeDisplay themeDisplay =
-
-(ThemeDisplay)liferayPortletRequest.getAttribute(
-
-WebKeys.THEME\_DISPLAY);
-
-\
-\
-
-return themeDisplay.getPortalURL() + themeDisplay.getPathMain() +
-
-"/blogs/find\_entry?noSuchEntryRedirect=" +
-
-HttpUtil.encodeURL(noSuchEntryRedirect) + "&entryId=" +
-
-\_entry.getEntryId();
-
-}
-
-\
-\
-
-public long getUserId() {
-
-return \_entry.getUserId();
-
-}
-
-\
-\
-
-public String getUuid() {
-
-return \_entry.getUuid();
-
-}
-
-\
-\
-
-public boolean hasEditPermission(PermissionChecker permissionChecker) {
-
-return BlogsEntryPermission.contains(
-
-permissionChecker, \_entry, ActionKeys.UPDATE);
-
-}
-
-\
-\
-
-public boolean hasViewPermission(PermissionChecker permissionChecker) {
-
-return BlogsEntryPermission.contains(
-
-permissionChecker, \_entry, ActionKeys.VIEW);
-
-}
-
-\
-\
-
-public boolean isPrintable() {
-
-return true;
-
-}
-
-\
-\
-
-public String render(
-
-RenderRequest renderRequest, RenderResponse renderResponse,
-
-String template)
-
-throws Exception {
-
-\
-\
-
-if (template.equals(TEMPLATE\_ABSTRACT) ||
-
-template.equals(TEMPLATE\_FULL\_CONTENT)) {
-
-\
-\
-
-renderRequest.setAttribute(WebKeys.BLOGS\_ENTRY, \_entry);
-
-\
-\
-
-return "/html/portlet/blogs/asset/" + template + ".jsp";
-
-}
-
-else {
-
-return null;
-
-}
-
-}
-
-\
-\
-
-protected String getIconPath(ThemeDisplay themeDisplay) {
-
-return themeDisplay.getPathThemeImages() + "/blogs/blogs.png";
-
-}
-
-\
-\
-
-private BlogsEntry \_entry;
-
-\
-\
-
-}
 
 Note that in the render method, there is a forward to a JSP in the case
 of the abstract and the full content templates. The abstract is not
@@ -1038,44 +817,25 @@ title and the summary obtained through the appropriate methods of the
 renderer. The full content template should always be provided. Here is
 how it looks like for blogs entries:
 
-<%@ include file="/html/portlet/blogs/init.jsp" %>
+\  
+\  
 
-\
-\
+    <%@ include file="/html/portlet/blogs/init.jsp" %>
 
-<%
+    <%
+    BlogsEntry entry = (BlogsEntry)request.getAttribute(WebKeys.BLOGS_ENTRY);
+    %>
 
-BlogsEntry entry =
-(BlogsEntry)request.getAttribute(WebKeys.BLOGS\_ENTRY);
+    <%= entry.getContent() %>
 
-%>
-
-\
-\
-
-<%= entry.getContent() %>
-
-\
-\
-
-<liferay-ui:custom-attributes-available className="<%=
-BlogsEntry.class.getName() %>">
-
-<liferay-ui:custom-attribute-list
-
-className="<%= BlogsEntry.class.getName() %>"
-
-classPK="<%= (entry != null) ? entry.getEntryId() : 0 %>"
-
-editable="<%= false %>"
-
-label="<%= true %>"
-
-/>
-
-</liferay-ui:custom-attributes-available>
-
-\
+    <liferay-ui:custom-attributes-available className="<%= BlogsEntry.class.getName() %>">
+        <liferay-ui:custom-attribute-list
+            className="<%= BlogsEntry.class.getName() %>"
+            classPK="<%= (entry != null) ? entry.getEntryId() : 0 %>"
+            editable="<%= false %>"
+            label="<%= true %>"
+        />
+    </liferay-ui:custom-attributes-available>
 \
 
 That's about it. It wasn't that hard, right? Now you can start enjoying
@@ -1085,19 +845,19 @@ the benefits of the asset framework in your custom portlets.
 
 The ServiceContext object contains a set of fields
 that are common to many different services. It is used, for example
-to carry tags, categories, permissions information, … It is not a
+to carry tags, categories, permissions information, ... It is not a
 framework in itself but rather a utility object that helps usage of
 the other frameworks.
 
 ## File Storage Framework (new)
 
-The File Storage Framework: Allows storing files using the backend of
+The File Storage Framework: Allows storing files using the back-end of
 the Document Library. By using this framework you won't have to
 worry yourself about clustering or backups since that will already
 be taken care of for the Document Library itself. This framework is
 used, for example, by the wiki and the message boards of Liferay to
 store attached files in pages and posts respectively. You can check
-the sourcecode of these two portlets for great real-life examples of
+the source code of these two portlets for great real-life examples of
 how to use the framework.
 
 ### Document Types (new)
@@ -1122,7 +882,7 @@ information and detailed instructions on how to use them over time.
     portlets. One great benefit of using this framework is that you will
     be able to reuse all of the workflow management UIs provided by
     Liferay. Also you will be able to abstract your code from the
-    specific workflow engine that will be used (JBPM, Liferay Kaleo, …).
+    specific workflow engine that will be used (JBPM, Liferay Kaleo, ...).
     Many Liferay portlets use this framework. If you want a simple
     example to learn how to use it, the blogs portlet is a good start.
 
@@ -1144,9 +904,9 @@ information and detailed instructions on how to use them over time.
     that the database takes care of checking for view permissions. This
     is particularly useful when doing queries for data entries that
     could result in a large number of items (and thus checking of
-    permissions afterwards would be very ineficient) or when you want to
+    permissions afterward would be very inefficient) or when you want to
     implement pagination (which would not work fine if permissions are
-    checked afterwards and an item is removed). The Document Library or
+    checked afterward and an item is removed). The Document Library or
     the Message Boards of Liferay are examples of portlets that use this
     functionality.
 
