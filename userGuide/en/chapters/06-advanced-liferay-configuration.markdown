@@ -441,7 +441,6 @@ plugin.notifications.packages.ignored=liferay/sample-jsp-portlet
 
 #### Portlet
 
-
 Set this property to define the default virtual path for all hot
 deployed portlets. See liferay-portlet-app\_5\_1\_0.dtd and the
 virtual-path element for more information.
@@ -480,7 +479,6 @@ Set the provider for ORM persistence. If this property is set to
 will be read. If this property is set to `hibernate`{.western}, then the
 properties with the prefix `hibernate`{.western} will be read.
 
-
 persistence.provider=hibernate
 
 persistence.provider=jpa
@@ -505,7 +503,6 @@ jpa.provider=openjpa
 
 jpa.provider=toplink
 
-
 Specify provider specific properties prefixed with
 `jpa.provider.property`{.western}.
 
@@ -514,7 +511,6 @@ jpa.provider.property.eclipselink.allow-zero-id=true
 jpa.provider.property.eclipselink.logging.level=FINEST
 
 jpa.provider.property.eclipselink.logging.timestamp=true
-
 
 The `LoadTimeWeaver`{.western} interface is a Spring class that allows
 JPA `ClassTransformer`{.western} instances to be plugged in a specific
@@ -537,11 +533,10 @@ Specify a specific database platform setting if the JPA provider is not
 able to detect the database platform.
 
 Valid values for the Hibernate and OpenJPA providers are:
-`DB2, DERBY,`{.western}
 
+`DB2, DERBY,`{.western}
 `HSQL, INFORMIX, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER`{.western}, and
 `SYBASE`{.western}.
-
 
 Valid values for the EclipseLink provider are:
 
@@ -565,13 +560,10 @@ org.eclipse.persistence.platform.database.SQLServerPlatform, or
 
 org.eclipse.persistence.platform.database.SybasePlatform.
 
-
 Check with JPA provider's documentation for details and all possible
-
 values.
 
 jpa.database.platform=
-
 
 Liferay will automatically detect the database type by initializing
 `DBUtil`{.western}. You can override the value here if needed. Expected
@@ -603,7 +595,6 @@ transaction.manager.impl=org.springframework.transaction.jta.OC4JJtaTransactionM
 transaction.manager.impl=org.springframework.transaction.jta.WebLogicJtaTransactionManager
 
 transaction.manager.impl=org.springframework.transaction.jta.WebSphereUowTransactionManager
-
 
 Additional properties that follow the pattern
 `transaction.manager.property.*`{.western} will be read to call the
@@ -859,7 +850,7 @@ environment. See the property
 `net.sf.ehcache.configurationResourceName`{.western} for detailed
 configuration.
 
-*Examples: *
+*Examples:*
 
 hibernate.cache.provider\_class= \\
 
@@ -914,7 +905,7 @@ Set the JDBC batch size to improve performance. If you're using Oracle
 9i, however, you must set the batch size to 0 as a workaround for a
 hanging bug in the Oracle driver. See LEP-1234 for more information.
 
-*Examples: *
+*Examples:*
 
 hibernate.jdbc.batch\_size=20
 
@@ -1296,7 +1287,6 @@ javascript.barebone.files,\\
 
 javascript.everything.files
 
-
 Define a bundle directory for each property listed in
 `javascript.bundle.ids`{.western}.
 
@@ -1633,8 +1623,6 @@ facebook.connect.oauth.token.url=https://graph.facebook.com/oauth/access\_token
 
 #### NTLM
 
-\
-
 Set this to true to enable NTLM single sign on. NTLM will work only if
 LDAP authentication is also enabled and the authentication is made by
 screen name. If set to true, then the property
@@ -1721,9 +1709,6 @@ auth.token.ignore.actions=\\
 /wiki/edit\_page\_attachment,\\
 
 /wiki/rss
-
-\
-\
 
 Set the character sets for password validation.
 
@@ -2174,8 +2159,6 @@ Set all three values if all users can edit the specified field. Set a
 combination of the three values if only a combination of the users can
 edit the specified field.
 
-\
-
 field.editable.com.liferay.portal.model.User.screenName=administrator,user-with-mx,user-without-mx
 
 field.editable.com.liferay.portal.model.User.emailAddress=administrator,user-with-mx,user-without-mx
@@ -2284,9 +2267,6 @@ run at the specified event.
 \#
 
 servlet.session.create.events=com.liferay.portal.events.SessionCreateAction
-
-\
-\
 
 \#
 
@@ -3007,13 +2987,13 @@ passwords.regexptoolkit.pattern=(?=.{8})(?:[a-zA-Z0-9]\*)
 
 Set the length and key for generating passwords.
 
-*Examples: *
+*Examples:*
 
 passwords.regexptoolkit.charset=0123456789
 
 passwords.regexptoolkit.charset=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 
-*Examples: *
+*Examples:*
 
 passwords.regexptoolkit.length=4
 
@@ -3055,9 +3035,6 @@ true: *
 
 -   Is the user directly connected to one of the permissions?
 
-\
-\
-
 The second algorithm (the default) does a database join and checks the
 permissions in one step, by calling
 `countByGroupsRoles, countByGroupsPermissions, countByUsersRoles, countByUserGroupRole`{.western},
@@ -3074,9 +3051,6 @@ following items, it returns *true:*
     of the permissions?
 
 -   Is the user directly connected to one of the permissions?
-
-\
-\
 
 The fourth algorithm does a database join and checks the permissions
 that algorithm three checks in one step, by calling
@@ -3537,9 +3511,6 @@ social.equity.equity.log.check.interval=1440
 Set this to true to enable social equity logs.
 
 social.equity.equity.log.enabled=true
-
-\
-\
 
 #### Vaadin
 
@@ -4346,7 +4317,7 @@ Lucene. This property expects a regular expression. Any character that
 does not match the regular expression will be replaced with a blank
 space. Set an empty regular expression to disable this feature.
 
-*Examples: *
+*Examples:*
 
 lucene.file.extractor.regexp.strip=
 
@@ -4815,7 +4786,7 @@ lock.expiration.time.com.liferay.portlet.wiki.model.WikiPage=1200000
 
 Connect to either Mule or ServiceMix as your ESB.
 
-*Examples: *
+*Examples:*
 
 jbi.workflow.url=http://localhost:8080/mule-web/workflow
 
@@ -5209,9 +5180,6 @@ virtual.hosts.ignore.paths=\\
 \\
 
 /c/portal/change\_password,\\
-
-\
-\
 
 /c/portal/extend\_session,\\
 
@@ -5942,9 +5910,6 @@ flags.email.from.name=Joe Bloggs
 
 flags.email.from.address=test@liferay.com
 
-\
-\
-
 flags.email.subject=com/liferay/portlet/flags/dependencies/email\_flag\_subject.tmpl
 
 flags.email.body=com/liferay/portlet/flags/dependencies/email\_flag\_body.tmpl
@@ -5966,9 +5931,6 @@ this portlet may attempt password theft. See LPS-5272 for more
 information.
 
 iframe.password.token.role=
-
-\
-\
 
 #### Image Gallery Portlet
 
@@ -6423,7 +6385,7 @@ class is just an empty class that doesn't actually do any validation.
 The `MinimalTagsAssetValidator`{.western} requires all assets to have at
 least one tag entry.
 
-*Examples: *
+*Examples:*
 
 tags.asset.validator=com.liferay.portlet.tags.util.DefaultTagsAssetValidator
 
@@ -6510,7 +6472,6 @@ wiki.formats.default=creole
 
 Configure settings for each of the wiki formats.
 
-
 wiki.formats.engine[creole]=com.liferay.portlet.wiki.engines.jspwiki.JSPWikiEngine
 
 wiki.formats.configuration.main[creole]=jspwiki.properties
@@ -6545,7 +6506,6 @@ wiki.email.from.name=Joe Bloggs
 
 wiki.email.from.address=test@liferay.com
 
-
 wiki.email.page.added.enabled=true
 
 wiki.email.page.added.subject.prefix=com/liferay/portlet/wiki/dependencies/email\_page\_added\_subject\_prefix.tmpl
@@ -6553,7 +6513,6 @@ wiki.email.page.added.subject.prefix=com/liferay/portlet/wiki/dependencies/email
 wiki.email.page.added.body=com/liferay/portlet/wiki/dependencies/email\_page\_added\_body.tmpl
 
 wiki.email.page.added.signature=com/liferay/portlet/wiki/dependencies/email\_page\_added\_signature.tmpl
-
 
 wiki.email.page.updated.enabled=true
 
@@ -6592,7 +6551,6 @@ support the Portlet 2.0 standard: JSR-286. You cannot run Portlet 2.0
 portlets in Liferay 4.4.2, but because the Portlet 2.0 standard is
 backwards-compatible, portlets written to the 1.0 standard will run in
 Liferay 5.x and above.
-
 
 Portlet applications, like servlet applications, have become a Java
 standard which various portal server vendors have implemented. The
@@ -6927,6 +6885,7 @@ which Liferay is running. Most of these problems were resolved in
 Liferay 4.3.5 with the addition of code that allows Liferay to determine
 which application server it is running on and adjust the way it deploys
 plugins as a result.
+
 If you have upgraded from one of these older versions, you may still
 have settings in your `portal.ext.properties `{.western}file that are no
 longer needed. One of these settings is the manual override of the
@@ -7535,8 +7494,8 @@ interfaces not only for Java code, but also for web services and
 JavaScript. This means that the method calls for storing and retrieving
 portal objects are all the same, and are generated in the same step.
 
-*I![image](../../images/portal-admin-ch6_html_m1232b4ba.png)
-llustration 11: Liferay SOA's first layer of security. *
+![image](../../images/portal-admin-ch6_html_m1232b4ba.png)
+*Illustration 11: Liferay SOA's first layer of security.*
 
 Because the actual method calls for retrieving data are the same
 regardless of how one gets access to those methods (i.e., locally or
@@ -7592,7 +7551,7 @@ to connect to Liferay's web services and pass in user credentials to be
 used to upload the documents.
 
 ![image](../../images/portal-admin-ch6_html_57e67878.png)
-*Illustration 12: Liferay SOA's second layer of security. *
+*Illustration 12: Liferay SOA's second layer of security.*
 
 The second layer of security is Liferay's security model that it uses
 for every object in the portal. The user ID that accesses the services
@@ -7601,6 +7560,7 @@ will be accessing. Otherwise, a remote exception will be thrown. The
 Portal Administrator will need to make use of Liferay's usual means of
 granting access to these resources to the user ID that will be operating
 on them remotely.
+
 For example, say that a Document Library folder called *Documents* has
 been set up in a community. A role has been created called *Document
 Uploaders* which has the rights to add documents to this folder. Your

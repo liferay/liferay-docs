@@ -46,12 +46,11 @@ needs of your project without recommending one product over another.
 With all of that said, let's get started configuring Liferay for the
 enterprise.
 
-## 
+## Liferay Clustering 
 
 ![image](../../images/portal-admin-ch7_html_m78881a5b.gif)
 *Illustration 1: "Unbreakable" Liferay architecture*
 
-Liferay Clustering
 Once you have Liferay installed in more than one node on your
 application server, there are several optimizations that need to be
 made. At a minimum, Liferay should be configured in the following way
@@ -358,7 +357,6 @@ class="com.liferay.portal.search.solr.server.BasicAuthSolrServer"\>
 
 <constructor-arg
 type="java.lang.String"value="http://localhost:8080/solr" /\>
-
 
 Modify this value so that they point to the server upon which you are
 running Solr. Then save the file and put it back into the plugin archive
@@ -1262,6 +1260,7 @@ Using the drop down feature on the Control Panel section, you can select
 any community or organization in the portal. All of the options under
 that heading, including Workflow Configuration, now apply to that
 particular group.
+
 ##### My Workflow Tasks
 
 My Workflow Tasks is a personalized version of the Workflow Tasks, and

@@ -92,7 +92,6 @@ want to change the scope, it only takes a few simple steps.
 ![image](../../images/portal-admin-ch5_html_2c05ad6b.jpg)*Illustration 1: Changing
 the scope for a portlet *
 
-
 That's all it takes to change the scope for a particular portlet
 instance. By setting the scope to *page*, you can add as many of these
 portlets to a particular community or organization as you want, provided
@@ -177,15 +176,13 @@ Facebook. Once you have done this, you can copy and paste their values
 into the Facebook tab. Your portlet will now be available on Facebook as
 a Facebook application.
 
-### 
-
 ![image](../../images/portal-admin-ch5_html_m435d3961.png)
 *Illustration 2: Liferay's forums in Facebook*
 
 ### Google Gadget
 
 iGoogle is service provided by Google that lets users create a
-customizable page and add *Gadgets * to that page. Liferay can serve up
+customizable page and add *Gadgets* to that page. Liferay can serve up
 portlets to be used as Google Gadgets on an iGoogle page.
 
 Check the box labeled *Allow users to add [portlet-name] to iGoogle*.
@@ -206,7 +203,7 @@ Netvibes offers a similar service to iGoogle – users can log in, create
 their own personal portal, called a *dashboard,* and add customizable
 widgets to the dashboard that they create. To set up Netvibes support
 for a particular portlet, check the *Allow users to add [portlet-name]
-to Netvibes pages *box. You can then use the provided URL to create a
+to Netvibes pages* box. You can then use the provided URL to create a
 custom Netvibes widget based on the instance of the portlet that you're
 using.
 
@@ -242,7 +239,7 @@ that if you have something important and interesting to say, somebody
 will read it.
 
 ![image](../../images/portal-admin-ch5_html_6847c073.jpg)*Illustration 3: Slashdot,
-one of the first blogs on the Internet *
+one of the first blogs on the Internet*
 
 Liferay Portal has a portlet called the Blogs portlet which allows you
 to provide a blogging service to users of your web site. In fact,
@@ -255,10 +252,10 @@ use both of these portlets to create a blogging site for your users.
 ### The Blogs Portlet
 
 ![image](../../images/portal-admin-ch5_html_m5350d888.jpg)*Illustration 4: Initial
-view of the Blogs portlet *
+view of the Blogs portlet*
 
 The Blogs portlet is available from the *Collaboration* section of the
-*Add **→** More* menu. You will notice that it is an Instanceable
+*Add More* menu. You will notice that it is an Instanceable
 portlet, meaning that it can only be added once to any community or
 organization. This allows you to use the Blogs portlet to create a
 shared blog to build a site like Slashdot or to create multiple personal
@@ -301,6 +298,7 @@ The *Display Settings* tab lets you configure the formatting of the
 Blogs portlet. You can choose the most optimal ways to display your
 entries as well as configure how you want your users to interact with
 you as you post those entries.
+
 **Maximum Items to Display:** This allows you to choose the total number
 of blog entries to display on the initial page. You can choose up to 100
 to be displayed.
@@ -350,8 +348,7 @@ have the ability to add blog entries, and then click *Save*.
 
 #### Adding Blog Entries
 
-Now you're ready to begin adding blog entries. Click the *Add Blog
-Entry* button. You will see the following data entry screen:
+Now you're ready to begin adding blog entries. Click the *Add Blog Entry* button. You will see the following data entry screen:
 
 ![image](../../images/portal-admin-ch5_html_m7930fe68.jpg)*Illustration 6: Adding a
 Blog entry*
@@ -395,7 +392,7 @@ looks like when the display style is set to *Abstract* and the number of
 entries is set to 10:
 
 ![image](../../images/portal-admin-ch5_html_m27a1d62c.jpg)*Illustration 7: First blog
-entry added *
+entry added*
 
 You can see that in the summary view, you don't see the trackback /
 pingback link, and you only see the number of comments which have been
@@ -418,7 +415,7 @@ You can set up a whole web site devoted just to blogging if you wish.
 The Blogs Aggregator portlet allows you to publish entries from multiple
 bloggers on one page, giving further visibility to blog entries. This
 portlet is also very easy and straightforward to set up. You can add it
-to a page from the Collaboration category in the *Add **→** More* menu
+to a page from the Collaboration category in the *Add More* menu
 in the dock.
 
 If you click *Configuration* from the menu button in the title bar of
@@ -468,9 +465,7 @@ iCalendar format for use in other applications.
 
 In a similar way to the Blogs portlet, you can use the Calendar portlet
 as a shared calendar on a community or organization's web site, or you
-can use the Calendar portlet as a personal calendar—or both.
-
-### 
+can use the Calendar portlet as a personal calendar -- or both.
 
 ![image](../../images/portal-admin-ch5_html_m227004cd.jpg)*Illustration 9: The
 Liferay Calendar Portlet*
@@ -598,6 +593,7 @@ The Chat portlet is very simple to use. To change the settings, click
 Here you can set your status, whether to show if you are online, and
 whether to play a sound if someone sends you a message while you have
 the window or tab in the background.
+
 The portlet shows you the number of your friends who are online. To chat
 with one of them, click the *Online Friends* link and then click the
 friend's name. You can then begin chatting with him or her. You can have
@@ -703,7 +699,7 @@ you can concentrate on building out the site that you want to build.
 The Message Boards portlet has a lot of configuration options, but they
 are straightforward to use and are the reason why this portlet is a
 full-featured forum application for your web site. To get started, add a
-Message Boards portlet to your site. Once it is added, click the M*enu*
+Message Boards portlet to your site. Once it is added, click the *Menu*
 icon in the portlet's title bar and click *Configuration*. There are two
 rows of tabs. The first tab in the top row is titled simply, *Setup*.
 This is where you can configure the application the way you want it to
@@ -711,7 +707,7 @@ behave on your site.
 
 ### General
 
-The first tab beneath *Setup* is labeled *General.* Here, you can enable
+The first tab beneath *Setup* is labeled *General*. Here, you can enable
 anonymous posting, flags and ratings. All three options are selected by
 default.
 
@@ -957,14 +953,14 @@ boards are familiar with BBCode and are used to it, and the editor that
 is provided for Liferay's Message Boards portlet makes it very easy to
 use.
 
-![image](../../images/portal-admin-ch5_html_2b49b027.jpg)*Illustration 12: Editing a
-message boards post. You can see the emoticons that are available in the
-editor. *
+![image](../../images/portal-admin-ch5_html_2b49b027.jpg)
+*Illustration 12: Editing a message boards post. You can see the emoticons that are available in the editor.*
 
 Users who have Moderator access to the board can modify the priority of
 messages. You can also use the editor to quote from messages that you
 are replying to, to insert emoticons, to add preformatted text, and
 more.
+
 Messages that are posted to the message boards are shown by default in a
 threaded view so that replies are attached to the proper parent message.
 This makes it easy to follow along with conversations.
@@ -1006,7 +1002,7 @@ to administer a Message Boards portlet in only the community or
 organization in which they have the role.
 
 Go to the Control Panel and create this role. Once it is created, click
-*Actions → Define Permissions*. Click the *Portlet Permissions* button.
+*Actions -> Define Permissions*. Click the *Portlet Permissions* button.
 Browse the list until you find the Message Boards portlet and then click
 on it. You will then see a screen which allows you to configure the
 various permissions on the portlet.
@@ -1044,7 +1040,7 @@ threads. Sometimes users begin discussing topics that are inappropriate
 or which reveal information which should not be revealed. In this case,
 you can simply delete the thread from the message boards. This is easy
 to do. First, view the list of threads. Next to every thread is an
-*Actions* button. Click *Actions → Delete* to delete the thread. This
+*Actions* button. Click *Actions ->  Delete* to delete the thread. This
 does not prevent users from re-posting the information, so you may need
 to be vigilant in deleting threads or consider the next option.
 
@@ -1090,7 +1086,7 @@ Permissions can be set not only on threads, but also on individual
 posts. You can choose to limit a particular conversation or a post to
 only a select group of people. To do this, click the *Permissions* link
 on the post and then select among the *Delete, Permissions, Subscribe,
-Update, *and* View* permissions for the particular role to which you
+Update, and View* permissions for the particular role to which you
 want to grant particular access.
 
 This function can be used to make it so some privileged users can post
@@ -1133,7 +1129,7 @@ WikiCreole's advanced features.
 ### Getting Started with the Liferay Wiki
 
 The Wiki portlet works just like the other portlets developed by
-Liferay. Add the portlet to a page using the *Add **→** More* menu and
+Liferay. Add the portlet to a page using the *Add More* menu and
 then click *Configuration* in the portlet menu in the Wiki portlet's
 title bar. You'll see some options are likely to be familiar to you by
 now such as sharing the application with websites, Facebook, Google
@@ -1150,6 +1146,7 @@ portlets, using predefined public render parameters. From here you can
 modify four public render parameters: `nodeId`{.western},
 `title`{.western}, `categoryId`{.western} and `tag`{.western}. For each
 parameter you can select:
+
 -   Ignore the values for this parameter that come from other portlets.
     For example, the wiki portlet can be used along with the Tags
     Navigation portlet. When a user clicks on a tag in the Tags
@@ -1420,6 +1417,7 @@ able to view any existing tags and make new ones. To create a new tag,
 simply click *Add Tag*. You then be asked for the name of the tag, and
 you'll also have the ability to set permissions for viewing or managing
 the tag.
+
 From the *Tags* screen on the control panel, you can also edit existing
 tags. You can change the tag name, change the tag's permissions, delete
 the tag, or add *Properties*. Properties are essentially tags for your
@@ -1429,7 +1427,7 @@ tags; you can use them to add additional information about your tags.
 
 Categories are similar in concept to tags, but are designed with the
 administrator in mind, not the end user. Hierarchies of categories can
-be created, and categories can be grouped together in *Vocabularies.*
+be created, and categories can be grouped together in *Vocabularies*.
 Where tags represent an ad hoc method for users to group content
 together, categories exist to allow administrators to organize content
 in a more official, hierarchical structure. As has been said in Chapter
@@ -1449,8 +1447,9 @@ Clicking on a vocabulary on the left will display any categories that
 have been created under that vocabulary. You can create new vocabularies
 simply by clicking *Add Vocabulary* and providing a name for it. You can
 create categories in a similar fashion by choosing a vocabulary on the
-left, and then selecting *Add Category.* Like tags, you can also provide
+left, and then selecting *Add Category*. Like tags, you can also provide
 properties for categories.
+
 Once you have created some vocabularies and categories, you can take
 advantage of the full capabilities of categories by creating a nested
 hierarchy of categories. To nest categories, select what you want to be

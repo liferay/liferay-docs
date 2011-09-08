@@ -38,7 +38,7 @@ You can also customize the logo in the top left corner of every page by selectin
 
 Your pages must contain something, right? The reason web pages exist at all is to display content. Use can use the web to share project information, advertise to potential customers, or demonstrate a golf swing. In each case you're displaying content. And with Liferay's CMS, you'll find that the process of loading your pages up with content is extremely easy and straightforward, and you don't ever need to leave your browser.
 
-Essentially, CMS is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add → More* menu: we'll go over everything in a step-by-step fashion. We'll start by taking a look at page creation and management.
+Essentially, CMS is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add ->  More* menu: we'll go over everything in a step-by-step fashion. We'll start by taking a look at page creation and management.
 
 ### Managing Pages
 
@@ -96,11 +96,12 @@ In addition to *Look and Feel* and *Logo*, there are also *Javascript* and *Adva
 
 ### Additional Tabs of the Manage Page Window
 
+
 The *Manage Page* window has additional tabs that do not appear in the *Manage Site Pages* window. These include SEO (Search Engine Optimization), layout, custom fields, and customization settings. The SEO settings for your site can can be specified from the Sitemaps and Robots tabs of the *Mangage Site Settings* window. The SEO tab of the *Manage Page* is for customizing the search engine properties of an individual page. For example, you could change the priority of a page or remove it from the sitemap altogether. The layout tab is for specifying where portlets will be placed on a page. If custom fields have been defined, (which can be done from the *Custom Fields* page of the control panel) you can add a custom field to a page from the custom fields tab. This custom field serves as metadata about the page so it will not be visible on the page. The customization tab lets you mark specific sections of the page that you want users to be able to customize.
 
 ### Site Settings
 
-The *Manage → Site Settings* window gives us several powerful tools. You'll find options to specify details and metadata about your site, set up friendly URLs and virtual hosts, configure search engine optimization settings, turn staging on or off, and specify a Google Analytics ID. Let's take a closer look.
+The *Manage -> Site Settings* window gives us several powerful tools. You'll find options to specify details and metadata about your site, set up friendly URLs and virtual hosts, configure search engine optimization settings, turn staging on or off, and specify a Google Analytics ID. Let's take a closer look.
 
 #### Details
 
@@ -203,21 +204,21 @@ type set to *Open*. After you've completed these steps, select *Save*.
 an Open Community*
 
 Now we're going to add a page to our new community. Since you're already
-in the *Communities* interface, you can simply select *Actions → Manage
-Pages *for the Corporate Headquarters community.
+in the *Communities* interface, you can simply select *Actions ->  Manage
+Pages* for the Corporate Headquarters community.
 
-Add a new public page named *News and Events.* Next, click the *View
+Add a new public page named *News and Events*. Next, click the *View
 Pages* button and add the Alerts and Announcements portlets to it.
 
 Now we're ready to activate the staging feature for this community. You
 should now have two tabs or windows open in your browser to Liferay: one
 is on the Control Panel, and one contains the page you have just
-created. Return to the Control Panel tab where you're editing the page
-structure and select* Settings → Staging*.
+created. Return to the Control Panel tab wher you're editing the page
+structure and select *Settings -> Staging*.
 
 ![image](../../images/portal-admin-ch4_html_3c9bdfe.png)
 *Illustration 7: You can choose what content should be staged and what
-content should not be staged. *
+content should not be staged.*
 
 We'll assume we don't have a separate staging server, and so we'll
 select a staging type of *Local Live.* If you were to select *Remote
@@ -225,7 +226,7 @@ Live*, you would also have needed to supply the name or IP of the remote
 server where staged content should be published, the port (80 if Liferay
 is sitting behind a web server, or the port your application server is
 listening on if not), and the remote community or organization ID. You
-can find this ID by selecting *Actions → Edit* on any community or
+can find this ID by selecting *Actions ->  Edit* on any community or
 organization in the Control Panel. Either way, once we make a selection
 (*Local Live* or *Remote Live*), many more options will become available
 to us.
@@ -261,15 +262,14 @@ page, and the *Staging* link will be in the Dockbar. Select the
 *Staging* button and then *View Staged Area*. The page now has a red
 border.
 
-![image](../../images/portal-admin-ch4_html_m22bf4227.png)
-*Illustration 8: The live site has an orange border; the staged site has
+![image](../../images/portal-admin-ch4_html_m22bf4227.png)*Illustration 8: The live site has an orange border; the staged site has
 a red border.*
 
-Add the wiki portlet and then from the Dockbar select *Staging → View
-Live Page. *Notice that the wiki portlet isn't there. As you can see,
+Add the wiki portlet and then from the Dockbar select *Staging ->  View
+Live Page.* Notice that the wiki portlet isn't there. As you can see,
 only the page changes are staged; web content itself can go through a
 whole different workflow process (which we'll get to later). If you
-select *Staging → View Staged Page*, you'll also see that since we
+select *Staging ->  View Staged Page*, you'll also see that since we
 didn't configure the Wiki portlet to stage its content (because that
 content is user-submitted), the Wiki portlet in our staged area displays
 a warning message telling us that its content is not staged.
@@ -280,7 +280,7 @@ Editorial Stage, we can submit a proposal to have the content reviewed.
 If not, we can simply publish it to the live site.
 
 To submit a proposal, you must be viewing the staged page. From there,
-you can go up to the Dockbar and select *Staging → Propose Publication*.
+you can go up to the Dockbar and select *Staging ->  Propose Publication*.
 Once you do this, a small dialog box will pop up asking you for the
 proposal description as well as allowing you to select the reviewer who
 should be able to review this proposal. The list of reviewers is
@@ -289,11 +289,11 @@ populated from the roles you selected when you enabled Editorial Stages.
 Once you've submitted your proposal, it will no longer be possible to
 submit more proposals. Your proposal will have to be dealt with by
 someone with the role who reviews the content at this editorial stage.
-To view the proposals, go back up to the Dockbar and select *Staging →
+To view the proposals, go back up to the Dockbar and select *Staging -> 
 View Proposals*. You'll then see the proposal you've submitted.
 
 ![image](../../images/portal-admin-ch4_html_3f361bd7.png)
-*Illustration 9: Proposals must be approved or deleted. *
+*Illustration 9: Proposals must be approved or deleted.*
 
 Click on the proposal to view it. Here, you'll be able to change the
 approver, set a due date, select the next reviewer (from the role which
@@ -312,9 +312,9 @@ published automatically upon the last approval.
 content using the staging environment.*
 
 To publish the modified page we simply need to return to the proposal
-and click *Publish to Live. *Once this is done, Liferay will ask you
+and click *Publish to Live*. Once this is done, Liferay will ask you
 what you wish to publish. In our example, we have only one page to
-publish*,* and it's already selected. All we have to do is click
+publish, and it's already selected. All we have to do is click
 *Publish*. The changes are now live!
 When it comes time to modify your site again, you simply repeat the
 process. You can enable staging on an individual community or
@@ -329,10 +329,10 @@ makes maintaining a content-rich web site a snap.
 There are a lot of other things you can do beyond placing portlets on a
 page. So let's move on from staging back to the Spartan Software
 community, which is not staged. You can do this by going up to the
-Dockbar and clicking *Go To → Spartan Internet*.
+Dockbar and clicking *Go To ->  Spartan Internet*.
 
 We'll use the *Collaboration* page you created earlier in the chapter.
-Navigate to the *Collaboration* page and select *Manage → Page* from the
+Navigate to the *Collaboration* page and select *Manage ->  Page* from the
 Dockbar.
 
 This screen should now be familiar to you, but we haven't yet looked at
@@ -382,7 +382,7 @@ portal for your use.
 
 In order to prepare for the portlets we'll soon be adding, let's change
 the layout of the Collaboration page. To access layouts, go up to the
-Dockbar and select *Manage → Page Layout*.
+Dockbar and select *Manage ->  Page Layout*.
 
 Now, select the *2 Columns (50/50)* layout and then *Save*. Once saved,
 you'll return to the page and it'll seem as though nothing has happened.
@@ -408,12 +408,12 @@ portlets.
 Adding portlets to a page is simple. Let's add some to our Collaboration
 page.
 
-1.  In the Dockbar, select *Add → More*.
+1.  In the Dockbar, select *Add ->  More*.
 
-2.  In the window that appears, expand the *Collaboration *category.
+2.  In the window that appears, expand the *Collaboration* category.
 
 3.  Drag the *Blogs* portlet off the Add Application window onto the
-    *right column *of our page.
+    *right column* of our page.
 
 4.  Next, drag the *Wiki* portlet to the *left column*.
 
@@ -424,7 +424,7 @@ and RSS portlets.
 
 ![image](../../images/portal-admin-ch4_html_5d108446.png)
 *Illustration 11: Yeah, we're showoffs. But as you can see, your page
-layout options are virtually limitless. *
+layout options are virtually limitless.*
 
 You'll find it is very easy to make your pages look exactly the way you
 want them to. If the layout options provided aren't enough, you can even
@@ -444,7 +444,7 @@ view them.
 So, let's say we wanted to create a page only for administrators to see.
 We can do this with the following procedure:
 
-1.  Go to the Dockbar and select *Manage* → *Control Panel*.
+1.  Go to the Dockbar and select *Manage -> Control Panel*.
 
 2.  Click the *Pages* link in the left navigation.
 
@@ -502,7 +502,7 @@ helps you to keep your site fresh. You'll find yourself easily creating,
 editing, and publishing content within just a few minutes of being
 exposed to its features. But Liferay CMS doesn't sacrifice power for
 simplicity. If need be, you can use your developer skills to create
-complex presentation layer templates that make your content “pop” with
+complex presentation layer templates that make your content “pop” wi
 dynamic elements. Once these templates have been deployed into the
 portal, your non-technical users can manage content using these
 templates as easily as they would manage static content. All of this
@@ -681,9 +681,9 @@ or deny to your web content.
 *Illustration 16: Permissions for Web Content*
 
 For this piece of web content, we don't need to change anything. After
-you're finished with permissions, click *Save. *This will save the
+you're finished with permissions, click *Save.* This will save the
 content in draft form. Once you're satisfied with the your changes,
-select* Publish. *This makes the content available for display, but we
+select *Publish*. This makes the content available for display, but we
 still have some work to do to enable users to see it. In Liferay CMS,
 all content resides in a container, which is one of two portlets: Web
 Content Display or Web Content List. By far the most frequently used is
@@ -696,7 +696,7 @@ this case, the Welcome page).
 Now that we've created and published our first piece of web content for
 Spartan Software, it's time to display it. First, we'll need to add the
 *Web Content Display* portlet to our Welcome page. Do this by selecting
-*Add → Web Content Display* from the Dockbar.
+*Add ->  Web Content Display* from the Dockbar.
 
 ![image](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 *Illustration 17: Adding the Web Content Display Portlet*
@@ -708,7 +708,7 @@ many Web Content Display portlets on a page as you need.
 
 ##### Publishing Existing Content
 
-To add existing web content, select the *gear *icon on the lower left of
+To add existing web content, select the *gear* icon on the lower left of
 the portlet. You will see the message “Please select a web content from
 the list below.” You have several options here.
 
@@ -792,7 +792,7 @@ it is when you need to, as well as edit it in the Control Panel.
 
 One thing to note here that's important: if you want to view your page
 the way your users will see it (i.e., without all those portlet controls
-and icons), you can go up to the Dockbar and select *Toggle Edit
+and icons), you can go up to the Dockbar and select *Toggle Edit 
 Controls*. This makes all those extra controls you see as a portal
 administrator disappear. If you need to use those controls again, just
 select *Toggle Edit Controls* again.
@@ -883,30 +883,30 @@ Liferay supports the following elements in structures:
 
 **FORM FIELDS**
 
-**Text Field: **Used for items such a titles and headings.
+**Text Field:** Used for items such a titles and headings.
 
-**Text Box: **Used for the body of your content or long descriptions.
+**Text Box:** Used for the body of your content or long descriptions.
 
 **Text Area (HTML):** An area that uses a WYSIWYG editor to enhance the
 content.
 
-**Checkbox: **Allows you to add a checkbox onto your structure. Template
+**Checkbox:** Allows you to add a checkbox onto your structure. Template
 developers can use this as a display rule.
 
-**Selectbox: **Allows you to add a select box onto your structure.
+**Selectbox:** Allows you to add a select box onto your structure.
 
-**Multi-selection Lists: **Allows you to add a multi-selection list onto
+**Multi-selection Lists:** Allows you to add a multi-selection list onto
 your structure.
 
 **APPLICATION FIELDS**
 
-**Image Gallery: **Allows you to add the Image Gallery application into
+**Image Gallery:** Allows you to add the Image Gallery application into
 your structure.
 
-**Upload Image: **Allows you to add the upload image application into
+**Upload Image:** Allows you to add the upload image application into
 your structure.
 
-**Document Library: **Allows you to add the Document Library application
+**Document Library:** Allows you to add the Document Library application
 to your structure.
 
 **MISCELLANEOUS**
@@ -955,8 +955,6 @@ the *Anyone (Guest Role)* is selected.
 ![image](../../images/portal-admin-ch4_html_3f6c0c3.jpg)
 *Illustration 23: View Permissions for Structure*
 
-#### 
-
 You will also want to determine how users can interact with the
 structure. You can do this by selecting the *More* link.
 
@@ -990,7 +988,7 @@ already used before. If you are just starting with any one of them, we
 recommend Velocity, as it is less “chatty” than XSL and extremely simple
 to understand.
 
-**VM (**Velocity Macro): Velocity is a scripting language that lets you
+**VM** (Velocity Macro): Velocity is a scripting language that lets you
 mix logic with HTML. This is similar to other scripting languages, such
 as PHP, that you may have seen before, though Velocity is much simpler.
 It's been in the product the longest, so it is probably the most widely
@@ -1058,11 +1056,11 @@ Text Area
 
 5.  After you have saved the structure, select the *Templates* tab.
 
-6.  Select *Add Template. *
+6.  Select *Add Template*.
 
 7.  Type in a name and description and enable the *Autogenerate ID* box.
 
-8.  De-select the box labeled *Cacheable.*
+8.  De-select the box labeled *Cacheable*.
 
 9.  Select VM as the language.
 
@@ -1071,7 +1069,7 @@ Text Area
     Editor* to type the script directly into the small editor window
     that appears.
 
-11. Select *Save.*
+11. Select *Save*.
 
 12. Return to the Web Content tab and open the Company News content.
     You'll see the new element labeled Abstract just below the Title.
@@ -1125,10 +1123,9 @@ parameter is the key to the rest of the script:
 When this template is rendered, it looks something like this:
 
 ![image](../../images/portal-admin-ch4_html_437339b5.png)
-*Illustration 26: By default, the content displays like this. If the
+*Illustration 26: By default, the content displays like this. If the 
 user clicks the Read More link, the portlet will display the body field
-as well. Note we've also enabled comments and ratings in this Web
-Content Display portlet. *
+ as well. Note we've also enabled comments and ratings in this Web Content Display portlet.*
 
 Of course, there is much, much more you can do with structures and
 templates. Check out the Liferay Wiki
@@ -1147,9 +1144,6 @@ template by selecting from the *Viewable By* select box beneath the
 
 ![image](../../images/portal-admin-ch4_html_3f6c0c3.jpg)
 *Illustration 27: View Permissions for Templates*
-
-
-#### 
 
 You'll also want to determine how users can interact with the template.
 You can do this by selecting the *More* link.
@@ -1280,13 +1274,14 @@ bottom of the same form you use to add content. If you open the
 interface for adding tags and categories.
 
 ![image](../../images/portal-admin-ch4_html_m69e286ea.png)
-*Illustration 30: Tagging and categorizing content can be done at the
-same time you create it. *
+*Illustration 30: Tagging and categorizing content can be done at the 
+same time you create it.*
 
 The Control Panel contains an interface for managing tags and categories
 for each community or organization in the portal. This interface can be
 used administratively to manage your tags and categories. We'll take a
 look at this interface in the next chapter.
+
 ### Using Liferay's Integrated Workflow with Content Management
 
 Workflow is essentially a predetermined sequence of connected steps. In
@@ -1323,13 +1318,13 @@ web site.
     left panel.
 
 2.  From the select box, choose *Single Approver* for Web Content. Click
-    *Save.* Note that you can add workflow to many of Liferay's
+    *Save*. Note that you can add workflow to many of Liferay's
     portlets.
 
 That's all it takes to set up workflow for web content. Now publishing
 content works a little bit differently. Let's go through the process of
 publishing some sales goals for a new Spartan Software game. Return to
-the home page and click on the *Add Web Content *icon on the Web Content
+the home page and click on the *Add Web Content* icon on the Web Content
 Display portlet. Call it *Sales Goals* and enter some content. Notice
 that the Publish button is now gone. In its place is a *Submit for
 Publication* button. Go ahead and click it.
@@ -1456,7 +1451,7 @@ combinations of multiple types.
 
 ![image](../../images/portal-admin-ch4_html_m6a2fb854.png)
 *Illustration 35: You can filter by tags and categories, and you can set
-up as many filter rules as you need. *
+up as many filter rules as you need.*
 
 **Filter Rules:** Add as many filters on tags or categories as you like.
 You can choose whether the content contains or does not contain any or
@@ -1473,8 +1468,8 @@ descending order. For instance, you may have a series of “How To”
 articles that you want displayed in descending order based on whether
 the article was tagged with the *hammer* tag. Or, you may want a series
 of video captures to display in ascending order based on a category
-called *birds*. You can also group by *Asset* *Type *or *Vocabularies.
-*Vocabularies are groups of categories defined by administrators in the
+called *birds*. You can also group by *Asset*, *Type* or *Vocabularies*.  
+Vocabularies are groups of categories defined by administrators in the
 *Categories* section of the Control Panel. Again, we'll see more about
 categories in Chapter 5.
 
@@ -1501,16 +1496,16 @@ the same way they do in the Web Content Display portlet.
 
 **DISPLAY STYLE**
 
-**Abstracts: **Shows the first 200-500 characters of the content,
+**Abstracts:** Shows the first 200-500 characters of the content,
 defined by the **Abstract Length** field.
 
 **Table:** Displays the content in an HTML table which can be styled by
 a theme developer.
 
-**Title List: **The content's title as defined by the user who entered
+**Title List:** The content's title as defined by the user who entered
 it.
 
-**Full Content: **The entire content of the entry.
+**Full Content:** The entire content of the entry.
 
 **OTHER SETTINGS**
 
@@ -1539,13 +1534,13 @@ content to one of several formats, including PDF.
 Below these options are the same ones in the Web Content Display
 portlet: enable print, enable comments, enable ratings, etc.
 
-**Show Metadata: **Allows you to select from the available metadata
+**Show Metadata:** Allows you to select from the available metadata
 types (see below).
 
 ![image](../../images/portal-admin-ch4_html_m409b2939.jpg)
 *Illustration 38: Show Metadata*
 
-**Enable RSS Subscription: **This gives users the ability to subscribe
+**Enable RSS Subscription:** This gives users the ability to subscribe
 to the content via RSS Feeds.
 
 The Display Settings section of the Asset Publisher has numerous options

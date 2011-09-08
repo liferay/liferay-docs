@@ -236,7 +236,6 @@ Liferay, you can find these SQL scripts in the source code archive for
 the version of Liferay you are running. They will be in the *SQL* folder
 of the archive.
 
-
 #### Upgrade Steps
 
 It takes only five steps to upgrade a standard Liferay installation to
@@ -307,9 +306,7 @@ Here are the complete contents of that file
 
 resource.repositories.root=${user.home}/liferay
 
-
 theme.portlet.sharing.default=true
-
 
 organizations.country.required[regular]=true
 
@@ -319,7 +316,6 @@ organizations.assignment.strict=false
 
 organizations.membership.strict=true
 
-
 lucene.dir=${resource.repositories.root}/lucene/
 
 jcr.jackrabbit.repository.root=${resource.repositories.root}/jackrabbit
@@ -328,8 +324,7 @@ dl.hook.impl=com.liferay.documentlibrary.util.JCRHook
 
 dl.hook.file.system.root.dir=${resource.repositories.root}/document\_library
 
-##### Important changes in the configuration of Database access and mail
-integration
+##### Important changes in the configuration of Database access and mail integration
 
 One very important aspect of the upgrade is that now the configuration
 of the database parameters and those for mail integration are handled
@@ -423,7 +418,6 @@ ServiceContext serviceContext = new ServiceContext();
 
 serviceContext.setScopeGroupId(myGroupId);
 
-
 BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
 If you are invoking the service from a servlet, a Struts action, or any
@@ -436,7 +430,6 @@ rewritten as follows:
 ServiceContext serviceContext =
 ServiceContextFactory.getInstance(BlogsEntry.class.getName(),
 portletRequest);
-
 
 BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
