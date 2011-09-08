@@ -1,486 +1,371 @@
-# Advanced Liferay Configuration
+# Configuring Liferay's Properties
 
-Liferay is configured by a combination of settings which are stored in
-the database (configured by the use of the Control Panel) and settings
-which are stored in properties (text) files. These files can be modified
-to change Liferay's behavior in certain ways. There are a large number
-of configuration options that can be set, and so this chapter will have
-a wide-ranging set of topics. We will first go over the main
-configuration file, which is stored in the Liferay Home directory, and
-is called `portal-ext.properties`{.western}*.*
+Liferay is configured by a combination of settings which are stored in the database (configured by the use of the control panel) and settings which are stored in properties (text) files. These files can be modified to change Liferay's behavior in certain ways. There are a large number of configuration options that can be set, and so this chapter will have a wide-ranging set of topics. We will first go over the main configuration file, which is stored in the Liferay Home directory, and is called `portal-ext.properties`.
 
-There are also some other settings that you may want to further
-customize. They include changing certain out-of-box defaults, security
-configuration, adding features to Liferay through plugin management, and
-accessing Liferay's web services. We will examine specifically these
-topics:
+There are also some other settings that you may want to further customize. They include changing certain out-of-box defaults, security configuration, adding features to Liferay through plugin management, and accessing Liferay's web services. We will examine specifically these topics:
 
--   *Advanced Liferay Configuration:* This includes the customization of
-    the `portal-ext.properties`{.western} file.
+-   *Advanced Liferay Configuration:* This includes the customization of the `portal-ext.properties` file.
 
--   *Plugin Management:* You will learn how to install Plugins (portlets
-    and themes) from Liferay's Official Repository and Liferay's
-    Community Repository, as well as how to create your own plugin
-    repository.
+-   *Plugin Management:* You will learn how to install Plugins (portlets and themes) from Liferay's Official Repository and Liferay's Community Repository, as well as how to create your own plugin repository.
 
--   *Liferay SOA:* Accessing Liferay services remotely, from outside the
-    portal, will be discussed, as well as how to configure the security
-    settings for these services.
+-   *Liferay SOA:* Accessing Liferay services remotely, from outside the portal, will be discussed, as well as how to configure the security settings for these services.
 
 ### The portal-ext.properties File
 
-Liferay's properties files differ from the configuration files of most
-other products in that changing the default configuration file is
-discouraged. In fact, the file that contains all of the defaults is
-stored inside of a .jar file, making it more difficult to customize. Why
-is it set up this way? Because Liferay uses the concept of *overriding*
-the defaults in a separate file, rather than going in and customizing
-the default configuration file. You put just the settings you want to
-customize in your own configuration file, and then the configuration
-file for your portal is uncluttered and contains only the settings you
-need. This makes it far easier to determine whether a particular setting
-has been customized, and it makes the settings more portable across
-different installations of Liferay.
+Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all of the defaults is stored inside of a .jar file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put just the settings you want to customize in your own configuration file, and then the configuration file for your portal is uncluttered and contains only the settings you need. This makes it far easier to determine whether a particular setting has been customized, and it makes the settings more portable across different installations of Liferay.
 
-The default configuration file is called `portal.properties`{.western},
-and it resides inside of the `portal-impl.jar`{.western} file. This .jar
-file is located in Liferay Portal's `WEB-INF/lib`{.western}* *folder.
-The file which is used to override the configuration is
-`portal-ext.properties`{.western}. This file can be created in your
-Liferay Home folder (please see Chapter 2: Initial Setup for the
-location of this folder for your application server). By default, the
-file does not exist at all, unless you are running an older version of
-Liferay. What follows is a brief description of the options that can be
-placed there, thus overriding the defaults from the
-`portal.properties`{.western} file. These are presented in a logical
-order, not an alphabetical one, as many properties relate to other
-properties in the system.
+The default configuration file is called `portal.properties`, and it resides inside of the `portal-impl.jar` file. This .jar file is located in Liferay Portal's `WEB-INF/lib` folder. The file which is used to override the configuration is `portal-ext.properties`. This file can be created in your Liferay Home folder (please see Chapter 11: Installing Liferay for the location of this folder for your application server). By default, the file does not exist at all, unless you are running an older version of Liferay. What follows is a brief description of the options that can be placed there, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
 
 #### Properties Override
 
-This property specifies where to get the overridden properties. By
-default, it is `portal-ext.properties`{.western}*.* Updates should not
-be made on the original file (`portal.properties`{.western}) but on the
-overridden version of this file. Furthermore, each portal instance can
-have its own overridden property file following the convention
-`portal-companyid.properties`{.western}.
+This property specifies where to get the overridden properties. By default, it is `portal-ext.properties`. Updates should not be made in `portal.properties` or in `portal-bundles.properties`, but in `portal-ext.properties`. Furthermore, each portal instance can have its own overridden property file following the convention `portal-companyid.properties`. For example, one read order might be: `portal.properties`, then `portal-ext.properties`, and then `portal-test.properties`.
 
-For example, one read order may be: `portal.properties`{.western}, then
-`portal-ext.properties`{.western}, and then
-`portal-test.properties`{.western}.
+The default read order is: `portal.properties`, `portal-bundle.properties`, and then `portal-ext.properties`.
 
 *Examples:*
 
-include-and-override=portal-ext.properties
+	include-and-override=portal-bundle.properties
+	include-and-override=${liferay.home}/portal-bundle.properties
+	include-and-override=portal-ext.properties
+	include-and-override=${liferay.home}/portal-ext.properties
 
-include-and-override=${liferay.home}/portal-ext.properties
+Each portal instance can have its own overriden property file following the convention portal-companyWebId.properties. To enable this feature, set the "company-id-properties" system property to true:
 
-You can add additional property files that overwrite the default values
-by using the `external-properties`{.western} system property.
+	java ... -Dcompany-id-properties=true
+
+The read order will now be: `portal.properties`, then `portal-ext.properties`, and then `portal-liferay.com.properties`.
+
+Note that not all properties can have different values per company. This functionality is only available for legacy reasons. The preferred way to configure a portal instance is through the Control Panel.
+
+	include-and-override=portal-${easyconf:companyId}.properties
+	include-and-override=${liferay.home}/portal-${easyconf:companyId}.properties
+
+Additional property files can be used by setting the "external-properties" system property.
 
 A common use case is to keep legacy property values when upgrading to
-newer versions of Liferay. For example:
+newer versions of Liferay. To enable:
 
-java ... -Dexternal-properties=portal-legacy-5.1.properties
+	java ... -Dexternal-properties=portal-legacy-5.1.properties
 
-include-and-override=${external-properties}
+The read order will now be: portal.properties, then portal-ext.properties, and then portal-legacy-5.1.properties.
+
+	include-and-override=${external-properties}
+	include-and-override=${liferay.home}/${external-properties}
 
 #### Liferay Home
 
-Specify the Liferay home directory.
+This property specifies the Liferay home directory.
 
-liferay.home=${resource.repositories.root}
+	liferay.home=${resource.repositories.root}
 
 This property is available for backwards compatibility. Please set the
-property `liferay.home`{.western} instead.
+property `liferay.home` instead.
 
-resource.repositories.root=${default.liferay.home}
+	resource.repositories.root=${default.liferay.home}
 
 #### Portal Context
 
-This specifies the path of the portal servlet context. This is needed
-because `javax.servlet.ServletContext`{.western} does not have access to
+This property specifies the path of the portal servlet context. This is needed
+because `javax.servlet.ServletContext` does not have access to
 the context path until Java EE 5.
 
 Set this property if you deploy the portal to another path besides root.
 
 *Examples:*
 
-portal.ctx=/
+	portal.ctx=/
+	portal.ctx=/portal
 
-portal.ctx=/portal
+This property specifies the application server's HTTP port. This value should be different from the value in the property "web.server.http.port". That property refers to the web server, this property refers to the application server. This property should only be set when the application server is sitting behind a web server like Apache. See LPS-17106 for more information.
 
-#### Resource Repositories Root
+    portal.instance.http.port=
 
-Specifies the default root path for various repository and resource
-paths. Under this path several directories will be created for the hot
-deploy feature, JCR, etc.
 
-*Examples:*
+Set this property if the application server is served behind a proxy and a prefix needs to be added to the portal servlet context path. This prefix will also be added to static resources served by layout templates, portlets, and themes.
 
-resource.repositories.root=${user.home}/liferay
+    portal.proxy.path=
 
-resource.repositories.root=/home/liferay
+#### TCK (Technology Compatibility Kit)
 
-#### Technology Compatibility Kit
+Set this to true to enable programmatic configuration to let the Portlet TCK obtain a URL for each test. This should never be set to true unless you are running the TCK tests.
 
-Set the following to true to enable programmatic configuration to let
-the Portlet TCK obtain a URL for each test. This should never be set to
-true unless you are running the TCK tests.
-
-tck.url=false
+	tck.url=false
 
 #### Schema
 
-Set this to true to automatically create tables and populate with
-default data if the database is empty.
+Set this to true to automatically create tables and populate with default data if the database is empty.
 
-schema.run.enabled=true
+	schema.run.enabled=true
 
-Set this to to true to populate with the minimal amount of data. Set
-this to false to populate with a larger amount of sample data.
+Set this to to true to populate with the minimal amount of data. Set this to false to populate with a larger amount of sample data.
 
-schema.run.minimal=true
+	schema.run.minimal=true
 
 #### Upgrade
 
-Input a list of comma delimited class names that implement
-`com.liferay.portal.upgrade.UpgradeProcess`{.western}. These classes
-will run on startup to upgrade older data to match with the latest
-version.
+Input a list of comma delimited class names that implement `com.liferay.portal.upgrade.UpgradeProcess`. These classes will run on startup to upgrade older data to match with the latest version.
 
-upgrade.processes=\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_4\_3\_0,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_4\_3\_1,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_4\_3\_2,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_4\_3\_3,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_4\_3\_4,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_4\_3\_5,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_4\_4\_0,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_5\_0\_0,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_5\_1\_0,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_5\_1\_2,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_5\_2\_0,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_5\_2\_1,\\
-
-com.liferay.portal.upgrade.UpgradeProcess\_5\_2\_2
+	upgrade.processes=\
+		com.liferay.portal.upgrade.UpgradeProcess_5_0_0,\
+		com.liferay.portal.upgrade.UpgradeProcess_5_1_0,\
+		com.liferay.portal.upgrade.UpgradeProcess_5_1_2,\
+		com.liferay.portal.upgrade.UpgradeProcess_5_2_0,\
+		com.liferay.portal.upgrade.UpgradeProcess_5_2_1,\
+		com.liferay.portal.upgrade.UpgradeProcess_5_2_2,\
+		com.liferay.portal.upgrade.UpgradeProcess_5_2_3,\
+		com.liferay.portal.upgrade.UpgradeProcess_6_0_0,\    
+		com.liferay.portal.upgrade.UpgradeProcess_6_0_1,\   
+		com.liferay.portal.upgrade.UpgradeProcess_6_0_2,\
+		com.liferay.portal.upgrade.UpgradeProcess_6_0_3,\
+		com.liferay.portal.upgrade.UpgradeProcess_6_0_5,\
+		com.liferay.portal.upgrade.UpgradeProcess_6_0_6,\
+		com.liferay.portal.upgrade.UpgradeProcess_6_1_0
 
 #### Verify
 
-Input a list of comma delimited class names that implement
-`com.liferay.portal.integrity.VerifyProcess`{.western}. These classes
-will run on startup to verify and fix any integrity problems found in
-the database.
+Input a list of comma delimited class names that implement `com.liferay.portal.integrity.VerifyProcess`. These classes will run on startup to verify and fix any integrity problems found in the database.
 
-verify.processes=com.liferay.portal.verify.VerifyProcessSuite
+	verify.processes=com.liferay.portal.verify.VerifyProcessSuite
 
 Specify the frequency for verifying the integrity of the database.
 
-Constants in `VerifyProcess`{.western}:
+Constants in `VerifyProcess`:
 
-`public static final int ALWAYS = -1;`{.western}
+	`public static final int ALWAYS = -1;`
+	`public static final int NEVER = 0;`
+	`public static final int ONCE = 1;`
 
-`public static final int NEVER = 0;`{.western}
+	verify.frequency=1
+	
+#### Convert
 
-`public static final int ONCE = 1;`{.western}
+Input a list of comma delimited class names that implement com.liferay.portal.convert.ConvertProcess. These classes can be run from within the Admin portlet to convert older data to match a new configuration of the portal.
 
-verify.frequency=1
+    convert.processes=\
+		com.liferay.portal.convert.ConvertDatabase,\
+		com.liferay.portal.convert.ConvertDocumentLibrary,\
+		com.liferay.portal.convert.ConvertDocumentLibraryExtraSettings,\
+		com.liferay.portal.convert.ConvertPermissionAlgorithm,\
+		com.liferay.portal.convert.ConvertPermissionTuner,\
+		com.liferay.portal.convert.ConvertWikiCreole	
 
 #### Auto Deploy
 
-Input a list of comma delimited class names that implement
-`com.liferay.portal.kernel.deploy.auto.AutoDeployListener`{.western}.
-These classes are used to process the auto deployment of WARs.
+Input a list of comma delimited class names that implement `com.liferay.portal.kernel.deploy.auto.AutoDeployListener`. These classes are used to process the auto deployment of WARs.
 
-auto.deploy.listeners=\\
+    auto.deploy.listeners=\
+		com.liferay.portal.deploy.auto.ExtAutoDeployListener,\  
+		com.liferay.portal.deploy.auto.HookAutoDeployListener,\  
+		com.liferay.portal.deploy.auto.LayoutTemplateAutoDeployListener,\  
+		com.liferay.portal.deploy.auto.LiferayPackageAutoDeployListener,\ 
+		com.liferay.portal.deploy.auto.PortletAutoDeployListener,\
+		com.liferay.portal.deploy.auto.ThemeAutoDeployListener,\
+		com.liferay.portal.deploy.auto.WebAutoDeployListener,\
+		com.liferay.portal.deploy.auto.exploded.tomcat.HookExplodedTomcatListener,\ 
+		com.liferay.portal.deploy.auto.exploded.tomcat.LayoutTemplateExplodedTomcatListener,\ 
+		com.liferay.portal.deploy.auto.exploded.tomcat.PortletExplodedTomcatListener,\
+		com.liferay.portal.deploy.auto.exploded.tomcat.ThemeExplodedTomcatListener
+        
+Set this to true to enable auto deploy of layout templates, portlets, and themes.
 
-com.liferay.portal.deploy.auto.HookAutoDeployListener,\\
+	auto.deploy.enabled=true
 
-com.liferay.portal.deploy.auto.LayoutTemplateAutoDeployListener,\\
+Set the directory to scan for layout templates, portlets, and themes to auto deploy.
 
-com.liferay.portal.deploy.auto.PortletAutoDeployListener,\\
+	auto.deploy.deploy.dir=${liferay.home}/deploy
 
-com.liferay.portal.deploy.auto.ThemeAutoDeployListener,\\
+Set the directory where auto deployed WARs are copied to. The application server or servlet container must know to listen on that directory.
 
-com.liferay.portal.deploy.auto.WebAutoDeployListener,\\
-
-com.liferay.portal.deploy.auto.exploded.tomcat.LayoutTemplateExplodedTomcatListener,\\
-
-com.liferay.portal.deploy.auto.exploded.tomcat.PortletExplodedTomcatListener,\\
-
-com.liferay.portal.deploy.auto.exploded.tomcat.ThemeExplodedTomcatListener
-
-Set the following to true to enable auto deploy of layout templates,
-portlets, and themes.
-
-auto.deploy.enabled=true
-
-Set the directory to scan for layout templates, portlets, and themes to
-auto deploy.
-
-auto.deploy.deploy.dir=${liferay.home}/deploy
-
-Set the directory where auto deployed WARs are copied to. The
-application server or servlet container must know to listen on that
-directory.
-
-Different containers have different hot deploy paths. For example,
-Tomcat listens on `${catalina.base}/webapps`{.western} whereas JBoss
-listens on `${jboss.server.home.dir}/deploy`{.western}. Set a blank
-directory to automatically use the application server specific
-directory.
+Set the directory where auto deployed WARs are copied to. The application server or servlet container must know to listen on that directory. Different containers have different hot deploy paths. For example, Tomcat listens on "${catalina.base}/webapps" whereas JBoss listens on "${jboss.home.dir}/deploy". Set a blank directory to automatically use the application server specific directory.
 
 *Examples: *
 
-auto.deploy.dest.dir=
+    auto.deploy.dest.dir=
+		auto.deploy.default.dest.dir=../webapps
+		auto.deploy.geronimo.dest.dir=${org.apache.geronimo.home.dir}/deploy
+		auto.deploy.glassfish.dest.dir=${com.sun.aas.instanceRoot}/autodeploy
+		auto.deploy.jboss.dest.dir=${jboss.home.dir}/standalone/deployments   
+		auto.deploy.jetty.dest.dir=${jetty.home}/webapps    
+		auto.deploy.jonas.dest.dir=${jonas.base}/deploy
+		auto.deploy.resin.dest.dir=${resin.home}/webapps
+		auto.deploy.tomcat.dest.dir=${catalina.base}/webapps
+		auto.deploy.weblogic.dest.dir=${env.DOMAIN_HOME}/autodeploy
 
-auto.deploy.default.dest.dir=../webapps
-
-auto.deploy.geronimo.dest.dir=${org.apache.geronimo.base.dir}/deploy
-
-auto.deploy.geronimo-jetty.dest.dir=${org.apache.geronimo.base.dir}/deploy
-
-auto.deploy.geronimo-tomcat.dest.dir=${org.apache.geronimo.base.dir}/deploy
-
-auto.deploy.glassfish.dest.dir=${com.sun.aas.instanceRoot}/autodeploy
-
-auto.deploy.glassfish-tomcat.dest.dir=${com.sun.aas.instanceRoot}/autodeploy
-
-auto.deploy.jboss-tomcat.dest.dir=${jboss.server.home.dir}/deploy
-
-auto.deploy.jetty.dest.dir=${jetty.home}/webapps
-
-auto.deploy.jonas-jetty.dest.dir=${jonas.base}/webapps/autoload
-
-auto.deploy.jonas-tomcat.dest.dir=${jonas.base}/webapps/autoload
-
-auto.deploy.resin.dest.dir=${resin.home}/webapps
-
-auto.deploy.tomcat.dest.dir=${catalina.base}/webapps
-
-auto.deploy.weblogic.dest.dir=${env.DOMAIN\_HOME}/autodeploy
-
-Set the interval in milliseconds on how often to scan the directory for
+Set the interval in milliseconds for how often to scan the directory for
 changes.
 
-auto.deploy.interval=10000
+	auto.deploy.interval=3000
 
 Set the number of attempts to deploy a file before blacklisting it.
 
-auto.deploy.blacklist.threshold=10
+	auto.deploy.blacklist.threshold=10
 
-Set the following to true if deployed WARs are unpacked. Set this to
-false if your application server has concurrency issues with deploying
-large WARs.
+Set this to true if deployed WARs are unpacked. Set this to false if your application server has concurrency issues with deploying large WARs.
 
 auto.deploy.unpack.war=true
 
-Set the following to true if you want the deployer to rename
-`portlet.xml`{.western} to `portlet-custom.xml`{.western}. This is only
-needed when deploying the portal on WebSphere 6.1.x with a version
-before 6.1.0.7 because WebSphere's portlet container will try to process
-a portlet at the same time that Liferay is trying to process a portlet.
+Set this to true if plugins should automatically copy Commons Logging.
 
-Note that according to IBM, on versions *after* 6.1.0.9, you need to add
-a context parameter to the `web.xml`{.western} descriptor in your
-portlet application called
-`com.ibm.websphere.portletcontainer.PortletDeploymentEnabled`{.western}
-and set it to `false`{.western}. This parameter causes WebSphere's
-built-in portlet container to ignore your portlet application when it is
-deployed, enabling Liferay to pick it up.
+    auto.deploy.copy.commons.logging=true
+    
+Set this to true if plugins should automatically copy Log4j.
 
-auto.deploy.custom.portlet.xml=false
+    auto.deploy.copy.log4j=true
 
-Set this to 1 if you are using JBoss'
-`PrefixDeploymentSorter`{.western}. This will append a 1 in front of
-your WAR name. For example, if you are deploying a portlet called
-`test-portlet.war`{.western}, it will deploy it to 1test-portlet.war.
-JBoss now knows to load this portlet after the other WARs have loaded;
-however, it will remove the 1 from the context path.
+Set this to true if you want the deployer to rename `portlet.xml` to `portlet-custom.xml`. This is only needed when deploying the portal on WebSphere 6.1.x with a version before 6.1.0.7 because WebSphere's portlet container will try to process a portlet at the same time that Liferay is trying to process a portlet.
 
-Modify `/server/default/conf/jboss-service.xml`{.western}.
+Note that according to IBM, on versions *after* 6.1.0.9, you need to add a context parameter to the `web.xml` descriptor in your portlet application called `com.ibm.websphere.portletcontainer.PortletDeploymentEnabled` and set it to `false`. This parameter causes WebSphere's built-in portlet container to ignore your portlet application when it is deployed, enabling Liferay to pick it up.
 
-See `org.jboss.deployment.scanner.PrefixDeploymentSorter`{.western}.
+	auto.deploy.custom.portlet.xml=false
 
-auto.deploy.jboss.prefix=1
+Set this to 1 if you are using JBoss' `PrefixDeploymentSorter`. This will append a 1 in front of your WAR name. For example, if you are deploying a portlet called `test-portlet.war`, it will deploy it to 1test-portlet.war. JBoss now knows to load this portlet after the other WARs have loaded. However, it will remove the 1 from the context path.
 
-Set the path to Tomcat's configuration directory. This property is used
-to auto deploy exploded WARs. Tomcat context XML files found in the auto
-deploy directory will be copied to Tomcat's configuration directory. The
-context XML file must have a docBase attribute that points to a valid
-WAR directory.
+Modify `/server/default/conf/jboss-service.xml`. See `org.jboss.deployment.scanner.PrefixDeploymentSorter`.
 
-auto.deploy.tomcat.conf.dir=../conf/Catalina/localhost
-
-Set the path to Tomcat's global class loader. This property is only used
-by Tomcat in a standalone environment.
-
-auto.deploy.tomcat.lib.dir=../common/lib/ext
-
-Set the URLs of Libraries that might be needed to download during the
-auto deploy process
-
-library.download.url.quercus.jar=http://lportal.svn.sourceforge.net/viewvc/\*checkout\*/lportal/portal/trunk/lib/development/quercus.jar
-
-library.download.url.resin-util.jar=http://lportal.svn.sourceforge.net/viewvc/\*checkout\*/lportal/portal/trunk/lib/development/resin-util.jar
-
-library.download.url.script-10.jar=[http://l](http://l/)portal.svn.sourceforge.net/viewvc/\*checkout\*/lportal/portal/trunk/lib/development/script-10.jar
-
+	auto.deploy.jboss.prefix=
+	
 Set the Glassfish settings to enable JSR 88 application deployment.
 
-auto.deploy.glassfish-tomcat.jee.deployment.enabled=false
+    auto.deploy.glassfish.jee.deployment.enabled=false
+    auto.deploy.glassfish.jee.dm.id=deployer:Sun:AppServer::localhost:4848
+    auto.deploy.glassfish.jee.dm.user=admin
+    auto.deploy.glassfish.jee.dm.passwd=adminadmin
+    auto.deploy.glassfish.jee.df.classname=com.sun.enterprise.deployapi.SunDeploymentFactory
 
-auto.deploy.glassfish-tomcat.jee.dm.id=deployer:Sun:AppServer::localhost:4848
+Set the path to Tomcat's configuration directory. This property is used to auto deploy exploded WARs. Tomcat context XML files found in the auto deploy directory will be copied to Tomcat's configuration directory. The context XML file must have a docBase attribute that points to a valid WAR directory.
 
-auto.deploy.glassfish-tomcat.jee.dm.user=admin
+	auto.deploy.tomcat.conf.dir=../conf/Catalina/localhost
 
-auto.deploy.glassfish-tomcat.jee.dm.passwd=adminadmin
+Set the path to Tomcat's global class loader. This property is only used by Tomcat in a standalone environment.
 
-auto.deploy.glassfish-tomcat.jee.df.classname=com.sun.enterprise.deployapi.SunDeploymentFactory
+	auto.deploy.tomcat.lib.dir=../common/lib/ext
+
+Set the URLs of Libraries that might be needed to download during the auto deploy process.
+
+	library.download.url.resin.jar=http://cdn.files.liferay.com/public/quercus/4.0.11/resin.jar
+	library.download.url.script-10.jar=http://cdn.files.liferay.com/public/quercus/3.1.9/script-10.jar
 
 #### Hot Deploy
 
-Input a list of comma delimited class names that implement
-`com.liferay.portal.kernel.deploy.hot.HotDeployListener`{.western}.
-These classes are used to process the deployment and undeployment of
-WARs at runtime.
+Input a list of comma delimited class names that implement `com.liferay.portal.kernel.deploy.hot.HotDeployListener`. These classes are used to process the deployment and undeployment of WARs at runtime.
 
-Note: `PluginPackageHotDeployListener`{.western} must always be first.
+Note: `PluginPackageHotDeployListener` must always be first.
 
-hot.deploy.listeners=\\
-
-com.liferay.portal.deploy.hot.PluginPackageHotDeployListener,\\
-
-com.liferay.portal.deploy.hot.ExtHotDeployListener,\\
-
-com.liferay.portal.deploy.hot.HookHotDeployListener,\\
-
-com.liferay.portal.deploy.hot.LayoutTemplateHotDeployListener,\\
-
-com.liferay.portal.deploy.hot.PortletHotDeployListener,\\
-
-com.liferay.portal.deploy.hot.ThemeHotDeployListener,\\
-
-com.liferay.portal.deploy.hot.ThemeLoaderHotDeployListener,\\
-
-com.liferay.portal.deploy.hot.MessagingHotDeployListener
+	hot.deploy.listeners=\
+		com.liferay.portal.deploy.hot.PluginPackageHotDeployListener,\
+		com.liferay.portal.deploy.hot.ExtHotDeployListener,\
+		com.liferay.portal.deploy.hot.HookHotDeployListener,\
+		com.liferay.portal.deploy.hot.LayoutTemplateHotDeployListener,\
+		com.liferay.portal.deploy.hot.PortletHotDeployListener,\
+		com.liferay.portal.deploy.hot.ThemeHotDeployListener,\
+		com.liferay.portal.deploy.hot.ThemeLoaderHotDeployListener,\
+		com.liferay.portal.deploy.hot.MessagingHotDeployListener
 
 #### Hot Undeploy
 
-Set the following to true to enable undeploying plugins.
+Set this to true to enable undeploying plugins.
 
-hot.undeploy.enabled=true
+	hot.undeploy.enabled=true
 
-Set the undeploy interval in milliseconds on how long to wait for the
-undeploy process to finish.
+Set the undeploy interval in milliseconds on how long to wait for the undeploy process to finish.
 
-hot.undeploy.interval=0
+	hot.undeploy.interval=0
 
-Set the following to true to undeploy a plugin before deploying a new
-version. This property will only be used if the property
-*hot.undeploy.enabled* is set to true.
+Set this to true to undeploy a plugin before deploying a new version. This property will only be used if the property "hot.undeploy.enabled" is set to true.
 
-hot.undeploy.on.redeploy=false
+	hot.undeploy.on.redeploy=false
 
 #### Sandbox Deploy
 
-Input a list of comma delimited class names that implement
-`com.liferay.portal.kernel.deploy.sandbox.SandboxDeployListener`{.western}.
-These classes are used to process sandbox style plugins.
+Input a list of comma delimited class names that implement `com.liferay.portal.kernel.deploy.sandbox.SandboxDeployListener`. These classes are used to process sandbox style plugins.
 
-sandbox.deploy.listeners=\\com.liferay.portal.deploy.sandbox.ThemeSandboxDeployListener
+    sandbox.deploy.listeners=\
+		com.liferay.portal.deploy.sandbox.PortletSandboxDeployListener,\
+		com.liferay.portal.deploy.sandbox.ThemeSandboxDeployListener
 
 Set this to true to enable sandbox style plugin development.
 
-sandbox.deploy.enabled=false
+	sandbox.deploy.enabled=false
 
 Set the directory to scan for sand box style plugins.
 
-sandbox.deploy.dir=${liferay.home}/sandbox
+	sandbox.deploy.dir=${liferay.home}/sandbox
 
-Set the interval in milliseconds on how often to scan the directory for
+Set the interval in milliseconds on how often to scan the directory for changes.
 
-sandbox.deploy.interval=10000
+	sandbox.deploy.interval=3000
 
 #### Plugin
 
 Input a list of comma delimited supported plugin types.
 
-plugin.types=portlet,theme,layout-template,hook,web
+	plugin.types=portlet,theme,layout-template,hook,web
 
 Input a list of Liferay plugin repositories separated by \\n characters.
 
-plugin.repositories.trusted=http://plugins.liferay.com/official
-
-plugin.repositories.untrusted=http://plugins.liferay.com/community
+	plugin.repositories.trusted=http://plugins.liferay.com/official
+	plugin.repositories.untrusted=http://plugins.liferay.com/community
 
 Set this property to false to avoid receiving on screen notifications
 when there is a new version of an installed plugin.
 
-plugin.notifications.enabled=true
+	plugin.notifications.enabled=true
 
-Input a list of plugin packages ids separated by `\n`{.western}
-characters. Administrators won't be notified when a new version of these
-plugins are available. The ids are of the form
-`groupId/artifactId`{.western}. You can also end the id with an asterisk
-to match any id that starts with the previous character.
+Input a list of plugin packages ids separated by `\n` characters. Administrators won't be notified when a new version of these plugins are available. The ids are of the form `groupId/artifactId`. You can also end the id with an asterisk to match any id that starts with the previous character.
 
-plugin.notifications.packages.ignored=liferay/sample-jsp-portlet
+	plugin.notifications.packages.ignored=liferay/sample-jsp-portlet
 
 #### Portlet
 
-\
-\
 
-Set this property to define the default virtual path for all hot
-deployed portlets. See liferay-portlet-app\_5\_1\_0.dtd and the
-virtual-path element for more information.
+This property sets the default virtual path for all hot deployed portlets. See liferay-portlet-app_5_1_0.dtd and the virtual-path element for more information.
 
-portlet.virtual.path=
+    portlet.virtual.path=
 
-Set this property to true to validate `portlet.xml`{.western} against
-the portlet schema.
+Set this property to true to validate portlet.xml against the portlet schema.
 
-portlet.xml.validate=true
+    portlet.xml.validate=true
 
-Set this property to add a security check when portlets are dynamically
-added to a page.
+Portlets that have configured liferay-portlet.xml with the element "add-default-resource" set to true will allow those portlets to be dynamically added to any page by any user. This is useful (and necessary) for some portlets that need to be dynamically added to a page, but it can also pose a security risk because it also allows any user to do it.
 
-portlet.add.default.resource.check.enabled=true
+Set this property to true to add a security check around this behavior. If set to true, then portlets can only be dynamically added to a page if it contains a proper security token. This security token is automatically passed when using a portlet URL from one portlet to another portlet.
 
-Set a list of comma delimited list of portlet ids that will bypass this
-security check set in the previous property.
+Modify the property "portlet.add.default.resource.check.whitelist" to whitelist certain portlets from this security check.
 
-portlet.add.default.resource.check.whitelist=58,86,87,88,103,113,145
+The security check utilizes the implementation set in the property "auth.token.impl".
 
-Input a list of comma delimited struts actions that will bypass the
-security check set in the property
-`portlet.add.default.resource.check.enabled`{.western}.
+    portlet.add.default.resource.check.enabled=true
 
-portlet.add.default.resource.check.whitelist.actions=\\
+Set a list of comma delimited list of portlet ids that will bypass the security check set in the property "portlet.add.default.resource.check.enabled".
 
-/journal/rss,\\
+    portlet.add.default.resource.check.whitelist=3,56_INSTANCE_0000,58,82,86,87,103,113,145,164,166,170
 
-/language/view
+Input a list of comma delimited struts actions that will bypass the security check set in the property "portlet.add.default.resource.check.enabled".
+
+    portlet.add.default.resource.check.whitelist.actions=\
+        /journal/rss,\
+        /language/view
+
+Input a regular expression to ban paths that cannot be used to serve resources in portlets.
+
+    portlet.resource.id.banned.paths.regexp=.*/(?:META-INF|WEB-INF)/.*
+    
+#### Portlet Coordination
+
+Set this property to specify how events are distributed. If the value is "layout-set", then events will be distributed to all portlets contained in a layout set. If the value is "layout", then events will be distributed to all portlets that are present in a layout.
+
+    portlet.event.distribution=layout
+
+Set this property to specify how public render parameters are distributed. If the value is "layout-set", then public render parameters will be distributed to all portlets contained in a layout set. This will only work correctly if the property "layout.default.p_l_reset" is set to false. If the value is "layout", then public render parameters will be distributed to all portlets that are present in a layout.
+
+    portlet.public.render.parameter.distribution=layout    
 
 #### Persistence
 
 Set the provider for ORM persistence. If this property is set to
-`jpa`{.western}, then the properties with the prefix `jpa`{.western}.
-will be read. If this property is set to `hibernate`{.western}, then the
-properties with the prefix `hibernate`{.western} will be read.
+`jpa`, then the properties with the prefix `jpa`.
+will be read. If this property is set to `hibernate`, then the
+properties with the prefix `hibernate` will be read.
 
 \
 
@@ -511,7 +396,7 @@ jpa.provider=toplink
 \
 
 Specify provider specific properties prefixed with
-`jpa.provider.property`{.western}.
+`jpa.provider.property`.
 
 jpa.provider.property.eclipselink.allow-zero-id=true
 
@@ -521,8 +406,8 @@ jpa.provider.property.eclipselink.logging.timestamp=true
 
 \
 
-The `LoadTimeWeaver`{.western} interface is a Spring class that allows
-JPA `ClassTransformer`{.western} instances to be plugged in a specific
+The `LoadTimeWeaver` interface is a Spring class that allows
+JPA `ClassTransformer` instances to be plugged in a specific
 manner depending on the environment.
 
 Not all JPA providers require a JVM agent (Hibernate is an example). If
@@ -542,10 +427,10 @@ Specify a specific database platform setting if the JPA provider is not
 able to detect the database platform.
 
 Valid values for the Hibernate and OpenJPA providers are:
-`DB2, DERBY,`{.western}
+`DB2, DERBY,`
 
-`HSQL, INFORMIX, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER`{.western}, and
-`SYBASE`{.western}.
+`HSQL, INFORMIX, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER`, and
+`SYBASE`.
 
 \
 
@@ -583,20 +468,20 @@ jpa.database.platform=
 \
 
 Liferay will automatically detect the database type by initializing
-`DBUtil`{.western}. You can override the value here if needed. Expected
+`DBUtil`. You can override the value here if needed. Expected
 values are:
 
-`db2, derby, firebird, hypersonic, informix, ingres, interbase, jdatastore,`{.western}
+`db2, derby, firebird, hypersonic, informix, ingres, interbase, jdatastore,`
 
-`mysql, oracle, postgresql, sap, sqlserver`{.western}, and
-`sybase`{.western}.
+`mysql, oracle, postgresql, sap, sqlserver`, and
+`sybase`.
 
 jpa.database.type=
 
 #### Transaction Manager
 
 Set the transaction manager. It must be a class that extends
-`org.springframework.transaction.support.AbstractPlatformTransactionManager`{.western}.
+`org.springframework.transaction.support.AbstractPlatformTransactionManager`.
 
 The application server specific transaction managers provide XA
 transactions by leveraging application server specific data sources and
@@ -616,15 +501,15 @@ transaction.manager.impl=org.springframework.transaction.jta.WebSphereUowTransac
 \
 
 Additional properties that follow the pattern
-`transaction.manager.property.*`{.western} will be read to call the
+`transaction.manager.property.*` will be read to call the
 setters on the transaction manager. For example, the property
-`transaction.manager.property.globalRollbackOnParticipationFailure`{.western},
-will call the setter `setGlobalRollbackOnParticipationFailure`{.western}
+`transaction.manager.property.globalRollbackOnParticipationFailure`,
+will call the setter `setGlobalRollbackOnParticipationFailure`
 on the transaction manager. The list of available setters depends on the
 implementation specified in the property
-`transaction.manager.impl`{.western}.
-`allowCustomIsolationLevels`{.western} should be set to true when using
-the `JtaTransactionManager`{.western}.
+`transaction.manager.impl`.
+`allowCustomIsolationLevels` should be set to true when using
+the `JtaTransactionManager`.
 
 transaction.manager.property.allowCustomIsolationLevels=true
 
@@ -650,39 +535,38 @@ portlet.public.render.parameter.distribution=layout
 
 #### Theme
 
-Set this property to true to load the theme's merged CSS files for
-faster loading for production.
+Set this property to true to load the theme's merged CSS files for faster loading for production.
 
-Set this property to false for easier debugging for development. You can
-also disable fast loading by setting the URL parameter
-`css_fast_load`{.western} to `0`{.western}.
+Set this property to false for easier debugging for development. You can also disable fast loading by setting the URL parameter `css_fast_load` to `0`.
 
-theme.css.fast.load=true
+	theme.css.fast.load=true
 
-Set this property to true to load the theme's merged image files for
-faster loading for production.
+Set this property to true to load the theme's merged image files for faster loading for production.
 
-Set this property to false for easier debugging for development. You can
-also disable fast loading by setting the URL parameter
-`images_fast_load`{.western} to `0`{.western}.
+Set this property to false for easier debugging for development. You can also disable fast loading by setting the URL parameter "css_fast_load" to "0".
 
-theme.images.fast.load=true
+	theme.images.fast.load=true
+	
+Set this property to true to allow directly invoked JSPs to be overridden by a different version of the JSP that exists in a theme.
 
-Set the theme's shorcut icon.
+    theme.jsp.override.enabled=false
 
-theme.shortcut.icon=liferay.ico
+
+Set the theme's shortcut icon.
+
+    theme.shortcut.icon=favicon.ico
 
 Set this property to set the default virtual path for all hot deployed
-themes. See `liferay-look-and-feel_5_1_0.dtd`{.western} and the
+themes. See `liferay-look-and-feel_5_1_0.dtd` and the
 virtual-path element for more information.
 
-theme.virtual.path=
+	theme.virtual.path=
 
 Set this with an absolute path to specify where imported theme files
 from a LAR will be stored. This path will override the file-storage path
-specified in `liferay-theme-loader.xml`{.western}.
+specified in `liferay-theme-loader.xml`.
 
-theme.loader.storage.path=
+	theme.loader.storage.path=
 
 Themes can be imported via LAR files. Set this to true if imported
 themes should use a new theme id on every import. This will ensure that
@@ -690,69 +574,69 @@ a copy of the old theme is preserved in the theme loader storage path.
 However, this also means that a lot of themes that are no longer used
 remain in the file system. It is recommended that you set this to false.
 
-theme.loader.new.theme.id.on.import=false
+	theme.loader.new.theme.id.on.import=false
 
 Set this to true to decorate portlets by default.
 
-theme.portlet.decorate.default=true
+	theme.portlet.decorate.default=true
 
 Set this to true to exposing sharing icons for portlets by default.
 
-theme.portlet.sharing.default=false
+	theme.portlet.sharing.default=false
 
 #### Resource Actions
 
-Input a list of comma delimited resource action configurations that will
-be read from the class path.
+Input a list of comma delimited resource action configurations that will be read from the class path.
 
-resource.actions.configs=resource-actions/default.xml
+	resource.actions.configs=resource-actions/default.xml
+
+This should only be set to false when it is called by Service Builder outside of an application server or servlet container.
+
+    resource.actions.read.portlet.resources=true
 
 #### Model Hints
 
 Input a list of comma delimited model hints configurations.
 
-model.hints.configs=\\
+	model.hints.configs=\
 
-META-INF/portal-model-hints.xml,\\
+	META-INF/portal-model-hints.xml,\
 
-META-INF/workflow-model-hints.xml,\\
+	META-INF/workflow-model-hints.xml,\
 
-META-INF/ext-model-hints.xml,\\
+	META-INF/ext-model-hints.xml,\
 
-META-INF/portlet-model-hints.xml
+	META-INF/portlet-model-hints.xml
 
 #### Service Builder
 
-Input a list of common delimited method prefixes designated for
-read-only transactions. Service Builder will use these prefixes to
-annotate methods that are to run in read-only transactions.
+Input a list of common delimited method prefixes designated for read-only transactions. Service Builder will use these prefixes to annotate methods that are to run in read-only transactions.
 
-service.builder.service.read.only.prefixes=\\
+	service.builder.service.read.only.prefixes=\
 
-get,\\
-
-has,\\
-
-is,\\
-
-reindex,\\
-
-search
+    fetch,\
+    
+    get,\
+    
+    has,\
+    
+    is,\
+    
+    load,\
+    
+    reindex,\
+    
+    search
 
 #### Spring
 
-Input a list of comma delimited Spring configurations. These will be
-loaded after the bean definitions specified in the
-`contextConfigLocation`{.western} parameter in `web.xml`{.western}.
+Input a list of comma delimited Spring configurations. These will be loaded after the bean definitions specified in the `contextConfigLocation` parameter in `web.xml`.
 
-Note that there is a special case for `hibernate-spring.xml`{.western}
-and `jpa-spring.xml`{.western}. Even though both files are specified,
-only one will actually load at runtime based on the property
-`persistence.provider`{.western}.
+Note that there is a special case for `hibernate-spring.xml` and `jpa-spring.xml`. Even though both files are specified, only one will actually load at runtime based on the property `persistence.provider`.
 
-spring.configs=\\
+	spring.configs=\
 
-META-INF/base-spring.xml,\\
+	    META-INF/base-spring.xml,\\
 
 \\
 
@@ -850,7 +734,7 @@ META-INF/portal-hbm.xml,\\
 META-INF/ext-hbm.xml
 
 Liferay will automatically detect the Hibernate dialect in
-`com.liferay.portal.spring.PortalHibernateConfiguration`{.western}. Set
+`com.liferay.portal.spring.PortalHibernateConfiguration`. Set
 this property to manually override the automatically detected dialect.
 
 \#hibernate.dialect=
@@ -858,15 +742,15 @@ this property to manually override the automatically detected dialect.
 Set the Hibernate connection release mode. You should not modify this
 unless you know what you're doing. The default setting works best for
 Spring managed transactions. See the method
-`buildSessionFactory`{.western} in class
-`org.springframework.orm.hibernate3.LocalSessionFactoryBean`{.western}
+`buildSessionFactory` in class
+`org.springframework.orm.hibernate3.LocalSessionFactoryBean`
 and search for the phrase "on\_close" to understand how this works.
 
 hibernate.connection.release\_mode=on\_close
 
 Set the Hibernate cache provider. Ehcache is recommended in a clustered
 environment. See the property
-`net.sf.ehcache.configurationResourceName`{.western} for detailed
+`net.sf.ehcache.configurationResourceName` for detailed
 configuration.
 
 *Examples: *
@@ -956,27 +840,27 @@ hibernate.dialect=com.liferay.portal.dao.orm.hibernate.
 
 Set the JNDI name to lookup the JDBC data source. If none is set, then
 the portal will attempt to create the JDBC data source based on the
-properties prefixed with `jdbc.default`{.western}.
+properties prefixed with `jdbc.default`.
 
 \#jdbc.default.jndi.name=jdbc/LiferayPool
 
 Set the properties used to create the JDBC data source. These properties
-will only be read if the property `jdbc.default.jndi.name`{.western} is
+will only be read if the property `jdbc.default.jndi.name` is
 not set.
 
 The default settings are configured for an in-memory database called
 Hypersonic that is not recommended for production use. Please change the
 properties to use another database.
 
-Add `dynamic-data-source-spring.xml`{.western} to the property
-`spring.configs`{.western} to configure the portal to use one database
+Add `dynamic-data-source-spring.xml` to the property
+`spring.configs` to configure the portal to use one database
 cluster for read calls and another database cluster for write calls. The
 convention is to create a set of properties prefixed with
-`jdbc.read`{.western}*.* to handle read calls and another set of
-properties prefixed with `jdbc.write`{.western}*.* to handle write
+`jdbc.read`*.* to handle read calls and another set of
+properties prefixed with `jdbc.write`*.* to handle write
 calls. These data sources can also be created via JNDI by setting the
-properties `jdbc.read.jndi.name`{.western} and
-`jdbc.write.jndi.name`{.western}.
+properties `jdbc.read.jndi.name` and
+`jdbc.write.jndi.name`.
 
 ##### DB2
 
@@ -1070,7 +954,7 @@ jdbc.default.password=
 
 Liferay uses C3PO by default for connection pooling. The data source
 factory can be configured to use JNDI or another pooling implementation
-by modifying `infrastructure-spring.xml`{.western}. See
+by modifying `infrastructure-spring.xml`. See
 http://www.mchange.com/projects/c3p0/index.html configuration for a list
 of additional fields used by C3PO for configuring the database
 connection.
@@ -1088,15 +972,15 @@ option for developers who are customizing Liferay's behavior.
 custom.sql.configs=custom-sql/default.xml
 
 Some databases do not recognize a NULL IS NULL check. Set the
-`custom.sql.function.isnull`{.western} and
-`custom.sql.function.isnotnull`{.western} properties for your specific
+`custom.sql.function.isnull` and
+`custom.sql.function.isnotnull` properties for your specific
 database.
 
 There is no need to manually set these properties because
-`com.liferay.portal.spring.PortalHibernateConfiguration`{.western}
+`com.liferay.portal.spring.PortalHibernateConfiguration`
 already sets it. These properties are available, however, so that you
 can see how you can override it for a database that
-`PortalHibernateConfiguration`{.western} does not yet know how to auto
+`PortalHibernateConfiguration` does not yet know how to auto
 configure.
 
 ##### DB2
@@ -1117,7 +1001,7 @@ database.mysql.engine=InnoDB
 
 Set the classpath to the location of the Ehcache config file for
 internal caches. Edit the file specified in the property
-`ehcache.multi-vm.config.location`{.western} to enable clustered cache.
+`ehcache.multi-vm.config.location` to enable clustered cache.
 
 ehcache.single.vm.config.location=/ehcache/liferay-single-vm.xml
 
@@ -1130,11 +1014,11 @@ ehcache.multi.vm.config.location=/ehcache/liferay-multi-vm-clustered.xml
 #### JavaScript
 
 Set a list of JavaScript files that will be loaded programmatically in
-`/html/common/themes/top_js.jsp`{.western}.
+`/html/common/themes/top_js.jsp`.
 
 There are two lists of files specified in the properties
-`javascript.barebone.files`{.western} and
-`javascript.everything.files`{.western}.
+`javascript.barebone.files` and
+`javascript.everything.files`.
 
 As the name suggests, the barebone list is the minimum list of
 JavaScript files required for most cases. The everything list includes
@@ -1142,12 +1026,12 @@ everything else not listed in the barebone list.
 
 The two lists of files exist for performance reasons because
 unauthenticated users usually do not utilize all the JavaScript that is
-available. See the property `javascript.barebone.enabled`{.western} for
+available. See the property `javascript.barebone.enabled` for
 more information on the logic of when the barebone list is used and when
 the everything list is used and how to customize that logic.
 
 The list of files are also merged and packed for further performance
-improvements. See the property `javascript.fast.load`{.western} for more
+improvements. See the property `javascript.fast.load` for more
 details.
 
 Specify the list of barebone files.
@@ -1281,12 +1165,12 @@ liferay/workflow.js,\\
 liferay/deprecated.js
 
 Set this property to false to always load JavaScript files listed in the
-property `javascript.everything.files`{.western}. Set this to true to
-sometimes load `javascript.barebone.files`{.western} and sometimes load
-`javascript.everything.files`{.western}.
+property `javascript.everything.files`. Set this to true to
+sometimes load `javascript.barebone.files` and sometimes load
+`javascript.everything.files`.
 
 The default logic is coded in
-`com.liferay.portal.events.ServicePreAction`{.western} in such a way
+`com.liferay.portal.events.ServicePreAction` in such a way
 that unauthenticated users get the list of barebone JavaScript files
 whereas authenticated users get both the list of barebone JavaScript
 files and the list of everything JavaScript files.
@@ -1294,8 +1178,8 @@ files and the list of everything JavaScript files.
 javascript.barebone.enabled=true
 
 Set this property to true to load the packed version of files listed in
-the properties `javascript.barebone.files`{.western} or
-`javascript.everything.files`{.western}.
+the properties `javascript.barebone.files` or
+`javascript.everything.files`.
 
 Input a list of comma delimited properties that are valid bundle ids for
 the JavaScript minifier.
@@ -1310,20 +1194,20 @@ javascript.everything.files
 \
 
 Define a bundle directory for each property listed in
-`javascript.bundle.ids`{.western}.
+`javascript.bundle.ids`.
 
 javascript.bundle.dir[javascript.barebone.files]=/html/js
 
 javascript.bundle.dir[javascript.everything.files]=/html/js
 
 Define the bundle dependencies using any property listed in
-`javascript.bundle.ids`{.western}.
+`javascript.bundle.ids`.
 
 javascript.bundle.dependencies[javascript.everything.files]=javascript.barebone.files
 
 Set this property to false for easier debugging for development. You can
 also disable fast loading by setting the URL parameter
-`js_fast_load`{.western} to `0`{.western}.
+`js_fast_load` to `0`.
 
 javascript.fast.load=true
 
@@ -1378,7 +1262,7 @@ company.security.auth.type=screenName
 
 company.security.auth.type=userId
 
-Set this to true to ensure users login with `https`{.western}.
+Set this to true to ensure users login with `https`.
 
 company.security.auth.requires.https=false
 
@@ -1393,7 +1277,7 @@ browser cookie that enables the *remember me* feature. A value of
 lifespan of a browser session.
 
 Rather than setting this to 0, set the property
-`company.security.auto.login`{.western} to false to disable the
+`company.security.auto.login` to false to disable the
 *remember me* feature.
 
 company.security.auto.login.max.age=31536000
@@ -1417,7 +1301,7 @@ the portal's *create account* will be used.
 
 Set the following to true if strangers can create accounts with email
 addresses that match the company mail suffix. This property is not used
-unless `company.security.strangers`{.western} is also set to true.
+unless `company.security.strangers` is also set to true.
 
 company.security.strangers.with.mx=true
 
@@ -1452,7 +1336,7 @@ if the user gives a specific user screen name.
 users.screen.name.always.autogenerate=false
 
 Input a class name that extends
-`com.liferay.portal.security.auth.ScreenNameGenerator`{.western}. This
+`com.liferay.portal.security.auth.ScreenNameGenerator`. This
 class will be called to generate user screen names.
 
 users.screen.name.generator=com.liferay.portal.security.auth.ScreenNameGenerator
@@ -1463,7 +1347,7 @@ numeric screen names.
 users.screen.name.allow.numeric=false
 
 Input a class name that extends
-`com.liferay.portal.security.auth.ScreenNameValidator`{.western}. This
+`com.liferay.portal.security.auth.ScreenNameValidator`. This
 class will be called to validate user ids.
 
 *Examples:*
@@ -1473,7 +1357,7 @@ users.screen.name.validator=com.liferay.portal.security.auth.ScreenNameValidator
 users.screen.name.validator=com.liferay.portal.security.auth.LiberalScreenNameValidator
 
 Input a class name that implements
-`com.liferay.portal.security.auth.FullNameGenerator`{.western}. This
+`com.liferay.portal.security.auth.FullNameGenerator`. This
 class will be called to generate a full name from the user's first,
 middle and last names.
 
@@ -1487,29 +1371,29 @@ users.email.address.required=true
 
 Set the suffix of the email address that will be automatically generated
 for a user that does not have an email address. This property is not
-used unless the property `users.email.address.required`{.western} is set
+used unless the property `users.email.address.required` is set
 to false. The autogenerated email address will be the user id plus the
 specified suffix.
 
 users.email.address.auto.suffix=@no-emailaddress.com
 
 Input a class name that implements
-`com.liferay.portal.security.auth.EmailAddressGenerator`{.western}. This
+`com.liferay.portal.security.auth.EmailAddressGenerator`. This
 class will be called to generate an email address for a user that does
 not specify an email address. This class will only be used if the
-property `users.email.address.required`{.western} is set to false.
+property `users.email.address.required` is set to false.
 
 users.email.address.generator=com.liferay.portal.security.auth.DefaultEmailAddressGenerator
 
 Input a class name that implements
-`com.liferay.portal.security.auth.FullNameGenerator`{.western}. This
+`com.liferay.portal.security.auth.FullNameGenerator`. This
 class will be called to generate a full name from the user's first,
 middle and last names.
 
 users.full.name.generator=com.liferay.portal.security.auth.DefaultFullNameGenerator
 
 Input a class name that implements
-`com.liferay.portal.security.auth.FullNameValidator`{.western}. This
+`com.liferay.portal.security.auth.FullNameValidator`. This
 class will be called to validate user first, middle and last names.
 
 users.full.name.validator=com.liferay.portal.security.auth.DefaultFullNameValidator
@@ -1517,13 +1401,13 @@ users.full.name.validator=com.liferay.portal.security.auth.DefaultFullNameValida
 Set the maximum file size for user portraits. A value of 0 for the
 maximum file size can be used to indicate unlimited file size. However,
 the maximum file size allowed is set in property
-`com.liferay.portal.upload.UploadServletRequestImpl.max.size`{.western}
-found in `system.properties`{.western}.
+`com.liferay.portal.upload.UploadServletRequestImpl.max.size`
+found in `system.properties`.
 
 users.image.max.size=307200
 
 Set the maximum user portrait height and width in pixels. A value of
-`0`{.western} indicates no restictions on user portrait dimensions.
+`0` indicates no restictions on user portrait dimensions.
 
 users.image.max.height=120
 
@@ -1568,7 +1452,7 @@ disable the ability to search users based on Expando attributes.
 
 users.search.with.index=true
 
-Set a property with the prefix `users.update.user.name.`{.western} and a
+Set a property with the prefix `users.update.user.name.` and a
 suffix with the class name that should be updated whenever a user's name
 has changed.
 
@@ -1576,7 +1460,7 @@ users.update.user.name.com.liferay.portlet.messageboards.model.MBMessage=true
 
 Input a list of user attributes that will be included when exporting
 users to a CSV file. You can include custom fields by adding the prefix
-`expando:`{.western} to the attribute name.
+`expando:` to the attribute name.
 
 users.export.csv.fields=fullName,emailAddress
 
@@ -1585,7 +1469,7 @@ their password.
 
 users.reminder.queries.required=true
 
-Set a property with the prefix `users.update.user.name.`{.western} and a
+Set a property with the prefix `users.update.user.name.` and a
 suffix with the class name that should be updated whenever a user's name
 has changed.
 
@@ -1593,14 +1477,14 @@ users.update.user.name.com.liferay.portlet.messageboards.model.MBMessage=true
 
 Input a list of user attributes that will be included when exporting
 users to a CSV file. You can include custom fields by adding the prefix
-`expando:`{.western} to the attribute name.
+`expando:` to the attribute name.
 
 users.export.csv.fields=fullName,emailAddress
 
 When importing and exporting users, the portal will use this mapping to
 connect LDAP user attributes and portal contact attributes.
 
-See `com.liferay.portal.model.ContactModel`{.western} for a list of
+See `com.liferay.portal.model.ContactModel` for a list of
 attributes.
 
 ldap.contact.mappings=
@@ -1610,7 +1494,7 @@ connect LDAP user attributes and portal contact's custom attributes.
 
 ldap.contact.custom.mappings=
 
-See `com.liferay.portal.model.UserModel`{.western} for a list of
+See `com.liferay.portal.model.UserModel` for a list of
 attributes.
 
 ldap.user.mappings=uuid=uuid\\nscreenName=cn\\npassword=userPassword\\nemailAddress=mail\\nfirstName=givenName\\nlastName=sn\\njobTitle=title\\ngroup=groupMembership
@@ -1650,13 +1534,13 @@ facebook.connect.oauth.token.url=https://graph.facebook.com/oauth/access\_token
 Set this to true to enable NTLM single sign on. NTLM will work only if
 LDAP authentication is also enabled and the authentication is made by
 screen name. If set to true, then the property
-`auto.login.hooks`{.western} must
+`auto.login.hooks` must
 
 contain a reference to the class
-`com.liferay.portal.security.auth.NtlmAutoLogin`{.western} and the
+`com.liferay.portal.security.auth.NtlmAutoLogin` and the
 filter
-`com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter`{.western} must
-be referenced in `web.xml`{.western}.
+`com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter` must
+be referenced in `web.xml`.
 
 \
 
@@ -1675,9 +1559,9 @@ ntlm.auth.service.password=test
 #### Request Header Authentication
 
 Set this to true to automatically import users from LDAP if they do not
-exist in the portal. The property `auto.login.hooks`{.western} must
+exist in the portal. The property `auto.login.hooks` must
 contain a reference to the class
-`com.liferay.portal.security.auth.RequestHeaderAutoLogin`{.western} to
+`com.liferay.portal.security.auth.RequestHeaderAutoLogin` to
 enable request header authentication.
 
 request.header.auth.import.from.ldap=false
@@ -1686,13 +1570,13 @@ request.header.auth.import.from.ldap=false
 
 Set this to true to enable authentication token security checks. The
 checks can be disabled for specific actions via the property
-`auth.token.ignore.actions`{.western} or for specific portlets via the
-init parameter `check-auth-token`{.western} in `portlet.xml`{.western}.
+`auth.token.ignore.actions` or for specific portlets via the
+init parameter `check-auth-token` in `portlet.xml`.
 
 auth.token.check.enabled=true
 
 Set the authentication token class. This class must implement
-`com.liferay.portal.security.auth.AuthToken`{.western}. This class is
+`com.liferay.portal.security.auth.AuthToken`. This class is
 used to prevent CSRF attacks. See
 http://issues.liferay.com/browse/LPS-8399 for more information.
 
@@ -1964,7 +1848,7 @@ organizations.membership.strict=false
 
 #### Security Manager
 
-Set this to true to use Liferay's `java.lang.SecurityManager`{.western}
+Set this to true to use Liferay's `java.lang.SecurityManager`
 implementation. This should never be set to true except for debugging
 purposes.
 
@@ -1982,9 +1866,9 @@ basic.auth.password.required=true
 
 Specify the available locales. Messages corresponding to a specific
 language are specified in properties files with file names matching that
-of `content/Language_*.properties`{.western}. These values can also be
+of `content/Language_*.properties`. These values can also be
 overridden in properties files with file names matching that of
-`content/Language-ext_*.properties`{.western}. Use a comma to separate
+`content/Language-ext_*.properties`. Use a comma to separate
 each entry.
 
 All locales must use UTF-8 encoding.
@@ -2004,7 +1888,7 @@ unauthenticated users get their preferred language from their company.
 locale.default.request=false
 
 Specify the available time zones. The specified ids must match those
-from the class `java.util.TimeZone`{.western}.
+from the class `java.util.TimeZone`.
 
 time.zones=\\
 
@@ -2133,8 +2017,8 @@ layout.remember.maximized.window.state=false
 
 You can configure individual JSP pages to use a specific implementation
 of the available WYSIWYG editors:
-`ckeditor, fckeditor, liferay, simple, tinymce`{.western}, or
-`tinymcesimple`{.western}.
+`ckeditor, fckeditor, liferay, simple, tinymce`, or
+`tinymcesimple`.
 
 editor.wysiwyg.default=ckeditor
 
@@ -2169,17 +2053,17 @@ editor.wysiwyg.portal-web.docroot.html.portlet.wiki.edit.html.jsp=ckeditor
 #### Fields
 
 Input a list of comma delimited user types who can edit their own
-fields. Valid types are `administrator`{.western}, `user-mx`{.western},
-and `user-without-mx`{.western}.
+fields. Valid types are `administrator`, `user-mx`,
+and `user-without-mx`.
 
-Set a value of `administrator`{.western} if an administrator can edit
+Set a value of `administrator` if an administrator can edit
 the specified field. An administrator is anyone who has the
 Administrator role.
 
-Set a value of `user-mx`{.western} if a user who has an email address
+Set a value of `user-mx` if a user who has an email address
 that matches the company mail suffix can edit the specified field.
 
-Set a value of `user-without-mx`{.western} if a user who does not have
+Set a value of `user-without-mx` if a user who does not have
 an email address that matches the company mail suffix can edit the
 specified field.
 
@@ -2196,14 +2080,14 @@ field.editable.com.liferay.portal.model.User.emailAddress=administrator,user-wit
 #### Request
 
 Portlets that have been configured to use private request attributes in
-`liferay-portlet.xml`{.western} may still want to share some request
+`liferay-portlet.xml` may still want to share some request
 attributes. This property allows you to configure which request
 attributes will be shared.
 
 Set a comma delimited list of attribute names that will be shared when
 the attribute name starts with one of the specified attribute names. For
-example, if you set the value to `hello_,world_,`{.western} then all
-attribute names that start with `hello_`{.western} or `world_`{.western}
+example, if you set the value to `hello_,world_,` then all
+attribute names that start with `hello_` or `world_`
 will be shared.
 
 request.shared.attributes=LIFERAY\_SHARED\_
@@ -2211,12 +2095,12 @@ request.shared.attributes=LIFERAY\_SHARED\_
 #### Session
 
 Specify the number of minutes before a session expires. This value is
-always overridden by the value set in `web.xml`{.western}.
+always overridden by the value set in `web.xml`.
 
 session.timeout=30
 
 Specify the number of minutes before a warning is sent to the user
-informing the user of the session expiration. Specify `0`{.western} to
+informing the user of the session expiration. Specify `0` to
 disable any warnings.
 
 session.timeout.warning=1
@@ -2225,7 +2109,7 @@ Set the auto-extend mode to true to avoid having to ask the user whether
 to extend the session or not. Instead it will be automatically extended.
 The purpose of this mode is to keep the session open as long as the user
 browser is open and with a portal page loaded. It is recommended to use
-this setting along with a smaller `session.timeout`{.western}, such as 5
+this setting along with a smaller `session.timeout`, such as 5
 minutes for better performance.
 
 session.timeout.auto.extend=false
@@ -2236,13 +2120,13 @@ session expires.
 session.timeout.redirect.on.expire=false
 
 Portlets that have been configured to use private session attributes in
-`liferay-portlet.xml`{.western} may still want to share some session
+`liferay-portlet.xml` may still want to share some session
 attributes. This property allows you to configure which session
 attributes will be shared. Set a comma delimited list of attribute names
 that will be shared when the attribute name starts with one of the
 specified attribute names. For example, if you set the value to
-`hello_,world_,`{.western} then all attribute names that start with
-`hello_`{.western} or `world_`{.western} will be shared.
+`hello_,world_,` then all attribute names that start with
+`hello_` or `world_` will be shared.
 
 Note that this property is used to specify the sharing of session
 attributes from the portal to the portlet. This is not used to specify
@@ -2268,7 +2152,7 @@ session.enable.phishing.protection=true
 
 Set the following to true to test whether users have cookie support
 before allowing them to sign in. This test will always fail if
-`tck.url`{.western} is set to true because that property disables
+`tck.url` is set to true because that property disables
 session cookies.
 
 session.test.cookie.support=true
@@ -2282,12 +2166,12 @@ specs.
 
 This feature is only available for Tomcat and requires that you set
 Tomcat's Manager class to
-`com.liferay.support.tomcat.session.SessionLessManagerBase`{.western}.
+`com.liferay.support.tomcat.session.SessionLessManagerBase`.
 
 session.disabled=false
 
 Input a list of comma delimited class names that extend
-`com.liferay.portal.struts.SessionAction`{.western}. These classes will
+`com.liferay.portal.struts.SessionAction`. These classes will
 run at the specified event.
 
 \#
@@ -2375,7 +2259,7 @@ able to impersonate other users.
 portal.jaas.enable=false
 
 By default,
-`com.liferay.portal.security.jaas.PortalLoginModule`{.western} loads the
+`com.liferay.portal.security.jaas.PortalLoginModule` loads the
 correct JAAS login module based on what application server or servlet
 container the portal is deployed on. Set a JAAS implementation class to
 override this behavior.
@@ -2410,18 +2294,18 @@ ldap.security.credentials=secret
 
 ldap.referral=follow
 
-Settings for `com.liferay.portal.security.auth.LDAPAuth`{.western} can
+Settings for `com.liferay.portal.security.auth.LDAPAuth` can
 be configured from the Admin portlet. It provides out of the box support
 for Apache Directory Server, Microsoft Active Directory Server, Novell
 eDirectory, and OpenLDAP. The default settings are for Apache Directory
 Server.
 
-The `LDAPAuth`{.western} class must be specified in the property
-`auth.pipeline.pre`{.western} to be executed.
+The `LDAPAuth` class must be specified in the property
+`auth.pipeline.pre` to be executed.
 
 Encryption is implemented by
-`com.liferay.util.Encryptor.provider.class`{.western} in
-`system.properties`{.western}.
+`com.liferay.util.Encryptor.provider.class` in
+`system.properties`.
 
 ldap.auth.enabled=false
 
@@ -2436,14 +2320,14 @@ ldap.auth.method=bind
 ldap.auth.method=password-compare
 
 Set the password encryption to used to compare passwords if the property
-`ldap.auth.method`{.western} is set to password-compare.
+`ldap.auth.method` is set to password-compare.
 
 ldap.auth.password.encryption.algorithm=
 
 ldap.auth.password.encryption.algorithm.types=MD5,SHA
 
 Active Directory stores information about the user account as a series
-of bit fields in the `UserAccountControl`{.western} attribute.
+of bit fields in the `UserAccountControl` attribute.
 
 If you want to prevent disabled accounts from logging into the portal
 you need to use a search filter similar to the following:
@@ -2459,14 +2343,14 @@ See the following links:
 ldap.auth.search.filter=(mail=@email\_address@)
 
 You can write your own class that extends*
-*`com.liferay.portal.security.ldap.AttributesTransformer`{.western} to
+*`com.liferay.portal.security.ldap.AttributesTransformer` to
 transform the LDAP attributes before a user or group is imported to the
 LDAP store.
 
 ldap.attrs.transformer.impl=com.liferay.portal.security.ldap.AttributesTransformer
 
 You can write your own class that extends
-`com.liferay.portal.security.ldap.LDAPUser`{.western} to customize the
+`com.liferay.portal.security.ldap.LDAPUser` to customize the
 behavior for exporting portal users to the LDAP store.
 
 ldap.user.impl=com.liferay.portal.security.ldap.LDAPUser
@@ -2513,7 +2397,7 @@ ldap.import.method=group
 Settings for exporting users from the portal to LDAP. This allows a user
 to modify his first name, last name, etc. in the portal and have that
 change get pushed to the LDAP server. This will only be active if the
-property `ldap.auth.enabled`{.western} is also set to true. New users
+property `ldap.auth.enabled` is also set to true. New users
 and groups will be created at the specified DN.
 
 ldap.export.enabled=true
@@ -2550,10 +2434,10 @@ ldap.error.user.lockout=retry limit
 Set this to true to enable CAS single sign on. NTLM will work only if
 LDAP authentication is also enabled and the authentication is made by
 screen name. If set to true, then the property
-`auto.login.hooks`{.western} must contain a reference to the class
-`com.liferay.portal.security.auth.CASAutoLogin`{.western} and the filter
-`com.liferay.portal.servlet.filters.sso.cas.CASFilter`{.western} must be
-referenced in `web.xml`{.western}.
+`auto.login.hooks` must contain a reference to the class
+`com.liferay.portal.security.auth.CASAutoLogin` and the filter
+`com.liferay.portal.servlet.filters.sso.cas.CASFilter` must be
+referenced in `web.xml`.
 
 cas.auth.enabled=false
 
@@ -2564,8 +2448,8 @@ exist in the portal.
 cas.import.from.ldap=false
 
 Set the default values for the required CAS URLs. Set either
-`cas.server.name`{.western} or `cas.service.url`{.western}. Setting
-`cas.server.name`{.western} allows deep linking. See LEP-4423.
+`cas.server.name` or `cas.service.url`. Setting
+`cas.server.name` allows deep linking. See LEP-4423.
 
 cas.login.url=https://localhost:8443/cas-web/login
 
@@ -2586,11 +2470,11 @@ cas.validate.url=https://localhost:8443/cas-web/proxyValidate
 Set this to true to enable NTLM single sign on. NTLM will work only if
 LDAP authentication is also enabled and the authentication is made by
 screen name. If set to true, then the property
-`auto.login.hooks`{.western} must contain a reference to the class
-`com.liferay.portal.security.auth.NtlmAutoLogin`{.western} and the
+`auto.login.hooks` must contain a reference to the class
+`com.liferay.portal.security.auth.NtlmAutoLogin` and the
 filter
-`com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter`{.western} must
-be referenced in `web.xml`{.western}.
+`com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter` must
+be referenced in `web.xml`.
 
 ntlm.auth.enabled=false
 
@@ -2601,8 +2485,8 @@ ntlm.auth.domain=EXAMPLE
 #### OpenID
 
 Set this to true to enable OpenId authentication. If set to true, then
-the property `auto.login.hooks`{.western} must contain a reference to
-the class `com.liferay.portal.security.auth.OpenIdAutoLogin`{.western}.
+the property `auto.login.hooks` must contain a reference to
+the class `com.liferay.portal.security.auth.OpenIdAutoLogin`.
 
 open.id.auth.enabled=true
 
@@ -2645,11 +2529,11 @@ open.sso.last.name.attr=sn
 #### SiteMinder
 
 Set this to true to enable CA SiteMinder single sign on. If set to true,
-then the property `auto.login.hooks`{.western} must contain a reference
+then the property `auto.login.hooks` must contain a reference
 to the class
-`com.liferay.portal.security.auth.SiteMinderAutoLogin`{.western} and the
-`logout.events.post`{.western} must have a reference to
-`com.liferay.portal.events.SiteMinderLogoutAction`{.western} for logout
+`com.liferay.portal.security.auth.SiteMinderAutoLogin` and the
+`logout.events.post` must have a reference to
+`com.liferay.portal.events.SiteMinderLogoutAction` for logout
 to work.
 
 siteminder.auth.enabled=false
@@ -2668,10 +2552,10 @@ siteminder.user.header=SM\_USER
 #### Authentication Pipeline
 
 Input a list of comma delimited class names that implement
-`com.liferay.portal.security.auth.Authenticator`{.western}. These
+`com.liferay.portal.security.auth.Authenticator`. These
 classes will run before or after the portal authentication begins.
 
-The `Authenticator`{.western} class defines the constant values that
+The `Authenticator` class defines the constant values that
 should be used as return codes from the classes implementing the
 interface. If authentication is successful, return SUCCESS; if the user
 exists but the passwords do not match, return FAILURE; and if the user
@@ -2692,7 +2576,7 @@ one of the authenticators returns FAILURE or DNE, the login fails.
 Under certain circumstances, you might want to keep the information in
 the portal database in sync with an external database or an LDAP server.
 This can easily be achieved by implementing a class via
-`LDAPAuth`{.western} that updates the information stored in the portal
+`LDAPAuth` that updates the information stored in the portal
 user database whenever a user signs in.
 
 Each portal instance can be configured at run time to either
@@ -2701,10 +2585,10 @@ for more information.
 
 Available authenticators are:
 
-`com.liferay.portal.security.auth.LDAPAuth`{.western}
+`com.liferay.portal.security.auth.LDAPAuth`
 
 See the LDAP properties to configure the behavior of the
-`LDAPAuth`{.western} class.
+`LDAPAuth` class.
 
 auth.pipeline.pre=com.liferay.portal.security.auth.LDAPAuth
 
@@ -2713,13 +2597,13 @@ auth.pipeline.post=
 Set this to true to enable password checking by the internal portal
 authentication. If set to false, you're essentially delegating password
 checking is delegated to the authenticators configured in
-`auth.pipeline.pre`{.western} and `auth.pipeline.post`{.western}
+`auth.pipeline.pre` and `auth.pipeline.post`
 settings.
 
 auth.pipeline.enable.liferay.check=true
 
 Input a list of comma delimited class names that implement
-`com.liferay.portal.security.auth.AuthFailure`{.western}. These classes
+`com.liferay.portal.security.auth.AuthFailure`. These classes
 will run when a user has a failed login or when a user has reached the
 maximum number of failed logins.
 
@@ -2736,16 +2620,16 @@ their default layout page.
 auth.forward.by.last.path=true
 
 The login page reads a redirect by a parameter named
-`redirect`{.western}. If this property is set to true, then users will
+`redirect`. If this property is set to true, then users will
 be redirected to the given redirect path upon successful login. If the
 user does not have permission to view that page, then the rule set by
-the property `auth.forward.by.last.path`{.western} will apply.
+the property `auth.forward.by.last.path` will apply.
 
 You can set the redirect manually from another application, by appending
 the *redirect* parameter in a url that looks like this:
-`/c/portal/login?redirect=%2Fgroup%2Femployees%2Fcalendar`{.western}.
+`/c/portal/login?redirect=%2Fgroup%2Femployees%2Fcalendar`.
 This url will redirect the user to the path
-`/group/employees/calendar`{.western} upon successful login.
+`/group/employees/calendar` upon successful login.
 
 auth.forward.by.redirect=true
 
@@ -2762,7 +2646,7 @@ default, the portal's login page is used.
 Enter a friendly URL of a page that will be used to login portal users
 whenever the user is navigating a community and authentication is
 needed. By default, the portal's login page or the URL set in the
-property `auth.login.url`{.western} is used.
+property `auth.login.url` is used.
 
 auth.login.community.url=/login
 
@@ -2881,7 +2765,7 @@ auth.public.paths=\\
 #### Auto Login
 
 Input a list of comma delimited class names that implement
-`com.liferay.portal.security.auth.AutoLogin`{.western}. These classes
+`com.liferay.portal.security.auth.AutoLogin`. These classes
 will run in consecutive order for all unauthenticated users until one of
 them return a valid user id and password combination. If no valid
 combination is returned, then the request continues to process normally.
@@ -2889,13 +2773,13 @@ If a valid combination is returned, then the portal will automatically
 login that user with the returned user id and password combination.
 
 For example,
-`com.liferay.portal.security.auth.RememberMeAutoLogin`{.western} reads
+`com.liferay.portal.security.auth.RememberMeAutoLogin` reads
 from a cookie to automatically log in a user who previously logged in
 while checking the *Remember Me* box.
 
 This interface allows deployers to easily configure the portal to work
 with other SSO servers. See
-`com.liferay.portal.security.auth.CASAutoLogin`{.western} for an example
+`com.liferay.portal.security.auth.CASAutoLogin` for an example
 of how to configure the portal with Yale's SSO server.
 
 auto.login.hooks=com.liferay.portal.security.auth.CASAutoLogin,com.liferay.portal.security.auth.NtlmAutoLogin,com.liferay.portal.security.auth.OpenIdAutoLogin,com.liferay.portal.security.auth.OpenSSOAutoLogin,com.liferay.portal.security.auth.RememberMeAutoLogin,com.liferay.portal.security.auth.SiteMinderAutoLogin
@@ -2912,7 +2796,7 @@ auto.login.ignore.paths=
 
 To use SSO with MAC, post to an URL like:
 
-`http://localhost:8080/c/portal/login?cmd=already-registered&login=<userId|emailAddress>&password=<MAC>`{.western}
+`http://localhost:8080/c/portal/login?cmd=already-registered&login=<userId|emailAddress>&password=<MAC>`
 
 Pass the MAC in the password field. Make sure the MAC gets URL encoded
 because it might contain characters not allowed in a URL.
@@ -2972,7 +2856,7 @@ passwords.digest.encoding=base64
 \#passwords.digest.encoding=hex
 
 Input a class name that extends
-`com.liferay.portal.security.pwd.BasicToolkit`{.western}. This class
+`com.liferay.portal.security.pwd.BasicToolkit`. This class
 will be called to generate and validate passwords.
 
 *Examples:*
@@ -2982,11 +2866,11 @@ passwords.toolkit=com.liferay.portal.security.pwd.PasswordPolicyToolkit
 passwords.toolkit=com.liferay.portal.security.pwd.RegExpToolkit
 
 If you choose to use
-`com.liferay.portal.security.pwd.PasswordPolicyToolkit`{.western} as
+`com.liferay.portal.security.pwd.PasswordPolicyToolkit` as
 your password toolkit, you can choose either static or dynamic password
 generation. Static is set through the property
-`passwords.passwordpolicytoolkit.static`{.western} and dynamic uses the
-class `com.liferay.util.PwdGenerator`{.western} to generate the
+`passwords.passwordpolicytoolkit.static` and dynamic uses the
+class `com.liferay.util.PwdGenerator` to generate the
 password. If you are using LDAP password syntax checking, you will also
 have to use the static generator so that you can guarantee that
 passwords obey its rules.
@@ -3000,11 +2884,11 @@ passwords.passwordpolicytoolkit.generator=dynamic
 passwords.passwordpolicytoolkit.static=iheartliferay
 
 If you choose to use
-`com.liferay.portal.security.pwd.RegExpToolkit`{.western} as your
+`com.liferay.portal.security.pwd.RegExpToolkit` as your
 password toolkit, set the regular expression pattern that will be used
 to generate and validate passwords.
 
-Note that `\`{.western} is replaced with `\\`{.western} to work in Java.
+Note that `\` is replaced with `\\` to work in Java.
 
 The first pattern ensures that passwords must have at least 4 valid
 characters consisting of digits or letters.
@@ -3039,16 +2923,16 @@ passwords.default.policy.name=Default Password Policy
 #### Permissions
 
 Set the default permission checker class used by
-`com.liferay.portal.security.permission.PermissionCheckerFactory`{.western}
+`com.liferay.portal.security.permission.PermissionCheckerFactory`
 to check permissions for actions on objects. This class can be
 overridden with a custom class that extends
-`com.liferay.portal.security.permission.PermissionCheckerImpl`{.western}.
+`com.liferay.portal.security.permission.PermissionCheckerImpl`.
 
 permissions.checker=com.liferay.portal.security.permission.PermissionCheckerImpl
 
 Set the algorithm used to check permissions for a user. This is useful
 so that you can optimize the search for different databases. See
-`com.liferay.portal.service.impl.PermissionLocalServiceImpl`{.western}.
+`com.liferay.portal.service.impl.PermissionLocalServiceImpl`.
 The default is method two.
 
 The first algorithm uses several *if* statements to query the database
@@ -3073,8 +2957,8 @@ true: *
 
 The second algorithm (the default) does a database join and checks the
 permissions in one step, by calling
-`countByGroupsRoles, countByGroupsPermissions, countByUsersRoles, countByUserGroupRole`{.western},
-and `countByUsersPermissions`{.western} in one method.
+`countByGroupsRoles, countByGroupsPermissions, countByUsersRoles, countByUserGroupRole`,
+and `countByUsersPermissions` in one method.
 
 The third algorithm checks the permissions by checking for three things.
 It combines the role check into one step. If it finds any of the
@@ -3093,8 +2977,8 @@ following items, it returns *true:*
 
 The fourth algorithm does a database join and checks the permissions
 that algorithm three checks in one step, by calling
-`countByGroupsPermissions, countByRolesPermissions`{.western}, and
-`countByUsersPermissions`{.western} in one method.
+`countByGroupsPermissions, countByRolesPermissions`, and
+`countByUsersPermissions` in one method.
 
 Algorithm 5 moves to a completely role-based permissions check for
 better performance. Permissions by users are no longer supported, yet it
@@ -3118,7 +3002,7 @@ permissions.user.check.algorithm=5
 permissions.user.check.algorithm=6
 
 Set the default permissions list filter class. This class must implement
-`com.liferay.portal.kernel.security.permission.PermissionsListFilter`{.western}.
+`com.liferay.portal.kernel.security.permission.PermissionsListFilter`.
 This is used if you want to filter the list of permissions before it is
 actually persisted. For example, if you want to make sure that all users
 who create objects never have the UPDATE action, then you can filter
@@ -3128,7 +3012,7 @@ it is persisted.
 permissions.list.filter=com.liferay.portal.security.permission.PermissionsListFilterImpl
 
 Set this to true to configure permission caching to block. See the
-property `ehcache.blocking.cache.allowed`{.western} for more
+property `ehcache.blocking.cache.allowed` for more
 information.
 
 permissions.object.blocking.cache=false
@@ -3198,14 +3082,14 @@ captcha.engine.simplecaptcha.height=50
 captcha.engine.simplecaptcha.width=150
 
 Input a list of comma delimited class names that implement
-`nl.captcha.backgrounds.BackgroundProducer`{.western}. These classes
+`nl.captcha.backgrounds.BackgroundProducer`. These classes
 will be randomly used by SimpleCaptcha to generate a background for a
 captcha image.
 
 captcha.engine.simplecaptcha.background.producers=nl.captcha.backgrounds.FlatColorBackgroundProducer,nl.captcha.backgrounds.GradiatedBackgroundProducer,nl.captcha.backgrounds.SquigglesBackgroundProducer,nl.captcha.backgrounds.TransparentBackgroundProducer
 
 Input a list of comma delimited class names that implement
-`nl.captcha.gimpy.GimpyRenderer`{.western}. These classes will be
+`nl.captcha.gimpy.GimpyRenderer`. These classes will be
 randomly used by SimpleCaptcha to gimp a captcha image.
 
 captcha.engine.simplecaptcha.gimpy.renderers=nl.captcha.gimpy.RippleGimpyRenderer
@@ -3213,7 +3097,7 @@ captcha.engine.simplecaptcha.gimpy.renderers=nl.captcha.gimpy.RippleGimpyRendere
 captcha.engine.simplecaptcha.gimpy.renderers=nl.captcha.gimpy.BlockGimpyRenderer,nl.captcha.gimpy.DropShadowGimpyRenderer,nl.captcha.gimpy.FishEyeGimpyRenderer,nl.captcha.gimpy.RippleGimpyRenderer,nl.captcha.gimpy.ShearGimpyRenderer
 
 Input a list of comma delimited class names that implement
-`nl.captcha.noise.NoiseProducer`{.western}. These classes will be
+`nl.captcha.noise.NoiseProducer`. These classes will be
 randomly used by SimpleCaptcha to add noise to a captcha image.
 
 captcha.engine.simplecaptcha.noise.producers=nl.captcha.noise.CurvedLineNoiseProducer
@@ -3221,7 +3105,7 @@ captcha.engine.simplecaptcha.noise.producers=nl.captcha.noise.CurvedLineNoisePro
 captcha.engine.simplecaptcha.noise.producers=nl.captcha.noise.CurvedLineNoiseProducer,nl.captcha.noise.StraightLineNoiseProducer
 
 Input a list of comma delimited class names that implement
-`nl.captcha.text.`{.western}`producer.TextProducer`{.western}. These
+`nl.captcha.text.``producer.TextProducer`. These
 classes will be randomly used by SimpleCaptcha to generate text for a
 captcha image.
 
@@ -3230,7 +3114,7 @@ captcha.engine.simplecaptcha.text.producers=com.liferay.portal.captcha.simplecap
 captcha.engine.simplecaptcha.text.producers=com.liferay.portal.captcha.simplecaptcha.DictionaryWordTextProducer,com.liferay.portal.captcha.simplecaptcha.PinNumberTextProducer,nl.captcha.text.producer.DefaultTextProducer,nl.captcha.text.producer.FiveLetterFirstNameTextProducer
 
 Input a list of comma delimited class names that implement
-`nl.captcha.text.renderer.WordRenderer`{.western}. These classes will be
+`nl.captcha.text.renderer.WordRenderer`. These classes will be
 randomly used by SimpleCaptcha to render text for a captcha image.
 
 captcha.engine.simplecaptcha.word.renderers=nl.captcha.text.renderer.DefaultWordRenderer
@@ -3240,7 +3124,7 @@ captcha.engine.simplecaptcha.word.renderers=nl.captcha.text.renderer.ColoredEdge
 #### Startup Events
 
 Input a list of comma delimited class names that extend
-`com.liferay.portal.struts.SimpleAction`{.western}. These classes will
+`com.liferay.portal.struts.SimpleAction`. These classes will
 run at the specified event.
 
 The following is a global startup event that runs once when the portal
@@ -3258,7 +3142,7 @@ application.startup.events=com.liferay.portal.events.AppStartupAction
 #### Shutdown Events
 
 Input a list of comma delimited class names that extend
-`com.liferay.portal.struts.SimpleAction`{.western}. These classes will
+`com.liferay.portal.struts.SimpleAction`. These classes will
 run at the specified event.
 
 Global shutdown event that runs once when the portal shuts down.
@@ -3280,7 +3164,7 @@ shutdown.programmatically.exit=false
 #### Portal Events
 
 Input a list of comma delimited class names that extend
-`com.liferay.portal.struts.Action`{.western}. These classes will run
+`com.liferay.portal.struts.Action`. These classes will run
 before or after the specified event.
 
 **Servlet service event:** the pre-service events have an associated
@@ -3335,12 +3219,12 @@ logout.events.post=com.liferay.portal.events.LogoutPostAction,com.liferay.portal
 Set the default landing page path for logged in users relative to the
 server path. This is the page users are automatically redirected to
 after logging in. For example, if you want the default landing page to
-be `http://localhost:8080/web/guest/login`{.western}, set this to
-`/web/guest/login`{.western}. To activate this feature, set
-`auth.forward.by.last.path`{.western} to true. To customize the
+be `http://localhost:8080/web/guest/login`, set this to
+`/web/guest/login`. To activate this feature, set
+`auth.forward.by.last.path` to true. To customize the
 behavior, see
-`com.liferay.portal.events.DefaultLandingPageAction`{.western} in the
-`login.events.post`{.western} property above.
+`com.liferay.portal.events.DefaultLandingPageAction` in the
+`login.events.post` property above.
 
 \#default.landing.page.path=/web/guest/login
 
@@ -3349,12 +3233,12 @@ behavior, see
 Set the default logout page path for users relative to the server path.
 This is the page users are automatically redirected to after logging
 out. For example, if you want the default logout page to be
-`http://localhost:8080/web/guest/logout`{.western}, set this to
-`/web/guest/logout`{.western}. To activate this feature, set
-`auth.forward.by.last.path`{.western} to true. To customize the
+`http://localhost:8080/web/guest/logout`, set this to
+`/web/guest/logout`. To activate this feature, set
+`auth.forward.by.last.path` to true. To customize the
 behavior, see
-`com.liferay.portal.events.DefaultLogoutPageAction`{.western} in the
-`logout.events.post`{.western} property above.
+`com.liferay.portal.events.DefaultLogoutPageAction` in the
+`logout.events.post` property above.
 
 \#default.logout.page.path=/web/guest/logout
 
@@ -3364,12 +3248,12 @@ The Guest group must have at least one public page. The settings for the
 initial public page are specified in the following properties.
 
 If you need to add more than one page, set the property
-`default.guest.public.layout.lar`{.western} to specify a LAR file
+`default.guest.public.layout.lar` to specify a LAR file
 instead.
 
 For even more complex behavior, override the
-`addDefaultGuestPublicLayouts`{.western} method in
-`com.liferay.portal.service.impl.GroupLocalServiceImpl`{.western}.
+`addDefaultGuestPublicLayouts` method in
+`com.liferay.portal.service.impl.GroupLocalServiceImpl`.
 
 Set the name of the public layout.
 
@@ -3535,14 +3419,14 @@ If this property is set, the previous layout properties will be ignored.
 #### Sanitizer
 
 Set the name of a class that implements
-`com.liferay.portal.kernel.sanitizer.Sanitizer`{.western}. This class is
+`com.liferay.portal.kernel.sanitizer.Sanitizer`. This class is
 used to sanitize content.
 
 sanitizer.impl=com.liferay.portal.sanitizer.DummySanitizerImpl
 
 #### Social Equity
 
-Set the interval on which the `CheckEquityLogMessageListener`{.western}
+Set the interval on which the `CheckEquityLogMessageListener`
 will run. The value is set in one minute increments.
 
 social.equity.equity.log.check.interval=1440
@@ -3961,7 +3845,7 @@ layout.default.p\_l\_reset=true
 
 #### Portlet URL
 
-Set the following to true if calling `setParameter`{.western} on a
+Set the following to true if calling `setParameter` on a
 portlet URL appends the parameter value versus replacing it. There is
 some disagreement in the interpretation of the JSR 168 spec among
 portlet developers over this specific behavior. Liferay Portal
@@ -4003,12 +3887,12 @@ struts.portlet.request.processor=com.liferay.portal.struts.PortletRequestProcess
 
 #### Redirect
 
-Set this property to `ip`{.western} or `domain`{.western} for the
-redirect security method. If set to `domain`{.western}, the portal will
+Set this property to `ip` or `domain` for the
+redirect security method. If set to `domain`, the portal will
 only redirect users to domains listed in the property
-`redirect.url.domain.allowed`{.western}. If set to `ip`{.western}, the
+`redirect.url.domain.allowed`. If set to `ip`, the
 portal will only redirect to domains whose IP address resolve to an IP
-address listed in the property `redirect.url.ip.allowed`{.western}.
+address listed in the property `redirect.url.ip.allowed`.
 
 redirect.url.security.mode=domain
 
@@ -4020,7 +3904,7 @@ redirect to. Input a blank list to allow any domain.
 redirect.url.domains.allowed=
 
 Input a list of comma delimited IPs which the portal is allowed to
-redirect to. Input a blank list to allow any IP. `SERVER_IP`{.western}
+redirect to. Input a blank list to allow any IP. `SERVER_IP`
 will be replaced with the IP of the host server.
 
 redirect.url.ips.allowed=127.0.0.1,SERVER\_IP
@@ -4053,16 +3937,16 @@ image.default.user.female.portrait=com/liferay/portal/dependencies/user\_female\
 image.default.user.male.portrait=com/liferay/portal/dependencies/user\_male\_portrait.png
 
 Set the name of a class that implements
-`com.liferay.portal.image.Hook`{.western}. The portal will use this
+`com.liferay.portal.image.Hook`. The portal will use this
 persist images.
 
 Available hooks are:
 
--   `com.liferay.portal.image.DatabaseHook`{.western}
+-   `com.liferay.portal.image.DatabaseHook`
 
--   `com.liferay.portal.image.DLHook`{.western}
+-   `com.liferay.portal.image.DLHook`
 
--   `com.liferay.portal.image.FileSystemHook`{.western}
+-   `com.liferay.portal.image.FileSystemHook`
 
 image.hook.impl=com.liferay.portal.image.DatabaseHook
 
@@ -4078,8 +3962,8 @@ image.hook.file.system.root.dir=${liferay.home}/data/images
 
 You can configure individual JSP pages to use a specific implementation
 of the available WYSIWYG editors:
-`liferay, fckeditor, simple, tinymce`{.western}, or
-`tinymcesimple`{.western}.
+`liferay, fckeditor, simple, tinymce`, or
+`tinymcesimple`.
 
 editor.wysiwyg.default=fckeditor
 
@@ -4123,17 +4007,17 @@ field.enable.com.liferay.portal.model.Organization.status=false
 Input a list of comma delimited user types who can edit their own
 fields.
 
-Valid types are `administrator`{.western}, `user-mx`{.western}, and
-`user-without-mx`{.western}.
+Valid types are `administrator`, `user-mx`, and
+`user-without-mx`.
 
-Set a value of `administrator`{.western} if an administrator can edit
+Set a value of `administrator` if an administrator can edit
 the specified field. An administrator is anyone who has the
 Administrator role.
 
-Set a value of `user-mx`{.western} if a user who has an email address
+Set a value of `user-mx` if a user who has an email address
 that matches the company mail suffix can edit the specified field.
 
-Set a value of `user-without-mx`{.western} if a user who does not have
+Set a value of `user-without-mx` if a user who does not have
 an email address that matches the company mail suffix can edit the
 specified field.
 
@@ -4148,7 +4032,7 @@ field.editable.com.liferay.portal.model.User.emailAddress=administrator,user-wit
 #### Mime Types
 
 Input a list of comma delimited mime types that are not available by
-default from `javax.activation.MimetypesFileTypeMap`{.western}.
+default from `javax.activation.MimetypesFileTypeMap`.
 
 mime.types=\\
 
@@ -4213,9 +4097,9 @@ number of organizations that the user can administer is very large.
 control.panel.navigation.max.organizations=50
 
 Set the name of a class that implements
-`com.liferay.portlet.ControlPanelEntry`{.western}. This class denotes
+`com.liferay.portlet.ControlPanelEntry`. This class denotes
 the default value of of the element
-`control-panel-entry-class`{.western} in `liferay-portlet.xml`{.western}
+`control-panel-entry-class` in `liferay-portlet.xml`
 and is called by the Control Panel to decide whether the portlet should
 be shown to a specific user in a specific context.
 
@@ -4231,7 +4115,7 @@ aim.login=
 aim.password=
 
 Due to a bug in JOscarLib 0.3b1, you must set the full path to the
-`ICQ jar`{.western}.
+`ICQ jar`.
 
 See the following posts:
 
@@ -4519,13 +4403,13 @@ cache only caches primary keys and is further helped by the entity level
 cache that caches the value object to the primary key.
 
 The Hibernate level cache is provided by the
-`hibernate.cache.provider_class`{.western} property. Set this to true to
+`hibernate.cache.provider_class` property. Set this to true to
 enable entity level caching.
 
 value.object.entity.cache.enabled=true
 
 Set this to true to configure entity level caching to block. See the
-property `ehcache.blocking.cache.allowed`{.western} for more
+property `ehcache.blocking.cache.allowed` for more
 information.
 
 value.object.entity.blocking.cache=true
@@ -4556,7 +4440,7 @@ Set this to true to enable finder level caching.
 value.object.finder.cache.enabled=true
 
 Set this to true to configure finder level caching to block. See the
-property `ehcache.blocking.cache.allowed`{.western} for more
+property `ehcache.blocking.cache.allowed` for more
 information.
 
 value.object.finder.blocking.cache=true
@@ -4723,7 +4607,7 @@ monitoring.portlet.resource.request=false
 
 Set this to true to show data samples at the bottom of each portal page.
 In order for data to show, the property
-`monitoring.data.sample.thread.local`{.western} must be set to true.
+`monitoring.data.sample.thread.local` must be set to true.
 
 monitoring.show.per.request.data.sample=false
 
@@ -4739,36 +4623,36 @@ between different nodes. If they are not unique or correctly set, there
 will be a potential of unnecessary network traffic that may cause slower
 updates or inaccurate updates.
 
-See the property `cluster.link.channel.properties.control`{.western}.
+See the property `cluster.link.channel.properties.control`.
 
 multicast.group.address["cluster-link-control"]=233.0.0.1
 
 multicast.group.port["cluster-link-control"]=23301
 
 See the properties
-`cluster.link.channel.properties.transport.0`{.western} and
-`cluster.link.channel.system.properties`{.western}.
+`cluster.link.channel.properties.transport.0` and
+`cluster.link.channel.system.properties`.
 
 multicast.group.address["cluster-link-udp"]=233.0.0.2
 
 multicast.group.port["cluster-link-udp"]=23302
 
-See the property `cluster.link.channel.system.properties`{.western}.
+See the property `cluster.link.channel.system.properties`.
 
 multicast.group.address["cluster-link-mping"]=233.0.0.3
 
 multicast.group.port["cluster-link-mping"]=23303
 
-See the properties `net.sf.ehcache.configurationResourceName`{.western}
+See the properties `net.sf.ehcache.configurationResourceName`
 and
-`net.sf.ehcache.configurationResourceName.peerProviderProperties`{.western}.
+`net.sf.ehcache.configurationResourceName.peerProviderProperties`.
 
 multicast.group.address["hibernate"]=233.0.0.4
 
 multicast.group.port["hibernate"]=23304
 
-See the properties `ehcache.multi.vm.config.location`{.western} and
-`ehcache.multi.vm.config.location.peerProviderProperties`{.western}.
+See the properties `ehcache.multi.vm.config.location` and
+`ehcache.multi.vm.config.location.peerProviderProperties`.
 
 multicast.group.address["multi-vm"]=233.0.0.5
 
@@ -4788,8 +4672,8 @@ The counter operates with is own data source to prevent deadlocks. By
 default, the data source created for the counter uses the same settings
 as those used to create the data source used for the rest of the portal.
 That happens by because the counter service will look up the properties
-prefixed with `jdbc.default`{.western}. to create its data source. See
-the JDBC properties prefixed with `jdbc.default`{.western}. for more
+prefixed with `jdbc.default`. to create its data source. See
+the JDBC properties prefixed with `jdbc.default`. for more
 information.
 
 Setting a different value for the counter JDBC prefix allows you to
@@ -4805,7 +4689,7 @@ table. Set this value to a higher number for better performance.
 
 counter.increment=100
 
-Set the interval in minutes for the `ConnectionHearbeatJob`{.western}.
+Set the interval in minutes for the `ConnectionHearbeatJob`.
 This will determine how often the database is polled for long running
 connections and will prevent the database from disconnecting the socket
 prematurely.
@@ -4884,7 +4768,7 @@ properties prefixed with *mail.session*.
 \#mail.session.jndi.name=mail/MailSession
 
 Set the properties used to create the Java Mail session. The property
-prefix `mail.session`{.western}. will be removed before it is used to
+prefix `mail.session`. will be removed before it is used to
 create the session object. These properties will only be read if the
 property *mail.session.jndi.name* is not set.
 
@@ -4925,7 +4809,7 @@ of every email sent through the mail server.
 mail.audit.trail=
 
 Set the name of a class that implements
-`com.liferay.mail.util.Hook`{.western}. The mail server will use this
+`com.liferay.mail.util.Hook`. The mail server will use this
 class to ensure that the mail and portal servers are synchronized on
 user information. The portal will not know how to add, update, or delete
 users from the mail server except through this hook.
@@ -4977,7 +4861,7 @@ mail.hook.fusemail.group.parent=
 ##### SendmailHook
 
 Set the commands for adding, updating, and deleting a user where
-`%1%`{.western} is the user id and `%2%`{.western} is the password. Set
+`%1%` is the user id and `%2%` is the password. Set
 the home and virtual user table information.
 
 mail.hook.sendmail.add.user=adduser %1% -s /bin/false
@@ -5039,13 +4923,13 @@ set in one minute increments.
 pop.server.notifications.interval=1
 
 Set this property to create a special MX subdomain to receive all portal
-related email (e.g. `events.liferay.com`{.western}). This means
+related email (e.g. `events.liferay.com`). This means
 configuring a default inbox for the domain and receiving all emails into
 that inbox.
 
 This approach may not be allowed for some organizations. If you cannot
 use the subdomain approach, unset this value and Liferay will use the
-`replyTo`{.western} address specified in the portlet preferences.
+`replyTo` address specified in the portlet preferences.
 
 pop.server.subdomain=events
 
@@ -5267,17 +5151,17 @@ Specify the community name that will default to the company's virtual
 host. If the specified community has a virtual host, then that will take
 precedence. If it does not, then it will use the company's virtual host.
 
-This property is useful to remove `/web/guest`{.western} (or any other
+This property is useful to remove `/web/guest` (or any other
 community) from the default URL. For example, if this property is not
 set, then the default URL may be
-`http://localhost:8080/web/guest/home`{.western}. If this property is
+`http://localhost:8080/web/guest/home`. If this property is
 set, then the default URL may be http://localhost:8080/home.
 
 virtual.hosts.default.community.name=Guest
 
 #### HTTP
 
-See `system.properties`{.western} for more HTTP settings.
+See `system.properties` for more HTTP settings.
 
 Set the maximum number of connections.
 
@@ -5309,13 +5193,13 @@ com.liferay.portal.util.HttpImpl.timeout=10000
 
 #### Servlet Filters
 
-The audit filter populates the `AuditRequestThreadLocal`{.western} with
+The audit filter populates the `AuditRequestThreadLocal` with
 the appropriate request values to generate audit requests.
 
 com.liferay.portal.servlet.filters.audit.AuditFilter=false
 
 The auto login filter processes the classes in the property
-`auto.login.hooks`{.western} to provide auto login functionality.
+`auto.login.hooks` to provide auto login functionality.
 
 com.liferay.portal.servlet.filters.autologin.AutoLoginFilter=true
 
@@ -5350,14 +5234,14 @@ The header filter is used to set request headers.
 com.liferay.portal.servlet.filters.header.HeaderFilter=true
 
 The I18n filter is used to internationalize URLs. See the property
-`locale.prepend.friendly.url.style`{.western} for more information.
+`locale.prepend.friendly.url.style` for more information.
 
 com.liferay.portal.servlet.filters.i18n.I18nFilter=true
 
 The Language filter replaces JavaScript code that make a client side
 call to translate a piece of text with the actual translated value. For
 example, a typical piece of JavaScript code fits the pattern
-`Liferay.Language.get('key')`{.western} where `key`{.western} is the
+`Liferay.Language.get('key')` where `key` is the
 text to translate. This filter will replace the entire piece of code
 with the translated text. This is very useful because it will lower the
 number of client calls by translating the text before the browser
@@ -5387,8 +5271,8 @@ The OpenSSO filter is used to provide OpenSSO based single sign on.
 com.liferay.portal.servlet.filters.sso.opensso.OpenSSOFilter=true
 
 The secure filter is used to protect servlets based on IP and protocol.
-See the properties `*.servlet.hosts.allowed`{.western} and
-`*.servlet.https.required`{.western}.
+See the properties `*.servlet.hosts.allowed` and
+`*.servlet.https.required`.
 
 com.liferay.portal.servlet.filters.secure.SecureFilter=true
 
@@ -5409,11 +5293,11 @@ live.
 com.liferay.portal.servlet.filters.layoutcache.LayoutCacheFilter=true
 
 The session id filter ensure that only one session is created between
-`http`{.western} and `https`{.western} sessions. This is useful if you
-want users to login via `https`{.western} but have them view the rest of
-the site via `http`{.western}. This is disabled by default. Do not
+`http` and `https` sessions. This is useful if you
+want users to login via `https` but have them view the rest of
+the site via `http`. This is disabled by default. Do not
 enable this unless you thoroughly understand how cookies,
-`http`{.western}, and `https`{.western} work.
+`http`, and `https` work.
 
 com.liferay.portal.servlet.filters.sessionid.SessionIdFilter=false
 
@@ -5429,16 +5313,16 @@ com.liferay.portal.servlet.filters.strip.StripFilter=true
 
 The theme preview filter generates a preview of the currently applied
 theme that can be used by the Dreamweaver Theming plugin. This is
-disabled by default. Set the `themePreview`{.western} parameter to
-`1`{.western} in the URL to access the theme preview for any page. For
+disabled by default. Set the `themePreview` parameter to
+`1` in the URL to access the theme preview for any page. For
 example, a URL can be
-`http://localhost:8080/web/guest?themePreview=1`{.western}.
+`http://localhost:8080/web/guest?themePreview=1`.
 
 com.liferay.portal.servlet.filters.themepreview.ThemePreviewFilter=false
 
 The thread local filter cleans up registered thread locals to prevent
 memory leaks. Register your thread local with
-`com.liferay.portal.kernel.util.ThreadLocalRegistry`{.western}.
+`com.liferay.portal.kernel.util.ThreadLocalRegistry`.
 
 com.liferay.portal.servlet.filters.threadlocal.ThreadLocalFilter=true
 
@@ -5453,16 +5337,16 @@ optimizes for browser performance.
 
 com.liferay.portal.servlet.filters.validhtml.ValidHtmlFilter=false
 
-The Velocity filter will process `*/css/main.css`{.western} as a
+The Velocity filter will process `*/css/main.css` as a
 Velocity template.
 
 com.liferay.portal.servlet.filters.velocity.VelocityFilter=false
 
 The virtual host filter maps hosts to public and private pages. For
-example, if the public virtual host is `www.helloworld.com`{.western}
-and the friendly URL is `/helloworld`{.western}, then
-`http://www.helloworld.com`{.western} is mapped to
-`http://localhost:8080/web/helloworld`{.western}.
+example, if the public virtual host is `www.helloworld.com`
+and the friendly URL is `/helloworld`, then
+`http://www.helloworld.com` is mapped to
+`http://localhost:8080/web/helloworld`.
 
 com.liferay.portal.servlet.filters.virtualhost.VirtualHostFilter=true
 
@@ -5525,12 +5409,12 @@ Servlets can be protected by
 
 Input a list of comma delimited IPs that can access this servlet. Input
 a blank list to allow any IP to access this servlet.
-`SERVER_IP`{.western} will be replaced with the IP of the host server.
+`SERVER_IP` will be replaced with the IP of the host server.
 
 main.servlet.hosts.allowed=
 
 Set the following to true if this servlet can only be accessed via
-`https`{.western}.
+`https`.
 
 main.servlet.https.required=false
 
@@ -5597,7 +5481,7 @@ widget.servlet.mapping=/widget
 You can set some administrative defaults by using these properties. The
 first time you bring up your portal, these values will then already be
 set in the Admin portlet. All values should be separated by
-`\n`{.western} characters.
+`\n` characters.
 
 Set up default group names.
 
@@ -5659,11 +5543,11 @@ announcements.email.subject=com/liferay/portlet/announcements/dependencies/email
 announcements.email.body=com/liferay/portlet/announcements/dependencies/email\_body.tmpl
 
 Set the list of announcement types. The display text of each of the
-announcement types is set in `content/Language.properties`{.western}.
+announcement types is set in `content/Language.properties`.
 
 announcements.entry.types=general,news,test
 
-Set the interval on which the `CheckEntryJob`{.western} will run. The
+Set the interval on which the `CheckEntryJob` will run. The
 value is set in one minute increments.
 
 announcements.entry.check.interval=15
@@ -5679,7 +5563,7 @@ asset.publisher.display.styles=table,title-list,abstracts,full-content
 
 Input a list of comma delimited default properties for new categories.
 Each item of the list should have the following format:
-`key:value`{.western}.
+`key:value`.
 
 asset.categories.properties.default=
 
@@ -5695,11 +5579,11 @@ Set this to true to enable incrementing the view counter for assets.
 asset.entry.increment.view.counter.enabled=true
 
 Input a class name that implements
-`com.liferay.portlet.asset.util.AssetEntryValidator`{.western}. This
+`com.liferay.portlet.asset.util.AssetEntryValidator`. This
 class will be called to validate entries. The
-`DefaultAssetEntryValidator`{.western} class is just an empty class that
+`DefaultAssetEntryValidator` class is just an empty class that
 doesn't actually do any validation. The
-`MinimalAssetEntryValidator`{.western} requires all enties to have at
+`MinimalAssetEntryValidator` requires all enties to have at
 least one tag.
 
 asset.entry.validator=com.liferay.portlet.asset.util.DefaultAssetEntryValidator
@@ -5708,7 +5592,7 @@ asset.entry.validator=com.liferay.portlet.asset.util.MinimalAssetEntryValidator
 
 Input a list of comma delimited default tag properties for new tags.
 Each item of the list should have the following format:
-`key:value`{.western}.
+`key:value`.
 
 asset.tag.properties.default=
 
@@ -5716,7 +5600,7 @@ Set the name of the default vocabulary which will be created by default.
 
 asset.vocabulary.default=Topic
 
-Set a property with the prefix `asset.renderer.enabled`{.western}. and a
+Set a property with the prefix `asset.renderer.enabled`. and a
 suffix with the asset renderer factory class name to enable or disable
 an asset renderer factory. The default setting is true. See LPS-6085 for
 more information.
@@ -5757,7 +5641,7 @@ blogs.email.entry.updated.subject=com/liferay/portlet/blogs/dependencies/email\_
 
 blogs.email.entry.updated.body=com/liferay/portlet/blogs/dependencies/email\_entry\_updated\_body.tmpl
 
-Set the interval on which the `TrackbackVerifierJob`{.western} will run.
+Set the interval on which the `TrackbackVerifierJob` will run.
 The value is set in one minute increments.
 
 blogs.trackback.verifier.job.interval=5
@@ -5813,7 +5697,7 @@ is set in *content/Language.properties*.
 
 calendar.event.types=anniversary,appointment,bill-payment,birthday,breakfast,call,chat,class,club-event,concert,dinner,event,graduation,happy-hour,holiday,interview,lunch,meeting,movie,net-event,other,party,performance,press-release,reunion,sports-event,training,travel,tv-show,vacation,wedding
 
-Set the interval on which the `CheckEventJob`{.western} will run. The
+Set the interval on which the `CheckEventJob` will run. The
 value is set in one minute increments.
 
 calendar.event.check.interval=15
@@ -5861,8 +5745,8 @@ communities.email.membership.request.body=com/liferay/portlet/communities/depend
 
 Set the thread view for discussion comments. This will affect Blogs,
 Document Library, and other portlets that use the Discussion tag library
-to provide comments. Set the value to `flat`{.western} to paginate
-comments. Set the value to `combination`{.western} to show all comments
+to provide comments. Set the value to `flat` to paginate
+comments. Set the value to `combination` to show all comments
 in one page along with a tree view of the comments.
 
 discussion.thread.view=combination
@@ -5872,7 +5756,7 @@ discussion.thread.view=flat
 #### Document Library Portlet
 
 Set the name of a class that implements
-`com.liferay.documentlibrary.util.Hook`{.western}. The document library
+`com.liferay.documentlibrary.util.Hook`. The document library
 server will use this persist documents.
 
 dl.hook.impl=com.liferay.documentlibrary.util.AdvancedFileSystemHook
@@ -5895,7 +5779,7 @@ dl.hook.jcr.fetch.delay=500
 
 dl.hook.jcr.fetch.max.failures=5
 
-A file extension of `*`{.western} will permit all file extensions.
+A file extension of `*` will permit all file extensions.
 
 dl.file.extensions=\*
 
@@ -5991,7 +5875,7 @@ iframe.password.token.role=
 Set the maximum file size and valid file extensions for images. A value
 of 0 for the maximum file size can be used to indicate unlimited file
 size. However, the maximum file size allowed is set in the property
-`com.liferay.portal.upload.UploadServletRequestImpl.max.size`{.western}.
+`com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
 
 ig.image.max.size=10240000
 
@@ -6040,7 +5924,7 @@ also not approved can be saved without incrementing version.
 journal.article.force.increment.version=false
 
 Set the list of article types. The display text of each of the article
-types is set in `content/Language.properties`{.western}.
+types is set in `content/Language.properties`.
 
 journal.article.types=announcements,blogs,general,news,press-release,test
 
@@ -6291,8 +6175,8 @@ configuration mode of the portlet.
 navigation.display.style.options=1,2,3,4,5,6
 
 Define each mode with 4 comma delimited strings that represent the form:
-`headerType, rootLayoutType, rootLayoutLevel,  includedLayouts`{.western},
-and `nestedChildren`{.western}.
+`headerType, rootLayoutType, rootLayoutLevel,  includedLayouts`,
+and `nestedChildren`.
 
 navigation.display.style[1]=breadcrumb,relative,0,auto,true
 
@@ -6433,10 +6317,10 @@ tags.compiler.enabled=true
 
 Input a class name that implements
 *com.liferay.portlet.tags.util.TagsAssetValidator*. This class will be
-called to validate assets. The `DefaultTagsAssetValidator`{.western}
+called to validate assets. The `DefaultTagsAssetValidator`
 class is just an empty class that doesn't actually do any validation.
 
-The `MinimalTagsAssetValidator`{.western} requires all assets to have at
+The `MinimalTagsAssetValidator` requires all assets to have at
 least one tag entry.
 
 *Examples: *
@@ -6463,7 +6347,7 @@ tasks.default.stages=2
 
 Specify the default role name for each stage of approval ordered from
 lowest level of approval to highest. These Roles must have the
-`APPROVE_PROPOSAL`{.western} permission.
+`APPROVE_PROPOSAL` permission.
 
 tasks.default.role.names=Community Administrator,Community Owner
 
@@ -6506,7 +6390,7 @@ wiki.page.titles.regexp=([\^/\\\\[\\\\]%&?@]+)
 Set the following property to specify the characters that will be
 automatically removed from the titles when importing wiki pages. This
 regexp should remove any characters that are forbidden in the regexp
-specified in `wiki.page.titles.regexp`{.western}.
+specified in `wiki.page.titles.regexp`.
 
 wiki.page.titles.remove.regexp=([/\\\\[\\\\]%&?@]+)
 
@@ -6632,7 +6516,7 @@ should be deployable on any portlet container which supports the
 standard. Portlets are placed on the page in a certain order by the end
 user and are served up dynamically by the portal server. This means that
 certain “givens” that apply to servlet-based projects, such as control
-over URLs or access to the `HttpServletRequest`{.western} object, don’t
+over URLs or access to the `HttpServletRequest` object, don’t
 apply in portlet projects, because the portal server generates these
 objects dynamically.
 Portal applications come generally in two flavors: 1) portlets can be
@@ -6870,12 +6754,12 @@ the Plugin Installer is doing behind the scenes.
 
 You can change the defaults for this directory structure so that it is
 stored anywhere you like by modifying the appropriate properties in your
-`portal-ext.properties`{.western} file. Please see the above section on
-the `portal-ext.properties`{.western} file for more information.
+`portal-ext.properties` file. Please see the above section on
+the `portal-ext.properties` file for more information.
 
 To have Liferay hot deploy a portlet or theme plugin, copy the plugin
 into your hot deploy folder, which by default is in
-`[Liferay Home]/deploy`{.western}. If you are watching the Liferay
+`[Liferay Home]/deploy`. If you are watching the Liferay
 console, you should see messages like the following:
 
 16:11:47,616 INFO [PortletAutoDeployListener:71] Copying portlets for
@@ -6964,16 +6848,16 @@ Liferay 4.3.5 with the addition of code that allows Liferay to determine
 which application server it is running on and adjust the way it deploys
 plugins as a result.
 If you have upgraded from one of these older versions, you may still
-have settings in your `portal.ext.properties `{.western}file that are no
+have settings in your `portal.ext.properties `file that are no
 longer needed. One of these settings is the manual override of the
-default value of `auto.deploy.dest.dir`{.western}.
+default value of `auto.deploy.dest.dir`.
 
 In versions of Liferay prior to 4.3.5, there is a property called
-`auto.deploy.dest.dir`{.western} that defines the folder where plugins
+`auto.deploy.dest.dir` that defines the folder where plugins
 are deployed after the hot deploy utilities have finished preparing
 them. This folder maps to a folder that the container defines as an
 auto-deploy or a hot deploy folder. By default in older versions of
-Liferay, this property is set to `../webapps`{.western}. This default
+Liferay, this property is set to `../webapps`. This default
 value works for Tomcat containers (if Tomcat has been launched from its
 *bin* folder), but will not work for other containers that define their
 hot deploy folders in a different place. In newer versions of Liferay,
@@ -6981,14 +6865,14 @@ this value is automatically set to the default for the application
 server upon which Liferay is running.
 
 For example, Glassfish defines the hot deploy folder as a folder called
-`autodeploy`{.western} inside of the domain folder in which your server
+`autodeploy` inside of the domain folder in which your server
 is running. By default, this is in
-`<Glassfish Home>/domains/domain1/autodeploy`{.western}. JBoss defines
+`<Glassfish Home>/domains/domain1/autodeploy`. JBoss defines
 the hot deploy folder as a root folder inside of the particular server
 configuration you are using. By default, this is in
-`<JBoss Home>/server/default/deploy`{.western}. WebLogic defines this
+`<JBoss Home>/server/default/deploy`. WebLogic defines this
 folder inside of the domain directory. By default, this is in
-`<Bea Home>/user_projects/domains/<domain name>/autodeploy`{.western}.
+`<Bea Home>/user_projects/domains/<domain name>/autodeploy`.
 
 The best thing to do when upgrading to newer versions of Liferay Portal
 is to remove this property altogether. It is not needed, as the
@@ -6999,20 +6883,20 @@ folder, follow the instructions below.
 You will first need to determine where the hot deploy folder is for the
 container you are running. Consult your product documentation for this.
 Once you have this value, there are two places in which you can set it:
-the `portal-ext.properties`{.western} file and in the Plugin Installer
+the `portal-ext.properties` file and in the Plugin Installer
 portlet.
 
-To change this setting in the `portal-ext.properties`{.western} file,
+To change this setting in the `portal-ext.properties` file,
 browse to where Liferay was deployed in your application server. Inside
 of this folder should be a *WEB-INF/classes* folder. Here you will find
-the `portal-ext.properties`{.western} file. Open this file in a text
-editor and look for the property `auto.deploy.dest.dir`{.western}. If it
+the `portal-ext.properties` file. Open this file in a text
+editor and look for the property `auto.deploy.dest.dir`. If it
 does not appear in the file, you can add it. The safest way to set this
 property—as we will see later—is to define the property using an
 absolute path from the root of your file system to your application
 server's hot deploy folder. For example, if you are using Glassfish, and
-you have the server installed in `/java/glassfish`{.western}, your
-`auto.deploy.dest.dir`{.western} property would look like the following:
+you have the server installed in `/java/glassfish`, your
+`auto.deploy.dest.dir` property would look like the following:
 
 auto.deploy.dest.dir=/java/glassfish/domains/domain1/autodeploy
 
@@ -7045,10 +6929,10 @@ If you are having hot deploy trouble in Liferay versions 4.3.5 and
 greater, it is possible that the administrator of your application
 server has changed the default folder for auto deploy in your
 application server. In this case, you would want to set
-`auto.deploy.dest.dir`{.western} to the customized folder location as
+`auto.deploy.dest.dir` to the customized folder location as
 you would with older versions of Liferay. In Liferay 4.3.5 and greater,
 this setting still exists, but is blank. Add the property to your
-`portal-ext.properties`{.western} file and set its value to the fully
+`portal-ext.properties` file and set its value to the fully
 qualified path to the auto deploy folder configured in your application
 server.
 
@@ -7086,16 +6970,16 @@ your application server.
 ##### Example: WebSphere® Application Server
 
 1.  If you don't have one already, create a
-    `portal-ext.properties`{.western} file in the Liferay Home folder of
+    `portal-ext.properties` file in the Liferay Home folder of
     your Liferay installation. Add the following directive to it:
 
     auto.deploy.dest.dir=${liferay.home}/websphere-deploy
 
-2.  Create a folder called `websphere-deploy`{.western} inside your
-    `$LIFERAY_HOME`{.western} folder. This is the folder where the
+2.  Create a folder called `websphere-deploy` inside your
+    `$LIFERAY_HOME` folder. This is the folder where the
     Lucene index, Jackrabbit config, and deploy folders are.
 
-3.  Make sure the `web.xml`{.western} file inside the plugin you want to
+3.  Make sure the `web.xml` file inside the plugin you want to
     install has the following context parameter in it:
 
 <context-param\>
@@ -7107,7 +6991,7 @@ your application server.
 </context-param\>
 
 Liferay versions 5.2.2 and higher will automatically inject this into
-the `web.xml`{.western} file on WebSphere containers.
+the `web.xml` file on WebSphere containers.
 
 4.  The WebSphere deploy occurs in two steps. You will first use
     Liferay's tools to “pre-deploy” the file, and then use WebSphere's
@@ -7121,15 +7005,15 @@ the `web.xml`{.western} file on WebSphere containers.
     steps.
 
 5.  Deploy your .war file using Liferay's Plugin Installer or by copying
-    it into `$LIFERAY_HOME/deploy`{.western}. Liferay will make its
+    it into `$LIFERAY_HOME/deploy`. Liferay will make its
     modifications and because we changed the
-    `auto.deploy.dest.dir`{.western} in the first step, it will copy the
-    resulting .war file into `$LIFERAY_HOME/websphere-deploy`{.western}.
+    `auto.deploy.dest.dir` in the first step, it will copy the
+    resulting .war file into `$LIFERAY_HOME/websphere-deploy`.
     You will see a *copied successfully* message in the log.
 
 6.  Use WebSphere's tools to deploy the .war file. Make the context root
     for the .war file equal to the file name (i.e.,
-    `/my-first-portlet`{.western}). Once the .war file is deployed, save
+    `/my-first-portlet`). Once the .war file is deployed, save
     it to the master configuration.
 
 7.  Go back to the *Applications -\> Enterprise Applications* screen in
@@ -7141,8 +7025,8 @@ the `web.xml`{.western} file on WebSphere containers.
     and registered upon subsequent restarts of WebSphere.
 
 Experienced WebSphere system administrators can further automate this by
-writing a script which watches the `websphere-deploy`{.western}
-directory and uses `wsadmin`{.western} commands to then deploy plugins
+writing a script which watches the `websphere-deploy`
+directory and uses `wsadmin` commands to then deploy plugins
 automatically.
 
 #### Changing the Configuration Options in Multiple Places
@@ -7150,7 +7034,7 @@ automatically.
 Sometimes, especially during development when several people have
 administrative access to the server at the same time, the auto deploy
 folder location can get customized in both the
-`portal-ext.properties`{.western} file and in the Control Panel. If this
+`portal-ext.properties` file and in the Control Panel. If this
 happens, the value in the Control Panel takes precedence over the value
 in the properties file. If you go into the Control Panel and change the
 value to the correct setting, plugin deployment will start working
@@ -7173,7 +7057,7 @@ You can create your plugin repository in two ways:
     repository by using its graphical interface and an HTTP server.
 
 2.  Create an XML file using the Liferay Plugin Repository DTD
-    (`http://www.liferay.com/dtd/liferay-plugin-repository_6_0_0.dtd`{.western})
+    (`http://www.liferay.com/dtd/liferay-plugin-repository_6_0_0.dtd`)
     and an HTTP server.
 
 Both methods have their benefits. The first method allows users to
@@ -7188,7 +7072,7 @@ server running Liferay.
 
 The second method does not require an instance of Liferay to be running.
 You can upload plugins to an HTTP server of your choice, and then create
-an XML file called `liferay-plugin-repository.xml`{.western} manually.
+an XML file called `liferay-plugin-repository.xml` manually.
 If you make this file available on an HTTP server (it can be the same
 one upon which the plugins are stored, or a different one altogether),
 you can connect the repository to a Plugin Installer in the Control
@@ -7201,7 +7085,7 @@ Catalog in the Control Panel.
 
 You will want to use the **Software Catalog** if you will have multiple
 users submitting portlets into the repository, and if you don't want to
-worry about creating the `liferay-plugin-repository.xml`{.western} file
+worry about creating the `liferay-plugin-repository.xml` file
 yourself.
 
 ![image](../../images/portal-admin-ch6_html_m2cde1a0b.png)\
@@ -7409,12 +7293,12 @@ portlet.
 In order to get your Software Catalog to generate this XML data, you
 will need to access a particular URL. If you have created a friendly URL
 for your community (for example, the default community, which is called*
-guest,* has a friendly URL of `/guest`{.western} already configured for
+guest,* has a friendly URL of `/guest` already configured for
 it), you can use the friendly URL. If not, you will* *first need to know
 the Group ID of the community in which your Software Catalog portlet
 resides. You can do this by accessing the Manage Pages interface and
 looking at the URLs for any of the pages. The URL will look something
-like this: `http://localhost:8080/web/10148/1`{.western}.
+like this: `http://localhost:8080/web/10148/1`.
 
 Obviously, it is much easier if you are using Friendly URLs, and we
 highly recommend that you do.
@@ -7499,7 +7383,7 @@ to your repository.
 
 If you want to serve your repository off of a static web server, you can
 save this document to a file called
-`liferay-plugin-package.xml`{.western} and put this file on your HTTP
+`liferay-plugin-package.xml` and put this file on your HTTP
 server. You can then give out the URL to the directory which holds this
 file on your web site, and anyone with an instance of Liferay will be
 able to point their Plugin Installer portlets to it.
@@ -7546,7 +7430,7 @@ If you still wish to use a text editor to create your software catalog,
 you can. To manually create a software catalog, obtain the DTD for the
 XML file from Liferay's source code. You will find this DTD in the
 *definitions* folder in the Liferay source. It is a file called
-`liferay-plugin-package_6_0_0.dtd`{.western}. Use this DTD with a
+`liferay-plugin-package_6_0_0.dtd`. Use this DTD with a
 validating XML editor (a good, free choice is jEdit with all the XML
 plugins) to create your software catalog manually.
 
@@ -7588,10 +7472,10 @@ interfaces for the various services are covered in *Liferay in Action*,
 but before they can be used there are steps that need to be taken to
 enable users to access those services remotely.
 
-In the default `portal.properties`{.western} file, there is a section
+In the default `portal.properties` file, there is a section
 called **Main Servlet**. This section defines the security settings for
 all of the remote services provided by Liferay. Copy this section and
-paste it into your custom `portal-ext.properties`{.western} file, and
+paste it into your custom `portal-ext.properties` file, and
 you can configure security settings for the Axis Servlet, the Liferay
 Tunnel Servlet, the Spring Remoting Servlet, the JSON Tunnel Servlet,
 and the WebDAV servlet.
@@ -7607,7 +7491,7 @@ granted.
 
 The first layer of security that a user needs to get through in order to
 call a method from the service layer is servlet security. The *Main
-Servlet* section of the `portal-ext.properties`{.western} file is used
+Servlet* section of the `portal-ext.properties` file is used
 to enable or disable access to Liferay's remote services. In that
 section of the properties file, there are properties for each of
 Liferay's remote services.
@@ -7618,18 +7502,18 @@ machine in your network. This job looks in a particular shared folder on
 your network and uploads documents to your community's document library
 portlet on a regular basis, using Liferay's web services. To enable this
 batch job to get through the first layer of security, you would modify
-the `portal-ext.properties`{.western} file and put the IP address of the
+the `portal-ext.properties` file and put the IP address of the
 machine on which the batch job is running in the list for that
 particular service. For example, if the batch job uses the Axis web
 services to upload the documents, you would enter the IP address of the
 machine on which the batch job is running to the
-`axis.servlet.hosts.allowed`{.western} property. A typical entry might
+`axis.servlet.hosts.allowed` property. A typical entry might
 look like this:
 
 axis.servlet.hosts.allowed=192.168.100.100, 127.0.0.1, SERVER\_IP
 
 If the machine on which the batch job is running has the IP address
-`192.168.100.100`{.western}, this configuration will allow that machine
+`192.168.100.100`, this configuration will allow that machine
 to connect to Liferay's web services and pass in user credentials to be
 used to upload the documents.
 
@@ -7683,7 +7567,7 @@ In summary, accessing Liferay remotely requires the successful passing
 of two security checks:
 
 1.  The IP address must be pre-configured in the server's
-    `portal-ext.properties`{.western} file.
+    `portal-ext.properties` file.
 
 2.  The user ID being used must have permission to access the resources
     it is attempting to access.
@@ -7736,7 +7620,7 @@ advantage of Liferay's remote services, please see *Liferay in Action*.
 
 This very long chapter covered a cornucopia of topics. First, we went
 through all of the options which can be customized in your
-`portal-ext.properties`{.western} file, exhaustively. This serves as a
+`portal-ext.properties` file, exhaustively. This serves as a
 reference section for the file, so you can quickly find documentation
 for any property you might encounter.
 
