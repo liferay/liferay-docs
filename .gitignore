@@ -3,6 +3,10 @@
 *.iml
 *.swp
 *-tmp.html
+.project
+.classpath
+.settings
+nbbuild.xml
 
 /*.ipr
 /*.iws
@@ -10,3 +14,4 @@
 /build.*.properties
 
 **/build/**
+**nbproject**
