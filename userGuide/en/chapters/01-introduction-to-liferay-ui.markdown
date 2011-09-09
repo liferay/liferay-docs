@@ -6,45 +6,69 @@ This chapter covers these activities:
 
 -   *Liferay Administration:* How to administer a Liferay portal.
 
-## Liferay's User Interface
+Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a “dashboard” application) so that the end user can see everything he or she interacts with at a glance.
 
-Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside of the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a “dashboard” application) so that the end user can see everything he or she interacts with at a glance.
+To achieve this, all the application functionality within Liferay Portal is in fragments of the page called *portlets*. Portlets are web applications that run in a portion of a web page. Liferay's core is a portlet container that aggregates portlets on particular pages and displays them to users. In this way, one or many applications can reside on a page, and users can (at the administrator's discretion) arrange them however they like.
 
-To achieve this, all of the application functionality within Liferay Portal is in fragments of the page called *portlets*. Portlets are web applications that run in a portion of a web page. Liferay's core is a portlet container that aggregates sets of portlets that reside on particular pages and displays them to users. In this way, one or many applications can reside on a page, and users can (at the administrator's discretion) arrange them however they like.
+Portlet applications, like servlet applications, are defined by a Java standard which various portal server vendors have implemented. The Java standard defines the portlet specification. A JSR-168 or JSR-286 standard portlet should be deployable on any portlet container which supports those standards. Portlets are placed on the page in a certain order by the end user and are served up dynamically by the portal server.
 
-Portlet applications, like servlet applications, have become a Java standard which various portal server vendors have implemented. The Java standard defines the portlet specification. A JSR-168 or JSR-286 standard portlet should be deployable on any portlet container which supports those standards. Portlets are placed on the page in a certain order by the end user and are served up dynamically by the portal server.
+Portal applications generally come in two flavors: 1) multiple portlets can be written to provide small amounts of functionality and then are aggregated by the portal server into a larger application, or 2) whole applications can be written to reside in only one or a few portlet windows. The choice is up to the application designers. Only developers have to worry about what happens inside the portlet itself. The portal server handles building out the page as it is presented to users.
 
-Portal applications generally come in two flavors: 1) multiple portlets can be written to provide small amounts of functionality and then are aggregated by the portal server into a larger application, or 2) whole applications can be written to reside in only one or a few portlet windows. The choice is up to the application designers. Only developers have to worry about what happens inside of the portlet itself. The portal server handles building out the page as it is presented to users.
+Portlets are not difficult to build, and Java standard portlets can be written by any Java developer with experience in writing web applications. Liferay provides a Plugins Software Development Kit that makes it easy to design new portlet projects. For further information about the Plugins SDK, please see *Liferay Developer's Guide*, which is the companion volume to this one, or *Liferay in Action*, published by Manning Publications, which is the official guide to Liferay development.
 
-Portlets are not difficult to build, and Java standard portlets can be written by any Java developer with experience in writing web applications. Liferay provides a Plugins Software Development Kit that makes it easy to design new portlet projects. For further information about the Plugins SDK, please see *Liferay in Action*, published by Manning Publications, which is the official guide to Liferay development.
+Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages are available on Github at  [https://github.com/liferay/liferay-plugins](https://github.com/liferay/liferay-plugins).
 
-Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages can be checked out from our Subversion repository ([http://svn.liferay.com/repos/public/plugins/trunk/portlets](http://svn.liferay.com/repos/public/plugins/trunk/portlets)).
+## Navigating Liferay
 
-### Navigating Liferay
+Liferay initially presents a very simple interface. Unauthenticated users can navigate the public pages of the portal and see a *Sign In* link in the top right corner of the screen.
 
-Liferay initially presents a very simple interface. (If your portal initially presents you with the demo web site, 7 Cogs, see Chapter 2 for removal instructions.) Unauthenticated users can navigate the public pages of the portal and will see a *Sign In* link in the top right corner of the screen.
+---
+![tip](../../images/01-tip.png)If your portal initially presents you with the demo web site, 7 Cogs, see Chapter 12 in Part 2 for removal instructions.
+---
 
-To sign into Liferay for the first time, you can click the *Sign In* link. You will then be presented with the **Sign In Portlet**. This portlet allows a user (or a prospective user) to do several things: sign in to Liferay, create a new account on the portal, or have a password reminder emailed if the user has forgotten his or her password. An OpenID sign-in option is also available. To sign in for the first time, don't create an account for yourself. We will do that later. If you were to create a new account on the portal for yourself now, it would be created using Liferay's defaults, which means the account would not have access to the administrative portlets you need in order to set up Liferay for your organization. For this reason, you will need to sign in as the default administrative user. This user's credentials are:
+To sign into Liferay for the first time, click the *Sign In* link. You'll next see the **Sign In Portlet**. This portlet allows a user (or a prospective user) to do several things: sign in to Liferay, create a new account on the portal, or have a password reminder emailed to you. An OpenID sign-in option is also available. To sign in for the first time, don't create an account for yourself. We'll do that later. If you were to create a new account on the portal for yourself now, it would be created using Liferay's defaults, which means the account wouldn't have access to the administrative portlets in the Control Panel you'll need in order to set up Liferay for your organization. For this reason, you should sign in as the default administrative user. This user's credentials are:
 
 **User Name:** test@liferay.com
 
 **Password:** test
 
-![Logging into Liferay Portal](../../images/01-logging-into-liferay-portal.png)*Illustration 1: Logging into Liferay Portal*
+![Figure 1.1: Logging into Liferay Portal](../../images/01-logging-into-liferay-portal.png)
 
-Go ahead and sign in to your new portal using these credentials. As you can see, Liferay users' email addresses are by default used for their user IDs. This can be changed later if you don't like this functionality, but it is generally a good practice to keep it this way. Users' email addresses are not normally things they will forget, and they are unique to each user, so they make good candidates for user IDs.
+Go ahead and sign in to your new portal using these credentials. As you can see, Liferay users' email addresses are by default used for their user IDs. This can be changed later if you don't like this functionality, but it's generally a good practice to keep it this way. Users' email addresses are not normally things they will forget, and they are unique to each user, so they make good candidates for user IDs.
 
-The first page that will be displayed when a user logs in for the first time is the Terms of Use page. By default, users are required to agree to the terms of use before they can access the portal. Scroll to the bottom of the page and click *I Agree* to proceed. Note that as a portal administrator, you can customize the Terms of Use page or disable it altogether. 
+The first page that's displayed when a user logs in for the first time is the Terms of Use page. By default, users must agree to the terms of use before they can access the portal. Scroll to the bottom of the page and click *I Agree* to proceed. Note that as a portal administrator, you can customize the Terms of Use page or disable it altogether. Next, we'll look at how to navigate once you're signed in. 
 
-Once you have logged in as the default administrative user, you will see that the Dockbar has now appeared across the top of the page. The Dockbar is the primary tool logged-in users have for navigating the portal and accessing administrative functions from anywhere on the web site. Depending on the logged-in users' roles and what sections of the website they are viewing, they may see all or only some of the options available in the Dockbar.
+### Using the Dockbar
 
-As an administrator, the first option you will see on the Dockbar is *Add* . Mousing over *Add* will reveal a list of items that you can add. You can add a new page at the current navigation level or add portlets to the current page. When you first pull down the menu, you will see a list of common portlets that you can click on to add to the page. You will also see a *More* option, which will show you all of the currently available portlets. From the expanded *More* menu, you can add portlets to the current page. If you want to add a portlet to the current page, you can click the *Add* button next to a portlet to add it to the first column in the page, or drag the portlet from the menu to where you want it on the page.
+Once you've logged in as the default administrative user, the Dockbar appears across the top of the page. The Dockbar is the primary tool logged-in users have for navigating the portal and accessing administrative functions from anywhere in the portal. Depending on the logged-in users' roles and what sections of the portal they are viewing, they may see all or only some of the options. For each option, a menu appears when you mouse over it. Let's look at what's available in the Dockbar. 
 
-![Add Menu from the Dockbar](../../images/01-add-menu-from-dockbar.png)*Illustration 2: Add Menu from the Dockbar*
+#### Add
 
-The next option you'll see is the *Manage* menu. From this menu, you can access various settings for the current page and site. The page settings available are *Page, Page Layout, and Page Customizations*. Clicking on *Page* brings up a dialog box which enables you to modify details about the current page. *Page Layout* is a shortcut to a tab of this dialog box which lets you choose a layout template for the current page. Layout templates provide visual structure to page contents. *Page Customizations* enables you to directly select portions of the page to be customizable. Users with permission to customize your page will then be able to customize the portlets you selected. The site settings are the same as their counterparts in the *Control Panel*, which is covered later in this chapter.
+As an administrator, the first option you see on the Dockbar is *Add*, which contains a list of items that you can add either to the page or to the current site.
+
+![Figure 1.2 Add Menu from the Dockbar](../../images/01-add-menu-from-dockbar.png)
+
+**Page:** adds a new page at the current navigation level. 
+
+**Applications:** contains a list of common portlets that you can add to the page. These portlets are covered in chapters 3 and 4. 
+
+**More:** shows a list of all the currently deployed portlets. To add a portlet to the current page, click the *Add* button next to a portlet, or drag the portlet from the menu to where you want it on the page.
+
+The Add menu gives you a nice, quick way to build your pages. 
+
+#### Manage
+
+The next option is the *Manage* menu. From here, you can access various settings for the current page and site. 
 
 ![Manage Menu from the Dockbar](../../images/01-manage-menu-from-dockbar.png)*Illustration 2: Manage Menu from the Dockbar*
+
+**Page:** brings up a dialog box containing controls for managing every aspect of the pages on the current site. These include search engine optimization, the theme, layout, and more. Details about this are covered in chapter 2. 
+
+**Page Layout:** lets you choose a layout template for the current page. Layout templates provide visual structure to page contents, and are covered in more detail in chapter 2. 
+
+**Page Customizations:** enables you to directly select portions of the page that users can customize. Users with permission to customize this page can then customize the sections of the page you select. 
+
+**Site Settings:** is a quick interface to the site settings section in the *Control Panel*, which is covered later in this chapter.
 
 The next thing you'll see is a check box labeled *Edit Controls*. This lets you turn on and off the edit controls in the top of the portlet windows. This is helpful for administrators who want to look at a page they're working on and see it the way a regular user would.
 
@@ -58,7 +82,7 @@ Your (or the default user's) name appears at the right side of the dockbar next 
 
 One of the most important tools Liferay offers for managing your portal is the aforementioned *Control Panel*, accessible from the *Go To* menu of the dockbar. The *Control Panel* is composed of administrative pages that you can use to mange various aspects of the portal.
 
-### Navigating the Control Panel
+## Navigating the Control Panel
 
 The control panel is very easy to navigate. On the left side is a list of headings with functions underneath them. The headings are in alphabetical order, but the functions are in a logical order.
 
@@ -242,7 +266,9 @@ To add an organization, click the *Users and Organizations* link on the left sid
 
 **Parent Organization:** Click the *Select* link to bring up a window which allows you to select the organization in the system that is the direct parent of the organization you are creating. Click the *Remove* button to remove the currently configured parent.
 
+---
 ![tip](../../images/01-tip.png) **Tip:** Note that you are already a member of any organizations that you created. By creating an organization, you become both a member and receive the Organization Owner role, which gives you full rights to the organization.
+---
 
 Fill out the information for your organization and click *Save*. As before with users, the form reappears and you can enter more information about the organization. Organizations can have multiple email addresses, postal addresses, web sites, and phone numbers associated with them. The *Services* link can be used to indicate the operating hours of the organization, if any.
 
