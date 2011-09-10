@@ -90,7 +90,7 @@ want to change the scope, it only takes a few simple steps.
 5.  Click *Save*.
 
 ![image](../../images/portal-admin-ch5_html_2c05ad6b.jpg)*Illustration 1: Changing
-the scope for a portlet *
+the scope for a portlet*
 
 That's all it takes to change the scope for a particular portlet
 instance. By setting the scope to *page*, you can add as many of these
@@ -115,7 +115,7 @@ tab.
 There is only one field to fill out: a name for your archive. Create a
 name for your archive and click *Save*. You will now see your archive in
 the list. If for whatever reason you need to revert the portlet to these
-archived settings, you can click *Actions → Restore* next to the
+archived settings, you can click *Actions ->  Restore* next to the
 archived setup you want to restore.
 
 Unless otherwise noted, all of the portlets in this chapter support this
@@ -278,17 +278,17 @@ The Blogs portlet is easy to configure. Click on the *Menu* icon in the
 portlet's title bar and select *Configuration*. Beneath the Setup tab,
 you will see another row of options.
 
-**Email From: **Selecting the *Email From tab* allows you to define the
+**Email From:** Selecting the *Email From tab* allows you to define the
 *From:* field in the email messages that users receive from the Blogs
 portlet.
 
-**Entry Added Email: **This option allows you to enter a subject and
+**Entry Added Email:** This option allows you to enter a subject and
 body of the emails sent out when a new Blog entry has been added.
 
 **Entry Updated Email:** This option allows you to enter a subject and
 body of the emails sent out when a new Blog entry has been updated.
 
-**Display Settings: ** Here, you can configure the various display
+**Display Settings:** Here, you can configure the various display
 options for the Blogs portlet.
 
 ![image](../../images/portal-admin-ch5_html_m1aaf3fd4.png)*Illustration 5: Blogs
@@ -308,7 +308,7 @@ the Title. Setting this to Abstract causes Liferay to display only the
 first 30 words of your blog entries, with a Read More link at the bottom
 of each to allow users to read the whole entry if they wish.
 
-**Enable Flags: **Allow users to flag content as inappropriate and send
+**Enable Flags:** Allow users to flag content as inappropriate and send
 an email to the administrators.
 
 **Enable Ratings:** Allows you to enable your users to rate your blog
@@ -329,7 +329,7 @@ entries will be displayed at once. The default is set to twenty.
 **Display Style**: You can select to display the full content,
 abstracts, or title of your blogs.
 
-**Format: **You can choose which format you want to deliver your blogs:
+**Format:** You can choose which format you want to deliver your blogs:
 RSS 1.0, RSS 2.0, or Atom 1.0.
 
 #### Permissions
@@ -790,15 +790,11 @@ In addition to ranks, you can also select who is a “moderator” by what
 roles are held. Defaults are there for you which show you how to do
 this.
 
-Moderator=community-role:Message Boards Administrator
-
-Moderator=organization:Message Boards Administrator
-
-Moderator=organization-role:Message Boards Administrator
-
-Moderator=regular-role:Message Boards Administrator
-
-Moderator=user-group:Message Boards Administrator
+    Moderator=community-role:Message Boards Administrator
+    Moderator=organization:Message Boards Administrator
+    Moderator=organization-role:Message Boards Administrator
+    Moderator=regular-role:Message Boards Administrator
+    Moderator=user-group:Message Boards Administrator
 
 As you can see, all you need to do is set the rank, the collection type,
 and the name of the type. In the example above, anyone who has a
@@ -858,9 +854,9 @@ Next, there are two sections: *Incoming* and *Outgoing*. These define
 the mail settings for receiving mail and for sending mail. The Incoming
 tab has the following options:
 
-**Protocol:* ***Select POP or IMAP.
+**Protocol:** Select POP or IMAP.
 
-**Server Name: **Enter the host name of the mail server you are using.
+**Server Name:** Enter the host name of the mail server you are using.
 
 **Server Port:** Enter the port on which your mail service is running.
 
@@ -1255,30 +1251,29 @@ You can now begin to add content to the page. Notice that there is a
 very convenient “cheat sheet” which can help with the wiki syntax. You
 can use this syntax to format your wiki pages. Consider for example the
 following wiki document:
-== Welcome to Our Wiki! ==
 
+    == Welcome to Our Wiki! ==
 
 This is our new wiki, which should allow us to collaborate on
 documentation. Feel free to add pages showing people how to do stuff.
 Below are links to some sections that have already been added.
 
-
-[[Introduction ]]
-
-
-[[Getting Started]]
-
-
-[[Configuration]]
-
-
-[[Development]]
-
-
-[[Support]]
-
-
-[[Community]]
+    [[Introduction ]]
+    
+    
+    [[Getting Started]]
+    
+    
+    [[Configuration]]
+    
+    
+    [[Development]]
+    
+    
+    [[Support]]
+    
+    
+    [[Community]]
 
 This would produce the following wiki page:
 
@@ -1342,7 +1337,7 @@ page as an RSS feed in three formats: RSS 1.0, RSS 2.0, and Atom 1.0.
 **Email Subscription:** Contains links allowing you to subscribe to the
 entire wiki or just to this page.
 
-**Advanced Actions: **Contains links allowing you to modify the
+**Advanced Actions:** Contains links allowing you to modify the
 permissions on the page, make a copy of the page, move (rename) the
 page, or delete the page.
 
@@ -1495,24 +1490,24 @@ Value, Information Lifespan, Daily Limit, Participation Value,
 Participation Lifespan, *and *Daily Limit*.
 
 **Information Value:** Indicates how many points a user receives for the
-information content of a specific action.** **
+information content of a specific action.
 
-**Information Lifespan: **Indicates, in number of days, how long it will
+**Information Lifespan:** Indicates, in number of days, how long it will
 be before the information points expire. Setting it to 0 means that they
-will never expire.** **
+will never expire.
 
-**Daily Limit: **This is the maximum number of actions of this type that
-a user will receive information points for in a given day.** **
+**Daily Limit:** This is the maximum number of actions of this type that
+a user will receive information points for in a given day.
 
 **Participation Value:** Indicates how many points a user receives for
-the participating in the content creation of the website.** **
+the participating in the content creation of the website.
 
-**Participation Lifespan: **Indicates, in number of days, how long it
+**Participation Lifespan:** Indicates, in number of days, how long it
 will be before the participation points expire. Setting it to 0 means
-that they will never expire.** **
+that they will never expire.
 
-**Daily Limit: **This is the maximum number of actions of this type that
-a user will receive participation points for in a given day.** **
+**Daily Limit:** This is the maximum number of actions of this type that
+a user will receive participation points for in a given day.
 
 The actions available that you can provide credit for are wide ranging.
 Users can receive credit for everything from writing wiki pages to

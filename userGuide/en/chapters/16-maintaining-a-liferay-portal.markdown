@@ -48,9 +48,9 @@ community by community basis and turn it on and off when needed.
 To enable Google Analytics support, go to the Manage Pages screen for
 the community for which you want to enable support. You can do this
 through the Control Panel by going to either the *Organizations* or
-*Communities* link in the *Portal* section, and then clicking *Actions →
-Manage Pages* for the community or organization you want to analyze.*
-*Click the *Settings* tab.
+*Communities* link in the *Portal* section, and then clicking *Actions ->
+Manage Pages* for the community or organization you want to analyze.
+Click the *Settings* tab.
 
 ![image](../../images/portal-admin-ch8_html_m3451b46c.png)
 *Illustration 1: Setting Up Google Analytics*
@@ -168,12 +168,12 @@ You will first need to implement Log4J logging in your class, with a
 statement such as the following (taken from Liferay's
 `JCRHook`{.western} class):
 
-private static Log \_log = LogFactory.getLog(JCRHook.class);
+private static Log _log = LogFactory.getLog(JCRHook.class);
 
 You would then use this `_log`{.western} variable to create log messages
 in your code for the various logging levels:
 
-\_log.error("Reindexing " + node.getName(), e1);
+_log.error("Reindexing " + node.getName(), e1);
 
 To enable your logging messages to appear in your server's log file via
 the Control Panel, click the *Add Category* tab on the same *Log Levels*
@@ -291,11 +291,11 @@ The default values of some properties has been changed. In order to keep
 the previous values you have to run Liferay passing the following system
 property:
 
-java ... -Dexternal-properties=portal-legacy-5.1.properties
+    java ... -Dexternal-properties=portal-legacy-5.1.properties
 
 Each application server has different methods to add this system
 property. In Tomcat modify `setenv.sh/setenv.bat`{.western} and append
-that option to the environment variable JAVA\_OPTS. The scripts
+that option to the environment variable JAVA_OPTS. The scripts
 `setenv.sh`{.western} or `setenv.bat`{.western} are not delivered with
 Tomcat but if they exist, Tomcat will use them in the startup process,
 so it's a nice way to separate your own settings from tomcat's default
@@ -304,25 +304,16 @@ shell scripts.
 Here are the complete contents of that file
 (`portal-legacy-5.1.properties`{.western}) for reference:
 
-resource.repositories.root=${user.home}/liferay
-
-theme.portlet.sharing.default=true
-
-organizations.country.required[regular]=true
-
-organizations.assignment.auto=true
-
-organizations.assignment.strict=false
-
-organizations.membership.strict=true
-
-lucene.dir=${resource.repositories.root}/lucene/
-
-jcr.jackrabbit.repository.root=${resource.repositories.root}/jackrabbit
-
-dl.hook.impl=com.liferay.documentlibrary.util.JCRHook
-
-dl.hook.file.system.root.dir=${resource.repositories.root}/document\_library
+    resource.repositories.root=${user.home}/liferay
+    theme.portlet.sharing.default=true
+    organizations.country.required[regular]=true
+    organizations.assignment.auto=true
+    organizations.assignment.strict=false
+    organizations.membership.strict=true
+    lucene.dir=${resource.repositories.root}/lucene/
+    jcr.jackrabbit.repository.root=${resource.repositories.root}/jackrabbit
+    dl.hook.impl=com.liferay.documentlibrary.util.JCRHook
+    dl.hook.file.system.root.dir=${resource.repositories.root}/document_library
 
 ##### Important changes in the configuration of Database access and mail integration
 
@@ -343,55 +334,45 @@ redeploying with the new SDK :
 -   Change the header of `/WEB-INF/liferay-plugin-package.xml`{.western}
     to:
 
-<!DOCTYPE plugin-package PUBLIC "-//Liferay//DTD Plugin Package
-5.2.0//EN"
-"http://www.liferay.com/dtd/liferay-plugin-package\_5\_2\_0.dtd"\>
+        <!DOCTYPE plugin-package PUBLIC "-//Liferay//DTD Plugin Package
+        5.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-plugin-package_5_2_0.dtd">
 
 -   Change the header of `/WEB-INF/liferay-look-and-feel.xml`{.western}
     to:
 
-<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 5.2.0//EN"
-"[http://www.liferay.com/dtd/liferay-look-and-feel\_5\_2\_0.dtd"\>]
+        <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 5.2.0//EN"
+        "[http://www.liferay.com/dtd/liferay-look-and-feel_5_2_0.dtd">]
 
 -   Upgrade compatibility version in
     `liferay-look-and-feel.xml`{.western}:
 
-<compatibility\>
-
-<version\>5.2.2+</version\>
-
-</compatibility\>
-
+        <compatibility>
+	    <version>5.2.2+</version>
+        </compatibility>
+    
 -   In `portal.vm`{.western}, delete the following lines :
 
-$theme.include($bottom\_ext\_include)
-
-$theme.include($session\_timeout\_include)
-
-$theme.include($sound\_alerts\_include)
+        $theme.include($bottom_ext_include)
+        $theme.include($session_timeout_include)
+        $theme.include($sound_alerts_include)
 
 If you don't remove these, you will see a blank page and an exception.
 
 -   In order to display the control panel in the dock, add the following
     lines in `dock.vm`{.western}:
 
-\#if ($show\_control\_panel)
-
-<li class="control-panel"\>
-
-<a href="$control\_panel\_url"\>$control\_panel\_text</a\>
-
-</li\>
-
-\#end
+        #if ($show_control_panel)
+	    <li class="control-panel">
+		<a href="$control_panel_url">$control_panel_text</a>
+	    </li>
+        #end
 
 -   In `navigation.css`{.western}:
 
-.lfr-dock li.control-panel a {
-
-background-image: url(../images/dock/control\_panel.png);
-
-}
+        .lfr-dock li.control-panel a {
+	    background-image: url(../images/dock/control_panel.png);
+        }
 
 -   Then copy `/images/dock/control_panel.png`{.western} from the
     classic theme (`ROOT/html/themes/classic`{.western}) into your
@@ -414,11 +395,10 @@ least the `scopeGroupId`{.western}. Here is a simple example of how to
 create a `Ser`{.western}`viceContext`{.western} instance and pass it to
 a service API:
 
-ServiceContext serviceContext = new ServiceContext();
+    ServiceContext serviceContext = new ServiceContext();
+    serviceContext.setScopeGroupId(myGroupId);
 
-serviceContext.setScopeGroupId(myGroupId);
-
-BlogsEntryServiceUtil.addEntry(...., serviceContext);
+    BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
 If you are invoking the service from a servlet, a Struts action, or any
 other front end class which has access to the
@@ -427,11 +407,11 @@ create the `ServiceContext`{.western} object and fill it with all the
 necessary values automatically. In that case the above example should be
 rewritten as follows:
 
-ServiceContext serviceContext =
-ServiceContextFactory.getInstance(BlogsEntry.class.getName(),
-portletRequest);
-
-BlogsEntryServiceUtil.addEntry(...., serviceContext);
+    ServiceContext serviceContext =
+    ServiceContextFactory.getInstance(BlogsEntry.class.getName(),
+    portletRequest);
+    
+    BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
 ### Upgrading From Liferay 5.2 to Liferay 6.0
 
@@ -461,7 +441,7 @@ the upgrade was successful. To temporarily switch your Liferay 6
 installation to algorithm 5, add the following entry to your
 `portal-ext.properties`{.western}:
 
-permissions.user.check.algorithm=5
+    permissions.user.check.algorithm=5
 
 This will tell Liferay that you are still using algorithm 5. Next, start
 Liferay and allow it to upgrade your database. Once the upgrade has
@@ -516,8 +496,8 @@ existing Ext Environment into the new plugin.
 
 To run the script, use the following command:
 
-ant upgrade-ext -Dext.dir=[path to existing Ext] -Dext.name=[new plugin
-name] -Dext.display.name=”[friendly name for new plugin]”
+    ant upgrade-ext -Dext.dir=[path to existing Ext] -Dext.name=[new plugin
+    name] -Dext.display.name=”[friendly name for new plugin]”
 
 This will create a directory with the name you specified, with the
 merged changes from your Ext Environment and the default .zip file. Both

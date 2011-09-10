@@ -289,11 +289,10 @@ As with the CAS install (see the below section entitled **Single
 Sign-On** ), you will need to import the certificate into the *cacerts
 keystore*. The import is handled by a command like the following:
 
-keytool -import -trustcacerts -keystore
-/some/path/jdk1.5.0\_11/jre/lib/security/cacerts -storepass changeit
--noprompt
-
--alias MyRootCA -file /some/path/MyRootCA.cer
+    keytool -import -trustcacerts -keystore
+    /some/path/jdk1.5.0_11/jre/lib/security/cacerts -storepass changeit
+    -noprompt
+    -alias MyRootCA -file /some/path/MyRootCA.cer
 
 The *keytool* utility ships as part of the Java SDK.
 
@@ -301,7 +300,7 @@ Once this is done, go back to the LDAP page in the Control Panel. Modify
 the LDAP URL in the **Base DN** field to the secure version by changing
 the protocol to *https* and the port to 636 like the following:
 
-ldaps://myLdapServerHostname:636
+    ldaps://myLdapServerHostname:636
 
 Save the changes. Your Liferay Portal will now use LDAP in secure mode
 for authentication.
@@ -322,7 +321,7 @@ authentication method to use the screen name instead of the **email
 address**, you would modify the search filter so that it can match the
 entered log in name:
 
-(cn=@screen\_name@)
+    (cn=@screen_name@)
 
 **Import Search Filter:** Depending on the **LDAP** server, there are
 different ways to identify the user. Generally, the default setting
@@ -439,7 +438,7 @@ has the effect of causing a user export every time the user logs in.
 You can disable this by setting the following property in your
 `portal-ext.properties`{.western} file:
 
-users.update.last.login=false
+    users.update.last.login=false
 
 **Use LDAP Password Policy:** Liferay uses its own password policy by
 default. This can be configured on the **Password Policies** link in
@@ -475,9 +474,8 @@ match settings already configured in the GUI will be ignored. The GUI,
 which stores the settings in the database, always takes precedence over
 the properties file.
 
-ldap.auth.method=bind
-
-\#ldap.auth.method=password-compare
+    ldap.auth.method=bind
+    #ldap.auth.method=password-compare
 
 Set either bind or password-compare for the LDAP authentication method.
 Bind is preferred by most vendors so that you don't have to worry about
@@ -485,14 +483,13 @@ encryption strategies. Password compare does exactly what it sounds
 like: it reads the user's password out of LDAP, decrypts it, and
 compares it with the user's password in Liferay, syncing the two.
 
-ldap.auth.password.encryption.algorithm=
-
-ldap.auth.password.encryption.algorithm.types=MD5,SHA
+    ldap.auth.password.encryption.algorithm=
+    ldap.auth.password.encryption.algorithm.types=MD5,SHA
 
 Set the password encryption to used to compare passwords if the property
 `ldap.auth.method`{.western} is set to password-compare.
 
-ldap.import.method=[user,group]
+    ldap.import.method=[user,group]
 
 If you set this to `user`{.western}, Liferay will import all users
 from the specified portion of the LDAP tree. If you set this to
@@ -500,19 +497,13 @@ from the specified portion of the LDAP tree. If you set this to
 users in each group. If you have users who do not belong to any groups,
 they will not be imported.
 
-ldap.error.password.age=age
-
-ldap.error.password.expired=expired
-
-ldap.error.password.history=history
-
-ldap.error.password.not.changeable=not allowed to change
-
-ldap.error.password.syntax=syntax
-
-ldap.error.password.trivial=trivial
-
-ldap.error.user.lockout=retry limit
+    ldap.error.password.age=age
+    ldap.error.password.expired=expired
+    ldap.error.password.history=history
+    ldap.error.password.not.changeable=not allowed to change
+    ldap.error.password.syntax=syntax
+    ldap.error.password.trivial=trivial
+    ldap.error.user.lockout=retry limit
 
 These properties are a list of phrases from error messages which can
 possibly be returned by the LDAP server. When a user binds to LDAP , the
@@ -570,7 +561,7 @@ certificate.
 
 To generate a key, use the following command:
 
-keytool -genkey -alias tomcat -keypass changeit -keyalg RSA
+    keytool -genkey -alias tomcat -keypass changeit -keyalg RSA
 
 Instead of the password in the example (*changeit*), use a password that
 you will be able to remember. If you are not using Tomcat, you may want
@@ -579,14 +570,14 @@ to use a different alias as well. For First and Last name, enter
 address.
 
 To export the key to a file, use the following command:
-
-keytool -export -alias tomcat -keypass changeit -file server.cert
+    
+    keytool -export -alias tomcat -keypass changeit -file server.cert
 
 Finally, to import the key into your Java key store, use the following
 command:
 
-keytool -import -alias tomcat -file %FILE\_NAME% -keypass changeit
--keystore $JAVA\_HOME/jre/lib/security/cacerts
+    keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit
+    -keystore $JAVA_HOME/jre/lib/security/cacerts
 
 If you are on a Windows system, replace `$JAVA_HOME`{.western} above
 with `%JAVA_HOME%`{.western}. Of course, all of this needs to be done on
@@ -1036,8 +1027,8 @@ Rather than using the `portal-ext.properties`{.western} file as we did
 in the installation chapter, you can configure a mail server here. If
 the portal is to receive mail (see the Message Boards portlet in Chapter
 5), you can connect a POP mail server. And of course, if the portal is
-to send mail—which it needs to do in order to send notifications to
-users—you can connect an SMTP server here as well, and this is highly
+to send mail -- which it needs to do in order to send notifications to
+users -- you can connect an SMTP server here as well, and this is highly
 recommended.
 
 Note that if you add your mail server settings here, they will override
@@ -1064,8 +1055,8 @@ OpenOffice.org. You can install OpenOffice.org on the same server upon
 which Liferay is running. Once you have it installed, you can start
 OpenOffice.org in server mode with the following command:
 
-soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
--nofirststartwizard
+    soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
+    -nofirststartwizard
 
 As you can see, the command above specifies that OpenOffice.org will run
 on port 8100, which is the default port in the Control Panel . If you

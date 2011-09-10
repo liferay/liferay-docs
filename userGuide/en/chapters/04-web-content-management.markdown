@@ -173,7 +173,7 @@ When an administrator activates Page Customizations for a page, any portlets tha
 
 Page layouts allow you to arrange your pages so that the content appears the way you want it to. Liferay comes shipped with many layouts already defined. Developers can create more and they can be deployed to your portal for your use.
 
-In order to prepare for the portlets we'll soon be adding, let's change the layout of the Collaboration page. To access layouts, go up to the Dockbar and select *Manage → Page Layout*.
+In order to prepare for the portlets we'll soon be adding, let's change the layout of the Collaboration page. To access layouts, go up to the Dockbar and select *Manage ->  Page Layout*.
 
 Now, select the *2 Columns (50/50)* layout and then *Save*. Once saved, you'll return to the page and it'll seem as though nothing has happened. However, once we start adding portlets you'll notice how the page is now equally divided into two columns. You can stack portlets on top of each other in these columns. There are, of course, more complicated layouts available, and you can play around with them to get the layout that you want.
 
@@ -333,7 +333,7 @@ For this piece of web content, we don't need to change anything. After you're fi
 
 #### Publishing Content with the Web Content Display Portlet
 
-Now that we've created and published our first piece of web content for TISA, it's time to display it. First, we'll need to add the *Web Content Display* portlet to our Welcome page. Do this by selecting *Add → Web Content Display* from the Dockbar.
+Now that we've created and published our first piece of web content for TISA, it's time to display it. First, we'll need to add the *Web Content Display* portlet to our Welcome page. Do this by selecting *Add ->  Web Content Display* from the Dockbar.
 
 ![Figure 4.11: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
@@ -341,7 +341,7 @@ Once the portlet appears, drag it to the position on the page where you want you
 
 ##### Publishing Existing Content
 
-To add existing web content, select the *gear *icon on the lower left of the portlet. You will see the message “Please select a web content from the list below.” You have several options here.
+To add existing web content, select the *gear* icon on the lower left of the portlet. You will see the message “Please select a web content from the list below.” You have several options here.
 
 Naturally, if your content appears in the list, you can simply select it. If there were lots of published content available, you could search for the content by name, ID, type, version, content, and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
 
@@ -484,29 +484,17 @@ Below is the template script for this structure. It is written in
 Velocity:
 
     #set ($renderUrlMax = $request.get("render-url-maximized"))
-
     #set ($namespace = $request.get("portlet-namespace"))
-
-    #set($readmore = $request.get("parameters").get("read\_more"))
-
-    <h1\>$title.getData()</h1\>
-
+    #set($readmore = $request.get("parameters").get("read_more"))
+	<h1>$title.getData()</h1>
     #if ($readmore)
-
-    <p\>$abstract.getData()</p\>
-
-    <p\>$body.getData()</p\>
-
+	<p>$abstract.getData()</p>
+	<p>$body.getData()</p>
     #else
-
-    <p\>
-
-    <img src="${image.getData()}" border="0" align="right"\>
-
-    $abstract.getData()</p\>
-
-    <a href="${renderUrlMax}&${namespace}read\_more=true"\>Read More</a\>
-
+	<p>
+	<img src="${image.getData()}" border="0" align="right">
+	$abstract.getData()</p>
+	<a href="${renderUrlMax}&${namespace}read_more=true">Read More</a>
     #end
 
 This template is pretty small, but it actually does quite a bit. First, a portlet URL which maximizes the portlet is created. Once this is done, we get the namespace of the portlet. This is important because we don't want our URL to collide with another URL that might be on the page.
@@ -695,7 +683,7 @@ Now we're ready to activate the staging feature for this site. You should now ha
 
 ![Figure 4.21: You can chooseto use versioning and what content should be staged and what content should not be staged.](../../images/04-web-content-staging.png)
 
-We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live.* If you were to select *Remote Live*, you would also have needed to supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions → Edit* on any site in the Control Panel. Either way, once we make a selection (*Local Live* or *Remote Live*), many more options will become available to us.
+We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live.* If you were to select *Remote Live*, you would also have needed to supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions ->  Edit* on any site in the Control Panel. Either way, once we make a selection (*Local Live* or *Remote Live*), many more options will become available to us.
 
 We'll cover many of the collaboration portlets listed here when we come to chapter 5. For now you just need to be aware that the option is available to enable or disable staging for any of them, and you need to decide if you would like to stage content for these portlets. In the case of the collaborative portlets, the answer would usually be “no.” Why? Because portlets such as the Message Boards are designed for user interaction. If their content were staged, you'd have to manually publish your site whenever somebody posted a message on the message boards in order to make that message appear on the live site.
 

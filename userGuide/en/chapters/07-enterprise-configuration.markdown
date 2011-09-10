@@ -151,7 +151,7 @@ section in `portal.properties`{.western} labeled **JCR** and copy/paste
 that section into your `portal-ext.properties`{.western} file. One of
 the properties, by default, is the following:
 
-jcr.jackrabbit.repository.root=${liferay.home}/data/jackrabbit
+    jcr.jackrabbit.repository.root=${liferay.home}/data/jackrabbit
 
 Change this property to point to a shared folder that all of the nodes
 can see. A new Jackrabbit configuration file will be generated in that
@@ -214,7 +214,7 @@ might want to use one of the following options Liferay has available.
 
 To use the Advanced File System Hook, set:
 
-dl.hook.impl=com.liferay.documentlibrary.util.AdvancedFileSystemHook
+    dl.hook.impl=com.liferay.documentlibrary.util.AdvancedFileSystemHook
 
 This is the preferred hook for clustered environments especially if
 you're using a SAN to store files.
@@ -235,7 +235,7 @@ The path for storing your documents is set also set using the
 To use Amazon’s Simple Storage Service to store you documents for a
 Liferay Portal, set
 
-dl.hook.impl=com.liferay.documentlibrary.util.S3Hook
+    dl.hook.impl=com.liferay.documentlibrary.util.S3Hook
 
 in `portal-ext.properties`{.western}. You will need to consult the
 Amazon Simple Storage documentation for additional details on setting it
@@ -250,7 +250,7 @@ note that the `documentum-hook`{.western} plugin is only supported on
 Liferay Enterprise Edition, and is currently in an experimental stage,
 and may not be ready for production use. To use this hook, set
 
-dl.hook.impl=liferay.documentum.hook.DocumentumHook
+    dl.hook.impl=liferay.documentum.hook.DocumentumHook
 
 If you are using Documentum, there are additional settings that must be
 configured in the
@@ -304,7 +304,7 @@ file system for the index at `/solr`{.western}, create an environment
 variable that points to this folder. This environment variable needs to
 be called `$SOLR_HOME`{.western}. So for our example, we would define:
 
-$SOLR\_HOME=/solr
+    $SOLR_HOME=/solr
 
 This environment variable can be defined anywhere you need: in your
 operating system's start up sequence, in the environment for the user
@@ -320,7 +320,7 @@ if you are using Tomcat, you would edit `catalina.sh`{.western} or
 `catalina.bat`{.western} and append the following to the
 `$JAVA_OPTS`{.western} variable:
 
--Dsolr.solr.home=$SOLR\_HOME
+    -Dsolr.solr.home=$SOLR_HOME
 
 This takes care of telling Solr where to store its search index. Go
 ahead and install Solr to this box according to the instructions on the
@@ -348,15 +348,15 @@ called `solr-spring.xml`{.western} in the
 editor and you will see the entry which defines where the Solr server
 can be found by Liferay:
 
-<bean
-class="com.liferay.portal.spring.context.PortletBeanFactoryPostProcessor"
-/\>
+    <bean
+    class="com.liferay.portal.spring.context.PortletBeanFactoryPostProcessor"
+    />
 
-<bean id="com.liferay.portal.search.solr.server.BasicAuthSolrServer"
-class="com.liferay.portal.search.solr.server.BasicAuthSolrServer"\>
-
-<constructor-arg
-type="java.lang.String"value="http://localhost:8080/solr" /\>
+    <bean id="com.liferay.portal.search.solr.server.BasicAuthSolrServer"
+    class="com.liferay.portal.search.solr.server.BasicAuthSolrServer">
+    
+    <constructor-arg
+    type="java.lang.String"value="http://localhost:8080/solr" />
 
 Modify this value so that they point to the server upon which you are
 running Solr. Then save the file and put it back into the plugin archive
@@ -409,7 +409,7 @@ search server.
 You can enable ClusterLink by setting one property in your
 `portal-ext.properties `{.western}file:
 
-cluster.link.enabled=true
+    cluster.link.enabled=true
 
 Of course, this needs to be set on all the nodes.
 
@@ -429,7 +429,7 @@ search index by changing the `lucene.dir`{.western} property. By
 default, this property points to the `lucene`{.western} folder inside
 the Liferay home folder:
 
-lucene.dir=${liferay.home}/data/lucene/
+    lucene.dir=${liferay.home}/data/lucene/
 
 Change this to the folder of your choice. To make the change take
 effect, you will need to restart Liferay. You can point all of the nodes
@@ -447,7 +447,7 @@ There is a single property called `lucene.store.type`{.western}. By
 default this is set to go to the file system. You can change this so
 that the index is stored in the database by making it the following:
 
-lucene.store.type=jdbc
+    lucene.store.type=jdbc
 
 The next time Liferay is started, new tables will be created in the
 Liferay database, and the index will be stored there. If all the Liferay
@@ -460,7 +460,7 @@ separate search server (see the section on Solr above).
 **Note:** MySQL users need to modify their JDBC connection string for
 this to work. Add the following parameter to your connection string:
 
-emulateLocators=true
+    emulateLocators=true
 
 Alternatively, you can leave the configuration alone, and each node will
 then have its own index. This ensures that there are no collisions when
@@ -549,7 +549,7 @@ these files. Copy / paste the **Hibernate** section of
 to the clustered version of the configuration file that is now in your
 custom folder:
 
-net.sf.ehcache.configurationResourceName=/myehcache/hibernate-clustered.xml
+    net.sf.ehcache.configurationResourceName=/myehcache/hibernate-clustered.xml
 
 Now that Liferay is pointing to your custom file, you can modify the
 settings in this file to change the cache configuration for Hibernate.
@@ -559,12 +559,12 @@ Next, copy / paste the *Ehcache* section from the
 `portal-ext.properties`{.western} file. Modify the properties so that
 they point to the files that are in your custom folder. For example:
 
-ehcache.multi.vm.config.location=/**myehcache**/liferay-multi-vm.xml
+    ehcache.multi.vm.config.location=/**myehcache**/liferay-multi-vm.xml
 
 If you are going to enable distributed clustering, uncomment the
 following line and point it to your custom version of the file:
 
-ehcache.multi.vm.config.location=/**myehcache**/liferay-multi-vm-clustered.xml
+    ehcache.multi.vm.config.location=/**myehcache**/liferay-multi-vm-clustered.xml
 
 You can now take a look at the settings in these files and tune them to
 fit your environment and application.
@@ -594,7 +594,7 @@ comment out the default file (`hibernate.xml`{.western}) and uncomment
 the clustered version of the file, making sure that you change the path
 so that it points to your custom version of the file:
 
-net.sf.ehcache.configurationResourceName=/**myehcache**/hibernate-clustered.xml
+    net.sf.ehcache.configurationResourceName=/**myehcache**/hibernate-clustered.xml
 
 Next, open this file in a text editor. You will notice that the
 configuration is already set up to perform distributed caching through a
@@ -615,67 +615,41 @@ objects, such as `DLFileEntryImpl`{.western} in order to improve
 performance as users access documents. To do that, add another block to
 the configuration file with the class you want to cache:
 
-<cache
-
-name="**com.liferay.portlet.documentlibrary.model.impl.DLFileEntryImpl**"
-
-maxElementsInMemory="10000"
-
-eternal="false"
-
-timeToIdleSeconds="600"
-
-overflowToDisk="true"
-
-\>
-
-<cacheEventListenerFactory
-
-class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
-
-properties="replicatePuts=false,replicateUpdatesViaCopy=false"
-
-propertySeparator=","
-
-/\>
-
-<bootstrapCacheLoaderFactory
-class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory" /\>
-
-</cache\>
+    <cache
+    name="**com.liferay.portlet.documentlibrary.model.impl.DLFileEntryImpl**"
+    maxElementsInMemory="10000"
+    eternal="false"
+    timeToIdleSeconds="600"
+    overflowToDisk="true"
+    >
+	<cacheEventListenerFactory
+	class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+	properties="replicatePuts=false,replicateUpdatesViaCopy=false"
+	propertySeparator=","
+	/>
+	<bootstrapCacheLoaderFactory
+	class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory" />
+    </cache>
 
 Your site may use the message boards portlet, and those message boards
 may get a lot of traffic. To cache the threads on the message boards,
 configure a block with the `MBMessageImpl`{.western} class:
 
-<cache
-
-name="**com.liferay.portlet.messageboards.model.impl.MBMessageImpl**"
-
-maxElementsInMemory="10000"
-
-eternal="false"
-
-timeToIdleSeconds="600"
-
-overflowToDisk="true"
-
-\>
-
-<cacheEventListenerFactory
-
-class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
-
-properties="replicatePuts=false,replicateUpdatesViaCopy=false"
-
-propertySeparator=","
-
-/\>
-
-<bootstrapCacheLoaderFactory
-class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory" /\>
-
-</cache\>
+    <cache
+    name="**com.liferay.portlet.messageboards.model.impl.MBMessageImpl**"
+    maxElementsInMemory="10000"
+    eternal="false"
+    timeToIdleSeconds="600"
+    overflowToDisk="true"
+    >
+	<cacheEventListenerFactory
+	class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+	properties="replicatePuts=false,replicateUpdatesViaCopy=false"
+	propertySeparator=","
+	/>
+	<bootstrapCacheLoaderFactory
+	class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory" />
+    </cache>
 
 Note that if your developers have overridden any of these classes, you
 will have to specify the overridden versions rather than the stock ones
@@ -791,58 +765,41 @@ You can find this schema in the `definitions`{.western} folder of the
 Liferay source or a good XML editor should be able to cache it from
 Liferay's website.
 
-<workflow-definition
-
-xmlns="urn:liferay.com:liferay-workflow\_6.0.0"
-
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
-xsi:schemaLocation="urn:liferay.com:liferay-workflow\_6.0.0
-http://www.liferay.com/dtd/liferay-workflow-definition\_6\_0\_0.xsd"
-
-\>
+    <workflow-definition
+    xmlns="urn:liferay.com:liferay-workflow_6.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:liferay.com:liferay-workflow_6.0.0
+    http://www.liferay.com/dtd/liferay-workflow-definition_6_0_0.xsd"
+    >
 
 Next we define a name and description for the workflow. This will appear
 in the Control Panel when you are choosing and configuring workflows.
 
-<name\>Single Approver</name\>
-
-<description\>A single approver can approve a workflow
-content.</description\>
-
-<version\>1</version\>
+    <name>Single Approver</name>
+    <description>A single approver can approve a workflow
+    content.</description>
+    <version>1</version>
 
 After that, we need to define our initial state. In this case, in is
 simply that the asset has been created. States can contain actions and
 transitions. Actions can contain scripts. You can specify the language
-of the script with the <script-language\> tag. Scripts can be written in
+of the script with the <script-language> tag. Scripts can be written in
 Groovy, JavaScript, Ruby, or Python. Transitions will move you to a new
 state or task.
 
-<state\>
-
-<name\>created</name\>
-
-<initial\>true</initial\>
-
-From the initial state, we transition to a new state where the asset
-will need to be reviewed.
-
-<transitions\>
-
-<transition\>
-
-<name\>review</name\>
-
-<target\>review</target\>
-
-<default\>true</default\>
-
-</transition\>
-
-</transitions\>
-
-</state\>
+    <state>
+	<name>created</name>
+	<initial>true</initial>
+	From the initial state, we transition to a new state where the asset
+	will need to be reviewed.
+	<transitions>
+	    <transition>
+		<name>review</name>
+		<target>review</target>
+		<default>true</default>
+	    </transition>
+	</transitions>
+    </state>
 
 After that, we create a task. The task has several parts, and is the
 most complex part of the definition. In the task, we first need to
@@ -864,50 +821,29 @@ You can also see that the task is assigned to `<user/>`{.western}*.
 *This tag will always assign the task back to the user who created the
 asset.
 
-<task\>
-
-<name\>update</name\>
-
-<actions\>
-
-<notification\>
-
-<name\>Creator Modification Notification</name\>
-
-<execution-type\>onAssignment</execution-type\>
-
-<template\>Your submission was rejected by a reviewer, please modify and
-resubmit.</template\>
-
-<template-language\>text</template-language\>
-
-<notification-type\>email</notification-type\>
-
-</notification\>
-
-</actions\>
-
-<assignments\>
-
-<user /\>
-
-</assignments\>
-
-<transitions\>
-
-<transition\>
-
-<name\>resubmit</name\>
-
-<target\>review</target\>
-
-<default\>true</default\>
-
-</transition\>
-
-</transitions\>
-
-</task\>
+    <task>
+	<name>update</name>
+	<actions>
+	    <notification>
+		<name>Creator Modification Notification</name>
+		<execution-type>onAssignment</execution-type>
+		<template>Your submission was rejected by a reviewer, please modify and
+		resubmit.</template>
+		<template-language>text</template-language>
+		<notification-type>email</notification-type>
+	    </notification>
+	</actions>
+	<assignments>
+	    <user />
+	</assignments>
+	<transitions>
+	    <transition>
+		<name>resubmit</name>
+		<target>review</target>
+		<default>true</default>
+	    </transition>
+	</transitions>
+    </task>
 
 The review task is the first task in the workflow . This is where users
 on the portal need to review the content to move to the next step.
@@ -916,28 +852,18 @@ Once the transition has been made to this task, a notification is sent
 out to those who are assigned to the task. You can edit the name or
 content of the notification in the XML file.
 
-<task\>
-
-<name\>review</name\>
-
-<actions\>
-
-<notification\>
-
-<name\>Review Notification</name\>
-
-<execution-type\>onAssignment</execution-type\>
-
-<template\>You have a new submission waiting for your review in the
-workflow.</template\>
-
-<template-language\>text</template-language\>
-
-<notification-type\>email</notification-type\>
-
-</notification\>
-
-</actions\>
+    <task>
+	<name>review</name>
+	<actions>
+	    <notification>
+		<name>Review Notification</name>
+		<execution-type>onAssignment</execution-type>
+		<template>You have a new submission waiting for your review in the
+		workflow.</template>
+		<template-language>text</template-language>
+		<notification-type>email</notification-type>
+	    </notification>
+	</actions>
 
 You must also assign the task to a specific role or roles. This role
 does not have to be the role which you notified if, for example, you
@@ -973,116 +899,69 @@ Email and private message notifications can also be created as plain
 text, or you can create formatted content using Freemarker or Velocity
 templating languages. When creating the notification, you need to
 specify the `template-language`{.western} as `text`{.western}*,
-*`freemarker`{.western}*, *or `velocity`{.western}*.*
+*`freemarker`{.western}*, *or `velocity`{.western}.
 
 In this workflow, anyone who would be capable of approving the content
 is notified `onAssignment`{.western}. This includes administrators, and
 community and organization owners. The `role-type`{.western} tag helps
 the system sort out who should be receiving the notification based on
-the scope, and can be set as *community, organization, *or *portal.*
+the scope, and can be set as *community*, *organization*, or *portal*.
 
-<assignments\>
-
-<roles\>
-
-<role\>
-
-<role-type\>community</role-type\>
-
-<name\>Community Administrator</name\>
-
-</role\>
-
-<role\>
-
-<role-type\>community</role-type\>
-
-<name\>Community Content Reviewer</name\>
-
-</role\>
-
-<role\>
-
-<role-type\>community</role-type\>
-
-<name\>Community Owner</name\>
-
-</role\>
-
-<role\>
-
-<role-type\>organization</role-type\>
-
-<name\>Organization Administrator</name\>
-
-</role\>
-
-<role\>
-
-<role-type\>organization</role-type\>
-
-<name\>Organization Content Reviewer</name\>
-
-</role\>
-
-<role\>
-
-<role-type\>organization</role-type\>
-
-<name\>Organization Owner</name\>
-
-</role\>
-
-<role\>
-
-<role-type\>regular</role-type\>
-
-<name\>Portal Content Reviewer</name\>
-
-</role\>
-
-<role\>
-
-<role-type\>regular</role-type\>
-
-<name\>Administrator</name\>
-
-</role\>
-
-</roles\>
-
-</assignments\>
+    <assignments>
+	<roles>
+	    <role>
+		<role-type>community</role-type>
+		<name>Community Administrator</name>
+	    </role>
+	    <role>
+		<role-type>community</role-type>
+		<name>Community Content Reviewer</name>
+	    </role>
+	    <role>
+		<role-type>community</role-type>
+		<name>Community Owner</name>
+	    </role>
+	    <role>
+		<role-type>organization</role-type>
+		<name>Organization Administrator</name>
+	    </role>
+	    <role>
+		<role-type>organization</role-type>
+		<name>Organization Content Reviewer</name>
+	    </role>
+	    <role>
+		<role-type>organization</role-type>
+		<name>Organization Owner</name>
+	    </role>
+	    <role>
+		<role-type>regular</role-type>
+		<name>Portal Content Reviewer</name>
+	    </role>
+	    <role>
+		<role-type>regular</role-type>
+		<name>Administrator</name>
+	    </role>
+	</roles>
+    </assignments>
 
 Once the content is approved, you will want to transition to a new
 state. In this case, we have only need of a single approver, so we will
 transition to the final approved state. In more complex workflows, this
 might transition to a second tier approver.
 
-<transitions\>
-
-<transition\>
-
-<name\>approve</name\>
-
-<target\>approved</target\>
-
-<default\>true</default\>
-
-</transition\>
-
-<transition\>
-
-<name\>reject</name\>
-
-<target\>update</target\>
-
-<default\>false</default\>
-
-</transition\>
-
-</transitions\>
-
-</task\>
+	<transitions>
+	    <transition>
+		<name>approve</name>
+		<target>approved</target>
+		<default>true</default>
+	    </transition>
+	    <transition>
+		<name>reject</name>
+		<target>update</target>
+		<default>false</default>
+	    </transition>
+	</transitions>
+    </task>
 
 Finally, we define our end state, which runs a script to set the state
 of the content to approved, in the portal. The script is part of the
@@ -1093,40 +972,26 @@ You could also write a customized script if there were actions outside
 of the standard one that need to be performed on your asset. The default
 script, written in Javascript, sets the status of the asset to
 *approved.* You can add additional information into the script through
-Javascript, or you can change the <script-language\> to another
+Javascript, or you can change the <script-language> to another
 supported language (Ruby, Groovy, or Python) and rewrite the action with
 additional details to meet your needs.
 
-<state\>
-
-<name\>approved</name\>
-
-<actions\>
-
-<action\>
-
-<name\>approve</name\>
-
-<execution-type\>onEntry</execution-type\>
-
-<script\>
-
-<![CDATA[
-
-Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"),
-workflowContext);
-
-]]\>
-
-</script\>
-
-<script-language\>javascript</script-language\>
-
-</action\>
-
-</actions\>
-
-</state\>
+    <state>
+	<name>approved</name>
+	<actions>
+	    <action>
+		<name>approve</name>
+		<execution-type>onEntry</execution-type>
+		<script>
+		    <![CDATA[
+		    Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"),
+		    workflowContext);
+		    ]]>
+		</script>
+		<script-language>javascript</script-language>
+	    </action>
+	</actions>
+    </state>
 
 To create longer workflows, you would simply create additional states,
 tasks and transitions similar to the ones in the single approver
@@ -1140,13 +1005,12 @@ task to transition to your new task, and set the new task to transition
 to the *approved* state, once it is completed. You can also use *forks
 *and *joins * to create more complex workflows.
 
-![image](../../images/portal-admin-ch7_html_6d2265ce.png)
-*Illustration 3: A possible parallel approval design*
+![image](../../images/portal-admin-ch7_html_6d2265ce.png) *Illustration 3: A possible parallel approval design*
 
 You can transition to a fork from a task or state, and from a fork, you
 can transition to multiple tasks or states which will occur in parallel.
 In the above example, when we have multiple transitions from one task,
-they are mutually exclusive –- you either trigger one or the other. The
+they are mutually exclusive -- you either trigger one or the other. The
 transitions are also serial, meaning that one must occur, and then the
 next one can occur. With a parallel workflow, you can have different
 approvals going through different users at the same time. For example,
@@ -1154,23 +1018,15 @@ you could use this to separate two different departments' approval
 chains on a single asset.
 A fork should be formatted like this:
 
-<fork\>
-
-<name\></name\>
-
-<actions\>
-
-...
-
-</actions\>
-
-<transitions\>
-
-...
-
-</transitions\>
-
-</fork\>
+    <fork>
+	<name></name>
+	<actions>
+	    ...
+	</actions>
+	<transitions>
+	    ...
+	</transitions>
+    </fork>
 
 To bring a fork back together, you would transition both nodes of the
 fork back to a single join. A join is formatted similarly to a fork,
@@ -1187,20 +1043,14 @@ is currently no GUI option to configure this setting.
 
 The due date options are formatted in the definitions file like this:
 
-<task\>
-
-<name\></name\>
-
-<description/\></description\>
-
-<due-date-duration\>{any whole number}</due-date-duration\>
-
-<due-date-scale\>{second, minute, hour, day, week, month,
-year}<due-date-scale\>
-
-...
-
-</task\>
+    <task>
+	<name></name>
+	<description/></description>
+	<due-date-duration>{any whole number}</due-date-duration>
+	<due-date-scale>{second, minute, hour, day, week, month,
+	year}<due-date-scale>
+	...
+    </task>
 
 The due date is set inside the task with the two elements: a duration
 and a scale. The duration can be any whole number, and is completely
@@ -1223,6 +1073,7 @@ assigned.
 Most of your workflow configuration is done via the Control Panel.
 Everything you need to do in the portal can be done through simple GUI
 controls.
+
 ##### Workflow
 
 Workflow is found under the Portal heading in the Control Panel. There
@@ -1372,11 +1223,11 @@ of memory and that your JVM is tuned to use it.
 There are three basic JVM command switches that control the amount of
 memory in the Java heap.
 
--Xms
-
--Xmx
-
--XX:MaxPermSize
+    -Xms
+    
+    -Xmx
+    
+    -XX:MaxPermSize
 
 These three settings control the amount of memory available to the JVM
 initially, the maximum amount of memory into which the JVM can grow, and
@@ -1387,7 +1238,7 @@ the JVM from having to reallocate memory if the application needs more.
 Setting them to the same value causes the JVM to be created up front
 with the maximum amount of memory you want to give it.
 
--Xms1024m -Xmx1024m -XX:MaxPermSize=128m
+    -Xms1024m -Xmx1024m -XX:MaxPermSize=128m
 
 This is perfectly reasonable for a moderately sized machine or a
 developer machine. These settings give the JVM 1024MB for its regular
@@ -1511,10 +1362,10 @@ collection. Should be equal to the number of CPU cores in your server.
 A sample configuration using the above parameters might look something
 like this:
 
-JAVA\_OPTS="$JAVA\_OPTS -XX:NewSize=700m -XX:MaxNewSize=700m -Xms2048m
--Xmx2048m -XX:MaxPermSize=128m -XX:+UseParNewGC -XX:+UseConcMarkSweepGC
--XX:+CMSParallelRemarkEnabled -XX:SurvivorRatio=20
--XX:ParallelGCThreads=8"
+    JAVA_OPTS="$JAVA_OPTS -XX:NewSize=700m -XX:MaxNewSize=700m -Xms2048m
+    -Xmx2048m -XX:MaxPermSize=128m -XX:+UseParNewGC -XX:+UseConcMarkSweepGC
+    -XX:+CMSParallelRemarkEnabled -XX:SurvivorRatio=20
+    -XX:ParallelGCThreads=8"
 
 ### Properties File Changes
 
@@ -1524,22 +1375,22 @@ file once you are in a production environment.
 Set the following to false to disable checking the last modified date on
 server side CSS and JavaScript.
 
-last.modified.check=false
+    last.modified.check=false
 
 Set this property to true to load the theme's merged CSS files for
 faster loading for production. By default it is set to false for easier
 debugging for development. You can also disable fast loading by setting
-the URL parameter *css\_fast\_load* to *0*.
+the URL parameter *css_fast_load* to *0*.
 
-theme.css.fast.load=true
+    theme.css.fast.load=true
 
 Set this property to true to load the combined JavaScript files from the
 property *javascript.files* into one compacted file for faster loading
 for production. By default it is set to false for easier debugging for
 development. You can also disable fast loading by setting the URL
-parameter *js\_fast\_load* to *0*.
+parameter *js_fast_load* to *0*.
 
-javascript.fast.load=true
+    javascript.fast.load=true
 
 ### Servlet Filters
 
@@ -1582,22 +1433,14 @@ Enabling a read-writer database is simple. In your
 *portal-ext.properties* file, configure two different data sources for
 Liferay to use, one for reading, and one for writing:
 
-jdbc.read.driverClassName=com.mysql.jdbc.Driver
-
-jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-
-jdbc.read.username=
-
-jdbc.read.password=
-
-
-jdbc.write.driverClassName=com.mysql.jdbc.Driver
-
-jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-
-jdbc.write.username=
-
-jdbc.write.password=
+    jdbc.read.driverClassName=com.mysql.jdbc.Driver
+    jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.read.username=
+    jdbc.read.password=
+    jdbc.write.driverClassName=com.mysql.jdbc.Driver
+    jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.write.username=
+    jdbc.write.password=
 
 Of course, specify the user name and password to your database in the
 above configuration.
@@ -1606,63 +1449,28 @@ After this, enable the read-writer database configuration by
 uncommenting the Spring configuration file which enables it in your
 *spring.configs* property (line to uncomment is in bold:
 
-spring.configs=\\
-
-META-INF/base-spring.xml,\\
-
-\\
-
-META-INF/hibernate-spring.xml,\\
-
-META-INF/infrastructure-spring.xml,\\
-
-META-INF/management-spring.xml,\\
-
-\\
-
-META-INF/util-spring.xml,\\
-
-\\
-
-META-INF/editor-spring.xml,\\
-
-META-INF/jcr-spring.xml,\\
-
-META-INF/messaging-spring.xml,\\
-
-META-INF/scheduler-spring.xml,\\
-
-META-INF/search-spring.xml,\\
-
-\\
-
-META-INF/counter-spring.xml,\\
-
-META-INF/document-library-spring.xml,\\
-
-META-INF/lock-spring.xml,\\
-
-META-INF/mail-spring.xml,\\
-
-META-INF/portal-spring.xml,\\
-
-META-INF/portlet-container-spring.xml,\\
-
-META-INF/wsrp-spring.xml,\\
-
-\\
-
-META-INF/mirage-spring.xml,\\
-
-\\
-
-**META-INF/dynamic-data-source-spring.xml,\\**
-
-\#META-INF/shard-data-source-spring.xml,\\
-
-\\
-
-META-INF/ext-spring.xml
+    spring.configs=
+	META-INF/base-spring.xml,
+	META-INF/hibernate-spring.xml,
+	META-INF/infrastructure-spring.xml,
+	META-INF/management-spring.xml,
+	META-INF/util-spring.xml,
+	META-INF/editor-spring.xml,
+	META-INF/jcr-spring.xml,
+	META-INF/messaging-spring.xml,
+	META-INF/scheduler-spring.xml,
+	META-INF/search-spring.xml,
+	META-INF/counter-spring.xml,
+	META-INF/document-library-spring.xml,
+	META-INF/lock-spring.xml,
+	META-INF/mail-spring.xml,
+	META-INF/portal-spring.xml,
+	META-INF/portlet-container-spring.xml,
+	META-INF/wsrp-spring.xml,
+	META-INF/mirage-spring.xml,
+	META-INF/dynamic-data-source-spring.xml,
+	#META-INF/shard-data-source-spring.xml,
+	META-INF/ext-spring.xml
 
 The next time you restart Liferay, it will now use the two data sources
 you have defined. Be sure to make sure that you have correctly set up
@@ -1698,42 +1506,28 @@ Of course, if you wish to have your developers implement your own
 sharding algorithm, you can do that. You can select which algorithm is
 active via the *portal-ext.properties* file:
 
-shard.selector=com.liferay.portal.dao.shard.RoundRobinShardSelector
-
-\#shard.selector=com.liferay.portal.dao.shard.ManualShardSelector
-
-\#shard.selector=[your implementation here]
+    shard.selector=com.liferay.portal.dao.shard.RoundRobinShardSelector
+    #shard.selector=com.liferay.portal.dao.shard.ManualShardSelector
+    #shard.selector=[your implementation here]
 
 Enabling sharding is easy. You will need to make sure you are using
 Liferay's data source implementation instead of your application
 server's. Set your various database shards in your
 *portal-ext.properties* file this way:
 
-jdbc.default.driverClassName=com.mysql.jdbc.Driver
-
-jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-
-jdbc.default.username=
-
-jdbc.default.password=
-
-jdbc.one.driverClassName=com.mysql.jdbc.Driver
-
-jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-
-jdbc.one.username=
-
-jdbc.one.password=
-
-jdbc.two.driverClassName=com.mysql.jdbc.Driver
-
-jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-
-jdbc.two.username=
-
-jdbc.two.password=
-
-shard.available.names=default,one,two
+    jdbc.default.driverClassName=com.mysql.jdbc.Driver
+    jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.default.username=
+    jdbc.default.password=
+    jdbc.one.driverClassName=com.mysql.jdbc.Driver
+    jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.one.username=
+    jdbc.one.password=
+    jdbc.two.driverClassName=com.mysql.jdbc.Driver
+    jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.two.username=
+    jdbc.two.password=
+    shard.available.names=default,one,two
 
 Once you do this, you can set up your DNS so that several domain names
 point to your Liferay installation (e.g., abc1.com, abc2.com, abc3.com).
@@ -1751,61 +1545,28 @@ section of your *portal-ext.properties* file to enable the sharding
 configuration, which by default is commented out. To do this, your
 spring.configs should look like this (modified section is in bold):
 
-spring.configs=\\
+    spring.configs=
+    META-INF/base-spring.xml,
+	META-INF/hibernate-spring.xml,
+	META-INF/infrastructure-spring.xml,
+	META-INF/management-spring.xml,
+	META-INF/util-spring.xml,
+	META-INF/editor-spring.xml,
+	META-INF/jcr-spring.xml,
+	META-INF/messaging-spring.xml,
+	META-INF/scheduler-spring.xml,
+	META-INF/search-spring.xml,
+	META-INF/counter-spring.xml,
+	META-INF/document-library-spring.xml,
+	META-INF/lock-spring.xml,
+	META-INF/mail-spring.xml,
+	META-INF/portal-spring.xml,
+	META-INF/portlet-container-spring.xml,
+	META-INF/wsrp-spring.xml,
+	META-INF/mirage-spring.xml,
+	#META-INF/dynamic-data-source-spring.xml,
+	META-INF/shard-data-source-spring.xml,
 
-META-INF/base-spring.xml,\\
-
-\\
-
-META-INF/hibernate-spring.xml,\\
-
-META-INF/infrastructure-spring.xml,\\
-
-META-INF/management-spring.xml,\\
-
-\\
-
-META-INF/util-spring.xml,\\
-
-\\
-
-META-INF/editor-spring.xml,\\
-
-META-INF/jcr-spring.xml,\\
-
-META-INF/messaging-spring.xml,\\
-
-META-INF/scheduler-spring.xml,\\
-
-META-INF/search-spring.xml,\\
-
-\\
-
-META-INF/counter-spring.xml,\\
-
-META-INF/document-library-spring.xml,\\
-
-META-INF/lock-spring.xml,\\
-
-META-INF/mail-spring.xml,\\
-
-META-INF/portal-spring.xml,\\
-
-META-INF/portlet-container-spring.xml,\\
-
-META-INF/wsrp-spring.xml,\\
-
-\\
-
-META-INF/mirage-spring.xml,\\
-
-\\
-
-\#META-INF/dynamic-data-source-spring.xml,\\
-
-**META-INF/shard-data-source-spring.xml,\\**
-
-\\
 
 That's all there is to it. Your system is now set up for sharding.
 
