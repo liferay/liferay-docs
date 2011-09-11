@@ -53,7 +53,6 @@ project name when creating this folder.
 Once the target has been executed successfully you will find a new
 folder called example-ext with the following structure:
 
-
 /ext-example/
 
 /docroot/
@@ -89,7 +88,6 @@ folder called example-ext with the following structure:
 /src/
 
 /ext-web/
-
 
 The most significant directories in this structure are the ones inside
 the `docroot/WEB-INF`{.western} directory. In particular you should be
@@ -213,10 +211,10 @@ remove it and unzip again as needed. `app.server.dir`{.western} should
 point to the Tomcat directory inside the work directory.
 
 For example, if `ext.work.dir`{.western} points to
-`C:\ext-work`{.western}, and `app.server.zip.name`{.western} points to
-`C:\files\liferay-portal-tomcat-6.0-${lp.version}.zip`{.western}, then
+`C:ext-work`{.western}, and `app.server.zip.name`{.western} points to
+`C:filesliferay-portal-tomcat-6.0-${lp.version}.zip`{.western}, then
 `app.server.dir`{.western} should point to
-`C:\ext-work\liferay-portal-${lp.version}\tomcat-6.0.18`{.western}.
+`C:ext-workliferay-portal-${lp.version}tomcat-6.0.18`{.western}.
 
 ### Initial deployment
 
@@ -259,7 +257,7 @@ inside your application server. You must now restart your application
 server.
 
 Once the server has started, log in as an administrator and go to
-*Control Panel -\> Users*. Edit an existing user and verify that the
+*Control Panel -> Users*. Edit an existing user and verify that the
 right navigation menu only shows the five sections that were referenced
 from the `users.form.update.main`{.western} property.
 
@@ -285,12 +283,12 @@ it looks for the implementation of each section based on the following
 conventions:
 
 -   The section should be implemented in a JSP inside the directory:
-    html/portlet/enterprise\_admin/user
+    html/portlet/enterprise_admin/user
 
 -   The name of the JSP should be like the name of the section plus the
     `.jsp`{.western} extension. There is one exception. If the section
     name has a dash sign (“-”), it will be converted to an underscore
-    sign (“\_”). For example, if the section is called *my-info*, the
+    sign (“_”). For example, if the section is called *my-info*, the
     JSP should be named `my_info.jsp`{.western}. This is done to comply
     to common standards of JSP naming.
 
@@ -304,7 +302,7 @@ conventions:
 In our example, we'll need to create a file within the Ext plugin in the
 following path:
 
-ext-web/docroot/html/portlet/enterprise\_admin/user/basic.jsp
+ext-web/docroot/html/portlet/enterprise_admin/user/basic.jsp
 
 For the contents of the file, you can write them from scratch or make a
 copy of the `details.jsp`{.western} file from Liferay's source code and
@@ -312,83 +310,83 @@ modify from there. In this case we've decided to do the latter and then
 remove some fields to simplify the creation of a user. The result is
 this:
 
-<%@ include file="/html/portlet/enterprise\_admin/init.jsp" %\>
+<%@ include file="/html/portlet/enterprise_admin/init.jsp" %>
 
 <%
 
 User selUser = (User)request.getAttribute("user.selUser");
 
-%\>
+%>
 
 
-<liferay-ui:error-marker key="errorSection" value="details" /\>
+<liferay-ui:error-marker key="errorSection" value="details" />
 
 
-<aui:model-context bean="<%= selUser %\>" model="<%= User.class %\>" /\>
+<aui:model-context bean="<%= selUser %>" model="<%= User.class %>" />
 
 
-<h3\><liferay-ui:message key="details" /\></h3\>
+<h3><liferay-ui:message key="details" /></h3>
 
 
-<aui:fieldset column="<%= true %\>" cssClass="aui-w50"\>
+<aui:fieldset column="<%= true %>" cssClass="aui-w50">
 
 
 <liferay-ui:error exception="<%= DuplicateUserScreenNameException.class
-%\>"
+%>"
 
-message="the-screen-name-you-requested-is-already-taken" /\>
+message="the-screen-name-you-requested-is-already-taken" />
 
 <liferay-ui:error exception="<%= ReservedUserScreenNameException.class
-%\>"
+%>"
 
-message="the-screen-name-you-requested-is-reserved" /\>
+message="the-screen-name-you-requested-is-reserved" />
 
-<liferay-ui:error exception="<%= UserScreenNameException.class %\>"
+<liferay-ui:error exception="<%= UserScreenNameException.class %>"
 
-message="please-enter-a-valid-screen-name" /\>
+message="please-enter-a-valid-screen-name" />
 
 
-<aui:input name="screenName" /\>
+<aui:input name="screenName" />
 
 
 <liferay-ui:error exception="<%=
-DuplicateUserEmailAddressException.class %\>"
+DuplicateUserEmailAddressException.class %>"
 
-message="the-email-address-you-requested-is-already-taken" /\>
+message="the-email-address-you-requested-is-already-taken" />
 
 <liferay-ui:error exception="<%= ReservedUserEmailAddressException.class
-%\>"
+%>"
 
-message="the-email-address-you-requested-is-reserved" /\>
+message="the-email-address-you-requested-is-reserved" />
 
-<liferay-ui:error exception="<%= UserEmailAddressException.class %\>"
+<liferay-ui:error exception="<%= UserEmailAddressException.class %>"
 
-message="please-enter-a-valid-email-address" /\>
-
-
-<aui:input name="emailAddress" /\>
+message="please-enter-a-valid-email-address" />
 
 
-<liferay-ui:error exception="<%= ContactFirstNameException.class %\>"
-
-message="please-enter-a-valid-first-name" /\>
-
-<liferay-ui:error exception="<%= ContactFullNameException.class %\>" m
-
-essage="please-enter-a-valid-first-middle-and-last-name" /\>
+<aui:input name="emailAddress" />
 
 
-<aui:input name="firstName" /\>
+<liferay-ui:error exception="<%= ContactFirstNameException.class %>"
+
+message="please-enter-a-valid-first-name" />
+
+<liferay-ui:error exception="<%= ContactFullNameException.class %>" m
+
+essage="please-enter-a-valid-first-middle-and-last-name" />
 
 
-<liferay-ui:error exception="<%= ContactLastNameException.class %\>"
-
-message="please-enter-a-valid-last-name" /\>
+<aui:input name="firstName" />
 
 
-<aui:input name="lastName" /\>
+<liferay-ui:error exception="<%= ContactLastNameException.class %>"
 
-</aui:fieldset\>
+message="please-enter-a-valid-last-name" />
+
+
+<aui:input name="lastName" />
+
+</aui:fieldset>
 
 In our case, we don't need to add a new key to
 `Language-ext.properties`{.western}, because “basic” is already included
@@ -478,15 +476,15 @@ the source code of Liferay (you may need to look at them for reference):
         swap the implementation of a given service with a custom one.
 
     -   Original files in Liferay:
-        portal-impl/src/META-INF/\*-spring.xml
+        portal-impl/src/META-INF/*-spring.xml
 
--   ext-impl/src/content/Language-ext\_\*.properties
+-   ext-impl/src/content/Language-ext_*.properties
 
     -   Description: This file allows overwriting the value of any key
         used by Liferay's UI to support *I18N*.
 
     -   Original file in Liferay:
-        portal-impl/src/content/Language-\*.properties
+        portal-impl/src/content/Language-*.properties
 
 -   ext-impl/src/META-INF/portal-log4j-ext.xml
 
@@ -522,7 +520,7 @@ the source code of Liferay (you may need to look at them for reference):
 
     -   Description: This file allows overwriting the Liferay-specific
         declaration of the core portlets included in Liferay. Refer to
-        the liferay-portlet-app\_6\_0\_0.dtd file for details on all the
+        the liferay-portlet-app_6_0_0.dtd file for details on all the
         available options. Use this file with care since the code of the
         portlets may be assuming some of these options to be set to
         certain values.
@@ -610,8 +608,6 @@ conflicts and easily merge with a new portal version is to:
 
 This strategy will help you determine what you will need to merge in the
 future when a new version of Liferay is released.
-
-
 
 ![image](../../images/06-ext-plugins_html_5c790363.png)Tip: This is a very advanced
 technique that may have a high impact on the maintainability of your

@@ -53,14 +53,14 @@ Next, edit
 `hooks/example-hook/docroot/WEB-INF/liferay-hook.xml`{.western}, and add
 the following between `<hook></hook>`{.western}:
 
-<custom-jsp-dir\>/META-INF/custom\_jsps</custom-jsp-dir\>
+<custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
 
-Now, any JSP you place inside the *custom\_jsps* directory will replace
+Now, any JSP you place inside the *custom_jsps* directory will replace
 its original inside your Liferay instance when your hook is deployed.
 The directory structure inside this folder must mirror the one within
 *liferay-portal-[version]/tomcat-6.0.26/webapps/ROOT*. To override the
 Terms of Use, copy
-*liferay-portal-[version]/tomcat-6.0.26/webapps/ROOT/html/portal/terms\_of\_use.jsp*
+*liferay-portal-[version]/tomcat-6.0.26/webapps/ROOT/html/portal/terms_of_use.jsp*
 to
 `hooks/example-hook/docroot/META-INF/custom_jsps/html/portal/terms_of_use.jsp`{.western}.
 You will have to create all the intervening directories first.
@@ -102,18 +102,18 @@ without needing to worry modifying your hook every time you upgrade
 Liferay. Here is an example that customizes the search portlet to remove
 the ability to a search provider in the browser:
 
-<liferay-util:buffer var="html"\>
+<liferay-util:buffer var="html">
 
-<liferay-util:include page="/html/portlet/search/search.portal.jsp" /\>
+<liferay-util:include page="/html/portlet/search/search.portal.jsp" />
 
-</liferay-util:buffer\>
+</liferay-util:buffer>
 
 
 <%
 
-int x = html.indexOf("<div class=\\"add-search-provider\\"\>");
+int x = html.indexOf("<div class="add-search-provider">");
 
-int y = html.indexOf("</div\>", x);
+int y = html.indexOf("</div>", x);
 
 
 if (x != -1) {
@@ -123,10 +123,10 @@ StringPool.BLANK);
 
 }
 
-%\>
+%>
 
 
-<%= html %\>
+<%= html %>
 
 Since this technique involves String manipulation it is mainly useful
 when the amount of changes desired are small.
@@ -159,7 +159,7 @@ public class LoginAction extends Action {
 
 public void run(HttpServletRequest req, HttpServletResponse res) {
 
-System.out.println("\#\# My custom login action");
+System.out.println("## My custom login action");
 
 }
 
@@ -174,7 +174,7 @@ Finally, edit `liferay-hook.xml`{.western} inside
 `example-hook/docroot/WEB-INF`{.western} and add the following line
 above `<custom-jsp-dir>`{.western}:
 
-<portal-properties\>portal.properties</portal-properties\>
+<portal-properties>portal.properties</portal-properties>
 
 Deploy your hook again and wait for it to complete. Then log out and
 back in, and you should see our custom message in the terminal window
@@ -262,7 +262,7 @@ throws PortalException, SystemException {
 
 System.out.println(
 
-"\#\# MyUserLocalServiceImpl.getUserById(" + userId + ")");
+"## MyUserLocalServiceImpl.getUserById(" + userId + ")");
 
 
 return super.getUserById(userId);
@@ -271,25 +271,23 @@ return super.getUserById(userId);
 
 }
 
-
 ![image](../../images/05-hooks_html_5c790363.png)**Tip:**Note that the wrapper class
 (MyUserLocalServiceImpl in this example) will be loaded in the hook's
 class loader. That means that it will have access to any other class
 included within the same WAR file, but it won't have access to internal
 classes of Liferay.
 
-
 Next, edit `liferay-hook.xml`{.western} inside
 `example-hook/docroot/WEB-INF`{.western} and add the following after
 `</custom-jsp-dir>`{.western}:
 
-<service\>
+<service>
 
-<service-type\>com.liferay.portal.service.UserLocalService</service-type\>
+<service-type>com.liferay.portal.service.UserLocalService</service-type>
 
-<service-impl\>com.sample.hook.MyUserLocalServiceImpl</service-impl\>
+<service-impl>com.sample.hook.MyUserLocalServiceImpl</service-impl>
 
-</service\>
+</service>
 
 Redeploy your hook, then refresh your browser. In the terminal window
 containing Liferay you should see the messages printed by our hook.
@@ -324,15 +322,13 @@ the language whose messages you want to customize and then refer to it
 from the liferay-hook.xml. For example to override the translations to
 Spanish and French the following two lines would be added to the file:
 
-<hook\>
+<hook>
 
 ...
 
-<language-properties\>content/Language\_es.properties</language-properties\>
+<language-properties>content/Language_es.properties</language-properties>
 
-<language-properties\>content/Language\_fr.properties</language-properties\>
+<language-properties>content/Language_fr.properties</language-properties>
 ...
 
-</hook\>
-
-
+</hook>

@@ -23,6 +23,7 @@ often.
 ### Client Examples (new)
 
 ## RESTful Interfaces (new)
+
 TODO Include Atom and loose serialization with JSON 
 
 ## Security and Permissions
@@ -41,51 +42,51 @@ be used by each portlet within its definition in portlet.xml. For
 example, the Blogs portlet definition included in Liferay references 3
 roles`:`{.western}
 
-<portlet\>
+<portlet>
 
-<portlet-name\>33</portlet-name\>
+<portlet-name>33</portlet-name>
 
-<display-name\>Blogs</display-name\>
+<display-name>Blogs</display-name>
 
-<portlet-class\>com.liferay.portlet.StrutsPortlet</portlet-class\>
+<portlet-class>com.liferay.portlet.StrutsPortlet</portlet-class>
 
-<init-param\>
+<init-param>
 
-<name\>view-action</name\>
+<name>view-action</name>
 
-<value\>/blogs/view</value\>
+<value>/blogs/view</value>
 
-</init-param\>
+</init-param>
 
-<expiration-cache\>0</expiration-cache\>
+<expiration-cache>0</expiration-cache>
 
-<supports\>
+<supports>
 
-<mime-type\>text/html</mime-type\>
+<mime-type>text/html</mime-type>
 
-</supports\>
+</supports>
 
-<resource-bundle\>com.liferay.portlet.StrutsResourceBundle</resource-bundle\>
+<resource-bundle>com.liferay.portlet.StrutsResourceBundle</resource-bundle>
 
-<security-role-ref\>
+<security-role-ref>
 
-<role-name\>guest</role-name\>
+<role-name>guest</role-name>
 
-</security-role-ref\>
+</security-role-ref>
 
-**<security-role-ref\>**
+**<security-role-ref>**
 
-**<role-name\>power-user</role-name\>**
+**<role-name>power-user</role-name>**
 
-**</security-role-ref\>**
+**</security-role-ref>**
 
-<security-role-ref\>
+<security-role-ref>
 
-<role-name\>user</role-name\>
+<role-name>user</role-name>
 
-</security-role-ref\>
+</security-role-ref>
 
-</portlet\>
+</portlet>
 
 These roles need to be mapped to specific roles within the portal. The
 reason for this mapping is to allow the deployer of a portlet to solve
@@ -104,37 +105,37 @@ liferay-portlet.xml. For example see definition of mapping inside
 `liferay-portlet.xml`{.western} in
 `portal-web/docroot/WEB-INF:`{.western}
 
-<role-mapper\>
+<role-mapper>
 
-<role-name\>administrator</role-name\>
+<role-name>administrator</role-name>
 
-<role-link\>Administrator</role-link\>
+<role-link>Administrator</role-link>
 
-</role-mapper\>
+</role-mapper>
 
-<role-mapper\>
+<role-mapper>
 
-<role-name\>guest</role-name\>
+<role-name>guest</role-name>
 
-<role-link\>Guest</role-link\>
+<role-link>Guest</role-link>
 
-</role-mapper\>
+</role-mapper>
 
-**<role-mapper\>**
+**<role-mapper>**
 
-**<role-name\>power-user</role-name\>**
+**<role-name>power-user</role-name>**
 
-**<role-link\>Power User</role-link\>**
+**<role-link>Power User</role-link>**
 
-**</role-mapper\>**
+**</role-mapper>**
 
-<role-mapper\>
+<role-mapper>
 
-<role-name\>user</role-name\>
+<role-name>user</role-name>
 
-<role-link\>User</role-link\>
+<role-link>User</role-link>
 
-</role-mapper\>
+</role-mapper>
 
 
 This means that if a portlet definition references the role “power-user”
@@ -170,7 +171,7 @@ can decide which option fits your needs better.
 Adding permissions to custom portlets consists of four main steps (also
 known as DRAC):
 
-1.  Define all resources and their permissions.
+1.  **D**efine all resources and their permissions.
 
 2.  **R**egister all the resources defined in step 1 in the permissions
     system. This is also known as “adding resources.”
@@ -210,159 +211,159 @@ Let’s take a look at `blogs.xml`{.western} in
 `portal-impl/src/resource-actions`{.western} and see how the blogs
 portlet defines these resources and actions.
 
-<?xml version="1.0"?\>
+<?xml version="1.0"?>
 
-<resource-action-mapping\>
+<resource-action-mapping>
 
-<portlet-resource\>
+<portlet-resource>
 
-<portlet-name\>33</portlet-name\>
+<portlet-name>33</portlet-name>
 
-<permissions\>
+<permissions>
 
-<supports\>
+<supports>
 
-<action-key\>ACCESS\_IN\_CONTROL\_PANEL</action-key\>
+<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
 
-<action-key\>ADD\_TO\_PAGE</action-key\>
+<action-key>ADD_TO_PAGE</action-key>
 
-<action-key\>CONFIGURATION</action-key\>
+<action-key>CONFIGURATION</action-key>
 
-<action-key\>VIEW</action-key\>
+<action-key>VIEW</action-key>
 
-</supports\>
+</supports>
 
-<community-defaults\>
+<community-defaults>
 
-<action-key\>VIEW</action-key\>
+<action-key>VIEW</action-key>
 
-</community-defaults\>
+</community-defaults>
 
-<guest-defaults\>
+<guest-defaults>
 
-<action-key\>VIEW</action-key\>
+<action-key>VIEW</action-key>
 
-</guest-defaults\>
+</guest-defaults>
 
-<guest-unsupported\>
+<guest-unsupported>
 
-<action-key\>ACCESS\_IN\_CONTROL\_PANEL</action-key\>
+<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
 
-<action-key\>CONFIGURATION</action-key\>
+<action-key>CONFIGURATION</action-key>
 
-</guest-unsupported\>
+</guest-unsupported>
 
-</permissions\>
+</permissions>
 
-</portlet-resource\>
+</portlet-resource>
 
-<model-resource\>
+<model-resource>
 
-<model-name\>com.liferay.portlet.blogs</model-name\>
+<model-name>com.liferay.portlet.blogs</model-name>
 
-<portlet-ref\>
+<portlet-ref>
 
-<portlet-name\>33</portlet-name\>
+<portlet-name>33</portlet-name>
 
-</portlet-ref\>
+</portlet-ref>
 
-<permissions\>
+<permissions>
 
-<supports\>
+<supports>
 
-<action-key\>ADD\_ENTRY</action-key\>
+<action-key>ADD_ENTRY</action-key>
 
-<action-key\>PERMISSIONS</action-key\>
+<action-key>PERMISSIONS</action-key>
 
-<action-key\>SUBSCRIBE</action-key\>
+<action-key>SUBSCRIBE</action-key>
 
-</supports\>
+</supports>
 
-<community-defaults /\>
+<community-defaults />
 
-<guest-defaults /\>
+<guest-defaults />
 
-<guest-unsupported\>
+<guest-unsupported>
 
-<action-key\>ADD\_ENTRY</action-key\>
+<action-key>ADD_ENTRY</action-key>
 
-<action-key\>PERMISSIONS</action-key\>
+<action-key>PERMISSIONS</action-key>
 
-<action-key\>SUBSCRIBE</action-key\>
+<action-key>SUBSCRIBE</action-key>
 
-</guest-unsupported\>
+</guest-unsupported>
 
-</permissions\>
+</permissions>
 
-</model-resource\>
+</model-resource>
 
-<model-resource\>
+<model-resource>
 
-<model-name\>com.liferay.portlet.blogs.model.BlogsEntry</model-name\>
+<model-name>com.liferay.portlet.blogs.model.BlogsEntry</model-name>
 
-<portlet-ref\>
+<portlet-ref>
 
-<portlet-name\>33</portlet-name\>
+<portlet-name>33</portlet-name>
 
-</portlet-ref\>
+</portlet-ref>
 
-<permissions\>
+<permissions>
 
-<supports\>
+<supports>
 
-<action-key\>ADD\_DISCUSSION</action-key\>
+<action-key>ADD_DISCUSSION</action-key>
 
-<action-key\>DELETE</action-key\>
+<action-key>DELETE</action-key>
 
-<action-key\>DELETE\_DISCUSSION</action-key\>
+<action-key>DELETE_DISCUSSION</action-key>
 
-<action-key\>PERMISSIONS</action-key\>
+<action-key>PERMISSIONS</action-key>
 
-<action-key\>UPDATE</action-key\>
+<action-key>UPDATE</action-key>
 
-<action-key\>UPDATE\_DISCUSSION</action-key\>
+<action-key>UPDATE_DISCUSSION</action-key>
 
-<action-key\>VIEW</action-key\>
+<action-key>VIEW</action-key>
 
-</supports\>
+</supports>
 
-<community-defaults\>
+<community-defaults>
 
-<action-key\>ADD\_DISCUSSION</action-key\>
+<action-key>ADD_DISCUSSION</action-key>
 
-<action-key\>VIEW</action-key\>
+<action-key>VIEW</action-key>
 
-</community-defaults\>
+</community-defaults>
 
-<guest-defaults\>
+<guest-defaults>
 
-<action-key\>VIEW</action-key\>
+<action-key>VIEW</action-key>
 
-</guest-defaults\>
+</guest-defaults>
 
-<guest-unsupported\>
+<guest-unsupported>
 
-<action-key\>ADD\_DISCUSSION</action-key\>
+<action-key>ADD_DISCUSSION</action-key>
 
-<action-key\>DELETE</action-key\>
+<action-key>DELETE</action-key>
 
-<action-key\>DELETE\_DISCUSSION</action-key\>
+<action-key>DELETE_DISCUSSION</action-key>
 
-<action-key\>PERMISSIONS</action-key\>
+<action-key>PERMISSIONS</action-key>
 
-<action-key\>UPDATE</action-key\>
+<action-key>UPDATE</action-key>
 
-<action-key\>UPDATE\_DISCUSSION</action-key\>
+<action-key>UPDATE_DISCUSSION</action-key>
 
-</guest-unsupported\>
+</guest-unsupported>
 
-</permissions\>
+</permissions>
 
 ...
 
-</model-resource\>
+</model-resource>
 
-</resource-action-mapping\>
+</resource-action-mapping>
 
 Permissions in the blogs portlet are defined at several different
 levels, coinciding to the different sections of the XML file. First, in
@@ -458,8 +459,8 @@ permissions will be lost (and some system features may fail).
 
 For all new deployments it is strongly recommended to use algorithm 6.
 For deployments that were using other algorithms it's recommended to use
-the migration tools provided from the Control Panel \> Server
-Administration \> Migration.
+the migration tools provided from the Control Panel > Server
+Administration > Migration.
 
 For more info see permissions.user.check.algorithm option in
 portal.properties file.
@@ -520,8 +521,8 @@ the tag is within the appropriate `<form>`{.western} tags.
 
 When removing entities from database it is also good to remove
 permissions mapped directly to the entity. To prevent having a lot of
-dead resources taking up space in the Resource\_ database table, you
-must remember to remove them from the Resource\_ table when the resource
+dead resources taking up space in the Resource_ database table, you
+must remember to remove them from the Resource_ table when the resource
 is no longer applicable. To perform this operation call the
 `deleteResource(…)`{.western} method in
 `ResourceLocalServiceUtil`{.western}. Here’s an example of a blogs entry
@@ -531,7 +532,7 @@ ResourceLocalServiceUtil.deleteResource(
 
 entry.getCompanyId(), BlogsEntry.class.getName(),
 
-Resource.SCOPE\_INDIVIDUAL, entry.getEntryId);
+Resource.SCOPE_INDIVIDUAL, entry.getEntryId);
 
 
 Liferay Community Edition 6.0.5 has a known bug
@@ -564,18 +565,18 @@ permission icon to the user. Below is an example found in the file
 
 <liferay-security:permissionsURL
 
-modelResource="<%= BlogsEntry.class.getName() %\>"
+modelResource="<%= BlogsEntry.class.getName() %>"
 
-modelResourceDescription="<%= entry.getTitle() %\>"
+modelResourceDescription="<%= entry.getTitle() %>"
 
-resourcePrimKey="<%= entry.getPrimaryKey().toString() %\>"
+resourcePrimKey="<%= entry.getPrimaryKey().toString() %>"
 
 var="entryURL"
 
-/\>
+/>
 
 
-<liferay-ui:icon image="permissions" url="<%= entryURL %\>" /\>
+<liferay-ui:icon image="permissions" url="<%= entryURL %>" />
 
 The attributes you need to provide to the first tag are
 `modelResource`{.western}, `modelResourceDescription`{.western},
@@ -611,7 +612,7 @@ implement anything for your portlet to discriminate whether a user is
 allowed to view or to configure the portlet itself. However, you do need
 to implement any custom permission you have defined in your
 resource-actions XML file. In the blogs portlet, one custom supported
-action is ADD\_ENTRY. There are two places in the source code to check
+action is ADD_ENTRY. There are two places in the source code to check
 for this permission. The first place to check for the add permission is
 in your JSP files. The presence of the add entry button is contingent on
 whether the user has permission to add entry.
@@ -622,13 +623,13 @@ if (permissionChecker.hasPermission(
 
 scopeGroupId, “com.liferay.portlet.blogs.model”,
 
-scopeGroupId, ”ADD\_ENTRY”) {
+scopeGroupId, ”ADD_ENTRY”) {
 
 // Show add entry button
 
 }
 
-%\>
+%>
 
 The second place to check for the add entry permission is in the
 business logic. If the check fails, a
@@ -638,7 +639,7 @@ if (!permissionChecker.hasPermission(
 
 scopeGroupId, “com.liferay.portlet.blogs.model”,
 
-scopeGroupId, ”*ADD\_ENTRY”*)) {
+scopeGroupId, ”*ADD_ENTRY”*)) {
 
 throw new PrincipalException();
 
@@ -690,13 +691,13 @@ blogsEntryLocalService.addEntry(...);
 <%
 
 if (BlogsPermission.contains(permissionChecker, scopeGroupId,
-ActionKeys.ADD\_ENTRY)) {
+ActionKeys.ADD_ENTRY)) {
 
 // show add entry button
 
 }
 
-%\>
+%>
 
 `Now, let's take a look at how a `{.western}`ServiceImpl`{.western}` class  `{.western}`BlogsEntryServiceImpl`{.western}` uses the `{.western}`BlogsPermission`{.western}` helper class.  `{.western}`In method `{.western}`BlogsEntryServiceImpl.`{.western}`addEntry(...)`{.western}`, a call is made to check whether the incoming request has permission to add entry.  T`{.western}`he check is done using `{.western}`helper`{.western}` class `{.western}`BlogsPermission`{.western}`.  If the check fails, it throws a `{.western}`PrincipalException`{.western}` and the add entry request aborts.`{.western}
 
@@ -723,7 +724,7 @@ BlogsPermission.*check*(
 
 getPermissionChecker(), serviceContext.getScopeGroupId(),
 
-ActionKeys.*ADD\_ENTRY*);
+ActionKeys.*ADD_ENTRY*);
 
 
 return blogsEntryLocalService.addEntry(
@@ -764,4 +765,3 @@ equipped to implement security in your custom Liferay portlets!
 ### Faceted Search (new)
 
 ### Using Multiple Search Engines (new)
-

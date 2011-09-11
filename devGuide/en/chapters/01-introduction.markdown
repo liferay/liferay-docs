@@ -104,7 +104,7 @@ ways:
     Some people like to upload them directly through the file system,
     FTP or similar protocols. In some other cases, just uploading it
     with theDocument Library portlet and copying the URL is enough. Once
-    you have the URL you can go to the Control Panel \> OpenSocial,
+    you have the URL you can go to the Control Panel > OpenSocial,
     click the “New Gadget” button and enter the URL as shown in the
     following screenshot:
 
@@ -271,7 +271,6 @@ plugins, the server must be restarted for changes to take effect. For
 this reason, Ext plugins should not be combined with other types of
 plugins.
 
-
 ![image](../../images/01-introduction_html_5c790363.png)**Tip:** If you have
 developed for Liferay 5.2 or before, you may be familiar with what was
 known as “Extension Environment”. Ext plugins are a new feature in
@@ -327,7 +326,7 @@ reading that chapter first and then go back to reading from the second
 chapter. It won't be hard to repeat the steps described in the guide
 using the Liferay IDE.
 
-**What about if I don't like Apache Ant and I prefer to use Maven?**Many
+**What about if I don't like Apache Ant and I prefer to use Maven?** Many
 developers prefer one of the alternatives to Apache Ant. The most
 popular of these alternatives is Maven. To support developers that want
 to use Maven we have *mavenized* Liferay artifacts so that they can

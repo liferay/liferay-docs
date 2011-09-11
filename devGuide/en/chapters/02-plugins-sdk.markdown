@@ -50,7 +50,6 @@ download the Plugins SDK from the *Additional Files* page:
 
 ./startup.sh
 
-
 Once Liferay starts your browser should open to
 [http://localhost:8080/](http://localhost:8080/) and you can login with
 the email *test@liferay.com* and password *test*.
@@ -63,36 +62,35 @@ Ant 1.7.0 or higher installed on your machine. Download the latest
 version of Ant from [http://ant.apache.org/](http://ant.apache.org/).
 Decompress the archive into a folder of your choosing.
 
-Next, set an environment variable called **ANT\_HOME** which points to
+Next, set an environment variable called **ANT_HOME** which points to
 the folder to which you installed Ant. Use this variable to add the
-binaries for Ant to your **PATH**by adding $**ANT\_HOME/bin** to your
+binaries for Ant to your **PATH**by adding $**ANT_HOME/bin** to your
 **PATH** environment variable.
 
-You can do this on Linux or Mac OS X by modifying your *.bash\_profile*
+You can do this on Linux or Mac OS X by modifying your *.bash_profile*
 file as follows (assuming you installed Ant in */java*):
 
-export ANT\_HOME=/java/apache-ant-1.8.1
+export ANT_HOME=/java/apache-ant-1.8.1
 
-export PATH=$PATH:$ANT\_HOME/bin
+export PATH=$PATH:$ANT_HOME/bin
 
 Close and reopen your terminal window to make these settings take
 effect.
 
-You can do this on Windows by going to ***Start***-\> *Control Panel*,
-and double-clicking the *System*icon. Go to *Advanced*, and then click
+You can do this on Windows by going to ***Start** -> *Control Panel* ,
+and double-clicking the *System* icon. Go to *Advanced*, and then click
 the *Environment Variables* button. Under *System Variables*, select
-*New*. Make the Variable Name **ANT\_HOME** and the Variable Value the
-path to which you installed Ant (e.g., *c:\\java\\apache-ant-1.8.1*),
+*New*. Make the Variable Name **ANT_HOME** and the Variable Value the
+path to which you installed Ant (e.g., *c:javaapache-ant-1.8.1*),
 and click *OK*.
 
 Scroll down until you find the **PATH** environment variable. Select it
-and click *Edit*. Add **%ANT\_HOME%\\bin** to the end of the Variable
+and click *Edit*. Add **%ANT_HOME%bin** to the end of the Variable
 Value. Click *OK*, and then click *OK* again. Open a command prompt and
-type **ant** **-version** and press Enter. You should get and output
+type **ant-version** and press Enter. You should get and output
 similar to this:
 
 Apache Ant(TM) version 1.8.2 compiled on December 20 2010
-
 
 If not, check your environment variable settings and make sure they are
 pointing to the directory where you unzipped Ant.
