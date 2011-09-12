@@ -1987,516 +1987,432 @@ Set this to `true` if you want to import the users from LDAP after successful lo
 Set this to `true` to log out the user off OpenSSO when the portal session expires.
 
 	open.sso.logout.on.session.expiration=false
+	
+#### Request Header Authentication
+
+Set this to `true` to automatically import users from LDAP if they do not exist in the portal. The property `auto.login.hooks` must contain a referece to the class `com.liferay.portal.security.auth.RequestHeaderAutoLogin` to enable request header authentication.
+
+	request.header.auth.import.from.ldap=false	
 
 #### SiteMinder
 
-Set this to true to enable CA SiteMinder single sign on. If set to true,
-then the property `auto.login.hooks` must contain a reference
-to the class
-`com.liferay.portal.security.auth.SiteMinderAutoLogin` and the
-`logout.events.post` must have a reference to
-`com.liferay.portal.events.SiteMinderLogoutAction` for logout
-to work.
+Set this to `true` to enable CA SiteMinder single sign on. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.SiteMinderAutoLogin` and the `logout.events.post` must have a reference to `com.liferay.portal.events.SiteMinderLogoutAction` for logout to work.
 
-siteminder.auth.enabled=false
+	siteminder.auth.enabled=false
 
-A user may be authenticated from SiteMinder and not yet exist in the
-portal. Set this to true to automatically import users from LDAP if they
-do not exist in the portal.
+A user may be authenticated from SiteMinder and not yet exist in the portal. Set this to `true` to automatically import users from LDAP if they do not exist in the portal.
 
-siteminder.import.from.ldap=false
+	siteminder.import.from.ldap=false
 
-Set this to the name of the user header that SiteMinder passes to the
-portal.
+Set this to the name of the user header that SiteMinder passes to the portal.
 
-siteminder.user.header=SM\_USER
+	siteminder.user.header=SM_USER
 
 #### Authentication Pipeline
 
-Input a list of comma delimited class names that implement
-`com.liferay.portal.security.auth.Authenticator`. These
-classes will run before or after the portal authentication begins.
+Input a list of comma delimited class names that implement `com.liferay.portal.security.auth.Authenticator`. These classes will run before or after the portal authentication begins.
 
-The `Authenticator` class defines the constant values that
-should be used as return codes from the classes implementing the
-interface. If authentication is successful, return SUCCESS; if the user
-exists but the passwords do not match, return FAILURE; and if the user
-does not exist on the system, return DNE.
+The Authenticator class defines the constant values that should be used as return codes from the classes implementing the interface. If authentication is successful, return SUCCESS; if the user exists but the passwords do not match, return FAILURE; and if the user does not exist on the system, return DNE.
 
 Constants in Authenticator:
+    public static final int SUCCESS = 1;
+    public static final int FAILURE = -1;
+    public static final int DNE = 0;
 
-	public static final int SUCCESS = 1;
+In case you have several classes in the authentication pipeline, all of them have to return SUCCESS if you want the user to be able to login. If one of the authenticators returns FAILURE or DNE, the login fails.
 
-	public static final int FAILURE = -1;
+Under certain circumstances, you might want to keep the information in the portal database in sync with an external database or an LDAP server. This can easily be achieved by implementing a class via LDAPAuth that updates the information stored in the portal user database whenever a user signs in.
 
-	public static final int DNE = 0;
-
-In case you have several classes in the authentication pipeline, all of
-them have to return SUCCESS if you want the user to be able to login. If
-one of the authenticators returns FAILURE or DNE, the login fails.
-
-Under certain circumstances, you might want to keep the information in
-the portal database in sync with an external database or an LDAP server.
-This can easily be achieved by implementing a class via
-`LDAPAuth` that updates the information stored in the portal
-user database whenever a user signs in.
-
-Each portal instance can be configured at run time to either
-authenticate based on user ids or email addresses. See the Admin portlet
-for more information.
+Each portal instance can be configured at run time to either authenticate based on user ids or email addresses. See the Admin portlet for more information.
 
 Available authenticators are:
+    com.liferay.portal.security.auth.LDAPAuth
 
-`com.liferay.portal.security.auth.LDAPAuth`
+See the LDAP properties to configure the behavior of the LDAPAuth class.
 
-See the LDAP properties to configure the behavior of the
-`LDAPAuth` class.
+*Examples:*
 
-auth.pipeline.pre=com.liferay.portal.security.auth.LDAPAuth
+	auth.pipeline.pre=com.liferay.portal.security.auth.LDAPAuth
+	auth.pipeline.post=
 
-auth.pipeline.post=
-
-Set this to true to enable password checking by the internal portal
-authentication. If set to false, you're essentially delegating password
-checking is delegated to the authenticators configured in
-`auth.pipeline.pre` and `auth.pipeline.post`
-settings.
-
-auth.pipeline.enable.liferay.check=true
-
-Input a list of comma delimited class names that implement
-`com.liferay.portal.security.auth.AuthFailure`. These classes
-will run when a user has a failed login or when a user has reached the
-maximum number of failed logins.
-
-auth.failure=com.liferay.portal.security.auth.LoginFailure
-
-auth.max.failures=com.liferay.portal.security.auth.LoginMaxFailures
-
-auth.max.failures.limit=5
-
-Set the following to true if users are forwarded to the last visited
-path upon successful login. If set to false, users will be forwarded to
-their default layout page.
-
-auth.forward.by.last.path=true
-
-The login page reads a redirect by a parameter named
-`redirect`. If this property is set to true, then users will
-be redirected to the given redirect path upon successful login. If the
-user does not have permission to view that page, then the rule set by
-the property `auth.forward.by.last.path` will apply.
-
-You can set the redirect manually from another application, by appending
-the *redirect* parameter in a url that looks like this:
-`/c/portal/login?redirect=%2Fgroup%2Femployees%2Fcalendar`.
-This url will redirect the user to the path
-`/group/employees/calendar` upon successful login.
-
-auth.forward.by.redirect=true
-
-Enter a list of comma delimited paths that can be considered part of the
-last visited path.
-
-auth.forward.last.paths=/document\_library/get\_file
-
-Enter a URL that will be used to login portal users whenever needed. By
-default, the portal's login page is used.
-
-\#auth.login.url=/web/guest/home
-
-Enter a friendly URL of a page that will be used to login portal users
-whenever the user is navigating a community and authentication is
-needed. By default, the portal's login page or the URL set in the
-property `auth.login.url` is used.
-
-auth.login.community.url=/login
-
-Enter the name of the login portlet used in a page identified by the URL
-of the previous property (if one has been set). This will allow the
-portlet to have access to the redirect parameter and thus forward the
-user to the page where he was trying to access when necessary. You
-should leave the default value unless you have your own custom login
-portlet.
-
-auth.login.portlet.name=58
-
-Enter a list of comma delimited paths that do not require
-authentication.
-
-auth.public.paths=\\
-
-/blogs/find\_entry,\\
-
-/blogs/rss,\\
-
-/blogs/trackback,\\
-
-\\
-
-/bookmarks/open\_entry,\\
-
-\\
-
-/document\_library/get\_file,\\
-
-\\
-
-/journal/get\_article,\\
-
-/journal/get\_articles,\\
-
-/journal/get\_latest\_article\_content,\\
-
-/journal/get\_structure,\\
-
-/journal/get\_template,\\
-
-/journal/view\_article\_content,\\
-
-/journal\_articles/view\_article\_content,\\
-
-\\
-
-/layout\_management/sitemap,\\
-
-\\
-
-/message\_boards/find\_category,\\
-
-/message\_boards/find\_message,\\
-
-/message\_boards/find\_thread,\\
-
-/message\_boards/get\_message\_attachment,\\
-
-/message\_boards/rss,\\
-
-\\
-
-/my\_places/view,\\
-
-\\
-
-/polls/view\_chart,\\
-
-\\
-
-/portal/emoticons,\\
-
-/portal/expire\_session,\\
-
-/portal/extend\_session,\\
-
-/portal/extend\_session\_confirm,\\
-
-/portal/json\_service,\\
-
-/portal/logout,\\
-
-/portal/open\_id\_request,\\
-
-/portal/open\_id\_response,\\
-
-/portal/session\_click,\\
-
-/portal/session\_tree\_js\_click,\\
-
-/portal/status,\\
-
-\\
-
-/search/open\_search,\\
-
-/search/open\_search\_description.xml,\\
-
-\\
-
-/shopping/notify,\\
-
-\\
-
-/tags/rss,\\
-
-\\
-
-/wiki/get\_page\_attachment,\\
-
-/wiki/rss
+Set this to `true` to enable password checking by the internal portal authentication. If set to `false`, you're essentially delegating password checking is delegated to the authenticators configured in `auth.pipeline.pre` and `auth.pipeline.post` settings.
+
+	auth.pipeline.enable.liferay.check=true
+
+Input a list of comma delimited class names that implement `com.liferay.portal.security.auth.AuthFailure`. These classes will run when a user has a failed login or when a user has reached the maximum number of failed logins.
+
+	auth.failure=com.liferay.portal.security.auth.LoginFailure
+	auth.max.failures=com.liferay.portal.security.auth.LoginMaxFailures
+
+Set the following to `true` if users are allowed to have simultaneous logins from different sessions. This property is not used unless the property `live.users.enabled" is set to true`.
+
+	auth.simultaneous.logins=true
+
+Set this to `true` if users are forwarded to the last visited path upon successful login. If set to `false`, users will be forwarded to their default layout page.
+
+	auth.forward.by.last.path=true
+
+The login page reads a redirect by a parameter named `redirect`. If this property is set to `true`, then users will be redirected to the given redirect path upon successful login. If the user does not have permission to view that page, then the rule set by the property `auth.forward.by.last.path` will apply.
+
+You can set the redirect manually from another application, by appending the `redirect` parameter in a url that looks like this: `/c/portal/login?redirect=%2Fgroup%2Femployees%2Fcalendar`. This url will redirect the user to the path `/group/employees/calendar` upon successful login.
+
+	auth.forward.by.redirect=true
+
+Enter a list of comma delimited paths that can be considered part of the last visited path.
+
+	auth.forward.last.paths=/document_library/get_file
+
+Enter a URL that will be used to login portal users whenever needed. By default, the portal's login page is used.
+
+*Example:*
+
+	auth.login.url=/web/guest/home
+
+Enter a friendly URL of a page that will be used to login portal users whenever the user is navigating a site and authentication is needed. By default, the portal's login page or the URL set in the property `auth.login.url` is used.
+
+	auth.login.site.url=/login
+
+Enter the name of the login portlet used in a page identified by the URL of the previous property (if one has been set). This will allow the portlet to have access to the redirect parameter and thus forward the user to the page where he was trying to access when necessary. You should leave the default value unless you have your own custom login portlet
+
+	auth.login.portlet.name=58
+
+Set this to `true` to disable any users from logging into the portal. Preventing users from logging into the portal provides a read only version of the portal that can be used to minimize site outages during upgrades.
+
+	auth.login.disabled=false
+	auth.login.disabled.path=/portal/login_disabled
+
+Enter a list of comma delimited paths that do not require authentication.
+
+	auth.public.paths=\
+		/asset/get_categories,\
+		\
+		/blogs/find_entry,\
+		/blogs/rss,\
+		/blogs/trackback,\
+		\
+		/blogs_aggregator/rss,\
+		\
+		/bookmarks/open_entry,\
+		\
+		/calendar/find_event,\
+		\
+		/document_library/find_file_entry,\
+		/document_library/find_folder,\
+		/document_library/get_file,\
+		\
+		/flags/edit_flag,\
+		\
+		/iframe/proxy,\
+		\
+		/image_gallery_display/find_folder,\
+		/image_gallery_display/find_image,\
+		\
+		/journal/get_article,\
+		/journal/get_articles,\
+		/journal/get_latest_article_content,\
+		/journal/get_structure,\
+		/journal/get_template,\
+		/journal/rss,\
+		/journal/view_article_content,\
+		/journal_articles/view_article_content,\
+		\
+		/layouts_admin/robots,\
+		/layouts_admin/sitemap,\
+		\
+		/login/facebook_connect_oauth,\
+		\
+		/message_boards/find_category,\
+		/message_boards/find_message,\
+		/message_boards/find_thread,\
+		/message_boards/get_message_attachment,\
+		/message_boards/rss,\
+		\
+		/my_sites/view,\
+		\
+		/polls/view_chart,\
+		\
+		/portal/ee/license,\
+		/portal/emoticons,\
+		/portal/expire_session,\
+		/portal/extend_session,\
+		/portal/extend_session_confirm,\
+		/portal/json_service,\
+		/portal/logout,\
+		/portal/open_id_request,\
+		/portal/open_id_response,\
+		/portal/portlet_url,\
+		/portal/session_click,\
+		/portal/session_tree_js_click,\
+		/portal/status,\
+		\
+		/search/open_search,\
+		/search/open_search_description.xml,\
+		\
+		/shopping/notify,\
+		\
+		/wiki/find_page,\
+		/wiki/get_page_attachment,\
+		/wiki/rss
+		
+#### Authentication Token
+
+Set this to `true` to enable authentication token security checks. The checks can be disabled for specific actions via the property `auth.token.ignore.actions` or for specific portlets via the init parameter `check-auth-token` in `portlet.xml`.
+
+	auth.token.check.enabled=true
+
+Set the authentication token class. This class must implement `com.liferay.portal.security.auth.AuthToken`. This class is used to prevent CSRF attacks. See [http://issues.liferay.com/browse/LPS-8399](http://issues.liferay.com/browse/LPS-8399) for more information.
+
+	auth.token.impl=com.liferay.portal.security.auth.SessionAuthToken
+
+Input a list of comma delimited struts actions that will not be checked for an authentication token.
+
+	auth.token.ignore.actions=\
+		/asset/rss,\
+		\
+		/asset_publisher/edit_article_discussion,\
+		/asset_publisher/edit_entry_discussion,\
+		/asset_publisher/edit_file_entry_discussion,\
+		/asset_publisher/edit_page_discussion,\
+		\
+		/blogs/edit_entry,\
+		/blogs/edit_entry_discussion,\
+		/blogs/rss,\
+		\
+		/blogs_aggregator/edit_entry,\
+		/blogs_aggregator/edit_entry_discussion,\
+		/blogs_aggregator/rss,\
+		\
+		/calendar/edit_event_discussion,\
+		\
+		/document_library/edit_file_entry,\
+		/document_library/edit_file_entry_discussion,\
+		\
+		/document_library_display/edit_file_entry_discussion,\
+		\
+		/journal/edit_article_discussion,\
+		/journal/rss,\
+		\
+		/journal_content/edit_article_discussion,\
+		\
+		/image_gallery_display/edit_image,\
+		\
+		/login/login,\
+		\
+		/message_boards/edit_discussion,\
+		/message_boards/edit_message,\
+		/message_boards/rss,\
+		\
+		/my_sites/view,\
+		\
+		/page_comments/edit_page_discussion,\
+		\
+		/shopping/edit_order_discussion,\
+		\
+		/software_catalog/edit_product_entry_discussion,\
+		\
+		/wiki/edit_page,\
+		/wiki/edit_page_attachment,\
+		/wiki/edit_page_discussion,\
+		/wiki/get_page_attachment,\
+		/wiki/rss,\
+		\
+		/wiki_admin/edit_page_attachment,\
+		\
+		/wiki_display/edit_page_discussion
+
+
+Set a list of comma delimited list of portlet ids that will not be checked for an authentication token.
+
+	auth.token.ignore.portlets=82
+
+
+Set the shared secret that is used for requests where it is not possible to generate an authentication token (i.e. WSRP).
+
+	auth.token.shared.secret=BAHyWOT9TbPB
 
 #### Auto Login
 
-Input a list of comma delimited class names that implement
-`com.liferay.portal.security.auth.AutoLogin`. These classes
-will run in consecutive order for all unauthenticated users until one of
-them return a valid user id and password combination. If no valid
-combination is returned, then the request continues to process normally.
-If a valid combination is returned, then the portal will automatically
-login that user with the returned user id and password combination.
+Input a list of comma delimited class names that implement`com.liferay.portal.security.auth.AutoLogin`. These classes will run in consecutive order for all unauthenticated users until one of them returns a valid user id and password combination. If no valid combination is returned, then the request continues to process normally. If a valid combination is returned, then the portal will automatically login that user with the returned user id and password combination.
 
-For example,
-`com.liferay.portal.security.auth.RememberMeAutoLogin` reads
-from a cookie to automatically log in a user who previously logged in
-while checking the *Remember Me* box.
+For example,`com.liferay.portal.security.auth.RememberMeAutoLogin` reads from a cookie to automatically log in a user who previously logged inwhile checking the Remember Me box.
 
-This interface allows deployers to easily configure the portal to work
-with other SSO servers. See
-`com.liferay.portal.security.auth.CASAutoLogin` for an example
-of how to configure the portal with Yale's SSO server.
+This interface allows deployers to easily configure the portal to work with other SSO servers. See`com.liferay.portal.security.auth.CASAutoLogin` for an example of how to configure the portal with Yale's SSO server.
 
-auto.login.hooks=com.liferay.portal.security.auth.CASAutoLogin,com.liferay.portal.security.auth.NtlmAutoLogin,com.liferay.portal.security.auth.OpenIdAutoLogin,com.liferay.portal.security.auth.OpenSSOAutoLogin,com.liferay.portal.security.auth.RememberMeAutoLogin,com.liferay.portal.security.auth.SiteMinderAutoLogin
+	auto.login.hooks=com.liferay.portal.security.auth.CASAutoLogin,com.liferay.portal.security.auth.FacebookAutoLogin,com.liferay.portal.security.auth.NtlmAutoLogin,com.liferay.portal.security.auth.OpenIdAutoLogin,com.liferay.portal.security.auth.OpenSSOAutoLogin,com.liferay.portal.security.auth.RememberMeAutoLogin,com.liferay.portal.security.auth.SiteMinderAutoLogin
 
 Set the hosts that will be ignored for auto login.
 
-auto.login.ignore.hosts=
+	auto.login.ignore.hosts=
 
 Set the paths that will be ignored for auto login.
 
-auto.login.ignore.paths=
+	auto.login.ignore.paths=
 
 #### SSO with MAC (Message Authentication Code)
 
 To use SSO with MAC, post to an URL like:
+    http://localhost:8080/c/portal/login?cmd=already-registered&login=<userId|emailAddress>&password=<MAC>
 
-`http://localhost:8080/c/portal/login?cmd=already-registered&login=<userId|emailAddress>&password=<MAC>`
+Pass the MAC in the password field. Make sure the MAC gets URL encoded because it might contain characters not allowed in a URL.
 
-Pass the MAC in the password field. Make sure the MAC gets URL encoded
-because it might contain characters not allowed in a URL.
+SSO with MAC also requires that you set the following property in `system.properties`:
 
-SSO with MAC also requires that you set the following property in
-system.properties:
-
-com.liferay.util.servlet.SessionParameters=false
+    com.liferay.util.servlet.SessionParameters=false
 
 See the following links:
+    http://issues.liferay.com/browse/LEP-1288
+    http://en.wikipedia.org/wiki/Message_authentication_code
 
-http://issues.liferay.com/browse/LEP-1288
+Set this to `true` to enable SSO with MAC.
 
-http://en.wikipedia.org/wiki/Message\_authentication\_code
-
-Set the following to true to enable SSO with MAC.
-
-auth.mac.allow=false
+	auth.mac.allow=false
 
 Set the algorithm to use for MAC encryption.
 
-auth.mac.algorithm=MD5
+	auth.mac.algorithm=MD5
 
 Set the shared key used to generate the MAC.
 
-auth.mac.shared.key=
+	auth.mac.shared.key=
 
 #### Passwords
 
-Set the following encryption algorithm to encrypt passwords. The default
-algorithm is SHA (SHA-1). If set to NONE, passwords are stored in the
-database as plain text. The SHA-512 algorithm is currently unsupported.
+Set the following encryption algorithm to encrypt passwords. The default algorithm is SHA (SHA-1). If set to NONE, passwords are stored in the database as plain text. The SHA-512 algorithm is currently unsupported.
 
 *Examples:*
 
-passwords.encryption.algorithm=CRYPT
+	passwords.encryption.algorithm=BCRYPT
+	passwords.encryption.algorithm=UFC-CRYPT
+	passwords.encryption.algorithm=MD2
+	passwords.encryption.algorithm=MD5
+	passwords.encryption.algorithm=NONE
+	passwords.encryption.algorithm=SHA
+	passwords.encryption.algorithm=SHA-256
+	passwords.encryption.algorithm=SHA-384
+	passwords.encryption.algorithm=SSHA
 
-passwords.encryption.algorithm=MD2
-
-passwords.encryption.algorithm=MD5
-
-passwords.encryption.algorithm=NONE
-
-passwords.encryption.algorithm=SHA
-
-passwords.encryption.algorithm=SHA-256
-
-passwords.encryption.algorithm=SHA-384
-
-passwords.encryption.algorithm=SSHA
-
-Digested passwords are encoded via base64 or hex encoding. The default
-is base64.
-
-passwords.digest.encoding=base64
-
-\#passwords.digest.encoding=hex
-
-Input a class name that extends
-`com.liferay.portal.security.pwd.BasicToolkit`. This class
-will be called to generate and validate passwords.
+Digested passwords are encoded via base64 or hex encoding. The default is base64.
 
 *Examples:*
 
-passwords.toolkit=com.liferay.portal.security.pwd.PasswordPolicyToolkit
+	passwords.digest.encoding=base64
+	passwords.digest.encoding=hex
 
-passwords.toolkit=com.liferay.portal.security.pwd.RegExpToolkit
-
-If you choose to use
-`com.liferay.portal.security.pwd.PasswordPolicyToolkit` as
-your password toolkit, you can choose either static or dynamic password
-generation. Static is set through the property
-`passwords.passwordpolicytoolkit.static` and dynamic uses the
-class `com.liferay.util.PwdGenerator` to generate the
-password. If you are using LDAP password syntax checking, you will also
-have to use the static generator so that you can guarantee that
-passwords obey its rules.
+Input a class name that extends `com.liferay.portal.security.pwd.BasicToolkit`. This class will be called to generate and validate passwords.
 
 *Examples:*
 
-passwords.passwordpolicytoolkit.generator=static
+	passwords.toolkit=com.liferay.portal.security.pwd.PasswordPolicyToolkit
+	passwords.toolkit=com.liferay.portal.security.pwd.RegExpToolkit
 
-passwords.passwordpolicytoolkit.generator=dynamic
+If you choose to use `com.liferay.portal.security.pwd.PasswordPolicyToolkit` as your password toolkit, you can choose either static or dynamic password generation. Static is set through the property `passwords.passwordpolicytoolkit.static` and dynamic uses the class `com.liferay.util.PwdGenerator` to generate the password. If you are using LDAP password syntax checking, you will also have to use the static generator so that you can guarantee that passwords obey its rules.
 
-passwords.passwordpolicytoolkit.static=iheartliferay
+*Examples:*
 
-If you choose to use
-`com.liferay.portal.security.pwd.RegExpToolkit` as your
-password toolkit, set the regular expression pattern that will be used
-to generate and validate passwords.
+	passwords.passwordpolicytoolkit.generator=static
+	passwords.passwordpolicytoolkit.generator=dynamic
+	passwords.passwordpolicytoolkit.static=iheartliferay
+
+Set the character sets for password validation.
+
+	passwords.passwordpolicytoolkit.charset.lowercase=abcdefghjkmnpqrstuvwxyz
+	passwords.passwordpolicytoolkit.charset.numbers=0123456789
+	passwords.passwordpolicytoolkit.charset.symbols=_.!@$*=-?
+	passwords.passwordpolicytoolkit.charset.uppercase=ABCDEFGHJKLMNPQRSTUVWXYZ
+
+If you choose to use `com.liferay.portal.security.pwd.RegExpToolkit` as your password toolkit, set the regular expression pattern that will be used to generate and validate passwords.
 
 Note that `\` is replaced with `\\` to work in Java.
 
-The first pattern ensures that passwords must have at least 4 valid
-characters consisting of digits or letters.
+The first pattern ensures that passwords must have at least 4 valid characters consisting of digits or letters.
 
-The second pattern ensures that passwords must have at least 8 valid
-characters consisting of digits or letters.
+The second pattern ensures that passwords must have at least 8 valid characters consisting of digits or letters.
 
 *Examples:*
 
-passwords.regexptoolkit.pattern=(?=.{4})(?:[a-zA-Z0-9]\*)
+	passwords.regexptoolkit.pattern=(?=.{4})(?:[a-zA-Z0-9]*)
+	passwords.regexptoolkit.pattern=(?=.{8})(?:[a-zA-Z0-9]*)
 
-passwords.regexptoolkit.pattern=(?=.{8})(?:[a-zA-Z0-9]\*)
 
 Set the length and key for generating passwords.
 
-*Examples: *
+*Examples:*
 
-passwords.regexptoolkit.charset=0123456789
+	passwords.regexptoolkit.charset=0123456789
+	passwords.regexptoolkit.charset=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+	passwords.regexptoolkit.length=4
+	passwords.regexptoolkit.length=8
 
-passwords.regexptoolkit.charset=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
-
-*Examples: *
-
-passwords.regexptoolkit.length=4
-
-passwords.regexptoolkit.length=8
 
 Set the name of the default password policy.
 
-passwords.default.policy.name=Default Password Policy
+	passwords.default.policy.name=Default Password Policy
 
 #### Permissions
 
-Set the default permission checker class used by
-`com.liferay.portal.security.permission.PermissionCheckerFactory`
-to check permissions for actions on objects. This class can be
-overridden with a custom class that extends
-`com.liferay.portal.security.permission.PermissionCheckerImpl`.
+Set the default permission checker class used by `com.liferay.portal.security.permission.PermissionCheckerFactory` to check permissions for actions on objects. This class can be overrided with a custom class that implements `com.liferay.portal.security.permission.PermissionChecker`.
 
-permissions.checker=com.liferay.portal.security.permission.PermissionCheckerImpl
+*Examples:*
 
-Set the algorithm used to check permissions for a user. This is useful
-so that you can optimize the search for different databases. See
-`com.liferay.portal.service.impl.PermissionLocalServiceImpl`.
-The default is method two.
+	permissions.checker=com.liferay.portal.security.permission.SimplePermissionChecker
+	permissions.checker=com.liferay.portal.security.permission.AdvancedPermissionChecker
 
-The first algorithm uses several *if* statements to query the database
-for these five things in order. If it finds any one of them, it returns*
-true: *
+Set the algorithm used to check permissions for a user. This is useful so that you can optimize the search for different databases. See `com.liferay.portal.service.impl.PermissionLocalServiceImpl`.
 
--   Is the user connected to one of the permissions via group or
-    organization roles?
+Algorithms 1 through 4 are essentially the same but make calls in different orders depending on how the database is optimized and how the portal permissions are used. Algorithm 5 moves to a completely role based permissions check for better performance. Permissions by users are no longer supported, yet it uses the same table structure as algorithms 1-4.
 
--   Is the user associated with groups or organizations that are
-    directly connected to one of the permissions?
+Algorithm 6 is the current algorithm for Liferay 6 and above. It supports role based permissions like algorithm 5, but does so by using only one table and bitwise operations. This makes it perform far better than the other algorithms.
 
--   Is the user connected to one of the permissions via user roles?
+*Examples:*
 
--   Is the user connected to one of the permissions via user group
-    roles?
+	permissions.user.check.algorithm=1
+	permissions.user.check.algorithm=2
+	permissions.user.check.algorithm=3
+	permissions.user.check.algorithm=4
+	permissions.user.check.algorithm=5
+	permissions.user.check.algorithm=6
 
--   Is the user directly connected to one of the permissions?
+Set the default permissions list filter class. This class must implement `com.liferay.portal.kernel.security.permission.PermissionsListFilter`. This is used if you want to filter the list of permissions before it is actually persisted. For example, if you want to make sure that all users who create objects never have the UPDATE action, then you can filter that list and remove any permissions that have the UPDATE action before it is persisted.
 
-\
-\
+	permissions.list.filter=com.liferay.portal.security.permission.PermissionsListFilterImpl
 
-The second algorithm (the default) does a database join and checks the
-permissions in one step, by calling
-`countByGroupsRoles, countByGroupsPermissions, countByUsersRoles, countByUserGroupRole`,
-and `countByUsersPermissions` in one method.
+Set this to `true` to configure permission caching to block. See the property "ehcache.blocking.cache.allowed" for more information.
 
-The third algorithm checks the permissions by checking for three things.
-It combines the role check into one step. If it finds any of the
-following items, it returns *true:*
+	permissions.object.blocking.cache=false
 
--   Is the user associated with groups or organizations that are
-    directly connected to one of the permissions?
+Configure this threshold to indicate when to use the custom SQL finder to check resource permissions.
 
--   Is the user associated with a role that is directly connected to one
-    of the permissions?
+	permissions.role.resource.permission.query.threshold=10
 
--   Is the user directly connected to one of the permissions?
+The permissions cache uses a thread local map to store the most frequently accessed items to lower the number of queries to the underlying cache. Set the maximum map size to `0` to disable the thread level cache.
 
-\
-\
+	permissions.thread.local.cache.max.size=100
 
-The fourth algorithm does a database join and checks the permissions
-that algorithm three checks in one step, by calling
-`countByGroupsPermissions, countByRolesPermissions`, and
-`countByUsersPermissions` in one method.
+Set this to `true` to enable inline SQL permission checks.
 
-Algorithm 5 moves to a completely role-based permissions check for
-better performance. Permissions by users are no longer supported, yet it
-uses the same table structure as Algorithms 1-4.
+	permissions.inline.sql.check.enabled=true
 
-Algorithm 6 is the current algorithm for Liferay 6 and above. It
-supports role-based permissions like Algorithm 5, but does so by using
-only one table and bitwise operations. This makes it perform far better
-than the other algorithms.
+Set this to `true` to use permission checking when reading custom attributes by default.
 
-permissions.user.check.algorithm=1
+	permissions.custom.attribute.read.check.by.default=true
 
-permissions.user.check.algorithm=2
+Set this to `true` to use permission checking when writing custom attributes by default.
 
-permissions.user.check.algorithm=3
+	permissions.custom.attribute.write.check.by.default=true
 
-permissions.user.check.algorithm=4
+Set the following to `true` to automatically check the view permission on parent categories or folders when checking the permission on an specific item.
 
-permissions.user.check.algorithm=5
+For example, if set to `true`, to be able to have access to a document, a user must have the view permission on the document's folder and all its parent folders. Or, to have access to a comment, a user must have the view permission on the comments's category and all its parent categories.
 
-permissions.user.check.algorithm=6
+	permissions.view.dynamic.inheritance=true
 
-Set the default permissions list filter class. This class must implement
-`com.liferay.portal.kernel.security.permission.PermissionsListFilter`.
-This is used if you want to filter the list of permissions before it is
-actually persisted. For example, if you want to make sure that all users
-who create objects never have the UPDATE action, then you can filter
-that list and remove any permissions that have the UPDATE action before
-it is persisted.
+Set the following to `true` to enable propagation of permissions between models.
 
-permissions.list.filter=com.liferay.portal.security.permission.PermissionsListFilterImpl
+For example, when setting the permissions on a a specific Wiki node, if you assign a role a permission (e.g. `DELETE`), then the assignment of that permission is also propagated to all Wiki pages that belong to that Wiki node.
 
-Set this to true to configure permission caching to block. See the
-property `ehcache.blocking.cache.allowed` for more
-information.
+The actual logic of how permissions are propagated among models is specified per portlet. See `liferay-portlet.xml`'s use of the element `permission-propagator`.
 
-permissions.object.blocking.cache=false
-
-The permissions cache uses a thread local map to store the most
-frequently accessed items to lower the number of queries to the
-underlying cache. Set the maximum map size to 0 to disable the thread
-level cache.
-
-permissions.thread.local.cache.max.size=100
-
-Set the following to true to automatically check the view permission on
-parent categories or folders when checking the permission on an specific
-item.
-
-For example, if set to true, to be able to have access to a document, a
-user must have the view permission on the document's folder and all its
-parent folders. Or, to have access to a comment, a user must have the
-view permission on the comments's category and all its parent
-categories.
-
-permissions.view.dynamic.inheritance=true
+	permissions.propagation.enabled=false
 
 #### Captcha
 
