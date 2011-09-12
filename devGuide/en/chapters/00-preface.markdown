@@ -24,15 +24,9 @@ piece of information that affects whatever is being talked about in the
 surrounding text. They are always accompanied by this gray box and the
 icon to the left.
 
-\
-\
+Source code and configuration file directives are presented like this.
 
-\
-\
-
-Source code and configuration file directives are presented like this.\
-\
-If source code goes multi-line, the lines will be \\\
+If source code goes multi-line, the lines will be 
 separated by a backslash character like this.
 
 *Italics* are used to represent links or buttons to be clicked on in a
@@ -57,7 +51,7 @@ As always, we welcome any feedback. If there is any way you think we
 could make this guide better, please feel free to mention it on our
 forums. You can also use any of the email addresses on our *Contact Us*
 page
-([http://www.](http://www.liferay.com/web/guest/about_us/contact_us)[liferay](http://www.liferay.com/web/guest/about_us/contact_us)[.com/web/guest/about\_us/contact\_us](http://www.liferay.com/web/guest/about_us/contact_us)).
+([http://www.](http://www.liferay.com/web/guest/about_us/contact_us)[liferay](http://www.liferay.com/web/guest/about_us/contact_us)[.com/web/guest/about_us/contact_us](http://www.liferay.com/web/guest/about_us/contact_us)).
 We are here to serve you, our users and customers, and to help make your
 experience using Liferay Portal the best it can be.
 
@@ -99,9 +93,6 @@ about alternatives for deployment to production.
 -   Minor improvements and fixes based on the comments by community
     members David H Nebinger and Deb Troxel.
 
-\
-\
-
 ### April 7^th^ 2011
 
 -   Extracted out Liferay IDE into its own chapter and expand it with
@@ -119,5 +110,3 @@ about alternatives for deployment to production.
     and Permissions section overall.
 
 -   Added section Creating Helper Classes for Permission Checking.
-
-
