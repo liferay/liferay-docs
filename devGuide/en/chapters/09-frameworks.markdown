@@ -114,74 +114,74 @@ below:
 
 -   Persistence
 
-    -   BookPersistence - book persistence interface @generated
+    -   `BookPersistence` - book persistence interface `@generated`
 
-    -   BookPersistenceImpl - book persistence @generated
+    -   `BookPersistenceImpl` - book persistence `@generated`
 
-    -   BookUtil - book persistence util, instances BookPersistenceImpl
-        @generated
+    -   `BookUtil` - book persistence util, instances BookPersistenceImpl
+        `@generated`
 
 -   Local Service
 
-    -   **BookLocalServiceImpl** - local service implementation. This is
+    -   **`BookLocalServiceImpl`** - local service implementation. This is
         the only class within the local service that you will be able to
         modify manually. Your business logic will be here.
 
-    -   BookLocalService - local service interface @generated
+    -   `BookLocalService` - local service interface `@generated`
 
-    -   BookLocalServiceBaseImpl - local service base @generated
-        @abstract
+    -   `BookLocalServiceBaseImpl` - local service base `@generated`
+        `@abstract`
 
-    -   BookLocalServiceUtil - local service util, instances
-        BookLocalServiceImpl @generated
+    -   `BookLocalServiceUtil` - local service util, instances
+        `BookLocalServiceImpl` `@generated`
 
-    -   BookLocalServiceWrapper - local service wrapper, wraps
-        BookLocalServiceImpl @generated
+    -   `BookLocalServiceWrapper` - local service wrapper, wraps
+        `BookLocalServiceImpl` `@generated`
 
 -   Remote Service
 
-    -   **BookServiceImpl** - remove service implementation. Put here
+    -   **`BookServiceImpl`** - remove service implementation. Put here
         the code that adds additional security checks and invokes the
         local service.
 
-    -   BookService - remote service interface @generated
+    -   `BookService` - remote service interface `@generated`
 
-    -   BookServiceBaseImpl - remote service base @generated @abstract
+    -   `BookServiceBaseImpl` - remote service base `@generated` `@abstract`
 
-    -   BookServiceUtil - remote service util, instances BookServiceImpl
-        @generated
+    -   `BookServiceUtil` - remote service util, instances `BookServiceImpl`
+        `@generated`
 
-    -   BookServiceWrapper - remote service wrapper, wraps
-        BookServiceImpl @generated
+    -   `BookServiceWrapper` - remote service wrapper, wraps
+        `BookServiceImpl` `@generated`
 
-    -   BookServiceSoap - soap remote service, proxies BookServiceUtil
-        @generated
+    -   `BookServiceSoap` - soap remote service, proxies `BookServiceUtil`
+        `@generated`
 
-    -   BookSoap - soap book model, similar to BookModelImpl, does not
-        implement Book @generated
+    -   `BookSoap` - soap book model, similar to `BookModelImpl`, does not
+        implement Book `@generated`
 
-    -   BookServiceHttp - http remote service, proxies BookServiceUtil
-        @generated
+    -   `BookServiceHttp` - http remote service, proxies `BookServiceUtil`
+        `@generated`
 
-    -   BookJSONSerializer - json serializer, converts Book to JSON
-        array @generated
+    -   `BookJSONSerializer` - json serializer, converts `Book` to JSON
+        array `@generated`
 
 -   Model
 
-    -   BookModel - book base model interface @generated
+    -   `BookModel` - book base model interface `@generated`
 
-    -   BookModelImpl - book base model @generated
+    -   `BookModelImpl` - book base model `@generated`
 
-    -   Book - book model interface @generated
+    -   `Book` - book model interface `@generated`
 
-    -   **BookImpl** - book model implementation. You can use this class
+    -   **`BookImpl`** - book model implementation. You can use this class
         to add additional methods to your model other than the
         auto-generated field getters and setters.
 
-    -   BookWrapper - book wrapper, wraps Book @generated
+    -   `BookWrapper` - book wrapper, wraps `Book` `@generated`
 
 Out of all of these classes only three can be manually modified:
-BookLocalServiceImpl, BookServiceImpl and BookImpl.
+`BookLocalServiceImpl`, `BookServiceImpl` and `BookImpl`.
 
 ### Write the Local Service Class
 
@@ -535,7 +535,7 @@ pair of interfaces - AssetRendererFactory and AssetRenderer:
 
 Let's see an example of these two classes. Again we will pick Liferay's
 Blogs portlet. Lets start with the implementation for the
-AssetRendererFactory:
+`AssetRendererFactory`:
 
     public class BlogsEntryAssetRendererFactory extends BaseAssetRendererFactory {
 

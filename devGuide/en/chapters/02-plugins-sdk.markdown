@@ -48,7 +48,7 @@ download the Plugins SDK from the *Additional Files* page:
     *liferay-portal-[version]/tomcat-**[tomcat-version]**/bin*, enter
     the following command
 
-./startup.sh
+	./startup.sh
 
 Once Liferay starts your browser should open to
 [http://localhost:8080/](http://localhost:8080/) and you can login with
@@ -70,9 +70,8 @@ binaries for Ant to your **PATH**by adding $**ANT_HOME/bin** to your
 You can do this on Linux or Mac OS X by modifying your *.bash_profile*
 file as follows (assuming you installed Ant in */java*):
 
-export ANT_HOME=/java/apache-ant-1.8.1
-
-export PATH=$PATH:$ANT_HOME/bin
+    export ANT_HOME=/java/apache-ant-1.8.1
+    export PATH=$PATH:$ANT_HOME/bin
 
 Close and reopen your terminal window to make these settings take
 effect.
@@ -90,7 +89,7 @@ Value. Click *OK*, and then click *OK* again. Open a command prompt and
 type **ant-version** and press Enter. You should get and output
 similar to this:
 
-Apache Ant(TM) version 1.8.2 compiled on December 20 2010
+    Apache Ant(TM) version 1.8.2 compiled on December 20 2010
 
 If not, check your environment variable settings and make sure they are
 pointing to the directory where you unzipped Ant.
@@ -112,7 +111,7 @@ called *build.jsmith.properties*.
 
 Edit this file and add the following line:
 
-app.server.dir=the directory containing your application server
+    app.server.dir=the directory containing your application server
 
 In our case, **app.server.dir** should be the absolute path to your
 *liferay-portal-[version]/tomcat-[tomcat-version]* directory.

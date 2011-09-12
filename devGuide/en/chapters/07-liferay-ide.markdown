@@ -123,7 +123,6 @@ IDE.
 
 ![image](../../images/07-liferay-ide_html_m4624ae4d.png)
 
-
 3.  Add your SDK using the add button which brings up the Add SDK Dialog
 
 Browse to the location of your Plug-ins SDK installation

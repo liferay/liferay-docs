@@ -39,11 +39,11 @@ Ext plugins are stored within the `ext`{.western} directory of the
 Plugins SDK. Navigate to this directory in a terminal and enter the
 following command to create a new Ext plugin (Linux and Mac OS X):
 
-./create.sh example "Example"
+    ./create.sh example "Example"
 
 On Windows enter the following instead:
 
-create.bat example "Example"
+    create.bat example "Example"
 
 You should get a BUILD SUCCESSFUL message from Ant, and there will now
 be a new folder inside of the `ext`{.western}**folder in your Plugins
@@ -53,41 +53,24 @@ project name when creating this folder.
 Once the target has been executed successfully you will find a new
 folder called example-ext with the following structure:
 
-/ext-example/
-
-/docroot/
-
-/WEB-INF/
-
-/sql/
-
-/ext-impl/
-
-/src/
-
-/ext-lib/
-
-/global/
-
-/portal/
-
-/ext-service/
-
-/src/
-
-/ext-util-bridges/
-
-/src/
-
-/ext-util-java/
-
-/src/
-
-/ext-util-taglib/
-
-/src/
-
-/ext-web/
+    /ext-example/
+    /docroot/
+    /WEB-INF/
+    /sql/
+    /ext-impl/
+    /src/
+    /ext-lib/
+    /global/
+    /portal/
+    /ext-service/
+    /src/
+    /ext-util-bridges/
+    /src/
+    /ext-util-java/
+    /src/
+    /ext-util-taglib/
+    /src/
+    /ext-web/
 
 The most significant directories in this structure are the ones inside
 the `docroot/WEB-INF`{.western} directory. In particular you should be
@@ -96,7 +79,7 @@ familiar with the following directories:
 -   **ext-impl/src:** Contains the `portal-ext.properties`{.western}
     configuration file, custom implementation classes, and in advanced
     scenarios, classes that override core classes within
-    `portal-impl.jar. `{.western}
+    `portal-impl.jar.`{.western}
 
 -   **ext-lib/global:** Place here any libraries that should be copied
     to the global classloader of the application server upon deployment
@@ -198,11 +181,9 @@ computer. Once the file is open, add the following three properties to
 the file, making sure the individual paths point to the right locations
 on your system:
 
-app.server.dir={...}/liferay-portal-6.0.6/tomcat-6.0.26
-
-app.server.zip.name={...}/liferay-portal-tomcat-6.0.6.zip
-
-ext.work.dir={...}/work
+    app.server.dir={...}/liferay-portal-6.0.6/tomcat-6.0.26
+    app.server.zip.name={...}/liferay-portal-tomcat-6.0.6.zip
+    ext.work.dir={...}/work
 
 `app.server.zip.name`{.western} should point to a `.zip`{.western} with
 a bundle of Liferay. The directory denoted by the property
@@ -211,10 +192,10 @@ remove it and unzip again as needed. `app.server.dir`{.western} should
 point to the Tomcat directory inside the work directory.
 
 For example, if `ext.work.dir`{.western} points to
-`C:ext-work`{.western}, and `app.server.zip.name`{.western} points to
-`C:filesliferay-portal-tomcat-6.0-${lp.version}.zip`{.western}, then
+`C:\ext-work`{.western}, and `app.server.zip.name`{.western} points to
+`C:\files\liferay-portal-tomcat-6.0-${lp.version}.zip`{.western}, then
 `app.server.dir`{.western} should point to
-`C:ext-workliferay-portal-${lp.version}tomcat-6.0.18`{.western}.
+`C:\ext-work\liferay-portal-${lp.version}tomcat-6.0.18`{.western}.
 
 ### Initial deployment
 
@@ -227,7 +208,7 @@ to make this change, open the
 `docroot/WEB-INF/ext-impl/src/portal-ext.properties`{.western} file and
 paste the following contents inside:
 
-users.form.update.main=details,password,organizations,communities,roles
+    users.form.update.main=details,password,organizations,communities,roles
 
 This line removes the sections for user groups, pages and
 categorizations. We might want to make this change because we don't want
@@ -237,7 +218,7 @@ Once we've made this change, we are ready to deploy. Open a terminal
 window in your `ext/example-ext`{.western} directory and enter this
 command:
 
-ant deploy
+    ant deploy
 
 You should get a BUILD SUCCESSFUL message, which means that your plugin
 is now being deployed. If you switch to the terminal window running
@@ -275,7 +256,7 @@ creating a JSP. In our case we'll modify the property
 `users.form.update.main`{.western} once again to set the following
 value:
 
-users.form.update.main=**basic**,password,organizations,communities,roles
+    users.form.update.main=basic,password,organizations,communities,roles
 
 That is, we removed the section *details* and added a new custom one
 called *basic*. When Liferay's user administration reads this property
@@ -302,7 +283,7 @@ conventions:
 In our example, we'll need to create a file within the Ext plugin in the
 following path:
 
-ext-web/docroot/html/portlet/enterprise_admin/user/basic.jsp
+    ext-web/docroot/html/portlet/enterprise_admin/user/basic.jsp
 
 For the contents of the file, you can write them from scratch or make a
 copy of the `details.jsp`{.western} file from Liferay's source code and
@@ -310,83 +291,53 @@ modify from there. In this case we've decided to do the latter and then
 remove some fields to simplify the creation of a user. The result is
 this:
 
-<%@ include file="/html/portlet/enterprise_admin/init.jsp" %>
-
-<%
-
-User selUser = (User)request.getAttribute("user.selUser");
-
-%>
-
-
-<liferay-ui:error-marker key="errorSection" value="details" />
-
-
-<aui:model-context bean="<%= selUser %>" model="<%= User.class %>" />
-
-
-<h3><liferay-ui:message key="details" /></h3>
-
-
-<aui:fieldset column="<%= true %>" cssClass="aui-w50">
-
-
-<liferay-ui:error exception="<%= DuplicateUserScreenNameException.class
-%>"
-
-message="the-screen-name-you-requested-is-already-taken" />
-
-<liferay-ui:error exception="<%= ReservedUserScreenNameException.class
-%>"
-
-message="the-screen-name-you-requested-is-reserved" />
-
-<liferay-ui:error exception="<%= UserScreenNameException.class %>"
-
-message="please-enter-a-valid-screen-name" />
-
-
-<aui:input name="screenName" />
-
-
-<liferay-ui:error exception="<%=
-DuplicateUserEmailAddressException.class %>"
-
-message="the-email-address-you-requested-is-already-taken" />
-
-<liferay-ui:error exception="<%= ReservedUserEmailAddressException.class
-%>"
-
-message="the-email-address-you-requested-is-reserved" />
-
-<liferay-ui:error exception="<%= UserEmailAddressException.class %>"
-
-message="please-enter-a-valid-email-address" />
-
-
-<aui:input name="emailAddress" />
-
-
-<liferay-ui:error exception="<%= ContactFirstNameException.class %>"
-
-message="please-enter-a-valid-first-name" />
-
-<liferay-ui:error exception="<%= ContactFullNameException.class %>" m
-
-essage="please-enter-a-valid-first-middle-and-last-name" />
-
-
-<aui:input name="firstName" />
-
-
-<liferay-ui:error exception="<%= ContactLastNameException.class %>"
-
-message="please-enter-a-valid-last-name" />
-
-
-<aui:input name="lastName" />
-
-</aui:fieldset>
+    <%@ include file="/html/portlet/enterprise_admin/init.jsp" %>
+    <%
+	User selUser = (User)request.getAttribute("user.selUser");
+    %>
+    
+    <liferay-ui:error-marker key="errorSection" value="details" />
+    <aui:model-context bean="<%= selUser %>" model="<%= User.class %>" />
+    
+    <h3><liferay-ui:message key="details" /></h3>
+    
+    <aui:fieldset column="<%= true %>" cssClass="aui-w50">
+    <liferay-ui:error exception="<%= DuplicateUserScreenNameException.class%>"
+	message="the-screen-name-you-requested-is-already-taken" />
+	
+	<liferay-ui:error exception="<%= ReservedUserScreenNameException.class%>"
+	message="the-screen-name-you-requested-is-reserved" />
+	
+	<liferay-ui:error exception="<%= UserScreenNameException.class %>"
+	message="please-enter-a-valid-screen-name" />
+	
+	<aui:input name="screenName" />
+	
+	<liferay-ui:error exception="<%=
+	DuplicateUserEmailAddressException.class %>"
+	message="the-email-address-you-requested-is-already-taken" />
+	
+	<liferay-ui:error exception="<%= ReservedUserEmailAddressException.class%>"
+	message="the-email-address-you-requested-is-reserved" />
+	
+	<liferay-ui:error exception="<%= UserEmailAddressException.class %>"
+	message="please-enter-a-valid-email-address" />
+	
+	<aui:input name="emailAddress" />
+	
+	<liferay-ui:error exception="<%= ContactFirstNameException.class %>"
+	message="please-enter-a-valid-first-name" />
+	
+	<liferay-ui:error exception="<%= ContactFullNameException.class %>" 
+	message="please-enter-a-valid-first-middle-and-last-name" />
+	
+	<aui:input name="firstName" />
+	
+	<liferay-ui:error exception="<%= ContactLastNameException.class %>"
+	message="please-enter-a-valid-last-name" />
+	
+	<aui:input name="lastName" />
+    </aui:fieldset>
 
 In our case, we don't need to add a new key to
 `Language-ext.properties`{.western}, because “basic” is already included
@@ -402,7 +353,7 @@ making any change to the plugin the recommended steps to redeploy are
 first to stop the application server, and then to execute the following
 ant targets:
 
-ant clean-app-server direct-deploy
+    ant clean-app-server direct-deploy
 
 These ant targets first remove the work bundle (unzipping the one that
 was referred to through `build.{username}.properties`{.western}), and
@@ -420,7 +371,7 @@ Once you have finished the development of the plugin you can execute the
 following ant target to generate a `.war`{.western} file for
 distribution:
 
-ant war
+    ant war
 
 The file will be available within the `dist`{.western} directory in the
 root of the plugins SDK.
@@ -458,7 +409,7 @@ Next is a list of all of these files, along with a description and a
 reference to the original file in the path where they can be found in
 the source code of Liferay (you may need to look at them for reference):
 
--   ext-impl/src/META-INF/ext-model-hints.xml
+-   `ext-impl/src/META-INF/ext-model-hints.xml`
 
     -   Description: This file allows overwriting the default properties
         of the fields of the data models used by Liferay's core
@@ -466,9 +417,9 @@ the source code of Liferay (you may need to look at them for reference):
         edit each model is rendered.
 
     -   Original file in Liferay:
-        portal-impl/src/META-INF/portal-model-hints.xml
+        `portal-impl/src/META-INF/portal-model-hints.xml`
 
--   ext-impl/src/META-INF/ext-spring.xml
+-   `ext-impl/src/META-INF/ext-spring.xml`
 
     -   Description: This file allows overwriting the Spring
         configuration used by Liferay and any of its core portlets. The
@@ -476,17 +427,17 @@ the source code of Liferay (you may need to look at them for reference):
         swap the implementation of a given service with a custom one.
 
     -   Original files in Liferay:
-        portal-impl/src/META-INF/*-spring.xml
+        `portal-impl/src/META-INF/*-spring.xml`
 
--   ext-impl/src/content/Language-ext_*.properties
+-   `ext-impl/src/content/Language-ext_*.properties`
 
     -   Description: This file allows overwriting the value of any key
         used by Liferay's UI to support *I18N*.
 
     -   Original file in Liferay:
-        portal-impl/src/content/Language-*.properties
+        `portal-impl/src/content/Language-*.properties`
 
--   ext-impl/src/META-INF/portal-log4j-ext.xml
+-   `ext-impl/src/META-INF/portal-log4j-ext.xml`
 
     -   Description: This file allows overwriting the log4j
         configuration. The most common usage is to increase or decrease
@@ -495,9 +446,9 @@ the source code of Liferay (you may need to look at them for reference):
         respectively.
 
     -   Original file in Liferay:
-        portal-impl/src/META-INF/portal-log4j.xml
+        `portal-impl/src/META-INF/portal-log4j.xml`
 
--   ext-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository-ext.xml
+-   `ext-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository-ext.xml`
 
     -   Description: This file allows overwriting the configuration of
         the Jackrabbit repository. Refer to the Jackrabbit configuration
@@ -505,18 +456,18 @@ the source code of Liferay (you may need to look at them for reference):
         ([http://jackrabbit.apache.org/jackrabbit-](http://jackrabbit.apache.org/jackrabbit-configuration.html)[configuration.html](http://jackrabbit.apache.org/jackrabbit-configuration.html))
 
     -   Original file in Liferay:
-        portal-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository.xml
+        `portal-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository.xml`
 
--   ext-web/docroot/WEB-INF/portlet-ext.xml
+-   `ext-web/docroot/WEB-INF/portlet-ext.xml`
 
     -   Description: This file allows overwriting the declaration of the
         core portlets included in Liferay. The most common usage is to
         change the init parameters or the roles specified.
 
     -   Original file in Liferay:
-        portal-web/docroot/WEB-INF/portlet-custom.xml
+        `portal-web/docroot/WEB-INF/portlet-custom.xml`
 
--   ext-web/docroot/WEB-INF/liferay-portlet-ext.xml
+-   `ext-web/docroot/WEB-INF/liferay-portlet-ext.xml`
 
     -   Description: This file allows overwriting the Liferay-specific
         declaration of the core portlets included in Liferay. Refer to
@@ -526,9 +477,9 @@ the source code of Liferay (you may need to look at them for reference):
         certain values.
 
     -   Original file in Liferay:
-        portal-web/docroot/WEB-INF/liferay-portlet.xml
+        `portal-web/docroot/WEB-INF/liferay-portlet.xml`
 
--   ext-web/docroot/WEB-INF/liferay-display.xml
+-   `ext-web/docroot/WEB-INF/liferay-display.xml`
 
     -   Description: This file allows overwriting the portlets that will
         be shown in the “Add application” pop-up and the categories in
@@ -537,9 +488,9 @@ the source code of Liferay (you may need to look at them for reference):
         Panel portlets available to be added to a page.
 
     -   Original file in Liferay:
-        portal-web/docroot/WEB-INF/liferay-display.xml
+        `portal-web/docroot/WEB-INF/liferay-display.xml`
 
--   ext-web/docroot/WEB-INF/liferay-layout-templates-ext.xml
+-   `ext-web/docroot/WEB-INF/liferay-layout-templates-ext.xml`
 
     -   Description: This file allows specifying custom template files
         for each of the layout templates provided by default with
@@ -547,16 +498,16 @@ the source code of Liferay (you may need to look at them for reference):
         needs.
 
     -   Original file in Liferay:
-        portal-web/docroot/WEB-INF/liferay-layout-templates.xml
+        `portal-web/docroot/WEB-INF/liferay-layout-templates.xml`
 
--   ext-web/docroot/WEB-INF/liferay-look-and-feel-ext.xml
+-   `ext-web/docroot/WEB-INF/liferay-look-and-feel-ext.xml`
 
     -   Description: This file allows changing the properties of the
         default themes provided by default with Liferay. You should not
         need to do this except for very advanced needs.
 
     -   Original file in Liferay:
-        portal-web/docroot/WEB-INF/liferay-look-and-feel.xml
+        `portal-web/docroot/WEB-INF/liferay-look-and-feel.xml`
 
 #### Changing the API of a core service
 
@@ -594,7 +545,7 @@ If you really need to change core portal-impl class and this class that
 cannot be replaced in any configuration file, then best way to avoid
 conflicts and easily merge with a new portal version is to:
 
-1.  Rename original class (e.g. DeployUtil → MyDeployUtil)
+1.  Rename original class (e.g. DeployUtil ->  MyDeployUtil)
 
 2.  Create new subclass with old name (e.g DeployUtil extends
     MyDeployUtil)
@@ -724,8 +675,8 @@ The process of migrating consists of executing a target within the ext
 directory from Plugins SDK, pointing to the old extension environment
 and naming the new plugin:
 
-ant upgrade-ext -Dext.dir=/projects/liferay/ext -Dext.name=my-ext
--Dext.display.name="My Ext"
+    ant upgrade-ext -Dext.dir=/projects/liferay/ext -Dext.name=my-ext
+    -Dext.display.name="My Ext"
 
 Here is a description of the three parameters used:
 

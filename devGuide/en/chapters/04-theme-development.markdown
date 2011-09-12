@@ -57,64 +57,36 @@ Custom themes are based on differences from one of several built-in Liferay them
 The structure of a theme is designed to separate different types of resources into easily accessible folders. The full structure of the deep blue theme is shown below:
 
     /deep-blue-theme/
+	/docroot/
+	    /WEB-INF/
+		  liferay-plugin-package.properties
+	    /_diffs/ (subfolders not created by default)
+		/css/
+		/images/
+		/js/
+		/templates/
 
-    /docroot/
-
-    /WEB-INF/
-
-    liferay-plugin-package.properties
-
-    /_diffs/ (subfolders not created by default)
-
-    /css/
-
-    /images/
-
-    /js/
-
-    /templates/
-
-    /css/
-
-    application.css
-
-    base.css
-
-    custom.css
-
-    dockbar.css
-
-    extras.css
-
-    forms.css
-
-    layout.css
-
-    main.css
-
-    navigation.css
-
-    portlet.css
-
-    /images/
-
-    (many directories)
-
-    /js/
-
-    main.js
-
-    /templates/
-
-    init_custom.vm
-
-    navigation.vm
-
-    portal_normal.vm
-
-    portal_pop_up.vm
-
-    portlet.vm
+		/css/
+		    application.css
+		    base.css
+		    custom.css
+		    dockbar.css
+		    extras.css
+		    forms.css
+		    layout.css
+		    main.css
+		    navigation.css
+		    portlet.css
+		/images/
+		    (many directories)
+		/js/
+		    main.js
+		/templates/
+		    init_custom.vm
+		    navigation.vm
+		    portal_normal.vm
+		    portal_pop_up.vm
+		    portlet.vm
 
 You will notice that there is a `_diffs`{.western} folder inside the `docroot`{.western} directory of your theme; this is where you will place your theme code. You only need to customize the parts of your theme that will differ from the parent theme. To do this, you mirror the directory structure of the parent theme inside of the `_diffs`{.western} folder, placing only the folders and files you need to customize there.
 
@@ -139,37 +111,31 @@ You will notice that in the *Look and Feel* settings the *Classic* theme has a t
 Liferay now includes its own JavaScript library called Alloy, which is an extension to Yahoo's YUI3 framework. Developers can take advantage of the full power of either of these frameworks in their themes. Inside of the `main.js`{.western} file, you will find definitions for three JavaScript callbacks:
 
     AUI().ready(
+	    function() {
 
-    function() {
-
-    }
-
-    );
+	    }
+	);
 
     Liferay.Portlet.ready(
 
 This function gets loaded after each and every portlet on the page.
 
     portletId: the current portlet's id
-
     node: the Alloy Node object of the current portlet
 
-    function(portletId, node) {
+	function(portletId, node) {
 
-    }
-
+	}
     );
 
     Liferay.on(
-
-    'allPortletsReady',
+	'allPortletsReady',
 
 This function gets loaded when everything, including the portlets, is on the page.
 
-    function() {
+	function() {
 
-    } 
-
+	} 
     );
 
 -   **AUI().ready(fn);**
@@ -189,28 +155,18 @@ Executed after everything—including AJAX portlets—has finished loading.
 Each theme can define settings to make it configurable. These settings are defined in a file named `liferay-look-and-feel.xml`{.western} inside `WEB-INF`{.western}. This file does not exist by default, so you should now create it with the following content:
 
     <?xml version="1.0"?>
-
     <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.0.0//EN"
     "http://www.liferay.com/dtd/liferay-look-and-feel_6_0_0.dtd">
 
     <look-and-feel>
-
-    <compatibility>
-
-    <version>6.0.0+</version>
-
-    </compatibility>
-
-    <theme id="deep-blue" name="Deep Blue">
-
-    <settings>
-
-    <setting key="my-setting" value="my-value" />
-
-    </settings>
-
-    </theme>
-
+	<compatibility>
+	    <version>6.0.0+</version>
+	</compatibility>
+	<theme id="deep-blue" name="Deep Blue">
+	    <settings>
+		<setting key="my-setting" value="my-value" />
+	    </settings>
+	</theme>
     </look-and-feel>
 
 You can define additional settings by adding more <setting> elements. These settings can be accessed in the theme templates using the following code:
@@ -222,35 +178,22 @@ For example, say we need to create two themes that are exactly the same except f
 In the `portal_normal.vm`{.western} template we could write:
 
     #if ($theme.getSetting("header-type") == "detailed")
-
-    #parse ("$full_templates_path/header_detailed.vm")
-
+	#parse ("$full_templates_path/header_detailed.vm")
     #else
-
-    #parse ("$full_templates_path/header_brief.vm")
-
+	#parse ("$full_templates_path/header_brief.vm")
     #end
 
 Then when we write the `liferay-look-and-feel.xml`{.western}, we write two different entries that refer to the same theme but have a different value for the header-type setting:
 
     <theme id="deep-blue" name="Deep Blue">
-
-    <settings>
-
-    **<setting key="header-type" value="detailed" />**
-
-    </settings>
-
-    </theme>
-
-    <theme id="deep-blue-mini" name="Deep Blue Mini">
-
-    <settings>
-
-    **<setting key="header-type" value="brief" />**
-
-    </settings>
-
+	<settings>
+	    <setting key="header-type" value="detailed" />
+	</settings>
+	</theme>
+	    <theme id="deep-blue-mini" name="Deep Blue Mini">
+	<settings>
+	    <setting key="header-type" value="brief" />
+	</settings>
     </theme>
 
 ## Color Schemes
@@ -260,47 +203,34 @@ Color schemes are specified using a CSS class name, with which you can not only 
 In your `liferay-look-and-feel.xml`{.western}, you can define color schemes like so:
 
     <theme id="deep-blue" name="Deep Blue">
-
-    <settings>
-
-    <setting key="my-setting" value="my-value" />
-
-    </settings>
-
-    <color-scheme id="01" name="Day">
-
-    <css-class>day</css-class>
-
-    <color-scheme-images-path>${images-path}/color_schemes/${css-class}</color-scheme-images-path>
-
-    </color-scheme>
-
-    <color-scheme id="02" name="Night">
-
-    <css-class>night</css-class>
-
-    </color-scheme>
-
+	<settings>
+	    <setting key="my-setting" value="my-value" />
+	</settings>
+	<color-scheme id="01" name="Day">
+	    <css-class>day</css-class>
+	    <color-scheme-images-path>${images-path}/color_schemes/${css-class}</color-scheme-images-path>
+	</color-scheme>
+	<color-scheme id="02" name="Night">
+	    <css-class>night</css-class>
+	</color-scheme>
     </theme>
 
-Inside of your `_diffs/css`{.western} folder, create a folder called `color_schemes`{.western}. Inside of that folder, place a `.css`{.western} file for each of your color schemes. In the case above, we would could either have just one called `night.css`{.western} and let the default styling handle the first color scheme, or you could have both `day.css`{.western} and `night.css`{.western}.
+Inside of your `_diffs/css`{.western} folder, create a folder called `color_schemes`{.western}. Inside of that folder, place a `.css`{.west
+ern} file for each of your color schemes. In the case above, we would could either have just one called `night.css`{.western} and let the default styling handle the first color scheme, or you could have both `day.css`{.western} and `night.css`{.western}.
 
 Assuming you follow the second route, place the following lines at the bottom of your `custom.css`{.western} file:
 
     @import url(color_schemes/day.css);
-
     @import url(color_schemes/night.css);
 
 The color scheme CSS class is placed on the <body> element, so you can use it to identify you styling. In `day.css`{.western} you would prefix all of your CSS styles like this:
 
     body.day { background-color: #ddf; }
-
     .day a { color: #66a; }
 
 And in `night.css`{.western} you would prefix all of your CSS styles like this:
 
     body.night { background-color: #447; color: #777; }
-
     .night a { color: #bbd; }
 
 You can also create separate thumbnail images for each of your color schemes. The `<color-scheme-images-path>`{.western} element tells Liferay where to look for these images (note that you only have to place this element in one of the color schemes for it to affect both). For our example, create the folders `_diffs/images/color_schemes/day`{.western} and `_diffs/images/color_schemes/night`{.western}. In each of these folders place a `thumbnail.png`{.western} and `screenshot.png`{.western} file with the same sizes as before.
@@ -314,9 +244,7 @@ If set to false, the portal will turn off borders by default for all the portlet
 Example:
 
     <settings>
-
-    <setting key="portlet-setup-show-borders-default" value="false" />
-
+	<setting key="portlet-setup-show-borders-default" value="false" />
     </settings>
 
 This default behavior can be overridden for individual portlets using:
@@ -330,29 +258,21 @@ This setting is used by the *Navigation* portlet to determine the CSS class name
 Example:
 
     <settings>
-
-    <setting key="bullet-style-options" value="classic,modern,tablemenu" />
-
+	<setting key="bullet-style-options" value="classic,modern,tablemenu" />
     </settings>
 
 The bullet style can be changed by the user in the *Navigation* portlet configuration. The chosen style will be applied as a CSS class on the <div> containing the navigation. This class will be named in the following pattern:
 
     .nav-menu-style-{BULLET_STYLE_OPTION} {
-
-    ... CSS selectors ...
-
+	... CSS selectors ...
     }
 
 Here is an example of the HTML code that you would need to add style through CSS code. In this case the bullet style option is **modern**:
 
     <div class="nav-menu nav-menu-style-modern">
-
-    <ul class="breadcrumbs lfr-component">
-
-    ...
-
-    </ul>
-
+	<ul class="breadcrumbs lfr-component">
+	    ...
+	</ul>
     </div>
 
 Using CSS and/or some unobtrusive Javascript it's possible to implement any type of menu.
@@ -362,11 +282,8 @@ Using CSS and/or some unobtrusive Javascript it's possible to implement any type
 By default themes are based on the **_styled** theme, which provides only basic styling of portlets. If you open the `build.xml`{.western} file in your theme's directory, you will see the following:
 
     <project name="theme" basedir="." default="deploy">
-
-    <import file="../build-common-theme.xml" />
-
-    <property name="theme.parent" value="_styled" />
-
+	<import file="../build-common-theme.xml" />
+	<property name="theme.parent" value="_styled" />
     </project>
 
 The `theme.parent`{.western} property determines which built-in theme your theme will inherit from. In addition to the **_styled** theme, you may also choose to inherit from the **_unstyled** theme, which contains no styling whatsoever. This involves more work, but in exchange you get full flexibility to design your own CSS files from scratch.

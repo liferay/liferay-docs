@@ -20,11 +20,11 @@ Hooks are stored within the *hooks* directory of the plugins directory.
 Navigate to this directory in terminal and enter the following command
 to create a new hook (Linux and Mac OS X):
 
-./create.sh example "Example"
+    ./create.sh example "Example"
 
 On Windows enter the following instead:
 
-create.bat example "Example"
+    create.bat example "Example"
 
 You should get a BUILD SUCCESSFUL message from Ant, and there will now
 be a new folder inside of the `hooks`{.western}**folder in your Plugins
@@ -36,7 +36,7 @@ project name when creating this folder.
 Open a terminal window in your *hooks/example-hook* directory and enter
 this command:
 
-ant deploy
+    ant deploy
 
 You should get a BUILD SUCCESSFUL message, which means that your hook is
 now being deployed. If you switch to the terminal window running
@@ -53,7 +53,7 @@ Next, edit
 `hooks/example-hook/docroot/WEB-INF/liferay-hook.xml`{.western}, and add
 the following between `<hook></hook>`{.western}:
 
-<custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+    <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
 
 Now, any JSP you place inside the *custom_jsps* directory will replace
 its original inside your Liferay instance when your hook is deployed.
@@ -102,31 +102,21 @@ without needing to worry modifying your hook every time you upgrade
 Liferay. Here is an example that customizes the search portlet to remove
 the ability to a search provider in the browser:
 
-<liferay-util:buffer var="html">
+    <liferay-util:buffer var="html">
+	<liferay-util:include page="/html/portlet/search/search.portal.jsp" />
+    </liferay-util:buffer>
 
-<liferay-util:include page="/html/portlet/search/search.portal.jsp" />
+    <%
+	int x = html.indexOf("<div class="add-search-provider">");
+	int y = html.indexOf("</div>", x);
 
-</liferay-util:buffer>
+	if (x != -1) {
+	    html = StringUtil.remove(html, html.substring(x, y + 6),
+	    StringPool.BLANK);
+	}
+    %>
 
-
-<%
-
-int x = html.indexOf("<div class="add-search-provider">");
-
-int y = html.indexOf("</div>", x);
-
-
-if (x != -1) {
-
-html = StringUtil.remove(html, html.substring(x, y + 6),
-StringPool.BLANK);
-
-}
-
-%>
-
-
-<%= html %>
+    <%= html %>
 
 Since this technique involves String manipulation it is mainly useful
 when the amount of changes desired are small.
@@ -145,36 +135,28 @@ First, create the directory
 the file `LoginAction.java`{.western} inside it with the following
 content:
 
-package com.sample.hook;
+    package com.sample.hook;
 
+    import com.liferay.portal.kernel.events.Action;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
 
-import com.liferay.portal.kernel.events.Action;
-
-import javax.servlet.http.HttpServletRequest;
-
-import javax.servlet.http.HttpServletResponse;
-
-
-public class LoginAction extends Action {
-
-public void run(HttpServletRequest req, HttpServletResponse res) {
-
-System.out.println("## My custom login action");
-
-}
-
-}
+    public class LoginAction extends Action {
+	public void run(HttpServletRequest req, HttpServletResponse res) {
+	    System.out.println("## My custom login action");
+	}
+    }
 
 Next, create the file `portal.properties`{.western} inside
 `example-hook/docroot/WEB-INF/src`{.western} with the following content:
 
-login.events.pre=com.sample.hook.LoginAction
+    login.events.pre=com.sample.hook.LoginAction
 
 Finally, edit `liferay-hook.xml`{.western} inside
 `example-hook/docroot/WEB-INF`{.western} and add the following line
 above `<custom-jsp-dir>`{.western}:
 
-<portal-properties>portal.properties</portal-properties>
+    <portal-properties>portal.properties</portal-properties>
 
 Deploy your hook again and wait for it to complete. Then log out and
 back in, and you should see our custom message in the terminal window
@@ -232,44 +214,29 @@ First, inside
 new file called `MyUserLocalServiceImpl.java`{.western} with the
 following content:
 
-package com.sample.hook;
+    package com.sample.hook;
 
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.model.User;
+    import com.liferay.portal.service.UserLocalService;
+    import com.liferay.portal.service.UserLocalServiceWrapper;
 
-import com.liferay.portal.kernel.exception.PortalException;
+    public class MyUserLocalServiceImpl extends UserLocalServiceWrapper {
 
-import com.liferay.portal.kernel.exception.SystemException;
+	public MyUserLocalServiceImpl(UserLocalService userLocalService) {
+	    super(userLocalService);
+	}
 
-import com.liferay.portal.model.User;
+	public User getUserById(long userId)
+	    throws PortalException, SystemException {
 
-import com.liferay.portal.service.UserLocalService;
+	    System.out.println(
+	    "## MyUserLocalServiceImpl.getUserById(" + userId + ")");
 
-import com.liferay.portal.service.UserLocalServiceWrapper;
-
-
-public class MyUserLocalServiceImpl extends UserLocalServiceWrapper {
-
-public MyUserLocalServiceImpl(UserLocalService userLocalService) {
-
-super(userLocalService);
-
-}
-
-
-public User getUserById(long userId)
-
-throws PortalException, SystemException {
-
-
-System.out.println(
-
-"## MyUserLocalServiceImpl.getUserById(" + userId + ")");
-
-
-return super.getUserById(userId);
-
-}
-
-}
+	    return super.getUserById(userId);
+	}
+    }
 
 ![image](../../images/05-hooks_html_5c790363.png)**Tip:**Note that the wrapper class
 (MyUserLocalServiceImpl in this example) will be loaded in the hook's
@@ -281,13 +248,10 @@ Next, edit `liferay-hook.xml`{.western} inside
 `example-hook/docroot/WEB-INF`{.western} and add the following after
 `</custom-jsp-dir>`{.western}:
 
-<service>
-
-<service-type>com.liferay.portal.service.UserLocalService</service-type>
-
-<service-impl>com.sample.hook.MyUserLocalServiceImpl</service-impl>
-
-</service>
+    <service>
+	<service-type>com.liferay.portal.service.UserLocalService</service-type>
+	<service-impl>com.sample.hook.MyUserLocalServiceImpl</service-impl>
+    </service>
 
 Redeploy your hook, then refresh your browser. In the terminal window
 containing Liferay you should see the messages printed by our hook.
@@ -322,13 +286,12 @@ the language whose messages you want to customize and then refer to it
 from the liferay-hook.xml. For example to override the translations to
 Spanish and French the following two lines would be added to the file:
 
-<hook>
+    <hook>
+    ...
 
-...
+    <language-properties>content/Language_es.properties</language-properties>
+    <language-properties>content/Language_fr.properties</language-properties>
 
-<language-properties>content/Language_es.properties</language-properties>
+    ...
+    </hook>
 
-<language-properties>content/Language_fr.properties</language-properties>
-...
-
-</hook>
