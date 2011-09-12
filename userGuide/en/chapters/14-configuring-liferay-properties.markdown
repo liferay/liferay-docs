@@ -29,18 +29,18 @@ The default read order is: `portal.properties`, `portal-bundle.properties`, and 
 	include-and-override=portal-ext.properties
 	include-and-override=${liferay.home}/portal-ext.properties
 
-Each portal instance can have its own overriden property file following the convention portal-companyWebId.properties. To enable this feature, set the "company-id-properties" system property to true:
+Each portal instance can have its own overriden property file following the convention `portal-companyWebId.properties`. To enable this feature, set the `company-id-properties` system property to `true`:
 
 	java ... -Dcompany-id-properties=true
 
 The read order will now be: `portal.properties`, then `portal-ext.properties`, and then `portal-liferay.com.properties`.
 
-Note that not all properties can have different values per company. This functionality is only available for legacy reasons. The preferred way to configure a portal instance is through the Control Panel.
+Note that not all properties can have different values per company. This functionality is only available for legacy reasons. The preferred way to configure a portal instance is through the control panel.
 
 	include-and-override=portal-${easyconf:companyId}.properties
 	include-and-override=${liferay.home}/portal-${easyconf:companyId}.properties
 
-Additional property files can be used by setting the "external-properties" system property.
+Additional property files can be used by setting the `external-properties` system property.
 
 A common use case is to keep legacy property values when upgrading to
 newer versions of Liferay. To enable:
@@ -76,7 +76,7 @@ Set this property if you deploy the portal to another path besides root.
 	portal.ctx=/
 	portal.ctx=/portal
 
-This property specifies the application server's HTTP port. This value should be different from the value in the property "web.server.http.port". That property refers to the web server, this property refers to the application server. This property should only be set when the application server is sitting behind a web server like Apache. See LPS-17106 for more information.
+This property specifies the application server's HTTP port. This value should be different from the value in the property `web.server.http.port`. That property refers to the web server, this property refers to the application server. This property should only be set when the application server is sitting behind a web server like Apache. See LPS-17106 for more information.
 
     portal.instance.http.port=
 
@@ -87,17 +87,17 @@ Set this property if the application server is served behind a proxy and a prefi
 
 #### TCK (Technology Compatibility Kit)
 
-Set this to true to enable programmatic configuration to let the Portlet TCK obtain a URL for each test. This should never be set to true unless you are running the TCK tests.
+Set this to `true` to enable programmatic configuration to let the Portlet TCK obtain a URL for each test. This should never be set to `true` unless you are running the TCK tests.
 
 	tck.url=false
 
 #### Schema
 
-Set this to true to automatically create tables and populate with default data if the database is empty.
+Set this to `true` to automatically create tables and populate with default data if the database is empty.
 
 	schema.run.enabled=true
 
-Set this to to true to populate with the minimal amount of data. Set this to false to populate with a larger amount of sample data.
+Set this to to `true` to populate with the minimal amount of data. Set this to `false` to populate with a larger amount of sample data.
 
 	schema.run.minimal=true
 
@@ -139,7 +139,7 @@ Constants in `VerifyProcess`:
 	
 #### Convert
 
-Input a list of comma delimited class names that implement com.liferay.portal.convert.ConvertProcess. These classes can be run from within the Admin portlet to convert older data to match a new configuration of the portal.
+Input a list of comma delimited class names that implement `com.liferay.portal.convert.ConvertProcess`. These classes can be run from within the Admin portlet to convert older data to match a new configuration of the portal.
 
     convert.processes=\
 		com.liferay.portal.convert.ConvertDatabase,\
@@ -166,7 +166,7 @@ Input a list of comma delimited class names that implement `com.liferay.portal.k
 		com.liferay.portal.deploy.auto.exploded.tomcat.PortletExplodedTomcatListener,\
 		com.liferay.portal.deploy.auto.exploded.tomcat.ThemeExplodedTomcatListener
         
-Set this to true to enable auto deploy of layout templates, portlets, and themes.
+Set this to `true` to enable auto deploy of layout templates, portlets, and themes.
 
 	auto.deploy.enabled=true
 
@@ -176,7 +176,7 @@ Set the directory to scan for layout templates, portlets, and themes to auto dep
 
 Set the directory where auto deployed WARs are copied to. The application server or servlet container must know to listen on that directory.
 
-Set the directory where auto deployed WARs are copied to. The application server or servlet container must know to listen on that directory. Different containers have different hot deploy paths. For example, Tomcat listens on "${catalina.base}/webapps" whereas JBoss listens on "${jboss.home.dir}/deploy". Set a blank directory to automatically use the application server specific directory.
+Set the directory where auto deployed WARs are copied to. The application server or servlet container must know to listen on that directory. Different containers have different hot deploy paths. For example, Tomcat listens on `${catalina.base}/webapps` whereas JBoss listens on `${jboss.home.dir}/deploy`. Set a blank directory to automatically use the application server specific directory.
 
 *Examples: *
 
@@ -200,25 +200,25 @@ Set the number of attempts to deploy a file before blacklisting it.
 
 	auto.deploy.blacklist.threshold=10
 
-Set this to true if deployed WARs are unpacked. Set this to false if your application server has concurrency issues with deploying large WARs.
+Set this to `true` if deployed WARs are unpacked. Set this to `false` if your application server has concurrency issues with deploying large WARs.
 
-auto.deploy.unpack.war=true
+	auto.deploy.unpack.war=true
 
-Set this to true if plugins should automatically copy Commons Logging.
+Set this to `true` if plugins should automatically copy Commons Logging.
 
     auto.deploy.copy.commons.logging=true
     
-Set this to true if plugins should automatically copy Log4j.
+Set this to `true` if plugins should automatically copy Log4j.
 
     auto.deploy.copy.log4j=true
 
-Set this to true if you want the deployer to rename `portlet.xml` to `portlet-custom.xml`. This is only needed when deploying the portal on WebSphere 6.1.x with a version before 6.1.0.7 because WebSphere's portlet container will try to process a portlet at the same time that Liferay is trying to process a portlet.
+Set this to `true` if you want the deployer to rename `portlet.xml` to `portlet-custom.xml`. This is only needed when deploying the portal on WebSphere 6.1.x with a version before 6.1.0.7 because WebSphere's portlet container will try to process a portlet at the same time that Liferay is trying to process a portlet.
 
 Note that according to IBM, on versions *after* 6.1.0.9, you need to add a context parameter to the `web.xml` descriptor in your portlet application called `com.ibm.websphere.portletcontainer.PortletDeploymentEnabled` and set it to `false`. This parameter causes WebSphere's built-in portlet container to ignore your portlet application when it is deployed, enabling Liferay to pick it up.
 
 	auto.deploy.custom.portlet.xml=false
 
-Set this to 1 if you are using JBoss' `PrefixDeploymentSorter`. This will append a 1 in front of your WAR name. For example, if you are deploying a portlet called `test-portlet.war`, it will deploy it to 1test-portlet.war. JBoss now knows to load this portlet after the other WARs have loaded. However, it will remove the 1 from the context path.
+Set this to `1` if you are using JBoss' `PrefixDeploymentSorter`. This will append a `1` in front of your WAR name. For example, if you are deploying a portlet called `test-portlet.war`, it will deploy it to `1test-portlet.war`. JBoss now knows to load this portlet after the other WARs have loaded. However, it will remove the `1` from the context path.
 
 Modify `/server/default/conf/jboss-service.xml`. See `org.jboss.deployment.scanner.PrefixDeploymentSorter`.
 
@@ -263,7 +263,7 @@ Note: `PluginPackageHotDeployListener` must always be first.
 
 #### Hot Undeploy
 
-Set this to true to enable undeploying plugins.
+Set this to `true` to enable undeploying plugins.
 
 	hot.undeploy.enabled=true
 
@@ -271,7 +271,7 @@ Set the undeploy interval in milliseconds on how long to wait for the undeploy p
 
 	hot.undeploy.interval=0
 
-Set this to true to undeploy a plugin before deploying a new version. This property will only be used if the property "hot.undeploy.enabled" is set to true.
+Set this to `true` to undeploy a plugin before deploying a new version. This property will only be used if the property `hot.undeploy.enabled` is set to `true`.
 
 	hot.undeploy.on.redeploy=false
 
@@ -283,7 +283,7 @@ Input a list of comma delimited class names that implement `com.liferay.portal.k
 		com.liferay.portal.deploy.sandbox.PortletSandboxDeployListener,\
 		com.liferay.portal.deploy.sandbox.ThemeSandboxDeployListener
 
-Set this to true to enable sandbox style plugin development.
+Set this to `true` to enable sandbox style plugin development.
 
 	sandbox.deploy.enabled=false
 
@@ -306,7 +306,7 @@ Input a list of Liferay plugin repositories separated by \\n characters.
 	plugin.repositories.trusted=http://plugins.liferay.com/official
 	plugin.repositories.untrusted=http://plugins.liferay.com/community
 
-Set this property to false to avoid receiving on screen notifications
+Set this property to `false` to avoid receiving on screen notifications
 when there is a new version of an installed plugin.
 
 	plugin.notifications.enabled=true
@@ -318,29 +318,29 @@ Input a list of plugin packages ids separated by `\n` characters. Administrators
 #### Portlet
 
 
-This property sets the default virtual path for all hot deployed portlets. See liferay-portlet-app_5_1_0.dtd and the virtual-path element for more information.
+This property sets the default virtual path for all hot deployed portlets. See `liferay-portlet-app_5_1_0.dtd` and the virtual-path element for more information.
 
     portlet.virtual.path=
 
-Set this property to true to validate portlet.xml against the portlet schema.
+Set this property to `true` to validate `portlet.xml` against the portlet schema.
 
     portlet.xml.validate=true
 
-Portlets that have configured liferay-portlet.xml with the element "add-default-resource" set to true will allow those portlets to be dynamically added to any page by any user. This is useful (and necessary) for some portlets that need to be dynamically added to a page, but it can also pose a security risk because it also allows any user to do it.
+Portlets that have configured `liferay-portlet.xml` with the element `add-default-resource` set to `true` will allow those portlets to be dynamically added to any page by any user. This is useful (and necessary) for some portlets that need to be dynamically added to a page, but it can also pose a security risk because it also allows any user to do it.
 
-Set this property to true to add a security check around this behavior. If set to true, then portlets can only be dynamically added to a page if it contains a proper security token. This security token is automatically passed when using a portlet URL from one portlet to another portlet.
+Set this property to `true` to add a security check around this behavior. If set to `true`, then portlets can only be dynamically added to a page if it contains a proper security token. This security token is automatically passed when using a portlet URL from one portlet to another portlet.
 
-Modify the property "portlet.add.default.resource.check.whitelist" to whitelist certain portlets from this security check.
+Modify the property `portlet.add.default.resource.check.whitelist` to whitelist certain portlets from this security check.
 
-The security check utilizes the implementation set in the property "auth.token.impl".
+The security check utilizes the implementation set in the property `auth.token.impl`.
 
     portlet.add.default.resource.check.enabled=true
 
-Set a list of comma delimited list of portlet ids that will bypass the security check set in the property "portlet.add.default.resource.check.enabled".
+Set a list of comma delimited list of portlet ids that will bypass the security check set in the property `portlet.add.default.resource.check.enabled`.
 
     portlet.add.default.resource.check.whitelist=3,56_INSTANCE_0000,58,82,86,87,103,113,145,164,166,170
 
-Input a list of comma delimited struts actions that will bypass the security check set in the property "portlet.add.default.resource.check.enabled".
+Input a list of comma delimited struts actions that will bypass the security check set in the property `portlet.add.default.resource.check.enabled`.
 
     portlet.add.default.resource.check.whitelist.actions=\
         /journal/rss,\
@@ -352,26 +352,26 @@ Input a regular expression to ban paths that cannot be used to serve resources i
     
 #### Portlet Coordination
 
-Set this property to specify how events are distributed. If the value is "layout-set", then events will be distributed to all portlets contained in a layout set. If the value is "layout", then events will be distributed to all portlets that are present in a layout.
+Set this property to specify how events are distributed. If the value is `layout-set`, then events will be distributed to all portlets contained in a layout set. If the value is `layout`, then events will be distributed to all portlets that are present in a layout.
 
     portlet.event.distribution=layout
 
-Set this property to specify how public render parameters are distributed. If the value is "layout-set", then public render parameters will be distributed to all portlets contained in a layout set. This will only work correctly if the property "layout.default.p_l_reset" is set to false. If the value is "layout", then public render parameters will be distributed to all portlets that are present in a layout.
+Set this property to specify how public render parameters are distributed. If the value is `layout-set`, then public render parameters will be distributed to all portlets contained in a layout set. This will only work correctly if the property `layout.default.p_l_reset` is set to `false`. If the value is `layout`, then public render parameters will be distributed to all portlets that are present in a layout.
 
     portlet.public.render.parameter.distribution=layout
 
 #### Theme
 
-Set this property to true to load the theme's merged CSS files for faster loading for production. Set this property to false for easier debugging for development. You can also disable fast loading by setting the URL parameter "css_fast_load" to "0".
+Set this property to `true` to load the theme's merged CSS files for faster loading for production. Set this property to `false` for easier debugging for development. You can also disable fast loading by setting the URL parameter `css_fast_load` to `0`.
 
     theme.css.fast.load=true
 
-Set this property to true to load the theme's merged image files for
-faster loading for production. Set this property to false for easier debugging for development. You can also disable fast loading by setting the URL parameter "images_fast_load" to "0".
+Set this property to `true` to load the theme's merged image files for
+faster loading for production. Set this property to `false` for easier debugging for development. You can also disable fast loading by setting the URL parameter `images_fast_load` to `0`.
 
     theme.images.fast.load=true
 
-Set this property to true to allow directly invoked JSPs to be overridden by a different version of the JSP that exists in a theme.
+Set this property to `true` to allow directly invoked JSPs to be overridden by a different version of the JSP that exists in a theme.
 
     theme.jsp.override.enabled=false
 
@@ -379,23 +379,23 @@ Set the theme's shortcut icon.
 
     theme.shortcut.icon=favicon.ico
 
-Set this property to set the default virtual path for all hot deployed themes. See liferay-look-and-feel_5_1_0.dtd and the virtual-path element for more information.
+Set this property to set the default virtual path for all hot deployed themes. See `liferay-look-and-feel_5_1_0.dtd` and the virtual-path element for more information.
 
     theme.virtual.path=
 
-Set this with an absolute path to specify where imported theme files from a LAR will be stored. This path will override the file-storage path specified in liferay-theme-loader.xml.
+Set this with an absolute path to specify where imported theme files from a LAR will be stored. This path will override the file-storage path specified in `liferay-theme-loader.xml`.
 
     theme.loader.storage.path=
 
-Themes can be imported via LAR files. Set this to true if imported themes should use a new theme id on every import. This will ensure that a copy of the old theme is preserved in the theme loader storage path. However, this also means that a lot of themes that are no longer used remain in the file system. It is recommended that you set this to false.
+Themes can be imported via LAR files. Set this to `true` if imported themes should use a new theme id on every import. This will ensure that a copy of the old theme is preserved in the theme loader storage path. However, this also means that a lot of themes that are no longer used remain in the file system. It is recommended that you set this to `false`.
 
     theme.loader.new.theme.id.on.import=false
 
-Set this to true to decorate portlets by default.
+Set this to `true` to decorate portlets by default.
 
     theme.portlet.decorate.default=true
 
-Set this to true to expose sharing icons for portlets by default.
+Set this to `true` to expose sharing icons for portlets by default.
 
     theme.portlet.sharing.default=false
 
@@ -405,7 +405,7 @@ Input a list of comma delimited resource action configurations that will be read
 
 	resource.actions.configs=resource-actions/default.xml
 
-This should only be set to false when it is called by Service Builder outside of an application server or servlet container.
+This should only be set to `false` when it is called by Service Builder outside of an application server or servlet container.
 
     resource.actions.read.portlet.resources=true
 
@@ -487,15 +487,15 @@ Set the bean name for the Liferay session factory.
 
 	spring.hibernate.session.factory=&liferaySessionFactory
 	
-Set this property to false to manually open and close sessions.
+Set this property to `false` to manually open and close sessions.
 
     spring.hibernate.session.delegated=true	
     
 #### Persistence
 
-Set the provider used for ORM persistence. If this property is set to "jpa", then the properties with the prefix "jpa." will be read. If this property is set to "hibernate", then the properties with the prefix "hibernate." will be read.
+Set the provider used for ORM persistence. If this property is set to `jpa`, then the properties with the prefix `jpa.` will be read. If this property is set to `hibernate`, then the properties with the prefix `hibernate.` will be read.
 
-Note that this property affects the loading of hibernate-spring.xml or jpa-spring.xml in the property "spring.configs".
+Note that this property affects the loading of `hibernate-spring.xml` or `jpa-spring.xml` in the property `spring.configs`.
 
 *Examples:*
 
@@ -511,19 +511,19 @@ Input a list of comma delimited Hibernate configurations.
         META-INF/portal-hbm.xml,\
         META-INF/ext-hbm.xml
 
-Liferay will automatically detect the Hibernate dialect in com.liferay.portal.spring.PortalHibernateConfiguration. Set this property to manually override the automatically detected dialect.
+Liferay will automatically detect the Hibernate dialect in `com.liferay.portal.spring.PortalHibernateConfiguration`. Set this property to manually override the automatically detected dialect.
 
 *Example:*
 
 	hibernate.dialect=
 
-Set the Hibernate connection release mode. You should not modify this unless you know what you're doing. The default setting works best for Spring managed transactions. See the method buildSessionFactory in class org.springframework.orm.hibernate3.LocalSessionFactoryBean and search for the phrase "on_close" to understand how this works.
+Set the Hibernate connection release mode. You should not modify this unless you know what you're doing. The default setting works best for Spring managed transactions. See the method `buildSessionFactory` in class `org.springframework.orm.hibernate3.LocalSessionFactoryBean` and search for the phrase `on_close` to understand how this works.
 
 *Example:*
 
 	hibernate.connection.release_mode=on_close
 
-Set the Hibernate cache region factory. Ehcache is recommended in a clustered environment. See the property "net.sf.ehcache.configurationResourceName" for detailed configuration.
+Set the Hibernate cache region factory. Ehcache is recommended in a clustered environment. See the property `net.sf.ehcache.configurationResourceName` for detailed configuration.
 
     hibernate.cache.region.factory_class=com.liferay.portal.dao.orm.hibernate.region.SingletonLiferayEhcacheRegionFactory
 
@@ -551,9 +551,9 @@ Uncomment these properties to disable Hibernate caching.
 
 Set the JDBC batch size to improve performance.
 
-If you're using Hypersonic, you SHOULD set the batch size to 0 as a workaround for a logging bug in the Hypersonic driver. See LPS-5426 for more information.
+If you're using Hypersonic, you SHOULD set the batch size to `0` as a workaround for a logging bug in the Hypersonic driver. See LPS-5426 for more information.
 
-If you're using Oracle 9i, you MUST set the batch size to 0 as a workaround for a hanging bug in the Oracle driver. See LEP-1234 for more information.
+If you're using Oracle 9i, you MUST set the batch size to `0` as a workaround for a hanging bug in the Oracle driver. See LEP-1234 for more information.
 
 *Examples:*
 
@@ -566,11 +566,11 @@ Set other miscellaneous Hibernate properties.
     hibernate.bytecode.use_reflection_optimizer=true
     hibernate.show_sql=false
 
-Use the classic query factory until WebLogic and Hibernate 3 can get along. See http://www.hibernate.org/250.html#A23 for more information.
+Use the classic query factory until WebLogic and Hibernate 3 can get along. See [http://www.hibernate.org/250.html#A23](http://www.hibernate.org/250.html#A23) for more information.
 
     hibernate.query.factory_class=org.hibernate.hql.classic.ClassicQueryTranslatorFactory
 
-Set this property to true to enable Hibernate cache monitoring. See LPS-2056 for more information.
+Set this property to `true` to enable Hibernate cache monitoring. See LPS-2056 for more information.
 
     hibernate.generate_statistics=false
     
@@ -591,7 +591,7 @@ Set the name of the JPA provider.
     jpa.provider=openjpa
     jpa.provider=toplink
 
-Specify provider specific properties prefixed with "jpa.provider.property."
+Specify provider specific properties prefixed with `jpa.provider.property.`
 
 *Examples:
 
@@ -615,130 +615,128 @@ Specify a specific database platform setting if the JPA provider is not able to 
 Valid values for the Hibernate and OpenJPA providers are: DB2, DERBY, HSQL, INFORMIX, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER, and SYBASE.
 
 Valid values for the EclipseLink provider are:
-org.eclipse.persistence.platform.database.DB2MainframePlatform,
-org.eclipse.persistence.platform.database.DB2Platform,
-org.eclipse.persistence.platform.database.DerbyPlatform,
-org.eclipse.persistence.platform.database.HSQLPlatform,
-org.eclipse.persistence.platform.database.InformixPlatform,
-org.eclipse.persistence.platform.database.MySQLPlatform,
-org.eclipse.persistence.platform.database.OraclePlatform,
-org.eclipse.persistence.platform.database.PostgreSQLPlatform,
-org.eclipse.persistence.platform.database.SQLServerPlatform, or
-org.eclipse.persistence.platform.database.SybasePlatform.
+	org.eclipse.persistence.platform.database.DB2MainframePlatform,
+	org.eclipse.persistence.platform.database.DB2Platform,
+	org.eclipse.persistence.platform.database.DerbyPlatform,
+	org.eclipse.persistence.platform.database.HSQLPlatform,
+	org.eclipse.persistence.platform.database.InformixPlatform,
+	org.eclipse.persistence.platform.database.MySQLPlatform,
+	org.eclipse.persistence.platform.database.OraclePlatform,
+	org.eclipse.persistence.platform.database.PostgreSQLPlatform,
+	org.eclipse.persistence.platform.database.SQLServerPlatform, or
+	org.eclipse.persistence.platform.database.SybasePlatform.
 
 Check with JPA provider's documentation for details and all possible values.
 
 	jpa.database.platform=
 
-Liferay will automatically detect the database type by initializing DBUtil. You can override the value here if needed. Expected values are: db2, derby, firebird, hypersonic, informix, ingres, interbase, jdatastore, mysql, oracle, postgresql, sap, sqlserver, and sybase.
+Liferay will automatically detect the database type by initializing DBUtil. You can override the value here if needed. Expected values are: `db2`, `derby`, `firebird`, `hypersonic`, `informix`, `ingres`, `interbase`, `jdatastore`, `mysql`, `oracle`, `postgresql`, `sap`, `sqlserver`, and `sybase`.
 
 	jpa.database.type=    
 
 #### JDBC
 
-Set the JNDI name to lookup the JDBC data source. If none is set,
-then the portal will attempt to create the JDBC data source based on the
-properties prefixed with "jdbc.default.".
+Set the JNDI name to lookup the JDBC data wsource. If none is set, then the portal will attempt to create the JDBC data source based on the properties prefixed with `jdbc.default.`.
 
 *Example:*
 
     jdbc.default.jndi.name=jdbc/LiferayPool
 
-Set the properties used to create the JDBC data source. These properties will only be read if the property "jdbc.default.jndi.name" is not set.
+Set the properties used to create the JDBC data source. These properties will only be read if the property `jdbc.default.jndi.name` is not set.
 
 The default settings are configured for an in-memory database called Hypersonic that is not recommended for production use. Please change the properties to use another database.
 
-Add dynamic-data-source-spring.xml to the property "spring.configs" to configure the portal to use one database cluster for read calls and another database cluster for write calls. The convention is to create a set of properties prefixed with "jdbc.read." to handle read calls and another set of properties prefixed with "jdbc.write." to handle write calls. These data sources can also be created via JNDI by setting the properties "jdbc.read.jndi.name" and "jdbc.write.jndi.name". Note that these settings, though separate, are a copy of the default settings with the newly overridden values.
+Add `dynamic-data-source-spring.xml` to the property `spring.configs` to configure the portal to use one database cluster for read calls and another database cluster for write calls. The convention is to create a set of properties prefixed with `jdbc.read.` to handle read calls and another set of properties prefixed with `jdbc.write.` to handle write calls. These data sources can also be created via JNDI by setting the properties `jdbc.read.jndi.name` and `jdbc.write.jndi.name`. Note that these settings, though separate, are a copy of the default settings with the newly overridden values.
 
 DB2
 
 *Examples:*
 
-jdbc.default.driverClassName=com.ibm.db2.jcc.DB2Driver
-jdbc.default.url=jdbc:db2://localhost:50000/lportal:deferPrepares=false;fullyMaterializeInputStreams=true;fullyMaterializeLobData=true;progresssiveLocators=2;progressiveStreaming=2;
-jdbc.default.username=db2admin
-jdbc.default.password=lportal
+	jdbc.default.driverClassName=com.ibm.db2.jcc.DB2Driver
+	jdbc.default.url=jdbc:db2://localhost:50000/lportal:deferPrepares=false;fullyMaterializeInputStreams=true;fullyMaterializeLobData=true;progresssiveLocators=2;progressiveStreaming=2;
+	jdbc.default.username=db2admin
+	jdbc.default.password=lportal
 
 Derby
 
 *Examples:*
 
-jdbc.default.driverClassName=org.apache.derby.jdbc.EmbeddedDriver
-jdbc.default.url=jdbc:derby:lportal
-jdbc.default.username=
-jdbc.default.password=
+	jdbc.default.driverClassName=org.apache.derby.jdbc.EmbeddedDriver
+	jdbc.default.url=jdbc:derby:lportal
+	jdbc.default.username=
+	jdbc.default.password=
 
 Hypersonic
 
-jdbc.default.driverClassName=org.hsqldb.jdbcDriver
-jdbc.default.url=jdbc:hsqldb:${liferay.home}/data/hsql/lportal
-jdbc.default.username=sa
-jdbc.default.password=
+	jdbc.default.driverClassName=org.hsqldb.jdbcDriver
+	jdbc.default.url=jdbc:hsqldb:${liferay.home}/data/hsql/lportal
+	jdbc.default.username=sa
+	jdbc.default.password=
 
 Ingres
 
 *Examples:*
 
-jdbc.default.driverClassName=com.ingres.jdbc.IngresDriver
-jdbc.default.url=jdbc:ingres://localhost:II7/lportal
-jdbc.default.username=
-jdbc.default.password=
+	jdbc.default.driverClassName=com.ingres.jdbc.IngresDriver
+	jdbc.default.url=jdbc:ingres://localhost:II7/lportal
+	jdbc.default.username=
+	jdbc.default.password=
 
 MySQL
 
 *Examples:*
 
-jdbc.default.driverClassName=com.mysql.jdbc.Driver
-jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-jdbc.default.username=
-jdbc.default.password=
-
-*Examples:*
+	jdbc.default.driverClassName=com.mysql.jdbc.Driver
+	jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+	jdbc.default.username=
+	jdbc.default.password=
 
 Oracle
 
-jdbc.default.driverClassName=oracle.jdbc.driver.OracleDriver
-jdbc.default.url=jdbc:oracle:thin:@localhost:1521:xe
-jdbc.default.username=lportal
-jdbc.default.password=lportal
-
 *Examples:*
+
+	jdbc.default.driverClassName=oracle.jdbc.driver.OracleDriver
+	jdbc.default.url=jdbc:oracle:thin:@localhost:1521:xe
+	jdbc.default.username=lportal
+	jdbc.default.password=lportal
 
 P6Spy
 
-jdbc.default.driverClassName=com.p6spy.engine.spy.P6SpyDriver
-jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-jdbc.default.username=
-jdbc.default.password=
-
 *Examples:*
+
+	jdbc.default.driverClassName=com.p6spy.engine.spy.P6SpyDriver
+	jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+	jdbc.default.username=
+	jdbc.default.password=
 
 PostgreSQL
 
-jdbc.default.driverClassName=org.postgresql.Driver
-jdbc.default.url=jdbc:postgresql://localhost:5432/lportal
-jdbc.default.username=sa
-jdbc.default.password=
+*Examples:*
+
+	jdbc.default.driverClassName=org.postgresql.Driver
+	jdbc.default.url=jdbc:postgresql://localhost:5432/lportal
+	jdbc.default.username=sa
+	jdbc.default.password=
 
 SQL Server
 
 *Examples:*
 
-jdbc.default.driverClassName=net.sourceforge.jtds.jdbc.Driver
-jdbc.default.url=jdbc:jtds:sqlserver://localhost/lportal
-jdbc.default.username=sa
-jdbc.default.password=
+	jdbc.default.driverClassName=net.sourceforge.jtds.jdbc.Driver
+	jdbc.default.url=jdbc:jtds:sqlserver://localhost/lportal
+	jdbc.default.username=sa
+	jdbc.default.password=
 
 Sybase
 
 *Examples:*
 
-jdbc.default.driverClassName=net.sourceforge.jtds.jdbc.Driver
-jdbc.default.url=jdbc:jtds:sybase://localhost:5000/lportal
-jdbc.default.username=sa
-jdbc.default.password=
+	jdbc.default.driverClassName=net.sourceforge.jtds.jdbc.Driver
+	jdbc.default.url=jdbc:jtds:sybase://localhost:5000/lportal
+	jdbc.default.username=sa
+	jdbc.default.password=
 
-Liferay can use C3PO, DBCP, or Primrose for connection pooling. See com.liferay.portal.dao.jdbc.util.DataSourceFactoryBean for the actual implementation. It is important to understand the strengths and weaknesses of each provider so that you can choose the best one that fits your deployment scenario. Provider specific properties can also be passed along directly to the provider. For example, the property "jdbc.default.acquireIncrement" is read by C3PO, the property "jdbc.default.maxActive" is read by DBCP, and the property "jdbc.default.base" is read by Primrose.
+Liferay can use C3PO, DBCP, or Primrose for connection pooling. See `com.liferay.portal.dao.jdbc.util.DataSourceFactoryBean` for the actual implementation. It is important to understand the strengths and weaknesses of each provider so that you can choose the best one that fits your deployment scenario. Provider specific properties can also be passed along directly to the provider. For example, the property `jdbc.default.acquireIncrement` is read by C3PO, the property `jdbc.default.maxActive` is read by DBCP, and the property `jdbc.default.base` is read by Primrose.
 
 The default provider is C3PO.
 
@@ -749,7 +747,7 @@ The default provider is C3PO.
     jdbc.default.liferay.pool.provider=primrose
     jdbc.default.liferay.pool.provider=tomcat
 
-The following properties will be read by C3PO if Liferay is configured to use C3PO in the property "jdbc.default.liferay.pool.provider". See http://www.mchange.com/projects/c3p0/index.html#configuration for a list of additional fields used by C3PO for configuring database connections.
+The following properties will be read by C3PO if Liferay is configured to use C3PO in the property `jdbc.default.liferay.pool.provider`. See [http://www.mchange.com/projects/c3p0/index.html#configuration](http://www.mchange.com/projects/c3p0/index.html#configuration) for a list of additional fields used by C3PO for configuring database connections.
 
 *Examples:*
 
@@ -762,14 +760,14 @@ The following properties will be read by C3PO if Liferay is configured to use C3
     jdbc.default.numHelperThreads=10
     jdbc.default.transactionIsolation=1
 
-The following properties will be read by both DBCP and Tomcat JDBC Connection Pool if Liferay is configured to use DBCP or Tomcat JDBC Connection Pool in the property "jdbc.default.liferay.pool.provider". See http://commons.apache.org/dbcp/configuration.html and http://people.apache.org/~fhanik/jdbc-pool/jdbc-pool.html for a list of additional fields used by DBCP or Tomcat JDBC Connection Pool for configuring database connections.
+The following properties will be read by both DBCP and Tomcat JDBC Connection Pool if Liferay is configured to use DBCP or Tomcat JDBC Connection Pool in the property `jdbc.default.liferay.pool.provider`. See [http://commons.apache.org/dbcp/configuration.html](http://commons.apache.org/dbcp/configuration.html) and [http://people.apache.org/~fhanik/jdbc-pool/jdbc-pool.html](http://people.apache.org/~fhanik/jdbc-pool/jdbc-pool.html) for a list of additional fields used by DBCP or Tomcat JDBC Connection Pool for configuring database connections.
 
     jdbc.default.defaultTransactionIsolation=READ_UNCOMMITTED
     jdbc.default.maxActive=100
     jdbc.default.minIdle=10
     jdbc.default.removeAbandonedTimeout=3600
 
-The following properties will be read by Primrose if Liferay is configured to use Primrose in the property "jdbc.default.liferay.pool.provider". See http://www.primrose.org.uk/primrose3/primroseConfig.html for a list of additional fields used by Primrose for configuring database connections.
+The following properties will be read by Primrose if Liferay is configured to use Primrose in the property `jdbc.default.liferay.pool.provider`. See [http://www.primrose.org.uk/primrose3/primroseConfig.html](http://www.primrose.org.uk/primrose3/primroseConfig.html) for a list of additional fields used by Primrose for configuring database connections.
 
 *Examples:*
 
@@ -778,7 +776,7 @@ The following properties will be read by Primrose if Liferay is configured to us
     jdbc.default.idleTime=1800000
     jdbc.default.numberOfConnectionsToInitializeWith=10
 
-The following properties will be read by Tomcat JDBC Connection Pool if Liferay is configured to use Tomcat JDBC Connection Pool in the property "jdbc.default.liferay.pool.provider". See http://people.apache.org/~fhanik/jdbc-pool/jdbc-pool.html for a list of additional fields used by Tomcat JDBC Connection Pool for configuring database connections.
+The following properties will be read by Tomcat JDBC Connection Pool if Liferay is configured to use Tomcat JDBC Connection Pool in the property `jdbc.default.liferay.pool.provider`. See [http://people.apache.org/~fhanik/jdbc-pool/jdbc-pool.html](http://people.apache.org/~fhanik/jdbc-pool/jdbc-pool.html) for a list of additional fields used by Tomcat JDBC Connection Pool for configuring database connections.
 
     jdbc.default.jdbcInterceptors=org.apache.tomcat.jdbc.pool.interceptor.ConnectionState
     jdbc.default.jmxEnabled=true
@@ -823,15 +821,15 @@ Set the MySQL engine type. InnoDB is the recommended engine because it provides 
 	
 #### Transaction
 
-Set the transaction isolation level for the Counter service. See "transaction.isolation.portal" for more information. The preferred value is 8 when the transaction manager supports it. If the transaction manager does not support it, (i.e. when using JPA and JpaTransactionManager) set this to -1 to use the database's default isolation level.
+Set the transaction isolation level for the Counter service. See `transaction.isolation.portal` for more information. The preferred value is `8` when the transaction manager supports it. If the transaction manager does not support it, (i.e. when using JPA and JpaTransactionManager) set this to `-1` to use the database's default isolation level.
 
 	transaction.isolation.counter=8
 
-Set the definition of the "portal" transaction isolation level. The "portal" transaction isolation level is not a real isolation level. It is just a pointer to a real isolation level that can be configured by setting this property. Set the value to -1 to use the database's default isolation level. Set the value to 2 to use "read committed". Set the value to 1 to use "read uncommitted". Set the value to 4 to use "repeatable read". Set the value to 8 to use "serializable".
+Set the definition of the `portal` transaction isolation level. The `portal` transaction isolation level is not a real isolation level. It is just a pointer to a real isolation level that can be configured by setting this property. Set the value to `-1` to use the database's default isolation level. Set the value to `2` to use `read committed`. Set the value to `1` to use `read uncommitted`. Set the value to `4` to use `repeatable read`. Set the value to `8` to use `serializable`.
 
-transaction.isolation.portal=2
+	transaction.isolation.portal=2
 
-Set the transaction manager. It must be a class that extends org.springframework.transaction.support.AbstractPlatformTransactionManager.
+Set the transaction manager. It must be a class that extends `org.springframework.transaction.support.AbstractPlatformTransactionManager`.
 
 The application server specific transaction managers provide XA transactions by leveraging application server specific data sources and thus require additional application server specific configuration. You should not modify this unless you know what you're doing.
 
@@ -843,9 +841,9 @@ The application server specific transaction managers provide XA transactions by 
 	transaction.manager.impl=org.springframework.transaction.jta.WebLogicJtaTransactionManager
 	transaction.manager.impl=org.springframework.transaction.jta.WebSphereUowTransactionManager
 
-Additional properties that follow the pattern "transaction.manager.property.\*" will be read to call the setters on the transaction manager. For example, the property "transaction.manager.property.globalRollbackOnParticipationFailure", will call the setter "setGlobalRollbackOnParticipationFailure" on the transaction manager. The list of available setters depends on the implementation specified in the property "transaction.manager.impl".
+Additional properties that follow the pattern `transaction.manager.property.\*` will be read to call the setters on the transaction manager. For example, the property `transaction.manager.property.globalRollbackOnParticipationFailure`, will call the setter `setGlobalRollbackOnParticipationFailure` on the transaction manager. The list of available setters depends on the implementation specified in the property `transaction.manager.impl`.
 
-"allowCustomIsolationLevels" should be set to true when using the JtaTransactionManager.
+`allowCustomIsolationLevels` should be set to `true` when using the `JtaTransactionManager`.
 
 *Examples:*
 
@@ -854,7 +852,7 @@ Additional properties that follow the pattern "transaction.manager.property.\*" 
 	
 #### Transactional Cache
 
-Set this property to true to enable transactional cache. When enabled, changes to caches take effect when transaction commits successfully. Caches rollback when transactions rollback.
+Set this property to `true` to enable transactional cache. When enabled, changes to caches take effect when transaction commits successfully. Caches rollback when transactions rollback.
 
 	transactional.cache.enable=true
 	
@@ -864,7 +862,7 @@ Set the database that is to be used for the default company and globally used ta
 
 	shard.default.name=default
 
-Specify an algorithm for selecting a new shard on portal instance creation. Use ManualShardSelector for shard selection via the web interface.
+Specify an algorithm for selecting a new shard on portal instance creation. Use `ManualShardSelector` for shard selection via the web interface.
 
 *Examples:*
 
@@ -873,7 +871,7 @@ Specify an algorithm for selecting a new shard on portal instance creation. Use 
 
 #### Ehcache
 
-Set the classpath to the location of the Ehcache config file for internal caches. Edit the file specified in the property "ehcache.multi-vm.config.location" to enable clustered cache.
+Set the classpath to the location of the Ehcache config file for internal caches. Edit the file specified in the property `ehcache.multi-vm.config.location` to enable clustered cache.
 
 	ehcache.single.vm.config.location=/ehcache/liferay-single-vm.xml
 	ehcache.multi.vm.config.location=/ehcache/liferay-multi-vm-clustered.xml
@@ -883,52 +881,52 @@ Uncomment the following in a clustered environment.
 	ehcache.multi.vm.config.location.peerProviderProperties=peerDiscovery=automatic,multicastGroupAddress=${multicast.group.address["multi-vm"]},multicastGroupPort=${multicast.group.port["multi-vm"]},timeToLive=1
 
 
-Input a class name that extends net.sf.ehcache.bootstrap.BootstrapCacheLoaderFactory. This class is used by Ehcache to determine how caches communicate with each other in a clustered environment.
+Input a class name that extends `net.sf.ehcache.bootstrap.BootstrapCacheLoaderFactory`. This class is used by Ehcache to determine how caches communicate with each other in a clustered environment.
 
 *Examples:*
 
 	ehcache.bootstrap.cache.loader.factory=net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory
 	ehcache.bootstrap.cache.loader.factory=com.liferay.portal.cache.ehcache.JGroupsBootstrapCacheLoaderFactory
 
-Input a class name that extends net.sf.ehcache.event.CacheEventListenerFactory. This class is used by Ehcache to determine how caches communicate with each other in a clustered environment.
+Input a class name that extends `net.sf.ehcache.event.CacheEventListenerFactory`. This class is used by Ehcache to determine how caches communicate with each other in a clustered environment.
 
 *Examples:*
 
 	ehcache.cache.event.listener.factory=net.sf.ehcache.distribution.RMICacheReplicatorFactory
 	ehcache.cache.event.listener.factory=net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory
 
-Input a class name that extends net.sf.ehcache.distribution.CacheManagerPeerProviderFactory. This class is used by Ehcache to determine how caches communicate with each other in a clustered environment.
+Input a class name that extends `net.sf.ehcache.distribution.CacheManagerPeerProviderFactory`. This class is used by Ehcache to determine how caches communicate with each other in a clustered environment.
 
 *Examples:*
 
 	ehcache.cache.manager.peer.provider.factory=net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory
 	ehcache.cache.manager.peer.provider.factory=net.sf.ehcache.distribution.jgroups.JGroupsCacheManagerPeerProviderFactory
 
-Set this to true to enable JMX integration in com.liferay.portal.cache.EhcachePortalCacheManager. Set this to false if the portal needs to be reloaded under WebSphere.
+Set this to `true` to enable JMX integration in `com.liferay.portal.cache.EhcachePortalCacheManager`. Set this to `false` if the portal needs to be reloaded under WebSphere.
 
 *Example:*
 
 	ehcache.portal.cache.manager.jmx.enabled=true
 
-Set this to true to allow Ehcache to use blocking caches. This improves performance significantly by locking on keys instead of the entire cache. The drawback is that threads can hang if the cache is not used properly. Make sure that all queries that return a miss also immediately populate the cache, or else other threads that are blocked on a query of that same key will continue to hang. Reference Ehcache's BlockingCache for more information. The blocking cache is no longer implemented by Ehcache's BlockingCache, but by Liferay's BlockingPortalCache for better safety and faster performance.
+Set this to `true` to allow Ehcache to use blocking caches. This improves performance significantly by locking on keys instead of the entire cache. The drawback is that threads can hang if the cache is not used properly. Make sure that all queries that return a miss also immediately populate the cache, or else other threads that are blocked on a query of that same key will continue to hang. Reference Ehcache's BlockingCache for more information. The blocking cache is no longer implemented by Ehcache's BlockingCache, but by Liferay's BlockingPortalCache for better safety and faster performance.
 
 	ehcache.blocking.cache.allowed=true
 
-Set this to true to enable Ehcache statistics.
+Set this to `true` to enable Ehcache statistics.
 
 	ehcache.statistics.enabled=false
 
 #### JavaScript
 
-Set a list of JavaScript files that will be loaded automatically in /html/common/themes/top_js.jsp.
+Set a list of JavaScript files that will be loaded automatically in `/html/common/themes/top_js.jsp`.
 
-There are two lists of files specified in the properties "javascript.barebone.files" and "javascript.everything.files".
+There are two lists of files specified in the properties `javascript.barebone.files` and `javascript.everything.files`.
 
 As the name suggests, the barebone list is the minimum list of JavaScript files required for most cases. The everything list includes everything else not listed in the barebone list.
 
-The two lists of files exist for performance reasons because unauthenticated users usually do not utilize all the JavaScript that is available. See the property "javascript.barebone.enabled" for more information on the logic of when the barebone list is used and when the everything list is used and how to customize that logic.
+The two lists of files exist for performance reasons because unauthenticated users usually do not utilize all the JavaScript that is available. See the property `javascript.barebone.enabled` for more information on the logic of when the barebone list is used and when the everything list is used and how to customize that logic.
 
-The list of files are also merged and packed for further performance improvements. See the property "javascript.fast.load" for more details.
+The list of files are also merged and packed for further performance improvements. See the property `javascript.fast.load` for more details.
 
 Specify the list of barebone files.
 
@@ -1004,15 +1002,15 @@ Specify the list of everything files (everything else not already in the list of
         \
         liferay/deprecated.js
 
-Set this property to false to always load JavaScript files listed in the property "javascript.everything.files". Set this to true to sometimes load "javascript.barebone.files" and sometimes load "javascript.everything.files".
+Set this property to `false` to always load JavaScript files listed in the property `javascript.everything.files`. Set this to `true` to sometimes load `javascript.barebone.files` and sometimes load `javascript.everything.files`.
 
 The default logic is coded in com.liferay.portal.events.ServicePreAction in such a way that unauthenticated users get the list of barebone JavaScript files whereas authenticated users get both the list of barebone JavaScript files and the list of everything JavaScript files.
 
     javascript.barebone.enabled=true
 
-Set this property to true to load the packed version of files listed in the properties "javascript.barebone.files" or "javascript.everything.files".
+Set this property to `true` to load the packed version of files listed in the properties `javascript.barebone.files` or `javascript.everything.files`.
 
-Set this property to false for easier debugging for development. You can also disable fast loading by setting the URL parameter "js_fast_load" to "0".
+Set this property to `false` for easier debugging for development. You can also disable fast loading by setting the URL parameter `js_fast_load` to `0`.
 
     javascript.fast.load=true
 
@@ -1022,16 +1020,16 @@ Input a list of comma delimited properties that are valid bundle ids for the Jav
         javascript.barebone.files,\
         javascript.everything.files
 
-Define a bundle directory for each property listed in "javascript.bundle.ids".
+Define a bundle directory for each property listed in `javascript.bundle.ids`.
 
     javascript.bundle.dir[javascript.barebone.files]=/html/js
     javascript.bundle.dir[javascript.everything.files]=/html/js
 
-Define the bundle dependencies using any property listed in "javascript.bundle.ids".
+Define the bundle dependencies using any property listed in `javascript.bundle.ids`.
 
     javascript.bundle.dependencies[javascript.everything.files]=javascript.barebone.files
 
-Set this to true to enable the display of JavaScript logging.
+Set this to `true` to enable the display of JavaScript logging.
 
     javascript.log.enabled=false
 
@@ -1060,9 +1058,9 @@ This sets the default home URL of the portal.
 
 	company.default.home.url=/web/guest
 
-Set this to the appropriate encryption algorithm to be used for company level encryption algorithms (except password encryption which is defined via the property "passwords.encryption.algorithm").
+Set this to the appropriate encryption algorithm to be used for company level encryption algorithms (except password encryption which is defined via the property `passwords.encryption.algorithm`).
 
-If you change this setting, you may need to also change the property "company.encryption.key.size" to configure the desired encryption key size.
+If you change this setting, you may need to also change the property `company.encryption.key.size` to configure the desired encryption key size.
 
 For more details about encryption keys, see the Java Cryptography Extension documentation.
 
@@ -1080,7 +1078,7 @@ For more details about encryption keys, see the Java Cryptography Extension docu
 	company.encryption.algorithm=HmacSHA512
 	company.encryption.algorithm=RC2
 
-Set this to define the size used for the company wide encryption key. If you change this setting, you may need to also change the property "company.encryption.algorithm" to ensure the algorithm supports your key size. 
+Set this to define the size used for the company wide encryption key. If you change this setting, you may need to also change the property `company.encryption.algorithm` to ensure the algorithm supports your key size. 
 
 For more details about supported key sizes for encryption keys, see the Java Cryptography Extension documentation
 
@@ -1095,7 +1093,7 @@ For more details about supported key sizes for encryption keys, see the Java Cry
 
 The login field is prepopulated with the company's domain name if the login is unpopulated and user authentication is based on email addresses.
  
-Set this to false to disable the behavior.
+Set this to `false` to disable the behavior.
 
 	company.login.prepopulate.domain=true
 
@@ -1105,48 +1103,48 @@ The portal can authenticate users based on their email address, screen name, or 
 	company.security.auth.type=screenName
 	company.security.auth.type=userId
 
-Set this to true to ensure users login with https. If this is set to true and you want your HTTP session to contain your credentials after logging in, then the property "session.enable.phishing.protection" must be set to false or your credentials will only be available in the HTTPS session.
+Set this to `true` to ensure users login with https. If this is set to `true` and you want your HTTP session to contain your credentials after logging in, then the property `session.enable.phishing.protection` must be set to `false` or your credentials will only be available in the HTTPS session.
 
 	company.security.auth.requires.https=false
 
-Set this to true to allow users to select the "remember me" feature to automatically login to the portal.
+Set this to `true` to allow users to select the `remember me` feature to automatically login to the portal.
 
 	company.security.auto.login=true
 
-Set this to the maximum age (in number of seconds) of the browser cookie that enables the "remember me" feature. A value of 31536000 signifies lifespan of one year. A value of -1 signifies a lifespan of a browser session.
+Set this to the maximum age (in number of seconds) of the browser cookie that enables the "remember me" feature. A value of `31536000` signifies lifespan of one year. A value of `-1` signifies a lifespan of a browser session.
 
-Rather than setting this to 0, set the property "company.security.auto.login" to false to disable the "remember me" feature.
+Rather than setting this to `0`, set the property `company.security.auto.login` to `false` to disable the "remember me" feature.
 
 	company.security.auto.login.max.age=31536000
 
-Set this to true to allow users to ask the portal to send them their password.
+Set this to `true` to allow users to ask the portal to send them their password.
 
 	company.security.send.password=true
 
-Set this to true to allow users to ask the portal to send them a passwordreset link.
+Set this to `true` to allow users to ask the portal to send them a passwordreset link.
 
 	company.security.send.password.reset.link=true
 
-Set this to true to allow strangers to create accounts and register
+Set this to `true` to allow strangers to create accounts and register
 themselves on the portal.
 
 	company.security.strangers=true
 
-Enter a friendly URL of a page that will be used to create new accounts whenever the user clicks the "create account" link in the login portlet. This allows providing custom portlets to create accounts. By default, the portal's create account will be used.
+Enter a friendly URL of a page that will be used to create new accounts whenever the user clicks the "create account" link in the login portlet. This allows providing custom portlets to create accounts. By default, the portal's "create account" will be used.
 
 *Example:*
 
 	company.security.strangers.url=/create_account
 
-Set this to true if strangers can create accounts with email addresses that match the company mail suffix. This property is not used unless "company.security.strangers" is also set to true.
+Set this to `true` if strangers can create accounts with email addresses that match the company mail suffix. This property is not used unless `company.security.strangers` is also set to `true`.
 
 	company.security.strangers.with.mx=true
 
-Set this to true if strangers who create accounts need to be verified via email.
+Set this to `true` if strangers who create accounts need to be verified via email.
 
 	company.security.strangers.verify=false
 
-Set this to true to allow site administrators to use their own logo instead of the enterprise logo.
+Set this to `true` to allow site administrators to use their own logo instead of the enterprise logo.
 
 	company.security.site.logo=true
 
@@ -1158,66 +1156,66 @@ Input a list of sections that will be included as part of the company settings f
 
 #### Users
 
-Set this to false if users cannot be deleted.
+Set this to `false` if users cannot be deleted.
 
 	users.delete=true
 
-Set this to true when you want the validation to allow for creation of numeric screen names.
+Set this to `true` when you want the validation to allow for creation of numeric screen names.
 
 	users.screen.name.allow.numeric=false
 
-Set this to true to always autogenerate user screen names even if the user gives a specific user screen name. If this is set to true, the LDAP importer will fetch users by their email address even if the property "company.security.auth.type" is set to screenName.
+Set this to `true` to always autogenerate user screen names even if the user gives a specific user screen name. If this is set to `true`, the LDAP importer will fetch users by their email address even if the property `company.security.auth.type` is set to screenName.
 
 	users.screen.name.always.autogenerate=false
 
-Input a class name that implements com.liferay.portal.security.auth.ScreenNameGenerator. This class will be called to generate user screen names.
+Input a class name that implements `com.liferay.portal.security.auth.ScreenNameGenerator`. This class will be called to generate user screen names.
 
 	users.screen.name.generator=com.liferay.portal.security.auth.DefaultScreenNameGenerator
 
-Input a class name that implements com.liferay.portal.security.auth.ScreenNameValidator. This class will be called to validate user screen names.
+Input a class name that implements `com.liferay.portal.security.auth.ScreenNameValidator`. This class will be called to validate user screen names.
 
 *Examples:*
 
 	users.screen.name.validator=com.liferay.portal.security.auth.DefaultScreenNameValidator
 	users.screen.name.validator=com.liferay.portal.security.auth.LiberalScreenNameValidator
 
-Set this to false if you want to be able to create users without an email address. An email address will be automatically assigned to a user based on the property "users.email.address.auto.suffix".
+Set this to `false` if you want to be able to create users without an email address. An email address will be automatically assigned to a user based on the property `users.email.address.auto.suffix`.
 
 	users.email.address.required=true
 
-Set the suffix of the email address that will be automatically generated for a user that does not have an email address. This property is not used unless the property "users.email.address.required" is set to false. The autogenerated email address will be the user id plus the specified suffix.
+Set the suffix of the email address that will be automatically generated for a user that does not have an email address. This property is not used unless the property `users.email.address.required` is set to `false`. The autogenerated email address will be the user id plus the specified suffix.
 
 	users.email.address.auto.suffix=@no-emailaddress.com
 
-Input a class name that implements com.liferay.portal.security.auth.EmailAddressGenerator. This class will be called to generate an email address for a user that does not specify an email address. This class will only be used if the property "users.email.address.required" is set to false.
+Input a class name that implements `com.liferay.portal.security.auth.EmailAddressGenerator`. This class will be called to generate an email address for a user that does not specify an email address. This class will only be used if the property `users.email.address.required` is set to `false`.
 
 	users.email.address.generator=com.liferay.portal.security.auth.DefaultEmailAddressGenerator
 
-Set this to true if you want the last name to be required when creating users.
+Set this to `true` if you want the last name to be required when creating users.
 
 	users.last.name.required=false
 
-Input a class name that implements com.liferay.portal.security.auth.FullNameGenerator. This class will be called to generate a full name from the user's first, middle and last names.
+Input a class name that implements `com.liferay.portal.security.auth.FullNameGenerator`. This class will be called to generate a full name from the user's first, middle and last names.
 
 *Examples:*
 
 	users.full.name.generator=com.liferay.portal.security.auth.DefaultFullNameGenerator
 	users.full.name.generator=com.liferay.portal.security.auth.FamilyNameFirstFullNameGenerator
 
-Input a class name that implements com.liferay.portal.security.auth.FullNameValidator. This class will be called to validate user first, middle and last names.
+Input a class name that implements `com.liferay.portal.security.auth.FullNameValidator`. This class will be called to validate user first, middle and last names.
 
 	users.full.name.validator=com.liferay.portal.security.auth.DefaultFullNameValidator
 
-Set the maximum file size for user portraits. A value of 0 for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property "com.liferay.portal.upload.UploadServletRequestImpl.max.size".
+Set the maximum file size for user portraits. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
 
 	users.image.max.size=307200
 
-Set the maximum user portrait height and width in pixels. A value of 0 indicates no restictions on user portrait dimensions.
+Set the maximum user portrait height and width in pixels. A value of `0` indicates no restictions on user portrait dimensions.
 
 	users.image.max.height=120
 	users.image.max.width=100
 
-Set this to true to record last login information for a user.
+Set this to `true` to record last login information for a user.
 
 	users.update.last.login=true
 
@@ -1243,12 +1241,12 @@ Set the allowed user list views.
 
 	users.list.views=tree,flat-user-groups
 
-Set this to true to enable reminder queries that are used to help reset a user's password.
+Set this to `true` to enable reminder queries that are used to help reset a user's password.
 
 	users.reminder.queries.enabled=true
 	users.reminder.queries.custom.question.enabled=true
 
-Set this to false to enable users without a reminder query to reset their password.
+Set this to `false` to enable users without a reminder query to reset their password.
 
 	users.reminder.queries.required=false
 
@@ -1256,15 +1254,15 @@ Input a list of questions used for reminder queries.
 
 	users.reminder.queries.questions=what-is-your-primary-frequent-flyer-number,what-is-your-library-card-number,what-was-your-first-phone-number,what-was-your-first-teacher's-name,what-is-your-father's-middle-name
 
-Set this to true to search users from the index. Set this to false to search users from the database. Note that setting this to false will disable the ability to search users based on Expando attributes.
+Set this to `true` to search users from the index. Set this to `false` to search users from the database. Note that setting this to `false` will disable the ability to search users based on Expando attributes.
 
 	users.search.with.index=true
 
-Set a property with the prefix "users.update.user.name." and a suffix with the class name that should be updated whenever a user's name has changed.
+Set a property with the prefix `users.update.user.name.` and a suffix with the class name that should be updated whenever a user's name has changed.
 
 	users.update.user.name.com.liferay.portlet.messageboards.model.MBMessage=true
 
-Input a list of user attributes that will be included when exporting users to a CSV file. You can include custom fields by adding the prefix "expando:" to the attribute name.
+Input a list of user attributes that will be included when exporting users to a CSV file. You can include custom fields by adding the prefix `expando:` to the attribute name.
 
 	users.export.csv.fields=fullName,emailAddress   
 
@@ -1347,7 +1345,7 @@ Leave this field blank if users who belong to the right company and have the Adm
 
 	omniadmin.users=
 
-Set this to true if all users are required to agree to the terms of use.
+Set this to `true` if all users are required to agree to the terms of use.
 
 	terms.of.use.required=true
 
@@ -1356,15 +1354,13 @@ Specify the group id and the article id of the Journal article that will be disp
 	terms.of.use.journal.article.group.id=
 	terms.of.use.journal.article.id=
 
-
 Specify subtypes of roles if you want to be able to search for roles using your custom criteria.
 
 	roles.site.subtypes=
 	roles.organization.subtypes=
 	roles.regular.subtypes=
 
-
-Set this to true when you want the validation to allow for creation of roles with numeric names.
+Set this to `true` when you want the validation to allow for creation of roles with numeric names.
 
 	roles.name.allow.numeric=false
 
@@ -1399,710 +1395,598 @@ Input a list of sections that will be included as part of the organization form 
 	organizations.form.update.identification=addresses,phone-numbers,additional-email-addresses,websites,services
 	organizations.form.update.miscellaneous=comments,reminder-queries,custom-fields
 
-
-Set this property to true if you want any administrator that creates an organization to be automatically assigned to that organization.
+Set this property to `true` if you want any administrator that creates an organization to be automatically assigned to that organization.
 
 	organizations.assignment.auto=false
 
-Set this property to false if you want any administrator of an organization to be able to assign any user to that organization. By default, he will only be able to assign the users of the organizations and suborganizations that he can manage.
+Set this property to `false` if you want any administrator of an organization to be able to assign any user to that organization. By default, he will only be able to assign the users of the organizations and suborganizations that he can manage.
 
 	organizations.assignment.strict=true
 
-Set this property to true if you want users to only be members of the organizations to which they are assigned explicitly. By default they will also become implicit members of the ancestors of those organizations. for example if a user belongs to Liferay Spain he will implicitly be a member of the ancestors Liferay Europe and Liferay Global and will be able to access their private pages.
+Set this property to `true` if you want users to only be members of the organizations to which they are assigned explicitly. By default they will also become implicit members of the ancestors of those organizations. for example if a user belongs to Liferay Spain he will implicitly be a member of the ancestors Liferay Europe and Liferay Global and will be able to access their private pages.
 
 	organizations.membership.strict=false
 
-Set this property to true to allow user groups to be a member of
+Set this property to `true` to allow user groups to be a member of
 organizations.
 
 	organizations.user.group.membership.enabled=true
 
-Set this to true to search organizations from the index. Set this to false to search organizations from the database. Note that setting this to false will disable the ability to search organizations based on Expando attributes.
+Set this to `true` to search organizations from the index. Set this to `false` to search organizations from the database. Note that setting this to `false` will disable the ability to search organizations based on Expando attributes.
 
 	organizations.search.with.index=true
 	
 #### User Groups
 
     
-Set this to true when you want the validation to allow for creation of user groups with numeric names.
+Set this to `true` when you want the validation to allow for creation of user groups with numeric names.
     
     user.groups.name.allow.numeric=false
 
 #### Languages and Time Zones
 
-Specify the available locales. Messages corresponding to a specific
-language are specified in properties files with file names matching that
-of content/Language_*.properties. These values can also be overridden in
-properties files with file names matching that of
-content/Language-ext_*.properties. Use a comma to separate
-each entry.
+Specify the available locales. Messages corresponding to a specific language are specified in properties files with file names matching that of `content/Language_*.properties`. These values can also be overridden in properties files with file names matching that of `content/Language-ext_*.properties`. Use a comma to separate each entry.
 
-If there is more than one locale for the same language, the first one in
-the list will be used when a translation is requested in another locale of
-the same language but a translated value cannot be found. For example, if
-there are two locales such us pt_BR and pt_PT (in this order), any key not
-found in pt_PT will be looked for in pt_BR.
+If there is more than one locale for the same language, the first one in the list will be used when a translation is requested in another locale of the same language but a translated value cannot be found. For example, if there are two locales such as `pt_BR` and `pt_PT` (in this order), any key not found in `pt_PT` will be looked for in `pt_BR`.
 
 All locales must use UTF-8 encoding.
 
 See the following links specifiy language and country codes:
-    http://ftp.ics.uci.edu/pub/ietf/http/related/iso639.txt
-    http://userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html
+-   [http://ftp.ics.uci.edu/pub/ietf/http/related/iso639.txt](http://ftp.ics.uci.edu/pub/ietf/http/related/iso639.txt)
+-   [http://userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html](http://userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html)
 
-locales=ar_SA,eu_ES,bg_BG,ca_AD,ca_ES,zh_CN,zh_TW,hr_HR,cs_CZ,nl_NL,nl_BE,en_US,en_GB,et_EE,fi_FI,fr_FR,gl_ES,de_DE,el_GR,iw_IL,hi_IN,hu_HU,in_ID,it_IT,ja_JP,ko_KR,nb_NO,fa_IR,pl_PL,pt_BR,pt_PT,ro_RO,ru_RU,sr_RS,sr_RS_latin,sl_SI,sk_SK,es_ES,sv_SE,tr_TR,uk_UA,vi_VN
+    locales=ar_SA,eu_ES,bg_BG,ca_AD,ca_ES,zh_CN,zh_TW,hr_HR,cs_CZ,nl_NL,nl_BE,en_US,en_GB,et_EE,fi_FI,fr_FR,gl_ES,de_DE,el_GR,iw_IL,hi_IN,hu_HU,in_ID,it_IT,ja_JP,ko_KR,nb_NO,fa_IR,pl_PL,pt_BR,pt_PT,ro_RO,ru_RU,sr_RS,sr_RS_latin,sl_SI,sk_SK,es_ES,sv_SE,tr_TR,uk_UA,vi_VN
 
+Specify the locales that are in beta. Go to [http://translate.liferay.com](http://translate.liferay.com) to participate in the translation efforts.
 
-Specify the locales that are in beta. Go to http://translate.liferay.com
-to participate in the translation efforts.
+	locales.beta=ar_SA,eu_ES,bg_BG,ca_AD,ca_ES,zh_TW,hr_HR,cs_CZ,nl_NL,nl_BE,en_GB,et_EE,fi_FI,fr_FR,gl_ES,el_GR,iw_IL,hi_IN,in_ID,it_IT,ja_JP,ko_KR,nb_NO,fa_IR,pl_PL,pt_PT,ro_RO,ru_RU,sr_RS,sr_RS_latin,sl_SI,sk_SK,sv_SE,tr_TR,uk_UA,vi_VN
 
-locales.beta=ar_SA,eu_ES,bg_BG,ca_AD,ca_ES,zh_TW,hr_HR,cs_CZ,nl_NL,nl_BE,en_GB,et_EE,fi_FI,fr_FR,gl_ES,el_GR,iw_IL,hi_IN,in_ID,it_IT,ja_JP,ko_KR,nb_NO,fa_IR,pl_PL,pt_PT,ro_RO,ru_RU,sr_RS,sr_RS_latin,sl_SI,sk_SK,sv_SE,tr_TR,uk_UA,vi_VN
-
-
-Set this to true if unauthenticated users get their preferred language
-from the Accept-Language header. Set this to false if unauthenticated
+Set this to `true` if unauthenticated users get their preferred language
+from the Accept-Language header. Set this to `false` if unauthenticated
 users get their preferred language from their company.
 
-locale.default.request=false
+	locale.default.request=false
 
 
-Set this to 0 if the locale is not automatically prepended to a URL. This
-means that each URL could potentially point to many different languages.
-For example, the URL http://localhost:8080/web/guest/home could then be
-viewed by users in many different languages.
+Set this to `0` if the locale is not automatically prepended to a URL. This means that each URL could potentially point to many different languages. For example, the URL [http://localhost:8080/web/guest/home](http://localhost:8080/web/guest/home) could then be viewed by users in many different languages.
 
-Set this to 1 if the locale is automatically prepended to a URL when the
-requested locale is not the default locale. This means that each URL
-points to just one language. For example, the URL
-http://localhost:8080/web/guest/home would point to the default language.
-The URL http://localhost:8080/zh/web/guest/home and
-http://localhost:8080/zh_CN/web/guest/home would both point to the Chinese
-language.
+Set this to `1` if the locale is automatically prepended to a URL when the requested locale is not the default locale. This means that each URL points to just one language. For example, the URL [http://localhost:8080/web/guest/home](http://localhost:8080/web/guest/home) would point to the default language.
+The URL [http://localhost:8080/zh/web/guest/home](http://localhost:8080/zh/web/guest/home) and
+[http://localhost:8080/zh_CN/web/guest/home](http://localhost:8080/zh_CN/web/guest/home) would both point to the Chinese language.
 
-In cases where the prepended locale is "zh" and not complete locale
-"zh_CN", then the full locale returned will be based on the order in which
-the locales appear in the property "locales". If "zh_CN" appears before
-"zh_TW", then "zh" will be a short hand for "zh_TW".
+In cases where the prepended locale is `zh` and not complete locale `zh_CN`, then the full locale returned will be based on the order in which the locales appear in the property `locales`. If `zh_CN` appears before `zh_TW`, then `zh` will be a short hand for `zh_TW`.
 
-The default language is set in system.properties with the properties
-"user.country" and "user.language".
+The default language is set in system.properties with the properties `user.country` and `user.language`.
 
-Set this to 2 if the locale is automatically prepended to every URL. This
-means that each URL points to just one language.
+Set this to `2` if the locale is automatically prepended to every URL. This means that each URL points to just one language.
 
-Note that each language requires an entry in the property "locales" and a
-servlet mapping in web.xml for the I18n Servlet.
+Note that each language requires an entry in the property `locales` and a servlet mapping in web.xml for the I18n Servlet.
 
-locale.prepend.friendly.url.style=1
+	locale.prepend.friendly.url.style=1
 
-Set this to true to disable language translations. When a translation is
-requested for the key "first-name", instead of returning "First Name" in
-English (or in its relevant locale), it will return "first-name".
+Set this to `true` to disable language translations. When a translation is requested for the key `first-name`, instead of returning "First Name" in English (or in its relevant locale), it will return `first-name`.
 
-translations.disabled=false
+	translations.disabled=false
 
-Specify the available time zones. The specified ids must match those from
-the class java.util.TimeZone.
+Specify the available time zones. The specified ids must match those from the class `java.util.TimeZone`.
 
-time.zones=\
-    Pacific/Midway,\
-    Pacific/Honolulu,\
-    America/Anchorage,\
-    America/Los_Angeles,\
-    America/Denver,\
-    America/Chicago,\
-    America/New_York,\
-    America/Caracas,\
-    America/Puerto_Rico,\
-    America/St_Johns,\
-    America/Sao_Paulo,\
-    America/Noronha,\
-    Atlantic/Azores,\
-    UTC,\
-    Europe/Lisbon,\
-    Europe/Paris,\
-    Europe/Istanbul,\
-    Asia/Jerusalem,\
-    Asia/Baghdad,\
-    Asia/Tehran,\
-    Asia/Dubai,\
-    Asia/Kabul,\
-    Asia/Karachi,\
-    Asia/Calcutta,\
-    Asia/Katmandu,\
-    Asia/Dhaka,\
-    Asia/Rangoon,\
-    Asia/Saigon,\
-    Asia/Shanghai,\
-    Asia/Tokyo,\
-    Asia/Seoul,\
-    Australia/Darwin,\
-    Australia/Sydney,\
-    Pacific/Guadalcanal,\
-    Pacific/Auckland,\
-    Pacific/Enderbury,\
-    Pacific/Kiritimati
-
+	time.zones=\
+        Pacific/Midway,\
+        Pacific/Honolulu,\
+        America/Anchorage,\
+        America/Los_Angeles,\
+        America/Denver,\
+        America/Chicago,\
+        America/New_York,\
+        America/Caracas,\
+        America/Puerto_Rico,\
+        America/St_Johns,\
+        America/Sao_Paulo,\
+        America/Noronha,\
+        Atlantic/Azores,\
+        UTC,\
+        Europe/Lisbon,\
+        Europe/Paris,\
+        Europe/Istanbul,\
+        Asia/Jerusalem,\
+        Asia/Baghdad,\
+        Asia/Tehran,\
+        Asia/Dubai,\
+        Asia/Kabul,\
+        Asia/Karachi,\
+        Asia/Calcutta,\
+        Asia/Katmandu,\
+        Asia/Dhaka,\
+        Asia/Rangoon,\
+        Asia/Saigon,\
+        Asia/Shanghai,\
+        Asia/Tokyo,\
+        Asia/Seoul,\
+        Australia/Darwin,\
+        Australia/Sydney,\
+        Pacific/Guadalcanal,\
+        Pacific/Auckland,\
+        Pacific/Enderbury,\
+        Pacific/Kiritimati
+        
 #### Look and Feel
 
-Set the following to false if the system does not allow users to modify
-the look and feel.
+Set this to `false` if the system does not use allow users to modify the look and feel.
 
-look.and.feel.modifiable=true
+	look.and.feel.modifiable=true
 
 Set the default layout template id.
 
-default.layout.template.id=2\_columns\_ii
+	default.layout.template.id=2_columns_ii
+
 
 Set the default theme id for regular themes.
 
-default.regular.theme.id=classic
+	default.regular.theme.id=classic
 
 Set the default color scheme id for regular themes.
 
-default.regular.color.scheme.id=01
+	default.regular.color.scheme.id=01
 
 Set the default theme id for wap themes.
 
-default.wap.theme.id=mobile
+	default.wap.theme.id=mobile
 
 Set the default color scheme id for wap themes.
 
-default.wap.color.scheme.id=01
+	default.wap.color.scheme.id=01
 
-Set the following to true if you want a change in the theme selection of
-the public or private group to automatically be applied to the other
-(i.e. if public and private group themes should always be the same).
+Set this to `true` if you want a change in the theme selection of the public or private group to automatically be applied to the other (i.e. if public and private group themes should always be the same).
 
-theme.sync.on.group=false
-
-#### Layouts
-
-Set this to true to remember maximized window states across different
-pages.
-
-layout.remember.maximized.window.state=false
-
-Set this to true to enable comments for pages.
-
-layout.comments.enabled=true
-
-Set this to true to remember maximized window states across different
-pages.
-
-layout.remember.maximized.window.state=false
-
-#### Editors
-
-You can configure individual JSP pages to use a specific implementation
-of the available WYSIWYG editors:
-`ckeditor, fckeditor, liferay, simple, tinymce`, or
-`tinymcesimple`.
-
-editor.wysiwyg.default=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.blogs.edit\_entry.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.calendar.edit\_configuration.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.enterprise\_admin.view.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.invitation.edit\_configuration.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.journal.edit\_article\_content.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.journal.edit\_article\_content\_xsd\_el.jsp=\
-ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.journal.edit\_configuration.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.login.configuration.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit\_message.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.message\_boards.edit\_configuration.jsp=\
-ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.shopping.edit\_configuration.jsp=ckeditor
-
-editor.wysiwyg.portal-web.docroot.html.portlet.wiki.edit.html.jsp=ckeditor
-
-#### Fields
-
-Input a list of comma delimited user types who can edit their own
-fields. Valid types are `administrator`, `user-mx`,
-and `user-without-mx`.
-
-Set a value of `administrator` if an administrator can edit
-the specified field. An administrator is anyone who has the
-Administrator role.
-
-Set a value of `user-mx` if a user who has an email address
-that matches the company mail suffix can edit the specified field.
-
-Set a value of `user-without-mx` if a user who does not have
-an email address that matches the company mail suffix can edit the
-specified field.
-
-Set all three values if all users can edit the specified field. Set a
-combination of the three values if only a combination of the users can
-edit the specified field.
-
-\
-
-field.editable.com.liferay.portal.model.User.screenName=administrator,user-with-mx,user-without-mx
-
-field.editable.com.liferay.portal.model.User.emailAddress=administrator,user-with-mx,user-without-mx
-
+	theme.sync.on.group=false
+	
 #### Request
 
-Portlets that have been configured to use private request attributes in
-`liferay-portlet.xml` may still want to share some request
-attributes. This property allows you to configure which request
-attributes will be shared.
+Portlets that have been configured to use private request attributes in `liferay-portlet.xml` may still want to share some request attributes. This property allows you to configure which request attributes will be shared. Set a comma delimited list of attribute names that will be shared when the attribute name starts with one of the specified attribute names. For example, if you set the value to `hello_,world_`, then all attribute names that start with `hello_` or `world_` will be shared.
 
-Set a comma delimited list of attribute names that will be shared when
-the attribute name starts with one of the specified attribute names. For
-example, if you set the value to `hello_,world_,` then all
-attribute names that start with `hello_` or `world_`
-will be shared.
-
-request.shared.attributes=LIFERAY\_SHARED\_
+	request.shared.attributes=LIFERAY_SHARED_
 
 #### Session
 
+Specify the delimiter for parsing compound session ids.
+
+This addresses an issue with Weblogic and all application servers where the application server appends a unique JVM code to the session id. See LPS-18587.
+
+Set a blank delimiter for the portal to attempt to detect a delimiter based on the application server.
+
+	session.id.delimiter=
+	session.id.weblogic.delimiter=!
+
 Specify the number of minutes before a session expires. This value is
-always overridden by the value set in `web.xml`.
+always overridden by the value set in web.xml.
 
-session.timeout=30
+	session.timeout=30
 
-Specify the number of minutes before a warning is sent to the user
-informing the user of the session expiration. Specify `0` to
-disable any warnings.
+Specify the number of minutes before a warning is sent to the user informing the user of the session expiration. Specify 0 to disable any warnings.
+ 
+	session.timeout.warning=1
 
-session.timeout.warning=1
+Set the auto-extend mode to `true` to avoid having to ask the user whether to extend the session or not. Instead it will be automatically extended. The purpose of this mode is to keep the session open as long as the user browser is open and with a portal page loaded. It is recommended to use this setting along with a smaller `session.timeout`, such as 5 minutes for better performance.
 
-Set the auto-extend mode to true to avoid having to ask the user whether
-to extend the session or not. Instead it will be automatically extended.
-The purpose of this mode is to keep the session open as long as the user
-browser is open and with a portal page loaded. It is recommended to use
-this setting along with a smaller `session.timeout`, such as 5
-minutes for better performance.
+	session.timeout.auto.extend=false
 
-session.timeout.auto.extend=false
+Set this to `true` if the user is redirected to the default page when the session expires.
 
-Set this to true if the user is redirected to the default page when the
-session expires.
+	session.timeout.redirect.on.expire=false
 
-session.timeout.redirect.on.expire=false
+Portlets that have been configured to use private session attributes in `liferay-portlet.xml` may still want to share some session attributes. This property allows you to configure which session attributes will be shared.
 
-Portlets that have been configured to use private session attributes in
-`liferay-portlet.xml` may still want to share some session
-attributes. This property allows you to configure which session
-attributes will be shared. Set a comma delimited list of attribute names
-that will be shared when the attribute name starts with one of the
-specified attribute names. For example, if you set the value to
-`hello_,world_,` then all attribute names that start with
-`hello_` or `world_` will be shared.
+Set a comma delimited list of attribute names that will be shared when the attribute name starts with one of the specified attribute names. For example, if you set the value to `hello_,world_`, then all attribute names that start with `hello_` or `world_` will be shared.
 
 Note that this property is used to specify the sharing of session
 attributes from the portal to the portlet. This is not used to specify
 session sharing between portlet WARs or from the portlet to the portal.
 
-session.shared.attributes=org.apache.struts.action.LOCALE,COMPANY\_,USER\_,LIFERAY\_SHARED\_
+	session.shared.attributes=COMPANY_,LIFERAY_SHARED_,org.apache.struts.action.LOCALE,PORTLET_RENDER_PARAMETERS_,PUBLIC_RENDER_PARAMETERS_POOL_,USER_
 
-Set this to false to disable all persistent cookies. Features like
-automatically logging in will not work.
+Explicitly exclude attributes that are shared from the portal to portlets.
 
-session.enable.persistent.cookies=true
+	session.shared.attributes.excludes=USER_PASSWORD
 
-The login process sets several cookies if persistent cookies are
-enabled. Set this property to set the domain of those cookies.
+Set this to `true` to store the user's password in the session.
 
-session.cookie.domain=
+	session.store.password=false
 
-Set the following to true to invalidate the session when a user logs
-into the portal. This helps prevents phishing. Set this to false if you
-need the guest user and the authenticated user to have the same session.
+Set this to `false` to disable all persistent cookie. Features like automatically logging in will not work.
 
-session.enable.phishing.protection=true
+	session.enable.persistent.cookies=true
 
-Set the following to true to test whether users have cookie support
-before allowing them to sign in. This test will always fail if
-`tck.url` is set to true because that property disables
-session cookies.
+Set this to `true` to enable sessions when cookies are disabled. See
+LEP-4787. This behavior is configurable because enabling it can break
+certain setups.
 
-session.test.cookie.support=true
+	session.enable.url.with.session.id=true
 
-Set the following to true to disable sessions. Doing this will use
-cookies to remember the user across requests. This is useful if you want
-to scale very large sites where the user may be sent to a different
-server for each request. The drawback to this approach is that you must
-not rely on the API for sessions provided by the servlet and portlet
-specs.
+The login process sets several cookies if persistent cookies are enabled. Set this property to set the domain of those cookies.
 
-This feature is only available for Tomcat and requires that you set
-Tomcat's Manager class to
-`com.liferay.support.tomcat.session.SessionLessManagerBase`.
+*Example:*
 
-session.disabled=false
+	session.cookie.domain=
 
-Input a list of comma delimited class names that extend
-`com.liferay.portal.struts.SessionAction`. These classes will
-run at the specified event.
+Set this to `true` to invalidate the session when a user logs into the portal. This helps prevents phishing. Set this to `false` if you need the guest user and the authenticated user to have the same session.
 
-\#
+Set this to `false` if the property `company.security.auth.requires.https` is set to `true` and you want to maintain the same credentials across HTTP and HTTPS sessions.
 
-\# Servlet session create event
+	session.enable.phishing.protection=`true`
 
-\#
+Set a comma delimited list of attribute names that will be copied to the new session when the property `session.enable.phishing.protection` is set to `true`.
 
-servlet.session.create.events=com.liferay.portal.events.SessionCreateAction
+	session.phishing.protected.attributes=HTTPS_INITIAL,LAST_PATH
+	
+Set this to `true` to test whether users have cookie support before allowing them to sign in. This test will always fail if `tck.url` is set to `true` because that property disables session cookies.
 
-\
-\
+	session.test.cookie.support=true
 
-\#
+Set this to `true` to allow
+`com.liferay.portal.kernel.servlet.SerializableSessionAttributeListener` to test if an added session variable is serializable. Unserializable values stored into the session will cause a session to not replicate if session replication was enabled by the application server.
 
-\# Servlet session destroy event
+	session.verify.serializable.attribute=true
 
-\#
+Set this to `true` to disable sessions. Doing this will use cookies to remember the user across requests. This is useful if you want to scale very large sites where the user may be sent to a different server for each request. The drawback to this approach is that you must not rely on the API for sessions provided by the servlet and portlet specs.
 
-servlet.session.destroy.events=com.liferay.portal.events.SessionDestroyAction
+This feature is only available for Tomcat and requires that you set Tomcat's Manager class to `com.liferay.support.tomcat.session.SessionLessManagerBase`.
 
-Set the following to true to track user clicks in memory for the
-duration of a user's session. Setting this to true allows you to view
-all live sessions in the Admin portlet.
+	session.disabled=false
 
-session.tracker.memory.enabled=true
+Input a list of comma delimited class names that extend `com.liferay.portal.struts.SessionAction`. These classes will run at the specified event.
 
-Set the following to true to track user clicks in the database after a
-user's session is invalidated. Setting this to true allows you to
-generate usage reports from the database. Use this cautiously because
-this will store a lot of usage data.
+Servlet session create event
 
-session.tracker.persistence.enabled=false
+	servlet.session.create.events=com.liferay.portal.events.SessionCreateAction
 
-Set the following to true to convert the tracked paths to friendly URLs.
+Servlet session destroy event
 
-session.tracker.friendly.paths.enabled=false
+	servlet.session.destroy.events=com.liferay.portal.events.SessionDestroyAction,com.liferay.portal.events.ChannelSessionDestroyAction
 
+Set this to `true` to track user clicks in memory for the duration of a user's session. Setting this to `true` allows you to view all live sessions in the Admin portlet.
+
+	session.tracker.memory.enabled=true
+
+Set this to `true` to track user clicks in the database after a user's session is invalidated. Setting this to `true` allows you to generate usage reports from the database. Use this cautiously because this will store a lot of usage data.
+
+	session.tracker.persistence.enabled=false
+
+Set this to `true` to convert the tracked paths to friendly URLs.
+
+	session.tracker.friendly.paths.enabled=false
+	
 Enter a list of comma delimited paths that should not be tracked.
 
-session.tracker.ignore.paths=\\
-
-/portal/render\_portlet,\\
-
-\\
-
-/document\_library/get\_file
-
-#### HTTP
-
-Set the maximum number of connections.
-
-com.liferay.portal.util.HttpImpl.max.connections.per.host=2
-
-com.liferay.portal.util.HttpImpl.max.total.connections=20
-
-Set the proxy authentication type.
-
-com.liferay.portal.util.HttpImpl.proxy.auth.type=username-password
-
-com.liferay.portal.util.HttpImpl.proxy.auth.type=ntlm
-
-Set user name and password used for HTTP proxy authentication.
-
-com.liferay.portal.util.HttpImpl.proxy.username=
-
-com.liferay.portal.util.HttpImpl.proxy.password=
-
-Set additional properties for NTLM authentication.
-
-com.liferay.portal.util.HttpImpl.proxy.ntlm.domain=
-
-com.liferay.portal.util.HttpImpl.proxy.ntlm.host=
-
-Set the connection timeout when fetching HTTP content.
-
-com.liferay.portal.util.HttpImpl.timeout=10000
+	session.tracker.ignore.paths=\
+    /portal/render_portlet,\
+    \
+    /document_library/get_file
 
 #### JAAS
 
-Set the following to false to disable JAAS security checks. Disabling
-JAAS speeds up login. JAAS must be disabled if administrators are to be
-able to impersonate other users.
+Set this to false to disable JAAS security checks. Disabling JAAS speeds up login. JAAS must be disabled if administrators are to be able to impersonate other users.
 
-portal.jaas.enable=false
+	portal.jaas.enable=false
 
-By default,
-`com.liferay.portal.security.jaas.PortalLoginModule` loads the
-correct JAAS login module based on what application server or servlet
-container the portal is deployed on. Set a JAAS implementation class to
-override this behavior.
+JAAS can authenticate users based on their email address, screen name, user id, or login as determined by the property `company.security.auth.type`.
 
-portal.jaas.impl=
+*Examples:*
 
-The JAAS process may pass in an encrypted password and the
-authentication will only succeed if there is an exact match. Set this
-property to false to relax that behavior so the user can input an
-unencrypted password.
+	portal.jaas.auth.type=emailAddress
+	portal.jaas.auth.type=screenName
+	portal.jaas.auth.type=userId
+	portal.jaas.auth.type=login
 
-portal.jaas.strict.password=false
+By default, `com.liferay.portal.security.jaas.PortalLoginModule` loads the correct JAAS login module based on what application server or servlet container the portal is deployed on. Set a JAAS implementation class to override this behavior.
 
-Set the following to true to enable administrators to impersonate other
-users.
+*Example:*
 
-portal.impersonation.enable=true
+	portal.jaas.impl=
+
+
+The JAAS process may pass in an encrypted password and the authentication will only succeed if there is an exact match. Set this property to `false` to relax that behavior so the user can input an unencrypted password.
+
+	portal.jaas.strict.password=false
+
+
+Set this to `true` to enable administrators to impersonate other users.
+
+	portal.impersonation.enable=true
+
+#### Security Manager
+
+Set this to `true` to use Liferay's `java.lang.SecurityManager` implementation. This should never be set to `true` except for debugging purposes.
+
+	portal.security.manager.enable=false
 
 #### LDAP
 
 Set the values used to connect to a LDAP store.
 
-ldap.factory.initial=com.sun.jndi.ldap.LdapCtxFactory
+	ldap.factory.initial=com.sun.jndi.ldap.LdapCtxFactory
+	ldap.referral=follow
 
-ldap.base.provider.url=ldap://localhost:10389
+Settings for `com.liferay.portal.security.auth.LDAPAuth` can be configured from the Admin portlet. It provides out of the box support for Apache Directory Server, Microsoft Active Directory Server, Novell eDirectory, and OpenLDAP. The default settings are for Apache Directory Server.
 
-ldap.base.dn=dc=example,dc=com
+The LDAPAuth class must be specified in the property `auth.pipeline.pre` to be executed.
 
-ldap.security.principal=uid=admin,ou=system
+Encryption is implemented by `com.liferay.util.Encryptor.provider.class` in `system.properties`.
 
-ldap.security.credentials=secret
+	ldap.auth.enabled=false
+	ldap.auth.required=false
 
-ldap.referral=follow
+Set the page size for directory servers that supports paging. This value needs to be `1000` or less for Microsoft Active Directory Server.
 
-Settings for `com.liferay.portal.security.auth.LDAPAuth` can
-be configured from the Admin portlet. It provides out of the box support
-for Apache Directory Server, Microsoft Active Directory Server, Novell
-eDirectory, and OpenLDAP. The default settings are for Apache Directory
-Server.
+	ldap.page.size=1000
 
-The `LDAPAuth` class must be specified in the property
-`auth.pipeline.pre` to be executed.
+Set the number of values to return in each query to a multivalued attribute for directory servers that support range retrieval. The range size must be `1000` or less for Windows 2000 and `1500` or less for Windows Server 2003.
 
-Encryption is implemented by
-`com.liferay.util.Encryptor.provider.class` in
-`system.properties`.
+	ldap.range.size=1000
 
-ldap.auth.enabled=false
+Set either bind or password-compare for the LDAP authentication method. Bind is preferred by most vendors so that you don't have to worry about encryption strategies.
 
-ldap.auth.required=false
+*Examples:*
 
-Set either bind or password-compare for the LDAP authentication method.
-Bind is preferred by most vendors so that you don't have to worry about
-encryption strategies.
+	ldap.auth.method=bind
+	ldap.auth.method=password-compare
 
-ldap.auth.method=bind
+Set the password encryption to used to compare passwords if the property `ldap.auth.method` is set to password-compare. If set to `NONE`, which is the default value, passwords are stored in the database as plain text. The SHA-512 algorithm is currently unsupported.
 
-ldap.auth.method=password-compare
+*Examples:*
 
-Set the password encryption to used to compare passwords if the property
-`ldap.auth.method` is set to password-compare.
+	ldap.auth.password.encryption.algorithm=BCRYPT
+	ldap.auth.password.encryption.algorithm=MD2
+	ldap.auth.password.encryption.algorithm=MD5
+	ldap.auth.password.encryption.algorithm=NONE
+	ldap.auth.password.encryption.algorithm=SHA
+	ldap.auth.password.encryption.algorithm=SHA-256
+	ldap.auth.password.encryption.algorithm=SHA-384
+	ldap.auth.password.encryption.algorithm=SSHA
+	ldap.auth.password.encryption.algorithm=UFC-CRYPT
 
-ldap.auth.password.encryption.algorithm=
+You can write your own class that implements
+`com.liferay.portal.security.ldap.AttributesTransformer` to transform the LDAP attributes before a user or group is imported to the LDAP store.
 
-ldap.auth.password.encryption.algorithm.types=MD5,SHA
-
-Active Directory stores information about the user account as a series
-of bit fields in the `UserAccountControl` attribute.
-
-If you want to prevent disabled accounts from logging into the portal
-you need to use a search filter similar to the following:
-
-(&(objectclass=person)(userprincipalname=@email\_address@)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
-
-See the following links:
-
-[http://support.microsoft.com/kb/305144/](http://support.microsoft.com/kb/305144/)
-
-[http://support.microsoft.com/?kbid=269181](http://support.microsoft.com/?kbid=269181)
-
-ldap.auth.search.filter=(mail=@email\_address@)
-
-You can write your own class that extends*
-*`com.liferay.portal.security.ldap.AttributesTransformer` to
-transform the LDAP attributes before a user or group is imported to the
-LDAP store.
-
-ldap.attrs.transformer.impl=com.liferay.portal.security.ldap.AttributesTransformer
-
-You can write your own class that extends
-`com.liferay.portal.security.ldap.LDAPUser` to customize the
-behavior for exporting portal users to the LDAP store.
-
-ldap.user.impl=com.liferay.portal.security.ldap.LDAPUser
-
-When a user is exported to LDAP and the user does not exist, the user
-will be created with the following default object classes.
-
-ldap.user.default.object.classes=top,person,inetOrgPerson,organizationalPerson
-
-When importing and exporting users, the portal will use this mapping to
-connect LDAP user attributes and portal user variables.
-
-ldap.user.mappings=screenName=cn\\npassword=userPassword\\nemailAddress=mail\\nfirstName=givenName\\nlastName=sn\\njobTitle=title\\ngroup=groupMembership
-
-When importing groups, the portal will use this mapping to connect LDAP
-group attributes and portal user group variables.
-
-ldap.group.mappings=groupName=cn\\ndescription=description\\nuser=uniqueMember
+	ldap.attrs.transformer.impl=com.liferay.portal.security.ldap.DefaultAttributesTransformer
 
 Settings for importing users and groups from LDAP to the portal.
 
-ldap.import.enabled=false
+	ldap.import.enabled=false
+	ldap.import.on.startup=false
+	ldap.import.interval=10
 
-ldap.import.on.startup=false
+Set either user or group for import method. If set to user, the portal will import all users and the groups associated with those users. If set to group, the portal import all groups and the users associated those groups. This value should be set based on how your LDAP server stores group membership information.
 
-ldap.import.interval=10
+*Examples:*
 
-ldap.import.user.search.filter=(objectClass=inetOrgPerson)
+	ldap.import.method=user
+	ldap.import.method=group
 
-ldap.import.group.search.filter=(objectClass=groupOfUniqueNames)
+If set to `true`, the group filter will be applied, but only to groups in the specified base DN. If set to `false`, the filter will not be applied and all groups that are associated with the imported users will be imported regardless of the base DN.
 
-Set either user or group for import method. If set to user, portal will
-import all users and the groups associated with those users. If set to
-group, the portal import all groups and the users associated those
-groups.
+	ldap.import.group.search.filter.enabled=true
 
-This value should be set based on how your LDAP server stores group
-membership information.
+Specify whether group DN lookups will be cached during LDAP import and login. If set to `true`, this will speed up LDAP import and login, but updates to group attributes will not be recognized until the cache entry expires. The cache size and timeout may be configured in the configuration file specifed in the property `ehcache.single.vm.config.location`.
 
-ldap.import.method=user
+	ldap.import.group.cache.enabled=true
 
-ldap.import.method=group
+Set this to `true` if the portal should automatically create a role per group imported from LDAP. The role will be assigned to the group so that users can automatically inherit that role when they are assigned to the group.
 
-Settings for exporting users from the portal to LDAP. This allows a user
-to modify his first name, last name, etc. in the portal and have that
-change get pushed to the LDAP server. This will only be active if the
-property `ldap.auth.enabled` is also set to true. New users
-and groups will be created at the specified DN.
+	ldap.import.create.role.per.group=false
 
-ldap.export.enabled=true
 
-ldap.users.dn=ou=users,dc=example,dc=com
+Set these values to be a portion of the error message returned by the appropriate directory server to allow the portal to recognize messages from the LDAP server. The default values will work for Fedora DS.
 
-ldap.groups.dn=ou=groups,dc=example,dc=com
+	ldap.error.password.age=age
+	ldap.error.password.expired=expired
+	ldap.error.password.history=history
+	ldap.error.password.not.changeable=not allowed to change
+	ldap.error.password.syntax=syntax
+	ldap.error.password.trivial=trivial
+	ldap.error.user.lockout=retry limit
 
-Set this to true to use the LDAP's password policy instead of the portal
-password policy.
+Set this to `true` to use the LDAP's password policy instead of the portal password policy.
 
-ldap.password.policy.enabled=false
+	ldap.password.policy.enabled=false
 
-Set these values to be a portion of the error message returned by the
-appropriate directory server to allow the portal to recognize messages
-from the LDAP server. The default values will work for Fedora DS.
+Set this to `false` when the LDAP user's password should not be imported.
 
-ldap.error.password.age=age
+	ldap.import.user.password.enabled=true
 
-ldap.error.password.expired=expired
+Set this to `true` to autogenerate the password for imported user from LDAP. This property is only in use if the property `ldap.import.user.password.enabled` is set to `false`.
 
-ldap.error.password.history=history
+	ldap.import.user.password.autogenerated=false
 
-ldap.error.password.not.changeable=not allowed to change
+Set either screenName or plain text as the default password for the imported LDAP user. Setting the value to screenName will use the user's screen name as the password for the imported LDAP user. Setting the value to any other plain text value will use that value as the password for the imported LDAP user. This property is only in use if the properties `ldap.import.user.password.enabled` and `ldap.import.user.password.autogenerated` are both set to `false`.
 
-ldap.error.password.syntax=syntax
+*Examples:*
 
-ldap.error.password.trivial=trivial
+	ldap.import.user.password.default=test
+	ldap.import.user.password.default=screenName
 
-ldap.error.user.lockout=retry limit
+Settings for exporting users from the portal to LDAP. This allows a user to modify his first name, last name, etc. in the portal and have that change pushed to the LDAP server. This setting is not used unless the property `ldap.auth.enabled` is set to `true`.
+
+	ldap.export.enabled=false
+
+Set this to `true` if groups and their associations should be exported from the portal to LDAP. This setting is not used unless the property `ldap.auth.enabled` is set to `true`.
+
+	ldap.export.group.enabled=true
+
+Set the values used to connect to a LDAP store.
+
+The list of properties must end with a subsequent integer (0, 1, etc.) and it is assumed that the list has reached an end when the pattern or replacement is not set.
+
+	ldap.base.provider.url.0=ldap://localhost:10389
+	ldap.base.dn.0=dc=example,dc=com
+	ldap.security.principal.0=uid=admin,ou=system
+	ldap.security.credentials.0=secret
+
+Active Directory stores information about the user account as a series of bit fields in the `UserAccountControl` attribute.
+
+If you want to prevent disabled accounts from logging into the portal you need to use a search filter similiar to the following:
+
+	(&(objectclass=person)(userprincipalname=@email_address@)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
+
+See the following links:
+-   [http://support.microsoft.com/kb/305144/](http://support.microsoft.com/kb/305144/)
+-   [http://support.microsoft.com/?kbid=269181](http://support.microsoft.com/?kbid=269181)
+
+*Example:*
+
+	ldap.auth.search.filter.0=(mail=@email_address@)
+
+When importing and exporting users, the portal will use this mapping to connect LDAP user attributes and portal contact attributes.
+
+See `com.liferay.portal.model.ContactModel` for a list of attributes.
+
+*Example:*
+
+	ldap.contact.mappings.0=
+
+When importing and exporting users, the portal will use this mapping to connect LDAP user attributes and portal contact's custom attributes.
+
+*Example:*
+
+	ldap.contact.custom.mappings.0=
+
+When a user is exported to LDAP and the user does not exist, the user will be created with the following default object classes.
+
+*Example:*
+
+	ldap.user.default.object.classes.0=top,person,inetOrgPerson,organizationalPerson
+
+When importing and exporting users, the portal will use this mapping to connect LDAP user attributes and portal user attributes.
+
+See `com.liferay.portal.model.UserModel` for a list of attributes.
+
+*Example:*
+
+	ldap.user.mappings.0=uuid=uuid\nscreenName=cn\npassword=userPassword\nemailAddress=mail\nfirstName=givenName\nlastName=sn\njobTitle=title\ngroup=groupMembership
+
+When importing and exporting users, the portal will use this mapping to connect LDAP user attributes and portal user's custom attributes.
+
+*Example:*
+
+	ldap.user.custom.mappings.0=
+
+Set the user attributes that are controlled from the portal. When adding or updating a user from LDAP, these attributes will be skipped.
+
+*Examples:*
+
+	ldap.user.ignore.attributes=
+	ldap.user.ignore.attributes=aimSn,comments,facebookId,facebookSn,greeting,icqSn,jabberSn,jobTitle,languageId,msnSn,mySpaceSn,openId,prefixId,reminderQueryAnswer,reminderQueryQuestion,skypeSn,smsSn,suffixId,timeZoneId,twitterSn,ymSn
+
+When a group is exported to LDAP and the group does not exist, the group will be created with the following default object classes.
+
+*Example:*
+
+	ldap.group.default.object.classes.0=top,groupOfUniqueNames
+
+When importing groups, the portal will use this mapping to connect LDAP group attributes and portal user group attributes.
+
+*Example:* 
+
+	ldap.group.mappings.0=groupName=cn\ndescription=description\nuser=uniqueMember
+
+Settings for importing users and groups from LDAP to the portal. These setttings are not used unless the property `ldap.import.enabled` is set to `true`.
+
+	ldap.import.user.search.filter.0=(objectClass=inetOrgPerson)
+	ldap.import.group.search.filter.0=(objectClass=groupOfUniqueNames)
+
+New users and groups will be created at the specified DN. This will only be active if the property `ldap.auth.enabled` and `ldap.export.enabled` are set to `true`.
+
+	ldap.users.dn.0=ou=users,dc=example,dc=com
+	ldap.groups.dn.0=ou=groups,dc=example,dc=com
+	
+#### Basic Authentication
+
+Set this to `true` to require a password when using basic authentication. Only set this to `false` if additional security measures are in place to ensure users have been properly authenticated.
+
+	basic.auth.password.required=true	
 
 #### CAS
 
-Set this to true to enable CAS single sign on. NTLM will work only if
-LDAP authentication is also enabled and the authentication is made by
-screen name. If set to true, then the property
-`auto.login.hooks` must contain a reference to the class
-`com.liferay.portal.security.auth.CASAutoLogin` and the filter
-`com.liferay.portal.servlet.filters.sso.cas.CASFilter` must be
-referenced in `web.xml`.
+Set this to true to enable CAS single sign on. NTLM will work only if LDAP authentication is also enabled and the authentication is made by screen name. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.CASAutoLogin` and the filter `com.liferay.portal.servlet.filters.sso.cas.CASFilter` must be referenced in `web.xml`.
 
-cas.auth.enabled=false
+	cas.auth.enabled=false
 
-A user may be authenticated from CAS and not yet exist in the portal.
-Set this to true to automatically import users from LDAP if they do not
-exist in the portal.
+A user may be authenticated from CAS and not yet exist in the portal. Set this to true to automatically import users from LDAP if they do not exist in the portal.
 
-cas.import.from.ldap=false
+	cas.import.from.ldap=false
 
-Set the default values for the required CAS URLs. Set either
-`cas.server.name` or `cas.service.url`. Setting
-`cas.server.name` allows deep linking. See LEP-4423.
+Set the default values for the required CAS URLs. Set either `cas.server.name` or `cas.service.url`. Setting `cas.server.name` allows deep linking. See LEP-4423.
 
-cas.login.url=https://localhost:8443/cas-web/login
+*Examples:*
 
-cas.logout.url=https://localhost:8443/cas-web/logout
+	cas.login.url=https://localhost:8443/cas-web/login
+	cas.logout.url=https://localhost:8443/cas-web/logout
+	cas.server.name=localhost:8080
+	cas.server.url=https://localhost:8443/cas-web
+	cas.service.url=
+	cas.service.url=http://localhost:8080/c/portal/login
+	cas.no.such.user.redirect.url=http://localhost:8080
 
-cas.server.name=localhost:8080
+Set this to `true` to log out the user off CAS when the portal session expires.
 
-cas.service.url=
+	cas.logout.on.session.expiration=false
 
-\#cas.service.url=http://localhost:8080/c/portal/login
+#### Facebook Connect SSO
 
-cas.service.url=http://localhost:8080/c/portal/login
-
-cas.validate.url=https://localhost:8443/cas-web/proxyValidate
-
+    facebook.connect.auth.enabled=false
+    facebook.connect.app.id=
+    facebook.connect.app.secret=
+    facebook.connect.graph.url=https://graph.facebook.com
+    facebook.connect.oauth.auth.url=https://graph.facebook.com/oauth/authorize
+    facebook.connect.oauth.redirect.url=http://localhost:8080/c/login/facebook_connect_oauth
+    facebook.connect.oauth.token.url=https://graph.facebook.com/oauth/access_token	
+	
 #### NTLM
 
-Set this to true to enable NTLM single sign on. NTLM will work only if
-LDAP authentication is also enabled and the authentication is made by
-screen name. If set to true, then the property
-`auto.login.hooks` must contain a reference to the class
-`com.liferay.portal.security.auth.NtlmAutoLogin` and the
-filter
-`com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter` must
-be referenced in `web.xml`.
+Set this to `true` to enable NTLM single sign on. NTLM will work only if LDAP authentication is also enabled and the authentication is made by screen name. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.NtlmAutoLogin` and the filter `com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter` must be referenced in `web.xml`.
 
-ntlm.auth.enabled=false
+	ntlm.auth.enabled=false
+	ntlm.auth.domain.controller=127.0.0.1
+	ntlm.auth.domain.controller.name=EXAMPLE
+	ntlm.auth.domain=EXAMPLE
+	ntlm.auth.service.account=LIFERAY$@EXAMPLE.COM
+	ntlm.auth.service.password=test
 
-ntlm.auth.domain.controller=127.0.0.1
 
-ntlm.auth.domain=EXAMPLE
+See [http://jcifs.samba.org/src/docs/ntlmhttpauth.html](http://jcifs.samba.org/src/docs/ntlmhttpauth.html) for more available properties.
+
+	jcifs.netbios.cachePolicy=30
+	jcifs.smb.client.soTimeout=35000
 
 #### OpenID
 
-Set this to true to enable OpenId authentication. If set to true, then
-the property `auto.login.hooks` must contain a reference to
-the class `com.liferay.portal.security.auth.OpenIdAutoLogin`.
+Set this to `true` to enable OpenId authentication. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.OpenIdAutoLogin`.
 
-open.id.auth.enabled=true
+	open.id.auth.enabled=true
 
 #### OpenSSO
 
 These properties control Liferay's integration with OpenSSO.
 
-Set this to true to enable OpenSSO authentication.
+Set this to `true` to enable OpenSSO authentication.
 
-open.sso.auth.enabled=false
+	open.sso.auth.enabled=false
 
-Set the log in URL and log out URL. The first URL is the link to your
-OpenSSO server (which can be the same server as the one running
-Liferay); the second URL is the link to your Liferay Portal.
+Set this to `true` if you want to import the users from LDAP after successful login through OpenSSO. The LDAP settings need to be configured properly in the LDAP section. If this is set to `false`, the users will be created from OpenSSO provided data.
 
-open.sso.login.url=http://openssohost.example.com:8080/opensso/UI/Login?goto=http://portalhost.example.com:8080/c/portal/login
+	open.sso.ldap.import.enabled=false
 
-open.sso.logout.url=http://openssohost.example.com:8080/opensso/UI/Logout?goto=http://portalhost.example.com:8080/web/guest/home
+	open.sso.login.url=http://openssohost.example.com:8080/opensso/UI/Login?goto=http://portalhost.example.com:8080/c/portal/login
+	open.sso.logout.url=http://openssohost.example.com:8080/opensso/UI/Logout?goto=http://portalhost.example.com:8080/web/guest/home
+	open.sso.service.url=http://openssohost.example.com:8080/opensso
+	open.sso.screen.name.attr=uid
+	open.sso.email.address.attr=mail
+	open.sso.first.name.attr=givenname
+	open.sso.last.name.attr=sn
 
-Set the URL to the OpenSSO service.
 
-open.sso.service.url=http://openssohost.example.com:8080/opensso
+Set this to `true` to log out the user off OpenSSO when the portal session expires.
 
-Set the HTTP attribute name for the user's screen name.
-
-open.sso.screen.name.attr=uid
-
-Set the HTTP attribute name for the user's email address.
-
-open.sso.email.address.attr=mail
-
-Set the HTTP attribute name for the user's Common Name.
-
-open.sso.first.name.attr=cn
-
-Set the HTTP attribute name for the user's Surname.
-
-open.sso.last.name.attr=sn
+	open.sso.logout.on.session.expiration=false
 
 #### SiteMinder
 
@@ -2141,11 +2025,11 @@ does not exist on the system, return DNE.
 
 Constants in Authenticator:
 
-public static final int SUCCESS = 1;
+	public static final int SUCCESS = 1;
 
-public static final int FAILURE = -1;
+	public static final int FAILURE = -1;
 
-public static final int DNE = 0;
+	public static final int DNE = 0;
 
 In case you have several classes in the authentication pipeline, all of
 them have to return SUCCESS if you want the user to be able to login. If
