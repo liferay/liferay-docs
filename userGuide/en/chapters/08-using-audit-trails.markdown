@@ -2,7 +2,7 @@
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
-You've just finshed lunch and are ready to get back to work. You have a site in Liferay that's for your project, and before you left, you were about to create a folder in your Documents and Media library for sharing some requirements documentation. Sitting down at your desk, you navigate to the Library and attempt to create the folder. 
+You've just finished lunch and are ready to get back to work. You have a site in Liferay that's for your project, and before you left, you were about to create a folder in your Documents and Media library for sharing some requirements documentation. Sitting down at your desk, you navigate to the Library and attempt to create the folder. 
 
 *You do not have permission to perform this action*, Liferay helpfully tells you. 
 
@@ -40,4 +40,92 @@ Once installed, there are two properties in your `portal-ext.properties` file wh
 
 **audit.message.com.liferay.portal.model.Layout.VIEW:** In the code, pages are *layouts*. Setting this to `true`, therefore, records audit events for page views. It's turned off by default because this may be too fine-grained for most installations. 
 
-Once you've decided if you're going to use one or both of the two settings above, 
+Once you've decided if you're going to use one or both of the two settings above, place them in your `portal-ext.properties` file and restart your Liferay server. Once it comes up, audit events are captured by Liferay, and you'll be able to use them to see what's happening in your portal. 
+
+## Using audit events
+
+Now that you're capturing audit events, it's easy to use them to view activities in your portal. Navigate to the control panel and you'll find a new entry in the *Portal* section labeled  *Audit Reports* (see figure 8.1). 
+
+![Figure 8.1. Once the Audit Reports plugins are installed, an entry appears in the control panel.](../../images/control-panel-audit-reports.png)
+
+Clicking the entry shows you a list of the events Liferay has already captured (see figure 8.2), along with an interface for searching for events. You can browse the list if you want, but it's likely that you'll need to use the search to find what you're looking for. 
+
+![Figure 8.2. Liferay captures and stores events as soon as the audit plugins are installed.](../../images/audit-list-events.png)
+
+Figure 8.2 shows that Stephen Professor logged in and did some things on the site. To see the detail of any of these events, all you need to do is click one to see more information. You'll then see something like figure 8.3. 
+
+![Figure 8.3. Clicking an event in the list shows the details of that event. This event shows that it must've been Stephen Professor's first time logging into the site, because he's accepting the terms of use.](../../images/audit-detail.png)
+
+As you can see, depending on how many users you have in your portal, this list can get populated very quickly. For this reason, it's a good idea to keep the `audit.message.com.liferay.portal.model.Layout.VIEW` property set to `false`. This way, you don't clutter up your audit events with multiple page view events, which will most definitely be the most often triggered event in your portal. 
+
+Now that you know how to browse and view audit events, let's look at searching for specific events. 
+
+## Viewing audit reports
+
+Finding what you want in a big list of events is, to use the expression, like searching for a needle in a haystack. This is why the audit portlet gives you a robust searching mechanism. By default, it looks pretty simple: there's only a single field for searching. Clicking the *advanced* link, however, reveals a search dialog broken out by various fields you can use in your search. 
+
+Let's look at the options we have for search. 
+
+**Match:** You can match all fields you've specified or any single field. 
+
+**User ID:** Specify the user ID you'd like to search for. This would be the user that performed some action in the portal that you'd like to audit. 
+
+**User Name:** Specify the user name you'd like to search for. This is often easier than searching for a user ID, especially if you don't have access to the Liferay database to find the user ID. 
+
+**Resource ID:** Specify the ID of the resource that was modified or viewed in this audit record. 
+
+**Resource Name:** Specify the name of the resource that was modified or viewed in this audit record. For example, you could search for User resources to see if someone modified a user's account. 
+
+**Resource Action:** Specify an action that was performed on the resource. This could be any one of the following: `add`, `assign`, `delete`, `impersonate`, `login`, `login_failure`, `logout`, `unassign`, or `update`. 
+
+**Session ID:** Specify the session ID to search for. You'd use this if you were correlating a session ID from your web server logs with activity in Liferay. 
+
+**Client IP:** Specify the IP address of the client that performed the activity you wish to audit. 
+
+**Client Host:** Specify the host name of the client that performed the activity you wish to audit. 
+
+**Server Name:** Specify the server name upon which the activity occurred. If you're using a cluster, each member of the cluster can be individually queried. 
+
+**Server Port:** Specify the server port upon which the activity occurred. You'd need this if you run a "vertical" cluster of multiple VMs on the same machine. 
+
+**Start Date:** Specify the low end of the date range you wish to search. 
+
+**End Date:** Specify the high end of the date range you wish to search. 
+
+Using this form, if you wanted to check to see if someone in the portal unassigned a user from a particular role, you might search for a resource name of *user* and a resource action of *unassign*. The results of such a search might look something like figure 8.4. 
+
+![Figure 8.4. Searching audit events is easy with the search form provided by the audit portlet. You can quickly drill down to find the types of events you're looking for.](../../images/audit-unassign-search.png)
+
+Once you have the results of your search, you can click on any of the records returned in order to see the detail page for that record. Figure 8.5 shows that in this particular case, the default administrative user removed Stephen Professor from the role of Power User. 
+
+![Figure 8.5. If you've delegated portal administration to multiple users, you can use the audit plugins to determine who made what change. And, of course, you'll never leave the default administrative user enabled in a production system, right?](../../images/audit-unassign-detail.png)
+
+As you can see, Liferay's audit portlets give you a lot of power to see what's happening in your portal. You can use this information to troubleshoot problems, determine ownership of particular actions, or, as Harry is about to do, find out who made permission changes that they weren't supposed to make. 
+
+## Conclusion
+
+"Okay," says Harry, "let's fire up Liferay's audit system and see if we can figure out what happened." 
+
+You and Dick stand behind Harry's chair and watch as he enters a query into a form on the audit portlet. Clicking *search*, the screen fills up with audit events. 
+
+"Wow, that's a lot of unassign events." Harry says. "And look who the culprit is," he adds sarcastically. 
+
+"Who's Melvin Dooitrong?" Dick asks. 
+
+"That's my new intern," Harry says. "I'm gonna kill him." Harry pushes out his chair and walks down the row of cubes to the end, where a kid no more than 20 years old with disheveled hair sits, earbuds in his ears. 
+
+"Hey Melvin," Harry says as Melvin turns around to face him. "Didn't I ask you to move that set of users from site membership to organization membership?" 
+
+"Yeah," Melvin says, "I did that already." 
+
+"How'd you do it?"
+
+"It was going to take a while to do it manually, so I wrote a script and executed it in the scripting host," Melvin replies, matter-of-factly. 
+
+"You did, did you? Well, guess what? Your script removed *everybody* from *all* sites."
+
+"*What?*" 
+
+"Yeah, and now you're going to start adding them back, one by one, manually, starting with Mr. Jones...." 
+
+Tom and Dick back away slowly from Melvin's cube as Harry and Melvin continue to have their--let's call it a discussion. One thing is clear: they're having a better day than Melvin is.  
