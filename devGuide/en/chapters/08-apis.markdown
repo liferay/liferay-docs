@@ -1,28 +1,294 @@
 # Liferay APIs
 
-This chapter provides you with a brief overview of several of the
-essential APIs by Liferay to developers. An API
-is any programing interface that you can invoke from your own code
-either directly through a Java invocation or through web services to
-perform a certain action.
+This chapter provides an overview of several of the
+essential Liferay *application programming interfaces* (*APIs*) available to
+developers. An API is a programing interface that can be invoked from your own
+code, either directly through a Java invocation or through web services, to
+perform an action or set of actions.
 
-This chapter will keep evolving with more information about the existing
-APIs and frameworks and how to use it. So look back for more information
-often.
+Liferay comes with a host of APIs that expose powerful portal and portlet
+services. You can access Liferay's built-in *portal* services for such entities
+as User, Organization, UserGroup, Company, Role, Permission, ResourcePermission
+and Layout. In addition, Liferay's built-in *portlet* services for which APIs
+are provided include the blogs, wikis, assets, social equity, and the
+Document & Media Library services.
 
-## Accessing Services (new)
+The APIs can be called via Java method or web service invocations giving you
+flexibility to implement client code in Java or other languages (even a
+scripting language such as PHP) that support web service invocations.  The APIs
+can be called from within a portlet or non-portlet code. You can make calls to
+the APIs *locally* from within the portal or *remotely* outside of the
+*Java virtual machine* (*JVM*) in which the portal is running.  So, let's look
+at in more detail at how we can access Liferay APIs.
 
-### Local Access (new)
+## Local Access
 
-### Remote Access (new)
+Each service built with Service Builder provides a local interface to clients
+running in the same JVM as the portal. Since Liferay's portal and portlet
+services are built using the Service Builder, their public service methods can
+be accessed through static methods provided by auto-generated
+`-LocalServiceUtil` classes.
 
-#### SOAP Web Services (new)
+The following JSP code snippet demonstrates
+how to get a list of the most recent bloggers from an organization. It invokes static method
+`getOrganizationStatsUsers()` on `-LocalServiceUtil` class `BlogsStatsUserLocalServiceUtil`:
 
-#### JSON Web Services (new)
+    <%@ page import="com.liferay.portlet.blogs.service.BlogsStatsUserLocalServiceUtil" %>
+    <%@ page import="com.liferay.portlet.blogs.util.comparator.StatsUserLastPostDateComparator" %>
+    ...
+    <%@
+    List statsUsers = BlogsStatsUserLocalServiceUtil.getOrganizationStatsUsers(
+        organizationId, 0, max, new StatsUserLastPostDateComparator());
+    %>
 
-### Client Examples (new)
+## Remote Access
+
+Services are also made available to *remote* clients (clients running outside of the portal JVM). Service Builder generates remote interfaces for
+your entities if their `remote-service` attribute is set to `true` in your
+portlet's `service.xml`. Here is an example of how remote services are turned
+on for Liferay's `Country` entity:
+
+    <entity name="Country" local-service="false" remote-service="true">
+\
+
+The generated services can be accessed using web services or Java RMI.
+We'll explore how to user web services to invoke several remote services.
+
+### SOAP Web Services
+
+Service Builder generates classes to use your services via
+*Simple Object Access Protocol* (*SOAP*) over HTTP. SOAP is the
+*packaging* protocol and HTTP is the *transport* protocol. For our
+example, we'll look at the SOAP web service classes for Liferay's `Company`,
+`User`, and `UserGroup` portal services to accomplish the following:
+
+1. List each `UserGroup` to which user `joebloggs` belongs
+2. Add a new `UserGroup` named `MyGroup` 
+3. Add user `joebloggs` to the `UserGroup` 
+\
+
+Here are the SOAP related classes that we'll use:
+
+    com.liferay.client.soap.portal.model.CompanySoap
+    com.liferay.client.soap.portal.service.http.CompanyServiceSoap
+    com.liferay.client.soap.portal.service.http.CompanyServiceSoapServiceLocator
+
+    com.liferay.client.soap.portal.model.UserGroupSoap
+    com.liferay.client.soap.portal.service.http.UserServiceSoap
+    com.liferay.client.soap.portal.service.http.UserServiceSoapServiceLocator
+
+    com.liferay.client.soap.portal.service.http.UserGroupServiceSoap
+    com.liferay.client.soap.portal.service.http.UserGroupServiceSoapServiceLocator
+\
+    
+You can see in the listing a naming convention involving classes with
+suffixes `-ServiceSoapServiceLocater`, `-ServiceSoap`, and `-Soap`. The
+`-ServiceSoapServiceLocater` class finds the `-ServiceSoap` by means of the
+service's URL you provide. The `-ServiceSoap` class implements the Java Remote
+Method Invocation (RMI) interface bound to the the services specified in the
+*Web Services Definition Language* (*WSDL*) file for each service. Lastly,
+`-SOAP` classes are the serializeable implementations of the models.  Let's
+look at how to determine the URLs for these services.
+\
+\
+
+Service Builder was used to publish these services as a web services.  You
+can view a listing of the services deployed on your portal by opening your
+browser to the URL of the format `http://host:port/tunnel-web/secure/axis`
+for your *secure* services (services requiring user authentication) and
+`http://host:port/tunnel-web/axis` for your services that do not require
+user authentication. We've used *secure* services such as the following for
+`UserGroup`:
+
+![Figure 8.1: UserGroup Web Service listing](../../images/wsdl-summary-listing.png)
+
+Each web service is listed with its name, operations, and a link to its WSDL
+file. The WSDL is written in XML and provides a model for describing and
+locating the web service.
+
+![Figure 8.2: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.png)
+
+You pass in the WSDL URL along with your login credentials to the SOAP service
+locator for your service.
+
+The following code demonstrates locating and invoking operations to add a new
+`UserGroup` named `MyUserGroup` and assign user with screen name `joebloggs`
+to that `UserGroup`:
+
+    import java.net.URL;
+
+    import com.liferay.client.soap.portal.model.CompanySoap;
+    import com.liferay.client.soap.portal.model.UserGroupSoap;
+    import com.liferay.client.soap.portal.service.http.CompanyServiceSoap;
+    import com.liferay.client.soap.portal.service.http.CompanyServiceSoapServiceLocator;
+    import com.liferay.client.soap.portal.service.http.UserGroupServiceSoap;
+    import com.liferay.client.soap.portal.service.http.UserGroupServiceSoapServiceLocator;
+    import com.liferay.client.soap.portal.service.http.UserServiceSoap;
+    import com.liferay.client.soap.portal.service.http.UserServiceSoapServiceLocator;
+
+    public class WSUserGroup {
+	    public static void main(String[] args) {
+
+		    try {
+			    String remoteUser = "joebloggs";
+			    String password = "test";
+			    String virtualHost = "localhost";
+			
+			    String groupName = "MyUserGroup";
+
+			    String serviceCompanyName = "Portal_CompanyService";
+			    String serviceUserName = "Portal_UserService";
+			    String serviceUserGroupName = "Portal_UserGroupService";
+
+			    // Locate the Company
+			    CompanyServiceSoapServiceLocator locatorCompany =
+				    new CompanyServiceSoapServiceLocator();
+
+			    CompanyServiceSoap soapCompany =
+				    locatorCompany.getPortal_CompanyService(
+					    _getURL(remoteUser, password, serviceCompanyName, true));
+
+			    CompanySoap companySoap =
+				    soapCompany.getCompanyByVirtualHost(virtualHost);
+
+			    // Locate the User service
+			    UserServiceSoapServiceLocator locatorUser =
+				    new UserServiceSoapServiceLocator();
+			    UserServiceSoap userSoap = locatorUser.getPortal_UserService(
+				    _getURL(remoteUser, password, serviceUserName, true));
+
+			    // Get the ID of the remote user
+			    long userId = userSoap.getUserIdByScreenName(
+				    companySoap.getCompanyId(), remoteUser);
+			    System.out.println(remoteUser + " id is " + userId);
+
+			    // Locate the UserGroup service
+			    UserGroupServiceSoapServiceLocator locator =
+				    new UserGroupServiceSoapServiceLocator();
+			    UserGroupServiceSoap usergroupsoap =
+				    locator.getPortal_UserGroupService(
+					    _getURL(remoteUser, password, serviceUserGroupName, true));
+
+			    // Get the user's user groups
+			    UserGroupSoap[] usergroups = usergroupsoap.getUserUserGroups(userId);
+			    System.out.println("User groups for user " + userId + " ...");
+			    for (int i = 0; i < usergroups.length; i++) {
+				    UserGroupSoap usergroup = usergroups[i];
+				    System.out.println(
+					    usergroup.getCompanyId() + "\t" +
+					    usergroup.getUserGroupId() + "\t" +
+					    usergroup.getName() + "\t" +
+					    usergroup.getDescription());
+			    }
+
+			    // Adds the user group
+			    String groupName = groupName;
+			    String groupDesc = "My new user group";
+			    UserGroupSoap group = usergroupsoap.addUserGroup(
+				    groupName, groupDesc, 0, 0);
+
+				// Add the user to the user group
+			    long users[] = {userId};
+			    userSoap.addUserGroupUsers(group.getUserGroupId(), users);
+		    }
+		    catch (Exception e) {
+			    e.printStackTrace();
+		    }
+	    }
+
+	    private static URL _getURL(String remoteUser, String password,
+		    String serviceName, boolean authenicate)
+	    throws Exception {
+		    //Unathenticated url
+
+		    String url = "http://localhost:8080/tunnel-web/axis/" + serviceName;
+		    //Authenticated url
+		    if (authenicate) {
+			    url = "http://" + remoteUser + ":" + password +
+				    "@localhost:8080/tunnel-web/secure/axis/" + serviceName;
+		    }
+		    return new URL(url);
+	    }
+    }
+\
+
+Some things to note about the URL:
+
+- It is *secure* (authenticated) URL for the service. Authentication is done
+using HTTP Basic Authentication, which of course is not appropriate for a
+production environment, since the password is unencrypted.
+- The screen name and password are passed in as credentials.  The
+authorization type specified for your portal's company dictates the
+authorization type you must use to access your web service. You can override
+the `company.security.auth.type` found in `portal.properties` by specifying
+your desired authorization type in your `portal-ext.properties`. Valid
+authorization type values are:
+    - `screenName`
+    - `userId`
+    - `emailAddress`
+- The name of the service (e.g., `Portal_UserGroupService`) is specified at the
+end of the URL. Remember that the service name can be found in the web
+service listing like the one we looked at previously.
+\
+
+The operations `getCompanyByVirtualHost()`,  `getUserIdByScreenName()`,
+`getUserUserGroups()`, `addUserGroup()` and `addUserGroupUsers()` are specified
+for the `-ServiceSOAP` classes `CompanyServiceSoap`, `UserServiceSoap` and 
+`UserGroupServiceSoap` in the WSDL files. Information on parameter types,
+parameter order, request type, response type, and return type
+are conveniently specified in the WSDL for each Liferay web service!
+\
+
+Now, let's say you want write your client in a language other than Java ...
+no problem! You can use any language that supports web services invocation.
+
+The following invokes the same operations using PHP and the PHP SOAP Client:
+
+    <?php
+        $groupName = "MyGroup";
+        $userName = "joebloggs";
+        $clientOptions = array(
+	        'login' => $userName,
+	        'password' => 'test');
+
+        // Add user group
+
+        $userGroupClient = new SoapClient(
+	        "http://localhost:8080/tunnel-web/secure/axis/Portal_UserGroupService?wsdl",
+	        $clientOptions);
+        $group = $userGroupClient->addUserGroup($groupName, "This is my group", 0, 0);
+        print "group id for " . $groupName . " is " . $group->userGroupId . "\n";
+
+        // add user to user group
+
+        $companyClient = new SoapClient(
+	        "http://localhost:8080/tunnel-web/secure/axis/Portal_CompanyService?wsdl",
+	        $clientOptions);
+        $company = $companyClient->getCompanyByVirtualHost("localhost");
+        $userClient = new SoapClient(
+	        "http://localhost:8080/tunnel-web/secure/axis/Portal_UserService?wsdl",
+	        $clientOptions);
+        $userId = $userClient->getUserIdByScreenName($company->companyId, $userName);
+        print "user id for " . $userName . " is " . $userId . "\n";
+
+        $users = array($userId);
+        $userClient->addUserGroupUsers($group->userGroupId, $users);
+
+        // get and print user groups to which user belongs
+
+        $userGroups = $userGroupClient->getUserUserGroups($userId);
+        print "user groups for user " . $userId . " ...\n";
+        foreach($userGroups as $k=>$v)
+            print ($v->name) . " " . $v->userGroupId . "\n";
+    ?>
+\  
+
+### JSON Web Services (new)
+
+TODO consider calling a method that uses service context (like an update method)
 
 ## RESTful Interfaces (new)
+
 TODO Include Atom and loose serialization with JSON 
 
 ## Security and Permissions
@@ -139,9 +405,9 @@ liferay-portlet.xml. For example see definition of mapping inside
 \
 \
 
-This means that if a portlet definition references the role “power-user”
+This means that if a portlet definition references the role “power-user�?
 it will be mapped to the Liferay role in its database called “Power
-User”.
+User�?.
 
 In your portlet's code you can then use methods as defined in portlet
 specification:
@@ -152,10 +418,10 @@ specification:
 
 • getUserPrincipal ()
 
-For example to check if the current user has the “Power User” role the
+For example to check if the current user has the “Power User�? role the
 following code could be used:
 
-if (renderRequest.isUserInRole(“power-user”)) {
+if (renderRequest.isUserInRole(“power-user�?)) {
 
 // ….
 
@@ -175,7 +441,7 @@ known as DRAC):
 1.  Define all resources and their permissions.
 
 2.  **R**egister all the resources defined in step 1 in the permissions
-    system. This is also known as “adding resources.”
+    system. This is also known as “adding resources.�?
 
 3.  **A**ssociate the necessary permissions with resources.
 
@@ -192,7 +458,7 @@ etc.), Java classes (e.g., Message Board Topics, Calendar Events, etc.),
 and files (e.g., documents, images, etc.)
 
 **Permission** - An action acting on a resource. For example, the *view*
-in “viewing the calendar portlet” is defined as a permission in Liferay.
+in “viewing the calendar portlet�? is defined as a permission in Liferay.
 
 Keep in mind that permissions for a portlet resource are implemented a
 little differently from other resources such as Java classes and files.
@@ -390,16 +656,16 @@ instance of the portlet. These permissions are defined in the first
 simply of the blogs package. This is the recommended convention for
 permissions that refer to an instance of the portlet as a whole.
 
-![image](../../images/08-apis-and-frameworks_html_5c790363.png)**Tip:**A “scope” in
+![image](../../images/08-apis-and-frameworks_html_5c790363.png)**Tip:**A “scope�? in
 Liferay is simply a way of specifying how widely the data from an
 instance of a portlet is shared. For instance, if I place a blogs
 portlet on a page in the guest community, and then place another blogs
 portlet on another page in the same community, the two blogs will share
-the same set of posts. This is the default or “community-level” scope.
+the same set of posts. This is the default or “community-level�? scope.
 If I then configure one of the two blogs and change its scope to the
 current page, it will no longer share content with any of the other
 blogs in that community. Thus, with respect to permissions, an
-“instance” of a blogs portlet could exist on only one page, or span an
+“instance�? of a blogs portlet could exist on only one page, or span an
 entire community.
 
 The difference between the portlet instance permissions defined in this
@@ -626,9 +892,9 @@ whether the user has permission to add entry.
 
 if (permissionChecker.hasPermission(
 
-scopeGroupId, “com.liferay.portlet.blogs.model”,
+scopeGroupId, “com.liferay.portlet.blogs.model�?,
 
-scopeGroupId, ”ADD\_ENTRY”) {
+scopeGroupId, �?ADD\_ENTRY�?) {
 
 // Show add entry button
 
@@ -642,9 +908,9 @@ business logic. If the check fails, a
 
 if (!permissionChecker.hasPermission(
 
-scopeGroupId, “com.liferay.portlet.blogs.model”,
+scopeGroupId, “com.liferay.portlet.blogs.model�?,
 
-scopeGroupId, ”*ADD\_ENTRY”*)) {
+scopeGroupId, �?*ADD\_ENTRY�?*)) {
 
 throw new PrincipalException();
 
