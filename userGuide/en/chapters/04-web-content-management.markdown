@@ -39,7 +39,7 @@ You can also customize the logo in the top left corner of every page by selectin
 
 Your pages must contain something, right? The reason web pages exist at all is to display content. Use can use the web to share project information, advertise to potential customers, or demonstrate a golf swing. In each case you're displaying content. And with Liferay's CMS, you'll find that the process of loading your pages up with content is extremely easy and straightforward, and you don't ever need to leave your browser.
 
-Essentially, CMS is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add → More* menu: we'll go over everything in a step-by-step fashion. We'll start by taking a look at page creation and management.
+Essentially, CMS is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add ->  More* menu: we'll go over everything in a step-by-step fashion. We'll start by taking a look at page creation and management.
 
 ### Managing Pages
 
@@ -126,7 +126,7 @@ The Site URL page is where you handle configuration for user-facing URLs, it has
 
 The Friendly URL option allows you to change the name of your Site as it appears in the URL. This will need to be a unique name, but it doesn't need to have any relation to the actual name of your site. Having a good friendly URL will be critical to good search engine optimization.
 
-#####Virtual Hosts
+##### Virtual Hosts
 
 You can make web navigation much easier for your users by connecting a domain name to a Site. This tab allows you to define a domain name (i.e., www.mycompany.com) for your site. This can be a full domain or a subdomain. This enables you to host a number of web sites as separate sites on one Liferay server.
 
@@ -150,11 +150,11 @@ By selecting one of the search engine links, the sitemap will be sent to them. I
 
 If you're interested in seeing what is being sent to the search engines, selecting the *Preview* link allows you to see the generated XML.
 
-####Robots
+#### Robots
 
 Generally, you can configure your **robots.txt** at a portal level through the Control Panel, or control it at an individual page level. However, once you setup virtual hosting, you will need to setup an separate robots.txt files for each domain. The Robots page gives you the option to setup your robots.txt for both your public and private pages on a site if you have Virtual Hosting setup. If you don't have Virtual Hosting setup, this page will be rather boring. 
 
-####Analytics
+#### Analytics
 
 The Analytics page allows you to integrate your pages with Google Analytics. Liferay provides seamless integration with Google Analytics, allowing you to place your ID in one place, and then it will get inserted automatically on every page. This enables you to focus your efforts on building the page, rather than remembering to put the code everywhere. Google Analytics is a fantastic, free service which lets you do all kinds of traffic analysis on your site, so you can see who visits, where they visit from, and what pages they most often visit. This helps you to tweak your site so that you can provide the most relevant content to your users.
 
@@ -174,7 +174,7 @@ When an administrator activates Page Customizations for a page, any portlets tha
 
 Page layouts allow you to arrange your pages so that the content appears the way you want it to. Liferay comes shipped with many layouts already defined. Developers can create more and they can be deployed to your portal for your use.
 
-In order to prepare for the portlets we'll soon be adding, let's change the layout of the Collaboration page. To access layouts, go up to the Dockbar and select *Manage → Page Layout*.
+In order to prepare for the portlets we'll soon be adding, let's change the layout of the Collaboration page. To access layouts, go up to the Dockbar and select *Manage ->  Page Layout*.
 
 Now, select the *2 Columns (50/50)* layout and then *Save*. Once saved, you'll return to the page and it'll seem as though nothing has happened. However, once we start adding portlets you'll notice how the page is now equally divided into two columns. You can stack portlets on top of each other in these columns. There are, of course, more complicated layouts available, and you can play around with them to get the layout that you want.
 
@@ -182,9 +182,9 @@ Sometimes a particular layout is *almost* what you want, but not quite. In this 
 
 ### Editing a Page
 
-There are a lot of other things you can do beyond placing portlets on a page. So let's take a look at to the TISA site. You can do this by going up to the Dockbar and clicking *Go To → Technical Institute of Semantic Ambiguity*.
+There are a lot of other things you can do beyond placing portlets on a page. So let's take a look at to the TISA site. You can do this by going up to the Dockbar and clicking *Go To ->  Technical Institute of Semantic Ambiguity*.
 
-We'll use the *Collaboration* page you created earlier in the chapter. Navigate to the *Collaboration* page and select *Manage → Page* from the Dockbar.
+We'll use the *Collaboration* page you created earlier in the chapter. Navigate to the *Collaboration* page and select *Manage ->  Page* from the Dockbar.
 
 This screen should now be familiar to you, but we haven't yet looked at all of its options.
 
@@ -211,15 +211,14 @@ As we discussed earlier, Liferay Portal pages are composed of portlets. All of y
 
 Adding portlets to a page is simple. Let's add some to our Collaboration page.
 
-1.  In the Dockbar, select *Add → More*.
-2.  In the window that appears, expand the *Collaboration *category.
+1.  In the Dockbar, select *Add ->  More*.
+2.  In the window that appears, expand the *Collaboration* category.
 3.  Drag the *Blogs* portlet off the Add Application window onto the right column of our page.
 4.  Next, drag the *Wiki* portlet to the *left column*.
 
 See how easy it is to add applications to your pages? We've gone one step further: we've got the Wiki portlet, the Blogs portlet, and then a nested portlet with a different layout and the Alerts, Search, and Dictionary portlets.
 
 ![Figure 4.7: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
-
 
 You'll find it is very easy to make your pages look exactly the way you want them to. If the layout options provided aren't enough, you can even develop your own. More information about that can be found in Liferay's official guide to development, *Liferay in Action*.
 
@@ -230,8 +229,8 @@ individual pages in either page group so that only certain users can view them.
 
 So, let's say we wanted to create a page only for administrators to see. We can do this with the following procedure:
 
-1.  Go to the Dockbar and select *Manage* → *Control Panel*.
-2.	Ensure that you are viewing the default Site.
+1.  Go to the Dockbar and select *Manage -> Control Panel*.
+2.  Ensure that you are viewing the default Site.
 3.  Click the *Site Pages* link in the left navigation.
 4.  Click the *Private Pages* tab to switch to the Private Pages. Remember, these pages by default are viewable only by members of the site.
 5.  Create a page called *Admin Tips*.
@@ -335,7 +334,7 @@ For this piece of web content, we don't need to change anything. After you're fi
 
 #### Publishing Content with the Web Content Display Portlet
 
-Now that we've created and published our first piece of web content for TISA, it's time to display it. First, we'll need to add the *Web Content Display* portlet to our Welcome page. Do this by selecting *Add → Web Content Display* from the Dockbar.
+Now that we've created and published our first piece of web content for TISA, it's time to display it. First, we'll need to add the *Web Content Display* portlet to our Welcome page. Do this by selecting *Add ->  Web Content Display* from the Dockbar.
 
 ![Figure 4.11: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
@@ -343,7 +342,7 @@ Once the portlet appears, drag it to the position on the page where you want you
 
 ##### Publishing Existing Content
 
-To add existing web content, select the *gear *icon on the lower left of the portlet. You will see the message “Please select a web content from the list below.” You have several options here.
+To add existing web content, select the *gear* icon on the lower left of the portlet. You will see the message “Please select a web content from the list below.” You have several options here.
 
 Naturally, if your content appears in the list, you can simply select it. If there were lots of published content available, you could search for the content by name, ID, type, version, content, and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
 
@@ -372,7 +371,6 @@ Once the content is displayed—whether you've selected content or created it in
 When you publish your content this way, it will become immediately available on the site (unless, of course, you have a workflow enabled, which we'll see below). It's nice to be able to edit the content where it is when you need to, as well as edit it in the Control Panel.
 
 One thing to note here that's important: if you want to view your page the way your users will see it (i.e., without all those portlet controls and icons), you can go up to the Dockbar and select *Toggle Edit Controls*. This makes all those extra controls you see as a portal administrator disappear. If you need to use those controls again, just select *Toggle Edit Controls* again.
-
 
 ### Advanced Content Creation
 
@@ -404,18 +402,18 @@ Liferay supports the following elements in structures:
 
 **FORM FIELDS**
 
-**Text Field: **Used for items such a titles and headings.
-**Text Box: **Used for the body of your content or long descriptions.
+**Text Field:** Used for items such a titles and headings.
+**Text Box:** Used for the body of your content or long descriptions.
 **Text Area (HTML):** An area that uses a WYSIWYG editor to enhance the content.
-**Checkbox: **Allows you to add a checkbox onto your structure. Template developers can use this as a display rule.
-**Selectbox: **Allows you to add a select box onto your structure.
-**Multi-selection Lists: **Allows you to add a multi-selection list onto your structure.
+**Checkbox:** Allows you to add a checkbox onto your structure. Template developers can use this as a display rule.
+**Selectbox:** Allows you to add a select box onto your structure.
+**Multi-selection Lists:** Allows you to add a multi-selection list onto your structure.
 
 **APPLICATION FIELDS**
 
-**Image Gallery: **Allows you to add the Image Gallery application into your structure.
-**Upload Image: **Allows you to add the upload image application into your structure.
-**Document Library: **Allows you to add the Document Library application to your structure.
+**Image Gallery:** Allows you to add the Image Gallery application into your structure.
+**Upload Image:** Allows you to add the upload image application into your structure.
+**Document Library:** Allows you to add the Document Library application to your structure.
 
 **MISCELLANEOUS**
 
@@ -462,8 +460,6 @@ Liferay CMS makes it easy to create structures, templates, and content from the 
 2.  Click the *Edit* icon for Structures.
 3.  Remove the Content field and add the following fields:
 
-
-
 **Field Type**		**Variable Name**
 
 * Text Field		* title
@@ -489,29 +485,17 @@ Below is the template script for this structure. It is written in
 Velocity:
 
     #set ($renderUrlMax = $request.get("render-url-maximized"))
-
     #set ($namespace = $request.get("portlet-namespace"))
-
-    #set($readmore = $request.get("parameters").get("read\_more"))
-
-    <h1\>$title.getData()</h1\>
-
+    #set($readmore = $request.get("parameters").get("read_more"))
+	<h1>$title.getData()</h1>
     #if ($readmore)
-
-    <p\>$abstract.getData()</p\>
-
-    <p\>$body.getData()</p\>
-
+	<p>$abstract.getData()</p>
+	<p>$body.getData()</p>
     #else
-
-    <p\>
-
-    <img src="${image.getData()}" border="0" align="right"\>
-
-    $abstract.getData()</p\>
-
-    <a href="${renderUrlMax}&${namespace}read\_more=true"\>Read More</a\>
-
+	<p>
+	<img src="${image.getData()}" border="0" align="right">
+	$abstract.getData()</p>
+	<a href="${renderUrlMax}&${namespace}read_more=true">Read More</a>
     #end
 
 This template is pretty small, but it actually does quite a bit. First, a portlet URL which maximizes the portlet is created. Once this is done, we get the namespace of the portlet. This is important because we don't want our URL to collide with another URL that might be on the page.
@@ -526,7 +510,6 @@ When this template is rendered, it looks something like this:
 
 ![Figure 4.15: By default, the content displays like this. If the user clicks the Read More link, the portlet will display the body field as well.](../../images/04-web-content-advanced-wcm.png)
 
-
 Of course, there is much, much more you can do with structures and templates. Check out the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)) for further information and examples.
 
 #### Assigning Template Permission
@@ -534,8 +517,6 @@ Of course, there is much, much more you can do with structures and templates. Ch
 Permissions for templates are very similar to permissions for structures. Generally, you only want specific developers accessing the template. However, you may want to make the templates viewable to some content creators who understand the template scripting language, but are not directly writing the scripts. You can determine who views the template by selecting from the *Viewable By* select box beneath the *Permissions* tab. By default the *Anyone (Guest Role)* is selected.
 
 You'll also want to determine how users can interact with the template. You can do this by selecting the *More* link.
-
-
 
 From the *More* link, you have the ability to grant or deny permissions based on Roles. For instance, you may create a* * role with the ability to update the template and create a second role that can both update and delete. Liferay Portal makes it possible to assign permissions based on the roles and responsibilities within your organization.
 
@@ -584,7 +565,6 @@ Categories are defined by someone with administrative access to the content. The
 Tagging and categorizing web content is easy. You can do it at the bottom of the same form you use to add content. If you open the *Categorization* section of the form, you'll be presented with an interface for adding tags and categories.
 
 ![Figure 4.17: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
-
 
 The Control Panel contains an interface for managing tags and categories for each site in the portal. This interface can be used administratively to manage your tags and categories. We'll take a look at this interface in the next chapter.
 
@@ -679,7 +659,6 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 The Display Settings section of the Asset Publisher has numerous options to help you configure how your content selections are displayed to your users. Even though there are many choices, its easy to go through the options and quickly adjust the ones that apply to you. You'll want to use the Asset Publisher to query for mixed assets in the portal that have relevant information for your users.
 
-
 #### Staging and Workflow
 
 Staging is a major feature of Liferay CMS. The concept of staging is a simple one: you don't want your users seeing your web site change before their eyes as you are modifying it, do you? Liferay's staging environment allows you to make changes to your site in a specialized *staging area*, and then when you are finished, publish the whole site to your users.
@@ -705,8 +684,7 @@ Now we're ready to activate the staging feature for this site. You should now ha
 
 ![Figure 4.21: You can chooseto use versioning and what content should be staged and what content should not be staged.](../../images/04-web-content-staging.png)
 
-
-We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live.* If you were to select *Remote Live*, you would also have needed to supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions → Edit* on any site in the Control Panel. Either way, once we make a selection (*Local Live* or *Remote Live*), many more options will become available to us.
+We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live.* If you were to select *Remote Live*, you would also have needed to supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions ->  Edit* on any site in the Control Panel. Either way, once we make a selection (*Local Live* or *Remote Live*), many more options will become available to us.
 
 We'll cover many of the collaboration portlets listed here when we come to chapter 5. For now you just need to be aware that the option is available to enable or disable staging for any of them, and you need to decide if you would like to stage content for these portlets. In the case of the collaborative portlets, the answer would usually be “no.” Why? Because portlets such as the Message Boards are designed for user interaction. If their content were staged, you'd have to manually publish your site whenever somebody posted a message on the message boards in order to make that message appear on the live site.
 
@@ -772,9 +750,7 @@ To enable workflow for Web Content, navigate to the Control Panel and select *Wo
 
 ![Figure 4.26: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
-
 As you will discover in Chapter 7, you can design workflows to suit your organization's approval process. For TISA's implementation we will use the *Single Approver *workflow which ships with the product.
-
 
 #### Defining Workflows for Web Content
 
@@ -808,4 +784,3 @@ This chapter has been your guide to Liferay Web Content Management. We've seen h
 Liferay CMS also includes a powerful staging environment, allowing you to stage content locally on the same server or remotely to another server. And when working on pages, you have the ability to use layouts and nested portlets to design every page to look exactly the way you want it to look.
 
 Whether your site is small and static or large and dynamic, Liferay's WCM enables you to easily plan and manage it. With tools such as the WYSIWYG Editor, Structures, and Templates, you can quickly add and edit content. With the Web Content Display and Asset Publisher, you can rapidly select and configure what and how your content is displayed. And by using Liferay's integrated workflow, you can set up custom publishing rules to fit your organization. You will find that managing your site becomes far easier when using Liferay's Web Content Management system.
-

@@ -32,11 +32,11 @@ frequency of password expiration, and more. Additionally, you can apply
 different rule sets to different sets of portal users.
 
 If you are viewing a page other than the Control Panel, go up to the
-Dockbar and select *Control Panel*. Next, click on the *Password
-Policies* link on the left side of the screen in the *Portal *category.
+Dockbar and select *Control Panel*. Next, click on the *Password 
+Policies* link on the left side of the screen in the *Portal* category.
 You will see that there is already a default password policy in the
 system. You can edit this in the same manner as you edit other resources
-in the portal: click *Actions* and then click *Edit* .
+in the portal: click *Actions* and then click *Edit*.
 
 You will then see the Password Policy settings form:
 
@@ -72,19 +72,19 @@ box.
 From the list of password policies, you can perform several other
 actions.
 
-**Edit: **Brings you to the form above and allows you to modify the
+**Edit:** Brings you to the form above and allows you to modify the
 password policy.
 
-**Permissions: ** This allows you to define which Users** **, User
-Groups** **, or Roles** **have permissions** **to edit the Password
+**Permissions:** This allows you to define which **Users**, **User
+Groups**, or **Roles** have permissions to edit the Password
 Policy.
 
-**Assign Members: **Takes you to a screen where you can search and
-select users** **in the portal to be assigned to this password policy.
-The password policy will be enforced for any users** **who are added
+**Assign Members:** Takes you to a screen where you can search and
+select **users** in the portal to be assigned to this password policy.
+The password policy will be enforced for any **users** who are added
 here.
 
-**Delete: **This shows up for any password policies that you add beyond
+**Delete:** This shows up for any password policies that you add beyond
 the default policy. You cannot delete the default policy.
 
 ### Settings
@@ -108,13 +108,13 @@ Associations tab lets you configure default membership to Roles, User
 Groups, and Communities for new users, and provides a check box which
 allows you to retroactively apply these to existing users.
 
-**Mail** **Host Names:** You can add a list of other mail host names
+**Mail Host Names:** You can add a list of other mail host names
 that are associated with your organization. For example, your main
 domain might be `mycompany.com`{.western}, but you might use
 `mycompany-marketing.com`{.western} for your email newsletters. Any
 domain names associated with your organization can go here.
 
-**Email** **Notifications:** Liferay sends email notifications for
+**Email Notifications:** Liferay sends email notifications for
 certain events, such as user registrations, password changes, etc. You
 can customize those messages here.
 
@@ -217,13 +217,13 @@ The LDAP settings screen is where you configure the global values.
 
 ##### Enabled/Required
 
-**Enabled: **Check this box to enable LDAP Authentication.
+**Enabled:** Check this box to enable LDAP Authentication.
 
-**Required:** Check this box if LDAP** **authentication is required.
+**Required:** Check this box if **LDAP** authentication is required.
 Liferay will then not allow a user to log in unless he or she can
-successfully bind to the LDAP** **directory first. Uncheck this box if
-you want to allow users** **with Liferay accounts but no LDAP**
-**accounts to log in to the portal.
+successfully bind to the **LDAP** directory first. Uncheck this box if
+you want to allow **users** with Liferay accounts but no **LDAP**
+accounts to log in to the portal.
 
 ##### LDAP Servers
 
@@ -249,7 +249,7 @@ located. Make sure that the machine on which Liferay is installed can
 communicate with the LDAP server. If there is a firewall between the two
 systems, check to make sure that the appropriate ports are opened.
 
-**Base DN: **This is the Base Distinguished Name for your LDAP
+**Base DN:** This is the Base Distinguished Name for your LDAP
 directory. It is usually modeled after your organization. For a
 commercial organization, it may look something like:
 `dc=companynamehere,dc=com`{.western}*. *
@@ -266,7 +266,7 @@ This is all you need in order to make a regular connection to an LDAP
 directory. The rest of the configuration is optional: generally, the
 default attribute mappings are sufficient data to synchronize back to
 the Liferay database when a user attempts to log in. To test the
-connection to your LDAP server, click the *Test LDAP* *Connection*
+connection to your LDAP server, click the *Test LDAP Connection*
 button.
 
 If you are running your LDAP directory in SSL mode to prevent credential
@@ -280,28 +280,27 @@ share the certificate:
 
 On the Windows 2003 Domain Controller, open the *Certificates* MMC
 snapin. Export the Root Certificate Authority certificate by selecting
-*Certificates (Local Computer) mmc snapin -\> Trusted Root Certification
-Authorities -\> MyRootCACertificateName. *Right click this certificate
-and select *All Tasks* -\> *export* -\> *select DER encoded binary X.509
+*Certificates (Local Computer) mmc snapin -> Trusted Root Certification
+Authorities -> MyRootCACertificateName*. Right click this certificate
+and select *All Tasks -> export -> select DER encoded binary X.509
 .CER*. Copy the exported *.cer* file to your Liferay Portal server.
 
 As with the CAS install (see the below section entitled **Single
 Sign-On** ), you will need to import the certificate into the *cacerts
 keystore*. The import is handled by a command like the following:
 
-keytool -import -trustcacerts -keystore
-/some/path/jdk1.5.0\_11/jre/lib/security/cacerts -storepass changeit
--noprompt
-
--alias MyRootCA -file /some/path/MyRootCA.cer
+    keytool -import -trustcacerts -keystore
+    /some/path/jdk1.5.0_11/jre/lib/security/cacerts -storepass changeit
+    -noprompt
+    -alias MyRootCA -file /some/path/MyRootCA.cer
 
 The *keytool* utility ships as part of the Java SDK.
 
 Once this is done, go back to the LDAP page in the Control Panel. Modify
-the LDAP URL in the **Base DN **field to the secure version by changing
+the LDAP URL in the **Base DN** field to the secure version by changing
 the protocol to *https* and the port to 636 like the following:
 
-ldaps://myLdapServerHostname:636
+    ldaps://myLdapServerHostname:636
 
 Save the changes. Your Liferay Portal will now use LDAP in secure mode
 for authentication.
@@ -310,32 +309,32 @@ for authentication.
 
 This section contains settings for finding users in your LDAP directory.
 
-**Authentication Search Filter: **The search filter box can be used to
+**Authentication Search Filter:** The search filter box can be used to
 determine the search criteria for user log ins. By default, Liferay uses
-the email** **address as a user log in name. If you have changed this
-setting—which can be done on the *General*** **tab ** **that's next to
-the *LDAP*** **tab in the *Settings-\>Authentication*** **section of the
-Control Panel** **—you will need to modify the search filter here, which
-has by default been configured to use the email** **address attribute
-from LDAP** **as search criteria. For example, if you changed Liferay's
-authentication method to use the screen name instead of the email**
-**address, you would modify the search filter so that it can match the
+the **email address** as a user log in name. If you have changed this
+setting—which can be done on the**General tab** that's next to
+the **LDAP tab** in the **Settings -> Authentication** section of the
+**Control Panel** you will need to modify the search filter here, which
+has by default been configured to use the **email address** attribute
+from **LDAP** as search criteria. For example, if you changed Liferay's
+authentication method to use the screen name instead of the **email
+address**, you would modify the search filter so that it can match the
 entered log in name:
 
-(cn=@screen\_name@)
+    (cn=@screen_name@)
 
-**Import Search Filter: **Depending on the LDAP** **server, there are
+**Import Search Filter:** Depending on the **LDAP** server, there are
 different ways to identify the user. Generally, the default setting
 `(`{.western}`objectClass=inetOrgPerson`{.western}`)`{.western} is fine,
-but if you want to search for only a subset of users** **or users**
-**that have different object classes, you can change this.
+but if you want to search for only a subset of **users** or **users** 
+that have different object classes, you can change this.
 
-**User Mapping: **The next series of fields allows you to define
-mappings from LDAP** **attributes to Liferay fields. Though your LDAP**
-**user attributes may be different from LDAP** **server to LDAP**
-**server, there are five fields that Liferay requires to be mapped in
+**User Mapping:** The next series of fields allows you to define
+mappings from **LDAP** attributes to Liferay fields. Though your **LDAP**
+user attributes may be different from **LDAP** server to **LDAP**
+server, there are five fields that Liferay requires to be mapped in
 order for the user to be recognized. You must define a mapping to the
-corresponding attributes in LDAP** **for the following Liferay fields:
+corresponding attributes in **LDAP** for the following Liferay fields:
 
 -   Screen Name
 
@@ -359,19 +358,19 @@ The Control Panel provides default mappings for commonly used LDAP
 attributes. You can also add your own mappings if you wish.
 
 **Test LDAP Users:** Once you have your attribute mappings set up (see
-above), click the *Test LDAP*** ***Users*** **button, and Liferay will
-attempt to pull LDAP** **users** **and match them up with their mappings
+above), click the **Test LDAP Users** button, and Liferay will
+attempt to pull **LDAP users** an match them up with their mappings
 as a preview.
 
-![image](../../images/portal-admin-ch3_html_3312b71c.jpg)\
+![image](../../images/portal-admin-ch3_html_3312b71c.jpg)
 *Illustration 17: Testing LDAP Users*
 
 ##### Groups
 
 This section contains settings for mapping LDAP groups to Liferay.
 
-**Import Search Filter:** This is the filter for finding LDAP** **groups
-that you want to map to Liferay. Enter the LDAP** **group attributes
+**Import Search Filter:** This is the filter for finding **LDAP groups**
+that you want to map to Liferay. Enter the **LDAP group** attributes
 that you want retrieved for this mapping. The following attributes can
 be mapped:
 
@@ -381,14 +380,14 @@ be mapped:
 
 -   User
 
-Test LDAP** **Groups: Click the *Test LDAP*** ***Groups*** **to display
+**Test LDAP Groups:** Click the **Test LDAP Groups** to display
 a list of the groups returned by your search filter.
 
 #### Export
 
-**Users DN:** Enter the location in your LDAP** **tree where the users**
-**will be stored. When Liferay does an export, it will export the
-users** **to this location.
+**Users DN:** Enter the location in your **LDAP** tree where the **users** 
+will be stored. When Liferay does an export, it will export the
+**users** to this location.
 
 **User Default Object Classes:** When a user is exported, the user is
 created with the listed default object classes. To find out what your
@@ -396,7 +395,7 @@ default object classes are, use an LDAP browser tool such as *JXplorer*
 to locate a user and view the Object Class attributes that are stored in
 LDAP for that user.
 
-**Groups DN: **Enter the location in your LDAP** **tree where the groups
+**Groups DN:** Enter the location in your **LDAP tree** where the groups
 will be stored. When Liferay does an export, it will export the groups
 to this location.
 
@@ -406,20 +405,19 @@ default object classes are, use an LDAP browser tool such as *Jxplorer*
 to locate a group and view the Object Class attributes that are stored
 in LDAP for that group.
 
-\
-\
 
-![image](../../images/portal-admin-ch3_html_e5994f7.jpg)\
+![image](../../images/portal-admin-ch3_html_e5994f7.jpg)
 *Illustration 18: Mapping LDAP Groups*
 
 Once you've set all your options and tested your connection, click
 *Save*. From here, you can add another LDAP server or set just a few
 more options that apply to all of your LDAP server connections.
+
 ##### Import/Export
 
 **Import Enabled:** Check this box to cause Liferay to do a mass import
-from your LDAP** **directories. If you want Liferay to only synchronize
-users** **when they log in, leave this box unchecked. Definitely leave
+from your **LDAP** directories. If you want Liferay to only synchronize
+**users** when they log in, leave this box unchecked. Definitely leave
 this unchecked if you are working in a clustered environment. Otherwise,
 all of your nodes would try to do a mass import when each of them starts
 up.
@@ -427,35 +425,35 @@ up.
 If you check the box, one more option becomes available.
 
 **Import on Startup Enabled:** Check this box to have Liferay run the
-import when it starts up. This box only appears if you check *Import
-Enabled*** **above.
+import when it starts up. This box only appears if you check **Import
+Enabled** above.
 
 **Export Enabled:** Check this box to enable Liferay to export user
-accounts from the database** **to LDAP** **. Liferay uses a listener to
+accounts from the **database** to **LDAP**. Liferay uses a listener to
 track any changes made to the User object and will push these changes
-out to the LDAP** **server whenever the User object is updated. Note
+out to the **LDAP** server whenever the User object is updated. Note
 that by default on every log in, fields such as
-`LastLoginDate`{.western}** **are updated. When export is enabled, this
-has the effect of causing a user export every time the user logs** **in.
+`LastLoginDate`{.western} are updated. When export is enabled, this
+has the effect of causing a user export every time the user logs in.
 You can disable this by setting the following property in your
-`portal-ext.properties`{.western}** **file:** **
+`portal-ext.properties`{.western} file:
 
-users.update.last.login=false
+    users.update.last.login=false
 
 **Use LDAP Password Policy:** Liferay uses its own password policy by
-default. This can be configured on the *Password Policies*** **link in
-the *Portal*** **section on the left side of the Control Panel** **. If
-you want to use the password policies defined by your LDAP**
-**directory, check this box. Once this is enabled, the *Password
-Policies*** **tab will display a message stating that you are not using
-a local password policy. You will now have to use your LDAP**
-**directory's mechanism for setting password policies. Liferay does this
-by parsing the messages in the LDAP** **controls that are returned by
-your LDAP** **server. By default, the messages in the LDAP** **controls
+default. This can be configured on the **Password Policies** link in
+the **Portal** section on the left side of the **Control Panel**. If
+you want to use the password policies defined by your **LDAP**
+directory, check this box. Once this is enabled, the **Password
+Policies** tab will display a message stating that you are not using
+a local password policy. You will now have to use your **LDAP**
+directory's mechanism for setting password policies. Liferay does this
+by parsing the messages in the **LDAP** controls that are returned by
+your **LDAP** server. By default, the messages in the **LDAP** controls
 that Liferay is looking for are the messages that are returned by the
-Fedora Directory Server. If you are using a different LDAP** **server,
+Fedora Directory Server. If you are using a different **LDAP** server,
 you will need to customize the messages in Liferay's
-`portal-ext.properties`{.western}** **file, as there is not yet a GUI
+`portal-ext.properties`{.western} file, as there is not yet a GUI
 for setting this. See below for instructions describing how to do this.
 
 Once you have completed configuring LDAP, click the *Save* button.
@@ -476,9 +474,8 @@ match settings already configured in the GUI will be ignored. The GUI,
 which stores the settings in the database, always takes precedence over
 the properties file.
 
-ldap.auth.method=bind
-
-\#ldap.auth.method=password-compare
+    ldap.auth.method=bind
+    #ldap.auth.method=password-compare
 
 Set either bind or password-compare for the LDAP authentication method.
 Bind is preferred by most vendors so that you don't have to worry about
@@ -486,34 +483,27 @@ encryption strategies. Password compare does exactly what it sounds
 like: it reads the user's password out of LDAP, decrypts it, and
 compares it with the user's password in Liferay, syncing the two.
 
-ldap.auth.password.encryption.algorithm=
-
-ldap.auth.password.encryption.algorithm.types=MD5,SHA
+    ldap.auth.password.encryption.algorithm=
+    ldap.auth.password.encryption.algorithm.types=MD5,SHA
 
 Set the password encryption to used to compare passwords if the property
 `ldap.auth.method`{.western} is set to password-compare.
 
-ldap.import.method=[user,group]
+    ldap.import.method=[user,group]
 
-If you set this to `user`{.western}*, *Liferay will import all users
+If you set this to `user`{.western}, Liferay will import all users
 from the specified portion of the LDAP tree. If you set this to
 `group`{.western}, Liferay will search all the groups and import the
 users in each group. If you have users who do not belong to any groups,
 they will not be imported.
 
-ldap.error.password.age=age
-
-ldap.error.password.expired=expired
-
-ldap.error.password.history=history
-
-ldap.error.password.not.changeable=not allowed to change
-
-ldap.error.password.syntax=syntax
-
-ldap.error.password.trivial=trivial
-
-ldap.error.user.lockout=retry limit
+    ldap.error.password.age=age
+    ldap.error.password.expired=expired
+    ldap.error.password.history=history
+    ldap.error.password.not.changeable=not allowed to change
+    ldap.error.password.syntax=syntax
+    ldap.error.password.trivial=trivial
+    ldap.error.user.lockout=retry limit
 
 These properties are a list of phrases from error messages which can
 possibly be returned by the LDAP server. When a user binds to LDAP , the
@@ -571,37 +561,37 @@ certificate.
 
 To generate a key, use the following command:
 
-keytool -genkey -alias tomcat -keypass changeit -keyalg RSA
+    keytool -genkey -alias tomcat -keypass changeit -keyalg RSA
 
 Instead of the password in the example (*changeit*), use a password that
 you will be able to remember. If you are not using Tomcat, you may want
 to use a different alias as well. For First and Last name, enter
-*localhost, * or the host name of your server. It cannot be an IP
+*localhost*, or the host name of your server. It cannot be an IP
 address.
 
 To export the key to a file, use the following command:
-
-keytool -export -alias tomcat -keypass changeit -file server.cert
+    
+    keytool -export -alias tomcat -keypass changeit -file server.cert
 
 Finally, to import the key into your Java key store, use the following
 command:
 
-keytool -import -alias tomcat -file %FILE\_NAME% -keypass changeit
--keystore $JAVA\_HOME/jre/lib/security/cacerts
+    keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit
+    -keystore $JAVA_HOME/jre/lib/security/cacerts
 
 If you are on a Windows system, replace `$JAVA_HOME`{.western} above
 with `%JAVA_HOME%`{.western}. Of course, all of this needs to be done on
 the system on which CAS will be running.
 
 Once your CAS server is up and running, you can configure Liferay to use
-it. This is a simple matter of navigating to the *Settings* -\>
-*Authentication* -\> *CAS* tab in the Control Panel. Enable CAS
+it. This is a simple matter of navigating to the *Settings -> 
+Authentication -> CAS* tab in the Control Panel. Enable CAS
 authentication, and then modify the URL properties to point to your CAS
 server.
 
 **Enabled:** Set this to true to enable CAS single sign-on.
 
-**Import**** from LDAP:** A user may be authenticated from CAS and not
+**Import from LDAP:** A user may be authenticated from CAS and not
 yet exist in the portal. Select this to automatically import users from
 LDAP if they do not exist in the portal.
 
@@ -660,7 +650,7 @@ list.
 
 The obvious main benefit of OpenID for the user is that he or she no
 longer has to register for a new account on every site in which he or
-she wants to participate. Users can register on *one *site (the OpenID
+she wants to participate. Users can register on *one* site (the OpenID
 provider's site) and then use those credentials to authenticate to many
 web sites which support OpenID. Many web site owners often struggle to
 build communities because end users are reluctant to register for so
@@ -709,11 +699,11 @@ Open SSO using this user.
 
 In the same browser window, go to the URL for your server running
 Liferay and log in as the same user, using the email address
-*test@liferay.com*. Go to the Control Panel and click *Settings -\>
-Authentication -\> OpenSSO*. Modify the three URL fields (Login URL,
+*test@liferay.com*. Go to the Control Panel and click *Settings ->
+Authentication -> OpenSSO*. Modify the three URL fields (Login URL,
 Logout URL, and Service URL) so that they point to your OpenSSO server
 (i.e., only modify the host name portion of the URLs), click the
-*Enabled* check box, and then click *Save.* Liferay will then redirect
+*Enabled* check box, and then click *Save*. Liferay will then redirect
 users to OpenSSO when they click the *Sign In* link.
 
 #### Authentication: SiteMinder
@@ -737,9 +727,9 @@ When you are finished, click *Save*.
 #### Users
 
 The *Users* link has three tabs: *Fields, Reserved Credentials, and
-Default User Associations. *
+Default User Associations.*
 
-The *Fields *tab allows you to enable/disable the following fields:
+The *Fields* tab allows you to enable/disable the following fields:
 
 -   Enable/disable requiring Terms of Use
 
@@ -776,14 +766,14 @@ those user groups here.
 
 #### Mail Host Names
 
-The next link is *Mail* *Host Names*. You can enter (one per line) other
+The next link is *Mail Host Names*. You can enter (one per line) other
 mail host names besides the one you configured on the General tab. This
 lets the portal know which mail host names are owned by your
 organization.
 
 #### Email Notifications
 
-There are four tabs under the *Email* *Notifications* link. The *Sender*
+There are four tabs under the *Email Notifications* link. The *Sender*
 tab allows you to set the portal's administrative name and email
 address. By default, this is *Joe Bloggs* and *test@liferay.com*. You
 can change it to anything you want. This name and address will appear in
@@ -821,15 +811,13 @@ Books. If you're using the wiki for book reviews, you might add fields
 for Book Title and Book Author.
 
 To add a custom field simply click on the *Custom Fields* link in the
-Control Panel then click on the *Edit *link and then select *Add Custom
+Control Panel then click on the *Edit* link and then select *Add Custom
 Field*.
 
-![image](../../images/portal-admin-ch3_html_m12b2fefd.png)\
-*Illustration 19: The Wiki shows custom fields integrated with the rest
-of the fields on the form. *
+![image](../../images/portal-admin-ch3_html_m12b2fefd.png)
+*Illustration 19: The Wiki shows custom fields integrated with the rest 
+of the fields on the form.*
 
-\
-\
 From here you will need to add the custom field key. The key appears as
 the label for the field on the form. For some portal assets (like the
 User), custom fields are a separate section of the form. For others, as
@@ -860,7 +848,7 @@ Note that this is for basic configuration: if you want to view the
 existing permission configuration for a given portlet and/or modify that
 configuration for existing roles, this is where you can do that. If you
 need to add permissions to new roles for a given portlet, use the Roles
-section of the Control Panel and the *Actions → Define Permissions*
+section of the Control Panel and the *Actions ->  Define Permissions*
 button.
 
 ### Page Templates
@@ -869,12 +857,10 @@ The Page Templates link allows you to create a custom page with the
 layout, portlets and web content you will want to reuse. From this link
 you can also edit existing templates and modify their permissions.
 
-![image](../../images/portal-admin-ch3_html_m2e4371b8.png)\
+![image](../../images/portal-admin-ch3_html_m2e4371b8.png)
 *Illustration 20: You can create page templates with predefined layouts
-and portlets that can be used over and over. *
+and portlets that can be used over and over.*
 
-\
-\
 To add a page template click on the *Page Template* link in the Control
 Panel. From there select *Add* and then enter a name and description for
 your template. Below the description field is a toggle that lets you
@@ -886,10 +872,10 @@ we'll see in the next chapter.
 
 Once you're finished adding the content, layout, and portlets, return to
 the Page Template portlet (which is in another browser tab) and select
-*Save.*
+*Save*.
 
 When you want to use the new template to create a new page on a site,
-simply navigate to *Control Panel **→* *Pages *and the page is available
+simply navigate to *Control Panel -> Pages* and the page is available
 in the template drop down menu when you're adding a page.
 
 ### Site Templates
@@ -898,18 +884,16 @@ The Site Templates link allows you to define a set of predefined pages
 to include when creating new sites for communities and organizations.
 You may define and edit site templates as well as their permissions.
 
-![image](../../images/portal-admin-ch3_html_4e601928.png)\
+![image](../../images/portal-admin-ch3_html_4e601928.png)
 *Illustration 21: Site templates help you to quickly build many similar
-sites using the same pattern. *
+sites using the same pattern.*
 
-\
-\
 To add a site template click on the *Site Template* link in the Control
 Panel. From there you can select *Add* and then enter a name and
 description for your template. Also, below the description field is
 where you can make this template active.
 
-Once this is complete, click on *Actions* → *Manage Pages*. From here
+Once this is complete, click on *Actions -> Manage Pages*. From here
 you can add pages to your template, configure the look and feel by
 managing themes or CSS files, and export the template as a .lar file.
 You can also import a .lar file from here as well.
@@ -946,12 +930,12 @@ JVM to clear content cached across the entire cluster.
 **Clearing database caches:** You can send in a request to the JVM to
 clear the database cache.
 
-**Reindex all search indexes: **You can send in a request** **to
-regenerate all search indexes. If you are not using a Solr** **search
+**Reindex all search indexes:** You can send in a **request** to
+regenerate all search indexes. If you are not using a **Solr** search
 server (see Chapter 7 for further information). This will impact portal
 performance, so try not to do this except at non-peak times.
 
-**Generate Thread Dump: **If you are performance testing, you can
+**Generate Thread Dump:** If you are performance testing, you can
 generate a thread dump which can be examined later to determine if there
 are any deadlocks and where they might be.
 
@@ -1043,8 +1027,8 @@ Rather than using the `portal-ext.properties`{.western} file as we did
 in the installation chapter, you can configure a mail server here. If
 the portal is to receive mail (see the Message Boards portlet in Chapter
 5), you can connect a POP mail server. And of course, if the portal is
-to send mail—which it needs to do in order to send notifications to
-users—you can connect an SMTP server here as well, and this is highly
+to send mail -- which it needs to do in order to send notifications to
+users -- you can connect an SMTP server here as well, and this is highly
 recommended.
 
 Note that if you add your mail server settings here, they will override
@@ -1071,8 +1055,8 @@ OpenOffice.org. You can install OpenOffice.org on the same server upon
 which Liferay is running. Once you have it installed, you can start
 OpenOffice.org in server mode with the following command:
 
-soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
--nofirststartwizard
+    soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
+    -nofirststartwizard
 
 As you can see, the command above specifies that OpenOffice.org will run
 on port 8100, which is the default port in the Control Panel . If you
@@ -1119,19 +1103,19 @@ here.
 
 You'll be prompted for three fields:
 
-**Web ID: **A general convention is to use the domain name for this.
+**Web ID:** A general convention is to use the domain name for this.
 It's a user-generated ID for the instance.
 
-**Virtual Host: **Put the domain name you configured in your network
-here. When users** **are directed to your Liferay server via this domain
+**Virtual Host:** Put the domain name you configured in your network
+here. When **users** are directed to your Liferay server via this domain
 name, Liferay will then be able to send them to the proper portal
 instance.
 
-**Mail Domain: **Enter the domain name for the mail** **host for this
-instance. Liferay will use this to send email** **notifications from the
+**Mail Domain:** Enter the domain name for the **mail host** for this
+instance. Liferay will use this to send **email** notifications from the
 portal.
 
-When you are finished filling out the form, click *Save*** **. Now
+When you are finished filling out the form, click **Save**. Now
 navigate to the portal using your new domain name. You will see that you
 are brought to what looks like a clean install of Liferay. This is your
 new portal instance which can now be configured any way you like.
@@ -1142,7 +1126,7 @@ The *Plugins Installation* link shows all of the plugins that are
 currently installed. These are divided into tabs for portlets, themes,
 layout templates, Hook plugins, and Web plugins. If you want to install
 a new plugin, click the *Install More Portlets* button. You will then be
-brought to the **Plugin** **Installer**, where you can browse Liferay's
+brought to the **Plugin Installer**, where you can browse Liferay's
 repository of portlets or install your own plugins. The Plugin Installer
 will be covered in Chapter 6.
 
@@ -1178,6 +1162,3 @@ installed.
 
 All of this information was designed to put you on the path to becoming
 a seasoned Liferay Portal Administrator.
-
-\
-

@@ -1,4 +1,3 @@
-
 # Initial Setup
 
 Liferay Portal is one of the most flexible applications on the market today with
@@ -84,7 +83,7 @@ Liferay's dependency .jars. Later in this chapter are instructions for
 installing Liferay on many of the major application servers available
 today.
 
-![image](../../images/02-bundle-directory-structure.png)\
+![image](../../images/02-bundle-directory-structure.png)
 *Illustration 1: Bundle directory structure*
 
 ## Installing a Bundle
@@ -151,7 +150,7 @@ Installing a different bundle is done in exactly the same way: unzip the
 bundle into the folder of your choice, launch the application server,
 and then view the portal in your web browser.
 
-![image](../../images/02-default-page-in-the-liferay-bundles.png)\
+![image](../../images/02-default-page-in-the-liferay-bundles.png)
 *Illustration 2: Default Page in the Liferay Bundles*
 
 As you can see, bundles are the easiest way to get started with Liferay.
@@ -212,7 +211,7 @@ is running Liferay.
 
 As described above in the *Bundles* section, the home folder is very
 important to the operation of Liferay. The aforementioned folders
-(*data, deploy, *and *license*) will be created there, and you can also
+(*data*, *deploy*, and *license*) will be created there, and you can also
 put a special configuration file called
 `portal-ext.properties` there.
 
@@ -251,7 +250,7 @@ application server to have the permissions over the database necessary
 for Liferay and its plugins to maintain their tables. For these
 organizations, Select, Insert, Update, and Delete are generally all the
 permissions that are granted, and so we will go over how to set up the
-database manually. If your organization* is* willing to grant the
+database manually. If your organization *is* willing to grant the
 Liferay user ID permissions to create and drop tables in the
 database—and this is the recommended configuration—you can skip this
 section.
@@ -331,7 +330,7 @@ also created the `JAVA_HOME` environment variable and have
 pointed it to your Java installation.
 
 Unzip the bundle to the location from which you are going to run it. For
-example, you might use `D:\apps` in Windows or
+example, you might use `D:apps` in Windows or
 `/opt` in Linux or UNIX variants. The default bundle
 installation of Liferay Portal uses an embedded database. While this is
 a good method to have it up and running fast for evaluation or
@@ -400,7 +399,7 @@ Liferay to use this connection pool, add the following directive to your
 
 jdbc.default.jndi.name=jdbc/LiferayPool
 
-To use the built-in connection pool—based on C3P0*—*add the template
+To use the built-in connection pool -- based on *C3P0* -- add the template
 which is provided in Chapter 6 for your particular database. The
 template for MySQL is provided as an example below.
 
@@ -432,7 +431,7 @@ mail.session.jndi.name=mail/MailSession
 Save the file. You can now start your application server.
 
 To use Liferay's built-in mail session, go to
-*Control Panel -\> Server Administration -\> Mail* and enter your settings
+*Control Panel -> Server Administration -> Mail* and enter your settings
 for your mail session settings.
 
 ### Installing Liferay on an Existing Application Server
@@ -514,7 +513,7 @@ make sure it points to your database connection pool and mail session.
 
 #### GlassFish 3.x
 
-**Liferay Home **is in the Glassfish root folder. We will assume for
+**Liferay Home** is in the Glassfish root folder. We will assume for
 these instructions that you are using the default domain stored in
 `[GlassFish Root]/glassfish/domains/domain1`.
 
@@ -526,15 +525,15 @@ these instructions that you are using the default domain stored in
 2.  At approximately line 166 of this file, you will find the following
     JVM option being set:
 
-        <jvm-options\>-Xmx512m</jvm-options\>
+        <jvm-options>-Xmx512m</jvm-options>
 
     Change this to:
 
-        <jvm-options\>-Xmx1024m</jvm-options\>
+        <jvm-options>-Xmx1024m</jvm-options>
 
 3.  Add another line after this line with the following JVM option:
 
-        <jvm-options\>-XX:MaxPermSize=256m</jvm-options\>
+        <jvm-options>-XX:MaxPermSize=256m</jvm-options>
 
     Save and close the file.
 
@@ -558,7 +557,7 @@ If you want GlassFish to manage the data source, use the following
 instructions. If you want to use the built-in Liferay data source, you
 can skip this section.
 
-![image](../../images/02-glassfish-jdbc-connection-pool.png)\
+![image](../../images/02-glassfish-jdbc-connection-pool.png)
 *Illustration 3: Glassfish JDBC Connection Pool*
 
 1.  Go to the GlassFish console URL:
@@ -568,7 +567,7 @@ can skip this section.
 
 3.  In the first screen, give it a name of `LiferayPool`, a
     Resource Type of `javax.sql.ConnectionPoolDataSource`, and
-    select *MySQL* as the Database Vendor. Click *Next. *
+    select *MySQL* as the Database Vendor. Click *Next*.
 
 4.  On the next page, scroll down to the *Additional Properties*
     section. Find the property called `URL`, and set its value
@@ -586,7 +585,7 @@ can skip this section.
     `password` with a value of the password to connect to the
     database.
 
-8.  Click *Finish. *
+8.  Click *Finish*.
 
 9.  You will now see a list of Connection Pools. To test your
     connection, click the `LiferayPool` and click the *Ping*
@@ -601,7 +600,7 @@ can skip this section.
 12. Make the JNDI Name `jdbc/LiferayPool` and select the
     LiferayPool you created earlier.
 
-13. Click *OK. *
+13. Click *OK*.
 
 ##### Mail Configuration
 
@@ -611,13 +610,13 @@ can skip this section.
 
 1.  Under *Resources*, click *JavaMail Sessions*.
 
-2.  Click *New. *
+2.  Click *New*.
 
 3.  Give the JavaMail Session a JNDI name of
     `mail/MailSession`, and fill out the rest of the form with
     the appropriate information for your mail server.
 
-4.  Click *OK. *
+4.  Click *OK*.
 
 ##### Deploy Liferay
 
@@ -636,12 +635,11 @@ can skip this section.
 4.  Click the *Deploy* button.
 
 5.  Under *Packaged File to Be Uploaded to the Server* click *Choose
-    File,* and browse to the location of the Liferay .war file.
+    File*, and browse to the location of the Liferay .war file.
 
 6.  Leave the rest of the defaults and click *OK*.
 
-    ![image](../../images/02-deploying-liferay-in-glassfish-3.png)\
-    *Illustration 4: Deploying Liferay in GlassFish 3*
+    ![image](../../images/02-deploying-liferay-in-glassfish-3.png)*Illustration 4: Deploying Liferay in GlassFish 3*
 
     Liferay will be deployed and started automatically.
 
@@ -660,7 +658,7 @@ can skip this section.
 5.  Edit `$JETTY_HOME/extra/etc/start-plus.config`.
 
         $(jetty.home)/lib/ext/
-        $(jetty.home)/lib/ext/\*
+        $(jetty.home)/lib/ext/*
 
 6.  Create a data source bound to `jdbc/LiferayPool` by
     editing `$JETTY_HOME/etc/jetty.xml`.
@@ -716,8 +714,8 @@ can skip this section.
             com.liferay.portal.kernel.security.jaas.PortalLoginModule required;
         };
 
-10. Create directory `$JETTY_HOME/webapps/root` and unpack*
-    *the Liferay .war file into it.
+10. Create directory `$JETTY_HOME/webapps/root` and *unpack*
+    the Liferay .war file into it.
 
 11. Go to `$JETTY_HOME/webapps/root/WEB-INF/lib` and delete
     `xercesImpl.jar` and `xml-apis.jar`.
@@ -730,9 +728,9 @@ can skip this section.
 
         @echo off
 
-        if "" == "%JAVA\_HOME%" goto errorJavaHome
+        if "" == "%JAVA_HOME%" goto errorJavaHome
 
-        %JAVA\_HOME%/bin/java -Xmx512m -Dfile.encoding=UTF8 -Duser.timezone=GMT
+        %JAVA_HOME%/bin/java -Xmx512m -Dfile.encoding=UTF8 -Duser.timezone=GMT
         -Djava.security.auth.login.config=../etc/jaas.config
         -DSTART=../extra/etc/start-plus.config -jar ../start.jar
         ../etc/jetty.xml
@@ -740,7 +738,7 @@ can skip this section.
         goto end
 
         :errorJavaHome
-        echo JAVA\_HOME not defined.
+        echo JAVA_HOME not defined.
 
         goto end
 
@@ -849,7 +847,7 @@ Set mail properties by replacing the contents of
 
         $JBOSS_HOME/server/default/deploy/ROOT.war/WEB-INF/lib
 
-4.  Navigate to* *the Liferay Home folder, which is one folder above
+4.  Navigate to the Liferay Home folder, which is one folder above
     JBoss's install location.
 
 5.  Create a file called `portal-ext.properties`. Add the
@@ -865,7 +863,7 @@ should see the default Liferay home page.
 
 #### Resin 3.1.x
 
-**Liferay Home* ***is one folder above Resin's install location.
+**Liferay Home** is one folder above Resin's install location.
 
 1.  Download and install Resin into your preferred directory. From now
     on, the directory where you installed Resin will be referred to as
@@ -1010,7 +1008,7 @@ should see the default Liferay home page.
     Liferay source code and get them from there. Once you have
     downloaded the Liferay source, unzip it to a temporary folder.
 
--   Go to `$LIFERAY_SOURCE/lib/development`* *Copy
+-   Go to `$LIFERAY_SOURCE/lib/development`. Copy
     `saxpath.jar` to `$RESIN_HOME/common/lib`
 
 9.  To start the server, open a command prompt, navigate to the
@@ -1023,16 +1021,16 @@ the default Liferay home page.
 
 #### Tomcat 6.0.x
 
-**Liferay Home* ***is one folder above Tomcat's install location.
+**Liferay Home** is one folder above Tomcat's install location.
 
 1.  Download and install Tomcat 6.0.X into your preferred directory.
     From now on, the directory where you installed Tomcat will be
     referred to as `$TOMCAT_HOME`.
 
-    **Note:** For JDK 5 users: move
-    `$TOMCAT_HOME/webapps/ROOT/WEB-INF/lib/xercesImpl.jar` to
-    `$TOMCAT_HOME/common/endorsed`. JDK 1.4 is no longer
-    supported in Liferay 5.x and above.
+	**Note:** For JDK 5 users: move
+	`$TOMCAT_HOME/webapps/ROOT/WEB-INF/lib/xercesImpl.jar` to
+	`$TOMCAT_HOME/common/endorsed`. JDK 1.4 is no longer
+	supported in Liferay 5.x and above.
 
 2.  Create and edit
     `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml` to set up
@@ -1052,9 +1050,9 @@ the default Liferay home page.
 5.  Edit `$TOMCAT_HOME/conf/catalina.properties`:
 
         common.loader=
-            ${catalina.home}/classes,\\
-            ...\\
-            ${catalina.home}/lib/ext/\*.jar
+            ${catalina.home}/classes,
+            ...
+            ${catalina.home}/lib/ext/*.jar
 
 6.  Make sure your database server is installed and is working. If it's
     installed in a different machine, make sure that it's accessible
@@ -1130,9 +1128,9 @@ the default Liferay home page.
 
         rem ----- Execute...
 
-        set JAVA\_OPTS=-Xms128m -Xmx512m -Dfile.encoding=UTF8
+        set JAVA_OPTS=-Xms128m -Xmx512m -Dfile.encoding=UTF8
         -Duser.timezone=GMT
-        -Djava.security.auth.login.config=%CATALINA\_HOME%/conf/jaas.config
+        -Djava.security.auth.login.config=%CATALINA_HOME%/conf/jaas.config
 
 16. Delete contents `$TOMCAT_HOME/webapps/ROOT` directory.
     This undeploys the default Tomcat home page.
@@ -1195,10 +1193,10 @@ If you want WebLogic to manage your data source, use the following
 procedure. If you want to use Liferay's built-in data source, you can
 skip this section.
 
-![image](../../images/02-weblogic-data-sources.png)\
+![image](../../images/02-weblogic-data-sources.png)
 *Illustration 5: WebLogic: Data Sources*.
 
-1.  Browse to your WebLogic Console. Click the *Lock & Edit * button
+1.  Browse to your WebLogic Console. Click the *Lock & Edit* button
 above the Domain Structure tree on the left side of the page.
 
 2.  From the Domain Structure tree on the left, select *Data Sources*.
@@ -1213,8 +1211,8 @@ Then click the *New* button on the right side of the screen.
 
 6.  Accept the defaults on the next screen by clicking *Next*.
 
-7.  On the next screen, put in your *Database Name, Host Name, Database
-User Name, *and *Password. If you have been following the defaults
+7.  On the next screen, put in your *Database Name*, *Host Name*, *Database
+User Name*, and *Password*. If you have been following the defaults
 we have been using so far, you would use *lportal, localhost, root,*
 and no password as the values. Click *Next*.
 
@@ -1233,7 +1231,7 @@ If you want WebLogic to manage your mail sessions, use the following
 procedure. If you want to use Liferay's built-in mail sessions, you can
 skip this section.
 
-![image](../../images/02-weblogic-mail-sessions.png)\
+![image](../../images/02-weblogic-mail-sessions.png)
 *Illustration 6: WebLogic: Mail Sessions*
 
 1.  In the Domain Structure tree, select *Mail Sessions.* Then click the
@@ -1253,13 +1251,12 @@ the *Save* button.
 6.  Click the *Targets* tab. Select the check box of the server to which you
 want deploy this Data Source to (AdminServer is the default).
 
-7.  Click the *Activate Changes *button on the left side of the screen,
+7.  Click the *Activate Changes* button on the left side of the screen,
 above the Domain Structure tree.
 
 ##### Deploy Liferay
 
-![image](../../images/02-weblogic-deployments.png)\
-*Illustration 7: WebLogic: Deployments*
+![image](../../images/02-weblogic-deployments.png) *Illustration 7: WebLogic: Deployments*
     
 1.  In the Domain Structure tree, select *Mail Sessions.*  Then click the
 *Lock & Edit* button above the Domain Structure tree.
@@ -1299,7 +1296,7 @@ settings:
         jdbc.default.jndi.name=jdbc/LiferayPool
     
 11. If you are using Liferay's built-in mail session, go to
-*Control Panel -\> Server Administration -\> Mail* and enter your settings
+*Control Panel -> Server Administration -> Mail* and enter your settings
 for your mail session settings.
 
 12. In the Deployments screen, select the Liferay application and click
@@ -1343,17 +1340,16 @@ Start WebLogic.
 
 ##### Database Configuration
 
-![image](../../images/02-weblogic-10-3-data-sources.png)\
-*Illustration 8: WebLogic: Data Sources*.
+![image](../../images/02-weblogic-10-3-data-sources.png) *Illustration 8: WebLogic: Data Sources*.
 
 If you want WebLogic to manage your data source, use the following
 procedure. If you want to use Liferay's built-in data source, you can
 skip this section.
  
-![image](../../images/02-creating-a-data-source-in-weblogic.png)\
+![image](../../images/02-creating-a-data-source-in-weblogic.png)
 *Illustration 9: Creating a data source in WebLogic 10.3*
 
-1.  Select *Services -\> Data Sources.* Click *New -\> Generic Data Source*.
+1.  Select *Services -> Data Sources.* Click *New -> Generic Data Source*.
 
 2.  Give your data source a name, such as *Liferay Data Source*. The
 JNDI name should be `jdbc/LiferayPool`.
@@ -1386,7 +1382,7 @@ which you wish to deploy your data source. Then click *Save*.
 
 ##### Mail Configuration
 
-![image](../../images/02-weblogic-10-3-mail-sessions.png)\
+![image](../../images/02-weblogic-10-3-mail-sessions.png)
 *Illustration 10: WebLogic: Mail Sessions*.
 
 1.  Select *Mail Sessions* and create a new mail session which points to
@@ -1399,7 +1395,7 @@ your mail server.
 
 ##### Deploy Liferay
 
-![image](../../images/02-weblogic-10-3-deployments.png)\
+![image](../../images/02-weblogic-10-3-deployments.png)
 *Illustration 11: WebLogic: Deployments*.
 
 1.  Create a `portal-ext.properties` file in the Liferay Home
@@ -1418,7 +1414,7 @@ settings:
         jdbc.default.jndi.name=jdbc/LiferayPool
 
 2. If you are using Liferay's built-in mail session, go to
-*Control Panel -\> Server Administration -\> Mail* and enter your settings
+*Control Panel -> Server Administration -> Mail* and enter your settings
 for your mail session settings.
 
     If you are using WebLogic's mail session, add the JNDI name instead:
@@ -1515,7 +1511,7 @@ folder of the user ID that is running WebSphere.
 
 9.  Click *Next*.
 
-10. Click *Finish. *
+10. Click *Finish*.
 
 11. Click *Data Sources* under *Additional Properties*.
 
@@ -1527,7 +1523,7 @@ folder of the user ID that is running WebSphere.
 
 15. Everything else should stay at the default values.
 
-16. Click *Next. *
+16. Click *Next*.
 
 17. Under *Additional Properties*, click *Custom Properties*.
 
@@ -1540,35 +1536,30 @@ folder of the user ID that is running WebSphere.
 
 **Value**
 
-\1. user
+1. user
 
 root
 
-\2. serverName
+2. serverName
 
 localhost
 
-\3. databaseName
+3. databaseName
 
 lportal
 
-\
-\
 
-20. Click *Data Sources* -\> *Test Connection* to test.
+20. Click *Data Sources -> Test Connection* to test.
 
 ##### Mail Configuration
 
-1.  Click *Resources* -\> *Mail Providers*.
+1.  Click *Resources -> Mail Providers*.
 
 2.  Click *Built-in Mail Provider*.
 
 3.  Click *Mail Sessions*.
 
 4.  Click *New*.
-
-\
-\
 
 5.  Click *OK*.
 
@@ -1579,26 +1570,26 @@ lportal
 8.  Select *Enable application security*.
 
 9.  Deselect *Use Java 2 security to restrict application access to
-    local resources.*
+    local resources*.
 
 ##### Install Liferay
 
-1.  Click *Applications* -\> *Install new applications. *
+1.  Click *Applications -> Install new applications*.
 
 2.  Browse for `liferay-portal-x.x.x.war`.
 
-    ![image](../../02-installing-the-liferay-war-file-on-windows.png)\
+    ![image](../../02-installing-the-liferay-war-file-on-windows.png)
     *Illustration 8: Installing the Liferay .war file on WebSphere 6.1*
 
 3.  Enter context root */*.
 
 4.  Click *Next*. For Steps 1 to 3, click *Next* to apply defaults.
 
-5.  Choose the *Mail Session* and *Data Source*, and then click *Next.*
+5.  Choose the *Mail Session* and *Data Source*, and then click *Next*.
 
 6.  Specify the virtual host upon which you want Liferay to run.
 
-7.  At the Summary Screen, click *Finish. *
+7.  At the Summary Screen, click *Finish*.
 
 8.  Wait for the installation process to complete.
 
@@ -1616,13 +1607,13 @@ lportal
 
 2.  Click *Enterprise Applications*.
 
-    ![image](../../images/02-starting-liferay-on-websphere.png)\
+    ![image](../../images/02-starting-liferay-on-websphere.png)
     *Illustration 9: Starting Liferay on WebSphere 6.1*
 
 3.  Uninstall *DefaultApplication*, *PlantsByWebSphere* and
     *SamplesGallery*.
 
-4.  Select `liferay-portal.war`, click *Start. *
+4.  Select `liferay-portal.war`, click *Start.*
 
 5.  Open up the browser and go to `http://localhost:9080`. The
     default Liferay home page will be displayed.
@@ -1646,14 +1637,14 @@ folder of the user ID that is running WebSphere.
 If you want WebSphere to manage the database connections, follow the
 instructions below.
 
-![image](../../images/02-websphere-jdbc-providers.png)\
+![image](../../images/02-websphere-jdbc-providers.png)
     *Illustration 10: WebSphere 7.0 JDBC Providers*
 
 1.  Start WebSphere.
 
 2.  Open the Administrative Console and log in.
 
-3.  Click *Resources -\> JDBC Providers*.
+3.  Click *Resources -> JDBC Providers*.
 
 4.  Click *New*.
 
@@ -1671,7 +1662,7 @@ instructions below.
 
 9.  Click *Next*.
 
-10. Click *Finish. *
+10. Click *Finish*.
 
 11. Click *Data Sources* under *Additional Properties*.
 
@@ -1691,8 +1682,7 @@ instructions below.
 
 17. Type *user* into the search terms and click *Go*.
 
-    ![image](../../images/02-modifying-data-source-properties-in-websphere.png)\
-    *Illustration 11: Modifying data source properties in WebSphere 7*
+    ![image](../../images/02-modifying-data-source-properties-in-websphere.png) *Illustration 11: Modifying data source properties in WebSphere 7*
 
 18. Select the user property and give it the value of the user name to
     your database. Click *OK* and save to master configuration.
@@ -1712,7 +1702,7 @@ instructions below.
 
 ##### Mail Configuration
 
-1.  Click *Resources -\> Mail -\> Mail Providers*.
+1.  Click *Resources -> Mail -> Mail Providers*.
 
 2.  Click the Built-In Mail Provider for your node and server.
 
@@ -1722,13 +1712,13 @@ instructions below.
     `mail/MailSession`. Click *OK* and save to master
     configuration.
 
-5.  Click *Security -\> Global Security* and deselect *Use Java 2 security
+5.  Click *Security -> Global Security* and deselect *Use Java 2 security
     to restrict application access to local resources* if it is
     selected. Click *Apply*.
 
 ##### Install Liferay
 
-1.  Click *Applications -\> New Application -\> New Enterprise
+1.  Click *Applications -> New Application -> New Enterprise
     Application*.
 
 2.  Browse to the Liferay .war file and click *Next*.
@@ -1750,22 +1740,19 @@ instructions below.
     in the home folder of the user that is running WebSphere. If you are
     using Liferay's built-in data source, add the database settings:
 
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
-
-    jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-
-    jdbc.default.username=root
-
-    jdbc.default.password=root
+        jdbc.default.driverClassName=com.mysql.jdbc.Driver
+        jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+        jdbc.default.username=root
+        jdbc.default.password=root
 
 2.  If you are using WebSphere's data source per the instructions above,
     add the JNDI name instead:
 
-    jdbc.default.jndi.name=jdbc/LiferayPool
+        jdbc.default.jndi.name=jdbc/LiferayPool
 
 3.  Save and close the file.
 
-4.  Click *Application Types -\> WebSphere Enterprise Application*.
+4.  Click *Application Types -> WebSphere Enterprise Application*.
 
 5.  Uninstall the default application.
 
@@ -1801,9 +1788,9 @@ There are two steps to modifying this behavior:
     the context to which it has been deployed.
 
 To change the file, open it in a text editor. Place the
-`portal.ctx`* *property at the top of the file:
+`portal.ctx` property at the top of the file:
 
-portal.ctx=/
+    portal.ctx=/
 
 This default setting defines Liferay Portal as the application that sits
 at the root context. If you change it to something else, say */portal*,
@@ -1817,7 +1804,7 @@ in Chapter 6.
 `weblogic.xml` file which is included with Liferay. In this
 file are tags for the context root:
 
-<context-root>/</context-root>
+    <context-root>/</context-root>
 
 Change this so that it matches the path you set in your
 `portal-ext.properties` file. You will have to modify the
@@ -1843,5 +1830,3 @@ supporting you on your environment of choice. Liferay Portal won't get
 in your way, and you can feel safe knowing that you have the freedom to
 use the software platform that is best for your organization, and
 Liferay Portal will run and perform well on it.
-
-

@@ -506,13 +506,13 @@ Prior to Liferay 6.0, the default configurations of many Liferay portlets allowe
 
 Teams don't appear as a link in the control panel because they exist *within* sites. Teams can be used when you need to collect permissions within a a single site. If you create a team for one site, it will not be available to any other sites. Teams serve as a means to create a particular set of users and permissions for a site-specific function.
 
-To create a team within a site, first naviagte to the *Control Panel → Sites* page then and then select *Actions → Manage Memberships* for the site within which you want to create a team. Finally, click *View → Teams* and click the Add Team button.
+To create a team within a site, first naviagte to the *Control Panel ->  Sites* page then and then select *Actions ->  Manage Memberships* for the site within which you want to create a team. Finally, click *View ->  Teams* and click the Add Team button.
 
 ![Creating a Team within a Site](../../images/01-creating-a-team.png)
 
-After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions → Assign Members*.
+After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions ->  Assign Members*.
 
-Permission management for teams is handled at the individual portlet level, using the *Options → Configuration → Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
+Permission management for teams is handled at the individual portlet level, using the *Options ->  Configuration ->  Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
 
 [Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams)
 
