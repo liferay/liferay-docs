@@ -108,8 +108,8 @@ Users can be collected into user groups.
 
 Users can belong to organizations.
 
-Organizations can be grouped into hierarchies, such as Home Office →
-Regional Office → Satellite Office.
+Organizations can be grouped into hierarchies, such as Home Office ->
+Regional Office ->  Satellite Office.
 
 Sites can be created independently or can be attached to users or organizations.
 
@@ -129,7 +129,7 @@ Teams belong to individual sites. Roles that appear inside sites are scoped just
 
 Users represent physical users of the system. These are the user accounts that people use to log into the system. By default, users get their own private sites with public and private pages that they can manage themselves. Users' personal sites are important: they enable users to have their own public blog or their own private calendar, a place to store their documents, and more. However, if you don't want want users to have personal sites, this default behavior can be turned off by a portal administrator in the portal-ext.properties configuration file. Liferay uses site templates to control the default portlets that appear on the public and private pages of user's personal sites. Templates are covered later in this chapter.
 
-Users can be collected in multiple ways. They can be members of organization hierarchies, such as Liferay, Inc. → Security → Internet Security. They can be collected into arbitrary user groups, such as Bloggers, which could be used to set apart users who get a Blog page in their personal space from users who do not. They can be members of independent sites which draw together common interests. And they can have roles which define their permissions in the system, and these roles can be scoped by portal, organization, or site.
+Users can be collected in multiple ways. They can be members of organization hierarchies, such as Liferay, Inc. -> Security -> Internet Security. They can be collected into arbitrary user groups, such as Bloggers, which could be used to set apart users who get a Blog page in their personal space from users who do not. They can be members of independent sites which draw together common interests. And they can have roles which define their permissions in the system, and these roles can be scoped by portal, organization, or site.
 
 ### User Groups
 
@@ -288,11 +288,11 @@ Click the *Actions* button next to the new organization you have created. You wi
 
 **Add User:** Adds a new user in the portal who will be a member of this organization.
 
-**Add Regular Organization: **Lets you add a child organization to this organization. This is how you create hierarchies of organizations with parent-child relationships.
+**Add Regular Organization:** Lets you add a child organization to this organization. This is how you create hierarchies of organizations with parent-child relationships.
 
-**Add Location: **Lets you add a child Location, which is a special type of organization that cannot have any children added to it.
+**Add Location:** Lets you add a child Location, which is a special type of organization that cannot have any children added to it.
 
-**Delete: **Deletes this organization from the portal. You will have to ensure that the organization has no users in it first.
+**Delete:** Deletes this organization from the portal. You will have to ensure that the organization has no users in it first.
 
 If you click the **View** button at the top of the **Users and Organizations** page and select **View Hierarchy** you can view both a list of users who are members of this organization and a list of all the suborganizations of this organization.
 
@@ -499,14 +499,14 @@ Note: If you are using Liferay 5.2 or a previous verion and you decide to remove
 
 Teams don't appear as a link in the control panel because they exist *within* sites. Teams can be used when you need to create a bucket for permissions within a a single site. If you create a team for one site, it will not be available to any other sites. This is beneficial when you want a particular set of users and permissions for a site-specific function.
 
-To create a team within a site, first naviagte to the *Control Panel → Sites* page then and then select *Actions → Manage Memberships* for the site within which you want to create a team. Finally, click *View → Teams* and click the Add Team button.
+To create a team within a site, first naviagte to the *Control Panel ->  Sites* page then and then select *Actions ->  Manage Memberships* for the site within which you want to create a team. Finally, click *View ->  Teams* and click the Add Team button.
 
 ![creating a team within a site](../../images/01-creating-a-team.png)
 *Illustration 16: Creating a team within a site*
 
-After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions → Assign Members*.
+After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions ->  Assign Members*.
 
-Permission management for teams is handled at the individual portlet level, using the *Options → Configuration → Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
+Permission management for teams is handled at the individual portlet level, using the *Options ->  Configuration ->  Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
 
 [assigning portlet permissions to a team](../../images/01-assigning-portlet-permissions-to-teams)*Assigning portlet permissions to a team*
 

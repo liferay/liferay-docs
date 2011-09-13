@@ -90,10 +90,8 @@ want to change the scope, it only takes a few simple steps.
 5.  Click *Save*.
 
 ![image](../../images/portal-admin-ch5_html_2c05ad6b.jpg)*Illustration 1: Changing
-the scope for a portlet *
+the scope for a portlet*
 
-\
-\
 That's all it takes to change the scope for a particular portlet
 instance. By setting the scope to *page*, you can add as many of these
 portlets to a particular community or organization as you want, provided
@@ -117,7 +115,7 @@ tab.
 There is only one field to fill out: a name for your archive. Create a
 name for your archive and click *Save*. You will now see your archive in
 the list. If for whatever reason you need to revert the portlet to these
-archived settings, you can click *Actions → Restore* next to the
+archived settings, you can click *Actions ->  Restore* next to the
 archived setup you want to restore.
 
 Unless otherwise noted, all of the portlets in this chapter support this
@@ -178,15 +176,13 @@ Facebook. Once you have done this, you can copy and paste their values
 into the Facebook tab. Your portlet will now be available on Facebook as
 a Facebook application.
 
-### 
-
-![image](../../images/portal-admin-ch5_html_m435d3961.png)\
+![image](../../images/portal-admin-ch5_html_m435d3961.png)
 *Illustration 2: Liferay's forums in Facebook*
 
 ### Google Gadget
 
 iGoogle is service provided by Google that lets users create a
-customizable page and add *Gadgets * to that page. Liferay can serve up
+customizable page and add *Gadgets* to that page. Liferay can serve up
 portlets to be used as Google Gadgets on an iGoogle page.
 
 Check the box labeled *Allow users to add [portlet-name] to iGoogle*.
@@ -207,7 +203,7 @@ Netvibes offers a similar service to iGoogle – users can log in, create
 their own personal portal, called a *dashboard,* and add customizable
 widgets to the dashboard that they create. To set up Netvibes support
 for a particular portlet, check the *Allow users to add [portlet-name]
-to Netvibes pages *box. You can then use the provided URL to create a
+to Netvibes pages* box. You can then use the provided URL to create a
 custom Netvibes widget based on the instance of the portlet that you're
 using.
 
@@ -243,7 +239,7 @@ that if you have something important and interesting to say, somebody
 will read it.
 
 ![image](../../images/portal-admin-ch5_html_6847c073.jpg)*Illustration 3: Slashdot,
-one of the first blogs on the Internet *
+one of the first blogs on the Internet*
 
 Liferay Portal has a portlet called the Blogs portlet which allows you
 to provide a blogging service to users of your web site. In fact,
@@ -256,10 +252,10 @@ use both of these portlets to create a blogging site for your users.
 ### The Blogs Portlet
 
 ![image](../../images/portal-admin-ch5_html_m5350d888.jpg)*Illustration 4: Initial
-view of the Blogs portlet *
+view of the Blogs portlet*
 
 The Blogs portlet is available from the *Collaboration* section of the
-*Add **→** More* menu. You will notice that it is an Instanceable
+*Add More* menu. You will notice that it is an Instanceable
 portlet, meaning that it can only be added once to any community or
 organization. This allows you to use the Blogs portlet to create a
 shared blog to build a site like Slashdot or to create multiple personal
@@ -282,17 +278,17 @@ The Blogs portlet is easy to configure. Click on the *Menu* icon in the
 portlet's title bar and select *Configuration*. Beneath the Setup tab,
 you will see another row of options.
 
-**Email From: **Selecting the *Email From tab* allows you to define the
+**Email From:** Selecting the *Email From tab* allows you to define the
 *From:* field in the email messages that users receive from the Blogs
 portlet.
 
-**Entry Added Email: **This option allows you to enter a subject and
+**Entry Added Email:** This option allows you to enter a subject and
 body of the emails sent out when a new Blog entry has been added.
 
 **Entry Updated Email:** This option allows you to enter a subject and
 body of the emails sent out when a new Blog entry has been updated.
 
-**Display Settings: ** Here, you can configure the various display
+**Display Settings:** Here, you can configure the various display
 options for the Blogs portlet.
 
 ![image](../../images/portal-admin-ch5_html_m1aaf3fd4.png)*Illustration 5: Blogs
@@ -302,6 +298,7 @@ The *Display Settings* tab lets you configure the formatting of the
 Blogs portlet. You can choose the most optimal ways to display your
 entries as well as configure how you want your users to interact with
 you as you post those entries.
+
 **Maximum Items to Display:** This allows you to choose the total number
 of blog entries to display on the initial page. You can choose up to 100
 to be displayed.
@@ -311,7 +308,7 @@ the Title. Setting this to Abstract causes Liferay to display only the
 first 30 words of your blog entries, with a Read More link at the bottom
 of each to allow users to read the whole entry if they wish.
 
-**Enable Flags: **Allow users to flag content as inappropriate and send
+**Enable Flags:** Allow users to flag content as inappropriate and send
 an email to the administrators.
 
 **Enable Ratings:** Allows you to enable your users to rate your blog
@@ -332,7 +329,7 @@ entries will be displayed at once. The default is set to twenty.
 **Display Style**: You can select to display the full content,
 abstracts, or title of your blogs.
 
-**Format: **You can choose which format you want to deliver your blogs:
+**Format:** You can choose which format you want to deliver your blogs:
 RSS 1.0, RSS 2.0, or Atom 1.0.
 
 #### Permissions
@@ -351,8 +348,7 @@ have the ability to add blog entries, and then click *Save*.
 
 #### Adding Blog Entries
 
-Now you're ready to begin adding blog entries. Click the *Add Blog
-Entry* button. You will see the following data entry screen:
+Now you're ready to begin adding blog entries. Click the *Add Blog Entry* button. You will see the following data entry screen:
 
 ![image](../../images/portal-admin-ch5_html_m7930fe68.jpg)*Illustration 6: Adding a
 Blog entry*
@@ -396,7 +392,7 @@ looks like when the display style is set to *Abstract* and the number of
 entries is set to 10:
 
 ![image](../../images/portal-admin-ch5_html_m27a1d62c.jpg)*Illustration 7: First blog
-entry added *
+entry added*
 
 You can see that in the summary view, you don't see the trackback /
 pingback link, and you only see the number of comments which have been
@@ -419,7 +415,7 @@ You can set up a whole web site devoted just to blogging if you wish.
 The Blogs Aggregator portlet allows you to publish entries from multiple
 bloggers on one page, giving further visibility to blog entries. This
 portlet is also very easy and straightforward to set up. You can add it
-to a page from the Collaboration category in the *Add **→** More* menu
+to a page from the Collaboration category in the *Add More* menu
 in the dock.
 
 If you click *Configuration* from the menu button in the title bar of
@@ -469,9 +465,7 @@ iCalendar format for use in other applications.
 
 In a similar way to the Blogs portlet, you can use the Calendar portlet
 as a shared calendar on a community or organization's web site, or you
-can use the Calendar portlet as a personal calendar—or both.
-
-### 
+can use the Calendar portlet as a personal calendar -- or both.
 
 ![image](../../images/portal-admin-ch5_html_m227004cd.jpg)*Illustration 9: The
 Liferay Calendar Portlet*
@@ -599,6 +593,7 @@ The Chat portlet is very simple to use. To change the settings, click
 Here you can set your status, whether to show if you are online, and
 whether to play a sound if someone sends you a message while you have
 the window or tab in the background.
+
 The portlet shows you the number of your friends who are online. To chat
 with one of them, click the *Online Friends* link and then click the
 friend's name. You can then begin chatting with him or her. You can have
@@ -629,11 +624,9 @@ you can install the Mail portlet by going to the Control Panel, clicking
 button. Find the *Mail* portlet in the list, click on it, and then click
 *Install*.
 
-![image](../../images/portal-admin-ch5_html_4795fd88.png)\
+![image](../../images/portal-admin-ch5_html_4795fd88.png)
 *Illustration 11: Liferay Mail portlet*
 
-\
-\
 To connect the Mail portlet with an email account, click the *Add a New
 Email Account* link. From there, you are given a choice between a Custom
 email Account or a Gmail Account. Choose the option that you wish, and
@@ -706,7 +699,7 @@ you can concentrate on building out the site that you want to build.
 The Message Boards portlet has a lot of configuration options, but they
 are straightforward to use and are the reason why this portlet is a
 full-featured forum application for your web site. To get started, add a
-Message Boards portlet to your site. Once it is added, click the M*enu*
+Message Boards portlet to your site. Once it is added, click the *Menu*
 icon in the portlet's title bar and click *Configuration*. There are two
 rows of tabs. The first tab in the top row is titled simply, *Setup*.
 This is where you can configure the application the way you want it to
@@ -714,7 +707,7 @@ behave on your site.
 
 ### General
 
-The first tab beneath *Setup* is labeled *General.* Here, you can enable
+The first tab beneath *Setup* is labeled *General*. Here, you can enable
 anonymous posting, flags and ratings. All three options are selected by
 default.
 
@@ -797,15 +790,11 @@ In addition to ranks, you can also select who is a “moderator” by what
 roles are held. Defaults are there for you which show you how to do
 this.
 
-Moderator=community-role:Message Boards Administrator
-
-Moderator=organization:Message Boards Administrator
-
-Moderator=organization-role:Message Boards Administrator
-
-Moderator=regular-role:Message Boards Administrator
-
-Moderator=user-group:Message Boards Administrator
+    Moderator=community-role:Message Boards Administrator
+    Moderator=organization:Message Boards Administrator
+    Moderator=organization-role:Message Boards Administrator
+    Moderator=regular-role:Message Boards Administrator
+    Moderator=user-group:Message Boards Administrator
 
 As you can see, all you need to do is set the rank, the collection type,
 and the name of the type. In the example above, anyone who has a
@@ -865,9 +854,9 @@ Next, there are two sections: *Incoming* and *Outgoing*. These define
 the mail settings for receiving mail and for sending mail. The Incoming
 tab has the following options:
 
-**Protocol:* ***Select POP or IMAP.
+**Protocol:** Select POP or IMAP.
 
-**Server Name: **Enter the host name of the mail server you are using.
+**Server Name:** Enter the host name of the mail server you are using.
 
 **Server Port:** Enter the port on which your mail service is running.
 
@@ -960,14 +949,14 @@ boards are familiar with BBCode and are used to it, and the editor that
 is provided for Liferay's Message Boards portlet makes it very easy to
 use.
 
-![image](../../images/portal-admin-ch5_html_2b49b027.jpg)*Illustration 12: Editing a
-message boards post. You can see the emoticons that are available in the
-editor. *
+![image](../../images/portal-admin-ch5_html_2b49b027.jpg)
+*Illustration 12: Editing a message boards post. You can see the emoticons that are available in the editor.*
 
 Users who have Moderator access to the board can modify the priority of
 messages. You can also use the editor to quote from messages that you
 are replying to, to insert emoticons, to add preformatted text, and
 more.
+
 Messages that are posted to the message boards are shown by default in a
 threaded view so that replies are attached to the proper parent message.
 This makes it easy to follow along with conversations.
@@ -1009,16 +998,14 @@ to administer a Message Boards portlet in only the community or
 organization in which they have the role.
 
 Go to the Control Panel and create this role. Once it is created, click
-*Actions → Define Permissions*. Click the *Portlet Permissions* button.
+*Actions -> Define Permissions*. Click the *Portlet Permissions* button.
 Browse the list until you find the Message Boards portlet and then click
 on it. You will then see a screen which allows you to configure the
 various permissions on the portlet.
 
-![image](../../images/portal-admin-ch5_html_m1dfc555f.png)\
+![image](../../images/portal-admin-ch5_html_m1dfc555f.png)
 *Illustration 13: Configuring Message Board Administrators role*
 
-\
-\
 Grant the permissions you wish message board administrators to have and
 then click *Save*. You can then add users to this role and they will
 inherit the permissions.
@@ -1049,7 +1036,7 @@ threads. Sometimes users begin discussing topics that are inappropriate
 or which reveal information which should not be revealed. In this case,
 you can simply delete the thread from the message boards. This is easy
 to do. First, view the list of threads. Next to every thread is an
-*Actions* button. Click *Actions → Delete* to delete the thread. This
+*Actions* button. Click *Actions ->  Delete* to delete the thread. This
 does not prevent users from re-posting the information, so you may need
 to be vigilant in deleting threads or consider the next option.
 
@@ -1095,7 +1082,7 @@ Permissions can be set not only on threads, but also on individual
 posts. You can choose to limit a particular conversation or a post to
 only a select group of people. To do this, click the *Permissions* link
 on the post and then select among the *Delete, Permissions, Subscribe,
-Update, *and* View* permissions for the particular role to which you
+Update, and View* permissions for the particular role to which you
 want to grant particular access.
 
 This function can be used to make it so some privileged users can post
@@ -1138,7 +1125,7 @@ WikiCreole's advanced features.
 ### Getting Started with the Liferay Wiki
 
 The Wiki portlet works just like the other portlets developed by
-Liferay. Add the portlet to a page using the *Add **→** More* menu and
+Liferay. Add the portlet to a page using the *Add More* menu and
 then click *Configuration* in the portlet menu in the Wiki portlet's
 title bar. You'll see some options are likely to be familiar to you by
 now such as sharing the application with websites, Facebook, Google
@@ -1147,7 +1134,7 @@ Gadgets, etc.
 You will also notice that the Communication tab has some additional
 options not seen in the other portlets.
 
-![image](../../images/portal-admin-ch5_html_19eab582.png)\
+![image](../../images/portal-admin-ch5_html_19eab582.png)
 *Illustration 14: Communication tab of Wiki portlet*
 
 The Communication tab allows you to configure communication across
@@ -1155,6 +1142,7 @@ portlets, using predefined public render parameters. From here you can
 modify four public render parameters: `nodeId`{.western},
 `title`{.western}, `categoryId`{.western} and `tag`{.western}. For each
 parameter you can select:
+
 -   Ignore the values for this parameter that come from other portlets.
     For example, the wiki portlet can be used along with the Tags
     Navigation portlet. When a user clicks on a tag in the Tags
@@ -1263,44 +1251,29 @@ You can now begin to add content to the page. Notice that there is a
 very convenient “cheat sheet” which can help with the wiki syntax. You
 can use this syntax to format your wiki pages. Consider for example the
 following wiki document:
-== Welcome to Our Wiki! ==
 
-\
-\
+    == Welcome to Our Wiki! ==
 
 This is our new wiki, which should allow us to collaborate on
 documentation. Feel free to add pages showing people how to do stuff.
 Below are links to some sections that have already been added.
 
-\
-\
-
-[[Introduction ]]
-
-\
-\
-
-[[Getting Started]]
-
-\
-\
-
-[[Configuration]]
-
-\
-\
-
-[[Development]]
-
-\
-\
-
-[[Support]]
-
-\
-\
-
-[[Community]]
+    [[Introduction ]]
+    
+    
+    [[Getting Started]]
+    
+    
+    [[Configuration]]
+    
+    
+    [[Development]]
+    
+    
+    [[Support]]
+    
+    
+    [[Community]]
 
 This would produce the following wiki page:
 
@@ -1364,7 +1337,7 @@ page as an RSS feed in three formats: RSS 1.0, RSS 2.0, and Atom 1.0.
 **Email Subscription:** Contains links allowing you to subscribe to the
 entire wiki or just to this page.
 
-**Advanced Actions: **Contains links allowing you to modify the
+**Advanced Actions:** Contains links allowing you to modify the
 permissions on the page, make a copy of the page, move (rename) the
 page, or delete the page.
 
@@ -1430,7 +1403,7 @@ There are two ways to create tags: you can do it through the
 administrative console in the control panel, or on the fly as content is
 created.
 
-![image](../../images/portal-admin-ch5_html_73b7305.png)\
+![image](../../images/portal-admin-ch5_html_73b7305.png)
 *Illustration 17: The Add Tag dialog*
 
 To create tags in the control panel, select the community that you want
@@ -1439,6 +1412,7 @@ able to view any existing tags and make new ones. To create a new tag,
 simply click *Add Tag*. You then be asked for the name of the tag, and
 you'll also have the ability to set permissions for viewing or managing
 the tag.
+
 From the *Tags* screen on the control panel, you can also edit existing
 tags. You can change the tag name, change the tag's permissions, delete
 the tag, or add *Properties*. Properties are essentially tags for your
@@ -1448,7 +1422,7 @@ tags; you can use them to add additional information about your tags.
 
 Categories are similar in concept to tags, but are designed with the
 administrator in mind, not the end user. Hierarchies of categories can
-be created, and categories can be grouped together in *Vocabularies.*
+be created, and categories can be grouped together in *Vocabularies*.
 Where tags represent an ad hoc method for users to group content
 together, categories exist to allow administrators to organize content
 in a more official, hierarchical structure. As has been said in Chapter
@@ -1461,15 +1435,16 @@ you've selected the community or organization you want to work on,
 select *Categories *from the content section of the control panel, and
 you will be presented with the categories administration screen.
 
-![image](../../images/portal-admin-ch5_html_203f5177.png)\
+![image](../../images/portal-admin-ch5_html_203f5177.png)
 *Illustration 18: Categories administration*
 
 Clicking on a vocabulary on the left will display any categories that
 have been created under that vocabulary. You can create new vocabularies
 simply by clicking *Add Vocabulary* and providing a name for it. You can
 create categories in a similar fashion by choosing a vocabulary on the
-left, and then selecting *Add Category.* Like tags, you can also provide
+left, and then selecting *Add Category*. Like tags, you can also provide
 properties for categories.
+
 Once you have created some vocabularies and categories, you can take
 advantage of the full capabilities of categories by creating a nested
 hierarchy of categories. To nest categories, select what you want to be
@@ -1499,7 +1474,7 @@ In order to better show which users are making real, valuable
 contributions, Liferay is introducing the new Social Equity system with
 Liferay 6.
 
-![image](../../images/portal-admin-ch5_html_m6daa4ee7.png)\
+![image](../../images/portal-admin-ch5_html_m6daa4ee7.png)
 *Illustration 20: The Social Equity control panel*
 
 Social Equity enables you to assign values and weight for each
@@ -1515,24 +1490,24 @@ Value, Information Lifespan, Daily Limit, Participation Value,
 Participation Lifespan, *and *Daily Limit*.
 
 **Information Value:** Indicates how many points a user receives for the
-information content of a specific action.** **
+information content of a specific action.
 
-**Information Lifespan: **Indicates, in number of days, how long it will
+**Information Lifespan:** Indicates, in number of days, how long it will
 be before the information points expire. Setting it to 0 means that they
-will never expire.** **
+will never expire.
 
-**Daily Limit: **This is the maximum number of actions of this type that
-a user will receive information points for in a given day.** **
+**Daily Limit:** This is the maximum number of actions of this type that
+a user will receive information points for in a given day.
 
 **Participation Value:** Indicates how many points a user receives for
-the participating in the content creation of the website.** **
+the participating in the content creation of the website.
 
-**Participation Lifespan: **Indicates, in number of days, how long it
+**Participation Lifespan:** Indicates, in number of days, how long it
 will be before the participation points expire. Setting it to 0 means
-that they will never expire.** **
+that they will never expire.
 
-**Daily Limit: **This is the maximum number of actions of this type that
-a user will receive participation points for in a given day.** **
+**Daily Limit:** This is the maximum number of actions of this type that
+a user will receive participation points for in a given day.
 
 The actions available that you can provide credit for are wide ranging.
 Users can receive credit for everything from writing wiki pages to
@@ -1593,6 +1568,3 @@ Liferay's collaboration platform is a full suite of integrated
 applications that empower users to work together. You can use them to
 great effect to enhance your web site and to build a vibrant, active
 community.
-
-\
-

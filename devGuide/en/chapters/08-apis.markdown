@@ -1,28 +1,294 @@
 # Liferay APIs
 
-This chapter provides you with a brief overview of several of the
-essential APIs by Liferay to developers. An API
-is any programing interface that you can invoke from your own code
-either directly through a Java invocation or through web services to
-perform a certain action.
+This chapter provides an overview of several of the
+essential Liferay *application programming interfaces* (*APIs*) available to
+developers. An API is a programing interface that can be invoked from your own
+code, either directly through a Java invocation or through web services, to
+perform an action or set of actions.
 
-This chapter will keep evolving with more information about the existing
-APIs and frameworks and how to use it. So look back for more information
-often.
+Liferay comes with a host of APIs that expose powerful portal and portlet
+services. You can access Liferay's built-in *portal* services for such entities
+as User, Organization, UserGroup, Company, Role, Permission, ResourcePermission
+and Layout. In addition, Liferay's built-in *portlet* services for which APIs
+are provided include the blogs, wikis, assets, social equity, and the
+Document & Media Library services.
 
-## Accessing Services (new)
+The APIs can be called via Java method or web service invocations giving you
+flexibility to implement client code in Java or other languages (even a
+scripting language such as PHP) that support web service invocations.  The APIs
+can be called from within a portlet or non-portlet code. You can make calls to
+the APIs *locally* from within the portal or *remotely* outside of the
+*Java virtual machine* (*JVM*) in which the portal is running.  So, let's look
+at in more detail at how we can access Liferay APIs.
 
-### Local Access (new)
+## Local Access
 
-### Remote Access (new)
+Each service built with Service Builder provides a local interface to clients
+running in the same JVM as the portal. Since Liferay's portal and portlet
+services are built using the Service Builder, their public service methods can
+be accessed through static methods provided by auto-generated
+`-LocalServiceUtil` classes.
 
-#### SOAP Web Services (new)
+The following JSP code snippet demonstrates
+how to get a list of the most recent bloggers from an organization. It invokes static method
+`getOrganizationStatsUsers()` on `-LocalServiceUtil` class `BlogsStatsUserLocalServiceUtil`:
 
-#### JSON Web Services (new)
+    <%@ page import="com.liferay.portlet.blogs.service.BlogsStatsUserLocalServiceUtil" %>
+    <%@ page import="com.liferay.portlet.blogs.util.comparator.StatsUserLastPostDateComparator" %>
+    ...
+    <%@
+    List statsUsers = BlogsStatsUserLocalServiceUtil.getOrganizationStatsUsers(
+        organizationId, 0, max, new StatsUserLastPostDateComparator());
+    %>
 
-### Client Examples (new)
+## Remote Access
+
+Services are also made available to *remote* clients (clients running outside of the portal JVM). Service Builder generates remote interfaces for
+your entities if their `remote-service` attribute is set to `true` in your
+portlet's `service.xml`. Here is an example of how remote services are turned
+on for Liferay's `Country` entity:
+
+    <entity name="Country" local-service="false" remote-service="true">
+\
+
+The generated services can be accessed using web services or Java RMI.
+We'll explore how to user web services to invoke several remote services.
+
+### SOAP Web Services
+
+Service Builder generates classes to use your services via
+*Simple Object Access Protocol* (*SOAP*) over HTTP. SOAP is the
+*packaging* protocol and HTTP is the *transport* protocol. For our
+example, we'll look at the SOAP web service classes for Liferay's `Company`,
+`User`, and `UserGroup` portal services to accomplish the following:
+
+1. List each `UserGroup` to which user `joebloggs` belongs
+2. Add a new `UserGroup` named `MyGroup` 
+3. Add user `joebloggs` to the `UserGroup` 
+\
+
+Here are the SOAP related classes that we'll use:
+
+    com.liferay.client.soap.portal.model.CompanySoap
+    com.liferay.client.soap.portal.service.http.CompanyServiceSoap
+    com.liferay.client.soap.portal.service.http.CompanyServiceSoapServiceLocator
+
+    com.liferay.client.soap.portal.model.UserGroupSoap
+    com.liferay.client.soap.portal.service.http.UserServiceSoap
+    com.liferay.client.soap.portal.service.http.UserServiceSoapServiceLocator
+
+    com.liferay.client.soap.portal.service.http.UserGroupServiceSoap
+    com.liferay.client.soap.portal.service.http.UserGroupServiceSoapServiceLocator
+\
+    
+You can see in the listing a naming convention involving classes with
+suffixes `-ServiceSoapServiceLocater`, `-ServiceSoap`, and `-Soap`. The
+`-ServiceSoapServiceLocater` class finds the `-ServiceSoap` by means of the
+service's URL you provide. The `-ServiceSoap` class implements the Java Remote
+Method Invocation (RMI) interface bound to the the services specified in the
+*Web Services Definition Language* (*WSDL*) file for each service. Lastly,
+`-SOAP` classes are the serializeable implementations of the models.  Let's
+look at how to determine the URLs for these services.
+\
+\
+
+Service Builder was used to publish these services as a web services.  You
+can view a listing of the services deployed on your portal by opening your
+browser to the URL of the format `http://host:port/tunnel-web/secure/axis`
+for your *secure* services (services requiring user authentication) and
+`http://host:port/tunnel-web/axis` for your services that do not require
+user authentication. We've used *secure* services such as the following for
+`UserGroup`:
+
+![Figure 8.1: UserGroup Web Service listing](../../images/wsdl-summary-listing.png)
+
+Each web service is listed with its name, operations, and a link to its WSDL
+file. The WSDL is written in XML and provides a model for describing and
+locating the web service.
+
+![Figure 8.2: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.png)
+
+You pass in the WSDL URL along with your login credentials to the SOAP service
+locator for your service.
+
+The following code demonstrates locating and invoking operations to add a new
+`UserGroup` named `MyUserGroup` and assign user with screen name `joebloggs`
+to that `UserGroup`:
+
+    import java.net.URL;
+
+    import com.liferay.client.soap.portal.model.CompanySoap;
+    import com.liferay.client.soap.portal.model.UserGroupSoap;
+    import com.liferay.client.soap.portal.service.http.CompanyServiceSoap;
+    import com.liferay.client.soap.portal.service.http.CompanyServiceSoapServiceLocator;
+    import com.liferay.client.soap.portal.service.http.UserGroupServiceSoap;
+    import com.liferay.client.soap.portal.service.http.UserGroupServiceSoapServiceLocator;
+    import com.liferay.client.soap.portal.service.http.UserServiceSoap;
+    import com.liferay.client.soap.portal.service.http.UserServiceSoapServiceLocator;
+
+    public class WSUserGroup {
+	    public static void main(String[] args) {
+
+		    try {
+			    String remoteUser = "joebloggs";
+			    String password = "test";
+			    String virtualHost = "localhost";
+			
+			    String groupName = "MyUserGroup";
+
+			    String serviceCompanyName = "Portal_CompanyService";
+			    String serviceUserName = "Portal_UserService";
+			    String serviceUserGroupName = "Portal_UserGroupService";
+
+			    // Locate the Company
+			    CompanyServiceSoapServiceLocator locatorCompany =
+				    new CompanyServiceSoapServiceLocator();
+
+			    CompanyServiceSoap soapCompany =
+				    locatorCompany.getPortal_CompanyService(
+					    _getURL(remoteUser, password, serviceCompanyName, true));
+
+			    CompanySoap companySoap =
+				    soapCompany.getCompanyByVirtualHost(virtualHost);
+
+			    // Locate the User service
+			    UserServiceSoapServiceLocator locatorUser =
+				    new UserServiceSoapServiceLocator();
+			    UserServiceSoap userSoap = locatorUser.getPortal_UserService(
+				    _getURL(remoteUser, password, serviceUserName, true));
+
+			    // Get the ID of the remote user
+			    long userId = userSoap.getUserIdByScreenName(
+				    companySoap.getCompanyId(), remoteUser);
+			    System.out.println(remoteUser + " id is " + userId);
+
+			    // Locate the UserGroup service
+			    UserGroupServiceSoapServiceLocator locator =
+				    new UserGroupServiceSoapServiceLocator();
+			    UserGroupServiceSoap usergroupsoap =
+				    locator.getPortal_UserGroupService(
+					    _getURL(remoteUser, password, serviceUserGroupName, true));
+
+			    // Get the user's user groups
+			    UserGroupSoap[] usergroups = usergroupsoap.getUserUserGroups(userId);
+			    System.out.println("User groups for user " + userId + " ...");
+			    for (int i = 0; i < usergroups.length; i++) {
+				    UserGroupSoap usergroup = usergroups[i];
+				    System.out.println(
+					    usergroup.getCompanyId() + "\t" +
+					    usergroup.getUserGroupId() + "\t" +
+					    usergroup.getName() + "\t" +
+					    usergroup.getDescription());
+			    }
+
+			    // Adds the user group
+			    String groupName = groupName;
+			    String groupDesc = "My new user group";
+			    UserGroupSoap group = usergroupsoap.addUserGroup(
+				    groupName, groupDesc, 0, 0);
+
+				// Add the user to the user group
+			    long users[] = {userId};
+			    userSoap.addUserGroupUsers(group.getUserGroupId(), users);
+		    }
+		    catch (Exception e) {
+			    e.printStackTrace();
+		    }
+	    }
+
+	    private static URL _getURL(String remoteUser, String password,
+		    String serviceName, boolean authenicate)
+	    throws Exception {
+		    //Unathenticated url
+
+		    String url = "http://localhost:8080/tunnel-web/axis/" + serviceName;
+		    //Authenticated url
+		    if (authenicate) {
+			    url = "http://" + remoteUser + ":" + password +
+				    "@localhost:8080/tunnel-web/secure/axis/" + serviceName;
+		    }
+		    return new URL(url);
+	    }
+    }
+\
+
+Some things to note about the URL:
+
+- It is *secure* (authenticated) URL for the service. Authentication is done
+using HTTP Basic Authentication, which of course is not appropriate for a
+production environment, since the password is unencrypted.
+- The screen name and password are passed in as credentials.  The
+authorization type specified for your portal's company dictates the
+authorization type you must use to access your web service. You can override
+the `company.security.auth.type` found in `portal.properties` by specifying
+your desired authorization type in your `portal-ext.properties`. Valid
+authorization type values are:
+    - `screenName`
+    - `userId`
+    - `emailAddress`
+- The name of the service (e.g., `Portal_UserGroupService`) is specified at the
+end of the URL. Remember that the service name can be found in the web
+service listing like the one we looked at previously.
+\
+
+The operations `getCompanyByVirtualHost()`,  `getUserIdByScreenName()`,
+`getUserUserGroups()`, `addUserGroup()` and `addUserGroupUsers()` are specified
+for the `-ServiceSOAP` classes `CompanyServiceSoap`, `UserServiceSoap` and 
+`UserGroupServiceSoap` in the WSDL files. Information on parameter types,
+parameter order, request type, response type, and return type
+are conveniently specified in the WSDL for each Liferay web service!
+\
+
+Now, let's say you want write your client in a language other than Java ...
+no problem! You can use any language that supports web services invocation.
+
+The following invokes the same operations using PHP and the PHP SOAP Client:
+
+    <?php
+        $groupName = "MyGroup";
+        $userName = "joebloggs";
+        $clientOptions = array(
+	        'login' => $userName,
+	        'password' => 'test');
+
+        // Add user group
+
+        $userGroupClient = new SoapClient(
+	        "http://localhost:8080/tunnel-web/secure/axis/Portal_UserGroupService?wsdl",
+	        $clientOptions);
+        $group = $userGroupClient->addUserGroup($groupName, "This is my group", 0, 0);
+        print "group id for " . $groupName . " is " . $group->userGroupId . "\n";
+
+        // add user to user group
+
+        $companyClient = new SoapClient(
+	        "http://localhost:8080/tunnel-web/secure/axis/Portal_CompanyService?wsdl",
+	        $clientOptions);
+        $company = $companyClient->getCompanyByVirtualHost("localhost");
+        $userClient = new SoapClient(
+	        "http://localhost:8080/tunnel-web/secure/axis/Portal_UserService?wsdl",
+	        $clientOptions);
+        $userId = $userClient->getUserIdByScreenName($company->companyId, $userName);
+        print "user id for " . $userName . " is " . $userId . "\n";
+
+        $users = array($userId);
+        $userClient->addUserGroupUsers($group->userGroupId, $users);
+
+        // get and print user groups to which user belongs
+
+        $userGroups = $userGroupClient->getUserUserGroups($userId);
+        print "user groups for user " . $userId . " ...\n";
+        foreach($userGroups as $k=>$v)
+            print ($v->name) . " " . $v->userGroupId . "\n";
+    ?>
+\  
+
+### JSON Web Services (new)
+
+TODO consider calling a method that uses service context (like an update method)
 
 ## RESTful Interfaces (new)
+
 TODO Include Atom and loose serialization with JSON 
 
 ## Security and Permissions
@@ -41,51 +307,29 @@ be used by each portlet within its definition in portlet.xml. For
 example, the Blogs portlet definition included in Liferay references 3
 roles`:`{.western}
 
-<portlet\>
-
-<portlet-name\>33</portlet-name\>
-
-<display-name\>Blogs</display-name\>
-
-<portlet-class\>com.liferay.portlet.StrutsPortlet</portlet-class\>
-
-<init-param\>
-
-<name\>view-action</name\>
-
-<value\>/blogs/view</value\>
-
-</init-param\>
-
-<expiration-cache\>0</expiration-cache\>
-
-<supports\>
-
-<mime-type\>text/html</mime-type\>
-
-</supports\>
-
-<resource-bundle\>com.liferay.portlet.StrutsResourceBundle</resource-bundle\>
-
-<security-role-ref\>
-
-<role-name\>guest</role-name\>
-
-</security-role-ref\>
-
-**<security-role-ref\>**
-
-**<role-name\>power-user</role-name\>**
-
-**</security-role-ref\>**
-
-<security-role-ref\>
-
-<role-name\>user</role-name\>
-
-</security-role-ref\>
-
-</portlet\>
+    <portlet>
+	<portlet-name>33</portlet-name>
+	<display-name>Blogs</display-name>
+	<portlet-class>com.liferay.portlet.StrutsPortlet</portlet-class>
+	<init-param>
+	    <name>view-action</name>
+	    <value>/blogs/view</value>
+	</init-param>
+	<expiration-cache>0</expiration-cache>
+	<supports>
+	    <mime-type>text/html</mime-type>
+	</supports>
+	<resource-bundle>com.liferay.portlet.StrutsResourceBundle</resource-bundle>
+	<security-role-ref>
+	    <role-name>guest</role-name>
+	</security-role-ref>
+	<security-role-ref>
+	    <role-name>power-user</role-name>
+	</security-role-ref>
+	<security-role-ref>
+	    <role-name>user</role-name>
+	</security-role-ref>
+    </portlet>
 
 These roles need to be mapped to specific roles within the portal. The
 reason for this mapping is to allow the deployer of a portlet to solve
@@ -104,62 +348,42 @@ liferay-portlet.xml. For example see definition of mapping inside
 `liferay-portlet.xml`{.western} in
 `portal-web/docroot/WEB-INF:`{.western}
 
-<role-mapper\>
+    <role-mapper>
+	<role-name>administrator</role-name>
+	<role-link>Administrator</role-link>
+    </role-mapper>
+    <role-mapper>
+	<role-name>guest</role-name>
+	<role-link>Guest</role-link>
+    </role-mapper>
+    <role-mapper>
+	<role-name>power-user</role-name>
+	<role-link>Power User</role-link>
+    </role-mapper>
+    <role-mapper>
+	<role-name>user</role-name>
+	<role-link>User</role-link>
+    </role-mapper>
 
-<role-name\>administrator</role-name\>
-
-<role-link\>Administrator</role-link\>
-
-</role-mapper\>
-
-<role-mapper\>
-
-<role-name\>guest</role-name\>
-
-<role-link\>Guest</role-link\>
-
-</role-mapper\>
-
-**<role-mapper\>**
-
-**<role-name\>power-user</role-name\>**
-
-**<role-link\>Power User</role-link\>**
-
-**</role-mapper\>**
-
-<role-mapper\>
-
-<role-name\>user</role-name\>
-
-<role-link\>User</role-link\>
-
-</role-mapper\>
-
-\
-\
-
-This means that if a portlet definition references the role “power-user”
+This means that if a portlet definition references the role “power-user�?
 it will be mapped to the Liferay role in its database called “Power
-User”.
+User�?.
 
 In your portlet's code you can then use methods as defined in portlet
 specification:
 
-• getRemoteUser ()
+    • getRemoteUser ()
+    
+    • isUserInRole()
+    
+    • getUserPrincipal ()
 
-• isUserInRole()
-
-• getUserPrincipal ()
-
-For example to check if the current user has the “Power User” role the
+For example to check if the current user has the “Power User�? role the
 following code could be used:
 
-if (renderRequest.isUserInRole(“power-user”)) {
-
-// ….
-
-}
+    if (renderRequest.isUserInRole(“power-user�?)) {
+	// ….
+    }
 
 Note that Liferay doesn't use the isUserInRole() method in any of the
 portlets provided by default. Instead it uses Liferay's permission
@@ -172,10 +396,10 @@ can decide which option fits your needs better.
 Adding permissions to custom portlets consists of four main steps (also
 known as DRAC):
 
-1.  Define all resources and their permissions.
+1.  **D**efine all resources and their permissions.
 
 2.  **R**egister all the resources defined in step 1 in the permissions
-    system. This is also known as “adding resources.”
+    system. This is also known as “adding resources.�?
 
 3.  **A**ssociate the necessary permissions with resources.
 
@@ -192,7 +416,7 @@ etc.), Java classes (e.g., Message Board Topics, Calendar Events, etc.),
 and files (e.g., documents, images, etc.)
 
 **Permission** - An action acting on a resource. For example, the *view*
-in “viewing the calendar portlet” is defined as a permission in Liferay.
+in “viewing the calendar portlet�? is defined as a permission in Liferay.
 
 Keep in mind that permissions for a portlet resource are implemented a
 little differently from other resources such as Java classes and files.
@@ -212,159 +436,83 @@ Let’s take a look at `blogs.xml`{.western} in
 `portal-impl/src/resource-actions`{.western} and see how the blogs
 portlet defines these resources and actions.
 
-<?xml version="1.0"?\>
-
-<resource-action-mapping\>
-
-<portlet-resource\>
-
-<portlet-name\>33</portlet-name\>
-
-<permissions\>
-
-<supports\>
-
-<action-key\>ACCESS\_IN\_CONTROL\_PANEL</action-key\>
-
-<action-key\>ADD\_TO\_PAGE</action-key\>
-
-<action-key\>CONFIGURATION</action-key\>
-
-<action-key\>VIEW</action-key\>
-
-</supports\>
-
-<community-defaults\>
-
-<action-key\>VIEW</action-key\>
-
-</community-defaults\>
-
-<guest-defaults\>
-
-<action-key\>VIEW</action-key\>
-
-</guest-defaults\>
-
-<guest-unsupported\>
-
-<action-key\>ACCESS\_IN\_CONTROL\_PANEL</action-key\>
-
-<action-key\>CONFIGURATION</action-key\>
-
-</guest-unsupported\>
-
-</permissions\>
-
-</portlet-resource\>
-
-<model-resource\>
-
-<model-name\>com.liferay.portlet.blogs</model-name\>
-
-<portlet-ref\>
-
-<portlet-name\>33</portlet-name\>
-
-</portlet-ref\>
-
-<permissions\>
-
-<supports\>
-
-<action-key\>ADD\_ENTRY</action-key\>
-
-<action-key\>PERMISSIONS</action-key\>
-
-<action-key\>SUBSCRIBE</action-key\>
-
-</supports\>
-
-<community-defaults /\>
-
-<guest-defaults /\>
-
-<guest-unsupported\>
-
-<action-key\>ADD\_ENTRY</action-key\>
-
-<action-key\>PERMISSIONS</action-key\>
-
-<action-key\>SUBSCRIBE</action-key\>
-
-</guest-unsupported\>
-
-</permissions\>
-
-</model-resource\>
-
-<model-resource\>
-
-<model-name\>com.liferay.portlet.blogs.model.BlogsEntry</model-name\>
-
-<portlet-ref\>
-
-<portlet-name\>33</portlet-name\>
-
-</portlet-ref\>
-
-<permissions\>
-
-<supports\>
-
-<action-key\>ADD\_DISCUSSION</action-key\>
-
-<action-key\>DELETE</action-key\>
-
-<action-key\>DELETE\_DISCUSSION</action-key\>
-
-<action-key\>PERMISSIONS</action-key\>
-
-<action-key\>UPDATE</action-key\>
-
-<action-key\>UPDATE\_DISCUSSION</action-key\>
-
-<action-key\>VIEW</action-key\>
-
-</supports\>
-
-<community-defaults\>
-
-<action-key\>ADD\_DISCUSSION</action-key\>
-
-<action-key\>VIEW</action-key\>
-
-</community-defaults\>
-
-<guest-defaults\>
-
-<action-key\>VIEW</action-key\>
-
-</guest-defaults\>
-
-<guest-unsupported\>
-
-<action-key\>ADD\_DISCUSSION</action-key\>
-
-<action-key\>DELETE</action-key\>
-
-<action-key\>DELETE\_DISCUSSION</action-key\>
-
-<action-key\>PERMISSIONS</action-key\>
-
-<action-key\>UPDATE</action-key\>
-
-<action-key\>UPDATE\_DISCUSSION</action-key\>
-
-</guest-unsupported\>
-
-</permissions\>
-
-...
-
-</model-resource\>
-
-</resource-action-mapping\>
+    <?xml version="1.0"?>
+    <resource-action-mapping>
+	<portlet-resource>
+	    <portlet-name>33</portlet-name>
+	    <permissions>
+		<supports>
+		    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+		    <action-key>ADD_TO_PAGE</action-key>
+		    <action-key>CONFIGURATION</action-key>
+		    <action-key>VIEW</action-key>
+		</supports>
+		<community-defaults>
+		    <action-key>VIEW</action-key>
+		</community-defaults>
+		<guest-defaults>
+		    <action-key>VIEW</action-key>
+		</guest-defaults>
+		<guest-unsupported>
+		    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+		    <action-key>CONFIGURATION</action-key>
+		</guest-unsupported>
+	    </permissions>
+	</portlet-resource>
+	<model-resource>
+	    <model-name>com.liferay.portlet.blogs</model-name>
+	    <portlet-ref>
+		<portlet-name>33</portlet-name>
+	    </portlet-ref>
+	    <permissions>
+		<supports>
+		    <action-key>ADD_ENTRY</action-key>
+		    <action-key>PERMISSIONS</action-key>
+		    <action-key>SUBSCRIBE</action-key>
+		</supports>
+		<community-defaults />
+		<guest-defaults />
+		<guest-unsupported>
+		    <action-key>ADD_ENTRY</action-key>
+		    <action-key>PERMISSIONS</action-key>
+		    <action-key>SUBSCRIBE</action-key>
+		</guest-unsupported>
+	    </permissions>
+	</model-resource>
+	<model-resource>
+	    <model-name>com.liferay.portlet.blogs.model.BlogsEntry</model-name>
+	    <portlet-ref>
+		<portlet-name>33</portlet-name>
+	    </portlet-ref>
+	    <permissions>
+		<supports>
+		    <action-key>ADD_DISCUSSION</action-key>
+		    <action-key>DELETE</action-key>
+		    <action-key>DELETE_DISCUSSION</action-key>
+		    <action-key>PERMISSIONS</action-key>
+		    <action-key>UPDATE</action-key>
+		    <action-key>UPDATE_DISCUSSION</action-key>
+		    <action-key>VIEW</action-key>
+		</supports>
+		<community-defaults>
+		    <action-key>ADD_DISCUSSION</action-key>
+		    <action-key>VIEW</action-key>
+		</community-defaults>
+		<guest-defaults>
+		    <action-key>VIEW</action-key>
+		</guest-defaults>
+		<guest-unsupported>
+		    <action-key>ADD_DISCUSSION</action-key>
+		    <action-key>DELETE</action-key>
+		    <action-key>DELETE_DISCUSSION</action-key>
+		    <action-key>PERMISSIONS</action-key>
+		    <action-key>UPDATE</action-key>
+		    <action-key>UPDATE_DISCUSSION</action-key>
+		</guest-unsupported>
+	    </permissions>
+	    ...
+	</model-resource>
+    </resource-action-mapping>
 
 Permissions in the blogs portlet are defined at several different
 levels, coinciding to the different sections of the XML file. First, in
@@ -390,16 +538,16 @@ instance of the portlet. These permissions are defined in the first
 simply of the blogs package. This is the recommended convention for
 permissions that refer to an instance of the portlet as a whole.
 
-![image](../../images/08-apis-and-frameworks_html_5c790363.png)**Tip:**A “scope” in
+![image](../../images/08-apis-and-frameworks_html_5c790363.png)**Tip:** A “scope�? in
 Liferay is simply a way of specifying how widely the data from an
 instance of a portlet is shared. For instance, if I place a blogs
 portlet on a page in the guest community, and then place another blogs
 portlet on another page in the same community, the two blogs will share
-the same set of posts. This is the default or “community-level” scope.
+the same set of posts. This is the default or “community-level�? scope.
 If I then configure one of the two blogs and change its scope to the
 current page, it will no longer share content with any of the other
 blogs in that community. Thus, with respect to permissions, an
-“instance” of a blogs portlet could exist on only one page, or span an
+“instance�? of a blogs portlet could exist on only one page, or span an
 entire community.
 
 The difference between the portlet instance permissions defined in this
@@ -444,7 +592,7 @@ in the Sample Permissions Portlet is simply called
 `resource.actions.configs`{.western} with a value that points to the the
 XML file. Below is an example from the Sample Permissions Portlet:
 
-resource.actions.configs=resource-actions/default.xml
+    resource.actions.configs=resource-actions/default.xml
 
 ### Permission Algorithms
 
@@ -460,8 +608,8 @@ permissions will be lost (and some system features may fail).
 
 For all new deployments it is strongly recommended to use algorithm 6.
 For deployments that were using other algorithms it's recommended to use
-the migration tools provided from the Control Panel \> Server
-Administration \> Migration.
+the migration tools provided from the Control Panel > Server
+Administration > Migration.
 
 For more info see permissions.user.check.algorithm option in
 portal.properties file.
@@ -475,13 +623,10 @@ add resources is encapsulated in the
 easy as calling the add resource method in ResourceLocalServiceUtil
 class.
 
-public void addResources(
-
-String companyId, String groupId, String userId, String name,
-
-String primKey, boolean portletActions,
-
-boolean addCommunityPermissions, boolean addGuestPermissions);
+    public void addResources(
+	String companyId, String groupId, String userId, String name,
+	String primKey, boolean portletActions,
+	boolean addCommunityPermissions, boolean addGuestPermissions);
 
 For all the Java objects that require access permission, you need to
 make sure that they are added as resources every time a new one is
@@ -490,13 +635,10 @@ the addResources(…) method is called to add the new entry to the
 resource system. Here’s an example of the call from the
 `BlogsEntryLocalServiceImpl`{.western} class.
 
-ResourceLocalServiceUtil.addResources(
-
-entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
-
-BlogsEntry.class.getName(), entry.getEntryId(),
-
-false, addCommunityPermissions, addGuestPermissions);
+    ResourceLocalServiceUtil.addResources(
+	entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
+	BlogsEntry.class.getName(), entry.getEntryId(),
+	false, addCommunityPermissions, addGuestPermissions);
 
 The parameters `companyId`{.western}, `groupId`{.western}, and
 `userId`{.western} should be self explanatory. The name parameter is the
@@ -522,21 +664,16 @@ the tag is within the appropriate `<form>`{.western} tags.
 
 When removing entities from database it is also good to remove
 permissions mapped directly to the entity. To prevent having a lot of
-dead resources taking up space in the Resource\_ database table, you
-must remember to remove them from the Resource\_ table when the resource
+dead resources taking up space in the Resource_ database table, you
+must remember to remove them from the Resource_ table when the resource
 is no longer applicable. To perform this operation call the
 `deleteResource(…)`{.western} method in
 `ResourceLocalServiceUtil`{.western}. Here’s an example of a blogs entry
 being removed:
 
-ResourceLocalServiceUtil.deleteResource(
-
-entry.getCompanyId(), BlogsEntry.class.getName(),
-
-Resource.SCOPE\_INDIVIDUAL, entry.getEntryId);
-
-\
-\
+    ResourceLocalServiceUtil.deleteResource(
+	entry.getCompanyId(), BlogsEntry.class.getName(),
+	Resource.SCOPE_INDIVIDUAL, entry.getEntryId);
 
 Liferay Community Edition 6.0.5 has a known bug
 ([http://issues.liferay.com/browse/LPS-14135](http://issues.liferay.com/browse/LPS-14135))
@@ -566,22 +703,14 @@ The second tag is the `<liferay-ui:icon>`{.western} tag that shows a
 permission icon to the user. Below is an example found in the file
 `view_entry_content.jspf`{.western}.
 
-<liferay-security:permissionsURL
-
-modelResource="<%= BlogsEntry.class.getName() %\>"
-
-modelResourceDescription="<%= entry.getTitle() %\>"
-
-resourcePrimKey="<%= entry.getPrimaryKey().toString() %\>"
-
-var="entryURL"
-
-/\>
-
-\
-\
-
-<liferay-ui:icon image="permissions" url="<%= entryURL %\>" /\>
+    <liferay-security:permissionsURL
+	modelResource="<%= BlogsEntry.class.getName() %>"
+	modelResourceDescription="<%= entry.getTitle() %>"
+	resourcePrimKey="<%= entry.getPrimaryKey().toString() %>"
+	var="entryURL"
+	/>
+    
+    <liferay-ui:icon image="permissions" url="<%= entryURL %>" />
 
 The attributes you need to provide to the first tag are
 `modelResource`{.western}, `modelResourceDescription`{.western},
@@ -617,139 +746,100 @@ implement anything for your portlet to discriminate whether a user is
 allowed to view or to configure the portlet itself. However, you do need
 to implement any custom permission you have defined in your
 resource-actions XML file. In the blogs portlet, one custom supported
-action is ADD\_ENTRY. There are two places in the source code to check
+action is ADD_ENTRY. There are two places in the source code to check
 for this permission. The first place to check for the add permission is
 in your JSP files. The presence of the add entry button is contingent on
 whether the user has permission to add entry.
 
-<%
-
-if (permissionChecker.hasPermission(
-
-scopeGroupId, “com.liferay.portlet.blogs.model”,
-
-scopeGroupId, ”ADD\_ENTRY”) {
-
-// Show add entry button
-
-}
-
-%\>
+    <%
+	if (permissionChecker.hasPermission(
+	scopeGroupId, “com.liferay.portlet.blogs.model�?,
+	scopeGroupId, �?ADD_ENTRY�?) {
+	// Show add entry button
+	}
+    %>
 
 The second place to check for the add entry permission is in the
 business logic. If the check fails, a
 `PrincipalException`{.western}` is thrown `{.western}`and the add entry request is aborted.`{.western}
 
-if (!permissionChecker.hasPermission(
+    if (!permissionChecker.hasPermission(
+	scopeGroupId, “com.liferay.portlet.blogs.model�?,
+	scopeGroupId, �?*ADD_ENTRY�?*)) {
+	    throw new PrincipalException();
+    }
 
-scopeGroupId, “com.liferay.portlet.blogs.model”,
+    blogsEntryLocalService.addEntry(...);
 
-scopeGroupId, ”*ADD\_ENTRY”*)) {
+The `PermissionChecker`{.western}` class has a method called `hasPermission(…)`{.western that checks whether a user making a resource request has the necessary access permission. If the user is not signed in (guest user), it checks for guest permissions. Otherwise, it checks for user permissions.  Let's do a quick review of the parameters of this method:
 
-throw new PrincipalException();
+-   `groupId`{.western}:  represents the scope in which the permission check is being performed.  In Liferay, the scopes can be a specific community, an organization, a personal site of a user, etc.  This is important because a user may be allowed to add blog entries in a given community but not in another. For resources that do not belong to an scope like those mentioned, the value of this parameter should be `0`. There are several ways to obtain the `groupId` of the current scope:
 
-}
+    -   JSP that uses the `<theme:defineObjects/>`{.western} tag: there is an implicit variable called `scopeGroupId`{.western}.
 
-blogsEntryLocalService.addEntry(...);
+    -   Business logic class: When using the ServiceContext pattern, it can be obtained using `serviceContext.getScopeGroupId()`{.western}.
+    
+    -   Other cases: it can be obtained from the theme display request object:
 
-\
+            ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
+		WebKeys.THEME_DISPLAY);
 
-`The`{.western}`PermissionChecker`{.western}` class has a method called `{.western}`hasPermission(…)`{.western}` that checks whether a user making a resource request has the necessary access permission. If the user is not signed in (guest user), it checks for guest permissions. Otherwise, it checks for user permissions.  Let's do a quick review of the parameters of this method:`{.western}
+            long scopeGroupId = themeDisplay.getScopeGroupId();
 
--   `groupId`{.western}`:     represents the scope in which the permission check is being     performed.  In Liferay, the scopes can be a specific community, an     organization, a personal site of a user, `{.western}`etc.`{.western}`      This is important because a user may be allowed to add blog entries     in a given community but not in another. For resources that do not     belong to an scope like those mentioned, the value of this parameter     should be `{.western}`0`{.western}`.     There are several ways to obtain the `{.western}`groupId`{.western}`     of the current scope:`{.western}
+-   `name`{.western}:  The name of the resource as specified in the XML file of the previous sections.
 
-    -   `JSP         that uses the `{.western}`<theme:defineObjects/>`{.western}`         tag: there is an implicit variable called `{.western}`scopeGroupId`{.western}`.`{.western}
+-   `primKey`{.western}:  The primary key of the resource. In this example, since the resource doesn't exist as an entry in the database we use the groupId again.  If we were checking for a permission on a given blog entry, we would use the primary key of that blog entry instead.
 
-    -   `Business         logic class: When using the ServiceContext pattern, it can be         obtained using `{.western}`serviceContext.getScopeGroupId()`{.western}`.`{.western}
+-   `actionId`{.western}:  The name of the action as entered in the XML file.  It is a common practice to create a helper class with constants for all the actions defined, so that it's easier to search usages.
 
-    -   `Other         cases: it can be obtained from the theme display request object:  `{.western}
+In the examples above, we are assuming that there is a variable called `permissionChecker`{.western} already available.  Liferay automatically creates a `PermissionChecker`{.western} instance for every request that has all the necessary information from the user and caches the security checks to ensure good performance. There are several ways to obtain this instance:
 
-`       `{.western}`ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(`{.western}
+-   In a JSP that uses the `<theme:defineObjects/>`{.western} tag: there is an implicit variable called `permissionChecker`{.western}.
 
-`           WebKeys.THEME_DISPLAY);`{.western}
+-   When using ServiceBuilder, every service implementation class can access the `PermissionChecker`{.western} instance by using the method `getPermissionChecker()`{.western}.
 
-`        `{.western}`long scopeGroupId = themeDisplay.getScopeGroupId()`{.western}
+-   Other cases: it can be obtained from the theme display request object:
 
--   `name`{.western}`:     The name of the resource as specified in the XML file of the     previous sections.`{.western}
+        ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
+        PermissionChecker permissionChecker = 
+	    themeDisplay.getPermissionChecker();
 
--   `primKey`{.western}`:     The primary key of the resource. In this example, since the resource     doesn't exist as an entry in the database we use the groupId again.     If we were checking for a permission on a given blog entry, we would     use the primary key of that blog entry instead.`{.western}
+### Creating Helper Classes for Permission Checking
 
--   `actionId`{.western}`:     The name of the action as entered in the XML file.  It is a common     practice to create a helper class with constants for all the actions     defined, so that it's easier to search usages.`{.western}
+Often, it is a good practice to create helper classes that encapsulate the use of permissionChecker and the names of the resources for an specific portlet. This is specially useful when there are complex parent/child relationships or if your permission logic calls for checking multiple action types.  `BlogsPermission`{.western} is an example of a permission helper class.  See how `BlogsPermission` may be used in a JSP.
 
-`In the examples above, we are assuming that there is a variable called`{.western}`permissionChecker`{.western}` already available.  Liferay automatically creates a `{.western}`PermissionChecker`{.western}` instance for every request that has all the necessary information from the user and caches the security checks to ensure good performance. There are several ways to obtain this instance:`{.western}
+    <%
+	if (BlogsPermission.contains(permissionChecker, scopeGroupId,
+	    ActionKeys.ADD_ENTRY)) {
+		// show add entry button
+	    }
+    %>
 
--   `In     a JSP that uses the `{.western}`<theme:defineObjects/>`{.western}`     tag: there is an implicit variable called `{.western}`permissionChecker`{.western}`.`{.western}
+Now, let's take a look at how a `ServiceImpl`{.western} class `BlogsEntryServiceImpl`{.western} uses the `BlogsPermission`{.western} helper class. In method `BlogsEntryServiceImpl.addEntry(...)`{.western}, a call is made to check whether the incoming request has permission to add entry.  The check is done using helper class `BlogsPermission`{.western}.  If the check fails, it throws a `PrincipalException`{.western} and the add entry request aborts.
 
--   `When     using ServiceBuilder, every service implementation class can access     the `{.western}`PermissionChecker`{.western}`     instance by using the method `{.western}`getPermissionChecker()`{.western}`.`{.western}
+    public BlogsEntry addEntry(
+	String title, String description, String content,
+	int displayDateMonth, int displayDateDay,
+	int displayDateYear, int displayDateHour,
+	int displayDateMinute, boolean allowPingbacks,
+	boolean allowTrackbacks, String[] trackbacks,
+	boolean smallImage, String smallImageURL, File smallFile,
+	ServiceContext serviceContext)
+    throws PortalException, SystemException {
 
--   `Other     cases: it can be obtained from the theme display request object:  `{.western}
+    BlogsPermission.check(
+	getPermissionChecker(), serviceContext.getScopeGroupId(),
+	ActionKeys.ADD_ENTRY);
 
-`        `{.western}`ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(`{.western}`            WebKeys.THEME_DISPLAY);`{.western}
+    return blogsEntryLocalService.addEntry(
+	getUserId(), title, description, content, displayDateMonth,
+	displayDateDay, displayDateYear, displayDateHour,
+	displayDateMinute, allowPingbacks, allowTrackbacks, trackbacks,
+	smallImage, smallImageURL, smallFile, serviceContext);
 
-`        `{.western}`PermissionChecker permissionChecker = `{.western}
+    }
 
-`           themeDisplay.getPermissionChecker()`{.western}
-
-### `Creating Helper Classes for Permission Checking`{.western}
-
-`Often, it is a good practice to create helper classes that encapsulate the use of permissionChecker and the names of the resources for an specific portlet. This is specially useful when there are complex parent/child relationships or if your permission logic calls for checking multiple action types.  `{.western}`BlogsPermission`{.western}` is an example of a permission helper class.  See how `{.western}`BlogsPermission`{.western}` may be used in a JSP.`{.western}
-
-<%
-
-if (BlogsPermission.contains(permissionChecker, scopeGroupId,
-ActionKeys.ADD\_ENTRY)) {
-
-// show add entry button
-
-}
-
-%\>
-
-`Now, let's take a look at how a `{.western}`ServiceImpl`{.western}` class  `{.western}`BlogsEntryServiceImpl`{.western}` uses the `{.western}`BlogsPermission`{.western}` helper class.  `{.western}`In method `{.western}`BlogsEntryServiceImpl.`{.western}`addEntry(...)`{.western}`, a call is made to check whether the incoming request has permission to add entry.  T`{.western}`he check is done using `{.western}`helper`{.western}` class `{.western}`BlogsPermission`{.western}`.  If the check fails, it throws a `{.western}`PrincipalException`{.western}` and the add entry request aborts.`{.western}
-
-public BlogsEntry addEntry(
-
-String title, String description, String content,
-
-int displayDateMonth, int displayDateDay,
-
-int displayDateYear, int displayDateHour,
-
-int displayDateMinute, boolean allowPingbacks,
-
-boolean allowTrackbacks, String[] trackbacks,
-
-boolean smallImage, String smallImageURL, File smallFile,
-
-ServiceContext serviceContext)
-
-throws PortalException, SystemException {
-
-\
-\
-
-BlogsPermission.*check*(
-
-getPermissionChecker(), serviceContext.getScopeGroupId(),
-
-ActionKeys.*ADD\_ENTRY*);
-
-\
-\
-
-return blogsEntryLocalService.addEntry(
-
-getUserId(), title, description, content, displayDateMonth,
-
-displayDateDay, displayDateYear, displayDateHour,
-
-displayDateMinute, allowPingbacks, allowTrackbacks, trackbacks,
-
-smallImage, smallImageURL, smallFile, serviceContext);
-
-}
-
-Note the parameters passed into the check(...) method. Again, the
+Note the parameters passed into the `check(...)` method. Again, the
 `getPermissionChecker()`{.western} method is readily available in all
 `ServiceImpl`{.western} classes. The blogs entry ID is available in the
 serviceContext indicating that the permission check is against the blogs
@@ -775,4 +865,3 @@ equipped to implement security in your custom Liferay portlets!
 ### Faceted Search (new)
 
 ### Using Multiple Search Engines (new)
-
