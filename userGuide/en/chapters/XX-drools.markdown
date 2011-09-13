@@ -2,11 +2,20 @@
 
 Liferay Portal Enterprise Edition provides an implementation of a JSR-94 compliant rules engine. This rules engine is provided as a Web Plugin and is based on the popular open source Drools project. 
 
-In most applications, complex rule processing often takes the form of nested `if-else` blocks of code which can be very difficult to decipher and to maintain. A rules engine provides a means to separate the rules or logic of an application from the remaining code. Separating these rules allows for changes to be made to the rules without affecting the rest of the application. A rule engine allows for a more declarative style of programming where the rules define what is happening, without describing how it is happening. 
+### Why use a Rules Engine?  
+
+If you are not familiar with rules engines, you may be wondering why you would want to use one.  In most applications, complex rule processing often takes the form of nested `if-else` blocks of code which can be very difficult to decipher and to maintain. If rules change, a deverloper must work with a business user to define the new rules.  The developer must then read through the existing logic to understand what is happening and make the necessary modifications.  The changes must then be recompiled, tested, and redployed.  A rules engine provides a means to separate the rules or logic of an application from the remaining code. Separating these rules provides several distinct advantages.  
+
+*  A rule engine allows for a more declarative style of programming where the rules define what is happening, without describing how it is happening.  This makes it much easier to read than nexted 'if-else' blocks of code.  It's also easier to make changes without introducing bugs in your code.  
+
+*  The rules are written in a language that is easier for non-developers to understand.  This makes it easier for business users to validate and even modify the rules without having to involve developers.   
+
+*  A rule engine allows allows for changes to be made to the rules without requiring that you recompile your application.  If your code must pass through a strict deployment workflow , this can be a huge time saver and can also save a significant amount of money.  
+
 
 ### Installation
 
-The Drools Web Plugin is available to Liferay Enterprise Edition customers through the customer portal. In can also be downloaded and installed through the built-in plugin repository. The name is `drools-web`, and you'll find it in the list of web plugins. 
+The Drools Web Plugin is available to Liferay Enterprise Edition customers through the customer portal. In can also be downloaded and installed through the built-in plugin repository. The name is `Drools Web`, and you'll find it in the list of web plugins. 
 
 ### Working with the Drools Web Plugin
 
@@ -28,4 +37,4 @@ The Sample Drools Portlet plugin also contains a second rule that returns person
 
 Rule definitions are written using Drools' declarative language. Rule files are text files that often have a .drl extension. Each rule file can contain multiple rules. To see examples of a rules definition file, access the following directory in the Sample Drools Portlet `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies`. For additional documentation on the Drools rules language, please see the official Drools documentation at [http://www.jboss.org/drools](http://www.jboss.org/drools). 
 
-As you can see from the Sample Rules Portlet, using a rules engine can be a very powerful way to decouple the rules of our appliation from the front-end and back-end code. These rules are written in a declarative language that business users could read and verify. Additionally, rule definitions can be modified without modifying the underlying Java code, re-compiling, or redeploying your applications. 
+As you can see from the Sample Rules Portlet, using a rules engine can be a very powerful way to decouple the rules of our application from the front-end and back-end code. These rules are written in a declarative language that business users could read and verify. Additionally, rule definitions can be modified without modifying the underlying Java code, re-compiling, or redeploying your applications. 
