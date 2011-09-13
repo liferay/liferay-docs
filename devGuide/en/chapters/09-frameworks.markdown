@@ -42,13 +42,10 @@ it should be placed inside a new portlet. Create a file named
 `portlets/my-greeting-portlet/docroot/WEB-INF` within the
 Plugins SDK and add the following content:
 
-\  
-\  
-
     <?xml version="1.0"?>
     <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder
     6.0.0//EN"
-    "http://www.liferay.com/dtd/liferay-service-builder\_6\_0\_0.dtd">
+    "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
     <service-builder package-path="com.sample.portlet.library">
         <namespace>Library</namespace>
         <entity name="Book" local-service="true" remote-service="true">
@@ -78,30 +75,21 @@ Plugins SDK and add the following content:
 #### Overview of *service.xml*
 
     <service-builder package-path="com.sample.portlet.library">
-\
+
 This specifies the package path to which the class will be generated. In this
 example, classes will generate to `WEB-INF/src/com/sample/portlet/library/`
 
-\  
-\  
-
     <namespace>Library</namespace>
-\
+
 The namespace element must be a unique namespace for this component.
 Table names will be prepended with this namepace.
 
-\  
-\  
-
     <entity name="Book" local-service="true" remote-service="false">
-\
+
 The entity name is the database table you want to create.
 
-\  
-\  
-
     <column name="title" type="String" />
-\
+
 Columns specified in `service.xml` will be created in the
 database with a data type appropriate to the specified Java type. Accessors
 in the model class will automatically be generated for these attributes.
@@ -117,12 +105,8 @@ independent data.
 Open a terminal window in your `portlets/my-greeting-portlet`
 directory and enter this command:
 
-\  
-\  
-
 	ant build-service
-\
-\
+
 The service has been generated successfully when you see “BUILD
 SUCCESSFUL" In the terminal window, you should see that a large number
 of files have been generated. An overview of these files is provided
@@ -130,74 +114,74 @@ below:
 
 -   Persistence
 
-    -   BookPersistence - book persistence interface @generated
+    -   `BookPersistence` - book persistence interface `@generated`
 
-    -   BookPersistenceImpl - book persistence @generated
+    -   `BookPersistenceImpl` - book persistence `@generated`
 
-    -   BookUtil - book persistence util, instances BookPersistenceImpl
-        @generated
+    -   `BookUtil` - book persistence util, instances BookPersistenceImpl
+        `@generated`
 
 -   Local Service
 
-    -   **BookLocalServiceImpl** - local service implementation. This is
+    -   **`BookLocalServiceImpl`** - local service implementation. This is
         the only class within the local service that you will be able to
         modify manually. Your business logic will be here.
 
-    -   BookLocalService - local service interface @generated
+    -   `BookLocalService` - local service interface `@generated`
 
-    -   BookLocalServiceBaseImpl - local service base @generated
-        @abstract
+    -   `BookLocalServiceBaseImpl` - local service base `@generated`
+        `@abstract`
 
-    -   BookLocalServiceUtil - local service util, instances
-        BookLocalServiceImpl @generated
+    -   `BookLocalServiceUtil` - local service util, instances
+        `BookLocalServiceImpl` `@generated`
 
-    -   BookLocalServiceWrapper - local service wrapper, wraps
-        BookLocalServiceImpl @generated
+    -   `BookLocalServiceWrapper` - local service wrapper, wraps
+        `BookLocalServiceImpl` `@generated`
 
 -   Remote Service
 
-    -   **BookServiceImpl** - remove service implementation. Put here
+    -   **`BookServiceImpl`** - remove service implementation. Put here
         the code that adds additional security checks and invokes the
         local service.
 
-    -   BookService - remote service interface @generated
+    -   `BookService` - remote service interface `@generated`
 
-    -   BookServiceBaseImpl - remote service base @generated @abstract
+    -   `BookServiceBaseImpl` - remote service base `@generated` `@abstract`
 
-    -   BookServiceUtil - remote service util, instances BookServiceImpl
-        @generated
+    -   `BookServiceUtil` - remote service util, instances `BookServiceImpl`
+        `@generated`
 
-    -   BookServiceWrapper - remote service wrapper, wraps
-        BookServiceImpl @generated
+    -   `BookServiceWrapper` - remote service wrapper, wraps
+        `BookServiceImpl` `@generated`
 
-    -   BookServiceSoap - soap remote service, proxies BookServiceUtil
-        @generated
+    -   `BookServiceSoap` - soap remote service, proxies `BookServiceUtil`
+        `@generated`
 
-    -   BookSoap - soap book model, similar to BookModelImpl, does not
-        implement Book @generated
+    -   `BookSoap` - soap book model, similar to `BookModelImpl`, does not
+        implement Book `@generated`
 
-    -   BookServiceHttp - http remote service, proxies BookServiceUtil
-        @generated
+    -   `BookServiceHttp` - http remote service, proxies `BookServiceUtil`
+        `@generated`
 
-    -   BookJSONSerializer - json serializer, converts Book to JSON
-        array @generated
+    -   `BookJSONSerializer` - json serializer, converts `Book` to JSON
+        array `@generated`
 
 -   Model
 
-    -   BookModel - book base model interface @generated
+    -   `BookModel` - book base model interface `@generated`
 
-    -   BookModelImpl - book base model @generated
+    -   `BookModelImpl` - book base model `@generated`
 
-    -   Book - book model interface @generated
+    -   `Book` - book model interface `@generated`
 
-    -   **BookImpl** - book model implementation. You can use this class
+    -   **`BookImpl`** - book model implementation. You can use this class
         to add additional methods to your model other than the
         auto-generated field getters and setters.
 
-    -   BookWrapper - book wrapper, wraps Book @generated
+    -   `BookWrapper` - book wrapper, wraps `Book` `@generated`
 
 Out of all of these classes only three can be manually modified:
-BookLocalServiceImpl, BookServiceImpl and BookImpl.
+`BookLocalServiceImpl`, `BookServiceImpl` and `BookImpl`.
 
 ### Write the Local Service Class
 
@@ -213,12 +197,9 @@ in `BookLocalServiceImpl`.
 Open the following file:
 
     /docroot/WEB-INF/src/com/sample/portlet/library/service/impl/BookLocalServiceImpl.java
-\
+
 We will add the database interaction methods to this service layer
 class. Add the following method to the `BookLocalServiceImpl` class:
-
-\  
-\  
 
     public Book addBook(long userId, String title)
         throws PortalException, SystemException {
@@ -238,24 +219,17 @@ class. Add the following method to the `BookLocalServiceImpl` class:
 
         return bookPersistence.update(book);
     }
-\
+
 Before you can use this new method, you must add its signature to the
 `BookLocalService` interface by running service builder again.
 
 Navigate to the root directory of your portlet in the terminal and run:
 
-\  
-\  
-
     ant build-service
-\
-\
+
 Service Builder looks through `BookLocalServiceImpl` and automatically
 copies the signatures of each method into the interface. You can now add
 a new book to the database by making the following call
-
-\  
-\  
 
     BookLocalServiceUtil.addBook(userId, “A new title");
 
@@ -380,9 +354,6 @@ The method that you need to invoke when one of your custom content has
 been added or updated is the same and is called `updateEntry`. Here is the
 full signature:
 
-\  
-\  
-
     AssetEntry updateEntry(
             long userId, long groupId, String className, long classPK,
             String classUuid, long classTypeId, long[] categoryIds,
@@ -392,12 +363,9 @@ full signature:
             String layoutUuid, int height, int width, Integer priority,
             boolean sync)
         throws PortalException, SystemException
-\
+
 Here is an example invocation of this method extracted from the
 blogs portlet that comes bundled with Liferay:
-
-\  
-\  
 
     assetEntryLocalService.updateEntry(
             userId, entry.getGroupId(), BlogsEntry.class.getName(),
@@ -405,7 +373,7 @@ blogs portlet that comes bundled with Liferay:
             assetTagNames, visible, null, null, entry.getDisplayDate(), null,
             ContentTypes.TEXT_HTML, entry.getTitle(), null, summary, null, null,
             0, 0, null, false);
-\
+
 Here is a quick summary of the most important parameters of this method:
 
 -   *userId*: is the identifier of the user who created the content
@@ -452,16 +420,9 @@ Framework know, to clean up the information stored and also to make sure
 that the Asset Publisher doesn't show any information for the content that
 has been deleted. The signature of method to delete an asset entry is:
 
-\  
-\  
-
     void deleteEntry(String className, long classPK)
-\
-\
-Here is an example invocation extracted again from the blogs portlet:
 
-\  
-\  
+Here is an example invocation extracted again from the blogs portlet:
 
     assetEntryLocalService.deleteEntry(
         BlogsEntry.class.getName(), entry.getEntryId());
@@ -478,9 +439,6 @@ very easy. The following Liferay UI tags can be used within your forms to
 create content that can be associated with new/existing tags or predefined
 categories:
 
-\  
-\  
-
     <label>Tags</label>
     <liferay-ui:asset-tags-selector
         className="<%= entry.getClass().getName() %>"
@@ -492,7 +450,7 @@ categories:
             className="<%= entry.getClass().getName() %>"
             classPK="<%= entry.getPrimaryKey() %>"
     />
-\
+
 These two taglibs create appropriate form controls that allow the
 user to search for a tag or create a new tag, and select
 a existing category.
@@ -507,9 +465,6 @@ Once the tags and categories have been entered you will want to show
 them along with the content of the asset. The following demonstrates
 how to display the tags and categories:
 
-\  
-\  
-
     <label>Tags</label>
     <liferay-ui:asset-tags-summary
         className="<%= entry.getClass().getName() %>"
@@ -521,7 +476,7 @@ how to display the tags and categories:
         className="<%= entry.getClass().getName() %>"
         classPK="<%= entry.getPrimaryKey() %>"
     />
-\
+
 In both tags, you can also specify an optional `portletURL` parameter.
 Each tag that uses the `portletURL` parameter will be a link containing
 the `portletURL` *and* `tag` or `categoryId` parameter value respectively.
@@ -580,10 +535,7 @@ pair of interfaces - AssetRendererFactory and AssetRenderer:
 
 Let's see an example of these two classes. Again we will pick Liferay's
 Blogs portlet. Lets start with the implementation for the
-AssetRendererFactory:
-
-\  
-\  
+`AssetRendererFactory`:
 
     public class BlogsEntryAssetRendererFactory extends BaseAssetRendererFactory {
 
@@ -665,12 +617,8 @@ AssetRendererFactory:
 
         private static final boolean _LINKABLE = true;
     }
-\
 
 And here is the AssetRenderer implementation:
-
-\  
-\  
 
     public class BlogsEntryAssetRenderer extends BaseAssetRenderer {
 
@@ -808,7 +756,6 @@ And here is the AssetRenderer implementation:
         private BlogsEntry _entry;
 
     }
-\
 
 Note that in the render method, there is a forward to a JSP in the case
 of the abstract and the full content templates. The abstract is not
@@ -816,9 +763,6 @@ mandatory and if it is not provided, the Asset Publisher will show the
 title and the summary obtained through the appropriate methods of the
 renderer. The full content template should always be provided. Here is
 how it looks like for blogs entries:
-
-\  
-\  
 
     <%@ include file="/html/portlet/blogs/init.jsp" %>
 
@@ -836,7 +780,6 @@ how it looks like for blogs entries:
             label="<%= true %>"
         />
     </liferay-ui:custom-attributes-available>
-\
 
 That's about it. It wasn't that hard, right? Now you can start enjoying
 the benefits of the asset framework in your custom portlets.
@@ -894,7 +837,7 @@ information and detailed instructions on how to use them over time.
 -   Custom fields: A portlet that uses custom fields will allow the end
     user to extend the fields of its data entries with custom ones
     defined by the end user. To see a list of data types in Liferay that
-    support this functionality just go to the Control Panel -\> Custom
+    support this functionality just go to the Control Panel -> Custom
     Fields.
 
 -   Report abuse: Allow end users to report that some information
