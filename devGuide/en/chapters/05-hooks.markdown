@@ -238,7 +238,7 @@ following content:
 	}
     }
 
-![image](../../images/05-hooks_html_5c790363.png)**Tip:**Note that the wrapper class
+![image](../../images/tip-pen-paper.png)**Tip:**Note that the wrapper class
 (MyUserLocalServiceImpl in this example) will be loaded in the hook's
 class loader. That means that it will have access to any other class
 included within the same WAR file, but it won't have access to internal

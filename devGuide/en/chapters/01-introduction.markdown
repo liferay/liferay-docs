@@ -108,7 +108,7 @@ ways:
     click the “New Gadget” button and enter the URL as shown in the
     following screenshot:
 
-![image](../../images/01-introduction_html_m46965e72.png)
+![image](../../images/open-social-gadget-new-ctrl-panel.png)
 
 After this is done, the gadget will appear as an application that page
 administrators can add to their pages.
@@ -271,7 +271,7 @@ plugins, the server must be restarted for changes to take effect. For
 this reason, Ext plugins should not be combined with other types of
 plugins.
 
-![image](../../images/01-introduction_html_5c790363.png)**Tip:** If you have
+![image](../../images/tip-pen-paper.png)**Tip:** If you have
 developed for Liferay 5.2 or before, you may be familiar with what was
 known as “Extension Environment”. Ext plugins are a new feature in
 Liferay 6.0 which replace the extension environment in order to simplify

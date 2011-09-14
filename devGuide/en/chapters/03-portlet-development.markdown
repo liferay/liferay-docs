@@ -60,7 +60,7 @@ will be able to determine from the *plugin.classpath* and
 *portal.classpath entries*which .jar files are necessary to build your
 newly created portlet project.
 
-![image](../../images/03-portlet-development_html_5c790363.png)**Tip:** If you are
+![image](../../images/tip-pen-paper.png)**Tip:** If you are
 using a source control system such as Subversion, CVS, Mercurial, Git,
 etc. this might be a good moment to do an initial check in of your
 changes. After building the plugin for deployment several additional
@@ -435,7 +435,7 @@ Deploy the portlet again by entering the command **ant deploy** in your
 the page; you should now be able to use the portlet to save and display
 a custom greeting.
 
-![image](../../images/03-portlet-development_html_5c790363.png)**Tip:** If your
+![image](../../images/tip-pen-paper.png)**Tip:** If your
 portlet deployed successfully, but you don't see any changes in your
 browser after refreshing the page, Tomcat may have failed to rebuild
 your JSPs. Simply delete the *work* folder in
@@ -680,7 +680,7 @@ phase (that is the *processAction* method). In order to pass parameter
 values to the render phase you must read them from the actionRequest and
 then invoke the *setRenderParameter* method for each parameter needed.
 
-![image](../../images/03-portlet-development_html_5c790363.png)**Tip:** Liferay
+![image](../../images/tip-pen-paper.png)**Tip:** Liferay
 offers a convenient extension to the portlet specification through the
 MVCPortlet class to copy all action parameters directly as render
 parameters. You can achieve this just by setting the following
@@ -783,7 +783,7 @@ the top):
 After this change, redeploy the portlet, go to the edit screen and save
 it. You should see a nice message that looks like this:
 
-![image](../../images/03-portlet-development_html_4540959e.png)*Illustration 1: The
+![image](../../images/portlet-greeting-save.png)*Illustration 1: The
 sample “My Greetings” portlet showing a success message*
 
 There is also an equivalent util class for notifying errors. This is
@@ -807,7 +807,7 @@ liferay-ui:error tag:
 When the error occurs you should see something like this in your
 portlet:
 
-![image](../../images/03-portlet-development_html_m606ce657.png)*Illustration 2: The
+![image](../../images/portlet-invalid-data.png)*Illustration 2: The
 sample “My Greetings” portlet showing an error message*
 
 The first message is automatically added by Liferay. The second one is
