@@ -3934,955 +3934,1065 @@ Set the maximum number of transient events allowed to queue for a user. In case 
 
 #### OpenOffice
 
-Enabling OpenOffice integration allows the Document Library portlet to
-provide document conversion functionality. To start OpenOffice as a
-service, run the command:
+Enabling OpenOffice integration allows the Document Library portlet and the Wiki portlet to provide conversion functionality. This is tested with OpenOffice 2.3.x through 3.2.x. It is recommended that you have OpenOffice on the same machine. Using a remote host for the instance is not fully supported and could lead to various problems. To start OpenOffice as a service, run the command: 
 
-soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
--nofirststartwizard
+	soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
 
-This is tested with OpenOffice 2.3.x.
+	openoffice.server.enabled=false
+	openoffice.server.host=127.0.0.1
+	openoffice.server.port=8100
+	openoffice.cache.enabled=true
 
-openoffice.server.enabled=false
+Specify the file extensions of files to allow conversions from. Entries must be limited by what is supported by OpenOffice.
 
-openoffice.server.host=127.0.0.1
+	openoffice.conversion.source.extensions[drawing]=odg
+	openoffice.conversion.source.extensions[presentation]=odp,ppt,pptx,sxi
+	openoffice.conversion.source.extensions[spreadsheet]=csv,ods,sxc,tsv,xls,xlsx
+	openoffice.conversion.source.extensions[text]=doc,docx,html,odt,rtf,sxw,txt,wpd
 
-openoffice.server.port=8100
+Specify the file extensions of files to allow conversions to. Entries must be limited by what is supported by OpenOffice.
+
+	openoffice.conversion.target.extensions[drawing]=pdf,svg,swf
+	openoffice.conversion.target.extensions[presentation]=odp,pdf,ppt,swf,sxi
+	openoffice.conversion.target.extensions[spreadsheet]=csv,ods,pdf,sxc,tsv,xls
+	openoffice.conversion.target.extensions[text]=doc,odt,pdf,rtf,sxw,txt
 
 #### Poller
 
-Specify the poller request timeout in milliseconds. This prevents the
-poller from locking up the application server.
+Specify the notification events timout in milliseconds. This prevents the poller from locking up the application server.
 
-poller.request.timeout=1000
+	poller.notifications.timeout=1000
+
+Specify the poller request timeout in milliseconds. This prevents the poller from locking up the application server.
+
+	poller.request.timeout=1000
 
 #### POP
 
-Set this to true to enable polling of email notifications from a POP
-server. The user credentials are the same used for SMTP authentication
-and is specified in the *mail/MailSession* configuration for each
-application server.
+Set this to true to enable polling of email notifications from a POP server. The user credentials are the same used for SMTP authentication and is specified in the mail/MailSession configuration for each application server.
 
-pop.server.notifications.enabled=false
+	pop.server.notifications.enabled=false
 
-Set the interval on which the POPNotificationsJob will run. The value is
-set in one minute increments.
+Set the interval on which the POPNotificationsMessageListener will run. The value is set in one minute increments.
 
-pop.server.notifications.interval=1
+	pop.server.notifications.interval=1
 
-Set this property to create a special MX subdomain to receive all portal
-related email (e.g. `events.liferay.com`). This means
-configuring a default inbox for the domain and receiving all emails into
-that inbox.
+Set this property to create a special MX subdomain to receive all portal related email (e.g. `events.liferay.com`). This means configuring a default inbox for the domain and receiving all emails into that inbox.
 
-This approach may not be allowed for some organizations. If you cannot
-use the subdomain approach, unset this value and Liferay will use the
-`replyTo` address specified in the portlet preferences.
+This approach may not be allowed for some organizations. If you cannot use the subdomain approach, unset this value and Liferay will use the `replyTo` address specified in the portlet preferences.
 
-pop.server.subdomain=events
+	pop.server.subdomain=events
 
 #### Quartz
 
-These properties define the connection to the built-in Quartz job
-scheduling engine.
+	memory.cluster.scheduler.lock.cache.enabled=false
 
-org.quartz.dataSource.ds.connectionProvider.class=com.liferay.portal.scheduler.quartz.QuartzConnectionProviderImpl
+    memory.scheduler.org.quartz.jobStore.class=org.quartz.simpl.RAMJobStore
+    memory.scheduler.org.quartz.scheduler.instanceId=AUTO
+    memory.scheduler.org.quartz.scheduler.instanceName=MemoryQuartzSchedulerEngineInstance
+    memory.scheduler.org.quartz.threadPool.class=org.quartz.simpl.SimpleThreadPool
+    memory.scheduler.org.quartz.threadPool.threadCount=5
+    memory.scheduler.org.quartz.threadPool.threadPriority=5
 
-org.quartz.jobStore.class=org.quartz.impl.jdbcjobstore.JobStoreTX
+    persisted.scheduler.org.quartz.dataSource.ds.connectionProvider.class=com.liferay.portal.scheduler.quartz.QuartzConnectionProvider
+    persisted.scheduler.org.quartz.jobStore.class=com.liferay.portal.scheduler.quartz.PortalJobStore
+    persisted.scheduler.org.quartz.jobStore.dataSource=ds
+    persisted.scheduler.org.quartz.jobStore.misfireThreshold=60000
+    persisted.scheduler.org.quartz.jobStore.tablePrefix=QUARTZ_
+    persisted.scheduler.org.quartz.jobStore.useProperties=false
+    persisted.scheduler.org.quartz.scheduler.instanceId=AUTO
+    persisted.scheduler.org.quartz.scheduler.instanceName=PersistedQuartzSchedulerEngineInstance
+    persisted.scheduler.org.quartz.scheduler.skipUpdateCheck=true
+    persisted.scheduler.org.quartz.threadPool.class=org.quartz.simpl.SimpleThreadPool
+    persisted.scheduler.org.quartz.threadPool.threadCount=5
+    persisted.scheduler.org.quartz.threadPool.threadPriority=5
+    
+#### REST Proxy
 
-org.quartz.jobStore.dataSource=ds
+Input a list of comma delimited domains which the portal is allowed to make proxy request to. Input a blank list to allow any domain.
 
-org.quartz.jobStore.driverDelegateClass=com.liferay.portal.scheduler.quartz.DynamicDriverDelegate
+	rest.proxy.domains.allowed=search.yahooapis.com
 
-org.quartz.jobStore.isClustered=false
+#### Robots.txt
 
-org.quartz.jobStore.misfireThreshold=60000
+    robots.txt.with.sitemap=com/liferay/portal/dependencies/robots_txt_with_sitemap.tmpl
+    robots.txt.without.sitemap=com/liferay/portal/dependencies/robots_txt_without_sitemap.tmpl
 
-org.quartz.jobStore.tablePrefix=QUARTZ\_
+#### RSS
 
-org.quartz.jobStore.useProperties=true
+See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect RSS feeds.
 
-org.quartz.scheduler.instanceId=AUTO
+	rss.feeds.hosts.allowed=
+	rss.feeds.https.required=false
 
-org.quartz.scheduler.instanceName=QuartzSchedulerEngineInstance
+#### Sanitizer
 
-org.quartz.threadPool.class=org.quartz.simpl.SimpleThreadPool
+Set the name of a class that implements `com.liferay.portal.kernel.sanitizer.Sanitizer`. This class is used to
+sanitize content.
 
-org.quartz.threadPool.threadCount=5
-
-org.quartz.threadPool.threadPriority=5
+	sanitizer.impl=com.liferay.portal.sanitizer.DummySanitizerImpl    
 
 #### Scheduler
 
-Set this to false to disable all scheduler classes defined in
-*liferay-portlet.xml* and in the property *scheduler.classes*.
+Set this to false to disable all scheduler classes defined in `liferay-portlet.xml` and in the property `scheduler.classes`.
 
-scheduler.enabled=true
+	scheduler.enabled=true
 
-Input a list of comma delimited class names that implement
-*com.liferay.portal.kernel.job.Scheduler*. These classes allow jobs to
-be scheduled on startup. These classes are not associated to any one
-portlet.
+Input a list of comma delimited class names that implement `com.liferay.portal.kernel.job.Scheduler`. These classes allow jobs to be scheduled on startup. These classes are not associated to any one portlet.
 
-scheduler.classes=
+	scheduler.classes=
+
+Set the maximum length of description, group name, and job name fields.
+
+	scheduler.description.max.length=120
+	scheduler.group.name.max.length=80
+	scheduler.job.name.max.length=80
+	
+#### Scripting
+
+Input a list of comma delimited class names that will never be available to user defined server side scripts. The special string `all_classes` disables access to any Java class. This property is only effective when using the Scripting service and invoking `eval` or `exec` methods.
+
+	scripting.forbidden.classes=com.liferay.portal.kernel.scripting.ScriptingUtil,com.liferay.portal.scripting.ScriptingImpl,java.lang.System
+	
+Set the compile mode for the JRuby scripting engine.
+
+*Examples:*
+
+	scripting.jruby.compile.mode=force
+	scripting.jruby.compile.mode=jit
+	scripting.jruby.compile.mode=off
+
+Set the threshold at which methods wil be compiled when `jit` compile mode is enabled.
+
+	scripting.jruby.compile.threshold=50
+
+Set the load paths for the jruby engine. These paths allow jruby to locate gems and ruby code libraries in the classpath.
+
+	scripting.jruby.load.paths=\
+        META-INF/jruby.home/lib/ruby/site_ruby/1.8,\
+        META-INF/jruby.home/lib/ruby/site_ruby/shared,\
+        META-INF/jruby.home/lib/ruby/1.8,\
+        gems/haml-3.0.25/lib,\
+        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/haml-3.0.25/lib	
 
 #### Search Container
 
-Set the available values for the number of entries to display per page.
-An empty value, or commenting out the value, will disable delta
-resizing.
+Set the default number of entries to display per page.
 
-The default of 20 will apply in all cases.
+	search.container.page.default.delta=20
 
-Always include 20, since it is the default page size when no delta is
-specified. The absolute maximum allowed delta is 200.
+Set the available values for the number of entries to display per page. An empty value, or commenting out the value, will disable delta resizing.
 
-search.container.page.delta.values=5,10,20,30,50,75
+Always include the value specified in the property `search.container.page.default.delta`, since it is the default page size when no delta is specified. The absolute maximum allowed delta is `200`.
+
+	search.container.page.delta.values=5,10,20,30,50,75
+
+Set the maximum number of pages available above and below the currently displayed page.
+
+	search.container.page.iterator.max.pages=25
+
+Set this to false to remove the pagination controls above or below results.
+
+	search.container.show.pagination.top=true
+	search.container.show.pagination.bottom=true
 
 #### Sharepoint
 
 Set the tokens for supported Sharepoint storage paths.
 
-sharepoint.storage.tokens=document\_library
+	sharepoint.storage.tokens=document_library
 
 Set the class names for supported Sharepoint storage classes.
 
-sharepoint.storage.class[document\_library]=com.liferay.portlet.documentlibrary.sharepoint.DLSharepointStorageImpl
+	sharepoint.storage.class[document_library]=com.liferay.portlet.documentlibrary.sharepoint.DLSharepointStorageImpl
 
+#### Sprite
+
+Set the file names used for the auto generated sprites. The default file name used to be `.sprite.png` but is now `_sprite.png` because SiteMinder does not allow file names to start with a period. This property will not need to be changed unless your deployment has a conflict with file names that start with an underline.
+
+	sprite.file.name=_sprite.png
+	sprite.properties.file.name=_sprite.properties
+
+#### Strip
+
+Enter a list of comma delimited paths that should not have its content stripped by the strip filter.
+
+	strip.ignore.paths=/document_library/get_file	
+	
 #### Social Bookmarks
 
 The Blogs portlet allows for the posting of entries to various popular
 social bookmarking sites. The example ones are the defaults; to
 configure more, just add the site in the format below.
 
-social.bookmark.types=blinklist,delicious,digg,furl,newsvine,reddit,technorati
+    social.bookmark.types=twitter,facebook,plusone
 
-social.bookmark.post.url[blinklist]=http://blinklist.com/index.php?Action=Blink/addblink.php&url=${liferay:social-bookmark:url}&Title=${liferay:social-bookmark:title}
+    social.bookmark.jsp[facebook]=/html/taglib/ui/social_bookmark/facebook.jsp
+    social.bookmark.jsp[plusone]=/html/taglib/ui/social_bookmark/plusone.jsp
+    social.bookmark.jsp[twitter]=/html/taglib/ui/social_bookmark/twitter.jsp
 
-social.bookmark.post.url[delicious]=http://del.icio.us/post?url=${liferay:social-bookmark:url}&title=${liferay:social-bookmark:title}
+#### Social Equity
 
-social.bookmark.post.url[digg]=http://digg.com/submit?phase=2&url=${liferay:social-bookmark:url}
+Set the interval on which the `CheckEquityLogMessageListener` will run. The value is set in one minute increments.
 
-social.bookmark.post.url[furl]=http://furl.net/storeIt.jsp?u=${liferay:social-bookmark:url}&t=${liferay:social-bookmark:title}
+	social.equity.equity.log.check.interval=1440
 
-social.bookmark.post.url[newsvine]=http://www.newsvine.com/\_tools/seed&save?u=${liferay:social-bookmark:url}&h=${liferay:social-bookmark:title}
+Set this to true to enable social equity logs.
 
-social.bookmark.post.url[reddit]=http://reddit.com/submit?url=${liferay:social-bookmark:url}&title=${liferay:social-bookmark:title}
+	social.equity.equity.log.enabled=true
 
-social.bookmark.post.url[technorati]=http://technorati.com/cosmos/search.html?url=${liferay:social-bookmark:url}
+#### Text Extraction
 
+Set this to true if you want to text extraction of certain MIME types to use separate Java process. This will utilize extra resources from the operating system while improving the portal's stability.
+
+	text.extraction.fork.process.enabled=false
+
+Input a list of comma delimited MIME types that will trigger text extraction using a separate Java process.
+
+	text.extraction.fork.process.mime.types=application/x-tika-ooxml
+
+#### Thread Dump
+
+The thread dump filter will log a thread dump if the portal takes longer than the specified number of seconds to process. The thread dump filter must be enabled via the property `com.liferay.portal.servlet.filters.threaddump.ThreadDumpFilter`.
+
+	thread.dump.speed.threshold=5
+
+#### User Notifications
+
+Set this to true if you want users to acknowledge receipt of user notification events.
+
+	user.notification.event.confirmation.enabled=false
+
+#### Vaadin
+
+Specify the location of the portal wide Vaadin themes and widget set (client side JavaScript).
+
+	vaadin.resources.path=/html
+
+Specify the base Vaadin theme to load automatically for all Vaadin portlets. A portlet can include an additional theme that is loaded after the shared theme.
+
+	vaadin.theme=liferay
+
+Specify the shared widget set (client side JavaScript) that is used by all Vaadin portlets running in the portal.
+
+	vaadin.widgetset=com.vaadin.portal.gwt.PortalDefaultWidgetSet
+    
 #### Velocity Engine
 
-Input a list of comma delimited class names that extend
-*com.liferay.util.velocity.VelocityResourceListener*. These classes will
-run in sequence to allow you to find the applicable ResourceLoader to
-load a Velocity template.
+Input a list of comma delimited class names that extend `com.liferay.util.velocity.VelocityResourceListener`. These classes will run in sequence to allow you to find the applicable `ResourceLoader` to load a Velocity template.
 
-velocity.engine.resource.listeners=com.liferay.portal.velocity.ServletVelocityResourceListener,com.liferay.portal.velocity.JournalTemplateVelocityResourceListener,com.liferay.portal.velocity.ThemeLoaderVelocityResourceListener,com.liferay.portal.velocity.ClassLoaderVelocityResourceListener
+	velocity.engine.resource.listeners=com.liferay.portal.velocity.ServletVelocityResourceListener,com.liferay.portal.velocity.JournalTemplateVelocityResourceListener,com.liferay.portal.velocity.ThemeLoaderVelocityResourceListener,com.liferay.portal.velocity.ClassLoaderVelocityResourceListener
 
-Set the Velocity resource managers. We extend the Velocity's default
-resource managers for better scalability.
+Set the Velocity resource managers. We extend the Velocity's default resource managers for better scalability.
 
-Note that the modification check interval is not respected because the
-resource loader implementation does not know the last modified date of a
-resource. This means you will need to turn off caching if you want to be
-able to modify VM templates in themes and see the changes right away.
+Note that the modification check interval is not respected because the resource loader implementation does not know the last modified date of a resource. This means you will need to turn off caching if you want to be able to modify VM templates in themes and see the changes right away.
 
-velocity.engine.resource.manager=com.liferay.portal.velocity.LiferayResourceManager
+*Examples:*
 
-velocity.engine.resource.manager.cache=com.liferay.portal.velocity.LiferayResourceCache
+	velocity.engine.resource.manager=com.liferay.portal.velocity.LiferayResourceManager
+	velocity.engine.resource.manager.cache=com.liferay.portal.velocity.LiferayResourceCache
+	velocity.engine.resource.manager.cache.enabled=true
+	velocity.engine.resource.manager.modification.check.interval=0
 
-velocity.engine.resource.manager.cache.enabled=true
+Input a list of comma delimited macros that will be loaded. These files must exist in the class path.
 
-\#velocity.engine.resource.manager.modification.check.interval=0
-
-Input a list of comma delimited macros that will be loaded. These files
-must exist in the class path.
-
-velocity.engine.velocimacro.library=VM\_global\_library.vm,VM\_liferay.vm
+	velocity.engine.velocimacro.library=VM_global_library.vm,VM_liferay.vm
 
 Set the Velocity logging configuration.
 
-velocity.engine.logger=org.apache.velocity.runtime.log.SimpleLog4JLogSystem
-
-velocity.engine.logger.category=org.apache.velocity
+	velocity.engine.logger=org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+	velocity.engine.logger.category=org.apache.velocity
 
 #### Virtual Hosts
 
 Set the extensions that will be ignored for virtual hosts.
 
-virtual.hosts.ignore.extensions=\\
-
-/c,\\
-
-.css,\\
-
-.gif,\\
-
-.image/company\_logo,\\
-
-.ico,\\
-
-.js,\\
-
-.jpeg,\\
-
-.jsp,\\
-
-.png,\\
-
-/portal/layout,\\
-
-/portal/login,\\
-
-/portal/logout
+    virtual.hosts.ignore.extensions=\
+        /c,\
+        .css,\
+        .gif,\
+        .image/company_logo,\
+        .ico,\
+        .js,\
+        .jpeg,\
+        .jsp,\
+        .png,\
+        /portal/layout,\
+        /portal/login,\
+        /portal/logout
 
 Set the hosts that will be ignored for virtual hosts.
 
-virtual.hosts.ignore.hosts=\\
-
-127.0.0.1,\\
-
-localhost
+	virtual.hosts.ignore.hosts=\
+        127.0.0.1,\
+        localhost
 
 Set the paths that will be ignored for virtual hosts.
 
-virtual.hosts.ignore.paths=\\
+    virtual.hosts.ignore.paths=\
+        /c,\
+        \
+        /c/portal/change_password,\
+        /c/portal/extend_session,\
+        /c/portal/extend_session_confirm,\
+        /c/portal/json_service,\
+        /c/portal/layout,\
+        /c/portal/login,\
+        /c/portal/logout,\
+        /c/portal/portlet_url,\
+        /c/portal/render_portlet,\
+        /c/portal/reverse_ajax,\
+        /c/portal/session_tree_js_click,\
+        /c/portal/status,\
+        /c/portal/update_layout,\
+        /c/portal/update_terms_of_use,\
+        /c/portal/upload_progress_poller,\
+        \
+        /c/layouts_admin/update_page
 
-/c,\\
+Specify the site name that will default to the company's virtual host. If the specified site has a virtual host, then that will take precedence. If it does not, then it will use the company's virtual host. This property is useful to remove `/web/guest` (or any other site) from the default URL. For example, if this property is not set, then the default URL may be [http://localhost:8080/web/guest/home](http://localhost:8080/web/guest/home). If this property is set, then the default URL may be [http://localhost:8080/home](http://localhost:8080/home).
 
-\\
+	virtual.hosts.default.site.name=Guest
+	
+#### XML Validation
 
-/c/portal/change\_password,\\
+Set this property to `false` to disable XML validation in the portal. XML validation should only be disabled if validation cannot be performed because the servers hosting the external DTD or XSD files are not available.
 
-\
-\
+	xml.validation.enabled=true
 
-/c/portal/extend\_session,\\
+#### Xuggler
 
-/c/portal/extend\_session\_confirm,\\
+Set this to `true` to enable conversion and previewing of videos in the Document Library portlet. See [http://www.xuggle.com/xuggler/downloads/build.jsp](http://www.xuggle.com/xuggler/downloads/build.jsp) for more information.
 
-\
-\
+	xuggler.enabled=false
 
-/c/portal/json\_service,\\
+#### JSP
 
-/c/portal/layout,\\
+Set the `JspWriter` buffer size. `JspFactoryWrapper` reads this value as the buffer size when creating new JspWriters. This value should be kept at `0` for performance reasons.
 
-/c/portal/login,\\
-
-/c/portal/logout,\\
-
-/c/portal/portlet\_url,\\
-
-/c/portal/render\_portlet,\\
-
-/c/portal/reverse\_ajax,\\
-
-/c/portal/session\_tree\_js\_click,\\
-
-/c/portal/status,\\
-
-/c/portal/update\_layout,\\
-
-/c/portal/update\_terms\_of\_use,\\
-
-/c/portal/upload\_progress\_poller,\\
-
-\\
-
-/c/layout\_configuration/templates,\\
-
-/c/layout\_management/update\_page
-
-Specify the community name that will default to the company's virtual
-host. If the specified community has a virtual host, then that will take
-precedence. If it does not, then it will use the company's virtual host.
-
-This property is useful to remove `/web/guest` (or any other
-community) from the default URL. For example, if this property is not
-set, then the default URL may be
-`http://localhost:8080/web/guest/home`. If this property is
-set, then the default URL may be http://localhost:8080/home.
-
-virtual.hosts.default.community.name=Guest
-
-#### HTTP
-
-See `system.properties` for more HTTP settings.
-
-Set the maximum number of connections.
-
-\#com.liferay.portal.util.HttpImpl.max.connections.per.host=2
-
-\#com.liferay.portal.util.HttpImpl.max.total.connections=20
-
-Set the proxy authentication type.
-
-\#com.liferay.portal.util.HttpImpl.proxy.auth.type=username-password
-
-\#com.liferay.portal.util.HttpImpl.proxy.auth.type=ntlm
-
-Set user name and password used for HTTP proxy authentication.
-
-\#com.liferay.portal.util.HttpImpl.proxy.username=
-
-\#com.liferay.portal.util.HttpImpl.proxy.password=
-
-Set additional properties for NTLM authentication.
-
-\#com.liferay.portal.util.HttpImpl.proxy.ntlm.domain=
-
-\#com.liferay.portal.util.HttpImpl.proxy.ntlm.host=
-
-Set the connection timeout when fetching HTTP content.
-
-com.liferay.portal.util.HttpImpl.timeout=10000
+	jsp.writer.buffer.size=0	
 
 #### Servlet Filters
 
-The audit filter populates the `AuditRequestThreadLocal` with
-the appropriate request values to generate audit requests.
+The absolute redirects filter is used to ensure that all redirects are absolute. It should not be disabled because it also sets the company id in the request so that subsequent calls in the thread have the company id properly set. This filter should also always be the first filter in the list of filters.
 
-com.liferay.portal.servlet.filters.audit.AuditFilter=false
+	com.liferay.portal.servlet.filters.absoluteredirects.AbsoluteRedirectsFilter=true
 
-The auto login filter processes the classes in the property
-`auto.login.hooks` to provide auto login functionality.
+The audit filter populates the `AuditRequestThreadLocal` with the appropriate request values to generate audit requests.
 
-com.liferay.portal.servlet.filters.autologin.AutoLoginFilter=true
+	com.liferay.portal.servlet.filters.audit.AuditFilter=false
 
-The cache filter will cache content. See *ehcache.xml* to modify the
-cache expiration time to live.
+The auto login filter processes the classes in the property `auto.login.hooks` to provide auto login functionality.
 
-com.liferay.portal.servlet.filters.cache.CacheFilter=true
+	com.liferay.portal.servlet.filters.autologin.AutoLoginFilter=true
+
+The cache filter caches processed web content. See `ehcache.xml` to modify the cache expiration time to live.
+
+	com.liferay.portal.servlet.filters.cache.CacheFilter=true
 
 The CAS filter is used to provide CAS based single sign on.
 
-com.liferay.portal.servlet.filters.sso.cas.CASFilter=true
+	com.liferay.portal.servlet.filters.sso.cas.CASFilter=true
 
-This double click filter will prevent double clicks at the server side.
-Prevention of double clicks is already in place on the client side.
-However, some sites require a more robust solution. This is turned off
-by default since most sites will not need it.
+The char buffer pool filter enables char buffer pooling to minimize garbage collection of large char arrays. See the system property `com.liferay.portal.kernel.util.StringBundler.unsafe.create.limit`.
 
-com.liferay.portal.servlet.filters.doubleclick.DoubleClickFilter=false
+	com.liferay.portal.servlet.filters.charbufferpool.CharBufferPoolFilter=false
+
+This double click filter will prevent double clicks at the server side. Prevention of double clicks is already in place on the client side. However, some sites requrie a more robust solution. This is turned off by default since most sites will not need it.
+
+	com.liferay.portal.servlet.filters.doubleclick.DoubleClickFilter=false
+
+The dynamic CSS filter is used to parse Sass CSS.
+
+	com.liferay.portal.servlet.filters.dynamiccss.DynamicCSSFilter=true
 
 The ETag filter is used to generate ETag headers.
 
-com.liferay.portal.servlet.filters.etag.ETagFilter=true
+	com.liferay.portal.servlet.filters.etag.ETagFilter=true
 
-If the user can unzip compressed HTTP content, the GZip filter will zip
-up the HTTP content before sending it to the user. This will speed up
-page rendering for users that are on dial up.
+If the user can unzip compressed HTTP content, the GZip filter will zip up the HTTP content before sending it to the user. This will speed up page rendering for users that are on dial up.
 
-com.liferay.portal.servlet.filters.gzip.GZipFilter=true
+	com.liferay.portal.servlet.filters.gzip.GZipFilter=true
 
 The header filter is used to set request headers.
 
-com.liferay.portal.servlet.filters.header.HeaderFilter=true
+	com.liferay.portal.servlet.filters.header.HeaderFilter=true
 
-The I18n filter is used to internationalize URLs. See the property
-`locale.prepend.friendly.url.style` for more information.
+The ignore filter will ignore certain files from being accessed directly from a browser.
 
-com.liferay.portal.servlet.filters.i18n.I18nFilter=true
+	scom.liferay.portal.servlet.filters.ignore.IgnoreFilter=true
 
-The Language filter replaces JavaScript code that make a client side
-call to translate a piece of text with the actual translated value. For
-example, a typical piece of JavaScript code fits the pattern
-`Liferay.Language.get('key')` where `key` is the
-text to translate. This filter will replace the entire piece of code
-with the translated text. This is very useful because it will lower the
-number of client calls by translating the text before the browser
-receives the JavaScript file.
+The I18n filter is used to internationalize URLs. See the property `locale.prepend.friendly.url.style` for more information.
 
-com.liferay.portal.servlet.filters.language.LanguageFilter=true
+	com.liferay.portal.servlet.filters.i18n.I18nFilter=true
+
+The Language filter replaces JavaScript code that make a client side call to translate a piece of text with the actual translated value. For example, a typical piece of JavaScript code fits the pattern `Liferay.Language.get('key')` where `'key'` is the text to translate. This filter will replace the entire piece of code with the translated text. This is very useful because it will lower the number of client calls by translating the text before the browser receives the JavaScript file.
+
+	com.liferay.portal.servlet.filters.language.LanguageFilter=true
 
 The minifier filter is used to minify CSS and JavaScript.
 
-com.liferay.portal.servlet.filters.minifier.MinifierFilter=true
+	com.liferay.portal.servlet.filters.minifier.MinifierFilter=true
 
 The monitoring filter monitors portal request performance.
 
-com.liferay.portal.servlet.filters.monitoring.MonitoringFilter=true
+	com.liferay.portal.servlet.filters.monitoring.MonitoringFilter=true
 
 The NTLM filter is used to provide NTLM based single sign on.
 
-com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter=true
+	com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter=true
 
-The NTLM post filter is used to fix known issues with NTLM and ajax
-requests. See LPS-3795.
+The NTLM post filter is used to fix known issues with NTLM and ajax requests. See LPS-3795.
 
-com.liferay.portal.servlet.filters.sso.ntlm.NtlmPostFilter=true
+	com.liferay.portal.servlet.filters.sso.ntlm.NtlmPostFilter=true
 
 The OpenSSO filter is used to provide OpenSSO based single sign on.
 
-com.liferay.portal.servlet.filters.sso.opensso.OpenSSOFilter=true
+	com.liferay.portal.servlet.filters.sso.opensso.OpenSSOFilter=true
 
-The secure filter is used to protect servlets based on IP and protocol.
-See the properties `*.servlet.hosts.allowed` and
-`*.servlet.https.required`.
+The secure filter is used to protect servlets based on IP and protocol. See the properties `*.servlet.hosts.allowed` and `*.servlet.https.required`.
 
-com.liferay.portal.servlet.filters.secure.SecureFilter=true
+	com.liferay.portal.servlet.filters.secure.SecureFilter=true
 
-The servlet authorizing filter allows external servlets to be authorized
-by the portal. See LEP-4682.
+The servlet authorizing filter allows external servlets to be authorized by the portal. See LEP-4682.
 
-com.liferay.portal.servlet.filters.servletauthorizing.ServletAuthorizingFilter=true
+	com.liferay.portal.servlet.filters.servletauthorizing.ServletAuthorizingFilter=true
 
-The strip filter will remove blank lines from the content. This will
-speed up page rendering for users that are on dial up.
+The session id filter ensure that only one session is created between http and https sessions. This is useful if you want users to login via https but have them view the rest of the site via http. This is disabled by default. Do not enable this unless you thoroughly understand how cookies, http, and https work.
 
-com.liferay.portal.servlet.filters.strip.StripFilter=true
+	com.liferay.portal.servlet.filters.sessionid.SessionIdFilter=false
 
-The layout cache filter will cache pages to speed up page rendering for
-guest users. See *ehcache.xml* to modify the cache expiration time to
-live.
+The Sharepoint filter allows users to access documents in the Document Library directly from Microsoft Office using the Sharepoint protocol.
 
-com.liferay.portal.servlet.filters.layoutcache.LayoutCacheFilter=true
+	com.liferay.portal.sharepoint.SharepointFilter=true
 
-The session id filter ensure that only one session is created between
-`http` and `https` sessions. This is useful if you
-want users to login via `https` but have them view the rest of
-the site via `http`. This is disabled by default. Do not
-enable this unless you thoroughly understand how cookies,
-`http`, and `https` work.
+The strip filter will remove blank lines from the outputted content. This will speed up page rendering for users that are on dial up.
 
-com.liferay.portal.servlet.filters.sessionid.SessionIdFilter=false
+	com.liferay.portal.servlet.filters.strip.StripFilter=true
 
-The Sharepoint filter allows users to access documents in the Document
-Library directly from Microsoft Office using the Sharepoint protocol.
+The theme preview filter generates a preview of the currently applied theme that can be used by the Dreamweaver Theming plugin. This is disabled by default. Set the `themePreview` parameter to `1` in the URL to access the theme preview for any page. For example, a URL can be [http://localhost:8080/web/guest?themePreview=1](http://localhost:8080/web/guest?themePreview=1).
 
-com.liferay.portal.sharepoint.SharepointFilter=true
+	com.liferay.portal.servlet.filters.themepreview.ThemePreviewFilter=false
 
-The strip filter will remove blank lines from the outputted content.
-This will speed up page rendering for users that are on dial up.
+The thread dump filter will automatically log thread dumps when the portal is too slow. Behavior can be configured via the property `thread.dump.speed.threshold`.
 
-com.liferay.portal.servlet.filters.strip.StripFilter=true
+	com.liferay.portal.servlet.filters.threaddump.ThreadDumpFilter=false
 
-The theme preview filter generates a preview of the currently applied
-theme that can be used by the Dreamweaver Theming plugin. This is
-disabled by default. Set the `themePreview` parameter to
-`1` in the URL to access the theme preview for any page. For
-example, a URL can be
-`http://localhost:8080/web/guest?themePreview=1`.
+The thread local filter cleans up short lived thread locals managed by `CentralizedThreadLocal` to prevent memory leaks.
 
-com.liferay.portal.servlet.filters.themepreview.ThemePreviewFilter=false
+	com.liferay.portal.servlet.filters.threadlocal.ThreadLocalFilter=true
 
-The thread local filter cleans up registered thread locals to prevent
-memory leaks. Register your thread local with
-`com.liferay.portal.kernel.util.ThreadLocalRegistry`.
+The unsynchronized print writer pool filter enables pooling print writers to minimize the creation of `java.io.PrintWriter` instances because it is an expensive action.
 
-com.liferay.portal.servlet.filters.threadlocal.ThreadLocalFilter=true
+	com.liferay.portal.servlet.filters.unsyncprintwriterpool.UnsyncPrintWriterPoolFilter=true
 
-The valid HTML filter will move JavaScript that is outside of the
-closing body tag to its proper place inside the body tag. Most sites
-will prefer to leave this filter disabled because having JavaScript
-outside of the body tag causes the page to render faster. However, the
-side effect is that it will also make the site inaccessible to screen
-readers because the HTML is technically invalid. Setting this property
-to true optimizes for accessibility while setting this property to false
-optimizes for browser performance.
+The valid HTML filter will move JavaScript that is outside of the closing body tag to its proper place inside the body tag. Most sites will prefer to leave this filter disabled because having JavaScript outside of the body tag causes the page to render faster. However, the side effect is that it will also make the site unaccessible to screen readers because the HTML is technically invalid. Setting this property to `true` optimizes for accessibility while setting this property to `false` optimzes for browser performance.
 
-com.liferay.portal.servlet.filters.validhtml.ValidHtmlFilter=false
+	com.liferay.portal.servlet.filters.validhtml.ValidHtmlFilter=false 
 
-The Velocity filter will process `*/css/main.css` as a
-Velocity template.
+The virtual host filter maps hosts to public and private pages. For example, if the public virtual host is `www.helloworld.com` and the friendly URL is `/helloworld`, then [http://www.helloworld.com](http://www.helloworld.com) is mapped to [http://localhost:8080/web/helloworld](http://localhost:8080/web/helloworld).
 
-com.liferay.portal.servlet.filters.velocity.VelocityFilter=false
-
-The virtual host filter maps hosts to public and private pages. For
-example, if the public virtual host is `www.helloworld.com`
-and the friendly URL is `/helloworld`, then
-`http://www.helloworld.com` is mapped to
-`http://localhost:8080/web/helloworld`.
-
-com.liferay.portal.servlet.filters.virtualhost.VirtualHostFilter=true
-
+	com.liferay.portal.servlet.filters.virtualhost.VirtualHostFilter=true
+    
 #### Upload Servlet Request
 
-Set the maximum file size. Default is 1024 \* 1024 \* 100.
+Set the maximum file size. Default is 1024 * 1024 * 100.
 
-com.liferay.portal.upload.UploadServletRequestImpl.max.size=104857600
+	com.liferay.portal.upload.UploadServletRequestImpl.max.size=104857600
 
 Set the temp directory for uploaded files.
 
-\#com.liferay.portal.upload.UploadServletRequestImpl.temp.dir=C:/Temp
+*Example:*
 
-Set the threshold size to prevent extraneous serialization of uploaded
-data.
+	com.liferay.portal.upload.UploadServletRequestImpl.temp.dir=C:/Temp
 
-com.liferay.portal.upload.LiferayFileItem.threshold.size=262144
+Set the threshold size to prevent extraneous serialization of uploaded data.
 
-Set the threshold size to prevent out of memory exceptions caused by
-caching excessively large uploaded data. Default is 1024 \* 1024 \* 10.
+	com.liferay.portal.upload.LiferayFileItem.threshold.size=262144
 
-com.liferay.portal.upload.LiferayInputStream.threshold.size=10485760
+Set the threshold size to prevent out of memory exceptions caused by caching excessively large uploaded data. Default is 1024 * 1024 * 10.
+
+	com.liferay.portal.upload.LiferayInputStream.threshold.size=10485760
 
 #### Web Server
 
-Set the HTTP and HTTPs ports when running the portal in a J2EE server
-that is sitting behind another web server like Apache. Set the values to
--1 if the portal is not running behind another web server like Apache.
+Set the HTTP and HTTPs ports when running the portal in a J2EE server that is sitting behind another web server like Apache. Set the values to `-1` if the portal is not running behind another web server like Apache.
 
-web.server.http.port=-1
+	web.server.http.port=-1
+	web.server.https.port=-1
 
-web.server.https.port=-1
+Set the hostname that will be used when the portlet generates URLs. Leaving this blank will mean the host is derived from the servlet container.
 
-Set the hostname that will be used when the portlet generates URLs.
-Leaving this blank will mean the host is derived from the servlet
-container.
-
-web.server.host=
+	web.server.host=
 
 Set the preferred protocol.
 
-web.server.protocol=https
+*Example:*
 
-Set this to true to display the server name at the bottom of every page.
-This is useful when testing clustering configurations so that you can
-know which node you are accessing.
+	web.server.protocol=https
 
-web.server.display.node=false
+Set this to `true` to display the server name at the bottom of every page. This is useful when testing clustering configurations so that you can know which node you are accessing.
+
+	web.server.display.node=false
+
+Set this to `true` to enable support for legacy proxy servers (Apache 1.x).
+
+	web.server.proxy.legacy.mode=false
 
 #### WebDAV
 
 Set a list of files for the WebDAV servlet to ignore processing.
 
-webdav.ignore=.DS\_Store,.metadata\_index\_homes\_only,.metadata\_never\_index,.Spotlight-V100,.TemporaryItems,.Trashes
+	webdav.ignore=.DS_Store,.metadata_index_homes_only,.metadata_never_index,.Spotlight-V100,.TemporaryItems,.Trashes,Backups.backupdb
 
 #### Main Servlet
 
-Servlets can be protected by
-*com.liferay.portal.servlet.filters.secure.SecureFilter*.
+Servlets can be protected by `com.liferay.portal.servlet.filters.secure.SecureFilter`.
 
-Input a list of comma delimited IPs that can access this servlet. Input
-a blank list to allow any IP to access this servlet.
-`SERVER_IP` will be replaced with the IP of the host server.
+Input a list of comma delimited IPs that can access this servlet. Input a blank list to allow any IP to access this servlet. `SERVER_IP` will be replaced with the IP of the host server.
 
-main.servlet.hosts.allowed=
+	main.servlet.hosts.allowed=
 
-Set the following to true if this servlet can only be accessed via
-`https`.
+Set this to `true` if this servlet can only be accessed via https.
 
-main.servlet.https.required=false
+	main.servlet.https.required=false
+	
+#### Atom Servlet
+
+See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
+
+	atom.servlet.hosts.allowed=127.0.0.1,SERVER_IP
+	atom.servlet.https.required=false	
 
 #### Axis Servlet
 
-See Main Servlet on how to protect this servlet.
+See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
-axis.servlet.hosts.allowed=127.0.0.1,SERVER\_IP
-
-axis.servlet.https.required=false
+	axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP
+	axis.servlet.https.required=false
 
 #### Google Gadget Servlet
 
 Set the servlet mapping for the Google Gadget servlet.
 
-google.gadget.servlet.mapping=/google\_gadget
+	google.gadget.servlet.mapping=/google_gadget
 
-#### JSON Tunnel Servlet
+#### JSON Servlet
 
-See Main Servlet on how to protect this servlet.
+See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
-json.servlet.hosts.allowed=
+	json.servlet.hosts.allowed=
+	json.servlet.https.required=false
+	
+#### JSON Web Service Servlet
 
-json.servlet.https.required=false
+See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
+
+	jsonws.servlet.hosts.allowed=
+	jsonws.servlet.https.required=false	
 
 #### Liferay Tunnel Servlet
 
-See Main Servlet on how to protect this servlet.
+See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
-tunnel.servlet.hosts.allowed=127.0.0.1,SERVER\_IP
-
-tunnel.servlet.https.required=false
+	tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP
+	tunnel.servlet.https.required=false
 
 #### Netvibes Servlet
 
 Set the servlet mapping for the Netvibes servlet.
 
-netvibes.servlet.mapping=/netvibes
+	netvibes.servlet.mapping=/netvibes
 
 #### Spring Remoting Servlet
 
-See Main Servlet on how to protect this servlet.
+See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
-spring.remoting.servlet.hosts.allowed=127.0.0.1,SERVER\_IP
-
-spring.remoting.servlet.https.required=false
+	spring.remoting.servlet.hosts.allowed=127.0.0.1,SERVER_IP
+	spring.remoting.servlet.https.required=false
 
 #### WebDAV Servlet
 
-See Main Servlet on how to protect this servlet.
+See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
-webdav.servlet.hosts.allowed=
-
-webdav.servlet.https.required=false
+	webdav.servlet.hosts.allowed=
+	webdav.servlet.https.required=false
 
 #### Widget Servlet
 
 Set the servlet mapping for the widget servlet.
 
-widget.servlet.mapping=/widget
+	widget.servlet.mapping=/widget
 
 #### Admin Portlet
 
-You can set some administrative defaults by using these properties. The
-first time you bring up your portal, these values will then already be
-set in the Admin portlet. All values should be separated by
-`\n` characters.
+Input a list of default group names separated by `\n` characters that are associated with newly created users.
 
-Set up default group names.
+	admin.default.group.names=
 
-admin.default.group.names=
+Input a list of default role names separated by `\n` characters that are associated with newly created users.
 
-Set up default role names.
+	admin.default.role.names=Power User\nUser
 
-admin.default.role.names=Power User\\nUser
+Input a list of default user group names separated by `\n` characters that are associated with newly created users.
 
-Set up default user group names.
+	admin.default.user.group.names=
 
-admin.default.user.group.names=
+Set this to `true` to ensure that a user is synchronized with the default associations of groups, roles, and user groups upon every login. Set this to `false` if default associations should only be applied to a user when a user is created.
 
-Set this to true to ensure that a user is synchronized with the default
-associations of groups, roles, and user groups upon every log in. Set
-this to false if default associations should only be applied to a user
-when a user is created.
+	admin.sync.default.associations=false
 
-admin.sync.default.associations=false
+Input a list of mail host names separated by \n characters.
 
-The rest of these properties map to their values in the Admin portlet.
+	admin.mail.host.names=
 
-admin.mail.host.names=
+Input a list of reserved screen names separated by \n characters.
 
-admin.reserved.screen.names=
+	admin.reserved.screen.names=
 
-admin.reserved.email.addresses=
+Input a list of reserved email addresses separated by \n characters.
 
-admin.email.from.name=Joe Bloggs
+	admin.reserved.email.addresses=
 
-admin.email.from.address=test@liferay.com
+Configure email notification settings.
 
-admin.email.user.added.enabled=true
-
-admin.email.user.added.subject=com/liferay/portlet/admin/dependencies/email\_user\_added\_subject.tmpl
-
-admin.email.user.added.body=com/liferay/portlet/admin/dependencies/email\_user\_added\_body.tmpl
-
-admin.email.password.sent.enabled=true
-
-admin.email.password.sent.subject=com/liferay/portlet/admin/dependencies/email\_password\_sent\_subject.tmpl
-
-admin.email.password.sent.body=com/liferay/portlet/admin/dependencies/email\_password\_sent\_body.tmpl
+	admin.email.from.name=Joe Bloggs
+	admin.email.from.address=test@liferay.com
+	
+	admin.email.user.added.enabled=true
+	admin.email.user.added.subject=com/liferay/portlet/admin/dependencies/email_user_added_subject.tmpl
+	admin.email.user.added.body=com/liferay/portlet/admin/dependencies/email_user_added_body.tmpl
+	admin.email.user.added.no.password.body=com/liferay/portlet/admin/dependencies/email_user_added_no_password_body.tmpl
+	
+	admin.email.password.reset.subject=com/liferay/portlet/admin/dependencies/email_password_reset_subject.tmpl
+	admin.email.password.reset.body=com/liferay/portlet/admin/dependencies/email_password_reset_body.tmpl
+	
+	admin.email.password.sent.subject=com/liferay/portlet/admin/dependencies/email_password_sent_subject.tmpl
+	admin.email.password.sent.body=com/liferay/portlet/admin/dependencies/email_password_sent_body.tmpl
+	
+	admin.email.verification.subject=com/liferay/portlet/admin/dependencies/email_verification_subject.tmpl
+	admin.email.verification.body=com/liferay/portlet/admin/dependencies/email_verification_body.tmpl
 
 #### Announcements Portlet
 
 Configure email notification settings.
 
-announcements.email.from.name=Joe Bloggs
+	announcements.email.from.name=Joe Bloggs
+	announcements.email.from.address=test@liferay.com
 
-announcements.email.from.address=test@liferay.com
+	announcements.email.to.name=
+	announcements.email.to.address=noreply@liferay.com
 
-announcements.email.to.name=
+	announcements.email.subject=com/liferay/portlet/announcements/dependencies/email_subject.tmpl
+	announcements.email.body=com/liferay/portlet/announcements/dependencies/email_body.tmpl
 
-announcements.email.to.address=noreply@liferay.com
+Set the list of announcement types. The display text of each of the announcement types is set in content/Language.properties.
 
-announcements.email.subject=com/liferay/portlet/announcements/dependencies/email\_subject.tmpl
+	announcements.entry.types=general,news,test
 
-announcements.email.body=com/liferay/portlet/announcements/dependencies/email\_body.tmpl
+Set the interval on which the CheckEntryMessageListener will run. The value is set in one minute increments.
 
-Set the list of announcement types. The display text of each of the
-announcement types is set in `content/Language.properties`.
-
-announcements.entry.types=general,news,test
-
-Set the interval on which the `CheckEntryJob` will run. The
-value is set in one minute increments.
-
-announcements.entry.check.interval=15
-
-#### Asset Publisher Portlet
-
-Input a list of comma separated display styles that will be available in
-the configuration screen of Asset Publisher portlet.
-
-asset.publisher.display.styles=table,title-list,abstracts,full-content
+	announcements.entry.check.interval=15
 
 #### Asset
 
-Input a list of comma delimited default properties for new categories.
-Each item of the list should have the following format:
-`key:value`.
+Input a list of comma delimited default properties for new categories. Each item of the list should have the following format: `key:value`.
 
-asset.categories.properties.default=
+	asset.categories.properties.default=
 
-Set the following to false to specify that searching and browsing using
-categories should only show assets that have been assigned the selected
-category explicitly. When set to true, the children categories are also
-included in the search.
+Set the following to `false` to specify that searching and browsing using categories should only show assets that have been assigned the selected category explicitly. When set to `true`, the children categories are also included in the search.
 
-asset.categories.search.hierarchical=true
+	asset.categories.search.hierarchical=true
 
 Set this to true to enable incrementing the view counter for assets.
 
-asset.entry.increment.view.counter.enabled=true
+	asset.entry.increment.view.counter.enabled=true
 
-Input a class name that implements
-`com.liferay.portlet.asset.util.AssetEntryValidator`. This
-class will be called to validate entries. The
-`DefaultAssetEntryValidator` class is just an empty class that
-doesn't actually do any validation. The
-`MinimalAssetEntryValidator` requires all enties to have at
-least one tag.
+Input a class name that extends `com.liferay.portlet.asset.util.BaseAssetEntryValidator`. This class will be called to validate entries. The `DefaultAssetEntryValidator` class is just an empty class that doesn't actually do any validation. The `MinimalAssetEntryValidator` requires all entities to have at least one tag.
 
-asset.entry.validator=com.liferay.portlet.asset.util.DefaultAssetEntryValidator
+*Examples:*
 
-asset.entry.validator=com.liferay.portlet.asset.util.MinimalAssetEntryValidator
+	asset.entry.validator=com.liferay.portlet.asset.util.DefaultAssetEntryValidator
+	asset.entry.validator=com.liferay.portlet.asset.util.MinimalAssetEntryValidator
 
-Input a list of comma delimited default tag properties for new tags.
-Each item of the list should have the following format:
-`key:value`.
+Set the limit for results used when performing asset searches that are subsequently filtered by permissions.
 
-asset.tag.properties.default=
+	asset.filter.search.limit=5000
+
+Input a list of comma delimited default tag properties for new tags. Each item of the list should have the following format: `key:value`.
+
+	asset.tag.properties.default=
+
+Set this to true to enable tag suggestions.
+
+	asset.tag.suggestions.enabled=true
 
 Set the name of the default vocabulary which will be created by default.
 
-asset.vocabulary.default=Topic
+	asset.vocabulary.default=Topic
 
-Set a property with the prefix `asset.renderer.enabled`. and a
-suffix with the asset renderer factory class name to enable or disable
-an asset renderer factory. The default setting is true. See LPS-6085 for
-more information.
+Set a property with the prefix `asset.renderer.enabled.` and a suffix with the asset renderer factory class name to enable or disable an asset renderer factory. The default setting is `true`. See LPS-6085 for more information.
 
-asset.renderer.enabled.com.liferay.portlet.documentlibrary.asset.DLFileEntryAssetRendererFactory=false
+*Examples:*
 
+	asset.renderer.enabled.com.liferay.portlet.documentlibrary.asset.DLFileEntryAssetRendererFactory=false
+	asset.renderer.enabled.com.liferay.portlet.messageboards.asset.MBDiscussionAssetRendererFactory=false
+
+#### Asset Publisher Portlet
+
+Input a list of comma separated display styles that will be available in the configuration screen of Asset Publisher portlet.
+
+	asset.publisher.display.styles=table,title-list,abstracts,full-content	
+	
 #### Blogs Portlet
-
-The following properties affect the Blogs portlet.
-
-blogs.email.comments.added.enabled=true
-
-blogs.email.comments.added.subject=com/liferay/portlet/blogs/dependencies/email\_comments\_added\_subject.tmpl
-
-blogs.email.comments.added.body=com/liferay/portlet/blogs/dependencies/email\_comments\_added\_body.tmpl
-
-blogs.page.abstract.length=400
-
-blogs.rss.abstract.length=200
-
-blogs.trackback.excerpt.length=50
 
 Configure email notification settings.
 
-blogs.email.from.name=Joe Bloggs
+	blogs.email.from.name=Joe Bloggs
+	blogs.email.from.address=test@liferay.com
 
-blogs.email.from.address=test@liferay.com
+	blogs.email.entry.added.enabled=true
+	blogs.email.entry.added.subject=com/liferay/portlet/blogs/dependencies/email_entry_added_subject.tmpl
+	blogs.email.entry.added.body=com/liferay/portlet/blogs/dependencies/email_entry_added_body.tmpl
 
-blogs.email.entry.added.enabled=true
+	blogs.email.entry.updated.enabled=true
+	blogs.email.entry.updated.subject=com/liferay/portlet/blogs/dependencies/email_entry_updated_subject.tmpl
+	blogs.email.entry.updated.body=com/liferay/portlet/blogs/dependencies/email_entry_updated_body.tmpl
 
-blogs.email.entry.added.subject=com/liferay/portlet/blogs/dependencies/email\_entry\_added\_subject.tmpl
+	blogs.page.abstract.length=400
 
-blogs.email.entry.added.body=com/liferay/portlet/blogs/dependencies/email\_entry\_added\_body.tmpl
-
-blogs.email.entry.updated.enabled=true
-
-blogs.email.entry.updated.subject=com/liferay/portlet/blogs/dependencies/email\_entry\_updated\_subject.tmpl
-
-blogs.email.entry.updated.body=com/liferay/portlet/blogs/dependencies/email\_entry\_updated\_body.tmpl
-
-Set the interval on which the `TrackbackVerifierJob` will run.
-The value is set in one minute increments.
-
-blogs.trackback.verifier.job.interval=5
+	blogs.rss.abstract.length=200
 
 Set the excerpt length for linkbacks.
 
-blogs.linkback.excerpt.length=200
+	blogs.linkback.excerpt.length=200
 
-Set the interval on which the LinkbackMessageListener will run. The
-value is set in one minute increments.
+Set the interval on which the `LinkbackMessageListener` will run. The value is set in one minute increments.
 
-blogs.linkback.job.interval=5
+	blogs.linkback.job.interval=5
 
-Set this to true to enable pingbacks.
+Set this to `true` to enable pingbacks.
 
-blogs.pingback.enabled=true
+	blogs.pingback.enabled=true
 
-Set this to true to enable trackbacks.
+Set this to `true` to enable trackbacks.
 
-blogs.trackback.enabled=true
+	blogs.trackback.enabled=true
 
-Set this to true to enable pinging Google on new and updated blog
-entries.
+Set this to true to enable pinging Google on new and updated blog entries.
 
-blogs.ping.google.enabled=true
+	blogs.ping.google.enabled=true
 
-Set this to true to enable comments for blogs entries.
+Set this to `true` to enable comments for blogs entries.
 
-blogs.entry.comments.enabled=true
+	blogs.entry.comments.enabled=true
 
-Set this to true to enable previous and next navigation for blogs
-entries.
+Set this to `true` to enable previous and next navigation for blogs entries.
 
-blogs.entry.previous.and.next.navigation.enabled=true
+	blogs.entry.previous.and.next.navigation.enabled=true
 
-#### Breadcrumb Portlet
+Set the maximum file size and valid file extensions for images. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
 
-Set this to true to show the Guest community as the top level parent in
-the breadcrumbs. It will only show if it has at least one page.
-
-breadcrumb.show.guest.group=true
-
-Set this to true to show the path of parent communities or organizations
-in the breadcrumbs. An community or organization will only be shown if
-it has at least one page.
-
-breadcrumb.show.parent.groups=true
-
-#### Calendar Portlet
-
-Set the list of event types. The display text of each of the event types
-is set in *content/Language.properties*.
-
-calendar.event.types=anniversary,appointment,bill-payment,birthday,breakfast,call,chat,class,club-event,concert,dinner,event,graduation,happy-hour,holiday,interview,lunch,meeting,movie,net-event,other,party,performance,press-release,reunion,sports-event,training,travel,tv-show,vacation,wedding
-
-Set the interval on which the `CheckEventJob` will run. The
-value is set in one minute increments.
-
-calendar.event.check.interval=15
-
-Configure email notification settings.
-
-calendar.email.from.name=Joe Bloggs
-
-calendar.email.from.address=test@liferay.com
-
-calendar.email.event.reminder.enabled=true
-
-calendar.email.event.reminder.subject=com/liferay/portlet/calendar/dependencies/email\_event\_reminder\_subject.tmpl
-
-calendar.email.event.reminder.body=com/liferay/portlet/calendar/dependencies/email\_event\_reminder\_body.tmpl
-
-Set this to true to enable comments for calendar events.
-
-calendar.event.comments.enabled=true
-
-#### Communities Portlet
-
-Set this to true to allow community members to see the Communities
-portlet and the communities he is a member of in the control panel.
-Setting this to false will only allow administrators to see this portlet
-in the control panel.
-
-communities.control.panel.members.visible=true
-
-Configure email notification settings.
-
-communities.email.from.name=Joe Bloggs
-
-communities.email.from.address=test@liferay.com
-
-communities.email.membership.reply.subject=com/liferay/portlet/communities/dependencies/email\_membership\_reply\_subject.tmpl
-
-communities.email.membership.reply.body=com/liferay/portlet/communities/dependencies/email\_membership\_reply\_body.tmpl
-
-communities.email.membership.request.subject=com/liferay/portlet/communities/dependencies/email\_membership\_request\_subject.tmpl
-
-communities.email.membership.request.body=com/liferay/portlet/communities/dependencies/email\_membership\_request\_body.tmpl
-
-#### Discussion Tag Library
-
-Set the thread view for discussion comments. This will affect Blogs,
-Document Library, and other portlets that use the Discussion tag library
-to provide comments. Set the value to `flat` to paginate
-comments. Set the value to `combination` to show all comments
-in one page along with a tree view of the comments.
-
-discussion.thread.view=combination
-
-discussion.thread.view=flat
-
-#### Document Library Portlet
-
-Set the name of a class that implements
-`com.liferay.documentlibrary.util.Hook`. The document library
-server will use this persist documents.
-
-dl.hook.impl=com.liferay.documentlibrary.util.AdvancedFileSystemHook
-
-dl.hook.impl=com.liferay.documentlibrary.util.CMISHook
-
-dl.hook.impl=com.liferay.documentlibrary.util.FileSystemHook
-
-dl.hook.impl=com.liferay.documentlibrary.util.JCRHook
-
-dl.hook.impl=com.liferay.documentlibrary.util.S3Hook
-
-FileSystemHook
-
-dl.hook.file.system.root.dir=${liferay.home}/data/document\_library
-
-JCRHook
-
-dl.hook.jcr.fetch.delay=500
-
-dl.hook.jcr.fetch.max.failures=5
+	blogs.image.small.max.size=51200
 
 A file extension of `*` will permit all file extensions.
 
-dl.file.extensions=\*
+	blogs.image.extensions=.gif,.jpeg,.jpg,.png
 
-dl.file.extensions=.bmp,.css,.doc,.docx,.dot,.gif,.gz,.htm,.html,.jpg,.js,.lar,.odb,.odf,.odg,.odp,.ods,.odt,.pdf,.png,.ppt,.pptx,.rtf,.swf,.sxc,.sxi,.sxw,.tar,.tiff,.tgz,.txt,.vsd,.xls,.xlsx,.xml,.zip,.jrxml
+Set this to `true` if blogs should be published to live by default.
 
-Set this to false to allow users to update file entries by uploading a
-file with an extension different from the one of the originally uploaded
-file. There is a known issue where setting this to true will break OSX
-compatibility. See LPS-10770 for more information.
+	blogs.publish.to.live.by.default=false
 
-dl.file.extensions.strict.check=false
+#### Breadcrumb Portlet
 
-Set the maximum file size for indexing file contents. Files larger than
-this property will not have their contents indexed, only their metadata
-will be indexed. A value of -1 indicates that all file contents will be
-indexed. A value of 0 indicates that no file contents will be indexed.
+Set this to `true` to show the Guest Site as the top level parent in the breadcrumbs. It will only show if it has at least one page.
 
-dl.file.indexing.max.size=10485760
+	breadcrumb.show.guest.group=true
 
-Set this to true to enable the read count for document library files.
+Set this to `true` to show the path of parent sites or organizations in the breadcrumbs. A site will only be shown if it has at least one page.
 
-dl.file.entry.read.count.enabled=true
+	breadcrumb.show.parent.groups=true
+	
+Specify the options that will be provided to the user in the edit configuration mode of the portlet.
 
-Set this to true to enable file rank for document library files.
+	breadcrumb.display.style.options=horizontal,vertical
 
-dl.file.rank.enabled=true
+#### Calendar Portlet
 
-Set this to true if document library should be published to live by
-default.
+Set the list of event types. The display text of each of the event types is set in `content/Language.properties`.
 
-dl.publish.to.live.by.default=true
+	calendar.event.types=anniversary,appointment,bill-payment,birthday,breakfast,call,chat,class,club-event,concert,dinner,event,graduation,happy-hour,holiday,interview,lunch,meeting,movie,net-event,other,party,performance,press-release,reunion,sports-event,training,travel,tv-show,vacation,wedding
 
-Set this to true to hold the lock when an unlock is requested through
-WebDAV until a user manually releases the lock from the Document Library
-portlet. Set this to false to release the lock.
+Set the interval on which the `CheckEventMessageListener` will run. The value is set in one minute increments.
 
-dl.webdav.hold.lock=false
+	calendar.event.check.interval=15
 
-Set this to true to create only one document library file version when
-saving multiple times during a WebDAV session.
+Set this to `true` to enable ratings for calendar events.
 
-dl.webdav.save.to.single.version=false
+	calendar.event.ratings.enabled=true
+
+Set this to `true` to enable comments for calendar events.
+
+	calendar.event.comments.enabled=true
+
+Configure email notification settings.
+
+	calendar.email.from.name=Joe Bloggs
+	calendar.email.from.address=test@liferay.com
+
+	calendar.email.event.reminder.enabled=true
+	calendar.email.event.reminder.subject=com/liferay/portlet/calendar/dependencies/email_event_reminder_subject.tmpl
+	calendar.email.event.reminder.body=com/liferay/portlet/calendar/dependencies/email_event_reminder_body.tmpl
+
+#### Discussion Tag Library
+
+Configure email notification settings for discussions.
+
+	discussion.email.comments.added.enabled=true
+	discussion.email.subject=com/liferay/portlet/messageboards/dependencies/discussion_email_subject.tmpl
+	discussion.email.body=com/liferay/portlet/messageboards/dependencies/discussion_email_body.tmpl
+
+Set this to `true` if the subscription checkbox for discussion comments will be checked by default.
+
+	discussion.subscribe.by.default=true
+
+Set the thread view for discussion comments. This will affect Blogs, Document Library, and other portlets that use the Discussion tag library to provide comments. Set the value to `flat` to paginate comments. Set the value to `combination` to show all comments in one page along with a tree view of the comments.
+
+*Examples:*
+
+	discussion.thread.view=combination
+	discussion.thread.view=flat
+
+#### Document Library Portlet
+
+Set the name of a class that implements `com.liferay.portlet.documentlibrary.antivirus.AntivirusScanner`. The document library server will use this to scan documents for viruses.
+
+*Example:*
+
+	dl.store.antivirus.impl=com.liferay.portlet.documentlibrary.antivirus.DummyAntivirusScannerImpl
+	dl.store.antivirus.impl=com.liferay.portlet.documentlibrary.antivirus.ClamAntivirusScannerImpl
+
+Set the name of a class that implements `com.liferay.portlet.documentlibrary.store.Store`. The document library server will use this to persist documents.
+
+*Examples:*
+
+	dl.store.impl=com.liferay.portlet.documentlibrary.store.AdvancedFileSystemStore
+	dl.store.impl=com.liferay.portlet.documentlibrary.store.CMISStore
+	dl.store.impl=com.liferay.portlet.documentlibrary.store.FileSystemStore
+	dl.store.impl=com.liferay.portlet.documentlibrary.store.JCRStore
+	dl.store.impl=com.liferay.portlet.documentlibrary.store.S3Store
+
+CMISStore
+
+	dl.store.cmis.credentials.username=none
+	dl.store.cmis.credentials.password=none
+	dl.store.cmis.repository.url=http://localhost:8080/alfresco/service/api/cmis
+	dl.store.cmis.system.root.dir=Liferay Home
+
+FileSystemStore
+
+	dl.store.file.system.root.dir=${liferay.home}/data/document_library
+
+JCRStore
+
+	dl.store.jcr.fetch.delay=500
+	dl.store.jcr.fetch.max.failures=5
+
+Set this to `true` to allow version labels to be moved when updated. This provides a workaround to duplicate version labels that may result when using JCRStore.
+
+	dl.store.jcr.move.version.labels=false
+
+S3Store
+
+	dl.store.s3.access.key=
+	dl.store.s3.secret.key=
+	dl.store.s3.bucket.name=
+
+Set the maximum file size and valid file extensions for documents. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
+
+*Examples:*
+
+	dl.file.max.size=307200
+	dl.file.max.size=1024000
+	dl.file.max.size=3072000
+
+A file extension of `*` will permit all file extensions.
+
+*Examples:*
+
+	dl.file.extensions=*
+	dl.file.extensions=.bmp,.css,.doc,.docx,.dot,.gif,.gz,.htm,.html,.jpg,.js,.lar,.odb,.odf,.odg,.odp,.ods,.odt,.pdf,.png,.ppt,.pptx,.rtf,.swf,.sxc,.sxi,.sxw,.tar,.tiff,.tgz,.txt,.vsd,.xls,.xlsx,.xml,.zip,.jrxml
+
+Set this to `false` to allow users to update file entries by uploading a file with an extension different from the one of the originally uploaded file. There is a known issue where setting this to `true` will break OSX compatibility. See LPS-10770 for more information.
+
+	dl.file.extensions.strict.check=false
+	
+You can map a PNG for generic thumbnails by adding the image to the theme's file system folder. For example, the generic thumbnail for documents can be found in: `/html/themes/_unstyled/images/file_system/large/document.png`.
+
+	dl.file.generic.names=compressed,document,flash,image,music,pdf,presentation,spreadsheet,video
+	dl.file.generic.extensions[compressed]=lar,rar,zip
+	dl.file.generic.extensions[document]=doc,docx,pages,rtf,odt
+	dl.file.generic.extensions[flash]=flv,swf
+	dl.file.generic.extensions[image]=bmp,gif,jpeg,jpg,odg,png,svg
+	dl.file.generic.extensions[music]=acc,mid,mp3,ogg,wav,wma
+	dl.file.generic.extensions[pdf]=pdf
+	dl.file.generic.extensions[presentation]=key,keynote,odp,pps,ppt,pptx
+	dl.file.generic.extensions[spreadsheet]=csv,numbers,ods,xls,xlsx
+	dl.file.generic.extensions[video]=avi,m4v,mov,mp4,mpg,qt,rm,wmv
+
+Set the maximum file size for indexing file contents. Files larger than this property will not have their contents indexed, only their metadata will be indexed. A value of `-1` indicates that all file contents will be indexed. A value of `0` indicates that no file contents will be indexed.
+
+	dl.file.indexing.max.size=10485760
+
+Set the file extensions that will be ignored when indexing file contents. Files with these extensions will not have their contents indexed, only their metadata will be indexed.
+
+*Examples:*
+
+	dl.file.indexing.ignore.extensions=
+	dl.file.indexing.ignore.extensions=.pdf,.ppt
+
+You can map a GIF for the extension by adding the image to the theme's image display and document library folder. The wildcard extension of `*` will be ignored. For example, the default image for the DOC extension would be found in: `/html/themes/_unstyled/images/file_system/small/doc.gif`.
+
+	dl.file.icons=.bmp,.css,.doc,.docx,.dot,.gif,.gz,.htm,.html,.jpeg,.jpg,.js,.lar,.odb,.odf,.odg,.odp,.ods,.odt,.pdf,.png,.ppt,.pptx,.rtf,.swf,.sxc,.sxi,.sxw,.tar,.tiff,.tgz,.txt,.vsd,.xls,.xlsx,.xml,.zip,.jrxml
+
+Set which files extensions are comparable by the diff tool. Any binary files listed here will only be comparable if OpenOffice is enabled and the the file is convertable to text.
+
+	dl.comparable.file.extensions=.css,.doc,.docx,.js,.htm,.html,.odt,.rtf,.sxw,.txt,.xml
+
+Set this to `true` to enable comments for document library files.
+
+	dl.file.entry.comments.enabled=true
+
+Set this to `true` to enable drafts for document library files.
+
+	dl.file.entry.drafts.enabled=false
+
+Input a list of comma delimited class names that implement `com.liferay.portlet.documentlibrary.util.DLProcessor`. These classes will trigger asynchronous processing for document library files.
+
+	dl.file.entry.processors=com.liferay.portlet.documentlibrary.util.AudioProcessor,com.liferay.portlet.documentlibrary.util.ImageProcessor,com.liferay.portlet.documentlibrary.util.PDFProcessor,com.liferay.portlet.documentlibrary.util.RawMetadataProcessor,com.liferay.portlet.documentlibrary.util.VideoProcessor
+
+Set this to `true` to enable the read count for document library files.
+
+	dl.file.entry.read.count.enabled=true
+
+Set the interval on which the `CheckFileRankMessageListener` will run. The value is set in one minute increments.
+
+	dl.file.rank.check.interval=15
+
+Set this to `true` to enable file rank for document library files.
+
+	dl.file.rank.enabled=true
+
+Set this to the maximum number of file ranks to maintain.
+
+	dl.file.rank.max.size=5
+
+Set the values related to preview and thumbnail generation for document library files. Image generation will occur for all PDF files and, if OpenOffice is enabled, for formats convertable to PDF.
+
+Image generation will use PDFBox by default unless ImageMagick is enabled. PDFBox is less accurate in image generation and has trouble with certain fonts.
+
+See the properties `imagemagick.enabled` and `openoffice.server.enabled`.
+
+	dl.file.entry.preview.enabled=true
+	dl.file.entry.preview.document.depth=8
+	dl.file.entry.preview.document.dpi=300
+	dl.file.entry.preview.document.height=0
+	dl.file.entry.preview.document.width=1000
+	dl.file.entry.preview.video.height=360
+	dl.file.entry.preview.video.width=640
+	dl.file.entry.thumbnail.enabled=true
+	dl.file.entry.thumbnail.dpi=72
+	dl.file.entry.thumbnail.height=128
+	dl.file.entry.thumbnail.width=128
+	dl.file.entry.thumbnail.depth=8
+
+Input a list of comma delimited audio MIME types that will trigger generation of video previews.
+
+	dl.file.entry.preview.audio.mime.types=audio/basic,audio/mid,audio/midi,audio/mod,audio/mp3,audio/mpeg,audio/mpeg3,audio/wav,audio/x-mid,audio/x-midi,audio/x-mod,audio/x-mpeg,audio/x-pn-realaudio,audio/x-realaudio,audio/x-wav
+
+Input a list of comma delimited video MIME types that will trigger generation of video previews.
+
+	dl.file.entry.preview.video.mime.types=video/avi,video/mp4,video/mpeg,video/quicktime,video/x-flv,video/x-ms-wmv,video/x-msvideo
+
+Set this to `true` if document library should be published to live by default.
+
+	dl.publish.to.live.by.default=true
+
+Input a list of comma delimited class names of the third party repositories that extend `com.liferay.portal.kernel.repository.BaseRepositoryImpl`.
+
+	dl.repository.impl=com.liferay.portal.repository.cmis.CMISAtomPubRepository,com.liferay.portal.repository.cmis.CMISWebServicesRepository
+
+Sets the depth of mapped CMIS entries to remove when a deletion is called from within the portal. The deeper the setting, the more calls to the server required. When a deletion is called from outside the portal, mapped CMIS entries remain stagnant in the database. Expected values are: `-1` for deep, `0` for none, and `1` for shallow.
+
+	dl.repository.cmis.delete.depth=1
+
+Set the list of supported display views.
+
+	dl.display.views=list,icon,descriptive
 
 #### Dockbar Portlet
 
-Set the portlet ids that will be shown directly in the *Add Application*
-menu.
+Set the portlet ids that will be shown directly in the "Add Application" menu.
 
-dockbar.add.portlets=56,101,110,71
+	dockbar.add.portlets=56,101,110,71
+	
+#### Dynamic Data Lists Portlet
 
+Set this to `true` if dynamic data lists record set keys should always be autogenerated.
+
+	dynamic.data.lists.record.set.force.autogenerate.key=false
+
+Set the storage type that will be used to store the dynamic data lists records. Valid values are: `expando` and `xml`.
+
+	dynamic.data.lists.storage.type=xml
+
+Specify the path to the template used for providing error messages on Dynamic Data Lists templates.
+
+	dynamic.data.lists.error.template.freemarker=com/liferay/portlet/dynamicdatalists/dependencies/error.ftl
+	dynamic.data.lists.error.template.velocity=com/liferay/portlet/dynamicdatalists/dependencies/error.vm
+
+Set the parser for each language type. A parser is only needed for language types that require parsing. The classes must implement `com.liferay.portal.kernel.templateparser.TemplateParser`.
+
+	dynamic.data.lists.template.language.parser[ftl]=com.liferay.portlet.dynamicdatalists.util.FreeMarkerTemplateParser
+	dynamic.data.lists.template.language.parser[vm]=com.liferay.portlet.dynamicdatalists.util.VelocityTemplateParser
+
+Input a list of comma delimited class names that extend `com.liferay.portal.kernel.templateparser.BaseTransformerListener`. These classes will run in sequence to allow you to modify the XML and XSL before it is transformed and allow you to modify the final output.
+
+	dynamic.data.lists.transformer.listener=	
+	
+#### Dynamic Data Mapping Portlet
+
+Set this to `true` if dynamic data mapping structure keys should always be autogenerated.
+
+	dynamic.data.mapping.structure.force.autogenerate.id=false
+
+Set the language types available for templates.
+
+	dynamic.data.mapping.template.language.types=ftl,vm
+
+
+Set the location of the default content for each language type.
+
+	dynamic.data.mapping.template.language.content[ftl]=com/liferay/portlet/dynamicdatamapping/dependencies/template.ftl
+	dynamic.data.mapping.template.language.content[vm]=com/liferay/portlet/dynamicdatamapping/dependencies/template.vm
+	
 #### Flags Portlet
 
 Input a list of questions used for flag reasons.
 
-flags.reasons=sexual-content,violent-or-repulsive-content,hateful-or-abusive-content,harmful-dangerous-acts,spam,infringes-my-rights
+	flags.reasons=sexual-content,violent-or-repulsive-content,hateful-or-abusive-content,harmful-dangerous-acts,spam,infringes-my-rights
+
+Email Notification Settings
+
+	flags.email.from.name=Joe Bloggs
+	flags.email.from.address=test@liferay.com
+
+	flags.email.subject=com/liferay/portlet/flags/dependencies/email_flag_subject.tmpl
+	flags.email.body=com/liferay/portlet/flags/dependencies/email_flag_body.tmpl
+
+Set this to `true` to enable guest users to flag content
+
+	flags.guest.users.enabled=false
 
 #### Email Notification Settings
 
@@ -4901,629 +5011,568 @@ Set this to true to enable guest users to flag content
 
 flags.guest.users.enabled=false
 
+#### Icon Menu Tag Library
+
+Configure maximum number of items to display when using the Icon Menu tag library. If the number of items is higher than the maximum allowed, then the icon menu will provide an autocomplete search box to display the items.
+
+	icon.menu.max.display.items=15
+
 #### IFrame Portlet
 
-Specify a role name that a user must be associated with in order to
-configure the IFrame portlet to use the @password@ token. This token is
-used to post the password of users who access this portlet in order to
-automatically login to the framed site.
+Specify a role name that a user must be associated with in order to configure the IFrame portlet to use the `@password@` token. This token is used to post the password of users who access this portlet in order to automatically login to the framed site.
 
-No role is required by default. However, it is recommended that you
-specify a role in high security environments where users who configure
-this portlet may attempt password theft. See LPS-5272 for more
-information.
+No role is required by default. However, it is recommended that you specify a role in high security environments where users who configure this portlet may attempt password theft. See LPS-5272 for more information.
 
-iframe.password.token.role=
-
-\
-\
+	iframe.password.token.role=
 
 #### Image Gallery Portlet
 
-Set the maximum file size and valid file extensions for images. A value
-of 0 for the maximum file size can be used to indicate unlimited file
-size. However, the maximum file size allowed is set in the property
-`com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
+Set the maximum file size and valid file extensions for images. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
 
-ig.image.max.size=10240000
+	ig.image.max.size=10240000
 
-A file extension of \* will permit all file extensions.
+A file extension of `*` will permit all file extensions.
 
-ig.image.extensions=.bmp,.gif,.jpeg,.jpg,.png,.tif,.tiff
+	ig.image.extensions=.bmp,.gif,.jpeg,.jpg,.png,.tif,.tiff
 
-Set the maximum thumbnail height and width in pixels. Set dimension of
-the custom images to 0 to disable creating a scaled image of that size.
+Set the maximum thumbnail height and width in pixels. Set dimension of the custom images to `0` to disable creating a scaled image of that size.
 
-ig.image.thumbnail.max.dimension=150
+*Examples:*
 
-ig.image.custom1.max.dimension=100
+	ig.image.thumbnail.max.dimension=130
+	ig.image.custom1.max.dimension=100
+	ig.image.custom2.max.dimension=0
 
-ig.image.custom2.max.dimension=0
+Input a list of comma delimited image MIME types that will trigger generation of image thumbnails.
 
-Set this to true if image gallery should be published to live by
-default.
+	ig.image.thumbnail.mime.types=image/gif,image/jpeg,image/png,image/tiff,image/x-tiff,image/bmp
 
-ig.publish.to.live.by.default=true
+Set this to `true` if image gallery should be published to live by default.
 
-#### Login Portlet
-
-Set this to true to allow the user to choose a password during account
-creation.
-
-login.create.account.allow.custom.password=false
-
+	ig.publish.to.live.by.default=true
+	
 #### Invitation Portlet
 
-invitation.email.max.recipients=20
-
-invitation.email.message.body=com/liferay/portlet/invitation/dependencies/email\_message\_body.tmpl
-
-invitation.email.message.subject=com/liferay/portlet/invitation/dependencies/email\_message\_subject.tmpl
+    invitation.email.max.recipients=20
+    invitation.email.message.body=com/liferay/portlet/invitation/dependencies/email_message_body.tmpl
+    invitation.email.message.subject=com/liferay/portlet/invitation/dependencies/email_message_subject.tmpl
 
 #### Journal Portlet
+    
+Input a list of sections that will be included as part of the article form when adding an article.
 
-Set this to true if article ids should always be autogenerated.
+	journal.article.form.add=content,abstract,categorization,schedule,display-page,related-assets,permissions,custom-fields
 
-journal.article.force.autogenerate.id=true
+Input a list of sections that will be included as part of the layout form when translating an article.
 
-Set this to true so that only the latest version of an article that is
-also not approved can be saved without incrementing version.
+	journal.article.form.translate=content,abstract
 
-journal.article.force.increment.version=false
+Input a list of sections that will be included as part of the article form when updating an article.
 
-Set the list of article types. The display text of each of the article
-types is set in `content/Language.properties`.
+	journal.article.form.update=content,abstract,categorization,schedule,display-page,related-assets,custom-fields
 
-journal.article.types=announcements,blogs,general,news,press-release,test
+Set this to `true` if article ids should always be autogenerated.
+
+	journal.article.force.autogenerate.id=true
+
+Set the list of article types. The display text of each of the article types is set in `content/Language.properties`.
+
+	journal.article.types=announcements,blogs,general,news,press-release,test
+
+Set a list of custom tokens that will be replaced when article content is rendered. For example, if set to `custom_token_1`, then `@custom_token_1@` will be replaced with its token value before an article is displayed.
+
+*Examples:*
+
+	journal.article.custom.tokens=custom_token_1,custom_token_2
+	journal.article.custom.token.value[custom_token_1]=This is the first custom token.
+	journal.article.custom.token.value[custom_token_2]=This is the second custom token.
 
 Set the token used when inserting simple page breaks in articles.
 
-journal.article.token.page.break=@page\_break@
+	journal.article.token.page.break=@page_break@
 
-Set the interval on which the CheckArticleJob will run. The value is set
-in one minute increments.
+Set the interval on which the `CheckArticleMessageListener` will run. The value is set in one minute increments.
 
-journal.article.check.interval=15
+	journal.article.check.interval=15
 
-Set this to true to check that a user has the VIEW permission on a
-Journal article when its content is rendered.
+Set this to `true` to check that a user has the VIEW permission on a Journal article when its content is rendered.
 
-journal.article.view.permission.check.enabled=false
+	journal.article.view.permission.check.enabled=false
 
-Set this to true if feed ids should always be autogenerated.
+Set this to `true` to enable comments for journal articles.
 
-journal.feed.force.autogenerate.id=false
+	journal.article.comments.enabled=true
 
-Set this to true if structure ids should always be autogenerated.
+Set this to `true` if feed ids should always be autogenerated.
 
-journal.structure.force.autogenerate.id=false
+	journal.feed.force.autogenerate.id=true
 
-Set this to true if template ids should always be autogenerated.
+Set this to `true` if structure ids should always be autogenerated.
 
-journal.template.force.autogenerate.id=false
+	journal.structure.force.autogenerate.id=true
 
-Input a comma delimited list of variables which are restricted from the
-context in Velocity based Journal templates.
+Set this to `true` if template ids should always be autogenerated.
 
-journal.template.velocity.restricted.variables=serviceLocator
+	journal.template.force.autogenerate.id=true
 
-Set the maximum file size and valid file extensions for images. A value
-of 0 for the maximum file size can be used to indicate unlimited file
-size. However, the maximum file size allowed is set in the property
-*com.liferay.portal.upload.UploadServletRequestImpl.max.size*.
+Set the language types available for templates.
 
-journal.image.small.max.size=51200
+	journal.template.language.types=css,ftl,vm,xsl
 
-A file extension of \* will permit all file extensions.
+Set the location of the default content for each language type.
 
-journal.image.extensions=.gif,.jpeg,.jpg,.png
+	journal.template.language.content[css]=com/liferay/portlet/journal/dependencies/template.css
+	journal.template.language.content[ftl]=com/liferay/portlet/journal/dependencies/template.ftl
+	journal.template.language.content[vm]=com/liferay/portlet/journal/dependencies/template.vm
+	journal.template.language.content[xsl]=com/liferay/portlet/journal/dependencies/template.xsl
 
-Input a list of comma delimited class names that extend
-*com.liferay.portlet.journal.util.TransformerListener*. These classes
-will run in sequence to allow you to modify the XML and XSL before it's
-transformed and allow you to modify the final output.
+Set the parser for each language type. A parser is only needed for language types that require parsing. The classes must implement `com.liferay.portal.kernel.templateparser.TemplateParser`.
 
-journal.transformer.listener=\\
+	journal.template.language.parser[css]=
+	journal.template.language.parser[ftl]=com.liferay.portlet.journal.util.FreeMarkerTemplateParser
+	journal.template.language.parser[vm]=com.liferay.portlet.journal.util.VelocityTemplateParser
+	journal.template.language.parser[xsl]=com.liferay.portlet.journal.util.XSLTemplateParser
 
-com.liferay.portlet.journal.util.TokensTransformerListener,\\
+Input a comma delimited list of variables which are restricted from the context in FreeMarker based Journal templates.
 
-\#com.liferay.portlet.journal.util.PropertiesTransformerListener,\\
+	journal.template.freemarker.restricted.variables=serviceLocator
 
-com.liferay.portlet.journal.util.ContentTransformerListener,\\
+Input a comma delimited list of variables which are restricted from the context in Velocity based Journal templates.
 
-com.liferay.portlet.journal.util.LocaleTransformerListener,\\
+	journal.template.velocity.restricted.variables=serviceLocator
 
-com.liferay.portlet.journal.util.RegexTransformerListener,\\
+Set the maximum file size and valid file extensions for images. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
 
-com.liferay.portlet.journal.util.ViewCounterTransformerListener
+	journal.image.small.max.size=51200
 
-Enter a list of regular expression patterns and replacements that will
-be applied to outputted Journal content. The list of properties must end
-with a subsequent integer (0, 1, etc.) and it is assumed that the list
-has reached an end when the pattern or replacement is not set. See
-*com.liferay.portlet.journal.util.RegexTransformerListener* for
-implementation details.
+A file extension of `*` will permit all file extensions.
 
-\#journal.transformer.regex.pattern.0=beta.sample.com
+	journal.image.extensions=.gif,.jpeg,.jpg,.png
 
-\#journal.transformer.regex.replacement.0=production.sample.com
+Input a list of comma delimited class names that extend `com.liferay.portal.kernel.templateparser.BaseTransformerListener`. These classes will run in sequence to allow you to modify the XML and XSL before it is transformed and allow you to modify the final output.
 
-\#journal.transformer.regex.pattern.1=staging.sample.com
+*Examples:*
 
-\#journal.transformer.regex.replacement.1=production.sample.com
+    journal.transformer.listener=\
+		com.liferay.portlet.journal.util.TokensTransformerListener,\
+		com.liferay.portlet.journal.util.PropertiesTransformerListener,\
+		com.liferay.portlet.journal.util.ContentTransformerListener,\
+		com.liferay.portlet.journal.util.LocaleTransformerListener,\
+		com.liferay.portlet.journal.util.RegexTransformerListener,\
+		com.liferay.portlet.journal.util.ViewCounterTransformerListener
+
+Enter a list of regular expression patterns and replacements that will be applied to outputted Journal content. The list of  properties must end with a subsequent integer (`0`, `1`, etc.) and it is assumed that the list has reached an end when the pattern or replacement is not set. See `com.liferay.portlet.journal.util.RegexTransformerListener` for implementation details.
+
+*Examples:*
+
+	journal.transformer.regex.pattern.0=beta.sample.com
+	journal.transformer.regex.replacement.0=production.sample.com
+	journal.transformer.regex.pattern.1=staging.sample.com
+	journal.transformer.regex.replacement.1=production.sample.com
+
+Set this to `true` if journal should be published to live by default.
+
+	journal.publish.to.live.by.default=true
 
 Set whether to synchronize content searches when server starts.
 
-journal.sync.content.search.on.startup=false
+	journal.sync.content.search.on.startup=false
 
-Configure mail notification settings.
 
-journal.email.from.name=Joe Bloggs
+Configure email notification settings.
 
-journal.email.from.address=test@liferay.com
+	journal.email.from.name=Joe Bloggs
+	journal.email.from.address=test@liferay.com
 
-journal.email.article.approval.denied.enabled=false
+	journal.email.article.added.enabled=false
+	journal.email.article.added.subject=com/liferay/portlet/journal/dependencies/email_article_added_subject.tmpl
+	journal.email.article.added.body=com/liferay/portlet/journal/dependencies/email_article_added_body.tmpl
 
-journal.email.article.approval.denied.subject=com/liferay/portlet/journal/dependencies/email\_article\_approval\_denied\_subject.tmpl
+	journal.email.article.approval.denied.enabled=false
+	journal.email.article.approval.denied.subject=com/liferay/portlet/journal/dependencies/email_article_approval_denied_subject.tmpl
+	journal.email.article.approval.denied.body=com/liferay/portlet/journal/dependencies/email_article_approval_denied_body.tmpl
 
-journal.email.article.approval.denied.body=com/liferay/portlet/journal/dependencies/email\_article\_approval\_denied\_body.tmpl
+	journal.email.article.approval.granted.enabled=false
+	journal.email.article.approval.granted.subject=com/liferay/portlet/journal/dependencies/email_article_approval_granted_subject.tmpl
+	journal.email.article.approval.granted.body=com/liferay/portlet/journal/dependencies/email_article_approval_granted_body.tmpl
+	
+	journal.email.article.approval.requested.enabled=false
+	journal.email.article.approval.requested.subject=com/liferay/portlet/journal/dependencies/email_article_approval_requested_subject.tmpl
+	journal.email.article.approval.requested.body=com/liferay/portlet/journal/dependencies/email_article_approval_requested_body.tmpl
 
-journal.email.article.approval.granted.enabled=false
+	journal.email.article.review.enabled=false
+	journal.email.article.review.subject=com/liferay/portlet/journal/dependencies/email_article_review_subject.tmpl
+	journal.email.article.review.body=com/liferay/portlet/journal/dependencies/email_article_review_body.tmpl
 
-journal.email.article.approval.granted.subject=com/liferay/portlet/journal/dependencies/email\_article\_approval\_granted\_subject.tmpl
+	journal.email.article.updated.enabled=false
+	journal.email.article.updated.subject=com/liferay/portlet/journal/dependencies/email_article_updated_subject.tmpl
+	journal.email.article.updated.body=com/liferay/portlet/journal/dependencies/email_article_updated_body.tmpl
 
-journal.email.article.approval.granted.body=com/liferay/portlet/journal/dependencies/email\_article\_approval\_granted\_body.tmpl
+Specify the strategy used when Journal content is imported using the LAR system.
 
-journal.email.article.approval.requested.enabled=false
+	journal.lar.creation.strategy=com.liferay.portlet.journal.lar.JournalCreationStrategyImpl
 
-journal.email.article.approval.requested.subject=com/liferay/portlet/journal/dependencies/email\_article\_approval\_requested\_subject.tmpl
+Specify the path to the template used for providing error messages on\ Journal templates.
 
-journal.email.article.approval.requested.body=com/liferay/portlet/journal/dependencies/email\_article\_approval\_requested\_body.tmpl
-
-journal.email.article.review.enabled=false
-
-journal.email.article.review.subject=com/liferay/portlet/journal/dependencies/email\_article\_review\_subject.tmpl
-
-journal.email.article.review.body=com/liferay/portlet/journal/dependencies/email\_article\_review\_body.tmpl
-
-Specify the strategy used when Journal content is imported using the LAR
-system.
-
-journal.lar.creation.strategy=com.liferay.portlet.journal.lar.JournalCreationStrategyImpl
-
-Specify the path to the template used for providing error messages on
-Journal templates.
-
-journal.error.template.velocity=com/liferay/portlet/journal/dependencies/error.vm
-
-journal.error.template.xsl=com/liferay/portlet/journal/dependencies/error.xsl
-
+	journal.error.template.freemarker=com/liferay/portlet/journal/dependencies/error.ftl
+	journal.error.template.velocity=com/liferay/portlet/journal/dependencies/error.vm
+	journal.error.template.xsl=com/liferay/portlet/journal/dependencies/error.xsl    
+    
 #### Journal Articles Portlet
 
 Set the available values for the number of articles to display per page.
 
-journal.articles.page.delta.values=5,10,25,50,100
+	journal.articles.page.delta.values=5,10,25,50,100
 
+Set this to `true` to search articles from the index. Set this to `false` to search articles from the database. Note that setting this to `false` will disable the ability to search articles based on Expando attributes. Do not set this to true since the functionality for searching articles from the index is experimental.
+
+	journal.articles.search.with.index=false	
+	
 #### Journal Content Search Portlet
 
 Set whether unlisted articles are excluded from search results.
 
-journal.content.search.show.listed=true
+	journal.content.search.show.listed=true	
+	
+#### Login Portlet
+
+Configure email notification settings.
+
+	login.email.from.name=Joe Bloggs
+	login.email.from.address=test@liferay.com
+
+Set this to true to allow the user to choose a password during account creation.
+
+	login.create.account.allow.custom.password=false
 
 #### Message Boards Portlet
 
-Configure mail notification settings.
+Configure email notification settings.
 
-message.boards.email.from.name=Joe Bloggs
+	message.boards.email.from.name=Joe Bloggs
+	message.boards.email.from.address=test@liferay.com
+	message.boards.email.html.format=true
 
-message.boards.email.from.address=test@liferay.com
+	message.boards.email.message.added.enabled=true
+	message.boards.email.message.added.subject.prefix=com/liferay/portlet/messageboards/dependencies/email_message_added_subject_prefix.tmpl
+	message.boards.email.message.added.body=com/liferay/portlet/messageboards/dependencies/email_message_added_body.tmpl
+	message.boards.email.message.added.signature=com/liferay/portlet/messageboards/dependencies/email_message_added_signature.tmpl
 
-message.boards.email.html.format=true
+	message.boards.email.message.updated.enabled=true
+	message.boards.email.message.updated.subject.prefix=com/liferay/portlet/messageboards/dependencies/email_message_updated_subject_prefix.tmpl
+	message.boards.email.message.updated.body=com/liferay/portlet/messageboards/dependencies/email_message_updated_body.tmpl
+	message.boards.email.message.updated.signature=com/liferay/portlet/messageboards/dependencies/email_message_updated_signature.tmpl
 
-message.boards.email.message.added.enabled=true
+Set the list of supported category display styles and the default category display style.
 
-message.boards.email.message.added.subject.prefix=com/liferay/portlet/messageboards/dependencies/email\_message\_added\_subject\_prefix.tmpl
+	message.boards.category.display.styles=default,question
+	message.boards.category.display.styles.default=default
 
-message.boards.email.message.added.body=com/liferay/portlet/messageboards/dependencies/email\_message\_added\_body.tmpl
+Set the list of supported message board formats and the default message board format.
 
-message.boards.email.message.added.signature=com/liferay/portlet/messageboards/dependencies/email\_message\_added\_signature.tmpl
-
-message.boards.email.message.updated.enabled=true
-
-message.boards.email.message.updated.subject.prefix=com/liferay/portlet/messageboards/dependencies/email\_message\_updated\_subject\_prefix.tmpl
-
-message.boards.email.message.updated.body=com/liferay/portlet/messageboards/dependencies/email\_message\_updated\_body.tmpl
-
-message.boards.email.message.updated.signature=com/liferay/portlet/messageboards/dependencies/email\_message\_updated\_signature.tmpl
+	message.boards.message.formats=bbcode,html
+	message.boards.message.formats.default=bbcode
 
 Set this to true to allow anonymous posting.
 
-message.boards.anonymous.posting.enabled=true
+	message.boards.anonymous.posting.enabled=true
 
-Enter time in minutes on how often this job is run. If a user's ban is
-set to expire at 12:05 PM and the job runs at 2 PM, the expire will
-occur during the 2 PM run.
+Set this to true if users are subscribed by default to a thread they participate in.
 
-message.boards.expire.ban.job.interval=120
+	message.boards.subscribe.by.default=true
 
-Enter time in days to automatically expire bans on users. Set to 0 to
-disable auto expire.
+Enter time in minutes on how often this job is run. If a user's ban is set to expire at 12:05 PM and the job runs at 2 PM, the expire will occur during the 2 PM run.
 
-*Examples: *
+	message.boards.expire.ban.job.interval=120
 
-message.boards.expire.ban.interval=10
+Enter time in days to automatically expire bans on users. Set this property or the property `message.boards.expire.ban.job.interval` to `0` to disable auto expire.
 
-message.boards.expire.ban.interval=0
+*Examples:*
 
-Enter RSS feed abstract length. This value limits what goes in the RSS
-feed from the beginning of the message board post. The default is the
-first 200 characters.
+	message.boards.expire.ban.interval=10
+	message.boards.expire.ban.interval=0
 
-message.boards.rss.abstract.length=200
+Set this to `true` to enable pingbacks.
 
-Set this to true to enable pingbacks.
+	message.boards.pingback.enabled=true
 
-message.boards.pingback.enabled=true
+	message.boards.rss.abstract.length=200
 
-Set this to true to enable previous and next navigation for message
-boards threads
+Set this to `true` to enable previous and next navigation for message boards threads
 
-message.boards.thread.previous.and.next.navigation.enabled=true
+	message.boards.thread.previous.and.next.navigation.enabled=true
 
 Set the allowed thread views and the default thread view.
 
-message.boards.thread.views=combination,flat,tree
+	message.boards.thread.views=combination,flat,tree
+	message.boards.thread.views.default=combination
 
-message.boards.thread.views.default=combination
+Set this to true if message boards should be published to live by default.
+
+	message.boards.publish.to.live.by.default=false
 
 #### My Places Portlet
 
 Set the display style for the My Places navigation menu.
 
-my.places.display.style=simple
+*Examples:*
 
-my.places.display.style=classic
+	my.sites.display.style=simple
+	my.sites.display.style=classic
 
-Set this to true to show user public sites with no layouts.
+Set this to `true` to show user public sites with no layouts.
 
-my.places.show.user.public.sites.with.no.layouts=true
+	my.sites.show.user.public.sites.with.no.layouts=true
 
-Set this to true to show user private sites with no layouts.
+Set this to `true` to show user private sites with no layouts.
 
-my.places.show.user.private.sites.with.no.layouts=true
+	my.sites.show.user.private.sites.with.no.layouts=true
 
-Set this to true to show organization public sites with no layouts.
+Set this to `true` to show public sites with no layouts.
 
-my.places.show.organization.public.sites.with.no.layouts=true
-
-Set this to true to show organization private sites with no layouts.
-
-my.places.show.organization.private.sites.with.no.layouts=true
-
-Set this to true to show community public sites with no layouts.
-
-my.places.show.community.public.sites.with.no.layouts=true
+	my.sites.show.public.sites.with.no.layouts=true
 
 Set this to true to show community private sites with no layouts.
 
-my.places.show.community.private.sites.with.no.layouts=true
+	my.sites.show.private.sites.with.no.layouts=true
 
-Set the maximum number of elements that will be shown in the My Places
-navigation menu. For example, if the maximum is set to 10, then, at
-most, 1 personal community, 10 organizations, and 10 communities will be
-shown.
+Set the maximum number of elements that will be shown in the My Sites navigation menu. For example, if the maximum is set to `10`, then, at most, 10 sites will be shown.
 
-my.places.max.elements=10
+	my.sites.max.elements=10
 
 #### Navigation Portlet
 
-Specify the options that will be provided to the user in the edit
-configuration mode of the portlet.
+Specify the options that will be provided to the user in the edit configuration mode of the portlet.
 
-navigation.display.style.options=1,2,3,4,5,6
+	navigation.display.style.options=relative-with-breadcrumb,from-level-2-with-title,from-level-1-with-title,from-level-1,from-level-1-to-all-sublevels,from-level-0
 
-Define each mode with 4 comma delimited strings that represent the form:
-`headerType, rootLayoutType, rootLayoutLevel,  includedLayouts`,
-and `nestedChildren`.
+Define each mode with 4 comma delimited strings that represent the form: `headerType`, `rootLayoutType`, `rootLayoutLevel`, `includedLayouts`, and `nestedChildren`.
 
-navigation.display.style[1]=breadcrumb,relative,0,auto,true
-
-navigation.display.style[2]=root-layout,absolute,2,auto,true
-
-navigation.display.style[3]=root-layout,absolute,1,auto,true
-
-navigation.display.style[4]=none,absolute,1,auto,true
-
-navigation.display.style[5]=none,absolute,1,all,true
-
-navigation.display.style[6]=none,absolute,0,auto,true
+	navigation.display.style[relative-with-breadcrumb]=breadcrumb,relative,0,auto,true
+	navigation.display.style[from-level-2-with-title]=root-layout,absolute,2,auto,true
+	navigation.display.style[from-level-1-with-title]=root-layout,absolute,1,auto,true
+	navigation.display.style[from-level-1]=none,absolute,1,auto,true
+	navigation.display.style[from-level-1-to-all-sublevels]=none,absolute,1,all,true
+	navigation.display.style[from-level-0]=none,absolute,0,auto,true
 
 #### Nested Portlets Portlet
 
-nested.portlets.layout.template.default=2\_columns\_i
+	nested.portlets.layout.template.default=2_columns_i
 
-Add a comma separated list of layout template ids that should not be
-allowed in the Nested Portlets Portlet.
+Add a comma separated list of layout template ids that should not be allowed in the Nested Portlets Portlet.
 
-nested.portlets.layout.template.unsupported=freeform,1\_column
+	nested.portlets.layout.template.unsupported=freeform,1_column
 
 #### Portlet CSS Portlet
 
-Set this to true to enable the ability to modify portlet CSS at runtime
-via the Look and Feel icon. Disabling it can speed up performance.
+Set this to `true` to enable the ability to modify portlet CSS at runtime via the Look and Feel icon. Disabling it can speed up performance.
 
-portlet.css.enabled=true
+	portlet.css.enabled=true
+	
+#### Ratings Tag Library
+
+Set the number of stars that will be used by the ratings tag library by default.
+
+	ratings.default.number.of.stars=5
+
+#### RSS Portlet
+
+Set the HTTP connection timeout in milliseconds for reading RSS feeds.
+
+	rss.connection.timeout=2000	
 
 #### Search Portlet
 
-Set any of these to false to disable the portlet from being searched by
-the Search portlet.
+Set any of these to `false` to disable the portlet from being searched by the Search portlet.
 
-com.liferay.portlet.blogs.util.BlogsOpenSearchImpl=true
+	com.liferay.portlet.blogs.util.BlogsOpenSearchImpl=true
+	com.liferay.portlet.bookmarks.util.BookmarksOpenSearchImpl=true
+	com.liferay.portlet.calendar.util.CalendarOpenSearchImpl=true
+	com.liferay.portlet.directory.util.DirectoryOpenSearchImpl=true
+	com.liferay.portlet.documentlibrary.util.DLOpenSearchImpl=true
+	com.liferay.portlet.journal.util.JournalOpenSearchImpl=true
+	com.liferay.portlet.messageboards.util.MBOpenSearchImpl=true
+	com.liferay.portlet.wiki.util.WikiOpenSearchImpl=true
 
-com.liferay.portlet.bookmarks.util.BookmarksOpenSearchImpl=true
+#### Sites Admin Portlet
 
-com.liferay.portlet.calendar.util.CalendarOpenSearchImpl=true
+Set this to `true` to allow site members to see the Sites Admin portlet and the sites he is a member of in the control panel. Setting this to `false` will only allow administrators to see this portlet in the control panel.
 
-com.liferay.portlet.directory.util.DirectoryOpenSearchImpl=true
+	sites.control.panel.members.visible=true
 
-com.liferay.portlet.documentlibrary.util.DLOpenSearchImpl=true
+Input a list of sections that will be included as part of the form when adding a site.
 
-com.liferay.portlet.imagegallery.util.IGOpenSearchImpl=true
+	sites.form.add.main=details,pages
+	sites.form.add.seo=
+	sites.form.add.advanced=
 
-com.liferay.portlet.journal.util.JournalOpenSearchImpl=true
+Input a list of sections that will be included as part of the form when updating a site.
 
-com.liferay.portlet.messageboards.util.MBOpenSearchImpl=true
-
-com.liferay.portlet.wiki.util.WikiOpenSearchImpl=true
-
-#### Shopping Portlet
-
-Set the following to true if cart quantities must be a multiple of the
-item's minimum quantity.
-
-shopping.cart.min.qty.multiple=true
-
-Set the following to true to forward to the cart page when adding an
-item from the category page. The item must not have dynamic fields. All
-items with dynamic fields will forward to the item's details page
-regardless of the following setting.
-
-shopping.category.forward.to.cart=false
-
-Set the following to true to show special items when browsing a
-category.
-
-shopping.category.show.special.items=false
-
-Set the following to true to show availability when viewing an item.
-
-shopping.item.show.availability=true
-
-Set the maximum file size and valid file extensions for images. A value
-of 0 for the maximum file size can be used to indicate unlimited file
-size. However, the maximum file size allowed is set in the property
-*com.liferay.portal.upload.UploadServletRequestImpl.max.size*.
-
-shopping.image.small.max.size=51200
-
-shopping.image.medium.max.size=153600
-
-shopping.image.large.max.size=307200
-
-A file extension of \* will permit all file extensions.
-
-shopping.image.extensions=.gif,.jpeg,.jpg,.png
+	sites.form.update.main=details,pages,site-url,site-template
+	sites.form.update.seo=sitemap,robots
+	sites.form.update.advanced=staging,analytics
 
 Configure email notification settings.
 
-shopping.email.from.name=Joe Bloggs
+	sites.email.from.name=Joe Bloggs
+	sites.email.from.address=test@liferay.com
 
-shopping.email.from.address=test@liferay.com
+	sites.email.membership.reply.subject=com/liferay/portlet/sites/dependencies/email_membership_reply_subject.tmpl
+	sites.email.membership.reply.body=com/liferay/portlet/sites/dependencies/email_membership_reply_body.tmpl
 
-shopping.email.order.confirmation.enabled=true
+	sites.email.membership.request.subject=com/liferay/portlet/sites/dependencies/email_membership_request_subject.tmpl
+	sites.email.membership.request.body=com/liferay/portlet/sites/dependencies/email_membership_request_body.tmpl
+	
+#### Shopping Portlet
 
-shopping.email.order.confirmation.subject=com/liferay/portlet/shopping/dependencies/email\_order\_confirmation\_subject.tmpl
+Set this to `true` if cart quantities must be a multiple of the item's minimum quantity.
 
-shopping.email.order.confirmation.body=com/liferay/portlet/shopping/dependencies/email\_order\_confirmation\_body.tmpl
+	shopping.cart.min.qty.multiple=true
 
-shopping.email.order.shipping.enabled=true
+Set this to `true` to forward to the cart page when adding an item from the category page. The item must not have dynamic fields. All items with dynamic fields will forward to the item's details page regardless of the following setting.
 
-shopping.email.order.shipping.subject=com/liferay/portlet/shopping/dependencies/email\_order\_shipping\_subject.tmpl
+	shopping.category.forward.to.cart=false
 
-shopping.email.order.shipping.body=com/liferay/portlet/shopping/dependencies/email\_order\_shipping\_body.tmpl
+Set this to `true` to show special items when browsing a category.
 
-Set this to true to enable comments for shopping orders.
+	shopping.category.show.special.items=false
 
-shopping.order.comments.enabled=true
+Set this to `true` to show availability when viewing an item.
+
+	shopping.item.show.availability=true
+
+Set the maximum file size and valid file extensions for images. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
+
+	shopping.image.small.max.size=51200
+	shopping.image.medium.max.size=153600
+	shopping.image.large.max.size=307200
+	
+A file extension of `*` will permit all file extensions.
+
+	shopping.image.extensions=.gif,.jpeg,.jpg,.png
+
+Configure email notification settings.
+
+	shopping.email.from.name=Joe Bloggs
+	shopping.email.from.address=test@liferay.com
+
+	shopping.email.order.confirmation.enabled=true
+	shopping.email.order.confirmation.subject=com/liferay/portlet/shopping/dependencies/email_order_confirmation_subject.tmpl
+	shopping.email.order.confirmation.body=com/liferay/portlet/shopping/dependencies/email_order_confirmation_body.tmpl
+
+	shopping.email.order.shipping.enabled=true
+	shopping.email.order.shipping.subject=com/liferay/portlet/shopping/dependencies/email_order_shipping_subject.tmpl
+	shopping.email.order.shipping.body=com/liferay/portlet/shopping/dependencies/email_order_shipping_body.tmpl
+
+Set this to `true` to enable comments for shopping orders.
+
+	shopping.order.comments.enabled=true
 
 #### Software Catalog Portlet
 
-Set the maximum file size and max file dimensions for thumbnnails. A
-value of 0 for the maximum file size can be used to indicate unlimited
-file size. However, the maximum file size allowed is set in the property
-*com.liferay.portal.upload.UploadServletRequestImpl.max.size*.
+Set the maximum file size and dimensions for thumbnnails. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
 
-sc.image.max.size=307200
+	sc.image.max.size=307200
+	sc.image.thumbnail.max.height=200
+	sc.image.thumbnail.max.width=160
 
-sc.image.thumbnail.max.height=200
+Set this to `true` to enable comments for software catalog products.
 
-sc.image.thumbnail.max.width=160
-
-Set this to true to enable comments for software catalog products.
-
-sc.product.comments.enabled=true
+	sc.product.comments.enabled=true
 
 #### Tags Compiler Portlet
 
-Set this to true to enable the ability to compile tags from the URL.
-Disabling it can speed up performance.
+Set this to true to enable the ability to compile tags from the URL. Disabling it can speed up performance.
 
-tags.compiler.enabled=true
-
-#### Tags Portlet
-
-Input a class name that implements
-*com.liferay.portlet.tags.util.TagsAssetValidator*. This class will be
-called to validate assets. The `DefaultTagsAssetValidator`
-class is just an empty class that doesn't actually do any validation.
-
-The `MinimalTagsAssetValidator` requires all assets to have at
-least one tag entry.
-
-*Examples: *
-
-tags.asset.validator=com.liferay.portlet.tags.util.DefaultTagsAssetValidator
-
-\#tags.asset.validator=com.liferay.portlet.tags.util.MinimalTagsAssetValidator
-
-Input a list of comma delimited default properties for new tag entries.
-Each item of the list should have the following format: *0:key:value*
-
-tags.properties.default=
-
-Set the name of the default tag set where new tags are created by
-default.
-
-tags.vocabulary.default=Default Tag Set
-
-#### Tasks Portlet
-
-Specify the default number of approval stages.
-
-tasks.default.stages=2
-
-Specify the default role name for each stage of approval ordered from
-lowest level of approval to highest. These Roles must have the
-`APPROVE_PROPOSAL` permission.
-
-tasks.default.role.names=Community Administrator,Community Owner
-
+	tags.compiler.enabled=true
+	
 #### Translator Portlet
 
 Set the default languages to translate a given text.
 
-translator.default.languages=en\_es
+	translator.default.languages=en_es
 
 #### Wiki Portlet
 
-Set the URL of a page that contains more information about the classic
-syntax of the wiki. It will be shown to the user when editing a page.
+Set the name of the default page for a wiki node. The name for the default page must be a valid wiki word. A wiki word follows the format of having an upper case letter followed by a series of lower case letters followed by another upper case letter and another series of lower case letters. See [http://www.usemod.com/cgi-bin/wiki.pl?WhatIsaWiki](http://www.usemod.com/cgi-bin/wiki.pl?WhatIsaWiki) for more information on wiki naming conventions.
 
-wiki.classic.syntax.help.url=http://wiki.liferay.com/index.php/Wiki\_Portlet
+	wiki.front.page.name=FrontPage
 
-Set the name of the default page for a wiki node. The name for the
-default page must be a valid wiki word. A wiki word follows the format
-of having an upper case letter followed by a series of lower case
-letters followed by another upper case letter and another series of
-lower case letters. See
-http://www.usemod.com/cgi-bin/wiki.pl?WhatIsaWiki for more information
-on wiki naming conventions.
+Set the name of the default node that will be automatically created when the Wiki portlet is first used in a site.
 
-wiki.front.page.name=FrontPage
+	wiki.initial.node.name=Main
 
-Set the name of the default node that will be automatically created when
-the Wiki portlet is first used in a community.
+Specify the requirements for the names of wiki pages. By default only a few characters are forbidden. Uncomment the regular expression below to allow only CamelCase titles.
 
-wiki.initial.node.name=Main
+*Examples:*
 
-Set the following property to specify the requirments for the names of
-wiki pages. By default only a few characters are forbidden. Uncomment
-the regular expression below to allow only CamelCase titles.
+	wiki.page.titles.regexp=([^\\\\\\[\\]\\|:;%<>]+)
+	#wiki.page.titles.regexp=(((\\p{Lu}\\p{Ll}+)_?)+)
 
-wiki.page.titles.regexp=([\^/\\\\[\\\\]%&?@]+)
+Specify the characters that will be automatically removed from the titles when importing wiki pages. This regexp should remove any characters that are forbidden in the regexp specified in the property `wiki.page.titles.regexp`.
 
-\#wiki.page.titles.regexp=(((\\\\p{Lu}\\\\p{Ll}+)\_?)+)
+	wiki.page.titles.remove.regexp=([\\\\\\[\\]\\|:;%<>]+)
 
-Set the following property to specify the characters that will be
-automatically removed from the titles when importing wiki pages. This
-regexp should remove any characters that are forbidden in the regexp
-specified in `wiki.page.titles.regexp`.
+Set this to `true` to enable ratings for wiki pages.
 
-wiki.page.titles.remove.regexp=([/\\\\[\\\\]%&?@]+)
-
-Set this to true to enable ratings for wiki pages.
-
-wiki.page.ratings.enabled=true
+	wiki.page.ratings.enabled=true
 
 Set this to true to enable comments for wiki pages.
 
-wiki.page.comments.enabled=true
+	wiki.page.comments.enabled=true
 
 Set the list of supported wiki formats and the default wiki format.
 
-wiki.formats=creole,html
-
-wiki.formats.default=creole
-
+	wiki.formats=creole,html,mediawiki
+	wiki.formats.default=creole
+	
 Configure settings for each of the wiki formats.
 
-\
-\
+*Examples:*
 
-wiki.formats.engine[creole]=com.liferay.portlet.wiki.engines.jspwiki.JSPWikiEngine
-
-wiki.formats.configuration.main[creole]=jspwiki.properties
-
-wiki.formats.edit.page[creole]=/html/portlet/wiki/edit/wiki.jsp
-
-wiki.formats.help.page[creole]=/html/portlet/wiki/help/creole.jsp
-
-wiki.formats.help.url[creole]=http://www.wikicreole.org/wiki/Creole1.0
-
-\
-\
-
-wiki.formats.engine[html]=com.liferay.portlet.wiki.engines.HtmlEngine
-
-wiki.formats.edit.page[html]=/html/portlet/wiki/edit/html.jsp
-
-\
-\
-
-wiki.formats.engine[plain\_text]=com.liferay.portlet.wiki.engines.TextEngine
-
-wiki.formats.edit.page[plain\_text]=/html/portlet/wiki/edit/plain\_text.jsp
+	wiki.formats.engine[creole]=com.liferay.portlet.wiki.engines.antlrwiki.CreoleWikiEngine
+	wiki.formats.engine[creole]=com.liferay.portlet.wiki.engines.jspwiki.JSPWikiEngine
+	wiki.formats.configuration.main[creole]=jspwiki.properties
+	wiki.formats.edit.page[creole]=/html/portlet/wiki/edit/wiki.jsp
+	wiki.formats.help.page[creole]=/html/portlet/wiki/help/creole.jsp
+	wiki.formats.help.url[creole]=http://www.wikicreole.org/wiki/Creole1.0
+	
+	wiki.formats.engine[html]=com.liferay.portlet.wiki.engines.HtmlEngine
+	wiki.formats.edit.page[html]=/html/portlet/wiki/edit/html.jsp
+	
+	wiki.formats.engine[mediawiki]=com.liferay.portlet.wiki.engines.mediawiki.MediaWikiEngine
+	wiki.formats.edit.page[mediawiki]=/html/portlet/wiki/edit/wiki.jsp
+	wiki.formats.help.page[mediawiki]=/html/portlet/wiki/help/mediawiki.jsp
+	wiki.formats.help.url[mediawiki]=http://www.mediawiki.org/wiki/Help:Formatting
+	
+	wiki.formats.engine[plain_text]=com.liferay.portlet.wiki.engines.TextEngine
+	wiki.formats.edit.page[plain_text]=/html/portlet/wiki/edit/plain_text.jsp
 
 Set the list of supported wiki importers.
 
-wiki.importers=MediaWiki
+	wiki.importers=MediaWiki
 
 Configure settings for each of the wiki importers.
 
-wiki.importers.page[MediaWiki]=/html/portlet/wiki/import/mediawiki.jsp
-
-wiki.importers.class[MediaWiki]=com.liferay.portlet.wiki.importers.mediawiki.MediaWikiImporter
+	wiki.importers.page[MediaWiki]=/html/portlet/wiki/import/mediawiki.jsp
+	wiki.importers.class[MediaWiki]=com.liferay.portlet.wiki.importers.mediawiki.MediaWikiImporter
 
 Configure email notification settings.
 
-wiki.email.from.name=Joe Bloggs
+	wiki.email.from.name=Joe Bloggs
+	wiki.email.from.address=test@liferay.com
 
-wiki.email.from.address=test@liferay.com
+	wiki.email.page.added.enabled=true
+	wiki.email.page.added.subject.prefix=com/liferay/portlet/wiki/dependencies/email_page_added_subject_prefix.tmpl
+	wiki.email.page.added.body=com/liferay/portlet/wiki/dependencies/email_page_added_body.tmpl
+	wiki.email.page.added.signature=com/liferay/portlet/wiki/dependencies/email_page_added_signature.tmpl
 
-\
-\
+	wiki.email.page.updated.enabled=true
+	wiki.email.page.updated.subject.prefix=com/liferay/portlet/wiki/dependencies/email_page_updated_subject_prefix.tmpl
+	wiki.email.page.updated.body=com/liferay/portlet/wiki/dependencies/email_page_updated_body.tmpl
+	wiki.email.page.updated.signature=com/liferay/portlet/wiki/dependencies/email_page_updated_signature.tmpl
 
-wiki.email.page.added.enabled=true
-
-wiki.email.page.added.subject.prefix=com/liferay/portlet/wiki/dependencies/email\_page\_added\_subject\_prefix.tmpl
-
-wiki.email.page.added.body=com/liferay/portlet/wiki/dependencies/email\_page\_added\_body.tmpl
-
-wiki.email.page.added.signature=com/liferay/portlet/wiki/dependencies/email\_page\_added\_signature.tmpl
-
-\
-\
-
-wiki.email.page.updated.enabled=true
-
-wiki.email.page.updated.subject.prefix=com/liferay/portlet/wiki/dependencies/email\_page\_updated\_subject\_prefix.tmpl
-
-wiki.email.page.updated.body=com/liferay/portlet/wiki/dependencies/email\_page\_updated\_body.tmpl
-
-wiki.email.page.updated.signature=com/liferay/portlet/wiki/dependencies/email\_page\_updated\_signature.tmpl
-
-wiki.rss.abstract.length=200
+	wiki.rss.abstract.length=200
 
 ## Plugin Management
 
