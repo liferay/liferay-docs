@@ -142,7 +142,7 @@ significant ones:
         Can be used to customize the struts actions used by Liferay's
         core portlets.
 
-![image](../../images/06-ext-plugins_html_5c790363.png)Tip: after creating an Ext
+![image](../../images/tip-pen-paper.png)Tip: after creating an Ext
 plugin, remove all of the files added by default that are not necessary
 for the extension. This is important because Liferay keeps track of the
 files deployed by each Ext plugin and it won't allow deploying two Ext
@@ -560,7 +560,7 @@ conflicts and easily merge with a new portal version is to:
 This strategy will help you determine what you will need to merge in the
 future when a new version of Liferay is released.
 
-![image](../../images/06-ext-plugins_html_5c790363.png)Tip: This is a very advanced
+![image](../../images/tip-pen-paper.png)Tip: This is a very advanced
 technique that may have a high impact on the maintainability of your
 code, especially if abused. Try to look for alternatives and if you
 confirm that this is your only alternative try to apply only for the
@@ -663,7 +663,7 @@ Because of this a common need for projects upgrading from previous
 versions might be to migrate Extension environments into Ext plugins.
 The good news is that this task is automated and thus relatively easy.
 
-![image](../../images/06-ext-plugins_html_5c790363.png)Tip: When migrating an
+![image](../../images/tip-pen-paper.png)Tip: When migrating an
 extension environment, it's worth considering if all or at least some of
 its features can be moved into other types of plugins such as portlets
 and hooks. The benefit of using portlets and hooks is that since they

@@ -11,7 +11,7 @@ comfortable with. In a later chapter we also introduce Liferay IDE, a
 plugin for eclipse that simplifies development for Liferay.
 
 
-![image](../../images/02-plugins-sdk_html_5c790363.png)**Tip:** If you are an Eclipse
+![image](../../images/tip-pen-paper.png)**Tip:** If you are an Eclipse
 user and prefer to start working with it from be very beginning, you can
 read that chapter first before reading the rest of the guide..
 
