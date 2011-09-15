@@ -1906,11 +1906,11 @@ Set this to `true` to require a password when using basic authentication. Only s
 
 #### CAS
 
-Set this to true to enable CAS single sign on. NTLM will work only if LDAP authentication is also enabled and the authentication is made by screen name. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.CASAutoLogin` and the filter `com.liferay.portal.servlet.filters.sso.cas.CASFilter` must be referenced in `web.xml`.
+Set this to `true` to enable CAS single sign on. NTLM will work only if LDAP authentication is also enabled and the authentication is made by screen name. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.CASAutoLogin` and the filter `com.liferay.portal.servlet.filters.sso.cas.CASFilter` must be referenced in `web.xml`.
 
 	cas.auth.enabled=false
 
-A user may be authenticated from CAS and not yet exist in the portal. Set this to true to automatically import users from LDAP if they do not exist in the portal.
+A user may be authenticated from CAS and not yet exist in the portal. Set this to `true` to automatically import users from LDAP if they do not exist in the portal.
 
 	cas.import.from.ldap=false
 
@@ -2556,7 +2556,7 @@ Similarly, events can be defined for the logout event.
 
 #### Default Landing Page
 
-Set the default landing page path for logged in users relative to the server path. This is the page users are automatically redirected to after logging in. For example, if you want the default landing page to be [http://localhost:8080/web/guest/login](http://localhost:8080/web/guest/login), set this to `/web/guest/login`. To activate this feature, set auth.forward.by.last.path to true. To customize the behavior, see `com.liferay.portal.events.DefaultLandingPageAction` in the `login.events.post` property above.
+Set the default landing page path for logged in users relative to the server path. This is the page users are automatically redirected to after logging in. For example, if you want the default landing page to be [http://localhost:8080/web/guest/login](http://localhost:8080/web/guest/login), set this to `/web/guest/login`. To activate this feature, set `auth.forward.by.last.path` to `true`. To customize the behavior, see `com.liferay.portal.events.DefaultLandingPageAction` in the `login.events.post` property above.
 
 *Examples:*
 
@@ -2792,24 +2792,23 @@ form when updating a layout set.
 
 	layout.set.form.update=look-and-feel,logo,javascript,advanced
 
-Set whether or not private layouts are enabled. Set whether or not private layouts are modifiable. Set whether or not private layouts should be auto created if a user has no private layouts. If private layouts are not enabled, the other two properties are assumed to be false.
+Set whether or not private layouts are enabled. Set whether or not private layouts are modifiable. Set whether or not private layouts should be auto created if a user has no private layouts. If private layouts are not enabled, the other two properties are assumed to be `false`.
 
 	layout.user.private.layouts.enabled=true
 	layout.user.private.layouts.modifiable=true
 	layout.user.private.layouts.auto.create=true
 
-Set this to true if users must have the Power User role to have private
-pages.
+Set this to `true` if users must have the Power User role to have private pages.
 
 	layout.user.private.layouts.power.user.required=false
 
-Set whether or not public layouts are enabled. Set whether or not public layouts are modifiable. Set whether or not public layouts should be auto created if a user has no public layouts. If public layouts are not enabled, the other two properties are assumed to be false.
+Set whether or not public layouts are enabled. Set whether or not public layouts are modifiable. Set whether or not public layouts should be auto created if a user has no public layouts. If public layouts are not enabled, the other two properties are assumed to be `false`.
 
 	layout.user.public.layouts.enabled=true
 	layout.user.public.layouts.modifiable=true
 	layout.user.public.layouts.auto.create=true
 
-Set this to true if users must have the Power User role to have public
+Set this to `true` if users must have the Power User role to have public
 pages.
 
 	layout.user.public.layouts.power.user.required=false
@@ -2986,26 +2985,26 @@ Set the reserved keywords that cannot be used in a friendly URL.
 
 	layout.friendly.url.keywords=c,combo,delegate,display_chart,dtd,facebook,google_gadget,group,html,image,language,netvibes,page,pbhs,poller,public,private,rss,sharepoint,sitemap.xml,tags,software_catalog,_vti_,wap,web,widget,wsrp,xmlrpc
 
-Set this to true if guest users should see the maximize window icon.
+Set this to `true` if guest users should see the maximize window icon.
 
 	layout.guest.show.max.icon=false
 
-Set this to true if guest users should see the minimize window icon.
+Set this to `true` if guest users should see the minimize window icon.
 
 	layout.guest.show.min.icon=false
 
-Set this to true if users are shown that they do not have access to a
-portlet. The portlet init parameter "show-portlet-access-denied" will
+Set this to `true` if users are shown that they do not have access to a
+portlet. The portlet init parameter `show-portlet-access-denied` will
 override this setting.
 
 	layout.show.portlet.access.denied=true
 
-Set this to true if users are shown that a portlet is inactive. The
-portlet init parameter "show-portlet-inactive" will override this setting.
+Set this to `true` if users are shown that a portlet is inactive. The
+portlet init parameter `show-portlet-inactive` will override this setting.
 
 	layout.show.portlet.inactive=true
 
-Set this to true if the portal should show HTTP status codes like 404 if the requested page is not found.
+Set this to `true` if the portal should show HTTP status codes like 404 if the requested page is not found.
 
 	layout.show.http.status=true
 
@@ -3013,7 +3012,7 @@ Set the default layout template id used when creating layouts.
 
 	layout.default.template.id=2_columns_ii
 
-Set this to false to disable parallel rendering. You can also disable it on a per request basis by setting the attribute key `com.liferay.portal.util.WebKeys.PORTLET_PARALLEL_RENDER` to the `Boolean.FALSE` in a pre service event or by setting the URL parameter `p_p_parallel` to `0`.
+Set this to `false` to disable parallel rendering. You can also disable it on a per request basis by setting the attribute key `com.liferay.portal.util.WebKeys.PORTLET_PARALLEL_RENDER` to the `Boolean.FALSE` in a pre service event or by setting the URL parameter `p_p_parallel` to `0`.
 
 	layout.parallel.render.enable=true
 
@@ -3021,19 +3020,19 @@ Set the name of a class that implements `com.liferay.portal.util.LayoutClone`. T
 
 	layout.clone.impl=com.liferay.portal.util.SessionLayoutClone
 
-Set this to true to cache the content of layout templates. This is recommended because it improves performance for production servers. Setting it to false is useful during development if you need to make a lot of changes.
+Set this to `true` to cache the content of layout templates. This is recommended because it improves performance for production servers. Setting it to `false` is useful during development if you need to make a lot of changes.
 
 	layout.template.cache.enabled=true
 
-Set the default value for the "p_l_reset" parameter. If set to true, then render parameters are cleared when different pages are hit. This is not the behavior promoted by the portlet specification, but is the one that most end users seem to prefer.
+Set the default value for the `p_l_reset` parameter. If set to `true`, then render parameters are cleared when different pages are hit. This is not the behavior promoted by the portlet specification, but is the one that most end users seem to prefer.
 
 	layout.default.p_l_reset=true
 
-Set this to true to enable comments for pages.
+Set this to `true` to enable comments for pages.
 
 	layout.comments.enabled=true
 
-Set this to true to remember maximized window states across different
+Set this to `true` to remember maximized window states across different
 pages.
 
 	layout.remember.maximized.window.state=false
@@ -3050,19 +3049,19 @@ See [http://issues.liferay.com/browse/LEP-426](http://issues.liferay.com/browse/
 
 	portlet.url.append.parameters=false
 
-Set this to true to allow portlet URLs to generate with an anchor tag.
+Set this to `true` to allow portlet URLs to generate with an anchor tag.
 
 	portlet.url.anchor.enable=false
 
-JSR 286 specifies that portlet URLs are escaped by default. Set this to false to provide for better backwards compatibility.
+JSR 286 specifies that portlet URLs are escaped by default. Set this to `false` to provide for better backwards compatibility.
 
-If this is set to true, but a specific portlet application requires that its portlet URLs not be escaped by default, then modify `portlet.xml` and set the container runtime option `javax.portlet.escapeXml` to false.
+If this is set to `true`, but a specific portlet application requires that its portlet URLs not be escaped by default, then modify `portlet.xml` and set the container runtime option `javax.portlet.escapeXml` to `false`.
 
 	portlet.url.escape.xml=false
 
 #### Preferences
 
-Set the following to true to validate portlet preferences on startup.
+Set the following to `true` to validate portlet preferences on startup.
 
 	preference.validate.on.startup=false
 
@@ -3091,7 +3090,7 @@ Input the custom Struts request processor that will be used by Struts based port
 
 #### Images
 
-Set this to true if the Image servlet will automatically scale an image based on the request `height` and `width` parameters.
+Set this to `true` if the Image servlet will automatically scale an image based on the request `height` and `width` parameters.
 
 	image.auto.scale=true
 
@@ -3157,7 +3156,7 @@ You can configure individual JSP pages to use a specific implementation of the a
 
 #### Fields
 
-Set the following fields to false so users cannot see them. Some company policies require gender and birthday information to always be hidden.
+Set the following fields to `false` so users cannot see them. Some company policies require gender and birthday information to always be hidden.
 
 	field.enable.com.liferay.portal.model.Contact.male=true
 	field.enable.com.liferay.portal.model.Contact.birthday=true
@@ -3267,7 +3266,7 @@ communicate with users.
 
 #### Lucene Search
 
-Set this to true to enable highlighting of search results.
+Set this to `true` to enable highlighting of search results.
 
 	index.search.highlight.enabled=true
 
@@ -3283,7 +3282,7 @@ Set the limit for results used when performing index searches.
 
 	index.search.limit=10000
 
-Set this to true to enable scoring of results
+Set this to `true` to enable scoring of results
 
 	index.search.scoring.enabled=true
 
@@ -3291,23 +3290,23 @@ Set the limit for results used when performing index searches that are subsequen
 
 	index.filter.search.limit=5000
 
-Set this to true if you want to avoid any writes to the index. This is useful in some clustering environments where there is a shared index and only one node of the cluster updates it.
+Set this to `true` if you want to avoid any writes to the index. This is useful in some clustering environments where there is a shared index and only one node of the cluster updates it.
 
 	index.read.only=false
 
-Set this to true if you want to index your entire library of files on startup. This property is available so that automated test environments index on startup. Do not set this to true on production systems or else your index will be indexed on every startup.
+Set this to `true` if you want to index your entire library of files on startup. This property is available so that automated test environments index on startup. Do not set this to `true` on production systems or else your index will be indexed on every startup.
 
 	index.on.startup=false
 
-Set this to true to add a delay before indexing on startup. A delay may be necessary if a lot of plugins need to be loaded and reindexed. This property is only valid if "index.on.startup" is set to true.
+Set this to `true` to add a delay before indexing on startup. A delay may be necessary if a lot of plugins need to be loaded and reindexed. This property is only valid if `index.on.startup` is set to `true`.
 
 	index.on.startup.delay=60
 
-Set this to true if you want to index your entire library of files after an upgrade. Only set this property to false if you are running a small upgrade and you do not need to reindex everything.
+Set this to `true` if you want to index your entire library of files after an upgrade. Only set this property to `false` if you are running a small upgrade and you do not need to reindex everything.
 
 	index.on.upgrade=true
 
-Set this to true if you want the indexing on startup to be executed on a separate thread to speed up execution.
+Set this to `true` if you want the indexing on startup to be executed on a separate thread to speed up execution.
 
 	index.with.thread=true
 
@@ -3315,7 +3314,7 @@ Set the date format used for storing dates as text in the index.
 
 	index.date.format.pattern=yyyyMMddHHmmss
 
-Set this to true if you want to use compress index files before they are dumped.
+Set this to `true` if you want to use compress index files before they are dumped.
 
 	index.dump.compression.enabled=true
 
@@ -3327,11 +3326,11 @@ Designate whether Lucene stores indexes in a database via JDBC, file system, or 
 	lucene.store.type=file
 	lucene.store.type=ram
 
-When using file store, turning this flag on will tell Lucene to use MMapDirectory rather than using the default selection (SimpleFSDirectory for Windows and NIOFSDirectory for Linux). It only makes sense to use MMapDirectory for 64-bit JVM with a lot of memory. On a 32-bit JVM, if the index files are huge, this could easily lead to an out of memory for non-heap memory.
+When using file store, turning this flag on will tell Lucene to use `MMapDirectory` rather than using the default selection (`SimpleFSDirectory` for Windows and `NIOFSDirectory` for Linux). It only makes sense to use `MMapDirectory` for 64-bit JVM with a lot of memory. On a 32-bit JVM, if the index files are huge, this could easily lead to an out of memory for non-heap memory.
 
 	lucene.store.type.file.force.mmap=false
 
-Lucene's storage of indexes via JDBC has a bug where temp files are not removed. This can eat up disk space over time. Set this to true to automatically clean up the temporary files regularly. See LEP-2180.
+Lucene's storage of indexes via JDBC has a bug where temp files are not removed. This can eat up disk space over time. Set this to `true` to automatically clean up the temporary files regularly. See LEP-2180.
 
 *Example:*
 
@@ -3389,7 +3388,7 @@ Set how often to run Lucene's optimize method. Optimization speeds up searching 
 
 	lucene.optimize.interval=100
 
-Set this to true if you want the portal to replicate an index write across all members of the cluster. This is useful in some clustered environments where you wish each server instance to have its own copy of the Lucene search index. This is only relevant when using the default Lucene indexing engine.
+Set this to `true` if you want the portal to replicate an index write across all members of the cluster. This is useful in some clustered environments where you wish each server instance to have its own copy of the Lucene search index. This is only relevant when using the default Lucene indexing engine.
 
 	lucene.replicate.write=false
 	
@@ -3551,7 +3550,7 @@ Set this to `true` to enable the cluster executor debugging. This will attach a 
 
 #### Combo
 
-The combo servlet combines multiple JavaScript files into a bundle based on shared dependencies. This makes loading JavaScript files much faster. Set this to `false` if the combination should refresh when one of its JavaScript files has changed. This property should be set to `true` during development for easier debugging but set to false during production for faster performance.
+The combo servlet combines multiple JavaScript files into a bundle based on shared dependencies. This makes loading JavaScript files much faster. Set this to `false` if the combination should refresh when one of its JavaScript files has changed. This property should be set to `true` during development for easier debugging but set to `false` during production for faster performance.
 
 	combo.check.timestamp=false
 
@@ -3591,7 +3590,7 @@ Set this to `true` to enable dispatching to a servlet directly to speed up reque
 
 	direct.servlet.context.enabled=true
 
-Set this to `true` to refresh the servlet associated with a JSP when the JSP has been modified. This property is not used unless the property `direct.servlet.context.enabled` is set to true.
+Set this to `true` to refresh the servlet associated with a JSP when the JSP has been modified. This property is not used unless the property `direct.servlet.context.enabled` is set to `true`.
 
 	direct.servlet.context.reload=true
 
@@ -3776,7 +3775,7 @@ Set the properties used to create the Java Mail session. The property prefix `ma
 	mail.session.mail.store.protocol=pop3
 	mail.session.mail.transport.protocol=smtp
 
-Set this to false if administrator should not be allowed to change the
+Set this to `false` if administrator should not be allowed to change the
 mail domain via the Admin portlet.
 
 	mail.mx.update=true
@@ -3969,11 +3968,11 @@ Specify the poller request timeout in milliseconds. This prevents the poller fro
 
 #### POP
 
-Set this to true to enable polling of email notifications from a POP server. The user credentials are the same used for SMTP authentication and is specified in the mail/MailSession configuration for each application server.
+Set this to `true` to enable polling of email notifications from a POP server. The user credentials are the same used for SMTP authentication and is specified in the `mail/MailSession` configuration for each application server.
 
 	pop.server.notifications.enabled=false
 
-Set the interval on which the POPNotificationsMessageListener will run. The value is set in one minute increments.
+Set the interval on which the `POPNotificationsMessageListener` will run. The value is set in one minute increments.
 
 	pop.server.notifications.interval=1
 
@@ -4034,7 +4033,7 @@ sanitize content.
 
 #### Scheduler
 
-Set this to false to disable all scheduler classes defined in `liferay-portlet.xml` and in the property `scheduler.classes`.
+Set this to `false` to disable all scheduler classes defined in `liferay-portlet.xml` and in the property `scheduler.classes`.
 
 	scheduler.enabled=true
 
@@ -4091,7 +4090,7 @@ Set the maximum number of pages available above and below the currently displaye
 
 	search.container.page.iterator.max.pages=25
 
-Set this to false to remove the pagination controls above or below results.
+Set this to `false` to remove the pagination controls above or below results.
 
 	search.container.show.pagination.top=true
 	search.container.show.pagination.bottom=true
@@ -4137,13 +4136,13 @@ Set the interval on which the `CheckEquityLogMessageListener` will run. The valu
 
 	social.equity.equity.log.check.interval=1440
 
-Set this to true to enable social equity logs.
+Set this to `true` to enable social equity logs.
 
 	social.equity.equity.log.enabled=true
 
 #### Text Extraction
 
-Set this to true if you want to text extraction of certain MIME types to use separate Java process. This will utilize extra resources from the operating system while improving the portal's stability.
+Set this to `true` if you want to text extraction of certain MIME types to use separate Java process. This will utilize extra resources from the operating system while improving the portal's stability.
 
 	text.extraction.fork.process.enabled=false
 
@@ -4159,7 +4158,7 @@ The thread dump filter will log a thread dump if the portal takes longer than th
 
 #### User Notifications
 
-Set this to true if you want users to acknowledge receipt of user notification events.
+Set this to `true` if you want users to acknowledge receipt of user notification events.
 
 	user.notification.event.confirmation.enabled=false
 
@@ -4604,7 +4603,7 @@ Set the following to `false` to specify that searching and browsing using catego
 
 	asset.categories.search.hierarchical=true
 
-Set this to true to enable incrementing the view counter for assets.
+Set this to `true` to enable incrementing the view counter for assets.
 
 	asset.entry.increment.view.counter.enabled=true
 
@@ -4623,7 +4622,7 @@ Input a list of comma delimited default tag properties for new tags. Each item o
 
 	asset.tag.properties.default=
 
-Set this to true to enable tag suggestions.
+Set this to `true` to enable tag suggestions.
 
 	asset.tag.suggestions.enabled=true
 
@@ -4679,7 +4678,7 @@ Set this to `true` to enable trackbacks.
 
 	blogs.trackback.enabled=true
 
-Set this to true to enable pinging Google on new and updated blog entries.
+Set this to `true` to enable pinging Google on new and updated blog entries.
 
 	blogs.ping.google.enabled=true
 
@@ -4994,23 +4993,6 @@ Set this to `true` to enable guest users to flag content
 
 	flags.guest.users.enabled=false
 
-#### Email Notification Settings
-
-flags.email.from.name=Joe Bloggs
-
-flags.email.from.address=test@liferay.com
-
-\
-\
-
-flags.email.subject=com/liferay/portlet/flags/dependencies/email\_flag\_subject.tmpl
-
-flags.email.body=com/liferay/portlet/flags/dependencies/email\_flag\_body.tmpl
-
-Set this to true to enable guest users to flag content
-
-flags.guest.users.enabled=false
-
 #### Icon Menu Tag Library
 
 Configure maximum number of items to display when using the Icon Menu tag library. If the number of items is higher than the maximum allowed, then the icon menu will provide an autocomplete search box to display the items.
@@ -5224,7 +5206,7 @@ Set the available values for the number of articles to display per page.
 
 	journal.articles.page.delta.values=5,10,25,50,100
 
-Set this to `true` to search articles from the index. Set this to `false` to search articles from the database. Note that setting this to `false` will disable the ability to search articles based on Expando attributes. Do not set this to true since the functionality for searching articles from the index is experimental.
+Set this to `true` to search articles from the index. Set this to `false` to search articles from the database. Note that setting this to `false` will disable the ability to search articles based on Expando attributes. Do not set this to `true` since the functionality for searching articles from the index is experimental.
 
 	journal.articles.search.with.index=false	
 	
@@ -5241,7 +5223,7 @@ Configure email notification settings.
 	login.email.from.name=Joe Bloggs
 	login.email.from.address=test@liferay.com
 
-Set this to true to allow the user to choose a password during account creation.
+Set this to `true` to allow the user to choose a password during account creation.
 
 	login.create.account.allow.custom.password=false
 
@@ -5273,11 +5255,11 @@ Set the list of supported message board formats and the default message board fo
 	message.boards.message.formats=bbcode,html
 	message.boards.message.formats.default=bbcode
 
-Set this to true to allow anonymous posting.
+Set this to `true` to allow anonymous posting.
 
 	message.boards.anonymous.posting.enabled=true
 
-Set this to true if users are subscribed by default to a thread they participate in.
+Set this to `true` if users are subscribed by default to a thread they participate in.
 
 	message.boards.subscribe.by.default=true
 
@@ -5307,7 +5289,7 @@ Set the allowed thread views and the default thread view.
 	message.boards.thread.views=combination,flat,tree
 	message.boards.thread.views.default=combination
 
-Set this to true if message boards should be published to live by default.
+Set this to `true` if message boards should be published to live by default.
 
 	message.boards.publish.to.live.by.default=false
 
@@ -5332,7 +5314,7 @@ Set this to `true` to show public sites with no layouts.
 
 	my.sites.show.public.sites.with.no.layouts=true
 
-Set this to true to show community private sites with no layouts.
+Set this to `true` to show community private sites with no layouts.
 
 	my.sites.show.private.sites.with.no.layouts=true
 
@@ -5482,7 +5464,7 @@ Set this to `true` to enable comments for software catalog products.
 
 #### Tags Compiler Portlet
 
-Set this to true to enable the ability to compile tags from the URL. Disabling it can speed up performance.
+Set this to `true` to enable the ability to compile tags from the URL. Disabling it can speed up performance.
 
 	tags.compiler.enabled=true
 	
@@ -5517,7 +5499,7 @@ Set this to `true` to enable ratings for wiki pages.
 
 	wiki.page.ratings.enabled=true
 
-Set this to true to enable comments for wiki pages.
+Set this to `true` to enable comments for wiki pages.
 
 	wiki.page.comments.enabled=true
 

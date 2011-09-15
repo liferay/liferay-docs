@@ -655,33 +655,85 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 **Search:** allows you to a term here and click the *Search* button to search for items in the wiki. If the search term is not found, a link will be displayed which allows you to create a new wiki page on the topic for which you searched.
 
-## Document Library
+## Documents and Media
 
-Liferay's document library portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. Document libraries grant users the ability to share documents within the portal via uploading and downloading. The document library can be used to store files of any kind, not just "documents." The document library portlet is an instanceable portlet, meaning that each site on your portal can have at most one document library associated to it. However, you can use multiple document library *display* portlets within a site and configure them to point to the site's actual document library. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document library portlets for storing or sharing files.
+Liferay's Documents and Media portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. This portlet grant users the ability to share documents within the portal via uploading and downloading. The Documents and Media portlet can be used to store files of any kind, not just "documents" or "media". The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media portlets to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing files.
 
-### Getting Started with the Document Library
+### Getting Started with the Documents and Media Portlet
 
-Liferay's document library portlet has been redesigned for Liferay 6.1. The new document library supports customizable document types and metadata sets. These document types and metadata sets are an addition to, not a replacement for, the portal's system of tags and categories. Additionally, Liferay 6.1 allows multiple repositories to be mounted into the Document Library. 
+Liferay's Documents and Media portlet has been redesigned and renamed for Liferay 6.1. The previous version was called the Document Library portlet. The new Documents and Media portlet supports customizable document types and metadata sets. These document types and metadata sets are an addition to, not a replacement for, the portal's system of tags and categories. Additionally, Liferay 6.1 allows multiple repositories to be mounted onto the Documents and Media portlet. 
 
-![Figure 4.18: Initial View of the Document Library Portlet](../../images/05-document-library.png)
+![Figure 4.18: Initial View of the Documents and Media Portlet](../../images/05-document-library.png)
 
-The default view of the document library portlet displays the contents of the Documents Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you would like the main window of the portlet to display. Recent Documents displays documents that users have recently interacted with. For example, recently uploaded, edited, or downloaded, would be displayed here. My Documents shows *your* documents, i.e., the documents that you have uploaded. Basic Document, Image, and Video are filters to show text documents, images, and videos, respectively.
+The default view of the Documents and Media portlet displays the contents of the Documents Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you would like the main window of the portlet to display. Recent Documents displays documents that users have recently interacted with. For example, recently uploaded, edited, or downloaded documents would be displayed here. My Documents shows *your* documents, i.e., the documents that you have uploaded. Basic Document, Image, and Video are filters to show text documents, images, and videos, respectively. If you add custom Document types, which we discuss below, they will also be added to the filter list.
 
-### Navigating the Document Library Portlet
+### Navigating the Documents and Media Portlet
 
-In the main document library portlet window, you can click on a document to view details about it. Its version number, version history, status, and content type will be displayed as well as its uploader and the user who last edited it. You can perform several actions on the document here. You can edit the document to change its contents, point it to a different file, change its title, description, or document type, or add tags, categories, or related assets. You can move the document to a new location. You can checkout the document to prevent other users from modifying the document while you are working. You can configure the file-specific permissions of the document. If comments are enabled, you can view comments, add comments, or subscribe to comments about this document.
+In the main window of the Documents and Media portlet, you can click on a document to view details about it. Its version number, version history, status, and content type will be displayed as well as its uploader and the user who last edited it. You can perform several actions on the document here. You can edit the document to change its contents, point it to a different file, change its title, description, or document type, or add tags, categories, or related assets. You can move the document to a new location. You can checkout the document to prevent other users from modifying the document while you are working. You can configure the file-specific permissions of the document. You can download the document or get its URL or Webdav URL. If comments are enabled, you can view comments, add comments, or subscribe to comments about this document.
 
 ![Figure 4.19: Viewing a Document](../../images/05-doclib-document-view.png)
 
-The menu at the top of the documents library portlet contains Actions, Add, Sort By, and Manage buttons. There are also buttons for switching between icon view, descriptive view, and list view and there is a search field. The actions menu will only be displayed if you have selected one or more documents with the check boxes. Possible actions include cancel checkout, checkin, checkout, move, and delete. You can checkout a document if you would like to edit it and not allow anyone else to modify it while you are working. Other users can view but not edit a checked-out document. When you are done working on the document you can check it back in. Its version number will increment and the previous version will be stored. If you decided not to make any changes to the document, you can cancel the checkout. This will prevent the document library from incrementing the document's version number and saving an identical version of the document. To move a document, you just have to select a new location for it. You can also delete documents.
+The menu at the top of the Documents and Media portlet contains Actions, Add, Sort By, and Manage buttons. There are also buttons for switching between icon view, descriptive view, and list view and there is a search field. If your portlet contains more documents than it can display at once you can you the navigation tool at the bottom of the portlet window to either switch your view to another page or configure the page to display more documents per page. 
 
-From the Add button, you can add folders and shortcuts just like on your local filesystem. To add a folder you just need to enter a name for it. To add a shortcut you have to select the document to link to as well as the site it belongs to. Starting with Liferay 6.1, you can add entirely new repositories to your document libraries. To do this you need to specify the repository type and choose an ID (if you are using the AtomPub protocol you'll also have to specify the AtomPub URL). You can choose several documents to upload at once by selecting Multiple documents from the Add menu. To upload a single document you can just select Basic Document from the Add menu. However, if a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields. 
+#### Actions
 
-You can sort the items displayed in the main window of the document library portlet using the Sort By window. You can sort by title, create date, modified date, read count, or size.
+The Actions menu will only be displayed if you have selected one or more documents with the check boxes.
+
+**Canel Checkout:** lets you check in a document that you had checked out but did not make any changes to. Using this option will prevent the Documents and Media portlet from incrementing the document's version number and saving an identical version of the document.
+
+**Checkin:** lets you check in a document that you have edited. Its version number will increment and the previous version will be stored.
+
+**Checkout:** lets you checkout a document that you would like to edit. This option prevents anyone else from modifying it while you are working. Other users can still view the current version of the document if they have permission. When you are done working on the document you can check it back in.
+
+**Move:** allows you to choose a new location for a document within the portlet's file system.
+
+**Delete:** allows you to remove a document from the portlet.
+
+#### Add
+
+From the Add button, you can add documents, folders, and shortcuts just like on your local file system.
+
+**Folder:** lets you create a new location in your portlet's file system.
+
+**Shortcut:** allows you to create a shortcut to any document that you have read access for. You can set permissions on the shortcut to specify who can access the original document through the shortcut. 
+
+**Repository:** is a new feature of Liferay 6.1. This option allows you to add an entirely new repository to your Documents and Media portlet. To do this you need to specify the repository type and choose an ID. If you are using the AtomPub protocol you'll also have to specify the AtomPub URL.
+
+**Multiple Documents:** allows you to upload several documents at once.
+
+**Basic Document:** allows you upload a single file that you would like the default document type, "Basic Document", to apply to. By default, basic documents are not described by any metadata sets.
+
+**Image:** lets you upload a file that you would like the "Image" document type to apply to. By default, images are are described by author, license, and location fields.
+
+**Video:** lets you upload a file that you would like the "Video" document type to apply to. By default, videos are desribed by author, license, location, running time, and subtitles fields.
+
+Any custom documents types that have been defined also appear in the Add menu If a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields.
+
+#### Sort
+
+You can sort the items displayed in the main window of the Documents and Media portlet using the Sort By menu. You can sort by title, create date, modified date, read count, or size.
+
+**Title:** lets you alphabetically sort documents by title.
+
+**Create Date:** lets you sort documents by the time they were created.
+
+**Modified Date:** lets you sort documents by the last time they were modified.
+
+**Read Count:** lets you sort documents by the last time they were viewed.
+
+**Size:** lets you sort documents by how big they are.
+
+#### Manage
+
+The Manage menu allows you to view the names and portal IDs of document types and metadata sets, as well as the last times they were edited.
+
+**Document Types:** shows you a list of defined document types.
+
+**Metadata Sets:** shows you a list of defined metadata sets.
 
 ### Document Types and Metadata Sets
 
-Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields determined by the metadata set of the document type. This can be valuable just to prevent users from forgetting to enter important information about their documents. For example, you could define a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button on the top bar of the document library window. Multiple metadata sets can be associated with a single document type and multiple document types can include the same metadata set. 
+Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields determined by the metadata set of the document type. This can be valuable just to prevent users from forgetting to enter important information about their documents. For example, you could define a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button on the top bar of the Documents and Media portlet window. Multiple metadata sets can be associated with a single document type and multiple document types can include the same metadata set. 
 
 ![Figure 4.20: Document Types Dialog Box](../../images/05-document-types.png)
 
