@@ -16,7 +16,7 @@ This chapter will focus on how to use Liferay's collaboration suite. You will le
 
 -   Wikis
 
--   Document Libraries
+-   Documents and Media Libraries
 
 We will discuss how these features can work together to provide an enhanced experience for your users and give you the tools to build a dedicated community.
 
