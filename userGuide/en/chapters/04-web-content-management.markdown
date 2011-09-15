@@ -2,8 +2,7 @@
 
 With most products, you would read the previous chapter, understand what the software can do in terms of setting up your environment and security model, and go ahead and build your system. You'd design your infrastructure and get your server environment up and running while your developers would go ahead and write the applications that would live on your web site. With Liferay Portal, however, you start farther ahead. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go, and integrated with all the user management and security features you've already learned about.
 
-
-Perhaps the key application that ships with Liferay is Liferay's Web Content Management system (CMS). We call it the key application because it is the one that almost everybody uses, because everyone needs to populate their web sites with content. Liferay's CMS empowers you to manage all of the content on your site quickly, easily, and in the browser. Beyond managing existing content, Liferay CMS lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal's larger collection of applications, which means that you can add in shopping cart functionality, visitor polls, web forms, community collaboration tools, and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and intuitive interface.
+Perhaps the key application that ships with Liferay is Liferay's Web Content Management system (CMS). We call it the key application because it is the one that almost everybody uses, because everyone needs to populate their web sites with content. Liferay's CMS empowers you to manage all of the content on your site quickly, easily, and in the browser. Beyond managing existing content, Liferay CMS lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal's larger collection of applications, which means that you can add in shopping cart functionality, visitor polls, web forms, site collaboration tools, and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and intuitive interface.
 
 This chapter covers all aspects of Liferay CMS, including:
 
@@ -33,13 +32,13 @@ First, a little housekeeping. If we're going to be the *Technical Institute of S
 
 ![Figure 4.1 Changing Portal Settings](../../images/04-web-content-changing-settings.png)
 
-You can also customize the logo in the top left corner of every page by selecting *Display Settings* under the *Miscellaneous* tab on the panel to the right. Once you've made the changes, we can to begin creating pages.
+You can also customize the logo in the top left corner of every page by selecting *Display Settings* under the *Miscellaneous* tab on the panel to the right. Once you've made the changes, we can begin creating pages.
 
 ## Page Creation and Management
 
 Your pages must contain something, right? The reason web pages exist at all is to display content. Use can use the web to share project information, advertise to potential customers, or demonstrate a golf swing. In each case you're displaying content. And with Liferay's CMS, you'll find that the process of loading your pages up with content is extremely easy and straightforward, and you don't ever need to leave your browser.
 
-Essentially, CMS is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add ->  More* menu: we'll go over everything in a step-by-step fashion. We'll start by taking a look at page creation and management.
+Essentially, CMS is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add &rarr; More* menu: we'll go over everything in a step-by-step fashion. We'll start by taking a look at page creation and management.
 
 ### Managing Pages
 
@@ -47,44 +46,43 @@ If you are currently viewing the page you wish to manage, simply click *Manage* 
 
 ![Figure 4.2: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
 
-You can also access the Site Pages window two other ways in the Control Panel. The first way is to simply select the site that you want to work with in the Content section, and click on *Site Pages* in the left column. The second way is to navigate to the Sites page under the Portal section of the control panel and to click *Actions* and select *Manage Pages*. If you just need to quickly add a page, you can click *Add* from the dockbar and select *Page*, and a page will be added immediately. You can then edit the name of the page and begin working on it immediately.
+You can also access the Site Pages dialog box two other ways in the control panel. The first way is to simply select the site that you want to work with in the Content section, and click on *Site Pages* in the left column. The second way is to navigate to the Sites page under the Portal section of the control panel and to click *Actions* and select *Manage Pages*. If you just need to quickly add a page, you can click *Add* from the dockbar and select *Page*, and a page will be added immediately. You can then edit the name of the page and begin working on it immediately.
 
 ![Figure 4.3: Managing Site Pages](../../images/04-managing-site-pages.png)
 
-Once you're in the Manage Pages window, you'll see an interface to view existing pages, create new pages, view pages, and export or import pages using Liferay Archive (LAR) files. Note that you can switch between managing a set of pages and managing a single page using the left-hand side navigation menu. Click on *Public Pages* or *Private Pages* to manage the group or click on an individual page to manage just that one. Switching views like this will change this list of available tabs to the right. By default, liferay.com, which we renamed tisa.edu, contains a single public page called *Welcome* and we'll leave it that way.
+Once you're in the Manage Pages dialog box, you'll see an interface to view existing pages, create new pages, view pages, and export or import pages using Liferay Archive (LAR) files. Note that you can switch between managing a set of pages and managing a single page using the left-hand side navigation menu. Click on *Public Pages* or *Private Pages* to manage the group or click on an individual page to manage just that one. Switching views like this will change this list of available tabs to the right. By default, `liferay.com`, which we renamed `tisa.edu`, contains a single public page called *Welcome* and we'll leave it that way.
 
 ### Understanding Public and Private Pages
 
-Liferay's page groups are always associated with sites. Even users' personal pages are part of their personal sites. All pages must belong either to a site's set of public pages or private pages. By default, anyone, even guests, can access a site's public pages. Private pages are only accessible to users who are members of the site which owns the pages. This means that the private pages of an organization's site would only be viewable by members of the organization. The tabs for public and private pages have the same interface.
+Liferay's page groups are always associated with sites. Even users' personal pages are part of their personal sites. All pages must belong either to a site's set of public pages or private pages. By default, anyone, even guests, can access a site's public pages. Private pages are only accessible to users who are members of the site which owns the pages. This means that the private pages of an organization's site would only be viewable by members of the organization. The same interface applies to both the public and private pages tabs.
 
 ### Manage Pages Interface
 
-To add a new page to a site, you can just click the Add Page button from the Manage Sites window. Because "Public Pages" is selected on the left, clicking Add Page here will add a top level page next to the Welcome page. But you can nest pages as deeply as you wish. If you wanted to create a sub-page under the Welcome page, all you'd have to do is select the Welcome page first and then create your page. And if you later decide you don't like the order of your pages, you can drag and drop them in the list to put them in whatever order you want. Let's go ahead and add another top level page and name it *Collaboration*. We'll use this page for portlets such as Blogs and Wiki.
+To add a new page to a site, you can just click the Add Page button from the Manage Sites dialog box. Because "Public Pages" is selected on the left, clicking Add Page here will add a top level page next to the Welcome page. However, you can nest pages as deeply as you like. If you wanted to create a sub-page under the Welcome page, all you'd have to do is select the Welcome page first and then create your page. And if you later decide you don't like the order of your pages, you can drag and drop them in the list to put them in whatever order you want. Let's go ahead and add another top level page and name it *Collaboration*. We'll use this page for portlets such as Blogs and Wiki.
 
-Note that when you create a new page, you have the option to either create a blank page, or to have it prepopulated with portlets from a page template. When you're entering the name of the page, you'll be able to select from a list of page templates that are currently available. For more information about page templates, see the Control Panel chapter.
+Note that when you create a new page, you have the option to either create a blank page, or to have it prepopulated with portlets from a page template. When you're entering the name of the page, you'll be able to select from a list of page templates that are currently available. For more information about page templates, see the control panel chapter.
 
 ![Figure 4.4: Adding Pages](../../images/04-web-content-add-page.png)
 
-
 ### Export/Import
 
-If you click *Public Pages* on the left side of the Manage Site Pages window, you will see the Export/Import buttons next to the Add Page button. The Export button allows you to export the pages you create into a single file, called a LAR (Liferay Archive). You can then import this file into any server running Liferay, and all of your pages will be copied. The Import button allows you do do this. Exporting and Importing LARs is a great way to take content from one environment (say, a development or QA environment) and move it all in one shot to your production server.
+If you click *Public Pages* on the left side of the Manage Site Pages dialog box, you will see the Export/Import buttons next to the Add Page button. The Export button allows you to export the pages you create into a single file, called a LAR (Liferay Archive). You can then import this file into any server running Liferay, and all of your pages will be copied. The Import button allows you do do this. Exporting and Importing LARs is a great way to take content from one environment (say, a development or QA environment) and move it all in one shot to your production server.
 
 LARs are also a good way to back up your site's content. You can export them to a specific location on your server which is backed up, and if you ever have to restore your site, all you need to do is import the latest LAR file. One limitation on LAR files, however, is that they are version dependent, so you can't use an export from an old version of Liferay and import it into a newer version.
 
 Let's be good administrators and export a LAR file for backup purposes. Click on the *Export* button and then name the file "tisav1.lar". We need to select what to export using the checkboxes. Let's select everything for this initial export. Note that if you select the *More Options* link, the list expands to include data from many of Liferay's applications, including the Document Library, Message Boards, and Web Content. You can also export the theme you're using.
 
-Once you click *Export*, your browser will prompt you to save the file. Once you have the file, you can copy it to a backup location for safekeeping or import it into another installation of Liferay Portal. If you must rebuild or wish to revert back to this version of your site, you can import this file by clicking the *Import* button from the Manage Site Pages window, browsing to it, and selecting it.
+Once you click *Export*, your browser will prompt you to save the file. Once you have the file, you can copy it to a backup location for safekeeping or import it into another installation of Liferay Portal. If you must rebuild or wish to revert back to this version of your site, you can import this file by clicking the *Import* button from the Manage Site Pages dialog box, browsing to it, and selecting it.
 
 ### Look and Feel
 
-When you open the Manage Site Pages window it defaults to the Look and Feel tab. On this tab, you'll be presented with an interface which allows you to choose a theme for the site which you are currently working on. Themes can transform the entire look of the portal. They can be created by developers and can be easily installed using the plugins installer from the control panel. The plugins installer was covered in Chapter 3.
+When you open the Manage Site Pages dialog box it defaults to the Look and Feel tab. On this tab, you'll be presented with an interface which allows you to choose a theme for the site which you are currently working on. Themes can transform the entire look of the portal. They can be created by developers and can be easily installed using the plugins installer from the control panel. The plugins installer was covered in Chapter 3.
 
 ![Figure 4.5: Look and Feel Interface](../../images/04-look-and-feel.png)
 
 Since we don't have any themes beyond the default one installed yet, we'll use the default theme for our pages. Many themes include more than one color scheme. This allows you to keep the existing look and feel while giving your site a different flavor. Let's change the color scheme from blue to green by selecting *Green* under *Color Schemes*. If you now go back to the site (by clicking *Back to tisa.edu* in the top left corner of the control panel), you'll see that some parts of the page are now tinged in a greenish hue. 
 
-If you apply a color scheme to a set of public or private pages it will, by default, be applied to each page in the set. However, if you open the Manage Page window for a particular page, you can select "Define a specific look and feel for this page" to customize the page. You can use this feature to choose a different color scheme for a particular page than the one defined for the set of public or private pages it belongs to.
+If you apply a color scheme to a set of public or private pages it will, by default, be applied to each page in the set. However, if you open the Manage Page dialog box for a particular page, you can select "Define a specific look and feel for this page" to customize the page. You can use this feature to choose a different color scheme for a particular page than the one defined for the set of public or private pages it belongs to.
 
 There are a few settings that you can configure for your theme. You can switch the bullet style between dots and arrows and you can choose whether or not to show portlet borders by default.
 
@@ -100,13 +98,13 @@ In addition to *Look and Feel* and *Logo*, there are also *Javascript* and *Adva
 
 ### Additional Tabs of the Manage Page Window
 
-The settings in the *Manage Page* window's tabs apply only to individual pages. The *Manage Page* window has additional tabs that do not appear in the *Manage Site Pages* window. These include SEO (Search Engine Optimization), Layout, Custom Fields, and Customization Settings. The SEO tab of the *Manage Page* window is for customizing the search engine properties of an *individual* page. For example, you could change the priority of a page or remove it from the sitemap altogether. The SEO settings for your *site* can can be specified from the Sitemaps and Robots tabs of the *Manage Site Settings* window. 
+The settings in the tabs *Manage Page* dialog box apply only to individual pages. The *Manage Page* dialog box has additional tabs that do not appear in the *Manage Site Pages* dialog box. These include SEO (Search Engine Optimization), Layout, Custom Fields, and Customization Settings. The SEO tab of the *Manage Page* dialog box is for customizing the search engine properties of an *individual* page. For example, you could change the priority of a page or remove it from the sitemap altogether. The SEO settings for your *site* can can be specified from the Sitemaps and Robots tabs of the *Manage Site Settings* dialog box. 
 
 The layout templates tab lets you specify how portlets will be arranged on a page. You can only choose a template from the list but it's very easy for developers to define custom layouts and add them to the list. If custom fields have been defined, which can be done from the *Custom Fields* page of the control panel, you can add a custom field to a page from the custom fields tab. This custom field serves as metadata about the page so it will not be visible on the page. The customization tab lets you mark specific sections of the page that you want users to be able to customize.
 
 ### Site Settings
 
-The *Manage -> Site Settings* window gives us several powerful tools. You'll find options to specify details and metadata about your site, set up friendly URLs and virtual hosts, configure search engine optimization settings, turn staging on or off, and specify a Google Analytics ID. Let's take a closer look.
+The *Manage &rarr; Site Settings* dialog box gives us several powerful tools. You'll find options to specify details and metadata about your site, set up friendly URLs and virtual hosts, configure search engine optimization settings, turn staging on or off, and specify a Google Analytics ID. Let's take a closer look.
 
 #### Details
 
@@ -174,7 +172,7 @@ When an administrator activates Page Customizations for a page, any portlets tha
 
 Page layouts allow you to arrange your pages so that the content appears the way you want it to. Liferay comes shipped with many layouts already defined. Developers can create more and they can be deployed to your portal for your use.
 
-In order to prepare for the portlets we'll soon be adding, let's change the layout of the Collaboration page. To access layouts, go up to the Dockbar and select *Manage ->  Page Layout*.
+In order to prepare for the portlets we'll soon be adding, let's change the layout of the Collaboration page. To access layouts, go up to the Dockbar and select *Manage &rarr;  Page Layout*.
 
 Now, select the *2 Columns (50/50)* layout and then *Save*. Once saved, you'll return to the page and it'll seem as though nothing has happened. However, once we start adding portlets you'll notice how the page is now equally divided into two columns. You can stack portlets on top of each other in these columns. There are, of course, more complicated layouts available, and you can play around with them to get the layout that you want.
 
@@ -182,9 +180,9 @@ Sometimes a particular layout is *almost* what you want, but not quite. In this 
 
 ### Editing a Page
 
-There are a lot of other things you can do beyond placing portlets on a page. So let's take a look at to the TISA site. You can do this by going up to the Dockbar and clicking *Go To ->  Technical Institute of Semantic Ambiguity*.
+There are a lot of other things you can do beyond placing portlets on a page. So let's take a look at to the TISA site. You can do this by going up to the Dockbar and clicking *Go To &rarr; Technical Institute of Semantic Ambiguity*.
 
-We'll use the *Collaboration* page you created earlier in the chapter. Navigate to the *Collaboration* page and select *Manage ->  Page* from the Dockbar.
+We'll use the *Collaboration* page you created earlier in the chapter. Navigate to the *Collaboration* page and select *Manage &rarr;  Page* from the Dockbar.
 
 This screen should now be familiar to you, but we haven't yet looked at all of its options.
 
@@ -211,8 +209,8 @@ As we discussed earlier, Liferay Portal pages are composed of portlets. All of y
 
 Adding portlets to a page is simple. Let's add some to our Collaboration page.
 
-1.  In the Dockbar, select *Add ->  More*.
-2.  In the window that appears, expand the *Collaboration* category.
+1.  In the Dockbar, select *Add &rarr; More*.
+2.  In the menu that appears, expand the *Collaboration* category.
 3.  Drag the *Blogs* portlet off the Add Application window onto the right column of our page.
 4.  Next, drag the *Wiki* portlet to the *left column*.
 
@@ -229,7 +227,7 @@ individual pages in either page group so that only certain users can view them.
 
 So, let's say we wanted to create a page only for administrators to see. We can do this with the following procedure:
 
-1.  Go to the Dockbar and select *Manage -> Control Panel*.
+1.  Go to the Dockbar and select *Manage &rarr; Control Panel*.
 2.  Ensure that you are viewing the default Site.
 3.  Click the *Site Pages* link in the left navigation.
 4.  Click the *Private Pages* tab to switch to the Private Pages. Remember, these pages by default are viewable only by members of the site.
@@ -334,7 +332,7 @@ For this piece of web content, we don't need to change anything. After you're fi
 
 #### Publishing Content with the Web Content Display Portlet
 
-Now that we've created and published our first piece of web content for TISA, it's time to display it. First, we'll need to add the *Web Content Display* portlet to our Welcome page. Do this by selecting *Add ->  Web Content Display* from the Dockbar.
+Now that we've created and published our first piece of web content for TISA, it's time to display it. First, we'll need to add the *Web Content Display* portlet to our Welcome page. Do this by selecting *Add &rarr; Web Content Display* from the Dockbar.
 
 ![Figure 4.11: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
@@ -674,7 +672,7 @@ In addition, Liferay 6.1 adds the capability to create multiple branches of stag
 
 The Staging tab allows us to make changes in a staging environment and preview our work before publishing it to the live site. Let's create a staging environment for the TISA's *Main Campus* site.
 
-First, we'll need to create the site. Go the *Control Panel,* select the *Users and Organizations* tab, and then select *Add -> Location*. In the **Name** field, type in *Main Campus*, and select the appropriate *Country* and *Region*. Next choose the TISA Organization as the parent organiazation. Now click on *Organization site* on the right side of the screen. Check the box for *Create Site*, leave the defaults, and click *Save*. After you've completed these steps, select *Save*.
+First, we'll need to create the site. Go the *Control Panel,* select the *Users and Organizations* tab, and then select *Add &rarr; Location*. In the **Name** field, type in *Main Campus*, and select the appropriate *Country* and *Region*. Next choose the TISA Organization as the parent organiazation. Now click on *Organization site* on the right side of the screen. Check the box for *Create Site*, leave the defaults, and click *Save*. After you've completed these steps, select *Save*.
 
 ![Figure 4.20: Setting up a Location](../../images/04-web-content-creating-location.png)
 
@@ -684,7 +682,7 @@ Now we're ready to activate the staging feature for this site. You should now ha
 
 ![Figure 4.21: You can chooseto use versioning and what content should be staged and what content should not be staged.](../../images/04-web-content-staging.png)
 
-We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live.* If you were to select *Remote Live*, you would also have needed to supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions ->  Edit* on any site in the Control Panel. Either way, once we make a selection (*Local Live* or *Remote Live*), many more options will become available to us.
+We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live.* If you were to select *Remote Live*, you would also have needed to supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions &rarr;  Edit* on any site in the Control Panel. Either way, once we make a selection (*Local Live* or *Remote Live*), many more options will become available to us.
 
 We'll cover many of the collaboration portlets listed here when we come to chapter 5. For now you just need to be aware that the option is available to enable or disable staging for any of them, and you need to decide if you would like to stage content for these portlets. In the case of the collaborative portlets, the answer would usually be “no.” Why? Because portlets such as the Message Boards are designed for user interaction. If their content were staged, you'd have to manually publish your site whenever somebody posted a message on the message boards in order to make that message appear on the live site.
 
