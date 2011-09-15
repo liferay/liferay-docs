@@ -36,7 +36,7 @@ Liferay's audit functionality is composed of two parts: a back-end piece that ho
 
 Once installed, there are two properties in your `portal-ext.properties` file which you can use to tweak the settings. 
 
-**com.liferay.portal.servlet.filters.audit.AuditFilter:** By default, this is set to `false`, because the audit plugins aren't installed by default. When you set it to true, the audit hook is able to capture more information about events, such as the client host and the client's IP address. 
+**com.liferay.portal.servlet.filters.audit.AuditFilter:** By default, this is set to `false`, because the audit plugins aren't installed by default. When you set it to `true`, the audit hook is able to capture more information about events, such as the client host and the client's IP address. 
 
 **audit.message.com.liferay.portal.model.Layout.VIEW:** In the code, pages are *layouts*. Setting this to `true`, therefore, records audit events for page views. It's turned off by default because this may be too fine-grained for most installations. 
 
@@ -44,7 +44,7 @@ Once you've decided if you're going to use one or both of the two settings above
 
 ## Using audit events
 
-Now that you're capturing audit events, it's easy to use them to view activities in your portal. Navigate to the control panel and you'll find a new entry in the *Portal* section labeled  *Audit Reports* (see figure 8.1). 
+Now that you're capturing audit events, it's easy to use them to view activities in your portal. Navigate to the control panel and you'll find a new entry in the *Portal* section labeled *Audit Reports* (see figure 8.1). 
 
 ![Figure 8.1. Once the Audit Reports plugins are installed, an entry appears in the control panel.](../../images/control-panel-audit-reports.png)
 
