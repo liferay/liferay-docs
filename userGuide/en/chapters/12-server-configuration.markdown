@@ -2,13 +2,13 @@
 
 This chapter covers the following activities:
 
--   *Using the Portal section of the Control Panel:* How to manage users, organizations, sites, user groups, roles, and teams
+-   Using the control panel to manage users, organizations, sites, user groups, roles, and teams
 
--   *Using the Server section of the Control Panel:* How to manage global server settings including password policies, authentication settings, mail host names, email notifications, display settings, monitoring, and server administration
+-   Using the control panel to manage password policies, authentication settings, mail host names, email notifications, display settings, and monitoring
 
--   *Liferay Services Oriented Architechture:* How to access custom web services using Liferay's Service Builder utility.
+-   Using the control panel to manage server administration, portal instances, plugins, and updates
 
-## Using the Control Panel
+## Managing Users, Organizations, Sites, User groups, Roles, and Teams from the Control Panel
 
 The Portal section of the Control Panel is used for most administrative tasks. You will find there an interface for the creation and maintenance of
 
@@ -164,7 +164,7 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 
 **Sitemap:** lets you use the sitemap protocol to notify search engines that your web site is available for crawling. 
 
-**Robots:** lets you use a robots.txt file to specify certain pages and links that you do **not** want to be indexed by search engines. You need to set a virtual host before you set a robots.txt file.
+**Robots:** lets you use a robots.txt file to specify certain pages and links that you do *not* want to be indexed by search engines. You need to set a virtual host before you set a `robots.txt` file.
 
 **Staging:** lets you turn on either Local Live staging or Remote Live staging.
 
@@ -325,215 +325,111 @@ Prior to Liferay 6.0, the default configurations of many Liferay portlets allowe
 
 Teams don't appear as a link in the control panel because they exist *within* sites. Teams can be used when you need to collect permissions within a a single site. If you create a team for one site, it will not be available to any other sites. Teams serve as a means to create a particular set of users and permissions for a site-specific function.
 
-To create a team within a site, first naviagte to the *Control Panel ->  Sites* page then and then select *Actions ->  Manage Memberships* for the site within which you want to create a team. Finally, click *View ->  Teams* and click the Add Team button.
+To create a team within a site, first naviagte to the *Control Panel &rarr; Sites* page then and then select *Actions &rarr; Manage Memberships* for the site within which you want to create a team. Finally, click *View &rarr; Teams* and click the Add Team button.
 
 ![Creating a Team within a Site](../../images/01-creating-a-team.png)
 
-After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions ->  Assign Members*.
+After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions &rarr; Assign Members*.
 
-Permission management for teams is handled at the individual portlet level, using the *Options ->  Configuration ->  Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
+Permission management for teams is handled at the individual portlet level, using the *Options &rarr; Configuration &rarr; Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
 
 [Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams)
 
 To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. Now your team is ready to work!
 
-<copied from old Ch3: Configuration>
+## Managing Portal Settings
 
-# Configuration
+After you have created users, user groups, organizations, roles, sites, and teams, your portal will be ready to host content and applications. You can configure Liferay's portal settings to fit your environment and your particular portal project. Many configurations can be performed through Liferay's portlet-driven user interface. This section covers how to configure portal settings such as password policies, authentication settings, mail host names, email notifications, display settings, and monitoring.
 
-Once Liferay is successfully installed, you can begin configuring it to
-fit it to your environment and your particular portal project. You can
-perform many of these configuration tasks through Liferay's
-portlet-driven user interface.
-
-You will want to customize your portal by configuring various settings
-for it, such as email notifications, integration with services such as
-LDAP, creating users, user groups, organizations, communities, and
-roles, and readying your portal to have its content and applications
-loaded by your developers. This chapter covers these activities:
-
--   *Global Portal Settings:* Password policies, Settings, Monitoring,
-    and more.
-
-## Global Server Settings
-
-Now that you have navigated in the Control Panel, you should be pretty
-familiar with how it works, and that all the options appear in the left
-navigation, their interfaces appear in the middle, and any sub-options
-appear on the right. We have focused so far on the maintenance of users
-and portal security. The remaining links in the *Portal* category focus
-on various portal settings which cover how the portal operates and
-integrates with other systems you may have.
+Now that you have been navigating in the control panel, you should be pretty familiar with how it works. All the options appear in the left navigation, their interfaces appear in the middle, and any sub-options appear on the right. We have focused so far on the maintenance of users and portal security. The remaining links in the *Portal* category focus on various portal settings which cover how the portal operates and integrates with other systems you may have.
 
 ### Password Policies
 
-Password policies can help to enhance the security of your portal. Using
-password policies, you can set password rules such as password strength,
-frequency of password expiration, and more. Additionally, you can apply
-different rule sets to different sets of portal users.
+Password policies can enhance the security of your portal. Password policies can set requirements on password strength, frequency of password expiration, and more. Additionally, you can apply different password policies to different sets of portal users.
 
-If you are viewing a page other than the Control Panel, go up to the
-Dockbar and select *Control Panel*. Next, click on the *Password 
-Policies* link on the left side of the screen in the *Portal* category.
-You will see that there is already a default password policy in the
-system. You can edit this in the same manner as you edit other resources
-in the portal: click *Actions* and then click *Edit*.
+If you are viewing a page other than the Control Panel, select *Control Panel* from the *Go to* menu of the dockbar. Next, click on the *Password Policies* link on the left side of the screen under the *Portal* heading. You will see that there is already a default password policy in the system. You can edit this in the same manner as you edit other resources in the portal: click *Actions* and then click *Edit*.
 
-You will then see the Password Policy settings form:
+The Password Policy settings form contaings the following fields. Enabling specific settings via the check boxes prompts setting-specfic options to appear.
 
-**Changeable:** Selects whether a user can change his or her password.
+**Name:** requires you to enter a name for the password policy.
 
-**Change Required:** Selects whether a user must change his or her
-password upon first log in.
+**Description:** lets you describe the password policy so that other administrators will know what it's for.
 
-**Minimum Age:** You can choose how long a password must remain in
-effect before it can be changed.
+**Changeable:** determines whether or not a user can change his or her password.
 
-**Reset ticket max age:** You can choose how long a password reset link
-remains valid.
+**Change Required:** determines whether or not a user must change his or her password after logging into the portal for the first time.
 
-**Syntax Checking:** Allows you to choose whether dictionary words can
-be in passwords as well as the minimum password length.
+**Minimum Age:** lets you choose how long a password must remain in effect before it can be changed.
 
-**Password History:** Keeps a history (with a defined length) of
-passwords and won't allow users to change their passwords to one that
-was previously used. You can enable it or disable it using the check
-box.
+**Reset Ticket Max Age:** determines how long a password reset link remains valid.
 
-**Password Expiration:** Lets you choose an interval where passwords can
-be active before they expire. You can select the age, the warning time,
-and a grace limit, and you can enable or disable it using the check box.
+**Password Syntax Checking:** allows you to set a minimum password length and to choose whether or not dictionary words can be in passwords. You can also specify detailed requirements such as minimum numbers of alpha numeric characters, lower case letters, upper case letters, numbers, or symbols.
 
-**Lockout:** Allows you to set the number of failed log in attempts
-before a user's account becomes locked. You can choose whether an
-administrator needs to unlock the account or if it becomes unlocked
-after a specific duration. You can enable or disable it using the check
-box.
+**Password History:** lets you keep a history (with a defined length) of passwords and prevents users from changing their passwords to one that was previously used.
 
-From the list of password policies, you can perform several other
-actions.
+**Password Expiration:** lets you choose how long passwords can remain active before they expire. You can select the age, the warning time, and a grace limit.
 
-**Edit:** Brings you to the form above and allows you to modify the
-password policy.
+**Lockout:** allows you to set a number of failed log-in attempts that triggers a user's account to lock. You can choose whether an administrator needs to unlock the account or if it becomes unlocked after a specific duration.
 
-**Permissions:** This allows you to define which **Users**, **User
-Groups**, or **Roles** have permissions to edit the Password
-Policy.
+From the list of password policies, you can perform several other actions.
 
-**Assign Members:** Takes you to a screen where you can search and
-select **users** in the portal to be assigned to this password policy.
-The password policy will be enforced for any **users** who are added
-here.
+**Edit:** brings you to the form above and allows you to modify the password policy.
 
-**Delete:** This shows up for any password policies that you add beyond
-the default policy. You cannot delete the default policy.
+**Permissions:** allows you to define which users, user groups, or roles have permission to edit the password policy.
 
-### Settings
+**Assign Members:** takes you to a screen where you can search and select users in the portal to be assigned to this password policy. The password policy will be enforced for any users who are added here.
 
-The Settings link is where most of the global portal settings are.
+**Delete:** shows up for any password policies that you add beyond the default policy. You cannot delete the default policy.
 
-**General:** This lets you configure global settings, such as the
-company name, domain, the virtual host, a global portal logo, and more.
+### Portal Settings
 
-**Authentication:** Allows you to configure log in IDs, connection to
-LDAP, and Single Sign-On.
+Most global portal settings can be configured here.
 
-**Users:** Has three tabs, labeled *Fields*, *Reserved Credentials*, and
-*Default User Associations*. The Fields tab enables or disables some
-user fields, such as birthday or terms of use. The Reserved Credentials
-tab lets you reserve screen names and email addresses so that users
-cannot register using them. You might use this to prevent users from
-registering on the portal with user names that contain profanity or that
-sound official, such as *admin* or *president*. The Default User
-Associations tab lets you configure default membership to Roles, User
-Groups, and Communities for new users, and provides a check box which
-allows you to retroactively apply these to existing users.
+**General:** lets you configure global settings, such as the company name, domain, the virtual host, a global portal logo, and more.
 
-**Mail Host Names:** You can add a list of other mail host names
-that are associated with your organization. For example, your main
-domain might be `mycompany.com`{.western}, but you might use
-`mycompany-marketing.com`{.western} for your email newsletters. Any
-domain names associated with your organization can go here.
+**Authentication:** allows you to configure log in IDs, connection to LDAP, and Single Sign-On.
 
-**Email Notifications:** Liferay sends email notifications for
-certain events, such as user registrations, password changes, etc. You
-can customize those messages here.
+**Users:** has three tabs, labeled Fields, Reserved Credentials, and Default User Associations. The Fields tab enables or disables some user fields, such as birthday or terms of use. The Reserved Credentials tab lets you reserve screen names and email addresses so that users cannot register using them. You might use this to prevent users from registering on the portal with user names that contain profanity or that sound official, such as *admin* or *president*. The Default User Associations tab lets you configure default membership to roles, user groups, and sites for new users, and provides a check box which allows you to retroactively apply these to existing users.
+
+**Mail Host Names:** lets you add a list of other mail host names to be associated with your organization. For example, your main domain might be `mycompany.com`, but you might use `mycompany-marketing.com` for your email newsletters. Any domain names associated with your organization can go here.
+
+**Email Notifications:** allows you to configure Liferay to send email notifications for certain events, such as user registrations, password changes, etc. You can customize those messages here.
 
 We will go over these settings in detail below.
 
 #### General
 
-The *General* link allows you to set the name of the company /
-organization / site which is running the portal. Setting the name here
-will also define the name of your portal's default community. By default
-it is *liferay.com* , so you will definitely want to set this to reflect
-your organization. You can also set the virtual host, the mail domain,
-and several other items of miscellaneous information about the
-organization.
+The General link takes you to a page with three headings: Main Configuration, Navigation, and Additional Information. Under the Main Configuration heading, you can set the name of the company, organization, or site which is running the portal. This name also defines the name of your portal's default site. Its default name is `liferay.com`, so you will definitely want to set this to reflect your own company. You can also set the mail domain, virtual host, and content delivery network address here. Under the Navigation heading, you can set a home page for your portal here as well as default landing and logout pages. Under the Additional Information heading, you can specify a Legal name, ID, and type for your company, an SIC code, a ticker symbol, and industry, and a type.
 
 #### Authentication: General Settings
 
-The *Authentication* link has several tabs under it. All of these are
-used for configuring how users will authenticate to Liferay. Because
-Liferay supports a number of authentication methods, there are settings
-for each.
+The Authentication page has several tabs: General, LDAP, CAS, Facebook, NTLM, OpenID, Open SSO, and SiteMinder. You can use any of these authentication methods to configure how users will authenticate to Liferay. Since Liferay supports quite a few authentication methods, there are different settings for each.
 
-The general settings affect only Liferay functionality, and don't have
-anything to do with any of the integration options on the other tabs.
-This tab allows you to customize Liferay's out-of-box behavior regarding
-authentication. Specifically, the *General* tab allows you to select
-from several global authentication settings:
+The settings on the General tab affect only Liferay functionality, and don't have anything to do with the integration options on the other tabs. The General tab allows you to customize Liferay's standard authentication behavior. Specifically, the General tab allows you to select from several global authentication settings:
 
--   Authenticate via email address (default), screen name, or user ID (a
-    numerical ID auto-generated in the database—not recommended).
+-   Authenticate via email address (default), screen name, or user ID (a numerical ID auto-generated in the database — not recommended).
 
--   Enable / Disable automatic log in. If enabled, Liferay allows a user
-    to check a box which will cause the site to “remember” the user's
-    log in by placing a cookie on his or her browser. If disabled, users
-    will have to log in manually always.
+-   Enable/Disable automatic log in. If enabled, Liferay allows a user to check a box which will cause the site to “remember” the user's log in by placing a cookie on his or her browser. If disabled, users will always have to log in manually.
 
--   Enable / Disable forgotten password functionality.
+-   Enable/Disable forgotten password functionality.
 
--   Enable / Disable request password reset links.
+-   Enable/Disable request password reset links.
 
--   Enable / Disable account creation by strangers. If you are running
-    an Internet site, you will probably want to leave this on so that
-    visitors can create accounts on your site.
+-   Enable/Disable account creation by strangers. If you are running an Internet site, you will probably want to leave this on so that visitors can create accounts on your site.
 
--   Enable / Disable account creation by those using an email address in
-    the domain of the company running the site (which you just set on
-    the General tab). This is handy if you are using Liferay to host
-    both internal and external web sites. You can make sure that all
-    internal IDs have to be created by administrators, but external
-    users can register for IDs themselves.
+-   Enable/Disable account creation by those using an email address in the domain of the company running the site (which you just set on the General page of Portal Settings). This is handy if you are using Liferay to host both internal and external web sites. You can make sure that all internal IDs have to be created by administrators, but external users can register for IDs themselves.
 
--   Enable / Disable email address verification. If you enable this,
-    Liferay, will send users a verification email with a link back to
-    the portal to verify that the email address they entered is a valid
-    one they can access.
+-   Enable / Disable email address verification. If you enable this, Liferay will send users a verification email with a link back to the portal to verify that the email address they entered is a valid one they can access.
 
-By default, all settings except for the last are enabled. One default
-that is important is that users will authenticate by their email
-address. Liferay defaults to this for several reasons:
+By default, all settings except for the last are enabled. User authentication by email address is an important default. Liferay defaults to this for several reasons:
 
 1.  An email address is, by definition, unique to the user who owns it.
 
-2.  People can generally remember their email addresses. If you have a
-    user who hasn't logged into the portal for a while, it is possible
-    that he or she will forget his or her screen name, especially if the
-    user was not allowed to use his or her screen name of choice
-    (because somebody else already used it).
+2.  People can generally remember their email addresses. If you have  user who hasn't logged into the portal for a while, it is possible that he or she will forget his or her screen name, especially if the user was not allowed to use his or her screen name of choice (because somebody else already used it).
 
-3.  If a user changes his or her email address, it is more likely that
-    the user will forget to update his or her email address in his or
-    her profile, if that email address is not used to authenticate. If
-    the user's email address is not updated, all notifications sent by
-    the portal will fail to reach the user. So it is important to keep
-    the email address at the forefront of a user's mind when he or she
-    logs in to help the user keep it up to date.
+3.  If a user changes his or her email address, it is more likely that the user will forget to update his or her email address in his or her profile, if that email address is not used to authenticate. If the user's email address is not updated, all notifications sent by the portal will fail to reach the user. So it is important to keep the email address at the forefront of a user's mind when he or she logs in to help the user keep it up to date.
 
-For these reasons, Liferay defaults to using the email address as a user
-name.
+For these reasons, Liferay defaults to using the email address as a user name.
 
 #### Authentication: LDAP
 
@@ -568,12 +464,7 @@ accounts to log in to the portal.
 
 ##### LDAP Servers
 
-This is where you add LDAP Servers. If you have more than one, you can
-arrange the servers by order of preference using the up/down arrows.
-When you add an LDAP Server, you will need to provide several pieces of
-data so that Liferay can bind to that LDAP server and search it for user
-records. Regardless of how many LDAP servers you add, each server has
-the same configuration options:
+This is where you add LDAP Servers. If you have more than one, you can arrange the servers by order of preference using the up/down arrows. When you add an LDAP Server, you will need to provide several pieces of data so that Liferay can bind to that LDAP server and search it for user records. Regardless of how many LDAP servers you add, each server has the same configuration options:
 
 ##### Default Values
 
@@ -621,9 +512,9 @@ share the certificate:
 
 On the Windows 2003 Domain Controller, open the *Certificates* MMC
 snapin. Export the Root Certificate Authority certificate by selecting
-*Certificates (Local Computer) mmc snapin -> Trusted Root Certification
-Authorities -> MyRootCACertificateName*. Right click this certificate
-and select *All Tasks -> export -> select DER encoded binary X.509
+*Certificates (Local Computer) mmc snapin &rarr; Trusted Root Certification
+Authorities &rarr; MyRootCACertificateName*. Right click this certificate
+and select *All Tasks &rarr; export &rarr; select DER encoded binary X.509
 .CER*. Copy the exported *.cer* file to your Liferay Portal server.
 
 As with the CAS install (see the below section entitled **Single
@@ -654,7 +545,7 @@ This section contains settings for finding users in your LDAP directory.
 determine the search criteria for user log ins. By default, Liferay uses
 the **email address** as a user log in name. If you have changed this
 setting—which can be done on the**General tab** that's next to
-the **LDAP tab** in the **Settings -> Authentication** section of the
+the **LDAP tab** in the **Settings &rarr; Authentication** section of the
 **Control Panel** you will need to modify the search filter here, which
 has by default been configured to use the **email address** attribute
 from **LDAP** as search criteria. For example, if you changed Liferay's
@@ -925,8 +816,8 @@ with `%JAVA_HOME%`{.western}. Of course, all of this needs to be done on
 the system on which CAS will be running.
 
 Once your CAS server is up and running, you can configure Liferay to use
-it. This is a simple matter of navigating to the *Settings -> 
-Authentication -> CAS* tab in the Control Panel. Enable CAS
+it. This is a simple matter of navigating to the *Settings &rarr; 
+Authentication &rarr; CAS* tab in the Control Panel. Enable CAS
 authentication, and then modify the URL properties to point to your CAS
 server.
 
@@ -1040,8 +931,8 @@ Open SSO using this user.
 
 In the same browser window, go to the URL for your server running
 Liferay and log in as the same user, using the email address
-*test@liferay.com*. Go to the Control Panel and click *Settings ->
-Authentication -> OpenSSO*. Modify the three URL fields (Login URL,
+*test@liferay.com*. Go to the Control Panel and click *Settings &rarr;
+Authentication &rarr; OpenSSO*. Modify the three URL fields (Login URL,
 Logout URL, and Service URL) so that they point to your OpenSSO server
 (i.e., only modify the host name portion of the URLs), click the
 *Enabled* check box, and then click *Save*. Liferay will then redirect
@@ -1189,7 +1080,7 @@ Note that this is for basic configuration: if you want to view the
 existing permission configuration for a given portlet and/or modify that
 configuration for existing roles, this is where you can do that. If you
 need to add permissions to new roles for a given portlet, use the Roles
-section of the Control Panel and the *Actions ->  Define Permissions*
+section of the Control Panel and the *Actions &rarr;  Define Permissions*
 button.
 
 ### Page Templates
@@ -1216,7 +1107,7 @@ the Page Template portlet (which is in another browser tab) and select
 *Save*.
 
 When you want to use the new template to create a new page on a site,
-simply navigate to *Control Panel -> Pages* and the page is available
+simply navigate to *Control Panel &rarr; Pages* and the page is available
 in the template drop down menu when you're adding a page.
 
 ### Site Templates
@@ -1234,7 +1125,7 @@ Panel. From there you can select *Add* and then enter a name and
 description for your template. Also, below the description field is
 where you can make this template active.
 
-Once this is complete, click on *Actions -> Manage Pages*. From here
+Once this is complete, click on *Actions &rarr; Manage Pages*. From here
 you can add pages to your template, configure the look and feel by
 managing themes or CSS files, and export the template as a .lar file.
 You can also import a .lar file from here as well.
@@ -1503,5 +1394,3 @@ installed.
 
 All of this information was designed to put you on the path to becoming
 a seasoned Liferay Portal Administrator.
-
-</copied from old Ch3: Configuration>
