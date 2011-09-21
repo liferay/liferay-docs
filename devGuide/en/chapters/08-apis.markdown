@@ -30,8 +30,9 @@ be accessed through static methods provided by auto-generated
 `-LocalServiceUtil` classes.
 
 The following JSP code snippet demonstrates
-how to get a list of the most recent bloggers from an organization. It invokes static method
-`getOrganizationStatsUsers()` on `-LocalServiceUtil` class `BlogsStatsUserLocalServiceUtil`:
+how to get a list of the most recent bloggers from an organization. It invokes
+static method `getOrganizationStatsUsers()` on `-LocalServiceUtil`
+class `BlogsStatsUserLocalServiceUtil`:
 
     <%@ page import="com.liferay.portlet.blogs.service.BlogsStatsUserLocalServiceUtil" %>
     <%@ page import="com.liferay.portlet.blogs.util.comparator.StatsUserLastPostDateComparator" %>
@@ -43,7 +44,8 @@ how to get a list of the most recent bloggers from an organization. It invokes s
 
 ## Remote Access
 
-Services are also made available to *remote* clients (clients running outside of the portal JVM). Service Builder generates remote interfaces for
+Services are also made available to *remote* clients (clients running outside
+of the portal JVM). Service Builder generates remote interfaces for
 your entities if their `remote-service` attribute is set to `true` in your
 portlet's `service.xml`. Here is an example of how remote services are turned
 on for Liferay's `Country` entity:
@@ -346,7 +348,7 @@ In order to do the mapping it is necessary to use portal-specific
 configuration files. In the case of Liferay you can define mapping in
 liferay-portlet.xml. For example see definition of mapping inside
 `liferay-portlet.xml` in
-`portal-web/docroot/WEB-INF:`
+`portal-web/docroot/WEB-INF`:
 
     <role-mapper>
 	<role-name>administrator</role-name>
@@ -366,8 +368,8 @@ liferay-portlet.xml. For example see definition of mapping inside
     </role-mapper>
 
 This means that if a portlet definition references the role "power-user"
-it will be mapped to the Liferay role in its database called "Power
-User".
+it will be mapped to the Liferay role in its database called *Power
+User*.
 
 In your portlet's code you can then use methods as defined in portlet
 specification:
@@ -378,7 +380,7 @@ specification:
     
     - getUserPrincipal ()
 
-For example to check if the current user has the "Power User" role the
+For example to check if the current user has the *Power User* role the
 following code could be used:
 
     if (renderRequest.isUserInRole("power-user")) {
@@ -416,7 +418,7 @@ etc.), Java classes (e.g., Message Board Topics, Calendar Events, etc.),
 and files (e.g., documents, images, etc.)
 
 **Permission** - An action acting on a resource. For example, the *view*
-in "viewing the calendar portlet" is defined as a permission in Liferay.
+in *viewing the calendar portlet* is defined as a permission in Liferay.
 
 Keep in mind that permissions for a portlet resource are implemented a
 little differently from other resources such as Java classes and files.
@@ -538,16 +540,16 @@ instance of the portlet. These permissions are defined in the first
 simply of the blogs package. This is the recommended convention for
 permissions that refer to an instance of the portlet as a whole.
 
-![image](../../images/tip-pen-paper.png)**Tip:** A "scope" in
+![image](../../images/tip-pen-paper.png)**Tip:** A *scope* in
 Liferay is simply a way of specifying how widely the data from an
 instance of a portlet is shared. For instance, if I place a blogs
 portlet on a page in the guest community, and then place another blogs
 portlet on another page in the same community, the two blogs will share
-the same set of posts. This is the default or "community-level" scope.
+the same set of posts. This is the default or *community-level* scope.
 If I then configure one of the two blogs and change its scope to the
 current page, it will no longer share content with any of the other
 blogs in that community. Thus, with respect to permissions, an
-"instance" of a blogs portlet could exist on only one page, or span an
+*instance* of a blogs portlet could exist on only one page, or span an
 entire community.
 
 The difference between the portlet instance permissions defined in this
@@ -675,13 +677,6 @@ being removed:
 	entry.getCompanyId(), BlogsEntry.class.getName(),
 	Resource.SCOPE_INDIVIDUAL, entry.getEntryId);
 
-Liferay Community Edition 6.0.5 has a known bug
-([http://issues.liferay.com/browse/LPS-14135](http://issues.liferay.com/browse/LPS-14135))
-that causes this method to leave some data behind in the database. This
-error does nos affect the latest Enterprise Edition (6.0.11 and later)
-and it has also been fixed in the latest release of the Community
-Edition (6.0.6 at the time of this writing)
-
 ### Adding Permission
 
 On the portlet level, no code needs to be written in order to have the
@@ -761,7 +756,7 @@ whether the user has permission to add entry.
 
 The second place to check for the add entry permission is in the
 business logic. If the check fails, a
-`PrincipalException` is thrown and the add entry request is aborted.
+`PrincipalException` is thrown `and the add entry request is aborted.`
 
     if (!permissionChecker.hasPermission(
 	scopeGroupId, "com.liferay.portlet.blogs.model",
@@ -771,42 +766,70 @@ business logic. If the check fails, a
 
     blogsEntryLocalService.addEntry(...);
 
-The `PermissionChecker` class has a method called `hasPermission(...)` that checks whether a user making a resource request has the necessary access permission. If the user is not signed in (guest user), it checks for guest permissions. Otherwise, it checks for user permissions.  Let's do a quick review of the parameters of this method:
+The `PermissionChecker` class has a method called `hasPermission(...)` that
+checks whether a user making a resource request has the necessary access
+permission. If the user is not signed in (guest user), it checks for guest
+permissions. Otherwise, it checks for user permissions.  Let's do a quick
+review of the parameters of this method:
 
--   `groupId`:  represents the scope in which the permission check is being performed.  In Liferay, the scopes can be a specific community, an organization, a personal site of a user, etc.  This is important because a user may be allowed to add blog entries in a given community but not in another. For resources that do not belong to an scope like those mentioned, the value of this parameter should be `0`. There are several ways to obtain the `groupId` of the current scope:
+-   `groupId`:  represents the scope in which the permission check is being
+performed.  In Liferay, the scopes can be a specific community, an
+organization, a personal site of a user, etc.  This is important because a user
+may be allowed to add blog entries in a given community but not in another. For
+resources that do not belong to an scope like those mentioned, the value of
+this parameter should be `0`. There are several ways to obtain the `groupId` of
+the current scope:
 
-    -   JSP that uses the `<theme:defineObjects/>` tag: there is an implicit variable called `scopeGroupId`.
+    -   JSP that uses the `<theme:defineObjects/>` tag: there is an implicit
+    variable called `scopeGroupId`.
 
-    -   Business logic class: When using the ServiceContext pattern, it can be obtained using `serviceContext.getScopeGroupId()`.
+    -   Business logic class: When using the ServiceContext pattern, it can be
+    obtained using `serviceContext.getScopeGroupId()`.
     
     -   Other cases: it can be obtained from the theme display request object:
 
             ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
-		WebKeys.THEME_DISPLAY);
-
+            	WebKeys.THEME_DISPLAY);
             long scopeGroupId = themeDisplay.getScopeGroupId();
 
--   `name`:  The name of the resource as specified in the XML file of the previous sections.
+-   `name`:  The name of the resource as specified in the XML file of the
+previous sections.
 
--   `primKey`:  The primary key of the resource. In this example, since the resource doesn't exist as an entry in the database we use the groupId again.  If we were checking for a permission on a given blog entry, we would use the primary key of that blog entry instead.
+-   `primKey`:  The primary key of the resource. In this example, since the
+resource doesn't exist as an entry in the database we use the groupId again.
+If we were checking for a permission on a given blog entry, we would use the
+primary key of that blog entry instead.
 
--   `actionId`:  The name of the action as entered in the XML file.  It is a common practice to create a helper class with constants for all the actions defined, so that it's easier to search usages.
+-   `actionId`:  The name of the action as entered in the XML file.  It is a
+common practice to create a helper class with constants for all the actions
+defined, so that it's easier to search usages.
 
-In the examples above, we are assuming that there is a variable called `permissionChecker` already available.  Liferay automatically creates a `PermissionChecker` instance for every request that has all the necessary information from the user and caches the security checks to ensure good performance. There are several ways to obtain this instance:
+In the examples above, we are assuming that there is a variable called
+`permissionChecker` already available.  Liferay automatically creates a
+`PermissionChecker` instance for every request that has all the necessary
+information from the user and caches the security checks to ensure good
+performance. There are several ways to obtain this instance:
 
--   In a JSP that uses the `<theme:defineObjects/>` tag: there is an implicit variable called `permissionChecker`.
+-   In a JSP that uses the `<theme:defineObjects/>` tag: there is an implicit
+variable called `permissionChecker`.
 
--   When using ServiceBuilder, every service implementation class can access the `PermissionChecker` instance by using the method `getPermissionChecker()`.
+-   When using ServiceBuilder, every service implementation class can access
+the `PermissionChecker` instance by using the method `getPermissionChecker()`.
 
 -   Other cases: it can be obtained from the theme display request object:
 
         ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
         PermissionChecker permissionChecker = 
-	    themeDisplay.getPermissionChecker();
+	    	themeDisplay.getPermissionChecker();
 
 ### Creating Helper Classes for Permission Checking
 
-Often, it is a good practice to create helper classes that encapsulate the use of permissionChecker and the names of the resources for an specific portlet. This is specially useful when there are complex parent/child relationships or if your permission logic calls for checking multiple action types.  `BlogsPermission` is an example of a permission helper class.  See how `BlogsPermission` may be used in a JSP.
+Often, it is a good practice to create helper classes that encapsulate the use
+of permissionChecker and the names of the resources for an specific portlet.
+This is specially useful when there are complex parent/child relationships or
+if your permission logic calls for checking multiple action
+types. `BlogsPermission` is an example of a permission helper class. See how
+`BlogsPermission` may be used in a JSP.
 
     <%
 	if (BlogsPermission.contains(permissionChecker, scopeGroupId,
@@ -815,7 +838,12 @@ Often, it is a good practice to create helper classes that encapsulate the use o
 	    }
     %>
 
-Now, let's take a look at how a `ServiceImpl` class `BlogsEntryServiceImpl` uses the `BlogsPermission` helper class. In method `BlogsEntryServiceImpl.addEntry(...)`, a call is made to check whether the incoming request has permission to add entry.  The check is done using helper class `BlogsPermission`.  If the check fails, it throws a `PrincipalException` and the add entry request aborts.
+Now, let's take a look at how a `ServiceImpl` class `BlogsEntryServiceImpl`
+uses the `BlogsPermission` helper class. In method
+`BlogsEntryServiceImpl.addEntry(...)`, a call is made to check whether the
+incoming request has permission to add entry.  The check is done using helper
+class `BlogsPermission`.  If the check fails, it throws a `PrincipalException`
+and the add entry request aborts.
 
     public BlogsEntry addEntry(
 	String title, String description, String content,
