@@ -25,7 +25,7 @@ Additionally, Liferay supports portlets written in other programming languages, 
 Liferay initially presents a very simple interface. Unauthenticated users can navigate the public pages of the portal and see a *Sign In* link in the top right corner of the screen.
 
 ---
-![tip](../../images/01-tip.png)Note: If your portal initially presents you with the demo web site, 7 Cogs, see Chapter 12 in Part 2 for removal instructions.
+![tip](../../images/01-tip.png) Note: If your portal initially presents you with the demo web site, 7 Cogs, see chapter 12 in part 2 for removal instructions.
 ---
 
 To sign into Liferay for the first time, click the *Sign In* link. You'll next see the *Sign In Portlet*. This portlet allows a user (or a prospective user) to do several things: sign in to Liferay, create a new account on the portal, or have a password reminder emailed to you. An OpenID sign-in option is also available. You should use the default administrator account to sign in to the portal for the first time. If you were to create a new account on the portal for yourself now, it would be created using Liferay's defaults. This would mean that the account wouldn't have access to the administrative functions in the control panel you'll need in order to set up Liferay for your organization. The credentials of the default administrator user that you should use are:
@@ -120,9 +120,11 @@ All of the functions that you will need to maintain the portal or its contents c
 
 ## Portal Architecture
 
-Before we dive into the user interface for adding and maintaining various portal resources, we should survey the concepts Liferay uses to organize a portal. Portals are accessed by users. Users can be collected into user groups. Users can belong to organizations. Organizations can be grouped into hierarchies, such as Home Office → Regional Office → Satellite Office. Sites can be created independently or can be attached to users or organizations. Within sites, users can belong to teams, which are groupings of users for specific functions within a site.
+Before we dive into the user interface for adding and maintaining various portal resources, we should survey the concepts Liferay uses to organize a portal. Portals are accessed by users. Users can be collected into user groups. Users can belong to organizations. Organizations can be grouped into hierarchies, such as Home Office &rarr; Regional Office &rarr; Satellite Office. Sites can be created independently or can be attached to users or organizations. Within sites, users can belong to teams, which are groupings of users for specific functions within a site.
 
-Note that prior to Liferay 6.1, independent sites were called communities and both organizations and communities could have their own sets of public and private pages. Starting with Liferay 6.1, organizations cannot directly have their own sets of pages, only sites can. Organizations need to have sites attached to themselves in order to have pages. This is just a reorganization of ideas intended to simplify how Liferay manages pages.
+---
+![tip](../../images/01-tip.png) Note: Prior to Liferay 6.1, independent sites were called communities and both organizations and communities could have their own sets of public and private pages. Starting with Liferay 6.1, organizations cannot directly have their own sets of pages, only sites can. Organizations need to have attached sites in order to have pages. This is just a reorganization of ideas intended to simplify how Liferay manages pages.
+---
 
 A simple way to think about this is that your portal has users and various ways to group them together. Some of these groupings may be organized hierarchically by an administrator and other groupings may be created by the users themselves. For example, users from different organizations could create an independent site called “Dog Lovers” inspired by a common interest in dogs. Groupings for other functions that cut across the portal may be administrated via roles. For example, a Message Boards Administrators role could be created granting permissions to administer any message board in the portal. Users from multiple organizations or sites could be assigned to to this role.
 
@@ -190,3 +192,7 @@ An open site (the default) allows portal users to join and leave the site whenev
 Teams are essentially sets of users that can be created within a site. Teams can be created both within sites that are attached to an organization and within independent sites. Teams are different from site roles since teams appear only in the site in which they are created. This is very useful if you need to create a team of users for a specific purpose within a single organization or site and not for each site in the portal.
 
 Teams can be essential for some use cases since they can be created by site administrators. Site administrators cannot create roles so the ability to have teams empowers them to manage permissions at a level they weren't capable of previously.
+
+## Summary
+
+So far, we've looked at Liferay's function as a portal server and learned how to navigate within Liferay using the dockbar and the control panel. We've also taken a look at look at Liferay's portal architechture and how Liferay uses the concepts of users, user groups, organizations, sites, teams, and roles to organize your portal. Next, we'll take a look at using Liferay Marketplace to browse and install applications for your portal.
