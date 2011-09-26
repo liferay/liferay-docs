@@ -757,11 +757,11 @@ Note that this is for basic configuration: if you want to view the existing perm
 
 ### Page Templates
 
-The Page Templates page of the control panel allows you to create a custom page with the layout, portlets and web content that you want to reuse. From this link you can also edit existing templates and modify their permissions.
+The Page Templates page of the control panel allows you to create a custom page with the layout, portlets, and web content that you want to reuse. From this link you can also edit existing templates and modify their permissions.
 
-![image](../../images/portal-admin-ch3_html_m2e4371b8.png) *Illustration 20: You can create page templates with predefined layouts and portlets that can be used over and over.*
+![Figure 12.x: You can create page templates with predefined layouts and portlets that can be used over and over.](../../images/server-configuration-page-templates.png)
 
-To add a page template click on the *Page Template* link in the control panel. From there select *Add* and then enter a name and description for your template. Below the description field is a check box that lets you make the template active or inactive, and below this is a link to open the page template so you can edit it. The template pictured above, from a university portal, might be for returning students. Clicking the *Open Page Template* link brings you to the Manage Pages interface, which we examined in chapter 3.
+To add a page template click on the *Page Template* link in the control panel. From there select *Add* and then enter a name and description for your template. Below the description field is a check box that lets you make the template active or inactive, and below this is a link to open the page template so you can edit it. The template pictured above might be for returning university students. Clicking the *Open Page Template* link brings you to the Manage Pages interface, which we examined in chapter 3.
 
 Once you're finished adding the content, layout, and portlets, return to the Page Template portlet (which is in another browser tab) and select *Save*.
 
@@ -771,13 +771,13 @@ When you want to use the new template to create a new page on a site, simply nav
 
 The Site Templates link allows you to define a set of predefined pages to include when creating new sites. You may define and edit site templates as well as their permissions.
 
-![image](../../images/portal-admin-ch3_html_4e601928.png) *Illustration 21: Site templates help you to quickly build many similar sites using the same pattern.*
+![Figure 12.x: Site templates help you to quickly build many similar sites using the same pattern](../../images/server-configuration-site-templates.png)
 
 To add a site template click on the *Site Template* link in the control panel. From there you can select *Add* and then enter a name and description for your template. Also, below the description field is where you can make this template active.
 
 Once this is complete, click on *Actions &rarr; Manage Pages*. From here you can add pages to your template, configure the look and feel by managing themes or CSS files, and export the template as a `.lar` file. You can also import a `.lar` file from here as well.
 
-On the pages you've created for the site template, you can add the portlets and content you want. Once you've added the pages, portlets, content, and themes, you can use this template when you create a new community. The template will appear the in the drop down menus for the Public Pages/Private Pages options when you are adding a site.
+On the pages you've created for the site template, you can add the portlets and content you want. Once you've added the pages, portlets, content, and themes, you can use this template when you create a new site. The template will appear the in the drop down menus for the Public Pages/Private Pages options when you are adding a site.
 
 ### Server Administration
 
@@ -896,7 +896,7 @@ The *Plugins Installation* page of the control panel shows all of the plugins th
 
 This chapter has described the resources in Liferay Portal that can be configured to build the foundation of your web site. We have seen how to navigate Liferay's user interface so that you can get anywhere you need to in the portal. We have also looked at overall portal architecture and how you might go about designing your site using Liferay.
 
-Next, we went in-depth through Liferay's Control Panel. Using the Control Panel, we learned how to manage users, organizations, user groups, and roles. We also learned how to configure various server settings, such as authentication, LDAP integration, and single sign-on. We also learned how to associate users by default with different user groups, communities, and roles, and we saw how to reserve screen names and e mail addresses so that users cannot register in the portal with them.
+Next, we went in-depth through Liferay's Control Panel. Using the Control Panel, we learned how to manage users, organizations, user groups, and roles. We also learned how to configure various server settings, such as authentication, LDAP integration, and single sign-on. We also learned how to associate users by default with different user groups, sites, and roles, and we saw how to reserve screen names and e mail addresses so that users cannot register in the portal with them.
 
 Next, we saw how to view and configure overall server settings. We saw how to view the memory currently being used by the server, as well as how to initiate garbage collection, a thread dump, search engine re-indexing, and the clearing of various caches. We learned how to debug parts of the portal by changing log levels, and by viewing the various properties that are defined in the portal.
 
