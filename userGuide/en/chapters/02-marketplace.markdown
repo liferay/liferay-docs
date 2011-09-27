@@ -154,7 +154,6 @@ Once you have installed one or more apps onto a Liferay instance, you can manage
 This tab is similar to the "Purchased" tab on `liferay.com/marketplace`, except that additional options are now available for each app.
  
 On the far right side of the listing, the "Status" column lists the current status for each installed app:
- 
 
     Installed - The app has been successfully deployed and is now running.
     Failed - The app failed to deploy properly
@@ -605,3 +604,7 @@ If you still wish to use a text editor to create your software catalog, you can.
 If there is a software catalog of plugins that you would like to point your instance of Liferay to, all you need is the URL to the catalog. Once you have the URL, go to the Plugin Installer in your control panel and click the *Configuration* tab. You will see that there are two fields in which you can enter URLs to plugin repositories: *Trusted Plugin Repositories* and *Untrusted Plugin Repositories*. Currently, the only difference between the two is to provide a visual cue for administrators as to which repositories are trusted and untrusted.
 
 Enter the URL to the repository to which you wish to connect in one of the fields and click *Save*. The portlet will connect to the repository, and items from this repository will be shown in the list.
+
+## Summary
+
+In this chapter we introduced Liferay Marketplace, the portal's system for managing Liferay applications. We looked at how to browse, download, and install apps. You do this through Liferay Portal's control panel or through [liferay.com](liferay.com). Next, we covered at the Plugin Installer, which was the portal's mechanism for managing plugins in versions prior to Liferay 6.1. We also looked at different kinds of plugins, including portlets, themes, layout templates, hooks, and web plugins. We looked at how to install plugins either manually or from a repository and discussed some solutions to potential configuration issues. Finally, we showed how to create your own plugin repository using Liferay's Software Catalog. We hope this information helps you set up your portal with all the software you need to be productive.
