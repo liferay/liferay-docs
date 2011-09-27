@@ -5558,27 +5558,4 @@ Configure email notification settings.
 
 ## Summary
 
-This very long chapter covered a cornucopia of topics. First, we went
-through all of the options which can be customized in your
-`portal-ext.properties` file, exhaustively. This serves as a
-reference section for the file, so you can quickly find documentation
-for any property you might encounter.
-
-Next, we took a good, long look at plugin management. Every aspect of
-plugin management was covered, including plugin types, installing
-plugins from a repository, installing plugins manually, troubleshooting,
-creating your own plugin repository, and more.
-
-After this, we covered how to configure Liferay's web services in a
-secure way so that you can access the back end services you need. We
-also saw how to access web services that your own developers have
-created with Liferay's Service Builder utility.
-
-Combined with the preceding chapters, the information you've gained so
-far gives you the ability to competently install and configure a website
-which runs on Liferay. Next, we'll take a look at some of the ways you
-can configure Liferay for the enterprise.
-
-\
-\
-
+In this very long chapter we looked at all of the options which can be customized in your `portal-ext.properties` file. This chapter serves as a reference section for the file, so you can quickly find documentation for any property you might encounter. Also, if you would like to make a customization to Liferay, you can also use this section to search for a property that does what you want. Once you find it, just add the appropriate line(s) to your `portal-ext.properties` file. Next, we'll take a look at Liferay's scripting API.
