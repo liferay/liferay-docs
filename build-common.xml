@@ -320,4 +320,12 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     <target name="chapter-to-all" depends="chapter-to-html,chapter-to-odt,chapter-to-epub" description="converts markdown chapter file to html, odt, and epub files" />
 
     <target name="chapter-to-all-win" depends="chapter-to-html-win,chapter-to-odt-win,chapter-to-epub-win" description="converts markdown chapter file to html, odt, and epub files on windows" />
+
+    <target name="number-images" description="numbers the images in a markdown chapter file">
+        <echo message="... numbering images in ${chapter} (${lang})"/>
+        <java jar="../number-images.jar" fork="true">
+            <arg value="./${lang}/chapters/${chapter}.markdown"/>
+        </java>
+    </target>
+
 </project>
