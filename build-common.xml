@@ -325,13 +325,16 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         <echo message="... resetting image numbers in ${chapter} (${lang})"/>
         <java jar="../reset-images.jar" fork="true">
             <arg value="./${lang}/chapters/${chapter}.markdown"/>
+            <arg value="${build.dir}/${chapter}.markdown"/>
         </java>
     </target>
 
+<!-- Example: From liferay-docs/userGuide, enter the following command: ant number-images -Dchapter=12-administering-liferay-portal. Check liferay-docs/userGuide/build for your new file. The images should be numbered correctly. -->
     <target name="number-images" depends = "reset-images" description="numbers the images in a markdown chapter file">
         <echo message="... numbering images in ${chapter} (${lang})"/>
         <java jar="../number-images.jar" fork="true">
-            <arg value="./${lang}/chapters/${chapter}.markdown"/>
+            <arg value="${build.dir}/${chapter}.markdown"/>
+            <arg value="${build.dir}/${chapter}.markdown"/>
         </java>
     </target>
 
