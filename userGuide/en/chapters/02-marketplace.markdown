@@ -21,7 +21,7 @@ No matter which method you choose, you will see the same content and apps.
  
 If you are new to the Marketplace, the easiest way to access it is by using your browser to navigate to [http://liferay.com/marketplace](http://liferay.com/marketplace).  You will be presented with the Marketplace home page.
 
-![Figure 2.1 Marketplace Home Page](../../images/marketplace-homepage.png) 
+![Figure 2.1: Marketplace Home Page](../../images/marketplace-homepage.png) 
  
 In the center of the page you will see a number of icons.  Each icon represents an individual app, and they are grouped into a couple of different areas:
 
@@ -33,13 +33,13 @@ If you click on the title of an app, you can access details about the app, inclu
  
 On the left, you'll see a list of App and Theme categories.  Clicking on the individual categories will allow you to browse apps in that category.
 
-![Figure 2.2 Browsing Apps in Marketplace](../../images/marketplace-browsing-apps.png)
+![Figure 2.2: Browsing Apps in Marketplace](../../images/marketplace-browsing-apps.png)
 
 Below that are your search and filter options.  This allows you to narrowly search for apps with specific titles, compatibilities, or other search criteria.  Typing in search terms and clicking Search will perform the search.
  
 At the bottom is a Tag Cloud.  Individual apps can be tagged with specific keywords or phrases for easier finding.  The Tag Cloud is a collection of these keywords.  The larger the keyword, the more popular the tag.  Clicking on a tag is the same as performing a search with the tag as the search criteria, and you will get a listing of apps using that tag.
 
-![Figure 2.3 Marketplace Apps by Tag](../../images/marketplace-apps-by-tag.png)
+![Figure 2.3: Marketplace Apps by Tag](../../images/marketplace-apps-by-tag.png)
  
 ### Logging In
 
@@ -55,11 +55,11 @@ On your existing `liferay.com` Profile page, you will notice a new tab entitled 
 
 This page lists apps that you have authored and uploaded, showing you details such as the number of downloads, the current price, and other relevant information.  From here you can manage the apps that you have created (please see the Marketplace Developer Guide for detail on this topic).
  
-![Figure 2.4 Purchased an App](../../images/marketplace-purchased-app.png)
+![Figure 2.4: Purchased an App](../../images/marketplace-purchased-app.png)
  
 This page lists the apps that you have downloaded and/or purchased.  From this screen, you can find information about the authors of the apps you have downloaded, and you can re-download the app (for example, if you lost your copy or have re-installed Liferay and wish to re-deploy the app).  This option is also useful for downloading apps and deploying them to offline instances of Liferay that do not have direct access to `liferay.com`.
  
-![Figure 2.5 Upload an App](../../images/marketplace-upload-app.png)
+![Figure 2.5: Upload an App](../../images/marketplace-upload-app.png)
  
 This screen allows you to upload a new app and make it available in the marketplace.  Please see the Marketplace Developer Guide for more detail on authoring your own app.
  
@@ -69,11 +69,11 @@ There are many ways to search for and find apps you are interested in.
 
 1. Browsing Categories - Click on a category (for example, "Communication" or "Social Networking") to see a list of interesting apps in that category.  Upon clicking a category, you are presented with a list of featured apps for that category, as well as a canonical listing of all apps.  Also, on the right, are various lists of "Top 10" apps within that category.
 
-![Figure 2.6 Browsing Categories](../../images/marketplace-browsing-categories.png)
+![Figure 2.6: Browsing Categories](../../images/marketplace-browsing-categories.png)
  
 2. Searching.  To search for an app, type in search criteria in the search box on the left, and click Search.  Apps matching the specified search criteria are displayed.
 
-![Figure 2.7 Marketplace Search Box](../../images/marketplace-search-box.png)
+![Figure 2.7: Marketplace Search Box](../../images/marketplace-search-box.png)
 
 **A Note on Compatibility and Versioning**
 
@@ -91,7 +91,7 @@ Some apps are written to work across a wide range of Liferay Platform releases. 
  
 Once you have found an app you wish to download and use, click on the name of the app to display its detailed information screen.
 
-![Figure 2.8 Detailed App Information](../../images/marketplace-app-information.png)
+![Figure 2.8: Detailed App Information](../../images/marketplace-app-information.png)
 
 On this screen, there are a number of items to assist in learning more about the app.
  
@@ -111,7 +111,7 @@ In addition to basic information, you will also find information on:
 
 In the lower section, you will find Reviews and Ratings for this app.  Check here to find out what other people are saying about this app.  In addition, on a separate tab, you will find the history of versions for this app, where you can download other versions (for example, if you are using an older version of the Liferay Platform, you may need to download a specific version of this app that is compatible with the version of the Liferay Platform you are using).
  
-![Figure 2.9 Detailed App Information](../../images/marketplace-app-version-history.png)
+![Figure 2.9: Detailed App Information](../../images/marketplace-app-version-history.png)
 
 ### Downloading and Installing
 
@@ -123,11 +123,11 @@ The easiest way to install an app is to do so from your Liferay Administration c
  
 Once you are logged in as an administrator, click the "Manage" menu at the top of the screen, and choose "Control Panel".  You are presented with the Liferay Administration console, a.k.a. Control Panel.
 
-![Figure 2.10 Marketplace from the Control Panel](../../images/marketplace-control-panel.png)
+![Figure 2.10: Marketplace from the Control Panel](../../images/marketplace-control-panel.png)
  
 Click on the "Marketplace" link at the upper-left.  Before you are able to access the Marketplace via the control panel, you will need to associate your `liferay.com` login credentials with your local administrator account.  You will be presented with a series of login screens.
 
-![Figure 2.11 Marketplace Login Screen](../../images/marketplace-login.png)
+![Figure 2.11: Marketplace Login Screen](../../images/marketplace-login.png)
  
 **VERY IMPORTANT**: The local admin user you associate with your `liferay.com` account will be THE ONLY USER who will be able to access and install apps from the Marketplace.  Be sure you are logged into your local Liferay install using the account you wish to designate the Marketplace Administrator.  Once this linkage is established, there is no way to undo this, short of re-installing Liferay.
  
@@ -135,7 +135,7 @@ Once you've successfully linked the accounts, you will be presented with the sam
  
 All apps that you have installed are listed on the "Purchased" tab of the Marketplace Control Panel.  Clicking on the tab will show you a list of those apps which you have downloaded in the past, including apps you may have purchased/downloaded while using other Liferay installations.
 
-![Figure 2.12 Purchased Apps](../../images/marketplace-purchased-apps.png)
+![Figure 2.12: Purchased Apps](../../images/marketplace-purchased-apps.png)
  
 For those apps which you downloaded and installed on the currently running instance of Liferay, these apps will show an Installed state.  For apps which you have previously downloaded or purchased on other Liferay instances, these will show as Purchased.  You will need to re-download/re-install these apps if you wish to use them on your currently running instance of Liferay.  Other options on this tab are related to the management of apps on they are installed, and are described in the later section "Managing Apps".
  
@@ -149,7 +149,7 @@ In this case, using your browser, you will find the app on `liferay.com/marketpl
  
 Once you have installed one or more apps onto a Liferay instance, you can manage the apps using the same local Liferay account that was used to download and install Marketplace apps.  To see and manage the apps that you have installed, navigate to the control panel, click on the Marketplace tab, and then click on the "Purchased" tab.
 
-![Figure 2.13 Additional Information for Purchased Apps](../../images/marketplace-purchased-apps-more-info.png)
+![Figure 2.13: Additional Information for Purchased Apps](../../images/marketplace-purchased-apps-more-info.png)
  
 This tab is similar to the "Purchased" tab on `liferay.com/marketplace`, except that additional options are now available for each app.
  
