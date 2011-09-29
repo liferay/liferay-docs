@@ -399,7 +399,7 @@ Most global portal settings can be configured here. The Configuration heading co
 
 **Email Notifications:** allows you to configure Liferay to send email notifications for certain events, such as user registrations, password changes, etc. You can customize those messages here.
 
-![Figure 12.17 Portal Settings Pages][../../images/server-configuration-portal-settings-pages.png]
+![Figure 12.17: Portal Settings Pages][../../images/server-configuration-portal-settings-pages.png]
 
 We discuss these settings below.
 
@@ -731,7 +731,7 @@ The identification section has several links for addresses, phone numbers, and o
 
 This section allows you to set the default portal language and the time zone. You can also set up a portal-wide logo which appears in the top left corners of portal pages. 
 
-![Figure 12.22][../../images/server-configuration-miscellaneous-display-settings.png]
+![Figure 12.22: Server Configuration Miscellaneous Display Settings][../../images/server-configuration-miscellaneous-display-settings.png]
 
 Liferay's default theme is configured to display the portal logo. For custom themes, you can choose whether or not to display the logo. Be careful to choose an image file that fits the space. If you pick something that is too big, it might overlap with the navigation.
 
