@@ -115,11 +115,13 @@ You must also assign the task to a specific role or roles. This role does not ha
 
 Notifications need an `exectution-type` which can be `onAssignment`, `onEntry`, or `onExit`.
 
--   `onEntry` generates and sends the notification when the user logs in to the portal.
+-   `onEntry` generates and sends the notification when entering the workflow task or state.
 
--   `onExit` generates and sends the notification when the user logs out.
+-   `onExit` generates and sends the notification when exiting the workflow task or state.
 
--   `onAssignment` generates and sends the notification as soon as the user is assigned the task in the workflow. `onAssignment` notification will not work if you wish to notify a user that is not part of the workflow.
+-   `onAssignment` generates and sends the notification as soon as the user is assigned the task in the workflow. 
+
+-   `onAssignment` notification will not work if you wish to notify a user that is not part of the workflow.
 
 Notifications also need a `notification-type` which can be `email`, `im`, or `private-message`. Your notification type and execution type should complement each other. You wouldn't generally want to use an `onExit` execution type with a private message, because the user won't receive that message until he or she logs back in. Generally speaking, email notifications work best with `onExit` or `onAssignment`, while IM or private message work better with `onEntry`.
 
