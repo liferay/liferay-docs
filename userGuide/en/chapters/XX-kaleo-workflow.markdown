@@ -111,7 +111,7 @@ Once the transition has been made to this task, a notification is sent out to th
         </notification>
 	</actions>
     
-You must also assign the task to a specific role or roles. This role does not have to be the role which you notified if, for example, you wanted to notify all of the content creators any time a new item was submitted. Regardless of who else you are notifying, you will definitely want to notify anyone who will be responsible for approving content.
+You must also assign the task to a specific role or roles. This role does not have to be the role which you notified if, for example, you wanted to notify all of the content creators any time gita new item was submitted. Regardless of who else you are notifying, you will definitely want to notify anyone who will be responsible for approving content.
 
 Notifications need an `exectution-type` which can be `onAssignment`, `onEntry`, or `onExit`.
 
