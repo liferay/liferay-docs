@@ -28,16 +28,21 @@ Liferay works well in clusters of multiple machines (horizontal clusters) or in 
 - All nodes should be pointing to the same Liferay database or database cluster. 
 - Document and Media repositories should be accessible to all nodes of the cluster. 
 - Search should be configured for replication or should use a separate search server. 
+- Hot deploy folders should be configured for each node if you're not using server farms. 
 
-If you have not configured your application server to use farms for deployment, the hot deploy folder should be a separate folder for all the nodes, and plugins will have to be deployed to all of the nodes individually. This can be done via a script.
+If you haven't configured your application server to use farms for deployment, the hot deploy folder should be a separate folder for all the nodes, and plugins will have to be deployed to all of the nodes individually. This can be done via a script. If you do have farms configured, you can deploy normally to any node's deploy folder, and your farm configuration should take care of syncing the deployment to all nodes. 
 
 Many of these configuration changes can be made by adding or modifying properties in your `portal-ext.properties` file. Remember that this file overrides the defaults that are in the `portal.properties` file. The original version of this file can be found in the Liferay source code or can be extracted from the `portal-impl.jar` file in your Liferay installation. It is a best practice to copy the relevant section that you want to modify from `portal.properties`* *into your `portal-ext.properties` file, and then modify the values there.
 
-![image](../../images/portal-admin-ch7_html_5c790363.png)**Note:** This chapter documents a Liferay-specific cluster configuration, without getting into specific implementations of third party software, such as Java EE application servers, HTTP servers, and load balancers. Please consult your documentation for those components of your cluster for specific details of those components. Before configuring Liferay in a cluster configuration, make sure your OS is not defining the hostname of your box to the local network at 127.0.0.1.
+---
+![tip](../../images/01-tip.png)**Note:** This chapter documents a Liferay-specific cluster configuration, without getting into specific implementations of third party software, such as Java EE application servers, HTTP servers, and load balancers. Please consult your documentation for those components of your cluster for specific details of those components. Before configuring Liferay in a cluster configuration, make sure your OS is not defining the hostname of your box to the local network at 127.0.0.1.
+---
+
+We'll take each of the points above one by one in order to present a clear picture of how to cluster Liferay. 
 
 ### All Nodes Should Be Pointing to the Same Liferay Database
 
-This is pretty self-explanatory. Each node should be configured with a data source that points to one Liferay database (or a database cluster) that all of the nodes will share. This ensures that all of the nodes operate from the same basic data set. This means, of course, that Liferay cannot (and should not) use the embedded HSQL database that is shipped with the bundles. It is also best if the database server is a separate physical box from the server which is running Liferay.
+This is pretty self-explanatory. Each node should be configured with a data source that points to one Liferay database (or a database cluster) that all of the nodes will share. This ensures that all of the nodes operate from the same basic data set. This means, of course, that Liferay cannot (and should not) use the embedded HSQL database that is shipped with the bundles (but you already knew that, right?). It is also best if the database server is a separate physical box from the server which is running Liferay.
 
 ### Document Library Configuration
 
