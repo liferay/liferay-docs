@@ -19,29 +19,15 @@ With all of that said, let's get started configuring Liferay for the enterprise.
 
 ## Liferay Clustering 
 
-![image](../../images/portal-admin-ch7_html_m78881a5b.gif) *Illustration 1: "Unbreakable" Liferay architecture*
+Liferay Portal is designed to serve everything from the smallest to the largest web sites. Out of the box, it's configured optimally for a single server environment. If one server isn't sufficient to serve the high traffic needs of your site, Liferay scales to the size you need.  
 
-Once you have Liferay installed in more than one node on your application server, there are several optimizations that need to be made. At a minimum, Liferay should be configured in the following way for a clustered environment:
+![Figure 15.x: Liferay is designed to scale to as large an installation as you need. ](../../images/enterprise-configuration.png) 
 
--   All nodes should be pointing to the same Liferay database
+Liferay works well in clusters of multiple machines (horizontal clusters) or in clusters of multiple VMs on a single machine (verticle cluster), or any mixture of the two. Once you have Liferay installed in more than one application server node, there are several optimizations that need to be made. At a minimum, Liferay should be configured in the following way for a clustered environment:
 
--   Jackrabbit, the JSR-170 content repository, should be:
-
--   On a shared file system available to all the nodes (not really     recommended, though), or
-
--   In a database that is shared by all the nodes
-
--   Alternatively, the Document Library should be configured to use the     File System Hook, and the files can be stored on a SAN for better     performance.
-
--   Similarly, Lucene, the full text search indexer, should be:
-
--   On a shared file system available to all the nodes (not really     recommended, though), or
-
--   In a database that is shared by all the nodes, or
-
--   On separate file systems for all of the nodes, or
-
--   Disabled, and a separate pluggable enterprise search server     configured (recommended).
+- All nodes should be pointing to the same Liferay database or database cluster. 
+- Document and Media repositories should be accessible to all nodes of the cluster. 
+- Search should be configured for replication or should use a separate search server. 
 
 If you have not configured your application server to use farms for deployment, the hot deploy folder should be a separate folder for all the nodes, and plugins will have to be deployed to all of the nodes individually. This can be done via a script.
 
