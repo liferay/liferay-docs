@@ -42,7 +42,81 @@ We'll take each of the points above one by one in order to present a clear pictu
 
 ### All Nodes Should Be Pointing to the Same Liferay Database
 
-This is pretty self-explanatory. Each node should be configured with a data source that points to one Liferay database (or a database cluster) that all of the nodes will share. This ensures that all of the nodes operate from the same basic data set. This means, of course, that Liferay cannot (and should not) use the embedded HSQL database that is shipped with the bundles (but you already knew that, right?). It is also best if the database server is a separate physical box from the server which is running Liferay.
+This is pretty self-explanatory. Each node should be configured with a data source that points to one Liferay database (or a database cluster) that all the nodes will share. This ensures that all the nodes operate from the same basic data set. This means, of course, that Liferay cannot (and should not) use the embedded HSQL database that is shipped with the bundles (but you already knew that, right?). And, of course, it goes without saying that the database server is a separate physical box from the server which is running Liferay. 
+
+Beyond a database cluster, there are two more advanced options you can use to optimize your database configuration: a read-writer database configuration, and sharding. 
+
+#### Read-Writer Database Configuration
+
+Liferay allows you to use two different data sources for reading and writing. This enables you to split your database infrastructure into two sets: one that is optimized for reading and one that is optimized for writing. Since all major databases support replication in one form or another, you can then use your database vendor's replication mechanism to keep the databases in sync in a much faster manner than if you had a single data source which handled everything.
+
+Enabling a read-writer database is simple. In your `portal-ext.properties` file, configure two different data sources for Liferay to use, one for reading, and one for writing:
+
+    jdbc.read.driverClassName=com.mysql.jdbc.Driver
+    jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.read.username=**your user name**
+    jdbc.read.password=**your password**
+    jdbc.write.driverClassName=com.mysql.jdbc.Driver
+    jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.write.username=**your user name**
+    jdbc.write.password=**your password**
+
+Of course, specify the user name and password to your database in the above configuration.
+
+After this, enable the read-writer database configuration by uncommenting the Spring configuration file which enables it in your `spring.configs` property (line to uncomment is in bold):
+
+    spring.configs=\
+    META-INF/base-spring.xml,\
+    META-INF/hibernate-spring.xml,\
+    META-INF/infrastructure-spring.xml,\
+    META-INF/management-spring.xml,\
+    META-INF/util-spring.xml,\
+    META-INF/editor-spring.xml,\
+    META-INF/jcr-spring.xml,\
+    META-INF/messaging-spring.xml,\
+    META-INF/scheduler-spring.xml,\
+    META-INF/search-spring.xml,\
+    META-INF/counter-spring.xml,\
+    META-INF/document-library-spring.xml,\
+    META-INF/lock-spring.xml,\
+    META-INF/mail-spring.xml,\
+    META-INF/portal-spring.xml,\
+    META-INF/portlet-container-spring.xml,\
+    META-INF/wsrp-spring.xml,\
+    META-INF/mirage-spring.xml,\
+    **META-INF/dynamic-data-source-spring.xml,\**
+    #META-INF/shard-data-source-spring.xml,\
+    META-INF/ext-spring.xml
+
+The next time you restart Liferay, it will now use the two data sources you have defined. Be sure to make sure that you have correctly set up your two databases for replication before starting Liferay.
+
+Next, we'll look at database sharding. 
+
+#### Database Sharding
+
+Liferay starting with version 5.2.3 supports database sharding for different portal instances. Sharding is a term used to describe an extremely high scalability configuration for systems with massive amounts of users. In diagrams, a database is normally pictured as a cylinder. Instead, picture it as a glass bottle full of data. Now take that bottle and smash it onto a concrete sidewalk. There will be shards of glass everywhere. If that bottle were a database, each shard now is a database, with a subset of the data in each shard.
+
+This allows you to split up your database by various types of data that might be in it. For example, some implementations of sharding a database split up the users: those with last names beginning with A to D go in one database; E to I go in another; etc. When users log in, they are directed to the instance of the application that is connected to the database that corresponds to their last names. In this manner, processing is split up evenly, and the amount of data the application needs to sort through is reduced.
+
+By default, Liferay allows you to support sharding through different portal instances, using the *round robin shard selector*. This is a class which serves as the default algorithm for sharding in Liferay. Using this algorithm, Liferay selects from several different portal instances and evenly distributes the data across them. Alternatively, you can use the manual shard selector. In this case, you'd need to use the UI provided in the control panel to configure your shards. 
+
+Of course, if you wish to have your developers implement your own sharding algorithm, you can do that. You can select which algorithm is active via the `portal-ext.properties` file:
+
+    shard.selector=com.liferay.portal.dao.shard.RoundRobinShardSelector
+    #shard.selector=com.liferay.portal.dao.shard.ManualShardSelector
+    #shard.selector=[your implementation here]
+
+Enabling sharding is easy. You will need to make sure you are using Liferay's data source implementation instead of your application server's. Set your various database shards in your *portal-ext.properties* file this way:
+
+    jdbc.default.driverClassName=com.mysql.jdbc.Driver     jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.default.username=     jdbc.default.password=     jdbc.one.driverClassName=com.mysql.jdbc.Driver     jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.one.username=     jdbc.one.password=     jdbc.two.driverClassName=com.mysql.jdbc.Driver     jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.two.username=     jdbc.two.password=     shard.available.names=default,one,two
+
+Once you do this, you can set up your DNS so that several domain names point to your Liferay installation (e.g., abc1.com, abc2.com, abc3.com). Next, go to the Control Panel and click *Portal Instances* in the Server category. Create two to three instances bound to the DNS names you have configured.
+
+If you are using the RoundRobinShardSelector class, Liferay will automatically enter data into each instance one by one, automatically. If you are using the ManualShardSelector class, you will have to specify a shard for each instance using the UI.
+
+The last thing you will need to do is modify the *spring.configs* section of your *portal-ext.properties* file to enable the sharding configuration, which by default is commented out. To do this, your spring.configs should look like this (modified section is in bold):
+
+    spring.configs=     META-INF/base-spring.xml, 	META-INF/hibernate-spring.xml, 	META-INF/infrastructure-spring.xml, 	META-INF/management-spring.xml, 	META-INF/util-spring.xml, 	META-INF/editor-spring.xml, 	META-INF/jcr-spring.xml, 	META-INF/messaging-spring.xml, 	META-INF/scheduler-spring.xml, 	META-INF/search-spring.xml, 	META-INF/counter-spring.xml, 	META-INF/document-library-spring.xml, 	META-INF/lock-spring.xml, 	META-INF/mail-spring.xml, 	META-INF/portal-spring.xml, 	META-INF/portlet-container-spring.xml, 	META-INF/wsrp-spring.xml, 	META-INF/mirage-spring.xml, 	#META-INF/dynamic-data-source-spring.xml, 	META-INF/shard-data-source-spring.xml,
+
+ That's all there is to it. Your system is now set up for sharding.
 
 ### Document Library Configuration
 
@@ -519,48 +593,6 @@ If there is a feature supported by a servlet filter that you know you are not us
 ### Portlets
 
 Liferay comes pre-bundled with many portlets which contain a lot of functionality, but not every web site that is running on Liferay needs to use them all. In *portlet.xml* and *liferay-portlet.xml*, comment out the ones you are not using. While having a loan calculator, analog clock, or game of hangman available for your users to add to pages is nice, those portlets may be taking up resources that are needed by custom portlets you have written for your site. If you are having performance problems, commenting out some of the unused portlets may give you the performance boost you need.
-
-### Read-Writer Database Configuration
-
-Liferay allows you to use two different data sources for reading and writing. This enables you to split your database infrastructure into two sets: one that is optimized for reading and one that is optimized for writing. Since all major databases support replication in one form or another, you can then use your database vendor's replication mechanism to keep the databases in sync in a much faster manner than if you had a single data source which handled everything.
-
-Enabling a read-writer database is simple. In your *portal-ext.properties* file, configure two different data sources for Liferay to use, one for reading, and one for writing:
-
-    jdbc.read.driverClassName=com.mysql.jdbc.Driver     jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.read.username=     jdbc.read.password=     jdbc.write.driverClassName=com.mysql.jdbc.Driver     jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.write.username=     jdbc.write.password=
-
-Of course, specify the user name and password to your database in the above configuration.
-
-After this, enable the read-writer database configuration by uncommenting the Spring configuration file which enables it in your *spring.configs* property (line to uncomment is in bold:
-
-    spring.configs= 	META-INF/base-spring.xml, 	META-INF/hibernate-spring.xml, 	META-INF/infrastructure-spring.xml, 	META-INF/management-spring.xml, 	META-INF/util-spring.xml, 	META-INF/editor-spring.xml, 	META-INF/jcr-spring.xml, 	META-INF/messaging-spring.xml, 	META-INF/scheduler-spring.xml, 	META-INF/search-spring.xml, 	META-INF/counter-spring.xml, 	META-INF/document-library-spring.xml, 	META-INF/lock-spring.xml, 	META-INF/mail-spring.xml, 	META-INF/portal-spring.xml, 	META-INF/portlet-container-spring.xml, 	META-INF/wsrp-spring.xml, 	META-INF/mirage-spring.xml, 	META-INF/dynamic-data-source-spring.xml, 	#META-INF/shard-data-source-spring.xml, 	META-INF/ext-spring.xml
-
-The next time you restart Liferay, it will now use the two data sources you have defined. Be sure to make sure that you have correctly set up your two databases for replication before starting Liferay.
-
-### Database Sharding
-
-Liferay starting with version 5.2.3 supports database sharding for different portal instances. Sharding is a term used to describe an extremely high scalability configuration for systems with massive amounts of users. In diagrams, a database is normally pictured as a cylinder. Instead, picture it as a glass bottle full of data. Now take that bottle and smash it onto a concrete sidewalk. There will be shards of glass everywhere. If that bottle were a database, each shard now is a database, with a subset of the data in each shard.
-
-This allows you to split up your database by various types of data that might be in it. For example, some implementations of sharding a database split up the users: those with last names beginning with A to D go in one database; E to I go in another; etc. When users log in, they are directed to the instance of the application that is connected to the database that corresponds to their last names. In this manner, processing is split up evenly, and the amount of data the application needs to sort through is reduced.
-
-By default, Liferay allows you to support sharding through different portal instances, using the *round robin shard selector*. This is a class which serves as the default algorithm for sharding in Liferay. Using this algorithm, Liferay will select from several different portal instances and evenly distribute the data across them.
-
-Of course, if you wish to have your developers implement your own sharding algorithm, you can do that. You can select which algorithm is active via the *portal-ext.properties* file:
-
-    shard.selector=com.liferay.portal.dao.shard.RoundRobinShardSelector     #shard.selector=com.liferay.portal.dao.shard.ManualShardSelector     #shard.selector=[your implementation here]
-
-Enabling sharding is easy. You will need to make sure you are using Liferay's data source implementation instead of your application server's. Set your various database shards in your *portal-ext.properties* file this way:
-
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver     jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.default.username=     jdbc.default.password=     jdbc.one.driverClassName=com.mysql.jdbc.Driver     jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.one.username=     jdbc.one.password=     jdbc.two.driverClassName=com.mysql.jdbc.Driver     jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.two.username=     jdbc.two.password=     shard.available.names=default,one,two
-
-Once you do this, you can set up your DNS so that several domain names point to your Liferay installation (e.g., abc1.com, abc2.com, abc3.com). Next, go to the Control Panel and click *Portal Instances* in the Server category. Create two to three instances bound to the DNS names you have configured.
-
-If you are using the RoundRobinShardSelector class, Liferay will automatically enter data into each instance one by one, automatically. If you are using the ManualShardSelector class, you will have to specify a shard for each instance using the UI.
-
-The last thing you will need to do is modify the *spring.configs* section of your *portal-ext.properties* file to enable the sharding configuration, which by default is commented out. To do this, your spring.configs should look like this (modified section is in bold):
-
-    spring.configs=     META-INF/base-spring.xml, 	META-INF/hibernate-spring.xml, 	META-INF/infrastructure-spring.xml, 	META-INF/management-spring.xml, 	META-INF/util-spring.xml, 	META-INF/editor-spring.xml, 	META-INF/jcr-spring.xml, 	META-INF/messaging-spring.xml, 	META-INF/scheduler-spring.xml, 	META-INF/search-spring.xml, 	META-INF/counter-spring.xml, 	META-INF/document-library-spring.xml, 	META-INF/lock-spring.xml, 	META-INF/mail-spring.xml, 	META-INF/portal-spring.xml, 	META-INF/portlet-container-spring.xml, 	META-INF/wsrp-spring.xml, 	META-INF/mirage-spring.xml, 	#META-INF/dynamic-data-source-spring.xml, 	META-INF/shard-data-source-spring.xml,
-
- That's all there is to it. Your system is now set up for sharding.
 
 ## Liferay Services Oriented Architecture
 
