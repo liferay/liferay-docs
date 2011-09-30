@@ -823,7 +823,7 @@ Discussion becomes easy with Liferay's Message Boards portlet. This portlet can 
 
 Liferay's Wiki portlet is a state of the art wiki application that users can make use of to collaborate on web pages. Again, it inherits the strengths of the Liferay platform in the form of security, interface, and search. You can use the wiki portlet to manage several wiki nodes or use many wiki portlets to manage one node each.
 
-Liferay's Document Library portlet allows users to store information online in the same type of directory structure that they use locally. The Document Library portlet supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Document Library portlet.
+Liferay's Documents and Media portlet allows users to store information online in the same type of directory structure that they use locally. The Document Library portlet supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Document Library portlet.
 
 Tying all of these applications together are tags and categories. Tags can be added to any content by end users, and hierarchies of categories can be added to the system by administrators to be applied to content anywhere in the portal. These help your users to find the content that is most relevant to them, empowering the search to be as accurate as possible.
 
