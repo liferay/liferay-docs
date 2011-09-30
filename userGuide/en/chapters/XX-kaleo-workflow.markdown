@@ -28,7 +28,7 @@ Each workflow definition is defined by a single XML file. The XML file has sever
 
 The key parts of the workflow definition are the asset, states, transitions, and tasks. The asset is whatever piece of content is being reviewed and approved in the workflow. States represent stages of the workflow; for example: created, rejected, or approved. Transitions occur between states, and indicate what the next state should be. Tasks are steps in the workflow that require user action.
 
-In general, a state will contain a task and the user input from the task will determine which transition will occur. The transition will then move the workflow to the next task. This cycle will continue until the end “approved” state is reached.
+In general, a state will contain a task and the user input from the task will determine which transition will occur. The transition will then move the workflow to the next task. This cycle will continue until the end Approved state is reached.
 
 ![image](../../images/kaleo-workflow-single-approver.png)
 *Illustration 2: The default single approver workflow. Arrows represent transitions, and boxes represent states and tasks.*
@@ -75,23 +75,23 @@ You can also see that the task is assigned to `<user/>`. This tag will always as
     <task>
 	<name>update</name>
 	<actions>
-	    <notification>
+        <notification>
 		<name>Creator Modification Notification</name>
 		<execution-type>onAssignment</execution-type>
 		<template>Your submission was rejected by a reviewer, please modify and resubmit.</template>
 		<template-language>text</template-language>
 		<notification-type>email</notification-type>
-	    </notification>
+        </notification>
 	</actions>
 	<assignments>
-	    <user />
+        <user />
 	</assignments>
 	<transitions>
-	    <transition>
+        <transition>
 		<name>resubmit</name>
 		<target>review</target>
 		<default>true</default>
-	    </transition>
+        </transition>
 	</transitions>
     </task>
  
@@ -102,13 +102,13 @@ Once the transition has been made to this task, a notification is sent out to th
     <task>
 	<name>review</name>
 	<actions>
-	    <notification>
+        <notification>
 		<name>Review Notification</name>
 		<execution-type>onAssignment</execution-type>
 		<template>You have a new submission waiting for your review in the workflow.</template>
 		<template-language>text</template-language>
 		<notification-type>email</notification-type>
-	    </notification>
+        </notification>
 	</actions>
     
 You must also assign the task to a specific role or roles. This role does not have to be the role which you notified if, for example, you wanted to notify all of the content creators any time a new item was submitted. Regardless of who else you are notifying, you will definitely want to notify anyone who will be responsible for approving content.
@@ -128,55 +128,55 @@ Email and private message notifications can also be created as plain text, or yo
 In this workflow, anyone who would be capable of approving the content is notified `onAssignment`. This includes administrators and site and organization owners. The `role-type` tag helps the system sort out who should be receiving the notification based on the scope, and can be set as *community, organization, *or *portal.*
 
 	<assignments>
-	    <roles>
+        <roles>
 		<role>
-		    <role-type>community</role-type>
-		    <name>Community Administrator</name>
+            <role-type>community</role-type>
+            <name>Community Administrator</name>
 		</role>
 		<role>
-		    <role-type>community</role-type>
-		    <name>Community Content Reviewer</name>
+            <role-type>community</role-type>
+            <name>Community Content Reviewer</name>
 		</role>
 		<role>
-		    <role-type>community</role-type>
-		    <name>Community Owner</name>
+            <role-type>community</role-type>
+            <name>Community Owner</name>
 		</role>
 		<role>
-		    <role-type>organization</role-type>
-		    <name>Organization Administrator</name>
+            <role-type>organization</role-type>
+            <name>Organization Administrator</name>
 		</role>
 		<role>
-		      <role-type>organization</role-type>
-		      <name>Organization Content Reviewer</name>
+              <role-type>organization</role-type>
+              <name>Organization Content Reviewer</name>
 		</role>
 		<role>
-		    <role-type>organization</role-type>
-		    <name>Organization Owner</name>
+            <role-type>organization</role-type>
+            <name>Organization Owner</name>
 		</role>
 		<role>
-		    <role-type>regular</role-type>
-		    <name>Portal Content Reviewer</name>
+            <role-type>regular</role-type>
+            <name>Portal Content Reviewer</name>
 		</role>
 		<role>
-		    <role-type>regular</role-type>
-		    <name>Administrator</name>
+            <role-type>regular</role-type>
+            <name>Administrator</name>
 		</role>
-	    </roles>
+        </roles>
 	</assignments>
 
 Once the content is approved, you will want to transition to a new state. In this case, we have only need of a single approver, so we will transition to the final approved state. In more complex workflows, this might transition to a second tier approver.
 
 	<transitions>
-	    <transition>
+        <transition>
 		<name>approve</name>
 		<target>approved</target>
 		<default>true</default>
-	    </transition>
-	    <transition>
+        </transition>
+        <transition>
 		<name>reject</name>
 		<target>update</target>
 		<default>false</default>
-	    </transition>
+        </transition>
 	</transitions>
     </task>
 
@@ -187,16 +187,14 @@ You could also write a customized script if there were actions outside of the st
     <state>
 	<name>approved</name>
 	<actions>
-	    <action>
+        <action>
 		<name>approve</name>
 		<execution-type>onEntry</execution-type>
 		<script>
-		    <![CDATA[
-		    Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"), workflowContext);
-		    ]]>
+        <![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"), workflowContext);]]>
 		</script>
 		<script-language>javascript</script-language>
-	    </action>
+        </action>
 	</actions>
     </state>
 
@@ -320,11 +318,59 @@ Before workflow can be used, you must define which types of assets on the portal
 
 To demonstrate how this works when you configure it, we will create a press release. Press releases should be posted in the *Newsroom* section of the website, so before changing setting specific workflow configuration options or creating content, create the Newsroom site and switch to it in the control panel. After going to Workflow Configuration, set Web Content to use the Single Approver workflow.
 
-To demonstrate the workflow process, create two users – a Content Creator and a Content Reviewer. The Content Creator logs in and creates a new Press Release for Spartan Software and clicks *Submit for Publication*. This triggers the workflow process and notifies the Content Reviewer. When the Content Reviewer logs in, he can assign the workflow task to himself and approve the content.
+To demonstrate the workflow process, create two users, a Content Creator and a Content Reviewer. The Content Creator logs in and creates a new Press Release for Spartan Software and clicks *Submit for Publication*. This triggers the workflow process and notifies the Content Reviewer. When the Content Reviewer logs in, he can assign the workflow task to himself and approve the content.
 
 ![image](../../images/kaleo-workflow-assign-to-me.png)
 *Illustration 9: Before a Content Reviewer can approve content, he must assign it to himself, or have an administrator assign it to them.*
 
 Once the content is approved, it can be posted on the Press Releases page in a web content display portlet.
+
+#### Kaleo Forms and the Workflow Designer
+
+![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+
+While developers who are used to working with XML might be able to easily create workflow definitions, other users may not be so savvy. In addtion, even a skilled developer might make a small mistake that breaks a definition, and requires time to troubleshoot. To help streamline the creation of workflow definitions, and empower more users to create custom workflows, we're introducing the Workflow Designer in Liferay 6.1 EE.
+
+There are two pieces to the workflow designer, *Kaleo Forms* and *Kaleo Designer*. Kaleo Forms is an extension of the Dynamic Data Lists feature (covered in Chapter ?) which enables you to create web forms and basic applications, and then apply a workflow to govern the completion of processing of those forms. Kaleo Designer is a drag and drop interface for creating new workflow definitions. It can be used in conjunction with Kaleo Forms or standalone to create definitions for general use.
+
+##### Kaleo Forms
+
+Add the Workflow Forms portlet to a page. The initial state, the *Summary* tab will display the same information that you might have seen in *My Workflow Tasks* in the Control Panel. Click on *Processes* to view any existing workflow processes or to create new ones.
+
+![Figure X.X: The Workflow Process Creation Page](../../images/kaleo-workflow-add-process.png)
+
+To create a new Workflow Process, you will need to set a name and a description, then define an *Entry Definition* and an *Initial Form*, choose or create a *workflow* and *Workflow Task Forms*.
+
+- **Entry Definition**: This is a Dynamic Data List Definition, you can use an existing definition here, or create a custom one through the UI.
+
+- **Initial Form**: You can customize the display of the Entry Definition with the Inital Form. This can include things like adding Pagination or altering some other display feature.
+
+- **Workflow**: You can choose any existing workflow definition here, or define a new one.
+
+- **Workflow Task Forms**: This is where define how the workflow definition interacts with the form definition. You can trigger a workflow action to occur along with a form action, such as a notification, or have a multistep process where part of the form would be completed, and then would need to be approved before the user could complete another part of the form.
+
+##### Kaleo Designer
+
+The Kaleo Designer provides a drag and drop interface for users to create custom workflows, integrated with an XML editor, to make an incredibly powerful tool for managing workflow defintions. The Workflow Designer can only be accessed through the Kaleo Forms portlet, but definitions created can be used for other processes as well.
+
+![Figure X.X: The Workflow Designer](../../images/kaleo-workflow-designer.png)
+
+There are seven types of nodes that you can add to a defintion. The node types are **Condition**, **End**, **Fork**, **Join**, **Start**, **State**, and **Task**. If you've read the entire chapter, you'll notice that Start and End arent' node types that we've previously discussed; that's because they're actually just State nodes, which certain fields prefilled to help streamline the creation process.
+
+![Figure X.X: The node configuration menu](../../images/kaleo-designer-submenu.png)
+
+Each node that you add will have it's own menu that you can use to edit it, add "anchors", attach tasks, or delete the node. Anchors connect the node to other nodes, so for each connection, you need an anchor. So if you want to transition to the next node, you would add an anchor, create a new node, and then click on the first anchor and drag to the anchor on the new node to create a transition.
+
+To get a feel for how the designer works, let's use the workflow designer to duplicate the default workflow definition. When we choose the option to *Add Defintion* from the Kaleo Forms portlet, it will automatically create a blank workflow defintion with start and end nodes. To make this work, we will need to add two tasks, fill in the relevant information, assign the tasks properly, and create the transitions.
+
+First add two tasks, and use the edit icon to name them *Review* and *Update*. Next connect the nodes so that Review has four nodes, as follows: one receiving the transition from **StartNode**, one sending a transition to **Update**, one receiving a transition from **Update**, and one sending a transition to **EndNode**.
+
+![Figure X.X: Your workflow should look something like this.](../../images/kaleo-designer-submenu.png)
+
+Next we want to add the correct assignments and notifications. Click on *Review*. The option on the left should appear to edit the nodes information, in the assignments category assign the task to the *Portal Content Reviewer* role. Click on *Notifcations* and create a notification with the type *On Assignment*. Now move to the Update node, and assign it to the *Content Creator* with it's own notification.
+
+Next let's go through all of the transitions, and make sure that they're named correctly. Click on the arrow going from the StartNode to Review and set the name as *Submit* and set *Default* to true - we'll leave all of the others as false. Set the name of the transition from Review to Update to *Reject*, and the one from Update to Review to *Resubmit*. Lastly, set the name of the transition from Review to the EndNode to *Approve*.
+
+Now let's take a look at the generated XML, it should look a lot like our default workflow, only a tiny bit messier, as the nodes display in the order they were created, not in the logical that you might enter them manually. Save your definition and it's ready to use.
 
 As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a very robust environment for web content management. Simple workflows can be managed using the default configuration and GUI tools, while more complex workflows can be created to meet the workflow management needs of almost any portal.
