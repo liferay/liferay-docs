@@ -655,6 +655,26 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 **Search:** allows you to a term here and click the *Search* button to search for items in the wiki. If the search term is not found, a link will be displayed which allows you to create a new wiki page on the topic for which you searched.
 
+## Knowledge Base
+
+The Knowledge Base portlet is based on the Wiki portlet. It provides a means for creating and organizing articles within a site. Additionally, it allows administrators to create article templates. Templates can be used to insure that certain kinds of articles possess a common structure and include certain kinds of information. Knowledge base articles can be categorized to make them easy to find. They can also be organized hierarchically to form complete books or guides. The Knowledge Base portlet is available as an app from Liferay Marketplace. Please see chapter 2 for installation instructions.
+
+### Knowledge Base Portlets
+
+The Knowledge Base app actually consists of four portlets that can be placed on site pages as well as one that adds a page to the control panel. The four portlets that can be placed on a page are Knowledge Base (Display), Knowledge Base Search, Knowledge Base Article, and Knowledge Base Section. When placed on a page, the Knowledge Base display portlet presents the same options to an administrator that are available from the Knowledge Base page of the control panel. You use the four links at the top of the Knowledge Base display portlet to control what it displays.
+
+*Knowledge Base Home:* shows you a list of all top level articles.
+
+*Recent Articles:* shows you a list of articles in order from most recent activity to least recent activity.
+
+*Administrator:* shows you a list of all articles, regardless of which ones are parents or children of the others.
+
+*My Subscriptions:* shows you a list of articles you are subscribed to.
+
+The *Add Article* button is available from the Knowledge Base Home or Administrator view of the Knowledge Base display portlet or from the Articles tab of the Knowledge Base page of the control panel. Use this button to create an article for the Knowledge Base. When creating an articles, you can use the same rich WYSIWYG editor that you used to create wiki pages. Articles, however, are not the same as wiki pages: you have to use HTML to create them, not MediaWiki or Creole. Click the *Source* button in the editor to view the HTML source of what you've written or write some HTML yourself.
+
+![Figure 4.x: New Knowledge Base Article](../../images/liferay-collaboration-kb-new-article.png)
+
 ## Documents and Media
 
 Liferay's Documents and Media portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. This portlet grant users the ability to share documents within the portal via uploading and downloading. The Documents and Media portlet can be used to store files of any kind, not just "documents" or "media". The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media portlets to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing files.
