@@ -104,27 +104,81 @@ Of course, if you wish to have your developers implement your own sharding algor
     #shard.selector=com.liferay.portal.dao.shard.ManualShardSelector
     #shard.selector=[your implementation here]
 
-Enabling sharding is easy. You will need to make sure you are using Liferay's data source implementation instead of your application server's. Set your various database shards in your *portal-ext.properties* file this way:
+Enabling sharding is easy. You will need to make sure you are using Liferay's data source implementation instead of your application server's. Set your various database shards in your `portal-ext.properties` file this way:
 
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver     jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.default.username=     jdbc.default.password=     jdbc.one.driverClassName=com.mysql.jdbc.Driver     jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.one.username=     jdbc.one.password=     jdbc.two.driverClassName=com.mysql.jdbc.Driver     jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.two.username=     jdbc.two.password=     shard.available.names=default,one,two
+    jdbc.default.driverClassName=com.mysql.jdbc.Driver
+    jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.default.username=
+    jdbc.default.password=
+    jdbc.one.driverClassName=com.mysql.jdbc.Driver
+    jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.one.username=
+    jdbc.one.password=
+    jdbc.two.driverClassName=com.mysql.jdbc.Driver
+    jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.two.username=
+    jdbc.two.password=
+    shard.available.names=default,one,two
 
 Once you do this, you can set up your DNS so that several domain names point to your Liferay installation (e.g., abc1.com, abc2.com, abc3.com). Next, go to the Control Panel and click *Portal Instances* in the Server category. Create two to three instances bound to the DNS names you have configured.
 
 If you are using the RoundRobinShardSelector class, Liferay will automatically enter data into each instance one by one, automatically. If you are using the ManualShardSelector class, you will have to specify a shard for each instance using the UI.
 
-The last thing you will need to do is modify the *spring.configs* section of your *portal-ext.properties* file to enable the sharding configuration, which by default is commented out. To do this, your spring.configs should look like this (modified section is in bold):
+The last thing you will need to do is modify the `spring.configs` section of your `portal-ext.properties` file to enable the sharding configuration, which by default is commented out. To do this, your spring.configs should look like this (modified section is in bold):
 
-    spring.configs=     META-INF/base-spring.xml, 	META-INF/hibernate-spring.xml, 	META-INF/infrastructure-spring.xml, 	META-INF/management-spring.xml, 	META-INF/util-spring.xml, 	META-INF/editor-spring.xml, 	META-INF/jcr-spring.xml, 	META-INF/messaging-spring.xml, 	META-INF/scheduler-spring.xml, 	META-INF/search-spring.xml, 	META-INF/counter-spring.xml, 	META-INF/document-library-spring.xml, 	META-INF/lock-spring.xml, 	META-INF/mail-spring.xml, 	META-INF/portal-spring.xml, 	META-INF/portlet-container-spring.xml, 	META-INF/wsrp-spring.xml, 	META-INF/mirage-spring.xml, 	#META-INF/dynamic-data-source-spring.xml, 	META-INF/shard-data-source-spring.xml,
+    spring.configs=\
+        META-INF/base-spring.xml,\
+        \
+        META-INF/hibernate-spring.xml,\
+        META-INF/infrastructure-spring.xml,\
+        META-INF/management-spring.xml,\
+        \
+        META-INF/util-spring.xml,\
+        \
+        META-INF/jpa-spring.xml,\
+        \
+        META-INF/audit-spring.xml,\
+        META-INF/cluster-spring.xml,\
+        META-INF/editor-spring.xml,\
+        META-INF/executor-spring.xml,\
+        META-INF/jcr-spring.xml,\
+        META-INF/ldap-spring.xml,\
+        META-INF/messaging-core-spring.xml,\
+        META-INF/messaging-misc-spring.xml,\
+        META-INF/mobile-device-spring.xml,\
+        META-INF/notifications-spring.xml,\
+        META-INF/poller-spring.xml,\
+        META-INF/rules-spring.xml,\
+        META-INF/scheduler-spring.xml,\
+        META-INF/scripting-spring.xml,\
+        META-INF/search-spring.xml,\
+        META-INF/workflow-spring.xml,\
+        \
+        META-INF/counter-spring.xml,\
+        META-INF/mail-spring.xml,\
+        META-INF/portal-spring.xml,\
+        META-INF/portlet-container-spring.xml,\
+        META-INF/staging-spring.xml,\
+        \
+        #META-INF/dynamic-data-source-spring.xml,\
+        **META-INF/shard-data-source-spring.xml,\**
+        #META-INF/memcached-spring.xml,\
+        #META-INF/monitoring-spring.xml,\
+        \
+        META-INF/ext-spring.xml
 
- That's all there is to it. Your system is now set up for sharding.
+That's all there is to it. Your system is now set up for sharding. Now that you've got your database set up and optimized for a large installtion, let's turn to clustering the Document and Media Library. 
 
-### Document Library Configuration
+### Documents and Media Library clustering
 
-There are several options available for configuring how Liferay's document library stores files. Each option is a hook which can be configured through the `portal-ext.properties` file by setting the `dl.hook.impl=` property.
+Liferay 6.1 introduces a new Documents and Media Library which is capable of mounting several repositories at a time and presenting a unified interface to the user. By default, users can make use of the Liferay repository, which is already mounted. This repository is built into Liferay Portal and can use as its back-end one of several different store implementations. 
 
-#### Default File System Hook
+Of course, in a cluster configuration, you need to make sure that every node of the cluster has the same access to the store as every other node. For this reason, you'll need to take a look at your store configuration. 
 
-This is the hook that Liferay will use to manage your document library by default. It uses the file system to store documents which has proven to be the highest performing configuration for large document libraries. You can use the file system for your clustered configuration, but the advanced file system hook is generally recommended for more complex clustering environments.
+There are several options available for configuring how Liferay's document and media library stores files. Each option is a *store* which can be configured through the `portal-ext.properties` file by setting the `dl.store.impl=` property. Let's consider the ramifications of the various store options. 
+
+#### File System Store 
+
+This is the store that Liferay uses by default. It uses the file system to store documents which has proven to be the highest performing configuration for large document libraries. You can use the file system for your clustered configuration, but the advanced file system hook is generally recommended for more complex clustering environments.
 
 You can configure the path where your documents are stored by setting the `dl.hook.file.system.root.dir=` property in your `portal-ext.properties`.
 
