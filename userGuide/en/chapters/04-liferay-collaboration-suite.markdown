@@ -659,9 +659,13 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 The Knowledge Base portlet is based on the Wiki portlet. It provides a means for creating and organizing articles within a site. Additionally, it allows administrators to create article templates. Templates can be used to insure that certain kinds of articles possess a common structure and include certain kinds of information. Knowledge base articles can be categorized to make them easy to find. They can also be organized hierarchically to form complete books or guides. The Knowledge Base portlet is available as an app from Liferay Marketplace. Please see chapter 2 for installation instructions.
 
-### Knowledge Base Portlets
+### Knowledge Base Display Portlet
 
-The Knowledge Base app actually consists of four portlets that can be placed on site pages as well as one that adds a page to the control panel. The four portlets that can be placed on a page are Knowledge Base (Display), Knowledge Base Search, Knowledge Base Article, and Knowledge Base Section. When placed on a page, the Knowledge Base display portlet presents the same options to an administrator that are available from the Knowledge Base page of the control panel. You use the four links at the top of the Knowledge Base display portlet to control what it displays.
+The Knowledge Base app actually consists of four portlets that can be placed on site pages as well as one that adds a page to the control panel. The four portlets that can be placed on a page are Knowledge Base (Display), Knowledge Base Search, Knowledge Base Article, and Knowledge Base Section. When placed on a page, the Knowledge Base display portlet presents many of the same options to an administrator that are available from the Knowledge Base page of the control panel.
+
+![Figure 4.x: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
+
+You can use the four links at the top of the Knowledge Base display portlet to control what it displays.
 
 *Knowledge Base Home:* shows you a list of all top level articles.
 
@@ -671,9 +675,77 @@ The Knowledge Base app actually consists of four portlets that can be placed on 
 
 *My Subscriptions:* shows you a list of articles you are subscribed to.
 
-The *Add Article* button is available from the Knowledge Base Home or Administrator view of the Knowledge Base display portlet or from the Articles tab of the Knowledge Base page of the control panel. Use this button to create an article for the Knowledge Base. When creating an articles, you can use the same rich WYSIWYG editor that you used to create wiki pages. Articles, however, are not the same as wiki pages: you have to use HTML to create them, not MediaWiki or Creole. Click the *Source* button in the editor to view the HTML source of what you've written or write some HTML yourself.
+The *Add Article* button is available from the Knowledge Base Home or Administrator view of the Knowledge Base display portlet or from the Articles tab of the Knowledge Base page of the control panel. Use this button to create an article for the knowledge base. When creating an article, you can use the same WYSIWYG editor that you used to create wiki pages. Articles, however, are not the same as wiki pages: you have to use HTML to create them, not MediaWiki or Creole. Click the *Source* button in the editor to view the HTML source of what you've written or write some HTML yourself.
 
 ![Figure 4.x: New Knowledge Base Article](../../images/liferay-collaboration-kb-new-article.png)
+
+In addition to entering a title and creating content for your article, you can use the editor to add attachments, add tags, and set permissions. By default, view permission is granted to the guest role, meaning that anyone can view your article. After you're done using the editor, you can save it as draft and continue working on it later, or you can submit it for publication. Your article may need to be approved before being published or you may be able to publish it immediately, depending on the workflow defined for your portal.
+
+You can find the *Permissions* button next to the Add Article button in the Knowledge Base display portlet or on the Knowledge Base page of the control panel. Click this button to define permissions that apply to the Knowledge Base display portlet generally, not to particular articles. Here, you can define which roles can add articles and templates, which are granted knowledge base administrator privileges, which can change permissions on articles, which can subscribe to articles, and which can view templates. 
+
+![Figure 4.x: Knowledge Base Permissions](../../images/liferay-collaboration-kb-permissions.png)
+
+Users may need to be granted access to the knowledge base page of the control panel in order to exercise some of the above permissions. For example, suppose that the user role has been granted the Add Article and the View Templates permissions. A user will be able to add articles from the knowledge base display portlet but will need access to the knowledge base page of the control panel in order to view templates. Note that the Knowledge Base (Display) permissions are distinct from the Knowledge Base (Admin) portlet. The display permissions define what a user can do with the Knowledge Base display portlet on a page while the admin permissions define what a user can do on the Knowledge Base page of the control panel.
+
+### Knowledge Base Page in the Control Panel
+
+The Knowledge Base page of the control panel has two tabs: one for articles and one for templates. The articles tab shows all the articles in the knowledge base and lets you perform actions on them. The templates tab shows all the templates defined in the knowledge base and lets you perform actions on them.
+
+![Figure 4.x: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
+
+Administrators can perform the following actions on an article:
+
+*View:* displays an article. From here, you can add a child article, edit the article, change its permissions, move it, or delete it.
+
+*Edit:* allows you to change the title and content of an article as well as add attachments, select topics, and add tags.
+
+*Permissions:* lets you configure the permissions on a specific article.
+
+*Subscribe:* lets you to choose to be notified of any updates to a particular article.
+
+*Move:* lets you change an article's position in the hierarchy by choosing a new parent article for it.
+
+*Delete:* lets you remove an article from the knowledge base.
+
+These actions are similar to the ones that can be performed from the Administrator view of the Knowledge Base display portlet. However, the Knowledge Base display portlet is intended to be placed on a page for the end user so an additional action is available: *RSS* is a link to an RSS feed of an article. Also, the *View* action is only available from the control panel since the Knowledge Base Article portlet can be used to display an article on a page.
+
+The templates tab of the Knowledge Base page of the control panel allows administrators to create templates to facilitate the creation of articles. A template basically functions like a starting point for the creation of certain types of articles. Click the *Add Template* button on the Templates tab of the Knowledge Base page of the control panel to create a new template. 
+
+![Figure 4.x: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
+
+Navigate back to the templates tab of the Knowledge Base page of the control panel. You can perform the following actions on a template:
+
+*View:* displays a template. From here, you can use the template to create an article, edit the template, modify the permissions on the template, or delete it. 
+
+*Edit:* allows you to change the title and content of a template.
+
+*Permissions:* allows you to configure the permissions on a template. You can choose roles to have permission to update, view, delete, or change the permissions on templates.
+
+*Delete:* lets you remove a template from the knowledge base.
+
+To use a template to create a new article, you have view the template and then click *Use this Template*. This brings you to the New Article editor with the contents of the template copied for you.
+
+### Knowledge Base Article and Section Portlets
+
+The Knowledge Base Article portlet can be placed on a page to display a particular article. When you first place this portlet on a page it displays the message *Please configure this portlet to make it visible to all users*. This message is a link to the configuration dialog box for the portlet. Click *Select Article* to choose an article to display. Pick an article and then click *Save*. When your page refreshes it will display the article in the portlet. 
+
+![Figure 4.x: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
+
+The Knowledge Base Article portlet allows users to rate and comment on the article it displays. There are also links at the top of the portlet that users can use to subscribe to an RSS feed of the knowledge base, subscribe to the article, view the history of the article, or print the article.
+
+The Knowledge Base section portlet 
+
+### Knowledge Base Navigation
+
+The Knowledge Base Search portlet allows you to search for articles in the knowledge base. This portlet presents the search results to you in order from most relevant to least relevant. 
+
+![Figure 4.x: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
+
+You can also use the Categories Navigation portlet in conjunction with the Knowledge Base display portlet. When both of these portlets are placed on a page you can select a topic in the Categories Navigation portlet and the Knowledge Base display portlet will show all of the articles that match the topic.
+
+![Figure 4.x: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+
+You can select topics for articles when you are creating or editing them.
 
 ## Documents and Media
 
@@ -795,7 +867,7 @@ To create tags in the control panel, select the site that you want to create tag
 
 ## Categories
 
-Categories are similar in concept to tags, but are designed for use by administrators, not regular users. Hierarchies of categories can be created, and categories can be grouped together in *vocabularies*. Where tags represent an ad hoc method for users to group content together, categories exist to allow administrators to organize content in a more official, hierarchical structure. You can think of tags like the index of a book and categories like its table of contents. Both serve the same purpose: to help the user find the information he or she seeks.
+Categories are similar in concept to tags, but are designed for use by administrators, not regular users. Hierarchies of categories can be created, and categories can be grouped together in *vocabularies*. While tags represent an ad hoc method for users to group content together, categories exist to allow administrators to organize content in a more official, hierarchical structure. You can think of tags like the index of a book and categories like its table of contents. Both serve the same purpose: to help the user find the information he or she seeks.
 
 Adding vocabularies and categories is similar to adding tags. Once you've selected the site you want to work on, select *Categories* from the content section of the control panel, and you will be presented with the categories administration page.
 
