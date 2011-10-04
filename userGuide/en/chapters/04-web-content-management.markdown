@@ -496,11 +496,11 @@ Liferay CMS makes it easy to create structures, templates, and content from the 
 
 **Field Type**, **Variable Name**
 
-* Text Field, *title*
+* Text, *title*
 
 * Text Box, *abstract*
 
-* Image Uploader, *image*
+* Image, *image*
 
 * Text Area, *body*
 
@@ -541,6 +541,12 @@ After this, we attempt to get a request parameter called `read_more`. Whether or
 -   If we were not successful in getting the `read_more` parameter, we display the image, the abstract, and the link we created above, which sets the `read_more` parameter.
 
 When this template is rendered, it looks something like this:
+
+![Figure 4.X: Initial View](../../images/04-web-content-adv-example1.png)
+
+![Figure 4.X: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
+
+
 
 Of course, there is much, much more you can do with structures and templates. Check out the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)) for further information and examples.
 
