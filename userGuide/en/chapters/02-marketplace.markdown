@@ -43,7 +43,7 @@ At the bottom is a Tag Cloud.  Individual apps can be tagged with specific keywo
  
 ### Logging In
 
-You do not need a `liferay.com` account in order to browse the Marketplace.  Once you decide you wish to download an app (or if you are a developer and wish to create and upload new apps), you will need to establish a liferay`.com account, and agree to the Marketplace Terms of Use.  To get a new liferay.com` login, visit the register page and sign up!
+You do not need a `liferay.com` account in order to browse the Marketplace.  Once you decide you wish to download an app (or if you are a developer and wish to create and upload new apps), you will need to establish a `liferay.com` account, and agree to the Marketplace Terms of Use.  To get a new `liferay.com` login, visit the register page and sign up!
  
 Once you are signed in, you will be able to fully utilize the Marketplace to find and use Marketplace apps.
  
