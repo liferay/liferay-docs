@@ -725,15 +725,23 @@ Navigate back to the templates tab of the Knowledge Base page of the control pan
 
 To use a template to create a new article, you have view the template and then click *Use this Template*. This brings you to the New Article editor with the contents of the template copied for you.
 
-### Knowledge Base Article and Section Portlets
+### Knowledge Base Article Portlet
 
-The Knowledge Base Article portlet can be placed on a page to display a particular article. When you first place this portlet on a page it displays the message *Please configure this portlet to make it visible to all users*. This message is a link to the configuration dialog box for the portlet. Click *Select Article* to choose an article to display. Pick an article and then click *Save*. When your page refreshes it will display the article in the portlet. 
+The Knowledge Base Article portlet can be placed on a page to display a an entire article. When you first place this portlet on a page it displays the message *Please configure this portlet to make it visible to all users*. This message is a link to the configuration dialog box for the portlet. Click *Select Article* to choose an article to display. Pick an article and then click *Save*. When your page refreshes it will display the article in the portlet. 
 
 ![Figure 4.x: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the article it displays. There are also links at the top of the portlet that users can use to subscribe to an RSS feed of the knowledge base, subscribe to the article, view the history of the article, or print the article.
 
-The Knowledge Base section portlet 
+### Knowledge Base Section Portlet
+
+The Knowledge Base Section portlet allows administrators to selectively show articles associated with a specific section. For example, a news site might have a *World* section, a *Politics* section, a *Business* section, and an *Entertainment* section. In order to use sections, you need to set the `admin.kb.article.sections` property in your knowledge base portlet's `portlet.properties` file and redeploy the portlet. You can find the `portlet.properties` file in the knowledge base portlet's source directory. Updating the one in your server's directory won't work. Use comma delimited section names to set the property, like `admin.kb.article.sections=World,Politcs,Business,Entertainment`, for example. 
+
+Once you have defined some sections in your knowledge base's `portlet.properties` file, your users will see a multi-select box in the Add Article and Edit Article screens that allows them to select which section an article belongs to. You can add any number of Knowledge Base section portlets to a page and you can configure each portlet to display articles from any number of sections.
+
+![Figure 4.x: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+
+The Knowledge Base section portlet has some additional configurations that allow an administrator to select a display style (title or abstract), an article window state (maximized or normal), how to order the articles, how many articles to display per page, and whether or not to show pagination.
 
 ### Knowledge Base Navigation
 
@@ -743,7 +751,7 @@ The Knowledge Base Search portlet allows you to search for articles in the knowl
 
 You can also use the Categories Navigation portlet in conjunction with the Knowledge Base display portlet. When both of these portlets are placed on a page you can select a topic in the Categories Navigation portlet and the Knowledge Base display portlet will show all of the articles that match the topic.
 
-![Figure 4.x: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+![Figure 4.x: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them.
 
