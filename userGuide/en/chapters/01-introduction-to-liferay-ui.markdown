@@ -10,7 +10,7 @@ This chapter covers the following activities:
 
 Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a “dashboard” application) so that the end user can see everything he or she interacts with at a glance.
 
-To achieve this, all the application functionality within Liferay Portal is in fragments of the page called *portlets*. Portlets are web applications that run in a portion of a web page. Liferay's core is a portlet container that aggregates portlets on particular pages and displays them to users. In this way, one or many applications can reside on a page, and users can (at the administrator's discretion) arrange them however they like.
+To achieve this, all the application functionality within Liferay Portal resides in fragments of the page called *portlets*. Portlets are web applications that run in a portion of a web page. Liferay's core is a portlet container that aggregates portlets on particular pages and displays them to users. In this way, one or many applications can reside on a page, and users can (at the administrator's discretion) arrange them however they like.
 
 Portlet applications, like servlet applications, are defined by a Java standard which various portal server vendors have implemented. The Java standard defines the portlet specification. A JSR-168 or JSR-286 standard portlet should be deployable on any portlet container which supports those standards. Portlets are placed on the page in a certain order by the end user and are served up dynamically by the portal server.
 
@@ -50,13 +50,13 @@ Depending on the logged-in users' roles and what sections of the portal they are
 
 ### Add
 
-As an administrator, the first menu on the dockbar is the *Add* menu. This menu contains a list of items that you can add either to the page or to the current site.
+As an administrator, the *Add* menu is the first item on the dockbar. This menu contains a list of items that you can add either to the page or to the current site.
 
 ![Figure 1.3 Add Menu from the Dockbar](../../images/01-add-menu-from-dockbar.png)
 
 **Page:** adds a new page at the current navigation level. 
 
-**Applications:** contains a list of common portlets that you can add to the page, such as web content display, asset publisher, document library display, and navigation. These portlets are covered in chapters 3 and 4. 
+**Applications:** contains a list of common portlets that you can add to the page, such as web content display, asset publisher, documents and media display, and navigation. These portlets are covered in chapters 3 and 4. 
 
 **More:** shows a list of all the currently deployed portlets, divided into categories. You can search for portlets in the list or use the search bar. To add a portlet to the current page, click the *Add* button next to a portlet, or drag the portlet from the menu to where you want it on the page.
 
@@ -64,7 +64,7 @@ The Add menu gives you a nice, quick way to build your pages.
 
 ### Manage
 
-The next option is the *Manage* menu. From here, you can access many settings for the current page and site. 
+The next item on the dockbar is the *Manage* menu. From here, you can access many settings for the current page and site. 
 
 ![Figure 1.4: Manage Menu from the Dockbar](../../images/01-manage-menu-from-dockbar.png)
 
@@ -82,13 +82,15 @@ The next option is the *Manage* menu. From here, you can access many settings fo
 
 **Site Content:** lets you view and manage content on your site such as documents, images, message board posts, calendar entries, wiki pages, blog entries, and more.
 
-We'll cover these options in detail in chapter 3. 
+We'll cover these options in detail in chapter 3.
+
+### Edit Controls
 
 Next on the dockbar is a check box labeled *Edit Controls*. This toggles the edit controls that appear in the tops of portlet windows. This lets administrators to see a page the way a regular user would.
 
 ### Go to
 
-This is the topmost item in the menu. Initially, your current location is highlighted. This shows you are in the public pages of the *liferay.com* site.
+The Go to menu is your main navigation tool within Liferay Portal. The control panel is the topmost item in this menu. Initially, your current location is highlighted. This shows you are in the public pages of the *liferay.com* site.
 
 ![Figure 1.5: Go To Menu from the Dockbar](../../images/01-go-to-menu-from-dockbar.png)
 
@@ -128,7 +130,7 @@ Before we dive into the user interface for adding and maintaining various portal
 
 A simple way to think about this is that your portal has users and various ways to group them together. Some of these groupings may be organized hierarchically by an administrator and other groupings may be created by the users themselves. For example, users from different organizations could create an independent site called “Dog Lovers” inspired by a common interest in dogs. Groupings for other functions that cut across the portal may be administrated via roles. For example, a Message Boards Administrators role could be created granting permissions to administer any message board in the portal. Users from multiple organizations or sites could be assigned to to this role.
 
-The following figure illustrates the relationships between these portal concepts. In the figure, each arrow may be read using the words “can be a member of.” So this means that organizations can be members of sites, sites can be members of roles, users can be members of anything, and so on. Though this seems very complex, it provides a powerful mechanism for portal administrators to configure portal resources and security in a consistent and robust manner. It is important to note that the diagram illustrates only users and their collections. Permissions do not flow through all of these collections: permissions can be assigned to roles only.
+The following figure illustrates the relationships between these portal concepts. In the figure, each arrow may be read using the words “can be a member of.” So this means that organizations can be members of sites, sites can be members of roles, users can be members of anything, and so on. This may seem complex but it provides a powerful mechanism for portal administrators to configure portal resources and security in a consistent and robust manner. It is important to note that the diagram illustrates only users and their collections. Permissions do not flow through all of these collections: permissions can be assigned to roles only.
 
 ![Figure 1.8: Liferay Permissions Model](../../images/01-liferay-permissions-model.png)
 
@@ -136,13 +138,13 @@ Teams belong to individual sites. Roles that appear inside sites are scoped just
 
 ### Users
 
-Users represent physical users of the system. These are the user accounts that people use to log into the system. By default, users get their own private sites with public and private pages that they can manage themselves. Users' personal sites are important: they enable users to have their own public blog or their own private calendar, a place to store their documents, and more. However, if you don't want want users to have personal sites, this default behavior can be turned off by a portal administrator in the portal-ext.properties configuration file. Liferay uses site templates to control the default portlets that appear on the public and private pages of user's personal sites. Templates are covered later in this chapter.
+Users represent physical users of the system. These are the user accounts that people use to log into the system. By default, users get their own private sites with public and private pages that they can manage themselves. Users' personal sites are important: they enable users to have their own public blog or their own private calendar, a place to store their documents, and more. However, if you don't want want users to have personal sites, this default behavior can be turned off by a portal administrator in the portal-ext.properties configuration file. Liferay uses site templates to control the default portlets that appear on the public and private pages of user's personal sites. See chapter 3 for information about templates.
 
-Users can be collected in multiple ways. They can be members of organization hierarchies, such as Liferay, Inc. → Security → Internet Security. They can be collected into arbitrary user groups, such as Bloggers, which could be used to set apart users who get a Blog page in their personal space from users who do not. Users can become members of independent sites which serve to draw together common interests. Users can have roles which define their permissions in the portal. These roles can be scoped by portal, organization, or site.
+Users can be collected in multiple ways. They can be members of organization hierarchies, such as Liferay, Inc. &rarr; Security &rarr; Internet Security. They can be collected into arbitrary user groups, such as Bloggers, which could be used to set apart users who get a Blog page in their personal space from users who do not. Users can become members of independent sites which serve to draw together common interests. Users can have roles which define their permissions in the portal. These roles can be scoped by portal, organization, or site.
 
 ### User Groups
 
-User groups are simple, arbitrary collections of users, created by administrators. You can make a user group a member of a site. This makes each member of the user group a member of the site. Permissions cannot be directly assigned to user groups but roles can be. If you assign a role to a user group then each member of the user group will be assigned that role (and hence the permissions defined by the role). Although user groups cannot have sites, they can have page templates which can be used to customize users' personal sites. We describe this in more detail below.
+User groups are simple, arbitrary collections of users, created by administrators. You can make a user group a member of a site. This makes each member of the user group a member of the site. Permissions cannot be directly assigned to user groups; they must be assigned to roles. If you assign a role to a user group then each member of the user group will be assigned that role (and thus the permissions defined by the role). Although user groups cannot have sites, they can have site templates which can be used to customize users' personal sites. We describe this in more detail below.
 
 ### Roles
 
