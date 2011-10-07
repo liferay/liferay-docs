@@ -237,65 +237,65 @@ Note that because of file locking issues, this isn't the best way to share Jackr
 
 The default Jackrabbit configuration file has sections commented out for moving the Jackrabbit configuration into the database. This has been done to make it as easy as possible to enable this configuration. To move the Jackrabbit configuration into the database, simply comment out the sections relating to the file system and comment in the sections relating to the database. These by default are configured for a MySQL database. If you are using another database, you will likely need to modify the configuration, as there are changes to the configuration file that are necessary for specific databases. For example, the default configuration uses Jackrabbit's `DbFileSystem` class to mimic a file system in the database. While this works well in MySQL, it doesn't work for all databases. For example, if you're using an Oracle database, you'll need to modify this to use `OracleFileSystem`. 
 
-Modify the JDBC database URLs so that they point your database. Don't forget to create the database first, and grant the user ID you are specifying in the configuration file access to create, modify, and drop tables. After this, be sure to uncomment the `<Cluster/>` section at the bottom of the file. For further information, it's best to check out the Jackrabbit documentation. Please see the Jackrabbit documentation at `http://jackrabbit.apache.org` for further information. 
+Modify the JDBC database URLs so that they point your database. This, of course, must be done on all nodes of the cluster. Don't forget to create the database first, and grant the user ID you are specifying in the configuration file access to create, modify, and drop tables. After this, be sure to uncomment the `<Cluster/>` section at the bottom of the file. For further information, it's best to check out the Jackrabbit documentation. Please see the Jackrabbit documentation at `http://jackrabbit.apache.org` for further information. 
 
 Once you've configured Jackrabbit to store its repository in a database, the next time you bring up Liferay, the necessary database tables are created automatically. Jackrabbit, however, does not create indexes on these tables, and so over time this can be a performance penalty. To fix this, you'll need to manually go into your database and index the primary key columns for all the Jackrabbit tables.
 
-All your Liferay nodes should be configured to use the same Jackrabbit repository in the database. Once that is working, you can create a Jackrabbit cluster (please see the section below).
+Note that this configuration doesn't perform as well as the advanced file system store, but it does have the benefit of clustering well. Next, we'll look at Amazon's S3 store. 
 
-#### Other Storage Options
+##### Using Amazon Simple Storage Service
 
-There are other options available to configure Liferay's Document Library. The default option has the best performance with large document libraries, because it simply uses the file system. If you require a JSR-170 compliant document store, you can use Jackrabbit, which can be configured to use the file system or database, depending on your needs. If, however, you have very specific configuration needs, or if you already have a content repository that you want to continue using, you might want to use one of the following options Liferay has available.
+Amazon's simple storage service (S3) is a cloud-based storage solution which you can use with Liferay. All you need is an account, and you can store your documents to the cloud from all nodes, seamlessly. 
 
-##### Advanced File System Hook
+This is easy to set up. When you sign up for the service, Amazon assigns you some unique keys which link you to your account. In Amazon's interface, you can create "buckets" of data optimized by region. Once you've created these to your specifications, all you need to do is declare them in `portal-ext.properties`: 
 
-To use the Advanced File System Hook, set:
+    dl.store.s3.access.key=
+    dl.store.s3.secret.key=
+    dl.store.s3.bucket.name=
 
-    dl.hook.impl=com.liferay.documentlibrary.util.AdvancedFileSystemHook
+Once you have these configured, set your store implementation to the `S3Store`: 
 
-This is the preferred hook for clustered environments especially if you're using a SAN to store files.
+    dl.store.impl=com.liferay.portlet.documentlibrary.store.S3Store
 
-From a performance standpoint, this method is superior to using Jackrabbit. The Advanced File System Hook distributes the files into multiple directories and thus circumvents file system limitations. Liferay does not implement any file level locking, so only use this if you’re using a SAN that supports file locking (most modern ones do but check your SAN documentation to be sure).
+Consult the Amazon Simple Storage documentation for additional details on using Amazon's service. 
 
-The path for storing your documents is set also set using the `dl.hook.file.system.root.dir` property in the `portal-ext.properties`.
+We have one more store to go over: the Documentum store. 
 
-##### Amazon Simple Storage
+##### Using the Documentum store
 
-To use Amazon’s Simple Storage Service to store you documents for a Liferay Portal, set
+![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
-    dl.hook.impl=com.liferay.documentlibrary.util.S3Hook
+If you have a Liferay Portal EE license, you have access to the Documentum hook which adds support for Documentum to Liferay's documents and media library. Install this hook by using the Liferay Marketplace. 
 
-in `portal-ext.properties`. You will need to consult the Amazon Simple Storage documentation for additional details on setting it up.
+This hook doesn't add an option to make the Liferay repository into a Documentum repository, as the other store implementations do. Instead, it gives you the ability to mount Documentum repositories via the documents and media library UI. 
 
-##### Documentum
+There's not really a lot to this; it's incredibly easy. Click *Add* &rarr; *Repository*, and in the form that appears, choose *Documentum* as the repository type. After that, you give it a name and specify the Documentum repository and cabinet, and Liferay mounts the repository for you. That's really all there is to it. If all of your nodes are pointing to a Documentum repository, you can cluster Documentum to achieve higher performance. 
 
-You can use this hook to store your documents with Documentum. Before configuring Documentum, you will need to install the `documentum-hook` plugin. Before installing, however, please note that the `documentum-hook` plugin is only supported on Liferay Enterprise Edition, and is currently in an experimental stage, and may not be ready for production use. To use this hook, set
+Now that we've covered the available ways you can configure documents and media for clustering, we can move on to configuring search. 
 
-    dl.hook.impl=liferay.documentum.hook.DocumentumHook
+### Clustering search
 
-If you are using Documentum, there are additional settings that must be configured in the `${liferay_home}/documentum-hook/docroot/WEB-INF/src/dfc.properties` and `documentum-hook/docroot/WEB-INF/src/portlet.properties` files.
+You can configure search for clustering in one of two ways: use pluggable enterprise search (recommended), or configure Lucene so that indexes replicate across the individual file systems of the nodes in the cluster. We'll look at both ways to do this. 
 
-### Search Configuration
+#### Using Pluggable Enterprise Search
 
-You can configure search in one of two ways: use pluggable enterprise search (recommended for a cluster configuration) or configure Lucene in such a way that either the index is stored on each node's file system or is shared in a database.
+As an alternative to using Lucene, Liferay supports pluggable search engines. The first implementation of this uses the open source search engine *Solr,* but in the future there will be many such plugins for your search engine of choice. This allows you to use a completely separate product for search, and this product can be installed on another application server or cluster of servers. Your search engine then operates completely independently of your Liferay Portal nodes in a clustered environment, acting as a search service for all the nodes simultaneously.
 
-#### Pluggable Enterprise Search
+This makes it much easier to deal with search indexes. You no longer have to maintain indexes on every node in your cluster, and you get to offload indexing activity to a separate server, so your nodes can concentrate their CPU power on serving pages. Each Liferay node sends requests to the search engine to update the search index when needed, and these updates are then queued and handled automatically by the search engine, independently. It's kind of like having an army of robots ready and willing to do your bidding. 
 
-As an alternative to using Lucene, Liferay supports pluggable search engines. The first implementation of this uses the open source search engine *Solr,* but in the future there will be many such plugins for your search engine of choice. This allows you to use a completely separate product for search, which can be installed on another application server in your environment. Your search engine then operates completely independently of your Liferay Portal nodes in a clustered environment, acting as a search service for all of the nodes simultaneously.
-
-This solves the problem described below with sharing Lucene indexes. You can now have one search index for all of the nodes of your cluster without having to worry about putting it in a database (if you wish, you can still do this if you configure Solr or another search engine that way) or maintaining separate search indexes on all of your nodes. Each Liferay node will send requests to the search engine to update the search index when needed, and these updates are then queued and handled automatically by the search engine, independently.
+First, you'll need to configure your Solr server, and then you need to install Liferay's Solr plugin to redirect searches over to it. 
 
 ##### Configuring the Solr Search Server
 
-Since Solr is a standalone search engine, you will need to download it and install it first according to the instructions on the Solr web site (`http://lucene.apache.org/solr`). Of course, it is best to use a server that is separate from your Liferay installation, as your Solr server will be responsible for all indexing and searching for your entire cluster. Solr is distributed as a .war file with several .jar files which need to be available on your application server's class path. Once you have Solr up and running, integrating it with Liferay is easy, but it will require a restart of your application server.
+Since Solr is a standalone search engine, you'll need to download it and install it first according to the instructions on the Solr web site (`http://lucene.apache.org/solr`). Of course, it's best to use a server that is separate from your Liferay installation, as your Solr server will be responsible for all indexing and searching for your entire cluster. You definitely don't want both Solr and Liferay on the same box. Solr is distributed as a .war file with several .jar files which need to be available on your application server's classpath. Once you have Solr up and running, integrating it with Liferay is easy, but it requires a restart of your application server.
 
-The first thing you will need to define is the location of your search index. Assuming you are running a Linux server and you have mounted a file system for the index at `/solr`, create an environment variable that points to this folder. This environment variable needs to be called `$SOLR_HOME`. So for our example, we would define:
+The first thing you need to define is the location of your search index. Assuming you're running a Linux server and you've mounted a file system for the index at `/solr`, create an environment variable that points to this folder. This environment variable needs to be called `$SOLR_HOME`. So for our example, we would define:
 
     $SOLR_HOME=/solr
 
-This environment variable can be defined anywhere you need: in your operating system's start up sequence, in the environment for the user who is logged in, or in the start up script for your application server. If you are going to use Tomcat to host Solr, you would modify `setenv.sh` or `setenv.bat` and add the environment variable there.
+This environment variable can be defined anywhere you need: in your operating system's start up sequence, in the environment for the user who is logged in, or in the start up script for your application server. If you're going to use Tomcat to host Solr, you'd modify `setenv.sh` or `setenv.bat` and add the environment variable there.
 
-Once you have created the environment variable, you then can use it in your application server's start up configuration as a parameter to your JVM. This is configured differently per application server, but again, if you are using Tomcat, you would edit `catalina.sh` or `catalina.bat` and append the following to the `$JAVA_OPTS` variable:
+Once you've created the environment variable, you then can use it in your application server's start up configuration as a parameter to your JVM. This is configured differently per application server, but again, if you are using Tomcat, you would edit `catalina.sh` or `catalina.bat` and append the following to the `$JAVA_OPTS` variable:
 
     -Dsolr.solr.home=$SOLR_HOME
 
@@ -303,37 +303,43 @@ This takes care of telling Solr where to store its search index. Go ahead and in
 
 ##### Installing the Solr Liferay Plugin
 
-Next, you have a choice. If you have installed Solr on the same system upon which Liferay is running, you can simply go to the Control Panel and install the *solr-web* plugin. This, however, defeats much of the purpose of using Solr, because the goal is to offload search indexing to another box in order to free up processing for your installation of Liferay. For this reason, you should not run Liferay and your search engine on the same box. Unfortunately, the configuration in the plugin defaults to having Solr and Liferay running on the same box, so to run them separately, you will have to make a change to a configuration file in the plugin before you install it so you can tell Liferay where to send indexing requests. In this case, go to the Liferay web site (`http://www.liferay.com`) and download the plugin manually.
+Next, you have a choice. If you have installed Solr on the same system upon which Liferay is running (not recommended), you can simply go to the control panel and install the *solr-web* plugin. This, however, defeats much of the purpose of using Solr, because the goal is to offload search indexing to another box in order to free up processing for your installation of Liferay. For this reason, you really shouldn't run Liferay and your search engine on the same box. Unfortunately, the configuration in the plugin is set exactly that way, presumably to allow you to experiment with different search configurations. To run them separately--as you would in a production environment--, you'll have to make a change to a configuration file in the plugin before you install it so you can tell Liferay where to send indexing requests. In this case, go to the Liferay Marketplace and download the plugin to your system. 
 
-Open or extract the plugin. Inside the plugin, you will find a file called `solr-spring.xml` in the `WEB-INF/classes/META-INF` folder. Open this file in a text editor and you will see the entry which defines where the Solr server can be found by Liferay:
+Open or extract the plugin. Inside the plugin, you'll find a file called `solr-spring.xml` in the `WEB-INF/classes/META-INF` folder. Open this file in a text editor and you will see the entry which defines where the Solr server can be found by Liferay:
 
-    <bean     class="com.liferay.portal.spring.context.PortletBeanFactoryPostProcessor"     />
+	<bean class="com.liferay.portal.spring.context.PortletBeanFactoryPostProcessor" />
 
-    <bean id="com.liferay.portal.search.solr.server.BasicAuthSolrServer"     class="com.liferay.portal.search.solr.server.BasicAuthSolrServer">          <constructor-arg     type="java.lang.String"value="http://localhost:8080/solr" />
+	<!-- Solr search engine -->
 
-Modify this value so that they point to the server upon which you are running Solr. Then save the file and put it back into the plugin archive in the same place it was before.
+	<bean id="com.liferay.portal.search.solr.server.BasicAuthSolrServer" class="com.liferay.portal.search.solr.server.BasicAuthSolrServer">
+		<constructor-arg type="java.lang.String" value="http://localhost:8080/solr" />
+	</bean>
+	
+Modify this value so it points to the server where Solr is running. Then save the file and put it back into the plugin archive in the same place it was before.
 
-Next, extract the file `schema.xml` from the plugin. It should be in the `docroot/WEB-INF/conf` folder. This file tells Solr how to index the data coming from Liferay, and can be customized for your installation. Copy this file to `$SOLR_HOME/conf` (you may have to create the `conf` directory) on your Solr box. Now you can go ahead and start Solr.
+Next, extract the file `schema.xml` from the plugin. It should be in the `docroot/WEB-INF/conf` folder. This file tells Solr how to index the data coming from Liferay, and can be customized for your installation. Copy this file to `$SOLR_HOME/conf` on your Solr box (you may have to create the `conf` directory). Now you can go ahead and start Solr.
 
-You can now hot deploy the `solr-web` plugin to all of your nodes. See the next section for instructions on hot deploying to a cluster.
+You can now hot deploy the `solr-web` plugin to all your nodes. See the next section for instructions on hot deploying to a cluster.
 
-Once the plugin is hot deployed, your Liferay search is automatically upgraded to use Solr. It is likely, however, that initial searches will come up with nothing: this is because you will need to reindex everything using Solr.
+Once the plugin is hot deployed, your Liferay server's search is automatically upgraded to use Solr. It's likely, however, that initial searches will come up with nothing: this is because you need to reindex everything using Solr.
 
-Go to the Control Panel. In the *Server* section, click *Server Administration*. Click the *Execute* button next to *Reindex all search indexes *at the bottom of the page. It may take a while, but Liferay will begin sending indexing requests to Solr for execution. When the process is complete, Solr will have a complete search index of your site, and will be running independently of all of your Liferay nodes.
+Go to the Control Panel. In the *Server* section, click *Server Administration*. Click the *Execute* button next to *Reindex all search indexes *at the bottom of the page. Liferay will begin sending indexing requests to Solr for execution. Once Solr has indexed all your data, you'll have a search server running independently of all your Liferay nodes.
 
-Installing the plugin to your nodes has the effect of overriding any calls to Lucene for searching. All of Liferay's search boxes will now use Solr as the search index. This is ideal for a clustered environment, as it allows all of your nodes to share one search server and one search index, and this search server operates independently of all of your nodes.
+Installing the plugin to your nodes has the effect of overriding any calls to Lucene for searching. All Liferay's search boxes will now use Solr as the search index. This is ideal for a clustered environment, as it allows all your nodes to share one search server and one search index, and this search server operates independently of all your nodes.
 
-#### Lucene Configuration
+#### Clustering Lucene indexes on all nodes
 
-Lucene, the search indexer which Liferay uses, can be in a shared configuration for a clustered environment, or an index can be created on each node of the cluster. The easiest configuration to implement is to have an index on each node of the cluster. Liferay provides a method called ClusterLink which can send indexing requests to all nodes in the cluster to keep them in sync. This configuration does not require any additional hardware, and it performs very well. It may increase network traffic when an individual server reboots, since in that case a full reindex will be needed. But since this should only rarely happen, it's a good tradeoff if you don't have the extra hardware to implement a Solr search server.
+Lucene, the search indexer which Liferay uses, can be configured to sync indexes across each cluster node. This is the easiest configuration to implement, though of course, it's not as "clean" a configuration as using pluggable enterprise search. Sometimes, however, you just don't have another server to use for search indexing, and so you need a way to keep all your nodes in sync. Liferay provides a method called ClusterLink which can send indexing requests to all nodes in the cluster to keep them in sync. This configuration doesn't require any additional hardware, and it performs very well. It may increase network traffic when an individual server reboots, since in that case a full reindex will be needed. But since this should only rarely happen, it's a good tradeoff if you don't have the extra hardware to implement a Solr search server.
 
 You can enable ClusterLink by setting one property in your `portal-ext.properties `file:
 
     cluster.link.enabled=true
 
-Of course, this needs to be set on all the nodes.
+Of course, this needs to be set on all the nodes. Next, we'll show how to share indexes in a database. This is actually not a recommended configuration, as it's slow (databases are always slower than file systems), but for completeness, we'll go ahead and tell you how to do it anyway. But you've been forewarned: use one of the other methods of clustering your search index. 
 
-If you wish to have a shared index, you will need to either share the index on the file system or in the database. This requires changing your Lucene configuration.
+#### Sharing a search index
+
+If you wish to have a shared index (and we really hope you don't), you'll need to either share the index on the file system or in the database. This requires changing your Lucene configuration.
 
 The Lucene configuration can be changed by modifying values in your `portal-ext.properties` file. Open your `portal.properties` file and search for the text *Lucene*. Copy that section and then paste it into your `portal-ext.properties` file.
 
