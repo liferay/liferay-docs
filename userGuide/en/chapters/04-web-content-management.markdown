@@ -192,7 +192,7 @@ You can manage the following kinds of content:
 
 - Dynamic Data Lists
 
-For details about Liferay's social collabortation suite, see chapter 4. For details about using the control panel to manage web content, see chapter 12.
+For details about Liferay's social collaboration suite, see chapter 4. For details about using the control panel to manage web content, see chapter 12.
 
 ### Page Customizations
 
@@ -702,7 +702,7 @@ You can use staging in multiple ways. Larger organizations may consider having a
 
 Alternatively, you may want to host both your staging environment and your live environment on the same server—particularly if you are part of a smaller organization with less resources to purchase servers. Either way, once set up, the interface is the same; the only difference comes when it's actually time to publish your content.
 
-In addition, Liferay 6.1 adds the capability to create multiple branches of staged content, so that you can manage several future versions of a page simulataneously. Branches can be merged and published through an intuitive UI.
+In addition, Liferay 6.1 adds the capability to create multiple branches of staged content, so that you can manage several future versions of a page simultaneously. Branches can be merged and published through an intuitive UI.
 
 ##### Enabling the Staging Environment
 
@@ -780,7 +780,7 @@ To enable workflow for Web Content, navigate to the control panel and select *Wo
 
 ![Figure 4.26: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
-As you will discover in chapter 7, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we will use the *Single Approver* workflow which ships with the product.
+As you will discover in chapter 6, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we will use the *Single Approver* workflow which ships with the product.
 
 #### Defining Workflows for Web Content
 
@@ -805,11 +805,11 @@ Taking ownership of, reviewing, and approving content is very easy:
 3.  You're asked to submit a comment. You'd have to do this for either *Approve* or *Reject*. Add a comment and click *Save*.
 4.  The content is now approved.
 
-In a real world situation, you obviously wouldn't want the person who created the content to be the one who approves it. Instead, you would have one or more roles designed for users who will be creating content, and you will have specific users assigned to one or more roles for approving content. Our example was of a very straightforward workflow, as it has only a single approver. Kaleo workflow allows you to design workflows that go through as many steps as you need to conform to your business processes. We look at Kaleo workflow in more detail in chapter 7.
+In a real world situation, you obviously wouldn't want the person who created the content to be the one who approves it. Instead, you would have one or more roles designed for users who will be creating content, and you will have specific users assigned to one or more roles for approving content. Our example was of a very straightforward workflow, as it has only a single approver. Kaleo workflow allows you to design workflows that go through as many steps as you need to conform to your business processes. We look at Kaleo workflow in more detail in chapter 6.
 
 ## Summary
 
-This chapter has been your guide to Liferay Web Content Management. We've seen how pages are created and managed in Liferay sites and organizations. It is easy to create whole page hierarchies without ever leaving your browser. You can import and export pages using LAR archives, and these can also be used to transfer a site from one Lifery Portal server to another.
+This chapter has been your guide to Liferay Web Content Management. We've seen how pages are created and managed in Liferay sites and organizations. It is easy to create whole page hierarchies without ever leaving your browser. You can import and export pages using LAR archives, and these can also be used to transfer a site from one Liferay Portal server to another.
 
 Liferay CMS also includes a powerful staging environment, allowing you to stage content locally on the same server or remotely to another server. And when working on pages, you have the ability to use layouts and nested portlets to design every page to look exactly the way you want it to look.
 
