@@ -222,7 +222,7 @@ In a similar way to the Blogs portlet, you can use the Calendar portlet as a sha
 
 ### Configuring the Calendar Portlet
 
-Open the *Configuration* dialog boxs from the menu in the portlet's title bar. The Setub tab allows you to configure three different options in subtabs: *Email From*, *Event Reminder Email*, and *Display Settings*.
+Open the *Configuration* dialog box from the menu in the portlet's title bar. The Setub tab allows you to configure three different options in subtabs: *Email From*, *Event Reminder Email*, and *Display Settings*.
 
 #### Email From
 
@@ -611,7 +611,7 @@ When viewing a page, you can view its details by clicking the *Details* link whi
 
 #### Details
 
-The Details tab shows various statistics about the page, and also allows you to perfom some actions on the page.
+The Details tab shows various statistics about the page, and also allows you to perform some actions on the page.
 
 **Title:** displays the title of the page.
 
@@ -739,7 +739,7 @@ The Knowledge Base Article portlet allows users to rate and comment on the artic
 
 ### Knowledge Base Section Portlet
 
-The Knowledge Base Section portlet allows administrators to selectively show articles associated with a specific section. For example, a news site might have a *World* section, a *Politics* section, a *Business* section, and an *Entertainment* section. In order to use sections, you need to set the `admin.kb.article.sections` property in your knowledge base portlet's `portlet.properties` file and redeploy the portlet. You can find the `portlet.properties` file in the knowledge base portlet's source directory. Updating the one in your server's directory won't work. Use comma delimited section names to set the property, like `admin.kb.article.sections=World,Politcs,Business,Entertainment`, for example. 
+The Knowledge Base Section portlet allows administrators to selectively show articles associated with a specific section. For example, a news site might have a *World* section, a *Politics* section, a *Business* section, and an *Entertainment* section. In order to use sections, you need to set the `admin.kb.article.sections` property in your knowledge base portlet's `portlet.properties` file and redeploy the portlet. You can find the `portlet.properties` file in the knowledge base portlet's source directory. Updating the one in your server's directory won't work. Use comma delimited section names to set the property, like `admin.kb.article.sections=World,Politics,Business,Entertainment`, for example. 
 
 Once you have defined some sections in your knowledge base's `portlet.properties` file, your users will see a multi-select box in the Add Article and Edit Article screens that allows them to select which section an article belongs to. You can add any number of Knowledge Base section portlets to a page and you can configure each portlet to display articles from any number of sections.
 
@@ -809,7 +809,7 @@ From the Add button, you can add documents, folders, and shortcuts just like on 
 
 **Image:** lets you upload a file that you would like the "Image" document type to apply to. By default, images are are described by author, license, and location fields.
 
-**Video:** lets you upload a file that you would like the "Video" document type to apply to. By default, videos are desribed by author, license, location, running time, and subtitles fields.
+**Video:** lets you upload a file that you would like the "Video" document type to apply to. By default, videos are described by author, license, location, running time, and subtitles fields.
 
 Any custom documents types that have been defined also appear in the Add menu If a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields.
 
@@ -867,7 +867,7 @@ All you have to do to define a metadata set is choose fields to use from the are
 
 **Text Box:** is just like the text field except you can enter multiple lines of text or separate paragraphs.
 
-Remember that metadata sets are reusable. Once your metaset has been created it can be included in any number of document types.
+Remember that metadata sets are reusable. Once they have been created they can be included in any number of document types.
 
 ## Tags
 
