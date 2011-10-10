@@ -4,6 +4,7 @@ Liferay Portal Enterprise Edition provides an implementation of a JSR-94 complia
 
 ### Why use a Rules Engine?  
 
+
 If you are not familiar with rules engines, you may be wondering why you would want to use one.  In most applications, complex rule processing often takes the form of nested `if-else` blocks of code which can be very difficult to decipher and to maintain. If rules change, a developer must work with a business user to define the new rules.  The developer must then read through the existing logic to understand what is happening and make the necessary modifications.  The changes must then be recompiled, tested, and redeployed.  A rules engine provides a means to separate the rules or logic of an application from the remaining code. Separating these rules provides several distinct advantages.  
 
 *  A rule engine allows for a more declarative style of programming where the rules define what is happening, without describing how it is happening.  This makes it much easier to read than nested 'if-else' blocks of code.  It's also easier to make changes without introducing bugs in your code.  
@@ -151,4 +152,4 @@ Following the initial rule in our example, there are three additional rules that
 
 For additional documentation on the Drools rules language, please see the official Drools documentation at [http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/). 
 
-As you can see from the Sample Rules Portlet, using a rules engine can be a very powerful way to decouple the rules of our application from the front-end and back-end code. These rules are written in a declarative language that business users could read and verify. Additionally, rule definitions can be modified without modifying the underlying Java code, re-compiling, or redeploying your applications. 
+As you can see from the Sample Rules Portlet, using a rules engine can be a very powerful way to decouple the rules of our application from the front-end and back-end code. These rules are written in a declarative language that business users could read and verify. Additionally, rule definitions can be modified without modifying the underlying Java code, re-compiling, or redeploying your applications.
