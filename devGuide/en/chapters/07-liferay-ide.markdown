@@ -39,12 +39,11 @@ This section is a detailed guide to install Liferay IDE.
 
 -   Java 5.0 JRE
 
--   [Eclipse Helios Java EE for developers
-    package](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
+-   [Eclipse Indigo Java EE (3.7.1)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr1)) or [Eclipse Helios Java EE (3.6.2)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
 
 ### Installation steps
 
-1.  Install Eclipse Helios or Galileo (unzip download file from above)
+1.  Install Eclipse Indigo or Helios (unzip download file from above)
 
 2.  Run eclipse executable (eclipse.exe)
 
@@ -55,9 +54,16 @@ This section is a detailed guide to install Liferay IDE.
 4.  In the “Work with” field, paste in one of the following update
     sites:
 
-1.  [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
+    *Eclipse Indigo Update Site*
+    [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
 
-2.  [http://releases.liferay.com/tools/ide/eclipse/helios/nightly/](http://releases.liferay.com/tools/ide/eclipse/helios/nightly/)
+    [http://releases.liferay.com/tools/ide/eclipse/indigo/nightly/](http://releases.liferay.com/tools/ide/eclipse/indigo/nightly/)
+    (Nightly builds are unstable but contain new features more quickly)
+
+    *Eclipse Helios Update Site*
+    [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
+
+    [http://releases.liferay.com/tools/ide/eclipse/helios/nightly/](http://releases.liferay.com/tools/ide/eclipse/helios/nightly/)
     (Nightly builds are unstable but contain new features more quickly)
 
 5.  After pasting in URL press enter
@@ -83,8 +89,8 @@ typing the URL of an update site:
 
 1.  Instead of typing in a URL, you can download the the archived update
     site from this link
-    [liferay-ide-eclipse-updatesite-1.2.2.zip](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/1.2.2/liferay-ide-eclipse-updatesite-1.2.2.zip/download)
-    .
+    [liferay-ide-eclipse-updatesite-1.4.0.zip](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/1.4.0/liferay-ide-eclipse-updatesite-1.4.0.zip/download)
+    
 
 2.  In Add Site dialog, click the "Archive" button and browse to the
     location of the downloaded zip file.
