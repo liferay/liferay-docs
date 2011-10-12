@@ -8,17 +8,17 @@ This chapter covers the following activities:
 
 -   *Portal Architechture:* How Liferay organizes your portal
 
-Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a “dashboard” application) so that the end user can see everything he or she interacts with at a glance.
+Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a "dashboard" application) so that the end user can see everything he or she interacts with at a glance.
 
 To achieve this, all the application functionality within Liferay Portal resides in fragments of the page called *portlets*. Portlets are web applications that run in a portion of a web page. Liferay's core is a portlet container that aggregates portlets on particular pages and displays them to users. In this way, one or many applications can reside on a page, and users can (at the administrator's discretion) arrange them however they like.
 
 Portlet applications, like servlet applications, are defined by a Java standard which various portal server vendors have implemented. The Java standard defines the portlet specification. A JSR-168 or JSR-286 standard portlet should be deployable on any portlet container which supports those standards. Portlets are placed on the page in a certain order by the end user and are served up dynamically by the portal server.
 
-Portal applications generally come in two flavors: 1) multiple portlets can be written to provide small amounts of functionality and then are aggregated by the portal server into a larger application, or 2) whole applications can be written to reside in only one or a few portlet windows. The choice is up to the application designers. Only developers have to worry about what happens inside the portlet itself. The portal server handles building out the page as it is presented to users.
+Portal applications generally come in two flavors: 1) multiple portlets which only provide small amounts of functionality individually, but are aggregated by the portal server into a larger application, or 2) whole applications which reside in only one application window. The flavor of an application comes is determined by the designers and developers - the portal server handles display the portlets to build the page as it is presented to users.
 
 Portlets are not difficult to build, and Java standard portlets can be written by any Java developer with experience in writing web applications. Liferay provides a Plugins Software Development Kit that makes it easy to design new portlet projects. For further information about the Plugins SDK, please see *Liferay Developer's Guide*, which is the companion volume to this one, or *Liferay in Action*, published by Manning Publications, which is the official guide to Liferay development.
 
-Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages are available on Github at  [https://github.com/liferay/liferay-plugins](https://github.com/liferay/liferay-plugins).
+Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages are available from Lifera'y public plugin repository on Github at  [https://github.com/liferay/liferay-plugins](https://github.com/liferay/liferay-plugins).
 
 ## Navigating Liferay
 
@@ -28,7 +28,7 @@ Liferay initially presents a very simple interface. Unauthenticated users can na
 ![tip](../../images/01-tip.png) Note: If your portal initially presents you with the demo web site, 7 Cogs, see chapter 12 in part 2 for removal instructions.
 ---
 
-To sign into Liferay for the first time, click the *Sign In* link. You'll next see the *Sign In Portlet*. This portlet allows a user (or a prospective user) to do several things: sign in to Liferay, create a new account on the portal, or have a password reminder emailed to you. An OpenID sign-in option is also available. You should use the default administrator account to sign in to the portal for the first time. If you were to create a new account on the portal for yourself now, it would be created using Liferay's defaults. This would mean that the account wouldn't have access to the administrative functions in the control panel you'll need in order to set up Liferay for your organization. The credentials of the default administrator user that you should use are:
+To sign into Liferay for the first time, click the *Sign In* link. You'll next see the *Sign In Portlet*. This portlet allows a user (or a prospective user) to do several things: sign in to Liferay, create a new account on the portal, or have a password reminder emailed to you. An OpenID sign-in option is also available. You should use the default administrator account to sign in to the portal for the first time. If you were to create a new account on the portal for yourself now, it would be created using Liferay's defaults. This would mean that the account wouldn't have access to the administrative functions in the control panel you'll need in order to set up Liferay for your organization. Instead of creating a new user now, log in with the default administrator account:
 
 **User Name:** test@liferay.com
 
@@ -36,7 +36,7 @@ To sign into Liferay for the first time, click the *Sign In* link. You'll next s
 
 ![Figure 1.1: Logging into Liferay Portal](../../images/01-logging-into-liferay-portal.png)
 
-As you can see, by default, Liferay users' email addresses are used for their user IDs. This can be changed later if you wish, but it's generally a good practice to keep it this way. Users' email addresses are not normally things they will forget, and they are unique to each user, so they make good candidates for user IDs.
+As you can see, by default, Liferay uses your email address, not a User Name or ID for authentification. This can be changed later if you wish, but it's generally a good practice to keep it this way. Users' email addresses are not normally things they will forget, and they are unique to each user.
 
 The first page that's displayed when a user logs in for the first time is the Terms of Use page. By default, users must agree to the terms of use before they can access the portal. Scroll to the bottom of the page and click *I Agree* to proceed. Note that as a portal administrator, you can customize the Terms of Use page or disable it altogether. Next, let's take a look at how to navigate once you're signed in. 
 
@@ -128,7 +128,7 @@ Before we dive into the user interface for adding and maintaining various portal
 ![tip](../../images/01-tip.png) Note: Prior to Liferay 6.1, independent sites were called communities and both organizations and communities could have their own sets of public and private pages. Starting with Liferay 6.1, organizations cannot directly have their own sets of pages, only sites can. Organizations need to have attached sites in order to have pages. This is just a reorganization of ideas intended to simplify how Liferay manages pages.
 ---
 
-A simple way to think about this is that your portal has users and various ways to group them together. Some of these groupings may be organized hierarchically by an administrator and other groupings may be created by the users themselves. For example, users from different organizations could create an independent site called “Dog Lovers” inspired by a common interest in dogs. Groupings for other functions that cut across the portal may be administrated via roles. For example, a Message Boards Administrators role could be created granting permissions to administer any message board in the portal. Users from multiple organizations or sites could be assigned to to this role.
+A simple way to think about this is that your portal has users and various ways to group them together. Some of these groupings may be organized hierarchically by an administrator and other groupings may be created by the users themselves. For example, users from different organizations could create an independent site called "Dog Lovers" inspired by a common interest in dogs. Groupings for other functions that cut across the portal may be administrated via roles. For example, a Message Boards Administrators role could be created granting permissions to administer any message board in the portal. Users from multiple organizations or sites could be assigned to to this role.
 
 The following figure illustrates the relationships between these portal concepts. In the figure, each arrow may be read using the words “can be a member of.” So this means that organizations can be members of sites, sites can be members of roles, users can be members of anything, and so on. This may seem complex but it provides a powerful mechanism for portal administrators to configure portal resources and security in a consistent and robust manner. It is important to note that the diagram illustrates only users and their collections. Permissions do not flow through all of these collections: permissions can be assigned to roles only.
 
@@ -144,7 +144,7 @@ Users can be collected in multiple ways. They can be members of organization hie
 
 ### User Groups
 
-User groups are simple, arbitrary collections of users, created by administrators. You can make a user group a member of a site. This makes each member of the user group a member of the site. Permissions cannot be directly assigned to user groups; they must be assigned to roles. If you assign a role to a user group then each member of the user group will be assigned that role (and thus the permissions defined by the role). Although user groups cannot have sites, they can have site templates which can be used to customize users' personal sites. We describe this in more detail below.
+User groups are simple, arbitrary collections of users, created by administrators. You can make a user group a member of a site or organization. This makes each member of the user group a member of the site or organization. Permissions cannot be directly assigned to user groups, but user groups can be assigned to roles. If you assign a role to a user group then each member of the user group will be assigned that role (and thus the permissions defined by the role). Although user groups cannot have sites, they can have site templates which can be used to customize users' personal sites. We describe this in more detail below.
 
 ### Roles
 
