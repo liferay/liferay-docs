@@ -54,7 +54,7 @@ At first glance, this .drl file looks a lot like a Java class file.   This examp
 	##
 	
 
-Following the comments is a *package* declaration.  The package declaration is optional in a Drools, but if it appears, it must be at the beginning of the file.  The package denotes a collection of rules.  Unlike Java, the package name does not represent a folder structure, it is only a unique namespace.  The *;* at the end of the package declaration and all other statements is optional in 
+Following the comments is a *package* declaration.  The package declaration is optional in a Drools, but if it appears, it must be at the beginning of the file.  The package denotes a collection of rules.  Unlike Java, the package name does not represent a folder structure, it is only a unique namespace.  The *;* at the end of the package declaration and all other statements is optional.  
 
   package com.liferay.sampledrools.dependencies;
 
