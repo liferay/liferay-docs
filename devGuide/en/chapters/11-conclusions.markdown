@@ -1,3 +1,4 @@
+
 # Conclusions
 
 Liferay Portal is a very flexible platform that allows creating a wide

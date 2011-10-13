@@ -43,9 +43,9 @@ it should be placed inside a new portlet. Create a file named
 Plugins SDK and add the following content:
 
     <?xml version="1.0"?>
-    <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder
-    6.0.0//EN"
-    "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+    <!DOCTYPE service-builder PUBLIC
+    "-//Liferay//DTD Service Builder 6.1.0//EN"
+    "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
     <service-builder package-path="com.sample.portlet.library">
         <namespace>Library</namespace>
         <entity name="Book" local-service="true" remote-service="true">
@@ -94,7 +94,7 @@ Columns specified in `service.xml` will be created in the
 database with a data type appropriate to the specified Java type. Accessors
 in the model class will automatically be generated for these attributes.
 
-**Tip**: Always consider adding two long fields called *groupId* and
+![tip](../../images/tip-pen-paper.png)**Tip:**: Always consider adding two long fields called *groupId* and
 *companyId* to your data models. These two fields will allow your
 portlet to support the multi-tenancy features of Liferay so that each
 organization (for each portal instance) can have its own
@@ -107,8 +107,8 @@ directory and enter this command:
 
 	ant build-service
 
-The service has been generated successfully when you see “BUILD
-SUCCESSFUL" In the terminal window, you should see that a large number
+The service has been generated successfully when you see BUILD
+SUCCESSFUL In the terminal window, you should see that a large number
 of files have been generated. An overview of these files is provided
 below:
 
@@ -231,7 +231,7 @@ Service Builder looks through `BookLocalServiceImpl` and automatically
 copies the signatures of each method into the interface. You can now add
 a new book to the database by making the following call
 
-    BookLocalServiceUtil.addBook(userId, “A new title");
+    BookLocalServiceUtil.addBook(userId, "A new title");
 
 ### Overview of *service.properties*
 
@@ -455,7 +455,7 @@ These two taglibs create appropriate form controls that allow the
 user to search for a tag or create a new tag, and select
 a existing category.
 
-![image](../../images/08-apis-and-frameworks_html_5c790363.png)**Tip:**If you are
+![tip](../../images/tip-pen-paper.png)**Tip:**If you are
 using Liferay's Alloy Form taglibs, creating fields to enter tags
 and categories is even simpler. You just need to use <aui:input
 name="tags" type="assetTags" /> and <aui:input name="categories"
