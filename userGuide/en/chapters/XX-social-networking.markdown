@@ -10,7 +10,9 @@ Liferay has a constantly improving set of social features which enable you to bo
 	
 Liferay has many portlets available for social interaction and collaboration. Some of these portlets are designed to help you work together as a team, while others are simply designed to foster social interactions between team members at your organization.
 
-Some of the social portlets are designed for use on the public pages of your portal, while others are designed to be used as part of a users personal pages. As you might guess, the portlets which are desigend for personal page use tend to be more focused on simple social interactions, while the ones which can be placed on any site are more beneficial for improving productivity. 
+Some of the social portlets are designed for use on the public pages of your portal, while others are designed to be used as part of a users personal pages. As you might guess, the portlets which are desigend for personal page use tend to be more focused on simple social interactions, while the ones which can be placed on any site are more beneficial for improving productivity.
+
+Unless otherwise noted, these portlets are all provided with minimal configuration options. They generally only have the option to alter view permissions, but don't have any way to change display options or the like.
 
 ### General Use Portlets
 
@@ -21,37 +23,43 @@ There are several social portlets that are designed for use on regular portal pa
 
 This portlet is simply a list of all of the Members of the current site. The only configuration options you have available are changing it's permission, so that, for example, someone who is not a member of the current site would be unable to view to portlet or any of the user information it contains.
 
-![image](../../images/XX-social-networking-members-portlet.png)
-*Illustration 1: The Members Portlet*
+![Figure X.X: The Members Portlet](../../images/XX-social-networking-members-portlet.png)
+
 
 #### Meetups
 
 The Meetups portlet is designed to be a tool for creating casual meetings for users of your portal. Anyone can create a "Meetup" and give it a Title, Description, Date/Time, a maximum number of attendees, Price, and provide an image. Any meetups that are created will be displayed in the portlet for anyone to view. Once a meetup is created, users will be able to register, to help the organizer keep track of who's coming, and ensure that there aren't too many people coming.
 
-![image](../../images/XX-social-networking-meetups.png)
-*Illustration 2: The Meetups Portlet*
+The options for creating a meetup are essentially the same as those for creating a calendar event, and the Meetups portlet shared some general functionality with the Calendar. For more information on the Calendar portlet and configuring events, see Chapter 4.
+
+![Figure X.X: The Meetups Portlet](../../images/XX-social-networking-meetups.png)
+
 
 #### Activities
 
-The Activities portlet comes in two varieties: the standard Activities portlet and the Members' Activities portlet. The basic function of the portlet is the same - they both displaya feed of the asset creation and management activities of users on the portal. The difference is that Activities will display what's going on across the entire portal, while Members' Activities will only display what members of the current site have been doing.
+The Activities portlet comes in two varieties: the standard Activities portlet and the Members' Activities portlet. The basic function of the portlet is the same - they both display a feed of the asset creation and management activities of users on the portal. The difference is that Activities will display what's going on across the entire portal, while Members' Activities will only display what members of the current site have been doing.
 
-![image](../../images/XX-social-networking-activities.png)
-*Illustration 3: The Activitiess Portlet*
+![Figure X.X: The Activitiess Portlet](../../images/XX-social-networking-activities.png)
+
 
 #### Top Users
 
-Top Users is a portlet which integrates with Liferay's Social Equity system (See pg. 123 for more information on Social Equity). It calculates a score based on the contributions that the user makes to the portal, whether by creating in portlets like the Blog and Wiki, or by answering questions on the Message Boards. Each user name is displayed with their picture, score, and rank.
+Top Users is a portlet which integrates with Liferay's Social Equity system. It calculates a score based on the contributions that the user makes to the portal, whether by creating in portlets like the Blog and Wiki, or by answering questions on the Message Boards. Each user name is displayed with their picture, score, and rank.
 
 Scores are updated in real time, while ranks are only updated daily, so it's possible that a user with a higher current score might be displayed with a lower rank until the ranks refresh for the day. 
 
 #### Map
 
+The map is a tool which enables you to view the locations of other users on the portal, both locally and internationally. In order to configure the map, you will need to install the IP Geolocator portlet (available from Liferay's community repository) and configure Maxmind GeoIP or GeoLite on your server. For more information on configuring geolocation services, visit the MaxMind support page at http://www.maxmind.com/app/installation?city=1
+
+![Figure X.X: The Map portlet](../../images/xx-social-networking-map.png)
+
 ### Personal Portlets
 
 In addition to the portlets available for general use, there are a handful that can only be used on personal pages. These portlets can be used to create a profile page, similar to Facebook or Google+. 
 
-![image](../../images/XX-social-networking-personal-portlets.png)
-*Illustration 5: Social Networking Portlets in a Facebook-like layout*
+![Figure X.X: Social Networking Portlets in a Facebook-like layout](../../images/XX-social-networking-personal-portlets.png)
+
 
 #### Summary
 
@@ -66,13 +74,61 @@ The Wall portlet provides a place for users to leave messages on other users' pr
 
 The Friends portlet simply shows a list of all of the user's friends with links to their profiles. The Friends Activities portlet will show an overview of actions done by a user's friends on the portal or in various sites.
 
+### Liferay's Social Tools in Action
+
+Now that we've taken a good look at all of the tools that Liferay provides for creating a social experience on your portal, let's take a look out how we can use all of these tools to really leverage the power of social interactions.
+
+#### Configuring User Pages
+
+To get started with Liferay's social features, let's set up our users' personal public pages to include social apps. Because of Liferay's flexible page layout options, we have a large number of options for how to set the pages up. For simplicities sake, we'll make something that's fairly similar to the original Facebook layout.
+
+##### Personal Page Configuration Options
+
+Before we actually do the layout, we need to configure Liferay so that everyone (or some subset of everyone) has the same social features available to them. We have a couple of options on how to do this, with some advantages and disadvantages to each.
+
+-User Groups: Placing users into a group enables you to create a template for their personal public and private pages. Through *Portal Settings* in the Control Panel, we can set the *Default User Associations* to have all users be the member of a particular group. The advantage of this is that it can be managed entirely through the GUI, and it's fairly easy to configure. The disadvantage is that without further configuration, users would be able to modify the layouts, and potentially remove social features from their pages.
+
+-Portal Properties Configuration: You can specify a default layout and portlets for personal pages in your portal-ext.properties file, either by leveraging an option to specify via plain text, or by pointing to a LAR file which contains the desired layout. The advantage of this method is that it will apply to all users of the portal. The disadvantage is that you will potentially need to do some trial and error editing to get the layout correct. For more information on this method, see *Default User Private Layouts* and *Default User Public Layouts* in the **Chapter 14: Configuring Liferay's Properties.**
+
+Whichever method you decide to go with, if you don't want users to be able to modify their own pages, you will need to set the layouts to be static by adding the following line to your *portal-ext.properties* file:
+
+    layout.user.public.layouts.modifiable=false
+    
+For our example, we'll use the user group method to create the layouts. As an administrator, go to the Control Panel, and select *Site Templates* from under the *Portal* section. Click *Add* and fill out the form, unchecking the boxes for *Allow Modifications* and *Allow Layout Additions*, and click *Save*.
+
+![Figure X.X: Creating the Site Template]](../../images/social-networking-site-template.png)
+
+Note: Setting your portal properties to not allow modifications to personal page layouts, will disable those modifications for all pages for all users. Disabling Layout Additions and Modifications in the Site Template will only disable them for the specific page, but will not disable a user's ability to add more pages, or modify additional pages.
+
+Once you've created the template, choose *Actions -> Manage Pages* for *Social Layout* from the Site Templates page, then click *View Pages*. Let's change the name of the page from the default to *My Profile* and add some portlets to the page. In the screenshot below, we removed the borders to make the page look more integrated, and also used Nested Portlets to make the layout more interesting.
+
+![Figure X.X: Social Profile Site Template]](../../images/social-networking-profile-template.png)
+
+Back in the Control Panel select *Users and Organizations* from the *Portal* section. Once there, click on *Add -> User Group*. Name the group *Social Users*. When creating a user group, you have the option to set a **Personal Site Template**; use this option and select the Social Layout for your Public Pages.
+
+Now, go to *Portal Settings* and select *Users* from the submenu. From the Users page, go to the *Default User Associations* tab and enter *Social Users* in the User Groups section. Now all users on the portal will get a Social Profile page. Now the question is, how do we get one user to another users fancy new profile page?
+
+##### Connecting Users Through Collaboration
+
+There are many ways that social networks connect users, generally these involve some kind of mutual interest or experience. On a site like Facebook, you can connect with people that you went to school with, worked with, or that you have some other personal connection with. On a music based networking site like Last.fm, you can connect with people who like the same bands that you do, or have similar tastes. With Liferay's Social Networking, collaboration is the key to connection. 
+
+Using to our example site of **nosester.com** we can take a closer look at ways that users can be connected through hierarchies, and ways that they can connect to each other. We'll take a look at a handful of portlets, both those that 
+
+The Directory portlet can provide a simple way that users can connect. If we have a Site dedicated to people with big noses, we can place a directory portlet on that site, listing all of the users that have joined that particular site, and users can connect simply by requesting other users on that list become their friend. This wouldn't be the worst way to get users connected, but it probably won't be particularly effective. Why not? Well, other than sharing some very basic common interests, we haven't really had any interactions.
+
+The Activities portlet can provide a similar, but more effective means of connection. The activities portlet can give users a good idea of who the active users are across the site or the portal, and thus who might be the best users to connect with. The potential flaw with this type of connection is that users who participate less won't be making new connections and might find little reason to continue using the site, while users who were initiatally participating more may be overwhelmed with the volume of new friends.
+
+Probably the most effective way to connect users is connecting users with other users that they directly interact with. Every portlet in the Collaboration category provides information on the user's contributing, whether by creating a thread in a message board, editing a wiki article, blogging, or creating a calendar event. Users can use these to connect based on content - if I find your blog interesting, or if you answer my question on the message board, we can use that as a point to connect as friends to further our interactions. This way, instead of our connection being forced or abitrary, we've connected based on the fact that we've directly interacted and share a common interest - just like people did before they had the internet.
+
+"Friend" is only the default way to connect users social on Liferay portal. Depending on your design, you can also connect people through Site and Organization membership. You can also configure relationships like "Enemy" - if you block another user, they become your "enemy." Advanced Social Networking features are coverd in the Liferay Developers Guide.
+
 ## Social Equity
 
 When you have a lot of user interaction on your web site, sometimes it is helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. In order to better show which users are making real, valuable contributions, Liferay introduced Social Equity system with Liferay 6.0.
 
 Currently Social Equity is available for the Blogs, Message Boards, and Wiki applications. Each category contains a rating for Information Value, Information Lifespan, Daily Limit, Participation Value, Participation Lifespan, and Daily Limit.
 
-[[SCREENSHOT NEEDED]]
+![Figure X.X: Social Equity]](../../images/social-networking-equity.png)
 
 **Information Value:** Indicates how many points a user receives for the information content of a specific action.
 

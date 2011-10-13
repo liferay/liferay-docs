@@ -1324,6 +1324,11 @@ server, and that you have access to the WebLogic console.
 If you still have the mainWebApp module installed, you will need to
 remove it first.
 
+*Note:* There is a known issue with the Sun
+and JRockit JVMs bundled with WebLogic 10.3.2
+(see [http://bugs.sun.com/view_bug.do?bug_id=6795561](issue)). To resolve, use
+Sun JVM 1.6.0_u24 or JRockit JVM 1.6.0_24.
+
 ##### Dependency Jars
 
 1.  Navigate to the folder which corresponds to the domain to which you
