@@ -328,7 +328,7 @@ exists inside a Plugins SDK.
 ![Figure 7.x](../../images/ide-plugin-type-and-version.png)
 
 4.  Next you will need to select a Liferay Runtime to configure on the
-    project once it is imported. If you don’t have a Liferay Runtime,
+    project once it is imported. If you don't have a Liferay Runtime,
     use the New... button to create a new Liferay portal runtime (tomcat
     bundle only supported).
 
@@ -357,7 +357,7 @@ single step.
 
 ![Figure 7.x](../../images/ide-import-plugins-sdk.png)
 
-3.  If you don’t have any SDKs configured in Liferay IDE use the
+3.  If you don't have any SDKs configured in Liferay IDE use the
     "configure" link to add a setting that points to the Plugins SDK
     that you want to import projects from.
 
@@ -385,7 +385,7 @@ single step.
 8.  Select the Liferay runtime that you want to setup for the imported
     projects.
 
-9.  If you don’t have a liferay runtime you can add one with the
+9.  If you don't have a liferay runtime you can add one with the
     "New..." button.
 
 ![Figure 7.x](../../images/ide-target-runtime-server.png)
@@ -406,7 +406,7 @@ steps can be used to convert the project.
 1.  In Eclipse, right click the eclipse project that you want to
     convert, select Liferay -\> Convert to Liferay plug-in project.
 
-    Note: If you don’t have a convert action available it means the
+    Note: If you don't have a convert action available it means the
     project is either already a Liferay IDE project or it is not a
     faceted project with Java and Dynamic Web project facets configured
     and will need to be configured accordingly
@@ -424,7 +424,7 @@ steps can be used to convert the project.
 
 
 3.  Select the Liferay runtime that you wish to set on the project. If
-    you don’t have a Liferay Runtime define use the "New..." action to
+    you don't have a Liferay Runtime define use the "New..." action to
     create one.
 
 ![Figure 7.x](../../images/ide-target-runtime-server.png)
@@ -460,7 +460,7 @@ options for importing this project.
     IDE project.
 
 If you have any errors, it may be that either the SDK name used in that
-project or the runtime id used doesn’t exist in your new workspace. You
+project or the runtime id used doesn't exist in your new workspace. You
 can modify the SDK name in the Project Properties -\> Liferay page and
 you can modify the targeted runtime in the Project properties -\>
 Targeted Runtimes page.
@@ -486,4 +486,4 @@ processes has been successful.
 
 ![Figure 7.x](../../images/ide-project-facets.png)
 
-## Developing on a Remote Server (new)
+## Developing on a Remote Server (new TODO)

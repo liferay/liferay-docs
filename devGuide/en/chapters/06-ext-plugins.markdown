@@ -239,7 +239,7 @@ inside your application server. You must now restart your application
 server.
 
 Once the server has started, log in as an administrator and go to
-*Control Panel -> Users*. Edit an existing user and verify that the
+*Control Panel -\> Users*. Edit an existing user and verify that the
 right navigation menu only shows the five sections that were referenced
 from the `users.form.update.main` property.
 
@@ -546,7 +546,7 @@ If you really need to change a core portal-impl class and this class
 cannot be replaced in any configuration file, then the best way to avoid
 conflicts and easily merge with a new portal version is to:
 
-1.  Rename original class (e.g. `DeployUtil` ->  `MyDeployUtil`)
+1.  Rename original class (e.g. `DeployUtil` -\>  `MyDeployUtil`)
 
 2.  Create new subclass with old the name (e.g `DeployUtil extends MyDeployUtil`)
 

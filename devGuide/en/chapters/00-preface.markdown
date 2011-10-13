@@ -1,6 +1,4 @@
 
-# Preface
-
 This guide was written as a quick reference to help you get started
 developing on the Liferay Portal platform. It is a guide for those who
 want to get their hands dirty using Liferay's framework and APIs to
@@ -32,4 +30,3 @@ page
 ([http://www.](http://www.liferay.com/web/guest/about_us/contact_us)[liferay](http://www.liferay.com/web/guest/about_us/contact_us)[.com/web/guest/about_us/contact_us](http://www.liferay.com/web/guest/about_us/contact_us)).
 We are here to serve you, our users and customers, and to help make your
 experience using Liferay Portal the best it can be.
-

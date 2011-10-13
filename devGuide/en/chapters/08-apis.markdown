@@ -286,11 +286,11 @@ The following invokes the same operations using PHP and the PHP SOAP Client:
     ?>
 \  
 
-### JSON Web Services (new)
+### JSON Web Services (new TODO)
 
 TODO consider calling a method that uses service context (like an update method)
 
-## RESTful Interfaces (new)
+## RESTful Interfaces (new TODO)
 
 TODO Include Atom and loose serialization with JSON 
 
@@ -922,8 +922,9 @@ Portal has a lot of that work done for you. You mainly focus your
 efforts on any custom Java objects you've built. You're now well
 equipped to implement security in your custom Liferay portlets!
 
-## Search Engine API (new)
+## Search Engine API (new TODO)
 
-### Faceted Search (new)
+### Faceted Search (new TODO)
 
-### Using Multiple Search Engines (new)
+### Using Multiple Search Engines (new TODO)
+

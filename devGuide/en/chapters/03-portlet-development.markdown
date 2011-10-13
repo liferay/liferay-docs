@@ -536,7 +536,7 @@ repeated) and *when the content is being produced* (rendered):
     portlets in the page after the action phase (which may or not
     exist). This includes the portlet that also had executed its action
     phase. It's important to note that the order in which the render
-    phase of the portlets in a page gets execute dis not guaranteed by
+    phase of the portlets in a page gets executed is not guaranteed by
     the portlet specification. Liferay has an extension to the
     specification through the element `render-weight` in
     `liferay-portlet.xml`. Portlets with a higher render weight will be

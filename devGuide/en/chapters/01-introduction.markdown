@@ -26,8 +26,8 @@ of plugins that you can use in each case.
 
 ## Developing applications for Liferay
 
-According to Wikipedia “A web application is an application that is
-accessed over a network such as the Internet or an intranet.” A portal
+According to Wikipedia "A web application is an application that is
+accessed over a network such as the Internet or an intranet." A portal
 application is a web application that can coexist with many other
 applications in a civilized way and also that can leverage functionality
 provided by the portal platform to reduce the
@@ -273,7 +273,7 @@ plugins.
 
 ![tip](../../images/tip-pen-paper.png)**Tip:** If you have
 developed for Liferay 5.2 or before, you may be familiar with what was
-known as “Extension Environment”. Ext plugins are a new feature in
+known as "Extension Environment". Ext plugins are a new feature in
 Liferay 6.0 which replace the extension environment in order to simplify
 its development. It is possible to automatically convert any existing
 Extension Environment into a plugin. Check the chapter *Migrating old

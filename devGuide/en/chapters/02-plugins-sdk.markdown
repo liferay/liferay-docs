@@ -143,3 +143,4 @@ the Plugins SDK and then copy the resulting project folder to your IDE
 of choice. This method requires some manual modification of the ant
 scripts, but it makes it possible to conform to the strict standards
 some organizations have for their Java projects.
+
