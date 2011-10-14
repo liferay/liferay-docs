@@ -389,33 +389,53 @@ There are two ways to enable distributed caching. If you use the default setting
 
 The super-easy way of enabling distributed caching is simply to enable Cluster Link. If you've already done this to enable distributed search engine indexes, then your job is already done. What this does is enable some RMI (Remote Method Invocation) cache listeners that are designed to replicate the cache across a cluster. 
 
-Once you enable distributed caching, of course, you should do some due diligence and test your system under a load that best simulates the kind of traffice that your system needs to handle. If you'll be serving up a lot of message board messages, your script should reflect that. If web content is the core of your site, your script should reflect that too. 
+Once you enable distributed caching, of course, you should do some due diligence and test your system under a load that best simulates the kind of traffic that your system needs to handle. If you'll be serving up a lot of message board messages, your script should reflect that. If web content is the core of your site, your script should reflect that too. 
 
-As a result of a load test, you may find that the default distributed cache settings aren't optimized for your site. In this case, you'll need to tweak the settings yourself. You can modify the Liferay installation directly or you can use a plugin to do it. Either way, the settings you change are the same. The benefit of a plugin is that you can install the plugin on each node of your cluster pretty quickly, without taking down the cluster, so we'll cover that first. If you're not a developer, don't worry--even though you'll create a plugin, you won't have to write any code. 
+As a result of a load test, you may find that the default distributed cache settings aren't optimized for your site. In this case, you'll need to tweak the settings yourself. You can modify the Liferay installation directly or you can use a plugin to do it. Either way, the settings you change are the same. Let's see how to do this with a plugin first. 
 
-Since we're assuming you're an administrator and not a developer, we'll take the easiest route. If you're a Liferay EE customer, download Liferay Developer Studio from the Customer Portal. If you're not a Liferay EE customer, download Eclipse and install Liferay IDE from the Eclipse Marketplace. Download the Plugins SDK for your edition of Liferay from either the Customer Portal (EE) or the Downloads page on liferay.com. Connect Liferay IDE to your Plugins SDK using the instructions found in the *Liferay Developer's Guide*. 
+#### Modifying the cache settings with a plugin
 
-Next, create a hook plugin by selecting *File* &rarr; *New* &rarr; *Liferay Project*. 
+The benefit of a plugin is that you can install the plugin on each node of your cluster pretty quickly, without taking down the cluster, so we'll cover that first. If you're not a developer, don't worry--even though you'll create a plugin, you won't have to write any code. 
 
-Configuring distributed caching requires the modification of the `portal-ext.properties` file as well as one or more other files depending on what you want to cache. The first thing you'll want to do is determine where on your server you will want to store your cache configuration files. This will have to be somewhere on Liferay's classpath, so you'll need to find where your application server has stored the deployed version of Liferay, and create a folder in Liferay's `WEB-INF/classes` folder to store the files. Because the original, default files are stored inside of a .jar file, you will need to extract them to this area and then tell Liferay (by use of the `portal-ext.properties`* *file) where they are.
+Since we're assuming you're an administrator and not a developer, we'll take the easiest route. If you're a Liferay EE customer, download Liferay Developer Studio from the Customer Portal. Set it up with all the defaults from the first start wizard, and you're good to go (skip the next paragraph). 
 
-For example, say you are running Liferay on Tomcat. Tomcat stores the deployed version of Liferay in `<Tomcat Home>/webapps/ROOT`. Inside of this folder is the folder structure `WEB-INF/classes`*. *You can create a new folder in here called `myehcache`* *to store the custom versions of the cache configuration files. Copy the files from the `/ehcache` folder—which is inside the `portal-impl.jar`* *file*—*into the `myehcache` folder you just created. You then need to modify the properties in `portal-ext.properties`* *that point to these files. Copy / paste the **Hibernate** section of `portal.properties`* *into your `portal-ext.properties`* *file and then modify the `net.sf.ehcache.configurationResourceName` property to point to the clustered version of the configuration file that is now in your custom folder:
+If you're not a Liferay EE customer, download Eclipse and install Liferay IDE from the Eclipse Marketplace. Download the Plugins SDK for your edition of Liferay from either the Customer Portal (EE) or the Downloads page on liferay.com. Connect Liferay IDE to your Plugins SDK using the instructions found in the *Liferay Developer's Guide*. 
 
-    net.sf.ehcache.configurationResourceName=/myehcache/hibernate-clustered.xml
+Next, create a hook plugin by selecting *File* &rarr; *New* &rarr; *Liferay Project*. Select *Hook* as the project type and give your project a name. Click *Finish*, and your project is created. 
+
+In your project, create a text file called `portlet.properties` in the `docroot/WEB-INF/src` folder. This file can override properties in your portal just like `portal-ext.properties`. Into this file place the following three properties: 
+
+	net.sf.ehcache.configurationResourceName=
+	ehcache.single.vm.config.location=
+	ehcache.multi.vm.config.location=
+	
+Liferay's configuration files are, of course, used by default. If you're overriding these properties, it's because you want to customize the configuration for your own site. A good way to start with this is to extract Liferay's configuration files and then customize them. If you're running an application server (such as Tomcat) that allows you to browse to the running instance of Liferay, you can extract Liferay's configuration files from Liferay itself. If you're not, you can extract them from Liferay's .war file or Liferay's source code. In either place, you'll find the files in the `portal-impl.jar` file, which is in Liferay's `WEB-INF/lib` folder. The files you want are `hibernate-clustered.xml`, `liferay-single-vm.xml`, and `liferay-multi-vm-clustered.xml`, and they'll be in the `/ehcache` folder in this .jar. Once you have these, make a subfolder of the `docroot` folder in your project. Place the files you extracted into this folder, and then specify this folder in the properties above. 
+
+For example, if you created a folder called `custom_cache` in your project's `docroot` folder, you'd copy the three XML configuration files (`hibernate-clustered.xml`, `liferay-single-vm.xml`, and `liferay-multi-vm-clustered.xml`) there. Then you'd edit your `portlet.properties` and specify your configuration files in the three properties above: 
+
+	net.sf.ehcache.configurationResourceName=/custom_cache/hibernate-clustered.xml
+	ehcache.single.vm.config.location=/custom_cache/liferay-single-vm.xml
+	ehcache.multi.vm.config.location=/custom_cache/liferay-multi-vm-clustered.xml
+	
+Save the file and deploy the plugin (deploying plugins is covered in the *Liferay Developer's Guide*), and the settings you've placed in those files will override the default Liferay settings. In this way, you can tweak your cache settings so that your cache performs optimally for the type of traffic generated by your site. The strength of doing it this way is that you don't have restart your server to change the cache settings. This is a great benefit, but beware: since Ehcache doesn't allow for changes to cache settings while the cache is alive, reconfiguring a cache while the server is running will flush the cache. 
+
+There is, of course, another way to do this if you don't want to create a plugin. It requires you to restart the server to enable the new cache settings, but you don't have to work with any developer tools to do it. 
+
+#### Modifying the Ehcache settings directly
+
+This method is pretty similar to the plugin method, except that you have to modify the Liferay installation directly. You'll still need to extract Liferay's configuration files as described in the previous section. Next, shut down your server and find the location in the server where Liferay is installed (this may not be possible on all application servers, and if this is the case, you'll need to use the plugin method described above). For example, say you're running Liferay on Tomcat. Tomcat stores the deployed version of Liferay in `[Tomcat Home]/webapps/ROOT`. Inside this folder is the folder structure `WEB-INF/classes`. You can create a new folder in here called `custom_cache` to store the custom versions of the cache configuration files. Copy the files you extracted from Liferay into this folder.  
+
+You then need to modify the properties in `portal-ext.properties` that point to these files. Copy / paste the **Hibernate** section of `portal.properties`* *into your `portal-ext.properties` file and then modify the `net.sf.ehcache.configurationResourceName` property to point to the clustered version of the configuration file that is now in your custom folder:
+
+    net.sf.ehcache.configurationResourceName=/custom_cache/hibernate-clustered.xml
 
 Now that Liferay is pointing to your custom file, you can modify the settings in this file to change the cache configuration for Hibernate.
 
 Next, copy / paste the *Ehcache* section from the `portal.properties` file into your `portal-ext.properties` file. Modify the properties so that they point to the files that are in your custom folder. For example:
 
-    ehcache.multi.vm.config.location=/**myehcache**/liferay-multi-vm.xml
+    ehcache.multi.vm.config.location=/custom_cache/liferay-multi-vm-clustered.xml
 
-If you are going to enable distributed clustering, uncomment the following line and point it to your custom version of the file:
-
-    ehcache.multi.vm.config.location=/**myehcache**/liferay-multi-vm-clustered.xml
-
-You can now take a look at the settings in these files and tune them to fit your environment and application.
-
-Alternatively, if your Liferay project is using the Ext plugin to make customizations to Liferay, you can place your cache configuration in the extension environment. The settings there will override the default settings that ship with Liferay. If you wish to do this, you can create new versions of the files in `ext-impl/src/ehcache`. The files should be have with `-ext.xml`tacked onto the end of the file name. For example, the custom version of `hibernate.xml`* *should be called `hibernate-ext.xml`*, *and the custom version of` liferay-multi-vm-clustered.xml`* *should be called `liferay-multi-vm-clustered-ext.xml`*. *You can then modify the files and tune them to fit your environment / application, and they will be deployed along with the rest of your extension environment.
+You can now take a look at the settings in these files and tune them to fit your environment and application. Let's see how to do that next. 
 
 #### Hibernate Cache Settings
 
