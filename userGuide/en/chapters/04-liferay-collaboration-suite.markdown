@@ -16,21 +16,23 @@ This chapter will focus on how to use Liferay's collaboration suite. You will le
 
 -   Wikis
 
+-   Knowledge Base Articles
+
 -   Documents and Media Libraries
 
-We will discuss how these features can work together to provide an enhanced experience for your users and give you the tools to build a dedicated community.
+We will discuss how these features work together to provide an enhanced experience for your users and enable you to build an active community.
 
 ## Scopes
 
-As we learned earlier, roles can be scoped by the portal, by a site, or by an organization. A role will only take effect within its scope. For example, a Message Boards Administrator role with complete access to the Message Boards portlet will have different permissions based on the role's scope. If it's a portal role, members will have permission to administer message boards across the entire portal. If it's a site role, members will only have permission to administer message boards within the site that assigned the role to them. If it's an organization role, members will only have permission to administer message boards within the site of the organization that assigned the role to them.
+As we learned earlier, roles can be scoped by the portal, by a site, or by an organization. A role will only take effect within its scope. For example, a Message Boards Administrator role with complete access to the Message Boards portlet will have different permissions based on the role's scope. If it's a portal role, members will have permission to administer message boards across the entire portal. If it's a site role, members will only have permission to administer message boards within the site that assigned the role to them. For organizations with sites, site roles are automatically assigned to organization members based on the organization roles they have. So for an organization-scoped Message Boards administrator role, members will only have permission to administer message boards within the site of the organization that assigned the role to them. 
 
-We also use the word *scope* to refer to the data set of a portlet. By default, when a portlet is added to a page in a site, it is *scoped* for that site. This means that its data belongs to that site. If the portlet is added to a page in a different site, it will employ a completely different data set. This is how the Message Boards portlet can be placed in one site and have one set of categories and threads, and also be placed in a different site and contain a completely different set of categories and threads.
+We also use the word *scope* to refer to the data set of a portlet. By default, when a portlet is added to a page in a site, it is *scoped* for that site. This means that its data belongs to that site. If the portlet is added to a page in a different site, it will employ a completely different data set. This enables you to place a Message Boards portlet in one site with one set of categories and threads, and place another Message Boards portlet in different site with a different set of categories and threads.
 
-A consequence of scoping by site is that you can only have one Message Boards portlet per site. If you add one Message Boards portlet to a page in a site and you add another Message Boards portlet to a different page in the same site, the second Message Boards portlet will contain exactly the same data as the first. This is because, by default, the Message Boards portlet is scoped by site. Many of Liferay's other portlets, by default, are scoped by site.
+Scoping by site means that you can only have one Message Boards portlet per site. If you add one Message Boards portlet to a page in a site and add another Message Boards portlet to a different page in the same site, the second Message Boards portlet will contain exactly the same data as the first. This is because, by default, the Message Boards portlet is scoped by site. Many of Liferay's other portlets also default to being scoped by site.
 
-To avoid this limitation, some Liferay portlets can be scoped by page. The data sets of page-scoped portlets serve a single page, not an entire site. If you set the scope of a portlet to *page* instead of *site*, you can add any number of these portlets to different pages, and they will have different sets of data. This allows you to have more than one message board per site if you wish. All portlets, however, default to the “native” configuration, and have their scopes set to the site where they are placed.
+To avoid this limitation, many Liferay portlets can be scoped by page. The data sets of page-scoped portlets serve a single page, not an entire site. If you set the scope of a portlet to *page* instead of *site*, you can add any number of these portlets to different pages, and they will have different sets of data. This allows you to have more than one message board per site if you wish. All portlets, however, default to the “native” configuration, and have their scopes set to the site where they are placed.
 
-Unless otherwise noted, all of the portlets in this chapter support scoping by portal (global), site (default), or page (select layout &rarr; current page). This grants you some flexibility in how you want to set up your portal. If you want to change the scope, it only takes a few simple steps.
+Unless otherwise noted, all of the portlets in this chapter support scoping by portal (global), site (default), or page (select layout &rarr; current page). This grants you some flexibility in how you want to set up your portal. You can configure the scope of a portlet with just a few simple steps.
 
 1.  Click the *Menu* icon in the portlet window (the wrench).
 
@@ -44,7 +46,7 @@ Unless otherwise noted, all of the portlets in this chapter support scoping by p
 
 ![Figure 4.1: Changing the scope of a portlet](../../images/05-changing-portlet-scope.png)
 
-That's all it takes to change the scope for a particular portlet instance. By setting the scope to *Current Page*, you can add as many of these portlets to a particular site as you want, provided they all are added to different pages.
+That's all it takes to change the scope for a particular portlet instance. By setting the scope to *Current Page*, you can add as many of these portlets to a site as you want, provided they all are added to separate pages.
 
 ## Archived Setups
 
@@ -52,21 +54,23 @@ Another useful feature of Liferay's portlets is Archived Setups. Once you have c
 
 To create an archived setup, click the *Configuration* option from the menu in the portlet's title bar. If the current settings of the portlet you are configuring are the ones you want to archive, click the *Archive/Restore Setup* link. If not, change and save the settings until you have the portlet configured the way you want it, and then click the *Archive/Restore Setup* link.
 
-There is only one field to fill out. Enter a name for your archive and click *Save*. You should now see your archive in the list. If you ever need to revert the portlet to these archived settings, you can click *Actions → Restore* next to the archived setup you want to restore.
+There is only one field to fill out. Enter a name for your archive and click *Save*. You should now see your archive in the list. If you ever need to revert the portlet to these archived settings, you can click *Actions &rarr; Restore* next to the archived setup you want to restore.
 
 Unless otherwise noted, all of the portlets in this chapter support this feature. This is particularly useful for portlets that have a lot of configuration options, such as the Message Boards portlet.
 
 ## Permissions
 
-All of Liferay's portlets support Liferay's robust, fine-grained permissions system. Some higher level permissions can be configured here: whether a role can add the portlet to a page, configure the portlet, or view the portlet. To set these permissions, go to the *Configuration* menu and click on *Permissions*. This will show you a table of roles defined in the portal. Use the check boxes to grant certain permissions to different roles. Click *Submit* after you have made your selections.
+All of Liferay's portlets support Liferay's robust, fine-grained permissions system. Some higher level permissions can be configured in the permissions tab of the portlet configuration dialog box. You can grant roles permission to add the portlet to a page, configure the portlet, or view the portlet. To set these permissions, go to the *Configuration* menu and click on *Permissions*. This will show you a table of roles defined in the portal. Use the check boxes to grant certain permissions to different roles. Click *Submit* after you have made your selections.
 
 ## Sharing
 
-The web was once thought of as a number of islands of applications in a vast universe of “cyberspace.” Many web sites tried to make their island the biggest. Some succeeded and some failed. More recently, the concept of the web as an application itself has taken hold, and so widgets have become very popular nowadays. This concept is part of the “Web 2.0” concept and is very much enabled by widgets. So what is a widget? A widget is a small piece of code which provides a piece of functionality, can be included on any web site, but does not necessarily have to be hosted by that web site. If you have ever embedded a YouTube video on your own web site so that users could watch a video without actually having to visit [http://youtube.com](http://youtube.com/), then you have already used a widget.
+The web was once thought of as a number of islands of applications in a vast universe of “cyberspace.” Many web sites attempted to make their island the biggest. Some succeeded to a large extent and some failed. More recently, the concept of the web as an application itself has taken hold, and so widgets have become very popular nowadays. This concept is part of the “Web 2.0” concept and is very much enabled by widgets. What is a widget? A widget is a small piece of code which provides a piece of functionality, can be included on any web site, but does not necessarily have to be hosted by that web site. If you have ever embedded a YouTube video on your own web site so that users could watch a video without actually having to visit [http://youtube.com](http://youtube.com/), then you have already used a widget.
 
 Liferay supports serving its portlets as widgets. You can embed a particular instance of a portlet running on your site into another site, such as Facebook. This opens up a whole new avenue of exposure to your web site that you would not otherwise have had. In fact, this is how all those Facebook games work.
 
-To share one of your portlets as a widget, go to the *Configuration* option in the menu in the portlet's title bar. Then click the *Sharing* tab. There are five subtabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and Friends.
+[Figure 4.x: Sharing Tab of the Portlet Configuration Dialog Box](../../images/liferay-collaboration-portlet-configuration-sharing.png)
+
+To share one of your portlets as a widget, open the *Configuration* dialog box from the portlet's title bar and select the *Sharing* tab. There are five subtabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and Friends.
 
 ### Any Web Site
 
@@ -92,7 +96,7 @@ Netvibes offers a similar service to iGoogle – users can log in, create their 
 
 ### Friends
 
-The final sub-tab in the *Sharing* tab is called *Friends*. This tab has a single check box that allows you to give your friends permission to add the application as a widget to another web site. This could be particularly useful for your blog or your calendar if you wish to share them.
+The final sub-tab of the *Sharing* tab is called *Friends*. This tab has a single check box that allows you to give your friends permission to add the application as a widget to another web site. This could be particularly useful for your blog or calendar if you wish to share them.
 
 ## Blogs
 
@@ -102,15 +106,15 @@ Over the course of time, blogging sites and applications began to appear, such a
 
 ![Figure 4.3: Slashdot, one of the first blogs on the Internet](../../images/05-slashdot.jpg)
 
-Liferay Portal has a portlet called the Blogs portlet which allows you to provide a blogging service to users of your web site. In fact, Liferay extensively uses the Blogs portlet on [http://www.liferay.com](http://www.liferay.com/) to provide employees with blogs of their own. In addition to the Blogs portlet, there is also a Blogs Aggregator portlet which can take entries from multiple users' blogs and put them all in one larger list. We will go over how to use both of these portlets to create a blogging site for your users.
+Liferay Portal has a Blogs portlet which allows you to provide a blogging service to users of your web site. In fact, Liferay extensively uses the Blogs portlet on [http://www.liferay.com](http://www.liferay.com/) to provide employees with blogs of their own. In addition to the Blogs portlet, there is also a Blogs Aggregator portlet which can take entries from multiple users' blogs and put them all in one larger list. We will go over how to use both of these portlets to create a blogging site for your users.
 
 ### The Blogs Portlet
 
-The Blogs portlet is available from the *Collaboration* section of the *Add &rarr; More* menu. You will notice that it is an instanceable portlet, meaning that it can only be added once to a site. This allows you to use the Blogs portlet to create a shared blog to build a site like Slashdot or to create multiple personal blogs to build a site like [http://blogger.com](http://blogger.com/). What's the difference? Adding the Blogs portlet to a site page creates a shared blog for members of the site that the page belongs to. Adding the Blogs portlet to a user's personal site creates a blog for just that user. The Blogs portlet works the same way in both cases. And of course, you can change the Blog portlet's scope to have different blogs on different pages in the same site.
+The Blogs portlet is available from the *Collaboration* section of the *Add &rarr; More* menu. You will notice that it is an instanceable portlet, meaning that it can only be added once to a site. This allows you to use the Blogs portlet to create a shared blog to build a site like Slashdot or to create multiple personal blogs to build a site like [http://blogger.com](http://blogger.com/). What's the difference? Adding the Blogs portlet to a site page creates a shared blog for members of the site that the page belongs to. Adding the Blogs portlet to a user's personal site creates a blog just for that user. The Blogs portlet works the same way in both cases. And of course, you can change the Blog portlet's scope to have different blogs on different pages in the same site.
 
 ![Figure 4.4: Initial View of the Blogs Portlet](../../images/05-initial-view-blogs-portlet.jpg)
 
-By default, the Blogs portlet will display the latest entry in its entirety. Since we have just added the portlet to a page, we have no entries, so the portlet will be empty. Before we start adding entries, we'll configure the portlet so that it displays entries according to our specifications.
+By default, the Blogs portlet will display the latest entry in its entirety. When you first add the portlet to a page, it has no entries, so the portlet will be empty. Before we start adding entries, let's configure the portlet so that it displays entries according to our specifications.
 
 #### Configuring the Blogs Portlet
 
@@ -120,13 +124,13 @@ The Blogs portlet is easy to configure. Click on the *Menu* icon in the portlet'
 
 **Entry Added Email:** lets you enter a subject and body for the emails sent out when a new Blog entry has been added.
 
-**Entry Updated Email:** lets you enter a subject and body of the emails sent out when a new Blog entry has been updated.
+**Entry Updated Email:** lets you enter a subject and body for the emails sent out when a new Blog entry has been updated.
 
 **Display Settings:** allows you to configure various display options for the Blogs portlet. To choose the right settings, you should think about the best way to display your entries as well as how you want users to interact with bloggers.
 
 ![Figure 4.5: Blogs Configuration](../../images/05-blogs-configuration.png)
 
-*Maximum Items to Display:* allows you to choose the total number of blog entries to display on the initial page. You can choose up to 100 to be displayed.
+*Maximum Items to Display:* allows you to choose the total number of blog entries to display on the initial page. You can choose up to one hundred to be displayed.
 
 *Display Style:* lets you choose between Full Content, Abstract, or just the Title. Setting this to Abstract causes Liferay to display only the first 30 words of your blog entries, with a Read More link at the bottom of each to allow users to read the whole entry if they wish.
 
@@ -150,9 +154,9 @@ The Blogs portlet is easy to configure. Click on the *Menu* icon in the portlet'
 
 *Display Position:* lets you choose a top or a bottom position for your blog posts.
 
-**RSS:** is a tab that allows you to configure the way in which blogs will display to RSS readers. Here, you can choose how you want your blog entries to be published as feeds to readers and outside web sites.
+**RSS:** is a tab that allows you to configure the way blogs are displayed to RSS readers. Here, you can choose how you want your blog entries to be published as feeds to readers and outside web sites.
 
-*Maximum Items to Display:* allows you to choose the total number of RSS feeds to display on the initial page. You can choose up to 100 to be displayed.
+*Maximum Items to Display:* allows you to choose the total number of RSS feeds to display on the initial page. You can choose up to one hundred to be displayed.
 
 *Display Style:* lets you choose between Full Content, Abstract, and Title. These options work just like the ones above for blog entries.
 
@@ -178,11 +182,11 @@ Note that trackbacks only work when the protocol is supported by both the linker
 
 You can enter a description of your post beneath the Abstract heading. You can also tag your entry beneath the Categorization heading or attach to a piece of portal content to be displayed along with your post beneath the Related Assets heading.
 
-Once you have finished your blog entry, click *Publish*. You'll go back to the list of entries, and now your entry is displayed. Here is what it looks like when the display style is set to *Abstract* and the number of entries is set to 10:
+Once you have finished your blog entry, click *Publish*. You'll go back to the list of entries, and now your entry is displayed. Here is what it looks like when the display style is set to *Abstract* and the number of entries is set to ten:
 
 ![Figure 4.8: First Blog Entry Added](../../images/05-first-blog-entry-added.png)
 
-You can see that in the summary view, you don't see the trackback/pingback link, and you only see the number of comments which have been added. If you were to click the *Read More* link, you would see the entirety of the article, all of the comments in a threaded view, and the trackback / pingback link which others can use to link back to your blog entry.
+You can see that in the summary view, you don't see the trackback/pingback link, and you only see the number of comments which have been added. If you were to click the *Read More* link, you would see the entirety of the article, all of the comments in a threaded view, and the trackback/pingback link which others can use to link back to your blog entry.
 
 Additionally, the full view of a blog contains convenient links to add blog entries to popular aggregating sites such as Digg, delicious, and others. This gives your readers an easy way to submit your blog entries to these aggregators, potentially driving further traffic to your site. As you can see, the Blogs portlet is a full-featured blogging application which gives you and your users the ability to enter the blogosphere with an application that supports anything a blogger needs.
 
@@ -196,9 +200,9 @@ If you click *Configuration* from the menu button in the title bar of the portle
 
 **Selection Method:** lets you select Users or Scope here. If you select Users, the Blogs Aggregator will aggregate the entries of every blogger on your system. If you want to refine the aggregation, you can select an Organization by which to filter the users. If you select Scope, the Blogs Aggregator will contain only entries of users who are in the current scope. This will, in essence, limit the entries to members of the site where the Blogs Aggregator portlet resides.
 
-**Organization:** Allows you to select which organization's blogs you want to aggregate.
+**Organization:** allows you to select which organization's blogs you want to aggregate.
 
-**Display Style:** lets you select from several different styles for displaying blog entries based on what information from blogs you would like the aggregator to display: title, abstract, body, image, quote.
+**Display Style:** lets you select from several different styles for displaying blog entries based on what information from blogs you would like the aggregator to display: title, abstract, body, image, or quote.
 
 **Maximum Items to Display:** lets you select maximum number of entries the portlet will display.
 
@@ -212,25 +216,25 @@ When you have finished setting the options in the portlet, click *Save*. Then cl
 
 Liferay's Calendar portlet is a complete calendaring solution. You can schedule any number of events of different types, receive alarms via email or text message, import and export your calendar, and much more. Additionally, you can import and export the calendar to the popular iCalendar format for use in other applications.
 
-In a similar way to the Blogs portlet, you can use the Calendar portlet as a shared calendar on a web site or as a personal calendar — or both.
-
 ![Figure 4.19: The Liferay Calendar Portlet](../../images/05-calendar-portlet.png)
+
+In a similar way to the Blogs portlet, you can use the Calendar portlet as a shared calendar on a web site or as a personal calendar — or both.
 
 ### Configuring the Calendar Portlet
 
-Go to the *Configuration* option from the menu in the portlet's title bar. You have three tabs there which allow you to configure three different options: *Email From*, *Event Reminder Email*, and *Display Settings*.
+Open the *Configuration* dialog box from the menu in the portlet's title bar. The Setub tab allows you to configure three different options in subtabs: *Email From*, *Event Reminder Email*, and *Display Settings*.
 
 #### Email From
 
-In this tab, you can set the *Name* and *Email Address* that will display in system generated reminder emails. The address that you enter in the Email Address field must be properly formatted, but it does not need to be an address that actually exists. This can work well in conjunction with mail rules in your email client that can operate on these messages. By default, the name is set to Joe Bloggs and the email address is set to test@liferay.com.
+In this subtab, you can set the *Name* and *Email Address* that will display in system generated reminder emails. The address that you enter in the Email Address field must be properly formatted, but it does not need to be an address that actually exists. This can work well in conjunction with mail rules in your email client that can operate on these messages. By default, the name is set to `Joe Bloggs` and the email address is set to `test@liferay.com`.
 
 #### Event Reminder Email
 
-This tab lets you customize the email message that you receive from the portlet when you have an event for which you have configured a reminder. It contains the same rich text editor that you see everywhere else in Liferay, and this allows you to format your message so that you will be able to easily recognize it. Additionally, there are several variables which allow you to insert runtime values into the message, and these are listed underneath the text editor so that you can use them in the appropriate place in your template. For example, you might want the event start date and time and the event title included in the email reminder that you receive. Inserting the variables that correspond with those values into your template will allow you to do that.
+This subtab lets you customize the email message that you receive from the portlet when you have an event for which you have configured a reminder. It contains the same rich text editor that you see everywhere else in Liferay, and this allows you to format your message so that you will be able to easily recognize it. Additionally, there are several variables which allow you to insert runtime values into the message, and these are listed underneath the text editor so that you can use them in the appropriate place in your template. For example, you might want the event start date and time and the event title included in the email reminder that you receive. Inserting the variables that correspond with those values into your template will allow you to do that.
 
 #### Display Settings
 
-Display Settings for the calendar allows you to define which tab in the calendar is the default when the portlet is first displayed. By default, the summary tab is displayed, but you may want the daily, weekly, or monthly view to be the default.
+The Display Settings subtab allows you to select which tab of the calendar portlet will first be displayed to the user. By default, the summary tab is displayed, but you may want to change it to the daily, weekly, or monthly view.
 
 There are additional settings for the summary tab: you can select whether it has a horizontal or vertical layout, whether or not it shows a mini month, or whether or not it shows today's events. You can also enable or disable related assets, comments, or ratings.
 
@@ -282,13 +286,13 @@ Liferay's Chat portlet provides a convenient way of allowing users to send each 
 
 The Chat portlet is very simple to use. To change the settings, click *Settings* (found near the lower right corner next to *Online Friends*). Here you can set your status, whether to show if you are online, and whether to play a sound if someone sends you a message while you have the window or tab in the background. The portlet shows you the number of your friends who are online. To chat with one of them, click the *Online Friends* link and then click the friend's name. You can then begin chatting with him or her. You can have multiple chats open at a time, and even have one or more of them minimized.
 
-The Chat portlet is distributed with the Liferay bundles, but is not included as part of the .war distribution, as it is a separate plugin. If you installed the Liferay .war manually on your application server, you can install the Chat portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the Chat portlet in the list, click on it, and then click *Install*.
+The Chat portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Chat portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the Chat portlet in the list, click on it, and then click *Install*.
 
 ## Mail
 
 Liferay's Mail portlet enables your users to interact with their email using an easy to use, ubiquitous web interface. If your mail system supports the IMAP protocol, you can use the Mail portlet to integrate your users' mail with the rest of your web site. You can also connect the Mail portlet to a mail account provided by Google.
 
-The Mail portlet is distributed with the Liferay bundles, but is not included as part of the .war distribution, as it is a separate plugin. If you installed the Liferay .war manually on your application server, you can install the Mail portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the *Mail* portlet in the list, click on it, and then click *Install*.
+The Mail portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Mail portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the *Mail* portlet in the list, click on it, and then click *Install*.
 
 ![Figure 4.11: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
 
@@ -318,9 +322,9 @@ For a Custom Mail Account, the following fields are necessary:
 
 When finished, click *Save*. Your new email account now appears as a tab at the top of the page along with the button for adding a mail account. In this way, you can add as many mail accounts as you want in order to view them in the portlet.
 
-Click the tab for the mail account you just configured to be brought to an interface which allows you to read your mail and compose new messages. To read a message, click on it. To compose a new message, click the *Compose Email* link on the left side of the portlet. A form appears which allows you to compose an email message using the same rich text editor that appears everywhere else in Liferay. You can read, reply, and create messages, as well as manage all of your folders in Liferay's Mail portlet.
+Click the tab for the mail account you just configured to be brought to an interface which allows you to read your mail and compose new messages. To read a message, click on it. To compose a new message, click the *Compose Email* link on the left side of the portlet. A form appears which allows you to compose an email message using the same rich text editor that appears everywhere else in Liferay. You can read, reply, and create messages, as well as manage all of your folders in Liferay's Mail portlet. 
 
-The Mail portlet is a great way to integrate a familiar service with other collaboration features that Liferay provides.
+The Mail portlet is a great way to integrate a familiar service with other the collaboration features that Liferay provides.
 
 ## Message Boards
 
@@ -340,11 +344,11 @@ The subscribe by default option automatically subscribes users to threads they p
 
 Flags allow your users to flag content which they consider to be objectionable. If you are allowing anonymous posting, you might use flags in combination with it if you have someone administering your message boards on a day-to-day basis. That way, any unwanted messages can be flagged by your community, and you can review those flagged messages and take whatever action is necessary. Using flags is also a good practice even if you're not allowing anonymous posting.
 
-Ratings enable your users to give certain posts a score. This score is used by Liferay Portal's social equity system to rank your site members by how helpful their contributions are. You can read more about social equity later in this chapter.
+Ratings enable your users to give certain posts a score. This score is used by Liferay Portal's social equity system to rank your site members by how helpful their contributions are. You can read more about social equity later in this chapter and in chapter 9.
 
 ### Email From
 
-This tab allows you to configure the email address that messages from the Message Boards portlet come from. By default, the name is Joe Bloggs and the email address is [test@liferay.com](mailto:test@liferay.com).
+This tab allows you to configure the email address that messages from the Message Boards portlet come from. By default, the name is `Joe Bloggs` and the email address is `test@liferay.com`.
 
 ### Message Added Email
 
@@ -372,19 +376,19 @@ There is also a field on this form that allows you to select a localized languag
 
 ### User Ranks
 
-On this tab, users can be ranked according to the number of messages they have posted. You can set up custom ranks here. Defaults have been provided for you, going from zero messages all the way up to 1000.
+On this tab, users can be ranked according to the number of messages they have posted. You can set up custom ranks here. Defaults have been provided for you, going from zero messages all the way up to one thousand.
 
 In addition to ranks, you can also select who is a “moderator” by what roles are held. Defaults are there for you which show you how to do this.
 
-Moderator=site-role:Message Boards Administrator
+    Moderator=site-role:Message Boards Administrator
 
-Moderator=organization:Message Boards Administrator
+    Moderator=organization:Message Boards Administrator
 
-Moderator=organization-role:Message Boards Administrator
+    Moderator=organization-role:Message Boards Administrator
 
-Moderator=regular-role:Message Boards Administrator
+    Moderator=regular-role:Message Boards Administrator
 
-Moderator=user-group:Message Boards Administrator
+    Moderator=user-group:Message Boards Administrator
 
 As you can see, all you need to do is set the rank, the collection type, and the name of the type. In the example above, anyone who has a site role, an organization role, a regular role, or is in a user group called *Message Boards Administrator*, or anyone who is the organization owner gets the moderator rank.
 
@@ -479,7 +483,7 @@ The Message Boards portlet is also highly integrated with Liferay's user managem
 
 The Message Boards portlet provides for the day to day administration of the message threads. You may wish to separate this function out by a role, and then delegate that role to one or more of your users. That would free you up to concentrate on other areas of your web site. To do this, you can create a role called Message Board Administrators. This role can be scoped by the portal, an organization, or a site. If you have a portal scoped role, members of this role will be able to administer any Message Boards portlet in the portal. If it is an organization or site scoped role, members of this role will be able to administer a Message Boards portlet in only the organization or site which assigned the role to them.
 
-Go to the Control Panel and create this role. Once it is created, click *Actions &rarr; Define Permissions*. Click the *Add Permissions* dropdown list. Browse the list until you find the Message Boards portlet under the Site Content section and then click on it. You will then see a screen which allows you to configure the various permissions on the portlet.
+Go to the control panel and create this role. Once it is created, click *Actions &rarr; Define Permissions*. Click the *Add Permissions* dropdown list. Browse the list until you find the Message Boards portlet under the Site Content section and then click on it. You will then see a screen which allows you to configure the various permissions on the portlet.
 
 ![Figure 4.14: Defining Permissions for the Message Board Administrators Role](../../images/05-defining-permissions-message-board-admin-role.png)
 
@@ -487,7 +491,7 @@ Select the permissions you would like message board administrators to have and t
 
 #### Moving Threads
 
-Many times a user will post a thread in the wrong category. Administrators may in this case want to move a thread to the proper category. This is very easy to do. You can select the *Action* menu to the right of the thread and then select *Move Thread*. Or, if you are already viewing the thread and you have administrative access, there is a link at the top of the thread labeled *Move Thread*. Click this link. You will be presented with a simple form which allows you to select a category to which to move the thread and a check box which allows you to post a message explaining why the thread was moved. This message will be posted as a reply to the thread you are moving. When finished, click the *Move Thread* button and the thread will be moved.
+Many times a user will post a thread in the wrong category. Administrators may in this case want to move a thread to the proper category. This is very easy to do. You can select the *Actions* menu to the right of the thread and choose *Move Thread*. Or, if you are already viewing the thread and you have administrative access, there is a link at the top of the thread labeled *Move Thread*. Click this link. You will be presented with a simple form which allows you to select a category to which to move the thread and a check box which allows you to post a message explaining why the thread was moved. This message will be posted as a reply to the thread you are moving. When finished, click the *Move Thread* button and the thread will be moved.
 
 #### Deleting Threads
 
@@ -495,9 +499,9 @@ Users with administrative access to the message boards can delete threads. Somet
 
 #### Banning Users
 
-Unfortunately, sometimes certain users can become abusive. If you wind up with a user like this, you can certainly make attempts to warn him or her that the behavior he or she is displaying is unacceptable. If this does not work, you can ban the user from posting on the message boards.
+Unfortunately, sometimes certain users become abusive. If you wind up with a user like this, you can certainly make attempts to warn him or her that the behavior he or she is displaying is unacceptable. If this does not work, you can ban the user from posting on the message boards.
 
-Again, this is very easy to do. Find any post which was written by the abusive user. Underneath the user's name / profile picture is a link called *Ban this User*. Click this link to ban the user from the message boards.
+Again, this is very easy to do. Find any post which was written by the abusive user. Underneath the user's name/profile picture is a link called *Ban this User*. Click this link to ban the user from the message boards.
 
 If after taking this action the user apologizes and agrees to stop his or her abusive behavior, you can choose to reinstate the user. To do this, click the *Banned Users* tab at the top of the Message Boards portlet. This will show a list of all banned users. Find the user in the list and select *Unban this User*.
 
@@ -517,7 +521,7 @@ Permissions can be set not only on threads, but also on individual posts. You ca
 
 Liferay's Wiki portlet, like the Message Boards portlet, is a full-featured wiki application which has all of the features you would expect in a state of the art wiki. Again, though, it has the benefit of being able to take advantage of all of the features of the Liferay platform. As such, it is completely integrated with Liferay's user management, tagging, and security features.
 
-So, what is a wiki? Basically, a wiki is an application which allows users to collaboratively build a repository of information. There are, of course, many implementations of this idea, the most famous of which is Wikipedia. Wikipedia is a full online encyclopedia developed collaboratively by users from all over the world, using a wiki. Another example would be Liferay's wiki, which is used for collaborative documentation for the Community Edition of Liferay Portal.
+So, what is a wiki? Basically, a wiki is an application which allows users to collaboratively build a repository of information. There are, of course, many implementations of this idea, the most famous of which is Wikipedia. Wikipedia is a full online encyclopedia developed collaboratively by users from all over the world, using a wiki. Another example would be Liferay's wiki, which is used for collaborative documentation of the Community Edition of Liferay Portal.
 
 A wiki application allows users to create and edit documents and link them to each other. To accomplish this, a special form of markup is used which is sometimes called wikitext. Unfortunately, the proliferation of many different wiki applications resulted in slightly different syntax for wikitext in the various products, as each new wiki tried to focus on new features that other wikis did not have. For that reason, a project called WikiCreole was started. This project resulted in the release of WikiCreole 1.0 in 2007, which is an attempt to define a standard wiki markup that all wikis can support.
 
@@ -531,9 +535,9 @@ The Wiki portlet works just like the other portlets developed by Liferay. Add th
 
 The communication tab of the configuration window allows you to configure communication across portlets, using predefined public render parameters. From here you can modify five public render parameters: categoryId, nodeId, nodeName, tag, and title. For each parameter you can:
 
--   Ignore the values for this parameter that come from other portlets. For example, the wiki portlet can be used along with the tags navigation portlet. When a user clicks on a tag in the tags navigation portlet, the wiki it shows the list of pages with that tag. In some cases an administrator may want the wiki portlet to always show the front page independently of any tag navigation done through other portlets. This can be achieved by checking the Ignore check box so that the values of the parameter coming from those other portlets are ignored.
+-   Ignore the values for this parameter that come from other portlets. For example, the wiki portlet can be used along with the tags navigation portlet. When a user clicks on a tag in the tags navigation portlet, the wiki shows a list of pages with that tag. In some cases an administrator may want the wiki portlet to always show the front page independently of any tag navigation done through other portlets. This can be achieved by checking the Ignore check box so that the values of the parameter coming from those other portlets are ignored.
 
--   Read the value of a parameter from another portlet. This is an advanced but very powerful option that allows portlets to communicate without configuring it beforehand. For example, imagine that the wiki portlet is used to publish information about certain countries. Imagine further that a custom portlet that allows browsing countries for administrative reasons was written and placed on the same page. We could associate to this second portlet a public render parameter called *country* with the name of the country. Using this procedure, we can cause the wiki to show the information from the country being browsed through the other portlet. You can do this here for the wiki by setting the value for the title parameter to be read from the country parameter of the other portlet.
+-   Read the value of a parameter from another portlet. This is an advanced but very powerful option that allows portlets to communicate without configuring it beforehand. For example, imagine that the wiki portlet is used to publish information about certain countries. Imagine further that a custom portlet that allows browsing countries for administrative reasons was written and placed on the same page. We could associate to this second portlet a public render parameter called *country* to designate the name of the country. Using this procedure, we can cause the wiki to show the information from the country being browsed through in the other portlet. You can do this here for the wiki by setting the value for the title parameter to be read from the country parameter of the other portlet.
 
 Once you have set the options the way you want them, click *Save*.
 
@@ -597,9 +601,9 @@ This would produce the following wiki page:
 
 ![Figure 4.17: Wiki Text Added to Front Page](../../images/05-wiki-front-page.png)
 
-This adds a simple heading, a paragraph of text, and several links to the page. Since the pages behind these links have not been created yet, clicking one of those links brings you to an editing screen to create the page. This editing screen looks just like the one you used previously when you wrote the front page. Liferay displays a notice at the top of the page stating that the page does not exist yet, and that you are creating it right now. As you can see, it is very easy to create wiki pages. All you have to do is create a link from an existing page. Note that at the top of the screen you can select from the Creole wiki format and the HTML editor that comes with Liferay. We recommend that you stick with the Creole format, as it allows for a much cleaner separation of content and code. If you want all of your users to use the Creole format, you can disable the HTML format using the portal-ext.properties file. See the next chapter for further information on how to configure this.
+This adds a simple heading, a paragraph of text, and several links to the page. Since the pages behind these links have not been created yet, clicking one of those links takes you to an editing screen to create the page. This editing screen looks just like the one you used previously when you wrote the front page. Liferay displays a notice at the top of the page stating that the page does not exist yet, and that you are creating it right now. As you can see, it is very easy to create wiki pages. All you have to do is create a link from an existing page. Note that at the top of the screen you can select from the Creole wiki format and the HTML editor that comes with Liferay. We recommend that you stick with the Creole format, as it allows for a much cleaner separation of content and code. If you want all of your users to use the Creole format, you can disable the HTML format using the `portal-ext.properties` file. See chapter 14 for details about how to configure this.
 
-At the bottom of the page editing screen, you can select *Categories* for the article. Categories are hierarchical lists of headings under which you can create wiki pages. This allows you to organize your content in a more formal fashion. You can create categories using the Control Panel, in the *Categories* section.
+At the bottom of the page editing screen, you can select *Categories* for the article. Categories are hierarchical lists of headings under which you can create wiki pages. This allows you to organize your content in a more formal fashion. You can create categories using the control panel, in the *Categories* section.
 
 ### Page Details
 
@@ -607,7 +611,7 @@ When viewing a page, you can view its details by clicking the *Details* link whi
 
 #### Details
 
-The Details tab shows various statistics about the page, and also allows you to perfom some actions on the page.
+The Details tab shows various statistics about the page, and also allows you to perform some actions on the page.
 
 **Title:** displays the title of the page.
 
@@ -631,7 +635,7 @@ The Details tab shows various statistics about the page, and also allows you to 
 
 This tab shows a list of all of the versions of the wiki page since it was created. You can revert a page back to a previous state and you can also compare the differences between versions by selecting the versions and then clicking the *Compare Versions* button.
 
-#### Incoming / Outgoing Links
+#### Incoming/Outgoing Links
 
 The next two tabs are for incoming and outgoing links. These are wiki links to and from the page. You can use this tab to examine how this page links to other pages and how other pages link back to this page.
 
@@ -657,7 +661,7 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 ## Knowledge Base
 
-The Knowledge Base portlet is based on the Wiki portlet. It provides a means for creating and organizing articles within a site. Additionally, it allows administrators to create article templates. Templates can be used to insure that certain kinds of articles possess a common structure and include certain kinds of information. Knowledge base articles can be categorized to make them easy to find. They can also be organized hierarchically to form complete books or guides. The Knowledge Base portlet is available as an app from Liferay Marketplace. Please see chapter 2 for installation instructions.
+The Knowledge Base portlet is based on the Wiki portlet. It provides a means for creating and organizing articles within a site. The knowledge base is perfect for creating and organizing information more formally than in a wiki. It can be used for professional product documentation, for example. It's easy to set up the knowledge base with a workflow that requires articles to be approved before they are published. Additionally, it allows administrators to create article templates. Templates can be used to insure that certain kinds of articles possess a common structure and include certain kinds of information. Knowledge base articles can be categorized to make them easy to find. They can also be organized hierarchically to form complete books or guides. The Knowledge Base portlet is available as an app from Liferay Marketplace. Please see chapter 2 for installation instructions.
 
 ### Knowledge Base Display Portlet
 
@@ -675,11 +679,11 @@ You can use the four links at the top of the Knowledge Base display portlet to c
 
 *My Subscriptions:* shows you a list of articles you are subscribed to.
 
-The *Add Article* button is available from the Knowledge Base Home or Administrator view of the Knowledge Base display portlet or from the Articles tab of the Knowledge Base page of the control panel. Use this button to create an article for the knowledge base. When creating an article, you can use the same WYSIWYG editor that you used to create wiki pages. Articles, however, are not the same as wiki pages: you have to use HTML to create them, not MediaWiki or Creole. Click the *Source* button in the editor to view the HTML source of what you've written or write some HTML yourself.
+The *Add Article* button is available from the Knowledge Base Home or Administrator view of the Knowledge Base display portlet or from the Articles tab of the Knowledge Base page of the control panel. Use this button to create an article for the knowledge base. When creating an article, you can use the same WYSIWYG editor that you used to create wiki pages. Articles, however, are not the same as wiki pages: they must be created in HTML, not MediaWiki or Creole. Click the *Source* button in the editor to view the HTML source of what you've written or write some HTML yourself.
 
 ![Figure 4.x: New Knowledge Base Article](../../images/liferay-collaboration-kb-new-article.png)
 
-In addition to entering a title and creating content for your article, you can use the editor to add attachments, add tags, and set permissions. By default, view permission is granted to the guest role, meaning that anyone can view your article. After you're done using the editor, you can save it as draft and continue working on it later, or you can submit it for publication. Your article may need to be approved before being published or you may be able to publish it immediately, depending on the workflow defined for your portal.
+In addition to entering a title and creating content for your article, you can use the editor to add attachments, add tags, and set permissions. By default, view permission is granted to the guest role, meaning that anyone can view your article. After you're done using the editor, you can save it as draft and continue working on it later, or you can submit it for publication. Your article may need to be approved before being published, depending on the workflow defined for your portal.
 
 You can find the *Permissions* button next to the Add Article button in the Knowledge Base display portlet or on the Knowledge Base page of the control panel. Click this button to define permissions that apply to the Knowledge Base display portlet generally, not to particular articles. Here, you can define which roles can add articles and templates, which are granted knowledge base administrator privileges, which can change permissions on articles, which can subscribe to articles, and which can view templates. 
 
@@ -735,7 +739,7 @@ The Knowledge Base Article portlet allows users to rate and comment on the artic
 
 ### Knowledge Base Section Portlet
 
-The Knowledge Base Section portlet allows administrators to selectively show articles associated with a specific section. For example, a news site might have a *World* section, a *Politics* section, a *Business* section, and an *Entertainment* section. In order to use sections, you need to set the `admin.kb.article.sections` property in your knowledge base portlet's `portlet.properties` file and redeploy the portlet. You can find the `portlet.properties` file in the knowledge base portlet's source directory. Updating the one in your server's directory won't work. Use comma delimited section names to set the property, like `admin.kb.article.sections=World,Politcs,Business,Entertainment`, for example. 
+The Knowledge Base Section portlet allows administrators to selectively show articles associated with a specific section. For example, a news site might have a *World* section, a *Politics* section, a *Business* section, and an *Entertainment* section. In order to use sections, you need to set the `admin.kb.article.sections` property in your knowledge base portlet's `portlet.properties` file and redeploy the portlet. You can find the `portlet.properties` file in the knowledge base portlet's source directory. Updating the one in your server's directory won't work. Use comma delimited section names to set the property, like `admin.kb.article.sections=World,Politics,Business,Entertainment`, for example. 
 
 Once you have defined some sections in your knowledge base's `portlet.properties` file, your users will see a multi-select box in the Add Article and Edit Article screens that allows them to select which section an article belongs to. You can add any number of Knowledge Base section portlets to a page and you can configure each portlet to display articles from any number of sections.
 
@@ -757,7 +761,7 @@ You can select topics for articles when you are creating or editing them.
 
 ## Documents and Media
 
-Liferay's Documents and Media portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. This portlet grant users the ability to share documents within the portal via uploading and downloading. The Documents and Media portlet can be used to store files of any kind, not just "documents" or "media". The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media portlets to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing files.
+Liferay's Documents and Media portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. This portlet grant users the ability to share documents within the portal via uploading and downloading. The Documents and Media library can be used to store files of any kind, not just what you might consider "documents" or "media". The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media portlets to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing files.
 
 ### Getting Started with the Documents and Media Portlet
 
@@ -779,7 +783,7 @@ The menu at the top of the Documents and Media portlet contains Actions, Add, So
 
 The Actions menu will only be displayed if you have selected one or more documents with the check boxes.
 
-**Canel Checkout:** lets you check in a document that you had checked out but did not make any changes to. Using this option will prevent the Documents and Media portlet from incrementing the document's version number and saving an identical version of the document.
+**Cancel Checkout:** lets you check in a document that you had checked out but did not make any changes to. Using this option will prevent the Documents and Media portlet from incrementing the document's version number and saving an identical version of the document.
 
 **Checkin:** lets you check in a document that you have edited. Its version number will increment and the previous version will be stored.
 
@@ -805,7 +809,7 @@ From the Add button, you can add documents, folders, and shortcuts just like on 
 
 **Image:** lets you upload a file that you would like the "Image" document type to apply to. By default, images are are described by author, license, and location fields.
 
-**Video:** lets you upload a file that you would like the "Video" document type to apply to. By default, videos are desribed by author, license, location, running time, and subtitles fields.
+**Video:** lets you upload a file that you would like the "Video" document type to apply to. By default, videos are described by author, license, location, running time, and subtitles fields.
 
 Any custom documents types that have been defined also appear in the Add menu If a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields.
 
@@ -863,7 +867,7 @@ All you have to do to define a metadata set is choose fields to use from the are
 
 **Text Box:** is just like the text field except you can enter multiple lines of text or separate paragraphs.
 
-Remember that metadata sets are reusable. Once your metaset has been created it can be included in any number of document types.
+Remember that metadata sets are reusable. Once they have been created they can be included in any number of document types.
 
 ## Tags
 
@@ -895,13 +899,13 @@ To use Social Equity for your portal, check the Enable Social Equity box. Social
 
 **Information Value:** indicates how many points a user receives for the information content of a specific action.
 
-**Information Lifespan:** indicates, in number of days, how long it will be before the information points expire. Setting it to 0 means that they will never expire.
+**Information Lifespan:** indicates, in number of days, how long it will be before the information points expire. Setting it to `0` means that they will never expire.
 
 **Daily Limit:** is the maximum number of actions of this type that a user will receive information points for in a given day.
 
 **Participation Value:** indicates how many points a user receives for the participating in the content creation of the website.
 
-**Participation Lifespan:** indicates, in number of days, how long it will be before the participation points expire. Setting it to 0 means that they will never expire.
+**Participation Lifespan:** indicates, in number of days, how long it will be before the participation points expire. Setting it to `0` means that they will never expire.
 
 **Daily Limit:** is the maximum number of actions of this type that a user will receive participation points for in a given day.
 
@@ -923,8 +927,12 @@ Discussion becomes easy with Liferay's Message Boards portlet. This portlet can 
 
 Liferay's Wiki portlet is a state of the art wiki application that users can make use of to collaborate on web pages. Again, it inherits the strengths of the Liferay platform in the form of security, interface, and search. You can use the wiki portlet to manage several wiki nodes or use many wiki portlets to manage one node each.
 
-Liferay's Documents and Media portlet allows users to store information online in the same type of directory structure that they use locally. The Document Library portlet supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Document Library portlet.
+The Knowledge Base portlet provides administrators with a more formal way to create and organize articles than the Wiki. Administrators can create article templates which can be used to create articles that share a common structure. Knowledge base articles are easy to categorize hierarchically which makes them easy to browse and search. The Knowledge Base Article portlet can be used to display a single article and the Knowledge Base Section portlet can be configured to display a group of articles that belong to the same section. 
+
+Liferay's Documents and Media portlet allows users to store information online in the same type of directory structure that they use locally. The Documents and Media library supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Documents and Media library.
 
 Tying all of these applications together are tags and categories. Tags can be added to any content by end users, and hierarchies of categories can be added to the system by administrators to be applied to content anywhere in the portal. These help your users to find the content that is most relevant to them, empowering the search to be as accurate as possible.
+
+Liferay's Social Equity system can be used to measure users' activity in the portal. It can be customized to assign different numbers of points for different activities. Social equity is easy to implement and can provide valuable information to help you identify productive members of your portal.
 
 Liferay's collaboration platform is a full suite of integrated applications that empower users to work together. You can use them to great effect to enhance your portal and to build a vibrant, active community.

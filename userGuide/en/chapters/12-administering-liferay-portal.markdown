@@ -40,21 +40,21 @@ You will use the Portal section of the control panel to create your portal struc
 
 ![Figure 12.1: The Add User Screen](../../images/01-add-user-screen.png)
 
-Let's add a user account for yourself and configure this account so that it has the same administrative access as the default administrator account. Go up to the Dockbar, mouse over *Manage* and click the control panel link, if you aren't there already. Click *Users and Organizations* under the *Portal* category. Click the *Add* button and select *User*. You will then be presented with the Add User form. Fill out the form using your name and email address. When you are finished, click *Save*.
+Let's add a user account for yourself and configure this account so that it has the same administrative access as the default administrator account. Go up to the dockbar, mouse over *Manage* and click the control panel link, if you aren't there already. Click *Users and Organizations* under the *Portal* category. Click the *Add* button and select *User*. You will then be presented with the Add User form. Fill out the form using your name and email address. When you are finished, click *Save*.
 
-After you submit the form, the page reloads with a message saying that the save was successful. An expanded form appears which allows you to fill out a lot more information about the user. You don't have to fill anything else out right now. Just note that when the user ID was created, a password was automatically generated and, if Liferay was correctly installed (see chapter 11 in part 2), an email message with the password in it will have been sent to the user. This, of course, requires that Liferay can properly communicate with your SMTP mail server.
+After you submit the form, the page reloads with a message saying that the save was successful. An expanded form appears which allows you to fill out a lot more information about the user. You don't have to fill anything else out right now. Just note that when the user ID was created, a password was automatically generated and, if Liferay was correctly installed (see chapter 11), an email message with the password in it will have been sent to the user. This, of course, requires that Liferay can properly communicate with your SMTP mail server.
 
 ![Figure 12.2: Liferay's User Account Editor](../../images/01-user-account-editor.png)
 
 If you haven't yet set up your mail server, you'll need to use this page to change the default password for the user ID to something you can remember. You can do this by clicking on the *Password* link in the box on the right, entering the new password in the two fields, and clicking *Save*. Next, you will want to give your user account the same administrative rights as the default administrator's account. This will allow you to perform administrative tasks with your own ID instead of having to use the default ID. This will also allow you to make your portal more secure by deleting or disabling the default ID.
 
-Click the *Roles* link. The Roles page of the control panel shows the roles to which your ID is currently assigned. You should have one role: Power User. By default, all users are assigned the Power User role. You can give this role certain permissions if you wish or disable it altogether. You can also define the default roles a new user receives. We will see how to do this later.
+Click the *Roles* link. The Roles page of the control panel shows the roles to which your ID is currently assigned. You should have one role: Power User. By default, all users are assigned the Power User role. You can give this role certain permissions if you wish or disable it altogether. You can also define the default roles a new user receives. We'll see how to do this later.
 
 To make yourself an Administrator, click the *Select* link. A dialog box will pop up with a list of all the roles in the system. Select the Administrator role from the list. The dialog box will disappear and you will see that the role has been added to the list of roles associated with your account. Next, click the *Save* button, which is at the bottom of the blue bar of links on the right. You are now an administrator of the portal. Log out of the portal and then log back in with your own user ID.
 
 ### User Management
 
-If you click the *Users* link on the left of the control panel, you will see that there are now two users in the list of users. If you wanted to change something about a particular user, you can click the *Actions* button next to that user.
+If you click the *Users* link on the left menu of the control panel, you will see that there are now two users in the list of users. If you wanted to change something about a particular user, you can click the *Actions* button next to that user.
 
 **Edit User:** takes you back to the Edit User page, where you can modify anything about the user.
 
@@ -62,7 +62,7 @@ If you click the *Users* link on the left of the control panel, you will see tha
 
 **Manage Pages:** allows you to edit the personal pages of a user.
 
-**Impersonate User:** opens another browser window which allows you to browse the site as though you were the user.
+**Impersonate User:** opens another browser window which allows you to browse the site as if you were the user.
 
 **Deactivate:** Clicking this will deactivate the user's account.
 
@@ -70,13 +70,13 @@ Note that most users will not be able to perform most of the above actions. In f
 
 ### Organizations
 
-Organizations can be used to represent hierarchical stuctures such as those of companies, non-profit organizations, churches, schools, and clubs. They have been used to represent a sports league, with various sports (soccer, baseball, basketball, etc.) and their teams as sub-organizations. If you have a collection of users that all belong to the same grouping, you may be able to model that as an organization.
+Organizations can be used to represent hierarchical structures such as those of companies, non-profit organizations, churches, schools, and clubs. They have been used to represent a sports league, with various sports (soccer, baseball, basketball, etc.) and their teams as sub-organizations. If you have a collection of users that all belong to the same grouping, you may be able to model that as an organization.
 
 Your portal might not need an organization or it might have one or several, depending on your portal's function. For example, a simple photo-sharing web site might not need any organizations. On the other hand, organizations would be very useful for corporations or educational institutions since their users can be easily placed into a hierarchical structure. In fact, organizations in Liferay can be used to model any group hierarchy, from those of government agencies all the way down to those of small clubs. Of course, your portal can use both organizations and independent sites. For example, a corporation or educational institutional could create a social networking site open to all portal users, even ones from separate organizations. 
 
-Organizations and suborganizations can be created in a hierarchy to unlimited levels, and users can be members of one or many organizations. These organizations could all reside in a single hierarchy or cut across different hierarchies. Note that the rights of organization administrators apply not only to their organization but also to its suborganizations. By default, members of suborganizations are members of the parent organizations. This behavior can be configured in your portal's portal-ext.properties configuration file.
+Organizations and suborganizations can be created in a hierarchy to unlimited levels, and users can be members of one or many organizations. These organizations could all reside in a single hierarchy or cut across different hierarchies. Note that the rights of organization administrators apply not only to their organization but also to its suborganizations. By default, members of suborganizations are members of the parent organizations. This behavior can be configured in your portal's `portal-ext.properties` configuration file.
 
-Additionally, Organizations can be associated with roles. One application of this in a corporate setting could be an IT Security group. You could have an organization within your IT organization that handles security for all of the applications company-wide. If you had users as members of this organization, you could grant the administrator role you just granted to your own ID to the whole organization, thereby giving the members of the IT Security organization administrative access to the portal. Suppose now that a user in this organization later was hired by the Human Resources department. The simple act of removing the user from the IT Security organization also removes the user's administrative privileges, since the privilege came from the IT Security group's role. By adding the user to the HR organization, any roles the HR organization has (such as access to a benefits system in the portal) would be transferred to the user. In this manner, you can design your portal to correspond with your existing organization chart, and have users' permissions reflect their positions in the chart.
+Additionally, Organizations can be associated with roles. One application of this in a corporate setting could be an IT Security group. You could have a suborganizaton of your IT organization that handles security for all of the applications company-wide. If you had users as members of this organization, you could grant the administrator role you just granted to your own ID to the whole organization, thereby giving the members of the IT Security organization administrative access to the portal. Suppose now that a user in this organization later was hired by the Human Resources department. The simple act of removing the user from the IT Security organization also removes the user's administrative privileges, since the privilege came from the IT Security group's role. By adding the user to the HR organization, any roles the HR organization has (such as access to a benefits system in the portal) would be transferred to the user. In this manner, you can design your portal to correspond with your existing organization chart, and have users' permissions reflect their positions in the chart.
 
 Of course, this is only one way to design it. If you have more complex requirements, you can combine organizations with teams and scoped roles to assemble the sets of permissions you wish to grant to particular users.
 
@@ -118,11 +118,11 @@ Click the *Actions* button next to the new organization you have created. You wi
 
 **Delete:** deletes this organization from the portal. You will have to ensure that the organization has no users in it first.
 
-If you click the View button at the top of the Users and Organizations page and select View Hierarchy you can view both a list of users who are members of this organization and a list of all the suborganizations of this organization.
+If you click the *View* button at the top of the Users and Organizations page and select *View Hierarchy* you can view both a list of users who are members of this organization and a list of all the suborganizations of this organization.
 
 ### Sites
 
-Sites are not innately hierachical but they can be attached to organizations to create hierarchical structures. Independent sites are stand-alone groups of pages and are not associated with an organizational hierarchy. Open sites can be joined by any user regardless of organization membership. You can use open independent sites, therefore, in any situation where you need to cut across the organizational structure of your portal, or where you are providing content that could be relevant to anybody.
+Sites are not innately hierarchical but they can be attached to organizations to create hierarchical structures. Independent sites are stand-alone groups of pages and are not associated with an organizational hierarchy. Open sites can be joined by any user regardless of organization membership. You can use open independent sites, therefore, in any situation where you need to cut across the organizational structure of your portal, or where you are providing content that could be relevant to anybody.
 
 For example, a corporate Intranet running Liferay might have sites for all the organizations in the company: Sales, Marketing, Information Technology, Human Resources, and so on. But what about the corporate health and fitness center? That's something that everybody in the company, regardless of organization, may want to join. This makes it a good candidate for an open and independent site. Similarly, the home page for a corporate intranet should probably be placed in an open independent site so that any member of the portal can access it.
 
@@ -134,7 +134,7 @@ The default home page in Liferay is created in a site which by default is called
 ![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, organizations were created with their own sets of pages and did not need to have sites attached to them. Independent sites were called communities and the default community where the public pages were located was called *Guest* . Also, as of Liferay 6.0, the default public site's name changes dynamically based on the name of the portal. Any time you change the name of your portal, the name of this site will change. You can set the name in *Portal Settings*.
 ---
 
-Sites can be created in two ways. The first is through the control panel, like every other user/page collection in Liferay. The second is through the My Sites portlet, which can be added to any page in Liferay. Why are there two ways? Because the My Sites portlet also doubles as a way to navigate from site to site, and allows users to browse the list of sites and select whether or not they want to join one (if it is open or restricted). This enables portal administrators to provide users with this functionality without giving them access to the control panel. Sites can also be managed from the Manage menu of the dockbar, as was described above in the Navigating Liferay section. Further details can be found in chapter 3.
+Sites can be created in two ways. The first is through the control panel, like every other user/page collection in Liferay. The second is through the My Sites portlet, which can be added to any page in Liferay. Why are there two ways? The My Sites portlet also doubles as a way to navigate from site to site, and allows users to browse the list of sites and select one to join (if it is open or restricted). The My Sites portlet enables portal administrators to provide this functionality to users without giving them access to the control panel. Sites can also be administered from the Manage menu of the dockbar. We discussed this in chapter 3.
 
 To add a site, click the *Sites* link on the left side of the control panel in the Portal section, and then click the *Add* button. There are a few options you can select to create a site pre-populated with pages and portlets for collaborative or personal use or you can select *Custom Site* to build your site from scratch.
 
@@ -164,7 +164,7 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 
 **Sitemap:** lets you use the sitemap protocol to notify search engines that your web site is available for crawling. 
 
-**Robots:** lets you use a robots.txt file to specify certain pages and links that you do *not* want to be indexed by search engines. You need to set a virtual host before you set a `robots.txt` file.
+**Robots:** lets you use a `robots.txt` file to specify certain pages and links that you do *not* want to be indexed by search engines. You need to set a virtual host before you set a `robots.txt` file.
 
 **Staging:** lets you turn on either Local Live staging or Remote Live staging.
 
@@ -172,17 +172,17 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 
 #### Site Templates
 
-While we're on the subject of sites, we should mention Site Templates, which apppear below the Sites link in the Portal category of the control panel. These allow you to create sites by selecting pre-defined templates that you can make beforehand. A site template consists of a pre-defined set of pages and portlets. You can use templates to quickly create multiple sites that are pre-populated with the pages and portlets defined by the templates.
+While we're on the subject of sites, we should mention Site Templates, which appear below the Sites link in the Portal category of the control panel. These allow you to create sites by selecting pre-defined templates that you can make beforehand. A site template consists of a pre-defined set of pages and portlets. You can use templates to quickly create multiple sites that are pre-populated with the pages and portlets defined by the templates.
 
 ![Figure 12.6: Site Templates](../../images/01-site-templates.png)
 
-You can create templates for open, restricted, and private sites. Additionally, you can create a default template that applies to any type of site. As an example, we will create and apply a template designed for an educational institution's student sites. Go to the control panel and click *Site Templates*. Click the *Add* button and create a site template called *Students*. Check the Active box to make your template useable. Also check the Allow Modifications and Allow Layout Additions boxes. This will allow you to modify or remove the content introduced to your site from the template. Now you can select the *Open Site Template* link and begin adding content, pages, portlets and configuring the layouts. You'll learn more about how to do this in the next chapter. Once you're finished, return to the Site Templates portlet and select *Save.*
+You can create templates for open, restricted, and private sites. Additionally, you can create a default template that applies to any type of site. As an example, we will create and apply a template designed for an educational institution's student sites. Go to the control panel and click *Site Templates*. Click the *Add* button and create a site template called *Students*. Check the Active box to make your template usable. Also check the Allow Modifications and Allow Layout Additions boxes. This will allow you to modify or remove the content introduced to your site from the template. Now you can select the *Open Site Template* link and begin adding content, pages, portlets and configuring the layouts. You'll learn more about how to do this in the next chapter. Once you're finished, return to the Site Templates portlet and select *Save.*
 
 To create a site based on the new template, go to the control panel and click *Sites*. Click the *Add* button and create a site called *Freshmen*. In the Public Pages drop-down menu, select *Student Template* and then click *Save*. The new site will have all the pages, content, and portlets you created in the template. This feature streamlines the site creation process for administrators, making it easy to quickly create sites.
 
 ### User Groups
 
-User Groups are arbitrary groupings of users. These groups are created by portal administrators to group users together who don't have an obvious organizational or site-based attribute which brings them together. Groups cannot have permissions like roles, but user groups can be added to roles. Why, then, would you use user groups? They come into play when you have complex security requirements. They are also useful in conjunction with page templates, which we will discuss below.
+User Groups are arbitrary groupings of users. These groups are created by portal administrators to group users together who don't have an obvious organizational or site-based attribute which brings them together. Permissions can be granted to user groups by assigning them to roles. User groups come into play when you have complex security requirements. They are also useful in conjunction with page templates, which we discuss below.
 
 Creating a user group is easy. Click the *Users and Organizations* link, then click the *Add* button and choose *User Group*. 
 
@@ -207,13 +207,13 @@ button to perform various operations on User Groups.
 
 #### User Groups and Site Templates
 
-Liferay allows users to each have a personal site consisting of public and private pages. Permissions can be granted to allow to allow users to customize their personal sites at will. The default configuration of those pages can be determined by the portal administrator through the portal-ext.properties file and optionally by providing the configuration in a LAR file. Though this has been a long-time feature of Liferay, it was not very flexible or easy to use.
+Liferay allows users to each have a personal site consisting of public and private pages. Permissions can be granted to allow to allow users to customize their personal sites at will. The default configuration of those pages can be determined by the portal administrator through the `portal-ext.properties` file and optionally by providing the configuration in a LAR file. Though this has been a long-time feature of Liferay, it was not very flexible or easy to use.
 
 Liferay version 5.1 introduced the concept of site templates that can be associated with user groups. This enables administrators to provide the same configuration for the personal sites of a group of users, using Liferay's GUI instead of the properties file. In some cases you might want to provide a different configuration for each user depending on his or her profile. For example, in a portal for University students, staff and undergraduates would get different default pages and portlets in their personal space. You can also set it up so that different groups are combined together to create the desired default configuration. When a user is assigned to a user group, the configured page templates are copied directly to the user's personal site.
 
 ##### User Group Site Templates: Defining Site Templates for a User Group
 
-A user group's site templates can be administered using the control panel. Click *View* and select *User Groups* from the *Users and Organizations* page of the control panel to see a list of existing user groups. Click *Actions* to see the list of actions to peform on them that we described above.
+A user group's site templates can be administered from the control panel. Click *View* and select *User Groups* from the *Users and Organizations* page of the control panel to see a list of existing user groups. Click *Actions* to see the list of actions to perform on them that we described above.
 
 ![Figure 12.8: Manage Pages Action on a User Group](../../images/01-user-groups-manage-pages.png)
 
@@ -221,15 +221,15 @@ You can use the Manage Pages action to access the common Liferay UI for creating
 
 ![Figure 12.9: Adding a Page Template](../../images/01-user-groups-adding-page-template.png)
 
-In the screen shot above, the administrator has created a new private page called *You are a student* within the Students user group. Since the page created is a portlet page, the administrator can now click the *View Pages* button to open the page. Any number of portlets may be added to the page and they can be configured as needed. Let's assume for our example that the Loan Calculator and Calendar portlets are added to the page.
+In the screen shot above, the administrator has created a new private page called *You are a student* within a user group called *Students*. Since the page created is a portlet page, the administrator can now click the *View Pages* button to open the page. Any number of portlets may be added to the page and they can be configured as needed. For our example, let's add the Loan Calculator and Calendar portlets to the template page.
 
 ##### Applying the Site Templates by Assigning Members to the User Group
 
-The next step is to assign an existing user to that group to verify that the page template is copied to the user's private page. To do this, click *Actions* &rarr; *Assign Members* in the list of available user groups. Click the *Available* tab to see a list of users that can be assigned to the group.
+The next step is to assign an existing user to the *Students* group to verify that the site template is copied to the user's personal site. To do this, click *Actions* &rarr; *Assign Members* in the list of available user groups. Click the *Available* tab to see a list of users that can be assigned to the group.
 
 ![Figure 12.10: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
 
-From that list, one or more users can be selected to make them members of the user group. When the *Update Associations* button is clicked, the users become members of the group and copies of any public or private page templates which are configured for the user group are copied to their page sets.
+From that list, one or more users can be selected to make them members of the user group. When the *Update Associations* button is clicked, the users become members of the group and copies of any public or private pages from the user group's site template are copied to users' personal sites. Note that content from the site template will be an addition to the users' personal sites but will not replace any existing content.
 
 ![Figure 12.11: Template Copied to a User's Personal Site](../../images/01-template-copied-to-personal-site.png)
 
@@ -237,7 +237,7 @@ For example, suppose that a user that already had an existing *Welcome* page on 
 
 ##### Additional details
 
-Once the template pages have been copied to a user's personal site, the copies will be owned by the user. The user will be able to modify the pages and their content if the required permissions have been assigned to the user and the template. When a user is removed from a user group the associated pages won't be removed: they have become part of the user's personal site. However, if a user is removed from a group and is then added back, the pages will not be copied to the user's site a second time.
+Once the template pages have been copied to a user's personal site, the copies will be owned by the user. The user will be able to modify the pages and their content provided that the required permissions have been assigned to the user and the template. When a user is removed from a user group the associated pages won't be removed: they have become part of the user's personal site. Moreover, if a user is removed from a group and is then added back, the pages will not be copied to the user's site a second time.
 
 If an administrator modifies page templates for a user group after users have already been added to the group, those changes will only take effect when new users are assigned to the user group. The changes won't be applied to users that were already members of the user group.
 
@@ -247,14 +247,14 @@ Users can belong to many user groups. If you have templates defined for a number
 
 We could expand our previous example by dividing the *Students* user group into *First Year Students* and *Second Year Students*. For each of these types of students we want to have a page with the Loan Calculator and Calendar, but depending on which type, we may want other portlets to be on that page too. This can be achieved by using a naming convention for the pages. If two or more pages of different user groups have the same name, they will be combined into a single page when they are copied to a user's personal site. 
 
-For our example, we will only create a *First Year Students* user group but a *Second Year Students* group could be created the same way. First, navigate to the Site Template page of the control panel. Click *Add* and enter "First Year Students" for the name of the site template and an optional description: "for use by the First Year Students user group". Add a private page called *You are a Student* to this template and add the RSS portlet to this page. Then navigate to the *Users and Organizations* page of the control panel, click *View*, and select *User Groups*. Add a user group with the name "First Year Students" and, optionally, the description "freshmen". Lastly, add the same user who was already assigned to the *Students* group to the *First Year Students* group.
+For our example, we will only create a *First Year Students* user group but a *Second Year Students* group could be created the same way. First, navigate to the Site Template page of the control panel. Click *Add* and enter *First Year Students* for the name of the site template and an optional description: *for use by the First Year Students user group*. Add a private page called *You are a Student* to this template and add the RSS portlet to this page. Then navigate to the *Users and Organizations* page of the control panel, click *View*, and select *User Groups*. Add a user group with the name *First Year Students* and, optionally, the description *freshmen*. Lastly, add the same user who was already assigned to the *Students* group to the *First Year Students* group.
 
 ![Figure 12.12: Portlets Combined on Page from Two User Group Templates](../../images/01-combined-portlets-from-two-user-groups.png)
 
-In our example, a user was added to a *Students* group which had a template with a private page called *You are a Student* and to a *First Year Students* group which had a template with an identically named private page. Thus the private page of the user received both the portlets from the *Students* template and from the *First Year Students* template. 
+In our example, a user was added to a *Students* group which had a template with a private page called *You are a Student* and to a *First Year Students* group which had a template with an identically named private page. Thus the *You are a Student* page of the user received both the portlets from the *Students* template and from the *First Year Students* template. 
 
 ---
-![tip](../../images/01-tip.png) Note: If there are additional pages or portlets on your user's personal site, this means that your portal is configured to add default pages to the personal sites of new users.
+![tip](../../images/01-tip.png) Note: If there are additional pages or portlets on your user's personal site than the ones in this example, this means that your portal is configured to add default pages to the personal sites of new users.
 ---
 
 ##### Page Combination Rules
@@ -322,7 +322,7 @@ Roles are very powerful, and allow portal administrators to define various permi
 Prior to Liferay 6.0, the default configurations of many Liferay portlets allowed power users, but not regular users, to access them. Liferay 6.0 and subsequent versions grant the same default permissions to both power users and regular users. This way, portal administrators are not forced to use the power users role. However, Liferay encourages those who do to create their own custom permissions for the role. 
 
 ---
-![tip](../../images/01-tip.png) Note: Prior to Liferay version 6.0, Power Users and Users did *not* have the same default permissions. So if are using Liferay 5.2 or a previous verion, it's dangerous to remove the Power Users role from the default user associations: this could remove certain permissions that you expect to apply to all users. If you decide to remove the Power Users role from the default user associations anyway, you will probably want to modify the permissions on certain portlets to make them accessible to all users. To do this, see the section on Plugins Configuration below.
+![tip](../../images/01-tip.png) Note: Prior to Liferay version 6.0, Power Users and Users did *not* have the same default permissions. So if are using Liferay 5.2 or a previous version, it's dangerous to remove the Power Users role from the default user associations: this could remove certain permissions that you expect to apply to all users. If you decide to remove the Power Users role from the default user associations anyway, you will probably want to modify the permissions on certain portlets to make them accessible to all users. To do this, see the section on Plugins Configuration below.
 ---
 
 ### Teams
@@ -353,7 +353,7 @@ Password policies can enhance the security of your portal. Password policies can
 
 If you are viewing a page other than the control panel, select *Control Panel* from the *Go to* menu of the dockbar. Next, click on the *Password Policies* link on the left side of the screen under the *Portal* heading. You will see that there is already a default password policy in the system. You can edit this in the same manner as you edit other resources in the portal: click *Actions* and then click *Edit*.
 
-The Password Policy settings form contaings the following fields. Enabling specific settings via the check boxes prompts setting-specfic options to appear.
+The Password Policy settings form contains the following fields. Enabling specific settings via the check boxes prompts setting-specfic options to appear.
 
 **Name:** requires you to enter a name for the password policy.
 
@@ -851,7 +851,7 @@ Note that if you add your mail server settings here, they will override anything
 
 Liferay Portal enables users to add content in many formats: web content, images, and files. This is done using the Web Content Management System, the Image Gallery, the Documents and Media Library, and in other portlets, both built-in and custom written. Sometimes, it is helpful to convert this content from its original format to one that is more convenient for the user browsing the content. Liferay Portal allows users to do this by integrating with OpenOffice and Xuggler.
 
-OpenOffice is an open source office suite which is normally run in graphical mode to create documents, but it can be run in “server” mode. When run in server mode, OpenOffice can be used to convert documents to and from all of the file types it supports. Liferay can then make use of this feature to automatically convert content on the fly. Xuggler provides video conversion functionality.
+OpenOffice is an open source office suite which usually runs in graphical mode to create documents, but it can also be run in “server” mode. When run in server mode, OpenOffice can be used to convert documents to and from all of the file types it supports. Liferay can then make use of this feature to automatically convert content on the fly. Xuggler provides video conversion functionality.
 
 Use the External Services tab to tell Liferay how to connect to your running instance of OpenOffice or Xuggler. You can install OpenOffice on the same server upon which Liferay is running. Once you have it installed, you can start OpenOffice in server mode with the following command:
 
