@@ -161,3 +161,9 @@ You can add any Liferay portlet as an application on Facebook. To do this, you m
 This integration enables you to make things like Message Boards, Calendars, Wikis, and other content on your portal available to a much larger audience (unless you already have in billion users on your site, in which case, kudos to you), and, if you have this coupled with Facebook Sign On, moving from the content on Facebook to your portal can be almost seamless.
 
 ## Summary
+
+In this chapter, we explored a variety of ways to use Liferay's social features. As you have seen, you can use Liferay to create a website that is totally focused on connecting people through social interactions, or one that simply uses social interactions as part of a larger collaboration based website. Either way you do it, you can also use Liferay's features to integrate your portal with other websites like Facebook, OpenSocial, and iGoogle.
+
+The large number of social options provided, along with features like Social Equity, means that just about any website can leverage Liferay portal to improve your users' experience and effectiveness.
+
+
