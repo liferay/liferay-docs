@@ -1,18 +1,19 @@
-# *Introduction*
+
+# Introduction
 
 Welcome to the Liferay's Developers Guide, the official guide for all
 developers that want to develop a portal based on Liferay or that want
 to develop an application that anyone can use in their Liferay
-installation. This guide will asume that you already know what a portal
+installation. This guide will assume that you already know what a portal
 is and know how to use Liferay from an end user perspective. If you
 don't, it is recommended that you read the [*What is a
-Portal?*](http://www.liferay.com/products/what-is-a-portal) Whitepaper
-and chapters 1, 5 and 6 of [Liferay's Administration
-Guide](http://www.liferay.com/documentation/liferay-portal/6.0/administration).
+Portal?*](http://www.liferay.com/products/what-is-a-portal) white-paper
+and the Introduction, Liferay Collaboration Suite, and Advanced Liferay
+Configuration chapters of [Using Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/administration).
 
 This first chapter introduces the technologies and tools that you will
-be able to use to develop applications and also to extend or customise
-the functionalities that Liferay provides out of the box to adapt them
+be able to use to develop applications and also to extend or customize
+functionality that Liferay provides out of the box to adapt them
 to your needs.
 
 The main mechanism that you as a developer will use to achieve all of
@@ -25,11 +26,11 @@ of plugins that you can use in each case.
 
 ## Developing applications for Liferay
 
-According to Wikipedia “A web application is an application that is
-accessed over a network such as the Internet or an intranet.”. A portal
-application is a web application that can cohexist with many other
-applications in a civilized way and also that can reuse many
-functionalities provided by the portal platform to reduce the
+According to Wikipedia "A web application is an application that is
+accessed over a network such as the Internet or an intranet." A portal
+application is a web application that can coexist with many other
+applications in a civilized way and also that can leverage functionality
+provided by the portal platform to reduce the
 development time and deliver a more consistent experience to end users.
 
 If you are reading this, you probably want to (or need to) develop an
@@ -104,11 +105,11 @@ ways:
     Some people like to upload them directly through the file system,
     FTP or similar protocols. In some other cases, just uploading it
     with theDocument Library portlet and copying the URL is enough. Once
-    you have the URL you can go to the Control Panel > OpenSocial,
-    click the “New Gadget” button and enter the URL as shown in the
+    you have the URL you can go to the Control Panel -\> OpenSocial,
+    click the *New Gadget* button and enter the URL as shown in the
     following screenshot:
 
-![image](../../images/open-social-gadget-new-ctrl-panel.png)
+![Figure 1.x: Create a new Gadget](../../images/open-social-gadget-new-ctrl-panel.png)
 
 After this is done, the gadget will appear as an application that page
 administrators can add to their pages.
@@ -151,7 +152,7 @@ one or another. Reviewing each of them is out of the scope of this
 guide.
 
 If the existing application has been developed as a JavaEE application,
-Liferay provides a technology caled Web Application Integrator that
+Liferay provides a technology called Web Application Integrator that
 allows prototyping the integration and provides several nice features.
 
 In order to use Web Application Integrator all you need to do is deploy
@@ -214,7 +215,7 @@ projects.
 
 Liferay provides many out of the box features, included a fully featured
 content management system, a social collaboration suite and several
-productivity tools. For some portals those functionalities might be
+productivity tools. For some portals these features might be
 exactly what you need, but for some others you might want to extend them
 or customize how they work or how they look by default.
 
@@ -241,8 +242,7 @@ Layouts are similar to themes, except that they change the arrangement
 of portlets on a page rather than its look. Layout templates are also
 written in Velocity and are hot-deployable.
 
-### Customizing or extending the out of the box functionalities: Hook
-plugins
+### Customizing or extending the out of the box functionality: Hook plugins
 
 Hook plugins are the recommended method of customizing the the core
 functionality of Liferay at many predefined extension points. Hook
@@ -271,9 +271,9 @@ plugins, the server must be restarted for changes to take effect. For
 this reason, Ext plugins should not be combined with other types of
 plugins.
 
-![image](../../images/tip-pen-paper.png)**Tip:** If you have
+![tip](../../images/tip-pen-paper.png)**Tip:** If you have
 developed for Liferay 5.2 or before, you may be familiar with what was
-known as “Extension Environment”. Ext plugins are a new feature in
+known as "Extension Environment". Ext plugins are a new feature in
 Liferay 6.0 which replace the extension environment in order to simplify
 its development. It is possible to automatically convert any existing
 Extension Environment into a plugin. Check the chapter *Migrating old
@@ -285,7 +285,7 @@ The Java ecosystem is well know for providing a wide variety of options
 for almost any developer work that must be done. This is a great
 advantage because you can find the tool that fits best your needs and
 the way you work. For that reason once you have found a tool that you
-are confortable with and have learned to use it you want to keep using
+are comfortable with and have learned to use it you want to keep using
 it.
 
 On the other hand, the wide variety of tools is often intimidating for
@@ -302,7 +302,7 @@ favorites:
     environment called the Plugins SDK that will allow you to develop
     all types of plugins by executing a set of predefined commands (also
     known as targets sin Ant's nomenclature). You can use the Plugins
-    SDK directly from the command line, using editors like Emacs, Vi
+    SDK directly from the command line, using editors like Emacs, Vi,
     EditPlus or even the Notepad. You can also integrate it with your
     favorite IDE, since almost all of them provide support for Apache
     ant. The next chapter describes how to use the Plugins SDK in
@@ -310,7 +310,7 @@ favorites:
 
 -   Eclipse and the Liferay IDE: Eclipse is the most popular and well
     known Java IDE and provides a wide variety of features. Liferay IDE
-    is a plugin for Eclipse that extend its functionalities to make
+    is a plugin for Eclipse that extend its functionality to make
     development of all types of Liferay plugins much easier. Liferay IDE
     uses the Plugins SDK underneath, but you don't even need to know
     unless you are trying to perform an advanced operation not directly
@@ -330,7 +330,7 @@ using the Liferay IDE.
 developers prefer one of the alternatives to Apache Ant. The most
 popular of these alternatives is Maven. To support developers that want
 to use Maven we have *mavenized* Liferay artifacts so that they can
-easily be referred from your pom.xml. We are in the process of writing a
+easily be referred from your `pom.xml`. We are in the process of writing a
 chapter about using Maven for Liferay development and will be added to
 this guide in the future. Meanwhile check the following blog entry from
 Thiago Moreira for more information:
@@ -347,7 +347,7 @@ provided an Open Source license to Liferay's core developers). Both of
 these IDEs have support for integration with Apache Ant, so you can use
 the Plugins SDK with them. Additionally, Sun Microsystems developed an
 extension to Netbeans called the *Portal Pack* that is explicitly
-designed to develop plugins for Liferay (and their Liferay flavour
+designed to develop plugins for Liferay (and their Liferay flavor
 called WebSpace). You can find more about the Portal Pack in the
 following URL:
 

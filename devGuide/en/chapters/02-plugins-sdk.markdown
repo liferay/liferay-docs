@@ -1,3 +1,4 @@
+
 # The Plugins SDK
 
 Java developers have a wide variety of tools and development
@@ -11,7 +12,7 @@ comfortable with. In a later chapter we also introduce Liferay IDE, a
 plugin for eclipse that simplifies development for Liferay.
 
 
-![image](../../images/tip-pen-paper.png)**Tip:** If you are an Eclipse
+![tip](../../images/tip-pen-paper.png)**Tip:** If you are an Eclipse
 user and prefer to start working with it from be very beginning, you can
 read that chapter first before reading the rest of the guide..
 
@@ -33,26 +34,26 @@ download the Plugins SDK from the *Additional Files* page:
 2.  (Optional) By default Liferay Portal Community Edition comes bundled
     with many plugins. It's common to remove them to speed up the server
     startup. To do this, in the
-    *liferay-portal-[version]/tomcat-[tomcat-version]/webapps*
-    directory, delete all the directories except for **ROOT** and
-    **tunnel-web.**
+    `liferay-portal-[version]/tomcat-[tomcat-version]/webapps`
+    directory, delete all the directories except for `ROOT` and
+    `tunnel-web.`
 
 3.  Start Liferay:
 
--   Windows: navigate with the file browser to
-    *liferay-portal-[version]/tomcat-**[tomcat-version]/bin and* double
+	-   Windows: navigate with the file browser to
+    `liferay-portal-[version]\tomcat-[tomcat-version]\bin` and double
     click *startup.bat*. To shut the server down later, press Ctrl-C in
     the terminal window.
 
--   Linux and Mac OS X: open a terminal, navigate to
-    *liferay-portal-[version]/tomcat-**[tomcat-version]**/bin*, enter
+    -   Linux and Mac OS X: open a terminal, navigate to
+    `liferay-portal-[version]/tomcat-[tomcat-version]/bin`, enter
     the following command
 
 	./startup.sh
 
 Once Liferay starts your browser should open to
 [http://localhost:8080/](http://localhost:8080/) and you can login with
-the email *test@liferay.com* and password *test*.
+the email `test@liferay.com` and password `test`.
 
 ### Ant Configuration
 
@@ -62,13 +63,13 @@ Ant 1.7.0 or higher installed on your machine. Download the latest
 version of Ant from [http://ant.apache.org/](http://ant.apache.org/).
 Decompress the archive into a folder of your choosing.
 
-Next, set an environment variable called **ANT_HOME** which points to
+Next, set an environment variable called `ANT_HOME` which points to
 the folder to which you installed Ant. Use this variable to add the
-binaries for Ant to your **PATH**by adding $**ANT_HOME/bin** to your
-**PATH** environment variable.
+binaries for Ant to your `PATH` by adding $`ANT_HOME\bin` to your
+`PATH` environment variable.
 
-You can do this on Linux or Mac OS X by modifying your *.bash_profile*
-file as follows (assuming you installed Ant in */java*):
+You can do this on Linux or Mac OS X by modifying your `.bash_profile`
+file as follows (assuming you installed Ant in `/java`):
 
     export ANT_HOME=/java/apache-ant-1.8.1
     export PATH=$PATH:$ANT_HOME/bin
@@ -76,45 +77,45 @@ file as follows (assuming you installed Ant in */java*):
 Close and reopen your terminal window to make these settings take
 effect.
 
-You can do this on Windows by going to ***Start** -> *Control Panel* ,
+You can do this on Windows by going to *Start -\> Control Panel* ,
 and double-clicking the *System* icon. Go to *Advanced*, and then click
 the *Environment Variables* button. Under *System Variables*, select
 *New*. Make the Variable Name **ANT_HOME** and the Variable Value the
-path to which you installed Ant (e.g., *c:javaapache-ant-1.8.1*),
+path to which you installed Ant (e.g., `c:\java\apache-ant-1.8.1`),
 and click *OK*.
 
-Scroll down until you find the **PATH** environment variable. Select it
-and click *Edit*. Add **%ANT_HOME%bin** to the end of the Variable
+Scroll down until you find the `PATH` environment variable. Select it
+and click *Edit*. Add `%ANT_HOME%\bin` to the end of the Variable
 Value. Click *OK*, and then click *OK* again. Open a command prompt and
-type **ant-version** and press Enter. You should get and output
+type `ant -version` and press *Enter*. You should get output
 similar to this:
 
     Apache Ant(TM) version 1.8.2 compiled on December 20 2010
 
-If not, check your environment variable settings and make sure they are
-pointing to the directory where you unzipped Ant.
+If not, check your environment variable settings and make sure the directory
+where you unzipped Ant is referenced in your `PATH`.
 
 ### Plugins SDK Configuration
 
 Now that all the proper tools are in place, we must configure the
 Plugins SDK to be able to deploy into your Liferay instance. You will
-notice that the Plugins SDK contains a file called *build.properties*.
+notice that the Plugins SDK contains a file called `build.properties`.
 This file contains the default settings about the location of your
 Liferay installation and your deployment folder. You can use this file
-as a reference, but you should not modify it directly (In fact you will
-see the message “DO NOT EDIT THIS FILE” at the top if you open it). In
+as a reference, but you should not modify it directly (In fact, you will
+see the message "DO NOT EDIT THIS FILE" at the top if you open it). In
 order to override the default settings, create a new file in the same
-folder called *build.${user.name}.properties*, where
-`${user.name}`{.western} is your user ID on your machine. For example,
+folder called `build.${user.name}.properties`, where
+`${user.name}` is your user ID on your machine. For example,
 if your user name is jsmith (for John Smith), you would create a file
-called *build.jsmith.properties*.
+called `build.jsmith.properties`.
 
 Edit this file and add the following line:
 
     app.server.dir=the directory containing your application server
 
 In our case, **app.server.dir** should be the absolute path to your
-*liferay-portal-[version]/tomcat-[tomcat-version]* directory.
+`liferay-portal-[version]/tomcat-[tomcat-version]` directory.
 
 Save the file. You are now ready to start using the Plugins SDK.
 
@@ -123,8 +124,8 @@ Save the file. You are now ready to start using the Plugins SDK.
 Each folder in the Plugins SDK contains scripts for creating new plugins
 for that type. New plugins are placed in their own subdirectory of the
 appropriate plugin directory. For instance, a new portlet called
-“greeting-portlet” would reside in
-*liferay-plugins-sdk-6/portlets/greeting-portlet*.
+"greeting-portlet" would reside in
+`liferay-plugins-sdk-6/portlets/greeting-portlet`.
 
 The Plugins SDK can house all of your plugin projects enterprise-wide,
 or you can have separate Plugins SDK projects for each plugin. For
@@ -142,3 +143,4 @@ the Plugins SDK and then copy the resulting project folder to your IDE
 of choice. This method requires some manual modification of the ant
 scripts, but it makes it possible to conform to the strict standards
 some organizations have for their Java projects.
+

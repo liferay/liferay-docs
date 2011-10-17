@@ -1019,138 +1019,57 @@ should see the default Liferay home page.
 Open your browser to `http://localhost:8080`. You should see
 the default Liferay home page.
 
-#### Tomcat 6.0.x
+#### Tomcat 7.0.21
 
 **Liferay Home** is one folder above Tomcat's install location.
 
-1.  Download and install Tomcat 6.0.X into your preferred directory.
-    From now on, the directory where you installed Tomcat will be
-    referred to as `$TOMCAT_HOME`.
+For this section, we will refer to your Tomcat server's installation location as `$TOMCAT_HOME`. If you do not already have an existing Tomcat server, we recommend that you download a Liferay/Tomcat bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing Tomcat server or would like to install Liferay on Tomcat manually, please follow the steps below.
 
-	**Note:** For JDK 5 users: move
-	`$TOMCAT_HOME/webapps/ROOT/WEB-INF/lib/xercesImpl.jar` to
-	`$TOMCAT_HOME/common/endorsed`. JDK 1.4 is no longer
-	supported in Liferay 5.x and above.
+Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
+The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
-2.  Create and edit
-    `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml` to set up
-    the portal web application.
+**Note:** For JDK 5 users: move `$TOMCAT_HOME/webapps/ROOT/WEB-INF/lib/xercesImpl.jar` to `$TOMCAT_HOME/common/endorsed`. JDK 1.4 is no longer supported in Liferay 5.x and above.
 
-        <Context path="">
-        </Context>
+Installation Steps:
 
-3.  Download `liferay-portal-x.x.x.war`.
+1. If you are manually installing Liferay on a clean Tomcat server, delete the contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the default Tomcat home page. Then extract the Liferay `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
 
-4.  Download Liferay's Portal Dependencies. Create a
-    `$TOMCAT_HOME/lib/ext` directory and unzip the
-    dependencies ZIP in there. If the files do not extract to this
-    directory, make sure they are in the correct directory by moving
-    them there.
+2. Extract the Liferay dependencies file to `$TOMCAT_HOME/lib/ext`. If the files do not extract to this directory, you can copy the dependencies archive to this directory, extract them, and then delete the archive.
 
-5.  Edit `$TOMCAT_HOME/conf/catalina.properties`:
+3. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina will call `setenv.bat` or `setenv.sh`. Edit the file and populate it with following contents:
 
-        common.loader=
-            ${catalina.home}/classes,
-            ...
-            ${catalina.home}/lib/ext/*.jar
+	JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
-6.  Make sure your database server is installed and is working. If it's
-    installed in a different machine, make sure that it's accessible
-    from the one where Liferay is being installed.
+This sets the character encoding to UTF-8, sets the time zone to Greenwich Mean Time, and allocates memory to the Java virtual machine.
 
-7.  Configure data sources for your database. Make sure the JDBC driver
-    for your database is accessible by Tomcat. Obtain the JDBC driver
-    for your version of the database server. In the case of MySQL use
-    `mysql-connector-java-{$version}-bin.jar`. Next, copy the
-    JAR file to `$TOMCAT_HOME/common/lib/ext`.
+4. Create the directory `$TOMCAT_HOME/conf/Catalina/localhost` and create a `ROOT.xml` file in it. Edit this file and populate it with the following contents:
 
-8.  Edit `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
+	<Context path="" crossContext="true">
+	
+	</Context>
+	
+Setting `crossContext="true"` allows multiple web apps to use the same class loader.
 
-        <Context...>
-            <Resource
-                name="jdbc/LiferayPool"
-                auth="Container"
-                type="javax.sql.DataSource"
-                driverClassName="com.mysql.jdbc.Driver"
-                url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-                username=""
-                password=""
-                maxActive="100"
-                maxIdle="30"
-                maxWait="10000"
-            />
-        </Context>
+5. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line `common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar` with `common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar`. This allows Catalina to access the dependency jars that you extracted to `$TOMCAT_HOME/lib/ext`.
 
-9.  Be sure to enter the user name and password to your database in the
-    appropriate fields above.
+6. Open `$TOMCAT_HOME/conf.server.xml` and do a search and replace of the line `redirectPort="8443"` with the line `redirectPort="8443" URIEncoding="UTF-8"`. This ensures that your server will consistently use UTF-8 encoding.
 
-10. Create a mail session bound to `mail/MailSession`. Edit
-    `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml` and
-    configure a mail session.
+7. Make sure that there is no `support-catalina.jar` file in your `$TOMCAT_HOME/webapps` directory. If you find one, remove it.
 
-        <Context...>
-            <Resource
-                name="mail/MailSession"
-                auth="Container"
-                type="javax.mail.Session"
-                mail.transport.protocol="smtp"
-                mail.smtp.host="localhost"
-                mail.store.protocol="imap"
-                mail.imap.host="localhost"
-            />
-        </Context>
+8. Make sure that your database server is installed and working. If it's installed in a different machine, make sure that it's accessible from the one where Liferay is being installed.
 
-11. Configure JAAS.
+9. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain the JDBC driver for your version of the database server. In the case of MySQL use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/). Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
 
-    Edit `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml` and
-    configure a security realm.
+11. Configure the data sources for your database by creating a `portal-ext.properties` file in your *Liferay Home* directory (the one your $TOMCAT_HOME directory is sitting in). Edit the file and populate it with the following contents:
 
-        <Context...>
-            <Realm
-                className="org.apache.catalina.realm.JAASRealm"
-                appName="PortalRealm"
-                userClassNames="com.liferay.portal.security.jaas.PortalPrincipal"
-                roleClassNames="com.liferay.portal.security.jaas.PortalRole"
-                debug="99"
-                useContextClassLoader="false"
-            />
-        </Context>
+	jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false
+	jdbc.default.driverClassName=com.mysql.jdbc.Driver
+	jdbc.default.username=root
+	jdbc.default.password=root
+	
+Note that the above properties file assumes that your database name is *lportal* and your MySQL username and password are both *root*. You'll have to update these values with your own database name and credentials.
 
-14. Create `$TOMCAT_HOME/conf/jaas.config`.
-
-        PortalRealm {
-            com.liferay.portal.kernel.security.jaas.PortalLoginModule required;
-        };
-
-15. Edit `$TOMCAT_HOME/bin/catalina.bat` (on Windows) or
-    `$TOMCAT_HOME/bin/catalina.sh` (on Linux / Mac / Unix) so
-    that Tomcat can reference the login module.
-
-        rem ----- Execute...
-
-        set JAVA_OPTS=-Xms128m -Xmx512m -Dfile.encoding=UTF8
-        -Duser.timezone=GMT
-        -Djava.security.auth.login.config=%CATALINA_HOME%/conf/jaas.config
-
-16. Delete contents `$TOMCAT_HOME/webapps/ROOT` directory.
-    This undeploys the default Tomcat home page.
-
-17. Unpack `liferay-portal-x.x.x.war` to
-    `$TOMCAT_HOME/webapps/ROOT`.
-
-18. For supporting UTF-8 URI Encoding, edit
-    `$TOMCAT_HOME/conf/server.xml`:
-
-        <!-- Define a non-SSL HTTP/1.1 Connector on port 8080 -->
-        <Connector port="8080" maxHttpHeaderSize="8192"
-            maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
-            enableLookups="false" redirectPort="8443" acceptCount="100"
-            connectionTimeout="20000" disableUploadTimeout="true"
-            URIEncoding="UTF-8"
-        />
-
-19. Run Tomcat, point browser to `http://localhost:8080`. You
-    should see the default Liferay home page.
+12. Start Tomcat. You can do this by executing `$TOMCAT_HOME/bin/startup.bat` or `$TOMCAT_HOME/bin/startup.sh`. Then point your browser to `http://localhost:8080`. You should see the default Liferay home page. Congratulations on successfully installing Liferay!
 
 #### WebLogic 10
 

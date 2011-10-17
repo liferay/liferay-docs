@@ -1,3 +1,4 @@
+
 # Liferay Frameworks
 
 This chapter provides you with a brief overview of several of the
@@ -43,9 +44,9 @@ it should be placed inside a new portlet. Create a file named
 Plugins SDK and add the following content:
 
     <?xml version="1.0"?>
-    <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder
-    6.0.0//EN"
-    "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+    <!DOCTYPE service-builder PUBLIC
+    "-//Liferay//DTD Service Builder 6.1.0//EN"
+    "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
     <service-builder package-path="com.sample.portlet.library">
         <namespace>Library</namespace>
         <entity name="Book" local-service="true" remote-service="true">
@@ -94,7 +95,7 @@ Columns specified in `service.xml` will be created in the
 database with a data type appropriate to the specified Java type. Accessors
 in the model class will automatically be generated for these attributes.
 
-**Tip**: Always consider adding two long fields called *groupId* and
+![tip](../../images/tip-pen-paper.png)**Tip:**: Always consider adding two long fields called *groupId* and
 *companyId* to your data models. These two fields will allow your
 portlet to support the multi-tenancy features of Liferay so that each
 organization (for each portal instance) can have its own
@@ -107,8 +108,8 @@ directory and enter this command:
 
 	ant build-service
 
-The service has been generated successfully when you see “BUILD
-SUCCESSFUL" In the terminal window, you should see that a large number
+The service has been generated successfully when you see BUILD
+SUCCESSFUL In the terminal window, you should see that a large number
 of files have been generated. An overview of these files is provided
 below:
 
@@ -231,7 +232,7 @@ Service Builder looks through `BookLocalServiceImpl` and automatically
 copies the signatures of each method into the interface. You can now add
 a new book to the database by making the following call
 
-    BookLocalServiceUtil.addBook(userId, “A new title");
+    BookLocalServiceUtil.addBook(userId, "A new title");
 
 ### Overview of *service.properties*
 
@@ -278,7 +279,7 @@ include the following:
 For more information on these services, see *Liferay in Action* and Liferay's
 Javadocs.
 
-## TagLib Builder (new)
+## TagLib Builder (new TODO)
 
 ## Asset Framework
 
@@ -455,7 +456,7 @@ These two taglibs create appropriate form controls that allow the
 user to search for a tag or create a new tag, and select
 a existing category.
 
-![image](../../images/08-apis-and-frameworks_html_5c790363.png)**Tip:**If you are
+![tip](../../images/tip-pen-paper.png)**Tip:**If you are
 using Liferay's Alloy Form taglibs, creating fields to enter tags
 and categories is even simpler. You just need to use <aui:input
 name="tags" type="assetTags" /> and <aui:input name="categories"
@@ -502,7 +503,7 @@ view and abstract view) available to display your assets.
 You can provide all this to the Asset Publisher by implementing the following
 pair of interfaces - AssetRendererFactory and AssetRenderer:
 
--   [AssetRendererFactory](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portlet/asset/model/AssetRendererFactory.html):
+-   **AssetRendererFactory:**
     this class knows how to retrieve specific assets from
     the persistent storage via the class `classPK`.
     The `classPK` is typically the asset's primary 
@@ -515,20 +516,20 @@ pair of interfaces - AssetRendererFactory and AssetRenderer:
     Publisher to use when a user wants to add a new asset of your custom type.
     This URL should point to your own portlet. There are other less important
     methods of the interface, but you can avoid implementing them by extending
-    [BaseAssetRendererFactory](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portlet/asset/model/BaseAssetRendererFactory.html).
+    **BaseAssetRendererFactory**.
     Extending this *base* class, instead of implementing the interface
     directly, will make your code more robust to possible interface changes
     in future versions of Liferay, since the base implementation will
     already be updated to accommodate the interface changes.
 
--   [AssetRenderer](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portlet/asset/model/AssetRenderer.html):
+-   **AssetRenderer:**
     this is the class that provides metadata information about one
     specific asset. It verifies whether the current user has permission to edit or
     view the asset. And this class is responsible for rendering
     the asset for the different templates (e.g. abstract and full content view)
     by forwarding to a specific an appropriate JSP. It is recommended that
     you extend the
-    [BaseAssetRenderer](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portlet/asset/model/BaseAssetRenderer.html)
+    **BaseAssetRenderer** 
     class rather than directly implementing the interface. The *base* class
     provides nice defaults and robustness for methods that could be added to
     the interface in the future.
@@ -784,7 +785,7 @@ how it looks like for blogs entries:
 That's about it. It wasn't that hard, right? Now you can start enjoying
 the benefits of the asset framework in your custom portlets.
 
-## ServiceContext (new)
+## ServiceContext
 
 The ServiceContext object contains a set of fields
 that are common to many different services. It is used, for example
@@ -792,7 +793,7 @@ to carry tags, categories, permissions information, ... It is not a
 framework in itself but rather a utility object that helps usage of
 the other frameworks.
 
-## File Storage Framework (new)
+## File Storage Framework
 
 The File Storage Framework: Allows storing files using the back-end of
 the Document Library. By using this framework you won't have to
@@ -803,9 +804,9 @@ store attached files in pages and posts respectively. You can check
 the source code of these two portlets for great real-life examples of
 how to use the framework.
 
-### Document Types (new)
+### Document Types (new TODO)
 
-### CMIS Repository / Third Party Repository Hooks (new)
+### CMIS Repository / Third Party Repository Hooks (new TODO)
 
 ## Other frameworks
 
@@ -837,7 +838,7 @@ information and detailed instructions on how to use them over time.
 -   Custom fields: A portlet that uses custom fields will allow the end
     user to extend the fields of its data entries with custom ones
     defined by the end user. To see a list of data types in Liferay that
-    support this functionality just go to the Control Panel -> Custom
+    support this functionality just go to the Control Panel -\> Custom
     Fields.
 
 -   Report abuse: Allow end users to report that some information

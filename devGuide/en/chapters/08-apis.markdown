@@ -1,3 +1,4 @@
+
 # Liferay APIs
 
 This chapter provides an overview of several of the
@@ -102,13 +103,13 @@ for your *secure* services (services requiring user authentication) and
 user authentication. We've used *secure* services such as the following for
 `UserGroup`:
 
-![Figure 8.1: UserGroup Web Service listing](../../images/wsdl-summary-listing.png)
+![Figure 8.x: UserGroup Web Service listing](../../images/wsdl-summary-listing.png)
 
 Each web service is listed with its name, operations, and a link to its WSDL
 file. The WSDL is written in XML and provides a model for describing and
 locating the web service.
 
-![Figure 8.2: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.png)
+![Figure 8.x: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.png)
 
 You pass in the WSDL URL along with your login credentials to the SOAP service
 locator for your service.
@@ -285,11 +286,11 @@ The following invokes the same operations using PHP and the PHP SOAP Client:
     ?>
 \  
 
-### JSON Web Services (new)
+### JSON Web Services (new TODO)
 
 TODO consider calling a method that uses service context (like an update method)
 
-## RESTful Interfaces (new)
+## RESTful Interfaces (new TODO)
 
 TODO Include Atom and loose serialization with JSON 
 
@@ -344,7 +345,7 @@ reason for this mapping is to provide a means for the deployer of a portlet to
 resolve conflicts between roles that have the same name but are from different
 portlets (e.g., portlets from different developers).
 
-![image](../../images/tip-pen-paper.png)**Tip:** Each role named in a
+![tip](../../images/tip-pen-paper.png)**Tip:** Each role named in a
 portlet's `<security-role-ref>` element is given permission to add the portlet
 to a page.
 
@@ -921,8 +922,9 @@ Portal has a lot of that work done for you. You mainly focus your
 efforts on any custom Java objects you've built. You're now well
 equipped to implement security in your custom Liferay portlets!
 
-## Search Engine API (new)
+## Search Engine API (new TODO)
 
-### Faceted Search (new)
+### Faceted Search (new TODO)
 
-### Using Multiple Search Engines (new)
+### Using Multiple Search Engines (new TODO)
+
