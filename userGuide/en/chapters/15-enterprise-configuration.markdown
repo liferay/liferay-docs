@@ -439,7 +439,7 @@ You can now take a look at the settings in these files and tune them to fit your
 
 #### Hibernate Cache Settings
 
-By default, Hibernate (Liferay's database persistence layer) is configured to use Ehcache as its cache provider. This is the recommended setting. The default configuration, however, points to a file that does not have clustering enabled. To enable clustering, copy the *Hibernate* section from `portal.properties` into your `portal-ext.properties` file. To enable a clustered cache, comment out the default file (`hibernate.xml`) and uncomment the clustered version of the file, making sure that you change the path so that it points to your custom version of the file:
+By default, Hibernate (Liferay's database persistence layer) is configured to use Ehcache as its cache provider. This is the recommended setting. If you're using the default settings as deThe default configuration, however, points to a file that doesn't have clustering enabled. To enable clustering, copy the *Hibernate* section from `portal.properties` into your `portal-ext.properties` file. To enable a clustered cache, comment out the default file (`hibernate.xml`) and uncomment the clustered version of the file, making sure that you change the path so that it points to your custom version of the file:
 
     net.sf.ehcache.configurationResourceName=/**myehcache**/hibernate-clustered.xml
 
