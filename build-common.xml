@@ -6,7 +6,7 @@ This ant script was created for converting the separate markdown chapter files o
 
 Remember to use the script in the root directory of the document to be converted, NOT THIS ONE.
 
-For example, use the "ant markdown-to-all" command from the documentation/trunk/adminGuide directory to convert the adminGuide into complete English markdown, html, odt, and epub documents.
+For example, use the "ant markdown-to-all" command from the documentation/trunk/userGuide directory to convert the userGuide into complete English markdown, html, odt, and epub documents.
 
  -->
 
@@ -81,7 +81,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         </exec>
     </target>
 
-    <target name="markdown-to-html" depends="concat-markdown-files" description="converts markdown file to an html file">
+    <target name="markdown-to-html" depends="add-markdown-metadata" description="converts markdown file to an html file">
         <echo message="... converting ${doc.dir} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html -o test-guide.html  test-guide.markdown -->
         <exec executable="${pandoc.app}">
@@ -119,7 +119,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         </exec>      
     </target>
 
-    <target name="markdown-to-odt" depends="concat-markdown-files" description="converts markdown file to an odt file">
+    <target name="markdown-to-odt" depends="add-markdown-metadata" description="converts markdown file to an odt file">
         <echo message="... converting ${doc.dir} (${lang}) to odt"/>
         <!-- pandoc -f markdown -t odt -o test-guide.odt  test-guide.markdown -->
         <exec executable="${pandoc.app}">
@@ -157,7 +157,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         </exec>      
     </target>
 
-    <target name="markdown-to-epub" depends="concat-markdown-files" description="converts markdown file to an epub file">
+    <target name="markdown-to-epub" depends="add-markdown-metadata" description="converts markdown file to an epub file">
         <echo message="... converting ${doc.dir} (${lang}) to epub"/>
         <!-- pandoc -f markdown -t epub -o test-guide.epub  test-guide.markdown -->
         <exec executable="${pandoc.app}">
@@ -320,4 +320,32 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     <target name="chapter-to-all" depends="chapter-to-html,chapter-to-odt,chapter-to-epub" description="converts markdown chapter file to html, odt, and epub files" />
 
     <target name="chapter-to-all-win" depends="chapter-to-html-win,chapter-to-odt-win,chapter-to-epub-win" description="converts markdown chapter file to html, odt, and epub files on windows" />
+
+    <target name="reset-images" description="resets the image numbers in a markdown chapter file">
+        <echo message="... resetting image numbers in ${chapter} (${lang})"/>
+        <java jar="../reset-images.jar" fork="true">
+            <arg value="./${lang}/chapters/${chapter}.markdown"/>
+            <!-- This is useful if you want to save the output to a new file without overwritting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
+        </java>
+    </target>
+
+<!-- Example: From liferay-docs/userGuide, enter the following command: ant number-images -Dchapter=12-administering-liferay-portal. Check liferay-docs/userGuide/build for your new file. The images should be numbered correctly. -->
+    <target name="number-images" depends="reset-images" description="numbers the images in a markdown chapter file">
+        <echo message="... numbering images in ${chapter} (${lang})"/>
+        <java jar="../number-images.jar" fork="true">
+            <arg value="${build.dir}/${chapter}.markdown"/>
+            <!-- This is useful if you want to save the output to a new file without overwritting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
+        </java>
+    </target>
+
+    <target name="add-markdown-metadata" depends="concat-markdown-files" description="adds metadata at the top of a concatenated markdown file">
+        <echo message="... adding metadata to ${doc.dir} (${lang})"/>
+        <java jar="../add-markdown-metadata.jar" fork="true">
+            <arg value="./${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
+            <arg value="${title}"/>
+            <arg value="${author}"/>
+            <arg value="${date}"/>
+        </java>
+    </target>
+
 </project>

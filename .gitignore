@@ -3,11 +3,16 @@
 *.iml
 *.swp
 *-tmp.html
+.project
+.classpath
+.settings
+nbbuild.xml
 
 /*.ipr
 /*.iws
 /*.patch
 /build.*.properties
 
-*#
 **/build/**
+**nbproject**
+*#
