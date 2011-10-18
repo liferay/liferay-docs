@@ -1,3 +1,4 @@
+
 # Ext plugins
 
 Ext plugins provide the most powerful method of extending Liferay. This
@@ -17,7 +18,7 @@ redeploying to production systems.
 
 The main use cases in which an Ext plugin may be needed are:
 
--   Customizing `portal.properties`{.western} that are not supported by
+-   Customizing `portal.properties` that are not supported by
     Hook Plugins
 
 -   Customizing Struts Actions
@@ -35,7 +36,7 @@ The main use cases in which an Ext plugin may be needed are:
 
 ## Creating an Ext plugin
 
-Ext plugins are stored within the `ext`{.western} directory of the
+Ext plugins are stored within the `ext` directory of the
 Plugins SDK. Navigate to this directory in a terminal and enter the
 following command to create a new Ext plugin (Linux and Mac OS X):
 
@@ -46,40 +47,40 @@ On Windows enter the following instead:
     create.bat example "Example"
 
 You should get a BUILD SUCCESSFUL message from Ant, and there will now
-be a new folder inside of the `ext`{.western}**folder in your Plugins
-SDK. Notice that the Plugins SDK automatically appends “-ext” to the
+be a new folder inside of the `ext` folder in your Plugins
+SDK. Notice that the Plugins SDK automatically appends "-ext" to the
 project name when creating this folder.
 
 Once the target has been executed successfully you will find a new
 folder called example-ext with the following structure:
 
     /ext-example/
-    /docroot/
-    /WEB-INF/
-    /sql/
-    /ext-impl/
-    /src/
-    /ext-lib/
-    /global/
-    /portal/
-    /ext-service/
-    /src/
-    /ext-util-bridges/
-    /src/
-    /ext-util-java/
-    /src/
-    /ext-util-taglib/
-    /src/
-    /ext-web/
+		/docroot/
+			/WEB-INF/
+			/sql/
+			/ext-impl/
+				/src/
+			/ext-lib/
+				/global/
+				/portal/
+			/ext-service/
+				/src/
+			/ext-util-bridges/
+				/src/
+			/ext-util-java/
+				/src/
+			/ext-util-taglib/
+				/src/
+			/ext-web/
 
 The most significant directories in this structure are the ones inside
-the `docroot/WEB-INF`{.western} directory. In particular you should be
+the `docroot/WEB-INF` directory. In particular you should be
 familiar with the following directories:
 
--   **ext-impl/src:** Contains the `portal-ext.properties`{.western}
+-   **ext-impl/src:** Contains the `portal-ext.properties`
     configuration file, custom implementation classes, and in advanced
     scenarios, classes that override core classes within
-    `portal-impl.jar.`{.western}
+    `portal-impl.jar.`
 
 -   **ext-lib/global:** Place here any libraries that should be copied
     to the global classloader of the application server upon deployment
@@ -88,57 +89,57 @@ familiar with the following directories:
 -   **ext-lib/portal:** Place here any libraries that should be copied
     inside Liferay's main application. Usually these libraries are
     needed because they are invoked from the classes added within
-    `ext-impl/src`{.western}.
+    `ext-impl/src`.
 
 -   **ext-service/src:** Place here any classes that should be available
     to other plugins. When using Service Builder, it will put the
     interfaces of each service here. Also in advanced scenarios, this
     directory will contain classes that overwrite the classes of
-    `portal-service.jar`{.western}.
+    `portal-service.jar`.
 
 -   **ext-web/docroot:** Contains configuration files for the web
-    application, including `WEB-INF/struts-config-ext.xml`{.western}
+    application, including `WEB-INF/struts-config-ext.xml`
     which will allow customizing Liferay's own core struts actions. You
     can also place any JSPs needed by your customizations here.
 
--   **Other:** `ext-util-bridges`{.western}, `ext-util-java`{.western}
-    and `ext-util-taglib`{.western} are only needed in advanced
+-   **Other:** `ext-util-bridges`, `ext-util-java`
+    and `ext-util-taglib` are only needed in advanced
     scenarios in which you need to customize the classes of three
-    libraries provided with Liferay: `util-bridges.jar`{.western},
-    `util-java.jar`{.western} and `util-taglib.jar`{.western}
+    libraries provided with Liferay: `util-bridges.jar`,
+    `util-java.jar` and `util-taglib.jar`
     respectively. In most scenarios you can just ignore these
     directories.
 
 By default, several files are added to the plugin. Here are the most
 significant ones:
 
--   Inside `docroot/WEB-INF/ext-impl/src`{.western}:
+-   Inside `docroot/WEB-INF/ext-impl/src`:
 
-    -   `portal-ext.properties`{.western}: this file can be used to
+    -   `portal-ext.properties`: this file can be used to
         overwrite any configuration property of Liferay, even those that
         cannot be overridden by a hook plugin (which is always preferred
         when possible). Note that if this file is included it will be
-        read instead of any other `portal-ext.properties`{.western} in
+        read instead of any other `portal-ext.properties` in
         the application server. Because of that you may need to copy
         into it the properties related to the database connection, file
-        system patches, etc.
+        system patches, ... etc.
 
--   Inside `docroot/WEB-INF/ext-web/docroot/WEB-INF`{.western}:
+-   Inside `docroot/WEB-INF/ext-web/docroot/WEB-INF`:
 
-    -   `portlet-ext.xml`{.western}: Can be used to overwrite the
+    -   `portlet-ext.xml`: Can be used to overwrite the
         definition of a Liferay portlet. In order to do this, copy the
         complete definition of the desired portlet from
-        `portlet-custom.xml`{.western} within Liferay's source code and
+        `portlet-custom.xml` within Liferay's source code and
         then apply the necessary changes.
 
-    -   `liferay-portlet-ext.xml`{.western}: Similar to the file above,
+    -   `liferay-portlet-ext.xml`: Similar to the file above,
         but for the additional definition elements that are specific to
         Liferay. In order to override it, copy the complete definition
-        of the desired portlet from `liferay-portlet.xml`{.western}
+        of the desired portlet from `liferay-portlet.xml`
         within Liferay's source code and then apply the necessary
         changes.
 
-    -   `struts-config-ext.xml`{.western}**and**`tiles-defs-ext.xml`{.western}:
+    -   `struts-config-ext.xml` and `tiles-defs-ext.xml`:
         Can be used to customize the struts actions used by Liferay's
         core portlets.
 
@@ -163,7 +164,7 @@ Liferay application again.*
 
 The Plugins SDK contains several Ant targets that help with the task of
 deploying and redeploying during the development phase. In order to do
-this it requires a `.zip`{.western} file of a Tomcat 6 based Liferay
+this it requires a `.zip` file of a Tomcat 6 based Liferay
 bundle. The Ant targets will unzip and clean up this installation
 whenever needed to guarantee that any change done to the Ext plugin
 during development is properly applied and previous changes that have
@@ -174,9 +175,9 @@ type to accomplish your goals if it is at all possible.
 ### Set up
 
 Before attempting to deploy an Ext plugin, it's necessary to edit the
-file `build.{username}.properties`{.western} in the root folder of the
+file `build.{username}.properties` in the root folder of the
 Plugins SDK. If this file doesn't exist yet you should create it.
-Substitute `{username}`{.western} with the your user ID on your
+Substitute `{username}` with the your user ID on your
 computer. Once the file is open, add the following three properties to
 the file, making sure the individual paths point to the right locations
 on your system:
@@ -185,37 +186,37 @@ on your system:
     app.server.zip.name={...}/liferay-portal-tomcat-6.0.6.zip
     ext.work.dir={...}/work
 
-`app.server.zip.name`{.western} should point to a `.zip`{.western} with
+`app.server.zip.name` should point to a `.zip` with
 a bundle of Liferay. The directory denoted by the property
-`ext.work.dir`{.western} will be used to unzip the bundle as well as
-remove it and unzip again as needed. `app.server.dir`{.western} should
+`ext.work.dir` will be used to unzip the bundle as well as
+remove it and unzip again as needed. `app.server.dir` should
 point to the Tomcat directory inside the work directory.
 
-For example, if `ext.work.dir`{.western} points to
-`C:\ext-work`{.western}, and `app.server.zip.name`{.western} points to
-`C:\files\liferay-portal-tomcat-6.0-${lp.version}.zip`{.western}, then
-`app.server.dir`{.western} should point to
-`C:\ext-work\liferay-portal-${lp.version}tomcat-6.0.18`{.western}.
+For example, if `ext.work.dir` points to
+`C:\ext-work`, and `app.server.zip.name` points to
+`C:\files\liferay-portal-tomcat-6.0-${lp.version}.zip`, then
+`app.server.dir` should point to
+`C:\ext-work\liferay-portal-${lp.version}tomcat-6.0.18`.
 
 ### Initial deployment
 
 Once the environment is set up, we are ready to start customizing. We'll
 show the full process with a simple example, customizing the sections of
 a user profile. Liferay allows doing that through the
-`portal-ext.properties`{.western} configuration file, but we'll be
+`portal-ext.properties` configuration file, but we'll be
 changing a property that cannot be changed from a hook plugin. In order
 to make this change, open the
-`docroot/WEB-INF/ext-impl/src/portal-ext.properties`{.western} file and
+`docroot/WEB-INF/ext-impl/src/portal-ext.properties` file and
 paste the following contents inside:
 
-    users.form.update.main=details,password,organizations,communities,roles
+    users.form.update.main=details,password,organizations,sites,user-groups,roles,personal-site,categorization
 
 This line removes the sections for user groups, pages and
 categorizations. We might want to make this change because we don't want
 them in our portal.
 
 Once we've made this change, we are ready to deploy. Open a terminal
-window in your `ext/example-ext`{.western} directory and enter this
+window in your `ext/example-ext` directory and enter this
 command:
 
     ant deploy
@@ -223,24 +224,24 @@ command:
 You should get a BUILD SUCCESSFUL message, which means that your plugin
 is now being deployed. If you switch to the terminal window running
 Liferay and wait for a few seconds, you should see the message
-“Extension environment for example-ext has been applied. You must
-restart the server and redeploy all other plugins.” Redeploying all
+"Extension environment for example-ext has been applied. You must
+restart the server and redeploy all other plugins." Redeploying all
 other plugins is not strictly mandatory, but you should do it if some
 changes applied through the Ext plugin may affect the deployment process
 itself.
 
-The `ant deploy`{.western} target builds a `.war`{.western} file with
+The `ant deploy` target builds a `.war` file with
 all the changes you have made and copies them to the auto deploy
 directory inside the Liferay installation. When the server starts, it
-detects the `.war`{.western} file, inspects it, and copies its content
+detects the `.war` file, inspects it, and copies its content
 to the appropriate destinations within the deployed and running Liferay
 inside your application server. You must now restart your application
 server.
 
 Once the server has started, log in as an administrator and go to
-*Control Panel -> Users*. Edit an existing user and verify that the
+*Control Panel -\> Users*. Edit an existing user and verify that the
 right navigation menu only shows the five sections that were referenced
-from the `users.form.update.main`{.western} property.
+from the `users.form.update.main` property.
 
 Once we've applied this simple modification to Liferay, we can go ahead
 with a slightly more complex customization. This will give us an
@@ -251,12 +252,12 @@ For this example we'll customize the *details* view of the user profile.
 We could do that just by overwriting its JSP, but this time we'll use a
 more powerful method which also allows adding new sections or even
 merging the existing ones. Liferay allows referring to custom sections
-from the `portal-ext.properties`{.western} and implementing them just by
+from the `portal-ext.properties` and implementing them just by
 creating a JSP. In our case we'll modify the property
-`users.form.update.main`{.western} once again to set the following
+`users.form.update.main` once again to set the following
 value:
 
-    users.form.update.main=basic,password,organizations,communities,roles
+    users.form.update.main=basic,password,organizations,sites,user-groups,roles,personal-site,categorization
 
 That is, we removed the section *details* and added a new custom one
 called *basic*. When Liferay's user administration reads this property
@@ -264,21 +265,22 @@ it looks for the implementation of each section based on the following
 conventions:
 
 -   The section should be implemented in a JSP inside the directory:
-    html/portlet/enterprise_admin/user
+
+	html/portlet/enterprise_admin/user
 
 -   The name of the JSP should be like the name of the section plus the
-    `.jsp`{.western} extension. There is one exception. If the section
-    name has a dash sign (“-”), it will be converted to an underscore
-    sign (“_”). For example, if the section is called *my-info*, the
-    JSP should be named `my_info.jsp`{.western}. This is done to comply
+    `.jsp` extension. There is one exception. If the section
+    name has a dash sign ("-"), it will be converted to an underscore
+    sign ("_"). For example, if the section is called *my-info*, the
+    JSP should be named `my_info.jsp`. This is done to comply
     to common standards of JSP naming.
 
 -   The name of the section that will be shown to the user will be
     looked for in the language bundles. When using a key/value that is
     not already among the ones included with Liferay, you should add it
-    to the `Language-ext.properties`{.western} and each of the language
+    to the `Language-ext.properties` and each of the language
     variants for which we want to provide a translation. Within the Ext
-    plugin these files should be placed within `ext-impl/src`{.western}.
+    plugin these files should be placed within `ext-impl/src`.
 
 In our example, we'll need to create a file within the Ext plugin in the
 following path:
@@ -286,7 +288,7 @@ following path:
     ext-web/docroot/html/portlet/enterprise_admin/user/basic.jsp
 
 For the contents of the file, you can write them from scratch or make a
-copy of the `details.jsp`{.western} file from Liferay's source code and
+copy of the `details.jsp` file from Liferay's source code and
 modify from there. In this case we've decided to do the latter and then
 remove some fields to simplify the creation of a user. The result is
 this:
@@ -302,45 +304,44 @@ this:
     <h3><liferay-ui:message key="details" /></h3>
     
     <aui:fieldset column="<%= true %>" cssClass="aui-w50">
-    <liferay-ui:error exception="<%= DuplicateUserScreenNameException.class%>"
-	message="the-screen-name-you-requested-is-already-taken" />
-	
-	<liferay-ui:error exception="<%= ReservedUserScreenNameException.class%>"
-	message="the-screen-name-you-requested-is-reserved" />
-	
-	<liferay-ui:error exception="<%= UserScreenNameException.class %>"
-	message="please-enter-a-valid-screen-name" />
-	
-	<aui:input name="screenName" />
-	
-	<liferay-ui:error exception="<%=
-	DuplicateUserEmailAddressException.class %>"
-	message="the-email-address-you-requested-is-already-taken" />
-	
-	<liferay-ui:error exception="<%= ReservedUserEmailAddressException.class%>"
-	message="the-email-address-you-requested-is-reserved" />
-	
-	<liferay-ui:error exception="<%= UserEmailAddressException.class %>"
-	message="please-enter-a-valid-email-address" />
-	
-	<aui:input name="emailAddress" />
-	
-	<liferay-ui:error exception="<%= ContactFirstNameException.class %>"
-	message="please-enter-a-valid-first-name" />
-	
-	<liferay-ui:error exception="<%= ContactFullNameException.class %>" 
-	message="please-enter-a-valid-first-middle-and-last-name" />
-	
-	<aui:input name="firstName" />
-	
-	<liferay-ui:error exception="<%= ContactLastNameException.class %>"
-	message="please-enter-a-valid-last-name" />
-	
-	<aui:input name="lastName" />
+		<liferay-ui:error exception="<%= DuplicateUserScreenNameException.class%>"
+			message="the-screen-name-you-requested-is-already-taken" />
+		
+		<liferay-ui:error exception="<%= ReservedUserScreenNameException.class%>"
+			message="the-screen-name-you-requested-is-reserved" />
+		
+		<liferay-ui:error exception="<%= UserScreenNameException.class %>"
+			message="please-enter-a-valid-screen-name" />
+		
+		<aui:input name="screenName" />
+		
+		<liferay-ui:error exception="<%=DuplicateUserEmailAddressException.class %>"
+			message="the-email-address-you-requested-is-already-taken" />
+		
+		<liferay-ui:error exception="<%= ReservedUserEmailAddressException.class%>"
+			message="the-email-address-you-requested-is-reserved" />
+		
+		<liferay-ui:error exception="<%= UserEmailAddressException.class %>"
+			message="please-enter-a-valid-email-address" />
+		
+		<aui:input name="emailAddress" />
+		
+		<liferay-ui:error exception="<%= ContactFirstNameException.class %>"
+			message="please-enter-a-valid-first-name" />
+		
+		<liferay-ui:error exception="<%= ContactFullNameException.class %>" 
+			message="please-enter-a-valid-first-middle-and-last-name" />
+		
+		<aui:input name="firstName" />
+		
+		<liferay-ui:error exception="<%= ContactLastNameException.class %>"
+			message="please-enter-a-valid-last-name" />
+		
+		<aui:input name="lastName" />
     </aui:fieldset>
 
 In our case, we don't need to add a new key to
-`Language-ext.properties`{.western}, because “basic” is already included
+`Language-ext.properties`, because "basic" is already included
 in Liferay's language bundle. We are ready to redeploy.
 
 ### Redeployment
@@ -356,24 +357,24 @@ ant targets:
     ant clean-app-server direct-deploy
 
 These ant targets first remove the work bundle (unzipping the one that
-was referred to through `build.{username}.properties`{.western}), and
+was referred to through `build.{username}.properties`), and
 then deploy all the changes directly to the appropriate directories. The
-`direct-deploy`{.western} target is faster because the changes are
-applied directly., while the Liferay server does it on start up if you
-use the `deploy`{.western} target. For that reason it is usually
+`direct-deploy` target is faster because the changes are
+applied directly, while the Liferay server does it on start up if you
+use the `deploy` target. For that reason it is usually
 preferred during development.
 
 You can deploy several Ext plugins to the same server, but you will have
 to redeploy each of them after executing the
-`clean-app-server`{.western} target.
+`clean-app-server` target.
 
 Once you have finished the development of the plugin you can execute the
-following ant target to generate a `.war`{.western} file for
+following ant target to generate a `.war` file for
 distribution:
 
     ant war
 
-The file will be available within the `dist`{.western} directory in the
+The file will be available within the `dist` directory in the
 root of the plugins SDK.
 
 ### Advanced customization techniques
@@ -383,7 +384,7 @@ possible through an Ext plugin. As mentioned above, you can change
 almost everything within Liferay when using the Ext plugin, therefore be
 careful when using such a powerful tool.
 
-Always keep in mind that with ever new Liferay version, implementation
+Always keep in mind that with every new Liferay version, implementation
 classes may have changed. Thus if you've changed Liferay source code
 directly, you may have to merge your changes into the newer Liferay
 version. General approach for minimizing conflicts is – don't change
@@ -431,7 +432,7 @@ the source code of Liferay (you may need to look at them for reference):
 
 -   `ext-impl/src/content/Language-ext_*.properties`
 
-    -   Description: This file allows overwriting the value of any key
+    -   Description: These files allow overwriting the value of any key
         used by Liferay's UI to support *I18N*.
 
     -   Original file in Liferay:
@@ -471,7 +472,7 @@ the source code of Liferay (you may need to look at them for reference):
 
     -   Description: This file allows overwriting the Liferay-specific
         declaration of the core portlets included in Liferay. Refer to
-        the liferay-portlet-app_6_0_0.dtd file for details on all the
+        the `liferay-portlet-app_6_1_0.dtd` file for details on all the
         available options. Use this file with care since the code of the
         portlets may be assuming some of these options to be set to
         certain values.
@@ -482,7 +483,7 @@ the source code of Liferay (you may need to look at them for reference):
 -   `ext-web/docroot/WEB-INF/liferay-display.xml`
 
     -   Description: This file allows overwriting the portlets that will
-        be shown in the “Add application” pop-up and the categories in
+        be shown in the "Add application" pop-up and the categories in
         which they'll be organized. The most common usage is to change
         the categorization, hide some portlets or make some Control
         Panel portlets available to be added to a page.
@@ -513,51 +514,49 @@ the source code of Liferay (you may need to look at them for reference):
 
 One advanced customization need that appears in some scenarios is to
 change the API of a method provided by one of Liferay's services, for
-example the UserLocalService.
+example the `UserLocalService`.
 
 Is it possible to do that? The short answer is no. The long answer is
-that you can but it will require modifying Liferay's source code
-directly and make manual changes to quite a few files. The good news is
+that you can, but it will require modifying Liferay's source code
+directly and making manual changes to quite a few files. The good news is
 that there is a better alternative to achieve the end goal.
 
 The best way to extend an existing service is to create a complementary
-custom service, for example a MyUserLocalService that includes all the
+custom service, for example a `MyUserLocalService` that includes all the
 new methods. Your custom code can invoke this service instead of the
 default service and the implementation of your service can invoke the
 original service as needed.
 
 Note that this technique does not require an Ext plugin since it can be
-done from portlet plugins. In fact, using service-builder for Ext plugin
+done from portlet plugins. In fact, using Service Builder for an Ext plugin
 is deprecated but is supported for migration from the old extension
 environment.
 
 In some advanced circumstances it's desired to change the implementation
 of the original service to call your custom one, which can only be done
-from an Ext plugin. To achieve this, override spring definition for
-UserLocalServiceUtil in ext-spring.xml and point it to your
-**My**UserLocalServiceImpl (instead of UserLocalServiceImpl). This way
-both MyUserLocalServiceUtil and UserLocalServiceUtil will use the same
-spring bean: your new implementation.
+from an Ext plugin. To achieve this, override the Spring definition for
+`UserLocalServiceUtil` in `ext-spring.xml` and point it to your
+`MyUserLocalServiceImpl` (instead of `UserLocalServiceImpl`). This way
+both `MyUserLocalServiceUtil` and `UserLocalServiceUtil` will use the same
+Spring bean: your new implementation.
 
 #### Replacing core classes in portal-impl
 
-If you really need to change core portal-impl class and this class that
-cannot be replaced in any configuration file, then best way to avoid
+If you really need to change a core portal-impl class and this class
+cannot be replaced in any configuration file, then the best way to avoid
 conflicts and easily merge with a new portal version is to:
 
-1.  Rename original class (e.g. DeployUtil ->  MyDeployUtil)
+1.  Rename original class (e.g. `DeployUtil` -\>  `MyDeployUtil`)
 
-2.  Create new subclass with old name (e.g DeployUtil extends
-    MyDeployUtil)
+2.  Create new subclass with old the name (e.g `DeployUtil extends MyDeployUtil`)
 
 3.  Override methods you need to change
 
 4.  Delegate static methods
 
-5.  Use logger with appropriate class name for both classes (e.g.
-    DeployUtil)
+5.  Use a logger with appropriate class name for both classes (e.g., `DeployUtil`)
 
-This strategy will help you determine what you will need to merge in the
+This strategy will help you determine what you will need to be merged in the
 future when a new version of Liferay is released.
 
 ![image](../../images/tip-pen-paper.png)Tip: This is a very advanced
@@ -579,13 +578,13 @@ source code of your modifications available to the community under the
 same license, but make sure to read the license text yourself to find
 the best option that fits your needs.
 
-If the goal of the changes was to fix a bug or to make an improvement
+If the goal of the changes is to fix a bug or to make an improvement
 that could be of interest to a broader audience, consider contributing
 it back to the project. That would benefit all other users of the
 product and also would be good for you since you won't have to maintain
 the changes when new versions of Liferay come out. You can notify
-Liferay of bugs or improvements in issues.liferay.com. There is also a
-wiki page with instructions on how to contribute to Liferay:
+Liferay of bugs or improvements in [issues.liferay.com](issues.liferay.com).
+There is also a wiki page with instructions on how to contribute to Liferay:
 
 [http://www.liferay.com/community/wiki/-/wiki/Main/Contributing](http://www.liferay.com/community/wiki/-/wiki/Main/Contributing)
 
@@ -603,19 +602,19 @@ be used in each of these scenarios.
 This method can be used in any application server that supports auto
 deploy, such as Tomcat or JBoss. Its main benefit is that the only
 artifact that needs to be transferred to the production system is the
-`.war`{.western} file which the Ext plugin produced using the
-`ant war`{.western} target, which is usually a small file. Here are the
+`.war` file which the Ext plugin produced using the
+`ant war` target, which is usually a small file. Here are the
 steps that need to be executed on the server:
 
 1.  Redeploy Liferay. To do this, follow the same steps you used when
     first deploying Liferay on the app server. If you are using a
     bundle, you can just unzip the bundle again. If you've installed
     Liferay manually on an existing application server, you'll need to
-    redeploy the `.war`{.western} file and copy the global libraries to
+    redeploy the `.war` file and copy the global libraries to
     the appropriate directory within the application server. If this is
     the first time the Ext plugin is deployed, you can skip this step.
 
-2.  Copy the Ext plugin `.war`{.western} into the auto deploy directory.
+2.  Copy the Ext plugin `.war` into the auto deploy directory.
     For a bundled Liferay distribution, the *deploy* folder is in the
     *root* folder.
 
@@ -627,27 +626,27 @@ steps that need to be executed on the server:
 This method can be used for application servers that do not support
 autodeploy, such as WebSphere or Weblogic. Its main benefit is that all
 Ext plugins are merged before deployment to production, so a single
-`.war`{.western} file will contain Liferay plus the changes from one or
-more Ext plugins. Before deploying the `.war`{.western} file, you'll
-need to copy the dependency `.jar`{.western}s for both Liferay and the
+`.war` file will contain Liferay plus the changes from one or
+more Ext plugins. Before deploying the `.war` file, you'll
+need to copy the dependency `.jar` files for both Liferay and the
 Ext plugin to the global application server class loader in the
 production server. This location varies from server to server; please
-see the *Liferay Portal Administrator's Guide* for further details for
-your application server.
+see *Using Liferay Portal* for further details for your application server.
 
-To create the aggregated `.war`{.western} file, deploy the Ext plugin
-first to the Liferay bundle you are using in your development
-environment (using for example, Tomcat). Once it's deployed, restart the
-server so that the plugin is fully deploy and shut it down again. Now
-the aggregated file is ready. Create a `.war`{.western} file by zipping
-the `webapps/ROOT`{.western} folder of Tomcat. Also, copy all the
-libraries from the `lib/ext`{.western} directory of Tomcat that are
+To create the aggregated `.war` file, deploy the Ext plugin
+first to the Liferay bundle you are using in your
+development environment. For the remaining steps, we'll assume we're using a
+Liferay Tomcat bundle. Once it's deployed, restart the
+server so that the plugin is fully deployed and shut it down again. Now
+the aggregated file is ready. Create a `.war` file by zipping
+the `webapps/ROOT` folder of Tomcat. Also, copy all the
+libraries from the `lib/ext` directory of Tomcat that are
 associated to all the Ext plugins to your application server's global
 classpath, as noted above. These steps will be automated with Ant
 targets in the next version of Liferay, but for now, they need to be
 done manually.
 
-Once you have the aggregated `.war`{.western} file follow these steps on
+Once you have the aggregated `.war` file follow these steps on
 the server:
 
 1.  Redeploy Liferay using the aggregated WAR file.
@@ -680,18 +679,17 @@ and naming the new plugin:
 
 Here is a description of the three parameters used:
 
--   `ext.dir`{.western} is a command line argument to the location of
-    the old Extension Environment.
+-   `ext.dir` is the location of the old Extension Environment.
 
--   `ext.name`{.western} is the name of the Ext plugin that you want to
+-   `ext.name` is the name of the Ext plugin that you want to
     create
 
--   `ext.display.name`{.western} is the display name
+-   `ext.display.name` is the display name
 
 After executing the target you should see the logs of several copy
 operations that will take files from the extension environment and copy
 them into the equivalent directory within the Ext plugin (read the
-section “Creating an Ext plugin” for an explanation of the main
+section *Creating an Ext plugin* for an explanation of the main
 directories within the plugin).
 
 When the migration process is complete, some additional tasks will be
@@ -704,7 +702,7 @@ most typical tasks are:
     of the new Liferay version.
 
 -   When using Service Builder you will need to run
-    `ant build-`{.western}`service`{.western} again. It's also
+    `ant build-service` again. It's also
     recommended to consider moving this code to a portlet plugin,
     because it is now as powerful and allows for greater modularity and
     maintainability.

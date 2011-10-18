@@ -1,3 +1,4 @@
+
 # Conclusions
 
 Liferay Portal is a very flexible platform that allows creating a wide
@@ -17,8 +18,8 @@ the more efficient you will be while developing and the more interesting
 applications and customizations you will create. Here are some
 suggestions to learn more after reading this guide:
 
--   Read the “[Liferay in
-    Action](http://affiliate.manning.com/idevaffiliate.php?id=1133&url=7&tid1=liferaywebsite)”
+-   Read the "[Liferay in
+    Action](http://affiliate.manning.com/idevaffiliate.php?id=1133&url=7&tid1=liferaywebsite)"
     book. This book, written by Rich Sezov, Liferay's Knowledge Manager,
     provides a very extensive step by step guide of Liferay's
     development technologies.
