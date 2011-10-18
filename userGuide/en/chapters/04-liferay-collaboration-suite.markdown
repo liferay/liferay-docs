@@ -889,30 +889,6 @@ Clicking on a vocabulary on the left will display any categories that have been 
 
 Once you have created a hierarchy of categories, your content creators will have them available to apply to content that they create. Navigate to the Web Content page of the control panel and click *Add Content*. Click the Categorization link from the right-side menu and click *Select* on the vocabulary use would like to use. A dialog box will appear with your categories. Select any relevant categories by checking the box next to them, and they will be applied to the content.
 
-## Social Equity
-
-When you have a lot of user interaction on your web site, it can be helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. In order to better show which users are making real, valuable contributions, Liferay is introducing the new Social Equity system with Liferay 6.
-
-![Figure 4.24: The Social Equity Page of the Control Panel](../../images/05-social-equity.png)
-
-To use Social Equity for your portal, check the Enable Social Equity box. Social Equity enables you to assign values and weight for each contribution that a user makes. Points are given to users for *Information* and *Participation*. This way, a user who writes several blogs and wiki articles can be shown as having a higher rank than a user who has only written comments and message board replies. The purpose of this is to better indicate which users on a web site are knowledgeable contributors, and to reward those users. Social Equity is available for Blogs, Message Boards, Wikis, and Web Content. Each category has a check box labeled "Unique." When this box is checked, users can only gain social equity points one time for an action. For example, if this box were checked for viewing blog entries, users could only gain points one time for viewing a given blog entry. If the box were unchecked, users could view a blog entry multiple times and gain social equity points each time. Each category also contains a rating for *Information Value*, *Information Lifespan*, *Daily Limit*, *Participation Value*, *Participation Lifespan*, and *Daily Limit*.
-
-**Information Value:** indicates how many points a user receives for the information content of a specific action.
-
-**Information Lifespan:** indicates, in number of days, how long it will be before the information points expire. Setting it to `0` means that they will never expire.
-
-**Daily Limit:** is the maximum number of actions of this type that a user will receive information points for in a given day.
-
-**Participation Value:** indicates how many points a user receives for the participating in the content creation of the website.
-
-**Participation Lifespan:** indicates, in number of days, how long it will be before the participation points expire. Setting it to `0` means that they will never expire.
-
-**Daily Limit:** is the maximum number of actions of this type that a user will receive participation points for in a given day.
-
-The actions available that you can provide credit for are wide ranging. Users can receive credit for everything from writing wiki pages to simply viewing content. You can also easily tweak these numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
-
-If you have a portal that is heavily driven by community created content, Social Equity is an invaluable tool to recognize users who are major contributors, as well as to indicate to new users whose advice is going to be the most sound and helpful. It's easy to set up, and can be configured differently for each site your portal, giving you increased flexibility across your entire portal.
-
 ## Summary
 
 We have explored many of the portlets in Liferay's collaboration suite. You have seen how you can configure all of the portlets in a similar fashion using a unified user interface. After this, we went over all of the portlets in succession.
@@ -932,7 +908,5 @@ The Knowledge Base portlet provides administrators with a more formal way to cre
 Liferay's Documents and Media portlet allows users to store information online in the same type of directory structure that they use locally. The Documents and Media library supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Documents and Media library.
 
 Tying all of these applications together are tags and categories. Tags can be added to any content by end users, and hierarchies of categories can be added to the system by administrators to be applied to content anywhere in the portal. These help your users to find the content that is most relevant to them, empowering the search to be as accurate as possible.
-
-Liferay's Social Equity system can be used to measure users' activity in the portal. It can be customized to assign different numbers of points for different activities. Social equity is easy to implement and can provide valuable information to help you identify productive members of your portal.
 
 Liferay's collaboration platform is a full suite of integrated applications that empower users to work together. You can use them to great effect to enhance your portal and to build a vibrant, active community.

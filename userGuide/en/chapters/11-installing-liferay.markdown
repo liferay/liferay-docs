@@ -1019,7 +1019,7 @@ should see the default Liferay home page.
 Open your browser to `http://localhost:8080`. You should see
 the default Liferay home page.
 
-#### Tomcat 7.0.21
+#### Tomcat 6.0.x-7.0.x
 
 **Liferay Home** is one folder above Tomcat's install location.
 
@@ -1028,9 +1028,9 @@ For this section, we will refer to your Tomcat server's installation location as
 Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
 The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
-**Note:** For JDK 5 users: move `$TOMCAT_HOME/webapps/ROOT/WEB-INF/lib/xercesImpl.jar` to `$TOMCAT_HOME/common/endorsed`. JDK 1.4 is no longer supported in Liferay 5.x and above.
+*Note:* For JDK 5 users: move `$TOMCAT_HOME/webapps/ROOT/WEB-INF/lib/xercesImpl.jar` to `$TOMCAT_HOME/common/endorsed`. JDK 1.4 is no longer supported in Liferay 5.x and above.
 
-Installation Steps:
+**Installation Steps**:
 
 1. If you are manually installing Liferay on a clean Tomcat server, delete the contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the default Tomcat home page. Then extract the Liferay `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
 
@@ -1058,7 +1058,7 @@ Setting `crossContext="true"` allows multiple web apps to use the same class loa
 
 8. Make sure that your database server is installed and working. If it's installed in a different machine, make sure that it's accessible from the one where Liferay is being installed.
 
-9. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain the JDBC driver for your version of the database server. In the case of MySQL use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/). Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
+9. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/). Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
 
 11. Configure the data sources for your database by creating a `portal-ext.properties` file in your *Liferay Home* directory (the one your $TOMCAT_HOME directory is sitting in). Edit the file and populate it with the following contents:
 
