@@ -120,27 +120,27 @@ Probably the most effective way to connect users is connecting users with other 
 
 ## Social Equity
 
-When you have a lot of user interaction on your web site, sometimes it is helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. In order to better show which users are making real, valuable contributions, Liferay introduced Social Equity system with Liferay 6.0.
+When you have a lot of user interaction on your web site, it can be helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. In order to better show which users are making real, valuable contributions, Liferay is introducing the new Social Equity system with Liferay 6.
 
-Currently Social Equity is available for the Blogs, Message Boards, and Wiki applications. Each category contains a rating for Information Value, Information Lifespan, Daily Limit, Participation Value, Participation Lifespan, and Daily Limit.
+![Figure 4.24: The Social Equity Page of the Control Panel](../../images/05-social-equity.png)
 
-![Figure 9.x: Social Equity](../../images/social-networking-equity.png)
+To use Social Equity for your portal, check the Enable Social Equity box. Social Equity enables you to assign values and weight for each contribution that a user makes. Points are given to users for *Information* and *Participation*. This way, a user who writes several blogs and wiki articles can be shown as having a higher rank than a user who has only written comments and message board replies. The purpose of this is to better indicate which users on a web site are knowledgeable contributors, and to reward those users. Social Equity is available for Blogs, Message Boards, Wikis, and Web Content. Each category has a check box labeled "Unique." When this box is checked, users can only gain social equity points one time for an action. For example, if this box were checked for viewing blog entries, users could only gain points one time for viewing a given blog entry. If the box were unchecked, users could view a blog entry multiple times and gain social equity points each time. Each category also contains a rating for *Information Value*, *Information Lifespan*, *Daily Limit*, *Participation Value*, *Participation Lifespan*, and *Daily Limit*.
 
-**Information Value:** Indicates how many points a user receives for the information content of a specific action.
+**Information Value:** indicates how many points a user receives for the information content of a specific action.
 
-**Information Lifespan:** Indicates, in number of days, how long it will be before the information points expire. Setting it to 0 means that they will never expire.
+**Information Lifespan:** indicates, in number of days, how long it will be before the information points expire. Setting it to `0` means that they will never expire.
 
-**Daily Limit:** This is the maximum number of actions of this type that a user will receive information points for in a given day.
+**Daily Limit:** is the maximum number of actions of this type that a user will receive information points for in a given day.
 
-**Participation Value:** Indicates how many points a user receives for the participating in the content creation of the website.
+**Participation Value:** indicates how many points a user receives for the participating in the content creation of the website.
 
-**Participation Lifespan:** Indicates, in number of days, how long it will be before the participation points expire. Setting it to 0 means that they will never expire.
+**Participation Lifespan:** indicates, in number of days, how long it will be before the participation points expire. Setting it to `0` means that they will never expire.
 
-**Daily Limit:** This is the maximum number of actions of this type that a user will receive participation points for in a given day.
+**Daily Limit:** is the maximum number of actions of this type that a user will receive participation points for in a given day.
 
-The actions available that you can provide credit for are wide ranging. Users can receive credit for everything from writing wiki pages to simply viewing content. You can also easily tweak these numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
+There are a wide-ranging number of actions that you can provide social credit for. Users can receive credit for everything from viewing content to writing wiki articles. You can easily tweak the numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
 
-If you have a portal that is heavily driven by community created content, Social Equity is an invaluable tool to recognize users who are major contributors, as well as to indicate to new users whose advice is going to be the most sound and helpful. It's easy to set up, and can be configured differently for each community and organization on your portal, giving you increased flexibility across your web site as a whole.
+Social Equity can be an invaluable tool for portals that are heavily driven by community-created conteny. It allows you to easily recognize users who are major contributors and it indicates to new users whose advice will be most trustworthy. Social Equity is easy to set up and can be configured differently for each site, increasing the flexibility of your portal.
 
 ## Other Social Integrations
 
