@@ -25,6 +25,7 @@ Liferay Portal is designed to serve everything from the smallest to the largest 
 
 Liferay works well in clusters of multiple machines (horizontal cluster) or in clusters of multiple VMs on a single machine (vertical cluster), or any mixture of the two. Once you have Liferay installed in more than one application server node, there are several optimizations that need to be made. At a minimum, Liferay should be configured in the following way for a clustered environment:
 
+- The Quartz scheduler should be set for a clustered environment. 
 - All nodes should be pointing to the same Liferay database or database cluster. 
 - Documents and Media repositories should be accessible to all nodes of the cluster. 
 - Search should be configured for replication or should use a separate search server. 
@@ -40,13 +41,23 @@ Many of these configuration changes can be made by adding or modifying propertie
 
 We'll take each of the points above one by one in order to present a clear picture of how to cluster Liferay. 
 
-### All Nodes Should Be Pointing to the Same Liferay Database
+### The Quartz scheduler should be set for a clustered environment
+
+Liferay uses Quartz to run jobs on a schedule. When you write an application for Liferay, one of the things you can do is set up jobs like these. An example of this is the calendar: periodically, a job runs to check to see whether it's time to trigger a calendar event. The scheduler needs to know that it's in a cluster, or events might get triggered multiple times by different nodes. 
+
+This is very easy to configure. It takes only one property in your `portal-ext.properties` file: 
+
+	org.quartz.jobStore.isClustered=true
+	
+Your first clustering task is already done! Let's move on to the database. 
+
+### All nodes should be pointing to the same Liferay database
 
 This is pretty self-explanatory. Each node should be configured with a data source that points to one Liferay database (or a database cluster) that all the nodes will share. This ensures that all the nodes operate from the same basic data set. This means, of course, that Liferay cannot (and should not) use the embedded HSQL database that is shipped with the bundles (but you already knew that, right?). And, of course, it goes without saying that the database server is a separate physical box from the server which is running Liferay. 
 
 Beyond a database cluster, there are two more advanced options you can use to optimize your database configuration: a read-writer database configuration, and sharding. 
 
-#### Read-Writer Database Configuration
+#### Read-Writer database configuration
 
 Liferay allows you to use two different data sources for reading and writing. This enables you to split your database infrastructure into two sets: one that is optimized for reading and one that is optimized for writing. Since all major databases support replication in one form or another, you can then use your database vendor's replication mechanism to keep the databases in sync in a much faster manner than if you had a single data source which handled everything.
 
