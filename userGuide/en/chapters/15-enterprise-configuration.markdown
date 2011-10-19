@@ -49,6 +49,8 @@ This is very easy to configure. It takes only one property in your `portal-ext.p
 
 	org.quartz.jobStore.isClustered=true
 	
+If you've already started Liferay and had your database generated, you'll need to drop all the `QUARTZ_` tables to make this work. 
+	
 Your first clustering task is already done! Let's move on to the database. 
 
 ### All nodes should be pointing to the same Liferay database
