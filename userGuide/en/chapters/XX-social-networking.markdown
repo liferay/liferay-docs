@@ -1,10 +1,15 @@
 # Social Networking with Liferay
 
-## Colaborating on the Social Network
-
 Since MySpace rose to popularity in 2006, certain concepts such as "Friend" and later "Like"--previously reserved for direct human interaction--have taken on new meaning in an always-online, information driven culture. Initially, these concepts proved to be highly successful for casual web sites but they didn't take to the business world as quickly. Slowly, more and more organizations are realizing the importance of leveraging social interactions for more than just recreation. Liferay is a great platform for business web sites, casual web sites, and everything in between, and its social features reflect this. 
 
-Liferay has a constantly improving set of social features which enable you to both encourage social interactions on your own portal, and leverage the power and popularity of other social networks.
+Liferay has a constantly improving set of social features which enable you to both encourage social interactions on your own portal, and leverage the power and popularity of other social networks. In this chapter, we'll discuss:
+
+-	General Use Social Portlets
+-	Social Portlets for Personal Pages
+-	Configuring Personal Pages for Social Networking
+-	How to Connect Users with Social Features
+-	Social Equity
+-	Integrating Liferay with other Social Sites
 
 ## Liferay's Social Portlets
 	
@@ -12,7 +17,7 @@ Liferay has many portlets available for social interaction and collaboration. So
 
 Some of the social portlets are designed for use on the public pages of your portal, while others are designed to be used as part of a user's personal site. As you might guess, the portlets which are desigend for personal page use tend to be more focused on simple social interactions, while the ones which can be placed on any site are more beneficial for improving productivity.
 
-Unless otherwise noted, these portlets are all provided with minimal configuration options. They generally only have the option to alter view permissions, but don't have any way to change display options or the like.
+Unless otherwise noted, these portlets are all provided with minimal configuration options. They generally have two configuration options - the option to change permissions for the portlet view and sharing options for connecting the portlet to other websites. They do not have any way to change options like feed length or display styles. Some styling changes, however, could be done through custom CSS.
 
 ### General Use Portlets
 
