@@ -511,9 +511,9 @@ Remember, for all of these application servers, create your
 `portal-ext.properties` file in the Liferay Home folder and
 make sure it points to your database connection pool and mail session.
 
-#### GlassFish 3.1.x
+#### GlassFish 3.x
 
-*Liferay Home* is three folders above your GlassFish domain folder.
+**Liferay Home** is three folders above your GlassFish domain folder.
 
 For example, if your domain location is `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1`, then your Liferay Home will be `/glassfish-3.1-web/glassfish3/`.
 
@@ -529,7 +529,7 @@ These instructions assume that you have already configured a domain and server, 
 
 ##### Domain Configuration
 
-1.  Before starting GlassFish, you will need to modify the settings in your domain to do the following ...
+1. Before starting GlassFish, you will need to modify the settings in your domain to do the following ...
 
 	- Set the file encoding
 	- Set the user time-zone
@@ -556,7 +556,7 @@ These instructions assume that you have already configured a domain and server, 
 	
 		<jvm-options>-Xmx1024m</jvm-options>
 
-2.  Delete, rename, or move the `[domain]/docroot/index.html` file to another location to allow your Liferay Portal default page to be displayed.
+2. Delete, rename, or move the `[domain]/docroot/index.html` file to another location to allow your Liferay Portal default page to be displayed.
 
 ##### Database Configuration
 
@@ -566,55 +566,53 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 2.	Go to the GlassFish console URL:     [http://localhost:4848](http://localhost:4848/).
     
-3.  Under *Common Tasks*, navigate to *Resources* -\> *JDBC* -\> *JDBC Connection Pools*
+3.  Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
-![Figure 11.x: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.PNG)
+	![Figure 11.x: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.PNG)
 
-4.	Click `New...`.
+6.	Click `New...`.
 
-5.  In the first screen, give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource`, and select your database driver vendor (e.g., *MySQL*).
+	1.  In the first screen, give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource`, and select your database driver vendor (e.g., *MySQL*).
 
-6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
+		![Figure 11.x: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
 
-![Figure 11.x: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
+	2.	Click *Next* to advance to the next step in creating your JDBC connection pool.
 
-7.  On the this sreen (step 2 of 2), scroll down to the *Additional Properties* section.
+	3.  On the this sreen (step 2 of 2), scroll down to the *Additional Properties* section.
 
-![Figure 11.x: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)
+		![Figure 11.x: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)
     
-8.	Replace or add the following properties ...
+	4.	Replace or add the following properties ...
 
-	- **URL:** the URL of your connection pool.
+		- **URL:** the URL of your connection pool.
 
-		For example,
+			For example,
+	
+				jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true
+			
+			Note, if you are using the above example, you should specify the name of your database in place of `lportal`. Likewise, if your database is not on the same server as GlassFish, specify your the database server's host name in place of `localhost`. Lastly, specify your database type in place of `jdbc:mysql`.
+	
+		- **user:** the name of your database user.
+	
+		- **password:** your database user's password.
 
-        	jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true
-        
-        Note, if you are using the above example, you should specify the name of your database in place of `lportal`. Likewise, if your database is not on the same server as GlassFish, specify your the database server's host name in place of `localhost`. Lastly, specify your database type in place of `jdbc:mysql`.
+	5.  Click *Finish*.
 
-	- **user:** the name of your database user.
+		You should now see your `LiferayPool` connection pool listed under *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
-	- **password:** your database user's password.
-
-10.  Click *Finish*.
-
-	You should now see your `LiferayPool` connection pool listed under *Resources* -\> *JDBC* -\> *JDBC Connection Pools*
-
-11. Test your connection by selecting your `LiferayPool` connection pool and clicking *Ping*.
+7. Test your connection by selecting your `LiferayPool` connection pool and clicking *Ping*.
 
 	If you get a message stating  *Ping Succeeded*, you've set up the connection pool of your data source!
 
-13. Now, you'll setup a JDBC resource to refer to the `LiferayPool` connection pool you just created.
+8. Now, you'll setup a JDBC resource to refer to the `LiferayPool` connection pool you just created. Navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC Resources* to show the current JDBC resources listed by their JNDI names.
 
-14.	Navigate to *Resources* -\> *JDBC* -\> *JDBC Resources* to show the current JDBC resources listed by their JNDI names.
+9. Click *New...*
 
-14. Click *New...*.
+	1.	Set the JNDI name to `jdbc/LiferayPool` and select `LiferayPool` as the pool name.
 
-15. Set the JNDI name to `jdbc/LiferayPool` and select `LiferayPool` as the pool name.
+	2.	Click *OK*.
 
-16. Click *OK*.
-
-	Congratulations! You've now configured your domain's data source to manage on GlassFish!
+Congratulations! You've configured your domain's data source on GlassFish!
 
 ##### Mail Configuration
 
@@ -641,29 +639,29 @@ If you want to use GlassFish to manage your mail session, follow GlassFish's doc
 
 		mail.session.jndi.name=mail/MailSession
 
-	Otherwise, if you are using Liferay Portal to manage your mail session, go to *Control Panel -\> Server Administration -\> Mail* and enter settings for your mail session.
+	Otherwise, if you are using Liferay Portal to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
 
 ##### Deploy Liferay
 
 1.  Startup your domain's application server.
 
-1.  Go to the GlassFish console URL:     [http://localhost:4848](http://localhost:4848/)
+2.  Go to the GlassFish console URL:     [http://localhost:4848](http://localhost:4848/)
 
-2.  Click *Applications* in the tree on the left.
+3.  Click *Applications* in the tree on the left.
 
-3.  Click *Deploy*.
+4.  Click *Deploy*.
+	
+		![Figure 11.x Deploying Liferay on GlassFish 3.x](../../images/11-deploying-liferay-in-glassfish-31.png)
 
-4.  Under *Packaged File to Be Uploaded to the Server* click *Choose File*, and browse to the location of the Liferay Portal `.war` file.
-    
-5.	Enter *Context Root:* `/`
+	1.  Under *Packaged File to Be Uploaded to the Server* click *Choose File*, and browse to the location of the Liferay Portal `.war` file.
+		
+	2.	Enter *Context Root:* `/`
+	
+	3.	Enter *Application Name:* `liferay-portal`
+	
+	4.  Click *OK*.
 
-6.	Enter *Application Name:* `liferay-portal`
-
-7.  Click *OK*.
-
-    ![Figure 11.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
-
-    Liferay Portal will now be deployed and started automatically to your server's host and port (e.g., [http://localhost:0808](http://localhost:0808/)). Your installation of Liferay Portal on GlassFish is complete!
+Liferay Portal will now be deployed and started automatically to your server's host and port (e.g., [http://localhost:0808](http://localhost:0808/)). Your installation of Liferay Portal on GlassFish is complete!
 
 #### Jetty 6
 
@@ -1097,134 +1095,87 @@ Note that the above properties file assumes that your database name is *lportal*
 
 Note: WebLogic 10.0 supports JDK 1.5, but does *not* support JDK 1.6.
 
-**Liferay Home** is one folder above the domain to which you will be
-installing Liferay.
+**Liferay Home** is one folder above the domain to which you will be installing Liferay.
 
-For example, if your domain location is
-`/Oracle/Middleware/user_projects/domains/base_domain`, then your
-Liferay Home will be `/Oracle/Middleware/user_projects/domains`.
+For example, if your domain location is `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home will be `/Oracle/Middleware/user_projects/domains`.
 
-These instructions assume that you have already configured a domain and
-server, and that you have access to the WebLogic console.
+These instructions assume that you have already configured a domain and server, and that you have access to the WebLogic console.
 
 ##### Dependency Jars
 
-1.  Navigate to the folder which corresponds to the domain to which you
-will be installing Liferay. Inside this folder is a `lib`
-folder. Unzip the Liferay dependencies archive to this folder so that
-the dependency `.jar` files are extracted into the `lib` folder.
+1.  Navigate to the folder which corresponds to the domain to which you will be installing Liferay. Inside this folder is a `lib` folder. Unzip the Liferay dependencies archive to this folder so that the dependency `.jar` files are extracted into the `lib` folder.
 
-2.  If WebLogic does not already have access to the JDBC driver for your
-database, copy the driver to your domain's `lib` folder as well.
+2.  If WebLogic does not already have access to the JDBC driver for your database, copy the driver to your domain's `lib` folder as well.
 
-3.  You will also need the `xercesImpl.jar` copied to your domain's
-`lib` folder or you will get SAX parsing errors after you deploy
-Liferay. You may download this 
-from [http://xerces.apache.org](http://xerces.apache.org/).
+3.  You will also need the `xercesImpl.jar` copied to your domain's `lib` folder or you will get SAX parsing errors after you deploy Liferay. You may download this from [http://xerces.apache.org](http://xerces.apache.org/).
 
-4.  Create a folder called *endorsed* in
-`$WEBLOGIC-HOME/jrockit_150_15/jre/lib`, then copy
-`commons-lang.jar, liferay-rhino.jar`,
-`serializer.jar`*,* and `xalan.jar` to the
-folder that you just created.
+4.  Create a folder called *endorsed* in `$WEBLOGIC-HOME/jrockit_150_15/jre/lib`, then copy `commons-lang.jar, liferay-rhino.jar`, `serializer.jar`*,* and `xalan.jar` to the folder that you just created.
 
 ##### Database Configuration
 
-If you want WebLogic to manage your data source, use the following
-procedure. If you want to use Liferay's built-in data source, you can
-skip this section.
+If you want WebLogic to manage your data source, use the following procedure. If you want to use Liferay's built-in data source, you can skip this section.
 
-![image](../../images/02-weblogic-data-sources.png)
-*Illustration 5: WebLogic: Data Sources*.
+1.  Browse to your WebLogic Console. Click the *Lock & Edit* button above the Domain Structure tree on the left side of the page.
 
-1.  Browse to your WebLogic Console. Click the *Lock & Edit* button
-above the Domain Structure tree on the left side of the page.
+2.  From the Domain Structure tree on the left, select *Data Sources*. Then click the *New* button on the right side of the screen.
 
-2.  From the Domain Structure tree on the left, select *Data Sources*.
-Then click the *New* button on the right side of the screen.
+	![Figure 11.x: WebLogic: Data Sources](../../images/02-weblogic-data-sources.png)
 
 3.  Give the Data Source a name, such as `LiferayDataSource`.
 
 4.  Define the JNDI name as `jdbc/LiferayPool`.
 
-5.  Select your Database Type and the Driver class, and then click the
-*Next* button.
+5.  Select your Database Type and the Driver class, and then click the *Next* button.
 
 6.  Accept the defaults on the next screen by clicking *Next*.
 
-7.  On the next screen, put in your *Database Name*, *Host Name*, *Database
-User Name*, and *Password*. If you have been following the defaults
-we have been using so far, you would use *lportal, localhost, root,*
-and no password as the values. Click *Next*.
+7.  On the next screen, put in your *Database Name*, *Host Name*, *Database User Name*, and *Password*. If you have been following the defaults we have been using so far, you would use `lportal`, `localhost`, `root`, and no password as the values. Click *Next*.
 
-8.  The next screen allows you to test your database configuration.
-Click the *Test Configuration* button. If the test succeeds, you have
-configured your database correctly. Select the check box of the server 
-to which you want to deploy this Data Source (`AdminServer` is the
-default). Click Finish.
+8.  The next screen allows you to test your database configuration. Click the *Test Configuration* button. If the test succeeds, you have configured your database correctly. Select the check box of the server to which you want to deploy this Data Source (`AdminServer` is the default). Click Finish.
 
-9.  Click the *Activate Changes* button on the left, above the Domain
-Structure tree.
+9.  Click the *Activate Changes* button on the left, above the Domain Structure tree.
 
 ##### Mail Configuration
 
-If you want WebLogic to manage your mail sessions, use the following
-procedure. If you want to use Liferay's built-in mail sessions, you can
-skip this section.
+If you want WebLogic to manage your mail sessions, use the following procedure. If you want to use Liferay's built-in mail sessions, you can skip this section.
 
-![image](../../images/02-weblogic-mail-sessions.png)
-*Illustration 6: WebLogic: Mail Sessions*
+1.  In the Domain Structure tree, select *Mail Sessions.* Then click the *Lock & Edit* button again to enable modifying these settings.
 
-1.  In the Domain Structure tree, select *Mail Sessions.* Then click the
-*Lock & Edit* button again to enable modifying these settings.
+	![Figure 11.x: WebLogic: Mail Sessions](../../images/02-weblogic-mail-sessions.png)
 
-2.  Click the *New* button which is now enabled on the right side of the
-    screen.
+2.  Click the *New* button which is now enabled on the right side of the screen.
 
 3.  Give the Mail Session a name, such as *LiferayMail*.
 
 4.  Select your new LiferayMail session from the list by clicking on it.
 
-5.  On the screen that appears, define the JNDI name as
-`mail/MailSession` and set your JavaMail properties. Click
-the *Save* button.
+5.  On the screen that appears, define the JNDI name as `mail/MailSession` and set your JavaMail properties. Click the *Save* button.
 
-6.  Click the *Targets* tab. Select the check box of the server to which you
-want deploy this Data Source to (AdminServer is the default).
+6.  Click the *Targets* tab. Select the check box of the server to which you want deploy this Data Source to (AdminServer is the default).
 
-7.  Click the *Activate Changes* button on the left side of the screen,
-above the Domain Structure tree.
+7.  Click the *Activate Changes* button on the left side of the screen, above the Domain Structure tree.
 
 ##### Deploy Liferay
-
-![image](../../images/02-weblogic-deployments.png) *Illustration 7: WebLogic: Deployments*
     
-1.  In the Domain Structure tree, select *Mail Sessions.*  Then click the
-*Lock & Edit* button above the Domain Structure tree.
+1.  In the Domain Structure tree, select *Deployments.*  Then click the *Lock & Edit* button above the Domain Structure tree.
+
+	![Figure 11.x: WebLogic: Deployments](../../images/02-weblogic-deployments.png)
 
 3.  Click the *Install* button on the right side of the screen.
 
 4.  Click the *Upload your file(s)* link.
 
-5.  Browse to where you have stored the Liferay .war file, select it,
-and then click *Next*.
+5.  Browse to where you have stored the Liferay `.war` file, select it, and then click *Next*.
 
-6.  Select the Liferay .war file from the list and click *Next*.
+6.  Select the Liferay `.war` file from the list and click *Next*.
 
-7.  Leave *Install this deployment as an application* selected and click
-Next.
+7.  Leave *Install this deployment as an application* selected and click Next.
 
-8.  Give the application a name (the default name is fine). Leave the
-other defaults selected and then click *Finish*.
+8.  Give the application a name (the default name is fine). Leave the other defaults selected and then click *Finish*.
 
-9.  WebLogic will now deploy Liferay. When it is finished, a summary
-screen is displayed. Click the *Activate Changes* link on the left
-above the Domain Structure tree.
+9.  WebLogic will now deploy Liferay. When it is finished, a summary screen is displayed. Click the *Activate Changes* link on the left above the Domain Structure tree.
 
-10. Create a `portal-ext.properties` file in the Liferay Home
-folder, which is one folder up from your domain's home folder. If
-you are using Liferay's built-in data source, add the database
-settings:
+10. Create a `portal-ext.properties` file in the Liferay Home folder, which is one folder up from your domain's home folder. If you are using Liferay's built-in data source, add the database settings:
     
         jdbc.default.driverClassName=com.mysql.jdbc.Driver
         jdbc.default.url=jdbc:mysql://localhost/lportal?
@@ -1236,49 +1187,31 @@ settings:
     
         jdbc.default.jndi.name=jdbc/LiferayPool
     
-11. If you are using Liferay's built-in mail session, go to
-*Control Panel -> Server Administration -> Mail* and enter your settings
-for your mail session settings.
+11. If you are using Liferay's built-in mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter your settings for your mail session settings.
 
-12. In the Deployments screen, select the Liferay application and click
-the *Start* button. Select *Servicing All Requests* in the pop up.
+12. In the Deployments screen, select the Liferay application and click the *Start* button. Select *Servicing All Requests* in the pop up.
 
 13. Click *Yes* to continue on the next screen.
 
-Liferay will start. You will be able to get to it by browsing to
-`http://<server name>:7001`. If your browser is running on the
-same machine upon which you have installed Liferay, the URL is
-`http://localhost:7001`.
+Liferay will start. You will be able to get to it by browsing to `http://<server name>:7001`. If your browser is running on the same machine upon which you have installed Liferay, the URL is [http://localhost:7001](http://localhost:7001).
 
 #### Oracle WebLogic 10.3
 
-**Liferay Home** is one folder above the domain to which you will be
-installing Liferay.
+**Liferay Home** is one folder above the domain to which you will be installing Liferay.
 
-For example, if your domain location is
-`/Oracle/Middleware/user_projects/domains/base_domain`, then your
-Liferay Home will be `/Oracle/Middleware/user_projects/domains`.
+For example, if your domain location is `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home will be `/Oracle/Middleware/user_projects/domains`.
 
-These instructions assume that you have already configured a domain and
-server, and that you have access to the WebLogic console.
+These instructions assume that you have already configured a domain and server, and that you have access to the WebLogic console.
 
-If you still have the mainWebApp module installed, you will need to
-remove it first.
+If you still have the mainWebApp module installed, you will need to remove it first.
 
-*Note:* There is a known issue with the Sun
-and JRockit JVMs bundled with WebLogic 10.3.2
-(see [http://bugs.sun.com/view_bug.do?bug_id=6795561](issue)). To resolve, use
-Sun JVM 1.6.0_u24 or JRockit JVM 1.6.0_24.
+*Note:* There is a known issue with the Sun and JRockit JVMs bundled with WebLogic 10.3.2 (see [http://bugs.sun.com/view_bug.do?bug_id=6795561](issue)). To resolve, use Sun JVM 1.6.0_u24 or JRockit JVM 1.6.0_24.
 
 ##### Dependency Jars
 
-1.  Navigate to the folder which corresponds to the domain to which you
-will be installing Liferay. Inside this folder is a `lib`
-folder. Unzip the Liferay dependencies archive to this folder so that
-the dependency `.jar` files reside in the `lib` folder.
+1.  Navigate to the folder which corresponds to the domain to which you will be installing Liferay. Inside this folder is a `lib` folder. Unzip the Liferay dependencies archive to this folder so that the dependency `.jar` files reside in the `lib` folder.
 
-2.  If WebLogic does not already have access to the JDBC driver for your
-database, copy the driver to your domain's `lib` folder as well.
+2.  If WebLogic does not already have access to the JDBC driver for your database, copy the driver to your domain's `lib` folder as well.
 
 ##### Start Application Server
 
@@ -1286,68 +1219,41 @@ Start WebLogic.
 
 ##### Database Configuration
 
-![image](../../images/02-weblogic-10-3-data-sources.png) *Illustration 8: WebLogic: Data Sources*.
+If you want WebLogic to manage your data source, use the following procedure. If you want to use Liferay's built-in data source, you can skip this section.
 
-If you want WebLogic to manage your data source, use the following
-procedure. If you want to use Liferay's built-in data source, you can
-skip this section.
+	![Figure 11.x: WebLogic: Data Sources](../../images/02-weblogic-10-3-data-sources.png)
+
+1.  Select *Services &rarr; Data Sources.* Click *New &rarr; Generic Data Source*.
  
-![image](../../images/02-creating-a-data-source-in-weblogic.png)
-*Illustration 9: Creating a data source in WebLogic 10.3*
+	![Figure 11.x: Creating a data source in WebLogic 10.3](../../images/02-creating-a-data-source-in-weblogic.png)
 
-1.  Select *Services -> Data Sources.* Click *New -> Generic Data Source*.
+2.  Give your data source a name, such as *Liferay Data Source*. The JNDI name should be `jdbc/LiferayPool`.
 
-2.  Give your data source a name, such as *Liferay Data Source*. The
-JNDI name should be `jdbc/LiferayPool`.
+3.  Choose the type of database and click *Next*. From the screen shot, you can see that we have chosen MySQL. The database driver class should be chosen for you automatically.
 
-3.  Choose the type of database and click *Next*. From the screen shot, you can
-see that we have chosen MySQL. The database driver class should be chosen for
-you automatically.
+4.  Click *Next* three times. You should be on the *Connection Properties* screen. Enter the database name, the host name, the port, the database user name, and the password. WebLogic will use this information to construct the appropriate JDBC URL to connect to your database. Click *Next*.
 
-4.  Click *Next* three times. You should be on the *Connection Properties*
-screen. Enter the database name, the host name, the port, the
-database user name, and the password. WebLogic will use this
-information to construct the appropriate JDBC URL to connect to your
-database. Click *Next*.
+5.  WebLogic will now confirm with you the information that it gathered. For MySQL, some additional parameters need to be added to the URL. Modify the JDBC URL so that it has the proper parameters. If you have been following the defaults we have been using so far, you would use *lportal, localhost, root,* and no password as the values. Click *Next*.
 
-5.  WebLogic will now confirm with you the information that it gathered.
-For MySQL, some additional parameters need to be added to the URL.
-Modify the JDBC URL so that it has the proper parameters. If you have been
-following the defaults we have been using so far, you would use
-*lportal, localhost, root,* and no password as the values. Click *Next*.
+6.  Click *Test Configuration* to make sure WebLogic can connect to your database successfully. If it does, click *Finish*.
 
-6.  Click *Test Configuration* to make sure WebLogic can connect to your
-database successfully. If it does, click *Finish*.
+7.  You will be back to the list of data sources. Notice that your new data source has no value in the *Target* column. Click on your data source to edit it.
 
-7.  You will be back to the list of data sources. Notice that your new
-data source has no value in the *Target* column. Click on your data
-source to edit it.
-
-8.  Click the *Targets* tab and check off the server instance(s) to
-which you wish to deploy your data source. Then click *Save*.
+8.  Click the *Targets* tab and check off the server instance(s) to which you wish to deploy your data source. Then click *Save*.
 
 ##### Mail Configuration
 
-![image](../../images/02-weblogic-10-3-mail-sessions.png)
-*Illustration 10: WebLogic: Mail Sessions*.
+1.  Select *Mail Sessions* and create a new mail session which points to your mail server.
 
-1.  Select *Mail Sessions* and create a new mail session which points to
-your mail server.
+	![Figure 11.x: WebLogic Mail Sessions](../../images/02-weblogic-10-3-mail-sessions.png)
 
-2.  Give it the name Liferay Mail and give it the JNDI name of
-`mail/MailSession` and click *Next*.
+2.  Give it the name Liferay Mail and give it the JNDI name of `mail/MailSession` and click *Next*.
 
 3.  Choose your server and then click *Finish*.
 
 ##### Deploy Liferay
 
-![image](../../images/02-weblogic-10-3-deployments.png)
-*Illustration 11: WebLogic: Deployments*.
-
-1.  Create a `portal-ext.properties` file in the Liferay Home
-folder, which is one folder up from your domain's home folder. If
-you are using Liferay's built-in data source, add the database
-settings:
+1.  Create a `portal-ext.properties` file in the Liferay Home folder, which is one folder up from your domain's home folder. If you are using Liferay's built-in data source, add the database settings:
 
         jdbc.default.driverClassName=com.mysql.jdbc.Driver
         jdbc.default.url=jdbc:mysql://localhost/lportal?
@@ -1359,9 +1265,7 @@ settings:
 
         jdbc.default.jndi.name=jdbc/LiferayPool
 
-2. If you are using Liferay's built-in mail session, go to
-*Control Panel -> Server Administration -> Mail* and enter your settings
-for your mail session settings.
+2. If you are using Liferay's built-in mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter your settings for your mail session settings.
 
     If you are using WebLogic's mail session, add the JNDI name instead:
 
@@ -1378,29 +1282,21 @@ for your mail session settings.
             <exact-match>false</exact-match>
         </library-ref>
 
-4.  Select *Deployments* and click the* Install* button. Upload
-`jsf-1.2.war` from WebLogic's common files directory, and
-select *Install this deployment as a library.*
+4.  Select *Deployments* and click the *Install* button. Upload `jsf-1.2.war` from WebLogic's common files directory, and select *Install this deployment as a library.*
 
-5.  After installing the JSF libraries, go back to deployments and
-select the Liferay .war file from the file system or click the
-*Upload Your File(s)* link to upload it, and then click *Next*.
+	![Figure 11.x: WebLogic Deployments](../../images/02-weblogic-10-3-deployments.png)
 
-6.  Select *Install this deployment as an application *and click *Next*.
+5.  After installing the JSF libraries, go back to deployments and select the Liferay .war file from the file system or click the *Upload Your File(s)* link to upload it, and then click *Next*.
 
-7.  If the default name is appropriate for your installation, keep it.
-Otherwise, give it a name of your choosing and click *Next*.
+6.  Select *Install this deployment as an application* and click *Next*.
+
+7.  If the default name is appropriate for your installation, keep it. Otherwise, give it a name of your choosing and click *Next*.
 
 8.  Click *Finish*. After the deployment finishes, click *Save*.
 
-![image](../../images/02-tip.png) **Tip:** After Liferay
-completes installing, you may see an error initializing the Web Proxy
-portlet. Because the XSL parser configured by default within WebLogic
-cannot compile a style sheet in this portlet, Liferay disables it by
-default. To re-enable this portlet, extract xalan.jar and serializer.jar
-from the Liferay .war archive and copy them to your JDK's endorsed
-folder for libraries. If you are using JRockit, you may find this folder
-in `[Bea Home]/jrockit_160_05/jre/lib/ext`.
+---
+![tip](../../images/02-tip.png) After Liferay completes installing, you may see an error initializing the Web Proxy portlet. Because the XSL parser configured by default within WebLogic cannot compile a style sheet in this portlet, Liferay disables it by default. To re-enable this portlet, extract xalan.jar and serializer.jar from the Liferay .war archive and copy them to your JDK's endorsed folder for libraries. If you are using JRockit, you may find this folder in `[Bea Home]/jrockit_160_05/jre/lib/ext`.
+---
 
 
 #### WebSphere 6.1
