@@ -38,7 +38,7 @@ To sign into Liferay for the first time, click the *Sign In* link. You'll next s
 
 By default, Liferay uses your email address, not a username or ID, for authentication. This can be changed later if you wish, but it's generally a good practice to keep it this way. Users' email addresses make good candidates for user IDs since they are hard to forget and they are unique to each user.
 
-The first page that's displayed when a user logs in for the first time is the Terms of Use page. By default, users must agree to the terms of use before they can access the portal. Scroll to the bottom of the page and click *I Agree* to proceed. Note that as a portal administrator, you can customize the Terms of Use page or disable it altogether. Next, let's take a look at how to navigate once you're signed in. 
+The first page that's displayed when a user logs in for the first time is the Terms of Use page. By default, users must agree to the terms of use before they can access the portal. Scroll to the bottom of the page and click *I Agree* to proceed. Note that as a portal administrator, you can customize the Terms of Use page or disable it altogether. Next, let's take a look at how to navigate in Liferay. 
 
 ### Using the Dockbar
 
