@@ -2,7 +2,15 @@
 
 Liferay Portal includes a workflow engine called Kaleo. In Greek, this word means "called ones," which is appropriate for a workflow engine that will be calling users to participate in a process that has been designed for them.
 
-Kaleo workflow allows a user to define any number of simple to complex business processes/workflows, deploy them, and manage them through a portal interface. Those processes have knowledge of users, groups, and roles without writing a single line of code—it only requires the creation of a single XML document.
+Kaleo workflow allows a user to define any number of simple to complex business processes/workflows, deploy them, and manage them through a portal interface. Those processes have knowledge of users, groups, and roles without writing a single line of code, it only requires the creation of a single XML document.
+
+To better understand how to use Kaleo Workflow, in this chapter, we are going to discuss:
+
+-	Installation
+-	Workflow Basics
+-	Creating Workflow Definitions
+-	Other Kaleo Features
+-	The Workflow Designer
 
 ### Installation
 
