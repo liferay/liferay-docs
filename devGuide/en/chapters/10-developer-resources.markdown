@@ -1,8 +1,7 @@
 
 # Resources for Liferay Developers
 
-The following are useful reference resources for developers working with
-the Liferay Platform:
+The following are useful reference resources for developers working with the Liferay Platform:
 
 -   Liferay specific resources:
 
@@ -113,3 +112,4 @@ the Liferay Platform:
 
     -   JBoss Application Server:
         [http://www.jboss.org/](http://www.jboss.org/)
+
