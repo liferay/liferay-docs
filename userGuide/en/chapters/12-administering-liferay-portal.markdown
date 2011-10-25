@@ -8,6 +8,8 @@ This chapter covers the following activities:
 
 -   Using the control panel to manage server administration, portal instances, plugins, and updates
 
+You'll find that Liferay's control panel grants you the ability to customize many aspects of how your portal organizes users and grants them permissions to various portal resources. You can also configure many aspects of the portal itself. If you want to make a configuration that you can't find an option for in the control panel, check Liferay's `portal.properties` file. If you find a customization there that you'd like to implement, remember not to modify the file directly but to overwrite it by creating a `portal-ext.properties` file instead. Let's begin our examination of Liferay's control panel by taking a look a how to manage and group users in Liferay Portal.
+
 ## Managing Users, User Groups, Organizations, Sites, Teams, and Roles from the Control Panel
 
 The Portal section of the control panel is used for most administrative tasks. You will find there an interface for the creation and maintenance of
@@ -339,7 +341,7 @@ Permission management for teams is handled at the individual portlet level, usin
 
 [Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams)
 
-To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. Now your team is ready to work!
+To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. Now your team is ready to work.
 
 ## Managing Portal Settings
 
@@ -401,7 +403,7 @@ Most global portal settings can be configured here. The Configuration heading co
 
 ![Figure 12.17: Portal Settings Pages][../../images/server-configuration-portal-settings-pages.png]
 
-We discuss these settings below.
+Let's discuss these settings next.
 
 #### General
 

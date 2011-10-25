@@ -2,7 +2,7 @@
 
 Liferay Portal ships with a robust suite of collaboration applications which you can use to build communities of users for your site. These applications provide all the features that you would expect of standalone versions outside of a portal setting. The difference with Liferay's collaboration suite, however, is that all of the applications share a common look and feel, security model, and architecture. They inherit the strengths of being part of Liferay's development platform so you can use them in combination with Liferay's user management and content management features to build a well-integrated, feature-rich web site.
 
-This chapter will focus on how to use Liferay's collaboration suite. You will learn how to set up and administer:
+This chapter focuses on how to use Liferay's collaboration suite. We explain how to set up and administer:
 
 -   Blogs
 
@@ -20,7 +20,7 @@ This chapter will focus on how to use Liferay's collaboration suite. You will le
 
 -   Documents and Media Libraries
 
-We will discuss how these features work together to provide an enhanced experience for your users and enable you to build an active community.
+We'll discuss how these features work together to facilitate information flow within your portal and provide an enhanced experience for your users.
 
 ## Scopes
 
@@ -465,9 +465,11 @@ For administrators, the Statistics tab shows the number of categories, the numbe
 
 ### Posting New Threads
 
-To post a new thread simply select the *Post New Thread* button. You will see a message editing form. The body field on this form is different from that of the other portlets in Liferay. The reason for this is to support *BBCode*, which is a standard form of markup used in many message board products. Before BBCode was invented, many message board products would allow users to enter HTML to format their messages. This, however, enabled attackers to insert malicious code into the message board. BBCode was invented to provide users a way of formatting their messages without allowing them to enter HTML. Similarly, Liferay supports BBCode in the message boards portlet because the other editor—which is used for the Content Management System, the Blogs portlet, and other portlets—produces HTML. This is appropriate for those other portlets, as they are only used by privileged users, but it is not appropriate for the message boards. Besides this, many users of message boards are familiar with BBCode and are used to it, and the editor that is provided for Liferay's Message Boards portlet makes it very easy to use.
+To post a new thread simply select the *Post New Thread* button. You will see a message editing form. The body field on this form is different from that of the other portlets in Liferay. The reason for this is to support *BBCode*, which is a standard form of markup used in many message board products. Before BBCode was invented, many message board products would allow users to enter HTML to format their messages. This, however, enabled attackers to insert malicious code into the message board. BBCode was invented to provide users a way of formatting their messages without allowing them to enter HTML. Similarly, Liferay supports BBCode in the message boards portlet because the other editor--which is used for the Content Management System, the Blogs portlet, and other portlets--produces HTML. This is appropriate for those other portlets, as they are only used by privileged users, but it is not appropriate for the message boards. Besides this, many users of message boards are familiar with BBCode and are used to it, and the editor that is provided for Liferay's Message Boards portlet makes it very easy to use.
 
 ![Figure 4.12: Editing a Message Boards Post](../../images/05-editing-message-board-post.png)
+
+The message boards editor is quite rich. It supports bold, italicized, underlined, and crossed-out text, links, images, colors, lists, tables, alignments, quotation blocks, code blocks, different fonts and font sizes, and more. There are even a bunch of smiley faces that you can use.
 
 ![Figure 4.13: Emoticons Available in the Editor](../../images/05-emoticons.png)
 
@@ -661,7 +663,7 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 ## Knowledge Base
 
-The Knowledge Base portlet is based on the Wiki portlet. It provides a means for creating and organizing articles within a site. The knowledge base is perfect for creating and organizing information more formally than in a wiki. It can be used for professional product documentation, for example. It's easy to set up the knowledge base with a workflow that requires articles to be approved before they are published. Additionally, it allows administrators to create article templates. Templates can be used to insure that certain kinds of articles possess a common structure and include certain kinds of information. Knowledge base articles can be categorized to make them easy to find. They can also be organized hierarchically to form complete books or guides. The Knowledge Base portlet is available as an app from Liferay Marketplace. Please see chapter 2 for installation instructions.
+The Knowledge Base portlet is related to the Wiki portlet. It provides a means for creating and organizing articles within a site. The knowledge base is perfect for creating and organizing information more formally than in a wiki. For example, it can be used to organize and display professional product documentation. It's easy to set up the knowledge base with a workflow that requires articles to be approved before they are published. Additionally, it allows administrators to create article templates. Templates can be used to insure that certain kinds of articles possess a common structure and include certain kinds of information. Knowledge base articles can be categorized to make them easy to find. They can also be organized hierarchically to form complete books or guides. The Knowledge Base portlet is available as an app from Liferay Marketplace. Please see chapter 2 for installation instructions.
 
 ### Knowledge Base Display Portlet
 
@@ -757,7 +759,7 @@ You can also use the Categories Navigation portlet in conjunction with the Knowl
 
 ![Figure 4.x: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
-You can select topics for articles when you are creating or editing them.
+You can select topics for articles when you are creating or editing them. Next, let's take a look at the Documents and Media library, Liferay's general mechanism for creating and storing files in the portal.
 
 ## Documents and Media
 
@@ -867,7 +869,7 @@ All you have to do to define a metadata set is choose fields to use from the are
 
 **Text Box:** is just like the text field except you can enter multiple lines of text or separate paragraphs.
 
-Remember that metadata sets are reusable. Once they have been created they can be included in any number of document types.
+Remember that metadata sets are reusable. Once they have been created they can be included in any number of document types. By default, tags can be attached to most forms of web content that can be created in Liferay, including documents. Let's take a look at them next.
 
 ## Tags
 
