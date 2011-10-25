@@ -29,15 +29,15 @@ To illustrate the correct syntax for interacting with Liferay services, let's ta
 
 Beanshell is a Java scripting language that's designed to run Java code with little or no changes.  In this example, we only have one small change to make because Beanshell doesn't support the use of Java Generics. 
 
-import com.liferay.portal.model.User;
-import com.liferay.portal.service.UserLocalServiceUtil;
-import java.util.List;
+    import com.liferay.portal.model.User;
+    import com.liferay.portal.service.UserLocalServiceUtil;
+    import java.util.List;
 
-int userCount = UserLocalServiceUtil.getUsersCount();
-List users = UserLocalServiceUtil.getUsers(0, userCount);
-for (User user:users){
+    int userCount = UserLocalServiceUtil.getUsersCount();
+    List users = UserLocalServiceUtil.getUsers(0, userCount);
+    for (User user:users){
 		System.out.println("User Name: " + user.getFullName());
-}
+    }
 
 #### Groovy
 
@@ -105,12 +105,12 @@ Lastly, Liferay provides Python support based on Jython and the previous example
 ### Running Scripts from the Control Panel.  
 
 To see a very simple example of the script console in action, log into the portal as an administrator and navigate to the Control Panel &rarr; Server Administration &rarr; Script. Change the script type to Groovy and modify the current code to look like the following:
- 
+
 	number = com.liferay.portal.service.UserLocalServiceUtil.getUsersCount(); 
 	out.println(number);  
 
 Click the execute button and check the console or the log for your output.  
- 
+
 Let's implement a more realistic example where we will retrieve some user information from the database, make some changes, and then update the database with our changes.  Our company has updated the terms of use and requires that everyone be presented with the updated terms of use the next time they log in.  When users agree to the terms of use, a boolean attribute called *agreedToTermsOfUse* is set in their user record.  As long as the boolean is true, Liferay will not present the user with the terms of use. However, if we set this flag to 
 
 We'll again use Groovy so ensure the script type is set to Groovy and execute the following code to check the status of the agreedToTermsOfUse attribute:
@@ -132,7 +132,7 @@ Now we'll actually update each user in the system to set his or her agreedToTerm
 	users = UserLocalServiceUtil.getUsers(0, userCount)
 
 	for ( user in users){
-  	if(!user.isDefaultUser() && !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")){     
+    if(!user.isDefaultUser() && !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")){     
 			user.setAgreedToTermsOfUse(false)
 			UserLocalServiceUtil.updateUser(user)
 		}
@@ -142,6 +142,7 @@ To verify the script has updated the records, run the first script again and you
 
 
 That's all that's needed to run scripts and to access the Liferay service layer.  However, there are some things to keep in mind when working with the script console: 
+
 * There is no undo
 * There is no preview
 * When using Local Services,  no permissions checking is enforced
