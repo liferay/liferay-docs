@@ -142,6 +142,7 @@ To verify the script has updated the records, run the first script again and you
 
 
 That's all that's needed to run scripts and to access the Liferay service layer.  However, there are some things to keep in mind when working with the script console: 
+
 * There is no undo
 * There is no preview
 * When using Local Services,  no permissions checking is enforced
