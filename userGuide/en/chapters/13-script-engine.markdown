@@ -149,7 +149,31 @@ That's all that's needed to run scripts and to access the Liferay service layer.
 
 ### Leveraging the Script Engine in Workflow
 
---TO DO - Stephen?  
+Liferay's Kaleo workflow engine provides a robust system for reviewing and approving content in an enterprise environment. Just with the standard feature set, it is a powerful and robust workflow solution, and the addition of the scripting features brings it to the next level.
+
+We can get a quick look at the scripting feature by looking at the default workflow definition included with Kaleo. The final step in the workflow is to run a script that makes content available for use. As you can see in the snippet below, it uses Javascript to access the Java class associated with the workflow to set the status of the content to *approved*.
+
+    <script>
+    <![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus
+        (Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"),workflowContext);]]>
+    </script>
+    <script-language>javascript</script-language>
+
+At virtually any point in a workflow, you can use Liferay's scripting engine access internal services to access workflow APIs, or some feature of the portal outside of workflow. There are a lot of different ways that you could use this, but some practical ones might be getting a list of users with a specific worklfow related role, and sending an email to the designated content approver with a list of people to contact if he is unable to review the content; or creating an alert to be displayed in the Alerts portlet for any user assigned to approve content.
+
+Of course, before you try to do any of this, you might want to know what the appropriate syntax is for inserting a script into the workflow. In an XML workflow definition, a script can be used in any XML type that can contain an *<actions>* tag - those types being *<state>*, *<task>*, *<fork>*, and *<join>*. Inside of one of those types, you would format your script like so:
+
+    <actions>
+        <action>
+            <script>
+                <![CDATA[*the contents of your script*]]>
+            </script>
+            <script-language>*your scripting language of choice*</script-language>
+        </action>
+        ...
+    </actions>
+
+The combination of Liferay's scripting and workflow engines is incredibly powerful, but as it provides users with the ability to execute code, it can also be very dangerous. When configuring your permissions, be sure to be aware of the potential consequences of poorly, or maliciously, written scripts inside of a workflow definition. For more information on creating definitions with Kaleo Workflow see *Chapter 6: Workflow with Kaleo*.
 
 ### Script Based Portlets
 
