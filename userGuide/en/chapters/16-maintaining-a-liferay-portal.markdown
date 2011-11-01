@@ -66,35 +66,53 @@ But what about maintenance while your server is running? Liferay lets you view a
 
 ## Liferay's Logging System
 
-Liferay uses Log4j extensively to implement logging for nearly every class in the portal. If you need to debug something specific while a system is running, you can use the Control Panel to set logging levels by class dynamically.
+Liferay uses Log4j extensively to implement logging for nearly every class in the portal. If you need to debug something specific while the system is running, you can use the Control Panel to set logging levels by class dynamically.
 
 To view the log levels, go to the Control Panel, click *Server Administration* in the Server section, and then click the *Log Levels* tab.
 
 You will then see a paginated list of logging categories. These categories correspond to Liferay classes that have log messages in them. By default, all categories are set to display messages only if there is an error that occurs in the class. This is why you see ERROR displayed in all of the drop down list boxes on the right side of the portlet.
 
-Each category is filtered by its place in the class hierarchy. For example, if you wanted to see logging for a specific class that is registered in Liferay, you would browse to that specific class and change its log level to something that is more descriptive, such as DEBUG. Once you click the *Save* button at the bottom of the list, you will start seeing DEBUG messages from that class in your application server's log file.
+Each category is filtered by its place in the class hierarchy. For example, if you wanted to see logging for a specific class that is registered in Liferay, you would browse to that specific class and change its log level to something that is more descriptive, such as DEBUG. Once you click the *Save* button at the bottom of the list, you'll start seeing DEBUG messages from that class in your application server's log file.
 
-If you are not sure which class you want to see log messages for, you can find a place higher up in the hierarchy and select the package name instead of an individual class name. If you do this, messages for every class lower in the hierarchy will be displayed in your application server's log file.
+If you're not sure which class you want to see log messages for, you can find a place higher up in the hierarchy and select the package name instead of an individual class name. If you do this, messages for every class lower in the hierarchy will be displayed in your application server's log file.
 
-![image](../../images/portal-admin-ch8_html_3579ac89.png) *Illustration 2: Changing Logging Levels*
+![Figure 16.x: Log levels can be dynamically changed at runtime, whenever you need to debug an issue. ](../../images/maintaining-log-levels.png) 
 
 Be careful when you do this. If you set the log level to DEBUG somewhere near the top of the hierarchy (such as `com.liferay`, for example), you may wind up with a lot of messages in your log file. This could make it difficult to find the one you were looking for, and causes the server to do more work writing messages to its log file.
 
-If you are want to set the log level for one of your own classes in a deployed plugin, you can register that class (so long as it uses Log4J to do its logging) with Liferay so that you can control the log levels more easily.
+If you want to set the log level for one of your own classes in a deployed plugin, you can register that class with Liferay so that you can control the log levels more easily, so long as your class uses Log4J to do its logging.
 
-You will first need to implement Log4J logging in your class, with a statement such as the following (taken from Liferay's `JCRHook` class):
+You will first need to implement Log4J logging in your class, with a statement such as the following (taken from Liferay's `JCRStore` class):
 
-private static Log _log = LogFactory.getLog(JCRHook.class);
+	private static Log _log = LogFactory.getLog(JCRStore.class);
 
 You would then use this `_log` variable to create log messages in your code for the various logging levels:
 
-_log.error("Reindexing " + node.getName(), e1);
+	_log.error("Reindexing " + node.getName(), e1);
 
 To enable your logging messages to appear in your server's log file via the Control Panel, click the *Add Category* tab on the same *Log Levels* page.
 
-![image](../../images/portal-admin-ch8_html_m559f0b07.png) *Illustration 3: Adding a Logging Category*
+![Figure 16.x: Adding your own logging classes is as simple as specifying it in this field. ](../../images/maintaining-add-log-category.png) 
 
-You will see that you can add a logging category. Simply put in the fully qualified name of your class or of the package that contains the classes whose log messages you want to view, choose a log level, and then click the *Save* button. You will now start to see log messages from your own class or classes in the server's log file.
+You'll see that you can add a logging category. Simply put in the fully qualified name of your class or of the package that contains the classes whose log messages you want to view, choose a log level, and then click the *Save* button. You will now start to see log messages from your own class or classes in the server's log file.
+
+Logs are great for figuring out issues in production. But what if Liferay contacts you via its support channel with a bug fix or a security enhancement? Read on to learn how to patch Liferay. 
+
+## Patching Liferay
+
+![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+
+While we strive for perfection with every release of Liferay Portal, the reality of the human condition dictates that releases of the product may not be as perfect as originally intended. But we've planned for that. Included with every Liferay bundle is a patching tool that can handle the installation of two types of patches: hot fixes and fix packs. 
+
+A hot fix is provided to a customer when a customer contacts Liferay about an issue, and Liferay's support team--working with the customer--determines that the problem is indeed an issue with the product that needs to be fixed. Support will fix the bug and provide a hot fix to the customer immediately. This is a short-term fix that solves the issue for the customer as quickly as possible. 
+
+On a regular schedule, these hot fixes are bundled together into fix packs. Fix packs are provided to all of Liferay's customers, and are component-based. This means that any issues with the content management system will be bundled together separately from issues with another component, such as the message boards. This lets you determine based on your usage which patches are critical and which are not. Of course, if Liferay issues a security advisory, that's something you're always going to want to patch. 
+
+Now that you know what patching is all about, let's check out the tool. 
+
+### Installing the patching tool
+
+If you're using a Liferay bundle, congratulations! The patching tool is already installed. Your job isn't done yet, however, because Liferay *might* have updated the patching tool. Always check the Customer Portal to see if the patching tool has been updated first. But even if you forget to check, the patching tool will tell you if it needs to be updated when you run it. See how we've introduced all these checks and balances to soften the 
 
 ## Upgrading Liferay
 
