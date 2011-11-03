@@ -112,7 +112,67 @@ Now that you know what patching is all about, let's check out the tool.
 
 ### Installing the patching tool
 
-If you're using a Liferay bundle, congratulations! The patching tool is already installed. Your job isn't done yet, however, because Liferay *might* have updated the patching tool. Always check the Customer Portal to see if the patching tool has been updated first. But even if you forget to check, the patching tool will tell you if it needs to be updated when you run it. See how we've introduced all these checks and balances to soften the 
+If you're using a Liferay bundle, congratulations! The patching tool is already installed. Your job isn't done yet, however, because Liferay *might* have updated the patching tool. Always check the Customer Portal to see if the patching tool has been updated first. But even if you forget to check, the patching tool will tell you if it needs to be updated when you run it. A lot of planning and forethought has gone into the patching system to make it run as smoothly as possible. 
+
+You follow the same procedure whether you're installing or upgrading the patching tool. Once you've obtained it from the customer portal, unzip it to the Liferay Home folder. This is the folder where you've placed your `portal-ext.properties` file, and where by default the `data` folder resides. This is generally one folder up from where your application server is installed, but some application servers are different. If you don't know where Liferay Home is on your system, check chapter 11 to see where this folder is for your specific application server. 
+
+If you're upgrading the patching tool, all you need to do is unzip the new version on top of the old version. Note that if you're doing this on LUM (Linux, Unix, Mac) machines, you'll need to make the `patching-tool.sh` script executable.  
+
+After the patching tool is installed, you need to let it auto-discover your Liferay installation, so it can determine what your release level is and what your application server environment is, in order for it to do its work. This is a simple command to run on LUM: 
+
+	./patching-tool.sh auto-discovery
+	
+or on Windows: 
+
+	patching-tool auto-discovery
+	
+From here on, for brevity we'll use the LUM version of the command. Why? Because I'm (RS) using a LUM operating system and I'm writing this, so I feel like I get to choose. 
+
+If you've installed the patching tool in a non-standard location, you'll have to give this command another parameter to point it to your Liferay installation. For example, if you've installed a Liferay/Tomcat bundle in `/opt/Liferay`, you'd issue this command: 
+
+	./patching-tool.sh auto-discovery /opt/Liferay/tomcat-7.0.21
+	
+In all, this is pretty simple. Now let's see how to use the patching tool to get your patches installed. 
+
+### Installing patches
+
+The absolute first thing you must do when installing one or more patches is to shut down your server. On Windows operating systems, files that are in use are locked by the OS, and won't be patched. On LUM systems, you can generally replace files that are running, but sometimes the result of doing that isn't what you wanted. So your best bet is to shut down the application server that's running Liferay before you install a patch. 
+
+Liferay distributes patches as `.zip` files, whether they are hot fixes or fix packs. When you receive one, either via a LESA ticket (hot fix) or through downloading a fix pack from the customer portal, you'll need to place it in the `patches` folder, which is inside the patching tool's home folder. Once you've done that, it's a simple matter to install it. First, execute
+
+	./patching-tool.sh info
+	
+This will show you a list of patches that you've already installed, along with a list of patches that *can* be installed, from what's in the `patches` folder. To install the available patches, issue the following command: 
+
+	./patching-tool.sh install
+	
+Your patches are now installed. You can verify this by using the `./patching-tool.sh info` command, which will now show your patch in the list of installed patches. Let's look now at how you'd manage your patches. 
+
+#### Handling hot fixes and patches
+
+As stated above, hot fixes are short term fixes that are provided as quickly as possible, and fix packs are larger bundles of hot fixes that are provided to all customers at regular intervals. If you already have a hot fix installed, and the fix pack which contains that hot fix is released, you can rest assured that the patching tool will manage this for you. 
+
+Fix packs always supercede hot fixes, so when you install your fix pack, the hot fix that it already contains is  uninstalled, and the fix pack version is installed in its place. 
+
+Sometimes there can be a fix to a fix pack. This is also handled automatically. If a new version of a fix pack is released, you can use the patching tool to install it. The patching tool uninstalls the old fix pack and installs the new version in its place. 
+
+#### Fix pack dependencies
+
+Some fix packs require other fix packs to be installed first. If you attempt to install a fix pack that depends on another fix pack, the patching tool will notify you of this so that you can go to the customer portal and obtain the fix pack dependency. Once all the necessary fix packs are available in the `patches` folder, the patching tool will install them. 
+
+The patching tool can also remove patches. 
+
+### Removing or reverting patches
+
+Have you noticed that the patching tool only seems to have an `install` command? That's definitely the case. You manage the patches that you have installed not by using another command, but by adding or removing patches from the `patches` folder. If you currently have a patch installed and you don't want it installed, remove it from the `patches` folder. Then run the `./patching-tool.sh install` command, and the patch is removed. 
+
+If you want to remove all patches that you've installed, use the `./patching-tool.sh revert` command. This removes all patches from your installation.
+
+What we've described so far is the simplest way to use the patching tool, but you can also use the patching tool in the most complex, multi-VM, clustered environments. This is done by using profiles. 
+
+### Using profiles with the patching tool
+
+
 
 ## Upgrading Liferay
 
