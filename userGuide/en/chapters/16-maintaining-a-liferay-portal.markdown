@@ -172,7 +172,33 @@ What we've described so far is the simplest way to use the patching tool, but yo
 
 ### Using profiles with the patching tool
 
-When you ran the auto-discovery task after installing the patching tool, it created a default profile that points to the application server it discovered. This is the easiest way to use the patching tool, and is great for smaller, single server installations. But we realize that many Liferay installations are sized accordingly to serve millions of pages per day, and the patching tool has been designed for this as well. 
+When you ran the auto-discovery task after installing the patching tool, it created a default profile that points to the application server it discovered. This is the easiest way to use the patching tool, and is great for smaller, single server installations. But we realize that many Liferay installations are sized accordingly to serve millions of pages per day, and the patching tool has been designed for this as well. So if you're running a small, medium, or large cluster of Liferay machines, you can use the patching tool to manage all of them using profiles. 
+
+The auto-discovery task creates a properties file called `default.properties`. This file contains the detected configuration for your application server. But you're not limited to only one server which the tool can detect. You can have it auto-discover other runtimes, or you can manually create new profiles yourself. 
+
+To have the patching tool auto-discover other runtimes, you'll need to use a few more command line parameters: 
+
+	./patching-tool.sh [name of profile] auto-discovery [path/to/runtime]
+	
+This will run the same discovery process, but on a path you choose, and the profile information will go into a `[your profile name].properties` file. 
+
+Alternatively, you can manually create your profiles. Using a text editor, create a `[profile name].properties` file in the same folder as the patching tool script. You can place the following properties in the file: 
+
+**patching.mode:** This can be `binary` (the default) or `source`, if you're patching the source tree you're working with. Liferay patches contain both binary and source patches, and you'll want to provide them to your development team if they're extending Liferay, so they can patch their source tree. 
+
+**jdk.version:** Patches are compiled for both JDK 5 and JDK 6. Specify the one (either `jdk5` or `jdk6`) your application server is running against. 
+
+**patches.folder:** Specify the location where you'll copy your patches. By default, this is `./patches`. 
+
+**war.path:** No, no one's angry. This is a property for which you specify the location of the Liferay installation inside your application server. You can specify a .war file here, and you'll be able to patch a Liferay .war for installation, which is necessary for some application servers. 
+
+**global.lib.path:** Specify the location where .jar files on the global classpath are stored. If you're not sure, search for your `portal-service.jar` file; it's on the global classpath. This property is only valid if your `patching.mode` is `binary`.  
+
+**source.path:** Specify the location of your Liferay source tree. This property is only valid if your `patching.mode` is `source`. 
+
+You can have as many profiles as you want, and use the same patching tool to patch all of them. This helps to keep all your installations in sync. 
+
+Now that you know how to patch an existing installation of Liferay, let's turn to how you'd upgrade Liferay from an older release to the current release. 
 
 ## Upgrading Liferay
 
