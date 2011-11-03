@@ -14,5 +14,6 @@ nbbuild.xml
 /build.*.properties
 
 **/build/**
+**/dist/**
 **nbproject**
 *#
