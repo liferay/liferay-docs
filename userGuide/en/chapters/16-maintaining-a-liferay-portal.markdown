@@ -172,7 +172,7 @@ What we've described so far is the simplest way to use the patching tool, but yo
 
 ### Using profiles with the patching tool
 
-
+When you ran the auto-discovery task after installing the patching tool, it created a default profile that points to the application server it discovered. This is the easiest way to use the patching tool, and is great for smaller, single server installations. But we realize that many Liferay installations are sized accordingly to serve millions of pages per day, and the patching tool has been designed for this as well. 
 
 ## Upgrading Liferay
 
