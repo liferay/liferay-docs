@@ -123,6 +123,24 @@ Probably the most effective way to connect users is connecting users with other 
 
 "Friend" is only the default way to connect users social on Liferay portal. Depending on your design, you can also connect people through Site and Organization membership. You can also configure relationships like "Enemy" --if you block another user, they become your "enemy." Advanced Social Networking features are covered in the Liferay Developer's Guide.
 
+## OpenSocial Integration
+
+OpenSocial is a framework designed for creating applications, called *gadgets* that will function on any social networking site that supports them. There are many existing gadgets available, and anyone can create their own gadgets. With Liferay, you can integrate any OpenSocial gadget into a Liferay page, and easily manage which gadgets are currently in use or available. You can also create your own OpenSocial Gadget using the OpenSocial Gadget Editor.
+
+### Using OpenSocial Gadgets
+
+The OpenSocial portlet is included with Liferay Community Edition, and can be easily installed through the Plugin Manager on Liferay EE. The portlet itself is fairly simple: once you add it to the page you just click on the configuration icon, and provide the URL of the gadget you want to use. The gadget will then display in the portlet container. The portlet options allow you to change the permissions for who can view or edit the portlet, as well as options to share the contents of the portlet, just like you can with any other Liferay portlet.
+
+![Figure 9.x: OpenSocial Gadget displayed on a page](../../images/open-social-gadget.png)
+
+In addition to configuring individual gadgets, you can specficy gadgets that will be listed in the *Add &rarr; More* list from the Control Panel. To do this, simply click on *OpenSocial* in the *Portal* section of the Control Panel, specify a URL for the Gadget, and select the category that it should appear in.
+
+### Creating and Editing OpenSocial Gadgets
+
+OpenSocial gadgets are essentially just XML documents, so as part of Liferay's OpenSocial integration, a gadget editor is included. With the gadget editor, you can edit existing gadgets or create your own from scratch. The editor itself is fairly robust and provides syntax highlighting, a preview function, undo/redo options, and built in tabs for working on multiple gadgets at once. You can also organize and manage them through a simple file manager embedded into the portlet.
+
+Once you have created a gadget using the editor, you can add the gadget to the *Add &rarr; More* menu, or get a URL so that you can post it on any website that support OpenSocial gadgets.
+
 ## Social Equity
 
 When you have a lot of user interaction on your web site, it can be helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. In order to better show which users are making real, valuable contributions, Liferay is introducing the new Social Equity system with Liferay 6.

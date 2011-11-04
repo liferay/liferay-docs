@@ -56,7 +56,7 @@ Next we define a name and description for the workflow. This will appear in the 
     content.</description>
     <version>1</version>
 
-After that, we need to define our initial state. In this case, in is simply that the asset has been created. States can contain actions and transitions. Actions can contain scripts. You can specify the language of the script with the `<script-language>` tag. Scripts can be written in Groovy, JavaScript, Ruby, or Python. Transitions will move you to a new state or task.
+After that, we need to define our initial state. In this case, in is simply that the asset has been created. States can contain actions and transitions. Actions can contain scripts. You can specify the language of the script with the `<script-language>` tag. Scripts can be written in Groovy, JavaScript, Ruby, or Python (See *Chapter 13: Liferay's Script Engine* for more information on leveraging scipts in workflow). Transitions will move you to a new state or task.
 
     <state>
         <name>created</name>
