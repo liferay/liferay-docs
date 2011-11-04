@@ -24,6 +24,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     <!-- property "doc.dir" will be specified in the build.xml of the document root directory. -->
     <property name="lang" value="en"/>
     <property name="build.dir" value="./build"/>
+    <property name="dist.dir" value="./dist"/>
 
     <property name="pandoc.app" location="/home/${user.name}/.cabal/bin/pandoc"/>
 
@@ -37,14 +38,21 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         <echo message="pandoc.app -> ${pandoc.app}"/>
     </target>
 
-    <target name="clean-all" description="deletes build directory">
+    <target name="clean-all" description="deletes residual directories">
         <echo message="... deleting build directory"/>
         <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="clean-dist" description="deletes dist directory">
+        <echo message="... deleting dist directory"/>
+        <delete dir="${dist.dir}"/>
     </target>
 
     <target name="clean-lang" description="deletes build/${lang} directory">
-        <echo message="... deleting build directory"/>
+        <echo message="... deleting language specific residual directories"/>
         <delete dir="${build.dir}/${lang}"/>
+        <delete dir="${dist.dir}/${lang}"/>
     </target>
 
     <target name="prepare" description="creates build/${lang} directory">
@@ -53,6 +61,41 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         <copy todir="${build.dir}/images">
             <fileset dir="./${lang}/images"/>
         </copy>
+    </target>
+
+    <target name="prepare-dist" description="creates dist directory copying images and overriding with language specific images">
+        <echo message="... creating ${dist.dir}/${lang} directory"/>
+        <mkdir dir="${dist.dir}/${lang}"/>
+        <copy todir="${dist.dir}/${lang}/images">
+            <fileset dir="images" includes="*.*"/>
+        </copy>
+        <copy overwrite="true" todir="${dist.dir}/${lang}/images">
+            <fileset dir="${lang}/images" includes="*.*"/>
+        </copy>
+    </target>
+
+    <target name="dist" depends="clean-lang, prepare-dist, concat-markdown-files" description="prepares document zip file for asset import">
+        <copy todir="${dist.dir}/${lang}">
+		    <fileset dir="${build.dir}/${lang}">
+                <include name="${lang}-${doc.dir}.markdown"/>
+            </fileset>
+        </copy>
+        <zip destfile="${dist.dir}/${lang}/${lang}-${doc.dir}.zip">
+            <fileset dir="${dist.dir}/${lang}" includes="images/*.*"/>
+            <fileset dir="${dist.dir}/${lang}" includes="${lang}-${doc.dir}.markdown"/>
+        </zip>
+    </target>
+
+    <target name="dist-win" depends="clean-lang, prepare-dist, concat-markdown-files-win" description="prepares document zip file for asset import on windows">
+        <copy todir="${dist.dir}/${lang}">
+            <fileset dir="${build.dir}/${lang}">
+                <include name="${lang}-${doc.dir}.markdown"/>
+            </fileset>
+        </copy>
+        <zip destfile="${dist.dir}/${lang}/${lang}-${doc.dir}.zip">
+            <fileset dir="${dist.dir}/${lang}" includes="images/*.*"/>
+            <fileset dir="${dist.dir}/${lang}" includes="${lang}-${doc.dir}.markdown"/>
+        </zip>
     </target>
 
     <target name="concat-markdown-files" depends="prepare" description="concatinates multiple markdown files into a single one">

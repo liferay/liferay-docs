@@ -10,11 +10,15 @@ In a nutshell, the Liferay Marketplace is a repository for applications built on
 
 ## Accessing the Liferay Marketplace
 
-One question you need to ask yourself before creating a marketplace is "Do I want people to visit this *Marketplace?*" Almost 100% of the time, the answer is yes. In keeping with this trend of allowing people to visit your marketplace, Liferay has provided a marketplace that not only exists, but can also be visited for the purpose of downloading applications for Liferay Portal.
+There are two ways to access the Marketplace.
+
+1.  Via The Website - Using your favorite browser, you can navigate to the marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace).
+
+2.  Via Liferay - If you have a site up and running based on Liferay, you can use the Marketplace tab of the control panel to access Marketplace content.
 
 ### The Basics
 
-There are two ways to access the Marketplace. The method you'll choose is generally dependent on whether or not you currently have adminstrator access to website running on Liferay somewhere. If you currently do not have access to such, you'll need to visit the marketplace through Liferay.com, specifically [http://liferay.com/marketplace](http://liferay.com/marketplace). If you are currently running Liferay, and you have the correct permissions, you can visit the marketplace through the Marketplace tab in the Control Panel. No matter which method you choose, you will see the same content and apps. 
+No matter which method you choose, you will see the same content and apps.
  
 If you are new to the Marketplace, the easiest way to access it is by using your browser to navigate to [http://liferay.com/marketplace](http://liferay.com/marketplace).  You will be presented with the Marketplace home page.
 

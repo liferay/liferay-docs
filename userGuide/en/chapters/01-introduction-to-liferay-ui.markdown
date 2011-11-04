@@ -1,13 +1,5 @@
 # Introduction to Liferay
 
-This chapter covers the following activities:
-
--   *Liferay's User Interface:* How to navigate around Liferay
-
--   *Navigating the Control Panel:* An overview of Liferay's control panel
-
--   *Portal Architechture:* How Liferay organizes your portal
-
 Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a "dashboard" application) so that the end user can see everything he or she interacts with at a glance.
 
 To achieve this, all the application functionality within Liferay Portal resides in fragments of the page called *portlets*. Portlets are web applications that run in a portion of a web page. Liferay's core is a portlet container that aggregates portlets on particular pages and displays them to users. In this way, one or many applications can reside on a page, and users can (at the administrator's discretion) arrange them however they like.
@@ -19,6 +11,16 @@ Portal applications generally come in two flavors: 1) multiple portlets which on
 Portlets are not difficult to build, and Java standard portlets can be written by any Java developer with experience in writing web applications. Liferay provides a Plugins Software Development Kit that makes it easy to design new portlet projects. For further information about the Plugins SDK, please see *Liferay Developer's Guide*, which is the companion volume to this one, or *Liferay in Action*, published by Manning Publications, which is the official guide to Liferay development.
 
 Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages are available from Liferay's public plugin repository on Github at  [https://github.com/liferay/liferay-plugins](https://github.com/liferay/liferay-plugins).
+
+We discuss the following topics in this chapter:
+
+-   *Liferay's User Interface:* How to navigate around Liferay
+
+-   *Navigating the Control Panel:* An overview of Liferay's control panel
+
+-   *Portal Architechture:* How Liferay organizes your portal
+
+Navigation within Liferay Portal is designed to be intuitive and easy. Let's get started.
 
 ## Navigating Liferay
 
@@ -199,4 +201,4 @@ Teams can be essential for some use cases since they can be created by site admi
 
 ## Summary
 
-So far, we've looked at Liferay's function as a portal server and learned how to navigate within Liferay using the dockbar and the control panel. We've also taken a look at look at Liferay's portal architechture and how Liferay uses the concepts of users, user groups, organizations, sites, teams, and roles to organize your portal. Next, we'll take a look at using Liferay Marketplace to browse and install applications for your portal.
+So far, we've looked at Liferay's function as a portal server and learned how to navigate within Liferay using the dockbar and the control panel. We've also taken a look at look at Liferay's portal architechture and how Liferay uses the concepts of users, user groups, organizations, sites, teams, and roles to organize your portal. Next, we'll discuss how to use Liferay Marketplace to browse and install applications for your portal.
