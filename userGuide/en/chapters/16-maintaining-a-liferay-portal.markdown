@@ -210,6 +210,8 @@ Now that we've gotten the general philosophy of upgrading out of the way, let's 
 
 ### Upgrading Liferay Portal 6.0 to Liferay Portal 6.1
 
+There are a few things you'll want to prepare before you actually perform the upgrade. Specifically, you'll need to review your image gallery usage, review new Liferay 6.1 defaults, and catalog all the plugins you have installed. After you've performed these three tasks, you'll be ready to upgrade. 
+
 Liferay 6.1 introduces a major change to how Liferay handles files. No longer do we have a separate Document Library and Image Gallery; instead, these have been combined into Documents and Media. If you were using Liferay's Image Gallery to store images, these can be migrated over during an upgrade, but you'll have to take some extra steps first. 
 
 In Liferay 6.0, you had three ways you could store images in the Image Gallery. You could use the `DatabaseHook` and store them as BLOBs in the database; you could use the `DLHook` to store them in the Document Library, or you could use the `FileSystemHook` to store them in a folder on your server's file system. Before you upgrade, you'll need to set whichever property you were using in your 6.0 `portal-ext.properties` file, because by default, none of them are enabled in 6.1. Setting one of the properties triggers the migration during the upgrade process. Below are the three properties; you'll need to set only *one* of them (the one you were using). 
@@ -218,146 +220,68 @@ In Liferay 6.0, you had three ways you could store images in the Image Gallery. 
     image.hook.impl=com.liferay.portal.image.DLHook
     image.hook.impl=com.liferay.portal.image.FileSystemHook
     
-Once you've set one of these properties, you're ready to follow the upgrade procedure. Remember to back up your system before you begin. 
-
-Liferay can auto-detect whether the database requires an upgrade the first time the new version is started. When Liferay does this, it will automatically upgrade the database to the format required by the new version. In order to do this, Liferay *must* be accessing the database with an ID that can create, drop, and modify tables. Make sure that you have granted these permissions to the ID before you attempt to upgrade Liferay. It is also a good idea to backup your database before attempting an upgrade in case something goes wrong during the process.
-
-![image](../../images/portal-admin-ch8_html_5c790363.png) **Tip:** Liferay versions prior to 4.3.0 require that you manually run SQL scripts on your database to perform an upgrade. If you need to upgrade from Liferay 4.1.x to 4.2.x in preparation for an upgrade to a current version of Liferay, you can find these SQL scripts in the source code archive for the version of Liferay you are running. They will be in the *SQL* folder of the archive.
-
-#### Upgrade Steps
-
-It takes only five steps to upgrade a standard Liferay installation to Liferay 6:
-
-1.  Copy your customized `portal-ext.properties` file to a     safe place, and then undeploy the old version of Liferay and shut     down your application server.
-
-2.  Copy the new versions of the dependency .jars to a location on your     server's class path, overwriting the ones you already have for the     old version of Liferay.
-
-3.  Deploy the new Liferay .war file to your application server. Follow     the deployment instructions in Chapter 2 .
-
-4.  Modify your `portal-ext.properties     `file and set     `permissions.user.check.algorithm=5`.
-
-5.  Start (or restart) your application server. Watch the console as     Liferay starts: it should upgrade the database automatically. Verify     that your portal is operating normally, and then run the upgrade     procedure to upgrade to permissions algorithm 6 (see below) and     restart.
-
-That's all there is to it. Everything else is handled by Liferay's upgrade procedure. Note that as stated above, if you have to upgrade over several Liferay versions, you will need to repeat these steps for each major release. You can now deploy your own plugins to the system.
-
-Once your upgrade is complete, you may wish to review the `portal.properties` changes for this version of Liferay to see whether the new defaults (see below) are appropriate for your implementation.
-
-What follows are instructions for upgrading for specific versions.
-
-### Upgrading From Liferay 5.1 to Liferay 5.2
-
-Always use the latest version of 5.2 available as it will have fixed all the potential upgrade issues that may have been found.
-
-#### Prerequisite
-
-It's recommended to upgrade first at least to 5.1.2SE if you are running any previous version.
-
-#### Changes in configuration properties
-
-##### How to keep the old values
-
-The default values of some properties has been changed. In order to keep the previous values you have to run Liferay passing the following system property:
-
-    java ... -Dexternal-properties=portal-legacy-5.1.properties
-
-Each application server has different methods to add this system property. In Tomcat modify `setenv.sh/setenv.bat` and append that option to the environment variable JAVA_OPTS. The scripts `setenv.sh` or `setenv.bat` are not delivered with Tomcat but if they exist, Tomcat will use them in the startup process, so it's a nice way to separate your own settings from tomcat's default shell scripts.
-
-Here are the complete contents of that file (`portal-legacy-5.1.properties`) for reference:
-
-    resource.repositories.root=${user.home}/liferay     theme.portlet.sharing.default=true     organizations.country.required[regular]=true     organizations.assignment.auto=true     organizations.assignment.strict=false     organizations.membership.strict=true     lucene.dir=${resource.repositories.root}/lucene/     jcr.jackrabbit.repository.root=${resource.repositories.root}/jackrabbit     dl.hook.impl=com.liferay.documentlibrary.util.JCRHook     dl.hook.file.system.root.dir=${resource.repositories.root}/document_library
-
-##### Important changes in the configuration of Database access and mail integration
-
-One very important aspect of the upgrade is that now the configuration of the database parameters and those for mail integration are handled through the `portal-ext.properties` file to unify the configuration through all application servers.
-
-It's still possible to use application server specific data sources and pools if desired by using certain configuration properties. This is documented in Chapter 2.
-
-#### Theme Upgrade
-
-Instructions for maintaining customized themes built in 5.1 without redeploying with the new SDK :
-
--   Change the header of `/WEB-INF/liferay-plugin-package.xml`     to:
-
-        <!DOCTYPE plugin-package PUBLIC "-//Liferay//DTD Plugin Package         5.2.0//EN"         "http://www.liferay.com/dtd/liferay-plugin-package_5_2_0.dtd">
-
--   Change the header of `/WEB-INF/liferay-look-and-feel.xml`     to:
-
-        <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 5.2.0//EN"         "[http://www.liferay.com/dtd/liferay-look-and-feel_5_2_0.dtd">]
-
--   Upgrade compatibility version in     `liferay-look-and-feel.xml`:
-
-        <compatibility> 	    <version>5.2.2+</version>         </compatibility>      -   In `portal.vm`, delete the following lines :
-
-        $theme.include($bottom_ext_include)         $theme.include($session_timeout_include)         $theme.include($sound_alerts_include)
-
-If you don't remove these, you will see a blank page and an exception.
-
--   In order to display the control panel in the dock, add the following     lines in `dock.vm`:
-
-        #if ($show_control_panel) 	    <li class="control-panel"> 		<a href="$control_panel_url">$control_panel_text</a> 	    </li>         #end
-
--   In `navigation.css`:
-
-        .lfr-dock li.control-panel a { 	    background-image: url(../images/dock/control_panel.png);         }
-
--   Then copy `/images/dock/control_panel.png` from the     classic theme (`ROOT/html/themes/classic`) into your     theme.
-
--   In `WEB-INF/web.xml`, change the deprecated declaration     `com.liferay.portal.servlet.filters.compression.CompressionFilter`     into `com.liferay.portal.servlet.filters.gzip.GZipFilter`.
-
-#### API Changes
-
-##### Usage of ServiceContext in Liferay's Services Layer
-
-The most significant API change in 5.2 is that most APIs of the service layer have been adapted to use the Service Context Pattern. The Service Context is an object that contains context information about a given API call. All of the fields in this object are optional, although the services that store any type of content will require you to specify at least the `scopeGroupId`. Here is a simple example of how to create a `Ser``viceContext` instance and pass it to a service API:
-
-    ServiceContext serviceContext = new ServiceContext();     serviceContext.setScopeGroupId(myGroupId);
-
-    BlogsEntryServiceUtil.addEntry(...., serviceContext);
-
-If you are invoking the service from a servlet, a Struts action, or any other front end class which has access to the `portletRequest`, you can use a utility method that will create the `ServiceContext` object and fill it with all the necessary values automatically. In that case the above example should be rewritten as follows:
-
-    ServiceContext serviceContext =     ServiceContextFactory.getInstance(BlogsEntry.class.getName(),     portletRequest);          BlogsEntryServiceUtil.addEntry(...., serviceContext);
-
-### Upgrading From Liferay 5.2 to Liferay 6.0
-
-Always use the latest version of 6.0 available as it will have fixed all the potential upgrade issues that may have been found.
-
-#### Prerequisite
-
-It's recommended to upgrade first at least to 5.2.3 CE if you are running any previous version.
-
-#### Upgrading Your Permissions Algorithm
-
-Liferay 6.0 introduces permissions algorithm 6. Algorithm 6 is an enhancement to our permissions system which drastically improves performance by reducing the number of queries necessary to determine permissions for any individual asset within Liferay portal.
-
-Liferay 6 by default is configured to use algorithm 6. This is appropriate for new installations, but requires additional configuration for upgrades, because the table structure for this algorithm is different from the structures for the previous algorithms. For this reason, before you start Liferay 6 for the first time and run the upgrade process, you need to tell Liferay 6 to use Algorithm 5, and then run a separate conversion utility later, after you have verified that the upgrade was successful. To temporarily switch your Liferay 6 installation to algorithm 5, add the following entry to your `portal-ext.properties`:
-
-    permissions.user.check.algorithm=5
-
-This will tell Liferay that you are still using algorithm 5. Next, start Liferay and allow it to upgrade your database. Once the upgrade has completed, verify that everything is working properly. You can now leave the algorithm setting as is, or if you want to take advantage of the performance of the new algorithm, you can upgrade to algorithm 6 by going through a few simple steps in the Control Panel.
-
-To upgrade to Algorithm 6, log in as an Administrator and navigate to the Control Panel. Go to *Server Administration* and select *Data Migration* from the menu along the top of the screen. You should see a section entitled *Legacy Permissions Migration* at the bottom of the page.
-
-![image](../../images/portal-admin-ch8_html_m7242a796.png) *Illustration 4: Dialog to update your permissions algorithm to the latest version.*
-
-Algorithms 5 and 6 do not support adding permissions at the user level. If you have permissions set to individual users, the converter can simulate this for you by auto-generating roles with those permissions, and assigning those roles to the users who have individualized permissions. If you have a lot of these, you'll likely want to go through and clean them up after the conversion process. To generate these roles, check the *Generate Custom Roles* box. If you do not generate the roles, all custom permissions set for individual users will be discarded. Click *Execute* to convert all existing users and roles to algorithm 6.
-
-#### Upgrading EXT to EXT Plugins
-
-With Liferay 6.0, the Ext environment no longer exists in its previous form. Instead, Ext is now a plugin. If you are using the Ext Environment to change core code, you will find that Ext Plugins handle core customizations better than the Ext Environment did, so developers can spend less time with deployments and maintaining changes than they did previously. There is now only one SDK needed for Liferay development, which also simplifies things for the developer.
-
-Before using any code previously developed in Ext, you will need to migrate your Ext environments to Ext plugins. If you are on a version of Liferay prior to 5.2, you will also need to upgrade your existing Ext environment to Liferay 5.2 before attempting to convert it to a plugin. The upgrade process will not work on earlier versions of Liferay's Ext environment.
-
-In the Plugins SDK, under the `ext` directory you can find the `build.xml` file to convert your existing Ext Environment to a plugin. The script creates the shell of an Ext plugin with the `ext.zip`* *file included with the Plugins SDK and merges your existing Ext Environment into the new plugin.
-
-To run the script, use the following command:
-
-    ant upgrade-ext -Dext.dir=[path to existing Ext] -Dext.name=[new plugin     name] -Dext.display.name=”[friendly name for new plugin]”
-
-This will create a directory with the name you specified, with the merged changes from your Ext Environment and the default .zip file. Both `build-service` (Service Builder) and `build-db` (DB Builder) have been ported to Ext Plugins to allow developers to regenerate their services and SQL code in Ext Plugins. However, Service Builder in Ext plugins will be deprecated in future versions, and custom services should be migrated to portlet plugins. Try to migrate your custom services to portlet plugins as soon as possible as this is the recommended practice.
+The next thing you'll need to look at are the defaults that have changed from 6.0 to 6.1. These are preserved in `portal-legacy-6.0.properties` in the source. The 6.0 values are:  
+
+    users.last.name.required=true
+    layout.types=portlet,panel,embedded,article,url,link_to_layout
+    editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=bbcode
+    setup.wizard.enabled=false
+    discussion.subscribe.by.default=false
+    message.boards.subscribe.by.default=false
+    
+The 6.1 values have changed to: 
+
+    users.last.name.required=false
+    layout.types=portlet,panel,embedded,url,link_to_layout
+    editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=ckeditor_bbcode
+    setup.wizard.enabled=true
+    discussion.subscribe.by.default=true
+    message.boards.subscribe.by.default=true
+    
+If you don't like the defaults, you can change them back in one shot by adding a system property to your JVM's startup. This differs by application servers. In Tomcat, you'd modify `setenv.sh/setenv.bat` and append the option `-Dexternal-properties=portal-legacy-6.0.properties` to the environment variable JAVA_OPTS. The scripts `setenv.sh` or `setenv.bat` are not delivered with default Tomcat, but do exist in the bundles. If they're there, Tomcat uses them in the startup process, so it's a nice way to separate your own settings from Tomcat's default shell scripts. Alternatively, of course, you can override some or all of them in your `portal-ext.properties` along with your other overrides.  
+
+Finally, you need to take note of any plugins you have installed. Liferay's plugins are usually version-specific, so you'll need to obtain new versions of them for the new release of Liferay. If you have custom plugins created by your development team, they'll need to build, test, and optionally modify them to work with the new release of Liferay. Don't attempt an upgrade without collecting all the plugins you'll need first. 
+
+Once you've reviewed your properties and collected all the plugins you'll need, you're ready to follow the upgrade procedure. Remember to back up your system before you begin. 
+
+There are two different procedures to upgrade Liferay: the first is the most common, which is upgrading a Liferay bundle. The second is upgrading Liferay that's installed on an application server. We'll go over both. 
+
+In both cases, Liferay auto-detects whether the database requires an upgrade the first time the new version is started. When Liferay does this, it upgrades the database to the format required by the new version. In order to perform this task, Liferay *must* be accessing the database with an ID that can create, drop, and modify tables. Make sure that you have granted these permissions to the ID before you attempt to upgrade Liferay. And, of course, we'll run the risk of overly repeating ourselves: back up your database.  
+
+Let's look at upgrading a bundle, which is the easiest upgrade path. 
+
+#### Upgrading a bundle
+
+If you're running a Liferay bundle, the best way to do the upgrade is to follow the steps below. The new Liferay is installed in a newer version of your bundle runtime. For example, Liferay 6.0 used Tomcat 6 by default; Liferay 6.1 uses Tomcat 7. Though there is a Tomcat 6 bundle of Liferay 6.1, that bundle also uses a newer release of Tomcat than the one from 6.0. This is the case for all runtimes that Liferay supports. We generally recommend that you use the latest version of your runtime bundle, as it will be supported the longest. 
+
+   1. Obtain the new bundle. Unzip the bundle to an appropriate location on your system.
+   2. Copy your `portal-ext.properties` file and your `data` folder to the new bundle. 
+   3. Review your `portal-ext.properties` file as described above. If you were using the Image Gallery, make the necessary modifications so that your files are migrated to Documents and Media. Review the new defaults and decide whether you want to use them. Review any other modifications you've made. 	
+   4. Start your application server. Watch the console as Liferay starts: it should upgrade the database automatically.
+   5. When the upgrade completes, install any plugins you were using in your old version of Liferay. Make sure you use the versions of those plugins that are designed for Liferay 6.1. If you have your own plugins, your development team will need to migrate the code in these ahead of time and provide .war files to you.  
+   6. Browse around in your new installation and verify that everything is working. Have your QA team test everything. If all looks good, you can delete the old application server with the old release of Liferay in it from the bundle directory. You have a backup of it anyway, right? 
+   
+As you can see, upgrading a bundle is generally pretty simple. But not everybody can use bundles: sometimes, specific application servers or application server versions are mandated by the environment you're in or by management. For this reason, Liferay also ships as an installable .war file that can be used on any supported application server.    
+
+#### Upgrading using a .war file
+
+Running a manual upgrade is almost as easy as upgrading a bundle: 
+
+   1. Verify that your application server is supported by Liferay. You can do this by viewing the appropriate document on the Customer Portal (EE) or on liferay.com (CE). If your application server isn't supported by Liferay 6.1, *do not continue!*  
+   2. Obtain the Liferay Portal .war file and the dependency .jars archive. 
+   3. Copy your customized `portal-ext.properties` file to a safe place and review it as described above, making all the appropriate changes.  
+   4. Undeploy the old version of Liferay and shut down your application server.
+   5. Copy the new versions of Liferay's dependency .jars to a location on your server's class path, overwriting the ones you already have for the old version of Liferay. This location is documented for your application server in chapter 11. 
+   6. Deploy the new Liferay .war file to your application server. Follow the deployment instructions in Chapter 11.
+   7. Start (or, if your app server has a console from which you've installed the .war, restart) your application server. Watch the console as Liferay starts: it should upgrade the database automatically. Verify that your portal is operating normally, and then install any plugins you were using in your old version of Liferay. Make sure you use the versions of theose plugins that are designed for Liferay 6.1. If you have your own plugins, your development team will need to migrate the code in these ahead of time and provide .war files to you. 
+   8. Browse around in your new installation and verify that everything is working. Have your QA team test everything. If all looks good, you're finished. 
+
+That's all there is to it. Most everything is handled by Liferay's upgrade procedure. Note that as stated above, if you have to upgrade over several Liferay versions, you will need to repeat these steps for each major release. 
 
 ## Summary
 
-Liferay Portal is an easy environment to maintain. Backup procedures are simple and straightforward. Administrators have all the options they need to view and diagnose a running Liferay Portal server through its tunable logs.
+Liferay Portal is an easy environment to maintain. Backup procedures are simple and straightforward. Administrators have all the options they need to view and diagnose a running Liferay Portal server through its tunable logs. 
 
-Upgrading Liferay is also a snap, because Liferay does most of the work automatically. With easy permissions migration tools and automated database upgrade scripts, you'll have your new version of Liferay Portal up and running in no time.
+Patching Liferay is easy to do with Liferay's patching tool. It handles for you all the management of available patches, and makes it easy to install and uninstall them. 
+
+Upgrading Liferay is also a snap, because Liferay does most of the work automatically. With easy migration tools and automated database upgrade scripts, you'll have your new version of Liferay Portal up and running in no time.
