@@ -188,7 +188,7 @@ To use your application server's mail session, you will have to create one in yo
 
 Save the file. You can now start your application server.
 
-To use Liferay's built-in mail session, go to *Control Panel -> Server Administration -> Mail* and enter your settings for your mail session settings.
+To use Liferay's built-in mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter your settings for your mail session settings.
 
 ### Installing Liferay on an Existing Application Server
 
@@ -248,23 +248,30 @@ These instructions assume that you have already configured a domain and server, 
 
 1.  Before starting GlassFish, you will need to modify the settings in your domain to do the following ...
 
-- Set the file encoding 
-- Set the user time-zone 
-- Set the preferred protocol stack 
-- Prevent the application server from setting static fields (final or non-final) to `null` 
-- Increase the default amount of memory available.
+	- Set the file encoding 
+	- Set the user time-zone 
+	- Set the preferred protocol stack 
+	- Prevent the application server from setting static fields (final or non-final) to `null` 
+	- Increase the default amount of memory available.
 
-In your domain's `config` folder, open the `domain.xml` file and merge the following JVM options into the current list of JVM options within your <java-config> element:
+	In your domain's `config` folder, open the `domain.xml` file and merge the following JVM options into the current list of JVM options within your <java-config> element:
 
-		<jvm-options>-Dfile.encoding=UTF8</jvm-options> 		<jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options> 		<jvm-options>-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false</jvm-options> 		<jvm-options>-Duser.timezone=GMT</jvm-options> 		<jvm-options>-Xmx1024m</jvm-options> 		<jvm-options>-XX:MaxPermSize=256m</jvm-options> 	 	Be sure that any existing options with values such as `-Dfile.encoding`, `-Djava.net.preferIPv4Stack`, `-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES`, `-Duser.timezone`, or `-XX:MaxPermSize` are replaced with the new values listed above.
+		<jvm-options>-Dfile.encoding=UTF8</jvm-options> 
+		<jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options>
+		<jvm-options>-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false</jvm-options>
+		<jvm-options>-Duser.timezone=GMT</jvm-options>
+		<jvm-options>-Xmx1024m</jvm-options>
+		<jvm-options>-XX:MaxPermSize=256m</jvm-options>
 
-For example, replace: 
+	Be sure that any existing options with values such as `-Dfile.encoding`, `-Djava.net.preferIPv4Stack`, `-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES`, `-Duser.timezone`, or `-XX:MaxPermSize` are replaced with the new values listed above.
 
-	<jvm-options>-Xmx256m</jvm-options>
+	For example, replace: 
+
+		<jvm-options>-Xmx256m</jvm-options>
 	
-with this: 
+	with this: 
 	
-	<jvm-options>-Xmx1024m</jvm-options>
+		<jvm-options>-Xmx1024m</jvm-options>
 
 2.  Delete, rename, or move the `[domain]/docroot/index.html` file to another location to allow your Liferay Portal default page to be displayed.
 
@@ -276,45 +283,45 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 2.	Go to the GlassFish console URL: [http://localhost:4848](http://localhost:4848/).  
 
-3.  Under *Common Tasks*, navigate to *Resources* -\> *JDBC* -\> *JDBC Connection Pools*
+3.  Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
-![Figure 11.x: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.PNG)
+	![Figure 11.x: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.PNG)
 
-4.	Click `New...`.
+4.	Click *New...*.
 
 5.  In the first screen, give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource`, and select your database driver vendor (e.g., *MySQL*).
 
 6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
 
-![Figure 11.x: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
+	![Figure 11.x: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
 
-7.  On the this sreen (step 2 of 2), scroll down to the *Additional Properties* section.
+7.  On the this screen (step 2 of 2), scroll down to the *Additional Properties* section.
 
-![Figure 11.x: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)  
+	![Figure 11.x: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)  
 
 8.	Replace or add the following properties ...
 
 	- **URL:** the URL of your connection pool.
 
-For example,
+		For example,
 
-    jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true                  Note, if you are using the above example, you should specify the name of your database in place of `lportal`. Likewise, if your database is not on the same server as GlassFish, specify your the database server's host name in place of `localhost`. Lastly, specify your database type in place of `jdbc:mysql`.
+			jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true                  Note, if you are using the above example, you should specify the name of your database in place of `lportal`. Likewise, if your database is not on the same server as GlassFish, specify your the database server's host name in place of `localhost`. Lastly, specify your database type in place of `jdbc:mysql`.
 
-- **user:** the name of your database user.
+	- **user:** the name of your database user.
 
-- **password:** your database user's password.
+	- **password:** your database user's password.
 
 10.  Click *Finish*.
 
-You should now see your `LiferayPool` connection pool listed under *Resources* -\> *JDBC* -\> *JDBC Connection Pools*
+	You should now see your `LiferayPool` connection pool listed under *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
 11. Test your connection by selecting your `LiferayPool` connection pool and clicking *Ping*.
 
-If you get a message stating  *Ping Succeeded*, you've set up the connection pool of your data source!
+	If you get a message stating  *Ping Succeeded*, you've set up the connection pool of your data source!
 
 13. Now, you'll setup a JDBC resource to refer to the `LiferayPool` connection pool you just created.
 
-14.	Navigate to *Resources* -\> *JDBC* -\> *JDBC Resources* to show the current JDBC resources listed by their JNDI names.
+14.	Navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC Resources* to show the current JDBC resources listed by their JNDI names.
 
 14. Click *New...*.
 
@@ -340,11 +347,13 @@ If you want to use GlassFish to manage your mail session, follow GlassFish's doc
 
 	Otherwise, if you are using *GlassFish* to manage your data source, add the following to refer to your data source:
 
-		jdbc/LiferayPool 	 3.	If you are using GlassFish to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
+		jdbc.default.jndi.name=jdbc/LiferayPool
+
+4.	If you are using GlassFish to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
 		mail.session.jndi.name=mail/MailSession
 
-	Otherwise, if you are using Liferay Portal to manage your mail session, go to *Control Panel -\> Server Administration -\> Mail* and enter settings for your mail session.
+	Otherwise, if you are using Liferay Portal to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
 
 ##### Deploy Liferay
 
@@ -796,7 +805,7 @@ If you are using *WebLogic's* data source, add the JNDI name instead:
 
 	jdbc.default.jndi.name=jdbc/LiferayPool 
 
-11. If you are using Liferay's built-in mail session, go to *Control Panel -> Server Administration -> Mail* and enter your settings for your mail session settings.
+11. If you are using Liferay's built-in mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter your settings for your mail session settings.
 
 12. In the Deployments screen, select the Liferay application and click the *Start* button. Select *Servicing All Requests* in the pop up.
 
@@ -832,7 +841,7 @@ Start WebLogic.
 
 If you want WebLogic to manage your data source, use the following procedure. If you want to use Liferay's built-in data source, you can skip this section.   ![image](../../images/02-creating-a-data-source-in-weblogic.png) *Illustration 9: Creating a data source in WebLogic 10.3*
 
-1.  Select *Services -> Data Sources.* Click *New -> Generic Data Source*.
+1.  Select *Services &rarr; Data Sources.* Click *New &rarr; Generic Data Source*.
 
 2.  Give your data source a name, such as *Liferay Data Source*. The JNDI name should be `jdbc/LiferayPool`.
 
@@ -874,7 +883,7 @@ If you are using WebLogic's data source, add the JNDI name instead:
 
     jdbc.default.jndi.name=jdbc/LiferayPool
 
-2. If you are using Liferay's built-in mail session, go to *Control Panel -> Server Administration -> Mail* and enter your settings for your mail session settings.
+2. If you are using Liferay's built-in mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter your settings for your mail session settings.
 
 If you are using WebLogic's mail session, add the JNDI name instead:
 
@@ -979,11 +988,11 @@ localhost
 
 lportal
 
- 20. Click *Data Sources -> Test Connection* to test.
+ 20. Click *Data Sources &rarr; Test Connection* to test.
 
 ##### Mail Configuration
 
-1.  Click *Resources -> Mail Providers*.
+1.  Click *Resources &rarr; Mail Providers*.
 
 2.  Click *Built-in Mail Provider*.
 
@@ -1003,7 +1012,7 @@ lportal
 
 ##### Install Liferay
 
-1.  Click *Applications -> Install new applications*.
+1.  Click *Applications &rarr; Install new applications*.
 
 2.  Browse for `liferay-portal-x.x.x.war`.
 
@@ -1061,7 +1070,7 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 2.  Open the Administrative Console and log in.
 
-3.  Click *Resources -> JDBC Providers*.
+3.  Click *Resources &rarr; JDBC Providers*.
 
 4.  Click *New*.
 
@@ -1105,7 +1114,7 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 ##### Mail Configuration
 
-1.  Click *Resources -> Mail -> Mail Providers*.
+1.  Click *Resources &rarr; Mail &rarr; Mail Providers*.
 
 2.  Click the Built-In Mail Provider for your node and server.
 
@@ -1113,11 +1122,11 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 4.  Give it a name of *liferaymail* and a JNDI name of `mail/MailSession`. Click *OK* and save to master configuration.
 
-5.  Click *Security -> Global Security* and deselect *Use Java 2 security to restrict application access to local resources* if it is selected. Click *Apply*.
+5.  Click *Security &rarr; Global Security* and deselect *Use Java 2 security to restrict application access to local resources* if it is selected. Click *Apply*.
 
 ##### Install Liferay
 
-1.  Click *Applications -> New Application -> New Enterprise Application*.
+1.  Click *Applications &rarr; New Application &rarr; New Enterprise Application*.
 
 2.  Browse to the Liferay `.war` file and click *Next*.
 
@@ -1144,7 +1153,7 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 3.  Save and close the file.
 
-4.  Click *Application Types -> WebSphere Enterprise Application*.
+4.  Click *Application Types &rarr; WebSphere Enterprise Application*.
 
 5.  Uninstall the default application.
 
