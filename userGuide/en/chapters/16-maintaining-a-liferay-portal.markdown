@@ -1,12 +1,6 @@
 # Maintaining A Liferay Portal
 
-Maintaining a running implementation of Liferay Portal is not much
-different from maintaining the application server environment upon which
-it is running. There are, however, several factors which administrators
-should be aware of when they are responsible for a running instance of
-Liferay. This chapter will cover these issues, outlining for system
-administrators some specifics about keeping a running Liferay instance
-stable and secure.
+Maintaining a running implementation of Liferay Portal is not much different from maintaining the application server environment upon which it is running. There are, however, several factors which administrators should be aware of when they are responsible for a running instance of Liferay. This chapter will cover these issues, outlining for system administrators some specifics about keeping a running Liferay instance stable and secure.
 
 This chapter will cover the following topics:
 
@@ -18,505 +12,276 @@ This chapter will cover the following topics:
 
 -   Upgrading Liferay
 
-The discussion on back up will cover what parts of Liferay should be
-backed up. We will not cover specific backup software or procedures;
-generally, most organizations have standards for doing backups of their
-systems, and Liferay as a Java EE application fits well into these
-standards.
+The discussion on back up will cover what parts of Liferay should be backed up. We will not cover specific backup software or procedures; generally, most organizations have standards for doing backups of their systems, and Liferay as a Java EE application fits well into these standards.
 
-## Liferay Monitoring Using Google Analytics
+## Liferay monitoring using Google Analytics
 
-Liferay includes built-in support for Google Analytics, allowing
-administrators to make use of Google's tool set for analyzing site
-traffic data. When you sign up for Google Analytics, a snippet of code
-is provided which needs to be added to your web pages in order to allow
-Google's system to register the page hit. It can be a tedious process to
-add this code to every page on a site, especially if it is a large site
-and there is a lot of user-generated content.
+Liferay includes built-in support for Google Analytics, allowing administrators to make use of Google's tool set for analyzing site traffic data. When you sign up for Google Analytics, a snippet of code is provided which needs to be added to your web pages in order to allow Google's system to register the page hit. It can be a tedious process to add this code to every page on a site, especially if it is a large site and there is a lot of user-generated content.
 
-This problem can be solved in Liferay by putting Google's code into a
-custom theme written especially for the site on which the portal is
-running. Doing this, however, requires that a theme developer make
-specific changes to the theme, and it prevents users from using the many
-freely available themes that are available for Liferay “out of the box.”
+This problem can be solved in Liferay by putting Google's code into a custom theme written especially for the site on which the portal is running. Doing this, however, requires that a theme developer make specific changes to the theme, and it prevents users from using the many freely available themes that are available for Liferay “out of the box.”
 
-Because of this, support for Google Analytics has been built into
-Liferay, and can be turned on through a simple user interface. This
-allows Liferay Administrators to make use of Google Analytics on a
-community by community basis and turn it on and off when needed.
+Because of this, support for Google Analytics has been built into Liferay, and can be turned on through a simple user interface. This allows Liferay administrators to make use of Google Analytics on a community by community basis and turn it on and off when needed.
 
-To enable Google Analytics support, go to the Manage Pages screen for
-the community for which you want to enable support. You can do this
-through the Control Panel by going to either the *Organizations* or
-*Communities* link in the *Portal* section, and then clicking *Actions ->
-Manage Pages* for the community or organization you want to analyze.
-Click the *Settings* tab.
+To enable Google Analytics support, go to *Site Settings* in the control panel, and then select *Analytics* on the right. You'll see a very simple form, pictured below. 
 
-![image](../../images/portal-admin-ch8_html_m3451b46c.png)
-*Illustration 1: Setting Up Google Analytics*
+![Figure 16.x: Setting up Google Analytics for your site is very easy: sign up for the ID and then enter it into this field. ](../../images/maintaining-google-analytics.png)
 
-Click the **Monitoring** Tab. Put your Google Analytics ID (which should
-have been provided to you when you signed up for the service) in the
-field and click *Save*. All of the pages in the community you selected
-will now have the Google Analytics code in them and will be tracked.
+Put your Google Analytics ID (which should have been provided to you when you signed up for the service) in the field and click *Save*. All the pages in the community you selected will now have the Google Analytics code in them and will be tracked. 
 
-## Backing Up A Liferay Installation
+Let's move on to a more critical discussion: backing up Liferay. 
 
-Once you have an installation of Liferay Portal running, you will want
-to have proper backup procedures in place in case of a catastrophic
-failure of some kind. Liferay is not very different from any other
-application that may be running in your application server, but there
-are some specific components that need to be backed up in addition to
-your regular backup procedures for your application server.
+## Backing up a Liferay installation
 
-### Source Code
+Once you have an installation of Liferay Portal running, you'll want to have proper backup procedures in place in case of a catastrophic hardware failure of some kind. Liferay isn't very different from any other application that may be running in your application server, but there are some specific components that need to be backed up in addition to your regular backup procedures you use for your application server.
 
-If you have extended Liferay or have written any plugins, they should be
-stored in a source code repository such as Subversion, CVS, or Git. This
-repository should be backed up on a regular basis to preserve your
-ongoing work.
+### Backing up source code
 
-If you are extending Liferay with the Ext Plugin, you will want to make
-sure that you also store the version of the Liferay source on which your
-extension environment is based. This allows your developers convenient
-access to all of the tools they need to build your extension and deploy
-it to a server.
+If you have extended Liferay or have written any plugins, they should be stored in a source code repository such as Git, Subversion, or CVS, unless you're Linus Torvalds, and then tarballs are okay too (that's a joke). Your source code repository should be backed up on a regular basis to preserve your ongoing work. This probably goes without saying in your organization, as nobody wants to lose source code that's taken months to produce, but we thought we should mention it anyway. 
 
-### Liferay's File System
+If you're extending Liferay with the Ext Plugin, you'll want to make sure that you also store the version of the Liferay source on which your extension environment is based. This allows your developers convenient access to all the tools they need to build your extension and deploy it to a server.
 
-Liferay's configuration file, `portal-ext.properties`{.western}, gets
-stored in the *Liferay Home* folder, which is generally one folder up
-from where your application server is installed (see Chapter 2 for
-specific info for your application server). At a minimum, this file
-should be backed up, but it is generally best to back up your whole
-application server.
+Let's look at the things that need to be backed up in your Liferay installation. 
 
-If you have followed the procedure in the previous chapter to modify
-your Ehcache configuration, you will have cache configuration files in
-the deploy location of Liferay. You will need to back up this location.
+### Backing up Liferay's file system
 
-Liferay also stores configuration files, search indexes, cache
-information, and the default Jackrabbit document repository in a folder
-called `data`{.western}* *in Liferay Home. You should generally back up
-all of the contents of your Liferay Home folder.
+Liferay's configuration file, `portal-ext.properties`, gets stored in the *Liferay Home* folder, which is generally one folder up from where your application server is installed (see chapter 11 for specific details for your application server). At a minimum, this file should be backed up, but it is generally best to back up your whole application server.
 
-If you have modified the location where the Document Library stores
-files, you should also back up this location.
+If you've followed the non-plugin procedure in the previous chapter to modify your Ehcache configuration, you'll have cache configuration files in the deploy location of Liferay. You will need to back up this location.
 
-### Database
+Liferay stores configuration files, search indexes, and cache information in a folder called `data` in Liferay Home. If you're using the File System store or the Advanced File System store, the media repository is stored here (by default) too. You should always back up the contents of your Liferay Home folder.
 
-Liferay's database is the central repository for all of the Portal's
-information and is the most important component which needs to be backed
-up. You can do this by either backing up the database live (if your
-database allows this) or by exporting the database and then backing up
-the exported file. For example, MySQL ships with a `mysqldump`{.western}
-utility which allows you to export the entire database and data into a
-large SQL file. This file can then be backed up. In case of a database
-failure, it can be used to recreate the state of the database at the
-time the dump was created.
+If you've modified the location where the Document Library stores files, you should also back up this location. We'll move next from the file system to the database. 
 
-If you are using Liferay's Document Library with the Jackrabbit JSR-170
-repository to store documents in a database, the Jackrabbit database
-should be backed up also.
+### Backing up Liferay's database
+
+Liferay's database is the central repository for all of the Portal's information and is the most important component that needs to be backed up. You can do this by backing up the database live (if your database allows this) or by exporting the database and then backing up the exported file. For example, MySQL ships with a `mysqldump` utility which allows you to export the entire database and data into a large SQL file. This file can then be backed up. In case of a database failure, this file can be used to recreate the state of the database at the time the dump was created.
+
+If you're using Liferay's Documents and Media Library with the Jackrabbit JSR-170 repository to store documents in a database, the Jackrabbit database should be backed up also. If you've gone against our advice in the previous chapter and put your search index into a database, that database should be backed up as well. 
+
+Search indexes can be backed up as well, if you wish to avoid reindexing your entire portal after you do your restore. This is easiest to do if you have a separate Solr environment upon which your index is stored. If you're in a clustered configuration and you're replicating indexes, you'll need to back up each index replica. 
+
+Restoring your application server, your Liferay Home folder, the locations of any file system-based media repositories, and your database from a backup system should give you a functioning portal. Restoring search indexes should avoid the need to reindex when you bring your site back up after a catastrophic failure. Good, consistent backup procedures are key to successfully recovering from a hardware failure. 
+
+But what about maintenance while your server is running? Liferay lets you view a lot of what is going on through its logging system. 
 
 ## Liferay's Logging System
 
-Liferay uses Log4j extensively to implement logging for nearly every
-class in the portal. If you need to debug something specific while a
-system is running, you can use the Control Panel to set logging levels
-by class dynamically.
+Liferay uses Log4j extensively to implement logging for nearly every class in the portal. If you need to debug something specific while the system is running, you can use the Control Panel to set logging levels by class dynamically.
 
-To view the log levels, go to the Control Panel, click *Server
-Administration* in the Server section, and then click the *Log Levels*
-tab.
+To view the log levels, go to the Control Panel, click *Server Administration* in the Server section, and then click the *Log Levels* tab.
 
-You will then see a paginated list of logging categories. These
-categories correspond to Liferay classes that have log messages in them.
-By default, all categories are set to display messages only if there is
-an error that occurs in the class. This is why you see ERROR displayed
-in all of the drop down list boxes on the right side of the portlet.
+You will then see a paginated list of logging categories. These categories correspond to Liferay classes that have log messages in them. By default, all categories are set to display messages only if there is an error that occurs in the class. This is why you see ERROR displayed in all of the drop down list boxes on the right side of the portlet.
 
-Each category is filtered by its place in the class hierarchy. For
-example, if you wanted to see logging for a specific class that is
-registered in Liferay, you would browse to that specific class and
-change its log level to something that is more descriptive, such as
-DEBUG. Once you click the *Save* button at the bottom of the list, you
-will start seeing DEBUG messages from that class in your application
-server's log file.
+Each category is filtered by its place in the class hierarchy. For example, if you wanted to see logging for a specific class that is registered in Liferay, you would browse to that specific class and change its log level to something that is more descriptive, such as DEBUG. Once you click the *Save* button at the bottom of the list, you'll start seeing DEBUG messages from that class in your application server's log file.
 
-If you are not sure which class you want to see log messages for, you
-can find a place higher up in the hierarchy and select the package name
-instead of an individual class name. If you do this, messages for every
-class lower in the hierarchy will be displayed in your application
-server's log file.
+If you're not sure which class you want to see log messages for, you can find a place higher up in the hierarchy and select the package name instead of an individual class name. If you do this, messages for every class lower in the hierarchy will be displayed in your application server's log file.
 
-![image](../../images/portal-admin-ch8_html_3579ac89.png)
-*Illustration 2: Changing Logging Levels*
+![Figure 16.x: Log levels can be dynamically changed at runtime, whenever you need to debug an issue. ](../../images/maintaining-log-levels.png) 
 
-Be careful when you do this. If you set the log level to DEBUG somewhere
-near the top of the hierarchy (such as `com.liferay`{.western}, for
-example), you may wind up with a lot of messages in your log file. This
-could make it difficult to find the one you were looking for, and causes
-the server to do more work writing messages to its log file.
+Be careful when you do this. If you set the log level to DEBUG somewhere near the top of the hierarchy (such as `com.liferay`, for example), you may wind up with a lot of messages in your log file. This could make it difficult to find the one you were looking for, and causes the server to do more work writing messages to its log file.
 
-If you are want to set the log level for one of your own classes in a
-deployed plugin, you can register that class (so long as it uses Log4J
-to do its logging) with Liferay so that you can control the log levels
-more easily.
+If you want to set the log level for one of your own classes in a deployed plugin, you can register that class with Liferay so that you can control the log levels more easily, so long as your class uses Log4J to do its logging.
 
-You will first need to implement Log4J logging in your class, with a
-statement such as the following (taken from Liferay's
-`JCRHook`{.western} class):
+You will first need to implement Log4J logging in your class, with a statement such as the following (taken from Liferay's `JCRStore` class):
 
-private static Log _log = LogFactory.getLog(JCRHook.class);
+	private static Log _log = LogFactory.getLog(JCRStore.class);
 
-You would then use this `_log`{.western} variable to create log messages
-in your code for the various logging levels:
+You would then use this `_log` variable to create log messages in your code for the various logging levels:
 
-_log.error("Reindexing " + node.getName(), e1);
+	_log.error("Reindexing " + node.getName(), e1);
 
-To enable your logging messages to appear in your server's log file via
-the Control Panel, click the *Add Category* tab on the same *Log Levels*
-page.
+To enable your logging messages to appear in your server's log file via the Control Panel, click the *Add Category* tab on the same *Log Levels* page.
 
-![image](../../images/portal-admin-ch8_html_m559f0b07.png)
-*Illustration 3: Adding a Logging Category*
+![Figure 16.x: Adding your own logging classes is as simple as specifying it in this field. ](../../images/maintaining-add-log-category.png) 
 
-You will see that you can add a logging category. Simply put in the
-fully qualified name of your class or of the package that contains the
-classes whose log messages you want to view, choose a log level, and
-then click the *Save* button. You will now start to see log messages
-from your own class or classes in the server's log file.
+You'll see that you can add a logging category. Simply put in the fully qualified name of your class or of the package that contains the classes whose log messages you want to view, choose a log level, and then click the *Save* button. You will now start to see log messages from your own class or classes in the server's log file.
+
+Logs are great for figuring out issues in production. But what if Liferay contacts you via its support channel with a bug fix or a security enhancement? Read on to learn how to patch Liferay. 
+
+## Patching Liferay
+
+![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+
+While we strive for perfection with every release of Liferay Portal, the reality of the human condition dictates that releases of the product may not be as perfect as originally intended. But we've planned for that. Included with every Liferay bundle is a patching tool that can handle the installation of two types of patches: hot fixes and fix packs. 
+
+A hot fix is provided to a customer when a customer contacts Liferay about an issue, and Liferay's support team--working with the customer--determines that the problem is indeed an issue with the product that needs to be fixed. Support will fix the bug and provide a hot fix to the customer immediately. This is a short-term fix that solves the issue for the customer as quickly as possible. 
+
+On a regular schedule, these hot fixes are bundled together into fix packs. Fix packs are provided to all of Liferay's customers, and are component-based. This means that any issues with the content management system will be bundled together separately from issues with another component, such as the message boards. This lets you determine based on your usage which patches are critical and which are not. Of course, if Liferay issues a security advisory, that's something you're always going to want to patch. 
+
+Now that you know what patching is all about, let's check out the tool. 
+
+### Installing the patching tool
+
+If you're using a Liferay bundle, congratulations! The patching tool is already installed. Your job isn't done yet, however, because Liferay *might* have updated the patching tool. Always check the Customer Portal to see if the patching tool has been updated first. But even if you forget to check, the patching tool will tell you if it needs to be updated when you run it. A lot of planning and forethought has gone into the patching system to make it run as smoothly as possible. 
+
+You follow the same procedure whether you're installing or upgrading the patching tool. Once you've obtained it from the customer portal, unzip it to the Liferay Home folder. This is the folder where you've placed your `portal-ext.properties` file, and where by default the `data` folder resides. This is generally one folder up from where your application server is installed, but some application servers are different. If you don't know where Liferay Home is on your system, check chapter 11 to see where this folder is for your specific application server. 
+
+If you're upgrading the patching tool, all you need to do is unzip the new version on top of the old version. Note that if you're doing this on LUM (Linux, Unix, Mac) machines, you'll need to make the `patching-tool.sh` script executable.  
+
+After the patching tool is installed, you need to let it auto-discover your Liferay installation, so it can determine what your release level is and what your application server environment is, in order for it to do its work. This is a simple command to run on LUM: 
+
+	./patching-tool.sh auto-discovery
+	
+or on Windows: 
+
+	patching-tool auto-discovery
+	
+From here on, for brevity we'll use the LUM version of the command. Why? Because I'm (RS) using a LUM operating system and I'm writing this, so I feel like I get to choose. 
+
+If you've installed the patching tool in a non-standard location, you'll have to give this command another parameter to point it to your Liferay installation. For example, if you've installed a Liferay/Tomcat bundle in `/opt/Liferay`, you'd issue this command: 
+
+	./patching-tool.sh auto-discovery /opt/Liferay/tomcat-7.0.21
+	
+In all, this is pretty simple. Now let's see how to use the patching tool to get your patches installed. 
+
+### Installing patches
+
+The absolute first thing you must do when installing one or more patches is to shut down your server. On Windows operating systems, files that are in use are locked by the OS, and won't be patched. On LUM systems, you can generally replace files that are running, but sometimes the result of doing that isn't what you wanted. So your best bet is to shut down the application server that's running Liferay before you install a patch. 
+
+Liferay distributes patches as `.zip` files, whether they are hot fixes or fix packs. When you receive one, either via a LESA ticket (hot fix) or through downloading a fix pack from the customer portal, you'll need to place it in the `patches` folder, which is inside the patching tool's home folder. Once you've done that, it's a simple matter to install it. First, execute
+
+	./patching-tool.sh info
+	
+This will show you a list of patches that you've already installed, along with a list of patches that *can* be installed, from what's in the `patches` folder. To install the available patches, issue the following command: 
+
+	./patching-tool.sh install
+	
+Your patches are now installed. You can verify this by using the `./patching-tool.sh info` command, which will now show your patch in the list of installed patches. Let's look now at how you'd manage your patches. 
+
+#### Handling hot fixes and patches
+
+As stated above, hot fixes are short term fixes that are provided as quickly as possible, and fix packs are larger bundles of hot fixes that are provided to all customers at regular intervals. If you already have a hot fix installed, and the fix pack which contains that hot fix is released, you can rest assured that the patching tool will manage this for you. 
+
+Fix packs always supercede hot fixes, so when you install your fix pack, the hot fix that it already contains is  uninstalled, and the fix pack version is installed in its place. 
+
+Sometimes there can be a fix to a fix pack. This is also handled automatically. If a new version of a fix pack is released, you can use the patching tool to install it. The patching tool uninstalls the old fix pack and installs the new version in its place. 
+
+#### Fix pack dependencies
+
+Some fix packs require other fix packs to be installed first. If you attempt to install a fix pack that depends on another fix pack, the patching tool will notify you of this so that you can go to the customer portal and obtain the fix pack dependency. Once all the necessary fix packs are available in the `patches` folder, the patching tool will install them. 
+
+The patching tool can also remove patches. 
+
+### Removing or reverting patches
+
+Have you noticed that the patching tool only seems to have an `install` command? That's definitely the case. You manage the patches that you have installed not by using another command, but by adding or removing patches from the `patches` folder. If you currently have a patch installed and you don't want it installed, remove it from the `patches` folder. Then run the `./patching-tool.sh install` command, and the patch is removed. 
+
+If you want to remove all patches that you've installed, use the `./patching-tool.sh revert` command. This removes all patches from your installation.
+
+What we've described so far is the simplest way to use the patching tool, but you can also use the patching tool in the most complex, multi-VM, clustered environments. This is done by using profiles. 
+
+### Using profiles with the patching tool
+
+When you ran the auto-discovery task after installing the patching tool, it created a default profile that points to the application server it discovered. This is the easiest way to use the patching tool, and is great for smaller, single server installations. But we realize that many Liferay installations are sized accordingly to serve millions of pages per day, and the patching tool has been designed for this as well. So if you're running a small, medium, or large cluster of Liferay machines, you can use the patching tool to manage all of them using profiles. 
+
+The auto-discovery task creates a properties file called `default.properties`. This file contains the detected configuration for your application server. But you're not limited to only one server which the tool can detect. You can have it auto-discover other runtimes, or you can manually create new profiles yourself. 
+
+To have the patching tool auto-discover other runtimes, you'll need to use a few more command line parameters: 
+
+	./patching-tool.sh [name of profile] auto-discovery [path/to/runtime]
+	
+This will run the same discovery process, but on a path you choose, and the profile information will go into a `[your profile name].properties` file. 
+
+Alternatively, you can manually create your profiles. Using a text editor, create a `[profile name].properties` file in the same folder as the patching tool script. You can place the following properties in the file: 
+
+**patching.mode:** This can be `binary` (the default) or `source`, if you're patching the source tree you're working with. Liferay patches contain both binary and source patches, and you'll want to provide them to your development team if they're extending Liferay, so they can patch their source tree. 
+
+**jdk.version:** Patches are compiled for both JDK 5 and JDK 6. Specify the one (either `jdk5` or `jdk6`) your application server is running against. 
+
+**patches.folder:** Specify the location where you'll copy your patches. By default, this is `./patches`. 
+
+**war.path:** No, no one's angry. This is a property for which you specify the location of the Liferay installation inside your application server. You can specify a .war file here, and you'll be able to patch a Liferay .war for installation, which is necessary for some application servers. 
+
+**global.lib.path:** Specify the location where .jar files on the global classpath are stored. If you're not sure, search for your `portal-service.jar` file; it's on the global classpath. This property is only valid if your `patching.mode` is `binary`.  
+
+**source.path:** Specify the location of your Liferay source tree. This property is only valid if your `patching.mode` is `source`. 
+
+You can have as many profiles as you want, and use the same patching tool to patch all of them. This helps to keep all your installations in sync. 
+
+Now that you know how to patch an existing installation of Liferay, let's turn to how you'd upgrade Liferay from an older release to the current release. 
 
 ## Upgrading Liferay
 
-Liferay upgrades are fairly straightforward. A consistent set of steps
-is all you need to follow to upgrade a standard Liferay installation.
-Things do get more complicated if your organization has used the
-extension environment to customize Liferay, as it will need to be
-converted to an Ext Plugin for Liferay 6, and it is possible that API
-changes in the new version will break your existing code. This, however,
-is usually pretty easy for your developers to fix. Portlet plugins are
-generally backwards compatible, as they are written to the Java
-standard. This includes Portlet 1.0 (JSR-168) portlets, as the Portlet
-2.0 (JSR-286) standard has also been designed to be
-backwards-compatible. Theme plugins may require some modifications in
-order to take advantage of new features. Much effort has been made to
-make upgrades as painless as possible; however, this is not a guarantee
-that everything will work without modification. Extension environment
-code is the most complicating factor in an upgrade, so it is important
-to test as much as possible.
+Liferay upgrades are fairly straightforward. A consistent set of steps is all you need to follow to upgrade a standard Liferay installation. Things do get more complicated if your organization has used ext plugins to customize Liferay. It's possible that API changes in the new version will break your existing code. This, however, is usually pretty easy for your developers to fix. Portlet plugins are generally backwards compatible, as they are written to the Java standard. This includes Portlet 1.0 (JSR-168) portlets, as the Portlet 2.0 (JSR-286) standard has also been designed to be backwards-compatible. Theme plugins may require some modifications in order to take advantage of new features, and if they're using Liferay APIs, they also may have changed. Much effort has been made to make upgrades as painless as possible; however, this is not a guarantee that everything will work without modification. Ext plugins are the most complicating factor in an upgrade, so it is important to test as much as possible.
 
-As a general rule, you can upgrade from one major release to the next
-major release. For example, you can upgrade directly from Liferay 5.1.x
-to 5.2.x, but not from 5.1.x to 6.0.x. If you need to upgrade over
-several major releases, you will need to run the upgrade procedure for
-each major release until you reach the release you want. This doesn't
-mean you need to run the procedure for every point release (i.e., 4.3.5
-to 4.3.6 to 4.4.0 to 4.4.1, etc.); you only need to run the procedure
-for the major releases. A good practice is to use the latest version of
-each major release to upgrade your system.
+As a general rule, you can upgrade from one major release to the next major release. For example, you can upgrade directly from Liferay 5.2.x to 6.0.x, but not from 5.2.x to 6.1.x. If you need to upgrade over several major releases, you'll need to run the upgrade procedure for each major release until you reach the release you want. This doesn't mean you need to run the procedure for every point release or service pack; you only need to run the procedure for the major releases. A good practice is to use the latest version of each major release to upgrade your system. 
 
-### Liferay Upgrade Procedure
+Now that we've gotten the general philosophy of upgrading out of the way, let's outline the procedure you'll undergo for upgrading a Liferay 6.0 installation to a 6.1 installation. If you're running a previous version of Liferay and need to upgrade to 6.0 first, please see the instructions in the previous version of this document. 
 
-Liferay can auto-detect whether the database requires an upgrade the
-first time the new version is started. When Liferay does this, it will
-automatically upgrade the database to the format required by the new
-version. In order to do this, Liferay *must* be accessing the database
-with an ID that can create, drop, and modify tables. Make sure that you
-have granted these permissions to the ID before you attempt to upgrade
-Liferay. It is also a good idea to backup your database before
-attempting an upgrade in case something goes wrong during the process.
+### Upgrading Liferay Portal 6.0 to Liferay Portal 6.1
 
-![image](../../images/portal-admin-ch8_html_5c790363.png) **Tip:** Liferay versions
-prior to 4.3.0 require that you manually run SQL scripts on your
-database to perform an upgrade. If you need to upgrade from Liferay
-4.1.x to 4.2.x in preparation for an upgrade to a current version of
-Liferay, you can find these SQL scripts in the source code archive for
-the version of Liferay you are running. They will be in the *SQL* folder
-of the archive.
+There are a few things you'll want to prepare before you actually perform the upgrade. Specifically, you'll need to review your image gallery usage, review new Liferay 6.1 defaults, and catalog all the plugins you have installed. After you've performed these three tasks, you'll be ready to upgrade. 
 
-#### Upgrade Steps
+Liferay 6.1 introduces a major change to how Liferay handles files. No longer do we have a separate Document Library and Image Gallery; instead, these have been combined into Documents and Media. If you were using Liferay's Image Gallery to store images, these can be migrated over during an upgrade, but you'll have to take some extra steps first. 
 
-It takes only five steps to upgrade a standard Liferay installation to
-Liferay 6:
+In Liferay 6.0, you had three ways you could store images in the Image Gallery. You could use the `DatabaseHook` and store them as BLOBs in the database; you could use the `DLHook` to store them in the Document Library, or you could use the `FileSystemHook` to store them in a folder on your server's file system. Before you upgrade, you'll need to set whichever property you were using in your 6.0 `portal-ext.properties` file, because by default, none of them are enabled in 6.1. Setting one of the properties triggers the migration during the upgrade process. Below are the three properties; you'll need to set only *one* of them (the one you were using). 
 
-1.  Copy your customized `portal-ext.properties`{.western} file to a
-    safe place, and then undeploy the old version of Liferay and shut
-    down your application server.
-
-2.  Copy the new versions of the dependency .jars to a location on your
-    server's class path, overwriting the ones you already have for the
-    old version of Liferay.
-
-3.  Deploy the new Liferay .war file to your application server. Follow
-    the deployment instructions in Chapter 2 .
-
-4.  Modify your `portal-ext.properties     `{.western}file and set
-    `permissions.user.check.algorithm=5`{.western}.
-
-5.  Start (or restart) your application server. Watch the console as
-    Liferay starts: it should upgrade the database automatically. Verify
-    that your portal is operating normally, and then run the upgrade
-    procedure to upgrade to permissions algorithm 6 (see below) and
-    restart.
-
-That's all there is to it. Everything else is handled by Liferay's
-upgrade procedure. Note that as stated above, if you have to upgrade
-over several Liferay versions, you will need to repeat these steps for
-each major release. You can now deploy your own plugins to the system.
-
-Once your upgrade is complete, you may wish to review the
-`portal.properties`{.western} changes for this version of Liferay to see
-whether the new defaults (see below) are appropriate for your
-implementation.
-
-What follows are instructions for upgrading for specific versions.
-
-### Upgrading From Liferay 5.1 to Liferay 5.2
-
-Always use the latest version of 5.2 available as it will have fixed all
-the potential upgrade issues that may have been found.
-
-#### Prerequisite
-
-It's recommended to upgrade first at least to 5.1.2SE if you are running
-any previous version.
-
-#### Changes in configuration properties
-
-##### How to keep the old values
-
-The default values of some properties has been changed. In order to keep
-the previous values you have to run Liferay passing the following system
-property:
-
-    java ... -Dexternal-properties=portal-legacy-5.1.properties
-
-Each application server has different methods to add this system
-property. In Tomcat modify `setenv.sh/setenv.bat`{.western} and append
-that option to the environment variable JAVA_OPTS. The scripts
-`setenv.sh`{.western} or `setenv.bat`{.western} are not delivered with
-Tomcat but if they exist, Tomcat will use them in the startup process,
-so it's a nice way to separate your own settings from tomcat's default
-shell scripts.
-
-Here are the complete contents of that file
-(`portal-legacy-5.1.properties`{.western}) for reference:
-
-    resource.repositories.root=${user.home}/liferay
-    theme.portlet.sharing.default=true
-    organizations.country.required[regular]=true
-    organizations.assignment.auto=true
-    organizations.assignment.strict=false
-    organizations.membership.strict=true
-    lucene.dir=${resource.repositories.root}/lucene/
-    jcr.jackrabbit.repository.root=${resource.repositories.root}/jackrabbit
-    dl.hook.impl=com.liferay.documentlibrary.util.JCRHook
-    dl.hook.file.system.root.dir=${resource.repositories.root}/document_library
-
-##### Important changes in the configuration of Database access and mail integration
-
-One very important aspect of the upgrade is that now the configuration
-of the database parameters and those for mail integration are handled
-through the `portal-ext.properties`{.western} file to unify the
-configuration through all application servers.
-
-It's still possible to use application server specific data sources and
-pools if desired by using certain configuration properties. This is
-documented in Chapter 2.
-
-#### Theme Upgrade
-
-Instructions for maintaining customized themes built in 5.1 without
-redeploying with the new SDK :
-
--   Change the header of `/WEB-INF/liferay-plugin-package.xml`{.western}
-    to:
-
-        <!DOCTYPE plugin-package PUBLIC "-//Liferay//DTD Plugin Package
-        5.2.0//EN"
-        "http://www.liferay.com/dtd/liferay-plugin-package_5_2_0.dtd">
-
--   Change the header of `/WEB-INF/liferay-look-and-feel.xml`{.western}
-    to:
-
-        <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 5.2.0//EN"
-        "[http://www.liferay.com/dtd/liferay-look-and-feel_5_2_0.dtd">]
-
--   Upgrade compatibility version in
-    `liferay-look-and-feel.xml`{.western}:
-
-        <compatibility>
-	    <version>5.2.2+</version>
-        </compatibility>
+    image.hook.impl=com.liferay.portal.image.DatabaseHook
+    image.hook.impl=com.liferay.portal.image.DLHook
+    image.hook.impl=com.liferay.portal.image.FileSystemHook
     
--   In `portal.vm`{.western}, delete the following lines :
+The next thing you'll need to look at are the defaults that have changed from 6.0 to 6.1. These are preserved in `portal-legacy-6.0.properties` in the source. The 6.0 values are:  
 
-        $theme.include($bottom_ext_include)
-        $theme.include($session_timeout_include)
-        $theme.include($sound_alerts_include)
-
-If you don't remove these, you will see a blank page and an exception.
-
--   In order to display the control panel in the dock, add the following
-    lines in `dock.vm`{.western}:
-
-        #if ($show_control_panel)
-	    <li class="control-panel">
-		<a href="$control_panel_url">$control_panel_text</a>
-	    </li>
-        #end
-
--   In `navigation.css`{.western}:
-
-        .lfr-dock li.control-panel a {
-	    background-image: url(../images/dock/control_panel.png);
-        }
-
--   Then copy `/images/dock/control_panel.png`{.western} from the
-    classic theme (`ROOT/html/themes/classic`{.western}) into your
-    theme.
-
--   In `WEB-INF/web.xml`{.western}, change the deprecated declaration
-    `com.liferay.portal.servlet.filters.compression.CompressionFilter`{.western}
-    into `com.liferay.portal.servlet.filters.gzip.GZipFilter`{.western}.
-
-#### API Changes
-
-##### Usage of ServiceContext in Liferay's Services Layer
-
-The most significant API change in 5.2 is that most APIs of the service
-layer have been adapted to use the Service Context Pattern. The Service
-Context is an object that contains context information about a given API
-call. All of the fields in this object are optional, although the
-services that store any type of content will require you to specify at
-least the `scopeGroupId`{.western}. Here is a simple example of how to
-create a `Ser`{.western}`viceContext`{.western} instance and pass it to
-a service API:
-
-    ServiceContext serviceContext = new ServiceContext();
-    serviceContext.setScopeGroupId(myGroupId);
-
-    BlogsEntryServiceUtil.addEntry(...., serviceContext);
-
-If you are invoking the service from a servlet, a Struts action, or any
-other front end class which has access to the
-`portletRequest`{.western}, you can use a utility method that will
-create the `ServiceContext`{.western} object and fill it with all the
-necessary values automatically. In that case the above example should be
-rewritten as follows:
-
-    ServiceContext serviceContext =
-    ServiceContextFactory.getInstance(BlogsEntry.class.getName(),
-    portletRequest);
+    users.last.name.required=true
+    layout.types=portlet,panel,embedded,article,url,link_to_layout
+    editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=bbcode
+    setup.wizard.enabled=false
+    discussion.subscribe.by.default=false
+    message.boards.subscribe.by.default=false
     
-    BlogsEntryServiceUtil.addEntry(...., serviceContext);
+The 6.1 values have changed to: 
 
-### Upgrading From Liferay 5.2 to Liferay 6.0
+    users.last.name.required=false
+    layout.types=portlet,panel,embedded,url,link_to_layout
+    editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=ckeditor_bbcode
+    setup.wizard.enabled=true
+    discussion.subscribe.by.default=true
+    message.boards.subscribe.by.default=true
+    
+If you don't like the defaults, you can change them back in one shot by adding a system property to your JVM's startup. This differs by application servers. In Tomcat, you'd modify `setenv.sh/setenv.bat` and append the option `-Dexternal-properties=portal-legacy-6.0.properties` to the environment variable JAVA_OPTS. The scripts `setenv.sh` or `setenv.bat` are not delivered with default Tomcat, but do exist in the bundles. If they're there, Tomcat uses them in the startup process, so it's a nice way to separate your own settings from Tomcat's default shell scripts. Alternatively, of course, you can override some or all of them in your `portal-ext.properties` along with your other overrides.  
 
-Always use the latest version of 6.0 available as it will have fixed all
-the potential upgrade issues that may have been found.
+Finally, you need to take note of any plugins you have installed. Liferay's plugins are usually version-specific, so you'll need to obtain new versions of them for the new release of Liferay. If you have custom plugins created by your development team, they'll need to build, test, and optionally modify them to work with the new release of Liferay. Don't attempt an upgrade without collecting all the plugins you'll need first. 
 
-#### Prerequisite
+Once you've reviewed your properties and collected all the plugins you'll need, you're ready to follow the upgrade procedure. Remember to back up your system before you begin. 
 
-It's recommended to upgrade first at least to 5.2.3 CE if you are
-running any previous version.
+There are two different procedures to upgrade Liferay: the first is the most common, which is upgrading a Liferay bundle. The second is upgrading Liferay that's installed on an application server. We'll go over both. 
 
-#### Upgrading Your Permissions Algorithm
+In both cases, Liferay auto-detects whether the database requires an upgrade the first time the new version is started. When Liferay does this, it upgrades the database to the format required by the new version. In order to perform this task, Liferay *must* be accessing the database with an ID that can create, drop, and modify tables. Make sure that you have granted these permissions to the ID before you attempt to upgrade Liferay. And, of course, we'll run the risk of overly repeating ourselves: back up your database.  
 
-Liferay 6.0 introduces permissions algorithm 6. Algorithm 6 is an
-enhancement to our permissions system which drastically improves
-performance by reducing the number of queries necessary to determine
-permissions for any individual asset within Liferay portal.
+Let's look at upgrading a bundle, which is the easiest upgrade path. 
 
-Liferay 6 by default is configured to use algorithm 6. This is
-appropriate for new installations, but requires additional configuration
-for upgrades, because the table structure for this algorithm is
-different from the structures for the previous algorithms. For this
-reason, before you start Liferay 6 for the first time and run the
-upgrade process, you need to tell Liferay 6 to use Algorithm 5, and then
-run a separate conversion utility later, after you have verified that
-the upgrade was successful. To temporarily switch your Liferay 6
-installation to algorithm 5, add the following entry to your
-`portal-ext.properties`{.western}:
+#### Upgrading a bundle
 
-    permissions.user.check.algorithm=5
+If you're running a Liferay bundle, the best way to do the upgrade is to follow the steps below. The new Liferay is installed in a newer version of your bundle runtime. For example, Liferay 6.0 used Tomcat 6 by default; Liferay 6.1 uses Tomcat 7. Though there is a Tomcat 6 bundle of Liferay 6.1, that bundle also uses a newer release of Tomcat than the one from 6.0. This is the case for all runtimes that Liferay supports. We generally recommend that you use the latest version of your runtime bundle, as it will be supported the longest. 
 
-This will tell Liferay that you are still using algorithm 5. Next, start
-Liferay and allow it to upgrade your database. Once the upgrade has
-completed, verify that everything is working properly. You can now leave
-the algorithm setting as is, or if you want to take advantage of the
-performance of the new algorithm, you can upgrade to algorithm 6 by
-going through a few simple steps in the Control Panel.
+   1. Obtain the new bundle. Unzip the bundle to an appropriate location on your system.
+   2. Copy your `portal-ext.properties` file and your `data` folder to the new bundle. 
+   3. Review your `portal-ext.properties` file as described above. If you were using the Image Gallery, make the necessary modifications so that your files are migrated to Documents and Media. Review the new defaults and decide whether you want to use them. Review any other modifications you've made. 	
+   4. Start your application server. Watch the console as Liferay starts: it should upgrade the database automatically.
+   5. When the upgrade completes, install any plugins you were using in your old version of Liferay. Make sure you use the versions of those plugins that are designed for Liferay 6.1. If you have your own plugins, your development team will need to migrate the code in these ahead of time and provide .war files to you.  
+   6. Browse around in your new installation and verify that everything is working. Have your QA team test everything. If all looks good, you can delete the old application server with the old release of Liferay in it from the bundle directory. You have a backup of it anyway, right? 
+   
+As you can see, upgrading a bundle is generally pretty simple. But not everybody can use bundles: sometimes, specific application servers or application server versions are mandated by the environment you're in or by management. For this reason, Liferay also ships as an installable .war file that can be used on any supported application server.    
 
-To upgrade to Algorithm 6, log in as an Administrator and navigate to
-the Control Panel. Go to *Server Administration* and select *Data
-Migration* from the menu along the top of the screen. You should see a
-section entitled *Legacy Permissions Migration* at the bottom of the
-page.
+#### Upgrading using a .war file
 
-![image](../../images/portal-admin-ch8_html_m7242a796.png)
-*Illustration 4: Dialog to update your permissions algorithm to the
-latest version.*
+Running a manual upgrade is almost as easy as upgrading a bundle: 
 
-Algorithms 5 and 6 do not support adding permissions at the user level.
-If you have permissions set to individual users, the converter can
-simulate this for you by auto-generating roles with those permissions,
-and assigning those roles to the users who have individualized
-permissions. If you have a lot of these, you'll likely want to go
-through and clean them up after the conversion process. To generate
-these roles, check the *Generate Custom Roles* box. If you do not
-generate the roles, all custom permissions set for individual users will
-be discarded.
-Click *Execute* to convert all existing users and roles to algorithm 6.
+   1. Verify that your application server is supported by Liferay. You can do this by viewing the appropriate document on the Customer Portal (EE) or on liferay.com (CE). If your application server isn't supported by Liferay 6.1, *do not continue!*  
+   2. Obtain the Liferay Portal .war file and the dependency .jars archive. 
+   3. Copy your customized `portal-ext.properties` file to a safe place and review it as described above, making all the appropriate changes.  
+   4. Undeploy the old version of Liferay and shut down your application server.
+   5. Copy the new versions of Liferay's dependency .jars to a location on your server's class path, overwriting the ones you already have for the old version of Liferay. This location is documented for your application server in chapter 11. 
+   6. Deploy the new Liferay .war file to your application server. Follow the deployment instructions in Chapter 11.
+   7. Start (or, if your app server has a console from which you've installed the .war, restart) your application server. Watch the console as Liferay starts: it should upgrade the database automatically. Verify that your portal is operating normally, and then install any plugins you were using in your old version of Liferay. Make sure you use the versions of theose plugins that are designed for Liferay 6.1. If you have your own plugins, your development team will need to migrate the code in these ahead of time and provide .war files to you. 
+   8. Browse around in your new installation and verify that everything is working. Have your QA team test everything. If all looks good, you're finished. 
 
-#### Upgrading EXT to EXT Plugins
-
-With Liferay 6.0, the Ext environment no longer exists in its previous
-form. Instead, Ext is now a plugin. If you are using the Ext Environment
-to change core code, you will find that Ext Plugins handle core
-customizations better than the Ext Environment did, so developers can
-spend less time with deployments and maintaining changes than they did
-previously. There is now only one SDK needed for Liferay development,
-which also simplifies things for the developer.
-
-Before using any code previously developed in Ext, you will need to
-migrate your Ext environments to Ext plugins. If you are on a version of
-Liferay prior to 5.2, you will also need to upgrade your existing Ext
-environment to Liferay 5.2 before attempting to convert it to a plugin.
-The upgrade process will not work on earlier versions of Liferay's Ext
-environment.
-
-In the Plugins SDK, under the `ext`{.western} directory you can find the
-`build.xml`{.western} file to convert your existing Ext Environment to a
-plugin. The script creates the shell of an Ext plugin with the
-`ext.zip`{.western}* *file included with the Plugins SDK and merges your
-existing Ext Environment into the new plugin.
-
-To run the script, use the following command:
-
-    ant upgrade-ext -Dext.dir=[path to existing Ext] -Dext.name=[new plugin
-    name] -Dext.display.name=”[friendly name for new plugin]”
-
-This will create a directory with the name you specified, with the
-merged changes from your Ext Environment and the default .zip file. Both
-`build-service`{.western} (Service Builder) and `build-db`{.western} (DB
-Builder) have been ported to Ext Plugins to allow developers to
-regenerate their services and SQL code in Ext Plugins. However, Service
-Builder in Ext plugins will be deprecated in future versions, and custom
-services should be migrated to portlet plugins. Try to migrate your
-custom services to portlet plugins as soon as possible as this is the
-recommended practice.
+That's all there is to it. Most everything is handled by Liferay's upgrade procedure. Note that as stated above, if you have to upgrade over several Liferay versions, you will need to repeat these steps for each major release. 
 
 ## Summary
 
-Liferay Portal is an easy environment to maintain. Backup procedures are
-simple and straightforward. Administrators have all the options they
-need to view and diagnose a running Liferay Portal server through its
-tunable logs.
+Liferay Portal is an easy environment to maintain. Backup procedures are simple and straightforward. Administrators have all the options they need to view and diagnose a running Liferay Portal server through its tunable logs. 
 
-Upgrading Liferay is also a snap, because Liferay does most of the work
-automatically. With easy permissions migration tools and automated
-database upgrade scripts, you'll have your new version of Liferay Portal
-up and running in no time.
+Patching Liferay is easy to do with Liferay's patching tool. It handles for you all the management of available patches, and makes it easy to install and uninstall them. 
+
+Upgrading Liferay is also a snap, because Liferay does most of the work automatically. With easy migration tools and automated database upgrade scripts, you'll have your new version of Liferay Portal up and running in no time.
