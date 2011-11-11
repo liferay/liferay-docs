@@ -1,18 +1,14 @@
 # Liferay Marketplace
 
-This chapter provides a quick tour of the new Liferay Marketplace.
-
-## Introduction
-
 Liferay Marketplace is an exciting new hub for sharing, browsing and downloading Liferay-compatible applications. As enterprises look for ways to build and enhance their existing platforms, developers and software vendors are searching for new avenues to reach this market. Marketplace leverages the entire Liferay ecosystem to release and share apps in a user-friendly, one-stop site.
 
-In a nutshell, the Liferay Marketplace is a repository for applications built on the Liferay Platform.  You can find and download applications directly from the Marketplace on the web, or use an existing Liferay installation to access and install applications onto the running Liferay website.  Once installed, you can manage the applications through Liferay's administrative interfaces (such as the control panel).
+In a nutshell, the Liferay Marketplace is a repository for applications built on the Liferay Platform.  You can find and download applications directly from the Marketplace on the web, or use an existing Liferay installation to access and install applications onto the running Liferay web site.  Once installed, you can manage the applications through Liferay's administrative interfaces (such as the control panel). In order to do anything with it, of course, you have to access it, so we'll turn to that next. 
 
 ## Accessing the Liferay Marketplace
 
 There are two ways to access the Marketplace.
 
-1.  Via The Website - Using your favorite browser, you can navigate to the marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace).
+1.  Via The Web site - Using your favorite browser, you can navigate to the marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace).
 
 2.  Via Liferay - If you have a site up and running based on Liferay, you can use the Marketplace tab of the control panel to access Marketplace content.
 
@@ -107,7 +103,7 @@ In addition to basic information, you will also find information on:
 * Compatibility: The version(s) of the Liferay Platform that this app is compatible with (see Compatibility and Versioning for more detail)
 * Support: Who to contact if you need support for this app
 * Demo URL: If this app has an online demo available, you will find the link here.
-* Developer Website: The main website where development or support for this app can be found
+* Developer Web site: The main web site where development or support for this app can be found
 * Report issues/abuse: Helpful links to report additional issues related to this app
 
 In the lower section, you will find Reviews and Ratings for this app.  Check here to find out what other people are saying about this app.  In addition, on a separate tab, you will find the history of versions for this app, where you can download other versions (for example, if you are using an older version of the Liferay Platform, you may need to download a specific version of this app that is compatible with the version of the Liferay Platform you are using).
@@ -582,7 +578,7 @@ If you have configured everything properly, an XML document should be returned:
 	
 	</plugin-repository\>
 
-You can now give the URL to your software repository out on your website, and other administrators of Liferay can enter it into the Plugins Installation module of their Liferay control panels to connect to your repository.
+You can now give the URL to your software repository out on your web site, and other administrators of Liferay can enter it into the Plugins Installation module of their Liferay control panels to connect to your repository.
 
 If you want to serve your repository off of a static web server, you can save this document to a file called `liferay-plugin-package.xml` and put this file on your HTTP server. You can then give out the URL to the directory which holds this file on your web site, and anyone with an instance of Liferay will be able to point their Plugin Installer portlets to it.
 
