@@ -4,13 +4,13 @@ Liferay is configured by a combination of settings which are stored in the datab
 
 -   *Changing Portal Defaults*
 
--   *Modifying Properties of Users, Organizations, Sites, Roles, etc.
+-   *Modifying Properties of Users, Organizations, Sites, Roles, etc.*
 
 -   *Configuring Security Settings*
 
--   *Configuring Deployment Settings
+-   *Configuring Deployment Settings*
 
--   *Configuring Validation Settings
+-   *Configuring Validation Settings*
 
 -   *Accessing Liferay's Web Services:* 
 
@@ -20,13 +20,13 @@ Remember that your customizations in the `portal-ext.properties` file override t
 
 Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all of the defaults is stored inside of a `.jar` file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put just the settings you want to customize in your own configuration file, and then the configuration file for your portal is uncluttered and contains only the settings you need. This makes it far easier to determine whether a particular setting has been customized, and it makes the settings more portable across different installations of Liferay.
 
-The default configuration file is called `portal.properties`, and it resides inside of the `portal-impl.jar` file. This .jar file is located in Liferay Portal's `WEB-INF/lib` folder. The file which is used to override the configuration is `portal-ext.properties`. This file can be created in your Liferay Home folder (please see Chapter 11: Installing Liferay for the location of this folder for your application server). By default, the file does not exist at all, unless you are running an older version of Liferay. What follows is a brief description of the options that can be placed there, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
+The default configuration file is called `portal.properties`, and it resides inside of the `portal-impl.jar` file. This `.jar` file is located in Liferay Portal's `WEB-INF/lib` folder. The file which is used to override the configuration is `portal-ext.properties`. This file can be created in your Liferay Home folder (please see Chapter 11: Installing Liferay for the location of this folder for your application server). By default, the file does not exist at all, unless you are running an older version of Liferay. What follows is a brief description of the options that can be placed there, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
 
 #### Properties Override
 
 This property specifies where to get the overridden properties. By default, it is `portal-ext.properties`. Updates should not be made in `portal.properties` or in `portal-bundles.properties`, but in `portal-ext.properties`. Furthermore, each portal instance can have its own overridden property file following the convention `portal-companyid.properties`. For example, one read order might be: `portal.properties`, then `portal-ext.properties`, and then `portal-test.properties`.
 
-The default read order is: `portal.properties`, `portal-bundle.properties`, and then `portal-ext.properties`.
+The default read order is: `portal.properties`, `portal-bundle.properties`, `portal-ext.properties`, and then `portal-setup-wizard.properties`.
 
 *Examples:*
 
@@ -34,6 +34,8 @@ The default read order is: `portal.properties`, `portal-bundle.properties`, and 
 	include-and-override=${liferay.home}/portal-bundle.properties
 	include-and-override=portal-ext.properties
 	include-and-override=${liferay.home}/portal-ext.properties
+	include-and-override=portal-setup-wizard.properties
+	include-and-override=${liferay.home}/portal-setup-wizard.properties
 
 Each portal instance can have its own overriden property file following the convention `portal-companyWebId.properties`. To enable this feature, set the `company-id-properties` system property to `true`:
 
@@ -156,6 +158,7 @@ Input a list of comma delimited class names that implement `com.liferay.portal.c
 Input a list of comma delimited class names that implement `com.liferay.portal.kernel.deploy.auto.AutoDeployListener`. These classes are used to process the auto deployment of WARs.
 
     auto.deploy.listeners=\
+        com.liferay.portal.deploy.auto.OSGiAutoDeployListener,\
 		com.liferay.portal.deploy.auto.ExtAutoDeployListener,\  
 		com.liferay.portal.deploy.auto.HookAutoDeployListener,\  
 		com.liferay.portal.deploy.auto.LayoutTemplateAutoDeployListener,\  
@@ -252,12 +255,15 @@ Note: `PluginPackageHotDeployListener` must always be first.
 
 	hot.deploy.listeners=\
 		com.liferay.portal.deploy.hot.PluginPackageHotDeployListener,\
+		\
 		com.liferay.portal.deploy.hot.ExtHotDeployListener,\
 		com.liferay.portal.deploy.hot.HookHotDeployListener,\
 		com.liferay.portal.deploy.hot.LayoutTemplateHotDeployListener,\
 		com.liferay.portal.deploy.hot.PortletHotDeployListener,\
+		com.liferay.portal.deploy.hot.SocialHotDeployListener,\
 		com.liferay.portal.deploy.hot.ThemeHotDeployListener,\
 		com.liferay.portal.deploy.hot.ThemeLoaderHotDeployListener,\
+		\
 		com.liferay.portal.deploy.hot.MessagingHotDeployListener
 
 #### Hot Undeploy
@@ -335,7 +341,7 @@ The security check utilizes the implementation set in the property `auth.token.i
 
 Set a list of comma delimited portlet ids for portlets that will bypass the security check set in the property `portlet.add.default.resource.check.enabled`.
 
-    portlet.add.default.resource.check.whitelist=3,56_INSTANCE_0000,58,82,86,87,103,113,145,164,166,170
+    portlet.add.default.resource.check.whitelist=3,56_INSTANCE_0000,58,82,86,87,103,113,145,164,166,170,177
 
 Input a list of comma delimited struts actions that will bypass the security check set in the property `portlet.add.default.resource.check.enabled`.
 
@@ -573,6 +579,10 @@ Set this property to `true` to enable Hibernate cache monitoring. See [http://is
     
 #### JPA
 
+Set this property to `none` to disable the JPA validation. Some application servers have the validation JARs in the global class path which causes conflicts with Hibernate. See LPS-22453 for more information.
+
+	javax.persistence.validation.mode=none
+
 Input a list of comma delimited JPA configurations.
 
     jpa.configs=\
@@ -749,6 +759,8 @@ The following properties will be read by C3PO if Liferay is configured to use C3
 *Examples:*
 
     jdbc.default.acquireIncrement=5
+    jdbc.default.acquireRetryAttempts=3
+    jdbc.default.acquireRetryDelay=1000
     jdbc.default.connectionCustomizerClassName=com.liferay.portal.dao.jdbc.pool.c3p0.PortalConnectionCustomizer
     jdbc.default.idleConnectionTestPeriod=60
     jdbc.default.maxIdleTime=3600
@@ -943,12 +955,80 @@ The Liferay scripts are grouped in such a way, that the first grouping denotes u
         # YUI modules
         # 
         \
+        aui/anim-base/anim-base.js,\
+        aui/anim-color/anim-color.js,\
+        aui/anim-curve/anim-curve.js,\
+        aui/anim-easing/anim-easing.js,\
+        aui/anim-node-plugin/anim-node-plugin.js,\
+        aui/anim-scroll/anim-scroll.js,\
+        aui/anim-xy/anim-xy.js,\
+        aui/arraylist-add/arraylist-add.js,\
+        aui/arraylist-filter/arraylist-filter.js,\
+        aui/arraylist/arraylist.js,\
+        aui/array-extras/array-extras.js,\
+        aui/array-invoke/array-invoke.js,\
         aui/attribute-base/attribute-base.js,\
         aui/attribute-complex/attribute-complex.js,\
+        aui/base-base/base-base.js,\
+        aui/base-build/base-build.js,\
+        aui/base-pluginhost/base-pluginhost.js,\
+        aui/classnamemanager/classnamemanager.js,\
+        aui/datatype-xml-format/datatype-xml-format.js,\
+        aui/datatype-xml-parse/datatype-xml-parse.js,\
+        aui/dom-base/dom-base.js,\
+        aui/dom-core/dom-core.js,\
+        aui/dom-screen/dom-screen.js,\
+        aui/dom-style/dom-style.js,\
+        aui/event-base/event-base.js,\
         aui/event-custom-base/event-custom-base.js,\
         aui/event-custom-complex/event-custom-complex.js,\
+        aui/event-delegate/event-delegate.js,\
+        aui/event-focus/event-focus.js,\
+        aui/event-hover/event-hover.js,\
+        aui/event-key/event-key.js,\
+        aui/event-mouseenter/event-mouseenter.js,\
+        aui/event-mousewheel/event-mousewheel.js,\
+        aui/event-outside/event-outside.js,\
+        aui/event-resize/event-resize.js,\
+        aui/event-simulate/event-simulate.js,\
+        aui/event-synthetic/event-synthetic.js,\
         aui/intl/intl.js,\
+        aui/io-base/io-base.js,\
+        aui/io-form/io-form.js,\
+        aui/io-queue/io-queue.js,\
+        aui/io-upload-iframe/io-upload-iframe.js,\
+        aui/io-xdr/io-xdr.js,\
+        aui/json-parse/json-parse.js,\
+        aui/json-stringify/json-stringify.js,\
+        aui/node-base/node-base.js,\
+        aui/node-core/node-core.js,\
+        aui/node-event-delegate/node-event-delegate.js,\
+        aui/node-event-simulate/node-event-simulate.js,\
+        aui/node-focusmanager/node-focusmanager.js,\
+        aui/node-pluginhost/node-pluginhost.js,\
+        aui/node-screen/node-screen.js,\
+        aui/node-style/node-style.js,\
         aui/oop/oop.js,\
+        aui/overlay/overlay.js,\
+        aui/plugin/plugin.js,\
+        aui/pluginhost-base/pluginhost-base.js,\
+        aui/pluginhost-config/pluginhost-config.js,\
+        aui/querystring-stringify-simple/querystring-stringify-simple.js,\
+        aui/queue-promote/queue-promote.js,\
+        aui/selector-css2/selector-css2.js,\
+        aui/selector-css3/selector-css3.js,\
+        aui/selector-native/selector-native.js,\
+        aui/selector/selector.js,\
+        aui/widget-base/widget-base.js,\
+        aui/widget-htmlparser/widget-htmlparser.js,\
+        aui/widget-position-align/widget-position-align.js,\
+        aui/widget-position-constrain/widget-position-constrain.js,\
+        aui/widget-position/widget-position.js,\
+        aui/widget-skin/widget-skin.js,\
+        aui/widget-stack/widget-stack.js,\
+        aui/widget-stdmod/widget-stdmod.js,\
+        aui/widget-uievents/widget-uievents.js,\
+        aui/yui-throttle/yui-throttle.js,\
         \
         # 
         # Alloy core
@@ -957,6 +1037,30 @@ The Liferay scripts are grouped in such a way, that the first grouping denotes u
         aui/aui-base/aui-base.js,\
         \
         # 
+        # Alloy modules
+        #
+        \
+        aui/aui-aria/aui-aria.js,\
+        aui/aui-classnamemanager/aui-classnamemanager.js,\
+        aui/aui-component/aui-component.js,\
+        aui/aui-debounce/aui-debounce.js,\
+        aui/aui-delayed-task/aui-delayed-task.js,\
+        aui/aui-event/aui-event-base.js,\
+        aui/aui-event/aui-event-input.js,\
+        aui/aui-form/aui-form-validator.js,\
+        aui/aui-live-search/aui-live-search.js,\
+        aui/aui-node/aui-node-base.js,\
+        aui/aui-node/aui-node-html5-print.js,\
+        aui/aui-node/aui-node-html5.js,\
+        aui/aui-overlay/aui-overlay-base.js,\
+        aui/aui-overlay/aui-overlay-context-panel.js,\
+        aui/aui-overlay/aui-overlay-context.js,\
+        aui/aui-overlay/aui-overlay-manager.js,\
+        aui/aui-overlay/aui-overlay-mask.js,\
+        aui/aui-selector/aui-selector.js,\
+        aui/aui-task-manager/aui-task-manager.js,\
+        \
+        #
         # Liferay module definitions
         # 
         \
@@ -979,19 +1083,52 @@ The Liferay scripts are grouped in such a way, that the first grouping denotes u
         liferay/portal.js,\
         liferay/portlet.js,\
         liferay/portlet_sharing.js,\
-        liferay/workflow.js
+        liferay/workflow.js,\
+        \
+        #
+        # Liferay modules
+        #
+        \
+        liferay/form.js,\
+        liferay/icon.js,\
+        liferay/menu.js,\
+        liferay/notice.js,\
+        liferay/poller.js
 
 Specify the list of *everything files* (everything else not already in the list of barebone files).
 
     javascript.everything.files=\
         \
-        # 
+        #
+        # YUI modules
+        #
+        \
+        aui/async-queue/async-queue.js,\
+        aui/cookie/cookie.js,\
+        aui/event-touch/event-touch.js,\
+        aui/querystring-stringify/querystring-stringify.js,\
+        aui/widget-child/widget-child.js,\
+        \
+        #
+        # Alloy modules
+        #
+        \
+        aui/aui-button-item/aui-button-item.js,\
+        aui/aui-io/aui-io-plugin.js,\
+        aui/aui-io/aui-io-request.js,\
+        aui/aui-loading-mask/aui-loading-mask.js,\
+        aui/aui-parse-content/aui-parse-content.js,\
+        aui/aui-state-interaction/aui-state-interaction.js,\
+        \
+        #
         # Liferay modules
         # 
         \
         liferay/address.js,\
+        liferay/dockbar.js,\
         liferay/layout_configuration.js,\
         liferay/layout_exporter.js,\
+        liferay/session.js,\
         \
         # 
         # Deprecated JS
@@ -1054,6 +1191,14 @@ This sets the default web id. Omniadmin users must belong to the company with th
 This sets the default home URL of the portal.
 
 	company.default.home.url=/web/guest
+	
+This sets the default locale of the portal.
+
+    company.default.locale=en_US
+
+This sets the default time zone of the portal.
+
+    company.default.time.zone=GMT
 
 Set this to the appropriate encryption algorithm to be used for company level encryption algorithms (except password encryption which is defined via the property `passwords.encryption.algorithm`).
 
@@ -1250,7 +1395,11 @@ Input a list of questions used for reminder queries.
 
 	users.reminder.queries.questions=what-is-your-primary-frequent-flyer-number,what-is-your-library-card-number,what-was-your-first-phone-number,what-was-your-first-teacher's-name,what-is-your-father's-middle-name
 
-Set this to `true` to search users from the index. Set this to `false` to search users from the database. Note that setting this to `false` will disable the ability to search users based on Expando attributes.
+Set this to false to disable the user indexer.
+
+	users.indexer.enabled=true
+
+Set this to `true` to search users from the index. Set this to `false` to search users from the database. Note that setting this to `false` will disable the ability to search users based on Expando attributes. This setting is not used unless the property "users.indexer.enabled" is set to true.
 
 	users.search.with.index=true
 
@@ -1407,13 +1556,16 @@ Set this property to `true` to allow user groups to be a member of
 organizations.
 
 	organizations.user.group.membership.enabled=true
+	
+Set this to false to disable the organization indexer.
 
-Set this to `true` to search organizations from the index. Set this to `false` to search organizations from the database. Note that setting this to `false` will disable the ability to search organizations based on Expando attributes.
+	organizations.indexer.enabled=true
+
+Set this to `true` to search organizations from the index. Set this to `false` to search organizations from the database. Note that setting this to `false` will disable the ability to search organizations based on Expando attributes. This setting is not used unless the property `organizations.indexer.enabled` is set to `true`.
 
 	organizations.search.with.index=true
 	
 #### User Groups
-
     
 Set this to `true` when you want the validation to allow for creation of user groups with numeric names.
     
@@ -1673,11 +1825,9 @@ By default, `com.liferay.portal.security.jaas.PortalLoginModule` loads the corre
 
 	portal.jaas.impl=
 
-
 The JAAS process may pass in an encrypted password and the authentication will only succeed if there is an exact match. Set this property to `false` to relax that behavior so the user can input an unencrypted password.
 
 	portal.jaas.strict.password=false
-
 
 Set this to `true` to enable administrators to impersonate other users.
 
@@ -1685,9 +1835,15 @@ Set this to `true` to enable administrators to impersonate other users.
 
 #### Security Manager
 
-Set this to `true` to use Liferay's `java.lang.SecurityManager` implementation. This should never be set to `true` except for debugging purposes.
+Set this property to `default` to use the default security manager configured by the application server. A security manager will not be used if the application server did not configure one.
 
-	portal.security.manager.enable=false
+Set this property to `liferay` to use Liferay's security manager if the application server has not configured a security manager.
+
+Set this property to `none` to explicitly remove the security manager regardless of whether one is configured. This ensures that the portal is run in a JVM without a security manager.
+
+Set this property to `smart` to allow the portal decide which strategy to use based on which application server it is on.
+
+	portal.security.manager.strategy=smart
 
 #### LDAP
 
@@ -1696,7 +1852,7 @@ Set the values used to connect to a LDAP store.
 	ldap.factory.initial=com.sun.jndi.ldap.LdapCtxFactory
 	ldap.referral=follow
 
-Settings for `com.liferay.portal.security.auth.LDAPAuth` can be configured from the Admin portlet. It provides out of the box support for Apache Directory Server, Microsoft Active Directory Server, Novell eDirectory, and OpenLDAP. The default settings are for Apache Directory Server.
+Settings for `com.liferay.portal.security.auth.LDAPAuth` can be configured from the Admin portlet. It provides out-of-the box support for Apache Directory Server, Microsoft Active Directory Server, Novell eDirectory, and OpenLDAP. The default settings are for Apache Directory Server.
 
 The `LDAPAuth` class must be specified in the property `auth.pipeline.pre` to be executed.
 
@@ -1705,7 +1861,7 @@ Encryption is implemented by `com.liferay.util.Encryptor.provider.class` in `sys
 	ldap.auth.enabled=false
 	ldap.auth.required=false
 
-Set the page size for directory servers that supports paging. This value needs to be `1000` or less for Microsoft Active Directory Server.
+Set the page size for directory servers that support paging. This value needs to be `1000` or less for Microsoft Active Directory Server.
 
 	ldap.page.size=1000
 
@@ -1935,10 +2091,15 @@ Set this to `true` to log out the user from CAS when the portal session expires.
 
 Set this to `true` to enable NTLM single sign on. NTLM will work only if LDAP authentication is also enabled and the authentication is made by screen name. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.NtlmAutoLogin` and the filter `com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter` must be referenced in `web.xml`.
 
+Negotiate flags are set according to the the client's requested capabilities and the server's ServerCapabilities.
+
+See the following link: [http://msdn.microsoft.com/en-us/library/cc717152%28v=PROT.10%29.aspx](http://msdn.microsoft.com/en-us/library/cc717152%28v=PROT.10%29.aspx)
+
 	ntlm.auth.enabled=false
 	ntlm.auth.domain.controller=127.0.0.1
 	ntlm.auth.domain.controller.name=EXAMPLE
 	ntlm.auth.domain=EXAMPLE
+	ntlm.auth.negotiate.flags=0x600FFFFF
 	ntlm.auth.service.account=LIFERAY$@EXAMPLE.COM
 	ntlm.auth.service.password=test
 
@@ -1973,7 +2134,6 @@ Set this to `true` if you want to import the users from LDAP after successful lo
 	open.sso.email.address.attr=mail
 	open.sso.first.name.attr=givenname
 	open.sso.last.name.attr=sn
-
 
 Set this to `true` to log out the user off OpenSSO when the portal session expires.
 
@@ -2124,12 +2284,12 @@ Enter a list of comma delimited paths that do not require authentication.
 		\
 		/polls/view_chart,\
 		\
-		/portal/ee/license,\
 		/portal/emoticons,\
 		/portal/expire_session,\
 		/portal/extend_session,\
 		/portal/extend_session_confirm,\
 		/portal/json_service,\
+		/portal/license,\
 		/portal/logout,\
 		/portal/open_id_request,\
 		/portal/open_id_response,\
@@ -2180,6 +2340,7 @@ Input a list of comma delimited struts actions that will not be checked for an a
 		/document_library/edit_file_entry,\
 		/document_library/edit_file_entry_discussion,\
 		\
+		/document_library_display/edit_file_entry,\
 		/document_library_display/edit_file_entry_discussion,\
 		\
 		/journal/edit_article_discussion,\
@@ -2187,6 +2348,7 @@ Input a list of comma delimited struts actions that will not be checked for an a
 		\
 		/journal_content/edit_article_discussion,\
 		\
+		/image_gallery_display/edit_file_entry,\
 		/image_gallery_display/edit_image,\
 		\
 		/login/login,\
@@ -2520,14 +2682,14 @@ Servlet service event (the pre-service events have an associated error page and 
 
 *Examples:* 
  
-	servlet.service.events.pre=com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.ThemeServicePreAction
-	servlet.service.events.pre=com.liferay.portal.events.LogMemoryUsageAction,com.liferay.portal.events.LogThreadCountAction,com.liferay.portal.events.ServicePreAction
-	servlet.service.events.pre=com.liferay.portal.events.LogSessionIdAction,com.liferay.portal.events.ServicePreAction
-	servlet.service.events.pre=com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.RandomLayoutAction
-	servlet.service.events.pre=com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.RandomLookAndFeelAction
-	servlet.service.events.pre=com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.SecureRequestAction
-	servlet.service.events.pre.error.page=/common/error.jsp
-	servlet.service.events.post=com.liferay.portal.events.ServicePostAction
+	servlet.service.events.pre=com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.DeviceServicePreAction,com.liferay.portal.events.ThemeServicePreAction
+    servlet.service.events.pre=com.liferay.portal.events.LogMemoryUsageAction,com.liferay.portal.events.LogThreadCountAction,com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.DeviceServicePreAction,com.liferay.portal.events.ThemeServicePreAction
+    servlet.service.events.pre=com.liferay.portal.events.LogSessionIdAction,com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.DeviceServicePreAction,com.liferay.portal.events.ThemeServicePreAction
+    servlet.service.events.pre=com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.DeviceServicePreAction,com.liferay.portal.events.ThemeServicePreAction,com.liferay.portal.events.RandomLayoutAction
+    servlet.service.events.pre=com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.DeviceServicePreAction,com.liferay.portal.events.ThemeServicePreAction,com.liferay.portal.events.RandomLookAndFeelAction
+    servlet.service.events.pre=com.liferay.portal.events.ServicePreAction,com.liferay.portal.events.DeviceServicePreAction,com.liferay.portal.events.ThemeServicePreAction,com.liferay.portal.events.SecureRequestAction
+    servlet.service.events.pre.error.page=/common/error.jsp
+    servlet.service.events.post=com.liferay.portal.events.ServicePostAction
 
 Login event
 
@@ -2767,7 +2929,7 @@ Set the list of layout types. The display text of each of the layout types is se
 
 You can create new layout types and specify custom settings for each layout type. End users input dynamic values as designed in the edit page. End users see the layout as designed in the view page. The generated URL can reference properties set in the edit page. Parentable layouts can contain child layouts. You can also specify a comma delimited list of configuration actions that will be called for your layout when it is updated or deleted.
 
-	layout.types=portlet,panel,embedded,article,url,link_to_layout
+	layout.types=portlet,panel,embedded,url,link_to_layout
 
 Input a list of sections that will be included as part of the layout form when adding a layout.
 
@@ -2775,11 +2937,11 @@ Input a list of sections that will be included as part of the layout form when a
 
 Input a list of sections that will be included as part of the layout form when updating a layout.
 
-	layout.form.update=details,seo,look-and-feel,layout,javascript,custom-fields,advanced
+	layout.form.update=details,seo,look-and-feel,layout,javascript,custom-fields,advanced,mobile-rule-groups
 
 Input a list of sections that will be included as part of the layout set form when updating a layout set.
 
-	layout.set.form.update=look-and-feel,logo,javascript,advanced
+	layout.set.form.update=look-and-feel,logo,javascript,advanced,mobile-rule-groups
 
 Set whether or not private layouts are enabled. Set whether or not private layouts are modifiable. Set whether or not private layouts should be auto created if a user has no private layouts. If private layouts are not enabled, the other two properties are assumed to be `false`.
 
@@ -3042,6 +3204,10 @@ JSR 286 specifies that portlet URLs are escaped by default. Set this to `false` 
 If this is set to `true`, but a specific portlet application requires that its portlet URLs not be escaped by default, then modify `portlet.xml` and set the container runtime option `javax.portlet.escapeXml` to `false`.
 
 	portlet.url.escape.xml=false
+	
+Set a list of comma delimited reserved parameters that will not be added to refresh URL.
+
+	portlet.url.refresh.url.reserved.parameters=password,password1,password2,pop3Password,properties--jdbc.default.password,settings--google.apps.password,smtpPassword,settings--ldap.security.credentials
 
 #### Preferences
 
@@ -3076,7 +3242,7 @@ Input the custom Struts request processor that will be used by Struts based port
 
 Set this to `true` if the Image servlet will automatically scale an image based on the request `height` and `width` parameters.
 
-	image.auto.scale=true
+	image.auto.scale=false
 
 Set the location of the default spacer image that is used for missing images. This image must be available in the class path.
 
