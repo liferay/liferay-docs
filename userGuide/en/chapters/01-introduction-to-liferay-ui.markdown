@@ -132,11 +132,11 @@ Before we dive into the user interface for adding and maintaining various portal
 
 A simple way to think about this is that your portal has users and various ways to group them together. Some of these groupings may be organized hierarchically by an administrator. These are called organizations. An administrator can also create more ad hoc groupings of users called user groups. User groups can be composed of users who do not fit into a particular hierarchy or who belong to different organizations. Other groupings may be created by the users themselves. For example, users from different organizations could create a site called “Dog Lovers” and allow anyone to join. The site would not fit into an organizational hierarchy; it would just serve a common interest in dogs. Administrators can create teams within sites. The following figure illustrates how users can be grouped in Liferay Portal: users can belong to sites, organizations, and user groups and user groups can belong to sites and organizations.
 
-![Figure 1.8: Liferay's User Collection Model](../../images/user-permissions-Collections-of-Users.png)
+![Figure 1.8: Liferay's User Collection Model](../../images/user-collections-diagram-web.png)
 
 Liferay manages permissions for users and collections of users via roles. Roles can be scoped to grant permissions within a particular organization or site. They can also be scoped to customize permissions that cut across the entire portal. For example, a Message Boards Administrator role could be created that grants permissions to administer any message board in the portal. Users from multiple organizations or sites could be assigned to this role. Alternatively, a similar role could be created that grants those permissions only for a particular organization or site. Roles provide a powerful mechanism for administrators to configure portal resources and security in a consistent and robust manner. The figure below illustrates permissions defined by roles for users and collections of users. Permissions can't be directly assigned to users. Users receive their permissions from roles, either directly, or from an organization, user group, or site.
 
-![Figure 1.8: Liferay's Permissions Model](../../images/user-permissions-Permissions.png)
+![Figure 1.8: Liferay's Permissions Model](../../images/user-permissions-diagram-web.png)
 
 Teams belong to individual sites. Roles that appear inside sites are scoped just for sites. This means that although each site in the portal may have access to a particular role with its configured permissions, membership in this role can be different for each site and the granted permissions only apply within one site.
 
