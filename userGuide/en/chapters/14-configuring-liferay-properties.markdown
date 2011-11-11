@@ -3327,7 +3327,7 @@ Set all three values if all users can edit the specified field. Set a combinatio
 
 Input a list of comma delimited extensions for which the content disposition header has to be set to `inline`.
 
-	mime.types.content.disposition.inline=flv,pdf,swf,wmv
+	mime.types.content.disposition.inline=flv,gif,jpg,pdf,png,swf,wmv
 
 #### Amazon
 
@@ -3537,6 +3537,34 @@ Set the multi value map property to `0` to store the map in memory and `1` to st
 
 	multi.value.map.com.liferay.portal.convert.ConvertPermissionAlgorithm.convertResourcePermission=0
 	multi.value.map.com.liferay.portal.convert.ConvertPermissionAlgorithm.convertRoles=0
+	
+#### Setup Wizard
+
+Set a comma delimited list of supported databases.
+
+	setup.database.types=db2,derby,ingres,mysql,oracle,postgresql,sqlserver,sybase
+
+	setup.database.driverClassName[db2]=com.ibm.db2.jcc.DB2Driver
+	setup.database.driverClassName[derby]=org.apache.derby.jdbc.EmbeddedDriver
+	setup.database.driverClassName[ingres]=com.ingres.jdbc.IngresDriver
+	setup.database.driverClassName[mysql]=com.mysql.jdbc.Driver
+	setup.database.driverClassName[oracle]=oracle.jdbc.driver.OracleDriver
+	setup.database.driverClassName[postgresql]=org.postgresql.Driver
+	setup.database.driverClassName[sqlserver]=net.sourceforge.jtds.jdbc.Driver
+	setup.database.driverClassName[sybase]=net.sourceforge.jtds.jdbc.Driver
+
+	setup.database.url[db2]=jdbc:db2://localhost:50000/lportal:deferPrepares=false;fullyMaterializeInputStreams=true;fullyMaterializeLobData=true;progresssiveLocators=2;progressiveStreaming=2;
+	setup.database.url[derby]=jdbc:derby:lportal
+	setup.database.url[ingres]=jdbc:ingres://localhost:II7/lportal
+	setup.database.url[mysql]=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+	setup.database.url[oracle]=jdbc:oracle:thin:@localhost:1521:xe
+	setup.database.url[postgresql]=jdbc:postgresql://localhost:5432/lportal
+	setup.database.url[sqlserver]=jdbc:jtds:sqlserver://localhost/lportal
+	setup.database.url[sybase]=jdbc:jtds:sybase://localhost:5000/lportal
+
+Set this property to true if the Setup Wizard should be displayed the first the portal is started.
+
+	setup.wizard.enabled=false	
 
 #### SourceForge
 
@@ -3597,9 +3625,6 @@ Entity level caching for a specific type of value object can be configured by us
 
 	value.object.entity.cache.enabled.com.liferay.portal.model.Layout=true
 	value.object.entity.cache.enabled.com.liferay.portal.model.User=true
-	value.object.entity.cache.enabled.com.liferay.portlet.social.model.SocialEquityAssetEntry=false
-	value.object.entity.cache.enabled.com.liferay.portlet.social.model.SocialEquityLog=false
-	value.object.entity.cache.enabled.com.liferay.portlet.social.model.SocialEquityUser=false
 
 Set this to `true` to enable finder level caching.
 
@@ -3617,9 +3642,6 @@ Finder level caching for a specific type of value object can be configured by us
 
 	value.object.finder.cache.enabled.com.liferay.portal.model.Layout=true
 	value.object.finder.cache.enabled.com.liferay.portal.model.User=true
-	value.object.finder.cache.enabled.com.liferay.portlet.social.model.SocialEquityAssetEntry=false
-	value.object.finder.cache.enabled.com.liferay.portlet.social.model.SocialEquityLog=false
-	value.object.finder.cache.enabled.com.liferay.portlet.social.model.SocialEquityUser=false
 	value.object.finder.cache.enabled.Users_Roles=true
 
 #### Audit Message
@@ -3772,7 +3794,7 @@ The GZip filter will compress files using the specified compression level. Set t
 
 #### HTTP
 
-See system.properties for more HTTP settings.
+See `system.properties` for more HTTP settings.
 
 Set the maximum number of connections per host.
 
@@ -3830,6 +3852,8 @@ Do not set this property to `false` in production environments. It overrides the
 
 #### ImageMagick
 
+Set this to `true` to enable ImageMagick. You must install Ghostscript and Imagemagick. See [http://www.ghostscript.com](http://www.ghostscript.com) and [http://www.imagemagick.org](http://www.imagemagick.org) for more information.
+
     imagemagick.enabled=false
     imagemagick.global.search.path[apple]=/opt/local/bin
     imagemagick.global.search.path[unix]=/usr/local/bin
@@ -3846,6 +3870,7 @@ The invoker filter will attempt to cache `InvokerFilterChain` objects based on t
 Liferay includes Jackrabbit [http://jackrabbit.apache.org](http://jackrabbit.apache.org) by default as its JSR-170 Java Content Repository.
 
     jcr.initialize.on.startup=false
+    jcr.wrap.session=true
 
     jcr.workspace.name=liferay
     jcr.node.documentlibrary=documentlibrary
@@ -3878,10 +3903,13 @@ Set this to `true` to enable tracking via Live Users.
 
 Set the lock expiration time for each class.
 
-Locks for document library folders and files should expire after 1 day.
+Locks for document library folders should expire after 1 day.
 
 	lock.expiration.time.com.liferay.portlet.documentlibrary.model.DLFolder=86400000
-	lock.expiration.time.com.liferay.portlet.documentlibrary.model.DLFileEntry=86400000
+	
+Locks for document library files should never expire.
+	
+	lock.expiration.time.com.liferay.portlet.documentlibrary.model.DLFileEntry=0
 
 Locks for message board threads should never expire.
 
@@ -4088,6 +4116,81 @@ Specify the file extensions of files to allow conversions to. Entries must be li
 	openoffice.conversion.target.extensions[spreadsheet]=csv,ods,pdf,sxc,tsv,xls
 	openoffice.conversion.target.extensions[text]=doc,odt,pdf,rtf,sxw,txt
 
+#### OSGi
+
+Set this property to true to enable OSGi. Set this to false for compatibility with older application servers.
+
+	osgi.enabled=false
+
+Set the OSGi framework beginning start level. The framework will proceed to this start level before the Spring context is initialized.
+
+	osgi.framework.beginning.start.level=6
+
+Set the OSGi framework runtime start level. The framework will proceed to this start level after the Spring context is initialized.
+
+	osgi.framework.runtime.start.level=10
+
+Set the directory where the OSGi framework will store it's files.
+
+	osgi.framework.storage=${liferay.home}/data/osgi
+
+Set this to true to register Liferay's services into the OSGi framework.
+
+	osgi.register.liferay.services=true
+
+Set a comma delimited list of java packages that are exported to the OSGi framework as bundle symbolic names.
+
+	osgi.system.bundle.export.packages=\
+        com.liferay.portal.impl,\
+        com.liferay.portal.service,\
+        com.liferay.util.bridges,\
+        com.liferay.util.java,\
+        com.liferay.util.taglib,\
+        org.springframework.aop,\
+        org.springframework.asm,\
+        org.springframework.aspects,\
+        org.springframework.beans,\
+        org.springframework.context,\
+        org.springframework.context.support,\
+        org.springframework.core,\
+        org.springframework.expression,\
+        org.springframework.jdbc,\
+        org.springframework.jms,\
+        org.springframework.orm,\
+        org.springframework.oxm,\
+        org.springframework.transaction,\
+        org.springframework.web,\
+        org.springframework.web.portlet,\
+        org.springframework.web.servlet,\
+        org.springframework.web.struts
+
+Set a comma delimited list of java packages that are exported to the OSGi framework as extra system packages.
+
+    osgi.system.packages.extra=\
+        javax.annotation;version="1.0",\
+        javax.annotation.security;version="1.0",\
+        javax.el;version="2.2",\
+        javax.mail;version="1.4",\
+        javax.mail.event;version="1.4",\
+        javax.mail.internet;version="1.4",\
+        javax.mail.search;version="1.4",\
+        javax.mail.util;version="1.4",\
+        javax.portlet;version="2.0",\
+        javax.portlet.filter;version="2.0",\
+        javax.servlet;version="3.0.0",\
+        javax.servlet.annotation;version="3.0.0",\
+        javax.servlet.descriptor;version="3.0.0",\
+        javax.servlet.http;version="3.0.0",\
+        javax.servlet.jsp;version="2.2",\
+        javax.servlet.jsp.el;version="2.2",\
+        javax.servlet.jsp.tagext;version="2.2",\
+        org.aopalliance.aop,\
+        org.aopalliance.intercept,\
+        org.apache.commons.logging;version="1.1.1",\
+        org.slf4j;version="1.5.11",\
+        org.slf4j.helpers;version="1.5.11",\
+        org.slf4j.spi;version="1.5.11"	
+	
 #### Poller
 
 Specify the notification events timout in milliseconds. This prevents the poller from locking up the application server.
@@ -4194,16 +4297,22 @@ Set the compile mode for the JRuby scripting engine.
 
 Set the threshold at which methods will be compiled when `jit` compile mode is enabled.
 
-	scripting.jruby.compile.threshold=50
+	scripting.jruby.compile.threshold=5
 
 Set the load paths for the jruby engine. These paths allow jruby to locate gems and ruby code libraries in the classpath.
 
-	scripting.jruby.load.paths=\
+    scripting.jruby.load.paths=\
         META-INF/jruby.home/lib/ruby/site_ruby/1.8,\
         META-INF/jruby.home/lib/ruby/site_ruby/shared,\
         META-INF/jruby.home/lib/ruby/1.8,\
-        gems/haml-3.0.25/lib,\
-        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/haml-3.0.25/lib	
+        gems/chunky_png-1.2.1/lib,\
+        gems/compass-0.11.5/lib,\
+        gems/fssm-0.2.7/lib,\
+        gems/sass-3.1.7/lib,\
+        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/chunky_png-1.2.1/lib,\
+        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/compass-0.11.5/lib,\
+        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/fssm-0.2.7/lib,\
+        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/sass-3.1.7/lib	
 
 #### Search Container
 
@@ -4242,12 +4351,29 @@ Set the file names used for the auto generated sprites. The default file name us
 
 	sprite.file.name=_sprite.png
 	sprite.properties.file.name=_sprite.properties
+	
+Set the root directory for the autogenerated sprites. Not setting the directory means that generated sprites reside in the same location as the original source images.
+
+	sprite.root.dir=	
 
 #### Strip
 
 Enter a list of comma delimited paths that should not have its content stripped by the strip filter.
 
 	strip.ignore.paths=/document_library/get_file	
+	
+#### Social Activity
+
+Set the length of the counter period for social activities. The value is in a number of days or the special keyword "month" to specify a month.
+
+	social.activity.counter.period.length=month
+
+Enter a list of comma separated values to use in drop down lists in the Social Activity portlet.
+
+	social.activity.contribution.increments=0,1,2,3,4,5,10,20,50,100
+	social.activity.contribution.limit.values=0,1,2,3,4,5,10,20
+	social.activity.participation.increments=0,1,2,3,4,5,10,20,50,100
+	social.activity.participation.limit.values=0,1,2,3,4,5,10,20	
 	
 #### Social Bookmarks
 
@@ -4258,16 +4384,6 @@ The Blogs portlet allows for the posting of entries to various popular social bo
     social.bookmark.jsp[facebook]=/html/taglib/ui/social_bookmark/facebook.jsp
     social.bookmark.jsp[plusone]=/html/taglib/ui/social_bookmark/plusone.jsp
     social.bookmark.jsp[twitter]=/html/taglib/ui/social_bookmark/twitter.jsp
-
-#### Social Equity
-
-Set the interval on which the `CheckEquityLogMessageListener` will run. The value is set in one minute increments.
-
-	social.equity.equity.log.check.interval=1440
-
-Set this to `true` to enable social equity logs.
-
-	social.equity.equity.log.enabled=true
 
 #### Text Extraction
 
@@ -4572,6 +4688,10 @@ Set this to `true` to enable support for legacy proxy servers (Apache 1.x).
 Set a list of files for the WebDAV servlet to ignore processing.
 
 	webdav.ignore=.DS_Store,.metadata_index_homes_only,.metadata_never_index,.Spotlight-V100,.TemporaryItems,.Trashes,Backups.backupdb
+	
+Specify the number of minutes before a generated nonce expires. When a client contacts the server with an expired nonce, the server will send back a HTTP error 401 with stale=true.
+
+	webdav.nonce.expiration=30	
 
 #### Main Servlet
 
@@ -4645,6 +4765,12 @@ See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required
 
 	webdav.servlet.hosts.allowed=
 	webdav.servlet.https.required=false
+	
+#### Web Server Servlet
+
+Set this property to `true` to enable directory indexing.
+
+	web.server.servlet.directory.indexing.enabled=false	
 
 #### Widget Servlet
 
@@ -4705,8 +4831,8 @@ Configure email notification settings.
 
 Configure email notification settings.
 
-	announcements.email.from.name=Joe Bloggs
-	announcements.email.from.address=test@liferay.com
+	announcements.email.from.name=
+	announcements.email.from.address=
 
 	announcements.email.to.name=
 	announcements.email.to.address=noreply@liferay.com
@@ -4776,8 +4902,8 @@ Input a list of comma separated display styles that will be available in the con
 
 Configure email notification settings.
 
-	blogs.email.from.name=Joe Bloggs
-	blogs.email.from.address=test@liferay.com
+	blogs.email.from.name=
+	blogs.email.from.address=
 
 	blogs.email.entry.added.enabled=true
 	blogs.email.entry.added.subject=com/liferay/portlet/blogs/dependencies/email_entry_added_subject.tmpl
@@ -4865,8 +4991,8 @@ Set this to `true` to enable comments for calendar events.
 
 Configure email notification settings.
 
-	calendar.email.from.name=Joe Bloggs
-	calendar.email.from.address=test@liferay.com
+	calendar.email.from.name=
+	calendar.email.from.address=
 
 	calendar.email.event.reminder.enabled=true
 	calendar.email.event.reminder.subject=com/liferay/portlet/calendar/dependencies/email_event_reminder_subject.tmpl
@@ -4890,8 +5016,16 @@ Set the thread view for discussion comments. This will affect Blogs, Document Li
 
 	discussion.thread.view=combination
 	discussion.thread.view=flat
+	
+Set this property to `true` if users can edit their own discussion comments even if they do not have the permissions defined through Site Members role.
+
+    discussion.comments.always.editable.by.owner=false	
 
 #### Document Library Portlet
+
+Set this property to `true` to enable execution of antivirus check when files are submitted into a store. Setting this value to `true` will prevent any potential virus files from entering the store but will not allow for file quarantines.
+
+	dl.store.antivirus.enabled=false
 
 Set the name of a class that implements `com.liferay.portlet.documentlibrary.antivirus.AntivirusScanner`. The document library server will use this to scan documents for viruses.
 
@@ -4906,6 +5040,7 @@ Set the name of a class that implements `com.liferay.portlet.documentlibrary.sto
 
 	dl.store.impl=com.liferay.portlet.documentlibrary.store.AdvancedFileSystemStore
 	dl.store.impl=com.liferay.portlet.documentlibrary.store.CMISStore
+	dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
 	dl.store.impl=com.liferay.portlet.documentlibrary.store.FileSystemStore
 	dl.store.impl=com.liferay.portlet.documentlibrary.store.JCRStore
 	dl.store.impl=com.liferay.portlet.documentlibrary.store.S3Store
@@ -4997,6 +5132,8 @@ Set this to `true` to enable drafts for document library files.
 
 Input a list of comma delimited class names that implement `com.liferay.portlet.documentlibrary.util.DLProcessor`. These classes will trigger asynchronous processing for document library files.
 
+`com.liferay.portlet.documentlibrary.util.PDFProcessor` will process all PDF files and, if OpenOffice is enabled, all formats convertable to PDF. Image generation will use PDFBox by default unless ImageMagick is enabled. PDFBox is less accurate in image generation and has trouble with certain fonts.
+
 	dl.file.entry.processors=com.liferay.portlet.documentlibrary.util.AudioProcessor,com.liferay.portlet.documentlibrary.util.ImageProcessor,com.liferay.portlet.documentlibrary.util.PDFProcessor,com.liferay.portlet.documentlibrary.util.RawMetadataProcessor,com.liferay.portlet.documentlibrary.util.VideoProcessor
 
 Set this to `true` to enable the read count for document library files.
@@ -5015,28 +5152,40 @@ Set this to the maximum number of file ranks to maintain.
 
 	dl.file.rank.max.size=5
 
-Set the values related to preview and thumbnail generation for document library files. Image generation will occur for all PDF files and, if OpenOffice is enabled, for formats convertable to PDF.
+Set the values related to preview and thumbnail generation for document library files. The classes enabled under `dl.file.entry.processors` will utilize these parameters to generate the necessary files.
 
-Image generation will use PDFBox by default unless ImageMagick is enabled. PDFBox is less accurate in image generation and has trouble with certain fonts.
+Some parameters are applied universally across all processors (e.g., `dl.file.entry.thumbnail.max.height`) while others are specific to certain types of generation, as specified (e.g., `dl.file.entry.thumbnail.document.depth`).
 
-See the properties `imagemagick.enabled` and `openoffice.server.enabled`.
+See the properties `imagemagick.enabled`, `openoffice.server.enabled`, and `xuggler.enabled`.
+
+*Examples:*
 
 	dl.file.entry.preview.enabled=true
-	dl.file.entry.preview.document.depth=8
-	dl.file.entry.preview.document.dpi=300
-	dl.file.entry.preview.document.height=0
-	dl.file.entry.preview.document.width=1000
-	dl.file.entry.preview.video.height=360
-	dl.file.entry.preview.video.width=640
-	dl.file.entry.thumbnail.enabled=true
-	dl.file.entry.thumbnail.dpi=72
-	dl.file.entry.thumbnail.height=128
-	dl.file.entry.thumbnail.width=128
-	dl.file.entry.thumbnail.depth=8
+    dl.file.entry.preview.document.depth=8
+    dl.file.entry.preview.document.dpi=300
+    dl.file.entry.preview.document.max.height=0
+    dl.file.entry.preview.document.max.width=1000
+    dl.file.entry.preview.video.height=360
+    dl.file.entry.preview.video.width=640
+    dl.file.entry.thumbnail.enabled=true
+    dl.file.entry.thumbnail.max.height=128
+    dl.file.entry.thumbnail.max.width=128
+    dl.file.entry.thumbnail.custom1.max.height=100
+    dl.file.entry.thumbnail.custom1.max.width=100
+    dl.file.entry.thumbnail.custom2.max.height=0
+    dl.file.entry.thumbnail.custom2.max.width=0
+    dl.file.entry.thumbnail.document.depth=8
+    dl.file.entry.thumbnail.document.dpi=72
+    dl.file.entry.thumbnail.video.frame.percentage=25
 
-Input a list of comma delimited audio MIME types that will trigger generation of video previews.
+Input a list of comma delimited audio MIME types that will trigger
+generation of video previews.
 
 	dl.file.entry.preview.audio.mime.types=audio/basic,audio/mid,audio/midi,audio/mod,audio/mp3,audio/mpeg,audio/mpeg3,audio/wav,audio/x-mid,audio/x-midi,audio/x-mod,audio/x-mpeg,audio/x-pn-realaudio,audio/x-realaudio,audio/x-wav
+
+Input a list of comma delimited video MIME types that will trigger generation of image previews.
+
+	dl.file.entry.preview.image.mime.types=image/bmp,image/gif,image/jpeg,image/png,image/tiff,image/x-ms-bmp,image/x-tiff
 
 Input a list of comma delimited video MIME types that will trigger generation of video previews.
 
@@ -5056,7 +5205,11 @@ Sets the depth of mapped CMIS entries to remove when a deletion is called from w
 
 Set the list of supported display views.
 
-	dl.display.views=list,icon,descriptive
+	dl.display.views=icon,descriptive,list
+	
+Set the default display view.
+
+	dl.default.display.view=icon
 
 #### Dockbar Portlet
 
@@ -5112,8 +5265,8 @@ Input a list of questions used for flag reasons.
 
 Configure email notification settings.
 
-	flags.email.from.name=Joe Bloggs
-	flags.email.from.address=test@liferay.com
+	flags.email.from.name=
+	flags.email.from.address=
 
 	flags.email.subject=com/liferay/portlet/flags/dependencies/email_flag_subject.tmpl
 	flags.email.body=com/liferay/portlet/flags/dependencies/email_flag_body.tmpl
@@ -5135,32 +5288,6 @@ Specify a role name that a user must be associated with in order to configure th
 No role is required by default. However, it is recommended that you specify a role in high security environments where users who configure this portlet may attempt password theft. See [http://issues.liferay.com/browse/LPS-5272](http://issues.liferay.com/browse/LPS-5272) for more information.
 
 	iframe.password.token.role=
-
-#### Image Gallery Portlet
-
-Set the maximum file size and valid file extensions for images. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
-
-	ig.image.max.size=10240000
-
-A file extension of `*` will permit all file extensions.
-
-	ig.image.extensions=.bmp,.gif,.jpeg,.jpg,.png,.tif,.tiff
-
-Set the maximum thumbnail height and width in pixels. Set dimension of the custom images to `0` to disable creating a scaled image of that size.
-
-*Examples:*
-
-	ig.image.thumbnail.max.dimension=130
-	ig.image.custom1.max.dimension=100
-	ig.image.custom2.max.dimension=0
-
-Input a list of comma delimited image MIME types that will trigger generation of image thumbnails.
-
-	ig.image.thumbnail.mime.types=image/gif,image/jpeg,image/png,image/tiff,image/x-tiff,image/bmp
-
-Set this to `true` if image gallery should be published to live by default.
-
-	ig.publish.to.live.by.default=true
 	
 #### Invitation Portlet
 
@@ -5281,7 +5408,7 @@ Enter a list of regular expression patterns and replacements that will be applie
 	journal.transformer.regex.pattern.1=staging.sample.com
 	journal.transformer.regex.replacement.1=production.sample.com
 
-Set this to `true` if journals should be published to live by default.
+Set this to `true` if journal articles should be published to live by default.
 
 	journal.publish.to.live.by.default=true
 
@@ -5289,11 +5416,10 @@ Set whether to synchronize content searches when the server starts.
 
 	journal.sync.content.search.on.startup=false
 
-
 Configure email notification settings.
 
-	journal.email.from.name=Joe Bloggs
-	journal.email.from.address=test@liferay.com
+	journal.email.from.name=
+	journal.email.from.address=
 
 	journal.email.article.added.enabled=false
 	journal.email.article.added.subject=com/liferay/portlet/journal/dependencies/email_article_added_subject.tmpl
@@ -5349,8 +5475,8 @@ Set whether unlisted articles are excluded from search results.
 
 Configure email notification settings.
 
-	login.email.from.name=Joe Bloggs
-	login.email.from.address=test@liferay.com
+	login.email.from.name=
+	login.email.from.address=
 
 Set this to `true` to allow the user to choose a password during account creation.
 
@@ -5360,8 +5486,8 @@ Set this to `true` to allow the user to choose a password during account creatio
 
 Configure email notification settings.
 
-	message.boards.email.from.name=Joe Bloggs
-	message.boards.email.from.address=test@liferay.com
+	message.boards.email.from.name=
+	message.boards.email.from.address=
 	message.boards.email.html.format=true
 
 	message.boards.email.message.added.enabled=true
@@ -5525,8 +5651,8 @@ Input a list of sections that will be included as part of the form when updating
 
 Configure email notification settings.
 
-	sites.email.from.name=Joe Bloggs
-	sites.email.from.address=test@liferay.com
+	sites.email.from.name=
+	sites.email.from.address=
 
 	sites.email.membership.reply.subject=com/liferay/portlet/sites/dependencies/email_membership_reply_subject.tmpl
 	sites.email.membership.reply.body=com/liferay/portlet/sites/dependencies/email_membership_reply_body.tmpl
@@ -5564,8 +5690,8 @@ A file extension of `*` will permit all file extensions.
 
 Configure email notification settings.
 
-	shopping.email.from.name=Joe Bloggs
-	shopping.email.from.address=test@liferay.com
+	shopping.email.from.name=
+	shopping.email.from.address=
 
 	shopping.email.order.confirmation.enabled=true
 	shopping.email.order.confirmation.subject=com/liferay/portlet/shopping/dependencies/email_order_confirmation_subject.tmpl
@@ -5670,8 +5796,8 @@ Configure settings for each of the wiki importers.
 
 Configure email notification settings.
 
-	wiki.email.from.name=Joe Bloggs
-	wiki.email.from.address=test@liferay.com
+	wiki.email.from.name=
+	wiki.email.from.address=
 
 	wiki.email.page.added.enabled=true
 	wiki.email.page.added.subject.prefix=com/liferay/portlet/wiki/dependencies/email_page_added_subject_prefix.tmpl
