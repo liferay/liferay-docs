@@ -238,15 +238,15 @@ These instructions assume that you have already configured a domain and server, 
 
 ##### Dependency Jars
 
-1.	Navigate to the folder which corresponds to the domain in which you will be installing Liferay. Inside this folder is a `lib` sub-folder.
+1.	Navigate to the folder which corresponds to the domain in which you will be installing Liferay. Inside this folder is a `lib` sub-folder named `lib` (e.g. `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/lib`).
 
-	Unzip the Liferay dependencies archive so that its `.jar` files are extrated into this `lib` folder. Copy your database's JDBC driver (e.g., mysql.jar) into `lib` as well.
+2.	Unzip the Liferay dependencies archive so that its `.jar` files are extracted into this `lib` folder. Copy your database's JDBC driver (e.g. `mysql.jar`) into `lib` as well.
 
-2.	On GlassFish 3.0.1, you will need to extract `commons-codec.jar` from the Liferay Portal WAR file, rename it to `commons-codec-repackaged.jar`, and copy it into `[Liferay Home]/glassfish/modules/`, overwriting GlassFish's version of the file.
+	Note, on GlassFish 3.0.1, you will need to extract `commons-codec.jar` from the Liferay Portal WAR file, rename it to `commons-codec-repackaged.jar`, and copy it into `[Liferay Home]/glassfish/modules/`, overwriting GlassFish's version of the file.
 
 ##### Domain Configuration
 
-1.  Before starting GlassFish, you will need to modify the settings in your domain to do the following ...
+1.  Before starting GlassFish, you will need to modify your domain's configuration to do the following ...
 
 	- Set the file encoding 
 	- Set the user time-zone 
@@ -254,7 +254,7 @@ These instructions assume that you have already configured a domain and server, 
 	- Prevent the application server from setting static fields (final or non-final) to `null` 
 	- Increase the default amount of memory available.
 
-	In your domain's `config` folder, open the `domain.xml` file and merge the following JVM options into the current list of JVM options within your <java-config> element:
+	Modify `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/domain.xml` merging in the following JVM options into the current list of JVM options within your `<java-config>` element:
 
 		<jvm-options>-Dfile.encoding=UTF8</jvm-options> 
 		<jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options>
@@ -289,13 +289,13 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 4.	Click *New...*.
 
-5.  In the first screen, give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource`, and select your database driver vendor (e.g., *MySQL*).
-
-6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
+5.  In the first screen (Step 1 of 2), give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource`, and select your database driver vendor (e.g. `MySQL`) as follows:
 
 	![Figure 11.x: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
 
-7.  On the this screen (step 2 of 2), scroll down to the *Additional Properties* section.
+6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
+
+7.  On the this screen (Step 2 of 2), scroll down to the *Additional Properties* section.
 
 	![Figure 11.x: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)  
 
@@ -305,7 +305,9 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 		For example,
 
-			jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true                  Note, if you are using the above example, you should specify the name of your database in place of `lportal`. Likewise, if your database is not on the same server as GlassFish, specify your the database server's host name in place of `localhost`. Lastly, specify your database type in place of `jdbc:mysql`.
+			jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true
+	
+		Note, if you are using the above example, you should specify the name of your database in place of `lportal`. Likewise, if your database is not on the same host as GlassFish, specify your the database server's host name in place of `localhost`. Lastly, specify your database type in place of `jdbc:mysql`.
 
 	- **user:** the name of your database user.
 
@@ -317,7 +319,7 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 11. Test your connection by selecting your `LiferayPool` connection pool and clicking *Ping*.
 
-	If you get a message stating  *Ping Succeeded*, you've set up the connection pool of your data source!
+	If you get a message stating  *Ping Succeeded*, you've succeeded in setting up a connection pool of your data source!
 
 13. Now, you'll setup a JDBC resource to refer to the `LiferayPool` connection pool you just created.
 
@@ -329,11 +331,11 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 16. Click *OK*.
 
-Congratulations! You've now configured your domain's data source to manage on GlassFish!
+Congratulations! You've now configured your domain's data source on GlassFish!
 
 ##### Mail Configuration
 
-If you want to use GlassFish to manage your mail session, follow GlassFish's documentation on configuring a JavaMail session. Note, for GlassFish 3.1, this involves using the `asadmin` commandline tool provided with GlassFish. If you want to use Liferay Portal to manage your mail session, you can disregard this section.
+If you want to use GlassFish to manage your mail session, follow GlassFish's documentation on configuring a JavaMail session with a JNDI name of `mail/MailSession`. If you want to use Liferay Portal to manage your mail session, you can skip this step.
 
 ##### Domain Configuration - Continued
 
@@ -341,9 +343,12 @@ If you want to use GlassFish to manage your mail session, follow GlassFish's doc
 
 2.  Create a `portal-ext.properties` file in the *Liferay Home* folder mentioned at the beginning of this GlassFish installation section.
 
-3.	If you are using *Liferay Portal* to manage your data source, add the following directives to the `portal-ext.properties` file:
+3.	If you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file:
 
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver 		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false 		jdbc.default.username=root 		jdbc.default.password=root
+		jdbc.default.driverClassName=com.mysql.jdbc.Driver
+		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+		jdbc.default.username=root
+		jdbc.default.password=root
 
 	Otherwise, if you are using *GlassFish* to manage your data source, add the following to refer to your data source:
 
@@ -373,7 +378,7 @@ If you want to use GlassFish to manage your mail session, follow GlassFish's doc
 
     ![Figure 11.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
 
-Liferay Portal will now be deployed and started automatically to your server's host and port (e.g., [http://localhost:0808](http://localhost:0808/)). Your installation of Liferay Portal on GlassFish is complete!
+Liferay Portal will now be deployed and started automatically to your server's host and port (e.g. [http://localhost:0808](http://localhost:0808/)). Your installation of Liferay Portal on GlassFish is complete!
 
 #### Jetty 6
 
@@ -466,91 +471,232 @@ Liferay Portal will now be deployed and started automatically to your server's h
 
 Start Liferay by running `run.bat`. Open your browser to `http://localhost:8080`. You should see the default Liferay home page.
 
-#### JBoss 5.x
+#### JBoss 7.0.x
 
 **Liferay Home** is one folder above JBoss's install location.
 
-1.  Download and install JBoss AS 5.0.1 GA into your preferred directory. This directory will be referred to below as `$JBOSS_HOME`.
+1.  Download and install JBoss AS 7.0.x into your preferred directory. This directory will be referred to as `$JBOSS_HOME` throughout this section.
 
 2.  Download the latest version of the Liferay Portal `.war` file.
 
-3.  Remove `hibernate-validator.jar` from `$JBOSS_HOME/common/lib.`
+3.	Lastly, download Liferay's Portal Dependencies.
 
-4.  Go to `$JBOSS_HOME/server/default/lib/`. Download `mysql-connector-java-{$version}-bin.jar` and copy to this directory. (This is the JDBC connector for MySQL. Use the appropriate driver for your database.)
+Now that you have all of your installation files, you are ready to start installing and configuring Liferay on JBoss.
 
-5.  Download Liferay's Portal Dependencies. Unzip to `$JBOSS_HOME/server/default/lib`.
+##### Dependency Jars
 
-6.  Configure JAAS. Edit `$JBOSS_HOME/server/default/conf/login-config.xml`* *and comment out the entire XML for policy *other *in lines 115-131.
+Let's work with the depenency jar files first.
 
-    <!--<application-policy name = "other">-->         
-    ...         
-    <!--<authentication> 
-    <login-module code = "org.jboss.security.auth.spi.UsersRolesLoginModule" 
-    flag = "required" /> 
-    </authentication> 
-    </application-policy>-->
+1. Create folder `$JBOSS_HOME/modules/com/liferay/portal/main` and unzip the jar files found in the Liferay Portal Dependencies zip file to this folder. Take care that the zip file's jar files are extracted into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
+
+2.	Create file `modules.xml` to this folder as well and insert the following as its contents. You can comment out or remove `resource-root` elements for database types that are not applicable for your domain.
+
+		<?xml version="1.0"?>
+
+		<module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
+			<resources>
+				<resource-root path="hsql.jar" />
+				<resource-root path="jtds.jar" />
+				<resource-root path="mysql.jar" />
+				<resource-root path="portal-service.jar" />
+				<resource-root path="portlet.jar" />
+				<resource-root path="postgresql.jar" />
+			</resources>
+			<dependencies>
+				<module name="javax.api" />
+				<module name="javax.mail.api" />
+				<module name="javax.servlet.api" />
+				<module name="javax.servlet.jsp.api" />
+				<module name="javax.transaction.api" />
+			</dependencies>
+		</module>
+
+	If you are using a MySQL database, download the MySQL Connector/J driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/) and put the `.jar` file into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder as well.
+
+	Then add a resource root entry for the driver in `modules.xml` similar to the following:
+
+		<resource-root path="mysql-connector-java-5.1.18-bin" />
+		
+Great! You have your Jar files ready for your domain.
+
+##### Domain Configuration
+
+Let's make some adjustments in your configuration to support using Liferay.
+
+We will be specifying your domain's configuration in the XML file `$JBOSS_HOME/standalone/configuration/standalone.xml` for your standalone domain. We'll refer to this file simply as `standalone.xml`. We will also make some modification to your configuration and startup scripts found in the `$JBOSS_HOME/bin/` folder. But let's start with the changes to `standalone.xml`.
+
+1.	Make the following modifications in your `standalone.xml`.
+
+	1. Disable the welcome root of the web subsystem's virtual server default host by specifying `enable-welcome-root="false"`.
+
+			<subsystem xmlns="urn:jboss:domain:web:1.0" default-virtual-server="default-host">
+				<connector name="http" scheme="http" protocol="HTTP/1.1" socket-binding="http"/>
+				<virtual-server name="default-host" enable-welcome-root="false">
+				   <alias name="localhost" />
+				   <alias name="example.com" />
+				</virtual-server>
+			</subsystem>
+			
+	2.	Insert the following `<configuration>` element within the web subsystem element  `<subsystem xmlns="urn:jboss:domain:web:1.0" default-virtual-server="default-host">`.
+
+			<configuration>
+				<jsp-configuration development="true" />
+			</configuration>
+
+	3.	Add a timeout for the deployment scanner by setting `deployment-timeout="120"` as seen in the excerpt below.
+
+			<subsystem xmlns="urn:jboss:domain:deployment-scanner:1.0">
+				<deployment-scanner name="default" path="deployments" scan-enabled="true" scan-interval="5000" relative-to="jboss.server.base.dir" deployment-timeout="120"/>
+			</subsystem>
+
+	4.	Add the JAAS security domain to the security subsystem defined in element `<subsystem xmlns="urn:jboss:domain:security:1.0">`.
+
+			<security-domain name="PortalRealm">
+				<authentication>
+					<login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required"/>
+				</authentication>
+			</security-domain>
+
+	Now it's time for some changes to your configuration and startup scripts.
+		
+2.	Make the following modifications to your standalone domain's configuration script `standalone.conf` file (`standalone.conf.bat` on Windows) found in your `$JBOSS_HOME/bin/` folder.
+
+	-	On Windows, comment out the initial `JAVA_OPTS` assignment as demonstrated in the following line:
+
+			rem set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MaxPermSize=256M
+
+		Then add the following `JAVA_OPTS` assignment one line above the `:JAVA_OPTS_SET` line found at end of the file:
+
+			set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+
+
+	-	On Unix, merge the following values into your settings for `JAVA_OPTS` replacing any matching attributes with the ones found in the assignment below:
+
+			JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
+		
+The prescribed script modifications are now complete for your Liferay installation on JBoss. Next we'll consider the database and mail for your domain.
 
 ##### Database Configuration
 
-If you want JBoss to manage the data source, use the following instructions. If you want to use the built-in Liferay data source, you can skip this section.
+If you want JBoss to manage your data source, continue following instructions in this section. If you want to use the built-in Liferay data source, you can skip this section.
 
-Create `$JBOSS_HOME/server/default/deploy/liferay-ds.xml` with the following content:
+Modify `standalone.xml` adding your datasource and driver within the `<datasources>` element of your datasources subsystem.
 
-    <datasources>
-        <local-tx-datasource>
-            <jndi-name>jdbc/LiferayPool</jndi-name>
-            <connection-url>
-                jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8
-            </connection-url>
-            <driver-class>com.mysql.jdbc.Driver</driver-class>
-            <user-name></user-name>
-            <password></password>
-            <min-pool-size>0</min-pool-size>
-        </local-tx-datasource>
-    </datasources>
+1.	First, add your datasource within the `<datasources>` element.
+
+		<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+			<connection-url>
+				jdbc:mysql://localhost/lportal
+			</connection-url>
+			<driver>
+				mysql
+			</driver>
+			<security>
+				<user-name>
+					root
+				</user-name>
+				<password>
+					root
+				</password>
+			</security>
+		</datasource>
+
+2.	Then add your driver to the `<drivers>` element also found within the `<datasources>` element.
+
+		<drivers>
+			<driver name="mysql" module="com.liferay.portal"/>
+		</drivers>
+
+Your final datasources subsystem should look something like this:
+
+	<subsystem xmlns="urn:jboss:domain:datasources:1.0">
+		<datasources>
+			<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+				<connection-url>
+					jdbc:mysql://localhost/lportal
+				</connection-url>
+				<driver>
+					mysql
+				</driver>
+				<security>
+					<user-name>
+						root
+					</user-name>
+					<password>
+						root
+					</password>
+				</security>
+			</datasource>
+			<drivers>
+				<driver name="mysql" module="com.liferay.portal"/>
+			</drivers>
+		</datasources>
+	</subsystem>
+
+Now that we've covered how to configure your datasource within JBoss, let's go over how to configure your mail session within JBoss.
 
 ##### Mail Configuration
 
-If you want JBoss to manage the mail configuration, use the following instructions. If you want to use the built-in Liferay mail session, you can skip this section.
+At the time this document was written, JavaMail was not yet supported in JBoss AS 7.0.1 - however, it was implemented in the JBoss AS 7.1 alpha (see [https://issues.jboss.org/browse/AS7-1177](https://issues.jboss.org/browse/AS7-1177). If you want JBoss to manage your mail session, use the following instructions which are based on the implementation found in JBoss AS 7.1 alpha. If you want to use the built-in Liferay mail session, you can skip this section.
 
-Set mail properties by replacing the contents of `$JBOSS_HOME/server/default/deploy/mail-service.xml` with:
+Specify your mail subsystem  in `standalone.xml` as in the following example:
 
-    <?xml version="1.0"?>
-    <server>
-        <mbean code="org.jboss.mail.MailService"
-        name="jboss:service=MailSession">
-            <attribute name="JNDIName">mail/MailSession</attribute>
-            <attribute name="User">nobody</attribute>
-            <attribute name="Password">password</attribute>
-            <attribute name="Configuration">
-                <configuration>
-                    <property name="mail.store.protocol" value="imap" />
-                    <property name="mail.transport.protocol" value="smtp" />
-                    <property name="mail.imap.host" value="localhost" />
-                    <property name="mail.pop3.host" value="localhost" />
-                    <property name="mail.smtp.host" value="localhost" />
-                </configuration>
-            </attribute>
-        </mbean>
-    </server>
+	<subsystem xmlns="urn:jboss:domain:mail:1.0">
+		<mail-session jndi-name="java:/mail/MailSession" >
+			<smtp-server address="smtp.gmail.com" port="465">
+				   <login name="username" password="password"/>
+			</smtp-server>
+			<pop3-server address="pop.gmail.com" port="110"/>
+			<imap-server address="imap.gmail.com" port="993">
+				<login name="username" password="password"/>
+			</imap-server>
+	   </mail-session>
+	</subsystem>
+
+You've got mail! Now you are ready to deploy Liferay Portal.
 
 ##### Deploy Liferay
 
-1.  Delete all the files and folders in     `$JBOSS_HOME/server/default/deploy/ROOT.war`
+1.  If folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists in your JBoss installation, delete all of its subfolders and files. Otherwise, create a new folder `$JBOSS_HOME/standalone/deployments/ROOT.war`.
 
-2.  Unzip the Liferay `.war` file to the `ROOT.war` directory.
+2.  Unzip the Liferay `.war` file into the `ROOT.war` folder.
 
-3.  Remove `jaxrpc.jar`, `stax.jar`, `xercesImpl.jar`, `xml-apis.jar` from:
+4.	To trigger deployment of `ROOT.war`, create an empty file named `ROOT.war.dodeploy`. On startup, JBoss will detect the presence of this file and deploy it as a web application.
 
-    $JBOSS_HOME/server/default/deploy/ROOT.war/WEB-INF/lib
+---
+![Tip](../../images/tip.png) To trigger deployment of a `.war` application, create or copy a `.dodeploy` file for it  into your `$JBOSS_HOME/standalone/deployments/` folder. For example, create a file named `myApp.war.dodeploy` to trigger deplyment of an application named `myApp.war`.  
+---
 
-4.  Navigate to the Liferay Home folder, which is one folder above JBoss's install location.
+##### Domain Configuration - Continued
 
-5.  Create a file called `portal-ext.properties`. Add the following directives to the file:
+Let's revisit domain configuration to make sure that we'll be able to access the datasource and mail session from Liferay Portal.
 
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver         jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false         jdbc.default.username=root         jdbc.default.password=root
+1.  First, navigate to the Liferay Home folder, which is one folder above JBoss's install location (i.e. `$JBOSS/..`).
 
-Start JBoss. Open your browser to `http://localhost:8080`. You should see the default Liferay home page.
+2.  Then, if you are using *Liferay Portal* to manage your data source, add the following directives to the `portal-ext.properties` file:
+
+		jdbc.default.driverClassName=com.mysql.jdbc.Driver
+		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+		jdbc.default.username=root
+		jdbc.default.password=root
+
+	Otherwise, if you are using *JBoss* to manage your data source, add the following to refer to your data source:
+
+		jdbc.default.jndi.name=java:jdbc/LiferayPool
+		
+3.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+
+	Otherwise, if you are using *JBoss* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
+
+		mail.session.jndi.name=java:mail/MailSession
+
+You've completed the steps necessary for your deployment of Liferay so that Liferay Portal can now communicate with your datasource and mail session - way to go! Now you are ready to launch your installation of Liferay Portal on JBoss.
+
+#### Starting Liferay
+
+Start JBoss and it should automatically launch Liferay Portal displaying the default Liferay home page to your browser at [http://localhost:8080](http://localhost:8080).
+
+Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
 #### Resin 3.1.x
 
