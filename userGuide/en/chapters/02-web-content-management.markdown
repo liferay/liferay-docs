@@ -2,9 +2,9 @@
 
 With most products, you would learn what the software can do in terms of setting up your environment and security model, and then start building your system. You'd design your infrastructure and get your server environment up and running while your developers would go ahead and write the applications that would live on your web site. With Liferay Portal, however, you start farther ahead. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go, and integrated with all the user management and security features you've already learned about.
 
-Perhaps the key application that ships with Liferay is Liferay's Web Content Management system (CMS). We call it the key application because it is the one that almost everybody uses, because everyone needs to populate their web sites with content. Liferay's CMS empowers you to manage all of the content on your site quickly, easily, and in the browser. Beyond managing existing content, Liferay CMS lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal's larger collection of applications, which means that you can add in shopping cart functionality, visitor polls, web forms, site collaboration tools, and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and intuitive interface.
+Perhaps the key application that ships with Liferay is Liferay's Web Content Management system (WCM). We call it the key application because it is the one that almost everybody uses, because everyone needs to populate their web sites with content. Liferay's WCM empowers you to manage all of the content on your site quickly, easily, and in the browser. Beyond managing existing content, Liferay WCM lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal's larger collection of applications, which means that you can add in shopping cart functionality, visitor polls, web forms, site collaboration tools, and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and intuitive interface.
 
-This chapter covers all aspects of Liferay CMS, including:
+This chapter covers all aspects of Liferay WCM, including:
 
 - Page types
 
@@ -22,7 +22,7 @@ This chapter covers all aspects of Liferay CMS, including:
 
 - Structures and templates
 
-- CMS Workflow
+- WCM Workflow
 
 - Asset publisher
 
@@ -36,9 +36,9 @@ You can also customize the logo in the top left corner of every page by selectin
 
 ## Page Creation and Management
 
-Your pages must contain something, right? The reason web pages exist at all is to display content. Use can use the web to share project information, advertise to potential customers, or demonstrate a golf swing. In each case you're displaying content. And with Liferay's CMS, you'll find that the process of loading your pages up with content is extremely easy and straightforward, and you don't ever need to leave your browser.
+Your pages must contain something, right? The reason web pages exist at all is to display content. Use can use the web to share project information, advertise to potential customers, or demonstrate a golf swing. In each case you're displaying content. And with Liferay's WCM, you'll find that the process of loading your pages up with content is extremely easy and straightforward, and you don't ever need to leave your browser.
 
-Essentially, CMS is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add &rarr; More* menu: we'll go over everything in a step-by-step fashion. Let's start by taking a look at page creation and management.
+Essentially, WCM is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add &rarr; More* menu: we'll go over everything in a step-by-step fashion. Let's start by taking a look at page creation and management.
 
 ### Managing Pages
 
@@ -281,7 +281,7 @@ We'll be using Liferay's WCM to publish simple pieces of content, develop templa
 
 ### What is Web Content Management?
 
-Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay CMS empowers you to publish your content with a simple point and click interface, and it helps you to keep your site fresh. You'll find yourself easily creating, editing, and publishing content within just a few minutes of being exposed to its features. But Liferay CMS doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content “pop” with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay CMS an appropriate choice for sites with only a few pages or sites with gigabytes of content.
+Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface, and it helps you to keep your site fresh. You'll find yourself easily creating, editing, and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content “pop” with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content.
 
 ### How Can Liferay's WCM Help You?
 
@@ -353,7 +353,7 @@ You could insert an image here as well as more text with a different style, as d
 
 The WYSIWYG editor is a flexible tool that gives you the ability to add text, images, tables, links, and more. Additionally, you can modify the display to match the purpose of the content. Plus it's integrated with the rest of Liferay Portal: for example, when you upload an image to be added to a page, that image can be viewed and manipulated in the Image Gallery portlet.
 
-If you're HTML savvy, Liferay CMS doesn't leave you out in the cold. You can click the *Source* button and write your own HTML if you wish.
+If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can click the *Source* button and write your own HTML if you wish.
 
 ##### Assigning Permissions
 
@@ -361,7 +361,7 @@ You can determine who will and who won't see your content. By default, the conte
 
 ![Figure 4.11: Permissions for Web Content](../../images/04-web-content-content-permissions.png)
 
-For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This will save the content in draft form. Once you're satisfied with the your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay CMS, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. So let's go back to the page where we want the content displayed and add the Web Content Display portlet (in this case, the Welcome page).
+For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This will save the content in draft form. Once you're satisfied with the your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. So let's go back to the page where we want the content displayed and add the Web Content Display portlet (in this case, the Welcome page).
 
 #### Publishing Content with the Web Content Display Portlet
 
@@ -393,7 +393,7 @@ If you click the *Supported Clients* tab, you'll see that you can choose the typ
 
 To publish new content, select the *page and green plus icon* on the lower left of the portlet. This launches the same full-featured editor you've already seen in the control panel, which lets you add and edit content in place as you are working on your page.
 
-This is another example of the flexibility that Liferay Portal offers. At times, you may want to add content directly into the Web Content Display portlet of the page you're managing, especially if you are in the process of building the page. At other times, you may want to use the control panel to create content, because at that moment you're more concerned with the creation of the content and not where the content will later be displayed. Liferay CMS supports both processes.
+This is another example of the flexibility that Liferay Portal offers. At times, you may want to add content directly into the Web Content Display portlet of the page you're managing, especially if you are in the process of building the page. At other times, you may want to use the control panel to create content, because at that moment you're more concerned with the creation of the content and not where the content will later be displayed. Liferay WCM supports both processes.
 
 ##### Editing Content
 
@@ -475,7 +475,7 @@ Developers create templates to display the elements of the structure in the mark
 
 Liferay supports templates written in four different templating languages. This is so that you can get started right away. If you have experience with one over another, you can use whichever one you've already used before. If you are just starting with any one of them, we recommend Velocity, as it is less “chatty” than XSL and extremely simple to understand.
 
-**VM** (Velocity Macro): Velocity is a scripting language that lets you mix logic with HTML. This is similar to other scripting languages, such as PHP, that you may have seen before, though Velocity is much simpler. It's been in the product the longest, so it is probably the most widely used language for templates in Liferay CMS. If you haven't used any of the template languages before, we recommend using Velocity: you'll get up to speed the fastest.
+**VM** (Velocity Macro): Velocity is a scripting language that lets you mix logic with HTML. This is similar to other scripting languages, such as PHP, that you may have seen before, though Velocity is much simpler. It's been in the product the longest, so it is probably the most widely used language for templates in Liferay WCM. If you haven't used any of the template languages before, we recommend using Velocity: you'll get up to speed the fastest.
 
 **XSL** (Extensible Style Sheet Language): XSL is used in Liferay templates to transform the underlying XML of a structure into markup suitable for the browser. While it may not be as clean and compact as Velocity or FTL, it is widely used for transforming XML into other formats.
 
@@ -485,7 +485,7 @@ Liferay supports templates written in four different templating languages. This 
 
 ##### Adding a Template
 
-Liferay CMS makes it easy to create structures, templates, and content from the same interface. Let's go through the entire flow of how we'd create a structure, link it to a template, and then create content based on what we've defined. We'll use Velocity for our template, and we'll lay out the structure fields systematically to go along with the format we've defined for our content.
+Liferay WCM makes it easy to create structures, templates, and content from the same interface. Let's go through the entire flow of how we'd create a structure, link it to a template, and then create content based on what we've defined. We'll use Velocity for our template, and we'll lay out the structure fields systematically to go along with the format we've defined for our content.
 
 ![Figure 4.14: Adding Template Interface](../../images/04-web-content-templates-create.png)
 
@@ -696,7 +696,7 @@ The Display Settings section of the Asset Publisher has numerous options to help
 
 #### Staging and Workflow
 
-Staging is a major feature of Liferay CMS. The concept of staging is a simple one: you don't want your users seeing your web site change before their eyes as you are modifying it, do you? Liferay's staging environment allows you to make changes to your site in a specialized *staging area*, and then when you are finished, publish the whole site to your users.
+Staging is a major feature of Liferay WCM. The concept of staging is a simple one: you don't want your users seeing your web site change before their eyes as you are modifying it, do you? Liferay's staging environment allows you to make changes to your site in a specialized *staging area*, and then when you are finished, publish the whole site to your users.
 
 You can use staging in multiple ways. Larger organizations may consider having a staging server—a separate instance of Liferay Portal which is used just for staging. Content creators can then use this server to make their changes while the live server handles the incoming user traffic. When changes to the site are ready to be published, they can be pushed remotely to the live server.
 
@@ -772,7 +772,7 @@ You can enable staging on an individual site basis, depending on your needs. Thi
 
 ### Using Liferay's Integrated Workflow with Content Management
 
-Workflow is essentially a predetermined sequence of connected steps. In Liferay CMS, workflow is designed to manage the creation, modification, and publication of web content. You can set up a workflow so that content cannot be published without going through an approval process that you design. In this way, content goes up on your site only after it has been reviewed and approved.
+Workflow is essentially a predetermined sequence of connected steps. In Liferay WCM, workflow is designed to manage the creation, modification, and publication of web content. You can set up a workflow so that content cannot be published without going through an approval process that you design. In this way, content goes up on your site only after it has been reviewed and approved.
 
 Liferay's workflow engine is called Kaleo workflow, and it ships with Liferay CE. If you have uninstalled it or are using EE, it needs to be installed and configured separately. This was covered in chapter 2. For now, we'll assume it's installed and look at how you can take advantage of workflow in getting your content through any approval steps between creation and publication.
 
@@ -811,6 +811,6 @@ In a real world situation, you obviously wouldn't want the person who created th
 
 This chapter has been your guide to Liferay Web Content Management. We've seen how pages are created and managed in Liferay sites and organizations. It is easy to create whole page hierarchies without ever leaving your browser. You can import and export pages using LAR archives, and these can also be used to transfer a site from one Liferay Portal server to another.
 
-Liferay CMS also includes a powerful staging environment, allowing you to stage content locally on the same server or remotely to another server. And when working on pages, you have the ability to use layouts and nested portlets to design every page to look exactly the way you want it to look.
+Liferay WCM also includes a powerful staging environment, allowing you to stage content locally on the same server or remotely to another server. And when working on pages, you have the ability to use layouts and nested portlets to design every page to look exactly the way you want it to look.
 
 Whether your site is small and static or large and dynamic, Liferay's WCM enables you to easily plan and manage it. With tools such as the WYSIWYG Editor, Structures, and Templates, you can quickly add and edit content. With the Web Content Display and Asset Publisher, you can rapidly select and configure what and how your content is displayed. And by using Liferay's integrated workflow, you can set up custom publishing rules to fit your organization. You will find that managing your site becomes far easier when using Liferay's Web Content Management system.
