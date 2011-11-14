@@ -238,15 +238,15 @@ These instructions assume that you have already configured a domain and server, 
 
 ##### Dependency Jars
 
-1.	Navigate to the folder which corresponds to the domain in which you will be installing Liferay. Inside this folder is a `lib` sub-folder.
+1.	Navigate to the folder which corresponds to the domain in which you will be installing Liferay. Inside this folder is a `lib` sub-folder named `lib` (e.g. `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/lib`).
 
-	Unzip the Liferay dependencies archive so that its `.jar` files are extrated into this `lib` folder. Copy your database's JDBC driver (e.g., mysql.jar) into `lib` as well.
+2.	Unzip the Liferay dependencies archive so that its `.jar` files are extracted into this `lib` folder. Copy your database's JDBC driver (e.g. `mysql.jar`) into `lib` as well.
 
-2.	On GlassFish 3.0.1, you will need to extract `commons-codec.jar` from the Liferay Portal WAR file, rename it to `commons-codec-repackaged.jar`, and copy it into `[Liferay Home]/glassfish/modules/`, overwriting GlassFish's version of the file.
+	Note, on GlassFish 3.0.1, you will need to extract `commons-codec.jar` from the Liferay Portal WAR file, rename it to `commons-codec-repackaged.jar`, and copy it into `[Liferay Home]/glassfish/modules/`, overwriting GlassFish's version of the file.
 
 ##### Domain Configuration
 
-1.  Before starting GlassFish, you will need to modify the settings in your domain to do the following ...
+1.  Before starting GlassFish, you will need to modify your domain's configuration to do the following ...
 
 	- Set the file encoding 
 	- Set the user time-zone 
@@ -254,7 +254,7 @@ These instructions assume that you have already configured a domain and server, 
 	- Prevent the application server from setting static fields (final or non-final) to `null` 
 	- Increase the default amount of memory available.
 
-	In your domain's `config` folder, open the `domain.xml` file and merge the following JVM options into the current list of JVM options within your <java-config> element:
+	Modify `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/domain.xml` merging in the following JVM options into the current list of JVM options within your `<java-config>` element:
 
 		<jvm-options>-Dfile.encoding=UTF8</jvm-options> 
 		<jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options>
@@ -289,13 +289,13 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 4.	Click *New...*.
 
-5.  In the first screen, give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource`, and select your database driver vendor (e.g., *MySQL*).
-
-6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
+5.  In the first screen (Step 1 of 2), give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource`, and select your database driver vendor (e.g. `MySQL`) as follows:
 
 	![Figure 11.x: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
 
-7.  On the this screen (step 2 of 2), scroll down to the *Additional Properties* section.
+6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
+
+7.  On the this screen (Step 2 of 2), scroll down to the *Additional Properties* section.
 
 	![Figure 11.x: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)  
 
@@ -305,7 +305,9 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 		For example,
 
-			jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true                  Note, if you are using the above example, you should specify the name of your database in place of `lportal`. Likewise, if your database is not on the same server as GlassFish, specify your the database server's host name in place of `localhost`. Lastly, specify your database type in place of `jdbc:mysql`.
+			jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true
+	
+		Note, if you are using the above example, you should specify the name of your database in place of `lportal`. Likewise, if your database is not on the same host as GlassFish, specify your the database server's host name in place of `localhost`. Lastly, specify your database type in place of `jdbc:mysql`.
 
 	- **user:** the name of your database user.
 
@@ -317,7 +319,7 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 11. Test your connection by selecting your `LiferayPool` connection pool and clicking *Ping*.
 
-	If you get a message stating  *Ping Succeeded*, you've set up the connection pool of your data source!
+	If you get a message stating  *Ping Succeeded*, you've succeeded in setting up a connection pool of your data source!
 
 13. Now, you'll setup a JDBC resource to refer to the `LiferayPool` connection pool you just created.
 
@@ -329,11 +331,11 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 16. Click *OK*.
 
-Congratulations! You've now configured your domain's data source to manage on GlassFish!
+Congratulations! You've now configured your domain's data source on GlassFish!
 
 ##### Mail Configuration
 
-If you want to use GlassFish to manage your mail session, follow GlassFish's documentation on configuring a JavaMail session. Note, for GlassFish 3.1, this involves using the `asadmin` commandline tool provided with GlassFish. If you want to use Liferay Portal to manage your mail session, you can disregard this section.
+If you want to use GlassFish to manage your mail session, follow GlassFish's documentation on configuring a JavaMail session with a JNDI name of `mail/MailSession`. If you want to use Liferay Portal to manage your mail session, you can skip this step.
 
 ##### Domain Configuration - Continued
 
@@ -341,9 +343,12 @@ If you want to use GlassFish to manage your mail session, follow GlassFish's doc
 
 2.  Create a `portal-ext.properties` file in the *Liferay Home* folder mentioned at the beginning of this GlassFish installation section.
 
-3.	If you are using *Liferay Portal* to manage your data source, add the following directives to the `portal-ext.properties` file:
+3.	If you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file:
 
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver 		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false 		jdbc.default.username=root 		jdbc.default.password=root
+		jdbc.default.driverClassName=com.mysql.jdbc.Driver
+		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+		jdbc.default.username=root
+		jdbc.default.password=root
 
 	Otherwise, if you are using *GlassFish* to manage your data source, add the following to refer to your data source:
 
@@ -373,7 +378,7 @@ If you want to use GlassFish to manage your mail session, follow GlassFish's doc
 
     ![Figure 11.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
 
-Liferay Portal will now be deployed and started automatically to your server's host and port (e.g., [http://localhost:0808](http://localhost:0808/)). Your installation of Liferay Portal on GlassFish is complete!
+Liferay Portal will now be deployed and started automatically to your server's host and port (e.g. [http://localhost:0808](http://localhost:0808/)). Your installation of Liferay Portal on GlassFish is complete!
 
 #### Jetty 6
 
