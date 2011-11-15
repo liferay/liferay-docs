@@ -1,26 +1,22 @@
 # Maintaining A Liferay Portal
 
-Maintaining a running implementation of Liferay Portal is not much different from maintaining the application server environment upon which it is running. There are, however, several factors which administrators should be aware of when they are responsible for a running instance of Liferay. This chapter will cover these issues, outlining for system administrators some specifics about keeping a running Liferay instance stable and secure.
+It's not much harder to maintain a running implementation of Liferay Portal than it is to maintain the application server environment upon which it is running. There are, however, several factors which administrators should be aware of when they are responsible for a running instance of Liferay. This chapter addresses these issues and outlines some specifics about how to keep a running Liferay instance stable and secure.
 
-This chapter will cover the following topics:
+We discuss the following topics in this chapter:
 
 -   Liferay Monitoring using Google Analytics
-
 -   Backing Up a Liferay Installation
-
 -   Changing Logging Levels
-
 -   Patching Liferay
-
 -   Upgrading Liferay
 
-The discussion on back up will cover what parts of Liferay should be backed up. We won't cover specific backup software or procedures; generally, most organizations have standards for doing backups of their systems, and Liferay as a Java EE application fits well into these standards.
+The discussion on backup covers what parts of Liferay should be backed up. We won't cover specific backup software or procedures; generally, most organizations have standards for doing backups of their systems, and Liferay as a Java EE application fits well into these standards.
 
 ## Liferay monitoring using Google Analytics
 
 Liferay includes built-in support for Google Analytics, allowing administrators to make use of Google's tool set for analyzing site traffic data. When you sign up for Google Analytics, a snippet of code is provided which needs to be added to your web pages in order to allow Google's system to register the page hit. It can be a tedious process to add this code to every page on a site, especially if it's a large site and there is a lot of user-generated content.
 
-This problem can be solved in Liferay by putting Google's code into a custom theme written especially for the site on which the portal is running. Doing this, however, requires that a theme developer make specific changes to the theme, and it prevents users from using the many freely available themes that are available for Liferay “out of the box.”
+This problem can be solved in Liferay by putting Google's code into a custom theme written specifically for the web site on which the portal is running. Doing this, however, requires a theme developer to make specific changes to the theme and it prevents users from using the many themes that are freely available for Liferay “out of the box.”
 
 Because of this, support for Google Analytics has been built into Liferay, and can be turned on through a simple user interface. This allows Liferay administrators to make use of Google Analytics on a community by community basis and turn it on and off when needed.
 
@@ -30,19 +26,19 @@ To enable Google Analytics support, go to *Site Settings* in the control panel, 
 
 Put your Google Analytics ID (which should have been provided to you when you signed up for the service) in the field and click *Save*. All the pages in the community you selected will now have the Google Analytics code in them and will be tracked. 
 
-This is a fairly simple procedure, and it gives you the ability to take advantage of some great tools to help you visualize who's coming to your site and from where. From here, we want to cover some topics germane to maintaining your Liferay installation as it's used. Our first topic along these lines is backing up Liferay. 
+This is a fairly simple procedure, and it gives you the ability to take advantage of some great tools to help you visualize who's coming to your site and from where. Next, we discuss some topics germane to maintaining your Liferay installation as it's used. Let's start with backup.
 
 ## Backing up a Liferay installation
 
-Once you have an installation of Liferay Portal running, you'll want to have proper backup procedures in place in case of a catastrophic hardware failure of some kind. Liferay isn't very different from any other application that may be running in your application server, but there are some specific components you want to be aware of so you can bring them into your backup plan.
+Once you have an installation of Liferay Portal running, you'll want to have proper backup procedures in place in case of a catastrophic hardware failure of some kind. Liferay isn't very different from any other application that may be running on your application server. Nevertheless, there are some specific components that you should include in your backup plan.
 
 ### Backing up source code
 
-If you have extended Liferay or have written any plugins, they should be stored in a source code repository such as Git, Subversion, or CVS, unless you're Linus Torvalds, and then tarballs are okay too (that's a joke). Your source code repository should be backed up on a regular basis to preserve your ongoing work. This probably goes without saying in your organization, as nobody wants to lose source code that's taken months to produce, but we thought we should mention it anyway. 
+If you have extended Liferay or have written any plugins, they should be stored in a source code repository such as Git, Subversion, or CVS, unless you're Linus Torvalds, and then tarballs are okay too (that's a joke). Your source code repository should be backed up on a regular basis to preserve your ongoing work. This probably goes without saying in your organization, as nobody wants to lose source code that's taken months to produce.
 
-If you're extending Liferay with the Ext plugin, you'll want to make sure that you also store the version of the Liferay source on which your extension environment is based. This allows your developers convenient access to all the tools they need to build your extension and deploy it to a server.
+If you're extending Liferay with an Ext plugin, you'll want to make sure that you also store the version of the Liferay source on which your extension environment is based. This allows your developers convenient access to all the tools they need to build your extension and deploy it to a server.
 
-Let's look at the things that need to be backed up in your Liferay installation. 
+Let's look at the items that need to be backed up in your Liferay installation. 
 
 ### Backing up Liferay's file system
 
@@ -52,9 +48,9 @@ If you've followed the non-plugin procedure in the previous chapter to modify yo
 
 Liferay stores configuration files, search indexes, and cache information in a folder called `data` in Liferay Home. If you're using the File System store or the Advanced File System store, the media repository is stored here (by default) too. You should always back up the contents of your Liferay Home folder.
 
-If you've modified the location where the Document Library stores files, you should also back up this location. 
+If you've modified the location where the Document Library stores files, you should also back up this location.
 
-That about covers the file system locations that Liferay uses. We'll move next from the file system to the database. 
+That about covers the file system locations that Liferay uses. Next, let's discuss how to back up Liferay's database.
 
 ### Backing up Liferay's database
 
@@ -70,11 +66,11 @@ But what about maintenance while your server is running? Liferay lets you view a
 
 ## Liferay's Logging System
 
-Liferay uses Log4j extensively to implement logging for nearly every class in the portal. If you need to debug something specific while the system is running, you can use the Control Panel to set logging levels by class dynamically.
+Liferay uses Log4j extensively to implement logging for nearly every class in the portal. If you need to debug something specific while the system is running, you can use the control panel to set logging levels by class dynamically.
 
-To view the log levels, go to the Control Panel, click *Server Administration* in the Server section, and then click the *Log Levels* tab.
+To view the log levels, go to the control panel, click *Server Administration* in the Server section, and then click the *Log Levels* tab.
 
-A paginated list of logging categories appears. These categories correspond to Liferay classes that have log messages in them. By default, all categories are set to display messages only if there is an error that occurs in the class. This is why you see ERROR displayed in all of the drop down list boxes on the right side of the portlet.
+A paginated list of logging categories appears. These categories correspond to Liferay classes that have log messages in them. By default, all categories are set to display messages only if there is an error that occurs in the class. This is why you see ERROR displayed in all of the drop-down list boxes on the right side of the portlet.
 
 Each category is filtered by its place in the class hierarchy. For example, if you wanted to see logging for a specific class that is registered in Liferay, you would browse to that specific class and change its log level to something that is more descriptive, such as DEBUG. Once you click the *Save* button at the bottom of the list, you'll start seeing DEBUG messages from that class in your application server's log file.
 
@@ -94,9 +90,9 @@ You would then use this `_log` variable to create log messages in your code for 
 
 	_log.error("Reindexing " + node.getName(), e1);
 
-To enable your logging messages to appear in your server's log file via the Control Panel, click the *Add Category* tab on the same *Log Levels* page.
+To enable your logging messages to appear in your server's log file via the control panel, click the *Add Category* tab on the same *Log Levels* page.
 
-![Figure 16.x: Adding your own logging classes is as simple as specifying it in this field. ](../../images/maintaining-add-log-category.png) 
+![Figure 16.x: Adding your own logging classes is as simple as specifying it in this field.](../../images/maintaining-add-log-category.png) 
 
 You'll see that you can add a logging category. Put in the fully qualified name of your class or of the package that contains the classes whose log messages you want to view, choose a log level, and then click the *Save* button. You will now start to see log messages from your own class or classes in the server's log file.
 
@@ -116,13 +112,13 @@ Now that you know what patching is all about, let's check out the tool.
 
 ### Installing the patching tool
 
-If you're using a Liferay bundle, congratulations! The patching tool is already installed. Your job isn't done yet, however, because Liferay *might* have updated the patching tool. Always check the Customer Portal to see if the patching tool has been updated first. But even if you forget to check, the patching tool will tell you if it needs to be updated when you run it. A lot of planning and forethought has gone into the patching system to make it run as smoothly as possible. 
+If you're using a Liferay bundle, congratulations! The patching tool is already installed. Your job isn't done yet, however, because Liferay *might* have updated the patching tool. Always check the Customer Portal to see if the patching tool has been updated first. But even if you forget to check, the patching tool will tell you if it needs to be updated when you run it. A lot of planning and forethought has gone into the patching system to make it run as smoothly as possible.
 
-You follow the same procedure whether you're installing or upgrading the patching tool. Once you've obtained it from the customer portal, unzip it to the Liferay Home folder. This is the folder where you've placed your `portal-ext.properties` file, and where by default the `data` folder resides. This is generally one folder up from where your application server is installed, but some application servers are different. If you don't know where Liferay Home is on your system, check chapter 11 to see where this folder is for your specific application server. 
+You follow the same procedure whether you're installing or upgrading the patching tool. Once you've obtained it from the customer portal, unzip it to the Liferay Home folder. This is the folder where you've placed your `portal-ext.properties` file, and where by default the `data` folder resides. This is generally one folder up from where your application server is installed, but some application servers are different. If you don't know where Liferay Home is on your system, check chapter 11 to see where this folder is for your specific application server.
 
-If you're upgrading the patching tool, all you need to do is unzip the new version on top of the old version. Note that if you're doing this on LUM (Linux, Unix, Mac) machines, you'll need to make the `patching-tool.sh` script executable.  
+If you're upgrading the patching tool, all you need to do is unzip the new version on top of the old version. Note that if you're doing this on LUM (Linux, Unix, Mac) machines, you'll need to make the `patching-tool.sh` script executable.
 
-After the patching tool is installed, you need to let it auto-discover your Liferay installation, so it can determine what your release level is and what your application server environment is, in order for it to do its work. This is a simple command to run on LUM: 
+After the patching tool is installed, you need to let it auto-discover your Liferay installation, so it can determine what your release level is and what your application server environment is, in order for it to do its work. This is a simple command to run on LUM:
 
 	./patching-tool.sh auto-discovery
 	
@@ -246,7 +242,7 @@ Finally, you need to take note of any plugins you have installed. Liferay's plug
 
 Once you've reviewed your properties and collected all the plugins you'll need, you're ready to follow the upgrade procedure. Remember to back up your system before you begin. 
 
-There are two different procedures to upgrade Liferay: the first is the most common, which is upgrading a Liferay bundle. The second is upgrading Liferay that's installed on an application server. We'll go over both. 
+There are two different procedures to upgrade Liferay. The first one, upgrading a Liferay bundle, is the most common. The second procedure is for upgrading a Liferay installation on an application server. We'll go over both.
 
 In both cases, Liferay auto-detects whether the database requires an upgrade the first time the new version is started. When Liferay does this, it upgrades the database to the format required by the new version. In order to perform this task, Liferay *must* be accessing the database with an ID that can create, drop, and modify tables. Make sure that you have granted these permissions to the ID before you attempt to upgrade Liferay. And, of course, we'll run the risk of overly repeating ourselves: back up your database.  
 
