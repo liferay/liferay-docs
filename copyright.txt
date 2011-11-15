@@ -3,7 +3,7 @@ Copyright (c) 2011 Liferay, Inc. All rights reserved.
 
 Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA-3.0)
 
-This is a human-readbale summary of the Legal Code (the full license): 
+This is a human-readable summary of the Legal Code (the full license): 
 http://creativecommons.org/licenses/by-sa/3.0/legalcode
 
 You are free: 
