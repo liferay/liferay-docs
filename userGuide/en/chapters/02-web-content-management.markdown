@@ -2,7 +2,7 @@
 
 With most products, you would learn what the software can do in terms of setting up your environment and security model, and then start building your system. You'd design your infrastructure and get your server environment up and running while your developers would go ahead and write the applications that would live on your web site. With Liferay Portal, however, you start farther ahead. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go, and integrated with all the user management and security features you've already learned about.
 
-Perhaps the key application that ships with Liferay is Liferay's Web Content Management system (WCM). We call it the key application because it is the one that almost everybody uses, because everyone needs to populate their web sites with content. Liferay's WCM empowers you to manage all of the content on your site quickly, easily, and in the browser. Beyond managing existing content, Liferay WCM lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal's larger collection of applications, which means that you can add in shopping cart functionality, visitor polls, web forms, site collaboration tools, and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and intuitive interface.
+Perhaps the key application that ships with Liferay is Liferay's Web Content Management system (WCM). We call it the key application because it is the one that almost everybody uses, because everyone needs to populate their web sites with content. Liferay's WCM empowers you to manage all of the content on your site quickly, easily, and in the browser. Beyond managing existing content, Liferay WCM lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal's larger collection of applications, which means that you can add shopping cart functionality, visitor polls, web forms, site collaboration tools, and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and intuitive interface.
 
 This chapter covers all aspects of Liferay WCM, including:
 
@@ -26,7 +26,7 @@ This chapter covers all aspects of Liferay WCM, including:
 
 - Asset publisher
 
-By the time we're done, you should be able to apply all of these concepts to your own content. To demonstrate Liferay's Content Management features, we'll create and manage content on the portal for *Nose-ster* a new social network where people are connected based on what their nose looks like.
+By the time we're done, you should be able to apply all of these concepts to your own content. To demonstrate Liferay's Content Management features, we'll create and manage content on the portal for *Nose-ster* a new social network where people are connected based on what their noses look like.
 
 First, a little housekeeping. If we're going to be *Nose-ster*, our portal should also be called Nose-ster. To set general information about your portal like the name and mail domain, go to the control panel and select *Portal Settings* under the Portal heading. You could set up the configuration for Nose-ster as follows.
 
@@ -36,13 +36,7 @@ You can also customize the logo in the top left corner of every page by selectin
 
 ## Page Creation and Management
 
-Your pages must contain something, right? The reason web pages exist at all is to display content. Use can use the web to share project information, advertise to potential customers, or demonstrate a golf swing. In each case you're displaying content. And with Liferay's WCM, you'll find that the process of loading your pages up with content is extremely easy and straightforward, and you don't ever need to leave your browser.
-
-Essentially, WCM is a suite of various portlets that include functionality for creating and displaying various types of content. Don't be concerned by the sheer number of applications you see in this category in the *Add &rarr; More* menu: we'll go over everything in a step-by-step fashion. Let's start by taking a look at page creation and management.
-
-### Managing Pages
-
-If you are currently viewing the page you wish to manage, simply click *Manage* from the dockbar and select *Page*. If you would like to manage your site's whole set of pages, clink *Manage* and select *Site Pages*. 
+If you're currently viewing the page you wish to manage, click *Manage* from the Dockbar and select *Page*. If you would like to manage your site's whole set of pages, clink *Manage* and select *Site Pages*. 
 
 ![Figure 4.2: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
 
