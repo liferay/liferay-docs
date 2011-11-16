@@ -34,7 +34,7 @@ Once you have an installation of Liferay Portal running, you'll want to have pro
 
 ### Backing up source code
 
-If you have extended Liferay or have written any plugins, they should be stored in a source code repository such as Git, Subversion, or CVS, unless you're Linus Torvalds, and then tarballs are okay too (that's a joke). Your source code repository should be backed up on a regular basis to preserve your ongoing work. This probably goes without saying in your organization, as nobody wants to lose source code that's taken months to produce.
+If you have extended Liferay or have written any plugins, they should be stored in a source code repository such as Git, Subversion, or CVS, unless you're Linus Torvalds, and then tarballs are okay too (that's a joke). Your source code repository should be backed up on a regular basis to preserve your ongoing work. This probably goes without saying in your organization, as nobody wants to lose source code that's taken months to produce, but we thought we should mention it anyway. 
 
 If you're extending Liferay with an Ext plugin, you'll want to make sure that you also store the version of the Liferay source on which your extension environment is based. This allows your developers convenient access to all the tools they need to build your extension and deploy it to a server.
 
