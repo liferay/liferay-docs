@@ -698,120 +698,191 @@ Start JBoss and it should automatically launch Liferay Portal displaying the def
 
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
-#### Resin 3.1.x
+#### Resin 4.0.x
 
 **Liferay Home** is one folder above Resin's install location.
 
-1.  Download and install Resin into your preferred directory. From now     on, the directory where you installed Resin will be referred to as     `$RESIN_HOME`.
+For this section, we will refer to your Resin server's installation location as `$RESIN_HOME`. If you do not already have an existing Resin server, we recommend that you download a Liferay/Resin bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing Resin server or would like to install Liferay on Resin manually, please follow the steps below.
 
-2.  Edit `$RESIN_HOME/conf/resin.conf`. Replace lines 8-13     with:
+Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files). The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
-    <class-loader>
-        <tree-loader path="${resin.home}/lib"/>
-        <tree-loader path="${server.root}/lib"/>
-        <compiling-loader path="${server.rootDir}/common/classes"/>
-        <library-loader path="${server.rootDir}/common/lib"/>
-    </class-loader>
+Now that you have all of your installation files, you are ready to start installing and configuring Liferay on Resin.
 
-And add the following:
+##### Dependency Jars
 
-    <database>
-        <jndi-name>jdbc/LiferayPool</jndi-name>
-        <driver type="com.mysql.jdbc.Driver">
-            <url>jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8
-            </url>
-            <user></user>
-            <password></password>
-        </driver>
-        <prepared-statement-cache-size>8</prepared-statement-cache-size>
-        <max-connections>20</max-connections>
-        <max-idle-time>30s</max-idle-time>
-    </database>
-    <resource jndi-name="mail/MailSession" type="javax.mail.Session">
-        <init>
-            <mail.store.protocol>imap</mail.store.protocol>
-            <mail.transport.protocol>smtp</mail.transport.protocol>
-            <mail.imap.host>localhost</mail.imap.host>
-            <mail.pop3.host>localhost</mail.pop3.host>
-            <mail.smtp.host>localhost</mail.smtp.host>
-        </init>
-    </resource>
-    <system-property
-        javax.xml.parsers.DocumentBuilderFactory="org.apache.xerces.jaxp.DocumentBuilderFactoryImpl"
-    />
-    <system-property
-        javax.xml.parsers.SAXParserFactory="org.apache.xerces.jaxp.SAXParserFactoryImpl"
-    />
-    <system-property
-        javax.xml.transform.TransformerFactory="org.apache.xalan.processor.TransformerFactoryImpl"
-    />
-    <system-property
-        org.xml.sax.driver="org.apache.xerces.parsers.SAXParser" />
+Let's work with the depenency jar files first.
 
-3.  Go to `$RESIN_HOME` and create a new directory called `common/lib`. Download `mysql-connector-java-{$version}-bin.jar` and copy to this directory. This is the JDBC connector for MySQL. If you are using another database, substitute this with the appropriate driver.
+1.	Unzip the jar files found in the Liferay Portal Dependencies zip file to your `$RESIN_HOME/ext-lib` folder. Take care to extract the zip file's `.jar` files directly into this folder.
 
-4.  Download the Liferay Portal Dependencies and unzip into `$RESIN_HOME/common/lib`.
+2.	Next, you will need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Resin does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
 
-5.  Delete contents of `$RESIN_HOME/webapps/ROOT`.
+	1.  Go to `$LIFERAY_SOURCE/lib/portal` and copy `log4j.jar`, `slf4j-api.jar` , and `slf4j-log4j12.jar` into `$RESIN_HOME/lib`.
 
-6.  Unzip `liferay-portal-x.x.x.war` to `$RESIN_HOME/webapps/ROOT`.
+	2.	If folder `$RESIN_HOME/extlib` does not already exist, create it.
 
-7.  If you are using Resin 3.1.9 or higher, remove `$RESIN_HOME/lib/portlet-01.jar`. This contains the old Portlet 1.0 classes. The Portlet 2.0 classes are backwards compatible, so this should not affect anything.
+3.	Make sure the JDBC driver for your database is accessible by Resin. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
+Extract the JAR file and copy it to `$RESIN_HOME/extlib`.
 
-8.  Next, you will need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Resin does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip it to a temporary folder.
+Great! now you have your `.jar` files in place. Next, let's configure your domain.
 
-1.  Go to `$LIFERAY_SOURCE/lib/development/` and copy `activation.jar` and `mail.jar` to `$RESIN_HOME/common/lib`. Copy `saxpath.jar` and `xalan.jar` to `$RESIN_HOME/lib`.
-        
-2.  Go to `$LIFERAY_SOURCE/lib/portal` and copy `xercesImpl.jar` and `xml-apis.jar` to `$RESIN_HOME/lib`.
+##### Domain Configuration
 
-9.  To start the server, open a command prompt, navigate to the     `$RESIN_HOME` and type:
+The primary file used in configuring your domain is `$RESIN_HOME/conf/resin.xml`. We'll make common modifications necessary to support Liferay Portal. We will also create a run script and add a folder to hold Resin's logs. But let's start with the changes to `resin.xml`.
 
-    java -jar lib/resin.jar start
+1.	Make the following modifications to your `resin.xml` to do the following for each server in the main application cluster:
 
-10. Open your browser to `http://localhost:8080`. You should see the default Liferay home page.
+	-	Set the file encoding.
 
-#### Resin 3.2.x
+	-	Set the preferred protocol stack.
 
-**Liferay Home** is one folder up from Resin's install location.
+	-	Set the user time-zone.
 
-1.  Download and install Resin 3.2.1 into your preferred directory. From now on, the directory where you installed Resin will be referred to as `$RESIN_HOME`.
+	-	Increase the default amount of memory available.
 
-2.  Edit `$RESIN_HOME/conf/resin.conf`. Replace lines 9-13 with:
+	To accomplish this, insert the following `<jvm-arg>` elements as server defaults for your main application cluster. Please see the following example:
 
-        <tree-loader path="${resin.home}/ext-lib"/>
-        <tree-loader path="${resin.root}/ext-lib"/>
-        <tree-loader path="${resin.home}/lib"/>
-        <tree-loader path="${resin.root}/lib"/>
-        <compiling-loader path="${server.rootDir}/common/classes"/>
-        <library-loader path="${server.rootDir}/common/lib"/>
+			<cluster id="app-tier">
+				...
+				<server-default>
+					...
+					<jvm-arg>-Dfile.encoding=UTF-8</jvm-arg>
+					<jvm-arg>-Djava.net.preferIPv4Stack=true</jvm-arg>
+					<jvm-arg>-Duser.timezone=GMT</jvm-arg>
+					<jvm-arg>-Xmx1024m</jvm-arg>
+					<jvm-arg>-XX:MaxPermSize=256m</jvm-arg>
+					...
+				</server-default>
+			</cluster>
 
-3.  Search `<jvm-arg>` tag in `resin.conf` and     replace what is there with the following:
+2.	Create an appropriate script in `$RESIN_HOME/bin` to help you startup Resin.
 
-        <jvm-arg>-Xmx256m</jvm-arg>
-        <jvm-arg>-Xss1m</jvm-arg>
-        <jvm-arg>-Dcom.sun.management.jmxremote</jvm-arg>
-        <jvm-arg>-Xmx1024m</jvm-arg>
-        <jvm-arg>-XX:MaxPermSize=256m</jvm-arg>
-        <jvm-arg>-Dfile.encoding=UTF-8</jvm-arg>
-        <jvm-arg>-Duser.timezone=GMT</jvm-arg>
+	-	If you are on Windows, create a batch script `$RESIN_HOME/bin/run.bat` and insert the following text in the script:
 
-4.  Go to `$RESIN_HOME` and create a new directory called `common/lib`. Download `mysqlconnector-java-{$version}-bin.jar`* *and copy to this directory. This is the JDBC connector for MySQL. If you are using another database, substitute this with the appropriate driver.
+			..\resin.exe console
 
-5.  Download the Liferay Portal Dependencies and unzip into `$RESIN_HOME/common/lib`.
+	-	If you are on Unix/Linux, create shell script `$RESIN_HOME/bin/run.sh` and insert the following text in the script:
 
-6.  Delete the contents of `$RESIN_HOME/webapps/ROOT`.
+			#!/bin/sh
 
-7.  Unzip `liferay-portal-x.x.x.war` to `$RESIN_HOME/webapps/ROOT`.
+			./resin.sh $
 
-8.  Next, you will need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Resin does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip it to a temporary folder.
+3.	Create folder `$RESIN_HOME/log` if it does not already exist. As you run Resin, the server will generate log files `access`, `jvm-default`, and `watchdog-manager` in this folder.
 
--   Go to `$LIFERAY_SOURCE/lib/development`. Copy `saxpath.jar` to `$RESIN_HOME/common/lib`
+Now that you've completed some important common configuration tasks to support Liferay, let's consider database configuration for your domain.
 
-9.  To start the server, open a command prompt, navigate to the `$RESIN_HOME` and type:
+##### Database Configuration
 
-    java -jar lib/resin.jar start
+If you want to manage your data source within Resin, continue following the instructions in this section. If you want to use the built-in Liferay data source, you can skip this section.
 
-Open your browser to `http://localhost:8080`. You should see the default Liferay home page.
+Management of databases in Resin is done via the configuration file `$RESIN_HOME/conf/resin.xml`. Edit `resin.xml` and insert a `<database>` element for your database. Be sure to give it the JNDI name `jdbc/LiferayPool` and add it within the application tier cluster element as in the example below:
+
+	<cluster id="app-tier">
+		...
+		<database>
+			<jndi-name>jdbc/LiferayPool</jndi-name>
+			<driver type="com.mysql.jdbc.Driver">
+				<url>jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8</url>
+				<user>root</user>
+				<password>root</password>
+            </driver>
+            <prepared-statement-cache-size>8</prepared-statement-cache-size>
+            <max-connections>20</max-connections>
+            <max-idle-time>30s</max-idle-time>
+          </database>
+          ...
+	</cluster>
+
+Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database. 
+
+Your domain's database is now managed within Resin. Now, let's consider how to configure mail.
+
+##### Mail Configuration
+
+If you want to manage your mail session within Resin, use the following instructions. If you want to use the built-in Liferay mail session, you can skip this section.
+
+Management of mail sessions in Resin is done via the configuration file `$RESIN_HOME/conf/resin.xml`. Edit `resin.xml` and insert a `<mail>` element that specifies your mail session. Be sure to give it the JNDI name `mail/MailSession`. Add your mail element within the application tier cluster element. Use the example below, replacing its values with the values of your mail session.
+
+	<cluster id="app-tier">
+		...
+		<mail jndi-name="mail/MailSession">
+			<properties>
+				mail.pop3.host=pop.gmail.com
+				mail.pop3.port=110
+				mail.pop3.user=
+				mail.pop3.password=
+				mail.smtp.host=smtp.gmail.com
+				mail.smtp.password=password
+				mail.smtp.user=user
+				mail.smtp.port=465
+				mail.transport.protocol=smtp
+				mail.smtp.auth=true
+				mail.smtp.starttls.enable=true
+				mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
+				mail.imap.host=imap.gmail.com
+				mail.imap.port=993
+				mail.store.protocol=imap
+			</properties>
+		</mail>
+          ...
+	</cluster>
+
+You can specify additional properties for your mail session as needed.
+
+Now that your mail session is squared away, we'll make sure that Liferay can access it.
+
+##### Domain Configuration - Continued
+
+Let's revisit domain configuration to make sure that we'll be able to access your data source and mail session from Liferay Portal.
+
+1.  First, navigate to the *Liferay Home* folder, which is one folder above JBoss's install location (i.e. `$RESIN_HOME/..`).
+
+2.  Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file in your *Liferay Home*:
+
+		jdbc.default.driverClassName=com.mysql.jdbc.Driver
+		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+		jdbc.default.username=root
+		jdbc.default.password=root
+
+	Otherwise, if you are using *Resin* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
+
+		jdbc.default.jndi.name=java:jdbc/LiferayPool
+
+3.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+
+	Otherwise, if you are using *Resin* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
+
+		mail.session.jndi.name=java:mail/MailSession
+
+Great! Now Liferay can access your database and your mail session. Now, let's deploy Liferay.
+
+##### Deploying Liferay
+
+Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
+
+1.	If you already have an application folder `$RESIN_HOME/webapps/ROOT`, delete it or move it to a location outside of `$RESIN_HOME/webapps`.
+
+2.	Then extract the contents of the Liferay portal `.war` file into `RESIN_HOME/webapps/ROOT`. The following files should now exist in your `RESIN_HOME/webapps/ROOT` folder:
+
+	-	dtd (folder)
+	-	errors (folder)
+	-	html (folder)
+	-	layouttpl (folder)
+	-	META-INF (folder)
+	-	wap (folder)
+	-	WEB-INF (folder)
+	-	index.jsp
+
+3.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$RESIN_HOME/bin`.
+
+	You can monitor your domain via serveral log files:
+
+	-	Resin's log files found in `$RESIN_HOME/log`
+
+	-	Liferay's daily log files found in *Liferay Home*/logs. These files are named after the current date following the naming convention `liferay.[yyyy-MM-dd]`.
+
+	Resin should automatically launch Liferay Portal displaying the default Liferay home page to your browser at [http://localhost:8080](http://localhost:8080).
+
+Congratulations! You've installed Liferay Portal on Resin and have it up and running.
 
 #### Tomcat 6.0.x-7.0.x
 
