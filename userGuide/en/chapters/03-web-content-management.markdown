@@ -1,8 +1,20 @@
 # Using Liferay Web Content Management
 
-Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface, and it helps you to keep your site fresh. You'll find yourself easily creating, editing, and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content “pop” with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content.
+Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface, and it helps you to keep your site fresh. You'll find yourself easily creating, editing, and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content “pop” with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content. 
 
-### How Can Liferay's WCM Help You?
+In this chapter, we'll cover the following topics: 
+
+- Features of Liferay WCM
+- Simple content creation
+- Publishing content
+- Structures and Templates
+- Permissions
+- Tags and Categories
+- Staging and Workflow
+
+As you'll see, Liferay's WCM is a full-featured solution for managing your web site. We'll start with an overview of what it has to offer, and then we'll dive down into its features. 
+
+## How Can Liferay's WCM Help You?
 
 With Liferay's WCM you have the ability to create, edit, stage, publish, and approve content with easy to learn yet powerful tools. Liferay's WCM streamlines site changes for the end user versus doing a site in HTML. Some ways Liferay WCM makes this possible include:
 
@@ -13,6 +25,8 @@ With Liferay's WCM you have the ability to create, edit, stage, publish, and app
 -   Content can be passed through a workflow.
 -   Content can be published on a schedule.
 -   WCM is integrated with Liferay's services, so advanced template developers can use them to query for data stored elsewhere in Liferay.
+
+Once you get familiar with Liferay WCM, you'll wonder how you ever got along without it.  
 
 ### What Features Does Liferay WCM Have?
 
@@ -32,13 +46,15 @@ Liferay's WCM has a host of features the makes managing the content of your site
 
 -   **Workflow Integration:** Run your content through an approval or review process.
 
+-   **Staging:** Use a separate staging server or stage your content locally so you can keep your changes separate from the live site. 
+
 Liferay's Web Content Management is a powerful and robust tool for creating and organizing content on your web site. Now that you've seen the basics of what you can do with Liferay's WCM, let's apply some of these concepts and create some content.
 
 ## Building a Site with Liferay's WCM
 
 You've just been assigned the task to build a web site for a an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
 
-We'll walk through the creation of Nose-ster's web site, starting by creating some simple content using Liferay's built-in WYSIWYG editor and then publishing it. We'll then take advantage of Liferay's robust structure editor. We'll use templates to display the content and the explore some of the advanced publishing features such as the built-in workflow and Asset Publisher.
+We'll walk through the creation of Nose-ster's web site, starting by creating some simple content using Liferay's built-in WYSIWYG editor and then publishing it. We'll then take advantage of Liferay's robust structure editor. We'll use templates to display the content and then explore some of the advanced publishing features such as the built-in workflow and Asset Publisher.
 
 ### Simple Content Creation
 
