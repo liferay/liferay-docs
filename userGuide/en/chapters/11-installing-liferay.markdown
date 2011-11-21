@@ -380,96 +380,229 @@ If you want to use GlassFish to manage your mail session, follow GlassFish's doc
 
 Liferay Portal will now be deployed and started automatically to your server's host and port (e.g. [http://localhost:0808](http://localhost:0808/)). Your installation of Liferay Portal on GlassFish is complete!
 
-#### Jetty 6
+#### Jetty 7.4.x
 
 **Liferay Home** is one folder above Jetty's install location.
 
-1.  Download and install Jetty 6.
+For this section, we will refer to your Jetty server's installation location as `$JETTY_HOME`. If you do not already have an existing Jetty server, we recommend that you download a Liferay/Jetty bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing Jetty server or would like to install Liferay on Jetty manually, please follow the steps below.
 
-2.  Download the Liferay Portal `.war` file.
+Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files). The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
-3.  Download Liferay Portal Dependencies.
+Now that you have all of your installation files, you are ready to start installing and configuring Liferay on Jetty.
 
-4.  Copy the dependencies to* *`$JETTY_HOME/lib/ext`.
+##### Dependency Jars
 
-5.  Edit `$JETTY_HOME/extra/etc/start-plus.config`.
+Let's work with the Liferay depenency jar files first.
 
-    $(jetty.home)/lib/ext/ $(jetty.home)/lib/ext/*
+1.	Create folder `$JETTY_HOME/lib/ext/liferay`.
 
-6.  Create a data source bound to `jdbc/LiferayPool` by editing `$JETTY_HOME/etc/jetty.xml`.
+2.	Unzip the jar files found in the Liferay Portal Dependencies zip file to your `$JETTY_HOME/lib/ext/liferay` folder. Take care to extract the zip file's `.jar` files directly into this folder.
 
-    <Call name="addService">
-        <Arg>
-            <New class="org.mortbay.jetty.plus.JotmService">
-                <Set name="Name">TransactionMgr</Set>
-                <Call name="addDataSource">
-                    <Arg>jdbc/LiferayPool</Arg>
-                    <Arg>
-                        <New class="org.enhydra.jdbc.standard.StandardXADataSource">
-                            <Set name="DriverName">com.mysql.jdbc.Driver</Set>
-                            <Set
-                            name="Url">jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8</Set>
-                            <Set name="User"></Set>
-                            <Set name="Password"></Set>
-                        </New>
-                    </Arg>
-                    <Arg>
-                        <New class="org.enhydra.jdbc.pool.StandardXAPoolDataSource">
-                            <Arg type="Integer">4</Arg>
-                            <Set name="MinSize">4</Set>
-                            <Set name="MaxSize">15</Set>
-                        </New>
-                    </Arg>
-                </Call>
-            </New>
-        </Arg>
-    </Call>
+3.	Next, you will need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Jetty does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
 
-7.  Download `mysql-connector-java-{$version}-bin.jar` and copy to `$JETTY_HOME/lib/ext`. This is the JDBC driver for MySQL. If you are using a different database, copy the appropriate driver.
+	Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your `$JETTY_HOME/lib/ext/liferay` folder:
+	
+	- 	`activation.jar`
+	-	`jta.jar`
+	-	`mail.jar`
+	-	`persistence.jar`
 
-8.  Create a mail session bound to `mail/MailSession` by editing `$JETTY_HOME/etc/jetty.xml`:
+4.	Make sure the JDBC driver for your database is accessible to Jetty. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
+Extract the JAR file and copy it to `$JETTY_HOME/lib/ext/liferay`.
 
-    <Call name="addService">
-        <Arg>
-            <New class="org.mortbay.jetty.plus.MailService">
-                <Set name="Name">MailService</Set>
-                <Set name="JNDI">mail/MailSession</Set>
-                <Put name="mail.smtp.host">localhost</Put>
-            </New>
-        </Arg>
-    </Call>
+Now that your `.jar` files are in place, let's configure your domain.
 
-9.  Create `$JETTY_HOME/etc/jaas.config`.
+##### Domain Configuration
 
-    PortalRealm {
-        com.liferay.portal.kernel.security.jaas.PortalLoginModule required;
-    };
+In order to get your domain ready for running Liferay Portal, we'll need to make a number of modifications that involve configuration files, initialization files, and run scripts.
 
-10. Create directory `$JETTY_HOME/webapps/root` and *unpack* the Liferay `.war` file into it.
+1.	We'll create a `start.config` file to modify the behavior of Jetty's `start.jar`. Let's base our `start.config` file of the default one found in `start.jar`.
 
-11. Go to `$JETTY_HOME/webapps/root/WEB-INF/lib` and delete `xercesImpl.jar` and `xml-apis.jar`.
+	1.	Extract the default start config file `org/eclipse/jetty/start/start.config` from the `start.jar` into `$JETTY_HOME/etc` so that you have file `$JETTY_HOME/etc/start.config`.
+	
+	2.	Add the following property assignment to `$JETTY_HOME/etc/start.config` to specify where Jetty should write its logs:
 
-15. Copy `$JETTY_HOME/webapps/root/WEB-INF/lib/commons-logging.jar` to `$JETTY_HOME/ext` (overwriting the existing one).
+			jetty.logs=$(jetty.home)/logs
 
-16. Create batch file: `run.bat`.
+	3.	Add the following directive to `$JETTY_HOME/etc/start.config` to load all of the `.jar` and `.zip` files found in your `$JETTY_HOME/lib/liferay` folder into your class path:
 
-    @echo off
+			$(jetty.home)/lib/liferay/*
 
-    if "" == "%JAVA_HOME%" goto errorJavaHome
+	Now that your class loading is specified, let's create initialization files and run scripts that will invoke these configuration directives during startup of Jetty
 
-    %JAVA_HOME%/bin/java -Xmx512m -Dfile.encoding=UTF8 -Duser.timezone=GMT         -Djava.security.auth.login.config=../etc/jaas.config         -DSTART=../extra/etc/start-plus.config -jar ../start.jar         ../etc/jetty.xml
+2.	Create initialization file: `$JETTY_HOME/bin/start.ini`
 
-    goto end
+		START=../etc/start.config
+		OPTIONS=Server,jsp,resources
+		
+		../etc/jetty.xml
+		../etc/jetty-deploy.xml
+		../etc/jetty-webapps.xml
+		../etc/jetty-contexts.xml
+		../etc/jetty-testrealm.xml
 
-    :errorJavaHome         echo JAVA_HOME not defined.
+	This initialization file does the following:
+	
+	-	Sets `$JETTY_HOME/etc/start.config` as your starting configuration file.
+	-	Sets your server options.
+	-	Specifies a sequence of deployment descriptor files to be processed.
 
-    goto end
+3.	Create a run script appropriate to your operating system:
 
-    :end
+	-	On Windows, create: `$JETTY_HOME/bin/run.bat`
 
-**Note:** If you get a `java.lang.OutOfMemoryError` exception while starting up Jetty, give your JVM more memory by setting `-Xmx1024m`.
+			@echo off
 
-Start Liferay by running `run.bat`. Open your browser to `http://localhost:8080`. You should see the default Liferay home page.
+			if "" == "%JAVA_HOME%" goto errorJavaHome
+
+			set "JAVA_OPTS=-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+
+			"%JAVA_HOME%/bin/java" %JAVA_OPTS% -jar ../start.jar
+
+			goto end
+
+			:errorJavaHome
+				echo JAVA_HOME not defined.
+
+				goto end
+
+			:end
+
+	-	On Unix/Linux, create: `$JETTY_HOME/bin/run.sh`
+
+			#!/bin/sh
+
+			if [ ! $JAVA_HOME ]
+			then
+				echo JAVA_HOME not defined.
+				exit
+			fi
+
+			export JAVA_OPTS="-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+
+			$JAVA_HOME/bin/java $JAVA_OPTS -jar ../start.jar
+
+3.	Create a context file `$JETTY_HOME/contexts/root.xml` to specify the context , class path, and resource base of your web application:
+
+		<?xml version="1.0"?>
+		<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+
+		<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+			<Set name="contextPath">/</Set>
+			<Set name="extraClasspath"><SystemProperty name="jetty.home" />/lib/jetty-server-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-util-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-webapp-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar</Set>
+			<Set name="resourceBase"><SystemProperty name="jetty.home" />/webapps/root</Set>
+		</Configure>
+
+4.	Lastly, create the following folders:
+
+	- `$JETTY_HOME/logs` - for log files
+
+	- `$JETTY_HOME/temp` - for temporary files. Note, this folder is specified to our JVM as a temporary folder in the run script you created previously.
+
+Now that your general Jetty startup files are set in place, let's consider how you will manage your data source. 
+
+##### Database Configuration
+
+If you want to manage your data source within Jetty, continue following the instructions in this section. If you want to use the built-in Liferay data source, you can skip this section.
+
+1.	Management of databases in Jetty will be done via the file `$JETTY_HOME/etc/jetty.xml`. Edit `jetty.xml` and insert the following text within the root element `<Configure>` to specify the data pool for your data source. Be sure to pass in value `jdbc/LiferayPool` as the second argument.
+
+		<New id="LiferayPool" class="org.eclipse.jetty.plus.jndi.Resource">
+			<Arg></Arg>
+			<Arg>jdbc/LiferayPool</Arg>
+			<Arg>
+				<New class="com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource">
+					<Set name="Url">jdbc:mysql://localhost/lportal?
+		useUnicode=true&amp;characterEncoding=UTF-8</Set>
+					<Set name="User">root</Set>
+					<Set name="Password">root</Set>
+				</New>
+			</Arg>
+		</New>
+
+	Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database. 
+
+2.	Your data pool will need Jetty's JNDI and Jetty Plus libraries loaded in order to access those classes at runtime. Your `$JETTY_HOME/etc/start.config` file should have sections that load these libraries as long as `jndi` and `plus` *options* are specified at startup.
+
+	To set these options, edit your `$JETTY_HOME/bin/start.ini` file and add `jndi` and `plus` as values for the `OPTIONS` variable:
+
+		OPTIONS=Server,jsp,resources,jndi,plus
+
+Super! Now have have your database specified and ready for use with Liferay on Jetty. Let's consider your mail session next.
+
+##### Mail Configuration
+
+If you want to manage your mail session within Jetty, use the following instructions. If you want to use the built-in Liferay mail session, you can skip this section.
+
+Management of mail sessions in Jetty is done via the configuration file `$JETTY_HOME/etc/jetty.xml`. Edit `jetty.xml` and insert the following text within the root element `<Configure>` to specify your mail session. Be sure to pass in value `mail/MailSession` as the first argument and to replace the mail session values with your own.
+
+	<New id="MailSession" class="org.eclipse.jetty.plus.jndi.Resource">
+		<Arg>mail/MailSession</Arg>
+		<Arg>
+			<New class="org.eclipse.jetty.jndi.factories.MailSessionReference">
+				<Set name="user"></Set>
+				<Set name="password"></Set>
+				<Set name="properties">
+					<New class="java.util.Properties">
+						<Put name="mail.pop3.host">pop.gmail.com</Put>
+						<Put name="mail.pop3.port">110</Put>
+						<Put name="mail.smtp.host">smtp.gmail.com</Put>
+						<Put name="mail.smtp.password">password</Put>
+						<Put name="mail.smtp.user">user</Put>
+						<Put name="mail.smtp.port">465</Put>
+						<Put name="mail.transport.protocol">smtp</Put>
+						<Put name="mail.smtp.auth">true</Put>
+						<Put name="mail.smtp.starttls.enable">true</Put>
+						<Put name="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</Put>
+						<Put name="mail.imap.host">imap.gmail.com</Put>
+						<Put name="mail.imap.port">993</Put>
+						<Put name="mail.store.protocol">imap</Put>
+					</New>
+				</Set>
+			</New>
+		</Arg>
+	</New>
+
+Great! Now you'll be able to use this mail session with Liferay.
+
+##### Domain Configuration - Continued
+
+Let's revisit domain configuration to make sure that we'll be able to access your data source and mail session from Liferay Portal.
+
+1.  First, navigate to the *Liferay Home* folder, which is one folder above Jetty's install location. Create a file named `portal-ext.properties`.
+
+2.  Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file:
+
+		jdbc.default.driverClassName=com.mysql.jdbc.Driver
+		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+		jdbc.default.username=root
+		jdbc.default.password=root
+
+	Otherwise, if you are using *Jetty* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
+
+		jdbc.default.jndi.name=java:jdbc/LiferayPool
+
+3.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+
+	Otherwise, if you are using *Jetty* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
+
+		mail.session.jndi.name=java:mail/MailSession
+
+Your domain configuration is complete! Let's deploy Liferay and startup your server. 
+
+##### Deploying Liferay
+
+Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
+
+1.	If you already have an application folder `$JETTY_HOME/webapps/root`, delete it or move it to a location outside of `$JETTY_HOME/webapps`.
+
+2.	Then extract the contents of the Liferay portal `.war` file into `$JETTY_HOME/webapps/root`.
+
+3.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$JETTY_HOME/bin`.
+
+	Jetty should automatically launch Liferay Portal displaying the default Liferay home page to your browser at [http://localhost:8080](http://localhost:8080).
+
+You've just installed and deployed Liferay Portal on Jetty - way to go!
 
 #### JBoss 7.0.x
 
@@ -834,7 +967,7 @@ Now that your mail session is squared away, we'll make sure that Liferay can acc
 
 Let's revisit domain configuration to make sure that we'll be able to access your data source and mail session from Liferay Portal.
 
-1.  First, navigate to the *Liferay Home* folder, which is one folder above JBoss's install location (i.e. `$RESIN_HOME/..`).
+1.  First, navigate to the *Liferay Home* folder, which is one folder above Resin's install location (i.e. `$RESIN_HOME/..`).
 
 2.  Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file in your *Liferay Home*:
 
