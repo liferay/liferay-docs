@@ -36,7 +36,7 @@ You can also customize the logo in the top left corner of every page by selectin
 
 ## Page Creation and Management
 
-There are two ways to get into the page creation interface. From the control panel, click the *Site Pages* link in the content section. If you're currently viewing the page you wish to manage, click *Manage* from the Dockbar and select *Page*. If you would like to manage your site's whole set of pages, clink *Manage* and select *Site Pages*. 
+You have a few options for accessing the page creation interface, which one you use will probably depend on the specific cirumstances of what you're editing, and where you are on the portal. From the control panel, make sure that you have the correct site selected in the context menu and click the *Site Pages* link in the content section. If you're currently viewing the page you wish to manage, click *Manage* from the Dockbar and select *Page*. For more options that effect the entire site, click *Manage* and select *Site Pages*. 
 
 ![Figure 4.2: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
 
@@ -44,7 +44,7 @@ Alternatively, you can navigate to the Sites page under the Portal section of th
 
 ![Figure 4.3: Managing Site Pages](../../images/04-managing-site-pages.png)
 
-Once you're in the Manage Pages dialog box, you'll see an interface to view existing pages, create new pages, view pages, and export or import pages using Liferay Archive (LAR) files. Note that you can switch between managing a set of pages and managing a single page using the left-hand side navigation menu. Click on *Public Pages* or *Private Pages* to manage the group or click on an individual page to manage just that one. Switching views like this will change this list of available tabs to the right. By default, liferay.com, which we renamed nosester.com, contains a single public page called *Welcome*, and we'll leave it that way.
+Go to *Manage* &rarr; *Site Pages*, you'll see an interface to view existing pages, create new pages, view pages, and export or import pages using Liferay Archive (LAR) files. Note that you can switch between managing a set of pages and managing a single page using the left-hand side navigation menu. Click on *Public Pages* or *Private Pages* to manage the group or click on an individual page to manage just that one. Switching views like this will change this list of available tabs to the right. By default, liferay.com, which we renamed nosester.com, contains a single public page called *Welcome*..
 
 ### Understanding Public and Private Pages
 
@@ -52,7 +52,7 @@ Liferay's page groups are always associated with sites. Even users' personal pag
 
 Regardless of whether the pages are public or private, Liferay uses the same interface to manage them. Let's look at this interface more closely. 
 
-### Manage Pages Interface
+### Managing Pages
 
 From the Manage Site Pages dialog box, you can add a page to the site by clicking the *Add Page* button. Because *Public Pages* is selected on the left, clicking *Add Page* here will add a top level page next to the Welcome page. You can, however, nest pages as deeply as you like. If you wanted to create a sub-page under the Welcome page, all you'd have to do is select the *Welcome* page first and then create your page. And if you later decide you don't like the order of your pages, you can drag and drop them in the list to put them in whatever order you want. Let's go ahead and add another top level page and name it *Community*. We'll use this page for the Recent Bloggers and Wiki portlets.
 
@@ -60,7 +60,7 @@ Note that when you create a new page, you have the option to create either a bla
 
 ![Figure 4.4: Adding Pages](../../images/04-web-content-add-page.png)
 
-### Export/Import
+#### Backing up and Restoring Pages
 
 You can find two buttons labeled *Export* and *Import* next to the Add Page button in the Manage Site Pages dialog box. The Export button allows you to export the pages you create into a single file, called a LAR (Liferay Archive). You can then import this file into any server running Liferay, and all of your pages will be copied. If you have a LAR that you would like to import, use the *Import* button. Exporting and Importing LARs is a great way to take content from one environment (say, a development or QA environment) and move it all in one shot to your production server.
 
@@ -72,7 +72,7 @@ Once you click *Export*, your browser prompts you to save the file. Once you hav
 
 Next, we'll look at the options on the right side menu, starting with Look and Feel. 
 
-### Look and Feel
+#### Customizing the Look and Feel
 
 When you open the Manage Site Pages dialog box it defaults to the Look and Feel tab. On this tab, you're presented with an interface which allows you to choose a theme for the site which you are currently working on. Themes can transform the entire look of the portal. They are created by developers and are easily installed using the Liferay Marketplace. Since we don't have any themes beyond the default one installed yet, we'll use the default theme for our pages.  
 
@@ -90,7 +90,7 @@ The *CSS* section allows you to enter custom CSS that will also be served up by 
 
 The next option configures the logo that appears for your site. 
 
-### Using a custom logo
+#### Using a custom logo
 
 If you want to use your own logo for a specific site, you can configure an alternate logo in the Logo tab. To add a custom logo, select the Logo tab, and browse to the location of your logo. Make sure that your logo fits the space in the top left corner of the theme you are using for your web site. If you don't, you could wind up with a site that's difficult to navigate, as other page elements are pushed aside to make way for the logo. 
 
@@ -126,45 +126,23 @@ As with Site Pages, you can access Site Settings through the control panel or di
 
 ![Figure 2.x: Site Settings](../../images/web-content-site-settings.png)
 
-You'll find options to specify details and metadata about your site, set up friendly URLs and virtual hosts, configure search engine optimization settings, turn staging on or off, and specify a Google Analytics ID. Let's take a closer look, starting with the default option, *Details*. 
+You'll find options to specify details and metadata about your site, set up friendly URLs and virtual hosts, configure search engine optimization settings, turn staging on or off, and specify a Google Analytics ID. Let's take a closer look. 
 
-#### Specifying site details
+*Details*: The details tab allows an administrator to change the description and membership type of a site, and also to specify tags and categories for the site. The membership type can be set as open, restricted, or private based on the privacy needs of the site. Users can join and leave an open site at will. To join a restricted site, a user has to be added by the site administrator, but can request to be added through the Sites section of the control panel. A private site is like a restricted site, but doesn't appear in the Sites section of the control panel for users who aren't members.  
 
-The details tab allows an administrator to change the description and membership type of a site, and also to specify tags and categories for the site. The membership type can be set as open, restricted, or private based on the privacy needs of the site. Users can join and leave an open site at will. To join a restricted site, a user has to be added by the site administrator, but can request to be added through the Sites section of the control panel. A private site is like a restricted site, but doesn't appear in the Sites section of the control panel for users who aren't members. 
+*Pages*: From Site Settings, click on *Pages* to manage some basic features of the pages on a site. You can view current public and private pages and manage their page templates. You can also change the application adapter.
 
-When adding a site, tagging and categorizing it can make it easier to search for a site on the portal. Tags and categories can also, together with the site description, help users decide if they should join a site.
+*Site URL*: The Site URL tab is where you handle configuration for user-facing URLs, it has two sections: Friendly URL and Virtual Hosts. The *Friendly URL* option allows you to change the name of your site as it appears in the URL. This will need to be a unique name, but it doesn't need to have any relation to the actual name of your site. Having a good friendly URL will be critical to good search engine optimization.
 
-Let's move on to the *Pages* option. 
-
-#### Pages
-
-From Site Settings, click on *Pages* to manage some basic features of the pages on a site. You can view current public and private pages and manage their page templates. You can also change the application adapter.
-
-#### Site URL
-
-The Site URL tab is where you handle configuration for user-facing URLs, it has two sections: Friendly URL and Virtual Hosts. 
-
-##### Friendly URL
-
-The Friendly URL option allows you to change the name of your site as it appears in the URL. This will need to be a unique name, but it doesn't need to have any relation to the actual name of your site. Having a good friendly URL will be critical to good search engine optimization.
-
-##### Virtual Hosts
-
-You can make web navigation much easier for your users by connecting a domain name to a site. This tab allows you to define a domain name (i.e., www.mycompany.com) for your site. This can be a full domain or a subdomain. This enables you to host a number of web sites as separate sites on one Liferay server.
+You can use *Virtual Hosts* to make web navigation much easier for your users by connecting a domain name to a site. This tab allows you to define a domain name (i.e., www.mycompany.com) for your site. This can be a full domain or a subdomain. This enables you to host a number of web sites as separate sites on one Liferay server.
 
 For instance, if we set this up for Nose-ster's Development Network, users in that site could use developers.noseter.com to get to their site, provided that Nose-ster's network administrators created the domain name and pointed it to the Liferay server.
 
-To set this up, you would simply configure the DNS for developers.nosester.com at the web address for your portal, and enter http://developers.noseter.com in the Virtual Host tab for the admissions site.
+To set this up, you would simply configure the DNS for developers.nosester.com at the web address for your portal, and enter http://developers.noseter.com in the Virtual Host tab for the Developers site. This can help users quickly access their site without having to recall an extended URL.
 
-This can help users quickly access their site without having to recall an extended URL.
+*Site Templates*: The Site Templates tab can be useful if you have yet added pages to your site. If you haven't added either public or private pages, you will be able to apply a site template from this page. If you've already created both public and private pages, than you can safely ignore this tab.
 
-#### Site Templates
-
-The Site Templates tab can be useful if you have yet added pages to your site. If you haven't added either public or private pages, you will be able to apply a site template from this page. If you've already created both public and private pages, than you can safely ignore this tab.
-
-#### Sitemap
-
-The next tab lets you generate a sitemap to help you optimize your site for search engines. The Sitemap tab publishes your site using the sitemap protocol, a protocol that helps search engines crawl your web site to index relevant information. You can publish your site to Yahoo or Google, and their web crawlers will use the sitemap to index your site.
+*Sitemap*: The next tab lets you generate a sitemap to help you optimize your site for search engines. The Sitemap tab publishes your site using the sitemap protocol, a protocol that helps search engines crawl your web site to index relevant information. You can publish your site to Yahoo or Google, and their web crawlers will use the sitemap to index your site.
 
 Liferay Portal makes this very simple for administrators by generating the sitemap XML automatically for all public web sites.
 
@@ -172,13 +150,11 @@ By selecting one of the search engine links, the sitemap will be sent to them. I
 
 If you're interested in seeing what is being sent to the search engines, select the *Preview* link to see the generated XML.
 
-#### Robots
+*Robots*: Generally, you can configure your `robots.txt` at a portal level through the control panel, or control it at an individual page level. However, once you setup virtual hosting, you will need to setup separate `robots.txt` files for each domain. The Robots page gives you the option to setup your `robots.txt` for both your public and private pages on a site if you have Virtual Hosting setup. If you don't have Virtual Hosting set up, this tab will be rather boring. 
 
-Generally, you can configure your `robots.txt` at a portal level through the control panel, or control it at an individual page level. However, once you setup virtual hosting, you will need to setup separate `robots.txt` files for each domain. The Robots page gives you the option to setup your `robots.txt` for both your public and private pages on a site if you have Virtual Hosting setup. If you don't have Virtual Hosting set up, this tab will be rather boring. 
+*Staging*: Staging enables you to edit and revise a page behind the scenes, and then publish changes to your site once they have been completed and reviewed. For a full explanation of Staging, see Chapter 3: Managing Content.
 
-#### Analytics
-
-The Analytics tab allows you to integrate your pages with Google Analytics. Liferay provides seamless integration with Google Analytics, allowing you to place your ID in one place, and then it will get inserted automatically on every page. This enables you to focus your efforts on building the page, rather than remembering to put the code everywhere. Google Analytics is a fantastic, free service which lets you do all kinds of traffic analysis on your site, so you can see who visits, where they visit from, and what pages they most often visit. This helps you to tweak your site so that you can provide the most relevant content to your users.
+*Analytics*: The Analytics tab allows you to integrate your pages with Google Analytics. Liferay provides seamless integration with Google Analytics, allowing you to place your ID in one place, and then it will get inserted automatically on every page. This enables you to focus your efforts on building the page, rather than remembering to put the code everywhere. Google Analytics is a fantastic, free service which lets you do all kinds of traffic analysis on your site, so you can see who visits, where they visit from, and what pages they most often visit. This helps you to tweak your site so that you can provide the most relevant content to your users.
 
 ### Site Content
 
