@@ -116,7 +116,7 @@ Liferay Portal is distributed with the following bundle options for servlet cont
 
 -   Geronimo+Tomcat
 
--   Glassfish 3
+-   Glassfish
 
 -   JBoss
 
@@ -126,7 +126,7 @@ Liferay Portal is distributed with the following bundle options for servlet cont
 
 -   Resin
 
--   Tomcat 6.0
+-   Tomcat
 
 Choose your preferred bundle and download it from the downloads page on Liferay's web site or via the EE links that were provided to you. A prerequisite for running any of the bundles is that you have the proper version of the Java Development Kit (1.5 or higher) installed on the machine to which you are installing Liferay. Make sure that you have also created the `JAVA_HOME` environment variable and have pointed it to your Java installation.
 
@@ -230,7 +230,7 @@ The following instructions assume an installation on a local machine. When insta
 
 Remember, for all of these application servers, create your `portal-ext.properties` file in the Liferay Home folder and make sure it points to your database connection pool and mail session.
 
-#### GlassFish 3.1.x
+#### Installing Liferay on GlassFish 3
 
 *Liferay Home* is three folders above your GlassFish domain folder.
 
@@ -409,7 +409,7 @@ Liferay Portal will now be deployed and started automatically to your server's h
 
 Your installation of Liferay Portal on GlassFish is complete!
 
-#### Jetty 7.4.x
+#### Installing Liferay on Jetty 7
 
 **Liferay Home** is one folder above Jetty's install location.
 
@@ -635,7 +635,7 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
 You've just installed and deployed Liferay Portal on Jetty - way to go!
 
-#### JBoss 7.0.x
+#### Installing Liferay on JBoss 7
 
 **Liferay Home** is one folder above JBoss's install location.
 
@@ -873,7 +873,7 @@ You've completed the steps necessary for your deployment of Liferay so that Life
 
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
-#### Resin 4.0.x
+#### Installing Liferay on Resin 4
 
 **Liferay Home** is one folder above Resin's install location.
 
@@ -1061,7 +1061,7 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
 Congratulations! You've installed Liferay Portal on Resin and have it up and running.
 
-#### Tomcat 6.0.x-7.0.x
+#### Installing Liferay on Tomcat 7
 
 **Liferay Home** is one folder above Tomcat's install location.
 
@@ -1247,7 +1247,7 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
 
-#### WebLogic 10
+#### Installing Liferay on WebLogic 10
 
 **Liferay Home** is one folder above the domain to which you will be installing Liferay. For example, if your domain location is `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home will be `/Oracle/Middleware/user_projects/domains`.
 
@@ -1378,7 +1378,7 @@ Follow the instructions in this section to deploy Liferay Portal to your domain.
 
 Liferay will start and you will be able to get to it by browsing to `http://<server name>:7001`. If your browser is running on the same machine upon which you have installed Liferay, the URL is `http://localhost:7001`.
 
-#### Oracle WebLogic 10.3
+#### Installing Liferay on Oracle WebLogic 10.3
 
 **Liferay Home** is one folder above the domain to which you will be installing Liferay.
 
@@ -1517,7 +1517,7 @@ Congratulations! You are now running Liferay on Oracle WebLogic.
 ![tip](../../images/tip.png) **Tip:** After Liferay completes installing, you may see an error initializing the Web Proxy portlet. Because the XSL parser configured by default within WebLogic cannot compile a style sheet in this portlet, Liferay disables it by default. To re-enable this portlet, extract `xalan.jar` and `serializer.jar` from the Liferay `.war` archive and copy them to your JDK's endorsed folder for libraries. If you are using JRockit, you may find this folder in `[Bea Home]/jrockit_160_05/jre/lib/ext`.
 ---
 
-#### WebSphere 6.1
+#### Installing Liferay on WebSphere 6.1
 
 ![image](../../images/02-tip.png) **Tip:** Throughout this installation and configuration process, WebSphere will prompt you to Click Save to apply changes to Master Configuration. Do so intermittently to save your changes.
 
@@ -1653,7 +1653,7 @@ lportal
 
 5.  Open up the browser and go to `http://localhost:9080`. The default Liferay home page will be displayed.
 
-#### WebSphere 7.0
+#### Installing Liferay on WebSphere 7.0
 
 **Liferay Home** is in a folder called `liferay` in the home folder of the user ID that is running WebSphere.
 
