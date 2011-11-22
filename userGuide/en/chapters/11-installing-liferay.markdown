@@ -557,7 +557,7 @@ If you want to manage your data source within Jetty, continue following the inst
 
 		OPTIONS=Server,jsp,resources,jndi,plus
 
-Super! Now have have your database specified and ready for use with Liferay on Jetty. Let's consider your mail session next.
+Super! Now you have your database specified and ready for use with Liferay on Jetty. Let's consider your mail session next.
 
 ##### Mail Configuration
 
@@ -611,17 +611,17 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 	Otherwise, if you are using *Jetty* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
 
-		jdbc.default.jndi.name=java:jdbc/LiferayPool
+		jdbc.default.jndi.name=jdbc/LiferayPool
 
 3.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
 
 	Otherwise, if you are using *Jetty* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
-		mail.session.jndi.name=java:mail/MailSession
+		mail.session.jndi.name=mail/MailSession
 
 Your domain configuration is complete! Let's deploy Liferay and startup your server. 
 
-##### Deploying Liferay
+##### Deploy Liferay
 
 Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
@@ -828,19 +828,7 @@ Specify your mail subsystem  in `standalone.xml` as in the following example:
 	   </mail-session>
 	</subsystem>
 
-You've got mail! Now you are ready to deploy Liferay Portal.
-
-##### Deploy Liferay
-
-1.  If folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists in your JBoss installation, delete all of its subfolders and files. Otherwise, create a new folder `$JBOSS_HOME/standalone/deployments/ROOT.war`.
-
-2.  Unzip the Liferay `.war` file into the `ROOT.war` folder.
-
-4.	To trigger deployment of `ROOT.war`, create an empty file named `ROOT.war.dodeploy`. On startup, JBoss will detect the presence of this file and deploy it as a web application.
-
----
-![Tip](../../images/tip.png) To trigger deployment of a `.war` application, create or copy a `.dodeploy` file for it  into your `$JBOSS_HOME/standalone/deployments/` folder. For example, create a file named `myApp.war.dodeploy` to trigger deplyment of an application named `myApp.war`.  
----
+You've got mail! Next, we'll make sure Liferay is configured to properly connect with your new mail session and database.
 
 ##### Domain Configuration - Continued
 
@@ -867,11 +855,21 @@ Let's revisit domain configuration to make sure that we'll be able to access the
 
 		mail.session.jndi.name=java:mail/MailSession
 
-You've completed the steps necessary for your deployment of Liferay so that Liferay Portal can now communicate with your datasource and mail session - way to go! Now you are ready to launch your installation of Liferay Portal on JBoss.
+You've completed the steps necessary for your deployment of Liferay so that Liferay Portal can now communicate with your datasource and mail session - way to go! Now you are ready to deploy Liferay Portal.
 
-#### Starting Liferay
+##### Deploy Liferay
 
-Start JBoss and it should automatically launch Liferay Portal displaying the default Liferay home page to your browser at [http://localhost:8080](http://localhost:8080).
+1.  If folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists in your JBoss installation, delete all of its subfolders and files. Otherwise, create a new folder `$JBOSS_HOME/standalone/deployments/ROOT.war`.
+
+2.  Unzip the Liferay `.war` file into the `ROOT.war` folder.
+
+3.	To trigger deployment of `ROOT.war`, create an empty file named `ROOT.war.dodeploy`. On startup, JBoss will detect the presence of this file and deploy it as a web application.
+
+---
+![Tip](../../images/tip.png) To trigger deployment of a `.war` application, create or copy a `.dodeploy` file for it  into your `$JBOSS_HOME/standalone/deployments/` folder. For example, create a file named `myApp.war.dodeploy` to trigger deployment of an application named `myApp.war`.  
+---
+
+4.	Start JBoss and it should automatically launch Liferay Portal displaying the default Liferay home page to your browser at [http://localhost:8080](http://localhost:8080).
 
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
@@ -1034,7 +1032,7 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 Great! Now Liferay can access your database and your mail session. Now, let's deploy Liferay.
 
-##### Deploying Liferay
+##### Deploy Liferay
 
 Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
@@ -1071,41 +1069,183 @@ For this section, we will refer to your Tomcat server's installation location as
 
 Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files). The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
-*Note:* If you are using JDK 5, move `$TOMCAT_HOME/webapps/ROOT/WEB-INF/lib/xercesImpl.jar` to `$TOMCAT_HOME/common/endorsed`. JDK 1.4 is no longer supported in Liferay 5.x and above.
+---
+![Note](../../images/tip.png) *Note:* If you are using JDK 5, move `$TOMCAT_HOME/webapps/ROOT/WEB-INF/lib/xercesImpl.jar` to `$TOMCAT_HOME/common/endorsed`. JDK 1.4 is no longer supported in Liferay 5.x and above.
+---
 
-**Installation Steps**:
+Next, let's get started by addressing Liferay's library dependencies.
 
-1. If you are manually installing Liferay on a clean Tomcat server, delete the contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the default Tomcat home page. Then extract the Liferay `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
+##### Dependency Jars
+
+Your Liferay Portal will need to have the Liferay Portal Dependency JARs, an appropriate JDBC driver, and a few other JARs installed.
+
+1.	Create folder `$TOMCAT_HOME/lib/ext`.
 
 2. Extract the Liferay dependencies file to `$TOMCAT_HOME/lib/ext`. If the files do not extract to this directory, you can copy the dependencies archive to this directory, extract them, and then delete the archive.
 
-*Note:* Tomcat 6 users need to delete the `ccpp.jar` file from `$TOMCAT_HOME/lib/ext`. If you are using Tomcat 7, this file can stay.
+3.	Next, you will need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Tomcat does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
 
-3. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina will call `setenv.bat` or `setenv.sh`. Edit the file and populate it with following contents:
+	1.	Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your `$TOMCAT_HOME/lib/ext` folder:
 
-	JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+		- 	`activation.jar`
+		-	`jms.jar`
+		-	`jta.jar`
+		-	`jutf7.jar`
+		-	`mail.jar`
+		-	`persistence.jar`
 
-This sets the character encoding to UTF-8, sets the time zone to Greenwich Mean Time, and allocates memory to the Java virtual machine.
+	2.	Copy the following jar from `$LIFERAY_SOURCE/lib/portal` to your `$TOMCAT_HOME/lib/ext` folder:
 
-4. Create the directory `$TOMCAT_HOME/conf/Catalina/localhost` and create a `ROOT.xml` file in it. Edit this file and populate it with the following contents:
+		- 	`ccpp.jar`
 
-	<Context path="" crossContext="true"> 	 	</Context> 	 Setting `crossContext="true"` allows multiple web apps to use the same class loader.
+		*Note:* Tomcat 6 users should *not* copy the `ccpp.jar` file into their `$TOMCAT_HOME/lib/ext` folder and should delete it from this folder if it already exists.
 
-5. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line `common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar` with `common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar`. This allows Catalina to access the dependency jars that you extracted to `$TOMCAT_HOME/lib/ext`.
+	2.	Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your `$TOMCAT_HOME/temp/liferay/com/liferay/portal/deploy/dependencies` folder:
 
-6. Open `$TOMCAT_HOME/conf.server.xml` and do a search and replace of the line `redirectPort="8443"` with the line `redirectPort="8443" URIEncoding="UTF-8"`. This ensures that your server will consistently use UTF-8 encoding.
+		- 	`resin.jar`
+		-	`script-10.jar`
 
-7. Make sure that there is no `support-catalina.jar` file in your `$TOMCAT_HOME/webapps` directory. If you find one, remove it.
+2. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/). Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
 
-8. Make sure that your database server is installed and working. If it's installed in a different machine, make sure that it's accessible from the one where Liferay is being installed.
+Now that you have the necessary libraries in place, we'll move on to configuring your domain.
 
-9. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/). Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
+##### Domain Configuration
 
-11. Configure the data sources for your database by creating a `portal-ext.properties` file in your *Liferay Home* directory (the one your $TOMCAT_HOME directory is sitting in). Edit the file and populate it with the following contents:
+The steps in this section will focus on:
 
-	jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false 	jdbc.default.driverClassName=com.mysql.jdbc.Driver 	jdbc.default.username=root 	jdbc.default.password=root 	 Note that the above properties file assumes that your database name is *lportal* and your MySQL username and password are both *root*. You'll have to update these values with your own database name and credentials.
+-	Setting environment variables
 
-12. Start Tomcat. You can do this by executing `$TOMCAT_HOME/bin/startup.bat` or `$TOMCAT_HOME/bin/startup.sh`. Then point your browser to `http://localhost:8080`. You should see the default Liferay home page. Congratulations on successfully installing Liferay!
+-	Creating a context for your web application
+
+-	Modifying the list of classes/JARs to be loaded
+
+-	Specifying URI encoding
+
+So, let's get started with our configuration tasks.
+
+1. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina will call `setenv.bat` or `setenv.sh`. Edit the file and populate it with following contents:
+
+		JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+
+	This sets the character encoding to UTF-8, sets the time zone to Greenwich Mean Time, and allocates memory to the Java virtual machine.
+
+2. Create the directory `$TOMCAT_HOME/conf/Catalina/localhost` and create a `ROOT.xml` file in it. Edit this file and populate it with the following contents to set up a portal web application:
+
+			<Context path="" crossContext="true">
+			</Context>
+		
+	Setting `crossContext="true"` allows multiple web apps to use the same class loader.
+
+3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
+
+		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+
+	with:
+
+		common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
+		
+	This allows Catalina to access the dependency jars that you extracted to `$TOMCAT_HOME/lib/ext`.
+
+4. To ensure consistent use of UTF-8 URI Encoding, edit `$TOMCAT_HOME/conf/server.xml` and add the attribute `URIEncoding="UTF-8"` to your connector that is on port 8080. Below is an example of specifying this encoding on the connector:
+
+		<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+
+5. Make sure that there is no `support-catalina.jar` file in your `$TOMCAT_HOME/webapps` directory. If you find one, remove it.
+
+Excellent work! Now let's consider configuration of your database.
+
+##### Database Configuration
+
+If you want Tomcat to manage your data source, use the following procedure. If you want to use Liferay's built-in data source, you can skip this section.
+
+1.	Make sure that your database server is installed and working. If it's installed in a different machine, make sure that it's accessible from the one where Liferay is being installed.
+
+2.	Add your data source as a resource in the context of your web application specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
+
+		<Context...>
+			<Resource
+				name="jdbc/LiferayPool"
+				auth="Container"
+				type="javax.sql.DataSource"
+				driverClassName="com.mysql.jdbc.Driver"
+				url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+				username="root"
+				password="root"
+				maxActive="100"
+				maxIdle="30"
+				maxWait="10000"
+			/>
+		</Context>
+	
+	Note that the above resource definition assumes that your database name is *lportal* and your MySQL username and password are both *root*. You'll have to update these values with your own database name and credentials.
+
+Your Tomcat managed data source is now configured. Let's move on to your mail session.
+
+##### Mail Configuration
+
+If you want to manage your mail session within Tomcat, use the following instructions. If you want to use the built-in Liferay mail session, you can skip this section.
+
+Create a mail session bound to `mail/MailSession`. Edit `$TOMCAT_
+HOME/conf/Catalina/localhost/ROOT.xml` and configure a mail
+session. Be sure to replace the mail session values with your own.
+
+	<Context...>
+		<Resource
+			name="mail/MailSession"
+			auth="Container"
+			type="javax.mail.Session"
+			mail.pop3.host="pop.gmail.com"
+			mail.pop3.port="110"
+			mail.smtp.host="smtp.gmail.com"
+			mail.smtp.port="465"
+			mail.smtp.user="user"
+			mail.smtp.password="password"
+			mail.smtp.auth="true"
+			mail.smtp.starttls.enable="true"
+			mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+			mail.imap.host="imap.gmail.com"
+			mail.imap.port="993"
+			mail.transport.protocol="smtp"
+			mail.store.protocol="imap"
+		/>
+	</Context>
+
+Super! Your mail session is configured. Next, we'll make sure Liferay will be able to access your mail session and database.
+
+##### Domain Configuration - Continued
+
+In this section we'll specify appropriate properties for Liferay to use in connecting to your database and mail session.
+
+1. Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file in your *Liferay Home* directory (the one your $TOMCAT_HOME directory is sitting in). Edit the file and populate it with the following contents:
+
+		jdbc.default.driverClassName=com.mysql.jdbc.Driver
+		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+		jdbc.default.username=root
+		jdbc.default.password=root
+	
+	Note that the above properties file assumes that your database name is *lportal* and your MySQL username and password are both *root*. You'll have to update these values with your own database name and credentials.
+
+	Otherwise, if you are using *Tomcat* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
+
+		jdbc.default.jndi.name=jdbc/LiferayPool
+
+2.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+
+	Otherwise, if you are using *Tomcat* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
+
+		mail.session.jndi.name=mail/MailSession
+
+It's just that easy! Now it's time to deploy Liferay Portal on your Tomcat server. 
+
+##### Deploy Liferay
+
+We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapps` folder.
+
+1.	If you are manually installing Liferay on a clean Tomcat server, delete the contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the default Tomcat home page. Then extract the Liferay `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
+
+2.	Start Tomcat. You can do this by executing `$TOMCAT_HOME/bin/startup.bat` or `$TOMCAT_HOME/bin/startup.sh`. Then point your browser to `http://localhost:8080`. You should see the default Liferay home page.
+
+Congratulations on successfully installing and deploying Liferay on Tomcat!
 
 #### WebLogic 10
 
