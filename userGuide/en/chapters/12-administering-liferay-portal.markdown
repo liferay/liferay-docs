@@ -219,7 +219,7 @@ button next to a user group to perform various operations on that group.
 
 Liferay allows users to each have a personal site consisting of public and private pages. Permissions can be granted to allow to allow users to customize their personal sites at will. The default configuration of those pages can be determined by the portal administrator through the `portal-ext.properties` file and optionally by providing the configuration in a LAR file. Though this has been a long-time feature of Liferay, it was not very flexible or easy to use.
 
-Liferay version 5.1 introduced the concept of associating site templates with user groups. This enables administrators to provide the same configuration for the personal sites of a group of users, using Liferay's GUI instead of the properties file. In some cases you might want to provide a different configuration for each user depending on his or her profile. In an educational institution's portal, for example, teachers, staff, and students could get different default pages and portlets on their personal sites. You can even assign users to multiple user groups so that the site templates' pages and portlets are combined together on the users' personal sites. This flexibility lets you acheive almost any desired configuration for a user's personal site without having to modify it directly. When a user is assigned to a user group, the configured page templates are copied directly to the user's personal site.
+Liferay version 5.1 introduced the concept of associating site templates with user groups. This enables administrators to provide the same configuration for the personal sites of a group of users, using Liferay's GUI instead of the properties file. In some cases you might want to provide a different configuration for each user depending on his or her profile. In an educational institution's portal, for example, teachers, staff, and students could get different default pages and portlets on their personal sites. You can even assign users to multiple user groups so that the site templates' pages and portlets are combined together on the users' personal sites. This flexibility lets you acheive almost any desired configuration for a user's personal site without having to modify it directly. When a user is assigned to a user group, the configured site templates are copied directly to the user's personal site.
 
 ##### User Group Site Templates: Defining Site Templates for a User Group
 
@@ -247,7 +247,7 @@ For example, by default, newly created users are given *Welcome* pages on the pu
 
 Once the template pages have been copied to a user's personal site, the copies will be owned by the user. The user will be able to modify the pages and their content provided that the required permissions have been assigned to the user and the template. When a user is removed from a user group the associated pages won't be removed: they have become part of the user's personal site. Moreover, if a user is removed from a group and is then added back, the pages will not be copied to the user's site a second time.
 
-If an administrator modifies page templates for a user group after users have already been added to the group, those changes will only take effect when new users are assigned to the user group. The changes won't be applied to users that were already members of the user group.
+If an administrator modifies site templates for a user group after users have already been added to the group, those changes will only take effect when new users are assigned to the user group. The changes won't be applied to users that were already members of the user group.
 
 ##### Composing A Page Out of Several User Groups
 
@@ -257,7 +257,7 @@ Users can belong to multiple user groups. If you have site templates defined for
 
 The following rules are used when composing a page by combining pages from different user groups:
 
--   If a user becomes a member of a user group that has a page template with the same name in the same set (public or private) as a page that the user already has, those pages will be combined.
+-   If a user becomes a member of a user group that has a site template with the same name in the same set (public or private) as a page that the user already has, those pages will be combined.
 
 -   If any of the pages has the name translated to several languages, only the default language is considered in the comparison.
 
@@ -701,7 +701,7 @@ The next tab is Reserved Credentials. You can enter screen names and email addre
 
 The Default User Associations tab has three fields allowing you to list (one per line) sites, roles, and user groups that you want new users to become members of automatically. By default, Liferay assigns new users to both the Users role and the Power Users role.
 
-If you have defined other user groups, sites, or roles that you want newly created users to be members of by default, enter them here. For example, you may have defined page templates in certain user groups to pre-populate end users' private pages. If there is a particular configuration that you want everyone to have, you may want to enter those user groups here.
+If you have defined other user groups, sites, or roles that you want newly created users to be members of by default, enter them here. For example, you may have defined site templates in certain user groups to pre-populate end users' private pages. If there is a particular configuration that you want everyone to have, you may want to enter those user groups here.
 
 #### Mail Host Names
 
