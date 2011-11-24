@@ -20,7 +20,7 @@ When a new user logs in to `list.it`, they are going to want to build a few list
 
 Using data lists to outline a new data model is as simple as point and click.  You now have a `list.it` account and have been dying to bug your friends and family to sign up for that "volunteer" work that is moving apartments.  Using an intuitive visual editor, you can quickly draw up the skeleton for that volunteer list in minutes. Since data lists exemplify a unique type of content for your site, you can find them in the content section of the control panel, going to *Go To -> Control Panel -> Content -> Dynamic Data Lists* or *Manage -> Site Content -> Dynamic Data Lists*.  Within the dynamic data lists section, you can either create a new data type (**Manage Data Definitions**) or a new list from an existing data type.
 
-![Figure X.x: Data Lists in the control panel.](../../XX-ddl-control-panel.png)
+![Figure 5.1: Data Lists in the control panel.](../../05-ddl-control-panel.png)
 
 When creating a new data definition, you have a palette of fields to lay out, as well as a blank canvas to construct the definition.  The interface will look very similar to creating and editing web content structures covered previously.  Let's explore the different data types at our disposal:
 
@@ -46,7 +46,7 @@ When creating a new data definition, you have a palette of fields to lay out, as
 
 **Text Box:** A large text box for long text input.
 
-![Figure X.x: Data definition fields.](../../XX-data-definition-screen.png)
+![Figure 5.2: Data definition fields.](../../05-data-definition-screen.png)
 
 Using that reference as a nice cheat-sheet, you can now create the data type you need for "Volunteer Work Sign-Up".  Maybe a `Text` type for the name, copious options as `Select` for all the tasks they can volunteer for (obviously set to allow multiple options), and a `File Upload` so they can upload an image of themselves.  After all, how much more official-feeling and fun is it if you can print out some nifty badges?
 
@@ -58,7 +58,7 @@ When creating data definitions, you can also customize the appearance of the inp
 
 **Folder (File Upload):**  Set the location the document will be uploaded to in the document library.  You can choose from an existing folder, create one, or default to the document library's home location.
 
-![Figure X.x: Data field properties.](../../XX-data-definition-field-properties.png)
+![Figure 5.3: Data field properties.](../../05-data-definition-field-properties.png)
 
 In addition to dragging the fields around to create your desired forms, you can stack inputs within inputs, by dragging a field within another field.  Organize your data into unlimited levels of hierarchy, creating the clearest, most logical data model easily.  There is also a duplicate button on each field (the middle button), allowing you to easily clone any field as many times as you need.
 
@@ -79,7 +79,7 @@ If we wanted to create a new volunteer list with the "Volunteer Sign-Up" definit
 
 Now that you've created your brand now volunteer list, you can pester everyone you know to sign up.  But what would it look like for them to add an entry to this list?  Using a data definition you've previously created (or selected), the appropriate form will appear on the page.
 
-![Figure X.x: Entering a new data record.](../../XX-ddl-add-record.png)
+![Figure 5.4: Entering a new data record.](../../05-ddl-add-record.png)
 
 Now, this example here is some stodgy old job posting that radically cool *Listies* would never come up with, but it is a good example.  Just looking at the form reminds of precisely the way it looked when you first defined it.  And that's as it should be:  build the data type the way you want it, and have it appear consistently to your end users.
 
@@ -89,7 +89,7 @@ But how will this data appear?  How will my awesome, new Volunteer Sign-Up sheet
 
 The average Listie isn't going to be too concerned with customizing the display much, and will likely see something like this when they display a new list:
 
-![Figure X.x: The default data list display.](../../XX-ddl-list-display.png)
+![Figure 5.5: The default data list display.](../../05-ddl-list-display.png)
 
 This isn't all that exciting, but it allows users to see the list's contents, and if they have permission, to add and/or edit list items.  Within a site like `list.it`, this type of interaction will either be used for display-only lists that the user chooses to expose to others, or for the user's own private lists that they interact with.  It could also be used to display a beautiful spreadsheet, so you can view the responses to your Volunteer Sign-Up in a comfortable, easy-to-read format.  In other environments, the Dynamic Data List display provides an easy way for a user (such as a member of a site) to interact with whatever list is active and available.
 
@@ -101,7 +101,7 @@ While you can interact with the data list within the control panel, and ask ever
 
 If you need more customizability with the display of the list or the data entry form, you may want to consider a custom **list template** or **detail template**.
 
-![Figure X.x: The spreadsheet view](../../XX-ddl-spreadsheet-view.png)
+![Figure 5.6: The spreadsheet view](../../05-ddl-spreadsheet-view.png)
 
 Now, as useful as this default display is, and it's certainly useful for my To Do list and my Memo notes, it can be an awkward way to ask my Volunteers to sign up.  In fact, any time I want other Listies to interact with my lists and contribute responses, I really just want a simple form to show them.  They don't really need to see the full range of responses to what others have said.  And in some cases, it can be hazardous to your health for everyone to see the responses.  Then you don't have to explain why your sister-in-law won't work with your brother on the same task because of his B.O. problem.
 
