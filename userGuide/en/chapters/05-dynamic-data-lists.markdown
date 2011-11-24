@@ -73,7 +73,7 @@ If we wanted to create a new volunteer list with the "Volunteer Sign-Up" definit
 1.  From the *content* section of the Control Panel, select Dynamic Data Lists.
 2.  Click on *Add* to create a new list based on a data definition, which in our case will be the job post.
 3.  Give the data list a name, like *Open Jobs*, and a description to assist administrative users in the future.
-4.  Last, and most importantly, click *Selet* under the **Data Defition** section -- this is where you set the data model that drives this list.
+4.  Last, and most importantly, click *Select* under the *Data Defition* section -- this is where you set the data model that drives this list.
 5.  Choose the *Volunteer Sign-Up* data definition you created, then click *Save*.
 
 
