@@ -114,8 +114,6 @@ Once your DBA has created the database and provided the credentials for accessin
 
 Liferay Portal is distributed with the following bundle options for servlet containers and full Java EE application servers:
 
--   Geronimo+Tomcat
-
 -   Glassfish
 
 -   JBoss
@@ -651,20 +649,19 @@ Now that you have all of your installation files, you are ready to start install
 
 Let's work with the depenency jar files first.
 
-1. Create folder `$JBOSS_HOME/modules/com/liferay/portal/main` and unzip the jar files found in the Liferay Portal Dependencies zip file to this folder. Take care that the zip file's jar files are extracted into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
+1.	Create folder `$JBOSS_HOME/modules/com/liferay/portal/main` and unzip the jar files found in the Liferay Portal Dependencies zip file to this folder. Take care that the zip file's jar files are extracted into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
-2.	Create file `modules.xml` to this folder as well and insert the following as its contents. You can comment out or remove `resource-root` elements for database types that are not applicable for your domain.
+2.	Download your database driver `.jar` file and put it into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder as well. For demonstration purposes, we'll download the MySQL Connector/J driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/) and put its `.jar` file into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
+
+3.	Create file `modules.xml` in the `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the following contents.
 
 		<?xml version="1.0"?>
 
 		<module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
 			<resources>
-				<resource-root path="hsql.jar" />
-				<resource-root path="jtds.jar" />
-				<resource-root path="mysql.jar" />
+				<resource-root path="mysql-connector-java-5.1.18-bin.jar" />
 				<resource-root path="portal-service.jar" />
 				<resource-root path="portlet.jar" />
-				<resource-root path="postgresql.jar" />
 			</resources>
 			<dependencies>
 				<module name="javax.api" />
@@ -675,11 +672,7 @@ Let's work with the depenency jar files first.
 			</dependencies>
 		</module>
 
-	If you are using a MySQL database, download the MySQL Connector/J driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/) and put the `.jar` file into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder as well.
-
-	Then add a resource root entry for the driver in `modules.xml` similar to the following:
-
-		<resource-root path="mysql-connector-java-5.1.18-bin" />
+	If you are using a different database driver, replace the path of the mysql resource root entry with that of your database driver.
 		
 Great! You have your Jar files ready for your domain.
 
@@ -713,7 +706,7 @@ We will be specifying your domain's configuration in the XML file `$JBOSS_HOME/s
 				<deployment-scanner name="default" path="deployments" scan-enabled="true" scan-interval="5000" relative-to="jboss.server.base.dir" deployment-timeout="120"/>
 			</subsystem>
 
-	4.	Add the JAAS security domain to the security subsystem defined in element `<subsystem xmlns="urn:jboss:domain:security:1.0">`.
+	4.	Add the following JAAS security domain to the security subsystem `<security-domains>` defined in element `<subsystem xmlns="urn:jboss:domain:security:1.0">`.
 
 			<security-domain name="PortalRealm">
 				<authentication>
@@ -864,6 +857,8 @@ You've completed the steps necessary for your deployment of Liferay so that Life
 2.  Unzip the Liferay `.war` file into the `ROOT.war` folder.
 
 3.	To trigger deployment of `ROOT.war`, create an empty file named `ROOT.war.dodeploy`. On startup, JBoss will detect the presence of this file and deploy it as a web application.
+
+4.	Remove `eclipselink.jar` from  `$JBOSS_HOME/standalone/deployments/ROOT.war/WEB-INF/lib` to assure that the Hibernate persistence provider is used instead of the one provided in the `eclipselink.jar`. Note, JBoss 7.0.2 has a known issue [http://community.jboss.org/thread/169944](http://community.jboss.org/thread/169944) in determining which persistence provider to use.
 
 ---
 ![Tip](../../images/tip.png) To trigger deployment of a `.war` application, create or copy a `.dodeploy` file for it  into your `$JBOSS_HOME/standalone/deployments/` folder. For example, create a file named `myApp.war.dodeploy` to trigger deployment of an application named `myApp.war`.  
