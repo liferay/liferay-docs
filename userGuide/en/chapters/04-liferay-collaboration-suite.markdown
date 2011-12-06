@@ -107,183 +107,197 @@ Now that we've seen all the common options available in Liferay's portlet applic
 
 ## Blogs
 
-The word *Blog* is an apostrophe-less contraction of the two words *web* and *log*. Blogs were first popularized by web sites such as Slashdot ([http://slashdot.org](http://slashdot.org/)) which have the format of a running list of entries to which users could attach comments. Over time, more and more sites such as Digg, delicious, and Newsvine adopted the format, empowering users to share their opinions and generating lively discussions.
+The word *Blog* is an apostrophe-less contraction of the two words *web* and *log*. Blogs were first popularized by web sites such as Slashdot ([http://slashdot.org](http://slashdot.org)) which have the format of a running list of entries to which users could attach comments. Over time, more and more sites such as Digg, del.icio.us, and Newsvine adopted the format, empowering users to share their opinions and generating lively discussions.
 
-Over the course of time, blogging sites and applications began to appear, such as blogger.com, blogspot.com. TypePad, WordPress, and Web Roller. These applications allow *individuals* to run their own web sites in the same format: a running list of short articles to which readers who are registered with the site can attach threaded comments. People who run a blog are called *bloggers*, and sometimes they build a whole community of readers who are interested in their blog posts. Additionally, there are several famous people who run their own blogs. It gives people an outlet for self-expression which they would not otherwise have, and the ubiquity and wide reach of the Internet ensures that if you have something important and interesting to say, somebody will read it.
+Over the course of time, blogging sites and applications began to appear, such as blogger.com, blogspot.com. TypePad, WordPress, and Web Roller. These applications allow *individuals* to run their own web sites in the same format: a running list of short articles to which readers who are registered with the site can attach threaded comments. People who run a blog are called *bloggers*, and sometimes they build a whole community of readers who are interested in their blog posts. Anyone can have a blog, in fact, there are several famous people who run their own blogs. It gives people an outlet for self-expression that they would not otherwise have, and the ubiquity and wide reach of the Internet ensures that if you have something important and interesting to say, somebody will read it.
 
 ![Figure 4.3: Slashdot, one of the first blogs on the Internet](../../images/05-slashdot.jpg)
 
-Liferay Portal has a Blogs portlet which allows you to provide a blogging service to users of your web site. In fact, Liferay extensively uses the Blogs portlet on [http://www.liferay.com](http://www.liferay.com/) to provide employees with blogs of their own. In addition to the Blogs portlet, there is also a Blogs Aggregator portlet which can take entries from multiple users' blogs and put them all in one larger list. We will go over how to use both of these portlets to create a blogging site for your users.
+Liferay Portal has a Blogs portlet which allows you to provide a blogging service to users of your web site. In fact, Liferay extensively uses the Blogs portlet on [http://www.liferay.com](http://www.liferay.com) to provide employees with blogs of their own. In addition to the Blogs portlet, there's also a Blogs Aggregator portlet which can take entries from multiple users' blogs and put them all in one larger list. We will go over how to use both of these portlets to create a blogging site for your users.
 
 ### The Blogs Portlet
 
-The Blogs portlet is available from the *Collaboration* section of the *Add &rarr; More* menu. You will notice that it is an instanceable portlet, meaning that it can only be added once to a site. This allows you to use the Blogs portlet to create a shared blog to build a site like Slashdot or to create multiple personal blogs to build a site like [http://blogger.com](http://blogger.com/). What's the difference? Adding the Blogs portlet to a site page creates a shared blog for members of the site that the page belongs to. Adding the Blogs portlet to a user's personal site creates a blog just for that user. The Blogs portlet works the same way in both cases. And of course, you can change the Blog portlet's scope to have different blogs on different pages in the same site.
+The Blogs portlet is available from the *Collaboration* section of the *Add &rarr; More* menu. Notice that it is an instanceable portlet, meaning that it supports scopes. This allows you to use the Blogs portlet to create a shared blog to build a site like Slashdot or to create multiple personal blogs to build a site like [http://blogger.com](http://blogger.com). What's the difference? Adding the Blogs portlet to a site page creates a shared blog for members of the site that the page belongs to. Adding the Blogs portlet to a user's personal site creates a blog just for that user. The Blogs portlet works the same way in both cases. And of course, you can change the Blog portlet's scope to have different blogs on different pages in the same site.
 
 ![Figure 4.4: Initial View of the Blogs Portlet](../../images/05-initial-view-blogs-portlet.jpg)
 
-By default, the Blogs portlet will display the latest entry in its entirety. When you first add the portlet to a page, it has no entries, so the portlet will be empty. Before we start adding entries, let's configure the portlet so that it displays entries according to our specifications.
+By default, the Blogs portlet displays the latest entry in its entirety. When you first add the portlet to a page, it has no entries, so the portlet is empty. There are several display options to let you configure it to look the way you want it to look. Before we start adding entries, let's configure the portlet so that it displays entries the way you want them.
 
 #### Configuring the Blogs Portlet
 
-The Blogs portlet is easy to configure. Click on the *Menu* icon in the portlet's title bar and select *Configuration*. Beneath the Setup tab, you will see another row of options.
+The Blogs portlet is easy to configure. Click on the *Menu* icon in the portlet's title bar and select *Configuration*. Beneath the Setup tab, there is another row of options.
 
-**Email From:** allows you to define the *From* field in the email messages that users receive from the Blogs portlet.
+**Email From:** defines the *From* field in the email messages that users receive from the Blogs portlet.
 
-**Entry Added Email:** lets you enter a subject and body for the emails sent out when a new Blog entry has been added.
+**Entry Added Email:** defines a subject and body for the emails sent out when a new Blog entry has been added.
 
-**Entry Updated Email:** lets you enter a subject and body for the emails sent out when a new Blog entry has been updated.
+**Entry Updated Email:** defines a subject and body for the emails sent out when a new Blog entry has been updated.
 
-**Display Settings:** allows you to configure various display options for the Blogs portlet. To choose the right settings, you should think about the best way to display your entries as well as how you want users to interact with bloggers.
+**Display Settings:** changes various display options for the Blogs portlet. To choose the right settings, you should think about the best way to display your entries as well as how you want users to interact with bloggers.
 
 ![Figure 4.5: Blogs Configuration](../../images/05-blogs-configuration.png)
 
-*Maximum Items to Display:* allows you to choose the total number of blog entries to display on the initial page. You can choose up to one hundred to be displayed.
+*Maximum Items to Display:* choose the total number of blog entries to display on the initial page. You can select up to one hundred to be displayed.
 
-*Display Style:* lets you choose between Full Content, Abstract, or just the Title. Setting this to Abstract causes Liferay to display only the first 30 words of your blog entries, with a Read More link at the bottom of each to allow users to read the whole entry if they wish.
+*Display Style:* choose between full Content, abstract, or just the title. Setting this to Abstract shows the abstract, or if there isn't one, only the first 30 words of your blog entries, with a Read More link at the bottom of each that expands to the whole entry.
 
-*Enable Flags:* allows users to flag content as inappropriate and send an email to the administrators.
+*Enable Flags:* flag content as inappropriate and send an email to the administrators.
 
-*Enable Related Assets:* allows bloggers to select related content from other portlets to pull into their blog entry for readers to view.
+*Enable Related Assets:* select related content from other portlets to pull into their blog entry for readers to view.
 
 [Figure 4.6: Related Assets](../../images/05-related-assets.png)
 
-*Enable Ratings:* allows you to enable your users to rate your blog entries from one to five stars.
+*Enable Ratings:* lets readers rate your blog entries from one to five stars.
 
-*Enable Comments:* allows readers to comment on your blog entries.
+*Enable Comments:* lets readers comment on your blog entries.
 
-*Enable Comment Ratings:* allows readers to rate the comments which are posted to your blog entries.
+*Enable Comment Ratings:* lets readers rate the comments which are posted to your blog entries.
 
-*Enable Social Bookmarks:* allows users to Tweet, Facebook like, or +1 on Google Plus about blog posts.
+*Enable Social Bookmarks:* lets users tweet, Facebook like, or +1 (Google Plus) about blog posts.
 
-*Maximum Items to Display:* allows you to determine how many blog entries will be displayed at once. The default is set to twenty.
+*Maximum Items to Display:* determine how many blog entries will be displayed at once. The default is set to twenty.
 
-*Display Style:* lets you select a simple, vertical, or horizontal display style for your blog posts.
+*Display Style:* select a simple, vertical, or horizontal display style for your blog posts.
 
-*Display Position:* lets you choose a top or a bottom position for your blog posts.
+*Display Position:* choose a top or a bottom position for your blog posts.
 
-**RSS:** is a tab that allows you to configure the way blogs are displayed to RSS readers. Here, you can choose how you want your blog entries to be published as feeds to readers and outside web sites.
+**RSS:** choose how blogs are displayed to RSS readers. Here, you can choose how you want your blog entries to be published as feeds to readers and outside web sites.
 
-*Maximum Items to Display:* allows you to choose the total number of RSS feeds to display on the initial page. You can choose up to one hundred to be displayed.
+*Maximum Items to Display:* choose the total number of RSS feeds to display on the initial page. You can choose up to one hundred to be displayed.
 
-*Display Style:* lets you choose between Full Content, Abstract, and Title. These options work just like the ones above for blog entries.
+*Display Style:* choose between full content, abstract, and title. These options work just like the ones above for blog entries.
 
-*Format:* lets you choose which format you want to deliver your blogs: RSS 1.0, RSS 2.0, or Atom 1.0.
+*Format:* choose which format you want to deliver your blogs: RSS 1.0, RSS 2.0, or Atom 1.0.
+
+Now that you have the Blogs portlet looking the way you want it, you'll want to review permissions for it--especially if you're working on a shared blog. 
 
 #### Permissions
 
-Depending on whether this is a personal blog or a shared blog, you may want to modify the permissions on the blog. By default, the permissions are set up for a personal blog, so only the owner of the site to which the portlet has been added will be able to add entries. However, it's easy to share a blog with multiple users.
+If you have a personal blog, the default permissions should work well for you. If you have a shared blog, you may want to modify the permissions on the blog. The default settings make it so only the owner of the site to which the portlet has been added is able to add entries. This, of course, is great if the Blogs portlet has been added to a user's personal pages, but doesn't work so well for a shared blog. But don't worry: it's easy to share a blog with multiple users.
 
-First, create a role for your bloggers and add them to the role. Next, click the *Permissions* button on the Blogs portlet. You will now see a list of both portal and site roles, and currently only the owner is checked. Check off any other role or team that should have the ability to add blog entries, and then click *Save*.
+First, create a role for your bloggers and add them to the role (roles are covered in chapter 12 of Part 2). Next, click the *Permissions* button on the Blogs portlet. A list of both portal and site roles is displayed, and currently only the owner is checked. Check off any other role or team that should have the ability to add blog entries, and then click *Save*. Once this is done, users in the roles or teams that you selected are able to post to the shared blog. 
+
+Now that everyone's able to post, let's look at how posts work. 
 
 #### Adding Blog Entries
 
-Now you're ready to begin adding blog entries. Click the *Add Blog Entry* button. You will see the following data entry screen:
+Now you're ready to begin adding blog entries. Click the *Add Blog Entry* button. The following data entry screen appears: 
 
 ![Figure 4.7: Adding a Blog Entry](../../images/05-new-blog-entry.png)
 
 There isn't much difference between this screen and any other data entry screen within Liferay Portal. You get a title, a way of scheduling when the entry is to appear, and a rich editor that allows you to format your entry the way you want, complete with embedded images, videos, and the like. Note also that as you type, the entry is automatically saved as a draft at periodic intervals. This gives you peace of mind in using the portlet from within your browser, since you won't lose your entry in the event of a browser crash or network interruption. You can also tag your entries using the same tagging mechanism found everywhere else in the portal.
 
-The Blogs portlet also supports trackbacks and pingbacks. Trackbacks are special links that let you or another site know if you or if someone else linked to a blog entry. For example, if you wanted to write an entry in your blog and reference someone else's entry, you might put the URL to the other entry in the *Trackbacks to Send* field. Similarly, if you want others who link to your blog to let you know about the link via trackbacks, leave the *Allow Trackbacks* box checked. This will generate a URL that is displayed with your blog entry. Others who want to link to your entry can use this URL for the link, and every time the link is clicked on, your Liferay-powered site will know about it and will be able to keep track of the clicks.
+The Blogs portlet also supports trackbacks and pingbacks. Trackbacks are special links that let you notify another site that you linked to them. For example, if you wanted to write an entry in your blog and reference some other site's entry, you might put the URL to the other entry in the *Trackbacks to Send* field. If you have multiple URLs you want to send trackbacks to, separate them with spaces. 
 
-Note that trackbacks only work when the protocol is supported by both the linker and the linkee. For this reason, the Blogs portlet also supports pingbacks. Pingbacks are XML-RPC requests that are similar to trackbacks except they are automatically sent when you link to another site. So if you link to another site in your blog entry, Liferay will send a pingback to that site to notify that site that you linked to it. Similarly, if someone links to your blog entry, Liferay can receive a pingback from that person's site and record the link.
+If you want others who link to your blog to let you know about the link via trackbacks, leave the *Allow Trackbacks* box checked. This generates a URL that is displayed with your blog entry. Others who want to link to your entry can use this URL for the link, to send trackbacks to your blog.
 
-You can enter a description of your post beneath the Abstract heading. You can also tag your entry beneath the Categorization heading or attach to a piece of portal content to be displayed along with your post beneath the Related Assets heading.
+Note that trackbacks only work when the protocol is supported by both the linker and the linkee. A newer way to support similar link notification functionality is *pingbacks*. Pingbacks are XML-RPC requests that are similar to trackbacks except they're automatically sent when you link to another site. They're easier to use because you don't have to do anything extra: if you link to another site in your blog entry, Liferay sends a pingback to the other site to notify that site that you linked to it. Similarly, if someone links to your blog entry, Liferay can receive a pingback from that person's site and record the link.
 
-Once you have finished your blog entry, click *Publish*. You'll go back to the list of entries, and now your entry is displayed. Here is what it looks like when the display style is set to *Abstract* and the number of entries is set to ten:
+You can enter a description of your post beneath the Abstract heading, and this can be used by the Abstract display style. Below this is the Categorization heading, where you can attach tags and/or categories to your blog entry. You should definitely consider doing this: it improves search results for blog entries, and it gives you more navigation options that you can pass on to your users. For example, you can add the Tags Navigation portlet to another column on your blogs page, allowing users to browse blog entries by tag. 
+
+Below this is the Related Assets heading. If there's some other content in the portal that's related to your blog, you can choose it here. For example, you might want to write a blog entry talking about a particular discussion that happened on the forums. To link those two assets together, select the forum thread under Related Assets. 
+
+Once you've finished your blog entry, click *Publish*. You'll go back to the list of entries, and now your entry is displayed. Here is what it looks like when the display style is set to *Full Content* and the number of entries is set to ten:
 
 ![Figure 4.8: First Blog Entry Added](../../images/05-first-blog-entry-added.png)
 
-You can see that in the summary view, you don't see the trackback/pingback link, and you only see the number of comments which have been added. If you were to click the *Read More* link, you would see the entirety of the article, all of the comments in a threaded view, and the trackback/pingback link which others can use to link back to your blog entry.
+You can see that in the summary view, you don't see the trackback/pingback link, and you only see the number of comments that have been added. If you were to click the *Read More* link, you would see the entirety of the article, all the comments in a threaded view, and the trackback/pingback link which others can use to link back to your blog entry.
 
-Additionally, the full view of a blog contains convenient links to add blog entries to popular aggregating sites such as Digg, delicious, and others. This gives your readers an easy way to submit your blog entries to these aggregators, potentially driving further traffic to your site. As you can see, the Blogs portlet is a full-featured blogging application which gives you and your users the ability to enter the blogosphere with an application that supports anything a blogger needs.
+The full view of the blog entry also contains links to share blog entries on social networks, such as Twitter, Facebook, and Google Plus. This gives your readers an easy way to share blog entries with friends, potentially driving further traffic to your site. As you can see, the Blogs portlet is a full-featured blogging application that gives you and your users the ability to enter the blogosphere with an application that supports anything a blogger needs.
+
+Of course, Liferay is a portal, and as a portal, it excels at aggregating information from multiple places. For that reason, it also includes the Blogs Aggregator portlet so that you can "bubble up" blog entries from multiple users and highlight them on your site. Let's look next at how that works. 
 
 ### Aggregating Blog Entries
 
-You can set up a whole web site devoted just to blogging if you wish. The Blogs Aggregator portlet allows you to publish entries from multiple bloggers on one page, giving further visibility to blog entries. This portlet is also very easy and straightforward to set up. You can add it to a page from the Collaboration category in the dockbar's *Add &rarr; More* menu.
+You can set up a whole web site devoted just to blogging if you wish. The Blogs Aggregator portlet allows you to publish entries from multiple bloggers on one page, giving further visibility to blog entries. This portlet is also very straightforward to set up. You can add it to a page from the Collaboration category in the Dockbar's *Add &rarr; More* menu.
 
-If you click *Configuration* from the menu button in the title bar of the portlet, you will see the Blogs Aggregator's configuration page. From here, you can set several configuration options.
+If you click *Configuration* from the menu button in the title bar of the portlet, the Blogs Aggregator's configuration page appears. From here, you can set several configuration options.
 
 ![Figure 4.9: Blogs Aggregator Configuration](../../images/05-blogs-aggregator-configuration.png)
 
-**Selection Method:** lets you select Users or Scope here. If you select Users, the Blogs Aggregator will aggregate the entries of every blogger on your system. If you want to refine the aggregation, you can select an Organization by which to filter the users. If you select Scope, the Blogs Aggregator will contain only entries of users who are in the current scope. This will, in essence, limit the entries to members of the site where the Blogs Aggregator portlet resides.
+**Selection Method:** select Users or Scope here. If you select Users, the Blogs Aggregator aggregates the entries of every blogger on your system. If you want to refine the aggregation, you can select an organization by which to filter the users. If you select Scope, the Blogs Aggregator contains only entries of users who are in the current scope. This limits the entries to members of the site where the Blogs Aggregator portlet resides.
 
-**Organization:** allows you to select which organization's blogs you want to aggregate.
+**Organization:** select which organization's blogs you want to aggregate.
 
-**Display Style:** lets you select from several different styles for displaying blog entries based on what information from blogs you would like the aggregator to display: title, abstract, body, image, or quote.
+**Display Style:** select from several different styles for displaying blog entries: title, abstract, body, image, or quote.
 
-**Maximum Items to Display:** lets you select maximum number of entries the portlet will display.
+**Maximum Items to Display:** select maximum number of entries the portlet displays.
 
-**Enable RSS Subscription:** allows you to use the aggregated entries themselves as an RSS feed. Leave this box selected if you want people to be able to subscribe to your aggregated blog entries.
+**Enable RSS Subscription:** creates an RSS feed out of the aggregated entries. This lets users subscribe to an aggregate feed of all your bloggers. 
 
-**Show Tags:** displays all the tags associated with the blogs.
+**Show Tags:** for each entry, displays all the tags associated with the blogs.
 
-When you have finished setting the options in the portlet, click *Save*. Then click *Return to Full Page*. As you will see, the Blogs Aggregator looks very much like the Blogs portlet, except that the entries come from more than one author.
+When you've finished setting the options in the portlet, click *Save*. Then close the dialog box. You'll notice the Blogs Aggregator looks very much like the Blogs portlet, except that the entries come from more than one author. This makes it nice and familiar for your users to navigate. 
+
+Let's move on, now, to the Calendar portlet.
 
 ## Calendar
 
-Liferay's Calendar portlet is a complete calendaring solution. You can schedule any number of events of different types, receive alarms via email or text message, import and export your calendar, and much more. Additionally, you can import and export the calendar to the popular iCalendar format for use in other applications.
+Liferay's Calendar portlet is a complete calendaring solution. You can schedule any number of events of different types, receive alarms via email or text message, import and export your calendar, and much more. Additionally, you can import and export the calendar to and from the popular iCalendar format for use in other applications.
 
 ![Figure 4.19: The Liferay Calendar Portlet](../../images/05-calendar-portlet.png)
 
-In a similar way to the Blogs portlet, you can use the Calendar portlet as a shared calendar on a web site or as a personal calendar — or both.
+In a similar way to the Blogs portlet, you can use the Calendar portlet as a shared calendar on a web site or as a personal calendar — or both. Let's look at how to configure it. 
 
 ### Configuring the Calendar Portlet
 
-Open the *Configuration* dialog box from the menu in the portlet's title bar. The Setub tab allows you to configure three different options in subtabs: *Email From*, *Event Reminder Email*, and *Display Settings*.
+Open the *Configuration* dialog box from the menu in the portlet's title bar. The Setup tab allows you to configure three different options in subtabs: *Email From*, *Event Reminder Email*, and *Display Settings*.
 
-#### Email From
+**Email From:** set the *Name* and *Email Address* system generated emails come from. The address that you enter in the Email Address field must be properly formatted, but it doesn't need to be an address that actually exists. 
 
-In this subtab, you can set the *Name* and *Email Address* that will display in system generated reminder emails. The address that you enter in the Email Address field must be properly formatted, but it does not need to be an address that actually exists. This can work well in conjunction with mail rules in your email client that can operate on these messages. By default, the name is set to `Joe Bloggs` and the email address is set to `test@liferay.com`.
+**Event Reminder Email:** customize the email message the Calendar sends for event reminders. It contains the same rich text editor that you see everywhere else in Liferay, and this allows you to HTML format the message for easy recognition. As with other Liferay email notifications, there are several variables which allow you to insert runtime values into the message, and these are listed underneath the text editor so that you can use them in the appropriate place in your template. For example, you might want the event start date and time and the event title included in the email reminder that you receive. Use the variables to insert that information in the appropriate place. 
 
-#### Event Reminder Email
+**Display Settings:** customize how the portlet shows itself to the user. There are several settings here: 
 
-This subtab lets you customize the email message that you receive from the portlet when you have an event for which you have configured a reminder. It contains the same rich text editor that you see everywhere else in Liferay, and this allows you to format your message so that you will be able to easily recognize it. Additionally, there are several variables which allow you to insert runtime values into the message, and these are listed underneath the text editor so that you can use them in the appropriate place in your template. For example, you might want the event start date and time and the event title included in the email reminder that you receive. Inserting the variables that correspond with those values into your template will allow you to do that.
+*Default Tab:* select which tab of the calendar portlet is displayed to the user by default. 
 
-#### Display Settings
+*Summary Tab:* select whether it has a horizontal or vertical layout, whether or not it shows a mini month, or whether or not it shows today's events. 
 
-The Display Settings subtab allows you to select which tab of the calendar portlet will first be displayed to the user. By default, the summary tab is displayed, but you may want to change it to the daily, weekly, or monthly view.
+**Events:** three checkboxes let you enable or disable related assets, comments, and ratings. 
 
-There are additional settings for the summary tab: you can select whether it has a horizontal or vertical layout, whether or not it shows a mini month, or whether or not it shows today's events. You can also enable or disable related assets, comments, or ratings.
+Now that you've successfully set up your calendar to operate the way you want it, let's look at how to use it. 
 
 ### Using the Calendar Portlet
 
-The Calendar portlet is designed to work the way you would expect a calendar to work. It inherits its interface from the rest of Liferay's portlet library, so you should find shared features in the same place that you find them in other Liferay portlets.
+The Calendar portlet inherits its interface from the rest of Liferay's portlet library, so you should find shared features in the same place that you find them in other Liferay portlets.
 
-To get started, you may want to click the *Permissions* button. Here you can find a list of roles with check boxes denoting whether the role has the *Add Event* or the *Export All Events* permission. By default, only the owner has permissions to do these things, which means that, by default, the Calendar portlet is set up for personal use. Out of the box, Liferay defaults to putting a Calendar portlet on all users' private pages. If you are going to be using the Calendar as a shared calendar, you may want to modify some settings here.
+To get started, you may want to click the *Permissions* button. Here you'll find an interface that should be becoming familiar: a list of roles with check boxes. For the Calendar, these denote whether the role has the *Add Event* or the *Export All Events* permission. By default, only the owner has permission to do these things, which means that the Calendar portlet is set up for personal use. The reason for this is that out of the box, Liferay puts a Calendar portlet on all users' private pages. If you want to use the Calendar as a shared calendar, you'll need to modify some settings. 
 
-First, create a portal or site role. Then add the users who will be using the calendar to the role. Then come back to the Calendar portlet and click the *Permissions* button. Check the boxes next to the role(s) that should have access to one or both of the functions (*Add Event* or *Export All Events*). Then click *Submit*.
+First, create a portal or site role. Then add to the role the users maintaining this calendar. This is described in chapter 12. Once you have the role or roles set up, come back to the Calendar portlet and click the *Permissions* button. Check the boxes next to the role(s) that should have access to one or both of the functions (*Add Event* or *Export All Events*). Then click *Submit*.
 
-Now you are ready to begin using your calendar. Click the *Add Event* button. You will see a form that allows you to fill out all the information for your event.
+Now you are ready to begin using your calendar. Click the *Add Event* button. A form appears that allows you to fill out all the information for your event.
 
-**Start Date/Time:** lets you enter a date and time for the event.
+**Start Date/Time:** enter a date and time for the event.
 
-**Duration:** lets you specify long the event will last.
+**Duration:** specify how long the event will last.
 
-**All Day Event:** allows you to disassociate time from the event and make it last all day.
+**All Day Event:** disassociate time from the event and make it last all day.
 
-**Time Zone Sensitive:** allows you to make sure that the portal keeps track of the event regardless of time zone.
+**Time Zone Sensitive:** make sure that the portal keeps track of the event regardless of time zone.
 
-**Title:** lets you provide a title for the event.
+**Title:** provide a title for the event.
 
-**Description:** lets you enter a description of the event.
+**Description:** describe your event.
 
-**Location:** lets you specify the physical location of the event.
+**Location:** specify the physical location of the event.
 
-**Type:** allows you to select a pre-configured event type. You can change these in the *portal-ext.properties* file.
+**Type:** select a pre-configured event type. You can change these in the `portal-ext.properties` file.
 
-**Permissions:** lets you manage who can view and edit the event.
+**Permissions:** manage who can view and edit the event.
 
-**Categorizations:** allows you tag the event.
+**Categorizations:** tag and categorize the event.
 
-**Related Assets:** allows you to attach a piece of content from another portlet to the event.
+**Related Assets:** attach a piece of content from another portlet to the event.
 
-**Repeat:** lets you select the schedule (daily, weekly, monthly. etc.) for repeatable events.
+**Repeat:** select the schedule (daily, weekly, monthly. etc.) for repeatable events.
 
-**End Date:** lets you enter the end date for events that repeat on a schedule but have a specified last meeting.
+**End Date:** enter the end date for events that repeat on a schedule but have a specified last meeting.
 
-**Reminders:** lets you select whether to send a reminder, how long before the event to send it, and through what medium (email, SMS text message, or instant message) to send it. Note that this feature is integrated with your profile on the portal, so you will need to fill out your mobile phone number and/or instant messenger IDs in order to use those features.
+**Reminders:** select whether to send a reminder, how long before the event to send it, and through what medium (email, SMS text message, or instant message) to send it. Note that this feature is integrated with users' profiles on the portal, so users need their information filled out and current in order to receive notifications.
 
-When you have finished adding your event, click *Save*. You can view calendar events by day, week, month, year, or in a simple list.
+When you have finished adding your event, click *Save*. You can view calendar events by day, week, month, year, or in a simple list. 
+
+As you can see, the Calendar portlet is easy to use and convenient for users of the portal. Next, we'll look at how Liferay handles live chat. 
 
 ## Chat
 
