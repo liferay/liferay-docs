@@ -1379,7 +1379,7 @@ Liferay will start and you will be able to get to it by browsing to `http://<ser
 
 For example, if your domain location is `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home will be `/Oracle/Middleware/user_projects/domains`.
 
-For this section, we will refer to your WebLogic server's installation location as `$WEBLOGIC_HOME`. If you do not already have an existing WebLogic server, we recommend that you download a Liferay/WebLogic bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing WebLogic server or would like to install Liferay on WebLogic manually, please follow the steps below.
+For this section, we will use `$WEBLOGIC_HOME` to refer to your WebLogic server's installation `/Oracle/Middleware`. If you do not already have an existing WebLogic server, we recommend that you download a Liferay/WebLogic bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing WebLogic server or would like to install Liferay on WebLogic manually, please follow the steps below.
 
 Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files). The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
@@ -1475,7 +1475,7 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 	Save and close your `portal-ext.properties` file.
 
-3. Lastly, add the following to your domain's `server.xml` so that you can use Java Server Faces (JSF):
+3. Lastly, you'll need to provide WebLogic a reference to Java Server Faces (JSF) in order to use that library. So, insert the following deployment descriptor within the `<weblogic-web-app>` element of `WEB-INF/weblogic.xml` found in your Liferay Portal `.war` :
 
 		<library-ref>
 			<library-name>jsf</library-name>
@@ -1498,7 +1498,7 @@ This section provides instructions on how to deploy Liferay to your application 
 
 3.  After installing the JSF libraries, go back to deployments and select the Liferay `.war` file from the file system or click the *Upload Your File(s)* link to upload it, and then click *Next*.
 
-4.  Select *Install this deployment as an application *and click *Next*.
+4.  Select *Install this deployment as an application* and click *Next*.
 
 5.  If the default name is appropriate for your installation, keep it. Otherwise, give it a name of your choosing and click *Next*.
 
@@ -1509,7 +1509,7 @@ Liferay will start and you will be able to get to it by browsing to `http://<ser
 Congratulations! You are now running Liferay on Oracle WebLogic.
 
 ---
-![tip](../../images/tip.png) **Tip:** After Liferay completes installing, you may see an error initializing the Web Proxy portlet. Because the XSL parser configured by default within WebLogic cannot compile a style sheet in this portlet, Liferay disables it by default. To re-enable this portlet, extract `xalan.jar` and `serializer.jar` from the Liferay `.war` archive and copy them to your JDK's endorsed folder for libraries. If you are using JRockit, you may find this folder in `[Bea Home]/jrockit_160_05/jre/lib/ext`.
+![Note](../../images/tip.png) **Note:** After Liferay completes installing, you may see an error initializing the Web Proxy portlet. Because the XSL parser configured by default within WebLogic cannot compile a style sheet in this portlet, Liferay disables it by default. To re-enable this portlet, extract `xalan.jar` and `serializer.jar` from the Liferay `.war` archive and copy them to your JDK's endorsed folder for libraries. If you are using JRockit, this folder may be `[$WEBLOGIC_HOME]/jrockit_160_05/jre/lib/ext`; if your are using Sun JDK,  this folder may be `[$WEBLOGIC_HOME]/jdk160_24/jre/lib/ext`.
 ---
 
 #### Installing Liferay on WebSphere 6.1
