@@ -82,7 +82,6 @@ To create a new volunteer list with the "Volunteer Sign-Up" definition:
 4. Last and most importantly, click *Select* under the *Data Defition* section--this is where you set the data model that drives this list.
 5. Choose the *Volunteer Sign-Up* data definition you created, then click *Save*.
 
-
 Now that you've created your brand new volunteer list, you can pester everyone you know to sign up. But what would it look like for them to add an entry to this list? The data definition you've previously created (or selected) defines the layout as well, which means the form looks just the way you laid it out. 
 
 <!-- | TODO: please regenerate the screenshot; it still shows TISA stuff, not the example you describe above. | -->
