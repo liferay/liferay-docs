@@ -294,6 +294,97 @@ WSDL for each service is available by clicking on the *WSDL* link next to the na
 
 Once you click on one of the *WSDL* links, the Web Service Definition Language document will be displayed. This document can be used to generate client code in any language that supports it. You can either save the document to your local machine and then generate the client code that way, or use your tool to trigger Liferay to generate the document dynamically by using one of the URLs above.
 
+## Service Context
+
+The Service Context is an object that contains context information about a given API call. By using this pattern it is possible to consolidate many different methods with different sets of optional parameters into a single, easier to use method. It also aggregates information necessary for transversal features such as permissioning, tagging, categorization, etc.
+
+First, we'll take a look at some of the most commonly used fields of the Service Context. Then we'll consider how the to go about using the Service Context.
+
+### Fields
+
+Here are some the most significant fields of the ServiceContext object:
+
+-	**_addGroupPermissions:** Whether to apply group permissions from the request
+
+-	**_addGuestPermissions:** Whether to apply guest permissions from the request
+
+-	**_assetCategoryIds:** IDs of categories to be applied to an asset entry
+
+-	**_assetLinkEntryIds:** Primary keys of the asset entries linked to an asset entry
+
+-	**_assetTagNames:** Tag names to be applied to an asset entry
+
+-	**_attributes:** Serializable parameters to be persisted in the entity model
+
+-	**_companyId:** Company ID of the portal instance
+
+-	**_expandoBridgeAttributes:** Additional parameters to be persisted along with the entity
+
+-	**_languageId:** Language ID of the locale of this service context's current user
+
+-	**_layoutURL:** Relative URL of the current page
+
+-	**_pathMain:** Main context path of the portal
+
+-	**_plid:** Portal layout ID of the current page
+
+-	**_portalURL:** URL of this service context's portal
+
+-	**_portletPreferencesIds:** Portlet preferences IDs of the current portlet
+
+-	**_scopeGroupId:** ID of the group corresponding to the current data scope
+
+-	**_userDisplayURL:** Complete URL of this service context's current user's profile page
+
+-	**_userId:** ID of the current user
+
+For descriptions of all methods available in `ServiceContext`, see its API found in the Liferay Portal Javadocs [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
+
+But, let's dig into some Liferay code to find out more and learn how to create and populate a `ServiceContext`.
+
+### Usage
+
+All of the fields of the `ServiceContext` class are optional, although your services that store any type of content will require you to specify at least the scope group ID. Here is a simple example of how to create a `ServiceContext` instance and pass it to a service API:
+
+	ServiceContext serviceContext = new ServiceContext();
+	serviceContext.setScopeGroupId(myGroupId);
+	...
+	BlogsEntryServiceUtil.addEntry(...., serviceContext);
+
+If you are invoking the service from a servlet, a struts action or any other frontend class which has access to the `PortletRequest`, use the  utility method that will create the ServiceContext object and fill it with all the necessary values automatically. In that case the above example could be rewritten as follows:
+
+	ServiceContext serviceContext = ServiceContextFactory.getInstance(BlogsEntry.class.getName(), portletRequest);
+	
+	BlogsEntryServiceUtil.addEntry(..., serviceContext);
+
+For an example of how to populate a `ServiceContext` with information from a request object, check out the code in any of the `ServiceContextFactory.getInstance(...)` methods. Not only do the methods demonstrate populating context parameters such as scope group ID, company ID, language ID, etc. But they also demonstrate how to access and populate more complex context parameters such as tags, categories, asset links, headers, and the attributes parameter.
+
+And have you taken a look at the Liferay-UI and Alloy UI form tags that that you can use in your front-end interface? These tags allow you to easily extract information from your forms for putting into your request object. As an example, look at how blog entries are created in  `portal-web/docroot/html/portlet/blogs/edit_entry.jsp`.
+
+Notice that the following Liferay-UI panel and Alloy-UI input tags facilitate presenting a panel that gathers the category and tag values of your blog entry:
+                                                      
+		<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="blogsEntryCategorizationPanel" persistState="<%= true %>" title="categorization">
+			<aui:fieldset>
+				<aui:input name="categories" type="assetCategories" />
+
+				<aui:input name="tags" type="assetTags" />
+			</aui:fieldset>
+		</liferay-ui:panel>
+
+And look at how easy it is to create a panel for your user to link other assets to a blog entry! It is a breeze when you use powerful tags like  `<liferay-ui:input-asset-links />` as demonstrated here:
+
+	<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="blogsEntryAssetLinksPanel" persistState="<%= true %>" title="related-assets">
+		<aui:fieldset>
+			<liferay-ui:input-asset-links
+				className="<%= BlogsEntry.class.getName() %>"
+				classPK="<%= entryId %>"
+			/>
+		</aui:fieldset>
+	</liferay-ui:panel>
+	
+The `ServiceContext` class is a great way to pass information along in your service. We've looked at how information can be extracted from a front-end form, carried along by a request object, and placed into a `ServiceContext` for use in the business logic of a service.
+
+Next, let's take a look at the security of your Liferay Portal and consider how to implement permissions.
 
 ## Security and Permissions
 
