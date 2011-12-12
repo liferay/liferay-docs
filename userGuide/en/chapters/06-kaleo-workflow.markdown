@@ -230,7 +230,7 @@ You can also use *forks* and *joins* to create more complex workflows.
 
 Forks and joins are used for parallel processing. For example, say you have a new offer you'd like to put up on your site, but it needs to go through both the sales manager and the marketing manager first. You can set up a workflow that notifies both managers at the same time so that they can approve them individually. This way, you're not waiting for one manager's approval before you can send the notification to the other manager. The below illustration shows how a workflow with a fork and a join might be designed. 
 
-<!-- | TODO: Talked to Mike about the diagram below; he says it's better to have one more approval after the join just for a sanity check. Can you add that to the diagram? | -->
+<!-- | TODO - I deleted the original one... -->
 
 ![Figure 6.x: Parallel Approval Design](../../images/kaleo-workflow-parallel-approval.png)
 
@@ -263,27 +263,83 @@ To bring a fork back together, transition both nodes of the fork back to a singl
 		</transitions>
 	</join>
 
-Another important consideration when creating parallel approvals is that each node needs its own "rejected" state for cases where content is approved in one node, but rejected in another.
+Another important consideration when creating parallel approvals is that each node needs its own "rejected" state for cases where content is approved in one node, but rejected in another. Another feature that you can use in custom workflows along with forks and joins is Timers. While using parallel workflow enables you to speed up your process by getting content in front more people at once, instead of making them wait in line, timers along you to add some urgency to the process.
 	
-### Due Dates
+<!-- | TODO I accidentally removed this one too -->
 
-<!-- | TODO: This whole section is obsolete, and has been replaced with timers in 6.1. Please update. Remember to segue from this section on creating workflows to the control panel stuff.  | -->
+### Timers
 
-When you're creating a task for a workflow, you can configure due date options. The due date for an item isn't set as a specific day, but as a period of time after the task is assigned. For example, you could set the due date for a specific task to be two days after the task is assigned. This is all configured in the XML definition file, and there is currently no GUI option to configure this setting.
+**Timers** are a new workflow feature in 6.1, which help make sure that important tasks in a workflow aren't forgotten or left undone because an oversight or the absence of someone on the critical path. The basic concept of the timer is that after a period of time specified, a specific action occurs. There are two main elements for a Timer, the **Task Timer** and the **Timer Action**.
 
-The due date options are formatted in the definitions file like this:
-
+Timers occur within a Task element and are formatted like:
     <task>
-	<name></name>
-	<description/></description>
-	<due-date-duration>{any whole number}</due-date-duration>
-	<due-date-scale>{second, minute, hour, day, week, month, year}<due-date-scale>
-	...
-    </task>
+    	...
+        <task-timers>
+			<task-timer>
+				<name></name>
+				<delay>
+					<duration></duration>
+					<scale></scale>
+				</delay>
+				<timer-actions>
+					...
+				</timer-actions>
+			</task-timer>
+		</task-timers>
+		...
+	</task>
+		
+The outer element is <task-timers> because you can have multiple timers with multiple actions. The specific <task-timer> then contains the element <delay> which has a <duration> and <scale>. The duration can be any number, whole or fractional and it's significance is defined by the scale. The scale tells you what unit of time the duration is talking about - seconds, minutes, hours, days, weeks, months, or years. Once you've determined the time, you'll want to pick an action - either a notification, reassignment, or a custom script.
 
-The due date is set inside the task with the two elements: a duration and a scale. The duration can be any whole number, and is completely meaningless without the scale. The scale tells you what units the duration is measured in, valid values for this are *second*, *minute*, *hour*, *day*, *week*, *month*, and *year*.
+Notifications are pretty simple - if a certain amount of time passes and an action isn't completed yet, the user assigned to the task will receive a fresh notification. With the timer, you have all of the standard notification types available, and you can choose a different notification type than was used for the original notifcation. For example, you could create a definition such that when a new item is submitted to the workflow, all members of the *Content Reviewer* role receive a notification. You could then use a timer to say that if the content hasn't been reviewed within two hours each member of the *Content Reviewer* role will receive a second notification via instant messenger.
 
-Here's an example of how this can work practically: you could set the duration to *10*, and then set the scale to be *hour*. This would mean that the task would be due 10 hours after it was assigned. If you edited the definition file, and changed *hour* to *day*, that would mean that the task would need to be completed within 10 days after in was assigned.
+A Notification would be formatted like this:
+
+    <timer-actions>
+		<timer-notification>
+			<name></name>
+			<template></template>
+			<template-language>text</template-language>
+			<notification-type>im</notification-type>
+		</timer-notification>
+    </timer-actions>
+
+
+Reassignments are designed to keep the workflow moving, even if a key person is out of the office. With a timer set to reassign, after the specified amount of time has passed, the task can be assigned to a new role. Building off of our example above, if the Content Reviewers all received the IM notification after two hours, but the content still wasn't approved after four hours, the workflow could be set to automatically reassign to the task to the *Adminstrator* role.
+
+A Reassignment would be formatted like this:
+
+    <timer-actions>
+		<reassignments>
+			<assignments>
+				<roles>
+					<role>
+						<role-type></role-type>
+						<name></name>
+					</role>
+					...
+				</roles>
+			</assignments>
+		</reassignments>
+    </timer-actions>
+    
+Obviously we can't think of eveything, so if you have an idea for using timers in your workflow that doesn't fit into our design, you could access Liferay's scripting engine to create a custom action to happen after a specified amount of time. For example, if you had means of sending electric shocks through employees chairs if they weren't doing their work, and had created a Liferay portlet to access the shock mechanism, you could use a custom script to zap any users who were at their desk, but hadn't reviewed content assigned to them.
+
+    <timer-actions>
+		<action>
+				<name></name>
+				<script>
+					<![CDATA[
+					]]>
+				</script>
+				<script-language></script-language>
+				<execution-type></execution-type>
+		</action>
+    </timer-actions>
+
+For more information on using scripting in Liferay see Chapter 13: Script Engine.
+
+Using workflows and approvals is necessary for virtually any organization, and timers are an excellent way to help mitigate the potential headaches caused by having multiple bottlenecks through the process. Using timers in conjunction with other workflow features can help you create powerful workflows for your organization.
 
 ### Putting it all together
 
@@ -399,15 +455,16 @@ To get a feel for how the designer works, let's use the workflow designer to dup
 
 First add two tasks, and use the edit icon to name them *Review* and *Update*. Next, connect the nodes so that Review has four nodes, as follows: one receiving the transition from **StartNode**, one sending a transition to **Update**, one receiving a transition from **Update**, and one sending a transition to **EndNode**.
 
-<!-- | TODO: The below image is wrong; please correct. -->
+<!-- | TODO: I fixed this screenshot, but not before I deleted this todo -->
 
-![Figure 6.x: Your workflow should look something like this.](../../images/kaleo-designer-submenu.png)
+
+![Figure 6.x: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
 
 Next, we want to add the correct assignments and notifications. Click on *Review*. The box on the left shows all the proprerties of the Review node. In the *assignments* category, assign the task to the *Portal Content Reviewer* role. Click on *Notifications* and create a notification with the type *On Assignment*. Now move to the Update node, and assign it to the *Content Creator* with its own notification.
 
 <!-- | TODO: The below paragraph is confusing; please fix. -->
 
-Next let's go through all of the transitions, and make sure that they're named correctly. Click on the arrow going from the Start node to Review and set the name as *Submit* and set *Default* to true--we'll leave all the others as false. Set the name of the transition from Review to Update to *Reject*, and the one from Update to Review to *Resubmit*. Lastly, set the name of the transition from Review to the EndNode to *Approve*.
+Next let's go through all of the transitions, and make sure that they're named correctly. What are the transitions? Every time you created an arrow from one node to another it created a transtion. By default, these transitions get system generated names, so we'll rename them to all to something more human readable. First click on the arrow going from the Start node to the Review node and set the name as *Submit* and set *Default* to true--we'll leave all the others as false. Set the name of the transition from Review to Update to *Reject*, and the one from Update to Review to *Resubmit*. Lastly, set the name of the transition from Review to the EndNode to *Approve*.
 
 Now let's take a look at the generated XML. It should look a lot like our default workflow, only a tiny bit messier, as the nodes display in the order they were created, not in the logical order that happens when a human writes the code. Save your definition and it's ready to use.
 
@@ -415,6 +472,8 @@ Now let's take a look at the generated XML. It should look a lot like our defaul
 
 <!-- | TODO: This summary is too thin. It should summarize what you covered in the chapter. Going back and looking at the chapter headings can help you write a good summary. | --> 
 
-As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a very robust environment for web content management. Simple workflows can be managed using the default configuration and GUI tools, while more complex workflows can be created to meet the workflow management needs of almost any portal.
+As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a very robust environment for web content management. Simple workflows can be managed using the default configuration and GUI tools, while more complex workflows can be created to meet the workflow management needs of almost any portal. Through this chapter, we've taken a look at the various elements of a workflow, and shown how to use those elements to create your own custom workflows. We've also seen how to properly use the various elements of a workflow like Assignments and Notifications, as well as newer and more advanced features like Parallel Workflows, Timers, and Custom Scripts.
+
+One of the keys to using Kaleo workflow isn't just understanding each individual element, but seeing how each one interacts with the other elements and figuring out which features are going to work best for your organization. Hopefully this chapter has helped you understand how to best craft a workflwo for you portal.
 
 
