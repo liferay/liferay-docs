@@ -755,7 +755,7 @@ You can find the *Permissions* button next to the Add Article button in the Know
 
 Users may need to be granted access to the knowledge base page of the control panel in order to exercise some of the above permissions. For example, suppose that the user role has been granted the Add Article and the View Templates permissions. A user will be able to add articles from the knowledge base display portlet but will need access to the knowledge base page of the control panel in order to view templates. Note that the Knowledge Base (Display) permissions are distinct from the Knowledge Base (Admin) portlet. The display permissions define what a user can do with the Knowledge Base display portlet on a page while the admin permissions define what a user can do on the Knowledge Base page of the control panel.
 
-### Knowledge Base Page in the Control Panel
+### Knowledge Base Page of the Control Panel
 
 The Knowledge Base page of the control panel has two tabs: one for articles and one for templates. The articles tab shows all the articles in the knowledge base and lets you perform actions on them. The templates tab shows all the templates defined in the knowledge base and lets you perform actions on them.
 
@@ -875,7 +875,7 @@ From the Add button, you can add documents, folders, and shortcuts just like on 
 
 **Video:** lets you upload a file that you would like the "Video" document type to apply to. By default, videos are described by author, license, location, running time, and subtitles fields.
 
-Any custom documents types that have been defined also appear in the Add menu If a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields.
+Any custom documents types that have been defined also appear in the Add menu. If a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields.
 
 #### Sort
 
@@ -905,13 +905,13 @@ Customizable document types and metadata sets are new features in Liferay 6.1. W
 
 ![Figure 4.20: Document Types Dialog Box](../../images/05-document-types.png)
 
-You can add a new document type using the Add button at the top of the screen. To do so, you need to select or define one or more metadata sets to associate with your document type. Let's define a document type called "Syllabus" and define one metadata set. What metadata should we associate with syllabi? Let's decide for our syllabi to have course title, professor, and semester fields. All syllabi in our portal will be required to maintain entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for.
+You can add a new document type using the Add button at the top of the screen. To do so, you need to select or define one or more metadata sets to associate with your document type. Let's define a document type called "Syllabus" and define one metadata set. What metadata should we associate with syllabi? Let's choose for our syllabi to have course title, professor, and semester fields. All syllabi in our portal will be required to maintain entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for.
 
 You can view, edit, or add metadata sets from the *Manage &rarr; Metadata* window. A metadata set consists of a group of fields. If you click the Add button, can use same UI for defining a metadata set that you used in the Add Document Type window.
 
 ![Figure 4.21: Adding a New Metadata Set](../../images/05-new-metadata-set.png)
 
-All you have to do to define a metadata set is choose fields to use from the area on the right and then drag and drop them into the area on the left. The drag and drop interface allows for nested fields so you need to be careful about where you drop the fields. Default values, mouse-over tips, and widths can be set for most fields. Liferay supports the following kinds of fields for metadata sets:
+All you have to do to define a metadata set is choose fields to use from the area on the left and then drag and drop them into the area on the left. The drag and drop interface allows for nested fields so you need to be careful about where you drop the fields. Default values, mouse-over tips, and widths can be set for most fields. Liferay supports the following kinds of fields for metadata sets:
 
 **Boolean:** is just a checkbox.
 
