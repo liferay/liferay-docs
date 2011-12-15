@@ -153,7 +153,7 @@ For instance, if we set this up for Nose-ster's Development Network, users in th
 
 To set this up, the DNS name *developers.nosester.com* should point to your portal's IP address first. Then enter http://developers.noseter.com in the Virtual Host tab for the Developers site. This helps users quickly access their site without having to recall an extended URL.
 
-**Site Template:** If you've applied a site template to your pages, some settings appear here. Specifically, you can see whether to site template is active, allows modification, or allows the addition of pages. If you're not using site templates for this site, you can safely ignore this tab.
+**Site Template:** If you've applied a site template to your pages, some settings appear here. Specifically, you can see whether to site template is active or if it allows modification by site administrators. If you're not using site templates for this site, you can safely ignore this tab.
 
 **Sitemap:** lets you send a sitemap to some search engines so they can crawl your site. It uses the sitemap protocol, which is an industry standard. You can publish your site to Yahoo or Google, and their web crawlers will use the sitemap to index your site. Liferay Portal makes this very simple for administrators by generating the sitemap XML automatically for all public web sites.
 
