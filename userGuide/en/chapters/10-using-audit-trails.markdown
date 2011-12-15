@@ -2,7 +2,7 @@
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
-You've just finished lunch and are ready to get back to work. You have a site in Liferay that's for your project, and before you left, you were about to create a folder in your Documents and Media library for sharing some requirements documentation. Sitting down at your desk, you navigate to the Library and attempt to create the folder. 
+You've just finished lunch and are ready to get back to work. You have a site in Liferay you use to manage your project, and before you left, you were about to create a folder in your Documents and Media library for sharing some requirements documentation. Sitting down at your desk, you navigate to the repository and attempt to create the folder. 
 
 *You do not have permission to perform this action*, Liferay helpfully tells you. 
 
@@ -20,7 +20,7 @@ And off you go, two floors down, to the far end of the building where, as you ap
 
 "Yeah, Tom," he says. "Somebody changed a bunch of permissions in the portal--it wasn't me. I'm assuming you and Dick are here because of the same problem?" 
 
-"Yup," you say. "I lost access to a document library folder." 
+"Yup," you say. "I lost access to a document repository folder." 
 
 "And I lost access to a wiki," Dick says helpfully. 
 
@@ -32,7 +32,7 @@ We'll come back to Tom, Dick, and Harry's story later in the chapter. For now, l
 
 ## Installing and configuring the audit plugins
 
-Liferay's audit functionality is composed of two parts: a back-end piece that hooks into Liferay events, and a front-end piece that gives you an interface to see what's happening. Both of these are available as EE-only plugins in the Customer Portal or Liferay Marketplace, and you'll need to install both in order to get audit functionality working (plugins installation is covered in chapter 2). 
+Liferay's audit functionality is composed of two parts: a back-end piece that hooks into Liferay events, and a front-end piece that gives you an interface to see what's happening. Both of these are available as EE-only plugins in the Customer Portal or Liferay Marketplace, and you'll need to install both in order to get audit functionality working (plugins installation is covered in chapter 9). 
 
 Once installed, there are two properties in your `portal-ext.properties` file which you can use to tweak the settings. 
 
@@ -46,15 +46,15 @@ Once you've decided if you're going to use one or both of the two settings above
 
 Now that you're capturing audit events, it's easy to use them to view activities in your portal. Navigate to the control panel and you'll find a new entry in the *Portal* section labeled *Audit Reports* (see figure 8.1). 
 
-![Figure 8.1: Once the Audit Reports plugins are installed, an entry appears in the control panel.](../../images/control-panel-audit-reports.png)
+![Figure 10.1: Once the Audit Reports plugins are installed, an entry appears in the control panel.](../../images/control-panel-audit-reports.png)
 
 Clicking the entry shows you a list of the events Liferay has already captured (see figure 8.2), along with an interface for searching for events. You can browse the list if you want, but it's likely that you'll need to use the search to find what you're looking for. 
 
-![Figure 8.2: Liferay captures and stores events as soon as the audit plugins are installed.](../../images/audit-list-events.png)
+![Figure 10.2: Liferay captures and stores events as soon as the audit plugins are installed.](../../images/audit-list-events.png)
 
-Figure 8.2 shows that Stephen Professor logged in and did some things on the site. To see the detail of any of these events, all you need to do is click one to see more information. You'll then see something like figure 8.3. 
+Figure 10.2 shows that Stephen Professor logged in and did some things on the site. To see the detail of any of these events, all you need to do is click one to see more information. You'll then see something like figure 8.3. 
 
-![Figure 8.3: Clicking an event in the list shows the details of that event. This event shows that it must've been Stephen Professor's first time logging into the site, because he's accepting the terms of use.](../../images/audit-detail.png)
+![Figure 10.3: Clicking an event in the list shows the details of that event. This event shows that it must've been Stephen Professor's first time logging into the site, because he's accepting the terms of use.](../../images/audit-detail.png)
 
 As you can see, depending on how many users you have in your portal, this list can get populated very quickly. For this reason, it's a good idea to keep the `audit.message.com.liferay.portal.model.Layout.VIEW` property set to `false`. This way, you don't clutter up your audit events with multiple page view events, which will definitely be the most often triggered event in your portal. 
 
@@ -92,13 +92,13 @@ Let's look at the options we have for search.
 
 **End Date:** Specify the high end of the date range you wish to search. 
 
-Using this form, if you wanted to check to see if someone in the portal unassigned a user from a particular role, you might search for a resource name of *user* and a resource action of *unassign*. The results of such a search might look something like figure 8.4. 
+Using this form, if you wanted to check to see if someone in the portal unassigned a user from a particular role, you might search for a resource name of *user* and a resource action of *unassign*. The results of such a search might look something like figure 10.4. 
 
-![Figure 8.4: Searching audit events is easy with the search form provided by the audit portlet. You can quickly drill down to find the types of events you're looking for.](../../images/audit-unassign-search.png)
+![Figure 10.4: Searching audit events is easy with the search form provided by the audit portlet. You can quickly drill down to find the types of events you're looking for.](../../images/audit-unassign-search.png)
 
-Once you have the results of your search, you can click on any of the records returned in order to see the detail page for that record. Figure 8.5 shows that in this particular case, the default administrative user removed Stephen Professor from the role of Power User. 
+Once you have the results of your search, you can click on any of the records returned in order to see the detail page for that record. Figure 10.5 shows that in this particular case, the default administrative user removed Stephen Professor from the role of Power User. 
 
-![Figure 8.5: If you've delegated portal administration to multiple users, you can use the audit plugins to determine who made what change. And, of course, you'll never leave the default administrative user enabled in a production system, right?](../../images/audit-unassign-detail.png)
+![Figure 10.5: If you've delegated portal administration to multiple users, you can use the audit plugins to determine who made what change. And, of course, you'll never leave the default administrative user enabled in a production system, right?](../../images/audit-unassign-detail.png)
 
 As you can see, Liferay's audit portlets give you a lot of power to see what's happening in your portal. You can use this information to troubleshoot problems, determine ownership of particular actions, or, as Harry is about to do, find out who made permission changes that they weren't supposed to make. 
 

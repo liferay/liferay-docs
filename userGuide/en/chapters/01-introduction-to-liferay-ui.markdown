@@ -199,6 +199,10 @@ Teams are sets of users with similar permissions within a site. Teams can be cre
 
 Teams can be essential for some use cases since they can be created by site administrators. Site administrators can't create roles, so the ability to have teams empowers them to manage permissions at a level they weren't capable of previously.
 
+---
+![tip](../../images/01-tip.png) Generally speaking, Site Administrators cannot view or access the content of the portal as a whole, but only have access to the content and resources of their own Site. However, if they are managing users in the Users and Organizations interface, they can view all of the users and organizations on the entire portal. They need this capability to effectively add and manage the users of their own site, but if privacy is a concern on your portal, you will need to be concious of which users are granted the Site Administrator role.
+---
+
 ## Summary
 
 So far, we've looked at Liferay's function as a portal server and learned how to navigate within Liferay using the dockbar and the control panel. We've also taken a look at look at Liferay's portal architecture and how Liferay uses the concepts of users, user groups, organizations, sites, teams, and roles to organize your portal. If you're a portal administrator who is tasked with setting up your system's users, sites, organizations, or roles, you'll want to skip ahead to chapter 12 to see how this is done. For the remainder of this first part of the book, we'll focus on the applications an end user would use on a day to day basis. For this reason we'll next discuss one of the most used features of Liferay Portal: its content management system. 
