@@ -63,7 +63,7 @@ Next, we'll see how permissions apply to Liferay portlets in general.
 
 All of Liferay's portlets support Liferay's robust, fine-grained permissions system. Some higher level permissions can be configured in the permissions tab of the portlet configuration dialog box. You can grant roles permission to add the portlet to a page, configure the portlet, or view the portlet. To set these permissions, go to the *Configuration* menu and click on *Permissions*. This shows you a table of roles defined in the portal. Use the check boxes to grant certain permissions to different roles. Click *Submit* after you have made your selections. 
 
-Beyond this, specific permissions are generally defined for specific applications. For example, the message boards portlet contains a *ban user* permission. This makes no sense in the context of another portlet, say, the blogs portlet. We'll go over permissions for specific applications in the sections for those applications. For now, let's move on to sharing applications. 
+Beyond this, specific permissions are generally defined for specific applications. For example, the message boards portlet contains a *Ban User* permission. This makes no sense in the context of another portlet, say, the blogs portlet. We'll go over permissions for specific applications in the sections for those applications. For now, let's move on to sharing applications. 
 
 ### Sharing
 
@@ -87,11 +87,11 @@ You can add any Liferay portlet as an application on Facebook. To do this, you m
 
 Incidentally, this makes Liferay a fantastic platform upon which to build applications for Facebook. See the *Liferay Developer's Guide* or *Liferay in Action* for more details. 
 
-#### Google Gadget
+#### OpenSocial Gadget
 
-iGoogle is a service provided by Google that lets users create a customizable page and add *Gadgets* to that page. Liferay can serve up portlets to be used as Google Gadgets on an iGoogle page.
+OpenSocial comprises a container and a set of APIs for social networking and other web applications. iGoogle is a service provided by Google that lets users create a customizable page and add *Gadgets* to that page. Liferay can serve up portlets to be used as Open Social Gadgets on iGoogle or other OpenSocial-compatible pages.
 
-Check the box labeled *Allow users to add [portlet-name] to iGoogle*. Copy and paste the URL provided into Google's *Add a feed or gadget* feature on the iGoogle configuration page, and your Liferay portal instance will serve that portlet directly onto your iGoogle page. The URL provided is unique to the specific instance of the portlet, so you could serve multiple instances of the same portlet as different Google Gadgets.
+To serve a Liferay portlet on iGoogle, check the box labeled *Allow users to add [portlet-name] to iGoogle*. Then copy and paste the URL provided into Google's *Add a feed or gadget* feature on the iGoogle configuration page. Your Liferay portal instance will serve that portlet directly onto your iGoogle page. The URL provided is unique to the specific instance of the portlet, so you could serve multiple instances of the same portlet as different Google Gadgets.
 
 You could use this feature to allow users to view what's happening on your portal at a glance, using asset publishers or custom RSS feeds. You could also use Liferay's API to build your own portlet and provide the URL for users to place on their iGoogle pages.
 
@@ -103,7 +103,7 @@ Netvibes offers a similar service to iGoogle--users can log in, create their own
 
 The final sub-tab of the *Sharing* tab is called *Friends*. This tab has a single check box that allows you to give your friends permission to add the application as a widget to another web site. This could be particularly useful for your blog or calendar if you wish to share them.
 
-Now that we've seen all the common options available in Liferay's portlet applications, we can move on to specific applications, starting with blogs. 
+Now that we've seen all the common options available in Liferay's portlet applications, we can move on to specific applications, starting with blogs.
 
 ## Blogs
 
@@ -755,7 +755,7 @@ You can find the *Permissions* button next to the Add Article button in the Know
 
 Users may need to be granted access to the knowledge base page of the control panel in order to exercise some of the above permissions. For example, suppose that the user role has been granted the Add Article and the View Templates permissions. A user will be able to add articles from the knowledge base display portlet but will need access to the knowledge base page of the control panel in order to view templates. Note that the Knowledge Base (Display) permissions are distinct from the Knowledge Base (Admin) portlet. The display permissions define what a user can do with the Knowledge Base display portlet on a page while the admin permissions define what a user can do on the Knowledge Base page of the control panel.
 
-### Knowledge Base Page in the Control Panel
+### Knowledge Base Page of the Control Panel
 
 The Knowledge Base page of the control panel has two tabs: one for articles and one for templates. The articles tab shows all the articles in the knowledge base and lets you perform actions on them. The templates tab shows all the templates defined in the knowledge base and lets you perform actions on them.
 
@@ -825,7 +825,7 @@ You can select topics for articles when you are creating or editing them. Next, 
 
 ## Documents and Media
 
-Liferay's Documents and Media portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. This portlet grant users the ability to share documents within the portal via uploading and downloading. The Documents and Media library can be used to store files of any kind, not just what you might consider "documents" or "media". The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media portlets to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing files.
+Liferay's Documents and Media portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. This portlet grant users the ability to share documents within the portal via uploading and downloading. The Documents and Media library can be used to store files of any kind, including ones that you might not consider to be "documents" or "media". The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media portlets to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing files.
 
 ### Getting Started with the Documents and Media Portlet
 
@@ -833,7 +833,7 @@ Liferay's Documents and Media portlet has been redesigned and renamed for Lifera
 
 ![Figure 4.18: Initial View of the Documents and Media Portlet](../../images/05-document-library.png)
 
-The default view of the Documents and Media portlet displays the contents of the Documents Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you would like the main window of the portlet to display. Recent Documents displays documents that users have recently interacted with. For example, recently uploaded, edited, or downloaded documents would be displayed here. My Documents shows *your* documents, i.e., the documents that you have uploaded. Basic Document, Image, and Video are filters to show text documents, images, and videos, respectively. If you add custom Document types, which we discuss below, they will also be added to the filter list.
+The default view of the Documents and Media portlet displays the contents of the Documents Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you would like the main window of the portlet to display. Recent Documents displays documents that users have recently interacted with. For example, recently uploaded, edited, or downloaded documents would be displayed here. My Documents shows *your* documents, i.e., the documents that you have uploaded. Basic Document and the document types listed below it are also filters. If you click on one of these filters, the main portlet window displays only documents that belong to the selected document type. When you add custom Document types, which we discuss below, they are added to the filter list.
 
 ### Navigating the Documents and Media Portlet
 
@@ -841,7 +841,7 @@ In the main window of the Documents and Media portlet, you can click on a docume
 
 ![Figure 4.19: Viewing a Document](../../images/05-doclib-document-view.png)
 
-The menu at the top of the Documents and Media portlet contains Actions, Add, Sort By, and Manage buttons. There are also buttons for switching between icon view, descriptive view, and list view and there is a search field. If your portlet contains more documents than it can display at once you can you the navigation tool at the bottom of the portlet window to either switch your view to another page or configure the page to display more documents per page. 
+The menu at the top of the Documents and Media portlet contains Actions, Add, Sort By, and Manage buttons. There are also buttons for switching between icon view, descriptive view, and list view and there is a search field. If your portlet contains more documents than it can display at once, you can use the navigation tool at the bottom of the portlet window to either switch your view to another page or configure the page to display more documents per page. 
 
 #### Actions
 
@@ -849,7 +849,7 @@ The Actions menu will only be displayed if you have selected one or more documen
 
 **Cancel Checkout:** lets you check in a document that you had checked out but did not make any changes to. Using this option will prevent the Documents and Media portlet from incrementing the document's version number and saving an identical version of the document.
 
-**Checkin:** lets you check in a document that you have edited. Its version number will increment and the previous version will be stored.
+**Checkin:** lets you check in a document that you have edited. Its version number will increment and the previous version will be saved.
 
 **Checkout:** lets you checkout a document that you would like to edit. This option prevents anyone else from modifying it while you are working. Other users can still view the current version of the document if they have permission. When you are done working on the document you can check it back in.
 
@@ -871,11 +871,11 @@ From the Add button, you can add documents, folders, and shortcuts just like on 
 
 **Basic Document:** allows you upload a single file that you would like the default document type, "Basic Document", to apply to. By default, basic documents are not described by any metadata sets.
 
-**Image:** lets you upload a file that you would like the "Image" document type to apply to. By default, images are are described by author, license, and location fields.
+The remaining items in the Add menu are default document types that are each described by a unique metadata set. When you add a document belonging to a specific document type, you're presented with a form to not only specify the file to upload but also to fill out the fields defined by the document type's metadata set. We describe the "Contract" document type by way of example.
 
-**Video:** lets you upload a file that you would like the "Video" document type to apply to. By default, videos are described by author, license, location, running time, and subtitles fields.
+**Contract:** lets you upload a file that you would like the "Contract" document type to apply to. By default, contracts are are described by effective date, expiration date, contract type, status, legal reviewer, signing authority, and deal name fields.
 
-Any custom documents types that have been defined also appear in the Add menu If a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields.
+Any custom documents types that have been defined also appear in the Add menu. If a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields.
 
 #### Sort
 
@@ -889,35 +889,45 @@ You can sort the items displayed in the main window of the Documents and Media p
 
 **Read Count:** lets you sort documents by the last time they were viewed.
 
-**Size:** lets you sort documents by how big they are.
+**Size:** lets you sort documents by how much disk space they use.
 
 #### Manage
 
-The Manage menu allows you to view the names and portal IDs of document types and metadata sets, as well as the last times they were edited.
+The Manage menu allows you to view the names of document types and metadata sets, as well as the last times they were edited.
 
 **Document Types:** shows you a list of defined document types.
 
-**Metadata Sets:** shows you a list of defined metadata sets.
+**Metadata Sets:** shows you a list of defined metadata sets as well as their portal IDs.
 
 ### Document Types and Metadata Sets
 
-Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields determined by the metadata set of the document type. This can be valuable just to prevent users from forgetting to enter important information about their documents. For example, you could define a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button on the top bar of the Documents and Media portlet window. Multiple metadata sets can be associated with a single document type and multiple document types can include the same metadata set. 
+Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields defined by the metadata set of the document type. This can be valuable just to encourage users not to forget to enter important information about their documents. For example, you could create a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button at the top of the Documents and Media portlet window.
 
 ![Figure 4.20: Document Types Dialog Box](../../images/05-document-types.png)
 
-You can add a new document type using the Add button at the top of the screen. To do so, you need to select or define one or more metadata sets to associate with your document type. Let's define a document type called "Syllabus" and define one metadata set. What metadata should we associate with syllabi? Let's decide for our syllabi to have course title, professor, and semester fields. All syllabi in our portal will be required to maintain entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for.
+You can add a new document type using the Add button at the top of the dialog box. To do so, you need to define one or more metadata sets to associate with your document type. When creating a new document type, you can define "Main Metadata Fields" or select "Additional Metadata Fields". Main metadata fields are directly tied to their document type and cannot be made available to other document types. Additional metadata fields, by contrast, can be defined independently and can be used in many different document types. You can differentiate the document types that implement the same additional metadata set by defining different main metadata fields for them. However, Additional metadata fields need to be defined and saved before creating a document type that will implement them. 
+
+![Figure 4.x: Adding a New Document Type](../../images/05-new-document-type.png)
+
+Let's create a document type called "Syllabus" and define a metadata set. What metadata should we associate with syllabi? Let's choose for our syllabi to have course title, professor, semester, course description, and course requirements fields. All syllabi in our portal should maintain entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for. Since we don't want to use our metadata set for any document type other than "Syllabus," let's create our metadata set under the Main Metadata Fields area. Alternatively, we could create our metadata set independently using *Manage &rarr; Metadata Sets &rarr; Add* and then select it as an Additional Metadata Field. 
+
+![Figure 4.x: Selecting Additional Metadata Sets](../../images/05-selecting-additional-metadata-sets.png)
 
 You can view, edit, or add metadata sets from the *Manage &rarr; Metadata* window. A metadata set consists of a group of fields. If you click the Add button, can use same UI for defining a metadata set that you used in the Add Document Type window.
 
 ![Figure 4.21: Adding a New Metadata Set](../../images/05-new-metadata-set.png)
 
-All you have to do to define a metadata set is choose fields to use from the area on the right and then drag and drop them into the area on the left. The drag and drop interface allows for nested fields so you need to be careful about where you drop the fields. Default values, mouse-over tips, and widths can be set for most fields. Liferay supports the following kinds of fields for metadata sets:
+Make sure the Fields tab is selected on the left. Then, to define a metadata set, just choose fields to use from the area on the left and drag and drop them into the area on the right. The drag and drop interface allows for nested fields so you need to be careful about where you drop the fields. Default values, mouse-over tips, widths, and other settings can be configured for most fields. To configure these settings, just double-click on a field from the area on the right. This automatically selects the Settings tab on the left. Then double-click on a value to edit. Liferay supports the following kinds of fields for metadata sets:
 
 **Boolean:** is just a checkbox.
 
 **Date:** lets you enter a date. A valid date format is required for the date field. However, you don't have to enter a date manually. When you select the date field a mini-calendar pops up which you can use to select a date.
 
 **Decimal:** lets you enter a decimal number. The value will be persisted as a double.
+
+**Documents and Media:** lets you select a file from one of the portal's Documents and Media libraries.
+
+**File Upload:** lets you select file to upload from your local system.
 
 **Integer:** lets you enter an integer. The value will be persisted as an int.
 
@@ -931,7 +941,7 @@ All you have to do to define a metadata set is choose fields to use from the are
 
 **Text Box:** is just like the text field except you can enter multiple lines of text or separate paragraphs.
 
-Remember that metadata sets are reusable. Once they have been created they can be included in any number of document types. By default, tags can be attached to most forms of web content that can be created in Liferay, including documents. Let's take a look at them next.
+Remember that metadata sets created independently are reusable. Once they have been created they can be included in any number of document types as additional metadata sets. Next, let's take a look at tags. Tags can be attached to most forms of web content that can be created in Liferay, including documents.
 
 ## Tags
 
