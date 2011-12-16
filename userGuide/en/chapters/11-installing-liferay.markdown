@@ -58,7 +58,13 @@ The Liferay/Tomcat bundle then launches. If you are on Windows, another command 
 
 Once Tomcat has completed its start up, it automatically launches a web browser that displays Liferay's setup wizard. If for some reason your browser doesn't load the wizard, launch your web browser and then go to  [http://localhost:8080](http://localhost:8080). 
 
-<!-- | TODO: Add a section on removing 7Cogs here, before we get to the setup wizard. | -->
+Liferay CE ships with a sample web site for a fictitious company called 7Cogs. This site demonstrates some of the things Liferay Portal can do. If you're installing Liferay on your own machine to explore its features, you likely want to leave the sample site there so you can examine it. If, however, you're installing Liferay on your server to run your own site, it's best to start with a clean system. Before running the setup wizard, you should remove the sample 7Cogs data from your Liferay installation. You must do this before running the setup wizard in order to get a clean database, and it's as simple as undeploying the application that installs the 7Cogs data.
+
+There is only one application included in the bundle that you need to remove. It's called *sevencogs-hook*. It's a Liferay plugin that copies the 7Cogs data into the database when Liferay is started. To remove it, all you have to do is undeploy it. The method for doing this differs by application server and that, of course, depends on the bundle you have chosen. For example, on Tomcat you delete the application from the `[Tomcat Home]/webapps` folder. On Glassfish, you use the administrative console to undeploy it. The other application related to 7Cogs is a theme, which you can leave installed if you wish.
+
+If you forget to undeploy the *sevencogs-hook* application before you run through the setup wizard and connect Liferay to your real database, the sample data will be created in your database and may cause issues with your site. Make sure that you get *sevencogs-hook* undeployed before setting up your server.
+
+If you're using Liferay EE, you don't have the sample site, so you don't need to worry about this. The next step is to run through the setup wizard. 
 
 ## Using Liferay's setup wizard 
 
@@ -66,23 +72,23 @@ To make it easy to configure Liferay optimally for your use, the first thing you
 
 There are three sections of the wizard: the portal, the adminstrator, and the database. For the portal, you need to supply the following information: 
 
-**Portal Name:** The name of the web site you're powering with Liferay. In this book, we'll build a social network for your nose, called Nosester so we've supplied `nosester.com` in the screenshot below. 
+**Portal Name:** the name of the web site you're powering with Liferay. In this book, we'll build a social network for your nose. This site is called Nosester, so we've supplied `nosester.com` in the screenshot below. 
 
-**Default Language:** Choose the default locale where your site resides. 
+**Default Language:** choose the default locale where your site resides. 
 
 For the adminstrator, you need to supply the following information: 
 
-**First Name:** The first name of the user that has the administrator account. 
+**First Name:** the first name of the user that has the administrator account. 
 
-**Last Name:** The last name of the user that has the administrator account. 
+**Last Name:** the last name of the user that has the administrator account. 
 
-**Email:** The email address of the user that has the administrator account. 
+**Email:** the email address of the user that has the administrator account. 
 
 ![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 The database section can be a little bit technical. If you've downloaded Liferay for evaluation or demo purposes only, and you're not installing Liferay on server hardware to get it ready for your users, you can ignore the database section and click the *Finish Configuration* button. If, however, you're reading this section because you're installing Liferay for actual use, you'll need a separate database first.
 
-Liferay supports just about all of the leading databases today: 
+Liferay supports just about all the leading databases today: 
 
 * DB2
 * Ingres
@@ -96,9 +102,9 @@ In addition to these, Liferay also supports a few embedded databases that are de
 
 Before you fill out the database section of Liferay's setup wizard, go to your database software of choice and create a database for Liferay to use. This database must have UTF-8 as its character set, because Liferay is an internationalized application and needs the UTF-8 character set to display text in many different languages. Check the documentation for your database to see how to do this. 
 
-Once you have your database created, create a user which can do anything to the database, including create and drop tables. It's important that this user have complete rights over the Liferay database, because Liferay manages its own tables. Once you have your database and the credentials for this user, you can continue. 
+Once you have your database created, create a user which can do anything to the database, including create and drop tables. It's important that this user has complete rights over the Liferay database, because Liferay manages its own tables. Once you have your database and the credentials for this user, you can continue. 
 
-Open the Database section of the wizard. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name and server of your database, as well as the user credentials. 
+Open the Database section of the wizard. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
 
 ![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
 
@@ -106,39 +112,29 @@ Once you've filled out the form, click *Finish Configuration*. You'll see a mess
 
 Congratulations! You've just installed Liferay Portal! 
 
-As you can see, bundles are the easiest way to get started with Liferay. They come pre-configured with a running Liferay that can be used immediately to explore all of the things that Liferay can do. Bundles are the fastest way to create full production-ready Liferay installations. 
+As you can see, bundles are the easiest way to get started with Liferay. They come pre-configured with a running Liferay instance that can be used immediately to explore all of the things that Liferay can do. Bundles are the fastest way to create full production-ready Liferay installations. 
 
 Of course, it's not always possible to use a bundle. You may already have an application server upon which you want to install Liferay. The bulk of this chapter describes how to install Liferay on all the application servers it supports, both open source and proprietary. 
 
-## Installing Liferay for an Enterprise
+## Installing Liferay on an existing application server
 
-When it comes time to install Liferay Portal on your server, you'll find it is easiest to do this by starting with a bundle and then reconfiguring that bundle so that it is enterprise-ready. Because this is by far the quickest and easiest method to get a production Liferay system running, we will look at this first. Often, however, enterprises will have an established Java EE infrastructure upon which they would like to install Liferay. In this situation, a bundle will not suffice. Most of the rest of this chapter, therefore, will focus on installing Liferay onto an already-established application server.
-
-### Sample Data
-
-Liferay CE ships with some sample data to help you see some of the things Liferay Portal can do. While the sample 7 Cogs data is a good example of how Liferay might be used, when you are ready to build your own site, you won't want that data cluttering up your database. So before you connect Liferay to your production database, you will want to make sure you have removed the sample 7 Cogs data from your Liferay installation. This is as simple as undeploying the application that installs the 7 Cogs data.
-
-There is only one application included in the bundle that you will need to remove. It's a hook that copies the 7 Cogs data into the database when Liferay is started. Because we want to revert Liferay's behavior back to its defaults for a clean install, you will want to remove the *sevencogs-hook* application. The other two applications related to 7 Cogs are both themes, which you can leave installed if you wish.
-
-If you forget to undeploy the *sevencogs-hook* application before you connect Liferay to your real database, the sample data will be created in your database and may cause issues, especially if you already have data in your database. So you want to make sure that you get *sevencogs-hook* undeployed before setting up your server. Use your application server's method for uninstalling applications in order to remove them.
+When it comes time to install Liferay Portal on your server, you'll find it's easiest to do this by starting with a bundle. But many enterprises can't do that. There may be an existing infrastructure into which you're installing Liferay, or you may have standardized on a particular application server. You'll be happy to know that Liferay Portal has been designed to work well with all the leading application servers, and that it's easy and straightforward to install. But before we get started, we need to go over a few concepts; namely, the Liferay Home folder, databases, and Liferay's main configuration file. These were touched on in the section on bundles above, but we'll look at them in more detail now. 
 
 ### Liferay Home
 
 Liferay Portal uses a special folder defined as *Liferay Home*. This folder is one folder higher than the location of the application server itself. This is why the bundles place the application server one folder in from the bundle's root folder.
 
-If Liferay is unable to create the resources it needs in this folder, or if it finds itself running on certain application servers, it will fall back to defining the home folder in the home folder of the user ID that is running Liferay.
+If Liferay is unable to create the resources it needs in this folder, or if it finds itself running on certain application servers, it creates a folder called `liferay` in the home folder of the user ID that is running Liferay, and that becomes Liferay Home.
 
-As described above in the *Bundles* section, the home folder is very important to the operation of Liferay. The aforementioned folders (*data*, *deploy*, and *license*) will be created there, and you can also put a special configuration file called `portal-ext.properties` there.
+As described above in the *Bundles* section, the home folder is very important to the operation of Liferay. The aforementioned folders (*data* and *deploy*) are created there, and you can also put a special configuration file called `portal-ext.properties` there. This file is fully documented in Chapter 14: *Configuring Liferay Properties*. 
 
-This file is fully documented in Chapter 6: *Advanced Liferay Configuration*, but we will use it in this chapter for some basic configuration, including setting up Liferay to talk to our database.
+Let's move on to examining the database. 
 
-### Database Setup
+### Liferay's database
 
-#### Default Method: Automatic
+As stated above, if you create your database and grant a user ID full access to it, Liferay can use that user ID to create its indexes and tables automatically. This is the recommended way to set up Liferay, as it allows you to take advantage of Liferay's ability to automatically maintain its database during upgrades or through various plugin installs which may create tables of their own. It is by far the best way to set up your Liferay installation.
 
-If you create your database and grant a user ID full access to it, Liferay can use that user ID to create its indexes and tables automatically. This is the recommended way to set up Liferay, as it allows you to take advantage of Liferay's ability to automatically maintain its database during upgrades or through various plugin installs which may create tables of their own. It is by far the best way to set up your Liferay installation.
-
-If you will be setting up Liferay's database with the recommended permissions, you can skip the next section.
+If you'll be setting up Liferay's database with the recommended permissions, you can skip the next section.
 
 #### Manual Method
 
