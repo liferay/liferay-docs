@@ -13,7 +13,7 @@ Liferay has a constantly improving set of social features which enable you to en
 
 When we're finished, you'll have a good idea how you can use Liferay to power your social network.
 
-<!-- | TODO: Need to include a small section here on installing the social portlets for EE users. | -->
+<!-- | TODO: Need to include a small section here on installing the social portlets for EE users. DONE | -->
 
 ## Liferay's social portlets
 	
@@ -22,6 +22,12 @@ Liferay has many portlets available for social interaction and collaboration. So
 Some of the social portlets should be used on the public pages of your portal, while others should be used as part of a user's personal site. As you might guess, the portlets for personal page use are more focused on simple social interactions, while the ones which can be placed on any site help improve productivity.
 
 Unless otherwise noted, these portlets are all provided with minimal configuration options. Most of them have two configuration options--the option to change permissions for the portlet view and sharing options for connecting the portlet to other web sites. They do not have any way to change options like feed length or display styles. Some styling changes, however, could be done through custom CSS.
+
+### Installing the social portlets
+
+The social portlets are all included with the Liferay Community Edition distribution, but need to be installed separately for Enterprise Edition. If you're using Liferay Enterprise Edition, or had previously removed the social portlets from Community Edition, you can use Liferay's plugin installer to easily add social features to your portal.
+
+If you're logged in as an adminstrator, go to the Control Panel, and in the *Server* section, click on *Plugins Installation*. From here, click on *Install More Portlets* and search for *Social Networking*. Once the results come up, select the latest version of the Social Networking Portlet, and then click *Install*. Once the install process finishes, you can start using the social networking portlets. 
 
 ### Using social networking on public pages
 
@@ -47,14 +53,6 @@ Scores are updated in real time, while ranks are only updated daily, so it's pos
 
 <!-- | TODO: Screenshot? |--> 
 
-The map is a tool which enables you to view the locations of other users on the portal, both locally and internationally. In order to configure the map, you need to install the IP Geolocator portlet (available from Liferay's community repository) and configure Maxmind GeoIP or GeoLite on your server. For more information on configuring geolocation services, visit the MaxMind support page at [http://www.maxmind.com/app/installation?city=1](http://www.maxmind.com/app/installation?city=1)
-
-<!-- | TODO: The below screenshot doesn't show Liferay's Map portlet. Liferay's Map portlet appears in the bottom left corner of your profile page on liferay.com, and so should be in the section below. | --> 
-
-![Figure 9.x: The Map Portlet](../../images/xx-social-networking-map.png)
-
-Liferay ships with a nice suite of social networking applications that let you power your site for social interaction. But we've only looked at a portion of them. Let's examine the portlets that should be added to personal pages. 
-
 ### Using social networking on personal pages
 
 In addition to the portlets available for general use, there are a handful that can be used only on personal pages. These portlets can be used to create a profile page, similar to Facebook or Google+. 
@@ -67,7 +65,16 @@ This portlet is also essential to any social implementation on Liferay, because 
 
 The Wall portlet provides a place for users to leave messages on other users' profiles. The messages can only be plain text, and no formatting or HTML is supported. Once a post is added to their wall, users have the ability delete it or respond to it with a quick link to post on the original poster's wall.
 
-The Friends portlet shows a list of all the user's friends with links to their profiles. The Friends' Activities portlet shows things a user's friends are doing on the portal. 
+The Friends portlet shows a list of all the user's friends with links to their profiles. The Friends' Activities portlet shows things a user's friends are doing on the portal.
+
+The map is a tool which enables you to view the locations of other users on the portal, both locally and internationally. In order to configure the map, you need to install the IP Geolocator portlet (available from Liferay's community repository) and configure Maxmind GeoIP or GeoLite on your server. For more information on configuring geolocation services, visit the MaxMind support page at [http://www.maxmind.com/app/installation?city=1](http://www.maxmind.com/app/installation?city=1)
+
+<!-- | TODO: The below screenshot doesn't show Liferay's Map portlet. Liferay's Map portlet appears in the bottom left corner of your profile page on liferay.com, and so should be in the section below. DONE | --> 
+
+![Figure 9.x: The Map Portlet](../../images/map-portlet.png)
+
+Liferay ships with a nice suite of social networking applications that let you power your site for social interaction. But we've only looked at a portion of them. Let's examine the portlets that should be added to personal pages. 
+
 
 Now that you know what the portlets do, let's put them all together and make a social web site. 
 
@@ -90,12 +97,12 @@ The advantage of this method is that it applies to all users of the portal. The 
     
 Because it's the recommended method, we'll use the user group method to create the layouts. As an administrator, go to the control panel, and select *Site Templates* from under the *Portal* section. Click *Add* and fill out the form, leaving all the defaults. Click *Save*.
 
-<!-- | TODO: Fix this so it agrees with new site templates interface. | -->
+<!-- | TODO: Fix this so it agrees with new site templates interface. DONE | -->
 
 ![Figure 9.x: Creating the Site Template](../../images/social-networking-site-template.png)
 
 ---
-![tip](../../images/01-tip.png) Note: Setting the property which disables modifications to personal page layouts disable those modifications across the portal for all pages and all users. Disabling Layout Additions and Modifications in the Site Template will only disable them for the specific page, but will not disable a user's ability to add more pages, or modify additional pages.
+![tip](../../images/01-tip.png) Note: Setting the property which disables modifications to personal page layouts disable those modifications across the portal for all pages and all users. Unchecking *Allow Site Administrators to Modify the Pages Associated with this Site Template* will only prevent users from modifying the specific pages contained in the template, but will not disable a user's ability to add more pages, or modify additional pages.
 ---
 
 Once you've created the template, choose *Actions &rarr; Manage Pages* for *Social Layout* from the Site Templates page, and then click *View Pages*. Let's change the name of the page from the default to *My Profile* and add some portlets to the page. In the screenshot below, we removed the borders to make the page look more integrated, and also used Nested Portlets to make the layout more interesting.
@@ -110,9 +117,9 @@ Now, go to *Portal Settings* and select *Users* from the submenu. From the Users
 
 There are many ways that social networks connect users. These generally involve some kind of mutual interest or experience. On a site like Facebook, you can connect with people from school, from work, or from other personal connections. On a music based networking site like Last.fm, you can connect with people who like the same musicians that you do, or have similar tastes. With Liferay's social networking, collaboration is the key to connection. 
 
-Using to our example site of nosester.com, we can take a closer look at ways that users can be connected through hierarchies, and ways that they can connect to each other. We'll look at a handful of portlets, both those that
+Using to our example site of nosester.com, we can take a closer look at ways that users can be connected through hierarchies, and ways that they can connect to each other. We'll look at a handful of portlets, both those that are designed specifically for connecting users, and those that can create connections as a side-effect of just getting work done.
 
-<!-- | TODO: The above sentence has no ending. | --> 
+<!-- | TODO: The above sentence has no ending. DONE | --> 
 
 The Directory portlet can provide a simple way for users to connect. If we have a site dedicated to people with big noses, we can place a directory portlet on that site, listing all the users that have joined that site. Users can connect by sending requests to other users on that list. This isn't the worst way to get users connected, but it probably won't be particularly effective. Why not? Well, other than sharing some very basic common interests, we haven't really had any interactions.
 
@@ -130,25 +137,33 @@ OpenSocial is a framework designed for creating applications, called *gadgets* t
 
 ### Using OpenSocial gadgets
 
-The OpenSocial plugin is included with Liferay Community Edition, and can be installed through Liferay Marketplace on Liferay EE. 
+The OpenSocial plugin is included with Liferay Community Edition, and can be installed through Liferay Marketplace on Liferay EE. Installing the OpenSocial plugin will enable you to add OpenSocial gadgets to pages directly, and to integrate them into your portal like a portlet to added or removed by users as desired.
 
 <!-- | TODO: This is way too thin and sounds rushed. It should go something like: There are two ways to manage OpenSocial gadgets: via the control panel or via the *Add* &rarr; *OpenSocial Gadget* menu. In the control panel, you can publish any OpenSocial gadgets for which you have a URL, and they become available in the Gadgets category of the *Add* menu. To directly add a gadget.... 
 
 You should have a screenshot which shows gadgets integrated into Liferay's Add menu. 
 
+DONE
+
 | -->
 
-Once you add the portlet to a page, click on the configuration icon and provide the URL of the gadget you want to use. The gadget then renders on the page, and is indistinguishable from native Liferay portlets. The portlet options allow you to change the permissions for who can view or edit the portlet, as well as options to share the contents of the portlet, just like you can with any other Liferay portlet.
+In some cases, you'll want to simply add a gadget to a single page. To this, go to a page, go to the *Add &rarr; More* menu, and add *OpenSocial Gadget* to the page. Initially, the portlet simply displays with a link saying *Configure a gadget to be displayed in this portlet.* Click on this link, enter the URL for your gadget in the *URL* field (try *[Todo List Gadget](http://www.labpixies.com/campaigns/todo/todo.xml)* for an easy example), and click *Save*. That gadget will now be displayed as a portlet on your page. If, at any point, you want to change which gadget is displayed there, you can click on the configuration icon for the portlet, and replace the URL with a new one. The OpenSocial Gadget portlet options allow you to change the permissions for who can view or edit the portlet, as well as options to share the contents of the portlet, just like you can with any other Liferay portlet.
 
 ![Figure 9.x: OpenSocial Gadget displayed on a page](../../images/open-social-gadget.png)
 
-In addition to configuring individual gadgets, you can specify gadgets that are listed in the *Add &rarr; More* list from the Control Panel. To do this, simply click on *OpenSocial* in the *Portal* section of the Control Panel, specify a URL for the Gadget, and select the category in which it should appear. 
+In addition to configuring individual gadgets, you can specify gadgets that are listed in the *Add &rarr; More* list from the Control Panel. Click on *OpenSocial Gadget Publisher* in the *Portal* section of the Control Panel. On this page there is a list of any gadgets that have been installed as well as buttons labeled *Publish Gadget* and *Refresh Gadgets*. Click on *Publish Gadget* and you'll see a form to enter a URL and choose a category. Enter the URL for an OpenSocial gadget (you can use the todo list from earlier) and click *Save*. The gadget will now be displayed in the list, and you can add it to any page on your portal.
+
+![Figure 9.x: OpenSocial Gadget in your application list](../../images/open-social-in-context.png)
+
+Clicking *Actions* next to the gadget will enable you to edit, delete, change permissions, or refresh the gadget. Edit allows you to change the URL or category; Permissions gives you the basic View, Update, Delete, and Permissions options; Delete will remove the listing for the gadget; and the refresh option manually refreshed the gadget cache for cases where changes have been made to the gadget, but they are not displaying in the portlet.
 
 ### Creating and editing OpenSocial gadgets
 
-OpenSocial gadgets are XML documents, so as part of Liferay's OpenSocial integration, a gadget editor is included. The gadget editor is a complete development environment for gadgets, and provides syntax highlighting, a preview function, undo/redo options, and built in tabs for working on multiple gadgets at once. You can also organize and manage gadgets through a simple file manager embedded into the portlet.
+OpenSocial gadgets are XML documents, so as part of Liferay's OpenSocial integration, a gadget editor is included. The gadget editor is a complete development environment for gadgets, and provides syntax highlighting, a preview function, undo/redo options, and built in tabs for working on multiple gadgets at once. You can also organize and manage gadgets through a simple file manager embedded into the portlet. To access the gadget editor, go to the Control Panel, and click on *OpenSocial Gadget Editor* in the content section.  
 
-Once you have created a gadget using the editor, you can add the gadget to the *Add &rarr; More* menu, or get a URL so that you can post it on any website that support OpenSocial gadgets. <!-- | TODO How? | -->
+Once you have created and saved a gadget using the editor, click on the wrench next to the file to rename, delete, publish, or get the URL for your gadget. If you want to display your gadget somewhere, you can click *Publish* to choose a category and display your gadget in the application menu, or click on *Show URL* to get a URL to display your gadget on any site that supports OpenSocial.
+
+<!-- | TODO How? DONE | -->
 
 Now that you've got all these social applications running on your system, the next question becomes: how do I measure social interaction? How do I make it clear who are the best contributors to my site? Liferay has an answer: social activity measurements.  
 
@@ -156,27 +171,33 @@ Now that you've got all these social applications running on your system, the ne
 
 <!-- | TODO This is all out of date. It's been reimplemented for Liferay 6.1. Please rewrite. | -->
 
-When you have a lot of user interaction on your web site, it can be helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. In order to better show which users are making real, valuable contributions, Liferay is introducing the new Social Equity system with Liferay 6.
+When you have a lot of user interaction on your web site, it can be helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. Using Liferay's Social Activity feature will help show which users are making real, valuable contributions.
 
 ![Figure 4.24: The Social Equity Page of the Control Panel](../../images/05-social-equity.png)
 
-To use Social Equity for your portal, check the Enable Social Equity box. Social Equity enables you to assign values and weight for each contribution that a user makes. Points are given to users for *Information* and *Participation*. This way, a user who writes several blogs and wiki articles can be shown as having a higher rank than a user who has only written comments and message board replies. The purpose of this is to better indicate which users on a web site are knowledgeable contributors, and to reward those users. Social Equity is available for Blogs, Message Boards, Wikis, and Web Content. Each category has a check box labeled "Unique." When this box is checked, users can only gain social equity points one time for an action. For example, if this box were checked for viewing blog entries, users could only gain points one time for viewing a given blog entry. If the box were unchecked, users could view a blog entry multiple times and gain social equity points each time. Each category also contains a rating for *Information Value*, *Information Lifespan*, *Daily Limit*, *Participation Value*, *Participation Lifespan*, and *Daily Limit*.
+To activate Social Activity, you'll first need to determine which collaboration applications you want to use Social Activty. There are currently three types of content you can use Social Activity with - Blogs Entries, Message Board Messages, and Wiki Pages. Activation is a la carte - so you can use it on one, two, or all three applications. Social Activity tracks three metrics from within each of these applications two are for the user - *Participation* and *Contribution* - and the other, *Popularity*, is for the asset involved.
 
-**Information Value:** indicates how many points a user receives for the information content of a specific action.
+Let's activate Social Activity for Blogs Entries. Check the box next to *Blog Entry*. You now have options to set point values and limits on several different actions for blogs. You'll notice each item on the list has dropdowns you can use to set the number of participation and contribution points; popularity points are tied directly to contribution points. In addition to that, you can expand the box by clicking *Limits* in the top right of each list item. You can use this to set a limit one how many times a use can perform this activity with a specific asset and receive the requisite points. For some activities you can set limits on both participation and contribution points, but on new content creation you can only set limits on participation points.
 
-**Information Lifespan:** indicates, in number of days, how long it will be before the information points expire. Setting it to `0` means that they will never expire.
+![Figure 4.25: Setting limits in Social Activity](../../images/social-equity-limits.png)
 
-**Daily Limit:** is the maximum number of actions of this type that a user will receive information points for in a given day.
+It's easy to assign points - I can give you arbitrary points for just about anything - the challenge is making the points in some way significant. As mentioned before, the primary purpose of social activity tracking is to make sure that stand-out users who are contributing to the portal and participating in discussions are given recognition as such. So the central piece of the social equity display is the *User Statistics* portlet.
 
-**Participation Value:** indicates how many points a user receives for the participating in the content creation of the website.
+The User Statistics portlet displays a list of users ranked by an amalgamation of their participation and contribution scores. By clicking on the Configuration icon for the portlet, you can change some of the specifics of the rankings. There are four check boxes that you can enable or disable:
 
-**Participation Lifespan:** indicates, in number of days, how long it will be before the participation points expire. Setting it to `0` means that they will never expire.
+**Rank by Contribution**: If this is checked, a user's contribution score will be used as a factor in calculating their rank.
 
-**Daily Limit:** is the maximum number of actions of this type that a user will receive participation points for in a given day.
+**Rank by Participation**: If this is checked, a user's participation score will be used as a factor in calculating their rank.
+
+**Show Header Text**: Determines whether the title shows or only the rankings.
+
+**Show Totals**: Toggles the display of the users activity score next to their name.
+
+**Display Additional Activity Counters**: You can toggle the display of any number of other pieces of information next to the users name in the statistics, ranging from the number of comments on assets a user has created to the number of wiki articles that the user has created. If you want to display multiple data points, you can click the plus button to add one and the minus to remove one. You can have as many data points displayed as you want, but displaying too many might make your portlet a little unwieldy. 
 
 There are a wide-ranging number of actions that you can provide social credit for. Users can receive credit for everything from viewing content to writing wiki articles. You can easily tweak the numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
 
-Social Equity can be an invaluable tool for portals that are heavily driven by community-created conteny. It allows you to easily recognize users who are major contributors and it indicates to new users whose advice will be most trustworthy. Social Equity is easy to set up and can be configured differently for each site, increasing the flexibility of your portal.
+Social Activity can be an invaluable tool for portals that are heavily driven by community-created conteny. It allows you to easily recognize users who are major contributors and it indicates to new users whose advice will be most trustworthy. Social Activity is easy to set up and can be configured differently for each site, increasing the flexibility of your portal.
 
 In addition to the social interactions that you can create on your portal, Liferay has points of integration with some other popular social networks that enable you to leverage their power and popularity for the content on your portal.
 	
