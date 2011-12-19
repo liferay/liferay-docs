@@ -81,6 +81,7 @@ The *CSS* section allows you to enter custom CSS that will also be served up by 
 
 The next option configures the logo that appears for your site. 
 
+
 #### Using a custom logo
 
 If you want to use your own logo for a specific site, use the Logo tab. Adding a custom logo is easy: select the Logo tab and browse to the location of your logo. Make sure that your logo fits the space in the top left corner of the theme you're using for your web site. If you don't, you could wind up with a site that's difficult to navigate, as other page elements are pushed aside to make way for the logo. 
@@ -93,7 +94,11 @@ When you select a single page, some different options appear. Let's look at what
 
 **Details:** lets you name the page for any localizations you need. You can also set the HTML title that appears in the browser window for the page. Finally, you can set an easy to remember, friendly URL for the page. 
 
-**SEO:** provides several means of optimizing the data the page provides to an indexer that's crawling the page. You can set the various meta tags for description, keywords, and robots. There's also a separate Robots section that lets you tell indexing robots how frequently the page is updated and how it should be prioritized. If the page is localized, you can select a box to make Liferay generate canonical links by language. If you want to set some of these settings for the entire site, you can specify them from the Sitemaps and Robots tabs of the Manage Site Settings dialog box (see below). 
+**SEO:** provides several means of optimizing the data the page provides to an indexer that's crawling the page. You can set the various meta tags for description, keywords, and robots. There's also a separate Robots section that lets you tell indexing robots how frequently the page is updated and how it should be prioritized. If the page is localized, you can select a box to make Liferay generate canonical links by language. If you want to set some of these settings for the entire site, you can specify them from the Sitemaps and Robots tabs of the Manage Site Settings dialog box (see below).
+
+---
+![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible that a single page could be indexed multiple times. In Liferay 6.1, to improve search ratings for your pages, all URLs that direct to the same page will only create one entry in the index. So, for example while previously the simple URL *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions of the URL which provided additional information about the referring page and what not, like *http://www.nosester.com/web/guest/blog/-/blogs/thenose?redirect_33&...* would have different entries in the index, now there is only one. From the search engines point of view, this will make your pages rank higher, since, for example, any references to any variations of a specific URL will be considered references to the one page.] 
+---
 
 **Look and Feel:** lets you set a page-specific theme. 
 
@@ -168,6 +173,23 @@ If you're interested in seeing what is being sent to the search engines, select 
 **Analytics:** allows you to integrate your pages with Google Analytics. Liferay provides seamless integration with Google Analytics, allowing you to place your ID in one place, and then it will get inserted automatically on every page. This enables you to focus your efforts on building the page, rather than remembering to put the code everywhere. Google Analytics is a free service which lets you do all kinds of traffic analysis on your site, so you can see who visits, where visitors are from, and what pages they most often visit. This helps you to tweak your site so that you can provide the most relevant content to your users.
 
 Next in the menu is Site Memberships, which is covered in chapter 12. There, you'll learn how to administer a Liferay portal and define users and permissions. 
+
+### Page Templates and Site Templates
+
+*Page Templates* and *Site Templates* are an invaluable tool for building out pages on larger portals. You might already know this, or you might just be discovering it, but as you add more pages to website, you'll find more repeatable patterns in the designs of those pages. Page templates enable you to create a basic design for a single page and then apply it to any new page that you create without having to do any manual configuration. Site Templates allow you to do the same thing, but on the scale of a site -- if you have multiple sites which are going to have identical layouts with different content, you can create a single site template, and apply it to all of those pages.
+
+Let's create a page template that we can use in multiple places on our portal. First, go to the Control Panel, and under the **Portal** section, select *Page Templates*. You will see that Liferay has three already created for you: Blog, Content Display Page, and Wiki. Let's create one for a message board. Click *Add* and enter *Message Board* for the name, add a description, leave the *Active* box checked, and click *Save*. Now go to on *Actions &rarr Edit*, and click on *Open Page Template* at the bottom of the page. Once you on the page, go to *Manage &rarr Page Layout* and select the *2 Columns, 70/30* layout. We'll add a Message Board portlet to the left column and an Activities portlet to the right. Your changes are automatically saved as you make them.
+
+![Figure 3.5: Your page template should look like this.](../../images/page-template-message-board.png)
+
+Now any time you add a page, anywhere on the portal, you'll have the option to make that page based on the Message Board template. If you ever determine that you've made enough pages with message boards, you can go back to the *Edit* page for the template and uncheck the *Active* box.
+
+Now let's create a *Site Template*. You can find the *Site Templates* page right next to *Page Templates* in the Control Panel. To create a Site Template, click on *Add* on the Site Templates page. Name the template *Online Store* and indicate in the description that it will have a shopping portlet and message boards. We'll leave it *Active*, leave *Allow Site Administrators to Modify the Pages Associated with This Site Template* checked, this way Site Administrators will be able to make modifications to the pages after the template has been applied. Click *Save* and then go to *Action &rarr Edit* for the new site template. Now you'll have the option to *Open site template* and make changes. Make this template with two pages, both with a single column layout. Name the first page *Online Store*, and add the Shopping portlet, and name the second page *Questions and Reviews* and add a Message Board. Your changes are automatically saved as you make them.
+
+![Figure 3.5: Your site template should look like this.](../../images/site-template-shopping.png)
+
+Once you've created a site template, you have two ways to use them. Any time you are creating the initial pages for a site from the Control Panel, you'll have the option to create those pages based on a site template, and you also have the ability to apply the site template as users' personal pages using User Groups. When you create a User Group from the Control Panel, you have the option to set their personal public or private pages from a site template. You also have a checkbox label *Keep a Link to the Site Template* which, if checked, will push any changes to the site template to the layout of any user that is a member of that particular group. For more information on user groups, see Chapter 12: Administering Liferay Portal.
+
 
 ### Site Content
 
