@@ -219,8 +219,11 @@ This integration enables you to make things like Message Boards, Calendars, Wiki
 
 <!-- | TODO: This is too thin. Please use the headings to summarize what the chapter was about. | -->
 
-In this chapter, we explored a variety of ways to use Liferay's social features. As you have seen, you can use Liferay to create a web site that is totally focused on connecting people through social interactions, or one that simply uses social interactions as part of a larger collaboration based website. Either way you do it, you can also use Liferay's features to integrate your portal with other websites like Facebook, OpenSocial, and iGoogle.
+Websites like Facebook and Twitter have attracted hundreds of millions of users by simply giving users a way to connect and communicate with each other. With Liferay, you have the power to either build a portal around social features or enhance a portal build around content and collaboration by providing users with the tools to connect and interact.
 
-The large number of social options provided, along with features like measuring social activity, means that just about any web site can leverage Liferay portal to improve your users' experience and effectiveness.
+To get you started, you have a selection of portlets designed to make users' personal pages a place where they can interact with by learning about other users and communicate using a simple messaging system. Using the now ubiquitous concept of "friends," users can also form long term connection with other users that they frequently work with or with whom they share similar interests. 
 
+Outside of users personal pages, you have a variety of portlets, like the activity portlets, which are designed to help users identify other users that might be working on similar projects, and keep track of what's going on around the portal. You can even use the Social Activity feature to give credit where credit is due and reward those users are contributing the most with recognition.
+
+Reaching even further out, Liferay provides integration with other sites and services that enable you to connect with users outside of your portal, either by pulling content from other websites using OpenSocial integration, or pushing content on your portal out to a broader audience using Facebook integration. We've outlined the tools you have available, now it's up to you to leverage Liferay's Social Networking features in the way that best fits your portal.
 
