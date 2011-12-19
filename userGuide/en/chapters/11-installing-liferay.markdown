@@ -1,238 +1,270 @@
-# Initial Setup
+# Installing Liferay
 
 Liferay Portal is one of the most flexible applications on the market today with regard to application server environments. You can install Liferay Portal on everything from a shared Tomcat installation to a multi-node cluster running a commercial application server, and on everything in between. In fact, Liferay is used successfully in all of these scenarios every day.
 
-You will find that because Liferay is extremely flexible in its deployment options, it is easy to install as well. If you already have an application server, you can simply use the tools for deployment that came with your application server. If you do not have an application server, Liferay provides several application server bundles from which to choose. These are very easy to install and with a small amount of configuration can be made into production-ready systems.
+You'll find that because Liferay is extremely flexible in its deployment options, it is easy to install as well. If you already have an application server, you can use the tools for deployment that came with your application server. If you don't have an application server, Liferay provides several application server bundles from which to choose. These are very easy to install and with a small amount of configuration can be made into production-ready systems.
 
 ## Editions of Liferay
 
-Liferay ships in two different editions: Liferay Portal Community Edition (CE) and Liferay Portal Enterprise Edition (EE). CE is the same Liferay Portal that has been available for years: frequently updated and bursting with the latest features, the Community Edition of Liferay Portal is offered for free under the Lesser GNU public license, an open source license. This license gives you the flexibility to link Liferay with your own code in your portlet, theme, hook, layout, Ext, or web plugins, no matter what license you use for your code. If, however, you modify Liferay directly, those modifications need to be contributed back to the open source product. This is really the best of both worlds: you have the freedom to do what you want with your code, and Liferay receives the benefits of any enhancements that are made directly. Liferay Portal EE is a supported version of Liferay Portal for the enterprise. Hardened for security and designed to be rock solid stable, EE is offered with a subscription and support package, allowing organizations to build their portals on a stable version of the product that is offered over an extended period of time.
+Liferay ships in two different editions: Liferay Portal Community Edition (CE) and Liferay Portal Enterprise Edition (EE). CE is the same Liferay Portal that has been available for years: frequently updated and bursting with the latest features, the Community Edition of Liferay Portal is offered for free under the Lesser GNU public license, an open source license. This license gives you the flexibility to link Liferay with your own code in your portlet, theme, hook, layout, Ext, or web plugins, no matter what license you use for your code. If, however, you modify Liferay directly, those modifications need to be released as open source. This is really the best of both worlds: you have the freedom to do what you want with your code if you use plugins, but if you modify Liferay directly, the community receives the benefits of any enhancements that you've made. 
 
-Because the release cycle for EE is longer than that for CE, each enterprise release is supported for 4 years. All bug fixes in Liferay Portal are backported to your version of Liferay for the duration of your subscription. This gives organizations the peace of mind that comes from knowing that their Liferay-powered web sites are stable and will run for years to come, enabling them to build their sites on a proven, stable platform. Additionally, Liferay's professional services team offers training and consulting on the Enterprise Edition to ensure long-term support and stability for our clients.
+Liferay Portal EE is a supported version of Liferay Portal for the enterprise. Hardened for security and designed to be rock solid stable, EE is offered with a subscription and support package, allowing organizations to build their portals on a stable version of the product that is offered over an extended period of time.
+
+Because the release cycle for EE is longer than that for CE, each enterprise release is supported for 4 years. All bug fixes in Liferay Portal are backported to your version of Liferay for the duration of your subscription. This gives organizations the peace of mind that comes from knowing that their Liferay-powered web sites are stable and will run for years to come, enabling them to build their sites on a proven, stable platform. Additionally, Liferay offers training and consulting on the Enterprise Edition to ensure long-term support and stability for our clients. 
 
 ## Obtaining Liferay
 
-The CE version of Liferay is freely downloadable from our web site at [http://www.liferay.com](http://www.liferay.com/). Click on the *Downloads* link at the top of the page, and you will be presented with multiple options for getting a copy of Liferay, including our convenient bundles or a `.war` package for installation on your application server of choice.
+The CE version of Liferay is freely downloadable from our web site at [http://www.liferay.com](http://www.liferay.com). Click the *Downloads* link at the top of the page, and you are presented with multiple options for getting a copy of Liferay, including our convenient bundles or a `.war` package for installation on your application server of choice.
 
-The EE version of Liferay is provided to you as a result of your support subscription. You will receive download links which will allow you to obtain a copy of a Liferay bundle or a `.war` package for installation on your application server of choice.
+The EE version of Liferay is provided to you as a result of your support subscription. Everything you need is provided in the Customer Portal, including download links that allow you to obtain a copy of a Liferay bundle or a `.war` package for installation on your application server of choice.
 
-So what is a bundle anyway? A bundle is simply an open source application server with Liferay preinstalled. If you want to install a bundle, there is a list of bundles available. If you do not currently have an application server, it is best to download the Tomcat bundle, as Tomcat is one of the smallest and most straightforward bundles to configure. If you have an application server preference, you can also choose the server you prefer from the available Liferay Portal bundles. All of the bundles ship with a Java Runtime Environment for Windows; if you are using a different operating system, you will need to have a JDK (Java Development Kit) installed prior to launching Liferay.
+So what is a bundle anyway? A bundle is an open source application server with Liferay preinstalled. This is the most convenient way to install Liferay. Liferay is bundled with a number of open source application servers; all you need to do is choose the one that best fits your needs. If you don't currently have an application server, you may want to start with the Tomcat bundle, as Tomcat is one of the smallest and most straightforward bundles to configure. If you have an open source application server preference, choose the server you prefer from the available Liferay Portal bundles. All of the bundles ship with a Java Runtime Environment for Windows; if you are using a different operating system, you will need to have a JDK (Java Development Kit) installed prior to launching Liferay.
 
-Please note that Liferay is not able to provide application server bundles for proprietary application servers such as WebLogic or WebSphere, because the licenses for these servers do not allow for redistribution. Liferay Portal, however, runs just as well on these application servers as it does on open source application servers. You will need to use the `.war` package to install Liferay on these application servers.
+Please note that Liferay is not able to provide application server bundles for proprietary application servers such as WebLogic or WebSphere, because the licenses for these servers don't allow for redistribution. Liferay Portal, however, runs just as well on these application servers as it does on open source application servers. A `.war` file and dependency `.jar`s are provided for proprietary application servers, and you'll need to follow a procedure to install Liferay on them. 
 
-For a manual install, you will need the Liferay `.war` file as well as Liferay's dependency `.jar`s. Later in this chapter are instructions for installing Liferay on many of the major application servers available today.
+First we'll go over installing Liferay from a bundle and after this we'll provide instructions for installing Liferay manually on all the application servers it supports. 
+
+## Installing a bundle
+
+Liferay bundles contain the same directory structure regardless of application server. The top-level folder is named for the release of Liferay. This folder is called *Liferay Home*, and we refer to it thoughout this documentation. 
+
+<!-- | TODO: This image needs to be updated to the 6.1 release when we have a build. | -->
 
 ![image](../../images/02-bundle-directory-structure.png) *Illustration 1: Bundle directory structure*
 
-## Installing a Bundle
-
-Liferay bundles contain the same directory structure regardless of application server. The top-level folder is named for the release of Liferay. This folder is also sometimes called *Liferay Home*.
-
-Inside this folder, you will find folders for various uses:
+Inside this folder, there are folders for various purposes:
 
 **Data:** This folder is used to store the embedded HSQL database which the bundles use, as well as the configuration and data for the Jackrabbit JSR-170 content repository and the Lucene search index.
 
-**Deploy:** Plugins which you wish to deploy to Liferay can be copied into this folder. It is also used by Liferay's graphical plugin installer utility, which is available from the Control Panel.
+**Deploy:** Plugins which you wish to deploy to Liferay can be copied into this folder. It is also used by Liferay Marketplace and Liferay's graphical plugin installer utility. 
 
-**License:** Contains both Liferay's license and a file which describes the licenses for many of the other open source projects that are used internally by Liferay.
+**[Application Server]:** The name of this folder is different depending on which bundle you have downloaded. This folder contains the application server in which Liferay has been installed.
 
-**[Application Server]:** There will also be an application server folder which is different depending on which bundle you have downloaded. This folder contains the application server in which Liferay has been installed.
+Installing a bundle is as easy as uncompressing the archive, copying a JDBC driver, and then starting the application server. Let's use the Tomcat bundle as an example:
 
-In most cases, installing a bundle is as easy as uncompressing the archive and then starting the application server. For example, if you were to install Liferay Portal on Tomcat, you would simply unzip the bundle to a location of your choice.
-
-Now you would start Tomcat in the same way as you would if you had downloaded it manually. Tomcat is launched by way of a script which is found in its *bin* folder. If you drop to a command prompt and go to this folder, you can launch Tomcat via the following command on Windows:
+1. Unzip the bundle to a location of your choice. 
+2. If you're setting up Liferay to be an actual server, copy your database's JDBC driver `.jar` to `[Tomcat]/lib/ext` (see the setup wizard section below). If you're setting up Liferay for demo purposes, you can skip this step. 
+3. Start Tomcat in the same way as you would if you had downloaded it manually. Tomcat is launched by way of a script which is found in its `bin` folder. If you drop to a command prompt and go to this folder, you can launch Tomcat via the following command on Windows:
 
     startup
 
-or the following command on Linux / Mac / Unix:
+or the following command on Linux/Mac/Unix:
 
     ./startup.sh
 
-The Liferay / Tomcat bundle will then launch. If you are on Windows, you will see another command prompt window appear with Tomcat's console in it. If you are on Linux, you can see the Tomcat console by issuing the following command:
+The Liferay/Tomcat bundle then launches. If you are on Windows, another command prompt window appears with Tomcat's console in it. If you are on Linux, you can see the Tomcat console by issuing the following command:
 
     tail -f ../logs/catalina.out
 
-Once Tomcat has completed its start up, it should automatically launch a web browser so you can see the home page. If it does not, launch your web browser and then go to the following address: [http://localhost:8080](http://localhost:8080/). The default Liferay home page will then appear in your web browser. It will be using an embedded database for its configuration, but it is fully functional. You can now begin exploring the various features of Liferay.
+Once Tomcat has completed its start up, it automatically launches a web browser that displays Liferay's setup wizard. If for some reason your browser doesn't load the wizard, launch your web browser and then go to  [http://localhost:8080](http://localhost:8080). 
 
-Liferay ships by default with a sample web site included, called 7 Cogs. You can access this site and log in as the various users to get familiar with Liferay and what it can do.
+Liferay CE ships with a sample web site for a fictitious company called 7Cogs. This site demonstrates some of the things Liferay Portal can do. If you're installing Liferay on your own machine to explore its features, you likely want to leave the sample site there so you can examine it. If, however, you're installing Liferay on your server to run your own site, it's best to start with a clean system. Before running the setup wizard, you should remove the sample 7Cogs data from your Liferay installation. You must do this before running the setup wizard in order to get a clean database, and it's as simple as undeploying the application that installs the 7Cogs data.
 
-Installing a different bundle is done in exactly the same way: unzip the bundle into the folder of your choice, launch the application server, and then view the portal in your web browser.
+There is only one application included in the bundle that you need to remove. It's called *sevencogs-hook*. It's a Liferay plugin that copies the 7Cogs data into the database when Liferay is started. To remove it, all you have to do is undeploy it. The method for doing this differs by application server and that, of course, depends on the bundle you have chosen. For example, on Tomcat you delete the application from the `[Tomcat Home]/webapps` folder. On Glassfish, you use the administrative console to undeploy it. The other application related to 7Cogs is a theme, which you can leave installed if you wish.
 
-![image](../../images/02-default-page-in-the-liferay-bundles.png) *Illustration 2: Default Page in the Liferay Bundles*
+If you forget to undeploy the *sevencogs-hook* application before you run through the setup wizard and connect Liferay to your real database, the sample data will be created in your database and may cause issues with your site. Make sure that you get *sevencogs-hook* undeployed before setting up your server.
 
-As you can see, bundles are the easiest way to get started with Liferay. They come pre-configured with a running Liferay that can be used immediately to explore all of the things that Liferay can do. And with minimal extra configuration (which we will see later), bundles can be converted into full production-ready systems.
+If you're using Liferay EE, you don't have the sample site, so you don't need to worry about this. The next step is to run through the setup wizard. 
 
-## Installing Liferay for an Enterprise
+## Using Liferay's setup wizard 
 
-When it comes time to install Liferay Portal on your server, you'll find it is easiest to do this by starting with a bundle and then reconfiguring that bundle so that it is enterprise-ready. Because this is by far the quickest and easiest method to get a production Liferay system running, we will look at this first. Often, however, enterprises will have an established Java EE infrastructure upon which they would like to install Liferay. In this situation, a bundle will not suffice. Most of the rest of this chapter, therefore, will focus on installing Liferay onto an already-established application server.
+To make it easy to configure Liferay optimally for your use, the first thing you see when browsing to your newly installed Liferay bundle is a setup wizard. This gives you a convenient way to configure Liferay for your purposes. 
 
-### Sample Data
+There are three sections of the wizard: the portal, the adminstrator, and the database. For the portal, you need to supply the following information: 
 
-Liferay CE ships with some sample data to help you see some of the things Liferay Portal can do. While the sample 7 Cogs data is a good example of how Liferay might be used, when you are ready to build your own site, you won't want that data cluttering up your database. So before you connect Liferay to your production database, you will want to make sure you have removed the sample 7 Cogs data from your Liferay installation. This is as simple as undeploying the application that installs the 7 Cogs data.
+**Portal Name:** the name of the web site you're powering with Liferay. In this book, we'll build a social network for your nose. This site is called Nosester, so we've supplied `nosester.com` in the screenshot below. 
 
-There is only one application included in the bundle that you will need to remove. It's a hook that copies the 7 Cogs data into the database when Liferay is started. Because we want to revert Liferay's behavior back to its defaults for a clean install, you will want to remove the *sevencogs-hook* application. The other two applications related to 7 Cogs are both themes, which you can leave installed if you wish.
+**Default Language:** choose the default locale where your site resides. 
 
-If you forget to undeploy the *sevencogs-hook* application before you connect Liferay to your real database, the sample data will be created in your database and may cause issues, especially if you already have data in your database. So you want to make sure that you get *sevencogs-hook* undeployed before setting up your server. Use your application server's method for uninstalling applications in order to remove them.
+For the adminstrator, you need to supply the following information: 
+
+**First Name:** the first name of the user that has the administrator account. 
+
+**Last Name:** the last name of the user that has the administrator account. 
+
+**Email:** the email address of the user that has the administrator account. 
+
+![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+The database section can be a little bit technical. If you've downloaded Liferay for evaluation or demo purposes only, and you're not installing Liferay on server hardware to get it ready for your users, you can ignore the database section and click the *Finish Configuration* button. If, however, you're reading this section because you're installing Liferay for actual use, you'll need a separate database first.
+
+Liferay supports just about all the leading databases today: 
+
+* DB2
+* Ingres
+* MySQL
+* Oracle
+* PostgreSQL
+* SQL Server
+* Sybase
+
+In addition to these, Liferay also supports a few embedded databases that are designed for development. We haven't listed these here because you're setting up a production Liferay server, and you shouldn't use an embedded database with a production box. 
+
+Before you fill out the database section of Liferay's setup wizard, go to your database software of choice and create a database for Liferay to use. This database must have UTF-8 as its character set, because Liferay is an internationalized application and needs the UTF-8 character set to display text in many different languages. Check the documentation for your database to see how to do this. 
+
+Once you have your database created, create a user which can do anything to the database, including create and drop tables. It's important that this user has complete rights over the Liferay database, because Liferay manages its own tables. Once you have your database and the credentials for this user, you can continue. 
+
+Open the Database section of the wizard. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page. 
+
+Congratulations! You've just installed Liferay Portal! 
+
+As you can see, bundles are the easiest way to get started with Liferay. They come pre-configured with a running Liferay instance that can be used immediately to explore all of the things that Liferay can do. Bundles are the fastest way to create full production-ready Liferay installations. 
+
+Of course, it's not always possible to use a bundle. You may already have an application server upon which you want to install Liferay. The bulk of this chapter describes how to install Liferay on all the application servers it supports, both open source and proprietary. 
+
+## Installing Liferay on an existing application server
+
+When it comes time to install Liferay Portal on your server, you'll find it's easiest to do this by starting with a bundle. But many enterprises can't do that. There may be an existing infrastructure into which you're installing Liferay, or you may have standardized on a particular application server. You'll be happy to know that Liferay Portal has been designed to work well with all the leading application servers, and that it's easy and straightforward to install. But before we get started, we need to go over a few concepts; namely, the Liferay Home folder, databases, and Liferay's main configuration file. These were touched on in the section on bundles above, but we'll look at them in more detail now. 
 
 ### Liferay Home
 
 Liferay Portal uses a special folder defined as *Liferay Home*. This folder is one folder higher than the location of the application server itself. This is why the bundles place the application server one folder in from the bundle's root folder.
 
-If Liferay is unable to create the resources it needs in this folder, or if it finds itself running on certain application servers, it will fall back to defining the home folder in the home folder of the user ID that is running Liferay.
+If Liferay is unable to create the resources it needs in this folder, or if it finds itself running on certain application servers, it creates a folder called `liferay` in the home folder of the user ID that is running Liferay, and that becomes Liferay Home.
 
-As described above in the *Bundles* section, the home folder is very important to the operation of Liferay. The aforementioned folders (*data*, *deploy*, and *license*) will be created there, and you can also put a special configuration file called `portal-ext.properties` there.
+As described above in the *Bundles* section, the home folder is very important to the operation of Liferay. The aforementioned folders (*data* and *deploy*) are created there, and you can also put a special configuration file called `portal-ext.properties` there. This file is fully documented in Chapter 14: *Configuring Liferay Properties*. 
 
-This file is fully documented in Chapter 6: *Advanced Liferay Configuration*, but we will use it in this chapter for some basic configuration, including setting up Liferay to talk to our database.
+Let's move on to examining the database. 
 
-### Database Setup
+### Liferay's database
 
-#### Default Method: Automatic
+As stated above, if you create your database and grant a user ID full access to it, Liferay can use that user ID to create its indexes and tables automatically. This is the recommended way to set up Liferay, as it allows you to take advantage of Liferay's ability to automatically maintain its database during upgrades or through various plugin installs which may create tables of their own. It is by far the best way to set up your Liferay installation.
 
-If you create your database and grant a user ID full access to it, Liferay can use that user ID to create its indexes and tables automatically. This is the recommended way to set up Liferay, as it allows you to take advantage of Liferay's ability to automatically maintain its database during upgrades or through various plugin installs which may create tables of their own. It is by far the best way to set up your Liferay installation.
+If you'll be setting up Liferay's database with the recommended permissions, you can skip to the next section.
 
-If you will be setting up Liferay's database with the recommended permissions, you can skip the next section.
+E![image](../../images/02-tip.png) **Note:** This is not the recommended set up for Liferay installations, but is documented here so that enterprises with more restrictive standards can install Liferay with more strict-—but suboptimal—-database settings. If it's at all possible, Liferay recommends that you use the automatic method as documented above instead of the procedure outlined below.
 
-#### Manual Method
+Even though Liferay can create its database automatically, some enterprises prefer *not* to allow the user ID configured in an application server to have the permissions over the database necessary for Liferay and its plugins to maintain their tables. For these organizations, Select, Insert, Update, and Delete are the only permissions allowed, so we will go over how to set up the database manually. If your organization *is* willing to grant the Liferay user ID permissions to create and drop tables in the database—-and this is the recommended configuration-—by all means, use the recommended configuration. 
 
-![image](../../images/02-tip.png) **Note:** This is not the recommended set up for Liferay installations, but is documented here so that enterprises with more restrictive standards can install Liferay with more strict — but suboptimal — database settings. If it is at all possible, Liferay recommends that you use the automatic method as documented above instead of the procedure outlined below.
+Creating the database is simple: grant the ID Liferay uses to access the database full rights to do anything to the database. Then install Liferay and have it create the database. Once the database is created, remove the permissions for creating tables and dropping tables the user ID.
 
-Even though Liferay can create its database automatically, some enterprises prefer *not* to allow the user ID configured in an application server to have the permissions over the database necessary for Liferay and its plugins to maintain their tables. For these organizations, Select, Insert, Update, and Delete are generally all the permissions that are granted, and so we will go over how to set up the database manually. If your organization *is* willing to grant the Liferay user ID permissions to create and drop tables in the database—and this is the recommended configuration—you can skip this section.
+There are some caveats to running Liferay like this. Many Liferay plugins create new tables when they're deployed. In addition to this, Liferay has an automatic database upgrade function which runs when the version of Liferay is upgraded to a new release. If the user ID that accesses the database doesn't have enough rights to create/modify/drop tables in the database, you must grant those rights to the ID before you deploy one of these plugins or start your upgraded Liferay for the first time. Once the tables are created or the upgrade is complete, you can remove those rights until the next deploy or upgrade. Additionally, your developers may create plugins that need to create their own tables. These are just like Liferay's plugins that do the same thing, and they cannot be installed if Liferay can't create these tables automatically. If you wish to install these plugins, you will need to grant rights to create tables in the database before you attempt to install them. 
 
-One other caveat is this: Liferay has an automatic database upgrade function which runs when the version of Liferay is upgraded to a new release. If the user ID that accesses the database does not have enough rights to create / modify / drop tables in the database, you will need to grant those rights to the ID before you start your upgraded Liferay for the first time. Once the upgrade is complete, you can remove those rights until the next upgrade. Additionally, many plugins provided by Liferay require that new tables be added to Liferay's database. These plugins cannot be installed if Liferay does not have permission to create these tables automatically. If you wish to install these plugins, you will need to grant rights to create tables in the database before you attempt to install them.
+Once you have your database ready, you can install Liferay on your server. 
 
-Liferay provides an SQL script archive download on the web site. For the CE version, it is in the *Additional Files* section of the Downloads page. For the EE version, you will be provided a link to this archive. Download this file and unzip it. You will find that it contains a folder structure that is broken down by the type of script (full, minimal, or upgrade), and then further by database vendor type.
+### Liferay installation overview
 
-It is best to use the `create-minimal` script if you are installing a fresh version of Liferay on a development, QA, or production server. This script creates the necessary Liferay tables in the database, with a minimum configuration. This is most appropriate for a new installation of Liferay.
+Before we begin, it's important to go over the various facets of the installation. They are: 
 
-The `create` script, by contrast, configures a Liferay database with a portion of the content from [http://www.liferay.com](http://www.liferay.com/) embedded in it. This can be useful from a development perspective, as it contains working examples of the use of many of Liferay's features, including the Content Management System.
+1. Create your database (see above). 
+2. Determine whether you want to use the Liferay managed data source or a data source managed by your application server. 
+3. Gather credentials for sending email notifications to users. Liferay supports a JNDI mail session as well as its built in mail session. 
 
-Inside the `create` or `create-minimal` folders are scripts for every database that Liferay supports. A DBA can use the script provided to create the Liferay database, complete with the indexes necessary for optimal performance. Once this is done, be sure that the ID that the portal will use to connect to the database has at least Select, Insert, Update, and Delete permissions. Preferably, however, the ID should also have rights to create, modify, and drop tables and indexes, as this makes upgrading easier. This, however, is not necessary for the daily operation of Liferay.
+4.  Create a `portal-ext.properties` file in the Liferay Home folder. This is a simple text properties file that you'll use to override Liferay's default properties (see below). 
 
-Once your DBA has created the database and provided the credentials for accessing it, you are ready to begin 1) making a bundle enterprise-ready or 2) manually installing Liferay on your application server.
+Refer to the manual installation instructions below for further details on configuring the various application servers. There is no difference between the Liferay bundles and the regular distribution archives of the application servers as they are available from their own sites, with the exception that Liferay is pre-installed in them, and the JVM settings may have been optimized for use with Liferay. 
 
-### Turning a Bundle into an Enterprise Portal
+The easiest way to install Liferay is to set up your database and then follow the instructions for your application server. This method uses the setup wizard to create a working configuration. If you're interested in the details of what the setup wizard does or if for some reason you need to set up Liferay manually, read on. Otherwise, feel free to skip ahead to the section on your particular application server. 
 
-Liferay Portal is distributed with the following bundle options for servlet containers and full Java EE application servers:
+#### Using data sources
 
--   Glassfish
+Liferay comes bundled with its own built-in data source. It's configured by a number of properties which you set in a  properties file. By default, the setup wizard asks you for the necessary values and creates a configuration file that uses the built-in data source to connect to the database. 
 
--   JBoss
+Liferay always recommends that you use the built-in data source. Sometimes, however, organizations prefer to use the data source provided by their application server of choice. In this instance, a JNDI lookup provides a handle to the data source, and the application server manages the connection pools. Liferay supports using your application server's data source if you wish to do that. 
 
--   Jetty
+To do this, you'll need to create your own configuration file and skip the setup wizard. Since you'd be creating this file *after* the wizard anyway, this isn't such a big deal. 
 
--   JOnAS
+Since mail sessions are configured in a similar way to data sources, we'll look at them next. 
 
--   Resin
+#### Using mail sessions
 
--   Tomcat
+Liferay's default configuration looks for a mail server on the same machine on which Liferay's running, and it tries to send mail via SMTP to this server. If this is not your configuration, you'll need to modify Liferay's defaults. To do this, you'll use a `portal-ext.properties` file (see below). 
 
-Choose your preferred bundle and download it from the downloads page on Liferay's web site or via the EE links that were provided to you. A prerequisite for running any of the bundles is that you have the proper version of the Java Development Kit (1.5 or higher) installed on the machine to which you are installing Liferay. Make sure that you have also created the `JAVA_HOME` environment variable and have pointed it to your Java installation.
+In a similar fashion to databases, you have two ways to configure your mail server:
 
-Unzip the bundle to the location from which you are going to run it. For example, you might use `D:apps` in Windows or `/opt` in Linux or UNIX variants. The default bundle installation of Liferay Portal uses an embedded database. While this is a good method to have it up and running fast for evaluation or development, it has several drawbacks:
+-   Use your application server's mail session.
+-   Use the built-in mail session.
 
--   Only one user can access it at a time. This is because the data is stored on a file on disk and HSQL locks it when doing changes.
+To use your application server's mail session, you must create it in your application server, and it should point to your mail server. Once you've done that, you're ready to point Liferay to it. You can do this through the configuration file or through Liferay's control panel after it's been installed. 
 
--   The data is stored inside the bundle and might be lost on redeployment.
+Let's look next at this configuration file and, if you're choosing not to use the setup wizard, show you how to get Liferay connected to your database and your mail server. 
 
--   This configuration does not scale well and will have performance problems when multiple users are accessing the system.
+#### The portal-ext.properties file
 
-Obviously, you do not want to be running Liferay against the embedded database. Fortunately, Liferay has great support for a good number of production-ready databases, and it is easy to configure Liferay to use them. The exact instructions will depend on the application server and database, but can be summarized as:
+Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all the defaults is stored inside of a `.jar` file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put only the settings you want to customize in your own configuration file, and then you have a file that contains only the settings you need. This makes it far easier to determine whether a particular setting has been customized, and it makes the settings more portable across different installations of Liferay.
 
-1.  Create the database in your DBMS of choice (see the above section labeled *Database Setup* for further information).
+The default configuration file is called `portal.properties`, and it resides inside of the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's `WEB-INF/lib` folder. The file that is used to override the configuration is `portal-ext.properties`. This file should be created in your Liferay Home folder (please see chapter 11 for the location of this folder for your application server). You'll use this file throughout this book to change many of Liferay's settings. An exhaustive list of these settings is covered in chapter 14. 
 
-2.  [Optional] Create a Data Source called `jdbc/LiferayPool` in your application server which points to your database and has the proper credentials to access it.
+For now, we're only concerned with your database and your mail server. Create a text file called `portal-ext.properties` in your Liferay Home folder. This file overrides default properties that come with Liferay. The first setting you'll override is the default configuration that points Liferay to the embedded HSQL database.
 
-3.  [Optional] Create a mail session called `mail/MailSession` in your application server which points to your mail server, so Liferay can send mail.
-
-4.  Create a `portal-ext.properties` file in the Liferay Home folder which either points directly to the database and mail session or points to the application server's Data Source and mail session.
-
-5.  Start Liferay. Liferay will create the tables automatically and start. Otherwise, you will have had to prepare the database first by running the appropriate `create` script.
-
-Refer to the manual installation instructions below for further details on configuring the various application servers. There is no difference between the Liferay bundles and the regular distribution archives of the application servers as they are available from their own sites, with the exception that Liferay is pre-installed in them, and the JVM settings may have been optimized for use with Liferay.
-
-#### The portal-ext.properties File
-
-To point your Liferay bundle to your database, create a file called `portal-ext.properties` in your Liferay Home folder. This file overrides default properties that come with Liferay. You are going to override the default configuration which points Liferay to the embedded HSQL database.
-
-There are two ways to set up the connection:
-
--   Use your application server's connection pool.
+As stated above, there are two ways to set up the connection:
 
 -   Use the built-in connection pool.
+-   Use your application server's connection pool..
 
-If you want to use your application server's connection pool, you will have to create one in your application server that points to your database. It should be called `jdbc/LiferayPool`. To cause Liferay to use this connection pool, add the following directive to your `portal-ext.properties` file:
-
-jdbc.default.jndi.name=jdbc/LiferayPool
-
-To use the built-in connection pool -- based on *C3P0* -- add the template which is provided in Chapter 6 for your particular database. The template for MySQL is provided as an example below.
+To use the built-in connection pool--based on *C3P0*--add the template which is provided in Chapter 6 for your particular database. The template for MySQL is provided as an example below.
 
     # 
     # MySQL 
     # 
     jdbc.default.driverClassName=com.mysql.jdbc.Driver
     jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.default.username=
-    jdbc.default.password
+    jdbc.default.username=liferay
+    jdbc.default.password=liferay
 
-You would provide the user name and password to the database as values for the *username* and *password* directives.
+If the database name and username/password combination above don't match your database, provide the ones that do.
 
-For mail, there is a similar procedure. Again, you have two ways to configure your server:
+If you want to use your application server's connection pool, you will have to create one in your application server that points to your database. It should be called `jdbc/LiferayPool`. To cause Liferay to use this connection pool, add the following directive to your `portal-ext.properties` file:
 
--   Use your application server's mail session.
+	jdbc.default.jndi.name=jdbc/LiferayPool
 
--   Use the built-in mail session.
+For mail, you can use Liferay's control panel to create the configuration, and this is the recommended way. Go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter your settings for your mail session settings. If, however, you're setting up a lot of Liferay machines and they're all going to have similar mail configurations, it's easier to do the configuration once and then copy the configuration file to multiple machines. In this case, you'll want to use the `portal-ext.properties` file. To use the built-in mail session, use the following properties and customize their values for your environment: 
 
-To use your application server's mail session, you will have to create one in your application server that points to your mail server. Once you have done that, add the following directive to your `portal-ext.properties` file:
-
+    mail.session.mail.pop3.host=localhost
+    mail.session.mail.pop3.password=
+    mail.session.mail.pop3.port=110
+    mail.session.mail.pop3.user=
+    mail.session.mail.smtp.auth=false
+    mail.session.mail.smtp.host=localhost
+    mail.session.mail.smtp.password=
+    mail.session.mail.smtp.port=25
+    mail.session.mail.smtp.user=
+    mail.session.mail.store.protocol=pop3
+    mail.session.mail.transport.protocol=smtp
+    
+To use your application server's mail session, create it first. Then specify it in the `portal-ext.properties` file: 
+	
 	mail.session.jndi.name=mail/MailSession
 
-Save the file. You can now start your application server.
+When you've finished, save the file. Next, follow the instructions for installing Liferay on your particular application server in the section below. 
 
-To use Liferay's built-in mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter your settings for your mail session settings.
+### Installing Liferay on an existing application server
 
-### Installing Liferay on an Existing Application Server
+This section contains detailed instructions for installing Liferay Portal using its .war file distribution. This allows system administrators to deploy Liferay in existing application server installations. It is recommended that you have a good understanding of how to deploy Java EE applications in your application server of choice.
 
-This section contains detailed instructions for installing Liferay Portal using its WAR distribution. This allows system administrators to deploy Liferay in existing application server installations. It is recommended that you have a good understanding of how to deploy Java EE applications in your application server of choice.
+#### Installing Liferay in five easy steps
 
-#### Installing Liferay in 10 Easy Steps
-
-There are 10 generic steps to installing Liferay on an existing application server:
+There are five generic steps to installing Liferay on an existing application server:
 
 1.  Obtain the Liferay `.war` file and the dependencies archive.
 
-2.  Make sure you do not have an application listening at the root (`/`) of your server. If you do, move it to a different context or undeploy it.
+2.  Make sure you don't have an application listening at the root (`/`) of your server. If you do, move it to a different context or undeploy it.
 
-3.  Decide whether you want to use your application server's data sources or if you want to use the one included with Liferay. If you want to use your application server's data source, create a data source for Liferay called `jdbc/LiferayPool`.
+3.  Shut your application server down.
 
-4.  Decide whether you want to use your application server's mail session or if you want to use the one included with Liferay. If you want to use your application server's mail session, create one called `mail/MailSession`.
+4.  Extract the dependencies to a location on your server's global classpath. This allows both Liferay and plugins to access these dependencies.
 
-5.  Shut your application server down.
+5. Start your application server, deploy the Liferay `.war` file, and start it.
 
-6.  Extract the dependencies to a location on your server's global class path. This allows both Liferay and plugins to access these dependencies.
-
-7.  Create a `portal-ext.properties` file and place it in the Liferay Home folder. See the notes on specific application servers below for the location of this folder for your application server.
-
-8.  Add either the JNDI name of your data source or the JDBC parameters above to connect Liferay to your database.
-
-9.  Add either the JNDI name of your mail session or the mail parameters above to connect Liferay to your mail server.
-
-10. Start your application server, deploy the Liferay `.war` file, and start it.
-
-The instructions below are specific for each application server that Liferay supports. Liferay supports a wide combination of application servers and databases. Because of this, for brevity this section assumes MySQL as the database, that the database has already been created, and that you are using your application server's mail session and data source. To use other databases, substitute the JDBC driver and URL construct for your database in place of the MySQL ones shown here.
+The instructions below are specific for each application server that Liferay supports. Liferay supports a wide combination of application servers and databases. Because of this, for brevity this section assumes MySQL as the database, that the database has already been created, and that you're using the setup wizard. If you're not using the setup wizard, see the sections above for information on how to set up Liferay manually.
 
 We also assume your application server is already installed and running successfully. If you still need to install your application server, please follow your vendor's instructions first.
 
 The following instructions assume an installation on a local machine. When installing to a remote server, substitute `localhost` with the host name or IP of the server.
 
-![image](../../images/02-tip.png) **Tip:** Note that Liferay 5.x and above *requires* JDK 1.5 or greater. Do not attempt to install Liferay 6.x on an application server that runs under Java 1.4 or lower; it will not work. If you are running an application server that ships with a JDK and that JDK is 1.4 or lower, you will need to upgrade your application server in order to run current versions of Liferay Portal. Liferay 4.x, however, will run fine on these application servers.
+![image](../../images/02-tip.png) **Tip:** Note that Liferay *requires* JDK 5 or greater. Do not attempt to install Liferay 6.x on an application server that runs under Java 1.4 or lower; it will not work. If you are running an application server that ships with a JDK and that JDK is 1.4 or lower, you'll need to upgrade your application server in order to run current versions of Liferay Portal.
 
-Remember, for all of these application servers, create your `portal-ext.properties` file in the Liferay Home folder and make sure it points to your database connection pool and mail session.
+Without further ado, let's get to the application servers. 
 
 #### Installing Liferay on GlassFish 3
 
 *Liferay Home* is three folders above your GlassFish domain folder.
 
-For example, if your domain location is `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1`, then your Liferay Home will be `/glassfish-3.1-web/glassfish3/`.
+For example, if your domain location is `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1`, then your Liferay Home is `/glassfish-3.1-web/glassfish3/`.
 
 If you do not already have an existing GlassFish server, we recommend that you download a Liferay/GlassFish bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing GlassFish server or would like to install Liferay on GlassFish manually, please follow the steps below.
 
