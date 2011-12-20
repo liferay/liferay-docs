@@ -108,7 +108,7 @@ Open the Database section of the wizard. From the select box, choose your databa
 
 ![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
 
-Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page. 
+Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file (`portal-setup-wizard.properties`) where it saved all of your settings. From here, you can go to your home page. 
 
 Congratulations! You've just installed Liferay Portal! 
 
@@ -126,7 +126,10 @@ Liferay Portal uses a special folder defined as *Liferay Home*. This folder is o
 
 If Liferay is unable to create the resources it needs in this folder, or if it finds itself running on certain application servers, it creates a folder called `liferay` in the home folder of the user ID that is running Liferay, and that becomes Liferay Home.
 
-As described above in the *Bundles* section, the home folder is very important to the operation of Liferay. The aforementioned folders (*data* and *deploy*) are created there, and you can also put a special configuration file called `portal-ext.properties` there. This file is fully documented in Chapter 14: *Configuring Liferay Properties*. 
+As described above in the *Bundles* section, the home folder is very important to the operation of Liferay. The aforementioned folders (*data* and *deploy*) are created there, and you can also put a special configuration file called `portal-ext.properties` there. This file is fully documented in Chapter 14: *Configuring Liferay Properties*.
+
+![Note](../../images/tip.png) **Note:** To use database properties from a `portal-ext.properties` file you must disable the Setup Wizard by specifying `setup.wizard.enabled=false` in that `portal-ext.properties`.
+Also, note that property values in `portal-setup-wizard.properties` (the file created in Liferay Home by the Setup Wizard) override property values in `portal-ext.properties`. 
 
 Let's move on to examining the database. 
 
