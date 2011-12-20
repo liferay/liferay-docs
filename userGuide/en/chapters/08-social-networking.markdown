@@ -46,12 +46,7 @@ The options for creating a meetup are essentially the same as those for creating
 The Activities portlet comes in two varieties: the standard Activities portlet and the Members' Activities portlet. The basic function of the portlets are the same--they both display a feed of what users are doing on the portal. The difference is that Activities displays what's going on across the entire portal, while Members' Activities displays only what members of the current site have been doing.
 
 ![Figure 9.x: The Activities Portlet](../../images/XX-social-networking-activities.png)
-
-Top Users is a portlet that integrates with Liferay's Social Equity system. It calculates a score based on the contributions that users make to the portal. Users contribute to the portal by posting message board threads, writing blog entries, wiki articles, and anything else--including the applications your developers may have deployed on your portal. Each user name is displayed with the user's picture, score, and rank.
-
-Scores are updated in real time, while ranks are only updated daily, so it's possible that a user with a higher current score might be displayed with a lower rank until the ranks refresh for the day. 
-
-<!-- | TODO: Screenshot? |--> 
+ 
 
 ### Using social networking on personal pages
 
@@ -87,7 +82,7 @@ To get started with Liferay's social features, let's set up our users' personal 
 
 Before we start adding portlets to pages, we should configure Liferay so that everyone (or some subset of everyone) has the same social features. We have two ways to do this, with some advantages and disadvantages to each.
 
-**User Groups:** Placing users into a group enables you to create a site template for members' personal public and private pages. With the site template, you can control whether users can modify pages, and you can push changes out to users in the future. Once the site template is assigned to a user group, you can set the *Default User Associations* to have all users be the member of a particular group in *Portal Settings* in the control panel. The advantage of this is that it can be managed entirely through the GUI, and it's easy to configure. This is the recommended way to manage personal pages across the portal.
+**User Groups:** Placing users into a group enables you to create a site template for members' personal public and private pages. With the site template, you can control whether users can modify pages, and you can push changes out to users in the future. Once the site template is assigned to a user group, you can set the *Default User Associations* to have all users be the member of a particular group in *Portal Settings* in the control panel. The advantage of this is that it can be managed entirely through the GUI, it's easy to configure, and you can use the *Keep a Link to the Site Template* option to manage all user pages by simply changing the template. This is the recommended way to manage personal pages across the portal.
 
 **Portal Properties Configuration:** The legacy way to do this is with the configuration file. You can specify a default layout and portlets for personal pages in your `portal-ext.properties` file. If you don't want users to be able to modify their own pages, you should set the layouts to be static by adding the following line to your `portal-ext.properties` file:
 
