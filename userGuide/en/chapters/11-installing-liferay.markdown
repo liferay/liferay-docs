@@ -110,8 +110,14 @@ Open the Database section of the wizard. From the select box, choose your databa
 
 Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page. 
 
-Congratulations! You've just installed Liferay Portal! 
+Congratulations! You've just installed Liferay Portal!
 
+---
+![image](../../images/02-tip.png) The wizard is an extremely helpful tool, especially if you're setting up Liferay for the first time or creating a completely fresh portal instance. If you're a Liferay veteran and you already have your database information and various properties set up, you can skip the wizard by adding this line to your *portal-ext.properties* file:
+
+    setup.wizard.enabled=false
+---
+    
 As you can see, bundles are the easiest way to get started with Liferay. They come pre-configured with a running Liferay instance that can be used immediately to explore all of the things that Liferay can do. Bundles are the fastest way to create full production-ready Liferay installations. 
 
 Of course, it's not always possible to use a bundle. You may already have an application server upon which you want to install Liferay. The bulk of this chapter describes how to install Liferay on all the application servers it supports, both open source and proprietary. 
@@ -136,7 +142,7 @@ As stated above, if you create your database and grant a user ID full access to 
 
 If you'll be setting up Liferay's database with the recommended permissions, you can skip to the next section.
 
-E![image](../../images/02-tip.png) **Note:** This is not the recommended set up for Liferay installations, but is documented here so that enterprises with more restrictive standards can install Liferay with more strict-—but suboptimal—-database settings. If it's at all possible, Liferay recommends that you use the automatic method as documented above instead of the procedure outlined below.
+![image](../../images/02-tip.png) **Note:** This is not the recommended set up for Liferay installations, but is documented here so that enterprises with more restrictive standards can install Liferay with more strict-—but suboptimal—-database settings. If it's at all possible, Liferay recommends that you use the automatic method as documented above instead of the procedure outlined below.
 
 Even though Liferay can create its database automatically, some enterprises prefer *not* to allow the user ID configured in an application server to have the permissions over the database necessary for Liferay and its plugins to maintain their tables. For these organizations, Select, Insert, Update, and Delete are the only permissions allowed, so we will go over how to set up the database manually. If your organization *is* willing to grant the Liferay user ID permissions to create and drop tables in the database—-and this is the recommended configuration-—by all means, use the recommended configuration. 
 
