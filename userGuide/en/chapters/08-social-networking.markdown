@@ -174,11 +174,14 @@ To activate Social Activity, you'll first need to determine which collaboration 
 
 Let's activate Social Activity for Blogs Entries. Check the box next to *Blog Entry*. You now have options to set point values and limits on several different actions for blogs. You'll notice each item on the list has dropdowns you can use to set the number of participation and contribution points; popularity points are tied directly to contribution points. In addition to that, you can expand the box by clicking *Limits* in the top right of each list item. You can use this to set a limit one how many times a use can perform this activity with a specific asset and receive the requisite points. For some activities you can set limits on both participation and contribution points, but on new content creation you can only set limits on participation points.
 
+It might not be immediately obvious, but for all actions that do not involve the creation of a new asset, all of the contribution points always go to the original asset creator and all popularity points go to the original asset. That means if *Votes on a Blog* is set to have 1 *Participation* point and 5 *Contribution* points (and therefore 5 *Popularity* points), the user who votes on the asset will receive 1 participation point, the user who created the asset will receive 5 contribution points, and the asset will receive 5 popularity points. 
+
+
 ![Figure 4.25: Setting limits in Social Activity](../../images/social-equity-limits.png)
 
 It's easy to assign points - I can give you arbitrary points for just about anything - the challenge is making the points in some way significant. As mentioned before, the primary purpose of social activity tracking is to make sure that stand-out users who are contributing to the portal and participating in discussions are given recognition as such. So the central piece of the social equity display is the *User Statistics* portlet.
 
-The User Statistics portlet displays a list of users ranked by an amalgamation of their participation and contribution scores. By clicking on the Configuration icon for the portlet, you can change some of the specifics of the rankings. There are four check boxes that you can enable or disable:
+The **User Statistics** portlet displays a list of users ranked by an amalgamation of their participation and contribution scores. By clicking on the Configuration icon for the portlet, you can change some of the specifics of the rankings. There are four check boxes that you can enable or disable:
 
 **Rank by Contribution**: If this is checked, a user's contribution score will be used as a factor in calculating their rank.
 
@@ -190,7 +193,9 @@ The User Statistics portlet displays a list of users ranked by an amalgamation o
 
 **Display Additional Activity Counters**: You can toggle the display of any number of other pieces of information next to the users name in the statistics, ranging from the number of comments on assets a user has created to the number of wiki articles that the user has created. If you want to display multiple data points, you can click the plus button to add one and the minus to remove one. You can have as many data points displayed as you want, but displaying too many might make your portlet a little unwieldy. 
 
-There are a wide-ranging number of actions that you can provide social credit for. Users can receive credit for everything from viewing content to writing wiki articles. You can easily tweak the numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
+The **Group Statistics** portlet provides some more advanced data analytics. If you add it to a page, and click on the configuration icon, you see that by default, it will display one metric *Activities on Assets*. You can click the *plus* icon to add additional slots, and choose from the dozen or so metrics available for each slot, covering virtually any action that a user can perform on content on the portal. If you decide that you're displaying too many metrics, you can click the *minus* button for a particular slot on the configuration view to remove it.
+
+There are a wide-ranging number of actions that you can provide social credit for. Users can receive credit for everything from subsciring to a blog to writing wiki articles. You can easily tweak the numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
 
 Social Activity can be an invaluable tool for portals that are heavily driven by community-created conteny. It allows you to easily recognize users who are major contributors and it indicates to new users whose advice will be most trustworthy. Social Activity is easy to set up and can be configured differently for each site, increasing the flexibility of your portal.
 
