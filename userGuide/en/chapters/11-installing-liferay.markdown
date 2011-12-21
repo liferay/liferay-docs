@@ -72,7 +72,7 @@ To make it easy to configure Liferay optimally for your use, the first thing you
 
 There are three sections of the wizard: the portal, the adminstrator, and the database. For the portal, you need to supply the following information: 
 
-**Portal Name:** the name of the web site you're powering with Liferay. In this book, we'll build a social network for your nose. This site is called Nosester, so we've supplied `nosester.com` in the screenshot below. 
+**Portal Name:** the name of the web site you're powering with Liferay. In this book, we'll build a social network for your nose. This site is called Nosester, so we've supplied `Nosester` in the screenshot below. 
 
 **Default Language:** choose the default locale where your site resides. 
 
