@@ -84,7 +84,9 @@ The next option configures the logo that appears for your site.
 
 #### Using a custom logo
 
-If you want to use your own logo for a specific site, use the Logo tab. Adding a custom logo is easy: select the Logo tab and browse to the location of your logo. Make sure that your logo fits the space in the top left corner of the theme you're using for your web site. If you don't, you could wind up with a site that's difficult to navigate, as other page elements are pushed aside to make way for the logo. 
+If you want to use your own logo for a specific site, use the Logo tab. Adding a custom logo is easy: select the Logo tab and browse to the location of your logo. Make sure that your logo fits the space in the top left corner of the theme you're using for your web site. If you don't, you could wind up with a site that's difficult to navigate, as other page elements are pushed aside to make way for the logo.
+
+In the logo tab, you can also choose whether or not to display the site name on the site. If you check the box labeled *Show Site Name* the site name will appear in the the top right corner of the page. This option is enabled by default, and cannot be disabled if the *Allow Site Administrators to set their own logo* option is disabled in *Portal Settings*. It is also not available on the default community -- only newly created communities and user pages have the option to have the name display.
 
 When you click on a specific page, some other options become available to you. 
 
@@ -188,7 +190,9 @@ Now let's create a *Site Template*. You can find the *Site Templates* page right
 
 ![Figure 3.5: Your site template should look like this.](../../images/site-template-shopping.png)
 
-Once you've created a site template, you have two ways to use them. Any time you are creating the initial pages for a site from the Control Panel, you'll have the option to create those pages based on a site template, and you also have the ability to apply the site template as users' personal pages using User Groups. When you create a User Group from the Control Panel, you have the option to set their personal public or private pages from a site template. You also have a checkbox label *Keep a Link to the Site Template* which, if checked, will push any changes to the site template to the layout of any user that is a member of that particular group. For more information on user groups, see Chapter 12: Administering Liferay Portal.
+Once you've created a site template, you have two ways to use them. Any time you are creating the initial pages for a site from the Control Panel, you'll have the option to create those pages based on a site template, and you also have the ability to apply the site template as users' personal pages using User Groups. When you create a User Group from the Control Panel, you have the option to set their personal public or private pages from a site template. For more information on user groups, see Chapter 12: Administering Liferay Portal.
+
+Whether you're using the Site Template with a user group or with a site, when you apply the template there is a  checkbox labeled *Keep a Link to the Site Template*. If you check it, any changes made to the site template will automatically be pushed to that site. Using this option can make large scale layout changes much simpler for administrators on your portal.
 
 
 ### Site Content
