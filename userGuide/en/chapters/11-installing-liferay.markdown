@@ -1490,6 +1490,20 @@ So, let's get started with our configuration tasks.
 
 1. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina will call `setenv.bat` or `setenv.sh`. Edit the file and populate it with following contents:
 
+	setenv.bat:
+
+		if exist "%CATALINA_HOME%/jre@java.version@/win" (
+			if not "%JAVA_HOME%" == "" (
+				set JAVA_HOME=
+			)
+		
+			set "JRE_HOME=%CATALINA_HOME%/jre@java.version@/win"
+		)
+
+		set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+
+	setenv.sh:
+
 		JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
 	This sets the character encoding to UTF-8, sets the time zone to Greenwich Mean Time, and allocates memory to the Java virtual machine.
@@ -1497,9 +1511,31 @@ So, let's get started with our configuration tasks.
 2. Create the directory `$TOMCAT_HOME/conf/Catalina/localhost` and create a `ROOT.xml` file in it. Edit this file and populate it with the following contents to set up a portal web application:
 
 			<Context path="" crossContext="true">
+
+				<!-- JAAS -->
+
+				<!--<Realm
+					className="org.apache.catalina.realm.JAASRealm"
+					appName="PortalRealm"
+					userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+					roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+				/>-->
+
+				<!--
+				Uncomment the following to disable persistent sessions across reboots.
+				-->
+
+				<!--<Manager pathname="" />-->
+
+				<!--
+				Uncomment the following to not use sessions. See the property
+				"session.disabled" in portal.properties.
+				-->
+
+				<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
 			</Context>
 		
-	Setting `crossContext="true"` allows multiple web apps to use the same class loader.
+	Setting `crossContext="true"` allows multiple web apps to use the same class loader. In the content above you will also find commented instructions and tags for configuring a JAAS realm, disabling persistent sessions, and disabling sessions in general.
 
 3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
 
@@ -1581,20 +1617,13 @@ Super! Your mail session is configured. Next, we'll make sure Liferay will be ab
 
 In this section we'll specify appropriate properties for Liferay to use in connecting to your database and mail session.
 
-1. Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file in your *Liferay Home* directory (the one your $TOMCAT_HOME directory is sitting in). Edit the file and populate it with the following contents:
-
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
-	
-	Note that the above properties file assumes that your database name is *lportal* and your MySQL username and password are both *root*. You'll have to update these values with your own database name and credentials.
-
-	Otherwise, if you are using *Tomcat* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
+1.	If you are using *Tomcat* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-2.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
+
+2.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in section *Deploy Liferay* that follows, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
 	Otherwise, if you are using *Tomcat* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
@@ -1608,7 +1637,43 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 1.	If you are manually installing Liferay on a clean Tomcat server, delete the contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the default Tomcat home page. Then extract the Liferay `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
 
-2.	Start Tomcat. You can do this by executing `$TOMCAT_HOME/bin/startup.bat` or `$TOMCAT_HOME/bin/startup.sh`. Then point your browser to `http://localhost:8080`. You should see the default Liferay home page.
+2.	Before you startup Liferay Portal, let's consider whether you want to also startup the setup wizard.
+
+	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database withglain Liferay.
+		
+		If this is your first time starting Liferay Portal 6.1 on Tomcat, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`):
+
+			setup.wizard.enabled=true
+
+		The setup wizard will automatically be invoked during server startup.
+
+	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file):
+
+			setup.wizard.enabled=false
+
+		Note, the `portal-setup-wizard.properties` file output by the setup wizard specifies `setup.wizard.enabled=false` already.
+
+	![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+
+	I bet you can't wait to start Liferay Portal - let's do it!
+
+3.	Start Tomcat by executing `$TOMCAT_HOME/bin/startup.bat` or `$TOMCAT_HOME/bin/startup.sh`.
+
+	-	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+
+	-	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
 
