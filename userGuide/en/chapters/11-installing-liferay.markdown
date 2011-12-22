@@ -628,6 +628,64 @@ Liferay depends on jar files found in the Liferay Dependencies Archive and also 
 2.	Make sure the JDBC driver for your database is accessible to Glassish as well. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
 Extract the JAR file and copy it to `lib`.
 
+3.	Next, you will need apply several patches to Glassfish `.jar` files due to the following known issues. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
+
+	-	For issue [GLASSFISH-17242](http://java.net/jira/browse/GLASSFISH-17242) / [LPS-22813](http://issues.liferay.com/browse/LPS-22813)
+
+		-	Copy
+
+				$LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/org/glassfish/deployment/admin/InstanceDeployCommand.class
+
+			into
+
+				org/glassfish/deployment/admin/
+
+			of
+
+				$GLASSFISH_HOME/modules/deployment-admin.jar
+
+		-	Copy
+
+				$LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/com/sun/enterprise/deployment/deploy/shared/Util.class
+
+			into
+
+				com/sun/enterprise/deployment/deploy/shared/
+
+			of
+
+				$GLASSFISH_HOME/modules/deployment-common.jar
+
+		-	Copy
+
+				$LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/com/sun/enterprise/v3/server/SnifferManagerImpl$1.class
+
+			*and*
+
+				$LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/com/sun/enterprise/v3/server/SnifferManagerImpl.class
+
+			into
+
+				`com/sun/enterprise/v3/server/`
+
+			of
+
+				`$GLASSFISH_HOME/modules/kernel.jar`
+
+	-	For issue [GRIZZLY-1060](http://java.net/jira/browse/GRIZZLY-1060):
+
+		-	Copy
+
+				$LIFERAY_SOURCE/tools/servers/glassfish/patches/GRIZZLY-1060/classes/com/sun/grizzly/util/OutputWriter.class
+
+			into
+
+				com/sun/grizzly/util/
+
+			of
+
+				$GLASSFISH_HOME/modules/grizzly-utils.jar
+
 Terrific, you have your JAR files just where you'll need them. Next we'll configure your domain.
 
 ##### Domain Configuration
@@ -642,14 +700,14 @@ There are a couple of modifications you will need to make in your domain in orde
 	- Prevent the application server from setting static fields (final or non-final) to `null`
 	- Increase the default amount of memory available.
 
-	Modify `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/domain.xml` merging in the following JVM options into the current list of JVM options within your `<java-config>` element:
+	Modify `/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/config/domain.xml` merging in the following JVM options into the current list of JVM options within your `<java-config>` element:
 
 		<jvm-options>-Dfile.encoding=UTF8</jvm-options> 
 		<jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options>
 		<jvm-options>-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false</jvm-options>
 		<jvm-options>-Duser.timezone=GMT</jvm-options>
 		<jvm-options>-Xmx1024m</jvm-options>
-		<jvm-options>-XX:MaxPermSize=256m</jvm-options>
+		<jvm-options>-XX:MaxPermSize=512m</jvm-options>
 
 	Be sure that any existing options with values such as `-Dfile.encoding`, `-Djava.net.preferIPv4Stack`, `-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES`, `-Duser.timezone`, or `-XX:MaxPermSize` are replaced with the new values listed above.
 
@@ -661,7 +719,7 @@ There are a couple of modifications you will need to make in your domain in orde
 	
 		<jvm-options>-Xmx1024m</jvm-options>
 
-2.  Delete, rename, or move the `[domain]/docroot/index.html` file to another location to allow your Liferay Portal default page to be displayed.
+2.  Delete, rename, or move the `domain1/docroot/index.html` file to another location to allow your Liferay Portal default page to be displayed.
 
 Next, let's get your database configured in your domain as well.
 
