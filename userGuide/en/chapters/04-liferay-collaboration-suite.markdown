@@ -25,9 +25,9 @@ As we learned earlier, roles can be scoped by the portal, by a site, or by an or
 
 We also use the word *scope* to refer to the data set of a portlet. By default, when a portlet is added to a page in a site, it is *scoped* for that site. This means that its data belongs to that site. If the portlet is added to a page in a different site, it employs a completely different data set. This enables you to place a Message Boards portlet in one site with one set of categories and threads, and place another Message Boards portlet in different site with a different set of categories and threads.
 
-Scoping by site means that you can only have one Message Boards portlet per site. If you add one Message Boards portlet to a page in a site and add another Message Boards portlet to a different page in the same site, the second Message Boards portlet contains exactly the same data as the first. This is because, by default, the Message Boards portlet is scoped by site. Many of Liferay's other portlets also default to being scoped by site.
+Scoping by site means that you can only have one Message Boards portlet per site. If you add one Message Boards portlet to a page in a site and add another Message Boards portlet to a different page in the same site, the second Message Boards portlet contains exactly the same data as the first. This is because, by default, the Message Boards portlet is scoped by site. Most of Liferay's other portlets also default to being scoped by site.
 
-To avoid this limitation, many Liferay portlets can be scoped by page. In this case, the data sets of page-scoped portlets serve a single page, not an entire site. If you set the scope of a portlet to *page* instead of *site*, you can add any number of these portlets to different pages, and then they have different sets of data. This allows you to have more than one message board per site if you wish. All portlets, however, default to the "native" configuration, and have their scopes set to the site where they are placed.
+To avoid this limitation, many Liferay portlets can be scoped by page. In this case, the data sets of page-scoped portlets serve a single page, not an entire site. If you set the scope of a portlet to *page* instead of *site*, you can add any number of these portlets to different pages, and then they have different sets of data. This allows you to have more than one message board per site if you wish. Most portlets, however, default to the "native" configuration, and have their scopes set to the site where they are placed.
 
 Unless otherwise noted, all the portlets in this chapter support scoping by portal (global), site (default), or page (select layout &rarr; current page). This grants you some flexibility in how you want to set up your portal. You can configure the scope of a portlet with just a few simple steps.
 
@@ -249,21 +249,19 @@ Open the *Configuration* dialog box from the menu in the portlet's title bar. Th
 
 **Display Settings:** customize how the portlet shows itself to the user. There are several settings here: 
 
-*Default Tab:* select which tab of the calendar portlet is displayed to the user by default. 
+- *Default Tab:* select which tab of the calendar portlet is displayed to the user by default. 
 
-*Summary Tab:* select whether it has a horizontal or vertical layout, whether or not it shows a mini month, or whether or not it shows today's events. 
+- *Summary Tab:* select whether it has a horizontal or vertical layout. You can also use checkboxes to choose whether or not the calendar portlet shows a mini month, shows today's events, or enables related assets, comments, or ratings. 
 
-**Events:** three checkboxes let you enable or disable related assets, comments, and ratings. 
-
-Now that you've successfully set up your calendar to operate the way you want it, let's look at how to use it. 
+Now that you've successfully set up your calendar, let's look at how to use it. 
 
 ### Using the Calendar Portlet
 
 The Calendar portlet inherits its interface from the rest of Liferay's portlet library, so you should find shared features in the same place that you find them in other Liferay portlets.
 
-To get started, you may want to click the *Permissions* button. Here you'll find an interface that should be becoming familiar: a list of roles with check boxes. For the Calendar, these denote whether the role has the *Add Event* or the *Export All Events* permission. By default, only the owner has permission to do these things, which means that the Calendar portlet is set up for personal use. The reason for this is that out of the box, Liferay puts a Calendar portlet on all users' private pages. If you want to use the Calendar as a shared calendar, you'll need to modify some settings. 
+To get started, you may want to click the *Permissions* button. Here you'll find an interface that should be becoming familiar: a list of roles with check boxes. For the Calendar, these denote whether the role has the *Add Event* or the *Export All Events* permission. By default, only the owner has permission to do these things, which means that the Calendar portlet is set up for personal use. The reason for this is that out of the box, Liferay puts a Calendar portlet on all users' private pages. If you want to use the Calendar as a shared calendar, you'll need to make an additional configuration. 
 
-First, create a portal or site role. Then add to the role the users maintaining this calendar. This is described in chapter 12. Once you have the role or roles set up, come back to the Calendar portlet and click the *Permissions* button. Check the boxes next to the role(s) that should have access to one or both of the functions (*Add Event* or *Export All Events*). Then click *Submit*.
+First, create a portal or site role. Then add the users responsible for maintaining the calendar to this role. This process is described in chapter 12. You can add multiple roles if you like. Once you have the role or roles set up, come back to the Calendar portlet and click the *Permissions* button. Check the boxes next to the roles that should have access to one or both of the functions *Add Event* and *Export All Events*. Then click *Submit*.
 
 Now you are ready to begin using your calendar. Click the *Add Event* button. A form appears that allows you to fill out all the information for your event.
 
@@ -398,7 +396,7 @@ The Message Boards portlet has a lot of configuration options, but they are stra
 
 ### General
 
-The first tab beneath *Setup* is labeled *General.* Here, you can enable anonymous posting, subscribe by default, flags, ratings, and thread as question by default. You can also choose whether you want the message format to be BBcode or HTML. Anonymous posting, subscribe by default, flags, and ratings are selected by default and the default message format is BBcode. 
+The first tab beneath *Setup* is labeled *General*. Here, you can enable anonymous posting, subscribe by default, flags, ratings, and thread as question by default. You can also choose whether you want the message format to be BBcode or HTML. Anonymous posting, subscribe by default, flags, and ratings are selected by default and the default message format is BBcode. 
 
 Anonymous posting lets those without an account on the system post messages to your message boards. You may or may not want to do this, depending on the type of community you are building. Allowing anonymous posting opens your site to anyone who might want to spam your forums with unwanted or off topic advertising messages. For this reason, most of those who implement message boards turn anonymous posting off by unchecking this box.
 
@@ -597,7 +595,7 @@ The Wiki portlet works just like the other portlets developed by Liferay. Add th
 
 ![Figure 4.15: Communication Tab of the Wiki Portlet](../../images/05-wiki-configuration.png)
 
-The communication tab of the configuration window allows you to configure communication across portlets, using predefined public render parameters. From here you can modify five public render parameters: categoryId, nodeId, nodeName, tag, and title. For each parameter you can:
+The communication tab of the configuration window allows you to configure communication across portlets, using predefined public render parameters. From here you can modify six public render parameters: categoryId, nodeId, nodeName, resetCur, tag, and title. For each parameter you can:
 
 -   Ignore the values for this parameter that come from other portlets. For example, the wiki portlet can be used along with the tags navigation portlet. When a user clicks on a tag in the tags navigation portlet, the wiki shows a list of pages with that tag. In some cases an administrator may want the wiki portlet to always show the front page independently of any tag navigation done through other portlets. This can be achieved by checking the Ignore check box so that the values of the parameter coming from those other portlets are ignored.
 
@@ -641,7 +639,7 @@ By default, there is one page added to your wiki, called *FrontPage*. To get sta
 
 ![Figure 4.16: Editing the Default Page in the Wiki Portlet](../../images/05-editing-wiki-page.jpg)
 
-You can now begin to add content to the page. Notice that there is a very convenient “cheat sheet” which can help with the wiki syntax. You can use this syntax to format your wiki pages. Consider for example the following wiki document:
+You can now begin to add content to the page. Notice that there is a very convenient “cheat sheet” which can help with the wiki syntax. You can use this syntax to format your wiki pages. Consider, for example, the following wiki document:
 
 == Welcome to Our Wiki! ==
 
@@ -710,8 +708,6 @@ The last tab is for attachments. You can attach any file to the wiki. This is mo
 ### Navigating in the Wiki Portlet
 
 At the top of the portlet is a list of links which allow you to navigate around the wiki. Next to the *Manage Wikis* button is a list of wikis that are currently created in the portlet. Simply click on the wiki's name to begin browsing that wiki. After this is a set of navigation links:
-
-**FrontPage:** takes you to the main page of the main wiki.
 
 **Recent Changes:** takes you to a page which shows all of the recently updated pages.
 
