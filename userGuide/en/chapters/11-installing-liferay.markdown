@@ -732,30 +732,43 @@ Let's tie up some loose ends with regards to Liferay being able to access your d
 
 2.  Create a `portal-ext.properties` file in the *Liferay Home* folder mentioned at the beginning of this GlassFish installation section.
 
-3.	If you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file:
-
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
-
-	Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database.
-
-	Otherwise, if you are using *GlassFish* to manage your data source, add the following to refer to your data source:
+3.	If you are using *Glassfish* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-4.	If you are using GlassFish to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
+
+4.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in section *Deploy Liferay* that follows, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
+
+	Otherwise, if you are using *Glassfish* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
 		mail.session.jndi.name=mail/MailSession
-
-	Otherwise, if you are using Liferay Portal to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
 
 Liferay will now be able to communicate with your database and mail session. So let's go ahead and deploy Liferay.
 
 ##### Deploy Liferay
 
 Here are the steps you'll need to follow to deploy Liferay Portal to your domain's server.
+
+But before you deploy Liferay Portal, let's consider whether you want to also startup the setup wizard.
+
+	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+		
+		If this is your first time starting Liferay Portal 6.1 on Glassfish, the setup wizard will automatically be invoked on deployment of Liferay Portal. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`):
+
+			setup.wizard.enabled=true
+
+		The setup wizard will automatically be invoked during server startup.
+
+	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file):
+
+			setup.wizard.enabled=false
+
+		Note, the `portal-setup-wizard.properties` file output by the setup wizard specifies `setup.wizard.enabled=false` already.
+
+	![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
 
 1.  Startup your domain's application server.
 
