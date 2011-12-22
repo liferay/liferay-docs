@@ -1317,9 +1317,11 @@ Let's work with the depenency jar files first.
 
 2.	Next, you will need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Resin does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
 
-	1.  Go to `$LIFERAY_SOURCE/lib/portal` and copy `log4j.jar`, `slf4j-api.jar` , and `slf4j-log4j12.jar` into `$RESIN_HOME/lib`.
+	1.  Go to `$LIFERAY_SOURCE/lib/development` and copy `saxpath.jar` into `$RESIN_HOME/lib`.
 
-	2.	If folder `$RESIN_HOME/extlib` does not already exist, create it.
+	2.  Go to `$LIFERAY_SOURCE/lib/portal` and copy `log4j.jar`, `slf4j-api.jar` , and `slf4j-log4j12.jar` into `$RESIN_HOME/lib`.
+
+	3.	If folder `$RESIN_HOME/extlib` does not already exist, create it.
 
 3.	Make sure the JDBC driver for your database is accessible by Resin. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
 Extract the JAR file and copy it to `$RESIN_HOME/extlib`.
