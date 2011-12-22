@@ -47,7 +47,21 @@ From the Manage Site Pages dialog box, you can add a page to the site by clickin
 
 ![Figure 3.4: Adding Pages](../../images/04-web-content-add-page.png)
 
-Note that when you create a new page, you can create either a blank page or a page prepopulated with portlets from a page template. When you're entering the name of the page, you can select from a list of page templates that are currently available. For more information about page templates, see chapter 12. To view the pages once you add them, click the *View Pages* button. This is how you'd populate your pages with content and applications. This is covered in succeeding chapters. 
+When you create a new page, you can create either a blank page or a page prepopulated with portlets from a page template. When you're entering the name of the page, you can select from a list of page templates that are currently available. To view the pages once you add them, click the *View Pages* button. This is how you'd populate your pages with content and applications. This is covered in succeeding chapters.
+
+If you're using the Manage Pages interface to create a new page, you'll have some additional options to create different types of pages. There are **Portlet Pages**, **Panel Pages**, **Embedded Pages**, **URL Pages**, and **Link to Page**. By default all pages are created as portlet pages, but in some situations you might want to use one of the other options.
+
+**Portlet Pages** are the pages that we're usually talking about. They have a layout which you can drag and drop portlets into. The overwhelming majority of pages that you create will be portlet pages.
+
+**Panel Pages** can have any number of portlets on them, as selected by an administrator, but only one will be displayed at a time. The users select which portlet they want to use from a menu on the left side of the page, and the selected portlet takes up the entire page. 
+
+![Figure 3.5: A panel page](../../images/web-content-panel-page.png)
+
+**Embedded Pages** display content from another website inside of your portal. An administrator can set a URL from in the page management interface, and that page will appear in the context and within the navigation of your Liferay portal.
+
+**URL Pages** are just redirects to any URL specified by an administrator. You can use this to link to pages within your portal on another community, or to an external site. These should be used with caution, as blind redirects can create a poor user experience.
+
+A **Link to Page** is a portal page which functions as an immediate redirect to another page within the same site. You can select which page to link to from a dropdown in the page management interface. This can be useful for putting a deeply nested page in the primary navigation, or just for confusing your users.
 
 Once you've created pages and populated them with content, Liferay provides a way for you to back them up to separate files. Let's see how that works. 
 
