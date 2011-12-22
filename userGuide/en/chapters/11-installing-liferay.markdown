@@ -738,7 +738,7 @@ Let's tie up some loose ends with regards to Liferay being able to access your d
 
 	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
 
-4.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in section *Deploy Liferay* that follows, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
+4.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
 	Otherwise, if you are using *Glassfish* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
@@ -752,23 +752,23 @@ Here are the steps you'll need to follow to deploy Liferay Portal to your domain
 
 But before you deploy Liferay Portal, let's consider whether you want to also startup the setup wizard.
 
-	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
 		
-		If this is your first time starting Liferay Portal 6.1 on Glassfish, the setup wizard will automatically be invoked on deployment of Liferay Portal. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`):
+	If this is your first time starting Liferay Portal 6.1 on Glassfish, the setup wizard will automatically be invoked on deployment of Liferay Portal. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
 
-			setup.wizard.enabled=true
+		setup.wizard.enabled=true
 
-		The setup wizard will automatically be invoked during server startup.
+	The setup wizard will automatically be invoked during server startup.
 
-	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
 
-		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file):
+	To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
-			setup.wizard.enabled=false
+		setup.wizard.enabled=false
 
-		Note, the `portal-setup-wizard.properties` file output by the setup wizard specifies `setup.wizard.enabled=false` already.
+	The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
 
-	![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
 
 1.  Startup your domain's application server.
 
@@ -786,7 +786,19 @@ But before you deploy Liferay Portal, let's consider whether you want to also st
 
     ![Figure 11.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
 
-Liferay Portal will now be deployed and started automatically to your server's host and port (e.g. [http://localhost:0808](http://localhost:0808/)).
+    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+
+    -	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
 Your installation of Liferay Portal on GlassFish is complete!
 
@@ -1636,7 +1648,7 @@ In this section we'll specify appropriate properties for Liferay to use in conne
 
 	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
 
-2.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in section *Deploy Liferay* that follows, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
+2.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
 	Otherwise, if you are using *Tomcat* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
@@ -1654,7 +1666,7 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database withglain Liferay.
 		
-		If this is your first time starting Liferay Portal 6.1 on Tomcat, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`):
+		If this is your first time starting Liferay Portal 6.1 on Tomcat, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
 
 			setup.wizard.enabled=true
 
@@ -1662,11 +1674,11 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
 
-		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file):
+		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
 			setup.wizard.enabled=false
 
-		Note, the `portal-setup-wizard.properties` file output by the setup wizard specifies `setup.wizard.enabled=false` already.
+		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
 
 	![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
 
