@@ -750,11 +750,11 @@ Liferay will now be able to communicate with your database and mail session. So 
 
 Here are the steps you'll need to follow to deploy Liferay Portal to your domain's server.
 
-But before you deploy Liferay Portal, let's consider whether you want to also startup the setup wizard.
+But before you deploy Liferay Portal, let's consider whether you want to also start the setup wizard.
 
 -	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
 		
-	If this is your first time starting Liferay Portal 6.1 on Glassfish, the setup wizard will automatically be invoked on deployment of Liferay Portal. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+	If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on deployment of Liferay Portal. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
 
 		setup.wizard.enabled=true
 
@@ -993,26 +993,19 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 1.  First, navigate to the *Liferay Home* folder, which is one folder above Jetty's install location. Create a file named `portal-ext.properties`.
 
-2.  Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file:
-
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
-
-	Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database.
-
-	Otherwise, if you are using *Jetty* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
+2.  If you are using *Jetty* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-3.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
+
+3.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
 	Otherwise, if you are using *Jetty* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
 		mail.session.jndi.name=mail/MailSession
 
-Your domain configuration is complete! Let's deploy Liferay and startup your server. 
+Let's startup your server and deploy Liferay Portal! 
 
 ##### Deploy Liferay
 
@@ -1022,9 +1015,43 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
 2.	Then extract the contents of the Liferay portal `.war` file into `$JETTY_HOME/webapps/root`.
 
-3.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$JETTY_HOME/bin`.
+2.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
 
-	Jetty should automatically launch Liferay Portal displaying the default Liferay home page to your browser at [http://localhost:8080](http://localhost:8080).
+	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database withglain Liferay.
+		
+		If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+
+			setup.wizard.enabled=true
+
+		The setup wizard will automatically be invoked during server startup.
+
+	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+
+			setup.wizard.enabled=false
+
+		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+
+	![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+
+	Now its time to launch Liferay Portal!
+
+4.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$JETTY_HOME/bin`.
+
+    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+
+    -	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
 You've just installed and deployed Liferay Portal on Jetty - way to go!
 
@@ -1662,11 +1689,11 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 1.	If you are manually installing Liferay on a clean Tomcat server, delete the contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the default Tomcat home page. Then extract the Liferay `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
 
-2.	Before you startup Liferay Portal, let's consider whether you want to also startup the setup wizard.
+2.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
 
 	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database withglain Liferay.
 		
-		If this is your first time starting Liferay Portal 6.1 on Tomcat, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+		If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
 
 			setup.wizard.enabled=true
 
