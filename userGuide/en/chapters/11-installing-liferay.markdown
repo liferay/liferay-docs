@@ -793,30 +793,45 @@ Let's tie up some loose ends with regards to Liferay being able to access your d
 
 2.  Create a `portal-ext.properties` file in the *Liferay Home* folder mentioned at the beginning of this GlassFish installation section.
 
-3.	If you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file:
-
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
-
-	Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database.
-
-	Otherwise, if you are using *GlassFish* to manage your data source, add the following to refer to your data source:
+3.	If you are using *Glassfish* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-4.	If you are using GlassFish to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
+
+4.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
+
+	Otherwise, if you are using *Glassfish* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
 		mail.session.jndi.name=mail/MailSession
-
-	Otherwise, if you are using Liferay Portal to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
 
 Liferay will now be able to communicate with your database and mail session. So let's go ahead and deploy Liferay.
 
 ##### Deploy Liferay
 
 Here are the steps you'll need to follow to deploy Liferay Portal to your domain's server.
+
+But before you deploy Liferay Portal, let's consider whether you want to also start the setup wizard.
+
+-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+		
+	If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on deployment of Liferay Portal. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+
+		setup.wizard.enabled=true
+
+	The setup wizard will automatically be invoked during server startup.
+
+-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+	To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+
+		setup.wizard.enabled=false
+
+	The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+
+---
+![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+---
 
 1.  Startup your domain's application server.
 
@@ -834,7 +849,19 @@ Here are the steps you'll need to follow to deploy Liferay Portal to your domain
 
     ![Figure 11.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
 
-Liferay Portal will now be deployed and started automatically to your server's host and port (e.g. [http://localhost:0808](http://localhost:0808/)).
+    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+
+    -	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
 Your installation of Liferay Portal on GlassFish is complete!
 
@@ -1029,26 +1056,19 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 1.  First, navigate to the *Liferay Home* folder, which is one folder above Jetty's install location. Create a file named `portal-ext.properties`.
 
-2.  Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file:
-
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
-
-	Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database.
-
-	Otherwise, if you are using *Jetty* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
+2.  If you are using *Jetty* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-3.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
+
+3.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
 	Otherwise, if you are using *Jetty* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
 		mail.session.jndi.name=mail/MailSession
 
-Your domain configuration is complete! Let's deploy Liferay and startup your server. 
+Let's startup your server and deploy Liferay Portal! 
 
 ##### Deploy Liferay
 
@@ -1058,9 +1078,45 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
 2.	Then extract the contents of the Liferay portal `.war` file into `$JETTY_HOME/webapps/root`.
 
-3.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$JETTY_HOME/bin`.
+3.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
 
-	Jetty should automatically launch Liferay Portal displaying the default Liferay home page to your browser at [http://localhost:8080](http://localhost:8080).
+	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+		
+		If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+
+			setup.wizard.enabled=true
+
+		The setup wizard will automatically be invoked during server startup.
+
+	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+
+			setup.wizard.enabled=false
+
+		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+
+	---
+	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
+
+	Now its time to launch Liferay Portal!
+
+4.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$JETTY_HOME/bin`.
+
+    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+
+    -	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
 You've just installed and deployed Liferay Portal on Jetty - way to go!
 
@@ -1206,31 +1262,31 @@ Modify `standalone.xml` adding your datasource and driver within the `<datasourc
 			<driver name="mysql" module="com.liferay.portal"/>
 		</drivers>
 
-Your final datasources subsystem should look something like this:
+	Your final datasources subsystem should look something like this:
 
-	<subsystem xmlns="urn:jboss:domain:datasources:1.0">
-		<datasources>
-			<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-				<connection-url>
-					jdbc:mysql://localhost/lportal
-				</connection-url>
-				<driver>
-					mysql
-				</driver>
-				<security>
-					<user-name>
-						root
-					</user-name>
-					<password>
-						root
-					</password>
-				</security>
-			</datasource>
-			<drivers>
-				<driver name="mysql" module="com.liferay.portal"/>
-			</drivers>
-		</datasources>
-	</subsystem>
+		<subsystem xmlns="urn:jboss:domain:datasources:1.0">
+			<datasources>
+				<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+					<connection-url>
+						jdbc:mysql://localhost/lportal
+					</connection-url>
+					<driver>
+						mysql
+					</driver>
+					<security>
+						<user-name>
+							root
+						</user-name>
+						<password>
+							root
+						</password>
+					</security>
+				</datasource>
+				<drivers>
+					<driver name="mysql" module="com.liferay.portal"/>
+				</drivers>
+			</datasources>
+		</subsystem>
 
 Now that we've covered how to configure your datasource within JBoss, let's go over how to configure your mail session within JBoss.
 
@@ -1260,20 +1316,13 @@ Let's revisit domain configuration to make sure that we'll be able to access the
 
 1.  First, navigate to the Liferay Home folder, which is one folder above JBoss's install location (i.e. `$JBOSS/..`).
 
-2.  Then, if you are using *Liferay Portal* to manage your data source, add the following directives to the `portal-ext.properties` file:
-
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
-
-	Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database.
-
-	Otherwise, if you are using *JBoss* to manage your data source, add the following to refer to your data source:
+2.  Then, if you are using *JBoss* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
 		jdbc.default.jndi.name=java:jdbc/LiferayPool
-		
-3.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
+
+3.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
 	Otherwise, if you are using *JBoss* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
@@ -1287,15 +1336,49 @@ You've completed the steps necessary for your deployment of Liferay so that Life
 
 2.  Unzip the Liferay `.war` file into the `ROOT.war` folder.
 
-3.	To trigger deployment of `ROOT.war`, create an empty file named `ROOT.war.dodeploy`. On startup, JBoss will detect the presence of this file and deploy it as a web application.
+3.	To trigger deployment of `ROOT.war`, create an empty file named `ROOT.war.dodeploy` in  your `$JBOSS_HOME/standalone/deployments/` folder. On startup, JBoss will detect the presence of this file and deploy it as a web application.
 
 4.	Remove `eclipselink.jar` from  `$JBOSS_HOME/standalone/deployments/ROOT.war/WEB-INF/lib` to assure that the Hibernate persistence provider is used instead of the one provided in the `eclipselink.jar`. Note, JBoss 7.0.2 has a known issue [http://community.jboss.org/thread/169944](http://community.jboss.org/thread/169944) in determining which persistence provider to use.
 
----
-![Tip](../../images/tip.png) To trigger deployment of a `.war` application, create or copy a `.dodeploy` file for it  into your `$JBOSS_HOME/standalone/deployments/` folder. For example, create a file named `myApp.war.dodeploy` to trigger deployment of an application named `myApp.war`.  
----
+5.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
 
-4.	Start JBoss and it should automatically launch Liferay Portal displaying the default Liferay home page to your browser at [http://localhost:8080](http://localhost:8080).
+	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+		
+		If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+
+			setup.wizard.enabled=true
+
+		The setup wizard will automatically be invoked during server startup.
+
+	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+
+			setup.wizard.enabled=false
+
+		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+
+	---
+	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
+	
+	Now it's time to start Liferay Portal on JBoss!
+
+6.	Start the JBoss application server.
+
+	-	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+
+	-	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
@@ -1439,24 +1522,17 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 1.  First, navigate to the *Liferay Home* folder, which is one folder above Resin's install location (i.e. `$RESIN_HOME/..`).
 
-2.  Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file in your *Liferay Home*:
+2.  Then, if you are using *Resin* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
+		jdbc.default.jndi.name=jdbc/LiferayPool
 
-	Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database.
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
 
-	Otherwise, if you are using *Resin* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
-
-		jdbc.default.jndi.name=java:jdbc/LiferayPool
-
-3.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+3.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
 	Otherwise, if you are using *Resin* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
-		mail.session.jndi.name=java:mail/MailSession
+		mail.session.jndi.name=mail/MailSession
 
 Great! Now Liferay can access your database and your mail session. Now, let's deploy Liferay.
 
@@ -1477,15 +1553,43 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 	-	WEB-INF (folder)
 	-	index.jsp
 
-3.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$RESIN_HOME/bin`.
+3.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
 
-	You can monitor your domain via serveral log files:
+	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+		
+		If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
 
-	-	Resin's log files found in `$RESIN_HOME/log`
+			setup.wizard.enabled=true
 
-	-	Liferay's daily log files found in *Liferay Home*/logs. These files are named after the current date following the naming convention `liferay.[yyyy-MM-dd]`.
+		The setup wizard will automatically be invoked during server startup.
 
-	Resin should automatically launch Liferay Portal displaying the default Liferay home page to your browser at [http://localhost:8080](http://localhost:8080).
+	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+
+			setup.wizard.enabled=false
+
+		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+
+	---
+	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
+
+4.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$RESIN_HOME/bin`.
+
+    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+
+    -	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
 Congratulations! You've installed Liferay Portal on Resin and have it up and running.
 
@@ -1553,6 +1657,20 @@ So, let's get started with our configuration tasks.
 
 1. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina will call `setenv.bat` or `setenv.sh`. Edit the file and populate it with following contents:
 
+	setenv.bat:
+
+		if exist "%CATALINA_HOME%/jre@java.version@/win" (
+			if not "%JAVA_HOME%" == "" (
+				set JAVA_HOME=
+			)
+		
+			set "JRE_HOME=%CATALINA_HOME%/jre@java.version@/win"
+		)
+
+		set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+
+	setenv.sh:
+
 		JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
 	This sets the character encoding to UTF-8, sets the time zone to Greenwich Mean Time, and allocates memory to the Java virtual machine.
@@ -1560,9 +1678,31 @@ So, let's get started with our configuration tasks.
 2. Create the directory `$TOMCAT_HOME/conf/Catalina/localhost` and create a `ROOT.xml` file in it. Edit this file and populate it with the following contents to set up a portal web application:
 
 			<Context path="" crossContext="true">
+
+				<!-- JAAS -->
+
+				<!--<Realm
+					className="org.apache.catalina.realm.JAASRealm"
+					appName="PortalRealm"
+					userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+					roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+				/>-->
+
+				<!--
+				Uncomment the following to disable persistent sessions across reboots.
+				-->
+
+				<!--<Manager pathname="" />-->
+
+				<!--
+				Uncomment the following to not use sessions. See the property
+				"session.disabled" in portal.properties.
+				-->
+
+				<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
 			</Context>
 		
-	Setting `crossContext="true"` allows multiple web apps to use the same class loader.
+	Setting `crossContext="true"` allows multiple web apps to use the same class loader. In the content above you will also find commented instructions and tags for configuring a JAAS realm, disabling persistent sessions, and disabling sessions in general.
 
 3. Open `$TOMCAT_HOME/conf/catalina.properties` and replace the line:
 
@@ -1644,20 +1784,13 @@ Super! Your mail session is configured. Next, we'll make sure Liferay will be ab
 
 In this section we'll specify appropriate properties for Liferay to use in connecting to your database and mail session.
 
-1. Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file in your *Liferay Home* directory (the one your $TOMCAT_HOME directory is sitting in). Edit the file and populate it with the following contents:
-
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
-	
-	Note that the above properties file assumes that your database name is *lportal* and your MySQL username and password are both *root*. You'll have to update these values with your own database name and credentials.
-
-	Otherwise, if you are using *Tomcat* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
+1.	If you are using *Tomcat* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-2.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
+
+2.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
 	Otherwise, if you are using *Tomcat* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
@@ -1671,7 +1804,45 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 1.	If you are manually installing Liferay on a clean Tomcat server, delete the contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the default Tomcat home page. Then extract the Liferay `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
 
-2.	Start Tomcat. You can do this by executing `$TOMCAT_HOME/bin/startup.bat` or `$TOMCAT_HOME/bin/startup.sh`. Then point your browser to `http://localhost:8080`. You should see the default Liferay home page.
+2.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
+
+	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+		
+		If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+
+			setup.wizard.enabled=true
+
+		The setup wizard will automatically be invoked during server startup.
+
+	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+
+			setup.wizard.enabled=false
+
+		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+
+	---
+	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
+
+	I bet you can't wait to start Liferay Portal - let's do it!
+
+3.	Start Tomcat by executing `$TOMCAT_HOME/bin/startup.bat` or `$TOMCAT_HOME/bin/startup.sh`.
+
+	-	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+
+	-	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
 
@@ -1759,18 +1930,13 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 1.  First, navigate to the *Liferay Home* folder.
 
-2.  Then, if you are using *Liferay Portal* to manage your data source, add the following directives to your `portal-ext.properties` file in your *Liferay Home*. Be sure to replace the URL, username, and password values with those of your database.
-
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
-
-	Otherwise, if you are using *WebLogic* to manage your data source, add the following to your `portal-ext.properties` file to refer to your data source:
+2.  Then, if you are using *WebLogic* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-3.	If you are using *Liferay Portal* to manage your mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter settings for your mail session.
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
+
+3.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
 	Otherwise, if you are using *WebLogic* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
@@ -1781,6 +1947,30 @@ Liferay will now be able to communicate with your data source and mail session. 
 ##### Deploy Liferay
 
 Follow the instructions in this section to deploy Liferay Portal to your domain.
+
+But, before you deploy Liferay Portal, let's consider whether you want to also start the setup wizard.
+
+-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+		
+	If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+
+		setup.wizard.enabled=true
+
+	The setup wizard will automatically be invoked during server startup.
+
+-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+	To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+
+		setup.wizard.enabled=false
+
+	The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+
+---
+![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+---
+
+Now that you have enabled or disabled the setup wizard, let's move on to deployment of Liferay Portal.
 
 ![Figure 11.x: WebLogic Deployments](../../images/02-weblogic-deployments.png)
 
@@ -1802,9 +1992,23 @@ Follow the instructions in this section to deploy Liferay Portal to your domain.
 
 9. In the Deployments screen, select the Liferay application and click the *Start* button. Select *Servicing All Requests* in the pop up.
 
-10. Click *Yes* to continue on the next screen.
+10. Click *Yes* to continue on the next screen to launch Liferay Portal.
 
-Liferay will start and you will be able to get to it by browsing to `http://<server name>:7001`. If your browser is running on the same machine upon which you have installed Liferay, the URL is `http://localhost:7001`.
+    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:7001](http://localhost:7001).
+
+    -	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
+
+Congratulations on your deployment of Liferay Portal on WebLogic 10!
 
 #### Installing Liferay on Oracle WebLogic 10.3
 
@@ -1886,29 +2090,19 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 1.  Create a `portal-ext.properties` file in the Liferay Home folder, which is one folder up from your domain's home folder.
 
-	If you are using Liferay's built-in data source, add the database settings:
+	If you are using *WebLogic* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
-		jdbc.default.driverClassName=com.mysql.jdbc.Driver
-		jdbc.default.url=jdbc:mysql://localhost/lportal?
-		useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-		jdbc.default.username=root
-		jdbc.default.password=root
+		jdbc.default.jndi.name=jdbc/LiferayPool
 
-	Be sure to replace the URL, username, and password values with those of your database.
+	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
 
-    If you are using WebLogic's data source, add the JNDI name instead:
+	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
-    	jdbc.default.jndi.name=jdbc/LiferayPool
-
-2. If you are using Liferay's built-in mail session, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter your settings for your mail session settings.
-
-	If you are using WebLogic's mail session, add the JNDI name instead:
+	Otherwise, if you are using *WebLogic* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
 		mail.session.jndi.name=mail/MailSession
 
-	Save and close your `portal-ext.properties` file.
-
-3. Lastly, you'll need to provide WebLogic a reference to Java Server Faces (JSF) in order to use that library. So, insert the following deployment descriptor within the `<weblogic-web-app>` element of `WEB-INF/weblogic.xml` found in your Liferay Portal `.war` :
+2. Lastly, you'll need to provide WebLogic a reference to Java Server Faces (JSF) in order to use that library. So, insert the following deployment descriptor within the `<weblogic-web-app>` element of `WEB-INF/weblogic.xml` found in your Liferay Portal `.war` :
 
 		<library-ref>
 			<library-name>jsf</library-name>
@@ -1922,6 +2116,30 @@ Now, its the moment you've been waiting for - Liferay deployment!
 ##### Deploy Liferay
 
 This section provides instructions on how to deploy Liferay to your application server domain.
+
+But, before you deploy Liferay Portal, let's consider whether you want to also start the setup wizard.
+
+-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+		
+	If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+
+		setup.wizard.enabled=true
+
+	The setup wizard will automatically be invoked during server startup.
+
+-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+
+	To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+
+		setup.wizard.enabled=false
+
+	The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+
+---
+![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+---
+
+Now, let's deploy Liferay Portal.
 
 1. Start WebLogic.
 
@@ -1937,13 +2155,27 @@ This section provides instructions on how to deploy Liferay to your application 
 
 6.  Click *Finish*. After the deployment finishes, click *Save*.
 
-Liferay will start and you will be able to get to it by browsing to `http://<server name>:7001`. If your browser is running on the same machine upon which you have installed Liferay, the URL is `http://localhost:7001`.
+	Liferay will launch in one of the following manners:
 
-Congratulations! You are now running Liferay on Oracle WebLogic.
+    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:7001](http://localhost:7001).
+
+    -	Otherwise, the setup wizard will open in your browser.
+
+		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
+
+		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+
+		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
+
+		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+
+		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
 ---
 ![Note](../../images/tip.png) **Note:** After Liferay completes installing, you may see an error initializing the Web Proxy portlet. Because the XSL parser configured by default within WebLogic cannot compile a style sheet in this portlet, Liferay disables it by default. To re-enable this portlet, extract `xalan.jar` and `serializer.jar` from the Liferay `.war` archive and copy them to your JDK's endorsed folder for libraries. If you are using JRockit, this folder may be `[$WEBLOGIC_HOME]/jrockit_160_05/jre/lib/ext`; if your are using Sun JDK,  this folder may be `[$WEBLOGIC_HOME]/jdk160_24/jre/lib/ext`.
 ---
+
+Congratulations! You are now running Liferay on Oracle WebLogic.
 
 #### Installing Liferay on WebSphere 6.1
 
