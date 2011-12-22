@@ -768,7 +768,9 @@ But before you deploy Liferay Portal, let's consider whether you want to also st
 
 	The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
 
-![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+---
+![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+---
 
 1.  Startup your domain's application server.
 
@@ -1033,7 +1035,9 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
 		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
 
-	![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
+	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
 
 	Now its time to launch Liferay Portal!
 
@@ -1293,7 +1297,9 @@ You've completed the steps necessary for your deployment of Liferay so that Life
 
 		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
 
-	![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
+	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
 	
 	Now it's time to start Liferay Portal on JBoss!
 
@@ -1502,7 +1508,9 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
 		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
 
-	![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
+	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
 
 4.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$RESIN_HOME/bin`.
 
@@ -1751,7 +1759,9 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
 
-	![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
+	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+	---
 
 	I bet you can't wait to start Liferay Portal - let's do it!
 
@@ -1893,7 +1903,9 @@ But, before you deploy Liferay Portal, let's consider whether you want to also s
 
 	The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
 
-![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+---
+![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+---
 
 Now that you have enabled or disabled the setup wizard, let's move on to deployment of Liferay Portal.
 
@@ -2060,7 +2072,9 @@ But, before you deploy Liferay Portal, let's consider whether you want to also s
 
 	The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
 
-![Note](../../images/tip.png) **Note:** Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+---
+![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+---
 
 Now, let's deploy Liferay Portal.
 
