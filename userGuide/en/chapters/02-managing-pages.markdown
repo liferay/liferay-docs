@@ -47,7 +47,21 @@ From the Manage Site Pages dialog box, you can add a page to the site by clickin
 
 ![Figure 3.4: Adding Pages](../../images/04-web-content-add-page.png)
 
-Note that when you create a new page, you can create either a blank page or a page prepopulated with portlets from a page template. When you're entering the name of the page, you can select from a list of page templates that are currently available. For more information about page templates, see chapter 12. To view the pages once you add them, click the *View Pages* button. This is how you'd populate your pages with content and applications. This is covered in succeeding chapters. 
+When you create a new page, you can create either a blank page or a page prepopulated with portlets from a page template. When you're entering the name of the page, you can select from a list of page templates that are currently available. To view the pages once you add them, click the *View Pages* button. This is how you'd populate your pages with content and applications. This is covered in succeeding chapters.
+
+If you're using the Manage Pages interface to create a new page, you'll have some additional options to create different types of pages. There are **Portlet Pages**, **Panel Pages**, **Embedded Pages**, **URL Pages**, and **Link to Page**. By default all pages are created as portlet pages, but in some situations you might want to use one of the other options.
+
+**Portlet Pages** are the pages that we're usually talking about. They have a layout which you can drag and drop portlets into. The overwhelming majority of pages that you create will be portlet pages.
+
+**Panel Pages** can have any number of portlets on them, as selected by an administrator, but only one will be displayed at a time. The users select which portlet they want to use from a menu on the left side of the page, and the selected portlet takes up the entire page. 
+
+![Figure 3.5: A panel page](../../images/web-content-panel-page.png)
+
+**Embedded Pages** display content from another website inside of your portal. An administrator can set a URL from in the page management interface, and that page will appear in the context and within the navigation of your Liferay portal.
+
+**URL Pages** are just redirects to any URL specified by an administrator. You can use this to link to pages within your portal on another community, or to an external site. These should be used with caution, as blind redirects can create a poor user experience.
+
+A **Link to Page** is a portal page which functions as an immediate redirect to another page within the same site. You can select which page to link to from a dropdown in the page management interface. This can be useful for putting a deeply nested page in the primary navigation, or just for confusing your users.
 
 Once you've created pages and populated them with content, Liferay provides a way for you to back them up to separate files. Let's see how that works. 
 
@@ -84,7 +98,9 @@ The next option configures the logo that appears for your site.
 
 #### Using a custom logo
 
-If you want to use your own logo for a specific site, use the Logo tab. Adding a custom logo is easy: select the Logo tab and browse to the location of your logo. Make sure that your logo fits the space in the top left corner of the theme you're using for your web site. If you don't, you could wind up with a site that's difficult to navigate, as other page elements are pushed aside to make way for the logo. 
+If you want to use your own logo for a specific site, use the Logo tab. Adding a custom logo is easy: select the Logo tab and browse to the location of your logo. Make sure that your logo fits the space in the top left corner of the theme you're using for your web site. If you don't, you could wind up with a site that's difficult to navigate, as other page elements are pushed aside to make way for the logo.
+
+In the logo tab, you can also choose whether or not to display the site name on the site. If you check the box labeled *Show Site Name* the site name will appear in the the top right corner of the page. This option is enabled by default, and cannot be disabled if the *Allow Site Administrators to set their own logo* option is disabled in *Portal Settings*. It is also not available on the default community -- only newly created communities and user pages have the option to have the name display.
 
 When you click on a specific page, some other options become available to you. 
 
@@ -188,7 +204,9 @@ Now let's create a *Site Template*. You can find the *Site Templates* page right
 
 ![Figure 3.5: Your site template should look like this.](../../images/site-template-shopping.png)
 
-Once you've created a site template, you have two ways to use them. Any time you are creating the initial pages for a site from the Control Panel, you'll have the option to create those pages based on a site template, and you also have the ability to apply the site template as users' personal pages using User Groups. When you create a User Group from the Control Panel, you have the option to set their personal public or private pages from a site template. You also have a checkbox label *Keep a Link to the Site Template* which, if checked, will push any changes to the site template to the layout of any user that is a member of that particular group. For more information on user groups, see Chapter 12: Administering Liferay Portal.
+Once you've created a site template, you have two ways to use them. Any time you are creating the initial pages for a site from the Control Panel, you'll have the option to create those pages based on a site template, and you also have the ability to apply the site template as users' personal pages using User Groups. When you create a User Group from the Control Panel, you have the option to set their personal public or private pages from a site template. For more information on user groups, see Chapter 12: Administering Liferay Portal.
+
+Whether you're using the Site Template with a user group or with a site, when you apply the template there is a  checkbox labeled *Keep a Link to the Site Template*. If you check it, any changes made to the site template will automatically be pushed to that site. Using this option can make large scale layout changes much simpler for administrators on your portal.
 
 
 ### Site Content

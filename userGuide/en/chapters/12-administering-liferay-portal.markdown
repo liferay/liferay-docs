@@ -140,7 +140,7 @@ The default home page in Liferay is created in a site which by default is called
 
 Sites can be created in two ways. The first is through the control panel, like every other user/page collection in Liferay. The second is through the My Sites portlet, which can be added to any page in Liferay. Why are there two ways? The My Sites portlet also doubles as a way to navigate from site to site, and allows users to browse the list of sites and select one to join (if it is open or restricted). The My Sites portlet enables portal administrators to provide this functionality to users without giving them access to the control panel. Sites can also be administered from the Manage menu of the dockbar. We discussed this in chapter 3.
 
-To add a site, click the *Sites* link on the left side of the control panel in the Portal section, and then click the *Add* button. There are a few options you can select to create a site pre-populated with pages and portlets for collaborative or personal use or you can select *Custom Site* to build your site from scratch.
+To add a site, click the *Sites* link on the left side of the control panel in the Portal section, and then click the *Add* button. You can select a template from which to build a your site or you can select *Blank Site* to build your site from scratch. Using site templates lets you create sites that are pre-populated with pages and portlets for collaborative or personal use.
 
 ![Figure 12.4: Adding a Site](../../images/01-add-site-screen.png)
 
@@ -148,19 +148,17 @@ To add a site, click the *Sites* link on the left side of the control panel in t
 
 **Description:** describes the site's intended function.
 
-**Type:** can be open, restricted, and private. An open site appears in the My Sites portlet and users can join and leave the site whenever they want. A restricted site is the same except that users can only request membership. A site administrator must then explicitly grant or deny users' requests to join. A private site does not appear in the My Sites portlet and users must be added to it manually by a site administrator.
+**Membership Type:** can be open, restricted, or private. An open site appears in the My Sites portlet and users can join and leave the site whenever they want. A restricted site is the same except that users can only request membership. A site administrator must then explicitly grant or deny users' requests to join. A private site does not appear in the My Sites portlet and users must be added to it manually by a site administrator.
 
 **Active:** determines whether a site is active or inactive. Inactive sites are inaccessible but can be activated whenever a site administrator chooses to active them.
-
-**Tags:** implement Liferay's tagging mechanism on the site. Tags can be very helpful for sites that have an easily describable purpose within the portal.
 
 Once you've created a site, it appears in the list on the Sites page of the control panel. Once the site has been created you can specify more details about the site, which fall under three main categories: Basic Information, Search Engine Optimization, and Advanced.
 
 ![Figure 12.5: Editing a Site](../../images/01-site-editor.png)
 
-**Details:** lets you edit the information you entered when you created the site.
+**Details:** lets you edit the information you entered when you created the site and allows you to choose a site template for the public or private pages of your site. Leave the *Keep a Link to the Site Template* box checked to automatically update your site if the associated site template changes. If you uncheck this box but recheck it later, the template pages then will be reapplied to your site, overwriting any changes that may have been made. 
 
-**Pages:** lets you create and manage the site's public and private pages.
+**Categorization:** allows you to apply Liferay's tagging mechanism to the site. Tags can be very useful for sites within the portal whose functions are easily described by keywords.
 
 **Site URL:** lets you set friendly URLs and virtual hosts for your web site.
 
@@ -176,100 +174,106 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 
 #### Site Templates
 
-While we're on the subject of sites, we should mention Site Templates, which appear below the Sites link in the Portal category of the control panel. These allow you to create sites by selecting pre-defined templates that you can make beforehand. A site template consists of a pre-defined set of pages and portlets. You can use templates to quickly create multiple sites that are pre-populated with the pages and portlets defined by the templates.
+While we're on the subject of sites, we should discuss Site Templates, which appear below the Sites link in the Portal category of the control panel. These allow you to create sites by selecting pre-defined templates that you can make beforehand. A site template consists of a pre-defined set of pages and portlets. You can use templates to quickly create multiple sites that are pre-populated with the pages and portlets defined by the templates.
+
+Site templates can contain web content just like actual sites. This allows you to create sample content that will appear when your site is first created from a site template. By default, changes to a site template's content are not propagated to existing sites that implement the template. However, if you would like to publish a piece of web content to all the sites that implement a certain site template, you can place the content in the global scope and then reference it from a Web Content Display portlet.
 
 ![Figure 12.6: Site Templates](../../images/01-site-templates.png)
 
 For example, let's suppose that we need to create sites for three suborganizations of the Nosester organization: Engineering, Marketing, and Legal. These are to be private sites designed for each organization's internal use. We could design each site separately but we can save ourselves some work if we create a site template to use instead.
 
 ---
-![tip](../../images/01-tip.png) **Tip:** By default, Liferay ships with two site templates named *Community Site* and *Intranet Site*. Take a look at these template to see if you can edit them for your own use. To view a template, click its name and then click the *Open site template* link. This opens the template in a new browser page so you can view its pages and portlets.
+![tip](../../images/01-tip.png) **Tip:** By default, Liferay ships with two site templates named *Community Site* and *Intranet Site*. Take a look at these templates to see if you can edit them for your own use. To view a template, click its name and then click the *Open site template* link. This opens the template in a new browser page so you can view its pages and portlets.
 ---
 
-To create a site template, navigate to the control panel and click *Site Templates*. Then click *Add* and enter a name for your template: we'll use *Organization Site Template* for our example. Generally speaking, you're going to want to  that the *Active* and *Allow Site Administrators to Modify the Pages Associated with this Site Template* boxes are checked. The *Active* box needs to be checked in order for your template to be usable, if your template is still a work in progress you can uncheck it so that no one uses it until it's ready. Checking *Allow Site Administrators to Modify the Pages Associated with this Site Template* allows Site Administrators to modify or remove the pages and portlets that the template introduces to their sites - if you want the templates to be completely static, you'll want to uncheck this. Click on the *Open site template* link to begin adding pages and portlets and configuring the layouts. For our example, we would like our template to include four pages: a Home page with the Activities,  Announcements, and Calendar portlets, a Documents and Media page with the Documents and Media portlet, a Wiki page with the Wiki portlet and a Tag Cloud portlet, and a Message Boards page with the Message Boards portlet and a Tag Cloud portlet. The changes are automatically saved as you make them, so once you're finished, return to the Site Templates page of the control panel and select *Save*.
+To create a site template, navigate to the control panel and click *Site Templates*. Then click *Add* and enter a name for your template: we'll use *Organization Site Template* for our example. Leave the *Active* and *Allow Site Administrators to Modify the Pages Associated with This Site Template* boxes checked. The *Active* box needs to be checked in order for your template to be usable. If your template is still a work in progress, you can uncheck it so that no one uses it until it's ready. Checking *Allow Site Administrators to Modify the Pages Associated with This Site Template* allows Site Administrators to modify or remove the pages and portlets that the template introduces to their sites--if you want the templates to be completely static, you should uncheck this.
+
+Click on the *Open site template* link to begin adding pages and portlets and configuring the layouts. For our example, we would like our template to include four pages: a Home page with the Activities,  Announcements, and Calendar portlets, a Documents and Media page with the Documents and Media portlet, a Wiki page with the Wiki portlet and a Tag Cloud portlet, and a Message Boards page with the Message Boards and Tag Cloud portlets. The changes are automatically saved as you make them, so once you're finished, return to the Site Templates page of the control panel and select *Save*.
 
 ![Figure 12.7: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
 
-Now let's create the Engineering, Marketing, and Legal organizations whose sites we want to create with our template. Go to the control panel and click *Users and Organizations*. Then click the *Add* button and select *Regular Organization*. Enter a name for your organization, select the *Organization site* tab, and check the *Create Site* box. When you check this box, two drop-down lists appear: one for the site's Public Pages and one for its Private Pages. To use your template to create the site, select the name of your template, *Organization Site*, from the Private Pages drop-down list. Click *Save* to create your site.  You can view the new site by clicking the *Open private pages* link from the newly created organization page. The new site will have all the pages and portlets you created in the template. This feature streamlines the site creation process for administrators, making it easy to quickly create sites. Next, let's discuss how to create and manage user groups.
+Now let's create the Engineering, Marketing, and Legal organizations whose sites we want to create with our template. Go to the control panel and click *Users and Organizations*. Then click the *Add* button and select *Regular Organization*. Enter a name for your organization, select the *Organization site* tab, and check the *Create Site* box. When you check this box, two drop-down lists appear: one for the site's Public Pages and one for its Private Pages. To use your template to create the site, select the name of your template, *Organization Site*, from the Private Pages drop-down list. Click *Save* to create your site.  You can view the new site by clicking the *Open private pages* link from the newly created organization page. The new site will have all the pages and portlets you created in the template. This feature streamlines the site creation process for administrators, making it easy to quickly create sites. Next, let's discuss how to create and apply page templates.
+
+### Page Templates
+
+Page templates function similarly to site templates in that they allow you to reuse a page design. However, page templates provide only a single pre-built page to reuse, not an entire set of pages. You can use a page template to create a custom page with the specific portlets, layout, and theme that you would like to save. Both sites and site templates can utilize page templates for creating new pages.
+
+![Figure 12.25: Page Templates](../../images/server-configuration-page-templates.png)
+
+The Page Templates page of the control panel shows a list of created page templates and lets you create new ones. It also allows you to edit existing templates and configure their permissions. To add a page template, click on the *Page Template* link in the control panel and click the *Add* button. Then enter a name and description for your template. Leave the *Active* button checked. Click *Save* and then find your page template in the list. Click its name or use the Actions button to edit the page template. Clicking the *Open Page Template* link opens a new browser window which you can use to configure your new page. Any changes you make are automatically saved so you can close the new browser window once you're done.
+
+![Figure 12.25: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
+
+To use your template to create a new page, just navigate to a page over which you have site administrator privileges and select *Add* &rarr; *Page* from the dockbar. You'll be able to select a page template and type a name for the new page. Alternatively, you can use the control panel. First, in the context selector menu, select the site to which you'd like to add a page. Then click the *Add Page* button, type a name, select your template from the drop down menu, and click *Add Page* to finish. Now that we've looked at site and page templates, let's discuss how to set up and manage user groups.
 
 ### User Groups
 
-User Groups are arbitrary groupings of users. These groups are created by portal administrators to group users together who don't necessarily share an obvious organizational or site-based attribute. Permissions can be granted to user groups by assigning them to roles. User groups come into play when you have complex security requirements. They are also useful in conjunction with site templates, which we discussed above.
+User Groups are arbitrary groupings of users. These groups are created by portal administrators to group users together who don't necessarily share an obvious organizational or site-based attribute. Users can be assigned to multiple user groups. Permissions can be granted to user groups by assigning them to roles. User groups come into play when you have complex security requirements. They are also useful in conjunction with site templates, which we discussed above.
 
 Creating a user group is easy. Navigate to the control panel, click the *Users Groups* link, and then click the *Add* button. There are only two fields to fill out: Name and Description. Click *Save* and you will be redirected back to the *User Groups* page of the control panel.
 
 ![Figure 12.7: Creating a New User Group](../../images/server-configuration-new-user-group.png)
 
-Note that user groups can't have pages but they can have site templates. When a user group has a site template, any users added to the group will have their personal sites populated with the content of the group's template. This allows you to do things like create a Bloggers user group with a site template that has the Blogs and Recent Bloggers portlets on a Blog page. When users who have been added to this group log in to the portal, the user group's site template will be applied to their personal sites. Thus all users belonging to the Bloggers group automatically receive a Blog page that they can use.
+Note that user groups can have sites but these sites cannot be accessed directly by end users. Instead, the personal sites of any users added to the group are populated with the pages and portlets of the user group's site. This allows you to do things like create a Bloggers user group with a site that has the Blogs and Recent Bloggers portlets on a Blog page. When users who have been added to this group log in to the portal, the contents of the user group's site will be applied to their personal sites. Thus, all users belonging to the Bloggers group automatically receive a Blog page that they can use.
+
+![Figure 12.8: User Group Actions](../../images/01-editing-a-user-group.png)
 
 As with the other resources in the portal, you can click the *Actions*
 button next to a user group to perform various operations on that group.
 
-![Figure 12.8: User Group Actions](../../images/01-editing-a-user-group.png)
-
 **Edit:** allows you to modify the name or description of the user group.
 
-**Permissions:** lets you define which users, user groups, or roles have permissions to edit the user group.
+**Permissions:** lets you define which roles have permissions to manage various features of the user group.
 
-**Assign Members:** lets you search for and select users in the portal to be assigned to this user group.
+**Site Permissions:** lets you define which roles have permissions to manage various features the user group's site template.
 
-**View Users:** lets you view the users who are in the user group.
+**Manage Site Pages:** allows you to add pages to the site template, import or export pages, organize the page hierarchy, modify the look and feel of the pages, add a logo, or access other options from the Manage Site interface.
+
+**Assign Members:** lets you search for and select users in the portal to be assigned to this user group as well as view the users currently belonging to the user group .
 
 **Delete:** deletes the user group.
 
-#### User Groups and Site Templates
+If your user group has pages or site templates in place for public or private pages, **Go to the Site's Public Pages** and **Go to the Site's Private Pages** also appear as links in your user group's Actions menu. Clicking one of these links opens the user group's site in a new browser window. Any changes you make to the site are saved automatically. You can safely close the browser window when you're done. 
 
-Liferay allows users to each have a personal site consisting of public and private pages. Permissions can be granted to allow to allow users to customize their personal sites at will. The default configuration of those pages can be determined by the portal administrator through the `portal-ext.properties` file and optionally by providing the configuration in a LAR file. Though this has been a long-time feature of Liferay, it was not very flexible or easy to use.
+#### User Group Sites
 
-Liferay version 5.1 introduced the concept of associating site templates with user groups. This enables administrators to provide the same configuration for the personal sites of a group of users, using Liferay's GUI instead of the properties file. In some cases you might want to provide a different configuration for each user depending on his or her profile. In an educational institution's portal, for example, teachers, staff, and students could get different default pages and portlets on their personal sites. You can even assign users to multiple user groups so that the site templates' pages and portlets are combined together on the users' personal sites. This flexibility lets you acheive almost any desired configuration for a user's personal site without having to modify it directly. When a user is assigned to a user group, the configured site templates are copied directly to the user's personal site.
+Liferay allows users to each have a personal site consisting of public and private pages. Permissions can be granted to allow to allow users to customize their personal sites at will. The default configuration of those pages can be determined by the portal administrator through the `portal-ext.properties` file and, optionally, by providing the configuration in a LAR file. Though this has been a long-time feature of Liferay, it was not very flexible or easy to use.
 
-##### User Group Site Templates: Defining Site Templates for a User Group
+Liferay version 5.1 introduced the concept of associating site templates with user groups. This enables administrators to provide the same configuration for the personal sites of a group of users, using Liferay's GUI instead of the properties file. In some cases you might want to provide a different configuration for each user depending on his or her profile. In an educational institution's portal, for example, teachers, staff, and students could get different default pages and portlets on their personal sites.
 
-A user group's site template can be administered from the control panel. Select *User Groups* from the control panel to see a list of existing user groups. To edit a user group, click on its name or description. You can also click on the *Actions* button to see the full list of actions that can be performed on a user group.
+---
+![tip](../../images/01-tip.png) **Tip:** Previous to Liferay 6.1, pages from different site templates could be combined on users' personal sites by using a naming convention. Liferay 6.1 simplifies the way user groups' sites work by disallowing page combination. Pages copied to a user's personal site from a user group's site are now marked as such at the top of the page.
+---
 
-When you are editing a user group you can see the site templates, if any, to be applied to the public and private pages of user's personal sites. Each template will be copied to a user's personal site when the user becomes a member of the user group. Note that updating a user group's site templates will not affect users who are already members of the user group--the templates will only be applied to the personal sites of new members of the user group.
+You can create a user group's site manually or base it on a site template. To create a user group's site manually, use the *Actions* menu mentioned above and choose *Manage Site Pages*. You can add a new public or private page by selecting the appropriate tab and then clicking the *Add Page* button. Once the user group has at least one public or private page in place, you can go back to the *Actions* menu and click on the *Go to the Site's Public Pages* or *Go to the Site's Private Pages* link to open the user group's site in a new browser window. You can add more pages and portlets and configure site settings from the new window.
 
-As an example of using site templates with user groups, let's create a group called *Bloggers* along with a simple template. We'll call the site template *Bloggers* too. It should contain a single *Blog* page with the Blogs and Recents Bloggers portlets on it. First, navigate to the User Groups page of the control panel. Then click *Add* and enter the name *Bloggers* for your group, and optionally, a description. Click *Save* to create your user group. Next, we will create a site template for this group. Navigate to the Site Templates page of the control panel and click *Add*. Enter the name *Bloggers*, provide a description if you wish, and leave the default check boxes checked. Then click *Save* to create your template. To actually configure the pages and portlets of your template, edit the *Bloggers* template and click the *Open site template* link. Change the name of the default page from *home* to *Blog* and add the Blogs and Recent Bloggers portlets to the page. 
+You can also base a user group's site on a template. When editing a user group, use the Public Pages and Private Pages drop down lists to select a site template. Leave the *Keep a Link to the Site Template* box checked to automatically updated users' personal sites if the associated site template changes. If you uncheck this box but recheck it later, the template pages will be copied to the users' sites, overwriting any changes they may have made. You can allow users to make changes to the pages they receive from the user group by enabling the customization options of each page.
 
-![Figure 12.9: User Group Site Templates](../../images/user-group-site-templates.png)
+This flexibility lets you achieve almost any desired configuration for a user's personal site without having to modify it directly. When a user is assigned to a user group, the configured site pages are copied directly to the user's personal site.
 
-Now you're almost done. Go back the User Group page of the control panel and edit the *Bloggers* group. Choose the *Bloggers* template for the group's public pages and click *Save*. Now any users added to the group will have the template copied to their personal sites.
+##### Defining Site Templates for a User Group's Site
 
-##### Applying a Site Template by Assigning Members to a User Group
+A user group's site can be administered from the control panel. Select *User Groups* from the control panel to see a list of existing user groups. To edit a user group, click on its name or description. You can also click on the *Actions* button to see the full list of actions that can be performed on a user group. When editing a user group, you can view its site, if it exists, by clicking the *Open Pages* link under Public Pages or Private Pages. For each user that's been assigned to the group, the site pages will be copied to the user's personal site when the user next logs in.
 
-Our next step is to assign an existing user to the *Bloggers* group. Then we can check that the site template has been copied to the user's personal site. To do this, create a user called *Joe Bloggs* to use for our test. Then navigate the User Groups page of the control panel and click *Actions* &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to see a list of users that can be assigned to the group.
+As an example of using user group sites, let's create a group called *Bloggers* along with a simple template. We'll call the site template *Bloggers* too. It should contain a single *Blog* page with the Blogs and Recents Bloggers portlets on it. First, navigate to the User Groups page of the control panel. Then click *Add* and enter the name *Bloggers* for your group, and optionally, a description. Click *Save* to create your user group. Next, we will create a site template for this group. Navigate to the Site Templates page of the control panel and click *Add*. Enter the name *Bloggers*, provide a description if you wish, and leave the default check boxes checked. Then click *Save* to create your template. To actually configure the pages and portlets of your template, edit the *Bloggers* template and click the *Open site template* link. Change the name of the default page from *home* to *Blog* and add the Blogs and Recent Bloggers portlets to the page. 
+
+![Figure 12.9: Selecting a Template for the User Group Site](../../images/user-group-site-template-selected.png)
+
+Now you're almost done. Go back the User Group page of the control panel and edit the *Bloggers* group. Choose the *Bloggers* template from the drop down menu for the group's public pages and click *Save*. Now any users added to the group will have the template copied to their personal sites.
+
+##### Assigning Members to a User Group
+
+Our next step is to assign an existing user to the *Bloggers* group. Then we can check that the user group's site has been copied to the user's personal site. To do so, navigate to *Users and Organizations* and create a new user called *Joe Bloggs*. Then navigate the User Groups page of the control panel and click *Actions* &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to see a list of users that can be assigned to the group.
 
 ![Figure 12.10: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
 
-From that list, one or more users can be selected to make them members of the user group. When the *Update Associations* button is clicked, the users become members of the group and copies of any public or private pages from the user group's site template are copied to users' personal sites. Note that content from the site template will be an addition to the users' personal sites but will not replace any existing content.
+From that list, one or more users can be selected to be assigned as members of the user group. When the *Update Associations* button is clicked, the users become members of the group. Copies of any public or private pages from the user group's site will be copied to users' personal sites when they next log in. Note that the pages from the user group's site will be an addition to the users' personal sites but will not replace any existing pages.
 
 ![Figure 12.11: Template Copied to a User's Personal Site](../../images/01-template-copied-to-personal-site.png)
 
-For example, by default, newly created users are given *Welcome* pages on the public pages portion of their personal sites. This Welcome page contains the Language, Search, and Blogs portlets. You can see the effect of the *Bloggers* site template on the public pages of Joe Bloggs's personal site in the figure above. When Joe Bloggs was added to the *Bloggers* group, the name of his default public page was changed from *home* to *Blog* and the Recent Blogs portlets was added to the page. The Blogs portlet would also have been added but it was already there.
+For example, by default, newly created users are given *Welcome* pages on the public pages portion of their personal sites. This Welcome page contains the Language, Search, and Blogs portlets. You can see the effect of the *Bloggers* site template on the public pages of Joe Bloggs's personal site in the figure above. When Joe Bloggs was added to the *Bloggers* group, he received a *Blogs* page with the *Blogs* and *Recent Bloggers* portlets.
 
-Once the template pages have been copied to a user's personal site, the copies will be owned by the user. The user will be able to modify the pages and their content provided that the required permissions have been assigned to the user and the template. When a user is removed from a user group the associated pages won't be removed: they have become part of the user's personal site. Moreover, if a user is removed from a group and is then added back, the pages will not be copied to the user's site a second time.
-
-If an administrator modifies site templates for a user group after users have already been added to the group, those changes will only take effect when new users are assigned to the user group. The changes won't be applied to users that were already members of the user group.
-
-##### Composing A Page Out of Several User Groups
-
-Users can belong to multiple user groups. If you have site templates defined for a number of groups, this may result in having many different pages copied to users' personal sites. If you don't want your users to have so many different pages on their personal sites, you can combine pages from different user groups into a single page by using a naming convention for the pages. If two or more pages from different site templates have the same name, they will be combined into a single page when they are copied to a user's personal site. 
-
-##### Page Combination Rules
-
-The following rules are used when composing a page by combining pages from different user groups:
-
--   If a user becomes a member of a user group that has a site template with the same name in the same set (public or private) as a page that the user already has, those pages will be combined.
-
--   If any of the pages has the name translated to several languages, only the default language is considered in the comparison.
-
--   The portlets on the new page will be copied to the bottom of the equivalent columns of the existing page.
-
--   If the existing and the new pages have different layout templates, the existing one is preserved.
-
--   If the new layout template has portlets in columns that do not exist in the existing page, those portlets will be automatically copied to the first column of the existing layout template.
-
-As you can see, it is possible to have a very flexible configuration for the default pages of portal users. Furthermore, that configuration can be changed at any time using the standard Liferay UI that administrators are used to and then assigning users to new user groups. While the examples we looked at are somewhat simple, the system allows for as many user groups as desired. By using the convention of matching the page names, it is possible to build any default page composition that you want for your users.
+Once the template pages have been copied to a user's personal site, the copies may be modified by the user. Users with administrative privileges over their personal sites will be able to modify the pages and their contents provided that the *Allow Site Administrators to Modify the Pages Associated with This Site Template* box has been checked for the template. When a user is removed from a user group, the associated pages are removed from the user's personal site. Moreover, if a user is removed from a group and is subsequently added back, the group's template pages will be copied to the user's site a second time. Note that if a user group's site is based on a template and an administrator modifies the user group's site template after users have already been added to the group, those changes will only take effect if the *Keep a Link to the Site Template* box for the user group was checked.
 
 ### Roles
 
@@ -756,30 +760,6 @@ The next link on the left side of the control panel is for monitoring. You can u
 The Plugins Configuration page contains tabs for three types of plugins: portlets, themes, and layouts. You can use these tabs to view which roles can add plugins to pages or you can make the plugins active or inactive.
 
 Note that this is for basic configuration: if you want to view the existing permission configuration for a given portlet and/or modify that configuration for existing roles, this is where you can do that. If you need to add permissions to new roles for a given portlet, use the Roles section of the control panel and the *Actions &rarr; Define Permissions* button.
-
-### Page Templates
-
-The Page Templates page of the control panel allows you to create a custom page with the layout, portlets, and web content that you want to reuse. From this link you can also edit existing templates and modify their permissions.
-
-![Figure 12.25: You can create page templates with predefined layouts and portlets that can be used over and over.](../../images/server-configuration-page-templates.png)
-
-To add a page template click on the *Page Template* link in the control panel. From there select *Add* and then enter a name and description for your template. Below the description field is a check box that lets you make the template active or inactive, and below this is a link to open the page template so you can edit it. The template pictured above might be for returning university students. Clicking the *Open Page Template* link brings you to the Manage Pages interface, which we examined in chapter 3.
-
-Once you're finished adding the content, layout, and portlets, return to the Page Template portlet (which is in another browser tab) and select *Save*.
-
-When you want to use the new template to create a new page on a site, simply navigate to *Control Panel &rarr; Pages* and look for the page template name in the template drop down menu when you're adding a page.
-
-### Site Templates
-
-The Site Templates link allows you to define a set of predefined pages to include when creating new sites. You may define and edit site templates as well as their permissions.
-
-![Figure 12.26: Site templates help you to quickly build many similar sites using the same pattern](../../images/server-configuration-site-templates.png)
-
-To add a site template click on the *Site Template* link in the control panel. From there you can select *Add* and then enter a name and description for your template. Also, below the description field is where you can make this template active.
-
-Once this is complete, click on *Actions &rarr; Manage Pages*. From here you can add pages to your template, configure the look and feel by managing themes or CSS files, and export the template as a `.lar` file. You can also import a `.lar` file from here as well.
-
-On the pages you've created for the site template, you can add the portlets and content you want. Once you've added the pages, portlets, content, and themes, you can use this template when you create a new site. The template will appear the in the drop down menus for the Public Pages/Private Pages options when you are adding a site.
 
 ### Server Administration
 
