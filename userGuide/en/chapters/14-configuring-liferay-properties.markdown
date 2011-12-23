@@ -5814,3 +5814,4 @@ Configure email notification settings.
 ## Summary
 
 In this very long chapter we looked at all of the options which can be customized in your `portal-ext.properties` file. This chapter serves as a reference section for the file, so you can quickly find documentation for any property you might encounter. Also, if you would like to make a customization to Liferay, you can also use this section to search for a property that does what you want. Once you find it, just add the appropriate line(s) to your `portal-ext.properties` file. Next, we'll take a look at Liferay's scripting API.
+

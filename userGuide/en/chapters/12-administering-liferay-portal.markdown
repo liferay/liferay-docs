@@ -883,3 +883,4 @@ Next, we saw how to view and configure overall server settings. We saw how to vi
 Finally, we learned how to properly notify users that the portal is about to shut down and how to set up exernal services like OpenOffice integration. We looked at how to create multiple portal instances on a single installation of Liferay and we showed how to view currently installed plugins.
 
 We hope this information helps you become an effective Liferay Portal Administrator.
+
