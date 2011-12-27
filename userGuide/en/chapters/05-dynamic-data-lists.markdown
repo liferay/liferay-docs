@@ -54,9 +54,9 @@ If you have a new data type, you need to create a definition for it first. Click
 
 Using that reference as a nice cheat-sheet, you can now create the data type you need for "Volunteer Work Sign-Up." Use a `Text` type for the name. For all the tasks your friends and family can volunteer to do for you, use `Select` (obviously set to allow multiple options). Finally, you don't want to forget a `File Upload` so they can upload images of themselves. After all, how much more official-feeling and fun is it if you can print out some nifty badges? To add these fields, drag them from the palette on the left to the work area on the right. 
 
-When creating data definitions, you can also customize the appearance of the input fields, and provide helpful tips and hints for those entering data. Some data types have specific configuration options, but all have some in common. The following properties can be edited in three ways: 1) by double-clicking on any field, 2) by clicking the gear icon in the upper-right corner of the field, or 3) by clicking the *Settings* tab when the field is selected. Most of the properties you'll find there are fairly self-explanatory, but there are a few that need a closer look: 
+When creating data definitions, you can also customize the appearance of the input fields, and provide helpful tips and hints for those entering data. Some data types have specific configuration options, but all have some in common. The following properties can be edited in three ways: 1) by double-clicking on any field, 2) by clicking the gear icon in the upper-right corner of the field, or 3) by clicking the *Settings* tab when the field is selected. Let's take a look at the properties you can edit for each of these field types: 
 
-<!-- | TODO: Please document all options for all fields. I know it's tedious and a pain, but we need to do it. And never say something is self-explanatory. | -->
+<!-- | TODO: Please document all options for all fields. I know it's tedious and a pain, but we need to do it.  | -->
 
 **Multiple (Select):** When set to `Yes`, allows the user to select more than one option. This defaults to no.
 
@@ -84,11 +84,7 @@ To create a new volunteer list with the "Volunteer Sign-Up" definition:
 
 Now that you've created your brand new volunteer list, you can pester everyone you know to sign up. But what would it look like for them to add an entry to this list? The data definition you've previously created (or selected) defines the layout as well, which means the form looks just the way you laid it out. 
 
-<!-- | TODO: please regenerate the screenshot; it still shows TISA stuff, not the example you describe above. | -->
-
 ![Figure 5.4: Entering a new data record.](../../images/05-ddl-add-record.png)
-
-<!-- | TODO: please modify the text below to reference the example you created above. | -->
 
 But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet or that boring Jobs Listing look? The answers to these pressing, burning questions bring us to the mecca that is the display side of this equation.
 
