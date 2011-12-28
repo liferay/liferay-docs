@@ -128,4 +128,4 @@ You and Dick stand behind Harry's chair and watch as he enters a query into a fo
 
 "Yeah, and now you're going to start adding them back, one by one, manually, starting with Mr. Jones...." 
 
-Tom and Dick back away slowly from Melvin's cube as Harry and Melvin continue to have their--let's call it a discussion. One thing is clear: they're having a better day than Melvin is.  
+Tom and Dick back away slowly from Melvin's cube as Harry and Melvin continue to have their--let's call it a discussion. One thing is clear: they're having a better day than Melvin is.
