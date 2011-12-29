@@ -30,7 +30,7 @@ Liferay bundles contain the same directory structure regardless of application s
 
 <!-- | TODO: This image needs to be updated to the 6.1 release when we have a build. | -->
 
-![image](../../images/02-bundle-directory-structure.png) *Illustration 1: Bundle directory structure*
+![Figure 11.x: Bundle directory structure](../../images/02-bundle-directory-structure.png) 
 
 Inside this folder, there are folders for various purposes:
 
@@ -113,7 +113,7 @@ Once you've filled out the form, click *Finish Configuration*. You'll see a mess
 Congratulations! You've just installed Liferay Portal!
 
 ---
-![image](../../images/02-tip.png) The wizard is an extremely helpful tool, especially if you're setting up Liferay for the first time or creating a completely fresh portal instance. If you're a Liferay veteran and you already have your database information and various properties set up, you can skip the wizard by adding this line to your *portal-ext.properties* file:
+![Tip](../../images/02-tip.png) The wizard is an extremely helpful tool, especially if you're setting up Liferay for the first time or creating a completely fresh portal instance. If you're a Liferay veteran and you already have your database information and various properties set up, you can skip the wizard by adding this line to your *portal-ext.properties* file:
 
     setup.wizard.enabled=false
 ---
@@ -529,9 +529,7 @@ There are two components in the Tcat Repository:
 -   **Profiles:** application profiles to be applied to the Tcat managed servers. Contains configuration, shared libraries, and more. 
 -   **Applications:** deployable WAR files for web applications and Liferay Plugins. 
 
-![image](../../images/tcat-html_m4af27eb5.png)
-
-*Figure 33 - Tcat Repository: Applications*
+![Figure 11.x: Tcat Repository: Applications](../../images/tcat-html_m4af27eb5.png)
 
 To being Liferay deployment, we must first create a Liferay license profile to be deployed to the managed server:
 
@@ -739,19 +737,19 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 3.  Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
-	![Figure 11.x: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.PNG)
+![Figure 11.x: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.PNG)
 
 4.	Click *New...*.
 
 5.  In the first screen (Step 1 of 2), give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource`, and select your database driver vendor (e.g. `MySQL`) as follows:
 
-	![Figure 11.x: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
+![Figure 11.x: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
 
 6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
 
 7.  On the this screen (Step 2 of 2), scroll down to the *Additional Properties* section.
 
-	![Figure 11.x: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)  
+![Figure 11.x: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)  
 
 8.	Replace or add the following properties ...
 
@@ -853,7 +851,7 @@ But before you deploy Liferay Portal, let's consider whether you want to also st
 
 7.  Click *OK*.
 
-    ![Figure 11.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
+![Figure 11.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
 
     -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
 
@@ -861,11 +859,11 @@ But before you deploy Liferay Portal, let's consider whether you want to also st
 
 		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
 
-		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
 
-		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
@@ -1116,11 +1114,11 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
 		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
 
-		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
 
-		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
@@ -1378,11 +1376,11 @@ You've completed the steps necessary for your deployment of Liferay so that Life
 
 		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
 
-		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
 
-		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
@@ -1589,11 +1587,11 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
 		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
 
-		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
 
-		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
@@ -1842,11 +1840,11 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
 
-		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
 
-		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
@@ -2006,11 +2004,11 @@ Now that you have enabled or disabled the setup wizard, let's move on to deploym
 
 		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
 
-		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
 
-		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 
@@ -2169,11 +2167,11 @@ Now, let's deploy Liferay Portal.
 
 		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
 
-		![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 11.x: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 		Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
 
-		![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 11.x: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 		Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
 

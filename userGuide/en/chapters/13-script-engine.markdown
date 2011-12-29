@@ -223,9 +223,13 @@ When used within a workflow, you could then be directed to the next task or stat
 
 The combination of Liferay's scripting and workflow engines is incredibly powerful, but as it provides users with the ability to execute code, it can also be very dangerous. When configuring your permissions, be sure to be aware of the potential consequences of poorly, or maliciously, written scripts inside of a workflow definition. For more information on creating definitions with Kaleo Workflow see *Chapter 6: Workflow with Kaleo*.
     
+<!-- | TODO
+
 ## Script Based Portlets
 
 -- TO DO - Jonathon?
+
+| -->
 
 ## Custom Java Tools in the Script Engine
 
