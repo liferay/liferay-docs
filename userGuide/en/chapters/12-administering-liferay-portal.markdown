@@ -844,7 +844,7 @@ If you have something else running on this port, find a port that is open and sp
 
 #### Script
 
-Liferay includes a scripting console which lets administrators execute migration or management code instantly. Several scripting languages are supported, including JavaScript, Groovy, Python, Ruby, and Beanshell. For further information about Liferay's APIs, see the JavaDoc, the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)), or *Liferay in Action*.
+Liferay includes a scripting console which lets administrators execute migration or management code instantly. Several scripting languages are supported, including JavaScript, Groovy, Python, Ruby, and Beanshell. For further information about Liferay's APIs, see the JavaDoc, the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)), or [*Liferay in Action*](http://manning.com/sezov).
 
 #### Shutdown
 

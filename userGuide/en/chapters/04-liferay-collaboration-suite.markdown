@@ -85,7 +85,7 @@ You can add any Liferay portlet as an application on Facebook. To do this, you m
 
 ![Figure 4.2: Liferay's Forums on Facebook](../../images/05-liferay-forum-facebook.png)
 
-Incidentally, this makes Liferay a fantastic platform upon which to build applications for Facebook. See the *Liferay Developer's Guide* or *Liferay in Action* for more details. 
+Incidentally, this makes Liferay a fantastic platform upon which to build applications for Facebook. See the *Liferay Developer's Guide* or [*Liferay in Action*](http://manning.com/sezov) for more details. 
 
 #### OpenSocial Gadget
 

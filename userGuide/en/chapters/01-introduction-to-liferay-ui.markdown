@@ -8,7 +8,7 @@ Portlet applications, like servlet applications, are defined by a Java standard 
 
 Portal applications generally come in two flavors: 1) multiple portlets which only provide small amounts of functionality individually, but are aggregated by the portal server into a larger application, or 2) whole applications which reside in only one application window. The choice is up to the application designers. Only developers have to worry about what happens inside the portlet itself. The portal server handles building out the page as it is presented to users.
 
-Portlets are not difficult to build, and Java standard portlets can be written by any Java developer with experience in writing web applications. Liferay provides a Plugins Software Development Kit that makes it easy to design new portlet projects, as well as a development environment based on Eclipse. For further information about the Plugins SDK, please see *Liferay Developer's Guide*, which is the companion volume to this one, or *Liferay in Action*, published by Manning Publications, which is the official guide to Liferay development. For further information on Liferay's developer tools, see [http://www.liferay.com/downloads/liferay-projects/liferay-ide](http://www.liferay.com/downloads/liferay-projects/liferay-ide). 
+Portlets are not difficult to build, and Java standard portlets can be written by any Java developer with experience in writing web applications. Liferay provides a Plugins Software Development Kit that makes it easy to design new portlet projects, as well as a development environment based on Eclipse. For further information about the Plugins SDK, please see *Liferay Developer's Guide*, which is the companion volume to this one, or [*Liferay in Action*](http://manning.com/sezov), published by Manning Publications, which is the official guide to Liferay development. For further information on Liferay's developer tools, see [http://www.liferay.com/downloads/liferay-projects/liferay-ide](http://www.liferay.com/downloads/liferay-projects/liferay-ide). 
 
 Additionally, Liferay supports portlets written in other programming languages, such as PHP, Ruby, Groovy, or Python. Sample portlets written in these languages are available from Liferay's public plugin repository on Github at  [https://github.com/liferay/liferay-plugins](https://github.com/liferay/liferay-plugins).
 
@@ -120,7 +120,7 @@ The control panel is very easy to navigate. On the left side is a list of headin
 
 **Server:** contains administrative functions for configuring portal instances, plugins, updates and more.
 
-All of the functions that you will need to maintain the portal or its contents can be found in the control panel. Additionally, developers can write portlets which can also be added to the control panel. For further information about this, you can take Liferay's Portal Developer course, refer to Liferay's *Portal Developer's Guide* or see the official guide to Liferay development, *Liferay in Action*.
+All of the functions that you will need to maintain the portal or its contents can be found in the control panel. Additionally, developers can write portlets which can also be added to the control panel. For further information about this, you can take Liferay's Portal Developer course, refer to Liferay's *Portal Developer's Guide* or see the official guide to Liferay development, [*Liferay in Action*](http://manning.com/sezov).
 
 ## Portal Architecture
 

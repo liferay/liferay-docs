@@ -118,7 +118,7 @@ When you select a single page, some different options appear. Let's look at what
 
 **Look and Feel:** lets you set a page-specific theme. 
 
-**Layout:** lets you specify how portlets are arranged on a page. Choose from the available installed templates to modify the layout. It's very easy for developers to define custom layouts and add them to the list, and this is covered in both the *Liferay Developer's Guide* and in *Liferay in Action*.  
+**Layout:** lets you specify how portlets are arranged on a page. Choose from the available installed templates to modify the layout. It's very easy for developers to define custom layouts and add them to the list, and this is covered in both the *Liferay Developer's Guide* and in [*Liferay in Action*](http://manning.com/sezov).  
 
 **JavaScript:** gives you the ability to paste custom Javascript code to be executed on this page. 
 
@@ -274,7 +274,7 @@ See how easy it is to add applications to your pages? We've gone one step furthe
 
 ![Figure 2.11: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
 
-You'll find it's easy to make your pages look exactly the way you want them to. If the layout options provided aren't enough, you can even develop your own. More information about that can be found in Liferay's official guide to development, *Liferay in Action*.
+You'll find it's easy to make your pages look exactly the way you want them to. If the layout options provided aren't enough, you can even develop your own. More information about that can be found in Liferay's official guide to development, [*Liferay in Action*](http://manning.com/sezov).
 
 ### Page Permissions
 
