@@ -191,7 +191,9 @@ The **User Statistics** portlet displays a list of users ranked by an amalgamati
 
 **Show Totals**: Toggles the display of the users activity score next to their name.
 
-**Display Additional Activity Counters**: You can toggle the display of any number of other pieces of information next to the users name in the statistics, ranging from the number of comments on assets a user has created to the number of wiki articles that the user has created. If you want to display multiple data points, you can click the plus button to add one and the minus to remove one. You can have as many data points displayed as you want, but displaying too many might make your portlet a little unwieldy. 
+**Display Additional Activity Counters**: You can toggle the display of any number of other pieces of information next to the users name in the statistics, ranging from the number of comments on assets a user has created to the number of wiki articles that the user has created. If you want to display multiple data points, you can click the plus button to add one and the minus to remove one. You can have as many data points displayed as you want, but displaying too many might make your portlet a little unwieldy.
+
+![Figure 4.25: The User Statistics portlet](../../images/user-statistics-portlet.png)
 
 The **Group Statistics** portlet provides some more advanced data analytics. If you add it to a page, and click on the configuration icon, you see that by default, it will display one metric *Activities on Assets*. You can click the *plus* icon to add additional slots, and choose from the dozen or so metrics available for each slot, covering virtually any action that a user can perform on content on the portal. If you decide that you're displaying too many metrics, you can click the *minus* button for a particular slot on the configuration view to remove it.
 
