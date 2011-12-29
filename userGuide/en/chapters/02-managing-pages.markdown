@@ -29,11 +29,11 @@ You can also customize the logo in the top left corner of every page by selectin
 
 You have a few options for accessing the page creation interface. To unify this, it necessitates that we cover the Dockbar's *Manage* menu slightly out of order. There are two interfaces to be aware of: *Site Pages* and *Page*. You can get to these from multiple places. Depending on what you're editing and where you are on the portal, you'll use either the *Manage* menu or the control panel to work with your pages. From the control panel, make sure that you have the correct site selected in the context menu and click the *Site Pages* link in the content section. If you're currently navigated to the site you wish to manage, click *Manage* from the Dockbar and select *Site Pages*. This is the exact same interface that you see in the control panel. To modify the single page in the site that you're on, click *Manage* and select *Page*. 
 
-![Figure 2.2: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
+![Figure 2.1: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
 
 For convenience, you can also navigate to the Sites page under the Portal section of the control panel and click *Actions* &rarr; *Manage Pages*. To quickly add a single page while you're browsing a site, click *Add* from the Dockbar and select *Page*, and a page is added immediately. You can then enter a name for the page and work on it immediately.
 
-![Figure 2.3: Managing Site Pages](../../images/04-managing-site-pages.png)
+![Figure 2.2: Managing Site Pages](../../images/04-managing-site-pages.png)
 
 *Site Pages* is an interface to view existing pages, create new pages, view pages, and export or import pages using Liferay Archive (LAR) files. Note that you can switch between managing a set of pages and managing a single page using the left-hand side navigation menu. Click on *Public Pages* or *Private Pages* to manage the group or click on an individual page to manage just that one. Switching views like this changes this list of available tabs to the right. By default, liferay.com, which we renamed nosester.com, contains a single public page called *Welcome*.
 
@@ -45,7 +45,7 @@ Regardless of whether the pages are public or private, Liferay uses the same int
 
 From the Manage Site Pages dialog box, you can add a page to the site by clicking the *Add Page* button. Because *Public Pages* is selected on the left, clicking *Add Page* here adds a top level page next to the Welcome page. You can, however, nest pages as deeply as you like. To create a sub-page under the Welcome page, select the *Welcome* page first and then create your page. If you later decide you don't like the order of your pages, you can drag and drop them in the list to put them in whatever order you want. Let's go ahead and add another top level page and name it *Community*. We'll use this page for the Recent Bloggers and Wiki portlets.
 
-![Figure 2.4: Adding Pages](../../images/04-web-content-add-page.png)
+![Figure 2.3: Adding Pages](../../images/04-web-content-add-page.png)
 
 When you create a new page, you can create either a blank page or a page prepopulated with portlets from a page template. When you're entering the name of the page, you can select from a list of page templates that are currently available. To view the pages once you add them, click the *View Pages* button. This is how you'd populate your pages with content and applications. This is covered in succeeding chapters.
 
@@ -55,7 +55,7 @@ If you're using the Manage Pages interface to create a new page, you'll have som
 
 **Panel Pages** can have any number of portlets on them, as selected by an administrator, but only one will be displayed at a time. The users select which portlet they want to use from a menu on the left side of the page, and the selected portlet takes up the entire page. 
 
-![Figure 2.5: A panel page](../../images/web-content-panel-page.png)
+![Figure 2.4: A panel page](../../images/web-content-panel-page.png)
 
 **Embedded Pages** display content from another website inside of your portal. An administrator can set a URL from in the page management interface, and that page will appear in the context and within the navigation of your Liferay portal.
 
@@ -158,7 +158,7 @@ Now that you know how to configure pages, let's look at the settings for the sit
 
 As with Site Pages, you can access Site Settings through the control panel or directly from the site using the Dockbar (*Manage* &rarr; *Site Settings*). 
 
-![Figure 2.x: Site Settings](../../images/web-content-site-settings.png)
+![Figure 2.7: Site Settings](../../images/web-content-site-settings.png)
 
 You'll find options to specify details and metadata about your site, set up friendly URLs and virtual hosts, configure search engine optimization settings, turn staging on or off, and specify a Google Analytics ID. Let's take a closer look. 
 
@@ -196,13 +196,13 @@ Next in the menu is Site Memberships, which is covered in chapter 12. There, you
 
 Let's create a page template that we can use in multiple places on our portal. First, go to the Control Panel, and under the **Portal** section, select *Page Templates*. You will see that Liferay has three already created for you: Blog, Content Display Page, and Wiki. Let's create one for a message board. Click *Add* and enter *Message Board* for the name, add a description, leave the *Active* box checked, and click *Save*. Now go to on *Actions &rarr Edit*, and click on *Open Page Template* at the bottom of the page. Once you on the page, go to *Manage &rarr Page Layout* and select the *2 Columns, 70/30* layout. We'll add a Message Board portlet to the left column and an Activities portlet to the right. Your changes are automatically saved as you make them.
 
-![Figure 2.5: Your page template should look like this.](../../images/page-template-message-board.png)
+![Figure 2.8: Your page template should look like this.](../../images/page-template-message-board.png)
 
 Now any time you add a page, anywhere on the portal, you'll have the option to make that page based on the Message Board template. If you ever determine that you've made enough pages with message boards, you can go back to the *Edit* page for the template and uncheck the *Active* box.
 
 Now let's create a *Site Template*. You can find the *Site Templates* page right next to *Page Templates* in the Control Panel. To create a Site Template, click on *Add* on the Site Templates page. Name the template *Online Store* and indicate in the description that it will have a shopping portlet and message boards. We'll leave it *Active*, leave *Allow Site Administrators to Modify the Pages Associated with This Site Template* checked, this way Site Administrators will be able to make modifications to the pages after the template has been applied. Click *Save* and then go to *Action &rarr Edit* for the new site template. Now you'll have the option to *Open site template* and make changes. Make this template with two pages, both with a single column layout. Name the first page *Online Store*, and add the Shopping portlet, and name the second page *Questions and Reviews* and add a Message Board. Your changes are automatically saved as you make them.
 
-![Figure 2.5: Your site template should look like this.](../../images/site-template-shopping.png)
+![Figure 2.9: Your site template should look like this.](../../images/site-template-shopping.png)
 
 Once you've created a site template, you have two ways to use them. Any time you are creating the initial pages for a site from the Control Panel, you'll have the option to create those pages based on a site template, and you also have the ability to apply the site template as users' personal pages using User Groups. When you create a User Group from the Control Panel, you have the option to set their personal public or private pages from a site template. For more information on user groups, see Chapter 12: Administering Liferay Portal.
 
@@ -213,7 +213,7 @@ Whether you're using the Site Template with a user group or with a site, when yo
 
 Liferay 6.1 makes it easier to access Web Content management without using the control panel. You can now click *Manage* and then *Site Content* to access the same Web Content controls that are featured in the control panel right from your portal page. 
 
-![Figure 2.x: Site Content](../../images/web-content-site-content.png)
+![Figure 2.10: Site Content](../../images/web-content-site-content.png)
 
 You can manage the following kinds of content:
 
@@ -272,7 +272,7 @@ Adding portlets to a page is simple. Let's add some to our Collaboration page.
 
 See how easy it is to add applications to your pages? We've gone one step further: we've got the Wiki portlet, the Blogs Aggregator portlet, and then a nested portlet with a different layout and the Alerts, Search, and Dictionary portlets in the figure below. 
 
-![Figure 2.7: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
+![Figure 2.11: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
 
 You'll find it's easy to make your pages look exactly the way you want them to. If the layout options provided aren't enough, you can even develop your own. More information about that can be found in Liferay's official guide to development, *Liferay in Action*.
 
@@ -291,7 +291,7 @@ Let's say we wanted to create a page only for administrators to see. We can do t
 7.  Uncheck the *View* and *Add Discussion* permissions next to the Site Member role.
 8.  Click the *Save* button.
 
-![Figure 2.8: Permissions for Admin Tips](../../images/04-web-content-page-permissions.png)
+![Figure 2.12: Permissions for Admin Tips](../../images/04-web-content-page-permissions.png)
 
 Congratulations! You've just changed the permissions for this page so that only site administrators can view it. Any users you add to this role can now see the page. Other users, even members of this site, won't have permission to see it.
 

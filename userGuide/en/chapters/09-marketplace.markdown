@@ -202,11 +202,11 @@ Does your organization make use of any Enterprise Planning (ERP) software that e
 
 ### Themes
 
-![Figure 9.x: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
+![Figure 9.14: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
 
 Themes are hot deployable plugins which can completely transform the look and feel of the portal. Most organizations have their own look and feel standards which go across all of the web sites and web applications in the infrastructure. Liferay makes it possible for a site designer to create a theme plugin which can be installed, allowing for the complete transformation of the portal to whatever look and feel is needed. There are lots of available theme plugins on Liferay's web site, and more are being added every day. This makes it easier for those who wish to develop themes for Liferay, as you can now choose a theme which most closely resembles what you want to do and then customize it. This is much easier than starting a theme from scratch. You can learn more about theme development in *Liferay in Action*.
 
-![Figure 9.x: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
+![Figure 9.15: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
 
 ### Layout Templates
 
@@ -228,21 +228,21 @@ Use the dockbar's *Go to* menu to select *Control Panel*. Under the Server headi
 
 The default view of the Plugins Installation page shows which plugins are already installed on the system and whether whether or not they are active. The Portlet Plugins tab allows you reindex certain portlets to improve their searchability. The Theme and Layout Template Plugins tabs display which portal roles can access them.
 
-![Figure 9.x: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
+![Figure 9.16: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
 
-![Figure 9.x: Plugins Installation Theme Tab Default View](../../images/marketplace-plugins-installation-theme-tab.png)
+![Figure 9.17: Plugins Installation Theme Tab Default View](../../images/marketplace-plugins-installation-theme-tab.png)
 
 If you would like to see what plugins are available, you can do so by clicking the *Install More [Plugin Type]* button, where [Plugin Type] changes based on which tab you are viewing. Please note that the machine upon which Liferay is running must have access to the Internet in order to be able to read the Official and Community repositories. If the machine does not have Internet access, you will need to download the plugins from the site and install them manually. We will discuss how to do this later in this chapter.
 
 It's easy to navigate from the initial page of the Plugin Installer to different pages since the plugins are listed alphabetically. You can also change the number of items per page and navigate to a specific page if you know where a particular plugin appears in the list. This is a standard feature of Liferay, and you will see it in most of Liferay's portlets.
 
-![Figure 9.x: Installing Plugins](../../images/marketplace-plugins-installer.png)
+![Figure 9.18: Installing Plugins](../../images/marketplace-plugins-installer.png)
 
 After you click the *Install More [Plugin Type]* button, a new view appears. This view has multiple tabs, and by default, displays the *Portlet Plugins* tab. Note that the list displayed is a list of all of the plugins that are available across all of the repositories to which the server is subscribed. Above this is a search mechanism which allows you to search for plugins by their name, by whether or not they are installed, by tag, or by which repository they belong to. To install a plugin, choose the plugin by clicking on its name. For example, if you want to use online web forms on your web site, you might want to install the Web Form portlet. This portlet provides a handy interface which allows you to create forms for users to fill out. You can specify an address to which the results will be emailed.
 
 Find the Web Form Portlet in the list by searching for it or browsing to it. Once you have found it, click on its name. Another page will be displayed which describes the portlet plugin in more detail. Below the description is an *Install* button. Click this button to install your plugin.
 
-![Figure 9.x: Installing the Web Form Portlet](../../images/marketplace-installing-web-form-portlet.png)
+![Figure 9.19: Installing the Web Form Portlet](../../images/marketplace-installing-web-form-portlet.png)
 
 Once you click *Install*, your chosen plugin will automatically download and be installed on your instance of Liferay. If you have the Liferay console open, you can view the deployment as it happens. When it is finished, you should be able to go back to the Add Application window and add your new plugin to a page in your portal.
 
@@ -264,7 +264,7 @@ You can still use the control panel to install plugins that are not available fr
 
 If your server is firewalled, you will not see any plugins displayed in the Portlet Plugins or Theme Plugins tabs. Instead, you will need to click the *Upload File* tab. This gives you a simple interface for uploading a `.war` file containing a plugin to your Liferay Portal.
 
-![Figure 9.x: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
+![Figure 9.20: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
 
 Click the *Browse* button and navigate your file system to find the portlet or theme `.war` you have downloaded. The other field on the page is optional: you can specify your own context for deployment. If you leave this field blank, the default context defined in the plugin (or the `.war` file name itself) will be used.
 
@@ -366,7 +366,7 @@ Save the file and then restart your container. Now plugins should install correc
 
 Instead of changing the hot deploy destination directory in your `portal-ext.properties` file, you can do it via the Plugin Installer. To change change the setting this way, navigate to the Plugins Installation page of the control panel, click the *Install More [Plugins]* button. This will bring you to the Plugin Installer page. Next, click on the *Configuration* tab of the Plugin Installer page. There are a number of settings that you can change on this tab, including the default folders for hot deploy, where Liferay should look for plugin repositories, and so on.
 
-![Figure 9.x: Changing the Hot Deploy Destination Directory](../../images/marketplace-plugin-installer-configuration.png)
+![Figure 9.21: Changing the Hot Deploy Destination Directory](../../images/marketplace-plugin-installer-configuration.png)
 
 The setting to change is the field labeled *Destination Directory*. Change this to the full path to your container's auto deploy folder from the root of your file system. When you are finished, click the *Save* button at the bottom of the form. The setting will now take effect without your having to restart your container. Note that the setting in the control panel overrides the setting in the properties file.
 
@@ -438,11 +438,11 @@ We will first look at creating a plugin repository using the Software Catalog in
 
 You will want to use the Software Catalog if you will have multiple users submitting portlets into the repository, and if you don't want to worry about creating the `liferay-plugin-repository.xml` file yourself.
 
-![Figure 9.x: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
+![Figure 9.22: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
 
 Each site in your portal can have an instance of the Software Catalog. The control panel presents you with the software catalog for whichever site you are working on. This means that different sites can have different software repositories, so you can host several software repositories on the same instance of Liferay if you wish—they just have to be in different sites. Choose the site that will host the plugin repository and go to the control panel. You will see at the top of the screen a message that says “Content for [Site],” where [Site] is the site you were on when you selected the control panel from the dockbar. If you want to administer the software catalog for a different site, you can select it from the selection box.
 
-![Figure 9.x: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
+![Figure 9.23: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
 
 The Software Catalog has several tabs. The first tab is labeled Products. The default view of the portlet, when populated with software, displays what plugins are available for install or download. This can be seen in the version on Liferay's home page.
 
@@ -456,7 +456,7 @@ Your next step will be to create the product record in the software catalog. Thi
 
 To create the product record in the Software Catalog portlet, click the *Products* tab, and then click the *Add Product* button. Fill out the form with information about your product.
 
-![Figure 9.x: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
+![Figure 9.24: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
 
 **Name:** The name of your software product.
 
@@ -496,7 +496,7 @@ So click the *Framework Versions* tab and then click the *Add Framework Version*
 
 Give the framework a name, a URL, and leave the *Active* check box checked. For our example, we have entered 6.0.3 for the name, because our portlet should work on that version and higher, and [http://www.liferay.com](http://www.liferay.com) for the URL. Click *Save*.
 
-![Figure 9.x: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
+![Figure 9.25: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
 
 Now go back to the *Products* tab and click on your product. You will notice that a message is displayed stating that the product does not have any released versions. Click the *Add Product Version* button.
 

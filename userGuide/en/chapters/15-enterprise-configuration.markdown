@@ -21,7 +21,7 @@ With all of that said, let's get started configuring Liferay for the enterprise.
 
 Liferay Portal is designed to serve everything from the smallest to the largest web sites. Out of the box, it's configured optimally for a single server environment. If one server isn't sufficient to serve the high traffic needs of your site, Liferay scales to the size you need.  
 
-![Figure 15.x: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
+![Figure 15.1: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
 
 Liferay works well in clusters of multiple machines (horizontal cluster) or in clusters of multiple VMs on a single machine (vertical cluster), or any mixture of the two. Once you have Liferay installed in more than one application server node, there are several optimizations that need to be made. At a minimum, Liferay should be configured in the following way for a clustered environment:
 
@@ -136,7 +136,7 @@ Once you do this, you can set up your DNS so that several domain names point to 
 
 If you're using the RoundRobinShardSelector class, Liferay automatically enters data into each instance one by one. If you're using the `ManualShardSelector` class, you'll have to specify a shard for each instance using the UI.
 
-![Figure 15.x: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
+![Figure 15.2: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
 
 The last thing you need to do is modify the `spring.configs` section of your `portal-ext.properties` file to enable the sharding configuration, which by default is commented out. To do this, your `spring.configs` should look like this (modified section is in bold):
 
@@ -199,7 +199,7 @@ The file system store was the first store created for Liferay and is heavily bou
 
 This store creates a folder structure based on primary keys in the Liferay database. If, for example, you upload a presentation with the file name `workflow.odp` into a folder called *stuff*, the file system store creates a folder structure which looks like figure 15.x. 
 
-![Figure 15.x: Liferay's file system store creates a folder structure based on primary keys in Liferay's database. ](../../images/enterprise-file-system-store.png)
+![Figure 15.3: Liferay's file system store creates a folder structure based on primary keys in Liferay's database. ](../../images/enterprise-file-system-store.png)
 
 The first folder is the company ID to which the site belongs. The second folder is the group ID of the site where the document resides. The third is the ID of the document itself, and finally the file name of the document is renamed to a version number for storing multiple versions of the document. 
 
@@ -211,7 +211,7 @@ Speaking of other store implementations, let's look at some others that Liferay 
 
 Liferay's advanced file system store is similar to the default file system store. Like that store, it saves files to the local file system--which, of course, could be a remote file system mount. It uses a slightly different folder structure to store files, which is pictured below. 
 
-![Figure 15.x: The advanced file system store creates a more nested folder structure than the file system store. ](../../images/enterprise-adv-file-system-store.png)
+![Figure 15.4: The advanced file system store creates a more nested folder structure than the file system store. ](../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating systems have limitations on the number of files which can be stored in a particular folder. The advanced file system store overcomes this limitation by programmatically creating a structure that can expand to millions of files, by alphabetically nesting the files in folders. This not only allows for more files to be stored, but also improves performance as there are less files stored per folder. 
 
@@ -532,7 +532,7 @@ Normally, when garbage collection (GC) runs, it stops all processing in the JVM 
 
 There are some JVM switches that you can enable which can reduce the amount of time processing is halted while garbage collecting happens. These can improve the performance of your Liferay installation if applied properly. As always, you will need to use a profiler to monitor garbage collection during a load test to tune the numbers properly for your server hardware, operating system, and application server.
 
-![Figure 15.x: Java Memory](../../images/portal-admin-ch7_html_518957a7.gif)
+![Figure 15.5: Java Memory](../../images/portal-admin-ch7_html_518957a7.gif)
 
 The Java heap is divided into sections for the young generation, the old generation, and the permanent generation. The young generation is further divided into three sections: Eden, which is where new objects are created, and two “survivor spaces,” which we can call the *From* and *To* spaces. Garbage collection occurs in stages. Generally, it's more frequently done in the young generation, less frequently done in the old generation, and even less frequently done in the permanent generation, where long-lived objects reside. When garbage collection runs in the young generation, Eden is swept for objects which are no longer referenced. Those that are still around are moved to the “To” survivor space, and the “From” space is then swept. Any other objects in that space which still have references to them are moved to the “To” space, and the “From” space is then cleared out altogether. After this, the “From” and the “To” spaces swap roles, and processing is freed up again until the next time the JVM determines that garbage collection needs to run.
 

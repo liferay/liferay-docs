@@ -62,7 +62,7 @@ As we've stated above, content is the reason web sites exist. Liferay Portal has
 
 We'll begin by creating simple content using Liferay's WYSIWYG Editor and then we'll publish it to the home page of Nose-ster's web site. This a fast and straightforward process that demonstrates how easy it is to create and publish content onto your Liferay Portal. So let's get familiar with the Web Content section of the control panel so we can create and publish our first pieces of content.
 
-![Figure 3.8: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
+![Figure 3.1: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
 
 When you manage web content from the control panel, you can select the location where the content resides. For instance, you can add content that's available to a specific site or globally across the portal. The Content section of the control panel displays as its heading the name of the site you're currently working on. This heading is clickable: you can change where you're working by using the drop down attached to the heading. We will add our first piece of content to the *Nose-ster* site, which we defined earlier in the chapter as the default site.
 
@@ -72,7 +72,7 @@ Once you have the Nose-ster site selected, click on the *Web Content* link in th
 
 For now, type the words *Welcome to Nose-ster* in the *Name* field. Notice that content can be localized in whatever language you want. If you click the *localize* check box, two select boxes appear which allow you to pick the language you're working in and the language that is the default. You can enter translations of your content for any language in the list. The screenshot below shows this interface but for now, we won't be using it, so you can leave it unchecked. In the content field, add a short sentence announcing that the web site is up and running.
 
-![Figure 3.9: The Web Content Editor](../../images/04-web-content-wysiwyg.png)
+![Figure 3.2: The Web Content Editor](../../images/04-web-content-wysiwyg.png)
 
 Getting a new web site up and running is an exciting step for anyone, whether it is a large corporation or a small non-profit charity. To celebrate this momentous achievement at Nose-ster, let's give our announcement some of the pomp and circumstance we think it deserves!
 
@@ -80,7 +80,7 @@ Using the editor, select all the text and then change the style to Heading 1 and
 
 You could insert an image here as well as more text with a different style, as demonstrated in the screenshot below. You can also add bullets, numbering, links to another site, or custom images. You can even add an emoticon. Let's add a smiley face at the end of our announcement.
 
-![Figure 3.10: Customizing Content](../../images/04-web-content-example2.png)
+![Figure 3.3: Customizing Content](../../images/04-web-content-example2.png)
 
 The WYSIWYG editor is a flexible tool that gives you the ability to add text, images, tables, links, and more. Additionally, you can modify the display to match the purpose of the content. Plus it's integrated with the rest of Liferay Portal: for example, when you upload an image to be added to a page, that image can be viewed and manipulated in the Documents and Media portlet.
 
@@ -90,7 +90,7 @@ If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can cli
 
 Permissions in Liferay WCM work the same way they do everywhere else in Liferay. By default, content is viewable by Anyone (Guest Role). You can limit viewable permissions by selecting any Role from the drop-down or in the list. Additionally, Liferay Portal provides the ability to customize permissions in more detail. Select the *More Options* link next to the drop down button, and you'll find the different activities you can grant or deny to your web content.
 
-![Figure 3.11: Permissions for Web Content](../../images/04-web-content-content-permissions.png)
+![Figure 3.4: Permissions for Web Content](../../images/04-web-content-content-permissions.png)
 
 For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with the your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. So let's go back to the page where we want the content displayed and add the Web Content Display portlet (in this case, the Welcome page).
 
@@ -98,7 +98,7 @@ For this piece of web content, we don't need to change anything. After you're fi
 
 Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page, by selecting *Add &rarr; Web Content Display* from the Dockbar.
 
-![Figure 3.11: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
+![Figure 3.5: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
 Once the portlet appears, drag it to the position on the page where you want your content to appear. You can have as many Web Content Display portlets on a page as you need, which gives you the power to lay out your content exactly the way you want it. 
 
@@ -106,7 +106,7 @@ To add existing web content, select the *gear* icon on the lower left of the por
 
 Naturally, if your content appears in the list, you can simply select it. If there is lots of published content available, you could search for the content by name, ID, type, version, content, and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
 
-![Figure 3.12: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
+![Figure 3.6: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also enable document conversion for your content. This gives your users the ability to download your content in their format of choice. This is especially handy if you are running a research or academically oriented site; users can very quickly download PDFs of your content for their research projects.
 
@@ -128,7 +128,7 @@ Editing content that's already been published is just as easy as creating new co
 
 Once the content is displayed--whether you've selected content or created it in the Web Content Display portlet--you can edit the content directly from the Web Content Display portlet or from the control panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This launches the WYSIWYG editor and from there you can make any necessary changes.
 
-![Figure 3.12: Edit, Select, and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
+![Figure 3.7: Edit, Select, and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
 
 When you publish your content this way, it becomes available immediately (unless, of course, you have a workflow enabled, which we'll see below). This happens whether you edit it in place or in the control panel.
 
@@ -162,7 +162,7 @@ Go back to the control panel and select *Web Content* from the Site section. Cli
 
 It's very easy to edit structures: all you have to do is drag elements into the structure and then give them names. For instance, select the *Checkbox* element under the *Form Controls* tab and drag it onto the structure. You can do the same with any of the elements. To remove it from the structure, simply select the *Delete* icon (black circle with X) in the upper right corner of the element. Take a moment to add, delete, and rearrange different elements.
 
-![Figure 3.13: Structure Elements](../../images/04-web-content-structure-editor.png)
+![Figure 3.8: Structure Elements](../../images/04-web-content-structure-editor.png)
 
 Liferay supports the following elements in structures:
 
@@ -211,7 +211,7 @@ As with everything else in Liferay, you can set permissions on structures. Let's
 
 Setting permissions on structures is done using the same procedure as permissions everywhere else in Liferay. Most users should not have the ability to edit structures. Structures are coupled with templates, which require some web development knowledge to create. For this reason, only trusted developers should be able to create structures and templates. Users, of course, should be able to view structures. The View permission enables them to make use of the structures to create content.
 
-![Figure 3.14: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.9: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles, and this is the recommended way to handle permissions for structures.  
 
@@ -239,7 +239,7 @@ Liferay supports templates written in four different templating languages, to su
 
 Liferay WCM makes it easy to create structures, templates, and content from the same interface. Let's go through the entire flow of how you'd create a structure, link it to a template, and then create content using them both. We'll use Velocity for our template, and we'll lay out the structure fields systematically to go along with the format we've defined for our content.
 
-![Figure 3.14: Adding Template Interface](../../images/04-web-content-templates-create.png)
+![Figure 3.10: Adding Template Interface](../../images/04-web-content-templates-create.png)
 
 1.  Go back to the Web Content section of the control panel and click *Add* under *Web Content*.
 2.  Click the *Edit* icon for Structures.
@@ -289,9 +289,9 @@ After this, the template attempts to get a request parameter called `read_more`.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.x: Initial View](../../images/04-web-content-adv-example1.png)
+![Figure 3.11: Initial View](../../images/04-web-content-adv-example1.png)
 
-![Figure 3.x: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
+![Figure 3.12: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
 
 Of course, there is much, much more you can do with structures and templates. Check out the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)) for further information and examples.
 
@@ -319,7 +319,7 @@ Additionally, you may want to create content and send it through a review and ap
 
 Liferay's WCM lets you define when your content goes live. You can determine when the content is displayed, expired, and/or reviewed. This is an excellent to way to keep your site current and free from outdated (and perhaps incorrect) information. The scheduler is built right into the form that your users make use of to add web content, in the same column as the structure and template selectors.
 
-![Figure 3.16: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
+![Figure 3.13: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 **Expiration Date:** Sets a date to expire the content. The default is one year.
@@ -349,7 +349,7 @@ By contrast, tags are like the index of a book: they show where many different t
 
 Tagging and categorizing web content is easy. You can do it at the bottom of the same form you use to add content. If you open the *Categorization* section of the form, you'll be presented with an interface for adding tags and categories.
 
-![Figure 3.17: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
+![Figure 3.14: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
 
 The control panel contains an interface for managing tags and categories for each site in the portal. This interface can be used to manage all your tags and categories in one place. We'll look at this interface in the next chapter. 
 
@@ -375,7 +375,7 @@ Let's first look at how we might select content manually. You'll see that it's v
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell the Asset Publisher that you want to select content manually. You can select what you want to be published within the portlet, or you can create new content  from within the Asset Publisher.
 
-![Figure 3.18: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 3.15: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
 
 Clicking *Add New* gives you a menu of options, enabling you to create the content right where you are. You can create blogs, bookmarks, calendar entries, documents, images, and of course, web content. Anything you create here is added to the list below of assets that are displayed by the portlet.
 
@@ -393,7 +393,7 @@ Asset Publisher's default behavior is to select assets dynamically according to 
 
 **Asset Type:** Choose whether you'll display any asset or only assets of a specific type, such as only web content, only wiki entries, or any combinations of multiple types.
 
-![Figure 3.19: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+![Figure 3.16: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 **Filter Rules:** Add as many filters on tags or categories as you like. You can choose whether the content contains or does not contain any or all categories or tags that you enter.
 
@@ -437,7 +437,7 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 **Show Metadata:** Allows you to select from the available metadata types (see below).
 
-![Figure 3.20: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
+![Figure 3.17: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS Feeds.
 
@@ -463,7 +463,7 @@ First, let's add a new page. Click *Add &rarr; Page* from the somewhere in the d
 
 Now we're ready to activate the staging feature for this site. Go to the control panel then to *Site Settings* and select *Staging* from under the *Advanced* heading.
 
-![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.18: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live*. If you want to set up a remote staging environment, it's easy. First, select *Remote Live*, and then supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions &rarr; Edit* on any site in the control panel. Either way, once you make a selection (*Local Live* or *Remote Live*), more options become available.
 
@@ -477,7 +477,7 @@ Enabling *Page Versioning* makes it so that you can work in parallel with other 
 
 If you navigate back to the News and Events page you'll now notice some new items along the top of the screen. These will help us manage staged pages. You'll also notice that most of your page management options have been removed, because you can now no longer directly edit live pages--you'll now use the staging environment to do that. Click on *Staging* to view the staged area. Your management options are restored, and you have some new options related to staging.
 
-![Figure 3.22: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.19: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that the Calendar portlet isn't there. That's because you've staged a change to the page, but haven't published that change yet to the live site. Also, only the page changes are staged; web content itself goes through a whole different workflow process (which we'll get to later). Go back to the staged page, and look at the options you have available. From here you can *Undo* changes, view a *History* of changes, *Mark as Ready for Publication*, and *Manage Page Variations*.
 
@@ -493,7 +493,7 @@ After you're done making changes to the staged page, click on *Mark as Ready for
 
 **Schedule Publication to Live:** lets you set a specific date to publish or to setup recurring publishing. You could use this, for example, to publish all changes made during the week every Monday morning without any further intervention.
 
-![Figure 3.22: Ready to publish to Live ](../../images/04-web-content-staging-publish.png)
+![Figure 3.20: Ready to publish to Live ](../../images/04-web-content-staging-publish.png)
 
 You may have noticed that something appears to be missing from this process. In particular, you might be asking the question, "How do I reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's Workflow engine. In order to have a review process for staged pages, you need to make sure that you have a workflow engine configured, and that you have Staging set up in the workflow. When using a workflow, clicking *Mark as Ready for Publication* submits the staged pages into the workflow. Once all necessary approvals have been completed, the *Publish to Live Now* and *Schedule for Publication* options become available. 
 
@@ -505,19 +505,19 @@ Let's say that you're working on a product-oriented site where you'll have sever
 
 To create a new page variation, click *Manage Page Variations* on the staging menu bar. This brings you to a list of existing versions of your page. Click *Add Page Variation* to create a new one. From the *Add Page Variation* screen, you can set a Name, Description, and set your new variation to copy the content from an existing variation.
 
-![Figure 3.23: Creating a new variation](../../images/04-web-content-add-site-pages-variation.png)
+![Figure 3.21: Creating a new variation](../../images/04-web-content-add-site-pages-variation.png)
 
 Site Page Variations are the top level variations, and each one will become its own **Main Variation**, and each Main Variation can in turn have different variations for each page under it. You can switch between different variations by  clicking on them from the staging menu bar. It's also possible to set permissions on each variation, so that certain users have access to manage some, but not all page variations. Page variations can also have different branches, so you could, for example, have three main variations, and then have three varitions of each of those, resulting in nine different versions of a page. While this can be confusing at first, it all comes together when you understand the concept of **Merging**.
 
 Merging occurs automatically once you click *Merge*, and it does its best to preserve all changes made in different branches. For example, if you add two different portlets to a page in two different variations, and then merge them with the main variation, both portlets are added to the page after the merge. You could then do some tweaking on the final merged product before publishing to live.
 
-![Figure 3.24: Branching lets you easily handle a site redesign at the same time as multiple product launches based on season.](../../images/04-web-content-staging-forking.png)
+![Figure 3.22: Branching lets you easily handle a site redesign at the same time as multiple product launches based on season.](../../images/04-web-content-staging-forking.png)
 
 For example, suppose you want to manage a couple of variations of a page for Thanksgiving and Christmas. Initially we could create a Site Page Variation for general changes called *Current Design* and make any maintenance changes there. Whenever we have anything that needs to be published, we would merge those changes with the Main Variation and publish it.
 
 In the meantime, we could duplicate the pages from the Current Design variation in a *Thanksgiving Page* variation, and make additional changes to the page. Once it gets close to Thanksgiving, we could merge Thanksgiving Break with the Current Design, and subsequently merge up to the Main Variation again. Once this is complete, we could make any necessary tweaks after the merge, and Publish the pages. We would then repeat the same steps at Christmas time.
 
-![Figure 3.25: The Thanksgiving branch.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.23: The Thanksgiving branch.](../../images/04-web-content-branch-thanksgiving.png)
 
 At the same time, a separate team could be working on a site redesign that has nothing to do with the season-based changes that are done to the main web site during the redesign. After Christmas, the new site design could be merged in order to launch for the new year, making the redesign the main variation. 
 
@@ -535,7 +535,7 @@ Liferay's workflow engine is called Kaleo workflow, and it ships with Liferay CE
 
 To enable workflow for Web Content, navigate to the control panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
-![Figure 3.26: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 3.24: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 6, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
 
@@ -549,7 +549,7 @@ Let's set up Liferay's Workflow for the Nose-ster web site.
 
 That's all it takes to set up workflow for web content. Now that workflow is enabled, publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at Nose-ster. Return to the home page and click the *Add Web Content* icon on the Web Content Display portlet. Call the new content *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
 
-![Figure 3.27: Pending Workflow](../../images/04-web-content-workflow-config.png)
+![Figure 3.25: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in control panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow, and anyone in this role can approve content as well.
 
