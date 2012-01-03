@@ -88,7 +88,7 @@ To add an organization, click the *Users and Organizations* link on the left sid
 
 ![Figure 12.3: Adding an organization](../../images/01-add-organization-screen.png)
 
-**Name:** is name of the organization.
+**Name:** lets you enter a name for the organization.
 
 **Type:** lets you choose whether this is a regular organization or a location. A location cannot have any suborganizations.
 
@@ -156,9 +156,9 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 
 ![Figure 12.5: Editing a Site](../../images/01-site-editor.png)
 
-**Details:** lets you edit the information you entered when you created the site and allows you to choose a site template for the public or private pages of your site. Leave the *Keep a Link to the Site Template* box checked to automatically update your site if the associated site template changes. If you uncheck this box but recheck it later, the template pages then will be reapplied to your site, overwriting any changes that may have been made. 
+**Details:** lets you edit the information you entered when you created the site and allows you to choose a site template for the public or private pages of your site. If you select a site template, leave the *Enable propagation of changes from the site template* box checked to automatically update your site if the associated site template changes. If you uncheck this box but recheck it later, the template pages then will be reapplied to your site, overwriting any changes that may have been made.
 
-**Categorization:** allows you to apply Liferay's tagging mechanism to the site. Tags can be very useful for sites within the portal whose functions are easily described by keywords.
+**Categorization:** allows you to apply Liferay's tagging mechanism to the site. Tags can be very useful for sites within the portal whose functions can easily be described by keywords.
 
 **Site URL:** lets you set friendly URLs and virtual hosts for your web site.
 
@@ -247,7 +247,7 @@ Liferay version 5.1 introduced the concept of associating site templates with us
 
 You can create a user group's site manually or base it on a site template. To create a user group's site manually, use the *Actions* menu mentioned above and choose *Manage Site Pages*. You can add a new public or private page by selecting the appropriate tab and then clicking the *Add Page* button. Once the user group has at least one public or private page in place, you can go back to the *Actions* menu and click on the *Go to the Site's Public Pages* or *Go to the Site's Private Pages* link to open the user group's site in a new browser window. You can add more pages and portlets and configure site settings from the new window.
 
-You can also base a user group's site on a template. When editing a user group, use the Public Pages and Private Pages drop down lists to select a site template. Leave the *Keep a Link to the Site Template* box checked to automatically updated users' personal sites if the associated site template changes. If you uncheck this box but recheck it later, the template pages will be copied to the users' sites, overwriting any changes they may have made. You can allow users to make changes to the pages they receive from the user group by enabling the customization options of each page.
+You can also base a user group's site on a template. When editing a user group, use the Public Pages and Private Pages drop down lists to select a site template. Leave the *Enable propagation of changes from the site template* box checked to automatically updated users' personal sites if the associated site template changes. If you uncheck this box but recheck it later, the template pages will be copied to the users' sites, overwriting any changes they may have made. You can allow users to make changes to the pages they receive from the user group by enabling the customization options of each page.
 
 This flexibility lets you achieve almost any desired configuration for a user's personal site without having to modify it directly. When a user is assigned to a user group, the configured site pages are copied directly to the user's personal site.
 
@@ -273,7 +273,7 @@ From that list, one or more users can be selected to be assigned as members of t
 
 For example, by default, newly created users are given *Welcome* pages on the public pages portion of their personal sites. This Welcome page contains the Language, Search, and Blogs portlets. You can see the effect of the *Bloggers* site template on the public pages of Joe Bloggs's personal site in the figure above. When Joe Bloggs was added to the *Bloggers* group, he received a *Blogs* page with the *Blogs* and *Recent Bloggers* portlets.
 
-Once the template pages have been copied to a user's personal site, the copies may be modified by the user. Users with administrative privileges over their personal sites will be able to modify the pages and their contents provided that the *Allow Site Administrators to Modify the Pages Associated with This Site Template* box has been checked for the template. When a user is removed from a user group, the associated pages are removed from the user's personal site. Moreover, if a user is removed from a group and is subsequently added back, the group's template pages will be copied to the user's site a second time. Note that if a user group's site is based on a template and an administrator modifies the user group's site template after users have already been added to the group, those changes will only take effect if the *Keep a Link to the Site Template* box for the user group was checked.
+Once the template pages have been copied to a user's personal site, the copies may be modified by the user. Users with administrative privileges over their personal sites will be able to modify the pages and their contents provided that the *Allow Site Administrators to Modify the Pages Associated with This Site Template* box has been checked for the template. When a user is removed from a user group, the associated pages are removed from the user's personal site. Moreover, if a user is removed from a group and is subsequently added back, the group's template pages will be copied to the user's site a second time. Note that if a user group's site is based on a template and an administrator modifies the user group's site template after users have already been added to the group, those changes will only take effect if the *Enable propagation of changes from the site template* box for the user group was checked.
 
 ### Roles
 
