@@ -30,7 +30,7 @@ No matter which method you choose, you will see the same content and apps.
  
 If you are new to the Marketplace, the easiest way to access it is by using your browser to navigate to [http://liferay.com/marketplace](http://liferay.com/marketplace).  You will be presented with the Marketplace home page.
 
-![Figure 2.1: Marketplace Home Page](../../images/marketplace-homepage.png) 
+![Figure 9.1: Marketplace Home Page](../../images/marketplace-homepage.png) 
  
 In the center of the page you will see a number of icons. Each icon represents an individual app, and they are grouped into a couple of different areas:
 
@@ -42,13 +42,13 @@ If you click on the title of an app, you can access details about the app, inclu
  
 On the left, you'll see a list of App and Theme categories. Clicking on the individual categories will allow you to browse apps in that category.
 
-![Figure 2.2: Browsing Apps in Marketplace](../../images/marketplace-browsing-apps.png)
+![Figure 9.2: Browsing Apps in Marketplace](../../images/marketplace-browsing-apps.png)
 
 Below that are your search and filter options. This allows you to narrowly search for apps with specific titles, compatibilities, or other search criteria. Typing in search terms and clicking Search will perform the search.
  
 At the bottom is a Tag Cloud. Individual apps can be tagged with specific keywords or phrases for easier finding. The Tag Cloud is a collection of these keywords. The larger the keyword, the more popular the tag. Clicking on a tag is the same as performing a search with the tag as the search criteria, and you will get a listing of apps using that tag.
 
-![Figure 2.3: Marketplace Apps by Tag](../../images/marketplace-apps-by-tag.png)
+![Figure 9.3: Marketplace Apps by Tag](../../images/marketplace-apps-by-tag.png)
  
 ### Logging In
 
@@ -64,11 +64,11 @@ On your existing `liferay.com` Profile page, you will notice a new tab entitled 
 
 This page lists apps that you have authored and uploaded, showing you details such as the number of downloads, the current price, and other relevant information. From here you can manage the apps that you have created (please see the Marketplace Developer Guide for detail on this topic).
  
-![Figure 2.4: Purchased an App](../../images/marketplace-purchased-app.png)
+![Figure 9.4: Purchased an App](../../images/marketplace-purchased-app.png)
  
 This page lists the apps that you have downloaded and/or purchased.  From this screen, you can find information about the authors of the apps you have downloaded, and you can re-download the app (for example, if you lost your copy or have re-installed Liferay and wish to re-deploy the app). This option is also useful for downloading apps and deploying them to offline instances of Liferay that do not have direct access to `liferay.com`.
  
-![Figure 2.5: Upload an App](../../images/marketplace-upload-app.png)
+![Figure 9.5: Upload an App](../../images/marketplace-upload-app.png)
  
 This screen allows you to upload a new app and make it available in the marketplace. Please see the Marketplace Developer Guide for more detail on authoring your own app.
  
@@ -78,11 +78,11 @@ There are many ways to search for and find apps you are interested in.
 
 1. Browsing Categories - Click on a category (for example, *Communication* or *Social Networking*) to see a list of interesting apps in that category. Upon clicking a category, you are presented with a list of featured apps for that category, as well as a canonical listing of all apps. Also, on the right, are various lists of *Top 10* apps within that category.
 
-![Figure 2.6: Browsing Categories](../../images/marketplace-browsing-categories.png)
+![Figure 9.6: Browsing Categories](../../images/marketplace-browsing-categories.png)
  
 2. Searching. To search for an app, type in search criteria in the search box on the left, and click Search. Apps matching the specified search criteria are displayed.
 
-![Figure 2.7: Marketplace Search Box](../../images/marketplace-search-box.png)
+![Figure 9.7: Marketplace Search Box](../../images/marketplace-search-box.png)
 
 **A Note on Compatibility and Versioning**
 
@@ -100,7 +100,7 @@ Some apps are written to work across a wide range of Liferay Platform releases. 
  
 Once you have found an app you wish to download and use, click on the name of the app to display its detailed information screen.
 
-![Figure 2.8: Detailed App Information](../../images/marketplace-app-information.png)
+![Figure 9.8: Detailed App Information](../../images/marketplace-app-information.png)
 
 On this screen, there are a number of items to assist in learning more about the app.
  
@@ -120,7 +120,7 @@ In addition to basic information, you will also find information on:
 
 In the lower section, you will find Reviews and Ratings for this app.  Check here to find out what other people are saying about this app.  In addition, on a separate tab, you will find the history of versions for this app, where you can download other versions (for example, if you are using an older version of the Liferay Platform, you may need to download a specific version of this app that is compatible with the version of the Liferay Platform you are using).
  
-![Figure 2.9: Detailed App Information](../../images/marketplace-app-version-history.png)
+![Figure 9.9: Detailed App Information](../../images/marketplace-app-version-history.png)
 
 ### Downloading and Installing
 
@@ -132,11 +132,11 @@ The easiest way to install an app is to do so from your Liferay Administration c
  
 Once you are logged in as an administrator, click the *Manage* menu at the top of the screen, and choose *Control Panel*. You are presented with the Liferay Administration console, a.k.a. Control Panel.
 
-![Figure 2.10: Marketplace from the Control Panel](../../images/marketplace-control-panel.png)
+![Figure 9.10: Marketplace from the Control Panel](../../images/marketplace-control-panel.png)
  
 Click on the *Marketplace* link at the upper-left. Before you are able to access the Marketplace via the control panel, you will need to associate your `liferay.com` login credentials with your local administrator account. You will be presented with a series of login screens.
 
-![Figure 2.11: Marketplace Login Screen](../../images/marketplace-login.png)
+![Figure 9.11: Marketplace Login Screen](../../images/marketplace-login.png)
  
 **VERY IMPORTANT**: The local admin user you associate with your `liferay.com` account will be THE ONLY USER who will be able to access and install apps from the Marketplace. Be sure you are logged into your local Liferay install using the account you wish to designate the Marketplace Administrator. Once this linkage is established, there is no way to undo this, short of re-installing Liferay.
  
@@ -144,7 +144,7 @@ Once you've successfully linked the accounts, you will be presented with the sam
  
 All apps that you have installed are listed on the *Purchased* tab of the Marketplace Control Panel. Clicking on the tab will show you a list of those apps which you have downloaded in the past, including apps you may have purchased/downloaded while using other Liferay installations.
 
-![Figure 2.12: Purchased Apps](../../images/marketplace-purchased-apps.png)
+![Figure 9.12: Purchased Apps](../../images/marketplace-purchased-apps.png)
  
 For those apps which you downloaded and installed on the currently running instance of Liferay, these apps will show an Installed state. For apps which you have previously downloaded or purchased on other Liferay instances, these will show as Purchased. You will need to re-download/re-install these apps if you wish to use them on your currently running instance of Liferay. Other options on this tab are related to the management of apps on they are installed, and are described in the later section *Managing Apps*.
  
@@ -158,7 +158,7 @@ In this case, using your browser, you will find the app on `liferay.com/marketpl
  
 Once you have installed one or more apps onto a Liferay instance, you can manage the apps using the same local Liferay account that was used to download and install Marketplace apps. To see and manage the apps that you have installed, navigate to the control panel, click on the Marketplace tab, and then click on the *Purchased* tab.
 
-![Figure 2.13: Additional Information for Purchased Apps](../../images/marketplace-purchased-apps-more-info.png)
+![Figure 9.13: Additional Information for Purchased Apps](../../images/marketplace-purchased-apps-more-info.png)
  
 This tab is similar to the *Purchased* tab on `liferay.com/marketplace`, except that additional options are now available for each app.
  
@@ -202,15 +202,15 @@ Does your organization make use of any Enterprise Planning (ERP) software that e
 
 ### Themes
 
-![Figure 2.x: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
+![Figure 9.14: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
 
-Themes are hot deployable plugins which can completely transform the look and feel of the portal. Most organizations have their own look and feel standards which go across all of the web sites and web applications in the infrastructure. Liferay makes it possible for a site designer to create a theme plugin which can be installed, allowing for the complete transformation of the portal to whatever look and feel is needed. There are lots of available theme plugins on Liferay's web site, and more are being added every day. This makes it easier for those who wish to develop themes for Liferay, as you can now choose a theme which most closely resembles what you want to do and then customize it. This is much easier than starting a theme from scratch. You can learn more about theme development in *Liferay in Action*.
+Themes are hot deployable plugins which can completely transform the look and feel of the portal. Most organizations have their own look and feel standards which go across all of the web sites and web applications in the infrastructure. Liferay makes it possible for a site designer to create a theme plugin which can be installed, allowing for the complete transformation of the portal to whatever look and feel is needed. There are lots of available theme plugins on Liferay's web site, and more are being added every day. This makes it easier for those who wish to develop themes for Liferay, as you can now choose a theme which most closely resembles what you want to do and then customize it. This is much easier than starting a theme from scratch. You can learn more about theme development in [*Liferay in Action*](http://manning.com/sezov).
 
-![Figure 2.x: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
+![Figure 9.15: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
 
 ### Layout Templates
 
-Layout Templates are ways of choosing how your portlets will be arranged on a page. They make up the body of your page, the large area into which you can drag and drop portlets. Liferay Portal comes with several built-in layout templates, but if you have a complex page layout (especially for your home page), you may wish to create a custom layout template of your own. This is covered in *Liferay in Action*.
+Layout Templates are ways of choosing how your portlets will be arranged on a page. They make up the body of your page, the large area into which you can drag and drop portlets. Liferay Portal comes with several built-in layout templates, but if you have a complex page layout (especially for your home page), you may wish to create a custom layout template of your own. This is covered in [*Liferay in Action*](http://manning.com/sezov).
 
 ### Hook Plugins
 
@@ -228,21 +228,21 @@ Use the dockbar's *Go to* menu to select *Control Panel*. Under the Server headi
 
 The default view of the Plugins Installation page shows which plugins are already installed on the system and whether whether or not they are active. The Portlet Plugins tab allows you reindex certain portlets to improve their searchability. The Theme and Layout Template Plugins tabs display which portal roles can access them.
 
-![Figure 2.x: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
+![Figure 9.16: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
 
-![Figure 2.x: Plugins Installation Theme Tab Default View](../../images/marketplace-plugins-installation-theme-tab.png)
+![Figure 9.17: Plugins Installation Theme Tab Default View](../../images/marketplace-plugins-installation-theme-tab.png)
 
 If you would like to see what plugins are available, you can do so by clicking the *Install More [Plugin Type]* button, where [Plugin Type] changes based on which tab you are viewing. Please note that the machine upon which Liferay is running must have access to the Internet in order to be able to read the Official and Community repositories. If the machine does not have Internet access, you will need to download the plugins from the site and install them manually. We will discuss how to do this later in this chapter.
 
 It's easy to navigate from the initial page of the Plugin Installer to different pages since the plugins are listed alphabetically. You can also change the number of items per page and navigate to a specific page if you know where a particular plugin appears in the list. This is a standard feature of Liferay, and you will see it in most of Liferay's portlets.
 
-![Figure 2.x: Installing Plugins](../../images/marketplace-plugins-installer.png)
+![Figure 9.18: Installing Plugins](../../images/marketplace-plugins-installer.png)
 
 After you click the *Install More [Plugin Type]* button, a new view appears. This view has multiple tabs, and by default, displays the *Portlet Plugins* tab. Note that the list displayed is a list of all of the plugins that are available across all of the repositories to which the server is subscribed. Above this is a search mechanism which allows you to search for plugins by their name, by whether or not they are installed, by tag, or by which repository they belong to. To install a plugin, choose the plugin by clicking on its name. For example, if you want to use online web forms on your web site, you might want to install the Web Form portlet. This portlet provides a handy interface which allows you to create forms for users to fill out. You can specify an address to which the results will be emailed.
 
 Find the Web Form Portlet in the list by searching for it or browsing to it. Once you have found it, click on its name. Another page will be displayed which describes the portlet plugin in more detail. Below the description is an *Install* button. Click this button to install your plugin.
 
-![Figure 2.x: Installing the Web Form Portlet](../../images/marketplace-installing-web-form-portlet.png)
+![Figure 9.19: Installing the Web Form Portlet](../../images/marketplace-installing-web-form-portlet.png)
 
 Once you click *Install*, your chosen plugin will automatically download and be installed on your instance of Liferay. If you have the Liferay console open, you can view the deployment as it happens. When it is finished, you should be able to go back to the Add Application window and add your new plugin to a page in your portal.
 
@@ -264,7 +264,7 @@ You can still use the control panel to install plugins that are not available fr
 
 If your server is firewalled, you will not see any plugins displayed in the Portlet Plugins or Theme Plugins tabs. Instead, you will need to click the *Upload File* tab. This gives you a simple interface for uploading a `.war` file containing a plugin to your Liferay Portal.
 
-![Figure 2.x: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
+![Figure 9.20: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
 
 Click the *Browse* button and navigate your file system to find the portlet or theme `.war` you have downloaded. The other field on the page is optional: you can specify your own context for deployment. If you leave this field blank, the default context defined in the plugin (or the `.war` file name itself) will be used.
 
@@ -366,7 +366,7 @@ Save the file and then restart your container. Now plugins should install correc
 
 Instead of changing the hot deploy destination directory in your `portal-ext.properties` file, you can do it via the Plugin Installer. To change change the setting this way, navigate to the Plugins Installation page of the control panel, click the *Install More [Plugins]* button. This will bring you to the Plugin Installer page. Next, click on the *Configuration* tab of the Plugin Installer page. There are a number of settings that you can change on this tab, including the default folders for hot deploy, where Liferay should look for plugin repositories, and so on.
 
-![Figure 2.x: Changing the Hot Deploy Destination Directory](../../images/marketplace-plugin-installer-configuration.png)
+![Figure 9.21: Changing the Hot Deploy Destination Directory](../../images/marketplace-plugin-installer-configuration.png)
 
 The setting to change is the field labeled *Destination Directory*. Change this to the full path to your container's auto deploy folder from the root of your file system. When you are finished, click the *Save* button at the bottom of the form. The setting will now take effect without your having to restart your container. Note that the setting in the control panel overrides the setting in the properties file.
 
@@ -438,11 +438,11 @@ We will first look at creating a plugin repository using the Software Catalog in
 
 You will want to use the Software Catalog if you will have multiple users submitting portlets into the repository, and if you don't want to worry about creating the `liferay-plugin-repository.xml` file yourself.
 
-![Figure 2.x: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
+![Figure 9.22: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
 
 Each site in your portal can have an instance of the Software Catalog. The control panel presents you with the software catalog for whichever site you are working on. This means that different sites can have different software repositories, so you can host several software repositories on the same instance of Liferay if you wish—they just have to be in different sites. Choose the site that will host the plugin repository and go to the control panel. You will see at the top of the screen a message that says “Content for [Site],” where [Site] is the site you were on when you selected the control panel from the dockbar. If you want to administer the software catalog for a different site, you can select it from the selection box.
 
-![Figure 2.x: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
+![Figure 9.23: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
 
 The Software Catalog has several tabs. The first tab is labeled Products. The default view of the portlet, when populated with software, displays what plugins are available for install or download. This can be seen in the version on Liferay's home page.
 
@@ -456,7 +456,7 @@ Your next step will be to create the product record in the software catalog. Thi
 
 To create the product record in the Software Catalog portlet, click the *Products* tab, and then click the *Add Product* button. Fill out the form with information about your product.
 
-![Figure 2.x: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
+![Figure 9.24: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
 
 **Name:** The name of your software product.
 
@@ -496,7 +496,7 @@ So click the *Framework Versions* tab and then click the *Add Framework Version*
 
 Give the framework a name, a URL, and leave the *Active* check box checked. For our example, we have entered 6.0.3 for the name, because our portlet should work on that version and higher, and [http://www.liferay.com](http://www.liferay.com) for the URL. Click *Save*.
 
-![Figure 2.x: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
+![Figure 9.25: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
 
 Now go back to the *Products* tab and click on your product. You will notice that a message is displayed stating that the product does not have any released versions. Click the *Add Product Version* button.
 

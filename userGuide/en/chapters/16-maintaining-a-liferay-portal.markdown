@@ -22,7 +22,7 @@ Because of this, support for Google Analytics has been built into Liferay, and c
 
 To enable Google Analytics support, go to *Site Settings* in the control panel, and then select *Analytics* on the right. You'll see a very simple form, pictured below. 
 
-![Figure 16.x: Setting up Google Analytics for your site is very easy: sign up for the ID and then enter it into this field. ](../../images/maintaining-google-analytics.png)
+![Figure 16.1: Setting up Google Analytics for your site is very easy: sign up for the ID and then enter it into this field. ](../../images/maintaining-google-analytics.png)
 
 Put your Google Analytics ID (which should have been provided to you when you signed up for the service) in the field and click *Save*. All the pages in the community you selected will now have the Google Analytics code in them and will be tracked. 
 
@@ -76,7 +76,7 @@ Each category is filtered by its place in the class hierarchy. For example, if y
 
 If you're not sure which class you want to see log messages for, you can find a place higher up in the hierarchy and select the package name instead of an individual class name. If you do this, messages for every class lower in the hierarchy will be displayed in your application server's log file.
 
-![Figure 16.x: Log levels can be dynamically changed at runtime, whenever you need to debug an issue. ](../../images/maintaining-log-levels.png) 
+![Figure 16.2: Log levels can be dynamically changed at runtime, whenever you need to debug an issue. ](../../images/maintaining-log-levels.png) 
 
 Be careful when you do this. If you set the log level to DEBUG somewhere near the top of the hierarchy (such as `com.liferay`, for example), you may wind up with a lot of messages in your log file. This could make it difficult to find the one you were looking for, and causes the server to do more work writing messages to the log. 
 
@@ -92,7 +92,7 @@ You would then use this `_log` variable to create log messages in your code for 
 
 To enable your logging messages to appear in your server's log file via the control panel, click the *Add Category* tab on the same *Log Levels* page.
 
-![Figure 16.x: Adding your own logging classes is as simple as specifying it in this field.](../../images/maintaining-add-log-category.png) 
+![Figure 16.3: Adding your own logging classes is as simple as specifying it in this field.](../../images/maintaining-add-log-category.png) 
 
 You'll see that you can add a logging category. Put in the fully qualified name of your class or of the package that contains the classes whose log messages you want to view, choose a log level, and then click the *Save* button. You will now start to see log messages from your own class or classes in the server's log file.
 

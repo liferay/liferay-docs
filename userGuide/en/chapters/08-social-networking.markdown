@@ -35,28 +35,28 @@ There are several social portlets that are designed for use on regular portal pa
 
 The Members portlet is a simple list of all the current site's members. The only configuration options you have are permissions, which are the same for every portlet. For example, you might change the permissions so that only members of the current site can view the portlet. 
 
-![Figure 9.x: The Members Portlet](../../images/XX-social-networking-members-portlet.png)
+![Figure 8.1: The Members Portlet](../../images/XX-social-networking-members-portlet.png)
 
 The Meetups portlet is a tool for creating casual meetings for users of your portal. Anyone can create a "meetup" and give it a title, description, date/time, maximum number of attendees, price, and provide an image. Any meetups that are created are displayed in the portlet for anyone to view. Users can register for the meetup, which lets the organizer keep track of who's coming. 
 
 The options for creating a meetup are essentially the same as those for creating a calendar event, and the Meetups portlet shares some functionality with the Calendar. For more information on the Calendar portlet and configuring events, see chapter 4.
 
-![Figure 9.x: The Meetups Portlet](../../images/XX-social-networking-meetups.png)
+![Figure 8.2: The Meetups Portlet](../../images/XX-social-networking-meetups.png)
 
 The Activities portlet comes in two varieties: the standard Activities portlet and the Members' Activities portlet. The basic function of the portlets are the same--they both display a feed of what users are doing on the portal. The difference is that Activities displays what's going on across the entire portal, while Members' Activities displays only what members of the current site have been doing.
 
-![Figure 9.x: The Activities Portlet](../../images/XX-social-networking-activities.png)
+![Figure 8.3: The Activities Portlet](../../images/XX-social-networking-activities.png)
  
 
 ### Using social networking on personal pages
 
 In addition to the portlets available for general use, there are a handful that can be used only on personal pages. These portlets can be used to create a profile page, similar to Facebook or Google+. 
 
-![Figure 9.x: Social Networking Portlets in a Facebook-like Layout](../../images/XX-social-networking-personal-portlets.png)
+![Figure 8.4: Social Networking Portlets in a Facebook-like Layout](../../images/XX-social-networking-personal-portlets.png)
 
 The Summary portlet provides a quick overview of a user's profile. When posted in a user's personal site, it displays the user's name, profile picture, and job title. Users can add additional personal information by clicking on *Edit* in the portlet and filling in information in the *About Me* section.
 
-This portlet is also essential to any social implementation on Liferay, because it has the *Friend Request* button. This enables users to iniate social relationships. Note that this portlet simplifies a much more powerful underlying social networking API that defines many different kinds of relationships, including friends. Your developers can take advantage of this API to create powerful social applications. For more information on this, see *Liferay in Action* (Manning Publications) or the *Liferay Developer's Guide*. 
+This portlet is also essential to any social implementation on Liferay, because it has the *Friend Request* button. This enables users to iniate social relationships. Note that this portlet simplifies a much more powerful underlying social networking API that defines many different kinds of relationships, including friends. Your developers can take advantage of this API to create powerful social applications. For more information on this, see [*Liferay in Action*](http://manning.com/sezov) (Manning Publications) or the *Liferay Developer's Guide*. 
 
 The Wall portlet provides a place for users to leave messages on other users' profiles. The messages can only be plain text, and no formatting or HTML is supported. Once a post is added to their wall, users have the ability delete it or respond to it with a quick link to post on the original poster's wall.
 
@@ -66,7 +66,7 @@ The map is a tool which enables you to view the locations of other users on the 
 
 <!-- | TODO: The below screenshot doesn't show Liferay's Map portlet. Liferay's Map portlet appears in the bottom left corner of your profile page on liferay.com, and so should be in the section below. DONE | --> 
 
-![Figure 9.x: The Map Portlet](../../images/map-portlet.png)
+![Figure 8.5: The Map Portlet](../../images/map-portlet.png)
 
 Liferay ships with a nice suite of social networking applications that let you power your site for social interaction. But we've only looked at a portion of them. Let's examine the portlets that should be added to personal pages. 
 
@@ -94,7 +94,7 @@ Because it's the recommended method, we'll use the user group method to create t
 
 <!-- | TODO: Fix this so it agrees with new site templates interface. DONE | -->
 
-![Figure 9.x: Creating the Site Template](../../images/social-networking-site-template.png)
+![Figure 8.6: Creating the Site Template](../../images/social-networking-site-template.png)
 
 ---
 ![tip](../../images/01-tip.png) Note: Setting the property which disables modifications to personal page layouts disable those modifications across the portal for all pages and all users. Unchecking *Allow Site Administrators to Modify the Pages Associated with this Site Template* will only prevent users from modifying the specific pages contained in the template, but will not disable a user's ability to add more pages, or modify additional pages.
@@ -102,7 +102,7 @@ Because it's the recommended method, we'll use the user group method to create t
 
 Once you've created the template, choose *Actions &rarr; Manage Pages* for *Social Layout* from the Site Templates page, and then click *View Pages*. Let's change the name of the page from the default to *My Profile* and add some portlets to the page. In the screenshot below, we removed the borders to make the page look more integrated, and also used Nested Portlets to make the layout more interesting.
 
-![Figure 9.x: Social Profile Site Template](../../images/social-networking-profile-template.png)
+![Figure 8.7: Social Profile Site Template](../../images/social-networking-profile-template.png)
 
 Back in the control panel, select *Users and Organizations* from the *Portal* section. Once there, click *Add &rarr; User Group*. Name the group *Social Users*. When creating a user group, you have the option to set a Personal Site Template; use this option and select the Social Layout for your Public Pages.
 
@@ -144,11 +144,11 @@ DONE
 
 In some cases, you'll want to simply add a gadget to a single page. To this, go to a page, go to the *Add &rarr; More* menu, and add *OpenSocial Gadget* to the page. Initially, the portlet simply displays with a link saying *Configure a gadget to be displayed in this portlet.* Click on this link, enter the URL for your gadget in the *URL* field (try *[Todo List Gadget](http://www.labpixies.com/campaigns/todo/todo.xml)* for an easy example), and click *Save*. That gadget will now be displayed as a portlet on your page. If, at any point, you want to change which gadget is displayed there, you can click on the configuration icon for the portlet, and replace the URL with a new one. The OpenSocial Gadget portlet options allow you to change the permissions for who can view or edit the portlet, as well as options to share the contents of the portlet, just like you can with any other Liferay portlet.
 
-![Figure 9.x: OpenSocial Gadget displayed on a page](../../images/open-social-gadget.png)
+![Figure 8.8: OpenSocial Gadget displayed on a page](../../images/open-social-gadget.png)
 
 In addition to configuring individual gadgets, you can specify gadgets that are listed in the *Add &rarr; More* list from the Control Panel. Click on *OpenSocial Gadget Publisher* in the *Portal* section of the Control Panel. On this page there is a list of any gadgets that have been installed as well as buttons labeled *Publish Gadget* and *Refresh Gadgets*. Click on *Publish Gadget* and you'll see a form to enter a URL and choose a category. Enter the URL for an OpenSocial gadget (you can use the todo list from earlier) and click *Save*. The gadget will now be displayed in the list, and you can add it to any page on your portal.
 
-![Figure 9.x: OpenSocial Gadget in your application list](../../images/open-social-in-context.png)
+![Figure 8.9: OpenSocial Gadget in your application list](../../images/open-social-in-context.png)
 
 Clicking *Actions* next to the gadget will enable you to edit, delete, change permissions, or refresh the gadget. Edit allows you to change the URL or category; Permissions gives you the basic View, Update, Delete, and Permissions options; Delete will remove the listing for the gadget; and the refresh option manually refreshed the gadget cache for cases where changes have been made to the gadget, but they are not displaying in the portlet.
 
@@ -191,7 +191,9 @@ The **User Statistics** portlet displays a list of users ranked by an amalgamati
 
 **Show Totals**: Toggles the display of the users activity score next to their name.
 
-**Display Additional Activity Counters**: You can toggle the display of any number of other pieces of information next to the users name in the statistics, ranging from the number of comments on assets a user has created to the number of wiki articles that the user has created. If you want to display multiple data points, you can click the plus button to add one and the minus to remove one. You can have as many data points displayed as you want, but displaying too many might make your portlet a little unwieldy. 
+**Display Additional Activity Counters**: You can toggle the display of any number of other pieces of information next to the users name in the statistics, ranging from the number of comments on assets a user has created to the number of wiki articles that the user has created. If you want to display multiple data points, you can click the plus button to add one and the minus to remove one. You can have as many data points displayed as you want, but displaying too many might make your portlet a little unwieldy.
+
+![Figure 4.25: The User Statistics portlet](../../images/user-statistics-portlet.png)
 
 The **Group Statistics** portlet provides some more advanced data analytics. If you add it to a page, and click on the configuration icon, you see that by default, it will display one metric *Activities on Assets*. You can click the *plus* icon to add additional slots, and choose from the dozen or so metrics available for each slot, covering virtually any action that a user can perform on content on the portal. If you decide that you're displaying too many metrics, you can click the *minus* button for a particular slot on the configuration view to remove it.
 

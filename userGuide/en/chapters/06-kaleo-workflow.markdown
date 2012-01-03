@@ -33,7 +33,7 @@ A Kaleo workflow, called a *process definition*, is defined in an XML file and i
 
 The XML file has several parts which define the workflow. To get an idea of how this works, we'll examine the default `single-approver-definition.xml` file which is included in the the Liferay Kaleo plugin.
 
-The key parts of the workflow definition are the asset that's running through the workflow, the nodes of the workflow, and the transitions between nodes. The asset is any kind of asset registered in Liferay: web content, wiki articles, message board threads, and more. Developers can create their own assets as well to be used with workflow (see *Liferay in Action* or *Liferay Developer's Guide* for more information). Nodes represent stages of the workflow, and there are several types. Transitions occur between nodes, and indicate what the next node should be. 
+The key parts of the workflow definition are the asset that's running through the workflow, the nodes of the workflow, and the transitions between nodes. The asset is any kind of asset registered in Liferay: web content, wiki articles, message board threads, and more. Developers can create their own assets as well to be used with workflow (see [*Liferay in Action*](http://manning.com/sezov) or *Liferay Developer's Guide* for more information). Nodes represent stages of the workflow, and there are several types. Transitions occur between nodes, and indicate what the next node should be. 
 
 Think of workflow as a state machine made up of nodes. A node can be a state, a task, a condition, a fork, a join, or a timer. Transitions are used to move from one node to another. Each type of node has different properties. For example, states execute actions automatically and require no user input. Tasks block until user input completes a transition to another state. The transition then moves the workflow to the next task or state. This cycle continues until the end Approved state is reached. For example, you could create a workflow which goes through two approvers. Initiating the workflow puts it in the In Review state, and then transitions to a task which requires user input. Users approve or reject the asset as part of the task. When the first user approves the workflow, a condition checks to see if there are two approvals. Since there is only one, workflow transitions back to the task. When the second user approves the workflow, the condition finds there are two approvers, and it triggers a different transition to the Approved state. 
 
@@ -43,7 +43,7 @@ Let's look in detail at how you'd create a workflow using a single approver.
 
 Below is a diagram of a single approver workflow definition. It has only two tasks and two states.  
 
-![Figure 6.x: The default single approver workflow. Arrows represent transitions, and boxes represent states and tasks.](../../images/kaleo-workflow-single-approver.png)
+![Figure 6.1: The default single approver workflow. Arrows represent transitions, and boxes represent states and tasks.](../../images/kaleo-workflow-single-approver.png)
 
 First you define the schema. For Liferay workflows using Kaleo, `liferay-worklow-definition-6_1_0.xsd` should be your schema. You can find this schema in the `definitions` folder of the Liferay source or a good XML editor can cache it from Liferay's web site.
 
@@ -232,7 +232,7 @@ Forks and joins are used for parallel processing. For example, say you have a ne
 
 <!-- | TODO - I deleted the original one... -->
 
-![Figure 6.x: Parallel Approval Design](../../images/kaleo-workflow-parallel-approval.png)
+![Figure 6.2: Parallel Approval Design](../../images/kaleo-workflow-parallel-approval.png)
 
 You can transition to a fork from a task or state. From the fork, you can transition to multiple tasks or states which occur in parallel. In the previous example, when we have multiple transitions from one task, they're mutually exclusive: you either trigger one or the other. The transitions are also serial, meaning that one must occur, and then the next one can occur. With a parallel workflow, you can have different approvals going through different users at the same time. For example, you could use this to separate two different departments' approval chains on a single asset. A fork should be formatted like this:
 
@@ -355,7 +355,7 @@ Let's turn from creating definitions to how you'd use them.
 
 Most of your workflow configuration is done via the control panel. Everything you need to do in the portal can be done through simple GUI controls.
 
-![Figure 6.x: Adding a Workflow Definition](../../images/kaleo-workflow-new-definition-control-panel.png)
+![Figure 6.3: Adding a Workflow Definition](../../images/kaleo-workflow-new-definition-control-panel.png)
 
 You can find the Workflow section under the Portal heading in the control panel. There are three options under Workflow: *Definitions*, *Default Configuration*, and *Submissions*.
 
@@ -369,7 +369,7 @@ Clicking on *Submissions* will let you view any currently pending assets, or any
 
 After you have uploaded workflow definitions and set the default workflow behavior you can go up to *Workflow Configuration* and tweak the definitions that you're using for each site individually.
 
-![Figure 6.x: The Workflow Configuration Page](../../images/kaleo-workflow-configuration.png)
+![Figure 6.4: The Workflow Configuration Page](../../images/kaleo-workflow-configuration.png)
 
 Using the context selector drop-down menu in the control canel, you can select any site in the portal. All the options under that heading, including Workflow Configuration, now apply to that particular site. 
 
@@ -379,7 +379,7 @@ Using workflow is just as easy.
 
 My Workflow Tasks is a personalized version of the Workflow Tasks, and it's found in your personal section of the control panel. Here are specific tasks which have been assigned to you or assigned to a role of which you are a member. You can also view your completed tasks.
 
-![Figure 6.x: My Workflow Tasks Page](../../images/kaleo-workflow-my-tasks.png)
+![Figure 6.5: My Workflow Tasks Page](../../images/kaleo-workflow-my-tasks.png)
 
 It's here that workflow users review and approve content. By clicking on the actions next to a piece of content, a user can view that content and then choose to approve or reject it and add comments. 
 
@@ -387,7 +387,7 @@ It's here that workflow users review and approve content. By clicking on the act
 
 My Submissions is found under your user's personal information in the control panel. From this screen you can view any assets that you have submitted to review. Those that are currently under review are listed under the *Pending* tab, and those that have gone through the review process are listed under the *Completed* tab.
 
-![Figure 6.x: The My Submissions Page](../../images/kaleo-workflow-my-submissions.png)
+![Figure 6.6: The My Submissions Page](../../images/kaleo-workflow-my-submissions.png)
 
 Besides viewing your work, you can also withdraw a submission from the review process by clicking on *Withdraw Submission* from the *Pending* tab.n.
 
@@ -395,13 +395,13 @@ Besides viewing your work, you can also withdraw a submission from the review pr
 
 Before workflow can be used, you must define which types of assets on the portal are workflow-enabled. If you have created additional definitions, you must also choose the workflow definition to use for each asset that is workflow-enabled.
 
-![Figure 6.x: You can select which site to work on by using the drop-down menu in the Content section of the control panel.](../../images/kaleo-workflow-control-panel-context-selector.png)
+![Figure 6.7: You can select which site to work on by using the drop-down menu in the Content section of the control panel.](../../images/kaleo-workflow-control-panel-context-selector.png)
 
 To demonstrate how this works, we'll create a press release. Press releases should be posted in the *Newsroom* section of the web site, so before setting specific workflow configuration options or creating content, create the Newsroom site and switch to it in the control panel. In Workflow Configuration, set Web Content to use the Single Approver workflow.
 
 Next, create two users, a Content Creator and a Content Reviewer. The Content Creator logs in and creates a new press release for Nose-ster and clicks *Submit for Publication*. This triggers the workflow process and notifies the Content Reviewer. When the Content Reviewer logs in, he or she can assign the workflow task to him- or herself and approve the content.
 
-![Figure 6.x: Before a Content Reviewer can approve content, he must assign it to himself, or have an administrator assign it to him.](../../images/kaleo-workflow-assign-to-me.png)
+![Figure 6.8: Before a Content Reviewer can approve content, he must assign it to himself, or have an administrator assign it to him.](../../images/kaleo-workflow-assign-to-me.png)
 
 Once the content is approved, it can be posted on the Press Releases page in a web content display portlet. 
 
@@ -421,11 +421,11 @@ Let's look at Kaleo Forms first.
 
 Add the Workflow Forms portlet to a page. The initial state, the *Summary* tab displays the same information that you might have seen in *My Workflow Tasks* in the control panel. Any forms that are available for processing through the workflow can be initiated through the *Submit New* button, as the below image indicates. 
 
-![Figure 6.x: Kaleo Forms give you a convenient way to manage all available workflows in the portal. ](../../images/kaleo-forms-initial-view.png)
+![Figure 6.9: Kaleo Forms give you a convenient way to manage all available workflows in the portal. ](../../images/kaleo-forms-initial-view.png)
 
 Click on *Processes* to view any existing workflow processes or to create new ones. Any processes that are already available are listed here. If you're coming here for the first time, however, there won't be any, so let's create one. Click *Add*. You'll see the screen below. 
 
-![Figure 6.x: The Workflow Process Creation Page](../../images/kaleo-workflow-add-process.png)
+![Figure 6.10: The Workflow Process Creation Page](../../images/kaleo-workflow-add-process.png)
 
 Set a name and a description. Next, you'll define an *Entry Definition* and an *Initial Form*, choose or create a *workflow* and *Workflow Task Forms*.
 
@@ -443,11 +443,11 @@ You probably noticed that when choosing a workflow, you also have the option to 
 
 Kaleo Designer provides a drag and drop interface for users to create custom workflows. It's an incredibly powerful tool for managing workflow defintions. The Workflow Designer can only be accessed through the Kaleo Forms portlet, but definitions created can be used for other processes as well.
 
-![Figure 6.x: The Workflow Designer](../../images/kaleo-workflow-designer.png)
+![Figure 6.11: The Workflow Designer](../../images/kaleo-workflow-designer.png)
 
 There are seven types of nodes that you can add to a defintion. The node types are **Condition**, **End**, **Fork**, **Join**, **Start**, **State**, and **Task**. If you've read the entire chapter, you'll notice that Start and End aren't node types that we've previously discussed; that's because they're actually just State nodes, with certain fields prefilled to help streamline the creation process. Since every workflow has a start and end state, you'd have to do this anyway. 
 
-![Figure 6.x: The Node Configuration Menu](../../images/kaleo-designer-submenu.png)
+![Figure 6.12: The Node Configuration Menu](../../images/kaleo-designer-submenu.png)
 
 Each node that you add has a pop-up edit menu which lets you add anchors, attach tasks, or delete the node. Anchors connect the node to other nodes, so for each connection, you need an anchor. To transition to the next node, you'd add an anchor, create a new node, and then click the first anchor and drag it to the anchor on the new node. This creates a transition.
 
@@ -458,7 +458,7 @@ First add two tasks, and use the edit icon to name them *Review* and *Update*. N
 <!-- | TODO: I fixed this screenshot, but not before I deleted this todo -->
 
 
-![Figure 6.x: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
+![Figure 6.13: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
 
 Next, we want to add the correct assignments and notifications. Click on *Review*. The box on the left shows all the proprerties of the Review node. In the *assignments* category, assign the task to the *Portal Content Reviewer* role. Click on *Notifications* and create a notification with the type *On Assignment*. Now move to the Update node, and assign it to the *Content Creator* with its own notification.
 
