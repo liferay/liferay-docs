@@ -168,7 +168,7 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 
 **Robots:** lets you use a `robots.txt` file to specify certain pages and links that you do *not* want to be indexed by search engines. You need to set a virtual host before you set a `robots.txt` file.
 
-**Staging:** lets you turn on either Local Live staging or Remote Live staging.
+**Staging:** lets you turn on either Local Live staging or Remote Live staging. To enable staging, the *Enable propagation of changes from the site template* box on the Details tab needs to be unchecked. With staging enabled, changes to the site template are automatically propagated to the staged site, not to the live site. The changes still need to be approved before the site is published to live.
 
 **Analytics:** lets you set a Google Analytics ID that will be used for your site.
 
@@ -200,11 +200,15 @@ Page templates function similarly to site templates in that they allow you to re
 
 ![Figure 12.8: Page Templates](../../images/server-configuration-page-templates.png)
 
-The Page Templates page of the control panel shows a list of created page templates and lets you create new ones. It also allows you to edit existing templates and configure their permissions. To add a page template, click on the *Page Template* link in the control panel and click the *Add* button. Then enter a name and description for your template. Leave the *Active* button checked. Click *Save* and then find your page template in the list. Click its name or use the Actions button to edit the page template. Clicking the *Open Page Template* link opens a new browser window which you can use to configure your new page. Any changes you make are automatically saved so you can close the new browser window once you're done.
+The Page Templates page of the control panel shows a list of created page templates and lets you create new ones. It also allows you to edit existing templates and configure their permissions. To add a page template, click on the *Page Template* link in the control panel and click the *Add* button. Then enter a name and description for your template. Leave the *Active* button checked. Click *Save* and then identify your page template in the list. Click its name or use the Actions button to edit the page template. The *Open Page Template* link opens a new browser window which you can use to configure your new page. Any changes you make are automatically saved so you can close the new browser window once you're done.
 
 ![Figure 12.9: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
 
-To use your template to create a new page, just navigate to a page over which you have site administrator privileges and select *Add* &rarr; *Page* from the dockbar. You'll be able to select a page template and type a name for the new page. Alternatively, you can use the control panel. First, in the context selector menu, select the site to which you'd like to add a page. Then click the *Add Page* button, type a name, select your template from the drop down menu, and click *Add Page* to finish. Now that we've looked at site and page templates, let's discuss how to set up and manage user groups.
+To use your template to create a new page, just navigate to a page over which you have site administrator privileges and select *Add* &rarr; *Page* from the dockbar. You'll be able to select a page template and type a name for the new page. Alternatively, you can use the control panel. First, in the context selector menu, select the site to which you'd like to add a page and then click on the *Site Pages* link. Then click the *Add Page* button, type a name, select your template from the drop down menu, and click *Add Page* to finish.
+
+![Figure 12.10: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
+
+Note that by default, when you've created a page based on a page template, any future changes to the template are automatically propagated to your page. You can disable this behavior by navigating to *Site Pages* in the control panel, selecting your page in the page list, and unchecking the *Automatically apply changes done to the page template* box. If staging has been enabled, changes to the page template are automatically propagated to the staged page. These changes still need to be approved before the page is published to live. For this reason, the automatic propagation of page template changes to the staged page cannot be turned off and the *Automatically apply changes done to the page template* checkbox does not appear. Now that we've looked at site and page templates, let's discuss how to set up and manage user groups.
 
 ### User Groups
 
@@ -212,11 +216,11 @@ User Groups are arbitrary groupings of users. These groups are created by portal
 
 Creating a user group is easy. Navigate to the control panel, click the *Users Groups* link, and then click the *Add* button. There are only two fields to fill out: Name and Description. Click *Save* and you will be redirected back to the *User Groups* page of the control panel.
 
-![Figure 12.10: Creating a New User Group](../../images/server-configuration-new-user-group.png)
+![Figure 12.11: Creating a New User Group](../../images/server-configuration-new-user-group.png)
 
 Note that user groups can have sites but these sites cannot be accessed directly by end users. Instead, the personal sites of any users added to the group are populated with the pages and portlets of the user group's site. This allows you to do things like create a Bloggers user group with a site that has the Blogs and Recent Bloggers portlets on a Blog page. When users who have been added to this group log in to the portal, the contents of the user group's site will be applied to their personal sites. Thus, all users belonging to the Bloggers group automatically receive a Blog page that they can use.
 
-![Figure 12.11: User Group Actions](../../images/01-editing-a-user-group.png)
+![Figure 12.12: User Group Actions](../../images/01-editing-a-user-group.png)
 
 As with the other resources in the portal, you can click the *Actions*
 button next to a user group to perform various operations on that group.
@@ -261,7 +265,7 @@ A user group's site can be administered from the control panel. Select *User Gro
 
 As an example of using user group sites, let's create a group called *Bloggers* along with a simple template. We'll call the site template *Bloggers* too. It should contain a single *Blog* page with the Blogs and Recents Bloggers portlets on it. First, navigate to the User Groups page of the control panel. Then click *Add* and enter the name *Bloggers* for your group, and optionally, a description. Click *Save* to create your user group. Next, we will create a site template for this group. Navigate to the Site Templates page of the control panel and click *Add*. Enter the name *Bloggers*, provide a description if you wish, and leave the default check boxes checked. Then click *Save* to create your template. To actually configure the pages and portlets of your template, edit the *Bloggers* template and click the *Open site template* link. Change the name of the default page from *home* to *Blog* and add the Blogs and Recent Bloggers portlets to the page. 
 
-![Figure 12.12: Selecting a Template for the User Group Site](../../images/user-group-site-template-selected.png)
+![Figure 12.13: Selecting a Template for the User Group Site](../../images/user-group-site-template-selected.png)
 
 Now you're almost done. Go back the User Group page of the control panel and edit the *Bloggers* group. Choose the *Bloggers* template from the drop down menu for the group's public pages and click *Save*. Now any users added to the group will have the template copied to their personal sites.
 
@@ -269,11 +273,11 @@ Now you're almost done. Go back the User Group page of the control panel and edi
 
 Our next step is to assign an existing user to the *Bloggers* group. Then we can check that the user group's site has been copied to the user's personal site. To do so, navigate to *Users and Organizations* and create a new user called *Joe Bloggs*. Then navigate the User Groups page of the control panel and click *Actions* &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to see a list of users that can be assigned to the group.
 
-![Figure 12.13: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
+![Figure 12.14: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
 
 From that list, one or more users can be selected to be assigned as members of the user group. When the *Update Associations* button is clicked, the users become members of the group. Copies of any public or private pages from the user group's site will be copied to users' personal sites when they next log in. Note that the pages from the user group's site will be an addition to the users' personal sites but will not replace any existing pages.
 
-![Figure 12.14: Template Copied to a User's Personal Site](../../images/01-template-copied-to-personal-site.png)
+![Figure 12.15: Template Copied to a User's Personal Site](../../images/01-template-copied-to-personal-site.png)
 
 For example, by default, newly created users are given *Welcome* pages on the public pages portion of their personal sites. This Welcome page contains the Language, Search, and Blogs portlets. You can see the effect of the *Bloggers* site template on the public pages of Joe Bloggs's personal site in the figure above. When Joe Bloggs was added to the *Bloggers* group, he received a *Blogs* page with the *Blogs* and *Recent Bloggers* portlets.
 
@@ -285,7 +289,7 @@ Roles are groupings of users that share a particular function within the portal,
 
 The roles page of the control panel serves as a single interface which lets you create roles, assign permissions to them, and assign users to the roles. Roles can be scoped by portal, site, or organization. To create a role, click the *Roles* link, and then click the *Add* button. You can choose a Regular, Site, or Organization role. A regular role is a portal-scoped role. Make a selection and then type a name for your role, a title, and a description. The name field is required but the title and description are optional. If you enter a name and a title, the title will be displayed in the list of roles on the Roles page of the control panel. If you do not enter a title, the name will be displayed. When you have finished, click *Save*.
 
-![Figure 12.15: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
+![Figure 12.16: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what functions you can perform on your new role, click the *Actions* button.
 
@@ -305,7 +309,7 @@ After you save, Liferay redirects you to the list of roles. To see what function
 
 Roles serve as repositories of permissions to be assigned to users who belong to them. So, to use a role, you need to assign members to it and define the permissions that you want to grant to members of the role.
 
-![Figure 12.16: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
+![Figure 12.17: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
 
 When you click the *Actions* button on portal-scoped role and select *Define Permissions*, you will be shown a list of all the permissions that have been defined for that role. Click the *Add Permissions* drop-down menu to see a list of the permissions that can be defined. As of Liferay version 6.1, these permissions fall into seven categories: Portal, Site Content, Site Application, Control Panel: Personal, Control Panel: Site, Control Panel: Portal, and Control Panel: Server. For non-portal scoped roles, you need to click on the *Options* link on individual portlets, then *Configuration*, then *Permissions* to assign permissions within the site or organization that owns the portlet. 
 
@@ -317,7 +321,7 @@ Site Application permissions affect the application as a whole. So, using our Me
 
 The control panel permissions affect how the portlet appears to the user in the control panel. Some control panel portlets have a Configuration button, so you can define who gets to see that, as well as who gets to see an application in the control panel.
 
-![Figure 12.17: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
+![Figure 12.18: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
 
 Each possible action to which permissions can be granted is listed. To grant a permission, check the box next to it. If you want to limit the scope of the permission to a particular site, click the *Limit Scope* link, and then choose the site. Once you have chosen the permissions granted to this role, click *Save*. For a portal-scoped Message Boards Administrator role, you might grant content permissions for every action listed. After you click *Save*, you will see a list of all permissions that are currently granted to this role. From here, you can add more permissions or go back by clicking a link in the breadcrumb list or the *Return to Full Page* link.
 
@@ -337,7 +341,7 @@ Teams don't appear as a link in the control panel because they exist *within* si
 
 To create a team within a site, first naviagte to the *Control Panel &rarr; Sites* page then and then select *Actions &rarr; Manage Memberships* for the site within which you want to create a team. Finally, click *View &rarr; Teams* and click the Add Team button.
 
-![Figure 12.18: Creating a Team within a Site](../../images/01-creating-a-team.png)
+![Figure 12.19: Creating a Team within a Site](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions &rarr; Assign Members*.
 
@@ -405,7 +409,7 @@ Most global portal settings can be configured here. The Configuration heading co
 
 **Email Notifications:** allows you to configure Liferay to send email notifications for certain events, such as user registrations, password changes, etc. You can customize those messages here.
 
-![Figure 12.19: Portal Settings Pages][../../images/server-configuration-portal-settings-pages.png]
+![Figure 12.20: Portal Settings Pages][../../images/server-configuration-portal-settings-pages.png]
 
 Let's discuss these settings next.
 
@@ -540,7 +544,7 @@ The control panel provides default mappings for commonly used LDAP attributes. Y
 
 * *Test LDAP Users:* Once you have your attribute mappings set up (see above), click the *Test LDAP Users* button, and Liferay will attempt to pull LDAP users and match them with their mappings as a preview.
 
-![Figure 12.20: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
+![Figure 12.21: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay.
 
@@ -564,7 +568,7 @@ The control panel provides default mappings for commonly used LDAP attributes. Y
 
 * *Group Default Object Classes:* When a group is exported, the group is created with the listed default object classes. To find out what your default object classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and view the Object Class attributes that are stored in LDAP for that group.
 
-![Figure 12.21: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
+![Figure 12.22: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From here, you can add another LDAP server or set just a few more options that apply to all of your LDAP server connections.
 
@@ -723,9 +727,9 @@ There are five tabs under the Email Notifications page of Portal Settings. The S
 
 The other four tabs are Account Created Notification, Email Verification Notification, Password Changed Notification, and Password Reset Notification. These tabs allow you to customize the email messages that are sent to users each time any of those four events occur.
 
-![Figure 12.22: Automated Emails: Account Created Notification][../../images/server-configuration-account-created-notification.png]
+![Figure 12.23: Automated Emails: Account Created Notification][../../images/server-configuration-account-created-notification.png]
 
-![Figure 12.23: Definition of Terms for Automated Emails][../../images/server-configuration-definition-of-terms.png]
+![Figure 12.24: Definition of Terms for Automated Emails][../../images/server-configuration-definition-of-terms.png]
 
 A list of tokens, entitled "Definition of Terms," is provided so that you can insert certain values (such as the portal URL or the user ID) when you are setting up the custom email messages.
 
@@ -737,7 +741,7 @@ The identification section has several links for addresses, phone numbers, and o
 
 This section allows you to set the default portal language and the time zone. You can also set up a portal-wide logo which appears in the top left corners of portal pages. 
 
-![Figure 12.24: Server Configuration Miscellaneous Display Settings][../../images/server-configuration-miscellaneous-display-settings.png]
+![Figure 12.25: Server Configuration Miscellaneous Display Settings][../../images/server-configuration-miscellaneous-display-settings.png]
 
 Liferay's default theme is configured to display the portal logo. For custom themes, you can choose whether or not to display the logo. Be careful to choose an image file that fits the space. If you pick something that is too big, it might overlap with the navigation.
 
@@ -747,11 +751,11 @@ Custom fields are a way to add attributes to many types of assets in the portal.
 
 To add a custom field, click on the *Custom Fields* link in the control panel. Then choose a resource, click on the *Edit* link next to it and select *Add Custom Field*.
 
-![Figure 12.25: Custom Fields Resource List][../../images/server-configuration-custom-fields-resource-list.png]
+![Figure 12.26: Custom Fields Resource List][../../images/server-configuration-custom-fields-resource-list.png]
 
 From here you will need to add the custom field key. The key appears as the label for the field on the form. For some portal assets (like the User), custom fields are a separate section of the form. For others, as can be seen above, custom fields are integrated with the default fields on the form. Additionally, developers can access custom fields programatically through the `<liferay-ui:custom-attribute />` tag.
 
-![Figure 12.26: Custom Fields Integrated with the Rest of the Fields on the Wiki Form](../../images/server-configuration-custom-fields-integrated.png)
+![Figure 12.27: Custom Fields Integrated with the Rest of the Fields on the Wiki Form](../../images/server-configuration-custom-fields-integrated.png)
 
 You can create fields of many different types: text fields (indexed or secret), integers, selection of multiple values, and more. Once you've created a field, you cannot change its type.
 
