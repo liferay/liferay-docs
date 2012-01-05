@@ -1,6 +1,6 @@
 # Configuring Liferay's Properties
 
-Liferay is configured by a combination of settings which are stored in the database (configured by the use of the control panel) and settings which are stored in properties (text) files. These files can be modified to change Liferay's behavior in certain ways. In this chapter we discuss the main configuration file, which is stored in the Liferay Home directory, and is called `portal-ext.properties`. This chapter will have a wide-ranging set of topics since you can make many different kinds of customizations. We list a few of these below.
+Liferay is configured by a combination of settings which are stored in the database (configured by the use of the control panel) and settings which are stored in properties (text) files. These files can be modified to change Liferay's behavior in certain ways. In this chapter we discuss the main configuration file, which is stored in the Liferay Home directory, and is called `portal-ext.properties`, if you've got a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This chapter has a wide-ranging set of topics since you can make many different kinds of customizations. We list a few of these below.
 
 -   *Changing Portal Defaults*
 
@@ -14,13 +14,13 @@ Liferay is configured by a combination of settings which are stored in the datab
 
 -   *Accessing Liferay's Web Services:* 
 
-Remember that your customizations in the `portal-ext.properties` file override the settings in the `portal.properties` file. You should never modify the `portal.properties` file directly.
+Remember that your customizations in the `portal-ext.properties` or `portal-setup-wizard.properties` file override the settings in the `portal.properties` file. You should never modify the `portal.properties` file directly.
 
-## The portal-ext.properties File
+## Using an overridden configuration file
 
 Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all of the defaults is stored inside of a `.jar` file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put just the settings you want to customize in your own configuration file, and then the configuration file for your portal is uncluttered and contains only the settings you need. This makes it far easier to determine whether a particular setting has been customized, and it makes the settings more portable across different installations of Liferay.
 
-The default configuration file is called `portal.properties`, and it resides inside of the `portal-impl.jar` file. This `.jar` file is located in Liferay Portal's `WEB-INF/lib` folder. The file which is used to override the configuration is `portal-ext.properties`. This file can be created in your Liferay Home folder (please see Chapter 11: Installing Liferay for the location of this folder for your application server). By default, the file does not exist at all, unless you are running an older version of Liferay. What follows is a brief description of the options that can be placed there, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
+The default configuration file is called `portal.properties`, and it resides inside of the `portal-impl.jar` file. This `.jar` file is located in Liferay Portal's `WEB-INF/lib` folder. The file which is used to override the configuration is `portal-ext.properties` if you've created a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This file can be created in your Liferay Home folder (please see Chapter 11: Installing Liferay for the location of this folder for your application server). By default, the file does not exist at all, unless you are running an older version of Liferay. What follows is a brief description of the options that can be placed there, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
 
 ## Properties Override
 
