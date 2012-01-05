@@ -54,7 +54,7 @@ Depending on the logged-in users' roles and what sections of the portal they are
 
 As an administrator, the *Add* menu is the first item on the dockbar. This menu contains a list of items that you can add either to the page or to the current site.
 
-![Figure 1.3 Add Menu from the Dockbar](../../images/01-add-menu-from-dockbar.png)
+![Figure 1.3: Add Menu from the Dockbar](../../images/01-add-menu-from-dockbar.png)
 
 **Page:** adds a new page at the current navigation level. 
 
@@ -68,7 +68,7 @@ The Add menu gives you a nice, quick way to build your pages.
 
 The next item on the Dockbar is the *Manage* menu. From here, you can access many settings for the current page and site. 
 
-![Figure 1.3: Manage Menu from the Dockbar](../../images/01-manage-menu-from-dockbar.png)
+![Figure 1.4: Manage Menu from the Dockbar](../../images/01-manage-menu-from-dockbar.png)
 
 **Page:** brings up a window containing controls for managing a specific page of the current site. These include the theme, layout, search engine optimization, and more.
 
@@ -94,7 +94,7 @@ Next on the Dockbar is a check box labeled *Edit Controls*. This toggles the edi
 
 The Go to menu is your main navigation tool within Liferay Portal. The control panel is the topmost item in this menu. Initially, your current location is highlighted. This shows you are in the public pages of the *liferay.com* site.
 
-![Figure 1.4: Go To Menu from the Dockbar](../../images/01-go-to-menu-from-dockbar.png)
+![Figure 1.5: Go To Menu from the Dockbar](../../images/01-go-to-menu-from-dockbar.png)
 
 Liferay allows for various configurations of pages for end users: you can configure it so that some or all users have their own personal sites, with public and/or private pages, where they can place the portlets they need to use. The administrator account by default has its own pages. Because you are logged in with an account that has administrator privileges, you can see everything in the portal.
 
@@ -102,7 +102,7 @@ Liferay allows for various configurations of pages for end users: you can config
 
 Your (or the default user's) name appears at the right side of the Dockbar next to a sign-out link that logs you out of the portal. Your name itself is a link to the *Manage My Account* dialog box. You can use the left menu to switch between viewing your account information and your personal site pages. You can configure both personal and portal information such as your screen name, password, email address, phone number, physical address, language, and time zone, as well as your organizations, sites, user groups, and roles. 
 
-![Figure 1.5: My Account Menu from the Dockbar](../../images/01-my-account-menu-from-dockbar.png)
+![Figure 1.6: My Account Menu from the Dockbar](../../images/01-my-account-menu-from-dockbar.png)
 
 One of the most important tools Liferay offers for managing your portal is the aforementioned control panel, accessible from the *Go to* menu of the Dockbar. The control panel is composed of administrative pages that you can use to manage various aspects of the portal.
 
@@ -110,7 +110,7 @@ One of the most important tools Liferay offers for managing your portal is the a
 
 The control panel is very easy to navigate. On the left side is a list of headings with functions underneath them. The headings are in alphabetical order, but the functions are in a logical order.
 
-![Figure 1.6: Liferay's Control Panel](../../images/01-liferay-control-panel.png)
+![Figure 1.7: Liferay's Control Panel](../../images/01-liferay-control-panel.png)
 
 **User Name:** is always the logged in user's personal space. Here, you can change your account information and manage the pages of your personal site.
 
@@ -132,11 +132,11 @@ Before we dive into the user interface for adding and maintaining various portal
 
 A simple way to think about this is that your portal has users and various ways to group them together. Some of these groupings may be organized hierarchically by an administrator. These are called organizations. An administrator can also create more ad hoc groupings of users called user groups. User groups can be composed of users who do not fit into a particular hierarchy or who belong to different organizations. Other groupings may be created by the users themselves. For example, users from different organizations could create a site called “Dog Lovers” and allow anyone to join. The site would not fit into an organizational hierarchy; it would just serve a common interest in dogs. Administrators can create teams within sites. The following figure illustrates how users can be grouped in Liferay Portal: users can belong to sites, organizations, and user groups and user groups can belong to sites and organizations.
 
-![Figure 1.7: Liferay's User Collection Model](../../images/user-collections-diagram-web.png)
+![Figure 1.8: Liferay's User Collection Model](../../images/user-collections-diagram-web.png)
 
 Liferay manages permissions for users and collections of users via roles. Roles can be scoped to grant permissions within a particular organization or site. They can also be scoped to customize permissions that cut across the entire portal. For example, a Message Boards Administrator role could be created that grants permissions to administer any message board in the portal. Users from multiple organizations or sites could be assigned to this role. Alternatively, a similar role could be created that grants those permissions only for a particular organization or site. Roles provide a powerful mechanism for administrators to configure portal resources and security in a consistent and robust manner. The figure below illustrates permissions defined by roles for users and collections of users. Permissions can't be directly assigned to users. Users receive their permissions from roles, either directly, or from an organization, user group, or site.
 
-![Figure 1.8: Liferay's Permissions Model](../../images/user-permissions-diagram-web.png)
+![Figure 1.9: Liferay's Permissions Model](../../images/user-permissions-diagram-web.png)
 
 Teams belong to individual sites. Roles that appear inside sites are scoped just for sites. This means that although each site in the portal may have access to a particular role with its configured permissions, membership in this role can be different for each site and the granted permissions only apply within one site.
 
