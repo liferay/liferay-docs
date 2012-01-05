@@ -1,6 +1,6 @@
 # Social Networking with Liferay
 
-Since the first social networks rose to popularity, concepts such as *Friend* and later *Like*--previously reserved for direct human interaction--have taken on new meaning in an always-online, information driven culture. It could be argued that social networks have transformed the way people interact with their friends, relatives, and colleagues. Friends, connections, followers, circles, and lists have enabled people to connect and stay connected in ways they'd never been able to before. Initially, these concepts proved to be highly successful for casual web sites but they didn't take to the business world as quickly. But now, more and more organizations are realizing the importance of leveraging social interactions for more than just recreation. Liferay is a great platform for business web sites, casual web sites, and everything in between, and its social features reflect this. 
+Since the first social networks rose to popularity, concepts such as *Friend* and later *Like*--previously reserved for direct human interaction--have taken on new meaning in an always-online, information driven culture. It could be argued that social networks have transformed the way people interact with their friends, relatives, and colleagues. Friends, connections, followers, circles, and lists have enabled people to connect and stay connected in ways they'd never been able to before. Initially, these concepts proved to be highly successful for casual web sites but they didn't take to the business world as quickly. But now, more and more organizations are realizing the importance of leveraging social interactions for more than just recreation. Liferay's robust social features make it a great platform for business web sites, casual web sites, and everything in between.
 
 Liferay has a constantly improving set of social features which enable you to encourage social interactions on your own portal, and to leverage the power and popularity of other social networks. In this chapter, we'll discuss:
 
@@ -21,32 +21,31 @@ Liferay has many portlets available for social interaction and collaboration. So
 
 Some of the social portlets should be used on the public pages of your portal, while others should be used as part of a user's personal site. As you might guess, the portlets for personal page use are more focused on simple social interactions, while the ones which can be placed on any site help improve productivity.
 
-Unless otherwise noted, these portlets are all provided with minimal configuration options. Most of them have two configuration options--the option to change permissions for the portlet view and sharing options for connecting the portlet to other web sites. They do not have any way to change options like feed length or display styles. Some styling changes, however, could be done through custom CSS.
+Unless otherwise noted, these portlets are all provided with minimal configuration options. Most of them have two configuration options--the option to change permissions for the portlet view and sharing options for connecting the portlet to other web sites. They do not have any way to change options like feed length or display styles. Some styling changes, however, can be done through custom CSS.
 
 ### Installing the social portlets
 
 The social portlets are all included with the Liferay Community Edition distribution, but need to be installed separately for Enterprise Edition. If you're using Liferay Enterprise Edition, or had previously removed the social portlets from Community Edition, you can use Liferay's plugin installer to easily add social features to your portal.
 
-If you're logged in as an adminstrator, go to the Control Panel, and in the *Server* section, click on *Plugins Installation*. From here, click on *Install More Portlets* and search for *Social Networking*. Once the results come up, select the latest version of the Social Networking Portlet, and then click *Install*. Once the install process finishes, you can start using the social networking portlets. 
+If you're logged in as an adminstrator, go to the control panel, and in the *Server* section, click on *Plugins Installation*. From here, click on *Install More Portlets* and search for *Social Networking*. Once the results come up, select the latest version of the Social Networking Portlet, and then click *Install*. Once the install process finishes, you can start using the social networking portlets. 
 
 ### Using social networking on public pages
 
 There are several social portlets that are designed for use on regular portal pages. The goal of these is to use social connections to help a group work together more closely. These include the **Members** portlet, **Meetups**, **Top Users**, **Summary**, and **Activities**.
 
+![Figure 8.1: The Members Portlet](../../images/XX-social-networking-members-portlet.png)
+
 The Members portlet is a simple list of all the current site's members. The only configuration options you have are permissions, which are the same for every portlet. For example, you might change the permissions so that only members of the current site can view the portlet. 
 
-![Figure 8.1: The Members Portlet](../../images/XX-social-networking-members-portlet.png)
+![Figure 8.2: The Meetups Portlet](../../images/XX-social-networking-meetups.png)
 
 The Meetups portlet is a tool for creating casual meetings for users of your portal. Anyone can create a "meetup" and give it a title, description, date/time, maximum number of attendees, price, and provide an image. Any meetups that are created are displayed in the portlet for anyone to view. Users can register for the meetup, which lets the organizer keep track of who's coming. 
 
 The options for creating a meetup are essentially the same as those for creating a calendar event, and the Meetups portlet shares some functionality with the Calendar. For more information on the Calendar portlet and configuring events, see chapter 4.
 
-![Figure 8.2: The Meetups Portlet](../../images/XX-social-networking-meetups.png)
+![Figure 8.3: The Activities Portlet](../../images/XX-social-networking-activities.png)
 
 The Activities portlet comes in two varieties: the standard Activities portlet and the Members' Activities portlet. The basic function of the portlets are the same--they both display a feed of what users are doing on the portal. The difference is that Activities displays what's going on across the entire portal, while Members' Activities displays only what members of the current site have been doing.
-
-![Figure 8.3: The Activities Portlet](../../images/XX-social-networking-activities.png)
- 
 
 ### Using social networking on personal pages
 
@@ -56,7 +55,7 @@ In addition to the portlets available for general use, there are a handful that 
 
 The Summary portlet provides a quick overview of a user's profile. When posted in a user's personal site, it displays the user's name, profile picture, and job title. Users can add additional personal information by clicking on *Edit* in the portlet and filling in information in the *About Me* section.
 
-This portlet is also essential to any social implementation on Liferay, because it has the *Friend Request* button. This enables users to iniate social relationships. Note that this portlet simplifies a much more powerful underlying social networking API that defines many different kinds of relationships, including friends. Your developers can take advantage of this API to create powerful social applications. For more information on this, see [*Liferay in Action*](http://manning.com/sezov) (Manning Publications) or the *Liferay Developer's Guide*. 
+This portlet is also essential to any social implementation on Liferay, because it has the *Friend Request* button. This enables users to initiate social relationships. Note that this portlet simplifies a much more powerful underlying social networking API that defines many different kinds of relationships, including friends. Your developers can take advantage of this API to create powerful social applications. For more information on this, see [*Liferay in Action*](http://manning.com/sezov) (Manning Publications) or the *Liferay Developer's Guide*. 
 
 The Wall portlet provides a place for users to leave messages on other users' profiles. The messages can only be plain text, and no formatting or HTML is supported. Once a post is added to their wall, users have the ability delete it or respond to it with a quick link to post on the original poster's wall.
 
@@ -68,45 +67,41 @@ The map is a tool which enables you to view the locations of other users on the 
 
 ![Figure 8.5: The Map Portlet](../../images/map-portlet.png)
 
-Liferay ships with a nice suite of social networking applications that let you power your site for social interaction. But we've only looked at a portion of them. Let's examine the portlets that should be added to personal pages. 
-
-
-Now that you know what the portlets do, let's put them all together and make a social web site. 
+Liferay ships with a nice suite of social networking applications that lets you power your site for social interaction. Now that we've discussed what these portlets do, let's put them all together and make a social web site. 
 
 ### Liferay's social tools in action
 
-
-To get started with Liferay's social features, let's set up our users' personal public pages to include social apps. Because of Liferay's flexible page layout options, we have a large number of options for how to set the pages up. For simplicity's sake, we'll make something that's fairly similar to the original Facebook layout.
+To get started with Liferay's social features, let's set up the public pages of our users' personal sites to include social apps. Because of Liferay's flexible page layout options, we have a large number of options for how to set the pages up. For simplicity's sake, we'll make something that's fairly similar to the original Facebook layout.
 
 #### Setting up users' personal pages
 
 Before we start adding portlets to pages, we should configure Liferay so that everyone (or some subset of everyone) has the same social features. We have two ways to do this, with some advantages and disadvantages to each.
 
-**User Groups:** Placing users into a group enables you to create a site template for members' personal public and private pages. With the site template, you can control whether users can modify pages, and you can push changes out to users in the future. Once the site template is assigned to a user group, you can set the *Default User Associations* to have all users be the member of a particular group in *Portal Settings* in the control panel. The advantage of this is that it can be managed entirely through the GUI, it's easy to configure, and you can use the *Keep a Link to the Site Template* option to manage all user pages by simply changing the template. This is the recommended way to manage personal pages across the portal.
+**User Groups:** Placing users into a group enables you to create a user group site for them. The pages and portlets defined by the user group site are copied to members' personal sites. With the user group site, you can control whether users can modify pages, and you can push changes out to users in the future. Once the site template is assigned to a user group, you can set the *Default User Associations* to have all users be the member of a particular group in *Portal Settings* in the control panel. The advantage of this is that it can be managed entirely through the GUI and it's easy to configure. If you base your user group's site on a template, you can use the *Enable propagation of changes from the site template* option to manage all user pages simply by changing the template. This is the recommended way to manage personal pages across the portal. For more information on user group sites, see chapter 12.
 
 **Portal Properties Configuration:** The legacy way to do this is with the configuration file. You can specify a default layout and portlets for personal pages in your `portal-ext.properties` file. If you don't want users to be able to modify their own pages, you should set the layouts to be static by adding the following line to your `portal-ext.properties` file:
 
     layout.user.public.layouts.modifiable=false
     
-The advantage of this method is that it applies to all users of the portal. The disadvantage is that it's not as maintainable as using site templates, and you don't get as much control over what's modifiable by the user. For more information on this method, see *Default User Private Layouts* and *Default User Public Layouts* in **Chapter 14: Configuring Liferay's Properties**.
+Note that the `portal-ext.properties` method applies changes to the personal sites of all users of the portal. However, this method does not provide as much maintainability or customizability as using user group sites. Using user group sites allows you to choose what's modifiable by the user. For more information on the `portal-ext.properties` method, see *Default User Private Layouts* and *Default User Public Layouts* in chapter 14.
     
-Because it's the recommended method, we'll use the user group method to create the layouts. As an administrator, go to the control panel, and select *Site Templates* from under the *Portal* section. Click *Add* and fill out the form, leaving all the defaults. Click *Save*.
+Because it's the recommended method, we'll use the user group method to create the layouts. As an administrator, go to the control panel, and select *Site Templates* from under the *Portal* section. Click *Add* and fill out the form. We'll call our new site template *Social Layout*. Click *Save*.
 
 <!-- | TODO: Fix this so it agrees with new site templates interface. DONE | -->
 
 ![Figure 8.6: Creating the Site Template](../../images/social-networking-site-template.png)
 
 ---
-![tip](../../images/01-tip.png) Note: Setting the property which disables modifications to personal page layouts disable those modifications across the portal for all pages and all users. Unchecking *Allow Site Administrators to Modify the Pages Associated with this Site Template* will only prevent users from modifying the specific pages contained in the template, but will not disable a user's ability to add more pages, or modify additional pages.
+![tip](../../images/01-tip.png) Tip: Setting the property which disables modifications to personal page layouts disallows users across the portal from making modifications to their personal sites. Unchecking *Allow Site Administrators to Modify the Pages Associated with this Site Template* will only prevent users from modifying the specific pages contained in the template, but will not disable a user's ability to add or modify additional pages.
 ---
 
 Once you've created the template, choose *Actions &rarr; Manage Pages* for *Social Layout* from the Site Templates page, and then click *View Pages*. Let's change the name of the page from the default to *My Profile* and add some portlets to the page. In the screenshot below, we removed the borders to make the page look more integrated, and also used Nested Portlets to make the layout more interesting.
 
 ![Figure 8.7: Social Profile Site Template](../../images/social-networking-profile-template.png)
 
-Back in the control panel, select *Users and Organizations* from the *Portal* section. Once there, click *Add &rarr; User Group*. Name the group *Social Users*. When creating a user group, you have the option to set a Personal Site Template; use this option and select the Social Layout for your Public Pages.
+Back in the control panel, select *Users and Organizations* from the *Portal* section. Once there, click *Add &rarr; User Group*. Name the group *Social Users*. When creating a user group, you have the option to set a user group site; use this option and select the Social Layout template for your Public Pages.
 
-Now, go to *Portal Settings* and select *Users* from the submenu. From the Users page, go to the *Default User Associations* tab and enter *Social Users* in the User Groups section. Now all users on the portal get a Social Profile page. Now the question is, how do we encourage one user to visit another user's fancy new profile page?
+Now, go to *Portal Settings* and select *Users* from the submenu. From the Users page, go to the *Default User Associations* tab and enter *Social Users* in the User Groups section. Now all users on the portal get a Social Profile page. Now the question is, how do we encourage users to visit each other's fancy new profile pages?
 
 #### Connecting users through collaboration
 
@@ -116,7 +111,7 @@ Using to our example site of nosester.com, we can take a closer look at ways tha
 
 <!-- | TODO: The above sentence has no ending. DONE | --> 
 
-The Directory portlet can provide a simple way for users to connect. If we have a site dedicated to people with big noses, we can place a directory portlet on that site, listing all the users that have joined that site. Users can connect by sending requests to other users on that list. This isn't the worst way to get users connected, but it probably won't be particularly effective. Why not? Well, other than sharing some very basic common interests, we haven't really had any interactions.
+The Directory portlet can provide a simple way for users to connect. If we have a site dedicated to people with big noses, we can place a directory portlet on that site, listing all the users that have joined that site. Users can connect by sending requests to other users on that list. This isn't the worst way to get users connected, but it probably won't be very effective. Why not? Well, other than sharing some very basic common interests, we haven't really had any interactions.
 
 The Activities portlet provides a similar, but more effective means of connection. Because it shows a list of what other users are doing, this portlet helps users discover who is among the most active across the site or the portal, and thus who might be a good connection.  
 
@@ -150,11 +145,11 @@ In addition to configuring individual gadgets, you can specify gadgets that are 
 
 ![Figure 8.9: OpenSocial Gadget in your application list](../../images/open-social-in-context.png)
 
-Clicking *Actions* next to the gadget will enable you to edit, delete, change permissions, or refresh the gadget. Edit allows you to change the URL or category; Permissions gives you the basic View, Update, Delete, and Permissions options; Delete will remove the listing for the gadget; and the refresh option manually refreshed the gadget cache for cases where changes have been made to the gadget, but they are not displaying in the portlet.
+Clicking *Actions* next to the gadget will enable you to edit, delete, change permissions, or refresh the gadget. *Edit* allows you to change the URL or category; *Permissions* gives you the basic *View*, *Update*, *Delete*, and *Permissions* options; *Delete* will remove the listing for the gadget; and the refresh option manually refreshed the gadget cache for cases where changes have been made to the gadget, but they are not displaying in the portlet.
 
 ### Creating and editing OpenSocial gadgets
 
-OpenSocial gadgets are XML documents, so as part of Liferay's OpenSocial integration, a gadget editor is included. The gadget editor is a complete development environment for gadgets, and provides syntax highlighting, a preview function, undo/redo options, and built in tabs for working on multiple gadgets at once. You can also organize and manage gadgets through a simple file manager embedded into the portlet. To access the gadget editor, go to the Control Panel, and click on *OpenSocial Gadget Editor* in the content section.  
+OpenSocial gadgets are XML documents, so as part of Liferay's OpenSocial integration, a gadget editor is included. The gadget editor is a complete development environment for gadgets, and provides syntax highlighting, a preview function, undo/redo options, and built in tabs for working on multiple gadgets at once. You can also organize and manage gadgets through a simple file manager embedded into the portlet. To access the gadget editor, go to the control panel, and click on *OpenSocial Gadget Editor* in the content section.  
 
 Once you have created and saved a gadget using the editor, click on the wrench next to the file to rename, delete, publish, or get the URL for your gadget. If you want to display your gadget somewhere, you can click *Publish* to choose a category and display your gadget in the application menu, or click on *Show URL* to get a URL to display your gadget on any site that supports OpenSocial.
 
@@ -166,22 +161,21 @@ Now that you've got all these social applications running on your system, the ne
 
 <!-- | TODO This is all out of date. It's been reimplemented for Liferay 6.1. Please rewrite. | -->
 
-When you have a lot of user interaction on your web site, it can be helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can make use of to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. Using Liferay's Social Activity feature will help show which users are making real, valuable contributions.
+When you have a lot of user interaction on your web site, it can be helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can use to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. Using Liferay's Social Activity feature will help show which users are making real, valuable contributions.
 
-![Figure 4.24: The Social Equity Page of the Control Panel](../../images/05-social-equity.png)
+![Figure 8.10: The Social Equity Page of the Control Panel](../../images/05-social-equity.png)
 
-To activate Social Activity, you'll first need to determine which collaboration applications you want to use Social Activty. There are currently three types of content you can use Social Activity with - Blogs Entries, Message Board Messages, and Wiki Pages. Activation is a la carte - so you can use it on one, two, or all three applications. Social Activity tracks three metrics from within each of these applications two are for the user - *Participation* and *Contribution* - and the other, *Popularity*, is for the asset involved.
+To activate Social Activity, you'll first need to determine which collaboration applications you want to use Social Activty. There are currently three types of content you can use with Social Activity - Blogs Entries, Message Board Messages, and Wiki Pages. Activation is a la carte - so you can use it on one, two, or all three applications. Social Activity tracks three metrics from within each of these applications two are for the user - *Participation* and *Contribution* - and the other, *Popularity*, is for the asset involved.
 
-Let's activate Social Activity for Blogs Entries. Check the box next to *Blog Entry*. You now have options to set point values and limits on several different actions for blogs. You'll notice each item on the list has dropdowns you can use to set the number of participation and contribution points; popularity points are tied directly to contribution points. In addition to that, you can expand the box by clicking *Limits* in the top right of each list item. You can use this to set a limit one how many times a use can perform this activity with a specific asset and receive the requisite points. For some activities you can set limits on both participation and contribution points, but on new content creation you can only set limits on participation points.
+Let's activate Social Activity for Blogs Entries. Check the box next to *Blog Entry*. You now have options to set point values and limits on several different actions for blogs. You'll notice each item on the list has dropdowns you can use to set the number of participation and contribution points; popularity points are tied directly to contribution points. In addition to that, you can expand the box by clicking *Limits* in the top right of each list item. You can use this to set a limit on how many times a use can perform this activity with a specific asset and receive the requisite points. For some activities, you can set limits on both participation and contribution points but on new content creation you can only set limits on participation points.
 
-It might not be immediately obvious, but for all actions that do not involve the creation of a new asset, all of the contribution points always go to the original asset creator and all popularity points go to the original asset. That means if *Votes on a Blog* is set to have 1 *Participation* point and 5 *Contribution* points (and therefore 5 *Popularity* points), the user who votes on the asset will receive 1 participation point, the user who created the asset will receive 5 contribution points, and the asset will receive 5 popularity points. 
+For all actions that do not involve the creation of a new asset, all of the contribution points always go to the original asset creator and all popularity points go to the original asset. That means if *Votes on a Blog* is set to have 1 *Participation* point and 5 *Contribution* points (and therefore 5 *Popularity* points), the user who votes on the asset will receive 1 participation point, the user who created the asset will receive 5 contribution points, and the asset will receive 5 popularity points. 
 
+![Figure 8.11: Setting limits in Social Activity](../../images/social-equity-limits.png)
 
-![Figure 4.25: Setting limits in Social Activity](../../images/social-equity-limits.png)
+It's easy to assign points--you can arbitrarily assign points for just about anything--the challenge is making the points significant in some way. As mentioned before, the primary purpose of social activity tracking is to make sure that users who regularly contribute to the portal and participate in discussions are recognized as such. So the central piece of the social equity display is the *User Statistics* portlet.
 
-It's easy to assign points - I can give you arbitrary points for just about anything - the challenge is making the points in some way significant. As mentioned before, the primary purpose of social activity tracking is to make sure that stand-out users who are contributing to the portal and participating in discussions are given recognition as such. So the central piece of the social equity display is the *User Statistics* portlet.
-
-The **User Statistics** portlet displays a list of users ranked by an amalgamation of their participation and contribution scores. By clicking on the Configuration icon for the portlet, you can change some of the specifics of the rankings. There are four check boxes that you can enable or disable:
+The User Statistics portlet displays a list of users ranked by an amalgamation of their participation and contribution scores. By clicking on the Configuration icon for the portlet, you can change some of the specifics of the rankings. There are four check boxes that you can enable or disable:
 
 **Rank by Contribution**: If this is checked, a user's contribution score will be used as a factor in calculating their rank.
 
@@ -191,15 +185,15 @@ The **User Statistics** portlet displays a list of users ranked by an amalgamati
 
 **Show Totals**: Toggles the display of the users activity score next to their name.
 
-**Display Additional Activity Counters**: You can toggle the display of any number of other pieces of information next to the users name in the statistics, ranging from the number of comments on assets a user has created to the number of wiki articles that the user has created. If you want to display multiple data points, you can click the plus button to add one and the minus to remove one. You can have as many data points displayed as you want, but displaying too many might make your portlet a little unwieldy.
+**Display Additional Activity Counters**: You can toggle the display of any number of other pieces of information next to the users name in the statistics, ranging from the number of comments on assets a user has created to the number of wiki articles that the user has created. If you want to display multiple data points, you can click the *plus* button to add one and the *minus* button to remove one. You can have as many data points displayed as you want, but displaying too many might make your portlet a little unwieldy.
 
-![Figure 4.25: The User Statistics portlet](../../images/user-statistics-portlet.png)
+![Figure 8.12: The User Statistics portlet](../../images/user-statistics-portlet.png)
 
-The **Group Statistics** portlet provides some more advanced data analytics. If you add it to a page, and click on the configuration icon, you see that by default, it will display one metric *Activities on Assets*. You can click the *plus* icon to add additional slots, and choose from the dozen or so metrics available for each slot, covering virtually any action that a user can perform on content on the portal. If you decide that you're displaying too many metrics, you can click the *minus* button for a particular slot on the configuration view to remove it.
+The **Group Statistics** portlet provides some more advanced data analytics. If you add it to a page, and click on the configuration icon, you see that by default, it will display one metric *Activities on Assets*. You can click the *plus* button to add additional slots, and choose from the dozen or so metrics available for each slot, covering virtually any action that a user can perform on content on the portal. If you decide that you're displaying too many metrics, you can click the *minus* button for a particular slot on the configuration view to remove it.
 
 There are a wide-ranging number of actions that you can provide social credit for. Users can receive credit for everything from subsciring to a blog to writing wiki articles. You can easily tweak the numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
 
-Social Activity can be an invaluable tool for portals that are heavily driven by community-created conteny. It allows you to easily recognize users who are major contributors and it indicates to new users whose advice will be most trustworthy. Social Activity is easy to set up and can be configured differently for each site, increasing the flexibility of your portal.
+Social Activity can be an invaluable tool for portals that are heavily driven by community-created content. It allows you to easily recognize users who are major contributors and it indicates to new users whose advice will be most trustworthy. Social Activity is easy to set up and can be configured differently for each site, increasing the flexibility of your portal.
 
 In addition to the social interactions that you can create on your portal, Liferay has points of integration with some other popular social networks that enable you to leverage their power and popularity for the content on your portal.
 	
@@ -221,11 +215,11 @@ This integration enables you to make things like Message Boards, Calendars, Wiki
 
 <!-- | TODO: This is too thin. Please use the headings to summarize what the chapter was about. | -->
 
-Websites like Facebook and Twitter have attracted hundreds of millions of users by simply giving users a way to connect and communicate with each other. With Liferay, you have the power to either build a portal around social features or enhance a portal build around content and collaboration by providing users with the tools to connect and interact.
+Websites like Facebook and Twitter have attracted hundreds of millions of users by simply giving users a way to connect and communicate with each other. With Liferay, you have the power to either build a portal around social features or enhance a portal built around content and collaboration by providing users with the tools to connect and interact.
 
-To get you started, you have a selection of portlets designed to make users' personal pages a place where they can interact with by learning about other users and communicate using a simple messaging system. Using the now ubiquitous concept of "friends," users can also form long term connection with other users that they frequently work with or with whom they share similar interests. 
+To get started, you can use a selection of portlets designed to make users' personal public pages a place where they can interact with each other by learning about other users and communicate using a simple messaging system. Using the now ubiquitous concept of "friends," users can also form long term connection with other users that they frequently work with or with whom they share similar interests. 
 
-Outside of users personal pages, you have a variety of portlets, like the activity portlets, which are designed to help users identify other users that might be working on similar projects, and keep track of what's going on around the portal. You can even use the Social Activity feature to give credit where credit is due and reward those users are contributing the most with recognition.
+Outside of users' personal pages, you have a variety of portlets, like the activity portlets, which are designed to help users identify other users that might be working on similar projects, and keep track of what's going on around the portal. You can even use the Social Activity feature to give credit where credit is due and recognize the users who contribute the most.
 
 Reaching even further out, Liferay provides integration with other sites and services that enable you to connect with users outside of your portal, either by pulling content from other websites using OpenSocial integration, or pushing content on your portal out to a broader audience using Facebook integration. We've outlined the tools you have available, now it's up to you to leverage Liferay's Social Networking features in the way that best fits your portal.
 
