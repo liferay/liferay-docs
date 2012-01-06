@@ -367,6 +367,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     <target name="reset-images" description="resets the image numbers in a markdown chapter file">
         <echo message="... resetting image numbers in ${chapter} (${lang})"/>
         <java jar="../reset-images.jar" fork="true">
+	    <arg value="ResetImages"/>
             <arg value="./${lang}/chapters/${chapter}.markdown"/>
             <!-- This is useful if you want to save the output to a new file without overwritting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
         </java>
@@ -377,6 +378,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         <echo message="... numbering images in ${chapter} (${lang})"/>
         <java jar="../number-images.jar" fork="true">
             <!-- <arg value="${build.dir}/${chapter}.markdown"/> -->
+	    <arg value="NumberImages"/>
             <arg value="./${lang}/chapters/${chapter}.markdown" />
             <!-- This is useful if you want to save the output to a new file without overwritting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
         </java>
@@ -385,6 +387,7 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
     <target name="add-markdown-metadata" depends="concat-markdown-files" description="adds metadata at the top of a concatenated markdown file">
         <echo message="... adding metadata to ${doc.dir} (${lang})"/>
         <java jar="../add-markdown-metadata.jar" fork="true">
+	    <arg value="AddMarkdownMetadata"/>
             <arg value="./${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
             <arg value="${title}"/>
             <arg value="${author}"/>
