@@ -299,7 +299,7 @@ First, download the Liferay Tcat bundle from the Liferay customer portal. You'll
 -   **Liferay Portal 6.1 EE Tcat Admin:** contains the Tcat administration console and Liferay Portal EE and all appropriate plugins.
 -   **Liferay Portal 6.1 EE Tcat Agent:** contains a vanilla Tomcat application server and the Tcat management agent.
 
-Next, download the appropriate Tcat platform installation at: [http://www.mulesoft.com/download-tcat](http://www.mulesoft.com/download-tcat). You may select installation wizards for Windows (32 and 64-bit), Mac, Unix, Solarix, and Linux (32 and 64-bit) as well as a manual installation zip.
+Next, download the appropriate Tcat platform installation at: [http://www.mulesoft.com/download-tcat](http://www.mulesoft.com/download-tcat). You may select installation wizards for Windows (32 and 64-bit), Mac, Unix, Solaris, and Linux (32 and 64-bit) as well as a manual installation zip.
 
 After obtaining the software bundles, you can proceed with installation and configuration of the Administration Console.
 
@@ -1138,7 +1138,7 @@ Now that you have all of your installation files, you are ready to start install
 
 ##### Dependency Jars
 
-Let's work with the depenency jar files first.
+Let's work with the dependency jar files first.
 
 1.	Create folder `$JBOSS_HOME/modules/com/liferay/portal/main` and unzip the jar files found in the Liferay Portal Dependencies zip file to this folder. Take care that the zip file's jar files are extracted into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
@@ -2181,159 +2181,65 @@ Now, let's deploy Liferay Portal.
 
 Congratulations! You are now running Liferay on Oracle WebLogic.
 
-#### Installing Liferay on WebSphere 6.1
+#### Installing Liferay on WebSphere 8.0
 
-![image](../../images/02-tip.png) **Tip:** Throughout this installation and configuration process, WebSphere will prompt you to Click Save to apply changes to Master Configuration. Do so intermittently to save your changes.
+![image](../../images/02-tip.png) **Tip:** Throughout this installation and configuration process, WebSphere prompts you to Click Save to apply changes to Master Configuration. Do so intermittently to save your changes.
 
 **Liferay Home** is in a folder called `liferay` in the home folder of the user ID that is running WebSphere.
 
-##### Installation
+##### Preparing WebSphere for Liferay
 
-1.  Download the Liferay Portal `.war` file.
+When the application server binaries have been installed, start the **Profile Management Tool** to create a profile appropriate for Liferay. 
 
-2.  Download and extract these Liferay `.jar`s to `websphere/appserver/lib/ext`.
+1. Click on *Create…*. Choose *Application Server*. Click *Next*. 
 
--   Dependency libraries (Liferay Portal Dependencies)
+2. Click the Advanced profile creation option, and then click *Next*. Why Advanced? You can specify your own values for settings such as the location of the profile and names of the profile, node and host. You can assign your own ports. You can optionally choose whether to deploy the administrative console and sample application and also add web-server definitions if you wish. Web server definitions are used with IBM HTTP Server. For more information about these options, please see the WebSphere documentation. 
 
--   Your database JDBC driver `.jar`
+![Figure 11.x: Choose the Advanced profile option to specify your own settings.](Websphere-8_html_5a8a0a4b.png)
 
--   Currently you also need to copy `portlet.jar` from the Liferay Dependencies archive into `WebSphere/AppServer/java/jre/lib/ext`, as WebSphere already contains older versions of the portlet .jar which must be overridden at the highest level of the class path. This issue may be fixed in future releases; check the Liferay Wiki for updates to this issue.
+3. Check the box *Deploy administrative console*. This gives you a web-based UI for working with your application server. Skip the default applications. You'd only install these on a development machine. Click *Next*. 
+
+4. Set profile name and location. Ensure that you specify a performance tuning setting other than *Development*, since you're installing a server for production use. Click *Next*. 
+
+![Figure 11.x: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](Websphere-8_html_m3feb4e9f.png)
+
+5. Choose node and host names for your server. These will be specific to your environment. Click *Next*. 
+
+![Figure 11.x: Choose node and host names that are appropriate to your environment.](Websphere-8_html_1327271c.png)
+
+6. Administrative security in WebSphere is a way to restrict who has access to the administrative tools. For simplicity, we've disabled it, but you may want to have it enabled in your environment. Please see WebSphere's documentation for further information. Click *Next*. 
+
+![Figure 11.x: We've disabled administrative security, but you may want to enable it.](Websphere-8_html_2eb820b.png)
+
+7. Each profile needs a security certificate, which comes next in the wizard. If you don't have certificates already, choose the option to generate a personal certificate and a signing certficate, and click *Next*. 
+
+8. Once the certificates are generated, set a password for your keystore. Click *Next*.  
+
+![Figure 11.x: Set a password for your keystore.](Websphere-8_html_m6b754c08.png)
+
+9. Next, you can customize the ports that this server profile uses. Be sure to choose ports that are open on your machine. When choosing ports, installation detects existing WebSphere installations and if it finds activity, it increments ports by one. 
+
+![Figure 11.x: WebSphere gives you a nice user interface for customizing the ports your server uses.](Websphere-8_html_m2eef7200.png)
+
+10. If you want WebSphere to start automatically when the machine is booted, you configure it next. This differs by operating system. When you're finished configuring this the way you want, click *Next*. 
+
+11. WebSphere ships with IBM HTTP Server, which is a rebranded version of Apache. If you want to front your WebSphere server with IBM HTTP Server, you'd configure this next. Please see WebSphere's documentation for details on this. When finished, click *Next*. 
+
+12. WebSphere then creates your profile and finishes with a message telling you the profile was created successfully. You're now ready to install Liferay! 
+
+##### Copying portal dependencies
+
+Liferay ships with dependency .jars that it needs to have on the global classpath. These should be copied to WebSphere's global folder provided for this purpose: 
+
+	[Install Location]/WebSphere/AppServer/lib/ext
+
+Once you've copied the .jars here, start the server profile you're planning to use for Liferay. 
 
 ##### Database Configuration
 
-1.  Start WebSphere.
+If you want WebSphere to manage the database connections, follow the instructions below. Note that this is not necessary if you're planning on using Liferay's standard database configuration; in that case, skip this section. You'll set your database information in Liferay's setup wizard after the install. 
 
-2.  Open Administrative Console and log in.
-
-3.  Click *Resources*, click *JDBC Providers*.
-
-4.  Click *New*.
-
-5.  For name, enter the name of the JDBC provider (e.g. *MySQL JDBC Provider*).
-
-6.  For Implementation class name, enter the implementation class for your database driver's connection pool data source For MySQL, enter:
-
-    com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource
-
-7.  Click *Next*.
-
-8.  Clear any text in class path. You already copied the necessary `.jar`s to a location on the server's class path.
-
-9.  Click *Next*.
-
-10. Click *Finish*.
-
-11. Click *Data Sources* under *Additional Properties*.
-
-12. Click *New*.
-
-13. Enter a name: *liferaydatabasesource*.
-
-14. Enter JNDI: `jdbc/LiferayPool`.
-
-15. Everything else should stay at the default values.
-
-16. Click *Next*.
-
-17. Under *Additional Properties*, click *Custom Properties*.
-
-18. Click *New*.
-
-19. Create three custom properties by entering *Name*, *Value* and clicking *OK* for each row in the following table.
-
-**Name**
-
-**Value**
-
-1. user
-
-root
-
-2. serverName
-
-localhost
-
-3. databaseName
-
-lportal
-
- 20. Click *Data Sources &rarr; Test Connection* to test.
-
-##### Mail Configuration
-
-1.  Click *Resources &rarr; Mail Providers*.
-
-2.  Click *Built-in Mail Provider*.
-
-3.  Click *Mail Sessions*.
-
-4.  Click *New*.
-
-5.  Click *OK*.
-
-6.  Click *Security*.
-
-7.  Click *Secure administration, applications, and infrastructure*.
-
-8.  Select *Enable application security*.
-
-9.  Deselect *Use Java 2 security to restrict application access to local resources*.
-
-##### Install Liferay
-
-1.  Click *Applications &rarr; Install new applications*.
-
-2.  Browse for `liferay-portal-x.x.x.war`.
-
-![image](../../02-installing-the-liferay-war-file-on-windows.png) *Illustration 8: Installing the Liferay .war file on WebSphere 6.1*
-
-3.  Enter context root */*.
-
-4.  Click *Next*. For Steps 1 to 3, click *Next* to apply defaults.
-
-5.  Choose the *Mail Session* and *Data Source*, and then click *Next*.
-
-6.  Specify the virtual host upon which you want Liferay to run.
-
-7.  At the Summary Screen, click *Finish*.
-
-8.  Wait for the installation process to complete.
-
-9.  Save this configuration to master configuration by clicking on *System administration* and *Save Changes to Master Repository*.
-
-10. Create a `portal-ext.properties` file in the Liferay Home folder. For WebSphere, this is a folder called `liferay` in the home folder of the user that is running WebSphere. If you are using Liferay's built-in data source, add the database settings:
-
-##### Start Liferay Portal
-
-1.  Applications.
-
-2.  Click *Enterprise Applications*.
-
-![image](../../images/02-starting-liferay-on-websphere.png) *Illustration 9: Starting Liferay on WebSphere 6.1*
-
-3.  Uninstall *DefaultApplication*, *PlantsByWebSphere* and *SamplesGallery*.
-
-4.  Select `liferay-portal.war`, click *Start.*
-
-5.  Open up the browser and go to `http://localhost:9080`. The default Liferay home page will be displayed.
-
-#### Installing Liferay on WebSphere 7.0
-
-**Liferay Home** is in a folder called `liferay` in the home folder of the user ID that is running WebSphere.
-
-1.  Download the Liferay Portal WAR file.
-
-2.  Download and extract these Liferay jars to `websphere/appserver/lib/ext`.
-
--   Dependency libraries (Liferay Portal Dependencies)
-
--   JDBC Driver for your database
-
-##### Database Configuration
-
-If you want WebSphere to manage the database connections, follow the instructions below.
-
-![image](../../images/02-websphere-jdbc-providers.png) *Illustration 10: WebSphere 7.0 JDBC Providers*
+![Figure 11.x: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
 
 1.  Start WebSphere.
 
@@ -2351,7 +2257,7 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 7.  Click *Next*.
 
-8.  Clear any text in class path. You already copied the necessary `.jar`s to a location on the server's class path.
+8.  Clear any text in classpath. You already copied the necessary `.jar`s to a location on the server's class path.
 
 9.  Click *Next*.
 
@@ -2371,7 +2277,7 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 17. Type *user* into the search terms and click *Go*.
 
-![image](../../images/02-modifying-data-source-properties-in-websphere.png) *Illustration 11: Modifying data source properties in WebSphere 7*
+![Figure 11.x: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your database. Click *OK* and save to master configuration.
 
@@ -2409,24 +2315,20 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 ##### Start Liferay
 
-1.  Create a `portal-ext.properties` file in the Liferay Home folder. For WebSphere, this is a folder called `liferay` in the home folder of the user that is running WebSphere. If you are using Liferay's built-in data source, add the database settings:
-
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
-    jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.default.username=root
-    jdbc.default.password=root
-
-2.  If you are using WebSphere's data source per the instructions above,     add the JNDI name instead:
+1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish to use WebSphere's data source, create a file called `portal-ext.properties` in your Liferay Home folder. Place the following text in the file: 
 
     jdbc.default.jndi.name=jdbc/LiferayPool
+    setup.wizard.enabled=false
 
-3.  Save and close the file.
+2.  Select the Liferay application and click *Start*. 
 
-4.  Click *Application Types &rarr; WebSphere Enterprise Application*.
+![Figure 11.x: Starting Liferay on WebSphere.](Websphere-8_html_m7420ff51.png)
 
-5.  Uninstall the default application.
+3. In the setup wizard, select and configure your database type. Click *Finish* when you're done. 
 
-6.  Select the Liferay application and click *Start*.
+Liferay then creates the tables it needs in the database. 
+
+Congratulations! You've installed Liferay on WebSphere! 
 
 ### Making Liferay Coexist with Other Java EE Applications
 
@@ -2446,7 +2348,7 @@ To change the file, open it in a text editor. Place the `portal.ctx` property at
 
 This default setting defines Liferay Portal as the application that sits at the root context. If you change it to something else, say */portal*, for example, you can then deploy Liferay in that context and it will live there instead of at the root context.
 
-A full discussion of the `portal-ext.properties` file appears in Chapter 6.
+A full discussion of the `portal-ext.properties` file appears in Chapter 14.
 
 **Note for WebLogic Users:** WebLogic also requires that you modify the `weblogic.xml` file which is included with Liferay. In this file are tags for the context root:
 
@@ -2456,5 +2358,5 @@ Change this so that it matches the path you set in your `portal-ext.properties` 
 
 ## Summary
 
-This chapter is a guide to everything about installing Liferay. Whether you choose a Liferay bundle or an existing application server, Liferay Portal integrates seamlessly with your enterprise Java environment. It is supported on more application servers than any other portal platform, allowing you to preserve your investment in your application server of choice, or giving you the freedom to move to a different application server platform. Liferay is committed to providing you this freedom: we have 100 test servers certifying our builds with roughly 10,000 tests per version of Liferay Portal. Each of those tests must be run on all of our different supported combinations of application servers, databases, and operating systems. So you can be sure that we are committed to supporting you on your environment of choice. Liferay Portal won't get in your way, and you can feel safe knowing that you have the freedom to use the software platform that is best for your organization, and Liferay Portal will run and perform well on it.
+This chapter is a guide to everything about installing Liferay. Whether you choose a Liferay bundle or an existing application server, Liferay Portal integrates seamlessly with your enterprise Java environment. It is supported on more application servers than any other portal platform, allowing you to preserve your investment in your application server of choice, or giving you the freedom to move to a different application server platform. Liferay is committed to providing you this freedom: we have 500 test servers certifying our builds with roughly 10,000 tests per version of Liferay Portal. Each of those tests are run on all of our different supported combinations of application servers, databases, and operating systems. Because of this, you can be sure that we are committed to supporting you on your environment of choice. You can feel safe knowing that you have the freedom to use the software platform that is best for your organization, and that Liferay Portal runs and performs well on it.
 
