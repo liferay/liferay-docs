@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project liferay-doc-utils">
+    <target name="create_run_jar">
+        <jar destfile="/home/jrao/workspace/liferay-doc-utils/dist/liferay-doc-utils.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.liferay.documentation.util.DocUtils"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="/home/jrao/workspace/liferay-doc-utils/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/jrao/workspace/liferay-doc-utils/lib/commons-io-2.0.1.jar"/>
+        </jar>
+    </target>
+</project>
