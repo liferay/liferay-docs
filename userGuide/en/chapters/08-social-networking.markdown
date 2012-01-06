@@ -83,7 +83,7 @@ Before we start adding portlets to pages, we should configure Liferay so that ev
 
     layout.user.public.layouts.modifiable=false
     
-Note that the `portal-ext.properties` method applies changes to the personal sites of all users of the portal. However, this method does not provide as much maintainability or customizability as using user group sites. Using user group sites allows you to choose what's modifiable by the user. For more information on the `portal-ext.properties` method, see *Default User Private Layouts* and *Default User Public Layouts* in chapter 14.
+Note that the this method applies changes to the personal sites of all users of the portal. However, it does not provide as much maintainability or customizability as using user group sites. Using user group sites allows you to choose what's modifiable by the user. For more information on the `portal-ext.properties` method, see *Default User Private Layouts* and *Default User Public Layouts* in chapter 14.
     
 Because it's the recommended method, we'll use the user group method to create the layouts. As an administrator, go to the control panel, and select *Site Templates* from under the *Portal* section. Click *Add* and fill out the form. We'll call our new site template *Social Layout*. Click *Save*.
 
@@ -169,7 +169,7 @@ To activate Social Activity, you'll first need to determine which collaboration 
 
 Let's activate Social Activity for Blogs Entries. Check the box next to *Blog Entry*. You now have options to set point values and limits on several different actions for blogs. You'll notice each item on the list has dropdowns you can use to set the number of participation and contribution points; popularity points are tied directly to contribution points. In addition to that, you can expand the box by clicking *Limits* in the top right of each list item. You can use this to set a limit on how many times a use can perform this activity with a specific asset and receive the requisite points. For some activities, you can set limits on both participation and contribution points but on new content creation you can only set limits on participation points.
 
-For all actions that do not involve the creation of a new asset, all of the contribution points always go to the original asset creator and all popularity points go to the original asset. That means if *Votes on a Blog* is set to have 1 *Participation* point and 5 *Contribution* points (and therefore 5 *Popularity* points), the user who votes on the asset will receive 1 participation point, the user who created the asset will receive 5 contribution points, and the asset will receive 5 popularity points. 
+It might not be immediately obvious, but for all actions that do not involve the creation of a new asset, all of the contribution points always go to the original asset creator and all popularity points go to the original asset. That means if *Votes on a Blog* is set to have 1 *Participation* point and 5 *Contribution* points (and therefore 5 *Popularity* points), the user who votes on the asset will receive 1 participation point, the user who created the asset will receive 5 contribution points, and the asset will receive 5 popularity points. 
 
 ![Figure 8.11: Setting limits in Social Activity](../../images/social-equity-limits.png)
 
