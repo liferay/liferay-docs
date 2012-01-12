@@ -873,11 +873,11 @@ Your installation of Liferay Portal on GlassFish is complete!
 
 **Liferay Home** is one folder above Jetty's install location.
 
-For this section, we will refer to your Jetty server's installation location as `$JETTY_HOME`. If you do not already have an existing Jetty server, we recommend that you download a Liferay/Jetty bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing Jetty server or would like to install Liferay on Jetty manually, please follow the steps below.
+For this section, we'll refer to Jetty server's installation location as `$JETTY_HOME`. If you do not already have an existing Jetty server, we recommend that you download a Liferay/Jetty bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing Jetty server or would like to install Liferay on Jetty manually, please follow the steps below.
 
 Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files). The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
-Now that you have all of your installation files, you are ready to start installing and configuring Liferay on Jetty.
+Now that you have all of your installation files, you're ready to start installing and configuring Liferay on Jetty.
 
 ##### Dependency Jars
 
@@ -887,7 +887,7 @@ Let's work with the Liferay depenency jar files first.
 
 2.	Unzip the jar files found in the Liferay Portal Dependencies zip file to your `$JETTY_HOME/lib/ext/liferay` folder. Take care to extract the zip file's `.jar` files directly into this folder.
 
-3.	Next, you will need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Jetty does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
+3.	Next, you need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Jetty does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
 
 	Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your `$JETTY_HOME/lib/ext/liferay` folder:
 	
@@ -901,11 +901,11 @@ Extract the JAR file and copy it to `$JETTY_HOME/lib/ext/liferay`.
 
 Now that your `.jar` files are in place, let's configure your domain.
 
-##### Domain Configuration
+##### Jetty Configuration
 
-In order to get your domain ready for running Liferay Portal, we'll need to make a number of modifications that involve configuration files, initialization files, and run scripts.
+In order to get Jetty ready for running Liferay Portal, you must make a number of modifications that involve configuration files, initialization files, and run scripts.
 
-1.	We'll create a `start.config` file to modify the behavior of Jetty's `start.jar`. Let's base our `start.config` file of the default one found in `start.jar`.
+1.	Create a `start.config` file to modify the behavior of Jetty's `start.jar`. It's best to base your `start.config` file on the default one found in `start.jar`.
 
 	1.	Extract the default start config file `org/eclipse/jetty/start/start.config` from the `start.jar` into `$JETTY_HOME/etc` so that you have file `$JETTY_HOME/etc/start.config`.
 	
@@ -917,7 +917,7 @@ In order to get your domain ready for running Liferay Portal, we'll need to make
 
 			$(jetty.home)/lib/liferay/*
 
-	Now that your class loading is specified, let's create initialization files and run scripts that will invoke these configuration directives during startup of Jetty
+	Now that your class loading is specified, let's create initialization files and run scripts that invoke these configuration directives during startup of Jetty
 
 2.	Create initialization file: `$JETTY_HOME/bin/start.ini`
 
@@ -971,7 +971,7 @@ In order to get your domain ready for running Liferay Portal, we'll need to make
 
 			$JAVA_HOME/bin/java $JAVA_OPTS -jar ../start.jar
 
-3.	Create a context file `$JETTY_HOME/contexts/root.xml` to specify the context , class path, and resource base of your web application:
+3.	Create a context file `$JETTY_HOME/contexts/root.xml` to specify the context, classpath, and resource base of your web application:
 
 		<?xml version="1.0"?>
 		<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
@@ -994,7 +994,7 @@ Now that your general Jetty startup files are set in place, let's consider how y
 
 If you want to manage your data source within Jetty, continue following the instructions in this section. If you want to use the built-in Liferay data source, you can skip this section.
 
-1.	Management of databases in Jetty will be done via the file `$JETTY_HOME/etc/jetty.xml`. Edit `jetty.xml` and insert the following text within the root element `<Configure>` to specify the data pool for your data source. Be sure to pass in value `jdbc/LiferayPool` as the second argument.
+1.	Management of databases in Jetty is done via the file `$JETTY_HOME/etc/jetty.xml`. Edit `jetty.xml` and insert the following text within the root element `<Configure>` to specify the data pool for your data source. Be sure to pass in value `jdbc/LiferayPool` as the second argument.
 
 		<New id="LiferayPool" class="org.eclipse.jetty.plus.jndi.Resource">
 			<Arg></Arg>
@@ -1011,7 +1011,7 @@ If you want to manage your data source within Jetty, continue following the inst
 
 	Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database.
 
-2.	Your data pool will need Jetty's JNDI and Jetty Plus libraries loaded in order to access those classes at runtime. Your `$JETTY_HOME/etc/start.config` file should have sections that load these libraries as long as `jndi` and `plus` *options* are specified at startup.
+2.	Your data pool needs Jetty's JNDI and Jetty Plus libraries loaded in order to access those classes at runtime. Your `$JETTY_HOME/etc/start.config` file should have sections that load these libraries as long as `jndi` and `plus` *options* are specified at startup.
 
 	To set these options, edit your `$JETTY_HOME/bin/start.ini` file and add `jndi` and `plus` as values for the `OPTIONS` variable:
 
@@ -1054,9 +1054,9 @@ Management of mail sessions in Jetty is done via the configuration file `$JETTY_
 
 Great! Now you'll be able to use this mail session with Liferay.
 
-##### Domain Configuration - Continued
+##### Configuring data sources and mail sessions
 
-Let's revisit domain configuration to make sure that we'll be able to access your data source and mail session from Liferay Portal.
+Let's revisit your configuration to make sure that we'll be able to access your data source and mail session from Liferay Portal.
 
 1.  First, navigate to the *Liferay Home* folder, which is one folder above Jetty's install location. Create a file named `portal-ext.properties`.
 
@@ -1072,7 +1072,7 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 		mail.session.jndi.name=mail/MailSession
 
-Let's startup your server and deploy Liferay Portal! 
+Let's start your server and deploy Liferay Portal! 
 
 ##### Deploy Liferay
 
@@ -1082,23 +1082,23 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
 2.	Then extract the contents of the Liferay portal `.war` file into `$JETTY_HOME/webapps/root`.
 
-3.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
+3.	Before you start Liferay Portal, let's consider whether you want to also start the setup wizard.
 
 	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
 		
-		If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+		If this is your first time starting Liferay Portal 6.1, the setup wizard is invoked on server startup. If you want to re-run the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
 
 			setup.wizard.enabled=true
 
-		The setup wizard will automatically be invoked during server startup.
+		The setup wizard is invoked during server startup.
 
 	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
 
-		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+		To start the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
 			setup.wizard.enabled=false
 
-		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+		The `portal-setup-wizard.properties` file the setup wizard creates has `setup.wizard.enabled=false` conveniently specified for you.
 
 	---
 	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
@@ -1106,11 +1106,11 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
 	Now its time to launch Liferay Portal!
 
-4.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$JETTY_HOME/bin`.
+4.	Start Liferay Portal by executing `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$JETTY_HOME/bin`.
 
-    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+    -	If the setup wizard was disabled, your site's home page opens in your browser at [http://localhost:8080](http://localhost:8080).
 
-    -	Otherwise, the setup wizard will open in your browser.
+    -	Otherwise, the setup wizard opens in your browser.
 
 		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
 
