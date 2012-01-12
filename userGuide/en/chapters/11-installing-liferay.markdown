@@ -2195,31 +2195,31 @@ When the application server binaries have been installed, start the **Profile Ma
 
 2. Click the Advanced profile creation option, and then click *Next*. Why Advanced? You can specify your own values for settings such as the location of the profile and names of the profile, node and host. You can assign your own ports. You can optionally choose whether to deploy the administrative console and sample application and also add web-server definitions if you wish. Web server definitions are used with IBM HTTP Server. For more information about these options, please see the WebSphere documentation. 
 
-![Figure 11.x: Choose the Advanced profile option to specify your own settings.](Websphere-8_html_5a8a0a4b.png)
+![Figure 11.x: Choose the Advanced profile option to specify your own settings.](../../images/Websphere-8_html_5a8a0a4b.png)
 
 3. Check the box *Deploy administrative console*. This gives you a web-based UI for working with your application server. Skip the default applications. You'd only install these on a development machine. Click *Next*. 
 
 4. Set profile name and location. Ensure that you specify a performance tuning setting other than *Development*, since you're installing a server for production use. Click *Next*. 
 
-![Figure 11.x: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](Websphere-8_html_m3feb4e9f.png)
+![Figure 11.x: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](../../images/Websphere-8_html_m3feb4e9f.png)
 
 5. Choose node and host names for your server. These will be specific to your environment. Click *Next*. 
 
-![Figure 11.x: Choose node and host names that are appropriate to your environment.](Websphere-8_html_1327271c.png)
+![Figure 11.x: Choose node and host names that are appropriate to your environment.](../../images/Websphere-8_html_1327271c.png)
 
 6. Administrative security in WebSphere is a way to restrict who has access to the administrative tools. For simplicity, we've disabled it, but you may want to have it enabled in your environment. Please see WebSphere's documentation for further information. Click *Next*. 
 
-![Figure 11.x: We've disabled administrative security, but you may want to enable it.](Websphere-8_html_2eb820b.png)
+![Figure 11.x: We've disabled administrative security, but you may want to enable it.](../../images/Websphere-8_html_2eb820b.png)
 
 7. Each profile needs a security certificate, which comes next in the wizard. If you don't have certificates already, choose the option to generate a personal certificate and a signing certficate, and click *Next*. 
 
 8. Once the certificates are generated, set a password for your keystore. Click *Next*.  
 
-![Figure 11.x: Set a password for your keystore.](Websphere-8_html_m6b754c08.png)
+![Figure 11.x: Set a password for your keystore.](../../images/Websphere-8_html_m6b754c08.png)
 
 9. Next, you can customize the ports that this server profile uses. Be sure to choose ports that are open on your machine. When choosing ports, installation detects existing WebSphere installations and if it finds activity, it increments ports by one. 
 
-![Figure 11.x: WebSphere gives you a nice user interface for customizing the ports your server uses.](Websphere-8_html_m2eef7200.png)
+![Figure 11.x: WebSphere gives you a nice user interface for customizing the ports your server uses.](../../images/Websphere-8_html_m2eef7200.png)
 
 10. If you want WebSphere to start automatically when the machine is booted, you configure it next. This differs by operating system. When you're finished configuring this the way you want, click *Next*. 
 
@@ -2322,7 +2322,7 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 2.  Select the Liferay application and click *Start*. 
 
-![Figure 11.x: Starting Liferay on WebSphere.](Websphere-8_html_m7420ff51.png)
+![Figure 11.x: Starting Liferay on WebSphere.](../../images/Websphere-8_html_m7420ff51.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish* when you're done. 
 
