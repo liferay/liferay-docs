@@ -1328,7 +1328,7 @@ You've completed the steps necessary for your deployment of Liferay so that Life
 
 4.	Remove `eclipselink.jar` from  `$JBOSS_HOME/standalone/deployments/ROOT.war/WEB-INF/lib` to assure that the Hibernate persistence provider is used instead of the one provided in the `eclipselink.jar`. Note, JBoss 7.0.2 has a known issue [http://community.jboss.org/thread/169944](http://community.jboss.org/thread/169944) in determining which persistence provider to use.
 
-5.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
+5.	Before you start Liferay Portal, let's consider whether you want to also start the setup wizard.
 
 	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, set up your site's administrative account, and/or manage your database within Liferay.
 		
@@ -1378,24 +1378,24 @@ Let's work with the depenency jar files first.
 
 1.	Unzip the jar files found in the Liferay Portal Dependencies zip file to your `$RESIN_HOME/ext-lib` folder. Take care to extract the zip file's `.jar` files directly into this folder.
 
-2.	Next, you will need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Resin does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
+2.	Next, you need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Resin does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
 
 	1.  Go to `$LIFERAY_SOURCE/lib/development` and copy `saxpath.jar` into `$RESIN_HOME/lib`.
 
 	2.  Go to `$LIFERAY_SOURCE/lib/portal` and copy `log4j.jar`, `slf4j-api.jar` , and `slf4j-log4j12.jar` into `$RESIN_HOME/lib`.
 
-	3.	If folder `$RESIN_HOME/extlib` does not already exist, create it.
+	3.	If folder `$RESIN_HOME/extlib` doesn't exist, create it.
 
-3.	Make sure the JDBC driver for your database is accessible by Resin. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
+3.	Make sure the JDBC driver for your database is accessible by Resin. Obtain the JDBC driver for the database you want to use. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
 Extract the JAR file and copy it to `$RESIN_HOME/extlib`.
 
-Great! now you have your `.jar` files in place. Next, let's configure your domain.
+Great! now you have your `.jar` files in place. Next, let's configure Resin for Liferay. 
 
-##### Domain Configuration
+##### Configuring Resin
 
-The primary file used in configuring your domain is `$RESIN_HOME/conf/resin.xml`. We'll make common modifications necessary to support Liferay Portal. We will also create a run script and add a folder to hold Resin's logs. But let's start with the changes to `resin.xml`.
+The primary file used in configuring your domain is `$RESIN_HOME/conf/resin.xml`. You need to make common modifications necessary to support Liferay Portal. You'll also create a run script and add a folder to hold Resin's logs. But let's start with the changes to `resin.xml`.
 
-1.	Make the following modifications to your `resin.xml` to do the following for each server in the main application cluster:
+1.	Make the following modifications to your `resin.xml`. These modifications to your application cluster do the following:
 
 	-	Set the file encoding.
 
@@ -1420,21 +1420,21 @@ The primary file used in configuring your domain is `$RESIN_HOME/conf/resin.xml`
 				</server-default>
 			</cluster>
 
-2.	Create an appropriate script in `$RESIN_HOME/bin` to help you startup Resin.
+2.	Create an appropriate script in `$RESIN_HOME/bin` to help you start Resin.
 
-	-	If you are on Windows, create a batch script `$RESIN_HOME/bin/run.bat` and insert the following text in the script:
+	-	If you're on Windows, create a batch script `$RESIN_HOME/bin/run.bat` and insert the following text in the script:
 
 			..\resin.exe console
 
-	-	If you are on Unix/Linux, create shell script `$RESIN_HOME/bin/run.sh` and insert the following text in the script:
+	-	If you're on Unix/Linux, create shell script `$RESIN_HOME/bin/run.sh` and insert the following text in the script:
 
 			#!/bin/sh
 
 			./resin.sh $
 
-3.	Create folder `$RESIN_HOME/log` if it does not already exist. As you run Resin, the server will generate log files `access`, `jvm-default`, and `watchdog-manager` in this folder.
+3.	Create the folder `$RESIN_HOME/log` if it doesn't already exist. As you run Resin, the server generates log files `access`, `jvm-default`, and `watchdog-manager` in this folder.
 
-Now that you've completed some important common configuration tasks to support Liferay, let's consider database configuration for your domain.
+Now that you've completed some important common configuration tasks to support Liferay, let's consider database configuration. 
 
 ##### Database Configuration
 
@@ -1460,7 +1460,7 @@ Management of databases in Resin is done via the configuration file `$RESIN_HOME
 
 Be sure to replace the URL database value (i.e. `lportal`), user value, and password value with values specific to your database. 
 
-Your domain's database is now managed within Resin. Now, let's consider how to configure mail.
+Resin is now managing your database connection. Let's consider next how to configure mail.
 
 ##### Mail Configuration
 
@@ -1496,21 +1496,21 @@ You can specify additional properties for your mail session as needed.
 
 Now that your mail session is squared away, we'll make sure that Liferay can access it.
 
-##### Domain Configuration - Continued
+##### Configuring data source and mail session
 
-Let's revisit domain configuration to make sure that we'll be able to access your data source and mail session from Liferay Portal.
+Let's make sure Liferay's connected to your data source and mail session.
 
 1.  First, navigate to the *Liferay Home* folder, which is one folder above Resin's install location (i.e. `$RESIN_HOME/..`).
 
-2.  Then, if you are using *Resin* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
+2.  If you're using *Resin* to manage your data source, add the following to your `portal-ext.properties` file in your *Liferay Home* to refer to your data source:
 
 		jdbc.default.jndi.name=jdbc/LiferayPool
 
-	Otherwise, if you are using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
+	If you're using *Liferay Portal* to manage your data source, follow the instructions in the *Deploy Liferay* section for using the setup wizard.
 
-3.	If want to use *Liferay Portal* to manage your mail session, you can configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
+3.	If want to use *Liferay Portal* to manage your mail session, configure the mail session within Liferay Portal. That is, after starting your portal as described in the *Deploy Liferay* section, go to *Control Panel &rarr; Server Administration &rarr; Mail* and enter the settings for your mail session.
 
-	Otherwise, if you are using *Resin* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
+	If you're using *Resin* to manage your mail session, add the following to your `portal-ext.properties` file to reference that mail session:
 
 		mail.session.jndi.name=mail/MailSession
 
@@ -1522,7 +1522,7 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
 1.	If you already have an application folder `$RESIN_HOME/webapps/ROOT`, delete it or move it to a location outside of `$RESIN_HOME/webapps`.
 
-2.	Then extract the contents of the Liferay portal `.war` file into `RESIN_HOME/webapps/ROOT`. The following files should now exist in your `RESIN_HOME/webapps/ROOT` folder:
+2.	Extract the contents of the Liferay portal `.war` file into `RESIN_HOME/webapps/ROOT`. The following files should now exist in your `RESIN_HOME/webapps/ROOT` folder:
 
 	-	dtd (folder)
 	-	errors (folder)
@@ -1533,23 +1533,23 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 	-	WEB-INF (folder)
 	-	index.jsp
 
-3.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
+3.	Before you start Liferay Portal, consider whether you want to also start the setup wizard.
 
-	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, set up your site's administrative account, and/or manage your database within Liferay.
 		
-		If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+		If this is your first time starting Liferay Portal 6.1, the setup wizard is invoked on server start up. If you want to re-run the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
 
 			setup.wizard.enabled=true
 
-		The setup wizard will automatically be invoked during server startup.
+		The setup wizard is invoked during server startup.
 
 	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
 
-		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+		To start the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
 			setup.wizard.enabled=false
 
-		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+		The `portal-setup-wizard.properties` file the setup wizard creates has `setup.wizard.enabled=false` conveniently specified for you.
 
 	---
 	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
@@ -1557,19 +1557,11 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
 4.	Start Liferay Portal by executing your `run.bat` (Windows) or `run.sh` (Unix/Linux) script from `$RESIN_HOME/bin`.
 
-    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+    -	If the setup wizard was disabled, your site's home page opens in your browser at [http://localhost:8080](http://localhost:8080).
 
-    -	Otherwise, the setup wizard will open in your browser.
+    -	Otherwise, the setup wizard opens in your browser.
 
-		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
-
-![Figure 11.47: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
-
-Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
-
-![Figure 11.48: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
-
-Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
+Please see the section above describing how to use the setup wizard. 
 
 Congratulations! You've installed Liferay Portal on Resin and have it up and running.
 
