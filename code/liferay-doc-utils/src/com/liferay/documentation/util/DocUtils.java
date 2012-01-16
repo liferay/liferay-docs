@@ -10,8 +10,9 @@ public class DocUtils {
 	public static void main(String[] args) {
 		
 		String command = args[0];
+		System.out.println(command);
 		if (args[0] == null) {
-			System.out.println("Please specify an argument: NumberImages, ResetImages, or AddMarkdownMetadata");
+			System.out.println("Please specify an argument: NumberImages, ResetImages, AddMarkdownMetadata (deprecated), or AddMarkdownChTemplate");
 		} 
 		else {
 			if (command.equalsIgnoreCase("NumberImages")) {
@@ -47,8 +48,18 @@ public class DocUtils {
 					}
 				}
 			}
+			else if (command.equalsIgnoreCase("AddMarkdownChTemplate")) {
+				String markdownFilePath = args[1];
+				if (markdownFilePath != null) {
+					try {
+						AddMarkdownChTemplate.addMarkdownChTemplate(markdownFilePath);
+					} catch (IOException e) {
+						System.out.println("IOException: " + e.getMessage());
+					}
+				}
+			}
 			else {
-				System.out.println("You entered an invalid argument. Please try again. You can use NumberImages, ResetImages, or AddMarkdownMetadata");
+				System.out.println("You entered an invalid argument. Please try again. You can use NumberImages, ResetImages, AddMarkdownMetadata(deprecated), or AddMarkdownChTemplate");
 			}
 			
 		}

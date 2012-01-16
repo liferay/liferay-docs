@@ -384,7 +384,8 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
         </java>
     </target>
 
-    <target name="add-markdown-metadata" depends="concat-markdown-files" description="adds metadata at the top of a concatenated markdown file">
+ <!-- deprecated on Jan. 6, 2012 -->
+    <target name="add-markdown-metadata" depends="concat-markdown-files" description="adds metadata to the top of a concatenated markdown file">
         <echo message="... adding metadata to ${doc.dir} (${lang})"/>
         <java jar="../lib/liferay-doc-utils.jar" fork="true">
 	    <arg value="AddMarkdownMetadata"/>
@@ -392,6 +393,14 @@ For example, use the "ant markdown-to-all" command from the documentation/trunk/
             <arg value="${title}"/>
             <arg value="${author}"/>
             <arg value="${date}"/>
+        </java>
+    </target>
+    
+    <target name="add-markdown-ch-template" description="adds metadata template to the top of a markdown chapter file">
+        <echo message="... adding metadata template to ${chapter} (${lang})"/>
+        <java jar="../lib/liferay-doc-utils.jar" fork="true">
+	    <arg value="AddMarkdownChTemplate"/>
+            <arg value="./${lang}/chapters/${chapter}.markdown"/>
         </java>
     </target>
 
