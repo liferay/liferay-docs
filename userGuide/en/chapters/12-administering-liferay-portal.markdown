@@ -882,26 +882,6 @@ When you are finished filling out the form, click *Save*. Now navigate to the po
 
 The *Plugins Installation* page of the control panel shows all of the plugins that are currently installed. These are divided into tabs for portlets, themes, layout templates, hook plugins, and web plugins. If you want to install a new plugin, click the *Install More Portlets* button. You will then be brought to the Plugin Installer, where you can browse Liferay's repository of portlets or install your own plugins. We covered the plugins installer in chapter 2.
 
-### Mobile Device Rules
-
-Mobile device rules allow you to configure sets of rules and use those rules to alter the behavior of the portal based on the device being used to access Liferay. For instance, you can configure the look and feel of Liferay pages accessed by smartphone users differently than those accessed by PC users. Both sites and individual pages can be configured with any number of rule groups. The specific rule group that's applied when a page request is received is determined by the priority of the rule group and the rules defined by the rule set.
-
-You can access the Mobile Device Rules administrative page from the Content section of the control panel. Make to select the appropriate scope using the context menu selector so that your rule groups are available where you expect them to be. The Mobile Device Rules administrative page displays a list of defined rule groups and allows you to add more. To add rules to a rule group, select *Actions* &rarr; *Manage Rules* or just click on a rule group to edit it and then click the *Manage Rules* link.
-
-![Figure 12.x: Mobile Device Rules Administrative Page](../../images/mobile-device-rules.png)
-
-The rules defined for a rule group, along with the priorities of the rule groups selected for a particular site or page, determine which rule group will be applied. From the Manage Rules page for a specific rule set, you can add a rule by specifying a rule type. Once added, you can edit the rule to specify a device type and operating system.
-
-![Figure 12.x: Editing a Mobile Device Rule](../../images/mobile-device-editing-rule.png)
-
-Once you've created some mobile device rule groups and added some rules to them, you'll be ready to set up some actions. The actions defined for a rule group determine what happens to a particular request when the request's devive has been detected and the rule group has been found to apply. 
-
-You can add actions to a rule group from the Site Pages page of the control panel. Select either the public or private pages and then look for the *Mobile Rule Groups* link in the right-hand menu. Use the *Select Rule Group* button to select rule groups to be applied either to a site or to a single page. If you select the page group itself from the left-hand menu, the selected rule group will apply to all the pages of the site by default. However, if you select an individual page and then click the the *Select Rule Group* button, the rule groups will apply just to that page. You can select multiple rule groups for a particular site or page and order them by prority. The rule groups are checked in decreasing order of priority: the actions defined by the first rule group that applies are executed.
-
-![Figure 12.x: Selecting Mobile Device Rule Groups](../../images/mobile-device-selection.png)
-
-To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. There are four kinds of actions that be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects, and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages you can use a redirect to make sure that mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to.
-
 ## Summary
 
 In this chapter we described how to use Liferay's control panel to manage users, user groups, organizations, sites, and roles. We showed how to configure various server settings, such as authentication, LDAP integration, and single sign-on. We also learned how to associate users by default with different user groups, sites, and roles, and we saw how to reserve screen names and email addresses so that users cannot register in the portal with them.
