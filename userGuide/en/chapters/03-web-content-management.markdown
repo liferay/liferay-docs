@@ -353,7 +353,7 @@ Tagging and categorizing web content is easy. You can do it at the bottom of the
 
 The control panel contains an interface for managing tags and categories for each site in the portal. This interface can be used to manage all your tags and categories in one place. We'll look at this interface in the next chapter. 
 
-Next, we'll look at one of the most powerful ways to publish your content in Liferay WCM: the asset publisher.
+Next, we'll look at how to configure the way pages are accessed by mobile devices.
 
 ### Mobile Device Rules
 
