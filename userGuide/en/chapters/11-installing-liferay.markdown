@@ -1573,21 +1573,17 @@ For this section, we will refer to your Tomcat server's installation location as
 
 Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files). The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
----
-![Note](../../images/tip.png) *Note:* If you are using JDK 5, move `$TOMCAT_HOME/webapps/ROOT/WEB-INF/lib/xercesImpl.jar` to `$TOMCAT_HOME/common/endorsed`. JDK 1.4 is no longer supported in Liferay 5.x and above.
----
-
 Next, let's get started by addressing Liferay's library dependencies.
 
 ##### Dependency Jars
 
-Your Liferay Portal will need to have the Liferay Portal Dependency JARs, an appropriate JDBC driver, and a few other JARs installed.
+Liferay Portal needs to have the Liferay Portal Dependency JARs, an appropriate JDBC driver, and a few other JARs installed.
 
 1.	Create folder `$TOMCAT_HOME/lib/ext`.
 
 2. Extract the Liferay dependencies file to `$TOMCAT_HOME/lib/ext`. If the files do not extract to this directory, you can copy the dependencies archive to this directory, extract them, and then delete the archive.
 
-3.	Next, you will need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Tomcat does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
+3.	Next, you need several `.jar` files which are included as part of the Liferay source distribution. Many application servers ship with these already on the class path, but Tomcat does not. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
 
 	1.	Copy the following jars from `$LIFERAY_SOURCE/lib/development` to your `$TOMCAT_HOME/lib/ext` folder:
 
@@ -1615,19 +1611,16 @@ Now that you have the necessary libraries in place, we'll move on to configuring
 
 ##### Domain Configuration
 
-The steps in this section will focus on:
+The steps in this section focus on:
 
 -	Setting environment variables
-
 -	Creating a context for your web application
-
 -	Modifying the list of classes/JARs to be loaded
-
 -	Specifying URI encoding
 
-So, let's get started with our configuration tasks.
+Let's get started with our configuration tasks.
 
-1. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina will call `setenv.bat` or `setenv.sh`. Edit the file and populate it with following contents:
+1. Create a `setenv.bat` (Windows) or `setenv.sh` file (Unix, Linux, Mac OS) in the `$TOMCAT_HOME/bin` directory. When you start Tomcat, Catalina calls `setenv.bat` or `setenv.sh`. Edit the file and populate it with following contents:
 
 	setenv.bat:
 
@@ -1698,7 +1691,7 @@ Excellent work! Now let's consider configuration of your database.
 
 If you want Tomcat to manage your data source, use the following procedure. If you want to use Liferay's built-in data source, you can skip this section.
 
-1.	Make sure that your database server is installed and working. If it's installed in a different machine, make sure that it's accessible from the one where Liferay is being installed.
+1.	Make sure that your database server is installed and working. If it's installed on a different machine, make sure that it's accessible from your Liferay machine.
 
 2.	Add your data source as a resource in the context of your web application specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
 
@@ -1752,7 +1745,7 @@ session. Be sure to replace the mail session values with your own.
 
 Super! Your mail session is configured. Next, we'll make sure Liferay will be able to access your mail session and database.
 
-##### Domain Configuration - Continued
+##### Configuring your database and mail session
 
 In this section we'll specify appropriate properties for Liferay to use in connecting to your database and mail session.
 
@@ -1776,23 +1769,23 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 1.	If you are manually installing Liferay on a clean Tomcat server, delete the contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This undeploys the default Tomcat home page. Then extract the Liferay `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
 
-2.	Before you startup Liferay Portal, let's consider whether you want to also start the setup wizard.
+2.	Before you start Liferay Portal, consider whether you want to use the setup wizard.
 
-	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+	-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, set up your site's administrative account, and/or manage your database within Liferay.
 		
-		If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+		If this is your first time starting Liferay Portal 6.1, the setup wizard is invoked on server startup. If you want to re-run the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
 
 			setup.wizard.enabled=true
 
-		The setup wizard will automatically be invoked during server startup.
+		The setup wizard is invoked during server startup.
 
-	-	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
+	-	**Start Liferay Portal without invoking the setup wizard** - Do this if you want to preserve your current portal settings.
 
-		To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+		To start the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
 			setup.wizard.enabled=false
 
-		The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+		The `portal-setup-wizard.properties` file the setup wizard creates should have `setup.wizard.enabled=false` conveniently specified for you.
 
 	---
 	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
@@ -1802,27 +1795,19 @@ We'll deploy Liferay as an exploded web archive within your `$TOMCAT_HOME/webapp
 
 3.	Start Tomcat by executing `$TOMCAT_HOME/bin/startup.bat` or `$TOMCAT_HOME/bin/startup.sh`.
 
-	-	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:8080](http://localhost:8080).
+	-	If the setup wizard was disabled, your site's home page opens in your browser at [http://localhost:8080](http://localhost:8080).
 
-	-	Otherwise, the setup wizard will open in your browser.
+	-	Otherwise, the setup wizard opens in your browser.
 
-		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
-
-![Figure 11.49: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
-
-Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
-
-![Figure 11.50: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
-
-Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
+To use the setup wizard, please see the section above. 
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
 
 #### Installing Liferay on WebLogic 10
 
-**Liferay Home** is one folder above the domain to which you will be installing Liferay. For example, if your domain location is `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home will be `/Oracle/Middleware/user_projects/domains`.
+**Liferay Home** is one folder above the domain to which you will be installing Liferay. For example, if your domain location is `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home is  `/Oracle/Middleware/user_projects/domains`.
 
-For this section, we will refer to your WebLogic server's installation location as `$WEBLOGIC_HOME`. If you do not already have an existing WebLogic server, we recommend that you download a Liferay/WebLogic bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing WebLogic server or would like to install Liferay on WebLogic manually, please follow the steps below.
+For this section, we will refer to your WebLogic server's installation location as `$WEBLOGIC_HOME`. 
 
 Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files). The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
@@ -1868,7 +1853,7 @@ If you want WebLogic to manage your data source, use the following procedure. If
 
 7.  On the next screen, put in your *Database Name*, *Host Name*, *Database User Name*, and *Password*. If you have been following the defaults we have been using so far, you would use *lportal, localhost, root,* and no password as the values. Click *Next*.
 
-8.  The next screen allows you to test your database configuration. Click the *Test Configuration* button. If the test succeeds, you have configured your database correctly. Select the check box of the server  to which you want to deploy this Data Source (`AdminServer` is the default). Click Finish.
+8.  The next screen allows you to test your database configuration. Click the *Test Configuration* button. If the test succeeds, you have configured your database correctly. Select the check box of the server to which you want to deploy this Data Source (`AdminServer` is the default). Click *Finish*.
 
 9.  Click the *Activate Changes* button on the left, above the Domain Structure tree.
 
@@ -1914,29 +1899,29 @@ Let's revisit domain configuration to make sure that we'll be able to access you
 
 		mail.session.jndi.name=mail/MailSession
 
-Liferay will now be able to communicate with your data source and mail session. It's now time to deploy Liferay!
+Liferay can now communicate with your data source and mail session. It's now time to deploy Liferay!
 
 ##### Deploy Liferay
 
 Follow the instructions in this section to deploy Liferay Portal to your domain.
 
-But, before you deploy Liferay Portal, let's consider whether you want to also start the setup wizard.
+Before you deploy Liferay Portal, consider whether you want to use the setup wizard.
 
--	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, setup your site's administrative account, and/or manage your database within Liferay.
+-	**Start the setup wizard along with Liferay Portal** - Do this if you want to configure your portal, set up your site's administrative account, and/or manage your database within Liferay.
 		
-	If this is your first time starting Liferay Portal 6.1, the setup wizard will automatically be invoked on server startup. Otherwise, if you are re-running the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
+	If this is your first time starting Liferay Portal 6.1, the setup wizard is invoked on server startup. If you want to re-run the wizard, specify `setup.wizard.enabled=true` in your properties file (e.g. `portal-setup-wizard.properties`).
 
 		setup.wizard.enabled=true
 
-	The setup wizard will automatically be invoked during server startup.
+	The setup wizard is invoked during server startup.
 
 -	**Start Liferay Portal without invoking the setup wizard** - Do this if want to preserve your current portal settings.
 
-	To startup the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
+	To start the server without triggering the setup wizard, specify `setup.wizard.enabled=false` in your properties (e.g. `portal-setup-wizard.properties` or `portal-ext.properties` file).
 
 		setup.wizard.enabled=false
 
-	The `portal-setup-wizard.properties` file output by the setup wizard should already have `setup.wizard.enabled=false` conveniently specified for you.
+	The `portal-setup-wizard.properties` file the setup wizard creates has `setup.wizard.enabled=false` conveniently specified for you.
 
 ---
 ![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
@@ -1956,29 +1941,21 @@ Now that you have enabled or disabled the setup wizard, let's move on to deploym
 
 5.  Select the Liferay `.war` file from the list and click *Next*.
 
-6.  Leave *Install this deployment as an application* selected and click Next.
+6.  Leave *Install this deployment as an application* selected and click *Next*.
 
 7.  Give the application a name (the default name is fine). Leave the other defaults selected and then click *Finish*.
 
-8.  WebLogic will now deploy Liferay. When it is finished, a summary screen is displayed. Click the *Activate Changes* link on the left above the Domain Structure tree.
+8.  WebLogic deploys Liferay. When it finishes, a summary screen is displayed. Click the *Activate Changes* link on the left above the Domain Structure tree.
 
 9. In the Deployments screen, select the Liferay application and click the *Start* button. Select *Servicing All Requests* in the pop up.
 
 10. Click *Yes* to continue on the next screen to launch Liferay Portal.
 
-    -	If the setup wizard was disabled, your site's home page will automatically open in your browser at [http://localhost:7001](http://localhost:7001).
+    -	If the setup wizard was disabled, your site's home page opens in your browser at [http://localhost:7001](http://localhost:7001).
 
-    -	Otherwise, the setup wizard will open in your browser.
+    -	Otherwise, the setup wizard opens in your browser.
 
-		As seen in the figure below, there are three sections of the wizard: the portal, the adminstrator, and the database.
-
-![Figure 11.54: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
-
-Open the Database section of the wizard by selecting *Change*. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class, and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
-
-![Figure 11.55: Fill out the information for your database. We've chosen MySQL in this example, and have created a database called `nosester` to hold our Liferay data.](../../images/setup-wizard-2.png)
-
-Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file where it saved all of your settings. From here, you can go to your home page.
+For more information on how to use the setup wizard, please see the section above. 
 
 Congratulations on your deployment of Liferay Portal on WebLogic 10!
 
@@ -1986,9 +1963,9 @@ Congratulations on your deployment of Liferay Portal on WebLogic 10!
 
 **Liferay Home** is one folder above the domain to which you will be installing Liferay.
 
-For example, if your domain location is `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home will be `/Oracle/Middleware/user_projects/domains`.
+For example, if your domain location is `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home is `/Oracle/Middleware/user_projects/domains`.
 
-For this section, we will use `$WEBLOGIC_HOME` to refer to your WebLogic server's installation `/Oracle/Middleware`. If you do not already have an existing WebLogic server, we recommend that you download a Liferay/WebLogic bundle from [http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases). If you have an existing WebLogic server or would like to install Liferay on WebLogic manually, please follow the steps below.
+For this section, we will use `$WEBLOGIC_HOME` to refer to your WebLogic server's installation `/Oracle/Middleware`. 
 
 Before you begin, make sure you have downloaded the latest Liferay `.war` file and Liferay Portal dependencies from [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files). The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and the dependencies file should be called `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
