@@ -2168,7 +2168,7 @@ Liferay ships with dependency .jars that it needs to have on the global classpat
 
 	[Install Location]/WebSphere/AppServer/lib/ext
 
-Once you've copied the .jars here, start the server profile you're planning to use for Liferay. 
+Once you've copied the .jars here, start the server profile you're planning to use for Liferay. Once it starts, you're ready to configure your database.  
 
 ##### Database Configuration
 
@@ -2222,7 +2222,11 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 21. Go back to the data source page by clicking it in the breadcrumb trail. Click the *Test Connection* button. It should connect successfully.
 
+Once you've set up your database, you can set up your mail session. 
+
 ##### Mail Configuration
+
+If you want WebSphere to manage your mail sessions, use the following procedure. If you want to use Liferay's built-in mail sessions, you can skip this section. 
 
 1.  Click *Resources &rarr; Mail &rarr; Mail Providers*.
 
@@ -2234,7 +2238,9 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 5.  Click *Security &rarr; Global Security* and deselect *Use Java 2 security to restrict application access to local resources* if it is selected. Click *Apply*.
 
-##### Install Liferay
+Great! Now you're ready to deploy Liferay. 
+
+##### Deploy Liferay
 
 1.  Click *Applications &rarr; New Application &rarr; New Enterprise Application*.
 
@@ -2250,9 +2256,10 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 ##### Start Liferay
 
-1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish to use WebSphere's data source, create a file called `portal-ext.properties` in your Liferay Home folder. Place the following text in the file: 
+1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish to use WebSphere's data source and mail session, create a file called `portal-ext.properties` in your Liferay Home folder. Place the following text in the file: 
 
     jdbc.default.jndi.name=jdbc/LiferayPool
+    mail.session.jndi.name=mail/MailSession
     setup.wizard.enabled=false
 
 2.  Select the Liferay application and click *Start*. 
@@ -2267,9 +2274,9 @@ Congratulations! You've installed Liferay on WebSphere!
 
 ### Making Liferay Coexist with Other Java EE Applications
 
-Liferay Portal by default is configured to sit at the root (i.e., `/`) of your application server. Dedicating your application server to running only Liferay Portal is a good practice, allowing for separation between your portal environment and your web application environment. This is generally a best practice for portals, which by definition are application development platforms in and of themselves. For that reason, your instance of Liferay is likely to be hosting many applications, and even integrating several of them together on a single page. For this reason, you are going to want to make sure your portal environment has all the resources it needs to do this, and configuring it so that it is the sole consumer of any other `.war` files that get deployed to the application server helps to make sure that your system performs optimally.
+Liferay Portal by default is configured to sit at the root (i.e., `/`) of your application server. Dedicating your application server to running only Liferay Portal is a good practice, allowing for separation between your portal environment and your web application environment. This is generally a best practice for portals, which by definition are application development platforms in and of themselves. For that reason, your instance of Liferay is likely to be hosting many applications, and even integrating several of them together on a single page. For this reason, you should design your system so that your portal environment has all the resources it needs to do this. Configuring it so that it is the sole consumer of any other `.war` files that get deployed to the application server helps to make sure that your system performs optimally.
 
-If, however, you want Liferay to share space on an application server with other applications, there is no reason why you cannot do that. In this instance, you may not want to make Liferay the default application in the root context of the server.
+If, however, you want Liferay to share space on an application server with other applications, you can. In this instance, you may not want to make Liferay the default application in the root context of the server.
 
 There are two steps to modifying this behavior:
 
@@ -2281,7 +2288,7 @@ To change the file, open it in a text editor. Place the `portal.ctx` property at
 
     portal.ctx=/
 
-This default setting defines Liferay Portal as the application that sits at the root context. If you change it to something else, say */portal*, for example, you can then deploy Liferay in that context and it will live there instead of at the root context.
+This default setting defines Liferay Portal as the application that sits at the root context. If you change it to something else, say `/portal`, for example, you can then deploy Liferay in that context and it will live there instead of at the root context.
 
 A full discussion of the `portal-ext.properties` file appears in Chapter 14.
 
@@ -2289,7 +2296,7 @@ A full discussion of the `portal-ext.properties` file appears in Chapter 14.
 
     <context-root>/</context-root>
 
-Change this so that it matches the path you set in your `portal-ext.properties` file. You will have to modify the `weblogic.xml` file inside the Liferay `.war` itself. Extract the file from the `.war` file, modify it, and then put it back in the `.war` file. Then deploy the modified Liferay `.war` file to the server in the proper context.
+Change this so that it matches the path you set in your `portal-ext.properties` file. You will have to modify the `weblogic.xml` file inside the Liferay `.war` before you deploy it. Extract the file from the `.war` file, modify it, and then put it back in the `.war` file. Then deploy the modified Liferay `.war` file to the server in the proper context.
 
 ## Summary
 
