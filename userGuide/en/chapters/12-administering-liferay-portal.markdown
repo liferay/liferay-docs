@@ -1,6 +1,6 @@
 # Administering Liferay Portal
 
-You'll find that Liferay's control panel grants you the ability to customize many aspects of how your portal organizes users and grants them permissions to various portal resources. You can also configure many aspects of the portal itself. If you want to make a configuration that you can't find an option for in the control panel, check Liferay's `portal.properties` file. If you find a customization there that you'd like to implement, remember not to modify the file directly but to overwrite it by creating a `portal-ext.properties` file instead. 
+You know how all these retailers want to advertise themselves as a "one stop shop" for whatever it is that you want? The idea is that they have so much stuff that chances are that whatever you're looking for is there. Liferay's control panel is something like this. If you want to create users, sites, organizations, configure permissions and plugins, and pretty much anything else, you'll do it with the control panel. The nice thing about the control panel is that it makes all this very easy to do. This chapter takes all the concepts you learned about Liferay in chapter 1 (sites, organizations, and more) and makes them concrete. Here, you'll learn how to create and manage every aspect of Liferay's configuration. 
 
 This chapter covers the following activities:
 
@@ -10,9 +10,9 @@ This chapter covers the following activities:
 
 -   Using the control panel to manage server administration, portal instances, plugins, and updates
 
-Let's begin our examination of Liferay's control panel by taking a look a how to manage and organize users in Liferay Portal.
+Let's begin our examination of Liferay's control panel by looking at how to manage and organize users in Liferay Portal.
 
-## Managing Users, User Groups, Organizations, Sites, Teams, and Roles from the Control Panel
+## Managing Users, User Groups, Organizations, Sites, Teams, and Roles 
 
 The Portal section of the control panel is used for most administrative tasks. You'll find there an interface for the creation and maintenance of
 
@@ -26,7 +26,7 @@ The Portal section of the control panel is used for most administrative tasks. Y
 
 - Roles
 
-Additionally, it allows you to configure many server settings, including:
+Additionally, you can configure many server settings, including:
 
 - Password Policies
 
@@ -38,27 +38,29 @@ Additionally, it allows you to configure many server settings, including:
 
 - Plugins Configuration
 
-You'll use the Portal section of the control panel to create your portal structure, implement security, and administer your users. Configurable portal settings include mail host names, email notifications, and authentication options including single sign-on and LDAP integration. Note that only users with the administrator role, which is a portal scoped role, have permission to view this section of the control panel. You can, of course, grant permissions to one or more sections to custom roles.
+You'll use the Portal section of the control panel to create your portal structure, implement security, and administer your users. Configurable portal settings include mail host names, email notifications, and authentication options including single sign-on and LDAP integration. Note that only users with the administrator role, which is a portal scoped role, have permission to view this section of the control panel. You can, of course, grant custom roles permissions to one or more sections.
 
-### Adding Users
+### Adding users
 
-Let's add a user account for yourself and configure this account so that it has the same administrative access as the default administrator account. Go up to the dockbar, mouse over *Go to* and click *Control Panel*. Then open the *Users and Organizations* page under the *Portal* category. Click the *Add* button and select *User*. Fill out the Add User form using your name and email address. When you are finished, click *Save*.
+Let's add a user account for yourself and configure this account so that it has the same administrative access as the default administrator account. Go up to the Dockbar, mouse over *Go to* and click *Control Panel*. Then open the *Users and Organizations* page under the *Portal* category. Click the *Add* button and select *User*. Fill out the Add User form using your name and email address. When you are finished, click *Save*.
 
 ![Figure 12.1: The Add User Screen](../../images/01-add-user-screen.png)
 
-After you submit the form, the page reloads with a message saying that the save was successful. An expanded form appears which allows you to fill out a lot more information about the user. You don't have to fill anything else out right now. Just note that when the user ID was created, a password was automatically generated and, if Liferay was correctly installed (see chapter 11), an email message with the password in it will have been sent to the user. This, of course, requires that Liferay can properly communicate with your SMTP mail server.
+After you submit the form, the page reloads with a message saying that the save was successful. An expanded form appears that allows you to fill out a lot more information about the user. You don't have to fill anything else out right now. Just note that when the user ID was created, a password was automatically generated and, if Liferay was correctly installed (see chapter 11), an email message with the password in it was sent to the user. This, of course, requires that Liferay can properly communicate with your SMTP mail server.
 
 ![Figure 12.2: Liferay's User Account Editor](../../images/01-user-account-editor.png)
 
-If you haven't yet set up your mail server, you'll need to use this page to change the default password for the user ID to something you can remember. You can do this by clicking on the *Password* link in the box on the right, entering the new password in the two fields, and clicking *Save*. Next, you will want to give your user account the same administrative rights as the default administrator's account. This will allow you to perform administrative tasks with your own ID instead of having to use the default ID. This will also allow you to make your portal more secure by deleting or disabling the default ID.
+If you haven't yet set up your mail server, you'll need to use this page to change the default password for the user ID to something you can remember. You can do this by clicking on the *Password* link in the box on the right, entering the new password in the two fields, and clicking *Save*. Next, you should give your user account the same administrative rights as the default administrator's account. This allows you to perform administrative tasks with your own ID instead of having to use the default ID. It also helps to make your portal more secure by deleting or disabling the default ID.
 
-Click the *Roles* link. The Roles page of the control panel shows the roles to which your ID is currently assigned. You should have one role: Power User. By default, all users are assigned the Power User role. You can give this role certain permissions if you wish or disable it altogether. You can also define the default roles a new user receives. We'll see how to do this later.
+Click the *Roles* link. The control panel's Roles page shows the roles to which your ID is currently assigned. You should have one role: Power User. By default, all users are assigned the Power User role. You can give this role certain permissions if you wish or disable it altogether. You can also define the default roles a new user receives. We'll see how to do this later.
 
-To make yourself an Administrator, click the *Select* link. A dialog box will pop up with a list of all the roles in the system. Select the Administrator role from the list. The dialog box will disappear and you will see that the role has been added to the list of roles associated with your account. Next, click the *Save* button, which is at the bottom of the blue bar of links on the right. You are now an administrator of the portal. Log out of the portal and then log back in with your own user ID.
+To make yourself an Administrator, click the *Select* link. A dialog box pops up with a list of all the roles in the system. Select the Administrator role from the list. The dialog box disappears and the role is added to the list of roles associated with your account. Next, click the *Save* button, which is at the bottom of the blue bar of links on the right. You are now an administrator of the portal. Log out of the portal and then log back in with your own user ID.
 
-### User Management
+We'll next look at some aspects of user management. 
 
-If you click the *Users* link on the left menu of the control panel, you will see that there are now two users in the list of users. If you wanted to change something about a particular user, you can click the *Actions* button next to that user.
+### User management
+
+If you click the *Users* link on the left menu of the control panel, there are now two users in the list of users. If you want to change something about a particular user, you can click the *Actions* button next to that user.
 
 **Edit User:** takes you back to the Edit User page, where you can modify anything about the user.
 
@@ -68,41 +70,45 @@ If you click the *Users* link on the left menu of the control panel, you will se
 
 **Impersonate User:** opens another browser window which allows you to browse the site as if you were the user.
 
-**Deactivate:** Clicking this will deactivate the user's account.
+**Deactivate:** deactivates the user's account.
 
-Note that most users will not be able to perform most of the above actions. In fact, most users won't even have access to this section of the control panel. You can perform all of the above functions because you have administrative access.
+Note that most users can't perform most of the above actions. In fact, most users won't even have access to this section of the control panel. You can perform all of the above functions because you have administrative access.
 
-### Organizations
+Let's look next at how to manage organizations. 
 
-Organizations can be used to represent hierarchical structures such as those of companies, non-profit organizations, churches, schools, and clubs. They have been used to represent a sports league, with various sports (soccer, baseball, basketball, etc.) and their teams as sub-organizations. If you have a collection of users that all belong to the same grouping, you may be able to model that as an organization.
+### Managing organizations
 
-Your portal might not need an organization or it might have one or several, depending on your portal's function. For example, a simple photo-sharing web site might not need any organizations. On the other hand, organizations would be very useful for corporations or educational institutions since their users can be easily placed into a hierarchical structure. In fact, organizations in Liferay can be used to model any group hierarchy, from those of government agencies all the way down to those of small clubs. Of course, your portal can use both organizations and independent sites. For example, a corporation or educational institutional could create a social networking site open to all portal users, even ones from separate organizations. 
+Organizations are used to represent hierarchical structures such as those of companies, non-profit organizations, churches, schools, and clubs. They have been used to represent a sports league, with various sports (soccer, baseball, basketball, etc.) and their teams as sub-organizations. If you have a collection of users that fit into a hierarchical structure, you can model that as an organization.
 
-Organizations and suborganizations can be created in a hierarchy to unlimited levels, and users can be members of one or many organizations. These organizations could all reside in a single hierarchy or cut across different hierarchies. Note that the rights of organization administrators apply not only to their organization but also to its suborganizations. By default, members of suborganizations are members of the parent organizations. This behavior can be configured in your portal's `portal-ext.properties` configuration file.
+Your portal design might not need organizations or it might have one or several, depending on your portal's function. For example, a simple photo-sharing web site could be powered by sites only (see below for information on sites). On the other hand, organizations are useful for corporations or educational institutions since their users can be placed easily into a hierarchical structure. In fact, organizations in Liferay are designed to model any group hierarchy, from those of government agencies all the way down to those of small clubs. Of course, your portal can use both organizations and independent sites. For example, a corporation or educational institution could create a social networking site open to all portal users, even ones from separate organizations. 
 
-Additionally, Organizations can be associated with roles. One application of this in a corporate setting could be an IT Security group. You could have a suborganizaton of your IT organization that handles security for all of the applications company-wide. If you had users as members of this organization, you could grant the administrator role you just granted to your own ID to the whole organization, thereby giving the members of the IT Security organization administrative access to the portal. Suppose now that a user in this organization later was hired by the Human Resources department. The simple act of removing the user from the IT Security organization also removes the user's administrative privileges, since the privilege came from the IT Security group's role. By adding the user to the HR organization, any roles the HR organization has (such as access to a benefits system in the portal) would be transferred to the user. In this manner, you can design your portal to correspond with your existing organization chart, and have users' permissions reflect their positions in the chart.
+Organizations and suborganizations can be created in a hierarchy to unlimited levels, and users can be members of one or many organizations. These organizations can all reside in a single hierarchy or cut across different hierarchies. Note that the rights of an organization administrator apply both to his/her organization and to any child organizations. By default, members of child organizations are members of the parent organizations. This behavior can be customized in your portal's `portal-ext.properties` configuration file.
 
-Of course, this is only one way to design it. If you have more complex requirements, you can combine organizations with teams and scoped roles to assemble the sets of permissions you wish to grant to particular users.
+Additionally, Organizations can be associated with roles. One application of this in a corporate setting might be an IT Security group. You could have a suborganizaton of your IT organization that handles security for all of the applications company-wide. If you grant the IT Security organization the same administrator role you just gave to your own ID, all members of the organization would have administrative access to the portal. Suppose now that a user in this organization later was hired by the Human Resources department. The simple act of removing the user from the IT Security organization also removes the user's administrative privileges, since the privilege came from the IT Security group's role. By adding the user to the HR organization, any roles the HR organization has (such as access to a benefits system in the portal) are transferred to the user. In this manner, you can design your portal to correspond with your existing organization chart, and users' permissions are granted according to their positions in the chart.
 
-To add an organization, click the *Users and Organizations* link on the left side of the control panel, then click the *Add* button and choose *Regular Organization*. An organization needs to have a site attached to it in order for it to have pages. To attach a site when you create an organization, click the *Organization Site* tab at the right, and check the *Create Site* box.
+Of course, this is only one way to design it. If you have more complex requirements, you can combine organizations with teams and scoped roles to assemble the sets of permissions you wish to grant to particular users. But we'll get to that. Let's first see how to manage organizations. 
+
+To add an organization, click the *Users and Organizations* link on the left side of the control panel. Then click the *Add* button and choose *Regular Organization*. 
+
+Does your organization need to have its own web site? Most organizations don't, but some do, and Liferay provides this ability by attaching a site to an organization. To attach a site when you create an organization, click the *Organization Site* tab at the right, and check the *Create Site* box. If you don't know right now if your organization needs a web site, that's fine: you can always add one later if the need arises. 
 
 ![Figure 12.3: Adding an organization](../../images/01-add-organization-screen.png)
 
-**Name:** lets you enter a name for the organization.
+**Name:** Enter a name for the organization.
 
-**Type:** lets you choose whether this is a regular organization or a location. A location cannot have any suborganizations.
+**Type:** Choose whether this is a regular organization or a location. A location cannot have any suborganizations.
 
-**Parent Organization:** lets you select an organization in the system to be the direct parent of the organization you are creating. Click the *Remove* button to remove the currently configured parent.
+**Parent Organization:** Select an organization in the system to be the direct parent of the organization you are creating. Click the *Remove* button to remove the currently configured parent.
 
 ---
-![tip](../../images/01-tip.png) **Tip:** Note that you are already a member of any organizations that you created. By creating an organization, you become both a member and receive the Organization Owner role, which gives you full rights to the organization.
+![tip](../../images/01-tip.png) **Tip:** Note that you're already a member of any organizations that you create. By creating an organization, you become both a member and receive the Organization Owner role, which gives you full rights to the organization. You can, of course, add other users to this role to make them Organization Owners. 
 ---
 
 Fill out the information for your organization and click *Save*. As before with users, the form reappears and you can enter more information about the organization. Organizations can have multiple email addresses, postal addresses, web sites, and phone numbers associated with them. The Services link can be used to indicate the operating hours of the organization, if any.
 
-For now, click the *Back* button. This will take you back to the list of organizations.
+For now, click the *Back* button. This takes you back to the list of organizations.
 
-Click the *Actions* button next to the new organization you have created. You will then see the actions you can take to manipulate this organization.
+Click the *Actions* button next to the new organization you created. This shows the actions you can take to manipulate this organization.
 
 **Edit:** lets you specify details about the organization, including addresses, phone numbers, email addresses, and websites.
 
@@ -112,33 +118,35 @@ Click the *Actions* button next to the new organization you have created. You wi
 
 **Assign Organization Roles:** lets you assign organization-scoped roles to users. By default, Organizations are created with three roles: Organization Administrator, Organization User, and Organization Owner. You can assign one or more of these roles to users in the organization. All members of the organization automatically get the Organization User role so this role is hidden when you click Assign Organization Roles.
 
-**Assign Users:** takes you to a dialog box where you can search and select users in the portal to be assigned to this organization as members.
+**Assign Users:** lets you search and select users in the portal to be assigned to this organization as members.
 
-**Add User:** adds a new user in the portal who will be a member of this organization.
+**Add User:** adds a new user in the portal and assigns the user as a member of this organization.
 
 **Add Regular Organization:** lets you add a child organization to this organization. This is how you create hierarchies of organizations with parent-child relationships.
 
 **Add Location:** lets you add a child Location, which is a special type of organization that cannot have any children added to it.
 
-**Delete:** deletes this organization from the portal. You will have to ensure that the organization has no users in it first.
+**Delete:** deletes this organization from the portal. You must ensure that the organization has no users in it first.
 
 If you click the *View* button at the top of the Users and Organizations page and select *View Hierarchy* you can view both a list of users who are members of this organization and a list of all the suborganizations of this organization.
 
+We briefly mentioned sites during this discussion. Sites are another construct within the portal, and have different properties than organizations. Let's see how you can use them. 
+
 ### Sites
 
-Sites are not innately hierarchical but they can be attached to organizations to create hierarchical structures. Independent sites are stand-alone groups of pages and are not associated with an organizational hierarchy. Open sites can be joined by any user regardless of organization membership. You can use open independent sites, therefore, in any situation where you need to cut across the organizational structure of your portal, or where you are providing content that could be relevant to anybody.
+As stated in chapter 1, sites are collections of pages that have user membership as an option. In this sense, one site has no relation to another site, and there's no way to join sites together in a hierarchy like you can with organizations. They can, however, be attached to organizations in order to provide an organization with a set of pages.  Independent sites are stand-alone groups of pages, and come in three types: open, restricted, and private. Open sites can be joined by any user regardless of organization membership. Restricted sites require users to request membership, which site administrators can then grant or deny. Private sites don't even show up in the list of sites (unless you're a portal administrator). The only way to join a private site is to have the administrator add you. You can use open independent sites, therefore, in any situation where you need to cut across the organizational structure of your portal, or where you're providing content that could be relevant to anybody.
 
 For example, a corporate Intranet running Liferay might have sites for all the organizations in the company: Sales, Marketing, Information Technology, Human Resources, and so on. But what about the corporate health and fitness center? That's something that everybody in the company, regardless of organization, may want to join. This makes it a good candidate for an open and independent site. Similarly, the home page for a corporate intranet should probably be placed in an open independent site so that any member of the portal can access it.
 
-For other kinds of web sites, you may want to use independent sites to bring people together who share a common interest. If you were building a photo sharing web site out of Liferay, you might have independent sites based on the types of photos people want to share. For example, those who enjoy taking pictures of landscapes could join a Landscapes site, and those who enjoy taking pictures of sunsets could join a Sunsets site. If they lost interest, they could leave those sites.
+For other kinds of web sites, you may want to use independent sites to bring people together who share a common interest. If you were building a photo sharing web site out of Liferay, you might have independent sites based on the types of photos people want to share. For example, those who enjoy taking pictures of landscapes could join a Landscapes site, and those who enjoy taking pictures of sunsets could join a Sunsets site. 
 
-The default home page in Liferay is created in a site which by default is called *liferay.com* (you can rename it; see the tip below), and this is where you would put your public web site. As you can see, there are many scenarios where you would want to use an independent site instead of an organization site. This is why organizations and sites have distinct roles within Liferay Portal.
+If you've run the setup wizard, you had a chance to name your default site whatever you wanted. If you chose to configure Liferay via the `portal-ext.properties` file, the default site is called *liferay.com* (you can rename it; see the tip below), and this is where you would put your public web site. As you can see, there are many scenarios where you would want to use an independent site instead of an organization site. This is why organizations and sites have distinct roles within Liferay Portal.
 
 ---
-![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, organizations were created with their own sets of pages and did not need to have sites attached to them. Independent sites were called communities and the default community where the public pages were located was called *Guest* . Also, as of Liferay 6.0, the default public site's name changes dynamically based on the name of the portal. Any time you change the name of your portal, the name of this site will change. You can set the name in *Portal Settings*.
+![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, organizations were created with their own sets of pages and did not need to have sites attached to them. Independent sites were called communities and the default community where the public pages were located was called *Guest*. Also, as of Liferay 6.0, the default public site's name can change dynamically based on the name of the portal. You can set the name in *Portal Settings*.
 ---
 
-Sites can be created in two ways. The first is through the control panel, like every other user/page collection in Liferay. The second is through the My Sites portlet, which can be added to any page in Liferay. Why are there two ways? The My Sites portlet also doubles as a way to navigate from site to site, and allows users to browse the list of sites and select one to join (if it is open or restricted). The My Sites portlet enables portal administrators to provide this functionality to users without giving them access to the control panel. Sites can also be administered from the Manage menu of the dockbar. We discussed this in chapter 3.
+Sites can be created in two ways. The first is through the control panel, like everything else in Liferay. The second is through the My Sites portlet, which can be added to any page in Liferay. Why are there two ways? The My Sites portlet also doubles as a way to navigate from site to site, and allows users to browse the list of sites and select one to join (if it is open or restricted). The My Sites portlet enables portal administrators to provide this functionality to users without giving them access to the control panel. 
 
 To add a site, click the *Sites* link on the left side of the control panel in the Portal section, and then click the *Add* button. You can select a template from which to build a your site or you can select *Blank Site* to build your site from scratch. Using site templates lets you create sites that are pre-populated with pages and portlets for collaborative or personal use.
 
@@ -148,17 +156,17 @@ To add a site, click the *Sites* link on the left side of the control panel in t
 
 **Description:** describes the site's intended function.
 
-**Membership Type:** can be open, restricted, or private. An open site appears in the My Sites portlet and users can join and leave the site whenever they want. A restricted site is the same except that users can only request membership. A site administrator must then explicitly grant or deny users' requests to join. A private site does not appear in the My Sites portlet and users must be added to it manually by a site administrator.
+**Membership Type:** can be open, restricted, or private. An open site appears in the My Sites portlet and users can join and leave the site whenever they want. A restricted site is the same except that users can only request membership. A site administrator must then explicitly grant or deny users' requests to join. A private site does not appear in the My Sites portlet, and users must be added to it manually by a site administrator.
 
-**Active:** determines whether a site is active or inactive. Inactive sites are inaccessible but can be activated whenever a site administrator chooses to active them.
+**Active:** determines whether a site is active or inactive. Inactive sites are inaccessible but can be activated whenever a site administrator wishes.
 
-Once you've created a site, it appears in the list on the Sites page of the control panel. Once the site has been created you can specify more details about the site, which fall under three main categories: Basic Information, Search Engine Optimization, and Advanced.
+Once you've created a site, it appears in the list on the Sites page of the control panel. Once the site has been created you can specify more details about the site, and these fall under three main categories: Basic Information, Search Engine Optimization, and Advanced.
 
 ![Figure 12.5: Editing a Site](../../images/01-site-editor.png)
 
-**Details:** lets you edit the information you entered when you created the site and allows you to choose a site template for the public or private pages of your site. If you select a site template, leave the *Enable propagation of changes from the site template* box checked to automatically update your site if the associated site template changes. If you uncheck this box but recheck it later, the template pages then will be reapplied to your site, overwriting any changes that may have been made.
+**Details:** lets you edit the information you entered when you created the site and allows you to choose a site template for the public or private pages of your site. If you select a site template, leave the *Enable propagation of changes from the site template* box checked to automatically update your site if the associated site template changes. If you uncheck this box but recheck it later, the template pages are then reapplied to your site, overwriting any changes that may have been made.
 
-**Categorization:** allows you to apply Liferay's tagging mechanism to the site. Tags can be very useful for sites within the portal whose functions can easily be described by keywords.
+**Categorization:** allows you to apply categories and tags to the site. These can be useful for sites whose functions can easily be described by keywords.
 
 **Site URL:** lets you set friendly URLs and virtual hosts for your web site.
 
@@ -166,11 +174,13 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 
 **Sitemap:** lets you use the sitemap protocol to notify search engines that your web site is available for crawling. 
 
-**Robots:** lets you use a `robots.txt` file to specify certain pages and links that you do *not* want to be indexed by search engines. You need to set a virtual host before you set a `robots.txt` file.
+**Robots:** lets you use a `robots.txt` file to specify certain pages and links that you don't want to be indexed by search engines. You need to set a virtual host before you set a `robots.txt` file.
 
-**Staging:** lets you turn on either Local Live staging or Remote Live staging. To enable staging, the *Enable propagation of changes from the site template* box on the Details tab needs to be unchecked. With staging enabled, changes to the site template are automatically propagated to the staged site, not to the live site. The changes still need to be approved before the site is published to live.
+**Staging:** lets you turn on either Local Live staging or Remote Live staging. To enable staging, the *Enable propagation of changes from the site template* box on the Details tab must be unchecked. With staging enabled, changes to the site template are automatically propagated to the staged site, not to the live site. The changes still must be approved before the site is published to live.
 
-**Analytics:** lets you set a Google Analytics ID that will be used for your site.
+**Analytics:** lets you set a Google Analytics ID that is used for your site. 
+
+<!-- | TODO: Add segue | -->
 
 #### Site Templates
 
@@ -204,7 +214,7 @@ The Page Templates page of the control panel shows a list of created page templa
 
 ![Figure 12.9: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
 
-To use your template to create a new page, just navigate to a page over which you have site administrator privileges and select *Add* &rarr; *Page* from the dockbar. You'll be able to select a page template and type a name for the new page. Alternatively, you can use the control panel. First, in the context selector menu, select the site to which you'd like to add a page and then click on the *Site Pages* link. Then click the *Add Page* button, type a name, select your template from the drop down menu, and click *Add Page* to finish.
+To use your template to create a new page, just navigate to a page over which you have site administrator privileges and select *Add* &rarr; *Page* from the Dockbar. You'll be able to select a page template and type a name for the new page. Alternatively, you can use the control panel. First, in the context selector menu, select the site to which you'd like to add a page and then click on the *Site Pages* link. Then click the *Add Page* button, type a name, select your template from the drop down menu, and click *Add Page* to finish.
 
 ![Figure 12.10: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
 
@@ -361,7 +371,7 @@ Now that you have been navigating in the control panel, you should be pretty fam
 
 Password policies can enhance the security of your portal. Password policies can set requirements on password strength, frequency of password expiration, and more. Additionally, you can apply different password policies to different sets of portal users.
 
-If you are viewing a page other than the control panel, select *Control Panel* from the *Go to* menu of the dockbar. Next, click on the *Password Policies* link on the left side of the screen under the *Portal* heading. You will see that there is already a default password policy in the system. You can edit this in the same manner as you edit other resources in the portal: click *Actions* and then click *Edit*.
+If you are viewing a page other than the control panel, select *Control Panel* from the *Go to* menu of the Dockbar. Next, click on the *Password Policies* link on the left side of the screen under the *Portal* heading. You will see that there is already a default password policy in the system. You can edit this in the same manner as you edit other resources in the portal: click *Actions* and then click *Edit*.
 
 The Password Policy settings form contains the following fields. Enabling specific settings via the check boxes prompts setting-specfic options to appear.
 
