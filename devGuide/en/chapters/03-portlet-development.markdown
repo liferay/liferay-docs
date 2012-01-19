@@ -13,7 +13,7 @@ Creating portlets with the Plugins SDK is extremely simple. As noted before, the
 
     ./create.sh my-greeting "My Greeting"
 
-On Windows enter the following instead:
+On Windows, enter the following instead:
 
     create.bat my-greeting "My Greeting"
 

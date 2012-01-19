@@ -23,7 +23,7 @@ Ext plugins are stored within the `ext` directory of the Plugins SDK. Navigate t
 
     ./create.sh example "Example"
 
-On Windows enter the following instead:
+On Windows, enter the following instead:
 
     create.bat example "Example"
 
