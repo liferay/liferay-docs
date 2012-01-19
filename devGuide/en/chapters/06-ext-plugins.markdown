@@ -29,7 +29,7 @@ On Windows, enter the following instead:
 
 You should get a BUILD SUCCESSFUL message from Ant, and there will now be a new folder inside of the `ext` folder in your Plugins SDK. Notice that the Plugins SDK automatically appends "-ext" to the project name when creating this folder.
 
-Once the target has been executed successfully you will find a new folder called example-ext with the following structure:
+Once the target has been executed successfully, you will find a new folder called example-ext with the following structure:
 
     /ext-example/
 		/docroot/
@@ -100,13 +100,17 @@ Before attempting to deploy an Ext plugin, it's necessary to edit the file `buil
 
 For example, if `ext.work.dir` points to `C:\ext-work`, and `app.server.zip.name` points to `C:\files\liferay-portal-tomcat-7.0.23-${lp.version}.zip`, then `app.server.dir` should point to `C:\ext-work\liferay-portal-${lp.version}\tomcat-7.0.23`.
 
+---
+![tip](../../images/tip-pen-paper.png) Note: Some Liferay bundles, come installed with a sample website for a fictional company called 7-Cogs. This sample website is useful for showcasing certain features of Liferay. However, once you've removed it, you don't want the Ant targets to reinstall it every time your bundle is unzipped again. To make sure this doesn't happen, unzip your bundle, delete the `<liferay-bundle>/tomcat-7.0.23/webapps/sevencogs-hook` folder, and then rezip your bundle.
+---
+
 ### Initial deployment
 
 Once the environment is set up, we are ready to start customizing. We'll show the full process with a simple example, customizing the sections of a user profile. Liferay allows this configuration to be made through the `portal-ext.properties` configuration file, but we'll be changing a property that cannot be changed from a hook plugin. In order to make this change, open the `docroot/WEB-INF/ext-impl/src/portal-ext.properties` file and paste the following contents inside:
 
     users.form.update.main=details,password,organizations,sites,roles
 
-This line removes the sections for user groups, personal sites, and categorizations from the user profile page. We might want to make this change because we want ensure that these entities won't be used in our portal.
+This line removes the sections for user groups, personal sites, and categorizations from the user profile page. We might want to make this change if we want ensure that these entities won't be used in our portal.
 
 Once we've made this change, we are ready to deploy. Open a terminal window in your `ext/example-ext` directory and enter this command:
 
@@ -118,27 +122,29 @@ The `ant deploy` target builds a `.war` file with all the changes you have made 
 
 Once the server has started, log in as an administrator and go to *Control Panel &rarr; Users and Organizations*. Edit an existing user and verify that the right navigation menu only shows the five sections that were referenced from the `users.form.update.main` property.
 
-Once we've applied this simple modification to Liferay, we can go ahead with a slightly more complex customization. This will give us an opportunity to learn the proper way to redeploy an Ext plugin, which is different from the initial deployment.
+![Figure 6.1: You should see these five sections under the User Information heading.](../../images/ext-plugin-five-sections.png)
 
-For this example, we'll customize the *details* view of the user profile. We could do that just by overwriting its JSP, but this time we'll use a more powerful method which also allows adding new sections or even merging the existing ones. Liferay allows referring to custom sections from the `portal-ext.properties` and implementing them just by creating a JSP. In our case, we'll modify the property `users.form.update.main` once again to set the following value:
+Once you've applied this simple modification to Liferay, we'll proceed with a slightly more complex customization. This will give us an opportunity to learn the proper way to redeploy an Ext plugin, which is different from how it's initially deployed.
+
+For this example, we'll customize the *details* section of the user profile. We could do that just by overwriting its JSP, but this time we'll use a more powerful method which also allows adding new sections or even merging the existing ones. Liferay allows referring to custom sections from the `portal-ext.properties` and implementing them just by creating a JSP. In our case, we'll modify the property `users.form.update.main` once again to set the following value:
 
     users.form.update.main=basic,password,organizations,sites,roles
 
-That is, we removed the section *details* and added a new custom one called *basic*. When Liferay's user administration reads this property it looks for the implementation of each section based on the following conventions:
+That is, we removed the *details* section and added a new custom one called *basic*. When Liferay's user administration reads this property, it looks for the implementation of each section based on the following conventions:
 
 -   The section should be implemented in a JSP inside the directory:
 
-		html/portlet/enterprise_admin/user
+	html/portlet/enterprise_admin/user
 
 -   The name of the JSP should be like the name of the section plus the `.jsp` extension. There is one exception. If the section name has a dash sign (`"-"`), it will be converted to an underscore sign (`"_"`). For example, if the section is called *my-info*, the JSP should be named `my_info.jsp`. This is done to comply to common standards of JSP naming.
 
--   The name of the section that will be shown to the user will be looked for in the language bundles. When using a key/value that is not already among the ones included with Liferay, you should add it to the `Language-ext.properties` and each of the language variants for which we want to provide a translation. Within the Ext plugin these files should be placed within `ext-impl/src`.
+-   The name of the section that will be shown to the user will be looked for in the language bundles. When using a key/value that is not already among the ones included with Liferay, you should add it to the `Language-ext.properties` and each of the language variants for which we want to provide a translation. These files should be placed within the `ext-impl/src` directory of the Ext plugin.
 
-In our example, we'll need to create a file within the Ext plugin in the following path:
+For our example, we need to create a file within the Ext plugin with the following path:
 
     ext-web/docroot/html/portlet/enterprise_admin/user/basic.jsp
 
-For the contents of the file, you can write them from scratch or make a copy of the `details.jsp` file from Liferay's source code and modify from there. In this case we've decided to do the latter and then remove some fields to simplify the creation of a user. The result is this:
+For the contents of the file, you can write them from scratch or make a copy of the `details.jsp` file from Liferay's source code and modify from there. We decided to do the latter and then removed some fields to simplify the creation of a user. Here's the result:
 
     <%@ include file="/html/portlet/enterprise_admin/init.jsp" %>
     <%
@@ -191,7 +197,7 @@ In our case, we don't need to add a new key to `Language-ext.properties`, becaus
 
 ### Redeployment
 
-So far, the process has been very similar to that of other plugin types. The differences appear when redeploying an Ext plugin that has already been deployed. As mentioned earlier, when the plugin was first deployed some of its files were *copied* within the Liferay installation. After making any change to the plugin, we recommend that you first stop the application server and then to execute the following ant targets:
+So far, the process has been very similar to that of other plugin types. The differences appear when you need to reploy an Ext plugin that has already been deployed. As mentioned earlier, when the plugin was first deployed, some of its files were *copied* within the Liferay installation. After making any change to the plugin, we recommend that you first stop the application server and then execute the following ant targets:
 
     ant clean-app-server direct-deploy
 
