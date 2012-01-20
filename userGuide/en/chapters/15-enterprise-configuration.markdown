@@ -1,8 +1,8 @@
 # Enterprise Configuration
 
-Liferay Portal is a robust, enterprise-ready portal solution. As such, it is fully ready to support mission-critical, enterprise applications in an environment configured for multiple redundancies and 24/7 uptimes. The product, however, like other products of its kind, doesn't come configured this way out of the box, and so there are some steps that need to be taken in order to tune it for your needs. 
+Liferay Portal is a robust, enterprise-ready portal solution. As such, it is fully ready to support mission-critical, enterprise applications in an environment configured for multiple redundancies and 24/7 uptimes. The product, however, like other products of its kind, doesn't come configured this way out of the box, so there are some steps that need to be taken in order to tune it for your needs. 
 
-This chapter covers these topics in detail. Liferay runs on so many different Java EE application servers that we can't cover all of the differences between them. For this reason, we'll just discuss Liferay configurations. For example, we'll look at how to configure Liferay to work in a clustered environment, but not how to create the cluster in your application server. The documentation for your particular application server is always a much better place to learn how to configure it as a cluster. All application servers do this differently. 
+This chapter covers these topics in detail. Liferay runs on so many different Java EE application servers that we can't cover all the differences between them. For this reason, we'll discuss Liferay configurations only. For example, we'll look at how to configure Liferay to work in a clustered environment, but not how to create the cluster in your application server. The documentation for your particular application server is always a much better place to learn those kinds of things.  
 
 This chapter explains how to configure Liferay for a number of advanced scenarios, such as
 
@@ -11,9 +11,9 @@ This chapter explains how to configure Liferay for a number of advanced scenario
 - Deploying Customized versions of Liferay
 - Performance Testing and Tuning
 
-During this discussion, we'll mention a number of other open source products upon which Liferay relies for much of this functionality. These products all have their own documentation which should be consulted for a fuller view of what these products can do. For example, Liferay uses Ehcache for its caching mechanism. We'll cover how to configure Ehcache to enable various caching functionality in Liferay, but will refer you to that product's documentation for further information about that product.
+During this discussion, we'll mention a number of other open source products upon which Liferay relies for much of this functionality. These products all have their own documentation which should be consulted for a fuller view of what these products can do. For example, Liferay uses Ehcache for its caching mechanism. We'll cover how to configure Ehcache to enable caches in Liferay, but will refer you to that product's documentation for further information about that product.
 
-Sometimes Liferay supports multiple products which perform the same function. There are, for example, several single sign-on implementations. We'll leave it up to you to select which product best fits the needs of your project without recommending one product over another.
+Sometimes Liferay supports multiple products which perform the same function. There are, for example, several single sign-on implementations you can use with Liferay. We'll leave it up to you to select which product best fits the needs of your project without recommending one product over another.
 
 With all of that said, let's get started configuring Liferay for the enterprise.
 
@@ -352,7 +352,7 @@ Of course, this needs to be set on all the nodes. That's all you need to do to s
 
 Next, we'll show how to share indexes in a database. This is actually not a recommended configuration, as it's slow (databases are always slower than file systems), but for completeness, we'll go ahead and tell you how to do it anyway. But you've been forewarned: it's far better to use one of the other methods of clustering your search index. 
 
-#### Sharing a search index
+#### Sharing a search index (not recommended unless you have a file locking-aware SAN) 
 
 If you wish to have a shared index (and we really hope you don't), you'll need to either share the index on the file system or in the database. This requires changing your Lucene configuration.
 
