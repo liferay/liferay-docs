@@ -357,23 +357,29 @@ Next, we'll look at how to configure the way pages are accessed by mobile device
 
 ### Mobile Device Rules
 
-Mobile device rules allow you to configure sets of rules and use those rules to alter the behavior of the portal based on the device being used to access Liferay. For instance, you can configure the look and feel of Liferay pages accessed by smartphone users differently than those accessed by PC users. Both sites and individual pages can be configured with any number of rule groups. The specific rule group that's applied when a page request is received is determined by the priority of the rule group and the rules defined by the rule set.
+Mobile device rules allow you to configure sets of rules and use those rules to alter the behavior of the portal based on the device being used to access Liferay. The proportion of mobile devices users browsing the web has been steadily increasing so it's important to be able to handle different kinds of devices appropriately. For instance, you can configure the look and feel of Liferay pages accessed by smartphone or tablet users differently than those accessed by PC users. 
+
+Both sites and individual pages can be configured with any number of rule groups. A rule group is designed to describe a group of devices. It can contain one or more rules which describe a category of devices, such as all android devices or all iOS tablets. Rule groups can be prioritized to determine which one will be applied to a given page request. You can define as many rules as you need to classify all the devices you want to take actions on.
+
+In order to configure mobile device rules, you must install the wurlf-web plugin. This plugin enables Liferay to detect which mobile device or operating system is being used for any given request. To install the plugin, navigate to the Plugins Installation section of the control panel, located under the Server heading. Then search for the wurlf-web plugin and click *Install*. 
+
+Alternatively, if you have a working copy of Liferay's plugin repository, you can install the plugin manually. The plugin is available from Liferay's public SVN repository at [http://svn.liferay.com/repos/public/plugins/trunk/webs/wurfl-web/](http://svn.liferay.com/repos/public/plugins/trunk/webs/wurfl-web/) or from Liferay's public Github repository at [https://github.com/liferay/liferay-plugins/tree/master/webs/wurfl-web](https://github.com/liferay/liferay-plugins/tree/master/webs/wurfl-web). Once you have checked out or cloned the repository, navigate the plugins root directory and create a `build.username.properties` file. Add the line `app.server.dir = <path-to-app-server>`, replacing `<path-to-app-server>` with the path to the application server running Liferay on your machine. Then navigate to the wurlf-web directory and execute the ant deploy target.
 
 You can access the Mobile Device Rules administrative page from the Content section of the control panel. Make to select the appropriate scope using the context menu selector so that your rule groups are available where you expect them to be. The Mobile Device Rules administrative page displays a list of defined rule groups and allows you to add more. To add rules to a rule group, select *Actions* &rarr; *Manage Rules* or just click on a rule group to edit it and then click the *Manage Rules* link.
 
-![Figure 3.x: Mobile Device Rules Administrative Page](../../images/mobile-device-rules.png)
+![Figure 3.15: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
-The rules defined for a rule group, along with the priorities of the rule groups selected for a particular site or page, determine which rule group will be applied. From the Manage Rules page for a specific rule set, you can add a rule by specifying a rule type. Once added, you can edit the rule to specify a device type and operating system.
+The rules defined for a rule group, along with the priorities of the rule groups selected for a particular site or page, determine which rule will be applied to a given request. From the Manage Rules page for a specific rule set, you can add a rule by specifying a rule type. Note that, by default, only the Simple Rule type is available. However, the rules are designed to be extensible and additional rule types can be added by your developers. Once added, you can edit the rule to specify a device type and operating system.
 
-![Figure 3.x: Editing a Mobile Device Rule](../../images/mobile-device-editing-rule.png)
+![Figure 3.16: You need to install the wurlf-web plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
-Once you've created some mobile device rule groups and added some rules to them, you'll be ready to set up some actions. The actions defined for a rule group determine what happens to a particular request when the request's devive has been detected and the rule group has been found to apply. 
+Once you've created some mobile device rule groups and added some rules to them, you'll be ready to set up some actions. The actions defined for a rule group determine what happens to a particular request when the request's device has been detected and the rule group has been found to apply. 
 
-You can add actions to a rule group from the Site Pages page of the control panel. Select either the public or private pages and then look for the *Mobile Rule Groups* link in the right-hand menu. Use the *Select Rule Group* button to select rule groups to be applied either to a site or to a single page. If you select the page group itself from the left-hand menu, the selected rule group will apply to all the pages of the site by default. However, if you select an individual page and then click the the *Select Rule Group* button, the rule groups will apply just to that page. You can select multiple rule groups for a particular site or page and order them by prority. The rule groups are checked in decreasing order of priority: the actions defined by the first rule group that applies are executed.
+You can add actions to a rule group from the Site Pages page of the control panel. Select either the public or private pages and then look for the *Mobile Rule Groups* link in the right-hand menu. Use the *Select Rule Group* button to select rule groups to be applied either to a site or to a single page. If you select the page group itself from the left-hand menu, the selected rule group will apply to all the pages of the site by default. However, if you select an individual page and then click the the *Select Rule Group* button, the rule groups will apply to only that page. You can select multiple rule groups for a particular site or page and order them by prority. The rule groups are checked in decreasing order of priority: the actions defined by the first rule group that applies are executed.
 
-![Figure 3.x: Selecting Mobile Device Rule Groups](../../images/mobile-device-selection.png)
+![Figure 3.17: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the control panel.](../../images/mobile-device-selection.png)
 
-To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. There are four kinds of actions that be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects, and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages you can use a redirect to make sure that mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to.
+To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. By default, there are four kinds of actions that be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects, and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages you can use a redirect to make sure that mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to. Like mobile device rules, mobile device actions are designed to be extensible. Your developers can define custom actions in addition to the four actions provided by default. Next, let's discuss Liferay's asset publisher, which you can use to publish many different kinds of portal content.
 
 ### Using the Asset Publisher Portlet
 
@@ -395,7 +401,7 @@ Let's first look at how we might select content manually. You'll see that it's v
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell the Asset Publisher that you want to select content manually. You can select what you want to be published within the portlet, or you can create new content  from within the Asset Publisher.
 
-![Figure 3.15: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 3.18: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
 
 Clicking *Add New* gives you a menu of options, enabling you to create the content right where you are. You can create blogs, bookmarks, calendar entries, documents, images, and of course, web content. Anything you create here is added to the list below of assets that are displayed by the portlet.
 
@@ -413,7 +419,7 @@ Asset Publisher's default behavior is to select assets dynamically according to 
 
 **Asset Type:** Choose whether you'll display any asset or only assets of a specific type, such as only web content, only wiki entries, or any combinations of multiple types.
 
-![Figure 3.16: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+![Figure 3.19: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 **Filter Rules:** Add as many filters on tags or categories as you like. You can choose whether the content contains or does not contain any or all categories or tags that you enter.
 
@@ -457,7 +463,7 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 **Show Metadata:** Allows you to select from the available metadata types (see below).
 
-![Figure 3.17: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
+![Figure 3.20: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS Feeds.
 
@@ -483,7 +489,7 @@ First, let's add a new page. Click *Add &rarr; Page* from the somewhere in the d
 
 Now we're ready to activate the staging feature for this site. Go to the control panel then to *Site Settings* and select *Staging* from under the *Advanced* heading.
 
-![Figure 3.18: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live*. If you want to set up a remote staging environment, it's easy. First, select *Remote Live*, and then supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions &rarr; Edit* on any site in the control panel. Either way, once you make a selection (*Local Live* or *Remote Live*), more options become available.
 
@@ -497,7 +503,7 @@ Enabling *Page Versioning* makes it so that you can work in parallel with other 
 
 If you navigate back to the News and Events page you'll now notice some new items along the top of the screen. These will help us manage staged pages. You'll also notice that most of your page management options have been removed, because you can now no longer directly edit live pages--you'll now use the staging environment to do that. Click on *Staging* to view the staged area. Your management options are restored, and you have some new options related to staging.
 
-![Figure 3.19: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.22: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that the Calendar portlet isn't there. That's because you've staged a change to the page, but haven't published that change yet to the live site. Also, only the page changes are staged; web content itself goes through a whole different workflow process (which we'll get to later). Go back to the staged page, and look at the options you have available. From here you can *Undo* changes, view a *History* of changes, *Mark as Ready for Publication*, and *Manage Page Variations*.
 
@@ -513,7 +519,7 @@ After you're done making changes to the staged page, click on *Mark as Ready for
 
 **Schedule Publication to Live:** lets you set a specific date to publish or to setup recurring publishing. You could use this, for example, to publish all changes made during the week every Monday morning without any further intervention.
 
-![Figure 3.20: Ready to publish to Live ](../../images/04-web-content-staging-publish.png)
+![Figure 3.23: Ready to publish to Live ](../../images/04-web-content-staging-publish.png)
 
 You may have noticed that something appears to be missing from this process. In particular, you might be asking the question, "How do I reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's Workflow engine. In order to have a review process for staged pages, you need to make sure that you have a workflow engine configured, and that you have Staging set up in the workflow. When using a workflow, clicking *Mark as Ready for Publication* submits the staged pages into the workflow. Once all necessary approvals have been completed, the *Publish to Live Now* and *Schedule for Publication* options become available. 
 
@@ -525,19 +531,19 @@ Let's say that you're working on a product-oriented site where you'll have sever
 
 To create a new page variation, click *Manage Page Variations* on the staging menu bar. This brings you to a list of existing versions of your page. Click *Add Page Variation* to create a new one. From the *Add Page Variation* screen, you can set a Name, Description, and set your new variation to copy the content from an existing variation.
 
-![Figure 3.21: Creating a new variation](../../images/04-web-content-add-site-pages-variation.png)
+![Figure 3.24: Creating a new variation](../../images/04-web-content-add-site-pages-variation.png)
 
 Site Page Variations are the top level variations, and each one will become its own **Main Variation**, and each Main Variation can in turn have different variations for each page under it. You can switch between different variations by  clicking on them from the staging menu bar. It's also possible to set permissions on each variation, so that certain users have access to manage some, but not all page variations. Page variations can also have different branches, so you could, for example, have three main variations, and then have three varitions of each of those, resulting in nine different versions of a page. While this can be confusing at first, it all comes together when you understand the concept of **Merging**.
 
 Merging occurs automatically once you click *Merge*, and it does its best to preserve all changes made in different branches. For example, if you add two different portlets to a page in two different variations, and then merge them with the main variation, both portlets are added to the page after the merge. You could then do some tweaking on the final merged product before publishing to live.
 
-![Figure 3.22: Branching lets you easily handle a site redesign at the same time as multiple product launches based on season.](../../images/04-web-content-staging-forking.png)
+![Figure 3.25: Branching lets you easily handle a site redesign at the same time as multiple product launches based on season.](../../images/04-web-content-staging-forking.png)
 
 For example, suppose you want to manage a couple of variations of a page for Thanksgiving and Christmas. Initially we could create a Site Page Variation for general changes called *Current Design* and make any maintenance changes there. Whenever we have anything that needs to be published, we would merge those changes with the Main Variation and publish it.
 
 In the meantime, we could duplicate the pages from the Current Design variation in a *Thanksgiving Page* variation, and make additional changes to the page. Once it gets close to Thanksgiving, we could merge Thanksgiving Break with the Current Design, and subsequently merge up to the Main Variation again. Once this is complete, we could make any necessary tweaks after the merge, and Publish the pages. We would then repeat the same steps at Christmas time.
 
-![Figure 3.23: The Thanksgiving branch.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.26: The Thanksgiving branch.](../../images/04-web-content-branch-thanksgiving.png)
 
 At the same time, a separate team could be working on a site redesign that has nothing to do with the season-based changes that are done to the main web site during the redesign. After Christmas, the new site design could be merged in order to launch for the new year, making the redesign the main variation. 
 
@@ -555,7 +561,7 @@ Liferay's workflow engine is called Kaleo workflow, and it ships with Liferay CE
 
 To enable workflow for Web Content, navigate to the control panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
-![Figure 3.24: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 3.27: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 6, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
 
@@ -569,7 +575,7 @@ Let's set up Liferay's Workflow for the Nose-ster web site.
 
 That's all it takes to set up workflow for web content. Now that workflow is enabled, publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at Nose-ster. Return to the home page and click the *Add Web Content* icon on the Web Content Display portlet. Call the new content *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
 
-![Figure 3.25: Pending Workflow](../../images/04-web-content-workflow-config.png)
+![Figure 3.28: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in control panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow, and anyone in this role can approve content as well.
 
