@@ -469,17 +469,17 @@ Next, we'll look at some of the most powerful features of Liferay WCM: staging a
 
 Staging is an important feature of Liferay WCM. The concept of staging is a simple one: you can modify your site behind the scenes, and then publish it all in one shot. You don't want your users seeing your web site change before their eyes as you're modifying it, do you? Liferay's staging environment allows you to make changes to your site in a specialized *staging area*, and then when you're finished, publish the whole site to your users.
 
-You can use staging in multiple ways. The best way is to have a staging server—-a separate instance of Liferay Portal which is used just for staging. Content creators can then use this server to make their changes while the live server handles the incoming user traffic. When changes to the site are ready to be published, they are pushed over the network to the live server.
+You can use staging in multiple ways. You can have a staging server—-a separate instance of Liferay Portal which is used just for staging. Content creators can then use this server to make their changes while the live server handles the incoming user traffic. When changes to the site are ready to be published, they are pushed over the network to the live server.
 
-If your organization doesn't have the resources to purchase additional hardware for a staging server, you can still use staging. In this configuration, you have a *local* staging environment: you host both your staging environment and your live environment on the same server. Either way, once set up, the interface is the same; the only difference comes when it's actually time to publish your content.
+You can also use staging in the same instance of your Liferay Portal. In this configuration, you have a *local* staging environment: you host both your staging environment and your live environment on the same server. Either way, once set up, the interface is the same; the only difference comes when it's actually time to publish your content.
 
-In addition, Liferay 6.1 adds the capability to create multiple branches of staged content, so that you can manage several future versions of a site simultaneously. Branches can be merged and published through an intuitive UI. Let's jump in to see how to use staging. 
+In addition, Liferay 6.1 adds the capability to create multiple variations of staged pages, so that you can manage several future versions of a site simultaneously. Variations can be merged and published through an intuitive UI. Let's jump in to see how to use staging.
 
 ##### Enabling the staging environment
 
-The Staging tab allows us to make changes in a staging environment and preview our work before publishing it to the live site. Let's create a staging environment for Nose-ster's homepage.
+Staging configuration can be found in the Site Settings UI. The Staging tab allows us to make changes in a staging environment and preview our work before publishing it to the live site. Let's create a staging environment for Nose-ster's homepage.
 
-First, let's add a new page. Click *Add &rarr; Page* from the somewhere in the default community and name the new page *News and Events*. Next, click the *View Pages* button and add the Alerts and Announcements portlets to it.
+First, let's add a new page. Click *Add &rarr; Page* from the toolbar in the default site and name the new page *News and Events*. Next, click the *View Pages* button and add the Alerts and Announcements portlets to it.
 
 Now we're ready to activate the staging feature for this site. Go to the control panel then to *Site Settings* and select *Staging* from under the *Advanced* heading.
 
@@ -491,7 +491,7 @@ We'll cover many of the collaboration portlets listed here when we come to chapt
 
 Generally, you'll want web content to be staged, because end users aren't creating that kind of content-—web content is the stuff you publish to your site. But portlets like the message boards or the wiki would likely benefit from *not* being staged.
 
-Enabling *Page Versioning* makes it so that you can work in parallel with other users on multiple versions of the same page, and it gives you the flexibility to revert easily to a previous version if you encounter any issues. Check *Enabled On Public Pages* so that we can take a look at versioning.  
+Enabling *Page Versioning* makes it so that you can work in parallel with other users on multiple versions of the same pages, and it gives you the flexibility to revert easily to a previous version if you encounter any issues. Check *Enabled On Public Pages* so that we can take a look at versioning.
 
 ##### Using the staging environment
 
@@ -499,53 +499,70 @@ If you navigate back to the News and Events page you'll now notice some new item
 
 ![Figure 3.19: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
-Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that the Calendar portlet isn't there. That's because you've staged a change to the page, but haven't published that change yet to the live site. Also, only the page changes are staged; web content itself goes through a whole different workflow process (which we'll get to later). Go back to the staged page, and look at the options you have available. From here you can *Undo* changes, view a *History* of changes, *Mark as Ready for Publication*, and *Manage Page Variations*.
+Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that the Calendar portlet isn't there. That's because you've staged a change to the page, but haven't published that change yet to the live site. Go back to the staged page, and look at the options you have available. From here you can *Undo* changes, view a *History* of changes, *Mark as Ready for Publication*, and *Manage Page Variations*.
 
-**Undo:** allows you to step back through recent changes to a page, which can save you the time of manually adding or removing portlets if you make a mistake.
+**Undo/Redo:** allows you to step back/forward through recent changes to a page, which can save you the time of manually adding or removing portlets if you make a mistake.
 
-**History:** shows you the list of revisions of the page, based on publication dates. 
+**History:** shows you the list of revisions of the page, based on publication dates. You can go to any revision in the history of your changes and see how the pages looked at this point.
 
-**Manage Page Variations:** allows you to create multiple versions of a staged page that you can either merge together, or use to work on several major changes at the same time.
+**Manage Page Variations:** allows you to work in parallel in multiple versions of a staged page. We will explain this later.
 
-After you're done making changes to the staged page, click on *Mark as Ready for Publication*. Nothing happens immediately, but now the page containing any changes you've made can be published to the Live Site. If you click on the dropdown next to the Staging link at the top, you have the option to *Publish to Live Now* or *Schedule Publication to Live*.
+After you're done making changes to the staged page, click on *Mark as Ready for Publication*. You can see that status of the page has changed from *Draft* to *Ready for Publication* and any changes you've made can be published to the Live Site. When you publish a page to live, only the last version which was *Marked as Ready for Publication* will be published.
+
+If you click on the dropdown next to the Staging link at the top, you have the option to *Publish to Live Now* or *Schedule Publication to Live*.
 
 **Publish to Live Now:** immedatiately pushes any changes to the Live Site.
 
 **Schedule Publication to Live:** lets you set a specific date to publish or to setup recurring publishing. You could use this, for example, to publish all changes made during the week every Monday morning without any further intervention.
 
+Click on *Mark as Ready for Publication* and then *Publish to Live Now* to see your Calendar portlet also in the Live Site.
+
+Content publication can be also controlled using Staging. Calendar events are staged by default (this can be changed in Staging Configuration). If you create an event in the Staging Site, it won't be visible in the Live Site until you publish it to live following the sames steps we did with the page (you can select which type of content are published when you publish to Live). If workflow was enabled for Calendar Events, the event would need to go through the workflow before it can be published to Live.
+
 ![Figure 3.20: Ready to publish to Live ](../../images/04-web-content-staging-publish.png)
 
-You may have noticed that something appears to be missing from this process. In particular, you might be asking the question, "How do I reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's Workflow engine. In order to have a review process for staged pages, you need to make sure that you have a workflow engine configured, and that you have Staging set up in the workflow. When using a workflow, clicking *Mark as Ready for Publication* submits the staged pages into the workflow. Once all necessary approvals have been completed, the *Publish to Live Now* and *Schedule for Publication* options become available. 
 
-One of the most powerful features of staging is variations. Let's see how to use those to create multiple different variations of your site for different purposes. 
+One of the most powerful features of staging is Page Variations. Let's see how to use those to create multiple different variations of your site pages for different purposes.
 
 #### Site Pages Variations
 
 Let's say that you're working on a product-oriented site where you'll have several major changes to a page or a set of pages over a short period of time, and need to be working on multiple versions of the site at the same time to ensure that everything has been properly reviewed before it goes live. With staging in Liferay 6.1 you can do this with **Page Variations**.
 
-To create a new page variation, click *Manage Page Variations* on the staging menu bar. This brings you to a list of existing versions of your page. Click *Add Page Variation* to create a new one. From the *Add Page Variation* screen, you can set a Name, Description, and set your new variation to copy the content from an existing variation.
+For example, you would be able to create several **Site Pages Variations** to have the marketing team working on giving your site have a completely different look and feel for Christmas and product management team working on a different version of your site focused on the launching of a new product that will be published the next day after Christmas. And what is more, the product management team might be considering two different ideas for the home page of the Site, so they would be able to create several **Page Variations** of the Home Page inside their Product Launch Site Pages Variation.
 
-![Figure 3.21: Creating a new variation](../../images/04-web-content-add-site-pages-variation.png)
+Variations only affect Pages and not the content, which means that all the existing content in your Staging Site is shared by all your variations. In different Site Pages Variations you can have different configuration and look and feel of for your pages, different configuration of the aplication in these pages, different applications on the pages and even different pages. One page can exist in just one Site Pages Variation or in several of them.
 
-Site Page Variations are the top level variations, and each one will become its own **Main Variation**, and each Main Variation can in turn have different variations for each page under it. You can switch between different variations by  clicking on them from the staging menu bar. It's also possible to set permissions on each variation, so that certain users have access to manage some, but not all page variations. Page variations can also have different branches, so you could, for example, have three main variations, and then have three varitions of each of those, resulting in nine different versions of a page. While this can be confusing at first, it all comes together when you understand the concept of **Merging**.
+By default, we only have one Site Pages Variation which is called **Main Variation**. In order to create a new one, click in the dropdown next to the Staging link and then click on *Manage Site Pages Variations*. This brings you to a list of the existing Site Pages Variations for your Site. Click *Add Site Pages Variation* to create a new one. From the *Add Site Pages Variation* screen, you can set a Name, Description, and set your new variation to copy the content from an existing variation. There are several options to choose in this selector:
 
-Merging occurs automatically once you click *Merge*, and it does its best to preserve all changes made in different branches. For example, if you add two different portlets to a page in two different variations, and then merge them with the main variation, both portlets are added to the page after the merge. You could then do some tweaking on the final merged product before publishing to live.
+- Any existing Site Pages Variation can be chosen. This will create a new Site Pages Variation that will contain only the last version marked as Ready for Publication of all the pages existing for this variation.
+- All Site Pages Variation. The variation will contain the last version marked as Ready for Publication from any page existing in any other Site Pages Variation.
+- None. The new variation will be empty and won't contain any page.
 
-![Figure 3.22: Branching lets you easily handle a site redesign at the same time as multiple product launches based on season.](../../images/04-web-content-staging-forking.png)
+You are also able to rename any Site Pages Variation. For example, edit the Main Variation and change its name to something which makes more sense in your site, such as *Basic*, *Master*, *Regular* and create a variation for Christmas.
 
-For example, suppose you want to manage a couple of variations of a page for Thanksgiving and Christmas. Initially we could create a Site Page Variation for general changes called *Current Design* and make any maintenance changes there. Whenever we have anything that needs to be published, we would merge those changes with the Main Variation and publish it.
+You can switch between different Site Pages variations by clicking on them from the staging menu bar. It's also possible to set permissions on each variation, so that certain users have access to manage some, but not all variations.
 
-In the meantime, we could duplicate the pages from the Current Design variation in a *Thanksgiving Page* variation, and make additional changes to the page. Once it gets close to Thanksgiving, we could merge Thanksgiving Break with the Current Design, and subsequently merge up to the Main Variation again. Once this is complete, we could make any necessary tweaks after the merge, and Publish the pages. We would then repeat the same steps at Christmas time.
+You can now go to the Home page of your Christmas variation and move portlets around, change the order of the pages, configure different portlets... and the other Site Pages variations won't be affected. You can even delete existing pages or add new ones (remember to *Mark as Ready for Publication* when you are done with your changes). When you delete a page, it will only be deleted in the current Site Pages Variation and the same will happen when you add a new page. If you try to access a page which was deleted in the current variation you will be informed that this page is not *enabled* in this Site Pages variation and you will be able to enable it. You will be able to see all the existing pages for all the Site Pages variations in a tree if you go to the Manage &rarr; Site Pages screen. Pages which are not *enabled* for the current Site Pages variation are shown in a lighter color.
 
-![Figure 3.23: The Thanksgiving branch.](../../images/04-web-content-branch-thanksgiving.png)
+In order to publish a Site Pages Variation to Live, you have to click in *Publish to Live now* in the dropdown next to the variation name. Publications can also be scheduled independently for different Site Pages Variations, so you could have for example a Site Pages Variation called *Mondays* which is published to Live every monday and another one called *Day 1* which is published to Live every first day of each month.
 
-At the same time, a separate team could be working on a site redesign that has nothing to do with the season-based changes that are done to the main web site during the redesign. After Christmas, the new site design could be merged in order to launch for the new year, making the redesign the main variation. 
+You can also have Page Variations for a single page inside a Site Pages Variation which will allow you to work in parallel in different versions of a page. (For example, two different proposals for the design of the Home page for the Christmas Site Pages variation). These Pages Variation only exist inside a Site Pages Variation.
+
+To create a new page variation, click *Manage Page Variations* on the staging area. This brings you to a list of existing Page variations of your page (by default, there is only one again called *Main Variation*). You can create more or rename the existing one.You can switch between different Page variations by clicking on the new menu bar containing the Page variations below the Site Pages variations menu bar. When you decide which Page variation should be published, you should mark it as *Ready for Publication*. Only one Page Variation can be marked as Ready for Publication and that will be the one chosen when your changes are Published to Live.
+
+![Figure 3.21: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
+
+For example, we could create a Page Variation called Thanksgiving for the News and Events page inside of the Christmas Site Pages Variation and another one called Christmas Day to display different content in this page during those days.
+
+![Figure 3.23: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 #### Wrapping up staging
 
 You can enable staging on an individual site basis, depending on your needs. This makes it really easy to put strict controls in place for your public web site, but to open things up for individual sites that don't need such strict controls. Liferay's staging environment is extremely easy to use and makes maintaining a content-rich web site a snap. 
 
-Let's go one step further by introducing workflow into the mix. 
+You may have noticed that something appears to be missing from this process. In particular, you might be asking the question, "How do I reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's Workflow engine. In order to have a review process for staged pages, you need to make sure that you have a workflow engine configured, and that you have Staging set up in the workflow (Select the workflow definition desired for Page Revisions in the Workflow Configuration). When using a workflow, clicking *Submit for Publication* submits the staged pages into the workflow and once all necessary approvals have been completed, the page status will be *Marked as Ready for Publication*. *Publish to Live Now* and *Schedule for Publication* options will publish the last version of the selected pages marked as Ready for Publication.
+
+Let's go one step further by introducing workflow into the mix.
 
 ### Using Liferay's Integrated Workflow with Content Management
 
