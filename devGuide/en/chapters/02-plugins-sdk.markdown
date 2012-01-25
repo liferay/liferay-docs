@@ -19,7 +19,11 @@ We discuss the following topics in this chapter:
 Setting up the Plugins SDK is easy. Let's get to it.
 
 ## Installing the SDK
-Setting up your environment for Liferay development is straightforward. First, you will need Liferay Portal. If you have yet to install Liferay with an application server, follow instructions in chapter *Installing Liferay* of our *Using Liferay Portal 6.1* document [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). We recommend using the Tomcat application server for development, as it is small, fast, and takes up less resources than most other servlet containers. Although you can use any application server supported by Liferay Portal for development, our examples use Tomcat
+Setting up your environment for Liferay development is straightforward. First, you will need Liferay Portal. If you have yet to install Liferay with an application server, follow instructions in chapter *Installing Liferay* of our *Using Liferay Portal 6.1* document [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). Many people use the Tomcat application server for development, as it is small, fast, and takes up less resources than most other servlet containers. Although you can use any application server supported by Liferay Portal for development, our examples use Tomcat.
+
+---
+ ![note](../../images/tip-pen-paper.png)**Note:** In Liferay Developer Studio, the SDK is already installed and ready to use. Liferay Portal Enterprise Edition (EE) comes with Liferay Developer Studio and much more (see  [CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial) of Liferay Portal EE today.
+---
 
 Installation steps:
 
@@ -91,19 +95,19 @@ Each folder in the Plugins SDK contains scripts for creating new plugins of that
 
 	-	`dist/` - Archived plugins for distribution and deployment.
 
-	-	`ext/` - Ext-Plugins directory.
+	-	`ext/` - Ext plugins directory. See chapter *Ext plugins*.
 
-	-	`hooks/` - Hook plugins directory.
+	-	`hooks/` - Hook plugins directory. See chapter *Hooks*.
 
-	-	`layouttpl/` - Layout templates directory.
+	-	`layouttpl/` - Layout templates directory. See chapter *Creating Liferay Themes*.
 
 	-	`lib/` - Commonly referenced libraries.
 
 	-	`misc/` - Development configuration files. Example, a source code formatting specification file.
 
-	-	`portlets/` - Portlet plugins directory.
+	-	`portlets/` - Portlet plugins directory. See chapter *Portlet Developement*.
 
-	-	`themes/` -  Themes plugins directory.
+	-	`themes/` -  Themes plugins directory. See chapter *Creating Liferay Themes*.
 
 	-	`tools/` - Plugin templates and utilities.
 
