@@ -401,7 +401,7 @@ Let's first look at how we might select content manually. You'll see that it's v
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell the Asset Publisher that you want to select content manually. You can select what you want to be published within the portlet, or you can create new content  from within the Asset Publisher.
 
-![Figure 3.18: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 3.15: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
 
 Clicking *Add New* gives you a menu of options, enabling you to create the content right where you are. You can create blogs, bookmarks, calendar entries, documents, images, and of course, web content. Anything you create here is added to the list below of assets that are displayed by the portlet.
 
@@ -419,7 +419,7 @@ Asset Publisher's default behavior is to select assets dynamically according to 
 
 **Asset Type:** Choose whether you'll display any asset or only assets of a specific type, such as only web content, only wiki entries, or any combinations of multiple types.
 
-![Figure 3.19: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+![Figure 3.16: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 **Filter Rules:** Add as many filters on tags or categories as you like. You can choose whether the content contains or does not contain any or all categories or tags that you enter.
 
@@ -463,7 +463,7 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 **Show Metadata:** Allows you to select from the available metadata types (see below).
 
-![Figure 3.20: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
+![Figure 3.17: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS Feeds.
 
@@ -489,7 +489,7 @@ First, you'll add a new page. Click *Add &rarr; Page* from the toolbar in the de
 
 Now we're ready to activate the staging feature for this site. Go to the control panel then to *Site Settings* and select *Staging* from under the *Advanced* heading.
 
-![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.18: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live*. If you want to set up a remote staging environment, it's easy. First, select *Remote Live*, and then supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions &rarr; Edit* on any site in the control panel. Either way, once you make a selection (*Local Live* or *Remote Live*), more options become available.
 
@@ -503,7 +503,7 @@ Enabling *Page Versioning* makes it so that you can work in parallel with other 
 
 If you navigate back to the News and Events page you'll now notice some new items along the top of the screen. These will help us manage staged pages. You'll also notice that most of your page management options have been removed, because you can now no longer directly edit live pages--you'll now use the staging environment to do that. Click on *Staging* to view the staged area. Your management options are restored, and you have some new options related to staging.
 
-![Figure 3.22: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.19: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that the Calendar portlet isn't there. That's because you've staged a change to the page, but haven't published that change yet to the live site. Go back to the staged page, and look at the options you have available. From here you can *Undo* changes, view a *History* of changes, *Mark as Ready for Publication*, and *Manage Page Variations*.
 
@@ -521,7 +521,11 @@ The dropdown next to the Staging link at the top gives you the option to *Publis
 
 **Schedule Publication to Live:** lets you set a specific date to publish or to setup recurring publishing. You could use this, for example, to publish all changes made during the week every Monday morning without any further intervention.
 
-![Figure 3.23: Ready to publish to Live ](../../images/04-web-content-staging-publish.png)
+Click on *Mark as Ready for Publication* and then *Publish to Live Now* to publish your Calendar portlet to the live site.
+
+Content publication can be also controlled using staging. Calendar events are staged by default (this can be changed in Staging Configuration). If you create an event in the staged site, it isn't visible in the live site until you publish it to the live site following the same steps you just performed (you can select which types of content are published when you publish to the live site). If workflow is enabled for Calendar Events, the event needs to go through the workflow process before it can be published to the live site.
+
+![Figure 3.20: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
 
 One of the most powerful features of staging is page variations. Let's see how to use them to create multiple different variations of your site's pages for different purposes.
 
@@ -537,19 +541,19 @@ By default, we only have one site page variation which is called **Main Variatio
 
 **Any existing Site Pages Variation:** creates a new site page variation that contains only the last version of all the pages that exist in this variation. The current variation must be marked as ready for publication. 
 
-![Figure 3.24: Creating a new variation](../../images/04-web-content-add-site-pages-variation.png)
+**All Site Pages Variation:** creates a new variation that contains the last version marked as ready for publication from any single page existing in any other variation.
 
 **None:** creates a new, empty variation.
 
 You are also able to rename any variation. For example, edit the Main Variation and change its name to something that makes more sense in your site, such as *Basic*, *Master*, *Regular* and create a variation for Christmas.
 
-![Figure 3.25: Branching lets you easily handle a site redesign at the same time as multiple product launches based on season.](../../images/04-web-content-staging-forking.png)
+You can switch between different variations by clicking on them from the staging menu bar. It's also possible to set permissions on each variation, so that certain users have access to manage some, but not all variations.
 
 You can now go to the home page of your Christmas variation and move portlets around, change the order of the pages, configure different portlets, and the other variations won't be affected. You can even delete existing pages or add new ones (remember to *Mark as Ready for Publication* when you are done with your changes). When you delete a page, it is deleted only in the current variation, and the same happens when you add a new page. If you try to access a page which was deleted in the current variation, Liferay informs you that this page is not *enabled* in this variation, and you can enable it. To enable it, navigate to the *Manage* &rarr; *Site Pages* screen. Here, all the existing pages for all the variations are shown in a tree. Pages that are not *enabled* for the current variation are shown in a lighter color.
 
 To publish a variation to the live site, click on *Publish to Live now* in the dropdown next to the variation name. Publications can also be scheduled independently for different variations. For example, you could have a variation called *Mondays* which is published to the live site every Monday and another one called *Day 1* which is published to the live site every first day of each month.
 
-![Figure 3.26: The Thanksgiving branch.](../../images/04-web-content-branch-thanksgiving.png)
+You can also have variations for a single page inside a site page variation, which allows you to work in parallel in different versions of a page. For example, you might work on two different proposals for the design of the home page for the Christmas variation. These page variations only exist inside a site Page variation.
 
 To create a new page variation, click *Manage Page Variations* on the staging toolbar. This brings you to a list of existing page variations for the current page (by default, there is only one called *Main Variation*). You can create more or rename the existing one. You can switch between different page variations using the toolbar containing the page variations below the site pages variations toolbar. When you decide which page variation should be published, mark it as *Ready for Publication*. Only one page variation can be marked as ready for publication and that is the one that gets published to the live site.
 
@@ -579,7 +583,7 @@ When using a workflow, clicking *Submit for Publication* submits the staged page
 
 To enable workflow for Web Content, navigate to the control panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
-![Figure 3.27: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 3.24: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 6, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
 
@@ -593,7 +597,7 @@ Let's set up Liferay's Workflow for the Nose-ster web site.
 
 That's all it takes to set up workflow for web content. Now that workflow is enabled, publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at Nose-ster. Return to the home page and click the *Add Web Content* icon on the Web Content Display portlet. Call the new content *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
 
-![Figure 3.28: Pending Workflow](../../images/04-web-content-workflow-config.png)
+![Figure 3.25: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in control panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow, and anyone in this role can approve content as well.
 
