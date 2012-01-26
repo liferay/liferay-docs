@@ -180,11 +180,11 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 
 **Analytics:** lets you set a Google Analytics ID that is used for your site. 
 
-<!-- | TODO: Add segue | -->
+While we're on the subject of sites, let's discuss site templates.
 
 #### Site Templates
 
-While we're on the subject of sites, we should discuss Site Templates, which appear below the Sites link in the Portal category of the control panel. These allow you to create sites by selecting pre-defined templates that you can make beforehand. A site template consists of a pre-defined set of pages and portlets. You can use templates to quickly create multiple sites that are pre-populated with the pages and portlets defined by the templates.
+Site Templates appear below the Sites link in the Portal category of the control panel. These allow you to create sites by selecting pre-defined templates that you can make beforehand. A site template consists of a pre-defined set of pages and portlets. You can use templates to quickly create multiple sites that are pre-populated with the pages and portlets defined by the templates.
 
 Site templates can contain web content just like actual sites. This allows you to create sample content that will appear when your site is first created from a site template. By default, changes to a site template's content are not propagated to existing sites that implement the template. However, if you would like to publish a piece of web content to all the sites that implement a certain site template, you can place the content in the global scope and then reference it from a Web Content Display portlet.
 
@@ -241,13 +241,13 @@ button next to a user group to perform various operations on that group.
 
 **Site Permissions:** lets you define which roles have permissions to manage various features the user group's site template.
 
-**Manage Site Pages:** allows you to add pages to the site template, import or export pages, organize the page hierarchy, modify the look and feel of the pages, add a logo, or access other options from the Manage Site interface.
+**Manage Site Pages:** allows you to add pages to the user group site, import or export pages, organize the page hierarchy, modify the look and feel of the pages, add a logo, or access other options from the Manage Site interface.
 
 **Assign Members:** lets you search for and select users in the portal to be assigned to this user group as well as view the users currently belonging to the user group .
 
 **Delete:** deletes the user group.
 
-If your user group has pages or site templates in place for public or private pages, **Go to the Site's Public Pages** and **Go to the Site's Private Pages** also appear as links in your user group's Actions menu. Clicking one of these links opens the user group's site in a new browser window. Any changes you make to the site are saved automatically. You can safely close the browser window when you're done. 
+If your user group a site in place for public or private pages, **Go to the Site's Public Pages** and **Go to the Site's Private Pages** also appear as links in your user group's Actions menu. Clicking one of these links opens the user group's site in a new browser window. Any changes you make to the site are saved automatically. You can safely close the browser window when you're done. Next, let's take a closer look at user group sites.
 
 #### User Group Sites
 
@@ -255,7 +255,7 @@ Liferay allows users to each have a personal site consisting of public and priva
 
 Liferay version 5.1 introduced the concept of associating site templates with user groups. This enabled administrators to provide the same configuration for the personal sites of a group of users, using Liferay's GUI instead of the properties file. In some cases you might want to provide a different configuration for each user depending on his or her profile. In an educational institution's portal, for example, teachers, staff, and students could get different default pages and portlets on their personal sites. While configuring pages like this is still in option you'll need to add the following line to your portal-ext.properties file:
 
-user.groups.copy.layouts.to.user.personal.site=true
+	user.groups.copy.layouts.to.user.personal.site=true
 
 Once you've enabled this property, use the *Actions* menu choose *Manage Site Pages*. You can add a new public or private page by selecting the appropriate tab and then clicking the *Add Page* button. Once the user group has at least one public or private page in place, you can go back to the *Actions* menu and click on the *Go to the Site's Public Pages* or *Go to the Site's Private Pages* link to open the user group's site in a new browser window. You can add more pages and portlets and configure site settings from the new window.
 
@@ -267,7 +267,7 @@ You can create a user group's site manually or base it on a site template. To cr
 
 You can also base a user group's site on a template. When editing a user group, use the Public Pages and Private Pages drop down lists to select a site template. Leave the *Enable propagation of changes from the site template* box checked to automatically updated users' personal sites if the associated site template changes. If you uncheck this box but recheck it later, the template pages will be copied to the users' sites, overwriting any changes they may have made. You can allow users to make changes to the pages they receive from the user group by enabling the customization options of each page.
 
-This flexibility lets you achieve almost any desired configuration for a user's personal site without having to modify it directly. When a user is assigned to a user group, the configured site pages are copied directly to the user's personal site.
+This flexibility lets you achieve almost any desired configuration for a user's personal site without having to modify it directly. When a user is assigned to a user group, the configured site pages are copied directly to the user's personal site. Next, let's look at an example of basing a user group site on a template.
 
 ##### Defining Site Templates for a User Group's Site
 
@@ -291,7 +291,7 @@ From that list, one or more users can be selected to be assigned as members of t
 
 For example, by default, newly created users are given *Welcome* pages on the public pages portion of their personal sites. This Welcome page contains the Language, Search, and Blogs portlets. You can see the effect of the *Bloggers* site template on the public pages of Joe Bloggs's personal site in the figure above. When Joe Bloggs was added to the *Bloggers* group, he received a *Blogs* page with the *Blogs* and *Recent Bloggers* portlets.
 
-Once the template pages have been copied to a user's personal site, the copies may be modified by the user. Users with administrative privileges over their personal sites will be able to modify the pages and their contents provided that the *Allow Site Administrators to Modify the Pages Associated with This Site Template* box has been checked for the template. When a user is removed from a user group, the associated pages are removed from the user's personal site. Moreover, if a user is removed from a group and is subsequently added back, the group's template pages will be copied to the user's site a second time. Note that if a user group's site is based on a template and an administrator modifies the user group's site template after users have already been added to the group, those changes will only take effect if the *Enable propagation of changes from the site template* box for the user group was checked.
+Once the template pages have been copied to a user's personal site, the copies may be modified by the user. Users with administrative privileges over their personal sites will be able to modify the pages and their contents provided that the *Allow Site Administrators to Modify the Pages Associated with This Site Template* box has been checked for the template. When a user is removed from a user group, the associated pages are removed from the user's personal site. Moreover, if a user is removed from a group and is subsequently added back, the group's template pages will be copied to the user's site a second time. Note that if a user group's site is based on a template and an administrator modifies the user group's site template after users have already been added to the group, those changes will only take effect if the *Enable propagation of changes from the site template* box for the user group was checked. Next, we'll examine how Liferay's permissions system is implemented via roles.
 
 ### Roles
 
@@ -314,6 +314,8 @@ After you save, Liferay redirects you to the list of roles. To see what function
 **View Users:** allows you to view the users who have been assigned to this role.
 
 **Delete:** permanently removes a role from the portal.
+
+Next, let's examine how to configure the permissions granted by different roles.
 
 #### Defining Permissions on a Role
 
@@ -345,9 +347,13 @@ Prior to Liferay 6.0, the default configurations of many Liferay portlets allowe
 ![tip](../../images/01-tip.png) Note: Prior to Liferay version 6.0, Power Users and Users did *not* have the same default permissions. So if are using Liferay 5.2 or a previous version, it's dangerous to remove the Power Users role from the default user associations: this could remove certain permissions that you expect to apply to all users. If you decide to remove the Power Users role from the default user associations anyway, you will probably want to modify the permissions on certain portlets to make them accessible to all users. To do this, see the section on Plugins Configuration below.
 ---
 
+Liferay 6.0 introduced a new feature to Liferay's permissions system: teams. Let's examine them next.
+
 ### Teams
 
-Teams don't appear as a link in the control panel because they exist *within* sites. Teams can be used when you need to collect permissions within a a single site. If you create a team for one site, it will not be available to any other sites. Teams serve as a means to create a particular set of users and permissions for a site-specific function.
+Teams don't appear as a link in the control panel because they exist *within* sites. Teams allow site administrators a greater degree of flexibility than was possible using just user groups and roles. They allow site administrators to create various sets of users and permissions for site-specific functions. Teams are the preferred method for collecting permissions within a single site. 
+
+If you create a team for one site, the permissions defined for it are not available to any other sites. In contrast, if you assigned a custom role to a user group, the role would be available portal-wide even though the specific permissions defined by it would only apply within the scope of a designated site. Furthermore, team members, unlike user group members, are guaranteed to be members of the desired site.
 
 To create a team within a site, first naviagte to the *Control Panel &rarr; Sites* page then and then select *Actions &rarr; Manage Memberships* for the site within which you want to create a team. Finally, click *View &rarr; Teams* and click the Add Team button.
 
@@ -359,17 +365,17 @@ Permission management for teams is handled at the individual portlet level, usin
 
 [Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams)
 
-To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. Now your team is ready to work.
+To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. That's it! Now your team is ready to perform their functions. Next, let's look at how to configure Liferay's portal settings.
 
 ## Managing Portal Settings
 
 After you have created users, user groups, organizations, roles, sites, and teams, your portal will be ready to host content and applications. You can configure Liferay's portal settings to fit your environment and your particular portal project. Many configurations can be performed through Liferay's portlet-driven user interface. This section covers how to configure portal settings such as password policies, authentication settings, mail host names, email notifications, display settings, and monitoring.
 
-Now that you have been navigating in the control panel, you should be pretty familiar with how it works. All the options appear in the left navigation, their interfaces appear in the middle, and any sub-options appear on the right. We have focused so far on the maintenance of users and portal security. The remaining links in the *Portal* category focus on various portal settings which cover how the portal operates and integrates with other systems you may have.
+Now that you have been navigating in the control panel, you should be pretty familiar with how it works. All the options appear in the left navigation, their interfaces appear in the middle, and any sub-options appear on the right. We have focused so far on the maintenance of users and portal security. The remaining links in the *Portal* category focus on various portal settings which cover how the portal operates and integrates with other systems you may have. Let's begin our discussion of Liferay's portal settings by examining how to configure password policies.
 
 ### Password Policies
 
-Password policies can enhance the security of your portal. Password policies can set requirements on password strength, frequency of password expiration, and more. Additionally, you can apply different password policies to different sets of portal users.
+Password policies can enhance the security of your portal. You can set requirements on password strength, frequency of password expiration, and more. Additionally, you can apply different password policies to different sets of portal users.
 
 If you are viewing a page other than the control panel, select *Control Panel* from the *Go to* menu of the Dockbar. Next, click on the *Password Policies* link on the left side of the screen under the *Portal* heading. You will see that there is already a default password policy in the system. You can edit this in the same manner as you edit other resources in the portal: click *Actions* and then click *Edit*.
 
@@ -405,9 +411,13 @@ From the list of password policies, you can perform several other actions.
 
 **Delete:** shows up for any password policies that you add beyond the default policy. You cannot delete the default policy.
 
+Next, let's examine Liferay's Portal Settings.
+
+<!-- (JR) start here 19jan2012 -->
+
 ### Portal Settings
 
-Most global portal settings can be configured here. The Configuration heading contains the following links:
+Most global portal settings can be configured from the Portal Settings section of the control panel. The Configuration heading contains the following links:
 
 **General:** lets you configure global settings, such as the company name, domain, the virtual host, a global portal logo, and more.
 
@@ -453,7 +463,9 @@ By default, all settings except for the last are enabled. User authentication by
 
 2.  People can generally remember their email addresses. If you have  user who hasn't logged into the portal for a while, it is possible that he or she will forget his or her screen name, especially if the user was not allowed to use his or her screen name of choice (because somebody else already used it).
 
-3.  If a user changes his or her email address, it is more likely that the user will forget to update his or her email address in his or her profile, if that email address is not used to authenticate. If the user's email address is not updated, all notifications sent by the portal will fail to reach the user. So it is important to keep the email address at the forefront of a user's mind when he or she logs in to help the user keep it up to date.
+3.  If a user changes his or her email address, it is more likely that the user will forget to update his or her email address in his or her profile, if that email address is not used to authenticate. If the user's email address is not updated, all notifications sent by the portal will fail to reach the user. So it is important to keep the email address at the forefront of a user's mind when he or she logs in to help the user keep it up to date. 
+
+We'll examine how to set up LDAP authentication next.
 
 ##### Authentication: LDAP
 
@@ -479,7 +491,7 @@ You configure the global values from the LDAP tab of the Authentication page.
 
 **Use LDAP Password Policy:** Liferay uses its own password policy by default. This can be configured on the Password Policies page of the control panel. Check the *Use LDAP Password Policy* box if you want to use the password policies defined by your LDAP directory. Once this is enabled, the Password Policies tab will display a message stating that you are not using a local password policy. You will now have to use your LDAP directory's mechanism for setting password policies. Liferay does this by parsing the messages in the LDAP controls that are returned by your LDAP server. By default, the messages in the LDAP controls that Liferay is looking for are the messages that are returned by the Fedora Directory Server. If you are using a different LDAP server, you will need to customize the messages in Liferay's `portal-ext.properties` file, as there is not yet a GUI for setting this. See below for instructions describing how to do this.
 
-Once you have completed configuring LDAP, click the *Save* button.
+Once you've finished configuring LDAP, click the *Save* button. Next, let's look at how to add LDAP servers.
 
 ###### Adding LDAP Servers
 
@@ -610,9 +622,9 @@ If you set this to `user`, Liferay will import all users from the specified port
     ldap.error.password.trivial=trivial
     ldap.error.user.lockout=retry limit
 
-These properties are a list of phrases from error messages which can possibly be returned by the LDAP server. When a user binds to LDAP, the server can return *controls* with its response of success or failure. These controls contain a message describing the error or the information that is coming back with the response. Though the controls are the same across LDAP servers, the messages can be different. The properties described here contain snippets of words from those messages, and will work with Red Hat's Fedora Directory Server. If you are not using that server, the word snippets may not work with your LDAP server. If they don't, you can replace the values of these properties with phrases from your server's error messages. This will enable Liferay to recognize them.
+These properties are a list of phrases from error messages which can possibly be returned by the LDAP server. When a user binds to LDAP, the server can return *controls* with its response of success or failure. These controls contain a message describing the error or the information that is coming back with the response. Though the controls are the same across LDAP servers, the messages can be different. The properties described here contain snippets of words from those messages, and will work with Red Hat's Fedora Directory Server. If you are not using that server, the word snippets may not work with your LDAP server. If they don't, you can replace the values of these properties with phrases from your server's error messages. This will enable Liferay to recognize them. Next, let's look at the Single Sign-On solutions that Liferay supports.
 
-##### Single Sign-On
+#### Single Sign-On
 
 Single Sign-On solutions allow you to provide a single login credential for multiple systems. This allows you to have people authenticate to the Single Sign-On product and they will be automatically logged in to Liferay and to other products as well.
 
@@ -703,7 +715,7 @@ To enable SiteMinder authentication in Liferay, check the *Enabled* box on the *
 
 The last field defines the header SiteMinder is using to keep track of the user. The default value is already populated. If you have customized the field for your installation, enter the custom value here.
 
-When you are finished, click *Save*.
+When you are finished, click *Save*. Next, let's examine how to configure portal-wide user settings.
 
 #### Users
 
@@ -753,7 +765,7 @@ This section allows you to set the default portal language and the time zone. Yo
 
 ![Figure 12.25: Server Configuration Miscellaneous Display Settings](../../images/server-configuration-miscellaneous-display-settings.png)
 
-Liferay's default theme is configured to display the portal logo. For custom themes, you can choose whether or not to display the logo. Be careful to choose an image file that fits the space. If you pick something that is too big, it might overlap with the navigation.
+Liferay's default theme is configured to display the portal logo. For custom themes, you can choose whether or not to display the logo. Be careful to choose an image file that fits the space. If you pick something that is too big, it might overlap with the navigation. Next, let's look at how to customize different types of portal assets using custom fields.
 
 ### Custom Fields
 
@@ -777,7 +789,7 @@ The next link on the left side of the control panel is for monitoring. You can u
 
 The Plugins Configuration page contains tabs for three types of plugins: portlets, themes, and layouts. You can use these tabs to view which roles can add plugins to pages or you can make the plugins active or inactive.
 
-Note that this is for basic configuration: if you want to view the existing permission configuration for a given portlet and/or modify that configuration for existing roles, this is where you can do that. If you need to add permissions to new roles for a given portlet, use the Roles section of the control panel and the *Actions &rarr; Define Permissions* button.
+Note that this is for basic configuration: if you want to view the existing permission configuration for a given portlet and/or modify that configuration for existing roles, this is where you can do that. If you need to add permissions to new roles for a given portlet, use the Roles section of the control panel and the *Actions &rarr; Define Permissions* button. Next, let's look at how to apply server configurations.
 
 ### Server Administration
 
@@ -866,7 +878,7 @@ Liferay includes a scripting console which lets administrators execute migration
 
 If you ever need to shut down your Liferay Portal server while users are logged in, you can use the Shutdown tab to inform your logged-in users of the impending shutdown. You can define the number of minutes until the shutdown and a custom message that will be displayed.
 
-Users will see your message at the top of their portal pages for the duration of time you specified. When the time expires, all portal pages will display a message saying the portal has been shut down. At this point, the server will need to be restarted to restore access.
+Users will see your message at the top of their portal pages for the duration of time you specified. When the time expires, all portal pages will display a message saying the portal has been shut down. At this point, the server will need to be restarted to restore access. Next, let's examine how to manage multiple portal instances.
 
 ### Portal Instances
 
