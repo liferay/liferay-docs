@@ -829,7 +829,9 @@ Liferay's Documents and Media portlet has been redesigned and renamed for Lifera
 
 ![Figure 4.28: Initial View of the Documents and Media Portlet](../../images/05-document-library.png)
 
-The default view of the Documents and Media portlet displays the contents of the Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you would like the main window of the portlet to display. Recent Documents displays documents that users have recently interacted with. For example, recently uploaded, edited, or downloaded documents would be displayed here. My Documents shows *your* documents, i.e., the documents that you have uploaded. Basic Document and the document types listed below it are also filters. If you click on one of these filters, the main portlet window displays only documents that belong to the selected document type. When you add custom Document types, which we discuss below, they are added to the filter list.
+The default view of the Documents and Media portlet displays the contents of the Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you want the main window of the portlet to display. Recent Documents displays documents that users have recently used. For example, recently uploaded, edited, or downloaded documents are displayed here. My Documents shows *your* documents; in other words, the documents that you have uploaded. Basic Document and the document types listed below it are also filters. If you click on one of these filters, the main portlet window shows only documents that belong to the selected document type. When you add custom Document types, which we discuss below, they are added to the filter list.
+
+Let's look at how you'd navigate around Documents and Media. 
 
 ### Navigating the Documents and Media Portlet
 
@@ -847,7 +849,7 @@ The Actions menu will only be displayed if you have selected one or more documen
 
 **Checkin:** lets you check in a document that you have edited. Its version number will increment and the previous version will be saved.
 
-**Checkout:** lets you checkout a document that you would like to edit. This option prevents anyone else from modifying it while you are working. Other users can still view the current version of the document if they have permission. When you are done working on the document you can check it back in.
+**Checkout:** lets you check out a document that you would like to edit. This option prevents anyone else from modifying it while you are working. Other users can still view the current version of the document if they have permission. When you are done working on the document you can check it back in.
 
 **Move:** allows you to choose a new location for a document or folder within the portlet's file system. You can move multiple documents and folders at the same time. Moving documents and folders is also possible via drag & drop.
 
@@ -865,11 +867,11 @@ From the Add button, you can add documents, folders, and shortcuts just like on 
 
 **Multiple Documents:** allows you to upload several documents at once.
 
-**Basic Document:** allows you upload a single file that you would like the default document type, "Basic Document", to apply to. By default, basic documents are not described by any metadata sets.
+**Basic Document:** allows you upload a single file that you would like the default document type, "Basic Document," to apply to. By default, basic documents are not described by any metadata sets.
 
 The remaining items in the Add menu are default document types that are each described by a unique metadata set. When you add a document belonging to a specific document type, you're presented with a form to not only specify the file to upload but also to fill out the fields defined by the document type's metadata set. We describe the "Contract" document type by way of example.
 
-**Contract:** lets you upload a file that you would like the "Contract" document type to apply to. By default, contracts are are described by effective date, expiration date, contract type, status, legal reviewer, signing authority, and deal name fields.
+**Contract:** lets you upload a file that you would like the "Contract" document type to apply to. This document type is intended to be used to describe legal contracts. By default, contracts are described by effective date, expiration date, contract type, status, legal reviewer, signing authority, and deal name fields. Document types are discussed below. 
 
 Any custom documents types that have been defined also appear in the Add menu. If a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields.
 
@@ -897,21 +899,21 @@ The Manage menu allows you to view the names of document types and metadata sets
 
 ### Repositories
 
-Adding repositories in Documents and Media is a new feature in Liferay 6.1. Documents and Media allows to connect to multiple third-party repositories that supports CMIS 1.0 with AtomPUB and Web Services protocols. You can add new repositories from the UI by clicking the Add button from the Home folder. Repositories can only be mounted in the Home folder.
+Adding repositories in Documents and Media is a new feature in Liferay 6.1. Documents and Media allows to connect to multiple third-party repositories that support CMIS 1.0 with AtomPUB and Web Services protocols. You can add new repositories from the UI by clicking the *Add* button from the Home folder. Repositories can only be mounted in the Home folder.
 
 ![Figure 4.30: Adding a new repository](../../images/05-new-repository.png)
 
-The admin must ensure the same credentials and authentication are being used in Liferay and in the external repository. This is normally synchronized using a mechanism like LDAP. If you don't have LDAP you will need to ensure manually that the credentials and authentication are the same. In order to communicate authenticate with the third-party repository you need to enable the following property:
+The admin must ensure the same credentials and authentication are being used in Liferay and in the external repository. This is normally synchronized using a mechanism like LDAP. If you don't have LDAP you need to ensure manually that the credentials and authentication are the same. In order to authenticate with the third-party repository you need to enable the following property:
 
 	session.store.password=false
 
-The repository will be displayed in the left side of the window in the Home folder.
+The repository is displayed in the left side of the window in the Home folder.
 
 ![Figure 4.31: Viewing a repository](../../images/05-repository.png)
 
 ### Document Types and Metadata Sets
 
-Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields defined by the metadata set of the document type. This can be valuable just to encourage users not to forget to enter important information about their documents. For example, you could create a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button at the top of the Documents and Media portlet window.
+Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields defined by the metadata set of the document type. This helps encourage users not to forget to enter important information about their documents. For example, you could create a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button at the top of the Documents and Media portlet window.
 
 ![Figure 4.32: Document Types Dialog Box](../../images/05-document-types.png)
 
@@ -967,19 +969,19 @@ Liferay uses external tools and libraries to support this feature. You may need 
 
 	soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
 
-and enable either through External Services in Control Panel or in portal-ext.properties:
+and enable either through External Services in Control Panel or in `portal-ext.properties`:
 
 	openoffice.server.enabled=true
 
-**ImageMagick:** PDF conversion is available out of the box. While image generation for document previews and thumbnails is provided out of the box, the quality can be improved using [*ImageMagick*](http://www.imagemagick.org) (also requires [*GhostScript*](http://www.ghostscript.com)). This can be enabled in the external services control panel or in portal-ext.properties:
+**ImageMagick:** PDF conversion is available out of the box. While a default implementation of image generation for document previews and thumbnails is provided, the quality can be improved using [*ImageMagick*](http://www.imagemagick.org), which also requires [*GhostScript*](http://www.ghostscript.com). This can be enabled in the external services control panel or in `portal-ext.properties`:
 
 	imagemagick.enabled=true
 
-**Xuggler:** Audio and video player configuration requires the installation of [*Xuggler*](http://www.xuggle.com/xuggler/downloads/build.jsp) and the configuration of related environment variables. This can be enabled in the external services control panel or in portal-ext.properties:
+**Xuggler:** Audio and video player configuration requires the installation of [*Xuggler*](http://www.xuggle.com/xuggler/downloads/build.jsp) and the configuration of related environment variables. This can be enabled in the external services control panel or in `portal-ext.properties`:
 
 	xuggler.enabled=true
 
-With the above tools installed and enable, Documents and Media would look like this:
+With the above tools installed and enabled, Documents and Media looks like this:
 
 ![Figure 4.36: Previews in Documents and Media](../../images/05-previews.png)
 
@@ -987,25 +989,31 @@ You can view a document with a customized viewer that allows you to navigate thr
 
 ![Figure 4.37: Viewing an office document](../../images/05-document-preview.png)
 
-You can view a multimedia document (audio or video) and play it online. If the browser supports HTML5 it will use the native player of the browser. Otherwise it will fallback in a Flash player.
+You can view a multimedia document (audio or video) and play it online. If the browser supports HTML5, it uses the native player of the browser. Otherwise it falls back to a Flash player.
 
 ![Figure 4.38: Playing a video](../../images/05-video-preview.png)
 
+Document previews are powerful, and help users to more successfully browse the media to find what they're looking for. 
+
 ### Automatic extraction of RAW Metadata
 
-When adding new documents or viewing existing documents a process is triggered automatically and it extracts all the metadata of the file. The library used by this process is TIKA and it's already included in Liferay out of the box.
+When adding new documents or viewing existing documents, a process is triggered automatically that extracts the file's metadata. The library used by this process is TIKA and it's already included in Liferay out of the box.
 
 You can see the metadata when viewing the document, in the right side of the window.
 
 ### Document type restrictions and workflow per folder
 
-You can force users to add only certain document types to a folder. By default, the children folders will inherit the restrictions of the parent folder. You can change this behaviour by editing the folder and selecting the allowed document types.
+You can force users to add only certain document types to a folder. By default, child folders inherit the restrictions of their parent folder. You can change this behavior by editing the folder and selecting the allowed document types.
 
 ![Figure 4.39: Restrict Marketing folder to use specific document types](../../images/05-document-type-restriction.png)
 
-If workflow is enabled, you can specify different workflow definitions per folder. Even further, you can also specify different workflow definition per document type and per folder. You can set this by editing the folder. Then, the UI will look like this:
+If workflow is enabled, you can specify different workflow definitions per folder. Furthermore, you can specify different workflow definition per document type and per folder. You can set this by editing the folder. Then, the UI will look like this:
 
 ![Figure 4.40: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
+
+The Documents and Media application is a powerful way to manage any type of file your users need to use. 
+
+Next, let's look at how tags work in the portal. 
 
 ## Tags
 
