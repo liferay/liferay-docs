@@ -61,13 +61,13 @@ When creating data definitions, you can also customize the appearance of the inp
 
 **Field Label:** Sets the text that can be displayed with the field.  This is the human-readable text that the user sees.
 
-**Show Label:** When set to `Yes`, the label will be shown with the form field.
+**Show Label:** When set to `Yes`, the label is shown with the form field.
 
 **Required:** When set to `Yes`, this field must have data in it for a new entry to be submitted.
 
-**Name:** The name of the field internally, automatically generated.  Since this is the variable name you can read the data from in a list template, you can give a more memorable name here.
+**Name:** The name of the field internally, automatically generated.  Since this is the variable name that you can read the data from in a list template, you should give a more memorable name here.
 
-**Predefined value:** If you would like example data, or a default value for the user to start with, enter it here.  It will be the value of this field when adding a new entry.
+**Predefined value:** If you would like example data or a default value for the user to start with, enter it here. The field's value defaults to this when adding a new entry.
 
 **Tip:** Each field can have a small help icon, with a tooltip attached that displays helpful information.  If you would like to provide text for the tooltip, you may enter it here.
 
@@ -84,7 +84,9 @@ When creating data definitions, you can also customize the appearance of the inp
 
 In addition to dragging the fields around to create your desired forms, you can stack inputs within inputs by dragging a field within another field. You can organize your data into unlimited levels of hierarchy, creating the clearest, most logical data model. There is also a duplicate button on each field (the middle button), allowing you to easily clone any field as many times as you need.
 
-That really covers the basic tools that users of `list.it` need to get rolling with an unlimited array of custom types. Plus, you can always come back and change it. If you find you needed to add some more information to the form, simply come back to the data definition and fix it. All your data lists that use it will be instantly updated with the new or changed fields. All that's left to do is build a new data list, and let your users play with it.
+That really covers the basic tools that users of `list.it` need to get rolling with an unlimited array of custom types. Plus, you can always come back and change your form. If you find you needed to add some more information, simply come back to the data definition and fix it. All your data lists that use it are then instantly updated with the new or changed fields. 
+
+All that's left to do is build a new data list and let your users play with it.
 
 ## Creating data lists
 
@@ -110,7 +112,7 @@ A nice way to enable people to use your forms is the Dynamic Data List Forms por
 
 Using the Dynamic Data List Form is exactly the same as using the Web Content Display portlet: just set it up, point it to a list (either existing or new), and let it go. This is very easy to do. 
 
-To display a list inside the portlet, add the Dynamic Data List Form portlet to a page from the dockbar: *Add &rarr; More &rarr; Dynamic Data List Form*.  With the portlet on the page, click an the small gear icon in the lower left corner.  This will take you to the configuration page, where you can select a list to use for the form entries.  Each time a user visits your page with the volunteer sign-up, they will be presented with a form to fill out.  If they have already filled out an entry, a message will be displayed instead.
+To display a list inside the portlet, add the Dynamic Data List Form portlet to a page from the Dockbar: *Add &rarr; More &rarr; Dynamic Data List Form*.  With the portlet on the page, click an the small gear icon in the lower left corner.  This takes you to the configuration page, where you can select a list to use for the form entries.  Each time a user visits your page with the volunteer sign-up, they are presented with a form to fill out.  If they have already filled out an entry, a message is displayed instead.
 
 Unlike the Web Content Display portlet, however, the Dynamic Data List Forms portlet may not be installed already in your portal. If not, just head over to Liferay Marketplace, grab it, and install it. 
 
@@ -150,32 +152,32 @@ Now your friends and enemies alike will be impressed with your `list.it` skills.
 
 For every data definition, you have an unlimited number of displays you can create. If you created a special "Thanksgiving Dinner Sign-Up" list using your "Volunteer Sign-Up" definition, you wouldn't want to confuse fellow Listies by displaying data fields you never asked for. "Preferred task?" a friend might say, "I don't remember seeing *that* on the sign-up form!" To avoid such embarassing situations, you should create a custom display to match that list. Taking it even further, you could provide a fancy, JavaScript-driven image carousel preview of all the attendees of the party. This would complement your other displays, and be another bragging right on `list.it`. List templates give you the power to do all this and more.
 
-Just like detail templates, list templates are found in the Manage Templates section of a data definition. With list templates, you can customize the display of a list in precisely the same way as you can customize web content. List templates can be written in Freemarker or Velocity, pulling data from the data definition in the same way that web content templates pull data from their structures. We'll take a look at a simple example, but for more information on using template scripts to pull data from a backing structure, see web content templates.
+Just like detail templates, list templates are found in the Manage Templates section of a data definition. With list templates, you can customize the display of a list in precisely the same way as you can customize web content. List templates can be written in Freemarker or Velocity, pulling data from the data definition in the same way that web content templates pull data from their structures. We'll look at a simple example, but for more information on using template scripts to pull data from a backing structure, see web content templates in chapter 3.
 
-The first thing we need to do is create a new list template for our "Volunteer Sign-Up" data definition. Like many things in Liferay, there are many places for you to do this, depending on where you're at.
+The first thing we need to do is create a new list template for our "Volunteer Sign-Up" data definition. Like other features in Liferay, there are several ways to do this, depending on your context.
 
 From the Dynamic Data List Display portlet:
 
 1. Navigate to where your DDL Display portlet is, and make sure your list is selected.
-2. On the bottom-left of the portlet window is a "Create List Template" icon.
-3. Click on the icon to create a new template, and if necessary, sign in as an administrator to see the icon.
+2. On the bottom-left of the portlet window is a *Create List Template* icon.
+3. Click on the icon to create a new template. If you don't see the icon, sign in as a user with rights to create templates. 
 
-From the dockbar:
+From the Dockbar:
 
 1. Go to *Manage &rarr; Site Content*.
 2. When loaded, navigate to *Dynamic Data Lists &rarr; Manage Data Definitions*.
 3. Find your data definition in the list, then click *Actions &rarr; Manage Templates*
-4. Now you can click on "Add List Template" to create a new template.
+4. Now you can click on *Add List Template* to create a new template.
 
 From the control panel:
 
 1. Navigate to *Dynamic Data Lists &rarr; Manage Data Definitions*.
 2. Find your data definition in the list, then click *Actions &rarr; Manage Templates*
-3. Now you can click on "Add List Template" to create a new template.
+3. Now you can click on *Add List Template* to create a new template.
 
-Fill out the form with a title, description and choose a templating language. Just like web content templates, you can choose between Freemarker and Velocity.  There is no functional difference between the two.  Once you choose the language, you can upload a template file, or choose *Launch Editor* to type in a script manually.  Inside the editor, you can also choose to use plain text editing, or a rich editor that features line numbers and syntax highlighting.
+Fill out the form with a title, and a description. Next, choose a templating language. Just like web content templates, you can choose between Freemarker and Velocity.  There is no functional difference between the two. Once you choose the script language, you can upload a template file, or choose *Launch Editor* to type in a script manually. Inside the editor, you can also choose to use plain text editing or a rich editor that features line numbers and syntax highlighting.
 
-We want to use our template to give us a summary of who is helping on the tasks in our move.  To do that, we need to access the records for the list, and pull out the name and task for each volunteer.  Within the template, we have access to a few helper variables to find out what records we have access to:
+We want to use our template to give us a summary of who is helping on the tasks in our move.  To do that, we need to access the records for the list and pull out the name and task for each volunteer.  Within the template, we have access to a few helper variables to find out what records we have access to:
 
     reserved_ddm_structure_id
     
@@ -185,19 +187,21 @@ We want to use our template to give us a summary of who is helping on the tasks 
     
     reserved_record_set_name
     
-Inside of a template, these variables give us the ID for the record set (that contains all of the volunteers in our list), as well as the name, description and data definition.  We can easily retrieve all of the records through a service call to `DDLRecordLocalService`.  To gain access to this service, we need to use a helper utility called `serviceLocator`, that will retrieve an instance of the service for us.  Once we have the service, we can retrieve the list of records (our list of volunteers).  To access the service with the `serviceLocator` is a single line of code:
+Inside a template, these variables give us the ID for the record set (that contains all of the volunteers in our list), as well as the name, description and data definition.  We can easily retrieve all the records through a service call to `DDLRecordLocalService`.  To gain access to this service, we need to use a helper utility called `serviceLocator` that retrieves an instance of the service for us. Once we have the service, we can retrieve the list of records (our list of volunteers). Accessing the service with the `serviceLocator` is a single line of code:
 
-    #set ($ddlRecordsUtil = $serviceLocator.findService("com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService"))
+    #set ($ddlRecordsUtil = 
+    		$serviceLocator.findService(
+    		"com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService"))
 
 We store a handle to our service in `ddlRecordsUtil` so we can then use the service to retrieve our list of volunteers:
 
     #set ($records = ${ddlRecordsUtil.getRecords($recordSetId)})
     
-Now that we have our records, we can iterate through the list and display the data from each record that we want to show.  To access a field from a record entry (such as the volunteer's name), we call the `getField` method and pass in the field's name.  Each field has a number of methods on it as well, but the one you will use most often is `getValue`, which will return the content of the field.  Each field has the set of properties discussed above, and can be accessed in the same way (`get + FieldName`):
+Now that we have our records, we can iterate through the list and display the data from each record that we want to show. To access a field from a record entry (such as the volunteer's name), we call the `getField` method and pass in the field's name. Each field has a number of methods on it as well, but the one you will use most often is `getValue`, which returns the content of the field.  Each field has the set of properties discussed above and can be accessed in the same way (`get + FieldName`):
 
        #set ($name = $record.getField("name").getValue())
        
-Now all we have to do is set the results in some appealing way.  In this example, we've made it very simple by using an unordered list for the results (`<ul>`).  Here is the complete source for the template:
+Now all we have to do is set the results in some appealing way. In this example, we've made it very simple by using an unordered list for the results (`<ul>`).  Here is the complete source for the template:
 
     <h1>Task Summary</h1>
     
@@ -218,7 +222,7 @@ Now all we have to do is set the results in some appealing way.  In this example
     #end
     </ul>
 
-Once you've typed your source into the editor window, simply click *Update* and then save the list template. With the list template selected, your list display can now be a summary of tasks:
+Once you've typed your source into the editor window, click *Update* and then save the list template. With the list template selected, your list display can now be a summary of tasks as shown below. 
 
 ![Figure 5.7: A list template in action](../../images/05-ddl-list-template.png)
 
@@ -230,13 +234,13 @@ If you're not a Listie, and you happen to be deploying custom lists in an enviro
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
-Liferay integrates the powerful features of workflow and the data capabilities of dynamic data lists in *Kaleo Forms*. Workflow is not enabled in the dynamic data list portlets by default, instead allowing you to focus on building custom forms backed by a data list. You can then deploy custom workflows to the form and its data. Though Kaleo Forms is only available in Enterprise Edition, you can still apply a workflow to a list when creating it.
+Liferay integrates the powerful features of workflow and the data capabilities of dynamic data lists in *Kaleo Forms*. Workflow is not enabled in the dynamic data list portlets by default, so you can focus on the core task of building custom forms backed by a data list. After this is done, you can deploy custom workflows to the form and its data. Though Kaleo Forms is only available in Enterprise Edition, if you're using Community Edition, you can still apply a workflow to a list when creating it.
 
-Using workflow isn't just possible with Kaleo Forms, you can choose a workflow to apply to a list when creating it.  If you don't have a workflow engine installed, simply install the Kaleo Web plugin by going to *Control Panel &rarr; Server &rarr; Plugins Installation &rarr; Install More Portlets &rarr; Web Plugins* and finding Kaleo Web in the list.  You can also copy the Kaleo `.war` file to the deploy folder of you application server.  Once workflow is installed, you will have a new option when creating a list:
+If you don't have a workflow engine installed, install the Kaleo Web plugin by going to *Control Panel &rarr; Server &rarr; Plugins Installation &rarr; Install More Portlets &rarr; Web Plugins* and finding Kaleo Web in the list.  You can also copy the Kaleo `.war` file to the deploy folder of you application server.  Once workflow is installed, you have a new option when creating a list:
 
 ![Figure 5.8: Enabling workflow on a list](../../images/05-ddl-add-workflow.png)
 
-Choose the workflow you would like to use, and every record will have to go through the workflow.  Now if you need to preview or edit entries as they're coming in, it's easy to work in to your daily workflow.
+Choose the workflow you would like to use, and every record then has to go through the workflow process. Now if you need to preview or edit entries as they're coming in, it's easy to work in to your daily workflow.
 
 If you are a Listie, or a `list.it` developer, you're now prepared to show your lists to the world. That is, in fact, the reason you created `list.it` in the first place, right? 
 
