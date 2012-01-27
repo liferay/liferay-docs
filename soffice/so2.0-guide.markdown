@@ -12,6 +12,8 @@ Liferay Social Office is a dynamic team collaboration solution for the enterpris
 
 - Social Office sites can be quickly created and set up based on the *Default Social Office Site* template. If you click on the *Add Site* button on the Dashboard, a wizard pops up to help you create a new Social Office site pre-built with pages and applications.
 
+<!-- | TODO: Can other site templates be set up to use the wizard? Are there any other existing site templates for SO besides the default one? | -->
+
 - Social Office users receive a *Notifications* button on the Dockbar that's integrated with the portal. The Nofications button displays how many unread notifications you have. You'll be notified upon receiving a private message, site invitation, social connection request, or event reminder.
 
 <!-- | TODO: Try to find an exhaustive list, or a least more examples | -->
