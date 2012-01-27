@@ -829,7 +829,9 @@ Liferay's Documents and Media portlet has been redesigned and renamed for Lifera
 
 ![Figure 4.28: Initial View of the Documents and Media Portlet](../../images/05-document-library.png)
 
-The default view of the Documents and Media portlet displays the contents of the Documents Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you would like the main window of the portlet to display. Recent Documents displays documents that users have recently interacted with. For example, recently uploaded, edited, or downloaded documents would be displayed here. My Documents shows *your* documents, i.e., the documents that you have uploaded. Basic Document and the document types listed below it are also filters. If you click on one of these filters, the main portlet window displays only documents that belong to the selected document type. When you add custom Document types, which we discuss below, they are added to the filter list.
+The default view of the Documents and Media portlet displays the contents of the Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you want the main window of the portlet to display. Recent Documents displays documents that users have recently used. For example, recently uploaded, edited, or downloaded documents are displayed here. My Documents shows *your* documents; in other words, the documents that you have uploaded. Basic Document and the document types listed below it are also filters. If you click on one of these filters, the main portlet window shows only documents that belong to the selected document type. When you add custom Document types, which we discuss below, they are added to the filter list.
+
+Let's look at how you'd navigate around Documents and Media. 
 
 ### Navigating the Documents and Media Portlet
 
@@ -847,11 +849,11 @@ The Actions menu will only be displayed if you have selected one or more documen
 
 **Checkin:** lets you check in a document that you have edited. Its version number will increment and the previous version will be saved.
 
-**Checkout:** lets you checkout a document that you would like to edit. This option prevents anyone else from modifying it while you are working. Other users can still view the current version of the document if they have permission. When you are done working on the document you can check it back in.
+**Checkout:** lets you check out a document that you would like to edit. This option prevents anyone else from modifying it while you are working. Other users can still view the current version of the document if they have permission. When you are done working on the document you can check it back in.
 
-**Move:** allows you to choose a new location for a document within the portlet's file system.
+**Move:** allows you to choose a new location for a document or folder within the portlet's file system. You can move multiple documents and folders at the same time. Moving documents and folders is also possible via drag & drop.
 
-**Delete:** allows you to remove a document from the portlet.
+**Delete:** allows you to remove a document or folder from the portlet. You can delete multiple documents and folders at the same time.
 
 #### Add
 
@@ -865,11 +867,11 @@ From the Add button, you can add documents, folders, and shortcuts just like on 
 
 **Multiple Documents:** allows you to upload several documents at once.
 
-**Basic Document:** allows you upload a single file that you would like the default document type, "Basic Document", to apply to. By default, basic documents are not described by any metadata sets.
+**Basic Document:** allows you upload a single file that you would like the default document type, "Basic Document," to apply to. By default, basic documents are not described by any metadata sets.
 
 The remaining items in the Add menu are default document types that are each described by a unique metadata set. When you add a document belonging to a specific document type, you're presented with a form to not only specify the file to upload but also to fill out the fields defined by the document type's metadata set. We describe the "Contract" document type by way of example.
 
-**Contract:** lets you upload a file that you would like the "Contract" document type to apply to. By default, contracts are are described by effective date, expiration date, contract type, status, legal reviewer, signing authority, and deal name fields.
+**Contract:** lets you upload a file that you would like the "Contract" document type to apply to. This document type is intended to be used to describe legal contracts. By default, contracts are described by effective date, expiration date, contract type, status, legal reviewer, signing authority, and deal name fields. Document types are discussed below. 
 
 Any custom documents types that have been defined also appear in the Add menu. If a document type has been created that matches the document you would like to upload, you can select that document type from the Add menu. This will associate the metadata fields associated with the document type to your document and you will be asked to fill out the fields.
 
@@ -883,7 +885,7 @@ You can sort the items displayed in the main window of the Documents and Media p
 
 **Modified Date:** lets you sort documents by the last time they were modified.
 
-**Read Count:** lets you sort documents by the last time they were viewed.
+**Read Count:** lets you sort documents by the number of times they were viewed.
 
 **Size:** lets you sort documents by how much disk space they use.
 
@@ -895,23 +897,37 @@ The Manage menu allows you to view the names of document types and metadata sets
 
 **Metadata Sets:** shows you a list of defined metadata sets as well as their portal IDs.
 
+### Repositories
+
+Adding repositories in Documents and Media is a new feature in Liferay 6.1. Documents and Media allows to connect to multiple third-party repositories that support CMIS 1.0 with AtomPUB and Web Services protocols. You can add new repositories from the UI by clicking the *Add* button from the Home folder. Repositories can only be mounted in the Home folder.
+
+![Figure 4.30: Adding a new repository](../../images/05-new-repository.png)
+
+The admin must ensure the same credentials and authentication are being used in Liferay and in the external repository. This is normally synchronized using a mechanism like LDAP. If you don't have LDAP you need to ensure manually that the credentials and authentication are the same. In order to authenticate with the third-party repository you need to enable the following property:
+
+	session.store.password=false
+
+The repository is displayed in the left side of the window in the Home folder.
+
+![Figure 4.31: Viewing a repository](../../images/05-repository.png)
+
 ### Document Types and Metadata Sets
 
-Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields defined by the metadata set of the document type. This can be valuable just to encourage users not to forget to enter important information about their documents. For example, you could create a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button at the top of the Documents and Media portlet window.
+Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields defined by the metadata set of the document type. This helps encourage users not to forget to enter important information about their documents. For example, you could create a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button at the top of the Documents and Media portlet window.
 
-![Figure 4.30: Document Types Dialog Box](../../images/05-document-types.png)
+![Figure 4.32: Document Types Dialog Box](../../images/05-document-types.png)
 
 You can add a new document type using the Add button at the top of the dialog box. To do so, you need to define one or more metadata sets to associate with your document type. When creating a new document type, you can define "Main Metadata Fields" or select "Additional Metadata Fields". Main metadata fields are directly tied to their document type and cannot be made available to other document types. Additional metadata fields, by contrast, can be defined independently and can be used in many different document types. You can differentiate the document types that implement the same additional metadata set by defining different main metadata fields for them. However, Additional metadata fields need to be defined and saved before creating a document type that will implement them. 
 
-![Figure 4.31: Adding a New Document Type](../../images/05-new-document-type.png)
+![Figure 4.33: Adding a New Document Type](../../images/05-new-document-type.png)
 
 Let's create a document type called "Syllabus" and define a metadata set. What metadata should we associate with syllabi? Let's choose for our syllabi to have course title, professor, semester, course description, and course requirements fields. All syllabi in our portal should maintain entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for. Since we don't want to use our metadata set for any document type other than "Syllabus," let's create our metadata set under the Main Metadata Fields area. Alternatively, we could create our metadata set independently using *Manage &rarr; Metadata Sets &rarr; Add* and then select it as an Additional Metadata Field. 
 
-![Figure 4.32: Selecting Additional Metadata Sets](../../images/05-selecting-additional-metadata-sets.png)
+![Figure 4.34: Selecting Additional Metadata Sets](../../images/05-selecting-additional-metadata-sets.png)
 
 You can view, edit, or add metadata sets from the *Manage &rarr; Metadata* window. A metadata set consists of a group of fields. If you click the Add button, can use same UI for defining a metadata set that you used in the Add Document Type window.
 
-![Figure 4.33: Adding a New Metadata Set](../../images/05-new-metadata-set.png)
+![Figure 4.35: Adding a New Metadata Set](../../images/05-new-metadata-set.png)
 
 Make sure the Fields tab is selected on the left. Then, to define a metadata set, just choose fields to use from the area on the left and drag and drop them into the area on the right. The drag and drop interface allows for nested fields so you need to be careful about where you drop the fields. Default values, mouse-over tips, widths, and other settings can be configured for most fields. To configure these settings, just double-click on a field from the area on the right. This automatically selects the Settings tab on the left. Then double-click on a value to edit. Liferay supports the following kinds of fields for metadata sets:
 
@@ -939,11 +955,71 @@ Make sure the Fields tab is selected on the left. Then, to define a metadata set
 
 Remember that metadata sets created independently are reusable. Once they have been created they can be included in any number of document types as additional metadata sets. Next, let's take a look at tags. Tags can be attached to most forms of web content that can be created in Liferay, including documents.
 
+### Automatic Preview Generation
+
+Liferay 6.1 generates previews of the documents added to Documents and Media whenever it's possible. The content is displayed using a customized viewer depending on the type of the content.
+
+**Office documents:** preview of supported office documents (.docx, .pdf, .odt, .ppt, etc.) and online reading.
+
+**Multimedia:** play various multimedia (video and audio) formats from the browser.
+
+Liferay uses external tools and libraries to support this feature. You may need to install them and enable them in Liferay.
+
+**OpenOffice/LibreOffice:** for office documents start [*OpenOffice*](http://www.openoffice.org) or [*LibreOffice*](http://www.libreoffice.org) in server mode by running:
+
+	soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
+
+and enable either through External Services in Control Panel or in `portal-ext.properties`:
+
+	openoffice.server.enabled=true
+
+**ImageMagick:** PDF conversion is available out of the box. While a default implementation of image generation for document previews and thumbnails is provided, the quality can be improved using [*ImageMagick*](http://www.imagemagick.org), which also requires [*GhostScript*](http://www.ghostscript.com). This can be enabled in the external services control panel or in `portal-ext.properties`:
+
+	imagemagick.enabled=true
+
+**Xuggler:** Audio and video player configuration requires the installation of [*Xuggler*](http://www.xuggle.com/xuggler/downloads/build.jsp) and the configuration of related environment variables. This can be enabled in the external services control panel or in `portal-ext.properties`:
+
+	xuggler.enabled=true
+
+With the above tools installed and enabled, Documents and Media looks like this:
+
+![Figure 4.36: Previews in Documents and Media](../../images/05-previews.png)
+
+You can view a document with a customized viewer that allows you to navigate through the different pages of the document and read its content.
+
+![Figure 4.37: Viewing an office document](../../images/05-document-preview.png)
+
+You can view a multimedia document (audio or video) and play it online. If the browser supports HTML5, it uses the native player of the browser. Otherwise it falls back to a Flash player.
+
+![Figure 4.38: Playing a video](../../images/05-video-preview.png)
+
+Document previews are powerful, and help users to more successfully browse the media to find what they're looking for. 
+
+### Automatic extraction of RAW Metadata
+
+When adding new documents or viewing existing documents, a process is triggered automatically that extracts the file's metadata. The library used by this process is TIKA and it's already included in Liferay out of the box.
+
+You can see the metadata when viewing the document, in the right side of the window.
+
+### Document type restrictions and workflow per folder
+
+You can force users to add only certain document types to a folder. By default, child folders inherit the restrictions of their parent folder. You can change this behavior by editing the folder and selecting the allowed document types.
+
+![Figure 4.39: Restrict Marketing folder to use specific document types](../../images/05-document-type-restriction.png)
+
+If workflow is enabled, you can specify different workflow definitions per folder. Furthermore, you can specify different workflow definition per document type and per folder. You can set this by editing the folder. Then, the UI will look like this:
+
+![Figure 4.40: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
+
+The Documents and Media application is a powerful way to manage any type of file your users need to use. 
+
+Next, let's look at how tags work in the portal. 
+
 ## Tags
 
 Tags are an important tool that you can use to help organize information on your portal and make it easier for your users to find content that they're looking for. Tags are words or phrases that you can attach to any content on the website. Tagging content will make your search results more accurate, and enable you to use tools like the Asset Publisher to display content in an organized fashion on a web page. There are two ways to create tags: you can do it through the administrative console in the control panel, or on the fly as content is created.
 
-![Figure 4.34: The Add Tag Dialog](../../images/05-add-tag.png)
+![Figure 4.41: The Add Tag Dialog](../../images/05-add-tag.png)
 
 To create tags in the control panel, select the site that you want to create tags for, and select *Tags*. From this screen, you will be able to view any existing tags and make new ones. To create a new tag, simply click *Add Tag*. You'll then be asked for the name of the tag, and you'll have the ability to set permissions for viewing or managing the tag. You can also add properties to a tag. Properties basically act like tags for your tags. Structurally, properties are key-value pairs associated with specific tags that provide information about your tags. You can edit existing tags from the *Tags* window of on the control panel. You can change the tag name, change the tag's permissions, delete the tag, or add properties.
 
@@ -953,7 +1029,7 @@ Categories are similar in concept to tags, but are designed for use by administr
 
 Adding vocabularies and categories is similar to adding tags. Once you've selected the site you want to work on, select *Categories* from the content section of the control panel, and you will be presented with the categories administration page.
 
-![Figure 4.35: Categories Administration Page](../../images/05-categories.png)
+![Figure 4.42: Categories Administration Page](../../images/05-categories.png)
 
 Clicking on a vocabulary on the left will display any categories that have been created under that vocabulary. You can create new vocabularies simply by clicking *Add Vocabulary* and providing a name for it. You can create categories in a similar fashion by choosing a vocabulary on the left, and then selecting *Add Category*. Like tags, you can also provide properties for categories. Once you have created some vocabularies and categories, you can take advantage of the full capabilities of categories by creating a nested hierarchy of categories. To nest categories, select what you want to be the parent category, then drag any category that you want to become a child category onto it. You will see a plus sign appear next to the name of the category you are dragging if you can add it to the selected parent category; if you see a red *x* that means that you cannot add that category as a subcategory of parent category that you have selected.
 
