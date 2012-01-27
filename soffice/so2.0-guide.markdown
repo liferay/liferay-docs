@@ -1,6 +1,6 @@
 # Introduction
 
-Liferay Social Office is a dynamic team collaboration solution for the enterprise that's designed to streamline communication, save time, and raise productivity. Organizations and groups can use Social Office to share resources, collaborate on projects, and publicize important activity. Social Office features a robust suite of integrated, easy-to-use web applications. It's ready to use right out of the box. Once installed, a quick setup wizard will help you set up a team collaboration site so you can begin working immediately. Let's take a look at some of Social Office 2.0's new features. Then we'll explain how to install Social Office.
+Liferay Social Office is a dynamic team collaboration solution for the enterprise that's designed to streamline communication, save time, and raise productivity. Organizations and groups can use Social Office to share resources, collaborate on projects, and raise the visisbility of important activity. Social Office features a robust suite of integrated, easy-to-use web applications. It's ready to use right out of the box. Once installed, a quick setup wizard will help you set up a team collaboration site so you can begin working immediately. Let's take a look at some of Social Office 2.0's new features. Then we'll explain how to install Social Office.
 
 ## New features
 
@@ -54,7 +54,7 @@ You can use the navigation menu in the left column of the Dashboard to navigate 
 
 ![Figure X.x: Contacts Centers allows users to follow each other Twitter-style and set up Linked-In style connections.](../../images/to-do.png)
 
-<!-- | TODO: What else do connections and followers do? What does it mean for a user to be blocked? | -->
+<!-- | TODO: What else do connections and followers do? What exactly does it mean for a user to be blocked? Just appears to you as though that user doesn't exist? No private messages from the blocked user, no activities information about that user? | -->
 
 Social Office's Microblogs application allows you to broadcast your thoughts as a Facebook-style status to a chosen audience. You can choose for your status to be viewable by *All*, *Connections*, or *Followers*. The Timeline tab chronologically displays all the status posts that you have permission to see.
 
@@ -70,11 +70,17 @@ The Tasks system allows your team members to keep track of different tasks they'
 
 <!-- | TODO: Confirm that this is exactly what the Permissions button does | -->
 
-- Welcome <!-- | TODO: Is this page just a personal private default page from Liferay Portal that should not appear in Social Office? | -->
+<!-- | TODO: Is the Welcome page just a personal private default page from Liferay Portal that should not appear in Social Office? | -->
 
 ### Public pages
 
-You can access your public profile page from the Dashboard by clicking on your name, which appears as the top menu item of the left-column navigation. Users' public pages are laid out and styled the same way as the Dashboard and the rest of the private pages. Users' default public sites contain three pages, accessible from the left-column navigation menu: Profile, Contacts, Microblogs. 
+You can access your public profile page from the Dashboard by clicking on your name, which appears as the top menu item of the left-column navigation. Users' public pages are laid out and styled the same way as the Dashboard and the rest of the private pages. Users' default public sites contain three pages, accessible from the left-column navigation menu: Profile, Contacts, Microblogs. In addition to the navigation menu, the left column of each page of a Social Office user's public site contains a My Contacts portlet. This portlet allows viewers of a user's public site to see all the user's contacts and lets them navigate to any of their profile pages.
+
+![Figure X.x: User's profile pages show relevant professional information, contacts, and status updates](../../images/to-do.png)
+
+By default, the profile page displays three main pieces of information about a user: their profile, their lastest microblog status, and their recent activities. The profile portlet is designed to display relevant professional information about a user. It always displays the user's name and email address, two descriptive sections labed *About* and *Expertise*, and allows you to export the user's vCard. If you're viewing your own profile page, there's and *Edit Profile* button which opens up your *My Account* page of the control panel in a dialog box. If you're viewing another user's profile page, the *Edit Profile* button is replaced with buttons for adding or removing the user as a connection, following or unfollowing a user, and blocking or unblocking a user. In addition to the Profile, Microblogs Status Update, and Activites portlets, the profile page also contains Sites and Tags portlets to help with navigation. Note that when placed on a public page, the Microblogs Status Update portlet does not allow you to makes updates--it just just shows the lastest status update. You have to make status updates from your private site.
+
+The public Contacts and Microblogs pages and portlets function the same way as the ones in a user's private site except that other users can only view, not edit them. However, the Timeline tab of the Microblogs portlet allows users to comment on entries.
 
 ## Using SO Sites
 
