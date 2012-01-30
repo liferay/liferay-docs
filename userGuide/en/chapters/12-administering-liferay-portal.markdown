@@ -134,21 +134,34 @@ We briefly mentioned sites during this discussion. Sites are another construct w
 
 ### Sites
 
-As stated in chapter 1, sites are collections of pages that have user membership as an option. In this sense, one site has no relation to another site, and there's no way to join sites together in a hierarchy like you can with organizations. They can, however, be attached to organizations in order to provide an organization with a set of pages.  Independent sites are stand-alone groups of pages, and come in three types: open, restricted, and private. Open sites can be joined by any user regardless of organization membership. Restricted sites require users to request membership, which site administrators can then grant or deny. Private sites don't even show up in the list of sites (unless you're a portal administrator). The only way to join a private site is to have the administrator add you. You can use open independent sites, therefore, in any situation where you need to cut across the organizational structure of your portal, or where you're providing content that could be relevant to anybody.
+As stated in chapter 1, a site is a set of pages that can be used to publish content or applications. Sites can be independent or they can be associated to one organization and act as the website of that organization.
 
-For example, a corporate Intranet running Liferay might have sites for all the organizations in the company: Sales, Marketing, Information Technology, Human Resources, and so on. But what about the corporate health and fitness center? That's something that everybody in the company, regardless of organization, may want to join. This makes it a good candidate for an open and independent site. Similarly, the home page for a corporate intranet should probably be placed in an open independent site so that any member of the portal can access it.
+Liferay's sites can be used for a variety of purposes, from corporate websites to company intranets including small sites to collaborate among members of a team. To support all types of collaboration and social scenarios, Liferay's sites support three types of membership types:
+
+- Private: Users are not allowed to become members of the site. Site administrators can still manually select users and make them members of the site.
+- Restricted: Users are allowed to request members of the site and site administrators have to aprove the request. The request can be done from the *My Sites* application.
+- Open: Users are allowed to become members of the site at any time. This can be done from the *My Sites* portlet.
+
+In addition to these memberships, when a site is associated to an organization, all the users of that organization are automatically considered members of the site.
+
+Members of a site can be given additional privileges within the site by using Liferay's permission settings. It is also possible to assign different roles within the site to different members. This can be done through *site roles* which are defined equal for all sites or *teams* which are unique for each site.
+
+Liferay's Sites can have two hierarchies of pages: public pages and private pages. A site can have only public pages, only private pages or both. The main difference between the two hierarchies is that private pages can only be accessed by members of the site. For both of them it is possible to restrict access to them in finer detail for each page through the permission system. Public pages and private pages are accessed through a different URL and can have a different look and feel, but they share the same content.
+
+An example of using sites could be a corporate Intranet running Liferay which might have sites for all the organizations in the company: Sales, Marketing, Information Technology, Human Resources, and so on. But what about the corporate health and fitness center? That's something that everybody in the company, regardless of organization, may want to join. This makes it a good candidate for an open and independent site. Similarly, the home page for a corporate intranet should probably be placed in an open independent site so that any member of the portal can access it.
 
 For other kinds of web sites, you may want to use independent sites to bring people together who share a common interest. If you were building a photo sharing web site out of Liferay, you might have independent sites based on the types of photos people want to share. For example, those who enjoy taking pictures of landscapes could join a Landscapes site, and those who enjoy taking pictures of sunsets could join a Sunsets site. 
 
-If you've run the setup wizard, you had a chance to name your default site whatever you wanted. If you chose to configure Liferay via the `portal-ext.properties` file, the default site is called *liferay.com* (you can rename it; see the tip below), and this is where you would put your public web site. As you can see, there are many scenarios where you would want to use an independent site instead of an organization site. This is why organizations and sites have distinct roles within Liferay Portal.
+Liferay always provides one default site, which is also known as the main site of the portal. This site does not have its own name, but rather takes the name of the portal. By default the portal name is *liferay.com*, but this value can be changed through the simple configuration of the setup wizard. The portal name can also be changed at any time through the control panel within *Portal Settings*.
 
 ---
-![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, organizations were created with their own sets of pages and did not need to have sites attached to them. Independent sites were called communities and the default community where the public pages were located was called *Guest*. Also, as of Liferay 6.0, the default public site's name can change dynamically based on the name of the portal. You can set the name in *Portal Settings*.
+![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, there were two ways of creating sites: organizations and communities. This situation has been simplified to provide more ease of use and allow for more flexibility. The main role of organizations is still or organize the users of the portal in a hierarchy but they can also have associated sites. Communities can still be created through independent sites, but the new name reflects the fact that sites can be used for many different purposes besides communities.
 ---
 
-Sites can be created in two ways. The first is through the control panel, like everything else in Liferay. The second is through the My Sites portlet, which can be added to any page in Liferay. Why are there two ways? The My Sites portlet also doubles as a way to navigate from site to site, and allows users to browse the list of sites and select one to join (if it is open or restricted). The My Sites portlet enables portal administrators to provide this functionality to users without giving them access to the control panel. 
+Sites can be created through the control panel, like all administration operations in Liferay. To add a site, click the *Sites* link on the left side of the control panel in the Portal section, and then click *Add* in the toolbar. If there is at least one site template available, a dropdown menu will be shown allowing you to select a *Blank Site* or one of the site templates available. *Site templates* provide a preconfigured set of pages, applications and content that can be used as the basis of the site.
 
-To add a site, click the *Sites* link on the left side of the control panel in the Portal section, and then click the *Add* button. You can select a template from which to build a your site or you can select *Blank Site* to build your site from scratch. Using site templates lets you create sites that are pre-populated with pages and portlets for collaborative or personal use.
+The following figure shows the form that needs to be filled when creating a *Blank Site*.
+
 
 ![Figure 12.4: Adding a Site](../../images/01-add-site-screen.png)
 
@@ -160,17 +173,17 @@ To add a site, click the *Sites* link on the left side of the control panel in t
 
 **Active:** determines whether a site is active or inactive. Inactive sites are inaccessible but can be activated whenever a site administrator wishes.
 
-Once you've created a site, it appears in the list on the Sites page of the control panel. Once the site has been created you can specify more details about the site, and these fall under three main categories: Basic Information, Search Engine Optimization, and Advanced.
+Once you've created a site, it appears in the Sites page of the control panel. Once the site has been created you can specify more details about the site, and these fall under three main categories: Basic Information, Search Engine Optimization, and Advanced.
 
 ![Figure 12.5: Editing a Site](../../images/01-site-editor.png)
 
-**Details:** lets you edit the information you entered when you created the site and allows you to choose a site template for the public or private pages of your site. If you select a site template, leave the *Enable propagation of changes from the site template* box checked to automatically update your site if the associated site template changes. If you uncheck this box but recheck it later, the template pages are then reapplied to your site, overwriting any changes that may have been made.
+**Details:** lets you edit the information you entered when you created the site and allows you to choose a site template for the public or private pages of your site. If you select a site template, leave the *Enable propagation of changes from the site template* box checked to automatically update your site if the associated site template changes. The update will only be done to pages which have not been changed within the specific site. If you uncheck this box but recheck it later, the template pages are then reapplied to your site, overwriting any changes that may have been made. Only users who have the permission "Unlink Site Template" will be able to disable the propagation of changes. When the propagation is enabled, the site template might prevent modification of all or certain pages to ensure that the propagation occurs.
 
-**Categorization:** allows you to apply categories and tags to the site. These can be useful for sites whose functions can easily be described by keywords.
+**Categorization:** allows you to apply categories and tags to the site.
 
 **Site URL:** lets you set friendly URLs and virtual hosts for your web site.
 
-**Site Template:** lets you choose a template to apply to your site.
+**Site Template:** provides additional information about the site template associated to the pages of the site (if any).
 
 **Sitemap:** lets you use the sitemap protocol to notify search engines that your web site is available for crawling. 
 
@@ -180,21 +193,37 @@ Once you've created a site, it appears in the list on the Sites page of the cont
 
 **Analytics:** lets you set a Google Analytics ID that is used for your site. 
 
+When creating a site from a site template the initial form provides a new option to allow you to decide whether you want to copy the pages from the template as public pages or as private pages. By default, the site is linked back to the site template and propagation of changes done to the site template is enabled. If the user has permissions to unlink the site template a checkbox will also be shown to disable the propagation of changes.
+
+<!-- | TODO: Add screenshot of form used to create a site from a site template | -->
+
 <!-- | TODO: Add segue | -->
 
 #### Site Templates
 
-While we're on the subject of sites, we should discuss Site Templates, which appear below the Sites link in the Portal category of the control panel. These allow you to create sites by selecting pre-defined templates that you can make beforehand. A site template consists of a pre-defined set of pages and portlets. You can use templates to quickly create multiple sites that are pre-populated with the pages and portlets defined by the templates.
+While we're on the subject of sites, we should discuss how to change, create or delete Site Templates. Site Templates can be administered in the control panel, within the portal section of the left menu.
 
-Site templates can contain web content just like actual sites. This allows you to create sample content that will appear when your site is first created from a site template. By default, changes to a site template's content are not propagated to existing sites that implement the template. However, if you would like to publish a piece of web content to all the sites that implement a certain site template, you can place the content in the global scope and then reference it from a Web Content Display portlet.
+Creating or modifying a site template can be done using the same tools used to manage a site. You can use these tools to add a hierarchy of pages. Each page can have any configuration and any number of applications as a regular site. The configuration of the pages and of each of the applications in each page will be copied when a site is created. Also any change done to them will be automatically copied later, if propagation of changes is enabled.
+
+Site templates can also contain content just like actual sites. This allows you to create sample content that will appear when your site is first created from a site template. Changes to a site template's content are not propagated to existing sites that are linked to the site template.
+
+---
+![tip](../../images/01-tip.png) **Tip:** If you would like to publish a piece of web content to many sites and ensure that modifications are applied to all, don't use site template content for that purpose. Instead, you can place the content in the global scope and then reference it from a *Web Content Display* application in each site.
+
+By default, the following site templates are provided:
+
+- Community Site: Provides a preconfigured site for building online communities. The home of a *community site* provides message boards, search, a display of a poll and user statistics of the activity of the members of the community. The site will also be created with a page for a community calendar and a page for a wiki.
+- Intranet Site: Provides a sample preconfigured site for an intranet. The Home page displays the activities of the members of the site, search, a language chooser and a list of the recent content created in the intranet. It also provides 3 additional pages for *Documents and Media*, *Calendar* and external *News* obtained through public feeds.
+
+The following figure displays the form shown when editing the *Community Site* template:
 
 ![Figure 12.6: Site Templates](../../images/01-site-templates.png)
 
-For example, let's suppose that we need to create sites for three suborganizations of the Nosester organization: Engineering, Marketing, and Legal. These are to be private sites designed for each organization's internal use. We could design each site separately but we can save ourselves some work if we create a site template to use instead.
+To view and manage the pages of a site template, click the *Open site template* link. This opens the template in a new browser window (or tab) and it can be navigated or managed like you would do for a regular site..
 
----
-![tip](../../images/01-tip.png) **Tip:** By default, Liferay ships with two site templates named *Community Site* and *Intranet Site*. Take a look at these templates to see if you can edit them for your own use. To view a template, click its name and then click the *Open site template* link. This opens the template in a new browser page so you can view its pages and portlets.
----
+<!-- | TODO: I would change the example below to not use organizations to simplify things | -->
+
+For example, let's suppose that we need to create sites for three suborganizations of the Nosester organization: Engineering, Marketing, and Legal. These are to be private sites designed for each organization's internal use. We could design each site separately but we can save ourselves some work if we create a site template to use instead.
 
 To create a site template, navigate to the control panel and click *Site Templates*. Then click *Add* and enter a name for your template: we'll use *Organization Site Template* for our example. Leave the *Active* and *Allow Site Administrators to Modify the Pages Associated with This Site Template* boxes checked. The *Active* box needs to be checked in order for your template to be usable. If your template is still a work in progress, you can uncheck it so that no one uses it until it's ready. Checking *Allow Site Administrators to Modify the Pages Associated with This Site Template* allows Site Administrators to modify or remove the pages and portlets that the template introduces to their sites--if you want the templates to be completely static, you should uncheck this.
 
@@ -206,11 +235,19 @@ Now let's create the Engineering, Marketing, and Legal organizations whose sites
 
 ### Page Templates
 
-Page templates function similarly to site templates in that they allow you to reuse a page design. However, page templates provide only a single pre-built page to reuse, not an entire set of pages. You can use a page template to create a custom page with the specific portlets, layout, and theme that you would like to save. Both sites and site templates can utilize page templates for creating new pages.
+Page templates function similarly to site templates but at the page level. Page templates provide a pre-configured page to reuse. Within a page template it is possible to set up a theme, a layout and specific applications and their configuration. Both sites and site templates can utilize page templates for creating new pages.
 
 ![Figure 12.8: Page Templates](../../images/server-configuration-page-templates.png)
 
-The Page Templates page of the control panel shows a list of created page templates and lets you create new ones. It also allows you to edit existing templates and configure their permissions. To add a page template, click on the *Page Template* link in the control panel and click the *Add* button. Then enter a name and description for your template. Leave the *Active* button checked. Click *Save* and then identify your page template in the list. Click its name or use the Actions button to edit the page template. The *Open Page Template* link opens a new browser window which you can use to configure your new page. Any changes you make are automatically saved so you can close the new browser window once you're done.
+The Page Templates page of the control panel shows a list of created page templates and lets you create new ones. It also allows you to edit existing templates and configure their permissions. By default three sample page templates are provided:
+
+- Blog: provides a page with three applications related to blogging. It has two columns, the main left column contains the blogs portlet and the small right column provides two side portlets, tags cloud and recent bloggers. The tag cloud application will show the tags used within the site and will allow navigating through the blog entries shown in the main blogs portlet.
+- Wiki: provides a page with three applications related to authoring a wiki. It also has two columns, the main left column with the wiki application and two right side portlets to allow navigating through pages by tags and categories.
+- Content Display Page: provides a page that is preconfigured to display content. It has three auxiliary applications (tags navigation, categories navigation and search) and an Asset Publisher. The most significant aspect of this page is that the Asset Publisher is preconfigured to be display any web content that is associated with this page. Because of that when creating a web content it will be possible to select any page created from this page template and a unique (canonical) URL for the web content pointing to this page will be created for it.
+
+To add a new page template, click the *Add* button. Then enter a name and description for your template. Leave the *Active* button checked. Click *Save* and then identify your page template in the list. Click its name or use the Actions button to edit the page template. The *Open Page Template* link opens a new browser window which you can use to configure your new page. Any changes you make are automatically saved so you can close the new browser window once you're done.
+
+Note that after a new page template has been created the default permissions are to only allow the creator to use the page template. In order to provide access to it to other users, use the actions menu in the list of templates and choose *Permissions*. Once you see the matrix of roles and permissions, check the *View* permission for the role or roles that are needed to see the page template in the list of available page templates when creating a new page. If you want any user who can create a page to be able to use the page template, just check the *View* permission for the *User* role.
 
 ![Figure 12.9: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
 
@@ -218,7 +255,13 @@ To use your template to create a new page, just navigate to a page over which yo
 
 ![Figure 12.10: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
 
-Note that by default, when you've created a page based on a page template, any future changes to the template are automatically propagated to your page. You can disable this behavior by navigating to *Site Pages* in the control panel, selecting your page in the page list, and unchecking the *Automatically apply changes done to the page template* box. If staging has been enabled, changes to the page template are automatically propagated to the staged page. These changes still need to be approved before the page is published to live. For this reason, the automatic propagation of page template changes to the staged page cannot be turned off and the *Automatically apply changes done to the page template* checkbox does not appear. Now that we've looked at site and page templates, let's discuss how to set up and manage user groups.
+Note that by default, when a site administrator creates a page based on a page template, any future changes to the template are automatically propagated to your page. Site administrators can disable this behavior by editing the page unchecking the *Automatically apply changes done to the page template* box.
+
+<!-- | COMMENT FOR AUTHOR: IMHO, the following paragraph does not fit here because it is of interest in the context of managing a site, not in the context of managing a site template | -->
+
+If staging has been enabled, changes to the page template are automatically propagated to the staged page. These changes still need to be approved before the page is published to live. For this reason, the automatic propagation of page template changes to the staged page cannot be turned off and the *Automatically apply changes done to the page template* checkbox does not appear.
+
+Now that we've looked at site and page templates, let's discuss how to set up and manage user groups.
 
 ### User Groups
 
@@ -232,14 +275,13 @@ Note that user groups can have sites but these sites cannot be accessed directly
 
 ![Figure 12.12: User Group Actions](../../images/01-editing-a-user-group.png)
 
-As with the other resources in the portal, you can click the *Actions*
-button next to a user group to perform various operations on that group.
+As with the other resources in the portal, you can click the *Actions* button next to a user group to perform various operations on that group.
 
 **Edit:** allows you to modify the name or description of the user group.
 
-**Permissions:** lets you define which roles have permissions to manage various features of the user group.
+**Permissions:** lets you define which roles have permissions to view, edit, delete, assign members to the user group, etc.
 
-**Site Permissions:** lets you define which roles have permissions to manage various features the user group's site template.
+**Site Permissions:** lets you define which roles have permissions to manage the user group site, including administering pages, staging????, ...
 
 **Manage Site Pages:** allows you to add pages to the site template, import or export pages, organize the page hierarchy, modify the look and feel of the pages, add a logo, or access other options from the Manage Site interface.
 
