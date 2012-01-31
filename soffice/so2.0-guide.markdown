@@ -86,27 +86,17 @@ The public Contacts and Microblogs pages and portlets function the same way as t
 
 ## Using SO Sites
 
-- How to use Dashboard's Sites portlet wizard to create new SO Site based on the template
+Social Office not only provides custom pages and applications for users' personal sites but also for general sites that can have many members. A portal administrator can use the *Add Site* button of the Sites portlet to add a new site to use for team collaboration. This button opens a wizard which guides you through the process of creating a site based on the *Default Social Office Site* template. Sites based on this template come pre-built with pages and applications designed for team collaboration, just like the default Social Office personal sites come with applications designed to facilitate user interaction. The default pages created by the wizard include *Home*, *Calendar*, *Documents*, *Forums*, *Blog*, *Wiki*, and *Members* pages. Links to these pages are embedded in the left-most column of each page that belongs to the site.
 
-- Default pages shown at left contain communication and collaboration tools
+The Home page of the default Social Office site contains a number of userful portlets. You can use the Activities and Recent Downloads portlets to keep site members up to date about what's happening on the site and the Announcements and Events portlets to inform or remind them about important information. The Bookmarks portlets allows users to create a collection of useful links on your site and you can configure the RSS portlet to display an RSS feed of your choice. The Welcome portlet is just a WYSIWYG portlet with its title changed to *Welcome*.
 
-- Home page: announcements, activities, welcome, bookmarks, RSS, Recent Downloads, and Events portlets
+The Calendar, Documents, Forums, Blog, and Wiki pages contain portlet applications that are automatically scoped for the site. This means that these applications will each use a single data set to serve requests from multiple members. So, while each Social Office member receives their own Calendar application and Documents and Media library on their personal sites, they share another Calendar and Documents and Media library for each site they belong to. For more information about these applications, please refer to Liferay's user guide, *Using Liferay Portal*, available at [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). 
 
-- Calendar portlet - same as calendar section in Using Liferay Portal collaboration ch, unless there are updates to portlet
+In addition to the Blogs portlet, the Blogs page contains a Related Content portlet. This portlet is highly configurable. By default, it dynamically displays content belonging to the scope of the current site. The Members page just contains a members portlet and an invitation portlet which can be used to invite users to join the site. Next, we'll investigate how to intgrate our Social Office instance with other applications.
 
-- Documents - same as Documents and Media section of Using Liferay Portal
+## Integrating Social Office with Existing Applications
 
-- Forums - same as Forums section of Using Liferay Portal
-
-- Blogs - Blogs portlet same as in Using Liferay Portal, there's also a Related Content portlet, explain how this works
-
-- Wiki - same as in Using Liferay Portal
-
-- Members - just a members portlet and an invitation portlet to invite users to join the site
-
-## Integrating Social Office with Offline Applications
-
-- Many users don't like to use web applications that don't integrate with the workflow they're used to--this section shows how to configure existing applications to integrate with Social Office
+Many users don't like to use web applications that don't integrate with the workflow they're used to. It's possible to configure existing applications to integrate with Social Office. For example, you don't have to use your browser and the Social Office web interface to access Documents and Media libraries. Social Office takes advantage of Liferay Portal's WebDAV integration to allow users with the appropriate permissions to access Documents and Media libraries. For further information, please see the Documents and Media section of chapter 5 of *Using Liferay Portal*. [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide)
 
 - Microsoft Office Desktop Integration
 
