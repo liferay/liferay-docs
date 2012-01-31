@@ -1,4 +1,4 @@
-
+﻿
 # Liferay APIs
 
 This chapter provides an overview of several of the essential Liferay *application programming interfaces* (*APIs*) available to developers. An API is a programing interface that can be invoked from your own code, either directly through a Java invocation or through web services, to perform an action or set of actions.
@@ -218,9 +218,333 @@ The following invokes the same operations using PHP and the PHP SOAP Client:
             print ($v->name) . " " . $v->userGroupId . "\n";
     ?>
 
-### JSON Web Services (new TODO)
+### JSON Web Services
 
-TODO consider calling a method that uses service context (like an update method)
+JSON Web Services provide convenient access to portal service methods by exposing them as JSON HTTP API. This makes services methods easily accessible using HTTP requests, not only from portals javascript, but from any JSON-speaking client.
+
+JSON Web Services functionality can be split in following topics: registration, invocation and results. We'll cover each topic here.
+
+#### Registering JSON Web Services
+
+By default, all remote-enabled services (i.e. with `remote-service="true"` on entity in `service.xml`) will be exposed as JSON Web Services. When Service Builder creates some `Service.java` interface, it will also add `@JSONWebService` annotation on class level in that service. Therefore, when service interface is annotated with `@JSONWebService` annotation, **all** its service methods becomes registered and available as JSON Web Services.
+
+Service interface is generated source file and it is recommended not to be modified by user directly. Sometimes, however, you need more control over which methods to expose and/or hide. Then just simply configure the `ServiceImpl` class of the service. When service implementation class (`ServiceImpl`) is annotated with `@JSONWebService` annotation, service interface is ignored and only service implementation class will be used for configuration.
+
+In other words, `@JSONWebService` annotations in service implementation **overrides** configuration from service interface.
+
+And that’s all! Upon start, portal scans classes on classpath for annotation usage. Scanning process is optimized, so only portal and service jars are scanned, as well as class raw bytecode content. Each class that uses the annotation is loaded and further examined; its methods become exposed as JSON API. The registration follows explained rule: `ServiceImpl` configuration overrides configuration from `Service` interfaces.
+
+For example, let’s look the `DLAppService`: 
+
+	@JSONWebService
+	public interface DLAppService {
+	...
+
+It contains the annotation that is found on portal startup. Notice the following lines in console output:
+
+	10:55:06,595 DEBUG [JSONWebServiceConfigurator:121] Configure JSON web service actions
+	10:55:06,938 DEBUG [JSONWebServiceConfigurator:136] Configuring 820 actions in ... ms
+
+At this point, scanning and registration is done and all service methods (of `DLAppService` and of other services as well) are registered as JSON Web Services.
+
+##### Portlets
+
+Custom portlets can be scanned, too, and their service becomes part of the JSON API. As this is not enabled by default, you must add the following servlet definition in `web.xml` of your portlet:
+
+	<servlet>
+		<servlet-name>JSON Web Service Servlet</servlet-name>
+			<servlet-class>com.liferay.portal.kernel.servlet.PortalClassLoaderServlet</servlet-class>
+			<init-param>
+				<param-name>servlet-class</param-name>
+				<param-value>com.liferay.portal.jsonwebservice.JSONWebServiceServlet</param-value>
+			</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JSON Web Service Servlet</servlet-name>
+		<url-pattern>/api/jsonws/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JSON Web Service Servlet</servlet-name>
+		<url-pattern>/api/secure/jsonws/*</url-pattern>
+	</servlet-mapping> 
+
+This enables the servlet that scans and registers JSON Web Services.
+
+#### Mapping and naming conventions
+
+Mapped URLs of exposed service methods are formed using following naming convention:
+
+	http://<server:port>/api/jsonws/<service-class-name>/<service-method-name>
+
+where:
+
++ **service-class-name** is the name generated from service class name, by removing `Service` or `ServiceImpl` suffix and converting the camelcase class name to lowercase separated-by-dash name.
++ **service-method-name** is generated from the service method name, using the same convention as for the class name.
+
+For example, the following service method:
+
+	@JSONWebService
+	public interface UserService {
+		public com.liferay.portal.model.User getUserById(long userId) {...}
+
+will be mapped to following URL:
+
+	http://localhost:8080/api/jsonws/user-service/get-user-by-id
+
+Each service method is also bind to one HTTP method. By default, all read-only methods (which names start with `get', `is` and `has`) are mapped as GET HTTP methods. All other methods are mapped as POST methods.
+
+##### Security
+
+Non-public service methods require user to be registered before invoking the method. For those calls users should use the following URL:
+
+	http://<server:port>/api/secure/jsonws/<service-class-name>/<service-method-name>
+
+Note the `secure` part of the URL.
+
+#### List available JSON Web Services
+
+To overview and verify which service methods are registered and available, you can list them all in browser by opening the base address:
+
+	http://localhost:8080/api/jsonws
+
+Resulting page contains a list of all registered and exposed service methods of portal. You can see more details of each method, by clicking the method name. For example, you can see the full signature of the service method, list of all arguments, exceptions that can be thrown and even read the javadoc! Moreover, you can even invoke the service method for testing purposes using simple form.
+
+To list registered services on portlet, don't forget to use portlet context path: 
+
+	http://localhost:8080/<portlet-context>/api/jsonws
+
+This will list only portlets API.
+
+#### More on registration
+
+As said, you can control registration by using annotations in the `ServiceImpl` class. This overrides configuration defined in the interface. Moreover, you can fine-tune which methods are visible/hidden using annotations on method level.
+
+##### Ignoring a method
+
+To ignore a method from being exposed as a service, just annotated method with:
+
+	@JSONWebService(mode = JSONWebServiceMode.IGNORE)
+
+All methods annotated like this will not be part of the JSON Web Service API.
+
+##### HTTP method name and URL
+
+It is also possible to define custom HTTP method name and URL names, using the same annotation on method level.
+
+	@JSONWebService(value = "add-file-wow", method = "PUT")
+	public FileEntry addFileEntry(
+
+In this example, method `addFileEntry` will be mapped to `/dlapp/add-file-wow` (actually to the: `/api/jsonws/dlapp/add-file-wow`) and can be accessed using HTTP method PUT.
+
+If the URL name starts with a slash character (`/`), only method name is used to form the service URL; class name is ignored
+
+	@JSONWebService("/add-something-very-specific")
+	public FileEntry addFileEntry(
+
+Similarly, you can change the class name part of the URL, by setting the value in class-level annotation:
+
+	@JSONWebService("dla")
+	public class DLAppServiceImpl extends DLAppServiceBaseImpl {
+
+Now all service methods will have `dla` in the mapped URL instead of default `dlapp`.
+
+##### Manual registration mode
+
+Up to now, it is expected that most of the service methods are going to be exposed; we allowed user to ignore few (the *blacklist* approach). But sometimes you might need a different behavior: to explicitly specify only methods that are going to be exposed (*whitelist* approach). This is possible, too, using so-called *manual mode* on class-level annotation. Then you can annotate only methods that have to be exposed.
+
+	@JSONWebService(mode = JSONWebServiceMode.MANUAL)
+	public class DLAppServiceImpl extends DLAppServiceBaseImpl {
+		...
+		@JSONWebService
+		public FileEntry addFileEntry(
+
+Now only the `addFileEntry` method is going to be part of the JSON Web Service API, all other methods will be ignored.
+
+#### Configuration
+
+JSON Web Services can be easily turned off in `portal.properties` by setting: 
+
+	json.web.service.enabled=false
+
+##### Strict HTTP methods
+
+JSON Web Service services are, by default, mapped to either GET or POST HTTP methods. If service method is a read-only method, i.e. its name starts with `get`, `is` or `has`, service is bind to GET method; otherwise it is bind to POST.
+
+By default, portal is not checking HTTP method when invoking a service call, i.e. the portal works in "non-strict http method" mode, when services may be invoked using any HTTP method. If you need the strict mode, you can set it with: 
+
+	jsonws.web.service.strict.http.method=true
+
+Now you have to use correct HTTP method when calling service method.
+
+##### Disabled HTTP methods
+
+When strict HTTP method is enabled, you can even filter the access based on HTTP methods. For example, you can set the portal JSON Web Services in read-only mode, by disabling POST (and other) HTTP methods. For example: 
+
+	jsonws.web.service.invalid.http.methods=DELETE,POST,PUT
+
+Now all requests that use HTTP methods from above list will be simply ignored.
+
+#### JSON Web Service Invocation
+
+All services are invoked through its `Util` classes, as you would use it from the java code.
+
+JSON Web Services can be invoked in several ways depending on how parameters (i.e. method arguments) are passed. 
+
+##### Passing parameters as part of URL path
+
+Parameters can be passed as part of the URL path. After the service URL, you can append methods parameters like name/value pairs. Parameter names must be formed form method argument names, by converting camel-case to lowercased separated-by-dash name. Example: 
+
+	http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries/repository-id/10172/folder-id/0
+
+Parameters may be given in **any** order; it’s not necessary to follow arguments order defined by methods. 
+
+When method name is overloaded, the best match will be used: method that contains the least of arguments undefined.
+
+##### Passing parameters as URL query
+
+Parameters can be passed as request parameters, too. The difference is that now parameter names are equals to service method argument names: 
+
+	http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries?repositoryId=10172&folderId=0
+
+Everything else remains the same: the parameter order is not important, etc.
+
+##### Mixed way of passing parameters
+
+Parameters can be passed in a mixed way: some can be part of the URL path and some can be specified as request parameters.
+
+##### Sending NULL values
+
+To pass `null` value for some argument, simply prefix that parameter name with a dash `-`. For example: 
+
+	.../dlsync/get-d-l-sync-update/company-id/10151/repository-id/10195/-last-access-date
+
+Here the `last-access-date` parameter will be `null`.
+
+Null parameters, therefore, do not have specified value. Of course, null parameters do not have to be the last in the URL, as in this example. When passed as request parameter, its value will be ignored and `null` will be used instead: 
+
+	<input type="hidden" name="-last-access-date" value=""/>
+
+When using JSON RPC (see below), null values may be sent even without a prefix. For example: 
+
+	"last-access-date" : null
+
+##### Difference between URL and query encoding #
+
+This is something often forgotten: there is a difference between URL and query (request parameters) encoding. Most illustrative difference is how space character is encoded. When space character is part of the URL path, it is encoded as `%20`; when it is part of the query it is encoded as plus sign (`+`).
+
+##### Sending files as arguments
+
+Files can be uploaded using multipart forms and request. Example:
+
+	<form action="http://localhost:8080/api/secure/jsonws/dlapp/add-file-entry" method="POST" enctype="multipart/form-data">
+	        <input type="hidden" name="repositoryId" value="10172"/>
+	        <input type="hidden" name="folderId" value="0"/>
+	        <input type="hidden" name="title" value="test.jpg"/>
+	        <input type="hidden" name="description" value="File upload example"/>
+	        <input type="hidden" name="changeLog" value="v1"/>
+	        <input type="file" name="file"/>
+	        <input type="submit" value="addFileEntry(file)"/>
+	</form>
+
+As you see, it's a common upload form.
+
+##### JSON RPC
+
+JSON Web Service may be invoked using [JSON RPC](http://json-rpc.org/). Good part of JSON RPC 2.0 specification is supported. Parameters may be passed only as *named* parameters, since positional are not supported - there are too many overloaded methods for convenient use of positional parameters. Example:
+
+	POST http://localhost:8080/api/secure/jsonws/dlapp
+	{
+		"method":"get-folders",
+		"params":{"repositoryId":10172, "parentFolderId":0},
+		"id":123,
+		"jsonrpc":"2.0"
+	}
+
+##### Default parameters
+
+When accessing *secure* JSON web services (user has to be authenticated), some parameters will be available by default. They do not need to be explicitly specified, only if you want to change their default value.
+
+Default parameters are:
+
++ `userId` - id of authenticated user
++ `user` - full User object
++ `companyId` - users company
++ `serviceContext` - empty service context object 
+
+##### Object parameters
+
+Most services accept simple parameters: numbers, strings etc. However, sometimes we need to provide an object of non-simple type as a service parameter.
+
+Similarly to null parameters and the '-' prefix, to create an instance of some parameter just prefix it with a plus sign, `+`,  without any parameter value at all. For example:
+
+	/jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+type
+
+or as request parameter (`+` sign has to be encoded!):
+
+	/jsonws/foo/get-bar?zapId=10172&start=0&end=1&%2Btype
+
+or
+
+	<input type="hidden" name="+type" value=""/>
+
+If parameter is of abstract type or interface, it can't be created. We must specify the concrete implementation. This can be done by adding suffix to the parameter, for example:
+
+	/jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+type:com.liferay.CoolType
+
+or
+
+	<input type="hidden" name="+type:com.liferay.CoolType" value=""/>
+
+Concrete implementation can be set as a value, too! For example:
+
+	<input type="hidden" name="+type" value="com.liferay.CoolType"/>
+
+or in JSON RPC:
+
+	"+type" : "com.liferay.CoolType"
+
+##### Map and List parameters
+
+`Map` and `List` parameters are also supported, by sending JSON objects and arrays. If parameters `Map` or `List` contains generics information (e.g. `Map<Locale, String>`), portal will generify the map/list entries before passing value to the method.
+
+##### Inner Parameters
+
+In some cases it is needed to populate objects that are passed as parameters. A good example is a default parameter `serviceContext`. Sometimes, you need to set some of its inner properties, such as: `addGroupPermissions`, `scopeGroupId` etc. to make a successful JSONWS call.
+
+To pass inner parameters, just provide them as usual and by using a 'dot' notation. For this example it means that you can provide: `serviceContext.addGroupPermissions`, `serviceContext.scopeGroupId`  parameters, together with others. They will be recognized as inner parameters (with a dot in the name) and their values will be *injected* into existing parameters, before API service method is executed.
+
+Inner parameters are not count as regular parameters for matching methods.
+
+Note: use inner parameters with object parameters to set inner content of created parameter instances! 
+
+#### Matching service methods
+
+It is important to understand how service methods are matched from the URL path, especially when some method is overloaded.
+
+General rule is that besides the method name, you must provide **all** parameters as well. It is not important how parameters are provided (as part of the URL line or as request parameters...), neither the order is important. Even if some parameter will be `null`, you must provide it.
+
+Therefore, the global rule is that methods are matched by method and parameter names.
+
+Note that inner parameters are ignored during matching.
+
+##### Using hints
+
+It is also possible to add numeric hints that specify how many method arguments a service has. Hints are added as numbers separated by a dot in method name. For example:
+
+	/foo/method.2/param1/123/-param2
+
+Here, the `.2` is a hint, so only service methods with 2 arguments will be matched, others will be ignored for matching.
+
+One important difference when hint is specified is that now you do not have to specify all parameters. All missing arguments are treated as `null`. Therefore, previous example may be called as:
+
+	/foo/method.2/param1/123
+
+and `param2` will be set to `null`. 
+
+#### Returned values
+
+No matter which way invoked, JSON Web Services return JSON string that represents service method result. Returned object is loosely serialized to JSON string and returned to calling client.
 
 ## RESTful Interfaces (new TODO)
 
@@ -769,4 +1093,3 @@ Let's review what we've just covered. Implementing permission into your custom p
 ### Faceted Search (new TODO)
 
 ### Using Multiple Search Engines (new TODO)
-
