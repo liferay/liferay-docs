@@ -1015,9 +1015,23 @@ If workflow is enabled, you can specify different workflow definitions per folde
 
 ![Figure 4.40: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
 
-The Documents and Media application is a powerful way to manage any type of file your users need to use. 
+### WebDAV access
 
-Next, let's look at how tags work in the portal. 
+Wouldn't it be great if you could access documents and folders belonging to Liferay's Documents and Media library from your own machine's file manager? You can, thanks to the Documents and Media libray's WebDAV integration. WebDAV stands for Web-based Distributed Authoring and Versioning. It's a set of methods based on HTTP that allows users to create, edit, move, or delete files stored on web servers. WebDAV is supported by most major operating systems and desktop environments, including Linux (both KDE and GNOME), Mac OS, and Windows.
+
+Suppose you've created an *Image Gallery* folder using a Documents and Media portlet and uploaded some images to it. Portal users with the appropriate permissions can access this folder and the image files it contains using a browser and Liferay's web interface. WebDAV provides an alternative way to do this using a file manager instead of a web browser. To access a folder stored in a Documents and Media portlet on a remote server, you'll need your User ID for the portal and the WebDAV URL of the folder you'd like to access. 
+
+To get find your User ID, sign in to Liferay and navigate to the *My Account* section of the control panel. Once you've copied your User ID from this page, navigate to the Documents and Media portlet hosting the folder you'd like to access. Mouse over the folder (*Image Gallery* for our example) and select *Access from Desktop*.
+
+![Figure 4.x: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/access-from-desktop.png)
+
+Copy the WebDAV URL. On Windows, right-click on My Computer and select *Map Network Drive*. Select an unused drive, paste the WebDAV URL, and click *Finish*. You'll be prompted to enter your Liferay credentials and then, provided you have the required permissions, you'll see the *Image Gallery* folder. You can now add, edit, move, or delete files in this directory. 
+
+On Mac OS X, select *Go* &rarr; *Conect to Server* in Finder. Then enter the WebDAV URL of the folder you'd like to access in the Server Address field, click *Connect*, and you should be prompted for your Liferay credentials. 
+
+On Linux, you just need to slightly modify the WebDAV URL of your folder in your file manager. For KDE's Dolphin, change the beginning of the URL so that it says `webdav://` instead of `http://`. For GNOME's Nautilus, change the beginning of the URL so that it says `dav://` instead of `http://`. Then press *Enter* and you should be promted for your Liferay credentials.
+
+Note that Liferay increments the version numbers of files edited and uploaded via WebDAV so you don't have to worry that using your file manager will bypass the functionality of Liferay's web interface. The Documents and Media application is a powerful way to manage any types of files your users need to use. Next, let's look at how tags work in the portal.
 
 ## Tags
 
