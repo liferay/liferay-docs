@@ -174,7 +174,7 @@ For instance, if we set this up for Nose-ster's Development Network, users in th
 
 To set this up, the DNS name *developers.nosester.com* should point to your portal's IP address first. Then enter http://developers.noseter.com in the Virtual Host tab for the Developers site. This helps users quickly access their site without having to recall an extended URL.
 
-**Site Template:** If you've applied a site template to your pages, some settings appear here. Specifically, you can see whether to site template is active or if it allows modification by site administrators. If you're not using site templates for this site, you can safely ignore this tab.
+**Site Template:** If you've created the site from a site template, this section will show information about it. Specifically, you can see which site template was used and whether it allows modifications to the pages inherited from it by site administrators or not. If you're not using site templates for this site, you can safely ignore this section.
 
 **Sitemap:** lets you send a sitemap to some search engines so they can crawl your site. It uses the sitemap protocol, which is an industry standard. You can publish your site to Yahoo or Google, and their web crawlers will use the sitemap to index your site. Liferay Portal makes this very simple for administrators by generating the sitemap XML automatically for all public web sites.
 
@@ -192,7 +192,7 @@ Next in the menu is Site Memberships, which is covered in chapter 12. There, you
 
 ### Page Templates and Site Templates
 
-*Page Templates* and *Site Templates* are an invaluable tool for building out pages on larger portals. You might already know this, or you might just be discovering it, but as you add more pages to website, you'll find more repeatable patterns in the designs of those pages. Page templates enable you to create a basic design for a single page and then apply it to any new page that you create without having to do any manual configuration. Site Templates allow you to do the same thing, but on the scale of a site -- if you have multiple sites which are going to have identical layouts with different content, you can create a single site template, and apply it to all of those pages. You can also use templates to manage multiple page layouts simultaneously. For a full explanation of Page Templates, Site Templates see Chapter 12: Administering Liferay Portal.
+*Page Templates* and *Site Templates* are an invaluable tool for building out pages on larger portals. You might already know this, or you might just be discovering it, but as you add more pages to website, you'll find more repeatable patterns in the designs of those pages. Page templates enable you to preconfigure a single page and then apply it to any new page that you create. Site Templates allow you to do the same thing, but on the scale of a site -- if you have multiple sites which are going to have a similar structure of pages, you can create a single site template, and use it for the creation of as many sites as desired. For a full explanation of Page Templates, Site Templates see Chapter 12: Administering Liferay Portal.
 
 ### Site Content
 
