@@ -11,7 +11,7 @@ Hooks are stored within the `hooks` directory of the plugins directory. Navigate
 
     ./create.sh example "Example"
 
-On Windows enter the following instead:
+On Windows, enter the following instead:
 
     create.bat example "Example"
 
@@ -39,7 +39,7 @@ If you look inside the `liferay-portal-[version]/tomcat-[tomcat-version]/webapps
 
 ### Customizing JSPs without overriding the original
 
-The drawback of overridding a JSP is that if the original changes (for example to fix a bug) then you have to also change your customized file in order to benefit from the original change.
+The drawback of overridding a JSP is that if the original changes (for example to fix a bug) then you have to also change your customized file in order to benefit from the original's change.
 
 If you wish to avoid this drawback and make your JSP modifications even less invasive, it is possible to render the original JSP into a string, and then modify it dynamically afterwards. This makes it possible to change minor elements of a JSP, such as adding a new heading or button, without needing to worry about modifying your hook every time you upgrade Liferay. Here is an example that customizes the search portlet to remove the ability to a search provider in the browser:
 
@@ -59,7 +59,7 @@ If you wish to avoid this drawback and make your JSP modifications even less inv
 
     <%= html %>
 
-Since this technique involves String manipulation it is mainly useful when the amount of changes desired is small.
+Since this technique involves String manipulation, it's mainly useful for small numbers of changes.
 
 ## Performing a Custom Action
 
@@ -158,7 +158,7 @@ For a complete list of the services available and the methods of each of them ch
 
 ## Overriding a *Language.properties* File
 
-In addition to the three capabilities of hooks already discussed, it is also possible to override `Language.properties` files from a hook, allowing you to change any of the messages displayed by Liferay to suit your needs. The process is extremely similar to any of the ones we have just described. All you need to do is to create a Language file for the language whose messages you want to customize and then refer to it from the `liferay-hook.xml`. For example to override the translations to Spanish and French the following two lines would be added to the file:
+In addition to the three capabilities of hooks already discussed, it is also possible to override `Language.properties` files from a hook, allowing you to change any of the messages displayed by Liferay to suit your needs. The process is extremely similar to any of the ones we have just described. All you need to do is to create a Language file for the language whose messages you want to customize and then refer to it from the `liferay-hook.xml`. For example, to override the translations to Spanish and French the following two lines would be added to the file:
 
     <hook>
 		...
