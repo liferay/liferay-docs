@@ -45,7 +45,7 @@ An OpenSocial Gadget can be deployed in Liferay in one of two ways:
 
 -   Local Gadget: A local gadget is deployed in the Liferay server in a similar manner as portlets are deployed. Since gadgets are defined in an XML file, all you need to do to deploy the gadget is upload the XML file to the server. Some people like to upload them directly through the file system, FTP or similar protocols. In some other cases, just uploading it with the *Documents and Media Library* portlet and copying the URL is enough. Once you have the URL, you can go to the *Control Panel* &rarr; *OpenSocial Gadget Publisher*, click the *Publish Gadget* button and enter the URL as shown in the following screenshot:
 
-![Figure 1.x: Publish a new Gadget](../../images/open-social-gadget-new-ctrl-panel.png)
+![Figure 1.1: Publish a new Gadget](../../images/open-social-gadget-new-ctrl-panel.png)
 
 After this is done, the gadget will appear as an application that page administrators can add to their pages.
 
