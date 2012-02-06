@@ -37,8 +37,6 @@ All themes in Liferay are built on top of the *_unstyled* and *_styled* themes, 
 
 When a theme is built, the base themes are added in layers - first *_unstyled* is added, giving you the core of the theme, and *_styled* is added on top of that, adding the most basic elements. If you use a different base theme, that will be added on top of *_styled* - overriding the default styling wherever applicable. After the base themes are added, your own custom styling is added on top of that.
 
-[[TODO - NEED DIAGRAM]]
-
 If you want to use a different base theme than the default, you can edit the `build.xml` file and change *_styled* in `<property name="theme.parent" value="_styled>` to the name of any theme currently available in your environment that you wish to use.
 
 ### Deploying the Theme
@@ -99,7 +97,7 @@ Best practice recommends that you make all your custom themes using only the `cu
 Whenever you make modifications to your theme, redeploy it by opening a terminal in `themes/deep-blue-theme` and entering the command **ant deploy**. Wait a few seconds until the theme deploys, and then refresh your browser to see your changes.
 
 ---
-![tip](../../images/tip-pen-paper.png)If you wish to see changes even more quickly, it is also possible to modify your theme directly in your Liferay bundle. In our example, `custom.css` is located in `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/deep-blue-theme/css`. However, for modifications made here to appear in your browser as soon as you refresh the page, you must enable Liferay Developer Mode. See the Liferay wiki for more information.
+![tip](../../images/tip-pen-paper.png)**Tip:** If you wish to see changes even more quickly, it is also possible to modify your theme directly in your Liferay bundle. In our example, `custom.css` is located in `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/deep-blue-theme/css`. However, for modifications made here to appear in your browser as soon as you refresh the page, you must enable Liferay Developer Mode. See the Liferay wiki for more information.
 ---
 
 Also make sure that you copy any changes you make back into your *_diffs* folder, or they will be overwritten when you redeploy your theme.
@@ -294,4 +292,3 @@ The `theme.parent` property determines which built-in theme your theme will inhe
 
 You can also use the default Liferay theme, called **classic**, as the parent of your themes. Using this approach allows you to start with a look and feel that already works and get nice results quickly. The drawback is that since there is so much done already for you, there won't be as much flexibility to build the desired design. It's a compromise between creating a theme as quickly as possible versus having full control of the result. It's your choice.
 
-## Overriding JSPs (new TODO)
