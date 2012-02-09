@@ -9,8 +9,6 @@ The main use cases in which an Ext plugin may be needed are:
 
 -   Customizing `portal.properties` that are not supported by Hook Plugins
 
--   Customizing Struts Actions
-
 -   Providing custom implementations for any of the Liferay beans declared in Liferay's Spring files (use service wrappers from a hook instead if possible)
 
 -   Adding JSPs that are referenced from portal properties that can only be changed from an Ext plugin (be sure to check if the property can be modified from a hook plugin before doing this)
@@ -94,7 +92,7 @@ The most significant directories in this structure are the ones inside the `docr
 
 -   **ext-service/src:** Any classes that should be available to other plugins belong here. When using Service Builder, it puts the interfaces of each service here. Also, in advanced scenarios, this directory contains classes that overwrite the classes of `portal-service.jar`.
 
--   **ext-web/docroot:** Contains configuration files for the web application, including `WEB-INF/struts-config-ext.xml`, which allows you to customize Liferay's core struts actions. Also, any JSPs that your customizations require belong here.
+-   **ext-web/docroot:** Contains configuration files for the web application, including `WEB-INF/struts-config-ext.xml`, which allows you to customize Liferay's core struts classes. But note, a hook is the recommended means for customizing a struts action. Also, any JSPs that your customizations require belong here.
 
 -   **Other:** `ext-util-bridges`, `ext-util-java` and `ext-util-taglib` are only needed in advanced scenarios in which you need to customize the classes of three libraries provided with Liferay: `util-bridges.jar`, `util-java.jar` and `util-taglib.jar` respectively. In most scenarios, you can just ignore these directories.
 
