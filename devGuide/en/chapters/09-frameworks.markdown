@@ -579,7 +579,9 @@ Note that in the render method, there is a forward to a JSP in the case of the a
         />
     </liferay-ui:custom-attributes-available>
 
-That's about it. It wasn't that hard, right? Now you can start enjoying the benefits of the asset framework in your custom portlets. Next we'll learn how to leverage the File Storage Framework of Liferay Portal.
+That's about it. It wasn't that hard, right? Now, to get really fancy, you may need to extend the capabilities of the `AssetRendererFactory` for one of Liferay's core portlets. If so, check out article [Extending an AssetRendererFactory](http://www.liferay.com/about-us/news/-/blogs/12256113) by Juan Fern&agrave;ndez that talks about doing just that.
+
+Now you can start enjoying the benefits of the asset framework in your custom portlets. Next we'll learn how to leverage the File Storage Framework of Liferay Portal.
 
 ## File Storage Framework
 
