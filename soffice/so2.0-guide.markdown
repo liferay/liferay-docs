@@ -94,7 +94,7 @@ Users make use of applications every day in Social Office to get their work done
 
 By default, each user has a number of applications installed on his or her Dashboard home page. Users have full control over their personal pages: they can add or remove applications from their pages and adjust the settings for available applications. This ability can be modified or removed altogether by administrators. 
 
-When a new site is created, it's pre-populated with pages and applications on those pages. In many cases, each application gets a page of its own; in other cases, applications are aggregated together on a single page to provide a unified place where users can see all the new information that their teammates have posted. 
+When a new Social Office site is created, it's pre-populated with pages and applications on those pages. These pages and applications are defined by the default Social Office site template. In many cases, each application gets a page of its own; in other cases, applications are aggregated together on a single page to provide a unified place where users can see all the new information that their teammates have posted. 
 
 Owners of sites are free to add or remove applications from pages on their sites. Regular users will not have the ability to do so. In this way, site owners can maintain the most optimal working environments for their users. 
 
@@ -109,6 +109,10 @@ Here's an example of how it all comes together: Ryan, Jim, and Michael are all m
 Michael updates the Wiki with the new information after the meeting, and Ryan posts a summary of what happened in the meeting in the Sales Blog. When Jim logs in the next day, he'll receive a notification of the new Blog post with the information he missed, as well as a notification about the updated Wiki. Additionally, he can  easily access those pages to catch up on what he missed. This works because Social Office automatically keeps everyone up to date on the activities of the teams they work with every day. 
 
 Social Office is a dynamic team collaboration solution for the enterprise that's designed to streamline communication, save time, and raise productivity. Organizations and groups can use Social Office to share resources, collaborate on projects, and raise the visisbility of important activity. Social Office features a robust suite of integrated, easy-to-use web applications. It's ready to use right out of the box. Once installed, a quick setup wizard will help you set up a team collaboration site so you can begin working immediately. Let's take a look at some of Social Office 2.0's new features. Then we'll explain how to install Social Office.
+
+## Installation
+
+Unlike previous versions of Social Office, Social Office 2.0 is available as a plugin for Liferay Portal 6.1. It can be installed via Liferay Marketplace. Prior to version 2.0, Social Office was provided as an independent product that was based on, but separate from, Liferay Portal.
 
 ## New Social Office features
 
@@ -133,10 +137,6 @@ Social Office is a dynamic team collaboration solution for the enterprise that's
 <!-- | TODO: Figure out what the Mentions tab does | -->
 
 - The Dashboard contains an improved Sites portet. Unlike the basic My Site portlet, the improved Sites portlet allows you to star various sites to customize your sites list. You can view choose to view all sites, sites you belong to, or your favorite (starred) sites. The option to star sites can be very convenient for large Social Office instances with web applications and content hosted across many different sites.
-
-## Installation
-
-Social Office is available as a plugin for Liferay Portal 6.1. It can be installed via Liferay Marketplace.
 
 ## Using Social Office personal sites
 
