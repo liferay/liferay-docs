@@ -1,8 +1,116 @@
-# Introduction
+# Working Smarter with Liferay Social Office
 
-Liferay Social Office is a dynamic team collaboration solution for the enterprise that's designed to streamline communication, save time, and raise productivity. Organizations and groups can use Social Office to share resources, collaborate on projects, and raise the visisbility of important activity. Social Office features a robust suite of integrated, easy-to-use web applications. It's ready to use right out of the box. Once installed, a quick setup wizard will help you set up a team collaboration site so you can begin working immediately. Let's take a look at some of Social Office 2.0's new features. Then we'll explain how to install Social Office.
+## Preface
 
-## New features
+Liferay Social Office is Liferay's social collaboration product for the enterprise. Previously released as a separate product based on Liferay Portal, it's now available as a plugin for Liferay Portal. We are excited to bring both Social Office and this book to you, in the hope that you'll be able to use each to enable your teams to work together more efficiently. 
+
+Some time ago, we at Liferay were brainstorming some common use cases which Liferay Portal does a good job solving. One of these is team-based collaboration. Many of our customers have used Liferay Portal both inside their enterprises and outside on the Internet to provide a better way of sharing documents and data with the people they work with everyday. Liferay Portal provides a very flexible solution which allows you not only to do this, but much, much more. Because Liferay Portal is so flexible, the path from the initial install to a robust web site that could be used for collaboration was not always straightforward to the new user. The Social Office plugin is designed to turn Liferay Portal into a product that business users can set up and use right away.
+
+This was not the only reason for Social Office. Internally, we realized that we needed a product like this ourselves, and that we already had all the features in place to make it possible. We just needed to assemble them together in a way that optimally supported the scenario of social collaboration. We also wanted to make setup as easy as possible for new users. 
+
+In this way, Social Office was born. We created the product to provide a simple, out of the box solution for team collaboration. Social Office provides you with a fantastic array of features that you don't have to spend a lot of time configuring. In fact, you can have a full production environment set up in less time than it takes to brew a pot of coffee.
+
+Since Social Office is provided as a plugin for Liferay Portal, it inherits all the benefits of a mature, stable solution which has been in the marketplace for some time. You can start using Social Office's straightforward, out-of-the box collaborative features right away but you're also free to utilize any of the more advanced features of Liferay Portal at any time. 
+
+<!-- This section needs revision
+Additionally, we've had an early adopter program, and Social Office is already in production use with multiple customers. It has even received industry recognition: it's in the Gartner magic quadrant for social software, and has been mentioned as the only open source, Java-based solution for collaboration in a comparison review of products in this space. 
+
+Since our early adopter program was so successful, we're excited to finally release the product to the general public. Customers who have already started using it have been exceptionally pleased with the results, and you gain the benefit from our collaboration with those early adopters. In fact, this is one of the great things about open source: we've received extensive feedback on the product, including bug fixes and feature requests. Our customers have told us whether things are intuitive or not, and we've incorporated that feedback right back into the product. 
+-->
+
+This book is for those who are setting up and administering an instance of Liferay Portal using Social Office. From installing Social Office to introducing you to its entire feature set, you'll see all of the things Social Office can do to help your team. We hope you'll use it as a tool to get Social Office up, running, and integrated into your enterprise. Since Social Office is provided as a plugin for Liferay Portal, you can find much more information about installation and administration in *Using Liferay Portal* [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
+
+<!-- This section can probably be removed
+Conventions
+
+Sections are broken up into multiple levels of headings, and these are designed to make it easy to find information. 
+Source code and configuration file directives are presented like this. 
+If source code goes multi-line, the lines will be \ 
+separated by a backslash character like this.
+Italics are used to represent links or buttons to be clicked on in a user interface and to indicate a label  or a name of a Java class. 
+Bold is used to describe field labels and portlets. 
+Page headers denote the chapters, and footers denote the particular section within the chapter. 
+-->
+
+## Publisher Notes
+
+It's our hope that this book is valuable to you, and that it's an indispensable resource as you begin to administer a Social Office server. If you need any assistance beyond what's covered in this book, Liferay, Inc. offers training, consulting, and support services to fill any need that you might have. Please see [http://www.liferay.com/services](http://www.liferay.com/services) for further information about the services we can provide. 
+As always, we welcome any feedback. If there is any way you think we could make this book better, please feel free to mention it on our forums. You can also use any of the email addresses on our Contact Us page [http://www.liferay.com/contact_us](http://www.liferay.com/contact_us). We are here to serve you, our users and customers, and to help make your experience using Social Office the best it can be. 
+
+<!-- This sections needs updates
+Author Notes
+
+Special thanks are due to my co-authors, Stephen Kostas and Michelle Hoshi, who turned around their chapter assignments in record time while the product was changing under them. I also cannot underestimate the help of Ryan Parks in quickly answering our calls for help and in giving us further explanation of various features. And I must also make special mention of Stephen Wilburn, who copy edited this document. I thought the text was pretty clean, but he slogged through our hastily written prose with an attention to detail that made it look like monkeys had typed this thing. If you find this book to be readable, it's because of him. 
+As always, we hope this book is useful to you as you begin your journey with Liferay Social Office! 
+-->
+
+## Introduction
+
+“Help!” 
+
+This has been the cry of information workers everywhere who have tried to manage complex projects through email and shared folders. You've probably had a similar experience: you're collaborating on a document with a team of people and are emailing it back and forth. Person A creates the initial document and Person B replies with some edits. Person C replies with additional edits at the same time Person A replies with the corrections from Person B. Person D takes this and rewrites a whole section of the document while Person B and C respond to Person A's update. Pretty soon, it becomes very difficult to determine which document is the latest document.
+
+The same scenario plays itself out when working in shared folders. Person A creates a document and puts it in a network share. Person B edits the document and saves it under a different file name. Person C edits it and re-saves the original. Person A tries to reconcile the two, while Person D opens Person B's document and saves yet another version. Before you know it, you have the same problem you had with email: you can't tell which document is the latest document. Additionally, you have a worse problem: you don't have a clear history of how the document got to where it is in the first place. 
+
+“Help!”
+
+Liferay Social Office is a plugin for Liferay Portal that is designed to answer that call for help by meeting the needs of teams who work together on projects. It's easy to set up and makes it easier to facilitate collaboration for large and small businesses alike. With Liferay Social Office, you'll have the system and your workgroups up and running in no time, with all the tools necessary for them to work more efficiently and more easily than before.
+
+## What can you do with Social Office?
+
+Social Office gives you the social collaboration features you need to do virtual teamwork. You can coordinate calendars and schedules, write shared blog entries, work together on documents, discuss issues in forums, document everything in a wiki, and more. The underlying theme is that all discussion and collaboration is kept with the asset. What does this mean? It means that the asset, whether that be a document, a thread, a blog entry, or a wiki article is the star around which all of the discussion and collaboration orbits. 
+
+Trying to collaborate on assets through email or server shares works up to a certain point--but then it fails because it's a backwards way of doing the work. The asset in that scenario becomes secondary, and the “wrapper”--email or the share--becomes the primary target of the work. So instead of concentrating on the asset which the team is trying to produce, the focus turns to the wrapper. In the case of a shared folder, you might manually rename documents according to a numbering scheme so everyone can tell which is the latest--that is, until someone forgets to do so, or until someone accidentally overwrites the latest document. In the case of email, users try to navigate huge threads while passing an asset back and forth--until someone forgets to “reply all” or until someone starts a new thread (and maybe forgets to put the whole list on the thread). Working in the mediums of shared folders or email puts the focus on working with the wrapper, not the asset. And so the asset gets lost because they're forced to focus on the wrapper instead of the asset. With Social Office, you'll be free to concentrate on the assets--the system gets out of your way so that it's a simple matter for your team to work together. 
+
+## How is Social Office Different from Liferay Portal?
+  
+Social Office is a plugin for Liferay Portal that provides extra collaborative tools and allows you set up sites for collaboration very quickly. Each site is designed to provide a single group or team with a virtual shared workspace. Members of your organization who belong to multiple groups or teams in your organization can belong to multiple sites on the portal.
+
+Liferay Portal is a full featured web portal, containing an industry-leading suite of built-in applications and tools. It's highly customizable and businesses use it to run major web sites all over the world. We've optimized Liferay Portal for creating state-of-the art, robust web sites that serve millions of users every day. 
+
+The Social Office plugin adds functionality for a specific purpose: collaboration. We've designed it for work groups needing to collaborate on documents and data in the office. The included tools and defaults were carefully chosen to provide users working within a group the ability to easily communicate, collaborate, and coordinate their tasks. Additional applications were added to the product to support these goals. 
+
+Whether you're creating a public web site and need the full features of an unparalleled, industry-leading engine or you're creating a small corporate Intranet, Liferay Portal is the ideal solution for you. You should consider installing the Social Office plugin if you'd like your site facilitate communication between people within specific groups and accomplish tasks using shared virtual workspaces with minimal set up and administration.
+
+## Social Office concepts
+
+Social Office is designed around the concept of users and their work. For this reason, everything in Social Office is centered around keeping you up to date on the activities of your teammates. This works not only within individual teams, but also across all the teams of which you're a member. To do this, Social Office gives each user his or her own personal site to serve as a virtual private workspace. Additionally, each team is designed to have its own site where its work is stored. Social Office provides a *default Social Office template* that allows you to quickly build such sites for your teams. Using the power of Liferay's social API, users' activities are tracked and reported to the rest of the team. (Note: the terms *Organization*, *Site*, *User Group*, and *Team*, and *Role* have specific meanings within Liferay Portal--please see *Using Liferay Portal* for details.)
+
+For example, if a user on Team A shares a document, that activity is displayed not only in Team A's activities, but also in each team member's activities. This provides the ability for the rest of the team to know what work is being done as soon as possible, and then they can respond by making their own contributions. 
+
+There are really only three concepts which Social Office uses to accomplish all of this: users, Applications, and sites. Let's take a closer look at each to see how you can use Social Office to help your teams work better. 
+
+### Users
+
+Users are at the core of Social Office. In order to interact with and use Social Office, you must have a user account. Users can register themselves or the system can be set up so that your account is created by an administrator. Administrators have full control over the entire site, can create and delete other users and sites, and can take care of the initial configuration. Administrators can also create additional users with administrative capabilities.
+
+The Social Office plugin adds a special role to Liferay Portal: Social Office User. Assigning users to the Social Office role provides them with personal sites pre-built with pages and applications designed to help them manage their work, share information, and communicate with each other. The default personal sites provided by the Social Office user role includes the Dashboard home page.
+
+Other users are the regular members of your team who use the system to get their day-to-day work done. They can view the Sites they to which they have membership and they can interact with files and documents on those Sites. 
+  
+### Applications
+
+Users make use of applications every day in Social Office to get their work done. Each page on every site in Social Office is only as useful as the applications installed on it. The available applications range from utilities for online information such as weather forecasts or RSS feeds, to blog and wiki tools, and more. 
+
+By default, each user has a number of applications installed on his or her Dashboard home page. Users have full control over their personal pages: they can add or remove applications from their pages and adjust the settings for available applications. This ability can be modified or removed altogether by administrators. 
+
+When a new site is created, it's pre-populated with pages and applications on those pages. In many cases, each application gets a page of its own; in other cases, applications are aggregated together on a single page to provide a unified place where users can see all the new information that their teammates have posted. 
+
+Owners of sites are free to add or remove applications from pages on their sites. Regular users will not have the ability to do so. In this way, site owners can maintain the most optimal working environments for their users. 
+
+### Sites
+
+Sites are the structure that holds everything else in Social Office together. Every page contained in Social Office is part of a Site--including users' personal pages, which are just personal Sites. Sites are, at first glance, a collection of pages with specific functions, but they are also the basis of a sort of user “community.” Users can be members of certain Sites either by assignment or by invitation, and once they are members they can use the full capabilities of the Site, as well as receive notification of various activities.
+
+Sites ultimately become the key to good collaboration in Social Office, because each Site contains its own Calendar and set of events, as well as its own Document Library, Wiki, Blog, and Announcements. These tools enable members of a Site to communicate effectively with each other. Personal Sites help individual users as they log in to see an aggregated list of activities. This list comes from the activities of all the teams with whom they are collaborating. This way, users can see at a glance everything that's happening with their work, and they can respond very easily to anything that needs attention across all of the Sites of which they are members. 
+
+Here's an example of how it all comes together: Ryan, Jim, and Michael are all members of the Sales Site. Ryan schedules a meeting  for the whole Sales team about a new product launch and puts it on the Calendar. When Jim and Michael log in, they both receive a notification of the meeting. Jim can't make the meeting, but he's been maintaining the Sales Wiki for new products, so he asks Michael to update it for him after the meeting.
+
+Michael updates the Wiki with the new information after the meeting, and Ryan posts a summary of what happened in the meeting in the Sales Blog. When Jim logs in the next day, he'll receive a notification of the new Blog post with the information he missed, as well as a notification about the updated Wiki. Additionally, he can  easily access those pages to catch up on what he missed. This works because Social Office automatically keeps everyone up to date on the activities of the teams they work with every day. 
+
+Social Office is a dynamic team collaboration solution for the enterprise that's designed to streamline communication, save time, and raise productivity. Organizations and groups can use Social Office to share resources, collaborate on projects, and raise the visisbility of important activity. Social Office features a robust suite of integrated, easy-to-use web applications. It's ready to use right out of the box. Once installed, a quick setup wizard will help you set up a team collaboration site so you can begin working immediately. Let's take a look at some of Social Office 2.0's new features. Then we'll explain how to install Social Office.
+
+## New Social Office features
 
 - Social Office 2.0 is deployable on top of Liferay Portal 6.1. This means that your Social Office 2.0 installation includes not only the following new applications but also all the new features of Liferay 6.1. Please see [http://www.liferay.com/web/james.falkner/blog/-/blogs/11927282](http://www.liferay.com/web/james.falkner/blog/-/blogs/11927282) for details about the new Liferay 6.1 features.
 
@@ -30,7 +138,7 @@ Liferay Social Office is a dynamic team collaboration solution for the enterpris
 
 Social Office is available as a plugin for Liferay Portal 6.1. It can be installed via Liferay Marketplace.
 
-## Using the Dashboard
+## Using Social Office personal sites
 
 The Dashboard home page is only available to Social Office users. Note that Liferay Portal identifies users as Social Office users based on whether or not they have been assigned to the Social Office User role. We recommend that you add this role to your portal's default user associations configuration in the control panel. Use the *Go to* menu of the Dockbar to navigate to the Control Panel. Under the Portal heading, click on *Portal Settings*. Then click on *Users* from the right-hand navigation menu. Finally, open the *Default User Associations* tab and add the role *Social Office Users*. Now, newly created users will be assigned to the Social Office User role.
 
@@ -84,7 +192,7 @@ By default, the profile page displays three main pieces of information about a u
 
 The public Contacts and Microblogs pages and portlets function the same way as the ones in a user's private site except that other users can only view, not edit them. However, the Timeline tab of the Microblogs portlet allows users to comment on entries.
 
-## Using SO Sites
+## Using Social Office collaborative sites
 
 Social Office not only provides custom pages and applications for users' personal sites but also for general sites that can have many members. A portal administrator can use the *Add Site* button of the Sites portlet to add a new site to use for team collaboration. This button opens a wizard which guides you through the process of creating a site based on the *Default Social Office Site* template. Sites based on this template come pre-built with pages and applications designed for team collaboration, just like the default Social Office personal sites come with applications designed to facilitate user interaction. The default pages created by the wizard include *Home*, *Calendar*, *Documents*, *Forums*, *Blog*, *Wiki*, and *Members* pages. Links to these pages are embedded in the left-most column of each page that belongs to the site.
 
