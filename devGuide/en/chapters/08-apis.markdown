@@ -476,33 +476,35 @@ Default parameters are:
 
 Most services accept simple parameters: numbers, strings etc. However, sometimes we need to provide an object of non-simple type as a service parameter.
 
-Similarly to null parameters and the '-' prefix, to create an instance of some parameter just prefix it with a plus sign, `+`,  without any parameter value at all. For example:
+Similarly to null parameters and the '-' prefix, to create an instance of some parameter just prefix its name with a plus sign, `+`,  without any parameter value at all. For example:
 
-	/jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+type
+	/jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+foo
 
 or as request parameter (`+` sign has to be encoded!):
 
-	/jsonws/foo/get-bar?zapId=10172&start=0&end=1&%2Btype
+	/jsonws/foo/get-bar?zapId=10172&start=0&end=1&%2Bfoo
 
 or
 
-	<input type="hidden" name="+type" value=""/>
+	<input type="hidden" name="+foo" value=""/>
 
 If parameter is of abstract type or interface, it can't be created. We must specify the concrete implementation. This can be done by adding suffix to the parameter, for example:
 
-	/jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+type:com.liferay.CoolType
+	/jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+foo:com.liferay.impl.FooBean
 
 or
 
-	<input type="hidden" name="+type:com.liferay.CoolType" value=""/>
+	<input type="hidden" name="+foo:com.liferay.impl.FooBean" value=""/>
 
 Concrete implementation can be set as a value, too! For example:
 
-	<input type="hidden" name="+type" value="com.liferay.CoolType"/>
+	<input type="hidden" name="+foo" value="com.liferay.impl.FooBean"/>
 
 or in JSON RPC:
 
-	"+type" : "com.liferay.CoolType"
+	"+foo" : "com.liferay.impl.FooBean"
+
+All these examples specifies a concrete implementation for `foo` service method parameter.
 
 ##### Map and List parameters
 
