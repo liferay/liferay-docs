@@ -77,20 +77,20 @@ A portlet project is made up at a minimum of three components:
 
 When using Liferay's Plugins SDK, these files are stored in a standard directory structure which looks like the following:
 
-    PORTLET-NAME/
-		build.xml
-		docroot/
-			css/
-			js/
-			WEB-INF/
-				src/ (not created by default)
-				liferay-display.xml
-				liferay-plugin-package.properties
-				liferay-portlet.xml
-				portlet.xml
-				web.xml
-			icon.png
-			view.jsp
+-	PORTLET-NAME/
+	-	build.xml
+	-	docroot/
+		-	css/
+		-	js/
+		-	WEB-INF/
+			-	src/ (not created by default)
+			-	liferay-display.xml
+			-	liferay-plugin-package.properties
+			-	liferay-portlet.xml
+			-	portlet.xml
+			-	web.xml
+		-	icon.png
+		-	view.jsp
 
 The portlet we just created is a fully functional portlet which can be deployed to your Liferay instance.
 
