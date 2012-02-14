@@ -173,7 +173,17 @@ In addition to the capabilities of hooks already discussed thus far, you can als
 ![tip](../../images/tip-pen-paper.png)**Tip:** as always, please check the DTD of each Liferay XML file you modify for the elements and attributes that can be included in the XML and the specified order for those elements.
 ---
 
+## Other hooks
+
+Since hooks are the preferred plugin type to use in customizing Liferay's core features, the Liferay team is happy to keep new hooks coming to you. This section is a placeholder for hooks which are available in Liferay Portal 6.1, but are not yet fully documented. So, for now, here is a summary of these hooks.
+
+-	**Struts action hook:** If you've wanted to add new struts actions to Liferay portal from a hook plugin or have wanted the ability to override other existing actions, you now have the means to do it with *struts action hooks*. Plugin SDK hook `sample-struts-action-hook` demonstrates the hook's capability. See also article [Overriding and adding struts actions from hook plugins ](http://www.liferay.com/about-us/news/-/blogs/7132115) by Mika Koivisto for more details.
+
+-	**Servlet filter hook:** Servlet filters allow you to pre-process requests going *to* a servlet and post-process responses coming *from* a servlet. As server requests are received that match URL patterns or match servlet names specified in your servlet filter mappings, your specified servlet filters are applied. Hook elements `servlet-filter` and `servlet-filter-mapping` have been added to `liferay-hook.xml` to give you the ability to configure your servlet filters. For a working example, see Plugin SDK hook `sample-servlet-filter-hook`.
+
+-	**CMIS extension hook:** The Documents and Media Library now supports multiple CMIS repositories mounted for each Documents and Media Portlet. But, in cases where a repository does not fully implement CMIS or where a repository has native features that you'd like to leverage, you can use a *CMIS extension hook* to apply your desired extension implementation.
+
 ## Conclusion
 
-In this chapter, you've learned how to perform custom portal actions, override and extend custom portal JSPs, modify portal properties, and replace portal services. These are just a few of the ways you can use Liferay hooks. Next, we'll learn how you can, as a last resort, use Ext plugins to make customizations that you can't make with any of the other Liferay plugin types.
+In this chapter, you've learned how to perform custom portal actions, override and extend custom portal JSPs, modify portal properties, and replace portal services. These are just a few of the ways you can use Liferay hooks. Next, you'll learn how you can, as a last resort, use Ext plugins to make customizations that you can't make with any of the other Liferay plugin types.
 
