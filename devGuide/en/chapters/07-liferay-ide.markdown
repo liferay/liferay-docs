@@ -5,7 +5,7 @@ Liferay's developers use a variety of tools to develop the product and as a cons
 
 But while being agnostic is great, specially for more experienced developers who can reuse their existing knowledge, it can be overwhelming for newcomers. For that reason Liferay has also develped specific development tools that can be used to ease the learning curve when developing portlets with Liferay. The most significant of these tools is Liferay IDE, a fully featured Integrated Development Environment based on Eclipse.
 
-Liferay IDE is an extension for the Eclipse platform that supports development of plugin projects for the Liferay Portal platform. It is available as a set of Eclipse plugins installable from an update-site. The latest version supports developing 5 Liferay plugin types: portlets, hooks, layout templates, themes, and ext plugins. Liferay IDE requires the Eclipse Java EE developer package using either Galileo or Helios versions.
+Liferay IDE is an extension for the Eclipse platform that supports development of plugin projects for the Liferay Portal platform. It is available as a set of Eclipse plugins installable from an update-site. The latest version supports developing 5 Liferay plugin types: portlets, hooks, layout templates, themes, and ext plugins. Liferay IDE requires the Eclipse Java EE developer package using Helios or later versions.
 
 The first two sections below show how to install and set-up Liferay IDE within your environment. If you are using a copy of Liferay Developer Studio, which comes with Liferay Portal Enterprise Edition, you can skip directly to the section titled *Testing/Launching Liferay Tomcat Server* since it comes already preconfigured.
 
@@ -61,7 +61,7 @@ This section is a detailed guide to install Liferay IDE.
 
 The next set of instructions describe how to install Liferay IDE without typing the URL of an update site:
 
-1.  Instead of typing in a URL, you can download the the archived update site from this link. [liferay-ide-eclipse-updatesite-1.4.0.zip](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/1.4.0/liferay-ide-eclipse-updatesite-1.4.0.zip/download) 
+1.  Instead of typing in a URL, you can download the lastest version from the releases page. [Eclipse Update Site]( http://www.liferay.com/downloads/liferay-projects/liferay-ide) 
 
 2.  In Add Site dialog, click the *Archive* button and browse to the location of the downloaded zip file.
 
@@ -79,7 +79,7 @@ Before getting started you should satisfy the next requirements:
 
 2.  Liferay plug-ins SDK (6.0.5 or greater) downloaded and unzipped.
 
-3.  Eclipse Helios Java EE Developers + Liferay IDE (see the Installation steps).
+3.  Eclipse IDE for Java EE Developers (Helios version or greater) + Liferay IDE (see the Installation steps).
 
 Note: Earlier versions of Liferay, eg 5.2.x, are not supported yet by the Liferay IDE.
 
@@ -139,43 +139,43 @@ Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK
 
 Once your Liferay Portal Server setup is complete you can launch the server from the servers tab of Eclipse. Simply select the server and then click on the green *Start the Server button.* Once the server is running a red *Terminate* button will appear which you can use to stop the server.
 
-	![Figure 7.13: You can start Liferay using either the icon, or by right clicking on the server and selecting the option from the menu](../../images/ide-start-server-debug-mode.png)
+![Figure 7.13: You can start Liferay using either the icon, or by right clicking on the server and selecting the option from the menu](../../images/ide-start-server-debug-mode.png)
 
 Alternatively, you can start/stop the server by selecting *Run* or *Terminate* from the Run menu of Eclipse.
 
 Once the server is finish launching you can open the portal home from the context menu of the Liferay Tomcat server in the Servers view:
 
-	![Figure 7.14: Opening Portal Home from within Liferay IDE](../../images/ide-open-portal-home.png)
+![Figure 7.14: Opening Portal Home from within Liferay IDE](../../images/ide-open-portal-home.png)
 
 ## Creating New Liferay Projects
 
 Now that an SDK and portal server have been configured you can create a new Liferay plug-in project. Go to File &rarr; New Project... &rarr; Liferay &rarr; Liferay Plug-in Project. 
 
-	![Figure 7.15: Creating a plugin project](../../images/ide-new-project-liferay-project.png)
+![Figure 7.15: Creating a plugin project](../../images/ide-new-project-liferay-project.png)
 
 In the Liferay project wizard page, the newly configured SDK and Liferay Runtime should be pre-selected. Also the plugin type *portlet* is the default. Simply type in a project name and cooresponding display name and click Finish.
 
-	![Figure 7.16: Entering the information for the new project](../../images/ide-new-liferay-project.png)
+![Figure 7.16: Entering the information for the new project](../../images/ide-new-liferay-project.png)
 
 If it worked you should see a new plugin project in the package explorer. 
 
-	![Figure 7.17: Viewing the new project in the Package Explorer view](../../images/ide-package-explorer-demo-portlet.png)
+![Figure 7.17: Viewing the new project in the Package Explorer view](../../images/ide-package-explorer-demo-portlet.png)
 
 ## Deploying New Liferay Projects to Liferay Server
 
 Now with the newly created project, right-click the Liferay Server in the Servers view and select *Add and Remove...*.
 
-	![Figure 7.18: Deploying a project to the server](../../images/ide-servers-add-and-remove.png)
+![Figure 7.18: Deploying a project to the server](../../images/ide-servers-add-and-remove.png)
 
 Select the new project and click *Add* to move it to be deployed to the server. 
 
-	![Figure 7.19: Choosing which project to deploy](../../images/ide-add-resource-to-server.png)
+![Figure 7.19: Choosing which project to deploy](../../images/ide-add-resource-to-server.png)
 
 and then click *Finish*.
 
 You should see the project get deployed to Liferay Tomcat server and in the console see a message about 1 new portlet being available:
 
-	![Figure 7.20: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
+![Figure 7.20: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
 
 Open Liferay Portal Home http://localhost:8080/ in most cases and login within the following credentials:
 
@@ -323,4 +323,4 @@ Follow the following steps to verify that either of the previous import processe
 
 	![Figure 7.36: Project Facets](../../images/ide-project-facets.png)
 
-## Developing on a Remote Server (new TODO)
+
