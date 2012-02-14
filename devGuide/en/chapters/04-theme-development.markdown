@@ -55,36 +55,36 @@ Custom themes are based on differences from one of several built-in Liferay them
 
 The structure of a theme is designed to separate different types of resources into easily accessible folders. The full structure of the deep blue theme is shown below:
 
-    /deep-blue-theme/
-		/docroot/
-			/WEB-INF/
-				liferay-plugin-package.properties
-			/_diffs/ (subfolders not created by default)
-				/css/
-				/images/
-				/js/
-				/templates/
-			/css/
-				application.css
-				base.css
-				custom.css
-				dockbar.css
-				extras.css
-				forms.css
-				layout.css
-				main.css
-				navigation.css
-				portlet.css
-			/images/
-				(many directories)
-			/js/
-				main.js
-			/templates/
-				init_custom.vm
-				navigation.vm
-				portal_normal.vm
-				portal_pop_up.vm
-				portlet.vm
+-	deep-blue-theme/
+	-	docroot/
+		-	WEB-INF/
+			-	liferay-plugin-package.properties
+		-	_diffs/ (subfolders not created by default)
+			-	css/
+			-	images/
+			-	js/
+			-	templates/
+		-	css/
+			-	application.css
+			-	base.css
+			-	custom.css
+			-	dockbar.css
+			-	extras.css
+			-	forms.css
+			-	layout.css
+			-	main.css
+			-	navigation.css
+			-	portlet.css
+		-	images/
+			-	(many directories)
+		-	js/
+			-	main.js
+		-	templates/
+			-	init_custom.vm
+			-	navigation.vm
+			-	portal_normal.vm
+			-	portal_pop_up.vm
+			-	portlet.vm
 
 You will notice that there is a `_diffs` folder inside the `docroot` directory of your theme; this is where you will place your theme code. You only need to customize the parts of your theme that will differ from the parent theme. To do this, you mirror the directory structure of the parent theme inside of the `_diffs` folder, placing only the folders and files you need to customize there.
 
