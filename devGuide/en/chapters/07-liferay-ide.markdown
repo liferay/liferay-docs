@@ -15,7 +15,7 @@ This section is a detailed guide to install Liferay IDE.
 
 ### Requirements
 
--   Java 5.0 JRE
+-   Java 5.0 JRE or greater
 
 -   [Eclipse Indigo Java EE (3.7.1)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr1)) or [Eclipse Helios Java EE (3.6.2)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
 
