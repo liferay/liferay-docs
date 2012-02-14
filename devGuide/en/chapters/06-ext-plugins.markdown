@@ -63,24 +63,24 @@ Ext plugins are stored within the `ext` directory of the Plugins SDK (see chapte
 
 You should now find a new folder named `example-ext` with the following structure:
 
-    example-ext/
-		docroot/
-			WEB-INF/
-				ext-impl/
-					src/
-				ext-lib/
-					global/
-					portal/
-				ext-service/
-					src/
-				ext-util-bridges/
-					src/
-				ext-util-java/
-					src/
-				ext-util-taglib/
-					src/
-				ext-web/
-					docroot/
+-	example-ext/
+	-	docroot/
+		-	WEB-INF/
+			-	ext-impl/
+				-	src/
+			-	ext-lib/
+				-	global/
+				-	portal/
+			-	ext-service/
+				-	src/
+			-	ext-util-bridges/
+				-	src/
+			-	ext-util-java/
+				-	src/
+			-	ext-util-taglib/
+				-	src/
+			-	ext-web/
+				-	docroot/
 
 The most significant directories in this structure are the ones inside the `docroot/WEB-INF` directory. In particular, you should be familiar with the following directories:
 
