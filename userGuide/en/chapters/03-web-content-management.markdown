@@ -94,6 +94,22 @@ Permissions in Liferay WCM work the same way they do everywhere else in Liferay.
 
 For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with the your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. So let's go back to the page where we want the content displayed and add the Web Content Display portlet (in this case, the Welcome page).
 
+##### Localization
+
+Previous versions of Liferay had the ability to create and manage different translations of your web content, but with Liferay 6.1 we've added several improvements to really streamline your localization experience. 
+
+When you create a new piece of Web Content, you have the ability to chose a Default Language. If you click *Change* you can select from a large number of languages that Liferay supports to be your default. Before you can create a translation, you will need to finish creating the content in your default language and save it. Once you've done that, editing the content will provide you with the option to *Add Translation*.
+
+![Figure 3.4: Adding a translation](../../images/04-web-content-content-translation.png)
+
+After you click Add Translation, you can select a language, either by scrolling through the list, or by entering the language you want to use in the search box. When you select a language, a lightbox will open within your browser window, enabling you to easily compare the original with the new translation. Once you are done with the translation, click *Save*, and the translation will be added to the list of *Available Translations*. 
+
+![Figure 3.4: Adding a translation](../../images/04-web-content-content-translation-2.png)
+
+The ability to completely delete a translation in one step has also been added. Instead of simply disabling a translation or having to go through a multistep process to remove it, you can now simply open the translation that you don't want and click *Remove Translation*.
+
+When you create a new web content structure, each field you create will have a *Localizable* checkbox displayed next to it. This enables you to control what can and can't be changed in the translation process. For example, if you don't want images or content titles to be changed when the content is translated, you can make sure that those fields aren't listed as localizable. When you follow the steps above to localize content, only fields within the structure that had the *Localizable* box checked will appear within the translation window.
+
 #### Publishing Content with the Web Content Display Portlet
 
 Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page, by selecting *Add &rarr; Web Content Display* from the Dockbar.
@@ -185,7 +201,7 @@ Liferay supports the following elements in structures:
 **Link to Page:** Inserts a link to another page in the same site.
 **Selection Break:** Inserts a break in the content.
 
-These form elements provide all you need to model any information type that you would want to use as web content. Liferay customers have used structures to model everything from articles, to video metadata, to databases of wildlife. You're limited only by your imagination. To fire that imagination, let's look more closely at the form elements. 
+These form elements provide all you need to model any information type that you would want to use as web content.  Liferay customers have used structures to model everything from articles, to video metadata, to databases of wildlife. You're limited only by your imagination. To fire that imagination, let's look more closely at the form elements. 
 
 ##### Editing form elements
 
@@ -328,6 +344,22 @@ Liferay's WCM lets you define when your content goes live. You can determine whe
 **Never Review:** Sets the content to never be reviewed.
 
 As you can see, the scheduling feature in Liferay Portal gives you great control in managing when, and for how long, your web content is displayed on your web site. Additionally, you have the ability to determine when your content should be reviewed for accuracy and/or relevance. This makes it possible to manage your growing inventory of content. 
+
+In addition to controlling when content displays, you can use the Display Page feature to control where content displays.
+
+#### Display Page
+
+If you've been using Liferay for a while, or you've just spent a little bit of time with this guide, you might have noticed something about how Liferay handles web content - content is never tied directly to a page. While this can be very useful, because it means that you don't have to recreate content if you want to display the same thing on multiple pages, it also means that you don't have a static URL for any web content, which is bad for search engine optimization.
+
+To fix this issue, Liferay has introduced the concept of Display Pages, and Canonical URLs. Each web content entry on the portal has a canonical URL, which is the official location of the content that is referenced any time the content is displayed. A Display Page can be any page with an asset publisher with the default settings. You can create the page yourself, or use the *Content Display Page* page template included with Liferay.
+
+So right now you're thinking "Wait, you just told me that each Web Content item has its own URL, and that this is somehow related to pages where we display a whole bunch of content on the same page?" Yes. That's exactly what I said. Just watch - create a display page somewhere on your portal, using the Content Display Page template. Now click on *Display Page*, and select the page you just created as the display page for the content. 
+
+![Figure 3.13: Selecting a Display Page](../../images/04-web-content-display-page.png)
+
+You can now click the link to display the content, and you will see the canonical URL for content in your address bar. You can create your own custom display page, and any additional portlets that you place on the page will display along with the content when you access it via the canonical URL. 
+
+![Figure 3.13: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
 Let's move on to tags and categories. 
 
