@@ -224,7 +224,7 @@ Here are the main functionalities that you will be able to reuse thanks to the a
 
 If these functionalities seem useful for your case, then you might be wondering, what do I have to do to benefit from them?
 
-The following subsections describe the steps involved in using the asset framework. The first one is mandatory and consists on letting the framework know whenever one of your custom content entries is added, updated or deleted. The second part is optional but can save a lot of time so most developers will probably make use of it. It consists on using a set of taglibs to provide widgets that allow authors to enter tags and categories as well as how to show the entered tags and categories along with the content. The rest of the sections are also optional but offer interesting functionalities such as how to allow your custom assets to be published through the Asset Publisher.
+The following subsections describe the steps involved in using the asset framework. The first one is mandatory and consists on letting the framework know whenever one of your custom content entries is added, updated or deleted. The second part is optional but can save a lot of time so most developers will probably make use of it. It consists on using a set of taglibs to provide widgets that allow authors to enter tags and categories as well as how to show the entered tags and categories along with the content. The rest of the sections are also optional but offer interesting functionalities such as how to allow your custom assets to be published through the Asset Publisher. Next, let's dive into adding, updating, and deleting assets.
 
 #### Adding, updating and deleting assets
 
@@ -282,6 +282,8 @@ Here is an example invocation extracted again from the blogs portlet:
     assetEntryLocalService.deleteEntry(
     	BlogsEntry.class.getName(), entry.getEntryId());
 
+Now that you've learned how to create and modify assets, have you considered tagging and categorizing them? Let's tackle that next.
+
 #### Entering and displaying tags and categories
 
 The previous section showed how you can let the asset framework know about the tags and categories that have been associated with a given asset; but how does a content author specify such tags and categories?
@@ -321,6 +323,8 @@ Once the tags and categories have been entered you will want to show them along 
     />
 
 In both tags, you can also specify an optional `portletURL` parameter. Each tag that uses the `portletURL` parameter will be a link containing the `portletURL` *and* `tag` or `categoryId` parameter value respectively. This supports tags navigation and categories navigation within your portlet. But you will need to implement the look-up functionality in your portlet code by reading the values of those two parameters and using the `AssetEntryService` to query the database for entries based on the specified tag or category.
+
+Great! You'll have no problem associating tags and categories with your assets. So let's get them published in your portal.
 
 #### Publishing assets with Asset Publisher
 
@@ -575,11 +579,9 @@ Note that in the render method, there is a forward to a JSP in the case of the a
         />
     </liferay-ui:custom-attributes-available>
 
-That's about it. It wasn't that hard, right? Now you can start enjoying the benefits of the asset framework in your custom portlets.
+That's about it. It wasn't that hard, right? Now, to get really fancy, you may need to extend the capabilities of the `AssetRendererFactory` for one of Liferay's core portlets. If so, check out article [Extending an AssetRendererFactory](http://www.liferay.com/web/juan.fernandez/blog/-/blogs/extending-an-assetrendererfactory) by Juan Fern&agrave;ndez that talks about doing just that.
 
-## ServiceContext
-
-The ServiceContext object contains a set of fields that are common to many different services. It is used, for example to carry tags, categories, permissions information, ... It is not a framework in itself but rather a utility object that helps usage of the other frameworks.
+Now you can start enjoying the benefits of the asset framework in your custom portlets. Next we'll learn how to leverage the File Storage Framework of Liferay Portal.
 
 ## File Storage Framework
 
