@@ -562,7 +562,7 @@ Because the actual method calls for retrieving data are the same regardless of h
 
 In the default `portal.properties` file, there is a section called **Main Servlet**. This section defines the security settings for all of the remote services provided by Liferay. Copy this section and paste it into your custom `portal-ext.properties` file, and you can configure security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON Tunnel Servlet, and the WebDAV servlet.
 
-By default, a user connecting from the same machine Liferay is running on can access remote services so long as that user has the permission to use those services in Liferay's permissions system. Of course, you are not really “remote” unless you are accessing services from a different machine. Liferay has two layers of security when it comes to accessing its services remotely. Without explicit rights to both layers, a remote exception will be thrown and access to those services will not be granted.
+By default, a user connecting from the same machine Liferay is running on can access remote services so long as that user has the permission to use those services in Liferay's permissions system. Of course, you are not really “remote�? unless you are accessing services from a different machine. Liferay has two layers of security when it comes to accessing its services remotely. Without explicit rights to both layers, a remote exception will be thrown and access to those services will not be granted.
 
 The first layer of security that a user needs to get through in order to call a method from the service layer is servlet security. The *Main Servlet* section of the `portal-ext.properties` file is used to enable or disable access to Liferay's remote services. In that section of the properties file, there are properties for each of Liferay's remote services.
 
@@ -943,6 +943,8 @@ For your plugin, you should put your resource-actions XML file(s) (e.g. `default
 
 To see an example of a portlet that defines its resources and permissions in the manner we just described, check out a copy of the Liferay source code from the Liferay  public Subversion repository and start by looking at the definition files found in the `portal-impl/src/resource-actions` directory. For an example of how permissions are defined in the context of a portlet plugin, checkout `plugins/trunk` , and look at the portlet `sample-permissions-portlet`.
 
+Next, let's consider the permission algorithm for this version of Liferay Portal.
+
 ### Permission Algorithms
 
 There are 6 permission algorithms that Liferay has used over the years for checking permissions. Liferay 5 introduced algorithm 5 that was based on RBAC system. Liferay 6 used algorithm 6 which was an optimized version of algorithm 5 that improved performance by using a reduced set of database tables.
@@ -951,7 +953,7 @@ It's important to note that once a permission algorithm is configured and resour
 
 For all new deployments it is strongly recommended you use algorithm 6. For deployments that are using other algorithms it's recommended you migrate to algorithm 6 using the migration tools provided in the Control Panel (see Control Panel -\> Server Administration -\> Data Migration.)
 
-For more information see options for `permissions.user.check.algorithm` in the `portal.properties` file.
+For more information see options for `permissions.user.check.algorithm` in the `portal.properties` file. But next, we'll cover how to add resources.
 
 ### Adding a Resource
 
@@ -979,6 +981,8 @@ When removing entities from the database it is also good to remove permissions m
 		entry.getCompanyId(), BlogsEntry.class.getName(),
 		ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
 
+Great! Now that you know how to work with resource permissions, let's consider how to provide a user interface for managing resource permissions.
+
 ### Adding Permission
 
 On the portlet level, no code needs to be written in order to have the permission system work for your custom portlet. Your custom portlet will automatically have all the permission features. If you've defined any custom permissions (supported actions) in your `portlet-resource` tag, they are automatically added to a list of permissions that users can readily choose. Of course, for your custom permissions to have any value, you'll need to show or hide certain functionality in your portlet. You can do that by checking the permission *before* performing the intended action on the resource.
@@ -997,6 +1001,8 @@ In order to allow a user to set permissions on model resources, you will need to
 The attributes you need to specify for the first tag are `modelResource`, `modelResourceDescription`, `resourcePrimKey`, and `var`. The `modelResource` attribute is the fully qualified Java object class name. This class name gets translated into its more readable name as specified in file `Language.properties`.
 
 As for the `modelResourceDescription` attribute, you can pass in anything that best describes this model instance. In this example, the blogs title was passed in. The `resourcePrimKey` attribute is simply the primary key of your model instance. The `var` attribute specifies the name of the variable to be assigned the resulting URL String. This variable is then passed to the `<liferay-ui:icon>` tag so the permission icon will have the proper URL link. There's also an optional attribute redirect that's available if you want to override the default behavior of the upper right arrow link. That is all you need to do to allow users to configure the permission settings for model resources.
+
+Next, we'll show you how to implement permissions checking.
 
 ### Checking Permissions
 
