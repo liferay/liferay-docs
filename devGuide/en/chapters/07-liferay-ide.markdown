@@ -17,7 +17,7 @@ This section is a detailed guide to install Liferay IDE.
 
 -   Java 5.0 JRE or greater
 
--   [Eclipse Indigo Java EE (3.7.1)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr1)) or [Eclipse Helios Java EE (3.6.2)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
+-   [Eclipse Indigo Java EE (3.7.1)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr1) or [Eclipse Helios Java EE (3.6.2)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
 
 ### Installation steps
 
@@ -323,4 +323,10 @@ Follow the following steps to verify that either of the previous import processe
 
 	![Figure 7.36: Project Facets](../../images/ide-project-facets.png)
 
+Great! You've confirmed that your imported project is good to go.
 
+## Conclusion
+
+In this chapter we've explored the Liferay IDE and have gone through step-by-step instructions with regards to installation and setup, creating and deploying Liferay projects, and importing existing projects into Liferay IDE. You must admit -- it is a slick tool-set! And we hope you take advantage of it in using Liferay Portal and developing your Liferay plugins.
+
+Next, we'll get up-close and personal with Liferay's APIs!
