@@ -584,7 +584,7 @@ Note the parameters passed into the `check(...)` method. Again, the `getPermissi
 
 Let's review what we've just covered. Implementing permission into your custom portlet consists of four main steps. First step is to define any custom resources and actions. Next step is to implement code to register (or add) any newly created resources such as a `BlogsEntry` object. The third step is to provide an interface for the user to configure permission. Lastly, implement code to check permission before returning resources or showing custom features. Two major resources are portlets and Java objects. There is not a lot that needs to be done for the portlet resource to implement the permission system since Liferay Portal has a lot of that work done for you. You mainly focus your efforts on any custom Java objects you've built. You're now well equipped to implement security in your custom Liferay portlets!
 
-## TagLib Builder (new TODO)
+Next, let's learn how to use the Asset Framework.
 
 ## Asset Framework
 
@@ -970,10 +970,6 @@ Now you can start enjoying the benefits of the asset framework in your custom po
 ## File Storage Framework
 
 The File Storage Framework: Allows storing files using the back-end of the Document Library. By using this framework you won't have to worry yourself about clustering or backups since that will already be taken care of for the Document Library itself. This framework is used, for example, by the wiki and the message boards of Liferay to store attached files in pages and posts respectively. You can check the source code of these two portlets for great real-life examples of how to use the framework.
-
-### Document Types (new TODO)
-
-### CMIS Repository / Third Party Repository Hooks (new TODO)
 
 ## Other frameworks
 
