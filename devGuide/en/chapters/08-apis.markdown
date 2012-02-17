@@ -637,9 +637,13 @@ When using JSON RPC (see below), null values may be sent explicitly, even withou
 
 	"last-access-date" : null
 
-#### Difference between URL and query encoding
+#### Parameters encoding
 
-Although often forgotten, there is a difference between URL encoding and query (request parameters) encoding. An  illustrative example of this is the difference in how the space character is encoded. When the space character is part of the URL path, it is encoded as `%20`; when it is part of the query it is encoded as plus sign (`+`).
+This is something often forgotten: there is a difference between URL and query (i.e. request parameters) encoding. Most illustrative difference is how a space character is encoded. When space character is part of the URL path, it is encoded as `%20`; when it is part of the query it is encoded as plus sign (`+`).
+
+Furthermore, all rules for encoding international (non-ascii) characters applies. As portal works in UTF-8 mode, parameter values has to be encoded as UTF-8 values. However, the portal itself is not responsible for decoding request URLs and request parameter values to UTF-8. This task is done by web-server layer (Tomcat, Apache...). When accessing services through JSON-RPC, encoding parameters to UTF-8 is not enough - we need to send the encoding type in `Content-Type` header, too.
+
+For example, let's pass the value "Супер" ("Super" in cyrillic) to some JSON Web Service method. This name first has to be converted to UTF-8 (resulting in array of 10 bytes) and then encoded for URLs or request parameters. The resulting value is the string: `%D0%A1%D1%83%D0%BF%D0%B5%D1%80` that can be passed to our service method. When received, this value is first going to be translated to an array of 10 bytes (URL decoded) and then converted to UTF-8 string of 5 original characters.
 
 #### Sending files as arguments
 
