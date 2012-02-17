@@ -5,13 +5,13 @@ This chapter provides an overview of several of the essential Liferay *applicati
 
 Liferay comes with a host of APIs that expose powerful portal and portlet services. You can access Liferay's built-in *portal* services for such entities as User, Organization, UserGroup, Company, Role, Permission, ResourcePermission and Layout. In addition, you can access Liferay's built-in *portlet* services for such portlets as those for blogs, wikis, assets, social equity, and the Documents & Media Library.
 
-The APIs can be called via Java method or web service invocations giving you flexibility to implement client code in Java or other languages (even a scripting language such as PHP) that support web service invocations.  The APIs can be called from within a portlet or non-portlet code. You can make calls to the APIs *locally* from within the portal or *remotely* outside of the portal's *Java virtual machine* (*JVM*).
+The APIs can be called via Java method or web service invocations, giving you flexibility to implement client code in Java or any other language (even a scripting language such as PHP) that supports web service invocations.  The APIs can be called from within a portlet or non-portlet code. You can make calls to the APIs *locally* from within the portal or *remotely* outside of the portal's *Java virtual machine* (*JVM*).
 
 This chapter covers the following topics:
 
--	*Local API:* Using Liferay services locally, from the same JVM as the portal.
+-	*Invoking the API locally:* Using Liferay services locally, from the same JVM as the portal.
 	
--	*Remote API:* Using Liferay services remotely, outside of the portal's JVM and from machines other than the portal host.
+-	*Invoking the API remotely:* Using Liferay services in a *remote* manner. This can involve invoking the API from outside of the portal's JVM, from machines other than the portal host, or even from the portal host itself. 
 
 -	*Service Security:* Leveraging the service security layers provided in Liferay's service oriented architecture (SOA).
 
@@ -19,33 +19,37 @@ This chapter covers the following topics:
 
 -	*JSON Web Services:* Consuming services via Liferay's JSON service interface.
 
--	*Service Context:* Understanding what the service context is, how to it can be used in services, and how to use it in calling services.
+-	*Service Context:* Understanding what the service context is, how it can be used in services, and how to use it in calling services.
 
-First, let's consider Liferay's service oriented architecture and the layers of securtiy involved with the services.
+First, let's consider invoking Liferay's services locally.
 
-## Local API
+## Invoking the API locally
 
-Each service built with *Service Builder* provides a local interface to clients running in the same JVM as the portal. Since Liferay's portal and portlet services are built using the Service Builder, their public service methods can be accessed through static methods provided by auto-generated `-LocalServiceUtil` classes.
+Each service provides a local interface to clients running in the same JVM as the portal. There are two ways to invoke the methods of a service API:
 
-So, how do you find the services? Just look it up in our Javadocs.
+-	By using Spring injection, if your app is using Spring and has access to the portal context.
+
+-	By using `-ServiceUtil` classes. These classes hide complexity of the service implementations and may be a good option if you are not familiar with Spring.
+
+We'll demonstrate invoking a service via its `-ServiceUtil`. But first, how do we find services? ... By looking them up in the Liferay Portal Javadocs.
 
 For example, here is how you lookup the Organization services:
 
 1.	In your browser, open up the Javadocs at [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
-2.	Since the services for the Organization entity belong to the portal, click on the link for the `com.liferay.portal.service` package in the *Packages* frame.
+2.	Click on the link for the `com.liferay.portal.service` package in the *Packages* frame, since the services for the Organization entity belong to the *portal*.
 
 3.	Find and click on the `-ServiceUtil` class (in this case `OrganizationLocalServiceUtil`) in the class summary table or the list of classes.
 
 It's just that easy!
 
-Similarly, if you want to search for one of Liferay's built-in portlet services, no problem. But, when looking up the package, instead of clicking on the linke for  the `com.liferay.portal.service` package you click on the link for the portlet's service package. The portlet service packages use the naming convention `com.liferay.portlet.[portlet-name].service`, where `[portlet-name]` is replaced with the actual name of the portlet.
+Similarly, if you want to search for one of Liferay's built-in portlet services, no problem. But, when looking up the package, instead of clicking on the link for the service package of the *portal*, click on the link for the service package of the *portlet*. The portlet service packages use the naming convention `com.liferay.portlet.[portlet-name].service`, where `[portlet-name]` is replaced with the actual name of the portlet.
 
-For example, to lookup the services for user's blogs statistics you would do the following:
+For example, here is how you lookup services for user blogs statistics:
 
 1.	In your browser, open up the Javadocs at [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
-2.	Since the services are a part of the blogs portlet, click on the link for the `com.liferay.portlet.blogs.service` package in the *Packages* frame.
+2.	Click on the link for the `com.liferay.portlet.blogs.service` package in the *Packages* frame, since the services are a part of the *blogs portlet*.
 
 3.	Find and click on the `-ServiceUtil` class (in this case `BlogsStatsUserLocalServiceUtil`) in the class summary table or the list of classes.
 
@@ -63,39 +67,33 @@ This JSP code invokes static method `getOrganizationStatsUsers()` on the `-Local
 
 Next, let's consider how to invoke services remotely.
 
-## Remote API
+## Invoking the API remotely
 
-Services are also made available to *remote* clients (clients running outside of the portal JVM). Service Builder generates remote interfaces for your entities if their `remote-service` attribute is set to `true` in your portlet's `service.xml`. Here is an example of how remote services are turned on for Liferay's `Organization` entity in the `service.xml` for the portal:
+Liferay services can also be invoked in a *remote* manner. The services API is available to *remote* clients -- clients running outside of the portal JVM or clients running on a remote machines. One key aspect of this API is that it includes security checks. Unless a developer wants to avoid permission checking, he should develop his client (whether it be local or remote) to always use this front-end layer.
 
-    <entity name="Organization" local-service="true" remote-service="true">
+Liferay's API follows a Service Oriented Architecture [(SOA)](http://en.wikipedia.org/wiki/Service-oriented_architecture). You can invoke these services using a SOAP / WSDL based approach or using [REST](http://en.wikipedia.org/wiki/Representational_state_transfer). Later sections on SOAP web services and JSON web services demonstrate these approaches, respectively. Note too, if you want to use the API through Remote Procedure Calls ([RPC](http://en.wikipedia.org/wiki/Remote_procedure_call)), you can do so. You have plenty of good options for leveraging Liferay's API.
 
-The generated services can be accessed using [RPC](http://en.wikipedia.org/wiki/Remote_procedure_call), [SOA](http://en.wikipedia.org/wiki/Service-oriented_architecture) or [REST](http://en.wikipedia.org/wiki/Representational_state_transfer). We'll explore how to access and invoke web services in a variety of ways. 
-
-But first, we'll step back for a moment and consider the security layers of Liferay's *service oriented* architecture and how they can be configured.
+Next, we'll step back for a moment and consider the security layers of Liferay's *service oriented* architecture and how they can be configured.
 
 ## Service Security Layers
 
-Liferay's Service Builder utility is used to generate all of the low level code for accessing resources from the portal database. This utility is further explained in *Liferay in Action*, but it is mentioned here because of its feature which generates interfaces not only for Java code, but also for web services and JavaScript. This means that the method calls for storing and retrieving portal objects are all the same, and are generated in the same step.
+By default, a user connecting from the same machine Liferay is running on can access remote services so long as that user has permission to use those services in Liferay's permissions system. Of course, you are not really "remote" unless you are accessing services from a different machine; but we recommend using the API in a remote manner to trigger the security checks. Liferay has two layers of security when it comes to accessing its services remotely. Without explicit rights to both layers, a remote exception will be thrown and access to those services will not be granted.
 
-![Figure 8.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
-
-Because the actual method calls for retrieving data are the same regardless of how one gets access to those methods (i.e. locally or through web services), Liferay provides a consistent interface for accessing portal data that few other products can match. The actual interfaces for the various services are covered in *Liferay in Action*, but before they can be used there are steps that need to be taken to enable users to access those services remotely.
-
-In the default `portal.properties` file, there is a section called **Main Servlet**. This section defines the security settings for all of the remote services provided by Liferay. Copy this section and paste it into your custom `portal-ext.properties` file, and you can configure security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service Servlet, and the WebDAV Servlet.
-
-By default, a user connecting from the same machine Liferay is running on can access remote services so long as that user has the permission to use those services in Liferay's permissions system. Of course, you are not really "remote" unless you are accessing services from a different machine. Liferay has two layers of security when it comes to accessing its services remotely. Without explicit rights to both layers, a remote exception will be thrown and access to those services will not be granted.
-
-The first layer of security that a user needs to get through in order to call a method from the service layer is servlet security. The *Main Servlet* section of the `portal-ext.properties` file is used to enable or disable access to Liferay's remote services. In that section of the properties file, there are properties for each of Liferay's remote services.
-
-You can set each service individually with the security settings that you require. For example, you may have a batch job which runs on another machine in your network. This job looks in a particular shared folder on your network and uploads documents to your community's document library portlet on a regular basis, using Liferay's web services. To enable this batch job to get through the first layer of security, you would modify the `portal-ext.properties` file and put the IP address of the machine on which the batch job is running in the list for that particular service. For example, if the batch job uses the Axis web services to upload the documents, you would enter the IP address of the machine on which the batch job is running to the `axis.servlet.hosts.allowed` property. A typical entry might look like this:
+The first layer of security that a client needs to get through in order to call a method from the service layer is *servlet security*. For example, you may have a batch job which runs on another machine in your network. This job looks in a particular shared folder on your network and uploads documents to your community's document library portlet on a regular basis, using Liferay's web services. To enable this batch job to get through servlet security, the portal admistrator will need to set portal properties appropriately to allow the machine access to that particular type of service. For example, if the batch job uses the Axis web services to upload the documents, the portal administrator would need to add the IP address of the machine on which the batch job is running to the `axis.servlet.hosts.allowed` property. A typical entry might look like this:
 
 	axis.servlet.hosts.allowed=192.168.100.100, 127.0.0.1, SERVER_IP
 
-If the machine on which the batch job is running has the IP address `192.168.100.100`, this configuration will allow that machine to connect to Liferay's web services and pass in user credentials to be used to upload the documents.
+If the IP address of the machine on which the batch job is running is listed with allowable hosts for the service, then that machine is allowed to connect to Liferay's web services, pass in the appropriate user credentials, and upload the documents.
+
+![Figure 8.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
+
+---
+![note](../../images/tip-pen-paper.png)**Note:** The `portal.properties` file resides on the portal host machine and is controlled by the portal adminstrator. Portal administrators can configure security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The [Configuring Liferay's Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties) section of *Using Liferay Portal 6.1* describes these properties.
+---
+
+The second layer of security is Liferay's *security model* that it uses for every object in the portal. The user ID that accesses the services remotely must have the proper permission to operate on the objects it will be accessing. Otherwise, a remote exception will be thrown. The Portal Administrator will need to make use of Liferay's usual means of granting users access to these resources. For example, say that a Documents and Media Library folder called *Documents* has been set up in a site and that a role has been created called *Document Uploaders* which has the rights to add documents to this folder. Your batch job will be accessing Liferay's web services in order to upload documents into this folder. In order for this to work, you will have to call the web service using the user ID of a user that is a member of this group (or the user ID of a user that has individual rights to add documents to this folder). Otherwise, the user will be prevented from using the Web Service.
 
 ![Figure 8.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
-
-The second layer of security is Liferay's security model that it uses for every object in the portal. The user ID that accesses the services remotely must have the proper permission to operate on the objects it will be accessing. Otherwise, a remote exception will be thrown. The Portal Administrator will need to make use of Liferay's usual means of granting access to these resources to the user ID that will be operating on them remotely. For example, say that a Documents and Media Library folder called *Documents* has been set up in a site. A role has been created called *Document Uploaders* which has the rights to add documents to this folder. Your batch job will be accessing Liferay's web services in order to upload documents into this folder. In order for this to work, you will have to call the web service using a user ID that is a member of this group (or that has individual rights to add documents to this folder). Otherwise, you will be prevented from using the Web Service.
 
 To call the AXIS web service using credentials, you would use the following URL syntax:
 
@@ -103,25 +101,37 @@ To call the AXIS web service using credentials, you would use the following URL 
 
 The user ID is the user's ID from the Liferay database. This may be obtained by logging in as the user and clicking *My Account* from the Dock. In the top left corner of the portlet that appears is the user ID.
 
-For example, to get Organization data using a user that has the ID of *2* with a password of *test*, you would use the following URL:
+For example, to get Organization data using a user that has the ID of *2* and a password of *test*, you would use the following URL:
 
 	http://2:test@localhost:8080/api/secure/axis/Portal_OrganizationService
 
-It is important to note here how *Password Policies* (see chapter *Administering Liferay Portal* of [Using Liferay Portal 6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-users-user-groups-organizations-sites-teams-and-roles)) can be used in combination with this feature. If you are enforcing password policies on your users (requiring them to change their passwords on a periodic basis, etc.), any administrative ID which accesses Liferay's web services in a batch job will have its password expire too.
+---
+![note](../../images/tip-pen-paper.png)**Note:** In old Liferay versions you could access that services by `http://localhost:8080/tunnel-web/axis`, however in Liferay 6.1 this path has changed and when you type it, you are redirected to the new one.
+---
 
-To prevent this from happening, you can add a new password policy which does not enforce the password expiration and add your administrative user ID to it. Then your batch job can run as many times as you need it to, and the administrative ID's password will never expire.
+In this example, we are entering credentials in the URL as a shortcut to achieve HTTP Basic Authentication. But it is advised to use HTTPS with some form of encryption whenever entering the credentials using HTTP Basic Authentication, unless the communication is within a fully trusted network.
+
+The authorization type specified for your portal's company dictates the authorization type you must use to access your web service. The portal administrator can set the security authentication type to either of the following:
+
+- screen name
+- user ID
+- email address
+
+It is important to note here how *Password Policies* (see chapter *Administering Liferay Portal* of [Using Liferay Portal 6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-users-user-groups-organizations-sites-teams-and-roles)) can be used in combination with this feature. If the portal is enforcing password policies on its users (requiring them to change their passwords on a periodic basis, etc.), any administrative ID which accesses Liferay's web services in a batch job will have its password expire too.
+
+To prevent this from happening, the portal adminstrator can add a new password policy which does not enforce the password expiration and add your administrative user ID to it. Then your batch job can run as many times as you need it to, and the administrative ID's password will never expire.
 
 In summary, accessing Liferay remotely requires the successful passing of two security checks:
 
-1.  The IP address must be pre-configured in the server's `portal-ext.properties` file.
+1.  The IP address must be pre-configured in the server's portal properties.
 
-2.  The user ID being used must have permission to access the resources it is attempting to access.
+2.  The user must have permission to access the related resources.
 
 Next, we'll learn about Liferay's SOAP web services.
 
 ## SOAP Web Services
 
-Service Builder generates classes to use your services via *Simple Object Access Protocol* (*SOAP*) over HTTP. SOAP is the *packaging* protocol and HTTP is the *transport* protocol. For our example, we'll look at the SOAP web service classes for Liferay's `Company`, `User`, and `UserGroup` portal services to accomplish the following:
+Liferay's Service Builder generates classes to use your services via *Simple Object Access Protocol* (*SOAP*) over HTTP. SOAP is the *packaging* protocol and HTTP is the *transport* protocol. For our example, we'll look at the SOAP web service classes for Liferay's `Company`, `User`, and `UserGroup` portal services to accomplish the following:
 
 1. List each UserGroup to which user `test` belongs
 
@@ -140,7 +150,7 @@ Here are the SOAP related classes that we'll use:
 	import com.liferay.portal.service.http.UserServiceSoap;
 	import com.liferay.portal.service.http.UserServiceSoapServiceLocator;
 
-You can see in the listing a naming convention involving classes with suffixes `-ServiceSoapServiceLocater`, `-ServiceSoap`, and `-Soap`. The `-ServiceSoapServiceLocater` class *finds* the `-ServiceSoap` by means of the service's URL you provide. The `-ServiceSoap` class implements the Java Remote Method Invocation (RMI) interface bound to the the services specified in the *Web Services Definition Language* (*WSDL*) file for each service. Lastly, the `-SOAP` classes are the serializeable implementations of the models.  Let's look at how to determine the URLs for these services.
+You can see in the listing a naming convention involving classes with suffixes `-ServiceSoapServiceLocater`, `-ServiceSoap`, and `-Soap`. The `-ServiceSoapServiceLocater` class *finds* the `-ServiceSoap` by means of the service's URL you provide. The `-ServiceSoap` class is the interface to the services specified in the *Web Services Definition Language* (*WSDL*) file for each service. Lastly, the `-Soap` classes are the serializeable implementations of the models.  Let's look at how to determine the URLs for these services.
 
 Service Builder was used to publish these services as web services.  You can view a listing of the services deployed on your portal by opening your browser to the URL of the format `http://[host]:[port]/api/secure/axis` for your *secure* services (services requiring user authentication) and the URL of the format `http://[host]:[port]/api/axis` for your services that do not require user authentication. For demonstration, we're using *secure* services. Here are the web services for `UserGroup`:
 
@@ -153,25 +163,6 @@ Each web service is listed with its name, operations, and a link to its WSDL fil
 As you'll see in the example in the next section, you pass in the WSDL URL along with your login credentials to the SOAP service locator for your service.
 
 Next, let's invoke the web service!
-
-### Enabling SOAP Web Services
-
-First of all, the host must be allowed to access the remote services by configuring the portal-ext.properties file. By default, the portal.properties has the following settings to enable the services be accessed remotely:
-
-axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP
-axis.servlet.https.required=false
-
-The code above shows the IPs whick can access the services. You can input a list of comma delimited IPs that can access this servlet. You also can input a blank list to allow any IP to access this servlet. SERVER_IP will be replaced with the IP of the host server. This is the reason that you can access web services only locally if you don't change this list.
-
-Besides, the user must have permission to access the portal resources.
-To authenticate an user remotely we have to change the authentication method to screenName or userId:
-
-company.security.auth.type=screenName
-
-Type http://localhost:8080/api/axis in your browser and see a list of SOAP services.
-To access the wsdl, click on the wsdl for any of the service.
-
-PS: In old Liferay versions you could access that services by http://localhost:8080/tunnel-web/axis, however in Liferay 6.1 this path has changed and when you type it, you are redirected to the new one.
 
 ### SOAP Java Client
 
@@ -334,13 +325,9 @@ Some things to note about the URL:
 
 -	It is *secure* (authenticated) URL for the service. Authentication is done using HTTP Basic Authentication, which of course is not appropriate for a production environment, since the password is unencrypted, but is used for convenience in this example.
 
--	The screen name and password are passed in as credentials. The authorization type specified for your portal's company dictates the authorization type you must use to access your web service. You can override the value for property `company.security.auth.type` found in `portal.properties` by specifying your desired authorization type value in your `portal-ext.properties`. Valid authorization type values are:
+-	The screen name and password are passed in as credentials.
 
-    - `screenName`
-    - `userId`
-    - `emailAddress`
-
-- The name of the service (e.g. `Portal_UserGroupService`) is specified at the end of the URL. Remember that the service name can be found in the web service listing like the one we looked at previously.
+- 	The name of the service (e.g. `Portal_UserGroupService`) is specified at the end of the URL. Remember that the service name can be found in the web service listing like the one we looked at previously.
 
 The operations `getCompanyByVirtualHost()`,  `getUserIdByScreenName()`, `getUserUserGroups()`, `addUserGroup()` and `addUserGroupUsers()` are specified for the `-ServiceSOAP` classes `CompanyServiceSoap`, `UserServiceSoap` and  `UserGroupServiceSoap` in the WSDL files. And information on parameter types, parameter order, request type, response type, and return type are conveniently specified in the WSDL for each Liferay web service. It's all there for you!
 
@@ -547,7 +534,7 @@ Next, let's take a look at portal configuration options that apply to JSON Web S
 
 ### Portal Configuration of JSON Web Services
 
-JSON Web Services are enabled by default but can be easily disabled by setting the following property in your `portal-ext.properties`: 
+JSON Web Services are enabled on Liferay Portal by default but can be easily disabled by specifying the following portal property setting: 
 
 	json.web.service.enabled=false
 
@@ -583,7 +570,7 @@ The general rule is that besides the method name, you must provide **all** param
 
 Note, however, it is neither important how parameters are provided (as part of the URL line, as request parameters, etc.) nor the order the parameters.
 
-An exception to the rule of *all* parameters being required, is when using numberic *hints* to match methods. Let's look at using hints next.
+An exception to the rule of *all* parameters being required, is when using numeric *hints* to match methods. Let's look at using hints next.
 
 #### Using hints
 
@@ -637,9 +624,13 @@ When using JSON RPC (see below), null values may be sent explicitly, even withou
 
 	"last-access-date" : null
 
-#### Difference between URL and query encoding
+#### Parameters encoding
 
-Although often forgotten, there is a difference between URL encoding and query (request parameters) encoding. An  illustrative example of this is the difference in how the space character is encoded. When the space character is part of the URL path, it is encoded as `%20`; when it is part of the query it is encoded as plus sign (`+`).
+Although often forgotten, there is a difference between URL encoding and query (i.e. request parameters) encoding. An  illustrative example of this is the difference in how the space character is encoded. When the space character is part of the URL path, it is encoded as `%20`; when it is part of the query it is encoded as plus sign (`+`).
+
+Furthermore, all of these rules for encoding apply to international (non-ascii) characters, as well. As portal works in UTF-8 mode, parameter values must be encoded as UTF-8 values. However, the portal itself is not responsible for decoding request URLs and request parameter values to UTF-8. This task is done by the web-server layer (Tomcat, Apache, etc.). When accessing services through JSON-RPC, encoding parameters to UTF-8 is not enough - we also need to send the encoding type in a Content-Type header (e.g. `Content-Type : "text/plain; charset=utf-8"`).
+
+For example, let's pass the value "&#1057;&#1091;&#1087;&#1077;&#1088;" ("Super" in cyrillic) to some JSON Web Service method. This name first has to be converted to UTF-8 (resulting in array of 10 bytes) and then encoded for URLs or request parameters. The resulting value is the string: `%D0%A1%D1%83%D0%BF%D0%B5%D1%80` that can be passed to our service method. When received, this value is first going to be translated to an array of 10 bytes (URL decoded) and then converted to a UTF-8 string of the 5 original characters.
 
 #### Sending files as arguments
 
@@ -754,7 +745,7 @@ Let's take a look a some returned values from calls to services. In fact, let's 
 
 Notice that the JSON string returned represents the `UserGroup` object you just created. The object has been serialized into a JSON string. As a starting point for understanding JSON strings, go to [json.org](http://www.json.org/).
 
-To find out how to serialize Java objects, maps and lists, check out article [JSON Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization) by Igor Spasic. 
+To find out how to serialize Java objects, maps and lists, check out article [JSON Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization) by Igor Spasi&#263;. 
 
 Well, you've just added some powerful tools to your toolbox by learning how to leverage JSON web services in Liferay. Good job!
 
