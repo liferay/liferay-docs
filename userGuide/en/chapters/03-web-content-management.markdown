@@ -565,6 +565,12 @@ For example, we could create a page variation called Thanksgiving for the News a
 
 ![Figure 3.23: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
+Another powerful feature is the possibility of *merging* Site Pages Variations. In order to merge two Site Pages Variations, you need to go to the Manage Site Variations screen. From there, you should click on *Merge* on the Site Pages Variation that you want to use as the base, and you will be asked to choose the Site Pages Variation to merge on top of it. Merging works in the following way:
+
+* New pages that don't exist in the base Variation, will be added.
+* If a page exists in both Site Pages variations, and at least one version of the page was marked as ready for publication, then the latest version marked as ready will be added as a new Page Variation in the target page of the base Variation. (Note that older versions or page variations not marked as ready for publication won't be copied. However, merge can be executed as many times as needed and will create the needed pages variations in the appropriate page of the base Site Pages Variation).
+* Merging does not affect content nor will overwrite anything in the base Variation, it will just add more versions, pages and page variations as needed.
+
 Let's finish our discussion of staging by outlining a few more features. 
 
 #### Wrapping up staging
