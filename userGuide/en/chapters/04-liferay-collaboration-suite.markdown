@@ -229,13 +229,13 @@ If you click *Configuration* from the menu button in the title bar of the portle
 
 When you've finished setting the options in the portlet, click *Save*. Then close the dialog box. You'll notice the Blogs Aggregator looks very much like the Blogs portlet, except that the entries come from more than one author. This makes it nice and familiar for your users to navigate. 
 
-We've already talked a little bit about connecting content across the portal by using Related Assets, now let's take a look at the Related Assets portlet.
+We've already talked a little bit about connecting content across the portal by using Related Assets; now let's take a look at the Related Assets portlet.
 
 ##Related Assets
 
-Related Assets is a new feature in Liferay 6.1 that enables you to connect any number of assets within a site or across the portal, even if they don't share any tags and aren't in the same category. We've already seen that you can show related assets within the display for a specific asset, and with the Related Assets portlet you can display any assets which are related to content displayed on that page.
+Related Assets is a new feature in Liferay 6.1 that enables you to connect any number of assets within a site or across the portal, even if they don't share any tags and aren't in the same category. We've already seen that you can show related assets within the display for a specific asset, and with the Related Assets portlet you can show links to any assets which are related to content displayed on that page.
 
-The Related Assets portlet is based on the Asset Publisher, and possseses essentially the same interface with one key difference. The Asset publisher displays any content that meets the criteria selected in the portlet configuration, the Related Assets portlet only displays content that meets the criteria, and is listed as a related asset for some content item that is currently being displayed on the page where it is placed.
+The Related Assets portlet is based on the Asset Publisher, and possseses essentially the same interface with one key difference. The Asset publisher displays any content that meets the criteria selected in the portlet configuration. The Related Assets portlet only displays content that meets the criteria, and also is listed as a related asset for a piece of content that is currently published on the page where it is placed.
 
 Let's move on, now, to the Calendar portlet.
 
