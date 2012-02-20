@@ -7,7 +7,7 @@ Before deciding to use an Ext plugin it's important to understand the costs of u
 
 The main use cases in which an Ext plugin may be needed are:
 
--   Customizing `portal.properties` that are not supported by Hook Plugins
+-   Specifying custom classes as portal property values. For example, to specify a property that needs a custom class (e.g. `global.startup.events=my.custom.MyStartupAction`), an Ext plugin is the only way to add that custom class to the portal class loader.
 
 -   Providing custom implementations for any of the Liferay beans declared in Liferay's Spring files (use service wrappers from a hook instead if possible)
 
@@ -102,7 +102,7 @@ By default, several files are added to the plugin. Here are the most significant
 
 -	`docroot/WEB-INF/liferay-plugin-package.properties`:  Contains properties of the plugin such as its display name, version, author, and license type.
 
--   `docroot/WEB-INF/ext-impl/src/portal-ext.properties`: Can be used to overwrite any configuration property of Liferay, even those that cannot be overridden by a hook plugin (which is always preferred when possible). Note that if this file is included it will be read instead of any other `portal-ext.properties` in the application server. Because of that you may need to copy into it the properties related to the database connection, file system patches, ... etc.
+-   `docroot/WEB-INF/ext-impl/src/portal-ext.properties`: Can be used to override any configuration property of Liferay. However, whenever possible, a hook plugin should be used to override properties. An appropriate case to use an Ext plugin for overriding a property would be if you needed to specify a custom class as a portal property value. As needed, you can use a `portal-ext.properties` file with each of your Ext plugins. But, you should never override the *same* property from multiple `portal-ext.properties` files, as the loading order is not assured and therefore could lead to unintended system behavior.
 
 -   `docroot/WEB-INF/ext-web/docroot/WEB-INF` files:
 
