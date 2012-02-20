@@ -229,6 +229,14 @@ If you click *Configuration* from the menu button in the title bar of the portle
 
 When you've finished setting the options in the portlet, click *Save*. Then close the dialog box. You'll notice the Blogs Aggregator looks very much like the Blogs portlet, except that the entries come from more than one author. This makes it nice and familiar for your users to navigate. 
 
+We've already talked a little bit about connecting content across the portal by using Related Assets, now let's take a look at the Related Assets portlet.
+
+##Related Assets
+
+Related Assets is a new feature in Liferay 6.1 that enables you to connect any number of assets within a site or across the portal, even if they don't share any tags and aren't in the same category. We've already seen that you can show related assets within the display for a specific asset, and with the Related Assets portlet you can display any assets which are related to content displayed on that page.
+
+The Related Assets portlet is based on the Asset Publisher, and possseses essentially the same interface with one key difference. The Asset publisher displays any content that meets the criteria selected in the portlet configuration, the Related Assets portlet only displays content that meets the criteria, and is listed as a related asset for some content item that is currently being displayed on the page where it is placed.
+
 Let's move on, now, to the Calendar portlet.
 
 ## Calendar
@@ -1025,7 +1033,7 @@ Suppose you've created an *Image Gallery* folder using a Documents and Media por
 
 Next, navigate to the Documents and Media portlet hosting the folder you'd like to access. Mouse over the folder (*Image Gallery* for our example) and select *Access from Desktop*.
 
-![Figure 4.x: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/access-from-desktop.png)
+![Figure 4.41: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/access-from-desktop.png)
 
 Copy the WebDAV URL. On Windows, right-click on My Computer and select *Map Network Drive*. Select an unused drive, paste the WebDAV URL, and click *Finish*. You're prompted to enter your Liferay credentials and then, provided you have the required permissions, the *Image Gallery* folder appears. You can now add, edit, move, or delete files in this directory. 
 
@@ -1039,7 +1047,7 @@ Note that Liferay increments the version numbers of files edited and uploaded vi
 
 Tags are an important tool that you can use to help organize information on your portal and make it easier for your users to find content that they're looking for. Tags are words or phrases that you can attach to any content on the website. Tagging content will make your search results more accurate, and enable you to use tools like the Asset Publisher to display content in an organized fashion on a web page. There are two ways to create tags: you can do it through the administrative console in the control panel, or on the fly as content is created.
 
-![Figure 4.41: The Add Tag Dialog](../../images/05-add-tag.png)
+![Figure 4.42: The Add Tag Dialog](../../images/05-add-tag.png)
 
 To create tags in the control panel, select the site that you want to create tags for, and select *Tags*. From this screen, you will be able to view any existing tags and make new ones. To create a new tag, simply click *Add Tag*. You'll then be asked for the name of the tag, and you'll have the ability to set permissions for viewing or managing the tag. You can also add properties to a tag. Properties basically act like tags for your tags. Structurally, properties are key-value pairs associated with specific tags that provide information about your tags. You can edit existing tags from the *Tags* window of on the control panel. You can change the tag name, change the tag's permissions, delete the tag, or add properties.
 
@@ -1051,7 +1059,7 @@ Categories are similar in concept to tags, but are designed for use by administr
 
 Adding vocabularies and categories is similar to adding tags. Once you've selected the site you want to work on, select *Categories* from the content section of the control panel, and you will be presented with the categories administration page.
 
-![Figure 4.42: Categories Administration Page](../../images/05-categories.png)
+![Figure 4.43: Categories Administration Page](../../images/05-categories.png)
 
 Clicking on a vocabulary on the left will display any categories that have been created under that vocabulary. You can create new vocabularies simply by clicking *Add Vocabulary* and providing a name for it. You can create categories in a similar fashion by choosing a vocabulary on the left, and then selecting *Add Category*. Like tags, you can also provide properties for categories. Once you have created some vocabularies and categories, you can take advantage of the full capabilities of categories by creating a nested hierarchy of categories. To nest categories, select what you want to be the parent category, then drag any category that you want to become a child category onto it. You will see a plus sign appear next to the name of the category you are dragging if you can add it to the selected parent category; if you see a red *x* that means that you cannot add that category as a subcategory of parent category that you have selected.
 

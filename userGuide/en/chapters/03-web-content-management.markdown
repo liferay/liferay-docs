@@ -94,11 +94,27 @@ Permissions in Liferay WCM work the same way they do everywhere else in Liferay.
 
 For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with the your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. So let's go back to the page where we want the content displayed and add the Web Content Display portlet (in this case, the Welcome page).
 
+##### Localization
+
+Previous versions of Liferay had the ability to create and manage different translations of your web content, but with Liferay 6.1 we've added several improvements to really streamline your localization experience. 
+
+When you create a new piece of Web Content, you have the ability to chose a Default Language. If you click *Change* you can select from a large number of languages that Liferay supports to be your default. Before you can create a translation, you will need to finish creating the content in your default language and save it. Once you've done that, editing the content will provide you with the option to *Add Translation*.
+
+![Figure 3.5: Adding a translation](../../images/04-web-content-content-translation.png)
+
+After you click Add Translation, you can select a language, either by scrolling through the list, or by entering the language you want to use in the search box. When you select a language, a lightbox will open within your browser window, enabling you to easily compare the original with the new translation. Once you are done with the translation, click *Save*, and the translation will be added to the list of *Available Translations*. 
+
+![Figure 3.6: Adding a translation](../../images/04-web-content-content-translation-2.png)
+
+The ability to completely delete a translation in one step has also been added. Instead of simply disabling a translation or having to go through a multistep process to remove it, you can now simply open the translation that you don't want and click *Remove Translation*.
+
+When you create a new web content structure, each field you create will have a *Localizable* checkbox displayed next to it. This enables you to control what can and can't be changed in the translation process. For example, if you don't want images or content titles to be changed when the content is translated, you can make sure that those fields aren't listed as localizable. When you follow the steps above to localize content, only fields within the structure that had the *Localizable* box checked will appear within the translation window.
+
 #### Publishing Content with the Web Content Display Portlet
 
 Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page, by selecting *Add &rarr; Web Content Display* from the Dockbar.
 
-![Figure 3.5: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
+![Figure 3.7: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
 Once the portlet appears, drag it to the position on the page where you want your content to appear. You can have as many Web Content Display portlets on a page as you need, which gives you the power to lay out your content exactly the way you want it. 
 
@@ -106,7 +122,7 @@ To add existing web content, select the *gear* icon on the lower left of the por
 
 Naturally, if your content appears in the list, you can simply select it. If there is lots of published content available, you could search for the content by name, ID, type, version, content, and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
 
-![Figure 3.6: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
+![Figure 3.8: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also enable document conversion for your content. This gives your users the ability to download your content in their format of choice. This is especially handy if you are running a research or academically oriented site; users can very quickly download PDFs of your content for their research projects.
 
@@ -128,7 +144,7 @@ Editing content that's already been published is just as easy as creating new co
 
 Once the content is displayed--whether you've selected content or created it in the Web Content Display portlet--you can edit the content directly from the Web Content Display portlet or from the control panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This launches the WYSIWYG editor and from there you can make any necessary changes.
 
-![Figure 3.7: Edit, Select, and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
+![Figure 3.9: Edit, Select, and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
 
 When you publish your content this way, it becomes available immediately (unless, of course, you have a workflow enabled, which we'll see below). This happens whether you edit it in place or in the control panel.
 
@@ -162,7 +178,7 @@ Go back to the control panel and select *Web Content* from the Site section. Cli
 
 It's very easy to edit structures: all you have to do is drag elements into the structure and then give them names. For instance, select the *Checkbox* element under the *Form Controls* tab and drag it onto the structure. You can do the same with any of the elements. To remove it from the structure, simply select the *Delete* icon (black circle with X) in the upper right corner of the element. Take a moment to add, delete, and rearrange different elements.
 
-![Figure 3.8: Structure Elements](../../images/04-web-content-structure-editor.png)
+![Figure 3.10: Structure Elements](../../images/04-web-content-structure-editor.png)
 
 Liferay supports the following elements in structures:
 
@@ -185,7 +201,7 @@ Liferay supports the following elements in structures:
 **Link to Page:** Inserts a link to another page in the same site.
 **Selection Break:** Inserts a break in the content.
 
-These form elements provide all you need to model any information type that you would want to use as web content. Liferay customers have used structures to model everything from articles, to video metadata, to databases of wildlife. You're limited only by your imagination. To fire that imagination, let's look more closely at the form elements. 
+These form elements provide all you need to model any information type that you would want to use as web content.  Liferay customers have used structures to model everything from articles, to video metadata, to databases of wildlife. You're limited only by your imagination. To fire that imagination, let's look more closely at the form elements. 
 
 ##### Editing form elements
 
@@ -211,7 +227,7 @@ As with everything else in Liferay, you can set permissions on structures. Let's
 
 Setting permissions on structures is done using the same procedure as permissions everywhere else in Liferay. Most users should not have the ability to edit structures. Structures are coupled with templates, which require some web development knowledge to create. For this reason, only trusted developers should be able to create structures and templates. Users, of course, should be able to view structures. The View permission enables them to make use of the structures to create content.
 
-![Figure 3.9: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.11: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles, and this is the recommended way to handle permissions for structures.  
 
@@ -239,7 +255,7 @@ Liferay supports templates written in four different templating languages, to su
 
 Liferay WCM makes it easy to create structures, templates, and content from the same interface. Let's go through the entire flow of how you'd create a structure, link it to a template, and then create content using them both. We'll use Velocity for our template, and we'll lay out the structure fields systematically to go along with the format we've defined for our content.
 
-![Figure 3.10: Adding Template Interface](../../images/04-web-content-templates-create.png)
+![Figure 3.12: Adding Template Interface](../../images/04-web-content-templates-create.png)
 
 1.  Go back to the Web Content section of the control panel and click *Add* under *Web Content*.
 2.  Click the *Edit* icon for Structures.
@@ -289,9 +305,9 @@ After this, the template attempts to get a request parameter called `read_more`.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.11: Initial View](../../images/04-web-content-adv-example1.png)
+![Figure 3.13: Initial View](../../images/04-web-content-adv-example1.png)
 
-![Figure 3.12: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
+![Figure 3.14: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
 
 Of course, there is much, much more you can do with structures and templates. Check out the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)) for further information and examples.
 
@@ -319,7 +335,7 @@ Additionally, you may want to create content and send it through a review and ap
 
 Liferay's WCM lets you define when your content goes live. You can determine when the content is displayed, expired, and/or reviewed. This is an excellent to way to keep your site current and free from outdated (and perhaps incorrect) information. The scheduler is built right into the form that your users make use of to add web content, in the same column as the structure and template selectors.
 
-![Figure 3.13: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
+![Figure 3.15: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 **Expiration Date:** Sets a date to expire the content. The default is one year.
@@ -328,6 +344,22 @@ Liferay's WCM lets you define when your content goes live. You can determine whe
 **Never Review:** Sets the content to never be reviewed.
 
 As you can see, the scheduling feature in Liferay Portal gives you great control in managing when, and for how long, your web content is displayed on your web site. Additionally, you have the ability to determine when your content should be reviewed for accuracy and/or relevance. This makes it possible to manage your growing inventory of content. 
+
+In addition to controlling when content displays, you can use the Display Page feature to control where content displays.
+
+#### Display Page
+
+If you've been using Liferay for a while, or you've just spent a little bit of time with this guide, you might have noticed something about how Liferay handles web content - content is never tied directly to a page. While this can be very useful, because it means that you don't have to recreate content if you want to display the same thing on multiple pages, it also means that you don't have a static URL for any web content, which is bad for search engine optimization.
+
+To fix this issue, Liferay has introduced the concept of Display Pages, and Canonical URLs. Each web content entry on the portal has a canonical URL, which is the official location of the content that is referenced any time the content is displayed. A Display Page can be any page with an asset publisher with the default settings. You can create the page yourself, or use the *Content Display Page* page template included with Liferay.
+
+So right now you're thinking "Wait, you just told me that each Web Content item has its own URL, and that this is somehow related to pages where we display a whole bunch of content on the same page?" Yes. That's exactly what I said. Just watch - create a display page somewhere on your portal, using the Content Display Page template. Now click on *Display Page*, and select the page you just created as the display page for the content. 
+
+![Figure 3.16: Selecting a Display Page](../../images/04-web-content-display-page.png)
+
+You can now click the link to display the content, and you will see the canonical URL for content in your address bar. You can create your own custom display page, and any additional portlets that you place on the page will display along with the content when you access it via the canonical URL. 
+
+![Figure 3.17: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
 Let's move on to tags and categories. 
 
@@ -349,7 +381,7 @@ By contrast, tags are like the index of a book: they show where many different t
 
 Tagging and categorizing web content is easy. You can do it at the bottom of the same form you use to add content. If you open the *Categorization* section of the form, you'll be presented with an interface for adding tags and categories.
 
-![Figure 3.14: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
+![Figure 3.18: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
 
 The control panel contains an interface for managing tags and categories for each site in the portal. This interface can be used to manage all your tags and categories in one place. We'll look at this interface in the next chapter. 
 
@@ -367,17 +399,17 @@ Alternatively, if you have a working copy of Liferay's plugin repository, you ca
 
 You can access the Mobile Device Rules administrative page from the Content section of the control panel. Make to select the appropriate scope using the context menu selector so that your rule groups are available where you expect them to be. The Mobile Device Rules administrative page displays a list of defined rule groups and allows you to add more. To add rules to a rule group, select *Actions* &rarr; *Manage Rules* or just click on a rule group to edit it and then click the *Manage Rules* link.
 
-![Figure 3.15: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
+![Figure 3.19: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups selected for a particular site or page, determine which rule will be applied to a given request. From the Manage Rules page for a specific rule set, you can add a rule by specifying a rule type. Note that, by default, only the Simple Rule type is available. However, the rules are designed to be extensible and additional rule types can be added by your developers. Once added, you can edit the rule to specify a device type and operating system.
 
-![Figure 3.16: You need to install the wurlf-web plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.20: You need to install the wurlf-web plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them, you'll be ready to set up some actions. The actions defined for a rule group determine what happens to a particular request when the request's device has been detected and the rule group has been found to apply. 
 
 You can add actions to a rule group from the Site Pages page of the control panel. Select either the public or private pages and then look for the *Mobile Rule Groups* link in the right-hand menu. Use the *Select Rule Group* button to select rule groups to be applied either to a site or to a single page. If you select the page group itself from the left-hand menu, the selected rule group will apply to all the pages of the site by default. However, if you select an individual page and then click the the *Select Rule Group* button, the rule groups will apply to only that page. You can select multiple rule groups for a particular site or page and order them by prority. The rule groups are checked in decreasing order of priority: the actions defined by the first rule group that applies are executed.
 
-![Figure 3.17: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the control panel.](../../images/mobile-device-selection.png)
+![Figure 3.21: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the control panel.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. By default, there are four kinds of actions that be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects, and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages you can use a redirect to make sure that mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to. Like mobile device rules, mobile device actions are designed to be extensible. Your developers can define custom actions in addition to the four actions provided by default. Next, let's discuss Liferay's asset publisher, which you can use to publish many different kinds of portal content.
 
@@ -401,7 +433,7 @@ Let's first look at how we might select content manually. You'll see that it's v
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell the Asset Publisher that you want to select content manually. You can select what you want to be published within the portlet, or you can create new content  from within the Asset Publisher.
 
-![Figure 3.15: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 3.22: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
 
 Clicking *Add New* gives you a menu of options, enabling you to create the content right where you are. You can create blogs, bookmarks, calendar entries, documents, images, and of course, web content. Anything you create here is added to the list below of assets that are displayed by the portlet.
 
@@ -419,7 +451,7 @@ Asset Publisher's default behavior is to select assets dynamically according to 
 
 **Asset Type:** Choose whether you'll display any asset or only assets of a specific type, such as only web content, only wiki entries, or any combinations of multiple types.
 
-![Figure 3.16: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+![Figure 3.23: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 **Filter Rules:** Add as many filters on tags or categories as you like. You can choose whether the content contains or does not contain any or all categories or tags that you enter.
 
@@ -463,7 +495,7 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 **Show Metadata:** Allows you to select from the available metadata types (see below).
 
-![Figure 3.17: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
+![Figure 3.24: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS Feeds.
 
@@ -489,7 +521,7 @@ First, you'll add a new page. Click *Add &rarr; Page* from the toolbar in the de
 
 Now we're ready to activate the staging feature for this site. Go to the control panel then to *Site Settings* and select *Staging* from under the *Advanced* heading.
 
-![Figure 3.18: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.25: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 We'll assume we don't have a separate staging server, and so we'll select a staging type of *Local Live*. If you want to set up a remote staging environment, it's easy. First, select *Remote Live*, and then supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server, or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions &rarr; Edit* on any site in the control panel. Either way, once you make a selection (*Local Live* or *Remote Live*), more options become available.
 
@@ -503,7 +535,7 @@ Enabling *Page Versioning* makes it so that you can work in parallel with other 
 
 If you navigate back to the News and Events page you'll now notice some new items along the top of the screen. These will help us manage staged pages. You'll also notice that most of your page management options have been removed, because you can now no longer directly edit live pages--you'll now use the staging environment to do that. Click on *Staging* to view the staged area. Your management options are restored, and you have some new options related to staging.
 
-![Figure 3.19: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.26: You can see the new bar that staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that the Calendar portlet isn't there. That's because you've staged a change to the page, but haven't published that change yet to the live site. Go back to the staged page, and look at the options you have available. From here you can *Undo* changes, view a *History* of changes, *Mark as Ready for Publication*, and *Manage Page Variations*.
 
@@ -525,7 +557,7 @@ Click on *Mark as Ready for Publication* and then *Publish to Live Now* to publi
 
 Content publication can be also controlled using staging. Calendar events are staged by default (this can be changed in Staging Configuration). If you create an event in the staged site, it isn't visible in the live site until you publish it to the live site following the same steps you just performed (you can select which types of content are published when you publish to the live site). If workflow is enabled for Calendar Events, the event needs to go through the workflow process before it can be published to the live site.
 
-![Figure 3.20: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
+![Figure 3.27: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
 
 One of the most powerful features of staging is page variations. Let's see how to use them to create multiple different variations of your site's pages for different purposes.
 
@@ -559,11 +591,11 @@ You can also have variations for a single page inside a site page variation, whi
 
 To create a new page variation, click *Manage Page Variations* on the staging toolbar. This brings you to a list of existing page variations for the current page (by default, there is only one called *Main Variation*). You can create more or rename the existing one. You can switch between different page variations using the toolbar containing the page variations below the site pages variations toolbar. When you decide which page variation should be published, mark it as *Ready for Publication*. Only one page variation can be marked as ready for publication and that is the one that gets published to the live site.
 
-![Figure 3.21: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
+![Figure 3.28: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
 
 For example, we could create a page variation called Thanksgiving for the News and Events page inside of the Christmas variation and another one called Christmas Day to display different content on those particular days.
 
-![Figure 3.23: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.29: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 Let's finish our discussion of staging by outlining a few more features. 
 
@@ -585,7 +617,7 @@ When using a workflow, clicking *Submit for Publication* submits the staged page
 
 To enable workflow for Web Content, navigate to the control panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
-![Figure 3.24: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 3.30: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 6, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
 
@@ -599,7 +631,7 @@ Let's set up Liferay's Workflow for the Nose-ster web site.
 
 That's all it takes to set up workflow for web content. Now that workflow is enabled, publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at Nose-ster. Return to the home page and click the *Add Web Content* icon on the Web Content Display portlet. Call the new content *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
 
-![Figure 3.25: Pending Workflow](../../images/04-web-content-workflow-config.png)
+![Figure 3.31: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in control panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow, and anyone in this role can approve content as well.
 
