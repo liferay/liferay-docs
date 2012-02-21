@@ -1,11 +1,29 @@
 
 # Portlet Development
 
-In this chapter we will create and deploy a simple portlet using the Plugins SDK. It will allow a customized greeting to be saved in the portlet's preferences, and then display it whenever the portlet is viewed. Finally we will add friendly URL mapping to the portlet to clean up its URLs.
+In this chapter we will create and deploy a simple portlet using the Plugins SDK. It will allow a customized greeting to be saved in the portlet's preferences, and then display it whenever the portlet is viewed. Finally we will add a friendly URL mapping to the portlet to clean up its URLs.
 
-In developing your own portlets you are free to use any framework you prefer, such as Struts, Spring MVC, or JSF. For this portlet we will use the Liferay MVCPortlet framework as it is simple, lightweight, and easy to understand.
+In developing your own portlets, you are free to use any framework you prefer, such as Struts, Spring MVC, or JSF. For this portlet we will use the Liferay MVCPortlet framework as it is simple, lightweight, and easy to understand.
 
-Additionally, Liferay allows for the consuming of PHP and Ruby applications as portlets, so you do not need to be a Java developer in order to take advantage of Liferay's built-in features (such as user management, organizations, page building and content management). You can use the Plugins SDK to deploy your PHP or Ruby application as a portlet, and it will run seamlessly inside of Liferay. There are plenty of examples of this; to see them, check out the directory *plugins/trunk* from Liferay's public Subversion repository.
+Additionally, Liferay allows for the consuming of PHP and Ruby applications as portlets, so you do not need to be a Java developer in order to take advantage of Liferay's built-in features (such as user and organization management, page building and content management). You can use the Plugins SDK to deploy your PHP or Ruby application as a portlet, and it will run seamlessly inside of Liferay. There are plenty of examples of this; to see them, check out the directory *plugins/trunk* from Liferay's public Subversion repository.
+
+We will discuss the following topics in this chapter:
+
+-	*Creating a Portlet* 
+
+-	*Anatomy of a Portlet*
+
+-	*Writing the My Greeting Portlet*
+
+-	*Understanding the two phases of Portlet Execution*
+
+-	*Passing Information from the Action Phase to the Render Phase*
+
+-	*Developing a Portlet with Multiple Actions*
+
+-	*Adding Friendly URL Mapping to the Portlet*
+
+First, let's create the portlet that we'll use throughout this chapter.
 
 ## Creating a Portlet
 
@@ -19,29 +37,33 @@ On Windows, enter the following instead:
 
 You should get a BUILD SUCCESSFUL message from Ant, and there will now be a new folder inside of the `portlets` folder in your Plugins SDK. This folder is your new portlet project. This is where you will be implementing your own functionality. Notice that the Plugins SDK automatically appends "-portlet" to the project name when creating this folder.
 
-Alternatively, if you will not be using the Plugins SDK to house your portlet projects, you can copy your newly created portlet project into your IDE of choice and work with it there. If you do this, you may need to make sure the project references some `.jar` files from your Liferay installation, or you may get compile errors. Since the ant scripts in the Plugins SDK do this for you automatically, you don't get these errors when working with the Plugins SDK.
+Alternatively, if you will not be using the Plugins SDK to house your portlet projects, you can copy your newly created portlet project into your IDE of choice and work with it there. If you do this, you may need to make sure the project references some `.jar` files from your Liferay installation, or you may get compile errors. Since the Ant scripts in the Plugins SDK do this for you automatically, you don't get these errors when working with the Plugins SDK.
 
-To resolve the dependencies for portlet projects, see the class path entries in the `build-common.xml` file in the Plugins SDK project. You will be able to determine from the `plugin.classpath` and `portal.classpath` entries, which `.jar` files are necessary to build your newly created portlet project.
+To resolve the dependencies for portlet projects, see the classpath entries in the `build-common.xml` file in the Plugins SDK project. You will be able to determine from the `plugin.classpath` and `portal.classpath` entries, which `.jar` files are necessary to build your newly created portlet project.
 
 ---
-![tip](../../images/tip-pen-paper.png)**Tip:** If you are using a source control system such as Subversion, CVS, Mercurial, Git, ... etc., this might be a good moment to do an initial check in of your changes. After building the plugin for deployment, several additional files will be generated that should *not* be handled by the source control system.
+![tip](../../images/tip-pen-paper.png)**Tip:** If you are using a source control system such as Subversion, CVS, Mercurial, Git, ... etc., this might be a good moment to do an initial check-in of your changes. After building the plugin for deployment, several additional files will be generated that should *not* be handled by the source control system.
 ---
 
 ### Deploying the Portlet
 
-Liferay provides a mechanism called autodeploy that makes deploying portlets (and any other plugin types) a breeze. All you need to do is drop a WAR file into a directory and the portal will take care of making any necessary changes specific to Liferay and then deploy it to the application server. This will be the method used throughout this guide.
+Liferay provides a mechanism called auto-deploy that makes deploying portlets (and any other plugin types) a breeze. All you need to do is drop the plugin's WAR file into a directory and the portal will take care of making any necessary changes specific to Liferay and then deploy the plugin to the application server. This will be a method of deployment used throughout this guide.
 
 ---
-![tip](../../images/tip-pen-paper.png) Liferay supports a wide variety of application servers. Many of them, such as Tomcat or Jboss, provide a simple way to deploy web applications by just copying a file into a folder and Liferay's autodeploy mechanism takes advantage of that ability. You should be aware though that some application servers, such as Websphere or Weblogic require the use of specific tools to deploy web applications; so Liferay's autodeploy process won't work for them.
+![note](../../images/tip-pen-paper.png)**Note:** Liferay supports a wide variety of application servers. Many of them, such as Tomcat and Jboss, provide a simple way to deploy web applications by just copying a file into a folder and Liferay's auto-deploy mechanism takes advantage of that ability. You should be aware though, that some application servers, such as Websphere or Weblogic require the use of specific tools to deploy web applications; so Liferay's auto-deploy process won't work for them.
 ---
 
 Open a terminal window in your `portlets/my-greeting-portlet` directory and enter this command:
 
     ant deploy
 
-You should get a BUILD SUCCESSFUL message, which means that your portlet is now being deployed. If you switch to the terminal window running Liferay, and wait for a few seconds, you should see the message "1 portlet for my-greeting-portlet is available for use". If not, something is wrong and you should double-check your configuration.
+You should get a BUILD SUCCESSFUL message, which means that your portlet is now being deployed. If you switch to the terminal window running Liferay, and wait for a few seconds, you should see the message *1 portlet for my-greeting-portlet is available for use*. If not, something is wrong and you should double-check your configuration.
 
-Go to your web browser and log in to the portal as explained earlier. Then hover over *Add* at the top of the page, and click on *More*. Select the *Sample* category, and then click *Add* next to *My Greeting*. Your portlet should appear in the page below. Congratulations, you've just created your first portlet!
+Go to your web browser and login to the portal as explained earlier. Then, hover over *Add* at the top of the page, and click on *More*. Select the *Sample* category, and then click *Add* next to *My Greeting*. Your portlet should appear in the page below.
+
+![Figure 3.1: Adding the My Greeting portlet](../../images/portlets-add-my-greeting-portlet.png)
+
+Congratulations, you've just created your first portlet!
 
 ## Anatomy of a Portlet
 
@@ -55,20 +77,20 @@ A portlet project is made up at a minimum of three components:
 
 When using Liferay's Plugins SDK, these files are stored in a standard directory structure which looks like the following:
 
-    /PORTLET-NAME/
-		build.xml
-		/docroot/
-	    	/css/
-	    	/js/
-	    	/WEB-INF/
-	    		/src/ (not created by default)
-	    		liferay-display.xml
-	    		liferay-plugin-package.properties
-	    		liferay-portlet.xml
-	    		portlet.xml
-	    		web.xml
-	    	icon.png
-	    	view.jsp
+-	PORTLET-NAME/
+	-	build.xml
+	-	docroot/
+		-	css/
+		-	js/
+		-	WEB-INF/
+			-	src/ (not created by default)
+			-	liferay-display.xml
+			-	liferay-plugin-package.properties
+			-	liferay-portlet.xml
+			-	portlet.xml
+			-	web.xml
+		-	icon.png
+		-	view.jsp
 
 The portlet we just created is a fully functional portlet which can be deployed to your Liferay instance.
 
@@ -76,19 +98,19 @@ New portlets are configured by default to use the MVCPortlet framework, a very l
 
 The **Java Source** is stored in the `docroot/WEB-INF/src` folder
 
-The **Configuration Files** are stored in the `docroot/WEB-INF` folder. The standard JSR-286 portlet configuration file `portlet.xml` is here, as well as three Liferay-specific configuration files. The Liferay-specific configuration files are completely optional, but are important if your portlets are going to be deployed on a Liferay Portal server.
+The **Configuration Files** are stored in the `docroot/WEB-INF` folder. The standard JSR-286 portlet configuration file `portlet.xml` is here, as well as three Liferay-specific configuration files. The Liferay-specific configuration files are completely optional, but are important if your portlets are going to be deployed on a Liferay Portal server. Described below are the Liferay-specific configuration files:
 
-*liferay-display.xml*: This file describes what category the portlet should appear under in the *Add* menu in the dockbar (the horizontal bar that appears at the top of the page to all logged in users).
+-	*liferay-display.xml*: This file describes what category the portlet should appear under in the *Add* menu of the dockbar (the horizontal bar that appears at the top of the page to all logged-in users).
 
-*liferay-portlet.xml*: This file describes some optional Liferay-specific enhancements for JSR-286 portlets that are installed on a Liferay Portal server. For example, you can set whether a portlet is instanceable, which means that you can place more than one portlet instance on a page, and each one will have its own separate data. Please see the DTD for this file for further details, as there are too many settings to list here. The DTD may be found in the `definitions` folder in the Liferay source code.
+-	*liferay-portlet.xml*: This file describes some optional Liferay-specific enhancements for JSR-286 portlets that are installed on a Liferay Portal server. For example, you can set whether a portlet is instanceable, which means that you can place more than one portlet instance on a page, and each one will have its own separate data. Please see the DTD for this file for further details, as there are too many settings to mention here. The DTD may be found in the `definitions` folder in the Liferay Portal source code.
 
-*liferay-plugin-package.properties*: This file describes the plugin to Liferay's hot deployer. Dependency JAR files (`.jar`) can be configured in this file. If a portlet plugin has dependencies on particular .jar files that already come with Liferay, you can specify them in this file and the hot deployer will modify the .war file on deployment to copy those .jars inside. That way you don't have to include the .jars yourself and the .war will be lighter.
+-	*liferay-plugin-package.properties*: This file describes the plugin to Liferay's hot deployer. Dependency JAR files (`.jar`) can be configured in this file. If a portlet plugin has dependencies on particular `.jar` files that already come with Liferay, you can specify them in this file and the hot deployer will modify the `.war` file on deployment to copy those `.jar` files from inside the `.war` file. That way you don't have to include the `.jars` yourself and the `.war` will be lighter.
 
-**Client Side Files** are the .jsp, .css, and JavaScript files that you write to implement your portlet's user interface. These files should go in the `docroot` folder somewhere—either in the root of the folder or in a folder structure of their own. Remember that with portlets you are only dealing with a portion of the HTML document that is getting returned to the browser. Any HTML code you have in your client side files should be free of global tags such as `<html>` or `<head>`. Additionally, all CSS classes and element IDs must be namespaced to prevent conflicts with other portlets. Liferay provides tools (a taglib and API methods) to generate the namespace that you should use.
+**Client Side Files** are the `.jsp`, `.css`, and JavaScript files that you write to implement your portlet's user interface. These files should go in the `docroot` folder somewhere—either in the root of the folder or in a folder structure of their own. Remember that with portlets you are only dealing with a portion of the HTML document that is getting returned to the browser. Any HTML code you have in your client side files should be free of global tags such as `<html>` or `<head>`. Additionally, all CSS classes and element IDs must be name-spaced to prevent conflicts with other portlets. Liferay provides tools (a taglib and API methods) to generate the namespace that you should use.
 
 ### A Closer Look at the My Greeting Portlet
 
-If you are new to portlet development, this section will take a closer look at the configuration options of a portlet.
+If you are new to portlet development, this section will give you a better understanding of the configuration options of a portlet.
 
 **docroot/WEB-INF/portlet.xml**
 
@@ -129,7 +151,7 @@ Here is a basic summary of what each of the elements represents:
 
     portlet-name
 
-The portlet-name element contains the canonical name of the portlet. Each portlet name is unique within the portlet application (that is, within the portlet plugin). This is also referred within Liferay Portal as the portlet id.
+The portlet-name element contains the canonical name of the portlet. Each portlet name is unique within the portlet application (that is, within the portlet plugin). This is also referred to within Liferay Portal as the portlet id.
 
     display-name
 
@@ -137,15 +159,15 @@ The display-name type contains a short name that is intended to be displayed by 
 
     portlet-class
 
-The portlet-class element contains the fully qualified name of the class that will handle invocations to the portlet.
+The portlet-class element contains the fully qualified name of the class that handles invocations to the portlet.
 
     init-param
 
-The init-param element contains a name/value pair as an initialization param of the portlet.
+The init-param element contains a name/value pair as an initialization parameter of the portlet.
 
     expiration-cache
 
-Expiration-cache defines expiration-based caching for this portlet. The parameter indicates the time in seconds after which the portlet output expires. A value of `-1` indicates that the output never expires.
+Expiration-cache defines expiration-based caching for this portlet. The parameter indicates the time, in seconds, after which the portlet output expires. A value of `-1` indicates that the output never expires.
 
     supports
 
@@ -157,9 +179,9 @@ Portlet-info defines portlet information.
 
     security-role-ref
 
-The security-role-ref element contains the declaration of a security role reference in the code of the web application. Specifically in Liferay, the role-name references which roles can access the portlet.
+This element contains the declaration of a security role reference in the code of the web application. Specifically in Liferay, the `role-name` references which roles can access the portlet.
 
-**docroot/WEB-INF/liferay-portlet.xml** - In addition to the standard `portlet.xml` options, there are optional Liferay-specific enhancements for Java Standard portlets that are installed on a Liferay Portal server. By default, Plugins SDK sets the contents of this descriptor to the following:
+**docroot/WEB-INF/liferay-portlet.xml** - In addition to the standard `portlet.xml` options, there are optional Liferay-specific enhancements for Java Standard portlets that are installed on a Liferay Portal server. By default, the Plugins SDK sets the contents of this descriptor to the following:
 
     <liferay-portlet-app>
 	<portlet>
@@ -192,41 +214,41 @@ Here is a basic summary of what some of the elements represents.
 
     portlet-name
 
-The portlet-name element contains the canonical name of the portlet. This needs to be the same as the portlet-name given in portlet.xml
+This element contains the canonical name of the portlet. This needs to be the same as the `portlet-name` specified in the `portlet.xml` file.
 
     icon
 
-Path to icon image for this portlet
+Path to icon image for this portlet.
 
     instanceable
 
-Indicates if multiple instances of this portlet can appear on the same page.
+Indicates whether multiple instances of this portlet can appear on the same page.
 
     header-portlet-css
 
-The path to the .css file for this portlet to be included in the `<head>` of the page
+The path to the `.css` file for this portlet to include in the `<head>` tag of the page.
 
     footer-portlet-javascript
 
-The path to the .js file for this portlet, to be included at the end of the page before </body>
+The path to the `.js` file for this portlet, to be included at the end of the page before the `</body>` tag.
 
-There are many more elements that you should be aware of for more advanced development. Please see the DTD for this file in the *definitions* folder in the Liferay source code for more information.
+There are many more elements that you should be aware of for more advanced development. Please see the DTD for this file in the `definitions` folder in the Liferay Portal source code for more information.
 
 ## Writing the My Greeting Portlet
 
 Now that you are familiar with the structure of a portlet, it's time to actually make it do something useful. Our portlet will have two pages:
 
--	**view.jsp** will display the greeting and provide a link to the edit page.
+-	**view.jsp** will display the greeting and provide a link to the *edit* page.
 
--	**edit.jsp** will show a form with a text field allowing the greeting to be	changed, along with a link back to the view page.
+-	**edit.jsp** will show a form with a text field allowing the greeting to be	changed and a link back to the *view* page.
 
-The `MVCPortlet` class will handle the rendering of our JSPs, so for this example we won't have to write a single Java class.
+The `MVCPortlet` class will handle the rendering of our JSPs, so for this example, we won't have to write a single Java class.
 
 First, we don't want multiple greetings on the same page, so we are going to make the My Greeting portlet non-instanceable. To do this, edit `liferay-portlet.xml` and change the value of the element `instanceable` from `true` to `false` so that it looks like this:
 
     <instanceable>false</instanceable>
 
-Next, we will create our JSP templates. Start by editing `view.jsp` and replacing its current contents with the following:
+Next, we will create our JSP templates. Start by editing `view.jsp`, found in your portlet's `docroot` directory, replacing its current contents with the following:
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
     <%@ page import="javax.portlet.PortletPreferences" %>
@@ -293,6 +315,10 @@ Next, create `edit.jsp` in the same directory as `view.jsp` with the following c
 
 Deploy the portlet again by entering the command **ant deploy** in your `my-greeting-portlet` folder. Go back to your web browser and refresh the page; you should now be able to use the portlet to save and display a custom greeting.
 
+![Figure 3.2: The *view* page of My Greeting portlet](../../images/portlets-view-my-greeting.png)
+
+![Figure 3.3: The *edit* page of My Greeting portlet](../../images/portlets-edit-my-greeting.png)
+
 ---
 ![tip](../../images/tip-pen-paper.png)**Tip:** If your portlet deployed successfully, but you don't see any changes in your browser after refreshing the page, Tomcat may have failed to rebuild your JSPs. Simply delete the `work` folder in `liferay-portal-[version]/tomcat-[tomcat-version]` and refresh the page again to force them to be rebuilt.
 ---
@@ -309,25 +335,25 @@ Another JSP tag that you may have noticed is `<portlet:defineObjects/>`. The por
 
 One of the characteristics of portlet development that confuses most developers used to regular servlet development or who are used to other environments such as PHP, Python or Ruby, is the need for two phases. The good news is that once you get acquainted with them, they become simple and useful.
 
-The reason why two phases are needed is because a portlet does not own a whole HTML page, it only generates a fragment of it. The portal that holds the portlet is the one responsible for generating the page by invoking one or several portlets and adding some additional HTML around them. Usually, when the user interacts with the page, for example by clicking a link or a button, she's doing it within a specific portlet. The portal must forward the action performed by the user to that portlet and after that it must render the whole page, showing the content of that portlet, which may have changed, and also the content of the other portlets. For the other portlets in the page which have not been invoked by the user, what the portal does to get their content is to repeat the last invocation again (since it assumes it will yield the same result).
+The reason why two phases are needed is because a portlet does not own a whole HTML page, it only generates a fragment of it. The portal that holds the portlet is responsible for generating the page by invoking one or several portlets and adding some additional HTML around them. Usually, when the user interacts with the page, for example by clicking a link or a button, she's doing it within a specific portlet. The portal must forward the action performed by the user to that portlet and after that the portal must render the whole page, showing the content of that portlet, which may have changed, and also the content of the other portlets. To get the content of the other portlets in the page which have not been invoked by the user, the portal repeats the last invocation (with the assumption that the invocation will yield the same result).
 
 Now imagine this scenario: we have a page with two portlets, a navigation portlet and a shopping portlet. A user comes to the page and does the following:
 
-1.  Load the page
+1.  Loads the page.
 
 2.  Clicks a button on the shopping portlet that automatically charges an amount on her credit card and starts a process to ship her the product she just bought. After this operation the portal also invokes the navigation portlet with its default view.
 
-3.  Click a link in the navigation portlet which causes the content of the portlet to change. After that the portal must also show the content of the shopping portlet, so it repeats the last action (the one in which the user clicked a button), which causes a new charge on the credit card and the start of a new shipping process.
+3.  Clicks a link in the navigation portlet which causes the content of the portlet to change. After that, the portal must also show the content of the shopping portlet, so it repeats the last action (the one in which the user clicked a button), which causes a new charge on the credit card and the start of a new shipping process.
 
 I guess that by now you can tell that this is not right. Since the portal doesn't know whether the last operation on a portlet was an action, it would have no option but to repeat it over and over to obtain the content of the portlet again (at least until the Credit Card reached its limit).
 
 Fortunately portals don't work that way. In order to prevent situations like the one described above, the portlet specification defines two phases for every request of a portlet, to allow the portal to differentiate *when an action is being performed* (and should not be repeated) and *when the content is being produced* (rendered):
 
--   **Action phase**: The action phase can only be invoked for one portlet at a time and is usually the result of a user interaction with the portlet. In this phase the portlet can change its status, for instance changing the user preferences of the portlet. It is also recommended that any inserts and modifications in the database or operations that should not be repeated are performed in this phase.
+-   **Action phase**: The action phase can only be invoked for one portlet at a time and is usually the result of a user interaction with the portlet. In this phase the portlet can change its status, for instance changing the user preferences of the portlet. It is also recommended that any inserts and modifications in the database or operations that should not be repeated be performed in this phase.
 
 -   **Render phase**: The render phase is always invoked for all portlets in the page after the action phase (which may or not exist). This includes the portlet that also had executed its action phase. It's important to note that the order in which the render phase of the portlets in a page gets executed is not guaranteed by the portlet specification. Liferay has an extension to the specification through the element `render-weight` in `liferay-portlet.xml`. Portlets with a higher render weight will be rendered before those with a lower weight.
 
-In our example, so far, we have used a portlet class called `MVCPortlet`. That is all that the portlet if it only has a render phase. In order to be able to add custom code that will be executed in the action phase (and thus will *not* be executed when the portlet is shown again) you need to create a subclass of `MVCPortlet` or create a subclass of `GenericPortlet` directly (if you don't want to use Liferay's lightweight framework).
+In our example, so far, we have used a portlet class called `MVCPortlet`. That is all that the portlet needs if it only has a render phase. In order to be able to add custom code that will be executed in the action phase (and thus will *not* be executed when the portlet is shown again) you need to create a subclass of `MVCPortlet` or create a subclass of `GenericPortlet` directly (if you don't want to use Liferay's lightweight framework).
 
 Our example above could be enhanced by creating the following class:
 
@@ -347,27 +373,29 @@ Our example above could be enhanced by creating the following class:
 			throws IOException, PortletException {
 			PortletPreferences prefs = actionRequest.getPreferences();
 			String greeting = actionRequest.getParameter("greeting");
-	
+
 			if (greeting != null) {
 				prefs.setValue("greeting", greeting);
 				prefs.store();
 			}
-	
-			 super.processAction(actionRequest, actionResponse);
+
+			super.processAction(actionRequest, actionResponse);
 		}
     }
 
-The file `portlet.xml` also needs to be changed so that it points to our new class:
+Create the above class, and its package, within directory `docroot/WEB-INF/src` in your portal project.
+
+The file `portlet.xml` also needs to be changed so that it points to your new class:
 
     <portlet>
 	<portlet-name>my-greeting</portlet-name>
 	<display-name>My Greeting</display-name>
-	<portlet-class>**com.liferay.samples.MyGreetingPortlet**</portlet-class>
+	<portlet-class>com.liferay.samples.MyGreetingPortlet</portlet-class>
 	<init-param>
 	    <name>view-jsp</name>
 	    <value>/view.jsp</value>
 	</init-param>
-	…
+	...
 
 Finally, you will need to make a minor change in the `edit.jsp` file and change the URL to which the form is sent in order to let the portal know to execute the action phase. This is the perfect moment for you to know that there are three types of URLs that can be generated by a portlet:
 
@@ -394,9 +422,9 @@ So we must change the `edit.jsp` to use an *actionURL* by using the JSP tag of t
 		"greeting", "Hello! Welcome to our portal.");
     %>
 
-    <portlet:**actionURL** var="editGreetingURL">
+    <portlet:actionURL var="editGreetingURL">
 		<portlet:param name="jspPage" value="/edit.jsp" />
-    </portlet:**actionURL**>
+    </portlet:actionURL>
 
     <aui:form action="<%= editGreetingURL %>" method="post">
 		<aui:input label="greeting" name="greeting" type="text" value="<%=
@@ -412,7 +440,7 @@ So we must change the `edit.jsp` to use an *actionURL* by using the JSP tag of t
 
 Try deploying the portlet again after making these changes; everything should work exactly like before.
 
-Well, almost. If you have paid close attention you may have missed something, now the portlet is no longer showing a message to the user to let her know that the preference has been saved right after clicking the save button. In order to implement that, we must have a way to pass information from the action phase to the render phase, so that the JSP will know that the preference has just been saved and will then show a message to the user.
+Well, almost. If you have paid close attention you may have missed something, now the portlet is no longer showing a message to the user to let her know that the preference has been saved right after clicking the save button. In order to implement that, we must pass information from the action phase to the render phase, so that the JSP will know that the preference has just been saved and will then show a message to the user.
 
 ## Passing Information from the Action Phase to the Render Phase
 
@@ -426,16 +454,16 @@ From the render phase (in our case, the JSP), this value can be read using the r
 
 It is important to be aware that when invoking an action URL, the parameters specified in the URL will only be readable from the action phase (that is within the `processAction` method). In order to pass parameter values to the render phase you must read them from the `actionRequest` and then invoke the `setRenderParameter` method for each parameter needed.
 
-![tip](../../images/tip-pen-paper.png)**Tip:** Liferay offers a convenient extension to the portlet specification through the `MVCPortlet` class to copy all action parameters directly as render parameters. You can achieve this just by setting the following init-param in your `portlet.xml`:
+![tip](../../images/tip-pen-paper.png)**Tip:** Liferay offers a convenient extension to the portlet specification through the `MVCPortlet` class to copy all action parameters directly as render parameters. You can achieve this just by setting the following `init-param` in your `portlet.xml`:
 
-    <init-param>
+	<init-param>
 		<name>copy-request-parameters</name>
 		<value>true</value>
-    </init-param>
+	</init-param>
 
-I mentioned there was a second way and in fact it is better for what we are trying to do in our example. One final thing you should know about render parameters is that the portal remembers them for all later executions of the portlet until the portlet is invoked with different parameters. That is, if a user clicks a link in our portlet and a render parameter is set, and then the user continues browsing through other portlets in the page, each time the page is reloaded the portal will render our portlet using the render parameters that we initially set. If we used render parameters in our example then the success message will be shown not only right after saving, but also every time the portlet is rendered until the portlet is invoked again without that render parameter.
+As mentioned, there was a second way, in fact a better way, for what we are trying to do in our example. One final thing you should know about render parameters is that the portal remembers them for all later executions of the portlet until the portlet is invoked with *different* parameters. That is, if a user clicks a link in our portlet and a render parameter is set, and then the user continues browsing through other portlets in the page, each time the page is reloaded, the portal will render our portlet using the render parameters that we initially set. If we used render parameters in our example, then the success message will be shown not only right after saving, but also every time the portlet is rendered until the portlet is invoked again *without* that render parameter.
 
-The second way of passing information from the action phase to the render phase is not unique to portlets so it might be familiar to you: using the session. By using the session, your code can set an attribute in the `actionRequest` that is then read from the JSP. In our case, the JSP would also immediately remove the attribute from the session so that the message is only shown once. Liferay provides a helper class and taglib to do this operation easily. In the `processAction` method you need to use the `SessionMessages` class:
+The second way of passing information from the action phase to the render phase is not unique to portlets, so it might be familiar to you -- using the session. By using the session, your code can set an attribute in the `actionRequest` that is then read from the JSP. In our case, the JSP would also immediately remove the attribute from the session so that the message is only shown once. Liferay provides a helper class and taglib to do this operation easily. In the `processAction` method, you need to use the `SessionMessages` class:
 
     package com.liferay.samples;
 
@@ -454,59 +482,47 @@ The second way of passing information from the action phase to the render phase 
 			throws IOException, PortletException {
 			PortletPreferences prefs = actionRequest.getPreferences();
 			String greeting = actionRequest.getParameter("greeting");
-	
+
 			if (greeting != null) {
 				prefs.setValue("greeting", greeting);
 				prefs.store();
 			}
-	
+
 			SessionMessages.add(actionRequest, "success");
 			super.processAction(actionRequest, actionResponse);
 		}
     }
 
-Also, in the JSP you would need to add the `liferay-ui:success` JSP tag as shown below (note that you also need to add the taglib declaration at the top):
+Also, in `view.jsp`, you would need to add the `liferay-ui:success` JSP tag as shown below (note that you also need to add the taglib declaration at the top):
 
-    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
-    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
-    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+	<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+	<%@ page import="javax.portlet.PortletPreferences" %>
 
-    <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
-    <%@ page import="com.liferay.portal.kernel.util.Validator" %>
-    <%@ page import="javax.portlet.PortletPreferences" %>
+	<portlet:defineObjects />
 
-    <portlet:defineObjects />
+	<liferay-ui:success key="success" message="Greeting saved
+			successfully!" />
 
-    <%
+	<%
 	PortletPreferences prefs = renderRequest.getPreferences();
 	String greeting = (String)prefs.getValue(
-		"greeting", "Hello! Welcome to our portal.");
-    %>
+	"greeting", "Hello! Welcome to our portal.");
+	%>
 
-    <liferay-ui:success key="success" message="Greeting saved
-    successfully!" />
+	<p><%= greeting %></p>
+	<portlet:renderURL var="editGreetingURL">
+	<portlet:param name="jspPage" value="/edit.jsp" />
 
-    <portlet:actionURL var="editGreetingURL">
-		<portlet:param name="jspPage" value="/edit.jsp" />
-    </portlet:actionURL>
+	</portlet:renderURL>
 
-    <aui:form action="<%= editGreetingURL %>" method="post">
-		<aui:input label="greeting" name="greeting" type="text" value="<%=
-			greeting %>" />
-		<aui:button type="submit" />
-    </aui:form>
-
-    <portlet:renderURL var="viewGreetingURL">
-		<portlet:param name="jspPage" value="/view.jsp" />
-    </portlet:renderURL>
-
-    <p><a href="<%= viewGreetingURL %>">&larr; Back</a></p>
+	<p><a href="<%= editGreetingURL %>">Edit greeting</a></p>
 
 After this change, redeploy the portlet, go to the edit screen and save it. You should see a nice message that looks like this:
 
-![Figure 3.x: The sample "My Greetings"? portlet showing a success message](../../images/portlet-greeting-save.png)*Illustration 1: The sample "My Greetings" portlet showing a success message*
+![Figure 3.4: The sample "My Greetings" portlet showing a success message](../../images/portlet-greeting-save.png)
 
-There is also an equivalent utility class for notifying errors. This is commonly used after catching an exception in the `processAction` method. For example.
+There is also an equivalent utility class for error notification. This is commonly used after catching an exception in the `processAction` method. For example.
 
     try {
 		prefs.setValue("greeting", greeting);
@@ -516,32 +532,32 @@ There is also an equivalent utility class for notifying errors. This is commonly
 		SessionErrors.add(actionRequest, "error");
     }
 
-And then the error, if it exists, is shown in the JSP using the `liferay-ui:error` tag:
+And then the error, if it exists, is shown in your `view.jsp` using the `liferay-ui:error` tag:
 
     <liferay-ui:error key="error" message="Sorry, an error prevented saving
     your greeting" />
 
-When the error occurs you should see something like this in your portlet:
+If an error were to occur you would see something like this in your portlet:
 
-![Figure 3.x: The sample "My Greetings" portlet showing an error message](../../images/portlet-invalid-data.png)*Illustration 2: The sample "My Greetings" portlet showing an error message*
+![Figure 3.5: The sample "My Greetings" portlet showing an error message](../../images/portlet-invalid-data.png)
 
-The first message is automatically added by Liferay. The second one is the one you entered in the JSP.
+The first message is automatically added by Liferay. The second one is the one you added in your JSP.
 
 ## Developing a Portlet with Multiple Actions
 
 So far we have developed a portlet that has two different views, the default view and an edit view. Adding more views is easy and all you have to do to link to them is to use the `jspPage` parameter when creating the URL. But we only have one action. How do we add another action, for example for sending an email to the user?
 
-You can have as many actions as you want in a portlet, each of them will need to be implemented as a method that receives two parameters, an `ActionRequest` and an `ActionResponse`. The name of the method can be whatever you want since you will be referring to it when creating the URL.
+You can have as many actions as you want in a portlet, each of them needs to be implemented as a method that receives two parameters -- an `ActionRequest` and an `ActionResponse`. The name of the method can be whatever you want since you will be referring to it when creating the URL.
 
-Let's rewrite the example from the previous section to use custom names for the methods of the action to set the greeting and add a second action.
+Let's rewrite the example from the previous section to use a custom name for the action method that sets the greeting and add a second action method for sending emails.
 
-    public class MyGreetingPortlet extends MVCPortlet {
-	public void setGreeting(
-	    	ActionRequest actionRequest, ActionResponse actionResponse)
-	    throws IOException, PortletException {
+	public class MyGreetingPortlet extends MVCPortlet {
+		public void setGreeting(
+				ActionRequest actionRequest, ActionResponse actionResponse)
+		throws IOException, PortletException {
 			PortletPreferences prefs = actionRequest.getPreferences();
 			String greeting = actionRequest.getParameter("greeting");
-	
+
 			if (greeting != null) {
 				try {
 					prefs.setValue("greeting", greeting);
@@ -552,26 +568,26 @@ Let's rewrite the example from the previous section to use custom names for the 
 					SessionErrors.add(actionRequest, "error");
 				}
 			}
-	    }
-	    
-	public void sendEmail(
-	    	ActionRequest actionRequest, ActionResponse actionResponse)
-	    throws IOException, PortletException {
+		}
+
+		public void sendEmail(
+				ActionRequest actionRequest, ActionResponse actionResponse)
+		throws IOException, PortletException {
 			// Add code here to send an email
-	    }
-    }
+		}
+	}
 
 Note how we no longer need to invoke the `processAction` method of the super class, because we are not overriding it.
 
 This change of name also requires a simple change in the URL, to specify the name of the method that should be invoked to execute the action. In the `edit.jsp` modify the `actionURL` so that it looks like this:
 
     <portlet:actionURL var="editGreetingURL" name="setGreeting">
-	<portlet:param name="jspPage" value="/edit.jsp" />
+		<portlet:param name="jspPage" value="/edit.jsp" />
     </portlet:actionURL>
 
-That's it, now you know all the basics of portlets and are ready to use your Java knowledge to build portlets that get integrated in Liferay. The next section explains an extension to the portlet specification that Liferay provides by Liferay generate pretty URLs to your portlets that you can use.
+That's it; now you know all the basics of portlets and are ready to use your Java knowledge to build portlets that get integrated in Liferay. The next section explains an extension to the portlet specification that Liferay provides to generate pretty URLs to your portlets.
 
-## Optional: Adding Friendly URL Mapping to the Portlet
+## Adding Friendly URL Mapping to the Portlet
 
 You will notice that when you click the *Edit greeting* link, you are taken to a page with a URL similar to this:
 
@@ -581,7 +597,7 @@ Since Liferay 6 there is a feature that requires minimal work to change this int
 
     http://localhost:8080/web/guest/home/-/my-greeting/edit
     
-This feature, known as friendly URL mapping, takes unnecessary parameters out of the URL and allows you to place the important parameters in the URL path rather than the query string. To add this functionality, first edit `liferay-portlet.xml` and add the following lines directly after `</icon>` and before `<instanceable>`. Be sure to remove the line breaks and the backslashes!
+This feature, known as friendly URL mapping, takes unnecessary parameters out of the URL and allows you to place the important parameters in the URL path, rather than the query string. To add this functionality, first edit `liferay-portlet.xml` and add the following lines directly after `</icon>` and before `<instanceable>`. Be sure to remove the line breaks and the backslashes!
 
     <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.Default\
     FriendlyURLMapper</friendly-url-mapper-class>
@@ -591,7 +607,7 @@ This feature, known as friendly URL mapping, takes unnecessary parameters out of
 
 Next, create the file (note the line break):
 
-    my-greeting-portlet/docroot/WEB-INF/src/com/sample/mygreeting/portlet/my\
+    my-greeting-portlet/docroot/WEB-INF/src/com/liferay/samples/my\
     -greeting-friendly-url-routes.xml
 
 Create new directories as necessary. Place the following content into the new file:
@@ -600,12 +616,20 @@ Create new directories as necessary. Place the following content into the new fi
     <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.1.0//EN" 
     "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_1_0.dtd">
 
-    <routes>
+	<routes>
 		<route>
 			<pattern>/{jspPageName}</pattern>
-			<generated-parameter name="jspPage">/{jspPageName}.jsp
-			</generated-parameter>
+			<generated-parameter name="jspPage">/{jspPageName}.jsp</generated-parameter>
 		</route>
-    </routes>
+	</routes>
 
-Redeploy your portlet, refresh the page, and try clicking either of the links again. Notice how much shorter and more user-friendly the URL is, without even having to modify the JSPs. For more information on friendly URL mapping, you can check full discussion of this topic in *Liferay in Action*.
+Redeploy your portlet, refresh the page, and try clicking either of the links again.
+
+![Figure 3.6: Friendly URL for view JSP](../../images/portlets-my-greeting-view-friendly.png)
+
+Notice how much shorter and more user-friendly the URL is, without even having to modify the JSPs.
+
+![Figure 3.7: Friendly URL for edit JSP](../../images/portlets-my-greeting-edit-friendly.png)
+
+For more information on friendly URL mapping, you can check full discussion of this topic in [*Liferay in Action*](http://manning.com/sezov). But, next, let's make our site look "top notch" by using Liferay Themes.
+
