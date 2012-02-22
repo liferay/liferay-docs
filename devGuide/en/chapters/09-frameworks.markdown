@@ -1064,5 +1064,7 @@ This chapter is a placeholder that provides a quick description to the main fram
 
 -   Inline permissions Framework: Allows enhancing your SQL queries so that the database takes care of checking for view permissions. This is particularly useful when doing queries for data entries that could result in a large number of items (and thus checking of permissions afterward would be very inefficient) or when you want to implement pagination (which would not work fine if permissions are checked afterward and an item is removed). The Document Library or the Message Boards of Liferay are examples of portlets that use this functionality.
 
+-	Faceted Search: A new API was introduced which allows for simple creation of new facet configurations and searches. This API uses a JSON based configuration to define the details of facets used for the search. To find out more, see the  [Faceted Search](http://www.liferay.com/community/wiki/-/wiki/1071674/Faceted+Search) wiki by Ray Aug&#233;)
+
 Check in the near future for new editions of the Developer's Guide for extended information on each of these frameworks.
 
