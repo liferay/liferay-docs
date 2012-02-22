@@ -594,7 +594,7 @@ The term *asset* is used as a generic way to refer to any type of content regard
 
 Here are the main functionalities that you will be able to reuse thanks to the asset framework:
 
--   Associate tags to custom content types (new tags will be created automatically when the author assigns them to the content).
+-   Associate tags to custom content types (new tags will be created automatically when the author assigns them to the content)
 
 -   Associate categories to custom content types (authors will only be allowed to select from predefined categories within several predefined vocabularies)
 
@@ -602,7 +602,21 @@ Here are the main functionalities that you will be able to reuse thanks to the a
 
 -   Manage categories from the control panel (including creating complex hierarchies).
 
--   Keep track of the number of visualizations of an asset.
+-	Associate comments with assets
+
+-	Rate of assets on a five star rating system
+
+-	Assign social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus)) to assets
+
+-	Add custom fields to assets
+
+-	Relate assets to one another
+
+-	Flag asset content as inappropriate
+
+-   Keep track of the number of visualizations of an asset
+
+-	Integrate workflow with assets
 
 -   Publish your content using the Asset Publisher portlet. Asset Publisher is able to publish dynamic lists of assets or manually selected lists of assets. It is also able to show a summary view of an asset and offer a link to the full view if desired. Because of this it will save you time since for many use cases it will make it unnecessary to develop custom portlets for your custom content types.
 
@@ -708,7 +722,78 @@ Once the tags and categories have been entered you will want to show them along 
 
 In both tags, you can also specify an optional `portletURL` parameter. Each tag that uses the `portletURL` parameter will be a link containing the `portletURL` *and* `tag` or `categoryId` parameter value respectively. This supports tags navigation and categories navigation within your portlet. But you will need to implement the look-up functionality in your portlet code by reading the values of those two parameters and using the `AssetEntryService` to query the database for entries based on the specified tag or category.
 
-Great! You'll have no problem associating tags and categories with your assets. So let's get them published in your portal.
+Great! You'll have no problem associating tags and categories with your assets. But before we go further with our example, let's take a look at more JSP tags that leverage the features available for assets.
+
+#### More JSP tags for assets
+
+In addition to using tags and categories, there are even more features that the asset framework provides you. These features allow users to do the following with your assets:
+
+-	Add comments
+
+-	Rate comments of other users
+
+-	Rate assets
+
+-	Apply social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus))
+
+-	Relate assets to one another
+
+-	Flag content as inappropriate to notify the portal administrator
+
+There are JSP tags, called *Liferay UI* tags, associated with each of these feartures. You can find these tags used throughout the JSPs for Liferay's built-in portlets (e.g. `edit_entry.jsp` of the Blogs portlet).
+
+Here are some examples of the JSP tags from the Blogs portlet so that you can become familiar with them:
+
+-	**Comments and comment ratings:**
+
+		<portlet:actionURL var="discussionURL">
+			<portlet:param name="struts_action" value="/blogs/edit_entry_discussion" />
+		</portlet:actionURL>
+
+		<liferay-ui:discussion
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entry.getEntryId() %>"
+			formAction="<%= discussionURL %>"
+			formName="fm2"
+			ratingsEnabled="<%= enableCommentRatings %>"
+			redirect="<%= currentURL %>"
+			subject="<%= entry.getTitle() %>"
+			userId="<%= entry.getUserId() %>"
+		/>
+
+-	**Rate assets:**
+
+		<liferay-ui:ratings
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entry.getEntryId() %>"
+		/>
+
+-	**Social Bookmarks:**
+
+		<liferay-ui:social-bookmarks
+			displayStyle="<%= socialBookmarksDisplayStyle %>"
+			target="_blank"
+			title="<%= entry.getTitle() %>"
+			url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(), themeDisplay) %>"
+		/>
+
+-	**Related assets:**
+
+		<liferay-ui:input-asset-links
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entryId %>"
+		/>
+
+-	**Flag as inappropriate:**
+
+		<liferay-ui:flags
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entry.getEntryId() %>"
+			contentTitle="<%= entry.getTitle() %>"
+			reportedUserId="<%= entry.getUserId() %>"
+		/>
+
+These tags from Liferay's taglib make it easy to apply these features to your assets. No problem, right? So let's get the assets published in your portal.
 
 #### Publishing assets with Asset Publisher
 
