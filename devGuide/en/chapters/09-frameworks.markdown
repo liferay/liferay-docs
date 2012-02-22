@@ -64,7 +64,7 @@ The entity name is the database table you want to create.
 Columns specified in `service.xml` will be created in the database with a data type appropriate to the specified Java type. Accessors in the model class will automatically be generated for these attributes.
 
 ---
-![tip](../../images/tip-pen-paper.png) Always consider adding two long fields called *groupId* and *companyId* to your data models. These two fields will allow your portlet to support the multi-tenancy features of Liferay so that each organization (for each portal instance) can have its own independent data.
+![tip](../../images/tip-pen-paper.png)**Tip:** Always consider adding two `long` fields called *groupId* and *companyId* to your data models. These two fields will allow your portlet to support the multi-tenancy features of Liferay so that each organization (for each portal instance) can have its own independent data.
 ---
 
 ### Generate the Service
@@ -113,8 +113,6 @@ The service has been generated successfully when you see BUILD SUCCESSFUL In the
 
     -   `BookServiceHttp` - http remote service, proxies `BookServiceUtil` `@generated`
 
-    -   `BookJSONSerializer` - json serializer, converts `Book` to JSON array `@generated`
-
 -   Model
 
     -   `BookModel` - book base model interface `@generated`
@@ -155,7 +153,7 @@ We will add the database interaction methods to this service layer class. Add th
         book.setModifiedDate(now);
         book.setTitle(title);
 
-        return bookPersistence.update(book);
+        return bookPersistence.update(book, false);
     }
 
 Before you can use this new method, you must add its signature to the `BookLocalService` interface by running service builder again.
@@ -172,7 +170,7 @@ Service Builder looks through `BookLocalServiceImpl` and automatically copies th
 
 Service Builder generates the properties file `service.properties` in the `src` directory of your service. Liferay Portal uses these properties to alter your service's database schema and load Spring configuration files to support deployment of your service. You should not modify this file, but rather make any necessary overrides in a `service-ext.properties` file in the `src` folder.
 
-The only property that you may need to overwrite from this file is `build.auto.upgrade`. Setting `build.auto.upgrade=false` in your `service-ext.properties` prevents Liferay from trying to automatically apply any changes to the database model when a new version of the plugin is deployed. This is needed in projects in which it is preferred to manually manage the changes to the database or in which the SQL schema has been modified manually after generation by Service Builder.
+The only property that you may need to override from this file is `build.auto.upgrade`. Setting `build.auto.upgrade=false` in your `service-ext.properties` prevents Liferay from trying to automatically apply any changes to the database model when a new version of the plugin is deployed. This is needed in projects in which it is preferred to manually manage the changes to the database or in which the SQL schema has been modified manually after generation by Service Builder.
 
 ### Built-In Liferay Services
 
@@ -190,15 +188,13 @@ In addition to the services you create using Service Builder, your portlets may 
 
 - `LayoutService`
 
-- `OrganizationService`
-
 - `PermissionService`
 
 - `UserGroupService`
 
 - `RoleService`
 
-For more information on these services, see *Liferay in Action* and Liferay's Javadocs.
+For more information on these services, see Liferay's Javadocs at [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
 ## Security and Permissions
 
