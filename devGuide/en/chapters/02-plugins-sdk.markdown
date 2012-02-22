@@ -151,7 +151,11 @@ It is also possible to use use the Plugins SDK as a simple cross-platform projec
 
 ## Maven alternative
 
-As an alternative to developing plugins using the SDK, you can leverage the Apache Maven build management framework. You'll be happy to know that we have archetypes to help you build various types of plugins including Liferay portlets, themes, and layout templates. Liferay archetypes and supporting artifacts can be found by searching for "liferay" in [https://oss.sonatype.org](https://oss.sonatype.org). In the Liferay Community, check out current information and stay tuned for more exciting updates for developing plugins with Maven.
+As an alternative to developing plugins using the SDK, you can leverage the Apache Maven build management framework. You'll be happy to know that we have archetypes to help you build various types of plugins including Liferay portlets, themes, and layout templates. Here are links to articles, written by Mika Koivisto, to help you get started with the Liferay Maven SDK and deploying Liferay artifacts to your Maven repository.
+
+-	[Getting started with the Liferay Maven SDK](http://www.liferay.com/web/mika.koivisto/blog/-/blogs/getting-started-with-liferay-maven-sdk)
+
+-	[Deploying Liferay artifacts to your own Maven repository](http://www.liferay.com/web/mika.koivisto/blog/-/blogs/12618414?_33_redirect=http%3A%2F%2Fwww.liferay.com%2Fcommunity%2Fblogs%3Fp_p_id%3D115%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-2%26p_p_col_pos%3D1%26p_p_col_count%3D2%26_115_advancedSearch%3Dfalse%26_115_keywords%3D%26_115_delta%3D5%26_115_cur%3D1%26_115_struts_action%3D%252Fblogs_aggregator%252Fview%26_115_andOperator%3Dtrue)
 
 Now that you have your Plugins SDK configured, know the directory structure and available targets, and have learned some best practices, you are ready to start developing plugins using Liferay's Plugins SDK.
 
