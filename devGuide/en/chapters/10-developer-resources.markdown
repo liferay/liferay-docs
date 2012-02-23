@@ -9,20 +9,21 @@ The following are useful reference resources for developers working with the Lif
         [http://www.liferay.com/products/what-is-a-portal](http://www.liferay.com/products/what-is-a-portal)
 
     -   **Platform Javadocs:** 
-        [http://docs.liferay.com/portal/6.0/javadocs/](http://docs.liferay.com/portal/6.0/javadocs/)
+        [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/)
 
     -   **Reference documentation for Liferay's XML files:**
-        [http://docs.liferay.com/portal/6.0/definitions/](http://docs.liferay.com/portal/6.0/definitions/)
+        [http://docs.liferay.com/portal/6.1/definitions/](http://docs.liferay.com/portal/6.1/definitions/)
 
     -   **Reference documentation for Liferay's taglibs:**
-        [http://docs.liferay.com/portal/6.0/taglibs/](http://docs.liferay.com/portal/6.0/taglibs/)
+        [http://docs.liferay.com/portal/6.1/taglibs/](http://docs.liferay.com/portal/6.1/taglibs/)
 
-    -   Sources for version 6 (use your liferay.com account to access
-        them):
-        [http://svn.liferay.com/repos/public/portal/branches/6.0.6/](http://svn.liferay.com/repos/public/portal/branches/6.0.6/)
+    -   Sources for version 6.1:
+    	-	[https://github.com/liferay/liferay-portal/tags](https://github.com/liferay/liferay-portal/tags)
+    	-	[https://github.com/liferay/liferay-plugins/tags](https://github.com/liferay/liferay-plugins/tags)
 
     -   Sources of the development version:
-        [http://svn.liferay.com/browse/portal](http://svn.liferay.com/browse/portal)
+    	-	[https://github.com/liferay/liferay-portal](https://github.com/liferay/liferay-portal)
+    	-	[https://github.com/liferay/liferay-plugins](https://github.com/liferay/liferay-plugins)
 
 -   Related specifications and standards:
 

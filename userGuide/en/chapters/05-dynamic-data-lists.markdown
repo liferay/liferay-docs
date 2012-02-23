@@ -95,8 +95,8 @@ Building out new lists really isn't all that different from creating new pieces 
 To create a new volunteer list with the "Volunteer Sign-Up" definition:
 
 1. From the *Content* section of the Control Panel, select Dynamic Data Lists.
-2. Click on *Add* to create a new list based on a data definition, which in our case is the job post.
-3. Give the data list a name, like *Open Jobs*, and a description to assist administrative users in the future.
+2. Click on *Add* to create a new list based on a data definition, which in our case is the volunteer sign-up.
+3. Give the data list a name, like *Spring Move-In*, and a description to assist administrative users in the future.
 4. Last and most importantly, click *Select* under the *Data Defition* section--this is where you set the data model that drives this list.
 5. Choose the *Volunteer Sign-Up* data definition you created, then click *Save*.
 
@@ -232,10 +232,6 @@ If you're not a Listie, and you happen to be deploying custom lists in an enviro
 
 ### Using workflow
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
-
-<!-- | TODO: We're still missing how you'd integrate Kaleo Forms with the form the user just created. That's what I was looking for in this section. | -->
-
 Liferay integrates the powerful features of workflow and the data capabilities of dynamic data lists in *Kaleo Forms*. Workflow is not enabled in the dynamic data list portlets by default, so you can focus on the core task of building custom forms backed by a data list. After this is done, you can deploy custom workflows to the form and its data. Though Kaleo Forms is only available in Enterprise Edition, if you're using Community Edition, you can still apply a workflow to a list when creating it.
 
 If you don't have a workflow engine installed, install the Kaleo Web plugin by going to *Control Panel &rarr; Server &rarr; Plugins Installation &rarr; Install More Portlets &rarr; Web Plugins* and finding Kaleo Web in the list. You can also copy the Kaleo `.war` file to the deploy folder of you application server. Once workflow is installed, you have a new option when creating a list:
@@ -243,6 +239,88 @@ If you don't have a workflow engine installed, install the Kaleo Web plugin by g
 ![Figure 5.8: Enabling workflow on a list](../../images/05-ddl-add-workflow.png)
 
 Choose the workflow you would like to use, and every record then has to go through the workflow process. Now if you need to preview or edit entries as they're coming in, it's easy to work in to your daily workflow.
+
+#### Creating a Kaleo Form
+
+![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+
+Kaleo Forms is a plugin that enables you to have greater control over the list creation and entry process. For lists to appeal to companies all over the world (and make your new site not just a resounding success, but attract profitable businesses), business users must be able to control the workflow of list entry and review those entries when made. There should also be a cool dashboard you can use to make all of your changes.
+
+Inside Kaleo Forms, users can create lists that follow a workflow, called a *process*, or create new *entries* in a process. Creating a new process is easy, straightforward, and effective.
+
+#### Starting a new Process
+
+Defining processes that must be followed in data collection and entry is a fundamental part of business. Historically, this hasn't been fun or easy, but Kaleo forms makes it as easy as possible. A process is just another way to describe a workflow you want on a list. When you place a Kaleo Forms portlet on a page, you are presented with a dashboard with two tabs: *Summary* and *Processes*. The summary view shows entries you have added to established processes, while also allowing you to add new entries. The processes view allows you to manage process definitions you have created.
+
+To build a list in Kaleo Forms with a workflow:
+
+1. Within the Kaleo Forms portlet, click on the *Processes* tab.
+2. Click on *Add Process*, and a form appears.
+3. Enter a name and description, helping your users to understand the purpose of this process.
+4. Select the appropriate list, workflow and forms you want to use in this process.
+5. Click *Save* to save your process.
+
+![Figure 5.x: New Kaleo Forms process](../../images/05-ddl-kaleo-forms-new-process.png)
+
+While the form looks complicated, it can be straightforward. There are a few pieces that make up a process, and clicking on each one takes you to the relevant list of options to insert.
+
+##### Selecting an Entry Definition
+
+The first part of a new Kaleo process is also the simplest: the entry definition. This is just another way to refer to a data definition. All of the avaliable data definitions can be chosen, including our awesome "Volunteer Sign-Up List." Just like with normal data lists, you can always create a new entry definition from the list view by clicking on *Add new definition*.
+
+##### Selecting an Initial Form
+
+One of the great advantages to using Kaleo forms to present your list as a process, is having total control over the detail template. You can always use a default template, which displays all the fields from your entry definition. Greater flexibility comes, however, from creating multiple detail templates for use in different stages of the process. When you create a detail template, you have the option of what *mode* to put it in:
+
+**Create:** *Create* mode gives a display for creating the initial entry. The first stage of any workflow requires you to create a new entry, so this should be the mode chosen for the initial form. All fields marked `required` must be included on create mode forms.
+
+**Edit:** *Edit* mode is used for any stage of the workflow process. For instance, you may want to separate information that shouldn't be saved from information that should. Other stages in the workflow may be a great place to store that additional information. No required fields have to be present on an edit mode form.
+
+![Figure 5.x: Selecting a detail template as the initial form](../../images/05-kaleo-forms-detail-template.png)
+
+Once you have chosen the initial display you want, all that's left to do is configure the workflow for your process.
+
+##### Selecting a Workflow
+
+You can now select a workflow to apply to your new list-defined process. All the avaliable workflows can be chosen, and you can create new ones from the selection screen. Simply choose *Add Workflow*, and a Workflow Designer screen appears, allowing you to define a new workflow by dragging elements in a flow chart.
+
+![Figure 5.x: Creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
+
+We'll keep ours simple, and just choose "Single Approver Definition." This gives us a starting point (entry creation), and a 'review' task, which we can use to add additional information in a secondary form.
+
+##### Assigning Workflow Task Forms
+
+Many workflows offer you the option of having multiple editorial and review stages. During these stages, you might want to offer different forms that allow the user to add more information to the entry. Kaleo forms offers you the opportunity to fine-tune the stages of workflow to use different forms.
+
+When inside the view to assign forms to tasks:
+
+1. Choose the workflow task by clicking on it.  This selects the task in the chart.
+2. In the details pane on the left-hand side, there is a property called `Forms`. Double click to edit the *value*.
+3. Start typing the name of a detail template, and it appears.
+4. Click *Save* to save the form assignment.
+
+![Figure 5.x: Assigning forms to workflow tasks](../../images/05-kaleo-forms-task-form.png)
+
+You can assign forms to as many tasks as you need, until you're satisfied with the workflow. After this stage, save the process, and it's ready to be used in Kaleo Forms.
+
+#### Using a Kaleo Form
+
+![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+
+Once you have a new Kaleo Form process, you can add new entries through the Summary tab in Kaleo Forms. Once the form is filled out and submitted, it enters the workflow you selected for the process.
+
+![Figure 5.x: Adding a new entry to a process](../../images/05-kaleo-form-new-entry.png)
+
+After you have created an entry, the next task in the workflow may have an additional form to complete. If there is, there is also an option to enter it:
+
+1. Next to the entry in progress, click the *Actions* button.
+2. Click *Complete form*.
+
+![Figure 5.x: Completing a form in the next workflow task](../../images/05-kaleo-forms-complete-form.png)
+
+After the new entry has worked its way through the entire workflow, it is added to the data set collected. The owner of that data set (who created the Kaleo process) can view and edit the entries collected.
+
+![Viewing a completed list](../../images/05-kaleo-forms-view.png)
 
 If you are a Listie, or a `list.it` developer, you're now prepared to show your lists to the world. That is, in fact, the reason you created `list.it` in the first place, right? 
 
