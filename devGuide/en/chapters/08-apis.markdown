@@ -564,6 +564,16 @@ When strict HTTP method mode is enabled, you can even filter web service access 
 
 Now all requests that use HTTP methods from above list are simply ignored.
 
+#### Controlling public access
+
+Each service method determines itself whether it can be executed by (non)authenticated user and if user has enough permission for chosen action. Most of portals read-only methods are open to public access.
+
+If you are concern about the security, it is possible to additionally restrict the access to exposed JSON API for public access. For that reason, there is a property that specifies a comma delimited list of public methods that can be accessed by unauthenticated users.
+
+	jsonws.web.service.public.methods=*
+
+Wildcards are supported, so, for example, you can simply set `get*,has*,is*` to enable public access only to read only methods; additionally securing all other JSON methods. Leave this value empty to disable access to all exposed methods.
+
 Lastly, let's consider how to invoke JSON Web Services.
 
 ### Invoking JSON Web Services
@@ -975,4 +985,3 @@ As we've demonstrated, the `ServiceContext` can be used to transfer lots of usef
 ## Conclusion
 
 Well, you've covered a lot of ground here in learning how to use the API locally and remotely, how to enable/disable remote services and access to them, and how to leverage ServiceContext objects in your use of Liferay services. Well done! Next, we'll take a look at some of the powerful frameworks of Liferay Portal, learn how they work and how you can leverage them.
-
