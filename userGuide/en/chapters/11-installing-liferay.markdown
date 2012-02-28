@@ -1914,7 +1914,7 @@ To turn of HSQL and other JOnAS-level services:
             jonas.development    false
 
       This will allow JOnAS to startup appropriately with Liferay installed.
-      
+      n
 ##### Configuring Containers in JOnAS
 
 With the application server configured with all extraneous services and applications disabled, it is left to tweaking the configuration of the containers within JOnAS: Tomcat and OSGi. By default, the Tomcat container is set up to listen on different ports than Liferay uses by default.
@@ -1929,6 +1929,50 @@ To change the Tomcat ports for Liferay's use:
                            redirectPort="9043" />
 			   
       Change it to reflect the default ports:
+
+            <Connector port="8080" protocol="HTTP/1.1"
+                           connectionTimeout="20000"
+                           redirectPort="8443" />
+
+3.    If you are using any other settings in Tomcat's server settings, you can adjust the ports if needed (such as changing the AJP port from `9009` to `8009`.
+
+To modify the OSGI defaults to ensure required java packages are bootsrapped by the loader:
+
+1.    Open the file `defaults.properties` inside of `$JONAS_BASE/conf/osgi`.
+2.    Find the declaration for `javase-packages` around line 93:
+
+            javase-packages ${javase-${javase.version}}
+	    
+      And add the following packages to make it read:
+      
+
+              javase-packages ${javase-${javase.version}}, com.sun.jmx.mbeanserver, com.sun.crypto.provider, org.apache.felix.framework
+	      
+      To ensure the required packages are loaded.
+      
+##### Starting JOnAS
+
+Once you have the required configuration in place, all that is left is to copy the portal dependencies and the Liferay `.war` file and start the server. JOnAS maintains libraries inside of `$JONAS_BASE/lib/ext`, and the application inside of `$JONAS_BASE/deploy`.
+
+To install `liferay-portal-dependencies-6.1.x-<date>.zip`:
+
+1.    Unzip the archive `liferay-portal-dependencies-6.1.x-<date>.zip` on your local filesystem.
+2.    Navigate to `$JONAS_BASE/lib/ext`.
+3.    Copy the `.jar` files from `liferay-portal-dependencies-6.1.x-<date>/` to `$JONAS_BASE/lib/ext`.
+4.    Install any additional libraries needed, such as database connectors.
+
+To deploy the `liferay-portal-6.1.x-<date>.war` file:
+
+1.    Copy the `liferay-portal-6.1.x-<date>.war` file from its current directory.
+2.    Navigate to `$JONAS_BASE/deploy`.
+3.    Paste the `liferay-portal-6.1.x-<date>.war` file into the `deploy` directory.
+
+Once the necessary files have been installed, all that is needed is to start JOnAS:
+
+1.    Navigate to `$JONAS_BASE/bin`.
+2.    Run the command `jonas.bat start` on Windows, and `./jonas start` on UNIX-lixe systems.
+
+JOnAS will start, and Liferay should open a browser to `http://localhost:8080`.
 
 #### Installing Liferay on WebLogic 10
 
