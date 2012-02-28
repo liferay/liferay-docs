@@ -53,7 +53,7 @@ This specifies the package path to which the class will be generated. In this ex
 
     <namespace>Library</namespace>
 
-The namespace element must be a unique namespace for this component. Table names will be prepended with this namepace.
+The namespace element must be a unique namespace for this component. Table names will be prepended with this namespace.
 
     <entity name="Book" local-service="true" remote-service="false">
 
@@ -64,7 +64,7 @@ The entity name is the database table you want to create.
 Columns specified in `service.xml` will be created in the database with a data type appropriate to the specified Java type. Accessors in the model class will automatically be generated for these attributes.
 
 ---
-![tip](../../images/tip-pen-paper.png) Always consider adding two long fields called *groupId* and *companyId* to your data models. These two fields will allow your portlet to support the multi-tenancy features of Liferay so that each organization (for each portal instance) can have its own independent data.
+![tip](../../images/tip-pen-paper.png)**Tip:** Always consider adding two `long` fields called *groupId* and *companyId* to your data models. These two fields will allow your portlet to support the multi-tenancy features of Liferay so that each organization (for each portal instance) can have its own independent data.
 ---
 
 ### Generate the Service
@@ -113,8 +113,6 @@ The service has been generated successfully when you see BUILD SUCCESSFUL In the
 
     -   `BookServiceHttp` - http remote service, proxies `BookServiceUtil` `@generated`
 
-    -   `BookJSONSerializer` - json serializer, converts `Book` to JSON array `@generated`
-
 -   Model
 
     -   `BookModel` - book base model interface `@generated`
@@ -155,7 +153,7 @@ We will add the database interaction methods to this service layer class. Add th
         book.setModifiedDate(now);
         book.setTitle(title);
 
-        return bookPersistence.update(book);
+        return bookPersistence.update(book, false);
     }
 
 Before you can use this new method, you must add its signature to the `BookLocalService` interface by running service builder again.
@@ -172,7 +170,7 @@ Service Builder looks through `BookLocalServiceImpl` and automatically copies th
 
 Service Builder generates the properties file `service.properties` in the `src` directory of your service. Liferay Portal uses these properties to alter your service's database schema and load Spring configuration files to support deployment of your service. You should not modify this file, but rather make any necessary overrides in a `service-ext.properties` file in the `src` folder.
 
-The only property that you may need to overwrite from this file is `build.auto.upgrade`. Setting `build.auto.upgrade=false` in your `service-ext.properties` prevents Liferay from trying to automatically apply any changes to the database model when a new version of the plugin is deployed. This is needed in projects in which it is preferred to manually manage the changes to the database or in which the SQL schema has been modified manually after generation by Service Builder.
+The only property that you may need to override from this file is `build.auto.upgrade`. Setting `build.auto.upgrade=false` in your `service-ext.properties` prevents Liferay from trying to automatically apply any changes to the database model when a new version of the plugin is deployed. This is needed in projects in which it is preferred to manually manage the changes to the database or in which the SQL schema has been modified manually after generation by Service Builder.
 
 ### Built-In Liferay Services
 
@@ -190,15 +188,13 @@ In addition to the services you create using Service Builder, your portlets may 
 
 - `LayoutService`
 
-- `OrganizationService`
-
 - `PermissionService`
 
 - `UserGroupService`
 
 - `RoleService`
 
-For more information on these services, see *Liferay in Action* and Liferay's Javadocs.
+For more information on these services, see Liferay's Javadocs at [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
 ## Security and Permissions
 
@@ -238,7 +234,7 @@ The JSR specification defines the means to specify the roles that will be used b
 		<supported-public-render-parameter>tag</supported-public-render-parameter>
 	</portlet>
 
-These roles need to be mapped to specific roles within the portal. The reason for this mapping is to provide a means for the deployer of a portlet to resolve conflicts between roles that have the same name but are from different portlets (e.g., portlets from different developers).
+These roles need to be mapped to specific roles within the portal. The reason for this mapping is to provide a means for the deployer of a portlet to resolve conflicts between roles that have the same name but are from different portlets (e.g. portlets from different developers).
 
 ---
 ![tip](../../images/tip-pen-paper.png) Each role named in a portlet's `<security-role-ref>` element is given permission to add the portlet to a page.
@@ -297,7 +293,7 @@ Adding permissions to custom portlets consists of four main steps (also known as
 
 Before you can add permissions to a portlet, let's get an understanding of the following two critical terms used throughout this section:
 
--	**Resource** - A generic term for any object represented in the portal. Examples of resources include portlets (e.g., Message Boards, Calendar, etc.), Java classes (e.g., Message Board Topics, Calendar Events, etc.), and files (e.g., documents, images, etc.)
+-	**Resource** - A generic term for any object represented in the portal. Examples of resources include portlets (e.g. Message Boards, Calendar, etc.), Java classes (e.g. Message Board Topics, Calendar Events, etc.), and files (e.g. documents, images, etc.)
 
 -	**Permission** - An action on a resource. For example, the *view* action with respect to *viewing the calendar portlet* is defined as a permission in Liferay.
 
@@ -409,9 +405,9 @@ The next level of permissions is defined in the `<model-resource>` section. This
 
 The differences between the portlet instance permissions defined in the `<model-resource>` section and the portlet permissions defined in the `<portlet-resource>` section are subtle, but critical. Notice that permissions, such as the ability to *add* or *subscribe to* a blog entry, are defined at the portlet instance level. This makes it possible to have multiple distinct blog instances within a site, each with different permissions for site users. For example, a food site could have one blog open to posts from any site member, but also have a separate informational blog about the site itself restricted to posts from administrators.
 
-After defining the portlet and portlet instance as resources, we move on to defining models within the portlet that also require permissions.  The model resource is surrounded by the `<model-resource>` tag. Within this tag, we first define the model name. Notice that the `<model-name>` is not the name of an actual Java class, but simply the fully qualified name of the portlet's package (e.g., the blog portlet's package `com.liferay.portlet.blogs`). This is the recommended convention for permissions that refer to an instance of the portlet as a whole. Next is the `<portlet-ref>` element which contains a `<portlet-name>`. The value of the `<portlet-name>` references the name of the portlet to which the model resource belongs; though unlikely, a model resource can belong to multiple portlets referenced with multiple `<portlet-name>` elements. Similar to the portlet resource, the model resource also allows you to define a list of supported actions that require permission to perform. You must list out all the performable actions that require a permission check. As you can see for a blog entry, users must belong to appropriate roles for permission to *add comments* to an entry, *delete* an entry, *change the permission* setting of an entry, *update* an entry, or simply to *view* an entry. The `<site-member-defaults>` tag, `<guest-defaults>` tag, and `<guest-unsupported>` tag have similar meaning for a *model resource* as they do for a *portlet resource*.
+After defining the portlet and portlet instance as resources, we move on to defining models within the portlet that also require permissions.  The model resource is surrounded by the `<model-resource>` tag. Within this tag, we first define the model name. Notice that the `<model-name>` is not the name of an actual Java class, but simply the fully qualified name of the portlet's package (e.g. the blog portlet's package `com.liferay.portlet.blogs`). This is the recommended convention for permissions that refer to an instance of the portlet as a whole. Next is the `<portlet-ref>` element which contains a `<portlet-name>`. The value of the `<portlet-name>` references the name of the portlet to which the model resource belongs; though unlikely, a model resource can belong to multiple portlets referenced with multiple `<portlet-name>` elements. Similar to the portlet resource, the model resource also allows you to define a list of supported actions that require permission to perform. You must list out all the performable actions that require a permission check. As you can see for a blog entry, users must belong to appropriate roles for permission to *add comments* to an entry, *delete* an entry, *change the permission* setting of an entry, *update* an entry, or simply to *view* an entry. The `<site-member-defaults>` tag, `<guest-defaults>` tag, and `<guest-unsupported>` tag have similar meaning for a *model resource* as they do for a *portlet resource*.
 
-After defining resource permissions for your custom portlet, you then need to refer Liferay to the resource-actions XML file that provides these definitions (e.g., `blogs.xml` for the blogs portlet). For Liferay core, the resource-actions XML files would normally reside in `portal/portal-impl/classes/resource-actions` and a a file named `default.xml` file would refer to each of these files. Here is an excerpt from the `default.xml` that references the resource permission definition files for all of the Liferay built-in portlets (including the blogs portlet):
+After defining resource permissions for your custom portlet, you then need to refer Liferay to the resource-actions XML file that provides these definitions (e.g. `blogs.xml` for the blogs portlet). For Liferay core, the resource-actions XML files would normally reside in `portal/portal-impl/classes/resource-actions` and a a file named `default.xml` file would refer to each of these files. Here is an excerpt from the `default.xml` that references the resource permission definition files for all of the Liferay built-in portlets (including the blogs portlet):
 
 	<?xml version="1.0"?>
 	<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
@@ -424,7 +420,7 @@ After defining resource permissions for your custom portlet, you then need to re
 		...
 	</resource-action-mapping>
 
-For your plugin, you should put your resource-actions XML file(s) (e.g. `default.xml` and `blogs.xml`) in a directory that is in your project's classpath. Then create a properties file (typically named `portlet.properties`) for your portlet that references the the file that specifies your `<resource-action-mapping>` element (e.g. `default.xml`). Within this portlet properties file, create a property named `resource.actions.configs` with the relative path to your portlet's resource-action mapping file (e.g., `default.xml`) as its value. For example, you could specify the property in this manner:
+For your plugin, you should put your resource-actions XML file(s) (e.g. `default.xml` and `blogs.xml`) in a directory that is in your project's classpath. Then create a properties file (typically named `portlet.properties`) for your portlet that references the the file that specifies your `<resource-action-mapping>` element (e.g. `default.xml`). Within this portlet properties file, create a property named `resource.actions.configs` with the relative path to your portlet's resource-action mapping file (e.g. `default.xml`) as its value. For example, you could specify the property in this manner:
 
     resource.actions.configs=resource-actions/default.xml
 
@@ -439,7 +435,7 @@ There are 6 permission algorithms that Liferay has used over the years for check
 
 It's important to note that once a permission algorithm is configured and resources are created, the algorithm cannot be changed; otherwise the existing permissions will be lost (and some system features may fail).
 
-For all new deployments it is strongly recommended you use algorithm 6. For deployments that are using other algorithms it's recommended you migrate to algorithm 6 using the migration tools provided in the Control Panel (see Control Panel -\> Server Administration -\> Data Migration.)
+For all new deployments it is strongly recommended you use algorithm 6. For deployments that are using other algorithms it's recommended you migrate to algorithm 6 using the migration tools provided in the Control Panel (see Control Panel &rarr; Server Administration &rarr; Data Migration.)
 
 For more information see options for `permissions.user.check.algorithm` in the `portal.properties` file. But next, we'll cover how to add resources.
 
@@ -494,7 +490,7 @@ Next, we'll show you how to implement permissions checking.
 
 ### Checking Permissions
 
-The last major step to implementing permissions for your custom portlet is to add some checks that guarantee that the configured permissions are enforced. This may be done in a couple of places. For example, your business layer should check for permission before deleting a resource, or your user interface should hide a button that adds a model (e.g., a calendar event) if the user does not have permission to do so.
+The last major step to implementing permissions for your custom portlet is to add some checks that guarantee that the configured permissions are enforced. This may be done in a couple of places. For example, your business layer should check for permission before deleting a resource, or your user interface should hide a button that adds a model (e.g. a calendar event) if the user does not have permission to do so.
 
 Similar to the other steps, the default permissions for the portlet resources are automatically checked for you. You do not need to implement anything for your portlet to discriminate whether a user is allowed to view or to configure the portlet itself. However, you do need to implement checking of any custom permission you have defined in your resource-actions XML file. In the blogs portlet, one custom supported action is `ADD_ENTRY`. There are two places in the source code to check for this permission. The first place to check for the add entry permission is in your JSP files. The presence of the add entry button is contingent on whether the user has permission to add entry.
 
@@ -594,7 +590,7 @@ The term *asset* is used as a generic way to refer to any type of content regard
 
 Here are the main functionalities that you will be able to reuse thanks to the asset framework:
 
--   Associate tags to custom content types (new tags will be created automatically when the author assigns them to the content).
+-   Associate tags to custom content types (new tags will be created automatically when the author assigns them to the content)
 
 -   Associate categories to custom content types (authors will only be allowed to select from predefined categories within several predefined vocabularies)
 
@@ -602,7 +598,21 @@ Here are the main functionalities that you will be able to reuse thanks to the a
 
 -   Manage categories from the control panel (including creating complex hierarchies).
 
--   Keep track of the number of visualizations of an asset.
+-	Associate comments with assets
+
+-	Rate of assets on a five star rating system
+
+-	Assign social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus)) to assets
+
+-	Add custom fields to assets
+
+-	Relate assets to one another
+
+-	Flag asset content as inappropriate
+
+-   Keep track of the number of visualizations of an asset
+
+-	Integrate workflow with assets
 
 -   Publish your content using the Asset Publisher portlet. Asset Publisher is able to publish dynamic lists of assets or manually selected lists of assets. It is also able to show a summary view of an asset and offer a link to the full view if desired. Because of this it will save you time since for many use cases it will make it unnecessary to develop custom portlets for your custom content types.
 
@@ -708,13 +718,84 @@ Once the tags and categories have been entered you will want to show them along 
 
 In both tags, you can also specify an optional `portletURL` parameter. Each tag that uses the `portletURL` parameter will be a link containing the `portletURL` *and* `tag` or `categoryId` parameter value respectively. This supports tags navigation and categories navigation within your portlet. But you will need to implement the look-up functionality in your portlet code by reading the values of those two parameters and using the `AssetEntryService` to query the database for entries based on the specified tag or category.
 
-Great! You'll have no problem associating tags and categories with your assets. So let's get them published in your portal.
+Great! You'll have no problem associating tags and categories with your assets. But before we go further with our example, let's take a look at more JSP tags that leverage the features available for assets.
+
+#### More JSP tags for assets
+
+In addition to using tags and categories, there are even more features that the asset framework provides you. These features allow users to do the following with your assets:
+
+-	Add comments
+
+-	Rate comments of other users
+
+-	Rate assets
+
+-	Apply social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus))
+
+-	Relate assets to one another
+
+-	Flag content as inappropriate to notify the portal administrator
+
+There are JSP tags, called *Liferay UI* tags, associated with each of these feartures. You can find these tags used throughout the JSPs for Liferay's built-in portlets (e.g. `edit_entry.jsp` of the Blogs portlet).
+
+Here are some examples of the JSP tags from the Blogs portlet so that you can become familiar with them:
+
+-	**Comments and comment ratings:**
+
+		<portlet:actionURL var="discussionURL">
+			<portlet:param name="struts_action" value="/blogs/edit_entry_discussion" />
+		</portlet:actionURL>
+
+		<liferay-ui:discussion
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entry.getEntryId() %>"
+			formAction="<%= discussionURL %>"
+			formName="fm2"
+			ratingsEnabled="<%= enableCommentRatings %>"
+			redirect="<%= currentURL %>"
+			subject="<%= entry.getTitle() %>"
+			userId="<%= entry.getUserId() %>"
+		/>
+
+-	**Rate assets:**
+
+		<liferay-ui:ratings
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entry.getEntryId() %>"
+		/>
+
+-	**Social Bookmarks:**
+
+		<liferay-ui:social-bookmarks
+			displayStyle="<%= socialBookmarksDisplayStyle %>"
+			target="_blank"
+			title="<%= entry.getTitle() %>"
+			url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(), themeDisplay) %>"
+		/>
+
+-	**Related assets:**
+
+		<liferay-ui:input-asset-links
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entryId %>"
+		/>
+
+-	**Flag as inappropriate:**
+
+		<liferay-ui:flags
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entry.getEntryId() %>"
+			contentTitle="<%= entry.getTitle() %>"
+			reportedUserId="<%= entry.getUserId() %>"
+		/>
+
+These tags from Liferay's taglib make it easy to apply these features to your assets. No problem, right? So let's get the assets published in your portal.
 
 #### Publishing assets with Asset Publisher
 
 One of the nice benefits of using the asset framework is leveraging the Asset Publisher portlet to publish lists of your custom asset types. The lists can be dynamically specified (for example, based on the asset tags or categories) by the user or statically specified by an administrator.  The Asset Publisher portlet is part of the Liferay distribution.
 
-In order to be able to display your assets, the Asset Publisher needs to know how to access the metadata of your assets.  Additionally, you need to provide the Asset Publisher with templates for the types of views (e.g., *full* view and abstract view) available to display your assets.
+In order to be able to display your assets, the Asset Publisher needs to know how to access the metadata of your assets.  Additionally, you need to provide the Asset Publisher with templates for the types of views (e.g. *full* view and abstract view) available to display your assets.
 
 You can provide all this to the Asset Publisher by implementing the following pair of interfaces - AssetRendererFactory and AssetRenderer:
 
@@ -975,17 +1056,15 @@ The File Storage Framework: Allows storing files using the back-end of the Docum
 
 Liferay has a wide variety of frameworks that make it much easier to develop complex functionalities for your own applications with little effort. These frameworks have evolved from the applications bundled with Liferay out of the box so they have been proven in the real world, even in very high performance portals.
 
-This chapter is a placeholder that provides a quick description to the main frameworks provided with Liferay 6. Note that what follows is a work in progress since more sections will be added over time and some of the current sections will evolve into its own chapter as we add more information and detailed instructions on how to use them over time.
+This chapter is a placeholder that provides a quick description to the main frameworks provided with Liferay 6.1. Note that what follows is a work in progress since more sections will be added over time and some of the current sections will evolve into its own chapter as we add more information and detailed instructions on how to use them over time.
 
 -   Workflow Framework: Allows adding Workflow functionality to your own portlets. One great benefit of using this framework is that you will be able to reuse all of the workflow management UIs provided by Liferay. Also you will be able to abstract your code from the specific workflow engine that will be used (JBPM, Liferay Kaleo, ...). Many Liferay portlets use this framework. If you want a simple example to learn how to use it, the blogs portlet is a good start.
 
--   Comments Framework: Allows adding comments easily in any portlet without any database code. Many Liferay portlets use this functionality, for example the blogs portlet for the comments of each entry.
-
--   Custom fields: A portlet that uses custom fields will allow the end user to extend the fields of its data entries with custom ones defined by the end user. To see a list of data types in Liferay that support this functionality just go to the Control Panel -\> Custom Fields.
-
--   Report abuse: Allow end users to report that some information published in a page should not be there.
+-   Custom fields: A portlet that uses custom fields will allow the end user to extend the fields of its data entries with custom ones defined by the end user. To see a list of data types in Liferay that support this functionality just go to the Control Panel &rarr; Custom Fields.
 
 -   Inline permissions Framework: Allows enhancing your SQL queries so that the database takes care of checking for view permissions. This is particularly useful when doing queries for data entries that could result in a large number of items (and thus checking of permissions afterward would be very inefficient) or when you want to implement pagination (which would not work fine if permissions are checked afterward and an item is removed). The Document Library or the Message Boards of Liferay are examples of portlets that use this functionality.
+
+-	Faceted Search: A new API was introduced which allows for simple creation of new facet configurations and searches. This API uses a JSON based configuration to define the details of facets used for the search. To find out more, see the  [Faceted Search](http://www.liferay.com/community/wiki/-/wiki/1071674/Faceted+Search) wiki by Ray Aug&#233;)
 
 Check in the near future for new editions of the Developer's Guide for extended information on each of these frameworks.
 
