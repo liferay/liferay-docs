@@ -29,7 +29,7 @@ Let's jump right in and create a workflow process definition.
 
 ## Creating process definitions
 
-A Kaleo workflow, called a *process definition*, is defined in an XML file and is executed by users on the portal. You can create as many different workflow definitions as need to manage the work done on your portal. You can define new user roles in the workflow to manage the approval process or use roles that already exist in your portal.
+A Kaleo workflow, called a *process definition*, is defined in an XML file and is executed by users on the portal. You can create as many different workflow definitions as needed to manage the work done on your portal. You can define new user roles in the workflow to manage the approval process or use roles that already exist in your portal.
 
 The XML file has several parts which define the workflow. To get an idea of how this works, we'll examine the default `single-approver-definition.xml` file which is included in the the Liferay Kaleo plugin.
 
@@ -272,9 +272,10 @@ Another important consideration when creating parallel approvals is that each no
 **Timers** are a new workflow feature in 6.1, which help make sure that important tasks in a workflow aren't forgotten or left undone because an oversight or the absence of someone on the critical path. The basic concept of the timer is that after a period of time specified, a specific action occurs. There are two main elements for a Timer, the **Task Timer** and the **Timer Action**.
 
 Timers occur within a Task element and are formatted like:
-    <task>
-    	...
-        <task-timers>
+
+	<task>
+		...
+		<task-timers>
 			<task-timer>
 				<name></name>
 				<delay>
@@ -389,7 +390,7 @@ My Submissions is found under your user's personal information in the control pa
 
 ![Figure 6.6: The My Submissions Page](../../images/kaleo-workflow-my-submissions.png)
 
-Besides viewing your work, you can also withdraw a submission from the review process by clicking on *Withdraw Submission* from the *Pending* tab.n.
+Besides viewing your work, you can also withdraw a submission from the review process by clicking on *Withdraw Submission* from the *Pending* tab.
 
 ## Using Kaleo Workflow Processes in Liferay Portal
 
@@ -474,6 +475,6 @@ Now let's take a look at the generated XML. It should look a lot like our defaul
 
 As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a very robust environment for web content management. Simple workflows can be managed using the default configuration and GUI tools, while more complex workflows can be created to meet the workflow management needs of almost any portal. Through this chapter, we've taken a look at the various elements of a workflow, and shown how to use those elements to create your own custom workflows. We've also seen how to properly use the various elements of a workflow like Assignments and Notifications, as well as newer and more advanced features like Parallel Workflows, Timers, and Custom Scripts.
 
-One of the keys to using Kaleo workflow isn't just understanding each individual element, but seeing how each one interacts with the other elements and figuring out which features are going to work best for your organization. Hopefully this chapter has helped you understand how to best craft a workflwo for you portal.
+One of the keys to using Kaleo workflow isn't just understanding each individual element, but seeing how each one interacts with the other elements and figuring out which features are going to work best for your organization. Hopefully this chapter has helped you understand how to best craft a workflow for you portal.
 
 
