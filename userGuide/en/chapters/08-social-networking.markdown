@@ -127,7 +127,7 @@ OpenSocial is a framework designed for creating applications, called *gadgets* t
 
 ### Using OpenSocial gadgets
 
-The OpenSocial plugin is included with Liferay Community Edition, and can be installed through Liferay Marketplace on Liferay EE. Installing the OpenSocial plugin will enable you to add OpenSocial gadgets to pages directly, and to integrate them into your portal like a portlet to added or removed by users as desired.
+The OpenSocial plugin is included with Liferay Community Edition, and can be installed through Liferay Marketplace on Liferay EE. Installing the OpenSocial plugin will enable you to add OpenSocial gadgets to pages directly, and to integrate them into your portal like a portlet to be added or removed by users as desired.
 
 <!-- | TODO: This is way too thin and sounds rushed. It should go something like: There are two ways to manage OpenSocial gadgets: via the control panel or via the *Add* &rarr; *OpenSocial Gadget* menu. In the control panel, you can publish any OpenSocial gadgets for which you have a URL, and they become available in the Gadgets category of the *Add* menu. To directly add a gadget.... 
 
@@ -191,7 +191,7 @@ The User Statistics portlet displays a list of users ranked by an amalgamation o
 
 The **Group Statistics** portlet provides some more advanced data analytics. If you add it to a page, and click on the configuration icon, you see that by default, it will display one metric *Activities on Assets*. You can click the *plus* button to add additional slots, and choose from the dozen or so metrics available for each slot, covering virtually any action that a user can perform on content on the portal. If you decide that you're displaying too many metrics, you can click the *minus* button for a particular slot on the configuration view to remove it.
 
-There are a wide-ranging number of actions that you can provide social credit for. Users can receive credit for everything from subsciring to a blog to writing wiki articles. You can easily tweak the numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
+There are a wide-ranging number of actions that you can provide social credit for. Users can receive credit for everything from subscribing to a blog to writing wiki articles. You can easily tweak the numbers in the control panel if it becomes clear that certain activities are weighted too high or too low.
 
 Social Activity can be an invaluable tool for portals that are heavily driven by community-created content. It allows you to easily recognize users who are major contributors and it indicates to new users whose advice will be most trustworthy. Social Activity is easy to set up and can be configured differently for each site, increasing the flexibility of your portal.
 
@@ -209,7 +209,7 @@ Like many web sites that you may visit, any portal running on Liferay can be set
 
 You can add any Liferay portlet as an application on Facebook. To do this, you must first get a developer key. A link for doing this is provided to you in the Facebook tab in any portlet's Configuration screen. You will have to create the application on Facebook and get the key and canvas page URL from Facebook. Once you've done this, you can copy and paste their values into the Facebook tab. Your portlet is now available on Facebook.
 
-This integration enables you to make things like Message Boards, Calendars, Wikis, and other content on your portal available to a much larger audience (unless you already have in billion users on your site, in which case, kudos to you). 
+This integration enables you to make things like Message Boards, Calendars, Wikis, and other content on your portal available to a much larger audience (unless you already have a billion users on your site, in which case, kudos to you). 
 
 ## Summary
 
