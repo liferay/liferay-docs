@@ -92,7 +92,7 @@ Permissions in Liferay WCM work the same way they do everywhere else in Liferay.
 
 ![Figure 3.4: Permissions for Web Content](../../images/04-web-content-content-permissions.png)
 
-For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with the your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. 
+For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. 
 
 ##### Localization
 
@@ -399,7 +399,7 @@ In order to configure mobile device rules, you must install the wurlf-web plugin
 
 Alternatively, if you have a working copy of Liferay's plugin repository, you can install the plugin manually. The plugin is available from Liferay's public SVN repository at [http://svn.liferay.com/repos/public/plugins/trunk/webs/wurfl-web/](http://svn.liferay.com/repos/public/plugins/trunk/webs/wurfl-web/) or from Liferay's public Github repository at [https://github.com/liferay/liferay-plugins/tree/master/webs/wurfl-web](https://github.com/liferay/liferay-plugins/tree/master/webs/wurfl-web). Once you have checked out or cloned the repository, navigate to the plugins root directory and create a `build.username.properties` file. Add the line `app.server.dir = <path-to-app-server>`, replacing `<path-to-app-server>` with the path to the application server running Liferay on your machine. Then navigate to the wurlf-web directory and execute the ant deploy target.
 
-You can access the Mobile Device Rules administrative page from the Content section of the control panel. Make to select the appropriate scope using the context menu selector so that your rule groups are available where you expect them to be. The Mobile Device Rules administrative page displays a list of defined rule groups and allows you to add more. To add rules to a rule group, select *Actions* &rarr; *Manage Rules* or just click on a rule group to edit it and then click the *Manage Rules* link.
+You can access the Mobile Device Rules administrative page from the Content section of the control panel. Select the appropriate scope using the context menu selector so that your rule groups are available where you expect them to be. The Mobile Device Rules administrative page displays a list of defined rule groups and allows you to add more. To add rules to a rule group, select *Actions* &rarr; *Manage Rules* or just click on a rule group to edit it and then click the *Manage Rules* link.
 
 ![Figure 3.19: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
