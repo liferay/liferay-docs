@@ -483,7 +483,7 @@ The default page that the Message Boards portlet displays has three buttons on i
 
 You are now ready to add categories to your message boards. Click the *Add Category* button. You may merge with a Parent Category by enabling the *Merge with Parent Category* check box and clicking the *Select* button. Enter a name for the category and a description of the category.
 
-Starting with Liferay 6.1, categories can have different display styles. The available categories must be set in portal property `message.boards.category.display.styles` and the default category in `message.boards.category.display.styles.default`. When creating a new category you can select the display style you like for that category. By default, Liferay provides two predefined display styles, although many more can be easily added:
+Starting with Liferay 6.1, categories can have different display styles. The available categories must be set in portal property `message.boards.category.display.styles` and the default category in `message.boards.category.display.styles.default`. When creating a new category, you can select the display style you like for that category. By default, Liferay provides two predefined display styles, although many more can be easily added:
 
 **Default:** classic display style for general purpose and discussions.
 
@@ -491,7 +491,7 @@ Starting with Liferay 6.1, categories can have different display styles. The ava
 
 ![Figure 4.15: Editing a Message Boards Category](../../images/05-editing-message-board-category.png)
 
-At the bottom of the form is a check box which allows you to enable the mailing list function.
+At the bottom of the form is a check box that allows you to enable the mailing list function.
 
 The mailing list function works in concert with the message notification emails. If a user subscribes to a message board category, he or she will get emails when someone posts messages to that category. Enabling the mailing list function allows those users to simply reply to the notification messages in their email clients, and those replies will be posted to the thread automatically.
 
