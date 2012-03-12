@@ -29,11 +29,11 @@ On Windows enter the following instead:
 
     create.bat deep-blue "Deep Blue"
 
-This command will create a blank theme in your *themes* folder. Notice that the Plugins SDK automatically appends "-theme" to the project name when creating this folder.
+This command will create a blank theme in your *themes* folder. Notice that the Plugins SDK automatically appends "-theme" to the project name when creating this folder. When you initially create your theme, it will be empty. But later, when you run `ant deploy`, all the files and folders of the theme will be populated.
 
 ### Setting a base Theme
 
-All themes in Liferay are built on top of the *_unstyled* and *_styled* themes, which contain very limited styling. By default, when you create a theme, it will be build with only these as a base, however, you can set an existing theme as your base theme, so that you can gain the additional styling from that theme as well as the elements for *_styled* and *_unstyled*.
+All themes in Liferay are built on top of the *_unstyled* and *_styled* themes, which contain very limited styling. By default, when you create a theme, it will be built with only these as a base, however, you can set an *existing* theme as your base theme, so that you can gain the additional styling from that theme as well as the elements for *_styled* and *_unstyled*.
 
 When a theme is built, the base themes are added in layers - first *_unstyled* is added, giving you the core of the theme, and *_styled* is added on top of that, adding the most basic elements. If you use a different base theme, that will be added on top of *_styled* - overriding the default styling wherever applicable. After the base themes are added, your own custom styling is added on top of that.
 
@@ -90,9 +90,9 @@ You will notice that there is a `_diffs` folder inside the `docroot` directory o
 
 You will also notice that there are several other folders inside `docroot`; these were copied over from the parent theme in your Liferay bundle when you deployed your theme. You should use these files as the basis for your modifications. For example, to customize the navigation, you would copy `navigation.vm` from `deep-blue-theme/docroot/templates/navigation.vm` into `deep-blue-theme/docroot/_diffs/templates` folder (you may have to create this folder first). You can then open this file and customize it to your liking.
 
-For custom styles, create a folder named `css` inside your `_diffs` folder and place a single file there called `custom.css`. This is where you would put all of your new styles and all of your overrides of the styles in the parent theme. `Custom.css` is loaded last, and so styles in this file are able to override any styles in the parent theme.
+For custom styles, create a folder named `css` inside your `_diffs` folder and place a single file there called `custom.css`. This is where you would put all of your new styles and all of your overrides of the styles in the parent theme. `custom.css` is loaded last, and so styles in this file are able to override any styles in the parent theme.
 
-Best practice recommends that you make all your custom themes using only the `custom.css` file, and that you not override any of the templates unless absolutely necessary. This will make future upgrades far easier, as you won't have to manually modify your templates to add support for new Liferay features.
+Best practice recommends that you make all your custom theme styles using only the `custom.css` file, and that you not override any of the templates unless absolutely necessary. This will make future upgrades far easier, as you won't have to manually modify your templates to add support for new Liferay features.
 
 Whenever you make modifications to your theme, redeploy it by opening a terminal in `themes/deep-blue-theme` and entering the command **ant deploy**. Wait a few seconds until the theme deploys, and then refresh your browser to see your changes.
 
@@ -108,7 +108,7 @@ You will notice that in the *Look and Feel* settings the *Classic* theme has a t
 
 ## JavaScript
 
-Liferay now includes its own JavaScript library called Alloy, which is an extension to Yahoo's YUI3 framework. Developers can take advantage of the full power of either of these frameworks in their themes. Inside of the `main.js` file, you will find definitions for three JavaScript callbacks:
+Liferay now includes its own JavaScript library called Alloy, which is an extension to Yahoo's YUI3 framework. Developers can take advantage of the full power of either of these frameworks in their themes. Inside of your theme's `main.js` file, you will find definitions for three JavaScript callbacks:
 
     AUI().ready(
 	    function() {
@@ -147,23 +147,23 @@ This callback is executed as soon as the HTML in the page has finished loading (
 
 -   **Liferay.Portlet.ready(fn);**
 
-Executed after each portlet on the page has loaded. The callback receives two parameters: `portletId` and `node. portletId` is the ID of the portlet that was just loaded. `node` is the Alloy Node object of the same portlet.
+Executed after each portlet on the page has loaded. The callback receives two parameters: `portletId` and `node`. `portletId` is the ID of the portlet that was just loaded. `node` is the Alloy Node object of the same portlet.
 
 -   **Liferay.on('allPortletsReady', fn);**
 
-Executed after everything—including AJAX portlets—has finished loading.
+Executed after everything -- including AJAX portlets -- has finished loading.
 
 ## Settings
 
 Each theme can define settings to make it configurable. These settings are defined in a file named `liferay-look-and-feel.xml` inside `WEB-INF`. This file does not exist by default, so you should now create it with the following content:
 
     <?xml version="1.0"?>
-    <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.0.0//EN"
-    "http://www.liferay.com/dtd/liferay-look-and-feel_6_0_0.dtd">
+    <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.1.0//EN"
+    "http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd">
 
     <look-and-feel>
 		<compatibility>
-			<version>6.0.0+</version>
+			<version>6.1.0+</version>
 		</compatibility>
 		<theme id="deep-blue" name="Deep Blue">
 			<settings>
