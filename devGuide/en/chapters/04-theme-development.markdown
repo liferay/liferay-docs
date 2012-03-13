@@ -199,6 +199,52 @@ Then when we write the `liferay-look-and-feel.xml`, we write two different entri
 		</settings>
     </theme>
 
+You can also make your settings configurable from within Liferay portal. Let's say you want to provide options to turn certain theme features on or off or that you want to allow a user to provide input to a theme setting. You can do just that by using *configurable* settings.
+
+For example, you could create an option to display a slogan next to your company's name in the footer of your site's pages. Here is how you do it:
+
+First, you insert logic into your `portal_normal.vm` template to display a slogan along with your company's name (e.g. Nosester) in the footer of your site pages.
+
+	#if($theme.getSetting("display-slogan-footer") == true)
+		<footer id="footer" role="contentinfo">
+			<p>
+				Nosester $theme.getSetting("slogan")
+			</p>
+		</footer>
+	#else
+		<footer id="footer" role="contentinfo">
+			<p>
+				Nosester
+			</p>
+		</footer>
+	#end
+
+Note in the above logic, the following theme setting variables:
+
+*	**display-slogan-footer:** holds a boolean value indicating whether to display the version of the footer that contains your slogan.
+
+*	**slogan:** holds your slogan text.
+
+Next, you declare the two theme setting variables in your `liferay-look-and-feel.xml` found in your theme's `WEB-INF` folder.
+
+	<settings>
+		<setting configurable="true" key="slogan" type="textarea" value=""></setting>
+		<setting configurable="true" key="display-slogan-footer" type="checkbox" value="true"></setting>
+	</settings>
+
+The portal administrator can input a slogan and activate it for the portal via the *Look and Feel* section of the *Manage Site Pages* panel (see the *Page Creation and Management* section of [Using Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide)).
+
+![Figure 4.1: Setting the footer display slogan in the *Look and Feel* of  the site's page settings.](../../images/themes-custom-configurable-setting.png)
+
+Then, when the portal administrator saves these settings, the site's pages display the new footer containing the slogan.
+
+![Figure 4.2: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
+
+![note](../../images/tip-pen-paper.png)**Note:** A language properties hook should be used to properly display configurable theme settings, such as the slogan text area and footer checkbox from the previous example. For details, see the [Overriding a Language.properties
+File](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties%3C-em%3E-fi-1) section found in the *Hooks* chapter of this guide.
+
+Next, we'll take a look at how to manage color schemes in your theme.
+
 ## Color Schemes
 
 Color schemes are specified using a CSS class name, with which you can not only change colors, but also choose different background images, different border colors, and so on.
