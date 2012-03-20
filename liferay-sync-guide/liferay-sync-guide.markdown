@@ -34,7 +34,22 @@ The options for the Mac OS application installer are similar.
 
 ### Mac OS
 
-<!-- to do -->
+Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG will mount it as a disk image, and open a window showing the contents of the image. To install Sync, drag the Liferay Sync icon to the Applications folder. Once it's installed, go to your Applications folder to run it.
+
+![](../../images/liferay-sync-mac-install.png)
+
+When you launch Liferay Sync, the first thing you need to do is provide it with the URL for the Liferay server that you'll be using Sync with, along with your user name and password. After that you'll need to run through a brief setup process, and provide information for a few fields.
+
+![](../../images/liferay-sync-mac-preferences.png)
+
+
+There are three items listed in the *General Settings* section. *Start Liferay Syns on Login* is checked by default. If you don't want Sync to start automatically, uncheck this. *Show Desktop Notifications* is also checked by default. This will display a small notification in the corner of the screen when a file that you have synced is changed. The *Check Server For Updates Every:* field enables you to set how frequently it will check to see if anything has changed. This can be set anywhere between 5 seconds and 30 minutes.
+
+The *Account Settings* section enables you to view that you created the first time Sync launched, or change them by clicking *Edit Settings*. When you edit your settings, you can also change the folder where Sync will stored files locally. By default files will be stored in the *liferay-sync* subfolder of your personal Documents folder.
+
+Finally, the *Site Settings* section allows use to choose which sites you wish to sync media from. By default it will list all of the sites that you are a member of, but you can uncheck any of those sites if you don't want to sync those files locally.
+
+After you finish configuring Liferay Sync and click *OK*, it will start running in the background, and you will not see any evidence of Liferay Sync launching except for an icon in your top menu bar. If you wish to change any of your settings, simply click on that icon to see your options.
 
 ### iOS
 
