@@ -22,7 +22,11 @@ Upon launching the Windows application installer, you'll be promted to choose an
 
 ![](../../images/liferay-sync-setup.png)
 
-On the next screen, you can configure some properties for Liferay Sync, including whether you'd like Liferay Sync to start when you log on to your computer, whether to display desktop notifications from Liferay Sync, and how often to check the Liferay server for updates. The Desktop notifications inform you when new files or new versions of files are downloaded. Click the *Edit Settings* button to specify your server's URL and enter your Liferay credentials. Use the *Test Connection* button to make sure Liferay Sync can communicate with the server. Lastly, select the Liferay sites whose documents and files you'd like to sync.
+On the next screen, you can configure some properties for Liferay Sync. There are three items listed in the *General Settings* section. *Start Liferay Sync on Login* is checked by default. If you don't want Sync to start automatically, uncheck this. *Show Desktop Notifications* is also checked by default. Unless you uncheck this, when a file that you have synced is changed, a small notification will appear in the corner of your screen. The *Check Server For Updates Every:* field enables you to set how frequently it will check to see if anything has changed. This can be set anywhere between 5 seconds and 30 minutes.
+
+Click the *Edit Settings* button in the *Account Settings* section to specify your server's URL and enter your Liferay credentials. Use the *Test Connection* button to make sure Liferay Sync can communicate with the server. Editing your settings also allows you can specify your Sync folder, the folder where Sync will store files on your machine. By default, files will be stored in the *liferay-sync* subfolder of your personal Documents folder.
+
+Finally, the *Site Settings* section allows you to choose which sites you wish to sync media from. By default, it will list all of the sites that you are a member of, but you can uncheck any of those sites if you don't want to sync those files.
 
 ![](../../images/liferay-sync-properties.png)
 
@@ -38,22 +42,13 @@ Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG will mo
 
 ![](../../images/liferay-sync-mac-install.png)
 
-When you launch Liferay Sync, the first thing you need to do is provide it with the URL for the Liferay server that you'll be using Sync with, along with your user name and password. After that you'll need to run through a brief setup process, and provide information for a few fields.
+When you launch Liferay Sync, the first thing you need to do is provide it with the URL for the Liferay server that you'll be using Sync with, along with your Liferay credentials. After that you'll need to run through a brief setup process, and you can provide the same information that the Windows installer asks for.
 
 ![](../../images/liferay-sync-mac-preferences.png)
 
-
-There are three items listed in the *General Settings* section. *Start Liferay Syns on Login* is checked by default. If you don't want Sync to start automatically, uncheck this. *Show Desktop Notifications* is also checked by default. This will display a small notification in the corner of the screen when a file that you have synced is changed. The *Check Server For Updates Every:* field enables you to set how frequently it will check to see if anything has changed. This can be set anywhere between 5 seconds and 30 minutes.
-
-The *Account Settings* section enables you to view that you created the first time Sync launched, or change them by clicking *Edit Settings*. When you edit your settings, you can also change the folder where Sync will stored files locally. By default files will be stored in the *liferay-sync* subfolder of your personal Documents folder.
-
-Finally, the *Site Settings* section allows use to choose which sites you wish to sync media from. By default it will list all of the sites that you are a member of, but you can uncheck any of those sites if you don't want to sync those files locally.
-
-After you finish configuring Liferay Sync and click *OK*, it will start running in the background, and you will not see any evidence of Liferay Sync launching except for an icon in your top menu bar. If you wish to change any of your settings, simply click on that icon to see your options.
+Once you've finished your configuration and have clicked *OK*, Liferay Sync will start running in the background, and you will not see any evidence of Liferay Sync launching except for an icon in your top menu bar. If you wish to change any of your settings, simply click on that icon to open the Liferay Sync menu and click on *Properties*.
 
 ### iOS
-
-<!-- get more detailed instructions -->
 
 For iOS, visit the App Store and search for Liferay, and install the Liferay Sync App. Once installed, follow the on-screen instructions as above.
 
@@ -99,4 +94,4 @@ Download the file again and you'll see that it now says *second test*--your edit
 
 Liferay Sync uses the default Liferay permissions to determine which files and folders are synced to the user's machine. This means that whatever files a user can access from a certain site are the ones that will be pulled down by Liferay Sync if that site is selected in the Sync client. You can test the functionality of Liferay Sync permissions by creating a new file on your desktop called *secret.txt*. Enter the text *secret, shh!* into this file. Then use your browser to log into Liferay and create a new user called *secretagent* with the email address *secretagent@liferay.com* and the password *test*. Also, create a new private site called *Secret Site*. Then assign the *secretagent* user to the *Secret Site* and grant the *site administrator* role to this user. There will be no other members of this site unless they are assigned by an administrator. Log in as the *secretagent* and use *Go to* &rarr; *Control Panel*, select *Secret Site* in the context menu selector, and click on *Documents and Media*. Then upload the *secret.txt* document.
 
-Now we'll configure our Liferay Sync client to log in with the *secretagent* user's credentials and access the *Secret Site*. Open the Liferay Sync menu from the taskbar and select *Properties*. Click on the *Edit Settings* button, choose a new Sync folder, enter *localhost:8080* for the server URL, and enter the secretagent's credentials. Lastly, uncheck all Liferay sites except the *Secret Site*, then click *OK*. Confirm that the files of the *Secret Site*, (just the *secret.txt* file) are downloaded to your new Sync folder. Congratulations! You've successfully set up a Liferay Sync folder that can only be accessed by the *secretagent* user and your server administrators.
+Next, we'll configure our Liferay Sync client to log in with the *secretagent* user's credentials and access the *Secret Site*. Open the Liferay Sync menu from the taskbar and select *Properties*. Click on the *Edit Settings* button, choose a new Sync folder, enter your server's URL and enter the secretagent's credentials: *secretagent@liferay.com* and *test*. Lastly, uncheck all Liferay sites except the *Secret Site*, then click *OK*. Confirm that the files of the *Secret Site*, (just the *secret.txt* file) are downloaded to your new Sync folder. Congratulations! You've successfully set up a Liferay Sync folder that can only be accessed by the *secretagent* user and your server administrators.
