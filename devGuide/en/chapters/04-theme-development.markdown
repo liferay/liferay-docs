@@ -205,19 +205,15 @@ For example, you could create an option to display a slogan next to your company
 
 First, you insert logic into your `portal_normal.vm` template to display a slogan along with your company's name (e.g. Nosester) in the footer of your site pages.
 
-	#if($theme.getSetting("display-slogan-footer") == true)
-		<footer id="footer" role="contentinfo">
-			<p>
+	<footer id="footer" role="contentinfo">
+		<p>
+			#if($theme.getSetting("display-slogan-footer") == true)
 				Nosester $theme.getSetting("slogan")
-			</p>
-		</footer>
-	#else
-		<footer id="footer" role="contentinfo">
-			<p>
+			#else
 				Nosester
-			</p>
-		</footer>
-	#end
+			#end
+		</p>
+	</footer>
 
 Note in the above logic, the following theme setting variables:
 
