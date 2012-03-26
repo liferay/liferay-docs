@@ -1128,7 +1128,7 @@ Let's work with the dependency jar files first.
 
 2.	Download your database driver `.jar` file and put it into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder as well. For demonstration purposes, we'll download the MySQL Connector/J driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/) and put its `.jar` file into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
-3.	Create the file `modules.xml` in the `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the following contents.
+3.	Create the file `module.xml` in the `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the following contents.
 
 		<?xml version="1.0"?>
 
