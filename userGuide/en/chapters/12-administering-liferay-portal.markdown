@@ -269,6 +269,20 @@ If staging has been enabled, changes to the page template are automatically prop
 
 Now that we've looked at site and page templates, let's discuss how to set up and manage user groups.
 
+![EE Only Feature]
+### Exporting and Importing Site Templates and Page Templates
+
+In order to export a Site which is using Site or Page Templates to a different environment (trough a LAR file or remote publication), the Templates have to be exported and imported manually in advance, otherwise, the Site will not be imported.
+
+In order to export a Site using a Site Template, the process would be the following:
+1. Go to the Site Templates administration, click on Manage Pages in the Site Template that your site is using
+2. Click on Export Pages to obtain a LAR file with the content of the Site Template
+3. In your target environment, go to the Site Templates administration and create a new Site Template.
+4. Click on Manage Pages of that Site Template and then click on Import Pages.
+5. Upload the LAR file containing the content of your Site Template
+6. Now the Site can be exported and imported normally to this new environment.
+
+
 ### User Groups [](id=lp-6-1-ugen12-user-groups-0)
 
 User Groups are arbitrary groupings of users. These groups are created by portal administrators to group users together who don't necessarily share an obvious hierarchical attribute. Users can be assigned to multiple user groups. User Groups are most often used to achieve one of the following goals:
