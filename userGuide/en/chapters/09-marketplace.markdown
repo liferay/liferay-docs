@@ -109,33 +109,29 @@ Some apps are written to work across a wide range of Liferay Platform releases. 
 
 ![Figure 9.7: Marketplace App Version History](../../images/marketplace-app-version-history2.png)
 
-To check if an app is compatible with your version of Liferay, click on the App and then click on the *Version History* tab. The Version History tab displays not only the list of versions of the app also the supported framework versions of the app and date each version of the app was added. The supported framework version of the app tells you whether or not the app is compatible with your version of Liferay.
+To check if an app is compatible with your version of Liferay, click on the App and then click on the *Version History* tab. The Version History tab displays not only the list of versions of the app but also the app's supported framework versions and the dates of each version of the app. The supported framework version of the app tells you whether or not the app is compatible with your version of Liferay.
 
 ## Downloading and Installing Apps
  
-Once you have found an app you wish to download and use, click on the name of the app to display its detailed information screen.
+Once you've found an app you wish to download and use, click on the name of the app to display its detailed information screen.
 
-![Figure 9.8: Detailed App Information](../../images/marketplace-app-information.png)
+![Figure 9.8: Detailed App Information](../../images/marketplace-app-information2.png)
 
-On this screen, there are a number of items to assist in learning more about the app.
- 
-In the center of the screen is the primary information about the app:
+On this screen, there are a number of items to assist in learning more about the app. You can find the primary information about the app on the left side of the screen. In the center display, you see a set of screenshots along with a description of the app. On the left, below the icon for the app, is some basic information about the app.
 
-* Description - In the center display you see a set of screenshots along with a description of the app. In addition, the set of tags associated with the app are displayed.
-* Information - On the right, below the icon for the app, are a set of links to the Author's profile page, and a link to follow the author (and receive updates from this specific author when actions occur in the future). In addition, small colored icons are shown, indicating what kinds of individual components make up this app: Portlets, Hooks, Themes, Layout Templates, Web Plugins, or EXT plugins. 
-
-In addition to basic information, you will also find information on:
-
+* Author: The creator of the app
+* Rating: The average rating of the app on a scale from zero to five stars. The number of ratings is also shown.
 * Latest Version: The latest released version of this app
-* Compatibility: The version(s) of the Liferay Platform that this app is compatible with (see Compatibility and Versioning for more detail)
-* Support: Who to contact if you need support for this app
-* Demo URL: If this app has an online demo available, you will find the link here.
-* Developer Web site: The main web site where development or support for this app can be found
-* Report issues/abuse: Helpful links to report additional issues related to this app
+* Supported By: Who to contact if you need support for this app
+* Users: The total number of users of the app
+* Weekly Installs: The average number of installations per week
+* Developer Profile: A link to the app developer's `liferay.com` profile page
+* Developer Website: A link to the developer's own website
+* Purchase: The button to click on to purchase the app. You must purchase an app before you can download it.
 
-In the lower section, you will find Reviews and Ratings for this app. Check here to find out what other people are saying about this app. In addition, on a separate tab, you will find the history of versions for this app, where you can download other versions (for example, if you are using an older version of the Liferay Platform, you may need to download a specific version of this app that is compatible with the version of the Liferay Platform you are using).
+In the lower section, you will find Reviews and Version History tabs for this app. Check here to find out what other people are saying about this app. In addition, on a separate tab, you will find the history of versions for this app, where you can download other versions (for example, if you are using an older version of the Liferay Platform, you may need to download a specific version of this app that is compatible with the version of the Liferay Platform you are using).
  
-![Figure 9.9: Detailed App Information](../../images/marketplace-app-version-history.png)
+![Figure 9.9: Detailed App Information](../../images/marketplace-app-version-history-and-reviews.png)
 
 ### Downloading and Installing
 
@@ -143,7 +139,7 @@ You've chosen an app, read the reviews, and want to download and use the app! Th
  
 ### Installing through Control Panel
 
-The easiest way to install an app is to do so from your Liferay Administration console (*control panel*). This requires that you have already setup a Liferay install on your local machine, and that you can login as an Administrator. 
+The easiest way to install an app is to do so from your Liferay Administration console (*Control Panel*). This requires that you have already setup a Liferay install on your local machine, and that you can log in as an Administrator. 
  
 Once you are logged in as an administrator, click the *Manage* menu at the top of the screen, and choose *Control Panel*. You are presented with the Liferay Administration console, a.k.a. Control Panel.
 
@@ -167,7 +163,7 @@ For those apps which you downloaded and installed on the currently running insta
 
 The second way to install an app is to download it first, then in a separate step, deploy it to your running Liferay instance. This is especially useful in situations where you do not wish to deploy the app directly to your production environment, or in cases where the target Liferay instance that is to receive the app is behind a corporate firewall or otherwise does not have direct access to the Marketplace.
  
-In this case, using your browser, you will find the app on `liferay.com/marketplace`. Once found, click on the *Purchase/Free* button when viewing the individual app. This will cause the app to be placed in your *Purchased* list on your Profile page. Navigate to your profile page, click on *My Marketplace* and visit the *Purchased* tab. Each app is listed. Find the app that you just purchased and click Download. The app is downloaded to your local machine in the same way that any other file would be downloaded. This file can then be hot-deployed to Liferay by copying it to Liferay's hot deploy directory. See the Administration Guide for more details on Hot Deploy.
+In this case, using your browser, you will find the app on `liferay.com/marketplace`. Once found, click on the *Purchase* button when viewing the individual app. This will cause the app to be placed in your *Purchased* list on your Profile page. Navigate to your profile page, click on *My Marketplace* and visit the *Purchased* tab. Each app is listed. Find the app that you just purchased and click *Download*. The app is downloaded to your local machine in the same way that any other file would be downloaded. This file can then be hot-deployed to Liferay by copying it to Liferay's hot deploy directory. See the User Guide (http://www.liferay.com/documentation/liferay-portal/6.1/user-guide)[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide] for more details on Hot Deploy.
 
 ## Managing Apps
  
