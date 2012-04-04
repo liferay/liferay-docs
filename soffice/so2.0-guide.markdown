@@ -42,7 +42,7 @@ To install Social Office manually, you need to deploy the so-hook plugin to your
 
 ![Figure X.x: Tip]()
 
-Note: All pages implementing the Social Office theme receive an extra convenience feature. The theme adds a button to the top-right corner of the page which allows you to expand the portlets on the page to fit the size of your browser window. You can click the button again to return the portlets to their default size.
+Note: Social Office 2.0 is incompatible with 7 Cogs, the sample website that comes pre-installed with Liferay bundles. You need to remove 7 Cogs from your Liferay installation before installing Social Office. This is very easy to do. For a Tomcat bundle, just navigate to `<Liferay Home>/tomcat-<version>/webapps` and remove the `seven-cogs-hook` folder. For other application server bundles, navigate to the directory where web applications are installed and remove the `seven-cogs-hook` folder. Please refer to chapter 11 of Using Liferay Portal [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server) if you're not sure where the web applications directory is on your application server.
 
 ## What can you do with Social Office?
 
@@ -59,6 +59,8 @@ The Social Office plugin adds functionality for a specific purpose: collaboratio
 The Social Office plugin for Liferay Portal provides extra collaborative tools and allows you to quickly set up sites designed to facilitate collaboration. Each site is designed to provide a single group or team with a virtual shared workspace. Members of your organization who belong to multiple groups or teams in your organization can belong to multiple Social Office sites on the portal. Social Office also provides each user with customized sets of public and private pages for their personal sites. These personal sites serve as virtual individual workspaces. The applications they include help users manage their tasks, keep informed about each other's activities, and communicate with each other.
 
 Whether you're creating a public web site and need the full features of an unparalleled, industry-leading engine or you're creating a small corporate Intranet, Liferay Portal is the ideal solution for you. You should consider installing the Social Office plugin if you'd like your site to facilitate communication between people within specific groups and accomplish tasks using shared virtual workspaces with minimal set up and administration.
+
+All pages implementing the Social Office theme receive an extra convenience feature. The theme adds a button to the top-right corner of the page which allows you to expand the portlets on the page to fit the size of your browser window. You can click the button again to return the portlets to their default size.
 
 ### Using the Social Office User role and personal sites
 
@@ -80,11 +82,15 @@ The Dashboard page provides several applications designed to keep you up to date
 
 ![Figure X.x: The default Dashboard applications are designed to inform you about recent portal activities and upcoming events, and to help you manage your personal tasks.](../../images/to-do.png)
 
-The Contacts Center is a important application for Social Office because it allows users to create LinkedIn-style connections and Twitter-style followers. This enables users to customize who they share information about social activities with and whose activity they're interested in. The Contacts Center application displays a list of portal users. You can choose to display *All*, *Connections*, or *Following* and you can also search for specific users. Select a user from the left-hand area of the Contacts Center portlet to view details about him or her. You can choose to add or remove a user as a connection, to follow or unfollow a user, and even to block or unblock a user. You can also export a user's vCard. vCard is a file format standard for electronic business cards.
+The Contacts Center is a important application for Social Office because it allows users to create LinkedIn-style connections and Twitter-style followers. This enables users to customize who they share information about social activities with and whose activity they're interested in. The Contacts Center application displays a list of portal users. You can choose to display *All*, *Connections*, or *Following* and you can also search for specific users. Select a user from the left-hand area of the Contacts Center portlet to view details about him or her. For each user, you'll have the following options:
+
+* *Add as Connection* sends a connection request to the selected user.
+* *Follow/Unfollow* subscribes and unsubscribes you to the selected user's activities stream.
+* *Block/Unblock* allows you to block and unblock users from viewing your activities stream. As of Social Office 2.0, blocking a user only prevents that user from following you or adding you as a connection. A blocked user can still send messages to and view the public profile information of the blocking user. 
+* *Export vCard* lets you export a user's vCard and save it as a VCF file. vCard is a file format standard for electronic business cards.
+* *Go to Profile* is a link to the selected user's public profile page.
 
 ![Figure X.x: Contacts Centers allows users to follow each other Twitter-style and set up Linked-In style connections.](../../images/to-do.png)
-
-<!-- | TODO: What else do connections and followers do? What exactly does it mean for a user to be blocked? Just appears to you as though that user doesn't exist? No private messages from the blocked user, no activities information about that user? | -->
 
 Social Office's Microblogs application allows you to broadcast your thoughts as a Facebook-like status to a chosen audience. You can choose for your status to be viewable by *All*, *Connections*, or *Followers*. The Timeline tab chronologically displays all the status posts that you have permission to see.
 
