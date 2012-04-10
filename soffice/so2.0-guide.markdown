@@ -42,7 +42,7 @@ To install Social Office manually, you need to deploy the so-hook plugin to your
 
 ![Figure X.x: Tip]()
 
-Note: All pages implementing the Social Office theme receive an extra convenience feature. The theme adds a button to the top-right corner of the page which allows you to expand the portlets on the page to fit the size of your browser window. You can click the button again to return the portlets to their default size.
+Note: Social Office 2.0 is incompatible with 7 Cogs, the sample website that comes pre-installed with Liferay bundles. You need to remove 7 Cogs from your Liferay installation before installing Social Office. This is very easy to do. For a Tomcat bundle, just navigate to `<Liferay Home>/tomcat-<version>/webapps` and remove the `seven-cogs-hook` folder. For other application server bundles, navigate to the directory where web applications are installed and remove the `seven-cogs-hook` folder. Please refer to chapter 11 of Using Liferay Portal at [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server) if you're not sure where the web applications directory is on your application server.
 
 ## What can you do with Social Office?
 
@@ -59,6 +59,8 @@ The Social Office plugin adds functionality for a specific purpose: collaboratio
 The Social Office plugin for Liferay Portal provides extra collaborative tools and allows you to quickly set up sites designed to facilitate collaboration. Each site is designed to provide a single group or team with a virtual shared workspace. Members of your organization who belong to multiple groups or teams in your organization can belong to multiple Social Office sites on the portal. Social Office also provides each user with customized sets of public and private pages for their personal sites. These personal sites serve as virtual individual workspaces. The applications they include help users manage their tasks, keep informed about each other's activities, and communicate with each other.
 
 Whether you're creating a public web site and need the full features of an unparalleled, industry-leading engine or you're creating a small corporate Intranet, Liferay Portal is the ideal solution for you. You should consider installing the Social Office plugin if you'd like your site to facilitate communication between people within specific groups and accomplish tasks using shared virtual workspaces with minimal set up and administration.
+
+All pages implementing the Social Office theme receive an extra convenience feature. The theme adds a button to the top-right corner of the page which allows you to expand the portlets on the page to fit the size of your browser window. You can click the button again to return the portlets to their default size.
 
 ### Using the Social Office User role and personal sites
 
@@ -80,11 +82,15 @@ The Dashboard page provides several applications designed to keep you up to date
 
 ![Figure X.x: The default Dashboard applications are designed to inform you about recent portal activities and upcoming events, and to help you manage your personal tasks.](../../images/to-do.png)
 
-The Contacts Center is a important application for Social Office because it allows users to create LinkedIn-style connections and Twitter-style followers. This enables users to customize who they share information about social activities with and whose activity they're interested in. The Contacts Center application displays a list of portal users. You can choose to display *All*, *Connections*, or *Following* and you can also search for specific users. Select a user from the left-hand area of the Contacts Center portlet to view details about him or her. You can choose to add or remove a user as a connection, to follow or unfollow a user, and even to block or unblock a user. You can also export a user's vCard. vCard is a file format standard for electronic business cards.
+The Contacts Center is a important application for Social Office because it allows users to create LinkedIn-style connections and Twitter-style followers. This enables users to customize who they share information about social activities with and whose activity they're interested in. The Contacts Center application displays a list of portal users. You can choose to display *All*, *Connections*, or *Following* and you can also search for specific users. Select a user from the left-hand area of the Contacts Center portlet to view details about him or her. For each user, you'll have the following options:
+
+* *Add as Connection* sends a connection request to the selected user.
+* *Follow/Unfollow* subscribes and unsubscribes you to the selected user's activities stream.
+* *Block/Unblock* allows you to block and unblock users from viewing your activities stream. As of Social Office 2.0, blocking a user only prevents that user from following you or adding you as a connection. A blocked user can still send messages to and view the public profile information of the blocking user. 
+* *Export vCard* lets you export a user's vCard and save it as a VCF file. vCard is a file format standard for electronic business cards.
+* *Go to Profile* is a link to the selected user's public profile page.
 
 ![Figure X.x: Contacts Centers allows users to follow each other Twitter-style and set up Linked-In style connections.](../../images/to-do.png)
-
-<!-- | TODO: What else do connections and followers do? What exactly does it mean for a user to be blocked? Just appears to you as though that user doesn't exist? No private messages from the blocked user, no activities information about that user? | -->
 
 Social Office's Microblogs application allows you to broadcast your thoughts as a Facebook-like status to a chosen audience. You can choose for your status to be viewable by *All*, *Connections*, or *Followers*. The Timeline tab chronologically displays all the status posts that you have permission to see.
 
@@ -106,7 +112,20 @@ You can access your public Profile page from the Dashboard by clicking on your n
 
 ![Figure X.x: User's Profile pages show relevant professional information, contacts, and status updates](../../images/to-do.png)
 
-By default, the Profile page displays three main pieces of information about a user: their profile, their lastest microblog status, and their recent activities. The Profile portlet is designed to display relevant professional information about a user. It always displays the user's name and email address, two descriptive sections labed *About* and *Expertise*, and allows you to export the user's vCard. If you're viewing your own Profile page, there's an *Edit Profile* button which opens up your *My Account* page of the control panel in a dialog box. If you're viewing another user's Profile page, the *Edit Profile* button is replaced with buttons for adding or removing the user as a connection, following or unfollowing a user, and blocking or unblocking a user. In addition to the Profile, Microblogs Status Update, and Activites portlets, the Profile page also contains Sites and Tags portlets to help with navigation. Note that when placed on a public page, the Microblogs Status Update portlet does not allow you to makes updates--it just just shows the lastest status update. You have to make status updates from your private site.
+By default, the Profile page displays several pieces of information about a user: their profile and profile picture, their lastest microblog status, their contacts, the sites they belong to, their tags, and their recent activities. The Profile portlet is designed to display relevant professional information about a user. A completed profile includes the following pieces of information:
+
+- Introduction
+- Phones
+- Addresses
+- Tags
+- Email Address
+- Websites
+- Social Network
+- SMS (Chat information)
+
+There's also a button which allows you to export the user's vCard. Once you've been granted a Social Office account, you need to access your own profile page and fill out your profile information. If you're viewing your own Profile page, there's an *Edit Profile* button which opens up your *My Account* page of the control panel in a dialog box. Currently, you need to access your *My Account* page of the control panel to update your profile picture.
+
+If you're viewing another user's Profile page, the *Edit Profile* button is replaced with buttons for adding or removing the user as a connection, following or unfollowing a user, and blocking or unblocking a user. In addition to the Profile, Microblogs Status Update, and Activites portlets, the Profile page also contains Sites and Tags portlets to help with navigation. Note that when placed on a public page, the Microblogs Status Update portlet does not allow you to makes updates--it just just shows the lastest status update. You have to make status updates from your private site.
 
 The public Contacts and Microblogs applications have their own public pages. These function the same way as the ones in a user's private site except that other users can only view, not edit them. However, the Timeline tab of the Microblogs portlet allows users to comment on entries.
 
