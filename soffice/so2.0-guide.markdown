@@ -112,7 +112,20 @@ You can access your public Profile page from the Dashboard by clicking on your n
 
 ![Figure X.x: User's Profile pages show relevant professional information, contacts, and status updates](../../images/to-do.png)
 
-By default, the Profile page displays three main pieces of information about a user: their profile, their lastest microblog status, and their recent activities. The Profile portlet is designed to display relevant professional information about a user. It always displays the user's name and email address, two descriptive sections labed *About* and *Expertise*, and allows you to export the user's vCard. If you're viewing your own Profile page, there's an *Edit Profile* button which opens up your *My Account* page of the control panel in a dialog box. If you're viewing another user's Profile page, the *Edit Profile* button is replaced with buttons for adding or removing the user as a connection, following or unfollowing a user, and blocking or unblocking a user. In addition to the Profile, Microblogs Status Update, and Activites portlets, the Profile page also contains Sites and Tags portlets to help with navigation. Note that when placed on a public page, the Microblogs Status Update portlet does not allow you to makes updates--it just just shows the lastest status update. You have to make status updates from your private site.
+By default, the Profile page displays several pieces of information about a user: their profile and profile picture, their lastest microblog status, their contacts, the sites they belong to, their tags, and their recent activities. The Profile portlet is designed to display relevant professional information about a user. A completed profile includes the following pieces of information:
+
+- Introduction
+- Phones
+- Addresses
+- Tags
+- Email Address
+- Websites
+- Social Network
+- SMS (Chat information)
+
+There's also a button which allows you to export the user's vCard. Once you've been granted a Social Office account, you need to access your own profile page and fill out your profile information. If you're viewing your own Profile page, there's an *Edit Profile* button which opens up your *My Account* page of the control panel in a dialog box. Currently, you need to access your *My Account* page of the control panel to update your profile picture.
+
+If you're viewing another user's Profile page, the *Edit Profile* button is replaced with buttons for adding or removing the user as a connection, following or unfollowing a user, and blocking or unblocking a user. In addition to the Profile, Microblogs Status Update, and Activites portlets, the Profile page also contains Sites and Tags portlets to help with navigation. Note that when placed on a public page, the Microblogs Status Update portlet does not allow you to makes updates--it just just shows the lastest status update. You have to make status updates from your private site.
 
 The public Contacts and Microblogs applications have their own public pages. These function the same way as the ones in a user's private site except that other users can only view, not edit them. However, the Timeline tab of the Microblogs portlet allows users to comment on entries.
 
