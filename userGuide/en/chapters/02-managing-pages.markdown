@@ -146,11 +146,15 @@ The next option in the *Manage* menu is page customizations.
 
 ### Page Customizations
 
-Page Customizations are a new feature in Liferay 6.1. With Page Customizations, any user can create personalized versions of any public page that has customizations enabled. Customizations are based on the rows and columns of a page layout. Administrators can activate or deactivate customizations for any row or column on any page. When users customize a page, they have the option to use either their version or the default version of a page. Users can't see alternate versions of pages other than their own.
+Page Customizations are a new feature in Liferay 6.1. With Page Customizations, any user with the appropriate permissions can create personalized versions of any public page that has customizations enabled. Customizations are based on the rows and columns of a page layout. Administrators can activate or deactivate customizations for any row or column on any page. When users customize a page, they have the option to use either their version or the default version of a page. Users can't see alternate versions of pages other than their own.
 
 ![Figure 2.6: Setting Customizable Columns](../../images/04-web-content-personal-customization.png)
 
-When an administrator activates Page Customizations for a page, any portlets that are in a *Customizable* row or column can be moved around the page or removed from the page. Users can add new portlets of their own choosing to the page. If at any time users determine that they don't like their customizations, they can click *Reset My Customizations* to revert their pages back to the default. 
+When an administrator activates Page Customizations for a page, any portlets that are in a *Customizable* row or column can be moved around the page or removed from the page. Users can add new portlets of their own choosing to these columns of the page. If at any time users determine that they don't like their customizations, they can click *Reset My Customizations* to revert their pages back to the default.
+
+The administrator of the "customizable" page, will have two different views: the *default page* view and the *customized page*. The changes he makes in the *default page* view will afect all users, whereas the changes he makes in the *customized page* view will only affect himself as if he were any other regular user customizing this page. Changes made by the administrator to a not customizable section in the *default view* will be effective inmediately for any user. However, if changes are made to a customizable section, the changes made by the administrator will *not* overwrite the users' changes. For this reason, users can view the *default page* and *reset his customizations* from the bar at the top.
+
+In order to allow users to customize a page, these users need to have permission to *Customize* pages (which can be fond under the Site section when assigning permissions to roles). This can be achieved assigning this permission to a role and then assigning this role to the users we want to be able to customize pages. For example, if we want any logged user to be able to customize our customizable pages, we could assign the Customize permission to the role *User* and if we want any member of a site to be able to customize the customizable pages of its sites, we would assing the Customize permission to the role *Site Member*.
 
 Now that you know how to configure pages, let's look at the settings for the site as a whole.
 
