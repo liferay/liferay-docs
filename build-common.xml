@@ -2,11 +2,14 @@
 
 <!-- 
 
-This ant script was created for converting the separate markdown chapter files of our documents into complete markdown, html, odt, and epub files. 
+This ant script was created for converting the separate markdown chapter files 
+of our documents into complete markdown, html, odt, and epub files. 
 
-Remember to use the script in the root directory of the document to be converted, NOT THIS ONE.
+Remember to use the script in the root directory of the document to be 
+converted, NOT THIS ONE.
 
-For example, use the "ant markdown-to-all" command from the documentation/trunk/userGuide directory to convert the userGuide into complete English markdown, html, odt, and epub documents.
+For example, use the "ant markdown-to-all" command from the documentation/trunk/userGuide 
+directory to convert the userGuide into complete English markdown, html, odt, and epub documents.
 
  -->
 
