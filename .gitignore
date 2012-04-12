@@ -1,5 +1,6 @@
 *~
 *.bak
+*.class
 *.iml
 *.swp
 *-tmp.html
@@ -14,6 +15,7 @@ nbbuild.xml
 /build.*.properties
 
 **/build/**
+**/classes/**
 **/dist/**
 **nbproject**
 *#

@@ -14,6 +14,17 @@ directory to convert the userGuide into complete English markdown, html, odt, an
  -->
 
 <project name="Markdown Document Conversion" default="echo-props" basedir=".">
+	<property name="project.dir" value=".." />
+
+	<path id="lib.classpath">
+		<fileset dir="${basedir}/lib" includes="*.jar" />
+		<fileset dir="${basedir}/code/liferay-doc-utils/lib" includes="*.jar" />
+	</path>
+
+	<path id="project.classpath">
+		<pathelement path="${classpath}" />
+		<path refid="lib.classpath" />
+	</path>
 
     <property environment="env" />
 
@@ -30,6 +41,32 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     <property name="dist.dir" value="./dist"/>
 
     <property name="pandoc.app" location="/home/${user.name}/.cabal/bin/pandoc"/>
+
+	<!-- taskdefs -->
+
+	<taskdef name="numberheaders" classname="com.liferay.documentation.util.NumberHeadersTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="numberimages" classname="com.liferay.documentation.util.NumberImagesTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- targets -->
 
     <target name="display-pandoc-version">
         <exec executable="${pandoc.app}">
@@ -66,7 +103,11 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </copy>
     </target>
 
-    <target name="prepare-dist" description="creates dist directory copying images and overriding with language specific images">
+    <target name="prepare-dist" depends="number-images-dir" description="numbers the images in the files, creates dist directory, copies images and overriding with language specific images">
+    	<!-- Replace the above the dependencies with below when liferay portal
+    	     supports urlTitle assignement.
+    	depends="number-headers-dir, number-images-dir"
+    	-->
         <echo message="... creating ${dist.dir}/${lang} directory"/>
         <mkdir dir="${dist.dir}/${lang}"/>
         <copy todir="${dist.dir}/${lang}/images">
@@ -242,7 +283,17 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     <target name="markdown-to-all" depends="markdown-to-html,markdown-to-odt,markdown-to-epub" description="converts markdown file to html, odt, and epub files" />
 
     <target name="markdown-to-all-win" depends="markdown-to-html-win,markdown-to-odt-win,markdown-to-epub-win" description="converts markdown file to html, odt, and epub files on windows" />
-    
+
+	<target name="number-headers-dir" description="numbers the headers of markdown files found in ${lang}/chapters/">
+		<numberheaders lang="${lang}" docDir="${doc.dir}">
+		</numberheaders>
+	</target>
+
+	<target name="number-images-dir" description="numbers the images of markdown files found in ${lang}/chapters/">
+		<numberimages lang="${lang}" docDir="${doc.dir}">
+		</numberimages>
+	</target>
+
     <target name="copy-single-chapter" depends="prepare" description="copies chapter to be converted">
         <echo message="... copying ${chapter}"/>
         <copy file="./en/chapters/${chapter}.markdown" todir="./${build.dir}/${lang}"/>
