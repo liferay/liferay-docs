@@ -99,15 +99,15 @@ Now that you have developed your app, it's time to get started with Marketplace!
 
 Before you can publish anything to the Marketplace, you must first have an account on [liferay.com](http://liferay.com). If you do not have an account, visit [http://liferay.com](http://liferay.com) and click *Register* in the upper-right. Once you have registered, you can visit the Marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace). The Marketplace homepage is shown below:
 
-![Figure 9.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
+![Figure 10.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
 
 This is the front page of the Marketplace and is where users go to find new and interesting apps. You'll visit here often during the course of development, so it might be a good idea to bookmark it now. To get started, the first thing you want to do is visit your personal *Home* page. There is a thin strip at the top of your browser window. This is known as the *Dockbar*. Many links are present in the drop-down menus of the Dockbar, including a link titled *Go to My Home*. This is a link to your personal home page. More detail about what you can find on your personal home and profile pages can be found in the *Liferay Marketplace* chapter of the User Guide. For now, go to your personal home page by clicking on the *Go to My Home* link.
 
-![Figure 9.2: Use the My Home Page link from anywhere in Liferay to navigate to your personal pages. ](../../images/marketplace-my-homepage-link.png) 
+![Figure 10.2: Use the My Home Page link from anywhere in Liferay to navigate to your personal pages. ](../../images/marketplace-my-homepage-link.png) 
 
 Your home page contains links to often-used functionality of liferay.com, including app creation and management. There are several links on the left of your home page, including one titled *App Manager*. This link allows you to manage the apps that you have either purchased (or have been purchased for use in companies you are associated with), or apps that you or your company have developed. You'll use this page heavily, so a bookmark would be useful here. Click *App Manager* to visit this page.
 
-![Figure 9.3: The App Manager lets you maintain everything about apps you've purchased or published.](../../images/marketplace-my-app-manager.png) 
+![Figure 10.3: The App Manager lets you maintain everything about apps you've purchased or published.](../../images/marketplace-my-app-manager.png) 
 
 You'll notice three tabs across the top:
 
@@ -125,7 +125,7 @@ To begin the process of publishing your app, click *Add an App*. A form appears,
 
 The first step is to enter the basic details about your app. 
 
-![Figure 9.4: Add all the details about your app, including tags, categories, and links to your site.](../../images/marketplace-add-app-details.png) 
+![Figure 10.4: Add all the details about your app, including tags, categories, and links to your site.](../../images/marketplace-add-app-details.png) 
 
 This screen allows you to enter basic details about the app you are publishing.
 
@@ -155,7 +155,7 @@ Publishing on behalf of a company effectively hands the keys over to the admins 
 
 Make up some sample data to use during this example, and enter it into the form. Once you have entered all your app's details, click *Next* to move on to the next screen.
 
-![Figure 9.5: Specify the version of your app here, following the guidelines. ](../../images/marketplace-add-app-version-initial.png) 
+![Figure 10.5: Specify the version of your app here, following the guidelines. ](../../images/marketplace-add-app-version-initial.png) 
 
 On this screen, you must specify the version of your app. Review the guidance in the *What is a version* section in this chapter to choose a good version specifier and enter it here. For our example, since this is the first version, enter `1.0`. Click *Next*.
 
@@ -163,13 +163,13 @@ On this screen, you must specify the version of your app. Review the guidance in
 
 This screen allows you to upload different sets of plugin files (variations) to support different Liferay versions. Think of it as a worksheet that you can fill out before advancing. The screen is shown here as it initially appears:
 
-![Figure 9.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-add-app-initial-files.png) 
+![Figure 10.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-add-app-initial-files.png) 
 
 On the left is a drop-down containing known Liferay releases. Choosing a Liferay release shows you uploaded files that correspond to the chosen Liferay version.  You can freely move between versions. Each time you choose a different version on the left drop-down, the right side updates to display the files you've already uploaded for that version. You can do this as many times as you wish in order to upload all the files making up your app, for all of the Liferay versions you wish to support. You can also upload duplicate files, in case a single file is supported across multiple Liferay releases.
 
 For this example, we will add the example portlet that represents our app. Choose *Liferay Portal 6.1 CE GA2* on the left menu. Click *Browse* and locate the `.war` file representing your sample app (hint: it is located in the `dist/` folder of your Plugins SDK). Choose it using the file browser, and click *Upload*. This uploads your plugin. When the upload completes, a confirmation checkmark appears.
 
-![Figure 9.7: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
+![Figure 10.7: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
 
 This indicates that the file was successfully uploaded and represents your app for users on Liferay Portal 6.1 CE GA2. You can optionally select other Liferay releases in the left drop-down and upload other `.war` files. Notice when you choose a different Liferay version in the left drop-down and then re-select the original *Liferay Portal 6.1 CE GA2*, your file is still there.  Click *Next* to advance to the final screen.
 
@@ -177,7 +177,7 @@ This indicates that the file was successfully uploaded and represents your app f
 
 Whenever you make a change (app details, adding files, adding new versions), you always wind up at a *Preview* screen, allowing you to preview your app as it will appear in the Marketplace, so you can confirm your changes. 
 
-![Figure 9.8: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
+![Figure 10.8: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
 
 For this example, review the information. Is it as you expect? If not, click *Edit* to go back and continue making changes until you are satisfied.
 
@@ -215,7 +215,7 @@ Liferay Marketplace supports all of the above operations as described below.
 
 App details include the name, description, icon, screenshots, and other information that you supplied on the first screen during the app creation process. To make changes to this content for your app, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, then click the *Action* button next to the app you wish to edit, and select *Edit*.
 
-![Figure 9.9: Editing an app is as simple as navigating to it and clicking *Edit*.](../../images/marketplace-edit-app-details.png) 
+![Figure 10.9: Editing an app is as simple as navigating to it and clicking *Edit*.](../../images/marketplace-edit-app-details.png) 
 
 This screen shows you what the app looks like on the Marketplace. To edit the detail information, click the *Edit* button at the bottom of the preview. This  allows you to edit details (as well as add new files to your existing version). Note that the current values as they appear in your app are used to pre-fill the form. Make any changes as needed on this screen, and click *Next*. If you do not need to edit any more variations, you can continue clicking *Next* until you reach the final preview screen. Click *Submit for Review* to submit your detail changes for review. Once approved, the changes you request appear on the Marketplace.
 
@@ -233,7 +233,7 @@ After time passes, you may wish to add new functionality to your app or fix a ba
 
 New versions of your apps are created in much the same way as the initial version was. To add a new version, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*. Click the *Action* button next to the app for which you wish to add a new version. At the bottom of the Details screen, click the *Add New Version* button. This button begins the process of adding a new version, starting with the App Details screen. In this case, the screen is pre-filled with data from the current version of the app, as shown below.
 
-![Figure 9.10: Adding a version is similar to creating a new app, except that the fields are pre-filled for you.](../../images/marketplace-add-version-details.png) 
+![Figure 10.10: Adding a version is similar to creating a new app, except that the fields are pre-filled for you.](../../images/marketplace-add-version-details.png) 
 
 You can make any changes to the pre-filled data on this screen. Since this is a new version of an existing app making major changes (such as completely changing the name or description) might be unsettling to your existing users. It is common that you'll want to upload new screenshots and refresh the icon. Note that you cannot change the app owner (such as moving from a personally-developed app to a company-developed app). 
 
@@ -250,7 +250,7 @@ To deactivate your app, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, c
 
 One of the main reasons for developing and publishing apps into the Marketplace is to drive downloads and adoption of your app. The Marketplace enables you, as the developer of your app, to get detailed reports about the number of views and downloads of your app(s). To access these metrics, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next to the app for which you want metrics, and select the *Metrics* action.
 
-![Figure 9.11: App metrics let you see graphically how many views and downloads your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
+![Figure 10.11: App metrics let you see graphically how many views and downloads your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
 
 The view shown above is the default metrics view for a single app. Across the top is a list of data series options (*Views* or *Downloads*). Below that, a date range can be chosen. In the middle, a graph is shown for the data within the date range. Finally, the same data that is graphed is also shown in tabular format, in case you want to know the exact values making up the graph. The different types of data available to view are described below. 
 
