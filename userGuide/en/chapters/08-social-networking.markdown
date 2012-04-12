@@ -92,7 +92,9 @@ Because it's the recommended method, we'll use the user group method to create t
 ![Figure 8.6: Creating the Site Template](../../images/social-networking-site-template.png)
 
 ---
+
 ![tip](../../images/01-tip.png) Tip: Setting the property which disables modifications to personal page layouts disallows users across the portal from making modifications to their personal sites. Unchecking *Allow Site Administrators to Modify the Pages Associated with this Site Template* will only prevent users from modifying the specific pages contained in the template, but will not disable a user's ability to add or modify additional pages.
+
 ---
 
 Once you've created the template, choose *Actions &rarr; Manage Pages* for *Social Layout* from the Site Templates page, and then click *View Pages*. Let's change the name of the page from the default to *My Profile* and add some portlets to the page. In the screenshot below, we removed the borders to make the page look more integrated, and also used Nested Portlets to make the layout more interesting.

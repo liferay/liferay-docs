@@ -113,7 +113,9 @@ When you select a single page, some different options appear. Let's look at what
 **SEO:** provides several means of optimizing the data the page provides to an indexer that's crawling the page. You can set the various meta tags for description, keywords, and robots. There's also a separate Robots section that lets you tell indexing robots how frequently the page is updated and how it should be prioritized. If the page is localized, you can select a box to make Liferay generate canonical links by language. If you want to set some of these settings for the entire site, you can specify them from the Sitemaps and Robots tabs of the Manage Site Settings dialog box (see below).
 
 ---
+
 ![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible that a single page could be indexed multiple times. In Liferay 6.1, to improve search ratings for your pages, all URLs that direct to the same page will only create one entry in the index. So, for example while previously the simple URL *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions of the URL which provided additional information about the referring page and what not, like *http://www.nosester.com/web/guest/blog/-/blogs/thenose?redirect_33&...* would have different entries in the index, now there is only one. From the search engines point of view, this will make your pages rank higher, since, for example, any references to any variations of a specific URL will be considered references to the one page.] 
+
 ---
 
 **Look and Feel:** lets you set a page-specific theme. 

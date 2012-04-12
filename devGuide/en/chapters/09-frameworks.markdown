@@ -64,7 +64,9 @@ The entity name is the database table you want to create.
 Columns specified in `service.xml` will be created in the database with a data type appropriate to the specified Java type. Accessors in the model class will automatically be generated for these attributes.
 
 ---
+
 ![tip](../../images/tip-pen-paper.png)**Tip:** Always consider adding two `long` fields called *groupId* and *companyId* to your data models. These two fields will allow your portlet to support the multi-tenancy features of Liferay so that each organization (for each portal instance) can have its own independent data.
+
 ---
 
 ### Generate the Service
@@ -237,7 +239,9 @@ The JSR specification defines the means to specify the roles that will be used b
 These roles need to be mapped to specific roles within the portal. The reason for this mapping is to provide a means for the deployer of a portlet to resolve conflicts between roles that have the same name but are from different portlets (e.g. portlets from different developers).
 
 ---
+
 ![tip](../../images/tip-pen-paper.png) Each role named in a portlet's `<security-role-ref>` element is given permission to add the portlet to a page.
+
 ---
 
 In order to do the mapping, it is necessary to use *portal-specific* configuration files. In the case of Liferay, you can define the mapping in `liferay-portlet.xml`. For an example, see the mapping defined inside `liferay-portlet.xml` found in `portal-web/docroot/WEB-INF`:
@@ -699,7 +703,9 @@ The answer is that you can choose any method that you prefer, but Liferay provid
 These two taglibs create appropriate form controls that allow the user to search for a tag or create a new tag, and select a existing category.
 
 ---
+
 ![tip](../../images/tip-pen-paper.png) If you are using Liferay's Alloy Form taglibs, creating fields to enter tags and categories is even simpler. You just need to use <aui:input name="tags" type="assetTags" /> and <aui:input name="categories" type="assetCategories" /> respectively.
+
 ---
 
 Once the tags and categories have been entered you will want to show them along with the content of the asset. The following demonstrates how to display the tags and categories:

@@ -97,7 +97,9 @@ Best practice recommends that you make all your custom theme styles using only t
 Whenever you make modifications to your theme, redeploy it by opening a terminal in `themes/deep-blue-theme` and entering the command **ant deploy**. Wait a few seconds until the theme deploys, and then refresh your browser to see your changes.
 
 ---
+
 ![tip](../../images/tip-pen-paper.png)**Tip:** If you wish to see changes even more quickly, it is also possible to modify your theme directly in your Liferay bundle. In our example, `custom.css` is located in `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/deep-blue-theme/css`. However, for modifications made here to appear in your browser as soon as you refresh the page, you must enable Liferay Developer Mode. See the Liferay wiki for more information.
+
 ---
 
 Also make sure that you copy any changes you make back into your *_diffs* folder, or they will be overwritten when you redeploy your theme.

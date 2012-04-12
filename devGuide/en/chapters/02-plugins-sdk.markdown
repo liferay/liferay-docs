@@ -3,7 +3,9 @@
 Java developers have a wide variety of tools and development environments. Liferay makes every effort to remain tool agnostic, so that you can choose the tools that works best for you. For that reason, we provide a Plugins Software Development Kit (SDK) which is based on Apache Ant and may be used along with any editor or Integrated Development Environment (IDE). The chapters of this guide will use the Plugins SDK and a text editor, but you may use whatever tool you are comfortable with. In a later chapter we also introduce Liferay IDE, a plugin for eclipse that simplifies development for Liferay.
 
 ---
+
  ![tip](../../images/tip-pen-paper.png)**Tip**: If you are an Eclipse user and prefer to start working with it from be very beginning, you can read that chapter first before reading the rest of the guide.
+
 ---
 
 We discuss the following topics in this chapter:
@@ -22,7 +24,9 @@ Setting up the Plugins SDK is easy. Let's get to it.
 Setting up your environment for Liferay development is straightforward. First, you will need Liferay Portal. If you have yet to install Liferay with an application server, follow instructions in chapter *Installing Liferay* of our *Using Liferay Portal 6.1* document [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). Many people use the Tomcat application server for development, as it is small, fast, and takes up less resources than most other servlet containers. Although you can use any application server supported by Liferay Portal for development, our examples use Tomcat.
 
 ---
+
  ![note](../../images/tip-pen-paper.png)**Note:** In Liferay Developer Studio, the SDK is already installed and ready to use. Liferay Portal Enterprise Edition (EE) comes with Liferay Developer Studio and much more (see  [CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial) of Liferay Portal EE today.
+
 ---
 
 Installation steps:
@@ -38,7 +42,9 @@ Installation steps:
 2.  Unzip the archive to a folder of your choosing. Avoid using a folder name that contains spaces because some operating systems have problems running Java applications in folders with spaces in their name.
 
 ---
+
  ![tip](../../images/tip-pen-paper.png)**Tip**: By default Liferay Portal Community Edition comes bundled with many plugins. It's common to remove them to speed up the server startup. To do this, in the `liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory, delete all the directories except for `ROOT` and `tunnel-web.`
+
 ---
 
 Now that you have Plugins SDK installed, let's configure Apache Ant for use in developing your plugins.

@@ -110,7 +110,9 @@ Hook plugins are the recommended method of customizing the the core functionalit
 Ext plugins provide the largest degree of flexibility in modifying the Liferay core, and allow replacing essentially any class with custom implementations. This flexibility comes at a cost, however, as it is highly unlikely that an Ext plugin written for one version of Liferay will continue to work in the next version, without modification. For this reason, Ext plugins are only recommended for cases where an advanced customization is really needed and there is no other way to accomplish the same goal. Also you should make sure that you are familiar with the Liferay core to assure the Ext plugin doesn't have a negative effect on existing funcitonalities. Even though Ext plugins are deployed as plugins, the server must be restarted for their changes to take effect. For this reason, Ext plugins should not be combined with other types of plugins.
 
 ---
+
 ![tip](../../images/tip-pen-paper.png) If you have developed for Liferay 5.2 or before, you may be familiar with what was known as the *Extension Environment*. Ext plugins were introduced in Liferay 6.0 to replace the extension environment in order to simplify development. It is possible to automatically convert any existing Extension Environment into a plugin. Check the *Migrating old extension environments* section of the *Ext plugins* chapter for detailed instructions.
+
 ---
 
 ## Choosing the best tool for the job
