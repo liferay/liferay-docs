@@ -1,6 +1,6 @@
 # Working Smarter with Liferay Social Office
 
-Liferay Social Office is Liferay's social collaboration product for the enterprise. Previously released as a separate product based on Liferay Portal, it's now available as a plugin for Liferay Portal. We are excited to bring both Social Office and this guide to you, in the hope that you'll be able to use each to enable your teams to work together more efficiently. 
+Liferay Social Office is Liferay's social collaboration product for the enterprise. Previously released as a separate product that was based on Liferay Portal, it's now available as a package of plugins for Liferay. We are excited to bring both Social Office and this guide to you, in the hope that you'll be able to use each to enable your teams to work together more efficiently. 
 
 Some time ago, we at Liferay were brainstorming some common use cases which Liferay Portal does a good job solving. One of these is team-based collaboration. Many of our customers have used Liferay Portal both inside their enterprises and outside on the Internet to provide a better way of sharing documents and data with the people they work with every day. Liferay Portal provides a very flexible solution which allows you not only to do this, but much, much more. Because Liferay Portal is so flexible, the path from the initial install to a robust web site that could be used for collaboration was not always straightforward to the new user. The Social Office plugin is designed to allow business users to set up and use Liferay Portal for collaboration right away.
 
@@ -36,13 +36,24 @@ The Liferay Social Office plugin for Liferay Portal is designed to answer this c
 
 ## Installation
 
-Unlike previous versions of Social Office, Social Office 2.0 is available as a plugin for Liferay Portal 6.1. It can be installed via Liferay Marketplace. Prior to version 2.0, Social Office was provided as an independent product that was based on, but separate from, Liferay Portal.
+Unlike previous versions of Social Office, Social Office 2.0 is available as an app for Liferay Portal 6.1. Liferay apps are packages of Liferay plugins that are grouped together with metadata such as descriptions and version information. You can identify downloaded Liferay apps by their `.lpkg` file extenstions. They're available from Liferay Marketplace at [http://www.liferay.com/marketplace](http://www.liferay.com/marketplace). Prior to version 2.0, Social Office was provided as an independent product that was based on, but separate from, Liferay Portal.
 
-To install Social Office manually, you need to deploy the so-hook plugin to your Liferay installation. The so-hook plugin has a number of other plugin dependencies: to use it, you must also deploy the following portlets and theme: contacts-portlet, events-display-portlet, microblogs-portlet, private-messaging-portlet, so-portlet, so-theme, tasks-portlet, weather-portlet, and wysiwyg-portlet.
+To install Social Office manually, you just need to deploy the Social Office `.lpkg` file to your Liferay installation. The Social Office `.lpkg` file is hot-deployable and includes the following Liferay plugins: 
 
-![Figure X.x: Tip]()
+- so-hook
+- contacts-portlet
+- events-display-portlet
+- microblogs-portlet
+- private-messaging-portlet
+- so-portlet
+- so-theme
+- tasks-portlet
+- weather-portlet
+- wysiwyg-portlet.
 
-Note: Social Office 2.0 is incompatible with 7 Cogs, the sample website that comes pre-installed with Liferay bundles. You need to remove 7 Cogs from your Liferay installation before installing Social Office. This is very easy to do. For a Tomcat bundle, just navigate to `<Liferay Home>/tomcat-<version>/webapps` and remove the `seven-cogs-hook` folder. For other application server bundles, navigate to the directory where web applications are installed and remove the `seven-cogs-hook` folder. Please refer to chapter 11 of Using Liferay Portal at [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server) if you're not sure where the web applications directory is on your application server.
+---
+![Figure X.x: Tip]() **Note:** Social Office 2.0 is incompatible with 7 Cogs, the sample website that comes pre-installed with Liferay bundles. You need to remove 7 Cogs from your Liferay installation before installing Social Office. This is very easy to do. For a Tomcat bundle, just navigate to `<Liferay Home>/tomcat-<version>/webapps` and remove the `seven-cogs-hook` folder. For other application server bundles, navigate to the directory where web applications are installed and remove the `seven-cogs-hook` folder. Please refer to chapter 11 of Using Liferay Portal at [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server) if you're not sure where the web applications directory is on your application server.
+---
 
 ## What can you do with Social Office?
 
@@ -54,13 +65,13 @@ Trying to collaborate on assets through email or server shares works up to a cer
 
 Liferay Portal is a full featured web portal, containing an industry-leading suite of built-in applications and tools. It's highly customizable and businesses use it to run major web sites all over the world. We've optimized Liferay Portal for creating state-of-the art, robust web sites that serve millions of users every day. 
 
-The Social Office plugin adds functionality for a specific purpose: collaboration. We've designed it for work groups needing to collaborate on documents and data in the office. The additional tools and defaults were carefully chosen to provide users working within a group the ability to easily communicate, collaborate, and coordinate their tasks.
+Social Office adds functionality for a specific purpose: collaboration. We've designed it for work groups needing to collaborate on documents and data in the office. The additional tools and defaults were carefully chosen to provide users working within a group the ability to easily communicate, collaborate, and coordinate their tasks.
 
-The Social Office plugin for Liferay Portal provides extra collaborative tools and allows you to quickly set up sites designed to facilitate collaboration. Each site is designed to provide a single group or team with a virtual shared workspace. Members of your organization who belong to multiple groups or teams in your organization can belong to multiple Social Office sites on the portal. Social Office also provides each user with customized sets of public and private pages for their personal sites. These personal sites serve as virtual individual workspaces. The applications they include help users manage their tasks, keep informed about each other's activities, and communicate with each other.
+Social Office adds extra collaborative tools to Liferay and allows you to quickly set up sites designed to facilitate collaboration. Each site is designed to provide a single group or team with a virtual shared workspace. Members of your organization who belong to multiple groups or teams in your organization can belong to multiple Social Office sites on the portal. Social Office also provides each user with customized sets of public and private pages for their personal sites. These personal sites serve as virtual individual workspaces. The applications they include help users manage their tasks, keep informed about each other's activities, and communicate with each other.
 
 Whether you're creating a public web site and need the full features of an unparalleled, industry-leading engine or you're creating a small corporate Intranet, Liferay Portal is the ideal solution for you. You should consider installing the Social Office plugin if you'd like your site to facilitate communication between people within specific groups and accomplish tasks using shared virtual workspaces with minimal set up and administration.
 
-All pages implementing the Social Office theme receive an extra convenience feature. The theme adds a button to the top-right corner of the page which allows you to expand the portlets on the page to fit the size of your browser window. You can click the button again to return the portlets to their default size.
+The Social Office theme adds a convenient button to the top-right corners of Social Office pages. This button allows you to expand the portlets on the page to fit the size of your browser window. You can click the button again to return the portlets to their default size.
 
 ### Using the Social Office User role and personal sites
 
@@ -70,7 +81,13 @@ The default personal pages provided by the Social Office user role include the p
 
 #### Using the Dashboard and other private pages
 
-The private page sets of Social Office users serve as personal workspaces. Each private page displays a navigation menu and the Sites portlet in the left column so that you can navigate back and forth between the private pages of your personal site, navigate to your public pages, or navigate to one of the other sites you belong to.
+The private page sets of Social Office users serve as personal workspaces. Each private page displays a navigation menu and the Sites portlet in the left column so that you can navigate back and forth between the private pages of your personal site, navigate to your public pages, or navigate to one of the other sites you belong to. The private pages provided by Social Office include:
+
+- Dashboard
+- Contacts Center
+- Microblogs
+- Messages
+- Tasks
 
 ![Figure X.x: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page.](../../images/to-do.png)
 
@@ -78,7 +95,14 @@ The Sites portlet is an improved version of the basic My Sites portlet. It allow
 
 ![Figure X.x: The Sites portlet lets you create customize your sites list and lets you create new Social Office sites with a simple wizard.](../../images/to-do.png)
 
-The Dashboard page provides several applications designed to keep you up to date about portal activities, tasks, and events. Using the power of Liferay's Social API, the Activities portlet presents information about different categories of users' recent activities. Use the tabs to display portal activities from different scopes: *Connections* shows a list of activities from users you have established a social connection with, *Following* shows activities from users you're following, and *My Sites* shows all the activities from sites you belong to. You can also select *Me* to view just your own activites. The Upcoming Tasks portlet displays a list of tasks that have been created for you or that you've assigned to yourself. The Events portlet integrates with the calendar portlet belonging to your scope to show upcoming events for the next few days. There's also a Microblogs Status Update portlet on your Dashboard which lets you broadcast a Facebook-like status to the scope of your choice: to everyone, to your connections, or to your followers. Next, let's take a look at the applications provided on the other private pages of Social Office users' personal sites. These include the Contacts Center, Microblogs, Private Messaging, and Tasks applications.
+The Dashboard page provides several portlet applications designed to keep you up to date with various kinds of portal activity:
+
+- Actvities
+- Upcoming Tasks
+- Events
+- Microblogs Status Update
+
+Using the power of Liferay's Social API, the Activities portlet presents information about different categories of users' recent activities. Use the tabs to display portal activities from different scopes: *Connections* shows a list of activities from users you have established a social connection with, *Following* shows activities from users you're following, and *My Sites* shows all the activities from sites you belong to. You can also select *Me* to view just your own activites. The Upcoming Tasks portlet displays a list of tasks that have been created for you or that you've assigned to yourself. The Events portlet integrates with the calendar portlet belonging to your scope to show upcoming events for the next few days. There's also a Microblogs Status Update portlet on your Dashboard which lets you broadcast a Facebook-like status to the scope of your choice: to everyone, to your connections, or to your followers. Next, let's take a look at the applications provided on the other private pages of Social Office users' personal sites.
 
 ![Figure X.x: The default Dashboard applications are designed to inform you about recent portal activities and upcoming events, and to help you manage your personal tasks.](../../images/to-do.png)
 
@@ -108,7 +132,13 @@ The Tasks system allows you and your team members to keep track of different tas
 
 #### Using the Profile page and other public pages
 
-You can access your public Profile page from the Dashboard by clicking on your name, which appears above the page navigation menu in the left column. Your public pages are laid out and styled the same way as the Dashboard and the rest of the private pages. Users' default public sites contain three pages, accessible from the left-column navigation menu: Profile, Contacts, and Microblogs. In addition to the navigation menu, the left column of each page of a Social Office user's public site contains a My Contacts portlet. This portlet allows viewers of a user's public site to see all the user's contacts and lets them navigate to any of the contacts' Profile pages.
+You can access your public Profile page from the Dashboard by clicking on your name, which appears above the page navigation menu in the left column. Your public pages are laid out and styled the same way as the Dashboard and the rest of the private pages. Users' default public sites contain three pages, accessible from the left-column navigation menu:
+
+- Profile
+- Contacts
+- Microblogs
+
+In addition to the navigation menu, the left column of each page of a Social Office user's public site contains a My Contacts portlet. This portlet allows viewers of a user's public site to see all the user's contacts and lets them navigate to any of the contacts' Profile pages.
 
 ![Figure X.x: User's Profile pages show relevant professional information, contacts, and status updates](../../images/to-do.png)
 
@@ -131,7 +161,17 @@ The public Contacts and Microblogs applications have their own public pages. The
 
 ### Using Social Office sites for collaboration  
 
-Social Office not only provides custom pages and applications for users' personal sites but also for general sites that can have many members. A portal administrator can use the *Add Site* button of the Sites portlet to add a new site to use for team collaboration. This button opens a wizard which guides you through the process of creating a site based on the *Default Social Office Site* template. Sites based on this template come pre-built with pages and applications designed for team collaboration, just like the default Social Office personal sites come with applications designed to facilitate user interaction. The default pages created by the wizard include *Home*, *Calendar*, *Documents*, *Forums*, *Blog*, *Wiki*, and *Members* pages. The wizard lets you choose which of these pages you'd like to include in your site. Links to these pages are embedded in the left-most column of each page that belongs to the site.
+Social Office not only provides custom pages and applications for users' personal sites but also for general sites that can have many members. A portal administrator can use the *Add Site* button of the Sites portlet to add a new site to use for team collaboration. This button opens a wizard which guides you through the process of creating a site based on the *Default Social Office Site* template. Sites based on this template come pre-built with pages and applications designed for team collaboration, just like the default Social Office personal sites come with applications designed to facilitate user interaction. The default pages created by the wizard include the following:
+
+- *Home*
+- *Calendar*
+- *Documents*
+- *Forums*
+- *Blog*
+- *Wiki*
+- *Members*
+
+The wizard lets you choose which of these pages you'd like to include in your site. Links to these pages are embedded in the left-most column of each page that belongs to the site.
 
 ![Figure X.x: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](../../images/to-do.png)
 
