@@ -8,6 +8,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.HashMap;
+import java.util.Properties;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
@@ -42,6 +43,18 @@ public class NumberHeadersTask extends Task {
 			throw new BuildException("FAILURE - no markdown files found in " + chDir);
 		}
 
+		File docPropsFile = new File("../" + docDir + "/" + DOC_PROPERTIES);
+
+		// Load properties file
+
+		Properties props = new Properties();
+		try {
+			props.load(new FileReader(docPropsFile));
+		}
+		catch (IOException io) {
+			throw new BuildException(io);
+		}
+
 		// Process each file
 
 		for (int i = 0; i < files.length; i++) {
@@ -59,7 +72,8 @@ public class NumberHeadersTask extends Task {
 
 					if (line.startsWith("#")) {
 						
-						String newHeadingLine = handleHeaderLine(line, filename, 	in.getLineNumber());
+						String newHeadingLine = handleHeaderLine(line, filename,
+							in.getLineNumber(), props);
 						if (newHeadingLine != null) {
 							line = newHeadingLine;
 						}
@@ -122,7 +136,7 @@ public class NumberHeadersTask extends Task {
 		return chapter;
 	}
 
-	private  String handleHeaderLine(String line, String filename, int lineNum) {
+	private  String handleHeaderLine(String line, String filename, int lineNum, Properties props) {
 		String newHeadingLine = null;
 
 		// Check if the header contains an ID
@@ -174,55 +188,70 @@ public class NumberHeadersTask extends Task {
 			int headingLen = heading.length();
 
 			int idCount = 0;
-			String newHeading2 = null;
-			StringBuffer headingSb;
+			String newHeading = null;
 			while (true) {
 
-				headingSb = new StringBuffer(heading);
-				headingSb.append("-");
-				headingSb.append(chapter);
-				headingSb.append("-");
-				headingSb.append(idCount);
+				
+				newHeading = assembleId(heading, props, chapter, idCount);
 
-				int lenDiff = headingSb.length() - MAX_ID_LEN;
+				int lenDiff = newHeading.length() - MAX_ID_LEN;
 				if (lenDiff > 0) {
 					// Trim heading
 					heading = heading.substring(0, headingLen - lenDiff);
 				}
 
-				headingSb = new StringBuffer(heading);
-				headingSb.append("-");
-				headingSb.append(chapter);
-				headingSb.append("-");
-				headingSb.append(idCount);
+				newHeading = assembleId(heading, props, chapter, idCount);
 				
-				if (IDS.get(headingSb.toString()) == null) {
+				if (IDS.get(newHeading) == null) {
 					// Heading is unique
 
 					// Add the ID
-					IDS.put(headingSb.toString(), filename);
+					IDS.put(newHeading, filename);
 
-					newHeading2 = headingSb.toString();
 					break;
 				}
 
 				idCount++;
 			}
 
-			newHeadingLine = line + " [](id=" + newHeading2 + ")";
+			newHeadingLine = line + " [](id=" + newHeading + ")";
 		}
 
 		return newHeadingLine;
 	}
 
+	private String assembleId(String heading, Properties props, String chapter,
+			int idCount) {
+		StringBuffer headingSb = new StringBuffer();
+		headingSb.append(props.getProperty(PRODUCT_ABBREV));
+		headingSb.append("-");
+		headingSb.append(props.getProperty(PRODUCT_VERSION).replace('.', '-'));
+		headingSb.append("-");
+		headingSb.append(props.getProperty(DOC_ABBREV));
+		headingSb.append(lang);
+		headingSb.append(chapter);
+		headingSb.append("-");
+		headingSb.append(heading);
+		headingSb.append("-");
+		headingSb.append(idCount);
+		return headingSb.toString();
+	}
+
 	public void setLang(String lang) {
 		this.lang = lang;
 	}
+
 	public void setDocDir(String docDir) {
 		this.docDir = docDir;
 	}
 
+	private static final String DOC_PROPERTIES = "doc.properties";
+
 	private static final int MAX_ID_LEN = 75;
+
+	private static final String DOC_ABBREV = "doc.abbrev";
+	private static final String PRODUCT_ABBREV = "product.abbrev";
+	private static final String PRODUCT_VERSION = "product.version";
 
 	private static HashMap<String, String> IDS = new HashMap<String, String>();
 

@@ -44,6 +44,17 @@ directory to convert the userGuide into complete English markdown, html, odt, an
 
 	<!-- taskdefs -->
 
+	<taskdef name="checkdocprops" classname="com.liferay.documentation.util.CheckDocPropsTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="numberheaders" classname="com.liferay.documentation.util.NumberHeadersTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -77,6 +88,11 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     <target name="echo-props">
         <echo message="pandoc.app -> ${pandoc.app}"/>
     </target>
+
+	<target name="check-doc-props" description="checks that all document dirs have a valid doc.properties file">
+		<checkdocprops lang="${lang}" basedir="${project.dir}">
+		</checkdocprops>
+	</target>
 
     <target name="clean-all" description="deletes residual directories">
         <echo message="... deleting build directory"/>
@@ -284,7 +300,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
 
     <target name="markdown-to-all-win" depends="markdown-to-html-win,markdown-to-odt-win,markdown-to-epub-win" description="converts markdown file to html, odt, and epub files on windows" />
 
-	<target name="number-headers-dir" description="numbers the headers of markdown files found in ${lang}/chapters/">
+	<target name="number-headers-dir" depends="check-doc-props" description="numbers the headers of markdown files found in ${lang}/chapters/">
 		<numberheaders lang="${lang}" docDir="${doc.dir}">
 		</numberheaders>
 	</target>
