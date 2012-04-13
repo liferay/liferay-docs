@@ -42,7 +42,9 @@ Alternatively, if you will not be using the Plugins SDK to house your portlet pr
 To resolve the dependencies for portlet projects, see the classpath entries in the `build-common.xml` file in the Plugins SDK project. You will be able to determine from the `plugin.classpath` and `portal.classpath` entries, which `.jar` files are necessary to build your newly created portlet project.
 
 ---
+
 ![tip](../../images/tip-pen-paper.png)**Tip:** If you are using a source control system such as Subversion, CVS, Mercurial, Git, ... etc., this might be a good moment to do an initial check-in of your changes. After building the plugin for deployment, several additional files will be generated that should *not* be handled by the source control system.
+
 ---
 
 ### Deploying the Portlet
@@ -50,7 +52,9 @@ To resolve the dependencies for portlet projects, see the classpath entries in t
 Liferay provides a mechanism called auto-deploy that makes deploying portlets (and any other plugin types) a breeze. All you need to do is drop the plugin's WAR file into a directory and the portal will take care of making any necessary changes specific to Liferay and then deploy the plugin to the application server. This will be a method of deployment used throughout this guide.
 
 ---
+
 ![note](../../images/tip-pen-paper.png)**Note:** Liferay supports a wide variety of application servers. Many of them, such as Tomcat and Jboss, provide a simple way to deploy web applications by just copying a file into a folder and Liferay's auto-deploy mechanism takes advantage of that ability. You should be aware though, that some application servers, such as Websphere or Weblogic require the use of specific tools to deploy web applications; so Liferay's auto-deploy process won't work for them.
+
 ---
 
 Open a terminal window in your `portlets/my-greeting-portlet` directory and enter this command:
@@ -320,7 +324,9 @@ Deploy the portlet again by entering the command **ant deploy** in your `my-gree
 ![Figure 3.3: The *edit* page of My Greeting portlet](../../images/portlets-edit-my-greeting.png)
 
 ---
+
 ![tip](../../images/tip-pen-paper.png)**Tip:** If your portlet deployed successfully, but you don't see any changes in your browser after refreshing the page, Tomcat may have failed to rebuild your JSPs. Simply delete the `work` folder in `liferay-portal-[version]/tomcat-[tomcat-version]` and refresh the page again to force them to be rebuilt.
+
 ---
 
 There are a few important details to notice in this implementation. First, the links between pages are created using the `<portlet:renderURL>` tag, which is defined by the `http://java.sun.com/portlet_2_0` tag library. These URLs have only one parameter named `jspPage`, which is used by MVCPortlet to determine which JSP to render for each request. You must always use taglibs to generate URLs to your portlet. This restriction exists because the portlet does not own the whole page, only a fragment of it, so the URL must always go to the portal responsible for rendering, not only your portlet but also any others that the user might put in the page. The portal will be able to interpret the taglib and create a URL with enough information to be able to render the whole page.

@@ -66,7 +66,9 @@ So, now that you know how to look up the service classes, let's look at the foll
 This JSP code invokes static method `getOrganizationStatsUsers()` on the `-LocalServiceUtil` class `BlogsStatsUserLocalServiceUtil`.
 
 ---
+
 ![note](../../images/tip-pen-paper.png)**Note:** Invoking the services in this way avoids permission checks. So, if you want to ensure permission checks are performed, even from a local context, then you should use the remote variant of the API.
+
 ---
 
 We'll look at invoking services remotely, next.
@@ -92,7 +94,9 @@ If the IP address of the machine on which the batch job is running is listed wit
 ![Figure 8.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
 
 ---
+
 ![note](../../images/tip-pen-paper.png)**Note:** The `portal.properties` file resides on the portal host machine and is controlled by the portal administrator. Portal administrators can configure security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The [Configuring Liferay's Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties) section of *Using Liferay Portal 6.1* describes these properties.
+
 ---
 
 The **second layer of security** is Liferay's *security model* that it uses for every object in the portal. The user ID that accesses the services remotely must have the proper permission to operate on the objects it will be accessing. Otherwise, a remote exception will be thrown. The Portal Administrator will need to make use of Liferay's usual means of granting users access to these resources. For example, say that a Documents and Media Library folder called *Documents* has been set up in a site and that a role has been created called *Document Uploaders* which has the rights to add documents to this folder. Your batch job will be accessing Liferay's web services in order to upload documents into this folder. In order for this to work, you will have to call the web service using the user ID of a user that is a member of this group (or the user ID of a user that has individual rights to add documents to this folder). Otherwise, the user will be prevented from using the Web Service.
@@ -112,7 +116,9 @@ For example, to get Organization data using a user that has the ID of *2* and a 
 	http://2:test@localhost:8080/api/secure/axis/Portal_OrganizationService
 
 ---
+
 ![note](../../images/tip-pen-paper.png)**Note:** In old Liferay versions you could access those services by using `http://localhost:8080/tunnel-web/axis`, however in Liferay 6.1 this path has changed and when you type it, you are redirected to the new one.
+
 ---
 
 The authorization type specified for your portal's company dictates the authorization type you must use to access your web service. The portal administrator can set the security authentication type to either of the following:
@@ -161,7 +167,9 @@ You can view a listing of the services deployed on your portal by opening your b
 ![Figure 8.3: UserGroup Web Service listing](../../images/wsdl-summary-listing.png)
 
 ---
+
 ![note](../../images/tip-pen-paper.png)**Note:** Liferay's developers use a tool called Service Builder to expose their services via SOAP automatically. If you are interested in using this tool for your own services, find out more about Service Builder in chapter *Liferay Frameworks*.
+
 ---
 
 Each web service is listed with its name, operations, and a link to its WSDL file. The WSDL is written in XML and provides a model for describing and locating the web service.
@@ -740,7 +748,9 @@ To pass inner parameters, just specify them using a 'dot' notation. That is, spe
 Inner parameters are not counted as *regular* parameters for matching methods and are ignored during matching.
 
 ---
+
 ![tip](../../images/tip-pen-paper.png)**Tip:** Use inner parameters with object parameters to set inner content of created parameter instances!
+
 ---
 
 ### Returned values

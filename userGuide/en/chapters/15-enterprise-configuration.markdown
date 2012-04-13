@@ -36,7 +36,9 @@ If you haven't configured your application server to use farms for deployment, t
 Many of these configuration changes can be made by adding or modifying properties in your `portal-ext.properties` file. Remember that this file overrides the defaults that are in the `portal.properties` file. The original version of this file can be found in the Liferay source code or can be extracted from the `portal-impl.jar` file in your Liferay installation. It is a best practice to copy the relevant section that you want to modify from `portal.properties` into your `portal-ext.properties` file, and then modify the values there.
 
 ---
+
 ![tip](../../images/01-tip.png)**Note:** This chapter documents a Liferay-specific cluster configuration, without getting into specific implementations of third party software, such as Java EE application servers, HTTP servers, and load balancers. Please consult your documentation for those components of your cluster for specific details of those components. Before configuring Liferay in a cluster configuration, make sure your OS is not defining the hostname of your box to the local network at 127.0.0.1.
+
 ---
 
 We'll take each of the points above one by one in order to present a clear picture of how to cluster Liferay. 
@@ -373,9 +375,11 @@ There is a single property called `lucene.store.type`. By default this is set to
 The next time Liferay is started, new tables are created in the Liferay database, and the index is stored there. If all the Liferay nodes point to the same database tables, they will be able to share the index. Again, performance on this is not very good. Your DBAs may be able to tweak the database indexes a bit to improve performance. For better performance, you should consider using a separate search server or syncing the indexes on the nodes' file systems.
 
 ---
+
 ![tip](../../images/01-tip.png)**Note:** MySQL users need to modify their JDBC connection string for this to work. Add the following parameter to your connection string:
 
     emulateLocators=true
+
 ---
 
 Alternatively, you can leave the configuration alone, and each node will have its own index. This ensures against collisions when multiple nodes update the index. However, the indices will quickly get out of sync since they don't replicate. For this reason, this is not a recommended configuration either. Again, for a better configuration, replicate the indexes with Cluster Link or use a separate search server (see the section on Solr above).

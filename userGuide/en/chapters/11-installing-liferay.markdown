@@ -28,7 +28,7 @@ First we'll go over installing Liferay from a bundle and after this we'll provid
 
 Liferay bundles contain the same directory structure regardless of application server. The top-level folder is named for the release of Liferay. This folder is called *Liferay Home*, and we refer to it thoughout this documentation. 
 
-<!-- | TODO: This image needs to be updated to the 6.1 release when we have a build. | -->
+	<!-- | TODO: This image needs to be updated to the 6.1 release when we have a build. | -->
 
 ![Figure 11.1: Bundle directory structure](../../images/02-bundle-directory-structure.png) 
 
@@ -113,9 +113,11 @@ Once you've filled out the form, click *Finish Configuration*. You'll see a mess
 Congratulations! You've just installed Liferay Portal!
 
 ---
+
 ![Tip](../../images/02-tip.png) The wizard is an extremely helpful tool, especially if you're setting up Liferay for the first time or creating a completely fresh portal instance. If you're a Liferay veteran and you already have your database information and various properties set up, you can skip the wizard by adding this line to your *portal-ext.properties* file:
 
     setup.wizard.enabled=false
+
 ---
     
 As you can see, bundles are the easiest way to get started with Liferay. They come pre-configured with a running Liferay instance that can be used immediately to explore all of the things that Liferay can do. Bundles are the fastest way to create full production-ready Liferay installations. 
@@ -634,7 +636,7 @@ Extract the JAR file and copy it to `lib`.
 
 3.	Next, you will need apply several patches to Glassfish `.jar` files due to the following known issues. The best way to get the appropriate versions of these files is to download the Liferay source code and get them from there. Once you have downloaded the Liferay source, unzip the source into a temporary folder. We'll refer to the location of the Liferay source as `$LIFERAY_SOURCE`.
 
-<!-- | TODO: We have to streamline this somehow, as these instructions aren't going to be acceptable to most large enterprises. | -->
+	<!-- | TODO: We have to streamline this somehow, as these instructions aren't going to be acceptable to most large enterprises. | -->
 
 	-	For issue [GLASSFISH-17242](http://java.net/jira/browse/GLASSFISH-17242) / [LPS-22813](http://issues.liferay.com/browse/LPS-22813)
 
@@ -834,7 +836,9 @@ Here are the steps you'll need to follow to deploy Liferay Portal to your domain
 	Once you run the setup wizard, the `portal-setup-wizard.properties` file that it creates already has `setup.wizard.enabled=false` conveniently specified for you.
 
 ---
+
 ![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+
 ---
 
 1. Start your domain's application server.
@@ -1093,7 +1097,9 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 		The `portal-setup-wizard.properties` file the setup wizard creates has `setup.wizard.enabled=false` conveniently specified for you.
 
 	---
+
 	![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+
 	---
 
 	Now its time to launch Liferay Portal!
@@ -1984,7 +1990,9 @@ Before you begin, make sure you have downloaded the latest Liferay `.war` file a
 These instructions assume that you have already configured a domain and server, and that you have access to the WebLogic console.
 
 ---
+
 ![Note](../../images/tip.png) WebLogic 10.0 supports JDK 1.5, but does *not* support JDK 1.6.
+
 ---
 
 Now that you have all of your installation files, you are ready to start installing and configuring Liferay on WebLogic.
@@ -2094,7 +2102,9 @@ Before you deploy Liferay Portal, consider whether you want to use the setup wiz
 	The `portal-setup-wizard.properties` file the setup wizard creates has `setup.wizard.enabled=false` conveniently specified for you.
 
 ---
+
 ![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+
 ---
 
 Now that you have enabled or disabled the setup wizard, let's move on to deployment of Liferay Portal.
@@ -2144,7 +2154,9 @@ These instructions assume that you have already configured a domain and server, 
 If you still have the `mainWebApp` module installed, remove it first.
 
 ---
+
 ![Note](../../images/tip.png) There is a known issue with the Sun and JRockit JVMs bundled with WebLogic 10.3.2 (see [http://bugs.sun.com/view_bug.do?bug_id=6795561](issue)). To resolve, use Sun JVM 1.6.0_u24 or JRockit JVM 1.6.0_24.
+
 ---
 
 Let's get started by installing the JAR files that Liferay needs.
@@ -2253,7 +2265,9 @@ Before you deploy Liferay Portal, consider whether you want to use the setup wiz
 	The `portal-setup-wizard.properties` file the setup wizard creates has `setup.wizard.enabled=false` conveniently specified for you.
 
 ---
+
 ![Note](../../images/tip.png) Property values in `portal-setup-wizard.properties` override property values in `portal-ext.properties`.
+
 ---
 
 Now, let's deploy Liferay Portal.
@@ -2281,7 +2295,9 @@ Now, let's deploy Liferay Portal.
 Please see the section above for how to use the setup wizard. 
 
 ---
+
 ![Note](../../images/tip.png) **Note:** After Liferay is installed, you may see an error initializing the Web Proxy portlet. Because the XSL parser configured by default within WebLogic cannot compile a style sheet in this portlet, Liferay disables it by default. To re-enable this portlet, extract `xalan.jar` and `serializer.jar` from the Liferay `.war` archive and copy them to your JDK's endorsed folder for libraries. If you are using JRockit, this folder may be `[$WEBLOGIC_HOME]/jrockit_160_05/jre/lib/ext`; if your are using Sun JDK,  this folder may be `[$WEBLOGIC_HOME]/jdk160_24/jre/lib/ext`.
+
 ---
 
 Congratulations! You are now running Liferay on Oracle WebLogic.

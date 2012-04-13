@@ -27,7 +27,9 @@ Navigation within Liferay Portal is designed to be intuitive and easy. Let's get
 Liferay initially presents a very simple interface. Unauthenticated users can navigate the public pages of the portal and see a *Sign In* link in the top right corner of the screen.
 
 ---
+
 ![tip](../../images/01-tip.png) Note: If your portal initially presents you with the demo web site, 7 Cogs, see chapter 11 in part 2 for removal instructions.
+
 ---
 
 To sign into Liferay for the first time, click the *Sign In* link. You'll next see the *Sign In Portlet*. This portlet allows a user (or a prospective user) to do several things: sign in to Liferay, create a new account on the portal, or have a password reminder emailed to the user. An OpenID sign-in option is also available. You should use the default administrator account to sign in to the portal for the first time. If you were to create a new account on the portal for yourself now, it would be created using Liferay's defaults. This would mean that the account wouldn't have access to the administrative functions in the control panel you'll need in order to set up Liferay for your organization. Instead of creating a new user now, log in with the default administrator account:
@@ -127,7 +129,9 @@ All of the functions that you will need to maintain the portal or its contents c
 Before we dive into the user interface for adding and maintaining various portal resources, we should survey the concepts Liferay uses to organize a portal. Portals are accessed by users. Users can be collected into user groups. Users can belong to organizations. Organizations can be grouped into hierarchies, such as Home Office &rarr; Regional Office &rarr; Satellite Office. Sites can be created independently or can be attached to users or organizations. Within sites, users can belong to teams, which are groupings of users for specific functions within a site.
 
 ---
+
 ![tip](../../images/01-tip.png) Note: Prior to Liferay 6.1, independent sites were called communities. Both organizations and communities had their own sets of public and private pages. Starting with Liferay 6.1, organizations can't directly have their own sets of pages--only sites can. Organizations need to have attached sites in order to have pages. This is just a reorganization of ideas intended to simplify how Liferay manages pages.
+
 ---
 
 A simple way to think about this is that your portal has users and various ways to group them together. Some of these groupings may be organized hierarchically by an administrator. These are called organizations. An administrator can also create more ad hoc groupings of users called user groups. User groups can be composed of users who do not fit into a particular hierarchy or who belong to different organizations. Other groupings may be created by the users themselves. For example, users from different organizations could create a site called “Dog Lovers” and allow anyone to join. The site would not fit into an organizational hierarchy; it would just serve a common interest in dogs. Administrators can create teams within sites. The following figure illustrates how users can be grouped in Liferay Portal: users can belong to sites, organizations, and user groups and user groups can belong to sites and organizations.
@@ -200,7 +204,9 @@ Teams are sets of users with similar permissions within a site. Teams can be cre
 Teams can be essential for some use cases since they can be created by site administrators. Site administrators can't create roles, so the ability to have teams empowers them to manage permissions at a level they weren't capable of previously.
 
 ---
+
 ![tip](../../images/01-tip.png) Generally speaking, Site Administrators cannot view or access the content of the portal as a whole, but only have access to the content and resources of their own Site. However, if they are managing users in the Users and Organizations interface, they can view all of the users and organizations on the entire portal. They need this capability to effectively add and manage the users of their own site, but if privacy is a concern on your portal, you will need to be concious of which users are granted the Site Administrator role.
+
 ---
 
 ## Summary
