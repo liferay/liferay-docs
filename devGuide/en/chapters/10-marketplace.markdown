@@ -12,7 +12,7 @@ This chapter covers topics related to developing for the Liferay Marketplace, in
 - Maintaining and Updating apps
 - Tracking app Performance
 
-This chapter focuses on the topics of interest to a Liferay developer. It is highly recommended that you first read **Liferay Marketplace** chapter of the User guide, where you will find detailed information about the Marketplace from an end user's perspective. The User Guide can be found on the [Liferay Documentation page](http://liferay.com/documentation).
+This chapter focuses on the topics of interest to a Liferay developer. It is highly recommended that you first read the **Liferay Marketplace** chapter of the User guide, where you will find detailed information about the Marketplace from an end user's perspective. The User Guide can be found on the [Liferay Documentation page](http://liferay.com/documentation).
  
 ## Marketplace basics
 
@@ -28,9 +28,11 @@ Developers are not required to create the actual Liferay app files. Instead, you
 
 ### What is a version?
 
-The concept of versioning is will known in software, and it is no different here. A version of an app represents the functionality of the app at a given point in time. When an app is first created, it is given an initial version (often `1.0`). When updates are needed for the app, a new version is created (e.g. `1.1`), and new files are uploaded representing that version. In some cases, additional qualifiers can be found in the version specifier, to which developers often give special meaning. For example, a developer may declare that the version of their app is always in x.y.z format (where the significance of each x, y, an z are defined). Liferay itself also does this. 
+The concept of versioning is well known in software, and it is no different here. A version of an app represents the functionality of the app at a given point in time. When an app is first created, it is given an initial version (often `1.0`). When updates are needed for the app, a new version is created (e.g. `1.1`), and new files are uploaded representing that version. In some cases, additional qualifiers can be found in the version specifier, to which developers often give special meaning. For example, a developer may declare that the version of their app is always in x.y.z format (where the significance of each x, y, an z are defined). Liferay itself also does this. 
 
 In any case, as developer of your app, you have complete freedom in how you wish to assign version designators. It is highly recommended that you stick to a well known and easy to understand format, such as `1.0`, `1.1`, `1.2`, and so on. You may also include alphabetical characters (e.g `1.0 Beta 2` or `6.3 Patch 123235-01`), but this is not recommended, as it makes it difficult to understand how versions relate to one another.
+
+Keep in mind that the version of your app is completely up to you to specify, but the versions of Liferay with which your app works must be specified using the Liferay versioning scheme.  See the *Specify App Compatibility* section below for details on how to specify which versions of Liferay your app works with.
 
 ### What is a variation?
 
@@ -48,32 +50,34 @@ Liferay apps are "normal" Liferay plugins with additional information about them
 
 You must first develop your app using your preferred development tool (for example, using Liferay Developer Studio or the Plugins SDK). Your app will consist of one or more Liferay plugins. Ensure your app is designed to work with Liferay 6.1 or later. If you wish to target multiple versions of Liferay (for example, you may wish to support both 6.1 CE GA2 and 6.1 EE GA1), ensure you have built binary images of your app for each supported minor family release, if necessary. If a single set of files will work across all supported Liferay versions, you do not need to build multiple plugins. Liferay guarantees compatibility within a given minor release family, so your users can rest assured that your app will work with the minor release that you specify, along with all future maintenance releases of that minor release. 
 
-Next, think of a good name and description of your app, and a versioning scheme you wish to use. Take some screenshots, design an icon, create web sites for your app (if they do not already exist), and have a support plan in place.
+Next, think of a good name and description of your app, as well as a versioning scheme you wish to use. Take some screenshots, design an icon, create web sites for your app (if they do not already exist), and have a support plan in place.
 
 ### Image and Naming Requirements
 
-**Icons** for your app *must be* 90 pixels in both height and width, and must be in PNG, JPG, or GIF format. The image size cannot exceed 512kb.
-**Screenshots** for your app *must not exceed* 600 pixels in width x 400 pixels in height, and must be in the PNG, JPG, or GIF format. The total size of all screenshots *must not exceed* 1MB. Each screenshot must be the same size, and it is preferable if they are named sequentially, for example `fluffy-puppies-01.png`, `fluffy-puppies-02.png`, and so on.
-**Titles** of apps: In some views with Marketplace, titles of applications longer than 18 characters will be shortened with ellipsis. In the Marketplace, titles *must not be* longer than 50 characters.
-**Description, Tags, Websites and Version Numbers** Descriptions, web sites and version numbers are to be as reflective to the product as possible. Please do not use misleading names, information, or icons. A tags suggestion tool has been provided to aid with tagging your asset. Descriptions should be as concise as possible. Ensure your icons, images, descriptions, and tags are free of profanity or other offensive material.
+**Icons** for your app *must be* 90 pixels in both height and width and must be in PNG, JPG, or GIF format. The image size cannot exceed 512kb.
+**Screenshots** for your app *must not exceed* 600 pixels in width x 400 pixels in height and must be in the PNG, JPG, or GIF format. The total size of all screenshots *must not exceed* 1MB. Each screenshot must be the same size, and it is preferable if they are named sequentially, for example `fluffy-puppies-01.png`, `fluffy-puppies-02.png`, and so on.
+**Titles of Apps**: In some views with Marketplace, titles of applications longer than 18 characters will be shortened with ellipsis. In the Marketplace, titles *must not be* longer than 50 characters.
+**Description, Tags, Websites and Version Numbers**: Descriptions, web sites and version numbers are to be as reflective to the product as possible. Please do not use misleading names, information, or icons. A tags suggestion tool has been provided to aid with tagging your asset. Descriptions should be as concise as possible. Ensure your icons, images, descriptions, and tags are free of profanity or other offensive material.
 
 Above and beyond these basics of creating apps in the form of Liferay plugins, there are additional considerations to take into account when designing and publishing apps.
 
-### What kinds of validation are performed by Liferay?
+### What kind of validations are performed by Liferay?
 
-Liferay will ensure that apps meet a minimum set of requirements, such as
+Liferay will ensure that apps meet a minimum set of requirements, such as:
 
 - Running basic anti-virus checks
 - Ensuring titles, descriptions, images, etc. are appropriate
 - Basic sanity checking of functionality (e.g. deployment testing, etc)
 
-Liferay does not do source code reviews, and will not ask for your source code. Further, Liferay is not responsible for the behavior (or misbehavior) of apps on the Marketplace. For details regarding this, consult the *Liferay Marketplace User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual *End User License Agreements* associated with each app.
+Liferay does not do source code reviews and will not ask for your source code. Further, Liferay is not responsible for the behavior (or misbehavior) of apps on the Marketplace. For details regarding this, consult the *Liferay Marketplace User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual *End User License Agreements* associated with each app.
  
 ### What versions of Liferay should I target?
 
-Of course, targeting the widest possible range of versions will ensure you a larger audience. However, there are certain features in specific versions of Liferay that you may wish to take advantage of. When uploading apps, you can specify which versions your app is compatible with, and you can have multiple files for your app designed for different versions of the Liferay Platform.
+Of course, targeting the widest possible range of versions will ensure you a larger audience. However, there are certain features in specific versions of Liferay that you may wish to take advantage of. When uploading apps, you can specify which versions your app is compatible with and you can have multiple files for your app designed for different versions of the Liferay Platform.
 
-Note that apps on the Liferay Marketplace must be designed for Liferay 6.1 and later. That's not to say that they will not work with prior versions, however only Liferay 6.1 has support for installing apps directly from the Marketplace, and has safeguards against malicious apps that earlier versions of Liferay don't have. If you wish to use an app for an earlier version, consult the documentation for that app, as it may or may not be supported on earlier versions of Liferay.
+Note that apps on the Liferay Marketplace must be designed for Liferay 6.1 and later. That's not to say that they will not work with prior versions.  However, only Liferay 6.1 has support for installing Apps directly from the Marketplace and safeguards against malicious Apps that will be ineffective on earlier versions of Liferay. If you wish to use an app for an earlier version, consult the documentation for that app, as it may or may not be supported on earlier versions of Liferay.
+
+Read the *Specify App Compatibility* section below for details on how to specify which versions of Liferay your app works with.
 
 ---
 
@@ -85,7 +89,7 @@ Now that we have covered the basics, you're armed with enough knowledge to start
 
 ## Developing and publishing apps
 
-Let's jump right in with an example. In this section, we'll walk you through the creation and publication steps (but we won't actually publish the app on the Marketplace, since this example app isn't very useful!). After walking through this, you should understand how Marketplace development typically occurs.
+Let's jump right in with an example. In this section, we'll walk you through the creation and publication steps (but we won't actually publish the app on the Marketplace, since this example app isn't very useful!). After walking through this, you should understand how Marketplace App development typically occurs.
 
 ### Develop a sample app
 
@@ -93,19 +97,51 @@ Before you can publish anything, you first have to create (develop) an app!  App
 
 In the real world, apps usually consist of multiple components (e.g. multiple `.war` file plugins), are spread across multiple plugin types, and present non-trivial functionality which in many cases requires some configuration. How these advanced tasks are dealt with is out of scope for this section, but some tips and considerations for Marketplace development can be found later in this chapter.
 
+### Specify App Compatibility
+
+Each plugin in your app must declare the Liferay releases with which it is compatible.  When you upload your plugins to the Liferay Marketplace, your app will be scanned, and the embedded compatibility information will be extracted and used to create different downloadable *variations* of your app, for different Liferay releases.  You must insert this information into the plugin before you can publish it to the Marketplace.
+
+The version specifier relates to the underlying version of the Liferay release.  In order to specify which versions of Liferay your app is compatible with, you first need to understand how Liferay releases are named and how they relate to the underlying Liferay release version.  Details can be found on the [Versioning Policy Wiki](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Versioning+Policy).  Accordingly, Liferay 6.1 CE GA1 began as version `6.1.0`.  CE GA2 is then `6.1.1`, and so on.  Liferay 6.1 EE GA1 began as `6.1.10`, EE GA2 is then `6.1.11` and so on.
+
+This compatibility information resides in the `liferay-plugin-package.properties` file (located in the `WEB-INF/` directory of your plugin's `.war` file).  Within this file, you can specify a comma-separated list of Liferay releases with which the plugin is compatible using the `liferay-versions` keyword.  For example, to specify that a particular plugin is compatible with Liferay 6.1 CE GA2 *and later*, add this line to your `liferay-plugin-packages.properties` file:  `liferay-versions=6.1.1+`.  This means that the app works with any 6.1 CE release.  Here are some additional examples:
+
+	# works with Liferay 6.1 CE GA2 *only*
+	liferay-versions=6.1.1
+
+	# works with Liferay 6.1 CE GA2 and later (i.e. NOT compatible with 6.1 GA1)
+	liferay-versions=6.1.1+
+
+	# works with Liferay 6.1 CE GA2 and CE GA3 only
+	liferay-versions=6.1.1,6.1.2
+	
+	# works with Liferay 6.1 EE GA1 only
+	liferay-versions=6.1.10
+
+	# works with Liferay 6.1 EE GA1 and later
+	liferay-versions=6.1.10+
+
+	# works with Liferay 6.1 CE GA2 and later, and 6.1 EE GA2 and later
+	liferay-versions=6.1.1+,6.1.11+
+
+For example, suppose you have tested your app against Liferay 6.1 CE GA2 and 6.1 EE GA1.  You are confident that it will continue to work in future maintenance releases, so simply need to put `liferay-versions=6.1.1+,6.1.10+` in the `liferay-plugin-packages.properties` file for all plugins that make up your app.
+
+If some plugins within your app must be built for multiple releases, ensure that the respective plugins have appropriate versioning information in them.  For example: suppose your app consists of two plugins: a portlet and a hook.  The portlet is simple, and uses standard API calls that work on all Liferay 6.1 releases.  However, the hook is different for CE vs. EE because it takes advantage of some feature of EE.
+
+In this case, your portlet plugin would have `liferay-versions=6.1.1+,6.1.11+`, but then you'd have *two* hook plugins.  The first one would specify `liferay-versions=6.1.1+` (indicating it works with GA2 and later), and the second hook plugin would specify `liferay-versions=6.1.11+` (indicating it works with EE GA2 and later).  As you upload these plugins later on in this example, you will notice that they are sorted into separate collections of plugins for each supported release.  In some cases, if a plugin is compatible with multiple releases, it will be automatically copied for use in all of the releases for which your app supports.
+
 Now that you have developed your app, it's time to get started with Marketplace!
 
 ### Establish a Marketplace Account
 
-Before you can publish anything to the Marketplace, you must first have an account on [liferay.com](http://liferay.com). If you do not have an account, visit [http://liferay.com](http://liferay.com) and click *Register* in the upper-right. Once you have registered, you can visit the Marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace). The Marketplace homepage is shown below:
+Before you can publish anything to the Marketplace, you must first have an account on [liferay.com](http://liferay.com). If you do not have an account, visit [http://liferay.com](http://liferay.com) and click *Register* in the upper-right corner of the screen. Once you have registered, you can visit the Marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace). The Marketplace homepage is shown below:
 
 ![Figure 10.1: The Marketplace home page is where users go to find new and interesting apps. ](../../images/marketplace-homepage.png) 
 
-This is the front page of the Marketplace and is where users go to find new and interesting apps. You'll visit here often during the course of development, so it might be a good idea to bookmark it now. To get started, the first thing you want to do is visit your personal *Home* page. There is a thin strip at the top of your browser window. This is known as the *Dockbar*. Many links are present in the drop-down menus of the Dockbar, including a link titled *Go to My Home*. This is a link to your personal home page. More detail about what you can find on your personal home and profile pages can be found in the *Liferay Marketplace* chapter of the User Guide. For now, go to your personal home page by clicking on the *Go to My Home* link.
+This is the front page of the Marketplace and is where users go to find new and interesting apps. You'll visit here often during the course of development, so it might be a good idea to bookmark it now. To get started, the first thing you want to do is visit your personal *Home* page. There is a thin strip at the top of your browser window. This is known as the *Dockbar*. Many links are present in the drop-down menus of the Dockbar, including a link titled *Go to My Home*. This is a link to your personal home page. More details about what you can find on your personal home and profile pages can be found in the *Liferay Marketplace* chapter of the User Guide. For now, go to your personal home page by clicking on the *Go to My Home* link.
 
 ![Figure 10.2: Use the My Home Page link from anywhere in Liferay to navigate to your personal pages. ](../../images/marketplace-my-homepage-link.png) 
 
-Your home page contains links to often-used functionality of liferay.com, including app creation and management. There are several links on the left of your home page, including one titled *App Manager*. This link allows you to manage the apps that you have either purchased (or have been purchased for use in companies you are associated with), or apps that you or your company have developed. You'll use this page heavily, so a bookmark would be useful here. Click *App Manager* to visit this page.
+Your home page contains links to often-used functionality of liferay.com, including app creation and management. There are several links on the left of your home page, including one titled *App Manager*. This link allows you to manage the apps that you have either purchased (or have been purchased for use in companies you are associated with) or apps that you or your company have developed. You'll use this page heavily, so a bookmark would be useful here. Click *App Manager* to visit this page.
 
 ![Figure 10.3: The App Manager lets you maintain everything about apps you've purchased or published.](../../images/marketplace-my-app-manager.png) 
 
@@ -129,7 +165,7 @@ The first step is to enter the basic details about your app.
 
 This screen allows you to enter basic details about the app you are publishing.
 
-**Name:** The name of your application. Arguably the most important detail of your app, the name of your app should be a good title that conveys the function of the app, but is not overly wordy or misleading. Choosing a good name for your app is key to its success, so choose wisely!  See the *Marketplace Considerations* chapter for more guidance on how to pick good names. Do not include versions in the title unless it is a vital part of the name, for example *Angry Birds 2: More Anger*. Each app on the Marketplace must have a unique name.
+**Name:** The name of your application. Arguably the most important detail of your app, the name of your app should be a good title that conveys the function of the App but is not overly wordy or misleading. Choosing a good name for your app is key to its success, so choose wisely!  See the *Marketplace Considerations* chapter for more guidance on how to pick good names. Do not include versions in the title unless it is a vital part of the name, for example *Angry Birds 2: More Anger*. Each app on the Marketplace must have a unique name.
 
 **Description:** Like the name says, this is a description of your app. You can put anything you want here, but a good guideline is no more than 4-5 paragraphs. This field does not allow any markup tags or other textual adornments--it's just text.
 
@@ -139,9 +175,9 @@ This screen allows you to enter basic details about the app you are publishing.
 
 **Tags:** A set of descriptive words that categorize your app. These tags are free-form and can help potential purchasers find your app through keyword searches, tag clouds, and other search mechanisms. You can click on *Suggestions* to let Marketplace suggest some tags for you based on the data you've already entered. Click *Select* to select from existing tags, or you can manually type in new tags. See the *Marketplace Basics* section of this chapter for detailed requirements for tags.
 
-**Category:** Choose the Marketplace category that most accurately describes what your app does. Users looking for specific types of apps will often browse categories by clicking on a specific category name in the main Marketplace home page, and having your app listed under the appropriate category will help them find your app.
+**Category:** Choose the Marketplace category that most accurately describes what your app does. Users looking for specific types of apps will often browse categories by clicking on a specific category name in the main Marketplace home page.  Having your app listed under the appropriate category will help them find your app.
 
-**Developer Website:** This is a URL that should reference the web site associated with the development of the app. For open source apps, this typically points at the project site where the source is maintained. For others, pointers to a home page of information about this app would be appropriate.
+**Developer Website:** This is a URL that should reference the web site associated with the development of the app. For open source apps, this typically points at the project site where the source is maintained. For others, links to a home page of information about this app would be appropriate.
 
 **Support Website:** This is a URL that should reference a location where purchasers or users of the app can get support for the app. 
 
@@ -161,21 +197,21 @@ On this screen, you must specify the version of your app. Review the guidance in
 
 #### Upload files (plugins) for your app
 
-This screen allows you to upload different sets of plugin files (variations) to support different Liferay versions. Think of it as a worksheet that you can fill out before advancing. The screen is shown here as it initially appears:
+This screen allows you to upload different sets of plugin files (variations) to support different Liferay versions. You must upload at least one plugin file before advancing beyond this screen. The screen is shown here as it initially appears:
 
 ![Figure 10.6: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-add-app-initial-files.png) 
 
-On the left is a drop-down containing known Liferay releases. Choosing a Liferay release shows you uploaded files that correspond to the chosen Liferay version.  You can freely move between versions. Each time you choose a different version on the left drop-down, the right side updates to display the files you've already uploaded for that version. You can do this as many times as you wish in order to upload all the files making up your app, for all of the Liferay versions you wish to support. You can also upload duplicate files, in case a single file is supported across multiple Liferay releases.
+Press the *Browse* button, and select the plugins that make up your app.  Each time you add plugins to the list, they will automatically begin uploading, and their compatibility information will be scanned (read the *Specify App Compatibility* section above to understand what compatibility information is read from your plugins).
 
-For this example, we will add the example portlet that represents our app. Choose *Liferay Portal 6.1 CE GA2* on the left menu. Click *Browse* and locate the `.war` file representing your sample app (hint: it is located in the `dist/` folder of your Plugins SDK). Choose it using the file browser, and click *Upload*. This uploads your plugin. When the upload completes, a confirmation checkmark appears.
+For this example, our app consists of a hook and a portlet.  The portlet works across all Liferay releases, but the hook is built separately for CE and EE.  Therefore, we will upload 3 plugins that make up our app.  Once the files are uploaded, a check mark appears next to each plugin, and the plugins are displayed based on the compatibility information.
 
 ![Figure 10.7: Your app has uploaded successfully.](../../images/marketplace-add-app-uploaded-files.png) 
 
-This indicates that the file was successfully uploaded and represents your app for users on Liferay Portal 6.1 CE GA2. You can optionally select other Liferay releases in the left drop-down and upload other `.war` files. Notice when you choose a different Liferay version in the left drop-down and then re-select the original *Liferay Portal 6.1 CE GA2*, your file is still there.  Click *Next* to advance to the final screen.
+This indicates that the files were successfully uploaded.  Notice that the portlet plugin was automatically copied for use in both the EE and CE variations, even though you only uploaded the portlet plugin once. Click *Next* to advance to the final screen.
 
 #### Preview and submit the app
 
-Whenever you make a change (app details, adding files, adding new versions), you always wind up at a *Preview* screen, allowing you to preview your app as it will appear in the Marketplace, so you can confirm your changes. 
+Whenever you make a change (app details, adding files, adding new versions), you always wind up at a *Preview* screen.  This allows you to preview your app as it will appear in the Marketplace, so you can confirm your changes. 
 
 ![Figure 10.8: Always preview your app before submitting it. You may see changes here that you want to make before you submit it.](../../images/marketplace-add-app-preview-and-submit.png) 
 
@@ -225,19 +261,19 @@ If you need to add files in support of another Liferay release, the process is s
 
 Once you advance past the version edit screen, you'll be at the File Upload screen. This screen should look familiar--it's the same workflow used when you initially created your app!  The difference is that you can't edit pre-approved files for specific Liferay releases. You can only add *new* files for a different Liferay release (if you actually need to update existing files, you must create a new version of the app--see the later section on adding versions for details on how to do this).
 
-Choose the Liferay release for which you wish to add new files. Upload your files (just has you had done before), click *Next*, and observe the newly-added files listed at the bottom of the preview screen. Click *Submit for Review* to submit your requested change (adding of files). The files will be reviewed by LIferay, and once approved, the new variation is available for download in the Marketplace.
+Upload your new files (ensuring that your new plugins have updated compatibility information, see the section on *Specify App Compatibility* for details on versioning), click *Next*, and observe the newly-added files listed at the bottom of the preview screen. Click *Submit for Review* to submit your requested change (adding of files). The files will be reviewed by LIferay, and once approved, the new variation is available for download in the Marketplace.
 
 ### Releasing a new version of your app
 
 After time passes, you may wish to add new functionality to your app or fix a batch of bugs. This can be accomplished by releasing a new version of your app. New versions offer your users new functionality and bugfixes, and users are generally encouraged to always use the latest version. In addition, when a new version of your app becomes available, existing users are notified automatically through Liferay's notification system.
 
-New versions of your apps are created in much the same way as the initial version was. To add a new version, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*. Click the *Action* button next to the app for which you wish to add a new version. At the bottom of the Details screen, click the *Add New Version* button. This button begins the process of adding a new version, starting with the App Details screen. In this case, the screen is pre-filled with data from the current version of the app, as shown below.
+New versions of your apps are created similarly to the way the initial version was. To add a new version, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*. Click the *Action* button next to the app for which you wish to add a new version, and then click *Edit*. You will be taken to the Details screen. At the bottom of the Details screen, click the *Add New Version* button. This button begins the process of adding a new version, starting with the App Details screen. In this case, the screen is pre-filled with data from the current version of the app, as shown below.
 
 ![Figure 10.10: Adding a version is similar to creating a new app, except that the fields are pre-filled for you.](../../images/marketplace-add-version-details.png) 
 
 You can make any changes to the pre-filled data on this screen. Since this is a new version of an existing app making major changes (such as completely changing the name or description) might be unsettling to your existing users. It is common that you'll want to upload new screenshots and refresh the icon. Note that you cannot change the app owner (such as moving from a personally-developed app to a company-developed app). 
 
-Clicking *Next* takes you through the same screens you've already seen. On the *Add App Version* screen, you can specify a new version name for this version of your app. Also note, that when adding new versions to an existing app, you have the option to add *What's New* text. This is typically filled in with a list of changes for this version, such as significant new features or bugfix information. Clicking *Next* from here allows you to upload the files associated with the new version of the app. For a new version of the app, you must upload all files for all supported Liferay versions again, even if they have not changed since the last version.
+Clicking *Next* takes you through the same screens you've already seen. On the *Add App Version* screen, you can specify a new version name for this version of your app. Also, note that when adding new versions to an existing app, you have the option to add *What's New* text. This is typically filled in with a list of changes for this version, such as significant new features or bugfix information. Clicking *Next* from here allows you to upload the files associated with the new version of the app. For a new version of the app, you must upload all files for all supported Liferay versions again, even if they have not changed since the last version.
 
 ### Deactivating your app
 
@@ -264,5 +300,5 @@ A download is recorded for your app when someone downloads a specific variation 
 
 ## Summary
 
-In this chapter we introduced concepts and instructions for developers to make their apps available on the Liferay Marketplace. We looked at how to create, publish, maintain, and track apps. You do this through  [liferay.com](liferay.com), using your own personal credentials and its features for Marketplace. Next, we covered the requirements for publishing apps, which did not differ significantly from requirements for general Liferay development. We then showed how you can publish a sample app on the Marketplace, and how you can modify it as the app evolves. Finally, we looked at how to track the adoption of apps using download and view metrics. We hope this information helps you understand how to develop apps for Liferay!
+In this chapter we introduced concepts and instructions for developers to make their apps available on the Liferay Marketplace. We looked at how to create, publish, maintain, and track apps. You do this through  [liferay.com](liferay.com), using your own personal credentials and its features for Marketplace. Next, we covered the requirements for publishing apps, which did not differ significantly from requirements for general Liferay development. We then showed how you can publish a sample app on the Marketplace and how you can modify it as the app evolves. Finally, we looked at how to track the adoption of apps using download and view metrics. We hope this information helps you understand how to develop apps for Liferay!
 
