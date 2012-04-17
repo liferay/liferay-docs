@@ -136,7 +136,9 @@ public class NumberHeadersTask extends Task {
 		return chapter;
 	}
 
-	private  String handleHeaderLine(String line, String filename, int lineNum, Properties props) {
+	private  String handleHeaderLine(String line, String filename, int lineNum,
+		Properties props) throws BuildException {
+
 		String newHeadingLine = null;
 
 		// Check if the header contains an ID
@@ -180,7 +182,14 @@ public class NumberHeadersTask extends Task {
 				}
 			}
 
-			String heading = extractHeading(line, indexOfFirstHeaderChar);
+			String heading = null;
+			if (indexOfFirstHeaderChar > 0) {
+				heading = extractHeading(line, indexOfFirstHeaderChar);
+			}
+			else {
+				throw new BuildException("WARNING - "  + filename + ":" +
+					lineNum + " is missing header text.");
+			}
 
 			String chapter = extractChapterNumber(filename);
 
