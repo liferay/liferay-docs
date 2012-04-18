@@ -231,6 +231,10 @@ When you've finished setting the options in the portlet, click *Save*. Then clos
 
 We've already talked a little bit about connecting content across the portal by using Related Assets; now let's take a look at the Related Assets portlet.
 
+### The Blogs Admininistrator Portlet
+
+In the control panel there's a portlet created to manage your site's blog entries. Usually, if you want to add, modify or delete one entry, the basic blog portlet is great, but in case you need for example to massively delete blog entries, the blogs administrator portlet is the perfect tool for you. 
+
 ##Related Assets
 
 Related Assets is a new feature in Liferay 6.1 that enables you to connect any number of assets within a site or across the portal, even if they don't share any tags and aren't in the same category. We've already seen that you can show related assets within the display for a specific asset, and with the Related Assets portlet you can show links to any assets which are related to content displayed on that page.
