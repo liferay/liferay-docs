@@ -116,9 +116,7 @@ The Contacts Center is a important application for Social Office because it allo
 
 ![Figure X.x: Contacts Centers allows users to follow each other Twitter-style and set up Linked-In style connections.](../../images/to-do.png)
 
-Social Office's Microblogs application allows you to broadcast your thoughts as a Facebook-like status to a chosen audience. You can choose for your status to be viewable by *All*, *Connections*, or *Followers*. The Timeline tab chronologically displays all the status posts that you have permission to see.
-
-<!-- | TODO: What does the Mentions tab do? | -->
+Social Office's Microblogs application allows you to broadcast your thoughts as a Facebook-like status to a chosen audience. You can choose for your status to be viewable by *All*, *Connections*, or *Followers*. There are two special symbols that you can use in your microblog posts. The hashtag symbol (`#`) turns the following word into a hashtag. When viewing a microblog post, hashtags appear as links. You can click on any hashtag to view a list of microblog posts that reference the same hashtag. Note that hashtags are distinct from portal tags--only portal tags are indexed and made available for search. The other special symbol you can use is the mentions symbol (`@`). When you are writing a microblog post, typing the `@` symbol brings up a list of connections to select. Once you select a connection and publish your post, the connection's username become a link to their Social Office profile page. This is the general behavior of clicking on a username throughout Social Office. The Timeline tab of the Microblogs portlet chronologically displays all the status posts that you have permission to see. The Mentions tab displays all the posts in which you've been mentioned.
 
 ![Figure X.x: Microblogs allow users to broadcast their thoughts to a chosen audience.](../../images/to-do.png)
 
