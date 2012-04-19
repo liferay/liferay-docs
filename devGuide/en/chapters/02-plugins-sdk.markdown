@@ -1,5 +1,5 @@
 
-# The Plugins SDK
+# The Plugins SDK [](id=the-plugins-s-3)
 Java developers have a wide variety of tools and development environments. Liferay makes every effort to remain tool agnostic, so that you can choose the tools that works best for you. For that reason, we provide a Plugins Software Development Kit (SDK) which is based on Apache Ant and may be used along with any editor or Integrated Development Environment (IDE). The chapters of this guide will use the Plugins SDK and a text editor, but you may use whatever tool you are comfortable with. In a later chapter we also introduce Liferay IDE, a plugin for eclipse that simplifies development for Liferay.
 
 ---
@@ -20,7 +20,7 @@ We discuss the following topics in this chapter:
 
 Setting up the Plugins SDK is easy. Let's get to it.
 
-## Installing the SDK
+## Installing the SDK [](id=installing-the-sdk)
 Setting up your environment for Liferay development is straightforward. First, you will need Liferay Portal. If you have yet to install Liferay with an application server, follow instructions in chapter *Installing Liferay* of our *Using Liferay Portal 6.1* document [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). Many people use the Tomcat application server for development, as it is small, fast, and takes up less resources than most other servlet containers. Although you can use any application server supported by Liferay Portal for development, our examples use Tomcat.
 
 ---
@@ -91,7 +91,7 @@ Save the file.
 
 Next, let's consider the structure of the Plugins SDK.
 
-## Structure of the SDK
+## Structure of the SDK [](id=structure-of-the-s-3)
 
 Each folder in the Plugins SDK contains scripts for creating new plugins of that type. Here is the directory structure of the Plugins SDK:
 
@@ -149,13 +149,13 @@ As you may notice, there is an Ant build file (`build.xml`) in each of the plugi
 
 Next, let's consider some best practices for developing plugins using the SDK.
 
-## Best Practices
+## Best Practices [](id=best-practices)
 
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you can have separate Plugins SDK projects for each plugin. For example, if you have an internal Intranet using Liferay with some custom portlets, you could keep those portlets and themes in their own Plugins SDK project in your source code repository. If you also have an external instance of Liferay for your public Internet web site, you could have a separate Plugins SDK with those projects as well. Or you could further separate your projects by having a different Plugins SDK project for each portlet or theme project.
 
 It is also possible to use use the Plugins SDK as a simple cross-platform project generator. You can create a plugin project using the Plugins SDK and then copy the resulting project folder to your IDE of choice. This method requires some manual modification of the ant scripts, but it makes it possible to conform to the strict standards some organizations have for their Java projects.
 
-## Maven alternative
+## Maven alternative [](id=maven-alternative)
 
 As an alternative to developing plugins using the SDK, you can leverage the Apache Maven build management framework. You'll be happy to know that we have archetypes to help you build various types of plugins including Liferay portlets, themes, and layout templates. Here are links to articles, written by Mika Koivisto, to help you get started with the Liferay Maven SDK and deploying Liferay artifacts to your Maven repository.
 

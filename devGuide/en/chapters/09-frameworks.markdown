@@ -1,11 +1,11 @@
 
-# Liferay Frameworks
+# Liferay Frameworks [](id=liferay-framewor-1)
 
 This chapter provides you with a brief overview of several of the essential frameworks provided by Liferay to developers. A framework, in the context of an API, is a set of APIs and configuration that is designed for an specific purpose such as enhancing your applications with a permission system, with tags, with categories, comments, etc.
 
 This chapter will keep evolving with more information about the existing APIs and frameworks and how to use it. So look back for more information often.
 
-## Service Builder
+## Service Builder [](id=service-build-5)
 
 Service Builder is a model-driven code generation tool built by Liferay to automate the creation of interfaces and classes for database persistence and a service layer. Service Builder will generate most of the common code needed to implement find, create, update, and delete operations on the database, allowing you to focus on the higher level aspects of service design.
 
@@ -198,7 +198,7 @@ In addition to the services you create using Service Builder, your portlets may 
 
 For more information on these services, see Liferay's Javadocs at [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
-## Security and Permissions
+## Security and Permissions [](id=security-and-permissio-4)
 
 JSR-286 (and JSR-168) defines a simple security scheme using portlet roles and their mapping to portal roles. On top of that, Liferay provides a fine-grained permissions system, which developers can use to implement access security in their custom portlets. This section of the document gives an overview of the JSR-286 (JSR-168) security system, Liferay's permission system, and how to use them in your own portlets.
 
@@ -586,7 +586,7 @@ Let's review what we've just covered. Implementing permission into your custom p
 
 Next, let's learn how to use the Asset Framework.
 
-## Asset Framework
+## Asset Framework [](id=/asset-framewo-4)
 
 The asset framework provides a set of functionalities that are common to several different content types. It was initially created to be able to add tags to blog entries, wiki pages, web content, etc without having to re-implement this same functionality over and over. Since then, it has grown to include more functionalities and it has been made possible to use the framework for custom applications even if they are implemented within a plugin.
 
@@ -1054,11 +1054,11 @@ That's about it. It wasn't that hard, right? Now, to get really fancy, you may n
 
 Now you can start enjoying the benefits of the asset framework in your custom portlets. Next we'll learn how to leverage the File Storage Framework of Liferay Portal.
 
-## File Storage Framework
+## File Storage Framework [](id=file-storage-framewo-1)
 
 The File Storage Framework: Allows storing files using the back-end of the Document Library. By using this framework you won't have to worry yourself about clustering or backups since that will already be taken care of for the Document Library itself. This framework is used, for example, by the wiki and the message boards of Liferay to store attached files in pages and posts respectively. You can check the source code of these two portlets for great real-life examples of how to use the framework.
 
-## Other frameworks
+## Other frameworks [](id=other-framewor-4)
 
 Liferay has a wide variety of frameworks that make it much easier to develop complex functionalities for your own applications with little effort. These frameworks have evolved from the applications bundled with Liferay out of the box so they have been proven in the real world, even in very high performance portals.
 

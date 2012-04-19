@@ -1,9 +1,9 @@
 
-# Creating Liferay Themes
+# Creating Liferay Themes [](id=creating-liferay-them-7)
 
 Themes are hot deployable plugins which can completely transform the look and feel of the portal. Theme creators can make themes to provide an interface that is unique to the site that the portal will serve. Themes make it possible to change the user interface so completely that it would be difficult or impossible to tell that the site is running on Liferay. Liferay provides a well organized, modular structure to its themes. This allows the theme developer to be able to quickly modify everything from the border around a portlet window to every object on the page, because all of the objects are easy to find. Additionally, theme developers do not have to customize every aspect of their themes. A theme can inherit the styling, images, and templates from any of the built in themes, overriding them only where necessary. This allows themes to be smaller and less cluttered with extraneous data that already exists in the default theme (such as graphics for emoticons for the message boards portlet).
 
-## Introduction
+## Introduction [](id=introduct-14)
 
 Liferay's themes are designed in such way that they can be very easy to create. You can start by making changes in CSS files and as your customization requirements grow you can also make changes to the HTML that controls the page design.
 
@@ -19,7 +19,7 @@ Some of the technologies that you may need to know in order to make the best use
 
 To follow the examples of this guide you will also need some familiarity with using the command line. Alternatively you can use the Liferay IDE and use its menus instead of the commands used in the text.
 
-## Creating a Theme
+## Creating a Theme [](id=creating-a-the-4)
 
 The process for creating a new theme is nearly identical to the one for making a portlet. You will need both a project name (without spaces) and a display name (which can have spaces). For example, the project name could be *deep-blue*, and the theme title *Deep Blue*. In the terminal, navigate to the *themes* directory in the Plugins SDK and enter the following command (Linux and Mac OS X):
 
@@ -49,7 +49,7 @@ You should get a BUILD SUCCESSFUL message, which means that your theme is now be
 
 Go to your web browser and login to the portal as explained earlier. Then hover over **Manage** at the top of the page, and click on *Page*. Directly underneath the words **Manage Pages** select the *Look and Feel* tab. Simply click on your theme to activate it.
 
-## Anatomy of a Theme
+## Anatomy of a Theme [](id=anatomy-of-a-the-4)
 
 Custom themes are based on differences from one of several built-in Liferay themes.
 
@@ -104,11 +104,11 @@ Whenever you make modifications to your theme, redeploy it by opening a terminal
 
 Also make sure that you copy any changes you make back into your *_diffs* folder, or they will be overwritten when you redeploy your theme.
 
-## Thumbnails
+## Thumbnails [](id=thumbnai-4)
 
 You will notice that in the *Look and Feel* settings the *Classic* theme has a thumbnail preview of what it looks like, while our theme has only a broken image. To correct this, take a screenshot of your theme and save it in `_diffs/images` with the name `thumbnail.png`. It must have the exact size of 150 pixels wide by 120 pixels high. You should also save a larger version in the same directory with the name `screenshot.png`. Its size must be exactly 1080 pixels wide by 864 pixels high. After redeploying your theme, it will have a thumbnail preview just like the *Classic* theme.
 
-## JavaScript
+## JavaScript [](id=javascri-5)
 
 Liferay now includes its own JavaScript library called Alloy, which is an extension to Yahoo's YUI3 framework. Developers can take advantage of the full power of either of these frameworks in their themes. Inside of your theme's `main.js` file, you will find definitions for three JavaScript callbacks:
 
@@ -155,7 +155,7 @@ Executed after each portlet on the page has loaded. The callback receives two pa
 
 Executed after everything -- including AJAX portlets -- has finished loading.
 
-## Settings
+## Settings [](id=settin-4)
 
 Each theme can define settings to make it configurable. These settings are defined in a file named `liferay-look-and-feel.xml` inside `WEB-INF`. This file does not exist by default, so you should now create it with the following content:
 
@@ -243,7 +243,7 @@ File](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/o
 
 Next, we'll take a look at how to manage color schemes in your theme.
 
-## Color Schemes
+## Color Schemes [](id=color-schem-4)
 
 Color schemes are specified using a CSS class name, with which you can not only change colors, but also choose different background images, different border colors, and so on.
 
@@ -281,7 +281,7 @@ And in `night.css` you would prefix all of your CSS styles like this:
 
 You can also create separate thumbnail images for each of your color schemes. The `<color-scheme-images-path>` element tells Liferay where to look for these images (note that you only have to place this element in one of the color schemes for it to affect both). For our example, create the folders `_diffs/images/color_schemes/day` and `_diffs/images/color_schemes/night`. In each of these folders place a `thumbnail.png` and `screenshot.png` file with the same sizes as before.
 
-## Portal Predefined Settings
+## Portal Predefined Settings [](id=portal-predefined-settin-4)
 
 The portal defines some settings that allow the theme to determine certain behaviors. So far there are only two predefined settings but this number may grow in the future. These settings can be modified from `liferay-look-and-feel.xml`.
 
@@ -323,7 +323,7 @@ Here is an example of the HTML code that you would need to add style through CSS
 
 Using CSS and/or some unobtrusive Javascript it's possible to implement any type of menu.
 
-## Theme inheritance
+## Theme inheritance [](id=theme-inheritan-4)
 
 By default themes are based on the **_styled** theme, which provides only basic styling of portlets. If you open the `build.xml` file in your theme's directory, you will see the following:
 

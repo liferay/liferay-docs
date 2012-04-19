@@ -1,5 +1,5 @@
 
-# Ext plugins
+# Ext plugins [](id=ext-plugi-4)
 
 Ext plugins provide the most powerful method of extending Liferay. This comes with some tradeoffs in complexity, and so Ext plugins are designed to be used only in special scenarios in which no other plugin type can meet the needs of the project.
 
@@ -29,7 +29,7 @@ As we investigate these use cases we will discuss the following topics as well:
 
 Let's start by creating an Ext plugin.
 
-## Creating an Ext plugin
+## Creating an Ext plugin [](id=creating-an-ext-plug-4)
 
 Ext plugins are stored within the `ext` directory of the Plugins SDK (see chapter *The Plugins SDK*). You can create your Ext plugin in Liferay Developer Studio, Liferay IDE, or outside of those environments.
 
@@ -120,7 +120,7 @@ By default, several files are added to the plugin. Here are the most significant
 
 You've now created an Ext plugin and have become familiar with its directory structure and its most significant files. Now, it's time to customize Liferay Portal by developing your Ext plugin.
 
-## Developing an Ext plugin
+## Developing an Ext plugin [](id=developing-an-ext-plug-4)
 
 Developing an Ext plugin is slightly different than working with other plugin types. The main reason for this is that an Ext plugin, when deployed, makes changes to the Liferay web application itself, instead of staying as a separate component that can be removed at any time. It's important to remember that once an Ext plugin has been deployed, some of its files are *copied* inside the Liferay installation, so the only way to remove its changes is to *redeploy* an unmodified Liferay application again.
 
@@ -504,7 +504,7 @@ This strategy will help you determine what you will need to merge in the future 
 
 ---
 
-## Deploying in production
+## Deploying in production [](id=deploying-in-producti-4)
 
 In production or pre-production environments, it's often not possible to use Ant to deploy web applications. Also, some application servers such as WebSphere or Weblogic have their own deployment tools and it isn't possible to use Liferay's autodeploy process. This section describes two methods for deploying and redeploying Ext plugins in these scenarios.
 
@@ -532,7 +532,7 @@ Once you have the aggregated `.war` file follow these steps on the server:
 
 2.  Stop the server and copy the new version of the global libraries to the appropriate directory in the application server.
 
-## Migrating old extension environments
+## Migrating old extension environments [](id=migrating-old-extension-environmen-4)
 
 Ext plugins have been created as an evolution of the extension environment provided in Liferay 5.2 and previous versions of Liferay. Because of this, a common need for projects upgrading from previous versions is to migrate Extension environments into Ext plugins. The good news is that this task is automated and thus relatively easy.
 
@@ -574,6 +574,6 @@ If the goal of the changes is to fix a bug or to make an improvement that could 
 
 [http://www.liferay.com/community/wiki/-/wiki/Main/Contributing](http://www.liferay.com/community/wiki/-/wiki/Main/Contributing)
 
-## Conclusions
+## Conclusions [](id=conclusio-8)
 
 Ext plugins are a very powerful way of extending Liferay. There are no limits to what you can use them to customize. For this reason, you should use them carefully. If you find yourself using an Ext plugin, verify if all or part of the desired functionality can be implemented through portlets, hooks or web plugins instead. If you do need to use an Ext plugin, make it as small as possible and make sure you follow the instructions in this guide carefully to avoid issues.

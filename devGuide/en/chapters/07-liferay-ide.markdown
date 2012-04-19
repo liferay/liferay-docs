@@ -1,5 +1,5 @@
 
-# Liferay IDE
+# Liferay IDE [](id=liferay-i-4)
 
 Liferay's developers use a variety of tools to develop the product and as a consequence of that they have always tried hard to allow other developers to use any tools they wanted for their own development. Because of this you can develop portals based on Liferay with complex IDEs Eclipse, Netbeans or IntelliJ Idea or just use text editors such as Notepad. You can write your persistence layer directly using SQL and JDBC or you can use advanced object-relational mapping libraries such as hibernate or iBatis.
 
@@ -9,7 +9,7 @@ Liferay IDE is an extension for the Eclipse platform that supports development o
 
 The first two sections below show how to install and set-up Liferay IDE within your environment. If you are using a copy of Liferay Developer Studio, which comes with Liferay Portal Enterprise Edition, you can skip directly to the section titled *Testing/Launching Liferay Tomcat Server* since it comes already preconfigured.
 
-## Installation
+## Installation [](id=installati-6)
 
 This section is a detailed guide to install Liferay IDE.
 
@@ -67,7 +67,7 @@ The next set of instructions describe how to install Liferay IDE without typing 
 
 3.  Installation proceeds the same as previous section.
 
-## Set up
+## Set up [](id=set--4)
 
 This section describes the setup necessary to begin doing Liferay development and testing your developments.
 
@@ -135,7 +135,7 @@ Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK
 
 	![Figure 7.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-type.png)
 
-## Testing/Launching Liferay Tomcat Server
+## Testing/Launching Liferay Tomcat Server [](id=testing-launching-liferay-tomcat-serv-4)
 
 Once your Liferay Portal Server setup is complete you can launch the server from the servers tab of Eclipse. Simply select the server and then click on the green *Start the Server button.* Once the server is running a red *Terminate* button will appear which you can use to stop the server.
 
@@ -147,7 +147,7 @@ Once the server is finish launching you can open the portal home from the contex
 
 ![Figure 7.14: Opening Portal Home from within Liferay IDE](../../images/ide-open-portal-home.png)
 
-## Creating New Liferay Projects
+## Creating New Liferay Projects [](id=creating-new-liferay-projec-4)
 
 Now that an SDK and portal server have been configured you can create a new Liferay plug-in project. Go to File &rarr; New Project... &rarr; Liferay &rarr; Liferay Plug-in Project. 
 
@@ -161,7 +161,7 @@ If it worked you should see a new plugin project in the package explorer.
 
 ![Figure 7.17: Viewing the new project in the Package Explorer view](../../images/ide-package-explorer-demo-portlet.png)
 
-## Deploying New Liferay Projects to Liferay Server
+## Deploying New Liferay Projects to Liferay Server [](id=deploying-new-liferay-projects-to-liferay-serv-4)
 
 Now with the newly created project, right-click the Liferay Server in the Servers view and select *Add and Remove...*.
 
@@ -187,7 +187,7 @@ Click Add &rarr; More, expand the Sample Category and click the Add link next to
 
 ![Figure 7.21: Adding a portlet to the page](../../images/ide-add-portlet-to-page.png)
 
-## Importing Existing Projects into Liferay IDE
+## Importing Existing Projects into Liferay IDE [](id=importing-existing-projects-into-liferay-i-4)
 
 If you have been following the examples of this guide using the Plugins SDK or have previous plugins developed with it that you want to keep developing with Liferay IDE then this section is for you. It also shows other options to import. Specifically it shows how to import from:
 
@@ -325,7 +325,7 @@ Follow the following steps to verify that either of the previous import processe
 
 Great! You've confirmed that your imported project is good to go.
 
-## Conclusion
+## Conclusion [](id=conclusi-3)
 
 In this chapter we've explored the Liferay IDE and have gone through step-by-step instructions with regards to installation and setup, creating and deploying Liferay projects, and importing existing projects into Liferay IDE. You must admit -- it is a slick tool-set! And we hope you take advantage of it in using Liferay Portal and developing your Liferay plugins.
 

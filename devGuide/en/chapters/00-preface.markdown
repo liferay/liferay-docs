@@ -5,7 +5,7 @@ For a more exhaustive view into Liferay development, we encourage you to check o
 
 The information contained herein has been organized in a format similar to a reference, so that it will be easier to find specific details later.
 
-## Publisher Notes
+## Publisher Notes [](id=publisher-not-3)
 
 It is our hope that this guide will be valuable to you, and that it will be an indispensable resource as you begin to develop on the Liferay platform. If you need any assistance beyond what is covered in this guide, Liferay, Inc. offers training, consulting, and support services to fill any need that you might have. Please see [http://www.](http://www.liferay.com/web/guest/services)[liferay](http://www.liferay.com/web/guest/services)[.com/web/guest/services](http://www.liferay.com/web/guest/services) for further information about the services we can provide.
 

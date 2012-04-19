@@ -1,5 +1,5 @@
 ﻿
-# Liferay APIs
+# Liferay APIs [](id=liferay-ap-1)
 
 This chapter provides an overview of several of the essential Liferay *application programming interfaces* (*APIs*) available to developers. An API is a programing interface that can be invoked from your own code, either directly through a Java invocation or through web services, to perform an action or set of actions.
 
@@ -23,7 +23,7 @@ This chapter covers the following topics:
 
 First, let's consider invoking Liferay's services locally.
 
-## Invoking the API locally
+## Invoking the API locally [](id=invoking-the-api-locally)
 
 Each service provides a local interface to clients running in the same JVM as the portal. There are two ways to invoke the methods of a service API:
 
@@ -73,7 +73,7 @@ This JSP code invokes static method `getOrganizationStatsUsers()` on the `-Local
 
 We'll look at invoking services remotely, next.
 
-## Invoking the API remotely
+## Invoking the API remotely [](id=invoking-the-api-remotely)
 
 Liferay services can also be invoked in a *remote* manner. The services API is available to *remote* clients -- clients running outside of the portal JVM or clients running on a remote machines. One key aspect of this API is that it includes security checks. Unless a developer wants to avoid permission checking, he should develop his client (whether it be local or remote) to always use this front-end layer.
 
@@ -81,7 +81,7 @@ Liferay's API follows a Service Oriented Architecture [(SOA)](http://en.wikipedi
 
 Next, we'll step back for a moment and consider the security layers of Liferay's *service oriented* architecture and how they can be configured.
 
-## Service Security Layers
+## Service Security Layers [](id=service-security-layers)
 
 By default, a user connecting from the same machine Liferay is running on can access remote services so long as that user has permission to use those services in Liferay's permissions system. Of course, you are not really "remote" unless you are accessing services from a different machine; but we recommend using the API in a remote manner to trigger the security checks. Liferay has two layers of security when it comes to accessing its services remotely. The first layer of security only applies to clients invoking the API using a remote protocol. Invoking the API using a remote protocol, without having explicit rights to both layers, results in a remote exception being thrown and access being denied to those services. However, if you want to invoke the API using Java invocation, skip to the the paragraph that refers to the **second layer of security**.
 
@@ -139,7 +139,7 @@ In summary, accessing Liferay remotely requires the successful passing of two se
 
 Next, we'll learn about Liferay's SOAP web services.
 
-## SOAP Web Services
+## SOAP Web Services [](id=soap-web-services)
 
 Liferay's services also provide access via *Simple Object Access Protocol* (*SOAP*) over HTTP. SOAP is the *packaging* protocol and HTTP is the *transport* protocol. For our example, we'll look at the SOAP web service classes for Liferay's `Company`, `User`, and `UserGroup` portal services to accomplish the following:
 
@@ -399,7 +399,7 @@ So, if you'd like to use a language, other than Java, that supports use of SOAP 
 
 Next, we'll explore Liferay's JSON Web Services.
 
-## JSON Web Services
+## JSON Web Services [](id=json-web-services)
 
 JSON Web Services provide convenient access to portal service methods by exposing them as JSON HTTP API. This makes services methods easily accessible using HTTP requests, not only from JavaScript within the portal, but also from any JSON-speaking client.
 
@@ -779,7 +779,7 @@ Well, you've just added some powerful tools to your toolbox by learning how to l
 
 Next, let's consider the `ServiceContext` class used by so many Liferay services and how it can be helpful to use in your services.
 
-## Service Context
+## Service Context [](id=service-conte-1)
 
 The `ServiceContext` class is a parameter class to be used in passing contextual information for a service. By using a parameter class it is possible to consolidate many different methods with different sets of optional parameters into a single, easier to use method. The class also aggregates information necessary for transversal features such as permissioning, tagging, categorization, etc.
 
@@ -992,6 +992,6 @@ The previous snippet also demonstrates using the `trackbacks` attribute which is
 
 As we've demonstrated, the `ServiceContext` can be used to transfer lots of useful information for your services.
 
-## Conclusion
+## Conclusion [](id=conclusi-4)
 
 Well, you've covered a lot of ground here in learning how to use the API locally and remotely, how to enable/disable remote services and access to them, and how to leverage ServiceContext objects in your use of Liferay services. Well done! Next, we'll take a look at some of the powerful frameworks of Liferay Portal, learn how they work and how you can leverage them.
