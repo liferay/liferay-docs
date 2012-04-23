@@ -1,4 +1,4 @@
-# Maintaining A Liferay Portal
+# Maintaining A Liferay Portal [](id=maintaining-a-liferay-port-5)
 
 It's not much harder to maintain a running implementation of Liferay Portal than it is to maintain the application server environment upon which it is running. There are, however, several factors which administrators should be aware of when they are responsible for a running instance of Liferay. This chapter addresses these issues and outlines some specifics about how to keep a running Liferay instance stable and secure.
 
@@ -12,11 +12,11 @@ We discuss the following topics in this chapter:
 
 The discussion on backup covers what parts of Liferay should be backed up. We won't cover specific backup software or procedures; generally, most organizations have standards for doing backups of their systems, and Liferay as a Java EE application fits well into these standards.
 
-## Liferay monitoring using Google Analytics
+## Liferay monitoring using Google Analytics [](id=liferay-monitoring-using-google-analyti-5)
 
 Liferay includes built-in support for Google Analytics, allowing administrators to make use of Google's tool set for analyzing site traffic data. When you sign up for Google Analytics, a snippet of code is provided which needs to be added to your web pages in order to allow Google's system to register the page hit. It can be a tedious process to add this code to every page on a site, especially if it's a large site and there is a lot of user-generated content.
 
-This problem can be solved in Liferay by putting Google's code into a custom theme written specifically for the web site on which the portal is running. Doing this, however, requires a theme developer to make specific changes to the theme and it prevents users from using the many themes that are freely available for Liferay “out of the box.”
+This problem can be solved in Liferay by putting Google's code into a custom theme written specifically for the web site on which the portal is running. Doing this, however, requires a theme developer to make specific changes to the theme and it prevents users from using the many themes that are freely available for Liferay "out of the box."
 
 Because of this, support for Google Analytics has been built into Liferay, and can be turned on through a simple user interface. This allows Liferay administrators to make use of Google Analytics on a community by community basis and turn it on and off when needed.
 
@@ -28,11 +28,11 @@ Put your Google Analytics ID (which should have been provided to you when you si
 
 This is a fairly simple procedure, and it gives you the ability to take advantage of some great tools to help you visualize who's coming to your site and from where. Next, we discuss some topics germane to maintaining your Liferay installation as it's used. Let's start with backup.
 
-## Backing up a Liferay installation
+## Backing up a Liferay installation [](id=backing-up-a-liferay-installati-5)
 
 Once you have an installation of Liferay Portal running, you'll want to have proper backup procedures in place in case of a catastrophic hardware failure of some kind. Liferay isn't very different from any other application that may be running on your application server. Nevertheless, there are some specific components that you should include in your backup plan.
 
-### Backing up source code
+### Backing up source code [](id=lp-6-1-ugen16-backing-up-source-code-0)
 
 If you have extended Liferay or have written any plugins, they should be stored in a source code repository such as Git, Subversion, or CVS, unless you're Linus Torvalds, and then tarballs are okay too (that's a joke). Your source code repository should be backed up on a regular basis to preserve your ongoing work. This probably goes without saying in your organization, as nobody wants to lose source code that's taken months to produce, but we thought we should mention it anyway. 
 
@@ -40,7 +40,7 @@ If you're extending Liferay with an Ext plugin, you'll want to make sure that yo
 
 Let's look at the items that need to be backed up in your Liferay installation. 
 
-### Backing up Liferay's file system
+### Backing up Liferay's file system [](id=lp-6-1-ugen16-backing-up-liferays-file-system-0)
 
 Liferay's configuration file, `portal-ext.properties`, gets stored in the *Liferay Home* folder, which is generally one folder up from where your application server is installed (see chapter 11 for specific details for your application server). At a minimum, this file should be backed up, but it is generally best to back up your whole application server.
 
@@ -52,7 +52,7 @@ If you've modified the location where the Document Library stores files, you sho
 
 That about covers the file system locations that Liferay uses. Next, let's discuss how to back up Liferay's database.
 
-### Backing up Liferay's database
+### Backing up Liferay's database [](id=lp-6-1-ugen16-backing-up-liferays-database-0)
 
 Liferay's database is the central repository for all of the Portal's information and is the most important component that needs to be backed up. You can do this by backing up the database live (if your database allows this) or by exporting the database and then backing up the exported file. For example, MySQL ships with a `mysqldump` utility which allows you to export the entire database and data into a large SQL file. This file can then be backed up. In case of a database failure, this file can be used to recreate the state of the database at the time the dump was created.
 
@@ -64,7 +64,7 @@ Restoring your application server, your Liferay Home folder, the locations of an
 
 But what about maintenance while your server is running? Liferay lets you view a lot of what is going on through its logging system. 
 
-## Liferay's Logging System
+## Liferay's Logging System [](id=liferay-s-logging-syst-5)
 
 Liferay uses Log4j extensively to implement logging for nearly every class in the portal. If you need to debug something specific while the system is running, you can use the control panel to set logging levels by class dynamically.
 
@@ -98,7 +98,7 @@ You'll see that you can add a logging category. Put in the fully qualified name 
 
 Logs are great for figuring out issues in production. But what if Liferay contacts you via its support channel with a bug fix or a security enhancement? Read on to learn how to patch Liferay. 
 
-## Patching Liferay
+## Patching Liferay [](id=patching-liferay)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
@@ -110,7 +110,7 @@ On a regular schedule, these hot fixes are bundled together into fix packs. Fix 
 
 Now that you know what patching is all about, let's check out the tool. 
 
-### Installing the patching tool
+### Installing the patching tool [](id=lp-6-1-ugen16-installing-the-patching-tool-0)
 
 If you're using a Liferay bundle, congratulations! The patching tool is already installed. Your job isn't done yet, however, because Liferay *might* have updated the patching tool. Always check the Customer Portal to see if the patching tool has been updated first. But even if you forget to check, the patching tool will tell you if it needs to be updated when you run it. A lot of planning and forethought has gone into the patching system to make it run as smoothly as possible.
 
@@ -134,7 +134,7 @@ If you've installed the patching tool in a non-standard location, you'll have to
 	
 In all, this is pretty simple. Now let's see how to use the patching tool to get your patches installed. 
 
-### Installing patches
+### Installing patches [](id=lp-6-1-ugen16-installing-patches-0)
 
 The absolute first thing you must do when installing one or more patches is to shut down your server. On Windows operating systems, files that are in use are locked by the OS, and won't be patched. On LUM systems, you can generally replace files that are running, but of course that still leaves the old ones loaded in memory. So your best bet is to shut down the application server that's running Liferay before you install a patch. 
 
@@ -148,19 +148,19 @@ This shows you a list of patches that you've already installed, along with a lis
 	
 Your patches are now installed. You can verify this by using the `./patching-tool.sh info` command, which now shows your patch in the list of installed patches. Let's look now at how you'd manage your patches. 
 
-#### Handling hot fixes and patches
+#### Handling hot fixes and patches [](id=lp-6-1-ugen16-handling-hot-fixes-and-patches-0)
 
 As stated above, hot fixes are short term fixes that are provided as quickly as possible, and fix packs are larger bundles of hot fixes that are provided to all customers at regular intervals. If you already have a hot fix installed, and the fix pack which contains that hot fix is released, you can rest assured that the patching tool will manage this for you. Fix packs always supercede hot fixes, so when you install your fix pack, the hot fix that it already contains is  uninstalled, and the fix pack version is installed in its place. 
 
 Sometimes there can be a fix to a fix pack. This is also handled automatically. If a new version of a fix pack is released, you can use the patching tool to install it. The patching tool uninstalls the old fix pack and installs the new version in its place. 
 
-#### Fix pack dependencies
+#### Fix pack dependencies [](id=lp-6-1-ugen16-fix-pack-dependencies-0)
 
 Some fix packs require other fix packs to be installed first. If you attempt to install a fix pack that depends on another fix pack, the patching tool will notify you of this so that you can go to the customer portal and obtain the fix pack dependency. Once all the necessary fix packs are available in the `patches` folder, the patching tool will install them. 
 
 The patching tool can also remove patches. 
 
-### Removing or reverting patches
+### Removing or reverting patches [](id=lp-6-1-ugen16-removing-or-reverting-patches-0)
 
 Have you noticed that the patching tool only seems to have an `install` command? This is because patches are managed not by the command, but by what appears in the `patches` folder. You manage the patches that you have installed by adding or removing patches from this folder. If you currently have a patch installed and you don't want it installed, remove it from the `patches` folder. Then run the `./patching-tool.sh install` command, and the patch is removed. 
 
@@ -168,7 +168,7 @@ If you want to remove all patches that you've installed, use the `./patching-too
 
 What we've described so far is the simplest way to use the patching tool, but you can also use the patching tool in the most complex, multi-VM, clustered environments. This is done by using profiles. 
 
-### Using profiles with the patching tool
+### Using profiles with the patching tool [](id=lp-6-1-ugen16-using-profiles-with-the-patching-tool-0)
 
 When you ran the auto-discovery task after installing the patching tool, it created a default profile that points to the application server it discovered. This is the easiest way to use the patching tool, and is great for smaller, single server installations. But we realize that many Liferay installations are sized accordingly to serve millions of pages per day, and the patching tool has been designed for this as well. So if you're running a small, medium, or large cluster of Liferay machines, you can use the patching tool to manage all of them using profiles. 
 
@@ -198,7 +198,7 @@ You can have as many profiles as you want, and use the same patching tool to pat
 
 Now that you know how to patch an existing installation of Liferay, let's turn to how you'd upgrade Liferay from an older release to the current release. 
 
-## Upgrading Liferay
+## Upgrading Liferay [](id=upgrading-lifer-5)
 
 Liferay upgrades are fairly straightforward. A consistent set of steps is all you need to follow to upgrade a standard Liferay installation. Things do get more complicated if your organization has used Ext plugins to customize Liferay. It's possible that API changes in the new version will break your existing code. This, however, is usually pretty easy for your developers to fix. Portlet plugins which use Liferay APIs should be reviewed and their services rebuilt against the new release. Theme plugins may require some modifications in order to take advantage of new features, and if they're using Liferay APIs, they should be reviewed. Much effort has been made to make upgrades as painless as possible; however, this is not a guarantee that everything will work without modification. Ext plugins are the most complicating factor in an upgrade, so it is important to test as much as possible.
 
@@ -206,7 +206,7 @@ As a general rule, you can upgrade from one major release to the next major rele
 
 Now that we've gotten the general philosophy of upgrading out of the way, let's outline the procedure you'll undergo for upgrading a Liferay 6.0 installation to a 6.1 installation. If you're running a previous version of Liferay and need to upgrade to 6.0 first, please see the instructions in the previous version of this document. 
 
-### Upgrading Liferay Portal 6.0 to Liferay Portal 6.1
+### Upgrading Liferay Portal 6.0 to Liferay Portal 6.1 [](id=lp-6-1-ugen16-upgrading-liferay-portal-60-to-liferay-portal-61-0)
 
 There are a few things you'll want to prepare before you actually perform the upgrade. Specifically, you'll need to review your image gallery usage, review new Liferay 6.1 defaults, and catalog all the plugins you have installed. After you've performed these three tasks, you'll be ready to upgrade. 
 
@@ -248,7 +248,7 @@ In both cases, Liferay auto-detects whether the database requires an upgrade the
 
 Let's look at upgrading a bundle, which is the easiest upgrade path. 
 
-#### Upgrading a bundle
+#### Upgrading a bundle [](id=lp-6-1-ugen16-upgrading-a-bundle-0)
 
 If you're running a Liferay bundle, the best way to do the upgrade is to follow the steps below. The new Liferay is installed in a newer version of your bundle runtime. For example, the Liferay/Tomcat bundle for 6.0 used Tomcat 6 by default; the 6.1 bundle uses Tomcat 7. Though there is a Tomcat 6 bundle of Liferay 6.1, that bundle also uses a newer release of Tomcat than the one from 6.0. This is the case for all runtimes that Liferay supports. We generally recommend that you use the latest version of your runtime bundle, as it will be supported the longest. 
 
@@ -261,7 +261,7 @@ If you're running a Liferay bundle, the best way to do the upgrade is to follow 
    
 As you can see, upgrading a bundle is generally pretty simple. But not everybody can use bundles: sometimes, specific application servers or application server versions are mandated by the environment you're in or by management. For this reason, Liferay also ships as an installable .war file that can be used on any supported application server.    
 
-#### Upgrading using a .war file
+#### Upgrading using a .war file [](id=lp-6-1-ugen16-upgrading-using-a-war-file-0)
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
@@ -276,7 +276,7 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
 
 That's all there is to it. Most everything is handled by Liferay's upgrade procedure. Note that as stated above, if you have to upgrade over several Liferay versions, you will need to repeat these steps for each major release. 
 
-## Summary
+## Summary [](id=summ-37)
 
 Liferay Portal is an easy environment to maintain. Backup procedures are simple and straightforward. Administrators have all the options they need to view and diagnose a running Liferay Portal server through its tunable logs. 
 
