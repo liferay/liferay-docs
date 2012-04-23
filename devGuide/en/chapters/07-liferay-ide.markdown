@@ -1,5 +1,5 @@
 
-# Liferay IDE
+# Liferay IDE [](id=liferay-i-4)
 
 Liferay's developers use a variety of tools to develop the product and as a consequence of that they have always tried hard to allow other developers to use any tools they wanted for their own development. Because of this you can develop portals based on Liferay with complex IDEs Eclipse, Netbeans or IntelliJ Idea or just use text editors such as Notepad. You can write your persistence layer directly using SQL and JDBC or you can use advanced object-relational mapping libraries such as hibernate or iBatis.
 
@@ -9,17 +9,17 @@ Liferay IDE is an extension for the Eclipse platform that supports development o
 
 The first two sections below show how to install and set-up Liferay IDE within your environment. If you are using a copy of Liferay Developer Studio, which comes with Liferay Portal Enterprise Edition, you can skip directly to the section titled *Testing/Launching Liferay Tomcat Server* since it comes already preconfigured.
 
-## Installation
+## Installation [](id=installati-6)
 
 This section is a detailed guide to install Liferay IDE.
 
-### Requirements
+### Requirements [](id=lp-6-1-dgen07-requirements-0)
 
 -   Java 5.0 JRE or greater
 
 -   [Eclipse Indigo Java EE (3.7.1)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr1) or [Eclipse Helios Java EE (3.6.2)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
 
-### Installation steps
+### Installation steps [](id=lp-6-1-dgen07-installation-steps-0)
 
 1.  Install Eclipse Indigo or Helios (unzip download file from above).
 
@@ -57,7 +57,7 @@ This section is a detailed guide to install Liferay IDE.
 
 	![Figure 7.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.PNG)
 
-### Alternative installation
+### Alternative installation [](id=lp-6-1-dgen07-alternative-installation-0)
 
 The next set of instructions describe how to install Liferay IDE without typing the URL of an update site:
 
@@ -67,11 +67,11 @@ The next set of instructions describe how to install Liferay IDE without typing 
 
 3.  Installation proceeds the same as previous section.
 
-## Set up
+## Set up [](id=set--4)
 
 This section describes the setup necessary to begin doing Liferay development and testing your developments.
 
-### Requirements
+### Requirements [](id=lp-6-1-dgen07-requirements-1)
 
 Before getting started you should satisfy the next requirements:
 
@@ -83,7 +83,7 @@ Before getting started you should satisfy the next requirements:
 
 Note: Earlier versions of Liferay, eg 5.2.x, are not supported yet by the Liferay IDE.
 
-### Liferay Plugins SDK Setup
+### Liferay Plugins SDK Setup [](id=lp-6-1-dgen07-liferay-plugins-sdk-setup-0)
 
 Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK and Liferay Portal must be installed and configured in the IDE.
 
@@ -103,7 +103,7 @@ Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK
 
  Note: multiple SDKs can be added to the preferences but you will need to select at least one SDK to be the default which is represented by the SDK that has the checkbox selected.
 
-### Liferay Portal Tomcat Runtime / Server Setup
+### Liferay Portal Tomcat Runtime / Server Setup [](id=lp-6-1-dgen07-liferay-portal-tomcat-runtime--server-setup-0)
 
 1. In Eclipse open the Runtime environments preference page (Go to Window &rarr; Preferences &rarr; Server &rarr; Runtime environments).
 
@@ -135,7 +135,7 @@ Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK
 
 	![Figure 7.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-type.png)
 
-## Testing/Launching Liferay Tomcat Server
+## Testing/Launching Liferay Tomcat Server [](id=testing-launching-liferay-tomcat-serv-4)
 
 Once your Liferay Portal Server setup is complete you can launch the server from the servers tab of Eclipse. Simply select the server and then click on the green *Start the Server button.* Once the server is running a red *Terminate* button will appear which you can use to stop the server.
 
@@ -147,7 +147,7 @@ Once the server is finish launching you can open the portal home from the contex
 
 ![Figure 7.14: Opening Portal Home from within Liferay IDE](../../images/ide-open-portal-home.png)
 
-## Creating New Liferay Projects
+## Creating New Liferay Projects [](id=creating-new-liferay-projec-4)
 
 Now that an SDK and portal server have been configured you can create a new Liferay plug-in project. Go to File &rarr; New Project... &rarr; Liferay &rarr; Liferay Plug-in Project. 
 
@@ -161,7 +161,7 @@ If it worked you should see a new plugin project in the package explorer.
 
 ![Figure 7.17: Viewing the new project in the Package Explorer view](../../images/ide-package-explorer-demo-portlet.png)
 
-## Deploying New Liferay Projects to Liferay Server
+## Deploying New Liferay Projects to Liferay Server [](id=deploying-new-liferay-projects-to-liferay-serv-4)
 
 Now with the newly created project, right-click the Liferay Server in the Servers view and select *Add and Remove...*.
 
@@ -187,7 +187,7 @@ Click Add &rarr; More, expand the Sample Category and click the Add link next to
 
 ![Figure 7.21: Adding a portlet to the page](../../images/ide-add-portlet-to-page.png)
 
-## Importing Existing Projects into Liferay IDE
+## Importing Existing Projects into Liferay IDE [](id=importing-existing-projects-into-liferay-i-4)
 
 If you have been following the examples of this guide using the Plugins SDK or have previous plugins developed with it that you want to keep developing with Liferay IDE then this section is for you. It also shows other options to import. Specifically it shows how to import from:
 
@@ -199,7 +199,7 @@ If you have been following the examples of this guide using the Plugins SDK or h
 
  The following subsections describe the steps for each of them with more detail.
 
-### Importing existing Liferay Project from a Plugins SDK
+### Importing existing Liferay Project from a Plugins SDK [](id=lp-6-1-dgen07-importing-existing-liferay-project-from-a-plugins-sdk-0)
 
 An existing Liferay project that has been created by the Plugins SDK but has not yet been added to an Eclipse workspace or have not been added to the current workspace open in Eclipse/Liferay IDE. These projects may or may not have .project or .classpath files. Whether they do or don’t we will follow the same steps and use the same wizard.
 
@@ -207,7 +207,7 @@ There are two options to create projects from existing sources, depending on whe
 
 Note: The two next sections assume that you have Liferay plug-ins SDK directory structure and you have previously created projects inside of that directory structure.
 
-#### Create one single project from one plugin in an existing sources
+#### Create one single project from one plugin in an existing sources [](id=lp-6-1-dgen07-create-one-single-project-from-one-plugin-in-an-existing-so-0)
 
 This option will create one project for a single plugin that already exists inside a Plugins SDK.
 
@@ -235,7 +235,7 @@ This option will create one project for a single plugin that already exists insi
 
 6.  Read the section below on verifying the success of an import process to make sure that your project was configured correctly as a Liferay IDE project.
 
-#### Create multiple projects for all plugins in a Plugins SDK
+#### Create multiple projects for all plugins in a Plugins SDK [](id=lp-6-1-dgen07-create-multiple-projects-for-all-plugins-in-a-plugins-sdk-0)
 
 This option will transverse an existing Plugins SDK and will allow creating one project for each of the plugins it finds inside in one single step.
 
@@ -271,7 +271,7 @@ This option will transverse an existing Plugins SDK and will allow creating one 
 
 11. Read the section below on verifying the success of an import process to make sure that your project was configured correctly as a Liferay IDE project.
 
-### Importing an existing Eclipse Project that is not aware of the Liferay IDE
+### Importing an existing Eclipse Project that is not aware of the Liferay IDE [](id=lp-6-1-dgen07-importing-an-existing-eclipse-project-that-is-not-aware-of--0)
 
 If your project is not in your Eclipse workspace, you can use the first set of steps above. If your project is already in your workspace (see it in project explorer) but is not yet a Liferay IDE project, the following steps can be used to convert the project.
 
@@ -293,7 +293,7 @@ If your project is not in your Eclipse workspace, you can use the first set of s
 
 5.  Read the section below on verifying the success of an import process to make sure that your project was configured correctly as a Liferay IDE project.
 
-### Importing an existing Liferay IDE project
+### Importing an existing Liferay IDE project [](id=lp-6-1-dgen07-importing-an-existing-liferay-ide-project-0)
 
 This section describes the steps that can be followed if you have previously created or converted a Liferay IDE project in your workspace but it is no longer in the current workspace there are a couple of options for importing this project.
 
@@ -311,7 +311,7 @@ This section describes the steps that can be followed if you have previously cre
 
 If you have any errors, it may be that either the SDK name used in that project or the runtime id used doesn't exist in your new workspace. You can modify the SDK name in the Project Properties &rarr; Liferay page and you can modify the targeted runtime in the Project properties &rarr; Targeted Runtimes page.
 
-### Verifying that the import has succeeded
+### Verifying that the import has succeeded [](id=lp-6-1-dgen07-verifying-that-the-import-has-succeeded-0)
 
 Follow the following steps to verify that either of the previous import processes has been successful.
 
@@ -325,7 +325,7 @@ Follow the following steps to verify that either of the previous import processe
 
 Great! You've confirmed that your imported project is good to go.
 
-## Conclusion
+## Conclusion [](id=conclusi-3)
 
 In this chapter we've explored the Liferay IDE and have gone through step-by-step instructions with regards to installation and setup, creating and deploying Liferay projects, and importing existing projects into Liferay IDE. You must admit -- it is a slick tool-set! And we hope you take advantage of it in using Liferay Portal and developing your Liferay plugins.
 

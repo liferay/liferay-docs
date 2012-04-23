@@ -1,5 +1,5 @@
 
-# Conclusions
+# Conclusions [](id=conclusio-9)
 
 Liferay Portal is a very flexible platform that allows creating a wide variety of portals and websites. It is the developer through custom applications and customizations who gives it the shape desired by the end users of the portal. Liferay provides several tools (Plugins SDK and Liferay IDE) to ease this task. It also provides the foundations and frameworks to either implement completely new applications (portlet plugins) or customize the core functionalities and applications provided with Liferay (hook plugins and ext plugins).
 

@@ -1,5 +1,5 @@
 
-# Introduction
+# Introduction [](id=introduct-12)
 
 Welcome to the Liferay's Developers Guide, the official guide for all developers that want to develop a portal based on Liferay or that want to develop an application that anyone can use in their Liferay installation. This guide will assume that you already know what a portal is and know how to use Liferay from an end-user perspective. If you don't, it is recommended that you read the [*What is a Portal?*](http://www.liferay.com/products/what-is-a-portal) white-paper and the Introduction, Liferay Collaboration Suite chapters of [Using Liferay Portal 6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
 
@@ -17,7 +17,7 @@ We will discuss the following topics in this chapter:
 
 Let's get started and look at developing applications for Liferay.
 
-## Developing applications for Liferay
+## Developing applications for Liferay [](id=developing-applications-for-lifer-3)
 
 According to Wikipedia "A web application is an application that is accessed over a network such as the Internet or an intranet." A portal application is a web application that can coexist with many other applications in a civilized way and also that can leverage functionality provided by the portal platform to reduce development time and deliver a more consistent experience to end users.
 
@@ -29,13 +29,13 @@ If you are reading this, you probably want to (or need to) develop an applicatio
 
 The following sections describe these options in more detail.
 
-### Portlets
+### Portlets  [](id=lp-6-1-dgen01-portlets--0)
 
 Portlets are small web applications written in Java that run in a portion of a web page. The heart of any portal implementation is its portlets, because they contain the actual functionality. The portlet container is only responsible for aggregating the set of portlets that are to appear on any particular page.
 
 Portlets are the least invasive form of extension to Liferay, as they are entirely self contained. Consequentially portlets are also the the most forward compatible development option. They are hot-deployed as plugins into a Liferay instance, resulting in zero downtime. A single plugin can contain multiple portlets, allowing you to split up your functionality into several smaller pieces that can be arranged dynamically on a page. Portlets can be written using any of the java web frameworks that support portlets development, including Liferay's specific frameworks: MVCPortlet or AlloyPortlet.
 
-### OpenSocial Gadgets
+### OpenSocial Gadgets [](id=lp-6-1-dgen01-opensocial-gadgets-0)
 
 Like portlets, OpenSocial Gadgets provide a standard way to develop applications for a portal environment. From a technology perspective, one key difference is that they don't mandate a specific backend technology, such as Java EE, PHP, Ruby, Python, etc. Another difference is that they have been designed specifically to implement social applications, while portlets were designed for any type of application. Because of this, OpenSocial Gadgets not only provide a set of technologies to develop and run applications, but also a set of APIs that allow the application to obtain information from the social environment such as information about a user's profile, his activities or his friends.
 
@@ -53,7 +53,7 @@ One additional very interesting feature of Liferay is that it is possible to exp
 
 Note, since an OpenSocial gadget is defined in an XML file, there is no need to create a plugin (that is a `.war` file) in order to deploy it. All you need to do is make that XML file accessible within the same server or another server and let Liferay know the URL.
 
-### Reusing existing web applications
+### Reusing existing web applications  [](id=lp-6-1-dgen01-reusing-existing-web-applications--0)
 
 Sometimes you don't start from scratch, because you have an existing application which however has not been implemented using Portlets or OpenSocial Gadgets. What can you do in this situation? There are many options available. Some of the most popular options are:
 
@@ -71,7 +71,7 @@ If the existing application has been developed as a Java EE application, Liferay
 
 In order to use Web Application Integrator all you need to do is deploy the WAR file of your web application as you would do with any Liferay plugin (for example, by using the control panel or by copying it to the deploy directory). As a result, Liferay automatically creates a portlet that integrates your application using an IFrame.
 
-### Supported Technologies
+### Supported Technologies  [](id=lp-6-1-dgen01-supported-technologies--0)
 
 Liferay, as a platform, strives to provide compatibility with all Java technologies that a developer may want to use to develop their own applications. Thanks to the portlet and the Java EE specifications each portlet application can use its own set of libraries and technologies regardless of whether they are what Liferay uses itself or not. This section refers mainly to portlet plugins, other plugin types are more restricted. For example, the Ext plugins can only use libraries that are compatible with the ones used by the core Liferay code.
 
@@ -87,25 +87,25 @@ Some of the frameworks mentioned above include their own JavaScript code to prov
 
 Besides the frameworks and libraries mentioned in this section, there are literally thousands more available to Java developers to handle persistence, caching, connections to remote services, and much more. Liferay does not impose specific requirements on the use of any of those frameworks so that portal developers can choose the best tools for their projects.
 
-## Extending and customizing Liferay
+## Extending and customizing Liferay [](id=extending-and-customizing-lifer-3)
 
 Liferay provides many out-of-the-box features, including a fully featured content management system, a social collaboration suite and several productivity tools. For some portals, these features might be exactly what you need; but for other portals, you might want to extend these features or customize how they work or how they look.
 
 Liferay provides several types of plugins that are specialized for different types of customization. Yet, it is possible to combine several plugin types, such as Themes and Layout Templates, into a single WAR file. The following sections describe each type of plugin and how they may be used.
 
-### Customizing the look and feel: Themes
+### Customizing the look and feel: Themes [](id=lp-6-1-dgen01-customizing-the-look-and-feel-themes-0) [](id=lp-6-1-dgen01-customizing-the-look-and-feel-themes-idlp-6-1-dgen01-custom-0)
 
 Themes allow the look of the Liferay portal to be changed using a combination of CSS and Velocity templates. In many cases, it is possible to adapt the default Liferay theme to a desired look using only CSS, providing the most forward compatibility. If CSS is insufficient, you can create a theme consisting of only a subset of the required templates and rely on the remaining templates to be copied from the default theme at deployment. Like portlets, themes are hot-deployed as plugins into a Liferay instance.
 
-### Adding new predefined page layouts: Layout Templates
+### Adding new predefined page layouts: Layout Templates  [](id=lp-6-1-dgen01-adding-new-predefined-page-layouts-layout-templates--0) [](id=lp-6-1-dgen01-adding-new-predefined-page-layouts-layout-templates--idlp-6-0)
 
 Layouts are similar to themes, except that they change the *arrangement* of portlets on a page rather than their look and feel. Layout templates are also written in Velocity and are hot-deployable.
 
-### Customizing or extending the out of the box functionality: Hook plugins
+### Customizing or extending the out of the box functionality: Hook plugins  [](id=lp-6-1-dgen01-customizing-or-extending-the-out-of-the-box-functionality-h-0) [](id=lp-6-1-dgen01-customizing-or-extending-the-out-of-the-box-functionality-h-0)
 
 Hook plugins are the recommended method of customizing the the core functionality of Liferay at many predefined extension points. Hook plugins can be used to modify portal properties or to perform custom actions on startup, shutdown, login, logout, session creation and session destruction. Using service wrappers, it is possible for a hook plugin to replace any of the core Liferay services with a custom implementation. Hook plugins can also replace the JSP templates used by any of the default portlets, allowing you to customize the appearance of the portlets as desired. Best of all, hooks are hot-deployable plugins just like portlets.
 
-### Advanced customization: Ext plugins
+### Advanced customization: Ext plugins  [](id=lp-6-1-dgen01-advanced-customization-ext-plugins--0) [](id=lp-6-1-dgen01-advanced-customization-ext-plugins--idlp-6-1-dgen01-advance-0)
 
 Ext plugins provide the largest degree of flexibility in modifying the Liferay core, and allow replacing essentially any class with custom implementations. This flexibility comes at a cost, however, as it is highly unlikely that an Ext plugin written for one version of Liferay will continue to work in the next version, without modification. For this reason, Ext plugins are only recommended for cases where an advanced customization is really needed and there is no other way to accomplish the same goal. Also you should make sure that you are familiar with the Liferay core to assure the Ext plugin doesn't have a negative effect on existing funcitonalities. Even though Ext plugins are deployed as plugins, the server must be restarted for their changes to take effect. For this reason, Ext plugins should not be combined with other types of plugins.
 
@@ -115,7 +115,7 @@ Ext plugins provide the largest degree of flexibility in modifying the Liferay c
 
 ---
 
-## Choosing the best tool for the job
+## Choosing the best tool for the job [](id=choosing-the-best-tool-for-the-j-3)
 
 The Java ecosystem is well known for providing a wide variety of options for almost any type of developer work that must be done. This is a great advantage because you can find the tool that best fits your needs and the way you work. For that reason, once you have found a tool with which you are comfortable using, you want to keep using it.
 
