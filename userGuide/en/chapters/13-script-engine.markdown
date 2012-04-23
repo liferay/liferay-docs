@@ -37,7 +37,7 @@ To illustrate the correct syntax for interacting with Liferay services, let's lo
 				
 Let's see first how this would work in Beanshell, which is very similar to Java. 
 				
-### Beanshell
+### Beanshell [](id=lp-6-1-ugen13-beanshell-0)
 
 Beanshell is a Java scripting language that's designed to run Java code with little or no changes. In this example, we only have one small change to make because Beanshell doesn't support the use of Java Generics. 
 
@@ -54,7 +54,7 @@ Beanshell is a Java scripting language that's designed to run Java code with lit
 	
 Next, we'll show the same thing in Groovy, another scripting language designed to be similar to Java. 
 
-### Groovy
+### Groovy [](id=lp-6-1-ugen13-groovy-0)
 
 Groovy is also based on Java and is perhaps a little easier than Beanshell because literally any code written in Java also runs in Groovy. This means we can execute the exact same code from our Java example without any changes. 
 
@@ -81,7 +81,7 @@ Of course, we could make this somewhat Groovier by simplyfing the program as fol
 	
 The script engine supports more than just Java-like languages. Despite the name, you should be aware that Javascript bears little resemblance to Java, but you can still use it in Liferay's script engine. 
 
-### Javascript
+### Javascript [](id=lp-6-1-ugen13-javascript-0)
 
 Liferay uses the Rhino Javascript Engine to provide Javascript support in the script engine. The following code provides a Javascript version of our original Java program.  
 
@@ -96,7 +96,7 @@ Liferay uses the Rhino Javascript Engine to provide Javascript support in the sc
 	
 You can see that the Javascript example is more compact. Ruby is even more compact. 
 
-### Ruby
+### Ruby [](id=lp-6-1-ugen13-ruby-0)
 
 Ruby is supported throgh the use of JRuby and our previous example could be implemented in Ruby as follows: 
 
@@ -106,7 +106,7 @@ Ruby is supported throgh the use of JRuby and our previous example could be impl
 	
 Python users aren't left out either. 
 
-### Python
+### Python [](id=lp-6-1-ugen13-python-0)
 
 Lastly, Liferay provides Python support based on Jython and the previous example could be implemented with the following code. 
 
@@ -121,7 +121,7 @@ Lastly, Liferay provides Python support based on Jython and the previous example
 
 As you can see, Liferay's services can be accessed from any of these languages. Let's look at some practical examples of how you'd use this. 
 		
-## Running scripts from the control panel [](id=running-scripts-from-the-control-panel) 
+## Running scripts from the control panel [](id=running-scripts-from-the-control-panel)
 
 To see a very simple example of the script console in action, log into the portal as an administrator and navigate to the control panel &rarr; Server Administration &rarr; Script. Change the script type to Groovy and modify the current code to look like the following:
  
@@ -259,7 +259,7 @@ The combination of Liferay's scripting and workflow engines is incredibly powerf
   
 <!-- | TODO
 
-## Script Based Portlets
+## Script Based Portlets [](id=lp-6-1-ugen13-script-based-portlets-0)
 
 -- TO DO - Jonathon?
 

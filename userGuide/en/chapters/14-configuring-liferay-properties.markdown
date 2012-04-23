@@ -803,22 +803,22 @@ Some databases do not recognize a NULL IS NULL check. Set the `custom.sql.functi
 
 There is no need to manually set these properties because `com.liferay.portal.spring.PortalHibernateConfiguration` already sets it. These properties are available, however, so that you can see how you can override it for a database that `PortalHibernateConfiguration` does not yet know how to auto configure.
 
-### DB2
+### DB2 [](id=lp-6-1-ugen14-db2-0)
 
 	custom.sql.function.isnull=CAST(? AS VARCHAR(32672)) IS NULL
 	custom.sql.function.isnotnull=CAST(? AS VARCHAR(32672)) IS NOT NULL
 	
-### MySQL (for testing only)
+### MySQL (for testing only) [](id=lp-6-1-ugen14-mysql-for-testing-only-0)
 
 	custom.sql.function.isnull=IFNULL(?, '1') = '1'
 	custom.sql.function.isnotnull=IFNULL(?, '1') = '0'
 
-### Sybase
+### Sybase [](id=lp-6-1-ugen14-sybase-0)
 
 	custom.sql.function.isnull=CONVERT(VARCHAR,?) IS NULL
 	custom.sql.function.isnotnull=CONVERT(VARCHAR,?) IS NOT NULL	
 
-### Database
+### Database [](id=lp-6-1-ugen14-database-0)
 
 Specify any database vendor specific settings.
 

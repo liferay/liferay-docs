@@ -24,7 +24,7 @@ The Drools Web Plugin provides a rules engine implementation, but by itself it d
 
 Let's examine the sample portlet to see how it works. 
 
-### Configuring the sample Drools portlet
+### Configuring the sample Drools portlet [](id=lp-6-1-ugen07-configuring-the-sample-drools-portlet-0)
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 
@@ -44,7 +44,7 @@ The Sample Drools Portlet plugin also contains a second rule that returns person
 
 Now that you can see how it works in practice, let's look closer at the rules themselves. 
 
-### Rules Definitions
+### Rules Definitions [](id=lp-6-1-ugen07-rules-definitions-0)
 
 Rule definitions can be written using Drools' declarative language. Rule files are text files that often have a .drl extension. A rule file can contain multiple rules. In addition to the standard Drools' declarative language, a domain specific language (DSL) can be created for your specific problem domain. <!-- | TODO: Explain. | --> Creating a DSL can make your rules even easier for business users to create and maintain your applications rules but does require some additional work up front. For additional information on creating a DSL for your problem domain please refer to the Domain Specific Languages section of the official Drools Documentation at [http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217). 
 

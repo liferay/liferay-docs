@@ -17,7 +17,7 @@ This chapter covers the following topics:
 
 In a nutshell, the Liferay Marketplace is a repository for applications built on the Liferay Platform. You can find and download applications directly from the Marketplace on the web, or use an existing Liferay installation to access and install applications onto the running Liferay web site. Once installed, you can manage the applications through Liferay's control panel. 
 
-## Marketplace Concepts: Users, Companies, and Apps
+## Marketplace Concepts: Users, Companies, and Apps [](id=lp-6-1-ugen09-marketplace-concepts-users-companies-and-apps-0)
 
 Anyone can browse the apps available on Liferay Marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace) but a `liferay.com` user account is required for purchasing and downloading apps, whether from the Marketplace website or from an existing Liferay installation. Many official Liferay apps, as well as some third party apps, are available free of charge. Other apps require you to pay a fee in order to access them. When you purchase an app, you can do so on your own behalf or on behalf of a company. Apps purchased on your own behalf are associated with your personal `liferay.com` user account. Apps purchased on behalf of a company are associated with that company's account and can be accessed by any users that belong to that company. Once you've purchased an app, you're free to download and install any available version of the app whenever you like. We'll explain how to set up a company account, manage company apps, and join companies after we discuss how to access Liferay Marketplace.
 
@@ -29,7 +29,7 @@ There are two ways to access the Marketplace.
 
 2. Via Liferay--If you have a site up and running based on Liferay, you can use the Marketplace section of the control panel to access Marketplace content.
 
-### The Basics
+### The Basics [](id=lp-6-1-ugen09-the-basics-0)
 
 No matter which method you choose, you will see the same content and apps.
  
@@ -55,11 +55,11 @@ The left side of each page in the [http://liferay.com/marketplace](http://lifera
 
 Below the navigation menu is the search bar. This allows you to search for apps with specific titles. Type in search terms and click *Search* to perform the search.
  
-### Logging In
+### Logging In [](id=lp-6-1-ugen09-logging-in-0)
 
 You do not need a `liferay.com` account in order to browse the Marketplace. Once you decide you wish to purchase and download an app (or if you are a developer and wish to create and upload new apps), you will need to establish a `liferay.com` account, and agree to the Marketplace Terms of Use. To get a new `liferay.com` login, visit the register page and sign up! Once you are signed in, you will be able to fully utilize the Marketplace to find and use Marketplace apps.
  
-### Marketplace Profile
+### Marketplace Profile [](id=lp-6-1-ugen09-marketplace-profile-0)
 
 On your existing `liferay.com` Home page, you'll notice a new link entitled *App Manager*. The App Manager allows you to access information about the apps you've purchased and apps you've uploaded to Marketplace. It also provides a mechanism for uploading new apps to Marketplace. Once you submit your app, it will be reviewed before appearing on the `liferay.com` Marketplace.
 
@@ -69,7 +69,7 @@ On your existing `liferay.com` Home page, you'll notice a new link entitled *App
 
 ---
 
-### Managing Apps
+### Managing Apps [](id=lp-6-1-ugen09-managing-apps-0)
 
 The App Manager shows you relevant information related to your usage of Marketplace. You'll find three tabs to help you manage your Marketplace apps: *Purchased*, *Apps*, and *Add an App*.
 
@@ -85,7 +85,7 @@ The Apps tab lists apps that you have authored and uploaded, showing you details
  
 Clicking on *Add an App* allows you to upload a new app and make it available in the marketplace. Please see the Marketplace Developer Guide for more detail on authoring your own app.
 
-### Creating a Company
+### Creating a Company [](id=lp-6-1-ugen09-creating-a-company-0)
 
 To create and register a company with Liferay Marketplace, click the *Create a Company* link in the left-hand navigation menu. Your first step is check to if your company already exists on Liferay Marketplace. Enter your company name into the search box and check if it's already been registered. If someone else from your company has already created a company account on Liferay Marketplace, you can click the *Request to Join this Company* button. This will send an email notification to your company's Marketplace admin (the one who created your company's Marketplace account). Your company's Marketplace admin will then be able to add you to the company. If the company name you'd like to use is available, click the *Register Your Company* button to move on to the next step. 
 
@@ -105,13 +105,13 @@ There are several ways to search for and find apps you are interested in.
 
 ![Figure 9.7: Marketplace Search Box](../../images/marketplace-search-box.png)
 
-### Versions
+### Versions [](id=lp-6-1-ugen09-versions-0)
 
 Apps are often updated to include new features or fix bugs. Each time an app is updated, its version number is changed. The version number is specified by the app developer, and often follows established norms, such as 1.0 &rarr; 1.1 &rarr; 2.0, or 1.0.1 &rarr; 1.0.2 &rarr; 1.2.0 and so on. Generally, the higher the numbers, the younger the version.
  
 When viewing an app's details, the click on the *Version History* tab to see a list of versions of the app. In some cases, not all historical versions of apps are available, depending on the app. Usually you will want to download and install the latest available app for the version of Liferay you are using (See Compatibility below).
  
-### Compatibility
+### Compatibility [](id=lp-6-1-ugen09-compatibility-0)
 
 Some apps are written to work across a wide range of Liferay Platform releases. Others are dependent on a specific Liferay Platform release (or a handful of such releases). When viewing individual apps, each version of the app that is available also describes the range of Liferay Platform versions the app is compatible with. Make sure to choose a version of the app that is compatible with your Liferay Platform release.
 
@@ -141,11 +141,11 @@ In the lower section, you will find Reviews and Version History tabs for this ap
  
 ![Figure 9.9: Detailed App Information](../../images/marketplace-app-version-history-and-reviews.png)
 
-### Downloading and Installing
+### Downloading and Installing [](id=lp-6-1-ugen09-downloading-and-installing-0)
 
 You've chosen an app, read the reviews, and want to download and use the app! There are two ways to install the app. Ultimately, both methods result in the same outcome: the app you've chosen is installed onto your local running Liferay instance.
  
-### Installing through the Control Panel
+### Installing through the Control Panel [](id=lp-6-1-ugen09-installing-through-the-control-panel-0)
 
 The easiest way to install an app is to do so from your Liferay control panel. This requires that you have already installed Liferay on your local machine, and that you can log in as an administrator. Once you are logged in as an administrator, click the *Go to* menu on the Dockbar and choose *Control Panel*.
 
@@ -165,7 +165,7 @@ All apps that you've bought are listed on the *Purchased* page of the Marketplac
  
 The apps which you downloaded and installed on the currently running instance of Liferay are listed as Installed. Apps which you have previously downloaded or purchased on other Liferay instances that are incompatible with the current one are listed as Not Compatible. You need to re-download/re-install the appropriate version of these apps if you wish to use them on your running instance of Liferay.
  
-### Downloading through liferay.com
+### Downloading through liferay.com [](id=lp-6-1-ugen09-downloading-through-liferaycom-0)
 
 The second way to install an app is to download it first, then in a separate step, deploy it to your running Liferay instance. This is especially useful in situations where you do not wish to deploy the app directly to your production environment, or in cases where the target Liferay instance that is to receive the app is behind a corporate firewall or otherwise does not have direct access to the Marketplace.
  
