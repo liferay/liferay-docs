@@ -48,7 +48,6 @@ To install Social Office manually, you just need to deploy the Social Office `.l
 - so-portlet
 - so-theme
 - tasks-portlet
-- weather-portlet
 - wysiwyg-portlet.
 
 ---
