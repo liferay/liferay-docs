@@ -1,4 +1,4 @@
-# Maintaining A Liferay Portal
+# Maintaining A Liferay Portal [](id=maintaining-a-liferay-port-5)
 
 It's not much harder to maintain a running implementation of Liferay Portal than it is to maintain the application server environment upon which it is running. There are, however, several factors which administrators should be aware of when they are responsible for a running instance of Liferay. This chapter addresses these issues and outlines some specifics about how to keep a running Liferay instance stable and secure.
 
@@ -12,7 +12,7 @@ We discuss the following topics in this chapter:
 
 The discussion on backup covers what parts of Liferay should be backed up. We won't cover specific backup software or procedures; generally, most organizations have standards for doing backups of their systems, and Liferay as a Java EE application fits well into these standards.
 
-## Liferay monitoring using Google Analytics
+## Liferay monitoring using Google Analytics [](id=liferay-monitoring-using-google-analyti-5)
 
 Liferay includes built-in support for Google Analytics, allowing administrators to make use of Google's tool set for analyzing site traffic data. When you sign up for Google Analytics, a snippet of code is provided which needs to be added to your web pages in order to allow Google's system to register the page hit. It can be a tedious process to add this code to every page on a site, especially if it's a large site and there is a lot of user-generated content.
 
@@ -28,7 +28,7 @@ Put your Google Analytics ID (which should have been provided to you when you si
 
 This is a fairly simple procedure, and it gives you the ability to take advantage of some great tools to help you visualize who's coming to your site and from where. Next, we discuss some topics germane to maintaining your Liferay installation as it's used. Let's start with backup.
 
-## Backing up a Liferay installation
+## Backing up a Liferay installation [](id=backing-up-a-liferay-installati-5)
 
 Once you have an installation of Liferay Portal running, you'll want to have proper backup procedures in place in case of a catastrophic hardware failure of some kind. Liferay isn't very different from any other application that may be running on your application server. Nevertheless, there are some specific components that you should include in your backup plan.
 
@@ -64,7 +64,7 @@ Restoring your application server, your Liferay Home folder, the locations of an
 
 But what about maintenance while your server is running? Liferay lets you view a lot of what is going on through its logging system. 
 
-## Liferay's Logging System
+## Liferay's Logging System [](id=liferay-s-logging-syst-5)
 
 Liferay uses Log4j extensively to implement logging for nearly every class in the portal. If you need to debug something specific while the system is running, you can use the control panel to set logging levels by class dynamically.
 
@@ -98,7 +98,7 @@ You'll see that you can add a logging category. Put in the fully qualified name 
 
 Logs are great for figuring out issues in production. But what if Liferay contacts you via its support channel with a bug fix or a security enhancement? Read on to learn how to patch Liferay. 
 
-## Patching Liferay
+## Patching Liferay [](id=patching-liferay)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
@@ -198,7 +198,7 @@ You can have as many profiles as you want, and use the same patching tool to pat
 
 Now that you know how to patch an existing installation of Liferay, let's turn to how you'd upgrade Liferay from an older release to the current release. 
 
-## Upgrading Liferay
+## Upgrading Liferay [](id=upgrading-lifer-5)
 
 Liferay upgrades are fairly straightforward. A consistent set of steps is all you need to follow to upgrade a standard Liferay installation. Things do get more complicated if your organization has used Ext plugins to customize Liferay. It's possible that API changes in the new version will break your existing code. This, however, is usually pretty easy for your developers to fix. Portlet plugins which use Liferay APIs should be reviewed and their services rebuilt against the new release. Theme plugins may require some modifications in order to take advantage of new features, and if they're using Liferay APIs, they should be reviewed. Much effort has been made to make upgrades as painless as possible; however, this is not a guarantee that everything will work without modification. Ext plugins are the most complicating factor in an upgrade, so it is important to test as much as possible.
 
@@ -276,7 +276,7 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
 
 That's all there is to it. Most everything is handled by Liferay's upgrade procedure. Note that as stated above, if you have to upgrade over several Liferay versions, you will need to repeat these steps for each major release. 
 
-## Summary
+## Summary [](id=summ-37)
 
 Liferay Portal is an easy environment to maintain. Backup procedures are simple and straightforward. Administrators have all the options they need to view and diagnose a running Liferay Portal server through its tunable logs. 
 

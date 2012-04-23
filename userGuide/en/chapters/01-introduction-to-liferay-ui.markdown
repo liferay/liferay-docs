@@ -1,4 +1,4 @@
-# Introduction to Liferay
+# Introduction to Liferay [](id=introduction-to-liferay)
 
 Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a "dashboard" application) so that the end user can see everything he or she interacts with at a glance.
 
@@ -22,7 +22,7 @@ We discuss the following topics in this chapter:
 
 Navigation within Liferay Portal is designed to be intuitive and easy. Let's get started.
 
-## Navigating Liferay
+## Navigating Liferay [](id=navigating-liferay)
 
 Liferay initially presents a very simple interface. Unauthenticated users can navigate the public pages of the portal and see a *Sign In* link in the top right corner of the screen.
 
@@ -108,7 +108,7 @@ Your (or the default user's) name appears at the right side of the Dockbar next 
 
 One of the most important tools Liferay offers for managing your portal is the aforementioned control panel, accessible from the *Go to* menu of the Dockbar. The control panel is composed of administrative pages that you can use to manage various aspects of the portal.
 
-## Navigating the Control Panel
+## Navigating the Control Panel [](id=navigating-the-control-pan-2)
 
 The control panel is very easy to navigate. On the left side is a list of headings with functions underneath them. The headings are in alphabetical order, but the functions are in a logical order.
 
@@ -124,7 +124,7 @@ The control panel is very easy to navigate. On the left side is a list of headin
 
 All of the functions that you will need to maintain the portal or its contents can be found in the control panel. Additionally, developers can write portlets which can also be added to the control panel. For further information about this, you can take Liferay's Portal Developer course, refer to Liferay's *Portal Developer's Guide* or see the official guide to Liferay development, [*Liferay in Action*](http://manning.com/sezov).
 
-## Portal Architecture
+## Portal Architecture [](id=portal-architectu-5)
 
 Before we dive into the user interface for adding and maintaining various portal resources, we should survey the concepts Liferay uses to organize a portal. Portals are accessed by users. Users can be collected into user groups. Users can belong to organizations. Organizations can be grouped into hierarchies, such as Home Office &rarr; Regional Office &rarr; Satellite Office. Sites can be created independently or can be attached to users or organizations. Within sites, users can belong to teams, which are groupings of users for specific functions within a site.
 
@@ -209,6 +209,6 @@ Teams can be essential for some use cases since they can be created by site admi
 
 ---
 
-## Summary
+## Summary [](id=summ-23)
 
 So far, we've looked at Liferay's function as a portal server and learned how to navigate within Liferay using the dockbar and the control panel. We've also taken a look at look at Liferay's portal architecture and how Liferay uses the concepts of users, user groups, organizations, sites, teams, and roles to organize your portal. If you're a portal administrator who is tasked with setting up your system's users, sites, organizations, or roles, you'll want to skip ahead to chapter 12 to see how this is done. For the remainder of this first part of the book, we'll focus on the applications an end user would use on a day to day basis. For this reason we'll next discuss one of the most used features of Liferay Portal: its content management system. 

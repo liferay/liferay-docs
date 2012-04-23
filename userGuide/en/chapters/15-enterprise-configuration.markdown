@@ -1,4 +1,4 @@
-# Enterprise Configuration
+# Enterprise Configuration [](id=enterprise-configurati-5)
 
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is fully ready to support mission-critical, enterprise applications in an environment configured for multiple redundancies and 24/7 uptimes. The product, however, like other products of its kind, doesn't come configured this way out of the box, so there are some steps that need to be taken in order to tune it for your needs. 
 
@@ -17,7 +17,7 @@ Sometimes Liferay supports multiple products which perform the same function. Th
 
 With all of that said, let's get started configuring Liferay for the enterprise.
 
-## Liferay Clustering 
+## Liferay Clustering [](id=liferay-clusteri-2) 
 
 Liferay Portal is designed to serve everything from the smallest to the largest web sites. Out of the box, it's configured optimally for a single server environment. If one server isn't sufficient to serve the high traffic needs of your site, Liferay scales to the size you need.  
 
@@ -396,7 +396,7 @@ When you want to deploy a plugin to the entire cluster, copy that plugin to the 
 
 All of the above will get basic Liferay clustering working; however, the configuration can be further optimized. We will see how to do this next.
 
-## Distributed Caching
+## Distributed Caching [](id=distributed-cachi-5)
 
 Liferay uses **Ehcache**, which has robust distributed caching support. This means that the cache can be distributed across multiple Liferay nodes running concurrently. Enabling this cache can increase performance dramatically. For example, say that two users are browsing the message boards. The first user clicks a thread in order to read it. Liferay must look up that thread from the database and format it for display in the browser. With a distributed Ehcache running, this thread is stored in a cache for quick retrieval, and that cache is then replicated to the other nodes in the cluster. Say then that the second user who is being served by another node in the cluster wants to read the same forum thread and clicks on it. This time, the data is retrieved more quickly. Because the thread is in the cache, no trip to the database is necessary. 
 
@@ -502,7 +502,7 @@ Note that if your developers have overridden any of these classes in an Ext plug
 
 As you can see, it's easy to add specific data to be cached. Be careful, however, as too much caching can actually reduce performance if the JVM runs out of memory and starts garbage collecting too frequently. You'll likely need to experiment with the memory settings on your JVM as well as the cache settings above. You can find the specifics about these settings in the documentation for Ehcache.
 
-## Performance Tuning
+## Performance Tuning [](id=performance-tuni-5)
 
 Once you have your portal up and running, you may find a need to tune it for performance, especially if your site winds up generating more traffic than you'd anticipated. There are some definite steps you can take with regard to improving Liferay's performance.
 
@@ -1039,7 +1039,7 @@ If there is a software catalog of plugins that you would like to point your inst
 
 Enter the URL to the repository to which you wish to connect in one of the fields and click *Save*. The portlet will connect to the repository, and items from this repository will be shown in the list.
 
-## Summary
+## Summary [](id=summ-36)
 
 We've seen how good a fit Liferay Portal is for the enterprise. It can be scaled linearly to grow to whatever size you need to serve your users. Clustering is a snap, and Liferay harmonizes very well with whatever environment you may have.
 

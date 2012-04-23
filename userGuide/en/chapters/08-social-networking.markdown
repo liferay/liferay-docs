@@ -1,4 +1,4 @@
-# Social Networking with Liferay
+# Social Networking with Liferay [](id=social-networking-with-liferay)
 
 Since the first social networks rose to popularity, concepts such as *Friend* and later *Like*--previously reserved for direct human interaction--have taken on new meaning in an always-online, information driven culture. It could be argued that social networks have transformed the way people interact with their friends, relatives, and colleagues. Friends, connections, followers, circles, and lists have enabled people to connect and stay connected in ways they'd never been able to before. Initially, these concepts proved to be highly successful for casual web sites but they didn't take to the business world as quickly. But now, more and more organizations are realizing the importance of leveraging social interactions for more than just recreation. Liferay's robust social features make it a great platform for business web sites, casual web sites, and everything in between.
 
@@ -15,7 +15,7 @@ When we're finished, you'll have a good idea how you can use Liferay to power yo
 
 <!-- | TODO: Need to include a small section here on installing the social portlets for EE users. DONE | -->
 
-## Liferay's social portlets
+## Liferay's social portlets [](id=liferay-s-social-portlets)
 	
 Liferay has many portlets available for social interaction and collaboration. Some of these portlets are designed to help you work together as a team, while others are designed to foster social interactions between team members at your organization.
 
@@ -123,7 +123,7 @@ Probably the most effective way users can connect is by interacting with other u
 
 Beyond Liferay's API, there is also support for the OpenSocial standard. 
 
-## OpenSocial integration
+## OpenSocial integration [](id=opensocial-integration)
 
 OpenSocial is a framework designed for creating applications, called *gadgets* that function on any social networking site that supports them. There are many existing gadgets available, and anyone can create their own gadgets. With Liferay, you can integrate any OpenSocial gadget into a Liferay page, and you can easily manage which gadgets are currently in use or available. You can also create your own OpenSocial Gadget using the Liferay's OpenSocial development environment.
 
@@ -159,7 +159,7 @@ Once you have created and saved a gadget using the editor, click on the wrench n
 
 Now that you've got all these social applications running on your system, the next question becomes: how do I measure social interaction? How do I make it clear who are the best contributors to my site? Liferay has an answer: social activity measurements.  
 
-## Measuring social activity
+## Measuring social activity [](id=measuring-social-activity)
 
 <!-- | TODO This is all out of date. It's been reimplemented for Liferay 6.1. Please rewrite. | -->
 
@@ -199,7 +199,7 @@ Social Activity can be an invaluable tool for portals that are heavily driven by
 
 In addition to the social interactions that you can create on your portal, Liferay has points of integration with some other popular social networks that enable you to leverage their power and popularity for the content on your portal.
 	
-## Facebook integration
+## Facebook integration [](id=facebook-integration)
 	
 Facebook is currently the number one social network in the world with somewhere in the neighborhood of 750 million active users. If you're trying to build a community on your portal, you don't want to neglect a bridge to nearly a billion possible users. With that in mind, Liferay provides a few easy ways that you can integrate your portal with Facebook.
 
@@ -213,7 +213,7 @@ You can add any Liferay portlet as an application on Facebook. To do this, you m
 
 This integration enables you to make things like Message Boards, Calendars, Wikis, and other content on your portal available to a much larger audience (unless you already have a billion users on your site, in which case, kudos to you). 
 
-## Summary
+## Summary [](id=summ-30)
 
 <!-- | TODO: This is too thin. Please use the headings to summarize what the chapter was about. | -->
 

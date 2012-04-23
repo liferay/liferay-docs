@@ -1,4 +1,4 @@
-# Administering Liferay Portal
+# Administering Liferay Portal [](id=administering-liferay-portal)
 
 You know how all these retailers want to advertise themselves as a "one stop shop" for whatever it is that you want? The idea is that they have so much stuff that chances are that whatever you're looking for is there. Liferay's control panel is something like this. If you want to create users, sites, organizations, configure permissions and plugins, and pretty much anything else, you'll do it with the control panel. The nice thing about the control panel is that it makes all this very easy to do. This chapter takes all the concepts you learned about Liferay in chapter 1 (sites, organizations, and more) and makes them concrete. Here, you'll learn how to create and manage every aspect of Liferay's configuration. 
 
@@ -12,7 +12,7 @@ This chapter covers the following activities:
 
 Let's begin our examination of Liferay's control panel by looking at how to manage and organize users in Liferay Portal.
 
-## Managing Users, User Groups, Organizations, Sites, Teams, and Roles 
+## Managing Users, User Groups, Organizations, Sites, Teams, and Roles [](id=managing-users-user-groups-organizations-sites-teams-and-roles) 
 
 The Portal section of the control panel is used for most administrative tasks. You'll find there an interface for the creation and maintenance of
 
@@ -433,7 +433,7 @@ Permission management for teams is handled at the individual portlet level, usin
 
 To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. That's it! Now your team is ready to perform their functions. Next, let's look at how to configure Liferay's portal settings.
 
-## Managing Portal Settings
+## Managing Portal Settings [](id=managing-portal-settings)
 
 After you have created users, user groups, organizations, roles, sites, and teams, your portal will be ready to host content and applications. You can configure Liferay's portal settings to fit your environment and your particular portal project. Many configurations can be performed through Liferay's portlet-driven user interface. This section covers how to configure portal settings such as password policies, authentication settings, mail host names, email notifications, display settings, and monitoring.
 
@@ -970,7 +970,7 @@ When you are finished filling out the form, click *Save*. Now navigate to the po
 
 The *Plugins Installation* page of the control panel shows all of the plugins that are currently installed. These are divided into tabs for portlets, themes, layout templates, hook plugins, and web plugins. If you want to install a new plugin, click the *Install More Portlets* button. You will then be brought to the Plugin Installer, where you can browse Liferay's repository of portlets or install your own plugins. We covered the plugins installer in chapter 2.
 
-## Summary
+## Summary [](id=summ-33)
 
 In this chapter we described how to use Liferay's control panel to manage users, user groups, organizations, sites, and roles. We showed how to configure various server settings, such as authentication, LDAP integration, and single sign-on. We also learned how to associate users by default with different user groups, sites, and roles, and we saw how to reserve screen names and email addresses so that users cannot register in the portal with them.
 

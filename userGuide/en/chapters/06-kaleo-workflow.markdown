@@ -1,4 +1,4 @@
-# Workflow with Kaleo
+# Workflow with Kaleo [](id=workflow-with-kal-3)
 
 Liferay Portal includes a workflow engine called Kaleo. In Greek, this word means "called ones," which is appropriate for a workflow engine that calls users to participate in a process that has been designed for them.
 
@@ -14,7 +14,7 @@ To better understand how to use Kaleo Workflow, this chapter covers:
 
 Once we're done, you should be familiar with how Liferay's Kaleo workflow is used make sure all content has been approved before it is published to your portal. 
 
-## Installation
+## Installation [](id=installati-3)
 
 Liferay's Kaleo workflow engine ships with CE versions of Liferay. If you have EE or if you uninstalled it, the plugin can be installed through the Liferay marketplace. The name is `kaleo-web`, and you'll find it in the list of web plugins. Installing the plugin adds a number of new options to the control panel: 
 
@@ -27,7 +27,7 @@ There is one workflow that comes bundled with the `kaleo-web` plugin: Single App
 
 Let's jump right in and create a workflow process definition. 
 
-## Creating process definitions
+## Creating process definitions [](id=creating-process-definitions)
 
 A Kaleo workflow, called a *process definition*, is defined in an XML file and is executed by users on the portal. You can create as many different workflow definitions as needed to manage the work done on your portal. You can define new user roles in the workflow to manage the approval process or use roles that already exist in your portal.
 
@@ -352,7 +352,7 @@ A portal administrator can create a default workflow definition scheme for each 
 
 Let's turn from creating definitions to how you'd use them. 
 
-## Using workflow in the control panel
+## Using workflow in the control panel [](id=using-workflow-in-the-control-panel)
 
 Most of your workflow configuration is done via the control panel. Everything you need to do in the portal can be done through simple GUI controls.
 
@@ -392,7 +392,7 @@ My Submissions is found under your user's personal information in the control pa
 
 Besides viewing your work, you can also withdraw a submission from the review process by clicking on *Withdraw Submission* from the *Pending* tab.
 
-## Using Kaleo Workflow Processes in Liferay Portal
+## Using Kaleo Workflow Processes in Liferay Portal [](id=using-kaleo-workflow-processes-in-liferay-portal)
 
 Before workflow can be used, you must define which types of assets on the portal are workflow-enabled. If you have created additional definitions, you must also choose the workflow definition to use for each asset that is workflow-enabled.
 
@@ -469,7 +469,7 @@ Next let's go through all of the transitions, and make sure that they're named c
 
 Now let's take a look at the generated XML. It should look a lot like our default workflow, only a tiny bit messier, as the nodes display in the order they were created, not in the logical order that happens when a human writes the code. Save your definition and it's ready to use.
 
-## Summary
+## Summary [](id=summ-28)
 
 <!-- | TODO: This summary is too thin. It should summarize what you covered in the chapter. Going back and looking at the chapter headings can help you write a good summary. | --> 
 

@@ -1,4 +1,4 @@
-# Liferay Collaboration Suite
+# Liferay Collaboration Suite [](id=liferay-collaboration-sui-4)
 
 Liferay Portal ships with a robust suite of collaboration applications which you can use to build communities of users for your site. These applications provide all the features that you would expect of standalone versions outside of a portal setting. The difference with Liferay's collaboration suite, however, is that all of the applications share a common look and feel, security model, and architecture. They inherit the strengths of being part of Liferay's development platform so you can use them in combination with Liferay's user management and content management features to build a well-integrated, feature-rich web site.
 
@@ -15,7 +15,7 @@ This chapter focuses on how to use Liferay's collaboration suite. We explain how
 
 We'll discuss how these features work together to facilitate information flow within your portal and provide an enhanced experience for your users.
 
-## Understanding Liferay's common configuration options
+## Understanding Liferay's common configuration options [](id=understanding-liferay-s-common-configuration-options)
 
 Just like siblings have common features inherited from their parents, applications that ship with Liferay also share common features. These are centered around scoping, sharing, permissions, and archives. So before we get into the nitty gritty of the applications themselves, it's best to cover these common features first, starting with the concept of scope.  
 
@@ -105,7 +105,7 @@ The final sub-tab of the *Sharing* tab is called *Friends*. This tab has a singl
 
 Now that we've seen all the common options available in Liferay's portlet applications, we can move on to specific applications, starting with blogs.
 
-## Blogs
+## Blogs [](id=blo-4)
 
 The word *Blog* is an apostrophe-less contraction of the two words *web* and *log*. Blogs were first popularized by web sites such as Slashdot ([http://slashdot.org](http://slashdot.org)) which have the format of a running list of entries to which users could attach comments. Over time, more and more sites such as Digg, del.icio.us, and Newsvine adopted the format, empowering users to share their opinions and generating lively discussions.
 
@@ -231,7 +231,7 @@ When you've finished setting the options in the portlet, click *Save*. Then clos
 
 We've already talked a little bit about connecting content across the portal by using Related Assets; now let's take a look at the Related Assets portlet.
 
-##Related Assets
+##Related Assets [](id=related-assets)
 
 Related Assets is a new feature in Liferay 6.1 that enables you to connect any number of assets within a site or across the portal, even if they don't share any tags and aren't in the same category. We've already seen that you can show related assets within the display for a specific asset, and with the Related Assets portlet you can show links to any assets which are related to content displayed on that page.
 
@@ -239,7 +239,7 @@ The Related Assets portlet is based on the Asset Publisher, and possseses essent
 
 Let's move on, now, to the Calendar portlet.
 
-## Calendar
+## Calendar [](id=calend-4)
 
 Liferay's Calendar portlet is a complete calendaring solution. You can schedule any number of events of different types, receive alarms via email or text message, import and export your calendar, and much more. Additionally, you can import and export the calendar to and from the popular iCalendar format for use in other applications.
 
@@ -305,7 +305,7 @@ When you have finished adding your event, click *Save*. You can view calendar ev
 
 As you can see, the Calendar portlet is easy to use and convenient for users of the portal. Next, we'll look at how Liferay handles live chat. 
 
-## Chat
+## Chat [](id=ch-4)
 
 Liferay's Chat portlet provides a convenient way of allowing users to send each other instant messages when they are logged into your web site. It appears as a bar at the bottom of every page, showing who is logged on, their statuses, and any chats the logged-in user has open.
 
@@ -358,7 +358,7 @@ Alternatively, since Openfire integrates with LDAP, if you are using Openfire an
 
 Next, let's look at how you can integrate your email addresses with Lifray's Mail portlet.
 
-## Mail
+## Mail [](id=ma-4)
 
 Liferay's Mail portlet enables your users to interact with their email using an easy to use, ubiquitous web interface. If your mail system supports the IMAP protocol, you can use the Mail portlet to integrate your users' mail with the rest of your web site. You can also connect the Mail portlet to a mail account provided by Google.
 
@@ -396,7 +396,7 @@ Click the tab for the mail account you just configured to be brought to an inter
 
 The Mail portlet is a great way to integrate a familiar service with other the collaboration features that Liferay provides. Next, let's look at one of the most widely used applications provided by Liferay: its message boards.
 
-## Message Boards
+## Message Boards [](id=message-boar-4)
 
 Liferay's Message Boards portlet is a state of the art forum application similar to many forums in which you may have participated. The difference, of course, is that Liferay's message boards can inherit the abilities of the Liferay development platform to provide an integrated experience that others cannot match.
 
@@ -599,7 +599,7 @@ Administrative users can edit anyone's posts, not just their own. Sometimes user
 
 Permissions can be set not only on threads, but also on individual posts. You can choose to limit a particular conversation or a post to only a select group of people. To do this, click the *Permissions* link on the post and then select among the *Delete, Permissions, Subscribe, Update, and View* permissions for the particular role to which you want to grant particular access. This function can be used, for example, to allow some privileged users to post on a certain thread, while others are only allowed to view it. Other combinations of the above permissions are also possible. Next, let's discuss Liferay's Wiki portlet.
 
-## Wikis
+## Wikis [](id=wik-4)
 
 Liferay's Wiki portlet, like the Message Boards portlet, is a full-featured wiki application which has all of the features you would expect in a state of the art wiki. Again, though, it has the benefit of being able to take advantage of all of the features of the Liferay platform. As such, it is completely integrated with Liferay's user management, tagging, and security features.
 
@@ -741,7 +741,7 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 Next, let's look at Liferay's Knowledge Base, an application that's a little bit similar to the Wiki portlet.
 
-## Knowledge Base
+## Knowledge Base [](id=knowledge-base)
 
 Liferay's Knowledge Base portlet provides a means for creating and organizing articles within a site. The knowledge base is perfect for creating and organizing information more formally than in a wiki. For example, it can be used to organize and display professional product documentation. It's easy to set up the knowledge base with a workflow that requires articles to be approved before they are published. Additionally, it allows administrators to create article templates. Templates can be used to insure that certain kinds of articles possess a common structure and include certain kinds of information. Knowledge base articles can be categorized to make them easy to find. They can also be organized hierarchically to form complete books or guides. The Knowledge Base portlet is available as an app from Liferay Marketplace. Please see chapter 2 for installation instructions.
 
@@ -841,7 +841,7 @@ You can also use the Categories Navigation portlet in conjunction with the Knowl
 
 You can select topics for articles when you are creating or editing them. Next, let's take a look at the Documents and Media library, Liferay's general mechanism for creating and storing files in the portal.
 
-## Documents and Media
+## Documents and Media [](id=documents-and-media)
 
 Liferay's Documents and Media portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. This portlet grant users the ability to share documents within the portal via uploading and downloading. The Documents and Media library can be used to store files of any kind, including ones that you might not consider to be "documents" or "media". The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media portlets to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing files.
 
@@ -1151,7 +1151,7 @@ Liferay Sync uses the default Liferay permissions to determine which files and f
 
 Next, we'll configure our Liferay Sync client to log in with the *secretagent* user's credentials and access the *Secret Site*. Open the Liferay Sync menu from the taskbar and select *Properties*. Click on the *Edit Settings* button, choose a new Sync folder, enter your server's URL and enter the secretagent's credentials: *secretagent@liferay.com* and *test*. Lastly, uncheck all Liferay sites except the *Secret Site*, then click *OK*. Confirm that the files of the *Secret Site*, (just the *secret.txt* file) are downloaded to your new Sync folder. Congratulations! You've successfully set up a Liferay Sync folder that can only be accessed by the *secretagent* user and your server administrators.
 
-## Tags
+## Tags [](id=ta-3)
 
 Tags are an important tool that you can use to help organize information on your portal and make it easier for your users to find content that they're looking for. Tags are words or phrases that you can attach to any content on the website. Tagging content will make your search results more accurate, and enable you to use tools like the Asset Publisher to display content in an organized fashion on a web page. There are two ways to create tags: you can do it through the administrative console in the control panel, or on the fly as content is created.
 
@@ -1161,7 +1161,7 @@ To create tags in the control panel, select the site that you want to create tag
 
 Tags are not the only portal-wide mechanism for describing content: you can also use categories.
 
-## Categories
+## Categories [](id=categori-3)
 
 Categories are similar in concept to tags, but are designed for use by administrators, not regular users. Hierarchies of categories can be created, and categories can be grouped together in *vocabularies*. While tags represent an ad hoc method for users to group content together, categories exist to allow administrators to organize content in a more official, hierarchical structure. You can think of tags like the index of a book and categories like its table of contents. Both serve the same purpose: to help the user find the information he or she seeks.
 
@@ -1173,7 +1173,7 @@ Clicking on a vocabulary on the left will display any categories that have been 
 
 Once you have created a hierarchy of categories, your content creators will have them available to apply to content that they create. Navigate to the Web Content page of the control panel and click *Add Content*. Click the Categorization link from the right-side menu and click *Select* on the vocabulary use would like to use. A dialog box will appear with your categories. Select any relevant categories by checking the box next to them, and they will be applied to the content.
 
-## Summary
+## Summary [](id=summ-26)
 
 We have explored many of the portlets in Liferay's collaboration suite. You have seen how you can configure all of the portlets in a similar fashion using a unified user interface. After this, we went over all of the portlets in succession.
 

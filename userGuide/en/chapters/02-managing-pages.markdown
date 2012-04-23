@@ -1,4 +1,4 @@
-# Managing Pages in Liferay Portal
+# Managing Pages in Liferay Portal [](id=managing-pages-in-liferay-portal)
 
 With most products, you would learn what the software can do in terms of setting up your users and security model, and then start building your system. You'd design your infrastructure and get your server environment up and running while your developers write the applications that live on your web site. With Liferay Portal, however, you start farther ahead. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go, and integrated with all the user management and security features you've already learned about.
 
@@ -25,7 +25,7 @@ First, a little housekeeping. If we're going to be *Nose-ster*, our portal shoul
 
 You can also customize the logo in the top left corner of every page by selecting *Display Settings* under the *Miscellaneous* tab on the panel to the right. Once you've made the changes, we can begin creating pages.
 
-## Page Creation and Management
+## Page Creation and Management [](id=page-creation-and-manageme-3)
 
 You have a few options for accessing the page creation interface. To unify this, it necessitates that we cover the Dockbar's *Manage* menu slightly out of order. There are two interfaces to be aware of: *Site Pages* and *Page*. You can get to these from multiple places. Depending on what you're editing and where you are on the portal, you'll use either the *Manage* menu or the control panel to work with your pages. From the control panel, make sure that you have the correct site selected in the context menu and click the *Site Pages* link in the content section. If you're currently navigated to the site you wish to manage, click *Manage* from the Dockbar and select *Site Pages*. This is the exact same interface that you see in the control panel. To modify the single page in the site that you're on, click *Manage* and select *Page*. 
 
@@ -225,7 +225,7 @@ You can manage the following kinds of content:
 
 For details about Liferay's social collaboration suite, see chapter 4. 
 
-## Creating the Nose-ster pages
+## Creating the Nose-ster pages [](id=creating-the-nose-ster-pages)
 
 There are a lot of other things you can do beyond placing portlets on a page. So let's start working on the Nose-ster site. You can do this by going up to the Dockbar and clicking *Go to &rarr; Nose-ster*.
 
@@ -286,7 +286,7 @@ Let's say we wanted to create a page only for administrators to see. We can do t
 
 Congratulations! You've just changed the permissions for this page so that only site administrators can view it. Any users you add to this role can now see the page. Other users, even members of this site, won't have permission to see it.
 
-## Summary
+## Summary [](id=summ-24)
 
 Pages in Liferay are as flexible as pages you'd create manually without a portal. Using a point and click interface, you can define your site any way you want. You can create and remove pages, export and import them, set their layouts, define how they are indexed by search engines, and more. You've also been introduced to Liferay's concept of sites. Again, using a point and click interface, you can create multiple web sites and define how users can access them, whether they are linked to a domain name, and create all of their pages. 
 

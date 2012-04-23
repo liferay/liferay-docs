@@ -1,10 +1,10 @@
-# Installing Liferay
+# Installing Liferay [](id=installing-liferay)
 
 Liferay Portal is one of the most flexible applications on the market today with regard to application server environments. You can install Liferay Portal on everything from a shared Tomcat installation to a multi-node cluster running a commercial application server, and on everything in between. In fact, Liferay is used successfully in all of these scenarios every day.
 
 You'll find that because Liferay is extremely flexible in its deployment options, it is easy to install as well. If you already have an application server, you can use the tools for deployment that came with your application server. If you don't have an application server, Liferay provides several application server bundles from which to choose. These are very easy to install and with a small amount of configuration can be made into production-ready systems.
 
-## Editions of Liferay
+## Editions of Liferay [](id=editions-of-lifer-4)
 
 Liferay ships in two different editions: Liferay Portal Community Edition (CE) and Liferay Portal Enterprise Edition (EE). CE is the same Liferay Portal that has been available for years: frequently updated and bursting with the latest features, the Community Edition of Liferay Portal is offered for free under the Lesser GNU public license, an open source license. This license gives you the flexibility to link Liferay with your own code in your portlet, theme, hook, layout, Ext, or web plugins, no matter what license you use for your code. If, however, you modify Liferay directly, those modifications need to be released as open source. This is really the best of both worlds: you have the freedom to do what you want with your code if you use plugins, but if you modify Liferay directly, the community receives the benefits of any enhancements that you've made. 
 
@@ -12,7 +12,7 @@ Liferay Portal EE is a supported version of Liferay Portal for the enterprise. H
 
 Because the release cycle for EE is longer than that for CE, each enterprise release is supported for 4 years. All bug fixes in Liferay Portal are backported to your version of Liferay for the duration of your subscription. This gives organizations the peace of mind that comes from knowing that their Liferay-powered web sites are stable and will run for years to come, enabling them to build their sites on a proven, stable platform. Additionally, Liferay offers training and consulting on the Enterprise Edition to ensure long-term support and stability for our clients. 
 
-## Obtaining Liferay
+## Obtaining Liferay [](id=obtaining-lifer-5)
 
 The CE version of Liferay is freely downloadable from our web site at [http://www.liferay.com](http://www.liferay.com). Click the *Downloads* link at the top of the page, and you are presented with multiple options for getting a copy of Liferay, including our convenient bundles or a `.war` package for installation on your application server of choice.
 
@@ -24,7 +24,7 @@ Please note that Liferay is not able to provide application server bundles for p
 
 First we'll go over installing Liferay from a bundle and after this we'll provide instructions for installing Liferay manually on all the application servers it supports. 
 
-## Installing a bundle
+## Installing a bundle [](id=installing-a-bund-5)
 
 Liferay bundles contain the same directory structure regardless of application server. The top-level folder is named for the release of Liferay. This folder is called *Liferay Home*, and we refer to it thoughout this documentation. 
 
@@ -66,7 +66,7 @@ If you forget to undeploy the *sevencogs-hook* application before you run throug
 
 If you're using Liferay EE, you don't have the sample site, so you don't need to worry about this. The next step is to run through the setup wizard. 
 
-## Using Liferay's setup wizard 
+## Using Liferay's setup wizard [](id=using-liferay-s-setup-wizard) 
 
 To make it easy to configure Liferay optimally for your use, the first thing you see when browsing to your newly installed Liferay bundle is a setup wizard. This gives you a convenient way to configure Liferay for your purposes. 
 
@@ -124,7 +124,7 @@ As you can see, bundles are the easiest way to get started with Liferay. They co
 
 Of course, it's not always possible to use a bundle. You may already have an application server upon which you want to install Liferay. The bulk of this chapter describes how to install Liferay on all the application servers it supports, both open source and proprietary. 
 
-## Installing Liferay on an existing application server
+## Installing Liferay on an existing application server [](id=installing-liferay-on-an-existing-application-server)
 
 When it comes time to install Liferay Portal on your server, you'll find it's easiest to do this by starting with a bundle. But many enterprises can't do that. There may be an existing infrastructure into which you're installing Liferay, or you may have standardized on a particular application server. You'll be happy to know that Liferay Portal has been designed to work well with all the leading application servers, and that it's easy and straightforward to install. But before we get started, we need to go over a few concepts; namely, the Liferay Home folder, databases, and Liferay's main configuration file. These were touched on in the section on bundles above, but we'll look at them in more detail now. 
 
@@ -2484,7 +2484,7 @@ A full discussion of the `portal-ext.properties` file appears in Chapter 14.
 
 Change this so that it matches the path you set in your `portal-ext.properties` file. You will have to modify the `weblogic.xml` file inside the Liferay `.war` before you deploy it. Extract the file from the `.war` file, modify it, and then put it back in the `.war` file. Then deploy the modified Liferay `.war` file to the server in the proper context.
 
-## Summary
+## Summary [](id=summ-32)
 
 This chapter is a guide to everything about installing Liferay. Whether you choose a Liferay bundle or an existing application server, Liferay Portal integrates seamlessly with your enterprise Java environment. It is supported on more application servers than any other portal platform, allowing you to preserve your investment in your application server of choice, or giving you the freedom to move to a different application server platform. Liferay is committed to providing you this freedom: we have 500 test servers certifying our builds with roughly 10,000 tests per version of Liferay Portal. Each of those tests are run on all of our different supported combinations of application servers, databases, and operating systems. Because of this, you can be sure that we are committed to supporting you on your environment of choice. You can feel safe knowing that you have the freedom to use the software platform that is best for your organization, and that Liferay Portal runs and performs well on it.
 
