@@ -36,7 +36,7 @@ The Liferay Social Office plugin for Liferay Portal is designed to answer this c
 
 ## Installation
 
-Unlike previous versions of Social Office, Social Office 2.0 is available as an app for Liferay Portal 6.1. Liferay apps are packages of Liferay plugins that are grouped together with metadata such as descriptions and version information. You can identify downloaded Liferay apps by their `.lpkg` file extenstions. They're available from Liferay Marketplace at [http://www.liferay.com/marketplace](http://www.liferay.com/marketplace). Prior to version 2.0, Social Office was provided as an independent product that was based on, but separate from, Liferay Portal.
+Unlike previous versions of Social Office, Social Office 2.0 is available as an app for Liferay Portal 6.1. Liferay apps are packages of Liferay plugins that are grouped together with descriptions, version information, and other metadata. You can identify downloaded Liferay apps by their `.lpkg` file extenstions. They're available from Liferay Marketplace at [http://www.liferay.com/marketplace](http://www.liferay.com/marketplace). Prior to version 2.0, Social Office was provided as an independent product that was based on, but separate from, Liferay Portal.
 
 To install Social Office manually, you just need to deploy the Social Office `.lpkg` file to your Liferay installation. The Social Office `.lpkg` file is hot-deployable and includes the following Liferay plugins: 
 
