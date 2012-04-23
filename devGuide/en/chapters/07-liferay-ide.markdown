@@ -13,13 +13,13 @@ The first two sections below show how to install and set-up Liferay IDE within y
 
 This section is a detailed guide to install Liferay IDE.
 
-### Requirements
+### Requirements [](id=lp-6-1-dgen07-requirements-0)
 
 -   Java 5.0 JRE or greater
 
 -   [Eclipse Indigo Java EE (3.7.1)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr1) or [Eclipse Helios Java EE (3.6.2)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
 
-### Installation steps
+### Installation steps [](id=lp-6-1-dgen07-installation-steps-0)
 
 1.  Install Eclipse Indigo or Helios (unzip download file from above).
 
@@ -57,7 +57,7 @@ This section is a detailed guide to install Liferay IDE.
 
 	![Figure 7.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.PNG)
 
-### Alternative installation
+### Alternative installation [](id=lp-6-1-dgen07-alternative-installation-0)
 
 The next set of instructions describe how to install Liferay IDE without typing the URL of an update site:
 
@@ -71,7 +71,7 @@ The next set of instructions describe how to install Liferay IDE without typing 
 
 This section describes the setup necessary to begin doing Liferay development and testing your developments.
 
-### Requirements
+### Requirements [](id=lp-6-1-dgen07-requirements-1)
 
 Before getting started you should satisfy the next requirements:
 
@@ -83,7 +83,7 @@ Before getting started you should satisfy the next requirements:
 
 Note: Earlier versions of Liferay, eg 5.2.x, are not supported yet by the Liferay IDE.
 
-### Liferay Plugins SDK Setup
+### Liferay Plugins SDK Setup [](id=lp-6-1-dgen07-liferay-plugins-sdk-setup-0)
 
 Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK and Liferay Portal must be installed and configured in the IDE.
 
@@ -103,7 +103,7 @@ Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK
 
  Note: multiple SDKs can be added to the preferences but you will need to select at least one SDK to be the default which is represented by the SDK that has the checkbox selected.
 
-### Liferay Portal Tomcat Runtime / Server Setup
+### Liferay Portal Tomcat Runtime / Server Setup [](id=lp-6-1-dgen07-liferay-portal-tomcat-runtime--server-setup-0)
 
 1. In Eclipse open the Runtime environments preference page (Go to Window &rarr; Preferences &rarr; Server &rarr; Runtime environments).
 
@@ -199,7 +199,7 @@ If you have been following the examples of this guide using the Plugins SDK or h
 
  The following subsections describe the steps for each of them with more detail.
 
-### Importing existing Liferay Project from a Plugins SDK
+### Importing existing Liferay Project from a Plugins SDK [](id=lp-6-1-dgen07-importing-existing-liferay-project-from-a-plugins-sdk-0)
 
 An existing Liferay project that has been created by the Plugins SDK but has not yet been added to an Eclipse workspace or have not been added to the current workspace open in Eclipse/Liferay IDE. These projects may or may not have .project or .classpath files. Whether they do or don’t we will follow the same steps and use the same wizard.
 
@@ -207,7 +207,7 @@ There are two options to create projects from existing sources, depending on whe
 
 Note: The two next sections assume that you have Liferay plug-ins SDK directory structure and you have previously created projects inside of that directory structure.
 
-#### Create one single project from one plugin in an existing sources
+#### Create one single project from one plugin in an existing sources [](id=lp-6-1-dgen07-create-one-single-project-from-one-plugin-in-an-existing-so-0)
 
 This option will create one project for a single plugin that already exists inside a Plugins SDK.
 
@@ -235,7 +235,7 @@ This option will create one project for a single plugin that already exists insi
 
 6.  Read the section below on verifying the success of an import process to make sure that your project was configured correctly as a Liferay IDE project.
 
-#### Create multiple projects for all plugins in a Plugins SDK
+#### Create multiple projects for all plugins in a Plugins SDK [](id=lp-6-1-dgen07-create-multiple-projects-for-all-plugins-in-a-plugins-sdk-0)
 
 This option will transverse an existing Plugins SDK and will allow creating one project for each of the plugins it finds inside in one single step.
 
@@ -271,7 +271,7 @@ This option will transverse an existing Plugins SDK and will allow creating one 
 
 11. Read the section below on verifying the success of an import process to make sure that your project was configured correctly as a Liferay IDE project.
 
-### Importing an existing Eclipse Project that is not aware of the Liferay IDE
+### Importing an existing Eclipse Project that is not aware of the Liferay IDE [](id=lp-6-1-dgen07-importing-an-existing-eclipse-project-that-is-not-aware-of--0)
 
 If your project is not in your Eclipse workspace, you can use the first set of steps above. If your project is already in your workspace (see it in project explorer) but is not yet a Liferay IDE project, the following steps can be used to convert the project.
 
@@ -293,7 +293,7 @@ If your project is not in your Eclipse workspace, you can use the first set of s
 
 5.  Read the section below on verifying the success of an import process to make sure that your project was configured correctly as a Liferay IDE project.
 
-### Importing an existing Liferay IDE project
+### Importing an existing Liferay IDE project [](id=lp-6-1-dgen07-importing-an-existing-liferay-ide-project-0)
 
 This section describes the steps that can be followed if you have previously created or converted a Liferay IDE project in your workspace but it is no longer in the current workspace there are a couple of options for importing this project.
 
@@ -311,7 +311,7 @@ This section describes the steps that can be followed if you have previously cre
 
 If you have any errors, it may be that either the SDK name used in that project or the runtime id used doesn't exist in your new workspace. You can modify the SDK name in the Project Properties &rarr; Liferay page and you can modify the targeted runtime in the Project properties &rarr; Targeted Runtimes page.
 
-### Verifying that the import has succeeded
+### Verifying that the import has succeeded [](id=lp-6-1-dgen07-verifying-that-the-import-has-succeeded-0)
 
 Follow the following steps to verify that either of the previous import processes has been successful.
 

@@ -31,7 +31,7 @@ On Windows enter the following instead:
 
 This command will create a blank theme in your *themes* folder. Notice that the Plugins SDK automatically appends "-theme" to the project name when creating this folder. When you initially create your theme, it will be empty. But later, when you run `ant deploy`, all the files and folders of the theme will be populated.
 
-### Setting a base Theme
+### Setting a base Theme [](id=lp-6-1-dgen04-setting-a-base-theme-0)
 
 All themes in Liferay are built on top of the *_unstyled* and *_styled* themes, which contain very limited styling. By default, when you create a theme, it will be built with only these as a base, however, you can set an *existing* theme as your base theme, so that you can gain the additional styling from that theme as well as the elements for *_styled* and *_unstyled*.
 
@@ -39,7 +39,7 @@ When a theme is built, the base themes are added in layers - first *_unstyled* i
 
 If you want to use a different base theme than the default, you can edit the `build.xml` file and change *_styled* in `<property name="theme.parent" value="_styled>` to the name of any theme currently available in your environment that you wish to use.
 
-### Deploying the Theme
+### Deploying the Theme [](id=lp-6-1-dgen04-deploying-the-theme-0)
 
 Open a terminal window in your `themes/deep-blue-theme` directory and enter this command:
 

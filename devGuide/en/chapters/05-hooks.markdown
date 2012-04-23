@@ -25,7 +25,7 @@ On Windows, enter the following instead:
 
 You should get a BUILD SUCCESSFUL message from Ant, and there will now be a new folder named `example-hook` inside of the `hooks` folder of your Plugins SDK. Notice that the Plugins SDK automatically appends "-hook" to the project name when creating this folder.
 
-### Deploying the Hook
+### Deploying the Hook [](id=lp-6-1-dgen05-deploying-the-hook-0)
 
 Open a terminal window in your `hooks/example-hook` directory and enter this command:
 

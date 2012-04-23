@@ -180,7 +180,7 @@ As you'll see in the example in the next section, you pass in the WSDL URL along
 
 Next, let's invoke the web service!
 
-### SOAP Java Client
+### SOAP Java Client [](id=lp-6-1-dgen08-soap-java-client-0)
 
 A Java web service client can easily be setup using the Eclipse IDE. Here is how you can do it:
 
@@ -349,7 +349,7 @@ The operations `getCompanyByVirtualHost()`,  `getUserIdByScreenName()`, `getUser
 
 Next, let's try accomplishing the same behavior by using a client implemented in PHP.
 
-### SOAP PHP Client
+### SOAP PHP Client [](id=lp-6-1-dgen08-soap-php-client-0)
 
 Now, let's say you want write your client in a language other than Java ... no problem! You can use any language that supports web services invocation.
 
@@ -405,7 +405,7 @@ JSON Web Services provide convenient access to portal service methods by exposin
 
 JSON Web Service functionality can be split in following topics: registration, configuration, invocation and results. We'll cover each topic here.
 
-### Registering JSON Web Services
+### Registering JSON Web Services [](id=lp-6-1-dgen08-registering-json-web-services-0)
 
 Liferay's developers use a tool called *Service Builder* to build services. All remote-enabled services (i.e. entities with `remote-service="true"` in `service.xml`) built with Service Builder are exposed as JSON Web Services. When Service Builder creates each `-Service.java` interface for a remote-enabled service, the `@JSONWebService` annotation is added on the class level of that interface. Therefore, *all* of the public methods of that interface become registered and available as JSON Web Services.
 
@@ -456,7 +456,7 @@ Custom portlets can be registered and scanned, too, and their services can becom
 
 This enables the servlet to scan and register your portlet's JSON Web Services.
 
-#### Mapping and naming conventions
+#### Mapping and naming conventions [](id=lp-6-1-dgen08-mapping-and-naming-conventions-0)
 
 Mapped URLs of exposed service methods are formed using following naming convention:
 
@@ -485,7 +485,7 @@ Non-public service methods require the user to be registered before invoking the
 
 Note the `secure` part of the URL.
 
-#### Listing available JSON Web Services
+#### Listing available JSON Web Services [](id=lp-6-1-dgen08-listing-available-json-web-services-0)
 
 To a service overview and verify which service methods are registered and available, you can get a service listing in your browser by opening the base address:
 
@@ -499,11 +499,11 @@ To list registered services on a portlet, don't forget to use portlet context pa
 
 This will list the JSON Web Service API for the portlet.
 
-#### More on registration
+#### More on registration [](id=lp-6-1-dgen08-more-on-registration-0)
 
 As said, you can control registration by using annotations in your `-ServiceImpl` class. This overrides any configuration defined in the interface. Moreover, you can fine-tune which *methods* are visible/hidden using annotations at the method level.
 
-##### Ignoring a method
+##### Ignoring a method [](id=lp-6-1-dgen08-ignoring-a-method-0)
 
 To ignore a method from being exposed as a service, just annotate the method with:
 
@@ -511,7 +511,7 @@ To ignore a method from being exposed as a service, just annotate the method wit
 
 Any methods annotated like this do not become part of the JSON Web Service API.
 
-##### HTTP method name and URL
+##### HTTP method name and URL [](id=lp-6-1-dgen08-http-method-name-and-url-0)
 
 It is also possible to define custom HTTP method names and URL names, using a similar annotation at the method level.
 
@@ -532,7 +532,7 @@ Similarly, you can change the class name part of the URL, by setting the value i
 
 This maps all the service methods of the class to URL class name `dla` instead of the `dlapp` default.
 
-##### Manual registration mode
+##### Manual registration mode [](id=lp-6-1-dgen08-manual-registration-mode-0)
 
 Up to now, it is expected that most of the service methods are going to be exposed; that only specific methods are to be hidden (the *blacklist* approach). But sometimes you might need a different behavior: to explicitly specify only those methods that are to be exposed (*whitelist* approach). This is possible, too, using so-called *manual mode* on class-level annotation. Then, it is up to you annotate only those methods which are to be exposed.
 
@@ -548,13 +548,13 @@ Now only the `addFileEntry` method and any other method annotated with `@JSONWeb
 
 Next, let's take a look at portal configuration options that apply to JSON Web Services.
 
-### Portal Configuration of JSON Web Services
+### Portal Configuration of JSON Web Services [](id=lp-6-1-dgen08-portal-configuration-of-json-web-services-0)
 
 JSON Web Services are enabled on Liferay Portal by default but can be easily disabled by specifying the following portal property setting: 
 
 	json.web.service.enabled=false
 
-#### Strict HTTP methods
+#### Strict HTTP methods [](id=lp-6-1-dgen08-strict-http-methods-0)
 
 JSON Web Service services are, by default, mapped to either GET or POST HTTP methods. If service method has name that starts with `get`, `is` or `has`, the service is assumed to be read-only and is bound to the GET method; otherwise it is bound to POST.
 
@@ -564,7 +564,7 @@ By default, portal does not check HTTP methods when invoking a service call; tha
 
 When you use strict mode, you must use the correct HTTP methods in calling service methods.
 
-#### Disabling HTTP methods
+#### Disabling HTTP methods [](id=lp-6-1-dgen08-disabling-http-methods-0)
 
 When strict HTTP method mode is enabled, you can even filter web service access based on HTTP methods used by the services. For example, you can set the portal JSON Web Services to work in read-only mode by disabling HTTP methods other than GET. For example:
 
@@ -572,7 +572,7 @@ When strict HTTP method mode is enabled, you can even filter web service access 
 
 Now all requests that use HTTP methods from the list above are simply ignored.
 
-#### Controlling public access
+#### Controlling public access [](id=lp-6-1-dgen08-controlling-public-access-0)
 
 Each service method determines for itself whether it can be executed by unauthenticated users and whether a user has adequate permission for the chosen action. Most of portal's read-only methods are open to public access.
 
@@ -584,11 +584,11 @@ Wildcards are supported, so, for example, you can simply set `get*,has*,is*` to 
 
 Lastly, let's consider how to invoke JSON Web Services.
 
-### Invoking JSON Web Services
+### Invoking JSON Web Services [](id=lp-6-1-dgen08-invoking-json-web-services-0)
 
 JSON Web Services can be invoked in several ways depending on how their parameters (i.e. method arguments) are passed in. But before we dive into different ways of passing parameters, it's important to understand how your invocation is matched to a method.
 
-#### Matching service methods
+#### Matching service methods [](id=lp-6-1-dgen08-matching-service-methods-0)
 
 It is important to understand how calls to service methods are matched , especially when a service method is overloaded.
 
@@ -598,7 +598,7 @@ Note, however, it is neither important how parameters are provided (as part of t
 
 An exception to the rule of *all* parameters being required, is when using numeric *hints* to match methods. Let's look at using hints next.
 
-#### Using hints
+#### Using hints [](id=lp-6-1-dgen08-using-hints-0)
 
 It is possible to add numeric hints that specify how many method arguments a service has. Hints are added as numbers separated by a dot in method name. For example:
 
@@ -612,7 +612,7 @@ One important difference when hint is specified, is that now you do not have to 
 
 ... and `param2` will automatically be set to `null`.
 
-#### Passing parameters as part of URL path
+#### Passing parameters as part of URL path [](id=lp-6-1-dgen08-passing-parameters-as-part-of-url-path-0)
 
 Parameters can be passed as part of the URL path. After the service URL, you can append methods parameters in name/value pairs. Parameter names must be formed from method argument names, by converting them from camel-case to lowercase separated-by-dash names. Example:
 
@@ -622,7 +622,7 @@ Parameters may be given in **any** order; it’s not necessary to follow the ord
 
 When a method name is overloaded, the *best match* will be used: The method that contains the least number of undefined arguments is invoked.
 
-#### Passing parameters as URL query
+#### Passing parameters as URL query [](id=lp-6-1-dgen08-passing-parameters-as-url-query-0)
 
 Parameters can be passed as request parameters, too. The difference is that parameter names are specified as is (e.g. camel-case) and are set equal to their argument values:
 
@@ -630,11 +630,11 @@ Parameters can be passed as request parameters, too. The difference is that para
 
 As with passing parameters as part of a URL path, the parameter order is not important, the *best match* rule applies for overloaded methods, etc.
 
-#### Mixed way of passing parameters
+#### Mixed way of passing parameters [](id=lp-6-1-dgen08-mixed-way-of-passing-parameters-0)
 
 Parameters can be passed in a mixed way: some can be part of the URL path and some can be specified as request parameters.
 
-#### Sending NULL values
+#### Sending NULL values [](id=lp-6-1-dgen08-sending-null-values-0)
 
 To pass a `null` value for an argument, simply prefix that parameter name with a dash `-`. For example: 
 
@@ -650,7 +650,7 @@ When using JSON RPC (see below), null values may be sent explicitly, even withou
 
 	"last-access-date" : null
 
-#### Parameters encoding
+#### Parameters encoding [](id=lp-6-1-dgen08-parameters-encoding-0)
 
 Although often forgotten, there is a difference between URL encoding and query (i.e. request parameters) encoding. An  illustrative example of this is the difference in how the space character is encoded. When the space character is part of the URL path, it is encoded as `%20`; when it is part of the query it is encoded as plus sign (`+`).
 
@@ -658,7 +658,7 @@ Furthermore, all of these rules for encoding apply to international (non-ascii) 
 
 For example, let's pass the value "&#1057;&#1091;&#1087;&#1077;&#1088;" ("Super" in cyrillic) to some JSON Web Service method. This name first has to be converted to UTF-8 (resulting in array of 10 bytes) and then encoded for URLs or request parameters. The resulting value is the string: `%D0%A1%D1%83%D0%BF%D0%B5%D1%80` that can be passed to our service method. When received, this value is first going to be translated to an array of 10 bytes (URL decoded) and then converted to a UTF-8 string of the 5 original characters.
 
-#### Sending files as arguments
+#### Sending files as arguments [](id=lp-6-1-dgen08-sending-files-as-arguments-0)
 
 Files can be uploaded using multipart forms and requests. Example:
 
@@ -674,7 +674,7 @@ Files can be uploaded using multipart forms and requests. Example:
 
 As you see, it's a common upload form that invokes the `addFileEntry` method of the `DLAppService` class.
 
-#### JSON RPC
+#### JSON RPC [](id=lp-6-1-dgen08-json-rpc-0)
 
 JSON Web Service may be invoked using [JSON RPC](http://json-rpc.org/). A good part of JSON RPC 2.0 specification is supported in Liferay JSON Web Services. One limitation is that parameters may be passed only as *named* parameters; positional parameters are not supported, as there are too many overloaded methods for convenient use of positional parameters.
 
@@ -688,7 +688,7 @@ Here is an example of invoking a JSON web service using JSON RPC:
 		"jsonrpc":"2.0"
 	}
 
-#### Default parameters
+#### Default parameters [](id=lp-6-1-dgen08-default-parameters-0)
 
 When accessing *secure* JSON web services (user has to be authenticated), some parameters are made available to the web services by default. They need not to be specified explicitly, unless you want to change their values to something other than their defaults.
 
@@ -699,7 +699,7 @@ Default parameters are:
 + `companyId` - users company
 + `serviceContext` - empty service context object 
 
-#### Object parameters
+#### Object parameters [](id=lp-6-1-dgen08-object-parameters-0)
 
 Most services accept simple parameters: numbers, strings etc. However, sometimes you need to provide an object (a non-simple type) as a service parameter.
 
@@ -735,11 +735,11 @@ or in JSON RPC:
 
 All these examples specifies a concrete implementation for `foo` service method parameter.
 
-#### Map and List parameters
+#### Map and List parameters [](id=lp-6-1-dgen08-map-and-list-parameters-0)
 
 `Map` and `List` parameters are also supported, by sending JSON objects and arrays. If parameters `Map` or `List` contain generics information (e.g. `Map<Locale, String>`), Liferay Portal will generify the map/list entries before passing the value to the method.
 
-#### Inner Parameters
+#### Inner Parameters [](id=lp-6-1-dgen08-inner-parameters-0)
 
 In many cases, you'll need to populate objects that are passed as parameters. A good example is a default parameter `serviceContext` of type `ServiceContext` (see the *Service Context* section in this chapter). Sometimes, you need to set some of the inner properties (i.e. fields) of the `ServiceContext`, such as: `addGroupPermissions`, `scopeGroupId` etc., to make an appropriate call to a JSONWS.
 
@@ -753,7 +753,7 @@ Inner parameters are not counted as *regular* parameters for matching methods an
 
 ---
 
-### Returned values
+### Returned values [](id=lp-6-1-dgen08-returned-values-0)
 
 No matter how a JSON web service is invoked, it returns a JSON string that represents the service method result. Any returned objects are *loosely* serialized to a JSON string and returned to the caller.
 
@@ -793,7 +793,7 @@ This section covers:
 
 First, we'll take a look at the fields of the `ServiceContext` class.
 
-### Service Context Fields
+### Service Context Fields [](id=lp-6-1-dgen08-service-context-fields-0)
 
 There are a good number of fields found in `ServiceContext`. The best descriptions of these fields are found in the Javadoc comments for of their corresponding *getter* methods found at [http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html). But what may also be helpful is the following categorical listing of the fields:
 
@@ -850,7 +850,7 @@ There are a good number of fields found in `ServiceContext`. The best descriptio
 
 In case you are wondering how the `ServiceContext` fields get populated we're going to look at that next.
 
-### Creating and Populating a Service Context 
+### Creating and Populating a Service Context  [](id=lp-6-1-dgen08-creating-and-populating-a-service-context--0)
 
 All of the fields of the `ServiceContext` class are optional, although your services that store any type of content will require you to specify at least the scope group ID. Here is a simple example of how to create a `ServiceContext` instance and pass it as a parameter to a service API using Java:
 
@@ -911,7 +911,7 @@ Note, that the example above uses JSON to populate the ServiceContext.
 
 On the front-end, you can use Alloy UI and Liferay UI tags in your forms to extract information and automatically insert the corresponding data into your request object. As an example, see `portal-web/docroot/html/portlet/blogs/edit_entry.jsp`. Next, let's take a look at an example of accessing information from a `ServiceContext`.
 
-### Accessing Service Context data
+### Accessing Service Context data [](id=lp-6-1-dgen08-accessing-service-context-data-0)
 
 This section provides code snippets from `BlogsEntryLocalServiceImpl.addEntry(..., ServiceContext)` that demonstrate a accessing information from a `ServiceContext` and provides comments on how the context information is being used.
 

@@ -47,7 +47,7 @@ To resolve the dependencies for portlet projects, see the classpath entries in t
 
 ---
 
-### Deploying the Portlet
+### Deploying the Portlet [](id=lp-6-1-dgen03-deploying-the-portlet-0)
 
 Liferay provides a mechanism called auto-deploy that makes deploying portlets (and any other plugin types) a breeze. All you need to do is drop the plugin's WAR file into a directory and the portal will take care of making any necessary changes specific to Liferay and then deploy the plugin to the application server. This will be a method of deployment used throughout this guide.
 
@@ -112,7 +112,7 @@ The **Configuration Files** are stored in the `docroot/WEB-INF` folder. The stan
 
 **Client Side Files** are the `.jsp`, `.css`, and JavaScript files that you write to implement your portlet's user interface. These files should go in the `docroot` folder somewhere—either in the root of the folder or in a folder structure of their own. Remember that with portlets you are only dealing with a portion of the HTML document that is getting returned to the browser. Any HTML code you have in your client side files should be free of global tags such as `<html>` or `<head>`. Additionally, all CSS classes and element IDs must be name-spaced to prevent conflicts with other portlets. Liferay provides tools (a taglib and API methods) to generate the namespace that you should use.
 
-### A Closer Look at the My Greeting Portlet
+### A Closer Look at the My Greeting Portlet [](id=lp-6-1-dgen03-a-closer-look-at-the-my-greeting-portlet-0)
 
 If you are new to portlet development, this section will give you a better understanding of the configuration options of a portlet.
 
