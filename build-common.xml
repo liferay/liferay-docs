@@ -119,11 +119,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </copy>
     </target>
 
-    <target name="prepare-dist" depends="number-images-dir" description="numbers the images in the files, creates dist directory, copies images and overriding with language specific images">
-    	<!-- Replace the above the dependencies with below when liferay portal
-    	     supports urlTitle assignement.
-    	depends="number-headers-dir, number-images-dir"
-    	-->
+    <target name="prepare-dist" depends="number-headers, number-images-dir" description="numbers the headers and images in the files, creates dist directory, copies images and overriding with language specific images">
         <echo message="... creating ${dist.dir}/${lang} directory"/>
         <mkdir dir="${dist.dir}/${lang}"/>
         <copy todir="${dist.dir}/${lang}/images">
@@ -300,7 +296,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
 
     <target name="markdown-to-all-win" depends="markdown-to-html-win,markdown-to-odt-win,markdown-to-epub-win" description="converts markdown file to html, odt, and epub files on windows" />
 
-	<target name="number-headers-dir" depends="check-doc-props" description="numbers the headers of markdown files found in ${lang}/chapters/">
+	<target name="number-headers" depends="check-doc-props" description="numbers the headers of markdown files found in ${lang}/chapters/">
 		<numberheaders lang="${lang}" docDir="${doc.dir}">
 		</numberheaders>
 	</target>
