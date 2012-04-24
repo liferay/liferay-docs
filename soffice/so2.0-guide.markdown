@@ -48,7 +48,7 @@ To install Social Office manually, you just need to deploy the Social Office `.l
 - so-portlet
 - so-theme
 - tasks-portlet
-- wysiwyg-portlet.
+- wysiwyg-portlet
 
 ---
 
@@ -175,6 +175,8 @@ Social Office not only provides custom pages and applications for users' persona
 The wizard lets you choose which of these pages you'd like to include in your site. Links to these pages are embedded in the left-most column of each page that belongs to the site.
 
 ![Figure X.x: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](./images/new-site-wizard.png)
+
+Note: When creating a site, you can select a membership type: Open, Restricted, or Private. Any portal user can join an open site. Portal users can request to join a restricted site but must be approved by a site administrator. Private sites are invisible to non-members; members must be invited by a site administrator. By default, all the pages of an open Social Office site are public but restricted and private Social Office site pages are private.
 
 When visiting open Social Office sites, users can use the button next to the site name to join or leave the site. This button is not available for restricted or private sites. The Home page of the default Social Office site contains a number of useful portlets. The Activities and Recent Downloads portlets keep site members up to date about what's happening on the site and you can use the Announcements and Events portlets to inform or remind site members about important information. The Bookmarks portlets allows users to create a collection of useful links on your site and you can configure the RSS portlet to display an RSS feed of your choice. The Welcome portlet allows you to set up a custom welome message for your site. It's just a WYSIWYG portlet with its title changed to *Welcome*.
 
