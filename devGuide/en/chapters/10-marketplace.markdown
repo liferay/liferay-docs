@@ -1,5 +1,5 @@
 
-# Liferay Marketplace
+# Liferay Marketplace [](id=lp-6-1-dgen10-liferay-marketplace-0)
 
 The **Liferay Marketplace** is an exciting new hub for sharing, browsing and downloading Liferay-compatible applications. As enterprises look for ways to build and enhance their existing platforms, developers and software vendors are searching for new avenues to reach this market. Marketplace leverages the entire Liferay ecosystem to release and share apps in a user-friendly, one-stop site.
 
@@ -14,11 +14,11 @@ This chapter covers topics related to developing for the Liferay Marketplace, in
 
 This chapter focuses on the topics of interest to a Liferay developer. It is highly recommended that you first read **Liferay Marketplace** chapter of the User guide, where you will find detailed information about the Marketplace from an end user's perspective. The User Guide can be found on the [Liferay Documentation page](http://liferay.com/documentation).
  
-## Marketplace basics
+## Marketplace basics [](id=lp-6-1-dgen10-marketplace-basics-0)
 
 Before diving into the details of developing for the Marketplace, it is important to have a good grasp of new concepts introduced in the Marketplace. The following list of questions will help in understanding the concepts that you will use over and over again as a Marketplace developer.
 
-### What is an app?
+### What is an app? [](id=lp-6-1-dgen10-what-is-an-app-0)
 
 As a Liferay Developer, you will undoubtedly already be familiar with the concept of plugins (portlets, hooks, themes, etc). If not, review  chapter 1 of this guide. A *Liferay App* (sometimes just called an *app*) is a collection of one or more of these plugins, packaged together to represent the full functionality of an application on the Liferay platform. In addition to the plugins contained within an app, apps have metadata such as names, descriptions, versions, and other ancillary information used to describe and track the app throughout its lifecycle.
 
@@ -26,31 +26,31 @@ Much like standard Liferay plugins, Liferay apps are also *hot-deployable*. If y
 
 Developers are not required to create the actual Liferay app files. Instead, your app's individual plugins (`.war` files) are uploaded as part of the publish process, along with identifying information (name, description, version, icon, etc). This is described in detail later on in this chapter.
 
-### What is a version?
+### What is a version? [](id=lp-6-1-dgen10-what-is-a-version-0)
 
 The concept of versioning is will known in software, and it is no different here. A version of an app represents the functionality of the app at a given point in time. When an app is first created, it is given an initial version (often `1.0`). When updates are needed for the app, a new version is created (e.g. `1.1`), and new files are uploaded representing that version. In some cases, additional qualifiers can be found in the version specifier, to which developers often give special meaning. For example, a developer may declare that the version of their app is always in x.y.z format (where the significance of each x, y, an z are defined). Liferay itself also does this. 
 
 In any case, as developer of your app, you have complete freedom in how you wish to assign version designators. It is highly recommended that you stick to a well known and easy to understand format, such as `1.0`, `1.1`, `1.2`, and so on. You may also include alphabetical characters (e.g `1.0 Beta 2` or `6.3 Patch 123235-01`), but this is not recommended, as it makes it difficult to understand how versions relate to one another.
 
-### What is a variation?
+### What is a variation? [](id=lp-6-1-dgen10-what-is-a-variation-0)
 
 Apps can be written to work across many different versions of Liferay. For example, suppose you wish to publish a Version 1.0 of your app, which is supported on Liferay 6.1 and 6.2. It may not be possible to create a single binary `.war` file that works across both Liferay versions, due to incompatibilities between these Liferay versions, so you would need to compile your app twice: once against Liferay 6.1 and once against 6.2, producing 2 different *variations* of your version 1.0 app. Each variation has the same functionality, but they are different files, and it is these variations that you can upload in support of different versions of Liferay, as you will see in a later section. In this guide, variations are sometimes referred to as simply *files* that make up your app.
 
-### How do apps relate to users and companies?
+### How do apps relate to users and companies? [](id=lp-6-1-dgen10-how-do-apps-relate-to-users-and-companies-0)
 
 When publishing an app, it is possible to publish it *on behalf of* yourself (an individual) or a *company* with which you are associated. The selection you make determines who has access to the app, once published. To understand the concepts of a Marketplace user, admin, and company, and the ramifications of choosing one vs. the other, visit the *Liferay Marketplace* chapter in the User Guide.
 
-### What are the requirements for publishing apps?
+### What are the requirements for publishing apps? [](id=lp-6-1-dgen10-what-are-the-requirements-for-publishing-apps-0)
 
 Liferay apps are "normal" Liferay plugins with additional information about them. Therefore, most of the requirements are the same as those that exist for other Liferay plugins that are detailed in the *Portlet Development* chapter of this guide. In addition to those, there are some Marketplace-specific requirements to keep in mind.
 
-### Things you need before you can publish
+### Things you need before you can publish [](id=lp-6-1-dgen10-things-you-need-before-you-can-publish-0)
 
 You must first develop your app using your preferred development tool (for example, using Liferay Developer Studio or the Plugins SDK). Your app will consist of one or more Liferay plugins. Ensure your app is designed to work with Liferay 6.1 or later. If you wish to target multiple versions of Liferay (for example, you may wish to support both 6.1 CE GA2 and 6.1 EE GA1), ensure you have built binary images of your app for each supported minor family release, if necessary. If a single set of files will work across all supported Liferay versions, you do not need to build multiple plugins. Liferay guarantees compatibility within a given minor release family, so your users can rest assured that your app will work with the minor release that you specify, along with all future maintenance releases of that minor release. 
 
 Next, think of a good name and description of your app, and a versioning scheme you wish to use. Take some screenshots, design an icon, create web sites for your app (if they do not already exist), and have a support plan in place.
 
-### Image and Naming Requirements
+### Image and Naming Requirements [](id=lp-6-1-dgen10-image-and-naming-requirements-0)
 
 **Icons** for your app *must be* 90 pixels in both height and width, and must be in PNG, JPG, or GIF format. The image size cannot exceed 512kb.
 **Screenshots** for your app *must not exceed* 600 pixels in width x 400 pixels in height, and must be in the PNG, JPG, or GIF format. The total size of all screenshots *must not exceed* 1MB. Each screenshot must be the same size, and it is preferable if they are named sequentially, for example `fluffy-puppies-01.png`, `fluffy-puppies-02.png`, and so on.
@@ -59,7 +59,7 @@ Next, think of a good name and description of your app, and a versioning scheme 
 
 Above and beyond these basics of creating apps in the form of Liferay plugins, there are additional considerations to take into account when designing and publishing apps.
 
-### What kinds of validation are performed by Liferay?
+### What kinds of validation are performed by Liferay? [](id=lp-6-1-dgen10-what-kinds-of-validation-are-performed-by-liferay-0)
 
 Liferay will ensure that apps meet a minimum set of requirements, such as
 
@@ -69,7 +69,7 @@ Liferay will ensure that apps meet a minimum set of requirements, such as
 
 Liferay does not do source code reviews, and will not ask for your source code. Further, Liferay is not responsible for the behavior (or misbehavior) of apps on the Marketplace. For details regarding this, consult the *Liferay Marketplace User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual *End User License Agreements* associated with each app.
  
-### What versions of Liferay should I target?
+### What versions of Liferay should I target? [](id=lp-6-1-dgen10-what-versions-of-liferay-should-i-target-0)
 
 Of course, targeting the widest possible range of versions will ensure you a larger audience. However, there are certain features in specific versions of Liferay that you may wish to take advantage of. When uploading apps, you can specify which versions your app is compatible with, and you can have multiple files for your app designed for different versions of the Liferay Platform.
 
@@ -83,11 +83,11 @@ Note that apps on the Liferay Marketplace must be designed for Liferay 6.1 and l
 
 Now that we have covered the basics, you're armed with enough knowledge to start creating apps on the Marketplace, so let's see what that looks like in the next section. 
 
-## Developing and publishing apps
+## Developing and publishing apps [](id=lp-6-1-dgen10-developing-and-publishing-apps-0)
 
 Let's jump right in with an example. In this section, we'll walk you through the creation and publication steps (but we won't actually publish the app on the Marketplace, since this example app isn't very useful!). After walking through this, you should understand how Marketplace development typically occurs.
 
-### Develop a sample app
+### Develop a sample app [](id=lp-6-1-dgen10-develop-a-sample-app-0)
 
 Before you can publish anything, you first have to create (develop) an app!  Apps are nothing more than collections of individual plugins, so the first step in development an app for the Marketplace is to develop the functionality in the form of one or more Liferay plugins. To create a sample app (which will consist of a single portlet), follow the detailed instructions in the *Portlet Development* chapter of this guide. After creating and deploying your sample app, return here to continue.
 
@@ -95,7 +95,7 @@ In the real world, apps usually consist of multiple components (e.g. multiple `.
 
 Now that you have developed your app, it's time to get started with Marketplace!
 
-### Establish a Marketplace Account
+### Establish a Marketplace Account [](id=lp-6-1-dgen10-establish-a-marketplace-account-0)
 
 Before you can publish anything to the Marketplace, you must first have an account on [liferay.com](http://liferay.com). If you do not have an account, visit [http://liferay.com](http://liferay.com) and click *Register* in the upper-right. Once you have registered, you can visit the Marketplace at [http://liferay.com/marketplace](http://liferay.com/marketplace). The Marketplace homepage is shown below:
 
@@ -117,11 +117,11 @@ You'll notice three tabs across the top:
 
 Since you have not purchased or published any apps, the first two tabs are likely empty. Let's get publishing!
 
-### Upload (Publish) your app
+### Upload (Publish) your app [](id=lp-6-1-dgen10-upload-publish-your-app-0)
 
 To begin the process of publishing your app, click *Add an App*. A form appears, allowing you to fill in your app's details.
 
-#### Initial app details
+#### Initial app details [](id=lp-6-1-dgen10-initial-app-details-0)
 
 The first step is to enter the basic details about your app. 
 
@@ -159,7 +159,7 @@ Make up some sample data to use during this example, and enter it into the form.
 
 On this screen, you must specify the version of your app. Review the guidance in the *What is a version* section in this chapter to choose a good version specifier and enter it here. For our example, since this is the first version, enter `1.0`. Click *Next*.
 
-#### Upload files (plugins) for your app
+#### Upload files (plugins) for your app [](id=lp-6-1-dgen10-upload-files-plugins-for-your-app-0)
 
 This screen allows you to upload different sets of plugin files (variations) to support different Liferay versions. Think of it as a worksheet that you can fill out before advancing. The screen is shown here as it initially appears:
 
@@ -173,7 +173,7 @@ For this example, we will add the example portlet that represents our app. Choos
 
 This indicates that the file was successfully uploaded and represents your app for users on Liferay Portal 6.1 CE GA2. You can optionally select other Liferay releases in the left drop-down and upload other `.war` files. Notice when you choose a different Liferay version in the left drop-down and then re-select the original *Liferay Portal 6.1 CE GA2*, your file is still there.  Click *Next* to advance to the final screen.
 
-#### Preview and submit the app
+#### Preview and submit the app [](id=lp-6-1-dgen10-preview-and-submit-the-app-0)
 
 Whenever you make a change (app details, adding files, adding new versions), you always wind up at a *Preview* screen, allowing you to preview your app as it will appear in the Marketplace, so you can confirm your changes. 
 
@@ -183,7 +183,7 @@ For this example, review the information. Is it as you expect? If not, click *Ed
 
 Once you are satisfied, click *Submit for Review*. If you're walking through this example on Liferay's Marketplace, don't do it, since this is only an example app. The next section describes what happens when you submit apps or app changes.
 
-### The review process
+### The review process [](id=lp-6-1-dgen10-the-review-process-0)
 
 When you submit apps to the Marketplace, they are reviewed by Liferay Marketplace staff to ensure that your app meets the minimum standards described in the above *Requirements* section of this chapter.
 
@@ -200,7 +200,7 @@ Once your app is approved by Marketplace staff, congratulations! You will receiv
 
 Now that you have successfully published your first app, you'll likely get all kinds of feedback from users and yourself about what's right and wrong with it. In the next section, we'll explore how to make changes once you have published your app.
 
-## Making changes to published apps
+## Making changes to published apps [](id=lp-6-1-dgen10-making-changes-to-published-apps-0)
 
 After your app is published and approved, you will undoubtedly need to make one or more of these kinds of changes during the life of the app:
 
@@ -211,7 +211,7 @@ After your app is published and approved, you will undoubtedly need to make one 
 
 Liferay Marketplace supports all of the above operations as described below.
 
-### Editing your app details
+### Editing your app details [](id=lp-6-1-dgen10-editing-your-app-details-0)
 
 App details include the name, description, icon, screenshots, and other information that you supplied on the first screen during the app creation process. To make changes to this content for your app, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, then click the *Action* button next to the app you wish to edit, and select *Edit*.
 
@@ -219,7 +219,7 @@ App details include the name, description, icon, screenshots, and other informat
 
 This screen shows you what the app looks like on the Marketplace. To edit the detail information, click the *Edit* button at the bottom of the preview. This  allows you to edit details (as well as add new files to your existing version). Note that the current values as they appear in your app are used to pre-fill the form. Make any changes as needed on this screen, and click *Next*. If you do not need to edit any more variations, you can continue clicking *Next* until you reach the final preview screen. Click *Submit for Review* to submit your detail changes for review. Once approved, the changes you request appear on the Marketplace.
 
-### Adding support for new versions of Liferay Portal
+### Adding support for new versions of Liferay Portal [](id=lp-6-1-dgen10-adding-support-for-new-versions-of-liferay-portal-0)
 
 If you need to add files in support of another Liferay release, the process is similar. Navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Action* button next to the app for which you wish to add new files, and click *Edit*. Click *Next* to advance past the details screen (making any changes as needed), and click *Next* to advance past the version edit screen (you can't actually edit the version number of an already-approved version, but you can edit the "What's New" information if needed). 
 
@@ -227,7 +227,7 @@ Once you advance past the version edit screen, you'll be at the File Upload scre
 
 Choose the Liferay release for which you wish to add new files. Upload your files (just has you had done before), click *Next*, and observe the newly-added files listed at the bottom of the preview screen. Click *Submit for Review* to submit your requested change (adding of files). The files will be reviewed by LIferay, and once approved, the new variation is available for download in the Marketplace.
 
-### Releasing a new version of your app
+### Releasing a new version of your app [](id=lp-6-1-dgen10-releasing-a-new-version-of-your-app-0)
 
 After time passes, you may wish to add new functionality to your app or fix a batch of bugs. This can be accomplished by releasing a new version of your app. New versions offer your users new functionality and bugfixes, and users are generally encouraged to always use the latest version. In addition, when a new version of your app becomes available, existing users are notified automatically through Liferay's notification system.
 
@@ -239,14 +239,14 @@ You can make any changes to the pre-filled data on this screen. Since this is a 
 
 Clicking *Next* takes you through the same screens you've already seen. On the *Add App Version* screen, you can specify a new version name for this version of your app. Also note, that when adding new versions to an existing app, you have the option to add *What's New* text. This is typically filled in with a list of changes for this version, such as significant new features or bugfix information. Clicking *Next* from here allows you to upload the files associated with the new version of the app. For a new version of the app, you must upload all files for all supported Liferay versions again, even if they have not changed since the last version.
 
-### Deactivating your app
+### Deactivating your app [](id=lp-6-1-dgen10-deactivating-your-app-0)
 
 When the time comes to retire your app, you can *Deactivate* it. Deactivating an app causes the app to no longer be downloadable from the Marketplace for new customers and it won't appear in any public Marketplace listings. Existing customers that have already downloaded your app can continue downloading the legacy versions of the app they have already acquired, but they can't download any versions they've not already received. The app remains in your inventory, with all of its history, in case you need to re-activate or reference it in the future.
 
 To deactivate your app, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next to the app for which you want deactivate, and select the *Deactivate* action.
 
 
-## Tracking app performance
+## Tracking app performance [](id=lp-6-1-dgen10-tracking-app-performance-0)
 
 One of the main reasons for developing and publishing apps into the Marketplace is to drive downloads and adoption of your app. The Marketplace enables you, as the developer of your app, to get detailed reports about the number of views and downloads of your app(s). To access these metrics, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next to the app for which you want metrics, and select the *Metrics* action.
 
@@ -254,15 +254,15 @@ One of the main reasons for developing and publishing apps into the Marketplace 
 
 The view shown above is the default metrics view for a single app. Across the top is a list of data series options (*Views* or *Downloads*). Below that, a date range can be chosen. In the middle, a graph is shown for the data within the date range. Finally, the same data that is graphed is also shown in tabular format, in case you want to know the exact values making up the graph. The different types of data available to view are described below. 
 
-### Views
+### Views [](id=lp-6-1-dgen10-views-0)
 
 When someone searches or browses the Marketplace, they click on apps to see detailed views of the apps they're interested in. When this occurs for your app, a *View* is recorded for the app, and this data is what is shown on the App Metrics screen when *Views* is selected at the top. *Views* is also the default view, as shown above. The number of recorded views per day per user is unlimited.
 
-### Downloads
+### Downloads [](id=lp-6-1-dgen10-downloads-0)
 
 A download is recorded for your app when someone downloads a specific variation of a specific version of your app. The number of recorded downloads per day per user is unlimited.
 
-## Summary
+## Summary [](id=lp-6-1-dgen10-summary-0)
 
 In this chapter we introduced concepts and instructions for developers to make their apps available on the Liferay Marketplace. We looked at how to create, publish, maintain, and track apps. You do this through  [liferay.com](liferay.com), using your own personal credentials and its features for Marketplace. Next, we covered the requirements for publishing apps, which did not differ significantly from requirements for general Liferay development. We then showed how you can publish a sample app on the Marketplace, and how you can modify it as the app evolves. Finally, we looked at how to track the adoption of apps using download and view metrics. We hope this information helps you understand how to develop apps for Liferay!
 

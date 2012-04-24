@@ -1,4 +1,4 @@
-# Introduction to Liferay
+# Introduction to Liferay [](id=introduction-to-liferay)
 
 Liferay is a *portal server*. This means that it is designed to be a single environment where all of the applications a user needs can run, and these are integrated together in a consistent and systematic way. If an application lives outside the portal, the portal should be able to consume some resource of the application (such as an RSS feed or a subset of functionality in a "dashboard" application) so that the end user can see everything he or she interacts with at a glance.
 
@@ -22,7 +22,7 @@ We discuss the following topics in this chapter:
 
 Navigation within Liferay Portal is designed to be intuitive and easy. Let's get started.
 
-## Navigating Liferay
+## Navigating Liferay [](id=navigating-liferay)
 
 Liferay initially presents a very simple interface. Unauthenticated users can navigate the public pages of the portal and see a *Sign In* link in the top right corner of the screen.
 
@@ -44,7 +44,7 @@ By default, Liferay uses your email address rather than a user name or ID for au
 
 The first page that's displayed when a user logs in for the first time is the Terms of Use page. By default, users must agree to the terms of use before they can access the portal. Scroll to the bottom of the page and click *I Agree* to proceed. Note that as a portal administrator, you can customize the Terms of Use page or disable it altogether. Next, let's take a look at how to navigate in Liferay. 
 
-### Using the Dockbar
+### Using the Dockbar [](id=lp-6-1-ugen01-using-the-dockbar-0)
 
 Once you've logged in as the default administrative user, the dockbar appears across the top of the page. The dockbar is the primary tool logged-in users have for navigating the portal and accessing administrative functions from anywhere in the portal. Clicking on the red pin icon at the left side of the dockbar pins it in place so that it remains visible when you scroll down the page. 
 
@@ -52,7 +52,7 @@ Once you've logged in as the default administrative user, the dockbar appears ac
 
 Depending on the logged-in users' roles and what sections of the portal they are viewing, they may see all or only some of the dockbar menus. For each menu, a list of options appears when you mouse over it. Let's look at what's available in the dockbar. 
 
-#### Add
+#### Add [](id=lp-6-1-ugen01-add-0)
 
 As an administrator, the *Add* menu is the first item on the dockbar. This menu contains a list of items that you can add either to the page or to the current site.
 
@@ -66,7 +66,7 @@ As an administrator, the *Add* menu is the first item on the dockbar. This menu 
 
 The Add menu gives you a nice, quick way to build your pages. 
 
-#### Manage
+#### Manage [](id=lp-6-1-ugen01-manage-0)
 
 The next item on the Dockbar is the *Manage* menu. From here, you can access many settings for the current page and site. 
 
@@ -88,11 +88,11 @@ The next item on the Dockbar is the *Manage* menu. From here, you can access man
 
 We'll cover these options in detail in chapter 3.
 
-#### Edit Controls
+#### Edit Controls [](id=lp-6-1-ugen01-edit-controls-0)
 
 Next on the Dockbar is a check box labeled *Edit Controls*. This toggles the edit controls that appear in the tops of portlet windows. This lets administrators to see a page the way a regular user would.
 
-#### Go to
+#### Go to [](id=lp-6-1-ugen01-go-to-0)
 
 The Go to menu is your main navigation tool within Liferay Portal. The control panel is the topmost item in this menu. Initially, your current location is highlighted. This shows you are in the public pages of the *liferay.com* site.
 
@@ -100,7 +100,7 @@ The Go to menu is your main navigation tool within Liferay Portal. The control p
 
 Liferay allows for various configurations of pages for end users: you can configure it so that some or all users have their own personal sites, with public and/or private pages, where they can place the portlets they need to use. The administrator account by default has its own pages. Because you are logged in with an account that has administrator privileges, you can see everything in the portal.
 
-#### My Account
+#### My Account [](id=lp-6-1-ugen01-my-account-0)
 
 Your (or the default user's) name appears at the right side of the Dockbar next to a sign-out link that logs you out of the portal. Your name itself is a link to the *Manage My Account* dialog box. You can use the left menu to switch between viewing your account information and your personal site pages. You can configure both personal and portal information such as your screen name, password, email address, phone number, physical address, language, and time zone, as well as your organizations, sites, user groups, and roles. 
 
@@ -108,7 +108,7 @@ Your (or the default user's) name appears at the right side of the Dockbar next 
 
 One of the most important tools Liferay offers for managing your portal is the aforementioned control panel, accessible from the *Go to* menu of the Dockbar. The control panel is composed of administrative pages that you can use to manage various aspects of the portal.
 
-## Navigating the Control Panel
+## Navigating the Control Panel [](id=navigating-the-control-pan-2)
 
 The control panel is very easy to navigate. On the left side is a list of headings with functions underneath them. The headings are in alphabetical order, but the functions are in a logical order.
 
@@ -124,7 +124,7 @@ The control panel is very easy to navigate. On the left side is a list of headin
 
 All of the functions that you will need to maintain the portal or its contents can be found in the control panel. Additionally, developers can write portlets which can also be added to the control panel. For further information about this, you can take Liferay's Portal Developer course, refer to Liferay's *Portal Developer's Guide* or see the official guide to Liferay development, [*Liferay in Action*](http://manning.com/sezov).
 
-## Portal Architecture
+## Portal Architecture [](id=portal-architectu-5)
 
 Before we dive into the user interface for adding and maintaining various portal resources, we should survey the concepts Liferay uses to organize a portal. Portals are accessed by users. Users can be collected into user groups. Users can belong to organizations. Organizations can be grouped into hierarchies, such as Home Office &rarr; Regional Office &rarr; Satellite Office. Sites can be created independently or can be attached to users or organizations. Within sites, users can belong to teams, which are groupings of users for specific functions within a site.
 
@@ -134,7 +134,7 @@ Before we dive into the user interface for adding and maintaining various portal
 
 ---
 
-A simple way to think about this is that your portal has users and various ways to group them together. Some of these groupings may be organized hierarchically by an administrator. These are called organizations. An administrator can also create more ad hoc groupings of users called user groups. User groups can be composed of users who do not fit into a particular hierarchy or who belong to different organizations. Other groupings may be created by the users themselves. For example, users from different organizations could create a site called “Dog Lovers” and allow anyone to join. The site would not fit into an organizational hierarchy; it would just serve a common interest in dogs. Administrators can create teams within sites. The following figure illustrates how users can be grouped in Liferay Portal: users can belong to sites, organizations, and user groups and user groups can belong to sites and organizations.
+A simple way to think about this is that your portal has users and various ways to group them together. Some of these groupings may be organized hierarchically by an administrator. These are called organizations. An administrator can also create more ad hoc groupings of users called user groups. User groups can be composed of users who do not fit into a particular hierarchy or who belong to different organizations. Other groupings may be created by the users themselves. For example, users from different organizations could create a site called "Dog Lovers" and allow anyone to join. The site would not fit into an organizational hierarchy; it would just serve a common interest in dogs. Administrators can create teams within sites. The following figure illustrates how users can be grouped in Liferay Portal: users can belong to sites, organizations, and user groups and user groups can belong to sites and organizations.
 
 ![Figure 1.8: Liferay's User Collection Model](../../images/user-collections-diagram-web.png)
 
@@ -144,17 +144,17 @@ Liferay manages permissions for users and collections of users via roles. Roles 
 
 Teams belong to individual sites. Roles that appear inside sites are scoped just for sites. This means that although each site in the portal may have access to a particular role with its configured permissions, membership in this role can be different for each site and the granted permissions only apply within one site.
 
-### Users
+### Users [](id=lp-6-1-ugen01-users-0)
 
 Users represent physical users of the system. These are the user accounts that people use to log into the system. By default, users get their own private sites with public and private pages that they can manage themselves. Users' personal sites are important: they enable users to have their own public blog or their own private calendar, a place to store their documents, and more. If, however, you don't want users to have personal sites, this default behavior can be turned off by a portal administrator in the `portal-ext.properties` configuration file (see chapter 14). Liferay uses site templates to control the default portlets that appear on the public and private pages of user's personal sites. See chapter 3 for information about templates.
 
 Users can be collected in multiple ways. They can be members of organization hierarchies, such as Liferay, Inc. &rarr; Security &rarr; Internet Security. They can be collected into arbitrary user groups, such as Bloggers, which could be used to set apart users who get a Blog page in their personal space from users who do not. Users can become members of independent sites which serve to draw together common interests. Users can have roles which define their permissions in the portal. These roles can be scoped by portal, organization, or site.
 
-### User Groups
+### User Groups [](id=lp-6-1-ugen01-user-groups-0)
 
 User groups are simple, arbitrary collections of users, created by administrators. You can make a user group a member of a site or organization. This makes each member of the user group a member of the site or organization. Permissions can't be directly assigned to user groups, but user groups can be assigned to roles. If you assign a role to a user group then each member of the user group will be assigned that role (and thus the permissions defined by the role). Although user groups can't have sites, they can have site templates which can be used to customize users' personal sites. We describe this in more detail below.
 
-### Roles
+### Roles [](id=lp-6-1-ugen01-roles-0)
 
 There are three kinds of roles: 
 
@@ -168,7 +168,7 @@ We refer to these three kinds of roles as role *scopes*. Roles are used to defin
 
 Roles can be assigned to users, user groups, organizations, and sites. Note: It is important to understand Liferay's portal architecture concepts before assigning roles. For example, assigning roles to an open site could create a security problem within your portal. An open site means that users are free to join and leave. So assigning a role to an open site potentially grants the permissions defined by that role to every user in the portal. Open, restricted, and private sites are discussed in the *Sites* section.
 
-### Organizations
+### Organizations [](id=lp-6-1-ugen01-organizations-0)
 
 Organizations are hierarchical collections of Users. Organizations can't have pages directly associated with them. Instead, sites can be attached to organizations. There is also a special type of organization called a *location*, which can't have any suborganizations. If you represent an organization by a tree diagram, locations would be leaf nodes.
 
@@ -184,7 +184,7 @@ Now imagine that you have placed an Asset Publisher portlet as a static portlet 
 
 Organizations need sites in order to have pages. If certain users have been granted the manage pages permission, they will be able to create and maintain pages within an organization. They can use the organization's public pages to include information or applications appropriate for guests or logged-in users who are not members of the organization. For example, a member of an IT organization might place a help desk ticket entry system portlet on a public page of the organization's site. The IT member could create a private page on the organization's site for applications for the organization's own use. For example, a back-end portlet of the aforementioned ticket entry system portlet could be placed here.
 
-### Sites
+### Sites [](id=lp-6-1-ugen01-sites-0)
 
 Sites are simply collections of pages. Sites can contain public pages, which are accessible to all portal users, and private pages, which are only accessible to site members. Liferay's default pages are part of a site named for the portal because all portal users have a common interest in the default, public pages of your site. There are
 three types of sites:
@@ -197,7 +197,7 @@ three types of sites:
 
 An open site (the default) allows portal users to join and leave the site whenever they want to, using the control panel or a My Sites portlet added to a page which they can access. A restricted site requires that users be added to the site by a site administrator. Users can request membership in a restricted site using the control panel or the My Sites portlet. A private site is just like a restricted site except that it is invisible to non-members in the control panel and in the My Sites portlet. Users can only be added to a private site by a site administrator.
 
-### Teams
+### Teams [](id=lp-6-1-ugen01-teams-0)
 
 Teams are sets of users with similar permissions within a site. Teams can be created both within sites that are attached to an organization and within independent sites. Teams are different from site roles since teams appear only in the site in which they are created. This is very useful if you need to create a team of users for a specific purpose within a single organization or site and not for each site in the portal.
 
@@ -209,6 +209,6 @@ Teams can be essential for some use cases since they can be created by site admi
 
 ---
 
-## Summary
+## Summary [](id=summ-23)
 
 So far, we've looked at Liferay's function as a portal server and learned how to navigate within Liferay using the dockbar and the control panel. We've also taken a look at look at Liferay's portal architecture and how Liferay uses the concepts of users, user groups, organizations, sites, teams, and roles to organize your portal. If you're a portal administrator who is tasked with setting up your system's users, sites, organizations, or roles, you'll want to skip ahead to chapter 12 to see how this is done. For the remainder of this first part of the book, we'll focus on the applications an end user would use on a day to day basis. For this reason we'll next discuss one of the most used features of Liferay Portal: its content management system. 

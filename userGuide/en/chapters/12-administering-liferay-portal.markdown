@@ -1,4 +1,4 @@
-# Administering Liferay Portal
+# Administering Liferay Portal [](id=administering-liferay-portal)
 
 You know how all these retailers want to advertise themselves as a "one stop shop" for whatever it is that you want? The idea is that they have so much stuff that chances are that whatever you're looking for is there. Liferay's control panel is something like this. If you want to create users, sites, organizations, configure permissions and plugins, and pretty much anything else, you'll do it with the control panel. The nice thing about the control panel is that it makes all this very easy to do. This chapter takes all the concepts you learned about Liferay in chapter 1 (sites, organizations, and more) and makes them concrete. Here, you'll learn how to create and manage every aspect of Liferay's configuration. 
 
@@ -12,7 +12,7 @@ This chapter covers the following activities:
 
 Let's begin our examination of Liferay's control panel by looking at how to manage and organize users in Liferay Portal.
 
-## Managing Users, User Groups, Organizations, Sites, Teams, and Roles 
+## Managing Users, User Groups, Organizations, Sites, Teams, and Roles [](id=managing-users-user-groups-organizations-sites-teams-and-roles)  [](id=lp-6-1-ugen12-managing-users-user-groups-organizations-sites-teams-and-ro-0)
 
 The Portal section of the control panel is used for most administrative tasks. You'll find there an interface for the creation and maintenance of
 
@@ -40,7 +40,7 @@ Additionally, you can configure many server settings, including:
 
 You'll use the Portal section of the control panel to create your portal structure, implement security, and administer your users. Configurable portal settings include mail host names, email notifications, and authentication options including single sign-on and LDAP integration. Note that only users with the administrator role, which is a portal scoped role, have permission to view this section of the control panel. You can, of course, grant custom roles permissions to one or more sections.
 
-### Adding users
+### Adding users [](id=lp-6-1-ugen12-adding-users-0)
 
 Let's add a user account for yourself and configure this account so that it has the same administrative access as the default administrator account. Go up to the Dockbar, mouse over *Go to* and click *Control Panel*. Then open the *Users and Organizations* page under the *Portal* category. Click the *Add* button and select *User*. Fill out the Add User form using your name and email address. When you are finished, click *Save*.
 
@@ -58,7 +58,7 @@ To make yourself an Administrator, click the *Select* link. A dialog box pops up
 
 We'll next look at some aspects of user management. 
 
-### User management
+### User management [](id=lp-6-1-ugen12-user-management-0)
 
 If you click the *Users* link on the left menu of the control panel, there are now two users in the list of users. If you want to change something about a particular user, you can click the *Actions* button next to that user.
 
@@ -76,7 +76,7 @@ Note that most users can't perform most of the above actions. In fact, most user
 
 Let's look next at how to manage organizations. 
 
-### Managing organizations
+### Managing organizations [](id=lp-6-1-ugen12-managing-organizations-0)
 
 Organizations are used to represent hierarchical structures such as those of companies, non-profit organizations, churches, schools, and clubs. They have been used to represent a sports league, with various sports (soccer, baseball, basketball, etc.) and their teams as sub-organizations. If you have a collection of users that fit into a hierarchical structure, you can model that as an organization.
 
@@ -134,7 +134,7 @@ If you click the *View* button at the top of the Users and Organizations page an
 
 We briefly mentioned sites during this discussion. Sites are another construct within the portal, and have different properties than organizations. Let's see how you can use them. 
 
-### Sites
+### Sites [](id=lp-6-1-ugen12-sites-0)
 
 As stated in chapter 1, a site is a set of pages that can be used to publish content or applications. Sites can be independent or they can be associated to one organization and act as the website of that organization.
 
@@ -203,7 +203,7 @@ When creating a site from a site template, the initial form provides a new optio
 
 Site templates are very powerful for managing many similiar sites. Let's look further at how they work. 
 
-#### Site Templates
+#### Site Templates [](id=lp-6-1-ugen12-site-templates-0)
 
 Site Templates can be administered in the control panel, within the portal section of the left menu.
 
@@ -241,7 +241,7 @@ Click on the *Open site template* link to begin adding pages and portlets and co
 
 Now let's create the Engineering, Marketing, and Legal organizations whose sites we want to create with our template. Go to the control panel and click *Users and Organizations*. Then click the *Add* button and select *Regular Organization*. Enter a name for your organization, select the *Organization site* tab, and check the *Create Site* box. When you check this box, two drop-down lists appear: one for the site's Public Pages and one for its Private Pages. To use your template to create the site, select the name of your template, *Organization Site*, from the Private Pages drop-down list. Click *Save* to create your site.  You can view the new site by clicking the *Open private pages* link from the newly created organization page. The new site will have all the pages and portlets you created in the template. This feature streamlines the site creation process for administrators, making it easy to quickly create sites. Next, let's discuss how to create and apply page templates.
 
-### Page Templates
+### Page Templates [](id=lp-6-1-ugen12-page-templates-0)
 
 Page templates function similarly to site templates but at the page level. Page templates provide a pre-configured page to reuse. Within a page template it is possible to set up a theme, a layout and specific applications and their configuration. Both sites and site templates can utilize page templates for creating new pages.
 
@@ -271,7 +271,7 @@ If staging has been enabled, changes to the page template are automatically prop
 
 Now that we've looked at site and page templates, let's discuss how to set up and manage user groups.
 
-### User Groups
+### User Groups [](id=lp-6-1-ugen12-user-groups-0)
 
 User Groups are arbitrary groupings of users. These groups are created by portal administrators to group users together who don't necessarily share an obvious hierarchical attribute. Users can be assigned to multiple user groups. User Groups are most often used to achieve one of the following goals:
 
@@ -303,7 +303,7 @@ As with the other resources in the portal, you can click the *Actions* button ne
 
 If your user group has a site, two options named **Go to the Site's Public Pages** and **Go to the Site's Private Pages** also appear as links in your user group's Actions menu. Clicking one of these links opens the user group's site in a new browser window. Any changes you make to the site are saved automatically. You can safely close the browser window when you're done.
 
-##### Creating and editing a User Group
+##### Creating and editing a User Group [](id=lp-6-1-ugen12-creating-and-editing-a-user-group-0)
 
 A user group's site can be administered from the control panel. Select *User Groups* from the control panel to see a list of existing user groups. To edit a user group, click on its name or description. You can also click on the *Actions* button to see the full list of actions that can be performed on a user group. When editing a user group, you can view its site, if it exists, by clicking the *Open Pages* link under Public Pages or Private Pages (read below for details on user group sites).
 
@@ -311,7 +311,7 @@ As an example of how user group sites can be used, let's create a user group cal
 
 Our next step is to assign an existing user to the *Bloggers* group.
 
-##### Assigning Members to a User Group
+##### Assigning Members to a User Group [](id=lp-6-1-ugen12-assigning-members-to-a-user-group-0)
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*. Then navigate to the User Groups page of the control panel and click *Actions* &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to see a list of users that can be assigned to the group.
 
@@ -325,7 +325,7 @@ After the user group has been created and several users have been added to it, y
 
 The next section describes a more advanced usage of user groups: User Group Sites.
 
-#### User Group Sites
+#### User Group Sites [](id=lp-6-1-ugen12-user-group-sites-0)
 
 Liferay allows users to each have a personal site consisting of public and private pages. Permissions can be granted to allow users to customize their personal sites at will. Originally, the default configuration of those pages could only be determined by the portal administrator through the `portal-ext.properties` file and, optionally, by providing the configuration in a LAR file. You can still configure it like this, but it isn't very flexible or easy to use.
 
@@ -357,7 +357,7 @@ Following with the example above, we will create a site for our sample user grou
 
 Also, try visiting the public site of one of the users that belong to the user group. You will see how all of the pages in the user group appear as part of the user site, including the ones copied from the site template and the ones added afterwards.
 
-### Roles
+### Roles [](id=lp-6-1-ugen12-roles-0)
 
 Roles are groupings of users that share a particular function within the portal, according to a particular scope. Roles can be granted permissions to various functions within portlet applications. You can think of a role as a description of a function, such as Message Board Administrators. A role with that name is likely to have permissions relevant to the specific Message Board portlets delegated to it. Users who are placed in this role will inherit these permissions.
 
@@ -381,7 +381,7 @@ After you save, Liferay redirects you to the list of roles. To see what function
 
 Next, let's examine how to configure the permissions granted by different roles.
 
-#### Defining Permissions on a Role
+#### Defining Permissions on a Role [](id=lp-6-1-ugen12-defining-permissions-on-a-role-0)
 
 Roles serve as repositories of permissions to be assigned to users who belong to them. So, to use a role, you need to assign members to it and define the permissions that you want to grant to members of the role.
 
@@ -403,7 +403,7 @@ Each possible action to which permissions can be granted is listed. To grant a p
 
 Roles are very powerful, and allow portal administrators to define various permissions in whatever combinations they like. This gives you as much flexibility as possible to build the site you have designed.
 
-#### Special Note about the Power Users Role
+#### Special Note about the Power Users Role [](id=lp-6-1-ugen12-special-note-about-the-power-users-role-0)
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets allowed power users, but not regular users, to access them. Liferay 6.0 and subsequent versions grant the same default permissions to both power users and regular users. This way, portal administrators are not forced to use the power users role. However, Liferay encourages those who do to create their own custom permissions for the role. 
 
@@ -415,7 +415,7 @@ Prior to Liferay 6.0, the default configurations of many Liferay portlets allowe
 
 Liferay 6.0 introduced a new feature to Liferay's permissions system: teams. Let's examine them next.
 
-### Teams
+### Teams [](id=lp-6-1-ugen12-teams-0)
 
 Teams don't appear as a link in the control panel because they exist *within* sites. Teams allow site administrators a greater degree of flexibility than was possible using just user groups and roles. They allow site administrators to create various sets of users and permissions for site-specific functions. Teams are the preferred method for collecting permissions within a single site. 
 
@@ -433,13 +433,13 @@ Permission management for teams is handled at the individual portlet level, usin
 
 To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. That's it! Now your team is ready to perform their functions. Next, let's look at how to configure Liferay's portal settings.
 
-## Managing Portal Settings
+## Managing Portal Settings [](id=managing-portal-settings)
 
 After you have created users, user groups, organizations, roles, sites, and teams, your portal will be ready to host content and applications. You can configure Liferay's portal settings to fit your environment and your particular portal project. Many configurations can be performed through Liferay's portlet-driven user interface. This section covers how to configure portal settings such as password policies, authentication settings, mail host names, email notifications, display settings, and monitoring.
 
 Now that you have been navigating in the control panel, you should be pretty familiar with how it works. All the options appear in the left navigation, their interfaces appear in the middle, and any sub-options appear on the right. We have focused so far on the maintenance of users and portal security. The remaining links in the *Portal* category focus on various portal settings which cover how the portal operates and integrates with other systems you may have. Let's begin our discussion of Liferay's portal settings by examining how to configure password policies.
 
-### Password Policies
+### Password Policies [](id=lp-6-1-ugen12-password-policies-0)
 
 Password policies can enhance the security of your portal. You can set requirements on password strength, frequency of password expiration, and more. Additionally, you can apply different password policies to different sets of portal users.
 
@@ -481,7 +481,7 @@ Next, let's examine Liferay's Portal Settings.
 
 <!-- (JR) start here 19jan2012 -->
 
-### Portal Settings
+### Portal Settings [](id=lp-6-1-ugen12-portal-settings-0)
 
 Most global portal settings can be configured from the Portal Settings section of the control panel. The Configuration heading contains the following links:
 
@@ -499,19 +499,19 @@ Most global portal settings can be configured from the Portal Settings section o
 
 Let's discuss these settings next.
 
-#### General
+#### General [](id=lp-6-1-ugen12-general-0)
 
 The General link takes you to a page with three headings: Main Configuration, Navigation, and Additional Information. Under the Main Configuration heading, you can set the name of the company, organization, or site which is running the portal. This name also defines the name of your portal's default site. Its default name is `liferay.com`, so you will definitely want to set this to reflect your own company. You can also set the mail domain, virtual host, and content delivery network address here. Under the Navigation heading, you can set a home page for your portal here as well as default landing and logout pages. Under the Additional Information heading, you can specify a Legal name, ID, and type for your company, an SIC code, a ticker symbol, and industry, and a type.
 
-#### Authentication
+#### Authentication [](id=lp-6-1-ugen12-authentication-0)
 
 The Authentication page has several tabs: General, LDAP, CAS, Facebook, NTLM, OpenID, Open SSO, and SiteMinder. You can use any of these authentication methods to configure how users will authenticate to Liferay. Since Liferay supports quite a few authentication methods, there are different settings for each.
 
 The settings on the General tab of the Authentication page affect only Liferay functionality, and don't have anything to do with the integration options on the other tabs. The General tab allows you to customize Liferay's standard authentication behavior. Specifically, the General tab allows you to select from several global authentication settings:
 
--   Authenticate via email address (default), screen name, or user ID (a numerical ID auto-generated in the database — not recommended).
+-   Authenticate via email address (default), screen name, or user ID (a numerical ID auto-generated in the database not recommended).
 
--   Enable/Disable automatic log in. If enabled, Liferay allows a user to check a box which will cause the site to “remember” the user's log in by placing a cookie on his or her browser. If disabled, users will always have to log in manually.
+-   Enable/Disable automatic log in. If enabled, Liferay allows a user to check a box which will cause the site to "remember" the user's log in by placing a cookie on his or her browser. If disabled, users will always have to log in manually.
 
 -   Enable/Disable forgotten password functionality.
 
@@ -533,7 +533,7 @@ By default, all settings except for the last are enabled. User authentication by
 
 We'll examine how to set up LDAP authentication next.
 
-##### Authentication: LDAP
+##### Authentication: LDAP [](id=lp-6-1-ugen12-authentication-ldap-0)
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an LDAP directory. There are two places for you to configure the LDAP settings: here in the control panel or in the `portal-ext.properties` file (which is covered in chapter 14). We recommend that you use the control panel since your configuration settings will be stored in the database. Note that if you use both, the settings in the database will override the settings in `portal-ext.properties`. Configuring the LDAP settings from the control panel is easier and does not require a restart of Liferay. The only compelling reason to use the `portal-ext.properties` file is if you have many Liferay nodes which will be configured to run against the same LDAP directory. In that case, for your initial deployment, it may be easier to copy the `portal-ext.properties` file to all of the nodes so that the first time they start up, the settings are correct. Regardless of which method you use, the available settings are the same.
 
@@ -559,7 +559,7 @@ You configure the global values from the LDAP tab of the Authentication page.
 
 Once you've finished configuring LDAP, click the *Save* button. Next, let's look at how to add LDAP servers.
 
-###### Adding LDAP Servers
+###### Adding LDAP Servers [](id=lp-6-1-ugen12-adding-ldap-servers-0)
 
 The Add button beneath the LDAP servers heading allows you to add LDAP servers. If you have more than one, you can arrange the servers by order of preference using the up/down arrows. When you add an LDAP Server, you will need to provide several pieces of data so that Liferay can bind to that LDAP server and search it for user records. Regardless of how many LDAP servers you add, each server has the same configuration options.
 
@@ -660,7 +660,7 @@ The control panel provides default mappings for commonly used LDAP attributes. Y
 
 Once you've set all your options and tested your connection, click *Save*. From here, you can add another LDAP server or set just a few more options that apply to all of your LDAP server connections.
 
-###### LDAP Options Not Available in the GUI
+###### LDAP Options Not Available in the GUI [](id=lp-6-1-ugen12-ldap-options-not-available-in-the-gui-0)
 
 Although most of the LDAP configuration can be done from the control panel, there are several configuration parameters that are only available by editing `portal-ext.properties`. These options will be available in the GUI in future versions of Liferay Portal, but for now they can only be configured by editing the properties file.
 
@@ -690,13 +690,13 @@ If you set this to `user`, Liferay will import all users from the specified port
 
 These properties are a list of phrases from error messages which can possibly be returned by the LDAP server. When a user binds to LDAP, the server can return *controls* with its response of success or failure. These controls contain a message describing the error or the information that is coming back with the response. Though the controls are the same across LDAP servers, the messages can be different. The properties described here contain snippets of words from those messages, and will work with Red Hat's Fedora Directory Server. If you are not using that server, the word snippets may not work with your LDAP server. If they don't, you can replace the values of these properties with phrases from your server's error messages. This will enable Liferay to recognize them. Next, let's look at the Single Sign-On solutions that Liferay supports.
 
-#### Single Sign-On
+#### Single Sign-On [](id=lp-6-1-ugen12-single-sign-on-0)
 
 Single Sign-On solutions allow you to provide a single login credential for multiple systems. This allows you to have people authenticate to the Single Sign-On product and they will be automatically logged in to Liferay and to other products as well.
 
 Liferay supports several single sign-on solutions. Of course, if your product is not yet supported, you may choose to implement support for it yourself by use of the extension environment. Alternatively, your organization can choose to sponsor support for it. Please contact `sales@liferay.com` for more information about this.
 
-##### Authentication: Central Authentication Service (CAS)
+##### Authentication: Central Authentication Service (CAS) [](id=lp-6-1-ugen12-authentication-central-authentication-service-cas-0)
 
 CAS is an authentication system that was originally created at Yale University. It is a widely-used open source single sign-on solution, and was the first SSO product to be supported by Liferay.
 
@@ -731,11 +731,11 @@ Once your CAS server is up and running, you can configure Liferay to use it. Thi
 
 The rest of the settings are various URLs, with defaults included. Change *localhost* in the default values to point to your CAS server. When you are finished, click *Save*. After this, when users click the *Sign In* link, they will be directed to the CAS server to sign in to Liferay.
 
-##### Authentication: Facebook
+##### Authentication: Facebook [](id=lp-6-1-ugen12-authentication-facebook-0)
 
 Liferay Portal also enables users to log in using their Facebook accounts. To enable this feature, you simply need to select the *Enable* box and enter the Application ID and Application Secret which should have been provided to you by Facebook. Facebook SSO works by taking the primary Facebook email address and searching for the same email address in Liferay's `User_` table. If a match is found, the user is automatically signed on (provided that user clicked *allow* from the Facebook dialog). If there isn't a match, the user is prompted in Liferay to add a user from Facebook. Once selected, a new user is created by retrieving four fields from Facebook (first name, last name, email address, and gender).
 
-##### Authentication: NTLM
+##### Authentication: NTLM [](id=lp-6-1-ugen12-authentication-ntlm-0)
 
 NTLM is a Microsoft protocol that can be used for authentication through Microsoft Internet Explorer. Though Microsoft has adopted Kerberos in modern versions of Windows server, NTLM is still used when authenticating to a workgroup. Liferay Portal now supports NTLM v2 authentication. NTLM v2 is more secure and has a stronger authentication process than NTLMv1.
 
@@ -749,7 +749,7 @@ NTLM is a Microsoft protocol that can be used for authentication through Microso
 
 **Service Password:** Enter the password for the service account.
 
-##### Authentication: OpenID
+##### Authentication: OpenID [](id=lp-6-1-ugen12-authentication-openid-0)
 
 OpenID is a new single sign-on standard which is implemented by multiple vendors. The idea is that multiple vendors can implement the standard, and then users can register for an ID with the vendor they trust. The credential issued by that vendor can be used by all the web sites that support OpenID. Some high profile OpenID vendors are AOL [http://openid.aol.com/screenname](http://openid.aol.com/screenname), LiveDoor [http://profile.livedoor.com/username](http://profile.livedoor.com/username), and LiveJournal [http://username.livejournal.com](http://username.livejournal.com/). Please see the OpenID site [http://www.openid.net](http://www.openid.net/) for a more complete list.
 
@@ -759,13 +759,13 @@ Liferay Portal can act as an OpenID consumer, allowing users to automatically re
 
 OpenID is enabled by default in Liferay, but can be disabled here.
 
-##### Atlassian Crowd
+##### Atlassian Crowd [](id=lp-6-1-ugen12-atlassian-crowd-0)
 
 Atlassian Crowd is a web-based Single Sign-On product similar to CAS. Crowd can be used to manage authentication to many different web applications and directory servers.
 
 Because Atlassian Crowd implements an OpenID producer, Liferay works and has been tested with it. Simply use the OpenID authentication feature in Liferay to log in using Crowd.
 
-##### Authentication: OpenSSO
+##### Authentication: OpenSSO [](id=lp-6-1-ugen12-authentication-opensso-0)
 
 OpenSSO is an open source single sign-on solution that comes from the code base of Sun's System Access Manager product. Liferay integrates with OpenSSO, allowing you to use OpenSSO to integrate Liferay into an infrastructure that contains a multitude of different authentication schemes against different repositories of identities.
 
@@ -773,7 +773,7 @@ You can set up OpenSSO on the same server as Liferay or a different box. Follow 
 
 In the same browser window, go to the URL for your server running Liferay and log in as the same user, using the email address *test@liferay.com*. Go to the control panel and click *Settings &rarr; Authentication &rarr; OpenSSO*. Modify the three URL fields (Login URL, Logout URL, and Service URL) so that they point to your OpenSSO server (i.e., only modify the host name portion of the URLs), click the *Enabled* check box, and then click *Save*. Liferay will then redirect users to OpenSSO when they click the *Sign In* link.
 
-##### Authentication: SiteMinder
+##### Authentication: SiteMinder [](id=lp-6-1-ugen12-authentication-siteminder-0)
 
 SiteMinder is a single sign-on implementation from Computer Associates. Liferay 5.2 introduced built-in integration with SiteMinder. SiteMinder uses a custom HTTP header to implement its single sign-on solution.
 
@@ -783,7 +783,7 @@ The last field defines the header SiteMinder is using to keep track of the user.
 
 When you are finished, click *Save*. Next, let's examine how to configure portal-wide user settings.
 
-#### Users
+#### Users [](id=lp-6-1-ugen12-users-0)
 
 The Users page of Portal Settings has three tabs: Fields, Reserved Credentials, and Default User Associations.
 
@@ -805,11 +805,11 @@ The Default User Associations tab has three fields allowing you to list (one per
 
 If you have defined other user groups, sites, or roles that you want newly created users to be members of by default, enter them here. For example, you may have defined site templates in certain user groups to pre-populate end users' private pages. If there is a particular configuration that you want everyone to have, you may want to enter those user groups here.
 
-#### Mail Host Names
+#### Mail Host Names [](id=lp-6-1-ugen12-mail-host-names-0)
 
 The next page under Portal Settings is Mail Host Names. You can enter (one per line) other mail host names besides the one you configured on the General tab. This lets the portal know which mail host names are owned by your organization.
 
-#### Email Notifications
+#### Email Notifications [](id=lp-6-1-ugen12-email-notifications-0)
 
 There are five tabs under the Email Notifications page of Portal Settings. The Sender tab allows you to set the portal's administrative name and email address. By default, these are `Joe Bloggs` and `test@liferay.com`. You can change them to whatever you want. This name and email address will appear in the From field in all email messages sent by the portal.
 
@@ -821,11 +821,11 @@ The other four tabs are Account Created Notification, Email Verification Notific
 
 A list of tokens, entitled "Definition of Terms," is provided so that you can insert certain values (such as the portal URL or the user ID) when you are setting up the custom email messages.
 
-#### Identification
+#### Identification [](id=lp-6-1-ugen12-identification-0)
 
 The identification section has several links for addresses, phone numbers, and other information you can configure in your portal. This allows you to set up contact information for the organization that owns the portal. Developers can query for this information in their applications.
 
-#### Miscellaneous: Display Settings
+#### Miscellaneous: Display Settings [](id=lp-6-1-ugen12-miscellaneous-display-settings-0)
 
 This section allows you to set the default portal language and the time zone. You can also set up a portal-wide logo which appears in the top left corners of portal pages. 
 
@@ -833,7 +833,7 @@ This section allows you to set the default portal language and the time zone. Yo
 
 Liferay's default theme is configured to display the portal logo. For custom themes, you can choose whether or not to display the logo. Be careful to choose an image file that fits the space. If you pick something that is too big, it might overlap with the navigation. Next, let's look at how to customize different types of portal assets using custom fields.
 
-### Custom Fields
+### Custom Fields [](id=lp-6-1-ugen12-custom-fields-0)
 
 Custom fields are a way to add attributes to many types of assets in the portal. For example, if you're using Liferay Portal to create a site for rating books, you might assign the User object a custom field called Favorite Books. If you're using the wiki for book reviews, you might add fields for Book Title and Book Author.
 
@@ -847,21 +847,21 @@ From here you will need to add the custom field key. The key appears as the labe
 
 You can create fields of many different types: text fields (indexed or secret), integers, selection of multiple values, and more. Once you've created a field, you cannot change its type.
 
-### Monitoring
+### Monitoring [](id=lp-6-1-ugen12-monitoring-0)
 
 The next link on the left side of the control panel is for monitoring. You can use the Monitoring page to view all of the live sessions in the portal. For performance reasons, this setting is usually turned off in production.
 
-### Plugins Configuration
+### Plugins Configuration [](id=lp-6-1-ugen12-plugins-configuration-0)
 
 The Plugins Configuration page contains tabs for three types of plugins: portlets, themes, and layouts. You can use these tabs to view which roles can add plugins to pages or you can make the plugins active or inactive.
 
 Note that this is for basic configuration: if you want to view the existing permission configuration for a given portlet and/or modify that configuration for existing roles, this is where you can do that. If you need to add permissions to new roles for a given portlet, use the Roles section of the control panel and the *Actions &rarr; Define Permissions* button. Next, let's look at how to apply server configurations.
 
-### Server Administration
+### Server Administration [](id=lp-6-1-ugen12-server-administration-0)
 
 The Server Administration page of the control panel lets you perform various tasks related to the portal server itself, as opposed to the resources in the portal. Clicking the link makes this clear: you're immediately presented with a graph showing the resources available in the JVM.
 
-#### Resources
+#### Resources [](id=lp-6-1-ugen12-resources-0)
 
 The first tab is called *Resources* . This tab contains the aforementioned graph plus several server wide actions that an administrator can execute. These are:
 
@@ -883,11 +883,11 @@ The first tab is called *Resources* . This tab contains the aforementioned graph
 
 **Clean up Permissions:** This process removes the assignment of some permissions on the Guest, User and Power User roles in order to simplify the management of "User Customizable Pages". Notably, "Add To Page" permissions is removed from the Guest, and User role for all portlets. Likewise the same permission is reduced in scope for Power Users from portal wide to scoped to "User Personal Site".
 
-#### Log Levels
+#### Log Levels [](id=lp-6-1-ugen12-log-levels-0)
 
 The Log Levels tab of the Server Administration page allows you to dynamically modify the log levels for any class hierarchy in the portal. If you have custom code that you have deployed which isn't in the list, you can use the *Add Category* tab to add it. If you change the log level near the top of the class hierarchy (such as at `com.liferay`), all the classes under that hierarchy will have their log levels changed. If you are testing something specific, it is much better to be as specific as you can when you change log levels. Modifying them too high in the hierarchy generates a lot more log messages than you need.
 
-#### Properties
+#### Properties [](id=lp-6-1-ugen12-properties-0)
 
 Liferay and the JVM contain many settings which are defined as properties. There are two subtabs of the properties tab of the Server Administration page: one showing system properties and one showing portal properties.
 
@@ -895,13 +895,13 @@ The system properties tab shows an exhaustive list of system properties for the 
 
 The portal properties tab tab shows an exhaustive list of the portal properties. These properties can be customized, as we saw in chapter 12. If you need to check the current value of a particular property, it can be viewed from this screen without having to shut down the portal or open any properties files.
 
-#### Captcha
+#### Captcha [](id=lp-6-1-ugen12-captcha-0)
 
 By default, Liferay ships with its own simple captcha service which is designed to thwart bots from registering for accounts on sites powered by Liferay. If you want to instead use Google's reCaptcha service, you can enable this setting from the Captcha tab of the Server Administration page.
 
 Simply check the *Enable ReCaptcha* box and enter your public and private keys into the provided fields, and then click *Save*. Liferay Portal will then use reCaptcha instead of simple captcha.
 
-#### Data Migration
+#### Data Migration [](id=lp-6-1-ugen12-data-migration-0)
 
 If you are upgrading from a previous release of Liferay Portal or if you need to migrate your data from one system to another, the Data Migration tab helps you to do that without your developers having to write custom scripts.
 
@@ -911,21 +911,21 @@ The next section helps you migrate your documents. If you want to move off of th
 
 Similarly, you can migrate images from the Image Gallery in the same manner.
 
-#### File Uploads
+#### File Uploads [](id=lp-6-1-ugen12-file-uploads-0)
 
 Since Liferay allows users to upload files in various places, you may want to lock down the type of files and the size of files users are allowed to upload. The File Uploads tab of the Server Configuration tab lets you set the overall maximum file size and then override that size for specific applications within Liferay. You can limit the allowed file extensions generally or by application. You have a lot of flexibility as to how you want files to be managed within your portal.
 
-#### Mail
+#### Mail [](id=lp-6-1-ugen12-mail-0)
 
 Rather than using the `portal-ext.properties` file as we did in the installation chapter, you can configure a mail server from the Mail tab of the Server Configuration tab. If the portal is to receive mail (see the Message Boards portlet in Chapter 4), you can connect a POP mail server. If the portal is to send mail, which it needs to do in order to send notifications to users, you can connect to an SMTP server here as well, and this is highly recommended.
 
 Note that if you add your mail server settings here, they will override anything that is in your `portal-ext.properties` file.
 
-#### External Services
+#### External Services [](id=lp-6-1-ugen12-external-services-0)
 
 Liferay Portal enables users to add content in many formats: web content, images, and files. This is done using the Web Content Management System, the Image Gallery, the Documents and Media Library, and in other portlets, both built-in and custom written. Sometimes, it is helpful to convert this content from its original format to one that is more convenient for the user browsing the content. Liferay Portal allows users to do this by integrating with OpenOffice and Xuggler.
 
-OpenOffice is an open source office suite which usually runs in graphical mode to create documents, but it can also be run in “server” mode. When run in server mode, OpenOffice can be used to convert documents to and from all of the file types it supports. Liferay can then make use of this feature to automatically convert content on the fly. Xuggler provides video conversion functionality.
+OpenOffice is an open source office suite which usually runs in graphical mode to create documents, but it can also be run in "server" mode. When run in server mode, OpenOffice can be used to convert documents to and from all of the file types it supports. Liferay can then make use of this feature to automatically convert content on the fly. Xuggler provides video conversion functionality.
 
 Use the External Services tab to tell Liferay how to connect to your running instance of OpenOffice or Xuggler. You can install OpenOffice on the same server upon which Liferay is running. Once you have it installed, you can start OpenOffice in server mode with the following command:
 
@@ -936,17 +936,17 @@ As you can see, the command above specifies that OpenOffice will run on port 810
 
 If you have something else running on this port, find a port that is open and specify it both in the command above and on the control panel's External Services configuration page. When you are finished, click *Save*.
 
-#### Script
+#### Script [](id=lp-6-1-ugen12-script-0)
 
 Liferay includes a scripting console which lets administrators execute migration or management code instantly. Several scripting languages are supported, including JavaScript, Groovy, Python, Ruby, and Beanshell. For further information about Liferay's APIs, see the JavaDoc, the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)), or [*Liferay in Action*](http://manning.com/sezov).
 
-#### Shutdown
+#### Shutdown [](id=lp-6-1-ugen12-shutdown-0)
 
 If you ever need to shut down your Liferay Portal server while users are logged in, you can use the Shutdown tab to inform your logged-in users of the impending shutdown. You can define the number of minutes until the shutdown and a custom message that will be displayed.
 
 Users will see your message at the top of their portal pages for the duration of time you specified. When the time expires, all portal pages will display a message saying the portal has been shut down. At this point, the server will need to be restarted to restore access. Next, let's examine how to manage multiple portal instances.
 
-### Portal Instances
+### Portal Instances [](id=lp-6-1-ugen12-portal-instances-0)
 
 Liferay Portal allows you to run more than one portal instance on a single server. The Portal Instances page of the control panel lets you manage these instances. Data for each portal instance are kept separate from every other portal instance. All portal data, however, is kept in the same database.
 
@@ -966,11 +966,11 @@ You'll be prompted for four fields and a check box:
 
 When you are finished filling out the form, click *Save*. Now navigate to the portal using your new domain name. You will see that you are brought to what looks like a clean install of Liferay. This is your new portal instance which can now be configured any way you like.
 
-### Plugins Installation
+### Plugins Installation [](id=lp-6-1-ugen12-plugins-installation-0)
 
 The *Plugins Installation* page of the control panel shows all of the plugins that are currently installed. These are divided into tabs for portlets, themes, layout templates, hook plugins, and web plugins. If you want to install a new plugin, click the *Install More Portlets* button. You will then be brought to the Plugin Installer, where you can browse Liferay's repository of portlets or install your own plugins. We covered the plugins installer in chapter 2.
 
-## Summary
+## Summary [](id=summ-33)
 
 In this chapter we described how to use Liferay's control panel to manage users, user groups, organizations, sites, and roles. We showed how to configure various server settings, such as authentication, LDAP integration, and single sign-on. We also learned how to associate users by default with different user groups, sites, and roles, and we saw how to reserve screen names and email addresses so that users cannot register in the portal with them.
 
