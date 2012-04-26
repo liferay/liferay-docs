@@ -233,7 +233,7 @@ When you've finished setting the options in the portlet, click *Save*. Then clos
 
 In the control panel there's a portlet for managing your site's blog entries. Most of the time, the Blogs portlet is the only tool you'll need to manage your blog entries. If, however, you need to massively delete blog entries, the blogs administrator portlet is the perfect tool for you. 
 
-![Figure 4.x: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
+![Figure 4.11: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
 
 Note that it's only for batch processing of blog entries; for the full set of tools for managing blog entries, your best bet is to use the Blogs portlet.  
 
@@ -251,7 +251,7 @@ Let's move on, now, to the Calendar portlet.
 
 Liferay's Calendar portlet is a complete calendaring solution. You can schedule any number of events of different types, receive alarms via email or text message, import and export your calendar, and much more. Additionally, you can import and export the calendar to and from the popular iCalendar format for use in other applications.
 
-![Figure 4.11: The Liferay Calendar Portlet](../../images/05-calendar-portlet.png)
+![Figure 4.12: The Liferay Calendar Portlet](../../images/05-calendar-portlet.png)
 
 In a similar way to the Blogs portlet, you can use the Calendar portlet as a shared calendar on a web site or as a personal calendar -- or both. Let's look at how to configure it. 
 
@@ -317,7 +317,7 @@ As you can see, the Calendar portlet is easy to use and convenient for users of 
 
 Liferay's Chat portlet provides a convenient way of allowing users to send each other instant messages when they are logged into your web site. It appears as a bar at the bottom of every page, showing who is logged on, their statuses, and any chats the logged-in user has open.
 
-![Figure 4.12: Liferay's Chat Portlet](../../images/05-liferay-chat-portlet.jpg)
+![Figure 4.13: Liferay's Chat Portlet](../../images/05-liferay-chat-portlet.jpg)
 
 The Chat portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Chat portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the Chat portlet in the list, click on it, and then click *Install*.
 
@@ -348,7 +348,7 @@ You can use any chat server that supports Jabber. The Chat portlet's Jabber serv
 
 Note that you must change `jabber.service.name` to the "Host Name". If you are using Openfire, you can find the Host Name by using the Openfire administration web tool. If you did not set up administrative credentials when you started Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 4.13: Openfire Administration Web Tool](../../images/jabber.service.name.png)
+![Figure 4.14: Openfire Administration Web Tool](../../images/jabber.service.name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added the correct values to `jabber.host` and `jabber.port`. If you installed your chat server on a remote machine or chose to not use the default port, change `jabber.host` and `jabber.port` accordingly.
 
@@ -372,7 +372,7 @@ Liferay's Mail portlet enables your users to interact with their email using an 
 
 The Mail portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Mail portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the *Mail* portlet in the list, click on it, and then click *Install*.
 
-![Figure 4.14: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
+![Figure 4.15: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
 
 To connect the Mail portlet with an email account, click the *Add a New Email Account* link. From there, you are given a choice between a Custom email Account or a Gmail Account. Choose the option that you wish, and fill out the form that appears.
 
@@ -497,7 +497,7 @@ Starting with Liferay 6.1, categories can have different display styles. The ava
 
 **Question:** designed for discussions in a format of questions and answers.
 
-![Figure 4.15: Editing a Message Boards Category](../../images/05-editing-message-board-category.png)
+![Figure 4.16: Editing a Message Boards Category](../../images/05-editing-message-board-category.png)
 
 At the bottom of the form is a check box that allows you to enable the mailing list function.
 
@@ -555,11 +555,11 @@ For administrators, the Statistics tab shows the number of categories, the numbe
 
 To post a new thread simply select the *Post New Thread* button. You will see a message editing form. The body field on this form is different from that of the other portlets in Liferay. The reason for this is to support *BBCode*, which is a standard form of markup used in many message board products. Before BBCode was invented, many message board products would allow users to enter HTML to format their messages. This, however, enabled attackers to insert malicious code into the message board. BBCode was invented to provide users a way of formatting their messages without allowing them to enter HTML. Similarly, Liferay supports BBCode in the message boards portlet because the other editor--which is used for the Content Management System, the Blogs portlet, and other portlets--produces HTML. This is appropriate for those other portlets, as they are only used by privileged users, but it is not appropriate for the message boards. Besides this, many users of message boards are familiar with BBCode and are used to it, and the editor that is provided for Liferay's Message Boards portlet makes it very easy to use.
 
-![Figure 4.16: Editing a Message Boards Post](../../images/05-editing-message-board-post.png)
+![Figure 4.17: Editing a Message Boards Post](../../images/05-editing-message-board-post.png)
 
 The message boards editor is quite rich. It supports bold, italicized, underlined, and crossed-out text, links, images, colors, lists, tables, alignments, quotation blocks, code blocks, different fonts and font sizes, and more. There are even a bunch of smiley faces that you can use.
 
-![Figure 4.17: Emoticons Available in the Editor](../../images/05-emoticons.png)
+![Figure 4.18: Emoticons Available in the Editor](../../images/05-emoticons.png)
 
 Users who have Moderator access to the board can modify the priority of messages. You can also use the editor to quote from messages that you are replying to, to insert emoticons, to add preformatted text, and more. Messages that are posted to the message boards are shown by default in a threaded view so that replies are attached to the proper parent message. This makes it easy to follow along with conversations.
 
@@ -575,7 +575,7 @@ The Message Boards portlet provides for the day to day administration of the mes
 
 Go to the control panel and create this role. Once it is created, click *Actions &rarr; Define Permissions*. Click the *Add Permissions* dropdown list. Browse the list until you find the Message Boards portlet under the Site Content section and then click on it. You will then see a screen which allows you to configure the various permissions on the portlet.
 
-![Figure 4.18: Defining Permissions for the Message Board Administrators Role](../../images/05-defining-permissions-message-board-admin-role.png)
+![Figure 4.19: Defining Permissions for the Message Board Administrators Role](../../images/05-defining-permissions-message-board-admin-role.png)
 
 Select the permissions you would like message board administrators to have and then click *Save*. You can add users to this role and they will inherit the permissions. Message Board administrators can perform all of the functions we have already presented, including creating and deleting categories and posting threads. In addition to these, a number of other functions are available.
 
@@ -621,7 +621,7 @@ Rather than define another wikitext syntax, Liferay's Wiki portlet supports Wiki
 
 The Wiki portlet works just like the other portlets developed by Liferay. Add the portlet to a page using the *Add &rarr; More* menu and then click *Configuration* in the portlet menu in the Wiki portlet's title bar. You'll see some options are likely to be familiar to you by now such as sharing the application with websites, Facebook, Google Gadgets, etc. You will also notice that the communication tab has some additional options not seen in the other portlets.
 
-![Figure 4.19: Communication Tab of the Wiki Portlet](../../images/05-wiki-configuration.png)
+![Figure 4.20: Communication Tab of the Wiki Portlet](../../images/05-wiki-configuration.png)
 
 The communication tab of the configuration window allows you to configure communication across portlets, using predefined public render parameters. From here you can modify six public render parameters: categoryId, nodeId, nodeName, resetCur, tag, and title. For each parameter you can:
 
@@ -665,7 +665,7 @@ Finally, the Wiki portlet also supports RSS feeds as the other collaboration por
 
 By default, there is one page added to your wiki, called *FrontPage*. To get started adding data to your wiki, click the *Edit* link at the top right of the portlet. You will be brought to a blank editing page.
 
-![Figure 4.20: Editing the Default Page in the Wiki Portlet](../../images/05-editing-wiki-page.jpg)
+![Figure 4.21: Editing the Default Page in the Wiki Portlet](../../images/05-editing-wiki-page.jpg)
 
 You can now begin to add content to the page. Notice that there is a very convenient "cheat sheet"? which can help with the wiki syntax. You can use this syntax to format your wiki pages. Consider, for example, the following wiki document:
 
@@ -689,7 +689,7 @@ Below are links to some sections that have already been added.
 
 This would produce the following wiki page:
 
-![Figure 4.21: Wiki Text Added to Front Page](../../images/05-wiki-front-page.png)
+![Figure 4.22: Wiki Text Added to Front Page](../../images/05-wiki-front-page.png)
 
 This adds a simple heading, a paragraph of text, and several links to the page. Since the pages behind these links have not been created yet, clicking one of those links takes you to an editing screen to create the page. This editing screen looks just like the one you used previously when you wrote the front page. Liferay displays a notice at the top of the page stating that the page does not exist yet, and that you are creating it right now. As you can see, it is very easy to create wiki pages. All you have to do is create a link from an existing page. Note that at the top of the screen you can select from the Creole wiki format and the HTML editor that comes with Liferay. We recommend that you stick with the Creole format, as it allows for a much cleaner separation of content and code. If you want all of your users to use the Creole format, you can disable the HTML format using the `portal-ext.properties` file. See chapter 14 for details about how to configure this.
 
@@ -757,7 +757,7 @@ Liferay's Knowledge Base portlet provides a means for creating and organizing ar
 
 The Knowledge Base app actually consists of four portlets that can be placed on site pages as well as one that adds a page to the control panel. The four portlets that can be placed on a page are Knowledge Base (Display), Knowledge Base Search, Knowledge Base Article, and Knowledge Base Section. When placed on a page, the Knowledge Base display portlet presents many of the same options to an administrator that are available from the Knowledge Base page of the control panel.
 
-![Figure 4.22: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
+![Figure 4.23: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
 
 You can use the four links at the top of the Knowledge Base display portlet to control what it displays.
 
@@ -771,13 +771,13 @@ You can use the four links at the top of the Knowledge Base display portlet to c
 
 The *Add Article* button is available from the Knowledge Base Home or Administrator view of the Knowledge Base display portlet or from the Articles tab of the Knowledge Base page of the control panel. Use this button to create an article for the knowledge base. When creating an article, you can use the same WYSIWYG editor that you used to create wiki pages. Articles, however, are not the same as wiki pages: they must be created in HTML, not MediaWiki or Creole. Click the *Source* button in the editor to view the HTML source of what you've written or write some HTML yourself.
 
-![Figure 4.23: New Knowledge Base Article](../../images/liferay-collaboration-kb-new-article.png)
+![Figure 4.24: New Knowledge Base Article](../../images/liferay-collaboration-kb-new-article.png)
 
 In addition to entering a title and creating content for your article, you can use the editor to add attachments, add tags, and set permissions. By default, view permission is granted to the guest role, meaning that anyone can view your article. After you're done using the editor, you can save it as draft and continue working on it later, or you can submit it for publication. Your article may need to be approved before being published, depending on the workflow defined for your portal.
 
 You can find the *Permissions* button next to the Add Article button in the Knowledge Base display portlet or on the Knowledge Base page of the control panel. Click this button to define permissions that apply to the Knowledge Base display portlet generally, not to particular articles. Here, you can define which roles can add articles and templates, which are granted knowledge base administrator privileges, which can change permissions on articles, which can subscribe to articles, and which can view templates. 
 
-![Figure 4.24: Knowledge Base Permissions](../../images/liferay-collaboration-kb-permissions.png)
+![Figure 4.25: Knowledge Base Permissions](../../images/liferay-collaboration-kb-permissions.png)
 
 Users may need to be granted access to the knowledge base page of the control panel in order to exercise some of the above permissions. For example, suppose that the user role has been granted the Add Article and the View Templates permissions. A user will be able to add articles from the knowledge base display portlet but will need access to the knowledge base page of the control panel in order to view templates. Note that the Knowledge Base (Display) permissions are distinct from the Knowledge Base (Admin) portlet. The display permissions define what a user can do with the Knowledge Base display portlet on a page while the admin permissions define what a user can do on the Knowledge Base page of the control panel.
 
@@ -785,7 +785,7 @@ Users may need to be granted access to the knowledge base page of the control pa
 
 The Knowledge Base page of the control panel has two tabs: one for articles and one for templates. The articles tab shows all the articles in the knowledge base and lets you perform actions on them. The templates tab shows all the templates defined in the knowledge base and lets you perform actions on them.
 
-![Figure 4.25: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
+![Figure 4.26: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
 
 Administrators can perform the following actions on an article:
 
@@ -805,7 +805,7 @@ These actions are similar to the ones that can be performed from the Administrat
 
 The templates tab of the Knowledge Base page of the control panel allows administrators to create templates to facilitate the creation of articles. A template basically functions like a starting point for the creation of certain types of articles. Click the *Add Template* button on the Templates tab of the Knowledge Base page of the control panel to create a new template. 
 
-![Figure 4.26: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
+![Figure 4.27: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
 
 Navigate back to the templates tab of the Knowledge Base page of the control panel. You can perform the following actions on a template:
 
@@ -823,7 +823,7 @@ To use a template to create a new article, you have view the template and then c
 
 The Knowledge Base Article portlet can be placed on a page to display a an entire article. When you first place this portlet on a page it displays the message *Please configure this portlet to make it visible to all users*. This message is a link to the configuration dialog box for the portlet. Click *Select Article* to choose an article to display. Pick an article and then click *Save*. When your page refreshes it will display the article in the portlet. 
 
-![Figure 4.27: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
+![Figure 4.28: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the article it displays. There are also links at the top of the portlet that users can use to subscribe to an RSS feed of the knowledge base, subscribe to the article, view the history of the article, or print the article.
 
@@ -833,7 +833,7 @@ The Knowledge Base Section portlet allows administrators to selectively show art
 
 Once you have defined some sections in your knowledge base's `portlet.properties` file, your users will see a multi-select box in the Add Article and Edit Article screens that allows them to select which section an article belongs to. You can add any number of Knowledge Base section portlets to a page and you can configure each portlet to display articles from any number of sections.
 
-![Figure 4.28: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 4.29: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 The Knowledge Base section portlet has some additional configurations that allow an administrator to select a display style (title or abstract), an article window state (maximized or normal), how to order the articles, how many articles to display per page, and whether or not to show pagination.
 
@@ -841,11 +841,11 @@ The Knowledge Base section portlet has some additional configurations that allow
 
 Wikis often have deeply nested articles that can be hard to find by browsing. Liferay's knowledge base's ability to selectively display articles makes it easier to browse than a Wiki. The knowledge base also features some other aids to navigation. The Knowledge Base Search portlet allows you to search for articles in the knowledge base. This portlet presents the search results to you in order from most relevant to least relevant. 
 
-![Figure 4.29: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
+![Figure 4.30: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
 
 You can also use the Categories Navigation portlet in conjunction with the Knowledge Base display portlet. When both of these portlets are placed on a page you can select a topic in the Categories Navigation portlet and the Knowledge Base display portlet will show all of the articles that match the topic. You can create topics from the Categories page of the control panel.
 
-![Figure 4.30: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+![Figure 4.31: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them. Next, let's take a look at the Documents and Media library, Liferay's general mechanism for creating and storing files in the portal.
 
@@ -857,7 +857,7 @@ Liferay's Documents and Media portlet provides a mechanism for storing files onl
 
 Liferay's Documents and Media portlet has been redesigned and renamed for Liferay 6.1. The previous version was called the Document Library portlet. The new Documents and Media portlet supports customizable document types and metadata sets. These document types and metadata sets are an addition to, not a replacement for, the portal's system of tags and categories. Additionally, Liferay 6.1 allows multiple repositories to be mounted onto the Documents and Media portlet. 
 
-![Figure 4.31: Initial View of the Documents and Media Portlet](../../images/05-document-library.png)
+![Figure 4.32: Initial View of the Documents and Media Portlet](../../images/05-document-library.png)
 
 The default view of the Documents and Media portlet displays the contents of the Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you want the main window of the portlet to display. Recent Documents displays documents that users have recently used. For example, recently uploaded, edited, or downloaded documents are displayed here. My Documents shows *your* documents; in other words, the documents that you have uploaded. Basic Document and the document types listed below it are also filters. If you click on one of these filters, the main portlet window shows only documents that belong to the selected document type. When you add custom Document types, which we discuss below, they are added to the filter list.
 
@@ -867,7 +867,7 @@ Let's look at how you'd navigate around Documents and Media.
 
 In the main window of the Documents and Media portlet, you can click on a document to view details about it. Its version number, version history, status, and content type will be displayed as well as its uploader and the user who last edited it. You can perform several actions on the document here. You can edit the document to change its contents, point it to a different file, change its title, description, or document type, or add tags, categories, or related assets. You can move the document to a new location. You can checkout the document to prevent other users from modifying the document while you are working. You can configure the file-specific permissions of the document. You can download the document or get its URL or Webdav URL. If comments are enabled, you can view comments, add comments, or subscribe to comments about this document.
 
-![Figure 4.32: Viewing a Document](../../images/05-doclib-document-view.png)
+![Figure 4.33: Viewing a Document](../../images/05-doclib-document-view.png)
 
 The menu at the top of the Documents and Media portlet contains Actions, Add, Sort By, and Manage buttons. There are also buttons for switching between icon view, descriptive view, and list view and there is a search field. If your portlet contains more documents than it can display at once, you can use the navigation tool at the bottom of the portlet window to either switch your view to another page or configure the page to display more documents per page. 
 
@@ -931,7 +931,7 @@ The Manage menu allows you to view the names of document types and metadata sets
 
 Adding repositories in Documents and Media is a new feature in Liferay 6.1. Documents and Media allows to connect to multiple third-party repositories that support CMIS 1.0 with AtomPUB and Web Services protocols. You can add new repositories from the UI by clicking the *Add* button from the Home folder. Repositories can only be mounted in the Home folder.
 
-![Figure 4.33: Adding a new repository](../../images/05-new-repository.png)
+![Figure 4.34: Adding a new repository](../../images/05-new-repository.png)
 
 The admin must ensure the same credentials and authentication are being used in Liferay and in the external repository. This is normally synchronized using a mechanism like LDAP. If you don't have LDAP you need to ensure manually that the credentials and authentication are the same. In order to authenticate with the third-party repository you need to enable the following property:
 
@@ -939,25 +939,25 @@ The admin must ensure the same credentials and authentication are being used in 
 
 The repository is displayed in the left side of the window in the Home folder.
 
-![Figure 4.34: Viewing a repository](../../images/05-repository.png)
+![Figure 4.35: Viewing a repository](../../images/05-repository.png)
 
 ### Document Types and Metadata Sets [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
 
 Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields defined by the metadata set of the document type. This helps encourage users not to forget to enter important information about their documents. For example, you could create a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button at the top of the Documents and Media portlet window.
 
-![Figure 4.35: Document Types Dialog Box](../../images/05-document-types.png)
+![Figure 4.36: Document Types Dialog Box](../../images/05-document-types.png)
 
 You can add a new document type using the Add button at the top of the dialog box. To do so, you need to define one or more metadata sets to associate with your document type. When creating a new document type, you can define "Main Metadata Fields" or select "Additional Metadata Fields". Main metadata fields are directly tied to their document type and cannot be made available to other document types. Additional metadata fields, by contrast, can be defined independently and can be used in many different document types. You can differentiate the document types that implement the same additional metadata set by defining different main metadata fields for them. However, Additional metadata fields need to be defined and saved before creating a document type that will implement them. 
 
-![Figure 4.36: Adding a New Document Type](../../images/05-new-document-type.png)
+![Figure 4.37: Adding a New Document Type](../../images/05-new-document-type.png)
 
 Let's create a document type called "Syllabus" and define a metadata set. What metadata should we associate with syllabi? Let's choose for our syllabi to have course title, professor, semester, course description, and course requirements fields. All syllabi in our portal should maintain entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for. Since we don't want to use our metadata set for any document type other than "Syllabus," let's create our metadata set under the Main Metadata Fields area. Alternatively, we could create our metadata set independently using *Manage &rarr; Metadata Sets &rarr; Add* and then select it as an Additional Metadata Field. 
 
-![Figure 4.37: Selecting Additional Metadata Sets](../../images/05-selecting-additional-metadata-sets.png)
+![Figure 4.38: Selecting Additional Metadata Sets](../../images/05-selecting-additional-metadata-sets.png)
 
 You can view, edit, or add metadata sets from the *Manage &rarr; Metadata* window. A metadata set consists of a group of fields. If you click the Add button, can use same UI for defining a metadata set that you used in the Add Document Type window.
 
-![Figure 4.38: Adding a New Metadata Set](../../images/05-new-metadata-set.png)
+![Figure 4.39: Adding a New Metadata Set](../../images/05-new-metadata-set.png)
 
 Make sure the Fields tab is selected on the left. Then, to define a metadata set, just choose fields to use from the area on the left and drag and drop them into the area on the right. The drag and drop interface allows for nested fields so you need to be careful about where you drop the fields. Default values, mouse-over tips, widths, and other settings can be configured for most fields. To configure these settings, just double-click on a field from the area on the right. This automatically selects the Settings tab on the left. Then double-click on a value to edit. Liferay supports the following kinds of fields for metadata sets:
 
@@ -1013,15 +1013,15 @@ and enable either through External Services in Control Panel or in `portal-ext.p
 
 With the above tools installed and enabled, Documents and Media looks like this:
 
-![Figure 4.39: Previews in Documents and Media](../../images/05-previews.png)
+![Figure 4.40: Previews in Documents and Media](../../images/05-previews.png)
 
 You can view a document with a customized viewer that allows you to navigate through the different pages of the document and read its content.
 
-![Figure 4.40: Viewing an office document](../../images/05-document-preview.png)
+![Figure 4.41: Viewing an office document](../../images/05-document-preview.png)
 
 You can view a multimedia document (audio or video) and play it online. If the browser supports HTML5, it uses the native player of the browser. Otherwise it falls back to a Flash player.
 
-![Figure 4.41: Playing a video](../../images/05-video-preview.png)
+![Figure 4.42: Playing a video](../../images/05-video-preview.png)
 
 Document previews are powerful, and help users to more successfully browse the media to find what they're looking for. 
 
@@ -1035,11 +1035,11 @@ You can see the metadata when viewing the document, in the right side of the win
 
 You can force users to add only certain document types to a folder. By default, child folders inherit the restrictions of their parent folder. You can change this behavior by editing the folder and selecting the allowed document types.
 
-![Figure 4.42: Restrict Marketing folder to use specific document types](../../images/05-document-type-restriction.png)
+![Figure 4.43: Restrict Marketing folder to use specific document types](../../images/05-document-type-restriction.png)
 
 If workflow is enabled, you can specify different workflow definitions per folder. Furthermore, you can specify different workflow definition per document type and per folder. You can set this by editing the folder. Then, the UI will look like this:
 
-![Figure 4.43: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
+![Figure 4.44: Restrict Marketing folder to use specific document types and workflow](../../images/05-document-type-workflow-restriction.png)
 
 Document types are a powerful way to enforce rules for documents uploaded by users. Next, we'll see a way to make it incredibly easy for users to access documents stored in Liferay's Documents and Media repositories. 
 
@@ -1051,7 +1051,7 @@ Suppose you've created an *Image Gallery* folder using a Documents and Media por
 
 Next, navigate to the Documents and Media portlet hosting the folder you'd like to access. Mouse over the folder (*Image Gallery* for our example) and select *Access from Desktop*.
 
-![Figure 4.44: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/access-from-desktop.png)
+![Figure 4.45: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/access-from-desktop.png)
 
 Copy the WebDAV URL. On Windows, right-click on My Computer and select *Map Network Drive*. Select an unused drive, paste the WebDAV URL, and click *Finish*. You're prompted to enter your Liferay credentials and then, provided you have the required permissions, the *Image Gallery* folder appears. You can now add, edit, move, or delete files in this directory. 
 
@@ -1083,7 +1083,7 @@ For Windows or Mac OS, visit the Liferay Sync product page [Liferay Sync Product
 
 Upon launching the Windows application installer, you'll be prompted to choose an installation location for Liferay Sync. Browse to an appropriate location on your machine and click *Next*.
 
-![](../../images/liferay-sync-setup.png)
+![Figure 4.46: Use the Liferay Sync Installation wizard to choose an installation location.](../../images/liferay-sync-setup.png)
 
 On the next screen, you can configure some properties for Liferay Sync. There are three items listed in the *General Settings* section. *Start Liferay Sync on Login* is checked by default. If you don't want Sync to start automatically, uncheck this. *Show Desktop Notifications* is also checked by default. Unless you uncheck this, when a file that you have synced is changed, a small notification will appear in the corner of your screen. The *Check Server For Updates Every:* field enables you to set how frequently it will check to see if anything has changed. This can be set anywhere between 5 seconds and 30 minutes.
 
@@ -1091,11 +1091,11 @@ Click the *Edit Settings* button in the *Account Settings* section to specify yo
 
 Finally, the *Site Settings* section allows you to choose which sites you wish to sync media from. By default, it will list all of the sites that you are a member of, but you can uncheck any of those sites if you don't want to sync those files.
 
-![](../../images/liferay-sync-properties.png)
+![Figure 4.47: Open the Liferay Sync menu and select *Properties* to edit the settings you configured during setup.](../../images/liferay-sync-properties.png)
 
 On the last screen, leave the *Run Liferay Sync* button checked to automatically start Liferay Sync after you click *Finish*.
 
-![](../../images/liferay-sync-setup-complete.png)
+![Figure 4.48: You'll see the following screen once Liferay Sync has been installed. Click *Finish* to exit the installation wizard.](../../images/liferay-sync-setup-complete.png)
 
 The options for the Mac OS application installer are similar.
 
@@ -1103,11 +1103,11 @@ The options for the Mac OS application installer are similar.
 
 Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG mounts it as a disk image, and opens a window showing the contents of the image. To install Sync, drag the Liferay Sync icon to the Applications folder. Once it's installed, go to your Applications folder to run it.
 
-![](../../images/liferay-sync-mac-install.png)
+![Figure 4.49: Drag the Liferay Sync icon to the Applications folder.](../../images/liferay-sync-mac-install.png)
 
 When you launch Liferay Sync, the first thing you need to do is provide it with the URL for the Liferay server that you'll be using Sync with, along with your Liferay credentials. After that, you'll need to run through a brief setup process that was described above for Windows.
 
-![](../../images/liferay-sync-mac-preferences.png)
+![Figure 4.50: Provide the same information  requested by the Windows application installer.](../../images/liferay-sync-mac-preferences.png)
 
 Once you've finished your configuration and have clicked *OK*, Liferay Sync starts running in the background, and an icon appears in your top menu bar. If you wish to change any of your settings, click the icon to open the Liferay Sync menu and click on *Properties*.
 
@@ -1119,7 +1119,7 @@ For iOS, visit the App Store, search for Liferay, and install the Liferay Sync A
 
 Once installed, you'll see a Liferay Sync icon in your taskbar whenever it's running. A green checkmark means Liferay Sync has a working connection to your Liferay server and is updating the files in your Sync folder according to the interval you specified in the wizard. Click the Liferay Sync icon in your taskbar to bring up the menu.
 
-![](../../images/liferay-sync-taskbar-menu.png)
+![Figure 4.51: Open the Liferay Sync taskbar menu to acces the following options.](../../images/liferay-sync-taskbar-menu.png)
 
 *Open Sync Folder* opens your Liferay Sync folder in your native file manager.
 
@@ -1145,11 +1145,11 @@ Liferay Sync handles deletions via a special `liferay-sync.deletions` file. This
 
 You can run through the following exercise to familiarize yourself with how to create, edit, download, and upload files with Liferay Sync. First, open your Liferay Sync folder in your file manager (use the *Open Sync Folder* option of the Liferay Sync menu from the taskbar), and create a new file called *README.txt*. Edit this file and enter the word *test*. Then use the *Sync now* option of the Liferay Sync menu to make sure that your README.txt file gets uploaded to your Liferay server. Next, you'll check that you can access this file from your Liferay site. Open your browser, navigate to your Liferay site, and sign in with your Liferay account credentials. Then, navigate to your site's Documents and Media page in the Control Panel. Make sure the site you chose to sync with is selected in the context menu selector, and click on *Documents and Media*. You should see your README.txt file listed there.
 
-![](../../images/liferay-sync-documents-and-media.png)
+![Figure 4.52: You can access the same files from Liferay Sync that you can from Liferay's web interface.](../../images/liferay-sync-documents-and-media.png)
 
 Download the file (click the small triangle icon at the top right corner of the README.txt icon and select *Download*) to a convenient location on your machine and check that it still says *test*. Now open the *README.txt* file in your Sync folder and edit it so that it says *second test*. Choose *Sync now* again, and then go back to your browser and refresh your Documents and Media page. Click on the *README.txt* icon, look at the information displayed to the right, and you'll see that its version number has incremented.
 
-![](../../images/liferay-sync-README.png)
+![Figure 4.53: Updating a file thtrough Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/liferay-sync-README.png)
 
 Download the file again, and you'll see that it now says *second test*--your edit was uploaded to the server and downloaded again by Liferay Sync. You can be confident that this edit was also downloaded by all other Liferay Sync clients connected to your site.
 
@@ -1165,7 +1165,7 @@ Now that we've successfully learned how to use Liferay Sync, let's move on to Ta
 
 Tags are an important tool that you can use to help organize information on your portal and make it easier for your users to find content that they're looking for. Tags are words or phrases that you can attach to any content on the website. Tagging content will make your search results more accurate, and enable you to use tools like the Asset Publisher to display content in an organized fashion on a web page. There are two ways to create tags: you can do it through the administrative console in the control panel, or on the fly as content is created.
 
-![Figure 4.45: The Add Tag Dialog](../../images/05-add-tag.png)
+![Figure 4.54: The Add Tag Dialog](../../images/05-add-tag.png)
 
 To create tags in the control panel, select the site that you want to create tags for, and select *Tags*. From this screen, you will be able to view any existing tags and make new ones. To create a new tag, simply click *Add Tag*. You'll then be asked for the name of the tag, and you'll have the ability to set permissions for viewing or managing the tag. You can also add properties to a tag. Properties basically act like tags for your tags. Structurally, properties are key-value pairs associated with specific tags that provide information about your tags. You can edit existing tags from the *Tags* window of on the control panel. You can change the tag name, change the tag's permissions, delete the tag, or add properties.
 
@@ -1177,7 +1177,7 @@ Categories are similar in concept to tags, but are designed for use by administr
 
 Adding vocabularies and categories is similar to adding tags. Once you've selected the site you want to work on, select *Categories* from the content section of the control panel, and you will be presented with the categories administration page.
 
-![Figure 4.46: Categories Administration Page](../../images/05-categories.png)
+![Figure 4.55: Categories Administration Page](../../images/05-categories.png)
 
 Clicking on a vocabulary on the left will display any categories that have been created under that vocabulary. You can create new vocabularies simply by clicking *Add Vocabulary* and providing a name for it. You can create categories in a similar fashion by choosing a vocabulary on the left, and then selecting *Add Category*. Like tags, you can also provide properties for categories. Once you have created some vocabularies and categories, you can take advantage of the full capabilities of categories by creating a nested hierarchy of categories. To nest categories, select what you want to be the parent category, then drag any category that you want to become a child category onto it. You will see a plus sign appear next to the name of the category you are dragging if you can add it to the selected parent category; if you see a red *x* that means that you cannot add that category as a subcategory of parent category that you have selected.
 
@@ -1199,8 +1199,9 @@ Liferay's Wiki portlet is a state of the art wiki application that users can mak
 
 The Knowledge Base portlet provides administrators with a more formal way to create and organize articles than the Wiki. Administrators can create article templates which can be used to create articles that share a common structure. Knowledge base articles are easy to categorize hierarchically which makes them easy to browse and search. The Knowledge Base Article portlet can be used to display a single article and the Knowledge Base Section portlet can be configured to display a group of articles that belong to the same section. 
 
-Liferay's Documents and Media portlet allows users to store information online in the same type of directory structure that they use locally. The Documents and Media library supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Documents and Media library.
+Liferay's Documents and Media portlet allows users to store information online in the same type of directory structure that they use locally. The Documents and Media library supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Documents and Media library. Liferay Sync allows you to access Documents and Media files without using a browser. You can even access files offline. When online, Liferay Sync automatically syncs with the Documents and Media repository, uploading files you've modified and pulling down changes from others.
 
 Tying all of these applications together are tags and categories. Tags can be added to any content by end users, and hierarchies of categories can be added to the system by administrators to be applied to content anywhere in the portal. These help your users to find the content that is most relevant to them, empowering the search to be as accurate as possible.
 
-Liferay's collaboration platform is a full suite of integrated applications that empower users to work together. You can use them to great effect to enhance your portal and to build a vibrant, active community.
+Liferay's collaboration platform is a full suite of integrated applications that empower users to work together. You can use them to great effect to enhance your portal and to build a vibrant, active community. 
+
