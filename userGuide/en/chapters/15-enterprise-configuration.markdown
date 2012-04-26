@@ -1,4 +1,4 @@
-# Enterprise Configuration
+# Enterprise Configuration [](id=enterprise-configurati-5)
 
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is fully ready to support mission-critical, enterprise applications in an environment configured for multiple redundancies and 24/7 uptimes. The product, however, like other products of its kind, doesn't come configured this way out of the box, so there are some steps that need to be taken in order to tune it for your needs. 
 
@@ -17,7 +17,7 @@ Sometimes Liferay supports multiple products which perform the same function. Th
 
 With all of that said, let's get started configuring Liferay for the enterprise.
 
-## Liferay Clustering 
+## Liferay Clustering [](id=liferay-clusteri-2)
 
 Liferay Portal is designed to serve everything from the smallest to the largest web sites. Out of the box, it's configured optimally for a single server environment. If one server isn't sufficient to serve the high traffic needs of your site, Liferay scales to the size you need.  
 
@@ -43,7 +43,7 @@ Many of these configuration changes can be made by adding or modifying propertie
 
 We'll take each of the points above one by one in order to present a clear picture of how to cluster Liferay. 
 
-### The Quartz scheduler should be set for a clustered environment
+### The Quartz scheduler should be set for a clustered environment [](id=lp-6-1-ugen15-the-quartz-scheduler-should-be-set-for-a-clustered-environm-0)
 
 Liferay uses Quartz to run jobs on a schedule. When you write an application for Liferay, one of the things you can do is set up jobs like these. An example of this is the calendar: periodically, a job runs to check to see whether it's time to trigger a calendar event. The scheduler needs to know that it's in a cluster, or events might get triggered multiple times by different nodes. 
 
@@ -55,13 +55,13 @@ If you've already started Liferay and had your database generated, you'll need t
 	
 Your first clustering task is already done! Let's move on to the database. 
 
-### All nodes should be pointing to the same Liferay database
+### All nodes should be pointing to the same Liferay database [](id=lp-6-1-ugen15-all-nodes-should-be-pointing-to-the-same-liferay-database-0)
 
 This is pretty self-explanatory. Each node should be configured with a data source that points to one Liferay database (or a database cluster) that all the nodes will share. This ensures that all the nodes operate from the same basic data set. This means, of course, that Liferay cannot (and should not) use the embedded HSQL database that is shipped with the bundles (but you already knew that, right?). And, of course, it goes without saying that the database server is a separate physical box from the server which is running Liferay. 
 
 Beyond a database cluster, there are two more advanced options you can use to optimize your database configuration: a read-writer database configuration, and sharding. 
 
-#### Read-Writer database configuration
+#### Read-Writer database configuration [](id=lp-6-1-ugen15-read-writer-database-configuration-0)
 
 Liferay allows you to use two different data sources for reading and writing. This enables you to split your database infrastructure into two sets: one that is optimized for reading and one that is optimized for writing. Since all major databases support replication in one form or another, you can then use your database vendor's replication mechanism to keep the databases in sync in a much faster manner than if you had a single data source which handled everything.
 
@@ -105,7 +105,7 @@ The next time you restart Liferay, it will now use the two data sources you have
 
 Next, we'll look at database sharding. 
 
-#### Database Sharding
+#### Database Sharding [](id=lp-6-1-ugen15-database-sharding-0)
 
 Liferay starting with version 5.2.3 supports database sharding for different portal instances. Sharding is a term used to describe an extremely high scalability configuration for systems with massive amounts of users. In diagrams, a database is normally pictured as a cylinder. Instead, picture it as a glass bottle full of data. Now take that bottle and smash it onto a concrete sidewalk. There will be shards of glass everywhere. If that bottle were a database, each shard now is a database, with a subset of the data in each shard.
 
@@ -185,7 +185,7 @@ The last thing you need to do is modify the `spring.configs` section of your `po
 
 That's all there is to it. Your system is now set up for sharding. Now that you've got your database set up and optimized for a large installation, let's turn to clustering the Documents and Media Library. 
 
-### Documents and Media Library clustering
+### Documents and Media Library clustering [](id=lp-6-1-ugen15-documents-and-media-library-clustering-0)
 
 Liferay 6.1 introduces a new Documents and Media Library which is capable of mounting several repositories at a time and presenting a unified interface to the user. By default, users can make use of the Liferay repository, which is already mounted. This repository is built into Liferay Portal and can use as its back-end one of several different store implementations. In addition to this, many different kinds of third party repositories can be mounted. If you have a separate repository that you've mounted, all nodes of the cluster will point to this repository. Your avenue for improving performance at that point is to cluster your third party repository, using the documentation for the repository you have chosen. If you don't have a third party repository, there are ways you can configure the Liferay repository to perform well in a clustered configuration. 
 
@@ -193,7 +193,7 @@ The main thing to keep in mind is that you need to make sure that every node of 
 
 There are several options available for configuring how Liferay's Documents and Media library stores files. Each option is a *store* which can be configured through the `portal-ext.properties` file by setting the `dl.store.impl=` property. Let's consider the ramifications of the various store options. 
 
-#### Using the File System store
+#### Using the File System store [](id=lp-6-1-ugen15-using-the-file-system-store-0)
 
 This is the default store. It's a simple file storage implementation that uses a local folder to store files. You can use the file system for your clustered configuration, but you'd have to make sure that the folder to which you point the store can handle things like concurrent requests and file locking. For this reason, you need to use a Storage Area Network or a clustered file system.
 
@@ -209,7 +209,7 @@ As you can see, this binds your documents very closely to Liferay, and may not b
 
 Speaking of other store implementations, let's look at some others that Liferay provides. 
 
-#### Using the Advanced File System store
+#### Using the Advanced File System store [](id=lp-6-1-ugen15-using-the-advanced-file-system-store-0)
 
 Liferay's advanced file system store is similar to the default file system store. Like that store, it saves files to the local file system--which, of course, could be a remote file system mount. It uses a slightly different folder structure to store files, which is pictured below. 
 
@@ -221,7 +221,7 @@ The same rules apply to the advanced file system store as apply to the default f
 
 You may decide that the advanced file system store for whatever reason doesn't serve your needs. If this is the case, you can of course mount other file systems into the documents and media library. In addition to this, you can also redefine the Liferay store to use one of three other supported protocols. We'll look at these next. 
 
-#### Using the CMIS store
+#### Using the CMIS store [](id=lp-6-1-ugen15-using-the-cmis-store-0)
 
 Though you can mount as many different CMIS (Content Management Interoperability Services) repositories as you like in the documents and media library, you may wish also to redefine the Liferay repository to point to a CMIS repository as well. Why? Because, as you know, users are users, and it's possible that they may find a way to create a folder or upload content to the Liferay repository. It would be nice if that Liferay repository was connected to a clustered CMIS repository by the administrator without having to mount it through the UI. The CMIS store allows you to do just that. 
 
@@ -236,7 +236,7 @@ Now the Liferay repository is connected to CMIS via the CMIS store. As long as a
 
 From here, we'll move on to the JCR store. 
     
-#### Using the JCR store
+#### Using the JCR store [](id=lp-6-1-ugen15-using-the-jcr-store-0)
 
 Liferay Portal supports as a store the Java Content Repository standard. Under the hood, Liferay uses Jackrabbit—-which is a project from Apache-—as its JSR-170 compliant document repository. By default, Jackrabbit is configured to store the documents on the local file system upon which Liferay is installed, in the `[Liferay Home]/liferay/jackrabbit` folder. Inside this folder is Jackrabbit's configuration file, called `repository.xml`. 
 
@@ -258,7 +258,7 @@ Once you've configured Jackrabbit to store its repository in a database, the nex
 
 Note that this configuration doesn't perform as well as the advanced file system store, because you're storing documents in a database instead of in the file system. But it does have the benefit of clustering well. Next, we'll look at Amazon's S3 store. 
 
-##### Using Amazon Simple Storage Service
+##### Using Amazon Simple Storage Service [](id=lp-6-1-ugen15-using-amazon-simple-storage-service-0)
 
 Amazon's simple storage service (S3) is a cloud-based storage solution which you can use with Liferay. All you need is an account, and you can store your documents to the cloud from all nodes, seamlessly. 
 
@@ -276,7 +276,7 @@ Consult the Amazon Simple Storage documentation for additional details on using 
 
 We have one more store to go over: the Documentum store. 
 
-##### Using the Documentum store
+##### Using the Documentum store [](id=lp-6-1-ugen15-using-the-documentum-store-0)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
@@ -288,11 +288,11 @@ There's not really a lot to this; it's incredibly easy. Click *Add* &rarr; *Repo
 
 Now that we've covered the available ways you can configure documents and media for clustering, we can move on to configuring search. 
 
-### Clustering search
+### Clustering search [](id=lp-6-1-ugen15-clustering-search-0)
 
 You can configure search for clustering in one of two ways: use pluggable enterprise search (recommended), or configure Lucene so that indexes replicate across the individual file systems of the nodes in the cluster. We'll look at both ways to do this. 
 
-#### Using Pluggable Enterprise Search
+#### Using Pluggable Enterprise Search [](id=lp-6-1-ugen15-using-pluggable-enterprise-search-0)
 
 As an alternative to using Lucene, Liferay supports pluggable search engines. The first implementation of this uses the open source search engine *Solr*, but in the future there will be many such plugins for your search engine of choice. This allows you to use a completely separate product for search, and this product can be installed on another application server or cluster of servers. Your search engine then operates completely independently of your Liferay Portal nodes in a clustered environment, acting as a search service for all the nodes simultaneously.
 
@@ -300,7 +300,7 @@ This makes it much easier to deal with search indexes. You no longer have to mai
 
 First, you'll need to configure your Solr server, and then you need to install Liferay's Solr plugin to redirect searches over to it. 
 
-##### Configuring the Solr Search Server
+##### Configuring the Solr Search Server [](id=lp-6-1-ugen15-configuring-the-solr-search-server-0)
 
 Since Solr is a standalone search engine, you'll need to download it and install it first according to the instructions on the Solr web site (`http://lucene.apache.org/solr`). Of course, it's best to use a server that is separate from your Liferay installation, as your Solr server becomes responsible for all indexing and searching for your entire cluster. You definitely don't want both Solr and Liferay on the same box. Solr is distributed as a `.war` file with several `.jar` files which need to be available on your application server's classpath. Once you have Solr up and running, integrating it with Liferay is easy, but it requires a restart of your application server.
 
@@ -316,7 +316,7 @@ Once you've created the environment variable, you then can use it in your applic
 
 This takes care of telling Solr where to store its search index. Go ahead and install Solr to this box according to the instructions on the Solr web site (`http://lucene.apache.org/solr`). Once it's installed, shut it down, as there is some more configuration to do.
 
-##### Installing the Solr Liferay Plugin
+##### Installing the Solr Liferay Plugin [](id=lp-6-1-ugen15-installing-the-solr-liferay-plugin-0)
 
 Next, you have a choice. If you have installed Solr on the same system upon which Liferay is running (not recommended), you can simply go to the Liferay Marketplace and install the *solr-web* plugin. This, however, defeats much of the purpose of using Solr, because the goal is to offload search indexing to another box in order to free up processing for your installation of Liferay. For this reason, you really shouldn't run Liferay and your search engine on the same box. Unfortunately, the configuration in the plugin is set exactly that way, presumably to allow you to experiment with different search configurations. To run them separately--as you would in a production environment--, you'll have to make a change to a configuration file in the plugin before you install it so you can tell Liferay where to send indexing requests. In this case, go to the Liferay Marketplace and download the plugin to your system. 
 
@@ -342,7 +342,7 @@ Go to the control panel. In the *Server* section, click *Server Administration*.
 
 Installing the plugin to your nodes has the effect of overriding any calls to Lucene for searching. All Liferay's search boxes will now use Solr as the search index. This is ideal for a clustered environment, as it allows all your nodes to share one search server and one search index, and this search server operates independently of all your nodes. If, however, you don't have the server hardware upon which to install a separate search server, you can sync the search indexes between all your nodes, as is described next. 
 
-#### Clustering Lucene indexes on all nodes
+#### Clustering Lucene indexes on all nodes [](id=lp-6-1-ugen15-clustering-lucene-indexes-on-all-nodes-0)
 
 Lucene, the search indexer which Liferay uses, can be configured to sync indexes across each cluster node. This is the easiest configuration to implement, though of course, it's not as "clean" a configuration as using pluggable enterprise search. Sometimes, however, you just don't have another server to use for search indexing, and so you need a way to keep all your nodes in sync. Liferay provides a method called Cluster Link which can send indexing requests to all nodes in the cluster to keep them in sync. This configuration doesn't require any additional hardware, and it performs very well. It may increase network traffic when an individual server reboots, since in that case a full reindex will be needed. But since this should only rarely happen, it's a good tradeoff if you don't have the extra hardware to implement a Solr search server.
 
@@ -354,7 +354,7 @@ Of course, this needs to be set on all the nodes. That's all you need to do to s
 
 Next, we'll show how to share indexes in a database. This is actually not a recommended configuration, as it's slow (databases are always slower than file systems), but for completeness, we'll go ahead and tell you how to do it anyway. But you've been forewarned: it's far better to use one of the other methods of clustering your search index. 
 
-#### Sharing a search index (not recommended unless you have a file locking-aware SAN) 
+#### Sharing a search index (not recommended unless you have a file locking-aware SAN)  [](id=lp-6-1-ugen15-sharing-a-search-index-not-recommended-unless-you-have-a-fi-0)
 
 If you wish to have a shared index (and we really hope you don't), you'll need to either share the index on the file system or in the database. This requires changing your Lucene configuration.
 
@@ -386,7 +386,7 @@ Alternatively, you can leave the configuration alone, and each node will have it
 
 Now we can look at the last consideration when clustering Liferay: hot deploy. 
 
-### Hot Deploy
+### Hot Deploy [](id=lp-6-1-ugen15-hot-deploy-0)
 
 Plugins which are hot deployed will need to be deployed separately to all the Liferay nodes. The best way to do this is to configure your application server to support *farms*. This is a feature that enables you to deploy an application on one node and then it replicates automatically to each of the other nodes. This, of course, is configured differently for each application server, so you'll need to consult your application server's documentation to learn how to do this. It's by far the best way to handle hot deploy, and is the recommended configuration. If you have this working, great! You can skip the rest of this section completely.  
 
@@ -396,7 +396,7 @@ When you want to deploy a plugin to the entire cluster, copy that plugin to the 
 
 All of the above will get basic Liferay clustering working; however, the configuration can be further optimized. We will see how to do this next.
 
-## Distributed Caching
+## Distributed Caching [](id=distributed-cachi-5)
 
 Liferay uses **Ehcache**, which has robust distributed caching support. This means that the cache can be distributed across multiple Liferay nodes running concurrently. Enabling this cache can increase performance dramatically. For example, say that two users are browsing the message boards. The first user clicks a thread in order to read it. Liferay must look up that thread from the database and format it for display in the browser. With a distributed Ehcache running, this thread is stored in a cache for quick retrieval, and that cache is then replicated to the other nodes in the cluster. Say then that the second user who is being served by another node in the cluster wants to read the same forum thread and clicks on it. This time, the data is retrieved more quickly. Because the thread is in the cache, no trip to the database is necessary. 
 
@@ -404,7 +404,7 @@ This is much more powerful than having a cache running separately on each node. 
 
 There are two ways to enable distributed caching. If you use the default settings, it's very easy. If you need to tweak the cache for your site, there are a few more steps, but it's still pretty easy. 
 
-### Enabling distributed caching
+### Enabling distributed caching [](id=lp-6-1-ugen15-enabling-distributed-caching-0)
 
 The super-easy way of enabling distributed caching is simply to enable Cluster Link. If you've already done this to enable distributed search engine indexes, then your job is already done. What this does is enable some RMI (Remote Method Invocation) cache listeners that are designed to replicate the cache across a cluster. 
 
@@ -412,7 +412,7 @@ Once you enable distributed caching, of course, you should do some due diligence
 
 As a result of a load test, you may find that the default distributed cache settings aren't optimized for your site. In this case, you'll need to tweak the settings yourself. You can modify the Liferay installation directly or you can use a plugin to do it. Either way, the settings you change are the same. Let's see how to do this with a plugin first. 
 
-#### Modifying the cache settings with a plugin
+#### Modifying the cache settings with a plugin [](id=lp-6-1-ugen15-modifying-the-cache-settings-with-a-plugin-0)
 
 A benefit of working with plugins is that you can quickly install a plugin on each node of your cluster without taking down the cluster. We'll cover this first. If you're not a developer, don't worry--even though you'll create a plugin, you won't have to write any code. 
 
@@ -440,7 +440,7 @@ Save the file and deploy the plugin (deploying plugins is covered in the *Lifera
 
 There is, of course, another way to do this if you don't want to create a plugin. It requires you to restart the server to enable the new cache settings, but you don't have to work with any developer tools to do it. 
 
-#### Modifying the Ehcache settings directly
+#### Modifying the Ehcache settings directly [](id=lp-6-1-ugen15-modifying-the-ehcache-settings-directly-0)
 
 This method is pretty similar to the plugin method, except that you have to modify the Liferay installation directly. You'll still need to extract Liferay's configuration files as described in the previous section. Next, shut down your server and find the location in the server where Liferay is installed (this may not be possible on all application servers, and if this is the case, you'll need to use the plugin method described above). For example, say you're running Liferay on Tomcat. Tomcat stores the deployed version of Liferay in `[Tomcat Home]/webapps/ROOT`. Inside this folder is the folder structure `WEB-INF/classes`. You can create a new folder in here called `custom_cache` to store the custom versions of the cache configuration files. Copy the files you extracted from Liferay into this folder.  
 
@@ -456,7 +456,7 @@ Next, copy/paste the *Ehcache* section from the `portal.properties` file into yo
 
 You can now take a look at the settings in these files and tune them to fit your environment and application. Let's examine how to do that next. 
 
-#### Customizing Hibernate cache settings
+#### Customizing Hibernate cache settings [](id=lp-6-1-ugen15-customizing-hibernate-cache-settings-0)
 
 By default, Hibernate (Liferay's database persistence layer) is configured to use Ehcache as its cache provider. This is the recommended setting. If you're using the default settings using Cluster Link, you already have this enabled. If, however, you need to customize the settings, you'll have to customize it in one of the ways described above: either in a plugin or in the deployed instance of Liferay. The first thing, of course, is to start off with the clustered version of the file. Copy the `hibernate-clustered.xml` configuration file to your plugin or to a place in Liferay's classpath (as described above) where you can refer to it. Then change the following property to point to the file: 
 
@@ -502,11 +502,11 @@ Note that if your developers have overridden any of these classes in an Ext plug
 
 As you can see, it's easy to add specific data to be cached. Be careful, however, as too much caching can actually reduce performance if the JVM runs out of memory and starts garbage collecting too frequently. You'll likely need to experiment with the memory settings on your JVM as well as the cache settings above. You can find the specifics about these settings in the documentation for Ehcache.
 
-## Performance Tuning
+## Performance Tuning [](id=performance-tuni-5)
 
 Once you have your portal up and running, you may find a need to tune it for performance, especially if your site winds up generating more traffic than you'd anticipated. There are some definite steps you can take with regard to improving Liferay's performance.
 
-### Memory
+### Memory [](id=lp-6-1-ugen15-memory-0)
 
 Memory is one of the first things to look at when you want to optimize performance. If you have any disk swapping, you want to avoid it at all costs: it has a serious impact on performance. Make sure that your server has an optimal amount of memory and that your JVM is tuned to use it.
 
@@ -528,7 +528,7 @@ Note that there is a law of diminishing returns on memory, especially with 64 bi
 
 Issues with PermGen space can also affect performance. PermGen space contains long-lived classes, anonymous classes and interned Strings (immutable String objects that are kept around for a long time to increase String processing performance). Hibernate--which Liferay uses extensively--has been known to make use of PermGen space. If you increase the amount of memory available to the JVM, you may want to increase the amount of PermGen space accordingly.
 
-### Garbage Collection
+### Garbage Collection [](id=lp-6-1-ugen15-garbage-collection-0)
 
 As the system runs, various Java objects are created. Some of these objects are long-lived, and some are not. The ones that are not become *de-referenced*, which means that the JVM no longer has a link to them because they have ceased to be useful. These may be variables that were used for methods which have already returned their values, objects retrieved from the database for a user that is no longer logged on, or a host of other things. These objects sit in memory and fill up the heap space until the JVM decides it's time to clean them up.
 
@@ -538,9 +538,9 @@ There are some JVM switches that you can enable which can reduce the amount of t
 
 ![Figure 15.5: Java Memory](../../images/portal-admin-ch7_html_518957a7.gif)
 
-The Java heap is divided into sections for the young generation, the old generation, and the permanent generation. The young generation is further divided into three sections: Eden, which is where new objects are created, and two “survivor spaces,” which we can call the *From* and *To* spaces. Garbage collection occurs in stages. Generally, it's more frequently done in the young generation, less frequently done in the old generation, and even less frequently done in the permanent generation, where long-lived objects reside. When garbage collection runs in the young generation, Eden is swept for objects which are no longer referenced. Those that are still around are moved to the “To” survivor space, and the “From” space is then swept. Any other objects in that space which still have references to them are moved to the “To” space, and the “From” space is then cleared out altogether. After this, the “From” and the “To” spaces swap roles, and processing is freed up again until the next time the JVM determines that garbage collection needs to run.
+The Java heap is divided into sections for the young generation, the old generation, and the permanent generation. The young generation is further divided into three sections: Eden, which is where new objects are created, and two “survivor spaces, which we can call the *From* and *To* spaces. Garbage collection occurs in stages. Generally, it's more frequently done in the young generation, less frequently done in the old generation, and even less frequently done in the permanent generation, where long-lived objects reside. When garbage collection runs in the young generation, Eden is swept for objects which are no longer referenced. Those that are still around are moved to the *To* survivor space, and the *From* space is then swept. Any other objects in that space which still have references to them are moved to the *To* space, and the *From* space is then cleared out altogether. After this, the *From* and the *To* spaces swap roles, and processing is freed up again until the next time the JVM determines that garbage collection needs to run.
 
-After a predetermined number of “generations” of garbage collection, surviving objects may be moved to the old generation. Similarly, after a predetermined number of “generations” of garbage collection in the old generation, surviving objects may be moved to the permanent generation.
+After a predetermined number of *generations* of garbage collection, surviving objects may be moved to the old generation. Similarly, after a predetermined number of *generations* of garbage collection in the old generation, surviving objects may be moved to the permanent generation.
 
 By default, the JDK uses a serial garbage collector to achieve this. This works very well for a short-lived desktop Java application, but is not necessarily the best performer for a long-lived, server-based application like Liferay. For this reason, you may wish to switch to the Concurrent Mark-Sweep (CMS) collector.
 
@@ -569,7 +569,7 @@ A sample configuration using the above parameters might look something like this
 
 Again, you should always follow the procedure of adjusting the settings, then testing under load, then adjusting again. Every system is different, and these are general guidelines to follow. Next, we'll see some modifications we can make to Liferay's properties to help increase performance. 
     
-### Properties File Changes
+### Properties File Changes [](id=lp-6-1-ugen15-properties-file-changes-0)
 
 There are also some changes you can make to your `portal-ext.properties` file once you are in a production environment.
 
@@ -589,7 +589,7 @@ These are various things the Liferay engineering team has done to increase perfo
 
 Let's look at one final, general way of increasing Liferay's performance: disabling unused servlet filters. 
 
-### Disabling unused servlet filters
+### Disabling unused servlet filters [](id=lp-6-1-ugen15-disabling-unused-servlet-filters-0)
 
 Liferay comes by default with a number of servlet filters enabled and running. It is likely that for your installation, you don't need them all. Since servlet filters intercept the HTTP request and do some processing on it before Liferay even has a chance to start building the page, you can increase performance by disabling the ones you're not using. 
 
@@ -599,11 +599,11 @@ For example, if you are not using CAS for single sign-on, disable the CAS Filter
 
 As you can see, there are many things you can do to increase Liferay's performance generally. But don't forget to load test your own applications! It may be that a performance issue comes from a custom-built application that's doing something it shouldn't do. Always load test your system before putting it into production: that's the best way of finding out potential performance problems, and that way, you'll find them during performance testing, and not when your system is in production.
 
-## Plugin Management
+## Plugin Management [](id=lp-6-1-ugen15-plugin-management-0)
 
 One of the primary ways of extending the functionality of Liferay Portal is by the use of plugins. *Plugin* is an umbrella term for installable portlet, theme, layout template, hook, Ext, and web module Java EE `.war` files. Though Liferay comes bundled with a number of functional portlets, themes, layout templates, hooks, and web modules, plugins provide a means of extending Liferay to be able to do almost anything.
 
-### Portlets
+### Portlets [](id=lp-6-1-ugen15-portlets-0)
 
 Portlets are small web applications that run in a portion of a web page. The heart of any portal implementation is its portlets, because all of the functionality of a portal resides in its portlets. Liferay's core is a portlet container. The container's job is to manage the portal's pages and to aggregate the set of portlets that are to appear on any particular page. This means that the core doesn't contain application code. Instead, all of the features and functionality of your portal application must reside in its portlets.
 
@@ -613,17 +613,17 @@ Portlets are small web applications that run in a portion of a web page. The hea
 
 ---
 
-Portlet applications, like servlet applications, have become a Java standard which various portal server vendors have implemented. The JSR-168 standard defines the portlet 1.0 specification, and the JSR-286 standard defines the portlet 2.0 specification. A Java standard portlet should be deployable on any portlet container which supports the standard. Portlets are placed on the page in a certain order by the end user and are served up dynamically by the portal server. This means that certain “givens” that apply to servlet-based projects, such as control over URLs or access to the `HttpServletRequest` object, don’t apply in portlet projects, because the portal server generates these objects dynamically. 
+Portlet applications, like servlet applications, have become a Java standard which various portal server vendors have implemented. The JSR-168 standard defines the portlet 1.0 specification, and the JSR-286 standard defines the portlet 2.0 specification. A Java standard portlet should be deployable on any portlet container which supports the standard. Portlets are placed on the page in a certain order by the end user and are served up dynamically by the portal server. This means that certain *givens* that apply to servlet-based projects, such as control over URLs or access to the `HttpServletRequest` object, don't apply in portlet projects, because the portal server generates these objects dynamically. 
 
 Portal applications come generally in two flavors: 1) portlets can be written to provide small amounts of functionality and then aggregated by the portal server into a larger application, or 2) whole applications can be written to reside in only one or a few portlet windows. The choice is up to those designing the application. The developer only has to worry about what happens inside of the portlet itself; the portal server handles building out the page as it is presented to the user.
 
 Most developers nowadays like to use certain frameworks to develop their applications, because those frameworks provide both functionality and structure to a project. For example, Struts enforces the Model-View-Controller design pattern and provides lots of functionality, such as custom tags and form validation, that make it easier for a developer to implement certain standard features. With Liferay, developers are free to use all of the leading frameworks in the Java EE space, including Struts, Spring MVC, and Java Server Faces. This allows developers familiar with those frameworks to more easily implement portlets, and also facilitates the quick porting of an application using those frameworks over to a portlet implementation.
 
-Additionally, Liferay allows for the consuming of PHP and Ruby applications as “portlets,” so you do not need to be a Java developer in order to take advantage of Liferay's built-in features (such as user management, sites, organizations, page building and content management). You can also use scripting languages such as Groovy if you wish. You can use the Plugins SDK to deploy your PHP or Ruby application as a portlet, and it will run seamlessly inside of Liferay. We have plenty of examples of this; to see them, check out the Plugins SDK from Liferay's public code repository.
+Additionally, Liferay allows for the consuming of PHP and Ruby applications as portlets so you do not need to be a Java developer in order to take advantage of Liferay's built-in features (such as user management, sites, organizations, page building and content management). You can also use scripting languages such as Groovy if you wish. You can use the Plugins SDK to deploy your PHP or Ruby application as a portlet, and it will run seamlessly inside of Liferay. We have plenty of examples of this; to see them, check out the Plugins SDK from Liferay's public code repository.
 
 Does your organization make use of any Enterprise Planning (ERP) software that exposes its data via web services? You could write a portlet plugin for Liferay that can consume that data and display it as part of a dashboard page for your users. Do you subscribe to a stock service? You could pull stock quotes from that service and display them on your page, instead of using Liferay's built-in Stocks portlet. Do you have a need to combine the functionality of two or more servlet-based applications on one page? You could make them into portlet plugins and have Liferay display them in whatever layout you want. Do you have existing Struts, Spring MVC, or JSF applications that you want to integrate with your portal? It is a straightforward task to migrate these applications into Liferay, and then they can take advantage of the layout, security, and administration infrastructure that Liferay provides.
 
-### Themes
+### Themes [](id=lp-6-1-ugen15-themes-0)
 
 ![Figure 9.14: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
 
@@ -631,19 +631,19 @@ Themes are hot deployable plugins which can completely transform the look and fe
 
 ![Figure 9.15: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
 
-### Layout Templates
+### Layout Templates [](id=lp-6-1-ugen15-layout-templates-0)
 
 Layout Templates are ways of choosing how your portlets will be arranged on a page. They make up the body of your page, the large area into which you can drag and drop portlets. Liferay Portal comes with several built-in layout templates, but if you have a complex page layout (especially for your home page), you may wish to create a custom layout template of your own. This is covered in [*Liferay in Action*](http://manning.com/sezov).
 
-### Hook Plugins
+### Hook Plugins [](id=lp-6-1-ugen15-hook-plugins-0)
 
-Hook plugins were introduced with Liferay 5.2. As the name implies, they allow “hooking” into Liferay's core functionality. This means that they enable developers to override or replace functionality that is in the core of the system. You can hook into the eventing system, model listeners, and portal properties. You can also override Liferay's core JSPs with your own. Hooks are very powerful and have been designed to replace most of the reasons for using the extension environment with something that is easier to use and hot deployable.
+Hook plugins were introduced with Liferay 5.2. As the name implies, they allow "hooking" into Liferay's core functionality. This means that they enable developers to override or replace functionality that is in the core of the system. You can hook into the eventing system, model listeners, and portal properties. You can also override Liferay's core JSPs with your own. Hooks are very powerful and have been designed to replace most of the reasons for using the extension environment with something that is easier to use and hot deployable.
 
-### Web Plugins
+### Web Plugins [](id=lp-6-1-ugen15-web-plugins-0)
 
 Web plugins are regular Java EE web modules that are designed to work with Liferay. Liferay supports integration with various Enterprise Service Bus (ESB) implementations, as well as Single Sign-On implementations, workflow engines, and so on. These are implemented as web modules that are used by Liferay portlets to provide functionality.
 
-### Installing Plugins from Repositories
+### Installing Plugins from Repositories [](id=lp-6-1-ugen15-installing-plugins-from-repositories-0)
 
 Liferay Portal has a section of the control panel called Plugins Installation, which you can finder beneath the Server heading. This section not only allows you to see what plugins are installed in your portal, but also it enables you to run the search indexer on those portlets that support it and install new portlets.
 
@@ -673,7 +673,7 @@ The same procedure is used for installing new Liferay themes, layout templates, 
 
 After clicking on the *Install* button for a theme, the theme becomes available on the *Look and Feel* tab of any page.
 
-### Installing Plugins Manually
+### Installing Plugins Manually [](id=lp-6-1-ugen15-installing-plugins-manually-0)
 
 Installing plugins manually is almost as easy as installing plugins via the Plugin Installer. There are several scenarios in which you would need to install plugins manually rather than from Liferay's repositories:
 
@@ -745,7 +745,7 @@ To have Liferay hot deploy a portlet or theme plugin, copy the plugin into your 
 
 The *available for use* message means that your plugin was installed correctly and is available for use in the portal.
 
-### Plugin Troubleshooting
+### Plugin Troubleshooting [](id=lp-6-1-ugen15-plugin-troubleshooting-0)
 
 Sometimes plugins fail to install. There can be different reasons for installation failure based on several factors, including
 
@@ -761,7 +761,7 @@ You can often tell whether or not you have a plugin deployment problem by lookin
 
 Let's take a look at each of these factors.
 
-#### Liferay Configuration Issues
+#### Liferay Configuration Issues [](id=lp-6-1-ugen15-liferay-configuration-issues-0)
 
 ---
 
@@ -797,7 +797,7 @@ The setting to change is the field labeled *Destination Directory*. Change this 
 
 If you are having hot deploy trouble in Liferay versions 4.3.5 and greater, it is possible that the administrator of your application server has changed the default folder for auto deploy in your application server. In this case, you would want to set `auto.deploy.dest.dir` to the customized folder location as you would with older versions of Liferay. In Liferay 4.3.5 and greater, this setting still exists, but is blank. Add the property to your `portal-ext.properties` file and set its value to the fully qualified path to the auto deploy folder configured in your application server.
 
-#### Deploy Issues for Specific Containers
+#### Deploy Issues for Specific Containers [](id=lp-6-1-ugen15-deploy-issues-for-specific-containers-0)
 
 Some containers, such as WebSphere®, don't have a hot deploy feature. Unfortunately, these containers do not work with Liferay's hot deploy system. But this does not mean that you cannot install plugins on these containers. You can deploy plugins manually using the application server's deployment tools. Liferay is able to pick up the portlet plugins once they get deployed to the container manually, especially if you add it to the same Enterprise Application project that was created for Liferay.
 
@@ -807,7 +807,7 @@ Navigate back to the *Configuration* tab of the Plugin Installer. Enter the loca
 
 Now you can deploy plugins using the Plugin Installer portlet or by dropping `.war` files into your auto deploy directory. Liferay will pick up the files, modify them, and then copy the result into the destination directory you have configured. You may then deploy them from here to your application server.
 
-##### Example: WebSphere® Application Server
+##### Example: WebSphere® Application Server [](id=lp-6-1-ugen15-example-websphere�-application-server-0)
 
 1.  If you don't have one already, create a `portal-ext.properties` file in the Liferay Home folder of your Liferay installation. Add the following directive to it:
 
@@ -827,7 +827,7 @@ Now you can deploy plugins using the Plugin Installer portlet or by dropping `.w
 
 Liferay versions 5.2.2 and higher will automatically inject this into the `web.xml` file on WebSphere containers.
 
-4.  The WebSphere deploy occurs in two steps. You will first use Liferay's tools to “pre-deploy” the file, and then use WebSphere's tools to do the actual deployment. This is because Liferay makes deployment-time modifications to the plugins right before they are actually deployed to the application server. For other application servers, this can usually be done in one step, because Liferay can make the modifications and then copy the resulting `.war` file into an autodeploy folder to have it actually deployed. Because WebSphere does not have an autodeploy feature, we need to separate these two steps.
+4.  The WebSphere deploy occurs in two steps. You will first use Liferay's tools to "pre-deploy" the file, and then use WebSphere's tools to do the actual deployment. This is because Liferay makes deployment-time modifications to the plugins right before they are actually deployed to the application server. For other application servers, this can usually be done in one step, because Liferay can make the modifications and then copy the resulting `.war` file into an autodeploy folder to have it actually deployed. Because WebSphere does not have an autodeploy feature, we need to separate these two steps.
 
 5.  Deploy your .war file using Liferay's Plugin Installer or by copying it into `$LIFERAY_HOME/deploy`. Liferay will make its modifications and because we changed the `auto.deploy.dest.dir` in the first step, it will copy the resulting `.war` file into `$LIFERAY_HOME/websphere-deploy`. You will see a *copied successfully* message in the log.
 
@@ -839,11 +839,11 @@ Liferay versions 5.2.2 and higher will automatically inject this into the `web.x
 
 Experienced WebSphere system administrators can further automate this by writing a script which watches the `websphere-deploy` directory and uses `wsadmin` commands to then deploy plugins automatically.
 
-#### Changing the Configuration Options in Multiple Places
+#### Changing the Configuration Options in Multiple Places [](id=lp-6-1-ugen15-changing-the-configuration-options-in-multiple-places-0)
 
 Sometimes, especially during development when several people have administrative access to the server at the same time, the auto deploy folder location may inadvertently be customized in both the `portal-ext.properties` file and in the control panel. If this happens, the value in the control panel takes precedence over the value in the properties file. If you go into the control panel and change the value to the correct setting, plugin deployment will start working again.
 
-### Creating Your Own Plugin Repository
+### Creating Your Own Plugin Repository [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
 
 As your enterprise builds its own library of portlets for internal use, you can create your own plugin repository to make it easy to install and upgrade portlets. This will allow different departments who may be running different instances of Liferay to share portlets and install them as needed. If you are a software development house, you may wish to create a plugin repository for your own products. Liferay makes it easy for you to create your own plugin repository and make it available to others.
 
@@ -859,13 +859,13 @@ The second method does not require an instance of Liferay to be running. You can
 
 We will first look at creating a plugin repository using the Software Catalog in the control panel.
 
-#### The Software Catalog
+#### The Software Catalog [](id=lp-6-1-ugen15-the-software-catalog-0)
 
 You will want to use the Software Catalog if you will have multiple users submitting portlets into the repository, and if you don't want to worry about creating the `liferay-plugin-repository.xml` file yourself.
 
 ![Figure 9.22: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
 
-Each site in your portal can have an instance of the Software Catalog. The control panel presents you with the software catalog for whichever site you are working on. This means that different sites can have different software repositories, so you can host several software repositories on the same instance of Liferay if you wish—they just have to be in different sites. Choose the site that will host the plugin repository and go to the control panel. You will see at the top of the screen a message that says “Content for [Site],” where [Site] is the site you were on when you selected the control panel from the dockbar. If you want to administer the software catalog for a different site, you can select it from the selection box.
+Each site in your portal can have an instance of the Software Catalog. The control panel presents you with the software catalog for whichever site you are working on. This means that different sites can have different software repositories, so you can host several software repositories on the same instance of Liferay if you wish, they just have to be in different sites. Choose the site that will host the plugin repository and go to the control panel. You will see at the top of the screen a message that says “Content for [Site], where [Site] is the site you were on when you selected the control panel from the dockbar. If you want to administer the software catalog for a different site, you can select it from the selection box.
 
 ![Figure 9.23: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
 
@@ -913,7 +913,7 @@ Notice that in the version column, *N/A* is being displayed. This is because the
 
 Before you do that, however, you need to add a *Framework Version* to your software catalog. A Framework version denotes what version of Liferay your plugin is designed for and works on. You cannot add a version of your product without linking it to a version of the framework for which it is designed.
 
-Why is this so important? Because as Liferay gains more and more features, you may wish to take advantage of those features in future versions of your product, while still keeping older versions of your product available for those who are using older versions of Liferay. This is perfectly illustrated in the example My Summary portlet we are using. Liferay had a My Summary portlet of its own, which does exactly what we have described here. This portlet was added to the suite of portlets which Liferay provides in the Social Networking plugin. This plugin makes use of the many social networking features which have been added to Liferay. So rather than just displaying a summary of your information, the Social Networking portlet adds features such as status updates, a “wall” for each user in his or her profile that other users can “write” on, the ability to become “friends” with other users—thereby granting them access to their profiles—and more.
+Why is this so important? Because as Liferay gains more and more features, you may wish to take advantage of those features in future versions of your product, while still keeping older versions of your product available for those who are using older versions of Liferay. This is perfectly illustrated in the example My Summary portlet we are using. Liferay had a My Summary portlet of its own, which does exactly what we have described here. This portlet was added to the suite of portlets which Liferay provides in the Social Networking plugin. This plugin makes use of the many social networking features which have been added to Liferay. So rather than just displaying a summary of your information, the Social Networking portlet adds features such as status updates, a "wall" for each user in his or her profile that other users can *write* on, the ability to become *friends* with other users—thereby granting them access to their profiles—and more.
 
 None of this would work in older versions of Liferay, because the core engine that enables developers to create features like this is not there. So in this case, you would want to keep the older My Summary portlet available for users who have not yet upgraded, and make the newer social portlets available to those using latest version of Liferay. This is what *Framework Versions* does for you. If you connect to Liferay's software repositories with an old version of Liferay Portal, you will see the My Summary portlet. If you connect to Liferay's software repositories with new version of Liferay, you will see the social portlets.
 
@@ -939,7 +939,7 @@ Now go back to the *Products* tab and click on your product. You will notice tha
 
 When you are finished filling out the form, click the *Save* button. Your product version will be saved, and your product will now be available in the software repository.
 
-##### Generating The Software Catalog
+##### Generating The Software Catalog [](id=lp-6-1-ugen15-generating-the-software-catalog-0)
 
 The Software Catalog works by generating an XML document which the Plugin Installer reads. Using the data from this XML document, the Plugin Installer knows where it can download the plugins from, what version of Liferay the plugins are designed for, and all other data about the plugins that have been entered into the Software Catalog portlet.
 
@@ -1019,7 +1019,7 @@ You can now give the URL to your software repository out on your web site, and o
 
 If you want to serve your repository off of a static web server, you can save this document to a file called `liferay-plugin-package.xml` and put this file on your HTTP server. You can then give out the URL to the directory which holds this file on your web site, and anyone with an instance of Liferay will be able to point their Plugin Installer portlets to it.
 
-##### Benefits of the Software Catalog
+##### Benefits of the Software Catalog [](id=lp-6-1-ugen15-benefits-of-the-software-catalog-0)
 
 As you can see, the Software Catalog makes it easy for you to create a repository of your software. Users of Liferay can configure their Plugin Installers to attach to your repository, and the proper versions of your software will be automatically made available to them by a single click. This is by far the easiest way for you to keep track of your software, and for your users to obtain your software.
 
@@ -1027,19 +1027,19 @@ Another benefit of the Software Catalog is that by using it, you make available 
 
 How can you do this? The Software Catalog is also available as a portlet. You can add it to any page on your web site through the *Add Application* menu. You can find the portlet in the *Tools* category.
 
-#### Manually Creating A Software Catalog
+#### Manually Creating A Software Catalog [](id=lp-6-1-ugen15-manually-creating-a-software-catalog-0)
 
 If you do not wish to use the control panel to create your software catalog, you can create it manually by manually typing out the XML file that the Software Catalog section of the control panel would normally generate. Note that if you do this, you will not be able to use the Software Catalog portlet as a graphical user interface to your software that end users can use to download your software manually: you will have to build this yourself. Keep in mind that many instances of Liferay Portal sit behind a firewall without access to the Internet. Because of this, if you are making your software available to Internet users, some of them will have to download it manually anyway, because their installations are firewalled. In this case, the Software Catalog portlet is the easiest way to provide a user interface for downloading your software.
 
 If you still wish to use a text editor to create your software catalog, you can. To manually create a software catalog, obtain the DTD for the XML file from Liferay's source code. You will find this DTD in the *definitions* folder in the Liferay source. It is a file called `liferay-plugin-package_6_0_0.dtd`. Use this DTD with a validating XML editor (a good, free choice is jEdit with all the XML plugins) to create your software catalog manually.
 
-#### Connecting to a Software Catalog
+#### Connecting to a Software Catalog [](id=lp-6-1-ugen15-connecting-to-a-software-catalog-0)
 
 If there is a software catalog of plugins that you would like to point your instance of Liferay to, all you need is the URL to the catalog. Once you have the URL, go to the Plugin Installer in your control panel and click the *Configuration* tab. You will see that there are two fields in which you can enter URLs to plugin repositories: *Trusted Plugin Repositories* and *Untrusted Plugin Repositories*. Currently, the only difference between the two is to provide a visual cue for administrators as to which repositories are trusted and untrusted.
 
 Enter the URL to the repository to which you wish to connect in one of the fields and click *Save*. The portlet will connect to the repository, and items from this repository will be shown in the list.
 
-## Summary
+## Summary [](id=summ-36)
 
 We've seen how good a fit Liferay Portal is for the enterprise. It can be scaled linearly to grow to whatever size you need to serve your users. Clustering is a snap, and Liferay harmonizes very well with whatever environment you may have.
 

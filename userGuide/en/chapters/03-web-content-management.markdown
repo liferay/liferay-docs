@@ -1,4 +1,4 @@
-# Using Liferay Web Content Management
+# Using Liferay Web Content Management [](id=using-liferay-web-content-management)
 
 Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface, and it helps you to keep your site fresh. You'll find yourself easily creating, editing, and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content "pop" with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content. 
 
@@ -14,7 +14,7 @@ In this chapter, we'll cover the following topics:
 
 As you'll see, Liferay's WCM is a full-featured solution for managing your web site. We'll start with an overview of what it has to offer, and then we'll dive down into its features. 
 
-## How Can Liferay's WCM Help You?
+## How Can Liferay's WCM Help You? [](id=how-can-liferay-s-wcm-help-you-)
 
 With Liferay's WCM you have the ability to create, edit, stage, publish, and approve content with easy to learn yet powerful tools. Liferay's WCM streamlines site changes for the end user versus doing a site in HTML. Some ways Liferay WCM makes this possible include:
 
@@ -28,7 +28,7 @@ With Liferay's WCM you have the ability to create, edit, stage, publish, and app
 
 Once you get familiar with Liferay WCM, you'll wonder how you ever got along without it.  
 
-### What Features Does Liferay WCM Have?
+### What Features Does Liferay WCM Have? [](id=lp-6-1-ugen03-what-features-does-liferay-wcm-have-0)
 
 Liferay's WCM has a host of features the makes managing the content of your site easier.
 
@@ -50,13 +50,13 @@ Liferay's WCM has a host of features the makes managing the content of your site
 
 Liferay's Web Content Management is a powerful and robust tool for creating and organizing content on your web site. Now that you've seen the basics of what you can do with Liferay's WCM, let's apply some of these concepts and create some content.
 
-## Building a Site with Liferay's WCM
+## Building a Site with Liferay's WCM [](id=building-a-site-with-liferay-s-w-3)
 
 You've just been assigned the task to build a web site for a an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
 
 We'll walk through the creation of Nose-ster's web site, starting by creating and publishing some simple content using Liferay's built-in WYSIWYG editor. We'll then take advantage of Liferay's robust structure editor. We'll use templates to display the content and then explore some of the advanced publishing features such as the built-in workflow and Asset Publisher.
 
-### Creating content the simple way
+### Creating content the simple way [](id=lp-6-1-ugen03-creating-content-the-simple-way-0)
 
 As we've stated above, content is the reason web sites exist. Liferay Portal has made it easier than ever to get content published to your site. Because Liferay Portal is so flexible, you can use basic authoring tools right away or take advantage of the more advanced features. It's adaptable to your needs.
 
@@ -66,7 +66,7 @@ We'll begin by creating simple content using Liferay's WYSIWYG Editor and then w
 
 When you manage web content from the control panel, you can select the location where the content resides. For instance, you can add content that's available to a specific site or globally across the portal. The Content section of the control panel displays as its heading the name of the site you're currently working on. This heading is clickable: you can change where you're working by using the drop down attached to the heading. We will add our first piece of content to the *Nose-ster* site, which we defined earlier in the chapter as the default site.
 
-##### Rich, WYSIWYG Editing
+##### Rich, WYSIWYG Editing [](id=lp-6-1-ugen03-rich-wysiwyg-editing-0)
 
 Once you have the Nose-ster site selected, click on the *Web Content* link in the control panel. Next, click the *Add* button under the *Web Content* tab. This is a highly customizable form that by default has two fields: a title and a powerful WYSIWYG editor. We could customize this form to contain whatever fields our content needs, but let's keep things simple for now. We'll cover more advanced features such as structures, templates, and content scheduling later in this chapter.
 
@@ -86,7 +86,7 @@ The WYSIWYG editor is a flexible tool that gives you the ability to add text, im
 
 If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can click the *Source* button and write your own HTML if you wish.
 
-##### Assigning Permissions
+##### Assigning Permissions [](id=lp-6-1-ugen03-assigning-permissions-0)
 
 Permissions in Liferay WCM work the same way they do everywhere else in Liferay. By default, content is viewable by Anyone (Guest Role). You can limit viewable permissions by selecting any Role from the drop-down or in the list. Additionally, Liferay Portal provides the ability to customize permissions in more detail. Select the *More Options* link next to the drop down button, and you'll find the different activities you can grant or deny to your web content.
 
@@ -94,7 +94,7 @@ Permissions in Liferay WCM work the same way they do everywhere else in Liferay.
 
 For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. 
 
-##### Localization
+##### Localization [](id=lp-6-1-ugen03-localization-0)
 
 Previous versions of Liferay had the ability to create and manage different translations of your web content, but with Liferay 6.1 we've added several improvements. 
 
@@ -112,7 +112,7 @@ When you create a new web content structure, each field you create has a *Locali
 
 Let's go back to the page where we want the content displayed and add the Web Content Display portlet (in this case, the Welcome page).
 
-#### Publishing Content with the Web Content Display Portlet
+#### Publishing Content with the Web Content Display Portlet [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
 
 Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page, by selecting *Add &rarr; Web Content Display* from the Dockbar.
 
@@ -142,7 +142,7 @@ This is another example of the flexibility that Liferay Portal offers. At times,
 
 Editing content that's already been published is just as easy as creating new content is. You'll use the same exact tools. 
 
-##### Editing Content
+##### Editing Content [](id=lp-6-1-ugen03-editing-content-0)
 
 Once the content is displayed--whether you've selected content or created it in the Web Content Display portlet--you can edit the content directly from the Web Content Display portlet or from the control panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This launches the WYSIWYG editor and from there you can make any necessary changes.
 
@@ -154,7 +154,7 @@ Note: if you want to view your page the way your users will see it (i.e., withou
 
 That's pretty much all there is to simple content creation. Whole sites have been created this way. But if you want to take advantage of the full power of Liferay's WCM, you'll want to use structures and templates. Next, we'll see how they work and how you can use them to make your site more dynamic. 
 
-### Advanced Content Creation
+### Advanced Content Creation [](id=lp-6-1-ugen03-advanced-content-creation-0)
 
 If you've ever launched a web site, you know that as it grows, you can experience growing pains. This is the case especially if you've given lots of people access to the site to make whatever changes they need to make. Without preset limitations, users can display content in any order and in any manner they desire (think huge, flashing letters in a font nobody can read). Content can get stale, especially if those responsible for it don't maintain it like they should. And sometimes, content is published that should never have seen the light of day. 
 
@@ -162,7 +162,7 @@ Thankfully, Liferay WCM helps you handle all of those situations. You can use *S
 
 All of this starts with structures. 
 
-#### Using structures
+#### Using structures [](id=lp-6-1-ugen03-using-structures-0)
 
 Structures are the foundation for web content. They determine which fields are available to users as they create new items for display. Structures not only improve manageability for you the administrator, but also make it much easier for users to quickly add content.
 
@@ -174,7 +174,7 @@ To create a structure, you add form controls such as text fields, text boxes, te
 
 Let's look at how we edit a structure.
 
-##### Editing a Structure
+##### Editing a Structure [](id=lp-6-1-ugen03-editing-a-structure-0)
 
 Go back to the control panel and select *Web Content* from the Site section. Click *Add* from the Web Content page to add another piece of content to your portal. Instead of going right for the content this time, however, we'll create a structure instead. To edit a structure, simply click on the *Edit* icon next to the *Structure* heading near the top of the page.
 
@@ -205,7 +205,7 @@ Liferay supports the following elements in structures:
 
 These form elements provide all you need to model any information type that you would want to use as web content. Liferay customers have used structures to model everything from articles, to video metadata, to databases of wildlife. You're limited only by your imagination. To fire that imagination, let's look more closely at the form elements. 
 
-##### Editing form elements
+##### Editing form elements [](id=lp-6-1-ugen03-editing-form-elements-0)
 
 When creating a new structure it is essential that you set variable names that template writers can use to refer to elements on your form. If you don't do this, Liferay generates random variable names, and these can be difficult for a template writer to follow. For example, consider a field called *Author*. You might create this field in your form, but the underlying variable name in the structure might look something like `TextField4882`. The template writer needs to create markup for your structure and place the Author field in a certain spot in the markup. How will he or she know which field is Author, when they're all named randomly? 
 
@@ -225,7 +225,7 @@ For the Nose-ster structure, type something in the *Instructions for the User* f
 
 As with everything else in Liferay, you can set permissions on structures. Let's see how you'd do that. 
 
-##### Assigning Permissions
+##### Assigning Permissions [](id=lp-6-1-ugen03-assigning-permissions-1)
 
 Setting permissions on structures is done using the same procedure as permissions everywhere else in Liferay. Most users should not have the ability to edit structures. Structures are coupled with templates, which require some web development knowledge to create. For this reason, only trusted developers should be able to create structures and templates. Users, of course, should be able to view structures. The View permission enables them to make use of the structures to create content.
 
@@ -235,13 +235,13 @@ You can grant or deny permissions based on Roles, and this is the recommended wa
 
 Now that you understand what structures are used for, you need to understand the other half of Liferay's web content management system: templates. 
 
-#### Using templates
+#### Using templates [](id=lp-6-1-ugen03-using-templates-0)
 
 Developers create templates to display the elements of the structure in the markup that they want. Content can then be styled properly using CSS, because markup is generated consistently by the template when structured content is displayed. In essence, templates are scripts that tell Liferay how to display content in the structure. Any changes to the structure require corresponding changes to the template, because new or deleted fields produce errors on the page. If users enter content into a structure, it *must* have a matching template. Without a template, the portal has no idea how to display content which has been created using a custom structure. 
 
 Let's look more closely at the types of templates Liferay supports. 
 
-##### Template Types (VM, XSL, FTL, and CSS)
+##### Template Types (VM, XSL, FTL, and CSS) [](id=lp-6-1-ugen03-template-types-vm-xsl-ftl-and-css-0)
 
 Liferay supports templates written in four different templating languages, to support the skill sets of the largest number of developers. This increases the chances that you can jump right in and use whichever one you've already used before. If you haven't yet been exposed to any of them, your best bet is Velocity or Freemarker, as they are less "chatty" than XSL and extremely simple to understand.
 
@@ -253,7 +253,7 @@ Liferay supports templates written in four different templating languages, to su
 
 **CSS** (Cascading Style Sheets): You can use CSS if your structure is very straightforward and modifications are simple (colors, fonts, layouts, etc). If your structure is more complex, however, you'll need to use one of the other options.
 
-##### Adding a Template
+##### Adding a Template [](id=lp-6-1-ugen03-adding-a-template-0)
 
 Liferay WCM makes it easy to create structures, templates, and content from the same interface. Let's go through the entire flow of how you'd create a structure, link it to a template, and then create content using them both. We'll use Velocity for our template, and we'll lay out the structure fields systematically to go along with the format we've defined for our content.
 
@@ -313,7 +313,7 @@ When this template is rendered, it looks something like this:
 
 Of course, there is much, much more you can do with structures and templates. Check out the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)) for further information and examples.
 
-#### Assigning template permissions
+#### Assigning template permissions [](id=lp-6-1-ugen03-assigning-template-permissions-0)
 
 Permissions for templates are similar to permissions for structures. As with structures, you only want specific developers editing and creating templates. You may, however, want to make the templates viewable to some content creators who understand the template scripting language, but are not directly writing the scripts. You can determine who views the template by selecting from the *Viewable By* select box beneath the *Permissions* tab. By default the *Anyone (Guest Role)* is selected.
 
@@ -323,7 +323,7 @@ From the *More* link, you can grant or deny permissions based on Roles. For inst
 
 Now that you can create all kinds of advanced content with structures and templates, you'll want to know how Liferay makes it possible to manage how that content is published. We'll cover that next. 
 
-### Advanced Publishing Options
+### Advanced Publishing Options [](id=lp-6-1-ugen03-advanced-publishing-options-0)
 
 As we discussed above, as your site becomes larger and more complex, management of the content becomes more challenging. We've gone over Liferay management tools that help you create content quickly and in an orderly fashion. You created a simple announcement with Liferay's structure editor that allows you to quickly design a structure and prepare it for the template designers. Then you applied a template to the structure. You know how to display content using the Web Content Display portlet. Now, you're ready to take advantage of Liferay's advanced publishing options.
 
@@ -333,7 +333,7 @@ You also want your content to be found easily by your users. This is done throug
 
 Additionally, you may want to create content and send it through a review and approve process weeks before you want it displayed on the web site. Liferay gives you this flexibility with the *Schedule* and *Workflow* features.  
 
-#### Scheduling Web Content
+#### Scheduling Web Content [](id=lp-6-1-ugen03-scheduling-web-content-0)
 
 Liferay's WCM lets you define when your content goes live. You can determine when the content is displayed, expired, and/or reviewed. This is an excellent to way to keep your site current and free from outdated (and perhaps incorrect) information. The scheduler is built right into the form that your users make use of to add web content, in the same column as the structure and template selectors.
 
@@ -349,7 +349,7 @@ As you can see, the scheduling feature in Liferay Portal gives you great control
 
 In addition to controlling when content displays, you can use the Display Page feature to control where content displays.
 
-#### Display Page
+#### Display Page [](id=lp-6-1-ugen03-display-page-0)
 
 If you've been using Liferay for a while, or you've just spent a little bit of time with this guide, you might have noticed something about how Liferay handles web content--content is never tied directly to a page. While this can be useful (because it means that you don't have to recreate content if you want to display the same thing on multiple pages), it also means that you don't have a static URL for any web content, which is bad for search engine optimization.
 
@@ -365,7 +365,7 @@ You can now click the link to display the content, and the canonical URL for con
 
 Let's move on to tags and categories. 
 
-#### Tags and Categories
+#### Tags and Categories [](id=lp-6-1-ugen03-tags-and-categories-0)
 
 Tags are keywords that are attached to web content in order to help users find content. Categories are hierarchical structures of content that are defined by administrators. Tags and categories make it easier for your users to find  content through search or navigation.
 
@@ -389,7 +389,7 @@ The control panel contains an interface for managing tags and categories for eac
 
 Next, we'll look at how to configure the way pages are accessed by mobile devices.
 
-### Mobile Device Rules
+### Mobile Device Rules [](id=lp-6-1-ugen03-mobile-device-rules-0)
 
 Mobile device rules allow you to configure sets of rules and use those rules to alter the behavior of the portal based on the device being used to access Liferay. The proportion of mobile devices users browsing the web has been steadily increasing so it's important to be able to handle different kinds of devices appropriately. For instance, you can configure the look and feel of Liferay pages accessed by smartphone or tablet users differently than those accessed by PC users. 
 
@@ -415,13 +415,13 @@ You can add actions to a rule group from the Site Pages page of the control pane
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. By default, there are four kinds of actions that be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects, and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages you can use a redirect to make sure that mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to. Like mobile device rules, mobile device actions are designed to be extensible. Your developers can define custom actions in addition to the four actions provided by default. Next, let's discuss Liferay's asset publisher, which you can use to publish many different kinds of portal content.
 
-### Using the Asset Publisher Portlet
+### Using the Asset Publisher Portlet [](id=lp-6-1-ugen03-using-the-asset-publisher-portlet-0)
 
 As we create web content, it's important to keep in mind that to Liferay, the pieces of content are assets, just like message board entries and blog posts. This allows you to publish your web content using Liferay's Asset Publisher.
 
 You can use the Asset Publisher to publish a mixed group of various kinds of assets such as images, documents, blogs, and of course, web content. This helps in creating a more dynamic web site: you can place user-created wiki entries, blog posts, or message board messages in context with your content. Let's look at some of its features.
 
-#### Querying for Content
+#### Querying for Content [](id=lp-6-1-ugen03-querying-for-content-0)
 
 The Asset Publisher portlet is a highly configurable application that lets you query for mixed types of content on the fly. By giving you the ability to control what and how content is displayed from one location, the Asset Publisher helps you to "bubble up" the most relevant content to your users.
 
@@ -431,7 +431,7 @@ The ability to configure how content is displayed and selected by your users fur
 
 Let's first look at how we might select content manually. You'll see that it's very similar to the Web Content Display portlet.
 
-##### Selecting assets manually
+##### Selecting assets manually [](id=lp-6-1-ugen03-selecting-assets-manually-0)
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell the Asset Publisher that you want to select content manually. You can select what you want to be published within the portlet, or you can create new content  from within the Asset Publisher.
 
@@ -445,7 +445,7 @@ The Asset Publisher enables you to mix and match different content types in the 
 
 Most of the time, however, you'll likely be using the Asset Publisher to select content dynamically.
 
-##### Selecting assets dynamically
+##### Selecting assets dynamically [](id=lp-6-1-ugen03-selecting-assets-dynamically-0)
 
 Asset Publisher's default behavior is to select assets dynamically according to rules that you give it. These rules can be stacked on top of each other so that they compliment each other to create a nice, refined query for your content. You have the following options for creating these rules:
 
@@ -459,17 +459,17 @@ Asset Publisher's default behavior is to select assets dynamically according to 
 
 Once you've set up your filter rules for dynamically selecting your content, you can then decide how the content will be displayed.
 
-#### Ordering and Grouping
+#### Ordering and Grouping [](id=lp-6-1-ugen03-ordering-and-grouping-0)
 
 You can display the content returned by the filters above in order by title, create date, modified date, view count, and more in ascending or descending order. For instance, you may have a series of "How To" articles that you want displayed in descending order based on whether the article was tagged with the *hammer* tag. Or, you may want a series of video captures to display in ascending order based on a category called *birds*. You can also group by *Asset*, *Type*, or *Vocabularies*. Vocabularies are groups of categories defined by administrators in the *Categories* section of the control panel. Again, we'll see more about categories in chapter 4.
 
 In the *Ordering and Grouping* section of the Asset Publisher, you have great control over how content is ordered and grouped in the list, but this is only one aspect of how your content will be displayed. You can refine the display through many other display settings.
 
-#### Display Settings
+#### Display Settings [](id=lp-6-1-ugen03-display-settings-0)
 
 The Display Settings section gives you precise control over the display of your assets. There are a multitude of options available to configure how you want your content to appear. You can configure the style, length of abstracts, behavior of the asset link, maximum items to display, pagination type, and file conversions. Additionally, you can enable printing, flags, ratings, comments, and comment ratings, and these work the same way they do in the Web Content Display portlet.
 
-##### Display Style
+##### Display Style [](id=lp-6-1-ugen03-display-style-0)
 
 **Abstracts:** Shows the first 200-500 characters of the content, defined by the **Abstract Length** field.
 
@@ -479,7 +479,7 @@ The Display Settings section gives you precise control over the display of your 
 
 **Full Content:** The entire content of the entry.
 
-##### Other Settings
+##### Other Settings [](id=lp-6-1-ugen03-other-settings-0)
 
 **Asset Link Behavior:** When the link to the asset is clicked, it can be displayed in the Asset Publisher or in the portlet to which the asset belongs, such as the Blogs or Message Boards.
 
@@ -505,7 +505,7 @@ The Display Settings section of the Asset Publisher has numerous options to help
 
 Next, we'll look at some of the most powerful features of Liferay WCM: staging and workflow. 
 
-#### Staging and Workflow
+#### Staging and Workflow [](id=lp-6-1-ugen03-staging-and-workflow-0)
 
 Staging is an important feature of Liferay WCM. The concept of staging is a simple one: you can modify your site behind the scenes, and then publish it all in one shot. You don't want your users seeing your web site change before their eyes as you're modifying it, do you? Liferay's staging environment allows you to make changes to your site in a specialized *staging area*, and then when you're finished, publish the whole site to your users.
 
@@ -515,7 +515,7 @@ You can also use staging in the same instance of your Liferay Portal. In this co
 
 In addition, Liferay 6.1 adds the capability to create multiple variations of staged pages, so that you can manage several future versions of a site simultaneously. Variations can be merged and published through an intuitive UI. Let's jump in to see how to use staging.
 
-##### Enabling the staging environment
+##### Enabling the staging environment [](id=lp-6-1-ugen03-enabling-the-staging-environment-0)
 
 Staging configuration can be found in the Site Settings UI. The Staging tab allows us to make changes in a staging environment and preview our work before publishing it to the live site. Let's create a staging environment for Nose-ster's home page.
 
@@ -533,7 +533,7 @@ Generally, you'll want web content to be staged, because end users aren't creati
 
 Enabling *Page Versioning* makes it so that you can work in parallel with other users on multiple versions of the same pages, and it gives you the flexibility to revert easily to a previous version if you encounter any issues. Check *Enabled On Public Pages* so that we can look at versioning.
 
-##### Using the staging environment
+##### Using the staging environment [](id=lp-6-1-ugen03-using-the-staging-environment-0)
 
 If you navigate back to the News and Events page you'll now notice some new items along the top of the screen. These will help us manage staged pages. You'll also notice that most of your page management options have been removed, because you can now no longer directly edit live pages--you'll now use the staging environment to do that. Click on *Staging* to view the staged area. Your management options are restored, and you have some new options related to staging.
 
@@ -563,7 +563,7 @@ Content publication can be also controlled using staging. Calendar events are st
 
 One of the most powerful features of staging is page variations. Let's see how to use them to create multiple different variations of your site's pages for different purposes.
 
-#### Site Pages Variations
+#### Site Pages Variations [](id=lp-6-1-ugen03-site-pages-variations-0)
 
 Let's say that you're working on a product-oriented site where you'll have several major changes to a page or a set of pages over a short period of time, and you need to be working on multiple versions of the site at the same time to ensure that everything has been properly reviewed before it goes live. With staging in Liferay 6.1 you can do this with **Page Variations**.
 
@@ -607,13 +607,13 @@ Another powerful feature is the possibility of *merging* Site Pages Variations. 
 
 Let's finish our discussion of staging by outlining a few more features. 
 
-#### Wrapping up staging
+#### Wrapping up staging [](id=lp-6-1-ugen03-wrapping-up-staging-0)
 
 You can enable staging on an individual site basis, depending on your needs. This makes it easy to put strict controls in place for your public web site, but to open things up for individual sites that don't need such strict controls. Liferay's staging environment is extremely easy to use and makes maintaining a content-rich web site a snap. 
 
 Let's go one step further by introducing workflow into the mix.
 
-### Using Liferay's Integrated Workflow with Content Management
+### Using Liferay's Integrated Workflow with Content Management [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay WCM, workflow is designed to manage the creation, modification, and publication of web content. You can set up a workflow so that content can't be published without going through an approval process that you design. In this way, content is published to the site only after it has been reviewed and approved.
 
@@ -629,7 +629,7 @@ To enable workflow for Web Content, navigate to the control panel and select *Wo
 
 As you'll discover in chapter 6, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
 
-#### Defining Workflows for Web Content
+#### Defining Workflows for Web Content [](id=lp-6-1-ugen03-defining-workflows-for-web-content-0)
 
 Let's set up Liferay's Workflow for the Nose-ster web site.
 
@@ -654,7 +654,7 @@ Taking ownership of, reviewing, and approving content is very easy:
 
 In a real world situation, you obviously wouldn't want the person who created the content to be the one who approves it. Instead, you would have one or more roles designed for users who will be creating content, and you would have specific users assigned to one or more roles for approving content. Our example was of a very straightforward workflow, as it has only a single approver. Kaleo workflow allows you to design workflows that go through as many steps as you need to conform to your business processes. We look at Kaleo workflow in more detail in chapter 6.
 
-## Summary
+## Summary [](id=summ-25)
 
 This chapter has been your guide to Liferay Web Content Management. We've seen how Liferay manages both simple content and advanced content with structures and templates. These powerful tools enable you to handle easily any type and amount of material that you'd like to publish on the web. 
 

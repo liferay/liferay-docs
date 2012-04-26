@@ -1,4 +1,4 @@
-# Using Audit Trails
+# Using Audit Trails [](id=using-audit-trails)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
@@ -30,7 +30,7 @@ When in the course of human events it becomes necessary to see what users are do
 
 We'll come back to Tom, Dick, and Harry's story later in the chapter. For now, let's look at how to install Liferay's audit plugins so you can do the same thing Harry's about to do. 
 
-## Installing and configuring the audit plugins
+## Installing and configuring the audit plugins [](id=installing-and-configuring-the-audit-plugins)
 
 Liferay's audit functionality is composed of two parts: a back-end piece that hooks into Liferay events, and a front-end piece that gives you an interface to see what's happening. Both of these are available as EE-only plugins in the Customer Portal or Liferay Marketplace, and you'll need to install both in order to get audit functionality working (plugins installation is covered in chapter 9). 
 
@@ -42,7 +42,7 @@ Once installed, there are two properties in your `portal-ext.properties` file wh
 
 Once you've decided if you're going to use one or both of the two settings above, place them in your `portal-ext.properties` file and restart your Liferay server. Once it comes up, audit events are captured by Liferay, and you'll be able to use them to see what's happening in your portal. 
 
-## Using audit events
+## Using audit events [](id=using-audit-events)
 
 Now that you're capturing audit events, it's easy to use them to view activities in your portal. Navigate to the control panel and you'll find a new entry in the *Portal* section labeled *Audit Reports* (see figure 8.1). 
 
@@ -60,7 +60,7 @@ As you can see, depending on how many users you have in your portal, this list c
 
 Now that you know how to browse and view audit events, let's look at searching for specific events. 
 
-## Viewing audit reports
+## Viewing audit reports [](id=viewing-audit-reports)
 
 Finding what you want in a big list of events is, to use the expression, like searching for a needle in a haystack. This is why the audit portlet gives you a robust searching mechanism. By default, it looks pretty simple: there's only a single field for searching. Clicking the *advanced* link, however, reveals a search dialog broken out by various fields you can use in your search. 
 
@@ -102,7 +102,7 @@ Once you have the results of your search, you can click on any of the records re
 
 As you can see, Liferay's audit portlets give you a lot of power to see what's happening in your portal. You can use this information to troubleshoot problems, determine ownership of particular actions, or, as Harry is about to do, find out who made permission changes that they weren't supposed to make. 
 
-## Conclusion
+## Conclusion [](id=conclusion)
 
 "Okay," says Harry, "let's fire up Liferay's audit system and see if we can figure out what happened." 
 

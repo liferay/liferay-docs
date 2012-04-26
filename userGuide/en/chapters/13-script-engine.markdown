@@ -1,4 +1,4 @@
-# Script Engine 
+# Script Engine [](id=script-engine)
 
 Liferay provides a robust script engine that can be used to interpret scripts in Beanshell, Javascript, Groovy, Python, and Ruby. The script engine came out of Liferay's involvement with the Romulus project (http://www.ict-romulus.eu). It was originally developed to support non Java-based portlets, but has now been extended to handle a lot more. For example, when Liferay's workflow framework was introduced, the script engine was leveraged to support the execution of scripts from within a workflow module. A script console is now included in the Server Administration portlet in the control panel. It allows system administrators an easy way to execute scripts to perform repetitive user maintenance operations, bulk manipulations using the Liferay API to ensure consistency, or even system level operations.
 
@@ -11,7 +11,7 @@ This chapter helps you to understand Liferay's script engine and covers the foll
 
 The most common thing you'll want to do is access Liferay's services. If you have any familiarity with Liferay's developer tools and API, this will be a snap for you. 
 
-## Accessing Liferay Services
+## Accessing Liferay Services [](id=accessing-liferay-services)
 
 In many cases, you'll want to interact with one of Liferay's many services. This is possible from all of the scripting languages supported, but the syntax is a little different for each language. 
 
@@ -37,7 +37,7 @@ To illustrate the correct syntax for interacting with Liferay services, let's lo
 				
 Let's see first how this would work in Beanshell, which is very similar to Java. 
 				
-### Beanshell
+### Beanshell [](id=lp-6-1-ugen13-beanshell-0)
 
 Beanshell is a Java scripting language that's designed to run Java code with little or no changes. In this example, we only have one small change to make because Beanshell doesn't support the use of Java Generics. 
 
@@ -54,7 +54,7 @@ Beanshell is a Java scripting language that's designed to run Java code with lit
 	
 Next, we'll show the same thing in Groovy, another scripting language designed to be similar to Java. 
 
-### Groovy
+### Groovy [](id=lp-6-1-ugen13-groovy-0)
 
 Groovy is also based on Java and is perhaps a little easier than Beanshell because literally any code written in Java also runs in Groovy. This means we can execute the exact same code from our Java example without any changes. 
 
@@ -81,7 +81,7 @@ Of course, we could make this somewhat Groovier by simplyfing the program as fol
 	
 The script engine supports more than just Java-like languages. Despite the name, you should be aware that Javascript bears little resemblance to Java, but you can still use it in Liferay's script engine. 
 
-### Javascript
+### Javascript [](id=lp-6-1-ugen13-javascript-0)
 
 Liferay uses the Rhino Javascript Engine to provide Javascript support in the script engine. The following code provides a Javascript version of our original Java program.  
 
@@ -96,7 +96,7 @@ Liferay uses the Rhino Javascript Engine to provide Javascript support in the sc
 	
 You can see that the Javascript example is more compact. Ruby is even more compact. 
 
-### Ruby
+### Ruby [](id=lp-6-1-ugen13-ruby-0)
 
 Ruby is supported throgh the use of JRuby and our previous example could be implemented in Ruby as follows: 
 
@@ -106,7 +106,7 @@ Ruby is supported throgh the use of JRuby and our previous example could be impl
 	
 Python users aren't left out either. 
 
-### Python
+### Python [](id=lp-6-1-ugen13-python-0)
 
 Lastly, Liferay provides Python support based on Jython and the previous example could be implemented with the following code. 
 
@@ -121,7 +121,7 @@ Lastly, Liferay provides Python support based on Jython and the previous example
 
 As you can see, Liferay's services can be accessed from any of these languages. Let's look at some practical examples of how you'd use this. 
 		
-## Running scripts from the control panel 
+## Running scripts from the control panel [](id=running-scripts-from-the-control-panel)
 
 To see a very simple example of the script console in action, log into the portal as an administrator and navigate to the control panel &rarr; Server Administration &rarr; Script. Change the script type to Groovy and modify the current code to look like the following:
  
@@ -175,7 +175,7 @@ For these reasons, you want to use the script console with care, and test run yo
 
 Of course, the script engine has uses beyond the script console. One of the main uses of it is in designing workflows. 
 
-## Leveraging the Script Engine in Workflow
+## Leveraging the Script Engine in Workflow [](id=leveraging-the-script-engine-in-workflow)
 
 Liferay's Kaleo workflow engine provides a robust system for reviewing and approving content in an enterprise environment. Just with the standard feature set, it is a powerful and robust workflow solution. Adding scripting features brings it to the next level.
 
@@ -259,13 +259,13 @@ The combination of Liferay's scripting and workflow engines is incredibly powerf
   
 <!-- | TODO
 
-## Script Based Portlets
+## Script Based Portlets [](id=lp-6-1-ugen13-script-based-portlets-0)
 
 -- TO DO - Jonathon?
 
 | -->
 
-## Custom Java Tools in the Script Engine
+## Custom Java Tools in the Script Engine [](id=custom-java-tools-in-the-script-engine)
 
 There are several challenges when working with the Script Engine, including debugging and logging. One approach to overcome these challenges is to develop custom Java utilities that can be called from your scripts. These utilities can write to a custom log file or the Liferay log file. You can also place breakpoints in your utility code and step through it using your favorite debugger. 
 
@@ -360,7 +360,7 @@ To see the `ScriptUtil` code in action, navigate back to the *control panel* &ra
 	
 You should see the results of your script displayed right under the script. 
 
-## Summary
+## Summary [](id=summ-34)
 
 In this chapter we saw how Liferay's script engine opens up many exciting posibilities for working with Liferay regardless of your language of choice. We learned how you can leverage Liferay's Services Oriented Architecture (SOA) from any of the popular scripting languages that Liferay supports. We then saw how those scripts could be used to simplify administrative tasks by leveraging the Administrator Script Console. Next, we discovered how you could enhance workflow by using the power of scripts. Lastly, we saw how you could overcome some of the limitations of running scripts in Liferay by creating custom Java utilities that could be executed from within your scripts. 
 

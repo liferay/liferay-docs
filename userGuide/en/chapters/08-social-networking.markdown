@@ -1,4 +1,4 @@
-# Social Networking with Liferay
+# Social Networking with Liferay [](id=social-networking-with-liferay)
 
 Since the first social networks rose to popularity, concepts such as *Friend* and later *Like*--previously reserved for direct human interaction--have taken on new meaning in an always-online, information driven culture. It could be argued that social networks have transformed the way people interact with their friends, relatives, and colleagues. Friends, connections, followers, circles, and lists have enabled people to connect and stay connected in ways they'd never been able to before. Initially, these concepts proved to be highly successful for casual web sites but they didn't take to the business world as quickly. But now, more and more organizations are realizing the importance of leveraging social interactions for more than just recreation. Liferay's robust social features make it a great platform for business web sites, casual web sites, and everything in between.
 
@@ -15,7 +15,7 @@ When we're finished, you'll have a good idea how you can use Liferay to power yo
 
 <!-- | TODO: Need to include a small section here on installing the social portlets for EE users. DONE | -->
 
-## Liferay's social portlets
+## Liferay's social portlets [](id=liferay-s-social-portlets)
 	
 Liferay has many portlets available for social interaction and collaboration. Some of these portlets are designed to help you work together as a team, while others are designed to foster social interactions between team members at your organization.
 
@@ -23,13 +23,13 @@ Some of the social portlets should be used on the public pages of your portal, w
 
 Unless otherwise noted, these portlets are all provided with minimal configuration options. Most of them have two configuration options--the option to change permissions for the portlet view and sharing options for connecting the portlet to other web sites. They do not have any way to change options like feed length or display styles. Some styling changes, however, can be done through custom CSS.
 
-### Installing the social portlets
+### Installing the social portlets [](id=lp-6-1-ugen08-installing-the-social-portlets-0)
 
 The social portlets are all included with the Liferay Community Edition distribution, but need to be installed separately for Enterprise Edition. If you're using Liferay Enterprise Edition, or had previously removed the social portlets from Community Edition, you can use Liferay's plugin installer to easily add social features to your portal.
 
 If you're logged in as an adminstrator, go to the control panel, and in the *Server* section, click on *Plugins Installation*. From here, click on *Install More Portlets* and search for *Social Networking*. Once the results come up, select the latest version of the Social Networking Portlet, and then click *Install*. Once the install process finishes, you can start using the social networking portlets. 
 
-### Using social networking on public pages
+### Using social networking on public pages [](id=lp-6-1-ugen08-using-social-networking-on-public-pages-0)
 
 There are several social portlets that are designed for use on regular portal pages. The goal of these is to use social connections to help a group work together more closely. These include the **Members** portlet, **Meetups**, **Top Users**, **Summary**, and **Activities**.
 
@@ -47,7 +47,7 @@ The options for creating a meetup are essentially the same as those for creating
 
 The Activities portlet comes in two varieties: the standard Activities portlet and the Members' Activities portlet. The basic function of the portlets are the same--they both display a feed of what users are doing on the portal. The difference is that Activities displays what's going on across the entire portal, while Members' Activities displays only what members of the current site have been doing.
 
-### Using social networking on personal pages
+### Using social networking on personal pages [](id=lp-6-1-ugen08-using-social-networking-on-personal-pages-0)
 
 In addition to the portlets available for general use, there are a handful that can be used only on personal pages. These portlets can be used to create a profile page, similar to Facebook or Google+. 
 
@@ -69,11 +69,11 @@ The map is a tool which enables you to view the locations of other users on the 
 
 Liferay ships with a nice suite of social networking applications that lets you power your site for social interaction. Now that we've discussed what these portlets do, let's put them all together and make a social web site. 
 
-### Liferay's social tools in action
+### Liferay's social tools in action [](id=lp-6-1-ugen08-liferays-social-tools-in-action-0)
 
 To get started with Liferay's social features, let's set up the public pages of our users' personal sites to include social apps. Because of Liferay's flexible page layout options, we have a large number of options for how to set the pages up. For simplicity's sake, we'll make something that's fairly similar to the original Facebook layout.
 
-#### Setting up users' personal pages
+#### Setting up users' personal pages [](id=lp-6-1-ugen08-setting-up-users-personal-pages-0)
 
 Before we start adding portlets to pages, we should configure Liferay so that everyone (or some subset of everyone) has the same social features. We have two ways to do this, with some advantages and disadvantages to each.
 
@@ -105,7 +105,7 @@ Back in the control panel, select *Users and Organizations* from the *Portal* se
 
 Now, go to *Portal Settings* and select *Users* from the submenu. From the Users page, go to the *Default User Associations* tab and enter *Social Users* in the User Groups section. Now all users on the portal get a Social Profile page. Now the question is, how do we encourage users to visit each other's fancy new profile pages?
 
-#### Connecting users through collaboration
+#### Connecting users through collaboration [](id=lp-6-1-ugen08-connecting-users-through-collaboration-0)
 
 There are many ways that social networks connect users. These generally involve some kind of mutual interest or experience. On a site like Facebook, you can connect with people from school, from work, or from other personal connections. On a music based networking site like Last.fm, you can connect with people who like the same musicians that you do, or have similar tastes. With Liferay's social networking, collaboration is the key to connection. 
 
@@ -123,11 +123,11 @@ Probably the most effective way users can connect is by interacting with other u
 
 Beyond Liferay's API, there is also support for the OpenSocial standard. 
 
-## OpenSocial integration
+## OpenSocial integration [](id=opensocial-integration)
 
 OpenSocial is a framework designed for creating applications, called *gadgets* that function on any social networking site that supports them. There are many existing gadgets available, and anyone can create their own gadgets. With Liferay, you can integrate any OpenSocial gadget into a Liferay page, and you can easily manage which gadgets are currently in use or available. You can also create your own OpenSocial Gadget using the Liferay's OpenSocial development environment.
 
-### Using OpenSocial gadgets
+### Using OpenSocial gadgets [](id=lp-6-1-ugen08-using-opensocial-gadgets-0)
 
 The OpenSocial plugin is included with Liferay Community Edition, and can be installed through Liferay Marketplace on Liferay EE. Installing the OpenSocial plugin will enable you to add OpenSocial gadgets to pages directly, and to integrate them into your portal like a portlet to be added or removed by users as desired.
 
@@ -149,7 +149,7 @@ In addition to configuring individual gadgets, you can specify gadgets that are 
 
 Clicking *Actions* next to the gadget will enable you to edit, delete, change permissions, or refresh the gadget. *Edit* allows you to change the URL or category; *Permissions* gives you the basic *View*, *Update*, *Delete*, and *Permissions* options; *Delete* will remove the listing for the gadget; and the refresh option manually refreshed the gadget cache for cases where changes have been made to the gadget, but they are not displaying in the portlet.
 
-### Creating and editing OpenSocial gadgets
+### Creating and editing OpenSocial gadgets [](id=lp-6-1-ugen08-creating-and-editing-opensocial-gadgets-0)
 
 OpenSocial gadgets are XML documents, so as part of Liferay's OpenSocial integration, a gadget editor is included. The gadget editor is a complete development environment for gadgets, and provides syntax highlighting, a preview function, undo/redo options, and built in tabs for working on multiple gadgets at once. You can also organize and manage gadgets through a simple file manager embedded into the portlet. To access the gadget editor, go to the control panel, and click on *OpenSocial Gadget Editor* in the content section.  
 
@@ -159,7 +159,7 @@ Once you have created and saved a gadget using the editor, click on the wrench n
 
 Now that you've got all these social applications running on your system, the next question becomes: how do I measure social interaction? How do I make it clear who are the best contributors to my site? Liferay has an answer: social activity measurements.  
 
-## Measuring social activity
+## Measuring social activity [](id=measuring-social-activity)
 
 <!-- | TODO This is all out of date. It's been reimplemented for Liferay 6.1. Please rewrite. | -->
 
@@ -199,21 +199,21 @@ Social Activity can be an invaluable tool for portals that are heavily driven by
 
 In addition to the social interactions that you can create on your portal, Liferay has points of integration with some other popular social networks that enable you to leverage their power and popularity for the content on your portal.
 	
-## Facebook integration
+## Facebook integration [](id=facebook-integration)
 	
 Facebook is currently the number one social network in the world with somewhere in the neighborhood of 750 million active users. If you're trying to build a community on your portal, you don't want to neglect a bridge to nearly a billion possible users. With that in mind, Liferay provides a few easy ways that you can integrate your portal with Facebook.
 
-### Facebook sign on
+### Facebook sign on [](id=lp-6-1-ugen08-facebook-sign-on-0)
 
 Like many web sites that you may visit, any portal running on Liferay can be set up to use Facebook for sign in. This makes it easier for users to sign in to your site, since they won't need to remember another user name and password, For more information on setting up Facebook sign on, see chapter 12.
 
-### Using your portlets as Facebook applications
+### Using your portlets as Facebook applications [](id=lp-6-1-ugen08-using-your-portlets-as-facebook-applications-0)
 
 You can add any Liferay portlet as an application on Facebook. To do this, you must first get a developer key. A link for doing this is provided to you in the Facebook tab in any portlet's Configuration screen. You will have to create the application on Facebook and get the key and canvas page URL from Facebook. Once you've done this, you can copy and paste their values into the Facebook tab. Your portlet is now available on Facebook.
 
 This integration enables you to make things like Message Boards, Calendars, Wikis, and other content on your portal available to a much larger audience (unless you already have a billion users on your site, in which case, kudos to you). 
 
-## Summary
+## Summary [](id=summ-30)
 
 <!-- | TODO: This is too thin. Please use the headings to summarize what the chapter was about. | -->
 
