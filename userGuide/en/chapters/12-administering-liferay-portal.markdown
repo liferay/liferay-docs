@@ -116,8 +116,6 @@ Click the *Actions* button next to the new organization you created. This shows 
 
 **Manage Site:** lets you create and manage public and private pages for the organization's site.
 
-**Manage Teams:** lets you create teams within this organization, to which you can assign users and permissions.
-
 **Assign Organization Roles:** lets you assign organization-scoped roles to users. By default, Organizations are created with three roles: Organization Administrator, Organization User, and Organization Owner. You can assign one or more of these roles to users in the organization. All members of the organization automatically get the Organization User role so this role is hidden when you click Assign Organization Roles.
 
 **Assign Users:** lets you search and select users in the portal to be assigned to this organization as members.
