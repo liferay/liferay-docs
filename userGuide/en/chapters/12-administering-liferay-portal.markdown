@@ -361,7 +361,7 @@ Roles are groupings of users that share a particular function within the portal,
 
 The roles page of the control panel serves as a single interface which lets you create roles, assign permissions to them, and assign users to the roles. Roles can be scoped by portal, site, or organization. To create a role, click the *Roles* link, and then click the *Add* button. You can choose a Regular, Site, or Organization role. A regular role is a portal-scoped role. Make a selection and then type a name for your role, a title, and a description. The name field is required but the title and description are optional. If you enter a name and a title, the title will be displayed in the list of roles on the Roles page of the control panel. If you do not enter a title, the name will be displayed. When you have finished, click *Save*.
 
-![Figure 12.16: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
+![Figure 12.15: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what functions you can perform on your new role, click the *Actions* button.
 
@@ -383,7 +383,7 @@ Next, let's examine how to configure the permissions granted by different roles.
 
 Roles serve as repositories of permissions to be assigned to users who belong to them. So, to use a role, you need to assign members to it and define the permissions that you want to grant to members of the role.
 
-![Figure 12.17: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
+![Figure 12.16: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
 
 When you click the *Actions* button on portal-scoped role and select *Define Permissions*, you will be shown a list of all the permissions that have been defined for that role. Click the *Add Permissions* drop-down menu to see a list of the permissions that can be defined. As of Liferay version 6.1, these permissions fall into seven categories: Portal, Site Content, Site Application, Control Panel: Personal, Control Panel: Site, Control Panel: Portal, and Control Panel: Server. For non-portal scoped roles, you need to click on the *Options* link on individual portlets, then *Configuration*, then *Permissions* to assign permissions within the site or organization that owns the portlet. 
 
@@ -395,7 +395,7 @@ Site Application permissions affect the application as a whole. So, using our Me
 
 The control panel permissions affect how the portlet appears to the user in the control panel. Some control panel portlets have a Configuration button, so you can define who gets to see that, as well as who gets to see an application in the control panel.
 
-![Figure 12.18: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
+![Figure 12.17: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
 
 Each possible action to which permissions can be granted is listed. To grant a permission, check the box next to it. If you want to limit the scope of the permission to a particular site, click the *Limit Scope* link, and then choose the site. Once you have chosen the permissions granted to this role, click *Save*. For a portal-scoped Message Boards Administrator role, you might grant content permissions for every action listed. After you click *Save*, you will see a list of all permissions that are currently granted to this role. From here, you can add more permissions or go back by clicking a link in the breadcrumb list or the *Return to Full Page* link.
 
@@ -421,7 +421,7 @@ If you create a team for one site, the permissions defined for it are not availa
 
 To create a team within a site, first naviagte to the *Control Panel &rarr; Sites* page then and then select *Actions &rarr; Manage Memberships* for the site within which you want to create a team. Finally, click *View &rarr; Teams* and click the Add Team button.
 
-![Figure 12.19: Creating a Team within a Site](../../images/01-creating-a-team.png)
+![Figure 12.18: Creating a Team within a Site](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions &rarr; Assign Members*.
 
@@ -493,7 +493,7 @@ Most global portal settings can be configured from the Portal Settings section o
 
 **Email Notifications:** allows you to configure Liferay to send email notifications for certain events, such as user registrations, password changes, etc. You can customize those messages here.
 
-![Figure 12.20: Portal Settings Pages](../../images/server-configuration-portal-settings-pages.png)
+![Figure 12.19: Portal Settings Pages](../../images/server-configuration-portal-settings-pages.png)
 
 Let's discuss these settings next.
 
@@ -630,7 +630,7 @@ The control panel provides default mappings for commonly used LDAP attributes. Y
 
 * *Test LDAP Users:* Once you have your attribute mappings set up (see above), click the *Test LDAP Users* button, and Liferay will attempt to pull LDAP users and match them with their mappings as a preview.
 
-![Figure 12.21: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
+![Figure 12.20: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay.
 
@@ -654,7 +654,7 @@ The control panel provides default mappings for commonly used LDAP attributes. Y
 
 * *Group Default Object Classes:* When a group is exported, the group is created with the listed default object classes. To find out what your default object classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and view the Object Class attributes that are stored in LDAP for that group.
 
-![Figure 12.22: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
+![Figure 12.21: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From here, you can add another LDAP server or set just a few more options that apply to all of your LDAP server connections.
 
@@ -813,9 +813,9 @@ There are five tabs under the Email Notifications page of Portal Settings. The S
 
 The other four tabs are Account Created Notification, Email Verification Notification, Password Changed Notification, and Password Reset Notification. These tabs allow you to customize the email messages that are sent to users each time any of those four events occur.
 
-![Figure 12.23: Automated Emails: Account Created Notification](../../images/server-configuration-account-created-notification.png)
+![Figure 12.22: Automated Emails: Account Created Notification](../../images/server-configuration-account-created-notification.png)
 
-![Figure 12.24: Definition of Terms for Automated Emails](../../images/server-configuration-definition-of-terms.png)
+![Figure 12.23: Definition of Terms for Automated Emails](../../images/server-configuration-definition-of-terms.png)
 
 A list of tokens, entitled "Definition of Terms," is provided so that you can insert certain values (such as the portal URL or the user ID) when you are setting up the custom email messages.
 
@@ -827,7 +827,7 @@ The identification section has several links for addresses, phone numbers, and o
 
 This section allows you to set the default portal language and the time zone. You can also set up a portal-wide logo which appears in the top left corners of portal pages. 
 
-![Figure 12.25: Server Configuration Miscellaneous Display Settings](../../images/server-configuration-miscellaneous-display-settings.png)
+![Figure 12.24: Server Configuration Miscellaneous Display Settings](../../images/server-configuration-miscellaneous-display-settings.png)
 
 Liferay's default theme is configured to display the portal logo. For custom themes, you can choose whether or not to display the logo. Be careful to choose an image file that fits the space. If you pick something that is too big, it might overlap with the navigation. Next, let's look at how to customize different types of portal assets using custom fields.
 
@@ -837,11 +837,11 @@ Custom fields are a way to add attributes to many types of assets in the portal.
 
 To add a custom field, click on the *Custom Fields* link in the control panel. Then choose a resource, click on the *Edit* link next to it and select *Add Custom Field*.
 
-![Figure 12.26: Custom Fields Resource List](../../images/server-configuration-custom-fields-resource-list.png)
+![Figure 12.25: Custom Fields Resource List](../../images/server-configuration-custom-fields-resource-list.png)
 
 From here you will need to add the custom field key. The key appears as the label for the field on the form. For some portal assets (like the User), custom fields are a separate section of the form. For others, as can be seen above, custom fields are integrated with the default fields on the form. Additionally, developers can access custom fields programatically through the `<liferay-ui:custom-attribute />` tag.
 
-![Figure 12.27: Custom Fields Integrated with the Rest of the Fields on the Wiki Form](../../images/server-configuration-custom-fields-integrated.png)
+![Figure 12.26: Custom Fields Integrated with the Rest of the Fields on the Wiki Form](../../images/server-configuration-custom-fields-integrated.png)
 
 You can create fields of many different types: text fields (indexed or secret), integers, selection of multiple values, and more. Once you've created a field, you cannot change its type.
 
