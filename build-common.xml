@@ -44,6 +44,17 @@ directory to convert the userGuide into complete English markdown, html, odt, an
 
 	<!-- taskdefs -->
 
+	<taskdef name="checkimgs" classname="com.liferay.documentation.util.CheckImagesTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="checkdocprops" classname="com.liferay.documentation.util.CheckDocPropsTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -89,6 +100,11 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         <echo message="pandoc.app -> ${pandoc.app}"/>
     </target>
 
+	<target name="check-images" description="verifies all images referenced in markdown files for a document or chapter">
+		<checkimgs docdir="${doc.dir}" lang="${lang}" chapter="${chapter}">
+		</checkimgs>
+	</target>
+
 	<target name="check-doc-props" description="checks that all document dirs have a valid doc.properties file">
 		<checkdocprops lang="${lang}" basedir="${project.dir}">
 		</checkdocprops>
@@ -119,7 +135,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </copy>
     </target>
 
-    <target name="prepare-dist" depends="number-headers, number-images-dir" description="numbers the headers and images in the files, creates dist directory, copies images and overriding with language specific images">
+    <target name="prepare-dist" depends="check-images, number-headers, number-images-dir" description="numbers the headers and images in the files, creates dist directory, copies images and overriding with language specific images">
         <echo message="... creating ${dist.dir}/${lang} directory"/>
         <mkdir dir="${dist.dir}/${lang}"/>
         <copy todir="${dist.dir}/${lang}/images">
@@ -180,7 +196,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </exec>
     </target>
 
-    <target name="markdown-to-html" depends="add-markdown-metadata" description="converts markdown file to an html file">
+    <target name="markdown-to-html" depends="check-images, add-markdown-metadata" description="converts markdown file to an html file">
         <echo message="... converting ${doc.dir} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html -o test-guide.html  test-guide.markdown -->
         <exec executable="${pandoc.app}">
@@ -198,7 +214,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </exec>      
     </target>
 
-    <target name="markdown-to-html-win" depends="concat-markdown-files-win" description="converts markdown file to an html file on windows">
+    <target name="markdown-to-html-win" depends="check-images, concat-markdown-files-win" description="converts markdown file to an html file on windows">
         <echo message="... converting ${doc.dir} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html +RTS K64m -RTS -o 01-chapter-02.html  01-chapter-02.markdown -->
         <exec executable="cmd">
@@ -312,7 +328,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         <move file="./${build.dir}/${lang}/${chapter}.markdown" tofile="./${build.dir}/${lang}/${lang}-${chapter}.markdown" />
     </target>
     
-    <target name="chapter-to-html" depends="copy-single-chapter" description="converts single markdown chapter to an html file">
+    <target name="chapter-to-html" depends="check-images, copy-single-chapter" description="converts single markdown chapter to an html file">
         <echo message="... converting ${chapter} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
         <exec executable="${pandoc.app}">
@@ -330,7 +346,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </exec>      
     </target>
     
-    <target name="chapter-to-html-win" depends="copy-single-chapter" description="converts single markdown chapter to an html file on windows">
+    <target name="chapter-to-html-win" depends="check-images, copy-single-chapter" description="converts single markdown chapter to an html file on windows">
         <echo message="... converting ${chapter} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
         <exec executable="cmd">
