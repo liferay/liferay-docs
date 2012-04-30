@@ -260,7 +260,7 @@ To build a list in Kaleo Forms with a workflow:
 4. Select the appropriate list, workflow and forms you want to use in this process.
 5. Click *Save* to save your process.
 
-![Figure 5.x: New Kaleo Forms process](../../images/05-ddl-kaleo-forms-new-process.png)
+![Figure 5.9: New Kaleo Forms process](../../images/05-ddl-kaleo-forms-new-process.png)
 
 While the form looks complicated, it can be straightforward. There are a few pieces that make up a process, and clicking on each one takes you to the relevant list of options to insert.
 
@@ -276,7 +276,7 @@ One of the great advantages to using Kaleo forms to present your list as a proce
 
 **Edit:** *Edit* mode is used for any stage of the workflow process. For instance, you may want to separate information that shouldn't be saved from information that should. Other stages in the workflow may be a great place to store that additional information. No required fields have to be present on an edit mode form.
 
-![Figure 5.x: Selecting a detail template as the initial form](../../images/05-kaleo-forms-detail-template.png)
+![Figure 5.10: Selecting a detail template as the initial form](../../images/05-kaleo-forms-detail-templates.png)
 
 Once you have chosen the initial display you want, all that's left to do is configure the workflow for your process.
 
@@ -284,7 +284,7 @@ Once you have chosen the initial display you want, all that's left to do is conf
 
 You can now select a workflow to apply to your new list-defined process. All the avaliable workflows can be chosen, and you can create new ones from the selection screen. Simply choose *Add Workflow*, and a Workflow Designer screen appears, allowing you to define a new workflow by dragging elements in a flow chart.
 
-![Figure 5.x: Creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
+![Figure 5.11: Creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
 
 We'll keep ours simple, and just choose "Single Approver Definition." This gives us a starting point (entry creation), and a 'review' task, which we can use to add additional information in a secondary form.
 
@@ -299,7 +299,7 @@ When inside the view to assign forms to tasks:
 3. Start typing the name of a detail template, and it appears.
 4. Click *Save* to save the form assignment.
 
-![Figure 5.x: Assigning forms to workflow tasks](../../images/05-kaleo-forms-task-form.png)
+![Figure 5.12: Assigning forms to workflow tasks](../../images/05-kaleo-forms-task-form.png)
 
 You can assign forms to as many tasks as you need, until you're satisfied with the workflow. After this stage, save the process, and it's ready to be used in Kaleo Forms.
 
@@ -309,14 +309,14 @@ You can assign forms to as many tasks as you need, until you're satisfied with t
 
 Once you have a new Kaleo Form process, you can add new entries through the Summary tab in Kaleo Forms. Once the form is filled out and submitted, it enters the workflow you selected for the process.
 
-![Figure 5.x: Adding a new entry to a process](../../images/05-kaleo-form-new-entry.png)
+![Figure 5.13: Adding a new entry to a process](../../images/05-kaleo-form-new-entry.png)
 
 After you have created an entry, the next task in the workflow may have an additional form to complete. If there is, there is also an option to enter it:
 
 1. Next to the entry in progress, click the *Actions* button.
 2. Click *Complete form*.
 
-![Figure 5.x: Completing a form in the next workflow task](../../images/05-kaleo-forms-complete-form.png)
+![Figure 5.14: Completing a form in the next workflow task](../../images/05-kaleo-forms-complete-form.png)
 
 After the new entry has worked its way through the entire workflow, it is added to the data set collected. The owner of that data set (who created the Kaleo process) can view and edit the entries collected.
 
