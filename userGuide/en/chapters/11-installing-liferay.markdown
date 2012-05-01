@@ -66,7 +66,7 @@ If you forget to undeploy the *sevencogs-hook* application before you run throug
 
 If you're using Liferay EE, you don't have the sample site, so you don't need to worry about this. The next step is to run through the setup wizard. 
 
-## Using Liferay's setup wizard [](id=using-liferay-s-setup-wizard) [](id=lp-6-1-ugen11-using-liferays-setup-wizard-idusing-liferay-s-setup-wizard--0)
+## Using Liferay's setup wizard [](id=using-liferay-s-setup-wizard)
 
 To make it easy to configure Liferay optimally for your use, the first thing you see when browsing to your newly installed Liferay bundle is a setup wizard. This gives you a convenient way to configure Liferay for your purposes. 
 

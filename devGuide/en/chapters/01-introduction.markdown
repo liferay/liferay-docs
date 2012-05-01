@@ -93,19 +93,19 @@ Liferay provides many out-of-the-box features, including a fully featured conten
 
 Liferay provides several types of plugins that are specialized for different types of customization. Yet, it is possible to combine several plugin types, such as Themes and Layout Templates, into a single WAR file. The following sections describe each type of plugin and how they may be used.
 
-### Customizing the look and feel: Themes [](id=lp-6-1-dgen01-customizing-the-look-and-feel-themes-0) [](id=lp-6-1-dgen01-customizing-the-look-and-feel-themes-idlp-6-1-dgen01-custom-0)
+### Customizing the look and feel: Themes [](id=lp-6-1-dgen01-customizing-the-look-and-feel-themes-0)
 
 Themes allow the look of the Liferay portal to be changed using a combination of CSS and Velocity templates. In many cases, it is possible to adapt the default Liferay theme to a desired look using only CSS, providing the most forward compatibility. If CSS is insufficient, you can create a theme consisting of only a subset of the required templates and rely on the remaining templates to be copied from the default theme at deployment. Like portlets, themes are hot-deployed as plugins into a Liferay instance.
 
-### Adding new predefined page layouts: Layout Templates  [](id=lp-6-1-dgen01-adding-new-predefined-page-layouts-layout-templates--0) [](id=lp-6-1-dgen01-adding-new-predefined-page-layouts-layout-templates--idlp-6-0)
+### Adding new predefined page layouts: Layout Templates  [](id=lp-6-1-dgen01-adding-new-predefined-page-layouts-layout-templates--0)
 
 Layouts are similar to themes, except that they change the *arrangement* of portlets on a page rather than their look and feel. Layout templates are also written in Velocity and are hot-deployable.
 
-### Customizing or extending the out of the box functionality: Hook plugins  [](id=lp-6-1-dgen01-customizing-or-extending-the-out-of-the-box-functionality-h-0) [](id=lp-6-1-dgen01-customizing-or-extending-the-out-of-the-box-functionality-h-0)
+### Customizing or extending the out of the box functionality: Hook plugins  [](id=lp-6-1-dgen01-customizing-or-extending-the-out-of-the-box-functionality-h-0)
 
 Hook plugins are the recommended method of customizing the the core functionality of Liferay at many predefined extension points. Hook plugins can be used to modify portal properties or to perform custom actions on startup, shutdown, login, logout, session creation and session destruction. Using service wrappers, it is possible for a hook plugin to replace any of the core Liferay services with a custom implementation. Hook plugins can also replace the JSP templates used by any of the default portlets, allowing you to customize the appearance of the portlets as desired. Best of all, hooks are hot-deployable plugins just like portlets.
 
-### Advanced customization: Ext plugins  [](id=lp-6-1-dgen01-advanced-customization-ext-plugins--0) [](id=lp-6-1-dgen01-advanced-customization-ext-plugins--idlp-6-1-dgen01-advance-0)
+### Advanced customization: Ext plugins  [](id=lp-6-1-dgen01-advanced-customization-ext-plugins--0)
 
 Ext plugins provide the largest degree of flexibility in modifying the Liferay core, and allow replacing essentially any class with custom implementations. This flexibility comes at a cost, however, as it is highly unlikely that an Ext plugin written for one version of Liferay will continue to work in the next version, without modification. For this reason, Ext plugins are only recommended for cases where an advanced customization is really needed and there is no other way to accomplish the same goal. Also you should make sure that you are familiar with the Liferay core to assure the Ext plugin doesn't have a negative effect on existing funcitonalities. Even though Ext plugins are deployed as plugins, the server must be restarted for their changes to take effect. For this reason, Ext plugins should not be combined with other types of plugins.
 
