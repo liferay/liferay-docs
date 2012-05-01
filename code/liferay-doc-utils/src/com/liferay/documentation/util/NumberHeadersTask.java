@@ -59,11 +59,11 @@ public class NumberHeadersTask extends Task {
 
 		for (int i = 0; i < files.length; i++) {
 			String filename = files[i];
-			try {
-				String inFile = chDir.getPath() + "\\" + filename;
-				String outFile = chDir.getPath() + "/" + filename;
-				String outFileTmp = outFile + ".tmp";
+			String inFile = chDir.getPath() + "\\" + filename;
+			String outFile = chDir.getPath() + "/" + filename;
+			String outFileTmp = outFile + ".tmp";
 
+			try {
 				LineNumberReader in = new LineNumberReader(new FileReader(inFile));
 				BufferedWriter out = new BufferedWriter(new FileWriter(outFileTmp));
 
@@ -267,10 +267,10 @@ public class NumberHeadersTask extends Task {
 	private static Pattern headerIdPattern;
 
 	static {
-		String patternArg = "(#)+([^\\\\\\[\\]\\|:;%<>]*)" +
+		String patternArg = "(#)+([^\\\\\\[\\]\\|%<>]*)" +
 				Pattern.quote("[") + Pattern.quote("]") +
 				Pattern.quote("(") + "id" + Pattern.quote("=") +
-				"([^\\\\\\[\\]\\|:;%<>]+)" + Pattern.quote(")");
+				"([^\\\\\\[\\]\\|:;%]+)" + Pattern.quote(")");
 
 		headerIdPattern = Pattern.compile(patternArg);
 	}
