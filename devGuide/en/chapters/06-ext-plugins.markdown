@@ -508,7 +508,7 @@ This strategy will help you determine what you will need to merge in the future 
 
 In production or pre-production environments, it's often not possible to use Ant to deploy web applications. Also, some application servers such as WebSphere or Weblogic have their own deployment tools and it isn't possible to use Liferay's autodeploy process. This section describes two methods for deploying and redeploying Ext plugins in these scenarios.
 
-### Method 1: Redeploying Liferay's web application [](id=lp-6-1-dgen06-method-1-redeploying-liferays-web-application-0) [](id=lp-6-1-dgen06-method-1-redeploying-liferays-web-application-idlp-6-1-dgen-0)
+### Method 1: Redeploying Liferay's web application [](id=lp-6-1-dgen06-method-1-redeploying-liferays-web-application-0)
 
 This method can be used in any application server that supports auto-deploy, such as Tomcat or JBoss. Its main benefit is that the only artifact that needs to be transferred to the production system is your Ext plugin's `.war` file, produced using the `ant war` target. This `.war` file is usually small making it easy to transport. Here are the steps that need to be executed on the server:
 
@@ -520,7 +520,7 @@ This method can be used in any application server that supports auto-deploy, suc
 
 3.  Once the Ext plugin is detected and deployed by Liferay, restart the     Liferay server.
 
-### Method 2: Generate an aggregated WAR file [](id=lp-6-1-dgen06-method-2-generate-an-aggregated-war-file-0) [](id=lp-6-1-dgen06-method-2-generate-an-aggregated-war-file-idlp-6-1-dgen06-me-0)
+### Method 2: Generate an aggregated WAR file [](id=lp-6-1-dgen06-method-2-generate-an-aggregated-war-file-0)
 
 This method can be used for application servers that do not support auto-deploy, such as WebSphere or Weblogic. Its main benefit is that all Ext plugins are merged before deployment to production, so a single `.war` file will contain Liferay plus the changes from one or more Ext plugins. Before deploying the Liferay `.war` file, you'll need to copy the dependency `.jar` files for both Liferay and the Ext plugin to the global application server class loader in the production server. This location varies from server to server; please see [Using Liferay Portal 6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) for further details for your application server.
 

@@ -1,4 +1,4 @@
-# Preface [](id=lp-6-1-dgen00-preface-0)
+# Preface [](id=pref-11)
 This guide was written as a quick reference to help you get started developing on the Liferay Portal platform. It is a guide for those who want to get their hands dirty using Liferay's framework and APIs to create fantastic websites.
 
 For a more exhaustive view into Liferay development, we encourage you to check out the complete, official guide to Liferay development, *Liferay in Action*, published by Manning Publications. You can find this book online at [http://manning.com/sezov](http://manning.com/sezov).
