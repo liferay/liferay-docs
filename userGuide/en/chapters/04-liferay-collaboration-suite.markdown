@@ -229,7 +229,7 @@ If you click *Configuration* from the menu button in the title bar of the portle
 
 When you've finished setting the options in the portlet, click *Save*. Then close the dialog box. You'll notice the Blogs Aggregator looks very much like the Blogs portlet, except that the entries come from more than one author. This makes it nice and familiar for your users to navigate. 
 
-### The Blogs Admininistrator Portlet
+### The Blogs Admininistrator Portlet [](id=lp-6-1-ugen04-the-blogs-admininistrator-portlet-0)
 
 In the control panel there's a portlet for managing your site's blog entries. Most of the time, the Blogs portlet is the only tool you'll need to manage your blog entries. If, however, you need to massively delete blog entries, the blogs administrator portlet is the perfect tool for you. 
 
@@ -939,7 +939,7 @@ The admin must ensure the same credentials and authentication are being used in 
 
 The repository is displayed in the left side of the window in the Home folder.
 
-![Figure 4.35: Viewing a repository](../../images/05-repository.png)
+![Figure 4.35: Viewing a repository](../../images/05-repository.jpg)
 
 ### Document Types and Metadata Sets [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
 
@@ -1013,11 +1013,11 @@ and enable either through External Services in Control Panel or in `portal-ext.p
 
 With the above tools installed and enabled, Documents and Media looks like this:
 
-![Figure 4.40: Previews in Documents and Media](../../images/05-previews.png)
+![Figure 4.40: Previews in Documents and Media](../../images/05-previews.jpg)
 
 You can view a document with a customized viewer that allows you to navigate through the different pages of the document and read its content.
 
-![Figure 4.41: Viewing an office document](../../images/05-document-preview.png)
+![Figure 4.41: Viewing an office document](../../images/05-document-preview.jpg)
 
 You can view a multimedia document (audio or video) and play it online. If the browser supports HTML5, it uses the native player of the browser. Otherwise it falls back to a Flash player.
 
@@ -1051,7 +1051,7 @@ Suppose you've created an *Image Gallery* folder using a Documents and Media por
 
 Next, navigate to the Documents and Media portlet hosting the folder you'd like to access. Mouse over the folder (*Image Gallery* for our example) and select *Access from Desktop*.
 
-![Figure 4.45: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/access-from-desktop.png)
+![Figure 4.45: Select *Access from Desktop* to get the WebDAV URL of a folder.](../../images/webdav-access-from-desktop.png)
 
 Copy the WebDAV URL. On Windows, right-click on My Computer and select *Map Network Drive*. Select an unused drive, paste the WebDAV URL, and click *Finish*. You're prompted to enter your Liferay credentials and then, provided you have the required permissions, the *Image Gallery* folder appears. You can now add, edit, move, or delete files in this directory. 
 

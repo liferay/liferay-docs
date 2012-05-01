@@ -204,7 +204,7 @@ Next in the menu is Site Memberships, which is covered in chapter 12. There, you
 
 Liferay 6.1 makes it easier to access Web Content management without using the control panel. You can now click *Manage* and then *Site Content* to access the same Web Content controls that are featured in the control panel right from your portal page. 
 
-![Figure 2.10: Site Content](../../images/web-content-site-content.png)
+![Figure 2.8: Site Content](../../images/web-content-site-content.png)
 
 You can manage the following kinds of content:
 
@@ -263,7 +263,7 @@ Adding portlets to a page is simple. Let's add some to our Collaboration page.
 
 See how easy it is to add applications to your pages? We've gone one step further: we've got the Wiki portlet, the Blogs Aggregator portlet, and then a nested portlet with a different layout and the Alerts, Search, and Dictionary portlets in the figure below. 
 
-![Figure 2.11: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
+![Figure 2.9: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
 
 You'll find it's easy to make your pages look exactly the way you want them to. If the layout options provided aren't enough, you can even develop your own. More information about that can be found in Liferay's official guide to development, [*Liferay in Action*](http://manning.com/sezov).
 
@@ -282,7 +282,7 @@ Let's say we wanted to create a page only for administrators to see. We can do t
 7.  Uncheck the *View* and *Add Discussion* permissions next to the Site Member role.
 8.  Click the *Save* button.
 
-![Figure 2.12: Permissions for Admin Tips](../../images/04-web-content-page-permissions.png)
+![Figure 2.10: Permissions for Admin Tips](../../images/04-web-content-page-permissions.png)
 
 Congratulations! You've just changed the permissions for this page so that only site administrators can view it. Any users you add to this role can now see the page. Other users, even members of this site, won't have permission to see it.
 
