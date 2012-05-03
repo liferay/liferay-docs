@@ -807,7 +807,7 @@ Navigate back to the *Configuration* tab of the Plugin Installer. Enter the loca
 
 Now you can deploy plugins using the Plugin Installer portlet or by dropping `.war` files into your auto deploy directory. Liferay will pick up the files, modify them, and then copy the result into the destination directory you have configured. You may then deploy them from here to your application server.
 
-##### Example: WebSphere &#174; Application Server [](id=lp-6-1-ugen15-example-websphere-application-server-0) [](id=lp-6-1-ugen15-example-websphere-174-application-server-idlp-6-1-ugen15-ex-0)
+##### Example: WebSphere &#174; Application Server [](id=lp-6-1-ugen15-example-websphere-application-server-0)
 
 1.  If you don't have one already, create a `portal-ext.properties` file in the Liferay Home folder of your Liferay installation. Add the following directive to it:
 
