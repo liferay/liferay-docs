@@ -282,6 +282,13 @@ In order to export a Site using a Site Template, the process would be the follow
 5. Upload the LAR file containing the content of your Site Template
 6. Now the Site can be exported and imported normally to this new environment.
 
+For the Page Templates the process is quite similar to the previous one:
+1. Go to the Page Templates administration
+2. Next to the page template you would like to export click on the Actions button and select the Export action. This will produce a LAR file what can you later import
+3. On the target environment, go to the Page Templates administration and create a new Page Template
+4. Click on the Actions button next to the newly created template and select the Import action
+5. Upload the LAR file containing exported in step 3
+6. The Page Template now can be imported normally to this new environment.
 
 ### User Groups [](id=lp-6-1-ugen12-user-groups-0)
 
