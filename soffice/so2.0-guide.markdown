@@ -52,7 +52,17 @@ To install Social Office manually, you just need to deploy the Social Office `.l
 
 ---
 
-![Figure X.x: Tip](./images/tip.png) **Note:** Social Office 2.0 is incompatible with 7 Cogs, the sample website that comes pre-installed with Liferay bundles. You need to remove 7 Cogs from your Liferay installation before installing Social Office. This is very easy to do. For a Tomcat bundle, just navigate to `<Liferay Home>/tomcat-<version>/webapps` and remove the `seven-cogs-hook` folder. For other application server bundles, navigate to the directory where web applications are installed and remove the `seven-cogs-hook` folder. Please refer to chapter 11 of Using Liferay Portal at [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server) if you're not sure where the web applications directory is on your application server.
+![Figure X.x: Tip](./images/tip.png) **Warning:** Social Office 2.0 is incompatible with 7 Cogs, the sample website that comes pre-installed with Liferay bundles. You need to remove 7 Cogs from your Liferay installation before installing Social Office. This is very easy to do. For a Tomcat bundle, just navigate to `<Liferay Home>/tomcat-<version>/webapps` and remove the `seven-cogs-hook` folder. For other application server bundles, navigate to the directory where web applications are installed and remove the `seven-cogs-hook` folder. Please refer to chapter 11 of Using Liferay Portal at [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server) if you're not sure where the web applications directory is on your application server.
+
+---
+
+---
+
+![Figure X.x: Tip](./images/tip.png) **Warning:** When you start Liferay for the first time, you're presented with a setup wizard. The configuration you make in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. By default, however, if you specify a different Liferay Home directory in the setup wizard, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
+
+    include-and-override=${liferay.home}/portal-setup-wizard.properties
+
+Without this workaround, Liferay will not read the `portal-setup-wizard.properties` file with your saved configuration when you restart your server and you'll see the setup wizard again. Furthermore, Social Office will not be redeployed and won't be functional. This means that the Dashboard button on the dockbar won't show up. If you manually navigate to the dashboard URL, you see the pages but they'll be unthemed and the portlets will be greyed out with a message stating that they've been undeployed.  
 
 ---
 
