@@ -58,7 +58,7 @@ To install Social Office manually, you just need to deploy the Social Office `.l
 
 ---
 
-![Figure X.x: Tip](./images/tip.png) **Warning:** When you start Liferay for the first time, you're presented with a setup wizard. The configuration you make in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. By default, however, if you specify a different Liferay Home directory in the setup wizard, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
+![Figure X.x: Tip](./images/tip.png) **Warning:** When you start Liferay for the first time, you're presented with a setup wizard. The configuration you make in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. However, if you specify a different Liferay Home directory than the default in the setup wizard, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
 
     include-and-override=${liferay.home}/portal-setup-wizard.properties
 
