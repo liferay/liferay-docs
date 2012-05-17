@@ -111,7 +111,7 @@ Each folder in the Plugins SDK contains scripts for creating new plugins of that
 
 	-	`misc/` - Development configuration files. Example, a source code formatting specification file.
 
-	-	`portlets/` - Portlet plugins directory. See chapter *Portlet Developement*.
+	-	`portlets/` - Portlet plugins directory. See chapter *Portlet Development*.
 
 	-	`themes/` -  Themes plugins directory. See chapter *Creating Liferay Themes*.
 
