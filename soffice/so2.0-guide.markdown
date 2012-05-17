@@ -58,7 +58,7 @@ To install Social Office manually, you just need to deploy the Social Office `.l
 
 ---
 
-![Figure X.x: Tip](./images/tip.png) **Warning:** When you start Liferay for the first time, you're presented with a setup wizard. The configuration you make in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. By default, however, if you specify a different Liferay Home directory in the setup wizard, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
+![Figure X.x: Tip](./images/tip.png) **Warning:** When you start Liferay for the first time, you're presented with a setup wizard. The configuration you make in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. However, if you specify a different Liferay Home directory than the default in the setup wizard, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
 
     include-and-override=${liferay.home}/portal-setup-wizard.properties
 
@@ -182,11 +182,13 @@ Social Office not only provides custom pages and applications for users' persona
 - *Wiki*
 - *Members*
 
-The wizard lets you choose which of these pages you'd like to include in your site. Links to these pages are embedded in the left-most column of each page that belongs to the site.
+When creating a site, you can select a membership type: Open, Restricted, or Private. Any portal user can join an open site. Portal users can request to join a restricted site but must be approved by a site administrator. Private sites are invisible to non-members; members must be invited by a site administrator. By default, all the pages of an open Social Office site are public but restricted and private Social Office site pages are private.
 
-![Figure X.x: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](./images/new-site-wizard.png)
+![Figure X.x: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](./images/new-site-wizard1.png)
 
-Note: When creating a site, you can select a membership type: Open, Restricted, or Private. Any portal user can join an open site. Portal users can request to join a restricted site but must be approved by a site administrator. Private sites are invisible to non-members; members must be invited by a site administrator. By default, all the pages of an open Social Office site are public but restricted and private Social Office site pages are private.
+The Add Site wizard lets you choose which of default template pages you'd like to include in your site. Links to these pages are embedded in the left-most column of each page that belongs to the site.
+
+![Figure X.x: You can choose a site template to use to create your new site and you can choose which template pages to include.](./images/new-site-wizard2.png)
 
 When visiting open Social Office sites, users can use the button next to the site name to join or leave the site. This button is not available for restricted or private sites. The Home page of the default Social Office site contains a number of useful portlets. The Activities and Recent Downloads portlets keep site members up to date about what's happening on the site and you can use the Announcements and Events portlets to inform or remind site members about important information. The Bookmarks portlets allows users to create a collection of useful links on your site and you can configure the RSS portlet to display an RSS feed of your choice. The Welcome portlet allows you to set up a custom welome message for your site. It's just a WYSIWYG portlet with its title changed to *Welcome*.
 
