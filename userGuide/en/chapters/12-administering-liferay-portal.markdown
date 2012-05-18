@@ -269,6 +269,27 @@ If staging has been enabled, changes to the page template are automatically prop
 
 Now that we've looked at site and page templates, let's discuss how to set up and manage user groups.
 
+![EE Only Feature]
+### Exporting and Importing Site Templates and Page Templates
+
+In order to export a Site which is using Site or Page Templates to a different environment (trough a LAR file or remote publication), the Templates have to be exported and imported manually in advance, otherwise, the Site will not be imported.
+
+In order to export a Site using a Site Template, the process would be the following:
+1. Go to the Site Templates administration, click on Manage Pages in the Site Template that your site is using
+2. Click on Export Pages to obtain a LAR file with the content of the Site Template
+3. In your target environment, go to the Site Templates administration and create a new Site Template.
+4. Click on Manage Pages of that Site Template and then click on Import Pages.
+5. Upload the LAR file containing the content of your Site Template
+6. Now the Site can be exported and imported normally to this new environment.
+
+For the Page Templates the process is quite similar to the previous one:
+1. Go to the Page Templates administration
+2. Next to the page template you would like to export click on the Actions button and select the Export action. This will produce a LAR file what can you later import
+3. On the target environment, go to the Page Templates administration and create a new Page Template
+4. Click on the Actions button next to the newly created template and select the Import action
+5. Upload the LAR file containing exported in step 3
+6. The Page Template now can be imported normally to this new environment.
+
 ### User Groups [](id=lp-6-1-ugen12-user-groups-0)
 
 User Groups are arbitrary groupings of users. These groups are created by portal administrators to group users together who don't necessarily share an obvious hierarchical attribute. Users can be assigned to multiple user groups. User Groups are most often used to achieve one of the following goals:
