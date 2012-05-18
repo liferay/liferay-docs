@@ -164,7 +164,6 @@ Before we begin, it's important to go over the various facets of the installatio
 1. Create your database (see above). 
 2. Determine whether you want to use the Liferay managed data source or a data source managed by your application server. 
 3. Gather credentials for sending email notifications to users. Liferay supports a JNDI mail session as well as its built in mail session. 
-
 4. Create a `portal-ext.properties` file in the Liferay Home folder. This is a simple text properties file that you'll use to override Liferay's default properties (see below). 
 
 Refer to the manual installation instructions below for further details on configuring the various application servers. There is no difference between the Liferay bundles and the regular distribution archives of the application servers as they are available from their own sites, with the exception that Liferay is pre-installed in them, and the JVM settings may have been optimized for use with Liferay. 
@@ -200,12 +199,22 @@ Liferay's properties files differ from the configuration files of most other pro
 
 The default configuration file is called `portal.properties`, and it resides inside of the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's `WEB-INF/lib` folder. The file that is used to override the configuration is `portal-ext.properties`. This file should be created in your Liferay Home folder (please see chapter 11 for the location of this folder for your application server). You'll use this file throughout this book to change many of Liferay's settings. An exhaustive list of these settings is covered in chapter 14. 
 
+---
+
+![Figure X.x: Tip](./images/tip.png) **Warning:** The configuration you choose in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. In the setup wizard, however, if you specify a different Liferay Home directory than the default, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
+
+    include-and-override=${liferay.home}/portal-setup-wizard.properties
+
+Without this workaround, Liferay will not read the `portal-setup-wizard.properties` file with your saved configuration when you restart your server and you'll see the setup wizard again. 
+
+---
+
 For now, we're only concerned with your database and your mail server. Create a text file called `portal-ext.properties` in your Liferay Home folder. This file overrides default properties that come with Liferay. The first setting you'll override is the default configuration that points Liferay to the embedded HSQL database.
 
 As stated above, there are two ways to set up the connection:
 
 -   Use the built-in connection pool.
--   Use your application server's connection pool..
+-   Use your application server's connection pool.
 
 To use the built-in connection pool--based on *C3P0*--add the template which is provided in Chapter 6 for your particular database. The template for MySQL is provided as an example below.
 
@@ -241,7 +250,9 @@ To use your application server's mail session, create it first. Then specify it 
 	
 	mail.session.jndi.name=mail/MailSession
 
-When you've finished, save the file. Next, follow the instructions for installing Liferay on your particular application server in the section below. 
+When you've finished, save the file.
+
+Next, follow the instructions for installing Liferay on your particular application server in the section below. 
 
 ### Installing Liferay on an existing application server [](id=lp-6-1-ugen11-installing-liferay-on-an-existing-application-server-0)
 
