@@ -1,30 +1,32 @@
 
 # Plugin Security Management
 
-We all wish cyberspace was free of malicious software and unwanted bugs. Since it's not, we need to guard ourselves and our portals from these evils. Enter Liferay Portal's Plugin Security Manager! (I'm sure you are imagining a super-hero in a cape and tights just about now.)
+We all wish cyberspace were free of malicious software and unwanted bugs. Since it's not, we need to guard ourselves and our portals from these evils. Enter Liferay Portal's Plugin Security Manager! It's like a super-hero in a cape and tights, except, well, it's not. 
 
 In its quest for peace within your portal, the Plugin Security Manager pledges to
 
-- Protect your portal and host system from unwanted side affects and malicious software introduced by a plugins.
-- Control plugin access to your portal, host system, and network by requiring plugins specify ahead-of-time the portal resources they intend to access.
+- Protect your portal and host system from unwanted side affects and malicious software introduced by plugins.
+- Control plugin access to your portal, host system, and network by requiring that plugins specify ahead of time the portal resources they intend to access.
 
-It almost takes your breath away, doesn't it! Alright, alright ... so maybe you're not as star struck about these kinds of things. But, let's go over some scenarios that could apply to you with regards to trying new plugins.
+It almost takes your breath away, doesn't it! All right, all right--maybe you're not star struck about these kinds of things. Let's go over some scenarios that could apply to you with regard to trying new plugins, and then maybe the importance of this will be clear.
 
-- A flashy new plugin has arrived on Liferay Marketplace and you want to give it a whirl. But naturally, you want to know parts of your system it will access.
-- A colleague finds an interesting plugin after scouring the web to find a plugin that could help streamline processes at your workplace. But, of course you don't know whether you can truly trust the plugin creator. We certainly don't recommend you try foreign plugins found outside of Liferay Marketplace; but we can't prevent you from doing so. Regardless, it behooves you to make sure the plugin doesn't launch a "time bomb" or unintentionally bring you portal "to its knees" by hogging up resources.
-- Upper management requests your corporate branch and other branches use a standard set of plugins on your portal instances. However, competitor branch XZY wrote the plugin and you want to make sure your proprietary files are not tampered with by the plugin.
+- A flashy new plugin has arrived on Liferay Marketplace and you want to give it a whirl. But naturally, you want to know the parts of your system it will access.
+- A colleague finds an interesting plugin after scouring the web for something that can help streamline processes at your workplace. Of course, you don't know whether you can truly trust the plugin creator--this plugin was found outside the Liferay Marketplace. If the plugin isn't open source, you have no way of knowing if it does anything nefarious. 
+- Upper management requests your corporate branch and other branches use a standard set of plugins on your portal instances. This set of plugins, however, was written by an outside firm, and you need to know there will be no tampering with your proprietary files.
 
-These are just a few scenarios that may ring true for you. No matter your plugin deployment circumstances, you can't be too cautious in protecting your portal, system and network.
+These are just a few scenarios that may ring true for you. When you're responsible for keeping your system running well 24x7, you can't be too cautious in protecting your portal, system and network.
 
 ## How it works
 
-When enabled, Liferay Portal's Plugin Security Manager will throw exceptions on any unauthorized access attempts by plugins. The plugin's request is stopped dead in its tracks. Access is authorized by means of the property values specified in the plugin's `liferay-plugin-package.properties` file. This file must be specified in your plugin's `WEB-INF` directory. These *security manager* properties are collectively known as the plugin's *Portal Access Control List (PACL)*.  Resources that the plugin creator intends the plugin to access must be specified in the plugin's PACL prior to deployment. Makes sense, right?
+When enabled, Liferay Portal's Plugin Security Manager checks a *Portal Access Control List* that's deployed with the plugin. This list describes what APIs the plugin accesses, so that you can review what it does without having to look at the source code. If the plugin tries to access anything that's not on this list, the plugin's request is stopped dead in its tracks, throwing exceptions to let you know what went wrong. 
 
-As you develop plugins for Liferay Marketplace or for distribution within your organization, you'll need to set your security manager properties appropriately. Before we dive into the intricacies of these properties, let's consider a plugin development approach that involves specifying security manager properties.
+Access to APIs is authorized by means of the property values specified in the plugin's `liferay-plugin-package.properties` file. This file must be specified in your plugin's `WEB-INF` directory. These security manager properties are collectively known as the plugin's *Portal Access Control List (PACL)*.  
+
+As you develop plugins for Liferay Marketplace or for distribution within your organization, you'll need to set the security manager properties appropriately. Before we dive into the intricacies of these properties, let's consider a plugin development approach that involves designing an app for the security manager from the ground up.
 
 ## Plugin Development Approach
 
-At the start of plugin developement, you may not have a clear picture of all the aspects of the portal you'll need to access -- that's fine. In fact, we suggest you go ahead and develop your plugin first and address plugin security afterwards. Liferay Portal's Plugin Security Manager uncovers the resources your plugin tries to access by throwing exceptions if a PCAL property does not specifically grant access to those resources. So you may as well put the security manager to work and make it "earn its keep."
+At the start of plugin developement, you may not have a clear picture of all the aspects of the portal you'll need to access, and that's fine. In fact, we suggest you go ahead and develop your plugin first and address plugin security afterwards. Liferay Portal's Plugin Security Manager uncovers the resources your plugin tries to access by throwing exceptions if a PACL property does not specifically grant access to those resources. So at the end of development, you may as well put the security manager to work and make it earn its keep.
 
 Here is the suggested plugin development approach
 
