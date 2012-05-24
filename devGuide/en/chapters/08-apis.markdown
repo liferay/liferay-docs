@@ -5,7 +5,7 @@ This chapter provides an overview of several of the essential Liferay *applicati
 
 Liferay comes with a host of APIs that expose powerful portal and portlet services. You can access Liferay's built-in *portal* services for such entities as User, Organization, UserGroup, Company, Role, Permission, ResourcePermission and Layout. In addition, you can access Liferay's built-in *portlet* services for such portlets as those for blogs, wikis, assets, social equity, and the Documents & Media Library.
 
-The APIs can be called via Java method or web service invocations, giving you flexibility to implement client code in Java or any other language (even a scripting language such as PHP) that supports web service invocations.  The APIs can be called from within a portlet or non-portlet code. You can make calls to the APIs *locally* from within the portal or *remotely* outside of the portal's *Java virtual machine* (*JVM*).
+The APIs can be called via Java method or web service invocations, giving you flexibility to implement client code in Java or any other language (even a scripting language such as PHP) that supports web service invocations. The APIs can be called from within portlet or non-portlet code. You can make calls to the APIs *locally* from within the portal or *remotely* outside of the portal's *Java virtual machine* (*JVM*).
 
 This chapter covers the following topics:
 
@@ -85,7 +85,7 @@ Next, we'll step back for a moment and consider the security layers of Liferay's
 
 By default, a user connecting from the same machine Liferay is running on can access remote services so long as that user has permission to use those services in Liferay's permissions system. Of course, you are not really "remote" unless you are accessing services from a different machine; but we recommend using the API in a remote manner to trigger the security checks. Liferay has two layers of security when it comes to accessing its services remotely. The first layer of security only applies to clients invoking the API using a remote protocol. Invoking the API using a remote protocol, without having explicit rights to both layers, results in a remote exception being thrown and access being denied to those services. However, if you want to invoke the API using Java invocation, skip to the the paragraph that refers to the **second layer of security**.
 
-The **first layer of security** that a client needs to get through in order to call a method from the service layer is *invoker IP filtering*. For example, you may have a batch job which runs on another machine in your network. This job looks in a particular shared folder on your network and uploads documents to your community's document library portlet on a regular basis, using Liferay's web services. To enable this batch job to get through the IP filter, the portal administrator will need to set portal properties appropriately to allow the machine access to that particular type of service. For example, if the batch job uses the Axis web services to upload the documents, the portal administrator would need to add the IP address of the machine on which the batch job is running to the `axis.servlet.hosts.allowed` property. A typical entry might look like this:
+The **first layer of security** that a client needs to get through in order to call a method from the service layer is *invoker IP filtering*. For example, you may have a batch job which runs on another machine in your network. This job looks in a particular shared folder on your network and uploads documents to your site's Documents and Media portlet on a regular basis, using Liferay's web services. To enable this batch job to get through the IP filter, the portal administrator will need to set portal properties appropriately to allow the machine access to that particular type of service. For example, if the batch job uses the Axis web services to upload the documents, the portal administrator would need to add the IP address of the machine on which the batch job is running to the `axis.servlet.hosts.allowed` property. A typical entry might look like this:
 
 	axis.servlet.hosts.allowed=192.168.100.100, 127.0.0.1, SERVER_IP
 
@@ -109,7 +109,7 @@ To call the AXIS web service using credentials, you would use the following URL 
 
 	http://" + userIdAsString + ":" + password + "@[server.com]:[port]/api/secure/axis/" + serviceName
 
-The user ID is the user's ID from the Liferay database. This may be obtained by logging in as the user and clicking *My Account* from the Dock. In the top left corner of the portlet that appears is the user ID.
+The user ID is the user's ID from the Liferay database. This may be obtained by logging in as the user and navigating to the *My Account* page of the control panel. On this page, the user ID appears below the user's profile picture and above the birthday field.
 
 For example, to get Organization data using a user that has the ID of *2* and a password of *test*, you would use the following URL:
 
@@ -117,7 +117,7 @@ For example, to get Organization data using a user that has the ID of *2* and a 
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** In old Liferay versions you could access those services by using `http://localhost:8080/tunnel-web/axis`, however in Liferay 6.1 this path has changed and when you type it, you are redirected to the new one.
+![note](../../images/tip-pen-paper.png)**Note:** In old Liferay versions you could access those services by using `http://localhost:8080/tunnel-web/axis`. However, this path has changed in Liferay 6.1. When you enter it, you're redirected to the new one.
 
 ---
 
@@ -160,7 +160,7 @@ Here are the SOAP related classes that we'll use:
 	import com.liferay.portal.service.http.UserServiceSoap;
 	import com.liferay.portal.service.http.UserServiceSoapServiceLocator;
 
-You can see in the listing a naming convention involving classes with suffixes `-ServiceSoapServiceLocator`, `-ServiceSoap`, and `-Soap`. The `-ServiceSoapServiceLocator` class *finds* the `-ServiceSoap` by means of the service's URL you provide. The `-ServiceSoap` class is the interface to the services specified in the *Web Services Definition Language* (*WSDL*) file for each service. Lastly, the `-Soap` classes are the serializeable implementations of the models.  Let's look at how to determine the URLs for these services.
+You can see in the listing a naming convention involving classes with suffixes `-ServiceSoapServiceLocator`, `-ServiceSoap`, and `-Soap`. The `-ServiceSoapServiceLocator` class *finds* the `-ServiceSoap` by means of the service's URL you provide. The `-ServiceSoap` class is the interface to the services specified in the *Web Services Definition Language* (*WSDL*) file for each service. Lastly, the `-Soap` classes are the serializeable implementations of the models. Let's look at how to determine the URLs for these services.
 
 You can view a listing of the services deployed on your portal by opening your browser to the URL of the format `http://[host]:[port]/api/secure/axis` for your *secure* services (services requiring user authentication) and the URL of the format `http://[host]:[port]/api/axis` for your services that do not require user authentication. For demonstration, we're using *secure* services. Here are the web services for `UserGroup`:
 
@@ -182,18 +182,18 @@ Next, let's invoke the web service!
 
 ### SOAP Java Client [](id=lp-6-1-dgen08-soap-java-client-0)
 
-A Java web service client can easily be setup using the Eclipse IDE. Here is how you can do it:
+A Java web service client can easily be set up using the Eclipse IDE. Here is how you can do it:
 
 Add a new *Web Service Client* to your Project for each service you plan to consume in your client code. For the purposes of the client we're going to build, we'll want to add a *Web Service Client* for the portal's Company, User, and UserGroup services.
 
-![Figure 8.5:  New Web Service Client](../../images/api-new-web-svc-client.png)
+![Figure 8.5: New Web Service Client](../../images/api-new-web-svc-client.png)
 
 When creating each client, you will need to enter the service definition (WSDL) for the desired service.
 
 For example:
 	http://localhost:8080/api/axis/Portal_UserService?wsdl
 
-![Figure 8.6:  Service Definition](../../images/api-web-svc-wsdl.png)
+![Figure 8.6: Service Definition](../../images/api-web-svc-wsdl.png)
 
 With the WSDL specified, Eclipse automatically adds the auxiliary files and libraries required to consume that web service!
 
@@ -333,9 +333,9 @@ As a result of running this client you should get output similar to the followin
 	User groups for user 10196 ...
 		MyUserGroup
 
-As you can see, the user had no groups but then was added to usergroup `MyUserGroup`.
+As you can see, the user had no groups but then was added to UserGroup `MyUserGroup`.
 
-No worries about the `java.rmi.RemoteException` as it is thrown when invoking  the UserGroup check with `usergroupsoap.getUserGroup(groupName)` because the UserGroup does not yet exist.
+No worries about the `java.rmi.RemoteException` as it is thrown when invoking the UserGroup check with `usergroupsoap.getUserGroup(groupName)` because the UserGroup does not yet exist.
 
 Some things to note about the URL:
 
@@ -403,7 +403,7 @@ Next, we'll explore Liferay's JSON Web Services.
 
 JSON Web Services provide convenient access to portal service methods by exposing them as JSON HTTP API. This makes services methods easily accessible using HTTP requests, not only from JavaScript within the portal, but also from any JSON-speaking client.
 
-JSON Web Service functionality can be split in following topics: registration, configuration, invocation and results. We'll cover each topic here.
+JSON Web Service functionality can be split into the following topics: registration, configuration, invocation and results. We'll cover each topic here.
 
 ### Registering JSON Web Services [](id=lp-6-1-dgen08-registering-json-web-services-0)
 
@@ -411,15 +411,15 @@ Liferay's developers use a tool called *Service Builder* to build services. All 
 
 A `-Service` interface is a generated source file which is not to be modified by by the user directly. Sometimes, however, you need more control over which methods to expose and/or hide. To do so, just simply configure the `-ServiceImpl` class of the service. When service implementation class (`-ServiceImpl`) is annotated with the `@JSONWebService` annotation, the service interface is ignored and only the service implementation class is used for configuration. In other words, `@JSONWebService` annotations in service implementation **override** any JSON Web Service configuration in service interface.
 
-And that’s all! Upon start-up, Liferay Portal scans classes on classpath for annotations. The scanning process is optimized so only portal and service JARs are scanned, as well as class raw bytecode content. Each class that uses the `@JSONWebService` annotation is loaded and further examined; its methods become exposed as JSON API. As explained previously, the `-ServiceImpl` configuration overrides the `-Service` interface configuration during registration.
+And that's all! Upon start-up, Liferay Portal scans classes on the classpath for annotations. The scanning process is optimized so only portal and service JARs are scanned, as well as class raw bytecode content. Each class that uses the `@JSONWebService` annotation is loaded and further examined; its methods become exposed as JSON API. As explained previously, the `-ServiceImpl` configuration overrides the `-Service` interface configuration during registration.
 
-For example, let’s look the `DLAppService`: 
+For example, let's look the `DLAppService`: 
 
 	@JSONWebService
 	public interface DLAppService {
 	...
 
-It contains the annotation that is found on portal startup. Notice the following lines in console output when debug log level is set:
+It contains the annotation that is found on portal startup. Notice the following lines in the console output when the debug log level is set:
 
 	10:55:06,595 DEBUG [JSONWebServiceConfigurator:121] Configure JSON web service actions
 	10:55:06,938 DEBUG [JSONWebServiceConfigurator:136] Configuring 820 actions in ... ms
@@ -458,7 +458,7 @@ This enables the servlet to scan and register your portlet's JSON Web Services.
 
 #### Mapping and naming conventions [](id=lp-6-1-dgen08-mapping-and-naming-conventions-0)
 
-Mapped URLs of exposed service methods are formed using following naming convention:
+Mapped URLs of exposed service methods are formed using the following naming convention:
 
 	http://[server]:[port]/api/jsonws/[service-class-name]/[service-method-name]
 
@@ -487,11 +487,11 @@ Note the `secure` part of the URL.
 
 #### Listing available JSON Web Services [](id=lp-6-1-dgen08-listing-available-json-web-services-0)
 
-To a service overview and verify which service methods are registered and available, you can get a service listing in your browser by opening the base address:
+To overview a service and verify which service methods are registered and available, you can get a service listing in your browser by opening the base address:
 
 	http://localhost:8080/api/jsonws
 
-The resulting page lists all registered and exposed service methods of the portal. You can see more details of each method, by clicking the method name. For example, you can see the full signature of the service method, list of all its arguments, exceptions that can be thrown and even read its javadoc! Moreover, you can even invoke the service method for testing purposes using simple form right from within your browser.
+The resulting page lists all registered and exposed service methods of the portal. You can see more details of each method by clicking the method name. For example, you can see the full signature of the service method, list of all its arguments, list exceptions that can be thrown, and even read its Javadoc! Moreover, you can even invoke the service method for testing purposes using simple form right from within your browser.
 
 To list registered services on a portlet, don't forget to use portlet context path: 
 
@@ -618,7 +618,7 @@ Parameters can be passed as part of the URL path. After the service URL, you can
 
 	http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries/repository-id/10172/folder-id/0
 
-Parameters may be given in **any** order; it’s not necessary to follow the order in which the arguments specified in the method signatures. 
+Parameters may be given in **any** order; itï¿½s not necessary to follow the order in which the arguments specified in the method signatures. 
 
 When a method name is overloaded, the *best match* will be used: The method that contains the least number of undefined arguments is invoked.
 
