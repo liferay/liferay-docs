@@ -1,4 +1,4 @@
-﻿
+
 # Liferay APIs [](id=liferay-ap-1)
 
 This chapter provides an overview of several of the essential Liferay *application programming interfaces* (*APIs*) available to developers. An API is a programing interface that can be invoked from your own code, either directly through a Java invocation or through web services, to perform an action or set of actions.
@@ -774,6 +774,28 @@ Let's take a look a some returned values from calls to services. In fact, let's 
 Notice that the JSON string returned represents the `UserGroup` object you just created. The object has been serialized into a JSON string. As a starting point for understanding JSON strings, go to [json.org](http://www.json.org/).
 
 To find out how to serialize Java objects, maps and lists, check out article [JSON Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization) by Igor Spasi&#263;. 
+
+### Common JSON WebService errors
+
+While working with JSON Web Services you can experience different errors. Here is the list of common errors you might meet on your way.
+
+#### Missing value for parameter
+
+This error means that you didn't pass the parameter value for your parameter, that is part of the URL path. Parameter value must follow the parameter name. Here is an example:
+
+	/api/jsonws/user/get-user-by-id/userId
+
+We have defined the parameter `userId`, but not it's value. This error can be simply fixed by providing the value:
+
+	/api/jsonws/user/get-user-by-id/userId/173
+
+#### No JSON web service action associated
+
+This is another common error, meaning that service method could not be matched from provided data (method name and argument names). This may happens from various reasons: arguments may be misspelled, method name may be formatted wrong etc. Since JSON web services reflects the java API, any changes in java will be automtically propagated to JSON web services; if new argument is added or existing one is removed, the matching will fail and you will get this error.
+
+#### Unmatched argument type
+
+This error appears when you try to instantiate a method argument with different type then argument type.
 
 Well, you've just added some powerful tools to your toolbox by learning how to leverage JSON web services in Liferay. Good job!
 
