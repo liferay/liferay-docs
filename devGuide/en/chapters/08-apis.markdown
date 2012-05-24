@@ -475,7 +475,7 @@ For example, the following service method ...
 
 ... is mapped to the following URL:
 
-	http://localhost:8080/api/jsonws/user/get-user-by-id
+	http://localhost:8080/api/jsonws/user-service/get-user-by-id
 
 Each service method is also bound to one HTTP method type. All methods having names starting with `get`, `is` or `has` are assumed to be read-only methods and are therefore mapped as GET HTTP methods, by default. All other methods are mapped as POST HTTP methods.
 
