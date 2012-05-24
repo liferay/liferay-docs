@@ -1,4 +1,4 @@
-ï»¿
+
 # Liferay APIs [](id=liferay-ap-1)
 
 This chapter provides an overview of several of the essential Liferay *application programming interfaces* (*APIs*) available to developers. An API is a programing interface that can be invoked from your own code, either directly through a Java invocation or through web services, to perform an action or set of actions.
@@ -411,9 +411,9 @@ Liferay's developers use a tool called *Service Builder* to build services. All 
 
 A `-Service` interface is a generated source file which is not to be modified by by the user directly. Sometimes, however, you need more control over which methods to expose and/or hide. To do so, just simply configure the `-ServiceImpl` class of the service. When service implementation class (`-ServiceImpl`) is annotated with the `@JSONWebService` annotation, the service interface is ignored and only the service implementation class is used for configuration. In other words, `@JSONWebService` annotations in service implementation **override** any JSON Web Service configuration in service interface.
 
-And thatâ€™s all! Upon start-up, Liferay Portal scans classes on classpath for annotations. The scanning process is optimized so only portal and service JARs are scanned, as well as class raw bytecode content. Each class that uses the `@JSONWebService` annotation is loaded and further examined; its methods become exposed as JSON API. As explained previously, the `-ServiceImpl` configuration overrides the `-Service` interface configuration during registration.
+And that’s all! Upon start-up, Liferay Portal scans classes on classpath for annotations. The scanning process is optimized so only portal and service JARs are scanned, as well as class raw bytecode content. Each class that uses the `@JSONWebService` annotation is loaded and further examined; its methods become exposed as JSON API. As explained previously, the `-ServiceImpl` configuration overrides the `-Service` interface configuration during registration.
 
-For example, letâ€™s look the `DLAppService`: 
+For example, let’s look the `DLAppService`: 
 
 	@JSONWebService
 	public interface DLAppService {
@@ -464,8 +464,8 @@ Mapped URLs of exposed service methods are formed using following naming convent
 
 where:
 
-+ **service-class-name** is the name generated from service class name, by removing the `Service` or `ServiceImpl` suffix and converting the camel-case prefix of class name to a lowercase separated-by-dash name.
-+ **service-method-name** is generated from the service method name, using the same convention as for the class name.
++ **service-class-name** is the name generated from service class name, by removing the `Service` or `ServiceImpl` suffix and converting it to a lowercase name.
++ **service-method-name** is generated from the service method name, by converting the camel-case method name to a lowercase separated-by-dash name.
 
 For example, the following service method ...
 
@@ -475,7 +475,7 @@ For example, the following service method ...
 
 ... is mapped to the following URL:
 
-	http://localhost:8080/api/jsonws/user-service/get-user-by-id
+	http://localhost:8080/api/jsonws/user/get-user-by-id
 
 Each service method is also bound to one HTTP method type. All methods having names starting with `get`, `is` or `has` are assumed to be read-only methods and are therefore mapped as GET HTTP methods, by default. All other methods are mapped as POST HTTP methods.
 
@@ -618,7 +618,7 @@ Parameters can be passed as part of the URL path. After the service URL, you can
 
 	http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries/repository-id/10172/folder-id/0
 
-Parameters may be given in **any** order; itâ€™s not necessary to follow the order in which the arguments specified in the method signatures. 
+Parameters may be given in **any** order; it’s not necessary to follow the order in which the arguments specified in the method signatures. 
 
 When a method name is overloaded, the *best match* will be used: The method that contains the least number of undefined arguments is invoked.
 
