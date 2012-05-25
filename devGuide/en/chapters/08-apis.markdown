@@ -634,6 +634,16 @@ As with passing parameters as part of a URL path, the parameter order is not imp
 
 Parameters can be passed in a mixed way: some can be part of the URL path and some can be specified as request parameters.
 
+#### Type conversion of the parameters
+
+Parameter values are sent as strings using HTTP protocol. Before matched Java service method is invoked, each parameter value is converted from string to it's target Java type. For the conversion we use the 3rd party open-source library that knows to convert objects to many common types. Of course, it is possible to add or change the conversion for certain types.
+
+Conversion for common types (`long`, `String`, `boolean`...) is quite straightforward. Next, all dates can be passed as milliseconds. Locales, for example, can be passed as locale names: `en`, `en_US`. To pass numbers array, send comma-separated-values (e.g.: string `4,8,15,16,23,42` can be converted to `long[]` type). You get the picture;)
+
+Arguments can be of type `List` or `Map`, too! To pass a `List` argument, send a JSON array. To pass a `Map` argument, send a JSON object. The conversion then goes in two steps. The first one is JSON deserialization, resulting in `List<String>` and  `Map<String, String>`. The second step is *generifying*: each element of `List` and `Map` is converted to target type, specified by Java generics signature of method argument. For example, if we have a Java service with an argument of type: `List<Locale>`, we can send following string: `[en,fr]` through JSON Web Services. The string will be first deserialized to a list with two strings(`en` and `fr`), and then each string will be converted to `Locale` type. Resulting object will match Java argument type. If there is no generic information, the second step of this conversion is skipped.
+
+Due to security reasons, it is forbidden to instantiate any type within JSON deserialization.
+
 #### Sending NULL values [](id=lp-6-1-dgen08-sending-null-values-0)
 
 To pass a `null` value for an argument, simply prefix that parameter name with a dash `-`. For example: 
