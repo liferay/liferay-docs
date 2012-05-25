@@ -1624,7 +1624,9 @@ Liferay Portal needs to have the Liferay Portal Dependency JARs, an appropriate 
 		- 	`resin.jar`
 		-	`script-10.jar`
 
-2. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/). Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
+4. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain the JDBC driver for your version of the database server. In the case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download the latest MySQL JDBC driver from [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/). Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
+
+5. Liferay requires an additional .jar on Tomcat installations to manage transactions. This is included in the bundle, but you need to add it if you're installing Liferay manually. You may find this .jar here: [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html). Place this file in Tomcat's lib/ext folder. 
 
 Now that you have the necessary libraries in place, we'll move on to configuring your domain.
 
