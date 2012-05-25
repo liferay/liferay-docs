@@ -745,10 +745,6 @@ or in JSON RPC:
 
 All these examples specifies a concrete implementation for `foo` service method parameter.
 
-#### Map and List parameters [](id=lp-6-1-dgen08-map-and-list-parameters-0)
-
-`Map` and `List` parameters are also supported, by sending JSON objects and arrays. If parameters `Map` or `List` contain generics information (e.g. `Map<Locale, String>`), Liferay Portal will generify the map/list entries before passing the value to the method.
-
 #### Inner Parameters [](id=lp-6-1-dgen08-inner-parameters-0)
 
 In many cases, you'll need to populate objects that are passed as parameters. A good example is a default parameter `serviceContext` of type `ServiceContext` (see the *Service Context* section in this chapter). Sometimes, you need to set some of the inner properties (i.e. fields) of the `ServiceContext`, such as: `addGroupPermissions`, `scopeGroupId` etc., to make an appropriate call to a JSONWS.
