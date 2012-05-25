@@ -265,7 +265,7 @@ If you need to add files in support of another Liferay release, the process is s
 
 Once you advance past the version edit screen, you'll be at the File Upload screen. This screen should look familiar--it's the same workflow used when you initially created your app!  The difference is that you can't edit pre-approved files for specific Liferay releases. You can only add *new* files for a different Liferay release (if you actually need to update existing files, you must create a new version of the app--see the later section on adding versions for details on how to do this).
 
-Upload your new files (ensuring that your new plugins have updated compatibility information, see the section on *Specify App Compatibility* for details on versioning), click *Next*, and observe the newly-added files listed at the bottom of the preview screen. Click *Submit for Review* to submit your requested change (adding of files). The files will be reviewed by LIferay, and once approved, the new variation is available for download in the Marketplace.
+Upload your new files (ensuring that your new plugins have updated compatibility information, see the section on *Specify App Compatibility* for details on versioning), click *Next*, and observe the newly-added files listed at the bottom of the preview screen. Click *Submit for Review* to submit your requested change (adding of files). The files will be reviewed by Liferay, and once approved, the new variation is available for download in the Marketplace.
 
 ### Releasing a new version of your app [](id=lp-6-1-dgen10-releasing-a-new-version-of-your-app-0)
 
