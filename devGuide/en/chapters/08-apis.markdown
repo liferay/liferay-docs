@@ -556,13 +556,13 @@ JSON Web Services are enabled on Liferay Portal by default but can be easily dis
 
 #### Strict HTTP methods [](id=lp-6-1-dgen08-strict-http-methods-0)
 
-JSON Web Service services are, by default, mapped to either GET or POST HTTP methods. If service method has name that starts with `get`, `is` or `has`, the service is assumed to be read-only and is bound to the GET method; otherwise it is bound to POST.
+JSON Web Service services are, by default, mapped to either GET or POST HTTP methods. If a service method has name that starts with `get`, `is` or `has`, the service is assumed to be read-only and is bound to the GET method; otherwise it is bound to POST.
 
-By default, portal does not check HTTP methods when invoking a service call; that is, the portal works in "non-strict http method" mode as services may be invoked using any HTTP method. If you need the strict mode, you can set it with portal property: 
+By default, the portal does not check HTTP methods when invoking a service call; that is, the portal works in "non-strict http method" mode as services may be invoked using any HTTP method. If you need the strict mode, you can set it with portal property: 
 
 	jsonws.web.service.strict.http.method=true
 
-When you use strict mode, you must use the correct HTTP methods in calling service methods.
+When using strict mode, you must use the correct HTTP methods in calling service methods.
 
 #### Disabling HTTP methods [](id=lp-6-1-dgen08-disabling-http-methods-0)
 
@@ -576,7 +576,7 @@ Now all requests that use HTTP methods from the list above are simply ignored.
 
 Each service method determines for itself whether it can be executed by unauthenticated users and whether a user has adequate permission for the chosen action. Most of portal's read-only methods are open to public access.
 
-If you are concerned about the security, it is possible to additionally restrict the access to exposed JSON API for public access. For that reason, there is a property that specifies a comma delimited list of public methods that can be accessed by unauthenticated users.
+If you are concerned about the security, it is possible to additionally restrict the access to exposed JSON API for public access. For this reason, there is a property that specifies a comma delimited list of public methods that can be accessed by unauthenticated users.
 
 	jsonws.web.service.public.methods=*
 
@@ -590,23 +590,23 @@ JSON Web Services can be invoked in several ways depending on how their paramete
 
 #### Matching service methods [](id=lp-6-1-dgen08-matching-service-methods-0)
 
-It is important to understand how calls to service methods are matched , especially when a service method is overloaded.
+It is important to understand how calls to service methods are matched, especially when a service method is overloaded.
 
 The general rule is that besides the method name, you must provide **all** parameters for that service method. Even if some parameter is to be `null`, you must still provide it.
 
-Note, however, it is neither important how parameters are provided (as part of the URL line, as request parameters, etc.) nor the order the parameters.
+Note, however, that how parameters are provided (as part of the URL line, as request parameters, etc.) is not important nor is the order of the parameters.
 
 An exception to the rule of *all* parameters being required, is when using numeric *hints* to match methods. Let's look at using hints next.
 
 #### Using hints [](id=lp-6-1-dgen08-using-hints-0)
 
-It is possible to add numeric hints that specify how many method arguments a service has. Hints are added as numbers separated by a dot in method name. For example:
+It is possible to add numeric hints that specify how many method arguments a service has. Hints are added as numbers separated by a dot in the method name. For example:
 
 	/foo/get-bar.2/param1/123/-param2
 
 Here, the `.2` is a hint, so only service methods with 2 arguments will be matched, others will be ignored for matching.
 
-One important difference when hint is specified, is that now you do not have to specify all of the parameters. All missing arguments are treated as `null`. Therefore, the previous example may be called with ...
+One important difference when a hint is specified, is that now you do not have to specify all of the parameters. All missing arguments are treated as `null`. Therefore, the previous example may be called with ...
 
 	/foo/get-bar.2/param1/123
 
@@ -614,11 +614,11 @@ One important difference when hint is specified, is that now you do not have to 
 
 #### Passing parameters as part of URL path [](id=lp-6-1-dgen08-passing-parameters-as-part-of-url-path-0)
 
-Parameters can be passed as part of the URL path. After the service URL, you can append methods parameters in name/value pairs. Parameter names must be formed from method argument names, by converting them from camel-case to lowercase separated-by-dash names. Example:
+Parameters can be passed as part of the URL path. After the service URL, you can append methods parameters in name/value pairs. Parameter names must be formed from method argument names by converting them from camel-case to lowercase separated-by-dash names. Example:
 
 	http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries/repository-id/10172/folder-id/0
 
-Parameters may be given in **any** order; it�s not necessary to follow the order in which the arguments specified in the method signatures. 
+Parameters may be given in **any** order; it's not necessary to follow the order in which the arguments specified in the method signatures. 
 
 When a method name is overloaded, the *best match* will be used: The method that contains the least number of undefined arguments is invoked.
 
@@ -652,11 +652,11 @@ When using JSON RPC (see below), null values may be sent explicitly, even withou
 
 #### Parameters encoding [](id=lp-6-1-dgen08-parameters-encoding-0)
 
-Although often forgotten, there is a difference between URL encoding and query (i.e. request parameters) encoding. An  illustrative example of this is the difference in how the space character is encoded. When the space character is part of the URL path, it is encoded as `%20`; when it is part of the query it is encoded as plus sign (`+`).
+Although often forgotten, there is a difference between URL encoding and query (i.e. request parameters) encoding. An illustrative example of this is the difference in how the space character is encoded. When the space character is part of the URL path, it is encoded as `%20`; when it is part of the query it is encoded as plus sign (`+`).
 
-Furthermore, all of these rules for encoding apply to international (non-ascii) characters, as well. As portal works in UTF-8 mode, parameter values must be encoded as UTF-8 values. However, the portal itself is not responsible for decoding request URLs and request parameter values to UTF-8. This task is done by the web-server layer (Tomcat, Apache, etc.). When accessing services through JSON-RPC, encoding parameters to UTF-8 is not enough - we also need to send the encoding type in a Content-Type header (e.g. `Content-Type : "text/plain; charset=utf-8"`).
+Furthermore, all of these rules for encoding apply to international (non-ascii) characters, as well. Since Liferay Portal works in UTF-8 mode, parameter values must be encoded as UTF-8 values. However, the portal itself is not responsible for decoding request URLs and request parameter values to UTF-8. This task is done by the web-server layer (Tomcat, Apache, etc.). When accessing services through JSON-RPC, encoding parameters to UTF-8 is not enough -- we also need to send the encoding type in a Content-Type header (e.g. `Content-Type : "text/plain; charset=utf-8"`).
 
-For example, let's pass the value "&#1057;&#1091;&#1087;&#1077;&#1088;" ("Super" in cyrillic) to some JSON Web Service method. This name first has to be converted to UTF-8 (resulting in array of 10 bytes) and then encoded for URLs or request parameters. The resulting value is the string: `%D0%A1%D1%83%D0%BF%D0%B5%D1%80` that can be passed to our service method. When received, this value is first going to be translated to an array of 10 bytes (URL decoded) and then converted to a UTF-8 string of the 5 original characters.
+For example, let's pass the value "&#1057;&#1091;&#1087;&#1077;&#1088;" ("Super" in Cyrillic) to some JSON Web Service method. This name first has to be converted to UTF-8 (resulting in array of 10 bytes) and then encoded for URLs or request parameters. The resulting value is the string `%D0%A1%D1%83%D0%BF%D0%B5%D1%80` that can be passed to our service method. When received, this value is first going to be translated to an array of 10 bytes (URL decoded) and then converted to a UTF-8 string of the 5 original characters.
 
 #### Sending files as arguments [](id=lp-6-1-dgen08-sending-files-as-arguments-0)
 
@@ -703,7 +703,7 @@ Default parameters are:
 
 Most services accept simple parameters: numbers, strings etc. However, sometimes you need to provide an object (a non-simple type) as a service parameter.
 
-Similar specifying null parameters by using the `-` prefix, to create an instance of an object parameter, just prefix the parameter name with a plus sign, `+`,  without any parameter value at all. For example:
+Similar to specifying null parameters by using the `-` prefix, to create an instance of an object parameter, just prefix the parameter name with a plus sign, `+`,  without any parameter value at all. For example:
 
 	/jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+foo
 
@@ -723,7 +723,7 @@ or
 
 	<input type="hidden" name="+foo:com.liferay.impl.FooBean" value=""/>
 
-In the example, specifies that a `com.liferay.impl.FooBean` object, presumed to implement the class of the parameter named `foo`, is to be created.
+The examples above specify that a `com.liferay.impl.FooBean` object, presumed to implement the class of the parameter named `foo`, is to be created.
 
 A concrete implementation can be set as a value, too! For example:
 
@@ -733,7 +733,7 @@ or in JSON RPC:
 
 	"+foo" : "com.liferay.impl.FooBean"
 
-All these examples specifies a concrete implementation for `foo` service method parameter.
+All these examples specify a concrete implementation for `foo` service method parameter.
 
 #### Map and List parameters [](id=lp-6-1-dgen08-map-and-list-parameters-0)
 
@@ -741,7 +741,7 @@ All these examples specifies a concrete implementation for `foo` service method 
 
 #### Inner Parameters [](id=lp-6-1-dgen08-inner-parameters-0)
 
-In many cases, you'll need to populate objects that are passed as parameters. A good example is a default parameter `serviceContext` of type `ServiceContext` (see the *Service Context* section in this chapter). Sometimes, you need to set some of the inner properties (i.e. fields) of the `ServiceContext`, such as: `addGroupPermissions`, `scopeGroupId` etc., to make an appropriate call to a JSONWS.
+In many cases, you'll need to populate objects that are passed as parameters. A good example is a default parameter `serviceContext` of type `ServiceContext` (see the *Service Context* section in this chapter). Sometimes, you need to set some of the inner properties (i.e. fields) of the `ServiceContext`, such as: `addGroupPermissions`, `scopeGroupId`, etc., to make an appropriate call to a JSONWS.
 
 To pass inner parameters, just specify them using a 'dot' notation. That is, specify the name of the parameter, followed by a dot `.`, followed by the name of the inner parameter. For example, with regards to the `ServiceContext` inner parameters you can provide: `serviceContext.addGroupPermissions`, `serviceContext.scopeGroupId`  parameters, together with other parameters of your web service call. They will be recognized as inner parameters (with a dot in the name) and their values will be *injected* into existing parameters, before the API service method is executed.
 
@@ -781,7 +781,7 @@ Next, let's consider the `ServiceContext` class used by so many Liferay services
 
 ## Service Context [](id=service-conte-1)
 
-The `ServiceContext` class is a parameter class to be used in passing contextual information for a service. By using a parameter class it is possible to consolidate many different methods with different sets of optional parameters into a single, easier to use method. The class also aggregates information necessary for transversal features such as permissioning, tagging, categorization, etc.
+The `ServiceContext` class is a parameter class to be used in passing contextual information for a service. By using a parameter class, it is possible to consolidate many different methods with different sets of optional parameters into a single, easier to use method. The class also aggregates information necessary for transversal features such as permissioning, tagging, categorization, etc.
 
 This section covers:
 
@@ -789,7 +789,7 @@ This section covers:
 
 -	Creating and populating a Service Context
 
--	Accessing  Service Context data
+-	Accessing Service Context data
 
 First, we'll take a look at the fields of the `ServiceContext` class.
 
@@ -848,7 +848,7 @@ There are a good number of fields found in `ServiceContext`. The best descriptio
 	-	`_remoteHost`
 	-	`_userDisplayURL`
 
-In case you are wondering how the `ServiceContext` fields get populated we're going to look at that next.
+In case you are wondering how the `ServiceContext` fields get populated, we're going to look at that next.
 
 ### Creating and Populating a Service Context  [](id=lp-6-1-dgen08-creating-and-populating-a-service-context--0)
 
@@ -859,7 +859,7 @@ All of the fields of the `ServiceContext` class are optional, although your serv
 		...
 		BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
-If you are invoking the service from a servlet, a struts action or any other front-end class which has access to the `PortletRequest`, use one of the `ServiceContextFactory.getInstance(...)` methods. These methods create the `ServiceContext` object and fill it with all the necessary values automatically. In the case that your are invoking the service from a servlet, the above example could be rewritten as follows:
+If you are invoking the service from a servlet, a Struts action or any other front-end class which has access to the `PortletRequest`, use one of the `ServiceContextFactory.getInstance(...)` methods. These methods create the `ServiceContext` object and fill it with all the necessary values automatically. If you are invoking the service from a servlet, the above example could be rewritten as follows:
 
 		ServiceContext serviceContext =
 				ServiceContextFactory.getInstance(BlogsEntry.class.getName(),
@@ -868,7 +868,7 @@ If you are invoking the service from a servlet, a struts action or any other fro
 
 To see an example of how to populate a `ServiceContext` with information from a request object, check out the code of the `ServiceContextFactory.getInstance(...)` methods. Not only do the methods demonstrate setting parameters such as scope group ID, company ID, language ID, etc., but they also demonstrate accessing and populating more complex context parameters such as tags, categories, asset links, headers, and the attributes parameter. Note, by calling `ServiceContextFactory.getInstance(String className, PortletRequest portletRequest)`, you can assure that your expando bridge attributes are also set on the `ServiceContext`.
 
-And, by all means, you are not limited to using only Java with ServiceContext; as you can use ServiceContext from other languages like JavaScript. In fact, since our API can be invoked from JavaScript, it is often required to pass the ServiceContext from JavaScript to the server, and this can be done in a very simple way -- by passing the ServiceContext as any other JavaScript object. There are plenty of examples of this in the JavaScript code of Liferay's portlets. Here is an example from `[liferay-portal]/portal-web/html/portlet/journal/js/main.js`that demonstrates using ServiceContext in calling the `updateStructure` method of the JournalStructure service:
+You're not limited to using only Java with ServiceContext; you can use ServiceContext from other languages like JavaScript. In fact, since our API can be invoked from JavaScript, it is often required to pass the ServiceContext from JavaScript to the server, and this can be done in a very simple way -- by passing the ServiceContext as any other JavaScript object. There are plenty of examples of this in the JavaScript code of Liferay's portlets. Here is an example from `[liferay-portal]/portal-web/html/portlet/journal/js/main.js`that demonstrates using ServiceContext in calling the `updateStructure` method of the JournalStructure service:
 
 	
 	var instance = this;
@@ -913,7 +913,7 @@ On the front-end, you can use Alloy UI and Liferay UI tags in your forms to extr
 
 ### Accessing Service Context data [](id=lp-6-1-dgen08-accessing-service-context-data-0)
 
-This section provides code snippets from `BlogsEntryLocalServiceImpl.addEntry(..., ServiceContext)` that demonstrate a accessing information from a `ServiceContext` and provides comments on how the context information is being used.
+This section provides code snippets from `BlogsEntryLocalServiceImpl.addEntry(..., ServiceContext)` that demonstrates how to access information from a `ServiceContext` and provides comments on how the context information is being used.
 
 As previously mentioned, your service will need a scope group ID from your `ServiceContext`. The same holds true for the blogs entry service because the scope group ID provides the scope of the blogs entry (the entity being persisted). In the case of adding a blogs entry, the scope group ID is used in the following manner:
 
