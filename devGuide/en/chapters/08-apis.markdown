@@ -803,6 +803,103 @@ This is another common error, meaning that service method could not be matched f
 
 This error appears when you try to instantiate a method argument with different type then argument type.
 
+## JSON Web Services Invoker
+
+Using JSON Web Services is easy, you send a request that defines service method and parameters and receive the result as JSON object. Although simple, this approach may not be the optimal in a rich environment as Liferay Portal is. For more pragmatical usage of JSON Web Services, we have the JSON Web Service Invoker.
+
+Consider the following example: often you need objects that are related, like `User` and its `Contact` information. Using simple JSON Web Service calls, you would need first to call some user service to get the user object, then to call the contacts service using contact id from received user object. So you would send two HTTP requests and have two JSON objects as result - that are not even binded together (there is no contact information in user object, i.e. no `user.contact`). Obviously, this approach has some impact on performances (sending two HTTP calls) and on usability (manually managing relation between two objects). Wouldn't it be nice if we can somehow address these problems?
+
+Yes! JSON Web Service Invoker is all about optimizing the usage of JSON Web Services. In following chapter you will learn how.
+
+### Simple Invoker call
+
+The Invoker is accessible on fixed address:
+
+	http://[address]:[port]/api/jsonws/invoke
+
+It accepts only one request parameter: `cmd` - the Invoker's command. If command request parameter is missing, then the request body will be used as the command. So basically you can specify the command either using request parameter `cmd` or using the request body.
+
+Invoker command is a plain JSON map that describes how JSON Web Services are called and how the results should be managed. Here is an example how to call a simple service using Invoker:
+
+	{
+		"/user/get-user-by-id": {
+			"userId": 123,
+			"param1": ...
+		}
+	}
+
+As seen, service call is defined as a JSON map. Key defines the service URL (i.e. the service method that will be invoked) and the keys value is another map with actual service parameters. The result is JSON object of retrieved user. This Invoker call is identical to standard JSON Web Service call:
+
+	/user/get-user-by-id?userId=123&param1=....
+
+Before we continue to more useful features, let's learn about variables.
+
+### Variables
+
+Invoker variable is the name associated with the result of some service call. In our example the service call returns the user object, so we can assign it to a variable:
+
+	{
+		"$user = /user/get-user-by-id": {
+			"userId": 123,
+		}
+	}
+
+Variables are used to reference returned object in other service calls. Variable names must start with a `$` (dollar) prefix. Here, the variable `$user` holds the returned user object, so in other service calls you can use e.g. `$user.contactId` syntax to read the values from the object.
+
+### Nested service calls
+
+Finally, with nested service calls you can achieve the magic. It allows not only to call another service withing the same HTTP request, but also to nest returned object in a convenient way. See it in action:
+
+	{
+		"$user = /user/get-user-by-id": {
+			"userId": 123,
+			"$contact = /contact/get-contact-by-id": {
+				"@contactId" : "$user.contactId"
+			}
+		}
+	}
+
+This command defines two service calls, where the result of the second service (the contact object) will be nested inside (i.e. injected inside) the user object, as the `contact` property. Let's analyze this command more and see what JSON Web Service Invoker does in the background within the single HTTP request:
+
++ calls Java service mapped to `/user/get-user-by-id` using `userId` parameter
++ associates resulting user object to variable `$user`
++ proceed with invoking nested calls
++ calls Java service mapped to `/contact/get-contact-by-id` using `contactId` parameter, with `$user.contactId` value from `$user` object
++ associates resulting contact object to variable `$contact`
++ injects `$contact` object into `$user` under the property name `contact`
+
+One remark: you need to *flag* parameters that takes values from existing variables. Flagging is done using `@` prefix before the parameter name. Flag determines if the specified value is just a simple value or some variable reference.
+
+### Filtering results
+
+Model objects are usually rich in Liferay portal, containing many properties. But not all of them needs to be retrieved. For example, you might not need user login name, last name, description etc, and you surely want to minimize the bandwidth usage by not sending unnecessary data.
+
+With JSON Web Service Invoker you can define a white-list of properties that you want to receive back. It's simple:
+
+	{
+		"$user[firstName,emailAddress] = /user/get-user-by-id": {
+			"userId": 123,
+			"$contact = /contact/get-contact-by-id": {
+				"@contactId" : "$user.contactId"
+			}
+		}
+	}
+
+Returned user object has only the `firstName` and the `emailAddress` property (and, of course, the `contact` property).
+
+### Batching calls
+
+Nesting service calls allows you to invoke multiple service within single HTTP request. However, it makes sense only if service calls are related and if returned object can be nested in a reasonable way. But if you want to invoke two logically separated calls, there is no much sense to force nesting and un-natural relationships just to gain performances.
+
+For that reason, you can send batch calls within one Invoker command. Again, it's simple, just pass a JSON array of commands:
+
+	[
+		{/* first command */},
+		{/* second command */}
+	]
+
+Result will be a JSON array populated with command results. Commands are invoked independently, one after the other. This way you can invoke multiple JSON Web services through one HTTP request.
+
 Well, you've just added some powerful tools to your toolbox by learning how to leverage JSON web services in Liferay. Good job!
 
 Next, let's consider the `ServiceContext` class used by so many Liferay services and how it can be helpful to use in your services.
