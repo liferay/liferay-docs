@@ -136,31 +136,60 @@ Remember that metadata sets created independently are reusable. Once they have b
 
 ### Automatic Preview Generation [](id=lp-6-1-ugen04-automatic-preview-generation-0)
 
-Liferay 6.1 generates previews of the documents added to Documents and Media whenever it's possible. The content is displayed using a customized viewer depending on the type of the content.
+Whenever possible, Liferay 6.1 generates previews of documents added to the Documents and Media library. Out of the box, Liferay only ships with Java-based APIs to generate previews for documents. The only tool available that is 100% Java and has a compatible license to be distributed with Liferay is PDFBox. From a vanilla installation of Liferay 6.1, if you upload a PDF file to the Documents and Media portlet, Liferay will process the PDF in a separate thread to generate a preview. This process may last only a few seconds for a small file. The larger the file is, the longer it takes.
 
-**Office documents:** preview of supported office documents (.docx, .pdf, .odt, .ppt, etc.) and online reading.
+The first time you run a conversion like this, look for a console message that indicates something like the following:
 
-**Multimedia:** play various multimedia (video and audio) formats from the browser.
+    Liferay is not configured to use ImageMagick for generating Document Library previews and will default to PDFBox. For better quality previews, install ImageMagick and enable it in portal-ext.properties.
 
-Liferay uses external tools and libraries to support this feature. You may need to install them and enable them in Liferay.
+While a default implementation of image generation for document previews and thumbnails is provided via PDFBox, you'll need to install and configure some additional tools to harness the full power of Liferay's Documents and Media library. These tools include [*OpenOffice*](http://www.openoffice.org) or [*LibreOffice*](http://www.libreoffice.org), [*ImageMagick*](http://www.imagemagick.org), which requires Ghostscript [*Ghostscript*](http://www.ghostscript.com), and [*Xuggler*](http://www.xuggle.com/xuggler). With these tools installed and configured, Documents and Media content is displayed using a customized viewer depending on the type of content. Configuring Liferay to use OpenOffice or LibreOffice in server mode allows you to generate thumbnails and previews for supported file types (.pdf, .docx, .odt, .ppt, .odp, etc.), lets you view documents in your browser, and lets you convert documents. ImageMagick allows for faster and higher-quality previews and conversions. Xuggler allows for audio and video previews, lets you play audio and video files in your browser, and extracts thumbnails from video files.
 
-**OpenOffice/LibreOffice:** for office documents start [*OpenOffice*](http://www.openoffice.org) or [*LibreOffice*](http://www.libreoffice.org) in server mode by running:
+#### OpenOffice/LibreOffice configuration
 
-	soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
+OpenOffice and LibreOffice are open source office suites which are usually run in graphical mode to create documents but they can also be run in "server" mode. When run in server mode, OpenOffice and LibreOffice can be used to convert documents to and from all of the file types it supports. Once configured, Liferay makes use of this feature to automatically convert content on the fly. You can install OpenOffice or LibreOffice on the same machine upon which Liferay is running or you can connect to a separate host. 
 
-and enable either through External Services in Control Panel or in `portal-ext.properties`:
+If you've installed OpenOffice or LibreOffice on the same machine that's running Liferay, you can start it in server mode with the following command:
 
-	openoffice.server.enabled=true
+    soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
+    -nofirststartwizard
 
-**ImageMagick:** PDF conversion is available out of the box. While a default implementation of image generation for document previews and thumbnails is provided, the quality can be improved using [*ImageMagick*](http://www.imagemagick.org), which also requires [*GhostScript*](http://www.ghostscript.com). This can be enabled in the external services control panel or in `portal-ext.properties`:
+Once OpenOffice or LibreOffice has been installed and is running in server mode, you can configure Liferay to use it either in your `portal-ext.properties` file or in the control panel. To enable OpenOffice/LibreOffice in your `portal-ext.properties` file, add the following line:
 
-	imagemagick.enabled=true
+    openoffice.server.enabled=true
+    
+If OpenOffice or LibreOffice is running on another server or on a non-default port, you must also specify these values. The default values are as follows:
 
-**Xuggler:** Audio and video player configuration requires the installation of [*Xuggler*](http://www.xuggle.com/xuggler/downloads/build.jsp) and the configuration of related environment variables. This can be enabled in the external services control panel or in `portal-ext.properties`:
+    openoffice.server.host=127.0.0.1
+    openoffice.server.port=8100
 
-	xuggler.enabled=true
+To enable OpenOffice/LibreOffice, navigate to the *Server Administration* &rarr; *External Services* page, and check the *Enabled* box for OpenOffice. If OpenOffice/LibreOffice is running on a non-default port, you must also specify the port number. By default, OpenOffice runs on port 8100, which is the default port in the control panel. If you have something else running on this port, find a port that is open and specify it both in the command to start OpenOffice/LibreOffice in server mode and on the control panel's External Services configuration page. When you are finished, click *Save*. That's it! Now Liferay can perform many types of document conversions.
 
-With the above tools installed and enabled, Documents and Media looks like this:
+#### ImageMagick configuration
+
+Once you've installed the correct version of [*ImageMagick*](http://www.imagemagick.org) for your operating system, which should include the installation of Ghostscript, you need to configure Liferay to use ImageMagick. You can do this either in your `portal-ext.properties` file or from the control panel. To enable ImageMagick in your `portal-ext.properties` file, add the following lines and make sure the search path points to the directories for the ImageMagick and Ghostscript executables. You may also need to configure the path for fonts used by Ghostscript when in Mac or Unix environments.
+
+    imagemagick.enabled=true
+    imagemagick.global.search.path[apple]=/opt/local/bin:/opt/local/share/ghostscript/fonts:/opt/local/share/fonts/urw-fonts
+    imagemagick.global.search.path[unix]=/usr/local/bin:/usr/local/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts
+    imagemagick.global.search.path[windows]=C:\\Program Files\\ImageMagick
+
+To enable ImageMagick from the control panel, navigate to the *Server Administration* &rarr; *External Services* page, check the *Enabled* checkbox for ImageMagick, and check that the paths the ImageMagick and Ghostscript executables are correct.
+
+#### Xuggler configuration
+
+Once you've installed the correct version of [*Xuggler*](http://www.xuggle.com/xuggler) for your operating system, you need to configure your environment variables. Depending on where you installed Xuggler, a configuration similiar to the following should work on Unix-like systems:
+
+    export XUGGLE_HOME=/usr/local/xuggler
+    export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH
+    export PATH=$XUGGLE_HOME/bin:$PATH
+
+Once your environment variables are set up correctly, you can configure Liferay to use ImageMagick either in your `portal-properties` file or from the control panel. If you'd like to use your portal-ext.properties file, add the following line:
+
+    xuggler.enabled=true
+
+To configure Liferay to use Xuggler in the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check the *Enabled*. That's it! You've successfully configured the audio and video functionality of the Documents and Media library.
+
+With the above tools installed and enabled, the Documents and Media library looks like this:
 
 ![Figure 4.40: Previews in Documents and Media](../../images/05-previews.jpg)
 
