@@ -162,7 +162,7 @@ If OpenOffice or LibreOffice is running on another server or on a non-default po
     openoffice.server.host=127.0.0.1
     openoffice.server.port=8100
 
-To enable OpenOffice/LibreOffice, navigate to the *Server Administration* &rarr; *External Services* page, and check the *Enabled* box for OpenOffice. If OpenOffice/LibreOffice is running on a non-default port, you must also specify the port number. By default, OpenOffice runs on port 8100, which is the default port in the control panel. If you have something else running on this port, find a port that is open and specify it both in the command to start OpenOffice/LibreOffice in server mode and on the control panel's External Services configuration page. When you are finished, click *Save*. That's it! Now Liferay can perform many types of document conversions.
+To enable OpenOffice/LibreOffice, navigate to the *Server Administration* &rarr; *External Services* page, and check the *Enabled* box for OpenOffice. If OpenOffice/LibreOffice is running on a non-default port, you must also specify the port number. By default, OpenOffice runs on port 8100, which is the default port in the control panel. If you have something else running on this port, find a port that is open and specify it both in the command to start OpenOffice/LibreOffice in server mode and on the control panel's External Services configuration page. When you are finished, click *Save*. Now Liferay can perform many types of document conversions.
 
 #### ImageMagick configuration
 
@@ -187,7 +187,7 @@ Once your environment variables are set up correctly, you can configure Liferay 
 
     xuggler.enabled=true
 
-To configure Liferay to use Xuggler in the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check the *Enabled*. That's it! You've successfully configured the audio and video functionality of the Documents and Media library.
+To configure Liferay to use Xuggler in the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check the *Enabled*. That's it! You've successfully configured the Documents and Media library to use Xuggler for audio and video files.
 
 With the above tools installed and enabled, the Documents and Media library looks like this:
 
