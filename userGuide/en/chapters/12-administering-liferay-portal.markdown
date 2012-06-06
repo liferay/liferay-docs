@@ -944,18 +944,20 @@ Note that if you add your mail server settings here, they will override anything
 
 #### External Services [](id=lp-6-1-ugen12-external-services-0)
 
-Liferay Portal enables users to add content in many formats: web content, images, and files. This is done using the Web Content Management System, the Image Gallery, the Documents and Media Library, and in other portlets, both built-in and custom written. Sometimes, it is helpful to convert this content from its original format to one that is more convenient for the user browsing the content. Liferay Portal allows users to do this by integrating with OpenOffice and Xuggler.
+Liferay Portal enables users to upload and share content via the Documents and Media library, a customizable and permissionable online repository. Users can upload files of any type to the Documents and Media library. Liferay ships with PDFBox and uses it to generate automatic previews for certain types of documents, by default. However, you can install three additional tools that offer higher quality previews and document conversion functionality: OpenOffice or LibreOffice, ImageMagick, and Xuggler. With Liferay configured to use these tools, you can generate automatic previews for many types of files incuding text files, office suite files, PDFs, images, audio files, and videos. Users will also be able to use the conversion functionality to download documents in a variety of formats. Please see the Documents and Media section of chapter 4 for more information.
 
-OpenOffice is an open source office suite which usually runs in graphical mode to create documents, but it can also be run in "server" mode. When run in server mode, OpenOffice can be used to convert documents to and from all of the file types it supports. Liferay can then make use of this feature to automatically convert content on the fly. Xuggler provides video conversion functionality.
+LibreOffice is available here: [LibreOffice](http://www.libreoffice.org), ImageMagick is available here: [ImageMagick](http://www.imagemagick.org), and Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to choose the correct versions of these applications for your operating system. Once you've installed these tools, you can use the External Services tab of the control panel to configure Liferay to use them.
 
-Use the External Services tab to tell Liferay how to connect to your running instance of OpenOffice or Xuggler. You can install OpenOffice on the same server upon which Liferay is running. Once you have it installed, you can start OpenOffice in server mode with the following command:
+OpenOffice and LibreOffice are open source office suites which are usually run in graphical mode to create documents. However, they can also be run in "server" mode. When run in server mode, OpenOffice/LibreOffice can be used to convert documents to and from many office suite file types. Liferay can use this feature to automatically convert content on the fly. On the External Services tab, you can specify how Liferay should connect to your running instance of OpenOffice/LibreOffice. You can install OpenOffice/LibreOffice on the same server upon which Liferay is running. You can start OpenOffice/LibreOffice in server mode with the following command:
 
-    soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;"
-    -nofirststartwizard
+    soffice --headless --accept="socket,host=127.0.0.1,port=8100;urp;"
+    --nofirststartwizard
 
-As you can see, the command above specifies that OpenOffice will run on port 8100, which is the default port in the control panel . If you can use this port, all you need to do is check the *Enabled* box, and Liferay will be integrated with OpenOffice.
+As you can see, the command above specifies that OpenOffice/LibreOffice will run on port 8100, which is the default port in the control panel. If you can use this port, all you need to do is check the *Enabled* box, and Liferay will be integrated with OpenOffice/LibreOffice. If you have something else running on this port, find a port that is open and specify it both in the command above and on the control panel's External Services configuration page. When you are finished, click *Save*.
 
-If you have something else running on this port, find a port that is open and specify it both in the command above and on the control panel's External Services configuration page. When you are finished, click *Save*.
+ImageMagick provides higher quality image conversion functionality than PDFBox.
+
+Xuggler provides video conversion functionality.
 
 #### Script [](id=lp-6-1-ugen12-script-0)
 
