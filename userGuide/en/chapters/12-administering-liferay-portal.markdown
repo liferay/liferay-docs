@@ -948,16 +948,54 @@ Liferay Portal enables users to upload and share content via the Documents and M
 
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org), ImageMagick is available here: [ImageMagick](http://www.imagemagick.org), and Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to choose the correct versions of these applications for your operating system. Once you've installed these tools, you can use the External Services tab of the control panel to configure Liferay to use them.
 
-OpenOffice and LibreOffice are open source office suites which are usually run in graphical mode to create documents. However, they can also be run in "server" mode. When run in server mode, OpenOffice/LibreOffice can be used to convert documents to and from many office suite file types. Liferay can use this feature to automatically convert content on the fly. On the External Services tab, you can specify how Liferay should connect to your running instance of OpenOffice/LibreOffice. You can install OpenOffice/LibreOffice on the same server upon which Liferay is running. You can start OpenOffice/LibreOffice in server mode with the following command:
+##### OpenOffice/LibreOffice configuration
+
+OpenOffice and LibreOffice are open source office suites which are usually run in graphical mode to create documents but they can also be run in "server" mode. When run in server mode, OpenOffice and LibreOffice can be used to convert documents to and from all of the file types it supports. Once configured, Liferay makes use of this feature to automatically convert content on the fly. You can install OpenOffice or LibreOffice on the same machine upon which Liferay is running or you can connect to a separate host. 
+
+If you've installed OpenOffice or LibreOffice on the same machine that's running Liferay, you can start it in server mode with the following command:
 
     soffice --headless --accept="socket,host=127.0.0.1,port=8100;urp;"
     --nofirststartwizard
 
-As you can see, the command above specifies that OpenOffice/LibreOffice will run on port 8100, which is the default port in the control panel. If you can use this port, all you need to do is check the *Enabled* box, and Liferay will be integrated with OpenOffice/LibreOffice. If you have something else running on this port, find a port that is open and specify it both in the command above and on the control panel's External Services configuration page. When you are finished, click *Save*.
+Once OpenOffice or LibreOffice has been installed and is running in server mode, you can configure Liferay to use it either in your `portal-ext.properties` file or from the control panel. To enable OpenOffice/LibreOffice in your `portal-ext.properties` file, add the following line:
 
-ImageMagick provides higher quality image conversion functionality than PDFBox.
+    openoffice.server.enabled=true
+    
+If OpenOffice or LibreOffice is running on another server or on a non-default port, you must also specify these values. The default values are as follows:
 
-Xuggler provides video conversion functionality.
+    openoffice.server.host=127.0.0.1
+    openoffice.server.port=8100
+
+By default, when Liferay uses OpenOffice or LibreOffice to perform conversions, it uses a cache. The first time a document is converted, a copy is saved in the Liferay temp folder `/liferay/document_conversion/`. When Liferay receives a conversion request, it checks this folder to see if the converted document already exists. If the converted document is found, Liferay returns it to the user. Otherwise, it performs a fresh conversion and saves a copy in the temp folder. If the cache is turned off, Liferay will always regenerate the file regardless of whether a previously existing conversion already exists in the temp folder. You can turn the cache off by setting the following property:
+
+    openoffice.cache.enabled=false
+
+To configure Liferay to use OpenOffice/LibreOffice from the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check the *Enabled* box for OpenOffice. If OpenOffice/LibreOffice is running on a non-default port, you must also specify the port number. By default, OpenOffice runs on port 8100, which is the default port in the control panel. If you have something else running on this port, find a port that is open and specify it both in the command to start OpenOffice/LibreOffice in server mode and on the control panel's External Services configuration page. When you are finished, click *Save*. Now Liferay can perform many types of document conversions.
+
+##### ImageMagick configuration
+
+Once you've installed the correct version of [*ImageMagick*](http://www.imagemagick.org) for your operating system, which should include the installation of Ghostscript, you need to configure Liferay to use ImageMagick. You can do this either in your `portal-ext.properties` file or from the control panel. To enable ImageMagick in your `portal-ext.properties` file, add the following lines and make sure the search path points to the directories for the ImageMagick and Ghostscript executables. You may also need to configure the path for fonts used by Ghostscript when in Mac or Unix environments.
+
+    imagemagick.enabled=true
+    imagemagick.global.search.path[apple]=/opt/local/bin:/opt/local/share/ghostscript/fonts:/opt/local/share/fonts/urw-fonts
+    imagemagick.global.search.path[unix]=/usr/local/bin:/usr/local/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts
+    imagemagick.global.search.path[windows]=C:\\Program Files\\ImageMagick
+
+To enable ImageMagick from the control panel, navigate to the *Server Administration* &rarr; *External Services* page, check the *Enabled* checkbox for ImageMagick, and check that the paths to the ImageMagick and Ghostscript executables are correct.
+
+##### Xuggler configuration
+
+Once you've installed the correct version of [*Xuggler*](http://www.xuggle.com/xuggler) for your operating system, you need to configure your environment variables. Depending on where you installed Xuggler, a configuration similiar to the following should work on Unix-like systems:
+
+    export XUGGLE_HOME=/usr/local/xuggler
+    export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH
+    export PATH=$XUGGLE_HOME/bin:$PATH
+
+Once your environment variables are set up correctly, you can configure Liferay to use Xuggler either in your `portal-properties` file or from the control panel. If you'd like to use your portal-ext.properties file, just add the following line:
+
+    xuggler.enabled=true
+
+To configure Liferay to use Xuggler in the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check the *Enabled*. That's it! You've successfully configured the Documents and Media library to use Xuggler for audio and video files.
 
 #### Script [](id=lp-6-1-ugen12-script-0)
 
