@@ -4,21 +4,37 @@ Liferay's Documents and Media library provides a mechanism for storing files onl
 
 ### Getting Started with the Documents and Media Portlet [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-portlet-0)
 
-The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media portlets to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing their own files.
+The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media repositories to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing their own files.
 
 ![Figure 4.32: Initial View of the Documents and Media Portlet](../../images/05-document-library.png)
 
-The default view of the Documents and Media portlet displays the contents of the Home folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you want the main window of the portlet to display. Recent Documents displays documents that users have recently used. For example, recently uploaded, edited, or downloaded documents are displayed here. My Documents shows *your* documents; in other words, the documents that you have uploaded. Basic Document and the document types listed below it are also filters. If you click on one of these filters, the main portlet window shows only documents that belong to the selected document type. When you add custom Document types, which we discuss below, they are added to the filter list.
-
-Let's look at how you'd navigate around Documents and Media. 
+The default view of the Documents and Media portlet displays the contents of the *Home* folder. The links on the left side of the portlet windows are filters. You can use these filters to choose what you want the main window of the portlet to display. *Recent Documents* displays documents that users have recently uploaded, edited, or downloaded. *My Documents* shows *your* documents; in other words, the documents that you have uploaded. *Basic Document* and the document types listed below it are also filters. If you click on one of these filters, the main portlet window shows only documents that belong to the selected document type. When you add custom document types, which we discuss below, they are added to the filter list. Next, let's look at how to navigate around Documents and Media. 
 
 ### Navigating the Documents and Media Portlet [](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0)
 
-In the main window of the Documents and Media portlet, you can click on a document to view details about it. Its version number, version history, status, and content type will be displayed as well as its uploader and the user who last edited it. You can perform several actions on the document here. You can edit the document to change its contents, point it to a different file, change its title, description, or document type, or add tags, categories, or related assets. You can move the document to a new location. You can checkout the document to prevent other users from modifying the document while you are working. You can configure the file-specific permissions of the document. You can download the document or get its URL or Webdav URL. If comments are enabled, you can view comments, add comments, or subscribe to comments about this document.
+In the main window of the Documents and Media portlet, you can click on a document to view details about it. Its version number, version history, status, as well as its uploader and the user who last edited it. Depending on the document, some automatically extracted metadata may also be displayed, such as the document creator, author, title, content type, creation date, and last modification date. In the case of audio or video files, the duration would also be displayed. You can perform several actions on the document here:
+
+**Download:** lets you download the document.
+
+**Get URL:** displays the URL of the document on the server.
+
+**Get WebDAV URL:** displays the WebDAV URL of the document on the server. See the WebDAV access section below for more information.
+
+**Edit:** lets you change contents of a document, point it to a different file, change its title, description, or document type, or add tags, categories, or related assets.
+
+**Move:** lets you choose a new location in the Documents and Media repository to store the document.
+
+**Checkout/Checkin:** prevents others from modifying the document while you are working. Other users can still view the current version of the document if they have permission. You can check the document back in when you're done working.
+
+**Permissions:** allows you to configure file-specific permissions for the document.
+
+**Delete:** lets you remove the document from the Documents and Media library.
+
+If comments are enabled, you can also view comments, add comments, or subscribe to comments about documents. Comments are enabled by default.
 
 ![Figure 4.33: Viewing a Document](../../images/05-doclib-document-view.png)
 
-The menu at the top of the Documents and Media portlet contains Actions, Add, Sort By, and Manage buttons. There are also buttons for switching between icon view, descriptive view, and list view and there is a search field. If your portlet contains more documents than it can display at once, you can use the navigation tool at the bottom of the portlet window to either switch your view to another page or configure the page to display more documents per page. 
+The menu at the top of the Documents and Media portlet contains Actions, Add, Sort By, and Manage buttons. There are also buttons for switching between icon view, descriptive view, and list view. If there are lots of documents in the Documents and Media library, the search field can help you find the documents you're looking for. If your portlet contains more documents than it can display at once, you can use the navigation tool at the bottom of the portlet window to either switch your view to another page or configure the page to display more documents per page. 
 
 #### Actions [](id=lp-6-1-ugen04-actions-0)
 
@@ -28,7 +44,7 @@ The Actions menu will only be displayed if you have selected one or more documen
 
 **Checkin:** lets you check in a document that you have edited. Its version number will increment and the previous version will be saved.
 
-**Checkout:** lets you check out a document that you would like to edit. This option prevents anyone else from modifying it while you are working. Other users can still view the current version of the document if they have permission. When you are done working on the document you can check it back in.
+**Checkout:** lets you check out a document that you would like to edit. This option prevents anyone else from modifying it while you are working.
 
 **Move:** allows you to choose a new location for a document or folder within the portlet's file system. You can move multiple documents and folders at the same time. Moving documents and folders is also possible via drag & drop.
 
@@ -82,7 +98,7 @@ Adding repositories in Documents and Media is a new feature in Liferay 6.1. Docu
 
 ![Figure 4.34: Adding a new repository](../../images/05-new-repository.png)
 
-The admin must ensure the same credentials and authentication are being used in Liferay and in the external repository. This is normally synchronized using a mechanism like LDAP. If you don't have LDAP you need to ensure manually that the credentials and authentication are the same. In order to authenticate with the third-party repository you need to enable the following property:
+The admin must ensure that the same credentials and authentication are being used in Liferay and in the external repository. This is normally synchronized using a mechanism like LDAP. If you don't have LDAP, you need to ensure manually that the credentials and authentication are the same. In order to authenticate with the third-party repository you need to enable the following property:
 
 	session.store.password=false
 
@@ -92,7 +108,7 @@ The repository is displayed in the left side of the window in the Home folder.
 
 ### Document Types and Metadata Sets [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
 
-Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields defined by the metadata set of the document type. This helps encourage users not to forget to enter important information about their documents. For example, you could create a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button at the top of the Documents and Media portlet window.
+Customizable document types and metadata sets are new features in Liferay 6.1. When a user assigns a document type to a document, the user is required to fill out the fields defined by the metadata set of the document type. This encourages users not to forget to enter important information about their documents. For example, you could create a "copyrighted" document type and require users to enter a license for all "copyrighted" documents. More importantly, document types and metadata sets can improve document searchability. The values that users enter into the fields determined by their document type's metadata set become searchable entities within the portal. You can use Liferay's search portlet to search for these terms. Document types and metadata sets are accessible from the Manage Button at the top of the Documents and Media portlet window.
 
 ![Figure 4.36: Document Types Dialog Box](../../images/05-document-types.png)
 
@@ -100,7 +116,7 @@ You can add a new document type using the Add button at the top of the dialog bo
 
 ![Figure 4.37: Adding a New Document Type](../../images/05-new-document-type.png)
 
-Let's create a document type called "Syllabus" and define a metadata set. What metadata should we associate with syllabi? Let's choose for our syllabi to have course title, professor, semester, course description, and course requirements fields. All syllabi in our portal should maintain entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for. Since we don't want to use our metadata set for any document type other than "Syllabus," let's create our metadata set under the Main Metadata Fields area. Alternatively, we could create our metadata set independently using *Manage &rarr; Metadata Sets &rarr; Add* and then select it as an Additional Metadata Field. 
+As an example, we could create a document type called "Syllabus" and define a metadata set. What metadata should we associate with syllabi? Let's choose for our syllabi to have course title, professor, semester, course description, and course requirements fields. All syllabi in our portal should maintain entries for these fields. This ensures that a syllabus will show up in a portal search if its course title, professor, or semester is searched for. Since we don't want to use our metadata set for any document type other than "Syllabus," let's create our metadata set under the Main Metadata Fields area. Alternatively, we could create our metadata set independently using *Manage &rarr; Metadata Sets &rarr; Add* and then select it as an Additional Metadata Field. 
 
 ![Figure 4.38: Selecting Additional Metadata Sets](../../images/05-selecting-additional-metadata-sets.png)
 
