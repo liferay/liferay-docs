@@ -863,7 +863,7 @@ The default view of the Documents and Media portlet displays the contents of the
 
 ### Navigating the Documents and Media Portlet [](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0)
 
-In the main window of the Documents and Media portlet, you can click on a document to view details about it. Its version number, version history, status, as well as its uploader and the user who last edited it. Depending on the document, some automatically extracted metadata may also be displayed, such as the document creator, author, title, content type, creation date, and last modification date. In the case of audio or video files, the duration would also be displayed. You can perform several actions on the document here. 
+In the main window of the Documents and Media portlet, you can click on a document to view details about it. Its version number, version history, status, as well as its uploader and the user who last edited it. Depending on the document, some automatically extracted metadata may also be displayed, such as the document creator, author, title, content type, creation date, and last modification date. In the case of audio or video files, the duration would also be displayed. You can perform several actions on the document here:
 
 **Download:** lets you download the document.
 
