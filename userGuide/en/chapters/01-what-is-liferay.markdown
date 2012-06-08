@@ -60,17 +60,17 @@ When it comes time to publish content, structures are combined with *templates*.
 
 	#if ($storyType == "article") 
 
-	<div id="storyTitle">
-		$storyTitle.getData()
-	</div>
+		<div id="storyTitle">
+				$storyTitle.getData()
+		</div>
 
-	<div id="storyByLine">
-		$storyByLine.getData()
-	</div>
+		<div id="storyByLine">
+			$storyByLine.getData()
+		</div>
 
-	<div id="storyContent">
-		$content.getData()
-	</div>
+		<div id="storyContent">
+			$content.getData()
+		</div>
 
 	#end
 	
@@ -82,6 +82,20 @@ This is just the web content portion of Liferay's content management system. Lif
 
 ### Keeping track of file-based content
 
+It's rare to find in an open source project a full-featured content management system. Most of the time, you'll find web content management systems and file-based content management systems as separate projects. Liferay Portal, however, provides you with both. As shown above, the web content management system is as robust as any other you'll find, and its file-based content management system is just as robust. 
 
+Liferay Portal keeps the UI of its file-based content management system in an application called *Documents and Media Library*. This application resides in the control panel or can be added to any page, and, as shown below, looks very much like the file manager that you're already familiar with from your operating system. 
 
-Many Liferay Portal users see it as a robust content management system, and they use it primarily for that purpose. Now, hopefully, you can see why. We'll cover the 
+![Figure 1.x: Liferay Portal's Documents and Media library was purposefully designed to be familiar to anyone who uses a computer. ](../../images/01-docs-and-media.png)
+
+Like a file manager, you can browse files and folders in nested hierarchies. You can also mount other repositories that you might have in your environment, such as Documentum (EE only) or any system that implements Content Management Interoperability Services (CMIS). It provides previews of just about every document type you can think of. And, like a file manager, you can copy and move files between folders by dragging and dropping them. Of course, if you still want to use your operating system's file manager, you can, because Liferay's Documents and Media library supports WebDAV, using the same credentials you use to log in to Liferay. 
+
+Liferay Portal's Documents and Media library, however, is much more robust than a file manager is, because it's a full content management system. You can define ways of classifying files that may be of different types, but are meant for the same, overarching purpose. 
+
+For example, you can define *metadata sets*, which are groups of fields describing attributes of a file. One of these that ships with the product is called *meeting metadata*, and it contains fields such as Meeting Name, Date, Time, Location, Description, and Participants. This is a generic set of fields that go together and that you'd want to use as a group. You can create as many of these as you want. 
+
+For files, you can define *document types*. These are how users add files to the system. For example, you might create a document type called Meeting Minutes. Once you've created the document type, you can attach the Meeting Metadata set that contains many of the fields you'd want, and you can also add extra fields, such as a field for action items. When users want to add a file containing their notes for meeting minutes, they can also add all the relevant metadata about the meeting (such as the time, location, and action items). 
+
+Of course, the system goes much further than this. Folders can be set so that only certain document types can be added to them. Workflow rules can also be added to folders to run files through an approval process that you define. In short, Liferay's file-based content management system gives you all the features you need to manage and share files in a group.  
+
+Many Liferay Portal users see it as a robust content management system, and they use it primarily for that purpose. Now, hopefully, you can see why. We'll cover the system in-depth in the body of this book, but for now we need to look at some of the other ways you can use Liferay Portal, starting with its fantastic collaborative tools. 
