@@ -60,17 +60,17 @@ We'll walk through the creation of Nose-ster's web site, starting by creating an
 
 As we've stated above, content is the reason web sites exist. Liferay Portal has made it easier than ever to get content published to your site. Because Liferay Portal is so flexible, you can use basic authoring tools right away or take advantage of the more advanced features. It's adaptable to your needs.
 
-We'll begin by creating simple content using Liferay's WYSIWYG Editor and then we'll publish it to the home page of Nose-ster's web site. This a fast and straightforward process that demonstrates how easy it is to create and publish content onto your Liferay Portal. So let's get familiar with the Web Content section of the control panel so we can create and publish our first pieces of content.
+We'll begin by creating simple content using Liferay's WYSIWYG Editor and then we'll publish it to the home page of Nose-ster's web site. This is a fast and straightforward process that demonstrates how easy it is to create and publish content on your Liferay Portal instance. Let's learn about the Web Content section of the control panel so we can create and publish our first pieces of content.
 
 ![Figure 3.1: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
 
-When you manage web content from the control panel, you can select the location where the content resides. For instance, you can add content that's available to a specific site or globally across the portal. The Content section of the control panel displays as its heading the name of the site you're currently working on. This heading is clickable: you can change where you're working by using the drop down attached to the heading. We will add our first piece of content to the *Nose-ster* site, which we defined earlier in the chapter as the default site.
+When you manage web content from the control panel, you can select the location where the content resides. For instance, you can add content that's available to a specific site or globally across the portal. The Content section of the control panel displays as its heading the name of the site you're currently working on. This heading is called the context menu selector: you can change the scope of where you'd like to view, edit, or create content by using the drop-down selector attached to the heading. We will add our first piece of content to the *Nose-ster* site, which we defined earlier in the chapter as the default site.
 
 ##### Rich, WYSIWYG Editing [](id=lp-6-1-ugen03-rich-wysiwyg-editing-0)
 
 Once you have the Nose-ster site selected, click on the *Web Content* link in the control panel. Next, click the *Add* button under the *Web Content* tab. This is a highly customizable form that by default has two fields: a title and a powerful WYSIWYG editor. We could customize this form to contain whatever fields our content needs, but let's keep things simple for now. We'll cover more advanced features such as structures, templates, and content scheduling later in this chapter.
 
-For now, type the words *Welcome to Nose-ster* in the *Name* field. Notice that content can be localized in whatever language you want. If you click the *localize* check box, two select boxes appear which allow you to pick the language you're working in and the language that is the default. You can enter translations of your content for any language in the list. The screenshot below shows this interface but for now, we won't be using it, so you can leave it unchecked. In the content field, add a short sentence announcing that the web site is up and running.
+For now, type the words *Welcome to Nose-ster* in the *Name* field. Notice that content can be localized in whatever language you want. If you click on the *localize* checkbox, two select boxes appear which allow you to pick the language you're working in and the language that is the default. You can enter translations of your content for any language in the list. The screenshot below shows this interface but for now, we won't be using it, so you can leave it unchecked. In the content field, add a short sentence announcing that the web site is up and running.
 
 ![Figure 3.2: The Web Content Editor](../../images/04-web-content-wysiwyg.png)
 
@@ -98,7 +98,7 @@ For this piece of web content, we don't need to change anything. After you're fi
 
 Previous versions of Liferay had the ability to create and manage different translations of your web content, but with Liferay 6.1 we've added several improvements. 
 
-When you create a new piece of Web Content, you have the ability to choose a default language. If you click *Change* you can select your default language from a large number of languages that Liferay supports. Before you can create a translation, you must finish creating the content in your default language and save it. Once you've done that, editing the content provides you with the option to *Add Translation*.
+When you create a new piece of Web Content, you have the ability to choose a default language. If you click *Change*, you can select your default language from a large number of languages that Liferay supports. Before you can create a translation, you must finish creating the content in your default language and save it. Once you've done that, editing the content provides you with the option to *Add Translation*.
 
 ![Figure 3.5: Adding a translation](../../images/04-web-content-content-translation.png)
 
