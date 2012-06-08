@@ -481,7 +481,7 @@ The Display Settings section gives you precise control over the display of your 
 
 ##### Other Settings [](id=lp-6-1-ugen03-other-settings-0)
 
-**Asset Link Behavior:** When the link to the asset is clicked, it can be displayed in the Asset Publisher or in the portlet to which the asset belongs, such as the Blogs or Message Boards.
+**Asset Link Behavior:** The default value is *Show Full Content*. With this value selected, when the link to an asset is clicked, the full asset is displayed in the current Asset Publisher. If the value *View in a Specific Portlet* is selected, clicking on an asset causes that asset to be displayed in the portlet to which the asset belongs. For example, a blog entry would be displayed in the Blogs portlet where it was created. Likewise, a forum post would be displayed in the Message Boards porlet where it was created. Similarly, a generic Web Content article would be displayed in the Asset Publisher of its configurated Display Page. See the above secton on Display Pages for more information.
 
 **Maximum Items to Display:** You can display 1-100 items.
 
