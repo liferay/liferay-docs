@@ -56,4 +56,32 @@ Web content is one example of what in Liferay is called an *asset*. Assets can h
 
 This is just one example, of course. But the concept is applicable to any kind of site you'd want to build. For example, if you were building a site for a zoo, you could use web content structures to help users enter data about animals in the zoo, such as their common names, their scientific names, their species, their locations in the wild, and more.  
 
-When it comes time to publish content, structures are combined with *templates* that yo
+When it comes time to publish content, structures are combined with *templates*. Templates are instructions for how to display structures, written most of the time in Velocity or Freemarker--both of which are well-known templating languages used for mixing HTML with programmatic elements. Because of this, they're very easy to write, and can help you ensure that your site has a consistent look and feel. For example, one template (you can specify multiple templates per structure if you wish) for displaying the Story example we used above might look like this: 
+
+	#if ($storyType == "article") 
+
+	<div id="storyTitle">
+		$storyTitle.getData()
+	</div>
+
+	<div id="storyByLine">
+		$storyByLine.getData()
+	</div>
+
+	<div id="storyContent">
+		$content.getData()
+	</div>
+
+	#end
+	
+All this template does is check to see if the type of story is an article. If it is, it displays the contents of each field in the structure inside a `<div>` tag with a special ID. The theme for this content could contain CSS that displays this content in its proper context: with the title in a larger font, and so on. 
+
+There is much more to web content. You can create abstracts, schedule when content is published and when it should be taken down (or reviewed), define related assets, and more. 
+
+This is just the web content portion of Liferay's content management system. Liferay Portal is also great at managing file-based content. 
+
+### Keeping track of file-based content
+
+
+
+Many Liferay Portal users see it as a robust content management system, and they use it primarily for that purpose. Now, hopefully, you can see why. We'll cover the 
