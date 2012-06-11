@@ -353,13 +353,15 @@ In addition to controlling when content displays, you can use the Display Page f
 
 If you've been using Liferay for a while, or you've just spent a little bit of time with this guide, you might have noticed something about how Liferay handles web content--content is never tied directly to a page. While this can be useful (because it means that you don't have to recreate content if you want to display the same thing on multiple pages), it also means that you don't have a static URL for any web content, which is bad for search engine optimization.
 
-To fix this issue, Liferay has introduced the concept of Display Pages and Canonical URLs. Each web content entry on the portal has a canonical URL, which is the official location of the content that is referenced any time the content is displayed. A Display Page can be any page with an asset publisher set to its default settings. You can create the page yourself, or use the *Content Display Page* page template included with Liferay.
+As an improvement, Liferay has introduced the concept of Display Pages and Canonical URLs. Each web content entry on the portal has a canonical URL, which is the official location of the content that is referenced any time the content is displayed. A Display Page can be any page with an asset publisher configured to display any content associated with the page. When adding or editing web content articles, you can select a Display Page. However, only pages with a configured asset publisher are available for selection. 
 
-So right now you're thinking "Wait, you just told me that each Web Content item has its own URL, and that this is somehow related to pages where we display a whole bunch of content on the same page?" Yes. That's exactly what I said. Just watch--create a display page somewhere on your portal, using the Content Display Page template. Now click on *Display Page*, and select the page you just created as the display page for the content. 
+To create a Display Page, you can create a page yourself, add an Asset Publisher portlet, and configure it yourself. Alternatively, you can use the *Content Display Page* page template included with Liferay. If you're creating a Display Page manually, once you've added an Asset Publisher portlet to the page, open its configuration window. Then check the *Set as the Default Asset Publisher for This Page* box.
+
+You may now be thinking, "Wait, you just told me that each Web Content item has its own URL, and that this is somehow related to pages where we display a whole bunch of content on the same page?" Yes. That's exactly what I said. Just watch--create a display page called *My Web Content Display Page* somewhere on your portal, using the *Content Display Page* template. Now, on a different page, add a Web Content Display portlet. Click the *Add Web Content* button, enter a title and some content, click on *Display Page* at the right, and select the Display Page you just created. Then click *Publish*.
 
 ![Figure 3.16: Selecting a Display Page](../../images/04-web-content-display-page.png)
 
-You can now click the link to display the content, and the canonical URL for content shows in your browser's address bar. You can create your own custom display page, and any additional portlets that you place on the page are displayed along with the content when you access it via the canonical URL. 
+In the Asset Publisher of the *My Web Content Display Page*, you can now click the *Read More* link to display the content. Notice that the canonical URL for content appears in your browser's address bar. If you create your own custom display page, any additional portlets that you place on the page are displayed along with the content when you access it via the canonical URL. If you used the *Content Display Page* page template for your Display page, it not only features a configured Asset Publisher portlet but also a Tags Navigation, a Categories Navigation, and a Search portlet. These tools help users to quickly identify relevant content.
 
 ![Figure 3.17: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
@@ -447,7 +449,7 @@ Most of the time, however, you'll likely be using the Asset Publisher to select 
 
 ##### Selecting assets dynamically [](id=lp-6-1-ugen03-selecting-assets-dynamically-0)
 
-Asset Publisher's default behavior is to select assets dynamically according to rules that you give it. These rules can be stacked on top of each other so that they compliment each other to create a nice, refined query for your content. You have the following options for creating these rules:
+The Asset Publisher's default behavior is to select assets dynamically according to rules that you give it. These rules can be stacked on top of each other so that they compliment each other to create a nice, refined query for your content. You have the following options for creating these rules:
 
 **Scope:** Choose the sites or organizations from which the content should be selected.
 
