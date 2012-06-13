@@ -72,6 +72,8 @@ One or more layout template plugins can reside in a layout template project. Eac
 
 -	***layout_template_name*.png**: Representation of the template. It is the thumbnail that you see in Liferay Portal when browsing from the Page Layout screen from the Dockbar. You are responsible for creating the actual thumbnail, but can use this default PNG as a starting point.
 
+![Figure x.x: Default layout template thumbnail](../../images/blank_columns.png)
+
 ### Liferay configuration files [](id=lp-6-1-dgen05-liferay-configuration-files-0)
 
 A layout template project has the following Liferay configuration files:
@@ -214,7 +216,7 @@ See how simple it is to embed portlets in your pages?
 
 ## Conclusion [](id=lp-6-1-dgen05-conclusion-0)
 
-In this chapter you've learned how to create layout templates, arrange their rows and columns, and embed portlets. Congratulations on mastering the fundamentals of Liferay's layout templates! Hey, if you get real good at arranging portlets on pages, your friends may ask you to re-arrange their living room furniture!
+In this chapter you've learned how to create layout templates, arrange their rows and columns, and embed portlets. Congratulations on mastering the fundamentals of Liferay's layout templates! Hmm, are you a master of Feng Shui, too? Hey, if you get real good at arranging portlets on pages, your friends may ask you to re-arrange their living room furniture!
 
 Next, we'll take a look at how to customize core Liferay portlets using hooks -- sounds "catchy" right?!
 
