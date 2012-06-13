@@ -227,7 +227,7 @@ For your convenience, the variables listed in the following table are available 
  $user | &nbsp;com.liferay.portal.model.User | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
  $realUser| &nbsp;com.liferay.portal.model.User | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
  $layout| &nbsp;com.liferay.portal.model.Layout | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Layout.html) |
- $layouts| &nbsp;java.util.List<???> ||
+ $layouts| &nbsp;java.util.List<com.liferay.portal.model.Layout> ||
  $plid| &nbsp;java.lang.Long ||
  $layoutTypePortlet| &nbsp;com.liferay.portal.model.LayoutTypePortlet | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/LayoutTypePortlet.html) |
  $portletGroupId| &nbsp;java.lang.Long ||
