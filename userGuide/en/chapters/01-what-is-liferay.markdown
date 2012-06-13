@@ -99,3 +99,21 @@ For files, you can define *document types*. These are how users add files to the
 Of course, the system goes much further than this. Folders can be set so that only certain document types can be added to them. Workflow rules can also be added to folders to run files through an approval process that you define. In short, Liferay's file-based content management system gives you all the features you need to manage and share files in a group.  
 
 Many Liferay Portal users see it as a robust content management system, and they use it primarily for that purpose. Now, hopefully, you can see why. We'll cover the system in-depth in the body of this book, but for now we need to look at some of the other ways you can use Liferay Portal, starting with its fantastic collaborative tools. 
+
+## Using Liferay Portal as a collaborative platform
+
+Many sites have grown organically. Starting with straight HTML pages for a site seems easy until you have a lot of content. That's when you want to add a content management system. In a similar fashion, as a site grows, it gains a community. It helps a site to grow even more if that community is given an opportunity to interact. That's where collaborative applications can make the difference between a site that grows and a site that stagnates. 
+
+Liferay Portal represents an ideal collaborative platform, because it offers every standard collaborative application that's available. These applications span the complete spectrum of your needs, from personal productivity applications like a calendar and email, to community-building applications like message boards, polls, and wikis. 
+
+![Figure 1.x: Liferay Portal's message boards are as fully featured as any standalone forum application, with the added benefit that they're integrated with the rest of the system.](../../images/01-message-boards.png)
+
+Nowhere else will you find a suite of integrated applications with all the features of similar, standalone applications. Liferay Portal's message boards have everything you'd need in a forums application: categories and subcategories, message threads, captcha, profanity filtering (EE only), RSS feeds, email notification, posting via email, and much more. But more than this, it's integrated with everything the rest of Liferay Portal's framework. Users log in, and their profiles are used automatically by the message boards and all the other collaborative applications. And as we'll see later, functionality from the built in applications can be added to your own to provide features like comments in your own software, and you don't have to write any code to do it. 
+
+Liferay Portal's wiki is another example of a full-featured collaborative application. It supports three different syntaxes for wiki code. Users can comment on wiki articles, and it keeps a full history of every change that's been made, allowing users to revert back to any change. It also supports RSS feeds (just about every Liferay application does) so you can subscribe to see new articles as they are posted. Each site can have one or more wikis, and each wiki can have one or more top-level nodes. 
+
+![Figure 1.x: Liferay Portal's wiki enables users to collaboratively create complex articles. Clicking the *Details* link shows the full history of the article, including the author of each change.](../../images/01-wiki-article.png)
+
+We could go through all of Liferay Portal's collaborative applications in a similar fashion, but let's save that for the body of the book. Liferay Portal's suite of collaborative applications includes a blog (complete with blog aggregation features so you can publish multiple users' blog entries in one place), a chat application for users who are online at the same time, message boards, a wiki, a knowledge base that you can use to publish a library of technical articles, a polling system you can use to have users vote on certain questions, and personal productivity applications like a calendar and email.
+
+Liferay Portal includes every application you'll need to enable users to collaborate. Next, we'll see how you can use Lifeay Portal as a social platform. 
