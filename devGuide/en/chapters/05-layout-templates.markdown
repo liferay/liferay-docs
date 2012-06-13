@@ -58,7 +58,7 @@ The SDK automatically appends "-layouttpl" to the project name. You can create m
 
 Here is a snapshot of files for a layout template project named "Columns 1 4 1" as shown in Developer Studio's *Package Explorer*.
 
-![Figure x.x: Example layout template named "Columns 1 4 1" editor](../../images/layout-template-dirs.png)
+![Figure x.x: Example layout template named "Columns 1 4 1" editor](../../images/layout-template-dirs.PNG)
 
 We'll discuss the project files next.
 
@@ -78,7 +78,7 @@ One or more layout template plugins can reside in a layout template project. Eac
 
 A layout template project has the following Liferay configuration files:
 
--	**liferay-layout-templates.properties**: Specifies the name of the layout templates and the location of their TPL and PNG files.
+-	**liferay-layout-templates.properties**: Specifies the name of the layout templates and the location of their TPL and PNG files
 
 -	**liferay-plugin-package.properties**: Describes the plugin project to Liferay's hot deployer
 
@@ -112,7 +112,7 @@ Open your layout template's TPL file in Studio's *Layout Template Editor* to see
 
 Then click the triangle in the upper left corder of the editor to bring the Palette into view.
 
-![Figure x.x: TPL file in *Layout Template Editor* with pallet in view](../../images/layout-template-tpl-blank-with-palette.png)
+![Figure x.x: TPL file in *Layout Template Editor* with pallet in view](../../images/layout-template-tpl-blank-with-palette.PNG)
 
 From the palette you can drag rows, columns, and even existing templates onto your canvas.
 
@@ -163,16 +163,16 @@ Let's embed the *navigation portlet* and *search portlet* in the first and last 
 -	**Instanceable** - Whether multiple instances of the portlet can exist in the portal
 -	**Web Application Context** - The portlet's context (required for *custom* portlets only). Go to the portlet's *Look and Feel* &rarr; *Advanced Styling* to find the context in the Fully Qualified Portlet ID (FQPI). The context is the portion of the Portlet ID string that follows  `WAR_`. The *Web Application Context* in the following figure is *myhelloworldportlet*.
 
-![Figure x.x: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.png)
+![Figure x.x: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.PNG)
 
 The following table describes the portlets we'll embed in the layout:
 
-| Portlet |  &nbsp;ID | &nbsp;Row | &nbsp;Column  | &nbsp;Type | Instanceable | &nbsp;Context  |
---------- | --------------| --------- | ------------- | --- |
- Navigation  | `71` | 2 | 1 | core | yes | N/A |
- Search | `3` | 2 | 4 | core | no | N/A |
- Hello World | `my-hello-world-portlet` | 1 | 1 | custom | no | myhelloworldportlet |
- Hello World | `my-hello-world-portlet` | 3 | 1 | custom | yes | myhelloworldportlet |
+| Portlet |  &nbsp;ID | &nbsp;Row | &nbsp;Column  | &nbsp;Type | &nbsp;Instanceable | &nbsp;Context |
+--------- | ----------| --------- | ------------- | ---------- | ------------ | ------------- |
+ Navigation  | &nbsp;`71` | &nbsp;2 | &nbsp;1 | &nbsp;core | &nbsp;yes | &nbsp;N/A |
+ Search | &nbsp;`3` | &nbsp;2 | &nbsp;4 | &nbsp;core | &nbsp;no | &nbsp;N/A |
+ Hello World | &nbsp;`my-hello-world-portlet` | &nbsp;1 | &nbsp;1 | &nbsp;custom | &nbsp;no | &nbsp;myhelloworldportlet |
+ Goodbye World | &nbsp;`my-goodbye-world-portlet` | &nbsp;3 | &nbsp;1 | &nbsp;custom | &nbsp;yes | &nbsp;myhelloworldportlet |
 ---
 
 Here is the TPL that implements embedding these portlets:
@@ -210,7 +210,7 @@ Here is the TPL that implements embedding these portlets:
 
 The following figure shows a page with the portlets embedded in the "Columns 1 4 1" layout template.
 
-![Figure x.x: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.png)
+![Figure x.x: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.PNG)
 
 See how simple it is to embed portlets in your pages?
 
