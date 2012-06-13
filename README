@@ -9,34 +9,37 @@ language (e.g. 'en' for English).
 Directory Structure
 ===================
 liferay-docs/
- |____ <document dir>/ (e.g. adminGuide)
+ |____ <document dir>/ (e.g. QuickstartGuide/, userGuide/, devGuide/, soffice/)
  |      |____ <language dir>/ (e.g. 'en' for English, 'es' for Spanish)
  |      |      |
  |      |      |____ chapters/
  |      |      |      |____ [0-9][0-9]-<chapter subject>.markdown
+ |      |      |            (e.g. 01-intro.markdown)		
  |      |      |
- |      |      |____ images/ (override images - language specific)
+ |      |      |____ images/ (language specific versions of the default images)
  |      |
- |      |____ images/ (default images)
+ |      |____ images/ (default images for the document)
  |      |____ build.xml
  |
+ |____ code/ (code for custom ant tasks)
+ |____ lib/ (JARs for custom ant tasks)
+ |
+ |____ README
  |____ build-common.xml
  |____ build.properties
- |____ build.<username>.properties
  |____ liferay-book-template.ott
  |____ liferay-book-template-tradepaperback.ott
- |____ README
 
 Document Format Conversion
 ==========================
 Documents can be converted from markdown to HTML, epub and ODT formats using ant
-and the targets found in build-common.xml. To override common properties found
-in build.properties, create your own properties file
-(e.g. build.<username>.properties) and specify desired property values.
+targets found in build-common.xml. Override default properties, found in
+build.properties, by creating your own properties file
+(e.g. build.<username>.properties) to specify your desired property values.
 
-A build directory is created by the targets and holds the Markdown source
-file consisting of all of the document's chapters, the language specific image
-files and the resulting document in its newly converted format.
+The conversion targets create a build directory (e.g. userGuide/build/) for the
+current document. This directory receives the Markdown source file, the language
+specific image files, and the converted document.
 
 Required Software
 -----------------
@@ -51,45 +54,43 @@ Conversion Steps
 ----------------
 1. Go to the directory of the document to be converted.
 
-  Example,
-    cd liferay-docs/adminGuide
+  Example - userGuide,
+    cd liferay-docs/userGuide
 
-2. Concatenate the chapters into the complete Markdown document.
+2. Execute a conversion target to produce the desired format of the document.
 
-  Example,
-    ant concat-markdown-files
-
-3. Execute the target to produce the desired format of the document.
-
-  Example,
+  Example - aggregate the chapters into a single Markdown file and convert to HTML,
     ant markdown-to-html
 
-  Example,
+  Example - aggregate the chapters into a single Markdown file and convert to ODT,
     ant markdown-to-odt
 
-To get a complete listing of targets execute ...
+  Example - convert a single Markdown chapter file (e.g. 01-intro.markdown) to HTML,
+    ant chapter-to-html -Dchapter=01-intro
+
+List all of the ant targets by executing ...
 
     ant -projecthelp
 
-To override the language property (i.e. lang) specified in the build.properties
-either pass a property to ant from the commandline (e.g. -Dlang=es) or
-specify your desired language property value (e.g. lang=es) in your
+Note, the Windows specific versions of the targets end in "-win"
+(e.g. markdown-to-html-win).
+	
+Override the language property (i.e. lang), specified in the build.properties,
+by either passing the language value to ant (e.g. -Dlang=es) or by specifying
+the language in a name/value pair (e.g. lang=es) in your
 build.<user>.properties.
 
-To do conversions on Windows, execute the Windows specific targets
-(e.g. concat-markdown-files-win and markdown-to-html-win)
+The conversion targets build the results to the respective build directory
+liferay-docs/<doc.name>/build/<lang>/
 
-Results are produced in the respective liferay-docs/<doc.name>/build/<lang>/
-  Example,
+  Example - build directory for the userGuide in English,
 
     liferay-docs/
-     |____ adminGuide/
+     |____ userGuide/
             |____ build/
-            |      |____ en/
-            |      |      |____ adminGuide.html
-            |      |      |____ adminGuide.markdown
-            |      |      |____ adminGuide.odt
-            |      |
-            |      |____ images/ (language specific overrides)
-            |
-            |____ images/
+                   |____ en/
+                   |      |____ userGuide.html
+                   |      |____ userGuide.markdown
+                   |      |____ userGuide.odt
+                   |
+                   |____ images/ (language specific images)
