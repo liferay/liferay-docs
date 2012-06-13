@@ -214,6 +214,32 @@ The following figure shows a page with the portlets embedded in the "Columns 1 4
 
 See how simple it is to embed portlets in your pages?
 
+## Available variables [](id=lp-6-1-dgen05-available-variables-0)
+
+For your convenience, the variables listed in the following table are available to use in the TPL files.
+
+| Variable | &nbsp;Type | &nbsp;Description |
+| -------- | ---------- | ----------------- |
+ $processor | &nbsp;com.liferay.portlet.layoutconfiguration.util.velocity.TemplateProcessor | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portlet/layoutconfiguration/util/velocity/TemplateProcessor.html) |
+ $request | &nbsp;javax.servlet.http.HttpServletRequest| |
+ $themeDisplay | &nbsp;com.liferay.portal.theme.ThemeDisplay | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/ThemeDisplay.html) |
+ $company | &nbsp;com.liferay.portal.model.Company | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Company.html) |
+ $user | &nbsp;com.liferay.portal.model.User | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
+ $realUser| &nbsp;com.liferay.portal.model.User | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
+ $layout| &nbsp;com.liferay.portal.model.Layout | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Layout.html) |
+ $layouts| &nbsp;java.util.List<???> ||
+ $plid| &nbsp;java.lang.Long ||
+ $layoutTypePortlet| &nbsp;com.liferay.portal.model.LayoutTypePortlet | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/LayoutTypePortlet.html) |
+ $portletGroupId| &nbsp;java.lang.Long ||
+ $locale| &nbsp;java.util.Locale ||
+ $timeZone| &nbsp;java.util.TimeZone ||
+ $theme| &nbsp;com.liferay.taglib.util.VelocityTaglib | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/taglib/util/VelocityTaglib.html) |
+ $colorScheme| &nbsp;com.liferay.portal.model.ColorScheme | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/ColorScheme.html) |
+ $portletDisplay| &nbsp;com.liferay.portal.theme.PortletDisplay | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/PortletDisplay.html) |
+---
+
+Excellent! Your layout template toolbox is complete.
+
 ## Conclusion [](id=lp-6-1-dgen05-conclusion-0)
 
 In this chapter you've learned how to create layout templates, arrange their rows and columns, and embed portlets. Congratulations on mastering the fundamentals of Liferay's layout templates! Hmm, are you a master of Feng Shui, too? Hey, if you get real good at arranging portlets on pages, your friends may ask you to re-arrange their living room furniture!
