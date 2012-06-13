@@ -22,7 +22,7 @@ In Developer Studio, go to *File* &rarr; *New* &rarr; *Liferay Project* and do t
 4. Select *Layout* as your plugin type
 5. Click *Finish*
 
-![Figure x.x: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
+![Figure 5.1: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
 
 Alternatively, in your terminal, you can create a layout template from your Plugins SDK's `layouttpl` folder, by executing the *create* script.
 
@@ -58,7 +58,7 @@ The SDK automatically appends "-layouttpl" to the project name. You can create m
 
 Here is a snapshot of files for a layout template project named "Columns 1 4 1" as shown in Developer Studio's *Package Explorer*.
 
-![Figure x.x: Example layout template named "Columns 1 4 1" editor](../../images/layout-template-dirs.PNG)
+![Figure 5.2: Example layout template named "Columns 1 4 1" editor](../../images/layout-template-dirs.PNG)
 
 We'll discuss the project files next.
 
@@ -72,7 +72,7 @@ One or more layout template plugins can reside in a layout template project. Eac
 
 -	***layout_template_name*.png**: Representation of the template. It is the thumbnail that you see in Liferay Portal when browsing from the Page Layout screen from the Dockbar. You are responsible for creating the actual thumbnail, but can use this default PNG as a starting point.
 
-![Figure x.x: Default layout template thumbnail](../../images/blank_columns.png)
+![Figure 5.3: Default layout template thumbnail](../../images/blank_columns.png)
 
 ### Liferay configuration files [](id=lp-6-1-dgen05-liferay-configuration-files-0)
 
@@ -108,25 +108,25 @@ The layout template's generated TPL files are initially empty, leaving you with 
 
 Open your layout template's TPL file in Studio's *Layout Template Editor* to see it displayed in *Visual (Experimental)* mode.
 
-![Figure x.x: TPL file in *Layout Template Editor* (palette is hidden)](../../images/layout-template-tpl-blank.png)
+![Figure 5.4: TPL file in *Layout Template Editor* (palette is hidden)](../../images/layout-template-tpl-blank.png)
 
 Then click the triangle in the upper left corder of the editor to bring the Palette into view.
 
-![Figure x.x: TPL file in *Layout Template Editor* with pallet in view](../../images/layout-template-tpl-blank-with-palette.PNG)
+![Figure 5.5: TPL file in *Layout Template Editor* with pallet in view](../../images/layout-template-tpl-blank-with-palette.PNG)
 
 From the palette you can drag rows, columns, and even existing templates onto your canvas.
 
 Start designing your new layout template by dragging an entire *existing* layout template into the editor. Then modify it by adding, deleting, and adjusting elements as you like.
 
-![Figure x.x: Example - Starting with existing template *2 Column (50/50)*](../../images/layout-template-tpl-start.png)
+![Figure 5.6: Example - Starting with existing template *2 Column (50/50)*](../../images/layout-template-tpl-start.png)
 
 After adding rows and columns, drag their edges vertically and horizontally to achieve the desired dimensions. Remember, your layout is not etched in stone. In *Visual (Experimental)* mode, you can start over as many times as you like as you're working out your layout designs. 
 
-![Figure x.x: Visually adjusted template](../../images/layout-template-tpl-visual-almost.png)
+![Figure 5.7: Visually adjusted template](../../images/layout-template-tpl-visual-almost.png)
 
 To fine tune the dimensions in your design, switch to *Source* view and edit your TPL files as necessary.
 
-![Figure x.x: Source view of the template](../../images/layout-template-tpl-src-almost.png)
+![Figure 5.8: Source view of the template](../../images/layout-template-tpl-src-almost.png)
 
 For example, if you wanted each of the middle-row columns in the above template to be 25%, you'd simply adjust that row's first column (i.e. `column-2`) from 20% to 25% as follows ...
 
@@ -146,7 +146,7 @@ Notice we changed the column's class `aui-w20` value to `aui-w25`.
 
 Ta-da! The rows and columns of the "Columns 1 4 1" layout template are arranged and sized evenly, as I envisioned them!
 
-![Figure x.x: Layout design of template  "Column 1 4 1" completed!](../../images/layout-template-tpl-visual-complete.png)
+![Figure 5.9: Layout design of template  "Column 1 4 1" completed!](../../images/layout-template-tpl-visual-complete.png)
 
 Now that we have some "positive energy" flowing in the design of our layout, let's spruce things up a bit by embedding some portlets in the template.
 
@@ -163,7 +163,7 @@ Let's embed the *navigation portlet* and *search portlet* in the first and last 
 -	**Instanceable** - Whether multiple instances of the portlet can exist in the portal
 -	**Web Application Context** - The portlet's context (required for *custom* portlets only). Go to the portlet's *Look and Feel* &rarr; *Advanced Styling* to find the context in the Fully Qualified Portlet ID (FQPI). The context is the portion of the Portlet ID string that follows  `WAR_`. The *Web Application Context* in the following figure is *myhelloworldportlet*.
 
-![Figure x.x: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.PNG)
+![Figure 5.10: Fully Qualified Portlet ID (FQPI) for a custom portlet](../../images/layout-template-custom-portlet-look-n-feel.PNG)
 
 The following table describes the portlets we'll embed in the layout:
 
@@ -210,7 +210,7 @@ Here is the TPL that implements embedding these portlets:
 
 The following figure shows a page with the portlets embedded in the "Columns 1 4 1" layout template.
 
-![Figure x.x: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.PNG)
+![Figure 5.11: Page with portlets embedded in layout template](../../images/layout-template-embed-portlets-visual.PNG)
 
 See how simple it is to embed portlets in your pages?
 
