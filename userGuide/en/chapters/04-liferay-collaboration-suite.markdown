@@ -849,6 +849,8 @@ You can also use the Categories Navigation portlet in conjunction with the Knowl
 
 You can select topics for articles when you are creating or editing them. Next, let's take a look at the Documents and Media library, Liferay's general mechanism for creating and storing files in the portal.
 
+<!-- moved to new 07-document-management.markdown chapter
+
 ## Documents and Media [](id=documents-and-media)
 
 Liferay's Documents and Media portlet provides a mechanism for storing files online using the same type of structure that you use to store files locally. This portlet grant users the ability to share documents within the portal via uploading and downloading. The Documents and Media library can be used to store files of any kind, including ones that you might not consider to be "documents" or "media". The Documents and Media portlet is non-instanceable. This means that each page on your portal can host at most one such portlet. Furthermore, if you add multiple Documents and Media portlets to pages in the same site, these portlets will share the same data sets since they are scoped by site by default. However, you can add multiple Documents and Media *Display* portlets to a page. Then you can choose content from actual Documents and Media portlets to display. Remember that users, by default, have their own personal sites with public and private pages. They can use their personal sites to host document Documents and Media portlets for storing or sharing files.
@@ -1160,6 +1162,8 @@ Liferay Sync uses the default Liferay permissions to determine which files and f
 Next, we'll configure our Liferay Sync client to log in with the *secretagent* user's credentials and access the *Secret Site*. Open the Liferay Sync menu from the taskbar and select *Properties*. Click on the *Edit Settings* button, choose a new Sync folder, enter your server's URL, and enter the secret agent's credentials: *secretagent@liferay.com* and *test*. Lastly, uncheck all Liferay sites except the *Secret Site*, then click *OK*. Confirm that the files of the *Secret Site*, (just the *secret.txt* file) are downloaded to your new Sync folder. Congratulations! You've successfully set up a Liferay Sync folder that can only be accessed by the *secretagent* user and your server administrators. 
 
 Now that we've successfully learned how to use Liferay Sync, let's move on to Tags and Categories.
+
+-->
 
 ## Tags [](id=ta-3)
 
