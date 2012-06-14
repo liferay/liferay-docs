@@ -417,6 +417,8 @@ You can add actions to a rule group from the Site Pages page of the control pane
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. By default, there are four kinds of actions that be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects, and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages you can use a redirect to make sure that mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to. Like mobile device rules, mobile device actions are designed to be extensible. Your developers can define custom actions in addition to the four actions provided by default. Next, let's discuss Liferay's asset publisher, which you can use to publish many different kinds of portal content.
 
+<!-- Moved to chapter 8: asset framework
+
 ### Using the Asset Publisher Portlet [](id=lp-6-1-ugen03-using-the-asset-publisher-portlet-0)
 
 As we create web content, it's important to keep in mind that to Liferay, the pieces of content are assets, just like message board entries and blog posts. This allows you to publish your web content using Liferay's Asset Publisher.
@@ -505,7 +507,9 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 The Display Settings section of the Asset Publisher has numerous options to help you configure how your content selections are displayed to your users. Even though there are many choices, it's easy to go through the options and quickly adjust the ones that apply to you. You'll want to use the Asset Publisher to query for mixed assets in the portal that have relevant information for your users.
 
-Next, we'll look at some of the most powerful features of Liferay WCM: staging and workflow. 
+Next, we'll look at some of the most powerful features of Liferay WCM: staging and workflow.
+
+-->
 
 #### Staging and Workflow [](id=lp-6-1-ugen03-staging-and-workflow-0)
 
