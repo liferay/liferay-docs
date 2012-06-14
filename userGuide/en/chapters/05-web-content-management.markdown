@@ -1,5 +1,3 @@
-<!-- moved to 05-web-content-management.markdown
-
 # Managing Pages in Liferay Portal [](id=managing-pages-in-liferay-portal)
 
 With most products, you would learn what the software can do in terms of setting up your users and security model, and then start building your system. You'd design your infrastructure and get your server environment up and running while your developers write the applications that live on your web site. With Liferay Portal, however, you start farther ahead. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go, and integrated with all the user management and security features you've already learned about.
@@ -297,5 +295,3 @@ You now understand how to manage pages in Liferay Portal. It's time to move on t
 You'll soon discover that Liferay's WCM is easy to learn and highly configurable. If you already have experience with WCM, you'll see some new features and improvements to old ones. If you're new to Liferay's WCM, then you'll be surprised at how fast you will be adding, editing, and scheduling content on your site. Once you're familiar with portlets such as Web Content Display and Asset Publisher, your ability to manage an immense site with a large amount of content will simply amaze you.
 
 We'll be using Liferay's WCM to publish simple pieces of content, develop templates to define how content is to be displayed, set up a workflow for content to be approved, schedule when content is to be published and much, much more.
-
--->
