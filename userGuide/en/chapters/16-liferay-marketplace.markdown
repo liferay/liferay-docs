@@ -1,5 +1,3 @@
-<!-- moved to 16-liferay-marketplace.markdown
-
 # Liferay Marketplace [](id=liferay-marketplace)
 
 Liferay Marketplace is an exciting new hub for sharing, browsing and downloading Liferay-compatible applications. As enterprises look for ways to build and enhance their existing platforms, developers and software vendors are searching for new avenues to reach this market. Marketplace leverages the entire Liferay ecosystem to release and share apps in a user-friendly, one-stop site.
@@ -179,6 +177,4 @@ Creating apps for the Liferay Marketplace is very easy and intuitive. To find ou
 
 ## Summary [](id=summ-31)
 
-In this chapter we introduced Liferay Marketplace, the portal's system for managing Liferay applications. We looked at how to browse, purchase, download, and install apps. You can do this either through [liferay.com/marketplace](liferay.com/marketplace) or through Liferay Portal's control panel. When you purchase apps, you can do so via your personal account or on your company's behalf. For information about developing and uploading apps to Liferay Marketplace, please see the Marketplace chapter of the Liferay Developer guide at [http://www.liferay.com/marketplace/developer-guide](http://www.liferay.com/marketplace/developer-guide).
-
--->
+In this chapter we introduced Liferay Marketplace, the portal's system for managing Liferay applications. We looked at how to browse, purchase, download, and install apps. You can do this either through [liferay.com/marketplace](liferay.com/marketplace) or through Liferay Portal's control panel. When you purchase apps, you can do so via your personal account or on your company's behalf. For information about developing and uploading apps to Liferay Marketplace, please see the Marketplace chapter of the Liferay Developer guide at [http://www.liferay.com/marketplace/developer-guide](http://www.liferay.com/marketplace/developer-guide). 
