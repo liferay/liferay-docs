@@ -117,3 +117,7 @@ Liferay Portal's wiki is another example of a full-featured collaborative applic
 We could go through all of Liferay Portal's collaborative applications in a similar fashion, but let's save that for the body of the book. Liferay Portal's suite of collaborative applications includes a blog (complete with blog aggregation features so you can publish multiple users' blog entries in one place), a chat application for users who are online at the same time, message boards, a wiki, a knowledge base that you can use to publish a library of technical articles, a polling system you can use to have users vote on certain questions, and personal productivity applications like a calendar and email.
 
 Liferay Portal includes every application you'll need to enable users to collaborate. Next, we'll see how you can use Lifeay Portal as a social platform. 
+
+## Using Liferay as a social platform
+
+Whether you plan to build a social network or enable social features as part of your overall user experience, Liferay Portal contains what you need. Starting with a built-in API to handle all kinds of relationships between users as well as publish their activities to each other. Liferay Portal also provides a suite of applications, including a profile summary, activities feed
