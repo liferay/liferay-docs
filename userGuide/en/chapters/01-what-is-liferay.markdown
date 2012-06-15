@@ -117,3 +117,21 @@ Liferay Portal's wiki is another example of a full-featured collaborative applic
 We could go through all of Liferay Portal's collaborative applications in a similar fashion, but let's save that for the body of the book. Liferay Portal's suite of collaborative applications includes a blog (complete with blog aggregation features so you can publish multiple users' blog entries in one place), a chat application for users who are online at the same time, message boards, a wiki, a knowledge base that you can use to publish a library of technical articles, a polling system you can use to have users vote on certain questions, and personal productivity applications like a calendar and email.
 
 Liferay Portal includes every application you'll need to enable users to collaborate. Next, we'll see how you can use Lifeay Portal as a social platform. 
+
+## Using Liferay as a social platform
+
+Whether you plan to build a social network or enable social features as part of your overall user experience, Liferay Portal has what you need. Starting with a built-in API to handle all kinds of relationships between users as well as publish their activities to each other, Liferay Portal also provides a suite of applications, including a profile summary, activities feeds, social requests, a wall, and more. 
+
+![Figure 1.x: Liferay Portal provides feeds of social activities. These feeds can contain entries from any of Liferay's built-in applications or applications that you write.](../../images/01-social-activities.png)
+
+Social relationships within Liferay Portal work well in all types of applications, whether you're building a public social network or want to enable social features in your corporate Intranet. Users can create relationships within the system, allowing them to see updates from those whose activity they need to track. That's far more powerful than trying to subscribe to multiple individual RSS feeds or visiting multiple profiles, because the system keeps track of it for you. 
+
+More than this, however, Liferay is a great integration platform for social applications. It fully supports the OpenSocial framework. You can use Liferay Portal's built-in OpenSocial gadget editor to create and serve your own OpenSocial gadgets. 
+
+![Figure 1.x: Liferay Portal's OpenSocial gadget editor lets you rapidly create social applications that can be served across the web to any other OpenSocial container.](../../images/01-opensocial-gadget-editor.png)
+
+Liferay Portal also supports the creation of Facebook applications; in fact, no additional coding is necessary to publish your Liferay applications on Facebook (you would, of course, need to use Facebook's API to use Facebook-specific features--such as posting on users' timelines). The HTML from your application is converted seamlessly to FBML, and the only thing you need to do is get an API key and canvas page URL from Facebook. 
+
+![Figure 1.x: Any Liferay application can be published to multiple social networks with a few clicks.](../../images/01-facebook-integration.png)
+
+
