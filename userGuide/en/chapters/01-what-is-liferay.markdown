@@ -134,4 +134,10 @@ Liferay Portal also supports the creation of Facebook applications; in fact, no 
 
 ![Figure 1.x: Any Liferay application can be published to multiple social networks with a few clicks.](../../images/01-facebook-integration.png)
 
+As you can see, Liferay Portal is an ideal platform if you want to do anything social: add social features to your web site, create a social network of your own, create social applications to be published on other web sites, or build a social application for Facebook. 
+
+As with social applications, Liferay Portal is also ideally suited as a platform for any web application you're considering writing. In addition to this, Liferay Portal is easily configured to be used as a shared hosting platform for multiple web sites. Let's look at the benefits you can reap by using Liferay's development platform instead of writing your application from the ground up. 
+
+## Using Liferay as a web platform
+
 
