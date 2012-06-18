@@ -65,7 +65,7 @@ You should get a BUILD SUCCESSFUL message, which means that your portlet is now 
 
 Go to your web browser and login to the portal as explained earlier. Then, hover over *Add* at the top of the page, and click on *More*. Select the *Sample* category, and then click *Add* next to *My Greeting*. Your portlet should appear in the page below.
 
-![Figure 3.1: Adding the My Greeting portlet](../../images/portlets-add-my-greeting-portlet.png)
+![Figure 3.1: Adding the My Greeting portlet](../../images/portlets-add-my-greeting-portlet.PNG)
 
 Congratulations, you've just created your first portlet!
 
@@ -319,9 +319,9 @@ Next, create `edit.jsp` in the same directory as `view.jsp` with the following c
 
 Deploy the portlet again by entering the command **ant deploy** in your `my-greeting-portlet` folder. Go back to your web browser and refresh the page; you should now be able to use the portlet to save and display a custom greeting.
 
-![Figure 3.2: The *view* page of My Greeting portlet](../../images/portlets-view-my-greeting.png)
+![Figure 3.2: The *view* page of My Greeting portlet](../../images/portlets-view-my-greeting.PNG)
 
-![Figure 3.3: The *edit* page of My Greeting portlet](../../images/portlets-edit-my-greeting.png)
+![Figure 3.3: The *edit* page of My Greeting portlet](../../images/portlets-edit-my-greeting.PNG)
 
 ---
 
@@ -631,11 +631,11 @@ Create new directories as necessary. Place the following content into the new fi
 
 Redeploy your portlet, refresh the page, and try clicking either of the links again.
 
-![Figure 3.6: Friendly URL for view JSP](../../images/portlets-my-greeting-view-friendly.png)
+![Figure 3.6: Friendly URL for view JSP](../../images/portlets-my-greeting-view-friendly.PNG)
 
 Notice how much shorter and more user-friendly the URL is, without even having to modify the JSPs.
 
-![Figure 3.7: Friendly URL for edit JSP](../../images/portlets-my-greeting-edit-friendly.png)
+![Figure 3.7: Friendly URL for edit JSP](../../images/portlets-my-greeting-edit-friendly.PNG)
 
 For more information on friendly URL mapping, you can check full discussion of this topic in [*Liferay in Action*](http://manning.com/sezov). But, next, let's make our site look "top notch" by using Liferay Themes.
 
