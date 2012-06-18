@@ -136,8 +136,14 @@ Liferay Portal also supports the creation of Facebook applications; in fact, no 
 
 As you can see, Liferay Portal is an ideal platform if you want to do anything social: add social features to your web site, create a social network of your own, create social applications to be published on other web sites, or build a social application for Facebook. 
 
-As with social applications, Liferay Portal is also ideally suited as a platform for any web application you're considering writing. In addition to this, Liferay Portal is easily configured to be used as a shared hosting platform for multiple web sites. Let's look at the benefits you can reap by using Liferay's development platform instead of writing your application from the ground up. 
+As with social applications, Liferay Portal is also ideally suited as a platform for any web application you're considering writing. In addition to this, Liferay Portal is easily configured to be used as a shared hosting platform for multiple web sites. Let's look at the benefits you can reap by using Liferay Portal in these ways. 
 
 ## Using Liferay as a web platform
 
+I can't even begin to imagine what you're thinking of building, but whatever it is, it's going to be a lot of work. Building it on Liferay's web platform can give you a leg up, by providing to you everything you need to support your application, so you can concentrate solely on what *you're* building, and not the rest of the features your users expect will come along with it. 
 
+Imagine your application for a moment. Does it require users to register with your site? Will they be able to comment on content contained within your application? Is there some asset that users can tag or categorize? If you think about the layout of the application, would it benefit from modularization? Could you make use of a rich JavaScript framework with many components built into it? How about security--will you need to make content available to some users, but not to all users? Liferay Portal has all of this and more available to the developer, so you don't have to write it yourself. 
+
+Liferay Portal's development framework is an ideal way to build a web application. While the framework itself is covered in other resources such as the *Liferay Developer's Guide* or *Liferay in Action*, the strengths of Liferay as a platform are also apparent once you've used the platform to create your application. 
+
+For example, bug fixes to your applications are easy to apply, because Liferay applications are hot deployed to the running server. Liferay's Marketplace gives you a ready-made shopping center for your applications. And Liferay's web services and JSON architecture make it easy for you to share data from your applications to other systems running on different platforms. 
