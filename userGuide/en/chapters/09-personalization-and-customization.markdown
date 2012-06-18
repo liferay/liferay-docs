@@ -162,4 +162,4 @@ For additional documentation on the Drools rules language, please see the offici
 
 ## Summary [](id=summ-29)
 
-As you can see from the Sample Rules Portlet, using a rules engine can be a powerful way to decouple the rules of your application from the front-end and back-end code. These rules are written in a declarative language that business users can read and verify. Additionally, rule definitions can be modified without modifying the underlying Java code, re-compiling, or redeploying your applications.
+As you can see from the Sample Rules Portlet, using a rules engine can be a powerful way to decouple the rules of your application from the front-end and back-end code. These rules are written in a declarative language that business users can read and verify. Additionally, rule definitions can be modified without modifying the underlying Java code, re-compiling, or redeploying your applications. 

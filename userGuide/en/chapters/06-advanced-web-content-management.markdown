@@ -1,98 +1,164 @@
-# Using Liferay Web Content Management [](id=using-liferay-web-content-management)
+### Sites [](id=lp-6-1-ugen12-sites-0)
 
-Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface, and it helps you to keep your site fresh. You'll find yourself easily creating, editing, and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content "pop" with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content. 
+As stated in chapter 1, a site is a set of pages that can be used to publish content or applications. Sites can be independent or they can be associated to one organization and act as the website of that organization.
 
-In this chapter, we'll cover the following topics: 
+Liferay's sites can be used for a variety of purposes, from corporate websites to company intranets including small sites to collaborate among members of a team. To support all types of collaboration and social scenarios, Liferay's sites support three types of membership types:
 
-- Features of Liferay WCM
-- Simple content creation
-- Publishing content
-- Structures and Templates
-- Permissions
-- Tags and Categories
-- Staging and Workflow
+- Private: Users are not allowed to become members of the site. Site administrators can still manually select users and make them members of the site.
+- Restricted: Users are allowed to request members of the site and site administrators have to aprove the request. The request can be done from the *My Sites* application.
+- Open: Users are allowed to become members of the site at any time. This can be done from the *My Sites* portlet.
 
-As you'll see, Liferay's WCM is a full-featured solution for managing your web site. We'll start with an overview of what it has to offer, and then we'll dive down into its features. 
+In addition to these memberships, when a site is associated to an organization, all the users of that organization are automatically considered members of the site.
 
-## How Can Liferay's WCM Help You? [](id=how-can-liferay-s-wcm-help-you-)
+Members of a site can be given additional privileges within the site by using Liferay's permission settings. It is also possible to assign different roles within the site to different members. This can be done through *site roles* which are defined equal for all sites or *teams* which are unique for each site.
 
-With Liferay's WCM you have the ability to create, edit, stage, publish, and approve content with easy to learn yet powerful tools. Liferay's WCM streamlines site changes for the end user versus doing a site in HTML. Some ways Liferay WCM makes this possible include:
+Liferay's Sites can have two hierarchies of pages: public pages and private pages. A site can have only public pages, only private pages or both. The main difference between the two hierarchies is that private pages can only be accessed by members of the site. For both of them it is possible to restrict access to them in finer detail for each page through the permission system. Public pages and private pages are accessed through a different URL and can have a different look and feel, but they share the same content.
 
--   Once set up, non-technical users can manage the site.
--   Liferay's fine-grained permissions system ensures your content gets to the right users.
--   To manage the site, no programming is required.
--   Content can be staged.
--   Content can be passed through a workflow.
--   Content can be published on a schedule.
--   WCM is integrated with Liferay's services, so advanced template developers can use them to query for data stored elsewhere in Liferay.
+An example of using sites could be a corporate Intranet running Liferay which might have sites for all the organizations in the company: Sales, Marketing, Information Technology, Human Resources, and so on. But what about the corporate health and fitness center? That's something that everybody in the company, regardless of organization, may want to join. This makes it a good candidate for an open and independent site. Similarly, the home page for a corporate intranet should probably be placed in an open independent site so that any member of the portal can access it.
 
-Once you get familiar with Liferay WCM, you'll wonder how you ever got along without it.  
+For other kinds of web sites, you may want to use independent sites to bring people together who share a common interest. If you were building a photo sharing web site out of Liferay, you might have independent sites based on the types of photos people want to share. For example, those who enjoy taking pictures of landscapes could join a Landscapes site, and those who enjoy taking pictures of sunsets could join a Sunsets site. 
 
-### What Features Does Liferay WCM Have? [](id=lp-6-1-ugen03-what-features-does-liferay-wcm-have-0)
+Liferay always provides one default site, which is also known as the main site of the portal. This site does not have its own name, but rather takes the name of the portal. By default the portal name is *liferay.com*, but this value can be changed through the simple configuration of the setup wizard. The portal name can also be changed at any time through the control panel within *Portal Settings*.
 
-Liferay's WCM has a host of features the makes managing the content of your site easier.
+---
 
--   **WYSIWYG Editor:** A complete HTML editor that allow you to modify fonts, add color, insert images and much more.
+![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, there were two ways of creating sites: organizations and communities. This situation has been simplified to provide more ease of use and allow for more flexibility. The main role of organizations is still or organize the users of the portal in a hierarchy but they can also have associated sites. Communities can still be created through independent sites, but the new name reflects the fact that sites can be used for many different purposes besides communities.
 
--   **Structure Editor:** Easily add and remove fields you want available to content creators and then dynamically move them around. This editor includes an entire suite of form controls you can drag and drop onto your structure.
+---
 
--   **Template Editor:** Import template script files that inform the system how to display the content within the fields determined by the structure.
+Sites can be created through the control panel, like all administration operations in Liferay. To add a site, click the *Sites* link on the left side of the control panel in the Portal section, and then click *Add* in the toolbar. If there is at least one site template available, a dropdown menu will be shown allowing you to select a *Blank Site* or one of the site templates available. *Site templates* provide a preconfigured set of pages, applications and content that can be used as the basis of the site.
 
--   **Web Content Display:** A portlet that allows you place web content on a page in your portal.
+The following figure shows the form that needs to be filled when creating a *Blank Site*.
 
--   **Asset Publisher:** A portlet which can aggregate different types of content together in one view.
 
--   **Scheduler:** Lets you schedule when content is reviewed, displayed, and removed.
+![Figure 12.4: Adding a Site](../../images/01-add-site-screen.png)
 
--   **Workflow Integration:** Run your content through an approval or review process.
+**Name:** is the name of the site you wish to create.
 
--   **Staging:** Use a separate staging server or stage your content locally so you can keep your changes separate from the live site. 
+**Description:** describes the site's intended function.
 
-Liferay's Web Content Management is a powerful and robust tool for creating and organizing content on your web site. Now that you've seen the basics of what you can do with Liferay's WCM, let's apply some of these concepts and create some content.
+**Membership Type:** can be open, restricted, or private. An open site appears in the My Sites portlet and users can join and leave the site whenever they want. A restricted site is the same except that users can only request membership. A site administrator must then explicitly grant or deny users' requests to join. A private site does not appear in the My Sites portlet, and users must be added to it manually by a site administrator.
 
-## Building a Site with Liferay's WCM [](id=building-a-site-with-liferay-s-w-3)
+**Active:** determines whether a site is active or inactive. Inactive sites are inaccessible but can be activated whenever a site administrator wishes.
 
-You've just been assigned the task to build a web site for a an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
+Once you've created a site, it appears in the Sites page of the control panel. Once the site has been created you can specify more details about the site, and these fall under three main categories: Basic Information, Search Engine Optimization, and Advanced.
 
-We'll walk through the creation of Nose-ster's web site, starting by creating and publishing some simple content using Liferay's built-in WYSIWYG editor. We'll then take advantage of Liferay's robust structure editor. We'll use templates to display the content and then explore some of the advanced publishing features such as the built-in workflow and Asset Publisher.
+![Figure 12.5: Editing a Site](../../images/01-site-editor.png)
 
-### Creating content the simple way [](id=lp-6-1-ugen03-creating-content-the-simple-way-0)
+**Details:** lets you edit the information you entered when you created the site and allows you to choose a site template for the public or private pages of your site. If you select a site template, leave the *Enable propagation of changes from the site template* box checked to automatically update your site if the associated site template changes. The update will only be done to pages which have not been changed within the specific site. If you uncheck this box but recheck it later, the template pages are then reapplied to your site, overwriting any changes that may have been made. Only users who have the permission "Unlink Site Template" will be able to disable the propagation of changes. When the propagation is enabled, the site template might prevent modification of all or certain pages to ensure that the propagation occurs.
 
-As we've stated above, content is the reason web sites exist. Liferay Portal has made it easier than ever to get content published to your site. Because Liferay Portal is so flexible, you can use basic authoring tools right away or take advantage of the more advanced features. It's adaptable to your needs.
+**Categorization:** allows you to apply categories and tags to the site.
 
-We'll begin by creating simple content using Liferay's WYSIWYG Editor and then we'll publish it to the home page of Nose-ster's web site. This is a fast and straightforward process that demonstrates how easy it is to create and publish content on your Liferay Portal instance. Let's learn about the Web Content section of the control panel so we can create and publish our first pieces of content.
+**Site URL:** lets you set friendly URLs and virtual hosts for your web site.
 
-![Figure 3.1: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
+**Site Template:** provides additional information about the site template associated to the pages of the site (if any).
 
-When you manage web content from the control panel, you can select the location where the content resides. For instance, you can add content that's available to a specific site or globally across the portal. The Content section of the control panel displays as its heading the name of the site you're currently working on. This heading is called the context menu selector: you can change the scope of where you'd like to view, edit, or create content by using the drop-down selector attached to the heading. We will add our first piece of content to the *Nose-ster* site, which we defined earlier in the chapter as the default site.
+**Sitemap:** lets you use the sitemap protocol to notify search engines that your web site is available for crawling. 
 
-##### Rich, WYSIWYG Editing [](id=lp-6-1-ugen03-rich-wysiwyg-editing-0)
+**Robots:** lets you use a `robots.txt` file to specify certain pages and links that you don't want to be indexed by search engines. You need to set a virtual host before you set a `robots.txt` file.
 
-Once you have the Nose-ster site selected, click on the *Web Content* link in the control panel. Next, click the *Add* button under the *Web Content* tab. This is a highly customizable form that by default has two fields: a title and a powerful WYSIWYG editor. We could customize this form to contain whatever fields our content needs, but let's keep things simple for now. We'll cover more advanced features such as structures, templates, and content scheduling later in this chapter.
+**Staging:** lets you turn on either Local Live staging or Remote Live staging. To enable staging, the *Enable propagation of changes from the site template* box on the Details tab must be unchecked. With staging enabled, changes to the site template are automatically propagated to the staged site, not to the live site. The changes still must be approved before the site is published to live.
 
-For now, type the words *Welcome to Nose-ster* in the *Name* field. Notice that content can be localized in whatever language you want. If you click on the *localize* checkbox, two select boxes appear which allow you to pick the language you're working in and the language that is the default. You can enter translations of your content for any language in the list. The screenshot below shows this interface but for now, we won't be using it, so you can leave it unchecked. In the content field, add a short sentence announcing that the web site is up and running.
+**Analytics:** lets you set a Google Analytics ID that is used for your site. 
 
-![Figure 3.2: The Web Content Editor](../../images/04-web-content-wysiwyg.png)
+When creating a site from a site template, the initial form provides a new option that lets you decide if you want to copy the pages from the template as public pages or as private pages. By default, the site is linked to the site template, and changes to the site template propagate to any site based on it. A checkbox appears that allows users to unlink the site template if the user has permission to do so.
 
-Getting a new web site up and running is an exciting step for anyone, whether it is a large corporation or a small non-profit charity. To celebrate this momentous achievement at Nose-ster, let's give our announcement some of the pomp and circumstance we think it deserves!
+<!-- | TODO: Add screenshot of form used to create a site from a site template | -->
 
-Using the editor, select all the text and then change the style to Heading 1 and the color to dark blue.
+Site templates are very powerful for managing many similiar sites. Let's look further at how they work. 
 
-You could insert an image here as well as more text with a different style, as demonstrated in the screenshot below. You can also add bullets, numbering, links to another site, or custom images. You can even add an emoticon. Let's add a smiley face at the end of our announcement.
+#### Site Templates [](id=lp-6-1-ugen12-site-templates-0)
 
-![Figure 3.3: Customizing Content](../../images/04-web-content-example2.png)
+Site Templates can be administered in the control panel, within the portal section of the left menu.
 
-The WYSIWYG editor is a flexible tool that gives you the ability to add text, images, tables, links, and more. Additionally, you can modify the display to match the purpose of the content. Plus it's integrated with the rest of Liferay Portal: for example, when you upload an image to be added to a page, that image can be viewed and manipulated in the Documents and Media portlet.
+Creating or modifying a site template is done using the same tools used to manage a site. You can use these tools to add a hierarchy of pages. Each page can have any configuration and any number of applications, just like a regular site. When you create a site using a site template, the configuration of pages and applications are copied from the template to the site. By default, all changes made to the site template are automatically copied to sites based on that template.
 
-If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can click the *Source* button and write your own HTML if you wish.
+Site templates can also contain content just like actual sites. This allows you to use a site template to create sample content that appears in your site when it is first created. Changes to a site template's content, however, are not propagated to existing sites that are linked to the site template.
 
-##### Assigning Permissions [](id=lp-6-1-ugen03-assigning-permissions-0)
+---
 
-Permissions in Liferay WCM work the same way they do everywhere else in Liferay. By default, content is viewable by Anyone (Guest Role). You can limit viewable permissions by selecting any Role from the drop-down or in the list. Additionally, Liferay Portal provides the ability to customize permissions in more detail. Select the *More Options* link next to the drop down button, and you'll find the different activities you can grant or deny to your web content.
+![tip](../../images/01-tip.png) **Tip:** If you want to publish a piece of web content to many sites and ensure that modifications are applied to all, don't use site template content for that purpose. Instead, place the content in the global scope and then reference it from a *Web Content Display* application in each site.
 
-![Figure 3.4: Permissions for Web Content](../../images/04-web-content-content-permissions.png)
+---
 
-For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. 
+By default, the following site templates are provided:
+
+- **Community Site:** Provides a preconfigured site for building online communities. The home of a *community site* provides message boards, search, a display of a poll and user statistics of the activity of the members of the community. The site will also be created with a page for a community calendar and a page for a wiki.
+
+- **Intranet Site:** Provides a sample preconfigured site for an intranet. The Home page displays the activities of the members of the site, search, a language chooser and a list of the recent content created in the intranet. It also provides 3 additional pages for *Documents and Media*, *Calendar* and external *News* obtained through public feeds.
+
+The following figure displays the form shown when editing the *Community Site* template:
+
+![Figure 12.6: Site Templates](../../images/01-site-templates.png)
+
+To view and manage the pages of a site template, click the *Open site template* link. This opens the template in a new browser window (or tab) and it can be navigated or managed like you would do for a regular site..
+
+<!-- | TODO: I would change the example below to not use organizations to simplify things | -->
+
+For example, let's suppose that we need to create sites for three suborganizations of the Nosester organization: Engineering, Marketing, and Legal. These are to be private sites designed for each organization's internal use. We could design each site separately but we can save ourselves some work if we create a site template to use instead.
+
+To create a site template, navigate to the control panel and click *Site Templates*. Then click *Add* and enter a name for your template: we'll use *Organization Site Template* for our example. Leave the *Active* and *Allow Site Administrators to Modify the Pages Associated with This Site Template* boxes checked. The *Active* box needs to be checked in order for your template to be usable. If your template is still a work in progress, you can uncheck it so that no one uses it until it's ready. Checking *Allow Site Administrators to Modify the Pages Associated with This Site Template* allows Site Administrators to modify or remove the pages and portlets that the template introduces to their sites--if you want the templates to be completely static, you should uncheck this.
+
+Click on the *Open site template* link to begin adding pages and portlets and configuring the layouts. For our example, we would like our template to include four pages: a Home page with the Activities,  Announcements, and Calendar portlets, a Documents and Media page with the Documents and Media portlet, a Wiki page with the Wiki portlet and a Tag Cloud portlet, and a Message Boards page with the Message Boards and Tag Cloud portlets. The changes are automatically saved as you make them, so once you're finished, return to the Site Templates page of the control panel and select *Save*.
+
+![Figure 12.7: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
+
+Now let's create the Engineering, Marketing, and Legal organizations whose sites we want to create with our template. Go to the control panel and click *Users and Organizations*. Then click the *Add* button and select *Regular Organization*. Enter a name for your organization, select the *Organization site* tab, and check the *Create Site* box. When you check this box, two drop-down lists appear: one for the site's Public Pages and one for its Private Pages. To use your template to create the site, select the name of your template, *Organization Site*, from the Private Pages drop-down list. Click *Save* to create your site.  You can view the new site by clicking the *Open private pages* link from the newly created organization page. The new site will have all the pages and portlets you created in the template. This feature streamlines the site creation process for administrators, making it easy to quickly create sites. Next, let's discuss how to create and apply page templates.
+
+### Page Templates [](id=lp-6-1-ugen12-page-templates-0)
+
+Page templates function similarly to site templates but at the page level. Page templates provide a pre-configured page to reuse. Within a page template it is possible to set up a theme, a layout and specific applications and their configuration. Both sites and site templates can utilize page templates for creating new pages.
+
+![Figure 12.8: Page Templates](../../images/server-configuration-page-templates.png)
+
+The Page Templates page of the control panel shows a list of created page templates and lets you create new ones. It also allows you to edit existing templates and configure their permissions. By default three sample page templates are provided:
+
+- Blog: provides a page with three applications related to blogging. It has two columns, the main left column contains the blogs portlet and the small right column provides two side portlets, tags cloud and recent bloggers. The tag cloud application will show the tags used within the site and will allow navigating through the blog entries shown in the main blogs portlet.
+- Wiki: provides a page with three applications related to authoring a wiki. It also has two columns, the main left column with the wiki application and two right side portlets to allow navigating through pages by tags and categories.
+- Content Display Page: provides a page that is preconfigured to display content. It has three auxiliary applications (tags navigation, categories navigation and search) and an Asset Publisher. The most significant aspect of this page is that the Asset Publisher is preconfigured to be display any web content that is associated with this page. Because of that when creating a web content it will be possible to select any page created from this page template and a unique (canonical) URL for the web content pointing to this page will be created for it.
+
+To add a new page template, click the *Add* button. Then enter a name and description for your template. Leave the *Active* button checked. Click *Save* and then identify your page template in the list. Click its name or use the Actions button to edit the page template. The *Open Page Template* link opens a new browser window which you can use to configure your new page. Any changes you make are automatically saved so you can close the new browser window once you're done.
+
+Note that after a new page template has been created the default permissions are to only allow the creator to use the page template. In order to provide access to it to other users, use the actions menu in the list of templates and choose *Permissions*. Once you see the matrix of roles and permissions, check the *View* permission for the role or roles that are needed to see the page template in the list of available page templates when creating a new page. If you want any user who can create a page to be able to use the page template, just check the *View* permission for the *User* role.
+
+![Figure 12.9: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
+
+To use your template to create a new page, just navigate to a page over which you have site administrator privileges and select *Add* &rarr; *Page* from the Dockbar. You'll be able to select a page template and type a name for the new page. Alternatively, you can use the control panel. First, in the context selector menu, select the site to which you'd like to add a page and then click on the *Site Pages* link. Then click the *Add Page* button, type a name, select your template from the drop down menu, and click *Add Page* to finish.
+
+![Figure 12.10: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
+
+Note that by default, when a site administrator creates a page based on a page template, any future changes to the template are automatically propagated to your page. Site administrators can disable this behavior by editing the page unchecking the *Automatically apply changes done to the page template* box.
+
+<!-- | COMMENT FOR AUTHOR: IMHO, the following paragraph does not fit here because it is of interest in the context of managing a site, not in the context of managing a site template | -->
+
+If staging has been enabled, changes to the page template are automatically propagated to the staged page. These changes still need to be approved before the page is published to live. For this reason, the automatic propagation of page template changes to the staged page cannot be turned off and the *Automatically apply changes done to the page template* checkbox does not appear.
+
+Now that we've looked at site and page templates, let's discuss how to set up and manage user groups.
+
+![EE Only Feature]
+### Exporting and Importing Site Templates and Page Templates
+
+If you want to export a site that uses site or page Templates to a different environment (trough a LAR file or remote publication), the Templates must be exported and imported manually in advance, or the import will fail.
+
+To export a Site using a Site Template, use the following process:
+1. Go to Control Panel &rarr; Site Templates and click Actions &rarr; Manage Pages for the Site Template that your site is using. 
+2. Click *Export* to obtain a LAR file with the content of the Site Template. Be sure to choose the applications and data you want exported. 
+3. In your target environment, go to Control Panel &rarr; Site Templates, and create a new Site Template.
+4. Click Actions &rarr; Manage Pages for that Site Template and then click *Import*.
+5. Upload the LAR file containing your site template's content. 
+
+Now the site can be exported and imported normally to this new environment.
+
+For page templates, the process very similar: 
+1. Go to Control Panel &rarr; Page Templates. 
+2. Next to the page template you would like to export, click Actions &rarr; Export. This produces a LAR file that can you later import. 
+3. On the target environment, go to Control Panel &rarr; Page Templates, and create a new Page Template
+4. Next to the new template, click Actions &rarr; Import. 
+5. Upload the LAR file containing the exported page template from step 3
+
+The page template can now be imported normally to this new environment.
+
+<!-- needs transition -->
 
 ##### Localization [](id=lp-6-1-ugen03-localization-0)
 
@@ -112,47 +178,7 @@ When you create a new web content structure, each field you create has a *Locali
 
 Let's go back to the page where we want the content displayed and add the Web Content Display portlet (in this case, the Welcome page).
 
-#### Publishing Content with the Web Content Display Portlet [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
-
-Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page, by selecting *Add &rarr; Web Content Display* from the Dockbar.
-
-![Figure 3.7: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
-
-Once the portlet appears, drag it to the position on the page where you want your content to appear. You can have as many Web Content Display portlets on a page as you need, which gives you the power to lay out your content exactly the way you want it. 
-
-To add existing web content, select the *gear* icon on the lower left of the portlet. You will see the message *Please select a web content from the list below*. You have several options here.
-
-Naturally, if your content appears in the list, you can simply select it. If there is lots of published content available, you could search for the content by name, ID, type, version, content, and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
-
-![Figure 3.8: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
-
-If you have enabled OpenOffice.org integration with your portal, you can also enable document conversion for your content. This gives your users the ability to download your content in their format of choice. This is especially handy if you are running a research or academically oriented site; users can very quickly download PDFs of your content for their research projects.
-
-Note that you also have other options, such as enabling a Print button, enabling ratings so that users can rate the content, enabling comments, and enabling ratings on comments.
-
-The Print button pops the content up in a separate browser window that contains just the content, without any of the web site navigation. This is handy for printing the content. Enabling ratings shows one of two ratings interfaces Liferay has: five stars or thumbs up and thumbs down. This can be set globally in the `portal-ext.properties` file. See chapter 12 for further information about this.
-
-Enabling comments creates a discussion forum attached to your content which users can use to discuss your content. Enabling ratings on comments gives your users the ability to rate the comments. You may decide you want one, some, or none of these features, which is why they're all implemented as simple check boxes to be enabled or disabled at need.
-
-If you click the *Supported Clients* tab, you'll see that you can choose the type of client to which you want to expose content. This lets you target the large screens of users' computers for expansive graphics and lots of special effects, or target the small screens of mobile devices with pertinent information and a lightweight page. For now, leave both checked and click the *Save* button. You can now close the configuration window.
-
-To publish new content, select the *page and green plus icon* on the lower left of the portlet. This launches the same full-featured editor you've already seen in the control panel, which lets you add and edit content in place as you are working on your page.
-
-This is another example of the flexibility that Liferay Portal offers. At times, you may want to add content directly into the Web Content Display portlet of the page you're managing, especially if you are in the process of building the page. At other times, you may want to use the control panel to create content, because at that moment you're more concerned with the creation of the content and not where the content will later be displayed. Liferay WCM supports both processes. 
-
-Editing content that's already been published is just as easy as creating new content is. You'll use the same exact tools. 
-
-##### Editing Content [](id=lp-6-1-ugen03-editing-content-0)
-
-Once the content is displayed--whether you've selected content or created it in the Web Content Display portlet--you can edit the content directly from the Web Content Display portlet or from the control panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This launches the WYSIWYG editor and from there you can make any necessary changes.
-
-![Figure 3.9: Edit, Select, and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
-
-When you publish your content this way, it becomes available immediately (unless, of course, you have a workflow enabled, which we'll see below). This happens whether you edit it in place or in the control panel.
-
-Note: if you want to view your page the way your users will see it (i.e., without all those portlet controls and icons), go up to the Dockbar and select *Toggle Edit Controls*. This makes all those extra controls you see as a portal administrator disappear. If you need to use those controls again, just select *Toggle Edit Controls* again. 
-
-That's pretty much all there is to simple content creation. Whole sites have been created this way. But if you want to take advantage of the full power of Liferay's WCM, you'll want to use structures and templates. Next, we'll see how they work and how you can use them to make your site more dynamic. 
+<!-- needs transition -->
 
 ### Advanced Content Creation [](id=lp-6-1-ugen03-advanced-content-creation-0)
 
@@ -349,47 +375,7 @@ As you can see, the scheduling feature in Liferay Portal gives you great control
 
 In addition to controlling when content displays, you can use the Display Page feature to control where content displays.
 
-#### Display Page [](id=lp-6-1-ugen03-display-page-0)
-
-If you've been using Liferay for a while, or you've just spent a little bit of time with this guide, you might have noticed something about how Liferay handles web content--content is never tied directly to a page. While this can be useful (because it means that you don't have to recreate content if you want to display the same thing on multiple pages), it also means that you don't have a static URL for any web content, which is bad for search engine optimization.
-
-As an improvement, Liferay has introduced the concept of Display Pages and Canonical URLs. Each web content entry on the portal has a canonical URL, which is the official location of the content that is referenced any time the content is displayed. A Display Page can be any page with an asset publisher configured to display any content associated with the page. When adding or editing web content articles, you can select a Display Page. However, only pages with a configured asset publisher are available for selection. 
-
-To create a Display Page, you can create a page yourself, add an Asset Publisher portlet, and configure it yourself. Alternatively, you can use the *Content Display Page* page template included with Liferay. If you're creating a Display Page manually, once you've added an Asset Publisher portlet to the page, open its configuration window. Then check the *Set as the Default Asset Publisher for This Page* box.
-
-You may now be thinking, "Wait, you just told me that each Web Content item has its own URL, and that this is somehow related to pages where we display a whole bunch of content on the same page?" Yes. That's exactly what I said. Just watch--create a display page called *My Web Content Display Page* somewhere on your portal, using the *Content Display Page* template. Now, on a different page, add a Web Content Display portlet. Click the *Add Web Content* button, enter a title and some content, click on *Display Page* at the right, and select the Display Page you just created. Then click *Publish*.
-
-![Figure 3.16: Selecting a Display Page](../../images/04-web-content-display-page.png)
-
-In the Asset Publisher of the *My Web Content Display Page*, you can now click the *Read More* link to display the content. Notice that the canonical URL for content appears in your browser's address bar. If you create your own custom display page, any additional portlets that you place on the page are displayed along with the content when you access it via the canonical URL. If you used the *Content Display Page* page template for your Display page, it not only features a configured Asset Publisher portlet but also a Tags Navigation, a Categories Navigation, and a Search portlet. These tools help users to quickly identify relevant content.
-
-![Figure 3.17: The Canonical URL](../../images/04-web-content-canonical-url.png)
-
-Let's move on to tags and categories. 
-
-#### Tags and Categories [](id=lp-6-1-ugen03-tags-and-categories-0)
-
-Tags are keywords that are attached to web content in order to help users find content. Categories are hierarchical structures of content that are defined by administrators. Tags and categories make it easier for your users to find  content through search or navigation.
-
-By assigning a tag to web content, you define metadata about that content. This is then used by Liferay's search engine to score the results of a search, enabling users to find content that is most relevant to their search. Tags can be created on the fly by creators of content, and it's important to tag content whenever it is created. If you don't tag content, all the search engine has to go on is the full text of the content (if you've made your content indexable), and that might not produce the most optimal results.
-
-Tagging also helps with navigation. Liferay Portal has two portlets specifically designed for navigating content using tags: Tag Cloud and Tag Navigation. If you add either of these to a page, you can use them to show the topics contained in your content.
-
-Tags can be added on the fly or they can be selected from the existing library of tags. For most of the portal, users tag content, but for web content, only the content creator tags the content, because there is no user interface for regular users to tag web content.
-
-It is important that you both tag and categorize your content when you enter it.
-
-Categories are a little bit different, and new users generally ask a valid question when presented with tags and categories: what's the difference? Categories are defined by someone with administrative access to the content. They are hierarchical, tree-like structures that users can use to find content. Categories are different from tags in that they're never created by end users. Instead, categories define how your content is organized from the point of view of the owner of the content. A good example of categories might be the table of contents of a book: it shows the hierarchical structure and organization for all of the content within that book. This shows that the structure of the book has been planned ahead of time by the author. Categories do the same thing as the table of contents. 
-
-By contrast, tags are like the index of a book: they show where many different topics are mentioned within the book in alphabetical order. When a search is done throughout the book, even the author might be surprised at how many times he or she mentions a particular topic outside of its category. So both ways of organizing content are important, especially if your users will be using search to find content.
-
-Tagging and categorizing web content is easy. You can do it at the bottom of the same form you use to add content. If you open the *Categorization* section of the form, you'll be presented with an interface for adding tags and categories.
-
-![Figure 3.18: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
-
-The control panel contains an interface for managing tags and categories for each site in the portal. This interface can be used to manage all your tags and categories in one place. We'll look at this interface in the next chapter. 
-
-Next, we'll look at how to configure the way pages are accessed by mobile devices.
+<!-- needs transition -->
 
 ### Mobile Device Rules [](id=lp-6-1-ugen03-mobile-device-rules-0)
 
@@ -417,99 +403,7 @@ You can add actions to a rule group from the Site Pages page of the control pane
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. By default, there are four kinds of actions that be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects, and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages you can use a redirect to make sure that mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to. Like mobile device rules, mobile device actions are designed to be extensible. Your developers can define custom actions in addition to the four actions provided by default. Next, let's discuss Liferay's asset publisher, which you can use to publish many different kinds of portal content.
 
-<!-- Moved to chapter 8: asset framework
-
-### Using the Asset Publisher Portlet [](id=lp-6-1-ugen03-using-the-asset-publisher-portlet-0)
-
-As we create web content, it's important to keep in mind that to Liferay, the pieces of content are assets, just like message board entries and blog posts. This allows you to publish your web content using Liferay's Asset Publisher.
-
-You can use the Asset Publisher to publish a mixed group of various kinds of assets such as images, documents, blogs, and of course, web content. This helps in creating a more dynamic web site: you can place user-created wiki entries, blog posts, or message board messages in context with your content. Let's look at some of its features.
-
-#### Querying for Content [](id=lp-6-1-ugen03-querying-for-content-0)
-
-The Asset Publisher portlet is a highly configurable application that lets you query for mixed types of content on the fly. By giving you the ability to control what and how content is displayed from one location, the Asset Publisher helps you to "bubble up" the most relevant content to your users.
-
-To get to all the portlet's options, click the *Configuration* link in the portlet's menu (the wrench icon).
-
-The ability to configure how content is displayed and selected by your users further demonstrates the flexibility of the Asset Publisher. You get to choose how content is displayed. You can select it manually for display in a similar way to the Web Content Display portlet, or you can set up predefined queries and filters and let the portal select the content for you, based on its type or its tags and categories.
-
-Let's first look at how we might select content manually. You'll see that it's very similar to the Web Content Display portlet.
-
-##### Selecting assets manually [](id=lp-6-1-ugen03-selecting-assets-manually-0)
-
-By selecting *Manual* from the select box beneath *Asset Selection*, you tell the Asset Publisher that you want to select content manually. You can select what you want to be published within the portlet, or you can create new content  from within the Asset Publisher.
-
-![Figure 3.22: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
-
-Clicking *Add New* gives you a menu of options, enabling you to create the content right where you are. You can create blogs, bookmarks, calendar entries, documents, images, and of course, web content. Anything you create here is added to the list below of assets that are displayed by the portlet.
-
-Clicking *Select Existing* gives you a similar menu, except this time you can pick from existing content in the portal that either you or your users have created. Has someone written an excellent wiki page that you want to highlight? Select it here, and it will be displayed.
-
-The Asset Publisher enables you to mix and match different content types in the same interface. Once you have your content selected, you can move on to the display types to configure how the content appears.
-
-Most of the time, however, you'll likely be using the Asset Publisher to select content dynamically.
-
-##### Selecting assets dynamically [](id=lp-6-1-ugen03-selecting-assets-dynamically-0)
-
-The Asset Publisher's default behavior is to select assets dynamically according to rules that you give it. These rules can be stacked on top of each other so that they compliment each other to create a nice, refined query for your content. You have the following options for creating these rules:
-
-**Scope:** Choose the sites or organizations from which the content should be selected.
-
-**Asset Type:** Choose whether you'll display any asset or only assets of a specific type, such as only web content, only wiki entries, or any combinations of multiple types.
-
-![Figure 3.23: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
-
-**Filter Rules:** Add as many filters on tags or categories as you like. You can choose whether the content contains or does not contain any or all categories or tags that you enter.
-
-Once you've set up your filter rules for dynamically selecting your content, you can then decide how the content will be displayed.
-
-#### Ordering and Grouping [](id=lp-6-1-ugen03-ordering-and-grouping-0)
-
-You can display the content returned by the filters above in order by title, create date, modified date, view count, and more in ascending or descending order. For instance, you may have a series of "How To" articles that you want displayed in descending order based on whether the article was tagged with the *hammer* tag. Or, you may want a series of video captures to display in ascending order based on a category called *birds*. You can also group by *Asset*, *Type*, or *Vocabularies*. Vocabularies are groups of categories defined by administrators in the *Categories* section of the control panel. Again, we'll see more about categories in chapter 4.
-
-In the *Ordering and Grouping* section of the Asset Publisher, you have great control over how content is ordered and grouped in the list, but this is only one aspect of how your content will be displayed. You can refine the display through many other display settings.
-
-#### Display Settings [](id=lp-6-1-ugen03-display-settings-0)
-
-The Display Settings section gives you precise control over the display of your assets. There are a multitude of options available to configure how you want your content to appear. You can configure the style, length of abstracts, behavior of the asset link, maximum items to display, pagination type, and file conversions. Additionally, you can enable printing, flags, ratings, comments, and comment ratings, and these work the same way they do in the Web Content Display portlet.
-
-##### Display Style [](id=lp-6-1-ugen03-display-style-0)
-
-**Abstracts:** Shows the first 200-500 characters of the content, defined by the **Abstract Length** field.
-
-**Table:** Displays the content in an HTML table which can be styled by a theme developer.
-
-**Title List:** The content's title as defined by the user who entered it.
-
-**Full Content:** The entire content of the entry.
-
-##### Other Settings [](id=lp-6-1-ugen03-other-settings-0)
-
-**Asset Link Behavior:** The default value is *Show Full Content*. With this value selected, when the link to an asset is clicked, the full asset is displayed in the current Asset Publisher. If the value *View in a Specific Portlet* is selected, clicking on an asset causes that asset to be displayed in the portlet to which the asset belongs. For example, a blog entry would be displayed in the Blogs portlet where it was created. Likewise, a forum post would be displayed in the Message Boards porlet where it was created. Similarly, a generic Web Content article would be displayed in the Asset Publisher of its configurated Display Page. See the above secton on Display Pages for more information.
-
-**Maximum Items to Display:** You can display 1-100 items.
-
-**Pagination Type:** Select Simple or Regular. Simple shows previous and next navigation; regular includes a way of selecting the page to which you'd like to navigate.
-
-**Exclude Assets with 0 Views:** If an asset has not been viewed, exclude it from the list.
-
-**Show Available Locales:** Since content can be localized, you can have different versions of it based on locale. This will show the locales available, enabling the user to view the content in the language of his or her choice.
-
-**Enable Conversion To:** If you have enabled Liferay Portal's OpenOffice.org integration, you can allow your users to convert the content to one of several formats, including PDF.
-
-Below these options are the same ones in the Web Content Display portlet: enable print, enable comments, enable ratings, etc.
-
-**Show Metadata:** Allows you to select from the available metadata types (see below).
-
-![Figure 3.24: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
-
-**Enable RSS Subscription:** This lets users subscribe to the content via RSS Feeds.
-
-The Display Settings section of the Asset Publisher has numerous options to help you configure how your content selections are displayed to your users. Even though there are many choices, it's easy to go through the options and quickly adjust the ones that apply to you. You'll want to use the Asset Publisher to query for mixed assets in the portal that have relevant information for your users.
-
-Next, we'll look at some of the most powerful features of Liferay WCM: staging and workflow.
-
--->
+<!-- needs transition-->
 
 #### Staging and Workflow [](id=lp-6-1-ugen03-staging-and-workflow-0)
 
@@ -619,51 +513,24 @@ You can enable staging on an individual site basis, depending on your needs. Thi
 
 Let's go one step further by introducing workflow into the mix.
 
-### Using Liferay's Integrated Workflow with Content Management [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
+<!-- needs transition -->
 
-Workflow is essentially a predetermined sequence of connected steps. In Liferay WCM, workflow is designed to manage the creation, modification, and publication of web content. You can set up a workflow so that content can't be published without going through an approval process that you design. In this way, content is published to the site only after it has been reviewed and approved.
+Liferay 6.0 introduced a new feature to Liferay's permissions system: teams. Let's examine them next.
 
-Liferay's workflow engine is called Kaleo workflow, and it ships with Liferay CE. If you have uninstalled it or are using EE, it needs to be installed and configured separately. This is covered in chapter 6. Since we have somewhat of a "What came first--the chicken or the egg?" problem, for now, we'll assume it's installed and look at how you can take advantage of workflow in getting your content through any approval steps between creation and publication.
+### Teams [](id=lp-6-1-ugen12-teams-0)
 
-You may have noticed that something appears to be missing from the staging process discussed above. In particular, you might be asking the question, "How do I reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's Workflow engine. In order to have a review process for staged pages, you need to make sure that you have a workflow engine configured, and that you have staging set up in the workflow. To do this, select the workflow definition desired for page revisions in the Workflow Configuration. 
+Teams don't appear as a link in the control panel because they exist *within* sites. Teams allow site administrators a greater degree of flexibility than was possible using just user groups and roles. They allow site administrators to create various sets of users and permissions for site-specific functions. Teams are the preferred method for collecting permissions within a single site. 
 
-When using a workflow, clicking *Submit for Publication* submits the staged pages into the workflow. Once all necessary approvals have been completed, the page status is marked as ready for publication. The *Publish to Live Now* and *Schedule for Publication* options  publish the last version of the selected pages marked as ready for publication.
+If you create a team for one site, the permissions defined for it are not available to any other sites. In contrast, if you assigned a custom role to a user group, the role would be available portal-wide even though the specific permissions defined by it would only apply within the scope of a designated site. Furthermore, team members, unlike user group members, are guaranteed to be members of the desired site.
 
-To enable workflow for Web Content, navigate to the control panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
+To create a team within a site, first naviagte to the *Control Panel &rarr; Sites* page then and then select *Actions &rarr; Manage Memberships* for the site within which you want to create a team. Finally, click *View &rarr; Teams* and click the Add Team button.
 
-![Figure 3.30: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 12.18: Creating a Team within a Site](../../images/01-creating-a-team.png)
 
-As you'll discover in chapter 6, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
+After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions &rarr; Assign Members*.
 
-#### Defining Workflows for Web Content [](id=lp-6-1-ugen03-defining-workflows-for-web-content-0)
+Permission management for teams is handled at the individual portlet level, using the *Options &rarr; Configuration &rarr; Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
 
-Let's set up Liferay's Workflow for the Nose-ster web site.
+[Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams)
 
-1.  Go to the control panel and select *Workflow Configuration* from the left panel.
-
-2.  From the select box, choose *Single Approver* for Web Content. Click *Save.* Note that you can add workflow to many of Liferay's portlets.
-
-That's all it takes to set up workflow for web content. Now that workflow is enabled, publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at Nose-ster. Return to the home page and click the *Add Web Content* icon on the Web Content Display portlet. Call the new content *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
-
-![Figure 3.31: Pending Workflow](../../images/04-web-content-workflow-config.png)
-
-Next, go to the *Workflow Tasks* in control panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow, and anyone in this role can approve content as well.
-
-To approve the content, you must first take ownership of it. Click on the task. You should see the screen below.
-
-Taking ownership of, reviewing, and approving content is very easy:
-
-1.  Click the *Assign to Me* button. Alternatively, you could assign it to someone else in the Content Approvers role or create / update a due date for the content's approval.
-2.  Once you've assigned it to yourself, buttons allowing you to approve or reject the content appear. Click *Approve*.
-3.  You're asked to submit a comment. You'd have to do this for either *Approve* or *Reject*. Add a comment and click *Save*.
-4.  The content is now approved.
-
-In a real world situation, you obviously wouldn't want the person who created the content to be the one who approves it. Instead, you would have one or more roles designed for users who will be creating content, and you would have specific users assigned to one or more roles for approving content. Our example was of a very straightforward workflow, as it has only a single approver. Kaleo workflow allows you to design workflows that go through as many steps as you need to conform to your business processes. We look at Kaleo workflow in more detail in chapter 6.
-
-## Summary [](id=summ-25)
-
-This chapter has been your guide to Liferay Web Content Management. We've seen how Liferay manages both simple content and advanced content with structures and templates. These powerful tools enable you to handle easily any type and amount of material that you'd like to publish on the web. 
-
-Liferay WCM also includes a powerful staging environment, allowing you to stage content locally on the same server or remotely to another server. You can publish your site when you want it, on the schedule you choose. You can even create different variations of your site that can be worked on simultaneously. 
-
-Whether your site is small and static or large and dynamic, Liferay's WCM enables you to plan and manage it. With tools such as the WYSIWYG editor, structures, and templates, you can quickly add and edit content. With the Web Content Display and Asset Publisher, you can rapidly select and configure what and how your content is displayed. And by using Liferay's integrated workflow, you can set up custom publishing rules to fit your organization. You will find that managing your site becomes far easier when using Liferay's Web Content Management system.
+To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, and then click *Save*. That's it! Now your team is ready to perform their functions. Next, let's look at how to configure Liferay's portal settings.
