@@ -108,11 +108,11 @@ The layout template's generated TPL files are initially empty, leaving you with 
 
 Open your layout template's TPL file in Studio's *Layout Template Editor* to see it displayed in *Visual (Experimental)* mode.
 
-![Figure 5.4: TPL file in *Layout Template Editor* (palette is hidden)](../../images/layout-template-tpl-blank.png)
+![Figure 5.4: TPL file in *Layout Template Editor* (palette is hidden). To highlight the "view palette" button, we've added a red rectangle around it in the upper left corner of the editor.](../../images/layout-template-tpl-blank.png)
 
-Then click the triangle in the upper left corder of the editor to bring the Palette into view.
+Then click the triangle in the upper left corner of the editor to bring the Palette into view.
 
-![Figure 5.5: TPL file in *Layout Template Editor* with pallet in view](../../images/layout-template-tpl-blank-with-palette.PNG)
+![Figure 5.5: TPL file in *Layout Template Editor* with palette in view](../../images/layout-template-tpl-blank-with-palette.PNG)
 
 From the palette you can drag rows, columns, and even existing templates onto your canvas.
 
