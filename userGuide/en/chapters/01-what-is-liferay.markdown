@@ -142,8 +142,38 @@ As with social applications, Liferay Portal is also ideally suited as a platform
 
 I can't even begin to imagine what you're thinking of building, but whatever it is, it's going to be a lot of work. Building it on Liferay's web platform can give you a leg up, by providing to you everything you need to support your application, so you can concentrate solely on what *you're* building, and not the rest of the features your users expect will come along with it. 
 
+### Liferay as an application development platform
+
 Imagine your application for a moment. Does it require users to register with your site? Will they be able to comment on content contained within your application? Is there some asset that users can tag or categorize? If you think about the layout of the application, would it benefit from modularization? Could you make use of a rich JavaScript framework with many components built into it? How about security--will you need to make content available to some users, but not to all users? Liferay Portal has all of this and more available to the developer, so you don't have to write it yourself. 
 
 Liferay Portal's development framework is an ideal way to build a web application. While the framework itself is covered in other resources such as the *Liferay Developer's Guide* or *Liferay in Action*, the strengths of Liferay as a platform are also apparent once you've used the platform to create your application. 
 
 For example, bug fixes to your applications are easy to apply, because Liferay applications are hot deployed to the running server. Liferay's Marketplace gives you a ready-made shopping center for your applications. And Liferay's web services and JSON architecture make it easy for you to share data from your applications to other systems running on different platforms. 
+
+If you're building an enterprise system, portals were designed in the first place to be a single point of entry to your users' applications and content. Since Liferay Portal integrates well with user directories such as LDAP and Active Directory, and single sign-on systems such as SAML and OpenSSO, it fits well into your enterprise systems. This allows you to use it as an integration platform for existing applications.  
+
+You get all this--not to mention the automatic Facebook and OpenSocial integration mentioned above--simply by using Liferay's development platform. It's a very powerful platform, and certainly worth your investigation. 
+
+### Customizing Liferay Portal to use as a base
+
+Beyond using Liferay as a development platform for new applications, Liferay Portal has also been designed to be extended and modified. As an open source project, its source code is available, but Liferay Portal's developers have designed the product to be customized to make it easy to build whatever you want out of it. 
+
+Special software components called *hook* and *ext* plugins enable developers to change any aspect of Liferay's interface and behavior--without having to modify any of Liferay Portal's source code. This provides you all the benefits of the "build from scratch" strategy we mentioned earlier, but without all the effort to build from scratch. If you want to make a change to the user registration screens, add support for a proprietary single sign-on mechanism that you've written, revise the user interface for the message boards application, or anything else, you can make those customizations. And if you're a developer, I'm sure you know that it's a whole lot easier to customize something that *almost* does things exactly the way you want than it is to write that feature from scratch. With Liferay Portal, you *can* have your cake and eat it too. 
+
+### Hosting multiple sites on Liferay Portal
+
+Liferay Portal excels as a hosting platform. You can use it to host multiple sites under the same overall architecture (like Facebook, MySpace, or Pinterest offer to their users), or you could build an entire web hosting company based solely on Liferay's ability to serve multiple instances of itself from the same physical installation. 
+
+In the first scenario, Liferay Portal's Sites architecture lets you create multiple, different web sites that have public and/or private sets of pages and as many pages within those sets as you'd like. Users join the web site, and once they're members, they can join and leave open sites with one click. Some sites can be defined as restricted or private, and users can't access those unless they're added by site administrators. And all of these sites can have canonical domain names such as baseballcards.liferay.com or progrock.liferay.com. 
+
+Using this construct, you can build anything from Facebook, to Yahoo Groups, to SourceForge, to the now-defunct-but-once-loved Geocities.
+
+In the second scenario, Liferay Portal lets you create completely separate instances of itself from the same installation. Users, groups, organizations, sites, and roles from each instance are kept completely separate. If a user registers for a user id on one instance, he or she would have to register as a new user on another instance as well. 
+
+This lets you host many different, separate web sites from one Liferay Portal installation, which is a great alternative for web hosting companies or smaller organizations that want to share the cost of their web sites. Users of each instance have access to the same powerful content management, collaboration, social, and web development platform that they'd have if they were operating from a single, standalone installation. 
+
+## Summary
+
+So what is Liferay? As you can see, it's hard to describe, because it does so much. What we've essentially done is say it's a totally awesome content and document managing, user collaborating, socially enabling, application developing, corporate integrating, completely customizable platform for building the Internet. If we'd said that up front, you'd probably have doubted us. Hopefully now, you can see that it's true. 
+
+If you're interested in using Liferay Portal for *your* product, continue reading. We'll go through all of these features (and more that we couldn't mention) throughout the rest of the book. 
