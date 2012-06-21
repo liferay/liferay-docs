@@ -1,5 +1,3 @@
-
-<!-- Section i of new outline   -->
 # Using Liferay Web Content Management [](id=using-liferay-web-content-management)
 
 Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface, and it helps you to keep your site fresh. You'll find yourself easily creating, editing, and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content "pop" with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content. 
@@ -14,6 +12,7 @@ In this chapter, we'll cover the following topics:
 
 As you'll see, Liferay's WCM is a full-featured solution for managing your web site. We'll start with an overview of what it has to offer, and then we'll dive down into its features. 
 
+<!-- Section i of new outline   -->
 ## How Can Liferay's WCM Help You? [](id=how-can-liferay-s-wcm-help-you-)
 
 With Liferay's WCM you have the ability to create, edit, stage, publish, and approve content with easy to learn yet powerful tools. Liferay's WCM streamlines site changes for the end user versus doing a site in HTML. Some ways Liferay WCM makes this possible include:
@@ -387,14 +386,12 @@ Permissions in Liferay WCM work the same way they do everywhere else in Liferay.
 
 ![Figure 3.4: Permissions for Web Content](../../images/04-web-content-content-permissions.png)
 
-For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet.
-
-<!-- transition required -->
+For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. Let's look at how it works. 
 
 <!-- Section iv of new outline -->
 ## Publishing (basic) content [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
 
-Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page, by selecting *Add &rarr; Web Content Display* from the Dockbar.
+Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page by selecting *Add &rarr; Web Content Display* from the Dockbar.
 
 ![Figure 3.7: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
@@ -402,19 +399,19 @@ Once the portlet appears, drag it to the position on the page where you want you
 
 To add existing web content, select the *gear* icon on the lower left of the portlet. You will see the message *Please select a web content from the list below*. You have several options here.
 
-Naturally, if your content appears in the list, you can simply select it. If there is lots of published content available, you could search for the content by name, ID, type, version, content, and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
+Naturally, if your content appears in the list, you can simply select it. If there is lots of published content available, you could search for the content by name, ID, type, version, content and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
 
 ![Figure 3.8: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also enable document conversion for your content. This gives your users the ability to download your content in their format of choice. This is especially handy if you are running a research or academically oriented site; users can very quickly download PDFs of your content for their research projects.
 
-Note that you also have other options, such as enabling a Print button, enabling ratings so that users can rate the content, enabling comments, and enabling ratings on comments.
+Note that you also have other options, such as enabling a Print button, enabling ratings so that users can rate the content, enabling comments and enabling ratings on comments.
 
 The Print button pops the content up in a separate browser window that contains just the content, without any of the web site navigation. This is handy for printing the content. Enabling ratings shows one of two ratings interfaces Liferay has: five stars or thumbs up and thumbs down. This can be set globally in the `portal-ext.properties` file. See chapter 12 for further information about this.
 
-Enabling comments creates a discussion forum attached to your content which users can use to discuss your content. Enabling ratings on comments gives your users the ability to rate the comments. You may decide you want one, some, or none of these features, which is why they're all implemented as simple check boxes to be enabled or disabled at need.
+Enabling comments creates a discussion forum attached to your content which users can use to discuss your content. Enabling ratings on comments gives your users the ability to rate the comments. You may decide you want one, some or none of these features, which is why they're all implemented as simple check boxes to be enabled or disabled at need.
 
-If you click the *Supported Clients* tab, you'll see that you can choose the type of client to which you want to expose content. This lets you target the large screens of users' computers for expansive graphics and lots of special effects, or target the small screens of mobile devices with pertinent information and a lightweight page. For now, leave both checked and click the *Save* button. You can now close the configuration window.
+If you click the *Supported Clients* tab, you'll see that you can choose the type of client to which you want to expose content. This lets you target the large screens of users' computers for expansive graphics and lots of special effects or target the small screens of mobile devices with pertinent information and a lightweight page. For now, leave both checked and click the *Save* button. You can now close the configuration window.
 
 To publish new content, select the *page and green plus icon* on the lower left of the portlet. This launches the same full-featured editor you've already seen in the control panel, which lets you add and edit content in place as you are working on your page.
 
@@ -432,9 +429,7 @@ When you publish your content this way, it becomes available immediately (unless
 
 Note: if you want to view your page the way your users will see it (i.e., without all those portlet controls and icons), go up to the Dockbar and select *Toggle Edit Controls*. This makes all those extra controls you see as a portal administrator disappear. If you need to use those controls again, just select *Toggle Edit Controls* again. 
 
-That's pretty much all there is to simple content creation. Whole sites have been created this way. But if you want to take advantage of the full power of Liferay's WCM, you'll want to use structures and templates. Next, we'll see how they work and how you can use them to make your site more dynamic. 
-
-<!-- needs transition -->
+That's pretty much all there is to simple content creation. Whole sites have been created this way. But if you want to take advantage of the full power of Liferay's WCM, you'll want to use structures and templates found in chapter 3. Next, let's see how you can manage your content with an approval process called workflow. 
 
 <!-- Section v of new outline -->
 ## Using Liferay's Integrated Workflow with Content Management [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
@@ -478,11 +473,10 @@ Taking ownership of, reviewing, and approving content is very easy:
 
 In a real world situation, you obviously wouldn't want the person who created the content to be the one who approves it. Instead, you would have one or more roles designed for users who will be creating content, and you would have specific users assigned to one or more roles for approving content. Our example was of a very straightforward workflow, as it has only a single approver. Kaleo workflow allows you to design workflows that go through as many steps as you need to conform to your business processes. We look at Kaleo workflow in more detail in chapter 6.
 
-<!-- Need text for section vi Site memberships to go here  
+Next up is Site memberships, where you'll learn how to administer a Liferay portal and define users and permissions. 
+
+<!-- Need text & header reference for section vi Site memberships to go here  
 ## Site memberships
-
-Next in the menu is Site Memberships, which is covered in chapter 12. There, you'll learn how to administer a Liferay portal and define users and permissions. 
-
 -->
 
 ## Summary [](id=summ-25)
