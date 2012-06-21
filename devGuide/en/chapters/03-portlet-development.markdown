@@ -614,15 +614,17 @@ Since Liferay 6 there is a feature that requires minimal work to change this int
 
     http://localhost:8080/web/guest/home/-/my-greeting/edit
     
-This feature, known as friendly URL mapping, takes unnecessary parameters out of the URL and allows you to place the important parameters in the URL path, rather than the query string. To add this functionality, first edit `liferay-portlet.xml` and add the following lines directly after `</icon>` and before `<instanceable>`. Be sure to remove the line breaks and the backslashes!
+This feature, known as friendly URL mapping, takes unnecessary parameters out of the URL and allows you to place the important parameters in the URL path, rather than the query string. To add this functionality, first edit `liferay-portlet.xml` and add the following lines directly after `</icon>` and before `<instanceable>`.
 
-    <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.Default\
-    FriendlyURLMapper</friendly-url-mapper-class>
-    <friendly-url-mapping>my-greeting</friendly-url-mapping>
-    <friendly-url-routes>com/sample/mygreeting/portlet/my-greeting-friendly-url\
-    -routes.xml</friendly-url-routes>
+		<friendly-url-mapper-class>
+			com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper
+		</friendly-url-mapper-class>
+		<friendly-url-mapping>my-greeting</friendly-url-mapping>
+		<friendly-url-routes>
+			com/liferay/samples/my-greeting-friendly-url-routes.xml
+		</friendly-url-routes>
 
-Next, create the file (note the line break):
+Next, create the file (remove the line break):
 
     my-greeting-portlet/docroot/WEB-INF/src/com/liferay/samples/my\
     -greeting-friendly-url-routes.xml
