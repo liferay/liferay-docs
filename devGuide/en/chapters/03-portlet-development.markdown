@@ -92,7 +92,7 @@ When using Liferay's Plugins SDK, these files are stored in a standard directory
 			-	liferay-plugin-package.properties
 			-	liferay-portlet.xml
 			-	portlet.xml
-			-	web.xml
+			-	web.xml (not created by default)
 		-	icon.png
 		-	view.jsp
 
@@ -125,7 +125,7 @@ When using the Plugins SDK, the default content of the portlet descriptor is as 
 	<display-name>My Greeting</display-name>
 	<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 	<init-param>
-	    <name>view-jsp</name>
+	    <name>view-template</name>
 	    <value>/view.jsp</value>
 	</init-param>
 	<expiration-cache>0</expiration-cache>
@@ -499,7 +499,7 @@ The second way of passing information from the action phase to the render phase 
 		}
     }
 
-Also, in `view.jsp`, you would need to add the `liferay-ui:success` JSP tag as shown below (note that you also need to add the taglib declaration at the top):
+Also, in `view.jsp`, you would need to add the `liferay-ui:success` JSP tag and add the taglib declaration `<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>` along with the other declarations, as shown below:
 
 	<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
