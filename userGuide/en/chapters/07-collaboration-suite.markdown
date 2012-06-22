@@ -1,6 +1,6 @@
 # Liferay Collaboration Suite [](id=liferay-collaboration-sui-4)
 
-Liferay Portal ships with a robust suite of collaboration applications which you can use to build communities of users for your site. These applications provide all the features that you would expect of standalone versions outside of a portal setting. The difference with Liferay's collaboration suite, however, is that all of the applications share a common look and feel, security model, and architecture. They inherit the strengths of being part of Liferay's development platform so you can use them in combination with Liferay's user management and content management features to build a well-integrated, feature-rich web site.
+Liferay Portal ships with a robust suite of collaboration applications which you can use to build communities of users for your site. These applications provide all the features that you would expect of standalone versions outside of a portal setting. The difference with Liferay's collaboration suite, however, is that all of the applications share a common look and feel, security model and architecture. They inherit the strengths of being part of Liferay's development platform so you can use them in combination with Liferay's user management and content management features to build a well-integrated, feature-rich web site.
 
 This chapter focuses on how to use Liferay's collaboration suite. We explain how to set up and administer:
 
@@ -8,14 +8,11 @@ This chapter focuses on how to use Liferay's collaboration suite. We explain how
 -   Calendars
 -   Message Boards
 -   Wikis
+<!--
+-  Polls
+-->
 -   Chat
 -   Mail
-<!-- 
-Remove these?
-
--   Knowledge Base Articles
--   Documents and Media Libraries
--->
 
 We'll discuss how these features work together to facilitate information flow within your portal and provide an enhanced experience for your users.
 
@@ -655,7 +652,7 @@ At the top of the portlet is a list of links which allow you to navigate around 
 The Wiki portlet is another full-featured Liferay application with all of the features you expect from a state of the art wiki. Next, we'll look at how Liferay handles live chat.
 
 <!--
-The Polls section goes here?
+The Polls section & head ref goes here?
 
 ## Find out what others think or do using Polls
 -->
@@ -768,15 +765,5 @@ No summary for Polls or Chat ??
 -->
 
 Integrating mail with your portal is easy with the Mail portlet. You can add as many custom or Gmail mail accounts as you wish, and this portlet can keep them all organized in one place, together with the rest of the things Liferay is aggregating for you.
-
-<!--
-The info for followig three graphs seem to have moved elsewhere
-
-The Knowledge Base portlet provides administrators with a more formal way to create and organize articles than the Wiki. Administrators can create article templates which can be used to create articles that share a common structure. Knowledge base articles are easy to categorize hierarchically which makes them easy to browse and search. The Knowledge Base Article portlet can be used to display a single article and the Knowledge Base Section portlet can be configured to display a group of articles that belong to the same section. 
-
-Liferay's Documents and Media portlet allows users to store information online in the same type of directory structure that they use locally. The Documents and Media library supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Documents and Media library. Liferay Sync allows you to access Documents and Media files without using a browser. You can even access files offline. When online, Liferay Sync automatically syncs with the Documents and Media repository, uploading files you've modified and pulling down changes from others.
-
-Tying all of these applications together are tags and categories. Tags can be added to any content by end users, and hierarchies of categories can be added to the system by administrators to be applied to content anywhere in the portal. These help your users to find the content that is most relevant to them, empowering the search to be as accurate as possible.
--->
 
 Liferay's collaboration platform is a full suite of integrated applications that empower users to work together. You can use them to great effect to enhance your portal and to build a vibrant, active community. 
