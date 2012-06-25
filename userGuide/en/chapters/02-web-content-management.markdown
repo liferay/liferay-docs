@@ -1,6 +1,6 @@
 # Using Liferay Web Content Management [](id=using-liferay-web-content-management)
 
-Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface, and it helps you to keep your site fresh. You'll find yourself easily creating, editing, and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content "pop" with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content. 
+Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface and it helps you to keep your site fresh. You'll find yourself easily creating, editing and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content "pop" with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content. 
 
 In this chapter, we'll cover the following topics: 
 
@@ -10,12 +10,12 @@ In this chapter, we'll cover the following topics:
 - Permissions
 - Workflow
 
-As you'll see, Liferay's WCM is a full-featured solution for managing your web site. We'll start with an overview of what it has to offer, and then we'll dive down into its features. 
+As you'll see, Liferay's WCM is a full-featured solution for managing your web site. We'll start with an overview of what it has to offer and then we'll dive down into its features. 
 
 <!-- Section i of new outline   -->
 ## How Can Liferay's WCM Help You? [](id=how-can-liferay-s-wcm-help-you-)
 
-With Liferay's WCM you have the ability to create, edit, stage, publish, and approve content with easy to learn yet powerful tools. Liferay's WCM streamlines site changes for the end user versus doing a site in HTML. Some ways Liferay WCM makes this possible include:
+With Liferay's WCM you have the ability to create, edit, stage, publish and approve content with easy to learn yet powerful tools. Liferay's WCM streamlines site changes for the end user versus doing a site in HTML. Some ways Liferay WCM makes this possible include:
 
 -   Once set up, non-technical users can manage the site.
 -   Liferay's fine-grained permissions system ensures your content gets to the right users.
@@ -23,9 +23,9 @@ With Liferay's WCM you have the ability to create, edit, stage, publish, and app
 -   Content can be staged.
 -   Content can be passed through a workflow.
 -   Content can be published on a schedule.
--   WCM is integrated with Liferay's services, so advanced template developers can use them to query for data stored elsewhere in Liferay.
+-   WCM is integrated with Liferay's services so advanced template developers can use them to query for data stored elsewhere in Liferay.
 
-Once you get familiar with Liferay WCM, you'll wonder how you ever got along without it.  
+Once you get familiar with Liferay WCM you'll wonder how you ever got along without it.  
 
 ### What Features Does Liferay WCM Have? [](id=lp-6-1-ugen03-what-features-does-liferay-wcm-have-0)
 
@@ -52,7 +52,7 @@ Liferay's Web Content Management is a powerful and robust tool for creating and 
 <!-- Section ii of new outline  -->
 # Creating sites and managing pages [](id=managing-pages-in-liferay-portal)
 
-With most products, you would learn what the software can do in terms of setting up your users and security model, and then start building your system. You'd design your infrastructure and get your server environment up and running while your developers write the applications that live on your web site. With Liferay Portal, however, you start farther ahead. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go and integrated with all the user management and security features you've already learned about.
+With most products, you would learn what the software can do in terms of setting up your users and security model and then start building your system. You'd design your infrastructure and get your server environment up and running while your developers write the applications that live on your web site. With Liferay Portal, however, you start farther ahead. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go and integrated with all the user management and security features you've already learned about.
 
 Perhaps the key application that ships with Liferay is Liferay's Web Content Management system (WCM). We call it the key application because it's the one that almost everybody uses and all web sites have content. Liferay's WCM empowers you to manage all the content on your site quickly, easily and in the browser. Beyond managing existing content, Liferay WCM lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal's larger collection of applications, which means that you can add shopping cart functionality, visitor polls, web forms, site collaboration tools and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and an intuitive interface.
 
