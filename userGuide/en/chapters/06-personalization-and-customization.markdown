@@ -1,3 +1,19 @@
+<!--
+# Personalization, Collaboration tools, and social networking
+-->
+
+<!-- section headers for Personalization & customization
+
+There seems to be significant content missing from this chapter.
+
+# Personalization and customization
+## User  site
+## User public site
+## Automatic personalization of content (via rules integration)
+## Setting preferences to customize applications
+
+-->
+
 # Drools [](id=drools)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)

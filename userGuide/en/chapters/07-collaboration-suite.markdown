@@ -1,17 +1,18 @@
 # Liferay Collaboration Suite [](id=liferay-collaboration-sui-4)
 
-Liferay Portal ships with a robust suite of collaboration applications which you can use to build communities of users for your site. These applications provide all the features that you would expect of standalone versions outside of a portal setting. The difference with Liferay's collaboration suite, however, is that all of the applications share a common look and feel, security model, and architecture. They inherit the strengths of being part of Liferay's development platform so you can use them in combination with Liferay's user management and content management features to build a well-integrated, feature-rich web site.
+Liferay Portal ships with a robust suite of collaboration applications which you can use to build communities of users for your site. These applications provide all the features that you would expect of standalone versions outside of a portal setting. The difference with Liferay's collaboration suite, however, is that all of the applications share a common look and feel, security model and architecture. They inherit the strengths of being part of Liferay's development platform so you can use them in combination with Liferay's user management and content management features to build a well-integrated, feature-rich web site.
 
 This chapter focuses on how to use Liferay's collaboration suite. We explain how to set up and administer:
 
 -   Blogs
 -   Calendars
--   Chat
--   Mail
 -   Message Boards
 -   Wikis
--   Knowledge Base Articles
--   Documents and Media Libraries
+<!--
+-  Polls
+-->
+-   Chat
+-   Mail
 
 We'll discuss how these features work together to facilitate information flow within your portal and provide an enhanced experience for your users.
 
@@ -105,7 +106,7 @@ The final sub-tab of the *Sharing* tab is called *Friends*. This tab has a singl
 
 Now that we've seen all the common options available in Liferay's portlet applications, we can move on to specific applications, starting with blogs.
 
-## Blogs [](id=blo-4)
+## Expressing yourself using Blogs [](id=blo-4)
 
 The word *Blog* is an apostrophe-less contraction of the two words *web* and *log*. Blogs were first popularized by web sites such as Slashdot ([http://slashdot.org](http://slashdot.org)) which have the format of a running list of entries to which users could attach comments. Over time, more and more sites such as Digg, del.icio.us, and Newsvine adopted the format, empowering users to share their opinions and generating lively discussions.
 
@@ -239,7 +240,7 @@ Note that it's only for batch processing of blog entries; for the full set of to
 
 We've already talked a little bit about connecting content across the portal by using Related Assets; now let's take a look at the Related Assets portlet.
 
-## Calendar [](id=calend-4)
+## Organizing and sharing events with the Calendar [](id=calend-4)
 
 Liferay's Calendar portlet is a complete calendaring solution. You can schedule any number of events of different types, receive alarms via email or text message, import and export your calendar, and much more. Additionally, you can import and export the calendar to and from the popular iCalendar format for use in other applications.
 
@@ -303,100 +304,9 @@ Now you are ready to begin using your calendar. Click the *Add Event* button. A 
 
 When you have finished adding your event, click *Save*. You can view calendar events by day, week, month, year, or in a simple list. 
 
-As you can see, the Calendar portlet is easy to use and convenient for users of the portal. Next, we'll look at how Liferay handles live chat. 
+As you can see, the Calendar portlet is easy to use and convenient for users of the portal. Next, let's look at one of the most widely used applications provided by Liferay: its message boards.
 
-## Chat [](id=ch-4)
-
-Liferay's Chat portlet provides a convenient way of allowing users to send each other instant messages when they are logged into your web site. It appears as a bar at the bottom of every page, showing who is logged on, their statuses, and any chats the logged-in user has open.
-
-![Figure 4.13: Liferay's Chat Portlet](../../images/05-liferay-chat-portlet.jpg)
-
-The Chat portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Chat portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the Chat portlet in the list, click on it, and then click *Install*.
-
-The Chat portlet is very simple to use. To change the settings, click *Settings* (found near the lower right corner next to *Online Friends*). Here you can set your status, choose whether or not to show that you are online, and whether or not to play a sound if someone sends you a message while you have the window or tab in the background. The Chat portlet displays the number of your friends who are online. Click the *Online Friends* link and then click on a friend's name to open a chat window. You can have multiple chats open at a time, and can have one or more of them minimized.
-
-### Jabber Server Integration [](id=lp-6-1-ugen04-jabber-server-integration-0)
-
-Liferay 6.1 introduced Jabber server integration to Liferay's Chat portlet. Jabber is the original name of the XMPP (Extensible Messaging and Presence Protocol) protocol, an open-standard communications protocol based on XML. Using a chat server helps Liferay's chat scale to very large installations and allows for communication between different chat clients. For example, Jabber server integration allows users using the chat portlet in their browser windows to chat with other users using desktop clients like Empathy, Pidgin, or Kopete. 
-
-Jabber server integration is not enabled by default since it requires a running Jabber server. Once you have installed and started a Jabber server, you can enable Jabber server integration by creating a `portlet-ext.properties` file to override some properties of your Chat portlet's `portlet.properties` file. You could modify your Chat portlet's `portlet.properties` file directly, but it's a best practice to override it instead.
-
-#### Installation Steps [](id=lp-6-1-ugen04-installation-steps-0)
-
-You can use any chat server that supports Jabber. The Chat portlet's Jabber server integration feature was tested with versions 3.7.0 and 3.7.1 of Openfire, a real time collaboration server distributed under the Open Source Apache License. You can download Openfire from [http://www.igniterealtime.org/projects/openfire/](http://www.igniterealtime.org/projects/openfire/). To enable Jabber chat integration, follow these steps:
-
-1. Start your chat server. If you are using Openfire on a Linux/Mac system, you can start/stop the chat server by executing the openfire shell script in the `openfire/bin` directory. Usage: `./openfire start` or `./openfire stop`
-
-2. Override the `portlet.properties` file in your /chat-portlet/WEB-INF/src/ directory with a `portlet-ext.properties` file in the same directory. When you deploy the portlet, the properties files should be copied to your /chat-portlet/WEB-INF/classes/ directory. If you have already deployed the Chat portlet, create the `portlet-ext.properties` file in your /chat-portlet/WEB-INF/classes/ directory. The contents of your `portlet-ext.properties` file should like this:
-
-	jabber.enabled=true 
-	jabber.import.user.enabled=true
-	jabber.host=localhost
-	jabber.port=5222   
-	jabber.service.name=<Host Name>
-	jabber.resource=Liferay    
-	jabber.sock5.proxy.enabled=false
-	jabber.sock5.proxy.port=-1
-
-Note that you must change `jabber.service.name` to the "Host Name". If you are using Openfire, you can find the Host Name by using the Openfire administration web tool. If you did not set up administrative credentials when you started Openfire, the default credentials are username: admin, password: admin.
-
-![Figure 4.14: Openfire Administration Web Tool](../../images/jabber.service.name.png)
-
-Additionally, make sure that you set `jabber.enabled` to `true` and have added the correct values to `jabber.host` and `jabber.port`. If you installed your chat server on a remote machine or chose to not use the default port, change `jabber.host` and `jabber.port` accordingly.
-
-3. Deploy your Chat portlet. Remember that this portlet must be of version 6.1 or higher.
-
-#### Single Sign On [](id=lp-6-1-ugen04-single-sign-on-0)
-
-If the property `jabber.import.user.enabled` is set to `true`, the Chat portlet will import the user automatically to Jabber after he logs in to the portal. Once the user is imported, he can use any Jabber client using the same screen name and password he uses to log in to the portal. His buddies will be also imported as they become online in the Chat portlet.
-
-Note that it's a "lazy import". Users are imported only after they log in to the portal and their buddies will be added to his list only if they see each other within the Chat portlet. They won't be able to use other Jabber chat clients until they log in to the portal.
-
-If `jabber.import.user.enabled` is set to `false`, users need to create their Jabber account and add buddies manually. They have to create their accounts using the same screen name and password they use in the portal. If they don't, the Chat portlet won't be able to connect to their Jabber account.
-
-Alternatively, since Openfire integrates with LDAP, if you are using Openfire and your portal is also using LDAP for authentication, you can disable the `jabber.import.user.enabled` property.
-
-Next, let's look at how you can integrate your email addresses with Lifray's Mail portlet.
-
-## Mail [](id=ma-4)
-
-Liferay's Mail portlet enables your users to interact with their email using an easy to use, ubiquitous web interface. If your mail system supports the IMAP protocol, you can use the Mail portlet to integrate your users' mail with the rest of your web site. You can also connect the Mail portlet to a mail account provided by Google.
-
-The Mail portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Mail portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the *Mail* portlet in the list, click on it, and then click *Install*.
-
-![Figure 4.15: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
-
-To connect the Mail portlet with an email account, click the *Add a New Email Account* link. From there, you are given a choice between a Custom email Account or a Gmail Account. Choose the option that you wish, and fill out the form that appears.
-
-For a Gmail account, all you need to do is provide your email address and your password, and the portlet will take care of the rest.
-
-For a Custom Mail Account, the following fields are necessary:
-
-**Address**: lets you enter the email address which receives mail for this account.
-
-**Login**: lets you choose a user name for logging into the account.
-
-**Password**: lets you choose a password for logging into the account.
-
-**Incoming Settings**: allows you to specify the host name for your IMAP (Internet Mail Access Protocol) or POP server.
-
-**Incoming Port**: allows you to specify the port upon which the IMAP or POP service is running.
-
-**Use Secure Incoming Connection**: allows you to use an encrypted connection to the server provided that your server supports it.
-
-**Outgoing SMTP Server**: lets you enter the host name of your SMTP (Simple Mail Transfer Protocol) server.
-
-**Outgoing Port**: allows you to specify the port upon which the SMTP service is running.
-
-**Use Secure Outgoing Connection**: allows you to use an encrypted connection to the server provided that your server supports it.
-
-When finished, click *Save*. Your new email account now appears as a tab at the top of the page along with the button for adding a mail account. In this way, you can add as many mail accounts as you want in order to view them in the portlet.
-
-Click the tab for the mail account you just configured to be brought to an interface which allows you to read your mail and compose new messages. To read a message, click on it. To compose a new message, click the *Compose Email* link on the left side of the portlet. A form appears which allows you to compose an email message using the same rich text editor that appears everywhere else in Liferay. You can read, reply, and create messages, as well as manage all of your folders in Liferay's Mail portlet. 
-
-The Mail portlet is a great way to integrate a familiar service with other the collaboration features that Liferay provides. Next, let's look at one of the most widely used applications provided by Liferay: its message boards.
-
-## Message Boards [](id=message-boar-4)
+## Discuss, ask and answer using the Message Boards [](id=message-boar-4)
 
 Liferay's Message Boards portlet is a state of the art forum application similar to many forums in which you may have participated. The difference, of course, is that Liferay's message boards can inherit the abilities of the Liferay development platform to provide an integrated experience that others cannot match.
 
@@ -599,7 +509,7 @@ Administrative users can edit anyone's posts, not just their own. Sometimes user
 
 Permissions can be set not only on threads, but also on individual posts. You can choose to limit a particular conversation or a post to only a select group of people. To do this, click the *Permissions* link on the post and then select among the *Delete, Permissions, Subscribe, Update, and View* permissions for the particular role to which you want to grant particular access. This function can be used, for example, to allow some privileged users to post on a certain thread, while others are only allowed to view it. Other combinations of the above permissions are also possible. Next, let's discuss Liferay's Wiki portlet.
 
-## Wikis [](id=wik-4)
+## Working together with the Wiki [](id=wik-4)
 
 Liferay's Wiki portlet, like the Message Boards portlet, is a full-featured wiki application which has all of the features you would expect in a state of the art wiki. Again, though, it has the benefit of being able to take advantage of all of the features of the Liferay platform. As such, it is completely integrated with Liferay's user management, tagging, and security features.
 
@@ -739,6 +649,105 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 **Search:** allows you to a term here and click the *Search* button to search for items in the wiki. If the search term is not found, a link will be displayed which allows you to create a new wiki page on the topic for which you searched. 
 
+The Wiki portlet is another full-featured Liferay application with all of the features you expect from a state of the art wiki. Next, we'll look at how Liferay handles live chat.
+
+<!--
+The Polls section & head ref goes here?
+
+## Find out what others think or do using Polls
+-->
+
+## Staying in touch with the Chat [](id=ch-4)
+
+Liferay's Chat portlet provides a convenient way of allowing users to send each other instant messages when they are logged into your web site. It appears as a bar at the bottom of every page, showing who is logged on, their statuses, and any chats the logged-in user has open.
+
+![Figure 4.13: Liferay's Chat Portlet](../../images/05-liferay-chat-portlet.jpg)
+
+The Chat portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Chat portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the Chat portlet in the list, click on it, and then click *Install*.
+
+The Chat portlet is very simple to use. To change the settings, click *Settings* (found near the lower right corner next to *Online Friends*). Here you can set your status, choose whether or not to show that you are online, and whether or not to play a sound if someone sends you a message while you have the window or tab in the background. The Chat portlet displays the number of your friends who are online. Click the *Online Friends* link and then click on a friend's name to open a chat window. You can have multiple chats open at a time, and can have one or more of them minimized.
+
+### Jabber Server Integration [](id=lp-6-1-ugen04-jabber-server-integration-0)
+
+Liferay 6.1 introduced Jabber server integration to Liferay's Chat portlet. Jabber is the original name of the XMPP (Extensible Messaging and Presence Protocol) protocol, an open-standard communications protocol based on XML. Using a chat server helps Liferay's chat scale to very large installations and allows for communication between different chat clients. For example, Jabber server integration allows users using the chat portlet in their browser windows to chat with other users using desktop clients like Empathy, Pidgin, or Kopete. 
+
+Jabber server integration is not enabled by default since it requires a running Jabber server. Once you have installed and started a Jabber server, you can enable Jabber server integration by creating a `portlet-ext.properties` file to override some properties of your Chat portlet's `portlet.properties` file. You could modify your Chat portlet's `portlet.properties` file directly, but it's a best practice to override it instead.
+
+#### Installation Steps [](id=lp-6-1-ugen04-installation-steps-0)
+
+You can use any chat server that supports Jabber. The Chat portlet's Jabber server integration feature was tested with versions 3.7.0 and 3.7.1 of Openfire, a real time collaboration server distributed under the Open Source Apache License. You can download Openfire from [http://www.igniterealtime.org/projects/openfire/](http://www.igniterealtime.org/projects/openfire/). To enable Jabber chat integration, follow these steps:
+
+1. Start your chat server. If you are using Openfire on a Linux/Mac system, you can start/stop the chat server by executing the openfire shell script in the `openfire/bin` directory. Usage: `./openfire start` or `./openfire stop`
+
+2. Override the `portlet.properties` file in your /chat-portlet/WEB-INF/src/ directory with a `portlet-ext.properties` file in the same directory. When you deploy the portlet, the properties files should be copied to your /chat-portlet/WEB-INF/classes/ directory. If you have already deployed the Chat portlet, create the `portlet-ext.properties` file in your /chat-portlet/WEB-INF/classes/ directory. The contents of your `portlet-ext.properties` file should like this:
+
+	jabber.enabled=true 
+	jabber.import.user.enabled=true
+	jabber.host=localhost
+	jabber.port=5222   
+	jabber.service.name=<Host Name>
+	jabber.resource=Liferay    
+	jabber.sock5.proxy.enabled=false
+	jabber.sock5.proxy.port=-1
+
+Note that you must change `jabber.service.name` to the "Host Name". If you are using Openfire, you can find the Host Name by using the Openfire administration web tool. If you did not set up administrative credentials when you started Openfire, the default credentials are username: admin, password: admin.
+
+![Figure 4.14: Openfire Administration Web Tool](../../images/jabber.service.name.png)
+
+Additionally, make sure that you set `jabber.enabled` to `true` and have added the correct values to `jabber.host` and `jabber.port`. If you installed your chat server on a remote machine or chose to not use the default port, change `jabber.host` and `jabber.port` accordingly.
+
+3. Deploy your Chat portlet. Remember that this portlet must be of version 6.1 or higher.
+
+#### Single Sign On [](id=lp-6-1-ugen04-single-sign-on-0)
+
+If the property `jabber.import.user.enabled` is set to `true`, the Chat portlet will import the user automatically to Jabber after he logs in to the portal. Once the user is imported, he can use any Jabber client using the same screen name and password he uses to log in to the portal. His buddies will be also imported as they become online in the Chat portlet.
+
+Note that it's a "lazy import". Users are imported only after they log in to the portal and their buddies will be added to his list only if they see each other within the Chat portlet. They won't be able to use other Jabber chat clients until they log in to the portal.
+
+If `jabber.import.user.enabled` is set to `false`, users need to create their Jabber account and add buddies manually. They have to create their accounts using the same screen name and password they use in the portal. If they don't, the Chat portlet won't be able to connect to their Jabber account.
+
+Alternatively, since Openfire integrates with LDAP, if you are using Openfire and your portal is also using LDAP for authentication, you can disable the `jabber.import.user.enabled` property.
+
+Next, let's look at how you can integrate your email addresses with Lifray's Mail portlet.
+
+## Integrating your email with Liferay Mail [](id=ma-4)
+
+Liferay's Mail portlet enables your users to interact with their email using an easy to use, ubiquitous web interface. If your mail system supports the IMAP protocol, you can use the Mail portlet to integrate your users' mail with the rest of your web site. You can also connect the Mail portlet to a mail account provided by Google.
+
+The Mail portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Mail portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the *Mail* portlet in the list, click on it, and then click *Install*.
+
+![Figure 4.15: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
+
+To connect the Mail portlet with an email account, click the *Add a New Email Account* link. From there, you are given a choice between a Custom email Account or a Gmail Account. Choose the option that you wish, and fill out the form that appears.
+
+For a Gmail account, all you need to do is provide your email address and your password, and the portlet will take care of the rest.
+
+For a Custom Mail Account, the following fields are necessary:
+
+**Address**: lets you enter the email address which receives mail for this account.
+
+**Login**: lets you choose a user name for logging into the account.
+
+**Password**: lets you choose a password for logging into the account.
+
+**Incoming Settings**: allows you to specify the host name for your IMAP (Internet Mail Access Protocol) or POP server.
+
+**Incoming Port**: allows you to specify the port upon which the IMAP or POP service is running.
+
+**Use Secure Incoming Connection**: allows you to use an encrypted connection to the server provided that your server supports it.
+
+**Outgoing SMTP Server**: lets you enter the host name of your SMTP (Simple Mail Transfer Protocol) server.
+
+**Outgoing Port**: allows you to specify the port upon which the SMTP service is running.
+
+**Use Secure Outgoing Connection**: allows you to use an encrypted connection to the server provided that your server supports it.
+
+When finished, click *Save*. Your new email account now appears as a tab at the top of the page along with the button for adding a mail account. In this way, you can add as many mail accounts as you want in order to view them in the portlet.
+
+Click the tab for the mail account you just configured to be brought to an interface which allows you to read your mail and compose new messages. To read a message, click on it. To compose a new message, click the *Compose Email* link on the left side of the portlet. A form appears which allows you to compose an email message using the same rich text editor that appears everywhere else in Liferay. You can read, reply, and create messages, as well as manage all of your folders in Liferay's Mail portlet. 
+
+The Mail portlet is a great way to integrate a familiar service with other the collaboration features that Liferay provides. 
+
 ## Summary [](id=summ-26)
 
 We have explored many of the portlets in Liferay's collaboration suite. You have seen how you can configure all of the portlets in a similar fashion using a unified user interface. After this, we went over all of the portlets in succession.
@@ -747,16 +756,14 @@ The Blogs and Blogs Aggregation portlets can be used to manage shared blogs or b
 
 The Calendar portlet likewise can be used to manage a shared calendar or a group calendar. It includes features for events, event notification, repeatable events, and import and export to and from the standard iCalendar format.
 
-Integrating mail with your portal is easy with the Mail portlet. You can add as many custom or Gmail mail accounts as you wish, and this portlet can keep them all organized in one place, together with the rest of the things Liferay is aggregating for you.
-
 Discussion becomes easy with Liferay's Message Boards portlet. This portlet can be used to manage heavily trafficked discussion forums with ease. It inherits all of the security features of the Liferay platform and includes administrative functions for thread priorities, moving threads, nested discussion categories, banning users, and more.
 
 Liferay's Wiki portlet is a state of the art wiki application that users can make use of to collaborate on web pages. Again, it inherits the strengths of the Liferay platform in the form of security, interface, and search. You can use the wiki portlet to manage several wiki nodes or use many wiki portlets to manage one node each.
 
-The Knowledge Base portlet provides administrators with a more formal way to create and organize articles than the Wiki. Administrators can create article templates which can be used to create articles that share a common structure. Knowledge base articles are easy to categorize hierarchically which makes them easy to browse and search. The Knowledge Base Article portlet can be used to display a single article and the Knowledge Base Section portlet can be configured to display a group of articles that belong to the same section. 
+<!--
+No summary for Polls or Chat ??
+-->
 
-Liferay's Documents and Media portlet allows users to store information online in the same type of directory structure that they use locally. The Documents and Media library supports customizable document types and metadata sets. It also has a new API that is based on repositories. This allow multiple repositories to be mounted to a single Documents and Media library. Liferay Sync allows you to access Documents and Media files without using a browser. You can even access files offline. When online, Liferay Sync automatically syncs with the Documents and Media repository, uploading files you've modified and pulling down changes from others.
-
-Tying all of these applications together are tags and categories. Tags can be added to any content by end users, and hierarchies of categories can be added to the system by administrators to be applied to content anywhere in the portal. These help your users to find the content that is most relevant to them, empowering the search to be as accurate as possible.
+Integrating mail with your portal is easy with the Mail portlet. You can add as many custom or Gmail mail accounts as you wish, and this portlet can keep them all organized in one place, together with the rest of the things Liferay is aggregating for you.
 
 Liferay's collaboration platform is a full suite of integrated applications that empower users to work together. You can use them to great effect to enhance your portal and to build a vibrant, active community. 
