@@ -119,7 +119,7 @@ When using Liferay's Plugins SDK, these files are stored in a standard directory
 			-	liferay-plugin-package.properties
 			-	liferay-portlet.xml
 			-	portlet.xml
-			-	web.xml
+			-	web.xml (not created by default)
 		-	icon.png
 		-	view.jsp
 
@@ -244,7 +244,7 @@ Next, we will create our JSP templates. Start by editing `view.jsp`, found in yo
 
     <p><%= greeting %></p>
     <portlet:renderURL var="editGreetingURL">
-    <portlet:param name="jspPage" value="/edit.jsp" />
+    <portlet:param name="mvcPath" value="/edit.jsp" />
 
     </portlet:renderURL>
 
@@ -279,7 +279,7 @@ Next, create `edit.jsp` in the same directory as `view.jsp` with the following c
     %>
 
     <portlet:renderURL var="editGreetingURL">
-		<portlet:param name="jspPage" value="/edit.jsp" />
+		<portlet:param name="mvcPath" value="/edit.jsp" />
     </portlet:renderURL>
 
     <aui:form action="<%= editGreetingURL %>" method="post">
@@ -289,7 +289,7 @@ Next, create `edit.jsp` in the same directory as `view.jsp` with the following c
     </aui:form>
 
     <portlet:renderURL var="viewGreetingURL">
-		<portlet:param name="jspPage" value="/view.jsp" />
+		<portlet:param name="mvcPath" value="/view.jsp" />
     </portlet:renderURL>
 
     <p><a href="<%= viewGreetingURL %>">&larr; Back</a></p>
@@ -306,7 +306,7 @@ Deploy the portlet again in Developer Studio or by entering the command **ant de
 
 ---
 
-There are a few important details to notice in this implementation. First, the links between pages are created using the `<portlet:renderURL>` tag, which is defined by the `http://java.sun.com/portlet_2_0` tag library. These URLs have only one parameter named `jspPage`, which is used by MVCPortlet to determine which JSP to render for each request. You must always use taglibs to generate URLs to your portlet. This restriction exists because the portlet does not own the whole page, only a fragment of it, so the URL must always go to the portal responsible for rendering, not only your portlet but also any others that the user might put in the page. The portal will be able to interpret the taglib and create a URL with enough information to be able to render the whole page.
+There are a few important details to notice in this implementation. First, the links between pages are created using the `<portlet:renderURL>` tag, which is defined by the `http://java.sun.com/portlet_2_0` tag library. These URLs have only one parameter named `mvcPath`, which is used by MVCPortlet to determine which JSP to render for each request. You must always use taglibs to generate URLs to your portlet. This restriction exists because the portlet does not own the whole page, only a fragment of it, so the URL must always go to the portal responsible for rendering, not only your portlet but also any others that the user might put in the page. The portal will be able to interpret the taglib and create a URL with enough information to be able to render the whole page.
 
 Second, notice that the form in `edit.jsp` has the prefix `aui`, signifying that it is part of the Alloy UI tag library. Alloy greatly simplifies the code required to create nice looking and accessible forms, by providing tags that will render both the label and the field at once. You can also use regular HTML or any other taglibs to create forms based on your own preferences.
 
@@ -375,7 +375,7 @@ The file `portlet.xml` also needs to be changed so that it points to your new cl
 	<display-name>My Greeting</display-name>
 	<portlet-class>com.liferay.samples.MyGreetingPortlet</portlet-class>
 	<init-param>
-	    <name>view-jsp</name>
+	    <name>view-template</name>
 	    <value>/view.jsp</value>
 	</init-param>
 	...
@@ -406,7 +406,7 @@ So we must change the `edit.jsp` to use an *actionURL* by using the JSP tag of t
     %>
 
     <portlet:actionURL var="editGreetingURL">
-		<portlet:param name="jspPage" value="/edit.jsp" />
+		<portlet:param name="mvcPath" value="/edit.jsp" />
     </portlet:actionURL>
 
     <aui:form action="<%= editGreetingURL %>" method="post">
@@ -416,7 +416,7 @@ So we must change the `edit.jsp` to use an *actionURL* by using the JSP tag of t
     </aui:form>
 
     <portlet:renderURL var="viewGreetingURL">
-		<portlet:param name="jspPage" value="/view.jsp" />
+		<portlet:param name="mvcPath" value="/view.jsp" />
     </portlet:renderURL>
 
     <p><a href="<%= viewGreetingURL %>">&larr; Back</a></p>
@@ -476,7 +476,7 @@ The second way of passing information from the action phase to the render phase 
 		}
     }
 
-Also, in `view.jsp`, you would need to add the `liferay-ui:success` JSP tag as shown below (note that you also need to add the taglib declaration at the top):
+Also, in `view.jsp`, you would need to add the `liferay-ui:success` JSP tag and add the taglib declaration `<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>` along with the other declarations, as shown below:
 
 	<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
@@ -495,7 +495,7 @@ Also, in `view.jsp`, you would need to add the `liferay-ui:success` JSP tag as s
 
 	<p><%= greeting %></p>
 	<portlet:renderURL var="editGreetingURL">
-	<portlet:param name="jspPage" value="/edit.jsp" />
+	<portlet:param name="mvcPath" value="/edit.jsp" />
 
 	</portlet:renderURL>
 
@@ -528,7 +528,7 @@ The first message is automatically added by Liferay. The second one is the one y
 
 ## Developing a Portlet with Multiple Actions [](id=developing-a-portlet-with-multiple-actio-4)
 
-So far we have developed a portlet that has two different views, the default view and an edit view. Adding more views is easy and all you have to do to link to them is to use the `jspPage` parameter when creating the URL. But we only have one action. How do we add another action, for example for sending an email to the user?
+So far we have developed a portlet that has two different views, the default view and an edit view. Adding more views is easy and all you have to do to link to them is to use the `mvcPath` parameter when creating the URL. But we only have one action. How do we add another action, for example for sending an email to the user?
 
 You can have as many actions as you want in a portlet, each of them needs to be implemented as a method that receives two parameters -- an `ActionRequest` and an `ActionResponse`. The name of the method can be whatever you want since you will be referring to it when creating the URL.
 
@@ -565,7 +565,7 @@ Note how we no longer need to invoke the `processAction` method of the super cla
 This change of name also requires a simple change in the URL, to specify the name of the method that should be invoked to execute the action. In the `edit.jsp` modify the `actionURL` so that it looks like this:
 
     <portlet:actionURL var="editGreetingURL" name="setGreeting">
-		<portlet:param name="jspPage" value="/edit.jsp" />
+		<portlet:param name="mvcPath" value="/edit.jsp" />
     </portlet:actionURL>
 
 That's it; now you know all the basics of portlets and are ready to use your Java knowledge to build portlets that get integrated in Liferay. The next section explains an extension to the portlet specification that Liferay provides to generate pretty URLs to your portlets.
@@ -574,21 +574,23 @@ That's it; now you know all the basics of portlets and are ready to use your Jav
 
 You will notice that when you click the *Edit greeting* link, you are taken to a page with a URL similar to this:
 
-    http://localhost:8080/web/guest/home?p_p_id=mygreeting_WAR_mygreetingportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&_mygreeting_WAR_mygreetingportlet_jspPage=%2Fedit.jsp
+    http://localhost:8080/web/guest/home?p_p_id=mygreeting_WAR_mygreetingportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&_mygreeting_WAR_mygreetingportlet_mvcPath=%2Fedit.jsp
     
 Since Liferay 6 there is a feature that requires minimal work to change this into:
 
     http://localhost:8080/web/guest/home/-/my-greeting/edit
     
-This feature, known as friendly URL mapping, takes unnecessary parameters out of the URL and allows you to place the important parameters in the URL path, rather than the query string. To add this functionality, first edit `liferay-portlet.xml` and add the following lines directly after `</icon>` and before `<instanceable>`. Be sure to remove the line breaks and the backslashes!
+This feature, known as friendly URL mapping, takes unnecessary parameters out of the URL and allows you to place the important parameters in the URL path, rather than the query string. To add this functionality, first edit `liferay-portlet.xml` and add the following lines directly after `</icon>` and before `<instanceable>`.
 
-    <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.Default\
-    FriendlyURLMapper</friendly-url-mapper-class>
+    <friendly-url-mapper-class>
+    	com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper
+    </friendly-url-mapper-class>
     <friendly-url-mapping>my-greeting</friendly-url-mapping>
-    <friendly-url-routes>com/sample/mygreeting/portlet/my-greeting-friendly-url\
-    -routes.xml</friendly-url-routes>
+    <friendly-url-routes>
+    	com/liferay/samples/my-greeting-friendly-url-routes.xml
+    </friendly-url-routes>
 
-Next, create the file (note the line break):
+Next, create the file (remove the line break):
 
     my-greeting-portlet/docroot/WEB-INF/src/com/liferay/samples/my\
     -greeting-friendly-url-routes.xml
@@ -601,8 +603,8 @@ Create new directories as necessary. Place the following content into the new fi
 
 	<routes>
 		<route>
-			<pattern>/{jspPageName}</pattern>
-			<generated-parameter name="jspPage">/{jspPageName}.jsp</generated-parameter>
+			<pattern>/{mvcPathName}</pattern>
+			<generated-parameter name="mvcPath">/{mvcPathName}.jsp</generated-parameter>
 		</route>
 	</routes>
 
