@@ -7,7 +7,7 @@ old ch. 13
 
 # Workflow with Kaleo [](id=workflow-with-kal-3)
 
-Liferay Portal includes a workflow engine called Kaleo. In Greek, this word means "called ones," which is appropriate for a workflow engine that calls users to participate in a process that has been designed for them.
+Liferay Portal includes a workflow engine called Kaleo. In Greek, this word means "called ones," which is appropriate for a workflow engine that calls users to participate in a process designed for them.
 
 Kaleo workflow allows a user to define any number of simple to complex business processes/workflows, deploy them and manage them through a portal interface. Those processes have knowledge of users, groups and roles. You don't have to write a single line of code to accomplish this: all you have to do is create a single XML document. And if you're a Liferay EE customer, you get a graphical workflow designer which gives you a point and click interface to create workflows. 
 
@@ -35,7 +35,7 @@ Liferay's Kaleo workflow engine ships with CE versions of Liferay. If you have E
 -   My Submissions
 -   Workflow
 
-There is one workflow that comes bundled with the `kaleo-web` plugin: Single Approver Workflow. This workflow requires one approval before an asset can be published. One of the conveniences of using Liferay's workflow engine is that any roles that are specified in the workflow definition are created automatically when the definition is deployed. This provides a level of integration with the portal that third party engines cannot match. The Single Approver Workflow contains three roles each with different scopes. The scope of each role can be deduced by their names: Site Content Reviewer, Organization Content Reviewer and Portal Content Reviewer. 
+There is one workflow that comes bundled with the `kaleo-web` plugin: Single Approver Workflow. This workflow requires one approval before an asset can be published. One of the conveniences of using Liferay's workflow engine is that any roles specified in the workflow definition are created automatically when the definition is deployed. This provides a level of integration with the portal that third party engines cannot match. The Single Approver Workflow contains three roles each with different scopes. The scope of each role can be deduced by their names: Site Content Reviewer, Organization Content Reviewer and Portal Content Reviewer. 
 
 Let's jump right in and create a workflow process definition. 
 
@@ -59,7 +59,7 @@ Let's look in detail at how you'd create a workflow using a single approver.
 
 Below is a diagram of a single approver workflow definition. It has only two tasks and two states.  
 
-![Figure 6.1: The default single approver workflow. Arrows represent transitions, and boxes represent states and tasks.](../../images/kaleo-workflow-single-approver.png)
+![Figure 6.1: The default single approver workflow. Arrows represent transitions and boxes represent states and tasks.](../../images/kaleo-workflow-single-approver.png)
 
 First you define the schema. For Liferay workflows using Kaleo, `liferay-worklow-definition-6_1_0.xsd` should be your schema. You can find this schema in the `definitions` folder of the Liferay source or a good XML editor can cache it from Liferay's web site.
 
@@ -108,7 +108,7 @@ The task has several parts and is the most complex part of the definition. Tasks
 
 The first task listed in the `single-approver-definition.xml` workflow definition is the *update* task. Though it appears first in the file, it's actually not the first task in the workflow. The *update* task is the task that's assigned by the workflow if the asset is rejected by an approver. It's listed first because it's the default task: when this task is triggered, the workflow process is reset back to the beginning. In this task, the asset is assigned back to the content creator, who receives an email notification and is required to resubmit the asset. Once the task is resubmitted, it goes back to the review stage.
 
-You can also see that the task is assigned to `<user/>`. This tag always assigns the task back to the user who created the asset.
+You can also see the task is assigned to `<user/>`. This tag always assigns the task back to the user who created the asset.
 
     <task>
 	<name>update</name>
@@ -159,7 +159,7 @@ Notifications need an `execution-type` which can be `onAssignment`, `onEntry` or
 -   `onEntry` generates and sends the notification when entering the workflow task or state.
 -   `onExit` generates and sends the notification when exiting the workflow task or state.
 
-Notifications also need a `notification-type` which can be `email`, `im` or `private-message`. Note that the `private-message` type is a placeholder for now; that functionality is in Liferay's Social Office product but has not yet been integrated into Liferay Portal. Your notification type and execution type should complement each other. You wouldn't want to use an `onExit` execution type with a private message, because the user won't receive that message until he or she logs back in. Generally speaking, email notifications work best with `onExit` or `onAssignment`, while IM or private message work better with `onEntry`.
+Notifications also need a `notification-type` which can be `email`, `im` or `private-message`. Note the `private-message` type is a placeholder for now; that functionality is in Liferay's Social Office product but has not yet been integrated into Liferay Portal. Your notification type and execution type should complement each other. You wouldn't want to use an `onExit` execution type with a private message, because the user won't receive that message until he or she logs back in. Generally speaking, email notifications work best with `onExit` or `onAssignment`, while IM or private message work better with `onEntry`.
 
 Email and private message notifications can also be created as plain text or you can create formatted content using Freemarker or Velocity templating languages. When creating the notification, you need to specify the `template-language` as `text`, `freemarker` or `velocity`.
 
@@ -222,7 +222,7 @@ In this case, you only need a single approver, then the transition goes to the f
 	</transitions>
     </task>
 
-Finally, we define our end state. Remember that states automatically run all actions that are assigned to them, so a script executes and sets the state of the content to *approved*. Workflow scripts are completely contained within XML workflow definitions.
+Finally, we define our end state. Remember states automatically run all actions that are assigned to them, so a script executes and sets the state of the content to *approved*. Workflow scripts are completely contained within XML workflow definitions.
 
 You could also write a customized script if there were actions outside the standard one that you need to perform on your asset. The script below, written in JavaScript, sets the status of the asset to *approved*. Of course, there's much more you can do with scripts. You don't even have to use JavaScript: if you want, you can change the `<script-language>` to another supported language (Ruby, Groovy or Python) and rewrite the action with additional details to meet your needs.
 
@@ -246,13 +246,13 @@ You can also use *forks* and *joins* to create more complex workflows.
 
 ### Using forks and joins [](id=lp-6-1-ugen06-using-forks-and-joins-0)
 
-Forks and joins are used for parallel processing. For example, say you have a new offer you'd like to put up on your site but it needs to go through both the sales manager and the marketing manager first. You can set up a workflow that notifies both managers at the same time so that they can approve them individually. This way, you're not waiting for one manager's approval before you can send the notification to the other manager. The below illustration shows how a workflow with a fork and a join might be designed. 
+Forks and joins are used for parallel processing. For example, say you have a new offer you'd like to put up on your site but it needs to go through both the sales manager and the marketing manager first. You can set up a workflow that notifies both managers at the same time so they can approve them individually. This way, you're not waiting for one manager's approval before you can send the notification to the other manager. The below illustration shows how a workflow with a fork and a join might be designed. 
 
 <!-- | TODO - I deleted the original one... -->
 
 ![Figure 6.2: Parallel Approval Design](../../images/kaleo-workflow-parallel-approval.png)
 
-You can transition to a fork from a task or state. From the fork, you can transition to multiple tasks or states which occur in parallel. In the previous example, when we have multiple transitions from one task, they're mutually exclusive: you either trigger one or the other. The transitions are also serial, meaning that one must occur before the next one can occur. With a parallel workflow, you can have different approvals going through different users at the same time. For example, you could use this to separate two different departments' approval chains on a single asset. A fork should be formatted like this:
+You can transition to a fork from a task or state. From the fork, you can transition to multiple tasks or states which occur in parallel. In the previous example, when we have multiple transitions from one task, they're mutually exclusive: you either trigger one or the other. The transitions are also serial, meaning one must occur before the next one can occur. With a parallel workflow, you can have different approvals going through different users at the same time. For example, you could use this to separate two different departments' approval chains on a single asset. A fork should be formatted like this:
 
     <fork>
 		<name>review_fork</name>
@@ -281,13 +281,13 @@ To bring a fork back together, transition both nodes of the fork back to a singl
 		</transitions>
 	</join>
 
-Another important consideration when creating parallel approvals is that each node needs its own "rejected" state for cases where content is approved in one node but rejected in another. Another feature that you can use in custom workflows along with forks and joins is Timers. While using parallel workflow enables you to speed up your process by getting content in front more people at once, instead of making them wait in line, timers allow you to add some urgency to the process.
+Another important consideration when creating parallel approvals is each node needs its own "rejected" state for cases where content is approved in one node but rejected in another. Another feature you can use in custom workflows along with forks and joins is Timers. While using parallel workflow enables you to speed up your process by getting content in front more people at once, instead of making them wait in line, timers allow you to add some urgency to the process.
 	
 <!-- | TODO I accidentally removed this one too -->
 
 ### Timers [](id=lp-6-1-ugen06-timers-0)
 
-**Timers** are a new workflow feature in 6.1, which help make sure that important tasks in a workflow aren't forgotten or left undone because of an oversight or the absence of someone on the critical path. The basic concept of the timer is that after a period of time specified, a specific action occurs. There are two main elements for a Timer, the **Task Timer** and the **Timer Action**.
+**Timers** are a new workflow feature in 6.1, which help make sure important tasks in a workflow aren't forgotten or left undone because of an oversight or the absence of someone on the critical path. The basic concept of the timer is that after a period of time specified, a specific action occurs. There are two main elements for a Timer, the **Task Timer** and the **Timer Action**.
 
 Timers occur within a Task element and are formatted like:
 
@@ -310,7 +310,7 @@ Timers occur within a Task element and are formatted like:
 		
 The outer element is <task-timers> because you can have multiple timers with multiple actions. The specific <task-timer> then contains the element <delay> which has a <duration> and <scale>. The duration can be any number, whole or fractional, and it's significance is defined by the scale. The scale tells you what unit of time the duration is talking about - seconds, minutes, hours, days, weeks, months or years. Once you've determined the time, you'll want to pick an action - either a notification, reassignment or a custom script.
 
-Notifications are pretty simple - if a certain amount of time passes and an action isn't completed yet, the user assigned to the task will receive a fresh notification. With the timer, you have all of the standard notification types available, and you can choose a different notification type than was used for the original notifcation. For example, you could create a definition such that when a new item is submitted to the workflow, all members of the *Content Reviewer* role receive a notification. You could then use a timer to say that if the content hasn't been reviewed within two hours each member of the *Content Reviewer* role will receive a second notification via instant messenger.
+Notifications are pretty simple - if a certain amount of time passes and an action isn't completed yet, the user assigned to the task will receive a fresh notification. With the timer, you have all of the standard notification types available and you can choose a different notification type than was used for the original notifcation. For example, you could create a definition such that when a new item is submitted to the workflow, all members of the *Content Reviewer* role receive a notification. You could then use a timer to say if the content hasn't been reviewed within two hours each member of the *Content Reviewer* role will receive a second notification via instant messenger.
 
 A Notification would be formatted like this:
 
@@ -359,7 +359,7 @@ Obviously we can't think of eveything, so if you have an idea for using timers i
 For more information on using scripting in Liferay see Chapter 13: Script Engine.
 <!--  Ch. 18??  -->
 
-Using workflows and approvals is necessary for virtually any organization, and timers are an excellent way to help mitigate the potential headaches caused by having multiple bottlenecks through the process. Using timers in conjunction with other workflow features can help you create powerful workflows for your organization.
+Using workflows and approvals is necessary for virtually any organization and timers are an excellent way to help mitigate the potential headaches caused by having multiple bottlenecks through the process. Using timers in conjunction with other workflow features can help you create powerful workflows for your organization.
 
 ### Putting it all together [](id=lp-6-1-ugen06-putting-it-all-together-0)
 
@@ -367,7 +367,7 @@ The Kaleo workflow engine is deeply integrated with Liferay Portal. It can gener
 
 Users are the most important part of the workflow, since they're the ones who do all the work. To make a user a part of the workflow process, you assign them a role which you defined in your workflow . When you're creating your workflow definition, you can create new roles by defining them in the XML file or by using roles which you have already created in your portal. Roles created automatically are always portal scoped, so if you want to use site or organization scoped roles, create the roles before deploying your workflow to the portal.
 
-A portal administrator can create a default workflow definition scheme for each application which applies for the entire portal, and site and organization administrators can customize the settings for their sites and organizations. 
+A portal administrator can create a default workflow definition scheme for each application which applies for the entire portal and site and organization administrators can customize the settings for their sites and organizations. 
 
 Let's turn from creating definitions to how you'd use them. 
 
@@ -390,7 +390,7 @@ Clicking on *Submissions* will let you view any currently pending assets or any 
 
 ### Configuring workflow [](id=lp-6-1-ugen06-configuring-workflow-0)
 
-After you have uploaded workflow definitions and set the default workflow behavior you can go up to *Workflow Configuration* and tweak the definitions that you're using for each site individually.
+After you have uploaded workflow definitions and set the default workflow behavior you can go up to *Workflow Configuration* and tweak the definitions you're using for each site individually.
 
 ![Figure 6.4: The Workflow Configuration Page](../../images/kaleo-workflow-configuration.png)
 
@@ -413,11 +413,11 @@ My Workflow Tasks is a personalized version of the Workflow Tasks and it's found
 
 ![Figure 6.5: My Workflow Tasks Page](../../images/kaleo-workflow-my-tasks.png)
 
-It's here that workflow users review and approve content. By clicking on the actions next to a piece of content, a user can view that content and then choose to approve or reject it and add comments. 
+It's here workflow users review and approve content. By clicking on the actions next to a piece of content, a user can view the content, then choose to approve or reject it and add comments. 
 
 ### My Submissions [](id=lp-6-1-ugen06-my-submissions-0)
 
-My Submissions is found under your user's personal information in the control panel. From this screen you can view any assets that you have submitted to review. Those that are currently under review are listed under the *Pending* tab and those that have gone through the review process are listed under the *Completed* tab.
+My Submissions is found under your user's personal information in the control panel. From this screen you can view any assets  you have submitted to review. Those currently under review are listed under the *Pending* tab and those that have been reviewed are listed under the *Completed* tab.
 
 ![Figure 6.6: The My Submissions Page](../../images/kaleo-workflow-my-submissions.png)
 
@@ -433,7 +433,7 @@ To demonstrate how this works, we'll create a press release. Press releases shou
 
 Next, create two users, a Content Creator and a Content Reviewer. The Content Creator logs in and creates a new press release for Nose-ster and clicks *Submit for Publication*. This triggers the workflow process and notifies the Content Reviewer. When the Content Reviewer logs in, he or she can assign the workflow task to him- or herself and approve the content.
 
-![Figure 6.8: Before a Content Reviewer can approve content, he must assign it to himself, or have an administrator assign it to him.](../../images/kaleo-workflow-assign-to-me.png)
+![Figure 6.8: Before a Content Reviewer can approve content, he must assign it to himself or have an administrator assign it to him.](../../images/kaleo-workflow-assign-to-me.png)
 
 Once the content is approved, it can be posted on the Press Releases page in a web content display portlet. 
 
