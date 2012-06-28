@@ -291,7 +291,7 @@ Click on the *Open site template* link to begin adding pages and portlets and co
 
 Now let's create the Engineering, Marketing, and Legal organizations whose sites we want to create with our template. Go to the control panel and click *Users and Organizations*. Then click the *Add* button and select *Regular Organization*. Enter a name for your organization, select the *Organization site* tab and check the *Create Site* box. When you check this box, two drop-down lists appear: one for the site's Public Pages and one for its Private Pages. To use your template to create the site, select the name of your template, *Organization Site*, from the Private Pages drop-down list. Click *Save* to create your site.  You can view the new site by clicking the *Open private pages* link from the newly created organization page. The new site will have all the pages and portlets you created in the template. This feature streamlines the site creation process for administrators, making it easy to create sites quickly. Next, let's discuss how to create and apply page templates.
 
-## Using page template [](id=lp-6-1-ugen12-page-templates-0)
+## Using page templates [](id=lp-6-1-ugen12-page-templates-0)
 
 Page templates function similarly to site templates but at the page level. Page templates provide a pre-configured page to reuse. Within a page template it is possible to set up a theme, a layout and specific applications and their configuration. Both sites and site templates can utilize page templates for creating new pages.
 
