@@ -1,4 +1,4 @@
-# Using Audit Trails [](id=using-audit-trails)
+# Advanced Portal Operation [](id=using-audit-trails)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
@@ -132,7 +132,7 @@ Tom and Dick back away slowly from Melvin's cube as Harry and Melvin continue to
 
 <!-- needs transition -->
 
-# Maintaining A Liferay Portal [](id=maintaining-a-liferay-port-5)
+## Maintaining A Liferay Portal [](id=maintaining-a-liferay-port-5)
 
 It's not much harder to maintain a running implementation of Liferay Portal than it is to maintain the application server environment upon which it is running. There are, however, several factors which administrators should be aware of when they are responsible for a running instance of Liferay. This chapter addresses these issues and outlines some specifics about how to keep a running Liferay instance stable and secure.
 
@@ -417,3 +417,4 @@ Liferay Portal is an easy environment to maintain. Backup procedures are simple 
 Patching Liferay is easy to do with Liferay's patching tool. It handles for you all the management of available patches, and makes it easy to install and uninstall them. 
 
 Upgrading Liferay is also a snap, because Liferay does most of the work automatically. With easy migration tools and automated database upgrade scripts, you'll have your new version of Liferay Portal up and running in no time.
+

@@ -1,5 +1,6 @@
+# Advanced Web Content Management  [](id=lp-6-1-ugen03-advanced-web-content-management--0)
+
 <!-- Need intro. and a head ref here  -->
-# Advanced Web Content Management 
 
 ## Advanced content with structures and template [](id=lp-6-1-ugen03-advanced-content-creation-0)
 
@@ -27,7 +28,7 @@ Go back to the control panel and select *Web Content* from the Site section. Cli
 
 It's very easy to edit structures: all you have to do is drag elements into the structure and then give them names. For instance, select the *Checkbox* element under the *Form Controls* tab and drag it onto the structure. You can do the same with any of the elements. To remove it from the structure, simply select the *Delete* icon (black circle with X) in the upper right corner of the element. Take a moment to add, delete and rearrange different elements.
 
-![Figure 3.10: Structure Elements](../../images/04-web-content-structure-editor.png)
+![Figure 3.1: Structure Elements](../../images/04-web-content-structure-editor.png)
 
 Liferay supports the following elements in structures:
 
@@ -89,7 +90,7 @@ As with everything else in Liferay, you can set permissions on structures. Let's
 
 Setting permissions on structures is done using the same procedure as permissions everywhere else in Liferay. Most users should not have the ability to edit structures. Structures are coupled with templates, which require some web development knowledge to create. This is why only trusted developers should be able to create structures and templates. Users, of course, should be able to view structures. The View permission enables them to make use of the structures to create content.
 
-![Figure 3.11: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.2: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles and this is the recommended way to handle permissions for structures.  
 
@@ -117,7 +118,7 @@ Liferay supports templates written in four different templating languages, to su
 
 Liferay WCM makes it easy to create structures, templates and content from the same interface. Let's go through the entire flow of how you'd create a structure, link it to a template and then create content using them both. We'll use Velocity for our template and we'll lay out the structure fields systematically to go along with the format we've defined for our content.
 
-![Figure 3.12: Adding Template Interface](../../images/04-web-content-templates-create.png)
+![Figure 3.3: Adding Template Interface](../../images/04-web-content-templates-create.png)
 
 1.  Go back to the Web Content section of the control panel and click *Add* under *Web Content*.
 2.  Click the *Edit* icon for Structures.
@@ -167,9 +168,9 @@ After this, the template attempts to get a request parameter called `read_more`.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.13: Initial View](../../images/04-web-content-adv-example1.png)
+![Figure 3.4: Initial View](../../images/04-web-content-adv-example1.png)
 
-![Figure 3.14: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
+![Figure 3.5: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
 
 <!-- transition?   -->
 
@@ -321,7 +322,7 @@ If staging has been enabled, changes to the page template are automatically prop
 <!--  New transition here     -->
 
 ![EE Only Feature]
-### Exporting and Importing Site Templates and Page Templates
+### Exporting and Importing Site Templates and Page Templates [](id=lp-6-1-ugen03-exporting-and-importing-site-templates-and-page-templates-0)
 
 If you want to export a site that uses site or page Templates to a different environment (trough a LAR file or remote publication), the Templates must be exported and imported manually in advance or the import will fail.
 
@@ -351,11 +352,11 @@ Previous versions of Liferay had the ability to create and manage different tran
 
 When you create a new piece of Web Content, you have the ability to choose a default language. If you click *Change*, you can select your default language from a large number of languages that Liferay supports. Before you can create a translation, you must finish creating the content in your default language and save it. Once you've done that, editing the content provides you with the option to *Add Translation*.
 
-![Figure 3.5: Adding a translation](../../images/04-web-content-content-translation.png)
+![Figure 3.6: Adding a translation](../../images/04-web-content-content-translation.png)
 
 After you click *Add Translation*, you can select a language by scrolling through the list or by entering the language you want to use in the search box. When you select a language, a lightbox opens within your browser window enabling you to easily compare the original with the new translation. Once you are done with the translation, click *Save* and the translation is added to the list of *Available Translations*. 
 
-![Figure 3.6: Adding a translation](../../images/04-web-content-content-translation-2.png)
+![Figure 3.7: Adding a translation](../../images/04-web-content-content-translation-2.png)
 
 The ability to completely delete a translation in one step has also been added. Instead of simply disabling a translation or having to go through a multistep process to remove it, you can now simply open the translation that you don't want and click *Remove Translation*.
 
@@ -377,7 +378,7 @@ Additionally, you may want to create content and send it through a review and ap
 
 Liferay's WCM lets you define when your content goes live. You can determine when the content is displayed, expired and/or reviewed. This is an excellent to way to keep your site current and free from outdated (and perhaps incorrect) information. The scheduler is built right into the form that your users make use of to add web content, in the same column as the structure and template selectors.
 
-![Figure 3.15: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
+![Figure 3.8: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -411,7 +412,7 @@ First, you'll add a new page. Click *Add &rarr; Page* from the toolbar in the de
 
 Now we're ready to activate the staging feature for this site. Go to the control panel then to *Site Settings* and select *Staging* from under the *Advanced* heading.
 
-![Figure 3.25: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.9: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 We'll assume we don't have a separate staging server, so we'll select the staging type *Local Live*. If you want to set up a remote staging environment, it's easy. First select *Remote Live*, then supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server or the port your application server is listening on if not), and the remote site or organization ID. You can find this ID by selecting *Actions &rarr; Edit* on any site in the control panel. Either way, once you make a selection (*Local Live* or *Remote Live*), more options become available.
 
@@ -425,7 +426,7 @@ Enabling *Page Versioning* makes it so you can work in parallel with other users
 
 If you navigate back to the News and Events page you'll now notice some new items along the top of the screen. These will help us manage staged pages. You'll also notice most of your page management options have been removed, because now you can't directly edit live pages--you'll now use the staging environment to do that. Click on *Staging* to view the staged area. Your management options are restored and you have some new options related to staging.
 
-![Figure 3.26: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.10: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that the Calendar portlet isn't there. That's because you've staged a change to the page but haven't published that change yet to the live site. Go back to the staged page and look at the options you have available. From here you can *Undo* changes, view a *History* of changes, *Mark as Ready for Publication* and *Manage Page Variations*.
 
@@ -447,7 +448,7 @@ Click on *Mark as Ready for Publication* and then *Publish to Live Now* to publi
 
 Content publication can be also controlled using staging. Calendar events are staged by default (this can be changed in Staging Configuration). If you create an event in the staged site, it isn't visible in the live site until you publish it to the live site following the same steps you just performed (you can select which types of content are published when you publish to the live site). If workflow is enabled for Calendar Events, the event needs to go through the workflow process before it can be published to the live site.
 
-![Figure 3.27: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
+![Figure 3.11: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
 
 One of the most powerful features of staging is page variations. Let's see how to use them to create multiple different variations of your site's pages for different purposes.
 
@@ -481,11 +482,11 @@ You can also have variations for a single page inside a site page variation, whi
 
 To create a new page variation, click *Manage Page Variations* on the staging toolbar. This brings you to a list of existing page variations for the current page (by default, there is only one called *Main Variation*). You can create more or rename the existing one. You can switch between different page variations using the toolbar containing the page variations below the site pages variations toolbar. When you decide which page variation should be published, mark it as *Ready for Publication*. Only one page variation can be marked as ready for publication and that is the one that gets published to the live site.
 
-![Figure 3.28: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
+![Figure 3.12: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
 
 For example, we could create a page variation called Thanksgiving for the News and Events page inside of the Christmas variation and another one called Christmas Day to display different content on those particular days.
 
-![Figure 3.29: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.13: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations. In order to merge two Site Pages Variations, you need to go to the Manage Site Variations screen. From there, click on *Merge* on the Site Pages Variation you want to use as the base, and you will be asked to choose the Site Pages Variation to merge on top of it. Merging works in the following way:
 
@@ -535,17 +536,17 @@ Alternatively, if you have a working copy of Liferay's plugin repository, you ca
 
 You can access the Mobile Device Rules administrative page from the Content section of the control panel. Select the appropriate scope using the context menu selector so that your rule groups are available where you expect them to be. The Mobile Device Rules administrative page displays a list of defined rule groups and allows you to add more. To add rules to a rule group, select *Actions* &rarr; *Manage Rules* or just click on a rule group to edit it and then click the *Manage Rules* link.
 
-![Figure 3.19: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
+![Figure 3.14: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups selected for a particular site or page, determine which rule will be applied to a given request. From the Manage Rules page for a specific rule set, you can add a rule by specifying a rule type. Note that, by default, only the Simple Rule type is available. However, the rules are designed to be extensible and additional rule types can be added by your developers. Once added, you can edit the rule to specify a device type and operating system.
 
-![Figure 3.20: You need to install the wurlf-web plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.15: You need to install the wurlf-web plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them, you'll be ready to set up some actions. The actions defined for a rule group determine what happens to a particular request when the request's device has been detected and the rule group has been found to apply. 
 
 You can add actions to a rule group from the Site Pages page of the control panel. Select either the public or private pages and then look for the *Mobile Rule Groups* link in the right-hand menu. Use the *Select Rule Group* button to select rule groups to be applied either to a site or to a single page. If you select the page group itself from the left-hand menu, the selected rule group will apply to all the pages of the site by default. However, if you select an individual page and then click the the *Select Rule Group* button, the rule groups will apply to only that page. You can select multiple rule groups for a particular site or page and order them by prority. The rule groups are checked in decreasing order of priority: the actions defined by the first rule group that applies are executed.
 
-![Figure 3.21: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the control panel.](../../images/mobile-device-selection.png)
+![Figure 3.16: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the control panel.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. By default, there are four kinds of actions that can be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects, and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages you can use a redirect to make sure that mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to. Like mobile device rules, mobile device actions are designed to be extensible. Your developers can define custom actions in addition to the four actions provided by default. 
 

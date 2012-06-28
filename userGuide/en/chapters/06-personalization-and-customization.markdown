@@ -1,20 +1,20 @@
+# Personalization and Customization [](id=drools)
+
 <!--
-# Personalization, Collaboration tools, and social networking
+# Personalization, Collaboration tools, and social networking [](id=lp-6-1-ugen06-personalization-collaboration-tools-and-social-networking-0)
 -->
 
 <!-- section headers for Personalization & customization
 
 There seems to be significant content missing from this chapter.
 
-# Personalization and customization
-## User  site
-## User public site
-## Automatic personalization of content (via rules integration)
-## Setting preferences to customize applications
+# Personalization and customization [](id=lp-6-1-ugen06-personalization-and-customization-0)
+## User  site [](id=lp-6-1-ugen06-user--site-0)
+## User public site [](id=lp-6-1-ugen06-user-public-site-0)
+## Automatic personalization of content (via rules integration) [](id=lp-6-1-ugen06-automatic-personalization-of-content-via-rules-integration-0)
+## Setting preferences to customize applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
 
 -->
-
-# Drools [](id=drools)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 

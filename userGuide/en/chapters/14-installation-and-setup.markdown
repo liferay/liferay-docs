@@ -1,4 +1,4 @@
-# Installing Liferay [](id=installing-liferay)
+# Installation and Setup [](id=installing-liferay)
 
 Liferay Portal is one of the most flexible applications on the market today with regard to application server environments. You can install Liferay Portal on everything from a shared Tomcat installation to a multi-node cluster running a commercial application server, and on everything in between. In fact, Liferay is used successfully in all of these scenarios every day.
 
@@ -750,19 +750,19 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 3. Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
-![Figure 11.37: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.PNG)
+![Figure 11.37: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.png)
 
 4.	Click *New...*.
 
 5. In the first screen (Step 1 of 2), give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource`, and select your database driver vendor (e.g. `MySQL`) as follows:
 
-![Figure 11.38: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
+![Figure 11.38: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.png)
 
 6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
 
 7. On the this screen (Step 2 of 2), scroll down to the *Additional Properties* section.
 
-![Figure 11.39: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)  
+![Figure 11.39: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
 
 8.	Replace or add the following properties ...
 
@@ -2503,4 +2503,5 @@ Change this so that it matches the path you set in your `portal-ext.properties` 
 
 ## Summary [](id=summ-32)
 
-This chapter is a guide to everything about installing Liferay. Whether you choose a Liferay bundle or an existing application server, Liferay Portal integrates seamlessly with your enterprise Java environment. It is supported on more application servers than any other portal platform, allowing you to preserve your investment in your application server of choice, or giving you the freedom to move to a different application server platform. Liferay is committed to providing you this freedom: we have 500 test servers certifying our builds with roughly 10,000 tests per version of Liferay Portal. Each of those tests are run on all of our different supported combinations of application servers, databases, and operating systems. Because of this, you can be sure that we are committed to supporting you on your environment of choice. You can feel safe knowing that you have the freedom to use the software platform that is best for your organization, and that Liferay Portal runs and performs well on it. 
+This chapter is a guide to everything about installing Liferay. Whether you choose a Liferay bundle or an existing application server, Liferay Portal integrates seamlessly with your enterprise Java environment. It is supported on more application servers than any other portal platform, allowing you to preserve your investment in your application server of choice, or giving you the freedom to move to a different application server platform. Liferay is committed to providing you this freedom: we have 500 test servers certifying our builds with roughly 10,000 tests per version of Liferay Portal. Each of those tests are run on all of our different supported combinations of application servers, databases, and operating systems. Because of this, you can be sure that we are committed to supporting you on your environment of choice. You can feel safe knowing that you have the freedom to use the software platform that is best for your organization, and that Liferay Portal runs and performs well on it.
+

@@ -1,4 +1,4 @@
-# Enterprise Configuration [](id=enterprise-configurati-5)
+# Configuring Liferay for High Availability [](id=enterprise-configurati-5)
 
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is fully ready to support mission-critical, enterprise applications in an environment configured for multiple redundancies and 24/7 uptimes. The product, however, like other products of its kind, doesn't come configured this way out of the box, so there are some steps that need to be taken in order to tune it for your needs. 
 
@@ -598,3 +598,4 @@ You can disable servlet filters you're not using by using your `portal-ext.prope
 For example, if you are not using CAS for single sign-on, disable the CAS Filter. If you are not using NTLM for single sign-ons, disable the NTLM Filter. The fewer servlet filters you are running, the less processing power is needed for each request.
 
 As you can see, there are many things you can do to increase Liferay's performance generally. But don't forget to load test your own applications! It may be that a performance issue comes from a custom-built application that's doing something it shouldn't do. Always load test your system before putting it into production: that's the best way of finding out potential performance problems, and that way, you'll find them during performance testing, and not when your system is in production.
+

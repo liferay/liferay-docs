@@ -1,4 +1,4 @@
-# Configuring Liferay's Properties [](id=configuring-liferay-s-properties)
+# Properties Reference [](id=configuring-liferay-s-properties)
 
 Liferay is configured by a combination of settings that are stored in the database (configured by the use of the control panel) and settings which are stored in properties (text) files. These files can be modified to change Liferay's behavior in certain ways. In this chapter we discuss the main configuration file, which is stored in the Liferay Home directory, and is called `portal-ext.properties`, if you've got a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This chapter has a wide-ranging set of topics since you can make many different kinds of customizations. We list a few of these below.
 
@@ -5814,3 +5814,4 @@ Configure email notification settings.
 ## Summary [](id=summ-35)
 
 In this very long chapter we looked at all of the options which can be customized in your `portal-ext.properties` file. This chapter serves as a reference section for the file, so you can quickly find documentation for any property you might encounter. Also, if you would like to make a customization to Liferay, you can also use this section to search for a property that does what you want. Once you find it, just add the appropriate line(s) to your `portal-ext.properties` file. Next, we'll take a look at Liferay's scripting API.
+

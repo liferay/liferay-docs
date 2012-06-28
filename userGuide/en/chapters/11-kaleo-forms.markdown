@@ -1,4 +1,4 @@
-### Kaleo forms and workflow designer [](id=lp-6-1-ugen06-kaleo-forms-and-workflow-designer-0)
+# Kaleo Forms: Defining Business Processes [](id=lp-6-1-ugen06-kaleo-forms-and-workflow-designer-0)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
@@ -8,7 +8,7 @@ There are two pieces to the workflow designer: *Kaleo Forms* and *Kaleo Designer
 
 Let's look at Kaleo Forms first. 
 
-#### Kaleo Forms [](id=lp-6-1-ugen06-kaleo-forms-0)
+## Kaleo Forms [](id=lp-6-1-ugen06-kaleo-forms-0)
 
 Add the Workflow Forms portlet to a page. The initial state, the *Summary* tab displays the same information that you might have seen in *My Workflow Tasks* in the control panel. Any forms that are available for processing through the workflow can be initiated through the *Submit New* button, as the below image indicates. 
 
@@ -30,7 +30,7 @@ Set a name and a description. Next, you'll define an *Entry Definition* and an *
 
 You probably noticed that when choosing a workflow, you also have the option to create a new one. This is where the Kaleo Workflow Designer can help you build a workflow without having to write any XML. Let's see how this works. 
 
-#### Kaleo Designer [](id=lp-6-1-ugen06-kaleo-designer-0)
+## Kaleo Designer [](id=lp-6-1-ugen06-kaleo-designer-0)
 
 Kaleo Designer provides a drag and drop interface for users to create custom workflows. It's an incredibly powerful tool for managing workflow defintions. The Workflow Designer can only be accessed through the Kaleo Forms portlet, but definitions created can be used for other processes as well.
 
@@ -66,3 +66,4 @@ Now let's take a look at the generated XML. It should look a lot like our defaul
 As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a very robust environment for web content management. Simple workflows can be managed using the default configuration and GUI tools, while more complex workflows can be created to meet the workflow management needs of almost any portal. Through this chapter, we've taken a look at the various elements of a workflow, and shown how to use those elements to create your own custom workflows. We've also seen how to properly use the various elements of a workflow like Assignments and Notifications, as well as newer and more advanced features like Parallel Workflows, Timers, and Custom Scripts.
 
 One of the keys to using Kaleo workflow isn't just understanding each individual element, but seeing how each one interacts with the other elements and figuring out which features are going to work best for your organization. Hopefully this chapter has helped you understand how to best craft a workflow for you portal.
+

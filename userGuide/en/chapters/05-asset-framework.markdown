@@ -1,8 +1,8 @@
-# Leveraging the Asset Framework
+# Leveraging the Asset Framework [](id=lp-6-1-ugen05-leveraging-the-asset-framework-0)
 
 <!--   Need intro text & head ref   -->
 
-## Tags and Categories [](id=lp-6-1-ugen03-tags-and-categories-0)
+## Tagging and Categorizing Content [](id=lp-6-1-ugen03-tags-and-categories-0)
 
 Tags and categories are two important tools you can use to help organize information on your portal and make it easier for your users to find the content they're looking for through search or navigation. Tagging and categorizing web content is easy. You can do it at the bottom of the same form you use to add content. If you open the *Categorization* section of the form, you'll be presented with an interface for adding tags and categories.
 

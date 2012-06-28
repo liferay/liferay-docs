@@ -1,4 +1,4 @@
-# Workflow with Kaleo [](id=workflow-with-kal-3)
+# Using Workflow [](id=workflow-with-kal-3)
 
 Liferay Portal includes a workflow engine called Kaleo. In Greek, this word means "called ones," which is appropriate for a workflow engine that calls users to participate in a process that has been designed for them.
 
@@ -406,4 +406,4 @@ Next, create two users, a Content Creator and a Content Reviewer. The Content Cr
 
 Once the content is approved, it can be posted on the Press Releases page in a web content display portlet. 
 
-There's more. EE customers get extra features that enable them to create workflows without having to deal with XML. 
+There's more. EE customers get extra features that enable them to create workflows without having to deal with XML.

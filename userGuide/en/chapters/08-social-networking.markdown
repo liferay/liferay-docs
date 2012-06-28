@@ -1,10 +1,10 @@
+# Social Networking [](id=social-networking-with-liferay)
+
 <!--
 Ch. 8 Social Networking
 
 old ch. 11
 -->
-
-# Social Networking with Liferay [](id=social-networking-with-liferay)
 
 Since the first social networks rose to popularity, concepts such as *Friend* and later *Like*--previously reserved for direct human interaction--have taken on new meaning in an always-online, information driven culture. It could be argued that social networks have transformed the way people interact with their friends, relatives and colleagues. Friends, connections, followers, circles and lists have enabled people to connect and stay connected in ways they'd never been able to before. Initially, these concepts proved to be highly successful for casual web sites but they didn't take to the business world as quickly. But many organizations are now realizing the importance of leveraging social interactions for more than just recreation. Liferay's robust social features make it a great platform for business web sites, casual web sites and everything in between.
 
@@ -25,7 +25,7 @@ When we're finished, you'll have a good idea how you can use Liferay to power yo
 This says, "Leveraging ," but what is it leveraging? 
 Activities tracking seems to be in the next section, Measuring Social Activity
 
-## i. Leveraging , Activities Tracking and User Connections (head ref)
+## i. Leveraging , Activities Tracking and User Connections (head ref) [](id=lp-6-1-ugen08-i-leveraging--activities-tracking-and-user-connections-head-0)
 Not sure if this goes here.
 -->
 
@@ -143,7 +143,7 @@ Probably the most effective way users can connect is by interacting with other u
 Beyond Liferay's API, there is also support for the OpenSocial standard. 
 
 <!--
-## This is section ii. 
+## This is section ii.  [](id=lp-6-1-ugen08-this-is-section-ii--0)
 -->
 
 ## Measuring social activity [](id=measuring-social-activity)
@@ -152,7 +152,7 @@ Beyond Liferay's API, there is also support for the OpenSocial standard.
 
 When you have a lot of user interaction on your web site, it can be helpful to try to separate the signal from the noise. Liferay contains a lot of applications which end users can use to communicate with each other and provide information. Some of this information is good and helpful and some of it can be rather unhelpful. Using Liferay's Social Activity feature will help show which users are making real, valuable contributions.
 
-![Figure 8.10: The Social Equity Page of the Control Panel](../../images/05-social-equity.png)
+![Figure 8.8: The Social Equity Page of the Control Panel](../../images/05-social-equity.png)
 
 To activate Social Activity, you'll first need to determine which collaboration applications you want to use Social Activty. There are currently three types of content you can use with Social Activity - Blogs Entries, Message Board Messages, and Wiki Pages. Activation is a la carte - so you can use it on one, two, or all three applications. Social Activity tracks three metrics from within each of these applications two are for the user - *Participation* and *Contribution* - and the other, *Popularity*, is for the asset involved.
 
@@ -160,7 +160,7 @@ Let's activate Social Activity for Blogs Entries. Check the box next to *Blog En
 
 It might not be immediately obvious, but for all actions that do not involve the creation of a new asset, all of the contribution points always go to the original asset creator and all popularity points go to the original asset. That means if *Votes on a Blog* is set to have 1 *Participation* point and 5 *Contribution* points (and therefore 5 *Popularity* points), the user who votes on the asset will receive 1 participation point, the user who created the asset will receive 5 contribution points, and the asset will receive 5 popularity points. 
 
-![Figure 8.11: Setting limits in Social Activity](../../images/social-equity-limits.png)
+![Figure 8.9: Setting limits in Social Activity](../../images/social-equity-limits.png)
 
 It's easy to assign points--you can arbitrarily assign points for just about anything--the challenge is making the points significant in some way. As mentioned before, the primary purpose of social activity tracking is to make sure that users who regularly contribute to the portal and participate in discussions are recognized as such. So the central piece of the social equity display is the *User Statistics* portlet.
 
@@ -176,7 +176,7 @@ The User Statistics portlet displays a list of users ranked by an amalgamation o
 
 **Display Additional Activity Counters**: You can toggle the display of any number of other pieces of information next to the users name in the statistics, ranging from the number of comments on assets a user has created to the number of wiki articles that the user has created. If you want to display multiple data points, you can click the *plus* button to add one and the *minus* button to remove one. You can have as many data points displayed as you want, but displaying too many might make your portlet a little unwieldy.
 
-![Figure 8.12: The User Statistics portlet](../../images/user-statistics-portlet.png)
+![Figure 8.10: The User Statistics portlet](../../images/user-statistics-portlet.png)
 
 The **Group Statistics** portlet provides some more advanced data analytics. If you add it to a page, and click on the configuration icon, you see that by default, it will display one metric *Activities on Assets*. You can click the *plus* button to add additional slots, and choose from the dozen or so metrics available for each slot, covering virtually any action that a user can perform on content on the portal. If you decide that you're displaying too many metrics, you can click the *minus* button for a particular slot on the configuration view to remove it.
 
@@ -194,7 +194,7 @@ In addition to the social interactions that you can create on your portal, Lifer
 
 
 <!--
-## iii. Exporting portal applications as widgets and OpenSocial gadgets* (head ref)
+## iii. Exporting portal applications as widgets and OpenSocial gadgets* (head ref) [](id=lp-6-1-ugen08-iii-exporting-portal-applications-as-widgets-and-opensocial-0)
 -->
 
 ## OpenSocial integration [](id=opensocial-integration)
@@ -215,11 +215,11 @@ DONE
 
 In some cases, you'll want to simply add a gadget to a single page. To this, go to a page, go to the *Add &rarr; More* menu and add *OpenSocial Gadget* to the page. Initially, the portlet simply displays with a link saying *Configure a gadget to be displayed in this portlet.* Click on this link, enter the URL for your gadget in the *URL* field (try *[Todo List Gadget](http://www.labpixies.com/campaigns/todo/todo.xml)* for an easy example) and click *Save*. That gadget will now be displayed as a portlet on your page. If, at any point, you want to change which gadget is displayed there, you can click on the configuration icon for the portlet and replace the URL with a new one. The OpenSocial Gadget portlet options allow you to change the permissions for who can view or edit the portlet, as well as options to share the contents of the portlet, just like you can with any other Liferay portlet.
 
-![Figure 8.8: OpenSocial Gadget displayed on a page](../../images/open-social-gadget.png)
+![Figure 8.11: OpenSocial Gadget displayed on a page](../../images/open-social-gadget.png)
 
 In addition to configuring individual gadgets, you can specify gadgets that are listed in the *Add &rarr; More* list from the Control Panel. Click on *OpenSocial Gadget Publisher* in the *Portal* section of the Control Panel. On this page there is a list of any gadgets that have been installed as well as buttons labeled *Publish Gadget* and *Refresh Gadgets*. Click on *Publish Gadget* and you'll see a form to enter a URL and choose a category. Enter the URL for an OpenSocial gadget (you can use the todo list from earlier) and click *Save*. The gadget will now be displayed in the list, and you can add it to any page on your portal.
 
-![Figure 8.9: OpenSocial Gadget in your application list](../../images/open-social-in-context.png)
+![Figure 8.12: OpenSocial Gadget in your application list](../../images/open-social-in-context.png)
 
 Clicking *Actions* next to the gadget will enable you to edit, delete, change permissions or refresh the gadget. *Edit* allows you to change the URL or category; *Permissions* gives you the basic *View*, *Update*, *Delete* and *Permissions* options; *Delete* will remove the listing for the gadget; and the refresh option manually refreshed the gadget cache for cases where changes have been made to the gadget but they are not displaying in the portlet.
 
@@ -235,7 +235,7 @@ Once you have created and saved a gadget using the editor, click on the wrench n
 Now that you've got all these social applications running on your system, the next question becomes: how do I measure social interaction? How do I make it clear who are the best contributors to my site? Liferay has an answer: social activity measurements.  
 
 <!--
-## iv. Publishing OpenSocial gadgets (head ref)
+## iv. Publishing OpenSocial gadgets (head ref) [](id=lp-6-1-ugen08-iv-publishing-opensocial-gadgets-head-ref-0)
 
 Need text here.
 -->
@@ -244,7 +244,7 @@ Need text here.
 
 
 <!--
-## This is section v. 
+## This is section v.  [](id=lp-6-1-ugen08-this-is-section-v--0)
 -->
 	
 ## Integrating with Facebook [](id=facebook-integration)

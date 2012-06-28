@@ -1,4 +1,4 @@
-# Using Liferay Web Content Management [](id=using-liferay-web-content-management)
+# Web Content Management [](id=using-liferay-web-content-management)
 
 Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface and it helps you to keep your site fresh. You'll find yourself easily creating, editing and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content "pop" with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content. 
 
@@ -49,8 +49,7 @@ Liferay's WCM has a host of features the makes managing the content of your site
 
 Liferay's Web Content Management is a powerful and robust tool for creating and organizing content on your web site. Let's begin by examining some basic concepts involving sites and pages.
 
-<!-- Section ii of new outline  -->
-# Creating sites and managing pages [](id=managing-pages-in-liferay-portal)
+## Creating sites and managing pages [](id=managing-pages-in-liferay-portal)
 
 With most products, you would learn what the software can do in terms of setting up your users and security model and then start building your system. You'd design your infrastructure and get your server environment up and running while your developers write the applications that live on your web site. With Liferay Portal, however, you start farther ahead. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go and integrated with all the user management and security features you've already learned about.
 
@@ -476,7 +475,7 @@ In a real world situation, you obviously wouldn't want the person who created th
 Next up is Site memberships, where you'll learn how to administer a Liferay portal and define users and permissions. 
 
 <!-- Need text & header reference for section vi Site memberships to go here  
-## Site memberships
+## Site memberships [](id=lp-6-1-ugen02-site-memberships-0)
 -->
 
 ## Summary [](id=summ-25)

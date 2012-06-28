@@ -1,4 +1,4 @@
-# Administering Liferay Portal [](id=administering-liferay-portal)
+# Management [](id=administering-liferay-portal)
 
 You know how all these retailers want to advertise themselves as a "one stop shop" for whatever it is that you want? The idea is that they have so much stuff that chances are that whatever you're looking for is there. Liferay's control panel is something like this. If you want to create users, sites, organizations, configure permissions and plugins, and pretty much anything else, you'll do it with the control panel. The nice thing about the control panel is that it makes all this very easy to do. This chapter takes all the concepts you learned about Liferay in chapter 1 (sites, organizations, and more) and makes them concrete. Here, you'll learn how to create and manage every aspect of Liferay's configuration. 
 
@@ -649,3 +649,4 @@ The next tab is Reserved Credentials. You can enter screen names and email addre
 The Default User Associations tab has three fields allowing you to list (one per line) sites, roles, and user groups that you want new users to become members of automatically. By default, Liferay assigns new users to both the Users role and the Power Users role.
 
 If you have defined other user groups, sites, or roles that you want newly created users to be members of by default, enter them here. For example, you may have defined site templates in certain user groups to pre-populate end users' private pages. If there is a particular configuration that you want everyone to have, you may want to enter those user groups here.
+
