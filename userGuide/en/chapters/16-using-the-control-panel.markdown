@@ -1,5 +1,15 @@
 # Using the Control Panel [](id=lp-6-1-ugen19-using-the-control-panel-0)
 
+<!--
+
+Ch. 16 Using the Control Panel
+
+old ch. 19
+
+(no sections)
+
+-->
+
 <--! This chapter contains the last section of the old 12-administering-liferay-portal.markdown chapter -->
 
 #### Mail Host Names [](id=lp-6-1-ugen12-mail-host-names-0)
@@ -216,4 +226,3 @@ Next, we saw how to view and configure overall server settings. We saw how to vi
 Finally, we learned how to properly notify users that the portal is about to shut down and how to set up exernal services like OpenOffice integration. We looked at how to create multiple portal instances on a single installation of Liferay and we showed how to view currently installed plugins.
 
 We hope this information helps you become an effective Liferay Portal Administrator.
-

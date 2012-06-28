@@ -1,6 +1,17 @@
-# Using Scripting for Advanced Flexibility [](id=script-engine)
+# Using Scripting for Advanced Flexibility [](id=lp-6-1-ugen18-using-scripting-for-advanced-flexibility-0)
 
-Liferay provides a robust script engine that can be used to interpret scripts in Beanshell, Javascript, Groovy, Python, and Ruby. The script engine came out of Liferay's involvement with the Romulus project (http://www.ict-romulus.eu). It was originally developed to support non Java-based portlets, but has now been extended to handle a lot more. For example, when Liferay's workflow framework was introduced, the script engine was leveraged to support the execution of scripts from within a workflow module. A script console is now included in the Server Administration portlet in the control panel. It allows system administrators an easy way to execute scripts to perform repetitive user maintenance operations, bulk manipulations using the Liferay API to ensure consistency, or even system level operations.
+<!-- 
+
+Ch. 18 Using scripting for advanced flexibility
+
+old ch. 21
+
+(no sections)
+-->
+
+## Script Engine [](id=script-engine)
+
+Liferay provides a robust script engine that can be used to interpret scripts in Beanshell, Javascript, Groovy, Python and Ruby. The script engine came out of Liferay's involvement with the Romulus project (http://www.ict-romulus.eu). It was originally developed to support non Java-based portlets, but has now been extended to handle a lot more. For example, when Liferay's workflow framework was introduced, the script engine was leveraged to support the execution of scripts from within a workflow module. A script console is now included in the Server Administration portlet in the control panel. It allows system administrators an easy way to execute scripts to perform repetitive user maintenance operations, bulk manipulations using the Liferay API to ensure consistency, or even system level operations.
 
 This chapter helps you to understand Liferay's script engine and covers the following topics: 
 
@@ -365,4 +376,3 @@ You should see the results of your script displayed right under the script.
 In this chapter we saw how Liferay's script engine opens up many exciting posibilities for working with Liferay regardless of your language of choice. We learned how you can leverage Liferay's Services Oriented Architecture (SOA) from any of the popular scripting languages that Liferay supports. We then saw how those scripts could be used to simplify administrative tasks by leveraging the Administrator Script Console. Next, we discovered how you could enhance workflow by using the power of scripts. Lastly, we saw how you could overcome some of the limitations of running scripts in Liferay by creating custom Java utilities that could be executed from within your scripts. 
 
 As you can see, Liferay's script engine opens up many exciting posibilities for working with Liferay regardless of your language of choice.
-
