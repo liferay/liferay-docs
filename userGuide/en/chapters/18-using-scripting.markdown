@@ -6,7 +6,7 @@ Ch. 18 Using scripting for advanced flexibility
 
 old ch. 21
 
-(no sections)
+(no level-two sections in the new outline)
 -->
 
 ## Script Engine [](id=script-engine)
