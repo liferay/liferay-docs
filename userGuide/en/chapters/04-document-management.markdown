@@ -150,7 +150,7 @@ The repository is displayed in the left side of the window in the Home folder.
 
 ![Figure 4.8: Viewing a repository](../../images/05-repository.jpg)
 
-## Automatic Preview Generation [](id=lp-6-1-ugen04-automatic-preview-generation-0)
+## Automatic Previews and metadata [](id=lp-6-1-ugen04-automatic-preview-generation-0)
 
 Whenever possible, Liferay 6.1 generates previews of documents added to the Documents and Media library. Out of the box, Liferay only ships with Java-based APIs to generate previews for documents. The only tool available that is 100% Java and has a compatible license to be distributed with Liferay is PDFBox. From a vanilla installation of Liferay 6.1, if you upload a PDF file to the Documents and Media portlet, Liferay will process the PDF in a separate thread to generate a preview. This process may last only a few seconds for a small file. The larger the file is, the longer it takes.
 
@@ -174,13 +174,13 @@ You can view a multimedia document (audio or video) and play it online. If the b
 
 Document previews are powerful and help users browse media more successfully to find what they're looking for. 
 
-## Automatic extraction of RAW Metadata [](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0)
+### Automatic extraction of RAW Metadata [](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0)
 
 When adding new documents or viewing existing documents, a process is triggered automatically that extracts the file's metadata. The library used by this process is TIKA and it's already included in Liferay out of the box.
 
 You can see the metadata when viewing the document, in the right side of the window.
 
-## Document type restrictions and workflow per folder [](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0)
+### Document type restrictions and workflow per folder [](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0)
 
 You can force users to add only certain document types to a folder. By default, child folders inherit the restrictions of their parent folder. You can change this behavior by editing the folder and selecting the allowed document types.
 
@@ -192,7 +192,7 @@ If workflow is enabled, you can specify different workflow definitions per folde
 
 Document types are a powerful way to enforce rules for documents uploaded by users. Next, we'll see a way to make it incredibly easy for users to access documents stored in Liferay's Documents and Media repositories. 
 
-## WebDAV access [](id=lp-6-1-ugen04-webdav-access-0)
+### WebDAV access [](id=lp-6-1-ugen04-webdav-access-0)
 
 Wouldn't it be great if you could access documents and folders belonging to Liferay's Documents and Media library from your own machine's file manager? You can, thanks to the Documents and Media libray's WebDAV integration. WebDAV stands for Web-based Distributed Authoring and Versioning. It's a set of methods based on HTTP that allows users to create, edit, move or delete files stored on web servers. WebDAV is supported by most major operating systems and desktop environments, including Linux (both KDE and GNOME), Mac OS and Windows.
 
@@ -212,3 +212,8 @@ Note that Liferay increments the version numbers of files edited and uploaded vi
 
 Now you know just how easy it is to store your files using Liferay's Documents and Media portlet. In the next section we'll review some ways to organize and manage your assets so you're getting the most out of your content.
 
+<!--   Need text for section v.   -->
+
+## Liferay Sync
+
+<!--   Need summary?  -->
