@@ -2,7 +2,7 @@
 
 <!-- Need intro. and a head ref here  -->
 
-## Advanced content with structures and template [](id=lp-6-1-ugen03-advanced-content-creation-0)
+## Advanced content with structures and templates [](id=lp-6-1-ugen03-advanced-content-creation-0)
 
 If you've ever launched a web site, you know that as it grows, you can experience growing pains. This is the case especially if you've given lots of people access to the site to make whatever changes they need to make. Without preset limitations, users can display content in any order and in any manner they desire (think huge, flashing letters in a font nobody can read). Content can get stale, especially if those responsible for it don't maintain it like they should. And sometimes, content is published that should never have seen the light of day. 
 
@@ -518,7 +518,9 @@ After you've clicked the *Add Team* button and entered a name and a description,
 
 Permission management for teams is handled at the individual portlet level, using the *Options &rarr; Configuration &rarr; Permissions* tab of the portlet itself. Remember that the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
 
+<!--  This is a broken link  
 [Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams)
+-->
 
 To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, then click *Save*. That's it! Now your team is ready to perform their functions. Next, let's look at how to configure Liferay's portal settings.
 
