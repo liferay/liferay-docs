@@ -71,23 +71,23 @@ Columns specified in `service.xml` will be created in the database with a data t
 
 ### Generate the Service [](id=lp-6-1-dgen09-generate-the-service-0)
 
-Next, we will show how to build a service using the service.xml. This will be demonstrated by two different methods: Liferay Developer Studio and the terminal window.
+Next, we'll build a service using our `service.xml`. We can do this by using either of the following methods: using *Liferay Developer Studio* or using the terminal window.
 
-***Using Developer Studio:*** Open your service.xml file by finding it in the *Package Explorer* under the directory `my-greeting-portlet/docroot/WEB-INF`. Then the file will open up in the Service Builder Editor. Make sure you are in the *Overview* mode and select *Build Services*. 
+***Using Developer Studio:*** From the *Package Explorer*, open your `service.xml` file found in your  `my-greeting-portlet/docroot/WEB-INF` folder. By default, the file opens up in the *Service Builder Editor*. Make sure you are in *Overview* mode. Then, select *Build Services*. 
 
-![Figure 10.1: *Overview* mode in editor .](../../images/10-frameworks-1.png)
+![Figure 10.1: *Overview* mode in editor](../../images/10-frameworks-1.png)
 
 You should receive a message in your console stating BUILD SUCCESSFUL along with a list of generated files. An overview of these files can be found later on in this section.
 
-The *Overview* mode in Developer Studio can be used to build services or build WSDD. Also, the options of *Diagram* and *Source* are available. If we select *Diagram*, we are given a graph structured background with multiple options on the right hand column as shown below:
+The *Overview* mode in Developer Studio's *Service Builder Editor* can be used to build services or build web service deployment descriptors (WSDDs). The editor also has *Diagram* and *Source* modes. If we select *Diagram*, we are given a graph structured background onto which we can add entities and relationships from the *Palette* available on the right hand side of the editor. Here is a view of the editor in *Diagram* mode:
 
-![Figure 10.2: *Diagram* mode in editor .](../../images/10-frameworks-2.png)
+![Figure 10.2: *Diagram* mode in editor](../../images/10-frameworks-2.png)
 
-Lastly, the *Source* mode can be viewed to edit our existing Java code for service.xml. Here is an example of this view:
+Lastly, select *Source* mode to edit the XML source directly. Here is an example `service.xml` shown in *Source* the editor's mode:
 
-![Figure 10.3: *Source* mode in editor .](../../images/10-frameworks-3.png)
+![Figure 10.3: *Source* mode in editor](../../images/10-frameworks-3.png)
 
-Developer Studio offers many options to help automate the creation of interfaces and classes for database persistence and a service layer.
+Developer Studio offers many options to help automate the creating interfaces and classes for your database persistence and a service layers.
 
 ***Using the terminal:*** Open a terminal window in your `portlets/my-greeting-portlet` directory and enter this command:
 
@@ -178,7 +178,7 @@ We will add the database interaction methods to this service layer class. Add th
 
 Before you can use this new method, you must add its signature to the `BookLocalService` interface by running service builder again.
 
-***Using Developer Studio:*** As we did before, open your service.xml file and make sure you are on the *Overview* mode. Then select *Build Services*.
+***Using Developer Studio:*** As we did before, open your `service.xml` file and make sure you are in the *Overview* mode. Then, select *Build Services*.
 
 ***Using the terminal:*** Navigate to the root directory of your portlet in the terminal and run:
 

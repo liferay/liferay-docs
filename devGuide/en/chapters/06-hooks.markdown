@@ -15,7 +15,7 @@ As with portlets, layout templates, and themes, hooks are created and managed us
 
 ## Creating a Hook [](id=creating-a-ho-4)
 
-Hooks are stored within the `hooks` directory of the Plugins SDK. We will demonstrate two methods that can be used to create your hook.
+Hooks are stored within the `hooks` directory of the Plugins SDK. We will demonstrate two methods that can be used to create your hooks.
 
 ***Using Developer Studio:*** Go to File &rarr; New &rarr; Liferay Project
 
@@ -26,11 +26,11 @@ Next, go through the following steps to setup your new hook:
 3. Select the *Hook* Plugin Type
 4. Click *Finish*
 
-![Figure 6.1: Creating your hook plugin.](../../images/06-hooks-1.PNG)
+![Figure 6.1: Creating your hook plugin](../../images/06-hooks-1.PNG)
 
-Notice the Plugins SDK automatically adds 'hook' to the project name after its creation. When creating a new plugin in Developer Studio, we can either create a completely new plugin or add a new plugin to an existing plugin project.
+Notice the Plugins SDK automatically adds "hook" to the project name after its creation. When creating a new plugin in Developer Studio, we can either create a completely new plugin or add a new plugin to an existing plugin project.
 
-***Using the terminal:*** Navigate to Plugins SDK directory in a terminal and enter the following command to create a new hook (Linux and Mac OS X):
+***Using the terminal:*** Navigate to your Plugins SDK directory in a terminal and enter the following command to create a new hook (Linux and Mac OS X):
 
     ./create.sh example "Example"
 
@@ -44,7 +44,7 @@ You should get a BUILD SUCCESSFUL message from Ant, and there will now be a new 
 
 ***Using Developer Studio:*** Simply drag your hook project onto your server.
 
-![Figure 6.2: Deploying your hook plugin.](../../images/06-hooks-4.PNG)
+![Figure 6.2: Deploying your hook plugin](../../images/06-hooks-4.PNG)
 
 Upon deploying your hook, your server will output messages indicating your hook was read, registered and is now available for use.
 
@@ -52,9 +52,9 @@ Upon deploying your hook, your server will output messages indicating your hook 
 	Registering hook for example-hook
 	Hook for example-hook is available for use
 
-If at any time you need to redeploy this plugin while in Developer Studio, right click your portlet located underneath your server and select *Redeploy*.
+If at any time you need to redeploy this plugin while in Developer Studio, right click your plugin's icon located underneath your server and select *Redeploy*.
 
-![Figure 6.3: Redeploying your hook plugin.](../../images/06-hooks-2.PNG)
+![Figure 6.3: Redeploying your hook plugin](../../images/06-hooks-2.PNG)
 
 Unlike our previous portlets and themes examples, the hook plugin does not do anything yet. After a few edits and file additions, you will have a fully functional hook plugin!
 
@@ -64,7 +64,7 @@ Unlike our previous portlets and themes examples, the hook plugin does not do an
 
 You should get a BUILD SUCCESSFUL message, which means that your hook is now being deployed. If you switch to the terminal window running Liferay, and wait for a few seconds, you should see the message "Hook for example-hook is available for use." However, unlike portlets or themes, your new hook doesn't actually do anything yet.
 
-### Anatomy of the Hook
+### Anatomy of the Hook [](id=lp-6-1-dgen06-anatomy-of-the-hook-0)
 
 In order to create a useful hook, we will need to edit existing files and create new files within the structure. The full structure of the example-hook is shown below:
 
@@ -79,7 +79,7 @@ In order to create a useful hook, we will need to edit existing files and create
 	
 In Developer Studio, the hook structure can be viewed in the *Package Explorer* as shown below:
 
-![Figure 6.4: Package Explorer view of hook plugin.](../../images/06-hooks-3.PNG)
+![Figure 6.4: Package Explorer view of hook plugin](../../images/06-hooks-3.PNG)
 
 ## Overriding a JSP [](id=overriding-a-j-4)
 

@@ -42,7 +42,7 @@ Next, go through the following steps to setup your new Ext plugin:
 3. Select *Ext* for your Plugin type
 4. Click *Finish*
 
-![Figure 7.1: Creating an Ext plugin.](../../images/07-ext-plugins-1.png)
+![Figure 7.1: Creating an Ext plugin](../../images/07-ext-plugins-1.png)
 
 Notice the Plugins SDK automatically adds "-ext" to the project name after its creation. When creating a new plugin in Developer Studio, we can either create a completely new plugin or add a new plugin to an existing plugin project. 
 
@@ -56,7 +56,7 @@ On Windows, enter the following instead:
 	
 You should get a `BUILD SUCCESSFUL` message from Ant, and there should now be a new folder inside of the `ext` folder in your Plugins SDK. Notice that the Plugins SDK automatically appends "-ext" to the project name when creating this folder.
 
-### Anatomy of the Ext Plugin
+### Anatomy of the Ext Plugin [](id=lp-6-1-dgen07-anatomy-of-the-ext-plugin-0)
 
 You should now find a new folder named `example-ext` with the following structure:
 
@@ -81,7 +81,7 @@ You should now find a new folder named `example-ext` with the following structur
 				
 You can also view and edit `example-ext` using Developer Studio's *Package Explorer*:
 
-![Figure 7.2: The Ext plugin's Package Explorer.](../../images/07-ext-plugins-2.png)
+![Figure 7.2: The Ext plugin's Package Explorer](../../images/07-ext-plugins-2.png)
 
 The most significant directories in this structure are the ones inside the `docroot/WEB-INF` directory. In particular, you should be familiar with the following directories:
 
@@ -179,15 +179,13 @@ Here are instructions for deploying your plugin from Liferay IDE/Studio or the t
 
 ***In Developer Studio:*** Simply drag your `example-ext` project from your *Package Explorer* onto your server.
 
-![Figure 7.3: Drag-and-drop plugin onto server.](../../images/07-ext-plugins-7.png)
+![Figure 7.3: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
 
 ***In the terminal:*** Open a terminal window in your `ext/example-ext` directory and enter either of these commands:
 	
 	1.	ant deploy
 
 	2.	ant direct-deploy
- 
-
 
 ---
 
@@ -209,13 +207,13 @@ You need to publish your plugin to the Liferay server to complete the deployment
 
 ***Using Developer Studio:*** While selecting the Liferay server in the *Servers* view, select the server's *Publish* option
 
-![Figure 7.4: How to publish the Ext Plugin.](../../images/07-ext-plugins-3.png)
+![Figure 7.4: How to publish the Ext Plugin](../../images/07-ext-plugins-3.png)
 
 ***Using the terminal:*** Restart the Liferay server
 
 Let's try our Ext plugin within our portal. Once the server has started, log in as an administrator and go to *Control Panel &rarr; Users and Organizations*. Edit an existing user and verify that the right navigation menu only shows the five sections that were referenced from the `users.form.update.main` property.
 
-![Figure 7.5: You should see these five sections under the User Information heading.](../../images/ext-plugin-five-sections.png)
+![Figure 7.5: You should see these five sections under the User Information heading](../../images/ext-plugin-five-sections.png)
 
 Once you've applied this simple modification to Liferay, we'll proceed with a slightly more complex customization. This will give us an opportunity to learn the proper way to *redeploy* an Ext plugin, which is different from *initial deployment*.
 
@@ -343,29 +341,27 @@ So far, the development process has been very similar to that of other plugin ty
 
 **Clean Redeployment:** If you removed part(s) of your plugin, if there are changes to your plugin that can affect the deployment of plugins, or if your simply want to start with a clean Liferay environment, we recommend you *undeploy* your plugin and *clean* your application server before redeploying your Ext plugins. By *cleaning* the application server, the existing Liferay installation is removed and the bundle specified in your Plugin SDK environment (e.g. value of `app.server.zip.name` in `build.{username}.properties`) is unzipped in its place. Here are the steps to take depending on whether you are working from Liferay IDE/Studio or the terminal:
 
-	
-
 -	***From Developer Studio:***
 
 	1.	Remove the plugin from the server: While selecting the Ext plugin in the *Servers* view, select the plugin's *Remove* option
 
-		![Figure 7.6: Removing Ext Plugin from the server.](../../images/07-ext-plugins-4.png)
+		![Figure 7.6: Removing Ext Plugin from the server](../../images/07-ext-plugins-4.png)
 
 	2.	Clean the application server: While selecting the Ext plugin project in the *Package Explorer* view, select the plugin's *Liferay* &rarr; *Clean App Server...* option
 
-		![Figure 7.7: How to clean app server.](../../images/07-ext-plugins-5.png)
+		![Figure 7.7: How to clean app server](../../images/07-ext-plugins-5.png)
 
 	3.	Start the Liferay server
 
-		![Figure 7.8: Start the Liferay server.](../../images/07-ext-plugins-6.png)
+		![Figure 7.8: Start the Liferay server](../../images/07-ext-plugins-6.png)
 
 	4.	Drag-and-drop the Ext plugin to the Liferay server
 
-		![Figure 7.9: Drag-and-drop plugin onto server.](../../images/07-ext-plugins-7.png)
+		![Figure 7.9: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
 
 	5.	While selecting the Liferay server in the *Servers* view, select the server's *Publish* option
 
-		![Figure 7.10: Publish your server.](../../images/07-ext-plugins-8.png)
+		![Figure 7.10: Publish your server](../../images/07-ext-plugins-8.png)
 
 -	***From the terminal:***
 	
@@ -385,13 +381,13 @@ So far, the development process has been very similar to that of other plugin ty
 
 -	***Using Developer's Studio:*** Right click your plugin located underneath your server and select *Redeploy*.
 
-	![Figure 7.11: How to redeploy your Ext plugin.](../../images/07-ext-plugins-9.png)
+	![Figure 7.11: How to redeploy your Ext plugin](../../images/07-ext-plugins-9.png)
 
 -	***Using the terminal:*** Redeploy and publish the plugin as you initially did, as described in section *Initial deployment*.
 
 After your `example-ext` plugin is published on Liferay Portal, you can see the *basic* details page by choosing to add a user or view an existing user.
 
-![Figure 7.12: You should only see user fields for screen name, email address, first name, and last name.](../../images/ext-plugin-user-basic-details.png)
+![Figure 7.12: You should only see user fields for screen name, email address, first name, and last name](../../images/ext-plugin-user-basic-details.png)
 
 After you've completed developing your Ext plugin, you'll want to package it up for distribution and production.
 
@@ -401,7 +397,7 @@ Once you have finished developing your plugin, you can package it up in a `.war`
 
 -	***Using Developer Studio:*** While selecting the Ext plugin project in the *Package Explorer* view, select the project's *Liferay* &rarr; *SDK* &rarr; *war* option
 
-![Figure 7.13: Accessing the *war* option.](../../images/07-ext-plugins-10.png)
+![Figure 7.13: Accessing the *war* option](../../images/07-ext-plugins-10.png)
 
 -	***Using the terminal:***
 
@@ -565,7 +561,7 @@ Ext plugins have been created as an evolution of the extension environment provi
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** When migrating an extension environment, it's worth considering that all or at least some of the extension environment's features can be moved into other types of plugins such as portlets and hooks. Portlets and hooks are designed to meet specific needs and they are easier to learn. Additionally, they are cheaper to maintain since they often require fewer changes when upgrading to a new version of Liferay.
+![tip](../../images/tip-pen-paper.png)**Tip:** When migrating an extension environment, it's worth considering if all or at least some of the extension environment's features can be moved into other types of plugins such as portlets and hooks. Portlets and hooks are designed to meet specific needs and they are easier to learn. Additionally, they are cheaper to maintain since they often require fewer changes when upgrading to a new version of Liferay.
 
 ---
 
