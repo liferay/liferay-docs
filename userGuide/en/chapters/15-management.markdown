@@ -20,9 +20,9 @@ This chapter covers the following activities:
 
 Let's begin our examination of Liferay's control panel by looking at how to manage and organize users in Liferay Portal.
 
-<!-- Section i  Managin users (head ref)-->
+<!-- Section i  Managin users -->
 
-## Managing Users, User Groups, Organizations, Sites, Teams and Roles [](id=managing-users-user-groups-organizations-sites-teams-and-roles)
+## Managing Users [](id=managing-users-user-groups-organizations-sites-teams-and-roles)
 
 The Portal section of the control panel is used for most administrative tasks. You'll find there an interface for the creation and maintenance of
 
@@ -294,7 +294,7 @@ Prior to Liferay 6.0, the default configurations of many Liferay portlets allowe
 
 <!-- needs transition -->
 
-## Managing Portal Settings [](id=managing-portal-settings)
+#### Managing Portal Settings [](id=managing-portal-settings)
 
 After you have created users, user groups, organizations, roles, sites and teams, your portal will be ready to host content and applications. You can configure Liferay's portal settings to fit your environment and your particular portal project. Many configurations can be performed through Liferay's portlet-driven user interface. This section covers how to configure portal settings such as password policies, authentication settings, mail host names, email notifications, display settings and monitoring.
 
@@ -398,9 +398,9 @@ We'll examine how to set up LDAP authentication next.
 
 <!-- New transition?  -->
 
-<!-- Section ii  Integrating Liferay users into your enterprise (head ref)  
-Need text 
--->
+<!-- Section ii   Needs text   -->
+
+## Integrating Liferay users into your enterprise
 
 <!--  this is Section ii, subsection a   -->
 
@@ -561,7 +561,6 @@ If you set this to `user`, Liferay will import all users from the specified port
 
 These properties are a list of phrases from error messages which can possibly be returned by the LDAP server. When a user binds to LDAP, the server can return *controls* with its response of success or failure. These controls contain a message describing the error or the information that is coming back with the response. Though the controls are the same across LDAP servers, the messages can be different. The properties described here contain snippets of words from those messages and will work with Red Hat's Fedora Directory Server. If you are not using that server, the word snippets may not work with your LDAP server. If they don't, you can replace the values of these properties with phrases from your server's error messages. This will enable Liferay to recognize them. Next, let's look at the Single Sign-On solutions Liferay supports.
 
-
 <!--  this is Section ii, subsection b  -->
 
 ### SSO [](id=lp-6-1-ugen12-single-sign-on-0)
@@ -678,3 +677,5 @@ The next tab is Reserved Credentials. You can enter screen names and email addre
 The Default User Associations tab has three fields allowing you to list (one per line) sites, roles and user groups you want new users to become members of automatically. By default, Liferay assigns new users to both the Users role and the Power Users role.
 
 If you have defined other user groups, sites or roles you want newly created users to be members of by default, enter them here. For example, you may have defined site templates in certain user groups to pre-populate end users' private pages. If there is a particular configuration you want everyone to have, you may want to enter those user groups here.
+
+<!--  Summary?   -->
