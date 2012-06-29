@@ -12,8 +12,6 @@ Liferay Portal is one of the most flexible applications on the market today with
 
 You'll find that because Liferay is extremely flexible in its deployment options, it is easy to install as well. If you already have an application server, you can use the tools for deployment that came with your application server. If you don't have an application server, Liferay provides several application server bundles from which to choose. These are very easy to install and with a small amount of configuration can be made into production-ready systems.
 
-<!-- this is section i  -->
-
 ## Editions of Liferay [](id=editions-of-lifer-4)
 
 Liferay ships in two different editions: Liferay Portal Community Edition (CE) and Liferay Portal Enterprise Edition (EE). CE is the same Liferay Portal that has been available for years: frequently updated and bursting with the latest features, the Community Edition of Liferay Portal is offered for free under the Lesser GNU public license, an open source license. This license gives you the flexibility to link Liferay with your own code in your portlet, theme, hook, layout, Ext or web plugins, no matter what license you use for your code. If, however, you modify Liferay directly, those modifications need to be released as open source. This is really the best of both worlds: you have the freedom to do what you want with your code if you use plugins, but if you modify Liferay directly, the community receives the benefits of any enhancements that you've made. 
@@ -21,8 +19,6 @@ Liferay ships in two different editions: Liferay Portal Community Edition (CE) a
 Liferay Portal EE is a supported version of Liferay Portal for the enterprise. Hardened for security and designed to be rock solid stable, EE is offered with a subscription and support package, allowing organizations to build their portals on a stable version of the product that is offered over an extended period of time.
 
 Because the release cycle for EE is longer than that for CE, each enterprise release is supported for 4 years. All bug fixes in Liferay Portal are backported to your version of Liferay for the duration of your subscription. This gives organizations the peace of mind that comes from knowing that their Liferay-powered web sites are stable and will run for years to come, enabling them to build their sites on a proven, stable platform. Additionally, Liferay offers training and consulting on the Enterprise Edition to ensure long-term support and stability for our clients. 
-
-<!--  this is Section ii  -->
 
 ## Obtaining Liferay Portal [](id=obtaining-lifer-5)
 
@@ -35,8 +31,6 @@ So what is a bundle anyway? A bundle is an open source application server with L
 Please note that Liferay is not able to provide application server bundles for proprietary application servers such as WebLogic or WebSphere, because the licenses for these servers don't allow for redistribution. Liferay Portal, however, runs just as well on these application servers as it does on open source application servers. A `.war` file and dependency `.jar`s are provided for proprietary application servers and you'll need to follow a procedure to install Liferay on them. 
 
 First we'll go over installing Liferay from a bundle and after this we'll provide instructions for installing Liferay manually on all the application servers it supports. 
-
-<!--  this is Section iii  -->
 
 ## Installing a bundle [](id=installing-a-bund-5)
 
@@ -80,7 +74,7 @@ If you forget to undeploy the *sevencogs-hook* application before you run throug
 
 If you're using Liferay EE, you don't have the sample site so you don't need to worry about this. The next step is to run through the setup wizard. 
 
-## Using Liferay's setup wizard [](id=using-liferay-s-setup-wizard)
+### Using Liferay's setup wizard [](id=using-liferay-s-setup-wizard)
 
 To make it easy to configure Liferay optimally for your use, the first thing you see when browsing to your newly installed Liferay bundle is a setup wizard. This gives you a convenient way to configure Liferay for your purposes. 
 
@@ -137,8 +131,6 @@ Congratulations! You've just installed Liferay Portal!
 As you can see, bundles are the easiest way to get started with Liferay. They come pre-configured with a running Liferay instance that can be used immediately to explore all of the things that Liferay can do. Bundles are the fastest way to create full production-ready Liferay installations. 
 
 Of course, it's not always possible to use a bundle. You may already have an application server upon which you want to install Liferay. The bulk of this chapter describes how to install Liferay on all the application servers it supports, both open source and proprietary. 
-
-<!--  thi is Section iv   -->
 
 ## App servers [](id=installing-liferay-on-an-existing-application-server)
 
