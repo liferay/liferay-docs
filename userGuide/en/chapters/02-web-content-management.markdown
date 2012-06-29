@@ -435,7 +435,7 @@ That's pretty much all there is to simple content creation. Whole sites have bee
 
 <!-- Section v of new outline -->
 
-## Using Liferay’s  workflow with WCM [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
+## Using Liferay's workflow with WCM [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay WCM, workflow is designed to manage the creation, modification, and publication of web content. You can set up a workflow so that content can't be published without going through an approval process that you design. In this way, content is published to the site only after it has been reviewed and approved.
 

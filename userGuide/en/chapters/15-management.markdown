@@ -400,7 +400,7 @@ We'll examine how to set up LDAP authentication next.
 
 <!-- Section ii   Needs text   -->
 
-## Integrating Liferay users into your enterprise
+## Integrating Liferay users into your enterprise [](id=lp-6-1-ugen15-integrating-liferay-users-into-your-enterprise-0)
 
 <!--  this is Section ii, subsection a   -->
 

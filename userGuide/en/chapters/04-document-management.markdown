@@ -214,6 +214,6 @@ Now you know just how easy it is to store your files using Liferay's Documents a
 
 <!--   Need text for section v.   -->
 
-## Liferay Sync
+## Liferay Sync [](id=lp-6-1-ugen04-liferay-sync-0)
 
 <!--   Need summary?  -->
