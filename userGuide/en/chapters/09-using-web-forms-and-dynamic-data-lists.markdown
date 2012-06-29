@@ -6,10 +6,9 @@ Ch. 9 Using web forums & dynamic data lists
 old ch. 12
 -->
 
-<!--
-## i. Simple web forms (head ref) [](id=lp-6-1-ugen09-i-simple-web-forms-head-ref-0)
-Does this go here?
--->
+<!--  Intro ?   -->
+
+## i. Simple web forms [](id=lp-6-1-ugen09-i-simple-web-forms-head-ref-0)
 
 As needs change in business and organizations, the technology used to fulfill those needs must adapt as well. People use electronic means to do things that years ago were done using manual processes. For example, you may want your team to sign up on your web site for a holiday party. Or maybe every fall, you need to put up a job posting board, only allowing administrators to create new job posts. Maybe you want to allow users to manage a notebook or To-Do list on their private pages. In all of these cases, you want to enter in custom sets of data, allow your users to add their information and be able to access the set of data. 
 
@@ -23,18 +22,10 @@ In the past, you'd need to be a developer to accomplish any of this. Today, you 
 
 All of this capability is easily distilled into two concepts: data defining and data displaying. These data lists are dynamic for a reason: they are flexible and powerful. Whether you want to collect simple input from the user or develop an entire data entry system for real estate listings, Dynamic Data Lists have your use case covered. Combined with the flexibility provided through templates and the power of languages like Velocity, entire applications can be built in a  short time.
 
-
-<!--
-## This is section ii.  [](id=lp-6-1-ugen09-this-is-section-ii--0)
--->
 ## Building a list platform in Liferay [](id=building-a-list-platform-in-liferay)
 
 To expand and extend the social capabilities of our site, we want to build a new, radical platform on Liferay: custom-built lists that users can share and collaborate on with their friends (or enemies, depending on their Social Relation type). Marketing has come up with a great name for our new service: `list.it`. Our beautiful `list.it` dashboard will give users the power to generate their own lists, see the lists of their friends and tally the results of certain types of lists (surveys, anyone?). Liferay makes this as simple as throwing some Dynamic Data List Display and Form portlets on a user's private and public user pages. 
 
-
-<!--
-## This is section iii.  [](id=lp-6-1-ugen09-this-is-section-iii--0)
--->
 ## Defining data types [](id=defining-data-types)
 
 When new users log in to `list.it`, they are going to want to build a few lists for themselves. Chances are, many of the lists they would want to create--to do lists, shopping lists and memos come to mind--are already defined in the portal. All the user has to do is create a new list, choose that pre-defined data type, and have at it! A number of data definitions ship with the portal to help you get started: *To Do*, *Issues*, *Meeting Minutes* and *Contacts*. Use these on their own to generate new data lists or tweak them to fit your use case. 
@@ -107,11 +98,6 @@ That really covers the basic tools that users of `list.it` need to get rolling w
 
 All that's left to do is build a new data list and let your users play with it.
 
-
-
-<!--
-## This is section iv.  [](id=lp-6-1-ugen09-this-is-section-iv--0)
--->
 ## Creating data lists [](id=creating-data-lists)
 
 Building out new lists really isn't all that different from creating new pieces of web content. Just as you can create new Web Content Structures to control the input of a particular type of web content, you can use Data List Definitions to control the input of new list types. Similarly, just as you create a new piece of web content, selecting the Structure you would like to use with it, `list.it` users (we'll call them *Listies*) choose the Definition they want to use when creating a new list. Now that a data definition is in place, all that remains is to create a new data list to capture the information we're going after. This is the easiest step in creating the list, with only a few clicks between a data definition and robust data entry and delivery.
@@ -159,10 +145,6 @@ While it's possible to ask everyone to contribute to the data list within the co
 ![Figure 5.6: The spreadsheet view](../../images/05-ddl-spreadsheet-view.png)
 
 Now, as useful as this default display is, and it's certainly useful for my to do list and my memo notes, it can be an awkward way to ask my volunteers to sign up. In fact, any time I want other Listies to interact with my lists and contribute responses, I really just want a simple form to show them. They don't need to see the full range of responses. And in some cases, it can be hazardous to your health for everyone to see the responses. Then you don't have to explain why your sister-in-law won't work with your brother on the same task because of his B.O. problem. For reasons like that, you'll need to customize the data entry form or the display of the list. Liferay lets you do exactly that using a custom *detail template* or *list template*. 
-
-<!--
-## this is section v. [](id=lp-6-1-ugen09-this-is-section-v-0)
--->
 
 ## Make it pretty: creating custom displays [](id=make-it-pretty-creating-custom-displays)
 
