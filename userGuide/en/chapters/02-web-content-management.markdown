@@ -12,7 +12,6 @@ In this chapter, we'll cover the following topics:
 
 As you'll see, Liferay's WCM is a full-featured solution for managing your web site. We'll start with an overview of what it has to offer and then we'll dive down into its features. 
 
-<!-- Section i of new outline   -->
 ## How Can Liferay's WCM Help You? [](id=how-can-liferay-s-wcm-help-you-)
 
 With Liferay's WCM you have the ability to create, edit, stage, publish and approve content with easy to learn yet powerful tools. Liferay's WCM streamlines site changes for the end user versus doing a site in HTML. Some ways Liferay WCM makes this possible include:
@@ -331,9 +330,11 @@ Let's say we wanted to create a page only for administrators to see. We can do t
 ![Figure 2.10: Permissions for Admin Tips](../../images/04-web-content-page-permissions.png)
 
 Congratulations! You've just changed the permissions for this page so only site administrators can view it. Any users you add to this role can now see the page. Other users, even members of this site, won't have permission to see it.
+
 <!-- 
 ## Summary [](id=summ-24)
 -->
+
 Pages in Liferay are as flexible as pages you'd create manually without a portal. Using a point and click interface, you can define your site any way you want. You can create and remove pages, export and import them, set their layouts, define how they are indexed by search engines, and more. You've also been introduced to Liferay's concept of sites. Again, using a point and click interface, you can create multiple web sites and define how users can access them, whether they are linked to a domain name, and create all of their pages. 
 
 You now understand how to manage pages in Liferay Portal. It's time to move on to adding content to those pages. Liferay's Web Content Management (WCM) is a highly powerful, yet flexible, set of tools that enables you to successfully manage your web site.
@@ -389,6 +390,7 @@ Permissions in Liferay WCM work the same way they do everywhere else in Liferay.
 For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. Let's look at how it works. 
 
 <!-- Section iv of new outline -->
+
 ## Publishing (basic) content [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
 
 Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page by selecting *Add &rarr; Web Content Display* from the Dockbar.
@@ -432,7 +434,8 @@ Note: if you want to view your page the way your users will see it (i.e., withou
 That's pretty much all there is to simple content creation. Whole sites have been created this way. But if you want to take advantage of the full power of Liferay's WCM, you'll want to use structures and templates found in chapter 3. Next, let's see how you can manage your content with an approval process called workflow. 
 
 <!-- Section v of new outline -->
-## Using Liferay's Integrated Workflow with Content Management [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
+
+## Using Liferay’s  workflow with WCM [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay WCM, workflow is designed to manage the creation, modification, and publication of web content. You can set up a workflow so that content can't be published without going through an approval process that you design. In this way, content is published to the site only after it has been reviewed and approved.
 
@@ -477,7 +480,7 @@ Next up is Site memberships, where you'll learn how to administer a Liferay port
 
 ## Site memberships [](id=lp-6-1-ugen02-site-memberships-0)
 
-<!-- Need text to go here -->
+<!-- Need text here -->
 
 ## Summary [](id=summ-25)
 
