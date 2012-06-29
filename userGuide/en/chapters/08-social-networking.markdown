@@ -22,14 +22,13 @@ When we're finished, you'll have a good idea how you can use Liferay to power yo
 <!-- | TODO: Need to include a small section here on installing the social portlets for EE users. DONE | -->
 
 <!--
-This says, "Leveraging ," but what is it leveraging? 
+This says, "Leveraging ," but what is it leveraging? Social portlets?
 Activities tracking seems to be in the next section, Measuring Social Activity
 
-## i. Leveraging , Activities Tracking and User Connections (head ref) [](id=lp-6-1-ugen08-i-leveraging--activities-tracking-and-user-connections-head-0)
-Not sure if this goes here.
+ i. Leveraging , Activities Tracking and User Connections (head ref) [](id=lp-6-1-ugen08-i-leveraging--activities-tracking-and-user-connections-head-0)
 -->
 
-## Liferay's social portlets [](id=liferay-s-social-portlets)
+## Leveraging Social Portlets, Activities Tracking and User Connections [](id=liferay-s-social-portlets)
 	
 Liferay has many portlets available for social interaction and collaboration. Some of these portlets are designed to help you work together as a team, while others are designed to foster social interactions between team members at your organization.
 
@@ -142,10 +141,6 @@ Probably the most effective way users can connect is by interacting with other u
 <!-- need new transition?   -->
 Beyond Liferay's API, there is also support for the OpenSocial standard. 
 
-<!--
-## This is section ii.  [](id=lp-6-1-ugen08-this-is-section-ii--0)
--->
-
 ## Measuring social activity [](id=measuring-social-activity)
 
 <!-- | TODO This is all out of date. It's been reimplemented for Liferay 6.1. Please rewrite. | -->
@@ -187,17 +182,7 @@ Social Activity can be an invaluable tool for portals that are heavily driven by
 <!-- need new transition   -->
 In addition to the social interactions that you can create on your portal, Liferay has points of integration with some other popular social networks that enable you to leverage their power and popularity for the content on your portal.
 
-
-
-
-
-
-
-<!--
-## iii. Exporting portal applications as widgets and OpenSocial gadgets* (head ref) [](id=lp-6-1-ugen08-iii-exporting-portal-applications-as-widgets-and-opensocial-0)
--->
-
-## OpenSocial integration [](id=opensocial-integration)
+## Exporting portal applications as widgets and OpenSocial gadgets* [](id=opensocial-integration)
 
 OpenSocial is a framework designed for creating applications, called *gadgets*, that function on any social networking site that supports them. There are many existing gadgets available and anyone can create their own gadgets. With Liferay, you can integrate any OpenSocial gadget into a Liferay page and you can easily manage which gadgets are currently in use or available. You can also create your own OpenSocial Gadget using the Liferay's OpenSocial development environment.
 
@@ -231,20 +216,12 @@ Once you have created and saved a gadget using the editor, click on the wrench n
 
 <!-- | TODO How? DONE | -->
 
-<!--   Need transition?   -->
+<!--   Need transition   -->
 Now that you've got all these social applications running on your system, the next question becomes: how do I measure social interaction? How do I make it clear who are the best contributors to my site? Liferay has an answer: social activity measurements.  
 
-<!--
-## iv. Publishing OpenSocial gadgets (head ref) [](id=lp-6-1-ugen08-iv-publishing-opensocial-gadgets-head-ref-0)
+<!--   iv. Publishing OpenSocial gadgets 
 
 Need text here.
--->
-
-
-
-
-<!--
-## This is section v.  [](id=lp-6-1-ugen08-this-is-section-v--0)
 -->
 	
 ## Integrating with Facebook [](id=facebook-integration)
