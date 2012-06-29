@@ -1,6 +1,6 @@
 # Leveraging the Asset Framework [](id=lp-6-1-ugen05-leveraging-the-asset-framework-0)
 
-<!--   Need intro text & head ref   -->
+<!--   Need intro text   -->
 
 ## Tagging and Categorizing Content [](id=lp-6-1-ugen03-tags-and-categories-0)
 
@@ -149,3 +149,5 @@ Related Assets is a new feature in Liferay 6.1 that enables you to connect any n
 The Related Assets portlet is based on the Asset Publisher and possseses essentially the same interface with one key difference. The Asset publisher displays any content that meets the criteria selected in the portlet configuration. The Related Assets portlet only displays content that meets the criteria, and also is listed as a related asset for a piece of content that is currently published on the page where it is placed.
 
 Let's move on, now, to the Calendar portlet.
+
+<!--  This line above needs to be removed and a summary inserted here.  -->
