@@ -10,7 +10,9 @@ old ch. 15
 
 <!-- Intro ?  -->
 
-<!-- Section i Bookmarks (head ref)?   -->
+<!-- Section i Bookmarks (head ref)?   This needs text  -->
+
+## Bookmarks 
 
 ### Creating Your Own Plugin Repository [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
 
@@ -28,9 +30,7 @@ The second method does not require an instance of Liferay to be running. You can
 
 We will first look at creating a plugin repository using the Software Catalog in the control panel.
 
-<!-- section ii Software catalog (head ref)   -->
-
-## The Software Catalog [](id=lp-6-1-ugen15-the-software-catalog-0)
+## Software Catalog [](id=lp-6-1-ugen15-the-software-catalog-0)
 
 You will want to use the Software Catalog if you will have multiple users submitting portlets into the repository and if you don't want to worry about creating the `liferay-plugin-repository.xml` file yourself.
 
@@ -214,11 +214,13 @@ Enter the URL to the repository to which you wish to connect in one of the field
 
 <!--   Section iii Shopping (head ref)  -->
 
+## Shopping
+
 <!--   Section iv Weather (head ref)   -->
 
-<!-- needs transition -->
+## Weather
 
-<!-- Section v Knowledge Base [](id=knowledge-base) --> 
+<!-- needs transition -->
 
 ## Knowledge Base [](id=knowledge-base)
 
@@ -319,4 +321,6 @@ You can also use the Categories Navigation portlet in conjunction with the Knowl
 ![Figure 4.31: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them. Next, let's take a look at the Documents and Media library, Liferay's general mechanism for creating and storing files in the portal.
+
+<!--   Summary?   -->
 
