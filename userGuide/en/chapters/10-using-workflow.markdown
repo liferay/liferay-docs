@@ -1,11 +1,11 @@
+# Using workflow [](id=workflow-with-kal-3)
+
 <!--
 Ch. 10 Using workflow
 
 old ch. 13
 
 -->
-
-# Workflow with Kaleo [](id=workflow-with-kal-3)
 
 Liferay Portal includes a workflow engine called Kaleo. In Greek, this word means "called ones," which is appropriate for a workflow engine that calls users to participate in a process designed for them.
 
@@ -23,11 +23,7 @@ To better understand how to use Kaleo Workflow, this chapter covers:
 
 Once we're done, you should be familiar with how Liferay's Kaleo workflow is used make sure all content has been approved before it is published to your portal. 
 
-<!--
-## This is section i? Enabling workflow (head ref) [](id=lp-6-1-ugen10-this-is-section-i-enabling-workflow-head-ref-0)
--->
-
-## Installation [](id=installati-3)
+## Enabling workflow [](id=installati-3)
 
 Liferay's Kaleo workflow engine ships with CE versions of Liferay. If you have EE or if you uninstalled it, the plugin can be installed through the Liferay marketplace. The name is `kaleo-web` and you'll find it in the list of web plugins. Installing the plugin adds a number of new options to the control panel: 
 
@@ -39,11 +35,6 @@ Liferay's Kaleo workflow engine ships with CE versions of Liferay. If you have E
 There is one workflow that comes bundled with the `kaleo-web` plugin: Single Approver Workflow. This workflow requires one approval before an asset can be published. One of the conveniences of using Liferay's workflow engine is that any roles specified in the workflow definition are created automatically when the definition is deployed. This provides a level of integration with the portal that third party engines cannot match. The Single Approver Workflow contains three roles each with different scopes. The scope of each role can be deduced by their names: Site Content Reviewer, Organization Content Reviewer and Portal Content Reviewer. 
 
 Let's jump right in and create a workflow process definition. 
-
-
-<!--
-## This is section ii.  [](id=lp-6-1-ugen10-this-is-section-ii--0)
--->
 
 ## Creating new workflow definitions [](id=creating-process-definitions)
 
@@ -373,11 +364,7 @@ A portal administrator can create a default workflow definition scheme for each 
 
 Let's turn from creating definitions to how you'd use them. 
 
-<!--
- Section iii? Configuring assets to use workflow process definitions (head ref)
--->
-
-## Using workflow in the control panel [](id=using-workflow-in-the-control-panel)
+## Configuring assets to use workflow process definitions [](id=using-workflow-in-the-control-panel)
 
 Most of your workflow configuration is done via the control panel. Everything you need to do in the portal can be done through simple GUI controls.
 
@@ -401,15 +388,6 @@ Using the context selector drop-down menu in the control canel, you can select a
 
 Using workflow is just as easy. 
 
-<!--
-iv. Using workflow with other applications (head ref)
-	 1. WCM
-	 2. Documents & media
-	 3. Collaboration
-	
-This section needs text.
--->
-
 ### My Workflow Tasks [](id=lp-6-1-ugen06-my-workflow-tasks-0)
 
 My Workflow Tasks is a personalized version of the Workflow Tasks and it's found in your personal section of the control panel. Here are specific tasks which have been assigned to you or assigned to a role of which you are a member. You can also view your completed tasks.
@@ -426,7 +404,7 @@ My Submissions is found under your user's personal information in the control pa
 
 Besides viewing your work, you can also withdraw a submission from the review process by clicking on *Withdraw Submission* from the *Pending* tab.
 
-## Using Kaleo Workflow Processes in Liferay Portal [](id=using-kaleo-workflow-processes-in-liferay-portal)
+### Using Kaleo Workflow Processes in Liferay Portal [](id=using-kaleo-workflow-processes-in-liferay-portal)
 
 Before workflow can be used, you must define which types of assets on the portal are workflow-enabled. If you have created additional definitions, you must also choose the workflow definition to use for each asset that is workflow-enabled.
 
@@ -441,3 +419,19 @@ Next, create two users, a Content Creator and a Content Reviewer. The Content Cr
 Once the content is approved, it can be posted on the Press Releases page in a web content display portlet. 
 
 There's more. EE customers get extra features that enable them to create workflows without having to deal with XML. 
+
+
+<!--  This section needs text.   -->
+
+## Using workflow with other applications (head ref)
+	
+### WCM
+
+### Documents & media
+
+### Collaboration
+
+
+<!--  Summary here?   -->
+
+
