@@ -6,7 +6,7 @@ Ch. 13 Leveraging the Liferay Marketplace
 
 Old ch. 16
 
-(No sections)
+(No level-two sections)
 -->
 
 Liferay Marketplace is an exciting new hub for sharing, browsing and downloading Liferay-compatible applications. As enterprises look for ways to build and enhance their existing platforms, developers and software vendors are searching for new avenues to reach this market. Marketplace leverages the entire Liferay ecosystem to release and share apps in a user-friendly, one-stop site.
