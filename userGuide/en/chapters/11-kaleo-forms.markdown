@@ -26,11 +26,11 @@ Let's look at Kaleo Forms first.
 
 Add the Workflow Forms portlet to a page. The initial state, the *Summary* tab displays the same information you might have seen in *My Workflow Tasks* in the control panel. Any forms available for processing through the workflow can be initiated through the *Submit New* button, as the below image indicates. 
 
-![Figure 6.9: Kaleo Forms give you a convenient way to manage all available workflows in the portal. ](../../images/kaleo-forms-initial-view.png)
+![Figure 11.1: Kaleo Forms give you a convenient way to manage all available workflows in the portal. ](../../images/kaleo-forms-initial-view.png)
 
 Click on *Processes* to view any existing workflow processes or to create new ones. All available processes are listed here. If you're coming here for the first time, however, there won't be any, so let's create one. Click *Add*. You'll see the screen below. 
 
-![Figure 6.10: The Workflow Process Creation Page](../../images/kaleo-workflow-add-process.png)
+![Figure 11.2: The Workflow Process Creation Page](../../images/kaleo-workflow-add-process.png)
 
 Set a name and a description. Next, you'll define an *Entry Definition* and an *Initial Form*, choose or create a *workflow* and *Workflow Task Forms*.
 
@@ -48,11 +48,11 @@ You probably noticed when choosing a workflow, you also have the option to creat
 
 Kaleo Designer provides a drag and drop interface for users to create custom workflows. It's an incredibly powerful tool for managing workflow defintions. The Workflow Designer can only be accessed through the Kaleo Forms portlet but definitions created can be used for other processes as well.
 
-![Figure 6.11: The Workflow Designer](../../images/kaleo-workflow-designer.png)
+![Figure 11.3: The Workflow Designer](../../images/kaleo-workflow-designer.png)
 
 There are seven types of nodes you can add to a defintion. The node types are **Condition**, **End**, **Fork**, **Join**, **Start**, **State** and **Task**. If you've read the entire chapter, you'll notice Start and End aren't node types we've previously discussed; that's because they're actually just State nodes, with certain fields prefilled to help streamline the creation process. Since every workflow has a start and end state, you'd have to do this anyway. 
 
-![Figure 6.12: The Node Configuration Menu](../../images/kaleo-designer-submenu.png)
+![Figure 11.4: The Node Configuration Menu](../../images/kaleo-designer-submenu.png)
 
 Each node you add has a pop-up edit menu which lets you add anchors, attach tasks or delete the node. Anchors connect nodes so each connection needs an anchor. To transition to the next node, you'd add an anchor, create a new node, then click the first anchor and drag it to the anchor on the new node. This creates a transition.
 
@@ -63,7 +63,7 @@ First add two tasks, then use the edit icon to name them *Review* and *Update*. 
 <!-- | TODO: I fixed this screenshot, but not before I deleted this todo -->
 
 
-![Figure 6.13: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
+![Figure 11.5: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
 
 Next, we want to add the correct assignments and notifications. Click on *Review*. The box on the left shows all the proprerties of the Review node. In the *assignments* category, assign the task to the *Portal Content Reviewer* role. Click on *Notifications* and create a notification with the type *On Assignment*. Now move to the Update node and assign it to the *Content Creator* with its own notification.
 

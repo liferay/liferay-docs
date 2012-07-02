@@ -52,7 +52,7 @@ Let's look in detail at how you'd create a workflow using a single approver.
 
 Below is a diagram of a single approver workflow definition. It has only two tasks and two states.  
 
-![Figure 6.1: The default single approver workflow. Arrows represent transitions and boxes represent states and tasks.](../../images/kaleo-workflow-single-approver.png)
+![Figure 10.1: The default single approver workflow. Arrows represent transitions and boxes represent states and tasks.](../../images/kaleo-workflow-single-approver.png)
 
 First you define the schema. For Liferay workflows using Kaleo, `liferay-worklow-definition-6_1_0.xsd` should be your schema. You can find this schema in the `definitions` folder of the Liferay source or a good XML editor can cache it from Liferay's web site.
 
@@ -243,7 +243,7 @@ Forks and joins are used for parallel processing. For example, say you have a ne
 
 <!-- | TODO - I deleted the original one... -->
 
-![Figure 6.2: Parallel Approval Design](../../images/kaleo-workflow-parallel-approval.png)
+![Figure 10.2: Parallel Approval Design](../../images/kaleo-workflow-parallel-approval.png)
 
 You can transition to a fork from a task or state. From the fork, you can transition to multiple tasks or states which occur in parallel. In the previous example, when we have multiple transitions from one task, they're mutually exclusive: you either trigger one or the other. The transitions are also serial, meaning one must occur before the next one can occur. With a parallel workflow, you can have different approvals going through different users at the same time. For example, you could use this to separate two different departments' approval chains on a single asset. A fork should be formatted like this:
 
@@ -368,7 +368,7 @@ Let's turn from creating definitions to how you'd use them.
 
 Most of your workflow configuration is done via the control panel. Everything you need to do in the portal can be done through simple GUI controls.
 
-![Figure 6.3: Adding a Workflow Definition](../../images/kaleo-workflow-new-definition-control-panel.png)
+![Figure 10.3: Adding a Workflow Definition](../../images/kaleo-workflow-new-definition-control-panel.png)
 
 You can find the Workflow section under the Portal heading in the control panel. There are three options under Workflow: *Definitions*, *Default Configuration* and *Submissions*.
 
@@ -382,7 +382,7 @@ Clicking on *Submissions* will let you view any currently pending assets or any 
 
 After you have uploaded workflow definitions and set the default workflow behavior you can go up to *Workflow Configuration* and tweak the definitions you're using for each site individually.
 
-![Figure 6.4: The Workflow Configuration Page](../../images/kaleo-workflow-configuration.png)
+![Figure 10.4: The Workflow Configuration Page](../../images/kaleo-workflow-configuration.png)
 
 Using the context selector drop-down menu in the control canel, you can select any site in the portal. All the options under that heading, including Workflow Configuration, now apply to that particular site. 
 
@@ -392,7 +392,7 @@ Using workflow is just as easy.
 
 My Workflow Tasks is a personalized version of the Workflow Tasks and it's found in your personal section of the control panel. Here are specific tasks which have been assigned to you or assigned to a role of which you are a member. You can also view your completed tasks.
 
-![Figure 6.5: My Workflow Tasks Page](../../images/kaleo-workflow-my-tasks.png)
+![Figure 10.5: My Workflow Tasks Page](../../images/kaleo-workflow-my-tasks.png)
 
 It's here workflow users review and approve content. By clicking on the actions next to a piece of content, a user can view the content, then choose to approve or reject it and add comments. 
 
@@ -400,7 +400,7 @@ It's here workflow users review and approve content. By clicking on the actions 
 
 My Submissions is found under your user's personal information in the control panel. From this screen you can view any assets  you have submitted to review. Those currently under review are listed under the *Pending* tab and those that have been reviewed are listed under the *Completed* tab.
 
-![Figure 6.6: The My Submissions Page](../../images/kaleo-workflow-my-submissions.png)
+![Figure 10.6: The My Submissions Page](../../images/kaleo-workflow-my-submissions.png)
 
 Besides viewing your work, you can also withdraw a submission from the review process by clicking on *Withdraw Submission* from the *Pending* tab.
 
@@ -408,13 +408,13 @@ Besides viewing your work, you can also withdraw a submission from the review pr
 
 Before workflow can be used, you must define which types of assets on the portal are workflow-enabled. If you have created additional definitions, you must also choose the workflow definition to use for each asset that is workflow-enabled.
 
-![Figure 6.7: You can select which site to work on by using the drop-down menu in the Content section of the control panel.](../../images/kaleo-workflow-control-panel-context-selector.png)
+![Figure 10.7: You can select which site to work on by using the drop-down menu in the Content section of the control panel.](../../images/kaleo-workflow-control-panel-context-selector.png)
 
 To demonstrate how this works, we'll create a press release. Press releases should be posted in the *Newsroom* section of the web site, so before setting specific workflow configuration options or creating content, create the Newsroom site and switch to it in the control panel. In Workflow Configuration, set Web Content to use the Single Approver workflow.
 
 Next, create two users, a Content Creator and a Content Reviewer. The Content Creator logs in and creates a new press release for Nose-ster and clicks *Submit for Publication*. This triggers the workflow process and notifies the Content Reviewer. When the Content Reviewer logs in, he or she can assign the workflow task to him- or herself and approve the content.
 
-![Figure 6.8: Before a Content Reviewer can approve content, he must assign it to himself or have an administrator assign it to him.](../../images/kaleo-workflow-assign-to-me.png)
+![Figure 10.8: Before a Content Reviewer can approve content, he must assign it to himself or have an administrator assign it to him.](../../images/kaleo-workflow-assign-to-me.png)
 
 Once the content is approved, it can be posted on the Press Releases page in a web content display portlet. 
 
