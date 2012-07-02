@@ -874,7 +874,7 @@ Here are the steps you'll need to follow to deploy Liferay Portal to your domain
 
 7. Click *OK*.
 
-![Figure 14.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
+![Figure 14.x: Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
 
 -	If you disabled the setup wizard, your site's home page opens in your browser at [http://localhost:8080](http://localhost:8080).
 
