@@ -133,6 +133,8 @@ Social Office's Microblogs application allows you to broadcast your thoughts as 
 
 ![Figure X.x: Microblogs allow users to broadcast their thoughts to a chosen audience.](../../images/microblogs.png)
 
+Note that there are two different portlets for accessing the microblogs system: the Microblogs portlet and the Microblogs Status Update portlet. When placed on private pages, both portlets allow you to update your mircoblogs status. The Microblogs portlet also allows you to view your Microblogs Timeline and Mentions tabs. On public pages, these portlets display microblogs but don't allow you to publish new posts. You would want to just anyone to publish microblogs under your name, would you?
+
 Social Office's private messaging system allows you to send email-like messages to other users within the portal. Its interface is similar to that of an email client. You can select messages to mark them as read or unread or mark them for deletion. Use the *New Message* button to compose a new message. Just like with email, you can enter a subject, a message body, and add attachments. Open the dropdown menu next to the *To* field to select a user or users to send your message to. You can select any number of users.
 
 ![Figure X.x: The Private Messaging Interface functions just like an email client for use within a Social Office instance.](../../images/private-messaging.png)
