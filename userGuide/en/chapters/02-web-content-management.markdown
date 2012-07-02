@@ -68,7 +68,7 @@ By the time we're done, you should be able to apply all these concepts to your o
 
 First, a little housekeeping. If we're going to be *Nose-ster*, our portal should also be called Nose-ster. To set general information about your portal like the name and mail domain, go to the control panel and select *Portal Settings* under the Portal heading. You could set up the configuration for Nose-ster as follows.
 
-![Figure 2.x Changing Portal Settings](../../images/04-web-content-changing-settings.png)
+![Figure 2.x: Changing Portal Settings](../../images/04-web-content-changing-settings.png)
 
 You can also customize the logo in the top left corner of every page by selecting *Display Settings* under the *Miscellaneous* tab on the panel to the right. Once you've made the changes, we can begin creating pages.
 
