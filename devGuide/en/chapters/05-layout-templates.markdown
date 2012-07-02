@@ -15,7 +15,7 @@ Let's get our "spatial relation" juices flowing as we create a custom layout tem
 
 Our Plugin SDK supports layout templates as plugins. And creating layout templates with Liferay Developer Studio is easier than ever.
 
-In Developer Studio, go to *File* &rarr; *New* &rarr; *Liferay Project* and do the following:
+***Using Developer Studio:*** go to *File* &rarr; *New* &rarr; *Liferay Project* and do the following:
 
 1. Fill in the *Project* and *Display* names
 3. Select the appropriate *Plugins SDK* and *Portal Runtime*
@@ -88,9 +88,11 @@ Now that you are familiar with the layout template's files and directory structu
 
 Deploy your layout templates from either of the following environments:
 
-- From *Developer Studio* - Drag your layout template project onto your server.
+- ***Using Developer Studio -*** Drag your layout template project onto your server
 
-- From *Terminal* - Execute `ant deploy` from your layout template project directory.
+- ***Using the terminal -*** Execute the following command from your your layout template project directory:
+
+		ant deploy
 
 Upon deploying your template, your server will output messages indicating that your template was read, registered and is now available for use.
 
