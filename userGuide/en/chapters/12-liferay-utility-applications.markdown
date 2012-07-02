@@ -290,11 +290,11 @@ Navigate back to the templates tab of the Knowledge Base page of the control pan
 
 *Delete:* lets you remove a template from the knowledge base.
 
-To use a template to create a new article, you have view the template and then click *Use this Template*. This brings you to the New Article editor with the contents of the template copied for you.
+To use a template to create a new article, you have to view the template and then click *Use this Template*. This brings you to the New Article editor with the contents of the template copied for you.
 
 ### Knowledge Base Article Portlet [](id=lp-6-1-ugen04-knowledge-base-article-portlet-0)
 
-The Knowledge Base Article portlet can be placed on a page to display a an entire article. When you first place this portlet on a page it displays the message *Please configure this portlet to make it visible to all users*. This message is a link to the configuration dialog box for the portlet. Click *Select Article* to choose an article to display. Pick an article and then click *Save*. When your page refreshes it will display the article in the portlet. 
+The Knowledge Base Article portlet can be placed on a page to display an entire article. When you first place this portlet on a page it displays the message *Please configure this portlet to make it visible to all users*. This message is a link to the configuration dialog box for the portlet. Click *Select Article* to choose an article to display. Pick an article and then click *Save*. When your page refreshes it will display the article in the portlet. 
 
 ![Figure 12.10: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
 
@@ -320,7 +320,9 @@ You can also use the Categories Navigation portlet in conjunction with the Knowl
 
 ![Figure 12.13: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
-You can select topics for articles when you are creating or editing them. Next, let's take a look at the Documents and Media library, Liferay's general mechanism for creating and storing files in the portal.
+You can select topics for articles when you are creating or editing them. 
+<!--  Next, let's take a look at the Documents and Media library, Liferay's general mechanism for creating and storing files in the portal.
+-->
 
 <!--   Summary?   -->
 
