@@ -209,7 +209,7 @@ This is the default store. It's a simple file storage implementation that uses a
 
 The file system store was the first store created for Liferay and is heavily bound to the Liferay database. By default, documents are stored in a `document_library` subfolder of the `data` folder in a Liferay bundle. Of course, you can change this path to anything you want by using the `dl.store.file.system.root.dir=` property. 
 
-This store creates a folder structure based on primary keys in the Liferay database. If, for example, you upload a presentation with the file name `workflow.odp` into a folder called *stuff*, the file system store creates a folder structure which looks like figure 19.x. 
+This store creates a folder structure based on primary keys in the Liferay database. If, for example, you upload a presentation with the file name `workflow.odp` into a folder called *stuff*, the file system store creates a folder structure which looks like figure 19.3. 
 
 ![Figure 19.3: Liferay's file system store creates a folder structure based on primary keys in Liferay's database. ](../../images/enterprise-file-system-store.png)
 
