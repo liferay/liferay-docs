@@ -8,7 +8,7 @@ old ch. 12
 
 <!--  Intro ?   -->
 
-## i. Simple web forms [](id=lp-6-1-ugen09-i-simple-web-forms-head-ref-0)
+## Simple web forms [](id=lp-6-1-ugen09-i-simple-web-forms-head-ref-0)
 
 As needs change in business and organizations, the technology used to fulfill those needs must adapt as well. People use electronic means to do things that years ago were done using manual processes. For example, you may want your team to sign up on your web site for a holiday party. Or maybe every fall, you need to put up a job posting board, only allowing administrators to create new job posts. Maybe you want to allow users to manage a notebook or To-Do list on their private pages. In all of these cases, you want to enter in custom sets of data, allow your users to add their information and be able to access the set of data. 
 
@@ -34,7 +34,7 @@ If none of the built-in data definitions suits your needs, you can define your o
 
 Using data lists to outline a new data model is as simple as point and click. You now have a `list.it` account and have been dying to bug your friends and family to sign up for "volunteer" work: helping you move into a new apartment. Using an intuitive visual editor, you can quickly draw up the skeleton for that volunteer list in minutes. Since data lists exemplify a unique type of content for your site, you can find them in the content section of the control panel, selecting *Go To &rarr; Control Panel &rarr; Content &rarr; Dynamic Data Lists* or *Manage &rarr; Site Content &rarr; Dynamic Data Lists*. Within the dynamic data lists section, you can either create a new data type (*Manage Data Definitions*) or a new list from an existing data type.
 
-![Figure 5.1: Data Lists in the control panel.](../../images/05-ddl-control-panel.png)
+![Figure 9.1: Data Lists in the control panel.](../../images/05-ddl-control-panel.png)
 
 If you have a new data type, you need to create a definition for it first. Click *Manage Data Definitions* and click the *Add* button. The first thing you should enter is a name for the definition and a description. Call it *Volunteer Sign-Up*. When creating a new data definition, you have a palette of fields to lay out, as well as a blank canvas to construct the definition. The interface looks similar to creating and editing web content structures covered previously. Let's explore the different data types at our disposal:
 
@@ -60,7 +60,7 @@ If you have a new data type, you need to create a definition for it first. Click
 
 **Text Box:** a large text box for long text input.
 
-![Figure 5.2: Data definition fields.](../../images/05-data-definition-screen.png)
+![Figure 9.2: Data definition fields.](../../images/05-data-definition-screen.png)
 
 Using that reference as a nice cheat-sheet, you can now create the data type you need for "Volunteer Work Sign-Up." Use a `Text` type for the name. For all the tasks your friends and family can volunteer to do for you, use `Select` (obviously set to allow multiple options). Finally, you don't want to forget a `File Upload` so they can upload images of themselves. After all, how much more official-feeling and fun is it if you can print out some nifty badges? To add these fields, drag them from the palette on the left to the work area on the right. 
 
@@ -90,7 +90,7 @@ When creating data definitions, you can also customize the appearance of the inp
 **Width (Text, Text Box, Decimal, Integer, Number):** Sets the visual width of the form on the page. It does not affect the values that are stored. Possible values are `Small`, `Medium` and `Large`.
 
 
-![Figure 5.3: Data field properties.](../../images/05-data-definition-field-properties.png)
+![Figure 9.3: Data field properties.](../../images/05-data-definition-field-properties.png)
 
 In addition to dragging the fields around to create your desired forms, you can stack inputs within inputs by dragging a field within another field. You can organize your data into unlimited levels of hierarchy, creating the clearest, most logical data model. There is also a duplicate button on each field (the middle button), allowing you to easily clone any field as many times as you need.
 
@@ -112,7 +112,7 @@ To create a new volunteer list with the "Volunteer Sign-Up" definition:
 
 Now that you've created your brand new volunteer list, you can pester everyone you know to sign up. But what would it look like for them to add an entry to this list? The data definition you've previously created (or selected) defines the layout as well, which means the form looks just the way you laid it out. 
 
-![Figure 5.4: Entering a new data record.](../../images/05-ddl-add-record.png)
+![Figure 9.4: Entering a new data record.](../../images/05-ddl-add-record.png)
 
 But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet or that boring Jobs Listing look? The answers to these pressing, burning questions bring us to the mecca that is the display side of this equation.
 
@@ -132,7 +132,7 @@ You can publish your lists anywhere in your portal too. Read on to find out more
 
 Lists are published in the portal through the Dynamic Data List Display portlet. If Listies don't customize the display, their lists look something like this:
 
-![Figure 5.5: The default data list display.](../../images/05-ddl-list-display.png)
+![Figure 9.5: The default data list display.](../../images/05-ddl-list-display.png)
 
 This isn't all that exciting, but it allows users to see the list's contents, and if they have permission, to add and/or edit list items. Within a site like `list.it`, this type of interaction is used for display-only lists that the user chooses to expose to others, or for the user's own private lists. But you can improve the display. You can show the data in a spreadsheet, so you can view the responses to your Volunteer Sign-Up in a comfortable, easy-to-read format. The Dynamic Data List Display portlet provides an easy way for a user (such as a member of a site) to interact with whatever list is active and available.
 
@@ -142,7 +142,7 @@ While it's possible to ask everyone to contribute to the data list within the co
 
 **Spreadsheet View:** displays the list in a dynamic spreadsheet view. This allows users with permission to interact with the list in the same way as in a standard spreadsheet program.
 
-![Figure 5.6: The spreadsheet view](../../images/05-ddl-spreadsheet-view.png)
+![Figure 9.6: The spreadsheet view](../../images/05-ddl-spreadsheet-view.png)
 
 Now, as useful as this default display is, and it's certainly useful for my to do list and my memo notes, it can be an awkward way to ask my volunteers to sign up. In fact, any time I want other Listies to interact with my lists and contribute responses, I really just want a simple form to show them. They don't need to see the full range of responses. And in some cases, it can be hazardous to your health for everyone to see the responses. Then you don't have to explain why your sister-in-law won't work with your brother on the same task because of his B.O. problem. For reasons like that, you'll need to customize the data entry form or the display of the list. Liferay lets you do exactly that using a custom *detail template* or *list template*. 
 
@@ -233,7 +233,7 @@ Now all we have to do is set the results in some appealing way. In this example,
 
 Once you've typed your source into the editor window, click *Update* and then save the list template. With the list template selected, your list display can now be a summary of tasks as shown below. 
 
-![Figure 5.7: A list template in action](../../images/05-ddl-list-template.png)
+![Figure 9.7: A list template in action](../../images/05-ddl-list-template.png)
 
 All the knowledge you have accrued through building out your award-winning content can be brought to bear in list templates. With the full power of Velocity templates at your fingertips, you have easy access to all the data in the list, as well as the full complement of helper methods and the Alloy UI Javascript library to make easy work of dynamic displays. 
 
@@ -245,7 +245,7 @@ Liferay integrates the powerful features of workflow and the data capabilities o
 
 If you don't have a workflow engine installed, install the Kaleo Web plugin by going to *Control Panel &rarr; Server &rarr; Plugins Installation &rarr; Install More Portlets &rarr; Web Plugins* and finding Kaleo Web in the list. You can also copy the Kaleo `.war` file to the deploy folder of you application server. Once workflow is installed, you have a new option when creating a list:
 
-![Figure 5.8: Enabling workflow on a list](../../images/05-ddl-add-workflow.png)
+![Figure 9.8: Enabling workflow on a list](../../images/05-ddl-add-workflow.png)
 
 Choose the workflow you would like to use, then every record has to go through the workflow process. Now if you need to preview or edit entries as they're coming in, it's easy to work in to your daily workflow.
 
@@ -269,7 +269,7 @@ To build a list in Kaleo Forms with a workflow:
 4. Select the appropriate list, workflow and forms you want to use in this process.
 5. Click *Save* to save your process.
 
-![Figure 5.9: New Kaleo Forms process](../../images/05-ddl-kaleo-forms-new-process.png)
+![Figure 9.9: New Kaleo Forms process](../../images/05-ddl-kaleo-forms-new-process.png)
 
 While the form looks complicated, it can be straightforward. There are a few pieces that make up a process and clicking on each one takes you to the relevant list of options to insert.
 
@@ -285,7 +285,7 @@ One of the great advantages to using Kaleo forms to present your list as a proce
 
 **Edit:** *Edit* mode is used for any stage of the workflow process. For instance, you may want to separate information that shouldn't be saved from information that should. Other stages in the workflow may be a great place to store that additional information. No required fields have to be present on an edit mode form.
 
-![Figure 5.10: Selecting a detail template as the initial form](../../images/05-kaleo-forms-detail-templates.png)
+![Figure 9.10: Selecting a detail template as the initial form](../../images/05-kaleo-forms-detail-templates.png)
 
 Once you have chosen the initial display you want, all that's left to do is configure the workflow for your process.
 
@@ -293,7 +293,7 @@ Once you have chosen the initial display you want, all that's left to do is conf
 
 You can now select a workflow to apply to your new list-defined process. All the avaliable workflows can be chosen and you can create new ones from the selection screen. Simply choose *Add Workflow* and a Workflow Designer screen appears allowing you to define a new workflow by dragging elements in a flow chart.
 
-![Figure 5.11: Creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
+![Figure 9.11: Creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
 
 We'll keep ours simple and just choose "Single Approver Definition." This gives us a starting point (entry creation) and a 'review' task, which we can use to add additional information in a secondary form.
 
@@ -308,7 +308,7 @@ When inside the view to assign forms to tasks:
 3. Start typing the name of a detail template and it appears.
 4. Click *Save* to save the form assignment.
 
-![Figure 5.12: Assigning forms to workflow tasks](../../images/05-kaleo-forms-task-form.png)
+![Figure 9.12: Assigning forms to workflow tasks](../../images/05-kaleo-forms-task-form.png)
 
 You can assign forms to as many tasks as you need until you're satisfied with the workflow. After this stage, save the process and it's ready to be used in Kaleo Forms.
 
@@ -318,14 +318,14 @@ You can assign forms to as many tasks as you need until you're satisfied with th
 
 Once you have a new Kaleo Form process, you can add new entries through the Summary tab in Kaleo Forms. Once the form is filled out and submitted, it enters the workflow you selected for the process.
 
-![Figure 5.13: Adding a new entry to a process](../../images/05-kaleo-form-new-entry.png)
+![Figure 9.13: Adding a new entry to a process](../../images/05-kaleo-form-new-entry.png)
 
 After you have created an entry, the next task in the workflow may have an additional form to complete. If so, there is also an option to enter it:
 
 1. Next to the entry in progress click the *Actions* button.
 2. Click *Complete form*.
 
-![Figure 5.14: Completing a form in the next workflow task](../../images/05-kaleo-forms-complete-form.png)
+![Figure 9.14: Completing a form in the next workflow task](../../images/05-kaleo-forms-complete-form.png)
 
 After the new entry has worked its way through the entire workflow, it is added to the data set collected. The owner of that data set (who created the Kaleo process) can view and edit the entries collected.
 

@@ -38,7 +38,7 @@ Liferay bundles contain the same directory structure regardless of application s
 
 	<!-- | TODO: This image needs to be updated to the 6.1 release when we have a build. | -->
 
-![Figure 11.1: Bundle directory structure](../../images/02-bundle-directory-structure.png) 
+![Figure 14.1: Bundle directory structure](../../images/02-bundle-directory-structure.png) 
 
 Inside this folder, there are folders for various purposes:
 
@@ -92,7 +92,7 @@ For the adminstrator, you need to supply the following information:
 
 **Email:** the email address of the user that has the administrator account. 
 
-![Figure 11.2: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 14.2: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 The database section can be a little bit technical. If you've downloaded Liferay for evaluation or demo purposes only, and you're not installing Liferay on server hardware to get it ready for your users, you can ignore the database section and click the *Finish Configuration* button. If, however, you're reading this section because you're installing Liferay for actual use, you'll need a separate database first.
 
@@ -114,7 +114,7 @@ Once you have your database created, create a user which can do anything to the 
 
 Open the Database section of the wizard. From the select box, choose your database. You'll see a form which then lets you specify the URL to the database, the driver class and the user credentials (see below). Most of this is filled out already; all you should need to do is supply the name of your database and the server it's running on, as well as the user credentials. 
 
-![Figure 11.3: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 14.3: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
 
 Once you've filled out the form, click *Finish Configuration*. You'll see a message stating that Liferay is being installed as it creates the tables and data it needs in its database. When it's finished, it tells you the location of the configuration file (`portal-setup-wizard.properties`) where it saved all of your settings. From here, you can go to your home page. 
 
@@ -211,7 +211,7 @@ The default configuration file is called `portal.properties` and it resides insi
 
 ---
 
-![Figure X.x: Tip](./images/tip.png) **Warning:** The configuration you choose in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. In the setup wizard, however, if you specify a different Liferay Home directory than the default, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
+![Figure 14.4: Tip](./images/tip.png) **Warning:** The configuration you choose in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. In the setup wizard, however, if you specify a different Liferay Home directory than the default, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
 
     include-and-override=${liferay.home}/portal-setup-wizard.properties
 
@@ -332,11 +332,11 @@ For Windows, Tcat comes with an installer to assist with installation and config
 
 Upon accepting the license agreement, the system presents you with two installation choices, a "standard" or "custom" installation.
 
-![Figure 11.4: Installation selection](../../images/tcat-html_2589582e.png)
+![Figure 14.5: Installation selection](../../images/tcat-html_2589582e.png)
 
 You should select the "Custom" installation option to provide better control of where Tcat Server is installed.
 
-![Figure 11.5: Installation component selection](../../images/tcat-html_m230ba580.png)
+![Figure 14.6: Installation component selection](../../images/tcat-html_m230ba580.png)
 
 After selecting the custom installation option, the Tcat installer prompts you to select the desired components. 
 
@@ -348,21 +348,21 @@ After selecting the custom installation option, the Tcat installer prompts you t
 
 For this step in the installation process, select the Administration Console in addition to Tcat Server.
 
-![Figure 11.6: Installation location](../../images/tcat-html_261b594a.png)
+![Figure 14.7: Installation location](../../images/tcat-html_261b594a.png)
 
 After selecting Tcat Server and the Administration Console for installation, the installation wizard prompts you for an installation directory. Please select the desired installation directory for the Tcat Server.
 
-![Figure 11.7: Port configurations](../../images/tcat-html_66274d0c.png)
+![Figure 14.8: Port configurations](../../images/tcat-html_66274d0c.png)
 
 After selecting the appropriate installation location, the installation wizard prompts you to specify the appropriate port numbers. If this is the first time installing Tcat and no other Apache Tomcat installations are present, then you may retain the above ports. However, if there are other installations, you will need to select new ports. For the purpose of this installation, we will assume the above ports are correct.
 
-![Figure 11.8: Windows service installation](../../images/tcat-html_7936c58a.png)
+![Figure 14.9: Windows service installation](../../images/tcat-html_7936c58a.png)
 
 To ensure the operating system starts the Tcat Server and Administrator Console, you must configure the Tcat Server process as a Windows service. The next step in the installation wizard helps with this process.
 
 In the Windows service installation screen, please select "Install Tcat Server as a Windows service." You may choose an appropriate service name other than *TcatServer*.
 
-![Figure 11.9: Start menu shortcuts](../../images/tcat-html_3f911eab.png)
+![Figure 14.10: Start menu shortcuts](../../images/tcat-html_3f911eab.png)
 
 The final step in the installation wizard is to configure Start Menu shortcuts. You may choose to customize the shortcut location or accept the default.
 
@@ -377,11 +377,11 @@ For Linux, Tcat comes with an installer to assist with installation and configur
 
 Upon accepting the license agreement, the system presents you with two installation choices: a "standard" or "custom" installation.
 
-![Figure 11.10: Installation type](../../images/tcat-html_766a1d6e.gif)
+![Figure 14.11: Installation type](../../images/tcat-html_766a1d6e.gif)
 
 You should select the "Custom" installation option to provide better control of where Tcat Server is installed.
 
-![Figure 11.11: Installation component selections](../../images/tcat-html_55494177.gif)
+![Figure 14.12: Installation component selections](../../images/tcat-html_55494177.gif)
 
 After selecting the custom installation option, the Tcat installer prompts you to select the desired components. 
 
@@ -399,29 +399,29 @@ For this step in the installation process, select the Administration Console in 
 
 After selecting Tcat Server and the Administration Console for installation, the installation wizard prompts you for an installation directory.
 
-![Figure 11.12: Installation location](../../images/tcat-html_7df6aabf.png)
+![Figure 14.13: Installation location](../../images/tcat-html_7df6aabf.png)
 
 Please select the desired installation directory for the Tcat Server. The offered default directory is different if the installation process has been started as root.
 
-![Figure 11.13: Port configuration](../../images/tcat-html_5b760cd.gif)
+![Figure 14.14: Port configuration](../../images/tcat-html_5b760cd.gif)
 
 After selecting the appropriate installation location, the installation wizard prompts you to specify the appropriate port numbers. If this is the first time installing Tcat and no other Apache Tomcat installations are present, then you may retain the above ports. However, if there are other installations, you will need to select new ports. For the purpose of this installation, we will assume the above ports are correct.
 
-![Figure 11.14: Configure Tcat system user](../../images/tcat-html_749e9b40.png)
+![Figure 14.15: Configure Tcat system user](../../images/tcat-html_749e9b40.png)
 
 For security considerations, Tcat runs as a non-root system user. If the username specified at this step does not exist, it's created as a system daemon user.
 
-![Figure 11.15: Install service](../../images/tcat-html_mf7bb10c.gif)
+![Figure 14.16: Install service](../../images/tcat-html_mf7bb10c.gif)
 
 To ensure the operating system starts the Tcat Server and Administrator Console, you must create a service startup script in `/etc/init.d`. The next step in the installation wizard helps with this process.
 
 In the service installation screen, you may enter an appropriate service name or use the default. If you have multiple installations of Tcat, you should select a more appropriate than what is supplied by default. 
 
-![Figure 11.16: Symbolic link creation](../../images/tcat-html_m55bbff3f.gif)
+![Figure 14.17: Symbolic link creation](../../images/tcat-html_m55bbff3f.gif)
 
 The final configuration step before installation is the creation of a symbolic link so the Tcat executable can be accessed more easily. This step is optional and you may choose to not create the symbolic link.
 
-![Figure 11.17: ](../../images/tcat-html_78e73740.gif)
+![Figure 14.18: ](../../images/tcat-html_78e73740.gif)
 
 Now that Tcat is installed, you can add Liferay to it. 
 
@@ -431,7 +431,7 @@ After completing the TcatServer Administration Console installation, you can con
 
 First, extract the previously downloaded Liferay Portal 6.1 EE Tcat Admin into a temporary directory. Once extracted, locate the file `tcat-init.groovy` and the directory `tcat\_init`.
 
-![Figure 11.18: Liferay Portal Tcat packages](../../images/tcat-html_12074416.png)
+![Figure 14.19: Liferay Portal Tcat packages](../../images/tcat-html_12074416.png)
 
 The `tcat-init.groovy` file contains instructions for the TcatServer administration console to:
 
@@ -443,17 +443,17 @@ The `tcat\_init` folder contains the managed server profiles, Liferay WAR files 
 
 Copy the `tcat-init.groovy` file and `tcat\_init` folder to the previously configured installation location.
 
-![Figure 11.19: The installation directory after copying the tcat\_init folder and tcat-init.groovy into the TcatServer installation directory.](../../images/tcat-html_mf987314.png)
+![Figure 14.20: The installation directory after copying the tcat\_init folder and tcat-init.groovy into the TcatServer installation directory.](../../images/tcat-html_mf987314.png)
 
 After successfully completing the installation on Windows, you should see a TcatServer entry in the Services console, similar to the screen shot below. 
 
-![Figure 11.20: Windows services console](../../images/tcat-html_3b2f5fb4.png)
+![Figure 14.21: Windows services console](../../images/tcat-html_3b2f5fb4.png)
 
 By default, the TcatServer service is inactive but is set to start automatically upon boot. Go ahead and choose to start the service.
 
 If you're using Linux, you should see an entry for the Tcat service initialization script in `/etc/init.d`. The script name is the name you choose during the installation process.
 
-![Figure 11.21: Tcat service startup on Linux](../../images/tcat-html_352642da.gif)
+![Figure 14.22: Tcat service startup on Linux](../../images/tcat-html_352642da.gif)
 
 To start the Tcat Server Administration Console, execute the service script in `/etc/init.d`.
 
@@ -463,11 +463,11 @@ The steps to install the Tcat Server managed server are quite similar to those f
 
 First, launch the wizard. During the installation component configuration step, unselect "Administration Console" from the list of components.
 
-![Figure 11.22: Installation location](../../images/tcat-html_261b594a.png)
+![Figure 14.23: Installation location](../../images/tcat-html_261b594a.png)
 
 The next step is to specify an installation location. If you have other installations of Tcat on this machine, you should another destination. For example, if you have already installed the Tcat Server Administration Console to `C:\\TcatServer6`, you should perhaps install the managed server to `C:\\TcatServer6Managed`.
 
-![Figure 11.23: Managed server port configurations](../../images/tcat-html_66274d0c.png)
+![Figure 14.24: Managed server port configurations](../../images/tcat-html_66274d0c.png)
 
 During the managed server installation, as with the administration console installation, you will be prompted to configure the appropriate port numbers. If you do not have another Tcat Server instance (e.g. administration console or another managed server), you may choose the default ports. Otherwise, you should select non-conflicting ports. For instance:
 
@@ -499,13 +499,13 @@ By modifying the `common.loader` property, you instruct Tcat Server to load ever
 
 After completing the installation process and starting the appropriate TcatServer processes, open a browser to `[SERVER NAME]:[PORT]/console`. Using previous installation example, you should point your browser to `http://localhost:8080/console`. The browser should render the TcatServer Administration Console shown below. 
 
-![Figure 11.24: Tcat Admin Console log in](../../images/tcat-html_m4bda7997.png)
+![Figure 14.25: Tcat Admin Console log in](../../images/tcat-html_m4bda7997.png)
 
 The default login is: admin/admin.
 
 Once you have logged into the administration console, you will be presented with a global dashboard that you may customize once you have dismissed the "Tcat Server - Quick Start" panel.
 
-![Figure 11.25: Customizable Tcat Admin Console](../../images/tcat-html_5d43770f.png)
+![Figure 14.26: Customizable Tcat Admin Console](../../images/tcat-html_5d43770f.png)
 
 First make sure that you have started the previously installed managed server. server. Clicking on the *Servers* tab in the console, you will see a server listed as *Unregistered*.
 
@@ -513,7 +513,7 @@ Unregistered servers are servers that have the Tcat management agent installed b
 
 If you choose to use *Register & Add To Group*, the server is added to the desired server group (e.g. Development). For the purpose of this guide, we'll register the server to the Development group.
 
-![Figure 11.26: Monitoring a registered server](../../images/tcat-html_34603e60.png)
+![Figure 14.27: Monitoring a registered server](../../images/tcat-html_34603e60.png)
 
 After registering the server, you will have access to view its health status, log files and more. Feel free to walk through the console to examine its capabilities, like reviewing log files, current thread status and deployed web applications.
 
@@ -545,18 +545,18 @@ More information is available at  *[http://www.mulesoft.org/documentation/displa
 
 As part of the installation process, the current version of Liferay Portal and a number of Liferay Plugins have been provisioned into the Tcat repository. You can view them by clicking on the "Repository" tab.
 
-![Figure 11.27: Tcat Repository profiles](../../images/tcat-html_7e61df5a.png)
+![Figure 14.28: Tcat Repository profiles](../../images/tcat-html_7e61df5a.png)
 
 There are two components in the Tcat Repository:
 
 -   **Profiles:** application profiles to be applied to the Tcat managed servers. Contains configuration, shared libraries and more. 
 -   **Applications:** deployable WAR files for web applications and Liferay Plugins. 
 
-![Figure 11.28: Tcat Repository: Applications](../../images/tcat-html_m4af27eb5.png)
+![Figure 14.29: Tcat Repository: Applications](../../images/tcat-html_m4af27eb5.png)
 
 To being Liferay deployment, we must first create a Liferay license profile to be deployed to the managed server:
 
-![Figure 11.29: Creating a new workspace for Liferay license profile](../../images/tcat-html_m2d96341c.png)
+![Figure 14.30: Creating a new workspace for Liferay license profile](../../images/tcat-html_m2d96341c.png)
 
 
 1. First create a new workspace under *Profiles*. Select *Profiles* in the left navigation and then click the *New         Workspace* button. 
@@ -569,17 +569,17 @@ After completing the above, you have successfully uploaded your Liferay Portal l
 
 *Server Profiles* shows the list of available Server Profiles and the option to create a new profile.
 
-![Figure 11.30: Viewing server profiles](../../images/tcat-html_m5c7a2b8c.png)
+![Figure 14.31: Viewing server profiles](../../images/tcat-html_m5c7a2b8c.png)
 
 When creating a server profile for the Liferay Portal Trial License, you will need to select the workspace folder created in the previous step. This ensures that when you apply the profile, Tcat uses the latest version of the license file.
 
 Once you've created the server profile for your Liferay Portal EE license, you may begin deploying Liferay to the managed server.
 
-![Figure 11.31: Apply Liferay Portal trial license](../../images/tcat-html_53af6680.png)
+![Figure 14.32: Apply Liferay Portal trial license](../../images/tcat-html_53af6680.png)
 
 The first step is to apply two server profiles, one for the license and the other for Liferay Portal. Applying the license profile does not require a restart of the server.
 
-![Figure 11.32: Apply Liferay profile](../../images/tcat-html_m1f86eaab.png)
+![Figure 14.33: Apply Liferay profile](../../images/tcat-html_m1f86eaab.png)
 
 The second profile that must be applied is the Liferay server profile. In the example shown we applied the profile for Liferay Portal EE 6.1.
 
@@ -589,7 +589,7 @@ With both profiles applied, we can now deploy the Liferay Portal WAR to the appr
 
 The *Deployments* tab contains tools that assist in creating a deployment and targeting it to specific servers. Once you create a deployment, you may target it to any number of servers or deployment groups.
 
-![Figure 11.33: Choosing a web application for deployment](../../images/tcat-html_m54d58d30.png)
+![Figure 14.34: Choosing a web application for deployment](../../images/tcat-html_m54d58d30.png)
 
 When creating a deployment, you may choose a WAR file already uploaded into the repository or you may choose to upload a new WAR file. We recommend using a WAR file from the repository for non-development deployments. This ensures you consistently deploy the correct version to your environments.
 
@@ -597,11 +597,11 @@ Since we are deploying Liferay Portal for the first time, we choose the ROOT.war
 
 After selecting the appropriate web application, you may choose which Servers to deploy to. In this example, we deploy to the Tomcat instance labeled *Liferay Portal Instance 1*. 
 
-![Figure 11.34: Completing Liferay Portal deployment](../../images/tcat-html_68a00002.png)
+![Figure 14.35: Completing Liferay Portal deployment](../../images/tcat-html_68a00002.png)
 
 After choosing to deploy the application, the Tcat console informs you of the current deployment status (e.g. "Successful"). Assuming you followed the previous steps and the deployment successfully completes, you will be able to access Liferay Portal on the target Tomcat instance.
 
-![Figure 11.35: Accessing Liferay Portal on Liferay Portal Instance 1](../../images/tcat-html_2b08ac2c.png)
+![Figure 14.36: Accessing Liferay Portal on Liferay Portal Instance 1](../../images/tcat-html_2b08ac2c.png)
 
 #### Deploying Liferay plugins on Mule Tcat  [](id=lp-6-1-ugen11-deploying-liferay-plugins-on-mule-tcat--0)
 
@@ -622,7 +622,7 @@ Other plugins that may be downloaded and added to this repository include:
 
 You may download these plugins from the Liferay Customer Portal and manually add them to the Tcat repository.
 
-![Figure 11.36: Uploading new plugins into Tcat](../../images/tcat-html_19e9e6d6.png)
+![Figure 14.37: Uploading new plugins into Tcat](../../images/tcat-html_19e9e6d6.png)
 
 Mule Tcat provides an enterprise grade solution to managing Tomcat servers. If you need a complete stack, combining Liferay Portal with Mule Tcat provides you with everything you need to run a fully supported and robust portal environment for your enterprise. 
 
@@ -760,19 +760,19 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 3. Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
-![Figure 11.37: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.png)
+![Figure 14.38: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.png)
 
 4.	Click *New...*.
 
 5. In the first screen (Step 1 of 2), give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource` and select your database driver vendor (e.g. `MySQL`) as follows:
 
-![Figure 11.38: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.png)
+![Figure 14.39: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.png)
 
 6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
 
 7. On the this screen (Step 2 of 2), scroll down to the *Additional Properties* section.
 
-![Figure 11.39: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
+![Figure 14.40: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
 
 8.	Replace or add the following properties ...
 
@@ -874,7 +874,7 @@ Here are the steps you'll need to follow to deploy Liferay Portal to your domain
 
 7. Click *OK*.
 
-![Figure 11.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
+![Figure 14.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
 
 -	If you disabled the setup wizard, your site's home page opens in your browser at [http://localhost:8080](http://localhost:8080).
 
@@ -2042,7 +2042,7 @@ Now that you have your WebLogic installation is loaded up with JAR files for Lif
 
 If you want WebLogic to manage your data source, use the following procedure. If you want to use Liferay's built-in data source, you can skip this section.
 
-![Figure 11.40: WebLogic Data Sources](../../images/02-weblogic-data-sources.png)
+![Figure 14.41: WebLogic Data Sources](../../images/02-weblogic-data-sources.png)
 
 1. Browse to your WebLogic Console. Click the *Lock & Edit* button above the Domain Structure tree on the left side of the page.
 
@@ -2068,7 +2068,7 @@ Great work! Your data source can now be managed from within WebLogic. Next, let'
 
 If you want WebLogic to manage your mail sessions, use the following procedure. If you want to use Liferay's built-in mail sessions, you can skip this section.
 
-![Figure 11.41: WebLogic: Mail Sessions](../../images/02-weblogic-mail-sessions.png)
+![Figure 14.42: WebLogic: Mail Sessions](../../images/02-weblogic-mail-sessions.png)
 
 1. In the Domain Structure tree, select *Mail Sessions.* Then click the *Lock & Edit* button again to enable modifying these settings.
 
@@ -2136,7 +2136,7 @@ Before you deploy Liferay Portal, consider whether you want to use the setup wiz
 
 Now that you have enabled or disabled the setup wizard, let's move on to deployment of Liferay Portal.
 
-![Figure 11.42: WebLogic Deployments](../../images/02-weblogic-deployments.png)
+![Figure 14.43: WebLogic Deployments](../../images/02-weblogic-deployments.png)
 
 1. In the Domain Structure tree, select *Deployments.*  Then click the *Lock & Edit* button above the Domain Structure tree.
 
@@ -2204,7 +2204,7 @@ Start Oracle WebLogic if you want to configure your database and/or mail session
 
 If you want WebLogic to manage your data source, use the following procedure. If you want to use Liferay's built-in data source, you can skip this section.
 
-![Figure 11.43: WebLogic Data Sources](../../images/02-weblogic-10-3-data-sources.png)
+![Figure 14.44: WebLogic Data Sources](../../images/02-weblogic-10-3-data-sources.png)
 
 1. Select *Services &rarr; Data Sources.* Click *New &rarr; Generic Data Source*.
 
@@ -2212,7 +2212,7 @@ If you want WebLogic to manage your data source, use the following procedure. If
 
 3. Choose the type of database and click *Next*. From the screenshot, you can see we have chosen MySQL. The database driver class is selected automatically.
 
-![Figure 11.44: Creating a data source in WebLogic 10.3](../../images/02-creating-a-data-source-in-weblogic.png)
+![Figure 14.45: Creating a data source in WebLogic 10.3](../../images/02-creating-a-data-source-in-weblogic.png)
 
 4. Click *Next* three times. You should be on the *Connection Properties* screen. Enter the database name, the host name, the port, the database user name and the password. WebLogic uses this information to construct the appropriate JDBC URL to connect to your database. Click *Next*.
 
@@ -2230,7 +2230,7 @@ Next, let's configure a mail session in WebLogic.
 
 If you want WebLogic to manage your mail sessions, use the following procedure. If you want to use Liferay's built-in mail sessions, you can skip this section.
 
-![Figure 11.45: WebLogic Mail Sessions](../../images/02-weblogic-10-3-mail-sessions.png)
+![Figure 14.46: WebLogic Mail Sessions](../../images/02-weblogic-10-3-mail-sessions.png)
 
 1. Select *Mail Sessions* and create a new mail session which points to your mail server.
 
@@ -2303,7 +2303,7 @@ Now, let's deploy Liferay Portal.
 
 2. Select *Deployments* and click the  *Install* button. Upload `jsf-1.2.war` from WebLogic's common files directory and select *Install this deployment as a library.*
 
-![Figure 11.46: WebLogic Deployments](../../images/02-weblogic-10-3-deployments.png)
+![Figure 14.47: WebLogic Deployments](../../images/02-weblogic-10-3-deployments.png)
 
 3. After installing the JSF libraries, go back to deployments and select the Liferay `.war` file from the file system or click the *Upload Your File(s)* link to upload it and then click *Next*.
 
@@ -2343,31 +2343,31 @@ When the application server binaries have been installed, start the **Profile Ma
 
 2. Click the Advanced profile creation option and then click *Next*. Why Advanced? You can specify your own values for settings such as the location of the profile and names of the profile, node and host. You can assign your own ports. You can optionally choose whether to deploy the administrative console and sample application and also add web-server definitions if you wish. Web server definitions are used with IBM HTTP Server. For more information about these options, please see the WebSphere documentation. 
 
-![Figure 11.47: Choose the Advanced profile option to specify your own settings.](../../images/Websphere-8_html_5a8a0a4b.png)
+![Figure 14.48: Choose the Advanced profile option to specify your own settings.](../../images/Websphere-8_html_5a8a0a4b.png)
 
 3. Check the box *Deploy administrative console*. This gives you a web-based UI for working with your application server. Skip the default applications. You'd only install these on a development machine. Click *Next*. 
 
 4. Set profile name and location. Ensure you specify a performance tuning setting other than *Development*, since you're installing a server for production use. Click *Next*. 
 
-![Figure 11.48: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](../../images/Websphere-8_html_m3feb4e9f.png)
+![Figure 14.49: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](../../images/Websphere-8_html_m3feb4e9f.png)
 
 5. Choose node and host names for your server. These will be specific to your environment. Click *Next*. 
 
-![Figure 11.49: Choose node and host names appropriate to your environment.](../../images/Websphere-8_html_1327271c.png)
+![Figure 14.50: Choose node and host names appropriate to your environment.](../../images/Websphere-8_html_1327271c.png)
 
 6. Administrative security in WebSphere is a way to restrict who has access to the administrative tools. For simplicity, we've disabled it but you may want to have it enabled in your environment. Please see WebSphere's documentation for further information. Click *Next*. 
 
-![Figure 11.50: We've disabled administrative security but you may want to enable it.](../../images/Websphere-8_html_2eb820b.png)
+![Figure 14.51: We've disabled administrative security but you may want to enable it.](../../images/Websphere-8_html_2eb820b.png)
 
 7. Each profile needs a security certificate, which comes next in the wizard. If you don't have certificates already, choose the option to generate a personal certificate and a signing certficate and click *Next*. 
 
 8. Once the certificates are generated, set a password for your keystore. Click *Next*. 
 
-![Figure 11.51: Set a password for your keystore.](../../images/Websphere-8_html_m6b754c08.png)
+![Figure 14.52: Set a password for your keystore.](../../images/Websphere-8_html_m6b754c08.png)
 
 9. Next, you can customize the ports this server profile uses. Be sure to choose ports that are open on your machine. When choosing ports, installation detects existing WebSphere installations and if it finds activity, it increments ports by one. 
 
-![Figure 11.52: WebSphere gives you a nice user interface for customizing the ports your server uses.](../../images/Websphere-8_html_m2eef7200.png)
+![Figure 14.53: WebSphere gives you a nice user interface for customizing the ports your server uses.](../../images/Websphere-8_html_m2eef7200.png)
 
 10. If you want WebSphere to start automatically when the machine is booted, you configure it next. This differs by operating system. When you're finished configuring this the way you want, click *Next*. 
 
@@ -2387,7 +2387,7 @@ Once you've copied the .jars here, start the server profile you're planning to u
 
 If you want WebSphere to manage the database connections, follow the instructions below. Note this is not necessary if you're planning on using Liferay's standard database configuration; in that case, skip this section. You'll set your database information in Liferay's setup wizard after the install. 
 
-![Figure 11.53: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
+![Figure 14.54: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
 
 1. Start WebSphere.
 
@@ -2425,7 +2425,7 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 17. Type *user* into the search terms and click *Go*.
 
-![Figure 11.54: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
+![Figure 14.55: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your database. Click *OK* and save to master configuration.
 
@@ -2477,7 +2477,7 @@ Great! Now you're ready to deploy Liferay.
 
 2. Select the Liferay application and click *Start*. 
 
-![Figure 11.55: Starting Liferay on WebSphere.](../../images/Websphere-8_html_m7420ff51.png)
+![Figure 14.56: Starting Liferay on WebSphere.](../../images/Websphere-8_html_m7420ff51.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish* when you're done. 
 

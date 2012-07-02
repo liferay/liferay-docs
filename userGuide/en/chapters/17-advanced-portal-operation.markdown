@@ -57,17 +57,17 @@ Once you've decided if you're going to use one or both of the two settings above
 
 ### Using audit events [](id=using-audit-events)
 
-Now that you're capturing audit events, it's easy to use them to view activities in your portal. Navigate to the control panel and you'll find a new entry in the *Portal* section labeled *Audit Reports* (see figure 8.1). 
+Now that you're capturing audit events, it's easy to use them to view activities in your portal. Navigate to the control panel and you'll find a new entry in the *Portal* section labeled *Audit Reports* (see figure 17.x). 
 
-![Figure 10.1: Once the Audit Reports plugins are installed, an entry appears in the control panel.](../../images/control-panel-audit-reports.png)
+![Figure 17.1: Once the Audit Reports plugins are installed, an entry appears in the control panel.](../../images/control-panel-audit-reports.png)
 
-Clicking the entry shows you a list of the events Liferay has already captured (see figure 8.2), along with an interface for searching for events. You can browse the list if you want, but it's likely that you'll need to use the search to find what you're looking for. 
+Clicking the entry shows you a list of the events Liferay has already captured (see figure 17.x), along with an interface for searching for events. You can browse the list if you want, but it's likely that you'll need to use the search to find what you're looking for. 
 
-![Figure 10.2: Liferay captures and stores events as soon as the audit plugins are installed.](../../images/audit-list-events.png)
+![Figure 17.2: Liferay captures and stores events as soon as the audit plugins are installed.](../../images/audit-list-events.png)
 
-Figure 10.2 shows that Stephen Professor logged in and did some things on the site. To see the detail of any of these events, all you need to do is click one to see more information. You'll then see something like figure 8.3. 
+Figure 17.x shows that Stephen Professor logged in and did some things on the site. To see the detail of any of these events, all you need to do is click one to see more information. You'll then see something like figure 17.x. 
 
-![Figure 10.3: Clicking an event in the list shows the details of that event. This event shows that it must've been Stephen Professor's first time logging into the site, because he's accepting the terms of use.](../../images/audit-detail.png)
+![Figure 17.3: Clicking an event in the list shows the details of that event. This event shows that it must've been Stephen Professor's first time logging into the site, because he's accepting the terms of use.](../../images/audit-detail.png)
 
 As you can see, depending on how many users you have in your portal, this list can get populated very quickly. For this reason, it's a good idea to keep the `audit.message.com.liferay.portal.model.Layout.VIEW` property set to `false`. This way, you don't clutter up your audit events with multiple page view events, which will definitely be the most often triggered event in your portal. 
 
@@ -105,13 +105,13 @@ Let's look at the options we have for search.
 
 **End Date:** Specify the high end of the date range you wish to search. 
 
-Using this form, if you wanted to check to see if someone in the portal unassigned a user from a particular role, you might search for a resource name of *user* and a resource action of *unassign*. The results of such a search might look something like figure 10.4. 
+Using this form, if you wanted to check to see if someone in the portal unassigned a user from a particular role, you might search for a resource name of *user* and a resource action of *unassign*. The results of such a search might look something like figure 17.x. 
 
-![Figure 10.4: Searching audit events is easy with the search form provided by the audit portlet. You can quickly drill down to find the types of events you're looking for.](../../images/audit-unassign-search.png)
+![Figure 17.4: Searching audit events is easy with the search form provided by the audit portlet. You can quickly drill down to find the types of events you're looking for.](../../images/audit-unassign-search.png)
 
-Once you have the results of your search, you can click on any of the records returned in order to see the detail page for that record. Figure 10.5 shows that in this particular case, the default administrative user removed Stephen Professor from the role of Power User. 
+Once you have the results of your search, you can click on any of the records returned in order to see the detail page for that record. Figure 17.x shows that in this particular case, the default administrative user removed Stephen Professor from the role of Power User. 
 
-![Figure 10.5: If you've delegated portal administration to multiple users, you can use the audit plugins to determine who made what change. And, of course, you'll never leave the default administrative user enabled in a production system, right?](../../images/audit-unassign-detail.png)
+![Figure 17.5: If you've delegated portal administration to multiple users, you can use the audit plugins to determine who made what change. And, of course, you'll never leave the default administrative user enabled in a production system, right?](../../images/audit-unassign-detail.png)
 
 As you can see, Liferay's audit portlets give you a lot of power to see what's happening in your portal. You can use this information to troubleshoot problems, determine ownership of particular actions, or, as Harry is about to do, find out who made permission changes that they weren't supposed to make. 
 
@@ -169,7 +169,7 @@ Because of this, support for Google Analytics has been built into Liferay, and c
 
 To enable Google Analytics support, go to *Site Settings* in the control panel, and then select *Analytics* on the right. You'll see a very simple form, pictured below. 
 
-![Figure 16.1: Setting up Google Analytics for your site is very easy: sign up for the ID and then enter it into this field. ](../../images/maintaining-google-analytics.png)
+![Figure 17.6: Setting up Google Analytics for your site is very easy: sign up for the ID and then enter it into this field. ](../../images/maintaining-google-analytics.png)
 
 Put your Google Analytics ID (which should have been provided to you when you signed up for the service) in the field and click *Save*. All the pages in the community you selected will now have the Google Analytics code in them and will be tracked. 
 
@@ -223,7 +223,7 @@ Each category is filtered by its place in the class hierarchy. For example, if y
 
 If you're not sure which class you want to see log messages for, you can find a place higher up in the hierarchy and select the package name instead of an individual class name. If you do this, messages for every class lower in the hierarchy will be displayed in your application server's log file.
 
-![Figure 16.2: Log levels can be dynamically changed at runtime, whenever you need to debug an issue. ](../../images/maintaining-log-levels.png) 
+![Figure 17.7: Log levels can be dynamically changed at runtime, whenever you need to debug an issue. ](../../images/maintaining-log-levels.png) 
 
 Be careful when you do this. If you set the log level to DEBUG somewhere near the top of the hierarchy (such as `com.liferay`, for example), you may wind up with a lot of messages in your log file. This could make it difficult to find the one you were looking for, and causes the server to do more work writing messages to the log. 
 
@@ -239,7 +239,7 @@ You would then use this `_log` variable to create log messages in your code for 
 
 To enable your logging messages to appear in your server's log file via the control panel, click the *Add Category* tab on the same *Log Levels* page.
 
-![Figure 16.3: Adding your own logging classes is as simple as specifying it in this field.](../../images/maintaining-add-log-category.png) 
+![Figure 17.8: Adding your own logging classes is as simple as specifying it in this field.](../../images/maintaining-add-log-category.png) 
 
 You'll see that you can add a logging category. Put in the fully qualified name of your class or of the package that contains the classes whose log messages you want to view, choose a log level, and then click the *Save* button. You will now start to see log messages from your own class or classes in the server's log file.
 

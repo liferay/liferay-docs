@@ -68,7 +68,7 @@ By the time we're done, you should be able to apply all these concepts to your o
 
 First, a little housekeeping. If we're going to be *Nose-ster*, our portal should also be called Nose-ster. To set general information about your portal like the name and mail domain, go to the control panel and select *Portal Settings* under the Portal heading. You could set up the configuration for Nose-ster as follows.
 
-![Figure 2.1 Changing Portal Settings](../../images/04-web-content-changing-settings.png)
+![Figure 2.x Changing Portal Settings](../../images/04-web-content-changing-settings.png)
 
 You can also customize the logo in the top left corner of every page by selecting *Display Settings* under the *Miscellaneous* tab on the panel to the right. Once you've made the changes, we can begin creating pages.
 
@@ -226,7 +226,7 @@ To set this up, the DNS name *developers.nosester.com* should point to your port
 
 **Site Template:** If you've created the site from a site template, this section displays information about the link between the site template and the site. Specifically, you can see which site template was used and whether or not it allows modifications to the pages inherited from it by site administrators. If you're not using site templates for this site, you can safely ignore this section.
 
-**Sitemap:** lets you send a sitemap to some search engines so they can crawl your site. It uses the sitemap protocol, which is an industry standard. You can publish your site to Yahoo or Google and their web crawlers will use the sitemap to index your site. Liferay Portal makes this very simple for administrators by generating the sitemap XML automatically for all public web sites.
+**Sitemap:** lets you send a sitemap to some search engines so they can crawl your site. It uses the sitemap protocol, which is an industry standard. You can publish your site to Yahoo or Google and their web crawlers will use the sitemap to index your site. Liferay Portal makes this very simple for administrators by generating the sitemap XML ally for all public web sites.
 
 By selecting one of the search engine links, the sitemap will be sent to them. It's only necessary to do this once per site. The search engine crawler will periodically crawl the sitemap once you've made the initial request.
 
@@ -236,7 +236,7 @@ If you're interested in seeing what is being sent to the search engines, select 
 
 **Staging:** enables you to edit and revise a page behind the scenes, then publish changes to your site once they have been completed and reviewed. For a full explanation of Staging, see Chapter 3: Advanced web content management.
 
-**Analytics:** allows you to integrate your pages with Google Analytics. Liferay provides seamless integration with Google Analytics, allowing you to place your ID in one place, then it will get inserted automatically on every page. This enables you to focus your efforts on building the page, rather than remembering to put the code everywhere. Google Analytics is a free service which lets you do all kinds of traffic analysis on your site so you can see who visits, where visitors are from and what pages they most often visit. This helps you tweak your site so you can provide the most relevant content to your users.
+**Analytics:** allows you to integrate your pages with Google Analytics. Liferay provides seamless integration with Google Analytics, allowing you to place your ID in one place, then it will get inserted ally on every page. This enables you to focus your efforts on building the page, rather than remembering to put the code everywhere. Google Analytics is a free service which lets you do all kinds of traffic analysis on your site so you can see who visits, where visitors are from and what pages they most often visit. This helps you tweak your site so you can provide the most relevant content to your users.
 
 Now that you know how to configure sites, let's look at templates.
 
@@ -356,7 +356,7 @@ As we've stated above, content is the reason web sites exist. Liferay Portal has
 
 We'll begin by creating simple content using Liferay's WYSIWYG Editor and then we'll publish it to the home page of Nose-ster's web site. This is a fast and straightforward process that demonstrates how easy it is to create and publish content on your Liferay Portal instance. Let's learn about the Web Content section of the control panel so we can create and publish our first pieces of content.
 
-![Figure 3.1: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
+![Figure 2.11: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
 
 When you manage web content from the control panel you can select the location where the content resides. For instance, you can add content that's available to a specific site or globally across the portal. The Content section of the control panel displays as its heading the name of the site you're currently working on. This heading is called the context menu selector: you can change the scope of where you'd like to view, edit or create content by using the drop-down selector attached to the heading. We will add our first piece of content to the *Nose-ster* site, which we defined earlier in the chapter as the default site.
 
@@ -366,7 +366,7 @@ Once you have the Nose-ster site selected, click on the *Web Content* link in th
 
 For now, type the words *Welcome to Nose-ster* in the *Name* field. Notice that content can be localized in whatever language you want. If you click on the *localize* checkbox, two select boxes appear which allow you to pick the language you're working in and the default language. You can enter translations of your content for any language in the list. The screenshot below shows this interface but for now, we won't be using it, so you can leave it unchecked. In the content field, add a short sentence announcing the web site is up and running.
 
-![Figure 3.2: The Web Content Editor](../../images/04-web-content-wysiwyg.png)
+![Figure 2.12: The Web Content Editor](../../images/04-web-content-wysiwyg.png)
 
 Getting a new web site up and running is an exciting step for anyone, whether it is a large corporation or a small non-profit charity. To celebrate this momentous achievement at Nose-ster, let's give our announcement some of the pomp and circumstance we think it deserves!
 
@@ -374,7 +374,7 @@ Using the editor, select all the text and then change the style to Heading 1 and
 
 You could insert an image here as well as more text with a different style, as demonstrated in the screenshot below. You can also add bullets, numbering, links to another site or custom images. You can even add an emoticon. Let's add a smiley face at the end of our announcement.
 
-![Figure 3.3: Customizing Content](../../images/04-web-content-example2.png)
+![Figure 2.13: Customizing Content](../../images/04-web-content-example2.png)
 
 The WYSIWYG editor is a flexible tool that gives you the ability to add text, images, tables, links and more. Additionally, you can modify the display to match the purpose of the content. Plus it's integrated with the rest of Liferay Portal: for example, when you upload an image to be added to a page, that image can be viewed and manipulated in the Documents and Media portlet.
 
@@ -384,7 +384,7 @@ If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can cli
 
 Permissions in Liferay WCM work the same way they do everywhere else in Liferay. By default, content is viewable by Anyone (Guest Role). You can limit viewable permissions by selecting any Role from the drop-down or in the list. Additionally, Liferay Portal provides the ability to customize permissions in more detail. Select the *More Options* link next to the drop down button and you'll find the different activities you can grant or deny to your web content.
 
-![Figure 3.4: Permissions for Web Content](../../images/04-web-content-content-permissions.png)
+![Figure 2.14: Permissions for Web Content](../../images/04-web-content-content-permissions.png)
 
 For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. Let's look at how it works. 
 
@@ -394,7 +394,7 @@ For this piece of web content, we don't need to change anything. After you're fi
 
 Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page by selecting *Add &rarr; Web Content Display* from the Dockbar.
 
-![Figure 3.7: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
+![Figure 2.15: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
 Once the portlet appears, drag it to the position on the page where you want your content to appear. You can have as many Web Content Display portlets on a page as you need, which gives you the power to lay out your content exactly the way you want it. 
 
@@ -402,7 +402,7 @@ To add existing web content, select the *gear* icon on the lower left of the por
 
 Naturally, if your content appears in the list, you can simply select it. If there is lots of published content available, you could search for the content by name, ID, type, version, content and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
 
-![Figure 3.8: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
+![Figure 2.16: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also enable document conversion for your content. This gives your users the ability to download your content in their format of choice. This is especially handy if you are running a research or academically oriented site; users can very quickly download PDFs of your content for their research projects.
 
@@ -424,7 +424,7 @@ Editing content that's already been published is just as easy as creating new co
 
 Once the content is displayed--whether you've selected content or created it in the Web Content Display portlet--you can edit the content directly from the Web Content Display portlet or from the control panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This launches the WYSIWYG editor and from there you can make any necessary changes.
 
-![Figure 3.9: Edit, Select and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
+![Figure 2.17: Edit, Select and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
 
 When you publish your content this way, it becomes available immediately (unless, of course, you have a workflow enabled, which we'll see below). This happens whether you edit it in place or in the control panel.
 
@@ -446,7 +446,7 @@ When using a workflow, clicking *Submit for Publication* submits the staged page
 
 To enable workflow for Web Content, navigate to the control panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
-![Figure 3.30: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 2.18: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 6, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
 
@@ -460,7 +460,7 @@ Let's set up Liferay's Workflow for the Nose-ster web site.
 
 That's all it takes to set up workflow for web content. Now that workflow is enabled, publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at Nose-ster. Return to the home page and click the *Add Web Content* icon on the Web Content Display portlet. Call the new content *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
 
-![Figure 3.31: Pending Workflow](../../images/04-web-content-workflow-config.png)
+![Figure 2.19: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in control panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow and anyone in this role can approve content as well.
 

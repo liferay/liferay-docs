@@ -54,11 +54,11 @@ You'll use the Portal section of the control panel to create your portal structu
 
 Let's add a user account for yourself and configure this account so it has the same administrative access as the default administrator account. Go up to the Dockbar, mouse over *Go to* and click *Control Panel*. Then open the *Users and Organizations* page under the *Portal* category. Click the *Add* button and select *User*. Fill out the Add User form using your name and email address. When you are finished, click *Save*.
 
-![Figure 12.1: The Add User Screen](../../images/01-add-user-screen.png)
+![Figure 15.1: The Add User Screen](../../images/01-add-user-screen.png)
 
 After you submit the form, the page reloads with a message saying the save was successful. An expanded form appears that allows you to fill out a lot more information about the user. You don't have to fill anything else out right now. Just note that when the user ID was created, a password was automatically generated and, if Liferay was correctly installed (see chapter 11), an email message with the password in it was sent to the user. This, of course, requires that Liferay can properly communicate with your SMTP mail server.
 
-![Figure 12.2: Liferay's User Account Editor](../../images/01-user-account-editor.png)
+![Figure 15.2: Liferay's User Account Editor](../../images/01-user-account-editor.png)
 
 If you haven't yet set up your mail server, you'll need to use this page to change the default password for the user ID to something you can remember. You can do this by clicking on the *Password* link in the box on the right, entering the new password in the two fields and clicking *Save*. Next, you should give your user account the same administrative rights as the default administrator's account. This allows you to perform administrative tasks with your own ID instead of having to use the default ID. It also helps to make your portal more secure by deleting or disabling the default ID.
 
@@ -104,7 +104,7 @@ To add an organization, click the *Users and Organizations* link on the left sid
 
 Does your organization need to have its own web site? Most organizations don't, but some do, and Liferay provides this ability by attaching a site to an organization. To attach a site when you create an organization, click the *Organization Site* tab at the right and check the *Create Site* box. If you don't know right now if your organization needs a web site, that's fine: you can always add one later if the need arises. 
 
-![Figure 12.3: Adding an organization](../../images/01-add-organization-screen.png)
+![Figure 15.3: Adding an organization](../../images/01-add-organization-screen.png)
 
 **Name:** Enter a name for the organization.
 
@@ -158,11 +158,11 @@ User Groups are arbitrary groupings of users. These groups are created by portal
 
 Creating a user group is easy. Navigate to the control panel, click the *Users Groups* link and then click the *Add* button. There are only two fields to fill out: Name and Description. Click *Save* and you will be redirected back to the *User Groups* page of the control panel.
 
-![Figure 12.11: Creating a New User Group](../../images/server-configuration-new-user-group.png)
+![Figure 15.4: Creating a New User Group](../../images/server-configuration-new-user-group.png)
 
 Note in the figure above how each user group may have a site, with public and private pages. This is a special type of site that determines the base pages on all user group members' personal sites. The user group site works in a similar way to Site Templates, except in this case the the User Group Site pages are not copied for each user but are rather shown dynamically along with any custom pages the user may have on his/her personal site. For this reason, users are not allowed to make any modifications to the pages that are *inherited* from the user group. Alternatively the administrators of the user group can define certain areas as customizable, just like they can for regular sites. This allows users to decide which applications they want to place in certain areas of each page, as well as change their configuration.
 
-![Figure 12.12: User Group Actions](../../images/01-editing-a-user-group.png)
+![Figure 15.5: User Group Actions](../../images/01-editing-a-user-group.png)
 
 As with the other resources in the portal, you can click the *Actions* button next to a user group to perform various operations on that group.
 
@@ -192,7 +192,7 @@ Our next step is to assign an existing user to the *Bloggers* group.
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*. Then navigate to the User Groups page of the control panel and click *Actions* &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to see a list of users that can be assigned to the group.
 
-![Figure 12.13: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
+![Figure 15.6: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
 
 From that list, one or more users can be selected to be assigned as members of the user group.
 
@@ -230,7 +230,7 @@ This flexibility lets you achieve almost any desired configuration for a user's 
 
 Following with the example above, we will create a site for our sample user group. Edit the *Bloggers* group. Choose an existing Site Template from the drop down menu for the user group's public pages and click *Save*. After the page reloads you can click to see the pages and make any changes desired, add additional pages, etc.
 
-![Figure 12.14: Selecting a Template for the User Group Site](../../images/user-group-site-template-selected.png)
+![Figure 15.7: Selecting a Template for the User Group Site](../../images/user-group-site-template-selected.png)
 
 Also, try visiting the public site of one of the users who belongs to the user group. You will see how all of the pages in the user group appear as part of the user site, including the ones copied from the site template and the ones added afterwards.
 
@@ -242,7 +242,7 @@ Roles are groupings of users that share a particular function within the portal,
 
 The roles page of the control panel serves as a single interface which lets you create roles, assign permissions to them and assign users to the roles. Roles can be scoped by portal, site or organization. To create a role, click the *Roles* link and then click the *Add* button. You can choose a Regular, Site or Organization role. A regular role is a portal-scoped role. Make a selection and then type a name for your role, a title and a description. The name field is required but the title and description are optional. If you enter a name and a title, the title will be displayed in the list of roles on the Roles page of the control panel. If you do not enter a title, the name will be displayed. When you have finished, click *Save*.
 
-![Figure 12.15: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
+![Figure 15.8: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what functions you can perform on your new role, click the *Actions* button.
 
@@ -264,7 +264,7 @@ Next, let's examine how to configure the permissions granted by different roles.
 
 Roles serve as repositories of permissions to be assigned to users who belong to them. So, to use a role, you need to assign members to it and define the permissions you want to grant to members of the role.
 
-![Figure 12.16: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
+![Figure 15.9: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
 
 When you click the *Actions* button on portal-scoped role and select *Define Permissions*, you will be shown a list of all the permissions defined for that role. Click the *Add Permissions* drop-down menu to see a list of the permissions that can be defined. As of Liferay version 6.1, these permissions fall into seven categories: Portal, Site Content, Site Application, Control Panel: Personal, Control Panel: Site, Control Panel: Portal and Control Panel: Server. For non-portal scoped roles, you need to click on the *Options* link on individual portlets, then *Configuration*, then *Permissions* to assign permissions within the site or organization that owns the portlet. 
 
@@ -276,7 +276,7 @@ Site Application permissions affect the application as a whole. So, using our Me
 
 The control panel permissions affect how the portlet appears to the user in the control panel. Some control panel portlets have a Configuration button, so you can define who gets to see that, as well as who gets to see an application in the control panel.
 
-![Figure 12.17: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
+![Figure 15.10: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
 
 Each possible action to which permissions can be granted is listed. To grant a permission, check the box next to it. If you want to limit the scope of the permission to a particular site, click the *Limit Scope* link and then choose the site. Once you have chosen the permissions granted to this role, click *Save*. For a portal-scoped Message Boards Administrator role, you might grant content permissions for every action listed. After you click *Save*, you will see a list of all permissions currently granted to this role. From here, you can add more permissions or go back by clicking a link in the breadcrumb list or the *Return to Full Page* link.
 
@@ -358,7 +358,7 @@ Most global portal settings can be configured from the Portal Settings section o
 
 **Email Notifications:** allows you to configure Liferay to send email notifications for certain events, such as user registrations, password changes, etc. You can customize those messages here.
 
-![Figure 12.19: Portal Settings Pages](../../images/server-configuration-portal-settings-pages.png)
+![Figure 15.11: Portal Settings Pages](../../images/server-configuration-portal-settings-pages.png)
 
 Let's discuss these settings next.
 
@@ -503,7 +503,7 @@ The control panel provides default mappings for commonly used LDAP attributes. Y
 
 * *Test LDAP Users:* Once you have your attribute mappings set up (see above), click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users and match them with their mappings as a preview.
 
-![Figure 12.20: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
+![Figure 15.12: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay.
 
@@ -527,7 +527,7 @@ The control panel provides default mappings for commonly used LDAP attributes. Y
 
 * *Group Default Object Classes:* When a group is exported, the group is created with the listed default object classes. To find out what your default object classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and view the Object Class attributes stored in LDAP for that group.
 
-![Figure 12.21: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
+![Figure 15.13: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From here, you can add another LDAP server or set just a few more options that apply to all of your LDAP server connections.
 
