@@ -1,4 +1,14 @@
-# Configuring Liferay's Properties [](id=configuring-liferay-s-properties)
+# Properties Reference [](id=configuring-liferay-s-properties)
+
+<!--
+
+Ch. 20 Properties reference
+
+old ch. 23
+
+(no sections)
+
+-->
 
 Liferay is configured by a combination of settings that are stored in the database (configured by the use of the control panel) and settings which are stored in properties (text) files. These files can be modified to change Liferay's behavior in certain ways. In this chapter we discuss the main configuration file, which is stored in the Liferay Home directory, and is called `portal-ext.properties`, if you've got a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This chapter has a wide-ranging set of topics since you can make many different kinds of customizations. We list a few of these below.
 
@@ -18,15 +28,17 @@ Remember that your customizations in the `portal-ext.properties` or `portal-setu
 
 ## Using an overridden configuration file [](id=using-an-overridden-configuration-file)
 
-Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all of the defaults is stored inside of a `.jar` file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put just the settings you want to customize in your own configuration file, and then the configuration file for your portal is uncluttered and contains only the settings you need. This makes it far easier to determine whether a particular setting has been customized, and it makes the settings more portable across different installations of Liferay.
+Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all of the defaults is stored inside of a `.jar` file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put just the settings you want to customize in your own configuration file, and then the configuration file for your portal is uncluttered and contains only the settings you need. This makes it far easier to determine whether a particular setting has been customized and it makes the settings more portable across different installations of Liferay.
 
-The default configuration file is called `portal.properties`, and it resides inside the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's `WEB-INF/lib` folder. The file that is used to override the configuration is `portal-ext.properties` if you've created a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This file is created in your Liferay Home folder (please see Chapter 11: Installing Liferay for the location of this folder for your application server). What follows are brief descriptions of the options that you can customize, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
+The default configuration file is called `portal.properties` and it resides inside the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's `WEB-INF/lib` folder. The file that is used to override the configuration is `portal-ext.properties` if you've created a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This file is created in your Liferay Home folder (please see Chapter 11: Installing Liferay for the location of this folder for your application server). What follows are brief descriptions of the options that you can customize, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
+
+<!-- verify chapter reference above   -->
 
 ## Properties Override [](id=properties-override)
 
-This property specifies where to get the overridden properties. By default, it is `portal-ext.properties`. Updates should not be made in `portal.properties` or in `portal-bundles.properties`, but in `portal-ext.properties`. Furthermore, each portal instance can have its own overridden property file following the convention `portal-companyid.properties`. For example, one read order might be: `portal.properties`, then `portal-ext.properties`, and then `portal-test.properties`.
+This property specifies where to get the overridden properties. By default, it is `portal-ext.properties`. Updates should not be made in `portal.properties` or in `portal-bundles.properties`, but in `portal-ext.properties`. Furthermore, each portal instance can have its own overridden property file following the convention `portal-companyid.properties`. For example, one read order might be: `portal.properties`, then `portal-ext.properties` and then `portal-test.properties`.
 
-The default read order is: `portal.properties`, `portal-bundle.properties`, `portal-ext.properties`, and then `portal-setup-wizard.properties`.
+The default read order is: `portal.properties`, `portal-bundle.properties`, `portal-ext.properties` and then `portal-setup-wizard.properties`.
 
 *Examples:*
 
@@ -41,7 +53,7 @@ Each portal instance can have its own overriden property file following the conv
 
 	java ... -Dcompany-id-properties=true
 
-The read order will now be: `portal.properties`, then `portal-ext.properties`, and then `portal-liferay.com.properties`.
+The read order will now be: `portal.properties`, then `portal-ext.properties` and then `portal-liferay.com.properties`.
 
 Note that not all properties can have different values per company. This functionality is only available for legacy reasons. The preferred way to configure a portal instance is through the control panel.
 
@@ -54,7 +66,7 @@ A common use case is to keep legacy property values when upgrading to newer vers
 
 	java ... -Dexternal-properties=portal-legacy-5.1.properties
 
-The read order will now be: portal.properties, then portal-ext.properties, and then portal-legacy-5.1.properties.
+The read order will now be: portal.properties, then portal-ext.properties and then portal-legacy-5.1.properties.
 
 	include-and-override=${external-properties}
 	include-and-override=${liferay.home}/${external-properties}
@@ -85,7 +97,7 @@ This property specifies the application server's HTTP port. This value should be
     portal.instance.http.port=
 
 
-Set this property if the application server is served behind a proxy and a prefix needs to be added to the portal servlet context path. This prefix will also be added to static resources served by layout templates, portlets, and themes.
+Set this property if the application server is served behind a proxy and a prefix needs to be added to the portal servlet context path. This prefix will also be added to static resources served by layout templates, portlets and themes.
 
     portal.proxy.path=
 
@@ -171,11 +183,11 @@ Input a list of comma delimited class names that implement `com.liferay.portal.k
 		com.liferay.portal.deploy.auto.exploded.tomcat.PortletExplodedTomcatListener,\
 		com.liferay.portal.deploy.auto.exploded.tomcat.ThemeExplodedTomcatListener
         
-Set this to `true` to enable auto deploy of layout templates, portlets, and themes.
+Set this to `true` to enable auto deploy of layout templates, portlets and themes.
 
 	auto.deploy.enabled=true
 
-Set the directory to scan for layout templates, portlets, and themes to auto deploy.
+Set the directory to scan for layout templates, portlets and themes to auto deploy.
 
 	auto.deploy.deploy.dir=${liferay.home}/deploy
 
@@ -619,7 +631,7 @@ Not all JPA providers require a JVM agent (Hibernate is an example). If your pro
 
 Specify a specific database platform setting if the JPA provider is not able to detect the database platform.
 
-Valid values for the Hibernate and OpenJPA providers are: DB2, DERBY, HSQL, INFORMIX, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER, and SYBASE.
+Valid values for the Hibernate and OpenJPA providers are: DB2, DERBY, HSQL, INFORMIX, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER and SYBASE.
 
 Valid values for the EclipseLink provider are:
 	org.eclipse.persistence.platform.database.DB2MainframePlatform,
@@ -637,7 +649,7 @@ Check with JPA provider's documentation for details and all possible values.
 
 	jpa.database.platform=
 
-Liferay will automatically detect the database type by initializing DBUtil. You can override the value here if needed. Expected values are: `db2`, `derby`, `firebird`, `hypersonic`, `informix`, `ingres`, `interbase`, `jdatastore`, `mysql`, `oracle`, `postgresql`, `sap`, `sqlserver`, and `sybase`.
+Liferay will automatically detect the database type by initializing DBUtil. You can override the value here if needed. Expected values are: `db2`, `derby`, `firebird`, `hypersonic`, `informix`, `ingres`, `interbase`, `jdatastore`, `mysql`, `oracle`, `postgresql`, `sap`, `sqlserver` and `sybase`.
 
 	jpa.database.type=    
 
@@ -743,7 +755,7 @@ Sybase
 	jdbc.default.username=sa
 	jdbc.default.password=
 
-Liferay can use C3PO, DBCP, or Primrose for connection pooling. See `com.liferay.portal.dao.jdbc.util.DataSourceFactoryBean` for the actual implementation. It is important to understand the strengths and weaknesses of each provider so that you can choose the best one that fits your deployment scenario. Provider specific properties can also be passed along directly to the provider. For example, the property `jdbc.default.acquireIncrement` is read by C3PO, the property `jdbc.default.maxActive` is read by DBCP, and the property `jdbc.default.base` is read by Primrose.
+Liferay can use C3PO, DBCP, or Primrose for connection pooling. See `com.liferay.portal.dao.jdbc.util.DataSourceFactoryBean` for the actual implementation. It is important to understand the strengths and weaknesses of each provider so that you can choose the best one that fits your deployment scenario. Provider specific properties can also be passed along directly to the provider. For example, the property `jdbc.default.acquireIncrement` is read by C3PO, the property `jdbc.default.maxActive` is read by DBCP and the property `jdbc.default.base` is read by Primrose.
 
 The default provider is C3PO.
 
@@ -1419,7 +1431,7 @@ Input a list of comma delimited system group names that will exist in addition t
 
 Input a list of comma delimited system role names that will exist in addition to the standard system roles. When the server starts, the portal checks to ensure all system roles exist. Any missing system role will be created by the portal.
 
-The standard system roles are: Administrator, Guest, Power User, and User. These roles cannot be removed or renamed.
+The standard system roles are: Administrator, Guest, Power User and User. These roles cannot be removed or renamed.
 
 	system.roles=
 
@@ -1448,7 +1460,7 @@ Set the description of the User system role.
 
 Input a list of comma delimited system organization role names that will exist in addition to the standard system organization roles. When the server starts, the portal checks to ensure all system organization roles exist. Any missing system organization role will be created by the portal.
 
-The standard system organization roles are: Organization Administrator, Organization Member, and Organization Owner. These roles cannot be removed or renamed.
+The standard system organization roles are: Organization Administrator, Organization Member and Organization Owner. These roles cannot be removed or renamed.
 
 	system.organization.roles=
 
@@ -1466,7 +1478,7 @@ Set the description of the Organization Owner system organization role.
 
 Input a list of comma delimited system site role names that will exist in addition to the standard system site roles. When the server starts, the portal checks to ensure all system site roles exist. Any missing system site role will be created by the portal.
 
-The standard system site roles are: Site Administrator, Site Member, and Site Owner. These roles cannot be removed or renamed.
+The standard system site roles are: Site Administrator, Site Member and Site Owner. These roles cannot be removed or renamed.
 
 	system.site.roles=
 
@@ -1484,7 +1496,7 @@ Set the description of the Site Owner system site role.
 
 Omniadmin users can administer the portal's core functionality: gc, shutdown, etc. Omniadmin users must belong to the default company.
 
-Multiple portal instances might be deployed on one application server, and not all of the administrators should have access to this core functionality. Input the ids of users who are omniadmin users.
+Multiple portal instances might be deployed on one application server and not all of the administrators should have access to this core functionality. Input the ids of users who are omniadmin users.
 
 Leave this field blank if users who belong to the right company and have the Administrator role are allowed to administer the portal's core functionality.
 
@@ -1852,7 +1864,7 @@ Set the values used to connect to a LDAP store.
 	ldap.factory.initial=com.sun.jndi.ldap.LdapCtxFactory
 	ldap.referral=follow
 
-Settings for `com.liferay.portal.security.auth.LDAPAuth` can be configured from the Admin portlet. It provides out-of-the box support for Apache Directory Server, Microsoft Active Directory Server, Novell eDirectory, and OpenLDAP. The default settings are for Apache Directory Server.
+Settings for `com.liferay.portal.security.auth.LDAPAuth` can be configured from the Admin portlet. It provides out-of-the box support for Apache Directory Server, Microsoft Active Directory Server, Novell eDirectory and OpenLDAP. The default settings are for Apache Directory Server.
 
 The `LDAPAuth` class must be specified in the property `auth.pipeline.pre` to be executed.
 
@@ -3066,7 +3078,7 @@ Specify static portlets that cannot be moved and will always appear on every lay
 
 For example, if you want the Hello World portlet to always appear at the start of the iteration of the first column for user layouts, set the property `layout.static.portlets.start.column-1[user]` to `47`. If you want the Hello World portlet to always appear at the end of the second column for user layouts, set the property `layout.static.portlets.end.column-2[user]` to `47`. You can input a list of comma delimited portlet ids to specify more than one portlet. If the portlet is instanceable, add the suffix `_INSTANCE_abcd` to the portlet id, where `abcd` is any random alphanumeric string.
 
-The static portlets are fetched based on the properties controlled by custom filters using EasyConf. By default, the available filters are `user`, `site`, and `organization`.
+The static portlets are fetched based on the properties controlled by custom filters using EasyConf. By default, the available filters are `user`, `site` and `organization`.
 
 *Examples:*
 
@@ -3110,13 +3122,13 @@ Set the static portlets that will appear for every layout. See `/html/portal/lay
 
 	layout.static.portlets.all=
 
-Set the private group, private user, and public servlet mapping for `com.liferay.portal.servlet.FriendlyURLServlet`. This value must match the servlet mapping set in `web.xml`.
+Set the private group, private user and public servlet mapping for `com.liferay.portal.servlet.FriendlyURLServlet`. This value must match the servlet mapping set in `web.xml`.
 
 For example, if the private group pages are mapped to `/group` and the group's friendly URL is set to `/guest` and the layout's friendly URL is set to `/company/site`, then the friendly URL for the page will be `http://www.liferay.com/group/guest/company/site`. Private group pages map to a site's private pages and are only available to authenticated users with the proper permissions.
 
 For example, if the public pages are mapped to `/web` and the group or user's friendly URL is set to "/guest" and the layout's friendly URL is set to `/company/site`, then the friendly URL for the page will be `http://www.liferay.com/web/guest/company/site`. Public pages are available to unauthenticated users.
 
-The friendly URL's for users, groups, and layouts can be set during runtime.
+The friendly URL's for users, groups and layouts can be set during runtime.
 
 	layout.friendly.url.private.group.servlet.mapping=/group
 	layout.friendly.url.private.user.servlet.mapping=/user
@@ -3309,7 +3321,7 @@ Set the following fields to `false` so users cannot see them. Some company polic
 	field.enable.com.liferay.portal.model.Contact.birthday=true
 	field.enable.com.liferay.portal.model.Organization.status=false
 
-Input a list of comma delimited user types who can edit their own fields. Valid types are `administrator`, `user-with-mx`, and `user-without-mx`.
+Input a list of comma delimited user types who can edit their own fields. Valid types are `administrator`, `user-with-mx` and `user-without-mx`.
 
 Set a value of `administrator` if an administrator can edit the specified field. An administrator is anyone who has the Administrator role.
 
@@ -3601,7 +3613,7 @@ You can add a listener for a specific class by setting the property `value.objec
 	value.object.listener.com.liferay.portlet.journal.model.JournalArticle=com.liferay.portlet.journal.model.JournalArticleListener
 	value.object.listener.com.liferay.portlet.journal.model.JournalTemplate=com.liferay.portlet.journal.model.JournalTemplateListener
 
-Value objects are cached at three levels. They first level is *entity*, the second level is *finder*, and the third level is *Hibernate*.
+Value objects are cached at three levels. They first level is *entity*, the second level is *finder* and the third level is *Hibernate*.
 
 The entity level cache stores a value object's primary key to the value object itself.
 
@@ -3958,7 +3970,7 @@ Set the name of a class that implements `com.liferay.mail.util.Hook`. The mail s
 
 ## CyrusHook [](id=cyrushook)
 
-Set the commands for adding, updating, and deleting a user where %1% is the user id. Replace the password with the password for the cyrus user.
+Set the commands for adding, updating and deleting a user where %1% is the user id. Replace the password with the password for the cyrus user.
 
 *Examples:*
 
@@ -3984,7 +3996,7 @@ See the properties `google.apps.username` and `google.apps.password`.
 
 ## SendMailHook [](id=sendmailhook)
 
-Set the commands for adding, updating, and deleting a user where %1% is the user id and %2% is the password. Set the home and virtual user table information.
+Set the commands for adding, updating and deleting a user where %1% is the user id and %2% is the password. Set the home and virtual user table information.
 
 	mail.hook.sendmail.add.user=adduser %1% -s /bin/false
 	mail.hook.sendmail.change.password=autopasswd %1% %2%
@@ -4056,7 +4068,7 @@ Set this to `true` to show data samples at the bottom of each portal page. In or
 	
 ## Multicast [](id=multicast)
 
-Consolidate multicast address and port settings in one location for easier maintenance. These settings must correlate to your physical network configuration (i.e. firewall, switch, and other network hardware matter) to ensure speedy and accurate communication across a cluster.
+Consolidate multicast address and port settings in one location for easier maintenance. These settings must correlate to your physical network configuration (i.e. firewall, switch and other network hardware matter) to ensure speedy and accurate communication across a cluster.
 
 Each address and port combination represent a conversation that is made between different nodes. If they are not unique or correctly set, there will be a potential of unnecessary network traffic that may cause slower updates or inaccurate updates.
 
@@ -4275,7 +4287,7 @@ Input a list of comma delimited class names that implement `com.liferay.portal.k
 
 	scheduler.classes=
 
-Set the maximum length of description, group name, and job name fields.
+Set the maximum length of description, group name and job name fields.
 
 	scheduler.description.max.length=120
 	scheduler.group.name.max.length=80
@@ -4602,7 +4614,7 @@ The servlet authorizing filter allows external servlets to be authorized by the 
 
 	com.liferay.portal.servlet.filters.servletauthorizing.ServletAuthorizingFilter=true
 
-The session id filter ensures that only one session is created between http and https sessions. This is useful if you want users to login via https but have them view the rest of the site via http. This is disabled by default. Do not enable this unless you thoroughly understand how cookies, http, and https work.
+The session id filter ensures that only one session is created between http and https sessions. This is useful if you want users to login via https but have them view the rest of the site via http. This is disabled by default. Do not enable this unless you thoroughly understand how cookies, http and https work.
 
 	com.liferay.portal.servlet.filters.sessionid.SessionIdFilter=false
 
@@ -4792,7 +4804,7 @@ Input a list of default user group names separated by `\n` characters that are a
 
 	admin.default.user.group.names=
 
-Set this to `true` to ensure that a user is synchronized with the default associations of groups, roles, and user groups upon every login. Set this to `false` if default associations should only be applied to a user when a user is created.
+Set this to `true` to ensure that a user is synchronized with the default associations of groups, roles and user groups upon every login. Set this to `false` if default associations should only be applied to a user when a user is created.
 
 	admin.sync.default.associations=false
 
@@ -5010,7 +5022,7 @@ Set this to `true` if the subscription checkbox for discussion comments will be 
 
 	discussion.subscribe.by.default=true
 
-Set the thread view for discussion comments. This will affect Blogs, Document Library, and other portlets that use the Discussion tag library to provide comments. Set the value to `flat` to paginate comments. Set the value to `combination` to show all comments in one page along with a tree view of the comments.
+Set the thread view for discussion comments. This will affect Blogs, Document Library and other portlets that use the Discussion tag library to provide comments. Set the value to `flat` to paginate comments. Set the value to `combination` to show all comments in one page along with a tree view of the comments.
 
 *Examples:*
 
@@ -5156,7 +5168,7 @@ Set the values related to preview and thumbnail generation for document library 
 
 Some parameters are applied universally across all processors (e.g., `dl.file.entry.thumbnail.max.height`) while others are specific to certain types of generation, as specified (e.g., `dl.file.entry.thumbnail.document.depth`).
 
-See the properties `imagemagick.enabled`, `openoffice.server.enabled`, and `xuggler.enabled`.
+See the properties `imagemagick.enabled`, `openoffice.server.enabled` and `xuggler.enabled`.
 
 *Examples:*
 
@@ -5199,7 +5211,7 @@ Input a list of comma delimited class names of the third party repositories that
 
 	dl.repository.impl=com.liferay.portal.repository.cmis.CMISAtomPubRepository,com.liferay.portal.repository.cmis.CMISWebServicesRepository
 
-Sets the depth of mapped CMIS entries to remove when a deletion is called from within the portal. The deeper the setting, the more calls to the server required. When a deletion is called from outside the portal, mapped CMIS entries remain stagnant in the database. Expected values are: `-1` for deep, `0` for none, and `1` for shallow.
+Sets the depth of mapped CMIS entries to remove when a deletion is called from within the portal. The deeper the setting, the more calls to the server required. When a deletion is called from outside the portal, mapped CMIS entries remain stagnant in the database. Expected values are: `-1` for deep, `0` for none and `1` for shallow.
 
 	dl.repository.cmis.delete.depth=1
 
@@ -5583,7 +5595,7 @@ Specify the options that will be provided to the user in the edit configuration 
 
 	navigation.display.style.options=relative-with-breadcrumb,from-level-2-with-title,from-level-1-with-title,from-level-1,from-level-1-to-all-sublevels,from-level-0
 
-Define each mode with 4 comma delimited strings that represent the form: `headerType`, `rootLayoutType`, `rootLayoutLevel`, `includedLayouts`, and `nestedChildren`.
+Define each mode with 4 comma delimited strings that represent the form: `headerType`, `rootLayoutType`, `rootLayoutLevel`, `includedLayouts` and `nestedChildren`.
 
 	navigation.display.style[relative-with-breadcrumb]=breadcrumb,relative,0,auto,true
 	navigation.display.style[from-level-2-with-title]=root-layout,absolute,2,auto,true
@@ -5813,4 +5825,6 @@ Configure email notification settings.
 
 ## Summary [](id=summ-35)
 
-In this very long chapter we looked at all of the options which can be customized in your `portal-ext.properties` file. This chapter serves as a reference section for the file, so you can quickly find documentation for any property you might encounter. Also, if you would like to make a customization to Liferay, you can also use this section to search for a property that does what you want. Once you find it, just add the appropriate line(s) to your `portal-ext.properties` file. Next, we'll take a look at Liferay's scripting API.
+In this very long chapter we looked at all of the options which can be customized in your `portal-ext.properties` file. This chapter serves as a reference section for the file, so you can quickly find documentation for any property you might encounter. Also, if you would like to make a customization to Liferay, you can use this section to search for a property that does what you want. Once you find it, just add the appropriate line(s) to your `portal-ext.properties` file. Next, we'll take a look at Liferay's scripting API.
+
+<!-- Will we look at the scripting API??   -->

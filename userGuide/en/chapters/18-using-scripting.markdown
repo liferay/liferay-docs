@@ -1,6 +1,17 @@
-# Script Engine [](id=script-engine)
+# Using Scripting for Advanced Flexibility [](id=lp-6-1-ugen18-using-scripting-for-advanced-flexibility-0)
 
-Liferay provides a robust script engine that can be used to interpret scripts in Beanshell, Javascript, Groovy, Python, and Ruby. The script engine came out of Liferay's involvement with the Romulus project (http://www.ict-romulus.eu). It was originally developed to support non Java-based portlets, but has now been extended to handle a lot more. For example, when Liferay's workflow framework was introduced, the script engine was leveraged to support the execution of scripts from within a workflow module. A script console is now included in the Server Administration portlet in the control panel. It allows system administrators an easy way to execute scripts to perform repetitive user maintenance operations, bulk manipulations using the Liferay API to ensure consistency, or even system level operations.
+<!-- 
+
+Ch. 18 Using scripting for advanced flexibility
+
+old ch. 21
+
+(no level-two sections in the new outline)
+-->
+
+## Script Engine [](id=script-engine)
+
+Liferay provides a robust script engine that can be used to interpret scripts in Beanshell, Javascript, Groovy, Python and Ruby. The script engine came out of Liferay's involvement with the Romulus project (http://www.ict-romulus.eu). It was originally developed to support non Java-based portlets, but has now been extended to handle a lot more. For example, when Liferay's workflow framework was introduced, the script engine was leveraged to support the execution of scripts from within a workflow module. A script console is now included in the Server Administration portlet in the control panel. It allows system administrators an easy way to execute scripts to perform repetitive user maintenance operations, bulk manipulations using the Liferay API to ensure consistency, or even system level operations.
 
 This chapter helps you to understand Liferay's script engine and covers the following topics: 
 

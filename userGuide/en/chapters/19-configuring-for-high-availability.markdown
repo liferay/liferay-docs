@@ -1,4 +1,14 @@
-# Enterprise Configuration [](id=enterprise-configurati-5)
+# Configuring Liferay for High Availability [](id=enterprise-configurati-5)
+
+<!--
+
+Ch. 19 Configuring Liferay for high availability
+
+old ch. 22
+
+(no sections)
+
+-->
 
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is fully ready to support mission-critical, enterprise applications in an environment configured for multiple redundancies and 24/7 uptimes. The product, however, like other products of its kind, doesn't come configured this way out of the box, so there are some steps that need to be taken in order to tune it for your needs. 
 

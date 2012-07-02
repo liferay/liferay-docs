@@ -1,3 +1,15 @@
+# Using the Control Panel [](id=lp-6-1-ugen19-using-the-control-panel-0)
+
+<!--
+
+Ch. 16 Using the Control Panel
+
+old ch. 19
+
+(no sections)
+
+-->
+
 <--! This chapter contains the last section of the old 12-administering-liferay-portal.markdown chapter -->
 
 #### Mail Host Names [](id=lp-6-1-ugen12-mail-host-names-0)
@@ -122,7 +134,7 @@ Liferay Portal enables users to upload and share content via the Documents and M
 
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org), ImageMagick is available here: [ImageMagick](http://www.imagemagick.org), and Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to choose the correct versions of these applications for your operating system. Once you've installed these tools, you can use the External Services tab of the control panel to configure Liferay to use them.
 
-##### OpenOffice/LibreOffice configuration
+##### OpenOffice/LibreOffice configuration [](id=lp-6-1-ugen19-openofficelibreoffice-configuration-0)
 
 OpenOffice and LibreOffice are open source office suites which are usually run in graphical mode to create documents but they can also be run in "server" mode. When run in server mode, OpenOffice and LibreOffice can be used to convert documents to and from all of the file types it supports. Once configured, Liferay makes use of this feature to automatically convert content on the fly. You can install OpenOffice or LibreOffice on the same machine upon which Liferay is running or you can connect to a separate host. 
 
@@ -146,7 +158,7 @@ By default, when Liferay uses OpenOffice or LibreOffice to perform conversions, 
 
 To configure Liferay to use OpenOffice/LibreOffice from the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check the *Enabled* box for OpenOffice. If OpenOffice/LibreOffice is running on a non-default port, you must also specify the port number. By default, OpenOffice runs on port 8100, which is the default port in the control panel. If you have something else running on this port, find a port that is open and specify it both in the command to start OpenOffice/LibreOffice in server mode and on the control panel's External Services configuration page. When you are finished, click *Save*. Now Liferay can perform many types of document conversions.
 
-##### ImageMagick configuration
+##### ImageMagick configuration [](id=lp-6-1-ugen19-imagemagick-configuration-0)
 
 Once you've installed the correct version of [*ImageMagick*](http://www.imagemagick.org) for your operating system, which should include the installation of Ghostscript, you need to configure Liferay to use ImageMagick. You can do this either in your `portal-ext.properties` file or from the control panel. To enable ImageMagick in your `portal-ext.properties` file, add the following lines and make sure the search path points to the directories for the ImageMagick and Ghostscript executables. You may also need to configure the path for fonts used by Ghostscript when in Mac or Unix environments.
 
@@ -157,7 +169,7 @@ Once you've installed the correct version of [*ImageMagick*](http://www.imagemag
 
 To enable ImageMagick from the control panel, navigate to the *Server Administration* &rarr; *External Services* page, check the *Enabled* checkbox for ImageMagick, and check that the paths to the ImageMagick and Ghostscript executables are correct.
 
-##### Xuggler configuration
+##### Xuggler configuration [](id=lp-6-1-ugen19-xuggler-configuration-0)
 
 Once you've installed the correct version of [*Xuggler*](http://www.xuggle.com/xuggler) for your operating system, you need to configure your environment variables. Depending on where you installed Xuggler, a configuration similiar to the following should work on Unix-like systems:
 

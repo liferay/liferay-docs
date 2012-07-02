@@ -1,10 +1,34 @@
-# Drools [](id=drools)
+# Personalization and Customization [](id=drools)
+
+<!--  Old header
+ Personalization, Collaboration tools, and social networking [](id=lp-6-1-ugen06-personalization-collaboration-tools-and-social-networking-0)
+-->
+
+<!-- There is significant content missing from this chapter.   -->
+
+<!-- Needs text   -->
+
+## User  site [](id=lp-6-1-ugen06-user--site-0)
+
+<!-- Needs text   -->
+
+## User public site [](id=lp-6-1-ugen06-user-public-site-0)
+
+<!-- Needs text   -->
+
+## Automatic personalization of content (via rules integration) [](id=lp-6-1-ugen06-automatic-personalization-of-content-via-rules-integration-0)
+
+<!-- Needs text   -->
+
+## Setting preferences to customize applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
+
+
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
 Liferay Portal Enterprise Edition provides an implementation of a JSR-94 compliant rules engine. This rules engine is provided as a Web Plugin and is based on the popular open source Drools project. 
 
-## Why use a rules engine?  [](id=why-use-a-rules-engine-)
+### Why use a rules engine?  [](id=why-use-a-rules-engine-)
 
 If you are not familiar with rules engines, you may be wondering why you would want to use one. In most applications, complex rule processing often takes the form of nested `if-else` blocks of code which can be very difficult to decipher and to maintain. If rules change, a developer must work with a business user to define the new rules. The developer must then read through the existing logic to understand what is happening and make the necessary modifications. The changes must then be recompiled, tested, and redeployed. A rules engine provides a means to separate the rules or logic of an application from the remaining code. Separating these rules provides several distinct advantages. 
 
@@ -16,7 +40,7 @@ If you are not familiar with rules engines, you may be wondering why you would w
 
 After all this, you may be interested in using Liferay's rules engine, so let's get started with it. 
 
-## Installation [](id=installati-4)
+### Installation [](id=installati-4)
 
 The Drools Web Plugin is available to Liferay Enterprise Edition customers through the customer portal. In can also be downloaded and installed through the built-in plugin repository. The name is `Drools Web`, and you'll find it in the list of web plugins. 
 
@@ -24,7 +48,7 @@ The Drools Web Plugin provides a rules engine implementation, but by itself it d
 
 Let's examine the sample portlet to see how it works. 
 
-### Configuring the sample Drools portlet [](id=lp-6-1-ugen07-configuring-the-sample-drools-portlet-0)
+#### Configuring the sample Drools portlet [](id=lp-6-1-ugen07-configuring-the-sample-drools-portlet-0)
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 
@@ -44,7 +68,7 @@ The Sample Drools Portlet plugin also contains a second rule that returns person
 
 Now that you can see how it works in practice, let's look closer at the rules themselves. 
 
-### Rules Definitions [](id=lp-6-1-ugen07-rules-definitions-0)
+#### Rules Definitions [](id=lp-6-1-ugen07-rules-definitions-0)
 
 Rule definitions can be written using Drools' declarative language. Rule files are text files that often have a .drl extension. A rule file can contain multiple rules. In addition to the standard Drools' declarative language, a domain specific language (DSL) can be created for your specific problem domain. <!-- | TODO: Explain. | --> Creating a DSL can make your rules even easier for business users to create and maintain your applications rules but does require some additional work up front. For additional information on creating a DSL for your problem domain please refer to the Domain Specific Languages section of the official Drools Documentation at [http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217). 
 

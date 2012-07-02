@@ -262,9 +262,9 @@ directory to convert the userGuide into complete English markdown, html, odt, an
             <arg value="markdown"/>
             <arg value="-t"/>
             <arg value="odt"/>
-            <!--<arg value="+RTS"/>
+            <arg value="+RTS"/>
             <arg value="-K64m"/>
-            <arg value="-RTS"/>-->
+            <arg value="-RTS"/>
             <arg value="-smart"/>
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.odt"/>
