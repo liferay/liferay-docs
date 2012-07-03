@@ -9,28 +9,29 @@ old ch. 19
 (no sections)
 
 -->
+<!--  Intro needed  -->
 
-<--! This chapter contains the last section of the old 12-administering-liferay-portal.markdown chapter -->
+<!-- This chapter contains the last section of the old 12-administering-liferay-portal.markdown chapter -->
 
 #### Mail Host Names [](id=lp-6-1-ugen12-mail-host-names-0)
 
-The next page under Portal Settings is Mail Host Names. You can enter (one per line) other mail host names besides the one you configured on the General tab. This lets the portal know which mail host names are owned by your organization.
+The next page under Portal Settings is Mail Host Names. You can enter other mail host names (one per line) besides the one you configured on the General tab. This lets the portal know which mail host names are owned by your organization.
 
 #### Email Notifications [](id=lp-6-1-ugen12-email-notifications-0)
 
 There are five tabs under the Email Notifications page of Portal Settings. The Sender tab allows you to set the portal's administrative name and email address. By default, these are `Joe Bloggs` and `test@liferay.com`. You can change them to whatever you want. This name and email address will appear in the From field in all email messages sent by the portal.
 
-The other four tabs are Account Created Notification, Email Verification Notification, Password Changed Notification, and Password Reset Notification. These tabs allow you to customize the email messages that are sent to users each time any of those four events occur.
+The other four tabs are Account Created Notification, Email Verification Notification, Password Changed Notification and Password Reset Notification. These tabs allow you to customize the email messages that are sent to users each time any of those four events occur.
 
 ![Figure 16.1: Automated Emails: Account Created Notification](../../images/server-configuration-account-created-notification.png)
 
 ![Figure 16.2: Definition of Terms for Automated Emails](../../images/server-configuration-definition-of-terms.png)
 
-A list of tokens, entitled "Definition of Terms," is provided so that you can insert certain values (such as the portal URL or the user ID) when you are setting up the custom email messages.
+A list of tokens, entitled "Definition of Terms," is provided so you can insert certain values (such as the portal URL or the user ID) when you are setting up the custom email messages.
 
 #### Identification [](id=lp-6-1-ugen12-identification-0)
 
-The identification section has several links for addresses, phone numbers, and other information you can configure in your portal. This allows you to set up contact information for the organization that owns the portal. Developers can query for this information in their applications.
+The identification section has several links for addresses, phone numbers and other information you can configure in your portal. This allows you to set up contact information for the organization that owns the portal. Developers can query for this information in their applications.
 
 #### Miscellaneous: Display Settings [](id=lp-6-1-ugen12-miscellaneous-display-settings-0)
 
@@ -38,7 +39,9 @@ This section allows you to set the default portal language and the time zone. Yo
 
 ![Figure 16.3: Server Configuration Miscellaneous Display Settings](../../images/server-configuration-miscellaneous-display-settings.png)
 
-Liferay's default theme is configured to display the portal logo. For custom themes, you can choose whether or not to display the logo. Be careful to choose an image file that fits the space. If you pick something that is too big, it might overlap with the navigation. Next, let's look at how to customize different types of portal assets using custom fields.
+Liferay's default theme is configured to display the portal logo. For custom themes, you can choose whether or not to display the logo. Be careful to choose an image file that fits the space. If you pick something too big, it might overlap with the navigation. Next, let's look at how to customize different types of portal assets using custom fields.
+
+<!--  should we provide a range of recommended parameters for custom logos?  -->
 
 ### Custom Fields [](id=lp-6-1-ugen12-custom-fields-0)
 
@@ -52,7 +55,7 @@ From here you will need to add the custom field key. The key appears as the labe
 
 ![Figure 16.5: Custom Fields Integrated with the Rest of the Fields on the Wiki Form](../../images/server-configuration-custom-fields-integrated.png)
 
-You can create fields of many different types: text fields (indexed or secret), integers, selection of multiple values, and more. Once you've created a field, you cannot change its type.
+You can create fields of many different types: text fields (indexed or secret), integers, selection of multiple values and more. Once you've created a field, you cannot change its type.
 
 ### Monitoring [](id=lp-6-1-ugen12-monitoring-0)
 
@@ -60,7 +63,7 @@ The next link on the left side of the control panel is for monitoring. You can u
 
 ### Plugins Configuration [](id=lp-6-1-ugen12-plugins-configuration-0)
 
-The Plugins Configuration page contains tabs for three types of plugins: portlets, themes, and layouts. You can use these tabs to view which roles can add plugins to pages or you can make the plugins active or inactive.
+The Plugins Configuration page contains tabs for three types of plugins: portlets, themes and layouts. You can use these tabs to view which roles can add plugins to pages or you can make the plugins active or inactive.
 
 Note that this is for basic configuration: if you want to view the existing permission configuration for a given portlet and/or modify that configuration for existing roles, this is where you can do that. If you need to add permissions to new roles for a given portlet, use the Roles section of the control panel and the *Actions &rarr; Define Permissions* button. Next, let's look at how to apply server configurations.
 
@@ -80,7 +83,7 @@ The first tab is called *Resources* . This tab contains the aforementioned graph
 
 **Clearing database caches:** You can send in a request to the JVM to clear the database cache.
 
-**Reindex all search indexes:** You can send in a request to regenerate all search indexes. If you are not using a Solr search server this will impact portal performance, so try not to do this except at non-peak times.
+**Reindex all search indexes:** You can send in a request to regenerate all search indexes. If you are not using a Solr search server this will impact portal performance so try to do this at non-peak times.
 
 **Reset Document Library preview and thumbnail files:** You can send in a request to reset the preview and thumbnail files for each item in your portal's Documents and Media libraries.
 
@@ -88,11 +91,11 @@ The first tab is called *Resources* . This tab contains the aforementioned graph
 
 **Verify database tables of all plugins:** Checks all tables against their indexes for accuracy of data retrieval.
 
-**Clean up Permissions:** This process removes the assignment of some permissions on the Guest, User and Power User roles in order to simplify the management of "User Customizable Pages". Notably, "Add To Page" permissions is removed from the Guest, and User role for all portlets. Likewise the same permission is reduced in scope for Power Users from portal wide to scoped to "User Personal Site".
+**Clean up Permissions:** This process removes the assignment of some permissions on the Guest, User and Power User roles to simplify the management of "User Customizable Pages". Notably, "Add To Page" permissions is removed from the Guest and User roles for all portlets. Likewise the same permission is reduced in scope for Power Users from portal wide to scoped to "User Personal Site."
 
 #### Log Levels [](id=lp-6-1-ugen12-log-levels-0)
 
-The Log Levels tab of the Server Administration page allows you to dynamically modify the log levels for any class hierarchy in the portal. If you have custom code that you have deployed which isn't in the list, you can use the *Add Category* tab to add it. If you change the log level near the top of the class hierarchy (such as at `com.liferay`), all the classes under that hierarchy will have their log levels changed. If you are testing something specific, it is much better to be as specific as you can when you change log levels. Modifying them too high in the hierarchy generates a lot more log messages than you need.
+The Log Levels tab of the Server Administration page allows you to dynamically modify the log levels for any class hierarchy in the portal. If you have custom code you have deployed which isn't in the list, you can use the *Add Category* tab to add it. If you change the log level near the top of the class hierarchy (such as at `com.liferay`), all the classes under that hierarchy will have their log levels changed. If you are testing something specific, it is much better to be as specific as you can when you change log levels. Modifying them too high in the hierarchy generates a lot more log messages than you need.
 
 #### Properties [](id=lp-6-1-ugen12-properties-0)
 
@@ -102,19 +105,21 @@ The system properties tab shows an exhaustive list of system properties for the 
 
 The portal properties tab tab shows an exhaustive list of the portal properties. These properties can be customized, as we saw in chapter 12. If you need to check the current value of a particular property, it can be viewed from this screen without having to shut down the portal or open any properties files.
 
+<!-- check the chapter reference above  -->
+
 #### Captcha [](id=lp-6-1-ugen12-captcha-0)
 
 By default, Liferay ships with its own simple captcha service which is designed to thwart bots from registering for accounts on sites powered by Liferay. If you want to instead use Google's reCaptcha service, you can enable this setting from the Captcha tab of the Server Administration page.
 
-Simply check the *Enable ReCaptcha* box and enter your public and private keys into the provided fields, and then click *Save*. Liferay Portal will then use reCaptcha instead of simple captcha.
+Simply check the *Enable ReCaptcha* box and enter your public and private keys into the provided fields, then click *Save*. Liferay Portal will then use reCaptcha instead of simple captcha.
 
 #### Data Migration [](id=lp-6-1-ugen12-data-migration-0)
 
 If you are upgrading from a previous release of Liferay Portal or if you need to migrate your data from one system to another, the Data Migration tab helps you to do that without your developers having to write custom scripts.
 
-The first section lets you copy your entire Liferay database from the current database under which it is running to the database you specify in this set of fields. You'll need to enter the driver class name (and the driver will need to be on Liferay's classpath), the JDBC URL of the database to which you'll be copying your data, and the credentials of a user that has access to that database. Once you have all of this information entered, click *Execute* to copy the data.
+The first section lets you copy your entire Liferay database from the current database under which it is running to the database you specify in this set of fields. You'll need to enter the driver class name (and the driver will need to be on Liferay's classpath), the JDBC URL of the database to which you'll be copying your data and the credentials of a user with access to that database. Once you have all of this information entered, click *Execute* to copy the data.
 
-The next section helps you migrate your documents. If you want to move off of the Jackrabbit JSR-170 repository to the file system, or to the Jackrabbit repository from the file system, or to any of the other repositories supported by the documents and media library, you can do so very easily. Make sure you have already set up your `portal-ext.properties` file so that the hook is properly configured before running this migration. Select the Document Library hook that represents where you want your documents migrated, and click *Execute*. Your documents will be migrated to the new repository, and you can then shut down Liferay, make the new repository the default in the `portal-ext.properties` file, and then restart.
+The next section helps you migrate your documents. If you want to move off of the Jackrabbit JSR-170 repository to the file system, or to the Jackrabbit repository from the file system, or to any of the other repositories supported by the documents and media library, you can do so very easily. Make sure you have already set up your `portal-ext.properties` file so the hook is properly configured before running this migration. Select the Document Library hook that represents where you want your documents migrated and click *Execute*. Your documents will be migrated to the new repository. You can then shut down Liferay, make the new repository the default in the `portal-ext.properties` file and then restart.
 
 Similarly, you can migrate images from the Image Gallery in the same manner.
 
@@ -124,15 +129,19 @@ Since Liferay allows users to upload files in various places, you may want to lo
 
 #### Mail [](id=lp-6-1-ugen12-mail-0)
 
-Rather than using the `portal-ext.properties` file as we did in the installation chapter, you can configure a mail server from the Mail tab of the Server Configuration tab. If the portal is to receive mail (see the Message Boards portlet in Chapter 4), you can connect a POP mail server. If the portal is to send mail, which it needs to do in order to send notifications to users, you can connect to an SMTP server here as well, and this is highly recommended.
+Rather than using the `portal-ext.properties` file as we did in the installation chapter, you can configure a mail server from the Mail tab of the Server Configuration tab. If the portal is to receive mail (see the Message Boards portlet in Chapter 4), you can connect a POP mail server. If the portal is to send mail, which it needs to do to send notifications to users, you can connect to an SMTP server here as well and this is highly recommended.
 
-Note that if you add your mail server settings here, they will override anything that is in your `portal-ext.properties` file.
+<!-- check the chapter reference above  -->
+
+Note that if you add your mail server settings here, they will override anything in your `portal-ext.properties` file.
 
 #### External Services [](id=lp-6-1-ugen12-external-services-0)
 
-Liferay Portal enables users to upload and share content via the Documents and Media library, a customizable and permissionable online repository. Users can upload files of any type to the Documents and Media library. Liferay ships with PDFBox and uses it to generate automatic previews for certain types of documents, by default. However, you can install three additional tools that offer higher quality previews and document conversion functionality: OpenOffice or LibreOffice, ImageMagick, and Xuggler. With Liferay configured to use these tools, you can generate automatic previews for many types of files incuding text files, office suite files, PDFs, images, audio files, and videos. Users will also be able to use the conversion functionality to download documents in a variety of formats. Please see the Documents and Media section of chapter 4 for more information.
+Liferay Portal enables users to upload and share content via the Documents and Media library, a customizable and permissionable online repository. Users can upload files of any type to the Documents and Media library. Liferay ships with PDFBox and uses it to generate automatic previews for certain types of documents, by default. You can also install three additional tools that offer higher quality previews and document conversion functionality: OpenOffice or LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these tools, you can generate automatic previews for many types of files incuding text files, office suite files, PDFs, images, audio files and videos. Users will also be able to use the conversion functionality to download documents in a variety of formats. Please see the Documents and Media section of chapter 4 for more information.
 
-LibreOffice is available here: [LibreOffice](http://www.libreoffice.org), ImageMagick is available here: [ImageMagick](http://www.imagemagick.org), and Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to choose the correct versions of these applications for your operating system. Once you've installed these tools, you can use the External Services tab of the control panel to configure Liferay to use them.
+<!-- check the chapter reference above  -->
+
+LibreOffice is available here: [LibreOffice](http://www.libreoffice.org), ImageMagick is available here: [ImageMagick](http://www.imagemagick.org) and Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to choose the correct versions of these applications for your operating system. Once you've installed these tools, you can use the External Services tab of the control panel to configure Liferay to use them.
 
 ##### OpenOffice/LibreOffice configuration [](id=lp-6-1-ugen19-openofficelibreoffice-configuration-0)
 
@@ -156,7 +165,7 @@ By default, when Liferay uses OpenOffice or LibreOffice to perform conversions, 
 
     openoffice.cache.enabled=false
 
-To configure Liferay to use OpenOffice/LibreOffice from the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check the *Enabled* box for OpenOffice. If OpenOffice/LibreOffice is running on a non-default port, you must also specify the port number. By default, OpenOffice runs on port 8100, which is the default port in the control panel. If you have something else running on this port, find a port that is open and specify it both in the command to start OpenOffice/LibreOffice in server mode and on the control panel's External Services configuration page. When you are finished, click *Save*. Now Liferay can perform many types of document conversions.
+To configure Liferay to use OpenOffice/LibreOffice from the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check the *Enabled* box for OpenOffice. If OpenOffice/LibreOffice is running on a non-default port, you must also specify the port number. By default, OpenOffice runs on port 8100, which is the default port in the control panel. If you have something else running on this port, find an open port and specify it both in the command to start OpenOffice/LibreOffice in server mode and on the control panel's External Services configuration page. When you are finished, click *Save*. Now Liferay can perform many types of document conversions.
 
 ##### ImageMagick configuration [](id=lp-6-1-ugen19-imagemagick-configuration-0)
 
@@ -167,7 +176,7 @@ Once you've installed the correct version of [*ImageMagick*](http://www.imagemag
     imagemagick.global.search.path[unix]=/usr/local/bin:/usr/local/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts
     imagemagick.global.search.path[windows]=C:\\Program Files\\ImageMagick
 
-To enable ImageMagick from the control panel, navigate to the *Server Administration* &rarr; *External Services* page, check the *Enabled* checkbox for ImageMagick, and check that the paths to the ImageMagick and Ghostscript executables are correct.
+To enable ImageMagick from the control panel, navigate to the *Server Administration* &rarr; *External Services* page, check the *Enabled* checkbox for ImageMagick and verify the paths to the ImageMagick and Ghostscript executables are correct.
 
 ##### Xuggler configuration [](id=lp-6-1-ugen19-xuggler-configuration-0)
 
@@ -181,11 +190,11 @@ Once your environment variables are set up correctly, you can configure Liferay 
 
     xuggler.enabled=true
 
-To configure Liferay to use Xuggler in the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check the *Enabled*. That's it! You've successfully configured the Documents and Media library to use Xuggler for audio and video files.
+To configure Liferay to use Xuggler in the control panel, navigate to the *Server Administration* &rarr; *External Services* page and check *Enabled*. That's it! You've successfully configured the Documents and Media library to use Xuggler for audio and video files.
 
 #### Script [](id=lp-6-1-ugen12-script-0)
 
-Liferay includes a scripting console which lets administrators execute migration or management code instantly. Several scripting languages are supported, including JavaScript, Groovy, Python, Ruby, and Beanshell. For further information about Liferay's APIs, see the JavaDoc, the Liferay Wiki ([http://wiki.liferay.com](http://wiki.liferay.com/)), or [*Liferay in Action*](http://manning.com/sezov).
+Liferay includes a scripting console which lets administrators execute migration or management code instantly. Several scripting languages are supported, including JavaScript, Groovy, Python, Ruby and Beanshell. For further information about Liferay's APIs, see the JavaDoc or [*Liferay in Action*](http://manning.com/sezov).
 
 #### Shutdown [](id=lp-6-1-ugen12-shutdown-0)
 
@@ -211,17 +220,19 @@ You'll be prompted for four fields and a check box:
 
 **Active:** Use this check box to choose whether to create an active or an inactive portal instance.
 
-When you are finished filling out the form, click *Save*. Now navigate to the portal using your new domain name. You will see that you are brought to what looks like a clean install of Liferay. This is your new portal instance which can now be configured any way you like.
+When you are finished filling out the form, click *Save*. Now navigate to the portal using your new domain name. You will see you are brought to what looks like a clean install of Liferay. This is your new portal instance which can now be configured any way you like.
 
 ### Plugins Installation [](id=lp-6-1-ugen12-plugins-installation-0)
 
-The *Plugins Installation* page of the control panel shows all of the plugins that are currently installed. These are divided into tabs for portlets, themes, layout templates, hook plugins, and web plugins. If you want to install a new plugin, click the *Install More Portlets* button. You will then be brought to the Plugin Installer, where you can browse Liferay's repository of portlets or install your own plugins. We covered the plugins installer in chapter 2.
+The *Plugins Installation* page of the control panel shows all of the plugins currently installed. These are divided into tabs for portlets, themes, layout templates, hook plugins and web plugins. If you want to install a new plugin, click the *Install More Portlets* button. You will then be brought to the Plugin Installer, where you can browse Liferay's repository of portlets or install your own plugins. We covered the plugins installer in chapter 2.
 
 ## Summary [](id=summ-33)
 
-In this chapter we described how to use Liferay's control panel to manage users, user groups, organizations, sites, and roles. We showed how to configure various server settings, such as authentication, LDAP integration, and single sign-on. We also learned how to associate users by default with different user groups, sites, and roles, and we saw how to reserve screen names and email addresses so that users cannot register in the portal with them.
+<!-- This summary needs some adjustment.   -->
 
-Next, we saw how to view and configure overall server settings. We saw how to view the memory currently being used by the server, as well as how to initiate garbage collection, a thread dump, search engine re-indexing, and the clearing of various caches. We learned how to debug parts of the portal by changing log levels, and by viewing the various properties that are defined in the portal.
+In this chapter we described how to use Liferay's control panel to manage users, user groups, organizations, sites and roles. We showed how to configure various server settings, such as authentication, LDAP integration and single sign-on. We also learned how to associate users by default with different user groups, sites and roles. Plus we saw how to reserve screen names and email addresses so users cannot register in the portal with them.
+
+Next, we saw how to view and configure overall server settings. We saw how to view the memory currently being used by the server, as well as how to initiate garbage collection, a thread dump, search engine re-indexing and the clearing of various caches. We learned how to debug parts of the portal by changing log levels and by viewing the various properties defined in the portal.
 
 Finally, we learned how to properly notify users that the portal is about to shut down and how to set up exernal services like OpenOffice integration. We looked at how to create multiple portal instances on a single installation of Liferay and we showed how to view currently installed plugins.
 
