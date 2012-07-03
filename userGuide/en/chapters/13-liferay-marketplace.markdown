@@ -22,7 +22,9 @@ This chapter covers the following topics:
 - Installing Plugins from Repositories
 - Installing Plugins Manually
 - Plugin Troubleshooting and Configuration Issues
-- The Software Catalog
+<!--
+- The Software Catalog (is in the previous chapter)
+-->
 
 In a nutshell, the Liferay Marketplace is a repository for applications built on the Liferay Platform. You can find and download applications directly from the Marketplace on the web or use an existing Liferay installation to access and install applications onto the running Liferay web site. Once installed, you can manage the applications through Liferay's control panel. 
 
@@ -96,11 +98,11 @@ Clicking on *Add an App* allows you to upload a new app and make it available in
 
 ### Creating a Company [](id=lp-6-1-ugen09-creating-a-company-0)
 
-To create and register a company with Liferay Marketplace, click the *Create a Company* link in the left-hand navigation menu. Your first step is check to if your company already exists on Liferay Marketplace. Enter your company name into the search box and check if it's already been registered. If someone else from your company has already created a company account on Liferay Marketplace, you can click the *Request to Join this Company* button. This will send an email notification to your company's Marketplace admin (the one who created your company's Marketplace account). Your company's Marketplace admin will then be able to add you to the company. If the company name you'd like to use is available, click the *Register Your Company* button to move on to the next step. 
+To create and register a company with Liferay Marketplace, click the *Create a Company* link in the left-hand navigation menu. Your first step is to see if your company already exists on Liferay Marketplace. Enter your company name into the search box and check if it's already been registered. If someone else from your company has already created a company account on Liferay Marketplace, you can click the *Request to Join this Company* button. This will send an email notification to your company's Marketplace admin (the one who created your company's Marketplace account). Your company's Marketplace admin will then be able to add you to the company. If the company name you'd like to use is available, click the *Register Your Company* button to move on to the next step. 
 
 ![Figure 13.6: Creating a Company](../../images/marketplace-creating-new-company.png)
 
-Your second step is to fill out your company's information. The public information you must provide includes a company logo, the company name, a company description, a company email address and a homepage URL. The private information you must provide includes a company address, your company's country, region, city, postal code and phone number. Additonal private information required for validation includes a company email address and a legal tax document. Once your company's Marketplace registration has been approved, you be your company's Marketplace admin! This means you'll be responsible for handling Marketplace users' requests to join your company. Don't worry, you don't have to be stuck with this responsibility. Once you've added other users to your company, you can promote some of them to be company Marketplace admins too.
+Your second step is to fill out your company's information. The public information you must provide includes a company logo, the company name, a company description, a company email address and a homepage URL. The private information you must provide includes a company address, your company's country, region, city, postal code and phone number. Additonal private information required for validation includes a company email address and a legal tax document. Once your company's Marketplace registration has been approved, you will be your company's Marketplace admin! This means you'll be responsible for handling Marketplace users' requests to join your company. Don't worry, you don't have to be stuck with this responsibility. Once you've added other users to your company, you can promote some of them to be company Marketplace admins too.
 
 ## Finding Apps [](id=finding-apps)
 
@@ -109,7 +111,8 @@ There are several ways to search for and find apps you are interested in.
 1. Browsing Categories. Click on a category (for example, *Communication* or *Productivity*) to see a list of interesting apps in that category. Upon clicking a category, you are presented with a list of featured apps for that category, as well as a canonical listing of all apps. Also, on the right, are lists of the Most Viewed apps within that category.
 
 ![Figure 13.7: Browsing Categories](../../images/marketplace-browsing-categories.png)
- 
+
+<!-- In the staged version of this page, there's another number 1 before "Searching," not a number 2.  -->
 2. Searching. To search for an app, type in search criteria in the search box under the navigation menu on the left and click *Search*. Apps matching the specified search criteria are displayed.
 
 ![Figure 13.8: Marketplace Search Box](../../images/marketplace-search-box.png)
@@ -166,7 +169,7 @@ Click on either the *Store* or the *Purchased* link in the Marketplace category 
  
 **VERY IMPORTANT**: The local admin user you associate with your `liferay.com` account will be THE ONLY USER who will be able to access and install apps from the Marketplace. Be sure you are logged into your local Liferay installation using the account you wish to designate the Marketplace Administrator. Once this linkage is established, there is no way to undo this, short of re-installing Liferay.
  
-Once you've successfully linked the accounts, you will be presented with the same Marketplace screens as you would have if you were directly accessing the Marketplace. You will be able to browse, search and install directly from the Marketplace. Click on the *Store* link under the Marketplace heading in the control panel to browse the apps available from the `liferay.com` Marketplace. Browse to the app you wish to install, click the *Purchase* button, then the *Buy* button on the next screen. The app will be downloaded and deployed to your local Liferay installation.
+Once you've successfully linked the accounts, you will be presented with the same Marketplace screens as you would if you were directly accessing the Marketplace. You will be able to browse, search and install directly from the Marketplace. Click on the *Store* link under the Marketplace heading in the control panel to browse the apps available from the `liferay.com` Marketplace. Browse to the app you wish to install, click the *Purchase* button, then the *Buy* button on the next screen. The app will be downloaded and deployed to your local Liferay installation.
  
 All apps you've bought are listed on the *Purchased* page of the Marketplace control panel. Clicking on the *Purchased* link will show you a list of those apps which you have downloaded in the past, including apps you may have purchased/downloaded while using other Liferay installations.
 

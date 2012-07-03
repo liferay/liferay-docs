@@ -57,15 +57,15 @@ Once you've decided if you're going to use one or both of the two settings above
 
 ### Using audit events [](id=using-audit-events)
 
-Now that you're capturing audit events, it's easy to use them to view activities in your portal. Navigate to the control panel and you'll find a new entry in the *Portal* section labeled *Audit Reports* (see figure 17.x). 
+Now that you're capturing audit events, it's easy to use them to view activities in your portal. Navigate to the control panel and you'll find a new entry in the *Portal* section labeled *Audit Reports* (see figure 17.1). 
 
 ![Figure 17.1: Once the Audit Reports plugins are installed, an entry appears in the control panel.](../../images/control-panel-audit-reports.png)
 
-Clicking the entry shows you a list of the events Liferay has already captured (see figure 17.x), along with an interface for searching for events. You can browse the list if you want, but it's likely that you'll need to use the search to find what you're looking for. 
+Clicking the entry shows you a list of the events Liferay has already captured (see figure 17.2), along with an interface for searching for events. You can browse the list if you want, but it's likely that you'll need to use the search to find what you're looking for. 
 
 ![Figure 17.2: Liferay captures and stores events as soon as the audit plugins are installed.](../../images/audit-list-events.png)
 
-Figure 17.x shows that Stephen Professor logged in and did some things on the site. To see the detail of any of these events, all you need to do is click one to see more information. You'll then see something like figure 17.x. 
+Figure 17.2 shows that Stephen Professor logged in and did some things on the site. To see the detail of any of these events, all you need to do is click one to see more information. You'll then see something like figure 17.3. 
 
 ![Figure 17.3: Clicking an event in the list shows the details of that event. This event shows that it must've been Stephen Professor's first time logging into the site, because he's accepting the terms of use.](../../images/audit-detail.png)
 
@@ -105,11 +105,11 @@ Let's look at the options we have for search.
 
 **End Date:** Specify the high end of the date range you wish to search. 
 
-Using this form, if you wanted to check to see if someone in the portal unassigned a user from a particular role, you might search for a resource name of *user* and a resource action of *unassign*. The results of such a search might look something like figure 17.x. 
+Using this form, if you wanted to check to see if someone in the portal unassigned a user from a particular role, you might search for a resource name of *user* and a resource action of *unassign*. The results of such a search might look something like figure 17.4. 
 
 ![Figure 17.4: Searching audit events is easy with the search form provided by the audit portlet. You can quickly drill down to find the types of events you're looking for.](../../images/audit-unassign-search.png)
 
-Once you have the results of your search, you can click on any of the records returned in order to see the detail page for that record. Figure 17.x shows that in this particular case, the default administrative user removed Stephen Professor from the role of Power User. 
+Once you have the results of your search, you can click on any of the records returned in order to see the detail page for that record. Figure 17.5 shows that in this particular case, the default administrative user removed Stephen Professor from the role of Power User. 
 
 ![Figure 17.5: If you've delegated portal administration to multiple users, you can use the audit plugins to determine who made what change. And, of course, you'll never leave the default administrative user enabled in a production system, right?](../../images/audit-unassign-detail.png)
 

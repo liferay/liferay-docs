@@ -874,7 +874,7 @@ Here are the steps you'll need to follow to deploy Liferay Portal to your domain
 
 7. Click *OK*.
 
-![Figure 14.x Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
+![Figure 14.41: Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
 
 -	If you disabled the setup wizard, your site's home page opens in your browser at [http://localhost:8080](http://localhost:8080).
 
@@ -2042,7 +2042,7 @@ Now that you have your WebLogic installation is loaded up with JAR files for Lif
 
 If you want WebLogic to manage your data source, use the following procedure. If you want to use Liferay's built-in data source, you can skip this section.
 
-![Figure 14.41: WebLogic Data Sources](../../images/02-weblogic-data-sources.png)
+![Figure 14.42: WebLogic Data Sources](../../images/02-weblogic-data-sources.png)
 
 1. Browse to your WebLogic Console. Click the *Lock & Edit* button above the Domain Structure tree on the left side of the page.
 
@@ -2068,7 +2068,7 @@ Great work! Your data source can now be managed from within WebLogic. Next, let'
 
 If you want WebLogic to manage your mail sessions, use the following procedure. If you want to use Liferay's built-in mail sessions, you can skip this section.
 
-![Figure 14.42: WebLogic: Mail Sessions](../../images/02-weblogic-mail-sessions.png)
+![Figure 14.43: WebLogic: Mail Sessions](../../images/02-weblogic-mail-sessions.png)
 
 1. In the Domain Structure tree, select *Mail Sessions.* Then click the *Lock & Edit* button again to enable modifying these settings.
 
@@ -2136,7 +2136,7 @@ Before you deploy Liferay Portal, consider whether you want to use the setup wiz
 
 Now that you have enabled or disabled the setup wizard, let's move on to deployment of Liferay Portal.
 
-![Figure 14.43: WebLogic Deployments](../../images/02-weblogic-deployments.png)
+![Figure 14.44: WebLogic Deployments](../../images/02-weblogic-deployments.png)
 
 1. In the Domain Structure tree, select *Deployments.*  Then click the *Lock & Edit* button above the Domain Structure tree.
 
@@ -2204,7 +2204,7 @@ Start Oracle WebLogic if you want to configure your database and/or mail session
 
 If you want WebLogic to manage your data source, use the following procedure. If you want to use Liferay's built-in data source, you can skip this section.
 
-![Figure 14.44: WebLogic Data Sources](../../images/02-weblogic-10-3-data-sources.png)
+![Figure 14.45: WebLogic Data Sources](../../images/02-weblogic-10-3-data-sources.png)
 
 1. Select *Services &rarr; Data Sources.* Click *New &rarr; Generic Data Source*.
 
@@ -2212,7 +2212,7 @@ If you want WebLogic to manage your data source, use the following procedure. If
 
 3. Choose the type of database and click *Next*. From the screenshot, you can see we have chosen MySQL. The database driver class is selected automatically.
 
-![Figure 14.45: Creating a data source in WebLogic 10.3](../../images/02-creating-a-data-source-in-weblogic.png)
+![Figure 14.46: Creating a data source in WebLogic 10.3](../../images/02-creating-a-data-source-in-weblogic.png)
 
 4. Click *Next* three times. You should be on the *Connection Properties* screen. Enter the database name, the host name, the port, the database user name and the password. WebLogic uses this information to construct the appropriate JDBC URL to connect to your database. Click *Next*.
 
@@ -2230,7 +2230,7 @@ Next, let's configure a mail session in WebLogic.
 
 If you want WebLogic to manage your mail sessions, use the following procedure. If you want to use Liferay's built-in mail sessions, you can skip this section.
 
-![Figure 14.46: WebLogic Mail Sessions](../../images/02-weblogic-10-3-mail-sessions.png)
+![Figure 14.47: WebLogic Mail Sessions](../../images/02-weblogic-10-3-mail-sessions.png)
 
 1. Select *Mail Sessions* and create a new mail session which points to your mail server.
 
@@ -2303,7 +2303,7 @@ Now, let's deploy Liferay Portal.
 
 2. Select *Deployments* and click the  *Install* button. Upload `jsf-1.2.war` from WebLogic's common files directory and select *Install this deployment as a library.*
 
-![Figure 14.47: WebLogic Deployments](../../images/02-weblogic-10-3-deployments.png)
+![Figure 14.48: WebLogic Deployments](../../images/02-weblogic-10-3-deployments.png)
 
 3. After installing the JSF libraries, go back to deployments and select the Liferay `.war` file from the file system or click the *Upload Your File(s)* link to upload it and then click *Next*.
 
@@ -2343,31 +2343,31 @@ When the application server binaries have been installed, start the **Profile Ma
 
 2. Click the Advanced profile creation option and then click *Next*. Why Advanced? You can specify your own values for settings such as the location of the profile and names of the profile, node and host. You can assign your own ports. You can optionally choose whether to deploy the administrative console and sample application and also add web-server definitions if you wish. Web server definitions are used with IBM HTTP Server. For more information about these options, please see the WebSphere documentation. 
 
-![Figure 14.48: Choose the Advanced profile option to specify your own settings.](../../images/Websphere-8_html_5a8a0a4b.png)
+![Figure 14.49: Choose the Advanced profile option to specify your own settings.](../../images/Websphere-8_html_5a8a0a4b.png)
 
 3. Check the box *Deploy administrative console*. This gives you a web-based UI for working with your application server. Skip the default applications. You'd only install these on a development machine. Click *Next*. 
 
 4. Set profile name and location. Ensure you specify a performance tuning setting other than *Development*, since you're installing a server for production use. Click *Next*. 
 
-![Figure 14.49: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](../../images/Websphere-8_html_m3feb4e9f.png)
+![Figure 14.50: Use a performance tuning setting other than Development. We've selected Standard here. Please see the WebSphere documentation for further information about performance tuning settings.](../../images/Websphere-8_html_m3feb4e9f.png)
 
 5. Choose node and host names for your server. These will be specific to your environment. Click *Next*. 
 
-![Figure 14.50: Choose node and host names appropriate to your environment.](../../images/Websphere-8_html_1327271c.png)
+![Figure 14.51: Choose node and host names appropriate to your environment.](../../images/Websphere-8_html_1327271c.png)
 
 6. Administrative security in WebSphere is a way to restrict who has access to the administrative tools. For simplicity, we've disabled it but you may want to have it enabled in your environment. Please see WebSphere's documentation for further information. Click *Next*. 
 
-![Figure 14.51: We've disabled administrative security but you may want to enable it.](../../images/Websphere-8_html_2eb820b.png)
+![Figure 14.52: We've disabled administrative security but you may want to enable it.](../../images/Websphere-8_html_2eb820b.png)
 
 7. Each profile needs a security certificate, which comes next in the wizard. If you don't have certificates already, choose the option to generate a personal certificate and a signing certficate and click *Next*. 
 
 8. Once the certificates are generated, set a password for your keystore. Click *Next*. 
 
-![Figure 14.52: Set a password for your keystore.](../../images/Websphere-8_html_m6b754c08.png)
+![Figure 14.53: Set a password for your keystore.](../../images/Websphere-8_html_m6b754c08.png)
 
 9. Next, you can customize the ports this server profile uses. Be sure to choose ports that are open on your machine. When choosing ports, installation detects existing WebSphere installations and if it finds activity, it increments ports by one. 
 
-![Figure 14.53: WebSphere gives you a nice user interface for customizing the ports your server uses.](../../images/Websphere-8_html_m2eef7200.png)
+![Figure 14.54: WebSphere gives you a nice user interface for customizing the ports your server uses.](../../images/Websphere-8_html_m2eef7200.png)
 
 10. If you want WebSphere to start automatically when the machine is booted, you configure it next. This differs by operating system. When you're finished configuring this the way you want, click *Next*. 
 
@@ -2387,7 +2387,7 @@ Once you've copied the .jars here, start the server profile you're planning to u
 
 If you want WebSphere to manage the database connections, follow the instructions below. Note this is not necessary if you're planning on using Liferay's standard database configuration; in that case, skip this section. You'll set your database information in Liferay's setup wizard after the install. 
 
-![Figure 14.54: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
+![Figure 14.55: WebSphere JDBC providers](../../images/02-websphere-jdbc-providers.png) 
 
 1. Start WebSphere.
 
@@ -2425,7 +2425,7 @@ If you want WebSphere to manage the database connections, follow the instruction
 
 17. Type *user* into the search terms and click *Go*.
 
-![Figure 14.55: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
+![Figure 14.56: Modifying data source properties in WebSphere](../../images/02-modifying-data-source-properties-in-websphere.png) 
 
 18. Select the user property and give it the value of the user name to your database. Click *OK* and save to master configuration.
 
@@ -2477,7 +2477,7 @@ Great! Now you're ready to deploy Liferay.
 
 2. Select the Liferay application and click *Start*. 
 
-![Figure 14.56: Starting Liferay on WebSphere.](../../images/Websphere-8_html_m7420ff51.png)
+![Figure 14.57: Starting Liferay on WebSphere.](../../images/Websphere-8_html_m7420ff51.png)
 
 3. In the setup wizard, select and configure your database type. Click *Finish* when you're done. 
 
