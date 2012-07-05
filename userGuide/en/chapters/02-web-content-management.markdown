@@ -351,7 +351,7 @@ We'll be using Liferay's WCM to publish simple pieces of content, develop templa
 
 ## Authoring (basic) content [](id=building-a-site-with-liferay-s-w-3)
 
-You've just been assigned the task to build a web site for a an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
+You've been assigned the task to build a web site for a an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
 
 We'll walk through the creation of Nose-ster's web site, starting by creating and publishing some simple content using Liferay's built-in WYSIWYG editor. We'll then take advantage of Liferay's robust structure editor. We'll use templates to display the content and then explore some of the advanced publishing features such as the built-in workflow and Asset Publisher.
 
@@ -480,7 +480,7 @@ Taking ownership of, reviewing and approving content is very easy:
 
 In a real world situation, you obviously wouldn't want the person who created the content to be the one who approves it. Instead, you would have one or more roles designed for users who will be creating content and you would have specific users assigned to one or more roles for approving content. Our example was of a very straightforward workflow, as it has only a single approver. Kaleo workflow allows you to design workflows that go through as many steps as you need to conform to your business processes. We look at Kaleo workflow in more detail in chapter 6.
 
-Next up is Site memberships, where you'll learn how to administer a Liferay portal and define users and permissions. 
+Next up is Site memberships, where you'll learn how to administer sites and define users and permissions. 
 
 ## Site memberships [](id=lp-6-1-ugen02-site-memberships-0)
 
