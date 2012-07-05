@@ -564,3 +564,11 @@ To add actions to a selected rule group, use the *Actions* &rarr; *Manage Action
 Next, let's discuss Liferay's asset publisher, which you can use to publish many different kinds of portal content.
 -->
 <!-- needs summary-->
+
+## Summary
+
+This chapter has been your guide to Liferay Web Content Management. We've seen how Liferay manages both simple content and advanced content with structures and templates. These powerful tools enable you to handle easily any type and amount of material you'd like to publish on the web. 
+
+Liferay WCM also includes a powerful staging environment, allowing you to stage content locally on the same server or remotely to another server. You can publish your site when you want it, on the schedule you choose. You can even create different variations of your site that can be worked on simultaneously. 
+
+Whether your site is small and static or large and dynamic, Liferay's WCM enables you to plan and manage it. With tools such as the WYSIWYG editor, structures and templates, you can quickly add and edit content. With the Web Content Display and Asset Publisher, you can rapidly select and configure what and how your content is displayed. And by using Liferay's integrated workflow, you can set up custom publishing rules to fit your organization. You will find that managing your site becomes far easier when using Liferay's Web Content Management system.
