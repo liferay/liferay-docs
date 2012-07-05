@@ -87,7 +87,7 @@ Lastly, select *Source* mode to edit the XML source directly. Here is an example
 
 ![Figure 10.3: *Source* mode in editor](../../images/10-frameworks-3.png)
 
-Developer Studio offers many options to help automate the creating interfaces and classes for your database persistence and a service layers.
+Developer Studio offers many options to help automate creating interfaces and classes for your database persistence and service layers.
 
 ***Using the terminal:*** Open a terminal window in your `portlets/my-greeting-portlet` directory and enter this command:
 
