@@ -193,13 +193,13 @@ The next option in the *Manage* menu is page customizations.
 
 #### Page Customizations [](id=lp-6-1-ugen02-page-customizations-0)
 
-Page Customizations are a new feature in Liferay 6.1. With Page Customizations, any user with the appropriate permissions can create personalized versions of any public page with customizations enabled. Customizations are based on the rows and columns of a page layout. Administrators can activate or deactivate customizations for any row or column on any page. When users customize a page, they have the option to use either their version or the default version of a page. Users can't see alternate versions of pages other than their own.
+Page Customizations are a new feature in Liferay 6.1. With Page Customizations, any user with the appropriate permissions can create personalized versions of any public page. Before users can create personalized versions of pages, customizations must first be enabled by an administrator. Customizations are based on the rows and columns of a page layout. Administrators can activate or deactivate customizations for any row or column on any page. When users customize a page, they have the option to use either their version or the default version of a page. Users can't see alternate versions of pages other than their own.
 
 ![Figure 2.7: Setting Customizable Columns](../../images/04-web-content-personal-customization.png)
 
 When an administrator activates Page Customizations for a page, any portlets that are in a *Customizable* row or column can be moved around the page or removed from the page. Users can add new portlets of their own choosing to these columns of the page. If at any time users determine they don't like their customizations, they can click *Reset My Customizations* to revert their pages back to the default.
 
-The administrator of the "customizable" page will have two different views: the *default page* view and the *customized page*. The changes he makes in the *default page* view will affect all users, whereas the changes he makes in the *customized page* view will only affect himself, as if he were any other regular user customizing this page. Changes made by the administrator to a not customizable section in the *default view* will be effective inmediately for any user. But if changes are made to a customizable section, the administrator's changes will *not* overwrite the users' changes. For this reason, users can view the *default page* and *reset his customizations* from the bar at the top.
+The administrator of the "customizable" page will have two different views: the *default page* view and the *customized page*. The changes he makes in the *default page* view will affect all users, whereas the changes he makes in the *customized page* view will only affect himself, as if he were any other regular user customizing this page. Changes made by the administrator to a non-customizable section in the *default view* will be effective inmediately for any user. But if changes are made to a customizable section, the administrator's changes will *not* overwrite the users' changes. For this reason, users can view the *default page* and *reset his customizations* from the bar at the top.
 
 To allow users to customize a page, administrators must grant users permission to *Customize* pages under the Site section. This can be achieved by assigning permission to a role, then assigning this role to the appropriate users. For example, if we want any logged user to be able to customize our customizable pages, we could assign the Customize permission to the role *User*. If we want any member of a site to be able to customize the customizable pages of its sites, we would assign the Customize permission to the role *Site Member*.
 
@@ -435,7 +435,7 @@ That's pretty much all there is to simple content creation. Whole sites have bee
 
 <!-- Section v of new outline -->
 
-## Using Liferay's  workflow with WCM [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
+## Using Liferay's workflow with WCM [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay WCM, workflow is designed to manage the creation, modification and publication of web content. You can set up a workflow so content can't be published without going through an approval process you design. In this way, content is published to the site only after it has been reviewed and approved.
 
