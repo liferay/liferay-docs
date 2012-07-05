@@ -1,10 +1,17 @@
 # Advanced Web Content Management  [](id=lp-6-1-ugen03-advanced-web-content-management--0)
 
 <!--   My first attempt at writing an intro. for Ch. 03   -->
+In the previous chapter we looked at some basic ways you can use Liferay to handle your web content. In this chapter we’ll delve deeper into slightly more complex web content management techniques. But don’t be alarmed, it’s not too intense. We'll cover the following topics:
 
-In the previous chapter we looked at some basic ways you can use Liferay to handle your web content. In the following chapter we’ll delve deeper into slightly more complex web content management techniques. But don’t be alarmed, it’s not too intense. If it was you wouldn’t be reading this right now.
+- Web content structures and templates
+- Leveraging Liferay's multi-site capabilities
+- Using page templates and site templates
+- Allowing users to customize site pages
+- Staging
+- Creating teams to allow for flexible management of site permissions
+- Mobile device rules
 
-We’ll walk through steps for utilizing structures and templates to demonstrate the ease in which Liferay allows you to control multiple sites. You’ll see how you can empower your users to customize their own pages as well as understanding how staging works. We’ll conclude with sections on creating teams and formatting sites for mobile devices. Once finished with this chapter, you’ll be the envy of your peers as they’ll think you really know what you’re doing. 
+We’ll examine how web content structures and templates provide additional power and flexibility to the web content management system we saw in chapter 2. We'll also learn how easy it is to set up and administer multiple sites in Liferay. You’ll also learn how you can empower your users to create personal customizations of site pages. We'll also examine how you can use staging to manage the publication of pages and content on your site. We’ll conclude with sections on creating teams and rules for presenting site pages to mobile devices. Once finished with this chapter, you’ll be the envy of your peers as they’ll think you really know what you’re doing. 
 
 ## Advanced content with structures and templates [](id=lp-6-1-ugen03-advanced-content-creation-0)
 
