@@ -375,7 +375,6 @@ The ability to completely delete a translation in one step has also been added. 
 When you create a new web content structure, each field you create has a *Localizable* checkbox displayed next to it. This enables you to control what can and can't be changed in the translation process. For example, if you don't want images or content titles to be changed when the content is translated, you can make sure those fields aren't listed as localizable. When you follow the steps above to localize content, only fields within the structure that had the *Localizable* box checked appear within the translation window.
 
 <!-- another attempt at a transition  -->
-
 ## Allowing users to customize site pages [](id=lp-6-1-ugen03-advanced-publishing-options-0)
 
 As we discussed above, as your site becomes larger and more complex, management of the content becomes more challenging. We've gone over Liferay management tools that help you create content quickly and in an orderly fashion. You created a simple announcement with Liferay's structure editor that allows you to quickly design a structure and prepare it for the template designers. Then you applied a template to the structure. You know how to display content using the Web Content Display portlet. Now, you're ready to take advantage of Liferay's advanced publishing options.
@@ -384,7 +383,7 @@ If a web site isn't properly managed, it can quickly become stale and that drive
 
 You also want your content to be found easily by your users. This is done through tags and categories. 
 
-Additionally, you may want to create content and send it through a review and approve process weeks before you want it displayed on the web site. Liferay gives you this flexibility with the *Schedule* and *Workflow* features.  
+Additionally, you may want to create content and send it through an approval and reviewal process weeks before you want it displayed on the web site. Liferay gives you this flexibility with the *Schedule* and *Workflow* features.  
 
 #### Scheduling Web Content [](id=lp-6-1-ugen03-scheduling-web-content-0)
 
@@ -534,7 +533,7 @@ Permission management for teams is handled at the individual portlet level, usin
 
 To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, then click *Save*. That's it! Now your team is ready to perform their functions. Next, let's look at how to configure Liferay for mobile devices.
   
-## Creating sites for mobile devices [](id=lp-6-1-ugen03-mobile-device-rules-0)
+## Displaying site pages to mobile devices [](id=lp-6-1-ugen03-mobile-device-rules-0)
 
 Mobile device rules allow you to configure sets of rules to alter the behavior of the portal based on the device being used to access Liferay. The proportion of mobile devices users browsing the web has been steadily increasing so it's important to be able to handle different kinds of devices appropriately. For instance, you can configure the look and feel of Liferay pages accessed by smartphone or tablet users differently than those accessed by PC users. 
 
@@ -567,8 +566,10 @@ Next, let's discuss Liferay's asset publisher, which you can use to publish many
 
 ## Summary
 
-This chapter has been your guide to Liferay Web Content Management. We've seen how Liferay manages both simple content and advanced content with structures and templates. These powerful tools enable you to handle easily any type and amount of material you'd like to publish on the web. 
+This chapter has been your guide to Liferay site management and advanced Web Content Management. We've seen how you can use Liferay to manage both simple content and advanced content with structures and templates. We've learned how you can use Liferay to create multiple sites with different membership types. We've also learned how to use page and site templates to simplify the site creation process.
 
 Liferay WCM also includes a powerful staging environment, allowing you to stage content locally on the same server or remotely to another server. You can publish your site when you want it, on the schedule you choose. You can even create different variations of your site that can be worked on simultaneously. 
 
-Whether your site is small and static or large and dynamic, Liferay's WCM enables you to plan and manage it. With tools such as the WYSIWYG editor, structures and templates, you can quickly add and edit content. With the Web Content Display and Asset Publisher, you can rapidly select and configure what and how your content is displayed. And by using Liferay's integrated workflow, you can set up custom publishing rules to fit your organization. You will find that managing your site becomes far easier when using Liferay's Web Content Management system.
+You saw how to allow users to create personal customizations of site pages. We discussed how site administrators can create teams as a flexible means of delegating site permissions. We also saw how to configure mobile device rules so that site pages are presented differently depending on the device making a page request.
+
+Whether your site is small and static or large and dynamic, Liferay's WCM enables you to plan and manage it. With tools such as the WYSIWYG editor, structures and templates, you can quickly add and edit content. With the Web Content Display and Asset Publisher, you can rapidly select and configure what content to display and how to display it. By using Liferay's integrated workflow, you can set up custom publishing rules to fit your organization. And by using Liferay's staging and scheduling mechanisms, you can manage various branches of pages and content and control when they are published to your live portal instance. You will find that managing your site becomes far easier when using Liferay's Web Content Management system.
