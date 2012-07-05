@@ -356,8 +356,7 @@ For page templates, the process very similar:
 The page template can now be imported normally to this new environment.
 
 <!-- another attempt at a transition -->
-
-Since we're on the subject of importing and exporting, we should talk about how Liferay handles translations.
+Next, let's examine the tools Liferay provides for handling translations.
 
 ##### Localization [](id=lp-6-1-ugen03-localization-0)
 
