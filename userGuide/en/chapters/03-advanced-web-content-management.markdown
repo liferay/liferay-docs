@@ -199,7 +199,7 @@ Now that you understand the role structures and templates play in creating web c
 
 ## Leveraging Liferay’s multi-site capabilities [](id=lp-6-1-ugen12-sites-0)
 
-As stated in chapter 1, a site is a set of pages that can be used to publish content or applications. Sites can be independent or they can be associated to one organization and act as the website of that organization.
+As stated in chapter 1, a site is a set of pages that can be used to publish content or applications. Sites can be independent or they can be associated to an organization and serve as the website for that organization.
 
 Liferay's sites can be used for a variety of purposes, from corporate websites to company intranets including small sites to collaborate among members of a team. To support all types of collaboration and social scenarios, Liferay's sites support three types of membership types:
 
@@ -225,10 +225,9 @@ Liferay always provides one default site, which is also known as the main site o
 
 ---
 
-Sites can be created through the control panel, like all administration operations in Liferay. To add a site, click the *Sites* link on the left side of the control panel in the Portal section and then click *Add* in the toolbar. If there is at least one site template available, a dropdown menu will be shown allowing you to select a *Blank Site*. Other site templates will appear in the menu as they become available. *Site templates* provide a preconfigured set of pages, applications and content that can be used as the basis of the site.
+Sites can be created through the control panel by a portal administrator. To add a site, click the *Sites* link on the left side of the control panel in the Portal section and then click *Add* in the toolbar. If there is at least one site template available, a dropdown menu will be shown allowing you to select a *Blank Site*. Other site templates will appear in the menu as they become available. *Site templates* provide a preconfigured set of pages, applications and content that can be used as the basis of the site.
 
 The following figure shows the form that needs to be filled when creating a *Blank Site*.
-
 
 ![Figure 3.6: Adding a Site](../../images/01-add-site-screen.png)
 
@@ -262,7 +261,7 @@ Once you've created a site, it appears in the Sites page of the control panel. O
 
 When creating a site from a site template, the initial form provides a new option that lets you decide if you want to copy the pages from the template as public pages or as private pages. By default, the site is linked to the site template and changes to the site template propagate to any site based on it. A checkbox appears that allows users to unlink the site template if the user has permission to do so.
 
-<!-- | TODO: Add screenshot of form used to create a site from a site template | -->
+![Figure 3.x: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
 Site templates are very powerful for managing many similiar sites. Let's look further at how they work. 
 
@@ -293,7 +292,6 @@ The following figure displays the form shown when editing the *Community Site* t
 To view and manage the pages of a site template, click the *Open site template* link. This opens the template in a new browser window (or tab) and it can be navigated or managed like a regular site..
 
 <!-- | TODO: I would change the example below to not use organizations to simplify things | -->
-
 For example, let's suppose we need to create sites for three suborganizations of the Nosester organization: Engineering, Marketing and Legal. These are to be private sites designed for each organization's internal use. We could design each site separately but we can save ourselves some work if we create a site template to use instead.
 
 To create a site template, navigate to the control panel and click *Site Templates*. Then click *Add* and enter a name for your template: we'll use *Organization Site Template* for our example. Leave the *Active* and *Allow Site Administrators to Modify the Pages Associated with This Site Template* boxes checked. The *Active* box must be checked for your template to be usable. If your template is still a work in progress, you can uncheck it so no one uses it until it's ready. Checking *Allow Site Administrators to Modify the Pages Associated with This Site Template* allows Site Administrators to modify or remove the pages and portlets the template introduces to their sites--if you want the templates to be completely static, you should uncheck this.
@@ -329,11 +327,9 @@ To use your template to create a new page, just navigate to a page over which yo
 Note that by default, when a site administrator creates pages based on a page template, any future changes to the template are automatically propagated to those pages. Site administrators can disable this behavior by unchecking the *Automatically apply changes done to the page template* box.
 
 <!-- | COMMENT FOR AUTHOR: IMHO, the following paragraph does not fit here because it is of interest in the context of managing a site, not in the context of managing a site template | -->
-
 If staging has been enabled, changes to the page template are automatically propagated to the staged page. These changes still need to be approved before the page is published to live. For this reason, the automatic propagation of page template changes to the staged page cannot be turned off and the *Automatically apply changes done to the page template* checkbox does not appear.
 
 <!--  another attempt at a transition     -->
-
 We'll discuss staging in more detail later in this chapter. For now let's look at importing and exporting templates.
 
 ![EE Only Feature]
