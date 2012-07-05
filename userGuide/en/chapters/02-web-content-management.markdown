@@ -219,11 +219,15 @@ You'll find options to specify details and metadata about your site, set up frie
 
 **Site URL:** Set the virtual host for your site and/or a friendly URL here. The *Friendly URL* option lets you manage the path to your site in the portal's URL. This needs to be a unique name, of course. Having a human-readable friendly URL assists indexing bots and is critical to good search engine optimization. 
 
+For example, suppose you were creating a portal for a bank called the Best Bank. Friendly URLs are used for both public and private pages. For public pages, the friendly URL is appended to http://localhost:8080/web. For private pages, the friendly URL is appended to http://localhost:8080/group. So if we changed the friendly URL of our portal's default site to /best-bank, the URL of our default site's public home page would change to http://localhost:8080/web/best-bank/home. If our portal's default site had private pages, the URL of the default private home page would change to http://localhost:8080/group/best-bank/home. 
+
+Note that if you're adding a friendly URL for your portal's home page, you should update your portal's Home URL field so that page requests to localhost:8080 redirect properly. To do this, navigate to the Portal Settings page of the control panel and find the Home URL field in the Navigation section. For our bank example, we would enter */web/best-bank/home* into the Home URL field.
+
 *Virtual Hosts* make web navigation much easier for your users by connecting a domain name to a site. This tab allows you to define a domain name (i.e., www.mycompany.com) for your site. This can be a full domain or a subdomain. This enables you to host a number of web sites as separate sites on one Liferay server.
 
 For instance, if we set this up for Nose-ster's Development Network, users in that site could use developers.nosester.com to get to their site, provided Nose-ster's network administrators created the domain name and pointed it to the Liferay server.
 
-To set this up, the DNS name *developers.nosester.com* should point to your portal's IP address first. Then enter http://developers.noseter.com in the Virtual Host tab for the Developers site. This helps users quickly access their site without having to recall an extended URL.
+To set this up, the DNS name *developers.nosester.com* should point to your portal's IP address first. Then enter *http://developers.noseter.com* in the Virtual Host tab for the Developers site. This helps users quickly access their site without having to recall an extended URL.
 
 **Site Template:** If you've created the site from a site template, this section displays information about the link between the site template and the site. Specifically, you can see which site template was used and whether or not it allows modifications to the pages inherited from it by site administrators. If you're not using site templates for this site, you can safely ignore this section.
 
