@@ -159,7 +159,7 @@ When you select a single page, some different options appear. Let's look at what
 
 ---
 
-![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible that a single page could be indexed multiple times. In Liferay 6.1, all URLs that direct to the same page will only create one entry in the index. Previously, the simple URL *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions of the URL which provided additional information about the referring page had different entries in the index. As of Liferay 6.1, each asset (web content article, blog entry, etc.) has a unique URL. From the search engine's point of view, this will make your pages rank higher since any references to any variations of a specific URL will all be considered references to the same page.] 
+![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible that a single page could be indexed multiple times. In Liferay 6.1, all URLs that direct to the same page will only create one entry in the index. Previously, the simple URL *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions of the URL which provided additional information about the referring page had different entries in the index. As of Liferay 6.1, each asset (web content article, blog entry, etc.) has a unique URL. From the search engine's point of view, this will make your pages rank higher since any references to variations of a specific URL will all be considered references to the same page.] 
 
 ---
 
