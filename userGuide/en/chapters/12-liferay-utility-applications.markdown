@@ -12,7 +12,7 @@ old ch. 15
 
 <!-- Section i Bookmarks (head ref)?   This needs text  -->
 
-## Bookmarks 
+## Bookmarks  [](id=lp-6-1-ugen12-bookmarks--0)
 
 ### Creating Your Own Plugin Repository [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
 
@@ -214,11 +214,11 @@ Enter the URL to the repository to which you wish to connect in one of the field
 
 <!--   Section iii Shopping (head ref)  -->
 
-## Shopping
+## Shopping [](id=lp-6-1-ugen12-shopping-0)
 
 <!--   Section iv Weather (head ref)   -->
 
-## Weather
+## Weather [](id=lp-6-1-ugen12-weather-0)
 
 <!-- needs transition -->
 

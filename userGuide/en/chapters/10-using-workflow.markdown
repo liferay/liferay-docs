@@ -423,13 +423,13 @@ There's more. EE customers get extra features that enable them to create workflo
 
 <!--  This section needs text.   -->
 
-## Using workflow with other applications (head ref)
+## Using workflow with other applications (head ref) [](id=lp-6-1-ugen10-using-workflow-with-other-applications-head-ref-0)
 	
-### WCM
+### WCM [](id=lp-6-1-ugen10-wcm-0)
 
-### Documents & media
+### Documents & media [](id=lp-6-1-ugen10-documents--media-0)
 
-### Collaboration
+### Collaboration [](id=lp-6-1-ugen10-collaboration-0)
 
 
 <!--  Summary here?   -->
