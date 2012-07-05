@@ -17,7 +17,7 @@ We’ll examine how web content structures and templates provide additional powe
 
 If you've ever launched a web site, you know that as it grows, you can experience growing pains. This is the case especially if you've given lots of people access to the site to make whatever changes they need to make. Without preset limitations, users can display content in any order and in any manner they desire (think huge, flashing letters in a font nobody can read). Content can get stale, especially if those responsible for it don't maintain it like they should. And sometimes, content is published that should never have seen the light of day. 
 
-Thankfully, Liferay WCM helps you handle all of those situations. You can use *Structures* to define which fields are available to users when they create content. These are coupled with *Templates* that define how to display that content. Content won't get stale, because you can take advantage of the *Scheduling* feature to determine when content is displayed and when it's removed. Additionally, you can configure Liferay's built-in *Workflow* system to set up a review and publishing process so only what you want winds up on the live site. Liferay Portal gives you the management tools you need to run everything from a simple, one-page web site to an enormous, content-rich site.
+Thankfully, Liferay WCM helps you handle all of those situations. You can use *Structures* to define which fields are available to users when they create content. These can be coupled with *Templates* that define how to display that content. Content won't get stale, because you can take advantage of the *Scheduling* feature to determine when content is displayed and when it's removed. Additionally, you can configure Liferay's built-in *Workflow* system to set up a review and publishing process so only what you want winds up on the live site. Liferay Portal gives you the management tools you need to run everything from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures. 
 
@@ -25,7 +25,7 @@ All of this starts with structures.
 
 Structures are the foundation for web content. They determine which fields are available to users as they create new items for display. Structures not only improve manageability for the administrator, they also make it much easier for users to quickly add content.
 
-For example, say you're managing an online news magazine. All your articles need to contain the same types of information: a title, a subtitle, an author and one or more pages of text and images that comprise the body of the article. If Liferay only supported simple content as has been described above, you'd have no way to make sure your users entered a title, subtitle and author. You might also get articles that don't match the look and feel of your site. If titles are supposed to be navy blue but they come in from your writers manually set to light blue, you need to spend time reformatting them before they are published.
+For example, say you're managing an online news magazine. All your articles need to contain the same types of information: a title, a subtitle, an author and one or more pages of text and images that comprise the body of the article. If Liferay only supported simple content as has been described above, you'd have no way to make sure your users entered a title, subtitle, and author. You might also get articles that don't match the look and feel of your site. If titles are supposed to be navy blue but they come in from your writers manually set to light blue, you need to spend time reformatting them before they are published.
 
 Structures give you the ability to provide a format for your content so your users know what needs to be entered to have a complete article. Using structures, you can provide a form for your users which spells out exactly what is required and can be formatted automatically using a template.
 
@@ -184,7 +184,6 @@ When this template is rendered, it looks something like this:
 ![Figure 3.5: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
 
 <!-- another attempt at a transition   -->
-
 Now that you've created a handsome template, it's time to decide who the lucky people are that get to use it.
 
 #### Assigning template permissions [](id=lp-6-1-ugen03-assigning-template-permissions-0)
@@ -196,8 +195,7 @@ You'll also want to determine how users can interact with the template. You can 
 From the *More* link, you can grant or deny permissions based on Roles. For instance, you may create a role with the ability to update the template and create a second role that can both update and delete. Liferay Portal makes it possible to assign permissions based on the roles and responsibilities within your organization.
 
 <!--   another attempt at a transition  -->
-
-Now that you understand the role structures and templates play in building your site, let's look closer at using them to manage multiple sites.
+Now that you understand the role structures and templates play in creating web content, let's look at how you can use Liferay to manage multiple sites.
 
 ## Leveraging Liferay’s multi-site capabilities [](id=lp-6-1-ugen12-sites-0)
 
