@@ -10,6 +10,12 @@ old ch. 18
 
 You know how all these retailers advertise themselves as a "one stop shop" for anything you want? The idea is they have so much stuff that chances are whatever you're looking for is there. Liferay's control panel is something like this. If you want to create users, sites, organizations, configure permissions and plugins and pretty much anything else, you'll do it with the control panel. The nice thing about the control panel is it makes all this very easy to do. This chapter takes all the concepts you learned about Liferay in chapter 1 (sites, organizations and more) and makes them concrete. Here, you'll learn how to create and manage every aspect of Liferay's configuration. 
 
+<!-- 
+
+This intro sounds like it would work for the next chapter, "Using the Control panel." Check chapter reference.
+
+-->
+
 This chapter covers the following activities:
 
 -   Using the control panel to manage users, organizations, sites, user groups, roles and teams
@@ -58,6 +64,12 @@ Let's add a user account for yourself and configure this account so it has the s
 
 After you submit the form, the page reloads with a message saying the save was successful. An expanded form appears that allows you to fill out a lot more information about the user. You don't have to fill anything else out right now. Just note that when the user ID was created, a password was automatically generated and, if Liferay was correctly installed (see chapter 11), an email message with the password in it was sent to the user. This, of course, requires that Liferay can properly communicate with your SMTP mail server.
 
+<!--
+
+Check chapter reference.
+
+-->
+
 ![Figure 15.2: Liferay's User Account Editor](../../images/01-user-account-editor.png)
 
 If you haven't yet set up your mail server, you'll need to use this page to change the default password for the user ID to something you can remember. You can do this by clicking on the *Password* link in the box on the right, entering the new password in the two fields and clicking *Save*. Next, you should give your user account the same administrative rights as the default administrator's account. This allows you to perform administrative tasks with your own ID instead of having to use the default ID. It also helps to make your portal more secure by deleting or disabling the default ID.
@@ -72,7 +84,7 @@ We'll next look at some aspects of user management.
 
 If you click the *Users* link on the left menu of the control panel, there are now two users in the list of users. If you want to change something about a particular user, you can click the *Actions* button next to that user.
 
-**Edit User:** takes you back to the Edit User page, where you can modify anything about the user.
+**Edit User:** takes you back to the Edit User page where you can modify anything about the user.
 
 **Permissions:** allows you to define which roles have permissions to edit the user.
 
@@ -102,7 +114,7 @@ Of course, this is only one way to design it. If you have more complex requireme
 
 To add an organization, click the *Users and Organizations* link on the left side of the control panel. Then click the *Add* button and choose *Regular Organization*. 
 
-Does your organization need to have its own web site? Most organizations don't, but some do, and Liferay provides this ability by attaching a site to an organization. To attach a site when you create an organization, click the *Organization Site* tab at the right and check the *Create Site* box. If you don't know right now if your organization needs a web site, that's fine: you can always add one later if the need arises. 
+Does your organization need to have its own web site? Most organizations don't, but some do, and Liferay provides this ability by attaching a site to an organization. To attach a site when you create an organization, click the *Organization Site* tab at the right and check the *Create Site* box. If you don't know right now if your organization needs a web site, that's fine. You can always add one later if the need arises. 
 
 ![Figure 15.3: Adding an organization](../../images/01-add-organization-screen.png)
 
@@ -138,11 +150,15 @@ Click the *Actions* button next to the new organization you created. This shows 
 
 **Add Location:** lets you add a child Location, which is a special type of organization that cannot have any children added to it.
 
-**Delete:** deletes this organization from the portal. You must ensure the organization has no users in it first.
+**Delete:** removes this organization from the portal. Make sure the organization has no users in it first.
 
 If you click the *View* button at the top of the Users and Organizations page and select *View Hierarchy* you can view both a list of users who are members of this organization and a list of all the suborganizations of this organization.
 
+<!--  No "sites" here
+
 We briefly mentioned sites during this discussion. Sites are another construct within the portal and have different properties than organizations. Let's see how you can use them. 
+
+-->
 
 <!-- needs transition -->
 
@@ -176,7 +192,7 @@ As with the other resources in the portal, you can click the *Actions* button ne
 
 **Assign Members:** lets you search for and select users in the portal to be assigned to this user group as well as view the users currently belonging to the user group .
 
-**Delete:** deletes the user group.
+**Delete:** removes the user group.
 
 If your user group has a site, two options named **Go to the Site's Public Pages** and **Go to the Site's Private Pages** also appear as links in your user group's Actions menu. Clicking one of these links opens the user group's site in a new browser window. Any changes you make to the site are saved automatically. You can safely close the browser window when you're done.
 
@@ -194,7 +210,7 @@ Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*.
 
 ![Figure 15.6: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
 
-From that list, one or more users can be selected to be assigned as members of the user group.
+From that list, one or more users can be assigned as members of the user group.
 
 For example, by default, newly created users are given *Welcome* pages on the public pages portion of their personal sites. This Welcome page contains the Language, Search and Blogs portlets. You can see the effect of the *Bloggers* site template on the public pages of Joe Bloggs's personal site in the figure above. When Joe Bloggs was added to the *Bloggers* group, he received a *Blogs* page with the *Blogs* and *Recent Bloggers* portlets.
 
@@ -210,11 +226,11 @@ By using User Group Sites, portal administrators can add pages to the personal s
 
 The pages a user's personal site *inherits* from a User Group still belong to the User Group and thus cannot be changed in any way by the user. What the user group administrators can do is define certain areas of the pages as customizable to allow the users to choose which applications and what configuration should be shown in those areas. If a user has permission to add custom pages to his/her personal site, besides those *inherited* from a user group, the custom pages are always shown last.
 
-Since the *inheritance* of pages is done dynamically, this new system introduced in Liferay 6.1 can scale to hundreds of thousands of users or even millions of them without an exponential impact in performance. Previous versions of Liferay used a different technique that required the user group pages were copied to each user's personal site. For portals upgrading from previous versions of Liferay, you can keep the old behavior but it has been left disabled by default. You can enable it by adding the following line to your portal-ext.properties file:
+Since the *inheritance* of pages is done dynamically, this new system introduced in Liferay 6.1 can scale to hundreds of thousands of users or even millions of them without an exponential impact in performance. Previous versions of Liferay used a different technique that required user group pages be copied to each user's personal site. For portals upgrading from previous versions of Liferay, you can keep the old behavior but it has been left disabled by default. You can enable it by adding the following line to your portal-ext.properties file:
 
 	user.groups.copy.layouts.to.user.personal.site=true
 
-When this property is set to true, once the template pages have been copied to a user's personal site, the copies may be modified by the user. Changes done to the originals in the User Group will only affect new users added to the user group. Users with administrative privileges over their personal sites can modify the pages and their content provided  the *Allow Site Administrators to Modify the Pages Associated with This Site Template* box has been checked for the template. When a user is removed from a user group, the associated pages are removed from the user's personal site. Moreover, if a user is removed from a group and is subsequently added back, the group's template pages are copied to the user's site a second time. Note that if a user group's site is based on a site template and an administrator modifies the user group's site template after users have already been added to the group, those changes only take effect if the *Enable propagation of changes from the site template* box for the user group was checked.
+When this property is set to true, once the template pages have been copied to a user's personal site, the copies may be modified by the user. Changes done to the originals in the User Group will only affect new users added to the user group. Users with administrative privileges over their personal sites can modify the pages and their content if the *Allow Site Administrators to Modify the Pages Associated with This Site Template* box has been checked for the template. When a user is removed from a user group, the associated pages are removed from the user's personal site. Moreover, if a user is removed from a group and is subsequently added back, the group's template pages are copied to the user's site a second time. Note that if a user group's site is based on a site template and an administrator modifies the user group's site template after users have already been added to the group, those changes only take effect if the *Enable propagation of changes from the site template* box for the user group was checked.
 
 ---
 
@@ -296,7 +312,7 @@ Prior to Liferay 6.0, the default configurations of many Liferay portlets allowe
 
 #### Managing Portal Settings [](id=managing-portal-settings)
 
-After you have created users, user groups, organizations, roles, sites and teams, your portal will be ready to host content and applications. You can configure Liferay's portal settings to fit your environment and your particular portal project. Many configurations can be performed through Liferay's portlet-driven user interface. This section covers how to configure portal settings such as password policies, authentication settings, mail host names, email notifications, display settings and monitoring.
+After you have created users, user groups, organizations, roles, sites and teams your portal will be ready to host content and applications. You can configure Liferay's portal settings to fit your environment and your particular portal project. Many configurations can be performed through Liferay's portlet-driven user interface. This section covers how to configure portal settings such as password policies, authentication settings, mail host names, email notifications, display settings and monitoring.
 
 Now that you have been navigating in the control panel, you should be pretty familiar with how it works. All the options appear in the left navigation, their interfaces appear in the middle and any sub-options appear on the right. We have focused so far on the maintenance of users and portal security. The remaining links in the *Portal* category focus on various portal settings which cover how the portal operates and integrates with other systems you may have. Let's begin our discussion of Liferay's portal settings by examining how to configure password policies.
 
@@ -306,7 +322,7 @@ Now that you have been navigating in the control panel, you should be pretty fam
 
 Password policies can enhance the security of your portal. You can set requirements on password strength, frequency of password expiration and more. Additionally, you can apply different password policies to different sets of portal users.
 
-If you are viewing a page other than the control panel, select *Control Panel* from the *Go to* menu of the Dockbar. Next, click on the *Password Policies* link on the left side of the screen under the *Portal* heading. You will see  there is already a default password policy in the system. You can edit this in the same manner as you edit other resources in the portal: click *Actions* and then click *Edit*.
+If you are viewing a page other than the control panel, select *Control Panel* from the *Go to* menu of the Dockbar. Next, click on the *Password Policies* link on the left side of the screen under the *Portal* heading. You will see there is already a default password policy in the system. You can edit this in the same manner as you edit other resources in the portal: click *Actions* and then click *Edit*.
 
 The Password Policy settings form contains the following fields. Enabling specific settings via the check boxes prompts setting-specfic options to appear.
 
@@ -407,6 +423,12 @@ We'll examine how to set up LDAP authentication next.
 ### LDAP [](id=lp-6-1-ugen12-authentication-ldap-0)
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an LDAP directory. There are two places for you to configure the LDAP settings: here in the control panel or in the `portal-ext.properties` file (which is covered in chapter 14). We recommend you use the control panel since your configuration settings will be stored in the database. Note that if you use both, the settings in the database will override the settings in `portal-ext.properties`. Configuring the LDAP settings from the control panel is easier and does not require a restart of Liferay. The only compelling reason to use the `portal-ext.properties` file is if you have many Liferay nodes which will be configured to run against the same LDAP directory. In that case, for your initial deployment, it may be easier to copy the `portal-ext.properties` file to all of the nodes so the first time they start up, the settings are correct. Regardless of which method you use, the available settings are the same.
+
+<!--
+
+Check chapter reference.
+
+-->
 
 You configure the global values from the LDAP tab of the Authentication page.
 
