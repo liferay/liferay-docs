@@ -10,7 +10,7 @@ old ch. 23
 
 -->
 
-Liferay is configured by a combination of settings that are stored in the database (configured by the use of the control panel) and settings which are stored in properties (text) files. These files can be modified to change Liferay's behavior in certain ways. In this chapter we discuss the main configuration file, which is stored in the Liferay Home directory, and is called `portal-ext.properties`, if you've got a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This chapter has a wide-ranging set of topics since you can make many different kinds of customizations. We list a few of these below.
+Liferay is configured by a combination of settings that are stored in the database (configured by the use of the control panel) and settings which are stored in properties (text) files. These files can be modified to change Liferay's behavior in certain ways. In this chapter we discuss the main configuration file, which is stored in the Liferay Home directory, and is called `portal-ext.properties` if you've got a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This chapter has a wide-ranging set of topics since you can make many different kinds of customizations. We list a few of these below.
 
 -   Changing Portal Defaults
 
@@ -28,9 +28,9 @@ Remember that your customizations in the `portal-ext.properties` or `portal-setu
 
 ## Using an overridden configuration file [](id=using-an-overridden-configuration-file)
 
-Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all of the defaults is stored inside of a `.jar` file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put just the settings you want to customize in your own configuration file, and then the configuration file for your portal is uncluttered and contains only the settings you need. This makes it far easier to determine whether a particular setting has been customized and it makes the settings more portable across different installations of Liferay.
+Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all of the defaults is stored inside of a `.jar` file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put just the settings you want to customize in your own configuration file, keeping the portal configuration file uncluttered and containing only the settings you need. This makes it far easier to determine whether a particular setting has been customized and it makes the settings more portable across different installations of Liferay.
 
-The default configuration file is called `portal.properties` and it resides inside the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's `WEB-INF/lib` folder. The file that is used to override the configuration is `portal-ext.properties` if you've created a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This file is created in your Liferay Home folder (please see Chapter 11: Installing Liferay for the location of this folder for your application server). What follows are brief descriptions of the options that you can customize, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
+The default configuration file is called `portal.properties` and it resides inside the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's `WEB-INF/lib` folder. The file used to override the configuration is `portal-ext.properties` if you've created a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This file is created in your Liferay Home folder (please see Chapter 11: Installing Liferay for the location of this folder for your application server). What follows are brief descriptions of the options that you can customize, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
 
 <!-- verify chapter reference above   -->
 
@@ -38,7 +38,7 @@ The default configuration file is called `portal.properties` and it resides insi
 
 This property specifies where to get the overridden properties. By default, it is `portal-ext.properties`. Updates should not be made in `portal.properties` or in `portal-bundles.properties`, but in `portal-ext.properties`. Furthermore, each portal instance can have its own overridden property file following the convention `portal-companyid.properties`. For example, one read order might be: `portal.properties`, then `portal-ext.properties` and then `portal-test.properties`.
 
-The default read order is: `portal.properties`, `portal-bundle.properties`, `portal-ext.properties` and then `portal-setup-wizard.properties`.
+The default read order is: `portal.properties`, then `portal-bundle.properties`, `portal-ext.properties` and then `portal-setup-wizard.properties`.
 
 *Examples:*
 
@@ -323,7 +323,7 @@ Input a list of Liferay plugin repositories separated by `\n` characters.
 	plugin.repositories.trusted=http://plugins.liferay.com/official
 	plugin.repositories.untrusted=http://plugins.liferay.com/community
 
-Set this property to `false` to avoid receiving on screen notifications when there is a new version of an installed plugin.
+Set this property to `false` to avoid receiving on-screen notifications when there is a new version of an installed plugin.
 
 	plugin.notifications.enabled=true
 
@@ -396,6 +396,8 @@ Set the theme's shortcut icon.
 
 Set this property to set the default virtual path for all hot deployed themes. See [http://docs.liferay.com/portal/6.1/definitions/liferay-look-and-feel_6_1_0.dtd.html](liferay-look-and-feel_6_1_0.dtd) and the `virtual-path` element for more information.
 
+<!-- I think this link above is broken. It simply redirects to the "Liferay Portal 6.1 - User Guide" table of contents. -->
+
     theme.virtual.path=
 
 Set this with an absolute path to specify where imported theme files from a LAR will be stored. This path will override the `file-storage` path specified in `liferay-theme-loader.xml`.
@@ -436,7 +438,7 @@ Input a list of comma delimited model hints configurations.
 
 ## Service Builder [](id=service-build-3)
 
-Input a list of common delimited method prefixes designated for read-only transactions. Service Builder will use these prefixes to annotate methods that are to run in read-only transactions.
+Input a list of comma delimited method prefixes designated for read-only transactions. Service Builder will use these prefixes to annotate methods that are to run in read-only transactions.
 
 	service.builder.service.read.only.prefixes=\
 		fetch,\    
@@ -570,6 +572,8 @@ If you're using Hypersonic, you SHOULD set the batch size to `0` as a workaround
 
 If you're using Oracle 9i, you MUST set the batch size to `0` as a workaround for a hanging bug in the Oracle driver. See [http://issues.liferay.com/browse/LEP-1234](LEP-1234) for more information.
 
+<!--  These two links above appear to be broken.  -->
+
 *Examples:*
 
 	hibernate.jdbc.batch_size=20
@@ -583,9 +587,13 @@ Set other miscellaneous Hibernate properties.
 
 Use the classic query factory until WebLogic and Hibernate 3 can get along. See [http://www.hibernate.org/250.html#A23](http://www.hibernate.org/250.html#A23) for more information.
 
+<!-- Another possible broken link? This redirects to Hibernate 3 migration guides.  --> 
+
     hibernate.query.factory_class=org.hibernate.hql.classic.ClassicQueryTranslatorFactory
 
 Set this property to `true` to enable Hibernate cache monitoring. See [http://issues.liferay.com/browse/LPS-2056](LPS-2056) for more information.
+
+<!--  This link above appear to be broken.  -->
 
     hibernate.generate_statistics=false
     
@@ -789,6 +797,8 @@ The following properties will be read by both DBCP and Tomcat JDBC Connection Po
     jdbc.default.removeAbandonedTimeout=3600
 
 The following properties will be read by Primrose if Liferay is configured to use Primrose in the property `jdbc.default.liferay.pool.provider`. See [http://www.primrose.org.uk/primrose3/primroseConfig.html](http://www.primrose.org.uk/primrose3/primroseConfig.html) for a list of additional fields used by Primrose for configuring database connections.
+
+<!--  This link above appear to be broken.  -->
 
 *Examples:*
 
@@ -1711,6 +1721,8 @@ Specify the delimiter for parsing compound session ids.
 
 This addresses an issue with Weblogic and all application servers where the application server appends a unique JVM code to the session id. See [http://issues.liferay.com/browse/LPS-18587](LPS-18587).
 
+<!--  This link above appear to be broken.  -->
+
 Set a blank delimiter for the portal to attempt to detect a delimiter based on the application server.
 
 	session.id.delimiter=
@@ -1753,6 +1765,8 @@ Set this to `false` to disable all persistent cookies. Features like automatical
 	session.enable.persistent.cookies=true
 
 Set this to `true` to enable sessions when cookies are disabled. See [http://issues.liferay.com/browse/LEP-4787](LEP-4787). This behavior is configurable because enabling it can break certain setups.
+
+<!--  This link above appear to be broken.  -->
 
 	session.enable.url.with.session.id=true
 
@@ -2074,6 +2088,8 @@ A user may be authenticated from CAS and not yet exist in the portal. Set this t
 	cas.import.from.ldap=false
 
 Set the default values for the required CAS URLs. Set either `cas.server.name` or `cas.service.url`. Setting `cas.server.name` allows deep linking. See [http://issues.liferay.com/browse/LEP-4423](LEP-4423).
+
+<!-- This link above appears to be broken.  -->
 
 *Examples:*
 
@@ -3484,6 +3500,8 @@ When using file store, turning this flag on will tell Lucene to use `MMapDirecto
 
 Lucene's storage of indexes via JDBC has a bug where temp files are not removed. This can eat up disk space over time. Set this to `true` to automatically clean up the temporary files regularly. See [http://issues.liferay.com/browse/LEP-2180](LEP-2180).
 
+<!-- This link above appears to be broken.  -->
+
 *Example:*
 
 	lucene.store.jdbc.auto.clean.up.enabled=true
@@ -3757,6 +3775,8 @@ You can further fine tune the counter increment for specific counter names. This
 ## Direct Servlet Context [](id=direct-servlet-context)
 
 Set this to `true` to enable dispatching to a servlet directly to speed up request dispatching. This property only takes effect when a developer programmatically wraps a normal `ServletContext` with a `DirectServletContext`. See [http://issues.liferay.com/browse/LPS-13776](LPS-13776) for more information.
+
+<!-- This link above appears to be broken.  -->
 
 	direct.servlet.context.enabled=true
 
@@ -4520,6 +4540,8 @@ Set this property to `false` to disable XML validation in the portal. XML valida
 
 Set this to `true` to enable conversion and previewing of videos in the Document Library portlet. See [http://www.xuggle.com/xuggler/downloads/build.jsp](http://www.xuggle.com/xuggler/downloads/build.jsp) for more information.
 
+<!-- This link above appears to be broken.  -->
+
 	xuggler.enabled=false
 
 ## JSP [](id=jsp)
@@ -4784,6 +4806,8 @@ Set this property to `true` to enable directory indexing.
 
 	web.server.servlet.directory.indexing.enabled=false	
 
+<!-- Breadcrumbs on either side of the Widget Servlet don't link to the page, or else the page itself is screwy. Also the link from the table of contents doesn't work.   -->
+	
 ## Widget Servlet [](id=widget-servlet)
 
 Set the servlet mapping for the widget servlet.
@@ -5295,7 +5319,7 @@ Configure maximum number of items to display when using the Icon Menu tag librar
 
 ## IFrame Portlet [](id=iframe-portlet)
 
-Specify a role name that a user must be associated with in order to configure the IFrame portlet to use the `@password@` token. This token is used to post the password of users who access this portlet in order to automatically login to the framed site.
+Specify a role name that a user must be associated with to configure the IFrame portlet to use the `@password@` token. This token is used to post the password of users who access this portlet to automatically login to the framed site.
 
 No role is required by default. However, it is recommended that you specify a role in high security environments where users who configure this portlet may attempt password theft. See [http://issues.liferay.com/browse/LPS-5272](http://issues.liferay.com/browse/LPS-5272) for more information.
 
@@ -5411,7 +5435,7 @@ Input a list of comma delimited class names that extend `com.liferay.portal.kern
 		com.liferay.portlet.journal.util.RegexTransformerListener,\
 		com.liferay.portlet.journal.util.ViewCounterTransformerListener
 
-Enter a list of regular expression patterns and replacements that will be applied to outputted Journal content. The list of  properties must end with a subsequent integer (`0`, `1`, etc.) and it is assumed that the list has reached an end when the pattern or replacement is not set. See `com.liferay.portlet.journal.util.RegexTransformerListener` for implementation details.
+Enter a list of regular expression patterns and replacements that will be applied to outputted Journal content. The list of  properties must end with a subsequent integer (`0`, `1`, etc.) and it is assumed the list has reached an end when the pattern or replacement is not set. See `com.liferay.portlet.journal.util.RegexTransformerListener` for implementation details.
 
 *Examples:*
 
