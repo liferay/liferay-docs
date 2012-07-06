@@ -4784,7 +4784,7 @@ Set this property to `true` to enable directory indexing.
 
 	web.server.servlet.directory.indexing.enabled=false	
 
-## Widget Servlet [](id=widget-servlet)
+## Widget Servlet [](id=lp-6-1-ugen20-widget-servlet-0)
 
 Set the servlet mapping for the widget servlet.
 
