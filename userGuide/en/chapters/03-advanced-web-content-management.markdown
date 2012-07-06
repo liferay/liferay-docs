@@ -562,8 +562,6 @@ To add actions to a selected rule group, use the *Actions* &rarr; *Manage Action
 <!--
 Next, let's discuss Liferay's asset publisher, which you can use to publish many different kinds of portal content.
 -->
-<!-- needs summary-->
-
 ## Summary
 
 This chapter has been your guide to Liferay site management and advanced Web Content Management. We've seen how you can use Liferay to manage both simple content and advanced content with structures and templates. We've learned how you can use Liferay to create multiple sites with different membership types. We've also learned how to use page and site templates to simplify the site creation process.
