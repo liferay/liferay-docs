@@ -559,9 +559,6 @@ You can add actions to a rule group from the Site Pages page of the control pane
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. By default, there are four kinds of actions that can be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages, you can use a redirect to make sure mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to. Like mobile device rules, mobile device actions are designed to be extensible. Your developers can define custom actions in addition to the four actions provided by default. 
 
-<!--
-Next, let's discuss Liferay's asset publisher, which you can use to publish many different kinds of portal content.
--->
 ## Summary
 
 This chapter has been your guide to Liferay site management and advanced Web Content Management. We've seen how you can use Liferay to manage both simple content and advanced content with structures and templates. We've learned how you can use Liferay to create multiple sites with different membership types. We've also learned how to use page and site templates to simplify the site creation process.
