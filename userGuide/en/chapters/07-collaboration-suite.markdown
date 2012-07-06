@@ -763,7 +763,7 @@ Liferay's Wiki portlet is a state of the art wiki application that users can mak
 <!--
 No summary for Polls
 -->
-Liferay provides a chat solution for your portal that's very easy to use. It allows logged-in users to see who else is logged in to the portal and view their status. Users can go invisible if they don't want others to know that they're online. Users can chat with each other via instant messaging. You can also set up a Jabber chat server and configure Liferay to use with it. This allows users who have logged in to your portal and are using Liferay's chat system in their browsers to chat with users using traditional desktop clients who are not logged in to your portal.
+Liferay provides a chat solution for your portal that's very easy to use. It allows logged-in users to see who else is logged in to the portal and view their status. Users can go invisible if they don't want others to know that they're online. Users can chat with each other via instant messages. You can also set up a Jabber chat server and configure Liferay to use it; this allows users who have logged in to your portal via their browsers to chat with users using traditional desktop clients.
 
 Integrating mail with your portal is easy with the Mail portlet. You can add as many custom or Gmail mail accounts as you wish, and this portlet can keep them all organized in one place, together with the rest of the things Liferay is aggregating for you.
 
