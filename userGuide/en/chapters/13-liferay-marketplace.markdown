@@ -1,30 +1,18 @@
 # Leveraging the Liferay Marketplace [](id=liferay-marketplace)
 
-<!--
-
-Ch. 13 Leveraging the Liferay Marketplace
-
-Old ch. 16
-
-(No level-two sections)
--->
-
 Liferay Marketplace is an exciting new hub for sharing, browsing and downloading Liferay-compatible applications. As enterprises look for ways to build and enhance their existing platforms, developers and software vendors are searching for new avenues to reach this market. Marketplace leverages the entire Liferay ecosystem to release and share apps in a user-friendly, one-stop site.
 
 This chapter covers the following topics:
 
-- Users, Companies and Apps
+- Users, Companies, and Apps
 - Accessing Liferay Marketplace
-- Finding, Downloading and Installing Apps
+- Finding, Downloading, and Installing Apps
 - Managing Apps
 - Plugins and Plugin Management
-- Portlets, Themes, Layout Templates, Hooks and Web Plugins
+- Portlets, Themes, Layout Templates, Hooks, and Web Plugins
 - Installing Plugins from Repositories
 - Installing Plugins Manually
 - Plugin Troubleshooting and Configuration Issues
-<!--
-- The Software Catalog (is in the previous chapter)
--->
 
 In a nutshell, the Liferay Marketplace is a repository for applications built on the Liferay Platform. You can find and download applications directly from the Marketplace on the web or use an existing Liferay installation to access and install applications onto the running Liferay web site. Once installed, you can manage the applications through Liferay's control panel. 
 
@@ -187,11 +175,7 @@ In this case, using your browser, you will find the app on `liferay.com/marketpl
  
 Creating apps for the Liferay Marketplace is very easy and intuitive. To find out more information about creating your own Liferay apps, visit the Liferay Marketplace Developer Guide and get started creating apps today!
 
-## Summary [](id=summ-31)
-
-In this chapter we introduced Liferay Marketplace, the portal's system for managing Liferay applications. We looked at how to browse, purchase, download and install apps. You can do this either through [liferay.com/marketplace](liferay.com/marketplace) or through Liferay Portal's control panel. When you purchase apps, you can do so via your personal account or on your company's behalf. For information about developing and uploading apps to Liferay Marketplace, please see the Marketplace chapter of the Liferay Developer guide at [http://www.liferay.com/marketplace/developer-guide](http://www.liferay.com/marketplace/developer-guide). 
-
-<!-- needs transition -->
+Next, we'll discuss general Liferay plugin management. We'll explain the differences between the various types of Liferay plugins and show how to manually deploy plugins to Liferay.
 
 ## Plugin Management [](id=lp-6-1-ugen15-plugin-management-0)
 
@@ -436,3 +420,9 @@ Experienced WebSphere system administrators can further automate this by writing
 #### Changing the Configuration Options in Multiple Places [](id=lp-6-1-ugen15-changing-the-configuration-options-in-multiple-places-0)
 
 Sometimes, especially during development when several people have administrative access to the server at the same time, the auto deploy folder location may inadvertently be customized in both the `portal-ext.properties` file and in the control panel. If this happens, the value in the control panel takes precedence over the value in the properties file. If you go into the control panel and change the value to the correct setting, plugin deployment will start working again.
+
+## Summary [](id=summ-31)
+
+In this chapter, we introduced Liferay Marketplace, your one-stop shop for browsing and downloading Liferay-compatible applications. We looked at how to browse, purchase, download, and install apps. You can do this either through [liferay.com/marketplace](liferay.com/marketplace) or through Liferay Portal's control panel. When you purchase apps, you can do so via your personal account or on your company's behalf. For information about developing and uploading apps to Liferay Marketplace, please see the Marketplace chapter of the Liferay Developer guide at [http://www.liferay.com/marketplace/developer-guide](http://www.liferay.com/marketplace/developer-guide).
+
+After discussing Liferay Marketplace, we discussed general plugin management. We covered Liferay portlet plugins as well as layout, theme, hook, Ext, and web plugins. Finally, we looked at how to manually deploy plugins to Liferay and discussed some configuration issues.
