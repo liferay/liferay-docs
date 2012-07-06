@@ -1,13 +1,5 @@
 # Installation and Setup [](id=installing-liferay)
 
-<!--
-
-Ch. 14 Installation and setup
-
-old ch. 17
-
--->
-
 Liferay Portal is one of the most flexible applications on the market today with regard to application server environments. You can install Liferay Portal on everything from a shared Tomcat installation to a multi-node cluster running a commercial application server and on everything in between. In fact, Liferay is used successfully in all of these scenarios every day.
 
 You'll find that because Liferay is extremely flexible in its deployment options, it is easy to install as well. If you already have an application server, you can use the tools for deployment that came with your application server. If you don't have an application server, Liferay provides several application server bundles from which to choose. These are very easy to install and with a small amount of configuration can be made into production-ready systems.
@@ -142,9 +134,7 @@ Liferay Portal uses a special folder defined as *Liferay Home*. This folder is o
 
 If Liferay is unable to create the resources it needs in this folder or if it finds itself running on certain application servers, it creates a folder called `liferay` in the home folder of the user ID that is running Liferay and that becomes Liferay Home.
 
-As described above in the *Bundles* section, the home folder is very important to the operation of Liferay. The aforementioned folders (*data* and *deploy*) are created there and you can also put a special configuration file called `portal-ext.properties` there. This file is fully documented in Chapter 14: *Configuring Liferay Properties*.
-
-<!-- check chapter reference  -->
+As described above in the *Bundles* section, the home folder is very important to the operation of Liferay. The aforementioned folders (*data* and *deploy*) are created there and you can also put a special configuration file called `portal-ext.properties` there. This file is fully documented in chapter 20, a reference for Liferay properties.
 
 ![Note](../../images/tip.png) **Note:** To use database properties from a `portal-ext.properties` file you must disable the Setup Wizard by specifying `setup.wizard.enabled=false` in that `portal-ext.properties`.
 Also, note that property values in `portal-setup-wizard.properties` (the file created in Liferay Home by the Setup Wizard) override property values in `portal-ext.properties`. 
@@ -207,9 +197,7 @@ Let's look next at this configuration file and, if you're choosing not to use th
 
 Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all the defaults is stored inside of a `.jar` file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put only the settings you want to customize in your own configuration file and then you have a file that contains only the settings you need. This makes it far easier to determine whether a particular setting has been customized and it makes the settings more portable across different installations of Liferay.
 
-The default configuration file is called `portal.properties` and it resides inside of the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's `WEB-INF/lib` folder. The file used to override the configuration is `portal-ext.properties`. This file should be created in your Liferay Home folder (please see chapter 11 for the location of this folder for your application server). You'll use this file throughout this book to change many of Liferay's settings. An exhaustive list of these settings is covered in chapter 14. 
-
-<!-- check chapter references above  -->
+The default configuration file is called `portal.properties` and it resides inside of the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's `WEB-INF/lib` folder. The file used to override the configuration is `portal-ext.properties`. This file should be created in your Liferay Home folder (please see chapter 11 for the location of this folder for your application server). You'll use this file throughout this book to change many of Liferay's settings. An exhaustive list of the configurable properties is provided in chapter 20. 
 
 ---
 
@@ -228,10 +216,9 @@ As stated above, there are two ways to set up the connection:
 -   Use the built-in connection pool.
 -   Use your application server's connection pool.
 
-To use the built-in connection pool--based on *C3P0*--add the template which is provided in Chapter 6 for your particular database. The template for MySQL is provided as an example below.
+To use the built-in connection pool--based on *C3P0*--add the template <!--which is provided in Chapter 6-->for your particular database. The template for MySQL is provided as an example below.
 
-<!-- check chapter reference above  -->
-
+<!-- The above chapter reference is wrong and has been commented out. Are the templates referred to still in the User Guide? -->
     # 
     # MySQL 
     # 
@@ -888,7 +875,7 @@ Here are the steps you'll need to follow to deploy Liferay Portal to your domain
 
 <!-- This figure below seems to be missing   -->
 
-![Figure 14.41: Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.png)
+![Figure 14.41: Deploying Liferay in GlassFish 3.1.x](../../images/11-deploying-liferay-in-glassfish-31.PNG)
 
 -	If you disabled the setup wizard, your site's home page opens in your browser at [http://localhost:8080](http://localhost:8080).
 
