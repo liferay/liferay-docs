@@ -1,14 +1,6 @@
-# Kaleo Forms: Defining Business Processes (head ref.) [](id=lp-6-1-ugen11-kaleo-forms-defining-business-processes-head-ref-0)
+# Kaleo Forms: Defining Business Processes [](id=lp-6-1-ugen11-kaleo-forms-defining-business-processes-head-ref-0)
 
-<!--
-Ch. 11 Kaleo Forms: Defining Business Processes
-
-old ch. 14
-
-(No sections)
--->
-
-<!--   Intro needed?   -->
+In the last chapter, we looked at the elements that comprise a workflow definition and discussed how to create a workflow definition. In this chapter, we introduce the Kaleo Workflow Designer for Liferay EE which allows you to create workflow definitions using an intuitive UI. Using the workflow designer saves you the time and trouble of having to deal directly with the XML.
 
 ### Kaleo forms and workflow designer [](id=lp-6-1-ugen06-kaleo-forms-and-workflow-designer-0)
 
@@ -16,9 +8,7 @@ old ch. 14
 
 Developers who are used to working with XML are generally able to create workflow definitions. Other users may not be so comfortable with it. In fact, even skilled developers can make mistakes that break a definition and require time to troubleshoot. To help streamline the creation of workflow definitions and empower more users to create custom workflows, Liferay provides the Kaleo Workflow Designer in Liferay 6.1 EE.
 
-There are two pieces to the workflow designer: *Kaleo Forms* and *Kaleo Designer*. Kaleo Forms is an extension of the Dynamic Data Lists feature (covered in chapter 5). This enables you to create web forms and basic applications, then apply a workflow to govern the processing of those forms. Kaleo Designer is a drag and drop interface for creating new workflow definitions. It can be used in conjunction with Kaleo Forms or standalone to create workflow definitions without having to write XML.
-
-<!-- verify ch. reference in above paragraph   -->
+There are two pieces to the workflow designer: *Kaleo Forms* and *Kaleo Designer*. Kaleo Forms is an extension of the Dynamic Data Lists feature (covered in chapter 9). This enables you to create web forms and basic applications, then apply a workflow to govern the processing of those forms. Kaleo Designer is a drag and drop interface for creating new workflow definitions. It can be used in conjunction with Kaleo Forms or standalone to create workflow definitions without having to write XML.
 
 Let's look at Kaleo Forms first. 
 
@@ -61,14 +51,11 @@ To get a feel for how the designer works, let's use the workflow designer to dup
 First add two tasks, then use the edit icon to name them *Review* and *Update*. Next, connect the nodes so Review has four nodes, as follows: one receiving the transition from **StartNode**, one sending a transition to **Update**, one receiving a transition from **Update** and one sending a transition to **EndNode**.
 
 <!-- | TODO: I fixed this screenshot, but not before I deleted this todo -->
-
-
 ![Figure 11.5: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
 
 Next, we want to add the correct assignments and notifications. Click on *Review*. The box on the left shows all the proprerties of the Review node. In the *assignments* category, assign the task to the *Portal Content Reviewer* role. Click on *Notifications* and create a notification with the type *On Assignment*. Now move to the Update node and assign it to the *Content Creator* with its own notification.
 
 <!-- | TODO: The below paragraph is confusing; please fix. -->
-
 Next let's go through all of the transitions and make sure they're named correctly. What are the transitions? Every time you created an arrow from one node to another it created a transtion. By default, these transitions get system generated names so we'll rename them all to something more human readable. First click on the arrow going from the Start node to the Review node and set the name as *Submit* and set *Default* to true--we'll leave all the others as false. Set the name of the transition from Review to Update to *Reject* and the one from Update to Review to *Resubmit*. Lastly, set the name of the transition from Review to the EndNode to *Approve*.
 
 Now let's take a look at the generated XML. It should look a lot like our default workflow, only a tiny bit messier, as the nodes display in the order they were created, not in the logical order that happens when a human writes the code. Save your definition and it's ready to use.
@@ -76,9 +63,6 @@ Now let's take a look at the generated XML. It should look a lot like our defaul
 ## Summary [](id=summ-28)
 
 <!-- | TODO: This summary is too thin. It should summarize what you covered in the chapter. Going back and looking at the chapter headings can help you write a good summary. | --> 
+As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a very robust environment for web content management. Simple workflows can be managed using the default configuration and GUI tools, while more complex workflows can be created to meet the workflow management needs of almost any portal. Through this chapter and the previous one, we've taken a look at the various elements of a workflow and shown how to use those elements to create your own custom workflows. We've also seen how to properly use the various elements of a workflow like Assignments and Notifications, as well as newer and more advanced features like Parallel Workflows, Timers and Custom Scripts.
 
-As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a very robust environment for web content management. Simple workflows can be managed using the default configuration and GUI tools, while more complex workflows can be created to meet the workflow management needs of almost any portal. Through this chapter, we've taken a look at the various elements of a workflow and shown how to use those elements to create your own custom workflows. We've also seen how to properly use the various elements of a workflow like Assignments and Notifications, as well as newer and more advanced features like Parallel Workflows, Timers and Custom Scripts.
-
-One of the keys to using Kaleo workflow isn't just understanding each individual element but seeing how each one interacts with the other elements, then figuring out which features will to work best for your organization. Hopefully this chapter has helped you understand how to best craft a workflow for you portal.
-
-
+It's not enough to understand each individual step of the workflow process; one of the keys to using Kaleo workflow is to understand how each step interacts with the other elements. If you understand these relationships, you can figure out which features will to work best for your organization. We hope you'll use the information we've covered on workflow to craft suitable processes for you portal.
