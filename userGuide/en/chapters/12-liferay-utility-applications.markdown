@@ -1,20 +1,17 @@
 # Liferay Utility Applications [](id=lp-6-1-ugen12-liferay-utility-applications-0)
 
-<!--
+In this chapter we'll look at some Liferay utility applications that might be useful for you. The Software Catalog is currently packaged with Liferay but will soon be replaced by Liferay Marketplace. Please see chapter 13 for information about Liferay Marketplace and managing Liferay plugins. The Knowledge Base application is an EE-only plugin. In this chapter we'll discuss both of these applications:
 
-Ch. 12 Liferay utility applications
-
-old ch. 15
-
+- Software catalog
+- Knowledge Base
+<!-- Bookmarks, Shopping, and Weather applications appear in the new user guide outline but no content for them appears in the User Guide. -->
+<!-- Section i Bookmarks (head ref)? This needs content
+## Bookmarks  [](id=lp-6-1-ugen12-bookmarks--0)
 -->
 
-<!-- Intro ?  -->
+The Software Catalog allows you to define a set of software items to display to visitors. The Knowledge Base applicaton allows you to create articles and organize them into full books or guides that be published on your portal.
 
-<!-- Section i Bookmarks (head ref)?   This needs text  -->
-
-## Bookmarks  [](id=lp-6-1-ugen12-bookmarks--0)
-
-### Creating Your Own Plugin Repository [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
+## Creating Your Own Plugin Repository [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
 
 As your enterprise builds its own library of portlets for internal use, you can create your own plugin repository to make it easy to install and upgrade portlets. This will allow different departments who may be running different instances of Liferay to share portlets and install them as needed. If you are a software development house, you may wish to create a plugin repository for your own products. Liferay makes it easy for you to create your own plugin repository and make it available to others.
 
@@ -30,7 +27,7 @@ The second method does not require an instance of Liferay to be running. You can
 
 We will first look at creating a plugin repository using the Software Catalog in the control panel.
 
-## Software Catalog [](id=lp-6-1-ugen15-the-software-catalog-0)
+### Software Catalog [](id=lp-6-1-ugen15-the-software-catalog-0)
 
 You will want to use the Software Catalog if you will have multiple users submitting portlets into the repository and if you don't want to worry about creating the `liferay-plugin-repository.xml` file yourself.
 
@@ -110,7 +107,7 @@ Now go back to the *Products* tab and click on your product. You will notice a m
 
 When you are finished filling out the form, click the *Save* button. Your product version will be saved and your product will now be available in the software repository.
 
-##### Generating The Software Catalog [](id=lp-6-1-ugen15-generating-the-software-catalog-0)
+#### Generating The Software Catalog [](id=lp-6-1-ugen15-generating-the-software-catalog-0)
 
 The Software Catalog works by generating an XML document which the Plugin Installer reads. Using the data from this XML document, the Plugin Installer knows where it can download the plugins from, what version of Liferay the plugins are designed for and all other data about the plugins that have been entered into the Software Catalog portlet.
 
@@ -190,7 +187,7 @@ You can now give the URL to your software repository out on your web site and ot
 
 If you want to serve your repository off of a static web server, you can save this document to a file called `liferay-plugin-package.xml` and put this file on your HTTP server. You can then give out the URL to the directory which holds this file on your web site and anyone with an instance of Liferay will be able to point their Plugin Installer portlets to it.
 
-##### Benefits of the Software Catalog [](id=lp-6-1-ugen15-benefits-of-the-software-catalog-0)
+#### Benefits of the Software Catalog [](id=lp-6-1-ugen15-benefits-of-the-software-catalog-0)
 
 As you can see, the Software Catalog makes it easy for you to create a repository of your software. Users of Liferay can configure their Plugin Installers to attach to your repository and the proper versions of your software will be automatically made available to them by a single click. This is by far the easiest way for you to keep track of your software and for your users to obtain your software.
 
@@ -198,19 +195,19 @@ Another benefit of the Software Catalog is that you can make available to your u
 
 How can you do this? The Software Catalog is also available as a portlet. You can add it to any page on your web site through the *Add Application* menu. You can find the portlet in the *Tools* category.
 
-#### Manually Creating A Software Catalog [](id=lp-6-1-ugen15-manually-creating-a-software-catalog-0)
+### Manually Creating A Software Catalog [](id=lp-6-1-ugen15-manually-creating-a-software-catalog-0)
 
 If you do not wish to use the control panel to create your software catalog, you can create it manually by manually typing out the XML file that the Software Catalog section of the control panel would normally generate. Note that if you do this, you will not be able to use the Software Catalog portlet as a graphical user interface to your software that end users can use to download your software manually: you will have to build this yourself. Keep in mind many instances of Liferay Portal sit behind a firewall without access to the Internet. Because of this, if you are making your software available to Internet users, some of them will have to download it manually anyway, because their installations are firewalled. In this case, the Software Catalog portlet is the easiest way to provide a user interface for downloading your software.
 
 If you still wish to use a text editor to create your software catalog, you can. To manually create a software catalog, obtain the DTD for the XML file from Liferay's source code. You will find this DTD in the *definitions* folder in the Liferay source. It is a file called `liferay-plugin-package_6_0_0.dtd`. Use this DTD with a validating XML editor (a good, free choice is jEdit with all the XML plugins) to create your software catalog manually.
 
-#### Connecting to a Software Catalog [](id=lp-6-1-ugen15-connecting-to-a-software-catalog-0)
+### Connecting to a Software Catalog [](id=lp-6-1-ugen15-connecting-to-a-software-catalog-0)
 
 If there is a software catalog of plugins you would like to point your instance of Liferay to, all you need is the URL to the catalog. Once you have the URL, go to the Plugin Installer in your control panel and click the *Configuration* tab. You will see there are two fields in which you can enter URLs to plugin repositories: *Trusted Plugin Repositories* and *Untrusted Plugin Repositories*. Currently, the only difference between the two is to provide a visual cue for administrators as to which repositories are trusted and untrusted.
 
 Enter the URL to the repository to which you wish to connect in one of the fields and click *Save*. The portlet will connect to the repository and items from this repository will be shown in the list. 
 
-<!-- needs transition -->
+Next, let's see what the Knowledge Base application has to offer.
 
 <!--   Section iii Shopping (head ref)  -->
 
@@ -220,7 +217,7 @@ Enter the URL to the repository to which you wish to connect in one of the field
 
 ## Weather [](id=lp-6-1-ugen12-weather-0)
 
-<!-- needs transition -->
+<!-- needs content -->
 
 ## Knowledge Base [](id=knowledge-base)
 
@@ -321,8 +318,7 @@ You can also use the Categories Navigation portlet in conjunction with the Knowl
 ![Figure 12.13: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them. 
-<!--  Next, let's take a look at the Documents and Media library, Liferay's general mechanism for creating and storing files in the portal.
--->
 
-<!--   Summary?   -->
+## Summary
 
+In this chapter, we examined two Liferay utility applications: the Software Catalog and the Knowledge Base. The Software Catalog allows you to define a set of software items to make available to visitors to your portal. Remember that the Software Catalog will be replaced by Liferay Marketplace and will soon be deprecated. The Knowledge Base applicaton is an EE-only application that allows you to create articles and organize them into full books or guides that be published on your portal. Next, let's take a tour of the Liferay Marketplace and learn how to manage Liferay plugins.
