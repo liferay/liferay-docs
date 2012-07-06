@@ -759,19 +759,19 @@ If you want to use GlassFish to manage your domain's data source, follow the ins
 
 3. Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC Connection Pools*
 
-![Figure 14.38: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.png)
+![Figure 14.38: Navigate to JDBC Connection Pools](../../images/11-glassfish31-connection-pools.PNG)
 
 4.	Click *New...*.
 
 5. In the first screen (Step 1 of 2), give your connection pool the name `LiferayPool`, the resource type of `javax.sql.ConnectionPoolDataSource` and select your database driver vendor (e.g. `MySQL`) as follows:
 
-![Figure 14.39: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.png)
+![Figure 14.39: Glassfish JDBC Connection Pool](../../images/11-glassfish-31-jdbc-connection-pool.PNG)
 
 6.	Click *Next* to advance to the next step in creating your JDBC connection pool.
 
 7. On the this screen (Step 2 of 2), scroll down to the *Additional Properties* section.
 
-![Figure 14.40: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
+![Figure 14.40: Glassfish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.PNG)  
 
 8.	Replace or add the following properties ...
 
