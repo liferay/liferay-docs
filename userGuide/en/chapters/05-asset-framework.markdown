@@ -1,6 +1,8 @@
 # Leveraging the Asset Framework [](id=lp-6-1-ugen05-leveraging-the-asset-framework-0)
 
-<!--   Need intro text   -->
+Any type of content in Liferay is considered an asset. In chapters 2 and 3, we already examined Liferay's most common type of asset: web content. Other types of assets include blog posts, wiki articles, message board posts, bookmarks, and documents. It's possible for developers to define custom asset types that utilize Liferay's asset framework. Originally, the asset framework was created to provide a mechanism for adding tags to blog entries, wiki articles, and web content without reimplement the same functionality multiple times. The asset framework has been greatly extended since then and it now supports tags, categories, comments, ratings, and asset relationships. 
+
+The Asset Publisher portlet is designed to display multiple assets. It has quite a few configuration options which we'll cover in this chapter. By default, abstracts (previews) of recently published assets are displayed by the Asset Publisher portlet and links to their full views are provided. You can configure the Asset Publisher portlet to display a table of assets, a list of asset titles, or the full content of assets. You can also configure the Asset Publisher to display only certain kinds of assets and you choose how many items to display in a list. The Asset Publisher portlet is very useful for displaying chosen types of content, for displaying recent content, and for allowing users to browse content by tags and categories. The Asset Publisher is designed to integrate with the Tags Navigation and Categories Navigation portlets to allow this.
 
 ## Tagging and Categorizing Content [](id=lp-6-1-ugen03-tags-and-categories-0)
 
@@ -148,6 +150,6 @@ Related Assets is a new feature in Liferay 6.1 that enables you to connect any n
 
 The Related Assets portlet is based on the Asset Publisher and possseses essentially the same interface with one key difference. The Asset publisher displays any content that meets the criteria selected in the portlet configuration. The Related Assets portlet only displays content that meets the criteria, and also is listed as a related asset for a piece of content that is currently published on the page where it is placed.
 
-Let's move on, now, to the Calendar portlet.
+## Summary
 
-<!--  This line above needs to be removed and a summary inserted here.  -->
+In this chapter, we explored Liferay's asset framework. Any type of content in Liferay is considered an asset and can utilize the features provided by the asset framework: tags, categories, comments, ratings, and relationships. We examined the Asset Publisher portlet and looked at the many configuration options for choosing what kinds of assets to display and how to display them. We saw that the Asset Publisher portlet is designed to integrate with the Tags Navigation and Categories navigation portlets to allow users to browse content more easily. We also learned about the Display Page attribute of web content, the Content Display Page page template, and canonical URLs for assets. Assets can have display page associated with them so that the full view of the asset is displayed on the display page. The display page of an asset is used in the asset's canonical URL.

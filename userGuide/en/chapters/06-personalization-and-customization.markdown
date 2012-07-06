@@ -3,26 +3,18 @@
 <!--  Old header
  Personalization, Collaboration tools, and social networking [](id=lp-6-1-ugen06-personalization-collaboration-tools-and-social-networking-0)
 -->
-
 <!-- There is significant content missing from this chapter.   -->
-
 <!-- Needs text   -->
-
 ## User  site [](id=lp-6-1-ugen06-user--site-0)
 
 <!-- Needs text   -->
-
 ## User public site [](id=lp-6-1-ugen06-user-public-site-0)
 
 <!-- Needs text   -->
-
 ## Automatic personalization of content (via rules integration) [](id=lp-6-1-ugen06-automatic-personalization-of-content-via-rules-integration-0)
 
 <!-- Needs text   -->
-
 ## Setting preferences to customize applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
-
-
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
@@ -61,9 +53,7 @@ Log in as an administrative user and navigate to the Control Panel. Once in the 
 The default rule that's being evaluated displays a list of assets based on the current user's address. For example, if the current user's country is set to Canada, Mexico, or the United States, the Sample Drools Portlet displays a list of assets that have been tagged with the *west coast symposium* tag.
 
 <!-- | TODO: Need screen shots here. | --> 
-
 <!-- | TODO: We need to point to what we're about to do before we do it; otherwise this is hard to follow. | --> 
-
 The Sample Drools Portlet plugin also contains a second rule that returns personalized content based on the user's net worth set in the My Account &rarr; Custom Fields section of the Control Panel. To see this rule in action, add a second instance of the Sample Drools Portlet to a page. Once added to the page, select the *Options* icon (*the wrench*) and then select *Configuration*. You need to replace the rules defined in the *Rules* section of the Configuration screen with contents of the *rules_user_custom_attribute_content.drl* file. The rule file can be found in the deployed portlet at `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl`. In the same Configuration screen, add `networth` to the user-custom-attribute-names field. Save your changes and close the pop-up window. Navigate to the Control Panel and add a Custom Field on the User object with the Key `networth`. Navigate to *My Account* and select the Custom Fields link on the right side of the screen. Enter a net worth of 150000 and save the record. While still in the Control Panel, add a new Web Content entry to the default liferay.com community. Before publishing the Web Content entry, tag the article with *high net worth* and then save the entry. Now, navigate back to the liferay.com community and the Web Content should be displayed in the second Sample Drools Portlet added to the page.
 
 Now that you can see how it works in practice, let's look closer at the rules themselves. 

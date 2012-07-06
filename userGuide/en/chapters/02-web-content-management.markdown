@@ -5,16 +5,17 @@ Web Content Management is a system which allows non-technical users to publish c
 In this chapter, we'll cover the following topics: 
 
 - Features of Liferay WCM
-- Simple content creation
+- Creating sites and managing pages
+- Authoring content
 - Publishing content
-- Permissions
 - Workflow
+- Site memberships and permissions
 
-As you'll see, Liferay's WCM is a full-featured solution for managing your web site. We'll start with an overview of what it has to offer and then we'll dive down into its features. 
+As you'll see, Liferay's WCM is a full-featured solution for managing your web site. We'll start with an overview of what it has to offer and then we'll dive down into its features. Note that web content is just one kind of asset on Liferay. Other types of content (blog posts, wiki articles, message board posts, etc.) are also considered assets. Liferay provides a general framework for handling assets that includes tags, categories, comments, ratings, and more. Please see chapter 5 for more information on Liferay's asset framework.
 
 ## How Can Liferay's WCM Help You? [](id=how-can-liferay-s-wcm-help-you-)
 
-With Liferay's WCM you have the ability to create, edit, stage, publish and approve content with easy to learn yet powerful tools. Liferay's WCM streamlines site changes for the end user versus doing a site in HTML. Some ways Liferay WCM makes this possible include:
+With Liferay's WCM you have the ability to create, edit, stage, publish and approve content with easy to learn yet powerful tools. Liferay's WCM streamlines the content creation process for end users. It's much faster to use Liferay's WCM than it would be to create all the content for your site in HTML. Some ways Liferay WCM makes this possible include:
 
 -   Once set up, non-technical users can manage the site.
 -   Liferay's fine-grained permissions system ensures your content gets to the right users.
@@ -52,9 +53,9 @@ Liferay's Web Content Management is a powerful and robust tool for creating and 
 
 With most products, you would learn what the software can do in terms of setting up your users and security model and then start building your system. You'd design your infrastructure and get your server environment up and running while your developers write the applications that live on your web site. With Liferay Portal, however, you start farther ahead. Liferay Portal is more than just a *container* for applications with a robust security model. It already includes many of the applications you'll need, out of the box, ready to go and integrated with all the user management and security features you've already learned about.
 
-Perhaps the key application that ships with Liferay is Liferay's Web Content Management system (WCM). We call it the key application because it's the one almost everybody uses and all web sites have content. Liferay's WCM empowers you to manage all the content on your site quickly, easily and in the browser. Beyond managing existing content, Liferay WCM lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal's larger collection of applications, which means you can add shopping cart functionality, visitor polls, web forms, site collaboration tools and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and an intuitive interface.
+Nearly all Liferay users use Liferay's Web Content Management system (WCM). After all, all every web site has content that needs to be managed. Liferay's WCM empowers you to manage all the content on your site quickly and easily within your browser. Beyond managing existing content, Liferay WCM lets users easily create and manage everything from a simple article containing text and images to fully functional web sites. Web publishing works alongside Liferay Portal's larger collection of applications, which means you can add shopping cart functionality, visitor polls, web forms, site collaboration tools and more. Everything is done with our collection of easy-to-use tools with familiar rich-text editors and an intuitive interface.
 
-This section covers some basic aspects of Liferay WCM, including:
+In this section we'll cover some basic aspects of Liferay WCM, including:
 
 - Page types
 - Layouts
@@ -72,23 +73,23 @@ First, a little housekeeping. If we're going to be *Nose-ster*, our portal shoul
 
 You can also customize the logo in the top left corner of every page by selecting *Display Settings* under the *Miscellaneous* tab on the panel to the right. Once you've made the changes, we can begin creating pages.
 
-### Page Creation and Management [](id=page-creation-and-manageme-3)
+### Creating and managing pages [](id=page-creation-and-manageme-3)
 
-You have a few options for accessing the page creation interface. To simplify this, we'll cover the Dockbar's *Manage* menu slightly out of order. There are two interfaces to be aware of: *Site Pages* and *Page*. You can get to these from multiple places. Depending on what you're editing and where you are on the portal, you'll use either the *Manage* menu or the control panel to work with your pages. From the control panel, make sure you have the correct site selected in the context menu and click the *Site Pages* link in the content section. If you've currently navigated to the site you wish to manage, click *Manage* from the Dockbar and select *Site Pages*. This is the exact same interface you see in the control panel. To modify the single page in the site you're on, click *Manage* and select *Page*. 
+You have a few options for accessing the page creation interface. To simplify this, we'll cover the Dockbar's *Manage* menu slightly out of order. There are two interfaces to be aware of: *Site Pages* and *Page*. You can get to these from multiple places. Depending on what you're editing and where you are on the portal, you'll use either the *Manage* menu or the control panel to work with your pages. From the control panel, make sure you have the correct site selected in the context menu selector and click the *Site Pages* link in the content section. If you've already navigated to the site you wish to manage, click *Manage* from the Dockbar and select *Site Pages*. This is the exact same interface you see in the control panel. To manage the specific page of the site you've navigated to, click *Manage* and select *Page*. 
 
 ![Figure 2.2: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
 
-For convenience, you can also navigate to the Sites page under the Portal section of the control panel and click *Actions* &rarr; *Manage Pages*. To quickly add a single page while you're browsing a site, click *Add* from the Dockbar and select *Page* and a page is added immediately. You can then enter a name for the page and work on it immediately.
+For convenience, you can also navigate to the Sites page under the Portal section of the control panel and click *Actions* &rarr; *Manage Pages*. To quickly add a single page while to the site you're browsing, click *Add* from the Dockbar and select *Page*. Just enter a name for the page and it's added immediately. Click the name of the page in the navigation menu to visit it and start working on it.
 
 ![Figure 2.3: Managing Site Pages](../../images/04-managing-site-pages.png)
 
-*Site Pages* is an interface to view existing pages, create new pages, view pages and export or import pages using Liferay Archive (LAR) files. Note that you can switch between managing a set of pages and managing a single page using the left-hand side navigation menu. Click on *Public Pages* or *Private Pages* to manage the group or click on an individual page to manage just that one. Switching views like this changes the list of available tabs to the right. By default, liferay.com, which we renamed nosester.com, contains a single public page called *Welcome*.
+*Site Pages* is an interface to view existing pages, create new pages, view pages and export or import pages using Liferay Archive (LAR) files. Note that you can switch between managing a set of pages and managing a single page using the left-hand side navigation menu. Click on *Public Pages* or *Private Pages* to manage the group or click on an individual page to manage just that one. Switching views like this changes the list of available tabs to the right. By default, liferay.com, which we renamed to nosester.com, contains a single public page called *Welcome*.
 
-Liferay's page groups are always associated with sites. Even users' personal pages are part of their personal sites. All pages must belong to one of two sets of pages: public pages or private pages. By default, public pages are accessible to anyone, even guests. Private pages are accessible only to users who are members of the site which owns the pages. This means the private pages of an organization's site would be viewable only by members of the organization. 
+Liferay's page groups are always associated with sites. Even users' personal pages are part of their personal sites. All pages belong to one of two types of page sets: public pages and private pages. By default, public pages are accessible to anyone, even non-logged in users (guests). Private pages are accessible only to users who are members of the site which owns the pages. This means the private pages of an organization's site would be viewable only by members of the organization. 
 
 Regardless of whether the pages are public or private, Liferay uses the same interface to manage them. Let's look at this interface more closely. 
 
-#### Managing Pages [](id=lp-6-1-ugen02-managing-pages-0)
+#### More page management tools [](id=lp-6-1-ugen02-managing-pages-0)
 
 From the Manage Site Pages dialog box, you can add a page to the site by clicking the *Add Page* button. Because *Public Pages* is selected on the left, clicking *Add Page* here adds a top level page next to the Welcome page. You can, however, nest pages as deeply as you like. To create a sub-page under the Welcome page, select the *Welcome* page first and then create your page. If you later decide you don't like the order of your pages, you can drag and drop them in the list to put them in whatever order you want. Let's go ahead and add another top level page and name it *Community*. We'll use this page for the Recent Bloggers and Wiki portlets.
 
@@ -96,9 +97,9 @@ From the Manage Site Pages dialog box, you can add a page to the site by clickin
 
 When you create a new page, you can create either a blank page or a page prepopulated with portlets from a page template. When you're entering the name of the page, you can select from a list of page templates that are currently available. To view the pages once you add them, click the *View Pages* button. This is how you'd populate your pages with content and applications. This is covered in succeeding chapters.
 
-If you're using the Manage Pages interface to create a new page, you'll have some additional options to create different types of pages. There are **Portlet Pages**, **Panel Pages**, **Embedded Pages**, **URL Pages** and **Link to Page**. By default all pages are created as portlet pages but in some situations you might want to use one of the other options.
+If you're using the Manage Pages interface to create a new page, you'll have some additional options to create different types of pages. There are **Portlet Pages**, **Panel Pages**, **Embedded Pages**, **URL Pages** and **Link to Page**. By default, all pages are created as portlet pages but in some situations you might want to use one of the other options.
 
-**Portlet Pages** are the pages we're usually talking about. They have a layout which you can drag and drop portlets into. The overwhelming majority of pages you create will be portlet pages.
+**Portlet Pages** are the pages we're usually talking about. They have a layout which you can drag and drop portlets into. Most of the pages you create will be portlet pages.
 
 **Panel Pages** can have any number of portlets on them, as selected by an administrator, but only one will be displayed at a time. Users select which portlet they want to use from a menu on the left side of the page and the selected portlet takes up the entire page. 
 
@@ -106,9 +107,9 @@ If you're using the Manage Pages interface to create a new page, you'll have som
 
 **Embedded Pages** display content from another website inside of your portal. An administrator can set a URL from in the page management interface and that page will appear in the context and within the navigation of your Liferay portal.
 
-**URL Pages** are just redirects to any URL specified by an administrator. You can use this to link to pages within your portal on another community or to an external site. These should be used with caution as blind redirects can create a poor user experience.
+**URL Pages** are just redirects to any URL specified by an administrator. You can use URL pages to create links to pages belonging to other sites of your portal or to pages of an external site. Use URL pages cautiously since blind redirects create a poor user experience.
 
-A **Link to Page** is a portal page which functions as an immediate redirect to another page within the same site. You can select which page to link to from a dropdown in the page management interface. This can be useful for putting a deeply nested page in the primary navigation or just for confusing your users.
+**Link to Page** creates a portal page which functions as an immediate redirect to another page within the same site. You can select which page to link to from a dropdown in the page management interface. You could use a *Link to Page* to place a deeply nested page in the primary navigation menu of your site, for example.
 
 Once you've created pages and populated them with content, Liferay provides a way for you to back them up to separate files. Let's see how that works. 
 
@@ -146,7 +147,7 @@ The next option configures the logo that appears for your site.
 
 If you want to use your own logo for a specific site, use the Logo tab. Adding a custom logo is easy: select the Logo tab and browse to the location of your logo. Make sure your logo fits the space in the top left corner of the theme you're using for your web site. If you don't, you could wind up with a site that's difficult to navigate, as other page elements are pushed aside to make way for the logo.
 
-In the logo tab you can also choose whether or not to display the site name on the site. If you check the box labeled *Show Site Name* the site name will appear in the the top right corner of the page. This option is enabled by default and cannot be disabled if the *Allow Site Administrators to set their own logo* option is disabled in *Portal Settings*. It is also not available on the default community -- only newly created communities and user pages have the option to have the name display.
+In the logo tab, you can also choose whether or not to display the site name on the site. If you check the box labeled *Show Site Name* the site name will appear in the the top right corner of the page. This option is enabled by default and cannot be disabled if the *Allow Site Administrators to set their own logo* option is disabled in *Portal Settings*. It is also not available for the default site -- only newly created sites and user pages have the option to have the name display.
 
 #### Changing options for individual pages [](id=lp-6-1-ugen02-changing-options-for-individual-pages-0)
 
@@ -158,7 +159,7 @@ When you select a single page, some different options appear. Let's look at what
 
 ---
 
-![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible that a single page could be indexed multiple times. In Liferay 6.1, all URLs that direct to the same page will only create one entry in the index. So while previously the simple URL *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions of the URL, which provided additional information about the referring page, would have different entries in the index, now there is only one. From the search engines point of view, this will make your pages rank higher since any references to any variations of a specific URL will be considered references to the one page.] 
+![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible that a single page could be indexed multiple times. In Liferay 6.1, all URLs that direct to the same page will only create one entry in the index. Previously, the simple URL *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions of the URL which provided additional information about the referring page had different entries in the index. As of Liferay 6.1, each asset (web content article, blog entry, etc.) has a unique URL. From the search engine's point of view, this will make your pages rank higher since any references to variations of a specific URL will all be considered references to the same page.] 
 
 ---
 
@@ -192,13 +193,13 @@ The next option in the *Manage* menu is page customizations.
 
 #### Page Customizations [](id=lp-6-1-ugen02-page-customizations-0)
 
-Page Customizations are a new feature in Liferay 6.1. With Page Customizations, any user with the appropriate permissions can create personalized versions of any public page with customizations enabled. Customizations are based on the rows and columns of a page layout. Administrators can activate or deactivate customizations for any row or column on any page. When users customize a page, they have the option to use either their version or the default version of a page. Users can't see alternate versions of pages other than their own.
+Page Customizations are a new feature in Liferay 6.1. With Page Customizations, any user with the appropriate permissions can create personalized versions of any public page. Before users can create personalized versions of pages, customizations must first be enabled by an administrator. Customizations are based on the rows and columns of a page layout. Administrators can activate or deactivate customizations for any row or column on any page. When users customize a page, they have the option to use either their version or the default version of a page. Users can't see alternate versions of pages other than their own.
 
 ![Figure 2.7: Setting Customizable Columns](../../images/04-web-content-personal-customization.png)
 
 When an administrator activates Page Customizations for a page, any portlets that are in a *Customizable* row or column can be moved around the page or removed from the page. Users can add new portlets of their own choosing to these columns of the page. If at any time users determine they don't like their customizations, they can click *Reset My Customizations* to revert their pages back to the default.
 
-The administrator of the "customizable" page will have two different views: the *default page* view and the *customized page*. The changes he makes in the *default page* view will affect all users, whereas the changes he makes in the *customized page* view will only affect himself, as if he were any other regular user customizing this page. Changes made by the administrator to a not customizable section in the *default view* will be effective inmediately for any user. But if changes are made to a customizable section, the administrator's changes will *not* overwrite the users' changes. For this reason, users can view the *default page* and *reset his customizations* from the bar at the top.
+The administrator of the "customizable" page will have two different views: the *default page* view and the *customized page*. The changes he makes in the *default page* view will affect all users, whereas the changes he makes in the *customized page* view will only affect himself, as if he were any other regular user customizing this page. Changes made by the administrator to a non-customizable section in the *default view* will be effective inmediately for any user. But if changes are made to a customizable section, the administrator's changes will *not* overwrite the users' changes. For this reason, users can view the *default page* and *reset his customizations* from the bar at the top.
 
 To allow users to customize a page, administrators must grant users permission to *Customize* pages under the Site section. This can be achieved by assigning permission to a role, then assigning this role to the appropriate users. For example, if we want any logged user to be able to customize our customizable pages, we could assign the Customize permission to the role *User*. If we want any member of a site to be able to customize the customizable pages of its sites, we would assign the Customize permission to the role *Site Member*.
 
@@ -216,13 +217,17 @@ You'll find options to specify details and metadata about your site, set up frie
 
 **Pages:** From Site Settings, click on *Pages* to manage some basic features of the pages on a site. If no pages have been defined yet, you can set site templates for the public or private pages. If pages already exist, links are provided to view them. You can also change the site's application adapter, which is a special type of hook plugin that customizes out of the box functionality for specific sites. 
 
-**Site URL:** Set the virtual host for your site and/or a friendly URL here. The *Friendly URL* option lets you manage the path to your site in the portal's URL. This needs to be a unique name, of course. Having a human-readable friendly URL assists indexing bots and is critical to good search engine optimization. 
+**Site URL:** Set a friendly URL and/or a virtual host for your site here. The *Friendly URL* option lets you manage the path to your site in the portal's URL. Friendly URLs are used for both public and private pages. For public pages, the friendly URL is appended to http://localhost:8080/web. For private pages, the friendly URL is appended to http://localhost:8080/group. Each friendly URL needs to be a unique name, of course. Having a human-readable friendly URL assists indexing bots and is critical to good search engine optimization. 
+
+For example, suppose you were creating a portal for a bank called the Best Bank. If you set the friendly URL of your portal's default site to /best-bank, the URL of your default site's public home page would change to http://localhost:8080/web/best-bank/home. If your portal's default site had private pages, the URL of the default private home page would change to http://localhost:8080/group/best-bank/home. 
+
+Note that if you're adding a friendly URL for your portal's home page, you should update your portal's Home URL field so that page requests to http://localhost:8080 redirect properly. To do this, navigate to the Portal Settings page of the control panel and find the Home URL field in the Navigation section. For our bank example, we would enter */web/best-bank/home* into the Home URL field. Once you've entered this setting, page requests to localhost:8080 will redirect to the friendly URL of your portal's new homepage: http://localhost:8080/web/best-bank/home.
 
 *Virtual Hosts* make web navigation much easier for your users by connecting a domain name to a site. This tab allows you to define a domain name (i.e., www.mycompany.com) for your site. This can be a full domain or a subdomain. This enables you to host a number of web sites as separate sites on one Liferay server.
 
 For instance, if we set this up for Nose-ster's Development Network, users in that site could use developers.nosester.com to get to their site, provided Nose-ster's network administrators created the domain name and pointed it to the Liferay server.
 
-To set this up, the DNS name *developers.nosester.com* should point to your portal's IP address first. Then enter http://developers.noseter.com in the Virtual Host tab for the Developers site. This helps users quickly access their site without having to recall an extended URL.
+To set this up, the DNS name *developers.nosester.com* should point to your portal's IP address first. Then enter *http://developers.noseter.com* in the Virtual Host tab for the Developers site. This helps users quickly access their site without having to recall an extended URL.
 
 **Site Template:** If you've created the site from a site template, this section displays information about the link between the site template and the site. Specifically, you can see which site template was used and whether or not it allows modifications to the pages inherited from it by site administrators. If you're not using site templates for this site, you can safely ignore this section.
 
@@ -238,11 +243,11 @@ If you're interested in seeing what is being sent to the search engines, select 
 
 **Analytics:** allows you to integrate your pages with Google Analytics. Liferay provides seamless integration with Google Analytics, allowing you to place your ID in one place, then it will get inserted ally on every page. This enables you to focus your efforts on building the page, rather than remembering to put the code everywhere. Google Analytics is a free service which lets you do all kinds of traffic analysis on your site so you can see who visits, where visitors are from and what pages they most often visit. This helps you tweak your site so you can provide the most relevant content to your users.
 
-Now that you know how to configure sites, let's look at templates.
+Now that you know how to configure sites, let's look at page templates and site templates.
 
 #### Page Templates and Site Templates [](id=lp-6-1-ugen02-page-templates-and-site-templates-0)
 
-*Page Templates* and *Site Templates* are invaluable tools for building similar pages on larger portals. As you continue to add pages to sites in your portal, you'll notice repeatable patterns in the designs of those pages. Page templates enable you to preconfigure a single page and then apply it to any new page you create. Site Templates allow you to do the same thing but on the scale of a site--if you have multiple sites that use a similar structure of pages, you can create a single site template and use it to create as many sites as desired. For a full explanation of Page Templates and Site Templates, see chapter 2. 
+*Page Templates* and *Site Templates* are invaluable tools for building similar pages on larger portals. As you continue to add pages to sites in your portal, you'll notice repeatable patterns in the designs of those pages. Page templates enable you to preconfigure a single page and then apply it to any new page you create. Site Templates allow you to do the same thing but on the scale of a site--if you have multiple sites that use a similar structure of pages, you can create a single site template and use it to create as many sites as desired. For a full explanation of Page Templates and Site Templates, see chapter 3. 
 
 #### Site Content [](id=lp-6-1-ugen02-site-content-0)
 
@@ -333,7 +338,6 @@ Congratulations! You've just changed the permissions for this page so only site 
 <!-- 
 ## Summary [](id=summ-24)
 -->
-
 Pages in Liferay are as flexible as pages you'd create manually without a portal. Using a point and click interface, you can define your site any way you want. You can create and remove pages, export and import them, set their layouts, define how they are indexed by search engines and more. You've also been introduced to Liferay's concept of sites. Again, using a point and click interface, you can create multiple web sites and define how users can access them, whether they are linked to a domain name and create all of their pages. 
 
 You now understand how to manage pages in Liferay Portal. It's time to move on to adding content to those pages. Liferay's Web Content Management (WCM) is a highly powerful, yet flexible, set of tools that enables you to successfully manage your web site.
@@ -343,10 +347,9 @@ You'll soon discover that Liferay's WCM is easy to learn and highly configurable
 We'll be using Liferay's WCM to publish simple pieces of content, develop templates to define how content is to be displayed, set up a workflow for content to be approved, schedule when content is to be published and much, much more.
 
 <!-- Section iii of new outline   -->
-
 ## Authoring (basic) content [](id=building-a-site-with-liferay-s-w-3)
 
-You've just been assigned the task to build a web site for a an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
+You've been assigned the task to build a web site for a an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
 
 We'll walk through the creation of Nose-ster's web site, starting by creating and publishing some simple content using Liferay's built-in WYSIWYG editor. We'll then take advantage of Liferay's robust structure editor. We'll use templates to display the content and then explore some of the advanced publishing features such as the built-in workflow and Asset Publisher.
 
@@ -389,7 +392,6 @@ Permissions in Liferay WCM work the same way they do everywhere else in Liferay.
 For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. Let's look at how it works. 
 
 <!-- Section iv of new outline -->
-
 ## Publishing (basic) content [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
 
 Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page by selecting *Add &rarr; Web Content Display* from the Dockbar.
@@ -433,7 +435,6 @@ Note: if you want to view your page the way your users will see it (i.e., withou
 That's pretty much all there is to simple content creation. Whole sites have been created this way. But if you want to take advantage of the full power of Liferay's WCM, you'll want to use structures and templates found in chapter 3. Next, let's see how you can manage your content with an approval process called workflow. 
 
 <!-- Section v of new outline -->
-
 ## Using Liferay's workflow with WCM [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay WCM, workflow is designed to manage the creation, modification and publication of web content. You can set up a workflow so content can't be published without going through an approval process you design. In this way, content is published to the site only after it has been reviewed and approved.
@@ -475,16 +476,21 @@ Taking ownership of, reviewing and approving content is very easy:
 
 In a real world situation, you obviously wouldn't want the person who created the content to be the one who approves it. Instead, you would have one or more roles designed for users who will be creating content and you would have specific users assigned to one or more roles for approving content. Our example was of a very straightforward workflow, as it has only a single approver. Kaleo workflow allows you to design workflows that go through as many steps as you need to conform to your business processes. We look at Kaleo workflow in more detail in chapter 6.
 
-Next up is Site memberships, where you'll learn how to administer a Liferay portal and define users and permissions. 
+Next up is Site memberships, where you'll learn how to administer sites and define users and permissions. 
 
 ## Site memberships [](id=lp-6-1-ugen02-site-memberships-0)
 
 <!-- Need text here -->
-
 ## Summary [](id=summ-25)
 
+This chapter has provided an introduction to Liferay Web Content Management. We've seen how to create and manage pages within a site in Liferay. We've also seen how easy it is to create and edit web content using Liferay's rich WYSIWYG editor. This powerful tool enables users who don't have much experience with HTML and CSS to easily create and style web content of any type that you'd like to publish on the web. 
+
+Liferay WCM also includes a powerful workflow engine, allowing you to set up custom publishing rules to fit your organization. You can set up custom approval processes for different sites as well as for different kinds of content within a site. We'll examine sites in more detail in chapter 3. We'll also cover some more advanced web content management tools such as web content structures and templates, page templates and site templates, staging, and mobile device rules.
+
+<!-- needs to move to chapter 3's summary
 This chapter has been your guide to Liferay Web Content Management. We've seen how Liferay manages both simple content and advanced content with structures and templates. These powerful tools enable you to handle easily any type and amount of material you'd like to publish on the web. 
 
 Liferay WCM also includes a powerful staging environment, allowing you to stage content locally on the same server or remotely to another server. You can publish your site when you want it, on the schedule you choose. You can even create different variations of your site that can be worked on simultaneously. 
 
 Whether your site is small and static or large and dynamic, Liferay's WCM enables you to plan and manage it. With tools such as the WYSIWYG editor, structures and templates, you can quickly add and edit content. With the Web Content Display and Asset Publisher, you can rapidly select and configure what and how your content is displayed. And by using Liferay's integrated workflow, you can set up custom publishing rules to fit your organization. You will find that managing your site becomes far easier when using Liferay's Web Content Management system.
+-->
