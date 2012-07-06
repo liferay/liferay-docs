@@ -449,11 +449,11 @@ To enable workflow for Web Content, navigate to the control panel and select *Wo
 
 ![Figure 2.19: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
-As you'll discover in chapter 6, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
+As you'll discover in chapter 10, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
 
 #### Defining Workflows for Web Content [](id=lp-6-1-ugen03-defining-workflows-for-web-content-0)
 
-Let's set up Liferay's Workflow for the Nose-ster web site.
+Let's set up Liferay's Workflow for the Nose-ster web site. You must have the Kaleo workflow plugin installed in order for the workflow categories to appear in the control panel. Liferay's Kaleo workflow engine ships with CE versions of Liferay. For installation instructions for Liferay EE, please see chapter 10.
 
 1.  Go to the control panel and select *Workflow Configuration* from the left panel.
 
