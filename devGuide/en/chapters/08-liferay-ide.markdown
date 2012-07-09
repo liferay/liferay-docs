@@ -55,7 +55,7 @@ This section is a detailed guide to install Liferay IDE.
 
 9.	After restarting Eclipse go to Help &rarr; About and you should see and icon badge for Liferay IDE that shows you have it properly installed.
 
-	![Figure 7.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.PNG)
+	![Figure 7.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
 ### Alternative installation [](id=lp-6-1-dgen07-alternative-installation-0)
 

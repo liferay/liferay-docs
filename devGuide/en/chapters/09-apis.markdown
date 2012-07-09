@@ -164,7 +164,7 @@ You can see in the listing a naming convention involving classes with suffixes `
 
 You can view a listing of the services deployed on your portal by opening your browser to the URL of the format `http://[host]:[port]/api/secure/axis` for your *secure* services (services requiring user authentication) and the URL of the format `http://[host]:[port]/api/axis` for your services that do not require user authentication. For demonstration, we're using *secure* services. Here are the web services for `UserGroup`:
 
-![Figure 8.3: UserGroup Web Service listing](../../images/wsdl-summary-listing.PNG)
+![Figure 8.3: UserGroup Web Service listing](../../images/wsdl-summary-listing.png)
 
 ---
 
@@ -174,7 +174,7 @@ You can view a listing of the services deployed on your portal by opening your b
 
 Each web service is listed with its name, operations, and a link to its WSDL file. The WSDL is written in XML and provides a model for describing and locating the web service.
 
-![Figure 8.4: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.PNG)
+![Figure 8.4: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.png)
 
 As you'll see in the example in the next section, you pass in the WSDL URL along with your login credentials to the SOAP service locator for your service.
 
