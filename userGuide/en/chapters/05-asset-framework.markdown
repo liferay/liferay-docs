@@ -1,12 +1,21 @@
-# Leveraging the Asset Framework
+# Leveraging the Asset Framework [](id=lp-6-1-ugen05-leveraging-the-asset-framework-0)
 
-<!--   Need intro text & head ref   -->
+Any type of content in Liferay is considered an asset. In chapters 2 and 3, we already examined Liferay's most common type of asset: web content. Other types of assets include blog posts, wiki articles, message board posts, bookmarks, and documents. It's possible for developers to define custom asset types that utilize Liferay's asset framework. Originally, the asset framework was created to provide a mechanism for adding tags to blog entries, wiki articles, and web content without reimplement the same functionality multiple times. The asset framework has been greatly extended since then and it now supports tags, categories, comments, ratings, and asset relationships.
 
-## Tags and Categories [](id=lp-6-1-ugen03-tags-and-categories-0)
+This chapter covers the following topics:
+
+- Tagging and categorizing content
+- Using the Asset Publisher
+- Setting up display pages
+- Adding relationships between assets
+
+The Asset Publisher portlet is designed to display multiple assets. It has quite a few configuration options which we'll cover in this chapter. By default, abstracts (previews) of recently published assets are displayed by the Asset Publisher portlet and links to their full views are provided. You can configure the Asset Publisher portlet to display a table of assets, a list of asset titles, or the full content of assets. You can also configure the Asset Publisher to display only certain kinds of assets and you choose how many items to display in a list. The Asset Publisher portlet is very useful for displaying chosen types of content, for displaying recent content, and for allowing users to browse content by tags and categories. The Asset Publisher is designed to integrate with the Tags Navigation and Categories Navigation portlets to allow this.
+
+## Tagging and Categorizing Content [](id=lp-6-1-ugen03-tags-and-categories-0)
 
 Tags and categories are two important tools you can use to help organize information on your portal and make it easier for your users to find the content they're looking for through search or navigation. Tagging and categorizing web content is easy. You can do it at the bottom of the same form you use to add content. If you open the *Categorization* section of the form, you'll be presented with an interface for adding tags and categories.
 
-![Figure 3.18: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
+![Figure 5.1: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
 
 The control panel contains an interface for managing tags and categories for each site in the portal. This interface can be used to manage all your tags and categories in one place. It is important that you both tag and categorize your content when you enter it. Let's take a closer look at tags and categories.
 
@@ -14,7 +23,7 @@ The control panel contains an interface for managing tags and categories for eac
 
 Tags are an important tool that you can use to help organize information on your portal and make it easier for your users to find content that they're looking for. Tags are words or phrases that you can attach to any content on the website. Tagging content will make your search results more accurate, and enable you to use tools like the Asset Publisher to display content in an organized fashion on a web page. There are two ways to create tags: you can do it through the administrative console in the control panel, or on the fly as content is created.
 
-![Figure 4.54: The Add Tag Dialog](../../images/05-add-tag.png)
+![Figure 5.2: The Add Tag Dialog](../../images/05-add-tag.png)
 
 To create tags in the control panel, select the site that you want to create tags for, and select *Tags*. From this screen, you will be able to view any existing tags and make new ones. To create a new tag, simply click *Add Tag*. You'll then be asked for the name of the tag, and you'll have the ability to set permissions for viewing or managing the tag. You can also add properties to a tag. Properties basically act like tags for your tags. Structurally, properties are key-value pairs associated with specific tags that provide information about your tags. You can edit existing tags from the *Tags* window of on the control panel. You can change the tag name, change the tag's permissions, delete the tag, or add properties.
 
@@ -26,7 +35,7 @@ Categories are similar in concept to tags, but are designed for use by administr
 
 Adding vocabularies and categories is similar to adding tags. Once you've selected the site you want to work on, select *Categories* from the content section of the control panel, and you will be presented with the categories administration page.
 
-![Figure 4.55: Categories Administration Page](../../images/05-categories.png)
+![Figure 5.3: Categories Administration Page](../../images/05-categories.png)
 
 Clicking on a vocabulary on the left will display any categories that have been created under that vocabulary. You can create new vocabularies simply by clicking *Add Vocabulary* and providing a name for it. You can create categories in a similar fashion by choosing a vocabulary on the left, and then selecting *Add Category*. Like tags, you can also provide properties for categories. Once you have created some vocabularies and categories, you can take advantage of the full capabilities of categories by creating a nested hierarchy of categories. To nest categories, select what you want to be the parent category, then drag any category that you want to become a child category onto it. You will see a plus sign appear next to the name of the category you are dragging if you can add it to the selected parent category; if you see a red *x* that means that you cannot add that category as a subcategory of parent category that you have selected.
 
@@ -54,7 +63,7 @@ Let's first look at how we might select content manually. You'll see that it's v
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell the Asset Publisher that you want to select content manually. You can select what you want to be published within the portlet, or you can create new content  from within the Asset Publisher.
 
-![Figure 3.22: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 5.4: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
 
 Clicking *Add New* gives you a menu of options, enabling you to create the content right where you are. You can create blogs, bookmarks, calendar entries, documents, images, and of course, web content. Anything you create here is added to the list below of assets that are displayed by the portlet.
 
@@ -72,7 +81,7 @@ The Asset Publisher's default behavior is to select assets dynamically according
 
 **Asset Type:** Choose whether you'll display any asset or only assets of a specific type, such as only web content, only wiki entries, or any combinations of multiple types.
 
-![Figure 3.23: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+![Figure 5.5: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 **Filter Rules:** Add as many filters on tags or categories as you like. You can choose whether the content contains or does not contain any or all categories or tags that you enter.
 
@@ -116,7 +125,7 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 **Show Metadata:** Allows you to select from the available metadata types (see below).
 
-![Figure 3.24: Show Metadata](../../images/portal-admin-ch4_html_m409b2939.jpg)
+![Figure 5.6: Show Metadata](../../images/portal-admin-ch4_html_m5.xb2939.jpg)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS Feeds.
 
@@ -134,11 +143,11 @@ To create a Display Page, you can create a page yourself, add an Asset Publisher
 
 You may now be thinking, "Wait, you just told me that each Web Content item has its own URL, and that this is somehow related to pages where we display a whole bunch of content on the same page?" Yes. That's exactly what I said. Just watch--create a display page called *My Web Content Display Page* somewhere on your portal, using the *Content Display Page* template. Now, on a different page, add a Web Content Display portlet. Click the *Add Web Content* button, enter a title and some content, click on *Display Page* at the right, and select the Display Page you just created. Then click *Publish*.
 
-![Figure 3.16: Selecting a Display Page](../../images/04-web-content-display-page.png)
+![Figure 5.7: Selecting a Display Page](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, you can now click the *Read More* link to display the content. Notice that the canonical URL for content appears in your browser's address bar. If you create your own custom display page, any additional portlets that you place on the page are displayed along with the content when you access it via the canonical URL. If you used the *Content Display Page* page template for your Display page, it not only features a configured Asset Publisher portlet but also a Tags Navigation, a Categories Navigation, and a Search portlet. These tools help users to quickly identify relevant content.
 
-![Figure 3.17: The Canonical URL](../../images/04-web-content-canonical-url.png)
+![Figure 5.8: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
 Let's move on to another new featured introduced by Liferay 6.1. 
 
@@ -148,4 +157,6 @@ Related Assets is a new feature in Liferay 6.1 that enables you to connect any n
 
 The Related Assets portlet is based on the Asset Publisher and possseses essentially the same interface with one key difference. The Asset publisher displays any content that meets the criteria selected in the portlet configuration. The Related Assets portlet only displays content that meets the criteria, and also is listed as a related asset for a piece of content that is currently published on the page where it is placed.
 
-Let's move on, now, to the Calendar portlet.
+## Summary
+
+In this chapter, we explored Liferay's asset framework. Any type of content in Liferay is considered an asset and can utilize the features provided by the asset framework: tags, categories, comments, ratings, and relationships. We examined the Asset Publisher portlet and looked at the many configuration options for choosing what kinds of assets to display and how to display them. We saw that the Asset Publisher portlet is designed to integrate with the Tags Navigation and Categories navigation portlets to allow users to browse content more easily. We also learned about the Display Page attribute of web content, the Content Display Page page template, and canonical URLs for assets. Assets can have display page associated with them so that the full view of the asset is displayed on the display page. The display page of an asset is used in the asset's canonical URL.

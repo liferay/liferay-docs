@@ -1,26 +1,23 @@
-<!--
-# Personalization, Collaboration tools, and social networking
+# Personalization and Customization [](id=drools)
+
+<!--  Old header
+ Personalization, Collaboration tools, and social networking [](id=lp-6-1-ugen06-personalization-collaboration-tools-and-social-networking-0)
+There is significant content missing from this chapter.
+Needs text
+## User  site [](id=lp-6-1-ugen06-user--site-0)
+Needs text
+## User public site [](id=lp-6-1-ugen06-user-public-site-0)
+Needs text
+## Automatic personalization of content (via rules integration) [](id=lp-6-1-ugen06-automatic-personalization-of-content-via-rules-integration-0)
+Needs text
 -->
-
-<!-- section headers for Personalization & customization
-
-There seems to be significant content missing from this chapter.
-
-# Personalization and customization
-## User  site
-## User public site
-## Automatic personalization of content (via rules integration)
-## Setting preferences to customize applications
-
--->
-
-# Drools [](id=drools)
+## Setting preferences to customize applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
 
 Liferay Portal Enterprise Edition provides an implementation of a JSR-94 compliant rules engine. This rules engine is provided as a Web Plugin and is based on the popular open source Drools project. 
 
-## Why use a rules engine?  [](id=why-use-a-rules-engine-)
+### Why use a rules engine?  [](id=why-use-a-rules-engine-)
 
 If you are not familiar with rules engines, you may be wondering why you would want to use one. In most applications, complex rule processing often takes the form of nested `if-else` blocks of code which can be very difficult to decipher and to maintain. If rules change, a developer must work with a business user to define the new rules. The developer must then read through the existing logic to understand what is happening and make the necessary modifications. The changes must then be recompiled, tested, and redeployed. A rules engine provides a means to separate the rules or logic of an application from the remaining code. Separating these rules provides several distinct advantages. 
 
@@ -32,7 +29,7 @@ If you are not familiar with rules engines, you may be wondering why you would w
 
 After all this, you may be interested in using Liferay's rules engine, so let's get started with it. 
 
-## Installation [](id=installati-4)
+### Installation [](id=installati-4)
 
 The Drools Web Plugin is available to Liferay Enterprise Edition customers through the customer portal. In can also be downloaded and installed through the built-in plugin repository. The name is `Drools Web`, and you'll find it in the list of web plugins. 
 
@@ -40,7 +37,7 @@ The Drools Web Plugin provides a rules engine implementation, but by itself it d
 
 Let's examine the sample portlet to see how it works. 
 
-### Configuring the sample Drools portlet [](id=lp-6-1-ugen07-configuring-the-sample-drools-portlet-0)
+#### Configuring the sample Drools portlet [](id=lp-6-1-ugen07-configuring-the-sample-drools-portlet-0)
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 
@@ -53,14 +50,12 @@ Log in as an administrative user and navigate to the Control Panel. Once in the 
 The default rule that's being evaluated displays a list of assets based on the current user's address. For example, if the current user's country is set to Canada, Mexico, or the United States, the Sample Drools Portlet displays a list of assets that have been tagged with the *west coast symposium* tag.
 
 <!-- | TODO: Need screen shots here. | --> 
-
 <!-- | TODO: We need to point to what we're about to do before we do it; otherwise this is hard to follow. | --> 
-
 The Sample Drools Portlet plugin also contains a second rule that returns personalized content based on the user's net worth set in the My Account &rarr; Custom Fields section of the Control Panel. To see this rule in action, add a second instance of the Sample Drools Portlet to a page. Once added to the page, select the *Options* icon (*the wrench*) and then select *Configuration*. You need to replace the rules defined in the *Rules* section of the Configuration screen with contents of the *rules_user_custom_attribute_content.drl* file. The rule file can be found in the deployed portlet at `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl`. In the same Configuration screen, add `networth` to the user-custom-attribute-names field. Save your changes and close the pop-up window. Navigate to the Control Panel and add a Custom Field on the User object with the Key `networth`. Navigate to *My Account* and select the Custom Fields link on the right side of the screen. Enter a net worth of 150000 and save the record. While still in the Control Panel, add a new Web Content entry to the default liferay.com community. Before publishing the Web Content entry, tag the article with *high net worth* and then save the entry. Now, navigate back to the liferay.com community and the Web Content should be displayed in the second Sample Drools Portlet added to the page.
 
 Now that you can see how it works in practice, let's look closer at the rules themselves. 
 
-### Rules Definitions [](id=lp-6-1-ugen07-rules-definitions-0)
+#### Rules Definitions [](id=lp-6-1-ugen07-rules-definitions-0)
 
 Rule definitions can be written using Drools' declarative language. Rule files are text files that often have a .drl extension. A rule file can contain multiple rules. In addition to the standard Drools' declarative language, a domain specific language (DSL) can be created for your specific problem domain. <!-- | TODO: Explain. | --> Creating a DSL can make your rules even easier for business users to create and maintain your applications rules but does require some additional work up front. For additional information on creating a DSL for your problem domain please refer to the Domain Specific Languages section of the official Drools Documentation at [http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217). 
 
