@@ -7,7 +7,7 @@ This intro sounds like it would work for the next chapter, "Using the Control pa
 -->
 This chapter covers the following topics:
 
--   Using the control panel to manage users, organizations, sites, user groups, roles and teams
+-   Using the control panel to manage users, organizations, user groups, and roles
 
 -   Using the control panel to manage password policies, authentication settings, and global user settings
 
@@ -663,4 +663,6 @@ If you have defined other user groups, sites or roles you want newly created use
 
 ## Summary
 
+In this chapter, we began to examine Liferay's control panel. Site memberships and teams aren't the only way for portal administrators to group and manage users: organizations can be used to arrange users into hierarchical structures and user groups are a flexible way to collect ad hoc groups of users. You can create roles to define permissions and scope them for the entire portal or for a particular site or organization. User groups can be assigned to roles; in this case, each member of the user group is assigned to the role. 
 
+We also look at how to configure password policies for users. Next, we also looked at the different authentication options provided by Liferay. You can configure Liferay so that users can authenticate via LDAP, CAS, Facebook, NTLM, OpenID, OpenSSO, or SiteMinder. Finally, we examined some general configuration options for the portal users. We'll continue our coverage of Liferay's control panel in the next chapter.
