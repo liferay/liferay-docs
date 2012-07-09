@@ -1,7 +1,7 @@
 
 # Liferay Frameworks [](id=liferay-framewor-1)
 
-This chapter provides you with a brief overview of several of the essential frameworks provided by Liferay to developers. A framework, in the context of an API, is a set of APIs and configuration that is designed for an specific purpose such as enhancing your applications with a permission system, with tags, with categories, comments, etc.
+This chapter provides you with a brief overview of several of the essential frameworks provided by Liferay to developers. A framework, in the context of an API, is a set of APIs and configuration that is designed for a specific purpose such as enhancing your applications with a permission system, with tags, with categories, comments, etc.
 
 This chapter will keep evolving with more information about the existing APIs and frameworks and how to use it. So look back for more information often.
 
@@ -71,11 +71,29 @@ Columns specified in `service.xml` will be created in the database with a data t
 
 ### Generate the Service [](id=lp-6-1-dgen09-generate-the-service-0)
 
-Open a terminal window in your `portlets/my-greeting-portlet` directory and enter this command:
+Next, we'll build a service using our `service.xml`. We can do this by using either of the following methods: using *Liferay Developer Studio* or using the terminal window.
+
+***Using Developer Studio:*** From the *Package Explorer*, open your `service.xml` file found in your  `my-greeting-portlet/docroot/WEB-INF` folder. By default, the file opens up in the *Service Builder Editor*. Make sure you are in *Overview* mode. Then, select *Build Services*. 
+
+![Figure 10.1: *Overview* mode in editor](../../images/10-frameworks-1.png)
+
+You should receive a message in your console stating BUILD SUCCESSFUL along with a list of generated files. An overview of these files can be found later on in this section.
+
+The *Overview* mode in Developer Studio's *Service Builder Editor* can be used to build services or build web service deployment descriptors (WSDDs). The editor also has *Diagram* and *Source* modes. If we select *Diagram*, we are given a graph structured background onto which we can add entities and relationships from the *Palette* available on the right hand side of the editor. Here is a view of the editor in *Diagram* mode:
+
+![Figure 10.2: *Diagram* mode in editor](../../images/10-frameworks-2.png)
+
+Lastly, select *Source* mode to edit the XML source directly. Here is an example `service.xml` shown in *Source* the editor's mode:
+
+![Figure 10.3: *Source* mode in editor](../../images/10-frameworks-3.png)
+
+Developer Studio offers many options to help automate creating interfaces and classes for your database persistence and service layers.
+
+***Using the terminal:*** Open a terminal window in your `portlets/my-greeting-portlet` directory and enter this command:
 
 	ant build-service
 
-The service has been generated successfully when you see BUILD SUCCESSFUL In the terminal window, you should see that a large number of files have been generated. An overview of these files is provided below:
+The service has been generated successfully when you see BUILD SUCCESSFUL in the terminal window, you should see that a large number of files have been generated. An overview of these files is provided below:
 
 -   Persistence
 
@@ -160,7 +178,9 @@ We will add the database interaction methods to this service layer class. Add th
 
 Before you can use this new method, you must add its signature to the `BookLocalService` interface by running service builder again.
 
-Navigate to the root directory of your portlet in the terminal and run:
+***Using Developer Studio:*** As we did before, open your `service.xml` file and make sure you are in the *Overview* mode. Then, select *Build Services*.
+
+***Using the terminal:*** Navigate to the root directory of your portlet in the terminal and run:
 
     ant build-service
 
@@ -403,7 +423,7 @@ The first step is to define your resources and permissions (or *actions*). So le
 		</model-resource>
 	</resource-action-mapping>
 
-Permissions in the blogs portlet are defined at several different levels, coinciding with the different sections of the resource-actions XML file. In the `<portlet-resource>` level, actions and default permissions are defined on the portlet itself. Changes to portlet level permissions are performed on a per-site basis. These settings affect whether users can add the portlet to a page, edit the portlet's configuration, or view the portlet at all, regardless of portlet's content. All these actions are defined inside the `<supports>` tag for the permissions of the portlet resource. The default portlet-level permissions for members of the site are defined inside the `<site-member-defaults>` tag. In the case of this blogs portlet, members of the site should be able to view any blogs in the site. Likewise, default guest permissions are defined in the `<guest-defaults>` tag. Lastly, the `<guest-unsupported>` tag contains permissions forbidden to guests. So in the case of this portlet, guests cannot be given permission to configure the portlet, even by a user with the administrator role.
+Permissions in the blogs portlet are defined at several different levels, coinciding with the different sections of the resource-actions XML file. In the `<portlet-resource>` level, actions and default permissions are defined on the portlet itself. Changes to portlet level permissions are performed on a per-site basis. These settings affect whether users can add the portlet to a page, edit the portlet's configuration, or view the portlet at all, regardless of portlet's content. All these actions are defined inside the `<supports>` tag for the permissions of the portlet resource. The default portlet-level permissions for members of the site are defined inside the `<site-member-defaults>` tag. In the case of this blogs portlet, members of the site should be able to view any blog in the site. Likewise, default guest permissions are defined in the `<guest-defaults>` tag. Lastly, the `<guest-unsupported>` tag contains permissions forbidden to guests. So in the case of this portlet, guests cannot be given permission to configure the portlet, even by a user with the administrator role.
 
 The next level of permissions is defined in the `<model-resource>` section. This level of permissions is based on the *scope* of an individual instance of the portlet. A *scope* in Liferay is simply a way of specifying how widely the data from an instance of a portlet is shared. For example, if you place a blogs portlet on a page in the guest site and then place another blogs portlet on another page in the *same* site, the two blogs will share the same set of posts. This demonstrates the default or *site-level* scope. However, if you reconfigure one of the two blogs changing its scope to the current page, that blogs portlet instance will no longer share content with the other instance (or any of the other blogs instances in that site). Thus, with respect to permissions, a portlet *instance* can either span an entire site or be restricted  to a single page.
 

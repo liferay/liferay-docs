@@ -15,7 +15,22 @@ As with portlets, layout templates, and themes, hooks are created and managed us
 
 ## Creating a Hook [](id=creating-a-ho-4)
 
-Hooks are stored within the `hooks` directory of the Plugins SDK. Navigate to this directory in a terminal and enter the following command to create a new hook (Linux and Mac OS X):
+Hooks are stored within the `hooks` directory of the Plugins SDK. We will demonstrate two methods that can be used to create your hooks.
+
+***Using Developer Studio:*** Go to File &rarr; New &rarr; Liferay Project
+
+Next, go through the following steps to setup your new hook:
+
+1. Enter *example* for your Project name and *Example* for your Display name
+2. Select the Plugins SDK and Portal Runtime that you've configured
+3. Select the *Hook* Plugin Type
+4. Click *Finish*
+
+![Figure 6.1: Creating your hook plugin](../../images/06-hooks-1.PNG)
+
+Notice the Plugins SDK automatically adds "hook" to the project name after its creation. When creating a new plugin in Developer Studio, we can either create a completely new plugin or add a new plugin to an existing plugin project.
+
+***Using the terminal:*** Navigate to your Plugins SDK directory in a terminal and enter the following command to create a new hook (Linux and Mac OS X):
 
     ./create.sh example "Example"
 
@@ -27,11 +42,44 @@ You should get a BUILD SUCCESSFUL message from Ant, and there will now be a new 
 
 ### Deploying the Hook [](id=lp-6-1-dgen05-deploying-the-hook-0)
 
-Open a terminal window in your `hooks/example-hook` directory and enter this command:
+***Using Developer Studio:*** Simply drag your hook project onto your server.
+
+![Figure 6.2: Deploying your hook plugin](../../images/06-hooks-4.PNG)
+
+Upon deploying your hook, your server will output messages indicating your hook was read, registered and is now available for use.
+
+	Reading plugin package for example-hook
+	Registering hook for example-hook
+	Hook for example-hook is available for use
+
+If at any time you need to redeploy this plugin while in Developer Studio, right click your plugin's icon located underneath your server and select *Redeploy*.
+
+![Figure 6.3: Redeploying your hook plugin](../../images/06-hooks-2.PNG)
+
+Unlike our previous portlets and themes examples, the hook plugin does not do anything yet. After a few edits and file additions, you will have a fully functional hook plugin!
+
+***Using the terminal:*** Open a terminal window in your `hooks/example-hook` directory and enter this command:
 
     ant deploy
 
 You should get a BUILD SUCCESSFUL message, which means that your hook is now being deployed. If you switch to the terminal window running Liferay, and wait for a few seconds, you should see the message "Hook for example-hook is available for use." However, unlike portlets or themes, your new hook doesn't actually do anything yet.
+
+### Anatomy of the Hook [](id=lp-6-1-dgen06-anatomy-of-the-hook-0)
+
+In order to create a useful hook, we will need to edit existing files and create new files within the structure. The full structure of the example-hook is shown below:
+
+-	example-hook/
+	-	docroot/
+		-	META-INF/
+		-	WEB-INF/
+			-	lib
+			-	liferay-hook.xml
+			-	liferay-plugin-package.properties
+	-	build.xml
+	
+In Developer Studio, the hook structure can be viewed in the *Package Explorer* as shown below:
+
+![Figure 6.4: Package Explorer view of hook plugin](../../images/06-hooks-3.PNG)
 
 ## Overriding a JSP [](id=overriding-a-j-4)
 
@@ -47,7 +95,7 @@ Now, if you look inside the `liferay-portal-[version]/tomcat-[tomcat-version]/we
 
 ## Customizing JSPs without overriding the original [](id=customizing-jsps-without-overriding-the-origin-1)
 
-The drawback of overridding a JSP is that if the original changes (for example to fix a bug) then you have to also change your customized file in order to benefit from the change to the original.
+The drawback of overriding a JSP is that if the original changes (for example to fix a bug) then you have to also change your customized file in order to benefit from the change to the original.
 
 If you wish to avoid this drawback and make your JSP modifications less invasive, you can render the original JSP into a string, and then modify it dynamically afterwards. This makes it possible to change minor elements of a JSP, such as adding a new heading or button, without needing to worry about modifying your hook every time you upgrade Liferay. Here is an example that customizes the search portlet removing the ability to a search provider in the browser:
 
@@ -162,7 +210,7 @@ For a complete list of the services available and the methods of each of them ch
 
 ## Overriding a *Language.properties* File [](id=overriding-a-<em>language-properties<-em>-fi-1)
 
-In addition to the capabilities of hooks already discussed thus far, you can also override a `Language.properties` files from a hook, allowing you to change any of the messages displayed by Liferay to suit your needs. The process is extremely similar to the ones we have just described. All you need to do is create a *Language* file for the language whose messages you want to customize and then refer to it from your `liferay-hook.xml`. For example, to override the Spanish and French message translations, create *Language* files of the same name and similar path in your hook project and refer to them in your `liferay-hook.xml` file as in the following:
+In addition to the capabilities of hooks already discussed thus far, you can also override a `Language.properties` file from a hook, allowing you to change any of the messages displayed by Liferay to suit your needs. The process is extremely similar to the ones we have just described. All you need to do is create a *Language* file for the language whose messages you want to customize and then refer to it from your `liferay-hook.xml`. For example, to override the Spanish and French message translations, create *Language* files of the same name and similar path in your hook project and refer to them in your `liferay-hook.xml` file as in the following:
 
     <hook>
 		...
@@ -173,7 +221,7 @@ In addition to the capabilities of hooks already discussed thus far, you can als
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** as always, please check the DTD of each Liferay XML file you modify for the elements and attributes that can be included in the XML and the specified order for those elements.
+![tip](../../images/tip-pen-paper.png)**Tip:** As always, please check the DTD of each Liferay XML file you modify for the elements and attributes that can be included in the XML and the specified order for those elements.
 
 ---
 
