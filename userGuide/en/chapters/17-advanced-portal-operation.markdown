@@ -1,6 +1,18 @@
 # Advanced Portal Operation [](id=lp-6-1-ugen17-advanced-portal-operation-0)
 
-<!-- Intro?    -->
+In this chapter we discuss several advanced features of Liferay Portal, including audit trails and portal maintainence, backup, and logging. Audit trails allow portal administrators to track the activities of portal users--this can be very useful for troubleshooting or figuring out who's resposible for certain actions that have taken place on your portal. It's generally not much more complicated to maintain a running Liferay instance than it is to maintain the application server upon which it's running. However, Liferay provides tools for logging, patching, and upgrading Liferay that you should know how to use. It's also important to follow secure backup procedures to protect your Liferay instance's source code, database, and properties files.
+
+We'll discuss the following topics in this section:
+
+-   Audit trails
+-   Liferay Monitoring using Google Analytics
+-   Backing Up a Liferay Installation
+-   Changing Logging Levels
+-   Patching Liferay
+-   Upgrading Liferay
+
+Let's get started with audit trails.
+
 ## Audit Trails [](id=using-audit-trails)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
@@ -35,9 +47,7 @@ We'll come back to Tom, Dick and Harry's story later in the chapter. For now, le
 
 ### Installing and configuring the audit plugins [](id=installing-and-configuring-the-audit-plugins)
 
-Liferay's audit functionality is composed of two parts: a back-end piece that hooks into Liferay events and a front-end piece that gives you an interface to see what's happening. Both of these are available as EE-only plugins in the Customer Portal or Liferay Marketplace, and you'll need to install both to get audit functionality working (plugins installation is covered in chapter 9). 
-
-<!-- check chapter reference  -->
+Liferay's audit functionality is composed of two parts: a back-end piece that hooks into Liferay events and a front-end piece that gives you an interface to see what's happening. Both of these are available as EE-only plugins in the Customer Portal or Liferay Marketplace, and you'll need to install both to get audit functionality working (plugins installation is covered in chapter 13). 
 
 Once installed, there are two properties in your `portal-ext.properties` file which you can use to tweak the settings. 
 
@@ -137,17 +147,9 @@ Tom and Dick back away slowly from Melvin's cube as Harry and Melvin continue to
 
 <!-- needs transition -->
 
-## Maintainenance [](id=maintaining-a-liferay-port-5)
+## Maintainence [](id=maintaining-a-liferay-port-5)
 
-It's not much harder to maintain a running implementation of Liferay Portal than it is to maintain the application server environment upon which it is running. There are, however, several factors which administrators should be aware of when they are responsible for a running instance of Liferay. This chapter addresses these issues and outlines some specifics about how to keep a running Liferay instance stable and secure.
-
-We discuss the following topics in this chapter:
-
--   Liferay Monitoring using Google Analytics
--   Backing Up a Liferay Installation
--   Changing Logging Levels
--   Patching Liferay
--   Upgrading Liferay
+It's not much harder to maintain a running implementation of Liferay Portal than it is to maintain the application server environment upon which it is running. There are, however, several factors which administrators should be aware of when they are responsible for a running instance of Liferay. This section addresses these issues and outlines some specifics about how to keep a running Liferay instance stable and secure.
 
 The discussion on backup covers what parts of Liferay should be backed up. We won't cover specific backup software or procedures; generally, most organizations have standards for doing backups of their systems, and Liferay as a Java EE application fits well into these standards.
 
@@ -181,11 +183,9 @@ Let's look at the items that need to be backed up in your Liferay installation.
 
 #### Backing up Liferay's file system [](id=lp-6-1-ugen16-backing-up-liferays-file-system-0)
 
-Liferay's configuration file, `portal-ext.properties`, gets stored in the *Liferay Home* folder, which is generally one folder up from where your application server is installed (see chapter 11 for specific details for your application server). At a minimum, this file should be backed up, but it is generally best to back up your whole application server.
+Liferay's configuration file, `portal-ext.properties`, gets stored in the *Liferay Home* folder, which is generally one folder up from where your application server is installed (see chapter 14 for specific details for your application server). At a minimum, this file should be backed up, but it is generally best to back up your whole application server.
 
-<!--  check chapter reference  (above and below) -->
-
-If you've followed the non-plugin procedure in the previous chapter to modify your Ehcache configuration, you'll have cache configuration files in the deploy location of Liferay. You'll need to back up this location. If you're using the plugin procedure (i.e., the recommended procedure), your cache configuration settings are stored in your source code repository, which is backed up separately. 
+If you've followed the non-plugin procedure (see chapter 19) to modify your Ehcache configuration, you'll have cache configuration files in the deploy location of Liferay. You'll need to back up this location. If you're using the plugin procedure (i.e., the recommended procedure), your cache configuration settings are stored in your source code repository, which is backed up separately. 
 
 Liferay stores configuration files, search indexes, and cache information in a folder called `data` in Liferay Home. If you're using the File System store or the Advanced File System store, the media repository is stored here (by default) too. You should always back up the contents of your Liferay Home folder.
 
@@ -197,9 +197,7 @@ That about covers the file system locations Liferay uses. Next, let's discuss ho
 
 Liferay's database is the central repository for all of the Portal's information and is the most important component that needs to be backed up. You can do this by backing up the database live (if your database allows this) or by exporting the database and then backing up the exported file. For example, MySQL ships with a `mysqldump` utility which allows you to export the entire database and data into a large SQL file. This file can then be backed up. In case of a database failure, this file can be used to recreate the state of the database at the time the dump was created.
 
-If you're using Liferay's Documents and Media Library with the Jackrabbit JSR-170 repository to store documents in a database, the Jackrabbit database should be backed up also. If you've gone against our advice in the previous chapter and put your search index into a database, that database should be backed up as well. 
-
-<!--  check chapter reference  -->
+If you're using Liferay's Documents and Media Library with the Jackrabbit JSR-170 repository to store documents in a database, the Jackrabbit database should be backed up also. If you've placed your search index into a database (not recommended; see chapter 19 for information on using Cluster Link or Solr), that database should be backed up as well. 
 
 Search indexes can be backed up as well, if you wish to avoid reindexing your entire portal after you do your restore. This is easiest to do if you have a separate Solr environment upon which your index is stored. If you're in a clustered configuration and you're replicating indexes, you'll need to back up each index replica. 
 
@@ -257,9 +255,7 @@ Now that you know what patching is all about, let's check out the tool.
 
 If you're using a Liferay bundle, congratulations! The patching tool is already installed. Your job isn't done yet, however, because Liferay *might* have updated the patching tool. Always check the Customer Portal to see if the patching tool has been updated first. But even if you forget to check, the patching tool will tell you if it needs to be updated when you run it. A lot of planning and forethought has gone into the patching system to make it run as smoothly as possible.
 
-You follow the same procedure whether you're installing or upgrading the patching tool. Once you've obtained it from the customer portal, unzip it to the Liferay Home folder. This is the folder where you've placed your `portal-ext.properties` file and where by default the `data` folder resides. This is generally one folder up from where your application server is installed, but some application servers are different. If you don't know where Liferay Home is on your system, check chapter 11 to see where this folder is for your specific application server.
-
-<!--  check chapter reference  -->
+You follow the same procedure whether you're installing or upgrading the patching tool. Once you've obtained it from the customer portal, unzip it to the Liferay Home folder. This is the folder where you've placed your `portal-ext.properties` file and where by default the `data` folder resides. This is generally one folder up from where your application server is installed, but some application servers are different. If you don't know where Liferay Home is on your system, check chapter 14 to see where this folder is for your specific application server.
 
 If you're upgrading the patching tool, all you need to do is unzip the new version on top of the old version. Note that if you're doing this on LUM (Linux, Unix, Mac) machines, you'll need to make the `patching-tool.sh` script executable.
 
@@ -410,14 +406,12 @@ As you can see, upgrading a bundle is generally pretty simple. But not everybody
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
-<!--  check chapter references below  -->
-
-   1. Verify your application server is supported by Liferay. You can do this by viewing the appropriate document on the Customer Portal (EE), in chapter 11 (because there are install instructions for it), or on liferay.com (CE). If your application server isn't supported by Liferay 6.1, *do not continue!*  You'll need to upgrade or switch to a supported application server first. 
+   1. Verify your application server is supported by Liferay. You can do this by viewing the appropriate document on the Customer Portal (EE), in chapter 14 (because there are installation instructions for it), or on liferay.com (CE). If your application server isn't supported by Liferay 6.1, *do not continue!*  You'll need to upgrade or switch to a supported application server first. 
    2. Obtain the Liferay Portal .war file and the dependency .jars archive. 
    3. Copy your customized `portal-ext.properties` file to a safe place and review it as described above, making all the appropriate changes.  
    4. Undeploy the old version of Liferay and shut down your application server.
-   5. Copy the new versions of Liferay's dependency .jars to a location on your server's class path, overwriting the ones you already have for the old version of Liferay. This location is documented for your application server in chapter 11. 
-   6. Deploy the new Liferay .war file to your application server. Follow the deployment instructions in chapter 11.
+   5. Copy the new versions of Liferay's dependency .jars to a location on your server's class path, overwriting the ones you already have for the old version of Liferay. This location is documented for your application server in chapter 14. 
+   6. Deploy the new Liferay .war file to your application server. Follow the deployment instructions in chapter 14.
    7. Start (or, if your app server has a console from which you've installed the .war, restart) your application server. Watch the console as Liferay starts: it should upgrade the database automatically. Verify your portal is operating normally, and then install any plugins you were using in your old version of Liferay. Make sure you use the versions of theose plugins designed for Liferay 6.1. If you have your own plugins, your development team will need to migrate the code in these ahead of time and provide .war files to you. 
    8. Browse around in your new installation and verify everything is working. Have your QA team test everything. If all looks good, you're finished. 
 
