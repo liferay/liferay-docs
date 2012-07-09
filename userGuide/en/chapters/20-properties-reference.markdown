@@ -4794,9 +4794,7 @@ Set this property to `true` to enable directory indexing.
 
 	web.server.servlet.directory.indexing.enabled=false	
 
-<!-- Breadcrumbs on either side of the Widget Servlet don't link to the page, or else the page itself is screwy. Also the link from the table of contents doesn't work.   -->
-	
-## Widget Servlet [](id=widget-servlet)
+## Widget Servlet [](id=lp-6-1-ugen20-widget-servlet-0)
 
 Set the servlet mapping for the widget servlet.
 
