@@ -27,7 +27,24 @@ First, let's create the portlet that we'll use throughout this chapter.
 
 ## Creating a Portlet [](id=creating-a-portl-3)
 
-Creating portlets with the Plugins SDK is extremely simple. As noted before, there is a *portlets* folder inside of the Plugins SDK folder. This is where your portlet projects will reside. To create a new portlet, first decide what its name is going to be. You need both a project name (without spaces) and a display name (which can have spaces). When you have decided on your portlet's name, you are ready to create the project. For the greeting portlet, the project name is "my-greeting", and the portlet title is "My Greeting". Navigate to the `portlets` directory in the terminal and enter the following command (Linux and Mac OS X):
+Creating portlets with the Plugins SDK is extremely simple. As noted before, there is a *portlets* folder inside of the Plugins SDK folder. This is where your portlet projects will reside. To create a new portlet, first decide what its name is going to be. You need both a project name (without spaces) and a display name (which can have spaces). When you have decided on your portlet's name, you are ready to create the project. For the greeting portlet, the project name is "my-greeting", and the portlet title is "My Greeting". There are several different ways to create this portlet. First, we will demonstrate by using Liferay Developer Studio.
+
+***In Developer Studio:*** Go to File &rarr; New &rarr; Liferay Project
+
+Next, go through the following steps to setup your new portlet:
+
+1. Fill in the *Project* and *Display* names with *my-greeting-portlet* and *My Greeting*, respectively
+2. Select the Liferay Plugins SDK and Portal Runtime that you've configured
+3. Select *Portlet* as your Plugin type
+4. Click *Finish*
+
+![Figure 3.1: Creating the My Greeting portlet](../../images/02-portlet-development-1.PNG)
+
+When using Developer Studio to create new plugins, you have the option to either create a new plugin project or create a new plugin in an existing project. For example, you can create multiple portlet plugins in the same plugin project.
+
+***Using the Terminal:*** Alternatively, you can create your portlet from the terminal.
+
+Navigate to the `portlets` directory in the terminal and enter the following command (Linux and Mac OS X):
 
     ./create.sh my-greeting "My Greeting"
 
@@ -57,7 +74,17 @@ Liferay provides a mechanism called auto-deploy that makes deploying portlets (a
 
 ---
 
-Open a terminal window in your `portlets/my-greeting-portlet` directory and enter this command:
+***To deploy in Developer Studio*** - Simply drag your portlet project onto your server. Upon deploying your plugin, your server will output messages indicating that your plugin was read, registered and is now available for use.
+
+	Reading plugin package for my-greeting-portlet
+	Registering portlets for my-greeting-portlet
+	1 portlet for my-greeting-portlet is available for use
+	
+If at any time you need to redeploy your portlet while in Developer Studio, right click your portlet located underneath your server and select *Redeploy*.
+
+![Figure 3.2: Redeployment of the My Greeting portlet](../../images/02-portlet-development-2.PNG)
+
+***To deploy using the terminal*** - Open a terminal window in your `portlets/my-greeting-portlet` directory and enter this command:
 
     ant deploy
 
@@ -65,7 +92,7 @@ You should get a BUILD SUCCESSFUL message, which means that your portlet is now 
 
 Go to your web browser and login to the portal as explained earlier. Then, hover over *Add* at the top of the page, and click on *More*. Select the *Sample* category, and then click *Add* next to *My Greeting*. Your portlet should appear in the page below.
 
-![Figure 3.1: Adding the My Greeting portlet](../../images/portlets-add-my-greeting-portlet.PNG)
+![Figure 3.3: Adding the My Greeting portlet](../../images/portlets-add-my-greeting-portlet.PNG)
 
 Congratulations, you've just created your first portlet!
 
@@ -100,6 +127,10 @@ The portlet we just created is a fully functional portlet which can be deployed 
 
 New portlets are configured by default to use the MVCPortlet framework, a very light framework that hides part of the complexity of portlets and makes the most common operations easier. MVCPortlet uses separate JSPs for each page in the portlet. By default, MVCPortlet uses a JSP with the mode name for each of the registered portlet modes. For example edit.jsp for the edit mode, help.jsp for the help mode, ... etc.
 
+Here is a snapshot of files for a portlet plugin named *my-greeting portlet* as shown in Developer Studio's *Package Explorer*. We will add and edit files in this directory to create a new and improved portlet!
+
+![Figure 3.4: Package Explorer of the My Greeting portlet](../../images/02-portlet-development-3.PNG)
+
 The **Java Source** is stored in the `docroot/WEB-INF/src` folder
 
 The **Configuration Files** are stored in the `docroot/WEB-INF` folder. The standard JSR-286 portlet configuration file `portlet.xml` is here, as well as three Liferay-specific configuration files. The Liferay-specific configuration files are completely optional, but are important if your portlets are going to be deployed on a Liferay Portal server. Described below are the Liferay-specific configuration files:
@@ -118,38 +149,9 @@ If you are new to portlet development, this section will give you a better under
 
 **docroot/WEB-INF/portlet.xml**
 
-When using the Plugins SDK, the default content of the portlet descriptor is as follows:
+When using the Plugins SDK, the default content of the portlet descriptor is as follows (shown using Developer Studio's Portlet Application Configuration Editor):
 
-    <portlet>
-	<portlet-name>my-greeting</portlet-name>
-	<display-name>My Greeting</display-name>
-	<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
-	<init-param>
-	    <name>view-template</name>
-	    <value>/view.jsp</value>
-	</init-param>
-	<expiration-cache>0</expiration-cache>
-	<supports>
-	    <mime-type>text/html</mime-type>
-	</supports>
-	<portlet-info>
-	    <title>My Greeting</title>
-	    <short-title>My Greeting</short-title>
-	    <keywords>My Greeting</keywords>
-	</portlet-info>
-	<security-role-ref>
-	    <role-name>administrator</role-name>
-	</security-role-ref>
-	<security-role-ref>
-	    <role-name>guest</role-name> 
-	</security-role-ref>
-	<security-role-ref>
-	    <role-name>power-user</role-name>
-	</security-role-ref>
-	<security-role-ref>
-	    <role-name>user</role-name>
-	</security-role-ref>
-    </portlet>
+![Figure 3.5: Portlet XML file of the My Greeting portlet](../../images/02-portlet-development-4.PNG)
 
 Here is a basic summary of what each of the elements represents:
 
@@ -185,34 +187,9 @@ Portlet-info defines portlet information.
 
 This element contains the declaration of a security role reference in the code of the web application. Specifically in Liferay, the `role-name` references which roles can access the portlet.
 
-**docroot/WEB-INF/liferay-portlet.xml** - In addition to the standard `portlet.xml` options, there are optional Liferay-specific enhancements for Java Standard portlets that are installed on a Liferay Portal server. By default, the Plugins SDK sets the contents of this descriptor to the following:
+**docroot/WEB-INF/liferay-portlet.xml** - In addition to the standard `portlet.xml` options, there are optional Liferay-specific enhancements for Java Standard portlets that are installed on a Liferay Portal server. By default, the Plugins SDK sets the contents of this descriptor, as shown in Developer Studio:
 
-    <liferay-portlet-app>
-	<portlet>
-	    <portlet-name>my-greeting</portlet-name>
-	    <icon>/icon.png</icon>
-	    <instanceable>false</instanceable>
-	    <header-portlet-css>/css/main.css</header-portlet-css>
-	    <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
-	    <css-class-wrapper>my-greeting-portlet</css-class-wrapper>
-	</portlet>
-	<role-mapper>
-	    <role-name>administrator</role-name>
-	    <role-link>Administrator</role-link>
-	</role-mapper>
-	<role-mapper>
-	    <role-name>guest</role-name>
-	    <role-link>Guest</role-link>
-	</role-mapper>
-	<role-mapper>
-	    <role-name>power-user</role-name>
-	    <role-link>Power User</role-link>
-	</role-mapper>
-	<role-mapper>
-	    <role-name>user</role-name>
-	    <role-link>User</role-link>
-	</role-mapper>
-    </liferay-portlet-app>
+![Figure 3.6: Liferay-Portlet XML file of the My Greeting portlet](../../images/02-portlet-development-5.PNG)
 
 Here is a basic summary of what some of the elements represents.
 
@@ -317,11 +294,11 @@ Next, create `edit.jsp` in the same directory as `view.jsp` with the following c
 
     <p><a href="<%= viewGreetingURL %>">&larr; Back</a></p>
 
-Deploy the portlet again by entering the command **ant deploy** in your `my-greeting-portlet` folder. Go back to your web browser and refresh the page; you should now be able to use the portlet to save and display a custom greeting.
+Deploy the portlet again in Developer Studio or by entering the command **ant deploy** in your `my-greeting-portlet` folder. Go back to your web browser and refresh the page; you should now be able to use the portlet to save and display a custom greeting.
 
-![Figure 3.2: The *view* page of My Greeting portlet](../../images/portlets-view-my-greeting.PNG)
+![Figure 3.7: The *view* page of My Greeting portlet](../../images/portlets-view-my-greeting.PNG)
 
-![Figure 3.3: The *edit* page of My Greeting portlet](../../images/portlets-edit-my-greeting.PNG)
+![Figure 3.8: The *edit* page of My Greeting portlet](../../images/portlets-edit-my-greeting.PNG)
 
 ---
 
@@ -526,9 +503,9 @@ Also, in `view.jsp`, you would need to add the `liferay-ui:success` JSP tag and 
 
 After this change, redeploy the portlet, go to the edit screen and save it. You should see a nice message that looks like this:
 
-![Figure 3.4: The sample "My Greetings" portlet showing a success message](../../images/portlet-greeting-save.png)
+![Figure 3.9: The sample "My Greetings" portlet showing a success message](../../images/portlet-greeting-save.png)
 
-There is also an equivalent utility class for error notification. This is commonly used after catching an exception in the `processAction` method (note that you will need to add the following import declaration at the top: 'import com.liferay.portal.kernel.servlet.SessionErrors;) . For example.
+There is also an equivalent utility class for error notification. This is commonly used after catching an exception in the `processAction` method. For example.
 
     try {
 		prefs.setValue("greeting", greeting);
@@ -545,7 +522,7 @@ And then the error, if it exists, is shown in your `view.jsp` using the `liferay
 
 If an error were to occur you would see something like this in your portlet:
 
-![Figure 3.5: The sample "My Greetings" portlet showing an error message](../../images/portlet-invalid-data.png)
+![Figure 3.10: The sample "My Greetings" portlet showing an error message](../../images/portlet-invalid-data.png)
 
 The first message is automatically added by Liferay. The second one is the one you added in your JSP.
 
@@ -556,17 +533,6 @@ So far we have developed a portlet that has two different views, the default vie
 You can have as many actions as you want in a portlet, each of them needs to be implemented as a method that receives two parameters -- an `ActionRequest` and an `ActionResponse`. The name of the method can be whatever you want since you will be referring to it when creating the URL.
 
 Let's rewrite the example from the previous section to use a custom name for the action method that sets the greeting and add a second action method for sending emails.
-
-	package com.liferay.samples; 
-
-	import java.io.IOException; 
-	import javax.portlet.ActionRequest; 
-	import javax.portlet.ActionResponse; 
-	import javax.portlet.PortletException; 
-	import javax.portlet.PortletPreferences;
-	import com.liferay.portal.kernel.servlet.SessionMessages; 
-	import com.liferay.portal.kernel.servlet.SessionErrors;
-	import com.liferay.util.bridges.mvc.MVCPortlet; 
 
 	public class MyGreetingPortlet extends MVCPortlet {
 		public void setGreeting(
@@ -616,13 +582,13 @@ Since Liferay 6 there is a feature that requires minimal work to change this int
     
 This feature, known as friendly URL mapping, takes unnecessary parameters out of the URL and allows you to place the important parameters in the URL path, rather than the query string. To add this functionality, first edit `liferay-portlet.xml` and add the following lines directly after `</icon>` and before `<instanceable>`.
 
-		<friendly-url-mapper-class>
-			com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper
-		</friendly-url-mapper-class>
-		<friendly-url-mapping>my-greeting</friendly-url-mapping>
-		<friendly-url-routes>
-			com/liferay/samples/my-greeting-friendly-url-routes.xml
-		</friendly-url-routes>
+    <friendly-url-mapper-class>
+    	com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper
+    </friendly-url-mapper-class>
+    <friendly-url-mapping>my-greeting</friendly-url-mapping>
+    <friendly-url-routes>
+    	com/liferay/samples/my-greeting-friendly-url-routes.xml
+    </friendly-url-routes>
 
 Next, create the file (remove the line break):
 
@@ -644,11 +610,11 @@ Create new directories as necessary. Place the following content into the new fi
 
 Redeploy your portlet, refresh the page, and try clicking either of the links again.
 
-![Figure 3.6: Friendly URL for view JSP](../../images/portlets-my-greeting-view-friendly.PNG)
+![Figure 3.11: Friendly URL for view JSP](../../images/portlets-my-greeting-view-friendly.PNG)
 
 Notice how much shorter and more user-friendly the URL is, without even having to modify the JSPs.
 
-![Figure 3.7: Friendly URL for edit JSP](../../images/portlets-my-greeting-edit-friendly.PNG)
+![Figure 3.12: Friendly URL for edit JSP](../../images/portlets-my-greeting-edit-friendly.PNG)
 
 For more information on friendly URL mapping, you can check full discussion of this topic in [*Liferay in Action*](http://manning.com/sezov). But, next, let's make our site look "top notch" by using Liferay Themes.
 
