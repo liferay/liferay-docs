@@ -1,21 +1,10 @@
 # Management [](id=administering-liferay-portal)
 
-<!--
-
-Ch. 15 Management
-
-old ch. 18
-
--->
-
 You know how all these retailers advertise themselves as a "one stop shop" for anything you want? The idea is they have so much stuff that chances are whatever you're looking for is there. Liferay's control panel is something like this. If you want to create users, sites, organizations, configure permissions and plugins and pretty much anything else, you'll do it with the control panel. The nice thing about the control panel is it makes all this very easy to do. This chapter takes all the concepts you learned about Liferay in chapter 1 (sites, organizations and more) and makes them concrete. Here, you'll learn how to create and manage every aspect of Liferay's configuration. 
 
 <!-- 
-
 This intro sounds like it would work for the next chapter, "Using the Control panel." Check chapter reference.
-
 -->
-
 This chapter covers the following activities:
 
 -   Using the control panel to manage users, organizations, sites, user groups, roles and teams
@@ -26,8 +15,7 @@ This chapter covers the following activities:
 
 Let's begin our examination of Liferay's control panel by looking at how to manage and organize users in Liferay Portal.
 
-<!-- Section i  Managin users -->
-
+<!-- Section i  Managing users -->
 ## Managing Users [](id=managing-users-user-groups-organizations-sites-teams-and-roles)
 
 The Portal section of the control panel is used for most administrative tasks. You'll find there an interface for the creation and maintenance of
@@ -62,13 +50,7 @@ Let's add a user account for yourself and configure this account so it has the s
 
 ![Figure 15.1: The Add User Screen](../../images/01-add-user-screen.png)
 
-After you submit the form, the page reloads with a message saying the save was successful. An expanded form appears that allows you to fill out a lot more information about the user. You don't have to fill anything else out right now. Just note that when the user ID was created, a password was automatically generated and, if Liferay was correctly installed (see chapter 11), an email message with the password in it was sent to the user. This, of course, requires that Liferay can properly communicate with your SMTP mail server.
-
-<!--
-
-Check chapter reference.
-
--->
+After you submit the form, the page reloads with a message saying the save was successful. An expanded form appears that allows you to fill out a lot more information about the user. You don't have to fill anything else out right now. Just note that when the user ID was created, a password was automatically generated and, if Liferay was correctly installed (see chapter 14), an email message with the password in it was sent to the user. This, of course, requires that Liferay can properly communicate with your SMTP mail server.
 
 ![Figure 15.2: Liferay's User Account Editor](../../images/01-user-account-editor.png)
 
@@ -98,8 +80,7 @@ Note most users can't perform most of the above actions. In fact, most users won
 
 Let's look next at how to manage organizations. 
 
-<!--  this is Section i, subsection a   -->
-
+<!-- This is Section i, subsection a -->
 ### Organizations [](id=lp-6-1-ugen12-managing-organizations-0)
 
 Organizations are used to represent hierarchical structures such as those of companies, non-profit organizations, churches, schools and clubs. They have been used to represent a sports league, with various sports (soccer, baseball, basketball, etc.) and their teams as sub-organizations. If you have a collection of users that fit into a hierarchical structure, you can model that as an organization.
@@ -154,16 +135,12 @@ Click the *Actions* button next to the new organization you created. This shows 
 
 If you click the *View* button at the top of the Users and Organizations page and select *View Hierarchy* you can view both a list of users who are members of this organization and a list of all the suborganizations of this organization.
 
+Users can join or be assigned to sites when they share a common interest. Users can be assigned to organizations when they fit into a hierarchical structure. Users groups provide a more ad hoc way to group users than sites and organizations. Let's look at them next.
+
 <!--  No "sites" here
-
 We briefly mentioned sites during this discussion. Sites are another construct within the portal and have different properties than organizations. Let's see how you can use them. 
-
 -->
-
-<!-- needs transition -->
-
 <!--  this is Section i, subsection b   -->
-
 ### User Groups [](id=lp-6-1-ugen12-user-groups-0)
 
 User Groups are arbitrary groupings of users. These groups are created by portal administrators to group users together who don't necessarily share an obvious hierarchical attribute. Users can be assigned to multiple user groups. User Groups are most often used to achieve one of the following goals:
@@ -251,7 +228,6 @@ Following with the example above, we will create a site for our sample user grou
 Also, try visiting the public site of one of the users who belongs to the user group. You will see how all of the pages in the user group appear as part of the user site, including the ones copied from the site template and the ones added afterwards.
 
 <!--  this is Section i, subsection c   -->
-
 ### Roles and Permissions [](id=lp-6-1-ugen12-roles-0)
 
 Roles are groupings of users that share a particular function within the portal, according to a particular scope. Roles can be granted permissions to various functions within portlet applications. You can think of a role as a description of a function, such as Message Board Administrators. A role with that name is likely to have permissions relevant to the specific Message Board portlets delegated to it. Users who are placed in this role will inherit these permissions.
@@ -317,7 +293,6 @@ After you have created users, user groups, organizations, roles, sites and teams
 Now that you have been navigating in the control panel, you should be pretty familiar with how it works. All the options appear in the left navigation, their interfaces appear in the middle and any sub-options appear on the right. We have focused so far on the maintenance of users and portal security. The remaining links in the *Portal* category focus on various portal settings which cover how the portal operates and integrates with other systems you may have. Let's begin our discussion of Liferay's portal settings by examining how to configure password policies.
 
 <!--  this is Section i, subsection d  -->
-
 ### Password Policies [](id=lp-6-1-ugen12-password-policies-0)
 
 Password policies can enhance the security of your portal. You can set requirements on password strength, frequency of password expiration and more. Additionally, you can apply different password policies to different sets of portal users.
@@ -357,8 +332,6 @@ From the list of password policies, you can perform several other actions.
 **Delete:** shows up for any password policies you add beyond the default policy. You cannot delete the default policy.
 
 Next, let's examine Liferay's Portal Settings.
-
-<!-- (JR) start here 19jan2012 -->
 
 ### Portal Settings [](id=lp-6-1-ugen12-portal-settings-0)
 
