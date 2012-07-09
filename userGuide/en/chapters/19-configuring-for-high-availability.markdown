@@ -599,7 +599,7 @@ For example, if you are not using CAS for single sign-on, disable the CAS Filter
 
 As you can see, there are many things you can do to increase Liferay's performance generally. But don't forget to load test your own applications! It may be that a performance issue comes from a custom-built application that's doing something it shouldn't do. Always load test your system before putting it into production: that's the best way of finding out potential performance problems, and that way, you'll find them during performance testing, and not when your system is in production.
 
-## Summary
+## Summary [](id=lp-6-1-ugen19-summary-0)
 
 We've seen how good a fit Liferay Portal is for the enterprise. It can be scaled linearly to grow to whatever size you need to serve your users. Clustering is a snap, and Liferay harmonizes very well with whatever environment you may have.
 

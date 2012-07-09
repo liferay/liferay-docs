@@ -234,7 +234,7 @@ For Windows or Mac OS, visit the Liferay Sync product page [Liferay Sync Product
 
 Upon launching the Windows application installer, you'll be prompted to choose an installation location for Liferay Sync. Browse to an appropriate location on your machine and click *Next*.
 
-![Figure 4.46: Use the Liferay Sync Installation wizard to choose an installation location.](../../images/liferay-sync-setup.png)
+![Figure 4.15: Use the Liferay Sync Installation wizard to choose an installation location.](../../images/liferay-sync-setup.png)
 
 On the next screen, you can configure some properties for Liferay Sync. There are three items listed in the *General Settings* section. *Start Liferay Sync on Login* is checked by default. If you don't want Sync to start automatically, uncheck this. *Show Desktop Notifications* is also checked by default. Unless you uncheck this, when a file that you have synced is changed, a small notification will appear in the corner of your screen. The *Check Server For Updates Every:* field enables you to set how frequently it will check to see if anything has changed. This can be set anywhere between 5 seconds and 30 minutes.
 
@@ -242,11 +242,11 @@ Click the *Edit Settings* button in the *Account Settings* section to specify yo
 
 Finally, the *Site Settings* section allows you to choose which sites you wish to sync media from. By default, it will list all of the sites that you are a member of, but you can uncheck any of those sites if you don't want to sync those files.
 
-![Figure 4.47: Open the Liferay Sync menu and select *Properties* to edit the settings you configured during setup.](../../images/liferay-sync-properties.png)
+![Figure 4.16: Open the Liferay Sync menu and select *Properties* to edit the settings you configured during setup.](../../images/liferay-sync-properties.png)
 
 On the last screen, leave the *Run Liferay Sync* button checked to automatically start Liferay Sync after you click *Finish*.
 
-![Figure 4.48: You'll see the following screen once Liferay Sync has been installed. Click *Finish* to exit the installation wizard.](../../images/liferay-sync-setup-complete.png)
+![Figure 4.17: You'll see the following screen once Liferay Sync has been installed. Click *Finish* to exit the installation wizard.](../../images/liferay-sync-setup-complete.png)
 
 The options for the Mac OS application installer are similar.
 
@@ -254,11 +254,11 @@ The options for the Mac OS application installer are similar.
 
 Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG mounts it as a disk image, and opens a window showing the contents of the image. To install Sync, drag the Liferay Sync icon to the Applications folder. Once it's installed, go to your Applications folder to run it.
 
-![Figure 4.49: Drag the Liferay Sync icon to the Applications folder.](../../images/liferay-sync-mac-install.png)
+![Figure 4.18: Drag the Liferay Sync icon to the Applications folder.](../../images/liferay-sync-mac-install.png)
 
 When you launch Liferay Sync, the first thing you need to do is provide it with the URL for the Liferay server that you'll be using Sync with, along with your Liferay credentials. After that, you'll need to run through a brief setup process that was described above for Windows.
 
-![Figure 4.50: You can provide the same information requested by the Windows application installer.](../../images/liferay-sync-mac-preferences.png)
+![Figure 4.19: You can provide the same information requested by the Windows application installer.](../../images/liferay-sync-mac-preferences.png)
 
 Once you've finished your configuration and have clicked *OK*, Liferay Sync starts running in the background, and an icon appears in your top menu bar. If you wish to change any of your settings, click the icon to open the Liferay Sync menu and click on *Properties*.
 
@@ -270,7 +270,7 @@ For iOS, visit the App Store, search for Liferay, and install the Liferay Sync A
 
 Once installed, you'll see a Liferay Sync icon in your taskbar whenever it's running. A green checkmark means Liferay Sync has a working connection to your Liferay server and is updating the files in your Sync folder according to the interval you specified in the wizard. Click the Liferay Sync icon in your taskbar to bring up the menu.
 
-![Figure 4.51: Open the Liferay Sync taskbar menu to acces the following options.](../../images/liferay-sync-taskbar-menu.png)
+![Figure 4.20: Open the Liferay Sync taskbar menu to acces the following options.](../../images/liferay-sync-taskbar-menu.png)
 
 *Open Sync Folder* opens your Liferay Sync folder in your native file manager.
 
@@ -296,11 +296,11 @@ Liferay Sync handles deletions via a special `liferay-sync.deletions` file. This
 
 You can run through the following exercise to familiarize yourself with how to create, edit, download, and upload files with Liferay Sync. First, open your Liferay Sync folder in your file manager (use the *Open Sync Folder* option of the Liferay Sync menu from the taskbar), and create a new file called `README.txt`. Edit this file and enter the word *test*. Then use the *Sync now* option of the Liferay Sync menu to make sure that your `README.txt` file gets uploaded to your Liferay server. Next, check that you can access this file from your Liferay site. Open your browser, navigate to your Liferay site, and sign in with your Liferay account credentials. Then, navigate to the control panel. Make sure the site you chose to sync with is selected in the context menu selector and click on *Documents and Media*. You should see your `README.txt` file listed there.
 
-![Figure 4.52: You can access the same files from Liferay Sync that you can from Liferay's web interface.](../../images/liferay-sync-documents-and-media.png)
+![Figure 4.21: You can access the same files from Liferay Sync that you can from Liferay's web interface.](../../images/liferay-sync-documents-and-media.png)
 
 Download the file (click the small triangle icon at the top right corner of the *README.txt* icon and select *Download*) to a convenient location on your machine and check that it still says *test*. Now open the `README.txt` file in your Sync folder and edit it so that it says *second test*. Choose *Sync now* again, and then go back to your browser and refresh your Documents and Media page. Click on the *README.txt* icon, look at the information displayed to the right, and you'll see that its version number has incremented.
 
-![Figure 4.53: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/liferay-sync-README.png)
+![Figure 4.22: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/liferay-sync-README.png)
 
 Download the file again, and you'll see that it now says *second test*--your edit was uploaded to the server and downloaded again by Liferay Sync. You can be confident that this edit was also downloaded by all other Liferay Sync clients connected to your site.
 
@@ -311,7 +311,7 @@ selector, and click on *Documents and Media*. Then upload the *secret.txt* docum
 
 Next, we'll configure our Liferay Sync client to log in with the *secretagent* user's credentials and access the *Secret Site*. Open the Liferay Sync menu from the taskbar and select *Properties*. Click on the *Edit Settings* button, choose a new Sync folder, enter your server's URL, and enter the secret agent's credentials: *secretagent@liferay.com* and *test*. Lastly, uncheck all Liferay sites except the *Secret Site*, and click *OK*. Confirm that the *secret.txt* file that you uploaded to the *Secret Site*, is downloaded to your new Sync folder. Open it and check that it says *classified information*. If you reconfigure your Sync client connect to your Liferay instance using the credentials of another user who doesn't belong to the *Secret Site*, the *secret.txt* will not be downloaded. Congratulations! You've successfully set up a Liferay Sync folder that can only be accessed by the *secretagent* user and your administrators.
 
-## Summary
+## Summary [](id=lp-6-1-ugen04-summary-0)
 
 In this chapter, we examined Liferay's Documents and Media Library, a powerful and customizable virtual shared drive. Liferay 6.1 introduced the ability to mount multiple external repositories to the Documents and Media library. The Documents and Media library can be used to store files of any kind. The Documents and Media Display portlet is meant to be configured to show chosen hierarchies of folders and files from the Documents and Media library. The Media Gallery is meant for presenting media files such as images or videos. 
 

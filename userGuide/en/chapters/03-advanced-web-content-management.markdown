@@ -261,7 +261,7 @@ Once you've created a site, it appears in the Sites page of the control panel. O
 
 When creating a site from a site template, the initial form provides a new option that lets you decide if you want to copy the pages from the template as public pages or as private pages. By default, the site is linked to the site template and changes to the site template propagate to any site based on it. A checkbox appears that allows users to unlink the site template if the user has permission to do so.
 
-![Figure 3.x: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
+![Figure 3.8: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
 Site templates are very powerful for managing many similiar sites. Let's look further at how they work. 
 
@@ -287,7 +287,7 @@ By default, the following site templates are provided:
 
 The following figure displays the form shown when editing the *Community Site* template:
 
-![Figure 3.8: Site Templates](../../images/01-site-templates.png)
+![Figure 3.9: Site Templates](../../images/01-site-templates.png)
 
 To view and manage the pages of a site template, click the *Open site template* link. This opens the template in a new browser window (or tab) and it can be navigated or managed like a regular site..
 
@@ -298,7 +298,7 @@ To create a site template, navigate to the control panel and click *Site Templat
 
 Click on the *Open site template* link to begin adding pages and portlets and configuring the layouts. For our example, we would like our template to include four pages: a Home page with the Activities,  Announcements and Calendar portlets, a Documents and Media page with the Documents and Media portlet, a Wiki page with the Wiki and Tag Cloud portlets and a Message Boards page with the Message Boards and Tag Cloud portlets. The changes are automatically saved as you make them, so once you're finished, return to the Site Templates page of the control panel and select *Save*.
 
-![Figure 3.9: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
+![Figure 3.10: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
 
 Now let's create the Engineering, Marketing and Legal organizations whose sites we want to create with our template. Go to the control panel and click *Users and Organizations*. Then click the *Add* button and select *Regular Organization*. Enter a name for your organization, select the *Organization site* tab and check the *Create Site* box. When you check this box, two drop-down lists appear: one for the site's Public Pages and one for its Private Pages. To use your template to create the site, select the name of your template, *Organization Site*, from the Private Pages drop-down list. Click *Save* to create your site.  You can view the new site by clicking the *Open private pages* link from the newly created organization page. The new site will have all the pages and portlets you created in the template. This feature streamlines the site creation process for administrators, making it easy to create sites quickly. Next, let's discuss how to create and apply page templates.
 
@@ -306,7 +306,7 @@ Now let's create the Engineering, Marketing and Legal organizations whose sites 
 
 Page templates function similarly to site templates but at the page level. Page templates provide a pre-configured page to reuse. Within a page template it is possible to set up a theme, a layout and specific applications and their configuration. Both sites and site templates can utilize page templates for creating new pages.
 
-![Figure 3.10: Page Templates](../../images/server-configuration-page-templates.png)
+![Figure 3.11: Page Templates](../../images/server-configuration-page-templates.png)
 
 The Page Templates page of the control panel shows a list of templates and lets you create new ones. It also allows you to edit existing templates and configure their permissions. By default three sample page templates are provided:
 
@@ -318,11 +318,11 @@ To add a new page template, click the *Add* button. Then enter a name and descri
 
 Note that after a new page template has been created the default permissions are to only allow the creator to use the page template. To give other users access to it, use the actions menu in the list of templates and choose *Permissions*. Once you see the matrix of roles and permissions, check the *View* permission for the role or roles needed to see the page template in the list of available page templates when creating a new page. If you want any user who can create a page to be able to use the page template, just check the *View* permission for the *User* role.
 
-![Figure 3.11: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
+![Figure 3.12: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
 
 To use your template to create a new page, just navigate to a page over which you have site administrator privileges and select *Add* &rarr; *Page* from the Dockbar. You'll be able to select a page template and type a name for the new page. Alternatively, you can use the control panel. First, in the context selector menu, select the site to which you'd like to add a page and then click on the *Site Pages* link. Then click the *Add Page* button, type a name, select your template from the drop down menu and click *Add Page* to finish.
 
-![Figure 3.12: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
+![Figure 3.13: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
 
 Note that by default, when a site administrator creates pages based on a page template, any future changes to the template are automatically propagated to those pages. Site administrators can disable this behavior by unchecking the *Automatically apply changes done to the page template* box.
 
@@ -364,11 +364,11 @@ Previous versions of Liferay had the ability to create and manage different tran
 
 When you create a new piece of Web Content, you have the ability to choose a default language. If you click *Change*, you can select your default language from a large number of languages Liferay supports. Before you can create a translation, you must finish creating the content in your default language and save it. Once you've done that, editing the content provides you with the option to *Add Translation*.
 
-![Figure 3.13: Adding a translation](../../images/04-web-content-content-translation.png)
+![Figure 3.14: Adding a translation](../../images/04-web-content-content-translation.png)
 
 After you click *Add Translation*, you can select a language by scrolling through the list or by entering the language you want to use in the search box. When you select a language, a lightbox opens within your browser window enabling you to easily compare the original with the new translation. Once you are done with the translation, click *Save* and the translation is added to the list of *Available Translations*. 
 
-![Figure 3.14: Adding a translation](../../images/04-web-content-content-translation-2.png)
+![Figure 3.15: Adding a translation](../../images/04-web-content-content-translation-2.png)
 
 The ability to completely delete a translation in one step has also been added. Instead of simply disabling a translation or having to go through a multistep process to remove it, you can now simply open the translation you don't want and click *Remove Translation*.
 
@@ -389,7 +389,7 @@ Additionally, you may want to create content and send it through an approval and
 
 Liferay's WCM lets you define when your content goes live. You can determine when the content is displayed, expired and/or reviewed. This is an excellent to way to keep your site current and free from outdated (and perhaps incorrect) information. The scheduler is built right into the form your users access to add web content, in the same column as the structure and template selectors.
 
-![Figure 3.15: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
+![Figure 3.16: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -425,7 +425,7 @@ First, you'll add a new page. Click *Add &rarr; Page* from the toolbar in the de
 
 Now we're ready to activate the staging feature for this site. Go to the control panel then to *Site Settings* and select *Staging* from under the *Advanced* heading.
 
-![Figure 3.16: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.17: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 We'll assume we don't have a separate staging server so we'll select the staging type *Local Live*. If you want to set up a remote staging environment, it's easy. First select *Remote Live*, then supply the name or IP of the remote server where staged content should be published, the port (80 if Liferay is sitting behind a web server or the port your application server is listening on if not) and the remote site or organization ID. You can find this ID by selecting *Actions &rarr; Edit* on any site in the control panel. Either way, once you make a selection (*Local Live* or *Remote Live*), more options become available.
 
@@ -439,7 +439,7 @@ Enabling *Page Versioning* makes it so you can work in parallel with other users
 
 If you navigate back to the News and Events page you'll now notice some new items along the top of the screen. These will help us manage staged pages. You'll also notice most of your page management options have been removed, because now you can't directly edit live pages--you'll now use the staging environment to do that. Click on *Staging* to view the staged area. Your management options are restored and you have some new options related to staging.
 
-![Figure 3.17: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.18: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that the Calendar portlet isn't there. That's because you've staged a change to the page but haven't published that change yet to the live site. Go back to the staged page and look at the options you have available. From here you can *Undo* changes, view a *History* of changes, *Mark as Ready for Publication* and *Manage Page Variations*.
 
@@ -461,7 +461,7 @@ Click on *Mark as Ready for Publication* and then *Publish to Live Now* to publi
 
 Content publication can be also controlled using staging. Calendar events are staged by default (this can be changed in Staging Configuration). If you create an event in the staged site, it isn't visible in the live site until you publish it to the live site following the same steps you just performed (you can select which types of content are published when you publish to the live site). If workflow is enabled for Calendar Events, the event needs to go through the workflow process before it can be published to the live site.
 
-![Figure 3.18: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
+![Figure 3.19: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
 
 One of the most powerful features of staging is page variations. Let's see how to use them to create multiple different variations of your site's pages for different purposes.
 
@@ -495,11 +495,11 @@ You can also have variations for a single page inside a site page variation, whi
 
 To create a new page variation, click *Manage Page Variations* on the staging toolbar. This brings you to a list of existing page variations for the current page (by default, there is only one called *Main Variation*). You can create more or rename the existing one. You can switch between different page variations using the toolbar containing the page variations below the site pages variations toolbar. When you decide which page variation should be published, mark it as *Ready for Publication*. Only one page variation can be marked as ready for publication and that is the one that gets published to the live site.
 
-![Figure 3.19: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
+![Figure 3.20: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
 
 For example, we could create a page variation called Thanksgiving for the News and Events page inside of the Christmas variation and another one called Christmas Day to display different content on those particular days.
 
-![Figure 3.20: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.21: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations. To merge two Site Pages Variations, you need to go to the Manage Site Variations screen. From there, click on *Merge* on the Site Pages Variation you want to use as the base. You will be asked to choose the Site Pages Variation to merge on top of it. Merging works in the following way:
 
@@ -523,13 +523,13 @@ If you create a team for one site, the permissions defined for it are not availa
 
 To create a team within a site, first naviagte to the *Control Panel &rarr; Sites* page then and then select *Actions &rarr; Manage Memberships* for the site within which you want to create a team. Finally, click *View &rarr; Teams* and click the Add Team button.
 
-![Figure 3.21: Creating a Team within a Site](../../images/01-creating-a-team.png)
+![Figure 3.22: Creating a Team within a Site](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description, click *Save*. Your new team will appear in the list. To add members, simply click on *Actions &rarr; Assign Members*.
 
 Permission management for teams is handled at the individual portlet level, using the *Options &rarr; Configuration &rarr; Permissions* tab of the portlet itself. Remember the portlet options link is the wrench symbol at the top of a portlet. This enables users who wouldn't have access to all of the necessary options in the control panel to manage permissions through teams.
 
-![Figure 3.22: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
+![Figure 3.23: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
 
 To give a team access to a particular portlet function, access the *Permissions* tab of a portlet residing on a page, check the boxes corresponding to permissions you want to assign to the teams, then click *Save*. That's it! Now your team is ready to perform their functions. Next, let's look at how to configure Liferay for mobile devices.
   
@@ -545,21 +545,21 @@ Alternatively, if you have a working copy of Liferay's plugin repository, you ca
 
 You can access the Mobile Device Rules administrative page from the Content section of the control panel. Select the appropriate scope using the context menu selector so your rule groups are available where you expect them to be. The Mobile Device Rules administrative page displays a list of defined rule groups and allows you to add more. To add rules to a rule group, select *Actions* &rarr; *Manage Rules* or just click on a rule group to edit it and then click the *Manage Rules* link.
 
-![Figure 3.23: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
+![Figure 3.24: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups selected for a particular site or page, determine which rule will be applied to a given request. From the Manage Rules page for a specific rule set, you can add a rule by specifying a rule type. Note that, by default, only the Simple Rule type is available. However, the rules are designed to be extensible and additional rule types can be added by your developers. Once added, you can edit the rule to specify a device type and operating system.
 
-![Figure 3.24: You need to install the wurlf-web plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.25: You need to install the wurlf-web plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them, you'll be ready to set up some actions. The actions defined for a rule group determine what happens to a particular request when the request's device has been detected and the rule group has been found to apply. 
 
 You can add actions to a rule group from the Site Pages page of the control panel. Select either the public or private pages and then look for the *Mobile Rule Groups* link in the right-hand menu. Use the *Select Rule Group* button to select rule groups to be applied either to a site or to a single page. If you select the page group itself from the left-hand menu, the selected rule group will apply to all the pages of the site by default. However, if you select an individual page and then click the the *Select Rule Group* button, the rule groups will apply to only that page. You can select multiple rule groups for a particular site or page and order them by prority. The rule groups are checked in decreasing order of priority: the actions defined by the first rule group that applies are executed.
 
-![Figure 3.25: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the control panel.](../../images/mobile-device-selection.png)
+![Figure 3.26: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the control panel.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage Actions* button and then click *Add Action*. By default, there are four kinds of actions that can be configured for mobile rule groups: layout template modifications, theme modifications, simple redirects and site redirects. Layout template modifications let you change the way portlets are arranged on pages delivered to mobile devices and themes modifcations let you select a specifc look and feel. If it makes more sense for you to create separate mobile versions of certain sites or pages, you can use a redirect to make sure mobile devices users get to the right page. To define a simple redirect, you need to specify a URL. To define a site redirect, you only need to specify the site name and page name of the page you're redirecting to. Like mobile device rules, mobile device actions are designed to be extensible. Your developers can define custom actions in addition to the four actions provided by default. 
 
-## Summary
+## Summary [](id=lp-6-1-ugen03-summary-0)
 
 This chapter has been your guide to Liferay site management and advanced Web Content Management. We've seen how you can use Liferay to manage both simple content and advanced content with structures and templates. We've learned how you can use Liferay to create multiple sites with different membership types. We've also learned how to use page and site templates to simplify the site creation process.
 

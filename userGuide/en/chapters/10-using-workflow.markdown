@@ -408,6 +408,6 @@ There's more. EE customers get extra features that enable them to create workflo
 
 ### Collaboration [](id=lp-6-1-ugen10-collaboration-0)
 -->
-## Summary
+## Summary [](id=lp-6-1-ugen10-summary-0)
 
 In this chapter, we explained how to install the Kaleo workflow plugin for Liferay EE. Liferay's Kaleo workflow engine is included with Liferay CE. We discussed how to create new workflow definitions and examined the XML schema for them. We also looked at how to choose different workflow processes for different asset types. Finally, we explained how end-users can interact with the approval process. In the next chapter, we'll look at Kaleo forms and the Kaleo workflow designer.
