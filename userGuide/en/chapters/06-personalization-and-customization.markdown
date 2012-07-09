@@ -2,18 +2,15 @@
 
 <!--  Old header
  Personalization, Collaboration tools, and social networking [](id=lp-6-1-ugen06-personalization-collaboration-tools-and-social-networking-0)
--->
-<!-- There is significant content missing from this chapter.   -->
-<!-- Needs text   -->
+There is significant content missing from this chapter.
+Needs text
 ## User  site [](id=lp-6-1-ugen06-user--site-0)
-
-<!-- Needs text   -->
+Needs text
 ## User public site [](id=lp-6-1-ugen06-user-public-site-0)
-
-<!-- Needs text   -->
+Needs text
 ## Automatic personalization of content (via rules integration) [](id=lp-6-1-ugen06-automatic-personalization-of-content-via-rules-integration-0)
-
-<!-- Needs text   -->
+Needs text
+-->
 ## Setting preferences to customize applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
