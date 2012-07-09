@@ -145,7 +145,7 @@ You and Dick stand behind Harry's chair and watch as he enters a query into a fo
 
 Tom and Dick back away slowly from Melvin's cube as Harry and Melvin continue to have their--let's call it a discussion. One thing is clear: they're having a better day than Melvin is.
 
-<!-- needs transition -->
+Now that we've seen how you can use audit trails, let's look at some tools and best practices for maintaining your Liferay installation.
 
 ## Maintainence [](id=maintaining-a-liferay-port-5)
 
