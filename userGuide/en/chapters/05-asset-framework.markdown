@@ -125,7 +125,7 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 **Show Metadata:** Allows you to select from the available metadata types (see below).
 
-![Figure 5.6: Show Metadata](../../images/portal-admin-ch4_html_m5.xb2939.jpg)
+![Figure 5.6: Available metadata types](../../images/available-metadata-fields.png)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS Feeds.
 
