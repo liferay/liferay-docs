@@ -63,8 +63,10 @@ public class NumberHeadersTask extends Task {
 
 		for (int i = 0; i < files.length; i++) {
 			String filename = files[i];
-			String inFile = chDir.getPath() + "\\" + filename;
-			String outFile = chDir.getPath() + "/" + filename;
+			// String inFile = chDir.getPath() + "\\" + filename;
+			// String outFile = chDir.getPath() + "/" + filename;
+			File inFile = new File(chDir, filename);
+			File outFile = new File(chDir, filename);
 			String outFileTmp = outFile + ".tmp";
 
 			try {
