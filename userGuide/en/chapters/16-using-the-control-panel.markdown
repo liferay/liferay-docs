@@ -1,18 +1,6 @@
 # Using the Control Panel [](id=lp-6-1-ugen19-using-the-control-panel-0)
 
-<!--
-
-Ch. 16 Using the Control Panel
-
-old ch. 19
-
-(no sections)
-
--->
 <!--  Intro needed  -->
-
-<!-- This chapter contains the last section of the old 12-administering-liferay-portal.markdown chapter -->
-
 #### Mail Host Names [](id=lp-6-1-ugen12-mail-host-names-0)
 
 The next page under Portal Settings is Mail Host Names. You can enter other mail host names (one per line) besides the one you configured on the General tab. This lets the portal know which mail host names are owned by your organization.
@@ -42,7 +30,6 @@ This section allows you to set the default portal language and the time zone. Yo
 Liferay's default theme is configured to display the portal logo. For custom themes, you can choose whether or not to display the logo. Be careful to choose an image file that fits the space. If you pick something too big, it might overlap with the navigation. Next, let's look at how to customize different types of portal assets using custom fields.
 
 <!--  should we provide a range of recommended parameters for custom logos?  -->
-
 ### Custom Fields [](id=lp-6-1-ugen12-custom-fields-0)
 
 Custom fields are a way to add attributes to many types of assets in the portal. For example, if you're using Liferay Portal to create a site for rating books, you might assign the User object a custom field called Favorite Books. If you're using the wiki for book reviews, you might add fields for Book Title and Book Author.
@@ -103,9 +90,7 @@ Liferay and the JVM contain many settings which are defined as properties. There
 
 The system properties tab shows an exhaustive list of system properties for the JVM, as well as many Liferay system properties. This information can be used for debugging purposes or to check the configuration of the currently running portal.
 
-The portal properties tab tab shows an exhaustive list of the portal properties. These properties can be customized, as we saw in chapter 12. If you need to check the current value of a particular property, it can be viewed from this screen without having to shut down the portal or open any properties files.
-
-<!-- check the chapter reference above  -->
+The portal properties tab tab shows an exhaustive list of the portal properties. These properties can be customized; you can peruse the full list of customizable properties in chapter 20. If you need to check the current value of a particular property, it can be viewed from this screen without having to shut down the portal or open any properties files.
 
 #### Captcha [](id=lp-6-1-ugen12-captcha-0)
 
@@ -129,17 +114,13 @@ Since Liferay allows users to upload files in various places, you may want to lo
 
 #### Mail [](id=lp-6-1-ugen12-mail-0)
 
-Rather than using the `portal-ext.properties` file as we did in the installation chapter, you can configure a mail server from the Mail tab of the Server Configuration tab. If the portal is to receive mail (see the Message Boards portlet in Chapter 4), you can connect a POP mail server. If the portal is to send mail, which it needs to do to send notifications to users, you can connect to an SMTP server here as well and this is highly recommended.
-
-<!-- check the chapter reference above  -->
+Rather than using the `portal-ext.properties` file as we did in the installation chapter, you can configure a mail server from the Mail tab of the Server Configuration tab. If the portal is to receive mail (see our coverage of the Message Boards portlet in chapter 7), you can connect a POP mail server. If the portal is to send mail, which it needs to do to send notifications to users, you can connect to an SMTP server here as well and this is highly recommended.
 
 Note that if you add your mail server settings here, they will override anything in your `portal-ext.properties` file.
 
 #### External Services [](id=lp-6-1-ugen12-external-services-0)
 
-Liferay Portal enables users to upload and share content via the Documents and Media library, a customizable and permissionable online repository. Users can upload files of any type to the Documents and Media library. Liferay ships with PDFBox and uses it to generate automatic previews for certain types of documents, by default. You can also install three additional tools that offer higher quality previews and document conversion functionality: OpenOffice or LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these tools, you can generate automatic previews for many types of files incuding text files, office suite files, PDFs, images, audio files and videos. Users will also be able to use the conversion functionality to download documents in a variety of formats. Please see the Documents and Media section of chapter 4 for more information.
-
-<!-- check the chapter reference above  -->
+Liferay Portal enables users to upload and share content via the Documents and Media library, a customizable and permissionable online repository. Users can upload files of any type to the Documents and Media library. Liferay ships with PDFBox and uses it to generate automatic previews for certain types of documents, by default. You can also install three additional tools that offer higher quality previews and document conversion functionality: OpenOffice or LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these tools, you can generate automatic previews for many types of files incuding text files, office suite files, PDFs, images, audio files and videos. Users will also be able to use the conversion functionality to download documents in a variety of formats. Please see chapter 4 on Documents and Media for more information.
 
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org), ImageMagick is available here: [ImageMagick](http://www.imagemagick.org) and Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to choose the correct versions of these applications for your operating system. Once you've installed these tools, you can use the External Services tab of the control panel to configure Liferay to use them.
 
