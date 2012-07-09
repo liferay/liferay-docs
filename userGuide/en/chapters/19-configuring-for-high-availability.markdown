@@ -1,15 +1,5 @@
 # Configuring Liferay for High Availability [](id=enterprise-configurati-5)
 
-<!--
-
-Ch. 19 Configuring Liferay for high availability
-
-old ch. 22
-
-(no sections)
-
--->
-
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is fully ready to support mission-critical, enterprise applications in an environment configured for multiple redundancies and 24/7 uptimes. The product, however, like other products of its kind, doesn't come configured this way out of the box, so there are some steps that need to be taken to tune it for your needs. 
 
 This chapter covers these topics in detail. Liferay runs on so many different Java EE application servers that we can't cover all the differences between them. For this reason, we'll discuss Liferay configurations only. For example, we'll look at how to configure Liferay to work in a clustered environment, but not how to create the cluster in your application server. The documentation for your particular application server is always a much better place to learn those kinds of things.  

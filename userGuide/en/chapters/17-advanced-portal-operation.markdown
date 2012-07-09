@@ -1,15 +1,6 @@
 # Advanced Portal Operation [](id=lp-6-1-ugen17-advanced-portal-operation-0)
 
-<!--
-
-Ch. 17 Advanced Portal Operation
-
-old ch. 20
-
--->
-
 <!-- Intro?    -->
-
 ## Audit Trails [](id=using-audit-trails)
 
 ![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
