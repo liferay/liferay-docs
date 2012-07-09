@@ -219,8 +219,6 @@ The *Plugins Installation* page of the control panel shows all of the plugins cu
 
 ## Summary [](id=summ-33)
 
-<!-- This summary needs some adjustment.   -->
-
 In this chapter, we finished our overview of Liferay's control panel that we began in chapter 15. We saw how to configure mail host names, email notifications, identification, and portal display settings. We showed how you add custom fields to various portal entities such as users, pages, documents, wiki articles, message board posts, and more. 
 
 Next, we saw how to view and configure overall server settings. We saw how to view the memory currently being used by the server, as well as how to initiate garbage collection, a thread dump, search engine re-indexing and the clearing of various caches. We learned how to debug parts of the portal by changing log levels and by viewing the various properties defined in the portal.
