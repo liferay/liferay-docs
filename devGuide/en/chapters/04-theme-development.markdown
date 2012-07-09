@@ -21,7 +21,22 @@ To follow the examples of this guide you will also need some familiarity with us
 
 ## Creating a Theme [](id=creating-a-the-4)
 
-The process for creating a new theme is nearly identical to the one for making a portlet. You will need both a project name (without spaces) and a display name (which can have spaces). For example, the project name could be *deep-blue*, and the theme title *Deep Blue*. In the terminal, navigate to the *themes* directory in the Plugins SDK and enter the following command (Linux and Mac OS X):
+The process for creating a new theme is nearly identical to the one for making a portlet. You will need both a project name (without spaces) and a display name (which can have spaces). For example, the project name could be *deep-blue*, and the theme title *Deep Blue*. We will show two ways to accomplish this. First, we will demonstrate by using Liferay Developer Studio.
+
+***Using Developer Studio:*** Go to File &rarr; New &rarr; Liferay Project
+
+Next, go through the following steps to setup your new theme:
+
+1. Fill in *deep-blue* for the Project name and *Deep Blue* for the Display name
+2. Select the Liferay Plugins SDK and Portal Runtime you've configured
+3. Select *Theme* for your Plugin type
+4. Click *Finish*
+
+![Figure 4.1: Creating your theme plugin](../../images/05-themes-1.PNG)
+
+When creating a new plugin in Developer Studio, we can either create a completely new plugin or add a new plugin to an existing plugin project.
+
+***Using the terminal:*** Navigate to the *themes* directory in the Plugins SDK and enter the following command (Linux and Mac OS X):
 
     ./create.sh deep-blue "Deep Blue"
 
@@ -41,7 +56,17 @@ If you want to use a different base theme than the default, you can edit the `bu
 
 ### Deploying the Theme [](id=lp-6-1-dgen04-deploying-the-theme-0)
 
-Open a terminal window in your `themes/deep-blue-theme` directory and enter this command:
+***To deploy in Developer Studio:*** Click and drag your theme project onto your server. 
+
+![Figure 4.2: Drag and drop your theme onto the server](../../images/05-themes-6.PNG)
+
+Upon deploying your plugin, your server will output messages indicating your plugin is read, registered, and now available for use.
+
+	Reading plugin package for deep-blue-theme
+	Registering themes for deep-blue-theme
+	1 theme for deep-blue-theme is available for use
+
+***To deploy using the terminal:*** Open a terminal window in your `themes/deep-blue-theme` directory and enter this command:
 
     ant deploy
 
@@ -88,13 +113,23 @@ The structure of a theme is designed to separate different types of resources in
 
 You will notice that there is a `_diffs` folder inside the `docroot` directory of your theme; this is where you will place your theme code. You only need to customize the parts of your theme that will differ from the parent theme. To do this, you mirror the directory structure of the parent theme inside of the `_diffs` folder, placing only the folders and files you need to customize there.
 
-You will also notice that there are several other folders inside `docroot`; these were copied over from the parent theme in your Liferay bundle when you deployed your theme. You should use these files as the basis for your modifications. For example, to customize the navigation, you would copy `navigation.vm` from `deep-blue-theme/docroot/templates/navigation.vm` into `deep-blue-theme/docroot/_diffs/templates` folder (you may have to create this folder first). You can then open this file and customize it to your liking.
+You will also notice that there are several other folders inside `docroot`; these were copied over from the parent theme in your Liferay bundle when you deployed your theme. You should use these files as the basis for your modifications. For example, to customize the navigation, you would copy `navigation.vm` from `deep-blue-theme/docroot/templates/navigation.vm` into `deep-blue-theme/docroot/_diffs/templates` folder (you may have to create this folder first). You can then open this file and customize it to your liking. Here is a snapshot of your *Package Explorer* located in Developer Studio.
+
+![Figure 4.3: The theme's Package Explorer](../../images/05-themes-3.PNG)
 
 For custom styles, create a folder named `css` inside your `_diffs` folder and place a single file there called `custom.css`. This is where you would put all of your new styles and all of your overrides of the styles in the parent theme. `custom.css` is loaded last, and so styles in this file are able to override any styles in the parent theme.
 
 Best practice recommends that you make all your custom theme styles using only the `custom.css` file, and that you not override any of the templates unless absolutely necessary. This will make future upgrades far easier, as you won't have to manually modify your templates to add support for new Liferay features.
 
-Whenever you make modifications to your theme, redeploy it by opening a terminal in `themes/deep-blue-theme` and entering the command **ant deploy**. Wait a few seconds until the theme deploys, and then refresh your browser to see your changes.
+Whenever you make modifications to your theme in Developer Studio, redeploy it by right clicking your theme located underneath your server, and selecting *Redeploy*.
+
+![Figure 4.4: How to redeploy your theme plugin](../../images/05-themes-2.PNG)
+
+If you are using the terminal window, redeploy it by opening a terminal in `themes/deep-blue-theme` and enter this command:
+
+	ant deploy 
+
+Wait a few seconds until the theme deploys, and then refresh your browser to see your changes.
 
 ---
 
@@ -112,36 +147,7 @@ You will notice that in the *Look and Feel* settings the *Classic* theme has a t
 
 Liferay now includes its own JavaScript library called Alloy, which is an extension to Yahoo's YUI3 framework. Developers can take advantage of the full power of either of these frameworks in their themes. Inside of your theme's `main.js` file, you will find definitions for three JavaScript callbacks:
 
-    AUI().ready(
-	    function() {
-
-	    }
-	);
-
-    Liferay.Portlet.ready(
-    
-		/*
-		This function gets loaded after each and every portlet on the page.
-		*/
-		
-		portletId: the current portlet's id
-		node: the Alloy Node object of the current portlet
-	
-		function(portletId, node) {
-	
-		}
-    );
-
-    Liferay.on(
-		'allPortletsReady',
-		/*
-		This function gets loaded when everything, including the portlets, is on the
-		page.
-		*/
-	
-		function() {
-		}
-    );
+![Figure 4.5: Content of main.js](../../images/05-themes-4.PNG)
 
 -   **AUI().ready(fn);**
 
@@ -165,7 +171,7 @@ Each theme can define settings to make it configurable. These settings are defin
 
     <look-and-feel>
 		<compatibility>
-			<version>6.1.0+</version>
+			<version>6.1.10+</version>
 		</compatibility>
 		<theme id="deep-blue" name="Deep Blue">
 			<settings>
@@ -232,11 +238,11 @@ Next, you declare the two theme setting variables in your `liferay-look-and-feel
 
 The portal administrator can input a slogan and activate it for the portal via the *Look and Feel* section of the *Manage Site Pages* panel (see the *Page Creation and Management* section of [Using Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide)).
 
-![Figure 4.1: Setting the footer display slogan in the *Look and Feel* of  the site's page settings.](../../images/themes-custom-configurable-setting.PNG)
+![Figure 4.6: Setting the footer display slogan in the *Look and Feel* of  the site's page settings](../../images/themes-custom-configurable-setting.PNG)
 
 Then, when the portal administrator saves these settings, the site's pages display the new footer containing the slogan.
 
-![Figure 4.2: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.PNG)
+![Figure 4.7: The slogan displayed in the page footer](../../images/themes-custom-configurable-setting-displayed.PNG)
 
 ![note](../../images/tip-pen-paper.png)**Note:** A language properties hook should be used to properly display configurable theme settings, such as the slogan text area and footer checkbox from the previous example. For details, see the [Overriding a Language.properties
 File](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties%3C-em%3E-fi-1) section found in the *Hooks* chapter of this guide.
@@ -262,7 +268,7 @@ In your `liferay-look-and-feel.xml`, you can define color schemes like so:
 		</color-scheme>
     </theme>
 
-Inside of your `_diffs/css` folder, create a folder called `color_schemes`. Inside of that folder, place a `.css` file for each of your color schemes. In the case above, we would could either have just one called `night.css` and let the default styling handle the first color scheme, or you could have both `day.css` and `night.css`.
+Inside of your `_diffs/css` folder, create a folder called `color_schemes`. Inside of that folder, place a `.css` file for each of your color schemes. In the case above, we could either have just one called `night.css` and let the default styling handle the first color scheme, or you could have both `day.css` and `night.css`.
 
 Assuming you follow the second route, place the following lines at the bottom of your `custom.css` file:
 
@@ -325,14 +331,11 @@ Using CSS and/or some unobtrusive Javascript it's possible to implement any type
 
 ## Theme inheritance [](id=theme-inheritan-4)
 
-By default themes are based on the **_styled** theme, which provides only basic styling of portlets. If you open the `build.xml` file in your theme's directory, you will see the following:
+By default, themes are based on the **_styled** theme, which provides only basic styling of portlets. If you open the `build.xml` file in your theme's directory using the Build Application Configuration Editor , you will see the following:
 
-    <project name="theme" basedir="." default="deploy">
-		<import file="../build-common-theme.xml" />
-		<property name="theme.parent" value="_styled" />
-    </project>
+![Figure 4.8: Content of build.xml](../../images/05-themes-5.PNG)
 
 The `theme.parent` property determines which built-in theme your theme will inherit from. In addition to the **_styled** theme, you may also choose to inherit from the **_unstyled** theme, which contains no styling whatsoever. This involves more work, but in exchange you get full flexibility to design your own CSS files from scratch.
 
-You can also use the default Liferay theme, called **classic**, as the parent of your themes. Using this approach allows you to start with a look and feel that already works and get nice results quickly. The drawback is that since there is so much done already for you, there won't be as much flexibility to build the desired design. It's a compromise between creating a theme as quickly as possible versus having full control of the result. It's your choice.
+You can also use the default Liferay theme, called **classic**, as the parent of your themes. Using this approach allows you to start with a look and feel that already works and gets nice results quickly. The drawback is that since there is so much already done for you, there won't be as much flexibility to build the desired design. It's a compromise between creating a theme as quickly as possible versus having full control of the result. It's your choice.
 
