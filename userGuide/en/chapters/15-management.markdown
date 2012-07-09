@@ -5,13 +5,11 @@ You know how all these retailers advertise themselves as a "one stop shop" for a
 <!-- 
 This intro sounds like it would work for the next chapter, "Using the Control panel." Check chapter reference.
 -->
-This chapter covers the following activities:
+This chapter covers the following topics:
 
 -   Using the control panel to manage users, organizations, sites, user groups, roles and teams
 
--   Using the control panel to manage password policies, authentication settings, mail host names, email notifications, display settings and monitoring
-
--   Using the control panel to manage server administration, portal instances, plugins and updates
+-   Using the control panel to manage password policies, authentication settings, and global user settings
 
 Let's begin our examination of Liferay's control panel by looking at how to manage and organize users in Liferay Portal.
 
@@ -284,7 +282,7 @@ Prior to Liferay 6.0, the default configurations of many Liferay portlets allowe
 
 ---
 
-<!-- needs transition -->
+Now that we've seen how to use organizations and user groups to manage users and how to use roles to define permissions, let's examine the general portal settings you can configure.
 
 #### Managing Portal Settings [](id=managing-portal-settings)
 
@@ -386,22 +384,13 @@ By default, all settings except for the last are enabled. User authentication by
 We'll examine how to set up LDAP authentication next.
 
 <!-- New transition?  -->
-
-<!-- Section ii   Needs text   -->
-
+<!-- Section ii   Needs content -->
 ## Integrating Liferay users into your enterprise [](id=lp-6-1-ugen15-integrating-liferay-users-into-your-enterprise-0)
 
 <!--  this is Section ii, subsection a   -->
-
 ### LDAP [](id=lp-6-1-ugen12-authentication-ldap-0)
 
-You can use the LDAP tab of the Authentication page to connect Liferay to an LDAP directory. There are two places for you to configure the LDAP settings: here in the control panel or in the `portal-ext.properties` file (which is covered in chapter 14). We recommend you use the control panel since your configuration settings will be stored in the database. Note that if you use both, the settings in the database will override the settings in `portal-ext.properties`. Configuring the LDAP settings from the control panel is easier and does not require a restart of Liferay. The only compelling reason to use the `portal-ext.properties` file is if you have many Liferay nodes which will be configured to run against the same LDAP directory. In that case, for your initial deployment, it may be easier to copy the `portal-ext.properties` file to all of the nodes so the first time they start up, the settings are correct. Regardless of which method you use, the available settings are the same.
-
-<!--
-
-Check chapter reference.
-
--->
+You can use the LDAP tab of the Authentication page to connect Liferay to an LDAP directory. There are two places for you to configure the LDAP settings: here in the control panel or in the `portal-ext.properties` file (which is covered in chapter 20). We recommend you use the control panel since your configuration settings will be stored in the database. Note that if you use both, the settings in the database will override the settings in `portal-ext.properties`. Configuring the LDAP settings from the control panel is easier and does not require a restart of Liferay. The only compelling reason to use the `portal-ext.properties` file is if you have many Liferay nodes which will be configured to run against the same LDAP directory. In that case, for your initial deployment, it may be easier to copy the `portal-ext.properties` file to all of the nodes so the first time they start up, the settings are correct. Regardless of which method you use, the available settings are the same.
 
 You configure the global values from the LDAP tab of the Authentication page.
 
@@ -557,7 +546,6 @@ If you set this to `user`, Liferay will import all users from the specified port
 These properties are a list of phrases from error messages which can possibly be returned by the LDAP server. When a user binds to LDAP, the server can return *controls* with its response of success or failure. These controls contain a message describing the error or the information that is coming back with the response. Though the controls are the same across LDAP servers, the messages can be different. The properties described here contain snippets of words from those messages and will work with Red Hat's Fedora Directory Server. If you are not using that server, the word snippets may not work with your LDAP server. If they don't, you can replace the values of these properties with phrases from your server's error messages. This will enable Liferay to recognize them. Next, let's look at the Single Sign-On solutions Liferay supports.
 
 <!--  this is Section ii, subsection b  -->
-
 ### SSO [](id=lp-6-1-ugen12-single-sign-on-0)
 
 Single Sign-On solutions allow you to provide a single login credential for multiple systems. This allows you to have people authenticate to the Single Sign-On product and they will be automatically logged in to Liferay and to other products as well.
@@ -673,4 +661,6 @@ The Default User Associations tab has three fields allowing you to list (one per
 
 If you have defined other user groups, sites or roles you want newly created users to be members of by default, enter them here. For example, you may have defined site templates in certain user groups to pre-populate end users' private pages. If there is a particular configuration you want everyone to have, you may want to enter those user groups here.
 
-<!--  Summary?   -->
+## Summary
+
+
