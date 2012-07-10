@@ -110,7 +110,7 @@ The Sites portlet is an improved version of the basic My Sites portlet. It allow
 
 The Dashboard page provides several portlet applications designed to keep you up to date with various kinds of portal activity:
 
-- Actvities
+- Activities
 - Upcoming Tasks
 - Events
 - Microblogs Status Update
