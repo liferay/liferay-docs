@@ -1,3 +1,4 @@
+
 # Web Content Management [](id=using-liferay-web-content-management)
 
 Web Content Management is a system which allows non-technical users to publish content to the web without having advanced knowledge of web technology or programming of any sort. Liferay WCM empowers you to publish your content with a simple point and click interface and it helps you to keep your site fresh. You'll find yourself easily creating, editing and publishing content within just a few minutes of being exposed to its features. But Liferay WCM doesn't sacrifice power for simplicity. If need be, you can use your developer skills to create complex presentation layer templates that make your content "pop" with dynamic elements. Once these templates have been deployed into the portal, your non-technical users can manage content using these templates as easily as they would manage static content. All of this makes Liferay WCM an appropriate choice for sites with only a few pages or sites with gigabytes of content. 
@@ -476,21 +477,12 @@ Taking ownership of, reviewing and approving content is very easy:
 
 In a real world situation, you obviously wouldn't want the person who created the content to be the one who approves it. Instead, you would have one or more roles designed for users who will be creating content and you would have specific users assigned to one or more roles for approving content. Our example was of a very straightforward workflow, as it has only a single approver. Kaleo workflow allows you to design workflows that go through as many steps as you need to conform to your business processes. We look at Kaleo workflow in more detail in chapter 6.
 
+<!--
 Next up is Site memberships, where you'll learn how to administer sites and define users and permissions. 
-
 ## Site memberships [](id=lp-6-1-ugen02-site-memberships-0)
-
-<!-- Need text here -->
+Need text here -->
 ## Summary [](id=summ-25)
 
 This chapter has provided an introduction to Liferay Web Content Management. We've seen how to create and manage pages within a site in Liferay. We've also seen how easy it is to create and edit web content using Liferay's rich WYSIWYG editor. This powerful tool enables users who don't have much experience with HTML and CSS to easily create and style web content of any type that you'd like to publish on the web. 
 
 Liferay WCM also includes a powerful workflow engine, allowing you to set up custom publishing rules to fit your organization. You can set up custom approval processes for different sites as well as for different kinds of content within a site. We'll examine sites in more detail in chapter 3. We'll also cover some more advanced web content management tools such as web content structures and templates, page templates and site templates, staging, and mobile device rules.
-
-<!-- needs to move to chapter 3's summary
-This chapter has been your guide to Liferay Web Content Management. We've seen how Liferay manages both simple content and advanced content with structures and templates. These powerful tools enable you to handle easily any type and amount of material you'd like to publish on the web. 
-
-Liferay WCM also includes a powerful staging environment, allowing you to stage content locally on the same server or remotely to another server. You can publish your site when you want it, on the schedule you choose. You can even create different variations of your site that can be worked on simultaneously. 
-
-Whether your site is small and static or large and dynamic, Liferay's WCM enables you to plan and manage it. With tools such as the WYSIWYG editor, structures and templates, you can quickly add and edit content. With the Web Content Display and Asset Publisher, you can rapidly select and configure what and how your content is displayed. And by using Liferay's integrated workflow, you can set up custom publishing rules to fit your organization. You will find that managing your site becomes far easier when using Liferay's Web Content Management system.
--->
