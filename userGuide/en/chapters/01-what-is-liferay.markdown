@@ -88,7 +88,7 @@ Many Liferay Portal users see it as a robust content management system, and they
 
 ## Using Liferay Portal as a collaborative platform [](id=lp-6-1-ugen01-using-liferay-portal-as-a-collaborative-platform-0)
 
-Many sites have grown organically. Starting with straight HTML pages for a site seems easy until you have a lot of content. That's when you want to add a content management system. In a similar fashion, as a site grows, it gains a community. It helps a site to grow even more if that community is given an opportunity to interact. That's where collaborative applications can make the difference between a site that grows and a site that stagnates. 
+Many sites have grown organically. You may have grown your community by using separate tools: first a forums application, and then a wiki for collaborative documentation, and maybe even a chat application. It can be hard (and error-prone) to integrate all of these applications so your users can use them seamlessly. Thankfully, Liferay includes a suite of collaborative applications you can use that are all integrated together.  
 
 Liferay Portal includes a fantastic collaborative platform, because it offers every standard collaborative application that's available. These applications range from personal productivity applications like a calendar and email, to community-building applications like message boards, polls, and wikis. 
 
@@ -96,7 +96,7 @@ Liferay Portal includes a fantastic collaborative platform, because it offers ev
 
 This is a suite of integrated applications with all the features of similar, standalone applications. Liferay Portal's message boards include categories and subcategories, message threads, captcha, RSS feeds, email notification, posting via email, and much more. But more than this, the application is integrated with the rest of Liferay Portal's framework. Users log in, and their profiles are used automatically by the message boards and all the other collaborative applications. And as we'll see later, functionality from the built in applications can be added to your own to provide features like comments in your own software, and you don't have to write any code to do it. 
 
-Liferay Portal's wiki is another example of a full-featured collaborative application. It supports three different syntaxes for wiki code. Users can comment on wiki articles, and it keeps a full history of every change that's been made, allowing users to revert back to any change. It also supports RSS feeds (just about every Liferay application does) so you can subscribe to see new articles as they are posted. Each site can have one or more wikis, and each wiki can have one or more top-level nodes. 
+Liferay Portal's wiki is another example of a full-featured collaborative application. It has support for authoring pages in a WYSWYG editor, or more advanced users can use the easy-to-learn standard Wiki Creole syntax. Users can comment on wiki articles, and it keeps a full history of every change that's been made, allowing users to revert back to any change. It also supports RSS feeds (just about every Liferay application does) so you can subscribe to see new articles as they are posted. Each site can have one or more wikis, and each wiki can have one or more top-level nodes. 
 
 ![Figure 1.6: Liferay Portal's wiki enables users to collaboratively create complex articles. Clicking the *Details* link shows the full history of the article, including the author of each change.](../../images/01-wiki-article.png)
 
@@ -106,7 +106,7 @@ Liferay Portal includes every application you'll need to enable users to collabo
 
 ## Using Liferay as a social platform [](id=lp-6-1-ugen01-using-liferay-as-a-social-platform-0)
 
-Whether you plan to build a social network or enable social features as part of your overall user experience, Liferay Portal has what you need. Starting with a built-in API to handle relationships between users as well as publish their activities to each other, Liferay Portal also provides a suite of applications, including a profile summary, activities feeds, social requests, a wall, and more. 
+Whether you plan to build a social network or enable social applications as part of your overall user experience, Liferay Portal has the tools to build those features. Starting with a suite of applications--including a profile summary, activities feeds, social requests, a wall, and more--and rounding things out with an API to handle relationships between users as well as publish their activities to each other, Liferay Portal helps you  implement common features of social networks to enhance your existing site. 
 
 ![Figure 1.7: Liferay Portal provides feeds of social activities. These feeds can contain entries from any of Liferay's built-in applications or applications that you write.](../../images/01-social-activities.png)
 
@@ -116,17 +116,17 @@ More than this, however, Liferay is a great integration platform for social appl
 
 ![Figure 1.8: Liferay Portal's OpenSocial gadget editor lets you rapidly create social applications that can be served across the web to any other OpenSocial container.](../../images/01-opensocial-gadget-editor.png)
 
-Liferay Portal also supports the creation of Facebook applications; in fact, no additional coding is necessary to publish your Liferay applications on Facebook (you would, of course, need to use Facebook's API to use Facebook-specific features--such as posting on users' timelines). The HTML from your application is converted seamlessly to FBML, and the only thing you need to do is get an API key and canvas page URL from Facebook. 
+Liferay Portal also supports the creation of Facebook applications; in fact, no additional coding is necessary to publish your Liferay applications on Facebook (you would, of course, need to use Facebook's API to use Facebook-specific features--such as posting on users' timelines). The only thing you need to do is get an API key and canvas page URL from Facebook. 
 
 ![Figure 1.9: Any Liferay application can be published to multiple social networks with a few clicks.](../../images/01-facebook-integration.png)
 
-As you can see, Liferay Portal is an ideal platform if you want to do anything social: add social features to your web site, create a social network of your own, create social applications to be published on other web sites, or build a social application for Facebook. 
+As you can see, Liferay Portal is built for social applications: adding social features to your web site, creating a social network of your own, creating social applications to be published on other web sites, or building a social application for Facebook. 
 
-As with social applications, Liferay Portal is also ideally suited as a platform for any web application you're considering writing. In addition to this, Liferay Portal is easily configured to be used as a shared hosting platform for multiple web sites. Let's look at the benefits you can reap by using Liferay Portal in these ways. 
+As with social applications, Liferay Portal is also an easy to use, robust platform for any web application you're considering writing. In addition to this, Liferay Portal is easily configured to be used as a shared hosting platform for multiple web sites. Let's look at the benefits you can reap by using Liferay Portal in these ways. 
 
 ## Using Liferay as a web platform [](id=lp-6-1-ugen01-using-liferay-as-a-web-platform-0)
 
-We can't even begin to imagine what you're thinking of building, but whatever it is, it's going to be a lot of work. Building it on Liferay's web platform can give you a leg up, by providing to you everything you need to support your application, so you can concentrate solely on what *you're* building, and not the rest of the features your users expect will come along with it. 
+We can't even begin to imagine what you're thinking of building, but whatever it is, you're going to put your heart and soul into it. Building it on Liferay's web platform can give you a leg up, by providing to you everything you need to support your application, so you can concentrate solely on what *you're* building, and not the rest of the features your users expect will come along with it. 
 
 ### Liferay as an application development platform [](id=lp-6-1-ugen01-liferay-as-an-application-development-platform-0)
 
@@ -136,27 +136,31 @@ Liferay Portal's development framework is a great help when you're building a we
 
 For example, bug fixes to your applications are easy to apply, because Liferay applications are hot deployed to the running server. Liferay's Marketplace gives you a ready-made shopping center for your applications. And Liferay's web services and JSON architecture make it easy for you to share data from your applications to other systems running on different platforms. 
 
-If you're building an enterprise system, portals were designed in the first place to be a single point of entry to your users' applications and content. Since Liferay Portal integrates well with user directories such as LDAP and Active Directory, and single sign-on systems such as SAML and OpenSSO, it fits well into your enterprise systems. This allows you to use it as an integration platform for existing applications.  
-
 You get all this--not to mention the automatic Facebook and OpenSocial integration mentioned above--simply by using Liferay's development platform. It's a very powerful platform, and certainly worth your investigation. 
 
-### Customizing Liferay Portal to use as a base [](id=lp-6-1-ugen01-customizing-liferay-portal-to-use-as-a-base-0)
+### A great integration platform
 
-Beyond using Liferay as a development platform for new applications, Liferay Portal has also been designed to be extended and modified. As an open source project, its source code is available, but Liferay Portal's developers have designed the product to be customized to make it easy to build whatever you want out of it. 
+If you're building an enterprise system, portals were designed in the first place to be a single point of entry to your users' applications and content. Since Liferay Portal integrates well with user directories such as LDAP and Active Directory, and single sign-on systems such as SAML and OpenSSO, it fits well into your enterprise systems. This allows you to use it as an integration platform for existing applications. 
 
-Special software components called *hook* and *ext* plugins enable developers to change any aspect of Liferay's interface and behavior--without having to modify any of Liferay Portal's source code. This provides you all the benefits of the "build from scratch" strategy we mentioned earlier, but without all the effort to build from scratch. If you want to make a change to the user registration screens, add support for a proprietary single sign-on mechanism that you've written, revise the user interface for the message boards application, or anything else, you can make those customizations. And if you're a developer, we're sure you know that it's a whole lot easier to customize something that *almost* does things exactly the way you want than it is to write that feature from scratch. With Liferay Portal, you *can* have your cake and eat it too. 
+Liferay Portal, since it adheres to the JSR standard for portlets, was designed from the ground up for application integration. You can mix and match any application installed in the system on any page within the portal. You can make use of any APIs provided by other systems to integrate their data into an application window in Liferay. And applications you create with Liferay's Service Builder API are web service-enabled from the start. 
 
 ### Hosting multiple sites on Liferay Portal [](id=lp-6-1-ugen01-hosting-multiple-sites-on-liferay-portal-0)
 
-Liferay Portal excels as a hosting platform. You can use it to host multiple sites under the same overall architecture (like Facebook, MySpace, or Pinterest offer to their users), or you could build an entire web hosting company based solely on Liferay's ability to serve multiple instances of itself from the same physical installation. 
+Liferay Portal excels as a multi-site hosting platform. You can use it to host multiple sites under the same overall architecture (like Facebook, MySpace, or Pinterest offer to their users), or you could host several completely different web sites based solely on Liferay's ability to serve multiple instances of itself from the same physical installation. 
 
 In the first scenario, Liferay Portal's Sites architecture lets you create multiple, different web sites that have public and/or private sets of pages and as many pages within those sets as you'd like. Users join the web site, and once they're members, they can join and leave open sites with one click. Some sites can be defined as restricted or private, and users can't access those unless they're added by site administrators. All of these sites can have canonical domain names such as baseballcards.liferay.com or progrock.liferay.com. 
 
-Using this construct, you can build anything from Facebook, to Yahoo Groups, to SourceForge, to the now-defunct-but-once-loved Geocities.
+Using this construct, you can build anything from Facebook, to Yahoo Groups, to SourceForge, to the now-defunct-but-once-loved Geocities. There is no limit to the number of sites you can have: some Liferay installations have only one or two, but others have many thousands. 
 
 In the second scenario, Liferay Portal lets you create completely separate instances of itself from the same installation. Users, groups, organizations, sites, and roles from each instance are kept completely separate. If a user registers for a user id on one instance, he or she would have to register as a new user on another instance as well. 
 
-This lets you host many different, separate web sites from one Liferay Portal installation, which is a great alternative for web hosting companies or smaller organizations that want to share the cost of their web sites. Users of each instance have access to the same powerful content management, collaboration, social, and web development platform that they'd have if they were operating from a single, standalone installation. 
+This lets you host many different, separate web sites from one Liferay Portal installation. Users of each instance have access to the same powerful content management, collaboration, social, and web development platform that they'd have if they were operating from a single, standalone installation.
+
+## Extending and customizing Liferay for your own needs 
+
+Beyond using Liferay as a development platform for new applications, Liferay Portal has also been designed to be extended and modified. As an open source project, its source code is available, but Liferay Portal's developers have designed the product to make it easy to build whatever you want out of it. 
+
+Special software components called *hook* and *ext* plugins enable developers to change any aspect of Liferay's interface and behavior--without having to modify any of Liferay Portal's source code. This provides you all the benefits of the "build from scratch" strategy we mentioned earlier, but without all the effort to build from scratch. If you want to make a change to the user registration screens, add support for a proprietary single sign-on mechanism that you've written, revise the user interface for the message boards application, or anything else, you can make those customizations. And if you're a developer, we're sure you know that it's a whole lot easier to customize something that *almost* does things exactly the way you want than it is to write that feature from scratch. With Liferay Portal, you *can* have your cake and eat it too. 
 
 ## Summary [](id=lp-6-1-ugen01-summary-0)
 
