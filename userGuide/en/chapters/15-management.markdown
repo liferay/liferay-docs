@@ -661,7 +661,7 @@ The Default User Associations tab has three fields allowing you to list (one per
 
 If you have defined other user groups, sites or roles you want newly created users to be members of by default, enter them here. For example, you may have defined site templates in certain user groups to pre-populate end users' private pages. If there is a particular configuration you want everyone to have, you may want to enter those user groups here.
 
-## Summary
+## Summary [](id=lp-6-1-ugen15-summary-0)
 
 In this chapter, we began to examine Liferay's control panel. Site memberships and teams aren't the only way for portal administrators to group and manage users: organizations can be used to arrange users into hierarchical structures and user groups are a flexible way to collect ad hoc groups of users. You can create roles to define permissions and scope them for the entire portal or for a particular site or organization. User groups can be assigned to roles; in this case, each member of the user group is assigned to the role. 
 

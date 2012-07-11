@@ -125,7 +125,7 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 **Show Metadata:** Allows you to select from the available metadata types (see below).
 
-![Figure 5.6: Show Metadata](../../images/portal-admin-ch4_html_m5.xb2939.jpg)
+![Figure 5.6: Available metadata types](../../images/available-metadata-fields.png)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS Feeds.
 
@@ -157,6 +157,6 @@ Related Assets is a new feature in Liferay 6.1 that enables you to connect any n
 
 The Related Assets portlet is based on the Asset Publisher and possseses essentially the same interface with one key difference. The Asset publisher displays any content that meets the criteria selected in the portlet configuration. The Related Assets portlet only displays content that meets the criteria, and also is listed as a related asset for a piece of content that is currently published on the page where it is placed.
 
-## Summary
+## Summary [](id=lp-6-1-ugen05-summary-0)
 
 In this chapter, we explored Liferay's asset framework. Any type of content in Liferay is considered an asset and can utilize the features provided by the asset framework: tags, categories, comments, ratings, and relationships. We examined the Asset Publisher portlet and looked at the many configuration options for choosing what kinds of assets to display and how to display them. We saw that the Asset Publisher portlet is designed to integrate with the Tags Navigation and Categories navigation portlets to allow users to browse content more easily. We also learned about the Display Page attribute of web content, the Content Display Page page template, and canonical URLs for assets. Assets can have display page associated with them so that the full view of the asset is displayed on the display page. The display page of an asset is used in the asset's canonical URL.

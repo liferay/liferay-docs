@@ -201,7 +201,7 @@ The default configuration file is called `portal.properties` and it resides insi
 
 ---
 
-![Figure 14.4: Tip](./images/tip.png) **Warning:** The configuration you choose in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. In the setup wizard, however, if you specify a different Liferay Home directory than the default, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
+![Figure 14.4: Tip](../../images/tip.png) **Warning:** The configuration you choose in the setup wizard is saved in a `portal-setup-wizard.properties` file in your Liferay Home directory. In the setup wizard, however, if you specify a different Liferay Home directory than the default, the `portal-setup-wizard.properties` file that's saved there will not be read upon restarting your server. To have Liferay read your `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in your new Liferay Home directory and add the following line to it, where `${liferay.home}` is the new Liferay Home directory that you chose:
 
     include-and-override=${liferay.home}/portal-setup-wizard.properties
 
