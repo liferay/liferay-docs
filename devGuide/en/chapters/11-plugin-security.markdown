@@ -3,7 +3,7 @@
 
 We all wish cyberspace were free of malicious software and unwanted bugs. Since it isn't, we need to guard ourselves and our portals from these evils. Enter Liferay Portal's Plugin Security Manager! It's like a super-hero in a cape and tights, except, well, it's not. 
 
-In its quest for peace within your portal, the Plugin Security Manager pledges to: 
+In its quest for peace within your portal, the Plugin Security Manager pledges to:
 
 - Protect your portal and host system from unwanted side affects and malicious software introduced by plugins.
 - Control plugin access to your portal, host system, and network by requiring that plugins specify ahead of time the portal resources they intend to access.
@@ -78,6 +78,15 @@ Specify the reference IDs of plugins for this plugin to access.
 	security-manager-class-loader-reference-ids=\
 		1_WAR_flashportlet,\
 		flash-portlet
+
+## Expando Bridge
+
+Specify models having Expando Bridge attributes the plugin is permitted to access. The plugin can also access Expando Bridge attributes via the wrapper classes of the models.
+
+*Example:*
+
+	security-manager-expando-bridge=\
+    	com.liferay.portal.model.User
 
 ## File Security
 
@@ -178,9 +187,9 @@ Specify which services the plugin can look up. You can use regular expressions t
 In this example, the plugin can look up objects for key names `matthew`, `mark`, `Mark`, `luke`, and `Luke`. In addition, the plugin can look-up objects for key names containing `john` with zero or more characters preceding and/or trailing `john`.
 
 	security-manager-jndi-names=\
-		test-pacl:matthew,\
-		test-pacl:[mM]ark|test-pacl:[lL]uke,\
-		test-pacl:.*john.*
+		test-pacl-matthew,\
+		test-pacl-[mM]ark|test-pacl-[lL]uke,\
+		test-pacl-.*john.*
 
 ## Message Bus Security
 
@@ -201,6 +210,14 @@ Specify which message bus destinations the plugin is permitted to call (send mes
 		liferay/test_pacl_listen_failure,\
 		liferay/test_pacl_listen_success,\
 		liferay/test_pacl_send_success
+
+## Search Engine IDs
+
+Specify the IDs of search engines the plugin is permitted to access.
+
+*Example:*
+	security-manager-search-engine-ids=\
+		SYSTEM_ENGINE
 
 ## Portlet Service Security
 
@@ -227,6 +244,34 @@ Specify portal service classes and/or methods the plugin is permitted to access.
 
 ## Bean Property Security
 
+Specify bean properties the plugin is permitted to get.
+
+*Example:*
+	
+	security-manager-get-bean-property=\
+		com.liferay.portal.kernel.cache.CacheRegistryUtil,\
+		com.liferay.portal.kernel.cache.key.CacheKeyGeneratorUtil,\
+		com.liferay.portal.kernel.configuration.ConfigurationFactoryUtil,\
+		com.liferay.portal.kernel.dao.db.DBFactoryUtil,\
+		com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil,\
+		com.liferay.portal.kernel.dao.orm.FinderCacheUtil,\
+		com.liferay.portal.kernel.dao.orm.PortalCustomSQLUtil,\
+		com.liferay.portal.kernel.deploy.DeployManagerUtil,\
+		com.liferay.portal.kernel.executor.PortalExecutorManagerUtil,\
+		com.liferay.portal.kernel.format.PhoneNumberFormatUtil,\
+		com.liferay.portal.kernel.language.LanguageUtil,\
+		com.liferay.portal.kernel.messaging.MessageBusUtil,\
+		com.liferay.portal.kernel.servlet.DirectRequestDispatcherFactoryUtil,\
+		com.liferay.portal.kernel.servlet.DirectServletRegistryUtil,\
+		com.liferay.portal.kernel.spring.util.SpringFactoryUtil,\
+		com.liferay.portal.kernel.util.FileUtil,\
+		com.liferay.portal.kernel.util.HtmlUtil,\
+		com.liferay.portal.kernel.util.HttpUtil,\
+		com.liferay.portal.kernel.util.InfrastructureUtil,\
+		com.liferay.portal.kernel.util.PropsUtil,\
+		com.liferay.portal.kernel.xml.SAXReaderUtil,\
+		com.liferay.portal.util.PortalUtil
+
 Specify bean properties the plugin is permitted to set.
 
 *Example:*
@@ -235,6 +280,13 @@ Specify bean properties the plugin is permitted to set.
 		com.liferay.portal.kernel.dao.orm.PortalCustomSQLUtil
 
 ## Socket Security
+
+Specify sockets permitted to accept connections in the plugin.
+
+*Example:*
+
+	security-manager-sockets-accept=\
+		localhost:4320
 
 Specify connections the plugin is permitted to make with the outside world.
 
@@ -334,6 +386,17 @@ Specify tables the plugin can update.
 
 	security-manager-sql-tables-update=\
 		ListType
+
+## Thread Security
+
+Specify names of thread pool executors the plugin is permitted to access.
+
+*Example:*
+
+	security-manager-thread-pool-executor-names=\
+		liferay/test_pacl,\
+		liferay/test_pacl_listen_failure,\
+		liferay/test_pacl_listen_success
 
 ## Summary
 
