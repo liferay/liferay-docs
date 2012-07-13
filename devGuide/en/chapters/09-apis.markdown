@@ -85,7 +85,7 @@ Next, we'll step back for a moment and consider the security layers of Liferay's
 
 By default, a user connecting from the same machine Liferay is running on can access remote services so long as that user has permission to use those services in Liferay's permissions system. Of course, you are not really "remote" unless you are accessing services from a different machine; but we recommend using the API in a remote manner to trigger the security checks. Liferay has two layers of security when it comes to accessing its services remotely. The first layer of security only applies to clients invoking the API using a remote protocol. Invoking the API using a remote protocol, without having explicit rights to both layers, results in a remote exception being thrown and access being denied to those services. However, if you want to invoke the API using Java invocation, skip to the the paragraph that refers to the **second layer of security**.
 
-The **first layer of security** that a client needs to get through in order to call a method from the service layer is *invoker IP filtering*. For example, you may have a batch job which runs on another machine in your network. This job looks in a particular shared folder on your network and uploads documents to your site's Documents and Media portlet on a regular basis, using Liferay's web services. To enable this batch job to get through the IP filter, the portal administrator will need to set portal properties appropriately to allow the machine access to that particular type of service. For example, if the batch job uses the Axis web services to upload the documents, the portal administrator would need to add the IP address of the machine on which the batch job is running to the `axis.servlet.hosts.allowed` property. A typical entry might look like this:
+The **first layer of security** a client needs to get through to call a method from the service layer is *invoker IP filtering*. For example, you may have a batch job which runs on another machine in your network. This job looks in a particular shared folder on your network and uploads documents to your site's Documents and Media portlet on a regular basis, using Liferay's web services. To enable this batch job to get through the IP filter, the portal administrator will need to set portal properties appropriately to allow the machine access to that particular type of service. For example, if the batch job uses the Axis web services to upload the documents, the portal administrator would need to add the IP address of the machine on which the batch job is running to the `axis.servlet.hosts.allowed` property. A typical entry might look like this:
 
 	axis.servlet.hosts.allowed=192.168.100.100, 127.0.0.1, SERVER_IP
 
@@ -99,7 +99,7 @@ If the IP address of the machine on which the batch job is running is listed wit
 
 ---
 
-The **second layer of security** is Liferay's *security model* that it uses for every object in the portal. The user ID that accesses the services remotely must have the proper permission to operate on the objects it will be accessing. Otherwise, a remote exception will be thrown. The Portal Administrator will need to make use of Liferay's usual means of granting users access to these resources. For example, say that a Documents and Media Library folder called *Documents* has been set up in a site and that a role has been created called *Document Uploaders* which has the rights to add documents to this folder. Your batch job will be accessing Liferay's web services in order to upload documents into this folder. In order for this to work, you will have to call the web service using the user ID of a user that is a member of this group (or the user ID of a user that has individual rights to add documents to this folder). Otherwise, the user will be prevented from using the Web Service.
+The **second layer of security** is Liferay's *security model* that it uses for every object in the portal. The user ID that accesses the services remotely must have the proper permission to operate on the objects it will be accessing. Otherwise, a remote exception will be thrown. The Portal Administrator will need to make use of Liferay's usual means of granting users access to these resources. For example, say a Documents and Media Library folder called *Documents* has been set up in a site and a role has been created called *Document Uploaders* which has the rights to add documents to this folder. Your batch job will be accessing Liferay's web services to upload documents into this folder. In order for this to work, you will have to call the web service using the user ID of a user who is a member of this group (or the user ID of a user with individual rights to add documents to this folder). Otherwise, the user will be prevented from using the Web Service.
 
 ![Figure 8.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
 
@@ -111,7 +111,7 @@ To call the AXIS web service using credentials, you would use the following URL 
 
 The user ID is the user's ID from the Liferay database. This may be obtained by logging in as the user and navigating to the *My Account* page of the control panel. On this page, the user ID appears below the user's profile picture and above the birthday field.
 
-For example, to get Organization data using a user that has the ID of *2* and a password of *test*, you would use the following URL:
+For example, to get Organization data using a user with the ID of *2* and a password of *test*, you would use the following URL:
 
 	http://2:test@localhost:8080/api/secure/axis/Portal_OrganizationService
 
@@ -149,7 +149,7 @@ Liferay's services also provide access via *Simple Object Access Protocol* (*SOA
 
 3. Add user `test` to the UserGroup
 
-Here are the SOAP related classes that we'll use:
+Here are the SOAP related classes we'll use:
 
     import com.liferay.portal.model.CompanySoap;
 	import com.liferay.portal.model.UserGroupSoap;
@@ -343,7 +343,7 @@ Some things to note about the URL:
 
 -	The screen name and password are passed in as credentials.
 
-- 	The name of the service (e.g. `Portal_UserGroupService`) is specified at the end of the URL. Remember that the service name can be found in the web service listing like the one we looked at previously.
+- 	The name of the service (e.g. `Portal_UserGroupService`) is specified at the end of the URL. Remember, the service name can be found in the web service listing like the one we looked at previously.
 
 The operations `getCompanyByVirtualHost()`,  `getUserIdByScreenName()`, `getUserUserGroups()`, `addUserGroup()` and `addUserGroupUsers()` are specified for the `-ServiceSOAP` classes `CompanyServiceSoap`, `UserServiceSoap` and  `UserGroupServiceSoap` in the WSDL files. And information on parameter types, parameter order, request type, response type, and return type are conveniently specified in the WSDL for each Liferay web service. It's all there for you!
 
@@ -419,7 +419,7 @@ For example, let's look the `DLAppService`:
 	public interface DLAppService {
 	...
 
-It contains the annotation that is found on portal startup. Notice the following lines in the console output when the debug log level is set:
+It contains the annotation found on portal startup. Notice the following lines in the console output when the debug log level is set:
 
 	10:55:06,595 DEBUG [JSONWebServiceConfigurator:121] Configure JSON web service actions
 	10:55:06,938 DEBUG [JSONWebServiceConfigurator:136] Configuring 820 actions in ... ms
@@ -534,7 +534,7 @@ This maps all the service methods of the class to URL class name `dla` instead o
 
 ##### Manual registration mode [](id=lp-6-1-dgen08-manual-registration-mode-0)
 
-Up to now, it is expected that most of the service methods are going to be exposed; that only specific methods are to be hidden (the *blacklist* approach). But sometimes you might need a different behavior: to explicitly specify only those methods that are to be exposed (*whitelist* approach). This is possible, too, using so-called *manual mode* on class-level annotation. Then, it is up to you annotate only those methods which are to be exposed.
+Up to now, it is expected most of the service methods are going to be exposed; that only specific methods are to be hidden (the *blacklist* approach). But sometimes you might need a different behavior: to explicitly specify only those methods that are to be exposed (*whitelist* approach). This is possible, too, using so-called *manual mode* on class-level annotation. Then, it is up to you annotate only those methods which are to be exposed.
 
 Then you can annotate only methods that have to be exposed.
 
@@ -556,7 +556,7 @@ JSON Web Services are enabled on Liferay Portal by default but can be easily dis
 
 #### Strict HTTP methods [](id=lp-6-1-dgen08-strict-http-methods-0)
 
-JSON Web Service services are, by default, mapped to either GET or POST HTTP methods. If a service method has name that starts with `get`, `is` or `has`, the service is assumed to be read-only and is bound to the GET method; otherwise it is bound to POST.
+JSON Web Service services are, by default, mapped to either GET or POST HTTP methods. If a service method has a name that starts with `get`, `is` or `has`, the service is assumed to be read-only and is bound to the GET method; otherwise it is bound to POST.
 
 By default, the portal does not check HTTP methods when invoking a service call; that is, the portal works in "non-strict http method" mode as services may be invoked using any HTTP method. If you need the strict mode, you can set it with portal property: 
 
@@ -594,7 +594,7 @@ It is important to understand how calls to service methods are matched, especial
 
 The general rule is that besides the method name, you must provide **all** parameters for that service method. Even if some parameter is to be `null`, you must still provide it.
 
-Note, however, that how parameters are provided (as part of the URL line, as request parameters, etc.) is not important nor is the order of the parameters.
+Note that how parameters are provided (as part of the URL line, as request parameters, etc.) is not important nor is the order of the parameters.
 
 An exception to the rule of *all* parameters being required, is when using numeric *hints* to match methods. Let's look at using hints next.
 
@@ -606,7 +606,7 @@ It is possible to add numeric hints that specify how many method arguments a ser
 
 Here, the `.2` is a hint, so only service methods with 2 arguments will be matched, others will be ignored for matching.
 
-One important difference when a hint is specified, is that now you do not have to specify all of the parameters. All missing arguments are treated as `null`. Therefore, the previous example may be called with ...
+One important difference when a hint is specified, is now you do not have to specify all of the parameters. All missing arguments are treated as `null`. Therefore, the previous example may be called with ...
 
 	/foo/get-bar.2/param1/123
 
@@ -624,7 +624,7 @@ When a method name is overloaded, the *best match* will be used: The method that
 
 #### Passing parameters as URL query [](id=lp-6-1-dgen08-passing-parameters-as-url-query-0)
 
-Parameters can be passed as request parameters, too. The difference is that parameter names are specified as is (e.g. camel-case) and are set equal to their argument values:
+Parameters can be passed as request parameters, too. The difference is parameter names are specified as is (e.g. camel-case) and are set equal to their argument values:
 
 	http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries?repositoryId=10172&folderId=0
 
@@ -636,7 +636,7 @@ Parameters can be passed in a mixed way: some can be part of the URL path and so
 
 #### Sending NULL values [](id=lp-6-1-dgen08-sending-null-values-0)
 
-To pass a `null` value for an argument, simply prefix that parameter name with a dash `-`. For example: 
+To pass a `null` value for an argument, simply prefix the parameter name with a dash `-`. For example: 
 
 	.../dlsync/get-d-l-sync-update/company-id/10151/repository-id/10195/-last-access-date
 
@@ -676,7 +676,7 @@ As you see, it's a common upload form that invokes the `addFileEntry` method of 
 
 #### JSON RPC [](id=lp-6-1-dgen08-json-rpc-0)
 
-JSON Web Service may be invoked using [JSON RPC](http://json-rpc.org/). A good part of JSON RPC 2.0 specification is supported in Liferay JSON Web Services. One limitation is that parameters may be passed only as *named* parameters; positional parameters are not supported, as there are too many overloaded methods for convenient use of positional parameters.
+JSON Web Service may be invoked using [JSON RPC](http://json-rpc.org/). A good part of JSON RPC 2.0 specification is supported in Liferay JSON Web Services. One limitation is parameters may be passed only as *named* parameters; positional parameters are not supported, as there are too many overloaded methods for convenient use of positional parameters.
 
 Here is an example of invoking a JSON web service using JSON RPC:
 
@@ -771,7 +771,7 @@ Let's take a look a some returned values from calls to services. In fact, let's 
 
 		{"addedByLDAPImport":false,"companyId":10154,"description":"Created using JSON WS","name":"MyUserGroup33","parentUserGroupId":0,"userGroupId":13162}
 
-Notice that the JSON string returned represents the `UserGroup` object you just created. The object has been serialized into a JSON string. As a starting point for understanding JSON strings, go to [json.org](http://www.json.org/).
+Notice the JSON string returned represents the `UserGroup` object you just created. The object has been serialized into a JSON string. As a starting point for understanding JSON strings, go to [json.org](http://www.json.org/).
 
 To find out how to serialize Java objects, maps and lists, check out article [JSON Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization) by Igor Spasi&#263;. 
 
@@ -866,9 +866,9 @@ If you are invoking the service from a servlet, a Struts action or any other fro
 				portletRequest);
 		BlogsEntryServiceUtil.addEntry(..., serviceContext);
 
-To see an example of how to populate a `ServiceContext` with information from a request object, check out the code of the `ServiceContextFactory.getInstance(...)` methods. Not only do the methods demonstrate setting parameters such as scope group ID, company ID, language ID, etc., but they also demonstrate accessing and populating more complex context parameters such as tags, categories, asset links, headers, and the attributes parameter. Note, by calling `ServiceContextFactory.getInstance(String className, PortletRequest portletRequest)`, you can assure that your expando bridge attributes are also set on the `ServiceContext`.
+To see an example of how to populate a `ServiceContext` with information from a request object, check out the code of the `ServiceContextFactory.getInstance(...)` methods. Not only do the methods demonstrate setting parameters such as scope group ID, company ID, language ID, etc., but they also demonstrate accessing and populating more complex context parameters such as tags, categories, asset links, headers, and the attributes parameter. Note, by calling `ServiceContextFactory.getInstance(String className, PortletRequest portletRequest)`, you can assure your expando bridge attributes are also set on the `ServiceContext`.
 
-You're not limited to using only Java with ServiceContext; you can use ServiceContext from other languages like JavaScript. In fact, since our API can be invoked from JavaScript, it is often required to pass the ServiceContext from JavaScript to the server, and this can be done in a very simple way -- by passing the ServiceContext as any other JavaScript object. There are plenty of examples of this in the JavaScript code of Liferay's portlets. Here is an example from `[liferay-portal]/portal-web/html/portlet/journal/js/main.js`that demonstrates using ServiceContext in calling the `updateStructure` method of the JournalStructure service:
+You're not limited to using only Java with ServiceContext; you can use ServiceContext from other languages like JavaScript. In fact, since our API can be invoked from JavaScript, it is often required to pass the ServiceContext from JavaScript to the server, and this can be done in a very simple way -- by passing the ServiceContext as any other JavaScript object. There are plenty of examples of this in the JavaScript code of Liferay's portlets. Here is an example from `[liferay-portal]/portal-web/html/portlet/journal/js/main.js` that demonstrates using ServiceContext in calling the `updateStructure` method of the JournalStructure service:
 
 	
 	var instance = this;
@@ -907,7 +907,7 @@ You're not limited to using only Java with ServiceContext; you can use ServiceCo
 		}
 	);
 
-Note, that the example above uses JSON to populate the ServiceContext.
+Note, the example above uses JSON to populate the ServiceContext.
 
 On the front-end, you can use Alloy UI and Liferay UI tags in your forms to extract information and automatically insert the corresponding data into your request object. As an example, see `portal-web/docroot/html/portlet/blogs/edit_entry.jsp`. Next, let's take a look at an example of accessing information from a `ServiceContext`.
 
@@ -992,6 +992,521 @@ The previous snippet also demonstrates using the `trackbacks` attribute which is
 
 As we've demonstrated, the `ServiceContext` can be used to transfer lots of useful information for your services.
 
+## Using Message Bus [](id=lp-6-1-dgen09-using-message-bus-0)
+
+The Message Bus is a service level API used to exchange messages within Liferay. The Message Bus exchanges only String messages, providing loose coupling between message producers and consumers. For this reason, you won't have class loading issues. The Message Bus is located in portal-kernel, in the global class loader, making it accessible to every deployed webapp. Although, remote messaging is not supported, messages can be sent across a cluster using ClusterLink classes.
+
+Common uses for Message Bus include:
+
+- Sending search index write events
+- Sending subscription emails
+- Handling messages at scheduler endpoints
+- Running asynchronous processes
+
+You too can leverage Message Bus for sending messages between and within your plugins.
+
+In this section, you will learn about
+
+-	the Message Bus System
+-	Synchronous and Asynchronous messaging
+-	Dispatching messages *serially* and *in-parallel* to multiple listeners
+-	Java and JSON style message formats
+
+For starters, let's get a handle on the architecture of Liferay's Message Bus System.
+
+### The Message Bus System [](id=lp-6-1-dgen09-the-message-bus-system-0)
+
+The Message Bus system is comprised of the following:
+
+-	**Message Bus** - Manages transfer of messages from message *senders* to message *listeners*
+
+-	**Destinations** - Are addresses or endpoints to which *listeners* register to receive messages
+
+-	**Listeners** - Consume messages received at destinations. They receive all messages sent to their registered destinations.
+
+-	**Senders** - Invoke the Message Bus to send messages to destinations
+
+Your services can *send* messages to one or more destinations. And your services can *listen* to one or more destinations.
+
+The figure below depicts services sending messages to one or more destinations and services listening to one or more destinations. An individual service can be both a message sender and a message listener. In this figure, for example, both *Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and listen for messages.
+
+![Figure 9.1: Example, Message Bus system](../../images/msg-bus-system.png)
+
+The Message Bus supports synchronous and asynchronous messaging:
+
+- 	**Synchronous messaging** - After sending a message, the sender blocks waiting for a response from a recipient
+
+- 	**Asynchronous messaging** - After sending a message, the sender is free to continue processing. The sender can be configured to receive a call-back or can simply "send and forget." We'll cover both synchronous and asynchronous messaging implementations in this section.
+
+	- **Call-back** - The sender can include a call-back destination key as the *response destination* for the message. The recipient (listener) can then send a *response* message back to the sender via this *response destination*.
+
+	- **"Send-and-Forget"** - The sender includes no call-back information in the message sent and simply continues with processing
+
+What's great is your destinations, listeners, and mappings between them are all configurable via Spring in your plugin's `messaging-spring.xml` file.
+
+**Configuration** of Message Bus is done using the following files:
+
+-	`WEB-INF/src/META-INF/messaging-spring.xml` - Specifies your destinations, listeners, and their mappings to each other
+
+-	`WEB-INF/web.xml` - Holds a listing of deployment descriptors for your plugin. Be sure to add `messaging-spring.xml` to your list of Spring configurations in this file.
+
+---
+
+![note](../../images/tip-pen-paper.png)**Note:** Internal file `META-INF/messaging-core-spring.xml` of `portal-impl.jar` specifies the default Message Bus class, default asynchronous message sender class, and default synchronous message sender class for Liferay
+
+---
+
+**Message Types** include using either `Message` or `JSONObject` classes. Within Liferay core services, we typically serialize and deserialize in JSON. In our examples, we'll cover using both types of message classes.
+
+So far, we've introduced the Message Bus System including message types, destinations, senders, listeners, and approaches to sending messages. Next, we'll show you how easy it is to create your destinations, register listeners, and send your messages. To help demonstrate, we'll implemenet a business use-case.
+
+### Example Use-Case - Procurement process [](id=lp-6-1-dgen09-example-use-case---procurement-process-0)
+
+For our use-case, we'll consider a fictitious company Jungle Gyms R-Us. They distribute playground equipment, buying the equipment from manufacturers and selling the equipment to various retailers. We'll focus on the company's process for procuring new jungle gym equipment. Let's layout this process now.
+
+Jungle Gyms R-Us (Jungle Gyms) involves the following departments in their procurement process:
+
+-	*Procurement Department* - Scouts out the latest equipment deals of manufacturers
+
+-	*Finance Department* - Determines whether the equipment can be purchased based on budget
+
+-	*Legal Department* - Determines whether the equipment's safety ratings are acceptable
+
+-	*Warehouse Department* - Recieves the equipment, stores it, and prepares it for shipping 
+
+-	*Sales Department* - Builds relationships with prospective customers to sell them products
+
+The departments currently use email to exchange comments about new equipment purchases. But someone always seems to be left out of "the loop." For example, Sales will be "gung-ho" about getting their hands on the latest and greatest spring rider animals from Boingo-Boingo Industries, but they won't consider the failing safety reviews discovered by the Legal department, because the Legal department forgot to copy the Sales department in their email to Procurement. Tempers fly, feelings get hurt, and everybody avoids hanging out in the company breakroom for the next couple weeks.
+
+Liferay's [Workflow with Kaleo](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-3) would be appropriate for resolving this. But to help demonstrate the components and capabilities of the Message Bus system we'll resolve the Jungle Gym's communication woes using Message Bus.
+
+Here are the inter-department message exchanges we'll accomodate:
+
+| Message | &nbsp;Sender | &nbsp;Listener | &nbsp;Response | &nbsp;Response Listeners |
+--------- | ------------ | ------------ | ---------------- | -------------- |
+  Request permission to proceed with purchase | &nbsp;Procurement | &nbsp;Finance | &nbsp;required | &nbsp;Procurement |
+  Request permission to proceed with purchase | &nbsp;Procurement | &nbsp;Legal | &nbsp;required | &nbsp;Procurement |
+  Notify and solicit feedback on new purchase | &nbsp;Procurement | &nbsp;Warehouse | &nbsp;optional | &nbsp;Procurement, Sales |
+  Notify and solicit feedback on new purchase | &nbsp;Procurement | &nbsp;Sales | &nbsp;optional | &nbsp;Procurement, Warehouse |
+  Broadcast equipment news | &nbsp;Procurement | &nbsp;Employees | &nbsp;none | &nbsp;none |
+---
+
+Let's implement Procurement's request to Finance first.
+
+### Synchronous messaging [](id=lp-6-1-dgen09-synchronous-messaging-0)
+
+In our example, equipment purchases cannot proceed without approval from Finance and Legal departments. But, since these special offers from the manufacturers often only last for a couple hours, Procurement makes it their top priority to get approval as soon as possible. Let's implement their exchange using *synchronous* messaging.
+
+![Figure 9.2: Synchronous messaging](../../images/msg-bus-sync-msg.png)
+
+The following table, describes how we'll set things up.
+
+| &nbsp;Destination | |           |                 |
+  Key | &nbsp;Type | &nbsp;Sender | &nbsp;Receivers |
+----- | ---------- | ------------ | --------------- |
+  `jungle/finance/purchase` | &nbsp;synchronous | &nbsp;Procurement | &nbsp;Finance |
+  `jungle/finance/purchase/response` | &nbsp;synchronous | &nbsp;Finance | &nbsp;Procurement |
+  `jungle/legal/purchase` | &nbsp;synchronous | &nbsp;Procurement | &nbsp;Legal |
+  `jungle/legal/purchase/response` | &nbsp;synchronous | &nbsp;Legal | &nbsp;Procurement |
+---
+
+Notice we've planned for Finance to send its response messages to a destination on which Procurement will listen. This allows for a full-bodied response message to be sent back to Procurement in addition to the response object returned from sending the message.
+
+**Procurement Department *sends* a purchase approval request:**
+
+	Message message = new Message();
+	message.put("department", "Procurement");
+	message.put("partName", part.getName(Locale.US));
+
+	message.setResponseId("1111");
+	message.setResponseDestinationName("jungle/finance/purchase/response");
+
+	try {
+		String financeResponse = (String) MessageBusUtil.sendSynchronousMessage(
+			"jungle/finance/purchase", message, 10000);
+
+		System.out.println(
+			"Procurement received Finance sync response to purchase approval for " +
+			part.getName(Locale.US) + ": " + financeResponse);
+
+		message.setResponseId("2222");
+		message.setResponseDestinationName("jungle/legal/purchase/response");
+
+		String legalResponse = (String) MessageBusUtil.sendSynchronousMessage(
+			"jungle/legal/purchase", message, 10000);
+
+		System.out.println(
+			"Procurement received Legal sync response to purchase approval for " +
+			part.getName(Locale.US) + ": " + legalResponse);
+
+		if (financeResponse.contains("yes") && legalResponse.contains("yes")) {
+			sendPurchaseNotification(part, userId);
+		}
+	}
+	catch (MessageBusException e) {
+		e.printStackTrace();
+	}
+
+Note, the following about this *sender*:
+
+1.	Creates the message using Liferay's `Message` class
+2.	Stuffs the message with key/value pairs
+3.	Sets a response ID and response destination for listeners to use in replying back
+4.	Sends the message to the destination with a timeout value of 10,000 milliseconds
+5.	Blocks waiting for the response
+
+**Finance Department *listens* for purchase approval requests and *replies* back:**
+
+	public class FinanceMessagingImpl implements MessageListener {
+
+		public void receive(Message message) {
+			try {
+				doReceive(message);
+			}
+			catch (Exception e) {
+				_log.error("Unable to process message " + message, e);
+			}
+		}
+
+		protected void doReceive(Message message)
+			throws Exception {
+
+			String department = (String) message.get("department");
+			String partName = (String) message.get("partName");
+
+			System.out.println("Finance received purchase request for " +
+				partName + " from " + department);
+
+			Message responseMessage = MessageBusUtil.createResponseMessage(
+				message);
+
+			responseMessage.put("department", "Finance");
+			responseMessage.put("partName", partName);
+			responseMessage.setPayload("yes");
+
+			MessageBusUtil.sendMessage(
+				responseMessage.getDestinationName(), responseMessage);
+		}
+
+		private static Log _log =
+			LogFactoryUtil.getLog(FinanceMessagingImpl.class);
+	}
+
+Note the following about this *listener*:
+
+1.	Implements the `receive(Message message)` method of the `com.liferay.portal.kernel.messaging.MessageListener` interface
+2.	Extracts values from the `Message` parameter by *getting* values associated with known keys
+3.	Creates a `Message` based on the message received via `MessageBusUtil.createResponseMessage(message)`. Method `MessageBusUtil.createResponseMessage(message)` accesses the response destination name from the `message` variable and sets the destination of the response message.
+4.	Sets the *payload* of the response message
+5.	Sends the response `Message` to the response destination.
+
+The listener for the Legal Department could be implemented in a similar manner. So, we'll account for Legal Department related classes in our configuration.
+
+**Message Bus Configuration for the purchase approval request process:**
+
+In order for the Message Bus to direct messages from destinations to listeners, we must register the listeners by configuring the appropriate mappings in our plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file. If you don't already have this file in your plugin then create it. Here is the configuration:
+
+	<?xml version="1.0"?>
+
+	<beans
+		default-destroy-method="destroy"
+		default-init-method="afterPropertiesSet"
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	>
+
+		<!-- Listeners -->
+
+		<bean id="messageListener.finance_listener" class="com.liferay.training.parts.messaging.impl.FinanceMessagingImpl" />
+		<bean id="messageListener.legal_listener" class="com.liferay.training.parts.messaging.impl.LegalMessagingImpl" />
+		<bean id="messageListener.procurement_listener" class="com.liferay.training.parts.messaging.impl.ProcurementMessagingImpl" />
+
+		<!-- Destinations -->
+
+		<bean id="destination.finance.purchase" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+			<property name="name" value="jungle/finance/purchase" />
+		</bean>
+
+		<bean id="destination.finance.purchase.response" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+			<property name="name" value="jungle/finance/purchase/response" />
+		</bean>
+
+		<bean id="destination.legal.purchase" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+			<property name="name" value="jungle/legal/purchase" />
+		</bean>
+
+		<bean id="destination.legal.purchase.response" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+			<property name="name" value="jungle/legal/purchase/response" />
+		</bean>
+
+		<!-- Configurator -->
+
+		<bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+			<property name="messageListeners">
+				<map key-type="java.lang.String" value-type="java.util.List">
+					<entry key="jungle/finance/purchase">
+						<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+							<ref bean="messageListener.finance_listener" />
+						</list>
+					</entry>
+					<entry key="jungle/finance/purchase/response">
+						<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+							<ref bean="messageListener.procurement_listener" />
+						</list>
+					</entry>
+					<entry key="jungle/legal/purchase">
+						<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+							<ref bean="messageListener.legal_listener" />
+						</list>
+					</entry>
+					<entry key="jungle/legal/purchase/response">
+						<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+							<ref bean="messageListener.procurement_listener" />
+						</list>
+					</entry>
+				</map>
+			</property>
+			<property name="destinations">
+				<list>
+					<ref bean="destination.finance.purchase"/>
+					<ref bean="destination.finance.purchase.response"/>
+					<ref bean="destination.legal.purchase"/>
+					<ref bean="destination.legal.purchase.response"/>
+				</list>
+			</property>
+		</bean>
+	</beans>
+
+The configuration specifies the following:
+
+-	*Listener beans* - Specify classes to handle messages
+-	*Destination beans* - Specify the class *type* and *key* names of the destinations
+-	*Configurator bean* - Maps listeners to their destinations
+
+Upon Finance sending its purchase approval request message for a new three-story spiral slide, the console reports Finance receiving the message, Procurement receiving the *callback* response from Finance, and Procurement receiving the *synchronous* response returned from sending the message:
+
+	Finance received purchase request for three-story spiral slide from Procurement
+	Procurement received Finance callback response to purchase approval for three-
+	story spiral slide: yes
+	Procurement received Finance sync response to purchase approval for three-story 
+	spiral slide: yes
+	Legal received purchase request for three-story spiral slide from Procurement
+	Procurement received Legal callback response to purchase approval for three-
+	story spiral slide: yes
+	Procurement received Legal sync response to purchase approval for three-story 
+	spiral slide: yes
+
+Whew! Jungle Gym has the cash to purchase this cool new slide and the Legal Department has no gripes about the slide's safety ratings!!
+
+Next, let's have Procurement notify the Sales and Warehouse departments to solicit their feedback.
+
+### Asynchronous messaging with callbacks [](id=lp-6-1-dgen09-asynchronous-messaging-with-callbacks-0)
+
+As a refresher, asynchronous messaging consists of sending a message and then continuing on with processing. Importantly, the sender does not block waiting for an immediate response. This leaves the sender free to continue on with other things. However, it is often important for the *listener* to have the means to optionally respond to the sender. This can be done using a call-back.
+
+The call-back model is appropriate for addressing Jungle Gym's needs for Procurement to notify Sales and Warehouse departments about incoming equipment while at the same time soliciting their feedback. To assure all three departments are in "the loop", any responses from Sales and Warehouse departments will be posted to a shared destination.
+
+The following table, describes how we'll set things up.
+
+| &nbsp;Destination | |            |                 |
+  Key | &nbsp;Type | &nbsp;Senders | &nbsp;Receivers |
+----- | ---------- | ------------ | --------------- |
+  jungle/purchase | &nbsp;async serial | &nbsp;Procurement |  &nbsp;Sales, Warehouse |
+  jungle/purchase/response | &nbsp;synchronous | &nbsp;Sales, Warehouse | &nbsp;Procurement |
+---
+
+The following image shows asynchronous messaging in which messages are dispatched *serially*.
+
+![Figure 9.3: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
+
+Let's package the message as a `JSONObject` and send it to the destination:
+
+	JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
+
+	jsonObject.put("department", "Procurement");
+	jsonObject.put("partName", part.getName(Locale.US));
+	jsonObject.put("responseDestinationName", "jungle/purchase/response");
+
+	MessageBusUtil.sendMessage("jungle/purchase", jsonObject.toString());
+
+Then we'll have the Sales and Warehouse departments listen for and handle messages like this ...
+
+	public void receive(Message message) {
+
+		try {
+			doReceive(message);
+		}
+		catch (Exception e)
+		{
+			_log.error("Unable to process message " + message, e);
+		}
+	}
+
+	protected void doReceive(Message message)
+		throws Exception {
+
+		String payload = (String)message.getPayload();
+
+		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(payload);
+
+		String department = jsonObject.getString("department");
+		String partName = jsonObject.getString("partName");
+		String responseDestinationName = jsonObject.getString(
+						"responseDestinationName");
+
+		System.out.println("Warehouse received purchase notification for " +
+			partName + " from " + department);
+
+		jsonObject = JSONFactoryUtil.createJSONObject();
+
+		jsonObject.put("department", "Warehouse");
+		jsonObject.put("partName", partName);
+		jsonObject.put("comment", "Ugh! We're running out of space!!");
+
+		MessageBusUtil.sendMessage(
+			responseDestinationName, jsonObject.toString());
+	}
+
+This *listener* deserializes the `JSONObject` from the message in the following manner:
+
+1.	Gets the message *payload* and casts it to a `String`
+2.	Creates a `JSONObject` from the payload string
+3.	Gets values from the `JSONObject` using its *getter* methods
+
+Furthermore, this class demonstrates the Warehouse Department packaging up a response message and sending it back to the Procurement Department by:
+
+1.	Creating a `JSONObject`
+2.	Stuffing it with name/value pairs
+3.	Sending the response message to the response destination of the original message
+
+You've just used the `JSONObject` message type and have sent an *asynchronous* response message using a call-back. It's just that easy!
+
+The Sales department could be implemented the same way. Of course, Sales would put "Sales" as its department value and would likely have a different comment.
+
+Now, if you recall, we want Procurement, Sales, and the Warehouse departments to all be in "the loop" concerning their responses to the new playground equipment. So, let's leverage our destination *keys* and department names in handling these shared responses.
+
+Here is how the Warehouse may handle messages it receives:
+
+	public void receive(Message message) {
+
+		try {
+			if (message.getDestinationName().equals(
+					"jungle/purchase"))
+			{
+				doReceive(message);
+			}
+			else if (message.getDestinationName().equals(
+					"jungle/purchase/response"))
+			{
+				doReceiveResponse(message);
+			}
+		}
+		catch (Exception e)
+		{
+			_log.error("Unable to process message " + message, e);
+		}
+	}
+
+	protected void doReceiveResponse(Message message)
+		throws JSONException {
+
+		String payload = (String)message.getPayload();
+
+		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(payload);
+
+		String department = jsonObject.getString("department");
+
+		if (!department.equals("Warehouse")) {
+			System.out.println(
+				"Warehouse is in the loop on response from " + department);
+		}
+	}
+
+Note, in `receive(Message)`, we handle the messages differently depending on their destinations; messages to `jungle/purchase` are handled as Procurement's purchase notifications, while messages to `jungle/purchase/response` are treated as departmental responses to Procurement's purchase notifications. Importantly, the `doReceiveResponse(Message)` method checks that the response is from a department other than itself.
+
+Here are the configuration elements we added to the `messaging-spring.xml` from the previous section:
+
+- Listener beans
+
+		<bean id="messageListener.warehouse_listener" class="com.liferay.training.parts.messaging.impl.WarehouseMessagingImpl" />
+		<bean id="messageListener.sales_listener" class="com.liferay.training.parts.messaging.impl.SalesMessagingImpl" />
+
+- Destination beans - The purchase notifications will be sent to a *serial* destination and the responses will be sent to a *synchronous* destination.
+
+		<bean id="destination.purchase" class="com.liferay.portal.kernel.messaging.SerialDestination">
+			<property name="name" value="jungle/purchase" />
+		</bean>
+	
+		<bean id="destination.purchase.response" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
+			<property name="name" value="jungle/purchase/response" />
+		</bean>
+
+- Configuration bean listener map entries - Warehouse and Sales are registered to listen for the notifications from Procurement. All three of these departments are registered to listen for the inter-departmental responses. 
+
+		<entry key="jungle/purchase">
+			<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+				<ref bean="messageListener.warehouse_listener" />
+				<ref bean="messageListener.sales_listener" />
+			</list>
+		</entry>
+		<entry key="jungle/purchase/response">
+			<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+				<ref bean="messageListener.procurement_listener" />
+				<ref bean="messageListener.warehouse_listener" />
+				<ref bean="messageListener.sales_listener" />
+			</list>
+		</entry>
+
+- Configuration bean destination list references
+
+		<ref bean="destination.purchase"/>
+		<ref bean="destination.purchase.response"/>
+
+Lastly, let's remember to send news of these new products to *all* Jungle Gym employees. 
+
+### Asynchronous "Send and Forget" [](id=lp-6-1-dgen09-asynchronous-send-and-forget-0)
+
+In the "send and forget" model of asynchronous messaging, the sender simply sends out messages and continues processing. We'll apply this behavior to Jungle Gym's company wide notification of new products.
+
+Since Procurement is not expecting response messages from individual employees, there is no need for the employee's listener to package up a responses. But, we do however want everyone to get product news at the *same time*. So, instead of dispatching news to employees *serially* we'll dispatch *in parallel*.
+
+
+![Figure 9.4: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
+
+We'll specify a *parallel* destination type in our `messaging-spring.xml`:
+
+- Destination bean
+
+		<bean id="destination.employee.news" class="com.liferay.portal.kernel.messaging.ParallelDestination">
+				<property name="name" value="jungle/employee/news" />
+		</bean>
+
+- Listener bean
+
+		<bean id="messageListener.employee_listener" class="com.liferay.training.parts.messaging.impl.EmployeeMessagingImpl" />
+	
+- Configuration bean listener map entry
+
+		<entry key="jungle/employee/news">
+			<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+				<ref bean="messageListener.employee_listener" />
+			</list>
+		</entry>
+
+- Configuration bean destination list reference
+
+		<ref bean="destination.employee.news"/>
+
+Congratulations! You've implemented inter-departmental communications for the procurement process of Jungle Gyms R-Us. Along the way you've exercised the following from Message Bus:
+
+-	Sender, listener, and destination components
+-	Synchronous and Asynchronous messaging schemes
+-	*Serial* and *in-parallel* message dispatching
+-	Java and JSON message types
+
+You're really getting the hang of Liferay's APIs. Way to go!
+
 ## Conclusion [](id=conclusi-4)
 
-Well, you've covered a lot of ground here in learning how to use the API locally and remotely, how to enable/disable remote services and access to them, and how to leverage ServiceContext objects in your use of Liferay services. Well done! Next, we'll take a look at some of the powerful frameworks of Liferay Portal, learn how they work and how you can leverage them.
+Well, you've covered a lot of ground here in learning how to use the API locally and remotely, how to enable/disable remote services and access to them, and how to leverage ServiceContext objects in your use of Liferay services. You've also rolled up your sleeves in working with Message Bus. Well done! Next, we'll take a look at some of the powerful frameworks of Liferay Portal, learn how they work and how you can leverage them.
