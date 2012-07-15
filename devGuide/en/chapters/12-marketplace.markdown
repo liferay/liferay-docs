@@ -34,9 +34,9 @@ In any case, as developer of your app, you have complete freedom in how you wish
 
 Keep in mind that the version of your app is completely up to you to specify, but the releases of Liferay with which your app works must be specified using the Liferay versioning scheme.  See the *Specify App Compatibility* section below for details on how to specify the releases of Liferay for which your app is designed.
 
-### What is a variation? [](id=lp-6-1-dgen10-what-is-a-variation-0)
+### What is a package? [](id=lp-6-1-dgen10-what-is-a-package-0)
 
-Apps can be written to work across many different versions of Liferay. For example, suppose you wish to publish version 1.0 of your app, which you're supporting on Liferay 6.1 and 6.2. It may not be possible to create a single binary `.war` file that works across both Liferay versions, due to incompatibilities between these Liferay versions. In this case, you need to compile your app twice: once against Liferay 6.1 and once against 6.2, producing 2 different *variations* of your version 1.0 app. Each variation has the same functionality, but they're different files, and it is these variations that you can upload in support of different versions of Liferay, as you will see in a later section. In this guide, variations are sometimes referred to as files that make up your app.
+Apps can be written to work across many different versions of Liferay. For example, suppose you wish to publish version 1.0 of your app, which you're supporting on Liferay 6.1 and 6.2. It may not be possible to create a single binary `.war` file that works across both Liferay versions, due to incompatibilities between these Liferay versions. In this case, you need to compile your app twice: once against Liferay 6.1 and once against 6.2, producing 2 different *packages* (also called variations) of your version 1.0 app. Each package has the same functionality, but they're different files, and it is these packages that you can upload in support of different versions of Liferay, as you will see in a later section. In this guide, packages are sometimes referred to as files that make up your app.
 
 ### How do apps relate to users and companies? [](id=lp-6-1-dgen10-how-do-apps-relate-to-users-and-companies-0)
 
@@ -54,8 +54,8 @@ Next, think of a good name and description of your app, along with a versioning 
 
 ### Image and Naming Requirements [](id=lp-6-1-dgen10-image-and-naming-requirements-0)
 
-**Icons** for your app *must be* 90 pixels in both height and width and must be in PNG, JPG, or GIF format. The image size cannot exceed 512kb.
-**Screenshots** for your app *must not exceed* 600 pixels in width x 400 pixels in height and must be in the PNG, JPG, or GIF format. The total size of all screenshots *must not exceed* 1MB. Each screenshot must be the same size, and it is preferable if they are named sequentially, for example `fluffy-puppies-01.png`, `fluffy-puppies-02.png`, and so on.
+**Icons** for your app *must be* exactly 90 pixels in both height and width and must be in PNG, JPG, or GIF format. The image size cannot exceed 512kb.  Animated images are prohibited.
+**Screenshots** for your app *must not exceed* 1080 pixels in width x 678 pixels in height and must be in the JPG format. The file size of each screenshot *must not exceed* 384KB. Each screenshot should preferably be the same size (each will be automatically scaled to match the aspect ratio of the above dimensions), and it is preferable if they are named sequentially, for example `fluffy-puppies-01.png`, `fluffy-puppies-02.png`, and so on.
 **Titles of Apps**: In some views with Marketplace, titles of applications longer than 18 characters will be shortened with ellipsis. In the Marketplace, titles *must not be* longer than 50 characters.
 **Description, Tags, Websites and Version Numbers**: Descriptions, web sites and version numbers are to be as reflective to the product as possible. Please do not use misleading names, information, or icons. A tags suggestion tool has been provided to aid with tagging your asset. Descriptions should be as concise as possible. Ensure your icons, images, descriptions, and tags are free of profanity or other offensive material.
 
@@ -97,17 +97,19 @@ Before you can publish anything, you first have to create (develop) an app!  App
 
 In the real world, apps usually consist of multiple components (e.g. multiple `.war` file plugins), are spread across multiple plugin types, and present non-trivial functionality which in many cases requires some configuration. How these advanced tasks are dealt with is out of scope for this section, but some tips and considerations for Marketplace development can be found later in this chapter.
 
-### Specify App Compatibility
+### Specify App Packaging Directives
 
-Each plugin in your app must declare the Liferay releases with which it is compatible. When you upload your plugins to the Liferay Marketplace, your app is scanned, and the embedded compatibility information is extracted and used to create different downloadable *variations* of your app for different Liferay releases. You must insert this information into the plugin before you can publish it to the Marketplace.
+When publishing your app, each plugin you upload will packaged into one or more *packages* for each Liferay release you intend to support. When you upload your plugins to the Liferay Marketplace, your app is scanned, and the embedded packaging directives you have specified are extracted and used to create different downloadable *packages* of your app for different Liferay releases. You must insert this information into each plugin in your app before you can publish it to the Marketplace.
 
-The version specifier relates to the underlying Liferay release. In order to specify which release of Liferay your app is compatible with, you first need to understand how Liferay releases are named and how they relate to the underlying Liferay release version. Details can be found on the [Versioning Policy Wiki](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Versioning+Policy).  Accordingly, Liferay 6.1 CE GA1 began as version `6.1.0`.  CE GA2 is then `6.1.1`, and so on.  Liferay 6.1 EE GA1 began as `6.1.10`, EE GA2 is then `6.1.11` and so on.
+The packaging directives are related to the Liferay releases with which your app is compatible. In order to specify which release of Liferay your app is compatible with (and therefore which packages should be created for eventual download on the Marketplace), you first need to understand how Liferay releases are named and how they relate to the underlying Liferay release version. Details can be found on the [Versioning Policy Wiki](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Versioning+Policy).  Accordingly, Liferay 6.1 CE GA1 is designated as version `6.1.0`.  CE GA2 is then `6.1.1`, and so on.  Liferay 6.1 EE GA1 is designated as `6.1.10`.  EE versioning follows a slightly different policy given then presence of fix packs and service packs, so 6.1 EE GA2 is `6.1.20`.
 
-This compatibility information resides in the `liferay-plugin-package.properties` file (located in the `WEB-INF/` directory of your plugin's `.war` file). Within this file, you can specify a comma-separated list of Liferay releases with which the plugin is compatible using the `liferay-versions` keyword. For example, to specify that a particular plugin is compatible with Liferay 6.1 CE GA2 *and later*, add this line to your `liferay-plugin-packages.properties` file: 
+For each plugin that makes up your app, packaging directives must be placed in the `liferay-plugin-package.properties` file (located in the `WEB-INF/` directory of your plugin's `.war` file). Within this file, you must specify a comma-separated list of Liferay releases with which your app is compatible, and for which packages should be generated, using the `liferay-versions` keyword.  Marketplace will create packages that contain your plugins based on these packaging directives (and will intelligently group them together as each plugin is uploaded).
+
+For example, to specify that a particular plugin in your app is compatible with Liferay 6.1 CE GA2 *and later*, add this line to your `liferay-plugin-packages.properties` file: 
 
     liferay-versions=6.1.1+ 
 
-This means that the app works with any 6.1 CE release.  Here are some additional examples:
+This means that the app works with any 6.1 CE release starting with GA2, and Marketplace will create a package that is compatible with 6.1 CE GA2 *and later*.  Here are some additional examples:
 
 	# works with Liferay 6.1 CE GA2 *only*
 	liferay-versions=6.1.1
@@ -118,20 +120,18 @@ This means that the app works with any 6.1 CE release.  Here are some additional
 	# works with Liferay 6.1 CE GA2 and CE GA3 only
 	liferay-versions=6.1.1,6.1.2
 	
-	# works with Liferay 6.1 EE GA1 only
-	liferay-versions=6.1.10
+	# works with Liferay 6.1 EE GA2 only
+	liferay-versions=6.1.20
 
-	# works with Liferay 6.1 EE GA1 and later
-	liferay-versions=6.1.10+
+	# works with Liferay 6.1 EE GA2 and later
+	liferay-versions=6.1.20+
 
 	# works with Liferay 6.1 CE GA2 and later, and 6.1 EE GA2 and later
-	liferay-versions=6.1.1+,6.1.11+
-
-For example, suppose you've tested your app against Liferay 6.1 CE GA2 and 6.1 EE GA1. You're confident that it will continue to work in future maintenance releases, so you'd put `liferay-versions=6.1.1+,6.1.10+` in the `liferay-plugin-packages.properties` file for all plugins that make up your app.
+	liferay-versions=6.1.1+,6.1.20+
 
 If some plugins within your app must be built for multiple releases, ensure that the respective plugins have appropriate versioning information in them.  For example: suppose your app consists of two plugins: a portlet and a hook.  The portlet is simple, and uses standard API calls that work on all Liferay 6.1 releases.  However, the hook is different for CE vs. EE because it takes advantage of some feature of EE.
 
-In this case, your portlet plugin would have `liferay-versions=6.1.1+,6.1.11+`, but then you'd have *two* hook plugins.  The first one would specify `liferay-versions=6.1.1+` (indicating it works with GA2 and later), and the second hook plugin would specify `liferay-versions=6.1.11+` (indicating it works with EE GA2 and later).  As you upload these plugins later on in this example, you will notice that they are sorted into separate collections of plugins for each supported release.  In some cases, if a plugin is compatible with multiple releases, it will be automatically copied for use in all of the releases for which your app supports.
+In this case, your portlet plugin would have `liferay-versions=6.1.1+,6.1.20+`, but because the hook must be built against a different API for Liferay EE, you'd have *two* hook plugins.  The first one would specify `liferay-versions=6.1.1+` (indicating it works with CE GA2 and later), and the second hook plugin would specify `liferay-versions=6.1.20+` (indicating it works with EE GA2 and later, but not CE GA2).  As you upload these plugins later on in this example, you will notice that they are grouped into separate packages of plugins for each supported release.  In some cases, if a plugin is compatible with multiple releases, it will be automatically copied for use in all of the releases for which your app supports.  Also, in some cases, if Marketplace cannot determine the appropriate package into which to place your plugin, it may reject it.  For example, if you specified `liferay-versions=1.0.0+`, because you are confident your plugin works with any Liferay release, Marketplace likely will reject it as `1.0` is not a known Liferay release.
 
 Now that you have developed your app, it's time to get started with Marketplace!
 
@@ -231,7 +231,7 @@ Each of the following changes require a review by Marketplace staff before the c
 
 - Submitting a new app
 - Changing details of an app (for example, changing the description or the screenshots)
-- Adding a new variation (set of files) to an existing app, in order to support more Liferay releases
+- Adding a new package (set of files) to an existing app, in order to support more Liferay releases
 - Adding a new version of an existing app
 
 While your submitted change is under review, you can view the status of your change by visiting *Home* &rarr; *App Manager* &rarr; *Apps*. You can also cancel your submission by clicking *Cancel Submission* on the *Preview* screen for each app.
@@ -265,7 +265,7 @@ If you need to add files in support of another Liferay release, the process is s
 
 Once you advance past the version edit screen, you'll be at the File Upload screen. This screen should look familiar--it's the same workflow used when you initially created your app!  The difference is that you can't edit pre-approved files for specific Liferay releases. You can only add *new* files for a different Liferay release (if you actually need to update existing files, you must create a new version of the app--see the later section on adding versions for details on how to do this).
 
-Upload your new files (ensuring that your new plugins have updated compatibility information, see the section on *Specify App Compatibility* for details on versioning), click *Next*, and observe the newly-added files listed at the bottom of the preview screen. Click *Submit for Review* to submit your requested change (adding of files). The files will be reviewed by Liferay, and once approved, the new variation is available for download in the Marketplace.
+Upload your new files (ensuring that your new plugins have updated compatibility information, see the section on *Specify App Compatibility* for details on versioning), click *Next*, and observe the newly-added files listed at the bottom of the preview screen. Click *Submit for Review* to submit your requested change (adding of files). The files will be reviewed by Liferay, and once approved, the new package is available for download in the Marketplace.
 
 ### Releasing a new version of your app [](id=lp-6-1-dgen10-releasing-a-new-version-of-your-app-0)
 
@@ -300,7 +300,7 @@ When someone searches or browses the Marketplace, they click on apps to see deta
 
 ### Downloads [](id=lp-6-1-dgen10-downloads-0)
 
-A download is recorded for your app when someone downloads a specific variation of a specific version of your app. The number of recorded downloads per day per user is unlimited.
+A download is recorded for your app when someone downloads a specific package of a specific version of your app. The number of recorded downloads per day per user is unlimited.
 
 ## Summary [](id=lp-6-1-dgen10-summary-0)
 
