@@ -145,7 +145,7 @@ In the lower section, you will find Reviews and Version History tabs for this ap
 
 You've chosen an app, read the reviews and want to download and use the app! There are two ways to install the app. Ultimately, both methods result in the same outcome: the app you've chosen is installed onto your local running Liferay instance.
 
-### Liferay Hot Deploy 
+### Liferay Hot Deploy  [](id=lp-6-1-ugen13-liferay-hot-deploy--0)
 
 Apps on the Liferay Marketplace consist of individual Liferay Plugins (for example: a portlet, a hook, or a collection of multiple plugins).  Ultimately these apps must be installed on a running Liferay instance before they can be used.  Deploying an app to a running Liferay instance is automatically done through the process of *hot deploy*.  When using *Control Panel* to install apps from the Marketplace, when you click *Purchase* or *Install* to download and use a given app, it will be downloaded and hot deployed to your local running Liferay instance.
 

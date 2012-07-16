@@ -138,7 +138,7 @@ For example, bug fixes to your applications are easy to apply, because Liferay a
 
 You get all this--not to mention the automatic Facebook and OpenSocial integration mentioned above--simply by using Liferay's development platform. It's a very powerful platform, and certainly worth your investigation. 
 
-### A great integration platform
+### A great integration platform [](id=lp-6-1-ugen01-a-great-integration-platform-0)
 
 If you're building an enterprise system, portals were designed in the first place to be a single point of entry to your users' applications and content. Since Liferay Portal integrates well with user directories such as LDAP and Active Directory, and single sign-on systems such as SAML and OpenSSO, it fits well into your enterprise systems. This allows you to use it as an integration platform for existing applications. 
 
@@ -156,7 +156,7 @@ In the second scenario, Liferay Portal lets you create completely separate insta
 
 This lets you host many different, separate web sites from one Liferay Portal installation. Users of each instance have access to the same powerful content management, collaboration, social, and web development platform that they'd have if they were operating from a single, standalone installation.
 
-## Extending and customizing Liferay for your own needs 
+## Extending and customizing Liferay for your own needs  [](id=lp-6-1-ugen01-extending-and-customizing-liferay-for-your-own-needs--0)
 
 Beyond using Liferay as a development platform for new applications, Liferay Portal has also been designed to be extended and modified. As an open source project, its source code is available, but Liferay Portal's developers have designed the product to make it easy to build whatever you want out of it. 
 
