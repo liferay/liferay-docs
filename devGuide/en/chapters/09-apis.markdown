@@ -634,6 +634,16 @@ As with passing parameters as part of a URL path, the parameter order is not imp
 
 Parameters can be passed in a mixed way: some can be part of the URL path and some can be specified as request parameters.
 
+#### Type conversion of the parameters
+
+Parameter values are sent as strings using HTTP protocol. Before matched Java service method is invoked, each parameter value is converted from string to it's target Java type. For the conversion we use the 3rd party open-source library that knows to convert objects to many common types. Of course, it is possible to add or change the conversion for certain types.
+
+Conversion for common types (`long`, `String`, `boolean`...) is quite straightforward. Next, all dates can be passed as milliseconds. Locales, for example, can be passed as locale names: `en`, `en_US`. To pass numbers array, send comma-separated-values (e.g.: string `4,8,15,16,23,42` can be converted to `long[]` type). You get the picture;)
+
+Arguments can be of type `List` or `Map`, too! To pass a `List` argument, send a JSON array. To pass a `Map` argument, send a JSON object. The conversion then goes in two steps. The first one is JSON deserialization, resulting in `List<String>` and  `Map<String, String>`. The second step is *generifying*: each element of `List` and `Map` is converted to target type, specified by Java generics signature of method argument. For example, if we have a Java service with an argument of type: `List<Locale>`, we can send following string: `[en,fr]` through JSON Web Services. The string will be first deserialized to a list with two strings(`en` and `fr`), and then each string will be converted to `Locale` type. Resulting object will match Java argument type. If there is no generic information, the second step of this conversion is skipped.
+
+Due to security reasons, it is forbidden to instantiate any type within JSON deserialization.
+
 #### Sending NULL values [](id=lp-6-1-dgen08-sending-null-values-0)
 
 To pass a `null` value for an argument, simply prefix the parameter name with a dash `-`. For example: 
@@ -735,10 +745,6 @@ or in JSON RPC:
 
 All these examples specify a concrete implementation for `foo` service method parameter.
 
-#### Map and List parameters [](id=lp-6-1-dgen08-map-and-list-parameters-0)
-
-`Map` and `List` parameters are also supported, by sending JSON objects and arrays. If parameters `Map` or `List` contain generics information (e.g. `Map<Locale, String>`), Liferay Portal will generify the map/list entries before passing the value to the method.
-
 #### Inner Parameters [](id=lp-6-1-dgen08-inner-parameters-0)
 
 In many cases, you'll need to populate objects that are passed as parameters. A good example is a default parameter `serviceContext` of type `ServiceContext` (see the *Service Context* section in this chapter). Sometimes, you need to set some of the inner properties (i.e. fields) of the `ServiceContext`, such as: `addGroupPermissions`, `scopeGroupId`, etc., to make an appropriate call to a JSONWS.
@@ -774,6 +780,125 @@ Let's take a look a some returned values from calls to services. In fact, let's 
 Notice the JSON string returned represents the `UserGroup` object you just created. The object has been serialized into a JSON string. As a starting point for understanding JSON strings, go to [json.org](http://www.json.org/).
 
 To find out how to serialize Java objects, maps and lists, check out article [JSON Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization) by Igor Spasi&#263;. 
+
+### Common JSON WebService errors
+
+While working with JSON Web Services you can experience different errors. Here is the list of common errors you might meet on your way.
+
+#### Missing value for parameter
+
+This error means that you didn't pass the parameter value for your parameter, that is part of the URL path. Parameter value must follow the parameter name. Here is an example:
+
+	/api/jsonws/user/get-user-by-id/userId
+
+We have defined the parameter `userId`, but not it's value. This error can be simply fixed by providing the value:
+
+	/api/jsonws/user/get-user-by-id/userId/173
+
+#### No JSON web service action associated
+
+This is another common error, meaning that service method could not be matched from provided data (method name and argument names). This may happens from various reasons: arguments may be misspelled, method name may be formatted wrong etc. Since JSON web services reflects the java API, any changes in java will be automtically propagated to JSON web services; if new argument is added or existing one is removed, the matching will fail and you will get this error.
+
+#### Unmatched argument type
+
+This error appears when you try to instantiate a method argument with different type then argument type.
+
+## JSON Web Services Invoker
+
+Using JSON Web Services is easy, you send a request that defines service method and parameters and receive the result as JSON object. Although simple, this approach may not be the optimal in a rich environment as Liferay Portal is. For more pragmatical usage of JSON Web Services, we have the JSON Web Service Invoker.
+
+Consider the following example: often you need objects that are related, like `User` and its `Contact` information. Using simple JSON Web Service calls, you would need first to call some user service to get the user object, then to call the contacts service using contact id from received user object. So you would send two HTTP requests and have two JSON objects as result - that are not even binded together (there is no contact information in user object, i.e. no `user.contact`). Obviously, this approach has some impact on performances (sending two HTTP calls) and on usability (manually managing relation between two objects). Wouldn't it be nice if we can somehow address these problems?
+
+Yes! JSON Web Service Invoker is all about optimizing the usage of JSON Web Services. In following chapter you will learn how.
+
+### Simple Invoker call
+
+The Invoker is accessible on fixed address:
+
+	http://[address]:[port]/api/jsonws/invoke
+
+It accepts only one request parameter: `cmd` - the Invoker's command. If command request parameter is missing, then the request body will be used as the command. So basically you can specify the command either using request parameter `cmd` or using the request body.
+
+Invoker command is a plain JSON map that describes how JSON Web Services are called and how the results should be managed. Here is an example how to call a simple service using Invoker:
+
+	{
+		"/user/get-user-by-id": {
+			"userId": 123,
+			"param1": ...
+		}
+	}
+
+As seen, service call is defined as a JSON map. Key defines the service URL (i.e. the service method that will be invoked) and the keys value is another map with actual service parameters. The result is JSON object of retrieved user. This Invoker call is identical to standard JSON Web Service call:
+
+	/user/get-user-by-id?userId=123&param1=....
+
+Before we continue to more useful features, let's learn about variables.
+
+### Variables
+
+Invoker variable is the name associated with the result of some service call. In our example the service call returns the user object, so we can assign it to a variable:
+
+	{
+		"$user = /user/get-user-by-id": {
+			"userId": 123,
+		}
+	}
+
+Variables are used to reference returned object in other service calls. Variable names must start with a `$` (dollar) prefix. Here, the variable `$user` holds the returned user object, so in other service calls you can use e.g. `$user.contactId` syntax to read the values from the object.
+
+### Nested service calls
+
+Finally, with nested service calls you can achieve the magic. It allows not only to call another service withing the same HTTP request, but also to nest returned object in a convenient way. See it in action:
+
+	{
+		"$user = /user/get-user-by-id": {
+			"userId": 123,
+			"$contact = /contact/get-contact-by-id": {
+				"@contactId" : "$user.contactId"
+			}
+		}
+	}
+
+This command defines two service calls, where the result of the second service (the contact object) will be nested inside (i.e. injected inside) the user object, as the `contact` property. Let's analyze this command more and see what JSON Web Service Invoker does in the background within the single HTTP request:
+
++ calls Java service mapped to `/user/get-user-by-id` using `userId` parameter
++ associates resulting user object to variable `$user`
++ proceed with invoking nested calls
++ calls Java service mapped to `/contact/get-contact-by-id` using `contactId` parameter, with `$user.contactId` value from `$user` object
++ associates resulting contact object to variable `$contact`
++ injects `$contact` object into `$user` under the property name `contact`
+
+One remark: you need to *flag* parameters that takes values from existing variables. Flagging is done using `@` prefix before the parameter name. Flag determines if the specified value is just a simple value or some variable reference.
+
+### Filtering results
+
+Model objects are usually rich in Liferay portal, containing many properties. But not all of them needs to be retrieved. For example, you might not need user login name, last name, description etc, and you surely want to minimize the bandwidth usage by not sending unnecessary data.
+
+With JSON Web Service Invoker you can define a white-list of properties that you want to receive back. It's simple:
+
+	{
+		"$user[firstName,emailAddress] = /user/get-user-by-id": {
+			"userId": 123,
+			"$contact = /contact/get-contact-by-id": {
+				"@contactId" : "$user.contactId"
+			}
+		}
+	}
+
+Returned user object has only the `firstName` and the `emailAddress` property (and, of course, the `contact` property).
+
+### Batching calls
+
+Nesting service calls allows you to invoke multiple service within single HTTP request. However, it makes sense only if service calls are related and if returned object can be nested in a reasonable way. But if you want to invoke two logically separated calls, there is no much sense to force nesting and un-natural relationships just to gain performances.
+
+For that reason, you can send batch calls within one Invoker command. Again, it's simple, just pass a JSON array of commands:
+
+	[
+		{/* first command */},
+		{/* second command */}
+	]
+
+Result will be a JSON array populated with command results. Commands are invoked independently, one after the other. This way you can invoke multiple JSON Web services through one HTTP request.
 
 Well, you've just added some powerful tools to your toolbox by learning how to leverage JSON web services in Liferay. Good job!
 
