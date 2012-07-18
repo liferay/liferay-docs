@@ -158,7 +158,7 @@ We are in the habit of using right arrows to denote a series of things a user ca
 
 We can do the same in Markdown using the HTML code for this character, which is `&rarr;`. I created a SuperAbbrev in jEdit which transforms `rightarrow` into `&rarr;`.
 
-=== Tables ===
+### Tables
 
 Because Pegdown does not support the [Pandoc extension table syntac](http://johnmacfarlane.net/pandoc/README.html#tables), we use a table syntax similar to [MultiMarkdown](http://fletcher.github.com/peg-multimarkdown/mmd-manual.pdf).
 
@@ -189,6 +189,8 @@ Here is an example table in Markdown using MultiMarkdown-like syntax:
 	  foo     | bar            | image         | ![tip](../../images/tip-pen-paper.png)|
 	---
 
+![The example table converted using Pegdown](images/mmdTablePegdownHTML.png)
+
 Table Limitations:
 
 * Headings are left-aligned
@@ -201,7 +203,7 @@ Table Limitations:
 Table Syntax Requirements:
 
 * There must be at least one | per line
-* The “separator” line must contain only |,-,:, or spaces
+* The “separator�? line must contain only |,-,:, or spaces
 * Cell content must be on one line only
 * Columns are separated by |
 * The first line of the table, and the alignment/divider line, must start at the beginning of the line
@@ -214,7 +216,7 @@ Table Suggestions
 
 **Important** - Pandoc does not support MultiMarkdown table syntax. If you use Pandoc to build a document for test purposes, you'll notice that the table does not get converted as you would expect. If you are using Pandoc to convert a document for a final product (e.g. ePub), you'll need to temporarily change the table syntax to follow the Pandoc extension.
 
-{{http://in.liferay.com/documents/114255/341a7915-0bca-41a8-a1dd-3b7ee8266822|The Example Table converted using Pandoc}}
+![The example table converted using Pandoc](images/mmdTablePandocHTML.png)
 
 ### Markdown Metadata 
 
@@ -253,7 +255,7 @@ This FAQ is provided to help answer questions and provide information on how and
 
 ## What are the header IDs and why are they important? 
 
-Header IDs were created for the purpose of preserving the URLs of our official documentation on Liferay.com. Previously, the URLs for our web content were determined by the heading text of our documents (e.g. the text from “# Introduction to Liferay Portal” markdown was used to generate the URL final string in the web content's URL [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay). If the titles of the web content were changed, either by re-import of the markdown or manual edits via the GUI, the URLs changed too--breaking any links to the web content.
+Header IDs were created for the purpose of preserving the URLs of our official documentation on Liferay.com. Previously, the URLs for our web content were determined by the heading text of our documents (e.g. the text from “# Introduction to Liferay Portal�? markdown was used to generate the URL final string in the web content's URL [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay). If the titles of the web content were changed, either by re-import of the markdown or manual edits via the GUI, the URLs changed too--breaking any links to the web content.
 
 In response to this issue, Liferay portal and the AssetImporter have been improved so that web content can be referenced by static IDs. Regardless of whether the titles of a web content change, its ID remains the same, preserving the URL of that web content.
 
@@ -282,8 +284,8 @@ Example, `id=lp-6-1-ugen01-using-the-dockbar-0` can be broken down into:
 * **doc.abbrev:** ug	(for User Guide)
 * **lang:** en	(for English)
 * **chapterNum:** 01	(derived from the file's prefix – e.g., {{{01-introduction-to-liferay-ui.markdown}}})
-* **headerText:** using-the-dockbar	(derived from “### Using the Dockbar”)
-* **increment:** 0	(indicating this is the first such header having the attributes mentioned above. This increment becomes necessary to distinguish between web content with header text, like “Summary”, found within the same chapter.)
+* **headerText:** using-the-dockbar	(derived from “### Using the Dockbar�?)
+* **increment:** 0	(indicating this is the first such header having the attributes mentioned above. This increment becomes necessary to distinguish between web content with header text, like “Summary�?, found within the same chapter.)
 
 ## How should I specify an ID for a new header? 
 
