@@ -97,7 +97,7 @@ Before you can publish anything, you first have to create (develop) an app!  App
 
 In the real world, apps usually consist of multiple components (e.g. multiple `.war` file plugins), are spread across multiple plugin types, and present non-trivial functionality which in many cases requires some configuration. How these advanced tasks are dealt with is out of scope for this section, but some tips and considerations for Marketplace development can be found later in this chapter.
 
-### Specify App Packaging Directives
+### Specify App Packaging Directives [](id=lp-6-1-dgen12-specify-app-packaging-directives-0)
 
 When publishing your app, each plugin you upload will packaged into one or more *packages* for each Liferay release you intend to support. When you upload your plugins to the Liferay Marketplace, your app is scanned, and the embedded packaging directives you have specified are extracted and used to create different downloadable *packages* of your app for different Liferay releases. You must insert this information into each plugin in your app before you can publish it to the Marketplace.
 

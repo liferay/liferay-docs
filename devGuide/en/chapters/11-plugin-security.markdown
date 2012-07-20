@@ -1,5 +1,5 @@
 
-# Plugin Security Management
+# Plugin Security Management [](id=lp-6-1-dgen11-plugin-security-management-0)
 
 We all wish cyberspace were free of malicious software and unwanted bugs. Since it isn't, we need to guard ourselves and our portals from these evils. Enter Liferay Portal's Plugin Security Manager! It's like a super-hero in a cape and tights, except, well, it's not. 
 
@@ -16,7 +16,7 @@ Let's go over some scenarios that could apply to you with regard to trying new p
 
 These are just a few scenarios that may ring true for you. When you're responsible for keeping your system running well 24x7, you can't be too cautious in protecting your portal, system and network.
 
-## How plugin security works
+## How plugin security works [](id=lp-6-1-dgen11-how-plugin-security-works-0)
 
 When enabled, Liferay Portal's Plugin Security Manager checks a *Portal Access Control List* that's deployed with the plugin. This list describes what APIs the plugin accesses, so that you can review what it does without having to look at the source code. If the plugin tries to access anything that's not on this list, the plugin's request is stopped dead in its tracks, throwing exceptions to let you know what went wrong. 
 
@@ -24,7 +24,7 @@ Access to APIs is authorized by means of the property values specified in the pl
 
 As you develop plugins for Liferay Marketplace or for distribution within your organization, you'll need to set the security manager properties appropriately. Before we dive into the intricacies of these properties, let's consider a plugin development approach that involves designing an app for the security manager from the ground up.
 
-## Developing Plugins with security in mind
+## Developing Plugins with security in mind [](id=lp-6-1-dgen11-developing-plugins-with-security-in-mind-0)
 
 At the start of plugin developement, you may not have a clear picture of all the aspects of the portal you'll need to access, and that's fine. In fact, we suggest you go ahead and develop your plugin first and address plugin security afterwards. Liferay Portal's Plugin Security Manager uncovers the resources your plugin tries to access by throwing exceptions if a PACL property does not specifically grant access to those resources. So at the end of development, you may as well put the security manager to work and make it earn its keep.
 
@@ -36,21 +36,21 @@ Here is the suggested plugin development approach:
 
 The Plugin Security Manager intercepts requests for protected Liferay APIs, letting you know instantly the portal items which you are unauthorized to access. In this way, you can fill in the security manager properties of your plugin's PACL, so that any protected API you're accessing can be declared to users of your plugin. 
 
-### Develop your plugin
+### Develop your plugin [](id=lp-6-1-dgen11-develop-your-plugin-0)
 
 First, create your plugin the way you normally would. Design your application, write code, unit test your code, have users beta test your code. In essence, do everything you normally would do. 
 
-### Turn on the Plugin Security Manager
+### Turn on the Plugin Security Manager [](id=lp-6-1-dgen11-turn-on-the-plugin-security-manager-0)
 
 Next, turn on the security manager (see below), and re-test your application's functionality. If anything you're doing in the application needs to be declared in a PACL, this will be revealed to you. As you test, keep track of any issues the security manager reveals during testing. 
 
-### Declare the PACL properties
+### Declare the PACL properties [](id=lp-6-1-dgen11-declare-the-pacl-properties-0)
 
 Once you've identified what you need to declare, add the appropriate properties to your PACL in `liferay-plugin-package.properties`. Save this file and retest. Make sure everything works. If not, there are other properties you'll have to declare, so add those and test again. Repeat this process until you have an error-free deployment. 
 
 Once this is done, you're ready to distribute your application. 
 
-## Enabling the Security Manager
+## Enabling the Security Manager [](id=lp-6-1-dgen11-enabling-the-security-manager-0)
 
 If you want to distribute a plugin either through the Liferay Marketplace or through your web site, you have to assume any potential users have Security Manager turned on. For this reason, you should have it turned on when doing final testing on your applications. 
 
@@ -63,13 +63,13 @@ As a suggested plugin development approach, disable the security manager (by set
 Next, we'll look at exactly what APIs the security manager protects, and how you can declare whether your application uses any of these properties. 
 
 
-## Portal Access Control List (PACL) Properties
+## Portal Access Control List (PACL) Properties [](id=lp-6-1-dgen11-portal-access-control-list-pacl-properties-0)
 
 Liferay Portal's Plugin Security Manager checks all your plugin's API access attempts against the security manager properties specified in your plugin's `liferay-plugin-package.properties` file. If your plugin tries to access a portal resource that is not specified in these properties, the Plugin Security Manager prevents it from happening. Consider this a virtual finger waggin'. To prevent this from happening, you have to tell the Plugin Security Manager up-front the access your plugin needs.
 
 The sections that follow describe the PACL properties: explaining each property's purpose, its possible values, and the syntax to use in specifying its value. 
 
-## Class Loader Security
+## Class Loader Security [](id=lp-6-1-dgen11-class-loader-security-0)
 
 Specify the reference IDs of plugins for this plugin to access.
 
@@ -79,7 +79,7 @@ Specify the reference IDs of plugins for this plugin to access.
 		1_WAR_flashportlet,\
 		flash-portlet
 
-## Expando Bridge
+## Expando Bridge [](id=lp-6-1-dgen11-expando-bridge-0)
 
 Specify models having Expando Bridge attributes the plugin is permitted to access. The plugin can also access Expando Bridge attributes via the wrapper classes of the models.
 
@@ -88,7 +88,7 @@ Specify models having Expando Bridge attributes the plugin is permitted to acces
 	security-manager-expando-bridge=\
     	com.liferay.portal.model.User
 
-## File Security
+## File Security [](id=lp-6-1-dgen11-file-security-0)
 
 The following properties address file deletion, execution, reading, writing and replacement operations. The `*` character in a path name indicates all files in the current directory. The `-` character in a path name indicates all files in the current directory and in its subdirectories.
 
@@ -127,7 +127,7 @@ Specify files the plugin is permitted to overwrite.
 		../webapps/chat-portlet/WEB-INF/*,\
 		../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/util/ChatUtil.java
 
-## Hook Security
+## Hook Security [](id=lp-6-1-dgen11-hook-security-0)
 
 Set to `true` if the hook plugin is permitted use custom JSPs. This property's default value is `false`.
 
@@ -178,7 +178,7 @@ Specify struts action paths that the hook plugin is permitted to add or override
 	security-manager-hook-struts-action-paths=\
 		/portal/test/pacl/success
 
-## JNDI Security
+## JNDI Security [](id=lp-6-1-dgen11-jndi-security-0)
 
 Specify which services the plugin can look up. You can use regular expressions to make this dynamic. 
 
@@ -191,7 +191,7 @@ In this example, the plugin can look up objects for key names `matthew`, `mark`,
 		test-pacl-[mM]ark|test-pacl-[lL]uke,\
 		test-pacl-.*john.*
 
-## Message Bus Security
+## Message Bus Security [](id=lp-6-1-dgen11-message-bus-security-0)
 
 Specify which services the plugin is permitted to listen on via the portal's message bus.
 
@@ -211,7 +211,7 @@ Specify which message bus destinations the plugin is permitted to call (send mes
 		liferay/test_pacl_listen_success,\
 		liferay/test_pacl_send_success
 
-## Search Engine IDs
+## Search Engine IDs [](id=lp-6-1-dgen11-search-engine-ids-0)
 
 Specify the IDs of search engines the plugin is permitted to access.
 
@@ -219,7 +219,7 @@ Specify the IDs of search engines the plugin is permitted to access.
 	security-manager-search-engine-ids=\
 		SYSTEM_ENGINE
 
-## Portlet Service Security
+## Portlet Service Security [](id=lp-6-1-dgen11-portlet-service-security-0)
 
 Specify portlet service classes and/or methods the plugin is permitted to access. Use `#` as a delimiter between a class and its method.
 
@@ -229,7 +229,7 @@ Specify portlet service classes and/or methods the plugin is permitted to access
 		com.liferay.chat.service.EntryLocalService,\
 		com.liferay.chat.service.StatusLocalService#getStatuses
 
-## Portal Service Security
+## Portal Service Security [](id=lp-6-1-dgen11-portal-service-security-0)
 
 Specify portal service classes and/or methods the plugin is permitted to access. Use `#` as a delimiter between a class and its method.
 
@@ -242,7 +242,7 @@ Specify portal service classes and/or methods the plugin is permitted to access.
 		com.liferay.portlet.blogs.service.BlogsEntryLocalService,\
 		com.liferay.portlet.blogs.service.BlogsStatsUserLocalService
 
-## Bean Property Security
+## Bean Property Security [](id=lp-6-1-dgen11-bean-property-security-0)
 
 Specify bean properties the plugin is permitted to get.
 
@@ -279,7 +279,7 @@ Specify bean properties the plugin is permitted to set.
 	security-manager-set-bean-property=\
 		com.liferay.portal.kernel.dao.orm.PortalCustomSQLUtil
 
-## Socket Security
+## Socket Security [](id=lp-6-1-dgen11-socket-security-0)
 
 Specify sockets permitted to accept connections in the plugin.
 
@@ -309,7 +309,7 @@ This example specifies socket range `4316-4318`, socket `4320`, and socket `4321
 		4320,\
 		4321
 
-## SQL Security
+## SQL Security [](id=lp-6-1-dgen11-sql-security-0)
 
 Specify tables in the Liferay database on which the plugin is permitted to perform the applicable operations. These property names use the following convention: 
 
@@ -387,7 +387,7 @@ Specify tables the plugin can update.
 	security-manager-sql-tables-update=\
 		ListType
 
-## Thread Security
+## Thread Security [](id=lp-6-1-dgen11-thread-security-0)
 
 Specify names of thread pool executors the plugin is permitted to access.
 
@@ -398,7 +398,7 @@ Specify names of thread pool executors the plugin is permitted to access.
 		liferay/test_pacl_listen_failure,\
 		liferay/test_pacl_listen_success
 
-## Summary
+## Summary [](id=lp-6-1-dgen11-summary-0)
 
 In this chapter, we've discussed the reasons for plugin security management, how the Plugin Security Manager checks each plugin against its portal access control list (PACL), and how to specify PACL properties for the plugins you create and deploy.
 
