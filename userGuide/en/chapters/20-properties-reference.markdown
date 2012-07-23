@@ -107,23 +107,124 @@ Set this to to `true` to populate with the minimal amount of data. Set this to `
 
 ## Upgrade [](id=upgrade)
 
-Input a list of comma delimited class names that implement `com.liferay.portal.upgrade.UpgradeProcess`. These classes will run on startup to upgrade older data to match with the latest version.
+Input a list of comma delimited class names that implement `com.liferay.portal.upgrade.UpgradeProcess`. These classes will run on startup to upgrade older data to match with the latest version. Escape the comma so that the property can be properly interpolated. For example, the property "upgrade.processes.6100" will not properly reference the property "upgrade.processes.default" unless the commas are escaped. See `StartupHelper#getUpgradeProcessClassNames(String)`.
 
-	upgrade.processes=\
-		com.liferay.portal.upgrade.UpgradeProcess_5_0_0,\
-		com.liferay.portal.upgrade.UpgradeProcess_5_1_0,\
-		com.liferay.portal.upgrade.UpgradeProcess_5_1_2,\
-		com.liferay.portal.upgrade.UpgradeProcess_5_2_0,\
-		com.liferay.portal.upgrade.UpgradeProcess_5_2_1,\
-		com.liferay.portal.upgrade.UpgradeProcess_5_2_2,\
-		com.liferay.portal.upgrade.UpgradeProcess_5_2_3,\
-		com.liferay.portal.upgrade.UpgradeProcess_6_0_0,\    
-		com.liferay.portal.upgrade.UpgradeProcess_6_0_1,\   
-		com.liferay.portal.upgrade.UpgradeProcess_6_0_2,\
-		com.liferay.portal.upgrade.UpgradeProcess_6_0_3,\
-		com.liferay.portal.upgrade.UpgradeProcess_6_0_5,\
-		com.liferay.portal.upgrade.UpgradeProcess_6_0_6,\
-		com.liferay.portal.upgrade.UpgradeProcess_6_1_0
+    upgrade.processes.master=\
+        com.liferay.portal.upgrade.UpgradeProcess_5_0_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_1_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_1_2\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_1\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_2\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_3\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_1\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_2\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_3\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_5\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_6\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_1
+
+    upgrade.processes.5000=${upgrade.processes.master}
+    upgrade.processes.5001=${upgrade.processes.master}
+    upgrade.processes.5100=${upgrade.processes.master}
+    upgrade.processes.5101=${upgrade.processes.master}
+    upgrade.processes.5102=${upgrade.processes.master}
+    upgrade.processes.5200=${upgrade.processes.master}
+    upgrade.processes.5201=${upgrade.processes.master}
+    upgrade.processes.5202=${upgrade.processes.master}
+    upgrade.processes.5203=${upgrade.processes.master}
+    upgrade.processes.6000=${upgrade.processes.master}
+    upgrade.processes.6001=${upgrade.processes.master}
+    upgrade.processes.6002=${upgrade.processes.master}
+    upgrade.processes.6003=${upgrade.processes.master}
+    upgrade.processes.6004=${upgrade.processes.master}
+    upgrade.processes.6005=${upgrade.processes.master}
+    upgrade.processes.6006=${upgrade.processes.master}
+    upgrade.processes.6100=${upgrade.processes.master}
+    upgrade.processes.6101=${upgrade.processes.master}
+    upgrade.processes.6110=${upgrade.processes.master}
+    upgrade.processes.6120=${upgrade.processes.master}
+
+This property is deprecated and only provided for backwards compatibility. If this property is specified with a list of classes, then the portal will use this list of upgrade processes without taking into account any of the other "upgrade.processes.\*" property settings.
+
+    upgrade.processes=
+
+The following are upgrade processes for EE releases.
+
+    upgrade.processes.5103=\
+        com.liferay.portal.upgrade.UpgradeProcess_5_1_5\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_1_6\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_1_7\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_1_7_to_5_2_7\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_7_to_6_0_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_1\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_2\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_3\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_5\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_6\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_1
+
+    upgrade.processes.5104=${upgrade.processes.5103}
+    upgrade.processes.5105=${upgrade.processes.5103}
+    upgrade.processes.5106=${upgrade.processes.5103}
+    upgrade.processes.5107=${upgrade.processes.5103}
+
+    upgrade.processes.5108=\
+        com.liferay.portal.upgrade.UpgradeProcess_5_1_8_to_5_2_8\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_8_to_6_0_5\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_6\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_1
+
+    upgrade.processes.5204=\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_5\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_5_to_6_0_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_1\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_2\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_3\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_5\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_6\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_1
+
+    upgrade.processes.5205=${upgrade.processes.5204}
+
+    upgrade.processes.5206=\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_7\,\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_7_to_6_0_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_1\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_2\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_3\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_5\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_6\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_1
+
+    upgrade.processes.5207=${upgrade.processes.5206}
+
+    upgrade.processes.5208=\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_8_to_6_0_5\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_6\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_1
+
+    upgrade.processes.5209=\
+        com.liferay.portal.upgrade.UpgradeProcess_5_2_9_to_6_0_11\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_12\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_12_to_6_1_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_1
+
+    upgrade.processes.6010=${upgrade.processes.master}
+
+    upgrade.processes.6011=\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_12\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_0_12_to_6_1_0\,\
+        com.liferay.portal.upgrade.UpgradeProcess_6_1_1
+
+    upgrade.processes.6012=${upgrade.processes.6011}
 
 ## Verify [](id=verify)
 
@@ -169,6 +270,7 @@ Input a list of comma delimited class names that implement `com.liferay.portal.k
 		com.liferay.portal.deploy.auto.exploded.tomcat.HookExplodedTomcatListener,\ 
 		com.liferay.portal.deploy.auto.exploded.tomcat.LayoutTemplateExplodedTomcatListener,\ 
 		com.liferay.portal.deploy.auto.exploded.tomcat.PortletExplodedTomcatListener,\
+		com.liferay.portal.license.deploy.auto.LicenseAutoDeployListener,\
 		com.liferay.portal.deploy.auto.exploded.tomcat.ThemeExplodedTomcatListener
         
 Set this to `true` to enable auto deploy of layout templates, portlets and themes.
@@ -3202,6 +3304,30 @@ Set this to `true` to remember maximized window states across different pages.
 Set this to specify the initial number of child pages to display in the Manage Pages tree. Set this to `-1` to show all.
 
 	layout.manage.pages.initial.children=20
+	
+## Layout Prototypes
+
+Set this property to true to enable the propagation of changes to a page from its page template by default.
+
+    layout.prototype.link.enabled.default=true
+
+In the case that a page template would fail to merge, make sure that we prevent repeated attempts that will inevitably fail by having a fail threshold.
+
+    layout.prototype.merge.fail.threshold=3
+
+The number of seconds we should expect a lock to last before we recognize that an error occured and some other process should be able to attempt to take it over.
+
+    layout.prototype.merge.lock.max.time=300
+
+## Layout Set Prototypes
+
+In the case that a site template would fail to merge, make sure that we prevent repeated attempts that will inevitably fail by having a fail threshold.
+
+    layout.set.prototype.merge.fail.threshold=3
+
+The number of seconds we should expect a lock to last before we recognize that an error occured and some other process should be able to attempt to take it over.
+
+    layout.set.prototype.merge.lock.max.time=600
 
 ## Portlet URL [](id=portlet-url)
 
@@ -4046,7 +4172,9 @@ Configure the appropriate level for monitoring Liferay. Valid values are: `HIGH`
 	monitoring.level.com.liferay.monitoring.Portal=HIGH
 	monitoring.level.com.liferay.monitoring.Portlet=HIGH
 
-Set this to `true` to store data samples of the current request as a thread local variable. This allows you to obtain each request's statistics for further processing
+Set this to `true` to store data samples of the current request as a thread local variable. This allows you to obtain each request's statistics for further processing.
+
+This property does not take effect unless you add `monitoring-spring.xml` to the property `spring.configs`.
 
 	monitoring.data.sample.thread.local=false
 
@@ -4070,9 +4198,11 @@ Set this to `true` to monitor portlet resource requests.
 
 	monitoring.portlet.resource.request=false
 
-Set this to `true` to show data samples at the bottom of each portal page. In order for data to show, the property `monitoring.data.sample.thread.local` must be set to `true`.
+Set this to `true` to show data samples at the bottom of each portal page as HTML comments. In order for data to show, the property `monitoring.data.sample.thread.local` must be set to `true`.
 
 	monitoring.show.per.request.data.sample=false
+	
+
 	
 ## Multicast [](id=multicast)
 
@@ -4322,17 +4452,13 @@ Set the threshold at which methods will be compiled when `jit` compile mode is e
 Set the load paths for the jruby engine. These paths allow jruby to locate gems and ruby code libraries in the classpath.
 
     scripting.jruby.load.paths=\
-        META-INF/jruby.home/lib/ruby/site_ruby/1.8,\
-        META-INF/jruby.home/lib/ruby/site_ruby/shared,\
-        META-INF/jruby.home/lib/ruby/1.8,\
-        gems/chunky_png-1.2.1/lib,\
-        gems/compass-0.11.5/lib,\
-        gems/fssm-0.2.7/lib,\
-        gems/sass-3.1.7/lib,\
-        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/chunky_png-1.2.1/lib,\
-        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/compass-0.11.5/lib,\
-        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/fssm-0.2.7/lib,\
-        file:${liferay.lib.portal.dir}ruby-gems.jar!/gems/sass-3.1.7/lib	
+        classpath:/META-INF/jruby.home/lib/ruby/site_ruby/1.8,\
+        classpath:/META-INF/jruby.home/lib/ruby/site_ruby/shared,\
+        classpath:/META-INF/jruby.home/lib/ruby/1.8,\
+        classpath:/gems/chunky_png-1.2.1/lib,\
+        classpath:/gems/compass-0.11.5/lib,\
+        classpath:/gems/fssm-0.2.7/lib,\
+        classpath:/gems/sass-3.1.7/lib
 
 ## Search Container [](id=search-container)
 
@@ -4780,19 +4906,38 @@ See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required
 
 	spring.remoting.servlet.hosts.allowed=127.0.0.1,SERVER_IP
 	spring.remoting.servlet.https.required=false
+	
+## Tunnel Servlet
 
+See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
+
+    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP
+    tunnel.servlet.https.required=false	
+	
+## Web Server Servlet [](id=web-server-servlet)
+
+Set this to a comma delimited list of MIME types to send an Accept-Ranges header.
+
+    web.server.servlet.accept.ranges.mime.types=audio/basic,audio/mid,audio/midi,audio/mod,audio/mp3,audio/mpeg,audio/mpeg3,audio/ogg,audio/vorbis,audio/wav,audio/x-mid,audio/x-midi,audio/x-mod,audio/x-mpeg,audio/x-pn-realaudio,audio/x-realaudio,audio/x-wav,video/avi,video/mp4,video/mpeg,video/ogg,video/quicktime,video/x-flv,video/x-m4v,video/x-ms-wmv,video/x-msvideo
+
+Set this property to true to enable directory indexing.
+
+    web.server.servlet.directory.indexing.enabled=false
+
+Set the maximum range fields that are allowed to be requested by a browser.
+
+    web.server.servlet.max.range.fields=10
+
+Set the level of verbosity to use in the server information line printed by the web server servlet. Valid values are `full`, which gives all of the version information (e.g. Liferay Portal Community Edition 6.1.0 CE etc.) or `partial`, which gives only the name portion (e.g. Liferay Portal Community Edition).
+
+    web.server.servlet.version.verbosity=full
+    
 ## WebDAV Servlet [](id=webdav-servlet)
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
 	webdav.servlet.hosts.allowed=
-	webdav.servlet.https.required=false
-	
-## Web Server Servlet [](id=web-server-servlet)
-
-Set this property to `true` to enable directory indexing.
-
-	web.server.servlet.directory.indexing.enabled=false	
+	webdav.servlet.https.required=false    
 
 ## Widget Servlet [](id=lp-6-1-ugen20-widget-servlet-0)
 
@@ -4958,6 +5103,10 @@ Set this to `true` to enable trackbacks.
 Set this to `true` to enable pinging Google on new and updated blog entries.
 
 	blogs.ping.google.enabled=true
+	
+Set the interval on which the CheckEntryMessageListener will run. The value is set in one minute increments.
+
+    blogs.entry.check.interval=1
 
 Set this to `true` to enable comments for blogs entries.
 
@@ -5633,6 +5782,14 @@ Set this to `true` to enable the ability to modify portlet CSS at runtime via th
 Set the number of stars that will be used by the ratings tag library by default.
 
 	ratings.default.number.of.stars=5
+	
+Set the number of max score and min score that will be used by the ratings tag library for each model.
+
+    ratings.max.score[com.liferay.portlet.messageboards.model.MBDiscussion]=1
+    ratings.min.score[com.liferay.portlet.messageboards.model.MBDiscussion]=-1
+
+    ratings.max.score[com.liferay.portlet.messageboards.model.MBMessage]=1
+    ratings.min.score[com.liferay.portlet.messageboards.model.MBMessage]=-1	
 
 ## RSS Portlet [](id=rss-portlet)
 
@@ -5779,6 +5936,14 @@ Set this to `true` to enable ratings for wiki pages.
 Set this to `true` to enable comments for wiki pages.
 
 	wiki.page.comments.enabled=true
+	
+Set this to true to enable social activity notifications on minor edits of a wiki page.
+
+    wiki.page.minor.edit.add.social.activity=true
+
+Set this to true to enable email notifications on minor edits of a wiki page.
+
+    wiki.page.minor.edit.send.email=false
 
 Set the list of supported wiki formats and the default wiki format.
 
