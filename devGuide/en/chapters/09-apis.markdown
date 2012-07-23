@@ -634,7 +634,7 @@ As with passing parameters as part of a URL path, the parameter order is not imp
 
 Parameters can be passed in a mixed way: some can be part of the URL path and some can be specified as request parameters.
 
-#### Type conversion of the parameters
+#### Type conversion of the parameters [](id=lp-6-1-dgen09-type-conversion-of-the-parameters-0)
 
 Parameter values are sent as strings using the HTTP protocol. Before a matching Java service method is invoked, each parameter value is converted from a string to its target Java type. We use a 3rd party open-source library to convert each object to its appropriate common type. Of course, it is possible to add or change the conversion for certain types; but we'll just cover how the conversions work by as-is.
 
@@ -789,11 +789,11 @@ Notice the JSON string returned represents the `UserGroup` object you just creat
 
 To find out how to serialize Java objects, maps and lists, check out article [JSON Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization) by Igor Spasi&#263;. 
 
-### Common JSON WebService errors
+### Common JSON WebService errors [](id=lp-6-1-dgen09-common-json-webservice-errors-0)
 
 While working with JSON Web Services, you may encounter some of the common errors described in the following subsections.
 
-#### Missing value for parameter
+#### Missing value for parameter [](id=lp-6-1-dgen09-missing-value-for-parameter-0)
 
 This error means you didn't pass a parameter value along with the parameter name in your the URL path. The parameter value must follow the parameter name in the URL path.
 
@@ -805,15 +805,15 @@ specifies the parameter named `userId`, but it does not specify the parameter's 
 
 	/api/jsonws/user/get-user-by-id/userId/173
 
-#### No JSON web service action associated
+#### No JSON web service action associated [](id=lp-6-1-dgen09-no-json-web-service-action-associated-0)
 
 This is error means no service method could be matched with the provided data (method name and argument names). This can be due to various reasons: arguments may be misspelled, the method name may be formatted incorrectly, etc. Since JSON web services reflect the underlying Java API, any changes in the respective Java API will automatically be propagated to the JSON web services. For example, if a new argument is added to a method or an existing argument is removed from a method, the parameter data must match that of the new method signature.
 
-#### Unmatched argument type
+#### Unmatched argument type [](id=lp-6-1-dgen09-unmatched-argument-type-0)
 
 This error appears when you try to instantiate a method argument using an incompatible argument type.
 
-### JSON Web Services Invoker
+### JSON Web Services Invoker [](id=lp-6-1-dgen09-json-web-services-invoker-0)
 
 Using JSON Web Services is easy, you send a request that defines a service method and parameters and you receive the result as JSON object. But you may need to use JSON Web Services more pragmatically. 
 
@@ -821,7 +821,7 @@ Consider the following example: You are working with two related objects, a `Use
 
 Liferay's JSON Web Service Invoker helps you optimize your use of JSON Web Services. In the following sections, we'll show you how.
 
-#### A simple Invoker call
+#### A simple Invoker call [](id=lp-6-1-dgen09-a-simple-invoker-call-0)
 
 The Invoker is accessible on the fixed address:
 
@@ -846,7 +846,7 @@ Note, the example Invoker call is identical to the following standard JSON Web S
 
 Before we dive into more features, let's learn how to use variables with the Invoker.
 
-#### Invoker variables
+#### Invoker variables [](id=lp-6-1-dgen09-invoker-variables-0)
 
 Variables are used to reference objects returned from service calls. Variable names must start with a `$` (dollar sign) prefix. In our previous example, the service call returned a user object that can be assigned to a variable:
 
@@ -858,7 +858,7 @@ Variables are used to reference objects returned from service calls. Variable na
 
 Here, the variable `$user` holds the returned user object. You can reference the user's contact ID using the syntax `$user.contactId`.
 
-#### Nested service calls
+#### Nested service calls [](id=lp-6-1-dgen09-nested-service-calls-0)
 
 With nested service calls, you can magically bind information from related objects together in a JSON object. This feature allows you to not only call other services within the same HTTP request, but also nest returned objects in a convenient way. See it in action:
 
@@ -884,7 +884,7 @@ Let's analyze this command example to consider what the JSON Web Service Invoker
 
 One remark: you need to *flag* parameters that take values from existing variables. Flagging is done using the `@` prefix before the parameter name.
 
-#### Filtering results
+#### Filtering results [](id=lp-6-1-dgen09-filtering-results-0)
 
 Many of Liferay Portal's model objects are rich with properties. But, you may only need a handful of an object's properties for your business logic. By reducing the number of properties returned in an object, you can minimize the network bandwith used by your web service invocation. Good news! With the JSON Web Service Invoker you can define a *white-list* of properties to include only specific properties in the object returned from your web service call. It's simple:
 
@@ -899,7 +899,7 @@ Many of Liferay Portal's model objects are rich with properties. But, you may on
 
 In this example, the returned user object has only the `firstName` and the `emailAddress` properties (and, of course, the `contact` property). You specify *white-list* properties in square brackets (`[...]`) immediately following the name of your variable.
 
-#### Batching calls
+#### Batching calls [](id=lp-6-1-dgen09-batching-calls-0)
 
 As mentioned previously, nesting service calls allows you to invoke multiple services within a single HTTP request. Using a single request for multiple service calls is helpful for gathering related information from the service call results. But you can also use a single request to invoke unrelated service calls. The Invoker command allows you to *batch* service calls together to improve performance. Again, it's simple, just pass a JSON array of commands:
 
