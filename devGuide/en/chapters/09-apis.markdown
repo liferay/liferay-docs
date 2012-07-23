@@ -834,15 +834,15 @@ The Invoker command is a plain JSON map that describes how JSON Web Services are
 	{
 		"/user/get-user-by-id": {
 			"userId": 123,
-			"param1": ...
+			"param1": null
 		}
 	}
 
-As you can see, the service call is defined as a JSON map. The key specifies the service URL (i.e. the service method to be invoked) and the key's value specifies a map of service parameter names (i.e. `userId` and `param1`) and their values. In the example above, the retrieved user is returned as a JSON object. Moreover, null values now can be specified with more convenient `null` keyword (since the command is a JSON string), not only with dash prefix.
+As you can see, the service call is defined as a JSON map. The key specifies the service URL (i.e. the service method to be invoked) and the key's value specifies a map of service parameter names (i.e. `userId` and `param1`) and their values. In the example above, the retrieved user is returned as a JSON object. Moreover, since the command is a JSON string, null values can be specified explicitly using the `null` keyword. However, if you so choose, you can still use the less natural convention for specifying a null parameter that requires a dash before the parameter name and an explicit empty value (e.g. `"-param1": ''`).
 
 Note, the example Invoker call is identical to the following standard JSON Web Service call:
 
-	/user/get-user-by-id?userId=123&param1=....
+	/user/get-user-by-id?userId=123&-param1
 
 Before we dive into more features, let's learn how to use variables with the Invoker.
 
