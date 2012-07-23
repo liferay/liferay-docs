@@ -807,7 +807,7 @@ specifies the parameter named `userId`, but it does not specify the parameter's 
 
 #### No JSON web service action associated
 
-This is error means no service method could be matched with the provided data (method name and argument names). This can be due to various reasons: arguments may be misspelled, the method name may be formatted incorrectly, etc. Since JSON web services reflect the underlying Java API, any changes in the respective Java API will automtically be propagated to the JSON web services. For example, if a new argument is added to a method or an existing argument is removed from a method, the parameter data must match that of the new method signature.
+This is error means no service method could be matched with the provided data (method name and argument names). This can be due to various reasons: arguments may be misspelled, the method name may be formatted incorrectly, etc. Since JSON web services reflect the underlying Java API, any changes in the respective Java API will automatically be propagated to the JSON web services. For example, if a new argument is added to a method or an existing argument is removed from a method, the parameter data must match that of the new method signature.
 
 #### Unmatched argument type
 
@@ -838,7 +838,7 @@ The Invoker command is a plain JSON map that describes how JSON Web Services are
 		}
 	}
 
-As you can see, the service call is defined as a JSON map. The key specifies the service URL (i.e. the service method to be invoked) and the key's value specifies a map of service parameter names (i.e. `userId` and `param1`) and their values. In the example above, the retrieved user is returned as a JSON object.
+As you can see, the service call is defined as a JSON map. The key specifies the service URL (i.e. the service method to be invoked) and the key's value specifies a map of service parameter names (i.e. `userId` and `param1`) and their values. In the example above, the retrieved user is returned as a JSON object. Moreover, null values now can be specified with more convenient `null` keyword (since the command is a JSON string), not only with dash prefix.
 
 Note, the example Invoker call is identical to the following standard JSON Web Service call:
 
