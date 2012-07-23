@@ -72,7 +72,7 @@ Any custom documents types that have been defined also appear in the Add menu. I
 
 #### Sort [](id=lp-6-1-ugen04-sort-0)
 
-You can sort the items displayed in the main window of the Documents and Media portlet using the Sort By menu. You can sort by title, create date, modified date, read count or size.
+You can sort the items displayed in the main window of the Documents and Media portlet using the Sort By menu. You can sort by title, create date, modified date, downloads or size.
 
 **Title:** lets you alphabetically sort documents by title.
 
@@ -80,7 +80,7 @@ You can sort the items displayed in the main window of the Documents and Media p
 
 **Modified Date:** lets you sort documents by the last time they were modified.
 
-**Read Count:** lets you sort documents by the number of times they were viewed.
+**Downloads:** lets you sort documents by the number of times they were downloaded.
 
 **Size:** lets you sort documents by how much disk space they use.
 
