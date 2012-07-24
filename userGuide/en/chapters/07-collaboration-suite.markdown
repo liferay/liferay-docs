@@ -8,9 +8,7 @@ This chapter focuses on how to use Liferay's collaboration suite. We explain how
 -   Calendars
 -   Message Boards
 -   Wikis
-<!--     Need text for Polls 
-Polls
--->
+-   Polls
 -   Chat
 -   Mail
 
@@ -653,9 +651,141 @@ The Wiki portlet is another full-featured Liferay application with all of the fe
 
 <!--  The Polls section goes here  -->
 
-## Find out what others think or do using Polls [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
+## Find out what others think or do using Polls
+[](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
 
-<!--   Need text  -->
+How well do you know your users? Do you ever wonder what they're thinking? Is using your site easy for them? How do they feel about the hot-button issues of the day? Do they prefer dogs over cats? What about that new policy management wants to implement? What's their favorite ice cream flavor? When you use Liferay's Polls feature you can find out the answer to these and other questions that should help you better understand your users. 
+
+There are two portlets involved in making and displaying a poll: the Polls portlet, which is accessed through the Control Panel, and the Polls Display portlet, which can be added to any page in the portal. 
+
+The Polls portlet helps you set up the poll question and the possible answers users can select. The Polls Display portlet is an instanceable portlet that lets you select which poll to display, and is the portlet you put on the page for users to vote with.
+
+The Polls portlet allows users and administrators to create multiple choice polls that keep track of the votes and display results on the page. Many separate polls can be managed; a separate portlet called Polls Display can be configured to display a specific poll's questions and results.
+
+The Polls Display Portlet allows users to vote for a specific poll's questions and see the results. Questions must be created from the Polls portlet in the Control Panel.
+
+We'll begin by creating a poll in the control panel.
+
+### Creating a Poll
+
+In the Control Panel navigate to the *Polls* link under Content. Click the *Add Question* button. A form appears that allows you to fill out all the information for your poll. 
+
+![Figure 7.X: Adding a poll using the New Question form](../../images/polls-new-question-form.png)
+
+**Title:** enter the name of the poll question
+
+**Polls Question:** enter the text of the poll question
+
+**Expiration Date:** enter the date and time you want the poll to expire
+
+**Choices:** enter at least two answer options for the poll question
+
+**Add Choice:** enter additional answer options for the poll question
+
+**Permissions:** manage who can view and edit the poll
+
+When you have finished creating your poll, click *Save* and it will be added to the Polls portlet. 
+
+As more polls are created in the control panel, they become accessible through the Polls Display portlet until they are either deleted or they expire. You can set an expiration date for a poll by selecting the day and time in the Add Poll form or in the New Question form. The default is set to *Never Expire*. 
+
+When a poll is expired, it is disabled from further voting but it remains displayed on the page. To remove an expired poll from a page, click *Remove* under the *X* icon in the portlet's title bar.
+
+Under *Permissions* you can select who can see the portlet with the *Viewable by* menu. Available options are *Anyone (Guest Role)*, *Site Members*, or *Owner*. Click *Other Options* to set more specific permissions.
+
+![Figure 7.X: Viewing the Permissions in the Add Question form form](../../images/polls-permissions-add-poll-form.png)
+
+You can select the following options for either a *Guest* role or a *Site Member* role:
+
+**Add Vote** allows users to cast a vote
+
+**Delete** allows users permission to remove ____ ?
+
+**Permissions** allows users permission to do ____?
+
+**Update** allows users to update ____ ?
+
+As you can see, creating a poll is fairly straight forward. Next, let's complete the two-step process and put your poll on a page.
+
+### Adding a Poll
+
+Now that you have created your poll question, it's time to present it to your users. Navigate to your portal and add the Polls Display portlet to a page. It is available from the *Content Management* section of the **Add &rarr; More** menu. 
+
+The Polls Display portlet may look strange when it first appears on your page. That's because it's not configured. Before visitors to your site can use the poll, they must be able to access it. Simply click on the link, *Please configure this portlet to make it visible to all users*, and you will be directed to a dialog box like the one below.
+
+![Figure 7.X: Initial configuration of the Polls Display portlet buttons](../../images/polls-display-initial-config.png)
+
+Under the Setup tab you will see a menu option labeled *Question*. Selecting this option will display the name of the poll you created. Choose it, click *Save*, and it will be displayed on the page. That, in a nutshell, is how you create a poll, but there is another way to add a question to the Polls Display portlet.
+
+Start by navigating to your portal and placing the Polls Display portlet on a page. Using the icons in the lower left of the portlet, choose the *Add Question* button. A new form will appear you can use to create another question. When you are done filling out the form, click *Save* and you new poll will appear on the page.
+
+Once the poll question has been successfully placed on the page, you can perform other tasks by using the icons in the lower left corner of the portlet. Besides the *Add Question* button, which we just discussed, the are the *Edit Question* and the *Select Question* buttons.
+
+![Figure 7.X: Manage polls with configuration buttons](../../images/polls-display-option-buttons.png)
+
+**Edit Question** displays a similar dialog box to the one used to create the poll
+
+**Select Question** displays the same dialog box as Configuration, allowing you to choose different questions from the dropdown menu
+
+**Add Question** allows you to create a new question
+
+You can also manage the Polls Display portlet by clicking the wrench symbol in the upper right corner of the portlet's title bar. We'll look at those options next. 
+
+### Managing the Polls Display Portlet
+
+The Liferay user experience is all about options, options, and more options. And like so many other features in Liferay, the Polls Display portlet has several ways you can manage the polls in your portal. They are *Look and Feel*, *Configuration*, and *Export/Import*. 
+
+#### Look and Feel
+
+![Figure 7.X: Viewing the Look and Feel form](../../images/polls-look-and-feel-form.png)
+
+The Look and Feel form has several tabs to choose from: 
+
+**Portlet Configuration** set the portlet's title, link it to a particular page and set its border options
+
+If you are unhappy with the title of a poll and you'd like to change it, simply check the *Use Custom Title* box to enter a new title in the *Portlet Title* field.
+ 
+**Text Styles** set the portlet's font and its associated style options
+ 
+**Background Styles** set the portlet's background color 
+
+**Border Styles** set the portlet's border options
+ 
+**Margin and Padding** set the portlet's margin and padding options
+
+**Advanced Styling** add a custom CSS rule for the portlet
+
+**WAP Styling** set the portlet's WAP options
+
+
+#### Configuration
+
+To configure the Polls Display portlet, simply click on the *Menu* icon in the portlet's title bar and select *Configuration*. Beneath the Setup tab there is an option labeled *Question*. Selecting this menu will reveal a list of all available questions you can select to populate your Polls Display portlet.
+
+![Figure 7.X: Choosing a poll question to populate the Polls Display portlet](../../images/polls-display-config-form-populated-field.png)
+
+Note, if you choose a previously used poll, data from the original poll will populate the new poll. 
+
+#### Export/Import
+
+We  need to say something here about exporting and importing polls.  
+
+![Figure 7.X: Viewing the Export/Import form](../../images/polls-export-import-form.png)
+
+
+
+### Viewing the Poll Results
+
+When you create a poll question, it appears in a list in the control panel. After users to your site vote in the poll, the data is collected in this portlet. If you select it you will see not only the name and the question, you will get a breakdown of the poll results, including percentages and total number of votes per answer and the total number of votes cast.
+
+![Figure 7.X: Viewing the poll results in the Polls portlet form](../../images/polls-results-test2.png)
+
+Below this you will see an item called *Charts*. This option allows you to see the poll results represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*, *Pie* and *Vertical Bar*.
+
+![Figure 7.X: Viewing a pie chart in the poll results form](../../images/polls-results-pie-chart.png)
+
+You will also notice a listing of each user who voted in your poll and how they voted. You can see the time they cast their votes as well. Registered users are represented by their screen name while Guest users are represented by a number.
+
+With Liferay Polls you can do many things. You can ask users very specific questions or you can use Polls to create a little fun for your community. As with most things Liferay, you are only limited by your imagination. Now let's see what you can do with Liferay's Chat feature.
 
 ## Staying in touch with the Chat [](id=ch-4)
 
