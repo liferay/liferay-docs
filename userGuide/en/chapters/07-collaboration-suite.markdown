@@ -230,7 +230,7 @@ When you've finished setting the options in the portlet, click *Save*. Then clos
 
 ### The Blogs Admininistrator Portlet [](id=lp-6-1-ugen04-the-blogs-admininistrator-portlet-0)
 
-In the control panel there's a portlet for managing your site's blog entries. Most of the time, the Blogs portlet is the only tool you'll need to manage your blog entries. If, however, you need to massively delete blog entries, the blogs administrator portlet is the perfect tool for you. 
+In the Control Panel there's a portlet for managing your site's blog entries. Most of the time, the Blogs portlet is the only tool you'll need to manage your blog entries. If, however, you need to massively delete blog entries, the blogs administrator portlet is the perfect tool for you. 
 
 ![Figure 7.11: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
 
@@ -473,7 +473,7 @@ The Message Boards portlet is also highly integrated with Liferay's user managem
 
 The Message Boards portlet provides for the day to day administration of the message threads. You may wish to separate this function out by a role, and then delegate that role to one or more of your users. That would free you up to concentrate on other areas of your web site. To do this, you can create a role called Message Board Administrators. This role can be scoped by the portal, an organization, or a site. If you have a portal scoped role, members of this role will be able to administer any Message Boards portlet in the portal. If it is an organization or site scoped role, members of this role will be able to administer a Message Boards portlet in only the organization or site which assigned the role to them.
 
-Go to the control panel and create this role. Once it is created, click *Actions &rarr; Define Permissions*. Click the *Add Permissions* dropdown list. Browse the list until you find the Message Boards portlet under the Site Content section and then click on it. You will then see a screen which allows you to configure the various permissions on the portlet.
+Go to the Control Panel and create this role. Once it is created, click *Actions &rarr; Define Permissions*. Click the *Add Permissions* dropdown list. Browse the list until you find the Message Boards portlet under the Site Content section and then click on it. You will then see a screen which allows you to configure the various permissions on the portlet.
 
 ![Figure 7.16: Defining Permissions for the Message Board Administrators Role](../../images/05-defining-permissions-message-board-admin-role.png)
 
@@ -553,7 +553,7 @@ Next to each wiki in the list of wiki nodes is an *Actions* button. This button 
 
 **Delete:** deletes the wiki node.
 
-To go back to your wiki, click on its name in the list of wikis. Note that there is also a wrench icon leading to a configuration menu on this portlet in the control panel. This contains several other options which you may have seen on other portlets.
+To go back to your wiki, click on its name in the list of wikis. Note that there is also a wrench icon leading to a configuration menu on this portlet in the Control Panel. This contains several other options which you may have seen on other portlets.
 
 The *Email From*, *Page Added Email*, and *Page Updated Email* tabs are similar to the ones for notification email settings for other portlets, allowing you to customize who wiki emails come from and the format and text of the email that is sent when a page is added or updated.
 
@@ -593,7 +593,7 @@ This would produce the following wiki page:
 
 This adds a simple heading, a paragraph of text, and several links to the page. Since the pages behind these links have not been created yet, clicking one of those links takes you to an editing screen to create the page. This editing screen looks just like the one you used previously when you wrote the front page. Liferay displays a notice at the top of the page stating that the page does not exist yet, and that you are creating it right now. As you can see, it is very easy to create wiki pages. All you have to do is create a link from an existing page. Note that at the top of the screen you can select from the Creole wiki format and the HTML editor that comes with Liferay. We recommend that you stick with the Creole format, as it allows for a much cleaner separation of content and code. If you want all of your users to use the Creole format, you can disable the HTML format using the `portal-ext.properties` file. See chapter 14 for details about how to configure this.
 
-At the bottom of the page editing screen, you can select *Categories* for the article. Categories are hierarchical lists of headings under which you can create wiki pages. This allows you to organize your content in a more formal fashion. You can create categories using the control panel, in the *Categories* section.
+At the bottom of the page editing screen, you can select *Categories* for the article. Categories are hierarchical lists of headings under which you can create wiki pages. This allows you to organize your content in a more formal fashion. You can create categories using the Control Panel, in the *Categories* section.
 
 ### Page Details [](id=lp-6-1-ugen04-page-details-0)
 
@@ -649,8 +649,6 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 The Wiki portlet is another full-featured Liferay application with all of the features you expect from a state of the art wiki. Next, we'll look at how Liferay handles live chat.
 
-<!--  The Polls section goes here  -->
-
 ## Find out what others think or do using Polls
 [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
 
@@ -662,15 +660,15 @@ The Polls portlet helps you set up the poll question and the possible answers us
 
 The Polls portlet allows users and administrators to create multiple choice polls that keep track of the votes and display results on the page. Many separate polls can be managed; a separate portlet called Polls Display can be configured to display a specific poll's questions and results.
 
-The Polls Display Portlet allows users to vote for a specific poll's questions and see the results. Questions must be created from the Polls portlet in the Control Panel.
+The Polls Display Portlet allows users to vote for a specific poll's questions and see the results. Questions must be created from the Polls portlet in the Control Panel. You can display one question at a time or you can combine several questions inside a nested portlet to create a survey.
 
-We'll begin by creating a poll in the control panel.
+We'll begin by creating a poll in the Control Panel.
 
 ### Creating a Poll
 
 In the Control Panel navigate to the *Polls* link under Content. Click the *Add Question* button. A form appears that allows you to fill out all the information for your poll. 
 
-![Figure 7.X: Adding a poll using the New Question form](../../images/polls-new-question-form.png)
+![Figure 7.x: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
 
 **Title:** enter the name of the poll question
 
@@ -686,33 +684,21 @@ In the Control Panel navigate to the *Polls* link under Content. Click the *Add 
 
 When you have finished creating your poll, click *Save* and it will be added to the Polls portlet. 
 
-As more polls are created in the control panel, they become accessible through the Polls Display portlet until they are either deleted or they expire. You can set an expiration date for a poll by selecting the day and time in the Add Poll form or in the New Question form. The default is set to *Never Expire*. 
+As more polls are created in the Control Panel, they become accessible through the Polls Display portlet until they are either deleted or they expire. You can set an expiration date for a poll by selecting the day and time in the Add Poll form or in the New Question form. The default is set to *Never Expire*. 
 
 When a poll is expired, it is disabled from further voting but it remains displayed on the page. To remove an expired poll from a page, click *Remove* under the *X* icon in the portlet's title bar.
 
-Under *Permissions* you can select who can see the portlet with the *Viewable by* menu. Available options are *Anyone (Guest Role)*, *Site Members*, or *Owner*. Click *Other Options* to set more specific permissions.
-
-![Figure 7.X: Viewing the Permissions in the Add Question form form](../../images/polls-permissions-add-poll-form.png)
-
-You can select the following options for either a *Guest* role or a *Site Member* role:
-
-**Add Vote** allows users to cast a vote
-
-**Delete** allows users permission to remove ____ ?
-
-**Permissions** allows users permission to do ____?
-
-**Update** allows users to update ____ ?
+*Permissions* can be set on individual polls. You can choose to limit participation on a particular poll to only a select group of people with the *Viewable by* menu. Available options are *Anyone (Guest Role)*, *Site Members*, or *Owner*. By selecting *Other Options* you can allow certain Roles to *Add Vote*, *Delete*, and *Update* the application. This function can be used, for example, to allow some privileged users to add a vote on certain poll, while others are only allowed to view it. Other combinations of the above permissions are also possible.
 
 As you can see, creating a poll is fairly straight forward. Next, let's complete the two-step process and put your poll on a page.
 
-### Adding a Poll
+### Adding a Poll to a Page
 
 Now that you have created your poll question, it's time to present it to your users. Navigate to your portal and add the Polls Display portlet to a page. It is available from the *Content Management* section of the **Add &rarr; More** menu. 
 
 The Polls Display portlet may look strange when it first appears on your page. That's because it's not configured. Before visitors to your site can use the poll, they must be able to access it. Simply click on the link, *Please configure this portlet to make it visible to all users*, and you will be directed to a dialog box like the one below.
 
-![Figure 7.X: Initial configuration of the Polls Display portlet buttons](../../images/polls-display-initial-config.png)
+![Figure 7.x: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
 
 Under the Setup tab you will see a menu option labeled *Question*. Selecting this option will display the name of the poll you created. Choose it, click *Save*, and it will be displayed on the page. That, in a nutshell, is how you create a poll, but there is another way to add a question to the Polls Display portlet.
 
@@ -720,7 +706,7 @@ Start by navigating to your portal and placing the Polls Display portlet on a pa
 
 Once the poll question has been successfully placed on the page, you can perform other tasks by using the icons in the lower left corner of the portlet. Besides the *Add Question* button, which we just discussed, the are the *Edit Question* and the *Select Question* buttons.
 
-![Figure 7.X: Manage polls with configuration buttons](../../images/polls-display-option-buttons.png)
+![Figure 7.x: These three buttons, highlighted in red, allow you to manage the  configuration of the poll. Notice this poll has expired.](../../images/polls-config-buttons.png)
 
 **Edit Question** displays a similar dialog box to the one used to create the poll
 
@@ -728,60 +714,17 @@ Once the poll question has been successfully placed on the page, you can perform
 
 **Add Question** allows you to create a new question
 
-You can also manage the Polls Display portlet by clicking the wrench symbol in the upper right corner of the portlet's title bar. We'll look at those options next. 
-
-### Managing the Polls Display Portlet
-
-The Liferay user experience is all about options, options, and more options. And like so many other features in Liferay, the Polls Display portlet has several ways you can manage the polls in your portal. They are *Look and Feel*, *Configuration*, and *Export/Import*. 
-
-#### Look and Feel
-
-![Figure 7.X: Viewing the Look and Feel form](../../images/polls-look-and-feel-form.png)
-
-The Look and Feel form has several tabs to choose from: 
-
-**Portlet Configuration** set the portlet's title, link it to a particular page and set its border options
-
-If you are unhappy with the title of a poll and you'd like to change it, simply check the *Use Custom Title* box to enter a new title in the *Portlet Title* field.
- 
-**Text Styles** set the portlet's font and its associated style options
- 
-**Background Styles** set the portlet's background color 
-
-**Border Styles** set the portlet's border options
- 
-**Margin and Padding** set the portlet's margin and padding options
-
-**Advanced Styling** add a custom CSS rule for the portlet
-
-**WAP Styling** set the portlet's WAP options
-
-
-#### Configuration
-
-To configure the Polls Display portlet, simply click on the *Menu* icon in the portlet's title bar and select *Configuration*. Beneath the Setup tab there is an option labeled *Question*. Selecting this menu will reveal a list of all available questions you can select to populate your Polls Display portlet.
-
-![Figure 7.X: Choosing a poll question to populate the Polls Display portlet](../../images/polls-display-config-form-populated-field.png)
-
-Note, if you choose a previously used poll, data from the original poll will populate the new poll. 
-
-#### Export/Import
-
-We  need to say something here about exporting and importing polls.  
-
-![Figure 7.X: Viewing the Export/Import form](../../images/polls-export-import-form.png)
-
-
+You can also manage the Polls Display portlet by clicking the wrench symbol in the upper right corner of the portlet's title bar. Now let's see the poll results.
 
 ### Viewing the Poll Results
 
-When you create a poll question, it appears in a list in the control panel. After users to your site vote in the poll, the data is collected in this portlet. If you select it you will see not only the name and the question, you will get a breakdown of the poll results, including percentages and total number of votes per answer and the total number of votes cast.
+When you create a poll question, it appears in a list in the Control Panel. After users to your site vote in the poll, the data is collected in this portlet. If you select it you will see not only the name and the question, you will get a breakdown of the poll results, including percentages and total number of votes per answer and the total number of votes cast.
 
-![Figure 7.X: Viewing the poll results in the Polls portlet form](../../images/polls-results-test2.png)
+![Figure 7.x: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
 
 Below this you will see an item called *Charts*. This option allows you to see the poll results represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*, *Pie* and *Vertical Bar*.
 
-![Figure 7.X: Viewing a pie chart in the poll results form](../../images/polls-results-pie-chart.png)
+![Figure 7.x: This is what the pie chart for the Ice Cream poll results looks like.](../../images/polls-results-pie-chart.png)
 
 You will also notice a listing of each user who voted in your poll and how they voted. You can see the time they cast their votes as well. Registered users are represented by their screen name while Guest users are represented by a number.
 
@@ -890,9 +833,8 @@ Discussion becomes easy with Liferay's Message Boards portlet. This portlet can 
 
 Liferay's Wiki portlet is a state of the art wiki application that users can make use of to collaborate on web pages. Again, it inherits the strengths of the Liferay platform in the form of security, interface, and search. You can use the wiki portlet to manage several wiki nodes or use many wiki portlets to manage one node each.
 
-<!--
-No summary for Polls
--->
+The Polls portlet is a fun way to interact with users of your site to get an understanding of what they're thinking at any given time. It allows you to create multiple choice polls that keep track of the votes and display results on the page. You can view these results in a number of ways, including charts.
+
 Liferay provides a chat solution for your portal that's very easy to use. It allows logged-in users to see who else is logged in to the portal and view their status. Users can go invisible if they don't want others to know that they're online. Users can chat with each other via instant messages. You can also set up a Jabber chat server and configure Liferay to use it; this allows users who have logged in to your portal via their browsers to chat with users using traditional desktop clients.
 
 Integrating mail with your portal is easy with the Mail portlet. You can add as many custom or Gmail mail accounts as you wish, and this portlet can keep them all organized in one place, together with the rest of the things Liferay is aggregating for you.
