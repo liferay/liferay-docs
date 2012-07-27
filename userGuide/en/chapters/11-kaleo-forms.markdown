@@ -4,7 +4,7 @@ In the last chapter, we looked at the elements that comprise a workflow definiti
 
 ### Kaleo forms and workflow designer [](id=lp-6-1-ugen06-kaleo-forms-and-workflow-designer-0)
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+![EE Only Feature](../../images/ee-feature-web.png)
 
 Developers who are used to working with XML are generally able to create workflow definitions. Other users may not be so comfortable with it. In fact, even skilled developers can make mistakes that break a definition and require time to troubleshoot. To help streamline the creation of workflow definitions and empower more users to create custom workflows, Liferay provides the Kaleo Workflow Designer in Liferay 6.1 EE.
 

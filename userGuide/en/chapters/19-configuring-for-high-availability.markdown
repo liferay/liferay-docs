@@ -278,7 +278,8 @@ We have one more store to go over: the Documentum store.
 
 ##### Using the Documentum store [](id=lp-6-1-ugen15-using-the-documentum-store-0)
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+
+![EE Only Feature](../../images/ee-feature-web.png)
 
 If you have a Liferay Portal EE license, you have access to the Documentum hook which adds support for Documentum to Liferay's Documents and Media library. Install this hook by using the Liferay Marketplace. 
 
