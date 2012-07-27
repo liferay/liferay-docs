@@ -66,6 +66,45 @@ Without this workaround, Liferay will not read the `portal-setup-wizard.properti
 
 ---
 
+## Managing the Social Office welcome theme
+
+The Social Office welcome theme and resource importer are included in the Social Office 2.0 package available from Marketplace. The Social Office welcome theme provides a clean login screen for Social Office when Social Office 2.0 is installed on a fresh portal instance.
+
+![Figure 1.x: The Social Office 2.0 welcome theme provides a clean and attractive login screen.](../../images/so-welcome-theme1.png)
+
+A fresh portal instance is an installation of Liferay Portal whose guest site (default liferay.com site) has not yet been modified. If the guest site has not been modified, the default theme of the guest site is replaced by the Social Office welcome theme. The Social Office welcome theme requires the so-hook and the resource-importer, which is why the resource-importer is also included in the Social Office package.
+
+---
+
+![Figure 1.x: Tip](../../images/tip.png) **Warning:** The Social Office welcome theme will overwrite any pages and customizations that have already been made to the guest site.
+
+---
+
+If you'd like to install the SO welcome theme when the guest site has already been modified, you can follow these instructions:
+
+First, you have to revert the guest site back to its original state when you first installed Liferay Portal. This means that the guest site should only contain one page and the page should only have the Sign In portlet and the Hello World portlet. For Liferay Portal 6.1.1, a regular portal welcome theme is deployed by default. That means that you'll need to take the following steps: 
+
+1. Undeploy the portal welcome theme.
+2. Delete all other pages ,
+3. Make sure the first page of the guest site only has the Sign In and Hello World portlets. 
+4. Deploy the Social Office welcome theme (so-welcome-theme).
+
+This way, the Social Office welcome theme will be applied to the portal home page.
+
+You might want to uninstall the Social Office welcome theme if, for example, you've developed a custom login page. To uninstall the Social Office welcome theme, follow these steps:
+
+1. Undeploy the Social Office welcome theme (so-welcome-theme).
+2. Navigate to the Control Panel &rarr; Sites and select Actions &rarr; Edit Settings on the guest site.
+3. Set the Application Adapter field to none.
+
+![Figure 1.x: Editing the default site's settings](../../images/so-welcome-theme2.png)
+
+4. Set the theme of the site back to the classic theme or to your theme of choice.
+
+![Figure 1.x: Editing the default site's settings](../../images/so-welcome-theme3.png)
+
+Next, let's discuss how Social Office facilitates team collaboration.
+
 ## What can you do with Social Office?
 
 Social Office gives you the social collaboration features you need to do virtual teamwork. You can coordinate calendars and schedules, write shared blog entries, work together on documents, discuss issues in forums, document everything in a wiki, and more. The underlying theme is that all discussion and collaboration is kept with the asset. What does this mean? It means that the asset, whether that be a document, a thread, a blog entry, or a wiki article is the star around which all of the discussion and collaboration orbits. 
@@ -82,7 +121,7 @@ Social Office adds extra collaborative tools to Liferay and allows you to quickl
 
 Whether you're creating a public web site and need the full features of an unparalleled, industry-leading engine or you're creating a small corporate Intranet, Liferay Portal is the ideal solution for you. You should consider installing the Social Office plugin if you'd like your site to facilitate communication between people within specific groups and accomplish tasks using shared virtual workspaces with minimal set up and administration.
 
-The Social Office theme adds a convenient button to the top-right corners of Social Office pages. This button allows you to expand the portlets on the page to fit the size of your browser window. You can click the button again to return the portlets to their default size.
+The Social Office theme adds a convenient button to the top-right corners of Social Office pages. This button allows you to expand the portlets on the page to fit the size of your browser window. You can click the button again to return the portlets to their default size. In addition to the standard Social Office theme, there's another theme for Social Office's Welcome page.
 
 ### Using the Social Office User role and personal sites
 
