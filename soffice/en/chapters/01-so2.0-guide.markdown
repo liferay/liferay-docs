@@ -248,26 +248,26 @@ Social Office 1.5b runs on Liferay Portal 5.2.7. If you're running Social Office
 
 1. In your new 6.1.1 portal bundle, add the following properties into your `portal-ext.properties` file:
 
-    #5.2.7 uses permission algorith 5 (comment out once data migration is done)
+   5.2.7 uses permission algorithm 5 (comment out once data migration is complete).
     permissions.user.check.algorithm=5
     permissions.view.dynamic.inheritance=false
 
-    #6.1.1 uses permission algorithm 6(comment in once data migration is done)
-    #permissions.user.check.algorithm=6
-    #permissions.view.dynamic.inheritance=false
+   6.1.1 uses permission algorithm 6 (comment in once data migration is complete).
+    permissions.user.check.algorithm=6
+    permissions.view.dynamic.inheritance=false
 
-    #This is so that the document library uses the same storage method.
+   The following property ensures that the document library uses the same storage method.
     dl.hook.impl=com.liferay.documentlibrary.util.FileSystemHook
 
-    #You do not want to index on startup/upgrade, make sure reindex is not happening while deploy Social Office packager
+   You do not want to index on startup/upgrade, so make sure reindex is disabled when you deploy the Social Office packager.
     index.on.startup=false
     index.on.upgrade=false
 
-    #Pointing liferay to data folder of SO 1.5 (this may be different then yours)
+   Point Liferay to data folder of SO 1.5 (this may be different then your new data folder).
     resource.repositories.root={your data folder}
 
-    #Below values are taken from teh default 5.2 legacy properties in the portal folder
-    #Default 5.2
+   The following values are taken from the default 5.2 legacy properties in the portal folder.
+    Default 5.2
     users.image.max.height=0
     users.image.max.width=0
 
