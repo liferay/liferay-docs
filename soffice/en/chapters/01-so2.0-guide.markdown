@@ -132,6 +132,7 @@ The private page sets of Social Office users serve as personal workspaces. Each 
 - Contacts Center
 - Microblogs
 - Messages
+- My Documents
 - Tasks
 
 ![Figure 1.7: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
