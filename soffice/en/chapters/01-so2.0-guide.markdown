@@ -132,6 +132,7 @@ The private page sets of Social Office users serve as personal workspaces. Each 
 - Contacts Center
 - Microblogs
 - Messages
+- My Documents
 - Tasks
 
 ![Figure 1.7: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
@@ -232,9 +233,9 @@ The Add Site wizard lets you choose which of default template pages you'd like t
 
 ![Figure 1.16: You can choose a site template to use to create your new site and you can choose which template pages to include.](../../images/new-site-wizard2.png)
 
-When visiting an open Social Office site, users can use the *Join* button at the bottom of the site navigation menu to join the site. If the user already belongs to the site, the *Join* button is replaced by a *Leave* button. This button, along with the *My Sites* portlet on the Dashboard, makes it very easy for Social Office users to manage their site memberships. This, in turn, helps them keep abreast of the activites and content that they're interested in. The *Join/Leave* button is not available for restricted or private sites.
+When visiting an open Social Office site, users can use the *Join* link at the top of the page to join the site. This link, along with the *My Sites* portlet on the Dashboard, makes it very easy for Social Office users to manage their site memberships. This, in turn, helps them keep abreast of the activites and content that they're interested in. The *Join* link is replaced by a *Request Membership* link for restricted sites. When users have requested membership for a restricted site, the *Request Membership* link is replaced by a *Membership Requested* notification to inform users that their request is pending.
 
-![Figure 1.17: The Join/Leave button appears at the bottom of the navigation menus for Social Office sites.](../../images/join-site-button.png)
+![Figure 1.17: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../../images/join-site-link.png)
 
 The Home page of the default Social Office site contains a number of useful portlets. The Activities and Recent Downloads portlets keep site members up to date about what's happening on the site and you can use the Announcements and Events portlets to inform or remind site members about important information. The Bookmarks portlet allows users to create a collection of useful links on your site and you can configure the RSS portlet to display an RSS feed of your choice. The Welcome portlet allows you to set up a custom welcome message for your site. It's just a WYSIWYG portlet with its title changed to *Welcome*.
 
