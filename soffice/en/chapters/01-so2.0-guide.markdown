@@ -174,13 +174,13 @@ Social Office's private messaging system allows you to send email-like messages 
 
 Social Office provides a private document library to each Social Office user. Users can navigate to it by clicking the *My Documents* link in the Dashboard navigation menu. The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. Please refer to chapter 4 of Liferay's User Guide for information about document management: [Document Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/documents-and-med-1)
 
-![Figure 1.x: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
+![Figure 1.13: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
 
 With their private document libraries, each of your Social Office users can maintain a personal online repository of documents and files. Your users can use all the features of Liferay 6.1's revamped document library, including document previews, document types, metadata sets, and version history. However, your users can simplify the way they access their document repositories by installing Liferay Sync. Liferay Sync allows users to view and edit documents offline using their regular desktop or mobile environments. Users' documents are synced with your Liferay server at periodic intervals. You can read more about Liferay Sync in chapter 4 of Liferay's User Guide here: [Liferay Sync](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen04-liferay-sync-0).
 
 The Tasks system allows you and your team members to keep track of different tasks that you're working on. Tasks related to specific projects can be tagged as such and you can use the *Filter* button at the top right corner of the portlet to filter tasks by tag or by site. Use the *Add Task* button at the top left to create new tasks. You can enter a description of the task, choose an assignee from your contacts (or assign to yourself), select a priority, and, optionally, enter a due date. It's also helpful, especially when there are large numbers of tasks, to tag your tasks. 
 
-![Figure 1.13: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../../images/tasks-portlet.png)
+![Figure 1.14: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../../images/tasks-portlet.png)
 
 The *Permissions* button at the top left of the Tasks portlet lets you choose which roles grant permission to add new tasks or edit existing ones.
 
@@ -194,7 +194,7 @@ You can access your public Profile page from the Dashboard by clicking on your n
 
 In addition to the navigation menu, the left column of each page of a Social Office user's public site contains a My Contacts portlet. This portlet allows viewers of a user's public site to see all the user's contacts and lets them navigate to any of the contacts' Profile pages.
 
-![Figure 1.14: User's Profile pages show relevant professional information, contacts, and status updates](../../images/profile-page.png)
+![Figure 1.15: User's Profile pages show relevant professional information, contacts, and status updates](../../images/profile-page.png)
 
 By default, the Profile page displays several pieces of information about a user: their profile and profile picture, their lastest microblog status, their contacts, the sites they belong to, their tags, and their recent activities. The Profile portlet is designed to display relevant professional information about a user. A completed profile includes the following pieces of information:
 
@@ -227,21 +227,21 @@ Social Office not only provides custom pages and applications for users' persona
 
 When creating a site, you can select a membership type: Open, Restricted, or Private. Any portal user can join an open site. Portal users can request to join a restricted site but must be approved by a site administrator. Private sites are invisible to non-members; members must be invited by a site administrator. By default, all the pages of an open Social Office site are public but restricted and private Social Office site pages are private.
 
-![Figure 1.15: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](../../images/new-site-wizard1.png)
+![Figure 1.16: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](../../images/new-site-wizard1.png)
 
 The Add Site wizard lets you choose which of default template pages you'd like to include in your site. Links to these pages are embedded in the left-most column of each page that belongs to the site.
 
-![Figure 1.16: You can choose a site template to use to create your new site and you can choose which template pages to include.](../../images/new-site-wizard2.png)
+![Figure 1.17: You can choose a site template to use to create your new site and you can choose which template pages to include.](../../images/new-site-wizard2.png)
 
 When visiting an open Social Office site, users can use the *Join* link at the top of the page to join the site. This link, along with the *My Sites* portlet on the Dashboard, makes it very easy for Social Office users to manage their site memberships. This, in turn, helps them keep abreast of the activites and content that they're interested in. The *Join* link is replaced by a *Request Membership* link for restricted sites. When users have requested membership for a restricted site, the *Request Membership* link is replaced by a *Membership Requested* notification to inform users that their request is pending.
 
-![Figure 1.17: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../../images/join-site-link.png)
+![Figure 1.18: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../../images/join-site-link.png)
 
 The Home page of the default Social Office site contains a number of useful portlets. The Activities and Recent Downloads portlets keep site members up to date about what's happening on the site and you can use the Announcements and Events portlets to inform or remind site members about important information. The Bookmarks portlet allows users to create a collection of useful links on your site and you can configure the RSS portlet to display an RSS feed of your choice. The Welcome portlet allows you to set up a custom welcome message for your site. It's just a WYSIWYG portlet with its title changed to *Welcome*.
 
 The Calendar, Documents, Forums, Blog, and Wiki pages contain portlet applications that are automatically scoped for the site. This means that these applications will each use a single data set to serve requests from multiple members. So, while each Social Office member receives a personal Calendar application and Documents and Media library on his or her personal site, site members share Calendar applications and Documents and Media libraries for each site they belong to. For more information about these applications, please refer to Liferay's user guide, *Using Liferay Portal*, available at [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). 
 
-![Figure 1.18: Social Office's sites come with pre-build pages and applications that facilate team-based collaboration.](../../images/social-office-site.png)
+![Figure 1.19: Social Office's sites come with pre-build pages and applications that facilate team-based collaboration.](../../images/social-office-site.png)
 
 In addition to the Blogs portlet, the Blogs page contains a Related Content portlet. This portlet has a large number of possible configurations. By default, it dynamically displays content belonging to the scope of the current site. The Members page just contains a members portlet and an invitation portlet which can be used to invite users to join the site.
 
