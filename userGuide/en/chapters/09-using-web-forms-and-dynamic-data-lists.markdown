@@ -241,7 +241,7 @@ Choose the workflow you would like to use, then every record has to go through t
 
 #### Creating a Kaleo Form [](id=lp-6-1-ugen05-creating-a-kaleo-form-0)
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+![EE Only Feature](../../images/ee-feature-web.png)
 
 Kaleo Forms is a plugin that enables you to have greater control over the list creation and entry process. For lists to appeal to companies all over the world (and make your new site not just a resounding success but attract profitable businesses), business users must be able to control the workflow of list entry and review those entries when made. There should also be a cool dashboard you can use to make all of your changes.
 
@@ -304,7 +304,7 @@ You can assign forms to as many tasks as you need until you're satisfied with th
 
 #### Using a Kaleo Form [](id=lp-6-1-ugen05-using-a-kaleo-form-0)
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+![EE Only Feature](../../images/ee-feature-web.png)
 
 Once you have a new Kaleo Form process, you can add new entries through the Summary tab in Kaleo Forms. Once the form is filled out and submitted, it enters the workflow you selected for the process.
 
