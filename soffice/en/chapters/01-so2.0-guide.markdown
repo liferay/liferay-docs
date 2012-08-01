@@ -33,13 +33,15 @@ Unlike previous versions of Social Office, Social Office 2.0 is available as an 
 
 To install Social Office manually, you just need to deploy the Social Office `.lpkg` file to your Liferay installation. The Social Office `.lpkg` file is hot-deployable and includes the following Liferay plugins: 
 
-- so-hook
 - contacts-portlet
 - events-display-portlet
 - microblogs-portlet
 - private-messaging-portlet
+- resource-importer
+- so-hook
 - so-portlet
 - so-theme
+- so-welcome-theme
 - tasks-portlet
 - wysiwyg-portlet
 
@@ -208,7 +210,7 @@ You can access your public Profile page from the Dashboard by clicking on your n
 
 In addition to the navigation menu, the left column of each page of a Social Office user's public site contains a My Contacts portlet. This portlet allows viewers of a user's public site to see all the user's contacts and lets them navigate to any of the contacts' Profile pages.
 
-![Figure 1.15: User's Profile pages show relevant professional information, contacts, and status updates](../../images/profile-page.png)
+![Figure 1.15: Users' Profile pages show relevant professional information, contacts, and status updates.](../../images/profile-page.png)
 
 By default, the Profile page displays several pieces of information about a user: their profile and profile picture, their lastest microblog status, their contacts, the sites they belong to, their tags, and their recent activities. The Profile portlet is designed to display relevant professional information about a user. A completed profile includes the following pieces of information:
 
@@ -255,7 +257,7 @@ The Home page of the default Social Office site contains a number of useful port
 
 The Calendar, Documents, Forums, Blog, and Wiki pages contain portlet applications that are automatically scoped for the site. This means that these applications will each use a single data set to serve requests from multiple members. So, while each Social Office member receives a personal Calendar application and Documents and Media library on his or her personal site, site members share Calendar applications and Documents and Media libraries for each site they belong to. For more information about these applications, please refer to Liferay's user guide, *Using Liferay Portal*, available at [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). 
 
-![Figure 1.19: Social Office's sites come with pre-build pages and applications that facilate team-based collaboration.](../../images/social-office-site.png)
+![Figure 1.19: Social Office's sites come with pre-build pages and applications that facilitate team-based collaboration.](../../images/social-office-site.png)
 
 In addition to the Blogs portlet, the Blogs page contains a Related Content portlet. This portlet has a large number of possible configurations. By default, it dynamically displays content belonging to the scope of the current site. The Members page just contains a members portlet and an invitation portlet which can be used to invite users to join the site.
 
