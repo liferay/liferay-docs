@@ -1,15 +1,105 @@
 # Liferay Utility Applications [](id=lp-6-1-ugen12-liferay-utility-applications-0)
 
-In this chapter we'll look at some Liferay utility applications that might be useful for you. The Software Catalog is currently packaged with Liferay but will soon be replaced by Liferay Marketplace. Please see chapter 13 for information about Liferay Marketplace and managing Liferay plugins. The Knowledge Base application is an EE-only plugin. In this chapter we'll discuss both of these applications:
+In this chapter we'll look at some Liferay utility applications that might be useful for you. The Software Catalog is currently packaged with Liferay but will soon be replaced by Liferay Marketplace. Please see chapter 13 for information about Liferay Marketplace and managing Liferay plugins. The Knowledge Base application is an EE-only plugin. In this chapter we'll discuss several of these applications:
 
+- Bookmarks
 - Software catalog
 - Knowledge Base
-<!-- Bookmarks, Shopping, and Weather applications appear in the new user guide outline but no content for them appears in the User Guide. -->
-<!-- Section i Bookmarks (head ref)? This needs content
-## Bookmarks  [](id=lp-6-1-ugen12-bookmarks--0)
+<!--  Shopping, and Weather applications appear in the new user guide outline but no content for them appears in the User Guide. -->
+
+Liferay's Bookmarks application is a simple way for users to keep track of URLs in the portal that can also be used by an administrator to publish relevant links to groups of users. The Software Catalog allows you to define a set of software items to display to visitors. The Knowledge Base application allows you to create articles and organize them into full books or guides that be published on your portal.
+
+## Capturing Web Sites with the Bookmarks Portlet [](id=lp-6-1-ugen12-bookmarks-portlet-0)	
+
+Many of us enjoy collecting things we value. They may be stamps, comic books, sea shells, fabulous shoes. The list goes on and on. But have you considered URLs collectible? Having a thorough collection of links can be a great way to add value to your portal's usability.
+
+With Liferay's Bookmarks application users collect and manage URLs in the portal. They can add, edit, delete, export and import bookmarks. Users can use links to access regularly visited websites. Administrators can publish links tailored to specific groups of users. Both internal pages as well as external sites can be bookmarked. 
+
+### Organizing Bookmarks by Folder
+
+You can store all your important links in one place and you can manage this data easily using folders. You can create, edit, and delete bookmark folders. You get to decide how many bookmarks or folders are displayed on a page. Bookmark folders can have any number of subfolders.
+
+Here's an example of what one bookmarks portlet might look like. Bookmark Folders are displayed above individual bookmarks.  
+
+![Figure 12.x: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view.png)
+
+In this example, there are four bookmark folders listed in the application. The first folder, Just Desserts, shows the name of the folder, a description, and the name of a subfolder called *Dessert Recipes*. Under the column *# of Folders* there is the number seven. This indicates there are seven subfolders in the Just Desserts folder. Six of those subfolders lie within the Dessert Recipes subfolder. Only the top-level subfolder is listed.
+
+Under the column *# of Entries* there is the number 10. This indicates there are 10 total bookmarks in the Just Desserts folder.
+
+Using the *Actions* button on the right, you can *Edit* the folder, manage folder *Permissions*, *Delete* the folder, *Add Subfolder*, or *Add Bookmark* to the folder. 
+
+As your collection of links grows, you may need to add more subfolders to keep things in order. Should you decide a link needs to move from one folder to another, you can manage this using the Edit option for that link. 
+
+#### Moving a Link
+
+Just for fun, let's move a link from the main bookmarks folder into a subfolder two levels down. We'll move the link of for the Good For You Cake & Cookies Company into the Healthy Recipes subfolder. The Healthy Recipes subfolder is a child of the Dessert Recipes subfolder. We need to move the link to the Dessert Recipes subfolder first before moving it into the Healthy Recipes subfolder.
+
+![Figure 12.x: You can only move a link one level at a time.](../../images/bookmarks-select-remove-buttons.png)
+
+To achieve this, we select Edit from the Actions button for the link. In the Edit view, find the section called *Folder* were you will see a link for the top-level folder, Just Desserts, next to two buttons labeled *Select* and *Remove*. Click the Select button and you should see a dialog box like the one below.
+
+![Figure 12.x: You can see the title of the current folder displayed as a link next to the Select button.](../../images/bookmarks-choosing-subfolder.png)
+
+Now *Choose* the Dessert Recipes subfolder. When you do this, notice how the link changes to reflect the new subfolder level you are on. 
+
+![Figure 12.x: When you Choose a subfolder, you can see the name of the folder change to reflect your new position.](../../images/bookmarks-choosing-subfolder2.png)
+
+Choose Save and you will be returned to the top-level folder. Now select the Dessert Recipes subfolder to open up the bookmarks list. Edit the Good For You link and choose Select. Choose the Healthy Recipes subfolder and again notice the change in the folder level. 
+
+Select Save and you will see the Dessert Recipes folder view. Select Healthy Recipes to see your link in the bookmarks list. Piece of cake, right?
+
+To move a link out of a subfolder and into a higher-level folder, simply Edit the link in the subfolder and choose Select. 
+
+![Figure 12.x: You can use the breadcrumbs for easy navigation between folder levels.](../../images/bookmarks-breadcrumbs.png)
+
+In the resulting dialog box, select the appropriate folder from the breadcrumbs at the top. Click the *Choose This Folder* button and verify the proper folder level is displayed. If this is correct, click Save and you're done.
+
+The button *Add Subfolder* creates a new subfolder of the current folder. The button Choose This Folder simply selects the current folder. The breadcrumb links at the top of the dialog box allow you to navigate to the other folder levels.
+
+Now that you have an understanding of how bookmark folders are used, let's create some new bookmarks.
+
+## Adding and Using Bookmarks
+
+Navigate to your portal and add the Bookmarks application to your page by selecting *Add* &rarr; *More*. The portlet will look something like this:
+
+![Figure 12.x: Initially, no bookmarks are listed in this form until they're created.](../../images/bookmarks-add-portlet.png)
+
+Across the top of the portlet you will see links for *Home*, *Recent*, and *Mine*. You will also see a *Search* field and button. Choosing Recent will display a list of the latest bookmarks that have been added. Choosing Mine will display a list of the bookmarks you added to the portlet. Choosing Home will return you to the top level of the portlet. The Search option allows you to search for bookmarks by name or category tags.
+
+When you select the *Permissions* button on the right you will see a list of Roles and their associated permissions. The options are *Add Entry*, *Add Folder*, *Permissions*, and *View.* When you are finished selecting the permissions click Save.
+
+Clicking the *Add Folder* button in the Bookmarks application will reveal a form like this:
+
+![Figure 12.x: It's not necessary to enter a description for a Bookmarks folder.](../../images/bookmarks-add-new-folder-form.png)
+
+With this form you can choose a name for the folder, a description of its contents and who is allowed to view it. Under *More Options*, you can set portlet permissions for various Roles to the folder. Click *Save* when you are finished.
+
+<!-- Is this overkill?
+![Figure 12.x: Clicking More Options in the Add Bookmarks Folder form displays more ways to set folder permissions.](../../images/bookmarks-add-new-folder-permissions-options.png)
 -->
 
-The Software Catalog allows you to define a set of software items to display to visitors. The Knowledge Base applicaton allows you to create articles and organize them into full books or guides that be published on your portal.
+To create a bookmark, click the *Add Bookmark* button, which will display the New Bookmark form. This form is similar to the New Folder form but with a few more options.
+
+![Figure 12.x: When you use the Add Bookmark form, you must enter a valid URL in the required field.](../../images/bookmarks-add-new-form.png)
+
+Under *Folder*, there are two buttons, *Select* and *Remove*. Select allows you to choose the folder where the new bookmark will be located. Remove allows you to delete the bookmark from the selected folder. A removed link goes into the list of general bookmarks that aren't associated with a folder. These are listed below the folders in the bookmarks application.
+
+In the URL field you must enter full, or absolute, URL. Entering anything less will result in an error.
+
+Below the Permissions you will notice additional options for *Categorization* and *Related Assets.* 
+
+![Figure 12.x: The expanded Categorization and Related Assets options in the Add Bookmark  form](../../images/bookmarks-add-new-form-additional-options.png)
+
+Categorization allows you to choose a country, or a group of countries, with the *Country (Global)* button. Under the *Tags* option you can *Add* tags, *Select* from a list of tags or select from a list of tag *Suggestions* that may be relevant to the link.
+
+Under Related Assets you can choose to associate this portlet with various other portal applications. The options are: Blogs Entry, Message Board Message, Web Content, Calendar Event, Bookmarks Entry, Documents and Media Document, and Wiki Page. Selecting an option will bring up a dialog box labeled *Asset Browser.* With the Asset Browser you can select from a list of portal-related assets to associate with your bookmark.
+
+Once you have added a new bookmark, it will appear in a list in the portlet. From this list you can begin to manage your bookmark using familiar Liferay editing features. Collecting and organizing your links is a snap when you use Liferay's Bookmarks application. Now let's look at the Shopping application. 
+
+<!--
+Need Shopping header, intro, text, images, etc. here
+-->
 
 ## Creating Your Own Plugin Repository [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
 
