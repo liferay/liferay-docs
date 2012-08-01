@@ -59,6 +59,20 @@ Without this workaround, Liferay will not read the `portal-setup-wizard.properti
 
 ---
 
+### Installation peculiarities for specific apps servers
+
+After installing Social Office on Glassfish, you need to restart the server before Social Office will be fully deployed. If you don't restart, Glassfish doesn't recognize the so-hook and the hook won't be available. Once you've restarted the server, the so-hook deployment completes as expected.
+
+For JBoss, you have to restart the server in order to see the Dashboard link. If you don't restart the server, the Dashboard link won't appear although you can find other content added by Social Office if you use the *Go To* &rarr; *My Public/My Private Pages* menu. To fix this issue, simply restart your server.
+
+### Uninstalling Social Office
+
+If you'd like to uninstall Social Office, you can do so from the *Purchased* page of the control panel, under the Marketplace heading. However, after you've uninstalled Social Office from Marketplace, you need to manually revert the friendly URL of the Welcome page. 
+
+![Figure 1.x: After uninstalling Social Office from Marketplace, you need to manually revert the friendly URL of the Welcome page.](../../images/site_pages_welcome_sologin.png)
+
+Otherwise, the portal will always be looking for the `/so/login` page which no longer exists since the hook is gone. This will produce a number of errors in the log and once you log out, you won't be able to log in again.
+
 ## Managing the Social Office welcome theme [](id=lp-2-0-soen01-managing-the-social-office-welcome-theme-0)
 
 The Social Office welcome theme and resource importer are included in the Social Office 2.0 package available from Marketplace. The Social Office welcome theme provides a clean login screen for Social Office when Social Office 2.0 is installed on a fresh portal instance.
