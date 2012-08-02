@@ -76,7 +76,7 @@ Header IDs help to assure that each uploaded document's web contents have a uniq
 
 1. Edit your document's `liferay-docs/<document>/doc.properties` to specify the product abbreviation, product version, and an abbreviation for your document. These property values help namespace the header IDs.
 
-Example – `devGuide/doc.properties`: 
+Example - `devGuide/doc.properties`: 
 
 
     product.abbrev=lp
@@ -158,7 +158,7 @@ We are in the habit of using right arrows to denote a series of things a user ca
 
 We can do the same in Markdown using the HTML code for this character, which is `&rarr;`. I created a SuperAbbrev in jEdit which transforms `rightarrow` into `&rarr;`.
 
-=== Tables ===
+### Tables
 
 Because Pegdown does not support the [Pandoc extension table syntac](http://johnmacfarlane.net/pandoc/README.html#tables), we use a table syntax similar to [MultiMarkdown](http://fletcher.github.com/peg-multimarkdown/mmd-manual.pdf).
 
@@ -189,6 +189,8 @@ Here is an example table in Markdown using MultiMarkdown-like syntax:
 	  foo     | bar            | image         | ![tip](../../images/tip-pen-paper.png)|
 	---
 
+![The example table converted using Pegdown](images/mmdTablePegdownHTML.png)
+
 Table Limitations:
 
 * Headings are left-aligned
@@ -201,7 +203,7 @@ Table Limitations:
 Table Syntax Requirements:
 
 * There must be at least one | per line
-* The “separator” line must contain only |,-,:, or spaces
+* The *separator* line must contain only |,-,:, or spaces
 * Cell content must be on one line only
 * Columns are separated by |
 * The first line of the table, and the alignment/divider line, must start at the beginning of the line
@@ -209,12 +211,12 @@ Table Syntax Requirements:
 
 Table Suggestions
 
-* Pad out cell text using non-breaking spaces (i.e. {{{&nbsp;}}}) to the left and/or right of the cell text
+* Pad out cell text using non-breaking spaces (i.e. `&nbsp;`) to the left and/or right of the cell text
 * Use a horizontal rule to separate the end of the table from the next paragraph
 
 **Important** - Pandoc does not support MultiMarkdown table syntax. If you use Pandoc to build a document for test purposes, you'll notice that the table does not get converted as you would expect. If you are using Pandoc to convert a document for a final product (e.g. ePub), you'll need to temporarily change the table syntax to follow the Pandoc extension.
 
-{{http://in.liferay.com/documents/114255/341a7915-0bca-41a8-a1dd-3b7ee8266822|The Example Table converted using Pandoc}}
+![The example table converted using Pandoc](images/mmdTablePandocHTML.png)
 
 ### Markdown Metadata 
 
@@ -251,19 +253,19 @@ Since the Markdown files we're working with from the old guide are converted, th
 
 This FAQ is provided to help answer questions and provide information on how and why we use IDs for the headers in the Markdown files of our official product documentation.
 
-## What are the header IDs and why are they important? 
+### What are the header IDs and why are they important? 
 
-Header IDs were created for the purpose of preserving the URLs of our official documentation on Liferay.com. Previously, the URLs for our web content were determined by the heading text of our documents (e.g. the text from “# Introduction to Liferay Portal” markdown was used to generate the URL final string in the web content's URL [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay). If the titles of the web content were changed, either by re-import of the markdown or manual edits via the GUI, the URLs changed too--breaking any links to the web content.
+Header IDs were created for the purpose of preserving the URLs of our official documentation on Liferay.com. Previously, the URLs for our web content were determined by the heading text of our documents (e.g. the text from "# Introduction to Liferay Portal" markdown was used to generate the URL final string in the web content's URL [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/introduction-to-liferay). If the titles of the web content were changed, either by re-import of the markdown or manual edits via the GUI, the URLs changed too--breaking any links to the web content.
 
 In response to this issue, Liferay portal and the AssetImporter have been improved so that web content can be referenced by static IDs. Regardless of whether the titles of a web content change, its ID remains the same, preserving the URL of that web content.
 
 The header IDs are now specified in the markdown source code for our official documents.
 
-Example 1 – ID to an existing web content:
+Example 1 - ID to an existing web content:
 
     # Introduction to Liferay [](id=introduction-to-liferay)
 
-Example 2 – ID for a new section header:
+Example 2 - ID for a new section header:
 
     ### Using the Dockbar [](id=lp-6-1-ugen01-using-the-dockbar-0)
 
@@ -281,31 +283,31 @@ Example, `id=lp-6-1-ugen01-using-the-dockbar-0` can be broken down into:
 * **product.version:** 6-1	(for version 6.1)
 * **doc.abbrev:** ug	(for User Guide)
 * **lang:** en	(for English)
-* **chapterNum:** 01	(derived from the file's prefix – e.g., {{{01-introduction-to-liferay-ui.markdown}}})
-* **headerText:** using-the-dockbar	(derived from “### Using the Dockbar”)
-* **increment:** 0	(indicating this is the first such header having the attributes mentioned above. This increment becomes necessary to distinguish between web content with header text, like “Summary”, found within the same chapter.)
+* **chapterNum:** 01	(derived from the file's prefix - e.g., `01-introduction-to-liferay-ui.markdown`)
+* **headerText:** using-the-dockbar	(derived from "### Using the Dockbar")
+* **increment:** 0	(indicating this is the first such header having the attributes mentioned above. This increment becomes necessary to distinguish between web content with header text, like "Summary", found within the same chapter.)
 
-## How should I specify an ID for a new header? 
+### How should I specify an ID for a new header? 
 
 Execute ant target `number-headers` from your document directory. Note, unless you specify otherwise, your default language (e.g., `en`) is used in the document ID.
 
-## What should I do with the ID for an existing header I've modified? 
+### What should I do with the ID for an existing header I've modified? 
 
 **IMPORTANT:** Do not change the ID of an existing header.
 If the header does not have an existing header, then run the `number-headers` target on the document.
 
-## If I re-order sections or chapters, what do I do with their header IDs? 
+### If I re-order sections or chapters, what do I do with their header IDs? 
 
 **IMPORTANT:** Do not change the ID of an existing header.
 You can however, move the header (along with its ID) around within a chapter document or into a different chapter document.
 
-## If I want to update existing web content and find that its source is missing header IDs, what do I do? 
+### If I want to update existing web content and find that its source is missing header IDs, what do I do? 
 
 First, inform the document owner (e.g. Rich for the User Guide and Jim for the Dev Guide).
 
 You'll need to use the last portion of the web content's URL title as the ID for header in the respective markdown source. After updating the IDs in the markdown, be sure to run ant target `number-headers` to detect any issues with the headers.
 
-# How can I be sure that my header IDs will not be in conflict with other header IDs (e.g., IDs in other documents)? 
+### How can I be sure that my header IDs will not be in conflict with other header IDs (e.g., IDs in other documents)? 
 
 Ant target `number-headers` detects and reports any issues and/or conflicts between headers. It will fail if any issues are encountered.
 
@@ -322,18 +324,18 @@ To resolve the above conflict, the author *must* be sure to preserve the header 
 **Important**, each document directory (e.g., `liferay-docs/userGuide/`) has a file `doc.properties` that specifies the product abbreviation, product version, and documentation abbreviation to assure that IDs are name-spaced properly.
 
 
-Example – devGuide/doc.properties:
+Example - devGuide/doc.properties:
 
 
     product.abbrev=lp
     product.version=6.1
     doc.abbrev=dg
 
-## Will the header IDs show in the web content? 
+### Will the header IDs show in the web content? 
 
 No, they will not show unless possibly there is a syntax error in the header ID used in your markdown source.
 
-## Are there safe-guards to prevent upload of documents that have missing or conflicting IDs? 
+### Are there safe-guards to prevent upload of documents that have missing or conflicting IDs? 
 
 Yes, the dependency targets (e.g. `number-headers`) executed by our distribution targets, `dist` and `dist-win`, fail and report errors if the documents are missing IDs or have conflicting IDs.
 

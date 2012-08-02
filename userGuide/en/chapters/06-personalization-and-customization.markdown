@@ -11,9 +11,10 @@ Needs text
 ## Automatic personalization of content (via rules integration) [](id=lp-6-1-ugen06-automatic-personalization-of-content-via-rules-integration-0)
 Needs text
 -->
+
 ## Setting preferences to customize applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay Portal Enterprise Edition provides an implementation of a JSR-94 compliant rules engine. This rules engine is provided as a Web Plugin and is based on the popular open source Drools project. 
 

@@ -199,21 +199,21 @@ Now that you understand the role structures and templates play in creating web c
 
 ## Leveraging Liferay’s multi-site capabilities [](id=lp-6-1-ugen12-sites-0)
 
-As stated in chapter 1, a site is a set of pages that can be used to publish content or applications. Sites can be independent or they can be associated to an organization and serve as the website for that organization.
+As stated in chapter 1, a site is a set of pages that can be used to publish content or applications. Sites can be independent or they can be associated with an organization and serve as the website for that organization. With Liferay, you can create as many different sites as you like within the context of a single portal.
 
-Liferay's sites can be used for a variety of purposes, from corporate websites to company intranets including small sites to collaborate among members of a team. To support all types of collaboration and social scenarios, Liferay's sites support three types of membership types:
+You can use sites in Liferay to build many different kinds of websites. Whether you're builing a large corporate website, a company intranet, or a small site designed to facilitate collaboration among team members, Liferay's framework provides all the tools you need. To support different kinds of collaboration and social scenarios, Liferay's sites provide three membership types:
 
-- Private: Users are not allowed to become members of the site. Site administrators can still manually select users and make them members of the site.
-- Restricted: Users are allowed to request to become members of the site and site administrators have to aprove the request. The request can be done from the *My Sites* application.
-- Open: Users are allowed to become members of the site at any time. This can be done from the *My Sites* portlet.
+- Open: Users can become members of the site at any time. Users can join sites from the *My Sites* portlet.
+- Restricted: Users can request site membership but site administrators must approve requests in order for users to become members. Requests can be made from the *My Sites* portlet.
+- Private: Users are not allowed to join the site or request site membership. Private sites don't appear in the *My Sites* portlet. Site administrators can still manually select users and assign them as site members.
 
-In addition to these memberships, when a site is associated to an organization, all the users of that organization are automatically considered members of the site.
+In addition to these memberships, when a site is associated with an organization, all the users of that organization are automatically considered members of the site.
 
 Members of a site can be given additional privileges within the site by using Liferay's permission settings. It is also possible to assign different roles within the site to different members. This can be done through *site roles* which are defined equally for all sites or *teams* which are unique for each site.
 
-Liferay's Sites can have two hierarchies of pages: public pages and private pages. A site can have only public pages, only private pages or both. The main difference between the two hierarchies is private pages can only be accessed by members of the site. It is possible to restrict access to both of them in finer detail for each page through the permission system. Public pages and private pages are accessed through a different URL and can have a different look and feel but they share the same content.
+Liferay's sites have two categories of pages called page sets. There are two kinds of page sets: public pages and private pages. A site can have only public pages, only private pages or both. Private pages can only be accessed by site members. Public pages can be accessed by anyone, including users who haven't logged in. It's possible to restrict access to pages at the page set level or at the level of individual pages through the permission system. Public pages and private pages have different URLs and can have different content, applications, themes, and layouts.
 
-An example of using sites could be a corporate Intranet which might have sites for all the organizations in the company: Sales, Marketing, Information Technology, Human Resources and so on. But what about the corporate health and fitness center? That's something everybody in the company, regardless of organization, may want to join. This makes it a good candidate for an open and independent site. Similarly, the home page for a corporate intranet should probably be placed in an open independent site so any member of the portal can access it.
+Building a corporate Intranet provides a typical use case for Liferay sites. A corporate Intranet could have sites for all the organizations in the company: Sales, Marketing, Information Technology, Human Resources and so on. But what about the corporate health and fitness center? That's something everybody in the company, regardless of organization, may want to join. This makes it a good candidate for an open and independent site. Similarly, the home page for a corporate intranet should probably be placed in an open independent site so any member of the portal can access it.
 
 For other kinds of web sites, you may want to use independent sites to bring people together who share a common interest. If you were building a photo sharing web site, you might have independent sites based on the types of photos people want to share. For example, those who enjoy taking pictures of landscapes could join a Landscapes site and those who enjoy taking pictures of sunsets could join a Sunsets site. 
 
