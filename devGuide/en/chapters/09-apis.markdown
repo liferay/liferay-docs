@@ -67,7 +67,7 @@ This JSP code invokes static method `getOrganizationStatsUsers()` on the `-Local
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Invoking the services in this way avoids permission checks. So, if you want to ensure permission checks are performed, even from a local context, then you should use the remote variant of the API.
+ ![note](../../images/tip-pen-paper.png)**Note:** Invoking the services in this way avoids permission checks. So, if you want to ensure permission checks are performed, even from a local context, then you should use the remote variant of the API.
 
 ---
 
@@ -95,7 +95,7 @@ If the IP address of the machine on which the batch job is running is listed wit
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** The `portal.properties` file resides on the portal host machine and is controlled by the portal administrator. Portal administrators can configure security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The [Configuring Liferay's Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties) section of *Using Liferay Portal 6.1* describes these properties.
+ ![note](../../images/tip-pen-paper.png)**Note:** The `portal.properties` file resides on the portal host machine and is controlled by the portal administrator. Portal administrators can configure security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The [Configuring Liferay's Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties) section of *Using Liferay Portal 6.1* describes these properties.
 
 ---
 
@@ -117,7 +117,7 @@ For example, to get Organization data using a user with the ID of *2* and a pass
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** In old Liferay versions you could access those services by using `http://localhost:8080/tunnel-web/axis`. However, this path has changed in Liferay 6.1. When you enter it, you're redirected to the new one.
+ ![note](../../images/tip-pen-paper.png)**Note:** In old Liferay versions you could access those services by using `http://localhost:8080/tunnel-web/axis`. However, this path has changed in Liferay 6.1. When you enter it, you're redirected to the new one.
 
 ---
 
@@ -168,7 +168,7 @@ You can view a listing of the services deployed on your portal by opening your b
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Liferay's developers use a tool called Service Builder to expose their services via SOAP automatically. If you are interested in using this tool for your own services, find out more about Service Builder in chapter *Liferay Frameworks*.
+ ![note](../../images/tip-pen-paper.png)**Note:** Liferay's developers use a tool called Service Builder to expose their services via SOAP automatically. If you are interested in using this tool for your own services, find out more about Service Builder in chapter *Liferay Frameworks*.
 
 ---
 
@@ -763,7 +763,7 @@ Inner parameters are not counted as *regular* parameters for matching methods an
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** Use inner parameters with object parameters to set inner content of created parameter instances!
+ ![tip](../../images/tip-pen-paper.png)**Tip:** Use inner parameters with object parameters to set inner content of created parameter instances!
 
 ---
 
@@ -1187,7 +1187,7 @@ What's great is your destinations, listeners, and mappings between them are all 
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Internal file `META-INF/messaging-core-spring.xml` of `portal-impl.jar` specifies the default Message Bus class, default asynchronous message sender class, and default synchronous message sender class for Liferay
+ ![note](../../images/tip-pen-paper.png)**Note:** Internal file `META-INF/messaging-core-spring.xml` of `portal-impl.jar` specifies the default Message Bus class, default asynchronous message sender class, and default synchronous message sender class for Liferay
 
 ---
 
