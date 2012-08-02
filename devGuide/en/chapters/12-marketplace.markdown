@@ -81,7 +81,7 @@ Read the *Specify App Compatibility* section below for details on how to specify
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** If you haven't yet done so, be sure to read the **Marketplace** chapter of the User Guide!  The User Guide can be found on the [Liferay Documentation Homepage](http://liferay.com/documentation).
+ ![note](../../images/tip-pen-paper.png)**Note:** If you haven't yet done so, be sure to read the **Marketplace** chapter of the User Guide!  The User Guide can be found on the [Liferay Documentation Homepage](http://liferay.com/documentation).
 
 ---
 
