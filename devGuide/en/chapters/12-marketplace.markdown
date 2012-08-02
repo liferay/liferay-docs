@@ -46,6 +46,22 @@ When publishing an app, it is possible to publish it *on behalf of* yourself (an
 
 Liferay apps are "normal" Liferay plugins with additional information about them. Therefore, most of the requirements are the same as those that exist for other Liferay plugins that are detailed in the *Portlet Development* chapter of this guide. In addition to those, there are some Marketplace-specific requirements to keep in mind.
 
+- *WAR (`.war`) files*:
+
+	- WARs must contain a `liferay-plugin-package.properties` file.
+
+	- WARs must not contain any `liferay-plugin-package.xml` file.
+
+	- WAR file names must not contain any commas.
+
+- *liferay-plugin-package.properties file*: Property `recommended.deployment.context` must not be set.
+
+- *Deployment contexts*:
+
+	- Liferay reserves the right to deny an application if any of its plugin deployment contexts is the same as another plugin in the Marketplace.
+
+	- Liferay reserves the right to replace WAR files of app plugins that have the same deployment context as plugins built by Liferay.
+
 ### Things you need before you can publish [](id=lp-6-1-dgen10-things-you-need-before-you-can-publish-0)
 
 You must first develop your app using your preferred development tool (for example, using Liferay Developer Studio or the Plugins SDK). Your app will consist of one or more Liferay plugins. Ensure your app is designed to work with Liferay 6.1 or later. If you wish to target multiple versions of Liferay (for example, you may wish to support both 6.1 CE GA2 and 6.1 EE GA1), ensure you have built binary images of your app for each supported minor family release, if necessary. If a single set of files will work across all supported Liferay versions, you do not need to build multiple plugins. Liferay guarantees compatibility within a given minor release family, so your users can rest assured that your app will work with the minor release that you specify, along with all future maintenance releases of that minor release. 
@@ -99,7 +115,7 @@ In the real world, apps usually consist of multiple components (e.g. multiple `.
 
 ### Specify App Packaging Directives [](id=lp-6-1-dgen12-specify-app-packaging-directives-0)
 
-When publishing your app, each plugin you upload will packaged into one or more *packages* for each Liferay release you intend to support. When you upload your plugins to the Liferay Marketplace, your app is scanned, and the embedded packaging directives you have specified are extracted and used to create different downloadable *packages* of your app for different Liferay releases. You must insert this information into each plugin in your app before you can publish it to the Marketplace.
+When publishing your app, each plugin you upload is packaged into one or more *packages* for each Liferay release you intend to support. When you upload your plugins to the Liferay Marketplace, your app is scanned, and the embedded packaging directives you have specified are extracted and used to create different downloadable *packages* of your app for different Liferay releases. You must insert this information into each plugin in your app before you can publish it to the Marketplace.
 
 The packaging directives are related to the Liferay releases with which your app is compatible. In order to specify which release of Liferay your app is compatible with (and therefore which packages should be created for eventual download on the Marketplace), you first need to understand how Liferay releases are named and how they relate to the underlying Liferay release version. Details can be found on the [Versioning Policy Wiki](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+Versioning+Policy).  Accordingly, Liferay 6.1 CE GA1 is designated as version `6.1.0`.  CE GA2 is then `6.1.1`, and so on.  Liferay 6.1 EE GA1 is designated as `6.1.10`.  EE versioning follows a slightly different policy given then presence of fix packs and service packs, so 6.1 EE GA2 is `6.1.20`.
 
@@ -285,14 +301,13 @@ When the time comes to retire your app, you can *Deactivate* it. Deactivating an
 
 To deactivate your app, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next to the app for which you want deactivate, and select the *Deactivate* action.
 
-
 ## Tracking app performance [](id=lp-6-1-dgen10-tracking-app-performance-0)
 
-One of the main reasons for developing and publishing apps into the Marketplace is to drive downloads and adoption of your app. The Marketplace enables you, as the developer of your app, to get detailed reports about the number of views and downloads of your app(s). To access these metrics, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next to the app for which you want metrics, and select the *Metrics* action.
+One of the main reasons for developing and publishing apps into the Marketplace is to drive downloads and adoption of your app. The Marketplace enables you, as the developer of your app, to get detailed reports about the number of views, downloads, and installations of your app(s). To access these metrics, navigate to *Home* &rarr; *App Manager* &rarr; *Apps*, click on the *Actions* button next to the app for which you want metrics, and select the *Metrics* action.
 
-![Figure 10.11: App metrics let you see graphically how many views and downloads your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
+![Figure 10.11: App metrics let you see graphically how many views, downloads, and installations your app has in the Marketplace.](../../images/marketplace-app-metrics-views.png) 
 
-The view shown above is the default metrics view for a single app. Across the top is a list of data series options (*Views* or *Downloads*). Below that, a date range can be chosen. In the middle, a graph is shown for the data within the date range. Finally, the same data that is graphed is also shown in tabular format, in case you want to know the exact values making up the graph. The different types of data available to view are described below. 
+The view shown above is the default metrics view for a single app. Across the top is a list of data series options (*Views*, *Downloads*, or *Installations*). Below that, a date range can be chosen. In the middle, a graph is shown for the data within the date range. Finally, the same data that is graphed is also shown in tabular format, in case you want to know the exact values making up the graph. The different types of data available to view are described below. 
 
 ### Views [](id=lp-6-1-dgen10-views-0)
 
@@ -302,9 +317,13 @@ When someone searches or browses the Marketplace, they click on apps to see deta
 
 A download is recorded for your app when someone downloads a specific package of a specific version of your app. The number of recorded downloads per day per user is unlimited.
 
+### Installations [](id=lp-6-1-dgen12-installations-0)
+
+The Marketplace does a best effort in recording installations of your app on Liferay instances. When a Liferay Administrator installs your app via the Liferay Administration console (Control Panel), an *Install* is recorded for your app.
+
 ## Summary [](id=lp-6-1-dgen10-summary-0)
 
-In this chapter we introduced concepts and instructions for developers to make their apps available on the Liferay Marketplace. We looked at how to create, publish, maintain, and track apps. You do this through  [liferay.com](liferay.com), using your own personal credentials and its features for Marketplace. Next, we covered the requirements for publishing apps, which did not differ significantly from requirements for general Liferay development. We then showed how you can publish a sample app on the Marketplace and how you can modify it as the app evolves. Finally, we looked at how to track the adoption of apps using download and view metrics. We hope this information helps you understand how to develop apps for Liferay!
+In this chapter we introduced concepts and instructions for developers to make their apps available on the Liferay Marketplace. We looked at how to create, publish, maintain, and track apps. You do this through  [liferay.com](liferay.com), using your own personal credentials and its features for Marketplace. Next, we covered the requirements for publishing apps, which did not differ significantly from requirements for general Liferay development. We then showed how you can publish a sample app on the Marketplace and how you can modify it as the app evolves. Finally, we looked at how to track the adoption of apps using view, download, and install metrics. We hope this information helps you understand how to develop apps for Liferay!
 
 Next, we'll take a look at some helpful plugin developer references. So get ready to bookmark plenty of links!
 
