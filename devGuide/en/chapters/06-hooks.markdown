@@ -1,4 +1,3 @@
-
 # Hooks [](id=hoo-4)
 
 Liferay Hooks are the preferred plugin to use in customizing Liferay's core features. Hooks can fill a wide variety of the common needs for overriding Liferay core functionality. Hooks should be used in place of Ext plugins, whenever possible, as they are hot-deployable and more forward compatible. Some common scenarios to which you can apply a hook are:
@@ -76,7 +75,7 @@ In order to create a useful hook, we will need to edit existing files and create
 			-	liferay-hook.xml
 			-	liferay-plugin-package.properties
 	-	build.xml
-	
+
 In Developer Studio, the hook structure can be viewed in the *Package Explorer* as shown below:
 
 ![Figure 6.4: Package Explorer view of hook plugin](../../images/06-hooks-3.png)
@@ -104,11 +103,11 @@ If you wish to avoid this drawback and make your JSP modifications less invasive
 	<liferay-util:buffer var="html">
 		<liferay-util:include page="/html/portlet/search/view.portal.jsp" />
 	</liferay-util:buffer>
-	
+
 	<%
 	html = StringUtil.add(html, "Enjoy your search!", "\n");
 	%>
-	
+
 	<%= html %>
 
 Since this technique involves String manipulation, it's mainly useful for making a small number of changes to a JSP.
@@ -137,7 +136,7 @@ Next, create the file `portal.properties` inside `example-hook/docroot/WEB-INF/s
 
 Finally, edit `liferay-hook.xml` inside `example-hook/docroot/WEB-INF` and add the following line above `<custom-jsp-dir>`:
 
-    <portal-properties>portal.properties</portal-properties>
+	<portal-properties>portal.properties</portal-properties>
 
 Deploy your hook again and wait for deployment to complete. Then log out and back in, and you should see your custom message, *## My custom login action*, output to the terminal window running Liferay.
 
@@ -147,9 +146,165 @@ You've learned how to perform a custom action by extending a portal action. So, 
 
 ## Extending and Overriding *portal.properties* [](id=extending-and-overriding-<em>portal-properties<-e-1)
 
-In our hook, we modified the `login.events.pre` portal property. Since this property accepts a list of values, our value was appended to the existing  `login.events.pre` values of the `portal.properties` file. From multiple hooks, it is safe to modify portal properties that take *multiple* values. But, some portal properties only accept a *single* value, such as the `terms.of.use.required` property which can be either `true` or `false`. Properties that only accept a single value should only be modifified from one hook; otherwise Liferay does not know which value to use. You can look up properties in the [Configuring Liferay's Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties) section of [Using Liferay Portal 6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) or in the `portal.properties` file to determine a property's type.
+In our hook, we modified the `login.events.pre` portal property. Since this property accepts a list of values, our value was appended to the existing  `login.events.pre` values of the `portal.properties` file. From multiple hooks, it is safe to modify portal properties that take *multiple* values. But, some portal properties only accept a *single* value, such as the `terms.of.use.required` property which can be either `true` or `false`. Properties that only accept a single value should only be modified from one hook; otherwise Liferay does not know which value to use. You can look up properties in the [Configuring Liferay's Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties) section of [Using Liferay Portal 6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) or in the `portal.properties` file to determine a property's type.
 
-Not all portal properties can be overridden in a hook. A complete list of the available properties can be found in the `liferay-hook-[liferay version].dtd` in the `definitions` folder of the Liferay source code. In addition to defining custom actions, hooks can also override portal properties to define model listeners, validators, generators, and content sanitizers. Next, let's see how you can override a portal service with a hook.
+Not all portal properties can be overridden in a hook. A complete list of the available properties can be found in the `liferay-hook-[liferay version].dtd` in the `definitions` folder of the Liferay source code. In addition to defining custom actions, hooks can also override portal properties to define model listeners, validators, generators, and content sanitizers. Now, let's take a look at overriding and adding struts actions from hook plugins.
+
+## Overriding and adding struts actions
+
+If you've wanted to add new struts actions to Liferay portal from a hook plugin or have wanted the ability to override other existing actions, you have the means to do it with *struts action hooks*. There are two interfaces:
+
+-	`com.liferay.portal.kernel.struts.StrutsAction`
+-	`com.liferay.portal.kernel.struts.StrutsPortletAction`
+
+The `StrutsAction` interface is used for regular struts actions like `/c/portal/update_email_address`. Likewise, the `StrutsPortletAction` interface is used for struts actions that are used from portlets.
+
+Struts actions are defined as classes which are all connected in the `struts-config.xml` residing in the `liferay-portal-<version>/tomcat-<version>/webapps/ROOT/WEB-INF` directory. The `struts-config.xml` file links actions to specific JSP pages. In detail, these actions do a specific task and then return a *forward*, which is an object that contains a name and path. The forward defines what page the user will go to after the action completes. So if a user submits a form that maps to one of these actions, the action class is loaded, executed, and returns a forward.
+
+The struts action hook can create a new path or wrap existing struts actions. We can override the struts actions located in the `struts-config.xml` by pointing to a custom class. This is accomplished by creating the struts actions hook.
+
+For our first example, we will override the login portlet struts action using the example-hook. This action appears in the `struts-config.xml` file as shown below:
+
+	<action path="/login/login"
+		type="com.liferay.portlet.login.action.LoginAction">
+		<forward name="portlet.login.login" path="portlet.login.login" />
+		<forward name="portlet.login.login_redirect" path="portlet.login.login_redirect" />
+	</action>
+
+Also, we will create a new struts path: `/c/portal/sample`. Let's get started:
+
+1. Navigate to `example-hook/docroot/WEB-INF` and open the `liferay-hook.xml` file
+
+2. Insert the following code before the closing `</hook>` tag:
+
+		<struts-action>
+			<struts-action-path>/portal/sample</struts-action-path>
+			<struts-action-impl>com.liferay.sample.hook.action.ExampleStrutsAction</struts-action-impl>
+		</struts-action>
+		<struts-action>
+			<struts-action-path>/login/login</struts-action-path>
+			<struts-action-impl>com.liferay.sample.hook.action.ExampleStrutsPortletAction</struts-action-impl>
+		</struts-action>
+
+3. Create a new package located in the `example-hook/docroot/WEB-INF/src` folder called `com.liferay.sample.hook.action`.
+
+4. In this new package, create a class called *ExampleStrutsPortletAction*. This will wrap the login action. Insert the code listed below:
+
+		package com.liferay.sample.hook.action;
+
+		import com.liferay.portal.kernel.struts.BaseStrutsPortletAction;
+		import com.liferay.portal.kernel.struts.StrutsPortletAction;
+		import com.liferay.portal.theme.ThemeDisplay;
+		import com.liferay.portal.kernel.util.WebKeys;
+		import javax.portlet.ActionRequest;
+		import javax.portlet.ActionResponse;
+		import javax.portlet.PortletConfig;
+		import javax.portlet.RenderRequest;
+		import javax.portlet.RenderResponse;
+		import javax.portlet.ResourceRequest;
+		import javax.portlet.ResourceResponse;
+
+		public class ExampleStrutsPortletAction extends BaseStrutsPortletAction {
+
+		public void processAction(
+				StrutsPortletAction originalStrutsPortletAction,
+				PortletConfig portletConfig, ActionRequest actionRequest,
+				ActionResponse actionResponse)
+			throws Exception {
+			ThemeDisplay themeDisplay = (ThemeDisplay)actionRequest
+					.getAttribute(WebKeys.THEME_DISPLAY);
+
+			Long currentuser = themeDisplay.getUserId();
+
+			if (currentuser != null) {
+				System.out.println("Wrapped /login/ action2");
+
+			}
+			originalStrutsPortletAction.processAction(
+				originalStrutsPortletAction, portletConfig, actionRequest,
+				actionResponse);
+		}
+
+		public String render(
+				StrutsPortletAction originalStrutsPortletAction,
+				PortletConfig portletConfig, RenderRequest renderRequest,
+				RenderResponse renderResponse)
+			throws Exception {
+
+			System.out.println("Wrapped /login/ action");
+
+			return originalStrutsPortletAction.render(
+				null, portletConfig, renderRequest, renderResponse);
+
+		}
+
+		public void serveResource(
+				StrutsPortletAction originalStrutsPortletAction,
+				PortletConfig portletConfig, ResourceRequest resourceRequest,
+				ResourceResponse resourceResponse)
+			throws Exception {
+
+			originalStrutsPortletAction.serveResource(
+				originalStrutsPortletAction, portletConfig, resourceRequest,
+				resourceResponse);
+
+		}
+
+		}
+
+5. Next, we need to create the new struts action. Create a new class in the `com.liferay.sample.hook.action` package called *ExampleStrutsAction*. Insert the code listed below:
+
+		package com.liferay.sample.hook.action;
+
+		import com.liferay.portal.kernel.struts.BaseStrutsAction;
+		import com.liferay.portal.kernel.util.ParamUtil;
+
+		import javax.servlet.http.HttpServletRequest;
+		import javax.servlet.http.HttpServletResponse;
+
+		public class ExampleStrutsAction extends BaseStrutsAction {
+
+		public String execute(
+			HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+
+			String name = ParamUtil.get(request, "name", "World");
+
+			request.setAttribute("name", name);
+
+			return "/portal/sample.jsp";
+			}
+
+		}
+
+6. We must now create a JSP in the `example-hook/docroot/META-INF/custom_jsps/html/portal` directory called `sample.jsp`. Insert the following code:
+
+		<%
+		String name = (String)request.getAttribute("name");
+		%>
+		Hello <%= name %>!
+
+7. Finally, modify the `portal.properties` file by adding a new parameter:
+
+		auth.public.paths=/portal/sample
+
+Congratulations! Your struts actions hook plugin is complete!
+
+When you access the *Sign In* portlet, you are given a message in the console that reads:
+
+	Wrapped /login/ action
+
+Furthermore, when you actually log in, you are given a different message in your console:
+
+	Wrapped /login/ action2
+	## My custom login action
+	Wrapped /login/ action
+
+To see your new struts action run, simply access `http://localhost:8080/c/portal/sample`. The browser should appear as the snapshot does below:
+
+![Figure 6.5: Your new struts action generates *Hello World!* in the browser.](../../images/06-hooks-5.png)
+
+Next, let's see how you can override a portal service with a hook.
 
 ## Overriding a Portal Service [](id=overriding-a-portal-servi-4)
 
@@ -168,17 +323,17 @@ First, inside `example-hook/docroot/WEB-INF/src/com/liferay/sample/hook` create 
     import com.liferay.portal.service.UserLocalServiceWrapper;
 
     public class MyUserLocalServiceImpl extends UserLocalServiceWrapper {
-	
+
 		public MyUserLocalServiceImpl(UserLocalService userLocalService) {
 			super(userLocalService);
 		}
-	
+
 		public User getUserById(long userId)
 			throws PortalException, SystemException {
-	
+
 			System.out.println(
 				"## MyUserLocalServiceImpl.getUserById(" + userId + ")");
-	
+
 			return super.getUserById(userId);
 		}
     }
@@ -229,8 +384,6 @@ In addition to the capabilities of hooks already discussed thus far, you can als
 
 Since hooks are the preferred plugin type to use in customizing Liferay's core features, the Liferay team is happy to keep new hooks coming to you. This section is a placeholder for hooks which are available in Liferay Portal 6.1, but are not yet fully documented. So, for now, here is a summary of these hooks.
 
--	**Struts action hook:** If you've wanted to add new struts actions to Liferay portal from a hook plugin or have wanted the ability to override other existing actions, you now have the means to do it with *struts action hooks*. Found in the Plugin SDK, the [sample-struts-action-hook](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-struts-action-hook) demonstrates the hook's capability. See also article [Overriding and adding struts actions from hook plugins ](http://www.liferay.com/about-us/news/-/blogs/7132115) by Mika Koivisto for more details.
-
 -	**Servlet filter hook:** Servlet filters allow you to pre-process requests going *to* a servlet and post-process responses coming *from* a servlet. As server requests are received that match URL patterns or match servlet names specified in your servlet filter mappings, your specified servlet filters are applied. Hook elements `servlet-filter` and `servlet-filter-mapping` have been added to `liferay-hook.xml` to give you the ability to configure your servlet filters. For a working example, see the [sample-servlet-filter-hook](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-servlet-filter-hook) in the Plugin SDK.
 
 -	**CMIS extension hook:** The Documents and Media Library now supports multiple CMIS repositories mounted for each Documents and Media Portlet. But, in cases where a repository does not fully implement CMIS or where a repository has native features that you'd like to leverage, you can use a *CMIS extension hook* to apply your desired extension implementation.
@@ -240,4 +393,3 @@ Since hooks are the preferred plugin type to use in customizing Liferay's core f
 ## Conclusion [](id=conclusi-2)
 
 In this chapter, you've learned how to perform custom portal actions, override and extend custom portal JSPs, modify portal properties, and replace portal services. These are just a few of the ways you can use Liferay hooks. Next, you'll learn how you can, as a last resort, use Ext plugins to make customizations that you can't make with any of the other Liferay plugin types.
-
