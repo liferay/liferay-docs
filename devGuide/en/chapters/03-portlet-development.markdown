@@ -60,9 +60,10 @@ To resolve the dependencies for portlet projects, see the classpath entries in t
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** If you are using a source control system such as Subversion, CVS, Mercurial, Git, ... etc., this might be a good moment to do an initial check-in of your changes. After building the plugin for deployment, several additional files will be generated that should *not* be handled by the source control system.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** If you are using a source control system such as Subversion, CVS, Mercurial, Git, ... etc., this might be a good moment to do an initial check-in of your changes. After building the plugin for deployment, several additional files will be generated that should *not* be handled by the source control system.
 
 ---
+
 
 ### Deploying the Portlet [](id=lp-6-1-dgen03-deploying-the-portlet-0)
 
@@ -70,7 +71,7 @@ Liferay provides a mechanism called auto-deploy that makes deploying portlets (a
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Liferay supports a wide variety of application servers. Many of them, such as Tomcat and Jboss, provide a simple way to deploy web applications by just copying a file into a folder and Liferay's auto-deploy mechanism takes advantage of that ability. You should be aware though, that some application servers, such as Websphere or Weblogic require the use of specific tools to deploy web applications; so Liferay's auto-deploy process won't work for them.
+ ![note](../../images/tip-pen-paper.png)**Note:** Liferay supports a wide variety of application servers. Many of them, such as Tomcat and Jboss, provide a simple way to deploy web applications by just copying a file into a folder and Liferay's auto-deploy mechanism takes advantage of that ability. You should be aware though, that some application servers, such as Websphere or Weblogic require the use of specific tools to deploy web applications; so Liferay's auto-deploy process won't work for them.
 
 ---
 
@@ -300,9 +301,10 @@ Deploy the portlet again in Developer Studio or by entering the command **ant de
 
 ![Figure 3.8: The *edit* page of My Greeting portlet](../../images/portlets-edit-my-greeting.png)
 
+
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** If your portlet deployed successfully, but you don't see any changes in your browser after refreshing the page, Tomcat may have failed to rebuild your JSPs. Simply delete the `work` folder in `liferay-portal-[version]/tomcat-[tomcat-version]` and refresh the page again to force them to be rebuilt.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** If your portlet deployed successfully, but you don't see any changes in your browser after refreshing the page, Tomcat may have failed to rebuild your JSPs. Simply delete the `work` folder in `liferay-portal-[version]/tomcat-[tomcat-version]` and refresh the page again to force them to be rebuilt.
 
 ---
 
@@ -437,12 +439,16 @@ From the render phase (in our case, the JSP), this value can be read using the r
 
 It is important to be aware that when invoking an action URL, the parameters specified in the URL will only be readable from the action phase (that is within the `processAction` method). In order to pass parameter values to the render phase you must read them from the `actionRequest` and then invoke the `setRenderParameter` method for each parameter needed.
 
-![tip](../../images/tip-pen-paper.png)**Tip:** Liferay offers a convenient extension to the portlet specification through the `MVCPortlet` class to copy all action parameters directly as render parameters. You can achieve this just by setting the following `init-param` in your `portlet.xml`:
+---
+
+ ![tip](../../images/tip-pen-paper.png)**Tip:** Liferay offers a convenient extension to the portlet specification through the `MVCPortlet` class to copy all action parameters directly as render parameters. You can achieve this just by setting the following `init-param` in your `portlet.xml`:
 
 	<init-param>
 		<name>copy-request-parameters</name>
 		<value>true</value>
 	</init-param>
+
+---
 
 As mentioned, there was a second way, in fact a better way, for what we are trying to do in our example. One final thing you should know about render parameters is that the portal remembers them for all later executions of the portlet until the portlet is invoked with *different* parameters. That is, if a user clicks a link in our portlet and a render parameter is set, and then the user continues browsing through other portlets in the page, each time the page is reloaded, the portal will render our portlet using the render parameters that we initially set. If we used render parameters in our example, then the success message will be shown not only right after saving, but also every time the portlet is rendered until the portlet is invoked again *without* that render parameter.
 
