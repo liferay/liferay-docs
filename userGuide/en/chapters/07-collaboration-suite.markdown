@@ -649,7 +649,7 @@ At the top of the portlet is a list of links which allow you to navigate around 
 
 The Wiki portlet is another full-featured Liferay application with all of the features you expect from a state of the art wiki. Next, we'll look at how Liferay handles live chat.
 
-## Find out what others think or do using Polls
+## Find out what others think or do using Polls [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
 [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
 
 How well do you know your users? Do you ever wonder what they're thinking? Is using your site easy for them? How do they feel about the hot-button issues of the day? Do they prefer dogs over cats? What about the new policy that management wants to implement? What's their favorite ice cream flavor? When you use Liferay's Polls feature you can find out the answer to these and other questions that should help you better understand your users. 
@@ -664,11 +664,11 @@ The Polls Display Portlet allows users to vote for a specific poll's questions a
 
 We'll begin by creating a poll in the Control Panel.
 
-### Creating a Poll
+### Creating a Poll [](id=lp-6-1-ugen07-creating-a-poll-0)
 
 In the Control Panel, navigate to the *Polls* link under Content. Click the *Add Question* button. A form appears that allows you to fill out all the information for your poll. 
 
-![Figure 7.x: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
+![Figure 7.20: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
 
 **Title:** Enter the name of the poll question. 
 
@@ -692,13 +692,13 @@ When a poll expires, users can't enter votes any more, but if a Polls Display po
 
 As you can see, creating a poll is fairly straightforward. Next, let's complete the two-step process and put your poll on a page.
 
-### Adding a Poll to a Page
+### Adding a Poll to a Page [](id=lp-6-1-ugen07-adding-a-poll-to-a-page-0)
 
 Now that you have created your poll question, it's time to present it to your users. Navigate to your portal and add the Polls Display portlet to a page. It is available from the *Content Management* section of the *Add* &rarr; *More* menu. 
 
 The Polls Display portlet may look strange when it first appears on your page. That's because it's not configured. Before visitors to your site can use the poll, they must be able to access it. Click on the link labelled *Please configure this portlet to make it visible to all users*, and a dialog box like the one below appears.
 
-![Figure 7.x: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
+![Figure 7.21: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
 
 Under the Setup tab is a menu option labeled *Question*. Selecting this option displays the name of the poll you created. Choose it, click *Save*, and it is displayed on the page. That, in a nutshell, is how you create a poll, but there is another way to add a question to the Polls Display portlet.
 
@@ -706,7 +706,7 @@ Start by navigating to your portal and placing the Polls Display portlet on a pa
 
 Once the poll question has been successfully placed on the page, you can perform other tasks by using the icons in the lower left corner of the portlet. Besides adding questions, you can also edit the currently selected question or select existing questions.
 
-![Figure 7.x: These three buttons, highlighted in red, allow you to manage the  configuration of the poll. Notice this poll has expired.](../../images/polls-config-buttons.png)
+![Figure 7.22: These three buttons, highlighted in red, allow you to manage the  configuration of the poll. Notice this poll has expired.](../../images/polls-config-buttons.png)
 
 **Edit Question:** Displays a similar dialog box to the one used to create the poll. 
 
@@ -716,15 +716,15 @@ Once the poll question has been successfully placed on the page, you can perform
 
 You can also manage the Polls Display portlet by clicking the wrench symbol in the upper right corner of the portlet's title bar. Now let's see the poll results.
 
-### Viewing the Poll Results
+### Viewing the Poll Results [](id=lp-6-1-ugen07-viewing-the-poll-results-0)
 
 When you create a poll question, it appears in a list in the Control Panel. After users vote in the poll, the data is collected here. If you select it, the name and the question, as well as a breakdown of the poll results appears, including percentages and total number of votes per answer and the total number of votes cast.
 
-![Figure 7.x: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
+![Figure 7.23: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
 
 Below this is an item called *Charts*. This option shows the poll results represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*, *Pie* and *Vertical Bar*.
 
-![Figure 7.x: This is what the pie chart for the Ice Cream poll results looks like.](../../images/polls-results-pie-chart.png)
+![Figure 7.24: This is what the pie chart for the Ice Cream poll results looks like.](../../images/polls-results-pie-chart.png)
 
 There is also a listing of the users who voted in your poll, how they voted, and a time/date stamp of when their votes were cast. Registered users are represented by their screen name while Guest users are represented by a number.
 
@@ -734,7 +734,7 @@ With Liferay Polls you can do many things. You can ask users very specific quest
 
 Liferay's Chat portlet provides a convenient way of allowing users to send each other instant messages when they are logged into your web site. It appears as a bar at the bottom of every page, showing who is logged on, their statuses, and any chats the logged-in user has open.
 
-![Figure 7.20: Liferay's Chat Portlet](../../images/05-liferay-chat-portlet.jpg)
+![Figure 7.25: Liferay's Chat Portlet](../../images/05-liferay-chat-portlet.jpg)
 
 The Chat portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Chat portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the Chat portlet in the list, click on it, and then click *Install*.
 
@@ -765,7 +765,7 @@ You can use any chat server that supports Jabber. The Chat portlet's Jabber serv
 
 Note that you must change `jabber.service.name` to the "Host Name". If you are using Openfire, you can find the Host Name by using the Openfire administration web tool. If you did not set up administrative credentials when you started Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 7.21: Openfire Administration Web Tool](../../images/jabber.service.name.png)
+![Figure 7.26: Openfire Administration Web Tool](../../images/jabber.service.name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added the correct values to `jabber.host` and `jabber.port`. If you installed your chat server on a remote machine or chose to not use the default port, change `jabber.host` and `jabber.port` accordingly.
 
@@ -789,7 +789,7 @@ Liferay's Mail portlet enables your users to interact with their email using an 
 
 The Mail portlet is distributed with the Liferay bundles, but is not included as part of the `.war` distribution, as it is a separate plugin. If you installed the Liferay `.war` manually on your application server, you can install the Mail portlet by going to the Control Panel, clicking *Plugins Installation*, and then clicking the *Install More Portlets* button. Find the *Mail* portlet in the list, click on it, and then click *Install*.
 
-![Figure 7.22: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
+![Figure 7.27: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
 
 To connect the Mail portlet with an email account, click the *Add a New Email Account* link. From there, you are given a choice between a Custom email Account or a Gmail Account. Choose the option that you wish, and fill out the form that appears.
 

@@ -3305,7 +3305,7 @@ Set this to specify the initial number of child pages to display in the Manage P
 
 	layout.manage.pages.initial.children=20
 	
-## Layout Prototypes
+## Layout Prototypes [](id=lp-6-1-ugen20-layout-prototypes-0)
 
 Set this property to true to enable the propagation of changes to a page from its page template by default.
 
@@ -3319,7 +3319,7 @@ The number of seconds we should expect a lock to last before we recognize that a
 
     layout.prototype.merge.lock.max.time=300
 
-## Layout Set Prototypes
+## Layout Set Prototypes [](id=lp-6-1-ugen20-layout-set-prototypes-0)
 
 In the case that a site template would fail to merge, make sure that we prevent repeated attempts that will inevitably fail by having a fail threshold.
 
@@ -4907,7 +4907,7 @@ See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required
 	spring.remoting.servlet.hosts.allowed=127.0.0.1,SERVER_IP
 	spring.remoting.servlet.https.required=false
 	
-## Tunnel Servlet
+## Tunnel Servlet [](id=lp-6-1-ugen20-tunnel-servlet-0)
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
