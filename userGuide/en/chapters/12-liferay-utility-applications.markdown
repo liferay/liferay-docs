@@ -56,7 +56,7 @@ The button Add Subfolder creates a new subfolder of the current folder. The butt
 
 Now that you have an understanding of how bookmark folders are used, let's create some new bookmarks.
 
-## Adding and Using Bookmarks [](id=lp-6-1-ugen12-adding-and-using-bookmarks-0)
+### Adding and Using Bookmarks [](id=lp-6-1-ugen12-adding-and-using-bookmarks-0)
 
 Navigate to your portal and add the Bookmarks application to your page by selecting *Add* &rarr; *More*. The portlet looks like this by default:
 
