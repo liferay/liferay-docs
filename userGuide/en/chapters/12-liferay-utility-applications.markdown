@@ -50,13 +50,7 @@ Click *Save* and the Dessert Recipes folder view appears. Select Healthy Recipes
 
 To move a link out of a subfolder and into a higher-level folder, edit the link in the subfolder and choose *Select*. 
 
-<!-- | This image seems unrelated to the text. It should either be removed or linked to the text in some way. | -->
-
-![Figure 12.x: You can use the breadcrumbs for easy navigation between folder levels.](../../images/bookmarks-breadcrumbs.png)
-
 In the resulting dialog box, select the appropriate folder from the breadcrumbs at the top. Click the *Choose This Folder* button and verify the proper folder level is displayed. If this is correct, click *Save* and you're done.
-
-<!-- | It looks to me like you're confused as to when to use italics for buttons. You only need to use italics when you're telling the reader to do something. So if you say, "Click *Add Subfolder* to add a subfolder," you use italics. If you say, "The Add Subfolder button appears on this screen," then you don't need italics. | -->
 
 The button Add Subfolder creates a new subfolder of the current folder. The button Choose This Folder simply selects the current folder. The breadcrumb links at the top of the dialog box allow you to navigate to the other folder levels.
 
@@ -66,13 +60,9 @@ Now that you have an understanding of how bookmark folders are used, let's creat
 
 Navigate to your portal and add the Bookmarks application to your page by selecting *Add* &rarr; *More*. The portlet looks like this by default:
 
-<!-- | We don't generally want to say a construct looks "something like" anything. It either looks like something or it doesn't. | --> 
-
 ![Figure 12.x: Initially, no bookmarks are listed in this form until they're created.](../../images/bookmarks-add-portlet.png)
 
 Across the top of the portlet are links labeled Home, Recent, and Mine. There is also a Search field and button. Choosing Recent displays a list of the latest bookmarks that have been added. Choosing Mine displays a list of the bookmarks you added to the portlet. Choosing Home returns you to the top level of the portlet. The Search option lets you search for bookmarks by name or category tags.
-
-<!-- | Always try to "tighten" the text by avoiding unnecessary "you wills." In fact, I think I have a whole section in the guidelines about getting the future tense out of the documentation. :-) | -->
 
 When you select the *Permissions* button on the right, a list of Roles and their associated permissions appears. The options are Add Entry, Add Folder, Permissions, and View. When you are finished selecting the permissions click *Save*.
 
@@ -81,12 +71,6 @@ Clicking the *Add Folder* button in the Bookmarks application reveals this form:
 ![Figure 12.x: It's not necessary to enter a description for a Bookmarks folder.](../../images/bookmarks-add-new-folder-form.png)
 
 Here you can choose the folder's name, a description of its contents, and who can view it. Under More Options, you can set portlet permissions for various Roles to the folder. Click *Save* when you are finished.
-
-<!-- Is this overkill?
-![Figure 12.x: Clicking More Options in the Add Bookmarks Folder form displays more ways to set folder permissions.](../../images/bookmarks-add-new-folder-permissions-options.png)
-
-Yes. 
--->
 
 To create a bookmark, click the *Add Bookmark* button. This form is similar to the New Folder form but has a few more options.
 
