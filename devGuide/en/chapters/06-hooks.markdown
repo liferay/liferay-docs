@@ -113,6 +113,46 @@ If you wish to avoid this drawback and make your JSP modifications less invasive
 
 Since this technique involves String manipulation, it's mainly useful for making a small number of changes to a JSP.
 
+## Using Application Adapters
+
+Every task we have completed to this point has affected the entire portal. Wouldn't it be nice to make changes on a specific site without them being implemented portal wide? This is possible with the use of *Application Adapters*. Unlike standard hooks, application adapters allow you to scope changes to a site. In Liferay 6.1, overwriting of JSPs is supported by application adapters; that is, you can create application adapters that allow you to overwrite JSPs for a specific site in your portal.
+
+The first requirement is to set the "custom-jsp-global" to false. This will install an application adapter to your instance under the name of the hook. Also, when you are overwriting a JSP from the portal, it is recommended to include the original one, if possible. In order to include the original file using application adapters, you should use the `<liferay-util:include>` tag with the attribute `useCustomPage` to false. Note that this is different from the mechanism used for global hooks that includes the original JSP.
+
+We will complete a brief exercise which shows these requirements. Our exercise will overwrite the `view.jsp` in the *Navigation* portlet, but still include the original JSP. Follow the steps below:
+
+1. First, you will need to install an application adapter to your instance. Do this by navigating to `liferay-hook.xml` in the `example-hook/docroot/WEB-INF` directory. Then add the `<custom-jsp-global>false</custom-jsp-global>` line directly beneath your existing `<custom-jsp-dir>` tags.
+
+2. Navigate to `example-hook/docroot/META-INF/custom_jsps/html/portlet/navigation` and create a `view.jsp` file. Within the JSP, insert the following code:
+
+		<%@ taglib uri="http://liferay.com/tld/util" 
+		prefix="liferay-util" %>
+
+		<liferay-util:include page="/html/portlet/navigation/view.jsp" 
+		useCustomPage="false" />
+
+		<p>
+		This was modified by the Example Application Adapter.
+		</p>
+
+3. Go to your browser running Liferay Portal and navigate to your preferred site.
+
+4. Select *Manage* &rarr; *Site Settings* and you will notice an *Application Adapter* field. Select *example* from the drop-down and click *Save*.
+
+	![Figure 6.5: How to enable your *Application Adapter* setting.](../../images/06-hooks-6.png)
+
+5. Now navigate back to your site's navigation portlet and you will find the modification message you placed in the `view.jsp` file.
+
+	![Figure 6.6: You are able to view your *Example Application Adapter* message.](../../images/06-hooks-7.png)
+
+6. Return to a previous site and your navigation portlet will not have the modification message.
+
+As you can see, the process of adding application adapters is quick and easy. Application adapters allow the implementation of custom solutions needing unique JSPs without modifying your entire portal.
+
+Likewise, developers are able to package their solutions with site templates to create a seamless experience for the user. This feature allows users to easily add templates that are customized for certain sites on their Liferay instance.
+
+Now that we are able to add application adapters, let's take a look at performing custom actions.
+
 ## Performing a Custom Action [](id=performing-a-custom-acti-4)
 
 Another common use for hooks is to perform custom actions on certain common portal events, such as user login or system startup. The actions that are performed for each of these events are defined in `portal.properties`, which means that in order to create a custom action we will also need to extend this file. Fortunately, this is extremely easy using a hook.
@@ -234,8 +274,6 @@ Since hooks are the preferred plugin type to use in customizing Liferay's core f
 -	**Servlet filter hook:** Servlet filters allow you to pre-process requests going *to* a servlet and post-process responses coming *from* a servlet. As server requests are received that match URL patterns or match servlet names specified in your servlet filter mappings, your specified servlet filters are applied. Hook elements `servlet-filter` and `servlet-filter-mapping` have been added to `liferay-hook.xml` to give you the ability to configure your servlet filters. For a working example, see the [sample-servlet-filter-hook](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-servlet-filter-hook) in the Plugin SDK.
 
 -	**CMIS extension hook:** The Documents and Media Library now supports multiple CMIS repositories mounted for each Documents and Media Portlet. But, in cases where a repository does not fully implement CMIS or where a repository has native features that you'd like to leverage, you can use a *CMIS extension hook* to apply your desired extension implementation.
-
--	**Application adapter:** Unlike standard hooks, application adapters allow you to scope changes to a Site. In Liferay 6.1, overwriting of JSPs is supported by application adapters; that is, you can create application adapters that allow you to overwrite JSPs for a specific Sites in your portal. See [Application Adapters](http://www.liferay.com/community/wiki/-/wiki/Main/Application+Adapters) by Julio Camarero for more details. Download the Plugin SDK [sample-application-adapter-hook](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-application-adapter-hook) and try it out.
 
 ## Conclusion [](id=conclusi-2)
 
