@@ -297,7 +297,6 @@ When you access the *Sign In* portlet, you are given a message in the console th
 Furthermore, when you actually log in, you are given a different message in your console:
 
 	Wrapped /login/ action2
-	## My custom login action
 	Wrapped /login/ action
 
 To see your new struts action run, simply access `http://localhost:8080/c/portal/sample`. The browser should appear as the snapshot does below:
