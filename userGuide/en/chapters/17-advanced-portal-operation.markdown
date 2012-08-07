@@ -15,7 +15,7 @@ Let's get started with audit trails.
 
 ## Audit Trails [](id=using-audit-trails)
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+![EE Only Feature](../../images/ee-feature-web.png)
 
 You've just finished lunch and are ready to get back to work. You have a site in Liferay you use to manage your project, and before you left, you were about to create a folder in your Documents and Media library for sharing some requirements documentation. Sitting down at your desk, you navigate to the repository and attempt to create the folder. 
 
@@ -241,7 +241,7 @@ Logs are great for figuring out issues in production. But what if Liferay contac
 
 ### Patching Liferay [](id=patching-liferay)
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+![EE Only Feature](../../images/ee-feature-web.png)
 
 While we strive for perfection with every release of Liferay Portal, the reality of the human condition dictates that releases of the product may not be as perfect as originally intended. But we've planned for that. Included with every Liferay bundle is a patching tool that can handle the installation of two types of patches: hot fixes and fix packs. 
 
