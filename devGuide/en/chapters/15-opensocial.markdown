@@ -6,7 +6,7 @@ In this chapter, we'll cover
 
 - OpenSocial gadget basics.
 
-- Using PubSub allow gadgets to communicate with each other and with portlets.
+- Using PubSub to allow gadgets to communicate with each other and with portlets.
 
 - Liferay's gadget editing environment.
 
@@ -67,7 +67,7 @@ Gadget meta-data specifies characteristics of the overall gadget and specifies c
 
 Now, let's dive deeper into gadget preferences.
 
-### Gadget Preferences (ModulePrefs)
+#### Gadget Preferences (ModulePrefs)
 
 The gadget preferences (ModulePrefs) define characteristics of your gadget, including features that it uses, how it authenticates content, how it is displayed to the user, and how it is displayed in a gadget directory. The preferences are wrapped in `<ModulePrefs>...</ModulePrefs>` tags.
 
@@ -85,7 +85,7 @@ Overall, this `<ModulePrefs>` element allows you to setup your gadget on a gadge
 
 Next, let's consider gadget user preferences.
 
-### User Preferences (UserPrefs)
+#### User Preferences (UserPrefs)
 
 What can really enhance a user's experience is when a gadget is personalized to fit the user. OpenSocial gadgets are capable of storing user preferences, allowing gadgets to present information and options tailored to individual users. A gadget's user preferences are specified in `<UserPref>...</UserPref>` tags in the gadget's XML. As a user enters information and adjusts controls via a gadget's user interface, those changes are persisted in the database for that gadget instance. Each time the gadget is reloaded, the *UserPrefs* are extracted from the database, fed back to the gadget, and rendered in the user interface.
 
@@ -199,10 +199,6 @@ Have you ever wanted your gadgets to communicate with each other or with portlet
 -	portlet to gadget or vice versa
 -	portlet to portlet
 
-<!-- TODO Use this in another section ... social API?
-In a sense, gadgets live in their own world because they are rendered by a separate web application called "Shindig." This is a rendering engine for OpenSocial which was created by Apache and is the reference container implementation Liferay uses.
--->
-
 With the use of PubSub, the worlds of gadgets and portlets blend together faciliating their ability to communicate and interact with each other.
 
 Publishers do not send messages to subscribers directly, but rather, they publish messages that are characterized into classes and sent across message channels (topics). Therefore, the publishers have no knowledge of *whom* they are sending their messages to, they simply broadcast the messages over a channel. So you may ask: "How do subscribers receive messages if the messages are not sent directly to them?" Subscribers express interest by subscribing to certain channels and receive messages sent to those channels. Like publishers, they have no knowledge of *who* sends the messages, they only know channels and receive messages coming in on those channel. This process makes it much easier for multiple gadgets and portlets to communicate with each other, without specifically stating who they want to send/receive data from.
@@ -235,9 +231,9 @@ Let's try out PubSub for ourselves to explore how PubSub works. In this  fundame
 
 	![Figure 15.4: The subscriber portlet in action!](../../images/15-opensocial-24.png)
 
-6. Now select *Unsubscribe* in the subscriber.
+7. Now, select *Unsubscribe* in the subscriber.
 
-7. And click *Publish a random number*.
+8. Click *Publish a random number*.
 
 	As you would expect, the subscriber portlet no longer receives the random number.
 
@@ -342,7 +338,7 @@ The following Javascript from the gadget's *content* registers a callback on the
 	gadgets.HubSettings.onConnect = function(hub, suc, err) {
             gadgets.Hub.subscribe("com.liferay.opensocial.gmapsdemo", callback);
 
-Your gadget calls `gadgets.HubSetting.onConnect` enabling the gadget to subscribe to our previously mentioned topic. All subscribers to this topic receive messages sent to it.
+Your gadget calls `gadgets.HubSetting.onConnect` enabling the gadget to subscribe to the previously mentioned topic. All subscribers to this topic receive messages sent to it.
 
 On callback, the gadget's `callback()` function is executed. In this example, the callback method invokes a `GClientGeocoder` to get the locations. And finally, the locations are processed and displayed on the map.
 
@@ -396,7 +392,7 @@ In the Javascript of the gadget's *content*, the gadget publishes to the topic w
 
 	gadgets.Hub.publish("com.liferay.opensocial.gmapsdemo", address);
 
-When the user clicks the gadget's *Publish* button, the message is sent by the publishing gadget to the topic named `com.liferay.opensocial.gmapsdemo`. PubSub broadcasts the message recieved on that topic to all subscribers, such as our *Google Address* gadget. Each subscriber receives the message on callback and processes the message. In the case of our *Google Map* gadget, the message, containing an address, is processed by the gadget to render the address location on its map. 
+When the user clicks the gadget's *Publish* button, the message is sent by the publishing gadget to the topic named `com.liferay.opensocial.gmapsdemo`. PubSub broadcasts the message received on that topic to all subscribers, such as your *Google Address* gadget. Each subscriber receives the message on callback and processes the message. In the case of your *Google Map* gadget, the message, containing an address, is processed by the gadget to render the address location on its map.
 
 As you can see, PubSub allows your site to run efficiently and enables, otherwise, unconnected gadgets to communicate and flourish within Liferay Portal.
 
@@ -404,7 +400,7 @@ As you can see, PubSub allows your site to run efficiently and enables, otherwis
 
 ### Communicating between portlets and gadgets
 
-For this section, we will continue implementing the *Google Map* gadget in our site. It would be convenient for a user to, not only implement "gadget to gadget" communications, but to also allow communications between those gadgets and your portlets.
+For this section, we will continue implementing the *Google Map* gadget in your site. It would be convenient for a user to, not only implement "gadget to gadget" communications, but to also allow communications between those gadgets and your portlets.
 
 As an exercise, we will send messages from Liferay's *Directory* portlet to the *Google Map* gadget. For each user listed in the *Directory* portlet, we will create a link that, when selected, will display the location of the user's address in the *Google Map* gadget. Please follow the instructions below:
 
@@ -571,7 +567,7 @@ As an exercise, we will send messages from Liferay's *Directory* portlet to the 
 
 4. Click the *Show in Google Maps* link. The address location should be displayed in the *Google Map* gadget.
 
-	![Figure 15.7: Our modifed *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/15-opensocial-27.png)
+	![Figure 15.7: Your modifed *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/15-opensocial-27.png)
 
 	You're portal users can now map addresses straight from the *Directory* portlet!
 
@@ -603,13 +599,13 @@ Within the editor, each gadget's XML file has a wrench icon allowing you to clos
 
 ---
 
-<!-- TODO show an image of the gadget wrench icon options -->
+<!-- TODO show an image of the gadget wrench icon options, after the previous paragraph and before the above tip -->
 
 For a brief exercise, we will improve the *Google Map* gadget using the gadget editor. As you have probably noticed, the gadget offers a small screen that is sometimes hard to view. By using the *OpenSocial Gadget Editor*, you can edit the XML file and specify a more desirable size for the gadget's UI.
 
 1. First, you will need to copy the gadget XML contents into the gadget editor. Navigate to *OpenSocial Gadget Publisher* from under the *Portal* heading and select the URL for *Google Map*.
 
-2. Copy the XML content into your clipboard.
+2. Copy the XML content onto your clipboard.
 
 3. Navigate to the *OpenSocial Gadget Editor* from the Control Panel and paste your clipboard contents into the gadget editor.
 
@@ -659,6 +655,9 @@ You can facilitate the social interactions on your sites and increase your porta
 Now, we'll demonstrate how usefulness of Liferay's social API.
 
 ## Implementing gadgets in Liferay's social API
+
+TODO This was from another section. See if it can be used in this section.
+In a sense, gadgets live in their own world because they are rendered by a separate web application called "Shindig." This is a rendering engine for OpenSocial which was created by Apache and is the reference container implementation Liferay uses.
 
 We have talked extensively about how gadgets are social applications, but we have not yet used a gadget to communicate with a user's friends. Social networks like Facebook and Twitter give the user opportunities to view and share photos with their friends. These actions are also available and expanded with OpenSocial gadgets. Using Liferay's social API, friends can publish customizable gadgets to their pages that enhance user experience. This focus of customizing a social page to interact with others is exactly what made MySpace popular. Social networking thrives on gadgets that connect users and their interests. 
 
