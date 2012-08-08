@@ -205,7 +205,7 @@ In a sense, gadgets live in their own world because they are rendered by a separ
 
 With the use of PubSub, the worlds of gadgets and portlets blend together faciliating their ability to communicate and interact with each other.
 
-Publishers do not send messages to subscribers directly;, but rather, they publish messages that are characterized into classes and sent across message channels (topics). Therefore, the publishers have no knowledge of *whom* they are sending their messages to, but just simply broadcast the messages over a channel. So you may ask: "How do subscribers receive messages if the messages are not sent directly to them?" Subscribers express interest by subscribing to certain channels (topics) and only receive messages sent to those channels. Like publishers, they have no knowledge of *who* sends the messages, they only know that messages on that channel are coming in. This process makes it much easier for multiple gadgets and portlets to communicate with each other, without specifically stating who they want to send/receive data from.
+Publishers do not send messages to subscribers directly, but rather, they publish messages that are characterized into classes and sent across message channels (topics). Therefore, the publishers have no knowledge of *whom* they are sending their messages to, they simply broadcast the messages over a channel. So you may ask: "How do subscribers receive messages if the messages are not sent directly to them?" Subscribers express interest by subscribing to certain channels and only receive messages sent to those channels. Like publishers, they have no knowledge of *who* sends the messages, they only know the channel and receive messages coming in on that channel. This process makes it much easier for multiple gadgets and portlets to communicate with each other, without specifically stating who they want to send/receive data from.
 
 PubSub can be compared to a TV station and your TV. The TV station does not directly send their material to your TV but, rather, broadcasts the material over a channel. You subscribe to that channel by tuning your TV to that channel to watch what's on it. This process of the broadcasting and tuning into TV programs is similar to publishing and subscribing to messages sent via Liferay's PubSub.
 
@@ -223,11 +223,11 @@ Let's try out PubSub for ourselves to explore how PubSub works. In this  fundame
 	
 3. Go back to a page on your site, navigate to *Add* &rarr; *More...*, and add your new gadgets to the page
 
-4. First, click *Publish a random number* on the publisher gadget. You will notice it publishes a number, but the subscriber gadget does not receive the number.
-
-<!-- TODO Please make sure all captions are complete sentences -->
+4. First, click *Publish a random number* on the PubSub Publisher gadget. You will notice it publishes a number, but the PubSub Subscriber gadget does not receive the number.
 
 	![Figure 15.3: The publisher portlet in action!](../../images/15-opensocial-23.png)
+
+<!-- TODO Please make sure all captions are complete sentences -->
 
 5. Now, select *Subscribe* on the subscriber gadget.
 
@@ -241,13 +241,15 @@ Let's try out PubSub for ourselves to explore how PubSub works. In this  fundame
 
 	As you would expect, the subscriber portlet no longer receives the random number.
 
-This simple example illustrates what PubSub does. It opens up a message channel through which publishers and subscribers can interact. Also, you probably noticed that while publishing and subscribing with your gadgets, there was no need to refresh the page. This is because the gadgets use *AJAX (Asynchronous JavaScript and XML)*. This technology refreshes your applications automatically, allowing PubSub to work efficiently and effectively throughout your Liferay Portal.
+This simple example illustrates what PubSub does. It opens up a message channel through which publishers and subscribers can interact. Also, you probably noticed, while publishing and subscribing with your gadgets, there was no need to refresh the page. This is because the gadgets use *AJAX (Asynchronous JavaScript and XML)*. This technology refreshes your applications automatically, allowing PubSub to work efficiently and effectively throughout your Liferay Portal.
 
 I bet you are wondering how to implement PubSub messaging in your gadgets and portlets. We'll dive into the code next. In fact, we'll complete exercises demonstrating gadget to gadget interaction and portlet to gadget interaction.
 
 ### Gadget to Gadget
 
-For Gadget to gadget communication, two independent gadgets are placed on a page and configured with PubSub. These two gadgets are able to communicate with one another and provide tools that the user could not otherwise produce. We will complete a simple example for gadget to gadget communication where two gadgets work together to display an address on Google Maps. The first gadget represents a publisher, which enables the user to input a specific address and publish the address. The second gadget represents the subscriber, which receives the address and displays the address and locates the address on Google Maps. Follow the steps below:
+<!-- TODO must the gadgets be on the same page for PubSub to work? -->
+
+For gadget to gadget communication, two independent gadgets are placed on a page and configured with PubSub. These two gadgets are able to communicate with one another and provide tools that the user could not otherwise produce. We will complete a simple example for gadget to gadget communication where two gadgets work together to display an address on Google Maps. The first gadget represents a publisher, which enables the user to input a specific address and publish the address. The second gadget represents the subscriber, which receives the address , displays the address, and locates the address on Google Maps. Follow the steps below:
 
 1. Publish the *Google Address* and *Google Map* gadgets, as we had done previously with other gadgets. The URLs are given below:
 
@@ -267,9 +269,9 @@ For Gadget to gadget communication, two independent gadgets are placed on a page
 
 	![Figure 15.6: After inputing a custom address in the *Google Address* gadget, you are able to see its physical location in the *Google Map* gadget.](../../images/15-opensocial-26.png)
 
-Congratulations! Your gadgets are communicating well with each other. This is simple example demonstrates two gadgets communicating with each other using PubSub. We will now dive into the source code and analyze how this interaction is accomplished.
+Congratulations! Your gadgets are communicating well with each other. This simple example demonstrates two gadgets communicating with each other using PubSub. We will now dive into the source code and analyze how this interaction is accomplished.
 
-First, we'll look at the *Google Map*'s XML file named *GoogleMapsViewer.xml*. The source code for this file is listed below:
+First, we'll look at the contents of *Google Map*'s XML file  *GoogleMapsViewer.xml*:
 
 	<?xml version="1.0" encoding="UTF-8" ?> 
 
@@ -323,7 +325,7 @@ First, we'll look at the *Google Map*'s XML file named *GoogleMapsViewer.xml*. T
 		</Content>
 	</Module>
 
-The following excerpt enables the gadget use PubSub and specifies the topic to which the gadget subscribes:
+The following excerpt from *Google Map*'s XML file enables the gadget to use PubSub and specifies the channel (topic) to which the gadget subscribes:
 
 	<Require feature="pubsub-2">
 		<Param name="topics">
@@ -333,18 +335,18 @@ The following excerpt enables the gadget use PubSub and specifies the topic to w
 		</Param>
 	</Require>
 
-Notice the opening `<Require feature="pubsub-2">`, mandating the `pubsub-2` feature for the gadget. The `<Param name="topics">` section establishes the topic (channel) `com.liferay.opensocial.gmapsdemo` that the gadget will subscribe to. Within this topics parameter you define all the channels your gadget is using for communication. Furthermore, the `subscribe="true"` attribute specifies the gadget's role as a *subscriber* to the channel.
+Notice the opening `<Require feature="pubsub-2">`, mandating the `pubsub-2` feature for the gadget. The `<Param name="topics">` section establishes the topic `com.liferay.opensocial.gmapsdemo` that the gadget will subscribe to. Within this topics parameter you define all the topics your gadget is using for communication. Furthermore, the `subscribe="true"` attribute specifies the gadget's role as a *subscriber* to the topic.
 
 The following Javascript from the gadget's *content* registers a callback on the `com.liferay.opensocial.gmapsdemo` topic:
 
 	gadgets.HubSettings.onConnect = function(hub, suc, err) {
             gadgets.Hub.subscribe("com.liferay.opensocial.gmapsdemo", callback);
 
-Your gadget calls `gadgets.HubSetting.onConnect` which enables the gadget to subscribe to our previously mentioned channel. All subscribers to this channel receive messages sent to it.
+Your gadget calls `gadgets.HubSetting.onConnect` which enables the gadget to subscribe to our previously mentioned topic. All subscribers to this topic receive messages sent to it.
 
 On callback, the gadget's `callback()` function is executed. In this example, the callback method invokes a `GClientGeocoder` to get the locations. And finally, the locations are processed and displayed on the map.
 
-In summary, to the breakdown of source code, subscriber gadgets need to specify a channel and register a callback function on that channel to handle the messages they receive.
+In summary, to the breakdown of source code, subscriber gadgets need to specify a topic and register a callback function on that topic to handle the messages they receive.
 
 Next, we'll analyze the example's *publishing* gadget's source code specified in  *GoogleMapsPublisher.xml*:
 
@@ -388,13 +390,13 @@ Next, we'll analyze the example's *publishing* gadget's source code specified in
 		</Content>
 	</Module>
 
-The publisher source code is similar to the subscriber. It mandates the `pubsub-2` feature for the gadget and specifies `com.liferay.opensocial.gmapsdemo` as one of its channels, (topics), as you would expect. Of course, the only difference is the fact that this gadget publishes to the channel, hence, the attribute setting `publish="true"`.
+The publisher source code is similar to the subscriber. It mandates the `pubsub-2` feature for the gadget and specifies `com.liferay.opensocial.gmapsdemo` as one of its topics, as you would expect. Of course, the only difference is the fact that this gadget publishes to the topic, hence, the attribute setting `publish="true"`.
 
-In the Javascript of the gadget's *content*, the gadget publishes to the channel with the following invocation:
+In the Javascript of the gadget's *content*, the gadget publishes to the topic with the following invocation:
 
 	gadgets.Hub.publish("com.liferay.opensocial.gmapsdemo", address);
 
-When the user clicks the gadget's *Publish* button, the message is sent by the publishing gadget to the channel named `com.liferay.opensocial.gmapsdemo`. PubSub broadcasts the message recieved on that channel to all subscribers, such as our *Google Address* gadget. Each subscriber receives the message on callback and processes the message. In the case of our *Google Map* gadget, the message contains an address that is processed by the gadget to render the address location on its map. 
+When the user clicks the gadget's *Publish* button, the message is sent by the publishing gadget to the topic named `com.liferay.opensocial.gmapsdemo`. PubSub broadcasts the message recieved on that topic to all subscribers, such as our *Google Address* gadget. Each subscriber receives the message on callback and processes the message. In the case of our *Google Map* gadget, the message contains an address that is processed by the gadget to render the address location on its map. 
 
 As you can see, PubSub allows your site to run efficiently and enables, otherwise, unconnected gadgets to communicate and flourish within Liferay Portal.
 
@@ -575,7 +577,7 @@ As an exercise, we will send messages from Liferay's *Directory* portlet to the 
 
 Next, you will learn why the code changes were made to make this portlet to gadget communication possible.
 
-As you know from explanations given earlier, the *Google Map* gadget is distinguished as a subscriber. Therefore, the *Directory* portlet needed to take on a publisher role to enable communication. To enable the *Directory* portlet to publish to the channel on which the *Google Map* gadget was subscribed, we inserted the following Javascript into the JSP file:
+As you know from explanations given earlier, the *Google Map* gadget is distinguished as a subscriber. Therefore, the *Directory* portlet needed to take on a publisher role to enable communication. To enable the *Directory* portlet to publish to the topic on which the *Google Map* gadget was subscribed, we inserted the following Javascript into the JSP file:
 
 	<script type="text/javascript">
 		function publishAddress(address) {
@@ -583,7 +585,7 @@ As you know from explanations given earlier, the *Google Map* gadget is distingu
 		}
 	</script>
 
-This code involves a `publishAddress()` function which is called whenever you click on the *Show in Google Maps* link. The function invokes the `Liferay.fire()` function passing in the name of the channel receiving the message and the user's address as the message. One thing to note is that when a portlet is sending data to a gadget, there must be a `gadget:` prefix before the channel declaration. This distinguishes who the messages are intended for when they are broadcast across a channel. Also, if you would like to broadcast the messages to portlets, you can add a similar line, but with a removed `gadget:` prefix. Notice that you did not need to change anything for your *Google Map* gadget. Since it is already subscribed to that channel. You only needed to define the *Directory* portlet as a publisher to that channel.
+This code involves a `publishAddress()` function which is called whenever you click on the *Show in Google Maps* link. The function invokes the `Liferay.fire()` function passing in the name of the topic receiving the message and the user's address as the message. One thing to note is that when a portlet is sending data to a gadget, there must be a `gadget:` prefix before the topic declaration. This distinguishes who the messages are intended for when they are broadcast across a topic. Also, if you would like to broadcast the messages to portlets, you can add a similar line, but with a removed `gadget:` prefix. Notice that you did not need to change anything for your *Google Map* gadget. Since it is already subscribed to that topic. You only needed to define the *Directory* portlet as a publisher to that topic.
 
 Communicating between gadgets and portlets within your site can enhance your portlets and offers a plethora of different options you can incorporate in your portal.
 
@@ -595,25 +597,27 @@ As part of Liferay's OpenSocial integration, the *OpenSocial Gadget Editor* is i
 
 Within the editor, each gadget's XML file has a wrench icon allowing you to close, rename, delete, or publish the gadget, or to simply show the gadget's URL. The *Publish* button redirects you to a screen, similar to the *OpenSocial Gadget Publisher*, allowing you to publish your gadget. The *Show URL* button allows you to add the gadget "adhoc" and share with other sites. These options offer a user-friendly and easy to use testing station for enhancing the gadgets on your sites.
 
+---
 
  ![](../../images/tip-pen-paper.png)**Note:** If you republish a previously published gadget within the *OpenSocial Gadget Editor*, a new gadget is created and the former gadget is left available as well.
 
+---
 
 <!-- TODO show an image of the gadget wrench icon options -->
 
-For a brief exercise, we will improve the *Google Map* gadget using the gadget editor. As you have probably noticed, the gadget offers a small screen that is sometimes hard to view. By using *OpenSocial Gadget Editor*, you can edit the XML file and specify an more desirable size for the gadget's UI.
+For a brief exercise, we will improve the *Google Map* gadget using the gadget editor. As you have probably noticed, the gadget offers a small screen that is sometimes hard to view. By using *OpenSocial Gadget Editor*, you can edit the XML file and specify a more desirable size for the gadget's UI.
 
 1. First, you will need to copy the gadget XML contents into the gadget editor. Navigate to *OpenSocial Gadget Publisher* from under the *Portal* heading and select the URL for *Google Map*.
 
-2. Copy the content into your clipboard.
+2. Copy the XML content into your clipboard.
 
 3. Navigate to the *OpenSocial Gadget Editor* from the Control Panel and paste your clipboard contents into the gadget editor.
 
 4. Click the floppy disk button to save your new gadget XML, naming your gadget "GoogleMapsViewer.xml". Press the green check button to save the file.
 
-	![Figure 15.8: It is easy it is inserting gadget content into Liferay's *OpenSocial Gadget Editor* and saving the content as an OpenSocial gadget.](../../images/15-opensocial-31.png)
+	![Figure 15.8: It is easy to insert gadget content into Liferay's *OpenSocial Gadget Editor* and saving it as an OpenSocial gadget.](../../images/15-opensocial-31.png)
 
-5. Select the *Preview* tab from the toolbar and you will be presented with a preview of your gadget. The snapshot below only displays part of the actual preview screen, illustrating the gadgets current limited viewing space.
+5. Select the *Preview* tab from the toolbar and you will be presented with a preview of your gadget. The snapshot below only displays part of the actual preview screen, but it illustrates the gadgets current limited viewing space.
 
 	![Figure 15.9: A preview of the *Google Map* gadget.](../../images/15-opensocial-32.png)
 
@@ -681,3 +685,5 @@ For an example of a gadget used in Liferay's social API, you will publish the *F
 This example is a great indicator of how simple and useful gadgets can be within Liferay's social API. Liferay has a constantly improving set of social features which are nicely complimented with OpenSocial gadgets. The combination of the two offers a fun and useful social network.
 
 -->
+
+<!-- TODO provide a paragraph or two that summarizes what was covered in this chapter and how they can apply it in their portal -->
