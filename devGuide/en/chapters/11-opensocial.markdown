@@ -1,4 +1,5 @@
-# Creating and integrating with OpenSocial gadgets
+
+# Creating and Integrating with OpenSocial Gadgets
 
 OpenSocial is a framework, developed by Google, Myspace and others, for creating simple light-weight socially networked web-based applications. Where "standard" applications work with data on a per-user basis, "social" applications share data within well defined networks, facilitating communication of information between groups of users. OpenSocial applications, called *gadgets*, are similar to portlets because they can be added to your portal's pages and used for all kinds of tasks. Gadgets are characterized as being simple, widely available, and easy to deploy.
 
@@ -18,7 +19,7 @@ Let's first look at the structure of an OpenSocial gadget and consider the conce
 
 An OpenSocial Gadget is specified in an XML document. The first part of the document specifies *meta-data* declaring gadget dependencies, defining characteristics about the gadget, and specifying user preferences. The meta-data can be broken up into *module preferences* and *user preferences*. The second part of the document contains the gadget *content*, defining the gadget's user interface and business logic. We'll spend time going over all these facets of gadget XML.
 
-![Figure 15.1: An OpenSocial gadget's XML consists of elements specifying gadget preferences, user preferences, and content.](../../images/15-opensocial-22.png)
+![Figure 11.1: An OpenSocial gadget's XML consists of elements specifying gadget preferences, user preferences, and content.](../../images/opensocial-22.png)
 
 Below is a sample of OpenSocial gadget XML from a weather gadget authored by The Weather Channel. The complete weather gadget is found at   [`http://gadgets.weather.com/services/gadgets/googlegadget/gadget.xml`](http://gadgets.weather.com/services/gadgets/googlegadget/gadget.xml).
 
@@ -140,7 +141,7 @@ Lastly, let's take a look at the UserPrefs for a task manager gadget and compare
 
 Here is a snapshot of what this window looks like on Liferay Portal:
 
-![Figure 15.2: Here, the Jira gadget's user preferences are made available for user input.](../../images/15-opensocial-21.png)
+![Figure 11.2: Here, the Jira gadget's user preferences are made available for user input.](../../images/opensocial-21.png)
 
 UserPrefs can be displayed in many different ways and help your gadget become more adaptable to your users' ever changing expectations. And, there is an extensive variety of UserPref data types available to properly personalize your gadgets. For complete details on UserPrefs see Google's [User preferences](https://developers.google.com/gadgets/docs/xml_reference#Userprefs_Ref) reference.
 
@@ -221,13 +222,13 @@ Let's try out PubSub for ourselves to explore how PubSub works. In this  fundame
 
 4. Click *Publish a random number* on the PubSub Publisher gadget. You will notice it publishes a number; but the PubSub Subscriber gadget does not receive the number.
 
-	![Figure 15.3: The subscriber cannot receive any messages from the publisher without being subscribed to the channel.](../../images/15-opensocial-23.png)
+	![Figure 11.3: The subscriber cannot receive any messages from the publisher without being subscribed to the channel.](../../images/opensocial-23.png)
 
 5. Select *Subscribe* on the subscriber gadget.
 
 6. Click *Publish a random number* again from the publisher gadget. You now see the random number received by the subscriber.
 
-	![Figure 15.4: When the subscriber is subscribed to the publisher's channel, the subscriber is able to receive messages.](../../images/15-opensocial-24.png)
+	![Figure 11.4: When the subscriber is subscribed to the publisher's channel, the subscriber is able to receive messages.](../../images/opensocial-24.png)
 
 7. Select *Unsubscribe* on the subscriber gadget.
 
@@ -253,13 +254,13 @@ For gadget to gadget communication, two independent gadgets are placed on a page
 
 	Your gadgets should appear like the snapshot below:
 
-	![Figure 15.5: Gadgets are easy to publish and some gadgets, like Google's *Address* and *Map* gadgets, are automatically synced to communicate with each other.](../../images/15-opensocial-25.png)
+	![Figure 11.5: Gadgets are easy to publish and some gadgets, like Google's *Address* and *Map* gadgets, are automatically synced to communicate with each other.](../../images/opensocial-25.png)
 
 	Note: The address bar is already filled with an address. This default address is specified in the *Google Address* gadget's source code. You can change the default address if you like.
 
 3. Input an address into the *Address* bar and then click *Update*. You should now be able to see that address location displayed in the *Google Map* gadget.
 
-	![Figure 15.6: After inputting a custom address in the *Google Address* gadget, you are able to see its physical location in the *Google Map* gadget.](../../images/15-opensocial-26.png)
+	![Figure 11.6: After inputting a custom address in the *Google Address* gadget, you are able to see its physical location in the *Google Map* gadget.](../../images/opensocial-26.png)
 
 Congratulations! Your gadgets are communicating well with each other. This simple example demonstrates two gadgets communicating with each other using PubSub. We will now dive into the source code and analyze how this interaction is accomplished.
 
@@ -563,7 +564,7 @@ As an exercise, we will send messages from Liferay's *Directory* portlet to the 
 
 4. Click the *Show in Google Maps* link. The address location should be displayed in the *Google Map* gadget.
 
-	![Figure 15.7: Your modified *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/15-opensocial-27.png)
+	![Figure 11.7: Your modified *Directory* portlet sends a user address to the *Google Map* gadget to display the address location in its map.](../../images/opensocial-27.png)
 
 	Your portal users can now map addresses straight from the *Directory* portlet!
 
@@ -595,7 +596,7 @@ As part of Liferay's OpenSocial integration, the *OpenSocial Gadget Editor* is i
 
 Within the editor, each gadget's XML file has a wrench icon allowing you to close, rename, delete, or publish the gadget, or to simply show the gadget's URL. The *Publish* button redirects you to a screen, similar to the *OpenSocial Gadget Publisher*, allowing you to publish your gadget. The *Show URL* button allows you to add the gadget "adhoc" and share with other sites. These options offer a user-friendly and easy to use testing station for enhancing the gadgets on your sites.
 
-![Figure 15.8: The wrench icon can be easily found to the right of your XML file.](../../images/15-opensocial-39.png)
+![Figure 11.8: The wrench icon can be easily found to the right of your XML file.](../../images/opensocial-39.png)
 
 ---
 
@@ -613,11 +614,11 @@ For a brief exercise, we will improve the *Google Map* gadget using the gadget e
 
 4. Click the floppy disk button to save your new gadget XML, naming your gadget "GoogleMapsViewer.xml". Press the green check button to save the file.
 
-	![Figure 15.9: It is easy to insert gadget content into Liferay's *OpenSocial Gadget Editor* and save it as an OpenSocial gadget.](../../images/15-opensocial-31.png)
+	![Figure 11.9: It is easy to insert gadget content into Liferay's *OpenSocial Gadget Editor* and save it as an OpenSocial gadget.](../../images/opensocial-31.png)
 
 5. Select the *Preview* tab from the toolbar and you will be presented with a preview of your gadget. The snapshot below only displays part of the actual preview screen, but it illustrates the gadgets current limited viewing space.
 
-	![Figure 15.10: This snapshot displays our limited view and dire need for an updated gadget.](../../images/15-opensocial-32.png)
+	![Figure 11.10: This snapshot displays our limited view and dire need for an updated gadget.](../../images/opensocial-32.png)
 
 6. Locate the following element in the gadget XML:
 
@@ -631,19 +632,19 @@ For a brief exercise, we will improve the *Google Map* gadget using the gadget e
 
 7. Select the editor's *Preview* mode and click the refresh button.
 
-	![Figure 15.11: The refresh button is easy to find in the upper right corner of the editor's *Preview* pane.](../../images/15-opensocial-34.png)
+	![Figure 11.11: The refresh button is easy to find in the upper right corner of the editor's *Preview* pane.](../../images/opensocial-34.png)
 
 	As you would expect, the gadget now appears taller with less width, giving a more appropriate viewing space.
 
-	![Figure 15.12: Your updated gadget is much easier to view, thanks to the editing you've done in Liferay's gadget editor.](../../images/15-opensocial-33.png)
+	![Figure 11.12: Your updated gadget is much easier to view, thanks to the editing you've done in Liferay's gadget editor.](../../images/opensocial-33.png)
 
 8. Publish your gadget for portal-wide use by selecting the wrench icon next to the *GoogleMapsViewer.xml* file and clicking *Publish*.
 
-	![Figure 15.13: You can publish your OpenSocial gadgets directly from Liferay's *OpenSocial Gadget Editor*.](../../images/15-opensocial-35.png)
+	![Figure 11.13: You can publish your OpenSocial gadgets directly from Liferay's *OpenSocial Gadget Editor*.](../../images/opensocial-35.png)
 
 	A *Publish Gadget* screen opens up, showing your gadget's URL and categories to select for your gadget.
 
-	![Figure 15.14: A *Publish Gadget* window displays your gadget's URL and a host of categories for you to consider for your gadget.](../../images/15-opensocial-36.png)
+	![Figure 11.14: A *Publish Gadget* window displays your gadget's URL and a host of categories for you to consider for your gadget.](../../images/opensocial-36.png)
 
 9. Choose a category and click *Save*.
 
@@ -667,7 +668,7 @@ For an example of a gadget used in Liferay's social API, you will publish the *F
 
 1. View your friend's public page and view a picture they uploaded in the *Documents and Media Display* portlet. For this example, a *Blue Coupe* is listed under the *Car for Sale!!!!!!!* folder:
 
-	![Figure 15.15: A snapshot of your friend's uploaded photo located in their *Documents and Media Display* portlet.](../../images/15-opensocial-28.png)
+	![Figure 11.15: A snapshot of your friend's uploaded photo located in their *Documents and Media Display* portlet.](../../images/opensocial-28.png)
 
 2. To help your friend, you decide to also post this listing on your profile as well. To accomplish this, you will need to publish the *Friends' Albums* gadget.  Navigate to the Control Panel and select *OpenSocial Gadget Publisher* located under the *Portal* heading.
 
@@ -677,18 +678,21 @@ For an example of a gadget used in Liferay's social API, you will publish the *F
 
 5. Navigate to your public page and then select *Add* &rarr; *More...* &rarr; *Friends' Albums*. This gadget should appear like the snapshot below:
 
-	![Figure 15.16: Your friends' albums appear within your gadget.](../../images/15-opensocial-29.png)
+	![Figure 11.16: Your friends' albums appear within your gadget.](../../images/opensocial-29.png)
 
 6. If you select *Car for Sale!!!!!!!* and *Blue Coupe*, you are presented with the photo from your friend's page.
 
-	![Figure 15.17: You are able to see your friends photo album on your public page!](../../images/15-opensocial-30.png)
+	![Figure 11.17: You are able to see your friends photo album on your public page!](../../images/opensocial-30.png)
 
 This example is a great indicator of how simple and useful gadgets can be within Liferay's social API. Liferay has a constantly improving set of social features which are nicely complimented with OpenSocial gadgets. The combination of the two offers a fun and useful social network.
 
 -->
 
-## Conclusion
+## Summary
 
 OpenSocial gadgets offer a plethora of new features to Liferay that present new opportunities for your portal customization. You've learned the anatomy of a gadget, how to access third-party applications from a gadget, and gadget communication with PubSub. Also, you learned that Liferay's gadget editor makes editing and customizing your gadgets easier than ever. Take a deep breath and give your self a pat on the back, you're now a trained gadget guru!
 
 <!-- TODO will need to add in social API content into conclusion -->
+
+Next, we'll explore the seemingly mysterious world of plugin security management.
+

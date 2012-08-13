@@ -43,13 +43,13 @@ An OpenSocial Gadget can be deployed in Liferay in one of two ways:
 
 -   Remote Gadget: A remote gadget is one that is executed in a remote server but is shown to the user in a given page just as if it were another application of the platform. This option is very simple but has the drawback that the portal depends on the remote server for that gadget to work. This might not be an option in some intranet environments that lack full access to Internet.
 
--   Local Gadget: A local gadget is deployed in the Liferay server in a similar manner as portlets are deployed. Since gadgets are defined in an XML file, all you need to do to deploy the gadget is upload the XML file to the server. Some people like to upload them directly through the file system, FTP or similar protocols. In some other cases, just uploading it with the *Documents and Media Library* portlet and copying the URL is enough. Once you have the URL, you can go to the *Control Panel* &rarr; *OpenSocial Gadget Publisher*, click the *Publish Gadget* button and enter the URL as shown in the following screenshot:
+-   Local Gadget: A local gadget is deployed in the Liferay server in a similar manner as portlets are deployed. Since gadgets are defined in an XML file, all you need to do to deploy the gadget is upload the XML file to the server. Some people like to upload them directly through the file system, FTP or similar protocols. In some other cases, just uploading it with the *Documents and Media* portlet and copying the URL is enough. Once you have the URL, you can go to the *Control Panel* &rarr; *OpenSocial Gadget Publisher*, click the *Publish Gadget* button and enter the URL as shown in the following screenshot:
 
 ![Figure 1.1: Publish a new Gadget](../../images/open-social-gadget-new-ctrl-panel.png)
 
 After this is done, the gadget will appear as an application that page administrators can add to their pages.
 
-One additional very interesting feature of Liferay is that it is possible to expose to the outside world any applications developed as portlets, as OpenSocial gadgets. That is, you can develop a portlet and then let anyone with access to your portlet add it to the pages of other portals or social networks as a remote gadget.
+One additional very interesting feature of Liferay is that it is possible to expose to the outside world any applications developed as portlets, as OpenSocial gadgets. That is, you can develop a portlet and then let anyone with access to your portlet add it to the pages of other portals or social networks as a remote gadget. For more details, see the *Creating and integrating with OpenSocial gadgets* chapter.
 
 Note, since an OpenSocial gadget is defined in an XML file, there is no need to create a plugin (that is a `.war` file) in order to deploy it. All you need to do is make that XML file accessible within the same server or another server and let Liferay know the URL.
 

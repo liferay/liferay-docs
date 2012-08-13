@@ -1094,4 +1094,4 @@ This chapter is a placeholder that provides a quick description to the main fram
 
 Check in the near future for new editions of the Developer's Guide for extended information on each of these frameworks.
 
-Next, we'll explore the seemingly mysterious world of plugin security management.
+Next, we'll enable users to tap into their social networks with OpenSocial gadgets.

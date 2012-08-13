@@ -404,4 +404,5 @@ In this chapter, we've discussed the reasons for plugin security management, how
 
 Now you have a better understanding of how plugin security works, and can use Liferay Portal's Plugin Security Manager effectively to specify exactly what services your plugin needs in order to function. Anyone running Liferay Portal with Security Manager turned on will know you're a "law abiding" citizen, because you've specified what services your applications need to access in order to function. 
 
-Let's look at Liferay Marketplace next!
+Next, we'll show you what it takes to develop apps for publishing to *Liferay Marketplace*.
+
