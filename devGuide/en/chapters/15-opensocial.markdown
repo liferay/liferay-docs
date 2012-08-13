@@ -115,7 +115,7 @@ Also, notice the following user preferences of this weather gadget:
 
 - `lat` and `lng` are used to store the coordinates of the user's location.
 
-- `showMap` is used to flag whether the user prefers to display a map showing the user's location.
+- `showMap` flags whether to display the user's location on the map.
 
 Lastly, let's take a look at the UserPrefs for a task manager gadget and compare it to what a user would see in the gadget's user interface. This task manager is called *Jira*.
 
