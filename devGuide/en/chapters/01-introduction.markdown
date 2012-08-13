@@ -25,7 +25,7 @@ If you are reading this, you probably want to (or need to) develop an applicatio
 
 -   Portlets: portlets are small web applications written in Java that follow a certain set of rules to allow cohabitation within the same portal or even within the same page. Portlets can be used to build applications as complex as you want since the full suite of technologies and libraries for the Java platform can be used.
 
--   OpenSocial Gadgets: gadgets are usually small applications, written using browser side technologies such as HTML and Javascript. One interesting benefit of gadgets is that they are easy to develop and for that reason there are thousands of them in repositories such as [iGoogle's repository](http://www.google.com/ig/directory?synd=open). When the application becomes more complicated you will need a complementary backend technology, such as portlets or regular Java web applications.
+-   OpenSocial Gadgets: gadgets are usually small applications, written using browser side technologies such as HTML and Javascript. One interesting benefit of gadgets is that they are easy to develop and for that reason there are thousands of them in repositories. When the application becomes more complicated you will need a complementary backend technology, such as portlets or regular Java web applications.
 
 The following sections describe these options in more detail.
 
