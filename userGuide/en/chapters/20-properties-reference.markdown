@@ -1652,10 +1652,6 @@ Input a list of sections that will be included as part of the organization form 
 	organizations.form.update.identification=addresses,phone-numbers,additional-email-addresses,websites,services
 	organizations.form.update.miscellaneous=comments,reminder-queries,custom-fields
 
-Set this property to `true` if you want any administrator that creates an organization to be automatically assigned to that organization.
-
-	organizations.assignment.auto=false
-
 Set this property to `false` if you want any administrator of an organization to be able to assign any user to that organization. By default, he will only be able to assign the users of the organizations and suborganizations that he can manage.
 
 	organizations.assignment.strict=true
@@ -1663,11 +1659,6 @@ Set this property to `false` if you want any administrator of an organization to
 Set this property to `true` if you want users to only be members of the organizations to which they are assigned explicitly. By default they will also become implicit members of the ancestors of those organizations. for example if a user belongs to Liferay Spain he will implicitly be a member of the ancestors Liferay Europe and Liferay Global and will be able to access their private pages.
 
 	organizations.membership.strict=false
-
-Set this property to `true` to allow user groups to be a member of
-organizations.
-
-	organizations.user.group.membership.enabled=true
 	
 Set this to false to disable the organization indexer.
 
