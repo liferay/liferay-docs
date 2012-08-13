@@ -43,18 +43,6 @@ Many of these configuration changes can be made by adding or modifying propertie
 
 We'll take each of the points above one by one to present a clear picture of how to cluster Liferay. 
 
-### The Quartz scheduler should be set for a clustered environment [](id=lp-6-1-ugen15-the-quartz-scheduler-should-be-set-for-a-clustered-environm-0)
-
-Liferay uses Quartz to run jobs on a schedule. When you write an application for Liferay, one of the things you can do is set up jobs like these. An example of this is the calendar: periodically, a job runs to check to see whether it's time to trigger a calendar event. The scheduler needs to know that it's in a cluster, or events might get triggered multiple times by different nodes. 
-
-This is very easy to configure. It takes only one property in your `portal-ext.properties` file: 
-
-	org.quartz.jobStore.isClustered=true
-	
-If you've already started Liferay and had your database generated, you'll need to drop all the `QUARTZ_` tables to make this work. 
-	
-Your first clustering task is already done! Let's move on to the database. 
-
 ### All nodes should be pointing to the same Liferay database [](id=lp-6-1-ugen15-all-nodes-should-be-pointing-to-the-same-liferay-database-0)
 
 This is pretty self-explanatory. Each node should be configured with a data source that points to one Liferay database (or a database cluster) that all the nodes will share. This ensures all the nodes operate from the same basic data set. This means, of course, Liferay cannot (and should not) use the embedded HSQL database that is shipped with the bundles (but you already knew that, right?). And, of course, it goes without saying the database server is a separate physical box from the server which is running Liferay. 

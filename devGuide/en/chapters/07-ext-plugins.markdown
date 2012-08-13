@@ -115,7 +115,7 @@ By default, several files are added to the plugin. Here are the most significant
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** After creating an Ext plugin, remove all of the files added by default that are not necessary for the extension. This is important because Liferay keeps track of the files deployed by each Ext plugin. To avoid collisions, it won't allow deploying two Ext plugins if they override the same file. Removing any unnecessary files from an ext plugin makes it easier to use alongside other Ext plugins.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** After creating an Ext plugin, remove all of the files added by default that are not necessary for the extension. This is important because Liferay keeps track of the files deployed by each Ext plugin. To avoid collisions, it won't allow deploying two Ext plugins if they override the same file. Removing any unnecessary files from an ext plugin makes it easier to use alongside other Ext plugins.
 
 ---
 
@@ -157,7 +157,7 @@ For example, let's specify `C:\work` as our `ext.work.dir` value. Let's say we h
 
 ---
 
-![tip](../../images/tip-pen-paper.png) Note: Some Liferay bundles, come installed with a sample website for a fictional company called 7-Cogs. This sample website is useful for showcasing certain features of Liferay. However, once you've removed it, you don't want the Ant targets to reinstall it every time your bundle is unzipped again. To make sure this doesn't happen, unzip your bundle, delete the `{work}/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23/webapps/sevencogs-hook` folder, and then re-zip your bundle.
+ ![note](../../images/tip-pen-paper.png)**Note:** Some Liferay bundles, come installed with a sample website for a fictional company called 7-Cogs. This sample website is useful for showcasing certain features of Liferay. However, once you've removed it, you don't want the Ant targets to reinstall it every time your bundle is unzipped again. To make sure this doesn't happen, unzip your bundle, delete the `{work}/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23/webapps/sevencogs-hook` folder, and then re-zip your bundle.
 
 ---
 
@@ -189,7 +189,7 @@ Here are instructions for deploying your plugin from Liferay IDE/Studio or the t
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** The `direct-deploy` target deploys all the plugin changes directly to the appropriate directories in the Liferay application. If instead you deploy the plugin using the `deploy` target, the Liferay server needs to apply the changes from the resulting `.war` file at startup, possibly slowing down your development process. For this reason, using `direct-deploy` is the usually preferred method for deploying Ext plugins during development. But note, `direct-deploy` does not work with WebLogic Server or WebSphere application server environments.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** The `direct-deploy` target deploys all the plugin changes directly to the appropriate directories in the Liferay application. If instead you deploy the plugin using the `deploy` target, the Liferay server needs to apply the changes from the resulting `.war` file at startup, possibly slowing down your development process. For this reason, using `direct-deploy` is the usually preferred method for deploying Ext plugins during development. But note, `direct-deploy` does not work with WebLogic Server or WebSphere application server environments.
 
 ---
 
@@ -523,7 +523,7 @@ This strategy will help you determine what you will need to merge in the future 
 
 ---
 
-![tip](../../images/tip-pen-paper.png) This is a very advanced technique that, especially if abused, may have a high impact on the maintainability of your code. Try to look for alternatives and if you confirm that this is your only alternative try to apply it only for the short term and get in touch with Liferay's developers to apply the necessary changes to the product source code.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** This is a very advanced technique that, especially if abused, may have a high impact on the maintainability of your code. Try to look for alternatives and if you confirm that this is your only alternative try to apply it only for the short term and get in touch with Liferay's developers to apply the necessary changes to the product source code.
 
 ---
 
@@ -561,7 +561,7 @@ Ext plugins have been created as an evolution of the extension environment provi
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** When migrating an extension environment, it's worth considering if all or at least some of the extension environment's features can be moved into other types of plugins such as portlets and hooks. Portlets and hooks are designed to meet specific needs and they are easier to learn. Additionally, they are cheaper to maintain since they often require fewer changes when upgrading to a new version of Liferay.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** When migrating an extension environment, it's worth considering if all or at least some of the extension environment's features can be moved into other types of plugins such as portlets and hooks. Portlets and hooks are designed to meet specific needs and they are easier to learn. Additionally, they are cheaper to maintain since they often require fewer changes when upgrading to a new version of Liferay.
 
 ---
 

@@ -111,7 +111,7 @@ Ext plugins provide the largest degree of flexibility in modifying the Liferay c
 
 ---
 
-![tip](../../images/tip-pen-paper.png) If you have developed for Liferay 5.2 or before, you may be familiar with what was known as the *Extension Environment*. Ext plugins were introduced in Liferay 6.0 to replace the extension environment in order to simplify development. It is possible to automatically convert any existing Extension Environment into a plugin. Check the *Migrating old extension environments* section of the *Ext plugins* chapter for detailed instructions.
+ ![note](../../images/tip-pen-paper.png)**Note:** If you have developed for Liferay 5.2 or before, you may be familiar with what was known as the *Extension Environment*. Ext plugins were introduced in Liferay 6.0 to replace the extension environment in order to simplify development. It is possible to automatically convert any existing Extension Environment into a plugin. Check the *Migrating old extension environments* section of the *Ext plugins* chapter for detailed instructions.
 
 ---
 
