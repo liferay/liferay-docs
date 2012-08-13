@@ -71,7 +71,7 @@ Now, let's dive deeper into gadget preferences.
 
 The gadget preferences (ModulePrefs) define characteristics of your gadget, including features that it uses, how it authenticates content, how it is displayed to the user, and how it is displayed in a gadget directory. The preferences are wrapped in `<ModulePrefs>...</ModulePrefs>` tags.
 
-Within the ModulePrefs, you specify the gadget's dependencies with `<Require/>` tags and optional features with `<Optional/>` tags. If you specify a feature in a `<Require/>` tag, the gadget itself only renders if the feature is available. If you specify a feature in an `<Optional/>` tag, the gadget renders despite the lack of feature availability.
+Within the ModulePrefs, you specify the gadget's dependencies with `<Require/>` tags and optional features with `<Optional/>` tags. If you specify a feature in a `<Require/>` tag, the gadget itself only renders if the feature is available. If you specify a feature in an `<Optional/>` tag, the gadget renders despite feature availability.
 
 ModulePrefs can also be used to configure important features such as PubSub and OAuth. The PubSub feature allows for communication between gadgets and portlets on the same page, by allowing them to publish and subscribe on message channels. The OAuth feature provides secure connections between your portal and third-party sites. These are just a couple of useful features that can be defined in the ModulePrefs. You'll learn more about them later in this chapter.
 
@@ -115,7 +115,7 @@ Also, notice the following user preferences of this weather gadget:
 
 - `lat` and `lng` are used to store the coordinates of the user's location.
 
-- `showMap` is used to flag whether the user prefers to display a map showing their location.
+- `showMap` is used to flag whether the user prefers to display a map showing the user's location.
 
 Lastly, let's take a look at the UserPrefs for a task manager gadget and compare it to what a user would see in the gadget's user interface. This task manager is called *Jira*.
 
@@ -142,7 +142,7 @@ Here is a snapshot of what this window looks like on Liferay Portal:
 
 ![Figure 15.2: Here, the Jira gadget's user preferences are made available for user input.](../../images/15-opensocial-21.png)
 
-UserPrefs can be displayed in many different ways and helps your gadget become more adaptable to your users' ever changing expectations. And, there is an extensive variety of UserPref data types available to properly personalize your gadgets. For complete details on UserPrefs see Google's [User preferences](https://developers.google.com/gadgets/docs/xml_reference#Userprefs_Ref) reference.
+UserPrefs can be displayed in many different ways and help your gadget become more adaptable to your users' ever changing expectations. And, there is an extensive variety of UserPref data types available to properly personalize your gadgets. For complete details on UserPrefs see Google's [User preferences](https://developers.google.com/gadgets/docs/xml_reference#Userprefs_Ref) reference.
 
 ### Gadget Content
 
@@ -227,7 +227,7 @@ Let's try out PubSub for ourselves to explore how PubSub works. In this  fundame
 
 6. Click *Publish a random number* again from the publisher gadget. You now see the random number received by the subscriber.
 
-	![Figure 15.4: When the subscriber is subscribed to the publisher's channel, it is able to receive messages.](../../images/15-opensocial-24.png)
+	![Figure 15.4: When the subscriber is subscribed to the publisher's channel, the subscriber is able to receive messages.](../../images/15-opensocial-24.png)
 
 7. Select *Unsubscribe* on the subscriber gadget.
 
@@ -581,7 +581,7 @@ This code involves a `publishAddress()` function which is called whenever you cl
 
 ---
 
-![](../../images/tip-pen-paper.png)**Note:** If you would like to broadcast messages to portlets, you follow the same guidelines, but with a removed `gadget:` prefix from within the `Liferay.fire()` function.
+![](../../images/tip-pen-paper.png)**Note:** If you would like to broadcast messages to portlets, follow the same guidelines, but do not use the `gadget:` prefix in your topic parameter value for the call to the `Liferay.fire()` function.
 
 ---
 
@@ -613,7 +613,7 @@ For a brief exercise, we will improve the *Google Map* gadget using the gadget e
 
 4. Click the floppy disk button to save your new gadget XML, naming your gadget "GoogleMapsViewer.xml". Press the green check button to save the file.
 
-	![Figure 15.9: It is easy to insert gadget content into Liferay's *OpenSocial Gadget Editor* and saving it as an OpenSocial gadget.](../../images/15-opensocial-31.png)
+	![Figure 15.9: It is easy to insert gadget content into Liferay's *OpenSocial Gadget Editor* and save it as an OpenSocial gadget.](../../images/15-opensocial-31.png)
 
 5. Select the *Preview* tab from the toolbar and you will be presented with a preview of your gadget. The snapshot below only displays part of the actual preview screen, but it illustrates the gadgets current limited viewing space.
 
@@ -635,7 +635,7 @@ For a brief exercise, we will improve the *Google Map* gadget using the gadget e
 
 	As you would expect, the gadget now appears taller with less width, giving a more appropriate viewing space.
 
-	![Figure 15.12: Your updated gadget is much easier to view in thanks to Liferay's gadget editor.](../../images/15-opensocial-33.png)
+	![Figure 15.12: Your updated gadget is much easier to view, thanks to the editing you've done in Liferay's gadget editor.](../../images/15-opensocial-33.png)
 
 8. Publish your gadget for portal-wide use by selecting the wrench icon next to the *GoogleMapsViewer.xml* file and clicking *Publish*.
 
