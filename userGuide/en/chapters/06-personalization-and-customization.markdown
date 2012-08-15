@@ -18,7 +18,7 @@ Needs text
 
 Liferay Portal Enterprise Edition provides an implementation of a JSR-94 compliant rules engine. This rules engine is provided as a Web Plugin and is based on the popular open source Drools project. 
 
-### Why use a rules engine?  [](id=why-use-a-rules-engine-)
+### Why use a rules engine? [](id=why-use-a-rules-engine-)
 
 If you are not familiar with rules engines, you may be wondering why you would want to use one. In most applications, complex rule processing often takes the form of nested `if-else` blocks of code which can be very difficult to decipher and to maintain. If rules change, a developer must work with a business user to define the new rules. The developer must then read through the existing logic to understand what is happening and make the necessary modifications. The changes must then be recompiled, tested, and redeployed. A rules engine provides a means to separate the rules or logic of an application from the remaining code. Separating these rules provides several distinct advantages. 
 
@@ -32,7 +32,7 @@ After all this, you may be interested in using Liferay's rules engine, so let's 
 
 ### Installation [](id=installati-4)
 
-The Drools Web Plugin is available to Liferay Enterprise Edition customers through the customer portal. In can also be downloaded and installed through the built-in plugin repository. The name is `Drools Web`, and you'll find it in the list of web plugins. 
+The Drools Web Plugin is available to Liferay Enterprise Edition customers through Liferay Marketplace. Its name is `Drools EE`, and you'll find it categorized as a Utility app.
 
 The Drools Web Plugin provides a rules engine implementation, but by itself it doesn't provide any observable changes to the portal user interface or any additional functionality. To see the rules engine in action, you can download and install a Sample Drools Portlet that contains two rule definitions that illustrate how to leverage the rules engine in your custom code. The Sample Drools Portlet is available through the Customer Portal.
 
@@ -42,17 +42,17 @@ Let's examine the sample portlet to see how it works.
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 
-Begin by downloading and installing the Sample Drools Portlet. The Sample Drools Portlet is available to Liferay Enterprise Edition customers through the customer portal. It can also be downloaded and installed through the built-in plugin repository. The name is `sample-drools-portlet`, and you'll find it in the list of web plugins.
+Begin by downloading and installing the Sample Drools Portlet. The Sample Drools Portlet is available to Liferay Enterprise Edition customers through the customer portal. The name is `sample-drools-portlet`, and you'll find it in the list of web plugins.
 
-After installation is complete, add the portlet to a page. Initially, the portlet indicates the name of the currently logged in user and a message that says there are no results. To see results in the portlet we'll need to create and tag assets in the community to which you added the portlet. 
+After installation is complete, add the portlet to a page. Initially, the portlet indicates the name of the currently logged in user and a message that says there are no results. To see results in the portlet we'll need to create and tag assets in the site to which you added the portlet. 
 
-Log in as an administrative user and navigate to the Control Panel. Once in the Control Panel, add a new Web Content entry to your community. Before publishing the Web Content entry, tag the article with *west coast symposium*. While still in the control panel, navigate to *My Account* and select the Address link on the right side of the screen. Enter a Canadian, Mexican, or US based address and save the record. Now, navigate back to the liferay.com community and the Web Content should be displayed in the Sample Drools Portlet.
+Log in as an administrative user and navigate to the Control Panel. Once in the Control Panel, add a new Web Content entry to your site. Before publishing the Web Content entry, tag the article with *west coast symposium*. While still in the control panel, navigate to *My Account* and select the Address link on the right side of the screen. Enter a Canadian, Mexican, or US based address and save the record. Now, navigate back to the liferay.com site and the Web Content should be displayed in the Sample Drools Portlet.
 
 The default rule that's being evaluated displays a list of assets based on the current user's address. For example, if the current user's country is set to Canada, Mexico, or the United States, the Sample Drools Portlet displays a list of assets that have been tagged with the *west coast symposium* tag.
 
 <!-- | TODO: Need screen shots here. | --> 
 <!-- | TODO: We need to point to what we're about to do before we do it; otherwise this is hard to follow. | --> 
-The Sample Drools Portlet plugin also contains a second rule that returns personalized content based on the user's net worth set in the My Account &rarr; Custom Fields section of the Control Panel. To see this rule in action, add a second instance of the Sample Drools Portlet to a page. Once added to the page, select the *Options* icon (*the wrench*) and then select *Configuration*. You need to replace the rules defined in the *Rules* section of the Configuration screen with contents of the *rules_user_custom_attribute_content.drl* file. The rule file can be found in the deployed portlet at `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl`. In the same Configuration screen, add `networth` to the user-custom-attribute-names field. Save your changes and close the pop-up window. Navigate to the Control Panel and add a Custom Field on the User object with the Key `networth`. Navigate to *My Account* and select the Custom Fields link on the right side of the screen. Enter a net worth of 150000 and save the record. While still in the Control Panel, add a new Web Content entry to the default liferay.com community. Before publishing the Web Content entry, tag the article with *high net worth* and then save the entry. Now, navigate back to the liferay.com community and the Web Content should be displayed in the second Sample Drools Portlet added to the page.
+The Sample Drools Portlet plugin also contains a second rule that returns personalized content based on the user's net worth set in the My Account &rarr; Custom Fields section of the Control Panel. To see this rule in action, add a second instance of the Sample Drools Portlet to a page. Once added to the page, select the *Options* icon (*the wrench*) and then select *Configuration*. You need to replace the rules defined in the *Rules* section of the Configuration screen with contents of the *rules_user_custom_attribute_content.drl* file. The rule file can be found in the deployed portlet at `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl`. In the same Configuration screen, add `networth` to the user-custom-attribute-names field. Save your changes and close the pop-up window. Navigate to the Control Panel and add a Custom Field on the User object with the Key `networth`. Navigate to *My Account* and select the Custom Fields link on the right side of the screen. Enter a net worth of 150000 and save the record. While still in the Control Panel, add a new Web Content entry to the default liferay.com site. Before publishing the Web Content entry, tag the article with *high net worth* and then save the entry. Now, navigate back to the liferay.com site and the Web Content should be displayed in the second Sample Drools Portlet added to the page.
 
 Now that you can see how it works in practice, let's look closer at the rules themselves. 
 
@@ -71,7 +71,7 @@ At first glance, this .drl file looks a lot like a Java class file.  This exampl
 	## addresses set in the My Account section of the Control Panel.
 	##
 	## For example, suppose the current user has an address in the United States and
-	## is a member of the Liferay community. All assets within the Liferay community
+	## is a member of the Liferay site. All assets within the Liferay site
 	## that are tagged with "West Coast Symposium" will be returned.
 	##
 
