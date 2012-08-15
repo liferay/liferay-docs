@@ -50,7 +50,7 @@ Historically (prior to Liferay 5.1), only power users received personal sites. B
     
 Personal sites are a dynamic feature of Liferay Portal. They allow users to manage and customize their own pages and content on your portal. Next, let's look at how users can customize applicatons.
 
-## Setting preferences to customize applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
+## Setting preferences to customize pages and applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
 
 <!-- This section needs to be written -->
 
