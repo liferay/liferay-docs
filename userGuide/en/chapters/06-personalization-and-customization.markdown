@@ -1,24 +1,93 @@
 # Personalization and Customization [](id=drools)
 
-<!--  Old header
- Personalization, Collaboration tools, and social networking [](id=lp-6-1-ugen06-personalization-collaboration-tools-and-social-networking-0)
-There is significant content missing from this chapter.
-Needs text
-## User  site [](id=lp-6-1-ugen06-user--site-0)
-Needs text
-## User public site [](id=lp-6-1-ugen06-user-public-site-0)
-Needs text
-## Automatic personalization of content (via rules integration) [](id=lp-6-1-ugen06-automatic-personalization-of-content-via-rules-integration-0)
-Needs text
--->
+In this chapter, we discuss several ways Liferay users can customize pages, applications, and the way they use your portal. We'll cover the following topics:
 
-## Setting preferences to customize applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
+- Personal Sites
+- Customizable Pages and Applications
+- Using a Rules Engine
+
+Personal sites allow each portal user to manage and customize a set of public and/or private pages and any associated content or applications. Public pages provide a means of making content publicly available while private pages provide a means of hiding information from other users. Liferay 6.1 introduced customizable pages and applications. Administrators can designate certain pages or applications as "customizable," which allows each user to make and save their own customizations. Liferay Enterprise Edition provides a rules engine which allows administrators to create custom portal rules and simplify complex blocks of code containing lots of `if-else` statements. Let's start by discussing personal sites.
+
+## User Personal Sites
+
+By default, newly created users in Liferay are each granted a personal site. Each user functions as the site administrator of his or her personal site. Personal sites are fully customizable but cannot have more than one member. The public pages of personal sites provide a space for users to publish content that they'd like to make accessible to anyone, including guests. User blogs are often placed on public personal site pages. Content and applications that users would like to reserve for personal use are often placed on the private pages of personal sites. For example, each user can add a Documents and Media portlet to his or her private pages and use it as an online private file repository.
+
+If you'd like to disable personal sites for your portal, just add the following properties to your `portal-ext.properties` file:
+
+    layout.user.public.layouts.enabled=false
+    layout.user.private.layouts.enabled=false
+    
+---
+
+![Tip](../../images/tip.png) Note that the public and private page sets of personal sites are handled separately. You can leave one page set enabled while disabling the other.
+
+---
+
+What if you initially had user personal sites enabled for your portal but then disabled them? Each existing user's personal site remains on your portal until the next time they log in, at which point it's removed.
+
+You can allow users to create personal sites but not have them automatically created for new users. To do this, first make sure that `layout.user.public.layouts.enabled` and `layout.user.private.layouts.enabled` are not set to `false`. You don't need to explicitly set them to `true`--`true` is the default. Then add the following properties to your `portal-ext.properties` file:
+
+    layout.user.public.layouts.auto.create=false
+    layout.user.private.layouts.auto.create=false
+    
+If the properties `layout.user.public.layouts.enabled`, `layout.user.private.layouts.enabled`, `layout.user.public.layouts.auto.create`, and `layout.user.private.layouts.auto.create` are all set to `true`, which is the default, then users will have personal sites and public and private pages will be automatically created for new users. There are number of portal properties you can use to customize the automatically created pages. You can customize the names of the default pages, the portlets that appear on the pages, the themes and layout templates of the default pages, and more. Please refer to the Default User Public Layouts and Default User Private Layouts sections of chapter 20 for details.
+
+---
+
+![Tip](../../images/tip.png) Prior to Liferay 6.1, administrators could disallow users from being able to modify the pages and portlets of their personal sites by setting the following properties:
+
+    layout.user.public.layouts.modifiable=true
+    layout.user.private.layouts.modifiable=true
+    
+As of Liferay 6.1, this property is obsolete. However, you can customize the modifiable portions of personal sites through Liferay's permissions system by removing permissions from roles. To disallow all portal users from modifying something, remove the permission from the User role.
+
+---
+
+Historically (prior to Liferay 5.1), only power users received personal sites. Back then, they were called personal communities. If you'd like only power users to receive personal sites, add the following properties to your `portal-ext.properties` file:
+
+    layout.user.public.layouts.power.user.required=true
+    layout.user.private.layouts.power.user.required=true
+    
+Personal sites are a dynamic feature of Liferay Portal. They allow users to manage and customize their own pages and content on your portal. Next, let's look at how users can customize applicatons.
+
+## Setting preferences to customize pages and applications [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
+
+Liferay 6.1 introduced the concept of page customizations. Site administrators can designate pages or sections of pages to be customizable. When a site member visits such a page, a notification will appear stating that the user can customize the page. Customizations made by site members can be made only in the sections of pages designated by site administrators. Page customizations are only visible to the user who made the customizations. Non-site members and guests can't make page customizations.
+
+To enable page customizations as a site administrator, first navigate to the page you'd like to let site members modify. Then select *Manage* &rarr; *Page Customizations* from the Dockbar.
+
+![Figure 6.x: To enable page customizations, select *Manage* &rarr; *Page Customizations* from the Dockbar.](../../images/page-customizations.png)
+
+Once you've selected *Manage* &rarr; *Page Customizations*, you'll see one or more red regions, depending on the layout template of your page. Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page. Regions that you've designated as customizable are colored green.
+
+![Figure 6.x: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../images/customizable-regions.png)
+
+When site members visit your customizable page, they'll see a notification saying, "You can customize this page." Site members can toggle between viewing their customized page and viewing the default page by clicking the *View Default Page* or *View My Customized Page* links just below the Dockbar. There's also a *Reset My Customizations* link that restores a user's customized page to the match the default page. This allows users to discard one set of customizations and start a new set without having to manually undo each customization that they'd previously made. 
+
+Note that non-administrator site members can access the Add menu from the Dockbar when viewing their customizable page even if they don't ordinarily have permission to view this menu. This allows them to add portlets to the sections of the page that they're allowed to customize. If they click *View Default Page*, the Add menu will disappear from the Dockbar since they're not allowed to modify the default page.
+
+![Figure 6.x: Non-administrator site members can customize their own versions of customizble pages but can't modify the default page.](../../images/default-customizable-page.png)
+
+Users can make two kinds of customizations to customizable regions. First, they can configure any portlet applications within the customizable regions. Second, they can add portlets to or remove portlets from the customizable regions. As a simple example, suppose that you, as a site administrator, selected the right column of the default portal homepage to be customizable. A member of the default site could take the following steps to make a personal customization of the portal homepage:
+
+1. Navigate to the portal homepage by clicking *Go To* &rarr; *Liferay* from the Dockbar. (The portal homepage belongs to an automatically created site called *Liferay*, by default.)
+2. Remove the Hello World portlet remove from the right column of the page.
+3. Add the Language portlet to the right column by clicking *Add* &rarr; *More* in the Dockbar, expanding the *Tools* category, and clicking *Add* next to *Language*.
+4. Configure the Language portlet by clicking on the wrench icon and selecting *Configuration* and then opening the *Display Style* dropdown menu and choosing *Select Box*.
+
+The Language portlet is useful to have on your portal homepage if you expect users who speak different languages to access your portal. Users can select their language in the Language portlet to view a translation of the portal into their native language. After closing the Configuration dialog box of the Language portlet, the customized portal homepage looks like this:
+
+![Figure 6.x: In this example, Joe Bloggs removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
+
+In addition to customizing portlet configurations, users can customize the look and feel of portlets and import or export portlet settings. Next, let's look at how to use Liferay's rules engine.
+
+## Using Liferay's rules engine
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay Portal Enterprise Edition provides an implementation of a JSR-94 compliant rules engine. This rules engine is provided as a Web Plugin and is based on the popular open source Drools project. 
 
-### Why use a rules engine?  [](id=why-use-a-rules-engine-)
+### Why use a rules engine? [](id=why-use-a-rules-engine-)
 
 If you are not familiar with rules engines, you may be wondering why you would want to use one. In most applications, complex rule processing often takes the form of nested `if-else` blocks of code which can be very difficult to decipher and to maintain. If rules change, a developer must work with a business user to define the new rules. The developer must then read through the existing logic to understand what is happening and make the necessary modifications. The changes must then be recompiled, tested, and redeployed. A rules engine provides a means to separate the rules or logic of an application from the remaining code. Separating these rules provides several distinct advantages. 
 
@@ -32,7 +101,7 @@ After all this, you may be interested in using Liferay's rules engine, so let's 
 
 ### Installation [](id=installati-4)
 
-The Drools Web Plugin is available to Liferay Enterprise Edition customers through the customer portal. In can also be downloaded and installed through the built-in plugin repository. The name is `Drools Web`, and you'll find it in the list of web plugins. 
+The Drools Web Plugin is available to Liferay Enterprise Edition customers through Liferay Marketplace. Its name is `Drools EE`, and you'll find it categorized as a Utility app.
 
 The Drools Web Plugin provides a rules engine implementation, but by itself it doesn't provide any observable changes to the portal user interface or any additional functionality. To see the rules engine in action, you can download and install a Sample Drools Portlet that contains two rule definitions that illustrate how to leverage the rules engine in your custom code. The Sample Drools Portlet is available through the Customer Portal.
 
@@ -42,17 +111,17 @@ Let's examine the sample portlet to see how it works.
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 
-Begin by downloading and installing the Sample Drools Portlet. The Sample Drools Portlet is available to Liferay Enterprise Edition customers through the customer portal. It can also be downloaded and installed through the built-in plugin repository. The name is `sample-drools-portlet`, and you'll find it in the list of web plugins.
+Begin by downloading and installing the Sample Drools Portlet. The Sample Drools Portlet is available to Liferay Enterprise Edition customers through the customer portal. The name is `sample-drools-portlet`, and you'll find it in the list of web plugins.
 
-After installation is complete, add the portlet to a page. Initially, the portlet indicates the name of the currently logged in user and a message that says there are no results. To see results in the portlet we'll need to create and tag assets in the community to which you added the portlet. 
+After installation is complete, add the portlet to a page. Initially, the portlet indicates the name of the currently logged in user and a message that says there are no results. To see results in the portlet we'll need to create and tag assets in the site to which you added the portlet. 
 
-Log in as an administrative user and navigate to the Control Panel. Once in the Control Panel, add a new Web Content entry to your community. Before publishing the Web Content entry, tag the article with *west coast symposium*. While still in the control panel, navigate to *My Account* and select the Address link on the right side of the screen. Enter a Canadian, Mexican, or US based address and save the record. Now, navigate back to the liferay.com community and the Web Content should be displayed in the Sample Drools Portlet.
+Log in as an administrative user and navigate to the Control Panel. Once in the Control Panel, add a new Web Content entry to your site. Before publishing the Web Content entry, tag the article with *west coast symposium*. While still in the control panel, navigate to *My Account* and select the Address link on the right side of the screen. Enter a Canadian, Mexican, or US based address and save the record. Now, navigate back to the liferay.com site and the Web Content should be displayed in the Sample Drools Portlet.
 
 The default rule that's being evaluated displays a list of assets based on the current user's address. For example, if the current user's country is set to Canada, Mexico, or the United States, the Sample Drools Portlet displays a list of assets that have been tagged with the *west coast symposium* tag.
 
 <!-- | TODO: Need screen shots here. | --> 
 <!-- | TODO: We need to point to what we're about to do before we do it; otherwise this is hard to follow. | --> 
-The Sample Drools Portlet plugin also contains a second rule that returns personalized content based on the user's net worth set in the My Account &rarr; Custom Fields section of the Control Panel. To see this rule in action, add a second instance of the Sample Drools Portlet to a page. Once added to the page, select the *Options* icon (*the wrench*) and then select *Configuration*. You need to replace the rules defined in the *Rules* section of the Configuration screen with contents of the *rules_user_custom_attribute_content.drl* file. The rule file can be found in the deployed portlet at `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl`. In the same Configuration screen, add `networth` to the user-custom-attribute-names field. Save your changes and close the pop-up window. Navigate to the Control Panel and add a Custom Field on the User object with the Key `networth`. Navigate to *My Account* and select the Custom Fields link on the right side of the screen. Enter a net worth of 150000 and save the record. While still in the Control Panel, add a new Web Content entry to the default liferay.com community. Before publishing the Web Content entry, tag the article with *high net worth* and then save the entry. Now, navigate back to the liferay.com community and the Web Content should be displayed in the second Sample Drools Portlet added to the page.
+The Sample Drools Portlet plugin also contains a second rule that returns personalized content based on the user's net worth set in the My Account &rarr; Custom Fields section of the Control Panel. To see this rule in action, add a second instance of the Sample Drools Portlet to a page. Once added to the page, select the *Options* icon (*the wrench*) and then select *Configuration*. You need to replace the rules defined in the *Rules* section of the Configuration screen with contents of the *rules_user_custom_attribute_content.drl* file. The rule file can be found in the deployed portlet at `sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules_user_custom_attribute_content.drl`. In the same Configuration screen, add `networth` to the user-custom-attribute-names field. Save your changes and close the pop-up window. Navigate to the Control Panel and add a Custom Field on the User object with the Key `networth`. Navigate to *My Account* and select the Custom Fields link on the right side of the screen. Enter a net worth of 150000 and save the record. While still in the Control Panel, add a new Web Content entry to the default liferay.com site. Before publishing the Web Content entry, tag the article with *high net worth* and then save the entry. Now, navigate back to the liferay.com site and the Web Content should be displayed in the second Sample Drools Portlet added to the page.
 
 Now that you can see how it works in practice, let's look closer at the rules themselves. 
 
@@ -71,7 +140,7 @@ At first glance, this .drl file looks a lot like a Java class file.  This exampl
 	## addresses set in the My Account section of the Control Panel.
 	##
 	## For example, suppose the current user has an address in the United States and
-	## is a member of the Liferay community. All assets within the Liferay community
+	## is a member of the Liferay site. All assets within the Liferay site
 	## that are tagged with "West Coast Symposium" will be returned.
 	##
 
@@ -174,4 +243,6 @@ For additional documentation on the Drools rules language, please see the offici
 
 ## Summary [](id=summ-29)
 
-As you can see from the Sample Rules Portlet, using a rules engine can be a powerful way to decouple the rules of your application from the front-end and back-end code. These rules are written in a declarative language that business users can read and verify. Additionally, rule definitions can be modified without modifying the underlying Java code, re-compiling, or redeploying your applications. 
+In this chapter, we discussed personal sites for portal users. We showed how to enable or disable them, how to set whether or not pages should be automatically created, and how to customize automatically created pages. We also examined general customizable pages that don't belong to personal sites. Administrators can designate certain pages or portions of pages to be customizable and site members can configure these portions of the pages, add or remove portlet applications, and save their configurations.
+
+We also discussed how you can use Liferay's rules engine with Liferay EE. As you can see from the Sample Rules Portlet, using a rules engine can be a powerful way to decouple the rules of your application from the front-end and back-end code. These rules are written in a declarative language that business users can read and verify. Additionally, rule definitions can be modified without modifying the underlying Java code, re-compiling, or redeploying your applications. 
