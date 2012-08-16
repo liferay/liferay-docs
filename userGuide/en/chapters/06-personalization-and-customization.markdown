@@ -6,7 +6,7 @@ In this chapter, we discuss several ways Liferay users can customize pages, appl
 - Customizable Pages and Applications
 - Using a Rules Engine
 
-Personal sites allow each portal user to manage and customize a set of public and/or private pages and any associated content or applications. Public pages provide a means of making content publically available while private pages provide a means of hiding information from other users. Liferay 6.1 introduced customizable pages and applications. Administrators can designate certain pages or applications as "customizable," which allows each user to make and save their own customizations. Liferay Enterprise Edition provides a rules engine which allows administrators to create custom portal rules and simplify complex blocks of code containing lots of `if-else` statements. Let's start by discussing personal sites.
+Personal sites allow each portal user to manage and customize a set of public and/or private pages and any associated content or applications. Public pages provide a means of making content publicly available while private pages provide a means of hiding information from other users. Liferay 6.1 introduced customizable pages and applications. Administrators can designate certain pages or applications as "customizable," which allows each user to make and save their own customizations. Liferay Enterprise Edition provides a rules engine which allows administrators to create custom portal rules and simplify complex blocks of code containing lots of `if-else` statements. Let's start by discussing personal sites.
 
 ## User Personal Sites
 
@@ -54,7 +54,7 @@ Personal sites are a dynamic feature of Liferay Portal. They allow users to mana
 
 Liferay 6.1 introduced the concept of page customizations. Site administrators can designate pages or sections of pages to be customizable. When a site member visits such a page, a notification will appear stating that the user can customize the page. Customizations made by site members can be made only in the sections of pages designated by site administrators. Page customizations are only visible to the user who made the customizations. Non-site members and guests can't make page customizations.
 
-To enable page customizations as a site administrator, first navigate to the page you'd like to let site administrators modify. Then select *Manage* &rarr; *Page Customizations* from the Dockbar.
+To enable page customizations as a site administrator, first navigate to the page you'd like to let site members modify. Then select *Manage* &rarr; *Page Customizations* from the Dockbar.
 
 ![Figure 6.x: To enable page customizations, select *Manage* &rarr; *Page Customizations* from the Dockbar.](../../images/page-customizations.png)
 
@@ -75,7 +75,7 @@ Users can make two kinds of customizations to customizable regions. First, they 
 3. Add the Language portlet to the right column by clicking *Add* &rarr; *More* in the Dockbar, expanding the *Tools* category, and clicking *Add* next to *Language*.
 4. Configure the Language portlet by clicking on the wrench icon and selecting *Configuration* and then opening the *Display Style* dropdown menu and choosing *Select Box*.
 
-After closing the Configuration dialog box, the customized portal homepage looks like this:
+The Language portlet is useful to have on your portal homepage if you expect users who speak different languages to access your portal. Users can select their language in the Language portlet to view a translation of the portal into their native language. After closing the Configuration dialog box of the Language portlet, the customized portal homepage looks like this:
 
 ![Figure 6.x: In this example, Joe Bloggs removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
 
