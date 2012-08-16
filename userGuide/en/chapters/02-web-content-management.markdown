@@ -438,9 +438,7 @@ To do this, go to the Asset Publisher portlet and select the Configuration icon 
 
 For more information on Custom Fields see the Custom Fields section in chapter 16.
 
-When you finish creating your content, you have three options. Click the *Save as Draft* button to hold your changes without publishing the content, click *Publish* to display the content in the portal or *Cancel* to discontinue content creation.
-
-For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. Let's look at how it works.
+For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Saveas Draft*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. Let's look at how it works.
 
 ## Publishing (basic) content [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
 
