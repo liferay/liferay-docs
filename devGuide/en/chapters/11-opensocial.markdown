@@ -1,7 +1,6 @@
-
 # Creating and Integrating with OpenSocial Gadgets
 
-OpenSocial is a framework, developed by Google, Myspace and others, for creating simple light-weight socially networked web-based applications. Where "standard" applications work with data on a per-user basis, "social" applications share data within well defined networks, facilitating communication of information between groups of users. OpenSocial applications, called *gadgets*, are similar to portlets because they can be added to your portal's pages and used for all kinds of tasks. Gadgets are characterized as being simple, widely available, and easy to deploy.
+OpenSocial is a public specification for creating web applications using standard technologies like HTML, CSS, and Javascript. It was originally developed by Google, Myspace and others to standardize common social networking API's but has evolved into a general platform for building web applications. Whereas "standard" applications work with data on a per-user basis, "social" applications share data within well defined networks, facilitating communication of information between groups of users. OpenSocial applications, called *gadgets*, are similar to portlets because they can be added to your portal's pages and used for all kinds of tasks. Gadgets are characterized as being simple, widely available, and easy to deploy.
 
 In this chapter, we'll cover the following topics:
 
@@ -20,6 +19,8 @@ Let's first look at the structure of an OpenSocial gadget and consider the conce
 An OpenSocial Gadget is specified in an XML document. The first part of the document specifies *meta-data* declaring gadget dependencies, defining characteristics about the gadget, and specifying user preferences. The meta-data can be broken up into *module preferences* and *user preferences*. The second part of the document contains the gadget *content*, defining the gadget's user interface and business logic. We'll spend time going over all these facets of gadget XML.
 
 ![Figure 11.1: An OpenSocial gadget's XML consists of elements specifying gadget preferences, user preferences, and content.](../../images/opensocial-22.png)
+
+<!-- Adjust colors as they may be misleading? Looks like a traffic signal ... -->
 
 Below is a sample of OpenSocial gadget XML from a weather gadget authored by The Weather Channel. The complete weather gadget is found at   [`http://gadgets.weather.com/services/gadgets/googlegadget/gadget.xml`](http://gadgets.weather.com/services/gadgets/googlegadget/gadget.xml).
 
@@ -60,12 +61,6 @@ Gadget meta-data specifies characteristics of the overall gadget and specifies c
 
 *User Preferences (optional)*: Store user configuration values and allow users to give input to the application. They are specified in `<UserPref/>` elements.
 
----
-
- ![](../../images/tip-pen-paper.png)**Note:** Both preferences and application data are stored in Expando. Expando is a superclass for data model definitions whose properties are determined dynamically. Two Expando tables are created, one for per-gadget preferences and another for per-user application data.
-
----
-
 Now, let's dive deeper into gadget preferences.
 
 #### Gadget Preferences (ModulePrefs)
@@ -74,7 +69,7 @@ The gadget preferences (ModulePrefs) define characteristics of your gadget, incl
 
 Within the ModulePrefs, you specify the gadget's dependencies with `<Require/>` tags and optional features with `<Optional/>` tags. If you specify a feature in a `<Require/>` tag, the gadget itself only renders if the feature is available. If you specify a feature in an `<Optional/>` tag, the gadget renders despite feature availability.
 
-ModulePrefs can also be used to configure important features such as PubSub and OAuth. The PubSub feature allows for communication between gadgets and portlets on the same page, by allowing them to publish and subscribe on message channels. The OAuth feature provides secure connections between your portal and third-party sites. These are just a couple of useful features that can be defined in the ModulePrefs. You'll learn more about them later in this chapter.
+ModulePrefs can also be used to configure important features such as PubSub and OAuth. The PubSub feature allows for communication between gadgets on the same page, by allowing them to publish and subscribe on message channels. Liferay also enables gadgets to communicate with portlets using the same mechanism. The OAuth feature provides secure connections between your portal and third-party sites. These are just a couple of useful features that can be defined in the ModulePrefs. You'll learn more about them later in this chapter.
 
 ---
 
@@ -143,6 +138,8 @@ Here is a snapshot of what this window looks like on Liferay Portal:
 
 ![Figure 11.2: Here, the Jira gadget's user preferences are made available for user input.](../../images/opensocial-21.png)
 
+<!-- TODO use a gadget other than the Jira gadget -->
+
 UserPrefs can be displayed in many different ways and help your gadget become more adaptable to your users' ever changing expectations. And, there is an extensive variety of UserPref data types available to properly personalize your gadgets. For complete details on UserPrefs see Google's [User preferences](https://developers.google.com/gadgets/docs/xml_reference#Userprefs_Ref) reference.
 
 ### Gadget Content
@@ -178,15 +175,17 @@ Here is a sample of what the URL content type looks like inside the Google Calen
 
 The complete Google Calendar gadget can be found at [`http://www.google.com/ig/modules/calendar3.xml`](http://www.google.com/ig/modules/calendar3.xml).
 
+<!-- TODO consider using a gadget other than Google Calendar; a gadget that works outside of iGoogle -->
+
 Both HTML and URL content types offer beneficial traits and can be used effectively. The content type you use for your gadgets depends on your needs and preferences.
 
 Now that you're fundamentally sound on the gadget basics, let's explore what gadgets offer you in Liferay Portal.
 
 ## Accessing third-party applications from your gadget
 
-Is there data on sites like Evernote, Facebook, Google, Netflix, Photobucket, Twitter, or Yahoo you'd like to access in your OpenSocial gadgets? Perhaps you'd like to provide a gadget for portal users to add movies to their Netflix queue or for users to display their Photobucket pictures within gadgets in Liferay Portal. You may be concerned users would be required to share their third-party application credentials with portal, in order to use the applications. Good news! *OAuth* technology resolves the issue.
+Is there data on sites like Evernote, Facebook, Google, Netflix, Photobucket, Twitter, or Yahoo you'd like to access in your OpenSocial gadgets? Perhaps you'd like to provide a gadget for portal users to add movies to their Netflix queue or for users to display their Photobucket pictures within gadgets in Liferay Portal. You may be concerned users would be required to share their third-party application credentials with portal in order to use the applications. Good news! *OAuth* technology resolves the issue.
 
-You can think of OAuth as a "handshake mechanism" where, instead of requiring exchange of personal information, your site redirects portal users directly to the intended web applications hosted by the service providers (e.g. Netflix, Photobucket, etc). Within the portal, users simply approve gadgets access to their resources on the external web applications. It's just that easy!
+You can think of OAuth as a "handshake mechanism" where, instead of requiring exchange of personal information, your site redirects portal users directly to the service provider (e.g. Netflix, Photobucket, etc). Users simply approve the gadget's access to their resources on the external web applications. It's just that easy!
 
 Read the [Gadget personalization](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/opensocial-integration) section of the *Social Networking* chapter in *Using Liferay Portal 6.1* for instructions on configuring and using OAuth enabled gadgets. To learn how to write OAuth enabled gadgets, see Google's [Writing OAuth Gadgets](https://developers.google.com/gadgets/docs/oauth) reference.
 
@@ -204,7 +203,7 @@ With the use of PubSub, the worlds of gadgets and portlets blend together facili
 
 Publishers do not send messages to subscribers directly, but rather, they publish messages that are characterized into classes and sent across message channels (topics). Therefore, the publishers have no knowledge of *whom* they are sending their messages to; they simply broadcast the messages over a channel. So you may ask: "How do subscribers receive messages if the messages are not sent directly to them?" Subscribers express interest by subscribing to certain channels and receive messages sent to those channels. Like publishers, they have no knowledge of *who* sends the messages, they only know channels and receive messages coming in on those channels. This process makes it much easier for multiple gadgets and portlets to communicate with each other, without specifically stating who they want to send/receive data from.
 
-PubSub can be compared to a TV station and your TV. The TV station does not directly send their material to your TV but, rather, broadcasts the material over a channel. You subscribe to that channel by tuning your TV to that channel to watch what's on it. This process of broadcasting and tuning into TV programs is similar to publishing and subscribing to messages sent via Liferay's PubSub.
+PubSub can be compared to a TV station and your TV. The TV station does not directly send their material to your TV but, rather, broadcasts the material over a channel. You subscribe to that channel by tuning your TV to that channel to watch what's on it. This process of broadcasting and tuning into TV programs is similar to publishing and subscribing to messages sent via PubSub.
 
 PubSub also offers the ability for portlets and gadgets to publish and subscribe to multiple channels. Although this may seem like a complex process, PubSub's use of message channels creates a network for gadgets to communicate across; and the network is easy to maintain and understand.
 
@@ -250,6 +249,8 @@ For gadget to gadget communication, two independent gadgets are placed on a page
 
 	*Google Map URL*: `http://opensocialdeju.googlecode.com/svn-history/r31/GoogleMaps/GoogleMapsViewer.xml`
 
+<!-- TODO rehost these xml's on liferay -->
+
 2. Add both gadgets to a page.
 
 	Your gadgets should appear like the snapshot below:
@@ -293,9 +294,9 @@ First, we'll look at the contents of *Google Map*'s XML file  *GoogleMapsViewer.
 					gadgets.Hub.subscribe("com.liferay.opensocial.gmapsdemo", callback);
 				}
 
-					function callback(topic, data, subscriberData) {			
-						geocoder.getLocations(data, showAddress);
-					}
+				function callback(topic, data, subscriberData) {			
+					geocoder.getLocations(data, showAddress);
+				}
 
 				function showAddress(response) {
 					map.clearOverlays();
@@ -308,7 +309,7 @@ First, we'll look at the contents of *Google Map*'s XML file  *GoogleMapsViewer.
 					map.panTo(point, 13);
 				}
 
-				var map = new GMap2(_gel("map"));
+				var map = new GMap2(document.getElementById("map"));
 
 				map.setCenter(new GLatLng(43, -100), 3);
 
@@ -335,13 +336,15 @@ The following Javascript from the gadget's *content* registers a callback on the
 	gadgets.HubSettings.onConnect = function(hub, suc, err) {
             gadgets.Hub.subscribe("com.liferay.opensocial.gmapsdemo", callback);
 
-Your gadget calls `gadgets.HubSetting.onConnect` enabling the gadget to subscribe to the previously mentioned topic. All subscribers to this topic receive messages sent to it.
+The `gadgets.HubSettings.onConnect` function will be called by the OpenSocial container once the gadget connects to the PubSub messaging hub. In our example the gadget will subscribe to the previously mentioned topic. All subscribers to this topic receive messages sent to it.
 
-On callback, the gadget's `callback()` function is executed. In this example, the callback method invokes a `GClientGeocoder` to get the locations. And finally, the locations are processed and displayed on the map.
+When a message is received, the gadget's `callback()` function is executed. In this example, the callback method sends the received message (the address sent by the publisher) and calls `GClientGeocoder.getLocations()` to get the locations. And finally, the locations are processed and displayed on the map.
 
 In summary, subscriber gadgets need to specify a topic and register a callback function on that topic to handle the messages they receive.
 
 Next, we'll analyze the example's *publishing* gadget's source code specified in  *GoogleMapsPublisher.xml*:
+
+<!-- TODO reverse the order here. Put the publisher first then the subscriber. -->
 
 	<?xml version="1.0" encoding="UTF-8" ?> 
 
@@ -389,9 +392,9 @@ In the Javascript of the gadget's *content*, the gadget publishes to the topic w
 
 	gadgets.Hub.publish("com.liferay.opensocial.gmapsdemo", address);
 
-When the user clicks the gadget's *Publish* button, the message is sent by the publishing gadget to the topic named `com.liferay.opensocial.gmapsdemo`. PubSub broadcasts the message received on that topic to all subscribers, such as your *Google Address* gadget. Each subscriber receives the message on callback and processes the message. In the case of your *Google Map* gadget, the message, containing an address, is processed by the gadget to render the address location on its map.
+When the user clicks the gadget's *Publish* button, the message is sent by the publishing gadget to the topic named `com.liferay.opensocial.gmapsdemo`. PubSub broadcasts the message received on that topic to all subscribers, such as your *Google Address* gadget. Each subscriber receives and processes the message. In the case of your *Google Map* gadget, the message, containing an address, is processed by the gadget to show the address location on its map.
 
-As you can see, PubSub allows your site to run efficiently and enables, otherwise, unconnected gadgets to communicate and flourish within Liferay Portal.
+As you can see, PubSub allows your site to run efficiently and enables otherwise unconnected gadgets to communicate and flourish within Liferay Portal.
 
 Gadgets are not limited to only communicating with other gadgets. In the next section, we will demonstrate the capabilities of communication between portlets and gadgets.
 
@@ -594,15 +597,9 @@ We will now switch gears and dive into Liferay's gadget editor!
 
 As part of Liferay's OpenSocial integration, the *OpenSocial Gadget Editor* is included with Liferay Portal. The gadget editor is a complete development environment for gadgets providing syntax highlighting, preview functionality, undo/redo options, and built in tabs for working on multiple gadgets at the same time. You can also organize and manage gadgets easily using the editor's file manager. All of this gives you the convenience of creating and improving your gadgets right from within Liferay Portal.
 
-Within the editor, each gadget's XML file has a wrench icon allowing you to close, rename, delete, or publish the gadget, or to simply show the gadget's URL. The *Publish* button redirects you to a screen, similar to the *OpenSocial Gadget Publisher*, allowing you to publish your gadget. The *Show URL* button allows you to add the gadget "adhoc" and share with other sites. These options offer a user-friendly and easy to use testing station for enhancing the gadgets on your sites.
+Within the editor, each gadget's XML file has a wrench icon allowing you to close, rename, delete, or publish the gadget, or to simply show the gadget's URL. The *Publish* button redirects you to a screen, similar to the *OpenSocial Gadget Publisher*, allowing you to publish your gadget. Gadgets published through the editor will be stored in the site's Document and Media Library. The *Show URL* button allows you to add the gadget "adhoc" and share with other sites. These options offer a user-friendly and easy to use testing station for enhancing the gadgets on your sites.
 
 ![Figure 11.8: The wrench icon can be easily found to the right of your XML file.](../../images/opensocial-39.png)
-
----
-
- ![](../../images/tip-pen-paper.png)**Note:** If you republish a previously published gadget within the *OpenSocial Gadget Editor*, a new gadget is created and the former gadget is left available as well.
-
----
 
 For a brief exercise, we will improve the *Google Map* gadget using the gadget editor. As you have probably noticed, the gadget offers a small screen that is sometimes hard to view. By using the *OpenSocial Gadget Editor*, you can edit the XML file and specify a more desirable size for the gadget's UI.
 
