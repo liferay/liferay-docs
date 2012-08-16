@@ -4384,9 +4384,9 @@ This approach may not be allowed for some organizations. If you cannot use the s
     
 ## REST Proxy [](id=rest-proxy)
 
-Input a list of comma delimited domains which the portal is allowed to make proxy request to. Input a blank list to allow any domain.
+Input a list of comma delimited URL prefixes which the portal is allowed to make proxy requests to. Input a blank list to allow any URLs.
 
-	rest.proxy.domains.allowed=search.yahooapis.com
+	rest.proxy.url.prefixes.allowed=http://search.yahooapis.com/ContentAnalysisService
 
 ## Robots.txt [](id=robots-txt)
 
