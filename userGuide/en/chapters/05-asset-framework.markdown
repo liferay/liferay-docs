@@ -1,6 +1,8 @@
 # Leveraging the Asset Framework [](id=lp-6-1-ugen05-leveraging-the-asset-framework-0)
 
-Any type of content in Liferay is considered an asset. In chapters 2 and 3, we already examined Liferay's most common type of asset: web content. Other types of assets include blog posts, wiki articles, message board posts, bookmarks, and documents. It's possible for developers to define custom asset types that utilize Liferay's asset framework. Originally, the asset framework was created to provide a mechanism for adding tags to blog entries, wiki articles, and web content without reimplement the same functionality multiple times. The asset framework has been greatly extended since then and it now supports tags, categories, comments, ratings, and asset relationships.
+Any type of content in Liferay is considered an asset. In chapters 2 and 3, we already examined Liferay's most common type of asset: web content. Other types of assets include blog posts, wiki articles, message board posts, bookmarks, and documents. It's possible for developers to define custom asset types that utilize Liferay's asset framework. Originally, the asset framework was created to provide a mechanism for adding tags to blog entries, wiki articles, and web content without reimplementing the same functionality multiple times. The asset framework has been greatly extended since then and it now supports tags, categories, comments, ratings, and asset relationships.
+
+<!-- Add a mention of Vocabularies above & below??
 
 This chapter covers the following topics:
 
@@ -90,6 +92,30 @@ Once you've set up your filter rules for dynamically selecting your content, you
 #### Ordering and Grouping [](id=lp-6-1-ugen03-ordering-and-grouping-0)
 
 You can display the content returned by the filters above in order by title, create date, modified date, view count and more in ascending or descending order. For instance, you may have a series of "How To" articles that you want displayed in descending order based on whether the article was tagged with the *hammer* tag. Or, you may want a series of video captures to display in ascending order based on a category called *birds*. You can also group by *Asset*, *Type* or *Vocabularies*. Vocabularies are groups of categories defined by administrators in the *Categories* section of the control panel. 
+
+There are a several new enhancements to Liferay's vocabularies and categories. The three main features are targeted vocabularies, single/multi-valued vocabularies and separated widgets for every vocabulary.
+	
+##### Targeted Vocabularies []()
+
+Targeted Vocabularies allow you to decide which assets can see each vocabulary by defining target rules, and which vocabularies are required for each asset. 
+
+![Figure 5.x: You can target vocabularies by checking the Allow Multiple Categories checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
+
+In the screenshot above, notice the vocabulary titled Topic is configured to be available for Blogs and Web Content, but it is not required. It is mandatory, however, for Documents and Media Documents.
+	
+##### Single and Multi-valued Vocabularies []()
+
+You can now decide if the user can choose one or more categories from the same vocabulary to categorize an asset. If a vocabulary is single-valued you can only choose one, and if it allows more, you can choose several categories.
+
+![Figure 5.x: The multi-valued vocabularies, on the left, have checkboxes. Single-valued vocabularies have radio buttons.](../../images/multi-valued-vocabularies.png)
+
+You can select multi-valued vocabularies using checkboxes and single-valued vocabularies using radio buttons.
+	
+##### Separated Widgets []()
+
+The third important improvement is now every vocabulary has its own separated widget. This allows users to easily select the categories they are interested in.
+
+![Figure 5.x: Now that vocabularies have their own widgets, it's easy to select available  categories.](../../images/separated-widgets.png)
 
 In the *Ordering and Grouping* section of the Asset Publisher, you have great control over how content is ordered and grouped in the list, but this is only one aspect of how your content will be displayed. You can refine the display through many other display settings.
 
