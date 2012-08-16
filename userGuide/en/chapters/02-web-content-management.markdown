@@ -240,7 +240,7 @@ If you're interested in seeing what is being sent to the search engines, select 
 
 **Robots:** If you're using virtual hosting for this site, you can configure `robots.txt` rules for the domain. The Robots page gives you the option to configure your `robots.txt` for both public and private pages on a site. If you don't have Virtual Hosting set up, this tab is rather boring. 
 
-**Staging:** enables you to edit and revise a page behind the scenes, then publish changes to your site once they have been completed and reviewed. For a full explanation of Staging, see Chapter 3: Advanced web content management.
+**Staging:** enables you to edit and revise a page behind the scenes, then publish changes to your site once they have been completed and reviewed. For a full explanation of Staging, see chapter 3: Advanced web content management.
 
 **Analytics:** allows you to integrate your pages with Google Analytics. Liferay provides seamless integration with Google Analytics, allowing you to place your ID in one place, then it will get inserted ally on every page. This enables you to focus your efforts on building the page, rather than remembering to put the code everywhere. Google Analytics is a free service which lets you do all kinds of traffic analysis on your site so you can see who visits, where visitors are from and what pages they most often visit. This helps you tweak your site so you can provide the most relevant content to your users.
 
@@ -363,12 +363,8 @@ When you manage web content from the control panel you can select the location w
 ### Rich, WYSIWYG Editing [](id=lp-6-1-ugen03-rich-wysiwyg-editing-0)
 
 Once you have the Nose-ster site selected, click on the *Web Content* link in the control panel. Next, click the *Add* button under the *Web Content* tab. This is a highly customizable form that by default has two fields: a title and a powerful WYSIWYG editor. We could customize this form to contain whatever fields our content needs but let's keep things simple for now. We'll cover more advanced features such as structures, templates and content scheduling later in this chapter.
-
-#### New Web Content Localization []()
  
-Notice that content can be localized using an array of different languages. Liferay has an improved user interface to help translators convert text into multiple languages. For further information, see the Localization section of Using Page Templates in Chapter 3.
-
-#### Using the WYSIWYG Editor []()
+Notice that content can be localized using an array of different languages. Liferay has an improved user interface to better assist users who are translating text. For further information, see the Localization section of Using Page Templates in chapter 3.
 
 Type the words *Welcome to Nose-ster* in the *Title* field. In the *Content* field, add a short sentence announcing the web site is up and running.
 
@@ -400,13 +396,13 @@ On the right of the New Web Content form is a menu of options that allows you to
 
 Imagine you have a newspaper with a sports section and a technology section. You add a Sports page and a Tech page to your site, each one with a specific banner and look and feel. You want the articles to appear in the appropriate pages, but you know in Liferay articles are not related to pages. You can add an article as often as you like in different web content display portlets or in configured Asset Publishers. But if you have a *View in context* link where will you show your article? This is where the default display page comes in. Each article defined with a default display page will be shown with other related articles in the same display page. 
 
-Imagine you have 100 sports articles and 100 tech articles. In previous versions of Liferay you'd need to create a (display?) page for each article to show it. Now with only one sports page and one tech page, you can show all articles in one place in a consistent fashion. 
+Imagine you have 100 sports articles and 100 tech articles. In previous versions of Liferay you'd need to create a page for each article to show it. Now with only one sports page and one tech page, you can show all articles in one place in a consistent fashion. 
 
 ##### Creating a display page
 
 There are two ways of creating a display page. You can configure a *Content Display Page* template, which  automatically creates everything you need, or you can create one manually. The Content Display Page template is found under *Page Templates* in the Portal section of the Control Panel.
 
-To create a display page manually, add an Asset Publisher to a page. Then configure it to be the Default Asset Publisher of the page. This directs the system where to display the content if several Asset Publishers are in the same page. Set this up by clicking Configuration on your Asset Publisher. Under the *Setup* tab, navigate to *Display Settings* and check the checkbox labeled *Set as the Default Asset Publisher for This Page*.
+To create a display page manually, add an Asset Publisher to a page. Then configure it to be the Default Asset Publisher of the page. This directs the system where to display the content if several Asset Publishers are in the same page. Set this up by clicking *Configuration* on your Asset Publisher. Under the *Setup* tab, navigate to *Display Settings* and check the checkbox labeled *Set as the Default Asset Publisher for This Page*.
 
 Once you've given an article its default display page, the article's links will redirect the user to its default display page. To see how this works add an Asset Publisher to another page, like the Home page of the newspaper, and configure it to *View in a Specific Portlet*. This setting is found in the *Asset Link Behavior* menu under Display Settings. If you click on the link, you'll be redirected to the Default Display Page of the article. 
 
@@ -414,9 +410,7 @@ You now see that the link looks something like this:
 
 www.mysite.com/my-article
 
-This is an example of a canonical URL and it's a nice enhancement for SEO because it helps guide search engines to the most relevant pages and discard pages not as relevant. And if you decide to move the content to another page in the future, the URL makes it easier for search engines to find it.
-	
-This feature is used in search results, in related assets and in Asset Publishers. For more information on Liferay's Display Pages, see chapter 5.
+This is an example of a canonical URL and it's a nice enhancement for SEO because it helps guide search engines to the most relevant pages and discard other pages. And if you decide to move the content to another page in the future, the URL makes it easier for search engines to find it. This feature is used in search results, in related assets and in Asset Publishers. For more information on Liferay's Display Pages, see chapter 5.
 
 **Related Assets:** enables you to connect any number of assets within a site or across the portal, even if they don't share any tags and aren't in the same category. You can connect your content to a Blogs Entry, Message Boards Message, Web Content, Calendar Event, Bookmarks Entry, Documents and Media Document, and a Wiki Page.
 
@@ -428,7 +422,9 @@ The *Related Assets* portlet displays the relationships between assets. When you
 	
 This portlet is an extension of the Asset Publisher, which allows you to configure it to achieve further filtering. For example you can add three Related Assets portlets to a page and configure one to show only blog entries, the second one to show only images and the third one to show only documents. When you access the page, you'll see portlets displaying Related Blogs, Related Images and Related Documents.
 
-To do this, go to the Asset Publisher portlet and select the Configuration icon (wrench) in the upper right corner of the portlet. Under the Setup tab, set the filter options using the *Asset Type* menu.
+To do this, go to the Asset Publisher portlet and select the *wrench* icon in the upper right corner of the portlet. Under the *Setup* tab, set the filter options using the *Asset Type* menu.
+
+<!--  Do we need to get into more detail about the form?  -->
 
 **Permissions:** customize who has access to the content. By default, content is viewable by Anyone (Guest Role). You can limit viewable permissions by selecting any Role from the drop-down or in the list. Additionally, Liferay Portal provides the ability to customize permissions in more detail. Select the *More Options* link next to the drop down button and you'll find the different activities you can grant or deny to your web content.
 
