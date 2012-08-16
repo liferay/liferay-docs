@@ -14,9 +14,45 @@ This chapter focuses on how to use Liferay's collaboration suite. We explain how
 
 We'll discuss how these features work together to facilitate information flow within your portal and provide an enhanced experience for your users.
 
-### Understanding Liferay's common configuration options [](id=understanding-liferay-s-common-configuration-options)
+## Understanding Liferay's common configuration options [](id=understanding-liferay-s-common-configuration-options)
 
-Just like siblings have common features inherited from their parents, applications that ship with Liferay also share common features. These are centered around scoping, sharing, permissions, and archives. So before we get into the nitty gritty of the applications themselves, it's best to cover these common features first, starting with the concept of scope.  
+Just like siblings have common features inherited from their parents, applications that ship with Liferay also share common features. These include look and feel, communication, scoping, sharing, permissions, and archive configurations. So before we get into the nitty gritty of the applications themselves, it's best to cover these common features first, starting with the look and feel configuration options.
+
+### Look and Feel
+
+An administrator can access the look and feel configuration menu of any Liferay portlet by clicking on the wrench icon at the top right corner of the portlet and selecting *Look and Feel*. The location of the wrench icon and other portlet icons (minimixe, maximize, and remove) may vary, depending on your theme. Liferay portlets' look and feel dialog boxes contain seven tabs:
+
+- Portlet Configuration
+- Text Styles
+- Background Styles
+- Border Styles
+- Margin and Padding
+- Advanced Styling
+- WAP Styling
+
+After making customizations on any tab, remember to click the *Save* button to apply your changes. To see the effect of your changes, you may have to refresh the page. If you don't like the effect of your changes, click the *Reset* button to discard them.
+
+On the Portlet Configuration tab, you can check the *Use Custom Title* box to rename your portlet's title. The value you enter in the Portlet Title box will be displayed at the top of the portlet window on the page. You can also select a language from the Portlet Title dropdown menu. If you've provided a language key translation for the language you select, the your portlet's title will be displayed in the selected language.
+
+![Figure 7.x: The Porlet Configuration tab of the Look and Feel Box allows you to define a custom portlet title, link porlet URLs to a specific page, and select whether or not portlet borders should be displayed.](../../images/look-and-feel-portlet-configuration.png)
+
+<!-- Find more information on how the Link Porlet URLs to Page dropdown menu works. -->
+
+You can also choose whether or not to display borders around your portlet. By default, borders are displayed. Be careful about turning portlet borders off; some themes assume that portlet borders are turned on and may not display correctly with them turned off.
+
+![Figure 7.x: ](../../images/look-and-feel-text-styles.png)
+
+![Figure 7.x: ](../../images/look-and-feel-background-styles.png)
+
+![Figure 7.x: ](../../images/look-and-feel-border-styles.png)
+
+![Figure 7.x: ](../../images/look-and-feel-margin-and-padding.png)
+
+![Figure 7.x: ](../../images/look-and-feel-advanced-styling.png)
+
+![Figure 7.x: ](../../images/look-and-feel-wap-styling.png)
+
+Next, let's discuss the concept of a portlet's scope.
 
 ### Scope [](id=lp-6-1-ugen04-scope-0)
 
