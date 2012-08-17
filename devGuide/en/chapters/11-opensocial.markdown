@@ -11,8 +11,6 @@ In this chapter, we'll cover the following topics:
 
 - Liferay's gadget editing environment.
 
-<!-- - Leveraging Liferay's Social API in your gadgets. -->
-
 Let's first look at the structure of an OpenSocial gadget and consider the concepts involved with OpenSocial gadgets.
 
 ## OpenSocial gadget basics
@@ -482,44 +480,8 @@ The *OpenSocial Gadget Editor* allows you to create and improve gadgets within t
 
 You can facilitate the social interactions on your sites and increase your portal content's popularity across your social network by leveraging the power of OpenSocial gadgets.
 
-<!-- 
-Now, we'll demonstrate the usefulness of Liferay's social API.
-
-## Implementing gadgets in Liferay's social API
-
-TODO This was from another section. See if it can be used in this section.
-In a sense, gadgets live in their own world because they are rendered by a separate web application called "Shindig." This is a rendering engine for OpenSocial which was created by Apache and is the reference container implementation Liferay uses.
-
-We have talked extensively about how gadgets are social applications, but we have not yet used a gadget to communicate with a user's friends. Social networks like Facebook and Twitter give the user opportunities to view and share photos with their friends. These actions are also available and expanded with OpenSocial gadgets. Using Liferay's social API, friends can publish customizable gadgets to their pages that enhance user experience. This focus of customizing a social page to interact with others is exactly what made MySpace popular. Social networking thrives on gadgets that connect users and their interests. 
-
-For an example of a gadget used in Liferay's social API, you will publish the *Friends' Albums* gadget that enables you to view and share your friends' photos on your personal page. To begin this example, you must have a friend who has posted pictures in their profile. Follow the steps below:
-
-1. View your friend's public page and view a picture they uploaded in the *Documents and Media Display* portlet. For this example, a *Blue Coupe* is listed under the *Car for Sale!!!!!!!* folder:
-
-	![Figure 11.15: A snapshot of your friend's uploaded photo located in their *Documents and Media Display* portlet.](../../images/opensocial-28.png)
-
-2. To help your friend, you decide to also post this listing on your profile as well. To accomplish this, you will need to publish the *Friends' Albums* gadget.  Navigate to the Control Panel and select *OpenSocial Gadget Publisher* located under the *Portal* heading.
-
-3. Select *Publish Gadget* and enter the URL: `http://opensocialdeju.googlecode.com/svn/MediaItems/MediaItemsFriends.xml`
-
-4. Select a category you want your gadget to reside in and then press *Save*
-
-5. Navigate to your public page and then select *Add* &rarr; *More...* &rarr; *Friends' Albums*. This gadget should appear like the snapshot below:
-
-	![Figure 11.16: Your friends' albums appear within your gadget.](../../images/opensocial-29.png)
-
-6. If you select *Car for Sale!!!!!!!* and *Blue Coupe*, you are presented with the photo from your friend's page.
-
-	![Figure 11.17: You are able to see your friends photo album on your public page!](../../images/opensocial-30.png)
-
-This example is a great indicator of how simple and useful gadgets can be within Liferay's social API. Liferay has a constantly improving set of social features which are nicely complimented with OpenSocial gadgets. The combination of the two offers a fun and useful social network.
-
--->
-
 ## Summary
 
 OpenSocial gadgets offer a plethora of new features to Liferay that present new opportunities for your portal customization. You've learned the anatomy of a gadget, how to access third-party applications from a gadget, and gadget communication with PubSub. Also, you learned that Liferay's gadget editor makes editing and customizing your gadgets easier than ever. Take a deep breath and give your self a pat on the back, you're now a trained gadget guru!
-
-<!-- TODO will need to add in social API content into conclusion -->
 
 Next, we'll explore the seemingly mysterious world of plugin security management.
