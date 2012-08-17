@@ -16,7 +16,7 @@ We'll discuss how these features work together to facilitate information flow wi
 
 ## Understanding Liferay's common configuration options [](id=understanding-liferay-s-common-configuration-options)
 
-Just like siblings have common features inherited from their parents, applications that ship with Liferay also share common features. These include look and feel, communication, scoping, sharing, permissions, and archive configurations. So before we get into the nitty gritty of the applications themselves, it's best to cover these common features first, starting with the look and feel configuration options.
+Just like siblings have common features inherited from their parents, applications that ship with Liferay also share common features. These include look and feel, communication, scoping, sharing, permissions, archive configurations, and exporting/importing portlet data. So before we get into the nitty gritty of the applications themselves, it's best to cover these common features first, starting with the look and feel configuration options.
 
 ### Look and Feel
 
@@ -71,6 +71,20 @@ On this tab, you can also enter custom CSS class names for your portlet and cust
 The WAP Styling tab allows you to specify a custom portlet title that will be displayed when mobile devices using the Wireless Application Protocol make page requests. You can also set the initial window state to normal or minimized. Normal is the default.
 
 ![Figure 7.x: The WAP Styling tab lets you enter a custom portlet title to be displayed to devices making page requests via WAP; it also allows you to specify an initial window state.](../../images/look-and-feel-wap-styling.png)
+
+Next, let's discuss exporting and importing portlet data.
+
+### Export/Import
+
+Some Liferay portlets allow you to export or import portlet data. These include many of Liferay's collaborative applications, such as the Blogs, Wiki, and Message Boards portlets. To export or import portlet data, right-click on the wrench icon of your portlet and select *Export/Import*. Exporting portlet data produces a `.lar` file that you can save and import into another portlet applicaton of the same type. To import portlet data, you must select a `.lar` file. Be careful not to confuse portlet-specific `.lar` files with site-specific `.lar` files. See the Backing up and Restoring Pages section of chapter 2 for a discussion of exporting and importing data across an entire site.
+
+![Figure 7.x: When exporting portlet data, you can choose which categories of information to include.](../../images/portlet-export.png)
+
+Each portlet has different configuration options. Checking the *Setup* box selects the portlet's saved configuration for export. Checking the *User Preferences* box selects saved portlet configurations of specific users. The *Data* box is the most important one--check this to select your portlet's data (like blog entries, message board posts, or wiki articles, for example) for export. When you check the *Data* box, more options appear, allowing you to choose specific kinds of metadata to include and to select a data range. Check the *Permissions* box if you'd like to export your the permissions defined for your portlet. When you check this box, a subbox called *Permissions Assigned to Roles* appears. If you wish, you can export your portlet's permissions but not the permissions assigned to roles. Finally, you can check the *Categories* box to include categories for export. When selected, all categories referenced by portlet data will be exported or imported, keeping their hierarchy.
+
+![Figure 7.x: When importing portlet data, you can choose which categories of information to use.](../../images/portlet-import.png)
+
+When you import portlet data, only the data types you select will be overwriten. If you'd like to import portlet data, you have to select a `.lar` file. You can import any items that were included when your `.lar` file was created. Note that user preferences can only be successfully imported when the user UUIDs match. Additionally, you can import any archived setups into your portlet, if any. Archived setups provide a means to save multiple portlet configurations and to switch between them. We discuss archived setups below. If you check the *Delete portlet data before importing* box, *all* data created by the portlets will be deleted just before the import process. Be careful, some portlets on others pages may be referencing this data.
 
 Next, let's discuss the concept of a portlet's scope.
 
