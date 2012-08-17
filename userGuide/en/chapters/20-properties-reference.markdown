@@ -1652,10 +1652,6 @@ Input a list of sections that will be included as part of the organization form 
 	organizations.form.update.identification=addresses,phone-numbers,additional-email-addresses,websites,services
 	organizations.form.update.miscellaneous=comments,reminder-queries,custom-fields
 
-Set this property to `true` if you want any administrator that creates an organization to be automatically assigned to that organization.
-
-	organizations.assignment.auto=false
-
 Set this property to `false` if you want any administrator of an organization to be able to assign any user to that organization. By default, he will only be able to assign the users of the organizations and suborganizations that he can manage.
 
 	organizations.assignment.strict=true
@@ -1663,11 +1659,6 @@ Set this property to `false` if you want any administrator of an organization to
 Set this property to `true` if you want users to only be members of the organizations to which they are assigned explicitly. By default they will also become implicit members of the ancestors of those organizations. for example if a user belongs to Liferay Spain he will implicitly be a member of the ancestors Liferay Europe and Liferay Global and will be able to access their private pages.
 
 	organizations.membership.strict=false
-
-Set this property to `true` to allow user groups to be a member of
-organizations.
-
-	organizations.user.group.membership.enabled=true
 	
 Set this to false to disable the organization indexer.
 
@@ -3305,7 +3296,7 @@ Set this to specify the initial number of child pages to display in the Manage P
 
 	layout.manage.pages.initial.children=20
 	
-## Layout Prototypes
+## Layout Prototypes [](id=lp-6-1-ugen20-layout-prototypes-0)
 
 Set this property to true to enable the propagation of changes to a page from its page template by default.
 
@@ -3319,7 +3310,7 @@ The number of seconds we should expect a lock to last before we recognize that a
 
     layout.prototype.merge.lock.max.time=300
 
-## Layout Set Prototypes
+## Layout Set Prototypes [](id=lp-6-1-ugen20-layout-set-prototypes-0)
 
 In the case that a site template would fail to merge, make sure that we prevent repeated attempts that will inevitably fail by having a fail threshold.
 
@@ -4393,9 +4384,9 @@ This approach may not be allowed for some organizations. If you cannot use the s
     
 ## REST Proxy [](id=rest-proxy)
 
-Input a list of comma delimited domains which the portal is allowed to make proxy request to. Input a blank list to allow any domain.
+Input a list of comma delimited URL prefixes which the portal is allowed to make proxy requests to. Input a blank list to allow any URLs.
 
-	rest.proxy.domains.allowed=search.yahooapis.com
+	rest.proxy.url.prefixes.allowed=http://search.yahooapis.com/ContentAnalysisService
 
 ## Robots.txt [](id=robots-txt)
 
@@ -4907,7 +4898,7 @@ See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required
 	spring.remoting.servlet.hosts.allowed=127.0.0.1,SERVER_IP
 	spring.remoting.servlet.https.required=false
 	
-## Tunnel Servlet
+## Tunnel Servlet [](id=lp-6-1-ugen20-tunnel-servlet-0)
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 

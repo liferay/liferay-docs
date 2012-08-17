@@ -119,6 +119,12 @@ Congratulations! You've just installed Liferay Portal!
     setup.wizard.enabled=false
 
 ---
+
+---
+
+![Note](../../images/02-tip.png) In Liferay 6.1 GA2 (both 6.1.1 CE and 6.1.20 EE), the admin user test@liferay.com is created by the setup wizard even when a different user is specified. This means that two admin users are created: test@liferay.com and the specified user. Unless you're just installing Liferay for testing purposes, you should deactivate the test@liferay.com user after your database has been created.
+
+---
     
 As you can see, bundles are the easiest way to get started with Liferay. They come pre-configured with a running Liferay instance that can be used immediately to explore all of the things that Liferay can do. Bundles are the fastest way to create full production-ready Liferay installations. 
 

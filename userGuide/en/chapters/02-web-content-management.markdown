@@ -68,7 +68,7 @@ In this section we'll cover some basic aspects of Liferay WCM, including:
 
 By the time we're done, you should be able to apply all these concepts to your own content. To demonstrate Liferay's Content Management features, we'll create and manage content on the portal for *Nose-ster*, a new social network where people are connected based on what their noses look like.
 
-First, a little housekeeping. If we're going to be *Nose-ster*, our portal should also be called Nose-ster. To set general information about your portal like the name and mail domain, go to the control panel and select *Portal Settings* under the Portal heading. You could set up the configuration for Nose-ster as follows.
+First, a little housekeeping. If we're going to be *Nose-ster*, our portal should also be called Nose-ster. To set general information about your portal like the name and mail domain, go to the Control Panel and select *Portal Settings* under the Portal heading. You could set up the configuration for Nose-ster as follows.
 
 ![Figure 2.1: Changing Portal Settings](../../images/04-web-content-changing-settings.png)
 
@@ -76,11 +76,11 @@ You can also customize the logo in the top left corner of every page by selectin
 
 ### Creating and managing pages [](id=page-creation-and-manageme-3)
 
-You have a few options for accessing the page creation interface. To simplify this, we'll cover the Dockbar's *Manage* menu slightly out of order. There are two interfaces to be aware of: *Site Pages* and *Page*. You can get to these from multiple places. Depending on what you're editing and where you are on the portal, you'll use either the *Manage* menu or the control panel to work with your pages. From the control panel, make sure you have the correct site selected in the context menu selector and click the *Site Pages* link in the content section. If you've already navigated to the site you wish to manage, click *Manage* from the Dockbar and select *Site Pages*. This is the exact same interface you see in the control panel. To manage the specific page of the site you've navigated to, click *Manage* and select *Page*. 
+You have a few options for accessing the page creation interface. To simplify this, we'll cover the Dockbar's *Manage* menu slightly out of order. There are two interfaces to be aware of: *Site Pages* and *Page*. You can get to these from multiple places. Depending on what you're editing and where you are on the portal, you'll use either the *Manage* menu or the Control Panel to work with your pages. From the Control Panel, make sure you have the correct site selected in the context menu selector and click the *Site Pages* link in the content section. If you've already navigated to the site you wish to manage, click *Manage* from the Dockbar and select *Site Pages*. This is the exact same interface you see in the Control Panel. To manage the specific page of the site you've navigated to, click *Manage* and select *Page*. 
 
 ![Figure 2.2: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
 
-For convenience, you can also navigate to the Sites page under the Portal section of the control panel and click *Actions* &rarr; *Manage Pages*. To quickly add a single page while to the site you're browsing, click *Add* from the Dockbar and select *Page*. Just enter a name for the page and it's added immediately. Click the name of the page in the navigation menu to visit it and start working on it.
+For convenience, you can also navigate to the Sites page under the Portal section of the Control Panel and click *Actions* &rarr; *Manage Pages*. To quickly add a single page while to the site you're browsing, click *Add* from the Dockbar and select *Page*. Just enter a name for the page and it's added immediately. Click the name of the page in the navigation menu to visit it and start working on it.
 
 ![Figure 2.3: Managing Site Pages](../../images/04-managing-site-pages.png)
 
@@ -132,7 +132,7 @@ When you open the Manage Site Pages dialog box it defaults to the Look and Feel 
 
 ![Figure 2.6: Look and Feel Interface](../../images/04-look-and-feel.png)
 
-Many themes include more than one color scheme. This allows you to keep the existing look and feel while giving your site a different flavor. Change the color scheme from blue to green by selecting *Green* under *Color Schemes*. If you now go back to the site (by clicking *Back to nosester.com* in the top left corner of the control panel), you'll see some parts of the page are now tinged in a greenish hue. 
+Many themes include more than one color scheme. This allows you to keep the existing look and feel while giving your site a different flavor. Change the color scheme from blue to green by selecting *Green* under *Color Schemes*. If you now go back to the site (by clicking *Back to nosester.com* in the top left corner of the Control Panel), you'll see some parts of the page are now tinged in a greenish hue. 
 
 If you apply a color scheme to a set of public or private pages it is, by default, applied to each page in the set. If, however, you open the Manage Pages dialog box for a particular page, you can select *Define a specific look and feel for this page* to make the color scheme apply to this page only. You can use this feature to choose a different color scheme for a particular page than the one defined for the set of public or private pages to which it belongs. 
 
@@ -170,11 +170,11 @@ When you select a single page, some different options appear. Let's look at what
 
 **JavaScript:** gives you the ability to paste custom JavaScript code to be executed on this page. 
 
-**Custom fields:** If custom fields have been defined for pages (which can be done from the *Custom Fields* page of the control panel), they appear here. These are metadata about the page and can be anything you like, such as author or creation date. 
+**Custom fields:** If custom fields have been defined for pages (which can be done from the *Custom Fields* page of the Control Panel), they appear here. These are metadata about the page and can be anything you like, such as author or creation date. 
 
 **Advanced:** contains several optional features. You can set a query string to provide parameters to the page. This can become useful to web content templates, which you'll see in the next chapter. You can set a target for the page so that it either pops up in a particularly named window or appears in a frameset. And you can set an icon for the page that appears in the navigation menu. 
 
-**Mobile Rule Groups:** allows you to apply rules for how this page should be rendered for various mobile devices. You can set these up in the *Mobile Device Rules* section of the control panel. 
+**Mobile Rule Groups:** allows you to apply rules for how this page should be rendered for various mobile devices. You can set these up in the *Mobile Device Rules* section of the Control Panel. 
 
 **Customization Settings:** lets you mark specific sections of the page you want users to be able to customize.
 
@@ -208,13 +208,13 @@ Now that you know how to configure pages, let's look at the settings for the sit
 
 #### Configuring Site Settings [](id=lp-6-1-ugen02-configuring-site-settings-0)
 
-As with Site Pages, you can access Site Settings through the control panel or directly from the site using the Dockbar (*Manage* &rarr; *Site Settings*). 
+As with Site Pages, you can access Site Settings through the Control Panel or directly from the site using the Dockbar (*Manage* &rarr; *Site Settings*). 
 
 ![Figure 2.8: Site Settings](../../images/web-content-site-settings.png)
 
 You'll find options to specify details and metadata about your site, set up friendly URLs and virtual hosts, configure search engine optimization settings, turn staging on or off and specify a Google Analytics ID. Let's take a closer look. 
 
-**Details:** allows an administrator to change the description and membership type of a site and also to specify tags and categories for the site. The membership type can be set as open, restricted or private based on the privacy needs of the site. Users can join and leave an open site at will. To join a restricted site, a user has to be added by the site administrator. A user can also request to be added through the Sites section of the control panel. A private site is like a restricted site but doesn't appear in the Sites section of the control panel for users who aren't members.  
+**Details:** allows an administrator to change the description and membership type of a site and also to specify tags and categories for the site. The membership type can be set as open, restricted or private based on the privacy needs of the site. Users can join and leave an open site at will. To join a restricted site, a user has to be added by the site administrator. A user can also request to be added through the Sites section of the Control Panel. A private site is like a restricted site but doesn't appear in the Sites section of the Control Panel for users who aren't members.  
 
 **Pages:** From Site Settings, click on *Pages* to manage some basic features of the pages on a site. If no pages have been defined yet, you can set site templates for the public or private pages. If pages already exist, links are provided to view them. You can also change the site's application adapter, which is a special type of hook plugin that customizes out of the box functionality for specific sites. 
 
@@ -222,7 +222,7 @@ You'll find options to specify details and metadata about your site, set up frie
 
 For example, suppose you were creating a portal for a bank called the Best Bank. If you set the friendly URL of your portal's default site to /best-bank, the URL of your default site's public home page would change to http://localhost:8080/web/best-bank/home. If your portal's default site had private pages, the URL of the default private home page would change to http://localhost:8080/group/best-bank/home. 
 
-Note that if you're adding a friendly URL for your portal's home page, you should update your portal's Home URL field so that page requests to http://localhost:8080 redirect properly. To do this, navigate to the Portal Settings page of the control panel and find the Home URL field in the Navigation section. For our bank example, we would enter */web/best-bank/home* into the Home URL field. Once you've entered this setting, page requests to localhost:8080 will redirect to the friendly URL of your portal's new homepage: http://localhost:8080/web/best-bank/home.
+Note that if you're adding a friendly URL for your portal's home page, you should update your portal's Home URL field so that page requests to http://localhost:8080 redirect properly. To do this, navigate to the Portal Settings page of the Control Panel and find the Home URL field in the Navigation section. For our bank example, we would enter */web/best-bank/home* into the Home URL field. Once you've entered this setting, page requests to localhost:8080 will redirect to the friendly URL of your portal's new homepage: http://localhost:8080/web/best-bank/home.
 
 *Virtual Hosts* make web navigation much easier for your users by connecting a domain name to a site. This tab allows you to define a domain name (i.e., www.mycompany.com) for your site. This can be a full domain or a subdomain. This enables you to host a number of web sites as separate sites on one Liferay server.
 
@@ -240,7 +240,7 @@ If you're interested in seeing what is being sent to the search engines, select 
 
 **Robots:** If you're using virtual hosting for this site, you can configure `robots.txt` rules for the domain. The Robots page gives you the option to configure your `robots.txt` for both public and private pages on a site. If you don't have Virtual Hosting set up, this tab is rather boring. 
 
-**Staging:** enables you to edit and revise a page behind the scenes, then publish changes to your site once they have been completed and reviewed. For a full explanation of Staging, see Chapter 3: Advanced web content management.
+**Staging:** enables you to edit and revise a page behind the scenes, then publish changes to your site once they have been completed and reviewed. For a full explanation of Staging, see chapter 3: Advanced web content management.
 
 **Analytics:** allows you to integrate your pages with Google Analytics. Liferay provides seamless integration with Google Analytics, allowing you to place your ID in one place, then it will get inserted ally on every page. This enables you to focus your efforts on building the page, rather than remembering to put the code everywhere. Google Analytics is a free service which lets you do all kinds of traffic analysis on your site so you can see who visits, where visitors are from and what pages they most often visit. This helps you tweak your site so you can provide the most relevant content to your users.
 
@@ -252,7 +252,7 @@ Now that you know how to configure sites, let's look at page templates and site 
 
 #### Site Content [](id=lp-6-1-ugen02-site-content-0)
 
-Liferay 6.1 makes it easier to access Web Content management without using the control panel. You can now click *Manage* and then *Site Content* to access the same Web Content controls featured in the control panel right from your portal page. 
+Liferay 6.1 makes it easier to access Web Content management without using the Control Panel. You can now click *Manage* and then *Site Content* to access the same Web Content controls featured in the Control Panel right from your portal page. 
 
 ![Figure 2.9: Site Content](../../images/web-content-site-content.png)
 
@@ -350,7 +350,7 @@ We'll be using Liferay's WCM to publish simple pieces of content, develop templa
 <!-- Section iii of new outline   -->
 ## Authoring (basic) content [](id=building-a-site-with-liferay-s-w-3)
 
-You've been assigned the task to build a web site for a an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
+You've been assigned the task to build a web site for an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
 
 We'll walk through the creation of Nose-ster's web site, starting by creating and publishing some simple content using Liferay's built-in WYSIWYG editor. We'll then take advantage of Liferay's robust structure editor. We'll use templates to display the content and then explore some of the advanced publishing features such as the built-in workflow and Asset Publisher.
 
@@ -362,15 +362,15 @@ We'll begin by creating simple content using Liferay's WYSIWYG Editor and then w
 
 ![Figure 2.12: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
 
-When you manage web content from the control panel you can select the location where the content resides. For instance, you can add content that's available to a specific site or globally across the portal. The Content section of the control panel displays as its heading the name of the site you're currently working on. This heading is called the context menu selector: you can change the scope of where you'd like to view, edit or create content by using the drop-down selector attached to the heading. We will add our first piece of content to the *Nose-ster* site, which we defined earlier in the chapter as the default site.
+When you manage web content from the Control Panel you can select the location where the content resides. For instance, you can add content that's available to a specific site or globally across the portal. The Content section of the Control Panel displays as its heading the name of the site you're currently working on. This heading is called the *context menu selector*: you can change the scope of where you'd like to view, edit or create content by using the drop-down selector attached to the heading. 
 
-##### Rich, WYSIWYG Editing [](id=lp-6-1-ugen03-rich-wysiwyg-editing-0)
+### Rich, WYSIWYG Editing [](id=lp-6-1-ugen03-rich-wysiwyg-editing-0)
 
-Once you have the Nose-ster site selected, click on the *Web Content* link in the control panel. Next, click the *Add* button under the *Web Content* tab. This is a highly customizable form that by default has two fields: a title and a powerful WYSIWYG editor. We could customize this form to contain whatever fields our content needs but let's keep things simple for now. We'll cover more advanced features such as structures, templates and content scheduling later in this chapter.
+Once you have the Nose-ster site selected, click on the *Web Content* link in the Control Panel. Next, click the *Add* button under the *Web Content* tab. This is a highly customizable form that by default has two fields: a title and a powerful WYSIWYG editor. We could customize this form to contain whatever fields our content needs but let's keep things simple for now. We'll cover more advanced features such as structures, templates and content scheduling later in this chapter.
 
 For now, type the words *Welcome to Nose-ster* in the *Name* field. Notice that content can be localized in whatever language you want. If you click on the *localize* checkbox, two select boxes appear which allow you to pick the language you're working in and the default language. You can enter translations of your content for any language in the list. The screenshot below shows this interface but for now, we won't be using it, so you can leave it unchecked. In the content field, add a short sentence announcing the web site is up and running.
 
-![Figure 2.13: The Web Content Editor](../../images/04-web-content-wysiwyg.png)
+![Figure 2.13: The Web Content Editor provides many options for customization.](../../images/04-web-content-wysiwyg.png)
 
 Getting a new web site up and running is an exciting step for anyone, whether it is a large corporation or a small non-profit charity. To celebrate this momentous achievement at Nose-ster, let's give our announcement some of the pomp and circumstance we think it deserves!
 
@@ -417,19 +417,19 @@ Enabling comments creates a discussion forum attached to your content which user
 
 If you click the *Supported Clients* tab, you'll see you can choose the type of client to which you want to expose content. This lets you target the large screens of users' computers for expansive graphics and lots of special effects or target the small screens of mobile devices with pertinent information and a lightweight page. For now, leave both checked and click the *Save* button. You can now close the configuration window.
 
-To publish new content, select the *page and green plus icon* on the lower left of the portlet. This launches the same full-featured editor you've already seen in the control panel, which lets you add and edit content in place as you are working on your page.
+To publish new content, select the *page and green plus icon* on the lower left of the portlet. This launches the same full-featured editor you've already seen in the Control Panel, which lets you add and edit content in place as you are working on your page.
 
-This is another example of the flexibility that Liferay Portal offers. At times, you may want to add content directly into the Web Content Display portlet of the page you're managing, especially if you are in the process of building the page. At other times, you may want to use the control panel to create content, because at that moment you're more concerned with the creation of the content and not where the content will later be displayed. Liferay WCM supports both processes. 
+This is another example of the flexibility that Liferay Portal offers. At times, you may want to add content directly into the Web Content Display portlet of the page you're managing, especially if you are in the process of building the page. At other times, you may want to use the Control Panel to create content, because at that moment you're more concerned with the creation of the content and not where the content will later be displayed. Liferay WCM supports both processes. 
 
 Editing content that's already been published is just as easy as creating new content is. You'll use the same exact tools. 
 
 ##### Editing Content [](id=lp-6-1-ugen03-editing-content-0)
 
-Once the content is displayed--whether you've selected content or created it in the Web Content Display portlet--you can edit the content directly from the Web Content Display portlet or from the control panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This launches the WYSIWYG editor and from there you can make any necessary changes.
+Once the content is displayed--whether you've selected content or created it in the Web Content Display portlet--you can edit the content directly from the Web Content Display portlet or from the Control Panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This launches the WYSIWYG editor and from there you can make any necessary changes.
 
 ![Figure 2.18: Edit, Select and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
 
-When you publish your content this way, it becomes available immediately (unless, of course, you have a workflow enabled, which we'll see below). This happens whether you edit it in place or in the control panel.
+When you publish your content this way, it becomes available immediately (unless, of course, you have a workflow enabled, which we'll see below). This happens whether you edit it in place or in the Control Panel.
 
 Note: if you want to view your page the way your users will see it (i.e., without all those portlet controls and icons), go up to the Dockbar and select *Toggle Edit Controls*. This makes all those extra controls you see as a portal administrator disappear. If you need to use those controls again, just select *Toggle Edit Controls* again. 
 
@@ -446,7 +446,7 @@ You may have noticed something appears to be missing from the staging process di
 
 When using a workflow, clicking *Submit for Publication* submits the staged pages into the workflow. Once all necessary approvals have been completed, the page status is marked as ready for publication. The *Publish to Live Now* and *Schedule for Publication* options  publish the last version of the selected pages marked as ready for publication.
 
-To enable workflow for Web Content, navigate to the control panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
+To enable workflow for Web Content, navigate to the Control Panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
 ![Figure 2.19: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
@@ -454,9 +454,9 @@ As you'll discover in chapter 10, you can design workflows to suit your organiza
 
 #### Defining Workflows for Web Content [](id=lp-6-1-ugen03-defining-workflows-for-web-content-0)
 
-Let's set up Liferay's Workflow for the Nose-ster web site. You must have the Kaleo workflow plugin installed in order for the workflow categories to appear in the control panel. Liferay's Kaleo workflow engine ships with CE versions of Liferay. For installation instructions for Liferay EE, please see chapter 10.
+Let's set up Liferay's Workflow for the Nose-ster web site. You must have the Kaleo workflow plugin installed in order for the workflow categories to appear in the Control Panel. Liferay's Kaleo workflow engine ships with CE versions of Liferay. For installation instructions for Liferay EE, please see chapter 10.
 
-1.  Go to the control panel and select *Workflow Configuration* from the left panel.
+1.  Go to the Control Panel and select *Workflow Configuration* from the left panel.
 
 2.  From the select box, choose *Single Approver* for Web Content. Click *Save.* Note that you can add workflow to many of Liferay's portlets.
 
@@ -464,7 +464,7 @@ That's all it takes to set up workflow for web content. Now that workflow is ena
 
 ![Figure 2.20: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
-Next, go to the *Workflow Tasks* in control panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow and anyone in this role can approve content as well.
+Next, go to the *Workflow Tasks* in Control Panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow and anyone in this role can approve content as well.
 
 To approve the content, you must first take ownership of it. Click on the task. You should see the screen below.
 

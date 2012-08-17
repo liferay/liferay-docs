@@ -65,7 +65,7 @@ Columns specified in `service.xml` will be created in the database with a data t
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** Always consider adding two `long` fields called *groupId* and *companyId* to your data models. These two fields will allow your portlet to support the multi-tenancy features of Liferay so that each organization (for each portal instance) can have its own independent data.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** Always consider adding two `long` fields called *groupId* and *companyId* to your data models. These two fields will allow your portlet to support the multi-tenancy features of Liferay so that each organization (for each portal instance) can have its own independent data.
 
 ---
 
@@ -260,7 +260,7 @@ These roles need to be mapped to specific roles within the portal. The reason fo
 
 ---
 
-![tip](../../images/tip-pen-paper.png) Each role named in a portlet's `<security-role-ref>` element is given permission to add the portlet to a page.
+ ![note](../../images/tip-pen-paper.png)**Note:** Each role named in a portlet's `<security-role-ref>` element is given permission to add the portlet to a page.
 
 ---
 
@@ -724,7 +724,7 @@ These two taglibs create appropriate form controls that allow the user to search
 
 ---
 
-![tip](../../images/tip-pen-paper.png) If you are using Liferay's Alloy Form taglibs, creating fields to enter tags and categories is even simpler. You just need to use <aui:input name="tags" type="assetTags" /> and <aui:input name="categories" type="assetCategories" /> respectively.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** If you are using Liferay's Alloy Form taglibs, creating fields to enter tags and categories is even simpler. You just need to use <aui:input name="tags" type="assetTags" /> and <aui:input name="categories" type="assetCategories" /> respectively.
 
 ---
 

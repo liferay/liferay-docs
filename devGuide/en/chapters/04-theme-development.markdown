@@ -133,7 +133,7 @@ Wait a few seconds until the theme deploys, and then refresh your browser to see
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** If you wish to see changes even more quickly, it is also possible to modify your theme directly in your Liferay bundle. In our example, `custom.css` is located in `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/deep-blue-theme/css`. However, for modifications made here to appear in your browser as soon as you refresh the page, you must enable Liferay Developer Mode. See the Liferay wiki for more information.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** If you wish to see changes even more quickly, it is also possible to modify your theme directly in your Liferay bundle. In our example, `custom.css` is located in `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/deep-blue-theme/css`. However, for modifications made here to appear in your browser as soon as you refresh the page, you must enable Liferay Developer Mode. See the Liferay wiki for more information.
 
 ---
 
@@ -245,7 +245,7 @@ Then, when the portal administrator saves these settings, the site's pages displ
 ![Figure 4.7: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
 
-![note](../../images/tip-pen-paper.png)**Note:** A language properties hook should be used to properly display configurable theme settings, such as the slogan text area and footer checkbox from the previous example. For details, see the [Overriding a Language.properties
+ ![note](../../images/tip-pen-paper.png)**Note:** A language properties hook should be used to properly display configurable theme settings, such as the slogan text area and footer checkbox from the previous example. For details, see the [Overriding a Language.properties
 File](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties%3C-em%3E-fi-1) section found in the *Hooks* chapter of this guide.
 
 Next, we'll take a look at how to manage color schemes in your theme.
