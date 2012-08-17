@@ -36,21 +36,41 @@ On the Portlet Configuration tab, you can check the *Use Custom Title* box to re
 
 ![Figure 7.x: The Porlet Configuration tab of the Look and Feel Box allows you to define a custom portlet title, link porlet URLs to a specific page, and select whether or not portlet borders should be displayed.](../../images/look-and-feel-portlet-configuration.png)
 
-<!-- Find more information on how the Link Porlet URLs to Page dropdown menu works. -->
+If you select a page in the *Link Portlet URLs to Page* dropdown menu, all portlet URLs will point to the page you selected. The current page is the default. Note that you can use the Asset Publisher's View in a Specific Portlet feature and web content articles' Display Page attribute to achieve a more elegant solution for displaying the full view of web content articles on specific pages. Please see the Display Page section of chapter 5 for details.
 
 You can also choose whether or not to display borders around your portlet. By default, borders are displayed. Be careful about turning portlet borders off; some themes assume that portlet borders are turned on and may not display correctly with them turned off.
 
-![Figure 7.x: ](../../images/look-and-feel-text-styles.png)
+The Text Styles tab allows you to configure format of the text that appears in the portlet. The fonts you can choose from include Arial, Georgia, Times New Roman, Tahoma, Trebuchet MS, and Verdana. Arial is the default. You can set the text to bold, italics, or both. You can set the font size anywhere from 0.1 em to 12 em, with 0.1 em increments. 1 em is the default. You can set the text color to any six digit hex color code. If you'd like help choosing a color, click on the pencil icon to open the color palette. You can set the text alignment to left, center, right, or justified. (Justified text is both left and right aligned.) You can set an underline, overline, or strikethrough as the text decoration. The default text decoration is none.
 
-![Figure 7.x: ](../../images/look-and-feel-background-styles.png)
+![Figure 7.x: The Text Styles tab lets you configure the format of the text that appears in the portlet.](../../images/look-and-feel-text-styles.png)
 
-![Figure 7.x: ](../../images/look-and-feel-border-styles.png)
+You can set the word spacing anywhere from -1 em to 0.95 em, with 0.5 em increments. 0 em is the default. You can set the line height anywhere from 0 em to 12 em, with 0.1 em increments. 0 em is the default. Finally, you can set the letter spacing anywhere from -10 px to 50 px, with 1 px increments. 0 px is the default.
 
-![Figure 7.x: ](../../images/look-and-feel-margin-and-padding.png)
+The Background Styles tab allows you to specify the portlet's background color. You can enter any six digit hex color code or you click on the pencil icon to use the color palette.
 
-![Figure 7.x: ](../../images/look-and-feel-advanced-styling.png)
+![Figure 7.x: The Background Styles tab lets you specify the portlet's background color.](../../images/look-and-feel-background-styles.png)
 
-![Figure 7.x: ](../../images/look-and-feel-wap-styling.png)
+On the Border Styles tab, you can configure your portlet's border width, border style, and border color. For each of these attributes, leave the *Same for All* box checked to apply the same settings to top, right, bottom, and left borders. 
+
+![Figure 7.x: The Border Styles tab lets you specify a border width, style, and color for each side of the portlet.](../../images/look-and-feel-border-styles.png)
+
+For border width, you can specify any % value, em value, or px value. For border style, you can select dashed, double, dotted, groove, hidden, inset, outset, ridge, or solid. For border color, you can enter any six digit hex color code, just like for the text color and background color. You can also use the color palette.
+
+The Margin and Padding tab allows you to specify margin and padding lengths for the edges of your portlet. Just like for border styles, leave the *Same for All* box checked to apply the same settings to each side (top, right, bottom, and left) of the portlet.
+
+![Figure 7.x: The Margin and Padding tab allows you to specify margin and paddings lengths for the sides of your portlet.](../../images/look-and-feel-margin-and-padding.png)
+
+For both padding and margin, you can specify any % value, em value, or px value.
+
+The Advanced Styling tab displays current information about your portlet, including your portlet's Liferay ID and CSS classes.
+
+![Figure 7.x: The Advanced Styling tab displays your portlet's Liferay ID and allows you to enter CSS code to customize the look and feel of your portlet.](../../images/look-and-feel-advanced-styling.png)
+
+On this tab, you can also enter custom CSS class names for your portlet and custom CSS code. Clicking the *Add a CSS rule for just this portlet* or *Add a CSS rule for all portlets like this one* links adds the CSS code shells into your custom CSS text box. If you check the *Update my styles as I type* box, your CSS code will be dynamically applied to your portlet so you can see the effects of your edits.
+
+The WAP Styling tab allows you to specify a custom portlet title that will be displayed when mobile devices using the Wireless Application Protocol make page requests. You can also set the initial window state to normal or minimized. Normal is the default.
+
+![Figure 7.x: The WAP Styling tab lets you enter a custom portlet title to be displayed to devices making page requests via WAP; it also allows you to specify an initial window state.](../../images/look-and-feel-wap-styling.png)
 
 Next, let's discuss the concept of a portlet's scope.
 
