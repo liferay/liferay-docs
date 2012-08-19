@@ -1,13 +1,12 @@
 # Leveraging the Asset Framework [](id=lp-6-1-ugen05-leveraging-the-asset-framework-0)
 
-Any type of content in Liferay is considered an asset. In chapters 2 and 3, we already examined Liferay's most common type of asset: web content. Other types of assets include blog posts, wiki articles, message board posts, bookmarks, and documents. It's possible for developers to define custom asset types that utilize Liferay's asset framework. Originally, the asset framework was created to provide a mechanism for adding tags to blog entries, wiki articles, and web content without reimplementing the same functionality multiple times. The asset framework has been greatly extended since then and it now supports tags, categories, comments, ratings, and asset relationships.
-
-<!-- Add a mention of Vocabularies above & below??
+Any type of content in Liferay is considered an asset. In chapters 2 and 3, we already examined Liferay's most common type of asset: web content. Other types of assets include blog posts, wiki articles, message board posts, bookmarks, and documents. It's possible for developers to define custom asset types that utilize Liferay's asset framework. Originally, the asset framework was created to provide a mechanism for adding tags to blog entries, wiki articles, and web content without reimplementing the same functionality multiple times. The asset framework has been greatly extended since then and it now supports tags, categories, vocabularies, comments, ratings, and asset relationships.
 
 This chapter covers the following topics:
 
 - Tagging and categorizing content
 - Using the Asset Publisher
+- Using targeted, single value, and multi-value vocabularies
 - Setting up display pages
 - Adding relationships between assets
 
@@ -33,7 +32,7 @@ Tags are not the only portal-wide mechanism for describing content: you can also
 
 ### Categories [](id=categori-3)
 
-Categories are similar in concept to tags, but are designed for use by administrators, not regular users. Hierarchies of categories can be created, and categories can be grouped together in *vocabularies*. While tags represent an ad hoc method for users to group content together, categories exist to allow administrators to organize content in a more official, hierarchical structure. You can think of tags like the index of a book and categories like its table of contents. Both serve the same purpose: to help the user find the information he or she seeks.
+Categories are similar in concept to tags, but are designed for use by administrators, not regular users. Hierarchies of categories can be created, and categories can be grouped together in *vocabularies*. While tags represent an ad hoc method for users to group content together, categories exist to allow administrators to organize content in a more official, hierarchical structure. You can think of tags like the index of a book and categories like its table of contents. Both serve the same purpose: to help the users find the information they seek.
 
 Adding vocabularies and categories is similar to adding tags. Once you've selected the site you want to work on, select *Categories* from the content section of the control panel, and you will be presented with the categories administration page.
 
@@ -93,21 +92,21 @@ Once you've set up your filter rules for dynamically selecting your content, you
 
 You can display the content returned by the filters above in order by title, create date, modified date, view count and more in ascending or descending order. For instance, you may have a series of "How To" articles that you want displayed in descending order based on whether the article was tagged with the *hammer* tag. Or, you may want a series of video captures to display in ascending order based on a category called *birds*. You can also group by *Asset*, *Type* or *Vocabularies*. Vocabularies are groups of categories defined by administrators in the *Categories* section of the control panel. 
 
-There are a several new enhancements to Liferay's vocabularies and categories. The three main features are targeted vocabularies, single/multi-valued vocabularies and separated widgets for every vocabulary.
+There are a several new enhancements to vocabularies and categories in Liferay 6.1. The three main features are targeted vocabularies, single/multi-valued vocabularies, and separated widgets for every vocabulary.
 	
 ##### Targeted Vocabularies []()
 
-Targeted Vocabularies allow you to decide which assets can see each vocabulary by defining target rules, and which vocabularies are required for each asset. 
+Targeted Vocabularies allow you to decide which assets can see each vocabulary by defining target rules, and which vocabularies are required for each asset. To configure these settings, mouse over the vocabulary in the list until you see the edit icon to the right. Select the icon to reveal a dialog box like the one below.
 
-![Figure 5.x: You can target vocabularies by checking the Allow Multiple Categories checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
+![Figure 5.6: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
 
-In the screenshot above, notice the vocabulary titled Topic is configured to be available for Blogs and Web Content, but it is not required. It is mandatory, however, for Documents and Media Documents.
+The default value for *Associated Asset Types* is *All Asset Types*. You can fine tune your choices by using the *+* and *-* buttons, which narrows the reach of the vocabulary to certain assets. In the screenshot above, notice how the vocabulary titled *Famous Noses* is configured to be available for Blogs and Web Content, but it is not required. It is mandatory, however, for Documents and Media Documents.
 	
 ##### Single and Multi-valued Vocabularies []()
 
 You can now decide if the user can choose one or more categories from the same vocabulary to categorize an asset. If a vocabulary is single-valued you can only choose one, and if it allows more, you can choose several categories.
 
-![Figure 5.x: The multi-valued vocabularies, on the left, have checkboxes. Single-valued vocabularies have radio buttons.](../../images/multi-valued-vocabularies.png)
+![Figure 5.7: The multi-valued vocabularies, on the left, have checkboxes. Single-valued vocabularies have radio buttons.](../../images/multi-valued-vocabularies.png)
 
 You can select multi-valued vocabularies using checkboxes and single-valued vocabularies using radio buttons.
 	
@@ -115,11 +114,11 @@ You can select multi-valued vocabularies using checkboxes and single-valued voca
 
 The third important improvement is now every vocabulary has its own separated widget. This allows users to easily select the categories they are interested in.
 
-![Figure 5.x: Now that vocabularies have their own widgets, it's easy to select available  categories.](../../images/separated-widgets.png)
+![Figure 5.8: Now that vocabularies have their own widgets, it's easy to select available  categories.](../../images/separated-widgets.png)
 
 In the *Ordering and Grouping* section of the Asset Publisher, you have great control over how content is ordered and grouped in the list, but this is only one aspect of how your content will be displayed. You can refine the display through many other display settings.
 
-#### Display Settings [](id=lp-6-1-ugen03-display-settings-0)
+## Setting up Display Pages [](id=lp-6-1-ugen03-display-settings-0)
 
 The Display Settings section gives you precise control over the display of your assets. There are a multitude of options available to configure how you want your content to appear. You can configure the style, length of abstracts, behavior of the asset link, maximum items to display, pagination type and file conversions. Additionally, you can enable printing, flags, ratings, comments and comment ratings, and these work the same way they do in the Web Content Display portlet.
 
@@ -151,7 +150,7 @@ Below these options are the same ones in the Web Content Display portlet: enable
 
 **Show Metadata:** Allows you to select from the available metadata types (see below).
 
-![Figure 5.6: Available metadata types](../../images/available-metadata-fields.png)
+![Figure 5.9: Available metadata types](../../images/available-metadata-fields.png)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS Feeds.
 
@@ -169,11 +168,11 @@ To create a Display Page, you can create a page yourself, add an Asset Publisher
 
 You may now be thinking, "Wait, you just told me that each Web Content item has its own URL, and that this is somehow related to pages where we display a whole bunch of content on the same page?" Yes. That's exactly what I said. Just watch--create a display page called *My Web Content Display Page* somewhere on your portal, using the *Content Display Page* template. Now, on a different page, add a Web Content Display portlet. Click the *Add Web Content* button, enter a title and some content, click on *Display Page* at the right, and select the Display Page you just created. Then click *Publish*.
 
-![Figure 5.7: Selecting a Display Page](../../images/04-web-content-display-page.png)
+![Figure 5.10: Selecting a Display Page](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, you can now click the *Read More* link to display the content. Notice that the canonical URL for content appears in your browser's address bar. If you create your own custom display page, any additional portlets that you place on the page are displayed along with the content when you access it via the canonical URL. If you used the *Content Display Page* page template for your Display page, it not only features a configured Asset Publisher portlet but also a Tags Navigation, a Categories Navigation, and a Search portlet. These tools help users to quickly identify relevant content.
 
-![Figure 5.8: The Canonical URL](../../images/04-web-content-canonical-url.png)
+![Figure 5.11: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
 Let's move on to another new featured introduced by Liferay 6.1. 
 
