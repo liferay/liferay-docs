@@ -346,7 +346,7 @@ We'll be using Liferay's WCM to publish simple pieces of content, develop templa
 
 ## Authoring (basic) content [](id=building-a-site-with-liferay-s-w-3)
 
-You've been assigned the task to build a web site for an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time.
+You've been assigned the task to build a web site for an innovative new social networking site called Nose-ster. You've decided to take advantage of Liferay Portal and its rapid deployment features as well as its ability to get a fully functional, content-rich web site with integrated social features up and running in little time. Together, we can get you started.
 
 We'll walk through the creation of Nose-ster's web site, starting by creating and publishing some simple content using Liferay's built-in WYSIWYG editor. We'll then take advantage of Liferay's robust structure editor. We'll use templates to display the content and then explore some of the advanced publishing features such as the built-in workflow and Asset Publisher.
 
@@ -354,7 +354,7 @@ We'll walk through the creation of Nose-ster's web site, starting by creating an
 
 As we've stated above, content is the reason web sites exist. Liferay Portal has made it easier than ever to get content published to your site. Because Liferay Portal is so flexible, you can use basic authoring tools right away or take advantage of the more advanced features. It's adaptable to your needs.
 
-We'll begin by creating simple content using Liferay's WYSIWYG Editor  and then we'll publish it to the home page of Nose-ster's web site. This is a fast and straightforward process that demonstrates how easy it is to create and publish content on your Liferay Portal instance. Let's learn about the Web Content section of the control panel so we can create and publish our first pieces of content.
+We'll begin by creating simple content using Liferay's WYSIWYG Editor and then we'll publish it to the home page of Nose-ster's web site. This is a fast and straightforward process that demonstrates how easy it is to create and publish content on your Liferay Portal instance. Let's learn about the Web Content section of the control panel so we can create and publish our first pieces of content.
 
 ![Figure 2.12: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
 
@@ -384,7 +384,7 @@ If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can cli
 
 On the right of the New Web Content form is a menu of options that allows you to customize your web content.
 
-![Figure 2.x: New web content can be customized in various ways using the menu on the  right.](../../images/wcm-abstract.png)
+![Figure 2.15: New web content can be customized in various ways using the menu on the  right.](../../images/wcm-abstract.png)
 
 **Abstract:** lets you to create a brief summary of the web content. You can also pair the text with a small image.
 
@@ -392,7 +392,7 @@ On the right of the New Web Content form is a menu of options that allows you to
 
 **Schedule:** customizes the date and time your content publishes and/or expires.
 
-**Display Page:** lets you determine where the web contents will be displayed when linked from other pages. New to Liferay is the concept of the Canonical URL, which is a unique URL for the articles that will redirect the visitor to the default display page of the article. 
+**Display Page:** lets you determine where the web contents will be displayed when linked from other pages. The concept of the Canonical URL is new to Liferay 6.1. The Canonical URL is unique for articles that will redirect the visitor to the default display page of the article. 
 
 Imagine you have a newspaper with a sports section and a technology section. You add a Sports page and a Tech page to your site, each one with a specific banner and look and feel. You want the articles to appear in the appropriate pages, but you know in Liferay articles are not related to pages. You can add an article as often as you like in different web content display portlets or in configured Asset Publishers. But if you have a *View in context* link where will you show your article? This is where the default display page comes in. Each article defined with a default display page will be shown with other related articles in the same display page. 
 
@@ -408,47 +408,53 @@ Once you've given an article its default display page, the article's links will 
 
 You now see that the link looks something like this:
 
-www.mysite.com/my-article
+www.nosester.com/nose-article
 
 This is an example of a canonical URL and it's a nice enhancement for SEO because it helps guide search engines to the most relevant pages and discard other pages. And if you decide to move the content to another page in the future, the URL makes it easier for search engines to find it. This feature is used in search results, in related assets and in Asset Publishers. For more information on Liferay's Display Pages, see chapter 5.
 
 **Related Assets:** enables you to connect any number of assets within a site or across the portal, even if they don't share any tags and aren't in the same category. You can connect your content to a Blogs Entry, Message Boards Message, Web Content, Calendar Event, Bookmarks Entry, Documents and Media Document, and a Wiki Page.
 
-![Figure 2.x: This Wiki page has a blog entry called Test 2 as a Related Asset.](../../images/related-assets-link.png)
+![Figure 2.16: This blog entry has links to three Related Assets: one web content display and two blog entries.](../../images/related-assets-link.png)
 
 ##### The Related Assets portlet []()
 
-The *Related Assets* portlet displays the relationships between assets. When you add the portlet to a page, it shows the related assets of the asset being shown in the current page. You can add as many related asset portlets as you desire to every page.
-	
-This portlet is an extension of the Asset Publisher, which allows you to configure it to achieve further filtering. For example you can add three Related Assets portlets to a page and configure one to show only blog entries, the second one to show only images and the third one to show only documents. When you access the page, you'll see portlets displaying Related Blogs, Related Images and Related Documents.
+The *Related Assets* portlet displays the relationships between assets. When you add the portlet to a page, it shows the related assets of the asset being shown in the current page. 
+
+<!-- 
+No, I think you must configure it first. When you add the portlet to a page is reads, There are no related assets available. This application will show all assets related to the main asset of the current page.
+--> 
+
+You can add as many related asset portlets as you desire to every page.
+
+This portlet, which is an extension of the Asset Publisher, enahnces your ability to filter on Assets. For example, you can add three Related Assets portlets to a page and configure one to show only blog entries, the second one to show only images and the third one to show only documents. When you access the page, you'll see portlets displaying Related Blogs, Related Images, and Related Documents.
 
 To do this, go to the Asset Publisher portlet and select the *wrench* icon in the upper right corner of the portlet. Under the *Setup* tab, set the filter options using the *Asset Type* menu.
 
-<!--  Do we need to get into more detail about the form?  -->
+![Figure 2.17: My example of a Related Assets portlet is not working.](../../images/related-assets-portlet.png)
 
 **Permissions:** customize who has access to the content. By default, content is viewable by Anyone (Guest Role). You can limit viewable permissions by selecting any Role from the drop-down or in the list. Additionally, Liferay Portal provides the ability to customize permissions in more detail. Select the *More Options* link next to the drop down button and you'll find the different activities you can grant or deny to your web content.
 
-![Figure 2.15: Permissions for Web Content allow you to fine-tune the access of your content.](../../images/04-web-content-content-permissions.png)
+![Figure 2.18: Permissions for Web Content allow you to fine-tune the access of your content.](../../images/04-web-content-content-permissions.png)
 
-**Custom fields:** customize metadata about the web content and can be anything you like, such as author or creation date. If custom fields have been defined for web content (which can be done from the *Custom Fields* page of the control panel), they appear here. 
+**Custom fields:** customize metadata about the web content. The fields can represent anything you like, such as the web content's author or creation date. If custom fields have been defined for web content (which can be done from the *Custom Fields* page of the Control Panel), they appear here.
 
 For more information on Custom Fields see the Custom Fields section in chapter 16.
 
-For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Saveas Draft*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. Let's look at how it works.
+For this piece of web content, we don't need to change anything. After you're finished with permissions, click *Save as Draft*. This saves the content in draft form. Once you're satisfied with your changes, select *Publish*. This makes the content available for display, but we still have some work to do to enable users to see it. In Liferay WCM, all content resides in a container, which is one of two portlets: Web Content Display or Web Content List. By far the most frequently used is the *Web Content Display* portlet. Let's look at how it works.
 
 ## Publishing (basic) content [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
 
 Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page by selecting *Add &rarr; Web Content Display* from the Dockbar.
 
-![Figure 2.16: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
+![Figure 2.19: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
-Once the portlet appears, drag it to the position on the page where you want your content to appear. You can have as many Web Content Display portlets on a page as you need, which gives you the power to lay out your content exactly the way you want it. 
+Once the portlet appears, drag it to the position on the page where you want your content to appear. You can have as many Web Content Display portlets on a page as you need, which gives you the power to lay out your content exactly the way you want it.
 
 To add existing web content, select the *gear* icon on the lower left of the portlet. You will see the message *Please select a web content from the list below*. You have several options here.
 
 Naturally, if your content appears in the list, you can simply select it. If there is lots of published content available, you could search for the content by name, ID, type, version, content and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
 
-![Figure 2.17: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
+![Figure 2.20: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also enable document conversion for your content. This gives your users the ability to download your content in their format of choice. This is especially handy if you are running a research or academically oriented site; users can very quickly download PDFs of your content for their research projects.
 
@@ -462,36 +468,35 @@ If you click the *Supported Clients* tab, you'll see you can choose the type of 
 
 To publish new content, select the *page and green plus icon* on the lower left of the portlet. This launches the same full-featured editor you've already seen in the control panel, which lets you add and edit content in place as you are working on your page.
 
-This is another example of the flexibility that Liferay Portal offers. At times, you may want to add content directly into the Web Content Display portlet of the page you're managing, especially if you are in the process of building the page. At other times, you may want to use the control panel to create content, because at that moment you're more concerned with the creation of the content and not where the content will later be displayed. Liferay WCM supports both processes. 
+This is another example of the flexibility that Liferay Portal offers. At times, you may want to add content directly into the Web Content Display portlet of the page you're managing, especially if you are in the process of building the page. At other times, you may want to use the control panel to create content, because at that moment you're more concerned with the creation of the content and not where the content will later be displayed. Liferay WCM supports both processes.
 
-Editing content that's already been published is just as easy as creating new content is. You'll use the same exact tools. 
+Editing content that's already been published is just as easy as creating new content is. You'll use the same exact tools.
 
 ##### Editing Content [](id=lp-6-1-ugen03-editing-content-0)
 
 Once the content is displayed--whether you've selected content or created it in the Web Content Display portlet--you can edit the content directly from the Web Content Display portlet or from the control panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This launches the WYSIWYG editor and from there you can make any necessary changes.
 
-![Figure 2.18: Edit, Select and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
+![Figure 2.21: Edit, Select and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
 
 When you publish your content this way, it becomes available immediately (unless, of course, you have a workflow enabled, which we'll see below). This happens whether you edit it in place or in the control panel.
 
-Note: if you want to view your page the way your users will see it (i.e., without all those portlet controls and icons), go up to the Dockbar and select *Toggle Edit Controls*. This makes all those extra controls you see as a portal administrator disappear. If you need to use those controls again, just select *Toggle Edit Controls* again. 
+Note: if you want to view your page the way your users will see it (i.e., without all those portlet controls and icons), go up to the Dockbar and select *Toggle Edit Controls*. This makes all those extra controls you see as a portal administrator disappear. If you need to use those controls again, just select *Toggle Edit Controls* again.
 
-That's pretty much all there is to simple content creation. Whole sites have been created this way. But if you want to take advantage of the full power of Liferay's WCM, you'll want to use structures and templates found in chapter 3. Next, let's see how you can manage your content with an approval process called workflow. 
+That's pretty much all there is to simple content creation. Whole sites have been created this way. But if you want to take advantage of the full power of Liferay's WCM, you'll want to use structures and templates found in chapter 3. Next, let's see how you can manage your content with an approval process called workflow.
 
-<!-- Section v of new outline -->
 ## Using Liferay's workflow with WCM [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay WCM, workflow is designed to manage the creation, modification and publication of web content. You can set up a workflow so content can't be published without going through an approval process you design. In this way, content is published to the site only after it has been reviewed and approved.
 
 Liferay's workflow engine is called Kaleo workflow and it ships with Liferay CE. If you have uninstalled it or are using EE, it needs to be installed and configured separately. This is covered in chapter 6. Since we have somewhat of a "What came first--the chicken or the egg?" problem, for now, we'll assume it's installed and look at how you can take advantage of workflow in getting your content through any approval steps between creation and publication.
 
-You may have noticed something appears to be missing from the staging process discussed above. In particular, you might be asking the question, "How do I reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's Workflow engine. To have a review process for staged pages, you need to make sure you have a workflow engine configured and you have staging set up in the workflow. To do this, select the workflow definition desired for page revisions in the Workflow Configuration. 
+You may have noticed something appears to be missing from the staging process discussed above. In particular, you might be asking the question, "How do I reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's Workflow engine. To have a review process for staged pages, you need to make sure you have a workflow engine configured and you have staging set up in the workflow. To do this, select the workflow definition desired for page revisions in the Workflow Configuration.
 
 When using a workflow, clicking *Submit for Publication* submits the staged pages into the workflow. Once all necessary approvals have been completed, the page status is marked as ready for publication. The *Publish to Live Now* and *Schedule for Publication* options  publish the last version of the selected pages marked as ready for publication.
 
 To enable workflow for Web Content, navigate to the control panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
-![Figure 2.19: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 2.22: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 10, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
 
@@ -505,7 +510,7 @@ Let's set up Liferay's Workflow for the Nose-ster web site. You must have the Ka
 
 That's all it takes to set up workflow for web content. Now that workflow is enabled, publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at Nose-ster. Return to the home page and click the *Add Web Content* icon on the Web Content Display portlet. Call the new content *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
 
-![Figure 2.20: Pending Workflow](../../images/04-web-content-workflow-config.png)
+![Figure 2.23: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in control panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow and anyone in this role can approve content as well.
 
@@ -524,8 +529,9 @@ In a real world situation, you obviously wouldn't want the person who created th
 Next up is Site memberships, where you'll learn how to administer sites and define users and permissions. 
 ## Site memberships [](id=lp-6-1-ugen02-site-memberships-0)
 Need text here -->
+
 ## Summary [](id=summ-25)
 
-This chapter has provided an introduction to Liferay Web Content Management. We've seen how to create and manage pages within a site in Liferay. We've also seen how easy it is to create and edit web content using Liferay's rich WYSIWYG editor. This powerful tool enables users who don't have much experience with HTML and CSS to easily create and style web content of any type that you'd like to publish on the web. 
+This chapter has provided an introduction to Liferay Web Content Management. We've seen how to create and manage pages within a site in Liferay. We've also seen how easy it is to create and edit web content using Liferay's rich WYSIWYG editor. This powerful tool enables users who don't have much experience with HTML and CSS to easily create and style web content of any type that you'd like to publish on the web.
 
 Liferay WCM also includes a powerful workflow engine, allowing you to set up custom publishing rules to fit your organization. You can set up custom approval processes for different sites as well as for different kinds of content within a site. We'll examine sites in more detail in chapter 3. We'll also cover some more advanced web content management tools such as web content structures and templates, page templates and site templates, staging, and mobile device rules.
