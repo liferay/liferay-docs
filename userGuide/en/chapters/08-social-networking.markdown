@@ -166,7 +166,7 @@ Gadgets are socially aware and can share data across a community of users. You c
 
 ### Adding OpenSocial gadgets [](id=lp-6-1-ugen08-using-opensocial-gadgets-0)
 
-The OpenSocial plugin is included with Liferay Community Edition and can be installed through Liferay Marketplace on Liferay EE. Installing the OpenSocial plugin enables you to add OpenSocial gadgets to pages, just like you'd add portlets. There are two types of gadgets: 
+The OpenSocial plugin can be installed through Liferay Marketplace for both Liferay CE and EE. Installing the OpenSocial plugin enables you to add OpenSocial gadgets to pages, just like you'd add portlets. There are two types of gadgets: 
 
 - "Adhoc" gadgets that users can add to a page via URL
 - Gadgets published by the Control Panel that are available portal-wide
