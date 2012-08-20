@@ -59,7 +59,7 @@ administrator role, which is a portal scoped role, have permission to view this
 section of the control panel. You can, of course, grant custom roles permissions
 to one or more sections.
 
-### Adding users [](id=lp-6-1-ugen12-adding-users-0)
+## Adding users [](id=lp-6-1-ugen12-adding-users-0)
 
 Let's add a user account for yourself and configure this account so it has the
 same administrative access as the default administrator account. Go up to the
@@ -105,7 +105,7 @@ the portal. Log out of the portal and then log back in with your own user ID.
 
 We'll next look at some aspects of user management. 
 
-### User management [](id=lp-6-1-ugen12-user-management-0)
+## User management [](id=lp-6-1-ugen12-user-management-0)
 
 If you click the *Users* link on the left menu of the control panel, there are
 now two users in the list of users. If you want to change something about a
@@ -265,7 +265,9 @@ organizations. Let's look at them next.
 <!--  No "sites" here We briefly mentioned sites during this discussion. Sites
 are another construct within the portal and have different properties than
 organizations. Let's see how you can use them.  --> <!--  this is Section i,
-subsection b   --> ### User Groups [](id=lp-6-1-ugen12-user-groups-0)
+subsection b   --> 
+
+## User Groups [](id=lp-6-1-ugen12-user-groups-0)
 
 User Groups are arbitrary groupings of users. These groups are created by portal
 administrators to group users together who don't necessarily share an obvious
@@ -335,7 +337,7 @@ group's Actions menu. Clicking one of these links opens the user group's site in
 a new browser window. Any changes you make to the site are saved automatically.
 You can safely close the browser window when you're done.
 
-##### Creating and editing a User Group
+### Creating and editing a User Group [](id=lp-6-1-ugen15-creating-and-editing-a-user-group-0)
 [](id=lp-6-1-ugen12-creating-and-editing-a-user-group-0)
 
 A user group's site can be administered from the control panel. Select *User
@@ -355,7 +357,7 @@ group, and optionally, a description. Click *Save* to create your user group.
 
 Our next step is to assign an existing user to the *Bloggers* group.
 
-##### Assigning Members to a User Group
+### Assigning Members to a User Group [](id=lp-6-1-ugen15-assigning-members-to-a-user-group-0)
 [](id=lp-6-1-ugen12-assigning-members-to-a-user-group-0)
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*.
@@ -383,7 +385,7 @@ assigning a role to users from the roles management UI.
 The next section describes a more advanced usage of user groups: User Group
 Sites.
 
-#### User Group Sites [](id=lp-6-1-ugen12-user-group-sites-0)
+### User Group Sites [](id=lp-6-1-ugen12-user-group-sites-0)
 
 Liferay allows users to each have a personal site consisting of public and
 private pages. Permissions can be granted to allow users to customize their
@@ -484,7 +486,7 @@ group. You will see how all of the pages in the user group appear as part of the
 user site, including the ones copied from the site template and the ones added
 afterwards.
 
-<!--  this is Section i, subsection c   --> ### Roles and Permissions
+## Roles and Permissions [](id=lp-6-1-ugen15-roles-and-permissions-0)
 [](id=lp-6-1-ugen12-roles-0)
 
 Roles are groupings of users that share a particular function within the portal,
@@ -531,7 +533,7 @@ role.
 
 Next, let's examine how to configure the permissions granted by different roles.
 
-#### Defining Permissions on a Role
+### Defining Permissions on a Role [](id=lp-6-1-ugen15-defining-permissions-on-a-role-0)
 [](id=lp-6-1-ugen12-defining-permissions-on-a-role-0)
 
 Roles serve as repositories of permissions to be assigned to users who belong to
@@ -604,7 +606,7 @@ menu and select *User Groups* under the *Control Panel: Portal* heading and
 check the *Access in Control Panel* and *View* permissions so that user group
 managers can manage user groups from the Control Panel.
 
-![Figure 15.x: Make sure to test the permissions you grant to custom
+![Figure 15.11: Make sure to test the permissions you grant to custom
 roles.](../../images/user-group-manager-role.png)
 
 You might expect that these permissions would be enough to allow users assigned
@@ -618,7 +620,7 @@ user groups, they don't have permission to view users at the portal level. This
 means that if they click *Assign Members* for a user group and click on the
 *Available* tab, they'll see an empty list.
 
-![Figure 15.x: Users assigned to the User Group Manager role can't find any
+![Figure 15.12: Users assigned to the User Group Manager role can't find any
 users to add!](../../images/no-users-found.png)
 
 To fix this, click *Go To* &rarr; *Control Panel*. Click on *Roles* and then
@@ -632,7 +634,7 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-#### Special Note about the Power Users Role
+### Special Note about the Power Users Role [](id=lp-6-1-ugen15-special-note-about-the-power-users-role-0)
 [](id=lp-6-1-ugen12-special-note-about-the-power-users-role-0)
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets
@@ -659,7 +661,7 @@ Now that we've seen how to use organizations and user groups to manage users and
 how to use roles to define permissions, let's examine the general portal
 settings you can configure.
 
-#### Managing Portal Settings [](id=managing-portal-settings)
+## Managing Portal Settings [](id=managing-portal-settings)
 
 After you have created users, user groups, organizations, roles, sites and teams
 your portal will be ready to host content and applications. You can configure
@@ -678,7 +680,7 @@ the portal operates and integrates with other systems you may have. Let's begin
 our discussion of Liferay's portal settings by examining how to configure
 password policies.
 
-<!--  this is Section i, subsection d  --> ### Password Policies
+### Password Policies [](id=lp-6-1-ugen15-password-policies-0)
 [](id=lp-6-1-ugen12-password-policies-0)
 
 Password policies can enhance the security of your portal. You can set
@@ -775,12 +777,12 @@ newsletters. Any domain names associated with your organization can go here.
 notifications for certain events, such as user registrations, password changes,
 etc. You can customize those messages here.
 
-![Figure 15.11: Portal Settings
+![Figure 15.13: Portal Settings
 Pages](../../images/server-configuration-portal-settings-pages.png)
 
 Let's discuss these settings next.
 
-#### General [](id=lp-6-1-ugen12-general-0)
+### General [](id=lp-6-1-ugen12-general-0)
 
 The General link takes you to a page with three headings: Main Configuration,
 Navigation and Additional Information. Under the Main Configuration heading, you
@@ -793,7 +795,7 @@ page for your portal here as well as default landing and logout pages. Under the
 Additional Information heading, you can specify a Legal name, ID, company type,
 SIC code, ticker symbol, industry and industry type.
 
-#### Authentication [](id=lp-6-1-ugen12-authentication-0)
+### Authentication [](id=lp-6-1-ugen12-authentication-0)
 
 The Authentication page has several tabs: General, LDAP, CAS, Facebook, NTLM,
 OpenID, Open SSO and SiteMinder. You can use any of these authentication methods
@@ -851,11 +853,9 @@ or she logs in to help the user keep it up to date.
 
 We'll examine how to set up LDAP authentication next.
 
-<!-- New transition?  --> <!-- Section ii   Needs content --> ## Integrating
-Liferay users into your enterprise
-[](id=lp-6-1-ugen15-integrating-liferay-users-into-your-enterprise-0)
+## Integrating Liferay users into your enterprise [](id=lp-6-1-ugen15-integrating-liferay-users-into-your-enterprise-0)
 
-<!--  this is Section ii, subsection a   --> ### LDAP
+### LDAP [](id=lp-6-1-ugen15-ldap-0)
 [](id=lp-6-1-ugen12-authentication-ldap-0)
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an
@@ -927,7 +927,7 @@ for setting this. See below for instructions describing how to do this.
 Once you've finished configuring LDAP, click the *Save* button. Next, let's look
 at how to add LDAP servers.
 
-###### Adding LDAP Servers [](id=lp-6-1-ugen12-adding-ldap-servers-0)
+#### Adding LDAP Servers [](id=lp-6-1-ugen12-adding-ldap-servers-0)
 
 The Add button beneath the LDAP servers heading allows you to add LDAP servers.
 If you have more than one, you can arrange the servers by order of preference
@@ -1050,7 +1050,7 @@ You can also add your own mappings if you wish.
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
 and match them with their mappings as a preview.
 
-![Figure 15.12: Testing LDAP
+![Figure 15.14: Testing LDAP
 Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay.
@@ -1088,14 +1088,14 @@ location.
 classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
 view the Object Class attributes stored in LDAP for that group.
 
-![Figure 15.13: Mapping LDAP
+![Figure 15.15: Mapping LDAP
 Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-###### LDAP Options Not Available in the GUI
+#### LDAP Options Not Available in the GUI [](id=lp-6-1-ugen15-ldap-options-not-available-in-the-gui-0)
 [](id=lp-6-1-ugen12-ldap-options-not-available-in-the-gui-0)
 
 Although most of the LDAP configuration can be done from the control panel,
@@ -1120,7 +1120,7 @@ user's password out of LDAP, decrypts it and compares it with the user's
 password in Liferay, syncing the two.
 
     ldap.auth.password.encryption.algorithm=
-ldap.auth.password.encryption.algorithm.types=MD5,SHA
+    ldap.auth.password.encryption.algorithm.types=MD5,SHA
 
 Set the password encryption to used to compare passwords if the property
 `ldap.auth.method` is set to `password-compare`.
@@ -1149,8 +1149,7 @@ don't, you can replace the values of these properties with phrases from your
 server's error messages. This will enable Liferay to recognize them. Next, let's
 look at the Single Sign-On solutions Liferay supports.
 
-<!--  this is Section ii, subsection b  --> ### SSO
-[](id=lp-6-1-ugen12-single-sign-on-0)
+### SSO [](id=lp-6-1-ugen12-single-sign-on-0)
 
 Single Sign-On solutions allow you to provide a single login credential for
 multiple systems. This allows you to have people authenticate to the Single
@@ -1163,7 +1162,7 @@ the extension environment. Alternatively, your organization can choose to
 sponsor support for it. Please contact `sales@liferay.com` for more information
 about this.
 
-##### Authentication: Central Authentication Service (CAS)
+### Authentication: Central Authentication Service (CAS) [](id=lp-6-1-ugen15-authentication-central-authentication-service-cas-0)
 [](id=lp-6-1-ugen12-authentication-central-authentication-service-cas-0)
 
 CAS is an authentication system originally created at Yale University. It is a
@@ -1227,7 +1226,7 @@ The rest of the settings are various URLs, with defaults included. Change
 finished, click *Save*. After this, when users click the *Sign In* link, they
 will be directed to the CAS server to sign in to Liferay.
 
-##### Authentication: Facebook [](id=lp-6-1-ugen12-authentication-facebook-0)
+### Authentication: Facebook [](id=lp-6-1-ugen12-authentication-facebook-0)
 
 Liferay Portal also enables users to log in using their Facebook accounts. To
 enable this feature, you simply need to select the *Enable* box and enter the
@@ -1240,7 +1239,7 @@ Liferay to add a user from Facebook. Once selected, a new user is created by
 retrieving four fields from Facebook (first name, last name, email address and
 gender).
 
-##### Authentication: NTLM [](id=lp-6-1-ugen12-authentication-ntlm-0)
+### Authentication: NTLM [](id=lp-6-1-ugen12-authentication-ntlm-0)
 
 NTLM is a Microsoft protocol that can be used for authentication through
 Microsoft Internet Explorer. Though Microsoft has adopted Kerberos in modern
@@ -1260,7 +1259,7 @@ will be a computer account, not a user account.
 
 **Service Password:** Enter the password for the service account.
 
-##### Authentication: OpenID [](id=lp-6-1-ugen12-authentication-openid-0)
+### Authentication: OpenID [](id=lp-6-1-ugen12-authentication-openid-0)
 
 OpenID is a new single sign-on standard which is implemented by multiple
 vendors. The idea is multiple vendors can implement the standard and then users
@@ -1292,7 +1291,7 @@ to implement the feature.
 
 OpenID is enabled by default in Liferay but can be disabled here.
 
-##### Atlassian Crowd [](id=lp-6-1-ugen12-atlassian-crowd-0)
+### Atlassian Crowd [](id=lp-6-1-ugen12-atlassian-crowd-0)
 
 Atlassian Crowd is a web-based Single Sign-On product similar to CAS. Crowd can
 be used to manage authentication to many different web applications and
@@ -1302,7 +1301,7 @@ Because Atlassian Crowd implements an OpenID producer, Liferay works and has
 been tested with it. Simply use the OpenID authentication feature in Liferay to
 log in using Crowd.
 
-##### Authentication: OpenSSO [](id=lp-6-1-ugen12-authentication-opensso-0)
+### Authentication: OpenSSO [](id=lp-6-1-ugen12-authentication-opensso-0)
 
 OpenSSO is an open source single sign-on solution that comes from the code base
 of Sun's System Access Manager product. Liferay integrates with OpenSSO,
@@ -1328,7 +1327,7 @@ your OpenSSO server (i.e., only modify the host name portion of the URLs), click
 the *Enabled* check box and then click *Save*. Liferay will then redirect users
 to OpenSSO when they click the *Sign In* link.
 
-##### Authentication: SiteMinder
+### Authentication: SiteMinder [](id=lp-6-1-ugen15-authentication-siteminder-0)
 [](id=lp-6-1-ugen12-authentication-siteminder-0)
 
 SiteMinder is a single sign-on implementation from Computer Associates. Liferay
@@ -1347,7 +1346,7 @@ your installation, enter the custom value here.
 When you are finished, click *Save*. Next, let's examine how to configure
 portal-wide user settings.
 
-#### Users [](id=lp-6-1-ugen12-users-0)
+### Users [](id=lp-6-1-ugen12-users-0)
 
 The Users page of Portal Settings has three tabs: Fields, Reserved Credentials
 and Default User Associations.

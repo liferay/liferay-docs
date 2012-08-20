@@ -8,7 +8,7 @@ In this chapter, we discuss several ways Liferay users can customize pages, appl
 
 Personal sites allow each portal user to manage and customize a set of public and/or private pages and any associated content or applications. Public pages provide a means of making content publicly available while private pages provide a means of hiding information from other users. Liferay 6.1 introduced customizable pages and applications. Administrators can designate certain pages or applications as "customizable," which allows each user to make and save their own customizations. Liferay Enterprise Edition provides a rules engine which allows administrators to create custom portal rules and simplify complex blocks of code containing lots of `if-else` statements. Let's start by discussing personal sites.
 
-## User Personal Sites
+## User Personal Sites [](id=lp-6-1-ugen06-user-personal-sites-0)
 
 By default, newly created users in Liferay are each granted a personal site. Each user functions as the site administrator of his or her personal site. Personal sites are fully customizable but cannot have more than one member. The public pages of personal sites provide a space for users to publish content that they'd like to make accessible to anyone, including guests. User blogs are often placed on public personal site pages. Content and applications that users would like to reserve for personal use are often placed on the private pages of personal sites. For example, each user can add a Documents and Media portlet to his or her private pages and use it as an online private file repository.
 
@@ -56,17 +56,17 @@ Liferay 6.1 introduced the concept of page customizations. Site administrators c
 
 To enable page customizations as a site administrator, first navigate to the page you'd like to let site members modify. Then select *Manage* &rarr; *Page Customizations* from the Dockbar.
 
-![Figure 6.x: To enable page customizations, select *Manage* &rarr; *Page Customizations* from the Dockbar.](../../images/page-customizations.png)
+![Figure 6.1: To enable page customizations, select *Manage* &rarr; *Page Customizations* from the Dockbar.](../../images/page-customizations.png)
 
 Once you've selected *Manage* &rarr; *Page Customizations*, you'll see one or more red regions, depending on the layout template of your page. Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page. Regions that you've designated as customizable are colored green.
 
-![Figure 6.x: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../images/customizable-regions.png)
+![Figure 6.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../images/customizable-regions.png)
 
 When site members visit your customizable page, they'll see a notification saying, "You can customize this page." Site members can toggle between viewing their customized page and viewing the default page by clicking the *View Default Page* or *View My Customized Page* links just below the Dockbar. There's also a *Reset My Customizations* link that restores a user's customized page to the match the default page. This allows users to discard one set of customizations and start a new set without having to manually undo each customization that they'd previously made. 
 
 Note that non-administrator site members can access the Add menu from the Dockbar when viewing their customizable page even if they don't ordinarily have permission to view this menu. This allows them to add portlets to the sections of the page that they're allowed to customize. If they click *View Default Page*, the Add menu will disappear from the Dockbar since they're not allowed to modify the default page.
 
-![Figure 6.x: Non-administrator site members can customize their own versions of customizble pages but can't modify the default page.](../../images/default-customizable-page.png)
+![Figure 6.3: Non-administrator site members can customize their own versions of customizble pages but can't modify the default page.](../../images/default-customizable-page.png)
 
 Users can make two kinds of customizations to customizable regions. First, they can configure any portlet applications within the customizable regions. Second, they can add portlets to or remove portlets from the customizable regions. As a simple example, suppose that you, as a site administrator, selected the right column of the default portal homepage to be customizable. A member of the default site could take the following steps to make a personal customization of the portal homepage:
 
@@ -77,11 +77,11 @@ Users can make two kinds of customizations to customizable regions. First, they 
 
 The Language portlet is useful to have on your portal homepage if you expect users who speak different languages to access your portal. Users can select their language in the Language portlet to view a translation of the portal into their native language. After closing the Configuration dialog box of the Language portlet, the customized portal homepage looks like this:
 
-![Figure 6.x: In this example, Joe Bloggs removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
+![Figure 6.4: In this example, Joe Bloggs removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
 
 In addition to customizing portlet configurations, users can customize the look and feel of portlets and import or export portlet settings. Next, let's look at how to use Liferay's rules engine.
 
-## Using Liferay's rules engine
+## Using Liferay's rules engine [](id=lp-6-1-ugen06-using-liferays-rules-engine-0)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
