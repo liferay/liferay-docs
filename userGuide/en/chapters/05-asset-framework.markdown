@@ -211,7 +211,7 @@ by administrators in the *Categories* section of the Control Panel.
 There are a several new enhancements to vocabularies and categories in Liferay
 6.1. The three main features are targeted vocabularies, single/multi-valued
 vocabularies, and separated widgets for every vocabulary.
-	
+
 ##### Targeted Vocabularies []()
 
 Targeted Vocabularies allow you to decide which assets can see each vocabulary
@@ -228,7 +228,7 @@ of the vocabulary to specific assets. In the screenshot above, notice how the
 vocabulary `Famous Noses` is configured to be available for Blogs and Web
 Content, but it is not required. It is mandatory, however, for Documents and
 Media Documents.
-	
+
 ##### Single and Multi-valued Vocabularies []()
 
 You can now decide if the user can choose one or more categories from the same
