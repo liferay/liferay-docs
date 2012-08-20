@@ -1,3 +1,4 @@
+
 # Configuring Liferay for High Availability [](id=enterprise-configurati-5)
 
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is fully ready to support mission-critical, enterprise applications in an environment configured for multiple redundancies and 24/7 uptimes. The product, however, like other products of its kind, doesn't come configured this way out of the box, so there are some steps that need to be taken to tune it for your needs. 
@@ -335,11 +336,17 @@ Installing the plugin to your nodes has the effect of overriding any calls to Lu
 
 Lucene, the search indexer which Liferay uses, can be configured to sync indexes across each cluster node. This is the easiest configuration to implement, though of course, it's not as "clean" a configuration as using pluggable enterprise search. Sometimes, however, you just don't have another server to use for search indexing, so you need a way to keep all your nodes in sync. Liferay provides a method called Cluster Link which can send indexing requests to all nodes in the cluster to keep them in sync. This configuration doesn't require any additional hardware, and it performs very well. It may increase network traffic when an individual server reboots, since a full reindex will be needed. But this should rarely happen, making it a good tradeoff if you don't have the extra hardware to implement a Solr search server.
 
-You can enable Cluster Link by setting one property in your `portal-ext.properties `file:
+You can enable Cluster Link by setting the following property in your `portal-ext.properties` file:
 
     cluster.link.enabled=true
+    
+To cluster your search indexes, you also need to set the following property:
 
-Of course, this needs to be set on all the nodes. That's all you need to do to sync your indexes. Pretty easy, right? Of course, if you have existing indexes, you'll want to do a reindex as described in the previous section once you have Cluster Link enabled on all your nodes.  
+    lucene.replicate.write=true
+    
+If you have `cluster.link.enabled=true` but `lucene.replicate.write=false`, you'll enable cache replication but not index replication.
+
+Of course, `cluster.link.enabled=true` and `lucene.replicate.write=true` need to be set on all your nodes. That's all you need to do to sync your indexes. Pretty easy, right? Of course, if you have existing indexes, you'll want to do a reindex as described in the previous section once you have Cluster Link enabled on all your nodes.  
 
 Next, we'll show how to share indexes in a database. This is actually not a recommended configuration, as it's slow (databases are always slower than file systems), but for completeness, we'll go ahead and tell you how to do it anyway. But you've been forewarned: it's far better to use one of the other methods of clustering your search index. 
 
