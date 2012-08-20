@@ -418,19 +418,19 @@ This is an example of a canonical URL and it's a nice enhancement for SEO becaus
 
 ##### The Related Assets portlet []()
 
-The *Related Assets* portlet displays the relationships between assets. When you add the portlet to a page, it shows the related assets of the asset being shown in the current page. 
+The *Related Assets* portlet, a new feature for Liferay 6.1, displays the relationships between assets. When you add the portlet to a page, it shows the related assets of the asset being shown in the current page. You can add as many related asset portlets as you desire to every page.
 
-<!-- 
-No, I think you must configure it first. When you add the portlet to a page is reads, There are no related assets available. This application will show all assets related to the main asset of the current page.
---> 
+This application, which is an extension of the Asset Publisher, enahnces your ability to filter on assets. For example, you can add three Related Assets portlets to a page and configure one to show only blog entries, the second one to show only images and the third one to show only documents. To customize the portlet title, use the Look and Feel option and check the *Use Custom Title* box, enter the new name for the portlet and click *Save* when done. When you access the page, you'll see portlets displaying *Related Blogs*, *Related Images*, and *Related Documents*. Initially, your portlets may look like the figure below.
 
-You can add as many related asset portlets as you desire to every page.
+![Figure 2.x: Related Assets portlets won't display assets until configured properly.](../../images/related-assets-portlet.png)
 
-This portlet, which is an extension of the Asset Publisher, enahnces your ability to filter on Assets. For example, you can add three Related Assets portlets to a page and configure one to show only blog entries, the second one to show only images and the third one to show only documents. When you access the page, you'll see portlets displaying Related Blogs, Related Images, and Related Documents.
+The Related Assets portlet won't show any assets until you configure them to show the content you want displayed. To do this, go to the Asset Publisher portlet and select the *wrench* icon in the upper right corner of the portlet. Under the *Setup* tab, set the filter options using the *Asset Type* menu. The default value is set to *Any*. You can narrow the scope of the portlet to display any single category of asset type or select multiple assets from the menu.
 
-To do this, go to the Asset Publisher portlet and select the *wrench* icon in the upper right corner of the portlet. Under the *Setup* tab, set the filter options using the *Asset Type* menu.
+When you are finished setting the Source and Filter options, click *Save*. But hold on a minute. You saw the message that says, `You have successfully updated the setup`, but there still aren't any assets displayed in the related assets portlet. Why? The answer has to do with the behavior of the portlet.  
 
-![Figure 2.17: My example of a Related Assets portlet is not working.](../../images/related-assets-portlet.png)
+![Figure 2.17: My example of a Related Assets portlet is not working.](../../images/related-assets-portlet-after.png)
+
+You cannot see any related assets until you select one of the assets in the Asset Publisher. Once you select an asset, its related assets will display in the Related Assets portlet, similar to the image above.
 
 **Permissions:** customize who has access to the content. By default, content is viewable by Anyone (Guest Role). You can limit viewable permissions by selecting any Role from the drop-down or in the list. Additionally, Liferay Portal provides the ability to customize permissions in more detail. Select the *More Options* link next to the drop down button and you'll find the different activities you can grant or deny to your web content.
 
