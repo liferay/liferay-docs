@@ -486,7 +486,7 @@ group. You will see how all of the pages in the user group appear as part of the
 user site, including the ones copied from the site template and the ones added
 afterwards.
 
-## Roles and Permissions
+## Roles and Permissions [](id=lp-6-1-ugen15-roles-and-permissions-0)
 [](id=lp-6-1-ugen12-roles-0)
 
 Roles are groupings of users that share a particular function within the portal,
@@ -680,7 +680,7 @@ the portal operates and integrates with other systems you may have. Let's begin
 our discussion of Liferay's portal settings by examining how to configure
 password policies.
 
-### Password Policies
+### Password Policies [](id=lp-6-1-ugen15-password-policies-0)
 [](id=lp-6-1-ugen12-password-policies-0)
 
 Password policies can enhance the security of your portal. You can set
@@ -855,7 +855,7 @@ We'll examine how to set up LDAP authentication next.
 
 ## Integrating Liferay users into your enterprise [](id=lp-6-1-ugen15-integrating-liferay-users-into-your-enterprise-0)
 
-### LDAP
+### LDAP [](id=lp-6-1-ugen15-ldap-0)
 [](id=lp-6-1-ugen12-authentication-ldap-0)
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an

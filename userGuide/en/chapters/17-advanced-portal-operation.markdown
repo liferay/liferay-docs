@@ -82,7 +82,7 @@ We'll come back to Tom, Dick and Harry's story later in the chapter. For now,
 let's look at how to install Liferay's audit plugins so you can do the same
 thing Harry's about to do. 
 
-### Installing and configuring the audit plugins
+### Installing and configuring the audit plugins [](id=lp-6-1-ugen17-installing-and-configuring-the-audit-plugins-0)
 [](id=installing-and-configuring-the-audit-plugins)
 
 Liferay's audit functionality is composed of two parts: a back-end piece that
@@ -259,7 +259,7 @@ better day than Melvin is.
 Now that we've seen how you can use audit trails, let's look at some tools and
 best practices for maintaining your Liferay installation.
 
-## Liferay monitoring using Google Analytics
+## Liferay monitoring using Google Analytics [](id=lp-6-1-ugen17-liferay-monitoring-using-google-analytics-0)
 [](id=liferay-monitoring-using-google-analyti-5)
 
 Liferay includes built-in support for Google Analytics, allowing administrators
@@ -323,7 +323,7 @@ need to build your extension and deploy it to a server.
 
 Let's look at the items that need to be backed up in your Liferay installation. 
 
-### Backing up Liferay's file system
+### Backing up Liferay's file system [](id=lp-6-1-ugen17-backing-up-liferays-file-system-0)
 [](id=lp-6-1-ugen16-backing-up-liferays-file-system-0)
 
 Liferay's configuration file, `portal-ext.properties`, gets stored in the
@@ -350,7 +350,7 @@ should also back up this location.
 That about covers the file system locations Liferay uses. Next, let's discuss
 how to back up Liferay's database.
 
-### Backing up Liferay's database
+### Backing up Liferay's database [](id=lp-6-1-ugen17-backing-up-liferays-database-0)
 [](id=lp-6-1-ugen16-backing-up-liferays-database-0)
 
 Liferay's database is the central repository for all of the Portal's information
@@ -476,7 +476,7 @@ always going to want to patch.
 
 Now that you know what patching is all about, let's check out the tool. 
 
-### Installing the patching tool
+### Installing the patching tool [](id=lp-6-1-ugen17-installing-the-patching-tool-0)
 [](id=lp-6-1-ugen16-installing-the-patching-tool-0)
 
 If you're using a Liferay bundle, congratulations! The patching tool is already
@@ -555,7 +555,7 @@ Your patches are now installed. You can verify this by using the
 `./patching-tool.sh info` command, which now shows your patch in the list of
 installed patches. Let's look now at how you'd manage your patches. 
 
-#### Handling hot fixes and patches
+#### Handling hot fixes and patches [](id=lp-6-1-ugen17-handling-hot-fixes-and-patches-0)
 [](id=lp-6-1-ugen16-handling-hot-fixes-and-patches-0)
 
 As stated above, hot fixes are short term fixes provided as quickly as possible
@@ -581,7 +581,7 @@ folder, the patching tool will install them.
 
 The patching tool can also remove patches. 
 
-### Removing or reverting patches
+### Removing or reverting patches [](id=lp-6-1-ugen17-removing-or-reverting-patches-0)
 [](id=lp-6-1-ugen16-removing-or-reverting-patches-0)
 
 Have you noticed that the patching tool only seems to have an `install` command?
@@ -598,7 +598,7 @@ What we've described so far is the simplest way to use the patching tool, but
 you can also use the patching tool in the most complex, multi-VM, clustered
 environments. This is done by using profiles. 
 
-### Using profiles with the patching tool
+### Using profiles with the patching tool [](id=lp-6-1-ugen17-using-profiles-with-the-patching-tool-0)
 [](id=lp-6-1-ugen16-using-profiles-with-the-patching-tool-0)
 
 When you ran the auto-discovery task after installing the patching tool, it
@@ -688,7 +688,7 @@ a 6.1 installation. If you're running a previous version of Liferay and need to
 upgrade to 6.0 first, please see the instructions in the previous version of
 this document. 
 
-### Upgrading Liferay Portal 6.0 to Liferay Portal 6.1
+### Upgrading Liferay Portal 6.0 to Liferay Portal 6.1 [](id=lp-6-1-ugen17-upgrading-liferay-portal-60-to-liferay-portal-61-0)
 [](id=lp-6-1-ugen16-upgrading-liferay-portal-60-to-liferay-portal-61-0)
 
 There are a few things you'll want to prepare before you actually perform the
@@ -811,7 +811,7 @@ versions are mandated by the environment you're in or by management. For this
 reason, Liferay also ships as an installable .war file that can be used on any
 supported application server.    
 
-#### Upgrading using a .war file
+#### Upgrading using a .war file [](id=lp-6-1-ugen17-upgrading-using-a-war-file-0)
 [](id=lp-6-1-ugen16-upgrading-using-a-war-file-0)
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
