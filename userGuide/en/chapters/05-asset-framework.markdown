@@ -100,7 +100,7 @@ Targeted Vocabularies allow you to decide which assets can see each vocabulary b
 
 ![Figure 5.6: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
 
-The default value for *Associated Asset Types* is *All Asset Types*. You can fine tune your choices by using the *+* and *-* buttons, which narrows the reach of the vocabulary to certain assets. In the screenshot above, notice how the vocabulary titled *Famous Noses* is configured to be available for Blogs and Web Content, but it is not required. It is mandatory, however, for Documents and Media Documents.
+The default value for *Associated Asset Types* is *All Asset Types*. You can fine tune your choices by using the *+* and *-* buttons, which narrows the reach of the vocabulary to certain assets. In the screenshot above, notice how the vocabulary titled `Famous Noses` is configured to be available for Blogs and Web Content, but it is not required. It is mandatory, however, for Documents and Media Documents.
 	
 ##### Single and Multi-valued Vocabularies []()
 
