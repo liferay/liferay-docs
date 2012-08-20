@@ -422,19 +422,19 @@ The *Related Assets* portlet, a new feature for Liferay 6.1, displays the relati
 
 This application, which is an extension of the Asset Publisher, enahnces your ability to filter on assets. For example, you can add three Related Assets portlets to a page and configure one to show only blog entries, the second one to show only images and the third one to show only documents. To customize the portlet title, use the Look and Feel option and check the *Use Custom Title* box, enter the new name for the portlet and click *Save* when done. When you access the page, you'll see portlets displaying *Related Blogs*, *Related Images*, and *Related Documents*. Initially, your portlets may look like the figure below.
 
-![Figure 2.x: Related Assets portlets won't display assets until configured properly.](../../images/related-assets-portlet.png)
+![Figure 2.17: Related Assets portlets won't display assets until configured properly.](../../images/related-assets-portlet.png)
 
 The Related Assets portlet won't show any assets until you configure them to show the content you want displayed. To do this, go to the Asset Publisher portlet and select the *wrench* icon in the upper right corner of the portlet. Under the *Setup* tab, set the filter options using the *Asset Type* menu. The default value is set to *Any*. You can narrow the scope of the portlet to display any single category of asset type or select multiple assets from the menu.
 
 When you are finished setting the Source and Filter options, click *Save*. But hold on a minute. You saw the message that says, `You have successfully updated the setup`, but there still aren't any assets displayed in the related assets portlet. Why? The answer has to do with the behavior of the portlet.  
 
-![Figure 2.17: My example of a Related Assets portlet is not working.](../../images/related-assets-portlet-after.png)
+![Figure 2.18: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets portlet.](../../images/related-assets-portlet-after.png)
 
 You cannot see any related assets until you select one of the assets in the Asset Publisher. Once you select an asset, its related assets will display in the Related Assets portlet, similar to the image above.
 
 **Permissions:** customize who has access to the content. By default, content is viewable by Anyone (Guest Role). You can limit viewable permissions by selecting any Role from the drop-down or in the list. Additionally, Liferay Portal provides the ability to customize permissions in more detail. Select the *More Options* link next to the drop down button and you'll find the different activities you can grant or deny to your web content.
 
-![Figure 2.18: Permissions for Web Content allow you to fine-tune the access of your content.](../../images/04-web-content-content-permissions.png)
+![Figure 2.19: Permissions for Web Content allow you to fine-tune the access of your content.](../../images/04-web-content-content-permissions.png)
 
 **Custom fields:** customize metadata about the web content. The fields can represent anything you like, such as the web content's author or creation date. If custom fields have been defined for web content (which can be done from the *Custom Fields* page of the Control Panel), they appear here.
 
@@ -446,7 +446,7 @@ For this piece of web content, we don't need to change anything. After you're fi
 
 Now that we've created and published our first piece of web content for Nose-ster, it's time to display it. First, add the *Web Content Display* portlet to our Welcome page by selecting *Add &rarr; Web Content Display* from the Dockbar.
 
-![Figure 2.19: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
+![Figure 2.20: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
 Once the portlet appears, drag it to the position on the page where you want your content to appear. You can have as many Web Content Display portlets on a page as you need, which gives you the power to lay out your content exactly the way you want it.
 
@@ -454,7 +454,7 @@ To add existing web content, select the *gear* icon on the lower left of the por
 
 Naturally, if your content appears in the list, you can simply select it. If there is lots of published content available, you could search for the content by name, ID, type, version, content and site (click the *Advanced* link to see all the options). You can also show the available locales for your content. If you're working on the page for a particular language, you can select the translation of your content that goes with your locale.
 
-![Figure 2.20: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
+![Figure 2.21: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also enable document conversion for your content. This gives your users the ability to download your content in their format of choice. This is especially handy if you are running a research or academically oriented site; users can very quickly download PDFs of your content for their research projects.
 
@@ -476,7 +476,7 @@ Editing content that's already been published is just as easy as creating new co
 
 Once the content is displayed--whether you've selected content or created it in the Web Content Display portlet--you can edit the content directly from the Web Content Display portlet or from the Control Panel. To edit it from the Web Content Display portlet, select the *pencil* icon to the lower left of the portlet. This launches the WYSIWYG editor and from there you can make any necessary changes.
 
-![Figure 2.21: Edit, Select and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
+![Figure 2.22: Edit, Select and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
 
 When you publish your content this way, it becomes available immediately (unless, of course, you have a workflow enabled, which we'll see below). This happens whether you edit it in place or in the Control Panel.
 
@@ -496,7 +496,7 @@ When using a workflow, clicking *Submit for Publication* submits the staged page
 
 To enable workflow for Web Content, navigate to the Control Panel and select *Workflow Configuration*. From there, select a workflow that has been deployed to Liferay.
 
-![Figure 2.22: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 2.23: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 10, you can design workflows to suit your organization's approval process. For Nose-ster's implementation we'll use the *Single Approver* workflow which ships with the product.
 
@@ -510,7 +510,7 @@ Let's set up Liferay's Workflow for the Nose-ster web site. You must have the Ka
 
 That's all it takes to set up workflow for web content. Now that workflow is enabled, publishing content works a little bit differently. Let's go through the process of publishing details for new class offerings at Nose-ster. Return to the home page and click the *Add Web Content* icon on the Web Content Display portlet. Call the new content *Course Offerings* and enter some content. Notice that the Publish button is now gone. In its place is a *Submit for Publication* button. Go ahead and click it.
 
-![Figure 2.23: Pending Workflow](../../images/04-web-content-workflow-config.png)
+![Figure 2.24: Pending Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in Control Panel and then select *My Workflow Tasks*. You will see the option to Review Content for Sales Goals. It shows because you are logged in as an Administrator. There is also a Content Approvers role which is defined by this workflow and anyone in this role can approve content as well.
 
