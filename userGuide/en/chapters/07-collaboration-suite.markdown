@@ -24,7 +24,7 @@ how to set up and administer:
 We'll discuss how these features work together to facilitate information flow
 within your portal and provide an enhanced experience for your users.
 
-## Understanding Liferay's common configuration options
+## Understanding Liferay's common configuration options [](id=lp-6-1-ugen07-understanding-liferays-common-configuration-options-0)
 [](id=understanding-liferay-s-common-configuration-options)
 
 Just like siblings have common features inherited from their parents,
@@ -34,7 +34,7 @@ configurations, and exporting/importing portlet data. So before we get into the
 nitty gritty of the applications themselves, it's best to cover these common
 features first, starting with the look and feel configuration options.
 
-### Look and Feel
+### Look and Feel [](id=lp-6-1-ugen07-look-and-feel-0)
 
 An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the wrench icon at the top right corner of the portlet
@@ -62,7 +62,7 @@ a language from the Portlet Title dropdown menu. If you've provided a language
 key translation for the language you select, the your portlet's title will be
 displayed in the selected language.
 
-![Figure 7.x: The Porlet Configuration tab of the Look and Feel Box allows you
+![Figure 7.1: The Porlet Configuration tab of the Look and Feel Box allows you
 to define a custom portlet title, link porlet URLs to a specific page, and
 select whether or not portlet borders should be
 displayed.](../../images/look-and-feel-portlet-configuration.png)
@@ -90,7 +90,7 @@ alignment to left, center, right, or justified. (Justified text is both left
 and right aligned.) You can set an underline, overline, or strikethrough as the
 text decoration. The default text decoration is none.
 
-![Figure 7.x: The Text Styles tab lets you configure the format of the text
+![Figure 7.2: The Text Styles tab lets you configure the format of the text
 that appears in the portlet.](../../images/look-and-feel-text-styles.png)
 
 You can set the word spacing anywhere from -1 em to 0.95 em, with 0.5 em
@@ -103,14 +103,14 @@ The Background Styles tab allows you to specify the portlet's background color.
 You can enter any six digit hex color code or you click on the pencil icon to
 use the color palette.
 
-![Figure 7.x: The Background Styles tab lets you specify the portlet's
+![Figure 7.3: The Background Styles tab lets you specify the portlet's
 background color.](../../images/look-and-feel-background-styles.png)
 
 On the Border Styles tab, you can configure your portlet's border width, border
 style, and border color. For each of these attributes, leave the *Same for All*
 box checked to apply the same settings to top, right, bottom, and left borders. 
 
-![Figure 7.x: The Border Styles tab lets you specify a border width, style, and
+![Figure 7.4: The Border Styles tab lets you specify a border width, style, and
 color for each side of the
 portlet.](../../images/look-and-feel-border-styles.png)
 
@@ -125,7 +125,7 @@ the edges of your portlet. Just like for border styles, leave the *Same for
 All* box checked to apply the same settings to each side (top, right, bottom,
 and left) of the portlet.
 
-![Figure 7.x: The Margin and Padding tab allows you to specify margin and
+![Figure 7.5: The Margin and Padding tab allows you to specify margin and
 paddings lengths for the sides of your
 portlet.](../../images/look-and-feel-margin-and-padding.png)
 
@@ -135,7 +135,7 @@ value.
 The Advanced Styling tab displays current information about your portlet,
 including your portlet's Liferay ID and CSS classes.
 
-![Figure 7.x: The Advanced Styling tab displays your portlet's Liferay ID and
+![Figure 7.6: The Advanced Styling tab displays your portlet's Liferay ID and
 allows you to enter CSS code to customize the look and feel of your
 portlet.](../../images/look-and-feel-advanced-styling.png)
 
@@ -151,13 +151,13 @@ displayed when mobile devices using the Wireless Application Protocol make page
 requests. You can also set the initial window state to normal or minimized.
 Normal is the default.
 
-![Figure 7.x: The WAP Styling tab lets you enter a custom portlet title to be
+![Figure 7.7: The WAP Styling tab lets you enter a custom portlet title to be
 displayed to devices making page requests via WAP; it also allows you to
 specify an initial window state.](../../images/look-and-feel-wap-styling.png)
 
 Next, let's discuss exporting and importing portlet data.
 
-### Export/Import
+### Export/Import [](id=lp-6-1-ugen07-exportimport-0)
 
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
@@ -170,7 +170,7 @@ site-specific `.lar` files. See the Backing up and Restoring Pages section of
 chapter 2 for a discussion of exporting and importing data across an entire
 site.
 
-![Figure 7.x: When exporting portlet data, you can choose which categories of
+![Figure 7.8: When exporting portlet data, you can choose which categories of
 information to include.](../../images/portlet-export.png)
 
 Each portlet has different configuration options. Checking the *Setup* box
@@ -187,7 +187,7 @@ the permissions assigned to roles. Finally, you can check the *Categories* box
 to include categories for export. When selected, all categories referenced by
 portlet data will be exported or imported, keeping their hierarchy.
 
-![Figure 7.x: When importing portlet data, you can choose which categories of
+![Figure 7.9: When importing portlet data, you can choose which categories of
 information to use.](../../images/portlet-import.png)
 
 When you import portlet data, only the data types you select will be
@@ -255,7 +255,7 @@ configure the scope of a portlet with just a few simple steps.
 
 5.  Click *Save*.
 
-![Figure 7.1: Changing the scope of a
+![Figure 7.10: Changing the scope of a
 portlet](../../images/05-changing-portlet-scope.png)
 
 That's all it takes to change the scope for a particular portlet instance. By
@@ -307,7 +307,7 @@ blogs portlet. We'll go over permissions for specific applications in the
 sections for those applications. For now, let's move on to sharing
 applications.
 
-### Communication
+### Communication [](id=lp-6-1-ugen07-communication-0)
 
 Liferay implements several communication mechanisms across portlets including
 those specified by the JSR-286 standard: public render parameters and events.
@@ -317,7 +317,7 @@ this communication mechanism. To access this UI, open your portlet's
 configuration window by clicking on the wrench icon and selecting
 *Configuration*. Then click on the *Communication* tab. 
 
-![Figure 7.x: You can configure portlets to communicate with each other using
+![Figure 7.11: You can configure portlets to communicate with each other using
 public render parameters.](../../images/portlet-communication-tab.png)
 
 The screenshot above is for the Wiki portlet, which has six public render
@@ -365,7 +365,7 @@ instance of a portlet running on your site into another site, such as Facebook.
 This opens up a whole new avenue of exposure to your web site that you would
 not have had otherwise. In fact, this is how all those Facebook games work.
 
-![Figure 7.2: Sharing Tab of the Portlet Configuration Dialog
+![Figure 7.12: Sharing Tab of the Portlet Configuration Dialog
 Box](../../images/liferay-collaboration-portlet-configuration-sharing.png)
 
 To share one of your portlets as a widget, open the *Configuration* dialog box
@@ -389,7 +389,7 @@ and canvas page URL from Facebook. Once you've done this, you can copy and
 paste their values into the Facebook tab. Your portlet will now be available on
 Facebook as a Facebook application.
 
-![Figure 7.3: Liferay's Forums on
+![Figure 7.13: Liferay's Forums on
 Facebook](../../images/05-liferay-forum-facebook.png)
 
 Incidentally, this makes Liferay a fantastic platform upon which to build
@@ -457,7 +457,7 @@ that they would not otherwise have, and the ubiquity and wide reach of the
 Internet ensures that if you have something important and interesting to say,
 somebody will read it.
 
-![Figure 7.4: Slashdot, one of the first blogs on the
+![Figure 7.14: Slashdot, one of the first blogs on the
 Internet](../../images/05-slashdot.jpg)
 
 Liferay Portal has a Blogs portlet which allows you to provide a blogging
@@ -481,7 +481,7 @@ user's personal site creates a blog just for that user. The Blogs portlet works
 the same way in both cases. And of course, you can change the Blog portlet's
 scope to have different blogs on different pages in the same site.
 
-![Figure 7.5: Initial View of the Blogs
+![Figure 7.15: Initial View of the Blogs
 Portlet](../../images/05-initial-view-blogs-portlet.jpg)
 
 By default, the Blogs portlet displays the latest entry in its entirety. When
@@ -490,7 +490,7 @@ empty. There are several display options to let you configure it to look the
 way you want it to look. Before we start adding entries, let's configure the
 portlet so that it displays entries the way you want them.
 
-#### Configuring the Blogs Portlet
+#### Configuring the Blogs Portlet [](id=lp-6-1-ugen07-configuring-the-blogs-portlet-0)
 [](id=lp-6-1-ugen04-configuring-the-blogs-portlet-0)
 
 The Blogs portlet is easy to configure. Click on the *Menu* icon in the
@@ -510,7 +510,7 @@ when a new Blog entry has been updated.
 choose the right settings, you should think about the best way to display your
 entries as well as how you want users to interact with bloggers.
 
-![Figure 7.6: Blogs Configuration](../../images/05-blogs-configuration.png)
+![Figure 7.16: Blogs Configuration](../../images/05-blogs-configuration.png)
 
 *Maximum Items to Display:* choose the total number of blog entries to display
 on the initial page. You can select up to one hundred to be displayed.
@@ -526,7 +526,7 @@ administrators.
 *Enable Related Assets:* select related content from other portlets to pull
 into their blog entry for readers to view.
 
-![Figure 7.7: Related Assets](../../images/05-related-assets.png)
+![Figure 7.17: Related Assets](../../images/05-related-assets.png)
 
 *Enable Ratings:* lets readers rate your blog entries from one to five stars.
 
@@ -586,7 +586,7 @@ Now that everyone's able to post, let's look at how posts work.
 Now you're ready to begin adding blog entries. Click the *Add Blog Entry*
 button. The following data entry screen appears: 
 
-![Figure 7.8: Adding a Blog Entry](../../images/05-new-blog-entry.png)
+![Figure 7.18: Adding a Blog Entry](../../images/05-new-blog-entry.png)
 
 There isn't much difference between this screen and any other data entry screen
 within Liferay Portal. You get a title, a way of scheduling when the entry is
@@ -639,7 +639,7 @@ list of entries, and now your entry is displayed. Here is what it looks like
 when the display style is set to *Full Content* and the number of entries is
 set to ten:
 
-![Figure 7.9: First Blog Entry
+![Figure 7.19: First Blog Entry
 Added](../../images/05-first-blog-entry-added.png)
 
 You can see that in the summary view, you don't see the trackback/pingback
@@ -673,7 +673,7 @@ If you click *Configuration* from the menu button in the title bar of the
 portlet, the Blogs Aggregator's configuration page appears. From here, you can
 set several configuration options.
 
-![Figure 7.10: Blogs Aggregator
+![Figure 7.20: Blogs Aggregator
 Configuration](../../images/05-blogs-aggregator-configuration.png)
 
 **Selection Method:** select Users or Scope here. If you select Users, the
@@ -701,7 +701,7 @@ close the dialog box. You'll notice the Blogs Aggregator looks very much like
 the Blogs portlet, except that the entries come from more than one author. This
 makes it nice and familiar for your users to navigate. 
 
-### The Blogs Admininistrator Portlet
+### The Blogs Admininistrator Portlet [](id=lp-6-1-ugen07-the-blogs-admininistrator-portlet-0)
 [](id=lp-6-1-ugen04-the-blogs-admininistrator-portlet-0)
 
 In the Control Panel there's a portlet for managing your site's blog entries.
@@ -709,7 +709,7 @@ Most of the time, the Blogs portlet is the only tool you'll need to manage your
 blog entries. If, however, you need to massively delete blog entries, the blogs
 administrator portlet is the perfect tool for you. 
 
-![Figure 7.11: The Blogs Administrator portlet lets you delete large sets of
+![Figure 7.21: The Blogs Administrator portlet lets you delete large sets of
 blog entries.](../../images/04-blogs-administrator.png)
 
 Note that it's only for batch processing of blog entries; for the full set of
@@ -726,14 +726,14 @@ message, import and export your calendar, and much more. Additionally, you can
 import and export the calendar to and from the popular iCalendar format for use
 in other applications.
 
-![Figure 7.12: The Liferay Calendar
+![Figure 7.22: The Liferay Calendar
 Portlet](../../images/05-calendar-portlet.png)
 
 In a similar way to the Blogs portlet, you can use the Calendar portlet as a
 shared calendar on a web site or as a personal calendar -- or both. Let's look
 at how to configure it. 
 
-### Configuring the Calendar Portlet
+### Configuring the Calendar Portlet [](id=lp-6-1-ugen07-configuring-the-calendar-portlet-0)
 [](id=lp-6-1-ugen04-configuring-the-calendar-portlet-0)
 
 Open the *Configuration* dialog box from the menu in the portlet's title bar.
@@ -767,7 +767,7 @@ ratings.
 
 Now that you've successfully set up your calendar, let's look at how to use it. 
 
-### Using the Calendar Portlet
+### Using the Calendar Portlet [](id=lp-6-1-ugen07-using-the-calendar-portlet-0)
 [](id=lp-6-1-ugen04-using-the-calendar-portlet-0)
 
 The Calendar portlet inherits its interface from the rest of Liferay's portlet
@@ -993,7 +993,7 @@ have the ability to add a category of threads or to ban abusive users from the
 message boards. Select the roles and permissions you want to configure and then
 click *Submit*.
 
-### Adding Categories and Mailing Lists
+### Adding Categories and Mailing Lists [](id=lp-6-1-ugen07-adding-categories-and-mailing-lists-0)
 [](id=lp-6-1-ugen04-adding-categories-and-mailing-lists-0)
 
 You are now ready to add categories to your message boards. Click the *Add
@@ -1013,7 +1013,7 @@ easily added:
 
 **Question:** designed for discussions in a format of questions and answers.
 
-![Figure 7.13: Editing a Message Boards
+![Figure 7.23: Editing a Message Boards
 Category](../../images/05-editing-message-board-category.png)
 
 At the bottom of the form is a check box that allows you to enable the mailing
@@ -1129,7 +1129,7 @@ message boards. Besides this, many users of message boards are familiar with
 BBCode and are used to it, and the editor that is provided for Liferay's
 Message Boards portlet makes it very easy to use.
 
-![Figure 7.14: Editing a Message Boards
+![Figure 7.24: Editing a Message Boards
 Post](../../images/05-editing-message-board-post.png)
 
 The message boards editor is quite rich. It supports bold, italicized,
@@ -1137,7 +1137,7 @@ underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
 more. There are even a bunch of smiley faces that you can use.
 
-![Figure 7.15: Emoticons Available in the
+![Figure 7.25: Emoticons Available in the
 Editor](../../images/05-emoticons.png)
 
 Users who have Moderator access to the board can modify the priority of
@@ -1169,7 +1169,7 @@ management features. Posts on the message board show users' pictures if they
 have uploaded one for themselves, as well as the dates that users created an ID
 on your site.
 
-### Message Board Administrative Functions
+### Message Board Administrative Functions [](id=lp-6-1-ugen07-message-board-administrative-functions-0)
 [](id=lp-6-1-ugen04-message-board-administrative-functions-0)
 
 The Message Boards portlet provides for the day to day administration of the
@@ -1189,7 +1189,7 @@ Browse the list until you find the Message Boards portlet under the Site
 Content section and then click on it. You will then see a screen which allows
 you to configure the various permissions on the portlet.
 
-![Figure 7.16: Defining Permissions for the Message Board Administrators
+![Figure 7.26: Defining Permissions for the Message Board Administrators
 Role](../../images/05-defining-permissions-message-board-admin-role.png)
 
 Select the permissions you would like message board administrators to have and
@@ -1296,7 +1296,7 @@ be familiar to users of other wikis. The portlet provides a handy cheat sheet
 for the syntax on the page editing form, with a link to the full documentation
 if you wish to use some of WikiCreole's advanced features.
 
-### Getting Started with the Liferay Wiki
+### Getting Started with the Liferay Wiki [](id=lp-6-1-ugen07-getting-started-with-the-liferay-wiki-0)
 [](id=lp-6-1-ugen04-getting-started-with-the-liferay-wiki-0)
 
 The Wiki portlet works just like the other portlets developed by Liferay. Add
@@ -1307,7 +1307,7 @@ application with websites, Facebook, Google Gadgets, etc. You will also notice
 that the communication tab has some additional options not seen in the other
 portlets.
 
-![Figure 7.17: Communication Tab of the Wiki
+![Figure 7.27: Communication Tab of the Wiki
 Portlet](../../images/05-wiki-configuration.png)
 
 The communication tab of the configuration window allows you to configure
@@ -1402,14 +1402,14 @@ private for site members.
 Finally, the Wiki portlet also supports RSS feeds as the other collaboration
 portlets do, and you can configure its options in the *RSS* tab.
 
-### Adding and Editing Wiki Pages
+### Adding and Editing Wiki Pages [](id=lp-6-1-ugen07-adding-and-editing-wiki-pages-0)
 [](id=lp-6-1-ugen04-adding-and-editing-wiki-pages-0)
 
 By default, there is one page added to your wiki, called *FrontPage*. To get
 started adding data to your wiki, click the *Edit* link at the top right of the
 portlet. You will be brought to a blank editing page.
 
-![Figure 7.18: Editing the Default Page in the Wiki
+![Figure 7.28: Editing the Default Page in the Wiki
 Portlet](../../images/05-editing-wiki-page.jpg)
 
 You can now begin to add content to the page. Notice that there is a very
@@ -1437,7 +1437,7 @@ sections that have already been added.
 
 This would produce the following wiki page:
 
-![Figure 7.19: Wiki Text Added to Front
+![Figure 7.29: Wiki Text Added to Front
 Page](../../images/05-wiki-front-page.png)
 
 This adds a simple heading, a paragraph of text, and several links to the page.
@@ -1514,7 +1514,7 @@ mostly used to attach images to wiki articles which can then be referenced in
 the text. Referencing them using the proper WikiCreole syntax renders the image
 inline, which is a nice way to include illustrations in your wiki documents.
 
-### Navigating in the Wiki Portlet
+### Navigating in the Wiki Portlet [](id=lp-6-1-ugen07-navigating-in-the-wiki-portlet-0)
 [](id=lp-6-1-ugen04-navigating-in-the-wiki-portlet-0)
 
 At the top of the portlet is a list of links which allow you to navigate around
@@ -1548,7 +1548,7 @@ The Wiki portlet is another full-featured Liferay application with all of the
 features you expect from a state of the art wiki. Next, we'll look at how
 Liferay handles live chat.
 
-## Find out what others think or do using Polls
+## Find out what others think or do using Polls [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
 [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
 [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
 
@@ -1586,7 +1586,7 @@ In the Control Panel, navigate to the *Polls* link under Content. Click the
 *Add Question* button. A form appears that allows you to fill out all the
 information for your poll. 
 
-![Figure 7.20: Besides the Title and the Polls Question, you must enter data
+![Figure 7.30: Besides the Title and the Polls Question, you must enter data
 for each of the Choices fields when creating a new
 poll.](../../images/polls-add-new-question.png)
 
@@ -1637,7 +1637,7 @@ poll, they must be able to access it. Click on the link labelled *Please
 configure this portlet to make it visible to all users*, and a dialog box like
 the one below appears.
 
-![Figure 7.21: In the initial configuration of the Polls Display portlet, the
+![Figure 7.31: In the initial configuration of the Polls Display portlet, the
 Question field will remain blank until you select the appropriate poll
 question. ](../../images/polls-display-config.png)
 
@@ -1657,7 +1657,7 @@ perform other tasks by using the icons in the lower left corner of the portlet.
 Besides adding questions, you can also edit the currently selected question or
 select existing questions.
 
-![Figure 7.22: These three buttons, highlighted in red, allow you to manage the
+![Figure 7.32: These three buttons, highlighted in red, allow you to manage the
 configuration of the poll. Notice this poll has
 expired.](../../images/polls-config-buttons.png)
 
@@ -1681,14 +1681,14 @@ name and the question, as well as a breakdown of the poll results appears,
 including percentages and total number of votes per answer and the total number
 of votes cast.
 
-![Figure 7.23: Selecting a poll in the Polls portlet allows you to see all the
+![Figure 7.33: Selecting a poll in the Polls portlet allows you to see all the
 information related to the poll results.](../../images/polls-results.png)
 
 Below this is an item called *Charts*. This option shows the poll results
 represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*,
 *Pie* and *Vertical Bar*.
 
-![Figure 7.24: This is what the pie chart for the Ice Cream poll results looks
+![Figure 7.34: This is what the pie chart for the Ice Cream poll results looks
 like.](../../images/polls-results-pie-chart.png)
 
 There is also a listing of the users who voted in your poll, how they voted,
@@ -1707,7 +1707,7 @@ other instant messages when they are logged into your web site. It appears as a
 bar at the bottom of every page, showing who is logged on, their statuses, and
 any chats the logged-in user has open.
 
-![Figure 7.25: Liferay's Chat
+![Figure 7.35: Liferay's Chat
 Portlet](../../images/05-liferay-chat-portlet.jpg)
 
 The Chat portlet is distributed with the Liferay bundles, but is not included
@@ -1774,7 +1774,7 @@ using Openfire, you can find the Host Name by using the Openfire administration
 web tool. If you did not set up administrative credentials when you started
 Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 7.26: Openfire Administration Web
+![Figure 7.36: Openfire Administration Web
 Tool](../../images/jabber.service.name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added
@@ -1825,7 +1825,7 @@ install the Mail portlet by going to the Control Panel, clicking *Plugins
 Installation*, and then clicking the *Install More Portlets* button. Find the
 *Mail* portlet in the list, click on it, and then click *Install*.
 
-![Figure 7.27: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
+![Figure 7.37: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
 
 To connect the Mail portlet with an email account, click the *Add a New Email
 Account* link. From there, you are given a choice between a Custom email
