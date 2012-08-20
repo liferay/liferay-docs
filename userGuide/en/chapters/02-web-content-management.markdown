@@ -235,7 +235,7 @@ place a deeply nested page in the primary navigation menu of your site, for
 example.
 
 Once you've created pages and populated them with content, Liferay provides a
-way for you to back them up to separate files. Let's see how that works. 
+way for you to back them up to separate files. Let's see how that works.
 
 ##### Backing up and Restoring Pages [](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
 
@@ -352,7 +352,7 @@ tabs of the Manage Site Settings dialog box (see below).
 
 ---
 
-![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible that a single page could be indexed multiple times. In Liferay 6.1, all URLs that direct to the same page will only create one entry in the index. Previously, the simple URL *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions of the URL which provided additional information about the referring page had different entries in the index. As of Liferay 6.1, each asset (web content article, blog entry, etc.) has a unique URL. From the search engine's point of view, this will make your pages rank higher since any references to variations of a specific URL will all be considered references to the same page.] 
+![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible that a single page could be indexed multiple times. In Liferay 6.1, all URLs that direct to the same page will only create one entry in the index. Previously, the simple URL *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions of the URL which provided additional information about the referring page had different entries in the index. As of Liferay 6.1, each asset (web content article, blog entry, etc.) has a unique URL. From the search engine's point of view, this will make your pages rank higher since any references to variations of a specific URL will all be considered references to the same page.]
 
 ---
 
@@ -411,7 +411,7 @@ This portlet is a container for other portlets. It lets you select from any of
 the layouts installed in Liferay, just like the layouts for a page. This gives
 you virtually unlimited options for laying out your pages.
 
-The next option in the *Manage* menu is page customizations.  
+The next option in the *Manage* menu is page customizations.
 
 #### Page Customizations [](id=lp-6-1-ugen02-page-customizations-0)
 
@@ -601,7 +601,7 @@ You can manage the following kinds of content:
 - Social Equity
 - Dynamic Data Lists
 
-For details about Liferay's social collaboration suite, see chapter 10. 
+For details about Liferay's social collaboration suite, see chapter 10.
 
 ### Creating the Nose-ster pages [](id=creating-the-nose-ster-pages)
 
@@ -612,7 +612,7 @@ Dockbar and clicking *Go to &rarr; Nose-ster*.
 We'll use the *Community* page you created earlier in the chapter. Navigate to
 the *Community* page and select *Manage &rarr; Page* from the Dockbar.
 
-This screen should now be familiar to you but let's recap. 
+This screen should now be familiar to you but let's recap.
 
 The Page tab allows you to:
 
