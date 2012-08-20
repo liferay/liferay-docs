@@ -90,29 +90,29 @@ Once you've set up your filter rules for dynamically selecting your content, you
 
 #### Ordering and Grouping [](id=lp-6-1-ugen03-ordering-and-grouping-0)
 
-You can display the content returned by the filters above in order by title, create date, modified date, view count and more in ascending or descending order. For instance, you may have a series of "How To" articles that you want displayed in descending order based on whether the article was tagged with the *hammer* tag. Or, you may want a series of video captures to display in ascending order based on a category called *birds*. You can also group by *Asset*, *Type* or *Vocabularies*. Vocabularies are groups of categories defined by administrators in the *Categories* section of the Control Panel. 
+You can display the content returned by the filters above in order by title, create date, modified date, view count and more in ascending or descending order. For instance, you may have a series of "How To" articles that you want displayed in descending order based on whether the article was tagged with the *hammer* tag. Or, you may want a series of video captures to display in ascending order based on a category called *birds*. You can also group by *Asset*, *Type* or *Vocabularies*. Vocabularies are groups of categories defined by administrators in the *Categories* section of the Control Panel.
 
 There are a several new enhancements to vocabularies and categories in Liferay 6.1. The three main features are targeted vocabularies, single/multi-valued vocabularies, and separated widgets for every vocabulary.
 	
 ##### Targeted Vocabularies []()
 
-Targeted Vocabularies allow you to decide which assets can see each vocabulary by defining target rules, and which vocabularies are required for each asset. To configure these settings, mouse over the vocabulary in the list until you see the edit icon to the right. Select the icon to reveal a dialog box like the one below.
+Targeted Vocabularies allow you to decide which assets can see each vocabulary by defining target rules, and which vocabularies are required for each asset. To configure these settings, go to the categories administration page and mouse over the vocabulary in the list until you see the edit icon to the right. Select the icon to reveal a dialog box like the one below.
 
 ![Figure 5.6: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
 
-The default value for *Associated Asset Types* is *All Asset Types*. You can fine tune your choices by using the *+* and *-* buttons, which narrows the reach of the vocabulary to certain assets. In the screenshot above, notice how the vocabulary titled `Famous Noses` is configured to be available for Blogs and Web Content, but it is not required. It is mandatory, however, for Documents and Media Documents.
+The default value for *Associated Asset Types* is *All Asset Types*. You can fine tune your choices by using the *+* and *-* buttons, which narrows the reach of the vocabulary to specific assets. In the screenshot above, notice how the vocabulary `Famous Noses` is configured to be available for Blogs and Web Content, but it is not required. It is mandatory, however, for Documents and Media Documents.
 	
 ##### Single and Multi-valued Vocabularies []()
 
 You can now decide if the user can choose one or more categories from the same vocabulary to categorize an asset. If a vocabulary is single-valued you can only choose one, and if it allows more, you can choose several categories.
 
-![Figure 5.7: The multi-valued vocabularies, on the left, have checkboxes. Single-valued vocabularies have radio buttons.](../../images/multi-valued-vocabularies.png)
+![Figure 5.7: Single-valued vocabularies, on the left, use radio buttons while multi-valued vocabularies use checkboxes. .](../../images/multi-valued-vocabularies.png)
 
-You can select multi-valued vocabularies using checkboxes and single-valued vocabularies using radio buttons.
-	
+Setting vocabulary values is done through the categories administration page. Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set single value vocabularies or use the default option to set multi-value vocabularies.
+
 ##### Separated Widgets []()
 
-The third important improvement is now every vocabulary has its own separated widget. This allows users to easily select the categories they are interested in.
+The third important improvement is every vocabulary has its own separated widget. These widgets appear in the Categorization section of every asset and they allow users to easily select appropriate categories for that asset.
 
 ![Figure 5.8: Now that vocabularies have their own widgets, it's easy to select available  categories.](../../images/separated-widgets.png)
 
