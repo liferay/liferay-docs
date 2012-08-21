@@ -212,10 +212,10 @@ There are a several new enhancements to vocabularies and categories in Liferay
 6.1. The three main features are targeted vocabularies, single/multi-valued
 vocabularies, and separated widgets for every vocabulary.
 
-##### Targeted Vocabularies []()
+##### Targeted Vocabularies
 
-Targeted Vocabularies allow you to decide which assets can see each vocabulary
-by defining target rules, and which vocabularies are required for each asset. To
+Targeted Vocabularies allow you to decide which vocabularies can be applied to
+an asset type and which vocabularies are required for an asset type. To
 configure these settings, go to the categories administration page and mouse
 over the vocabulary in the list until you see the edit icon to the right. Select
 the icon to reveal a dialog box like the one below.
@@ -223,13 +223,13 @@ the icon to reveal a dialog box like the one below.
 ![Figure 5.6: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
 
 The default value for *Associated Asset Types* is *All Asset Types*. You can
-fine tune your choices by using the *+* and *-* buttons, which narrows the reach
+fine tune your choices by using the *+* and *-* buttons, which narrows the scope
 of the vocabulary to specific assets. In the screenshot above, notice how the
 vocabulary `Famous Noses` is configured to be available for Blogs and Web
 Content, but it is not required. It is mandatory, however, for Documents and
 Media Documents.
 
-##### Single and Multi-valued Vocabularies []()
+##### Single and Multi-valued Vocabularies
 
 You can now decide if the user can choose one or more categories from the same
 vocabulary to categorize an asset. If a vocabulary is single-valued you can only
@@ -242,7 +242,7 @@ Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set
 single value vocabularies or use the default option to set multi-value
 vocabularies.
 
-##### Separated Widgets []()
+##### Separated Widgets
 
 The third important improvement is every vocabulary has its own separated
 widget. These widgets appear in the Categorization section of every asset and
@@ -391,7 +391,32 @@ essentially the same interface with one key difference. The Asset publisher
 displays any content that meets the criteria selected in the portlet
 configuration. The Related Assets portlet only displays content that meets the
 criteria, and also is listed as a related asset for a piece of content that is
-currently published on the page where it is placed.
+currently published on the page where it is placed. Let's take a look at the the
+Related Assets portlet.
+
+As a prerequisite for the Related Assets portlet to display related assets, you
+configure it to show the content you want displayed. To do this, go to the Asset
+Publisher portlet and select the *wrench* icon in the upper right corner of the
+portlet. Under the *Setup* tab, set type of asset(s) to display using the
+*Asset Type* menu. The default value is set to *Any*. You can narrow the scope
+of the portlet to display any single category of asset type or select multiple
+assets from the menu. <!-- TODO continue to explaining 1) how to filter on
+categories, tags, and custom fields. 2) the display options including
+ordering/grouping/style/position , common display settings. 3) the option to
+enable RSS subscription -->
+
+When you are finished setting the Source and Filter options, click *Save*. But
+hold on a minute. You saw the message that says, `You have successfully updated
+the setup`, but there still aren't any assets displayed in the related assets
+portlet. Why? You cannot see any related assets until you select an
+asset in the Asset Publisher.
+
+![Figure 5.12: Select an asset in the Asset Publisher to see its related assets
+displayed in the Related Assets
+portlet.](../../images/related-assets-portlet-after.png)
+
+Once you select an asset, its related assets will display in the Related Assets
+portlet, similar to the image above.
 
 ## Summary [](id=lp-6-1-ugen05-summary-0)
 

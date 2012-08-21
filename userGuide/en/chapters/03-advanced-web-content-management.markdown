@@ -187,27 +187,26 @@ an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
 instructions are displayed.
 
-##### Structure Default Values []()
+##### Structure Default Values
 
 New for Liferay 6.1 is the *Structure Default Values* feature. This allows you
 to create one structure that uses common data for multiple articles.
 
 Returning to our newspaper scenario again, let's say you want all sports
-articles to have the same display page (sports page), the same categories or the
+articles to have the same display page (sports page), the same categories, or the
 same set of tags. Instead of adding them for each article, or wondering if your
-users are adding them to every web content, you add it once for every sports
-article by creating default values for the structure. There are two ways to edit
-structure default values: creating a new structure or editing an existing
-structure.
+users are adding them to every web content, you add these characteristics once
+for every sports article by creating default values for the structure. There are
+two ways to edit structure default values: creating a new structure or editing
+an existing structure.
 
 For a new structure, you must first create the structure before editing its
 default values. Navigate to *Web Content* in the Control Panel and click the
 *Structures* tab, then select the *Add Structure* button. Under the *XML Schema
 Definition* section of the new structure form, use the *Add Row* button to
 create different types of fields for the structure. The *Launch Editor* button
-allows you to edit the XML for the structure. When you are done, click *Save* to
-return to the structures list or click *Save and Continue* to go to the
-Structure Default Values form.
+allows you to edit the XML for the structure. When you are done, click *Save and
+Continue* to go to the Structure Default Values form.
 
 ![Figure 3.2: You can create fields for structure default values via the XML Schema Definition section of the new structure  form.](../../images/xml-schema-definitions-new.png)
 
@@ -1204,7 +1203,7 @@ particular site or page and order them by prority. The rule groups are checked
 in decreasing order of priority: the actions defined by the first rule group
 that applies are executed.
 
-![Figure 3.26: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the Control Panel.](../../images/mobile-device-selection.png)
+![Figure 3.28: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the Control Panel.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage
 Actions* button and then click *Add Action*. By default, there are four kinds of
