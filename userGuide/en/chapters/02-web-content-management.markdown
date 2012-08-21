@@ -40,47 +40,48 @@ WCM than it would be to create all the content for your site in HTML. Some ways
 Liferay WCM makes this possible include:
 
 -   Once set up, non-technical users can manage the site.
-- Liferay's fine-grained permissions system ensures your content gets to the
-right users.
+-   Liferay's fine-grained permissions system ensures your content gets to the
+    right users.
 -   To manage the site, no programming is required.
 -   Content can be staged.
 -   Content can be passed through a workflow.
 -   Content can be published on a schedule.
-- WCM is integrated with Liferay's services so advanced template developers can
-use them to query for data stored elsewhere in Liferay.
+-   WCM is integrated with Liferay's services so advanced template developers
+    can use them to query for data stored elsewhere in Liferay.
 
 Once you get familiar with Liferay WCM you'll wonder how you ever got along
 without it.  
 
-### What Features Does Liferay WCM Have? [](id=lp-6-1-ugen03-what-features-does-liferay-wcm-have-0)
+### What Features Does Liferay WCM Have?
+[](id=lp-6-1-ugen03-what-features-does-liferay-wcm-have-0)
 
 Liferay's WCM has a host of features the makes managing the content of your site
 easier.
 
-- **WYSIWYG Editor:** A complete HTML editor that allow you to modify fonts, add
-color, insert images and much more.
+-   **WYSIWYG Editor:** A complete HTML editor that allow you to modify fonts,
+    add color, insert images and much more.
 
-- **Structure Editor:** Easily add and remove fields you want available to
-content creators and then dynamically move them around. This editor includes an
-entire suite of form controls you can drag and drop onto your structure.
+-   **Structure Editor:** Easily add and remove fields you want available to
+    content creators and then dynamically move them around. This editor includes
+an entire suite of form controls you can drag and drop onto your structure.
 
-- **Template Editor:** Import template script files that inform the system how
-to display the content within the fields determined by the structure.
+-   **Template Editor:** Import template script files that inform the system how
+    to display the content within the fields determined by the structure.
 
-- **Web Content Display:** A portlet that allows you place web content on a page
-in your portal.
+-   **Web Content Display:** A portlet that allows you place web content on a
+    page in your portal.
 
-- **Asset Publisher:** A portlet which can aggregate different types of content
-together in one view.
+-   **Asset Publisher:** A portlet which can aggregate different types of
+    content together in one view.
 
 -   **Scheduler:** Lets you schedule when content is reviewed, displayed and
-removed.
+    removed.
 
 -   **Workflow Integration:** Run your content through an approval or review
-process.
+    process.
 
-- **Staging:** Use a separate staging server or stage your content locally so
-you can keep your changes separate from the live site.
+-   **Staging:** Use a separate staging server or stage your content locally so
+    you can keep your changes separate from the live site. 
 
 Liferay's Web Content Management is a powerful and robust tool for creating and
 organizing content on your web site. Let's begin by examining some basic
@@ -129,7 +130,8 @@ like the name and mail domain, go to the Control Panel and select *Portal
 Settings* under the Portal heading. You could set up the configuration for
 Nose-ster as follows.
 
-![Figure 2.1: Changing Portal Settings](../../images/04-web-content-changing-settings.png)
+![Figure 2.1: Changing Portal
+Settings](../../images/04-web-content-changing-settings.png)
 
 You can also customize the logo in the top left corner of every page by
 selecting *Display Settings* under the *Miscellaneous* tab on the panel to the
@@ -147,9 +149,10 @@ in the context menu selector and click the *Site Pages* link in the content
 section. If you've already navigated to the site you wish to manage, click
 *Manage* from the Dockbar and select *Site Pages*. This is the exact same
 interface you see in the Control Panel. To manage the specific page of the site
-you've navigated to, click *Manage* and select *Page*.
+you've navigated to, click *Manage* and select *Page*. 
 
-![Figure 2.2: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
+![Figure 2.2: Managing Individual
+Pages](../../images/04-web-content-managing-single-page.png)
 
 For convenience, you can also navigate to the Sites page under the Portal
 section of the Control Panel and click *Actions* &rarr; *Manage Pages*. To
@@ -237,7 +240,8 @@ example.
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works.
 
-##### Backing up and Restoring Pages [](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
+##### Backing up and Restoring Pages
+[](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
 
 Next to the *Add Page* button in the Manage Site Pages screen are two buttons
 labeled *Export* and *Import*. The Export button exports the pages you create
@@ -275,7 +279,8 @@ selecting it.
 Next, we'll look at the options on the right side menu, starting with Look and
 Feel.
 
-##### Customizing the Look and Feel [](id=lp-6-1-ugen02-customizing-the-look-and-feel-0)
+##### Customizing the Look and Feel
+[](id=lp-6-1-ugen02-customizing-the-look-and-feel-0)
 
 When you open the Manage Site Pages dialog box it defaults to the Look and Feel
 tab. On this tab, you're presented with an interface that allows you to choose a
@@ -332,14 +337,15 @@ own logo* option is disabled in *Portal Settings*. It is also not available for
 the default site -- only newly created sites and user pages have the option to
 have the name display.
 
-#### Changing options for individual pages [](id=lp-6-1-ugen02-changing-options-for-individual-pages-0)
+#### Changing options for individual pages
+[](id=lp-6-1-ugen02-changing-options-for-individual-pages-0)
 
 When you select a single page, some different options appear. Let's look at what
-these do.
+these do. 
 
 **Details:** lets you name the page for any localizations you need. You can also
 set the HTML title that appears in the browser window for the page. Plus you can
-set an easy to remember, friendly URL for the page.
+set an easy to remember, friendly URL for the page. 
 
 **SEO:** provides several means of optimizing the data the page provides to an
 indexer that's crawling the page. You can set the various meta tags for
@@ -352,7 +358,16 @@ tabs of the Manage Site Settings dialog box (see below).
 
 ---
 
-![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible that a single page could be indexed multiple times. In Liferay 6.1, all URLs that direct to the same page will only create one entry in the index. Previously, the simple URL *http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions of the URL which provided additional information about the referring page had different entries in the index. As of Liferay 6.1, each asset (web content article, blog entry, etc.) has a unique URL. From the search engine's point of view, this will make your pages rank higher since any references to variations of a specific URL will all be considered references to the same page.]
+![tip](../../images/01-tip.png) In previous versions of Liferay, it was possible
+that a single page could be indexed multiple times. In Liferay 6.1, all URLs
+that direct to the same page will only create one entry in the index.
+Previously, the simple URL
+*http://www.nosester.com/web/guest/blog/-/blogs/thenose* and different versions
+of the URL which provided additional information about the referring page had
+different entries in the index. As of Liferay 6.1, each asset (web content
+article, blog entry, etc.) has a unique URL. From the search engine's point of
+view, this will make your pages rank higher since any references to variations
+of a specific URL will all be considered references to the same page.] 
 
 ---
 
@@ -415,45 +430,29 @@ The next option in the *Manage* menu is page customizations.
 
 #### Page Customizations [](id=lp-6-1-ugen02-page-customizations-0)
 
-Page Customizations are a new feature in Liferay 6.1. With Page Customizations,
+Page Customizations are a new feature in Liferay 6.1. With page customizations,
 any user with the appropriate permissions can create personalized versions of
 any public page. Before users can create personalized versions of pages,
-customizations must first be enabled by an administrator. Customizations are
-based on the rows and columns of a page layout. Administrators can activate or
-deactivate customizations for any row or column on any page. When users
-customize a page, they have the option to use either their version or the
+customizations must first be enabled by an administrator. Administrators can
+activate or deactivate customizations for any row or column on any page. When
+users customize a page, they have the option to use either their version or the
 default version of a page. Users can't see alternate versions of pages other
 than their own.
 
-![Figure 2.7: Setting Customizable Columns](../../images/04-web-content-personal-customization.png)
+![Figure 2.7: Setting Customizable
+Columns](../../images/04-web-content-personal-customization.png)
 
-When an administrator activates Page Customizations for a page, any portlets
+When an administrator activates page customizations for a page, any portlets
 that are in a *Customizable* row or column can be moved around the page or
 removed from the page. Users can add new portlets of their own choosing to these
-columns of the page. If at any time users determine they don't like their
-customizations, they can click *Reset My Customizations* to revert their pages
-back to the default.
+columns of the page and can also customize portlet configurations. If at any
+time users determine they don't like their customizations, they can click *Reset
+My Customizations* to revert their pages back to the default. For more
+information about page customizations, please refer to the Page Customizations
+section of chapter 6.
 
-The administrator of the "customizable" page will have two different views: the
-*default page* view and the *customized page*. The changes he makes in the
-*default page* view will affect all users, whereas the changes he makes in the
-*customized page* view will only affect himself, as if he were any other regular
-user customizing this page. Changes made by the administrator to a
-non-customizable section in the *default view* will be effective inmediately for
-any user. But if changes are made to a customizable section, the administrator's
-changes will *not* overwrite the users' changes. For this reason, users can view
-the *default page* and *reset his customizations* from the bar at the top.
-
-To allow users to customize a page, administrators must grant users permission
-to *Customize* pages under the Site section. This can be achieved by assigning
-permission to a role, then assigning this role to the appropriate users. For
-example, if we want any logged user to be able to customize our customizable
-pages, we could assign the Customize permission to the role *User*. If we want
-any member of a site to be able to customize the customizable pages of its
-sites, we would assign the Customize permission to the role *Site Member*.
-
-Now that you know how to configure pages, let's look at the settings for the
-site as a whole.
+Now that you know how to enable page customizations, let's look at the settings
+for the site as a whole.
 
 #### Configuring Site Settings [](id=lp-6-1-ugen02-configuring-site-settings-0)
 
@@ -564,7 +563,8 @@ can provide the most relevant content to your users.
 Now that you know how to configure sites, let's look at page templates and site
 templates.
 
-#### Page Templates and Site Templates [](id=lp-6-1-ugen02-page-templates-and-site-templates-0)
+#### Page Templates and Site Templates
+[](id=lp-6-1-ugen02-page-templates-and-site-templates-0)
 
 *Page Templates* and *Site Templates* are invaluable tools for building similar
 pages on larger portals. As you continue to add pages to sites in your portal,
@@ -648,8 +648,8 @@ Adding portlets to a page is simple. Let's add some to our Collaboration page.
 
 1.  In the Dockbar, select *Add &rarr; More*.
 2.  In the menu that appears, expand the *Collaboration* category.
-3. Drag the *Blogs Aggregator* portlet off the Add Application window onto the
-right column of our page.
+3.  Drag the *Blogs Aggregator* portlet off the Add Application window onto the
+    right column of our page.
 4.  Next, drag the *Wiki* portlet to the *left column*.
 
 See how easy it is to add applications to your pages? We've gone one step
@@ -657,7 +657,9 @@ further: we've got the Wiki portlet, the Blogs Aggregator portlet and then a
 nested portlet with a different layout and the Alerts, Search and Dictionary
 portlets in the figure below.
 
-![Figure 2.10: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
+![Figure 2.10: Yeah, we're showoffs. But as you can see, your page layout
+options are virtually
+limitless.](../../images/04-web-content-portlet-layout.png)
 
 You'll find it's easy to make your pages look exactly the way you want them to.
 If the layout options provided aren't enough, you can even develop your own.
@@ -679,15 +681,16 @@ this with the following procedure:
 1.  Go to the Dockbar and select *Manage &rarr; Control Panel*.
 2.  Ensure you've selected the default site in the context selector.
 3.  Click the *Site Pages* link.
-4. Click the *Private Pages* tab to switch to the Private Pages. Remember, these
-pages by default are viewable only by members of the site.
+4.  Click the *Private Pages* tab to switch to the Private Pages. Remember,
+    these pages by default are viewable only by members of the site.
 5.  Create a page called *Admin Tips*.
 6.  Click on the page in the tree on the left and then click *Permissions*.
-7. Uncheck the *View* and *Add Discussion* permissions next to the Site Member
-role.
+7.  Uncheck the *View* and *Add Discussion* permissions next to the Site Member
+    role.
 8.  Click the *Save* button.
 
-![Figure 2.11: Permissions for Admin Tips](../../images/04-web-content-page-permissions.png)
+![Figure 2.11: Permissions for Admin
+Tips](../../images/04-web-content-page-permissions.png)
 
 Congratulations! You've just changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.
@@ -733,7 +736,8 @@ We'll then take advantage of Liferay's robust structure editor. We'll use
 templates to display the content and then explore some of the advanced
 publishing features such as the built-in workflow and Asset Publisher.
 
-### Creating content the simple way [](id=lp-6-1-ugen03-creating-content-the-simple-way-0)
+### Creating content the simple way
+[](id=lp-6-1-ugen03-creating-content-the-simple-way-0)
 
 As we've stated above, content is the reason web sites exist. Liferay Portal has
 made it easier than ever to get content published to your site. Because Liferay
@@ -744,10 +748,11 @@ We'll begin by creating simple content using Liferay's WYSIWYG Editor and then
 we'll publish it to the home page of Nose-ster's web site. This is a fast and
 straightforward process that demonstrates how easy it is to create and publish
 content on your Liferay Portal instance. Let's learn about the Web Content
-section of the Control Panel so we can create and publish our first pieces of
+section of the control panel so we can create and publish our first pieces of
 content.
 
-![Figure 2.12: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
+![Figure 2.12: Choosing a Site in the Content
+Section](../../images/04-web-content-context-dropdown.png)
 
 When you manage web content from the Control Panel you can select the location
 where the content resides. For instance, you can add content that's available to
@@ -765,15 +770,19 @@ This is a highly customizable form that by default has two fields: a title and a
 powerful WYSIWYG editor. We could customize this form to contain whatever fields
 our content needs but let's keep things simple for now. We'll cover more
 advanced features such as structures, templates and content scheduling later in
-this chapter. Notice that content can be localized using an array of different
-languages. Liferay has an improved user interface to better assist users who are
-translating text. For further information, see the Localization section of Using
-Page Templates in chapter 3.
+this chapter.
 
-Type the words *Welcome to Nose-ster* in the *Title* field. In the *Content*
-field, add a short sentence announcing the web site is up and running.
+For now, type the words *Welcome to Nose-ster* in the *Name* field. Notice that
+content can be localized in whatever language you want. If you click on the
+*localize* checkbox, two select boxes appear which allow you to pick the
+language you're working in and the default language. You can enter translations
+of your content for any language in the list. The screenshot below shows this
+interface but for now, we won't be using it, so you can leave it unchecked. In
+the content field, add a short sentence announcing the web site is up and
+running.
 
-![Figure 2.13: The Web Content Editor provides many options for customization.](../../images/04-web-content-wysiwyg.png)
+![Figure 2.13: The Web Content Editor provides many options for
+customization.](../../images/04-web-content-wysiwyg.png)
 
 Getting a new web site up and running is an exciting step for anyone, whether it
 is a large corporation or a small non-profit charity. To celebrate this
@@ -788,7 +797,8 @@ demonstrated in the screenshot below. You can also add bullets, numbering, links
 to another site or custom images. You can even add an emoticon. Let's add a
 smiley face at the end of our announcement.
 
-![Figure 2.14: View your content changes directly in the editor.](../../images/04-web-content-example2.png)
+![Figure 2.14: View your content changes directly in the
+editor.](../../images/04-web-content-example2.png)
 
 The WYSIWYG editor is a flexible tool that gives you the ability to add text,
 images, tables, links and more. Additionally, you can modify the display to
@@ -802,7 +812,8 @@ click the *Source* button and write your own HTML if you wish.
 On the right of the New Web Content form is a menu of options that allows you to
 customize your web content.
 
-![Figure 2.15: New web content can be customized in various ways using the menu on the  right.](../../images/wcm-abstract.png)
+![Figure 2.15: New web content can be customized in various ways using the menu
+on the right.](../../images/wcm-abstract.png)
 
 **Abstract:** lets you to create a brief summary of the web content. You can
 also pair the text with a small image.
@@ -872,7 +883,8 @@ category. You can connect your content to a Blogs Entry, Message Boards Message,
 Web Content, Calendar Event, Bookmarks Entry, Documents and Media Document, and
 a Wiki Page.
 
-![Figure 2.16: This blog entry has links to three Related Assets: one web content display and two blog entries.](../../images/related-assets-link.png)
+![Figure 2.16: This blog entry has links to three Related Assets: one web
+content display and two blog entries.](../../images/related-assets-link.png)
 
 You'll learn how to display links to related assets using the Related Assets
 portlet in the *Defining content relationships* section of chapter 5.
@@ -884,7 +896,8 @@ provides the ability to customize permissions in more detail. Select the *More
 Options* link next to the drop down button and you'll find the different
 activities you can grant or deny to your web content.
 
-![Figure 2.17: Permissions for Web Content allow you to fine-tune the access of your content.](../../images/04-web-content-content-permissions.png)
+![Figure 2.17: Permissions for Web Content allow you to fine-tune the access of
+your content.](../../images/04-web-content-content-permissions.png)
 
 **Custom fields:** customize metadata about the web content. The fields can
 represent anything you like, such as the web content's author or creation date.
@@ -903,14 +916,16 @@ which is one of two portlets: Web Content Display or Web Content List. By far
 the most frequently used is the *Web Content Display* portlet. Let's look at how
 it works.
 
-## Publishing (basic) content [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
+## Publishing (basic) content
+[](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
 
 Now that we've created and published our first piece of web content for
 Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
 to our Welcome page by selecting *Add &rarr; Web Content Display* from the
 Dockbar.
 
-![Figure 2.18: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
+![Figure 2.16: Adding the Web Content Display
+Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
 Once the portlet appears, drag it to the position on the page where you want
 your content to appear. You can have as many Web Content Display portlets on a
@@ -928,7 +943,10 @@ all the options). You can also show the available locales for your content. If
 you're working on the page for a particular language, you can select the
 translation of your content that goes with your locale.
 
-![Figure 2.19: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
+![Figure 2.17: Publishing web content is a snap. At a minimum, you only have to
+select the content you wish to publish. You can also enable lots of optional
+features to let your users interact with your
+content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also
 enable document conversion for your content. This gives your users the ability
@@ -984,7 +1002,8 @@ Content Display portlet, select the *pencil* icon to the lower left of the
 portlet. This launches the WYSIWYG editor and from there you can make any
 necessary changes.
 
-![Figure 2.20: Edit, Select and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
+![Figure 2.18: Edit, Select and Add Icons of Web Content Display
+Portlet](../../images/web-content-display-icons.png)
 
 When you publish your content this way, it becomes available immediately
 (unless, of course, you have a workflow enabled, which we'll see below). This
@@ -1002,7 +1021,8 @@ Liferay's WCM, you'll want to use structures and templates found in chapter 3.
 Next, let's see how you can manage your content with an approval process called
 workflow.
 
-## Using Liferay's workflow with WCM [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
+## Using Liferay's workflow with WCM
+[](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay
 WCM, workflow is designed to manage the creation, modification and publication
@@ -1035,24 +1055,26 @@ To enable workflow for Web Content, navigate to the Control Panel and select
 *Workflow Configuration*. From there, select a workflow that has been deployed
 to Liferay.
 
-![Figure 2.21: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 2.19: Enabling Workflow for Content
+Management](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 10, you can design workflows to suit your
 organization's approval process. For Nose-ster's implementation we'll use the
 *Single Approver* workflow which ships with the product.
 
-#### Defining Workflows for Web Content [](id=lp-6-1-ugen03-defining-workflows-for-web-content-0)
+#### Defining Workflows for Web Content
+[](id=lp-6-1-ugen03-defining-workflows-for-web-content-0)
 
 Let's set up Liferay's Workflow for the Nose-ster web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear
 in the Control Panel. Liferay's Kaleo workflow engine ships with CE versions of
 Liferay. For installation instructions for Liferay EE, please see chapter 10.
 
-1. Go to the Control Panel and select *Workflow Configuration* from the left
-panel.
+1.  Go to the Control Panel and select *Workflow Configuration* from the left
+    panel.
 
-2. From the select box, choose *Single Approver* for Web Content. Click *Save.*
-Note that you can add workflow to many of Liferay's portlets.
+2.  From the select box, choose *Single Approver* for Web Content. Click *Save.*
+    Note that you can add workflow to many of Liferay's portlets.
 
 That's all it takes to set up workflow for web content. Now that workflow is
 enabled, publishing content works a little bit differently. Let's go through the
@@ -1062,7 +1084,8 @@ portlet. Call the new content *Course Offerings* and enter some content. Notice
 that the Publish button is now gone. In its place is a *Submit for Publication*
 button. Go ahead and click it.
 
-![Figure 2.22: Pending Workflow](../../images/04-web-content-workflow-config.png)
+![Figure 2.20: Pending
+Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in Control Panel and then select *My Workflow
 Tasks*. You will see the option to Review Content for Sales Goals. It shows
@@ -1075,13 +1098,13 @@ You should see the screen below.
 
 Taking ownership of, reviewing and approving content is very easy:
 
-1. Click the *Assign to Me* button. Alternatively, you could assign it to
-someone else in the Content Approvers role or create / update a due date for the
-content's approval.
-2. Once you've assigned it to yourself, buttons allowing you to approve or
-reject the content appear. Click *Approve*.
-3. You're asked to submit a comment. You'd have to do this for either *Approve*
-or *Reject*. Add a comment and click *Save*.
+1.  Click the *Assign to Me* button. Alternatively, you could assign it to
+    someone else in the Content Approvers role or create / update a due date for
+the content's approval.
+2.  Once you've assigned it to yourself, buttons allowing you to approve or
+    reject the content appear. Click *Approve*.
+3.  You're asked to submit a comment. You'd have to do this for either *Approve*
+    or *Reject*. Add a comment and click *Save*.
 4.  The content is now approved.
 
 In a real world situation, you obviously wouldn't want the person who created
