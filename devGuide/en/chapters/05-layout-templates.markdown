@@ -132,8 +132,7 @@ Example server output:
 
 	Reading plugin package for columns-1-4-1-layouttpl
 	Registering layout templates for columns-1-4-1-layouttpl
-	1 layout template for columns-1-4-1-layouttpl is available for use,
-	let's start *designing* our layout template.
+	1 layout template for columns-1-4-1-layouttpl is available for use
 
 Now that you know how to deploy your template, let's design your layout.
 
