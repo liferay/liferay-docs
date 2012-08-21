@@ -208,7 +208,7 @@ create different types of fields for the structure. The *Launch Editor* button
 allows you to edit the XML for the structure. When you are done, click *Save and
 Continue* to go to the Structure Default Values form.
 
-![Figure 3.2: You can create fields for structure default values via the XML Schema Definition section of the new structure  form.](../../images/xml-schema-definitions-new.png)
+![Figure 3.2: You can create fields for structure default values via the XML Schema Definition section of the new structure  form.](../../images/xml-schema-definitions.png)
 
 To edit an existing structure, go to *Web Content* in the Control Panel and
 click the *Structures* tab to see the structures list. Find the *Actions* button
