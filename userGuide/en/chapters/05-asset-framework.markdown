@@ -406,9 +406,9 @@ Filter options let you set minimum requirements for displaying assets by their
 categories, tags, and custom fields. Ordering and Grouping allows you to
 organize assets using the same criteria. Display settings allow you to customize
 how asssets are shown in the portlet. They can be listed by title, in a table,
-by abstract or full content. You can enable conversions to different document
-types like ODT, PDF, and RTF. You can also show various metadata fields such as
-author, modification date, tags, and view count. You can also enable RSS
+by abstract or full content. You can convert assets to different document
+types like ODT, PDF, and RTF. You can choose to show various metadata fields such as
+author, modification date, tags, and view count. You can even enable RSS
 subscriptions and customize their display settings.
 
 When you are finished setting the Source and Filter options, click *Save*. But
