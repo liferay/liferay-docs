@@ -400,10 +400,9 @@ Publisher portlet and select the *wrench* icon in the upper right corner of the
 portlet. Under the *Setup* tab, set type of asset(s) to display using the
 *Asset Type* menu. The default value is set to *Any*. You can narrow the scope
 of the portlet to display any single category of asset type or select multiple
-assets from the menu. <!-- TODO continue to explaining 1) how to filter on
-categories, tags, and custom fields. 2) the display options including
-ordering/grouping/style/position , common display settings. 3) the option to
-enable RSS subscription -->
+assets from the menu.
+
+Filter options let you set minimum requirements for displaying assets by their categories, tags, and custom fields. Ordering and Grouping allows you to organize assets using the same criteria. Display settings allow you to customize how asssets are shown in the portlet. They can be listed by title, in a table, by abstract or full content. You can enable conversions to different document types like ODT, PDF, and RTF. You can also show various metadata fields such as author, modification date, tags, and view count. You can also enable RSS subscriptions and customize their display settings.
 
 When you are finished setting the Source and Filter options, click *Save*. But
 hold on a minute. You saw the message that says, `You have successfully updated
