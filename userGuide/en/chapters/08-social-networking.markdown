@@ -76,10 +76,10 @@ portlets.
 ### Using social networking on public pages [](id=lp-6-1-ugen08-using-social-networking-on-public-pages-0)
 [](id=lp-6-1-ugen08-using-social-networking-on-public-pages-0)
 
-There are several social portlets that are designed for use on regular portal
+There are several social portlets that are designed for use on public portal
 pages. The goal of these is to use social connections to help a group work
-together more closely. These include the **Members** portlet, **Meetups**, **Top
-Users**, **Summary** and **Activities**.
+together more closely. These include the **Members**, **Meetups**,
+**Summary**, and **Activities** portlets.
 
 ![Figure 8.2: The Members
 Portlet](../../images/XX-social-networking-members-portlet.png)
@@ -111,14 +111,19 @@ and the Members' Activities portlet. The basic function of the portlets are the
 same--they both display a feed of what users are doing on the portal. The
 difference is that Activities displays what's going on across the entire portal,
 while Members' Activities displays only what members of the current site have
-been doing.
+been doing. There's also a Friend's Actvities portlet that's intended for use on
+users' personal pages. In the Configuration dialog box of any variety of the
+Activities portlet, you can use the *Maximum Activities to Display* dropdown
+menu to set a limit on how many activities can be displayed at once in the
+portlet window.
 
 ### Using social networking on personal pages [](id=lp-6-1-ugen08-using-social-networking-on-personal-pages-0)
 [](id=lp-6-1-ugen08-using-social-networking-on-personal-pages-0)
 
 In addition to the portlets available for general use, there are a handful that
-can be used only on personal pages. These portlets can be used to create a
-profile page, similar to Facebook or Google+. 
+can be used only on personal pages. These include the Summary, Wall, Friends,
+Friends' Activities, and Map portlets. These portlets can be used to create
+profile pages similar to Facebook's or Google+'s. 
 
 ![Figure 8.5: Social Networking Portlets in a Facebook-like
 Layout](../../images/XX-social-networking-personal-portlets.png)
@@ -126,14 +131,13 @@ Layout](../../images/XX-social-networking-personal-portlets.png)
 The Summary portlet provides a quick overview of a user's profile. When posted
 in a user's personal site, it displays the user's name, profile picture and job
 title. Users can add additional personal information by clicking on *Edit* in
-the portlet and filling in information in the *About Me* section.
-
-This portlet is also essential to any social implementation on Liferay, because
-it has the *Friend Request* button. This enables users to initiate social
-relationships. Note that this portlet simplifies a much more powerful underlying
-social networking API that defines many different kinds of relationships,
-including friends. Your developers can take advantage of this API to create
-powerful social applications. For more information on this, see [*Liferay in
+the portlet and filling in information in the *About Me* section. This portlet
+is essential to any social implementation on Liferay, because it has the
+*Friend Request* button. This enables users to initiate social relationships.
+Note that this portlet simplifies a much more powerful underlying social
+networking API that defines many different kinds of relationships, including
+friends. Your developers can take advantage of this API to create powerful
+social applications. For more information on this, see [*Liferay in
 Action*](http://manning.com/sezov) (Manning Publications) or the *Liferay
 Developer's Guide*. 
 
@@ -143,15 +147,14 @@ supported. Once a post is added to their wall, users have the ability delete it
 or respond to it with a quick link to post on the original poster's wall.
 
 The Friends portlet shows a list of all the user's friends with links to their
-profiles. The Friends' Activities portlet shows things a user's friends are
-doing on the portal.
+profiles. The Friends' Activities portlet displays information about a user's
+friends' activities on the portal.
 
-The map is a tool which enables you to view the locations of other users on the
-portal, both locally and internationally. In order to configure the map, you
-need to install the IP Geolocator portlet (available from Liferay's community
-repository) and configure Maxmind GeoIP or GeoLite on your server. For more
-information on configuring geolocation services, visit the MaxMind support page
-at
+The Map portlet enables you to view the locations of other users on the portal,
+both locally and internationally. In order to configure the map, you need to
+install the IP Geocoder portlet (available from Liferay) and configure MaxMind
+GeoIP or GeoLite on your server. For more information on configuring geolocation
+services, visit the MaxMind support page at
 [http://www.maxmind.com/app/installation?city=1](http://www.maxmind.com/app/installation?city=1)
 
 ![Figure 8.6: The Map Portlet](../../images/map-portlet.png)
