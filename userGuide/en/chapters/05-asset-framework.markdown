@@ -119,25 +119,181 @@ of tags and categories: searching for content.
 
 ## Using Faceted Search
 
+To stay organized, I (RS) used to use a paper-based planner. It had various
+sections for various areas of my life. Its initial incarnation came from a
+commercial company, but over the years I tweaked it into something that worked
+for me. This final incarnation (before I went digital) had different tabs for
+different areas of my life that I wanted to keep track of: daily items like
+tasks, notes, a spiritual section, and agenda pages that kept track of things I
+needed to go over with specific people. A Planning section had tabs for
+projects, family, future items, and reference. 
 
+Of course, since this was paper-based, it had its limitations. It was kind of
+hard to find stuff. Did I put the note I'd written about that new toy my
+daughter wanted in the Notes section or in the Family section? Or maybe it was
+on my *While Out* list, so I would remember to buy it before her birthday? 
+
+Liferay content can be like this. That important information you remember
+seeing--was it in a wiki article, a message boards post, or web content? Did you
+remember to tag it? If you don't have this kind of information, browsing to the
+content you're looking for might be difficult. Thankfully, Liferay includes not
+just any search function: it's a *faceted* search function, which means you can
+drill down through the different types of content, tags, and categories to
+refine your search and find what you want. Let's see how to use it. 
 
 ### Searching for Portal Content
 
+To get started, drop the Search portlet on a page and search for something.
+You'll be presented with a page with results on the right and a collection of
+*facets* on the left. 
+
+![Figure 5.x: The first set of facets is content types. You can drill down to
+specific types of content that contain the search terms you
+entered.](../../images/faceted-search-1.png)
+
+A facet is a combination of the information about a specific indexed field, its
+terms, and their frequency. Facets are typically named by the field in question.
+The default facets are asset types (pictured above), asset tags, asset
+categories, and modified time range. 
+
+The frequency in which the term was found for each facet is listed in
+parentheses after the facet. It may jog your memory to see that the term you
+searched for appears in a blog entry, and that may be all you need to find what
+you were looking for. If, however, your memory is more foggy than that, or
+you're searching for something you're not sure is actually there, then the asset
+tags or asset categories facets may be more helpful to you. 
+
+![Figure 5.x: Asset tag facets provide you with more information about content
+that contains the terms for which you searched.](../../images/faceted-search-2.png)
+
+In this case, if you searched for a wireless phone, you may be more interested
+in content that has your search terms in it, that also has been tagged by users.
+One or more of the tags may help you to find what you're looking for. Note that
+the number of tags that appear is configurable: by default it's 10, but there
+could be many more as a result of a particular search. We'll look at the
+configuration options later in the chapter. For now, let's see how drilling down
+works. 
 
 ### Drilling Down to the Data You Want
 
+To drill down into the search, click a facet to add it to the filter list, and
+the results to the right are refined by the facet you selected. 
+
+![Figure 5.x: Drilling down creates a list of what you selected at the top of
+the screen.](../../images/05-faceted-search-drill-down-1.png)
+
+Here we can see that we've selected one of the tags, *liferay*, to further
+refine the search. The tag appears in a list at the top, and as you can see,
+there's a red X next to it that lets us remove it from our filter as we work to
+increase the relevancy of our search. But maybe selecting only the tag isn't
+enough to filter our search into something small enough to sort through. In this
+case, we can further refine the search by selecting another facet, as below. 
+
+![Figure 5.x: Selecting another facet further refines the
+search.](../../images/05-faceted-search-drill-down-2.png)
+
+Now we've selected web content, which is one particular content type within
+Liferay, and the list of potential hits on our search terms has been
+dramatically reduced. In this way, you can interactively tweak the search
+results to narrow them down, making it easier to find that proverbial needle
+within the haystack. 
+
 #### Asset Types
 
+Searching can only be done on assets. As has already been described in this
+chapter, just about any entity in the portal is an asset and can be indexed and
+searched. Under the hood, this means that these entities use Liferay's Asset API
+and have an Indexer defined. 
+
+Developers can create custom searchable assets within the portal. This is
+described in the [Developer's
+Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/-asset-framewo-1).
+For this reason, you may have additional asset types defined in your portal
+beyond the ones that Liferay ships with by default. If this is the case, you may
+wish to tweak the `frequency threshold` and the `max terms` settings to increase
+the number of asset types displayed past the default of 10. This is covered in
+the section below on search options. 
 
 #### Asset Tags
 
-
+If tags have been applied to any asset that appears in the result set, it may
+be displayed in the Asset Tag facet. Tags are handled in a similar way to how
+asset types are handled: not all tags may appear. There may be many more than
+the 10 tags listed, but the default configuration for this facet is to show the
+top 10 most frequent terms. Like with asset types, this can be modified by
+setting `max terms` property.
 
 #### Asset Categories
 
+If categories have been applied to any asset that appears in the result set,
+they may be displayed in the Asset Categories facet. Yadda, yadda, yadda, same
+thing as the two sections above. That last sentence was written to check if
+you're still reading. 
+
+Let's move on to advanced searching. 
 
 ### Advanced Searching
 
+The Search portlet's search box is deceptively simple. Though you have only a
+single field for search, there's a search syntax inherited from
+[Lucene](http://lucene.apache.org/core/old_versioned_docs/versions/3_0_3/queryparsersyntax.html)
+that lets you create very powerful search queries. Let's look at some ways you
+can use search queries. 
+
+**Searching for specific fields:** By default, searches are performed against a
+long list of fields. Sometimes you want results for a term within a particular
+field. This can be achieved using the field search syntax `[field]:[term]`. For
+example, to search in the Title field for Liferay, you'd use the following
+syntax:
+
+    title:liferay
+
+If you search for a phrase within a field, surround the term with double
+quotation marks: 
+
+    title:"Liferay Portal"
+
+**Wildcards:** You can use wildcards in exactly the way you use them with your
+operating system: for a single character wildcard, use `?`; for
+the multiple character wildcard, use `*`. 
+
+**Boolean operators:** You can use logic operators, such as AND, OR, NOT, `+`,
+and `-` in your searches. The `AND` operator matches assets in which the terms
+between the `AND` operator exist. For example, to search for both Liferay and
+Kaleo Workflow, you'd use this query: 
+
+    "liferay" AND "kaleo workflow"
+
+The `OR` operator is the default; if there's no operator between two terms, the
+`OR` operator takes effect. `OR` finds matches if any term exists in an asset. 
+
+The `+` operator is used in a search to require that the term exists somewhere
+in some field in the asset. If you wanted to search for something that *must*
+contain *liferay* and may contain *portal*, use this query: 
+
+    +liferay portal
+
+The `NOT` operator excludes assets that contain the term after the `NOT`
+operator. It requires that at least two terms be present: 
+
+    "Liferay Portal" NOT "Liferay Social Office" 
+
+The `-` operator is similar: it excludes assets that contain the term after the
+`-` symbol: 
+
+    "Liferay Portal" NOT "Liferay Social Office" 
+
+**Grouping:** You can use parentheses within your queries to form sub-queries,
+in a similar fashion to an SQL statement. For example, to search for *liferay*
+or *social office* and *website*, use this query: 
+
+    (liferay OR "social office") AND website
+
+As you can see, the search syntax is very powerful. There's more you can do with
+it than what is listed here; to view the full syntax, visit the Lucene URL
+above. 
+
+Next, we'll look at how the Search portlet can be configured. 
 
 ### Setting Search Options
 
