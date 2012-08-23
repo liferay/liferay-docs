@@ -14,7 +14,7 @@ categories, comments, ratings, and asset relationships.
 This chapter covers the following topics:
 
 - Tagging and categorizing content
-- Using the Asset Publisher
+- Using the Asset Publisher portlet
 - Setting up display pages
 - Adding relationships between assets
 
@@ -33,7 +33,7 @@ this.
 
 ## Tagging and Categorizing Content [](id=lp-6-1-ugen03-tags-and-categories-0)
 
-Tags and categories are two important tools you can use to help organize
+Tags and categories are two important tools you can use to organize
 information on your portal and make it easier for your users to find the content
 they're looking for through search or navigation. Tagging and categorizing web
 content is easy. You can do it at the bottom of the same form you use to add
@@ -117,7 +117,7 @@ content.
 Next, we'll look at Liferay's asset framework and how to use the Asset Publisher
 portlet.
 
-## Using the Asset Publisher
+## Using the Asset Publisher portlet
 [](id=lp-6-1-ugen03-using-the-asset-publisher-portlet-0)
 
 As we create web content, it's important to keep in mind that to Liferay, the
@@ -130,7 +130,7 @@ in creating a more dynamic web site: you can place user-created wiki entries,
 blog posts or message board messages in context with your content. Let's look at
 some of its features.
 
-#### Querying for Content [](id=lp-6-1-ugen03-querying-for-content-0)
+### Querying for Content [](id=lp-6-1-ugen03-querying-for-content-0)
 
 The Asset Publisher portlet is a highly configurable application that lets you
 query for mixed types of content on the fly. By giving you the ability to
@@ -150,7 +150,7 @@ tags and categories.
 Let's first look at how we might select content manually. You'll see that it's
 very similar to the Web Content Display portlet.
 
-##### Selecting assets manually [](id=lp-6-1-ugen03-selecting-assets-manually-0)
+#### Selecting assets manually [](id=lp-6-1-ugen03-selecting-assets-manually-0)
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can select
@@ -178,7 +178,7 @@ display types to configure how the content appears.
 Most of the time, however, you'll likely be using the Asset Publisher to select
 content dynamically.
 
-##### Selecting assets dynamically
+#### Selecting assets dynamically
 [](id=lp-6-1-ugen03-selecting-assets-dynamically-0)
 
 The Asset Publisher's default behavior is to select assets dynamically according
@@ -204,7 +204,7 @@ tags that you enter.
 Once you've set up your filter rules for dynamically selecting your content, you
 can then decide how the content will be displayed.
 
-#### Ordering and Grouping [](id=lp-6-1-ugen03-ordering-and-grouping-0)
+### Ordering and Grouping [](id=lp-6-1-ugen03-ordering-and-grouping-0)
 
 You can display the content returned by the filters above in order by title,
 create date, modified date, view count and more in ascending or descending
@@ -220,7 +220,7 @@ control over how content is ordered and grouped in the list, but this is only
 one aspect of how your content will be displayed. You can refine the display
 through many other display settings.
 
-#### Display Settings [](id=lp-6-1-ugen03-display-settings-0)
+### Display Settings [](id=lp-6-1-ugen03-display-settings-0)
 
 The Display Settings section gives you precise control over the display of your
 assets. There are a multitude of options available to configure how you want
@@ -230,7 +230,7 @@ conversions. Additionally, you can enable printing, flags, ratings, comments and
 comment ratings, and these work the same way they do in the Web Content Display
 portlet.
 
-##### Display Style [](id=lp-6-1-ugen03-display-style-0)
+#### Display Style [](id=lp-6-1-ugen03-display-style-0)
 
 **Abstracts:** Shows the first 200-500 characters of the content, defined by the
 **Abstract Length** field.
@@ -242,7 +242,7 @@ developer.
 
 **Full Content:** The entire content of the entry.
 
-##### Other Settings [](id=lp-6-1-ugen03-other-settings-0)
+#### Other Settings [](id=lp-6-1-ugen03-other-settings-0)
 
 **Asset Link Behavior:** The default value is *Show Full Content*. With this
 value selected, when the link to an asset is clicked, the full asset is
@@ -294,7 +294,7 @@ users.
 Next, we'll look at Display Pages, an addition to the asset framework introduced
 by Liferay 6.1. 
 
-#### Display Page [](id=lp-6-1-ugen03-display-page-0)
+### Display Page [](id=lp-6-1-ugen03-display-page-0)
 
 If you've been using Liferay for a while, or you've just spent a little bit of
 time with this guide, you might have noticed something about how Liferay handles
