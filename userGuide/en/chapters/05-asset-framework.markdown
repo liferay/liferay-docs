@@ -297,11 +297,274 @@ Next, we'll look at how the Search portlet can be configured.
 
 ### Setting Search Options
 
+As with Liferay's other portlets, you can configure the Search portlet via the
+configuration screen, which looks like the below illustration. 
 
-### Summary 
+![Figure 5.x: Basic search configuration is pretty straightforward.
+](../../images/05-faceted-search-configuration.png)
 
-Next, we'll look at Liferay's asset framework and how to use the Asset Publisher
-portlet.
+**Display Asset Type Facet:** Toggles whether the Asset Type facet appears. 
+
+**Display Asset Tags Facet:** Toggles whether the Asset Tags facet appears. 
+
+**Display Asset Categories Facet:** Toggles whether the Asset Categories facet
+appears. 
+
+**Display Modified Range Facet:** Toggles whether the date modified range facet
+appears. 
+
+**Display Results in Document Form:** Never use this in production. Developers
+use this feature to view search responses in their generic, Document-based
+format. Part of a developer's job when writing search indexers is to convert
+Documents (the objects that get indexed) back and forth between the actual
+object. This option allows developers to see how their objects are being
+indexed. 
+
+**View in Context:** When an asset is clicked, show it in the portlet to which
+it belongs. 
+
+**Display Main Query:** Show the exact search query that the portlet generated
+to the search engine. Again, never use this in production; this is for
+development purposes only. 
+
+**Display Open Search Results:** Shows results from third party Open Search
+plugins, if they are installed. This is for backward compatibility only:
+developers are encouraged to re-design their search code as described in
+*Liferay in Action*, and then custom assets are aggregated with native portal
+assets seamlessly. 
+
+These are the basic options, but surely you didn't miss the fact that there are
+also advanced options. 
+
+Configuring advanced search requires a bit more technical acumen than you might
+expect, because there are so many properties to tweak. Thankfully, in most
+instances, you shouldn't need to change a thing. If you do, however, the
+configuration is done through a JSON object. 
+
+If you don't know what a JSON object is, don't worry: it's not a difficult
+concept. JSON stands for **J**ava**S**cript **O**bject **N**otation. An Object
+is a software development term for anything that can be represented in code. It
+could just as easily have been called a Thing. For example, one type of object
+used in Liferay is a User. A User can be represented in code, and it has many
+*fields*, such as a name, an email address, and more. JSON is one way of
+describing an object like this. 
+
+The object we're concerned with is called `facets`. Here's what it looks like,
+in all its glory, in JSON. Explanation of the settings follows the object below. 
+
+	{"facets": [
+	    {
+		"displayStyle": "asset_entries",
+		"weight": 1.5,
+		"static": false,
+		"order": "OrderHitsDesc",
+		"data": {
+		    "values": [
+			"com.liferay.portlet.bookmarks.model.BookmarksEntry",
+			"com.liferay.portlet.blogs.model.BlogsEntry",
+			"com.liferay.portlet.calendar.model.CalEvent",
+			"com.liferay.portlet.documentlibrary.model.DLFileEntry",
+			"com.liferay.portlet.journal.model.JournalArticle",
+			"com.liferay.portlet.messageboards.model.MBMessage",
+			"com.liferay.portlet.wiki.model.WikiPage",
+			"com.liferay.portal.model.User"
+		    ],
+		    "frequencyThreshold": 1
+		},
+		"label": "asset-type",
+		"className": "com.liferay.portal.kernel.search.facet.AssetEntriesFacet",
+		"fieldName": "entryClassName"
+	    },
+	    {
+		"displayStyle": "asset_tags",
+		"weight": 1.4,
+		"static": false,
+		"order": "OrderHitsDesc",
+		"data": {
+		    "maxTerms": 10,
+		    "displayStyle": "list",
+		    "frequencyThreshold": 1,
+		    "showAssetCount": true
+		},
+		"label": "tag",
+		"className": "com.liferay.portal.kernel.search.facet.MultiValueFacet",
+		"fieldName": "assetTagNames"
+	    },
+	    {
+		"displayStyle": "asset_tags",
+		"weight": 1.3,
+		"static": false,
+		"order": "OrderHitsDesc",
+		"data": {
+		    "maxTerms": 10,
+		    "displayStyle": "list",
+		    "frequencyThreshold": 1,
+		    "showAssetCount": true
+		},
+		"label": "category",
+		"className": "com.liferay.portal.kernel.search.facet.MultiValueFacet",
+		"fieldName": "assetCategoryTitles"
+	    },
+	    {
+		"displayStyle": "modified",
+		"weight": 1.1,
+		"static": false,
+		"order": "OrderHitsDesc",
+		"data": {
+		    "ranges": [
+			{
+			    "range": "[past-hour TO *]",
+			    "label": "past-hour"
+			},
+			{
+			    "range": "[past-24-hours TO *]",
+			    "label": "past-24-hours"
+			},
+			{
+			    "range": "[past-week TO *]",
+			    "label": "past-week"
+			},
+			{
+			    "range": "[past-month TO *]",
+			    "label": "past-month"
+			},
+			{
+			    "range": "[past-year TO *]",
+			    "label": "past-year"
+			}
+		    ],
+		    "frequencyThreshold": 0
+		},
+		"label": "modified",
+		"className": "com.liferay.portal.kernel.search.facet.ModifiedFacet",
+		"fieldName": "modified"
+	    }
+	]}
+
+Now that you've seen the object, don't be daunted by it. Here are all the
+settings within the object that you can tweak. 
+
+**“className”:** This field must contain a string value which is the FQCN (fully
+qualified class name) of a java implementation class implementing the Facet
+interface. Liferay provides the following implementations by default:
+
+	com.liferay.portal.kernel.search.facet.AssetEntriesFacet
+	com.liferay.portal.kernel.search.facet.ModifiedFacet
+	com.liferay.portal.kernel.search.facet.MultiValueFacet
+	com.liferay.portal.kernel.search.facet.RangeFacet
+	com.liferay.portal.kernel.search.facet.ScopeFacet
+	com.liferay.portal.kernel.search.facet.SimpleFacet
+
+**“data”:** This field takes an arbitrary JSON object (a.k.a. {}) for use by a
+specific facet implementation. As such, there is no fixed definition of the data
+field. Each implementation is free to structure it as needed. The value defined
+here matches the implementation that's selected in the `className` attribute
+above. 
+
+**"displayStyle":** This field takes a string value and represents a
+particular template implementation which is used to render the facet. These
+templates are normally JSP pages (but can also be implemented as Velocity or
+Freemarker templates provided by a theme if the portal property
+`theme.jsp.override.enabled` is set to `true`). The method of matching the string to
+a JSP is simply done by prefixing the string with /html/portlet/search/facets/
+and appending the .jsp extension.
+
+For example, `"displayStyle": "asset_tags"`maps to the JSP 
+
+	/html/portlet/search/facets/asset_tags.jsp
+
+Armed with this knowledge a crafty developer could create custom display styles
+by deploying custom (new or overriding) JSPs using a JSP hook. See the
+*Developer's Guide* or *Liferay in Action* for more information on hook plugins. 
+
+**"fieldName":** This field takes a string value and defines the indexed field on
+which the facet operates.
+
+For example, `"fieldName": "entryClassName"` indicates that the specified facet
+implementation operates on the `entryClassName` indexed field.
+
+**Note:** You can identify available indexed fields by enabling the Search
+portlet’s *Display Results in Document Form* configuration setting and then
+expanding individual results by clicking the [+] to the left of their titles. 
+
+**"label":** This field takes a string value and represents the language key that
+is used for localizing the title of the facet when it's rendered.
+
+**"order":** This field takes a string value. There are two possible values:
+
+   `OrderValueAsc`: This tells the facet to sort it’s results by the term values,
+   in ascending order.
+
+   `OrderHitsDesc`: This tells the facet to sort it’s results by the term
+   frequency, in descending order.
+
+**"static":** This field takes a boolean value (`true` or `false`). The default
+value is false. A value of `true` means that the facet should not actually be
+rendered in the UI. It also means that it should use pre-set values (stored in
+its `data` field) rather than inputs dynamically applied by the end user. This
+allows for the creation of pre-configured search result.
+
+Imagine you would like to create a pre-configured search that returns only
+images (i.e. the asset type is
+`com.liferay.portlet.documentlibrary.model.DLFileEntry` and the indexed field
+extension should contain the values bmp, gif, jpeg, jpg, odg, png, or svg). We
+would need two static facets, one with "fieldName": "entryClassName" and another
+with "fieldName": "extension". This could be represented using the following
+facet configuration:
+
+	{
+	    "displayStyle": "asset_entries",
+	    "static": true,
+	    "weight": 1.5,
+	    "order": "OrderHitsDesc",
+	    "data": {
+		"values": [
+		    "com.liferay.portlet.documentlibrary.model.DLFileEntry"
+		],
+		"frequencyThreshold": 0
+	    },
+	    "className": "com.liferay.portal.kernel.search.facet.AssetEntriesFacet",
+	    "label": "asset-type",
+	    "fieldName": "entryClassName"
+	},
+	{
+	    "displayStyle": "asset_entries",
+	    "static": true,
+	    "weight": 1.5,
+	    "order": "OrderHitsDesc",
+	    "data": {
+		"values": ["bmp", "gif", "jpeg", "jpg", "odg", "png", "svg"],
+		"frequencyThreshold": 0
+	    },
+	    "className": "com.liferay.portal.kernel.search.facet.MultiValueFacet",
+	    "label": "images",
+	    "fieldName": "extension"
+	}
+
+**"weight":** This field takes a floating point (or double) value and is used to
+determine the ordering of the facets in the facet column of the search portlet.
+Facets are positioned with the largest values at the top. (yes, the current
+implementation is counter-intuitive and perhaps could be reversed in future
+versions).
+
+### Summary
+
+Search is a powerful component of Liferay Portal's asset framework. The
+proclivity of assets means that there is an extensible, robust, and configurable
+search mechanism in the portal that allows administrators to optimize the search
+experience of their users. Users also get an easy to use search interface that
+makes use of the tags and categories that they themselves apply to various
+pieces of content, regardless of the type of content. This makes Liferay's
+search truly "for the people." 
+
+Power users can learn an extended search syntax that lets them craft very
+specific searches. These searches can be used on large installations with lots
+of data to find the proverbial needle in the proverbial haystack. Administrators
+can tune the configuration of search portlets so that they are optimized for the
+contents of their communities. 
+
+Next, we'll look at how the Asset Publisher portlet makes even more extensive
+use of Liferay's asset framework to bring relevant content to users.
 
 ## Using the Asset Publisher [](id=lp-6-1-ugen03-using-the-asset-publisher-portlet-0)
 
