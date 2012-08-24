@@ -122,7 +122,7 @@ of tags and categories: searching for content.
 To stay organized, I (RS) used to use a paper-based planner. It had various
 sections for various areas of my life. Its initial incarnation came from a
 commercial company, but over the years I tweaked it into something that worked
-for me. This final incarnation (before I went digital) had different tabs for
+for me. This final version (before I went digital) had different tabs for
 different areas of my life that I wanted to keep track of: daily items like
 tasks, notes, a spiritual section, and agenda pages that kept track of things I
 needed to go over with specific people. A Planning section had tabs for
@@ -136,16 +136,16 @@ on my *While Out* list, so I would remember to buy it before her birthday?
 Liferay content can be like this. That important information you remember
 seeing--was it in a wiki article, a message boards post, or web content? Did you
 remember to tag it? If you don't have this kind of information, browsing to the
-content you're looking for might be difficult. Thankfully, Liferay includes not
-just any search function: it's a *faceted* search function, which means you can
-drill down through the different types of content, tags, and categories to
-refine your search and find what you want. Let's see how to use it. 
+content you're looking for could be difficult. Thankfully, Liferay includes a
+powerful, faceted search function, which means you can drill down through the
+different types of content, tags, and categories to refine your search and find
+what you want. Let's see how to use it. 
 
 ### Searching for Portal Content
 
 To get started, drop the Search portlet on a page and search for something.
-You'll be presented with a page with results on the right and a collection of
-*facets* on the left. 
+You'll see a page with results on the right and a collection of *facets* on the
+left. 
 
 ![Figure 5.x: The first set of facets is content types. You can drill down to
 specific types of content that contain the search terms you
@@ -167,7 +167,7 @@ tags or asset categories facets may be more helpful to you.
 that contains the terms for which you searched.](../../images/faceted-search-2.png)
 
 In this case, if you searched for a wireless phone, you may be more interested
-in content that has your search terms in it, that also has been tagged by users.
+in content that has your search terms in it and has also been tagged by users.
 One or more of the tags may help you to find what you're looking for. Note that
 the number of tags that appear is configurable: by default it's 10, but there
 could be many more as a result of a particular search. We'll look at the
@@ -183,11 +183,11 @@ the results to the right are refined by the facet you selected.
 the screen.](../../images/05-faceted-search-drill-down-1.png)
 
 Here we can see that we've selected one of the tags, *liferay*, to further
-refine the search. The tag appears in a list at the top, and as you can see,
-there's a red X next to it that lets us remove it from our filter as we work to
-increase the relevancy of our search. But maybe selecting only the tag isn't
-enough to filter our search into something small enough to sort through. In this
-case, we can further refine the search by selecting another facet, as below. 
+refine the search. The tag appears in a list at the top, and there's a red X
+next to it that lets us remove it from our filter as we work to increase the
+relevancy of our search. But maybe selecting only the tag isn't enough to filter
+our search into something small enough to sort through. In this case, we can
+further refine the search by selecting another facet, as below. 
 
 ![Figure 5.x: Selecting another facet further refines the
 search.](../../images/05-faceted-search-drill-down-2.png)
@@ -220,7 +220,7 @@ If tags have been applied to any asset that appears in the result set, it may
 be displayed in the Asset Tag facet. Tags are handled in a similar way to how
 asset types are handled: not all tags may appear. There may be many more than
 the 10 tags listed, but the default configuration for this facet is to show the
-top 10 most frequent terms. Like with asset types, this can be modified by
+top 10 most frequent terms. As with asset types, this can be modified by
 setting `max terms` property.
 
 #### Asset Categories
@@ -243,7 +243,7 @@ can use search queries.
 **Searching for specific fields:** By default, searches are performed against a
 long list of fields. Sometimes you want results for a term within a particular
 field. This can be achieved using the field search syntax `[field]:[term]`. For
-example, to search in the Title field for Liferay, you'd use the following
+example, to search in the *Title* field for *Liferay*, use the following
 syntax:
 
     title:liferay
@@ -260,16 +260,16 @@ the multiple character wildcard, use `*`.
 **Boolean operators:** You can use logic operators, such as AND, OR, NOT, `+`,
 and `-` in your searches. The `AND` operator matches assets in which the terms
 between the `AND` operator exist. For example, to search for both Liferay and
-Kaleo Workflow, you'd use this query: 
+Kaleo Workflow, use this query: 
 
     "liferay" AND "kaleo workflow"
 
 The `OR` operator is the default; if there's no operator between two terms, the
 `OR` operator takes effect. `OR` finds matches if any term exists in an asset. 
 
-The `+` operator is used in a search to require that the term exists somewhere
-in some field in the asset. If you wanted to search for something that *must*
-contain *liferay* and may contain *portal*, use this query: 
+The `+` operator requires that the term exists somewhere in some field in the
+asset. If you wanted to search for something that *must* contain *liferay* and
+*may* contain *portal*, use this query: 
 
     +liferay portal
 
@@ -281,7 +281,7 @@ operator. It requires that at least two terms be present:
 The `-` operator is similar: it excludes assets that contain the term after the
 `-` symbol: 
 
-    "Liferay Portal" NOT "Liferay Social Office" 
+    "Liferay Portal" - "Liferay Social Office" 
 
 **Grouping:** You can use parentheses within your queries to form sub-queries,
 in a similar fashion to an SQL statement. For example, to search for *liferay*
@@ -316,9 +316,8 @@ appears.
 **Display Results in Document Form:** Never use this in production. Developers
 use this feature to view search responses in their generic, Document-based
 format. Part of a developer's job when writing search indexers is to convert
-Documents (the objects that get indexed) back and forth between the actual
-object. This option allows developers to see how their objects are being
-indexed. 
+Documents (the objects that get indexed) to the actual object and back again.
+This option allows developers to see how their objects are being indexed. 
 
 **View in Context:** When an asset is clicked, show it in the portlet to which
 it belongs. 
@@ -343,11 +342,15 @@ configuration is done through a JSON object.
 
 If you don't know what a JSON object is, don't worry: it's not a difficult
 concept. JSON stands for **J**ava**S**cript **O**bject **N**otation. An Object
-is a software development term for anything that can be represented in code. It
-could just as easily have been called a Thing. For example, one type of object
+is a software development term for anything that can be represented in code.
+Objects have *attributes*, or sometimes these are called *fields*, and they are
+very similar to fields you'd find on a form that you're filling out. Software
+developers use the word *object* to refer generically to anything like this that
+they can describe in the software; for all intents and purposes, objects
+could just as easily have been called Things. For example, one type of object
 used in Liferay is a User. A User can be represented in code, and it has many
 *fields*, such as a name, an email address, and more. JSON is one way of
-describing an object like this. 
+describing objects like this. 
 
 The object we're concerned with is called `facets`. Here's what it looks like,
 in all its glory, in JSON. Explanation of the settings follows the object below. 
@@ -502,7 +505,7 @@ is used for localizing the title of the facet when it's rendered.
 value is false. A value of `true` means that the facet should not actually be
 rendered in the UI. It also means that it should use pre-set values (stored in
 its `data` field) rather than inputs dynamically applied by the end user. This
-allows for the creation of pre-configured search result.
+allows for the creation of pre-configured search results.
 
 Imagine you would like to create a pre-configured search that returns only
 images (i.e. the asset type is
@@ -547,11 +550,14 @@ Facets are positioned with the largest values at the top. (yes, the current
 implementation is counter-intuitive and perhaps could be reversed in future
 versions).
 
+Configuring search using a JSON object is a bit unusual, but as you can see, it's
+not as hard as it looks initially. 
+
 ### Summary
 
 Search is a powerful component of Liferay Portal's asset framework. The
 proclivity of assets means that there is an extensible, robust, and configurable
-search mechanism in the portal that allows administrators to optimize the search
+search mechanism throughout the portal that allows administrators to optimize the search
 experience of their users. Users also get an easy to use search interface that
 makes use of the tags and categories that they themselves apply to various
 pieces of content, regardless of the type of content. This makes Liferay's
