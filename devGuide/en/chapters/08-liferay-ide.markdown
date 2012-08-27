@@ -474,9 +474,9 @@ same rich editing experience Java developers are used to when editing Kaleo
 Groovy scripts. Other script editors that are included with Developer Studio
 include: Beanshell, Drl, Javascript, Python, and Ruby. Furthermore, Developer
 Studio is integrated with [FreeMarker](http://freemarker.sourceforge.net/) and
-[Velocity](http://velocity.apache.org/) template editors. So, for example, if
-you want to edit a notification template, you can do so with the Velocity or
-FreeMarker editor.
+[Velocity](http://velocity.apache.org/engine/releases/velocity-1.5/user-guide.html)
+template editors. So, for example, if you want to edit a notification template, 
+you can do so with the Velocity or FreeMarker editor.
 
 After downloading and installing the Kaleo plugins, a *Workflow Definitions*
 folder automatically appears underneath your Liferay server in the *Servers*
@@ -775,10 +775,12 @@ Furthermore, you can also access the *Edit Script* tool by navigating to your
 floating palette or right-clicking the node and selecting *Edit Script*.
 
 Since our default script language was set to *Groovy*, the Java Groovy editor
-will appear. Likewise, if you set the script language to another language, the
-editor for that specific language will appear. The editor runs in the context of
-editing the specific node you selected. So anything you type into the script
-editor will get set inside the script node for the `</condition>` element.
+will appear. If you'd like to learn more about the Groovy editor, you can visit
+the [Groovy User Guide](http://groovy.codehaus.org/User+Guide). Likewise, if you
+set the script language to another language, the editor for that specific
+language will appear. The editor runs in the context of editing the specific
+node you selected. So anything you type into the script editor will get set
+inside the script node for the `</condition>` element.
 
 Also, you will probably notice the palette appears different than the normal
 workflow diagram palette. When opening a Java script editor, the palette
@@ -892,7 +894,10 @@ functions when you are editing your notification. In addition, when you're doing
 a FreeMarker variable insertion, the editor gives you all the available
 variables that are a part of the Kaleo workflow. So when the notification
 executes, Kaleo will inject the FreeMarker Context Variables that you need to
-make a notification.
+make a notification. You can visit the documentation pages for
+[FreeMarker](http://freemarker.org/docs/) and
+[Velocity](http://velocity.apache.org/engine/releases/velocity-1.5/user-guide.html)
+for more information on how to use each editor's variables and methods.
 
 ---
 
