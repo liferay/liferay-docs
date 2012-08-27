@@ -13,6 +13,7 @@ categories, comments, ratings, and asset relationships.
 This chapter covers the following topics:
 
 - Tagging and categorizing content
+- Using Faceted Search 
 - Using the Asset Publisher
 - Setting up display pages
 - Adding relationships between assets
