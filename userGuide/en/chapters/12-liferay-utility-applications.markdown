@@ -1,4 +1,5 @@
-# Liferay Utility Applications [](id=lp-6-1-ugen12-liferay-utility-applications-0)
+# Liferay Utility Applications 
+[](id=lp-6-1-ugen12-liferay-utility-applications-0)
 
 In this chapter we'll look at some Liferay utility applications that might be
 useful for you. The Software Catalog is currently packaged with Liferay but will
@@ -19,7 +20,8 @@ The Software Catalog allows you to define a set of software items to display to
 visitors. The Knowledge Base applicaton allows you to create articles and
 organize them into full books or guides that be published on your portal.
 
-## Creating Your Own Plugin Repository [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
+## Creating Your Own Plugin Repository 
+[](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
 
 As your enterprise builds its own library of portlets for internal use, you can
 create your own plugin repository to make it easy to install and upgrade
@@ -234,7 +236,8 @@ When you are finished filling out the form, click the *Save* button. Your
 product version will be saved and your product will now be available in the
 software repository.
 
-#### Generating The Software Catalog [](id=lp-6-1-ugen15-generating-the-software-catalog-0)
+#### Generating The Software Catalog 
+[](id=lp-6-1-ugen15-generating-the-software-catalog-0)
 
 The Software Catalog works by generating an XML document which the Plugin
 Installer reads. Using the data from this XML document, the Plugin Installer
@@ -257,7 +260,9 @@ recommend.
 
 Next, go to your browser and go to the following URL:
 
-[http://<server name\>:<port number\>/software\_catalog?<Friendly URL name or Group ID\>](http://<server name\>:<port number\>/software\_catalog?<Friendly URL name or Group ID\>)
+[http://<server name\>:<port number\>/software\_catalog?<Friendly URL name or 
+Group ID\>](http://<server name\>:<port number\>/software\_catalog?<Friendly URL 
+name or Group ID\>)
 
 For example, if you are on the same machine as your Liferay instance, and that
 instance is running on port 8080, and your group ID from the database is 10148,
@@ -336,7 +341,8 @@ your HTTP server. You can then give out the URL to the directory which holds
 this file on your web site and anyone with an instance of Liferay will be able
 to point their Plugin Installer portlets to it.
 
-#### Benefits of the Software Catalog [](id=lp-6-1-ugen15-benefits-of-the-software-catalog-0)
+#### Benefits of the Software Catalog 
+[](id=lp-6-1-ugen15-benefits-of-the-software-catalog-0)
 
 As you can see, the Software Catalog makes it easy for you to create a
 repository of your software. Users of Liferay can configure their Plugin
@@ -378,7 +384,8 @@ Liferay source. It is a file called `liferay-plugin-package_6_0_0.dtd`. Use this
 DTD with a validating XML editor (a good, free choice is jEdit with all the XML
 plugins) to create your software catalog manually.
 
-### Connecting to a Software Catalog [](id=lp-6-1-ugen15-connecting-to-a-software-catalog-0)
+### Connecting to a Software Catalog 
+[](id=lp-6-1-ugen15-connecting-to-a-software-catalog-0)
 
 If there is a software catalog of plugins you would like to point your instance
 of Liferay to, all you need is the URL to the catalog. Once you have the URL, go
@@ -420,7 +427,8 @@ your site, although it might be preferable to dedicate an entire page to the
 application depending on how many items you have to sell. The Shopping portlet
 is available from the *Add* -> *More* menu in the task bar under Shopping.
 
-![Figure 12.5: Start setting up the store by entering items and categories in the shopping portlet.](../../images/shopping-add-portlet.png)
+![Figure 12.5: Start setting up the store by entering items and categories in 
+the shopping portlet.](../../images/shopping-add-portlet.png)
 
 The shopping portlet has the following four tabs across the top:
 
@@ -466,7 +474,9 @@ It's not difficult to create categories. Simply click the *Add Category* button
 to display the Category form. In this form enter the *Name*, *Description*, and
 set the *Permissions* for the category. That's all there is to it.
 
-![Figure 12.6: In this figure there are three subcategories for the `Aromatherapy` category. The first subcategory has three items, the second has two, and the thrid is empty.](../../images/shopping-categories.png)
+![Figure 12.6: In this figure there are three subcategories for the 
+`Aromatherapy` category. The first subcategory has three items, the second has 
+two, and the thrid is empty.](../../images/shopping-categories.png)
 
 When you select *Save*, you will see your new category listed in the portlet,
 along with the *# of Categories* and the *# of Items* that are in the category.
@@ -494,7 +504,8 @@ characteristics for the item. These can include things like sizes and colors.
 The additional fields appear in the item form as pull-down menus, as in the
 figure below.
 
-![Figure 12.8: The additional fields you create for an item appear in the item description form as options.](../../images/shopping-item-options.png)
+![Figure 12.8: The additional fields you create for an item appear in the item 
+description form as options.](../../images/shopping-item-options.png)
 
 The Prices area of the new item form is where you enter all data pertaining to
 the item's cost, minimum and maximium quantities, quantity discounts, taxes, and
@@ -513,12 +524,14 @@ subcategories, you can assign it to the category through editing form. Choose
 the *Select* button, next to the *Remove* button, and this displays a dialog box
 listing all the shop categories.
 
-![Figure 12.10: To put an item in a category, open *Edit* and choose *Select* to see the available options.](../../images/shopping-select-categories.png)
+![Figure 12.10: To put an item in a category, open *Edit* and choose *Select* to 
+see the available options.](../../images/shopping-select-categories.png)
 
 *Choose* the desired category from the list to relocate the item to it's new
 location. Notice how the breadcrumbs reflect this change in the item form.
 
-![Figure 12.11: When an item moves into a category, the breadcrumb navigation will update accordingly.](../../images/shopping-item-breadcrumb-change.png)
+![Figure 12.11: When an item moves into a category, the breadcrumb navigation 
+will update accordingly.](../../images/shopping-item-breadcrumb-change.png)
 
 Any changes that need to be made to the item can be executed through *Actions*
 -> *Edit*. Also, you can locate an item anywhere from within the application by
@@ -577,7 +590,8 @@ that the order amount falls under.
 
 This form sets the addresses for customer email notifications.
 
-![Figure 12.12: Shopping emails can be configured in a myriad of ways to suit your needs.](../../images/shopping-confirmation-email-form.png)
+![Figure 12.12: Shopping emails can be configured in a myriad of ways to suit 
+your needs.](../../images/shopping-confirmation-email-form.png)
 
 **Emails From:** sets the customers name and email address for basic
 correspondence.
@@ -600,7 +614,8 @@ allowing them to purchase multiple items at once.
 When buyers select an item from a category they see the item's description
 displaying all of its relevant information.
 
-![Figure 12.13: You can include images of each item in your store. (Medium sized images display on the item's description form).](../../images/shopping-item.png)
+![Figure 12.13: You can include images of each item in your store. (Medium sized 
+images display on the item's description form).](../../images/shopping-item.png)
 
 Below the description is a field indicating the item's availability plus other
 options, if applicable. There is the
@@ -667,7 +682,8 @@ has been received and is being processed.
 You can also add comments about the order and subscribe to the comments to get
 any updates on the order.
 
-![Figure 12.16: Say something nice about the invoice, please.](../../images/shopping-invoice.png)
+![Figure 12.16: Say something nice about the invoice, 
+please.](../../images/shopping-invoice.png)
 
 Search for orders using these criteria: Number, Status, First Name, Last Name
 and/or Email Address
@@ -750,7 +766,8 @@ the Utility window and view a summary of the application. Follow the download
 instructions and the portlet will appear in your Application menu ready to
 deploy.
 
-![Figure 12.17: Is it raining at Grandma's house? You will know when you use the Weather portlet.](../../images/weather-portlet.png)
+![Figure 12.17: Is it raining at Grandma's house? You will know when you use the 
+Weather portlet.](../../images/weather-portlet.png)
 
 You can configure the portlet to display locations using the Preferences option.
 The Guest Preferences option allows you to create a default set of locations any
@@ -776,7 +793,8 @@ organized hierarchically to form complete books or guides. The Knowledge Base
 portlet is available as an app from Liferay Marketplace. Please see chapter 2
 for installation instructions.
 
-### Knowledge Base Display Portlet [](id=lp-6-1-ugen04-knowledge-base-display-portlet-0)
+### Knowledge Base Display Portlet 
+[](id=lp-6-1-ugen04-knowledge-base-display-portlet-0)
 
 The Knowledge Base app actually consists of four portlets that can be placed on
 site pages as well as one that adds a page to the Control Panel. The four
@@ -810,7 +828,8 @@ the same as wiki pages: they must be created in HTML, not MediaWiki or Creole.
 Click the *Source* button in the editor to view the HTML source of what you've
 written or write some HTML yourself.
 
-![Figure 12.19: New Knowledge Base Article](../../images/liferay-collaboration-kb-new-article.png)
+![Figure 12.19: New Knowledge Base 
+Article](../../images/liferay-collaboration-kb-new-article.png)
 
 In addition to entering a title and creating content for your article, you can
 use the editor to add attachments, add tags and set permissions. By default,
@@ -828,7 +847,8 @@ which roles can add articles and templates, which are granted knowledge base
 administrator privileges, which can change permissions on articles, which can
 subscribe to articles and which can view templates.
 
-![Figure 12.20: Knowledge Base Permissions](../../images/liferay-collaboration-kb-permissions.png)
+![Figure 12.20: Knowledge Base 
+Permissions](../../images/liferay-collaboration-kb-permissions.png)
 
 Users may need to be granted access to the knowledge base page of the control
 panel in order to exercise some of the above permissions. For example, suppose
@@ -901,7 +921,8 @@ To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
 the contents of the template copied for you.
 
-### Knowledge Base Article Portlet [](id=lp-6-1-ugen04-knowledge-base-article-portlet-0)
+### Knowledge Base Article Portlet 
+[](id=lp-6-1-ugen04-knowledge-base-article-portlet-0)
 
 The Knowledge Base Article portlet can be placed on a page to display an entire
 article. When you first place this portlet on a page it displays the message
@@ -917,7 +938,8 @@ article it displays. There are also links at the top of the portlet users can
 use to subscribe to an RSS feed of the knowledge base, subscribe to the article,
 view the history of the article or print the article.
 
-### Knowledge Base Section Portlet [](id=lp-6-1-ugen04-knowledge-base-section-portlet-0)
+### Knowledge Base Section Portlet 
+[](id=lp-6-1-ugen04-knowledge-base-section-portlet-0)
 
 The Knowledge Base Section portlet allows administrators to selectively show
 articles associated with a specific section. For example, a news site might have
