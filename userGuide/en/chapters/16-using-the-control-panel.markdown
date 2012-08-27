@@ -132,7 +132,15 @@ Note that if you add your mail server settings here, they will override anything
 
 Liferay Portal enables users to upload and share content via the Documents and Media library, a customizable and permissionable online repository. Users can upload files of any type to the Documents and Media library. Liferay ships with PDFBox and uses it to generate automatic previews for certain types of documents, by default. You can also install three additional tools that offer higher quality previews and document conversion functionality: OpenOffice or LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these tools, you can generate automatic previews for many types of files incuding text files, office suite files, PDFs, images, audio files and videos. Users will also be able to use the conversion functionality to download documents in a variety of formats. Please see chapter 4 on Documents and Media for more information.
 
-LibreOffice is available here: [LibreOffice](http://www.libreoffice.org), ImageMagick is available here: [ImageMagick](http://www.imagemagick.org) and Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to choose the correct versions of these applications for your operating system. Once you've installed these tools, you can use the External Services tab of the control panel to configure Liferay to use them.
+LibreOffice is available here: [LibreOffice](http://www.libreoffice.org), ImageMagick is available here: [ImageMagick](http://www.imagemagick.org) and Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to choose the correct versions of these applications for your operating system. You can build Xuggler 3.4.1012, which works with Liferay 6.1, from source or you can install it from the binaries:
+
+- [Source](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-src.tar.gz)
+- [Linux (32-bit)](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-i686-pc-linux-gnu.sh)
+- [Linux (64-bit)](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-x86_64-unknown-linux-gnu.sh)
+- [Mac OS X](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-i386-apple-darwin9.8.0.sh)
+- [Windows](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-win32-setup.exe)
+
+Once you've installed these tools, you can use the External Services tab of the control panel to configure Liferay to use them.
 
 #### OpenOffice/LibreOffice configuration [](id=lp-6-1-ugen19-openofficelibreoffice-configuration-0)
 
@@ -171,7 +179,7 @@ To enable ImageMagick from the control panel, navigate to the *Server Administra
 
 #### Xuggler configuration [](id=lp-6-1-ugen19-xuggler-configuration-0)
 
-Once you've installed the correct version of [*Xuggler*](http://www.xuggle.com/xuggler) for your operating system, you need to configure your environment variables. Depending on where you installed Xuggler, a configuration similiar to the following should work on Unix-like systems:
+Once you've installed the correct version of [*Xuggler*](http://www.xuggle.com/xuggler) for your operating system, you need to configure your environment variables. Depending on where you installed Xuggler, a configuration similar to the following should work on Unix-like systems:
 
     export XUGGLE_HOME=/usr/local/xuggler
     export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH

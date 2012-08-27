@@ -1,3 +1,4 @@
+
 # Configuring Liferay for High Availability [](id=enterprise-configurati-5)
 
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is fully ready to support mission-critical, enterprise applications in an environment configured for multiple redundancies and 24/7 uptimes. The product, however, like other products of its kind, doesn't come configured this way out of the box, so there are some steps that need to be taken to tune it for your needs. 
@@ -42,18 +43,6 @@ Many of these configuration changes can be made by adding or modifying propertie
 ---
 
 We'll take each of the points above one by one to present a clear picture of how to cluster Liferay. 
-
-### The Quartz scheduler should be set for a clustered environment [](id=lp-6-1-ugen15-the-quartz-scheduler-should-be-set-for-a-clustered-environm-0)
-
-Liferay uses Quartz to run jobs on a schedule. When you write an application for Liferay, one of the things you can do is set up jobs like these. An example of this is the calendar: periodically, a job runs to check to see whether it's time to trigger a calendar event. The scheduler needs to know that it's in a cluster, or events might get triggered multiple times by different nodes. 
-
-This is very easy to configure. It takes only one property in your `portal-ext.properties` file: 
-
-	org.quartz.jobStore.isClustered=true
-	
-If you've already started Liferay and had your database generated, you'll need to drop all the `QUARTZ_` tables to make this work. 
-	
-Your first clustering task is already done! Let's move on to the database. 
 
 ### All nodes should be pointing to the same Liferay database [](id=lp-6-1-ugen15-all-nodes-should-be-pointing-to-the-same-liferay-database-0)
 
@@ -278,7 +267,8 @@ We have one more store to go over: the Documentum store.
 
 ##### Using the Documentum store [](id=lp-6-1-ugen15-using-the-documentum-store-0)
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+
+![EE Only Feature](../../images/ee-feature-web.png)
 
 If you have a Liferay Portal EE license, you have access to the Documentum hook which adds support for Documentum to Liferay's Documents and Media library. Install this hook by using the Liferay Marketplace. 
 
@@ -346,11 +336,17 @@ Installing the plugin to your nodes has the effect of overriding any calls to Lu
 
 Lucene, the search indexer which Liferay uses, can be configured to sync indexes across each cluster node. This is the easiest configuration to implement, though of course, it's not as "clean" a configuration as using pluggable enterprise search. Sometimes, however, you just don't have another server to use for search indexing, so you need a way to keep all your nodes in sync. Liferay provides a method called Cluster Link which can send indexing requests to all nodes in the cluster to keep them in sync. This configuration doesn't require any additional hardware, and it performs very well. It may increase network traffic when an individual server reboots, since a full reindex will be needed. But this should rarely happen, making it a good tradeoff if you don't have the extra hardware to implement a Solr search server.
 
-You can enable Cluster Link by setting one property in your `portal-ext.properties `file:
+You can enable Cluster Link by setting the following property in your `portal-ext.properties` file:
 
     cluster.link.enabled=true
+    
+To cluster your search indexes, you also need to set the following property:
 
-Of course, this needs to be set on all the nodes. That's all you need to do to sync your indexes. Pretty easy, right? Of course, if you have existing indexes, you'll want to do a reindex as described in the previous section once you have Cluster Link enabled on all your nodes.  
+    lucene.replicate.write=true
+    
+If you have `cluster.link.enabled=true` but `lucene.replicate.write=false`, you'll enable cache replication but not index replication.
+
+Of course, `cluster.link.enabled=true` and `lucene.replicate.write=true` need to be set on all your nodes. That's all you need to do to sync your indexes. Pretty easy, right? Of course, if you have existing indexes, you'll want to do a reindex as described in the previous section once you have Cluster Link enabled on all your nodes.  
 
 Next, we'll show how to share indexes in a database. This is actually not a recommended configuration, as it's slow (databases are always slower than file systems), but for completeness, we'll go ahead and tell you how to do it anyway. But you've been forewarned: it's far better to use one of the other methods of clustering your search index. 
 
