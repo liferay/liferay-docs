@@ -75,8 +75,7 @@ into the Healthy Recipes subfolder. The Healthy Recipes subfolder is a child of
 the Dessert Recipes subfolder. We need to move the link to the Dessert Recipes
 subfolder first before moving it into the Healthy Recipes subfolder.
 
-![Figure 12.2: You can only move a link one level at a time.]
-(../../images/bookmarks-select-remove-buttons.png)
+![Figure 12.2: You can only move a link one level at a time.](../../images/bookmarks-select-remove-buttons.png)
 
 To achieve this, we select Edit from the Actions button for the link. In the
 Edit view, find the section called *Folder*, where there is a link to the
@@ -212,8 +211,7 @@ You will want to use the Software Catalog if you will have multiple users
 submitting portlets into the repository and if you don't want to worry about
 creating the `liferay-plugin-repository.xml` file yourself.
 
-![Figure 12.1: The Software Catalog with Nothing Installed]
-(../../images/marketplace-software-catalog.png)
+![Figure 12.1: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
 
 Each site in your portal can have an instance of the Software Catalog. The
 Control Panel presents you with the software catalog for whichever site you are
@@ -226,8 +224,7 @@ site you were on when you selected the Control Panel from the dockbar. If you
 want to administer the software catalog for a different site, you can select it
 from the selection box.
 
-![Figure 12.2: Populated Software Catalog from liferay.com]
-(../../images/marketplace-populated-software-catalog.png)
+![Figure 12.2: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
 
 The Software Catalog has several tabs. The first tab is labeled Products. The
 default view of the portlet, when populated with software, displays what plugins
@@ -274,8 +271,7 @@ To create the product record in the Software Catalog portlet, click the
 *Products* tab, then click the *Add Product* button. Fill out the form with
 information about your product.
 
-![Figure 12.3: Adding a Product to the Software Catalog]
-(../../images/marketplace-adding-product-to-software-catalog.png)
+![Figure 12.3: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
 
 **Name:** The name of your software product.
 
@@ -356,8 +352,7 @@ our example, we have entered 6.0.3 for the name, because our portlet should work
 on that version and higher, and [http://www.liferay.com](http://www.liferay.com)
 for the URL. Click *Save*.
 
-![Figure 12.4: Adding a Product Version to the Software Catalog]
-(../../images/marketplace-adding-product-version-software-catalog.png)
+![Figure 12.4: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
 
 Now go back to the *Products* tab and click on your product. You will notice a
 message is displayed stating the product does not have any released versions.
@@ -569,7 +564,7 @@ quickly. Users place items in a shopping cart, allowing them to purchase
 multiple items at once. There is also an email notification system to alert
 users when their transaction is being processed.
 
-So before we start printing money, let's create an online store first.
+So before we start printing money, let's first create an online store.
 
 ### Setting up shop
 
@@ -607,7 +602,7 @@ To add a coupon, enter the coupon code in the *Code* field. If no code is
 specified, you can create one automatically by selecting the *Autogenerate Code*
 checkbox. After entering the coupon's *Name* and *Description*, you can set the
 coupon's start and expiration dates. Additional options allow you to set a
-coupon to Never Expire and make a coupon Active.
+coupon to *Never Expire* and make a coupon *Active*.
 
 Under the Discount section, you can set the minimum amount required for the
 discount to occur, the discount amount and the discount type. Types can be based
@@ -668,8 +663,7 @@ add a link to the photo or upload the file locally. Choose from three sizes of
 images. You must select the appropriate checkbox for the image you want to
 display. When you are finished creating a new item, click *Save*.
 
-![Figure 12.9: The image in this figure is the medium sized option.]
-(../../images/shopping-item-image.png)
+![Figure 12.9: The image in this figure is the medium sized option.](../../images/shopping-item-image.png)
 
 As items are added, they will be listed in the Items section of the portlet. If
 the item you just created needs to go into one of your new cateogries or
@@ -781,8 +775,7 @@ the option to add to the cart as you go.
 After adding an item to the cart, click *<< Back* to return to the item
 description and continue shopping by navigating the category breadcrumbs.
 
-![Figure 12.14: This shopping cart has two items in it so far.]
-(../../images/shopping-cart-order.png)
+![Figure 12.14: This shopping cart has two items in it so far.](../../images/shopping-cart-order.png)
 
 Each time you add an item to the cart, you will see a running talley of the
 cart's contents. Quantities for each item are controlled using drop-down menus.
@@ -909,7 +902,7 @@ the weather?
 
 ## Weather [](id=lp-6-1-ugen12-weather-0)
 
-![EE Only Feature](../../images/ee-only-image/ee-feature-web.png)
+![EE Only Feature](../../images/ee-feature-web.png)
 
 Whether you're going from Los Angeles to La Paz, Mumbai to Moscow, Harare to
 Hong Kong or Dehli to Detroit you will always know the conditions on the ground
@@ -960,8 +953,7 @@ page, the Knowledge Base display portlet presents many of the same options to an
 administrator that are available from the Knowledge Base page of the control
 panel.
 
-![Figure 12.18: Knowledge Base Display Portlet]
-(../../images/liferay-collaboration-kb-display-portlet.png)
+![Figure 12.18: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
 
 You can use the four links at the top of the Knowledge Base display portlet to
 control what it displays.
@@ -1026,8 +1018,7 @@ one for templates. The articles tab shows all the articles in the knowledge base
 and lets you perform actions on them. The templates tab shows all the templates
 defined in the knowledge base and lets you perform actions on them.
 
-![Figure 12.21: Knowledge Base Control Panel Page]
-(../../images/liferay-collaboration-kb-control-panel.png)
+![Figure 12.21: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
 
 Administrators can perform the following actions on an article:
 
@@ -1060,8 +1051,7 @@ template basically functions like a starting point for the creation of certain
 types of articles. Click the *Add Template* button on the Templates tab of the
 Knowledge Base page of the Control Panel to create a new template.
 
-![Figure 12.22: Adding a New Template From the Control Panel]
-(../../images/liferay-collaboration-kb-new-template.png)
+![Figure 12.22: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
 
 Navigate back to the templates tab of the Knowledge Base page of the control
 panel. You can perform the following actions on a template:
@@ -1076,10 +1066,8 @@ choose roles to have permission to update, view, delete or change the
 permissions on templates.
 
 *Delete:* lets you remove a template from the knowledge base.
-=======
-![Figure 12.18: Knowledge Base Section Portlets]
-(../../images/liferay-collaboration-kb-section-portlet.png)
->>>>>>> master
+
+![Figure 12.18: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
@@ -1095,8 +1083,7 @@ a link to the configuration dialog box for the portlet. Click *Select Article*
 to choose an article to display. Pick an article and then click *Save*. When
 your page refreshes it will display the article in the portlet.
 
-![Figure 12.23: Knowledge Base Article Portlet]
-(../../images/liferay-collaboration-kb-article-portlet.png)
+![Figure 12.23: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the
 article it displays. There are also links at the top of the portlet users can
@@ -1124,8 +1111,7 @@ article belongs to. You can add any number of Knowledge Base section portlets to
 a page and you can configure each portlet to display articles from any number of
 sections.
 
-![Figure 12.24: Knowledge Base Section Portlets]
-(../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 12.24: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 The Knowledge Base section portlet has some additional configurations that allow
 an administrator to select a display style (title or abstract), an article
@@ -1141,8 +1127,7 @@ to navigation. The Knowledge Base Search portlet allows you to search for
 articles in the knowledge base. This portlet presents the search results to you
 in order from most relevant to least relevant.
 
-![Figure 12.25: Knowledge Base Search Portlet]
-(../../images/liferay-collaboration-kb-search-portlet.png)
+![Figure 12.25: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
 
 You can also use the Categories Navigation portlet in conjunction with the
 Knowledge Base display portlet. When both of these portlets are placed on a page
@@ -1150,8 +1135,7 @@ you can select a topic in the Categories Navigation portlet and the Knowledge
 Base display portlet will show all of the articles that match the topic. You can
 create topics from the Categories page of the Control Panel.
 
-![Figure 12.26: Knowledge Base Category Navigation Portlet]
-(../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+![Figure 12.26: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them.
 
