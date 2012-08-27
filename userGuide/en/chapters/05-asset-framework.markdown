@@ -6,7 +6,7 @@ of assets include blog posts, wiki articles, message board posts, bookmarks, and
 documents. It's possible for developers to define custom asset types that
 utilize Liferay's asset framework. Originally, the asset framework was created
 to provide a mechanism for adding tags to blog entries, wiki articles, and web
-content without reimplement the same functionality multiple times. The asset
+content without reimplementing the same functionality multiple times. The asset
 framework has been greatly extended since then and it now supports tags,
 categories, comments, ratings, and asset relationships.
 
@@ -226,9 +226,7 @@ setting `max terms` property.
 #### Asset Categories
 
 If categories have been applied to any asset that appears in the result set,
-they may be displayed in the Asset Categories facet. Yadda, yadda, yadda, same
-thing as the two sections above. That last sentence was written to check if
-you're still reading. 
+they may be displayed in the Asset Categories facet. 
 
 Let's move on to advanced searching. 
 
@@ -472,7 +470,7 @@ Freemarker templates provided by a theme if the portal property
 a JSP is simply done by prefixing the string with /html/portlet/search/facets/
 and appending the .jsp extension.
 
-For example, `"displayStyle": "asset_tags"`maps to the JSP 
+For example, `"displayStyle": "asset_tags"` maps to the JSP 
 
 	/html/portlet/search/facets/asset_tags.jsp
 
