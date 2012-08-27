@@ -589,10 +589,10 @@ snapshot of the palette within the workflow diagram is shown below:
 
 For pointer options, you are given two choices:
 
-- *Select*: Is the default pointer setting, which is used to select options on
+- *Select*: the default pointer setting, which is used to select options on
 the workflow diagram by simply clicking the icon.
 
-- *Marquee*: Used to drag an invisible box around multiple icons. This is very
+- *Marquee*: used to drag an invisible box around multiple icons. This is very
 useful when wanting to select multiple options on the workflow diagram.
 
 Furthermore, there is an option to choose *Transition*. This feature connects
@@ -687,7 +687,7 @@ Lastly, you can double-click the names for nodes and transitions and change them
 to your liking.
 
 You have probably noticed the *Properties* tab below the workflow diagram. Let's
-explore what it does and how it can help customize our workflow definition.
+explore what it does and how it can help customize your workflow definition.
 
 #### Properties and Outline features
 
@@ -714,7 +714,7 @@ consistency, but does make reading the section more user friendly-->
 
 - *Task Timers*: specifies *Name* and *Blocking*.
 
-- *Script*: enables you to choose default script editor and edit script
+- *Script*: allows you to choose default script editor and edit script
 
 - *Other*: defines *Name* and *Description* of current node.
 
@@ -762,7 +762,7 @@ drop-down menu and select where your condition transitions should send your
 workflow based on its status. Here is a snapshot of the *Create New Condition
 Node* menu configured for Ray and Alloy's workflow.
 
-![Figure 7.52: When creating a condition node, you are able to set your preferred script language, name, and condition transitions.](../../images/kaleo-12.png) 
+![Figure 7.52: When creating a condition node, you're able to set your preferred script language, name, and condition transitions.](../../images/kaleo-12.png) 
 
 Now the error marking has been changed to the condition node. It indicates that
 a script must be specified. By selecting the condition node and clicking *Edit
@@ -897,7 +897,7 @@ make a notification.
 ---
 
 ![](../../images/tip-pen-paper.png)**Note:** Similar to script editors,
-Developer Studio allows you to use text, FreeMarker and Velocity template
+Developer Studio allows you to use text, FreeMarker, and Velocity template
 editors while modifying the same workflow definition XML file.
 
 ---
@@ -995,10 +995,10 @@ definition?
 When you make changes to a workflow they're never made immediately available to
 the rest of the portal. Actually, when you make changes to a definition and save
 them, it saves them to a draft. So you can have multiple iterations on that
-draft. For example, you might be working on version 1 of your definition and as
-you make changes to it, you save them in multiple drafts. Eventually when you
+draft. For example, you might be working on *Version 1* of your definition and
+as you make changes to it, you save them in multiple drafts. Eventually when you
 are finished with all of your changes, you publish a new version of the workflow
-and it becomes version 2. Then you can go inside the portal configuration for
+and it becomes *Version 2*. Then you can go inside the portal configuration for
 workflow and tell it to use your new workflow definition.
 
 Saving and publishing your workflow definition in Developer Studio is relatively
@@ -1007,7 +1007,7 @@ test your workflow defintion by saving your definition XML file in a draft.
 Furthermore, you are also able to publish your workflow definition straight to
 Liferay Portal for quick and easy configuration.
 
-For a finale of our overview for using Kaleo Workflow for Java designer in
+For a finale of our overview for using Kaleo Workflow for Java in
 Developer Studio, let's recap Ray and Alloy's workflow definition and the steps
 we went through to complete it.
 
@@ -1018,7 +1018,7 @@ Kaleo Workflow for Java is great for creating business solutions. Developer
 Studio offers a dynamic workflow diagram, which helps you visualize your
 workflow and create steps to ensure a successful business process. Also, the
 script and template editors give you a convenient workspace that caters to any
-developing preference you may have. In addition, Developer Studio's access to
+developer preference you may have. In addition, Developer Studio's access to
 your custom business logic APIs and Liferay Portal APIs makes it simple to
 customize your workflow definition. Lastly, the ability to publish directly to
 your existing Liferay server makes the configuration process quick and easy.
