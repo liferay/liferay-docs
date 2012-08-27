@@ -8,7 +8,7 @@ In this chapter we'll look at some Liferay utility applications that might be us
 
 Liferay's Bookmarks application is a simple way for users to keep track of URLs in the portal that can also be used by an administrator to publish relevant links to groups of users. The Software Catalog allows you to define a set of software items to display to visitors. The Knowledge Base application allows you to create articles and organize them into full books or guides that be published on your portal.
 
-## Capturing Web Sites with the Bookmarks Portlet [](id=lp-6-1-ugen12-bookmarks-portlet-0)	 [](id=lp-6-1-ugen12-capturing-web-sites-with-the-bookmarks-portlet-idlp-6-1-uge-0) [](id=lp-6-1-ugen12-capturing-web-sites-with-the-bookmarks-portlet-idlp-6-1-uge-0)
+## Capturing Web Sites with the Bookmarks Portlet [](id=lp-6-1-ugen12-bookmarks-portlet-0)	 [](id=lp-6-1-ugen12-capturing-web-sites-with-the-bookmarks-portlet-idlp-6-1-uge-0) [](id=lp-6-1-ugen12-capturing-web-sites-with-the-bookmarks-portlet-idlp-6-1-uge-0) [](id=lp-6-1-ugen12-capturing-web-sites-with-the-bookmarks-portlet-idlp-6-1-uge-0) [](id=lp-6-1-ugen12-capturing-web-sites-with-the-bookmarks-portlet-idlp-6-1-uge-0)
 
 Many of us enjoy collecting things we value. They may be stamps, comic books, sea shells, fabulous shoes. The list goes on and on. But have you considered URLs collectible? Having a thorough collection of links can be a great way to add value to your portal's usability.
 
