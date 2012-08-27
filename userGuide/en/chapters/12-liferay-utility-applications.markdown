@@ -1,4 +1,4 @@
-# Liferay Utility Applications 
+# Liferay Utility Applications
 [](id=lp-6-1-ugen12-liferay-utility-applications-0)
 
 In this chapter we'll look at some Liferay utility applications that might be
@@ -10,6 +10,8 @@ applications:
 
 - Bookmarks
 - Software catalog
+- Shopping
+- Weather
 - Knowledge Base
 
 Liferay's Bookmarks application is a simple way for users to keep track of URLs in the portal that can also be used by an administrator to publish relevant links to groups of users. The Software Catalog allows you to define a set of software items to display to visitors. The Knowledge Base application allows you to create articles and organize them into full books or guides that be published on your portal.
@@ -18,13 +20,13 @@ Liferay's Bookmarks application is a simple way for users to keep track of URLs 
 
 Many of us enjoy collecting things we value. They may be stamps, comic books, sea shells, fabulous shoes. The list goes on and on. But have you considered URLs collectible? Having a thorough collection of links can be a great way to add value to your portal's usability.
 
-With Liferay's Bookmarks application, users collect and manage URLs in the portal. They can add, edit, delete, export and import bookmarks. Users can use links to access regularly visited web sites. Administrators can publish links tailored to specific groups of users. Both internal pages as well as external sites can be bookmarked. 
+With Liferay's Bookmarks application, users collect and manage URLs in the portal. They can add, edit, delete, export and import bookmarks. Users can use links to access regularly visited web sites. Administrators can publish links tailored to specific groups of users. Both internal pages as well as external sites can be bookmarked.
 
 ### Organizing Bookmarks by Folder [](id=lp-6-1-ugen12-organizing-bookmarks-by-folder-0)
 
 You can store all your important links in one place and you can manage this data easily using folders. You can create, edit, and delete bookmark folders. You get to decide how many bookmarks or folders are displayed on a page. Bookmark folders can have any number of subfolders.
 
-Here's an example of what one bookmarks portlet might look like. Bookmark Folders are displayed above individual bookmarks.  
+Here's an example of what one bookmarks portlet might look like. Bookmark Folders are displayed above individual bookmarks.
 
 ![Figure 12.1: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view.png)
 
@@ -32,9 +34,9 @@ In this example, there are four bookmark folders. The first folder, Just Dessert
 
 Under the column *# of Entries* is the number 10. This indicates there are 10 total bookmarks in the Just Desserts folder.
 
-Using the *Actions* button on the right, you can *Edit* the folder, manage folder *Permissions*, *Delete* the folder, *Add Subfolder*, or *Add Bookmark* to the folder. 
+Using the *Actions* button on the right, you can *Edit* the folder, manage folder *Permissions*, *Delete* the folder, *Add Subfolder*, or *Add Bookmark* to the folder.
 
-As your collection of links grows, you may need to add more subfolders to keep things in order. Should you decide a link needs to move from one folder to another, you can manage this using the Edit option for that link. 
+As your collection of links grows, you may need to add more subfolders to keep things in order. Should you decide a link needs to move from one folder to another, you can manage this using the Edit option for that link.
 
 #### Moving a Link [](id=lp-6-1-ugen12-moving-a-link-0)
 
@@ -46,15 +48,15 @@ To achieve this, we select Edit from the Actions button for the link. In the Edi
 
 ![Figure 12.3: You can see the title of the current folder displayed as a link next to the Select button.](../../images/bookmarks-choosing-subfolder.png)
 
-Now choose the Dessert Recipes subfolder. When you do this, notice that the link changes to reflect the new subfolder level. 
+Now choose the Dessert Recipes subfolder. When you do this, notice that the link changes to reflect the new subfolder level.
 
 ![Figure 12.4: When you choose a subfolder, the name of the folder changes to reflect your new position.](../../images/bookmarks-choosing-subfolder2.png)
 
-Choose *Save* and you return to the top-level folder. Now select the Dessert Recipes subfolder to open up the bookmarks list. Edit the Good For You link and click *Select*. Choose the Healthy Recipes subfolder and again notice the change in the folder level. 
+Choose *Save* and you return to the top-level folder. Now select the Dessert Recipes subfolder to open up the bookmarks list. Edit the Good For You link and click *Select*. Choose the Healthy Recipes subfolder and again notice the change in the folder level.
 
 Click *Save* and the Dessert Recipes folder view appears. Select Healthy Recipes to see your link in the bookmarks list. Piece of cake, right?
 
-To move a link out of a subfolder and into a higher-level folder, edit the link in the subfolder and choose *Select*. 
+To move a link out of a subfolder and into a higher-level folder, edit the link in the subfolder and choose *Select*.
 
 In the resulting dialog box, select the appropriate folder from the breadcrumbs at the top. Click the *Choose This Folder* button and verify the proper folder level is displayed. If this is correct, click *Save* and you're done.
 
@@ -86,15 +88,11 @@ Click *Select* to choose the folder for the new bookmark. Click *Remove* to dele
 
 In the URL field you must enter a fully qualified URL. Entering anything less displays an error.
 
-Below the Permissions there are additional options for Categorization and Related Assets, just like other Liferay portlets. Please see chapter 5 on the Asset Framework for further information about this. 
+Below the Permissions there are additional options for Categorization and Related Assets, just like other Liferay portlets. Please see chapter 5 on the Asset Framework for further information about this.
 
-Once you have added a new bookmark, it appears in the portlet. From here, you can manage your bookmark using familiar Liferay editing features. Collecting and organizing your links is a snap when you use Liferay's Bookmarks application. Now let's look at the Shopping application. 
+Once you have added a new bookmark, it appears in the portlet. From here, you can manage your bookmark using familiar Liferay editing features. Collecting and organizing your links is a snap when you use Liferay's Bookmarks application. Now let's look at the Shopping application.
 
-<!--
-Need Shopping header, intro, text, images, etc. here
--->
-
-## Creating Your Own Plugin Repository 
+## Creating Your Own Plugin Repository
 [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
 
 As your enterprise builds its own library of portlets for internal use, you can
@@ -310,7 +308,7 @@ When you are finished filling out the form, click the *Save* button. Your
 product version will be saved and your product will now be available in the
 software repository.
 
-#### Generating The Software Catalog 
+#### Generating The Software Catalog
 [](id=lp-6-1-ugen15-generating-the-software-catalog-0)
 
 The Software Catalog works by generating an XML document which the Plugin
@@ -331,11 +329,10 @@ looking at the URLs for any of the pages. The URL will look something like this:
 Obviously, it is much easier if you are using Friendly URLs, which we highly
 recommend.
 
-
 Next, go to your browser and go to the following URL:
 
-[http://<server name\>:<port number\>/software\_catalog?<Friendly URL name or 
-Group ID\>](http://<server name\>:<port number\>/software\_catalog?<Friendly URL 
+[http://<server name\>:<port number\>/software\_catalog?<Friendly URL name or
+Group ID\>](http://<server name\>:<port number\>/software\_catalog?<Friendly URL
 name or Group ID\>)
 
 For example, if you are on the same machine as your Liferay instance, and that
@@ -415,7 +412,7 @@ your HTTP server. You can then give out the URL to the directory which holds
 this file on your web site and anyone with an instance of Liferay will be able
 to point their Plugin Installer portlets to it.
 
-#### Benefits of the Software Catalog 
+#### Benefits of the Software Catalog
 [](id=lp-6-1-ugen15-benefits-of-the-software-catalog-0)
 
 As you can see, the Software Catalog makes it easy for you to create a
@@ -458,7 +455,7 @@ Liferay source. It is a file called `liferay-plugin-package_6_0_0.dtd`. Use this
 DTD with a validating XML editor (a good, free choice is jEdit with all the XML
 plugins) to create your software catalog manually.
 
-### Connecting to a Software Catalog 
+### Connecting to a Software Catalog
 [](id=lp-6-1-ugen15-connecting-to-a-software-catalog-0)
 
 If there is a software catalog of plugins you would like to point your instance
@@ -501,7 +498,7 @@ your site, although it might be preferable to dedicate an entire page to the
 application depending on how many items you have to sell. The Shopping portlet
 is available from the *Add* -> *More* menu in the task bar under Shopping.
 
-![Figure 12.5: Start setting up the store by entering items and categories in 
+![Figure 12.5: Start setting up the store by entering items and categories in
 the shopping portlet.](../../images/shopping-add-portlet.png)
 
 The shopping portlet has the following four tabs across the top:
@@ -548,8 +545,8 @@ It's not difficult to create categories. Simply click the *Add Category* button
 to display the Category form. In this form enter the *Name*, *Description*, and
 set the *Permissions* for the category. That's all there is to it.
 
-![Figure 12.6: In this figure there are three subcategories for the 
-`Aromatherapy` category. The first subcategory has three items, the second has 
+![Figure 12.6: In this figure there are three subcategories for the
+`Aromatherapy` category. The first subcategory has three items, the second has
 two, and the thrid is empty.](../../images/shopping-categories.png)
 
 When you select *Save*, you will see your new category listed in the portlet,
@@ -578,7 +575,7 @@ characteristics for the item. These can include things like sizes and colors.
 The additional fields appear in the item form as pull-down menus, as in the
 figure below.
 
-![Figure 12.8: The additional fields you create for an item appear in the item 
+![Figure 12.8: The additional fields you create for an item appear in the item
 description form as options.](../../images/shopping-item-options.png)
 
 The Prices area of the new item form is where you enter all data pertaining to
@@ -598,13 +595,13 @@ subcategories, you can assign it to the category through editing form. Choose
 the *Select* button, next to the *Remove* button, and this displays a dialog box
 listing all the shop categories.
 
-![Figure 12.10: To put an item in a category, open *Edit* and choose *Select* to 
+![Figure 12.10: To put an item in a category, open *Edit* and choose *Select* to
 see the available options.](../../images/shopping-select-categories.png)
 
 *Choose* the desired category from the list to relocate the item to it's new
 location. Notice how the breadcrumbs reflect this change in the item form.
 
-![Figure 12.11: When an item moves into a category, the breadcrumb navigation 
+![Figure 12.11: When an item moves into a category, the breadcrumb navigation
 will update accordingly.](../../images/shopping-item-breadcrumb-change.png)
 
 Any changes that need to be made to the item can be executed through *Actions*
@@ -664,7 +661,7 @@ that the order amount falls under.
 
 This form sets the addresses for customer email notifications.
 
-![Figure 12.12: Shopping emails can be configured in a myriad of ways to suit 
+![Figure 12.12: Shopping emails can be configured in a myriad of ways to suit
 your needs.](../../images/shopping-confirmation-email-form.png)
 
 **Emails From:** sets the customers name and email address for basic
@@ -688,7 +685,7 @@ allowing them to purchase multiple items at once.
 When buyers select an item from a category they see the item's description
 displaying all of its relevant information.
 
-![Figure 12.13: You can include images of each item in your store. (Medium sized 
+![Figure 12.13: You can include images of each item in your store. (Medium sized
 images display on the item's description form).](../../images/shopping-item.png)
 
 Below the description is a field indicating the item's availability plus other
@@ -756,7 +753,7 @@ has been received and is being processed.
 You can also add comments about the order and subscribe to the comments to get
 any updates on the order.
 
-![Figure 12.16: Say something nice about the invoice, 
+![Figure 12.16: Say something nice about the invoice,
 please.](../../images/shopping-invoice.png)
 
 Search for orders using these criteria: Number, Status, First Name, Last Name
@@ -809,7 +806,7 @@ Troubleshooting#
 similar to:
 
 ERROR [WebCachePool:68] 0066620996 java.util.NoSuchElementException
- 
+
 Check if you've setup your Amazon Web Services key correctly in
 portal-ext.properties.
 
@@ -820,6 +817,7 @@ configuration will only take ISBN numbers in the 10-digit format.
 
 3. If your Amazon Web Services key is not setup properly in Liferay, it will
 also affect the Shopping Portlet when you try to 'Add Books'.
+
 -->
 
 Now that you know all about Liferay's Shopping application, why don't we check
@@ -840,7 +838,7 @@ the Utility window and view a summary of the application. Follow the download
 instructions and the portlet will appear in your Application menu ready to
 deploy.
 
-![Figure 12.17: Is it raining at Grandma's house? You will know when you use the 
+![Figure 12.17: Is it raining at Grandma's house? You will know when you use the
 Weather portlet.](../../images/weather-portlet.png)
 
 You can configure the portlet to display locations using the Preferences option.
@@ -867,7 +865,7 @@ organized hierarchically to form complete books or guides. The Knowledge Base
 portlet is available as an app from Liferay Marketplace. Please see chapter 2
 for installation instructions.
 
-### Knowledge Base Display Portlet 
+### Knowledge Base Display Portlet
 [](id=lp-6-1-ugen04-knowledge-base-display-portlet-0)
 
 The Knowledge Base app actually consists of four portlets that can be placed on
@@ -902,7 +900,7 @@ the same as wiki pages: they must be created in HTML, not MediaWiki or Creole.
 Click the *Source* button in the editor to view the HTML source of what you've
 written or write some HTML yourself.
 
-![Figure 12.19: New Knowledge Base 
+![Figure 12.19: New Knowledge Base
 Article](../../images/liferay-collaboration-kb-new-article.png)
 
 In addition to entering a title and creating content for your article, you can
@@ -921,7 +919,7 @@ which roles can add articles and templates, which are granted knowledge base
 administrator privileges, which can change permissions on articles, which can
 subscribe to articles and which can view templates.
 
-![Figure 12.20: Knowledge Base 
+![Figure 12.20: Knowledge Base
 Permissions](../../images/liferay-collaboration-kb-permissions.png)
 
 Users may need to be granted access to the knowledge base page of the control
@@ -998,7 +996,7 @@ To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
 the contents of the template copied for you.
 
-### Knowledge Base Article Portlet 
+### Knowledge Base Article Portlet
 [](id=lp-6-1-ugen04-knowledge-base-article-portlet-0)
 
 The Knowledge Base Article portlet can be placed on a page to display an entire
@@ -1015,7 +1013,7 @@ article it displays. There are also links at the top of the portlet users can
 use to subscribe to an RSS feed of the knowledge base, subscribe to the article,
 view the history of the article or print the article.
 
-### Knowledge Base Section Portlet 
+### Knowledge Base Section Portlet
 [](id=lp-6-1-ugen04-knowledge-base-section-portlet-0)
 
 The Knowledge Base Section portlet allows administrators to selectively show
