@@ -227,9 +227,7 @@ setting `max terms` property.
 #### Asset Categories
 
 If categories have been applied to any asset that appears in the result set,
-they may be displayed in the Asset Categories facet. Yadda, yadda, yadda, same
-thing as the two sections above. That last sentence was written to check if
-you're still reading. 
+they may be displayed in the Asset Categories facet. 
 
 Let's move on to advanced searching. 
 
