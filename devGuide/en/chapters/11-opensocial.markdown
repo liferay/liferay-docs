@@ -19,34 +19,39 @@ An OpenSocial Gadget is specified in an XML document. The first part of the docu
 
 ![Figure 11.1: An OpenSocial gadget's XML consists of elements specifying gadget preferences, user preferences, and content.](../../images/opensocial-22.png)
 
-Below is a sample of OpenSocial gadget XML from a weather gadget authored by The Weather Channel:
+Below is a sample of OpenSocial gadget XML from a weather gadget authored by LabPixies:
 
 	<Module>
-		<ModulePrefs 
-		author="The Weather Channel"
-		author_email="googlegadget@talk2.weather.com"
-		title="The Weather Channel" scrolling="false"
-		height="390"
-		thumbnail="http://i.imwx.com/web/services/gadgets/images/thumbnail.png"
-		screenshot="http://i.imwx.com/web/services/gadgets/images/logo.jpg"
-		description="The Weather Channel Google Gadget provides local weather forecasts based upon city or US Zip Code">
+		<ModulePrefs
+		height="230"
+		author="LabPixies"
+		author_email="labpixie.gadgets+weather+201101101@gmail.com"
+		description="__MSG_description__"
+		thumbnail="http://www.labpixies.com/campaigns/weather/images/thumbnail.jpg"
+		screenshot="http://www.labpixies.com/campaigns/weather/images/screenshot.png"
+		title="__MSG_gTitle__" 
+		title_url="http://www.labpixies.com">
+		<Locale messages="http://www.labpixies.com/campaigns/weather/i20/all_all.xml"/>
+		<Locale lang="en" country="UK" messages="http://www.labpixies.com/campaigns/weather/i20/en_gb_all.xml"/>
+		<Locale lang="en" country="AU" messages="http://www.labpixies.com/campaigns/weather/i20/en_au_all.xml"/>
+		...
+			<Require feature="dynamic-height"/>
 			<Require feature="setprefs"/>
+			<Require feature="views"/>
 		</ModulePrefs>
-		<UserPref name="locId" default_value="" datatype="hidden"/>
-		<UserPref name="lat" default_value="" datatype="hidden"/>
-		<UserPref name="lng" default_value="" datatype="hidden"/>
-		<UserPref name="showMap" default_value="true" datatype="hidden"/>
-		<UserPref name="locName" default_value="" datatype="hidden"/>
-		<UserPref name="installId" default_value="-7" datatype="hidden"/>
-		<UserPref name="tempUnit" default_value="f" datatype="hidden"/>
-		<UserPref name="skinName" default_value="" datatype="hidden"/>
-		<UserPref name="skinId" default_value="" datatype="hidden"/>
-		<UserPref name="ftl" default_value="true" datatype="hidden"/>
-		<UserPref name="date" default_value="-7" datatype="hidden"/>
-		<Content type="html">
+		<UserPref name="degree_unit_type" datatype="hidden" default_value="0"/>
+		<UserPref name="first_load" datatype="hidden" default_value="1"/>
+		<UserPref name="locations" datatype="hidden" default_value="__MSG_dflt_location__"/>
+		<UserPref name="zip_code" datatype="hidden" default_value="0"/>
+		<UserPref name="city_code" datatype="hidden" default_value="0"/>
+		<UserPref name="disable_os" datatype="hidden" default_value="0"/>
+		<UserPref name="tabs" datatype="hidden" default_value="{"news":1,"l0":1}"/>
+		<Content type="html" view="home">
 			...
 		</Content>
 	</Module>
+
+To view the weather gadget in its entirety, visit [http://www.labpixies.com/campaigns/weather/weather.xml](http://www.labpixies.com/campaigns/weather/weather.xml).
 
 For the official documentation on Gadget anatomy, see Google's [Anatomy of a Gadget](https://developers.google.com/gadgets/docs/basic#Anatomy). But, for convenience, let's consider gadget *meta-data* and *content* here to highlight their important aspects.
 
@@ -87,28 +92,30 @@ Weather gadgets, for example, are prime candidates for UserPrefs. When users fir
 In order to set preference values from within your gadget, you must include the `setprefs` feature inside the `<ModulePrefs>...</ModulePrefs>` tags, which we discussed in the *Gadget Preferences (ModulePrefs)* section. Look at the weather gadget's XML to see the `setprefs` feature included as a required feature:
 
 	<Module>
-		<ModulePrefs
-		author="The Weather Channel" ... >
+	...
+		<ModulePrefs height="230" author="LabPixies" ... >
+		...
 			<Require feature="setprefs"/>
 		</ModulePrefs>
-		<UserPref name="locId" default_value="" datatype="hidden"/>
-		<UserPref name="lat" default_value="" datatype="hidden"/>
-		<UserPref name="lng" default_value="" datatype="hidden"/>
-		<UserPref name="showMap" default_value="true" datatype="hidden"/>
-		<UserPref name="locName" default_value="" datatype="hidden"/>
-		...
-		<Content type="html">
+		<UserPref name="degree_unit_type" datatype="hidden" default_value="0"/>
+		<UserPref name="first_load" datatype="hidden" default_value="1"/>
+		<UserPref name="locations" datatype="hidden" default_value="__MSG_dflt_location__"/>
+		<UserPref name="zip_code" datatype="hidden" default_value="0"/>
+		<UserPref name="city_code" datatype="hidden" default_value="0"/>
+		<UserPref name="disable_os" datatype="hidden" default_value="0"/>
+		<UserPref name="tabs" datatype="hidden" default_value="{"news":1,"l0":1}"/>
+		<Content type="html" view="home">
 			...
 		</Content>
 	</Module>
 
 Also, notice the following user preferences of this weather gadget:
 
-- `locId` and `locName` are used to store the ID and name of the user's location.
+- `degree_unit_type` is used to store the user's preference for degree unit type.
 
-- `lat` and `lng` are used to store the coordinates of the user's location.
+- `zip_code` and `city_code` are stored when user specifies their zipcode or city.
 
-- `showMap` flags whether to display the user's location on the map.
+- `locations` displays locations that most closely relate to your zipcode or city specification.
 
 Lastly, let's take a look at the UserPrefs for the Google Reader gadget and compare it to what a user would see in the gadget's user interface. The Google Reader gadget helps you find and keep track of interesting stuff on the web.
 
