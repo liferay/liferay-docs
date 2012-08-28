@@ -446,7 +446,7 @@ in all its glory, in JSON. Explanation of the settings follows the object below.
 Now that you've seen the object, don't be daunted by it. Here are all the
 settings within the object that you can tweak. 
 
-**“className”:** This field must contain a string value which is the FQCN (fully
+**"className":** This field must contain a string value which is the FQCN (fully
 qualified class name) of a java implementation class implementing the Facet
 interface. Liferay provides the following implementations by default:
 
@@ -457,7 +457,7 @@ interface. Liferay provides the following implementations by default:
 	com.liferay.portal.kernel.search.facet.ScopeFacet
 	com.liferay.portal.kernel.search.facet.SimpleFacet
 
-**“data”:** This field takes an arbitrary JSON object (a.k.a. {}) for use by a
+**"data":** This field takes an arbitrary JSON object (a.k.a. {}) for use by a
 specific facet implementation. As such, there is no fixed definition of the data
 field. Each implementation is free to structure it as needed. The value defined
 here matches the implementation that's selected in the `className` attribute
@@ -486,7 +486,7 @@ For example, `"fieldName": "entryClassName"` indicates that the specified facet
 implementation operates on the `entryClassName` indexed field.
 
 **Note:** You can identify available indexed fields by enabling the Search
-portlet’s *Display Results in Document Form* configuration setting and then
+portlet's *Display Results in Document Form* configuration setting and then
 expanding individual results by clicking the [+] to the left of their titles. 
 
 **"label":** This field takes a string value and represents the language key that
@@ -494,10 +494,10 @@ is used for localizing the title of the facet when it's rendered.
 
 **"order":** This field takes a string value. There are two possible values:
 
-   `OrderValueAsc`: This tells the facet to sort it’s results by the term values,
+   `OrderValueAsc`: This tells the facet to sort it's results by the term values,
    in ascending order.
 
-   `OrderHitsDesc`: This tells the facet to sort it’s results by the term
+   `OrderHitsDesc`: This tells the facet to sort it's results by the term
    frequency, in descending order.
 
 **"static":** This field takes a boolean value (`true` or `false`). The default
