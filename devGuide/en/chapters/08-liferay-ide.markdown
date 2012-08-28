@@ -446,24 +446,24 @@ Great! You've confirmed that your imported project is good to go.
 The *Kaleo Designer for Java* provides a robust application that runs in Liferay
 Developer Studio. This application is an EE only feature and is bundled inside
 *Kaleo Forms EE*, which can be downloaded from Marketplace. The Kaleo Forms
-plugin includes `kaleo-web`, `kaleo-designer`, and the `kaleo-forms` portlet.
+app includes the `kaleo-web`, `kaleo-designer`, and `kaleo-forms` plugin.
 You should also download and install *Kaleo Workflow EE* from Marketplace. This
 will serve as your workflow engine.
 
-The Kaleo Forms plugin comes with an existing workflow designer within Liferay
+The Kaleo Forms app comes with an existing workflow designer within Liferay
 Portal. This can be used to design workflow configuration and is described in
 the [Kaleo Forms:Defining Business
 Processes](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen11-kaleo-forms-defining-business-processes-0)
-chapter of the User Guide. Also, refer to the [Using
+chapter of *Using Liferay Portal*. Also, refer to the [Using
 Workflow](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
-chapter of the User Guide if you are unfamiliar with basic concepts or want to
+chapter of *Using Liferay Portal* if you are unfamiliar with basic concepts or want to
 know how to design your workflow within Liferay Portal. However, there is a
-workflow designer included in the Kaleo Forms plugin that specifically meets the
+workflow designer included in the Kaleo Forms app that specifically meets the
 needs for Java developers. With this new designer for Developer Studio, it is
 much easier to modify existing business logic or create new logic within the
 workflow nodes by using Java code. In addition, the workflow engine is built to
-execute groovy scripts, so you can use groovy syntax if you wish; however, Java
-code is also a valid syntax, since Java is a valid groovy script. This is where
+execute Groovy scripts, so you can use Groovy syntax if you wish; however, Java
+code is also a valid syntax, since Java is a valid Groovy script. This is where
 the Developer Studio environment can bring in tooling that most Java developers
 are familiar with for editing Java code that makes calls out to their custom
 business logic APIs or Liferay Portal APIs.
@@ -478,7 +478,7 @@ Studio is integrated with [FreeMarker](http://freemarker.sourceforge.net/) and
 template editors. So, for example, if you want to edit a notification template, 
 you can do so with the Velocity or FreeMarker editor.
 
-After downloading and installing the Kaleo plugins, a *Workflow Definitions*
+After downloading and installing the Kaleo apps, a *Workflow Definitions*
 folder automatically appears underneath your Liferay server in the *Servers*
 view of Developer Studio.
 
@@ -488,7 +488,7 @@ Developer Studio has retrieved the available workflow definitions that are
 running on the portal server. The Kaleo application provides Developer Studio
 the capability to remotely add or update existing Kaleo workflow definitions
 directly to and from the portal server. The *Single Approver* workflow is the
-default application and is preinstalled with the Kaleo plugins.
+default application and is preinstalled with the Kaleo apps.
 
 Next, we will dive into creating a workflow diagram using the Kaleo Workflow
 Designer for Java.
@@ -515,7 +515,7 @@ features that will be helpful in designing your workflow.
 
 You will notice that your workflow will open up in a *Workflow Diagram* screen,
 which is a graphical interface that modifies your workflow XML file. You can
-visit the User Guide's chapter on [Creating new workflow
+visit *Using Liferay Portal*'s chapter on [Creating new workflow
 definitions](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/creating-process-definitio-1)
 if you would like to learn more about creating and modifying a workflow
 definition XML file. Your workflow diagram should appear similar to the snapshot
@@ -617,7 +617,7 @@ notifications, and transitions
 For additional information on the features located in the palette, you can
 reference the [Kaleo
 Designer](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen06-kaleo-designer-0)
-section of the User Guide.
+section of *Using Liferay Portal*.
 
 For Ray and Alloy's workflow diagram, we left off with the simple *Start* and
 *End* state nodes connected by the task node *Spaceship*.
@@ -643,11 +643,19 @@ your desired location. Our example now looks something like this:
 
 ![Figure 7.47: After creating the fork and join nodes, you can position the nodes to your liking.](../../images/kaleo-8.png)
 
+You can see from our example that there are error markings on multiple nodes
+within the workflow definition. Error markings are represented by a red "X" in
+the bottom left of a node. This means something is wrong or needs to be
+specified within our workflow. We'll correct these error markings in our
+workflow definition soon.
+
+![Figure 7.48: Error markings notify the user that something is wrong or needs to be specified within a node.](../../images/kaleo-26.png)
+
 Notice when you hover your pointer over a node, a floating palette appears. This
 is a convenient feature for quick customization. Here is a snapshot of what a
 floating palette appears like on your workflow diagram:
 
-![Figure 7.48: The floating palette appears when you hover your pointer over any node.](../../images/kaleo-10.png)
+![Figure 7.49: The floating palette appears when you hover your pointer over any node.](../../images/kaleo-10.png)
 
 The floating palette's features and descriptions are listed below:
 
@@ -671,17 +679,19 @@ floating palette. As we discussed earlier, the *Choose Assignment Type* menu
 will appear and you can choose assignment types for the task nodes. After giving
 assignments to the new task nodes, the error markers will disappear.
 
+![Figure 7.50: After the task nodes are given assignments, their error markings will disappear.](../../images/kaleo-27.png)
+
 Within the workflow diagram, there are other miscellaneous features offered by
 Developer Studio. In the upper right corner of the *Diagram* view, there are
 options related to the graphical interface which include zoom options, saving
 the diagram as an image, and printing the diagram.
 
-![Figure 7.49: The *Workflow Diagram* offers options related to the graphical interface.](../../images/kaleo-23.png)
+![Figure 7.51: The *Workflow Diagram* offers options related to the graphical interface.](../../images/kaleo-23.png)
 
 In addition, you can access more options by right-clicking the graphical
 interface. You are presented a menu which appears like this:
 
-![Figure 7.50: When right-clicking the graphical interface, you are given more options for viewing and editing your workflow definition.](../../images/kaleo-24.png)
+![Figure 7.52: When right-clicking the graphical interface, you are given more options for viewing and editing your workflow definition.](../../images/kaleo-24.png)
 
 Lastly, you can double-click the names for nodes and transitions and change them
 to your liking.
@@ -720,13 +730,15 @@ consistency, but does make reading the section more user friendly-->
 
 Here is what the *Properties* window looks like in Developer Studio:
 
-![Figure 7.51: The *Properties* window gives you multiple sub-tabs to help customize your workflow diagram.](../../images/kaleo-11.png) 
+![Figure 7.53: The *Properties* window gives you multiple sub-tabs to help customize your workflow diagram.](../../images/kaleo-11.png) 
 
 Another useful tool is the *Outline* view. This gives a top level view of your
 entire definition. As you can imagine, workflows can become extremely large over
-time and may not be able to fit on your workflow diagram screen. The outline
+time and may not be able to fit on your workflow diagram screen. The *Outline*
 view allows you to view your entire workflow definition, no matter how large it
-becomes.
+becomes. Below is a snapshot of an outline view in Developer Studio:
+
+![Figure 7.54: The *Outline* view lets you view your entire workflow definition.](../../images/kaleo-25.png) 
 
 As you can see, the *Properties* and *Outline* options make customizing your
 workflow easier than ever! Developer Studio offers a useful programming
@@ -762,14 +774,14 @@ drop-down menu and select where your condition transitions should send your
 workflow based on its status. Here is a snapshot of the *Create New Condition
 Node* menu configured for Ray and Alloy's workflow.
 
-![Figure 7.52: When creating a condition node, you're able to set your preferred script language, name, and condition transitions.](../../images/kaleo-12.png) 
+![Figure 7.55: When creating a condition node, you're able to set your preferred script language, name, and condition transitions.](../../images/kaleo-12.png) 
 
 Now the error marking has been changed to the condition node. It indicates that
 a script must be specified. By selecting the condition node and clicking *Edit
 Script* from the *Properties* window, you will now be able to take full
 advantage of the script editing capabilities Developer Studio offers.
 
-![Figure 7.53: You're able to access the *Edit Script* feature by navigating to the *Script* sub-tab inside the *Properties* view.](../../images/kaleo-13.png)
+![Figure 7.56: You're able to access the *Edit Script* feature by navigating to the *Script* sub-tab inside the *Properties* view.](../../images/kaleo-13.png)
 
 Furthermore, you can also access the *Edit Script* tool by navigating to your
 floating palette or right-clicking the node and selecting *Edit Script*.
@@ -780,7 +792,7 @@ the [Groovy User Guide](http://groovy.codehaus.org/User+Guide). Likewise, if you
 set the script language to another language, the editor for that specific
 language will appear. The editor runs in the context of editing the specific
 node you selected. So anything you type into the script editor will get set
-inside the script node for the `</condition>` element.
+inside the script node for the `<condition/>` element.
 
 Also, you will probably notice the palette appears different than the normal
 workflow diagram palette. When opening a Java script editor, the palette
@@ -795,7 +807,7 @@ includes features that are helpful, which include the following file folders:
 Here is a snapshot of how the palette appears with the *Context Variables*
 folder open for a view of its options:
 
-![Figure 7.54: The script editor opens a new palette that allows for inserting helpful snippets of code.](../../images/kaleo-14.png)
+![Figure 7.57: The script editor opens a new palette that allows for inserting helpful snippets of code.](../../images/kaleo-14.png)
 
 You're able to simply drag and drop any of the files and the code appears
 instantaneously in your script editor. There are no compile errors or warning
@@ -810,6 +822,10 @@ To get the DDL record, we need the `serviceContext`. Therefore, we're going to
 need to write some Java code to pull out the `serviceContext`. So, taking
 advantage of Developer Studio's palette features, we will simply drag and drop
 the *serviceContext* file onto the editor, which will grab the `serviceContext`.
+The script editor should now look like this:
+
+![Figure 7.58: You can add snippets of code by simply using the drag-and-drop method from your palette.](../../images/kaleo-28.png)
+
 Then we will write the following Java code:
 
 	long ddlRecordId = GetterUtiil.getLong(ServiceContext.getAttribute)("ddlRecordId"));
@@ -819,12 +835,12 @@ Then we will write the following Java code:
 	Field field = ddlRecord.getField("status");
 
 	String status = GetterUtil.getString(field.getValue());
-		if (status.contains("closed")) {
-			returnValue = "Yes"
-		}
-		else {
-			returnValue = "No"
-		}
+	if (status.contains("closed")) {
+		returnValue = "Yes"
+	}
+	else {
+		returnValue = "No"
+	}
 
 We use the `DDLRecordLocalServiceUtil` API to obtain the `ddlRecordId`. Lastly,
 we pull out the status and create parameters for the workflow to follow,
@@ -832,7 +848,7 @@ depending on if it passed or failed system check. Thus, the Java code we have
 written accomplishes our original goal of acquiring the DDL record being worked
 on in Ray and Alloy's workflow diagram. The script now accurately depicts what
 the condition node should accomplish. This code is injected into the workflow's
-XML file within the `</condition>` element.
+XML file within the `<condition/>` element.
 
 <!--CHECK May need a few changes. Needs review.-->
 
@@ -877,7 +893,7 @@ options to choose from, which include:
 
 A snapshot is given below illustrating these options:
 
-![Figure 7.55: When creating a notification, Developer Studio offers several options, like choosing a template language.](../../images/kaleo-16.png)
+![Figure 7.59: When creating a notification, Developer Studio offers several options, like choosing a template language.](../../images/kaleo-16.png)
 
 If you click the pencil icon, you are directed to the template editor you
 selected to create your notification. Similar to the script editor, the template
@@ -885,7 +901,7 @@ editor presents different palette features that can be inserted by simply using
 the drag-and-drop method. Here is a snapshot to illustrate what the template
 editor's palette has to offer:
 
-![Figure 7.56: The template editor's palette has helpful file folders that makes creating notifications quick and easy.](../../images/kaleo-17.png)
+![Figure 7.60: The template editor's palette has helpful file folders that makes creating notifications quick and easy.](../../images/kaleo-17.png)
 
 Because Developer Studio offers a full featured template editor like FreeMarker
 or Velocity, content assist is available for you to use right away. For example,
@@ -959,7 +975,7 @@ entire workflow definition XML file in source mode. This can be done by
 navigating to the bottom left corner of your *Workflow Diagram* view and
 selecting *Source*.
 
-![Figure 7.57: Developer Studio allows you to view and edit the source code directly.](../../images/kaleo-20.png)
+![Figure 7.61: Developer Studio allows you to view and edit the source code directly.](../../images/kaleo-20.png)
 
 Another cool feature Developer Studio offers is section highlighting using
 source mode. This can be done by selecting a node or transition in your workflow
@@ -984,14 +1000,23 @@ First, a new workflow definition can be published by right-clicking your
 *Workflow Definitions* folder in the *Servers* view and selecting *Upload new
 workflow*.
 
-![Figure 7.58: To upload a workflow definition, simply select *Upload new workflow* from the menu.](../../images/kaleo-18.png)
+![Figure 7.62: To upload a workflow definition, simply select *Upload new workflow* from the menu.](../../images/kaleo-18.png)
+
+---
+
+![](../../images/tip-pen-paper.png)**Note:** When right-clicking *Workflow
+Definitions*, you can also select the *Refresh* button. This will update your
+workflow definitions folder with plugins that have been deployed outside of
+Developer Studio.
+
+---
 
 Then, you can select your workflow definition by navigating through the package
 explorer. Finally, the workflow definition you selected is displayed under the
 *Workflow Definitions* folder. For the snapshot below, we published our
 completed workflow definition for Ray and Alloy's spaceship:
 
-![Figure 7.59: Uploading a new workflow definition is quick and easy.](../../images/kaleo-19.png)
+![Figure 7.63: Uploading a new workflow definition is quick and easy.](../../images/kaleo-19.png)
 
 It makes sense that you need to publish a new workflow definition onto the
 Liferay server, but why must you re-publish an already existing workflow
@@ -1032,7 +1057,7 @@ Studio is a powerful tool that couldn't be easier to use!
 
 Ray and Alloy's spaceship workflow definition is complete, and looks like this:
 
-![Figure 7.60: Ray and Alloy's final workflow definition for their powerful spaceship!](../../images/kaleo-21.png)
+![Figure 7.64: Ray and Alloy's final workflow definition for their powerful spaceship!](../../images/kaleo-21.png)
 
 We hope you had fun learning about what Kaleo Designer for Java using Developer
 Studio can do for you!
