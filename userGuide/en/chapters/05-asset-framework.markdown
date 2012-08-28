@@ -6,13 +6,14 @@ of assets include blog posts, wiki articles, message board posts, bookmarks, and
 documents. It's possible for developers to define custom asset types that
 utilize Liferay's asset framework. Originally, the asset framework was created
 to provide a mechanism for adding tags to blog entries, wiki articles, and web
-content without reimplement the same functionality multiple times. The asset
+content without reimplementing the same functionality multiple times. The asset
 framework has been greatly extended since then and it now supports tags,
 categories, comments, ratings, and asset relationships.
 
 This chapter covers the following topics:
 
 - Tagging and categorizing content
+- Using Faceted Search 
 - Using the Asset Publisher
 - Setting up display pages
 - Adding relationships between assets
@@ -447,7 +448,7 @@ in all its glory, in JSON. Explanation of the settings follows the object below.
 Now that you've seen the object, don't be daunted by it. Here are all the
 settings within the object that you can tweak. 
 
-**“className”:** This field must contain a string value which is the FQCN (fully
+**"className":** This field must contain a string value which is the FQCN (fully
 qualified class name) of a java implementation class implementing the Facet
 interface. Liferay provides the following implementations by default:
 
@@ -458,7 +459,7 @@ interface. Liferay provides the following implementations by default:
 	com.liferay.portal.kernel.search.facet.ScopeFacet
 	com.liferay.portal.kernel.search.facet.SimpleFacet
 
-**“data”:** This field takes an arbitrary JSON object (a.k.a. {}) for use by a
+**"data":** This field takes an arbitrary JSON object (a.k.a. {}) for use by a
 specific facet implementation. As such, there is no fixed definition of the data
 field. Each implementation is free to structure it as needed. The value defined
 here matches the implementation that's selected in the `className` attribute
@@ -472,7 +473,7 @@ Freemarker templates provided by a theme if the portal property
 a JSP is simply done by prefixing the string with /html/portlet/search/facets/
 and appending the .jsp extension.
 
-For example, `"displayStyle": "asset_tags"`maps to the JSP 
+For example, `"displayStyle": "asset_tags"` maps to the JSP 
 
 	/html/portlet/search/facets/asset_tags.jsp
 
@@ -487,7 +488,7 @@ For example, `"fieldName": "entryClassName"` indicates that the specified facet
 implementation operates on the `entryClassName` indexed field.
 
 **Note:** You can identify available indexed fields by enabling the Search
-portlet’s *Display Results in Document Form* configuration setting and then
+portlet's *Display Results in Document Form* configuration setting and then
 expanding individual results by clicking the [+] to the left of their titles. 
 
 **"label":** This field takes a string value and represents the language key that
@@ -495,10 +496,10 @@ is used for localizing the title of the facet when it's rendered.
 
 **"order":** This field takes a string value. There are two possible values:
 
-   `OrderValueAsc`: This tells the facet to sort it’s results by the term values,
+   `OrderValueAsc`: This tells the facet to sort it's results by the term values,
    in ascending order.
 
-   `OrderHitsDesc`: This tells the facet to sort it’s results by the term
+   `OrderHitsDesc`: This tells the facet to sort it's results by the term
    frequency, in descending order.
 
 **"static":** This field takes a boolean value (`true` or `false`). The default
