@@ -182,7 +182,7 @@ documents.
  Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON
  Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The
  [Properties Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
- chapter of Liferay's User Guide describes these properties.
+ chapter of *Using Liferay Portal* describes these properties.
 
 ---
 
@@ -243,7 +243,7 @@ following:
 
 It is important to note here how *Password Policies* (see chapter
 [Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/administering-liferay-port-1)
-of Liferay's User Guide) can be used in combination with this feature. If the
+of *Using Liferay Portal*) can be used in combination with this feature. If the
 portal is enforcing password policies on its users (requiring them to change
 their passwords on a periodic basis, etc.), any administrative ID which accesses
 Liferay's web services in a batch job will have its password expire too.

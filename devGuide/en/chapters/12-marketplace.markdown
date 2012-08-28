@@ -19,7 +19,7 @@ including:
 
 This chapter focuses on the topics of interest to a Liferay developer. It is
 highly recommended that you first read the [Liferay Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
-chapter of the User guide, where you will find detailed information about the
+chapter of *Using Liferay Portal*, where you will find detailed information about the
 Marketplace from an end user's perspective.
  
 ## Marketplace basics [](id=lp-6-1-dgen10-marketplace-basics-0)
@@ -205,7 +205,7 @@ which versions of Liferay your app works with.
 
  ![note](../../images/tip-pen-paper.png)**Note:** If you haven't yet done so, be
  sure to read the [Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
- chapter of the User Guide! 
+ chapter of *Using Liferay Portal*! 
 
 ---
 

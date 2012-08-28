@@ -353,8 +353,7 @@ Next, you declare the two theme setting variables in your
 
 The portal administrator can input a slogan and activate it for the portal via
 the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
-sites and managing pages* section of Liferay's [User
-Guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-pages-in-liferay-port-1)).
+sites and managing pages* section of [Using Liferay Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-pages-in-liferay-port-1)).
 
 ![Figure 4.6: Setting the footer display slogan in the *Look and Feel* of  the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
