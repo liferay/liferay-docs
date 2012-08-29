@@ -35,13 +35,12 @@ Setting up the Plugins SDK is easy. Let's get to it.
 ## Installing the SDK [](id=installing-the-sdk)
 Setting up your environment for Liferay development is straightforward. First,
 you will need Liferay Portal. If you have yet to install Liferay with an
-application server, follow instructions in chapter *Installing Liferay* of our
-*Using Liferay Portal 6.1* document
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
-Many people use the Tomcat application server for development, as it is small,
-fast, and takes up less resources than most other servlet containers. Although
-you can use any application server supported by Liferay Portal for development,
-our examples use Tomcat.
+application server, follow instructions in the
+[Installation and Setup](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-lifer-1)
+chapter of *Using Liferay Portal 6.1*. Many people use the Tomcat application server
+for development, as it is small, fast, and takes up less resources than most
+other servlet containers. Although you can use any application server supported
+by Liferay Portal for development, our examples use Tomcat.
 
 ---
 

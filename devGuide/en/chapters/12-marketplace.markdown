@@ -18,10 +18,9 @@ including:
 - Tracking app Performance
 
 This chapter focuses on the topics of interest to a Liferay developer. It is
-highly recommended that you first read the **Liferay Marketplace** chapter of
-the User guide, where you will find detailed information about the Marketplace
-from an end user's perspective. The User Guide can be found on the [Liferay
-Documentation page](http://liferay.com/documentation).
+highly recommended that you first read the [Liferay Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+chapter of *Using Liferay Portal*, where you will find detailed information about the
+Marketplace from an end user's perspective.
  
 ## Marketplace basics [](id=lp-6-1-dgen10-marketplace-basics-0)
 
@@ -205,9 +204,8 @@ which versions of Liferay your app works with.
 ---
 
  ![note](../../images/tip-pen-paper.png)**Note:** If you haven't yet done so, be
- sure to read the **Marketplace** chapter of the User Guide! The User Guide can
- be found on the [Liferay Documentation
- Homepage](http://liferay.com/documentation).
+ sure to read the [Marketplace](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-marketpla-1)
+ chapter of *Using Liferay Portal*! 
 
 ---
 
@@ -687,7 +685,7 @@ your app.
 In this chapter we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. We looked at how to create,
 publish, maintain, and track apps. You do this through
-[liferay.com](liferay.com), using your own personal credentials and its features
+[liferay.com](http://liferay.com), using your own personal credentials and its features
 for Marketplace. Next, we covered the requirements for publishing apps, which
 did not differ significantly from requirements for general Liferay development.
 We then showed how you can publish a sample app on the Marketplace and how you

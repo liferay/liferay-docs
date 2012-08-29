@@ -52,7 +52,7 @@ Liferay WCM makes this possible include:
 Once you get familiar with Liferay WCM you'll wonder how you ever got along
 without it.  
 
-### What Features Does Liferay WCM Have?
+### What Features Does Liferay WCM Have? [](id=lp-6-1-ugen02-what-features-does-liferay-wcm-have-0)
 [](id=lp-6-1-ugen03-what-features-does-liferay-wcm-have-0)
 
 Liferay's WCM has a host of features the makes managing the content of your site
@@ -240,7 +240,7 @@ example.
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works.
 
-##### Backing up and Restoring Pages
+##### Backing up and Restoring Pages [](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
 [](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
 
 Next to the *Add Page* button in the Manage Site Pages screen are two buttons
@@ -279,7 +279,7 @@ selecting it.
 Next, we'll look at the options on the right side menu, starting with Look and
 Feel.
 
-##### Customizing the Look and Feel
+##### Customizing the Look and Feel [](id=lp-6-1-ugen02-customizing-the-look-and-feel-0)
 [](id=lp-6-1-ugen02-customizing-the-look-and-feel-0)
 
 When you open the Manage Site Pages dialog box it defaults to the Look and Feel
@@ -337,7 +337,7 @@ own logo* option is disabled in *Portal Settings*. It is also not available for
 the default site -- only newly created sites and user pages have the option to
 have the name display.
 
-#### Changing options for individual pages
+#### Changing options for individual pages [](id=lp-6-1-ugen02-changing-options-for-individual-pages-0)
 [](id=lp-6-1-ugen02-changing-options-for-individual-pages-0)
 
 When you select a single page, some different options appear. Let's look at what
@@ -563,7 +563,7 @@ can provide the most relevant content to your users.
 Now that you know how to configure sites, let's look at page templates and site
 templates.
 
-#### Page Templates and Site Templates
+#### Page Templates and Site Templates [](id=lp-6-1-ugen02-page-templates-and-site-templates-0)
 [](id=lp-6-1-ugen02-page-templates-and-site-templates-0)
 
 *Page Templates* and *Site Templates* are invaluable tools for building similar
@@ -736,7 +736,7 @@ We'll then take advantage of Liferay's robust structure editor. We'll use
 templates to display the content and then explore some of the advanced
 publishing features such as the built-in workflow and Asset Publisher.
 
-### Creating content the simple way
+### Creating content the simple way [](id=lp-6-1-ugen02-creating-content-the-simple-way-0)
 [](id=lp-6-1-ugen03-creating-content-the-simple-way-0)
 
 As we've stated above, content is the reason web sites exist. Liferay Portal has
@@ -1062,7 +1062,7 @@ As you'll discover in chapter 10, you can design workflows to suit your
 organization's approval process. For Nose-ster's implementation we'll use the
 *Single Approver* workflow which ships with the product.
 
-#### Defining Workflows for Web Content
+#### Defining Workflows for Web Content [](id=lp-6-1-ugen02-defining-workflows-for-web-content-0)
 [](id=lp-6-1-ugen03-defining-workflows-for-web-content-0)
 
 Let's set up Liferay's Workflow for the Nose-ster web site. You must have the
