@@ -262,11 +262,6 @@ can be assigned to organizations when they fit into a hierarchical structure.
 Users groups provide a more ad hoc way to group users than sites and
 organizations. Let's look at them next.
 
-<!--  No "sites" here We briefly mentioned sites during this discussion. Sites
-are another construct within the portal and have different properties than
-organizations. Let's see how you can use them.  --> <!--  this is Section i,
-subsection b   --> 
-
 ## User Groups [](id=lp-6-1-ugen12-user-groups-0)
 
 User Groups are arbitrary groupings of users. These groups are created by portal
@@ -338,7 +333,6 @@ a new browser window. Any changes you make to the site are saved automatically.
 You can safely close the browser window when you're done.
 
 ### Creating and editing a User Group [](id=lp-6-1-ugen15-creating-and-editing-a-user-group-0)
-[](id=lp-6-1-ugen12-creating-and-editing-a-user-group-0)
 
 A user group's site can be administered from the control panel. Select *User
 Groups* from the control panel to see a list of existing user groups. To edit a
@@ -358,7 +352,6 @@ group, and optionally, a description. Click *Save* to create your user group.
 Our next step is to assign an existing user to the *Bloggers* group.
 
 ### Assigning Members to a User Group [](id=lp-6-1-ugen15-assigning-members-to-a-user-group-0)
-[](id=lp-6-1-ugen12-assigning-members-to-a-user-group-0)
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*.
 Then navigate to the User Groups page of the control panel and click *Actions*
@@ -487,7 +480,6 @@ user site, including the ones copied from the site template and the ones added
 afterwards.
 
 ## Roles and Permissions [](id=lp-6-1-ugen15-roles-and-permissions-0)
-[](id=lp-6-1-ugen12-roles-0)
 
 Roles are groupings of users that share a particular function within the portal,
 according to a particular scope. Roles can be granted permissions to various
@@ -534,7 +526,6 @@ role.
 Next, let's examine how to configure the permissions granted by different roles.
 
 ### Defining Permissions on a Role [](id=lp-6-1-ugen15-defining-permissions-on-a-role-0)
-[](id=lp-6-1-ugen12-defining-permissions-on-a-role-0)
 
 Roles serve as repositories of permissions to be assigned to users who belong to
 them. So, to use a role, you need to assign members to it and define the
@@ -635,7 +626,6 @@ permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
 ### Special Note about the Power Users Role [](id=lp-6-1-ugen15-special-note-about-the-power-users-role-0)
-[](id=lp-6-1-ugen12-special-note-about-the-power-users-role-0)
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets
 allowed power users, but not regular users, to access them. Liferay 6.0 and
@@ -681,7 +671,6 @@ our discussion of Liferay's portal settings by examining how to configure
 password policies.
 
 ### Password Policies [](id=lp-6-1-ugen15-password-policies-0)
-[](id=lp-6-1-ugen12-password-policies-0)
 
 Password policies can enhance the security of your portal. You can set
 requirements on password strength, frequency of password expiration and more.
@@ -856,7 +845,6 @@ We'll examine how to set up LDAP authentication next.
 ## Integrating Liferay users into your enterprise [](id=lp-6-1-ugen15-integrating-liferay-users-into-your-enterprise-0)
 
 ### LDAP [](id=lp-6-1-ugen15-ldap-0)
-[](id=lp-6-1-ugen12-authentication-ldap-0)
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an
 LDAP directory. There are two places for you to configure the LDAP settings:
@@ -1096,7 +1084,6 @@ here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
 #### LDAP Options Not Available in the GUI [](id=lp-6-1-ugen15-ldap-options-not-available-in-the-gui-0)
-[](id=lp-6-1-ugen12-ldap-options-not-available-in-the-gui-0)
 
 Although most of the LDAP configuration can be done from the control panel,
 there are several configuration parameters that are only available by editing
@@ -1120,7 +1107,7 @@ user's password out of LDAP, decrypts it and compares it with the user's
 password in Liferay, syncing the two.
 
     ldap.auth.password.encryption.algorithm=
-    ldap.auth.password.encryption.algorithm.types=MD5,SHA
+ldap.auth.password.encryption.algorithm.types=MD5,SHA
 
 Set the password encryption to used to compare passwords if the property
 `ldap.auth.method` is set to `password-compare`.
@@ -1163,7 +1150,6 @@ sponsor support for it. Please contact `sales@liferay.com` for more information
 about this.
 
 ### Authentication: Central Authentication Service (CAS) [](id=lp-6-1-ugen15-authentication-central-authentication-service-cas-0)
-[](id=lp-6-1-ugen12-authentication-central-authentication-service-cas-0)
 
 CAS is an authentication system originally created at Yale University. It is a
 widely-used open source single sign-on solution and was the first SSO product to
@@ -1328,7 +1314,6 @@ the *Enabled* check box and then click *Save*. Liferay will then redirect users
 to OpenSSO when they click the *Sign In* link.
 
 ### Authentication: SiteMinder [](id=lp-6-1-ugen15-authentication-siteminder-0)
-[](id=lp-6-1-ugen12-authentication-siteminder-0)
 
 SiteMinder is a single sign-on implementation from Computer Associates. Liferay
 5.2 introduced built-in integration with SiteMinder. SiteMinder uses a custom
