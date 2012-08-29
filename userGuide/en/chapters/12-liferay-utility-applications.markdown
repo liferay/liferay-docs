@@ -588,29 +588,10 @@ Updating the Cart, Emptying the Cart, and Checking out.
 **Orders:** displays a list of all orders placed with options to Search for
 orders by the order Number, Status, First Name, Last Name and/or Email Address.
 
-<!-- move this text to the Orders section below?  -->
-
-Below the search fields is the orders list. Orders can be Deleted or Edited
-using the Actions button. Editing an order displays the order details with these
-options: Invoice, Resend Confirmation Email, Send Shipping Email, Delete,
-Cancel. There is also the option to enter comments on the form.
-
 **Coupons:** allows you to enter data related to a discount: the coupon Code,
 Discount Type, and whether it is Active or not. Search looks for a particular
 coupon offer while Add Coupon opens a new form to enter the coupon data. Delete
 removes a coupon.
-
-To add a coupon, enter the coupon code in the *Code* field. If no code is
-specified, you can create one automatically by selecting the *Autogenerate Code*
-checkbox. After entering the coupon's *Name* and *Description*, you can set the
-coupon's start and expiration dates. Additional options allow you to set a
-coupon to *Never Expire* and make a coupon *Active*.
-
-Under the Discount section, you can set the minimum amount required for the
-discount to occur, the discount amount and the discount type. Types can be based
-on a percentage, an actual amount, free shipping, or a tax free sale. The Limits
-section allows you to set coupon restrictions based on a list of categories
-and/or SKU numbers.
 
 Below the tabs are breadcrumbs for navigating between the categories and
 subcategories you create. In fact, this would be a good time to start creating
@@ -755,7 +736,7 @@ orders have been shipped.
 Now that we have your store set up the way you want it, let's walk through the
 buying process.
 
-### Buying
+### Using the shopping cart
 
 Logged in users are given a shopping cart to store the items they wish to buy,
 allowing them to purchase multiple items at once.
@@ -797,7 +778,7 @@ shopping again or to quit.
 address, and the credit card information. You can also add comments about the
 order if necessary.
 
-![Figure 12.15: All the information on an order can be seen in the order 
+![Figure 12.15: All the information pertaining an order can be seen in the order 
 summary view.](../../images/shopping-order-summary.png)
 
 When all the data has been entered correctly, click *Continue* to see the order
@@ -848,6 +829,26 @@ has been received and is being processed.
 You can also add comments about the order and subscribe to the comments to get
 any updates on the order.
 
+### Managing Coupons
+
+In the Coupons view of the Shopping application you key in data related to a discount offer that your store provides. You can determine the type of discount to apply and whether it is currently active. You can search for coupons and create new coupons from this form.
+
+![Figure 12.x: Create a coupon code automatically when you select the Autogenerate Code box.](../../images/shopping-coupon.png)
+
+To add a coupon, enter the coupon code in the *Code* field. If no code is
+specified, you can create one automatically by selecting the *Autogenerate Code*
+checkbox. After entering the coupon's *Name* and *Description*, you can set the
+coupon's *Start* and *Expiration Dates*. Additional options allow you to set a
+coupon to *Never Expire* and make a coupon *Active*.
+
+![Figure 12.x: Customize your coupon parameters under Discounts and Limits.](../../images/shopping-coupon-discount-limits.png)
+
+Under the Discount section, you can set the minimum amount required for the
+discount to occur, the discount amount and the discount type. Types can be based
+on a percentage, an actual amount, free shipping, or a tax free sale. The Limits
+section allows you to set coupon restrictions based on a list of categories
+and/or SKU numbers.
+
 #### Integrating the Amazon Rankings portlet
 
 If your store sells books, you can use Liferay's Amazon Rankings application to 
@@ -863,24 +864,22 @@ You can get an Amazon License Key here:
 
 Add the following lines to your portal-ext.properties file and populate the values for the assocaite tag, access key id and secret access key from your Amazon Web Services account. Ensure there are no spaces between the `=` sign and their values. 
 
-`amazon.access.key.id=`
-
-`amazon.associate.tag=`
-
-`amazon.secret.access.key=`
+	amazon.access.key.id=
+	amazon.associate.tag=
+	amazon.secret.access.key=
 
 Note that these keys are provided by Amazon for personal use only. Please consult Amazon at [http://www.amazon.com](http://www.amazon.com) for more information.
 
 If your Amazon Web Services key is not set up properly in Liferay, it will affect the Shopping portlet when you try to add books.
 
-##### Setting up your Amazon Rankings portlet
+##### Setting up the Amazon Rankings portlet
 
-When you have completed setting up the portal-ext.properties file, you can now specify what books you want to display in your store. Select *Configuration* from the Amazon Rankings portlet in
+When you are done setting up the portal-ext.properties file, you can now specify what books you want to display in your store. Select *Configuration* from the Amazon Rankings portlet in
 the upper right corner. Go to the *Setup* tab and enter the International Standard Book Numbers (ISBNs) in the textbox field, separated by spaces. The portlet accepts 10-digit ISBNs and will not take ISBNs containing letters.
 
 ![Figure 12.x: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
 
-When you are finished setting up the rankings, books will display in the portlet similar to the figure below. Clicking on the book's image will open the book's Amazon page.
+When you are finished setting up the rankings, books will display in the portlet similar to the example below. Clicking on the book's image will open the book's Amazon page.
 
 ![Figure 12.x: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
 
