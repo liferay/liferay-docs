@@ -444,17 +444,17 @@ manage your assets so you're getting the most out of your content.
 ## Liferay Sync [](id=lp-6-1-ugen04-liferay-sync-0)
 
 Liferay Sync, released in September 2012, is an add-on product for Liferay 6.1
-CE and EE that synchronizes files between your Liferay server and
-users' desktop and mobile environments. With Liferay Sync, your users can
-publish and access shared documents and files from their native environments
-without using a browser. Windows and Mac OS desktops, and iOS-based mobile
-platforms are currently supported. As users add and collaborate on documents and
-files, Liferay Sync automatically synchronizes them across all configured Sync
-clients.  Liferay Sync is fully integrated into the Liferay Platform so that
-features such as authentication, versioning, workflow, and social collaboration
-function in the supported environments. Liferay Sync stores files locally so
-that they're always available, even when you're offline. It automatically
-synchronizes your files upon reconnection.
+CE and EE that synchronizes files between your Liferay server and users' desktop
+and mobile environments. With Liferay Sync, your users can publish and access
+shared documents and files from their native environments without using a
+browser. Windows and Mac OS desktops, and iOS-based mobile platforms are
+currently supported. As users add and collaborate on documents and files,
+Liferay Sync automatically synchronizes them across all configured Sync clients.
+Liferay Sync is fully integrated into the Liferay Platform so that features such
+as authentication, versioning, workflow, and social collaboration function in
+the supported environments. Liferay Sync stores files locally so that they're
+always available, even when you're offline. It automatically synchronizes your
+files upon reconnection.
 
 ### How does it work? [](id=lp-6-1-ugen04-how-does-it-work-0)
 
@@ -479,10 +479,10 @@ be "opened" using Liferay Sync, thereby dropping them into your Sync folder and
 synchronizing them across other Sync clients. "Pulling down" on the Sync file
 list forces a refresh (automatic sync frequency can be configured as well).
 
-Liferay Sync is designed to work with both Liferay 6.1 Community
-Edition and Enterprise Edition. Using Sync with Liferay CE limits users to
-syncing one site. Using Sync with Liferay EE enables users to synchronize
-documents and files across all the sites which they can access.
+Liferay Sync is designed to work with both Liferay 6.1 Community Edition and
+Enterprise Edition. Using Sync with Liferay CE limits users to syncing one site.
+Using Sync with Liferay EE enables users to synchronize documents and files
+across all the sites which they can access.
 
 Liferay Sync is also designed to work with Liferay Social Office. You can sync
 one site from Social Office CE as well as one site from Liferay Portal CE. If
@@ -510,36 +510,21 @@ your machine and click *Next*.
 ![Figure 4.15: Use the Liferay Sync Installation wizard to choose an
 installation location.](../../images/liferay-sync-setup.png)
 
-On the next screen, you can configure some properties for Liferay Sync. There
-are three items listed in the *General Settings* section. *Start Liferay Sync on
-Login* is checked by default. If you don't want Sync to start automatically,
-uncheck this. *Show Desktop Notifications* is also checked by default. Unless
-you uncheck this, when a file that you have synced is changed, a small
-notification will appear in the corner of your screen. The *Check Server For
-Updates Every:* field enables you to set how frequently it will check to see if
-anything has changed. This can be set anywhere between 5 seconds and 30 minutes.
-
-Click the *Edit Settings* button in the *Account Settings* section to specify
-your server's URL and enter your Liferay credentials. Use the *Test Connection*
-button to make sure Liferay Sync can communicate with the server. Editing your
-settings also allows you to specify your Sync folder, the folder where Sync will
-store files on your machine. By default, files are stored in the *liferay-sync*
-subfolder of your personal Documents folder.
-
-Finally, the *Site Settings* section allows you to choose which sites you wish
-to sync media from. By default, it will list all of the sites that you are a
-member of, but you can uncheck any of those sites if you don't want to sync
-those files.
-
-![Figure 4.16: Open the Liferay Sync menu and select *Properties* to edit the
-settings you configured during setup.](../../images/liferay-sync-properties.png)
-
-On the last screen, leave the *Run Liferay Sync* button checked to automatically
-start Liferay Sync after you click *Finish*.
+Leave the *Run Liferay Sync* button checked to automatically start Liferay Sync
+after you click *Finish*.
 
 ![Figure 4.17: You'll see the following screen once Liferay Sync has been
 installed. Click *Finish* to exit the installation
 wizard.](../../images/liferay-sync-setup-complete.png)
+
+The first time you run Liferay Sync, you'll have to enter some account
+information. Sync needs to know where you'd like to locally store the files it's
+supposed to sync with your Liferay server. And, of course, it needs to know your
+server's URL and the account credentials with which it should authenticate.
+
+![Figure 4.x: The first time you run Liferay Sync, you'll have to tell it how to
+communicate with your Liferay
+server.](../../images/liferay-sync-new-account-info.png)
 
 The options for the Mac OS application installer are similar.
 
@@ -555,7 +540,7 @@ folder.](../../images/liferay-sync-mac-install.png)
 
 When you launch Liferay Sync, the first thing you need to do is provide it with
 the URL for the Liferay server that you'll be using Sync with, along with your
-Liferay credentials. After that, you'll need to run through a brief setup
+Liferay credentials. After that, you'll need to run through the brief setup
 process that was described above for Windows.
 
 ![Figure 4.19: You can provide the same information requested by the Windows
@@ -564,7 +549,8 @@ application installer.](../../images/liferay-sync-mac-preferences.png)
 Once you've finished your configuration and have clicked *OK*, Liferay Sync
 starts running in the background, and an icon appears in your top menu bar. If
 you wish to change any of your settings, click the icon to open the Liferay Sync
-menu and click on *Properties*.
+menu and click on *Preferences*. Note that on Windows, the Sync menu says
+*Properties*, not *Preferences*.
 
 #### iOS [](id=lp-6-1-ugen04-ios-0)
 
@@ -579,25 +565,59 @@ Liferay server and is updating the files in your Sync folder according to the
 interval you specified in the wizard. Click the Liferay Sync icon in your
 taskbar to bring up the menu.
 
-![Figure 4.20: Open the Liferay Sync taskbar menu to acces the following
+![Figure 4.20: Open the Liferay Sync taskbar menu to access the following
 options.](../../images/liferay-sync-taskbar-menu.png)
 
 *Open Sync Folder* opens your Liferay Sync folder in your native file manager.
 
-*Open Site* provides links to the Control Panel pages of all the Documents and
-Media repositories which you have permission to access. By default, you can find
-links to your personal Documents and Media repository as well as links to the
-Documents and Media repositories of all the other sites you belong to. If your
-Liferay user is an administrator, you'll also find a link to the global
-Documents and Media repository.
+*Open Website* provides links to the pages containing the Documents and Media
+portlets which you have permission to access. By default, you can find links to
+your personal Documents and Media repository as well as links to the Documents
+and Media repositories of all the other sites you belong to. 
+
+---
+
+![Tip](../../images/tip.png) Note for administrators: If you don't have a
+Documents and Media portlet anywhere on a site that's been selected for syncing,
+you'll have to add the portlet. Otherwise, users will get a *The requested
+resource was not found* error when they try to use the *Open Website* link from
+their Sync menus.
+
+---
 
 *Recent Files* shows a list of recently created or modified files from all the
 repositories you can access.
 
-*Properties* opens the Liferay Sync Properties page that the installation wizard
-presented you. The properties page lets you enter your Liferay server's URL,
-enter your credentials, and change properties like automatic login, desktop
-notifications, and sync frequency.
+*Properties* (*Preferences*, on Mac OS) lets you change properties like starting
+on login, desktop notifications, and sync frequency. It also allows you to edit
+the account information you provided when you started Sync for the first time.
+For example, you can enter a new URL for your Liferay server and enter a
+different set of Liferay credentials.
+
+![Figure 4.16: Open the Liferay Sync menu and select *Properties*
+(*Preferences*, on Mac OS) to edit the settings you configured during
+setup.](../../images/liferay-sync-properties.png)
+
+There are three items listed in the *General Settings* section. *Start Liferay
+Sync on Login* is checked by default. If you don't want Sync to start
+automatically, uncheck this. *Show Desktop Notifications* is also checked by
+default. Unless you uncheck this, when a file that you have synced is changed, a
+small notification will appear in the corner of your screen. The *Check Server
+For Updates Every:* field enables you to set how frequently it will check to see
+if anything has changed. This can be set anywhere between 5 seconds and 30
+minutes.
+
+Click the *Edit Settings* button in the *Account Settings* section to specify
+your server's URL and enter your Liferay credentials. Use the *Test Connection*
+button to make sure Liferay Sync can communicate with the server. Editing your
+settings also allows you to specify your Sync folder, the folder where Sync will
+store files on your machine. By default, files are stored in the *liferay-sync*
+subfolder of your personal Documents folder.
+
+Finally, the *Site Settings* section allows you to choose which sites you wish
+to sync media from. By default, it will list all of the sites that you are a
+member of, but you can uncheck any of those sites if you don't want to sync
+those files.
 
 *Sync Now* instructs Liferay Sync to check the Liferay server for updates
 immediately.
@@ -627,12 +647,10 @@ delete files from your Sync folder, a `.liferay-sync.deletions` file is created
 there with the names of the files you deleted. This lets Liferay Sync know that
 you don't want these files in your Sync folder, so it won't download them the
 next time it syncs. Note that the files listed in your `.liferay-sync.deletions`
-file are only local deletions since only the owner of a file can delete it from
-the Liferay server. If you really want to delete a file and its entire version
-history from the server, you'll have to use your browser to log in to the portal
-and delete it through the web interface. You can remove entries from your
+file are only local deletions. You can remove entries from your
 `.liferay-sync.deletions` file to have Liferay Sync download them the next time
-it syncs. 
+it syncs. Of course, you can use Sync for more than just local deletions. If you
+have the required permissions, you can delete files from the server.
 
 You can run through the following exercise to familiarize yourself with how to
 create, edit, download, and upload files with Liferay Sync. First, open your
@@ -663,9 +681,8 @@ version number. You can view a file's version number through the web
 interface.](../../images/liferay-sync-README.png)
 
 Download the file again, and you'll see that it now says *second test*--your
-edit was uploaded to the server and downloaded again by Liferay Sync. You can be
-confident that this edit was also downloaded by all other Liferay Sync clients
-connected to your site.
+edit was uploaded to the server. You can be confident that this edit was also
+downloaded by all other Liferay Sync clients connected to your site.
 
 #### Demonstrating Liferay Sync Permissions
 [](id=lp-6-1-ugen04-demonstrating-liferay-sync-permissions-0)
