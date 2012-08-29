@@ -118,7 +118,7 @@ It's important to use tags and categories with all your content, so that content
 is easier for users to find. Let's look at one of the ways users will make use
 of tags and categories: searching for content. 
 
-## Using Faceted Search
+## Using Faceted Search [](id=lp-6-1-ugen05-using-faceted-search-0)
 
 To stay organized, I (RS) used to use a paper-based planner. It had various
 sections for various areas of my life. Its initial incarnation came from a
@@ -142,13 +142,13 @@ powerful, faceted search function, which means you can drill down through the
 different types of content, tags, and categories to refine your search and find
 what you want. Let's see how to use it. 
 
-### Searching for Portal Content
+### Searching for Portal Content [](id=lp-6-1-ugen05-searching-for-portal-content-0)
 
 To get started, drop the Search portlet on a page and search for something.
 You'll see a page with results on the right and a collection of *facets* on the
 left. 
 
-![Figure 5.x: The first set of facets is content types. You can drill down to
+![Figure 5.4: The first set of facets is content types. You can drill down to
 specific types of content that contain the search terms you
 entered.](../../images/faceted-search-1.png)
 
@@ -164,7 +164,7 @@ you were looking for. If, however, your memory is more foggy than that, or
 you're searching for something you're not sure is actually there, then the asset
 tags or asset categories facets may be more helpful to you. 
 
-![Figure 5.x: Asset tag facets provide you with more information about content
+![Figure 5.5: Asset tag facets provide you with more information about content
 that contains the terms for which you searched.](../../images/faceted-search-2.png)
 
 In this case, if you searched for a wireless phone, you may be more interested
@@ -175,12 +175,12 @@ could be many more as a result of a particular search. We'll look at the
 configuration options later in the chapter. For now, let's see how drilling down
 works. 
 
-### Drilling Down to the Data You Want
+### Drilling Down to the Data You Want [](id=lp-6-1-ugen05-drilling-down-to-the-data-you-want-0)
 
 To drill down into the search, click a facet to add it to the filter list, and
 the results to the right are refined by the facet you selected. 
 
-![Figure 5.x: Drilling down creates a list of what you selected at the top of
+![Figure 5.6: Drilling down creates a list of what you selected at the top of
 the screen.](../../images/05-faceted-search-drill-down-1.png)
 
 Here we can see that we've selected one of the tags, *liferay*, to further
@@ -190,7 +190,7 @@ relevancy of our search. But maybe selecting only the tag isn't enough to filter
 our search into something small enough to sort through. In this case, we can
 further refine the search by selecting another facet, as below. 
 
-![Figure 5.x: Selecting another facet further refines the
+![Figure 5.7: Selecting another facet further refines the
 search.](../../images/05-faceted-search-drill-down-2.png)
 
 Now we've selected web content, which is one particular content type within
@@ -199,7 +199,7 @@ dramatically reduced. In this way, you can interactively tweak the search
 results to narrow them down, making it easier to find that proverbial needle
 within the haystack. 
 
-#### Asset Types
+#### Asset Types [](id=lp-6-1-ugen05-asset-types-0)
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
@@ -215,7 +215,7 @@ wish to tweak the `frequency threshold` and the `max terms` settings to increase
 the number of asset types displayed past the default of 10. This is covered in
 the section below on search options. 
 
-#### Asset Tags
+#### Asset Tags [](id=lp-6-1-ugen05-asset-tags-0)
 
 If tags have been applied to any asset that appears in the result set, it may
 be displayed in the Asset Tag facet. Tags are handled in a similar way to how
@@ -224,7 +224,7 @@ the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
 setting `max terms` property.
 
-#### Asset Categories
+#### Asset Categories [](id=lp-6-1-ugen05-asset-categories-0)
 
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Yadda, yadda, yadda, same
@@ -233,7 +233,7 @@ you're still reading.
 
 Let's move on to advanced searching. 
 
-### Advanced Searching
+### Advanced Searching [](id=lp-6-1-ugen05-advanced-searching-0)
 
 The Search portlet's search box is deceptively simple. Though you have only a
 single field for search, there's a search syntax inherited from
@@ -296,12 +296,12 @@ above.
 
 Next, we'll look at how the Search portlet can be configured. 
 
-### Setting Search Options
+### Setting Search Options [](id=lp-6-1-ugen05-setting-search-options-0)
 
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
 
-![Figure 5.x: Basic search configuration is pretty straightforward.
+![Figure 5.8: Basic search configuration is pretty straightforward.
 ](../../images/05-faceted-search-configuration.png)
 
 **Display Asset Type Facet:** Toggles whether the Asset Type facet appears. 
@@ -554,7 +554,7 @@ versions).
 Configuring search using a JSON object is a bit unusual, but as you can see, it's
 not as hard as it looks initially. 
 
-### Summary
+### Summary [](id=lp-6-1-ugen05-summary-0)
 
 Search is a powerful component of Liferay Portal's asset framework. The
 proclivity of assets means that there is an extensible, robust, and configurable
@@ -612,7 +612,7 @@ the Asset Publisher that you want to select content manually. You can select
 what you want to be published within the portlet, or you can create new content
 from within the Asset Publisher.
 
-![Figure 5.4: Selecting assets manually is very similar to the Web Content
+![Figure 5.9: Selecting assets manually is very similar to the Web Content
 Display portlet, except you have many other content types to choose
 from.](../../images/04-web-content-asset-publisher-manual.png)
 
@@ -633,7 +633,7 @@ display types to configure how the content appears.
 Most of the time, however, you'll likely be using the Asset Publisher to select
 content dynamically.
 
-##### Selecting assets dynamically
+##### Selecting assets dynamically [](id=lp-6-1-ugen05-selecting-assets-dynamically-0)
 [](id=lp-6-1-ugen03-selecting-assets-dynamically-0)
 
 The Asset Publisher's default behavior is to select assets dynamically according
@@ -648,7 +648,7 @@ selected.
 specific type, such as only web content, only wiki entries, or any combinations
 of multiple types.
 
-![Figure 5.5: You can filter by tags and categories, and you can set up as many
+![Figure 5.10: You can filter by tags and categories, and you can set up as many
 filter rules as you
 need.](../../images/04-web-content-asset-publisher-filter.png)
 
@@ -739,7 +739,7 @@ print, enable comments, enable ratings, etc.
 **Show Metadata:** Allows you to select from the available metadata types (see
 below).
 
-![Figure 5.6: Available metadata
+![Figure 5.11: Available metadata
 types](../../images/available-metadata-fields.png)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS
@@ -788,7 +788,7 @@ page, add a Web Content Display portlet. Click the *Add Web Content* button,
 enter a title and some content, click on *Display Page* at the right, and select
 the Display Page you just created. Then click *Publish*.
 
-![Figure 5.7: Selecting a Display
+![Figure 5.12: Selecting a Display
 Page](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, you can now click
@@ -801,7 +801,7 @@ a configured Asset Publisher portlet but also a Tags Navigation, a Categories
 Navigation, and a Search portlet. These tools help users to quickly identify
 relevant content.
 
-![Figure 5.8: The Canonical URL](../../images/04-web-content-canonical-url.png)
+![Figure 5.13: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
 Let's move on to another new featured introduced by Liferay 6.1. 
 
@@ -821,7 +821,7 @@ configuration. The Related Assets portlet only displays content that meets the
 criteria, and also is listed as a related asset for a piece of content that is
 currently published on the page where it is placed.
 
-## Summary [](id=lp-6-1-ugen05-summary-0)
+## Summary  [](id=lp-6-1-ugen05-summary--0)
 
 In this chapter, we explored Liferay's asset framework. Any type of content in
 Liferay is considered an asset and can utilize the features provided by the

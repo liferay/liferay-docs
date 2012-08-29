@@ -17,7 +17,7 @@ metadata sets are an addition to, not a replacement for, the portal's system of
 tags and categories. Let's start exploring how to use the Documents and Media
 portlet.
 
-## Getting Started with the Documents and Media
+## Getting Started with the Documents and Media [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-0)
 [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-portlet-0)
 
 The Documents and Media portlet is non-instanceable. This means that each page
@@ -44,7 +44,7 @@ portlet window shows only documents that belong to the selected document type.
 When you add custom document types, which we discuss below, they are added to
 the filter list. Next, let's look at how to navigate around Documents and Media. 
 
-### Navigating the Documents and Media Portlet
+### Navigating the Documents and Media Portlet [](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0)
 [](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0)
 
 In the main window of the Documents and Media portlet, you can click on a
@@ -182,7 +182,7 @@ sets, as well as the last times they were edited.
 **Metadata Sets:** shows you a list of defined metadata sets as well as their
 portal IDs.
 
-## Document Types and Metadata Sets
+## Document Types and Metadata Sets [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
 [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
 
 Customizable document types and metadata sets are new features in Liferay 6.1.
@@ -302,7 +302,7 @@ The repository is displayed in the left side of the window in the Home folder.
 
 ![Figure 4.8: Viewing a repository](../../images/05-repository.jpg)
 
-## Configuring the Documents and Media portlet
+## Configuring the Documents and Media portlet [](id=lp-6-1-ugen04-configuring-the-documents-and-media-portlet-0)
 
 To configure the Documents and Media portlet, click on the wrench icon at the
 top of the portlet window and select *Configuration*. The portlet-specific
@@ -315,7 +315,7 @@ in the Documents and Media portlet's default Home folder.  If you set the My
 Documents folder to be your portlet's new root folder, the original Home folder
 would no longer be accessible.
 
-![Figure 4.x: To make portlet-specific configurations for Documents and Media,
+![Figure 4.9: To make portlet-specific configurations for Documents and Media,
 click on the wrench icon at the top of the portlet window and select
 *Configuration*.](../../images/docs-and-media-portlet-config.png)
 
@@ -353,7 +353,7 @@ they think the comment is unhelpful or misleading, they can click on the thumbs
 down icon. If you'd like to disable comment ratings for files within your
 portlet, uncheck the *Enable Comment Ratings* box.
 
-## Automatic Previews and metadata
+## Automatic Previews and metadata [](id=lp-6-1-ugen04-automatic-previews-and-metadata-0)
 [](id=lp-6-1-ugen04-automatic-preview-generation-0)
 
 Whenever possible, Liferay 6.1 generates previews of documents added to the
@@ -393,23 +393,23 @@ chapter 16 for instructions on how to configure Liferay to use these tools.
 With the above tools installed and enabled, the Documents and Media library
 looks like this:
 
-![Figure 4.9: Previews in Documents and Media](../../images/05-previews.jpg)
+![Figure 4.10: Previews in Documents and Media](../../images/05-previews.jpg)
 
 You can view a document with a customized viewer that allows you to navigate
 through the different pages of the document and read its content.
 
-![Figure 4.10: Viewing an office document](../../images/05-document-preview.jpg)
+![Figure 4.11: Viewing an office document](../../images/05-document-preview.jpg)
 
 You can view a multimedia document (audio or video) and play it online. If the
 browser supports HTML5, it uses the native player of the browser. Otherwise it
 falls back to a Flash player.
 
-![Figure 4.11: Playing a video](../../images/05-video-preview.png)
+![Figure 4.12: Playing a video](../../images/05-video-preview.png)
 
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for. 
 
-### Automatic extraction of RAW Metadata
+### Automatic extraction of RAW Metadata [](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0)
 [](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0)
 
 When adding new documents or viewing existing documents, a process is triggered
@@ -419,14 +419,14 @@ process is TIKA and it's already included in Liferay out of the box.
 You can see the metadata when viewing the document, in the right side of the
 window.
 
-### Document type restrictions and workflow per folder
+### Document type restrictions and workflow per folder [](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0)
 [](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0)
 
 You can force users to add only certain document types to a folder. By default,
 child folders inherit the restrictions of their parent folder. You can change
 this behavior by editing the folder and selecting the allowed document types.
 
-![Figure 4.12: Restrict Marketing folder to use specific document
+![Figure 4.13: Restrict Marketing folder to use specific document
 types](../../images/05-document-type-restriction.png)
 
 If workflow is enabled, you can specify different workflow definitions per
@@ -434,7 +434,7 @@ folder. Furthermore, you can specify different workflow definitions per document
 type and per folder. You can set this by editing the folder. Then the UI will
 look like this:
 
-![Figure 4.13: Restrict Marketing folder to use specific document types and
+![Figure 4.14: Restrict Marketing folder to use specific document types and
 workflow](../../images/05-document-type-workflow-restriction.png)
 
 Document types are a powerful way to enforce rules for documents uploaded by
@@ -463,7 +463,7 @@ Next, navigate to the Documents and Media portlet hosting the folder you'd like
 to access. Mouse over the folder (*Image Gallery* for our example) and select
 *Access from Desktop*.
 
-![Figure 4.14: Select *Access from Desktop* to get the WebDAV URL of a
+![Figure 4.15: Select *Access from Desktop* to get the WebDAV URL of a
 folder.](../../images/webdav-access-from-desktop.png)
 
 Copy the WebDAV URL. On Windows, right-click on My Computer and select *Map
@@ -558,7 +558,7 @@ Upon launching the Windows application installer, you'll be prompted to choose
 an installation location for Liferay Sync. Browse to an appropriate location on
 your machine and click *Next*.
 
-![Figure 4.15: Use the Liferay Sync Installation wizard to choose an
+![Figure 4.16: Use the Liferay Sync Installation wizard to choose an
 installation location.](../../images/liferay-sync-setup.png)
 
 Leave the *Run Liferay Sync* button checked to automatically start Liferay Sync
@@ -573,7 +573,7 @@ information. Sync needs to know where you'd like to locally store the files it's
 supposed to sync with your Liferay server. And, of course, it needs to know your
 server's URL and the account credentials with which it should authenticate.
 
-![Figure 4.x: The first time you run Liferay Sync, you'll have to tell it how to
+![Figure 4.18: The first time you run Liferay Sync, you'll have to tell it how to
 communicate with your Liferay
 server.](../../images/liferay-sync-new-account-info.png)
 
@@ -586,7 +586,7 @@ it as a disk image, and opens a window showing the contents of the image. To
 install Sync, drag the Liferay Sync icon to the Applications folder. Once it's
 installed, go to your Applications folder to run it.
 
-![Figure 4.18: Drag the Liferay Sync icon to the Applications
+![Figure 4.19: Drag the Liferay Sync icon to the Applications
 folder.](../../images/liferay-sync-mac-install.png)
 
 When you launch Liferay Sync, the first thing you need to do is provide it with
@@ -594,7 +594,7 @@ the URL for the Liferay server that you'll be using Sync with, along with your
 Liferay credentials. After that, you'll need to run through the brief setup
 process that was described above for Windows.
 
-![Figure 4.19: You can provide the same information requested by the Windows
+![Figure 4.20: You can provide the same information requested by the Windows
 application installer.](../../images/liferay-sync-mac-preferences.png)
 
 Once you've finished your configuration and have clicked *OK*, Liferay Sync
@@ -616,7 +616,7 @@ Liferay server and is updating the files in your Sync folder according to the
 interval you specified in the wizard. Click the Liferay Sync icon in your
 taskbar to bring up the menu.
 
-![Figure 4.20: Open the Liferay Sync taskbar menu to access the following
+![Figure 4.21: Open the Liferay Sync taskbar menu to access the following
 options.](../../images/liferay-sync-taskbar-menu.png)
 
 *Open Sync Folder* opens your Liferay Sync folder in your native file manager.
@@ -645,7 +645,7 @@ the account information you provided when you started Sync for the first time.
 For example, you can enter a new URL for your Liferay server and enter a
 different set of Liferay credentials.
 
-![Figure 4.16: Open the Liferay Sync menu and select *Properties*
+![Figure 4.22: Open the Liferay Sync menu and select *Properties*
 (*Preferences*, on Mac OS) to edit the settings you configured during
 setup.](../../images/liferay-sync-properties.png)
 
@@ -716,7 +716,7 @@ sure the site you chose to sync with is selected in the context menu selector
 and click on *Documents and Media*. You should see your `README.txt` file listed
 there.
 
-![Figure 4.21: You can access the same files from Liferay Sync that you can from
+![Figure 4.23: You can access the same files from Liferay Sync that you can from
 Liferay's web interface.](../../images/liferay-sync-documents-and-media.png)
 
 Download the file (click the small triangle icon at the top right corner of the
@@ -727,7 +727,7 @@ again, and then go back to your browser and refresh your Documents and Media
 page. Click on the *README.txt* icon, look at the information displayed to the
 right, and you'll see that its version number has incremented.
 
-![Figure 4.22: Updating a file through Liferay Sync increments the file's
+![Figure 4.24: Updating a file through Liferay Sync increments the file's
 version number. You can view a file's version number through the web
 interface.](../../images/liferay-sync-README.png)
 
@@ -735,7 +735,7 @@ Download the file again, and you'll see that it now says *second test*--your
 edit was uploaded to the server. You can be confident that this edit was also
 downloaded by all other Liferay Sync clients connected to your site.
 
-#### Demonstrating Liferay Sync Permissions
+#### Demonstrating Liferay Sync Permissions [](id=lp-6-1-ugen04-demonstrating-liferay-sync-permissions-0)
 [](id=lp-6-1-ugen04-demonstrating-liferay-sync-permissions-0)
 
 Liferay Sync uses the default Liferay permissions to determine which files and
