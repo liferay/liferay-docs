@@ -9,7 +9,7 @@ an end-user perspective. If you don't, it is recommended that you read the
 [*What is a Portal?*](http://www.liferay.com/products/what-is-a-portal)
 white-paper and the Introduction, Liferay Collaboration Suite chapters of [Using
 Liferay Portal
-6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
+6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/liferay-collaboration-sui-5).
 
 This first chapter introduces the technologies and tools that you will be able
 to use to develop applications and also to extend or customize functionality
@@ -58,7 +58,7 @@ used.
 browser side technologies such as HTML and Javascript. One interesting benefit
 of gadgets is that they are easy to develop and for that reason there are
 thousands of them in repositories such as [iGoogle's
-repository](http://www.google.com/ig/directory?synd=open). When the application
+repository](http://www.google.com/ig/directory). When the application
 becomes more complicated you will need a complementary backend technology, such
 as portlets or regular Java web applications.
 
