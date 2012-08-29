@@ -659,7 +659,13 @@ tags that you enter.
 Once you've set up your filter rules for dynamically selecting your content, you
 can then decide how the content will be displayed.
 
-#### Ordering and Grouping [](id=lp-6-1-ugen03-ordering-and-grouping-0)
+The Display Settings section gives you precise control over the display of your
+assets. There are a multitude of options available to configure how you want
+your content to appear. You can configure the style, length of abstracts,
+behavior of the asset link, maximum items to display, pagination type and file
+conversions. Additionally, you can enable printing, flags, ratings, comments and
+comment ratings, and these work the same way they do in the Web Content Display
+portlet.
 
 You can display the content returned by the filters above in order by title,
 create date, modified date, view count and more in ascending or descending
@@ -697,7 +703,7 @@ developer.
 
 **Full Content:** The entire content of the entry.
 
-##### Other Settings [](id=lp-6-1-ugen03-other-settings-0)
+#### Other Settings [](id=lp-6-1-ugen03-other-settings-0)
 
 **Asset Link Behavior:** The default value is *Show Full Content*. With this
 value selected, when the link to an asset is clicked, the full asset is
