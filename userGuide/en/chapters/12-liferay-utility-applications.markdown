@@ -553,16 +553,16 @@ Let's go down that aisle that next.
 
 Would your organization like to make some money selling promotional items? Are
 you an artist looking to share your work with the world? Perhaps your company
-produces a publication that customers want to purchase? If there is something of
+produces a publication that customers want to purchase? If you have something of
 value the visitors of your site want or need, then Lifeary's Shopping
-application can help them complete a secure transaction with ease.
+application can help you get these items to your customers with a secure transaction.
 
 The Shopping portlet utilizes PayPal and allows you to choose which credit cards
 your store will accept. You can organize your inventory with categories and
 subcategories. There is also a search function that lets users find items
 quickly. Users place items in a shopping cart, allowing them to purchase
 multiple items at once. There is also an email notification system to alert
-users when their transaction is being processed.
+customers when their transactions are processed.
 
 So before we start printing money, let's first create an online store.
 
@@ -587,6 +587,8 @@ Updating the Cart, Emptying the Cart, and Checking out.
 
 **Orders:** displays a list of all orders placed with options to Search for
 orders by the order Number, Status, First Name, Last Name and/or Email Address.
+
+<!-- move this text to the Orders section below?  -->
 
 Below the search fields is the orders list. Orders can be Deleted or Edited
 using the Actions button. Editing an order displays the order details with these
@@ -814,10 +816,22 @@ Your online store is set up, you have inventory, you have a payment system, and
 you have sales rolling in. All is good. Some day there will be customers with
 questions about their orders. Let's go over the orders next.
 
-### Handling Orders
+### Managing Orders
 
-When you select an order from the Orders tab, you see a summary of the order
-details along with some options along the bottom.
+Under the Orders tab there are fields for finding for specific orders. Search 
+for orders using the order number, order status, first or last name on the order
+or by the email address associated with the account. For more information on 
+searching in Liferay Portal, see the Faceted Search section in chapter 5. 
+
+![Figure 12.x: Search for orders in the Orders view or select one from the list.](../../images/shopping-orders.png)
+
+Below the search fields is the orders list. Orders can be deleted or edited
+using the *Actions* button. When you select an order from the Orders tab, or if 
+you edit an order, you see a summary of the order details along with some 
+options across the bottom.
+
+![Figure 12.x: Review order specifics in the Edit 
+view.](../../images/shopping-order-detail.png)
 
 **Invoice:** creates a printer-friendly copy of the order that can be sent to a
 customer.
@@ -827,78 +841,50 @@ has been received and is being processed.
 
 **Send Shipping Email:** notifies the customer that the order is en route.
 
+**Delete:** removes the order from the system.
+
+**Cancel:** closes the Edit view and returns the user to the main orders view. 
+
 You can also add comments about the order and subscribe to the comments to get
 any updates on the order.
 
-![Figure 12.16: Say something nice about the invoice,
-please.](../../images/shopping-invoice.png)
-
-Search for orders using these criteria: Number, Status, First Name, Last Name
-and/or Email Address
-
-<!--
-
 #### Integrating the Amazon Rankings portlet
 
-Portlet - Accepts ISBN numbers and displays corresponding Amazon Rankings.
+If your store sells books, you can use Liferay's Amazon Rankings application to 
+display them along side the main shopping portlet. Books are arranged in ascending order according to Amazon's Best Sellers Rank.
 
-Does the Amazon Rankings portlet only rank books (with certain sized ISBNs)?
+##### Setting up your Amazon Web Services account
 
-Amazon Web Services#
-
-Before using Amazon Rankings Portlet, you must setup your Amazon Web Services
-key.
-
-In portal.properties, here's the location to add your Amazon license key:
-
- ##
- ## Amazon License Keys
- ##
-    #
-    # Enter a list of valid Amazon license keys. Configure additional keys by
-    # incrementing the last number. The keys are used following a Round-Robin
-    # algorithm. This is made available only for personal use. Please see the
-    # Amazons license at http://www.amazon.com for more information.
-    #
-    #amazon.license.0=
-    #amazon.license.1=
-    #amazon.license.2=
-    #amazon.license.3=
-
-Place the above inside portal-ext.properties.
+To use Amazon rankings, you must first setup an Amazon Associates Program account. This will give you the *associate ID tag* you need to enter in your portal-ext.properties file. Then you need to join the Amazon Product Advertising API group. This will yield the *access key id* and the *secret access key* that also must go into your portal-ext.properties file. 
 
 You can get an Amazon License Key here:
-https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/
 
-Configuration#
+[https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/](https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/)
 
-You can specify which items to display by clicking on the configuration tab on
-the upper right corner of the portlet.
+Add the following lines to your portal-ext.properties file and populate the values for the assocaite tag, access key id and secret access key from your Amazon Web Services account. Ensure there are no spaces between the `=` sign and their values. 
 
-Separate your ISBN numbers with a space.
+`amazon.access.key.id=`
 
-Troubleshooting#
+`amazon.associate.tag=`
 
-1. If you load Amazon Rankings Portlet, you might get a message that looks
-similar to:
+`amazon.secret.access.key=`
 
-ERROR [WebCachePool:68] 0066620996 java.util.NoSuchElementException
+Note that these keys are provided by Amazon for personal use only. Please consult Amazon at [http://www.amazon.com](http://www.amazon.com) for more information.
 
-Check if you've setup your Amazon Web Services key correctly in
-portal-ext.properties.
+If your Amazon Web Services key is not set up properly in Liferay, it will affect the Shopping portlet when you try to add books.
 
-Check to see if the ISBN you input actually exists.
+##### Setting up your Amazon Rankings portlet
 
-2. As of Liferay 4.2.1, Amazon Rankings Portlet currently ranks books only. The
-configuration will only take ISBN numbers in the 10-digit format.
+When you have completed setting up the portal-ext.properties file, you can now specify what books you want to display in your store. Select *Configuration* from the Amazon Rankings portlet in
+the upper right corner. Go to the *Setup* tab and enter the International Standard Book Numbers (ISBNs) in the textbox field, separated by spaces. The portlet accepts 10-digit ISBNs and will not take ISBNs containing letters.
 
-3. If your Amazon Web Services key is not setup properly in Liferay, it will
-also affect the Shopping Portlet when you try to 'Add Books'.
+![Figure 12.x: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
 
--->
+When you are finished setting up the rankings, books will display in the portlet similar to the figure below. Clicking on the book's image will open the book's Amazon page.
 
-Now that you know all about Liferay's Shopping application, why don't we check
-the weather?
+![Figure 12.x: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
+
+Now that you have a good grasp on Liferay's Shopping and the Amazon Rankings applications, let's go ahead and check out the Weather.
 
 ## Weather [](id=lp-6-1-ugen12-weather-0)
 
