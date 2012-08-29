@@ -13,7 +13,7 @@ categories, vocabularies, comments, ratings, and asset relationships.
 This chapter covers the following topics:
 
 - Tagging and categorizing content
-- Using Faceted Search 
+- Using Faceted Search
 - Using the Asset Publisher
 - Using targeted, single value, and multi-value vocabularies
 - Setting up display pages
@@ -117,7 +117,7 @@ content.
 
 It's important to use tags and categories with all your content, so that content
 is easier for users to find. Let's look at one of the ways users will make use
-of tags and categories: searching for content. 
+of tags and categories: searching for content.
 
 ## Using Faceted Search [](id=lp-6-1-ugen05-using-faceted-search-0)
 
@@ -128,12 +128,12 @@ for me. This final version (before I went digital) had different tabs for
 different areas of my life that I wanted to keep track of: daily items like
 tasks, notes, a spiritual section, and agenda pages that kept track of things I
 needed to go over with specific people. A Planning section had tabs for
-projects, family, future items, and reference. 
+projects, family, future items, and reference.
 
 Of course, since this was paper-based, it had its limitations. It was kind of
 hard to find stuff. Did I put the note I'd written about that new toy my
 daughter wanted in the Notes section or in the Family section? Or maybe it was
-on my *While Out* list, so I would remember to buy it before her birthday? 
+on my *While Out* list, so I would remember to buy it before her birthday?
 
 Liferay content can be like this. That important information you remember
 seeing--was it in a wiki article, a message boards post, or web content? Did you
@@ -141,13 +141,13 @@ remember to tag it? If you don't have this kind of information, browsing to the
 content you're looking for could be difficult. Thankfully, Liferay includes a
 powerful, faceted search function, which means you can drill down through the
 different types of content, tags, and categories to refine your search and find
-what you want. Let's see how to use it. 
+what you want. Let's see how to use it.
 
 ### Searching for Portal Content [](id=lp-6-1-ugen05-searching-for-portal-content-0)
 
 To get started, drop the Search portlet on a page and search for something.
 You'll see a page with results on the right and a collection of *facets* on the
-left. 
+left.
 
 ![Figure 5.4: The first set of facets is content types. You can drill down to
 specific types of content that contain the search terms you
@@ -156,14 +156,14 @@ entered.](../../images/faceted-search-1.png)
 A facet is a combination of the information about a specific indexed field, its
 terms, and their frequency. Facets are typically named by the field in question.
 The default facets are asset types (pictured above), asset tags, asset
-categories, and modified time range. 
+categories, and modified time range.
 
 The frequency in which the term was found for each facet is listed in
 parentheses after the facet. It may jog your memory to see that the term you
 searched for appears in a blog entry, and that may be all you need to find what
 you were looking for. If, however, your memory is more foggy than that, or
 you're searching for something you're not sure is actually there, then the asset
-tags or asset categories facets may be more helpful to you. 
+tags or asset categories facets may be more helpful to you.
 
 ![Figure 5.5: Asset tag facets provide you with more information about content
 that contains the terms for which you searched.](../../images/faceted-search-2.png)
@@ -174,12 +174,12 @@ One or more of the tags may help you to find what you're looking for. Note that
 the number of tags that appear is configurable: by default it's 10, but there
 could be many more as a result of a particular search. We'll look at the
 configuration options later in the chapter. For now, let's see how drilling down
-works. 
+works.
 
 ### Drilling Down to the Data You Want [](id=lp-6-1-ugen05-drilling-down-to-the-data-you-want-0)
 
 To drill down into the search, click a facet to add it to the filter list, and
-the results to the right are refined by the facet you selected. 
+the results to the right are refined by the facet you selected.
 
 ![Figure 5.6: Drilling down creates a list of what you selected at the top of
 the screen.](../../images/05-faceted-search-drill-down-1.png)
@@ -189,7 +189,7 @@ refine the search. The tag appears in a list at the top, and there's a red X
 next to it that lets us remove it from our filter as we work to increase the
 relevancy of our search. But maybe selecting only the tag isn't enough to filter
 our search into something small enough to sort through. In this case, we can
-further refine the search by selecting another facet, as below. 
+further refine the search by selecting another facet, as below.
 
 ![Figure 5.7: Selecting another facet further refines the
 search.](../../images/05-faceted-search-drill-down-2.png)
@@ -198,14 +198,14 @@ Now we've selected web content, which is one particular content type within
 Liferay, and the list of potential hits on our search terms has been
 dramatically reduced. In this way, you can interactively tweak the search
 results to narrow them down, making it easier to find that proverbial needle
-within the haystack. 
+within the haystack.
 
 #### Asset Types [](id=lp-6-1-ugen05-asset-types-0)
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
 searched. Under the hood, this means that these entities use Liferay's Asset API
-and have an Indexer defined. 
+and have an Indexer defined.
 
 Developers can create custom searchable assets within the portal. This is
 described in the [Developer's
@@ -214,7 +214,7 @@ For this reason, you may have additional asset types defined in your portal
 beyond the ones that Liferay ships with by default. If this is the case, you may
 wish to tweak the `frequency threshold` and the `max terms` settings to increase
 the number of asset types displayed past the default of 10. This is covered in
-the section below on search options. 
+the section below on search options.
 
 #### Asset Tags [](id=lp-6-1-ugen05-asset-tags-0)
 
@@ -230,9 +230,9 @@ setting `max terms` property.
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Yadda, yadda, yadda, same
 thing as the two sections above. That last sentence was written to check if
-you're still reading. 
+you're still reading.
 
-Let's move on to advanced searching. 
+Let's move on to advanced searching.
 
 ### Advanced Searching [](id=lp-6-1-ugen05-advanced-searching-0)
 
@@ -240,7 +240,7 @@ The Search portlet's search box is deceptively simple. Though you have only a
 single field for search, there's a search syntax inherited from
 [Lucene](http://lucene.apache.org/core/old_versioned_docs/versions/3_0_3/queryparsersyntax.html)
 that lets you create very powerful search queries. Let's look at some ways you
-can use search queries. 
+can use search queries.
 
 **Searching for specific fields:** By default, searches are performed against a
 long list of fields. Sometimes you want results for a term within a particular
@@ -251,96 +251,96 @@ syntax:
     title:liferay
 
 If you search for a phrase within a field, surround the term with double
-quotation marks: 
+quotation marks:
 
     title:"Liferay Portal"
 
 **Wildcards:** You can use wildcards in exactly the way you use them with your
 operating system: for a single character wildcard, use `?`; for
-the multiple character wildcard, use `*`. 
+the multiple character wildcard, use `*`.
 
 **Boolean operators:** You can use logic operators, such as AND, OR, NOT, `+`,
 and `-` in your searches. The `AND` operator matches assets in which the terms
 between the `AND` operator exist. For example, to search for both Liferay and
-Kaleo Workflow, use this query: 
+Kaleo Workflow, use this query:
 
     "liferay" AND "kaleo workflow"
 
 The `OR` operator is the default; if there's no operator between two terms, the
-`OR` operator takes effect. `OR` finds matches if any term exists in an asset. 
+`OR` operator takes effect. `OR` finds matches if any term exists in an asset.
 
 The `+` operator requires that the term exists somewhere in some field in the
 asset. If you wanted to search for something that *must* contain *liferay* and
-*may* contain *portal*, use this query: 
+*may* contain *portal*, use this query:
 
     +liferay portal
 
 The `NOT` operator excludes assets that contain the term after the `NOT`
-operator. It requires that at least two terms be present: 
+operator. It requires that at least two terms be present:
 
-    "Liferay Portal" NOT "Liferay Social Office" 
+    "Liferay Portal" NOT "Liferay Social Office"
 
 The `-` operator is similar: it excludes assets that contain the term after the
-`-` symbol: 
+`-` symbol:
 
-    "Liferay Portal" - "Liferay Social Office" 
+    "Liferay Portal" - "Liferay Social Office"
 
 **Grouping:** You can use parentheses within your queries to form sub-queries,
 in a similar fashion to an SQL statement. For example, to search for *liferay*
-or *social office* and *website*, use this query: 
+or *social office* and *website*, use this query:
 
     (liferay OR "social office") AND website
 
 As you can see, the search syntax is very powerful. There's more you can do with
 it than what is listed here; to view the full syntax, visit the Lucene URL
-above. 
+above.
 
-Next, we'll look at how the Search portlet can be configured. 
+Next, we'll look at how the Search portlet can be configured.
 
 ### Setting Search Options [](id=lp-6-1-ugen05-setting-search-options-0)
 
 As with Liferay's other portlets, you can configure the Search portlet via the
-configuration screen, which looks like the below illustration. 
+configuration screen, which looks like the below illustration.
 
 ![Figure 5.8: Basic search configuration is pretty straightforward.
 ](../../images/05-faceted-search-configuration.png)
 
-**Display Asset Type Facet:** Toggles whether the Asset Type facet appears. 
+**Display Asset Type Facet:** Toggles whether the Asset Type facet appears.
 
-**Display Asset Tags Facet:** Toggles whether the Asset Tags facet appears. 
+**Display Asset Tags Facet:** Toggles whether the Asset Tags facet appears.
 
 **Display Asset Categories Facet:** Toggles whether the Asset Categories facet
-appears. 
+appears.
 
 **Display Modified Range Facet:** Toggles whether the date modified range facet
-appears. 
+appears.
 
 **Display Results in Document Form:** Never use this in production. Developers
 use this feature to view search responses in their generic, Document-based
 format. Part of a developer's job when writing search indexers is to convert
 Documents (the objects that get indexed) to the actual object and back again.
-This option allows developers to see how their objects are being indexed. 
+This option allows developers to see how their objects are being indexed.
 
 **View in Context:** When an asset is clicked, show it in the portlet to which
-it belongs. 
+it belongs.
 
 **Display Main Query:** Show the exact search query that the portlet generated
 to the search engine. Again, never use this in production; this is for
-development purposes only. 
+development purposes only.
 
 **Display Open Search Results:** Shows results from third party Open Search
 plugins, if they are installed. This is for backward compatibility only:
 developers are encouraged to re-design their search code as described in
 *Liferay in Action*, and then custom assets are aggregated with native portal
-assets seamlessly. 
+assets seamlessly.
 
 These are the basic options, but surely you didn't miss the fact that there are
-also advanced options. 
+also advanced options.
 
 Configuring advanced search requires a bit more technical acumen than you might
 expect, because there are so many properties to tweak. Thankfully, in most
 instances, you shouldn't need to change a thing. If you do, however, the
-configuration is done through a JSON object. 
+configuration is done through a JSON object.
 
 If you don't know what a JSON object is, don't worry: it's not a difficult
 concept. JSON stands for **J**ava**S**cript **O**bject **N**otation. An Object
@@ -352,10 +352,10 @@ they can describe in the software; for all intents and purposes, objects
 could just as easily have been called Things. For example, one type of object
 used in Liferay is a User. A User can be represented in code, and it has many
 *fields*, such as a name, an email address, and more. JSON is one way of
-describing objects like this. 
+describing objects like this.
 
 The object we're concerned with is called `facets`. Here's what it looks like,
-in all its glory, in JSON. Explanation of the settings follows the object below. 
+in all its glory, in JSON. Explanation of the settings follows the object below.
 
 	{"facets": [
 	    {
@@ -447,7 +447,7 @@ in all its glory, in JSON. Explanation of the settings follows the object below.
 	]}
 
 Now that you've seen the object, don't be daunted by it. Here are all the
-settings within the object that you can tweak. 
+settings within the object that you can tweak.
 
 **"className":** This field must contain a string value which is the FQCN (fully
 qualified class name) of a java implementation class implementing the Facet
@@ -464,7 +464,7 @@ interface. Liferay provides the following implementations by default:
 specific facet implementation. As such, there is no fixed definition of the data
 field. Each implementation is free to structure it as needed. The value defined
 here matches the implementation that's selected in the `className` attribute
-above. 
+above.
 
 **"displayStyle":** This field takes a string value and represents a
 particular template implementation which is used to render the facet. These
@@ -474,13 +474,13 @@ Freemarker templates provided by a theme if the portal property
 a JSP is simply done by prefixing the string with /html/portlet/search/facets/
 and appending the .jsp extension.
 
-For example, `"displayStyle": "asset_tags"` maps to the JSP 
+For example, `"displayStyle": "asset_tags"` maps to the JSP
 
 	/html/portlet/search/facets/asset_tags.jsp
 
 Armed with this knowledge a crafty developer could create custom display styles
 by deploying custom (new or overriding) JSPs using a JSP hook. See the
-*Developer's Guide* or *Liferay in Action* for more information on hook plugins. 
+*Developer's Guide* or *Liferay in Action* for more information on hook plugins.
 
 **"fieldName":** This field takes a string value and defines the indexed field on
 which the facet operates.
@@ -490,7 +490,7 @@ implementation operates on the `entryClassName` indexed field.
 
 **Note:** You can identify available indexed fields by enabling the Search
 portlet's *Display Results in Document Form* configuration setting and then
-expanding individual results by clicking the [+] to the left of their titles. 
+expanding individual results by clicking the [+] to the left of their titles.
 
 **"label":** This field takes a string value and represents the language key that
 is used for localizing the title of the facet when it's rendered.
@@ -553,7 +553,7 @@ implementation is counter-intuitive and perhaps could be reversed in future
 versions).
 
 Configuring search using a JSON object is a bit unusual, but as you can see, it's
-not as hard as it looks initially. 
+not as hard as it looks initially.
 
 ### Summary [](id=lp-6-1-ugen05-summary-0)
 
@@ -563,13 +563,13 @@ search mechanism throughout the portal that allows administrators to optimize th
 experience of their users. Users also get an easy to use search interface that
 makes use of the tags and categories that they themselves apply to various
 pieces of content, regardless of the type of content. This makes Liferay's
-search truly "for the people." 
+search truly "for the people."
 
 Power users can learn an extended search syntax that lets them craft very
 specific searches. These searches can be used on large installations with lots
 of data to find the proverbial needle in the proverbial haystack. Administrators
 can tune the configuration of search portlets so that they are optimized for the
-contents of their communities. 
+contents of their communities.
 
 Next, we'll look at how the Asset Publisher portlet makes even more extensive
 use of Liferay's asset framework to bring relevant content to users.
@@ -689,7 +689,7 @@ configure these settings, go to the categories administration page and mouse
 over the vocabulary in the list until you see the edit icon to the right. Select
 the icon to reveal a dialog box like the one below.
 
-![Figure 5.6: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
+![Figure 5.11: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
 
 The default value for *Associated Asset Types* is *All Asset Types*. You can
 fine tune your choices by using the *+* and *-* buttons, which narrows the scope
@@ -704,7 +704,7 @@ You can now decide if the user can choose one or more categories from the same
 vocabulary to categorize an asset. If a vocabulary is single-valued you can only
 choose one, and if it allows more, you can choose several categories.
 
-![Figure 5.7: Single-valued vocabularies, on the left, use radio buttons while multi-valued vocabularies use checkboxes. .](../../images/multi-valued-vocabularies.png)
+![Figure 5.12: Single-valued vocabularies, on the left, use radio buttons while multi-valued vocabularies use checkboxes. .](../../images/multi-valued-vocabularies.png)
 
 Setting vocabulary values is done through the categories administration page.
 Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set
@@ -717,7 +717,7 @@ The third important improvement is every vocabulary has its own separated
 widget. These widgets appear in the Categorization section of every asset and
 they allow users to easily select appropriate categories for that asset.
 
-![Figure 5.8: Now that vocabularies have their own widgets, it's easy to select available  categories.](../../images/separated-widgets.png)
+![Figure 5.13: Now that vocabularies have their own widgets, it's easy to select available  categories.](../../images/separated-widgets.png)
 
 In the *Ordering and Grouping* section of the Asset Publisher, you have great
 control over how content is ordered and grouped in the list, but this is only
@@ -782,7 +782,7 @@ print, enable comments, enable ratings, etc.
 **Show Metadata:** Allows you to select from the available metadata types (see
 below).
 
-![Figure 5.11: Available metadata
+![Figure 5.14: Available metadata
 types](../../images/available-metadata-fields.png)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS
@@ -831,7 +831,7 @@ page, add a Web Content Display portlet. Click the *Add Web Content* button,
 enter a title and some content, click on *Display Page* at the right, and select
 the Display Page you just created. Then click *Publish*.
 
-![Figure 5.12: Selecting a Display
+![Figure 5.15: Selecting a Display
 Page](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, you can now click
@@ -844,9 +844,9 @@ a configured Asset Publisher portlet but also a Tags Navigation, a Categories
 Navigation, and a Search portlet. These tools help users to quickly identify
 relevant content.
 
-![Figure 5.13: The Canonical URL](../../images/04-web-content-canonical-url.png)
+![Figure 5.16: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
-Let's move on to another new featured introduced by Liferay 6.1. 
+Let's move on to another new featured introduced by Liferay 6.1.
 
 ## Defining content relationships [](id=related-assets)
 
@@ -888,7 +888,7 @@ the setup`, but there still aren't any assets displayed in the related assets
 portlet. Why? You cannot see any related assets until you select an
 asset in the Asset Publisher.
 
-![Figure 5.12: Select an asset in the Asset Publisher to see its related assets
+![Figure 5.17: Select an asset in the Asset Publisher to see its related assets
 displayed in the Related Assets
 portlet.](../../images/related-assets-portlet-after.png)
 
