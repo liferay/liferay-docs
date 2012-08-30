@@ -180,10 +180,9 @@ documents.
  resides on the portal host machine and is controlled by the portal
  administrator. Portal administrators can configure security settings for the
  Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON
- Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The [Configuring
- Liferay's
- Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties)
- section of *Using Liferay Portal 6.1* describes these properties.
+ Servlet, the JSON Web Service Servlet, and the WebDAV Servlet. The
+ [Properties Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
+ chapter of *Using Liferay Portal* describes these properties.
 
 ---
 
@@ -242,13 +241,12 @@ following:
 - user ID
 - email address
 
-It is important to note here how *Password Policies* (see chapter *Administering
-Liferay Portal* of [Using Liferay Portal
-6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-users-user-groups-organizations-sites-teams-and-roles))
-can be used in combination with this feature. If the portal is enforcing
-password policies on its users (requiring them to change their passwords on a
-periodic basis, etc.), any administrative ID which accesses Liferay's web
-services in a batch job will have its password expire too.
+It is important to note here how *Password Policies* (see chapter
+[Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/administering-liferay-port-1)
+of *Using Liferay Portal*) can be used in combination with this feature. If the
+portal is enforcing password policies on its users (requiring them to change
+their passwords on a periodic basis, etc.), any administrative ID which accesses
+Liferay's web services in a batch job will have its password expire too.
 
 To prevent this from happening, the portal administrator can add a new password
 policy which does not enforce the password expiration and add your
@@ -1751,7 +1749,7 @@ Tempers fly, feelings get hurt, and everybody avoids hanging out in the company
 breakroom for the next couple weeks.
 
 Liferay's [Workflow with
-Kaleo](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-3)
+Kaleo](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
 would be appropriate for resolving this. But to help demonstrate the components
 and capabilities of the Message Bus system we'll resolve the Jungle Gym's
 communication woes using Message Bus.

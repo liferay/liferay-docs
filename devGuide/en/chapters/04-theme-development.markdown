@@ -352,9 +352,8 @@ Next, you declare the two theme setting variables in your
 	</settings>
 
 The portal administrator can input a slogan and activate it for the portal via
-the *Look and Feel* section of the *Manage Site Pages* panel (see the *Page
-Creation and Management* section of [Using
-Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide)).
+the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
+sites and managing pages* section of [Using Liferay Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-pages-in-liferay-port-1)).
 
 ![Figure 4.6: Setting the footer display slogan in the *Look and Feel* of  the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
@@ -367,7 +366,7 @@ display the new footer containing the slogan.
  ![note](../../images/tip-pen-paper.png)**Note:** A language properties hook
  should be used to properly display configurable theme settings, such as the
  slogan text area and footer checkbox from the previous example. For details, 
- see the [Overriding a Language.properties File](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties%3C-em%3E-fi-1) section found in the *Hooks* chapter of this guide.
+ see the [Overriding a Language.properties File](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-<em>language-properties<-em>-fi-3) section found in the *Hooks* chapter of this guide.
 
 Next, we'll take a look at how to manage color schemes in your theme.
 
