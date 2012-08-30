@@ -555,7 +555,8 @@ Would your organization like to make some money selling promotional items? Are
 you an artist looking to share your work with the world? Perhaps your company
 produces a publication that customers want to purchase? If you have something of
 value the visitors of your site want or need, then Lifeary's Shopping
-application can help you get these items to your customers with a secure transaction.
+application can help you get these items to your customers with a secure
+transaction.
 
 The Shopping portlet utilizes PayPal and allows you to choose which credit cards
 your store will accept. You can organize your inventory with categories and
@@ -588,10 +589,10 @@ Updating the Cart, Emptying the Cart, and Checking out.
 **Orders:** displays a list of all orders placed with options to Search for
 orders by the order Number, Status, First Name, Last Name and/or Email Address.
 
-**Coupons:** allows you to enter data related to a discount. You can enter the coupon Code,
-Discount Type, and whether it is Active or not. Search looks for a particular
-coupon offer while Add Coupon opens a new form to key in the coupon data. Delete
-removes a coupon.
+**Coupons:** allows you to enter data related to a discount. You can enter the
+coupon Code, Discount Type, and whether it is Active or not. Search looks for a
+particular coupon offer while Add Coupon opens a new form to key in the coupon
+data. Delete removes a coupon.
 
 Below the tabs are breadcrumbs for navigating between the categories and
 subcategories you create. In fact, this would be a good time to start creating
@@ -648,8 +649,8 @@ display. When you are finished creating a new item, click *Save*.
 
 ![Figure 12.16: The image in this figure is the medium sized option.](../../images/shopping-item-image2.png)
 
-As products are added, they will be listed in the Items section of the portlet. If
-the item you just created needs to go into one of your new categories or
+As products are added, they will be listed in the Items section of the portlet.
+If the item you just created needs to go into one of your new categories or
 subcategories, you can assign it to the category through editing form. Choose
 the *Select* button, next to the *Remove* button, and this displays a dialog box
 listing all the shop categories.
@@ -672,9 +673,10 @@ shopping portlet's configuration options.
 
 ### Configuration
 
-By selecting the *wrench* icon in the top right of the portlet, you can manage the
-configuration options of the shopping application. In the Setup view, there are tabs for
-Payment Settings, Shipping Calculation, Insurance Calculation, and Emails.
+By selecting the *wrench* icon in the top right of the portlet, you can manage
+the configuration options of the shopping application. In the Setup view, there
+are tabs for Payment Settings, Shipping Calculation, Insurance Calculation, and
+Emails.
 
 #### Payment Settings
 
@@ -684,9 +686,9 @@ transactions for your store.
 **PayPal Email Address:** is the address of your store's PayPal account where
 all sales transactions will be directed.
 
-Note that PayPal can be disabled by entering a blank PayPal address in the field. Credit
-cards can likewise be disabled. Payments to the store are not required when
-these settings are disabled.
+Note that PayPal can be disabled by entering a blank PayPal address in the
+field. Credit cards can likewise be disabled. Payments to the store are not
+required when these settings are disabled.
 
 **Credit Cards:** sets the type of credit cards your store accepts.
 
@@ -698,7 +700,8 @@ displayed on the form.
 
 **Currency:** sets the appropriate currency your shop accepts.
 
-**Tax State:** sets the applicable state where your business is responsible for paying taxes.
+**Tax State:** sets the applicable state where your business is responsible for
+paying taxes.
 
 **Tax Rate:** sets the percentage of taxes your store is responsible for paying.
 
@@ -717,7 +720,8 @@ that the total order amount falls under.
 
 #### Emails
 
-This form sets the addresses for customer email notifications. Use the list of term definitions below to customize your correspondence with your customers.
+This form sets the addresses for customer email notifications. Use the list of
+term definitions below to customize your correspondence with your customers.
 
 ![Figure 12.19: Shopping emails can be configured in a myriad of ways to suit
 your needs.](../../images/shopping-confirmation-email-form.png)
@@ -732,18 +736,30 @@ know their transaction has been received and is being processed.
 **Shipping Email:** is the form the store uses to notify customers that their
 orders have been shipped.
 
-So far we have added the shopping portlet to your site, created categories and items for your store, set up payment options, and configured customer communication options. These are the basics required to get your store up and running. Now let's review the buying process.
+So far we have added the shopping portlet to your site, created categories and
+items for your store, set up payment options, and configured customer
+communication options. These are the basics required to get your store up and
+running. Now let's review the buying process.
 
 ### Using the shopping cart
 
-Logged in users are given a shopping cart to store the items they wish to buy. Customers can manage items and their quantities directly from the cart, allowing them to purchase a single product or multiple products at once. Customers can also key in coupon codes to take advantage of any discounts your store has to offer. Products can be placed in the cart form any category or subcategory. The cart's appearance can be customized to reflect the overall design of your store.
+Logged in users are given a shopping cart to store the items they wish to buy.
+Customers can manage items and their quantities directly from the cart, allowing
+them to purchase a single product or multiple products at once. Customers can
+also key in coupon codes to take advantage of any discounts your store has to
+offer. Products can be placed in the cart form any category or subcategory. The
+cart's appearance can be customized to reflect the overall design of your store.
 
-When buyers select an item, they see the item's description displaying all of its relevant information. The figure below is typical of what an item's description might look like.
+When buyers select an item, they see the item's description displaying all of
+its relevant information. The figure below is typical of what an item's
+description might look like.
 
 ![Figure 12.20: You can include images of each item in your store. (Medium sized
 images display on the item's description form).](../../images/shopping-item.png)
 
-Below the product description is the *Availability* field indicating whether the item is in stock. There are also two buttons for managing the shopping experience:
+Below the product description is the *Availability* field indicating whether the
+item is in stock. There are also two buttons for managing the shopping
+experience:
 
 **Add to Shopping Cart:** places the item in your cart for checkout.
 
@@ -751,18 +767,23 @@ Below the product description is the *Availability* field indicating whether the
 the option to add to the cart as you go.
 
 After adding an item to the cart, click *<< Back* to return to the product
-description and continue shopping by navigating the category breadcrumbs at the top of the form. You can also continue shopping by scrolling through the category, item by item, using the *Previous* and *Next* buttons at the bottom of the product description.
+description and continue shopping by navigating the category breadcrumbs at the
+top of the form. You can also continue shopping by scrolling through the
+category, item by item, using the *Previous* and *Next* buttons at the bottom of
+the product description.
 
 ![Figure 12.21: This shopping cart has two items in it so far.](../../images/shopping-cart-order.png)
 
 Each time you add an item to the cart, you will see a running tally of the
 cart's contents. Quantities for each item are controlled using drop-down menus.
 The order subtotal and shipping costs are displayed above a field where coupon
-codes are entered. When you have finished adding products to the cart, you have three
-options to choose from:
+codes are entered. When you have finished adding products to the cart, you have
+three options to choose from:
 
 **Update Cart:** allows you to change the quantity of an item being purchased.
-If a minimum number of items has been set in the item description, the field under the *Quantity* column will display that number by default. You can adjust the exact number of items you want with the drop-down menus in the cart.
+If a minimum number of items has been set in the item description, the field
+under the *Quantity* column will display that number by default. You can adjust
+the exact number of items you want with the drop-down menus in the cart.
 
 **Empty Cart:** allows you to clear the contents of the cart to either start
 shopping again or to stop shopping.
@@ -775,7 +796,9 @@ order if necessary.
 summary view.](../../images/shopping-order-summary.png)
 
 When all the data has been entered correctly, click *Continue* to see the order
-summary. After reviewing the summary, click *Finished* and you will be given confirmation the order has been placed and the order number. Use this number to search for the order history and keep track of its status. 
+summary. After reviewing the summary, click *Finished* and you will be given
+confirmation the order has been placed and the order number. Use this number to
+search for the order history and keep track of its status.
 
 #### Customizing the shopping cart with a hook
 
@@ -785,9 +808,9 @@ shopping cart, consult the *Liferay Developer's Guide* or see section 8.3 in
 [*Liferay in Action*](http://manning.com/sezov) called, Hooks in action:
 Inkwell’s shopping cart.
 
-Now your online store is set up, you have inventory, you have a payment system, and
-you have sales rolling in. All is good. Some day there will be customers with
-questions about their orders. Let's go over the orders next.
+Now your online store is set up, you have inventory, you have a payment system,
+and you have sales rolling in. All is good. Some day there will be customers
+with questions about their orders. Let's go over the orders next.
 
 ### Managing Orders
 
@@ -812,7 +835,9 @@ customer.
 **Resend Confirmation Email:** allows you to notify the customer that the order
 has been received and is being processed.
 
-**Send Shipping Email:** notifies the customer that the order is en route. You can also include a tracking number with this email to allow the customer to follow the delivery process.
+**Send Shipping Email:** notifies the customer that the order is en route. You
+can also include a tracking number with this email to allow the customer to
+follow the delivery process.
 
 **Delete:** removes the order from the system.
 
@@ -823,7 +848,10 @@ any updates on the order.
 
 ### Managing Coupons
 
-The Coupons view of the Shopping application is where you key in data related to a discount offer that your store provides. You can determine the type of discount to apply and whether it is currently active. You can search for coupons and create new coupons from this form.
+The Coupons view of the Shopping application is where you key in data related to
+a discount offer that your store provides. You can determine the type of
+discount to apply and whether it is currently active. You can search for coupons
+and create new coupons from this form.
 
 ![Figure 12.25: Create a coupon code automatically when you select the Autogenerate Code box.](../../images/shopping-coupon.png)
 
@@ -843,39 +871,60 @@ and/or SKU numbers.
 
 #### Integrating the Amazon Rankings portlet
 
-If your store sells books, you can use Liferay's Amazon Rankings application to 
-display them alongside the main shopping portlet. Both of these are found in the Shopping category under *Add* -> *More* in the Control Panel. The Amazon Rankings application give you the opportunity to highlight the books in your store's inventory outside of the typical category structure. Books are arranged in ascending order according to Amazon's Best Sellers Rank. Book cover images displayed in the portlet come from the images in the product's description.
+If your store sells books, you can use Liferay's Amazon Rankings application to
+display them alongside the main shopping portlet. Both of these are found in the
+Shopping category under *Add* -> *More* in the Control Panel. The Amazon
+Rankings application give you the opportunity to highlight the books in your
+store's inventory outside of the typical category structure. Books are arranged
+in ascending order according to Amazon's Best Sellers Rank. Book cover images
+displayed in the portlet come from the images in the product's description.
 
 ##### Setting up your Amazon Web Services account
 
-To use Amazon rankings, you must first setup an Amazon Associates Program account. This will give you the *associate ID tag* you need to enter in your portal-ext.properties file. Then you need to join the Amazon Product Advertising API group. This will yield the *access key id* and the *secret access key* that also must go into your portal-ext.properties file. 
+To use Amazon rankings, you must first setup an Amazon Associates Program
+account. This will give you the *associate ID tag* you need to enter in your
+portal-ext.properties file. Then you need to join the Amazon Product Advertising
+API group. This will yield the *access key id* and the *secret access key* that
+also must go into your portal-ext.properties file.
 
 You can get an Amazon License Key here:
 
 [https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/](https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/)
 
-Add the following lines to your portal-ext.properties file and populate the values for the associate tag, access key id and secret access key from your Amazon Web Services account. Ensure there are no spaces between the `=` sign and their values. 
+Add the following lines to your portal-ext.properties file and populate the
+values for the associate tag, access key id and secret access key from your
+Amazon Web Services account. Ensure there are no spaces between the `=` sign and
+their values.
 
 	amazon.access.key.id=
 	amazon.associate.tag=
 	amazon.secret.access.key=
 
-Note that these keys are provided by Amazon for personal use only. Please consult Amazon at [http://www.amazon.com](http://www.amazon.com) for more information.
+Note that these keys are provided by Amazon for personal use only. Please
+consult Amazon at [http://www.amazon.com](http://www.amazon.com) for more
+information.
 
-If your Amazon Web Services key is not set up properly in Liferay, it will affect the Shopping portlet when you try to add books.
+If your Amazon Web Services key is not set up properly in Liferay, it will
+affect the Shopping portlet when you try to add books.
 
 ##### Setting up the Amazon Rankings portlet
 
-When you are done setting up the portal-ext.properties file, you can choose what books you want to display in your store. Select *Configuration* from the Amazon Rankings portlet in
-the upper right corner. Go to the *Setup* tab and enter the International Standard Book Numbers (ISBNs) in the textbox, separated by spaces. The portlet accepts 10-digit ISBNs and will not take ISBNs containing letters.
+When you are done setting up the portal-ext.properties file, you can choose what
+books you want to display in your store. Select *Configuration* from the Amazon
+Rankings portlet in the upper right corner. Go to the *Setup* tab and enter the
+International Standard Book Numbers (ISBNs) in the textbox, separated by spaces.
+The portlet accepts 10-digit ISBNs and will not take ISBNs containing letters.
 
 ![Figure 12.27: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
 
-When you are finished setting up the rankings, books will display in the portlet similar to the example below. Clicking on the book's cover image will open the book's Amazon page.
+When you are finished setting up the rankings, books will display in the portlet
+similar to the example below. Clicking on the book's cover image will open the
+book's Amazon page.
 
 ![Figure 12.28: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
 
-Now that you have a good grasp on Liferay's Shopping and Amazon Rankings applications, let's go ahead and check out the Weather.
+Now that you have a good grasp on Liferay's Shopping and Amazon Rankings
+applications, let's go ahead and check out the Weather.
 
 ## Weather [](id=lp-6-1-ugen12-weather-0)
 
@@ -897,12 +946,13 @@ Weather portlet.](../../images/weather-portlet.png)
 
 You can configure the portlet to display locations using the Preferences option.
 The Guest Preferences option allows you to create a default set of locations any
-unregistered visitor to your site can view. Locations can be entered as text or as a postal code
-and are linked to weather.com for the latest conditions. The search feature
-allows users to find cities not listed in the portlet. Temperature readings can
-be displayed as Celsius or Fahrenheit.
+unregistered visitor to your site can view. Locations can be entered as text or
+as a postal code and are linked to weather.com for the latest conditions. The
+search feature allows users to find cities not listed in the portlet.
+Temperature readings can be displayed as Celsius or Fahrenheit.
 
-That's it for the Weather application. Next, let's see what the Knowledge Base application has to offer.
+That's it for the Weather application. Next, let's see what the Knowledge Base
+application has to offer.
 
 ## Knowledge Base [](id=knowledge-base)
 
