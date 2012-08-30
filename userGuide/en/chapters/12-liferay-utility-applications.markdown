@@ -32,7 +32,7 @@ As your collection of links grows, you may need to add more subfolders to keep t
 
 #### Moving a Link
 
-Just for fun, let's move a link from the main bookmarks folder into a subfolder two levels down. We'll move the link to the Good For You Cake & Cookies Company into the Healthy Recipes subfolder. The Healthy Recipes subfolder is a child of the Dessert Recipes subfolder. We need to move the link to the Dessert Recipes subfolder first before moving it into the Healthy Recipes subfolder.
+Just for fun, let's move a link from the main bookmarks folder into a subfolder two levels down. We'll move the Liferay link into the Healthy Recipes CCC subfolder. The Healthy Recipes CCC subfolder is a child of the Dessert Recipes BB subfolder. We need to move the link to the Dessert Recipes BB subfolder first before moving it into the Healthy Recipes CCC subfolder.
 
 ![Figure 12.x: You can only move a link one level at a time.](../../images/bookmarks-select-remove-buttons.png)
 
