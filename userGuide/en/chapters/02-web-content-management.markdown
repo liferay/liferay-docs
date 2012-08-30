@@ -12,7 +12,7 @@ create complex presentation layer templates that make your content "pop" with
 dynamic elements. Once these templates have been deployed into the portal, your
 non-technical users can manage content using these templates as easily as they
 would manage static content. All of this makes Liferay WCM an appropriate choice
-for sites with only a few pages or sites with gigabytes of content.
+for sites with only a few pages or sites with gigabytes of content. 
 
 In this chapter, we'll cover the following topics: 
 
@@ -178,7 +178,7 @@ page sets: public pages and private pages. By default, public pages are
 accessible to anyone, even non-logged in users (guests). Private pages are
 accessible only to users who are members of the site which owns the pages. This
 means the private pages of an organization's site would be viewable only by
-members of the organization.
+members of the organization. 
 
 Regardless of whether the pages are public or private, Liferay uses the same
 interface to manage them. Let's look at this interface more closely. 
@@ -217,7 +217,7 @@ portlet pages.
 **Panel Pages** can have any number of portlets on them, as selected by an
 administrator, but only one will be displayed at a time. Users select which
 portlet they want to use from a menu on the left side of the page and the
-selected portlet takes up the entire page.
+selected portlet takes up the entire page. 
 
 ![Figure 2.5: A panel page](../../images/web-content-panel-page.png)
 
@@ -238,7 +238,7 @@ place a deeply nested page in the primary navigation menu of your site, for
 example.
 
 Once you've created pages and populated them with content, Liferay provides a
-way for you to back them up to separate files. Let's see how that works.
+way for you to back them up to separate files. Let's see how that works. 
 
 ##### Backing up and Restoring Pages [](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
 [](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
@@ -252,7 +252,7 @@ is a great way to take content from one environment (say, a development or QA
 environment) and move it all in one shot to your production server. Note that
 you should not make this a regular occurrence. If you want to regularly move
 pages from one server to another, you should use Liferay's staging environment,
-which is covered in chapter 2.
+which is covered in chapter 2. 
 
 LARs are also a good way to back up your site's content. You can export them to
 a specific location on your server which is backed up, and if you ever have to
@@ -274,10 +274,10 @@ have the file, you can copy it to a backup location for safekeeping or import it
 into another installation of Liferay Portal. If you must rebuild or wish to
 revert back to this version of your site, you can import this file by clicking
 the *Import* button from the Manage Site Pages dialog box, browsing to it and
-selecting it.
+selecting it. 
 
 Next, we'll look at the options on the right side menu, starting with Look and
-Feel.
+Feel. 
 
 ##### Customizing the Look and Feel [](id=lp-6-1-ugen02-customizing-the-look-and-feel-0)
 [](id=lp-6-1-ugen02-customizing-the-look-and-feel-0)
@@ -287,7 +287,7 @@ tab. On this tab, you're presented with an interface that allows you to choose a
 theme for the current site. Themes can transform the entire look of the portal.
 They are created by developers and are easily installed using the Liferay
 Marketplace. Since we don't have any themes beyond the default one installed
-yet, we'll use the default theme for our pages.
+yet, we'll use the default theme for our pages.  
 
 ![Figure 2.6: Look and Feel Interface](../../images/04-look-and-feel.png)
 
@@ -296,14 +296,14 @@ existing look and feel while giving your site a different flavor. Change the
 color scheme from blue to green by selecting *Green* under *Color Schemes*. If
 you now go back to the site (by clicking *Back to nosester.com* in the top left
 corner of the Control Panel), you'll see some parts of the page are now tinged
-in a greenish hue.
+in a greenish hue. 
 
 If you apply a color scheme to a set of public or private pages it is, by
 default, applied to each page in the set. If, however, you open the Manage Pages
 dialog box for a particular page, you can select *Define a specific look and
 feel for this page* to make the color scheme apply to this page only. You can
 use this feature to choose a different color scheme for a particular page than
-the one defined for the set of public or private pages to which it belongs.
+the one defined for the set of public or private pages to which it belongs. 
 
 There are a few more configurable settings for your theme. You can switch the
 bullet style between dots and arrows and you can choose whether or not to show
@@ -316,7 +316,7 @@ designed for the smaller screens on phones.
 
 The *CSS* section allows you to enter custom CSS that will also be served up by
 your theme. In this way, you can tweak a theme in real time by adding new styles
-or overriding existing ones.
+or overriding existing ones. 
 
 The next option configures the logo that appears for your site. 
 
@@ -371,37 +371,37 @@ of a specific URL will all be considered references to the same page.]
 
 ---
 
-**Look and Feel:** lets you set a page-specific theme.
+**Look and Feel:** lets you set a page-specific theme. 
 
 **Layout:** lets you specify how portlets are arranged on a page. Choose from
 the available installed templates to modify the layout. It's very easy for
 developers to define custom layouts and add them to the list. This is covered
 more thoroughly in both the *Liferay Developer's Guide* and in [*Liferay in
-Action*](http://manning.com/sezov).
+Action*](http://manning.com/sezov).  
 
 **JavaScript:** gives you the ability to paste custom JavaScript code to be
-executed on this page.
+executed on this page. 
 
 **Custom fields:** If custom fields have been defined for pages (which can be
 done from the *Custom Fields* page of the Control Panel), they appear here.
 These are metadata about the page and can be anything you like, such as author
-or creation date.
+or creation date. 
 
 **Advanced:** contains several optional features. You can set a query string to
 provide parameters to the page. This can become useful to web content templates,
 which you'll see in the next chapter. You can set a target for the page so that
 it either pops up in a particularly named window or appears in a frameset. And
-you can set an icon for the page that appears in the navigation menu.
+you can set an icon for the page that appears in the navigation menu. 
 
 **Mobile Rule Groups:** allows you to apply rules for how this page should be
 rendered for various mobile devices. You can set these up in the *Mobile Device
-Rules* section of the Control Panel.
+Rules* section of the Control Panel. 
 
 **Customization Settings:** lets you mark specific sections of the page you want
 users to be able to customize.
 
 Note that the *Manage &rarr; Page Layout* menu directs you to the same Layout
-tab that's in *Manage &rarr; Page*.
+tab that's in *Manage &rarr; Page*. 
 
 #### Modifying Page Layouts [](id=lp-6-1-ugen02-modifying-page-layouts-0)
 
@@ -426,7 +426,7 @@ This portlet is a container for other portlets. It lets you select from any of
 the layouts installed in Liferay, just like the layouts for a page. This gives
 you virtually unlimited options for laying out your pages.
 
-The next option in the *Manage* menu is page customizations.
+The next option in the *Manage* menu is page customizations.  
 
 #### Page Customizations [](id=lp-6-1-ugen02-page-customizations-0)
 
@@ -457,14 +457,14 @@ for the site as a whole.
 #### Configuring Site Settings [](id=lp-6-1-ugen02-configuring-site-settings-0)
 
 As with Site Pages, you can access Site Settings through the Control Panel or
-directly from the site using the Dockbar (*Manage* &rarr; *Site Settings*).
+directly from the site using the Dockbar (*Manage* &rarr; *Site Settings*). 
 
 ![Figure 2.8: Site Settings](../../images/web-content-site-settings.png)
 
 You'll find options to specify details and metadata about your site, set up
 friendly URLs and virtual hosts, configure search engine optimization settings,
 turn staging on or off and specify a Google Analytics ID. Let's take a closer
-look.
+look. 
 
 **Details:** allows an administrator to change the description and membership
 type of a site and also to specify tags and categories for the site. The
@@ -473,14 +473,14 @@ needs of the site. Users can join and leave an open site at will. To join a
 restricted site, a user has to be added by the site administrator. A user can
 also request to be added through the Sites section of the Control Panel. A
 private site is like a restricted site but doesn't appear in the Sites section
-of the Control Panel for users who aren't members.
+of the Control Panel for users who aren't members.  
 
 **Pages:** From Site Settings, click on *Pages* to manage some basic features of
 the pages on a site. If no pages have been defined yet, you can set site
 templates for the public or private pages. If pages already exist, links are
 provided to view them. You can also change the site's application adapter, which
 is a special type of hook plugin that customizes out of the box functionality
-for specific sites.
+for specific sites. 
 
 **Site URL:** Set a friendly URL and/or a virtual host for your site here. The
 *Friendly URL* option lets you manage the path to your site in the portal's URL.
@@ -488,14 +488,14 @@ Friendly URLs are used for both public and private pages. For public pages, the
 friendly URL is appended to http://localhost:8080/web. For private pages, the
 friendly URL is appended to http://localhost:8080/group. Each friendly URL needs
 to be a unique name, of course. Having a human-readable friendly URL assists
-indexing bots and is critical to good search engine optimization.
+indexing bots and is critical to good search engine optimization. 
 
 For example, suppose you were creating a portal for a bank called the Best Bank.
 If you set the friendly URL of your portal's default site to /best-bank, the URL
 of your default site's public home page would change to
 http://localhost:8080/web/best-bank/home. If your portal's default site had
 private pages, the URL of the default private home page would change to
-http://localhost:8080/group/best-bank/home.
+http://localhost:8080/group/best-bank/home. 
 
 Note that if you're adding a friendly URL for your portal's home page, you
 should update your portal's Home URL field so that page requests to
@@ -545,7 +545,7 @@ the *Preview* link to see the generated XML.
 **Robots:** If you're using virtual hosting for this site, you can configure
 `robots.txt` rules for the domain. The Robots page gives you the option to
 configure your `robots.txt` for both public and private pages on a site. If you
-don't have Virtual Hosting set up, this tab is rather boring.
+don't have Virtual Hosting set up, this tab is rather boring. 
 
 **Staging:** enables you to edit and revise a page behind the scenes, then
 publish changes to your site once they have been completed and reviewed. For a
@@ -573,14 +573,14 @@ enable you to preconfigure a single page and then apply it to any new page you
 create. Site Templates allow you to do the same thing but on the scale of a
 site--if you have multiple sites that use a similar structure of pages, you can
 create a single site template and use it to create as many sites as desired. For
-a full explanation of Page Templates and Site Templates, see chapter 3.
+a full explanation of Page Templates and Site Templates, see chapter 3. 
 
 #### Site Content [](id=lp-6-1-ugen02-site-content-0)
 
 Liferay 6.1 makes it easier to access Web Content management without using the
 Control Panel. You can now click *Manage* and then *Site Content* to access the
 same Web Content controls featured in the Control Panel right from your portal
-page.
+page. 
 
 ![Figure 2.9: Site Content](../../images/web-content-site-content.png)
 
@@ -601,7 +601,7 @@ You can manage the following kinds of content:
 - Social Equity
 - Dynamic Data Lists
 
-For details about Liferay's social collaboration suite, see chapter 10.
+For details about Liferay's social collaboration suite, see chapter 10. 
 
 ### Creating the Nose-ster pages [](id=creating-the-nose-ster-pages)
 
@@ -612,7 +612,7 @@ Dockbar and clicking *Go to &rarr; Nose-ster*.
 We'll use the *Community* page you created earlier in the chapter. Navigate to
 the *Community* page and select *Manage &rarr; Page* from the Dockbar.
 
-This screen should now be familiar to you but let's recap.
+This screen should now be familiar to you but let's recap. 
 
 The Page tab allows you to:
 
@@ -637,7 +637,7 @@ Developers can create themes which have cascading menu bars which show the full
 hierarchy. Some examples of that are in Liferay's plugin repositories.
 
 For now, click *Return to full page*. You should be able to define and manage
-pages in Liferay at this point so let's look at what you'd put on a page.
+pages in Liferay at this point so let's look at what you'd put on a page. 
 
 #### Portlets [](id=lp-6-1-ugen02-portlets-0)
 
@@ -655,7 +655,7 @@ Adding portlets to a page is simple. Let's add some to our Collaboration page.
 See how easy it is to add applications to your pages? We've gone one step
 further: we've got the Wiki portlet, the Blogs Aggregator portlet and then a
 nested portlet with a different layout and the Alerts, Search and Dictionary
-portlets in the figure below.
+portlets in the figure below. 
 
 ![Figure 2.10: Yeah, we're showoffs. But as you can see, your page layout
 options are virtually
@@ -760,7 +760,7 @@ a specific site or globally across the portal. The Content section of the
 Control Panel displays as its heading the name of the site you're currently
 working on. This heading is called the *context menu selector*: you can change
 the scope of where you'd like to view, edit or create content by using the
-drop-down selector attached to the heading.
+drop-down selector attached to the heading. 
 
 ### Rich, WYSIWYG Editing [](id=lp-6-1-ugen03-rich-wysiwyg-editing-0)
 
@@ -809,8 +809,8 @@ can be viewed and manipulated in the Documents and Media portlet.
 If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can
 click the *Source* button and write your own HTML if you wish.
 
-On the right of the New Web Content form is a menu of options that allows you to
-customize your web content.
+On the right of the New Web Content form are options that allow you to
+customize your web content. 
 
 ![Figure 2.15: New web content can be customized in various ways using the menu
 on the right.](../../images/wcm-abstract.png)
@@ -820,24 +820,26 @@ also pair the text with a small image.
 
 **Categorization:** specifies the content type from a list of options. They are
 *Announcements*, *Blogs*, *General*, *News*, *Press Release*, and *Test*. You
-can also create tags to make the content easier to find in a search.
+can also create tags to make the content easier to find in a search. Note that
+these categories are defined by a property in the properties file; see the
+`journal.article.types` property in chapter 20 for further information. 
 
 **Schedule:** customizes the date and time your content publishes and/or
 expires.
 
-**Display Page:** lets you determine where the web contents will be displayed
-when linked from other pages. The concept of the Canonical URL is new to Liferay
-6.1. The Canonical URL is unique for articles that will redirect the visitor to
-the default display page of the article.
+**Display Page:** lets you determine where the web contents are displayed when
+linked from other pages. The concept of the Canonical URL is new to Liferay 6.1.
+The Canonical URL is unique for articles that redirect the visitor to the
+article's default display page. 
 
 Imagine you have a newspaper with a sports section and a technology section. You
 add a Sports page and a Tech page to your site, each one with a specific banner
 and look and feel. You want the articles to appear in the appropriate pages, but
 you know in Liferay articles are not related to pages. You can add an article as
 often as you like in different web content display portlets or in configured
-Asset Publishers. But if you have a *View in context* link where will you show
-your article? This is where the default display page comes in. Each article
-defined with a default display page will be shown with other related articles in
+Asset Publishers. But if you have a *View in context* link, where will you show
+your article? This is where you'd use a default display page. Articles that have
+a default display page defined are shown with other related articles in
 the same display page.
 
 Imagine you have 100 sports articles and 100 tech articles. In previous versions
@@ -847,20 +849,20 @@ in a consistent fashion.
 
 ##### Creating a display page
 
-There are two ways of creating a display page. You can configure a *Content
-Display Page* template, which automatically creates everything you need, or you
-can create one manually. The Content Display Page template is found under *Page
+There are two ways of creating a display page. You can use a *Content Display
+Page* template, which automatically creates everything you need, or you can
+create one manually. The Content Display Page template is found under *Page
 Templates* in the Portal section of the Control Panel.
 
-To create a display page manually, add an Asset Publisher to a page. Then
-configure it to be the Default Asset Publisher of the page. This directs the
-system where to display the content if several Asset Publishers are in the same
+To create a display page manually, add an Asset Publisher to a page. Then make
+it the Default Asset Publisher for the page. This defines this Asset Publisher
+as the one that displays the content if several Asset Publishers are on the same
 page. Set this up by clicking *Configuration* on your Asset Publisher. Under the
 *Setup* tab, navigate to *Display Settings* and check the checkbox labeled *Set
 as the Default Asset Publisher for This Page*.
 
-Once you've given an article its default display page, the article's links will
-redirect the user to its default display page. To see how this works add an
+Once you've given an article its default display page, links to the article 
+redirect the user to its default display page. To see how this works, add an
 Asset Publisher to another page, like the Home page of the newspaper, and
 configure it to *View in a Specific Portlet*. This setting is found in the
 *Asset Link Behavior* menu under Display Settings. If you click on the link,
@@ -870,12 +872,13 @@ You now see that the link looks something like this:
 
 www.nosester.com/nose-article
 
-This is an example of a canonical URL and it's a nice enhancement for SEO
-because it helps guide search engines to the most relevant pages and discard
-other pages. And if you decide to move the content to another page in the
-future, the URL makes it easier for search engines to find it. This feature is
-used in search results, in related assets and in Asset Publishers. For more
-information on Liferay's Display Pages, see chapter 5.
+This is an example of a canonical URL, and it's a nice enhancement for Search
+Engine Optimization (SEO) because the article's URL becomes the page URL. To a
+search engine that's crawling your site, this means that the location of your
+article never changes. And if you decide to use the content on another page in
+the future, the article is still available at this URL. This feature is used in
+search results, in related assets and in Asset Publishers. For more information
+on Liferay's Display Pages, see chapter 5.
 
 **Related Assets:** enables you to connect any number of assets within a site or
 across the portal, even if they don't share any tags and aren't in the same
@@ -886,7 +889,7 @@ a Wiki Page.
 ![Figure 2.16: This blog entry has links to three Related Assets: one web
 content display and two blog entries.](../../images/related-assets-link.png)
 
-You'll learn how to display links to related assets using the Related Assets
+You'll learn how to publish links to related assets using the Related Assets
 portlet in the *Defining content relationships* section of chapter 5.
 
 **Permissions:** customize who has access to the content. By default, content is
@@ -896,8 +899,8 @@ provides the ability to customize permissions in more detail. Select the *More
 Options* link next to the drop down button and you'll find the different
 activities you can grant or deny to your web content.
 
-![Figure 2.17: Permissions for Web Content allow you to fine-tune the access of
-your content.](../../images/04-web-content-content-permissions.png)
+![Figure 2.17: Permissions for Web Content allow you to fine-tune how your
+content is accessed.](../../images/04-web-content-content-permissions.png)
 
 **Custom fields:** customize metadata about the web content. The fields can
 represent anything you like, such as the web content's author or creation date.
@@ -930,7 +933,7 @@ Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 Once the portlet appears, drag it to the position on the page where you want
 your content to appear. You can have as many Web Content Display portlets on a
 page as you need, which gives you the power to lay out your content exactly the
-way you want it.
+way you want it. 
 
 To add existing web content, select the *gear* icon on the lower left of the
 portlet. You will see the message *Please select a web content from the list
@@ -988,10 +991,10 @@ you may want to add content directly into the Web Content Display portlet of the
 page you're managing, especially if you are in the process of building the page.
 At other times, you may want to use the Control Panel to create content, because
 at that moment you're more concerned with the creation of the content and not
-where the content will later be displayed. Liferay WCM supports both processes.
+where the content will later be displayed. Liferay WCM supports both processes. 
 
 Editing content that's already been published is just as easy as creating new
-content is. You'll use the same exact tools.
+content is. You'll use the same exact tools. 
 
 ##### Editing Content [](id=lp-6-1-ugen03-editing-content-0)
 
@@ -1013,13 +1016,13 @@ Note: if you want to view your page the way your users will see it (i.e.,
 without all those portlet controls and icons), go up to the Dockbar and select
 *Toggle Edit Controls*. This makes all those extra controls you see as a portal
 administrator disappear. If you need to use those controls again, just select
-*Toggle Edit Controls* again.
+*Toggle Edit Controls* again. 
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
 Liferay's WCM, you'll want to use structures and templates found in chapter 3.
 Next, let's see how you can manage your content with an approval process called
-workflow.
+workflow. 
 
 ## Using Liferay's workflow with WCM
 [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
@@ -1043,7 +1046,7 @@ reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's
 Workflow engine. To have a review process for staged pages, you need to make
 sure you have a workflow engine configured and you have staging set up in the
 workflow. To do this, select the workflow definition desired for page revisions
-in the Workflow Configuration.
+in the Workflow Configuration. 
 
 When using a workflow, clicking *Submit for Publication* submits the staged
 pages into the workflow. Once all necessary approvals have been completed, the
@@ -1129,7 +1132,7 @@ We've seen how to create and manage pages within a site in Liferay. We've also
 seen how easy it is to create and edit web content using Liferay's rich WYSIWYG
 editor. This powerful tool enables users who don't have much experience with
 HTML and CSS to easily create and style web content of any type that you'd like
-to publish on the web.
+to publish on the web. 
 
 Liferay WCM also includes a powerful workflow engine, allowing you to set up
 custom publishing rules to fit your organization. You can set up custom approval

@@ -169,19 +169,19 @@ default, indexing is turned off.
 **Predefined Value:** If there's a common default value for this field, type it
 here.
 
-**Instructions for the User:** You can type instructions in the field and
-display them as a tooltip by checking the box.
+**Instructions for the User:** Check this box and type a description of what the
+field is for to display it as a tooltip for the user. 
 
 **Repeatable:** If you want this field to be a repeatable element, check this
-box. Your users will then be able to add as many copies of this field as they
-like. For example, if you're creating a structure for articles, you might want a
+box. Your users can then add as many copies of this field as they like. For
+example, if you're creating a structure for articles, you might want a
 repeatable Author field in case you have multiple authors for a particular
 article.
 
 **Required:** Check the box to mark the field required. If a field is required,
-users cannot submit content using this structure without filling out this field.
+users must enter a value for it in order to submit content using this structure. 
 
-For the Nose-ster structure, type something in the *Instructions for the User*
+For the Nosester structure, type something in the *Instructions for the User*
 field that helps users know what to put into the Body element (example: *this is
 an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
@@ -189,13 +189,13 @@ instructions are displayed.
 
 ##### Structure Default Values
 
-New for Liferay 6.1 is the *Structure Default Values* feature. This allows you
-to create one structure that uses common data for multiple articles.
+Structure Default Values allow you to create one structure that uses common data
+from multiple articles.
 
 Returning to our newspaper scenario again, let's say you want all sports
 articles to have the same display page (sports page), the same categories, or the
-same set of tags. Instead of adding them for each article, or wondering if your
-users are adding them to every web content, you add these characteristics once
+same set of tags. Instead of adding them for each article or wondering if your
+users are adding them to every web content, you can add these characteristics once
 for every sports article by creating default values for the structure. There are
 two ways to edit structure default values: creating a new structure or editing
 an existing structure.
@@ -204,11 +204,14 @@ For a new structure, you must first create the structure before editing its
 default values. Navigate to *Web Content* in the Control Panel and click the
 *Structures* tab, then select the *Add Structure* button. Under the *XML Schema
 Definition* section of the new structure form, use the *Add Row* button to
-create different types of fields for the structure. The *Launch Editor* button
-allows you to edit the XML for the structure. When you are done, click *Save and
-Continue* to go to the Structure Default Values form.
+create different types of fields for the structure. Or you can use the editor to
+create the structure manually: the Launch Editor button allows you to edit the
+XML for the structure if you wish to do it via code. When you are done, click
+*Save and Continue* to go to the Structure Default Values form.
 
-![Figure 3.2: You can create fields for structure default values via the XML Schema Definition section of the new structure  form.](../../images/xml-schema-definitions.png)
+![Figure 3.2: You can create fields for structure default values via the XML
+Schema Definition section of the new structure
+form.](../../images/xml-schema-definitions.png)
 
 To edit an existing structure, go to *Web Content* in the Control Panel and
 click the *Structures* tab to see the structures list. Find the *Actions* button
@@ -218,7 +221,7 @@ settings.
 
 ![Figure 3.3: You can edit default values via the Actions button of the structure  form.](../../images/structure-default-values-sports.png)
 
-Every new web content you create with this structure will be preloaded with the
+Every new web content you create with this structure is preloaded with the
 data you inserted.
 
 As with everything else in Liferay, you can set permissions on structures. Let's
@@ -401,9 +404,11 @@ social scenarios, Liferay's sites provide three membership types:
 
 - Open: Users can become members of the site at any time. Users can join sites
 from the *My Sites* portlet.
+
 - Restricted: Users can request site membership but site administrators must
 approve requests in order for users to become members. Requests can be made from
 the *My Sites* portlet.
+
 - Private: Users are not allowed to join the site or request site membership.
 Private sites don't appear in the *My Sites* portlet. Site administrators can
 still manually select users and assign them as site members.
@@ -555,7 +560,11 @@ propagated to existing sites that are linked to the site template.
 
 ---
 
-![tip](../../images/01-tip.png) **Tip:** If you want to publish a piece of web content to many sites and ensure modifications are applied to all, don't use site template content for that purpose. Instead, place the content in the global scope and then reference it from a *Web Content Display* application in each site.
+![tip](../../images/01-tip.png) **Tip:** If you want to publish a piece of web
+content to many sites and ensure modifications are applied to all, don't use
+site template content for that purpose. Instead, place the content in the global
+scope and then reference it from a *Web Content Display* application in each
+site.
 
 ---
 
