@@ -211,7 +211,7 @@ You will want to use the Software Catalog if you will have multiple users
 submitting portlets into the repository and if you don't want to worry about
 creating the `liferay-plugin-repository.xml` file yourself.
 
-![Figure 12.1: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
+![Figure 12.8: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
 
 Each site in your portal can have an instance of the Software Catalog. The
 Control Panel presents you with the software catalog for whichever site you are
@@ -224,7 +224,7 @@ site you were on when you selected the Control Panel from the dockbar. If you
 want to administer the software catalog for a different site, you can select it
 from the selection box.
 
-![Figure 12.2: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
+![Figure 12.9: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
 
 The Software Catalog has several tabs. The first tab is labeled Products. The
 default view of the portlet, when populated with software, displays what plugins
@@ -271,7 +271,7 @@ To create the product record in the Software Catalog portlet, click the
 *Products* tab, then click the *Add Product* button. Fill out the form with
 information about your product.
 
-![Figure 12.3: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
+![Figure 12.10: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
 
 **Name:** The name of your software product.
 
@@ -352,7 +352,7 @@ our example, we have entered 6.0.3 for the name, because our portlet should work
 on that version and higher, and [http://www.liferay.com](http://www.liferay.com)
 for the URL. Click *Save*.
 
-![Figure 12.4: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
+![Figure 12.11: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
 
 Now go back to the *Products* tab and click on your product. You will notice a
 message is displayed stating the product does not have any released versions.
@@ -573,7 +573,7 @@ your site, although it might be preferable to dedicate an entire page to the
 application depending on how many items you have to sell. The Shopping portlet
 is available from the *Add* -> *More* menu in the task bar under Shopping.
 
-![Figure 12.5: Start setting up the store by entering items and categories in
+![Figure 12.12: Start setting up the store by entering items and categories in
 the shopping portlet.](../../images/shopping-add-portlet.png)
 
 The shopping portlet has the following four tabs across the top:
@@ -588,9 +588,9 @@ Updating the Cart, Emptying the Cart, and Checking out.
 **Orders:** displays a list of all orders placed with options to Search for
 orders by the order Number, Status, First Name, Last Name and/or Email Address.
 
-**Coupons:** allows you to enter data related to a discount: the coupon Code,
+**Coupons:** allows you to enter data related to a discount. You can enter the coupon Code,
 Discount Type, and whether it is Active or not. Search looks for a particular
-coupon offer while Add Coupon opens a new form to enter the coupon data. Delete
+coupon offer while Add Coupon opens a new form to key in the coupon data. Delete
 removes a coupon.
 
 Below the tabs are breadcrumbs for navigating between the categories and
@@ -603,16 +603,16 @@ It's not difficult to create categories. Simply click the *Add Category* button
 to display the Category form. In this form enter the *Name*, *Description*, and
 set the *Permissions* for the category. That's all there is to it.
 
-![Figure 12.6: In this figure there are three subcategories for the
+![Figure 12.13: In this figure there are three subcategories for the
 `Aromatherapy` category. The first subcategory has three items, the second has
-two, and the thrid is empty.](../../images/shopping-categories.png)
+two, and the third is empty.](../../images/shopping-categories.png)
 
 When you select *Save*, you will see your new category listed in the portlet,
 along with the *# of Categories* and the *# of Items* that are in the category.
 You can edit the category, set permissions for it or delete it using the
-*Action* button.
+*Actions* button.
 
-![Figure 12.7: Breadcrumbs are an important navigational tool in the shopping 
+![Figure 12.14: Breadcrumbs are an important navigational tool in the shopping 
 portlet.](../../images/shopping-category-breadcrumbs.png)
 
 Each category can have unlimited subcategories and you can add subcategories to
@@ -634,11 +634,11 @@ characteristics for the item. These can include things like sizes and colors.
 The additional fields appear in the item form as pull-down menus, as in the
 figure below.
 
-![Figure 12.8: The additional fields you create for an item appear in the item
-description form as options.](../../images/shopping-item-options.png)
+![Figure 12.15: The additional fields you create for an item appear in the item
+description form as menu options.](../../images/shopping-item-options.png)
 
 The Prices area of the new item form is where you enter all data pertaining to
-the item's cost, minimum and maximium quantities, quantity discounts, taxes, and
+the item's cost, minimum and maximum quantities, quantity discounts, taxes, and
 shipping costs.
 
 The Images area of the form allows you to add photos to the item form. You can
@@ -646,21 +646,21 @@ add a link to the photo or upload the file locally. Choose from three sizes of
 images. You must select the appropriate checkbox for the image you want to
 display. When you are finished creating a new item, click *Save*.
 
-![Figure 12.9: The image in this figure is the medium sized option.](../../images/shopping-item-image.png)
+![Figure 12.16: The image in this figure is the medium sized option.](../../images/shopping-item-image2.png)
 
-As items are added, they will be listed in the Items section of the portlet. If
-the item you just created needs to go into one of your new cateogries or
+As products are added, they will be listed in the Items section of the portlet. If
+the item you just created needs to go into one of your new categories or
 subcategories, you can assign it to the category through editing form. Choose
 the *Select* button, next to the *Remove* button, and this displays a dialog box
 listing all the shop categories.
 
-![Figure 12.10: To put an item in a category, open *Edit* and choose *Select* to
+![Figure 12.17: To put an item in a category, open *Edit* and choose *Select* to
 see the available options.](../../images/shopping-select-categories.png)
 
 *Choose* the desired category from the list to relocate the item to it's new
 location. Notice how the breadcrumbs reflect this change in the item form.
 
-![Figure 12.11: When an item moves into a category, the breadcrumb navigation
+![Figure 12.18: When an item moves into a category, the breadcrumb navigation
 will update accordingly.](../../images/shopping-item-breadcrumb-change.png)
 
 Any changes that need to be made to the item can be executed through *Actions*
@@ -672,8 +672,8 @@ shopping portlet's configuration options.
 
 ### Configuration
 
-By selecting the *wrench* icon in the top right of the portlet, you can
-configure the shopping application. In the Setup view, there are tabs for
+By selecting the *wrench* icon in the top right of the portlet, you can manage the
+configuration options of the shopping application. In the Setup view, there are tabs for
 Payment Settings, Shipping Calculation, Insurance Calculation, and Emails.
 
 #### Payment Settings
@@ -682,9 +682,9 @@ The payment settings section is where you configure all the functions related to
 transactions for your store.
 
 **PayPal Email Address:** is the address of your store's PayPal account where
-all sales will flow.
+all sales transactions will be directed.
 
-PayPal can be disabled by entering a blank PayPal address in the field. Credit
+Note that PayPal can be disabled by entering a blank PayPal address in the field. Credit
 cards can likewise be disabled. Payments to the store are not required when
 these settings are disabled.
 
@@ -698,29 +698,28 @@ displayed on the form.
 
 **Currency:** sets the appropriate currency your shop accepts.
 
-**Tax State:** sets the applicable state where your business is based for tax
-purposes.
+**Tax State:** sets the applicable state where your business is responsible for paying taxes.
 
 **Tax Rate:** sets the percentage of taxes your store is responsible for paying.
 
-**Minimum Order:** sets the amount for the minimum order required for a sale.
+**Minimum Order:** sets the minimum amount required for a sale.
 
 #### Shipping and Insurance Calculation
 
-The Shipping and the Insurance forms have identical options.
+Both the Shipping and Insurance forms have identical options.
 
 **Formula:** sets the equation for determining shipping and insurance costs.
 They're calculated on either a flat rate based on the total purchase amount or
 on a percentage of the total amount spent.
 
 **Values:** sets the shipping and insurance fees based on a range of figures
-that the order amount falls under.
+that the total order amount falls under.
 
 #### Emails
 
-This form sets the addresses for customer email notifications.
+This form sets the addresses for customer email notifications. Use the list of term definitions below to customize your correspondence with your customers.
 
-![Figure 12.12: Shopping emails can be configured in a myriad of ways to suit
+![Figure 12.19: Shopping emails can be configured in a myriad of ways to suit
 your needs.](../../images/shopping-confirmation-email-form.png)
 
 **Emails From:** sets the customers name and email address for basic
@@ -730,60 +729,53 @@ correspondence.
 customers about their orders. It could be used, for example, to let customers
 know their transaction has been received and is being processed.
 
-**Shipping Email:** is the form the store uses to allert customers that their
+**Shipping Email:** is the form the store uses to notify customers that their
 orders have been shipped.
 
-Now that we have your store set up the way you want it, let's walk through the
-buying process.
+So far we have added the shopping portlet to your site, created categories and items for your store, set up payment options, and configured customer communication options. These are the basics required to get your store up and running. Now let's review the buying process.
 
 ### Using the shopping cart
 
-Logged in users are given a shopping cart to store the items they wish to buy,
-allowing them to purchase multiple items at once.
+Logged in users are given a shopping cart to store the items they wish to buy. Customers can manage items and their quantities directly from the cart, allowing them to purchase a single product or multiple products at once. Customers can also key in coupon codes to take advantage of any discounts your store has to offer. Products can be placed in the cart form any category or subcategory. The cart's appearance can be customized to reflect the overall design of your store.
 
-When buyers select an item from a category they see the item's description
-displaying all of its relevant information.
+When buyers select an item, they see the item's description displaying all of its relevant information. The figure below is typical of what an item's description might look like.
 
-![Figure 12.13: You can include images of each item in your store. (Medium sized
+![Figure 12.20: You can include images of each item in your store. (Medium sized
 images display on the item's description form).](../../images/shopping-item.png)
 
-Below the description is a field indicating the item's availability plus other
-options, if applicable. There is the
+Below the product description is the *Availability* field indicating whether the item is in stock. There are also two buttons for managing the shopping experience:
 
 **Add to Shopping Cart:** places the item in your cart for checkout.
 
 **Next:** lets you to scroll through all the items in the category, giving you
 the option to add to the cart as you go.
 
-After adding an item to the cart, click *<< Back* to return to the item
-description and continue shopping by navigating the category breadcrumbs.
+After adding an item to the cart, click *<< Back* to return to the product
+description and continue shopping by navigating the category breadcrumbs at the top of the form. You can also continue shopping by scrolling through the category, item by item, using the *Previous* and *Next* buttons at the bottom of the product description.
 
-![Figure 12.14: This shopping cart has two items in it so far.](../../images/shopping-cart-order.png)
+![Figure 12.21: This shopping cart has two items in it so far.](../../images/shopping-cart-order.png)
 
-Each time you add an item to the cart, you will see a running talley of the
+Each time you add an item to the cart, you will see a running tally of the
 cart's contents. Quantities for each item are controlled using drop-down menus.
-The order subtotal and shippinig costs are displayed above a field where coupon
-codes are entered. When you have finished adding to the cart, you have three
-options to choose from.
+The order subtotal and shipping costs are displayed above a field where coupon
+codes are entered. When you have finished adding products to the cart, you have three
+options to choose from:
 
 **Update Cart:** allows you to change the quantity of an item being purchased.
-If a minimum number of items has been set in the item description, the field
-will display that number in the cart by default. You can overide that with the
-drop-down menus.
+If a minimum number of items has been set in the item description, the field under the *Quantity* column will display that number by default. You can adjust the exact number of items you want with the drop-down menus in the cart.
 
 **Empty Cart:** allows you to clear the contents of the cart to either start
-shopping again or to quit.
+shopping again or to stop shopping.
 
-**Checkout:** sends you to a form to verify the billing address, shipping
+**Checkout:** sends you to a new form to verify the billing address, shipping
 address, and the credit card information. You can also add comments about the
 order if necessary.
 
-![Figure 12.15: All the information pertaining an order can be seen in the order 
+![Figure 12.22: All the information pertaining an order can be seen in the order 
 summary view.](../../images/shopping-order-summary.png)
 
 When all the data has been entered correctly, click *Continue* to see the order
-summary. After reviewing the order, click *Finished* and you will be given the
-order number.
+summary. After reviewing the summary, click *Finished* and you will be given confirmation the order has been placed and the order number. Use this number to search for the order history and keep track of its status. 
 
 #### Customizing the shopping cart with a hook
 
@@ -793,25 +785,25 @@ shopping cart, consult the *Liferay Developer's Guide* or see section 8.3 in
 [*Liferay in Action*](http://manning.com/sezov) called, Hooks in action:
 Inkwell’s shopping cart.
 
-Your online store is set up, you have inventory, you have a payment system, and
+Now your online store is set up, you have inventory, you have a payment system, and
 you have sales rolling in. All is good. Some day there will be customers with
 questions about their orders. Let's go over the orders next.
 
 ### Managing Orders
 
-Under the Orders tab there are fields for finding for specific orders. Search 
+Under the Orders tab there are fields for finding specific orders. Search 
 for orders using the order number, order status, first or last name on the order
 or by the email address associated with the account. For more information on 
 searching in Liferay Portal, see the Faceted Search section in chapter 5. 
 
-![Figure 12.x: Search for orders in the Orders view or select one from the list.](../../images/shopping-orders.png)
+![Figure 12.23: Search for orders in the Orders view or select one from the list.](../../images/shopping-orders.png)
 
 Below the search fields is the orders list. Orders can be deleted or edited
 using the *Actions* button. When you select an order from the Orders tab, or if 
 you edit an order, you see a summary of the order details along with some 
 options across the bottom.
 
-![Figure 12.x: Review order specifics in the Edit 
+![Figure 12.24: Review order specifics in the Edit 
 view.](../../images/shopping-order-detail.png)
 
 **Invoice:** creates a printer-friendly copy of the order that can be sent to a
@@ -820,7 +812,7 @@ customer.
 **Resend Confirmation Email:** allows you to notify the customer that the order
 has been received and is being processed.
 
-**Send Shipping Email:** notifies the customer that the order is en route.
+**Send Shipping Email:** notifies the customer that the order is en route. You can also include a tracking number with this email to allow the customer to follow the delivery process.
 
 **Delete:** removes the order from the system.
 
@@ -831,9 +823,9 @@ any updates on the order.
 
 ### Managing Coupons
 
-In the Coupons view of the Shopping application you key in data related to a discount offer that your store provides. You can determine the type of discount to apply and whether it is currently active. You can search for coupons and create new coupons from this form.
+The Coupons view of the Shopping application is where you key in data related to a discount offer that your store provides. You can determine the type of discount to apply and whether it is currently active. You can search for coupons and create new coupons from this form.
 
-![Figure 12.x: Create a coupon code automatically when you select the Autogenerate Code box.](../../images/shopping-coupon.png)
+![Figure 12.25: Create a coupon code automatically when you select the Autogenerate Code box.](../../images/shopping-coupon.png)
 
 To add a coupon, enter the coupon code in the *Code* field. If no code is
 specified, you can create one automatically by selecting the *Autogenerate Code*
@@ -841,7 +833,7 @@ checkbox. After entering the coupon's *Name* and *Description*, you can set the
 coupon's *Start* and *Expiration Dates*. Additional options allow you to set a
 coupon to *Never Expire* and make a coupon *Active*.
 
-![Figure 12.x: Customize your coupon parameters under Discounts and Limits.](../../images/shopping-coupon-discount-limits.png)
+![Figure 12.26: Customize your coupon parameters under Discounts and Limits.](../../images/shopping-coupon-discount-limits.png)
 
 Under the Discount section, you can set the minimum amount required for the
 discount to occur, the discount amount and the discount type. Types can be based
@@ -852,7 +844,7 @@ and/or SKU numbers.
 #### Integrating the Amazon Rankings portlet
 
 If your store sells books, you can use Liferay's Amazon Rankings application to 
-display them along side the main shopping portlet. Books are arranged in ascending order according to Amazon's Best Sellers Rank.
+display them alongside the main shopping portlet. Both of these are found in the Shopping category under *Add* -> *More* in the Control Panel. The Amazon Rankings application give you the opportunity to highlight the books in your store's inventory outside of the typical category structure. Books are arranged in ascending order according to Amazon's Best Sellers Rank. Book cover images displayed in the portlet come from the images in the product's description.
 
 ##### Setting up your Amazon Web Services account
 
@@ -862,7 +854,7 @@ You can get an Amazon License Key here:
 
 [https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/](https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/)
 
-Add the following lines to your portal-ext.properties file and populate the values for the assocaite tag, access key id and secret access key from your Amazon Web Services account. Ensure there are no spaces between the `=` sign and their values. 
+Add the following lines to your portal-ext.properties file and populate the values for the associate tag, access key id and secret access key from your Amazon Web Services account. Ensure there are no spaces between the `=` sign and their values. 
 
 	amazon.access.key.id=
 	amazon.associate.tag=
@@ -874,16 +866,16 @@ If your Amazon Web Services key is not set up properly in Liferay, it will affec
 
 ##### Setting up the Amazon Rankings portlet
 
-When you are done setting up the portal-ext.properties file, you can now specify what books you want to display in your store. Select *Configuration* from the Amazon Rankings portlet in
-the upper right corner. Go to the *Setup* tab and enter the International Standard Book Numbers (ISBNs) in the textbox field, separated by spaces. The portlet accepts 10-digit ISBNs and will not take ISBNs containing letters.
+When you are done setting up the portal-ext.properties file, you can choose what books you want to display in your store. Select *Configuration* from the Amazon Rankings portlet in
+the upper right corner. Go to the *Setup* tab and enter the International Standard Book Numbers (ISBNs) in the textbox, separated by spaces. The portlet accepts 10-digit ISBNs and will not take ISBNs containing letters.
 
-![Figure 12.x: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
+![Figure 12.27: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
 
-When you are finished setting up the rankings, books will display in the portlet similar to the example below. Clicking on the book's image will open the book's Amazon page.
+When you are finished setting up the rankings, books will display in the portlet similar to the example below. Clicking on the book's cover image will open the book's Amazon page.
 
-![Figure 12.x: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
+![Figure 12.28: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
 
-Now that you have a good grasp on Liferay's Shopping and the Amazon Rankings applications, let's go ahead and check out the Weather.
+Now that you have a good grasp on Liferay's Shopping and Amazon Rankings applications, let's go ahead and check out the Weather.
 
 ## Weather [](id=lp-6-1-ugen12-weather-0)
 
@@ -891,7 +883,7 @@ Now that you have a good grasp on Liferay's Shopping and the Amazon Rankings app
 
 Whether you're going from Los Angeles to La Paz, Mumbai to Moscow, Harare to
 Hong Kong or Dehli to Detroit you will always know the conditions on the ground
-when you use Liferay's Weather application. For EE cutomers only, it is
+when you use Liferay's Weather application. For EE customers only, it is
 available as a free download from Liferay's Marketplace.
 
 To get the application, go to the Marketplace Store in the Control Panel. Under
@@ -900,17 +892,17 @@ the Utility window and view a summary of the application. Follow the download
 instructions and the portlet will appear in your Application menu ready to
 deploy.
 
-![Figure 12.17: Is it raining at Grandma's house? You will know when you use the
+![Figure 12.29: Is it raining at Grandma's house? You will know when you use the
 Weather portlet.](../../images/weather-portlet.png)
 
 You can configure the portlet to display locations using the Preferences option.
 The Guest Preferences option allows you to create a default set of locations any
-user to your site can view. Locations can be entered as text or as a postal code
+unregistered visitor to your site can view. Locations can be entered as text or as a postal code
 and are linked to weather.com for the latest conditions. The search feature
 allows users to find cities not listed in the portlet. Temperature readings can
 be displayed as Celsius or Fahrenheit.
 
-Next, let's see what the Knowledge Base application has to offer.
+That's it for the Weather application. Next, let's see what the Knowledge Base application has to offer.
 
 ## Knowledge Base [](id=knowledge-base)
 
@@ -938,7 +930,7 @@ page, the Knowledge Base display portlet presents many of the same options to an
 administrator that are available from the Knowledge Base page of the control
 panel.
 
-![Figure 12.18: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
+![Figure 12.30: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
 
 You can use the four links at the top of the Knowledge Base display portlet to
 control what it displays.
@@ -962,7 +954,7 @@ the same as wiki pages: they must be created in HTML, not MediaWiki or Creole.
 Click the *Source* button in the editor to view the HTML source of what you've
 written or write some HTML yourself.
 
-![Figure 12.19: New Knowledge Base
+![Figure 12.31: New Knowledge Base
 Article](../../images/liferay-collaboration-kb-new-article.png)
 
 In addition to entering a title and creating content for your article, you can
@@ -981,7 +973,7 @@ which roles can add articles and templates, which are granted knowledge base
 administrator privileges, which can change permissions on articles, which can
 subscribe to articles and which can view templates.
 
-![Figure 12.20: Knowledge Base
+![Figure 12.32: Knowledge Base
 Permissions](../../images/liferay-collaboration-kb-permissions.png)
 
 Users may need to be granted access to the knowledge base page of the control
@@ -1003,7 +995,7 @@ one for templates. The articles tab shows all the articles in the knowledge base
 and lets you perform actions on them. The templates tab shows all the templates
 defined in the knowledge base and lets you perform actions on them.
 
-![Figure 12.21: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
+![Figure 12.33: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
 
 Administrators can perform the following actions on an article:
 
@@ -1036,7 +1028,7 @@ template basically functions like a starting point for the creation of certain
 types of articles. Click the *Add Template* button on the Templates tab of the
 Knowledge Base page of the Control Panel to create a new template.
 
-![Figure 12.22: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
+![Figure 12.34: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
 
 Navigate back to the templates tab of the Knowledge Base page of the control
 panel. You can perform the following actions on a template:
@@ -1052,7 +1044,7 @@ permissions on templates.
 
 *Delete:* lets you remove a template from the knowledge base.
 
-![Figure 12.18: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 12.35: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
@@ -1068,7 +1060,7 @@ a link to the configuration dialog box for the portlet. Click *Select Article*
 to choose an article to display. Pick an article and then click *Save*. When
 your page refreshes it will display the article in the portlet.
 
-![Figure 12.23: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
+![Figure 12.36: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the
 article it displays. There are also links at the top of the portlet users can
@@ -1096,7 +1088,7 @@ article belongs to. You can add any number of Knowledge Base section portlets to
 a page and you can configure each portlet to display articles from any number of
 sections.
 
-![Figure 12.24: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 12.37: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 The Knowledge Base section portlet has some additional configurations that allow
 an administrator to select a display style (title or abstract), an article
@@ -1112,7 +1104,7 @@ to navigation. The Knowledge Base Search portlet allows you to search for
 articles in the knowledge base. This portlet presents the search results to you
 in order from most relevant to least relevant.
 
-![Figure 12.25: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
+![Figure 12.38: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
 
 You can also use the Categories Navigation portlet in conjunction with the
 Knowledge Base display portlet. When both of these portlets are placed on a page
@@ -1120,7 +1112,7 @@ you can select a topic in the Categories Navigation portlet and the Knowledge
 Base display portlet will show all of the articles that match the topic. You can
 create topics from the Categories page of the Control Panel.
 
-![Figure 12.26: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+![Figure 12.39: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them.
 
@@ -1130,7 +1122,7 @@ In this chapter, we examined two Liferay utility applications: the Software
 Catalog and the Knowledge Base. The Software Catalog allows you to define a set
 of software items to make available to visitors to your portal. Remember that
 the Software Catalog will be replaced by Liferay Marketplace and will soon be
-deprecated. The Knowledge Base applicaton is an EE-only application that allows
+deprecated. The Knowledge Base application is an EE-only application that allows
 you to create articles and organize them into full books or guides that be
 published on your portal. Next, let's take a tour of the Liferay Marketplace and
 learn how to manage Liferay plugins.
