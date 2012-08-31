@@ -99,8 +99,7 @@ Personal sites are a dynamic feature of Liferay Portal. They allow users to
 manage and customize their own pages and content on your portal. Next, let's
 look at how users can customize applicatons.
 
-## Page Customizations [](id=lp-6-1-ugen06-page-customizations-0)
-[](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
+## Page Customizations [](id=lp-6-1-ugen06-page-customizations-0) [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
 
 Liferay 6.1 introduced the concept of page customizations. Administrators can
 designate public pages or sections of public pages to be customizable. When a
@@ -251,8 +250,7 @@ Drools Portlet is available through the Customer Portal.
 
 Let's examine the sample portlet to see how it works. 
 
-#### Configuring the sample Drools portlet [](id=lp-6-1-ugen06-configuring-the-sample-drools-portlet-0)
-[](id=lp-6-1-ugen07-configuring-the-sample-drools-portlet-0)
+#### Configuring the sample Drools portlet [](id=lp-6-1-ugen06-configuring-the-sample-drools-portlet-0) [](id=lp-6-1-ugen07-configuring-the-sample-drools-portlet-0)
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 

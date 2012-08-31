@@ -1,3 +1,4 @@
+
 # Management [](id=administering-liferay-portal)
 
 You know how all these retailers advertise themselves as a "one stop shop" for
@@ -204,7 +205,7 @@ the currently configured parent.
 
 ---
 
-![tip](../../images/01-tip.png) **Tip:** Note that you're already a member of
+![Tip](../../images/01-tip.png) **Tip:** Note that you're already a member of
 any organizations you create. By creating an organization, you become both a
 member and receive the Organization Owner role, which gives you full rights to
 the organization. You can, of course, add other users to this role to make them
@@ -273,10 +274,12 @@ Groups are most often used to achieve one of the following goals:
   a University portal, a user group could be created to group all teachers
 independently of their organization to make it easier to assign one or several
 roles at once to all the teachers.
+
 - Simplify membership to one or more sites by specifying a group of users. Using
   the previous example, all teachers could be members of the sites *University
 Employees* and *Students and Teachers Collaboration Site* by adding the
 *Teachers* user group as a member.
+
 - Provide predefined public or private pages to the users who belong to the user
   group. For example, the *Teachers* user group could be created to ensure the
 home page on all teachers' personal sites has the same layout and applications.
@@ -1184,7 +1187,7 @@ well. For First and Last names, enter `localhost` or the host name of your
 server. It cannot be an IP address.
 
 To export the key to a file, use the following command:
-    
+
     keytool -export -alias tomcat -keypass changeit -file server.cert
 
 Finally, to import the key into your Java key store, use the following command:
