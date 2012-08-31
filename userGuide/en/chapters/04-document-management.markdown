@@ -1,3 +1,4 @@
+
 # Document Management [](id=documents-and-media)
 
 Liferay's Documents and Media library provides a mechanism for storing files
@@ -17,8 +18,7 @@ metadata sets are an addition to, not a replacement for, the portal's system of
 tags and categories. Let's start exploring how to use the Documents and Media
 portlet.
 
-## Getting Started with the Documents and Media [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-0)
-[](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-portlet-0)
+## Getting Started with the Documents and Media [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-0) [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-portlet-0)
 
 The Documents and Media portlet is non-instanceable. This means that each page
 on your portal can host at most one such portlet. Furthermore, if you add
@@ -44,8 +44,7 @@ portlet window shows only documents that belong to the selected document type.
 When you add custom document types, which we discuss below, they are added to
 the filter list. Next, let's look at how to navigate around Documents and Media. 
 
-### Navigating the Documents and Media Portlet [](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0)
-[](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0)
+### Navigating the Documents and Media Portlet [](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0) [](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0)
 
 In the main window of the Documents and Media portlet, you can click on a
 document to view details about it. Its version number, version history, status,
@@ -182,8 +181,7 @@ sets, as well as the last times they were edited.
 **Metadata Sets:** shows you a list of defined metadata sets as well as their
 portal IDs.
 
-## Document Types and Metadata Sets [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
-[](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
+## Document Types and Metadata Sets [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0) [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
 
 Customizable document types and metadata sets are new features in Liferay 6.1.
 When a user assigns a document type to a document, the user is required to fill
@@ -353,8 +351,7 @@ they think the comment is unhelpful or misleading, they can click on the thumbs
 down icon. If you'd like to disable comment ratings for files within your
 portlet, uncheck the *Enable Comment Ratings* box.
 
-## Automatic Previews and metadata [](id=lp-6-1-ugen04-automatic-previews-and-metadata-0)
-[](id=lp-6-1-ugen04-automatic-preview-generation-0)
+## Automatic Previews and metadata [](id=lp-6-1-ugen04-automatic-previews-and-metadata-0) [](id=lp-6-1-ugen04-automatic-preview-generation-0)
 
 Whenever possible, Liferay 6.1 generates previews of documents added to the
 Documents and Media library. Out of the box, Liferay only ships with Java-based
@@ -409,8 +406,7 @@ falls back to a Flash player.
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for. 
 
-### Automatic extraction of RAW Metadata [](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0)
-[](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0)
+### Automatic extraction of RAW Metadata [](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0) [](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0)
 
 When adding new documents or viewing existing documents, a process is triggered
 automatically that extracts the file's metadata. The library used by this
@@ -419,8 +415,7 @@ process is TIKA and it's already included in Liferay out of the box.
 You can see the metadata when viewing the document, in the right side of the
 window.
 
-### Document type restrictions and workflow per folder [](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0)
-[](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0)
+### Document type restrictions and workflow per folder [](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0) [](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0)
 
 You can force users to add only certain document types to a folder. By default,
 child folders inherit the restrictions of their parent folder. You can change
@@ -735,8 +730,7 @@ Download the file again, and you'll see that it now says *second test*--your
 edit was uploaded to the server. You can be confident that this edit was also
 downloaded by all other Liferay Sync clients connected to your site.
 
-#### Demonstrating Liferay Sync Permissions [](id=lp-6-1-ugen04-demonstrating-liferay-sync-permissions-0)
-[](id=lp-6-1-ugen04-demonstrating-liferay-sync-permissions-0)
+#### Demonstrating Liferay Sync Permissions [](id=lp-6-1-ugen04-demonstrating-liferay-sync-permissions-0) [](id=lp-6-1-ugen04-demonstrating-liferay-sync-permissions-0)
 
 Liferay Sync uses the default Liferay permissions to determine which files and
 folders are synced to the user's machine. This means that whatever files a user

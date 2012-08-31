@@ -1,4 +1,5 @@
-# Installation and Setup [](id=installing-liferay)
+
+#  Installation and Setup [](id=installing-liferay)
 
 Liferay Portal is one of the most flexible applications on the market today with
 regard to application server environments. You can install Liferay Portal on
@@ -87,7 +88,8 @@ Liferay bundles contain the same directory structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder is
 called *Liferay Home* and we refer to it thoughout this documentation. 
 
-![Figure 14.1: Bundle directory structure](../../images/02-bundle-directory-structure.png) 
+![Figure 14.1: Bundle directory
+structure](../../images/02-bundle-directory-structure.png) 
 
 Inside this folder, there are folders for various purposes:
 
@@ -108,10 +110,12 @@ driver and then starting the application server. Let's use the Tomcat bundle as
 an example:
 
 1. Unzip the bundle to a location of your choice. 
+
 2. If you're setting up Liferay to be an actual server, copy your database's
    JDBC driver `.jar` to `[Tomcat]/lib/ext` (see the setup wizard section
    below). If you're setting up Liferay for demo purposes, you can skip this
    step. 
+
 3. Start Tomcat in the same way as you would if you had downloaded it manually.
    Tomcat is launched by way of a script which is found in its `bin` folder. If
    you drop to a command prompt and go to this folder, you can launch Tomcat via
@@ -211,7 +215,7 @@ reference for Liferay properties.
 
 ---
 
-![Note](../../images/tip.png) **Note:** To use database properties from a
+![Tip](../../images/tip.png) **Note:** To use database properties from a
 `portal-ext.properties` file you must disable the Setup Wizard by specifying
 `setup.wizard.enabled=false` in that `portal-ext.properties`.  Also, note that
 property values in `portal-setup-wizard.properties` (the file created in Liferay
@@ -235,7 +239,7 @@ can skip to the next section.
 
 ---
 
-![image](../../images/02-tip.png) **Note:** This is not the recommended set up
+![Tip](../../images/02-tip.png) **Note:** This is not the recommended set up
 for Liferay installations but is documented here so enterprises with more
 restrictive standards can install Liferay with more strict-—but
 suboptimal—-database settings. If it's at all possible, Liferay recommends that
@@ -428,7 +432,8 @@ For the adminstrator, you need to supply the following information:
 
 **Email:** the email address of the user that has the administrator account. 
 
-![Figure 14.2: Supply the information for your site and your site's administrative account in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure 14.2: Supply the information for your site and your site's
+administrative account in the setup wizard.](../../images/setup-wizard-1.png)
 
 Liferay supports just about all the leading databases today: 
 
@@ -469,7 +474,9 @@ driver class and the user credentials (see below). Most of this is filled out
 already; all you should need to do is supply the name of your database and the
 server it's running on, as well as the user credentials. 
 
-![Figure 14.3: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *nosester* to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure 14.3: Fill out the information for your database. We've chosen MySQL in
+this example and have created a database called *nosester* to hold our Liferay
+data.](../../images/setup-wizard-2.png)
 
 Once you've filled out the form, click *Finish Configuration*. You'll see a
 message stating that Liferay is being installed as it creates the tables and
@@ -495,7 +502,7 @@ wizard by adding this line to your *portal-ext.properties* file:
 
 ---
 
-![Note](../../images/02-tip.png) In Liferay 6.1 GA2 (both 6.1.1 CE and 6.1.20
+![Tip](../../images/02-tip.png) In Liferay 6.1 GA2 (both 6.1.1 CE and 6.1.20
 EE), the admin user test@liferay.com is created by the setup wizard even when a
 different user is specified. This means that two admin users are created:
 test@liferay.com and the specified user. Unless you're just installing Liferay
@@ -508,10 +515,10 @@ database has been created.
 
 You don't have to use the setup wizard to configure Liferay. The setup wizard
 behind the scenes creates a configuration file that you can create manually.
-Create a text file called `portal-ext.properties` in your Liferay Home folder. This file
-overrides default properties that come with Liferay. The first setting you'll
-override is the default configuration that points Liferay to the embedded HSQL
-database.
+Create a text file called `portal-ext.properties` in your Liferay Home folder.
+This file overrides default properties that come with Liferay. The first setting
+you'll override is the default configuration that points Liferay to the embedded
+HSQL database.
 
 As stated above, there are two ways to set up the connection:
 
@@ -653,17 +660,27 @@ consult the Mulesoft Tcat Server installation documents located at:
 
 [http://www.mulesoft.org/documentation/display/TCAT/Home](http://www.mulesoft.org/documentation/display/TCAT/Home)
 
--   [Installing Tcat Server on     Linux](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Linux)
--   [Installing Tcat Server on     Windows](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Microsoft+Windows)
--   [Installing Tcat Server on     Solaris](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Solaris)
--   [Installing Tcat Server on Mac OS     X](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Mac+OS+X)
--   [Adding Tcat Server Capabilities to an Existing Apache Tomcat     Install](http://www.mulesoft.org/documentation/display/TCAT/Add+Tcat+Server+Capabilities+to+an+Existing+Tomcat+Install)
+-   [Installing Tcat Server on
+    Linux](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Linux)
+
+-   [Installing Tcat Server on
+    Windows](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Microsoft+Windows)
+
+-   [Installing Tcat Server on
+    Solaris](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Solaris)
+
+-   [Installing Tcat Server on Mac OS
+    X](http://www.mulesoft.org/documentation/display/TCAT/Installing+Tcat+Server+on+Mac+OS+X)
+
+-   [Adding Tcat Server Capabilities to an Existing Apache Tomcat
+    Install](http://www.mulesoft.org/documentation/display/TCAT/Add+Tcat+Server+Capabilities+to+an+Existing+Tomcat+Install)
 
 First, download the Liferay Tcat bundle from the Liferay customer portal. You'll
 need two files:
 
 -   **Liferay Portal 6.1 EE Tcat Admin:** contains the Tcat administration
     console and Liferay Portal EE and all appropriate plugins.
+
 -   **Liferay Portal 6.1 EE Tcat Agent:** contains a vanilla Tomcat application
     server and the Tcat management agent.
 
@@ -689,7 +706,8 @@ installation choices, a "standard" or "custom" installation.
 You should select the "Custom" installation option to provide better control of
 where Tcat Server is installed.
 
-![Figure 14.5: Installation component selection](../../images/tcat-html_m230ba580.png)
+![Figure 14.5: Installation component
+selection](../../images/tcat-html_m230ba580.png)
 
 After selecting the custom installation option, the Tcat installer prompts you
 to select the desired components. 
@@ -729,7 +747,8 @@ may retain the above ports. However, if there are other installations, you will
 need to select new ports. For the purpose of this installation, we will assume
 the above ports are correct.
 
-![Figure 14.8: Windows service installation](../../images/tcat-html_7936c58a.png)
+![Figure 14.8: Windows service
+installation](../../images/tcat-html_7936c58a.png)
 
 To ensure the operating system starts the Tcat Server and Administrator Console,
 you must configure the Tcat Server process as a Windows service. The next step
@@ -762,14 +781,16 @@ appropriate license agreement. To execute the installer, make sure:
 Upon accepting the license agreement, the system presents you with two
 installation choices: a "standard" or "custom" installation.
 
-<!-- The following two figures are difficult to read and should be replaced with ones having more readable text.  -->
+<!-- The following two figures are difficult to read and should be replaced with
+ones having more readable text.  -->
 
 ![Figure 14.10: Installation type](../../images/tcat-html_766a1d6e.gif)
 
 You should select the "Custom" installation option to provide better control of
 where Tcat Server is installed.
 
-![Figure 14.11: Installation component selections](../../images/tcat-html_55494177.gif)
+![Figure 14.11: Installation component
+selections](../../images/tcat-html_55494177.gif)
 
 After selecting the custom installation option, the Tcat installer prompts you
 to select the desired components. 
@@ -803,7 +824,8 @@ Please select the desired installation directory for the Tcat Server. The
 offered default directory is different if the installation process has been
 started as root.
 
-<!-- The following figure is difficult to read and should be replaced with a better one.  -->
+<!-- The following figure is difficult to read and should be replaced with a
+better one.  -->
 
 ![Figure 14.13: Port configuration](../../images/tcat-html_5b760cd.gif)
 
@@ -820,7 +842,8 @@ For security considerations, Tcat runs as a non-root system user. If the
 username specified at this step does not exist, it's created as a system daemon
 user.
 
-<!-- The following three figures are difficult to read and should be replaced with better ones.  -->
+<!-- The following three figures are difficult to read and should be replaced
+with better ones.  -->
 
 ![Figure 14.15: Install service](../../images/tcat-html_mf7bb10c.gif)
 
@@ -851,7 +874,8 @@ First, extract the previously downloaded Liferay Portal 6.1 EE Tcat Admin into a
 temporary directory. Once extracted, locate the file `tcat-init.groovy` and the
 directory `tcat\_init`.
 
-![Figure 14.18: Liferay Portal Tcat packages](../../images/tcat-html_12074416.png)
+![Figure 14.18: Liferay Portal Tcat
+packages](../../images/tcat-html_12074416.png)
 
 The `tcat-init.groovy` file contains instructions for the TcatServer
 administration console to:
@@ -870,7 +894,9 @@ and administration scripts.
 Copy the `tcat-init.groovy` file and `tcat\_init` folder to the previously
 configured installation location.
 
-![Figure 14.19: The installation directory after copying the `tcat\_init` folder and `tcat-init.groovy` into the TcatServer installation directory.](../../images/tcat-html_mf987314.png)
+![Figure 14.19: The installation directory after copying the `tcat\_init` folder
+and `tcat-init.groovy` into the TcatServer installation
+directory.](../../images/tcat-html_mf987314.png)
 
 After successfully completing the installation on Windows, you should see a
 TcatServer entry in the Services console, similar to the screen shot below. 
@@ -886,7 +912,8 @@ during the installation process.
 
 <!--  We might want to replace this screen shot.  -->
 
-![Figure 14.21: Tcat service startup on Linux](../../images/tcat-html_352642da.gif)
+![Figure 14.21: Tcat service startup on
+Linux](../../images/tcat-html_352642da.gif)
 
 To start the Tcat Server Administration Console, execute the service script in
 `/etc/init.d`.
@@ -907,7 +934,8 @@ For example, if you have already installed the Tcat Server Administration
 Console to `C:\\TcatServer6`, you should perhaps install the managed server to
 `C:\\TcatServer6Managed`.
 
-![Figure 14.23: Managed server port configurations](../../images/tcat-html_66274d0c.png)
+![Figure 14.23: Managed server port
+configurations](../../images/tcat-html_66274d0c.png)
 
 During the managed server installation, as with the administration console
 installation, you will be prompted to configure the appropriate port numbers. If
@@ -968,7 +996,8 @@ Once you have logged into the administration console, you will be presented with
 a global dashboard that you may customize once you have dismissed the "Tcat
 Server - Quick Start" panel.
 
-![Figure 14.25: Customizable Tcat Admin Console](../../images/tcat-html_5d43770f.png)
+![Figure 14.25: Customizable Tcat Admin
+Console](../../images/tcat-html_5d43770f.png)
 
 First make sure that you have started the previously installed managed server.
 Clicking on the *Servers* tab in the console, you will see a server listed as
@@ -982,7 +1011,8 @@ If you choose to use *Register & Add To Group*, the server is added to the
 desired server group (e.g. Development). For the purpose of this guide, we'll
 register the server to the Development group.
 
-![Figure 14.26: Monitoring a registered server](../../images/tcat-html_34603e60.png)
+![Figure 14.26: Monitoring a registered
+server](../../images/tcat-html_34603e60.png)
 
 After registering the server, you will have access to view its health status,
 log files and more. Feel free to walk through the console to examine its
@@ -994,25 +1024,34 @@ More information is available at
 
 **Managing and Monitoring Servers**
 
--   [Using the Server Dashboard](http://www.mulesoft.org/documentation/display/TCAT/Server+Dashboard)
+-   [Using the Server
+    Dashboard](http://www.mulesoft.org/documentation/display/TCAT/Server+Dashboard)
 
--   [Working with Server Groups](http://www.mulesoft.org/documentation/display/TCAT/Working+with+Servers)
+-   [Working with Server
+    Groups](http://www.mulesoft.org/documentation/display/TCAT/Working+with+Servers)
 
--   [Monitoring Servers (View Apps, Threads,     etc)](http://www.mulesoft.org/documentation/display/TCAT/Monitoring+a+Server)
+-   [Monitoring Servers (View Apps, Threads,
+    etc)](http://www.mulesoft.org/documentation/display/TCAT/Monitoring+a+Server)
 
--   [Monitoring a JMX Agent](http://www.mulesoft.org/documentation/display/TCAT/JMX+Agent+Monitoring)
+-   [Monitoring a JMX
+    Agent](http://www.mulesoft.org/documentation/display/TCAT/JMX+Agent+Monitoring)
 
--   [Scripts to Save JMX Metrics to CSV     Files](http://www.mulesoft.org/documentation/display/TCAT/Saving+JMX+Metric+Data+to+CSV+Files)
+-   [Scripts to Save JMX Metrics to CSV
+    Files](http://www.mulesoft.org/documentation/display/TCAT/Saving+JMX+Metric+Data+to+CSV+Files)
 
 **Managing Tcat Web Applications**
 
--   [Monitoring Applications](http://www.mulesoft.org/documentation/display/TCAT/Monitoring+Applications)
+-   [Monitoring
+    Applications](http://www.mulesoft.org/documentation/display/TCAT/Monitoring+Applications)
 
--   [Deploying Applications](http://www.mulesoft.org/documentation/display/TCAT/Deploying+Applications)
+-   [Deploying
+    Applications](http://www.mulesoft.org/documentation/display/TCAT/Deploying+Applications)
 
--   [Using the Repository](http://www.mulesoft.org/documentation/display/TCAT/Managing+the+Repository)
+-   [Using the
+    Repository](http://www.mulesoft.org/documentation/display/TCAT/Managing+the+Repository)
 
--   [Setting Security on Repository Artifacts](http://www.mulesoft.org/documentation/display/TCAT/Setting+Security)
+-   [Setting Security on Repository
+    Artifacts](http://www.mulesoft.org/documentation/display/TCAT/Setting+Security)
 
 ### Deploying Liferay Portal [](id=lp-6-1-ugen11-deploying-liferay-portal-0)
 
@@ -1030,12 +1069,14 @@ There are two components in the Tcat Repository:
 -   **Applications:** deployable WAR files for web applications and Liferay
     Plugins. 
 
-![Figure 14.28: Tcat Repository: Applications](../../images/tcat-html_m4af27eb5.png)
+![Figure 14.28: Tcat Repository:
+Applications](../../images/tcat-html_m4af27eb5.png)
 
 To begin Liferay deployment, we must first create a Liferay license profile to
 be deployed to the managed server:
 
-![Figure 14.29: Creating a new workspace for Liferay license profile](../../images/tcat-html_m2d96341c.png)
+![Figure 14.29: Creating a new workspace for Liferay license
+profile](../../images/tcat-html_m2d96341c.png)
 
 
 1. First create a new workspace under *Profiles*. Select *Profiles* in the left
@@ -1063,7 +1104,8 @@ file.
 Once you've created the server profile for your Liferay Portal EE license, you
 may begin deploying Liferay to the managed server.
 
-![Figure 14.31: Apply Liferay Portal trial license](../../images/tcat-html_53af6680.png)
+![Figure 14.31: Apply Liferay Portal trial
+license](../../images/tcat-html_53af6680.png)
 
 The first step is to apply two server profiles, one for the license and the
 other for Liferay Portal. Applying the license profile does not require a
@@ -1085,7 +1127,8 @@ The *Deployments* tab contains tools that assist in creating a deployment and
 targeting it to specific servers. Once you create a deployment, you may target
 it to any number of servers or deployment groups.
 
-![Figure 14.33: Choosing a web application for deployment](../../images/tcat-html_m54d58d30.png)
+![Figure 14.33: Choosing a web application for
+deployment](../../images/tcat-html_m54d58d30.png)
 
 When creating a deployment, you may choose a WAR file already uploaded into the
 repository or you may choose to upload a new WAR file. We recommend using a WAR
@@ -1099,16 +1142,19 @@ After selecting the appropriate web application, you may choose which Servers to
 deploy to. In this example, we deploy to the Tomcat instance labeled *Liferay
 Portal Instance 1*. 
 
-![Figure 14.34: Completing Liferay Portal deployment](../../images/tcat-html_68a00002.png)
+![Figure 14.34: Completing Liferay Portal
+deployment](../../images/tcat-html_68a00002.png)
 
 After choosing to deploy the application, the Tcat console informs you of the
 current deployment status (e.g. "Successful"). Assuming you followed the
 previous steps and the deployment successfully completes, you will be able to
 access Liferay Portal on the target Tomcat instance.
 
-![Figure 14.35: Accessing Liferay Portal on Liferay Portal Instance 1](../../images/tcat-html_2b08ac2c.png)
+![Figure 14.35: Accessing Liferay Portal on Liferay Portal Instance
+1](../../images/tcat-html_2b08ac2c.png)
 
-### Deploying Liferay plugins on Mule Tcat  [](id=lp-6-1-ugen11-deploying-liferay-plugins-on-mule-tcat--0)
+### Deploying Liferay plugins on Mule Tcat
+[](id=lp-6-1-ugen11-deploying-liferay-plugins-on-mule-tcat--0)
 
 Liferay Portal Tcat Edition works with all the appropriate Liferay EE Plugins,
 including:
@@ -1136,7 +1182,8 @@ Other plugins that may be downloaded and added to this repository include:
 You may download these plugins from the Liferay Customer Portal and manually add
 them to the Tcat repository.
 
-![Figure 14.36: Uploading new plugins into Tcat](../../images/tcat-html_19e9e6d6.png)
+![Figure 14.36: Uploading new plugins into
+Tcat](../../images/tcat-html_19e9e6d6.png)
 
 Mule Tcat provides an enterprise grade solution to managing Tomcat servers. If
 you need a complete stack, combining Liferay Portal with Mule Tcat gives you
@@ -1188,15 +1235,15 @@ the file.
 
 2. Make sure the JDBC driver for your database is accessible to GlassFish as
    well. Obtain the JDBC driver for your version of the database server. In the
-   case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download
-   the latest MySQL JDBC driver from
+   case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can
+   download the latest MySQL JDBC driver from
    [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
    Extract the JAR file and copy it to `lib`.
 
-3. Next, you will need apply several patches to Glassfish `.jar` files due
-   to the following known issues. The best way to get the appropriate
-   versions of these files is to download the Liferay source code and get them from
-   there. Once you have downloaded the Liferay source, unzip the source into a
+3. Next, you will need apply several patches to Glassfish `.jar` files due to
+   the following known issues. The best way to get the appropriate versions of
+   these files is to download the Liferay source code and get them from there.
+   Once you have downloaded the Liferay source, unzip the source into a
    temporary folder. We'll refer to the location of the Liferay source as
    `$LIFERAY_SOURCE`.
 
@@ -1210,22 +1257,18 @@ Liferay's Glassfish bundle.
 
 ---
 
-
-
 - For issue [GLASSFISH-17242](http://java.net/jira/browse/GLASSFISH-17242) /
-[LPS-22813](http://issues.liferay.com/browse/LPS-22813)
+[LPS-22813](http://issues.liferay.com/browse/LPS-22813), copy
 
-- Copy
+    $LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/org/glassfish/deployment/admin/InstanceDeployCommand.class
 
-$LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/org/glassfish/deployment/admin/InstanceDeployCommand.class
+into
 
-			into
-
-org/glassfish/deployment/admin/
+    org/glassfish/deployment/admin/
 
 of
 
-$GLASSFISH_HOME/modules/deployment-admin.jar
+    $GLASSFISH_HOME/modules/deployment-admin.jar
 
 - Copy
 
