@@ -20,11 +20,9 @@ You can store all your important links in one place and you can manage this data
 
 Here's an example of what one bookmarks portlet might look like. Bookmark Folders are displayed above individual bookmarks.  
 
-![Figure 12.1: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view.png)
+![Figure 12.1: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view-wide.png)
 
-In this example, there are four bookmark folders. The first folder, Just Desserts, shows the name of the folder, a description, and the name of a subfolder called *Dessert Recipes*. Under the column *# of Folders* is the number seven. This indicates there are seven subfolders in the Just Desserts folder. Six of those subfolders lie within the Dessert Recipes subfolder. Only the top-level subfolder is listed.
-
-Under the column *# of Entries* is the number 10. This indicates there are 10 total bookmarks in the Just Desserts folder.
+In this example, there are eight bookmark folders, four of which have subfolders. Under the column *# of Folders* is the number of subfolders in each folder. Under the column *# of Entries* is the total number of bookmarks in the parent folder, including those in the subfolders.
 
 Using the *Actions* button on the right, you can *Edit* the folder, manage folder *Permissions*, *Delete* the folder, *Add Subfolder*, or *Add Bookmark* to the folder. 
 
@@ -32,27 +30,37 @@ As your collection of links grows, you may need to add more subfolders to keep t
 
 #### Moving a Link [](id=lp-6-1-ugen12-moving-a-link-0)
 
-Just for fun, let's move a link from the main bookmarks folder into a subfolder two levels down. We'll move the Liferay link into the Healthy Recipes CCC subfolder. The Healthy Recipes CCC subfolder is a child of the Dessert Recipes BB subfolder. We need to move the link to the Dessert Recipes BB subfolder first before moving it into the Healthy Recipes CCC subfolder.
+Just for fun, let's move a link from the main bookmarks folder into a subfolder two levels down. We'll move the Liferay link into the Nonfiction subfolder in the Literature folder. The Nonfiction subfolder is a child of the Literature folder. We need to move the link to the Literature folder first before moving it into the Nonfiction subfolder.
 
-![Figure 12.2: You can only move a link one level at a time.](../../images/bookmarks-select-remove-buttons.png)
+![Figure 12.2: You can move a link one level at a time by selecting the Folder button.](../../images/bookmarks-select-remove-buttons.png)
 
-To achieve this, we select Edit from the Actions button for the link. In the Edit view, find the section called *Folder*, where there is a link to the top-level folder, Just Desserts, next to two buttons labeled Select and Remove. Click the *Select* button and a dialog box like the one below appears.
+To achieve this, we select *Edit* from the Actions button for the link. In the Edit view, find the section called *Folder*, where there are two buttons labeled Select and Remove. Click the *Select* button and a new window like the one below appears. Clicking the *Remove* button here doesn't effect the link. It is used solely for moving links out of folders and subfolders, as we'll see soon.
 
-![Figure 12.3: You can see the title of the current folder displayed as a link next to the Select button.](../../images/bookmarks-choosing-subfolder.png)
+![Figure 12.3: Select the Choose button next to the desired folder.](../../images/bookmarks-choosing-subfolder.png)
 
-Now choose the Dessert Recipes subfolder. When you do this, notice that the link changes to reflect the new subfolder level. 
+Now choose the Literature folder. When you do this, notice that the link changes to reflect the new location of the link. 
 
-![Figure 12.4: When you choose a subfolder, the name of the folder changes to reflect your new position.](../../images/bookmarks-choosing-subfolder2.png)
+![Figure 12.4: When you choose a folder, the name of the folder changes to reflect your new location of the link.](../../images/bookmarks-choosing-subfolder2.png)
 
-Choose *Save* and you return to the top-level folder. Now select the Dessert Recipes subfolder to open up the bookmarks list. Edit the Good For You link and click *Select*. Choose the Healthy Recipes subfolder and again notice the change in the folder level. 
+When you choose *Save* you return to the Bookmarks portlet. Notice how the individual Liferay link is no longer found under the Bookmarks section. It has moved to the Literature subfolder. Select the Literature subfolder to reveal its contents. You will see the Liferay link residing below the Literature subfolders, like in the example below.
 
-Click *Save* and the Dessert Recipes folder view appears. Select Healthy Recipes to see your link in the bookmarks list. Piece of cake, right?
+![Figure 12.x: When you move a link to a folder, it remains in the bookmarks section until it's moved into a subfolder.](../../images/bookmarks-link-move.png)
+
+Now select the Literature subfolder to open up the bookmarks list. Edit the Liferay link and click *Select*. Choose the Nonfiction subfolder and again notice the change in the folder level breadcrumbs. 
+
+Click *Save* and the Literature subfolder view appears. Select Nonfiction to see your link in the bookmarks list. Piece of cake, right?
 
 To move a link out of a subfolder and into a higher-level folder, edit the link in the subfolder and choose *Select*. 
 
-In the resulting dialog box, select the appropriate folder from the breadcrumbs at the top. Click the *Choose This Folder* button and verify the proper folder level is displayed. If this is correct, click *Save* and you're done.
+![Figure 12.x: To move a link up to a higher-level folder, choose the appropriate folder from the breadcrumbs in the Select view.](../../images/bookmarks-link-move2.png)
 
-The button Add Subfolder creates a new subfolder of the current folder. The button Choose This Folder simply selects the current folder. The breadcrumb links at the top of the dialog box allow you to navigate to the other folder levels.
+In the resulting window, select the appropriate folder from the breadcrumbs at the top. For this example we selected *Literature*. This opens a new window, like the one below, showing the other folder options. 
+
+![Figure 12.x: Choose the appropriate folder from the list.](../../images/bookmarks-link-move3.png)
+
+When you verify the desired folder is currently displayed in the breadcrumbs, click *Choose This Folder*. Then click *Save* and you're done. While in this window, you can create a new subfolder of the current folder by using the *Add Subfolder* button. The breadcrumb links at the top of the window allow you to navigate freely among the other folder levels.
+
+If you choose *Remove* instead of Select in the above example, you take the link out of both subfolders and return it to the main bookmarks view.
 
 Now that you have an understanding of how bookmark folders are used, let's create some new bookmarks.
 
