@@ -18,7 +18,7 @@ With Liferay's Bookmarks application, users collect and manage URLs in the porta
 
 You can store all your important links in one place and you can manage this data easily using folders. You can create, edit, and delete bookmark folders. You get to decide how many bookmarks or folders are displayed on a page. Bookmark folders can have any number of subfolders.
 
-Here's an example of what one bookmarks portlet might look like. Bookmark Folders are displayed above individual bookmarks.  
+Here's an example of what one bookmarks portlet might look like. Bookmark Folders are displayed above individual Bookmarks.  
 
 ![Figure 12.1: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view-wide.png)
 
@@ -30,35 +30,33 @@ As your collection of links grows, you may need to add more subfolders to keep t
 
 #### Moving a Link [](id=lp-6-1-ugen12-moving-a-link-0)
 
-Just for fun, let's move a link from the main bookmarks folder into a subfolder two levels down. We'll move the Liferay link into the Nonfiction subfolder in the Literature folder. The Nonfiction subfolder is a child of the Literature folder. We need to move the link to the Literature folder first before moving it into the Nonfiction subfolder.
+Just for fun, let's move a link from the main bookmarks folder into a subfolder one level down. We'll move the Liferay link into the Nonfiction subfolder in the Literature folder. The Nonfiction subfolder is a child of the Literature folder. We need to move the link to the Literature folder first before moving it into the Nonfiction subfolder.
 
-![Figure 12.2: You can move a link one level at a time by selecting the Folder button.](../../images/bookmarks-select-remove-buttons.png)
+![Figure 12.2: You can move a link one level at a time by selecting the Select button.](../../images/bookmarks-select-remove-buttons.png)
 
-To achieve this, we select *Edit* from the Actions button for the link. In the Edit view, find the section called *Folder*, where there are two buttons labeled Select and Remove. Click the *Select* button and a new window like the one below appears. Clicking the *Remove* button here doesn't effect the link. It is used solely for moving links out of folders and subfolders, as we'll see soon.
+To achieve this, we select *Edit* from the Actions button for the link. In the Edit view, find the section called *Folder*. When applicable, this section will contain breadcrumb links to allow you to navigate freely among the other folder levels. Currently, there are two buttons here labeled Select and Remove. Click the *Select* button and a new window appears, like the one below. Clicking the *Remove* button here doesn't effect the link. It is used solely for moving links out of folders and subfolders back into the main Bookmarks view.
 
 ![Figure 12.3: Select the Choose button next to the desired folder.](../../images/bookmarks-choosing-subfolder.png)
 
-Now choose the Literature folder. When you do this, notice that the link changes to reflect the new location of the link. 
+Now choose the *Literature* folder. When you do this, notice how the link's Folder section changes to reflect the new location of the link. 
 
-![Figure 12.4: When you choose a folder, the name of the folder changes to reflect your new location of the link.](../../images/bookmarks-choosing-subfolder2.png)
+![Figure 12.4: When you choose a folder, the folder navigation changes to reflect the new location of the link.](../../images/bookmarks-choosing-subfolder2.png)
 
-When you choose *Save* you return to the Bookmarks portlet. Notice how the individual Liferay link is no longer found under the Bookmarks section. It has moved to the Literature subfolder. Select the Literature subfolder to reveal its contents. You will see the Liferay link residing below the Literature subfolders, like in the example below.
+When you choose *Save* you return to the Bookmarks portlet. Notice that the Liferay link is no longer found under the Bookmarks section. Select *Literature* to reveal its contents. In the example below, you can see the Liferay link is now located in the bookmarks section of the Literature folder.
 
-![Figure 12.x: When you move a link to a folder, it remains in the bookmarks section until it's moved into a subfolder.](../../images/bookmarks-link-move.png)
+![Figure 12.5: When you move a link to a folder, it remains in the bookmarks section until it's moved into a subfolder.](../../images/bookmarks-link-move.png)
 
-Now select the Literature subfolder to open up the bookmarks list. Edit the Liferay link and click *Select*. Choose the Nonfiction subfolder and again notice the change in the folder level breadcrumbs. 
+Select *Edit* from the Actions button next to the Liferay link, then click *Select*. Choose the *Nonfiction* subfolder and again notice the change in the folder-level breadcrumbs. Click *Save* and the Literature folder view appears. Select *Nonfiction* to see your link in the subfolder's bookmarks list. Piece of cake, right?
 
-Click *Save* and the Literature subfolder view appears. Select Nonfiction to see your link in the bookmarks list. Piece of cake, right?
+To move a link out of a subfolder and into a higher-level folder, *Edit* the link in the subfolder and choose *Select*. 
 
-To move a link out of a subfolder and into a higher-level folder, edit the link in the subfolder and choose *Select*. 
+![Figure 12.6: To move a link up to a higher-level folder, choose the appropriate folder from the breadcrumbs in the Select view.](../../images/bookmarks-link-move2.png)
 
-![Figure 12.x: To move a link up to a higher-level folder, choose the appropriate folder from the breadcrumbs in the Select view.](../../images/bookmarks-link-move2.png)
+In the resulting window, select the appropriate folder from the breadcrumbs at the top. In this example, we selected *Literature* for consistency. This opens a new window, like the one below, showing the other folder options. 
 
-In the resulting window, select the appropriate folder from the breadcrumbs at the top. For this example we selected *Literature*. This opens a new window, like the one below, showing the other folder options. 
+![Figure 12.7: In this view, you can move the link into several different locations.](../../images/bookmarks-link-move3.png)
 
-![Figure 12.x: Choose the appropriate folder from the list.](../../images/bookmarks-link-move3.png)
-
-When you verify the desired folder is currently displayed in the breadcrumbs, click *Choose This Folder*. Then click *Save* and you're done. While in this window, you can create a new subfolder of the current folder by using the *Add Subfolder* button. The breadcrumb links at the top of the window allow you to navigate freely among the other folder levels.
+You can choose one of the other subfolders from the list, or you can choose *Home* from the breadcrumbs at the top. When you verify that the desired folder is the one currently displayed in the breadcrumbs, click *Choose This Folder*. Then click *Save* and you're done. If you don't like any of the subfolders listed, you can place the link into a new subfolder by using the *Add Subfolder* button.
 
 If you choose *Remove* instead of Select in the above example, you take the link out of both subfolders and return it to the main bookmarks view.
 
@@ -68,29 +66,35 @@ Now that you have an understanding of how bookmark folders are used, let's creat
 
 Navigate to your portal and add the Bookmarks application to your page by selecting *Add* &rarr; *More*. The portlet looks like this by default:
 
-![Figure 12.5: Initially, no bookmarks are listed in this form until they're created.](../../images/bookmarks-add-portlet.png)
+![Figure 12.8: Initially, no bookmarks are listed in this form until they're created.](../../images/bookmarks-add-portlet.png)
 
-Across the top of the portlet are links labeled Home, Recent, and Mine. There is also a Search field and button. Choosing Recent displays a list of the latest bookmarks that have been added. Choosing Mine displays a list of the bookmarks you added to the portlet. Choosing Home returns you to the top level of the portlet. The Search option lets you search for bookmarks by name or category tags.
+Across the top of the portlet are links labeled Home, Recent, and Mine. There is also a Search field and button.
+
+**Home:** returns you to the top level of the portlet.
+
+**Recent:** displays a list of the latest bookmarks that have been added.
+
+**Mine:** displays a list of the bookmarks you added to the portlet.
+
+**Search:** lets you search for bookmarks by name, category, or tags.
 
 When you select the *Permissions* button on the right, a list of Roles and their associated permissions appears. The options are Add Entry, Add Folder, Permissions, and View. When you are finished selecting the permissions click *Save*.
 
 Clicking the *Add Folder* button in the Bookmarks application reveals this form:
 
-![Figure 12.6: It's not necessary to enter a description for a Bookmarks folder.](../../images/bookmarks-add-new-folder-form.png)
+![Figure 12.9: It's not necessary to enter a description for a Bookmarks folder.](../../images/bookmarks-add-new-folder-form.png)
 
 Here you can choose the folder's name, a description of its contents, and who can view it. Under More Options, you can set portlet permissions for various Roles to the folder. Click *Save* when you are finished.
 
 To create a bookmark, click the *Add Bookmark* button. This form is similar to the New Folder form but has a few more options.
 
-![Figure 12.7: When you use the Add Bookmark form, you must enter a valid URL in the required field.](../../images/bookmarks-add-new-form.png)
+![Figure 12.10: When you use the Add Bookmark form, you must enter a valid URL in the required field.](../../images/bookmarks-add-new-form.png)
 
-Click *Select* to choose the folder for the new bookmark. Click *Remove* to delete a bookmark from the selected folder. A removed link goes into the list of general bookmarks that aren't associated with a folder. These are listed below the folders in the bookmarks application.
+Click *Select* to choose the folder for the new bookmark. Click *Remove* to delete a bookmark from the selected folder. As stated above, a removed link goes into the list of general bookmarks that aren't associated with a folder. These are listed in the bookmarks section, below the folders, in the portlet.
 
-In the URL field you must enter a fully qualified URL. Entering anything less displays an error.
+Below the Permissions there are additional options for Categorization and Related Assets, just like in other Liferay applications. Please see chapter 5 on the Asset Framework for further information about this. 
 
-Below the Permissions there are additional options for Categorization and Related Assets, just like other Liferay portlets. Please see chapter 5 on the Asset Framework for further information about this. 
-
-Once you have added a new bookmark, it appears in the portlet. From here, you can manage your bookmark using familiar Liferay editing features. Collecting and organizing your links is a snap when you use Liferay's Bookmarks application. Now let's look at the Shopping application. 
+Once you have added a new bookmark, it appears in the portlet. From here, you can manage your bookmark using familiar Liferay editing features. Collecting and organizing your links is a snap when you use Liferay's Bookmarks application.
 
 <!--
 Need Shopping header, intro, text, images, etc. here
@@ -116,11 +120,11 @@ We will first look at creating a plugin repository using the Software Catalog in
 
 You will want to use the Software Catalog if you will have multiple users submitting portlets into the repository and if you don't want to worry about creating the `liferay-plugin-repository.xml` file yourself.
 
-![Figure 12.8: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
+![Figure 12.11: The Software Catalog with Nothing Installed](../../images/marketplace-software-catalog.png)
 
 Each site in your portal can have an instance of the Software Catalog. The control panel presents you with the software catalog for whichever site you are working on. This means different sites can have different software repositories, so you can host several software repositories on the same instance of Liferay if you wish, they just have to be in different sites. Choose the site that will host the plugin repository and go to the control panel. You will see at the top of the screen a message that says “Content for [Site], where [Site] is the site you were on when you selected the control panel from the dockbar. If you want to administer the software catalog for a different site, you can select it from the selection box.
 
-![Figure 12.9: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
+![Figure 12.12: Populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
 
 The Software Catalog has several tabs. The first tab is labeled Products. The default view of the portlet, when populated with software, displays what plugins are available for install or download. This can be seen in the version on Liferay's home page.
 
@@ -134,7 +138,7 @@ Your next step will be to create the product record in the software catalog. Thi
 
 To create the product record in the Software Catalog portlet, click the *Products* tab, then click the *Add Product* button. Fill out the form with information about your product.
 
-![Figure 12.10: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
+![Figure 12.13: Adding a Product to the Software Catalog](../../images/marketplace-adding-product-to-software-catalog.png)
 
 **Name:** The name of your software product.
 
@@ -174,7 +178,7 @@ So click the *Framework Versions* tab and then click the *Add Framework Version*
 
 Give the framework a name, a URL and leave the *Active* check box checked. For our example, we have entered 6.0.3 for the name, because our portlet should work on that version and higher, and [http://www.liferay.com](http://www.liferay.com) for the URL. Click *Save*.
 
-![Figure 12.11: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
+![Figure 12.14: Adding a Product Version to the Software Catalog](../../images/marketplace-adding-product-version-software-catalog.png)
 
 Now go back to the *Products* tab and click on your product. You will notice a message is displayed stating the product does not have any released versions. Click the *Add Product Version* button.
 
@@ -312,7 +316,7 @@ Liferay's Knowledge Base portlet provides a means for creating and organizing ar
 
 The Knowledge Base app actually consists of four portlets that can be placed on site pages as well as one that adds a page to the control panel. The four portlets that can be placed on a page are Knowledge Base (Display), Knowledge Base Search, Knowledge Base Article and Knowledge Base Section. When placed on a page, the Knowledge Base display portlet presents many of the same options to an administrator that are available from the Knowledge Base page of the control panel.
 
-![Figure 12.12: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
+![Figure 12.15: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
 
 You can use the four links at the top of the Knowledge Base display portlet to control what it displays.
 
@@ -326,13 +330,13 @@ You can use the four links at the top of the Knowledge Base display portlet to c
 
 The *Add Article* button is available from the Knowledge Base Home or Administrator view of the Knowledge Base display portlet or from the Articles tab of the Knowledge Base page of the control panel. Use this button to create an article for the knowledge base. When creating an article, you can use the same WYSIWYG editor you used to create wiki pages. Articles, however, are not the same as wiki pages: they must be created in HTML, not MediaWiki or Creole. Click the *Source* button in the editor to view the HTML source of what you've written or write some HTML yourself.
 
-![Figure 12.13: New Knowledge Base Article](../../images/liferay-collaboration-kb-new-article.png)
+![Figure 12.16: New Knowledge Base Article](../../images/liferay-collaboration-kb-new-article.png)
 
 In addition to entering a title and creating content for your article, you can use the editor to add attachments, add tags and set permissions. By default, view permission is granted to the guest role, meaning anyone can view your article. After you're done using the editor, you can save it as draft and continue working on it later or you can submit it for publication. Your article may need to be approved before being published, depending on the workflow defined for your portal.
 
 You can find the *Permissions* button next to the Add Article button in the Knowledge Base display portlet or on the Knowledge Base page of the control panel. Click this button to define permissions that apply to the Knowledge Base display portlet generally, not to particular articles. Here, you can define which roles can add articles and templates, which are granted knowledge base administrator privileges, which can change permissions on articles, which can subscribe to articles and which can view templates. 
 
-![Figure 12.14: Knowledge Base Permissions](../../images/liferay-collaboration-kb-permissions.png)
+![Figure 12.17: Knowledge Base Permissions](../../images/liferay-collaboration-kb-permissions.png)
 
 Users may need to be granted access to the knowledge base page of the control panel in order to exercise some of the above permissions. For example, suppose the user role has been granted the Add Article and the View Templates permissions. A user will be able to add articles from the knowledge base display portlet but will need access to the knowledge base page of the control panel in order to view templates. Note that the Knowledge Base (Display) permissions are distinct from the Knowledge Base (Admin) portlet. The display permissions define what a user can do with the Knowledge Base display portlet on a page while the admin permissions define what a user can do on the Knowledge Base page of the control panel.
 
@@ -340,7 +344,7 @@ Users may need to be granted access to the knowledge base page of the control pa
 
 The Knowledge Base page of the control panel has two tabs: one for articles and one for templates. The articles tab shows all the articles in the knowledge base and lets you perform actions on them. The templates tab shows all the templates defined in the knowledge base and lets you perform actions on them.
 
-![Figure 12.15: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
+![Figure 12.18: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
 
 Administrators can perform the following actions on an article:
 
@@ -360,7 +364,7 @@ These actions are similar to the ones that can be performed from the Administrat
 
 The templates tab of the Knowledge Base page of the control panel allows administrators to create templates to facilitate the creation of articles. A template basically functions like a starting point for the creation of certain types of articles. Click the *Add Template* button on the Templates tab of the Knowledge Base page of the control panel to create a new template. 
 
-![Figure 12.16: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
+![Figure 12.19: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
 
 Navigate back to the templates tab of the Knowledge Base page of the control panel. You can perform the following actions on a template:
 
@@ -378,7 +382,7 @@ To use a template to create a new article, you have to view the template and the
 
 The Knowledge Base Article portlet can be placed on a page to display an entire article. When you first place this portlet on a page it displays the message *Please configure this portlet to make it visible to all users*. This message is a link to the configuration dialog box for the portlet. Click *Select Article* to choose an article to display. Pick an article and then click *Save*. When your page refreshes it will display the article in the portlet. 
 
-![Figure 12.17: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
+![Figure 12.20: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the article it displays. There are also links at the top of the portlet users can use to subscribe to an RSS feed of the knowledge base, subscribe to the article, view the history of the article or print the article.
 
@@ -388,7 +392,7 @@ The Knowledge Base Section portlet allows administrators to selectively show art
 
 Once you have defined some sections in your knowledge base's `portlet.properties` file, your users will see a multi-select box in the Add Article and Edit Article screens that allows them to select which section an article belongs to. You can add any number of Knowledge Base section portlets to a page and you can configure each portlet to display articles from any number of sections.
 
-![Figure 12.18: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 12.21: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 The Knowledge Base section portlet has some additional configurations that allow an administrator to select a display style (title or abstract), an article window state (maximized or normal), how to order the articles, how many articles to display per page and whether or not to show pagination.
 
@@ -396,11 +400,11 @@ The Knowledge Base section portlet has some additional configurations that allow
 
 Wikis often have deeply nested articles that can be hard to find by browsing. Liferay's knowledge base's ability to selectively display articles makes it easier to browse than a Wiki. The knowledge base also features some other aids to navigation. The Knowledge Base Search portlet allows you to search for articles in the knowledge base. This portlet presents the search results to you in order from most relevant to least relevant. 
 
-![Figure 12.19: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
+![Figure 12.22: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
 
 You can also use the Categories Navigation portlet in conjunction with the Knowledge Base display portlet. When both of these portlets are placed on a page you can select a topic in the Categories Navigation portlet and the Knowledge Base display portlet will show all of the articles that match the topic. You can create topics from the Categories page of the control panel.
 
-![Figure 12.20: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+![Figure 12.23: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them. 
 
