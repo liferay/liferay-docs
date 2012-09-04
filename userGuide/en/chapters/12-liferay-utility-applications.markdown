@@ -1,14 +1,15 @@
-# Liferay Utility Applications
-[](id=lp-6-1-ugen12-liferay-utility-applications-0)
+
+# Liferay Utility Applications [](id=lp-6-1-ugen12-liferay-utility-applications-0)
 
 In this chapter we'll look at some Liferay utility applications that might be
 useful for you. The Software Catalog is currently packaged with Liferay but will
 soon be replaced by Liferay Marketplace. Please see chapter 13 for information
 about Liferay Marketplace and managing Liferay plugins. The Knowledge Base
-application is an EE-only plugin. In this chapter we'll discuss both of these
+application is an EE-only plugin. In this chapter we'll discuss several of these
 applications:
 
 - Bookmarks
+
 - Software catalog
 - Shopping
 - Knowledge Base
@@ -20,11 +21,10 @@ software items to display to visitors. The Knowledge Base application allows you
 to create articles and organize them into full books or guides that be published
 on your portal.
 
-## Capturing Web Sites with the Bookmarks Portlet 
-[](id=lp-6-1-ugen12-capturing-web-sites-with-the-bookmarks-portlet-idlp-6-1-uge-0) 
+## Capturing Web Sites with the Bookmarks Portlet [](id=lp-6-1-ugen12-capturing-web-sites-with-the-bookmarks-portlet-idlp-6-1-uge-0)
 
 Many of us enjoy collecting things we value. They may be stamps, comic books,
-sea shells, fabulous shoes. The list goes on and on. But have you considered
+sea shells, or fabulous shoes. The list goes on and on. But have you considered
 URLs collectible? Having a thorough collection of links can be a great way to
 add value to your portal's usability.
 
@@ -32,7 +32,7 @@ With Liferay's Bookmarks application, users collect and manage URLs in the
 portal. They can add, edit, delete, export and import bookmarks. Users can use
 links to access regularly visited web sites. Administrators can publish links
 tailored to specific groups of users. Both internal pages as well as external
-sites can be bookmarked.
+sites can be bookmarked. 
 
 ### Organizing Bookmarks by Folder 
 [](id=lp-6-1-ugen12-organizing-bookmarks-by-folder-0)
@@ -43,9 +43,9 @@ to decide how many bookmarks or folders are displayed on a page. Bookmark
 folders can have any number of subfolders.
 
 Here's an example of what one bookmarks portlet might look like. Bookmark
-Folders are displayed above individual bookmarks.
+Folders are displayed above individual bookmarks.  
 
-![Figure 12.1: Individual bookmarks, not associated with a folder, are listed 
+![Figure 12.1: Individual bookmarks, not associated with a folder, are listed
 separately.](../../images/bookmarks-folder-view.png)
 
 In this example, there are four bookmark folders. The first folder, Just
@@ -60,11 +60,11 @@ total bookmarks in the Just Desserts folder.
 
 Using the *Actions* button on the right, you can *Edit* the folder, manage
 folder *Permissions*, *Delete* the folder, *Add Subfolder*, or *Add Bookmark* to
-the folder.
+the folder. 
 
 As your collection of links grows, you may need to add more subfolders to keep
 things in order. Should you decide a link needs to move from one folder to
-another, you can manage this using the Edit option for that link.
+another, you can manage this using the Edit option for that link. 
 
 #### Moving a Link [](id=lp-6-1-ugen12-moving-a-link-0)
 
@@ -74,32 +74,33 @@ into the Healthy Recipes subfolder. The Healthy Recipes subfolder is a child of
 the Dessert Recipes subfolder. We need to move the link to the Dessert Recipes
 subfolder first before moving it into the Healthy Recipes subfolder.
 
-![Figure 12.2: You can only move a link one level at a time.](../../images/bookmarks-select-remove-buttons.png)
+![Figure 12.2: You can only move a link one level at a
+time.](../../images/bookmarks-select-remove-buttons.png)
 
 To achieve this, we select Edit from the Actions button for the link. In the
 Edit view, find the section called *Folder*, where there is a link to the
 top-level folder, Just Desserts, next to two buttons labeled Select and Remove.
 Click the *Select* button and a dialog box like the one below appears.
 
-![Figure 12.3: You can see the title of the current folder displayed as a link 
+![Figure 12.3: You can see the title of the current folder displayed as a link
 next to the Select button.](../../images/bookmarks-choosing-subfolder.png)
 
 Now choose the Dessert Recipes subfolder. When you do this, notice that the link
-changes to reflect the new subfolder level.
+changes to reflect the new subfolder level. 
 
-![Figure 12.4: When you choose a subfolder, the name of the folder changes to 
+![Figure 12.4: When you choose a subfolder, the name of the folder changes to
 reflect your new position.](../../images/bookmarks-choosing-subfolder2.png)
 
 Choose *Save* and you return to the top-level folder. Now select the Dessert
 Recipes subfolder to open up the bookmarks list. Edit the Good For You link and
 click *Select*. Choose the Healthy Recipes subfolder and again notice the change
-in the folder level.
+in the folder level. 
 
 Click *Save* and the Dessert Recipes folder view appears. Select Healthy Recipes
 to see your link in the bookmarks list. Piece of cake, right?
 
 To move a link out of a subfolder and into a higher-level folder, edit the link
-in the subfolder and choose *Select*.
+in the subfolder and choose *Select*. 
 
 In the resulting dialog box, select the appropriate folder from the breadcrumbs
 at the top. Click the *Choose This Folder* button and verify the proper folder
@@ -118,7 +119,7 @@ create some new bookmarks.
 Navigate to your portal and add the Bookmarks application to your page by
 selecting *Add* &rarr; *More*. The portlet looks like this by default:
 
-![Figure 12.5: Initially, no bookmarks are listed in this form until they're 
+![Figure 12.5: Initially, no bookmarks are listed in this form until they're
 created.](../../images/bookmarks-add-portlet.png)
 
 Across the top of the portlet are links labeled Home, Recent, and Mine. There is
@@ -135,7 +136,7 @@ Permissions, and View. When you are finished selecting the permissions click
 
 Clicking the *Add Folder* button in the Bookmarks application reveals this form:
 
-![Figure 12.6: It's not necessary to enter a description for a Bookmarks 
+![Figure 12.6: It's not necessary to enter a description for a Bookmarks
 folder.](../../images/bookmarks-add-new-folder-form.png)
 
 Here you can choose the folder's name, a description of its contents, and who
@@ -145,7 +146,7 @@ Roles to the folder. Click *Save* when you are finished.
 To create a bookmark, click the *Add Bookmark* button. This form is similar to
 the New Folder form but has a few more options.
 
-![Figure 12.7: When you use the Add Bookmark form, you must enter a valid URL in 
+![Figure 12.7: When you use the Add Bookmark form, you must enter a valid URL in
 the required field.](../../images/bookmarks-add-new-form.png)
 
 Click *Select* to choose the folder for the new bookmark. Click *Remove* to
@@ -158,12 +159,12 @@ displays an error.
 
 Below the Permissions there are additional options for Categorization and
 Related Assets, just like other Liferay portlets. Please see chapter 5 on the
-Asset Framework for further information about this.
+Asset Framework for further information about this. 
 
 Once you have added a new bookmark, it appears in the portlet. From here, you
 can manage your bookmark using familiar Liferay editing features. Collecting and
 organizing your links is a snap when you use Liferay's Bookmarks application.
-Now let's look at the Shopping application.
+Now let's look at the Shopping application. 
 
 ## Creating Your Own Plugin Repository
 [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
@@ -181,9 +182,9 @@ You can create your plugin repository in two ways:
 1. Use the Software Catalog in the Control Panel to create the repository by
 using its graphical interface and an HTTP server.
 
-2. Create an XML file using the Liferay Plugin Repository DTD
-(`http://www.liferay.com/dtd/liferay-plugin-repository_6_0_0.dtd`) and an HTTP
-server.
+2.  Create an XML file using the Liferay Plugin Repository DTD
+    (`http://www.liferay.com/dtd/liferay-plugin-repository_6_0_0.dtd`) and an
+    HTTP server.
 
 Both methods have their benefits. The first method allows users to upload their
 plugins to an HTTP server to which they have access. They can then register
@@ -381,8 +382,7 @@ When you are finished filling out the form, click the *Save* button. Your
 product version will be saved and your product will now be available in the
 software repository.
 
-#### Generating The Software Catalog
-[](id=lp-6-1-ugen15-generating-the-software-catalog-0)
+#### Generating The Software Catalog [](id=lp-6-1-ugen15-generating-the-software-catalog-0)
 
 The Software Catalog works by generating an XML document which the Plugin
 Installer reads. Using the data from this XML document, the Plugin Installer

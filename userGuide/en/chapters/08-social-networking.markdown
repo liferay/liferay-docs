@@ -1,3 +1,4 @@
+
 # Social Networking [](id=social-networking-with-liferay)
 
 Since the first social networks rose to popularity, concepts such as *Friend*
@@ -37,7 +38,6 @@ When we're finished, you'll be well equipped to use Liferay to power your social
 network.
 
 ## Leveraging Social Portlets, Activities Tracking and User Connections [](id=lp-6-1-ugen08-leveraging-social-portlets-activities-tracking-and-user-con-0)
-[](id=lp-6-1-ugen08-leveraging-social-portlets-activities-tracking-and-user-con-0)
 	
 Liferay has many portlets available for social interaction and collaboration.
 Some of these portlets are designed to help you work together as a team, while
@@ -58,7 +58,6 @@ feed length or display styles. Some styling changes, however, can be made
 through custom CSS.
 
 ### Installing the social portlets [](id=lp-6-1-ugen08-installing-the-social-portlets-0)
-[](id=lp-6-1-ugen08-installing-the-social-portlets-0)
 
 The social portlets are all included with the Liferay Community Edition
 distribution, but need to be installed separately for Enterprise Edition. If
@@ -74,7 +73,6 @@ Once the install process finishes, you can start using the social networking
 portlets. 
 
 ### Using social networking on public pages [](id=lp-6-1-ugen08-using-social-networking-on-public-pages-0)
-[](id=lp-6-1-ugen08-using-social-networking-on-public-pages-0)
 
 There are several social portlets that are designed for use on public portal
 pages. The goal of these is to use social connections to help a group work
@@ -134,31 +132,40 @@ to learn how to obtain a valid Google API key. To configure the Map portlet
 using the GeoLite City database, use the following steps:
 
 1. Install the Social Networking plugin, if you haven't already done so.
+
 2. Install the IP Geocoder portlet. (Both the Social Networking and IP Geocoder
    apps can be installed from Martketplace.)
+
 3. Shut down your application server.
+
 4. Download the Geo Lite City database from
    [http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz](http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz).
+
 5. Unzip the `.dat` file to your desired storage location on your server.
+
 6. Create a `portlet-ext.properties` file in the
    `/{ROOT}/webapps/ip-geocoder-portlet/WEB-INF/classes/` directory of your
    Liferay installation.
+
 7. Add the property `maxmind.database.file={GeoIP Lite City database .dat file
    path}` to this file.
+
 8. Create a `portlet-ext.properties` file in the
    `/{ROOT}/webapps/social-networking-portlet/WEB-INF/classes/` directory of
    your Liferay installation.
+
 9. Add the property `map.google.maps.api.key={Your API Key}` to this file. If
    you haven't done so already, you'll need to generate a [Google Maps API
    Key](http://code.google.com/apis/maps/signup.html).
+
 10. Restart your application server.
+
 11. Enjoy the Maps portlet!
 
 Next, let's look at the social networking portlets designed for use on personal
 pages.
 
 ### Using social networking on personal pages [](id=lp-6-1-ugen08-using-social-networking-on-personal-pages-0)
-[](id=lp-6-1-ugen08-using-social-networking-on-personal-pages-0)
 
 In addition to the portlets available for general use, there are a handful that
 can only be used on personal pages. These include the Summary, Wall, Friends,
@@ -195,7 +202,6 @@ portlets that ships with Liferay, let's put them all together and make a social
 web site.
 
 ### Liferay's social tools in action [](id=lp-6-1-ugen08-liferays-social-tools-in-action-0)
-[](id=lp-6-1-ugen08-liferays-social-tools-in-action-0)
 
 To get started with Liferay's social features, let's set up the public pages of
 our users' personal sites to include social apps. Because of Liferay's flexible
@@ -204,7 +210,6 @@ up. For simplicity's sake, we'll make something that's fairly similar to the
 original Facebook layout.
 
 #### Setting up users' personal pages [](id=lp-6-1-ugen08-setting-up-users-personal-pages-0)
-[](id=lp-6-1-ugen08-setting-up-users-personal-pages-0)
 
 Before we start adding portlets to pages, we should configure Liferay so that
 everyone (or some subset of everyone) has the same social features. We have two
@@ -272,7 +277,6 @@ the question is, how do we encourage users to visit each others fancy new
 profile pages?
 
 #### Connecting users through collaboration [](id=lp-6-1-ugen08-connecting-users-through-collaboration-0)
-[](id=lp-6-1-ugen08-connecting-users-through-collaboration-0)
 
 There are many ways that social networks connect users. These generally involve
 some kind of mutual interest or experience. On a site like Facebook, you can
@@ -298,7 +302,7 @@ interactions.
 The Activities portlet provides a similar but more effective means of
 connection. Because it shows a list of what other users are doing, this portlet
 helps users discover who is among the most active across the site or the portal,
-and thus who might be a good connection.  
+and thus who might be a good connection. 
 
 Probably the most effective way users can connect is by interacting with other
 users. Every portlet in the Collaboration category provides information on who
@@ -422,7 +426,6 @@ for each site, increasing the flexibility of your portal.
 Beyond Liferay's social API, there is also support for the OpenSocial standard.
 
 ## Exporting portal applications as widgets and OpenSocial gadgets [](id=lp-6-1-ugen08-exporting-portal-applications-as-widgets-and-opensocial-gad-0)
-[](id=lp-6-1-ugen08-exporting-portal-applications-as-widgets-and-opensocial-gad-0)
 
 OpenSocial is a framework designed for the creation of socially themed
 application programming interfaces (APIs). OpenSocial applications, called
@@ -488,7 +491,6 @@ work nicely throughout your portal, you can publish them for portal-wide use.
 You'll learn that next.
 
 #### Adding gadgets for portal-wide use [](id=lp-6-1-ugen08-adding-gadgets-for-portal-wide-use-0)
-[](id=lp-6-1-ugen08-adding-gadgets-for-portal-wide-use-0)
 
 You can easily make gadgets available for adding to pages as you would any other
 application. We'll demonstrate this by adding a *To-Do List* gadget for
@@ -496,10 +498,14 @@ portal-wide use.
 
 1. Go to the Control Panel and select *OpenSocial Gadget Publisher* under the
    *Portal* heading
+
 2. Click *Publish Gadget*
+
 3. Insert the URL for the *To-Do List* gadget:
    `http://www.labpixies.com/campaigns/todo/todo.xml`
+
 4. Select an appropriate category for your gadget
+
 5. Click *Save*
 
 ![Figure 8.15: Configure new gadgets with
@@ -714,7 +720,6 @@ Congratulations! Your Twitter gadget is now configured with OAuth.
 Next, we'll configure the gadget within Liferay Portal.
 
 ### Incorporating OAuth within your site [](id=lp-6-1-ugen08-incorporating-oauth-within-your-site-0)
-[](id=lp-6-1-ugen08-incorporating-oauth-within-your-site-0)
 
 Now that your gadget is registered with Twitter and is configured with OAuth,
 you can add it to your Liferay Portal. The OAuth client you configured in the
@@ -761,7 +766,6 @@ As you can see, OAuth is easy to configure and offers users the freedom to
 securely add valuable data from third-party sites.
 
 ### Creating and editing OpenSocial gadgets [](id=lp-6-1-ugen08-creating-and-editing-opensocial-gadgets-0)
-[](id=lp-6-1-ugen08-creating-and-editing-opensocial-gadgets-0)
 
 OpenSocial gadgets are XML documents, so as part of Liferay's OpenSocial
 integration, a gadget editor is included. The gadget editor is a complete
@@ -797,7 +801,6 @@ site, since they won't need to remember another user name and password, For more
 information on setting up Facebook sign on, see chapter 15.
 
 ### Using your portlets as Facebook applications [](id=lp-6-1-ugen08-using-your-portlets-as-facebook-applications-0)
-[](id=lp-6-1-ugen08-using-your-portlets-as-facebook-applications-0)
 
 You can add any Liferay portlet as an application on Facebook. To do this, you
 must first get a developer key. A link for doing this is provided to you in the

@@ -1,3 +1,4 @@
+
 # Leveraging the Asset Framework [](id=lp-6-1-ugen05-leveraging-the-asset-framework-0)
 
 Any type of content in Liferay is considered an asset. In chapters 2 and 3, we
@@ -8,13 +9,14 @@ utilize Liferay's asset framework. Originally, the asset framework was created
 to provide a mechanism for adding tags to blog entries, wiki articles, and web
 content without reimplementing the same functionality multiple times. The asset
 framework has been greatly extended since then and it now supports tags,
-categories, comments, ratings, and asset relationships.
+categories, vocabularies, comments, ratings, and asset relationships.
 
 This chapter covers the following topics:
 
 - Tagging and categorizing content
-- Using Faceted Search 
+- Using Faceted Search
 - Using the Asset Publisher
+- Using targeted, single value, and multi-value vocabularies
 - Setting up display pages
 - Adding relationships between assets
 
@@ -83,8 +85,8 @@ categories can be grouped together in *vocabularies*. While tags represent an ad
 hoc method for users to group content together, categories exist to allow
 administrators to organize content in a more official, hierarchical structure.
 You can think of tags like the index of a book and categories like its table of
-contents. Both serve the same purpose: to help the user find the information he
-or she seeks.
+contents. Both serve the same purpose: to help users find the information
+they seek.
 
 Adding vocabularies and categories is similar to adding tags. Once you've
 selected the site you want to work on, select *Categories* from the content
@@ -633,8 +635,7 @@ display types to configure how the content appears.
 Most of the time, however, you'll likely be using the Asset Publisher to select
 content dynamically.
 
-##### Selecting assets dynamically [](id=lp-6-1-ugen05-selecting-assets-dynamically-0)
-[](id=lp-6-1-ugen03-selecting-assets-dynamically-0)
+##### Selecting assets dynamically [](id=lp-6-1-ugen05-selecting-assets-dynamically-0) [](id=lp-6-1-ugen03-selecting-assets-dynamically-0)
 
 The Asset Publisher's default behavior is to select assets dynamically according
 to rules that you give it. These rules can be stacked on top of each other so
@@ -674,14 +675,56 @@ displayed in descending order based on whether the article was tagged with the
 *hammer* tag. Or, you may want a series of video captures to display in
 ascending order based on a category called *birds*. You can also group by
 *Asset*, *Type* or *Vocabularies*. Vocabularies are groups of categories defined
-by administrators in the *Categories* section of the Control Panel. 
+by administrators in the *Categories* section of the Control Panel.
+
+There are a several new enhancements to vocabularies and categories in Liferay
+6.1. The three main features are targeted vocabularies, single/multi-valued
+vocabularies, and separated widgets for every vocabulary.
+
+##### Targeted Vocabularies
+
+Targeted Vocabularies allow you to decide which vocabularies can be applied to
+an asset type and which vocabularies are required for an asset type. To
+configure these settings, go to the categories administration page and mouse
+over the vocabulary in the list until you see the edit icon to the right. Select
+the icon to reveal a dialog box like the one below.
+
+![Figure 5.11: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
+
+The default value for *Associated Asset Types* is *All Asset Types*. You can
+fine tune your choices by using the *+* and *-* buttons, which narrows the scope
+of the vocabulary to specific assets. In the screenshot above, notice how the
+vocabulary `Famous Noses` is configured to be available for Blogs and Web
+Content, but it is not required. It is mandatory, however, for Documents and
+Media Documents.
+
+##### Single and Multi-valued Vocabularies
+
+You can now decide if the user can choose one or more categories from the same
+vocabulary to categorize an asset. If a vocabulary is single-valued you can only
+choose one, and if it allows more, you can choose several categories.
+
+![Figure 5.12: Single-valued vocabularies, on the left, use radio buttons while multi-valued vocabularies use checkboxes. .](../../images/multi-valued-vocabularies.png)
+
+Setting vocabulary values is done through the categories administration page.
+Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set
+single value vocabularies or use the default option to set multi-value
+vocabularies.
+
+##### Separated Widgets
+
+The third important improvement is every vocabulary has its own separated
+widget. These widgets appear in the Categorization section of every asset and
+they allow users to easily select appropriate categories for that asset.
+
+![Figure 5.13: Now that vocabularies have their own widgets, it's easy to select available  categories.](../../images/separated-widgets.png)
 
 In the *Ordering and Grouping* section of the Asset Publisher, you have great
 control over how content is ordered and grouped in the list, but this is only
 one aspect of how your content will be displayed. You can refine the display
 through many other display settings.
 
-#### Display Settings [](id=lp-6-1-ugen03-display-settings-0)
+## Setting up Display Pages [](id=lp-6-1-ugen03-display-settings-0)
 
 The Display Settings section gives you precise control over the display of your
 assets. There are a multitude of options available to configure how you want
@@ -703,7 +746,7 @@ developer.
 
 **Full Content:** The entire content of the entry.
 
-#### Other Settings [](id=lp-6-1-ugen03-other-settings-0)
+##### Other Settings [](id=lp-6-1-ugen03-other-settings-0)
 
 **Asset Link Behavior:** The default value is *Show Full Content*. With this
 value selected, when the link to an asset is clicked, the full asset is
@@ -739,7 +782,7 @@ print, enable comments, enable ratings, etc.
 **Show Metadata:** Allows you to select from the available metadata types (see
 below).
 
-![Figure 5.11: Available metadata
+![Figure 5.14: Available metadata
 types](../../images/available-metadata-fields.png)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS
@@ -753,7 +796,7 @@ query for mixed assets in the portal that have relevant information for your
 users.
 
 Next, we'll look at Display Pages, an addition to the asset framework introduced
-by Liferay 6.1. 
+by Liferay 6.1.
 
 #### Display Page [](id=lp-6-1-ugen03-display-page-0)
 
@@ -770,7 +813,7 @@ is the official location of the content that is referenced any time the content
 is displayed. A Display Page can be any page with an asset publisher configured
 to display any content associated with the page. When adding or editing web
 content articles, you can select a Display Page, but only pages with a
-configured asset publisher are available for selection. 
+configured asset publisher are available for selection.
 
 To create a Display Page, you can create a page yourself, add an Asset Publisher
 portlet and configure it yourself. Alternatively, you can use the *Content
@@ -788,7 +831,7 @@ page, add a Web Content Display portlet. Click the *Add Web Content* button,
 enter a title and some content, click on *Display Page* at the right, and select
 the Display Page you just created. Then click *Publish*.
 
-![Figure 5.12: Selecting a Display
+![Figure 5.15: Selecting a Display
 Page](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, you can now click
@@ -801,9 +844,9 @@ a configured Asset Publisher portlet but also a Tags Navigation, a Categories
 Navigation, and a Search portlet. These tools help users to quickly identify
 relevant content.
 
-![Figure 5.13: The Canonical URL](../../images/04-web-content-canonical-url.png)
+![Figure 5.16: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
-Let's move on to another new featured introduced by Liferay 6.1. 
+Let's move on to another new featured introduced by Liferay 6.1.
 
 ## Defining content relationships [](id=related-assets)
 
@@ -819,9 +862,40 @@ essentially the same interface with one key difference. The Asset publisher
 displays any content that meets the criteria selected in the portlet
 configuration. The Related Assets portlet only displays content that meets the
 criteria, and also is listed as a related asset for a piece of content that is
-currently published on the page where it is placed.
+currently published on the page where it is placed. Let's take a look at the the
+Related Assets portlet.
 
-## Summary  [](id=lp-6-1-ugen05-summary--0)
+As a prerequisite for the Related Assets portlet to display related assets, you
+configure it to show the content you want displayed. To do this, go to the Asset
+Publisher portlet and select the *wrench* icon in the upper right corner of the
+portlet. Under the *Setup* tab, set type of asset(s) to display using the
+*Asset Type* menu. The default value is set to *Any*. You can narrow the scope
+of the portlet to display any single category of asset type or select multiple
+assets from the menu.
+
+Filter options let you set minimum requirements for displaying assets by their
+categories, tags, and custom fields. Ordering and Grouping allows you to
+organize assets using the same criteria. Display settings allow you to customize
+how asssets are shown in the portlet. They can be listed by title, in a table,
+by abstract or full content. You can convert assets to different document
+types like ODT, PDF, and RTF. You can choose to show various metadata fields such as
+author, modification date, tags, and view count. You can even enable RSS
+subscriptions and customize their display settings.
+
+When you are finished setting the Source and Filter options, click *Save*. But
+hold on a minute. You saw the message that says, `You have successfully updated
+the setup`, but there still aren't any assets displayed in the related assets
+portlet. Why? You cannot see any related assets until you select an
+asset in the Asset Publisher.
+
+![Figure 5.17: Select an asset in the Asset Publisher to see its related assets
+displayed in the Related Assets
+portlet.](../../images/related-assets-portlet-after.png)
+
+Once you select an asset, its related assets will display in the Related Assets
+portlet, similar to the image above.
+
+## Summary [](id=lp-6-1-ugen05-summary-0)
 
 In this chapter, we explored Liferay's asset framework. Any type of content in
 Liferay is considered an asset and can utilize the features provided by the
