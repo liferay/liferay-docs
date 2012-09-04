@@ -9,7 +9,6 @@ application is an EE-only plugin. In this chapter we'll discuss several of these
 applications:
 
 - Bookmarks
-
 - Software catalog
 - Shopping
 - Knowledge Base
@@ -571,7 +570,7 @@ So before we start printing money, let's first create an online store.
 To begin setting up a store, simply place the Shopping application on a page in
 your site, although it might be preferable to dedicate an entire page to the
 application depending on how many items you have to sell. The Shopping portlet
-is available from the *Add* -> *More* menu in the task bar under Shopping.
+is available from the *Add* &rarr; *More* menu in the task bar under Shopping.
 
 ![Figure 12.12: Start setting up the store by entering items and categories in
 the shopping portlet.](../../images/shopping-add-portlet.png)
@@ -872,7 +871,7 @@ and/or SKU numbers.
 
 If your store sells books, you can use Liferay's Amazon Rankings application to
 display them alongside the main shopping portlet. Both of these are found in the
-Shopping category under *Add* -> *More* in the Control Panel. The Amazon
+Shopping category under *Add* &rarr; *More* in the Control Panel. The Amazon
 Rankings application give you the opportunity to highlight the books in your
 store's inventory outside of the typical category structure. Books are arranged
 in ascending order according to Amazon's Best Sellers Rank. Book cover images
