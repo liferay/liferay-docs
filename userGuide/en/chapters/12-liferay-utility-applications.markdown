@@ -1,6 +1,11 @@
 # Liferay Utility Applications [](id=lp-6-1-ugen12-liferay-utility-applications-0)
 
-In this chapter we'll look at some Liferay utility applications that might be useful for you. The Software Catalog is currently packaged with Liferay but will soon be replaced by Liferay Marketplace. Please see chapter 13 for information about Liferay Marketplace and managing Liferay plugins. The Knowledge Base application is an EE-only plugin. In this chapter we'll discuss several of these applications:
+In this chapter we'll look at some Liferay utility applications that might be
+useful for you. The Software Catalog is currently packaged with Liferay but will
+soon be replaced by Liferay Marketplace. Please see chapter 13 for information
+about Liferay Marketplace and managing Liferay plugins. The Knowledge Base
+application is an EE-only plugin. In this chapter we'll discuss several of these
+applications:
 
 - Bookmarks
 - Software catalog
@@ -16,7 +21,7 @@ on your portal.
 ## Capturing Web Sites with the Bookmarks Portlet [](id=lp-6-1-ugen12-capturing-web-sites-with-the-bookmarks-portlet-idlp-6-1-uge-0)
 
 Many of us enjoy collecting things we value. They may be stamps, comic books,
-sea shells, fabulous shoes. The list goes on and on. But have you considered
+sea shells, or fabulous shoes. The list goes on and on. But have you considered
 URLs collectible? Having a thorough collection of links can be a great way to
 add value to your portal's usability.
 
@@ -175,12 +180,12 @@ and make it available to others.
 
 You can create your plugin repository in two ways:
 
-1. Use the Software Catalog in the control panel to create the repository by
-using its graphical interface and an HTTP server.
+1.  Use the Software Catalog in the control panel to create the repository by
+    using its graphical interface and an HTTP server.
 
-2. Create an XML file using the Liferay Plugin Repository DTD
-(`http://www.liferay.com/dtd/liferay-plugin-repository_6_0_0.dtd`) and an HTTP
-server.
+2.  Create an XML file using the Liferay Plugin Repository DTD
+    (`http://www.liferay.com/dtd/liferay-plugin-repository_6_0_0.dtd`) and an
+    HTTP server.
 
 Both methods have their benefits. The first method allows users to upload their
 plugins to an HTTP server to which they have access. They can then register
@@ -400,7 +405,9 @@ recommend.
 
 Next, go to your browser and go to the following URL:
 
-[http://<server name\>:<port number\>/software\_catalog?<Friendly URL name or Group ID\>](http://<server name\>:<port number\>/software\_catalog?<Friendly URL name or Group ID\>)
+[http://<server name\>:<port number\>/software\_catalog?<Friendly URL name or
+Group ID\>](http://<server name\>:<port number\>/software\_catalog?<Friendly URL
+name or Group ID\>)
 
 For example, if you are on the same machine as your Liferay instance, and that
 instance is running on port 8080, and your group ID from the database is 10148,
@@ -533,17 +540,17 @@ administrators as to which repositories are trusted and untrusted.
 
 Enter the URL to the repository to which you wish to connect in one of the
 fields and click *Save*. The portlet will connect to the repository and items
-from this repository will be shown in the list.
+from this repository will be shown in the list. 
 
 Next, let's see what the Knowledge Base application has to offer.
 
 <!--   Section iii Shopping (head ref)  -->
 
-## Shopping [](id=lp-6-1-ugen12-shopping-0)
+<!-- ## Shopping -->
 
 <!--   Section iv Weather (head ref)   -->
 
-## Weather [](id=lp-6-1-ugen12-weather-0)
+<!-- ## Weather -->
 
 <!-- needs content -->
 
@@ -673,7 +680,7 @@ Navigate back to the templates tab of the Knowledge Base page of the control
 panel. You can perform the following actions on a template:
 
 *View:* displays a template. From here, you can use the template to create an
-article, edit the template, modify the permissions on the template or delete it.
+article, edit the template, modify the permissions on the template or delete it. 
 
 *Edit:* allows you to change the title and content of a template.
 
@@ -714,7 +721,7 @@ a *World* section, a *Politics* section, a *Business* section and an
 `portlet.properties` file in the knowledge base portlet's source directory.
 Updating the one in your server's directory won't work. Use comma delimited
 section names to set the property, like
-`admin.kb.article.sections=World,Politics,Business,Entertainment`, for example.
+`admin.kb.article.sections=World,Politics,Business,Entertainment`, for example. 
 
 Once you have defined some sections in your knowledge base's
 `portlet.properties` file, your users will see a multi-select box in the Add
