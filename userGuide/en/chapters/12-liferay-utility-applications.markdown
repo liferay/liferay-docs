@@ -661,7 +661,7 @@ location. Notice how the breadcrumbs reflect this change in the item form.
 ![Figure 12.18: When an item moves into a category, the breadcrumb navigation
 will update accordingly.](../../images/shopping-item-breadcrumb-change.png)
 
-You can make changes to any item through *Actions* $rarr; *Edit*. Finding an
+You can make changes to any item through *Actions* &rarr; *Edit*. Finding an
 item is easy, using the *Search* function.
 
 That's how you create an item for the store. Now let's examine some of the
