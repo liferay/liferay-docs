@@ -40,22 +40,22 @@ to decide how many bookmarks or folders are displayed on a page. Bookmark
 folders can have any number of subfolders.
 
 Here's an example of what one bookmarks portlet might look like. Bookmark
-Folders are displayed above individual bookmarks.  
+Folders are displayed above individual bookmarks. 
 
 ![Figure 12.1: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view-wide.png)
 
 In this example, there are eight bookmark folders, four of which have
-subfolders. Under the column *# of Folders* is the number of subfolders in each
-folder. Under the column *# of Entries* is the total number of bookmarks in the
-parent folder, including those in the subfolders.
+subfolders. The columns showing the number of folders and the number of entries
+show the subfolders and the entries contained within each top level folder. Note
+that total number of bookmarks includes those in the subfolders.
 
-Using the *Actions* button on the right, you can *Edit* the folder, manage
-folder *Permissions*, *Delete* the folder, *Add Subfolder*, or *Add Bookmark* to
-the folder.
+Using the Actions button on the right, you can edit the folder, manage
+folder permissions, delete the folder, add a subfolder, or add a bookmark to
+the folder. 
 
 As your collection of links grows, you may need to add more subfolders to keep
 things in order. Should you decide a link needs to move from one folder to
-another, you can manage this using the Edit option for that link.
+another, you can manage this using the Edit option for that link. 
 
 #### Moving a Link [](id=lp-6-1-ugen12-moving-a-link-0)
 
@@ -63,16 +63,16 @@ Just for fun, let's move a link from the main bookmarks folder into a subfolder
 one level down. We'll move the Liferay link into the Nonfiction subfolder in the
 Literature folder. The Nonfiction subfolder is a child of the Literature folder.
 We need to move the link to the Literature folder first before moving it into
-the Nonfiction subfolder.
+the Nonfiction subfolder. 
 
 ![Figure 12.2: You can move a link one level at a time by selecting the Select button.](../../images/bookmarks-select-remove-buttons.png)
 
 To achieve this, we select *Edit* from the Actions button for the link. In the
-Edit view, find the section called *Folder*. When applicable, this section will
-contain breadcrumb links to allow you to navigate freely among the other folder
+Edit view, find the section called *Folder*. When applicable, this section 
+contains breadcrumb links to allow you to navigate freely among the other folder
 levels. Currently, there are two buttons here labeled Select and Remove. Click
 the *Select* button and a new window appears, like the one below. Clicking the
-*Remove* button here doesn't effect the link. It is used solely for moving links
+*Remove* button here doesn't affect the link. It is used solely for moving links
 out of folders and subfolders back into the main Bookmarks view.
 
 ![Figure 12.3: Select the Choose button next to the desired folder.](../../images/bookmarks-choosing-subfolder.png)
@@ -82,7 +82,10 @@ Folder section changes to reflect the new location of the link.
 
 ![Figure 12.4: When you choose a folder, the folder navigation changes to reflect the new location of the link.](../../images/bookmarks-choosing-subfolder2.png)
 
-When you choose *Save* you return to the Bookmarks portlet. Notice that the Liferay link is no longer found under the Bookmarks section. Select *Literature* to reveal its contents. In the example below, you can see the Liferay link is now located in the bookmarks section of the Literature folder.
+When you choose *Save*, you return to the Bookmarks portlet. Notice that the
+Liferay link is no longer under the Bookmarks section. Select *Literature*
+to reveal its contents. In the example below, you can see the Liferay link is
+now in the bookmarks section of the Literature folder.
 
 ![Figure 12.5: When you move a link to a folder, it remains in the bookmarks section until it's moved into a subfolder.](../../images/bookmarks-link-move.png)
 
@@ -92,7 +95,7 @@ folder-level breadcrumbs. Click *Save* and the Literature folder view appears.
 Select *Nonfiction* to see your link in the subfolder's bookmarks list. Piece of
 cake, right?
 
-To move a link out of a subfolder and into a higher-level folder, *Edit* the
+To move a link out of a subfolder and into a higher-level folder, Edit the
 link in the subfolder and choose *Select*.
 
 ![Figure 12.6: To move a link up to a higher-level folder, choose the appropriate folder from the breadcrumbs in the Select view.](../../images/bookmarks-link-move2.png)
