@@ -1,4 +1,3 @@
-
 # Liferay Utility Applications [](id=lp-6-1-ugen12-liferay-utility-applications-0)
 
 In this chapter we'll look at some Liferay utility applications that might be
@@ -31,7 +30,7 @@ With Liferay's Bookmarks application, users collect and manage URLs in the
 portal. They can add, edit, delete, export and import bookmarks. Users can use
 links to access regularly visited web sites. Administrators can publish links
 tailored to specific groups of users. Both internal pages as well as external
-sites can be bookmarked. 
+sites can be bookmarked.
 
 ### Organizing Bookmarks by Folder [](id=lp-6-1-ugen12-organizing-bookmarks-by-folder-0)
 
@@ -41,23 +40,17 @@ to decide how many bookmarks or folders are displayed on a page. Bookmark
 folders can have any number of subfolders.
 
 Here's an example of what one bookmarks portlet might look like. Bookmark
-Folders are displayed above individual bookmarks.  
+Folders are displayed above individual bookmarks. 
 
-![Figure 12.1: Individual bookmarks, not associated with a folder, are listed
-separately.](../../images/bookmarks-folder-view.png)
+![Figure 12.1: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view-wide.png)
 
-In this example, there are four bookmark folders. The first folder, Just
-Desserts, shows the name of the folder, a description, and the name of a
-subfolder called *Dessert Recipes*. Under the column *# of Folders* is the
-number seven. This indicates there are seven subfolders in the Just Desserts
-folder. Six of those subfolders lie within the Dessert Recipes subfolder. Only
-the top-level subfolder is listed.
+In this example, there are eight bookmark folders, four of which have
+subfolders. The columns showing the number of folders and the number of entries
+show the subfolders and the entries contained within each top level folder. Note
+that total number of bookmarks includes those in the subfolders.
 
-Under the column *# of Entries* is the number 10. This indicates there are 10
-total bookmarks in the Just Desserts folder.
-
-Using the *Actions* button on the right, you can *Edit* the folder, manage
-folder *Permissions*, *Delete* the folder, *Add Subfolder*, or *Add Bookmark* to
+Using the Actions button on the right, you can edit the folder, manage
+folder permissions, delete the folder, add a subfolder, or add a bookmark to
 the folder. 
 
 As your collection of links grows, you may need to add more subfolders to keep
@@ -67,47 +60,61 @@ another, you can manage this using the Edit option for that link.
 #### Moving a Link [](id=lp-6-1-ugen12-moving-a-link-0)
 
 Just for fun, let's move a link from the main bookmarks folder into a subfolder
-two levels down. We'll move the link to the Good For You Cake & Cookies Company
-into the Healthy Recipes subfolder. The Healthy Recipes subfolder is a child of
-the Dessert Recipes subfolder. We need to move the link to the Dessert Recipes
-subfolder first before moving it into the Healthy Recipes subfolder.
+one level down. We'll move the Liferay link into the Nonfiction subfolder in the
+Literature folder. The Nonfiction subfolder is a child of the Literature folder.
+We need to move the link to the Literature folder first before moving it into
+the Nonfiction subfolder. 
 
-![Figure 12.2: You can only move a link one level at a
-time.](../../images/bookmarks-select-remove-buttons.png)
+![Figure 12.2: You can move a link one level at a time by selecting the Select button.](../../images/bookmarks-select-remove-buttons.png)
 
-To achieve this, we select Edit from the Actions button for the link. In the
-Edit view, find the section called *Folder*, where there is a link to the
-top-level folder, Just Desserts, next to two buttons labeled Select and Remove.
-Click the *Select* button and a dialog box like the one below appears.
+To achieve this, we select *Edit* from the Actions button for the link. In the
+Edit view, find the section called *Folder*. When applicable, this section 
+contains breadcrumb links to allow you to navigate freely among the other folder
+levels. Currently, there are two buttons here labeled Select and Remove. Click
+the *Select* button and a new window appears, like the one below. Clicking the
+*Remove* button here doesn't affect the link. It is used solely for moving links
+out of folders and subfolders back into the main Bookmarks view.
 
-![Figure 12.3: You can see the title of the current folder displayed as a link
-next to the Select button.](../../images/bookmarks-choosing-subfolder.png)
+![Figure 12.3: Select the Choose button next to the desired folder.](../../images/bookmarks-choosing-subfolder.png)
 
-Now choose the Dessert Recipes subfolder. When you do this, notice that the link
-changes to reflect the new subfolder level. 
+Now choose the *Literature* folder. When you do this, notice how the link's
+Folder section changes to reflect the new location of the link.
 
-![Figure 12.4: When you choose a subfolder, the name of the folder changes to
-reflect your new position.](../../images/bookmarks-choosing-subfolder2.png)
+![Figure 12.4: When you choose a folder, the folder navigation changes to reflect the new location of the link.](../../images/bookmarks-choosing-subfolder2.png)
 
-Choose *Save* and you return to the top-level folder. Now select the Dessert
-Recipes subfolder to open up the bookmarks list. Edit the Good For You link and
-click *Select*. Choose the Healthy Recipes subfolder and again notice the change
-in the folder level. 
+When you choose *Save*, you return to the Bookmarks portlet. Notice that the
+Liferay link is no longer under the Bookmarks section. Select *Literature*
+to reveal its contents. In the example below, you can see the Liferay link is
+now in the bookmarks section of the Literature folder.
 
-Click *Save* and the Dessert Recipes folder view appears. Select Healthy Recipes
-to see your link in the bookmarks list. Piece of cake, right?
+![Figure 12.5: When you move a link to a folder, it remains in the bookmarks section until it's moved into a subfolder.](../../images/bookmarks-link-move.png)
 
-To move a link out of a subfolder and into a higher-level folder, edit the link
-in the subfolder and choose *Select*. 
+Select *Edit* from the Actions button next to the Liferay link, then click
+*Select*. Choose the *Nonfiction* subfolder and again notice the change in the
+folder-level breadcrumbs. Click *Save* and the Literature folder view appears.
+Select *Nonfiction* to see your link in the subfolder's bookmarks list. Piece of
+cake, right?
 
-In the resulting dialog box, select the appropriate folder from the breadcrumbs
-at the top. Click the *Choose This Folder* button and verify the proper folder
-level is displayed. If this is correct, click *Save* and you're done.
+To move a link out of a subfolder and into a higher-level folder, Edit the
+link in the subfolder and choose *Select*.
 
-The button Add Subfolder creates a new subfolder of the current folder. The
-button Choose This Folder simply selects the current folder. The breadcrumb
-links at the top of the dialog box allow you to navigate to the other folder
-levels.
+![Figure 12.6: To move a link up to a higher-level folder, choose the appropriate folder from the breadcrumbs in the Select view.](../../images/bookmarks-link-move2.png)
+
+In the resulting window, select the appropriate folder from the breadcrumbs at
+the top. In this example, we selected *Literature* for consistency. This opens a
+new window, like the one below, showing the other folder options.
+
+![Figure 12.7: In this view, you can move the link into several different locations.](../../images/bookmarks-link-move3.png)
+
+You can choose one of the other subfolders from the list, or you can choose
+*Home* from the breadcrumbs at the top. When you verify that the desired folder
+is the one currently displayed in the breadcrumbs, click *Choose This Folder*.
+Then click *Save* and you're done. If you don't like any of the subfolders
+listed, you can place the link into a new subfolder by using the *Add Subfolder*
+button.
+
+If you choose *Remove* instead of Select in the above example, you take the link
+out of both subfolders and return it to the main bookmarks view.
 
 Now that you have an understanding of how bookmark folders are used, let's
 create some new bookmarks.
@@ -117,15 +124,18 @@ create some new bookmarks.
 Navigate to your portal and add the Bookmarks application to your page by
 selecting *Add* &rarr; *More*. The portlet looks like this by default:
 
-![Figure 12.5: Initially, no bookmarks are listed in this form until they're
-created.](../../images/bookmarks-add-portlet.png)
+![Figure 12.8: Initially, no bookmarks are listed in this form until they're created.](../../images/bookmarks-add-portlet.png)
 
 Across the top of the portlet are links labeled Home, Recent, and Mine. There is
-also a Search field and button. Choosing Recent displays a list of the latest
-bookmarks that have been added. Choosing Mine displays a list of the bookmarks
-you added to the portlet. Choosing Home returns you to the top level of the
-portlet. The Search option lets you search for bookmarks by name or category
-tags.
+also a Search field and button.
+
+**Home:** returns you to the top level of the portlet.
+
+**Recent:** displays a list of the latest bookmarks that have been added.
+
+**Mine:** displays a list of the bookmarks you added to the portlet.
+
+**Search:** lets you search for bookmarks by name, category, or tags.
 
 When you select the *Permissions* button on the right, a list of Roles and their
 associated permissions appears. The options are Add Entry, Add Folder,
@@ -134,8 +144,7 @@ Permissions, and View. When you are finished selecting the permissions click
 
 Clicking the *Add Folder* button in the Bookmarks application reveals this form:
 
-![Figure 12.6: It's not necessary to enter a description for a Bookmarks
-folder.](../../images/bookmarks-add-new-folder-form.png)
+![Figure 12.9: It's not necessary to enter a description for a Bookmarks folder.](../../images/bookmarks-add-new-folder-form.png)
 
 Here you can choose the folder's name, a description of its contents, and who
 can view it. Under More Options, you can set portlet permissions for various
@@ -144,25 +153,20 @@ Roles to the folder. Click *Save* when you are finished.
 To create a bookmark, click the *Add Bookmark* button. This form is similar to
 the New Folder form but has a few more options.
 
-![Figure 12.7: When you use the Add Bookmark form, you must enter a valid URL in
-the required field.](../../images/bookmarks-add-new-form.png)
+![Figure 12.10: When you use the Add Bookmark form, you must enter a valid URL in the required field.](../../images/bookmarks-add-new-form.png)
 
 Click *Select* to choose the folder for the new bookmark. Click *Remove* to
-delete a bookmark from the selected folder. A removed link goes into the list of
-general bookmarks that aren't associated with a folder. These are listed below
-the folders in the bookmarks application.
-
-In the URL field you must enter a fully qualified URL. Entering anything less
-displays an error.
+delete a bookmark from the selected folder. As stated above, a removed link goes
+into the list of general bookmarks that aren't associated with a folder. These
+are listed in the bookmarks section, below the folders, in the portlet.
 
 Below the Permissions there are additional options for Categorization and
-Related Assets, just like other Liferay portlets. Please see chapter 5 on the
-Asset Framework for further information about this. 
+Related Assets, just like in other Liferay applications. Please see chapter 5 on
+the Asset Framework for further information about this.
 
 Once you have added a new bookmark, it appears in the portlet. From here, you
 can manage your bookmark using familiar Liferay editing features. Collecting and
 organizing your links is a snap when you use Liferay's Bookmarks application.
-Now let's look at the Shopping application. 
 
 ## Creating Your Own Plugin Repository [](id=lp-6-1-ugen15-creating-your-own-plugin-repository-0)
 
