@@ -923,7 +923,7 @@ be of interest to a broader audience, consider contributing it back to the
 project. That would benefit all other users of the product and also would be
 good for you since you won't have to maintain the changes when new versions of
 Liferay come out. You can notify Liferay of bugs or improvements in
-[issues.liferay.com](issues.liferay.com). There is also a wiki page with
+[issues.liferay.com](http://issues.liferay.com). There is also a wiki page with
 instructions on how to contribute to Liferay:
 
 [http://www.liferay.com/community/wiki/-/wiki/Main/Contributing](http://www.liferay.com/community/wiki/-/wiki/Main/Contributing)

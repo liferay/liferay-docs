@@ -1,3 +1,4 @@
+
 # Collaboration Suite [](id=liferay-collaboration-sui-4)
 
 Liferay Portal ships with a robust suite of collaboration applications which
@@ -24,8 +25,7 @@ how to set up and administer:
 We'll discuss how these features work together to facilitate information flow
 within your portal and provide an enhanced experience for your users.
 
-## Understanding Liferay's common configuration options [](id=lp-6-1-ugen07-understanding-liferays-common-configuration-options-0)
-[](id=understanding-liferay-s-common-configuration-options)
+## Understanding Liferay's common configuration options [](id=lp-6-1-ugen07-understanding-liferays-common-configuration-options-0) [](id=understanding-liferay-s-common-configuration-options)
 
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include
@@ -490,8 +490,7 @@ empty. There are several display options to let you configure it to look the
 way you want it to look. Before we start adding entries, let's configure the
 portlet so that it displays entries the way you want them.
 
-#### Configuring the Blogs Portlet [](id=lp-6-1-ugen07-configuring-the-blogs-portlet-0)
-[](id=lp-6-1-ugen04-configuring-the-blogs-portlet-0)
+#### Configuring the Blogs Portlet [](id=lp-6-1-ugen07-configuring-the-blogs-portlet-0) [](id=lp-6-1-ugen04-configuring-the-blogs-portlet-0)
 
 The Blogs portlet is easy to configure. Click on the *Menu* icon in the
 portlet's title bar and select *Configuration*. Beneath the Setup tab, there is
@@ -701,8 +700,7 @@ close the dialog box. You'll notice the Blogs Aggregator looks very much like
 the Blogs portlet, except that the entries come from more than one author. This
 makes it nice and familiar for your users to navigate. 
 
-### The Blogs Admininistrator Portlet [](id=lp-6-1-ugen07-the-blogs-admininistrator-portlet-0)
-[](id=lp-6-1-ugen04-the-blogs-admininistrator-portlet-0)
+### The Blogs Admininistrator Portlet [](id=lp-6-1-ugen07-the-blogs-admininistrator-portlet-0) [](id=lp-6-1-ugen04-the-blogs-admininistrator-portlet-0)
 
 In the Control Panel there's a portlet for managing your site's blog entries.
 Most of the time, the Blogs portlet is the only tool you'll need to manage your
@@ -733,8 +731,7 @@ In a similar way to the Blogs portlet, you can use the Calendar portlet as a
 shared calendar on a web site or as a personal calendar -- or both. Let's look
 at how to configure it. 
 
-### Configuring the Calendar Portlet [](id=lp-6-1-ugen07-configuring-the-calendar-portlet-0)
-[](id=lp-6-1-ugen04-configuring-the-calendar-portlet-0)
+### Configuring the Calendar Portlet [](id=lp-6-1-ugen07-configuring-the-calendar-portlet-0) [](id=lp-6-1-ugen04-configuring-the-calendar-portlet-0)
 
 Open the *Configuration* dialog box from the menu in the portlet's title bar.
 The Setup tab allows you to configure three different options in subtabs:
@@ -767,8 +764,7 @@ ratings.
 
 Now that you've successfully set up your calendar, let's look at how to use it. 
 
-### Using the Calendar Portlet [](id=lp-6-1-ugen07-using-the-calendar-portlet-0)
-[](id=lp-6-1-ugen04-using-the-calendar-portlet-0)
+### Using the Calendar Portlet [](id=lp-6-1-ugen07-using-the-calendar-portlet-0) [](id=lp-6-1-ugen04-using-the-calendar-portlet-0)
 
 The Calendar portlet inherits its interface from the rest of Liferay's portlet
 library, so you should find shared features in the same place that you find
@@ -993,8 +989,7 @@ have the ability to add a category of threads or to ban abusive users from the
 message boards. Select the roles and permissions you want to configure and then
 click *Submit*.
 
-### Adding Categories and Mailing Lists [](id=lp-6-1-ugen07-adding-categories-and-mailing-lists-0)
-[](id=lp-6-1-ugen04-adding-categories-and-mailing-lists-0)
+### Adding Categories and Mailing Lists [](id=lp-6-1-ugen07-adding-categories-and-mailing-lists-0) [](id=lp-6-1-ugen04-adding-categories-and-mailing-lists-0)
 
 You are now ready to add categories to your message boards. Click the *Add
 Category* button. You may merge with a Parent Category by enabling the *Merge
@@ -1169,8 +1164,7 @@ management features. Posts on the message board show users' pictures if they
 have uploaded one for themselves, as well as the dates that users created an ID
 on your site.
 
-### Message Board Administrative Functions [](id=lp-6-1-ugen07-message-board-administrative-functions-0)
-[](id=lp-6-1-ugen04-message-board-administrative-functions-0)
+### Message Board Administrative Functions [](id=lp-6-1-ugen07-message-board-administrative-functions-0) [](id=lp-6-1-ugen04-message-board-administrative-functions-0)
 
 The Message Boards portlet provides for the day to day administration of the
 message threads. You may wish to separate this function out by a role, and then
@@ -1296,8 +1290,7 @@ be familiar to users of other wikis. The portlet provides a handy cheat sheet
 for the syntax on the page editing form, with a link to the full documentation
 if you wish to use some of WikiCreole's advanced features.
 
-### Getting Started with the Liferay Wiki [](id=lp-6-1-ugen07-getting-started-with-the-liferay-wiki-0)
-[](id=lp-6-1-ugen04-getting-started-with-the-liferay-wiki-0)
+### Getting Started with the Liferay Wiki [](id=lp-6-1-ugen07-getting-started-with-the-liferay-wiki-0) [](id=lp-6-1-ugen04-getting-started-with-the-liferay-wiki-0)
 
 The Wiki portlet works just like the other portlets developed by Liferay. Add
 the portlet to a page using the *Add &rarr; More* menu and then click
@@ -1402,8 +1395,7 @@ private for site members.
 Finally, the Wiki portlet also supports RSS feeds as the other collaboration
 portlets do, and you can configure its options in the *RSS* tab.
 
-### Adding and Editing Wiki Pages [](id=lp-6-1-ugen07-adding-and-editing-wiki-pages-0)
-[](id=lp-6-1-ugen04-adding-and-editing-wiki-pages-0)
+### Adding and Editing Wiki Pages [](id=lp-6-1-ugen07-adding-and-editing-wiki-pages-0) [](id=lp-6-1-ugen04-adding-and-editing-wiki-pages-0)
 
 By default, there is one page added to your wiki, called *FrontPage*. To get
 started adding data to your wiki, click the *Edit* link at the top right of the
@@ -1514,8 +1506,7 @@ mostly used to attach images to wiki articles which can then be referenced in
 the text. Referencing them using the proper WikiCreole syntax renders the image
 inline, which is a nice way to include illustrations in your wiki documents.
 
-### Navigating in the Wiki Portlet [](id=lp-6-1-ugen07-navigating-in-the-wiki-portlet-0)
-[](id=lp-6-1-ugen04-navigating-in-the-wiki-portlet-0)
+### Navigating in the Wiki Portlet [](id=lp-6-1-ugen07-navigating-in-the-wiki-portlet-0) [](id=lp-6-1-ugen04-navigating-in-the-wiki-portlet-0)
 
 At the top of the portlet is a list of links which allow you to navigate around
 the wiki. Next to the *Manage Wikis* button is a list of wikis that are
@@ -1548,9 +1539,7 @@ The Wiki portlet is another full-featured Liferay application with all of the
 features you expect from a state of the art wiki. Next, we'll look at how
 Liferay handles live chat.
 
-## Find out what others think or do using Polls [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
-[](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
-[](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
+## Find out what others think or do using Polls [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0) [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
 
 How well do you know your users? Do you ever wonder what they're thinking? Is
 using your site easy for them? How do they feel about the hot-button issues of

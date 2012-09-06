@@ -52,7 +52,7 @@ Liferay WCM makes this possible include:
 Once you get familiar with Liferay WCM you'll wonder how you ever got along
 without it.  
 
-### What Features Does Liferay WCM Have?
+### What Features Does Liferay WCM Have? [](id=lp-6-1-ugen02-what-features-does-liferay-wcm-have-0)
 [](id=lp-6-1-ugen03-what-features-does-liferay-wcm-have-0)
 
 Liferay's WCM has a host of features the makes managing the content of your site
@@ -240,7 +240,7 @@ example.
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works. 
 
-##### Backing up and Restoring Pages
+##### Backing up and Restoring Pages [](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
 [](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
 
 Next to the *Add Page* button in the Manage Site Pages screen are two buttons
@@ -279,7 +279,7 @@ selecting it.
 Next, we'll look at the options on the right side menu, starting with Look and
 Feel. 
 
-##### Customizing the Look and Feel
+##### Customizing the Look and Feel [](id=lp-6-1-ugen02-customizing-the-look-and-feel-0)
 [](id=lp-6-1-ugen02-customizing-the-look-and-feel-0)
 
 When you open the Manage Site Pages dialog box it defaults to the Look and Feel
@@ -337,7 +337,7 @@ own logo* option is disabled in *Portal Settings*. It is also not available for
 the default site -- only newly created sites and user pages have the option to
 have the name display.
 
-#### Changing options for individual pages
+#### Changing options for individual pages [](id=lp-6-1-ugen02-changing-options-for-individual-pages-0)
 [](id=lp-6-1-ugen02-changing-options-for-individual-pages-0)
 
 When you select a single page, some different options appear. Let's look at what
@@ -563,7 +563,7 @@ can provide the most relevant content to your users.
 Now that you know how to configure sites, let's look at page templates and site
 templates.
 
-#### Page Templates and Site Templates
+#### Page Templates and Site Templates [](id=lp-6-1-ugen02-page-templates-and-site-templates-0)
 [](id=lp-6-1-ugen02-page-templates-and-site-templates-0)
 
 *Page Templates* and *Site Templates* are invaluable tools for building similar
@@ -696,14 +696,13 @@ Congratulations! You've just changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.
 Other users, even members of this site, won't have permission to see it.
 
-<!-- ## Summary [](id=summ-24) --> Pages in Liferay are as flexible as pages
-you'd create manually without a portal. Using a point and click interface, you
-can define your site any way you want. You can create and remove pages, export
-and import them, set their layouts, define how they are indexed by search
-engines and more. You've also been introduced to Liferay's concept of sites.
-Again, using a point and click interface, you can create multiple web sites and
-define how users can access them, whether they are linked to a domain name and
-create all of their pages. 
+Pages in Liferay are as flexible as pages you'd create manually without a
+portal. Using a point and click interface, you can define your site any way you
+want. You can create and remove pages, export and import them, set their
+layouts, define how they are indexed by search engines and more. You've also
+been introduced to Liferay's concept of sites. Again, using a point and click
+interface, you can create multiple web sites and define how users can access
+them, whether they are linked to a domain name and create all of their pages.
 
 You now understand how to manage pages in Liferay Portal. It's time to move on
 to adding content to those pages. Liferay's Web Content Management (WCM) is a
@@ -723,14 +722,13 @@ templates to define how content is to be displayed, set up a workflow for
 content to be approved, schedule when content is to be published and much, much
 more.
 
-<!-- Section iii of new outline   --> ## Authoring (basic) content
-[](id=building-a-site-with-liferay-s-w-3)
+## Authoring (basic) content [](id=building-a-site-with-liferay-s-w-3)
 
 You've been assigned the task to build a web site for an innovative new social
 networking site called Nose-ster. You've decided to take advantage of Liferay
 Portal and its rapid deployment features as well as its ability to get a fully
 functional, content-rich web site with integrated social features up and running
-in little time.
+in little time. Together, we can get you started.
 
 We'll walk through the creation of Nose-ster's web site, starting by creating
 and publishing some simple content using Liferay's built-in WYSIWYG editor.
@@ -738,7 +736,7 @@ We'll then take advantage of Liferay's robust structure editor. We'll use
 templates to display the content and then explore some of the advanced
 publishing features such as the built-in workflow and Asset Publisher.
 
-### Creating content the simple way
+### Creating content the simple way [](id=lp-6-1-ugen02-creating-content-the-simple-way-0)
 [](id=lp-6-1-ugen03-creating-content-the-simple-way-0)
 
 As we've stated above, content is the reason web sites exist. Liferay Portal has
@@ -791,15 +789,16 @@ is a large corporation or a small non-profit charity. To celebrate this
 momentous achievement at Nose-ster, let's give our announcement some of the pomp
 and circumstance we think it deserves!
 
-Using the editor, select all the text and then change the style to Heading 1 and
-the color to dark blue.
+Using the editor, select all the text and then change the style to *Heading 1*
+and the color to *Dark Green*.
 
-You could insert an image here as well as more text with a different style, as
+You could insert an image here or even more text with a different style, as
 demonstrated in the screenshot below. You can also add bullets, numbering, links
 to another site or custom images. You can even add an emoticon. Let's add a
 smiley face at the end of our announcement.
 
-![Figure 2.14: Customizing Content](../../images/04-web-content-example2.png)
+![Figure 2.14: View your content changes directly in the
+editor.](../../images/04-web-content-example2.png)
 
 The WYSIWYG editor is a flexible tool that gives you the ability to add text,
 images, tables, links and more. Additionally, you can modify the display to
@@ -810,28 +809,117 @@ can be viewed and manipulated in the Documents and Media portlet.
 If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can
 click the *Source* button and write your own HTML if you wish.
 
-##### Assigning Permissions [](id=lp-6-1-ugen03-assigning-permissions-0)
+On the right of the New Web Content form are options that allow you to
+customize your web content. 
 
-Permissions in Liferay WCM work the same way they do everywhere else in Liferay.
-By default, content is viewable by Anyone (Guest Role). You can limit viewable
-permissions by selecting any Role from the drop-down or in the list.
-Additionally, Liferay Portal provides the ability to customize permissions in
-more detail. Select the *More Options* link next to the drop down button and
-you'll find the different activities you can grant or deny to your web content.
+![Figure 2.15: New web content can be customized in various ways using the menu
+on the right.](../../images/wcm-abstract.png)
 
-![Figure 2.15: Permissions for Web
-Content](../../images/04-web-content-content-permissions.png)
+**Abstract:** lets you to create a brief summary of the web content. You can
+also pair the text with a small image.
+
+**Categorization:** specifies the content type from a list of options. They are
+*Announcements*, *Blogs*, *General*, *News*, *Press Release*, and *Test*. You
+can also create tags to make the content easier to find in a search. Note that
+these categories are defined by a property in the properties file; see the
+`journal.article.types` property in chapter 20 for further information. 
+
+**Schedule:** customizes the date and time your content publishes and/or
+expires.
+
+**Display Page:** lets you determine where the web contents are displayed when
+linked from other pages. The concept of the Canonical URL is new to Liferay 6.1.
+The Canonical URL is unique for articles that redirect the visitor to the
+article's default display page. 
+
+Imagine you have a newspaper with a sports section and a technology section. You
+add a Sports page and a Tech page to your site, each one with a specific banner
+and look and feel. You want the articles to appear in the appropriate pages, but
+you know in Liferay articles are not related to pages. You can add an article as
+often as you like in different web content display portlets or in configured
+Asset Publishers. But if you have a *View in context* link, where will you show
+your article? This is where you'd use a default display page. Articles that have
+a default display page defined are shown with other related articles in
+the same display page.
+
+Imagine you have 100 sports articles and 100 tech articles. In previous versions
+of Liferay you'd need to create a page for each article to show it. Now with
+only one sports page and one tech page, you can show all articles in one place
+in a consistent fashion.
+
+##### Creating a display page
+
+There are two ways of creating a display page. You can use a *Content Display
+Page* template, which automatically creates everything you need, or you can
+create one manually. The Content Display Page template is found under *Page
+Templates* in the Portal section of the Control Panel.
+
+To create a display page manually, add an Asset Publisher to a page. Then make
+it the Default Asset Publisher for the page. This defines this Asset Publisher
+as the one that displays the content if several Asset Publishers are on the same
+page. Set this up by clicking *Configuration* on your Asset Publisher. Under the
+*Setup* tab, navigate to *Display Settings* and check the checkbox labeled *Set
+as the Default Asset Publisher for This Page*.
+
+Once you've given an article its default display page, links to the article 
+redirect the user to its default display page. To see how this works, add an
+Asset Publisher to another page, like the Home page of the newspaper, and
+configure it to *View in a Specific Portlet*. This setting is found in the
+*Asset Link Behavior* menu under Display Settings. If you click on the link,
+you'll be redirected to the Default Display Page of the article.
+
+You now see that the link looks something like this:
+
+www.nosester.com/nose-article
+
+This is an example of a canonical URL, and it's a nice enhancement for Search
+Engine Optimization (SEO) because the article's URL becomes the page URL. To a
+search engine that's crawling your site, this means that the location of your
+article never changes. And if you decide to use the content on another page in
+the future, the article is still available at this URL. This feature is used in
+search results, in related assets and in Asset Publishers. For more information
+on Liferay's Display Pages, see chapter 5.
+
+**Related Assets:** enables you to connect any number of assets within a site or
+across the portal, even if they don't share any tags and aren't in the same
+category. You can connect your content to a Blogs Entry, Message Boards Message,
+Web Content, Calendar Event, Bookmarks Entry, Documents and Media Document, and
+a Wiki Page.
+
+![Figure 2.16: This blog entry has links to three Related Assets: one web
+content display and two blog entries.](../../images/related-assets-link.png)
+
+You'll learn how to publish links to related assets using the Related Assets
+portlet in the *Defining content relationships* section of chapter 5.
+
+**Permissions:** customize who has access to the content. By default, content is
+viewable by Anyone (Guest Role). You can limit viewable permissions by selecting
+any Role from the drop-down or in the list. Additionally, Liferay Portal
+provides the ability to customize permissions in more detail. Select the *More
+Options* link next to the drop down button and you'll find the different
+activities you can grant or deny to your web content.
+
+![Figure 2.17: Permissions for Web Content allow you to fine-tune how your
+content is accessed.](../../images/04-web-content-content-permissions.png)
+
+**Custom fields:** customize metadata about the web content. The fields can
+represent anything you like, such as the web content's author or creation date.
+If custom fields have been defined for web content (which can be done from the
+*Custom Fields* page of the Control Panel), they appear here.
+
+For more information on Custom Fields see the Custom Fields section in chapter
+16.
 
 For this piece of web content, we don't need to change anything. After you're
-finished with permissions, click *Save*. This saves the content in draft form.
-Once you're satisfied with your changes, select *Publish*. This makes the
-content available for display but we still have some work to do to enable users
-to see it. In Liferay WCM, all content resides in a container, which is one of
-two portlets: Web Content Display or Web Content List. By far the most
-frequently used is the *Web Content Display* portlet. Let's look at how it
-works. 
+finished with permissions, click *Save as Draft*. This saves the content in
+draft form. Once you're satisfied with your changes, select *Publish*. This
+makes the content available for display, but we still have some work to do to
+enable users to see it. In Liferay WCM, all content resides in a container,
+which is one of two portlets: Web Content Display or Web Content List. By far
+the most frequently used is the *Web Content Display* portlet. Let's look at how
+it works.
 
-<!-- Section iv of new outline --> ## Publishing (basic) content
+## Publishing (basic) content
 [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
 
 Now that we've created and published our first piece of web content for
@@ -936,7 +1024,7 @@ Liferay's WCM, you'll want to use structures and templates found in chapter 3.
 Next, let's see how you can manage your content with an approval process called
 workflow. 
 
-<!-- Section v of new outline --> ## Using Liferay's workflow with WCM
+## Using Liferay's workflow with WCM
 [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay
@@ -963,7 +1051,7 @@ in the Workflow Configuration.
 When using a workflow, clicking *Submit for Publication* submits the staged
 pages into the workflow. Once all necessary approvals have been completed, the
 page status is marked as ready for publication. The *Publish to Live Now* and
-*Schedule for Publication* options  publish the last version of the selected
+*Schedule for Publication* options publish the last version of the selected
 pages marked as ready for publication.
 
 To enable workflow for Web Content, navigate to the Control Panel and select
@@ -977,7 +1065,7 @@ As you'll discover in chapter 10, you can design workflows to suit your
 organization's approval process. For Nose-ster's implementation we'll use the
 *Single Approver* workflow which ships with the product.
 
-#### Defining Workflows for Web Content
+#### Defining Workflows for Web Content [](id=lp-6-1-ugen02-defining-workflows-for-web-content-0)
 [](id=lp-6-1-ugen03-defining-workflows-for-web-content-0)
 
 Let's set up Liferay's Workflow for the Nose-ster web site. You must have the
@@ -1031,10 +1119,13 @@ workflow allows you to design workflows that go through as many steps as you
 need to conform to your business processes. We look at Kaleo workflow in more
 detail in chapter 6.
 
-<!-- Next up is Site memberships, where you'll learn how to administer sites and
-define users and permissions.  ## Site memberships
-[](id=lp-6-1-ugen02-site-memberships-0) Need text here --> ## Summary
-[](id=summ-25)
+<!--
+Next up is Site memberships, where you'll learn how to administer sites and
+define users and permissions. ## Site memberships
+[](id=lp-6-1-ugen02-site-memberships-0) Need text here
+-->
+
+## Summary [](id=summ-25)
 
 This chapter has provided an introduction to Liferay Web Content Management.
 We've seen how to create and manage pages within a site in Liferay. We've also
