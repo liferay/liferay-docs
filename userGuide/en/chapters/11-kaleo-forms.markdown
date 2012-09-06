@@ -74,7 +74,8 @@ workflows. It's an incredibly powerful tool for managing workflow defintions.
 The Workflow Designer can only be accessed through the Kaleo Forms portlet but
 definitions created can be used for other processes as well.
 
-![Figure 11.3: The Workflow Designer](../../images/kaleo-workflow-designer.png)
+![Figure 11.3: Define business processes using Kaleo Workflow
+Designer.](../../images/kaleo-workflow-designer.png)
 
 There are seven types of nodes you can add to a defintion. The node types are
 **Condition**, **End**, **Fork**, **Join**, **Start**, **State** and **Task**.
