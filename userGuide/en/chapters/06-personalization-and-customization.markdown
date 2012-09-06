@@ -99,8 +99,7 @@ Personal sites are a dynamic feature of Liferay Portal. They allow users to
 manage and customize their own pages and content on your portal. Next, let's
 look at how users can customize applicatons.
 
-## Page Customizations
-[](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
+## Page Customizations [](id=lp-6-1-ugen06-page-customizations-0) [](id=lp-6-1-ugen06-setting-preferences-to-customize-applications-0)
 
 Liferay 6.1 introduced the concept of page customizations. Administrators can
 designate public pages or sections of public pages to be customizable. When a
@@ -115,7 +114,7 @@ To enable page customizations as an administrator, first navigate to the page
 you'd like to let site members modify. Then select *Manage* &rarr; *Page
 Customizations* from the Dockbar.
 
-![Figure 6.x: To enable page customizations, select *Manage* &rarr; *Page
+![Figure 6.1: To enable page customizations, select *Manage* &rarr; *Page
 Customizations* from the Dockbar.](../../images/page-customizations.png)
 
 Once you've selected *Manage* &rarr; *Page Customizations*, you'll see one or
@@ -124,7 +123,7 @@ more of the *Customizable* boxes to allow site members to customize certain
 sections of the page. Regions that you've designated as customizable are colored
 green.
 
-![Figure 6.x: Check one or more of the *Customizable* boxes to allow site
+![Figure 6.2: Check one or more of the *Customizable* boxes to allow site
 members to customize certain sections of the
 page.](../../images/customizable-regions.png)
 
@@ -144,7 +143,7 @@ of the page that they're allowed to customize. If they click *View Default
 Page*, the Add menu will disappear from the Dockbar since they're not allowed to
 modify the default page.
 
-![Figure 6.x: Non-administrator site members can customize their own versions of
+![Figure 6.3: Non-administrator site members can customize their own versions of
 customizble pages but can't modify the default
 page.](../../images/default-customizable-page.png)
 
@@ -181,7 +180,7 @@ their language in the Language portlet to view a translation of the portal into
 their native language. After closing the Configuration dialog box of the
 Language portlet, the customized portal homepage looks like this:
 
-![Figure 6.x: In this example, Joe Bloggs removed the Hello World portlet, added
+![Figure 6.4: In this example, Joe Bloggs removed the Hello World portlet, added
 the Language portlet, and changed the display style from icons to a select
 box.](../../images/customized-portal-homepage.png)
 
@@ -251,8 +250,7 @@ Drools Portlet is available through the Customer Portal.
 
 Let's examine the sample portlet to see how it works. 
 
-#### Configuring the sample Drools portlet
-[](id=lp-6-1-ugen07-configuring-the-sample-drools-portlet-0)
+#### Configuring the sample Drools portlet [](id=lp-6-1-ugen06-configuring-the-sample-drools-portlet-0) [](id=lp-6-1-ugen07-configuring-the-sample-drools-portlet-0)
 
 <!-- | TODO: We need to Nose-ster-ize this. | --> 
 
