@@ -557,7 +557,7 @@ transaction.
 
 The Shopping portlet uses PayPal and allows you to choose the credit cards
 your store accepts. You can organize your inventory with categories and
-subcategories. A search function that helps users find items quickly. Users
+subcategories. A search function helps users find items quickly. Users
 place items in a shopping cart, allowing them to purchase multiple items at
 once. There is also an email notification system to alert customers when their
 transactions are processed.
@@ -655,14 +655,14 @@ subcategories, you can assign it to the category by editing the item. Choose
 the *Select* button (next to the *Remove* button), and this displays a dialog box
 listing all the shop categories.
 
-![Figure 12.17: To put an item in a category, open *Edit* and choose *Select* to
-see the available options.](../../images/shopping-select-categories.png)
+![Figure 12.17: To put an item in a category, edit the item and choose *Select*
+to see the available categories.](../../images/shopping-select-categories.png)
 
 Choose the desired category from the list to relocate the item to its new
 location. Notice how the breadcrumbs reflect this change in the item form.
 
 ![Figure 12.18: When an item moves into a category, the breadcrumb navigation
-will update accordingly.](../../images/shopping-item-breadcrumb-change.png)
+updates accordingly.](../../images/shopping-item-breadcrumb-change.png)
 
 You can make changes to any item through *Actions* &rarr; *Edit*. Finding an
 item is easy, using the *Search* function.
@@ -748,7 +748,7 @@ Logged in users are given a shopping cart to store the items they wish to buy.
 Customers can manage items and their quantities directly from the cart, allowing
 them to purchase a single product or multiple products at once. Customers can
 also key in coupon codes to take advantage of any discounts your store has to
-offer. Products can be placed in the cart form any category or subcategory. The
+offer. Products can be placed in the cart from any category or subcategory. The
 cart's appearance can be customized to reflect the overall design of your store.
 
 When buyers select an item, they see the item's description displaying all of
@@ -805,8 +805,9 @@ number to search for the order history and keep track of its status.
 
 If you think the shopping cart looks a little basic for your purposes, you can
 customize it by using a hook. To learn more about changing the appearance of the
-shopping cart, consult the *Liferay Developer's Guide* or see section 8.3 in
-[*Liferay in Action*](http://manning.com/sezov). 
+shopping cart, consult the [*Liferay Developer's
+Guide*](http://www.liferay.com/documentation/liferay-portal/6.1/development) or
+see section 8.3 in [*Liferay in Action*](http://manning.com/sezov). 
 
 Now your online store is set up, you have inventory, you have a payment system,
 and you have sales rolling in. All is good. Some day there will be customers
@@ -858,16 +859,16 @@ create new coupons from this form.
 To add a coupon, enter the coupon code in the Code field. If no code is
 specified, you can create one automatically by selecting the *Autogenerate Code*
 checkbox. After entering the coupon's name and description, you can set the
-coupon's start and expiration dates. Additional options allow you to set a
-coupon to never expire and make a coupon active.
+coupon's start and expiration dates. Additional options let you activate the
+coupon and set it to never expire.
 
 ![Figure 12.26: Customize your coupon parameters under Discounts and Limits.](../../images/shopping-coupon-discount-limits.png)
 
-Under the Discount section, you can set the minimum amount required for the
-discount to occur, the discount amount and the discount type. Types can be based
-on a percentage, an actual amount, free shipping, or a tax free sale. The Limits
-section allows you to set coupon restrictions based on a list of categories
-and/or SKU numbers.
+Under the Discount section, you can set the minimum order amount required for
+the discount, the discount amount, and the discount type. Types can be based on
+a percentage, a fixed amount, free shipping, or a tax free sale. The Limits
+section lets you set coupon restrictions based on a list of categories and/or
+SKU numbers.
 
 #### Integrating the Amazon Rankings portlet
 
@@ -887,14 +888,13 @@ account. This gives you the *associate ID tag* you need to enter in your
 API group. This yields the *access key id* and the *secret access key* that
 also must go into your `portal-ext.properties` file.
 
-You can get an Amazon License Key here:
+Amazon License Keys are available here:
 
 [https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/](https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/)
 
 Add the following lines to your `portal-ext.properties` file and populate the
-values for the associate tag, access key id and secret access key from your
-Amazon Web Services account. Ensure there are no spaces between the `=` sign and
-their values.
+values for the associate ID tag, access key id, and secret access key. Ensure
+there are no spaces between the `=` sign and the property values.
 
 	amazon.access.key.id=
 	amazon.associate.tag=
@@ -904,16 +904,16 @@ Note that these keys are provided by Amazon for personal use only. Please
 consult Amazon at [http://www.amazon.com](http://www.amazon.com) for more
 information.
 
-If your Amazon Web Services key is not set up properly in Liferay, it 
-affects the Shopping portlet when you try to add books.
+If your Amazon Web Services key is set improperly, you can't add books to your
+Shopping portlet.
 
 ##### Setting up the Amazon Rankings portlet
 
-When you are done setting up the `portal-ext.properties` file, you can choose what
-books you want to display in your store. Select *Configuration* from the Amazon
-Rankings portlet in the upper right corner. Go to the *Setup* tab and enter the
-International Standard Book Numbers (ISBNs) in the textbox, separated by spaces.
-The portlet accepts 10-digit ISBNs and will not take ISBNs containing letters.
+After setting up your Amazon Web Services account, choose the books to display
+in your store. Select *Configuration* from the Amazon Rankings portlet in the
+upper right corner. Go to the *Setup* tab and enter the International Standard
+Book Numbers (ISBNs) in the textbox, separated by spaces. The portlet accepts
+10-digit ISBNs rejecting ISBNs that letters.
 
 ![Figure 12.27: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
 
