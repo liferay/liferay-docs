@@ -769,6 +769,8 @@ below, we are using the screen name "joe" for the user Joe Bloggs.
 
 ![Figure 7.50: You have the ability to assign a task to a specific user of Liferay Portal.](../../images/kaleo-29.png)
 
+You can learn more about adding users and setting up their credentials in the [Adding users](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-adding-users-0) section of *Using Liferay Portal*.
+
 After assigning both QA and QA Management nodes to an assignment, their error
 markings will disappear.
 
@@ -988,19 +990,16 @@ where to send the workflow status.
 Here is a snapshot of what our current ticket process workflow looks like after
 inserting the condition node:
 
-![Figure 7.61: The ticket process workflow after inserting the condition node.](../../images/kaleo-
-30.png)
+![Figure 7.61: The ticket process workflow after inserting the condition node.](../../images/kaleo-30.png)
 
 Now, the condition node's workflow script is successfully edited to work
 properly with our workflow diagram. Next, we need to create a valid DDL record
 for this workflow to successfully run. You may be thinking "How do we set up a
 DDL record?" or "How does this DDL record thingy work?". Some of you may even be
 jumping up and down screaming "Liferay is da bomb!". Don't worry, all of these
-reactions are welcome and will be addressed later in the *Section* section.
-First, let's finish up the overview of what the Kaleo Workflow for Java has to
-offer you within Developer Studio!
-
-<!-- TODO: Add "Section" -->
+reactions are welcome and will be addressed later in the *Configuring a DDL
+record* section. First, let's finish up the overview of what the Kaleo Workflow
+for Java has to offer you within Developer Studio!
 
 As you can see from our example, Developer Studio allows for easy customization
 of workflow scripts. In the next section, we'll give an overview for creating a
@@ -1066,10 +1065,11 @@ email notification. First, let's create a new task node which will transition
 off our join node. This new task node will hold our email notification.This
 process is similar to how we assigned our previous task nodes.
 
-	1. Drag a new task node onto the workflow diagram
-	2. Name the new task node *Project Management* and select *Assign to a specific user*. Then, click *Next*.
-	3. For the Screen name, type "joe".
-	4. Click *Finish*.
+1. Drag a new task node onto the workflow diagram
+2. Name the new task node *Project Management* and select *Assign to a specific
+user*. Then, click *Next*.
+3. For the Screen name, type "joe".
+4. Click *Finish*.
 
 Now, create transitions for the Project Management task node. One should
 transistion from the join node to the Project Management node, which is named
@@ -1084,61 +1084,61 @@ two above this line, but (for the most part) it's done.-->
 
 For our newly created Project Management task node, we will create an email
 notification. As we discussed earlier, click on the Project Management node and
-then in the Properties window, select Notifications. Press the green "plus"
-symbol and then edit it to your liking. Make sure to select *email* from the
-*Notification Transport* menu. After you're finished, select the pencil icon to
-access the template editor. This is what our Properties window looks like when
-we're finished:
+then in the Properties window, select Notifications. We will now run through the
+steps to create our custom email notification:
+
+1. Press the green "plus" symbol to create a new notification.
+2. In the *Name* text field, type *ticket process email*.
+3. Select the *Freemarker* template language from the drop-down menu.
+4. Choose the *On entry* execution type from the drop-down menu.
+5. Select *email* from the *Notification Transport* menu.
+
+This is what our Properties window looks like when we're finished:
 
 ![Figure 7.65: After editing the notification inside the Properties view, you can access the template editor by selecting the pencil icon.](../../images/kaleo-33.png)
 
-In the template editor insert the following code:
+Now, click the pencil icon located beneath the green plus symbol. The FreeMarker
+template editor will appear. Insert the following email notification code:
 
-
-Here is an email notification example written in the FreeMarker template editor:
-
-	<#assign refererPlid = serviceContext.getAttribute("refererPlid")!"">
-	<#assign doAsGroupId = serviceContext.getAttribute("doAsGroupId")!"">
-	<#assign comments    = taskComments!"">
-	<#assign comments    = taskComments!"">
-	<#assign portalURL   = serviceContext.portalURL!"">
-	<#assign pathCtx     = portalUtil.pathContext!"NO_PATH_CTX">
-	<#assign wTasksURL   = "">
-
-	<#if (portalURL?last_index_of("/") > 6)>
-		<#assign portalURL  = portalURL?substring(0,portalURL?index_of("/", 7))>
-	</#if>
-	<#if (portalURL?length > 0) && (refererPlid != "") && (doAsGroupId != "")>
-		<#if (pathCtx?length > 0)>
-			<#assign portalURL  = portalURL+pathCtx>
-		</#if>
-		<#assign wTasksURL  = portalURL+"/group/control_panel/manage?
-p_p_id=153&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&doAsGroupId="+doAsGroupId
-+"&refererPlid="+refererPlid>
-	</#if>
-		<!-- email body -->
-		<p>
-		Your ${entryType} submission was rejected by a reviewer.
-		<#if comments != "" >
-			Rejection comment says: <strong>"${comments}"</strong>
-		</#if>
-		<br />Please do necessary modifications to your ${entryType} and 
-<strong>resubmit</strong> your work.
-		</p>
-		<#if (wTasksURL?length > 0)>
-			<p>
-			<a href="${wTasksURL}">Click here</a> to see workflow tasks assigned to you.
-			</p>
-		</#if>
-		<!-- Signature -->
-		<p>Sincerely,<br /><strong>Liferay Portal Workflow</strong></p>
+	 <notification>
+	 <name>Review Notification</name>
+	 <description>New Submission Is Ready For Review</description>
+	 <template>
+	 	<![CDATA[
+	 	<#assign comments    = taskComments!"">
+	 	<!-- email body -->
+	 	<p>
+	 	Please review the ${entryType} waiting for you in your workflow tasks.
+	 	<#if comments != "" >
+	 		<br />Assignment comment says: <strong>${comments}</strong>
+	 	</#if>
+	 	</p>
+       <!-- signature -->
+       <p>Sincerely,<br /><strong>Liferay Portal Workflow</strong></p>
+       ]]>
+      </template>
+      <template-language>freemarker</template-language>
+      <notification-type>email</notification-type>
+      <execution-type>onAssignment</execution-type>
+      </notification>
 
 For more information on writing email notifications, you can vist the Liferay
 blog [Workflow in Action: Kaleo email
-notifications](http://www.liferay.com/web/igor.beslic/blog/-/blogs/workflow-in-action-kaleo-email-
-notifications?_33_redirect=http%3A%2F%2Fwww.liferay.com%2Fweb%2Figor.beslic%2Fblog%3Fp_p_id
-%3D33%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-
-2%26p_p_col_count%3D1).
+notifications](http://www.liferay.com/web/igor.beslic/blog/-/blogs/workflow-in-action-kaleo-email-notifications?_33_redirect=http%3A%2F%2Fwww.liferay.com%2Fweb%2Figor.beslic%2Fblog%3Fp_p_id%3D33%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-2%26p_p_col_count%3D1).
+
+You have successfully completed setting up an email notification. Now, when the
+Project Management task node is activated in the workflow, Joe Bloggs will
+receive a notification email. For the user to receive emails, they must be
+registered within Liferay Portal. If you haven't registered Joe Bloggs ("joe")
+already, you can visit the [Adding
+users](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-adding-users-0)
+section of *Using Liferay Portal* for instructions. To configure the user's
+email, login to the user's account and visit *Control Panel* &rarr; *Server
+Administration* &rarr; *Mail* for setup options.
+
+<!-- TODO: Ask about email settings. Shouldn't the name, execution type,
+notification type etc. element tags already be inserted after selecting them in
+the Notifications tab?-->
 
 As you can see, the use of Velocity and FreeMarker template editors makes
 customizing your workflow diagram easier than ever. Next, we'll explain how to
@@ -1155,15 +1155,21 @@ selecting *Source*.
 
 ![Figure 7.66: Developer Studio allows you to view and edit the source code directly.](../../images/kaleo-20.png)
 
-Another cool feature Developer Studio offers is section highlighting using
-source mode. This can be done by selecting a node or transition in your workflow
-diagram. Then, using the floating palette or right clicking the entity, select
-*Show in source*.
+Here is a list of some cool features Developer Studio offers in Source mode:
 
-<!-- TODO mention:
-  -- the editor validates as you edit it. Points out errors.
-  -- the content assist feature
--->
+- *Section Highlighting*: can be done by selecting a node or transition in your
+workflow diagram. Then, using the floating palette or right clicking the entity,
+select *Show in source*.
+
+- *Editor Validation*: when typing code in any of the editors, there is an error
+check to validate if the code is correct. If the code is not correct, there will
+be an error marking in the gutter of the editor. If you click the error marking,
+it will give you a hint on how to resolve the problem.
+
+-	*Content Assist*: content assist will suggest editor specific
+functions when you are editing code. In addition, when you're doing
+a variable insertion, the editor gives you all the available
+variables that are a part of the Kaleo workflow. 
 
 Showing your XML file's source code is a great way to keep track of what you've
 edited while using Developer Studio's embedded script and template editors.
@@ -1176,34 +1182,33 @@ server.
 ### Saving process and publishing to a server
 
 After you've created your new workflow or modified your existing workflow,
-you'll need to publish it onto the Liferay server. We'll publish Ray and Alloy's
-workflow definition onto the Liferay server.
+you'll need to publish it onto the Liferay server. We'll publish the ticket
+process workflow definition onto the Liferay server.
 
-First, a new workflow definition can be published by right-clicking your
-*Workflow Definitions* folder in the *Servers* view and selecting *Upload new
-workflow*.
-
-![Figure 7.67: To upload a workflow definition, simply select *Upload new workflow* from the menu.](../../images/kaleo-18.png)
-
-<!-- TODO mention dragging workflow XML files onto the server -->
-
----
-
-![](../../images/tip-pen-paper.png)**Note:** When right-clicking *Workflow
-Definitions*, you can also select the *Refresh* button. This will update your
-workflow definitions folder with plugins that have been deployed outside of
-Developer Studio.
-
----
-
-<!-- Refresh will update Studio with the latest workflow versions from the
-Liferay portal (e.g. those created or modified in Portal using Kaleo Workflow
-Designer from the Kaleo Forms portlet) -->
-
+First, a new workflow definition can be published by right-clicking your *Kaleo
+Workflows* folder in the *Servers* view and selecting *Upload new workflow*.
 Then, you can select your workflow definition by navigating through the package
-explorer. Finally, the workflow definition you selected is displayed under the
-*Workflow Definitions* folder. For the snapshot below, we published our
-completed workflow definition for Ray and Alloy's spaceship:
+explorer.
+
+![Figure 7.67: To upload a workflow definition, simply select *Upload new workflow...* from the menu.](../../images/kaleo-18.png)
+
+Another acceptable method for adding a new workflow to the server is the
+drag-and-drop method. Simply drag your workflow XML file from your Liferay
+Project folder onto the Liferay server.
+
+---
+
+![](../../images/tip-pen-paper.png)**Note:** When right-clicking *Kaleo
+Workflows*, you can also select the *Refresh* button. This will update your
+Kaleo Workflows folder with the latest workflow versions from Liferay Portal
+(e.g. those created or modified in Portal using Kaleo Workflow Designer from the
+Kaleo Forms portlet)
+
+---
+
+Finally, the workflow definition you selected is displayed under the
+*Kaleo Workflows* folder. For the snapshot below, we published our
+completed ticket process workflow definition:
 
 ![Figure 7.68: Uploading a new workflow definition is quick and easy.](../../images/kaleo-19.png)
 
@@ -1227,11 +1232,117 @@ test your workflow defintion by saving your definition XML file in a draft.
 Furthermore, you are also able to publish your workflow definition straight to
 Liferay Portal for quick and easy configuration.
 
-For a finale of our overview for using Kaleo Workflow for Java in
-Developer Studio, let's recap Ray and Alloy's workflow definition and the steps
-we went through to complete it.
+For a finale of our overview for using Kaleo Workflow for Java in Developer
+Studio, let's set up the DDL record within Liferay Portal and try out our new
+workflow!
 
-#### Configuring a DDL Record
+### Adding a DDL record and running workflow in Portal
+
+Congratulations! You have successfully used Kaleo Designer for Java to create a
+workflow! Now, let's put the finishing touches on your product and put it to the
+test in Liferay Portal. Before you can set the DDL for the ticket process
+workflow, you'll need to activate the workflow definition. Navigate to the
+Control Panel and select *Workflow*. Then, under the *Definitions* tab, click on
+the *Actions* tab and select *Activate*.
+
+![Figure 7.69: The workflow definition must be activated before it can be used.](../../images/kaleo-34.png)
+
+Now, let's set the DDL record for our *Valid Fix* condition node.
+
+#### Configuring a DDL record
+
+Liferay makes it extremely easy to set a DDL record. Instead of writing Java
+code, you can set a DDL record inside Liferay Portal. Dynamic Data Lists can be
+used for many different things, but for our example we will integrate a DDL
+record into the ticket process workflow. If you would like to learn more about
+Dynamic Data Lists, visit [Using Web Forms and Dynamic Data
+Lists]{http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-lifer-1}
+located in *Using Liferay Portal*.
+
+Finally, let's set up our DDL and get the ticket process workflow working.
+Follow the steps below:
+
+1. Navigate to the Control Panel and select *Dynamic Data Lists*.
+
+2. Click *Add*. Then, name your new list *status*.
+
+3. For the *Data Definition* selection, click *Select*.
+
+4. Click *Add*. You will be given a *New Data Definition* window.
+	a. Type *status* into the *Name* text field
+	
+	b. Under the *Fields* tab, drag the *Select* field onto the graphical
+	interface.
+	
+		![Figure 7.70: You must create a new data definition for your DDL.](../../images/kaleo-35.png)
+	
+	c. Click the *Edit* button located on your data definition.
+	
+		![Figure 7.71: Click the edit button to properly configure your new data definition.](../../images/kaleo-36.png)
+	
+	d. Double-click the *Value* column next to *Name*. Type *status* for the
+	name and press *Save*
+	
+	e. Double-click the *Value* column next to *Options*. Name one *Fix* and the
+	other *Do not fix*. Then press *Save*.
+	
+		![Figure 7.72: You must set the correct settings so the data definition can be processed by our workflow definition.](../../images/kaleo-37.png)
+
+	f. Click *Save* again. Now select your *status* data definition from the
+	list.
+	
+		![Figure 7.73: Now that your new data definition is created, select it from the list.](../../images/kaleo-38.png)
+
+5. Select your ticket process workflow from the *Workflow* drop-down menu.
+
+	![Figure 7.74: Selecting the ticket process workflow will allow the DDL to be integrated inside our workflow process.](../../images/kaleo-39.png)
+
+6. Click *Save*
+
+Now, our DDL is set for use inside our ticket process workflow! Lastly, we will
+use the Kaleo Forms portlet to test out our new workflow definition!
+
+#### Using Kaleo Forms to run new workflow
+
+Using the Kaleo Designer for Java and setting the DDL record, we have now
+completed our workflow and it is ready to run! We will test it using the Kaleo
+Forms portlet located inside Liferay Portal. You will need to add the Kaleo
+Forms portlet to your portal if you have not already done so. Follow these steps
+to create a new workflow process inside Kaleo Forms:
+
+1. Select the *Processes* tab and then click *Add*.
+
+2. Complete each of the fields as follows:
+
+	a. Name: Ticket Process
+	b. Entry Definition: status
+	c. Initial Form: You will need to create an initial form.
+		i. Click the *Select* button and then select *Add*. Next, give it the
+		name *status*.
+		ii. Leave the rest of the defaults and click *Save*.
+		iii. When directed back to the *Entry Definitions* window, click
+		*Status*.
+	e. Workflow: Ticket Process 2
+
+3. Click *Save*
+
+4. Navigate back to the *Summary* tab and then select *Submit New* &rarr;
+*Ticket Process*.
+
+	![Figure 7.75: Submitting the ticket process will activate the workflow.](../../images/kaleo-40.png)
+
+You're now able to select the DDL and progress throughout the ticket process
+through Kaleo Forms. Remember, you will need to sign in as Joe Bloggs to access
+some of the tasks. Joe Bloggs should also receive an email when the Project
+Management node is activated.
+
+<!--CHECK: Do we need to add snapshots for each step of the workflow within
+Kaleo Forms?	
+<!--TODO: Add more snapshots?-->
+<!--Needs more detail (just a rough sketch of how this section should go-->	
+
+You have successfully created a workflow definition and created a workflow
+process within Liferay Portal! You are officially a workflow master!
 
 ### Summary
 
