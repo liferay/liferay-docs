@@ -180,7 +180,7 @@ and make it available to others.
 
 You can create your plugin repository in two ways:
 
-1.  Use the Software Catalog in the control panel to create the repository by
+1.  Use the Software Catalog in the Control Panel to create the repository by
     using its graphical interface and an HTTP server.
 
 2.  Create an XML file using the Liferay Plugin Repository DTD
@@ -220,7 +220,7 @@ working on. This means different sites can have different software repositories,
 so you can host several software repositories on the same instance of Liferay if
 you wish, they just have to be in different sites. Choose the site that will
 host the plugin repository and go to the Control Panel. You will see at the top
-of the screen a message that says “Content for [Site], where [Site] is the
+of the screen a message that says "Content for [Site]," where [Site] is the
 site you were on when you selected the Control Panel from the dockbar. If you
 want to administer the software catalog for a different site, you can select it
 from the selection box.
@@ -283,7 +283,7 @@ plugin.
 
 **Author:** Enter the name of the author of the software.
 
-**Page URL:** If the software has a home page, enter its url here.
+**Page URL:** If the software has a home page, enter its URL here.
 
 **Tags:** Enter any tags you would like added to this software.
 
@@ -579,7 +579,7 @@ The shopping portlet has four tabs across the top:
 
 **Categories:** shows the categories of items in your store. For example, if
 you're selling music, you might have categories for various genres, such as pop,
-rock, metal, hop hop, and the like. The portlet defaults to this view.
+rock, metal, hip hop, and the like. The portlet defaults to this view.
 
 **Cart:** shows the items the user has selected to purchase from your store. It
 displays the order subtotal, the shipping cost, and a field for entering a
@@ -664,7 +664,7 @@ location. Notice how the breadcrumbs reflect this change in the item form.
 ![Figure 12.18: When an item moves into a category, the breadcrumb navigation
 will update accordingly.](../../images/shopping-item-breadcrumb-change.png)
 
-You can make changes to any item through *Actions* $rarr; *Edit*. Finding an
+You can make changes to any item through *Actions* &rarr; *Edit*. Finding an
 item is easy, using the *Search* function.
 
 That's how you create an item for the store. Now let's examine some of the
@@ -798,7 +798,7 @@ summary view.](../../images/shopping-order-summary.png)
 
 When all the data has been entered correctly, click *Continue* to see the order
 summary. After reviewing the summary, click *Finished* and you are given
-confirmation the order has been placed, along wit the order number. Use this
+confirmation the order has been placed, along with the order number. Use this
 number to search for the order history and keep track of its status.
 
 #### Customizing the shopping cart with a hook
