@@ -523,11 +523,9 @@ publishing workflows in Liferay Developer Studio.
 with an existing workflow designer *within* Liferay Portal. This can be used to
 design workflow configuration and is described in the [Kaleo Forms: Defining
 Business
-Processes](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen11-
-kaleo-forms-defining-business-processes-0)
+Processes](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen11-kaleo-forms-defining-business-processes-0)
 chapter of *Using Liferay Portal*. Also, refer to the [Using
-Workflow](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-
-kal-4)
+Workflow](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
 chapter of *Using Liferay Portal* if you are unfamiliar with basic Kaleo
 workflow concepts or want to know how to design your workflow within Liferay
 Portal.
@@ -547,7 +545,7 @@ in the left navigation area.
 3. Download and install the *Kaleo Workflow EE* app.
 4. Download and install the *Kaleo Forms EE* app.
 
-After downloading and installing the Kaleo apps, a *Workflow Definitions*
+After downloading and installing the Kaleo apps, a *Kaleo Workflows*
 folder automatically appears underneath your Liferay server in the Servers
 view of Developer Studio.
 
@@ -561,8 +559,7 @@ Kaleo workflow definitions directly to and from the portal server. The *Single
 Approver* workflow is the default application and is preinstalled with the Kaleo
 apps.
 
-Next, we will dive into creating a workflow diagram using the Kaleo Workflow
-Designer for Java.
+Next, we will dive into creating a workflow diagram using the Kaleo Designer for Java.
 
 ### Creating a workflow diagram
 
@@ -572,7 +569,7 @@ Let's go through the Kaleo Designer's features and process for creating a
 workflow diagram in Developer Studio.
 
 To view the default Single Approver workflow or your already created workflow
-diagram, simply double-click the appropriate node. This will retrieve the
+diagram, simply double-click the appropriate node located in the *Kaleo Workflows* folder in the Servers view. This will retrieve the
 workflow definition from the Liferay server and you will be able to view your
 workflow definition in the designer interface.
 
@@ -587,15 +584,14 @@ features like the palette toolbar, properties window, and outline view. These wi
 You will notice that your workflow will open up in a *Workflow Diagram* screen,
 which is a graphical interface that modifies your workflow XML file. You can
 visit *Using Liferay Portal*'s chapter on [Creating new workflow
-definitions](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/creating-
-process-definitio-1) if you would like to learn more about creating and
+definitions](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/creating-process-definitio-1) if you would like to learn more about creating and
 modifying a workflow definition XML file. Your workflow diagram should appear
 similar to the snapshot below:
 
 ![Figure 7.39: The Workflow Diagram screen displays the Kaleo workflow you've designed on your 
 Liferay Portal.](../../images/kaleo-2.png)
 
-Another helpful feature in the Kaleo Workflow Designer for Java is the ability
+Another helpful feature in the Kaleo Designer for Java is the ability
 to create business logic locally, without having to navigate back and forth from
 your portal and Developer Studio. We will go into detail later on how to upload
 your new workflow to the server.
@@ -604,8 +600,7 @@ For a fun example to demonstrate some of the features for the Kaleo Workflow
 Designer for Java, we will create a workflow definition for a ticketing process. Are you ready to 
 roll? Let's get started!
 
-![Figure 7.40: Liferay's mascots, Ray and Alloy, can be found at http://www.liferay.com/ray.]
-(../../images/kaleo-15.png)
+![Figure 7.40: Liferay's mascots, Ray and Alloy, can be found at http://www.liferay.com/ray.](../../images/kaleo-15.png)
 
 You can create your new workflow definition by selecting the *New* tab, and then
 selecting *Liferay Kaleo Workflow*.
@@ -614,10 +609,9 @@ selecting *Liferay Kaleo Workflow*.
 tab.](../../images/kaleo-3.png)
 
 A pop-up window will display, prompting you to enter credentials for a new
-workflow definition.
+workflow definition. The snapshot below displays the setup menu for our ticket process workflow definition.
 
-![Figure 7.42: You will need to specify several values and pick a location for your workflow 
-definition to reside.](../../images/kaleo-5.png)
+![Figure 7.42: You will need to specify several values and pick a location for your workflow definition to reside.](../../images/kaleo-5.png)
 
 ---
 
@@ -664,7 +658,7 @@ For pointer options, you are given two choices:
 the workflow diagram by simply clicking the icon.
 
 - *Marquee*: used to drag an invisible box around multiple icons. This is very
-useful when wanting to select multiple options on the workflow diagram.
+useful when wanting to select multiple nodes and/or transitions on the workflow diagram.
 
 Furthermore, there is an option to choose *Transition*. This feature connects
 existing nodes and describes the transition change between the two nodes.
@@ -687,15 +681,13 @@ notifications, and transitions.
 
 For additional information on the features located in the palette, you can
 reference the [Kaleo
-Designer](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen06-
-kaleo-designer-0)
+Designer](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen06-kaleo-designer-0)
 section of *Using Liferay Portal*.
 
 For our ticket process workflow diagram, we left off with the simple *Start* and
 *End* state nodes connected by the task node *Developer*.
 
-![Figure 7.45: The ticket process' beginning workflow diagram needs some work!](../../images/kaleo-
-9.png)
+![Figure 7.45: The ticket process' beginning workflow diagram needs some work!](../../images/kaleo-9.png)
 
 After the developer has approved the workflow, it is sent to the quality
 assurance teams: *QA* and *QA Management*. The ticket process workflow will need
@@ -708,15 +700,13 @@ clicking on the green "plus" sign. You will view a drop-down menu with options
 on what you're forking. In addition, you have a checkbox that asks if you would
 like to automatically add a join node.
 
-![Figure 7.46: You're able to select what to fork and are given the option to automatically create a 
-Join node.](../../images/kaleo-7.png)
+![Figure 7.46: You're able to select what to fork and are given the option to automatically create a Join node.](../../images/kaleo-7.png)
 
 After clicking *Finish*, Developer Studio will place your nodes in a spot you
 probably don't like. That's OK, because you can select and drag each node to
 your desired location. Our example now looks something like this:
 
-![Figure 7.47: After creating the fork and join nodes, you can position the nodes to your liking.]
-(../../images/kaleo-8.png)
+![Figure 7.47: After creating the fork and join nodes, you can position the nodes to your liking.](../../images/kaleo-8.png)
 
 You can see from our example that there are error markings on multiple nodes
 within the workflow definition. Error markings are represented by a red "X" in
@@ -725,15 +715,13 @@ specified within our workflow. For help, you can hover your pointer over an
 error marker and Studio will display a hint on how to resolve the problem. We'll
 correct these error markings in our workflow definition soon.
 
-![Figure 7.48: Error markings notify the user that something is wrong or needs to be specified 
-within a node.](../../images/kaleo-26.png)
+![Figure 7.48: Error markings notify the user that something is wrong or needs to be specified within a node.](../../images/kaleo-26.png)
 
 Notice when you hover your pointer over a node, a floating palette appears. This
 is a convenient feature for quick customization. Here is a snapshot of what a
 floating palette appears like on your workflow diagram:
 
-![Figure 7.49: The floating palette appears when you hover your pointer over any node.]
-(../../images/kaleo-10.png)
+![Figure 7.49: The floating palette appears when you hover your pointer over any node.](../../images/kaleo-10.png)
 
 The floating palette's features and descriptions are listed below:
 
@@ -748,7 +736,7 @@ model, such as a task action or task notification.
 - *Show in Source*: shows the model element associated with a given part in the
 corresponding source editor.
 
-- *Start Transition*: starts transition action
+- *Start Transition*: starts transition action.
 
 Obviously, there is still work to be done. We have multiple error markings and
 the fork and join nodes aren't connected to anything. Let's change the
@@ -769,7 +757,7 @@ below, we are using the screen name "joe" for the user Joe Bloggs.
 
 ![Figure 7.50: You have the ability to assign a task to a specific user of Liferay Portal.](../../images/kaleo-29.png)
 
-You can learn more about adding users and setting up their credentials in the [Adding users](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-adding-users-0) section of *Using Liferay Portal*.
+You must use a registered user within your Liferay Portal for the task assignments to be correctly assigned. Therefore, you will need to create the user Joe Bloggs. You can learn more about adding users and setting up their credentials in the [Adding users](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-adding-users-0) section of *Using Liferay Portal*.
 
 After assigning both QA and QA Management nodes to an assignment, their error
 markings will disappear.
@@ -807,7 +795,7 @@ that helps you allign your nodes exactly parallel with other existing
 nodes.
 
 	![Figure 7.54: Studio's Surveyor's Level helps you design your workflow for
-	an organized an professional look.](../../images/kaleo-32.png)
+	an organized and professional look.](../../images/kaleo-32.png)
 
 <!--CHECK: Not sure if there is a specifc name for the "Surveyor's Level". This
 is just a name I use for the instrument-->
@@ -834,14 +822,13 @@ appear in the Properties window:
 
 - *Task Timers*: specifies *Name* and *Blocking*.
 
-- *Script*: allows you to choose default script editor and edit script
+- *Script*: allows you to choose default script editor and edit script.
 
 - *Other*: defines *Name* and *Description* of current node.
 
 Here is what the Properties window looks like in Developer Studio:
 
-![Figure 7.55: The Properties window gives you multiple sub-tabs to help customize your workflow 
-diagram.](../../images/kaleo-11.png) 
+![Figure 7.55: The Properties window gives you multiple sub-tabs to help customize your workflow diagram.](../../images/kaleo-11.png) 
 
 Another useful tool is the Outline view. This gives a top level view of your
 entire definition. As you can imagine, workflows can become extremely large over
@@ -849,8 +836,7 @@ time and may not be able to fit on your workflow diagram screen. The Outline
 view allows you to view your entire workflow definition, no matter how large it
 becomes. Below is a snapshot of an outline view in Developer Studio:
 
-![Figure 7.56: The Outline view lets you view your entire workflow definition.](../../images/kaleo-
-25.png) 
+![Figure 7.56: The Outline view lets you view your entire workflow definition.](../../images/kaleo-25.png) 
 
 As you can see, the Properties and Outline options make customizing your
 workflow easier than ever! Developer Studio offers a useful programming
@@ -887,16 +873,14 @@ use the drop-down menu and select where your condition transitions should send
 your workflow based on its status. Here is a snapshot of the *Create New
 Condition Node* menu configured for the ticket process workflow.
 
-![Figure 7.57: When creating a condition node, you're able to set your preferred script language, 
-name, and condition transitions.](../../images/kaleo-12.png) 
+![Figure 7.57: When creating a condition node, you're able to set your preferred script language, name, and condition transitions.](../../images/kaleo-12.png) 
 
 You will notice there is an error marking on the condition node. It indicates
 that a script must be specified. By selecting the condition node and clicking
 *Edit Script* from the Properties window, you will now be able to take full
 advantage of the script editing capabilities Developer Studio offers.
 
-![Figure 7.58: You're able to access the *Edit Script* feature by navigating to the *Script* sub-tab 
-inside the Properties view.](../../images/kaleo-13.png)
+![Figure 7.58: You're able to access the *Edit Script* feature by navigating to the *Script* sub-tab inside the Properties view.](../../images/kaleo-13.png)
 
 Furthermore, you can also access the *Edit Script* tool by navigating to your
 floating palette or right-clicking the node and selecting *Edit Script*.
@@ -946,8 +930,7 @@ To edit the ticket process condition node, we will need to get a hold of the
 Dynamic Data List (DDL) record that's being worked on in our workflow process.
 To get the DDL record, we need the `serviceContext`. If you would like to learn
 more about what the Service Context parameter is used for, you can visit the
-[Service Context]
-(http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/service-conte-1)
+[Service Context](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/service-conte-1)
 section of Liferay's Developer's Guide.
 
 Taking advantage of Developer Studio's palette features, we will simply drag and
@@ -1008,7 +991,7 @@ Developer Studio uses template editors to customize your workflow definition.
 
 ### How to take advantage of the bundled template editors
 
-As we stated earlier, Developer Studio comes bundled with text, Velocity, and
+As we stated earlier, Developer Studio comes bundled with Text, Velocity, and
 FreeMarker template editors. This provides easy editing for Java developers when
 customizing workflow properties like notifications. For a quick overview to show
 how Developer Studio maximizes developer efficiency, we will demonstrate how to
@@ -1055,14 +1038,14 @@ for more information on how to use each editor's variables and methods.
 ---
 
 ![](../../images/tip-pen-paper.png)**Note:** Similar to script editors,
-Developer Studio allows you to use text, FreeMarker, and Velocity template
+Developer Studio allows you to use Text, FreeMarker, and Velocity template
 editors while modifying the same workflow definition XML file.
 
 ---
 
 We will continue on with editing our ticket process workflow by creating an
 email notification. First, let's create a new task node which will transition
-off our join node. This new task node will hold our email notification.This
+off our join node. This new task node will hold our email notification. This
 process is similar to how we assigned our previous task nodes.
 
 1. Drag a new task node onto the workflow diagram
@@ -1084,8 +1067,7 @@ two above this line, but (for the most part) it's done.-->
 
 For our newly created Project Management task node, we will create an email
 notification. As we discussed earlier, click on the Project Management node and
-then in the Properties window, select Notifications. We will now run through the
-steps to create our custom email notification:
+then in the Properties window, select *Notifications*. We will now run through the steps to create our custom email notification:
 
 1. Press the green "plus" symbol to create a new notification.
 2. In the *Name* text field, type *ticket process email*.
@@ -1202,7 +1184,7 @@ Project folder onto the Liferay server.
 Workflows*, you can also select the *Refresh* button. This will update your
 Kaleo Workflows folder with the latest workflow versions from Liferay Portal
 (e.g. those created or modified in Portal using Kaleo Workflow Designer from the
-Kaleo Forms portlet)
+Kaleo Forms portlet).
 
 ---
 
@@ -1232,7 +1214,7 @@ test your workflow defintion by saving your definition XML file in a draft.
 Furthermore, you are also able to publish your workflow definition straight to
 Liferay Portal for quick and easy configuration.
 
-For a finale of our overview for using Kaleo Workflow for Java in Developer
+For a finale of our overview for using Kaleo Designer for Java in Developer
 Studio, let's set up the DDL record within Liferay Portal and try out our new
 workflow!
 
@@ -1255,8 +1237,7 @@ Liferay makes it extremely easy to set a DDL record. Instead of writing Java
 code, you can set a DDL record inside Liferay Portal. Dynamic Data Lists can be
 used for many different things, but for our example we will integrate a DDL
 record into the ticket process workflow. If you would like to learn more about
-Dynamic Data Lists, visit [Using Web Forms and Dynamic Data
-Lists]{http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-lifer-1}
+Dynamic Data Lists, visit [Using Web Forms and Dynamic Data Lists](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-lifer-1)
 located in *Using Liferay Portal*.
 
 Finally, let's set up our DDL and get the ticket process workflow working.
@@ -1353,7 +1334,7 @@ any developer preference you may have. In addition, Developer Studio's access to
 your custom business logic APIs and Liferay Portal APIs makes it simple to
 customize your workflow definition. Lastly, the ability to publish directly to
 your existing Liferay server makes the configuration process quick and easy.
-With all of these great features, the Kaleo Workflow for Java in Developer
+With all of these great features, the Kaleo Designer for Java in Developer
 Studio is a powerful tool that couldn't be easier to use!
 
 <!-- TODO insert link to where Greg's video is located-->
