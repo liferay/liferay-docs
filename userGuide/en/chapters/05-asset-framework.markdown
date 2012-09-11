@@ -556,7 +556,7 @@ versions).
 Configuring search using a JSON object is a bit unusual, but as you can see, it's
 not as hard as it looks initially. 
 
-### Summary [](id=lp-6-1-ugen05-summary-0)
+### Summary  [](id=lp-6-1-ugen05-summary--0)
 
 Search is a powerful component of Liferay Portal's asset framework. The
 proclivity of assets means that there is an extensible, robust, and configurable
@@ -635,7 +635,7 @@ display types to configure how the content appears.
 Most of the time, however, you'll likely be using the Asset Publisher to select
 content dynamically.
 
-##### Selecting assets dynamically [](id=lp-6-1-ugen05-selecting-assets-dynamically-0) [](id=lp-6-1-ugen03-selecting-assets-dynamically-0)
+##### Selecting assets dynamically [](id=lp-6-1-ugen05-selecting-assets-dynamically-0) [](id=lp-6-1-ugen03-selecting-assets-dynamically-0) [](id=lp-6-1-ugen05-selecting-assets-dynamically-idlp-6-1-ugen05-selecting-asse-0) [](id=lp-6-1-ugen05-selecting-assets-dynamically-idlp-6-1-ugen05-selecting-asse-0)
 
 The Asset Publisher's default behavior is to select assets dynamically according
 to rules that you give it. These rules can be stacked on top of each other so
@@ -681,7 +681,7 @@ There are a several new enhancements to vocabularies and categories in Liferay
 6.1. The three main features are targeted vocabularies, single/multi-valued
 vocabularies, and separated widgets for every vocabulary.
 
-##### Targeted Vocabularies
+##### Targeted Vocabularies [](id=lp-6-1-ugen05-targeted-vocabularies-0)
 
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
@@ -698,7 +698,7 @@ vocabulary `Famous Noses` is configured to be available for Blogs and Web
 Content, but it is not required. It is mandatory, however, for Documents and
 Media Documents.
 
-##### Single and Multi-valued Vocabularies
+##### Single and Multi-valued Vocabularies [](id=lp-6-1-ugen05-single-and-multi-valued-vocabularies-0)
 
 You can now decide if the user can choose one or more categories from the same
 vocabulary to categorize an asset. If a vocabulary is single-valued you can only
@@ -711,7 +711,7 @@ Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set
 single value vocabularies or use the default option to set multi-value
 vocabularies.
 
-##### Separated Widgets
+##### Separated Widgets [](id=lp-6-1-ugen05-separated-widgets-0)
 
 The third important improvement is every vocabulary has its own separated
 widget. These widgets appear in the Categorization section of every asset and

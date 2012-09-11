@@ -1,4 +1,3 @@
-
 # Liferay APIs [](id=liferay-ap-1)
 
 This chapter provides an overview of several of the essential Liferay
@@ -1134,7 +1133,7 @@ our browser.
 2. Fill in the *name* field to "MyUserGroup3" and the *description* to some
 arbitrary value string like "Created using JSON WS".
 
-3.	Click *Inovke* to get a result similar to the following:
+3.	Click *Invoke* to get a result similar to the following:
 
 		{"addedByLDAPImport":false,"companyId":10154,"description":"Created using JSON WS","name":"MyUserGroup33","parentUserGroupId":0,"userGroupId":13162}
 
