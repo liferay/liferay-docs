@@ -499,8 +499,8 @@ Studio comes bundled with a [Groovy](http://groovy.codehaus.org/Documentation)
 editor (made available by Spring Source), giving you the same rich editing
 experience to which you may be accustomed in editing Kaleo Groovy scripts as a
 Java developer make Java calls out to your custom business logic APIs and
-Liferay's Portal APIs. In Develoer Studio, you can leverage editors for
-Beanshell, Drls, Javascript, Python, and Ruby scripting languages, and
+Liferay's Portal APIs. In Developer Studio, you can leverage editors for
+Beanshell, Drl, Javascript, Python, and Ruby scripting languages, and
 [FreeMarker](http://freemarker.sourceforge.net/) and
 [Velocity](http://velocity.apache.org/engine/releases/velocity-1.5/user-guide.html)
 template languages too. Kaleo Designer for Java gives you a rich tool set for
@@ -791,7 +791,7 @@ are presented a menu which appears like this:
 them to your liking.
 
 4. Within the workflow diagram, Studio offers an assisted *Surveyor's Level*
-that helps you allign your nodes exactly parallel with other existing
+that helps you align your nodes exactly parallel with other existing
 nodes.
 
 	![Figure 7.54: Studio's Surveyor's Level helps you design your workflow for
@@ -1057,7 +1057,7 @@ user*. Then, click *Next*.
 4. Click *Finish*.
 
 Now, create transitions for the Project Management task node. One should
-transistion from the join node to the Project Management node, which is named
+transition from the join node to the Project Management node, which is named
 *Passed QA*. The other should transition from the Project Management node to the
 EndNode, which is named *Completed*. Here is an updated screenshot of what the
 workflow diagram looks like:
@@ -1106,7 +1106,7 @@ template editor will appear. Insert the following email notification code:
       <execution-type>onAssignment</execution-type>
       </notification>
 
-For more information on writing email notifications, you can vist the Liferay
+For more information on writing email notifications, you can visit the Liferay
 blog [Workflow in Action: Kaleo email
 notifications](http://www.liferay.com/web/igor.beslic/blog/-/blogs/workflow-in-action-kaleo-email-notifications?_33_redirect=http%3A%2F%2Fwww.liferay.com%2Fweb%2Figor.beslic%2Fblog%3Fp_p_id%3D33%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-2%26p_p_col_count%3D1).
 
@@ -1212,7 +1212,7 @@ associate with asset publication and with their Kaleo Forms.
 
 Saving and publishing your workflow definition in Developer Studio is relatively
 easy. Unlike other Java editors, Developer Studio provides the capability to
-test your workflow defintion by saving your definition XML file in a draft.
+test your workflow definition by saving your definition XML file in a draft.
 Furthermore, you are also able to publish your workflow definition straight to
 Liferay Portal for quick and easy configuration.
 
