@@ -37,13 +37,102 @@ on a stable version of the product that is offered over an extended period of
 time.
 
 Because the release cycle for EE is longer than that for CE, each enterprise
-release is supported for 4 years. All bug fixes in Liferay Portal are backported
+release is supported for four years. All bug fixes in Liferay Portal are backported
 to your version of Liferay for the duration of your subscription. This gives
 organizations the peace of mind that comes from knowing that their
 Liferay-powered web sites are stable and will run for years to come, enabling
 them to build their sites on a proven, stable platform. Additionally, Liferay
 offers training and consulting on the Enterprise Edition to ensure long-term
 support and stability for our clients. 
+
+### Liferay's Versioning Schema
+
+The participation of Liferay users is vital to the continued growth of our product. Based on feedback received from the community during the last releases, we added functional and architectural improvements to the portal. Along the way, we also improved our release process. 
+
+Starting with Liferay 6, each release follows a prescribed structure that is consistent from one release to the next. Each release has a specific number sequence attached to it signifying the type of release it is, whether it's a major, minor or maintenance relase. Each release will also have a term attached to it to indicate its intended level of quality.
+
+Let's start with an explanation of Liferay's version structure. Liferay versions are organized in a striaghtforward numerical system consisting of a three digit number. For example, 6.0.2. These numbers represent the type of the release: Major.Minor.Maintenance. 
+
+#### Maintenance Release
+
+A change in the third digit of the version scheme (e.g, 6.0.5 to 6.0.6) is a maintenance release, also known as a *Service Pack*. This means that:
+
+- Each maintenance release provides an improved level of security and reliability.
+
+- Customizations are generally safe, but we recommend doing a review.
+
+- No new features are included. It's possible, however, the first few maintenance releases can contain some changes to existing features, based on community feedback. For example, there were exceptions made in some 5.2 maintenance releases, but there won't be any made for Liferay 6.
+
+These rules are relaxed when a minor or major release is still in beta quality.
+
+#### Minor Release
+
+A change to the second digit of the version scheme (e.g., 6.0 to 6.1) is a minor release. This means that:
+
+- There are new features and bug fixes from prior releases.
+
+- Customizations may be affected when installing. 
+
+- Customers should leverage the upgrade tools and documentation.
+
+#### Major Release
+
+A change in the first digit of the version scheme (e.g., 6.x to 7.x) is a major release. This means that:
+
+- There are major changes in functionality or new functionality based on high demand. 
+
+- There are architectural changes, changes to API's (as part of the deprecation process), or changes to internal schema. 
+
+Now lets delve into the evolution of versions.
+
+#### Release Process 
+
+Each version of Liferay 6 has a surname that specifies the expected quality of that release. The third version number is usually hidden, but it's visible through the logs and administration UIs. Here is the evolution of versions:
+
+- **Preview** and **Beta:** (6 Preview 1, Beta 1, 6 Beta 2, ...) There can be zero or more of these types within each minor or major release. 
+These releases are meant for
+testing and to provide Liferay feedback through the beta testing category in the
+forums. There can be changes in features between beta releases, but they won't be major.   
+
+- **Release Candidates:** (6 RC1, 6 RC2) There can be zero, one, or more of these right after the beta releases. 
+These releases are more stable and are meant
+for users that prefer to wait a little while before testing the release. 
+
+- **General Availability:** (6 GA1, 6 GA2, ....) There can be one or more of these releases. 
+A General Availability version is released when the engineering and QA teams, based on internal testing and the feedback from the beta testers, decide the release is ready for general use. Of course this doesn't mean it's bug-free, so they monitor the community to see if they find new bugs, usually minor ones. When bugs are found, Liferay fixes the issues and releases a new GA version. Several GA versions may be made available before the engineering team releases an EE version. 
+
+- **Service Packs:** (6 SP1, 6 SP2, ...) These maintenance releases continue to come out for four years after the original release date. 
+These releases are only available to customers who have the update service that comes with every Enterprise Edition. Liferay has a dedicated team to keep testing and do corrective improvements to this release, ensuring the highest quality. All fixes done in the service packs are also done in SVN and are part of the next minor or major release. This ensures the entire community benefits from having more people working on QA as more customers buy Liferay's Enterprise Edition services. 
+
+The following diagram represents Liferay's release cycle:
+
+<img src="http://cdn.www.liferay.com/image/image_gallery?uuid=1d148c2c-358f-4af9-a9eb-67bc65544905&amp;groupId=10439&amp;t=1280310811791">
+
+#### Recommendations
+
+At this point you might be asking yourself some questions like, Which version should I use? What if I was using a previous version? Will the update to a new maintenance release cost a lot?
+Here are some comments and recommendations to address these questions.
+
+- You are very welcome to use any preview, beta or release candidate version. In
+fact that's why they exist - so as many people as possible start using it and
+provide us their feedback. Please note, we do not recommend using beta releases in
+production, or even during development, if you have tight deadlines since you may
+find road blocks. 
+
+- Always update to the latest maintainance release available for the minor or major version you are using. We recommend you switch to take advantage of bug fixes found by other Liferay users. 
+
+- Updating to a new maintenance release is a process requiring little effort from the first GA forward. For example, you can upgrade from Liferay 6 GA 1 to any future Liferay 6 GA or any Liferay 6 SP within hours, or days in the worst case scenarios. 
+
+- To ensure the updates are as easy as possible, and also to ease upgrades to new minor or major versions, use the best development practices when extending Liferay. These can be found in Liferay's [javadocs](http://docs.liferay.com/portal/6.1/javadocs/). At the very least, use plugins instead of the extension environment (or ext plugin) whenever possible. And always use APIs that are meant to be public (especially when using ext). Also avoid overriding JSPs that use a lot of logic or keep a very tight control of them and review them when updating for changes to the originals. 
+
+- Plugins that work in any GA or SP version will work in any later maintenance version. That is, a plugin developed for Liferay 6 GA 1 will also work in Liferay 6 GA or Liferay 6 SP3. 
+Starting with Liferay 6, we put in place a testing process to ensure compatability. 
+
+- Consider investing in the updates and support services of the Enterprise Edition. This benefits you in two ways. First, you get quality services that add value to your Liferay installation. Secondly, it helps evolve the product with new features that, again, enhance your Liferay installation. 
+
+Liferay Portal is a very flexible application that runs well on several different server environments. It's easy to install and comes in either a Community Eddition or an Enterprise Editon, depending on your needs. Liferay follows a systematic versioning system that makes it easy to keep current with the latest updates. The strength of the Liferay community helps detect potential issues early that are then reported through the forums and are later fixed in a series of maintenance releases. 
+
+Now let's learn about Liferay bundles.
 
 ## Obtaining Liferay Portal [](id=obtaining-lifer-5)
 
