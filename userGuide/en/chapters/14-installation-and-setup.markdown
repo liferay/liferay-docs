@@ -1153,7 +1153,7 @@ access Liferay Portal on the target Tomcat instance.
 ![Figure 14.35: Accessing Liferay Portal on Liferay Portal Instance
 1](../../images/tcat-html_2b08ac2c.png)
 
-### Deploying Liferay plugins on Mule Tcat
+### Deploying Liferay plugins on Mule Tcat [](id=lp-6-1-ugen14-deploying-liferay-plugins-on-mule-tcat-0)
 [](id=lp-6-1-ugen11-deploying-liferay-plugins-on-mule-tcat--0)
 
 Liferay Portal Tcat Edition works with all the appropriate Liferay EE Plugins,

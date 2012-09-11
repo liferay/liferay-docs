@@ -1,4 +1,3 @@
-
 # Configuring Liferay for High Availability [](id=enterprise-configurati-5)
 
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is
@@ -58,8 +57,6 @@ of the two. Once you have Liferay installed in more than one application server
 node, there are several optimizations that need to be made. At a minimum,
 Liferay should be configured in the following way for a clustered environment:
 
-- The Quartz scheduler should be set for a clustered environment. 
-
 - All nodes should be pointing to the same Liferay database or database cluster. 
 
 - Documents and Media repositories should be accessible to all nodes of the
@@ -67,6 +64,8 @@ Liferay should be configured in the following way for a clustered environment:
 
 - Search should be configured for replication or should use a separate search
   server. 
+
+- The cache should be replicating across all nodes of the cluster. 
 
 - Hot deploy folders should be configured for each node if you're not using
   server farms. 
@@ -748,39 +747,7 @@ replicate. For this reason, this is not a recommended configuration either.
 Again, for a better configuration, replicate the indexes with Cluster Link or
 use a separate search server (see the section on Solr above).
 
-Now we can look at the last consideration when clustering Liferay: hot deploy. 
-
-### Hot Deploy [](id=lp-6-1-ugen15-hot-deploy-0)
-
-Plugins which are hot deployed will need to be deployed separately to all the
-Liferay nodes. The best way to do this is to configure your application server
-to support *farms*. This is a feature that enables you to deploy an application
-on one node and then it replicates automatically to each of the other nodes.
-This, of course, is configured differently for each application server, so
-you'll need to consult your application server's documentation to learn how to
-do this. It's by far the best way to handle hot deploy, and is the recommended
-configuration. If you have this working, great! You can skip the rest of this
-section completely. 
-
-If for some reason your application server doesn't support this feature or you
-can't use it, you'll need to come up with a way to deploy applications across
-your cluster. Each node needs to have its own hot deploy folder. This folder
-needs to be writable by the user under which Liferay is running, because plugins
-are moved from this folder to a temporary folder when they are deployed. This is
-to prevent the system from entering an endless loop, because the presence of a
-plugin in the folder is what triggers the hot deploy process.
-
-When you want to deploy a plugin to the entire cluster, copy that plugin to the
-hot deploy folders of all of the Liferay nodes. Depending on the number of
-nodes, it may be best to create a script to do this. Once the plugin has been
-deployed to all of the nodes, you can then make use of it (by adding the portlet
-to a page or choosing the theme as the look and feel for a page or page
-hierarchy).
-
-All of the above will get basic Liferay clustering working; however, the
-configuration can be further optimized. We will see how to do this next.
-
-## Distributed Caching [](id=distributed-cachi-5)
+### Distributed Caching [](id=distributed-cachi-5)
 
 Liferay uses **Ehcache**, which has robust distributed caching support. This
 means that the cache can be distributed across multiple Liferay nodes running
@@ -795,24 +762,27 @@ thread and clicks on it. This time, the data is retrieved more quickly. Because
 the thread is in the cache, no trip to the database is necessary. 
 
 This is much more powerful than having a cache running separately on each node.
-The power of *distributed* caching allows for more functionality. The first user
-can post a message to the thread he or she was reading, and the cache is updated
-across all the nodes, making the new post available immediately from the local
-cache. Without that, the second user would need to wait until the cache was
-invalidated on the node he or she connected to before he or she could see the
-updated forum post. 
+The power of *distributed* caching allows for common portal destinations to be
+cached for multiple users. The first user can post a message to the thread he or
+she was reading, and the cache is updated across all the nodes, making the new
+post available immediately from the local cache. Without that, the second user
+would need to wait until the cache was invalidated on the node he or she
+connected to before he or she could see the updated forum post. 
 
 There are two ways to enable distributed caching. If you use the default
 settings, it's very easy. If you need to tweak the cache for your site, there
 are a few more steps, but it's still pretty easy. 
 
-### Enabling distributed caching [](id=lp-6-1-ugen15-enabling-distributed-caching-0)
+#### Enabling distributed caching [](id=lp-6-1-ugen15-enabling-distributed-caching-0)
 
-The super-easy way of enabling distributed caching is simply to enable Cluster
-Link. If you've already done this to enable distributed search engine indexes,
-then your job is already done. What this does is enable some RMI (Remote Method
-Invocation) cache listeners that are designed to replicate the cache across a
-cluster. 
+You must have Cluster Link enabled in order to activate distributed caching.
+Since you already did this, you have only one more property to add to your
+`portal-ext.properties` file: 
+
+	ehcache.cluster.link.replication=true
+
+What this does is enable some RMI (Remote Method Invocation) cache listeners
+that are designed to replicate the cache across a cluster. 
 
 Once you enable distributed caching, of course, you should do some due diligence
 and test your system under a load that best simulates the kind of traffic your
@@ -920,13 +890,17 @@ version of the configuration file that is now in your custom folder:
 
     net.sf.ehcache.configurationResourceName=/custom_cache/hibernate-clustered.xml
 
-Now that Liferay is pointing to your custom file, you can modify the settings in this file to change the cache configuration for Hibernate.
+Now that Liferay is pointing to your custom file, you can modify the settings in
+this file to change the cache configuration for Hibernate.
 
-Next, copy/paste the *Ehcache* section from the `portal.properties` file into your `portal-ext.properties` file. Modify the properties so they point to the files in your custom folder. For example:
+Next, copy/paste the *Ehcache* section from the `portal.properties` file into
+your `portal-ext.properties` file. Modify the properties so they point to the
+files in your custom folder. For example:
 
     ehcache.multi.vm.config.location=/custom_cache/liferay-multi-vm-clustered.xml
 
-You can now take a look at the settings in these files and tune them to fit your environment and application. Let's examine how to do that next. 
+You can now take a look at the settings in these files and tune them to fit your
+environment and application. Let's examine how to do that next. 
 
 #### Customizing Hibernate cache settings [](id=lp-6-1-ugen15-customizing-hibernate-cache-settings-0)
 
@@ -1003,6 +977,96 @@ of memory and starts garbage collecting too frequently. You'll likely need to
 experiment with the memory settings on your JVM as well as the cache settings
 above. You can find the specifics about these settings in the documentation for
 Ehcache.
+
+The last thing we'll cover about caching is a special EE-only optimization that
+can be made to the cache. 
+
+#### Enhanced distributed cache algorithm [](id=lp-6-1-ugen19-enhanced-distributed-cache-algorithm-0)
+
+![EE Only Feature](../../images/ee-feature-web.png)
+
+By default, Liferay's distributed cache uses the RMI replication mechanism,
+which uses a point to point communication topology. As you can guess, this kind
+of structure doesn't scale well for a large cluster with many nodes. Because each
+node has to send the same event to other nodes `N - 1` times, network traffic
+becomes a bottleneck when `N` is too large. Ehcache also has a performance issue
+of its own, in that it creates a replication thread for each cache entity. In a
+large system like Liferay Portal, it's very common to have more than 100 cached
+entities. This translates to 100+ cache replication threads. Threads are
+expensive, because they take resources (memory and CPU power). Most of the time,
+these threads are sleeping, because they only need to work when a cached entity
+has to talk to remote peers. 
+
+![Figure 19.5: The default algorithm requires each node to create massive
+amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
+
+
+Putting heap memory aside (because the amount of memory on the heap depends on
+the application(s) running), consider the stack memory footprint of those 100+
+threads. By default on most platforms, the thread stack size is 2 MB; for 100
+threads, that's more than 200 MB. If you include the heap memory size, this number can
+become as high as 500 MB for just one node. And that massive amount of threads
+can also cause frequent context switch overhead, which translates to increased
+CPU cycles.
+
+For large installations containing many nodes, Liferay has developed an
+alternative algorithm for handling cache replication that can can fix both the
+`1` to `N - 1` network communication bottleneck, as well as the massive threads
+bottleneck. The default implementation uses JGroups' UDP multicast to
+communicate. 
+
+![Figure 19.6: Liferay's algorithm uses a single UDP multicast channel, so that
+nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
+
+To reduce the number of replication threads, we provide a small pool of
+dispatching threads. These deliver cache cluster events to remote peers. Since
+all cache entities' cluster events must go through our pool of dispatching
+threads to communicate, this gives us a chance to coalesce events: if two
+modifications to the same cache object happen at almost the same time, we can
+combine the changes into one, and then we only need to notify remote peers once.
+This reduces traffic on the network. We should also note that newer versions of
+Ehcache support the JGroups replicator and can also fix the `1` to `N - 1`
+network communication; however, they cannot fix the massive threads issue and
+they cannot coalesce cache events.
+
+For EE customers who are interested in this feature, all you have to do to
+enable the alternate algorithm is to install a plugin from the Liferay
+Marketplace. Search for the *Ehcache Cluster EE* plugin, which is free to all EE
+customers, and install it on all your nodes. The new algorithm is immediately
+activated and you can reap the benefits right away. 
+
+Now we can look at the last consideration when clustering Liferay: hot deploy. 
+
+### Hot Deploy [](id=lp-6-1-ugen15-hot-deploy-0)
+
+Plugins which are hot deployed will need to be deployed separately to all the
+Liferay nodes. The best way to do this is to configure your application server
+to support *farms*. This is a feature that enables you to deploy an application
+on one node and then it replicates automatically to each of the other nodes.
+This, of course, is configured differently for each application server, so
+you'll need to consult your application server's documentation to learn how to
+do this. It's by far the best way to handle hot deploy, and is the recommended
+configuration. If you have this working, great! You can skip the rest of this
+section completely. 
+
+If for some reason your application server doesn't support this feature or you
+can't use it, you'll need to come up with a way to deploy applications across
+your cluster. Each node needs to have its own hot deploy folder. This folder
+needs to be writable by the user under which Liferay is running, because plugins
+are moved from this folder to a temporary folder when they are deployed. This is
+to prevent the system from entering an endless loop, because the presence of a
+plugin in the folder is what triggers the hot deploy process.
+
+When you want to deploy a plugin to the entire cluster, copy that plugin to the
+hot deploy folders of all of the Liferay nodes. Depending on the number of
+nodes, it may be best to create a script to do this. Once the plugin has been
+deployed to all of the nodes, you can then make use of it (by adding the portlet
+to a page or choosing the theme as the look and feel for a page or page
+hierarchy).
+
+All of the above will get basic Liferay clustering working; however, the
+configuration can be further optimized. We will see how to do this next.
+
 
 ## Performance Tuning [](id=performance-tuni-5)
 
@@ -1084,7 +1148,7 @@ will need to use a profiler to monitor garbage collection during a load test to
 tune the numbers properly for your server hardware, operating system, and
 application server.
 
-![Figure 19.5: Java Memory](../../images/portal-admin-ch7_html_518957a7.gif)
+![Figure 19.7: Java Memory](../../images/portal-admin-ch7_html_518957a7.gif)
 
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is further
