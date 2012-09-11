@@ -187,7 +187,7 @@ an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
 instructions are displayed.
 
-##### Structure Default Values
+##### Structure Default Values [](id=lp-6-1-ugen03-structure-default-values-0)
 
 Structure Default Values allow you to create one structure that uses common data
 from multiple articles.
