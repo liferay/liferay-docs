@@ -491,7 +491,7 @@ Studio comes bundled with a [Groovy](http://groovy.codehaus.org/Documentation)
 editor (made available by Spring Source), giving you the same rich editing
 experience to which you may be accustomed in editing Kaleo Groovy scripts as a
 Java developer. You can make Java calls out to your custom business logic APIs
-and Liferay's Portal APIs. In Develoer Studio, you can leverage editors for
+and Liferay's Portal APIs. In Developer Studio, you can leverage editors for
 Beanshell, Drls, Javascript, Python, and Ruby scripting languages. You can
 leverage editors for [FreeMarker](http://freemarker.sourceforge.net/) and
 [Velocity](http://velocity.apache.org/engine/releases/velocity-1.5/user-guide.html)
@@ -821,7 +821,7 @@ and printing your workflow diagram.](../../images/kaleo-23.png)
 **More Workflow Diagram Actions** are accessble by right-clicking in the
 Workflow Diagram's canvas:
 
-- The *Layout* feature lets you to arrange nodes vertically or horizontally. This
+- The *Layout* feature lets you arrange nodes vertically or horizontally. This
 feature makes it easy to organize your workflow quickly without having to touch
 a node.
 
