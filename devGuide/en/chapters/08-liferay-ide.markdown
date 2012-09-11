@@ -1084,27 +1084,31 @@ This is what our Properties window looks like when we're finished:
 Now, click the pencil icon located beneath the green plus symbol. The FreeMarker
 template editor will appear. Insert the following email notification code:
 
-	 <notification>
-	 <name>Review Notification</name>
-	 <description>New Submission Is Ready For Review</description>
-	 <template>
-	 	<![CDATA[
-	 	<#assign comments    = taskComments!"">
-	 	<!-- email body -->
-	 	<p>
-	 	Please review the ${entryType} waiting for you in your workflow tasks.
-	 	<#if comments != "" >
-	 		<br />Assignment comment says: <strong>${comments}</strong>
-	 	</#if>
-	 	</p>
-       <!-- signature -->
-       <p>Sincerely,<br /><strong>Liferay Portal Workflow</strong></p>
-       ]]>
-      </template>
-      <template-language>freemarker</template-language>
-      <notification-type>email</notification-type>
-      <execution-type>onAssignment</execution-type>
-      </notification>
+	 <#assign refererPlid = serviceContext.getAttribute("refererPlid")!"">
+	 <#assign doAsGroupId = serviceContext.getAttribute("doAsGroupId")!"">
+	 <#assign comments = taskComments!"">
+	 <#assign portalURL = serviceContext.portalURL!"">
+	 <#assign pathCtx = portalUtil.pathContext!"NO_PATH_CTX">
+	 <#assign wTasksURL = ""> <#if (portalURL?last_index_of("/") > 6)>
+	 <#assign portalURL = portalURL?substring(0,portalURL?index_of("/", 7))>
+
+	 </#if> <#if (portalURL?length > 0) && (refererPlid != "") && (doAsGroupId != "")>
+	 <#if (pathCtx?length > 0)> <#assign portalURL = portalURL+pathCtx>
+	 </#if> <#assign wTasksURL = portalURL+"/group/control_panel/manage?p_p_id=153&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&doAsGroupId="+doAsGroupId+"&refererPlid="+refererPlid> 
+	 </#if>
+	 <!-- email body -->
+	 <#if (wTasksURL?length > 0)>
+	 <!-- personal message to assignee -->
+	 <p> Please review the code waiting for you in your workflow tasks. <#if comments != "" >
+	 <br />Assignment comment says: <strong>${comments}</strong> </#if>
+	 </p>
+	 <p> <a href="${wTasksURL}">Click here</a> to see workflow tasks assigned to you. </p>
+	 <#else>
+	 <!-- general message for all involved -->
+	 <p> There is a new submission of ${entryType} waiting for review in the workflow. </p>
+	 </#if>
+	 <!-- signature -->
+	 <p>Sincerely,<br /><strong>Liferay Portal Workflow</strong></p>
 
 For more information on writing email notifications, you can visit the Liferay
 blog [Workflow in Action: Kaleo email
