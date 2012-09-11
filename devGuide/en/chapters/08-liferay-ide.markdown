@@ -549,27 +549,29 @@ After downloading and installing the Kaleo apps, a *Kaleo Workflows*
 folder automatically appears underneath your Liferay server in the Servers
 view of Developer Studio.
 
-![Figure 7.38: The Kaleo Workflow application can be found underneath your Liferay server in 
-Developer Studio.](../../images/kaleo-1.png)
+![Figure 7.38: In Studio's Servers view, your server's Kaleo Workflows folder
+shows workflows published on your portal.](../../images/kaleo-1.png)
 
-Developer Studio has retrieved the available workflow definitions that are
-running on the portal server. As mentioned previously, the Kaleo application
-provides Developer Studio the capability to remotely add or update existing
-Kaleo workflow definitions directly to and from the portal server. The *Single
-Approver* workflow is the default application and is preinstalled with the Kaleo
-apps.
+Developer Studio retrieves all workflow definitions published on your portal
+server. As mentioned previously, the Kaleo application lets you remotely add and
+update Kaleo workflow definitions directly to and from the portal server. The
+*Single Approver* workflow comes preinstalled with the Kaleo apps.
 
-Next, we will dive into creating a workflow diagram using the Kaleo Designer for Java.
+Next, let's dive into creating a workflow diagram using the Kaleo Workflow
+Designer for Java.
 
-### Creating a workflow diagram
+### Creating a workflow
 
-Developer Studio adds another dimension to Kaleo workflows by integrating a
-creative process for Java developers to modify and enhance their business logic.
-Let's go through the Kaleo Designer's features and process for creating a
-workflow diagram in Developer Studio.
+Developer Studio adds another dimension to Kaleo workflows making it easy for
+Java developers to enhance workflow business logic. Let's create a workflow
+diagram in Developer Studio and highlight Kaleo Designer for Java
+(Designer) features along the way.
 
-To view the default Single Approver workflow or your already created workflow
-diagram, simply double-click the appropriate node located in the *Kaleo Workflows* folder in the Servers view. This will retrieve the
+<!-- TODO distinguish between opening published workflow (from Servers view) or
+a workflow (from its definition XML file) -->
+
+To open a workflow, such as the Single Approver workflow or one of your
+workflows, simply double-click the workflow from the . This will retrieve the
 workflow definition from the Liferay server and you will be able to view your
 workflow definition in the designer interface.
 
@@ -611,7 +613,8 @@ tab.](../../images/kaleo-3.png)
 A pop-up window will display, prompting you to enter credentials for a new
 workflow definition. The snapshot below displays the setup menu for our ticket process workflow definition.
 
-![Figure 7.42: You will need to specify several values and pick a location for your workflow definition to reside.](../../images/kaleo-5.png)
+![Figure 7.42: You will need to specify several values and pick a location for your workflow 
+definition to reside.](../../images/kaleo-5.png)
 
 ---
 
