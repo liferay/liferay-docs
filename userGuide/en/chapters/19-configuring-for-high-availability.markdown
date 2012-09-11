@@ -981,7 +981,7 @@ Ehcache.
 The last thing we'll cover about caching is a special EE-only optimization that
 can be made to the cache. 
 
-#### Enhanced distributed cache algorithm
+#### Enhanced distributed cache algorithm [](id=lp-6-1-ugen19-enhanced-distributed-cache-algorithm-0)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -997,7 +997,7 @@ expensive, because they take resources (memory and CPU power). Most of the time,
 these threads are sleeping, because they only need to work when a cached entity
 has to talk to remote peers. 
 
-![Figure 19.x: The default algorithm requires each node to create massive
+![Figure 19.5: The default algorithm requires each node to create massive
 amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
 
 
@@ -1015,7 +1015,7 @@ alternative algorithm for handling cache replication that can can fix both the
 bottleneck. The default implementation uses JGroups' UDP multicast to
 communicate. 
 
-![Figure 19.x: Liferay's algorithm uses a single UDP multicast channel, so that
+![Figure 19.6: Liferay's algorithm uses a single UDP multicast channel, so that
 nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
 
 To reduce the number of replication threads, we provide a small pool of
@@ -1148,7 +1148,7 @@ will need to use a profiler to monitor garbage collection during a load test to
 tune the numbers properly for your server hardware, operating system, and
 application server.
 
-![Figure 19.5: Java Memory](../../images/portal-admin-ch7_html_518957a7.gif)
+![Figure 19.7: Java Memory](../../images/portal-admin-ch7_html_518957a7.gif)
 
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is further

@@ -847,7 +847,7 @@ of Liferay you'd need to create a page for each article to show it. Now with
 only one sports page and one tech page, you can show all articles in one place
 in a consistent fashion.
 
-##### Creating a display page
+##### Creating a display page [](id=lp-6-1-ugen02-creating-a-display-page-0)
 
 There are two ways of creating a display page. You can use a *Content Display
 Page* template, which automatically creates everything you need, or you can
@@ -919,7 +919,7 @@ which is one of two portlets: Web Content Display or Web Content List. By far
 the most frequently used is the *Web Content Display* portlet. Let's look at how
 it works.
 
-## Publishing (basic) content
+## Publishing (basic) content [](id=lp-6-1-ugen02-publishing-basic-content-0)
 [](id=lp-6-1-ugen03-publishing-content-with-the-web-content-display-portlet-0)
 
 Now that we've created and published our first piece of web content for
@@ -927,7 +927,7 @@ Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
 to our Welcome page by selecting *Add &rarr; Web Content Display* from the
 Dockbar.
 
-![Figure 2.16: Adding the Web Content Display
+![Figure 2.18: Adding the Web Content Display
 Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
 
 Once the portlet appears, drag it to the position on the page where you want
@@ -946,7 +946,7 @@ all the options). You can also show the available locales for your content. If
 you're working on the page for a particular language, you can select the
 translation of your content that goes with your locale.
 
-![Figure 2.17: Publishing web content is a snap. At a minimum, you only have to
+![Figure 2.19: Publishing web content is a snap. At a minimum, you only have to
 select the content you wish to publish. You can also enable lots of optional
 features to let your users interact with your
 content.](../../images/04-web-content-choosing-web-content.png)
@@ -1005,7 +1005,7 @@ Content Display portlet, select the *pencil* icon to the lower left of the
 portlet. This launches the WYSIWYG editor and from there you can make any
 necessary changes.
 
-![Figure 2.18: Edit, Select and Add Icons of Web Content Display
+![Figure 2.20: Edit, Select and Add Icons of Web Content Display
 Portlet](../../images/web-content-display-icons.png)
 
 When you publish your content this way, it becomes available immediately
@@ -1024,7 +1024,7 @@ Liferay's WCM, you'll want to use structures and templates found in chapter 3.
 Next, let's see how you can manage your content with an approval process called
 workflow. 
 
-## Using Liferay's workflow with WCM
+## Using Liferay's workflow with WCM [](id=lp-6-1-ugen02-using-liferays-workflow-with-wcm-0)
 [](id=lp-6-1-ugen03-using-liferays-integrated-workflow-with-content-management-0)
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay
@@ -1058,7 +1058,7 @@ To enable workflow for Web Content, navigate to the Control Panel and select
 *Workflow Configuration*. From there, select a workflow that has been deployed
 to Liferay.
 
-![Figure 2.19: Enabling Workflow for Content
+![Figure 2.21: Enabling Workflow for Content
 Management](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in chapter 10, you can design workflows to suit your
@@ -1087,7 +1087,7 @@ portlet. Call the new content *Course Offerings* and enter some content. Notice
 that the Publish button is now gone. In its place is a *Submit for Publication*
 button. Go ahead and click it.
 
-![Figure 2.20: Pending
+![Figure 2.22: Pending
 Workflow](../../images/04-web-content-workflow-config.png)
 
 Next, go to the *Workflow Tasks* in Control Panel and then select *My Workflow
