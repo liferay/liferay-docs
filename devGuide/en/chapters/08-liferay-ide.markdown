@@ -954,6 +954,8 @@ Then we will write the following Java code:
 		returnValue = "Yes"
 	}
 
+Also, make sure to add the following import: `import com.liferay.portlet.dynamicdatamapping.storage.Field;`. You can do this by typing it with the rest of the imports or you can simply press *Ctrl-Alt-O* to activate an import organizer. Then select the previously mentioned import.
+
 We use the `DDLRecordLocalServiceUtil` API to obtain the `ddlRecordId`. Lastly,
 we pull out the status and create parameters for the workflow to follow,
 depending on if it will be fixed or not. The script now accurately depicts what
@@ -1240,45 +1242,29 @@ record into the ticket process workflow. If you would like to learn more about
 Dynamic Data Lists, visit [Using Web Forms and Dynamic Data Lists](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-lifer-1)
 located in *Using Liferay Portal*.
 
-Finally, let's set up our DDL and get the ticket process workflow working.
-Follow the steps below:
+Finally, let's set up our DDL and get the ticket process workflow working. You can reference how to specifically create a DDL by visiting the section [Defining data types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1) in *Using Liferay Portal*.
 
-1. Navigate to the Control Panel and select *Dynamic Data Lists*.
+You will need to add a new DDL named *status*. When adding a new data definition to the status DDL, you'll need to drag and drop the *Select* field from the *Fields* tab. 
 
-2. Click *Add*. Then, name your new list *status*.
+![Figure 7.70: You must create a new data definition for your DDL.](../../images/kaleo-35.png)
 
-3. For the *Data Definition* selection, click *Select*.
+Then, you will need to access the *Settings* tab and give your field the name *status*. Also, you will need to edit the *Options* to the names of your choice. Make sure to have the word "not" as the value for your "Do not fix" option. Recall the code we inserted for our condition node:
 
-4. Click *Add*. You will be given a *New Data Definition* window.
-	a. Type *status* into the *Name* text field
-	
-	b. Under the *Fields* tab, drag the *Select* field onto the graphical
-	interface.
-	
-		![Figure 7.70: You must create a new data definition for your DDL.](../../images/kaleo-35.png)
-	
-	c. Click the *Edit* button located on your data definition.
-	
-		![Figure 7.71: Click the edit button to properly configure your new data definition.](../../images/kaleo-36.png)
-	
-	d. Double-click the *Value* column next to *Name*. Type *status* for the
-	name and press *Save*
-	
-	e. Double-click the *Value* column next to *Options*. Name one *Fix* and the
-	other *Do not fix*. Then press *Save*.
-	
-		![Figure 7.72: You must set the correct settings so the data definition can be processed by our workflow definition.](../../images/kaleo-37.png)
+	Field field = ddlRecord.getField("status");
 
-	f. Click *Save* again. Now select your *status* data definition from the
-	list.
-	
-		![Figure 7.73: Now that your new data definition is created, select it from the list.](../../images/kaleo-38.png)
+	String status = GetterUtil.getString(field.getValue());
+	if (status.contains("not")) {
+		returnValue = "No"
+	}
+	else {
+		returnValue = "Yes"
+	}
 
-5. Select your ticket process workflow from the *Workflow* drop-down menu.
+The `getField()` method ingests the status of the DDL you set. Because of this, the name of your field must be named "status" so the values can be recognized when the script is invoked. If the value of your option contains "not", then the workflow is transitioned to the EndNode. However, if the value of your option does not contain the word "not", the workflow is transitioned to the Developer. Therefore, it is very important that you correctly specify the options for your field accordingly. Here is an example of how your settings should appear: 
 
-	![Figure 7.74: Selecting the ticket process workflow will allow the DDL to be integrated inside our workflow process.](../../images/kaleo-39.png)
+![Figure 7.71: You must set the correct settings so the data definition can be processed by our workflow definition.](../../images/kaleo-37.png)
 
-6. Click *Save*
+After creating the data definition, make sure to select the ticket process workflow for our new Kaleo Forms process to use. Lastly, save the DDL.
 
 Now, our DDL is set for use inside our ticket process workflow! Lastly, we will
 use the Kaleo Forms portlet to test out our new workflow definition!
@@ -1288,39 +1274,20 @@ use the Kaleo Forms portlet to test out our new workflow definition!
 Using the Kaleo Designer for Java and setting the DDL record, we have now
 completed our workflow and it is ready to run! We will test it using the Kaleo
 Forms portlet located inside Liferay Portal. You will need to add the Kaleo
-Forms portlet to your portal if you have not already done so. Follow these steps
-to create a new workflow process inside Kaleo Forms:
+Forms portlet to your portal if you have not already done so. You can reference how to use Kaleo Forms, if you have not already done so, by visiting the [Kaleo Forms](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen06-kaleo-forms-0) section in *Using Liferay Portal*.
 
-1. Select the *Processes* tab and then click *Add*.
+You will need to create a new *Process* within Kaleo Forms to test our workflow. When creating the new process, make sure to select the *status* entry definition we created. You will also need to give it a name, create an *Initial Form*, and select the ticket process workflow. You can leave the *Workflow Task Forms* blank for our demonstration.
 
-2. Complete each of the fields as follows:
+![Figure 7.72: To test the ticket process workflow, you will need to indicate the name, entry definition, and workflow when creating a new process.](../../images/kaleo-41.png)
 
-	a. Name: Ticket Process
-	b. Entry Definition: status
-	c. Initial Form: You will need to create an initial form.
-		i. Click the *Select* button and then select *Add*. Next, give it the
-		name *status*.
-		ii. Leave the rest of the defaults and click *Save*.
-		iii. When directed back to the *Entry Definitions* window, click
-		*Status*.
-	e. Workflow: Ticket Process 2
+After saving, you can submit the ticket process by selecting *Submit New* and clicking *Ticket Process*.
 
-3. Click *Save*
-
-4. Navigate back to the *Summary* tab and then select *Submit New* &rarr;
-*Ticket Process*.
-
-	![Figure 7.75: Submitting the ticket process will activate the workflow.](../../images/kaleo-40.png)
+![Figure 7.73: Submitting the ticket process will activate the workflow.](../../images/kaleo-40.png)
 
 You're now able to select the DDL and progress throughout the ticket process
-through Kaleo Forms. Remember, you will need to sign in as Joe Bloggs to access
+using Kaleo Forms. Remember, you will need to sign in as Joe Bloggs to access
 some of the tasks. Joe Bloggs should also receive an email when the Project
 Management node is activated.
-
-<!--CHECK: Do we need to add snapshots for each step of the workflow within
-Kaleo Forms?	
-<!--TODO: Add more snapshots?-->
-<!--Needs more detail (just a rough sketch of how this section should go-->	
 
 You have successfully created a workflow definition and created a workflow
 process within Liferay Portal! You are officially a workflow master!
