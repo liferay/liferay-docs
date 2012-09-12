@@ -505,9 +505,11 @@ to your portal by simply dragging the workflow file onto your portal server
 listed in your *Servers* view. The Servers view not only shows workflows you've
 published from studio, but also gives you access to workflows already published
 on the portal server. You can edit any of these existing workflows right in
-Developer Studio and republish them on your portal. As you can see, Kaleo
-Designer for Java is a robust application for creating, modifying, and
-publishing workflows in Liferay Developer Studio.
+Developer Studio and republish them on your portal. Therefore, you have the
+ability to create business logic locally, without having to navigate back and
+forth from your portal and Developer Studio. As you can see, Kaleo Designer for
+Java is a robust application for creating, modifying, and publishing workflows
+in Liferay Developer Studio.
 
 ---
 
@@ -581,15 +583,6 @@ Developer Studio adds another dimension to working with your Kaleo workflows
 making it easy for Java developers to enhance workflow business logic. Let's
 create a workflow in Developer Studio and highlight features from Kaleo Designer
 for Java (Designer) along the way.
-
-<!-- TODO Perhaps the advantage of not having to nagivate back and forth between
-poral and studio should be mentioned in the intro section.
-
-Another helpful feature in the Kaleo Designer for Java is the ability to create
-business logic locally, without having to navigate back and forth from your
-portal and Developer Studio. We will go into detail later on how to upload your
-new workflow to the server.
--->
 
 As a fun way to demonstrate Designer features, let's create a workflow
 definition for a software ticketing process. Are you ready to roll? Let's get
@@ -735,8 +728,6 @@ to be specified within a node.](../../images/kaleo-26.png)
 Hovering your pointer over any node displays a floating palette as a convenience
 for applying quick customizations.
 
-<!-- TODO re-take image of a task node that has an existing action and
-notification -->
 ![Figure 7.49: A convenient floating palette appears when you hover your pointer
 over any node.](../../images/kaleo-10.png)
 
@@ -1106,9 +1097,6 @@ workflow diagram looks like:
 
 ![Figure 7.64: This will be the final view for the workflow diagram; however we still have work to do!](../../images/kaleo-31.png)
 
-<!-- I am still editing everything after this point. I may still add a thing or
-two above this line, but (for the most part) it's done.-->
-
 For our newly created Project Management task node, we will create an email
 notification. As we discussed earlier, click on the Project Management node and
 then in the Properties window, select *Notifications*. We will now run through the steps to create our custom email notification:
@@ -1165,10 +1153,6 @@ users](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/
 section of *Using Liferay Portal* for instructions. To configure the user's
 email, login to the user's account and visit *Control Panel* &rarr; *Server
 Administration* &rarr; *Mail* for setup options.
-
-<!-- TODO: Ask about email settings. Shouldn't the name, execution type,
-notification type etc. element tags already be inserted after selecting them in
-the Notifications tab?-->
 
 As you can see, the use of Velocity and FreeMarker template editors makes
 customizing your workflow diagram easier than ever. Next, we'll explain how to
