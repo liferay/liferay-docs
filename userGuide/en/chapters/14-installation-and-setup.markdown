@@ -2273,14 +2273,14 @@ for your main application cluster. Please see the following example:
 - If you're on Windows, create a batch script `$RESIN_HOME/bin/run.bat` and
   insert the following text in the script:
 
-		..\resin.exe console
+        ..\resin.exe console
 
 - If you're on Unix/Linux, create shell script `$RESIN_HOME/bin/run.sh` and
   insert the following text in the script:
 
-		#!/bin/sh
+        #!/bin/sh
 
-		./resin.sh $
+        ./resin.sh $
 
 3. Create the folder `$RESIN_HOME/log` if it doesn't already exist. As you run
    Resin, the server generates log files `access`, `jvm-default` and
