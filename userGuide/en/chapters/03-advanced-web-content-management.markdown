@@ -1152,11 +1152,12 @@ instance, you can configure the look and feel of Liferay pages accessed by
 smartphone or tablet users differently than those accessed by PC users.
 
 Both sites and individual pages can be configured with any number of rule
-groups. A rule group is designed to describe a group of devices. It can contain
-one or more rules which describe a category of devices, such as all android
-devices or all iOS tablets. Rule groups can be prioritized to determine which
-one will be applied to a given page request. You can define as many rules as you
-need to classify all the devices you want to take actions on.
+groups. A rule group is designed to describe a group of devices. Think of a rule
+group as a mobile device family. It can contain one or more rules which describe
+a category of devices, such as all android devices or all iOS tablets. Rule
+groups can be prioritized to determine which one will be applied to a given page
+request. You can define as many rules as you need to classify all the devices
+you want to take actions on.
 
 In order to configure mobile device rules, you need a way to find out the
 characteristics of the device. While some of the characteristics are provided by
@@ -1197,14 +1198,16 @@ the *Manage Rules* link.
 ![Figure 3.26: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups
-selected for a particular site or page, determine which rule will be applied to
-a given request. From the Manage Rules page for a specific rule set, you can add
-a rule by specifying a rule type. Note that, by default, only the Simple Rule
-type is available. However, the rules are designed to be extensible and
-additional rule types can be added by your developers. Once added, you can edit
-the rule to specify a device type and operating system.
+selected for a particular site or page, determine which rule group's actions are
+applied to a given request. From the Manage Rules page for a specific rule set,
+you can add a rule by specifying a rule type. Remember that you can add as many
+rules to a rule group as you need in order to classify the devices you'd like to
+take actions on. Note that, by default, only the Simple Rule type is available.
+However, the rules are designed to be extensible and additional rule types can
+be added by your developers. Once added, you can edit the rule to specify a
+device type and operating system.
 
-![Figure 3.27: You need to install the wurlf-web plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.27: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a rule group
