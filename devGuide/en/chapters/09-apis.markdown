@@ -42,8 +42,8 @@ used in services, and how to use it in calling services.
 - *Using Message Bus:* Exchanging string messages within Liferay using the
 Message Bus.
 
-- *Device Detection:* Detecting the capabilities of a device that is making a
-request to your portal.
+- *Device Detection:* Detecting the capabilities of a device that is making
+requests to a portal.
 
 First, let's consider invoking Liferay's services locally.
 
