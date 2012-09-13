@@ -1,3 +1,4 @@
+
 # Advanced Web Content Management  [](id=lp-6-1-ugen03-advanced-web-content-management--0)
 
 In the previous chapter we looked at some basic ways you can use Liferay to
@@ -1140,7 +1141,7 @@ tab of a portlet residing on a page, check the boxes corresponding to
 permissions you want to assign to the teams, then click *Save*. That's it! Now
 your team is ready to perform their functions. Next, let's look at how to
 configure Liferay for mobile devices.
-  
+
 ## Displaying site pages to mobile devices [](id=lp-6-1-ugen03-mobile-device-rules-0)
 
 Mobile device rules allow you to configure sets of rules to alter the behavior
@@ -1157,23 +1158,33 @@ devices or all iOS tablets. Rule groups can be prioritized to determine which
 one will be applied to a given page request. You can define as many rules as you
 need to classify all the devices you want to take actions on.
 
-To configure mobile device rules, you must install the wurlf-web plugin. This
-plugin enables Liferay to detect which mobile device or operating system is
-being used for any given request. To install the plugin, navigate to the Plugins
-Installation section of the Control Panel, located under the Server heading.
-Then search for the wurlf-web plugin and click *Install*.
+In order to configure mobile device rules, you need a way to find out the
+characteristics of the device. While some of the characteristics are provided by
+the device, most are not. For this reason, there are databases that contain
+information about thousands of devices. These databases make it possible to find
+out every detail of device from the device type, which is included in each
+request sent to the portal. Liferay's Mobile Device Rules can connect to device
+databases so that you can use their device characteristics in your rules. 
 
-Alternatively, if you have a working copy of Liferay's plugin repository, you
-can install the plugin manually. The plugin is available from Liferay's public
-SVN repository at
-[http://svn.liferay.com/repos/public/plugins/trunk/webs/wurfl-web/](http://svn.liferay.com/repos/public/plugins/trunk/webs/wurfl-web/)
-or from Liferay's public Github repository at
-[https://github.com/liferay/liferay-plugins/tree/master/webs/wurfl-web](https://github.com/liferay/liferay-plugins/tree/master/webs/wurfl-web).
-Once you have checked out or cloned the repository, navigate to the plugins root
-directory and create a `build.username.properties` file. Add the line
-`app.server.dir = <path-to-app-server>`, replacing `<path-to-app-server>` with
-the path to the application server running Liferay on your machine. Then
-navigate to the wurlf-web directory and execute the ant deploy target.
+Among the plugins available on Liferay Marketplace, you can find the Device
+Recognition Provider plugin. This plugin provides out of the box integration
+with WURFL, an Open Source database licenced with the AGPLv3 license. Commercial
+licenses are also available. It's also possible to develop plugins that
+integrate with other devices databases. Even if you don't have a device
+database, you can still set up mobile device rules. However, they won't be
+effective until a database is deployed because the portal won't have enough
+information about the devices being used to make page requests. 
+
+To configure mobile device rules, you must install Device Recognition Provider
+plugin. This plugin uses the WURFL database to enable Liferay to detect which
+mobile device or operating system is being used for any given request. To
+install the plugin, navigate to the Store section of the Control Panel, located
+under the Marketplace heading. Click on the *Utility* section and then on *See
+All*. Search for the appropriate Device Recognition Provider plugin (CE or EE)
+and click on it. Finally, click on *Free* to acquire the plugin. Once you've
+acquired the plugin, you need to download and install it. To do so, just
+navigate to the Purchased section of the Control Panel, find your Device
+Recognition Provider plugin, and click on *Download* and then *Install*.
 
 You can access the Mobile Device Rules administrative page from the Content
 section of the Control Panel. Select the appropriate scope using the context
