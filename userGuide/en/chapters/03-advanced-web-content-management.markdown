@@ -1168,7 +1168,7 @@ databases so that you can use their device characteristics in your rules.
 
 Among the plugins available on Liferay Marketplace, you can find the Device
 Recognition Provider plugin. This plugin provides out of the box integration
-with WURFL, an Open Source database licenced with the AGPLv3 license. Commercial
+with WURFL, an open source database licenced with the AGPLv3 license. Commercial
 licenses are also available. It's also possible to develop plugins that
 integrate with other devices databases. Even if you don't have a device
 database, you can still set up mobile device rules. However, they won't be
@@ -1217,9 +1217,9 @@ Rule Groups* link in the right-hand menu. Use the *Select Rule Group* button to
 select rule groups to be applied either to a site or to a single page. If you
 select the page group itself from the left-hand menu, the selected rule group
 will apply to all the pages of the site by default. However, if you select an
-individual page and then click the the *Select Rule Group* button, the rule
+individual page and then click the *Select Rule Group* button, the rule
 groups will apply to only that page. You can select multiple rule groups for a
-particular site or page and order them by prority. The rule groups are checked
+particular site or page and order them by priority. The rule groups are checked
 in decreasing order of priority: the actions defined by the first rule group
 that applies are executed.
 
@@ -1230,7 +1230,7 @@ Actions* button and then click *Add Action*. By default, there are four kinds of
 actions that can be configured for mobile rule groups: layout template
 modifications, theme modifications, simple redirects and site redirects. Layout
 template modifications let you change the way portlets are arranged on pages
-delivered to mobile devices and themes modifcations let you select a specifc
+delivered to mobile devices and themes modifications let you select a specific
 look and feel. If it makes more sense for you to create separate mobile versions
 of certain sites or pages, you can use a redirect to make sure mobile devices
 users get to the right page. To define a simple redirect, you need to specify a
@@ -1238,6 +1238,55 @@ URL. To define a site redirect, you only need to specify the site name and page
 name of the page you're redirecting to. Like mobile device rules, mobile device
 actions are designed to be extensible. Your developers can define custom actions
 in addition to the four actions provided by default.
+
+Let's discuss a few examples of how you can use mobile device rules. First,
+suppose you have a separate version of the default site on your portal that's
+specifically designed for mobile phones running Android or Bada. For our
+example, we'll make a site called Android/Bada Liferay and we'll configure the
+default Liferay site to redirect incoming requests from Android or Bada mobile
+phones to the Android/Bada Liferay site. Our first step is to create the
+Android/Bada Liferay site: go to the Sites page of the Control Panel and click
+*Add* &rarr; *Blank Site*. Enter the name *Android/Bada Liferay* and click
+*Save*. Then, with Android/Bada selected in the context menu selector, click on
+*Site Pages*. By default, the newly created site doesn't have any pages so
+click on *Add Page*, enter the name *Welcome*, and click the *Add Page* button.
+Now our Android/Bada Liferay site has a public Welcome page just like our
+default Liferay site.
+
+Next, select *Liferay* in the context menu selector and go to the Mobile Device
+Rules page of the Control Panel. Click on *Add Rule Group*, enter the name
+*Android and Bada Mobile Phones*, and click *Save*. You'll see the message, "No
+rules are configured for this rule group."
+
+![Figure 3.x: After adding a new rule, you'll see a message indicating that no
+rules have been configured for the rule
+group.](../../images/no-rule-groups-configured.png)
+
+Click the *Manage Rules* link and we'll configure our rule group to apply only
+to mobile phones running Android or Bada. Click *Add Rule*, enter *Rule 1* for
+the name and select *Simple Rule* for the type, then click *Save*. Then click on
+the rule to edit it or click *Actions* &rarr; *Edit*. Under OS, select *Android*
+and *Bada OS* (hold down Shift to make multiple selections), select *False*
+under Tablet since we want our rule group to apply only to mobile phones, and
+click *Save*. Now we just need to define the redirect action for our rule group.
+Make sure Liferay is still selected in the context menu selector and click on
+*Site Pages*. Click on *Mobile Rule Groups* in the navigation menu to the right.
+
+![Figure 3.x: To apply a mobile device rule group to a page set of a site,
+select the site in the context menu selector, click on *Mobile Rule Groups*,
+click *Select Rule Group*, and select the desired rule
+group.](../../images/site-pages-mobile-device-rules.png)
+
+Click on *Select Rule Group* and then click on the *Android and Bada Mobile
+Phones* rule group that you configured. Once you've selected your rule group,
+click on *Mobile Rule Groups* again and click on your rule group or click
+*Actions* &rarr; *Manage Actions* next to it. Then click *Add Action*, enter the
+name *Android/Bada Liferay Redirect*, and select *Site Redirect* under Type.
+Under the Site dropdown menu that appears, select *Android/Bada Liferay* and
+under the Page dropdown menu that appears, select the *Welcome* page that you
+created earlier. Lastly, click *Save*. That's it! Now Android and Bada mobile
+phone users will be redirected to the Android/Bada Liferay site from the Liferay
+site. 
 
 ## Summary [](id=lp-6-1-ugen03-summary-0)
 
