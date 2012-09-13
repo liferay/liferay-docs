@@ -39,8 +39,11 @@ Liferay's service oriented architecture (SOA).
 - *Service Context:* Understanding what the service context is, how it can be
 used in services, and how to use it in calling services.
 
-- *Device Detection:* Detecting the capabilities of a device that
-is making a request to your portal.
+- *Using Message Bus:* Exchanging string messages within Liferay using the
+Message Bus.
+
+- *Device Detection:* Detecting the capabilities of a device that is making a
+request to your portal.
 
 First, let's consider invoking Liferay's services locally.
 
