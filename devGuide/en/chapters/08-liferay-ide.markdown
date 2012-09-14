@@ -850,19 +850,19 @@ view.
 
 Node properties are grouped as follows:
 
-- *Actions*: lets you execute scripts with respect to your node. Each action has a
+- *Actions*: let you execute scripts with respect to your node. Each action has a
 *Name*, *Script Language*, *Execution Type*, and a *Priority* (optional).
 Clicking *Edit Script* brings up the script in the default editor for the
 *Script Language* you specified.
 
-- *Notifications*: lets you notify users with respect to your node. Each
+- *Notifications*: let you notify users with respect to your node. Each
 notification has a *Name*, *Template Language*, *Execution Type*, and one or
 more *Notification Types*.
 
-- *Assignments*: lets you assign tasks to users or roles. Click *Change Task
+- *Assignments*: let you assign tasks to users or roles. Click *Change Task
 Assignments* to specify or change the assignment.
 
-- *Task Timers*: lets you name timers for a task and whether the timers are
+- *Task Timers*: let you name timers for a task and whether the timers are
 blocking. Each task timer has a *Name* and *Blocking* indicator.
 
 - *Script*: lets you edit a script for your condition node. Clicking *Edit
