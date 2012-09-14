@@ -241,8 +241,8 @@ can skip to the next section.
 
 ![Tip](../../images/02-tip.png) **Note:** This is not the recommended set up
 for Liferay installations but is documented here so enterprises with more
-restrictive standards can install Liferay with more strict-—but
-suboptimal—-database settings. If it's at all possible, Liferay recommends that
+restrictive standards can install Liferay with more strict -- but
+suboptimal -- database settings. If it's at all possible, Liferay recommends that
 you use the automatic method as documented above instead of the procedure
 outlined below.
 
@@ -254,8 +254,8 @@ the permissions over the database necessary for Liferay and its plugins to
 maintain their tables. For these organizations, Select, Insert, Update and
 Delete are the only permissions allowed so we will go over how to set up the
 database manually. If your organization *is* willing to grant the Liferay user
-ID permissions to create and drop tables in the database—-and this is the
-recommended configuration-—by all means, use the recommended configuration. 
+ID permissions to create and drop tables in the database -- and this is the
+recommended configuration -- by all means, use the recommended configuration. 
 
 Creating the database is simple: grant the ID Liferay uses to access the
 database full rights to do anything to the database. Then install Liferay and
@@ -2273,14 +2273,14 @@ for your main application cluster. Please see the following example:
 - If you're on Windows, create a batch script `$RESIN_HOME/bin/run.bat` and
   insert the following text in the script:
 
-	..\resin.exe console
+        ..\resin.exe console
 
 - If you're on Unix/Linux, create shell script `$RESIN_HOME/bin/run.sh` and
   insert the following text in the script:
 
-	#!/bin/sh
+        #!/bin/sh
 
-	./resin.sh $
+        ./resin.sh $
 
 3. Create the folder `$RESIN_HOME/log` if it doesn't already exist. As you run
    Resin, the server generates log files `access`, `jvm-default` and
