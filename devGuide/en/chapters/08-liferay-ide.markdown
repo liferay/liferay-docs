@@ -551,8 +551,7 @@ server. As mentioned previously, the Kaleo application lets you remotely add and
 update Kaleo workflow definitions directly to and from the portal server. The
 *Single Approver* workflow comes preinstalled with the Kaleo apps.
 
-To open a workflow, such as the Single Approver workflow or one of your
-published workflows, simply double-click the workflow from the Kaleo Workflows
+To open a workflow, simply double-click the workflow from the Kaleo Workflows
 folder. This retrieves the workflow definition from the Liferay server letting
 you edit the workflow in Studio.
 
@@ -564,12 +563,6 @@ use the perspective's helpful features that include the palette toolbar,
 properties view, and outline view.
 
 ---
-
-Notice the workflow opens up in a *Workflow Diagram* screen, giving you a
-graphical interface to modify your workflow definition.
-
-![Figure 7.39: The Workflow Diagram screen displays the Kaleo workflows you and
-others have designed for your Liferay Portal.](../../images/kaleo-2.png)
 
 Next, let's dive into creating a workflow using the Kaleo Workflow
 Designer for Java.
@@ -832,11 +825,9 @@ horizontally, with respect to another node.
 	![Figure 7.54: Studio's Surveyor's Level helps you design your workflow for
 	an organized and professional look.](../../images/kaleo-32.png)
 
-<!--CHECK: Not sure if there is a specifc name for the "Surveyor's Level". This
-is just a name I use for the instrument-->
-
 You have probably noticed the *Properties* view below your workflow diagram.
-Let's explore what it does and how it lets you customize your workflow definition.
+Let's explore what it does and how it lets you customize your workflow
+definition.
 
 #### Properties View and Outline Views
 
@@ -878,10 +869,14 @@ Here is what the Properties view looks like in Developer Studio:
 your workflow nodes.](../../images/kaleo-11.png) 
 
 Another useful tool is the Outline view. This gives a top level view of your
-entire workflow definition. As you can imagine, workflows can become extremely large over
-time and may not be able to fit on the viewing area of your workflow diagram screen. The Outline
-view lets you view your entire workflow definition, no matter how large it
-becomes. Below is a snapshot of an outline view in Developer Studio:
+entire workflow definition. As you can imagine, workflows can become extremely
+large over time and may not be able to fit on the viewing area of your workflow
+diagram screen. The Outline view lets you view your entire workflow definition,
+no matter how large it becomes. In addition, the Outline view shows what is
+currently visible on your Workflow diagram by highlighting it in blue. You can
+select this blue highlighted area and drag it to the area of your workflow you
+want visible on your Workflow Diagram. Below is a snapshot of an example
+workflow shown in the outline view in Developer Studio:
 
 ![Figure 7.56: The Outline view lets you view your entire workflow
 definition.](../../images/kaleo-25.png) 
@@ -901,17 +896,17 @@ offers many script editing features that can help you quickly and successfully
 implement business logic in your workflows.
 
 Let's dive back into our software ticket process workflow and create a script.
-For most ticketing processes, it is not guaranteed that every ticket will be
-selected for fixing. If the issue was due to a silly user error, there is no
-reason to change the product. In this case, the developer will resolve the
-ticket indicating that she will not apply any fix. Regardless, we'll have the
-developer fill out an online Dynamic Data List (DDL) form to kick off
-processing a workflow for each of her tickets. Once the workflow is invoked, its
-associated DDL record is accessible from our workflow's context. Let's use a
-condition node to handle the ticket based on the DDL record.
+For most ticketing processes, it is not guaranteed that every ticket has a
+resolution. If the issue was due to a silly user error, there is no reason to
+change the product. In this case, the developer will resolve the ticket
+indicating there is no resolution. Regardless, we'll have the developer fill out
+an online Dynamic Data List (DDL) form to kick off processing a workflow for
+each of her tickets. Once the workflow is invoked, its associated DDL record is
+accessible from our workflow's context. Let's use a condition node to handle the
+ticket based on the DDL record.
 
 Drag and drop a condition node onto your workflow diagram and a *Create New
-Condition Node* menu appears. Name the node *Valid Fix*. Notice, the menu let's
+Condition Node* menu appears. Name the node *Resolution*. Notice, the menu let's
 you choose a script language for the condition node. Select *Groovy* and you'll
 see how easy it is to embed Java code. In our Groovy script, we'll access the
 DDL record to determine whether the ticket is to be fixed. If the ticket is to
@@ -1339,11 +1334,10 @@ select *Activate*.
 ![Figure 7.69: Liferay portal's Control Panel lets you activate/deactivate
 workflow definitions.](../../images/kaleo-34.png)
 
-A workflow definition can be associated with
-publication of an asset or DDL record. Let's associate our ticket
-process workflow definition with a DDL record that lets a developer
-indicate whether she will fix a ticket's issue. You
-can reference how to specifically create a DDL by visiting the section [Defining
+A workflow definition can be associated with publication of an asset or DDL
+record. Let's associate our ticket process workflow definition with a DDL record
+that lets a developer indicate whether she will fix a ticket's issue. You can
+reference how to specifically create a DDL by visiting the section [Defining
 data
 types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
 in *Using Liferay Portal*. We'll demonstrate how easy it is.
