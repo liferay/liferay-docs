@@ -1280,7 +1280,7 @@ Rules page of the Control Panel. Click on *Add Rule Group*, enter the name
 *Android and Bada Mobile Phones*, and click *Save*. You'll see the message, *No
 rules are configured for this rule group.*
 
-![Figure 3.x: After adding a new rule, you'll see a message indicating that no
+![Figure 3.29: After adding a new rule, you'll see a message indicating that no
 rules have been configured for the rule
 group.](../../images/no-rule-groups-configured.png)
 
@@ -1294,7 +1294,7 @@ click *Save*. Now we just need to define the redirect action for our rule group.
 Make sure Liferay is still selected in the context menu selector and click on
 *Site Pages*. Click on *Mobile Rule Groups* in the navigation menu to the right.
 
-![Figure 3.x: To apply a mobile device rule group to a page set of a site,
+![Figure 3.30: To apply a mobile device rule group to a page set of a site,
 select the site in the context menu selector, click on *Mobile Rule Groups*,
 click *Select Rule Group*, and select the desired rule
 group.](../../images/site-pages-mobile-device-rules.png)

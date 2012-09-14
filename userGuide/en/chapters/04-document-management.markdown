@@ -17,7 +17,7 @@ metadata sets are an addition to, not a replacement for, the portal's system of
 tags and categories. Let's start exploring how to use the Documents and Media
 portlet.
 
-## Getting Started with the Documents and Media [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-0) 
+## Getting Started with the Documents and Media [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-0)
 
 The Documents and Media portlet is non-instanceable. This means that each page
 on your portal can host at most one such portlet. Furthermore, if you add
