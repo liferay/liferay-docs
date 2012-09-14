@@ -1055,30 +1055,40 @@ templates for your workflow notifications. A FreeMarker editor comes bundled
 with Developer Studio. For editing Velocity templates, you'll need to install an
 editor.
 
-#### Installing the Velocity template editor
+#### Add-on: Install Velocity Editor Support
 
-1. Download the installation zip file from
-[http://ftp.liferay.com/Liferay_Developer_Studio_Velocity_1.6.0.v201208241803-updatesite.zip](http://ftp.liferay.com/Liferay_Developer_Studio_Velocity_1.6.0.v201208241803-updatesite.zip)
+Liferay Developer Studio comes with additional add-on support for editing
+velocity template notifications in the Kaleo Designer for Java. To use this
+feature go to the Developer Studio 1.6 customer page
+[http://www.liferay.com/group/customer/products/developer-studio/1.6](http://www.liferay.com/group/customer/products/developer-studio/1.6),
+navigate to the *Add-on: Install Velocity Editor Support* section, and download
+the Liferay Developer Studio Velocity update site zip file and install it with
+the following steps:
 
-2. The follow these steps in Developer Studio:
+1. From Liferay Developer Studio, Click *Help* &rarr; *Install New Software...*
 
-    1. Help  &rarr; Install New Software...
+2. Click *Add...*
 
-    2. Click Add... button
+3. Click *Archive*.
 
-    3. Click archive...
+4. Browse to the downloaded update site zip file and select it.
 
-    4. Select the updatesite zip file
+5. Click *OK* to close the *Add Repository* dialog.
 
-    5. Select OK
+6. Expand the added repository and check the "Liferay Developer Studio Velocity"
+feature.
 
-    6. Select the only feature that is shown, and finish the install
+7. Uncheck the option "Contact all update sites..."
 
-    7. Restart Developer Studio
+8. Click *Next* to progress through the wizard.
 
-    When you start back up, if you edit a notification template that is set to
-    the velocity type, it should open in a velocity editor (small v in the
-    editor tab).
+9. After reading and accepting the license agreement, click *Finish*.
+
+9. Restart Liferay Developer Studio to complete the install.
+
+If you edit a notification template that is set to the Velocity type, the
+template opens in the Velocity editor (a small "v" icon is in the left side of
+the editor's tab).
 
 #### Creating notifications
 
