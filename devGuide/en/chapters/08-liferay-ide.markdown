@@ -639,23 +639,23 @@ used tools. Let's explore it next.
 #### Palette and floating palette
 
 The Palette lets you to customize your workflow with nodes and transitions.
-In addition, you can choose different behaviours for your mouse pointer.
+In addition, you can choose different behaviors for your mouse pointer.
 
 ![Figure 7.44: The palette toolbar lets you customize your workflow with
 additional nodes and transitions.](../../images/kaleo-6.png)
 
 Here are your pointer options:
 
-- *Select*: is the default pointer setting used for selecting options on the
+- *Select*: the default pointer setting used for selecting options on the
 workflow diagram by simply clicking the icon.
 
-- *Marquee*: is used for dragging an invisible box around multiple icons. This
-is very useful when you want to manipulate multiple nodes and/or transitions on
-the workflow diagram.
+- *Marquee*: used for dragging an invisible box around multiple icons. This is
+very useful when you want to manipulate multiple nodes and/or transitions on the
+workflow diagram.
 
 Use transitions to connect one node to another. On exiting the first node,
 processing continues to the node pointed to by the transition. Selecting a
-*Transition*, turns your pointer into a connector, letting you connect the
+*Transition* turns your pointer into a connector, letting you connect the
 starting end of a transition to one node and the other end of the transition to
 the next node to process.
 
@@ -708,12 +708,11 @@ your diagram. Our ticket process workflow now looks something like this:
 ![Figure 7.47: After creating the fork and join nodes, you can reposition them
 to your liking.](../../images/kaleo-8.png)
 
-Notice, there are error markings on multiple nodes within our workflow. And
-error marking is denoted by a red "X" in the bottom left of a node. These
-markings indicate something is specified incorrectly or is missing with respect
-to your nodes. Hover your pointer over each error marker for Studio to display
-hints on how to resolve each of their problems. We'll address these error
-markers soon.
+Notice, there are error markings on multiple nodes within our workflow. An error
+marking is denoted by a red "X" in the bottom left of a node. These markings
+indicate something is specified incorrectly or is missing with respect to your
+nodes. Hover your pointer over each error marker for Studio to display hints on
+how to resolve each of their problems. We'll address these error markers soon.
 
 ![Figure 7.48: Error markings notify the user that something is wrong or needs
 to be specified within a node.](../../images/kaleo-26.png)
@@ -740,7 +739,7 @@ feature only applies to the condition node.
 - *Change Assignments (person)*: lets you assign/reassign the task. This
 feature only applies to the task node.
 
-- *Delete (red "x")*: deletes the node.
+- *Delete (red "X")*: deletes the node.
 
 - *Show in Source (paper with folded corner and arrow)*: shows the node
 specified as as a model element in the workflow definition's XML source and
@@ -770,7 +769,7 @@ email, login to the user's account and visit *Control Panel* &rarr; *Server
 Administration* &rarr; *Mail* for setup options.
 
 Select the *Change Assignments* icon from the floating palette for each QA task
-node. Then, select *Assign to a specific user* from the the *Choose Assignment
+node. Then, select *Assign to a specific user* from the *Choose Assignment
 Type* menu and click *Next*. You have options to enter the user's *User-id*,
 *Screen name*, or *Email address*. Enter the user's screen name and click
 *Finish*.
@@ -779,11 +778,11 @@ Type* menu and click *Next*. You have options to enter the user's *User-id*,
 Portal.](../../images/kaleo-29.png)
 
 Assigning the QA and QA Management task nodes resolved their error markings.
-Later, the join node's error marking will be disapper when we connect the join
+Later, the join node's error marking will be disappear when we connect the join
 node to another task.
 
 ![Figure 7.51: The error markings for the QA and QA Management task nodes
-disappeared after they were assigned.](../../images/kaleo-27.png)
+disappear after their assignments are specified.](../../images/kaleo-27.png)
 
 While we're using Designer's Workflow Diagram, let's go over some of its
 features.
@@ -813,7 +812,7 @@ corner toolbar of the Workflow Diagram:
 	for zooming, saving, and printing your workflow
 	diagram.](../../images/kaleo-23.png)
 
-**More Workflow Diagram Actions** are accessble by right-clicking in the
+**More Workflow Diagram Actions** are accessible by right-clicking in the
 Workflow Diagram's canvas:
 
 - The *Layout* feature lets you arrange nodes vertically or horizontally. This
@@ -851,26 +850,26 @@ view.
 
 Node properties are grouped as follows:
 
-- *Actions*: let you execute scripts with respect to your node. Each action has a
+- *Actions*: lets you execute scripts with respect to your node. Each action has a
 *Name*, *Script Language*, *Execution Type*, and a *Priority* (optional).
 Clicking *Edit Script* brings up the script in the default editor for the
 *Script Language* you specified.
 
-- *Notifications*: let you notify users with respect to your node. Each
+- *Notifications*: lets you notify users with respect to your node. Each
 notification has a *Name*, *Template Language*, *Execution Type*, and one or
 more *Notification Types*.
 
-- *Assignments*: let you assign tasks to users or roles. Click *Change Task
+- *Assignments*: lets you assign tasks to users or roles. Click *Change Task
 Assignments* to specify or change the assignment.
 
-- *Task Timers*: let you name timers for a task and whether the timers are
+- *Task Timers*: lets you name timers for a task and whether the timers are
 blocking. Each task timer has a *Name* and *Blocking* indicator.
 
 - *Script*: lets you edit a script for your condition node. Clicking *Edit
 Script* brings up the script in the default editor for the *Script Language* you
 specified.
 
-- *Other*: let's you edit miscellaneous properties, such as *Name* and
+- *Other*: lets you edit miscellaneous properties, such as *Name* and
 *Description*, applicable to your node's type.
 
 Here is what the Properties view looks like in Developer Studio:
@@ -905,8 +904,8 @@ Let's dive back into our software ticket process workflow and create a script.
 For most ticketing processes, it is not guaranteed that every ticket will be
 selected for fixing. If the issue was due to a silly user error, there is no
 reason to change the product. In this case, the developer will resolve the
-ticket indicating that she will not apply any fix. Regardless we'll have the
-developer fill out an online a Dynamic Data List (DDL) form to kick off
+ticket indicating that she will not apply any fix. Regardless, we'll have the
+developer fill out an online Dynamic Data List (DDL) form to kick off
 processing a workflow for each of her tickets. Once the workflow is invoked, its
 associated DDL record is accessible from our workflow's context. Let's use a
 condition node to handle the ticket based on the DDL record.
@@ -927,7 +926,7 @@ the *Create New Condition Node* menu configured for the ticket process workflow.
 ![Figure 7.57: When creating a condition node, you're able to set your preferred
 script language, name, and condition transitions.](../../images/kaleo-12.png) 
 
-You may notice the error marking on the condition node. When you hovering over
+You may notice the error marking on the condition node. When you hover over
 the marking, a hint indicates a script must be specified for the node.
 
 There are several ways to invoke the script editor for a node:
@@ -948,7 +947,7 @@ Guide](http://groovy.codehaus.org/User+Guide). Likewise, if you set the script
 language to another language, the editor for that specific language appears. The
 editor runs in the context of editing the specific node you selected. So
 anything you type in the script editor for this condition node is written inside
-the `<script></script>` tags the `<condition/>` element that represents our node
+the `<script></script>` tags for the `<condition/>` element that represents our node
 in our workflow definition XML file.
 
 ---
@@ -993,7 +992,7 @@ section of this guide. Taking advantage of Designer's palette features, we will
 simply drag and drop the *serviceContext* entity onto the script editor, which
 grabs the Service Context. Next, drag and drop the *ddlRecord* entity onto the
 editor. We get the `ddlRecordId` from the Service Context and use that ID to
-lookup the DDL record via Liferay service utility `DDLRecordLocalServiceUtil`.
+look up the DDL record via Liferay service utility `DDLRecordLocalServiceUtil`.
 The code looks like this:
 
 ![Figure 7.60: You can add snippets of code by simply using the drag-and-drop
@@ -1013,7 +1012,7 @@ Append the following Java code to your script:
 
 
 We pull out the status from the DDL record and return a value indicating "Yes"
-to continue fixing the the ticket issue or "No" to transition to the workflow's
+to continue fixing the ticket issue or "No" to transition to the workflow's
 end state.
 
 Lastly, add required imports, such as
@@ -1030,7 +1029,7 @@ element that represents our condition node.
 transitions stemming from the condition node. In our example, the "No"
 transition should point to the EndNode, while the "Yes" transition should point
 to the Developer. If the condition script's return values do not match the
-transition names the workflow engine will not know which transition to use.
+transition names, the workflow engine will not know which transition to use.
 
 ---
 
@@ -1107,7 +1106,7 @@ diagram.
 ![Figure 7.63: The template editor's palette has helpful entities that make
 creating notifications quick and easy.](../../images/kaleo-17.png)
 
-Because Developer Studio let's you leverage full featured template editors like
+Because Developer Studio lets you leverage full featured template editors like
 FreeMarker or Velocity, content-assist is available for you to use right away.
 For example, if you are using the FreeMarker editor, content-assist suggests
 FreeMarker functions when you are editing your notification template. In
@@ -1126,17 +1125,17 @@ to customize notifications in your workflow definition.
 
 ---
 
-Let's continue editing our ticket process workflow emailing our Project
-Management team upon completing QA of the developer's fix. First, we'll add a
-new task node that transitions from our join node. Typically, we would assign
-this task to a project management role and email it to the project management
-team's email alias. But for demonstration purposes, we'll assign and email "Joe
-Blogs". As mentioned previously, you specify an existing user that has an email
-or create a user with screen name "joe" having your email address. This new task
-node will hold our email notification. This process is similar to how we
-assigned our previous task nodes.
+Let's continue editing our ticket process workflow by setting up a notification
+email that is sent to our Project Management team upon completion of the QA task
+assignments. First, we'll add a new task node that transitions from our join
+node. This new task node will hold our email notification. Typically, we would
+assign this task to a project management role and email it to the project
+management team's email alias. But for demonstration purposes, we'll assign and
+email "Joe Blogs". As mentioned previously, you can specify an existing user
+that has an email or create a user with screen name "joe" having your email
+address. This process is similar to how we assigned our previous task nodes.
 
-1. Drag a new task node onto the workflow diagram
+1. Drag a new task node onto the workflow diagram.
 
 2. Name the new task node *Project Management* and select *Assign to a specific
 user*.
@@ -1149,7 +1148,7 @@ user*.
 
 Now all we have to do is incorporate the Project Management node into our
 workflow process. Add a transition named *Passed QA* from our join node to the
-Project Management node. Lastly, add a tranistion named *Completed* from our
+Project Management node. Lastly, add a transition named *Completed* from our
 Project Management node to our *EndNode*. Here is an updated screenshot of what
 your workflow diagram should look like:
 
@@ -1160,7 +1159,7 @@ For our newly created Project Management task node, we will create an email
 notification. As we discussed earlier, click on the Project Management node and
 then in the Properties window, select *Notifications*.
 
-Create the email notification follow these steps:
+To create the email notification, follow these steps:
 
 1. Click the green "plus" symbol to create a new notification.
 
@@ -1221,16 +1220,16 @@ Project Management task node is activated in the workflow, the user we specified
 (i.e. *joe*) will receive the notification email dressed up with our FreeMarker
 template.
 
-As you can see, template editors such as the FreeMarker template editors bundled
-with Developer Studio, make customizing your notification templates easier than
-ever. And you can create Velocity templates just as easy using the Velocity
-editor you installed. Next, we'll explain how to view your workflow definition
-XML file within Developer Studio.
+As you can see, template editors, such as the FreeMarker template editors
+bundled with Developer Studio, make customizing your notification templates
+easier than ever. And you can create Velocity templates just as easy using the
+Velocity editor you installed. Next, we'll explain how to view your workflow
+definition XML file within Developer Studio.
 
 ### Viewing workflow definition XML source
 
 It is often convenient to view the workflow definition XML file as source code
-to make edits to it and to review changes you've made it. To view the XML
+to make edits to it and review changes you've made. To view the XML
 source, select the *Source* tab next to the *Diagram* tab in the main editor
 view.
 
@@ -1271,14 +1270,14 @@ Liferay server.
 
 After you've created your new workflow or modified an existing workflow, you'll
 want to publish it onto your Liferay server for your site's members to use.
-We'll publish the ticket process workflow definition onto Liferay server.
+We'll publish the ticket process workflow definition onto your Liferay server.
 
 You can publish a new workflow definition in the following manner:
 
 1. Right-click the *Kaleo Workflows* folder listed under your Liferay server in
 the *Servers* view.
 
-2. Select *Upload new workflow ...* to bring up the *workspace files* browser.
+2. Select *Upload new workflow...* to bring up the *workspace files* browser.
 
 3. Browse for your workflow definition file and select it for publishing.
 
@@ -1334,7 +1333,7 @@ Congratulations! You have successfully used Kaleo Designer for Java to create a
 workflow! Now, let's put the finishing touches on your workflow and put it to
 the test in Liferay Portal. Before you can use a workflow definition in your
 portal, you must activate it. Navigate to the Control Panel and select
-*Workflow*. Then, in the *Definitions* tab, click on the *Actions*, and
+*Workflow*. Then, in the *Definitions* tab, click on the *Actions* button, and
 select *Activate*.
 
 ![Figure 7.69: Liferay portal's Control Panel lets you activate/deactivate
@@ -1385,8 +1384,8 @@ Recall the code we inserted for our condition node:
 
 In our code, the `getField()` method ingests the value of our DDL field named
 "status". When the script is invoked, if the value for the status field contains
-"not", the value "No" is returned and our workflow trasitions to our EndNode
-state. Otherise, the workflow transitions to our Developer task node.
+"not", the value "No" is returned and our workflow transitions to our EndNode
+state. Otherwise, the workflow transitions to our Developer task node.
 
 After creating the data definition, make sure to select the ticket process
 workflow for our new Kaleo Forms process to use. Lastly, save the DDL.
@@ -1423,7 +1422,7 @@ button, and select *Ticket Process*.
 ![Figure 7.73: Submitting the ticket process invokes its corresponding
 workflow.](../../images/kaleo-40.png)
 
-You're now able to interract with the DDL and progress throughout the ticket
+You're now able to interact with the DDL and progress throughout the ticket
 process using Kaleo Forms. Remember, you will need to sign in as Joe Bloggs to
 access the tasks assigned to him. Joe Bloggs should also receive an email when
 the Project Management node is activated.
