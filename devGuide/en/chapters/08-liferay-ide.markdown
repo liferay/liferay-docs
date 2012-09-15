@@ -489,10 +489,11 @@ modifications or inject new business logic. In addition, Liferay Developer
 Studio comes bundled with a Java/Groovy editor (made available by Spring
 Source), giving you the same rich editing experience to which you may be
 accustomed in editing Kaleo [Groovy](http://groovy.codehaus.org/Documentation)
-scripts. From there you can delegate workflow decisions to your custom business logic APIs
-or access any of the Liferay's Portal APIs. In Developer Studio, you can leverage 
-editors for Beanshell, Drl, Javascript, Python, and Ruby scripting languages. You can
-leverage editors for [FreeMarker](http://freemarker.sourceforge.net/) and
+scripts. From there you can delegate workflow decisions to your custom business
+logic APIs or access any of the Liferay Portal APIs. In Developer Studio, you
+can leverage editors for Beanshell, Drl, Javascript, Python, and Ruby scripting
+languages. You can leverage editors for
+[FreeMarker](http://freemarker.sourceforge.net/) and
 [Velocity](http://velocity.apache.org/engine/releases/velocity-1.5/user-guide.html)
 template languages too. Kaleo Designer for Java gives you a rich tool set for
 creating/editing workflows, manipulating workflow nodes, and implementing
@@ -538,10 +539,9 @@ Marketplace](http://www.liferay.com/marketplace/-/mp/category/12729032) in the
 left navigation area.
 3. Download and install the *Kaleo Forms EE* app.
 
-After downloading and installing the Kaleo Forms EE application, restart the 
-Liferay Server and a *Kaleo Workflows* folder will automatically
-appears underneath the server instance in the Servers view of
-Developer Studio.
+After downloading and installing the Kaleo Forms EE application, restart the
+Liferay Server and a *Kaleo Workflows* folder automatically appears underneath
+the server instance in the Servers view of Developer Studio.
 
 ![Figure 7.38: In Studio's *Servers* view, your server's Kaleo Workflows folder
 shows workflows published on your portal.](../../images/kaleo-1.png)
