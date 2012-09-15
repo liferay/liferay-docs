@@ -678,8 +678,8 @@ templates. For additional information on the nodes, refer to the [Kaleo
 Designer](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen06-kaleo-designer-0)
 section of *Using Liferay Portal*.
 
-For our ticket process workflow diagram, we left off with the simple *Start*
-state node followed by the *Developer* task node followed by the *End* state
+For our ticket process workflow diagram, we left off with the simple *StartNode*
+state node followed by the *Developer* task node followed by the *EndNode* state
 node.
 
 ![Figure 7.45: The ticket process' initial workflow definition needs some
@@ -691,7 +691,7 @@ and get approval by a QA manager. Let's use a fork node to accurately depict
 these approval tasks being done in parallel.
 
 Drag and drop a fork node onto your workflow diagram. A wizard helps you create
-your fork node. On clicking the green "plus" sign, you can select new or
+your fork node. On clicking the green "plus" symbol, you can select new or
 existing nodes to process in parallel threads. A drop-down menu gives you
 options to select tasks to be done in your fork threads. In addition, a checkbox
 lets you indicate whether to automatically add a corresponding join node to your
@@ -920,16 +920,55 @@ ticket is not to be fixed, we'll end the workflow by transitioning to the
 workflow's EndNode.
 
 From the *Create New Condition Node* menu, add two transitions -- one transition
-to the Developer node and the other to the EndNode state. Here is a snapshot of
-the *Create New Condition Node* menu configured for the ticket process workflow.
+to the Developer node and the other to the EndNode state. To add these
+transitions:
+
+1. Click the green plus sign and select the transition icon from its menu. An
+entry for the transition appears in the named list of *Condition transitions*.
+
+2. Click the browse icon in the entry and select the Developer node.
+
+3. Repeat steps 1 and 2 to add a transition to the EndNode state.
+
+4. Click *Finish*
+
+Here is a snapshot of the *Create New Condition Node* menu configured for the
+ticket process workflow.
 
 ![Figure 7.57: When creating a condition node, you're able to set your preferred
-script language, name, and condition transitions.](../../images/kaleo-12.png) 
+script language, name, and condition transitions.](../../images/kaleo-12.png)
+
+Before adding a script to our condition node, let's make the following changes
+in our workflow transitions:
+
+- Add a transition from the *Developer* task node to the *Pass To QA* fork node.
+
+- Add a transition from the *StartNode* state node to the *Resolution* condition
+node.
+
+- Delete the transition that currently connects the *StartNode* state node to
+the *Developer* task node.
+
+To add a transition from one node to another, do the following:
+
+1. Click the transition icon from the palette. Your pointer's icon shows as a
+plug indicating you are in *connector* mode.
+
+2. Select a node on your workflow diagram from which the transition will start.
+A dotted line appears with one end connected to the selected node and the other
+end following your pointer.
+
+3. Select a node to which the transition will end. The dotted line changes into
+a fixed ray with the arrow pointing to the transition's end node.
+
+4. To exit connector mode, hit *escape* on your keyboard and click your pointer
+at empty space in your workflow diagram.
 
 You may notice the error marking on the condition node. When you hover over
 the marking, a hint indicates a script must be specified for the node.
 
-There are several ways to invoke the script editor for a node:
+Invoke the script editor for your *Resolution* condition node by doing one of
+the following:
 
 - Select the node and click *Edit Script* from the *Script* tab of the
 Properties view.
@@ -988,12 +1027,20 @@ Let's get a hold of the DDL record that's being worked on in our workflow
 process. To get the DDL record, we need the `serviceContext`. To learn more
 about Service Context and its parameters, see the [Service
 Context](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/service-conte-1)
-section of this guide. Taking advantage of Designer's palette features, we will
-simply drag and drop the *serviceContext* entity onto the script editor, which
-grabs the Service Context. Next, drag and drop the *ddlRecord* entity onto the
-editor. We get the `ddlRecordId` from the Service Context and use that ID to
-look up the DDL record via Liferay service utility `DDLRecordLocalServiceUtil`.
-The code looks like this:
+section of this guide.
+
+Let's take advantage of Designer's palette features in conjunction with our
+Java/Groovy editor to implement our condition:
+
+1. Drag and drop the *serviceContext* entity from the *Context Variables* folder
+in your palette onto the script editor. This grabs the Service Context.
+
+2. Drag and drop the *ddlRecord* entity from the *Dynamic Data Lists* folder in
+your palette onto the script editor. We get the `ddlRecordId` from the Service
+Context and use that ID to look up the DDL record via Liferay service utility
+`DDLRecordLocalServiceUtil`.
+
+The code now looks like this:
 
 ![Figure 7.60: You can add snippets of code by simply using the drag-and-drop
 method from your palette.](../../images/kaleo-28.png)
@@ -1015,13 +1062,13 @@ We pull out the status from the DDL record and return a value indicating "Yes"
 to continue fixing the ticket issue or "No" to transition to the workflow's
 end state.
 
-Lastly, add required imports, such as
-`com.liferay.portlet.dynamicdatamapping.storage.Field`, by simply pressing
-*Ctrl-Alt-O* to activate the import organizer and selecting the imports.
+Lastly, add the following to the script's imports:
 
-The script accurately implements the condition logic we want. As a reminder, all
-of the code was injected into our workflow's XML file within the `<condition/>`
-element that represents our condition node.
+	import com.liferay.portlet.dynamicdatamapping.storage.Field;
+
+Now, the script accurately implements the condition logic we want. As a
+reminder, all of the code was injected into our workflow's XML file within the
+`<condition/>` element that represents our condition node.
 
 ---
 
@@ -1187,7 +1234,7 @@ The figure below depicts the steps we took defining our notification:
 can access the template editor by selecting the pencil
 icon.](../../images/kaleo-33.png)
 
-Now, click the pencil icon located beneath the green plus symbol. The FreeMarker
+Now, click the pencil icon located beneath the green "plus" symbol. The FreeMarker
 template editor appears.
 
 Insert the following FreeMarker code into the FreeMarker editor to specify our
