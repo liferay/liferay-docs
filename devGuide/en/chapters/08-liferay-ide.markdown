@@ -48,7 +48,7 @@ developers/indigosr1) or [Eclipse Helios Java EE (3.6.2)]
 
 3.  When eclipse opens, go to *Help* &rarr; *Install New Software...*.
 
-	![Figure 7.1: Installing new software in Eclipse](../../images/ide-install-new-software.png)
+	![Figure 8.1: Installing new software in Eclipse](../../images/ide-install-new-software.png)
 
 4.  In the *Work with* field, paste in one of the following update sites:
 
@@ -70,7 +70,7 @@ developers/indigosr1) or [Eclipse Helios Java EE (3.6.2)]
 
 5.  After pasting in URL press enter.
 
-	![Figure 7.2: Entering the information for Liferay IDE](../../images/ide-install-available-
+	![Figure 8.2: Entering the information for Liferay IDE](../../images/ide-install-available-
 software.png)
 
 6. The Liferay IDE features should be detected, select it before clicking
@@ -83,7 +83,7 @@ software.png)
 9. After restarting Eclipse go to Help &rarr; About and you should see and icon
 badge for Liferay IDE that shows you have it properly installed.
 
-	![Figure 7.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
+	![Figure 8.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
 ### Alternative installation [](id=lp-6-1-dgen07-alternative-installation-0)
 
@@ -127,7 +127,7 @@ and Liferay Portal must be installed and configured in the IDE.
 2. Open Preference page for Liferay &rarr; Installed SDKs (Go to Window &rarr;
 Preferences &rarr; Liferay &rarr; Installed Plugin SDKs).
 
-	![Figure 7.4: Creating a Liferay plugin project](../../images/ide-new-project-liferay-
+	![Figure 8.4: Creating a Liferay plugin project](../../images/ide-new-project-liferay-
 project.png)
 
 3.  Add your SDK using the add button which brings up the Add SDK Dialog.
@@ -137,7 +137,7 @@ the name of the directory but you can change it if you wish.
 
 5.	Select OK and you should see your SDK in the list of Installed SDKs.
 
-	![Figure 7.5: Installed SDKs](../../images/ide-select-installed-sdk.png)
+	![Figure 8.5: Installed SDKs](../../images/ide-select-installed-sdk.png)
 
  Note: multiple SDKs can be added to the preferences but you will need to select
  at least one SDK to be the default which is represented by the SDK that has the
@@ -148,16 +148,16 @@ the name of the directory but you can change it if you wish.
 1. In Eclipse open the Runtime environments preference page (Go to Window &rarr;
 Preferences &rarr; Server &rarr; Runtime environments).
 
-	![Figure 7.6: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
+	![Figure 8.6: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
 2. Click Add to add a new Liferay runtime and find *Liferay v6.1 (Tomcat 7)*
 under the Liferay, Inc. category and click Next.
 
-	![Figure 7.7: Adding a Liferay runtime](../../images/ide-create-new-local-server.png)
+	![Figure 8.7: Adding a Liferay runtime](../../images/ide-create-new-local-server.png)
 
 3. Click Browse and select the location of the liferay-portal-6.1.x directory.
 
-	![Figure 7.8: Browsing to your Liferay portal directory](../../images/ide-select-liferay-
+	![Figure 8.8: Browsing to your Liferay portal directory](../../images/ide-select-liferay-
 portal-directory.png)
 
 4. Once you have selected the Liferay portal directory, if a bundle JRE is
@@ -165,12 +165,12 @@ present, this bundle will be automatically selected as the JRE to use for
 launching the server. However, if there is no JRE bundle (Mac and Linux users)
 then you will need to select the JRE to use for launch.
 
-	![Figure 7.9: Choosing the JRE bundle](../../images/ide-server-jre.png)
+	![Figure 8.9: Choosing the JRE bundle](../../images/ide-server-jre.png)
 
 5. Click finish and you should see the Liferay portal runtime in the list of
 runtimes in the preference page.
 
-	![Figure 7.10: Liferay portal in the list of available runtimes](../../images/ide-add-
+	![Figure 8.10: Liferay portal in the list of available runtimes](../../images/ide-add-
 server-runtime.png)
 
 6. Click ok to save the runtime preferences.
@@ -178,12 +178,12 @@ server-runtime.png)
 7. If you didn't choose to create a server you will need to create one from the
 servers view before you can test the server.
 
-	![Figure 7.11: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
+	![Figure 8.11: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
 
 8. Find the Liferay, Inc category and select the Liferay v6 Server and choose
 the Liferay v6 Runtime that you had previously created.
 
-	![Figure 7.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-
+	![Figure 8.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-
 type.png)
 
 ## Testing/Launching Liferay Tomcat Server [](id=testing-launching-liferay-tomcat-serv-4)
@@ -193,7 +193,7 @@ the servers tab of Eclipse. Simply select the server and then click on the green
 *Start the Server button.* Once the server is running a red *Terminate* button
 will appear which you can use to stop the server.
 
-![Figure 7.13: You can start Liferay using either the icon, or by right clicking on the server and 
+![Figure 8.13: You can start Liferay using either the icon, or by right clicking on the server and 
 selecting the option from the menu](../../images/ide-start-server-debug-mode.png)
 
 Alternatively, you can start/stop the server by selecting *Run* or *Terminate*
@@ -202,7 +202,7 @@ from the Run menu of Eclipse.
 Once the server is finish launching you can open the portal home from the
 context menu of the Liferay Tomcat server in the Servers view:
 
-![Figure 7.14: Opening Portal Home from within Liferay IDE](../../images/ide-open-portal-home.png)
+![Figure 8.14: Opening Portal Home from within Liferay IDE](../../images/ide-open-portal-home.png)
 
 ## Creating New Liferay Projects [](id=creating-new-liferay-projec-4)
 
@@ -210,18 +210,18 @@ Now that an SDK and portal server have been configured you can create a new
 Liferay plug-in project. Go to File &rarr; New Project... &rarr; Liferay &rarr;
 Liferay Plug-in Project.
 
-![Figure 7.15: Creating a plugin project](../../images/ide-new-project-liferay-project.png)
+![Figure 8.15: Creating a plugin project](../../images/ide-new-project-liferay-project.png)
 
 In the Liferay project wizard page, the newly configured SDK and Liferay Runtime
 should be pre-selected. Also the plugin type *portlet* is the default. Simply
 type in a project name and cooresponding display name and click Finish.
 
-![Figure 7.16: Entering the information for the new project](../../images/ide-new-liferay-
+![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-
 project.png)
 
 If it worked you should see a new plugin project in the package explorer. 
 
-![Figure 7.17: Viewing the new project in the Package Explorer view](../../images/ide-package-
+![Figure 8.17: Viewing the new project in the Package Explorer view](../../images/ide-package-
 explorer-demo-portlet.png)
 
 ## Deploying New Liferay Projects to Liferay Server [](id=deploying-new-liferay-projects-to-liferay-serv-4)
@@ -229,18 +229,18 @@ explorer-demo-portlet.png)
 Now with the newly created project, right-click the Liferay Server in the
 Servers view and select *Add and Remove...*.
 
-![Figure 7.18: Deploying a project to the server](../../images/ide-servers-add-and-remove.png)
+![Figure 8.18: Deploying a project to the server](../../images/ide-servers-add-and-remove.png)
 
 Select the new project and click *Add* to move it to be deployed to the server. 
 
-![Figure 7.19: Choosing which project to deploy](../../images/ide-add-resource-to-server.png)
+![Figure 8.19: Choosing which project to deploy](../../images/ide-add-resource-to-server.png)
 
 and then click *Finish*.
 
 You should see the project get deployed to Liferay Tomcat server and in the
 console see a message about 1 new portlet being available:
 
-![Figure 7.20: Verifying the output in the Console view](../../images/ide-console-portlet-
+![Figure 8.20: Verifying the output in the Console view](../../images/ide-console-portlet-
 available.png)
 
 Open Liferay Portal Home http://localhost:8080/ in most cases and login within
@@ -253,7 +253,7 @@ password: **test**
 Click Add &rarr; More, expand the Sample Category and click the Add link next to
 the Demo application. You should see the correctly deployed portlet on the page.
 
-![Figure 7.21: Adding a portlet to the page](../../images/ide-add-portlet-to-page.png)
+![Figure 8.21: Adding a portlet to the page](../../images/ide-add-portlet-to-page.png)
 
 ## Importing Existing Projects into Liferay IDE [](id=importing-existing-projects-into-liferay-i-4)
 
@@ -292,12 +292,12 @@ inside a Plugins SDK.
 1. In Eclipse, go to File &rarr; New &rarr; Project... &rarr; Liferay &rarr;
 Liferay Project from Existing Source.
 
-	![Figure 7.22: Importing a Liferay Project](../../images/ide-select-liferay-project-from-
+	![Figure 8.22: Importing a Liferay Project](../../images/ide-select-liferay-project-from-
 existing.png)
 
     Or you can invoke the same wizard from the Liferay shortcut bar.
 
-	![Figure 7.23: Alternate method of Importing a project](../../images/ide-new-proj-existing-
+	![Figure 8.23: Alternate method of Importing a project](../../images/ide-new-proj-existing-
 source.png)
 
 2. Browse to the location of the project folder. Note: the project folder should
@@ -307,21 +307,21 @@ plugin project folder you should see the plugin type and SDK version values get
 updated to correct values. If the SDK is not recent enough or project type is
 not correct it will be marked with an error.
 
-	![Figure 7.24: Setting the Project location](../../images/ide-import-project-from-
+	![Figure 8.24: Setting the Project location](../../images/ide-import-project-from-
 existing.png)
 
 3. Once you select the plugin project folder you should see the plugin type and
 SDK version values get updated to correct values. If the SDK is not recent
 enough or project type is not correct it will be marked with an error.
 
-	![Figure 7.25: Verifying the plugin type and version](../../images/ide-plugin-type-and-
+	![Figure 8.25: Verifying the plugin type and version](../../images/ide-plugin-type-and-
 version.png)
 
 4. Next you will need to select a Liferay Runtime to configure on the project
 once it is imported. If you don't have a Liferay Runtime, use the New... button
 to create a new Liferay portal runtime (Tomcat bundle only supported).
 
-	![Figure 7.26: Choosing the target runtime](../../images/ide-target-runtime-server.png)
+	![Figure 8.26: Choosing the target runtime](../../images/ide-target-runtime-server.png)
 
 5.  Click Finish to perform the import.
 
@@ -336,13 +336,13 @@ project for each of the plugins it finds inside in one single step.
 1. In Eclipse go to File &rarr; Import... &rarr; Liferay &rarr; Liferay Plugin
 SDK projects.
 
-	![Figure 7.27: Choosing the project type for import](../../images/ide-import-from-plugin-
+	![Figure 8.27: Choosing the project type for import](../../images/ide-import-from-plugin-
 sdk.png)
 
 2. First you must select the Plugins SDK that you want to import projects from
 in the combo box at the top of the wizard.
 
-	![Figure 7.28: Choosing the SDK version](../../images/ide-import-plugins-sdk.png)
+	![Figure 8.28: Choosing the SDK version](../../images/ide-import-plugins-sdk.png)
 
 3. If you don't have any SDKs configured in Liferay IDE use the *configure* link
 to add a setting that points to the Plugins SDK that you want to import projects
@@ -355,7 +355,7 @@ from.
 and then the SDK location and version will be filled in. If either are not valid
 it will be marked with an error.
 
-	![Figure 7.29: Verifying the SDK version and location](../../images/ide-select-configured-
+	![Figure 8.29: Verifying the SDK version and location](../../images/ide-select-configured-
 plugins-sdk.png)
 
 6. After the SDK is selected the list of projects that are available for import
@@ -363,7 +363,7 @@ will be shown in the table. If the projects are already in the workspace they
 will be disabled. If the project is available for import it will have a empty
 checkbox that can be selected.
 
-	![Figure 7.30: Importing a project](../../images/ide-sample-service-builder-portlet-
+	![Figure 8.30: Importing a project](../../images/ide-sample-service-builder-portlet-
 plugin.png)
 
 6.  Select which projects that you wish to import.
@@ -372,7 +372,7 @@ plugin.png)
 
 9. If you don't have a liferay runtime you can add one with the *New...* button.
 
-	![Figure 7.31: Selecting your runtime](../../images/ide-target-runtime-server.png)
+	![Figure 8.31: Selecting your runtime](../../images/ide-target-runtime-server.png)
 
 10.  Click Finish.
 
@@ -394,19 +394,19 @@ Liferay &rarr; Convert to Liferay plug-in project.
     Java and Dynamic Web project facets configured and will need to be
     configured accordingly.
 
-    ![Figure 7.32: Selecting the convert option](../../images/ide-select-convert-to-liferay-
+    ![Figure 8.32: Selecting the convert option](../../images/ide-select-convert-to-liferay-
 project.png)
 
 2. When the convert dialog wizard opens your project should be auto-selected and
 the SDK location and SDK version should be auto-detected. If they are not valid
 an error message will be displayed.
 
-	![Figure 7.33: Converting a project](../../images/ide-convert-plugin-project.png)
+	![Figure 8.33: Converting a project](../../images/ide-convert-plugin-project.png)
 
 3. Select the Liferay runtime that you wish to set on the project. If you don't
 have a Liferay Runtime define use the *New...* action to create one.
 
-	![Figure 7.34: Selecting the runtime](../../images/ide-target-runtime-server.png)
+	![Figure 8.34: Selecting the runtime](../../images/ide-target-runtime-server.png)
 
 4.  Click Finish.
 
@@ -448,7 +448,7 @@ processes has been successful.
 inside Eclipse and it should have an "L" overlay image to show its a Liferay
 project.
 
-	![Figure 7.35: Verifying that the import suceeded](../../images/ide-liferay-project-w-
+	![Figure 8.35: Verifying that the import suceeded](../../images/ide-liferay-project-w-
 overlay-image.png)
 
 2. Secondly, to make sure the project is now a *Liferay IDE* project is to check
@@ -456,14 +456,14 @@ the target runtime project property (right-click project &rarr; properties
 &rarr; target runtimes) and also check the project facets to make sure both
 Liferay runtime and Liferay plug-in facets are properly configured.
 
-	![Figure 7.36: Project Facets](../../images/ide-project-facets.png)
+	![Figure 8.36: Project Facets](../../images/ide-project-facets.png)
 
 Great! You've confirmed that your imported project is good to go.
 
 In the next section, we will explain Developer Studio's Kaleo Designer for Java
 and how you can design workflows for enhanced business logic.
 
-## Designing workflows with Kaleo Designer for Java
+## Designing workflows with Kaleo Designer for Java [](id=lp-6-1-dgen08-designing-workflows-with-kaleo-designer-for-java-0)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -477,7 +477,7 @@ EE* app from Marketplace includes Liferay's *Kaleo Workflow Designer* that lets
 you create and modify portal workflows in your browser. With *Kaleo Designer for
 Java*, you can design and publish Kaleo workflows from Liferay Developer Studio!
 
-![Figure 7.37 Kaleo Designer for Java gives you a powerful environment for
+![Figure 8.x Kaleo Designer for Java gives you a powerful environment for
 designing, modifying, and publishing Kaleo
 workflows.](../../images/kaleo-designer-for-java.png)
 
@@ -543,7 +543,7 @@ After downloading and installing the Kaleo Forms EE application, restart the
 Liferay Server and a *Kaleo Workflows* folder automatically appears underneath
 the server instance in the Servers view of Developer Studio.
 
-![Figure 7.38: In Studio's *Servers* view, your server's Kaleo Workflows folder
+![Figure 8.37: In Studio's *Servers* view, your server's Kaleo Workflows folder
 shows workflows published on your portal.](../../images/kaleo-1.png)
 
 Developer Studio retrieves all workflow definitions published on your portal
@@ -567,7 +567,7 @@ properties view, and outline view.
 Next, let's dive into creating a workflow using the Kaleo Workflow
 Designer for Java.
 
-### Creating a workflow
+### Creating a workflow [](id=lp-6-1-dgen08-creating-a-workflow-0)
 
 Developer Studio adds another dimension to working with your Kaleo workflows
 making it easy for Java developers to enhance workflow business logic. Let's
@@ -578,21 +578,21 @@ As a fun way to demonstrate Designer features, let's create a workflow
 definition for a software ticketing process. Are you ready to roll? Let's get
 started!
 
-![Figure 7.40: Check out the adventures of Liferay's mascots, Ray and Alloy,
+![Figure 8.38: Check out the adventures of Liferay's mascots, Ray and Alloy,
 found at http://www.liferay.com/ray.](../../images/kaleo-15.png)
 
 Create your new workflow definition by going to *File* &rarr; *New* &rarr;
 *Liferay Kaleo Workflow*. Alternatively, select *Liferay Kaleo Workflow* from
 the toolbar button shown in the figure below.
 
-![Figure 7.41: Create a new workflow definition locally by selecting *Liferay
+![Figure 8.39: Create a new workflow definition locally by selecting *Liferay
 Kaleo Workflow* from the toolbar button.](../../images/kaleo-3.png)
 
 The new workflow wizard prompts you to enter credentials for your new workflow
 definition. The snapshot below displays the setup menu for our ticket process
 workflow definition.
 
-![Figure 7.42: The wizard prompts you for information to setup your
+![Figure 8.40: The wizard prompts you for information to setup your
 workflow.](../../images/kaleo-5.png)
 
 ---
@@ -611,7 +611,7 @@ brings up the script and template editors for these default types. Click the
 *Next* button and you're asked to choose an assignment type for your workflow's
 initial task. The figure below shows the plethora of assignment types available:
 
-![Figure 7.43: When choosing an assignment type for a task node, you are given
+![Figure 8.41: When choosing an assignment type for a task node, you are given
 multiple options.](../../images/kaleo-4.png)
 
 For our workflow example, select *Assign to asset creator* and name the task
@@ -621,7 +621,7 @@ associated with an asset type. Later in our exercise, we'll associate our
 workflow with a Dynamic Data List (DDL). Click *Finish* to complete the initial
 setup of our workflow definition.
 
-![Figure 7.x: The workflows you create using the workflow wizard are displayed
+![Figure 8.x The workflows you create using the workflow wizard are displayed
 in Designer's workflow diagram.](../../images/kaleo-9.png)
 
 Your workflow appears as a workflow diagram, letting you interact with your
@@ -629,12 +629,12 @@ workflow graphically. Graphical features and toolbars allow you to customize
 your workflow definition. The Palette view is one of Designer's most commonly
 used tools. Let's explore it next.
 
-#### Palette and floating palette
+#### Palette and floating palette [](id=lp-6-1-dgen08-palette-and-floating-palette-0)
 
 The Palette lets you to customize your workflow with nodes and transitions.
 In addition, you can choose different behaviors for your mouse pointer.
 
-![Figure 7.44: The palette toolbar lets you customize your workflow with
+![Figure 8.42: The palette toolbar lets you customize your workflow with
 additional nodes and transitions.](../../images/kaleo-6.png)
 
 Here are your pointer options:
@@ -675,7 +675,7 @@ For our ticket process workflow diagram, we left off with the simple *StartNode*
 state node followed by the *Developer* task node followed by the *EndNode* state
 node.
 
-![Figure 7.45: The ticket process' initial workflow definition needs some
+![Figure 8.43: The ticket process' initial workflow definition needs some
 work!](../../images/kaleo-9.png)
 
 We plan for a developer to approve his fix and send it to quality assurance:
@@ -690,7 +690,7 @@ options to select tasks to be done in your fork threads. In addition, a checkbox
 lets you indicate whether to automatically add a corresponding join node to your
 workflow.
 
-![Figure 7.46: You're able to select what to fork and are given the option to
+![Figure 8.44: You're able to select what to fork and are given the option to
 automatically create a join node.](../../images/kaleo-7.png)
 
 On finishing your fork node in the wizard, Kaleo Designer makes a best effort in
@@ -698,7 +698,7 @@ placing your new nodes onto the workflow diagram's canvas. If you're not happy
 with the location of your new nodes, simply drag them where you want them in
 your diagram. Our ticket process workflow now looks something like this:
 
-![Figure 7.47: After creating the fork and join nodes, you can reposition them
+![Figure 8.45: After creating the fork and join nodes, you can reposition them
 to your liking.](../../images/kaleo-8.png)
 
 Notice, there are error markings on multiple nodes within our workflow. An error
@@ -707,13 +707,13 @@ indicate something is specified incorrectly or is missing with respect to your
 nodes. Hover your pointer over each error marker for Studio to display hints on
 how to resolve each of their problems. We'll address these error markers soon.
 
-![Figure 7.48: Error markings notify the user that something is wrong or needs
+![Figure 8.46: Error markings notify the user that something is wrong or needs
 to be specified within a node.](../../images/kaleo-26.png)
 
 Hovering your pointer over any node displays a floating palette as a convenience
 for applying quick customizations.
 
-![Figure 7.49: A convenient floating palette appears when you hover your pointer
+![Figure 8.47: A convenient floating palette appears when you hover your pointer
 over any node.](../../images/kaleo-10.png)
 
 Let's go over the features of the floating palette:
@@ -767,20 +767,20 @@ Type* menu and click *Next*. You have options to enter the user's *User-id*,
 *Screen name*, or *Email address*. Enter the user's screen name and click
 *Finish*.
 
-![Figure 7.50: Designer lets you assign a task to a specific user of Liferay
+![Figure 8.48: Designer lets you assign a task to a specific user of Liferay
 Portal.](../../images/kaleo-29.png)
 
 Assigning the QA and QA Management task nodes resolved their error markings.
 Later, the join node's error marking will be disappear when we connect the join
 node to another task.
 
-![Figure 7.51: The error markings for the QA and QA Management task nodes
+![Figure 8.49: The error markings for the QA and QA Management task nodes
 disappear after their assignments are specified.](../../images/kaleo-27.png)
 
 While we're using Designer's Workflow Diagram, let's go over some of its
 features.
 
-#### Workflow Diagram features
+#### Workflow Diagram features [](id=lp-6-1-dgen08-workflow-diagram-features-0)
 
 Within the workflow diagram, there are other miscellaneous features offered by
 Developer Studio. Below are lists of some of these small features that
@@ -801,7 +801,7 @@ corner toolbar of the Workflow Diagram:
 
 	These toolbar icons are shown in the figure below.
 	
-	![Figure 7.52: The Workflow Diagram offers a toolbar with helpful options
+	![Figure 8.50: The Workflow Diagram offers a toolbar with helpful options
 	for zooming, saving, and printing your workflow
 	diagram.](../../images/kaleo-23.png)
 
@@ -812,7 +812,7 @@ Workflow Diagram's canvas:
 feature makes it easy to organize your workflow quickly without having to touch
 a node.
 
-	![Figure 7.53: When right-clicking the graphical interface, you are given
+	![Figure 8.51: When right-clicking the graphical interface, you are given
 	options for viewing and editing your workflow
 	definition.](../../images/kaleo-24.png)
 
@@ -822,14 +822,14 @@ double-clicking its current name and typing in a new name.
 - The *Surveyor's Level* feature helps you center a node, vertically or
 horizontally, with respect to another node.
 
-	![Figure 7.54: Studio's Surveyor's Level helps you design your workflow for
+	![Figure 8.52: Studio's Surveyor's Level helps you design your workflow for
 	an organized and professional look.](../../images/kaleo-32.png)
 
 You have probably noticed the *Properties* view below your workflow diagram.
 Let's explore what it does and how it lets you customize your workflow
 definition.
 
-#### Properties View and Outline Views
+#### Properties View and Outline Views [](id=lp-6-1-dgen08-properties-view-and-outline-views-0)
 
 More cool features that can help you customize your workflow are the
 *Properties* and *Outline* views, located on the bottom and bottom right of
@@ -865,7 +865,7 @@ specified.
 
 Here is what the Properties view looks like in Developer Studio:
 
-![Figure 7.55: The Properties view gives you multiple sub-tabs to help customize
+![Figure 8.53: The Properties view gives you multiple sub-tabs to help customize
 your workflow nodes.](../../images/kaleo-11.png) 
 
 Another useful tool is the Outline view. This gives a top level view of your
@@ -878,7 +878,7 @@ select this blue highlighted area and drag it to the area of your workflow you
 want visible on your Workflow Diagram. Below is a snapshot of an example
 workflow shown in the outline view in Developer Studio:
 
-![Figure 7.56: The Outline view lets you view your entire workflow
+![Figure 8.54: The Outline view lets you view your entire workflow
 definition.](../../images/kaleo-25.png) 
 
 As you can see, the Properties and Outline views make customizing your
@@ -886,7 +886,7 @@ workflow easier than ever! Developer Studio offers a useful programming
 capability for editing your workflow scripts. We will give you a tour of
 what Developer Studio has to offer for using workflow scripts!
 
-### Using Workflow Scripts
+### Using Workflow Scripts [](id=lp-6-1-dgen08-using-workflow-scripts-0)
 
 We will now explain how to use Developer Studio to edit your workflow scripts.
 Developer Studio is configured to recognize multiple script languages to let the
@@ -930,7 +930,7 @@ entry for the transition appears in the named list of *Condition transitions*.
 Here is a snapshot of the *Create New Condition Node* menu configured for the
 ticket process workflow.
 
-![Figure 7.57: When creating a condition node, you're able to set your preferred
+![Figure 8.55: When creating a condition node, you're able to set your preferred
 script language, name, and condition transitions.](../../images/kaleo-12.png)
 
 Before adding a script to our condition node, let's make the following changes
@@ -972,7 +972,7 @@ Properties view.
 
 - Right-click the node and select *Edit Script*.
 
-![Figure 7.58: You can access the *Edit Script* feature by navigating to
+![Figure 8.56: You can access the *Edit Script* feature by navigating to
 the *Script* tab inside the Properties view.](../../images/kaleo-13.png)
 
 Since we set our default script language to Groovy earlier, the Java/Groovy
@@ -997,7 +997,7 @@ diagram.
 Here is a snapshot of how the palette appears with the *Context Variables*
 folder open for a view of its options:
 
-![Figure 7.59: Each script editor is associated with a palette that lets you
+![Figure 8.57: Each script editor is associated with a palette that lets you
 insert helpful snippets of code.](../../images/kaleo-14.png)
 
 The palette associated with your Java/Groovy script editor includes folders
@@ -1037,7 +1037,7 @@ Context and use that ID to look up the DDL record via Liferay service utility
 
 The code now looks like this:
 
-![Figure 7.60: You can add snippets of code by simply using the drag-and-drop
+![Figure 8.58: You can add snippets of code by simply using the drag-and-drop
 method from your palette.](../../images/kaleo-28.png)
 
 Append the following Java code to your script:
@@ -1078,7 +1078,7 @@ transition names, the workflow engine will not know which transition to use.
 Here is a snapshot of our current ticket process workflow after inserting the
 condition node:
 
-![Figure 7.61: The ticket process workflow after inserting the condition
+![Figure 8.59: The ticket process workflow after inserting the condition
 node.](../../images/kaleo-30.png)
 
 Our workflow will need to a valid DDL record to invoke this workflow properly.
@@ -1090,14 +1090,14 @@ in the *Configuring a DDL record* section of this chapter.
 Next, we'll create a custom notification and write a template for it
 using a template editor.
 
-### Leveraging template editors for notifications
+### Leveraging template editors for notifications [](id=lp-6-1-dgen08-leveraging-template-editors-for-notifications-0)
 
 Designer lets you leverage FreeMarker and Velocity editors in customizing
 templates for your workflow notifications. A FreeMarker editor comes bundled
 with Developer Studio. For editing Velocity templates, you'll need to install an
 editor.
 
-#### Add-on: Install Velocity Editor Support
+#### Add-on: Install Velocity Editor Support [](id=lp-6-1-dgen08-add-on-install-velocity-editor-support-0)
 
 Liferay Developer Studio comes with additional add-on support for editing
 velocity template notifications in the Kaleo Designer for Java. To use this
@@ -1132,13 +1132,13 @@ If you edit a notification template that is set to the Velocity type, the
 template opens in the Velocity editor (a small "v" icon is in the left side of
 the editor's tab).
 
-#### Creating notifications
+#### Creating notifications [](id=lp-6-1-dgen08-creating-notifications-0)
 
 To access the template editors, click on the node of your choice and select the
 *Notifications* sub-tab in your *Properties* view. Create a new notification by
 clicking the green "plus" sign.
 
-![Figure 7.62: When creating a notification, Developer Studio offers several options, like choosing 
+![Figure 8.60: When creating a notification, Developer Studio offers several options, like choosing 
 a template language.](../../images/kaleo-16.png)
 
 Specify the following for your notification:
@@ -1155,7 +1155,7 @@ template language. Similar to the script editor, the template editor presents
 entities that you can drag and drop from your palette onto your workflow
 diagram.
 
-![Figure 7.63: The template editor's palette has helpful entities that make
+![Figure 8.61: The template editor's palette has helpful entities that make
 creating notifications quick and easy.](../../images/kaleo-17.png)
 
 Because Developer Studio lets you leverage full featured template editors like
@@ -1204,7 +1204,7 @@ Project Management node. Lastly, add a transition named *Completed* from our
 Project Management node to our *EndNode*. Here is an updated screenshot of what
 your workflow diagram should look like:
 
-![Figure 7.64: This will be the final view for the workflow diagram; however we
+![Figure 8.62: This will be the final view for the workflow diagram; however we
 still have work to do!](../../images/kaleo-31.png)
 
 For our newly created Project Management task node, we will create an email
@@ -1225,7 +1225,7 @@ To create the email notification, follow these steps:
 
 The figure below depicts the steps we took defining our notification:
 
-![Figure 7.65: After editing the notification inside the Properties view, you
+![Figure 8.63: After editing the notification inside the Properties view, you
 can access the template editor by selecting the pencil
 icon.](../../images/kaleo-33.png)
 
@@ -1235,7 +1235,7 @@ FreeMarker template editor appears.
 Insert FreeMarker code into the FreeMarker editor to specify your
 email notification template. 
 
-![Figure 7.64: You can edit your email template using the Freemarker
+![Figure 8.64: You can edit your email template using the Freemarker
 editor.](../../images/kaleo-42.png)
 
 <!-- TODO incorporate applicable information in this chapter
@@ -1255,14 +1255,14 @@ easier than ever. And you can create Velocity templates just as easy using the
 Velocity editor you installed. Next, we'll explain how to view your workflow
 definition XML file within Developer Studio.
 
-### Viewing workflow definition XML source
+### Viewing workflow definition XML source [](id=lp-6-1-dgen08-viewing-workflow-definition-xml-source-0)
 
 It is often convenient to view the workflow definition XML file as source code
 to make edits to it and review changes you've made. To view the XML
 source, select the *Source* tab next to the *Diagram* tab in the main editor
 view.
 
-![Figure 7.66: Feel free to switch between *Diagram* and *Source* modes of your
+![Figure 8.65: Feel free to switch between *Diagram* and *Source* modes of your
 workflow editor in Kaleo Designer for Java.](../../images/kaleo-20.png)
 
 Here is a list of some cool features Developer Studio offers in Source mode:
@@ -1295,7 +1295,7 @@ editing while using Developer Studio's powerful graphical features.
 Let's dive into saving your workflow definition and publishing it to your
 Liferay server.
 
-### Publishing workflows to the server
+### Publishing workflows to the server [](id=lp-6-1-dgen08-publishing-workflows-to-the-server-0)
 
 After you've created your new workflow or modified an existing workflow, you'll
 want to publish it onto your Liferay server for your site's members to use.
@@ -1310,7 +1310,7 @@ the *Servers* view.
 
 3. Browse for your workflow definition file and select it for publishing.
 
-![Figure 7.67: To upload a workflow definition, simply select *Upload new
+![Figure 8.66: To upload a workflow definition, simply select *Upload new
 workflow...* from the menu.](../../images/kaleo-18.png)
 
 Alternatively, publish your new workflow XML file by dragging it from your
@@ -1329,7 +1329,7 @@ portlet), right-click your Liferay server's *Kaleo Workflows* and select
 The figure below shows our completed ticket process workflow definition is
 published to our Liferay server:
 
-![Figure 7.68: Uploading a new workflow definition is quick and
+![Figure 8.67: Uploading a new workflow definition is quick and
 easy.](../../images/kaleo-19.png)
 
 It makes sense that you need to publish *new* workflow definitions onto the
@@ -1356,7 +1356,7 @@ For a finale of our overview for using Kaleo Designer for Java in Developer
 Studio, let's set up the DDL record within Liferay Portal and try out our new
 workflow!
 
-### Using workflows in Portal
+### Using workflows in Portal [](id=lp-6-1-dgen08-using-workflows-in-portal-0)
 
 Congratulations! You have successfully used Kaleo Designer for Java to create a
 workflow! Now, let's put the finishing touches on your workflow and put it to
@@ -1365,7 +1365,7 @@ portal, you must activate it. Navigate to the Control Panel and select
 *Workflow*. Then, in the *Definitions* tab, click on the *Actions* button, and
 select *Activate*.
 
-![Figure 7.69: Liferay portal's Control Panel lets you activate/deactivate
+![Figure 8.68: Liferay portal's Control Panel lets you activate/deactivate
 workflow definitions.](../../images/kaleo-34.png)
 
 A workflow definition can be associated with publication of an asset or DDL
@@ -1376,7 +1376,7 @@ data
 types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
 in *Using Liferay Portal*. We'll demonstrate how easy it is.
 
-### Using DDLs with workflows
+### Using DDLs with workflows [](id=lp-6-1-dgen08-using-ddls-with-workflows-0)
 
 Dynamic Data Lists can be used for many different things, but for our example we
 will integrate a DDL record into our ticket process workflow. If you would like
@@ -1388,14 +1388,14 @@ Let's create a data definition that lets the user select a status value. Drag
 and drop the *Select* field from the *Fields* tab onto the canvas for the
 definition.
 
-![Figure 7.70: Creating data definitions for your DDL is a snap with Liferay's
+![Figure 8.69: Creating data definitions for your DDL is a snap with Liferay's
 graphical drag and drop interface.](../../images/kaleo-35.png)
 
 Then, from within the *Settings* tab give your field the name
 *status*. Also, edit the *Options* setting giving your *status* field option
 values of `fix` with label "Fix" and `not` with label "Do not fix".
 
-![Figure 7.71: Set your data definition with appropriate values to use in your
+![Figure 8.70: Set your data definition with appropriate values to use in your
 workflow definition.](../../images/kaleo-37.png)
 
 Recall the code we inserted for our condition node:
@@ -1421,7 +1421,7 @@ workflow for our new Kaleo Forms process to use. Lastly, save the DDL.
 Now, our DDL is set for use inside our ticket process workflow! Lastly, we will
 use the Kaleo Forms portlet to test our new workflow definition!
 
-#### Using Kaleo Forms to run workflows
+#### Using Kaleo Forms to run workflows [](id=lp-6-1-dgen08-using-kaleo-forms-to-run-workflows-0)
 
 Let's use the Kaleo Forms portlet to invoke our workflow from Liferay Portal.
 Deploy the Kaleo Forms portlet to your portal and add it to a page on your site.
@@ -1440,14 +1440,14 @@ Forms by using it with our ticket process workflow.
 
 5. Leave *Workflow Task Forms* unassigned for our demonstration.
 
-![Figure 7.72: To test the ticket process workflow, you will need to indicate
+![Figure 8.71: To test the ticket process workflow, you will need to indicate
 the name, entry definition, and workflow when creating a new
 process.](../../images/kaleo-41.png)
 
 After saving, select the *Summary* tab in Kaleo Forms, click the *Submit New*
 button, and select *Ticket Process*.
 
-![Figure 7.73: Submitting the ticket process invokes its corresponding
+![Figure 8.72: Submitting the ticket process invokes its corresponding
 workflow.](../../images/kaleo-40.png)
 
 You're now able to interact with the DDL and progress throughout the ticket
@@ -1468,8 +1468,6 @@ directly to your existing Liferay server makes the configuration process quick
 and easy. With all of these great features, the Kaleo Designer for Java in
 Developer Studio is a powerful tool that couldn't be easier to use!
 
-<!-- TODO insert link to where Greg's video is located-->
-
 ## Conclusion [](id=conclusi-3)
 
 In this chapter we've explored the Liferay IDE and have gone through
@@ -1479,3 +1477,5 @@ You must admit -- it is a slick tool-set! And we hope you take advantage of it
 in using Liferay Portal and developing your Liferay plugins.
 
 Next, we'll get up-close and personal with Liferay's APIs!
+<!-- Please leave the newline below this line -->
+
