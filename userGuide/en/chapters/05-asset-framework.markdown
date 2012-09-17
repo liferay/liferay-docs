@@ -1,4 +1,3 @@
-
 # Leveraging the Asset Framework [](id=lp-6-1-ugen05-leveraging-the-asset-framework-0)
 
 Any type of content in Liferay is considered an asset. In chapters 2 and 3, we
@@ -635,7 +634,7 @@ display types to configure how the content appears.
 Most of the time, however, you'll likely be using the Asset Publisher to select
 content dynamically.
 
-##### Selecting assets dynamically [](id=lp-6-1-ugen05-selecting-assets-dynamically-0) [](id=lp-6-1-ugen03-selecting-assets-dynamically-0) [](id=lp-6-1-ugen05-selecting-assets-dynamically-idlp-6-1-ugen05-selecting-asse-0) [](id=lp-6-1-ugen05-selecting-assets-dynamically-idlp-6-1-ugen05-selecting-asse-0)
+##### Selecting assets dynamically [](id=lp-6-1-ugen05-selecting-assets-dynamically-0)
 
 The Asset Publisher's default behavior is to select assets dynamically according
 to rules that you give it. These rules can be stacked on top of each other so
