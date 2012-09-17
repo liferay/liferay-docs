@@ -917,12 +917,12 @@ make our site look "top notch" by using Liferay Themes.
 
 If your portlets target international customers you will be requested to localize your portlet user interface for particular location. In this point, all existing translated messages in portal core are accessible from plugins projects and it is wind in developers back. You can always check for presence of any key in core `Language.properties` file and include it in your jsp with `<liferay-ui:message>` tag:
 
-	<liferay-ui:message key="action.ADD_ENTRY" />
+	<liferay-ui:message key="your-message-key" />
 
 This way you will save bunch of time needed for maintenance and translation since you'll always have up to date translations on multiple languages and what is more important your portlet will blend into Liferays UI convention.
 For all portlet's odds you can still do some of techniques described here to localize it and deliver perfect portlet to your customers.
 
-### Your Localization Plan
+### Your Localization Plan [](id=your-localization-plan)
 
 Before we dive into localizations we should consider couple statements that could make our life easier later:
 
@@ -932,7 +932,7 @@ Before we dive into localizations we should consider couple statements that coul
 
 As happy-day scenarios exist just in books lets do our localisation answering all this questions with Yes.
 
-### Create Resource Bundles
+### Create Resource Bundles [](id=create-resource-bundles)
 
 First, lets create resource bundles files to keep translations for portlets My Finances, Asset Ticker and Portfolio Manager. All three portlets share something common:
 
@@ -940,89 +940,87 @@ First, lets create resource bundles files to keep translations for portlets My F
 - all portlets deal with common financial terms and we don't want repeat it again and again for each portlet
 - all portlets have something special like title, description or some context related content
 
-So, assuming you have already created plugin project and added portlets, lets start! Create `content` package within your `src` plugin project folder. Create four files:
+So, assuming you have already created plugin project and added portlets, lets start! Create `content` package within your `src` plugin project folder. Create file:
 
-- `Language.properties` - we will use this file to define all common keys that our portlets might share. At the end, we will use hook descriptor to register and merge it with Liferay core since it is way to make all keys available to all portlets.
-- `Finances.properties` - defines keys scoped just to finances portlet
-- `Portfolio.properties` - defines keys scoped just to portfolio portlet
-- `Ticker.properties` - defines keys scoped just to ticker portlet
-
-For each portlet property file define `javax.portlet.title` key and put corresponding portlet name. This way you ensure that Liferay engine will always use localized version of title in portlet headers, control panel views or portal administration tools.
+- `Language.properties` - we will use this file to define all keys that our portlets might need. At the end, we will use hook descriptor to register and merge it with Liferay core since it is way to make all keys available to all portlets.
 
 For each portlet update its `<portlet>` node in portlet.xml to refer resource bundle correctly:
 
 	<portlet>
 		<portlet-name>finances</portlet-name>
 		...
-		<resource-bundle>content.Finances</resource-bundle>
+		<resource-bundle>content.Language</resource-bundle>
 		...
 	</portlet>
 	<portlet>
 		<portlet-name>portfolio</portlet-name>
 		...
-		<resource-bundle>content.Portfolio</resource-bundle>
+		<resource-bundle>content.Language</resource-bundle>
 		...
 	</portlet>
 	<portlet>
 		<portlet-name>ticker</portlet-name>
 		...
-		<resource-bundle>content.Ticker</resource-bundle>
+		<resource-bundle>content.Language</resource-bundle>
 		...
 	</portlet>
 
-Create or update (if already exists) your liferay-hook.xml file to register your Language.properties into the portal core:
-
-	<hook>
-		...
-		<language-properties>content/Language.properties</language-properties>
-		...
-	</hook>
-
 At this point our portlets are ready to deliver localized UI.
+
+Please note that despite the fact you can name your localization file as you want, and you can name different file for each existing portlet inside your plugin, there is a huge benfit if you obay Liferay naming convention. Once you created Language.properties and fill it with keys and values, you can start using ant `build-lang` task. This ant task will do following:
+- create translations files for other languages
+- try to translate English text to target language
+- keep all created translations synchronized with Language.properties.
+You can run this task any time during your development which will significantly reduce time you will spend on maintanance of your translations. 
+
+### Portlet Title and Description In Control Panel
+
+Some of you maybe noticed that your control panel enabled portlets miss that super fancy must-have portlet title and description in Control Panel.
+To make your portlet look cool within Control Panel, for each portlet we create specially tailored description and title key in `Language.properties`. We compose key with this data:
+
+- `javax.portlet.title.` prefix that marks key as title
+- `javax.portlet.description.` prefix that marks key as description
+- portlet name defined in `<portlet-name>` node but with all spacers removed (eg. My Portlet would be myportlet)
+- token `WAR`
+- plugin name (as created by create script) but with all spacers/delimiters removed (eg. personal-finance-portlet would be personalfinanceportlet)
+
+Now, when we have all parts, it's easy to finish, our key would be something like this:
+`javax.portlet.title.portfolio_WAR_personalfinanceportlet`. Long enough? If you think this is too long for your taste then apply Liferay core portlet naming convention - set your portlet names as numbers! If we change our `portlet.xml` this way:
+
+	<portlet>
+		<portlet-name>1</portlet-name>
+		...
+		<resource-bundle>content.Language</resource-bundle>
+		...
+	</portlet>
+	<portlet>
+		<portlet-name>2</portlet-name>
+		...
+		<resource-bundle>content.Language</resource-bundle>
+		...
+	</portlet>
+	<portlet>
+		<portlet-name>3</portlet-name>
+		...
+		<resource-bundle>content.Language</resource-bundle>
+		...
+	</portlet>
+
+our title and description keys in `Language.properties` would be:
+
+	javax.portlet.description.1_WAR_personalfinanceportlet=...
+	javax.portlet.description.2_WAR_personalfinanceportlet=...
+	javax.portlet.description.3_WAR_personalfinanceportlet=...
+	javax.portlet.title.1_WAR_personalfinanceportlet=...
+	javax.portlet.title.2_WAR_personalfinanceportlet=...
+	javax.portlet.title.3_WAR_personalfinanceportlet=...
+
 
 ---
 
 ![tip](../../images/tip-pen-paper.png)**Tip:** Do you know how portlet title is processed? If your portlet doesn't define resource bundle or `javax.portlet.title` within it, next stop station for engine would be `<portlet-info>` and inner `<portlet-title>` node in `portlet.xml` descriptor. If it is missing too, `<portlet-name>` node value will be rendered as portlet title.
 
 ---
-
-### Look Mum, I Have Portlet Description In Control Panel
-
-As we are perfectionists and we never get tired of writing awesome portlets we noticed that we miss that super fancy must-have portlet description in Control Panel. OK, wait a minute... I checked Liferay core portlets, where is that code that displays description? Those guys from Liferay really doesn't make my life easy, now I have to post question in community forum.
-To make your portlet cool with Control Panel description, for each portlet we create specially tailored description key in `Language.properties`. We compose key with this data:
-
-- `javax.portlet.description.` prefix that marks key as description
-- portlet name defined in `<portlet-name>` node but with all spacers removed (eg. My Portlet would be myportlet)
-- token `WAR`
-- plugin name (as created by create script) but with all spacers/delimiters removed (eg. personal-finance-portlet would be personalfinanceportlet)
-
-Now, when we have all parts, it's easy to cook, our key is
-`javax.portlet.description.portfolio_WAR_personalfinanceportlet`. Long enough? If you think this is too long for your taste then apply Liferay core portlet naming convention - set your portlet names as numbers! If we change our `portlet.xml` this way:
-
-	<portlet>
-		<portlet-name>1</portlet-name>
-		...
-		<resource-bundle>content.Finances</resource-bundle>
-		...
-	</portlet>
-	<portlet>
-		<portlet-name>2</portlet-name>
-		...
-		<resource-bundle>content.Portfolio</resource-bundle>
-		...
-	</portlet>
-	<portlet>
-		<portlet-name>3</portlet-name>
-		...
-		<resource-bundle>content.Ticker</resource-bundle>
-		...
-	</portlet>
-
-our description keys in `Language.properties` would be:
-
-	javax.portlet.description.1_WAR_personalfinanceportlet=...
-	javax.portlet.description.2_WAR_personalfinanceportlet=...
-	javax.portlet.description.3_WAR_personalfinanceportlet=...
 
 ---
 
@@ -1032,6 +1030,12 @@ our description keys in `Language.properties` would be:
 - javax.portlet.title.1_WAR_personalfinanceportlet
 
 ---
+
+### Overridding Liferay portal translations
+
+Here we will mention that you visit chapter 7 and Overriding a Language.properties File section which describes how to use hook to override existing Liferay translations. Using this technique you can do two things:
+- enable your custom keys to other portlets
+- override existing liferay translations with your own
 
 ### Summary
 
