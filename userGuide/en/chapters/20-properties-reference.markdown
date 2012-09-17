@@ -1,6 +1,15 @@
+
 # Properties Reference [](id=configuring-liferay-s-properties)
 
-Liferay is configured by a combination of settings that are stored in the database (configured by the use of the control panel) and settings which are stored in properties (text) files. These files can be modified to change Liferay's behavior in certain ways. In this chapter we discuss the main configuration file, which is stored in the Liferay Home directory, and is called `portal-ext.properties` if you've got a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This chapter has a wide-ranging set of topics since you can make many different kinds of customizations. We list a few of these below.
+Liferay is configured by a combination of settings that are stored in the
+database (configured by the use of the control panel) and settings which are
+stored in properties (text) files. These files can be modified to change
+Liferay's behavior in certain ways. In this chapter we discuss the main
+configuration file, which is stored in the Liferay Home directory, and is called
+`portal-ext.properties` if you've got a custom file, or
+`portal-setup-wizard.properties` if you've used Liferay's setup wizard. This
+chapter has a wide-ranging set of topics since you can make many different kinds
+of customizations. We list a few of these below.
 
 -   Changing Portal Defaults
 
@@ -14,19 +23,49 @@ Liferay is configured by a combination of settings that are stored in the databa
 
 -   Accessing Liferay's Web Services 
 
-Remember that your customizations in the `portal-ext.properties` or `portal-setup-wizard.properties` file override the settings in the `portal.properties` file. You should never modify the `portal.properties` file directly. 
+Remember that your customizations in the `portal-ext.properties` or
+`portal-setup-wizard.properties` file override the settings in the
+`portal.properties` file. You should never modify the `portal.properties` file
+directly. 
 
 ## Using an overridden configuration file [](id=using-an-overridden-configuration-file)
 
-Liferay's properties files differ from the configuration files of most other products in that changing the default configuration file is discouraged. In fact, the file that contains all of the defaults is stored inside of a `.jar` file, making it more difficult to customize. Why is it set up this way? Because Liferay uses the concept of *overriding* the defaults in a separate file, rather than going in and customizing the default configuration file. You put just the settings you want to customize in your own configuration file, keeping the portal configuration file uncluttered and containing only the settings you need. This makes it far easier to determine whether a particular setting has been customized and it makes the settings more portable across different installations of Liferay.
+Liferay's properties files differ from the configuration files of most other
+products in that changing the default configuration file is discouraged. In
+fact, the file that contains all of the defaults is stored inside of a `.jar`
+file, making it more difficult to customize. Why is it set up this way? Because
+Liferay uses the concept of *overriding* the defaults in a separate file, rather
+than going in and customizing the default configuration file. You put just the
+settings you want to customize in your own configuration file, keeping the
+portal configuration file uncluttered and containing only the settings you need.
+This makes it far easier to determine whether a particular setting has been
+customized and it makes the settings more portable across different
+installations of Liferay.
 
-The default configuration file is called `portal.properties` and it resides inside the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's `WEB-INF/lib` folder. The file used to override the configuration is `portal-ext.properties` if you've created a custom file, or `portal-setup-wizard.properties` if you've used Liferay's setup wizard. This file is created in your Liferay Home folder (please see chapter 14 on installing Liferay for the location of this folder for your application server). What follows are brief descriptions of the options that you can customize, thus overriding the defaults from the `portal.properties` file. These are presented in a logical order, not an alphabetical one, as many properties relate to other properties in the system.
+The default configuration file is called `portal.properties` and it resides
+inside the `portal-impl.jar` file. This `.jar` file is in Liferay Portal's
+`WEB-INF/lib` folder. The file used to override the configuration is
+`portal-ext.properties` if you've created a custom file, or
+`portal-setup-wizard.properties` if you've used Liferay's setup wizard. This
+file is created in your Liferay Home folder (please see chapter 14 on installing
+Liferay for the location of this folder for your application server). What
+follows are brief descriptions of the options that you can customize, thus
+overriding the defaults from the `portal.properties` file. These are presented
+in a logical order, not an alphabetical one, as many properties relate to other
+properties in the system.
 
 ## Properties Override [](id=properties-override)
 
-This property specifies where to get the overridden properties. By default, it is `portal-ext.properties`. Updates should not be made in `portal.properties` or in `portal-bundles.properties`, but in `portal-ext.properties`. Furthermore, each portal instance can have its own overridden property file following the convention `portal-companyid.properties`. For example, one read order might be: `portal.properties`, then `portal-ext.properties` and then `portal-test.properties`.
+This property specifies where to get the overridden properties. By default, it
+is `portal-ext.properties`. Updates should not be made in `portal.properties` or
+in `portal-bundles.properties`, but in `portal-ext.properties`. Furthermore,
+each portal instance can have its own overridden property file following the
+convention `portal-companyid.properties`. For example, one read order might be:
+`portal.properties`, then `portal-ext.properties` and then
+`portal-test.properties`.
 
-The default read order is: `portal.properties`, then `portal-bundle.properties`, `portal-ext.properties` and then `portal-setup-wizard.properties`.
+The default read order is: `portal.properties`, then `portal-bundle.properties`,
+`portal-ext.properties` and then `portal-setup-wizard.properties`.
 
 *Examples:*
 
@@ -37,24 +76,32 @@ The default read order is: `portal.properties`, then `portal-bundle.properties`,
 	include-and-override=portal-setup-wizard.properties
 	include-and-override=${liferay.home}/portal-setup-wizard.properties
 
-Each portal instance can have its own overriden property file following the convention `portal-companyWebId.properties`. To enable this feature, set the `company-id-properties` system property to `true`:
+Each portal instance can have its own overriden property file following the
+convention `portal-companyWebId.properties`. To enable this feature, set the
+`company-id-properties` system property to `true`:
 
 	java ... -Dcompany-id-properties=true
 
-The read order will now be: `portal.properties`, then `portal-ext.properties` and then `portal-liferay.com.properties`.
+The read order will now be: `portal.properties`, then `portal-ext.properties`
+and then `portal-liferay.com.properties`.
 
-Note that not all properties can have different values per company. This functionality is only available for legacy reasons. The preferred way to configure a portal instance is through the control panel.
+Note that not all properties can have different values per company. This
+functionality is only available for legacy reasons. The preferred way to
+configure a portal instance is through the control panel.
 
 	include-and-override=portal-${easyconf:companyId}.properties
 	include-and-override=${liferay.home}/portal-${easyconf:companyId}.properties
 
-Additional property files can be used by setting the `external-properties` system property.
+Additional property files can be used by setting the `external-properties`
+system property.
 
-A common use case is to keep legacy property values when upgrading to newer versions of Liferay. To enable:
+A common use case is to keep legacy property values when upgrading to newer
+versions of Liferay. To enable:
 
 	java ... -Dexternal-properties=portal-legacy-5.1.properties
 
-The read order will now be: portal.properties, then portal-ext.properties and then portal-legacy-5.1.properties.
+The read order will now be: portal.properties, then portal-ext.properties and
+then portal-legacy-5.1.properties.
 
 	include-and-override=${external-properties}
 	include-and-override=${liferay.home}/${external-properties}
@@ -83,7 +130,6 @@ Set this property if you deploy the portal to another path besides root.
 This property specifies the application server's HTTP port. This value should be different from the value in the property `web.server.http.port`. That property refers to the web server, this property refers to the application server. This property should only be set when the application server is sitting behind a web server like Apache. See [http://issues.liferay.com/browse/LPS-17106](http://issues.liferay.com/browse/LPS-17106) for more information.
 
     portal.instance.http.port=
-
 
 Set this property if the application server is served behind a proxy and a prefix needs to be added to the portal servlet context path. This prefix will also be added to static resources served by layout templates, portlets and themes.
 
@@ -1652,10 +1698,6 @@ Input a list of sections that will be included as part of the organization form 
 	organizations.form.update.identification=addresses,phone-numbers,additional-email-addresses,websites,services
 	organizations.form.update.miscellaneous=comments,reminder-queries,custom-fields
 
-Set this property to `true` if you want any administrator that creates an organization to be automatically assigned to that organization.
-
-	organizations.assignment.auto=false
-
 Set this property to `false` if you want any administrator of an organization to be able to assign any user to that organization. By default, he will only be able to assign the users of the organizations and suborganizations that he can manage.
 
 	organizations.assignment.strict=true
@@ -1663,11 +1705,6 @@ Set this property to `false` if you want any administrator of an organization to
 Set this property to `true` if you want users to only be members of the organizations to which they are assigned explicitly. By default they will also become implicit members of the ancestors of those organizations. for example if a user belongs to Liferay Spain he will implicitly be a member of the ancestors Liferay Europe and Liferay Global and will be able to access their private pages.
 
 	organizations.membership.strict=false
-
-Set this property to `true` to allow user groups to be a member of
-organizations.
-
-	organizations.user.group.membership.enabled=true
 	
 Set this to false to disable the organization indexer.
 
@@ -4393,9 +4430,9 @@ This approach may not be allowed for some organizations. If you cannot use the s
     
 ## REST Proxy [](id=rest-proxy)
 
-Input a list of comma delimited domains which the portal is allowed to make proxy request to. Input a blank list to allow any domain.
+Input a list of comma delimited URL prefixes which the portal is allowed to make proxy requests to. Input a blank list to allow any URLs.
 
-	rest.proxy.domains.allowed=search.yahooapis.com
+	rest.proxy.url.prefixes.allowed=http://search.yahooapis.com/ContentAnalysisService
 
 ## Robots.txt [](id=robots-txt)
 
@@ -5796,19 +5833,6 @@ Set the number of max score and min score that will be used by the ratings tag l
 Set the HTTP connection timeout in milliseconds for reading RSS feeds.
 
 	rss.connection.timeout=2000	
-
-## Search Portlet [](id=search-portlet)
-
-Set any of these to `false` to disable the portlet from being searched by the Search portlet.
-
-	com.liferay.portlet.blogs.util.BlogsOpenSearchImpl=true
-	com.liferay.portlet.bookmarks.util.BookmarksOpenSearchImpl=true
-	com.liferay.portlet.calendar.util.CalendarOpenSearchImpl=true
-	com.liferay.portlet.directory.util.DirectoryOpenSearchImpl=true
-	com.liferay.portlet.documentlibrary.util.DLOpenSearchImpl=true
-	com.liferay.portlet.journal.util.JournalOpenSearchImpl=true
-	com.liferay.portlet.messageboards.util.MBOpenSearchImpl=true
-	com.liferay.portlet.wiki.util.WikiOpenSearchImpl=true
 
 ## Sites Admin Portlet [](id=sites-admin-portlet)
 
