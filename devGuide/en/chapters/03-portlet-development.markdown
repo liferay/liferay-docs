@@ -968,9 +968,7 @@ So, assuming you have already created a plugin project and added portlets, let's
 start! Create a `content` package within your `src` plugin project folder. Next,
 create the following files:
 
-`Language.properties`: this file defines all keys that our portlets need. At the
-end, we will use the hook descriptor to register and merge it with the Liferay
-core keys to make the keys available to all portlets.
+`Language.properties`: this file defines all keys that our portlets need. 
 
 For each portlet, update its `<portlet>` node in `portlet.xml` to refer to the
 resource bundle correctly:
