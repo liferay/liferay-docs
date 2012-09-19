@@ -298,7 +298,8 @@ public class NumberHeadersTask extends Task {
 		String patternArg = "(#)+([^\\\\\\[\\]\\|%<>]*)" +
 				Pattern.quote("[") + Pattern.quote("]") +
 				Pattern.quote("(") + "id" + Pattern.quote("=") +
-				"([^\\\\\\[\\]\\|:;%]+)" + Pattern.quote(")");
+				"([^\\\\\\[\\]\\|:;%]+)" + Pattern.quote(")") + 
+				"([ \\t\\n\\x0B\\f\\r]*?)" + "('u0009')*?";
 
 		headerIdPattern = Pattern.compile(patternArg);
 	}
