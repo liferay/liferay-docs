@@ -37,41 +37,41 @@ gadget XML.
 ![Figure 11.1: An OpenSocial gadget's XML consists of elements specifying gadget
 preferences, user preferences, and content.](../../images/opensocial-22.png)
 
-Below is a sample of OpenSocial gadget XML from a weather gadget authored by
-LabPixies:
+Below is an example OpenSocial gadget XML file for a map gadget:
 
+	<?xml version="1.0" encoding="UTF-8" ?>
 	<Module>
-		<ModulePrefs
-		height="230"
-		author="LabPixies"
-		author_email="labpixie.gadgets+weather+201101101@gmail.com"
-		description="__MSG_description__"
-		thumbnail="http://www.labpixies.com/campaigns/weather/images/thumbnail.jpg"
-		screenshot="http://www.labpixies.com/campaigns/weather/images/screenshot.png"
-		title="__MSG_gTitle__" 
-		title_url="http://www.labpixies.com">
-		<Locale messages="http://www.labpixies.com/campaigns/weather/i20/all_all.xml"/>
-		<Locale lang="en" country="UK" messages="http://www.labpixies.com/campaigns/weather/i20/en_gb_all.xml"/>
-		<Locale lang="en" country="AU" messages="http://www.labpixies.com/campaigns/weather/i20/en_au_all.xml"/>
-		...
-			<Require feature="dynamic-height"/>
-			<Require feature="setprefs"/>
-			<Require feature="views"/>
-		</ModulePrefs>
-		<UserPref name="degree_unit_type" datatype="hidden" default_value="0"/>
-		<UserPref name="first_load" datatype="hidden" default_value="1"/>
-		<UserPref name="locations" datatype="hidden" default_value="__MSG_dflt_location__"/>
-		<UserPref name="zip_code" datatype="hidden" default_value="0"/>
-		<UserPref name="city_code" datatype="hidden" default_value="0"/>
-		<UserPref name="disable_os" datatype="hidden" default_value="0"/>
-		<UserPref name="tabs" datatype="hidden" default_value="{"news":1,"l0":1}"/>
-		<Content type="html" view="home">
-			...
+		<ModulePrefs title="Map of __UP_loc__" height="300" 
+			author="Jane Smith" 
+			author_email="xxx@google.com" /> 
+		<UserPref name="loc" 
+			display_name="Location" required="true" /> 
+		<Content type="html">
+		<![CDATA[ 
+			<script src="http://maps.google.com/maps?file=js" type="text/javascript"></script>
+			<div id="map" style="width: 100%; height: 100%;"></div>
+			<script type="text/javascript">
+			var prefs = new gadgets.Prefs();
+			var map = new GMap(document.getElementById("map"));
+			map.addControl(new GSmallMapControl());
+			map.addControl(new GMapTypeControl());
+			var geocoder = new GClientGeocoder();
+			geocoder.getLatLng(prefs.getString('loc'), showMap)
+
+			function showMap(point) {
+				if (point!=null) {
+					map.centerAndZoom(point, 6);
+				}
+			};    
+			</script>
+		]]> 
 		</Content>
 	</Module>
 
-To view the weather gadget in its entirety, visit
-[http://www.labpixies.com/campaigns/weather/weather.xml](http://www.labpixies.com/campaigns/weather/weather.xml).
+For more details on the map gadget, visit Google's [Specifying a
+Geographical
+Location](https://developers.google.com/gadgets/docs/fundamentals#location)
+section.
 
 For the official documentation on Gadget anatomy, see Google's [Anatomy of a
 Gadget](https://developers.google.com/gadgets/docs/basic#Anatomy). But, for
@@ -114,15 +114,6 @@ OAuth feature provides secure connections between your portal and third-party
 sites. These are just a couple of useful features that can be defined in the
 ModulePrefs. You'll learn more about them later in this chapter.
 
----
-
- ![](../../images/tip-pen-paper.png)**Note:** To enable use of `<UserPref>`
-elements in your gadget XML, the `setprefs` feature must be included, by
-specifying `<Require feature="setprefs"/>` within your
-`<ModulePrefs>...<ModulePrefs/>` tags.
-
----
-
 Overall, this `<ModulePrefs>` element allows you to setup your gadget on a
 gadget directory and establish settings and tools to use in your gadget's
 business logic. For complete details on ModulePrefs, see Google's [Moduleprefs
@@ -149,75 +140,24 @@ in the database for that gadget instance. Each time the gadget is reloaded, the
 UserPrefs are extracted from the database, fed back to the gadget, and rendered
 in the user interface.
 
-Weather gadgets, for example, are prime candidates for UserPrefs. When users
-first bring up weather gadgets, they are typically interested in the weather at
-their current location or their residence -- not the weather of some random
-distant land. Therefore, it makes sense for a weather gadget to take the user's
-location or residence as input. It is also beneficial to use a temperature unit
-familiar to the user. Lastly, users often like to hand-select a stylish theme
-for their gadget. UserPrefs facilitate taking in this information, storing it,
-and processing it to present gadget user interfaces customized to the user.
+Map gadgets, for example, are prime candidates for UserPrefs. When users first
+bring up map gadgets, they are typically interested in their current location or
+location of interest -- not some random distant land. Therefore, it makes sense
+for a map gadget to take the user's location of interest as input. UserPrefs
+facilitate taking in this information, storing it, and processing it to present
+gadget user interfaces customized to the user. Here is the UserPref for our
+current map gadget:
+ 
+		<UserPref name="loc" display_name="Location" required="true" />
 
-In order to set preference values from within your gadget, you must include the
-`setprefs` feature inside the `<ModulePrefs>...</ModulePrefs>` tags, which we
-discussed in the *Gadget Preferences (ModulePrefs)* section. Look at the weather
-gadget's XML to see the `setprefs` feature included as a required feature:
+Notice the UserPref `loc` of the map gadget. This user preference takes in the
+user's location preference, stores it, and displays it on the mapping interface.
+  
+Lastly, we'll take a look at what a user sees in the gadget's user
+interface when setting the *Location* user preference. Here is a snapshot of
+what this window looks like on Liferay Portal:
 
-	<Module>
-	...
-		<ModulePrefs height="230" author="LabPixies" ... >
-		...
-			<Require feature="setprefs"/>
-		</ModulePrefs>
-		<UserPref name="degree_unit_type" datatype="hidden" default_value="0"/>
-		<UserPref name="first_load" datatype="hidden" default_value="1"/>
-		<UserPref name="locations" datatype="hidden" default_value="__MSG_dflt_location__"/>
-		<UserPref name="zip_code" datatype="hidden" default_value="0"/>
-		<UserPref name="city_code" datatype="hidden" default_value="0"/>
-		<UserPref name="disable_os" datatype="hidden" default_value="0"/>
-		<UserPref name="tabs" datatype="hidden" default_value="{"news":1,"l0":1}"/>
-		<Content type="html" view="home">
-			...
-		</Content>
-	</Module>
-
-Also, notice the following user preferences of this weather gadget:
-
-- `degree_unit_type` is used to store the user's preference for degree unit
-  type.
-
-- `zip_code` and `city_code` are stored when user specifies their zipcode or
-  city.
-
-- `locations` displays locations that most closely relate to your zipcode or
-  city specification.
-
-Lastly, let's take a look at the UserPrefs for the Google Reader gadget and
-compare it to what a user would see in the gadget's user interface. The Google
-Reader gadget helps you find and keep track of interesting stuff on the web.
-
-	<UserPref name="displayStreamId" default_value="user/-/state/com.google/reading-list" datatype="hidden"/>
-	<UserPref name="itemCount" display_name="Item count: " datatype="enum" default_value="5">
-		<EnumValue value="1"/>
-		<EnumValue value="2"/>
-		<EnumValue value="3"/>
-		...
-		<EnumValue value="10"/>
-	</UserPref>
-	<UserPref name="ranking" display_name="Sorting: " datatype="enum" default_value="d">
-		<EnumValue value="d" display_value="newest first"/>
-		<EnumValue value="o" display_value="oldest first"/>
-	</UserPref>
-	<UserPref name="readItemsVisible" display_name="Show read items: " datatype="bool" default_value="false"/>
-	<UserPref name="linkTarget" display_name="Items open: " datatype="enum" default_value="bubble">
-		<EnumValue value="bubble" display_value="as bubbles"/>
-		<EnumValue value="new" display_value="in a new window"/>
-		<EnumValue value="same" display_value="in the same window"/>
-	</UserPref>
-
-Here is a snapshot of what this window looks like on Liferay Portal:
-
-![Figure 11.2: Here, the Google Reader gadget's user preferences are made
+![Figure 11.2: Here, the map gadget's user preference is made
 available for user input.](../../images/opensocial-21.png)
 
 UserPrefs can be displayed in many different ways and help your gadget become
@@ -268,9 +208,13 @@ when using the `url` content type, you do not need any HTML or JavaScript. Note,
 the URL content type has better consistency in the specification than the HTML
 content type regarding proxied content.
 
-Here is a sample of what the URL content type looks like inside a Sudoku gadget:
+Here is a sample of what the URL content type looks like for an example gadget:
 
-	<Content type="url" href="http://www.counttonine.com/displayGoogleAjaxGame.html"/>
+	<Content type="url" href="http://www/cgi-bin/example/gadgets/mystats.cgi" />
+
+<!-- Do we need to include where this is found? This reference is located on the
+Google developer page:
+https://developers.google.com/gadgets/docs/fundamentals#URL -->
 
 Both HTML and URL content types offer beneficial traits and can be used
 effectively. The content type you use for your gadgets depends on your needs and
@@ -520,7 +464,7 @@ processed by the gadget to show the address location on its map.
 Next, we'll analyze the example's *subscribing* gadget's source code specified
 in  *GoogleMapsViewer.xml*:
 
-<?xml version="1.0" encoding="UTF-8" ?> 
+	<?xml version="1.0" encoding="UTF-8" ?> 
 
 	<Module>
 		<ModulePrefs title="Google Map">
