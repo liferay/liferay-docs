@@ -690,7 +690,7 @@ defaults, and cataloged all the plugins you have installed. After you've
 performed these three tasks, you're ready to upgrade. Let's look at them one by
 one. 
 
-### Migrate to Algorithm 6
+### Migrate to Algorithm 6 [](id=lp-6-1-ugen17-migrate-to-algorithm-6-0)
 
 If your Liferay installation has existed for a while, you may be on a different
 permission algorithm than the one that's available in Liferay Portal 6.1.
@@ -721,7 +721,7 @@ Administration* and select *Data Migration* from the menu along the top of the
 screen. A section entitled *Legacy Permissions Migration* appears at the
 bottom of the page.
 
-![Figure 17.x: Update your permissions algorithm by clicking the *Execute*
+![Figure 17.9: Update your permissions algorithm by clicking the *Execute*
 button.](../../images/17-convert-permissions-algorithm.png)
 
 Algorithms 5 and 6 do not support adding permissions at the user level. If you
@@ -743,7 +743,7 @@ Restart your server. Congratulations! You've successfully migrated your
 installation to use the latest, highest performing permissions algorithm. Next,
 you'll need to explicitly set your Image Gallery storage option. 
 
-### Migrate Your Image Gallery Images
+### Migrate Your Image Gallery Images [](id=lp-6-1-ugen17-migrate-your-image-gallery-images-0)
 
 Liferay 6.1 introduces a major change to how Liferay handles files. No longer do
 we have a separate Document Library and Image Gallery; instead, these have been
@@ -773,7 +773,7 @@ likely already in your `portal-ext.properties` file.
 The third thing you need to do to prepare for your upgrade is to review the new
 property defaults. 
 
-### Review the New 6.1 Properties Defaults
+### Review the New 6.1 Properties Defaults [](id=lp-6-1-ugen17-review-the-new-61-properties-defaults-0)
 
 The next thing you'll need to look at are the defaults that have changed from
 6.0 to 6.1. These are preserved in `portal-legacy-6.0.properties` in the source.
@@ -807,7 +807,7 @@ If you're not using Tomcat, check your application server's documentation to see
 how to modify runtime properties. Your final task is to catalog all the plugins
 you have installed, so you can install the new versions in your upgraded system. 
 
-### Catalog all the plugins you have installed
+### Catalog all the plugins you have installed [](id=lp-6-1-ugen17-catalog-all-the-plugins-you-have-installed-0)
 
 Finally, you need to take note of any plugins you have installed. Liferay's
 plugins are usually version-specific, so you'll need to obtain new versions of
