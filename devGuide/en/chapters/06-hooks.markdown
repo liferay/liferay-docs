@@ -143,6 +143,47 @@ Deploy your hook again and wait for deployment to complete. Then log out and bac
 
 There are several other events for which you can define custom actions using hooks. Some of these actions must extend `com.liferay.portal.kernel.events.Action`, while others must extend `com.liferay.portal.struts.SimpleAction`. Importantly, to ensure better forward compatibility, it is recommended to use hooks rather than Ext plugins for customizing struts actions. For more information on these events, see the [Properties Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1) chapter of *Using Liferay Portal* or lookup the actual `portal.properties` configuration file for your version of Liferay in the  [Portal Properties](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Properties) wiki page.
 
+Note: When overriding an existing Struts action path, always override the method
+that takes the original Struts action handle as a parameter and don't forget to
+execute the original action if that is your intention. You can think of it as a
+servlet filter or aspect. If you don't explicitly execute the original action,
+it won't be executed. In other words, if you override the execute method that
+does not take original action as a parameter, you are ignoring the original
+action and it won't be executed.
+
+---
+
+![Tip](../../images/tip-pen-paper.png)**Warning:** There's a classloading bug
+that manifests itself under certain conditions when executing the original
+action. The issue is fixed in
+[LPS-30162](http://issues.liferay.com/browse/LPS-30162). As a workaround, if you
+don't have a patch for the fix, you can just set the context classloader to the
+portal classloader and then reset it in a finally statement back to the original
+classloader after the original action is executed.
+
+Here's an example for the temporary workaround:
+
+    public class SampleLayoutStrutsAction extends BaseStrutsAction {
+
+    @Override
+    public String execute(StrutsAction originalStrutsAction,
+    HttpServletRequest request, HttpServletResponse response)
+    throws Exception {
+
+        System.out.println("SampleLayoutStrutsAction.execute() - " + request.getRequestURI());
+
+        Thread currentThread = Thread.currentThread();
+        ClassLoader contextClassLoader = currentThread.getContextClassLoader();
+        currentThread.setContextClassLoader(PortalClassLoaderUtil.getClassLoader());
+
+        try { return originalStrutsAction.execute(request, response); }
+        finally { currentThread.setContextClassLoader(contextClassLoader); }
+        }
+
+    }
+
+---
+
 You've learned how to perform a custom action by extending a portal action. So, as you might have expected, it is just as easy to extend or override portal properties. Let's take a look!
 
 ## Extending and Overriding *portal.properties* [](id=extending-and-overriding-<em>portal-properties<-e-1)
