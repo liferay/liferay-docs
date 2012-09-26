@@ -946,8 +946,15 @@ On this tab, users can be ranked according to the number of messages they have
 posted. You can set up custom ranks here. Defaults have been provided for you,
 going from zero messages all the way up to one thousand.
 
-In addition to ranks, you can also select who is a "moderator"? by what roles
-are held. Defaults are there for you which show you how to do this.
+In addition to ranks, you can also choose labels for certain users to have
+displayed in their profiles as shown by the Message Boards application. These
+labels correspond to memberships these users have in your portal. Below are
+examples of using the label *Moderator*. The Moderator label in this
+configuration is applied for anyone who is a part of any of the Message Boards
+Administrator groups: the site role, the organization, the organization role,
+the regular role, or the user group. Of course, you probably wouldn't want to
+create a role, organization, organization role, site role, and user group all
+with the same name in your portal, but you get the idea. 
 
     Moderator=site-role:Message Boards Administrator
 

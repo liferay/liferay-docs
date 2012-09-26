@@ -1,3 +1,4 @@
+
 # Hooks [](id=hoo-4)
 
 Liferay Hooks are the preferred plugin to use in customizing Liferay's core features. Hooks can fill a wide variety of the common needs for overriding Liferay core functionality. Hooks should be used in place of Ext plugins, whenever possible, as they are hot-deployable and more forward compatible. Some common scenarios to which you can apply a hook are:
@@ -161,7 +162,7 @@ The `StrutsAction` interface is used for regular struts actions like `/c/portal/
 
 Struts actions are defined as classes which are all connected in the `struts-config.xml` residing in the `liferay-portal-<version>/tomcat-<version>/webapps/ROOT/WEB-INF` directory. The `struts-config.xml` file links actions to specific JSP pages. In detail, these actions do a specific task and then return a *forward*, which is an object that contains a name and path. The forward defines what page the user will go to after the action completes. So if a user submits a form that maps to one of these actions, the action class is loaded, executed, and returns a forward.
 
-The struts action hook can create a new path or wrap existing struts actions. We can override the struts actions located in the `struts-config.xml` by pointing to a custom class. This is accomplished by creating the struts actions hook.
+The struts action hook can create a new path or wrap existing struts actions. We can override the struts actions located in the `struts-config.xml` by pointing to a custom class. This is accomplished by creating the struts action hook.
 
 For our first example, we will override the login portlet struts action using the example-hook. This action appears in the `struts-config.xml` file as shown below:
 
@@ -252,7 +253,7 @@ Also, we will create a new struts path: `/c/portal/sample`. Let's get started:
 
 		}
 
-5. Next, we need to create the new struts action. Create a new class in the `com.liferay.sample.hook.action` package called *ExampleStrutsAction*. Insert the code listed below:
+5. We need to create the new struts action. Create a new class in the `com.liferay.sample.hook.action` package called *ExampleStrutsAction*. Insert the code listed below:
 
 		package com.liferay.sample.hook.action;
 
@@ -284,11 +285,11 @@ Also, we will create a new struts path: `/c/portal/sample`. Let's get started:
 		%>
 		Hello <%= name %>!
 
-7. Finally, modify the `portal.properties` file by adding a new parameter:
+7. Modify the `portal.properties` file by adding a new parameter:
 
 		auth.public.paths=/portal/sample
 
-Congratulations! Your struts actions hook plugin is complete!
+Congratulations! Your struts action hook plugin is complete!
 
 When you access the *Sign In* portlet, you are given a message in the console that reads:
 
