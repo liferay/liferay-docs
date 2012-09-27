@@ -5,6 +5,8 @@ Liferay Hooks are the preferred plugin to use in customizing Liferay's core feat
 
 -	Performing custom actions on portal startup or user login
 
+-	Overriding Struts actions
+
 -	Overriding or extend portal JSPs
 
 -	Modifying portal properties
@@ -143,24 +145,24 @@ Deploy your hook again and wait for deployment to complete. Then log out and bac
 
 There are several other events for which you can define custom actions using hooks. Some of these actions must extend `com.liferay.portal.kernel.events.Action`, while others must extend `com.liferay.portal.struts.SimpleAction`. Importantly, to ensure better forward compatibility, it is recommended to use hooks rather than Ext plugins for customizing struts actions. For more information on these events, see the [Properties Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1) chapter of *Using Liferay Portal* or lookup the actual `portal.properties` configuration file for your version of Liferay in the  [Portal Properties](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Properties) wiki page.
 
-You've learned how to perform a custom action by extending a portal action. Now, let's take a look at overriding and adding struts actions from hook plugins.
+You've learned how to perform a custom action by extending a portal action. Now, let's take a look at overriding and adding Struts actions from hook plugins.
 
-## Overriding and adding struts actions
+## Overriding and adding Struts actions
 
-If you've wanted to add new struts actions to Liferay portal from a hook plugin or have wanted the ability to override other existing actions, you have the means to do it with *struts action hooks*. Let's start by considering the interfaces used for struts actions.
+If you've wanted to add new Struts actions to Liferay portal from a hook plugin or have wanted the ability to override other existing actions, you have the means to do it with *Struts action hooks*. Let's start by considering the interfaces used for Struts actions.
 
 Struts action interfaces:
 
 -	`com.liferay.portal.kernel.struts.StrutsAction`
 -	`com.liferay.portal.kernel.struts.StrutsPortletAction`
 
-The `StrutsAction` interface is for regular struts actions, like `/c/portal/update_email_address`, from the portal. The `StrutsPortletAction` interface is used for similar struts actions from portlets.
+The `StrutsAction` interface is for regular Struts actions, like `/c/portal/update_email_address`, from the portal. The `StrutsPortletAction` interface is used for similar Struts actions from portlets.
 
 Struts actions are defined as classes which are all connected in a `struts-config.xml` file. A `struts-config.xml` for Liferay portal running on Apache Tomcat would be found in the `liferay-portal-<version>/tomcat-<version>/webapps/ROOT/WEB-INF` directory. The `struts-config.xml` file links actions to specific JSP pages. Specifically, each action performs a specific task and then returns a *forward*, which is an object containing a name and path. The forward defines what page the user will go to after the action completes. When a user submits a form that maps to one of these actions, the action class is loaded, executed, and returns a forward.
 
-You can use a struts action hook to wrap/override existing struts actions or to create a new struts path; let's do both. We'll override the struts actions located in the `struts-config.xml` using a struts action hook to point to a custom class. Then we'll create a new struts path: `/c/portal/sample` and navigate to it. Let's get started!
+You can use a Struts action hook to wrap/override existing Struts actions or to create a new Struts path; let's do both. We'll override the Struts actions located in the `struts-config.xml` using a Struts action hook to point to a custom class. Then we'll create a new Struts path: `/c/portal/sample` and navigate to it. Let's get started!
 
-First, we'll override the login portlet's struts action using the example-hook we created earlier in this chapter.
+First, we'll override the login portlet's Struts action using the example-hook we created earlier in this chapter.
 
 Note the current action in your portal's `struts-config.xml` file:
 
@@ -185,7 +187,7 @@ Note the current action in your portal's `struts-config.xml` file:
 
 3. Create a new package `com.liferay.sample.hook.action` in your `example-hook/docroot/WEB-INF/src` folder.
 
-4. In this new package, create a class named *ExampleStrutsPortletAction*. This class will wrap the login portlet struts action. Insert the following code:
+4. In this new package, create a class named *ExampleStrutsPortletAction*. This class will wrap the login portlet Struts action. Insert the following code:
 
 		package com.liferay.sample.hook.action;
 
@@ -249,7 +251,7 @@ Note the current action in your portal's `struts-config.xml` file:
 
 		}
 
-5. Create a new class named *ExampleStrutsAction* in the `com.liferay.sample.hook.action` package. This class will implement your new portal struts action. Insert the following code:
+5. Create a new class named *ExampleStrutsAction* in the `com.liferay.sample.hook.action` package. This class will implement your new portal Struts action. Insert the following code:
 
 		package com.liferay.sample.hook.action;
 
@@ -274,7 +276,7 @@ Note the current action in your portal's `struts-config.xml` file:
 
 		}
 
-	You're done implementing the override of the struts actions! Next, let's get our new struts path working.
+	You're done implementing the override of the Struts actions! Next, let's get our new Struts path working.
 
 6. Create a JSP named `sample.jsp` in the `example-hook/docroot/META-INF/custom_jsps/html/portal` directory. Insert the following code:
 
@@ -293,7 +295,7 @@ Note the current action in your portal's `struts-config.xml` file:
 
 8. Restart your portal server.
 
-Congratulations! Your struts action hook plugin is complete!
+Congratulations! Your Struts action hook plugin is complete!
 
 When you access the *Sign In* portlet, the following message prints to your console:
 
@@ -304,11 +306,11 @@ Furthermore, when you actually log in, another message prints to your console:
 	Wrapped /login/ action2
 	Wrapped /login/ action
 
-Both of your custom struts actions are executed via your struts action hook!
+Both of your custom Struts actions are executed via your Struts action hook!
 
-Try your new struts path by accessing it from your browser (e.g.  `http://localhost:8080/c/portal/sample`).
+Try your new Struts path by accessing it from your browser (e.g.  `http://localhost:8080/c/portal/sample`).
 
-![Figure 6.5: Your new struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
+![Figure 6.5: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
 
 So, as you might have expected, it is just as easy to extend or override portal properties. Let's take a look!
 
