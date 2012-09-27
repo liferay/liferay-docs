@@ -286,16 +286,16 @@ portal Struts action. Insert the following code:
 
         public class ExampleStrutsAction extends BaseStrutsAction {
 
-        public String execute(
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-
-            String name = ParamUtil.get(request, "name", "World");
-
-            request.setAttribute("name", name);
-
-            return "/portal/sample.jsp";
-            }
+            public String execute(
+                HttpServletRequest request, HttpServletResponse response)
+                throws Exception {
+    
+                String name = ParamUtil.get(request, "name", "World");
+    
+                request.setAttribute("name", name);
+    
+                return "/portal/sample.jsp";
+                }
 
         }
 
