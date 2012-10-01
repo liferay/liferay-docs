@@ -492,7 +492,7 @@ Liferay Sync, released in September 2012, is an add-on product for Liferay 6.1
 CE and EE that synchronizes files between your Liferay server and users' desktop
 and mobile environments. With Liferay Sync, your users can publish and access
 shared documents and files from their native environments without using a
-browser. Windows and Mac OS desktops, and iOS-based mobile platforms are
+browser. Windows and Mac OS desktops, Android and iOS-based mobile platforms are
 currently supported. As users add and collaborate on documents and files,
 Liferay Sync automatically synchronizes them across all configured Sync clients.
 Liferay Sync is fully integrated into the Liferay Platform so that features such
@@ -518,11 +518,11 @@ doing, and native menu and taskbar integration keep Sync controls within easy
 reach.
 
 Mobile environments are naturally dependent on the way in which documents are
-handled. For iOS, documents are maintained in a file list, and can be viewed by
+handled. For Android and iOS, documents are maintained in a file list, and can be viewed by
 clicking on the files themselves. External files accessible from other apps can
 be "opened" using Liferay Sync, thereby dropping them into your Sync folder and
-synchronizing them across other Sync clients. "Pulling down" on the Sync file
-list forces a refresh (automatic sync frequency can be configured as well).
+synchronizing them across other Sync clients. In iOS devices, "Pulling down" on the Sync file
+list forces a refresh, in Android, click on the Refresh icon within the menu.
 
 Liferay Sync is designed to work with both Liferay 6.1 Community Edition and
 Enterprise Edition. Using Sync with Liferay CE limits users to syncing one site.
@@ -597,10 +597,15 @@ you wish to change any of your settings, click the icon to open the Liferay Sync
 menu and click on *Preferences*. Note that on Windows, the Sync menu says
 *Properties*, not *Preferences*.
 
-#### iOS [](id=lp-6-1-ugen04-ios-0)
+#### Mobile [](id=lp-6-1-ugen04-mobile-0)
 
 For iOS, visit the App Store, search for Liferay, and install the Liferay Sync
-App. Once installed, follow the on-screen instructions as above.
+App.
+
+For Android, go to Google Play, search for Liferay, and install the Liferay Sync
+App.
+
+Once the mobile apps are installed, follow the on-screen instructions as bellow.
 
 ### Using Liferay Sync [](id=lp-6-1-ugen04-using-liferay-sync-0)
 
@@ -760,6 +765,91 @@ credentials of another user who doesn't belong to the *Secret Site*, the
 *secret.txt* will not be downloaded. Congratulations! You've successfully set up
 a Liferay Sync folder that can only be accessed by the *secretagent* user and
 your administrators.
+
+### Using Liferay Sync Mobile [](id=lp-6-1-ugen04-using-liferay-sync-mobile-0)
+
+#### Android  [](id=lp-6-1-ugen04-using-liferay-sync-android-0)
+
+After installing Liferay Sync for Android, you will see an empty screen asking 
+you to setup the app. This screen will appear whenever preferences are missing.
+
+![Figure 4.25: First screen](../../images/liferay-sync-android-empty.png)
+
+Touch the screen and it will display the *Settings* view, you can always go 
+back to *Settings* by clicking on the wrench icon on the top right. 
+
+![Figure 4.26: Android Settings](../../images/liferay-sync-android-settings.png)
+
+Fill in your credentials and Liferay server details by filling your *Login* 
+(either your portal's screen name or email address, whichever you use to login 
+to the portal in a browser) and *Password*. In the *Server* input, type your 
+portal's URL, in this example: *http://in.liferay.com*. Click on the key icon 
+on the top right to test your connection and check if everything is correct.
+
+Gingerbread users: if you can't see some of the features described here, click 
+on the menu button and it will display all possible actions, including refresh, 
+go to settings, upload files, take photos, test connection, etc.
+
+![Figure 4.27: Gingerbread](../../images/liferay-sync-android-gingerbread.png)
+
+After you have successfully tested your connection, hit the back button, you 
+will see a list of Liferay *Sites* you have access to.
+
+![Figure 4.28: Sites](../../images/liferay-sync-android-sites.png)
+
+You can browse *Site's* files by tapping on any of them. It will bring a list 
+of folders and files that belong to that *Site* and only those you have 
+permissions to view.
+
+![Figure 4.29: Folder and files](../../images/liferay-sync-android-files-list.png)
+
+From here you can click on a folder and browse deeper into the folder hierarchy 
+or click on the back button to navigate back to parent folders up to the 
+initial *Sites* list.
+
+Long press on any folder or file and you will see a list of actions you can 
+take on a given entry: *Open*, *Download* or  *Delete*. 
+
+If you click on *Open*, a list of files viewer apps will be shown, if you have 
+no app installed that can open this file type, a message will be displayed 
+telling you that no viewer is available, and you will need to install some app 
+that can open it. The *Open* action will download the file if there's no local 
+copy.
+
+If you click on *Download*, it will download and overwrite the local file copy.
+
+Clicking on *Delete* will delete the file/folder from the remote portal and 
+other users won't be able to view and download it.
+
+![Figure 4.30: Actions](../../images/liferay-sync-android-delete.png)
+
+There are other actions that are not related to a specific folder or file, they 
+can been seen in the menu on top action bar (Gingerbread users need to click on 
+the device menu button). Depending on the device screen width some icons will 
+overflow to the three dots button on the right. Click on it to see all 
+available actions.
+
+![Figure 4.31: More options](../../images/liferay-sync-android-more.png)
+
+The *Refresh* button will fetch and update the list folders and files that were 
+changed in the portal.
+
+The *Camera* button will allow you to quickly take a picture and upload the 
+image to the current folder. The image fille name will be automatically 
+generated with a timestamp.
+
+The *New Folder* button will display a dialog asking for the folder name you 
+want to create in the portal.
+
+The *Upload* button will display which types of local files you can upload to 
+the portal, choosing *Image* for example, will display all images that are 
+stored locally in your device, once you pick the file and confirm, this file 
+will be uploaded to the portal and will be placed in the current folder. 
+Besides images, by default you will be able to upload videos and audio files, 
+if you have installed in your device some app that can open and browse any type 
+of file, you will also see an option called *Other files*.
+
+![Figure 4.32: Upload local files](../../images/liferay-sync-android-upload.png)
 
 ## Summary [](id=lp-6-1-ugen04-summary-0)
 
