@@ -851,6 +851,67 @@ of file, you will also see an option called *Other files*.
 
 ![Figure 4.32: Upload local files](../../images/liferay-sync-android-upload.png)
 
+#### iOS  [](id=lp-6-1-ugen04-using-liferay-sync-ios-0)
+
+After installing the iOS app, click on *Settings* in the toolbar, fill in your 
+credentials and Liferay server details by filling your *Login* (either your 
+portal's screen name or email address, whichever you use to login to the portal 
+in a browser) and *Password*. In the *Server* input, type your portal's URL, in 
+this example: *http://in.liferay.com*.
+
+Click on *Test Connection* to check if your preferences are correct.
+
+![Figure 4.33: iOS Settings](../../images/liferay-sync-ios-settings.png)
+
+After testing your connection, click on *Guest* in the *Sites* 
+section, you should get a list of available Sites, these are the sites you 
+belong to, choose one of them and click on *Back*. You can switch to a 
+different site anytime.
+
+![Figure 4.34: Sites](../../images/liferay-sync-ios-sites.png)
+
+Now you can browse all folders and files of the site you just selected, click 
+on the *Documents* toolbar section and you will see a list containing all them, 
+from here you can click on any folder to go deeper into the folder hierarchy.
+
+![Figure 4.35: Files list](../../images/liferay-sync-ios-files-list.png)
+ 
+If you click on a file, this file will be donwloaded from the remote portal 
+and, if a previewer for this file type is available, you should be able to view 
+your file's content. The next time you open a file, it won't download it again, 
+it will just open the local copy.
+
+![Figure 4.36: Opening a file](../../images/liferay-sync-ios-open.png)
+
+You can refresh the list by pushing it down, all files and folders that were 
+changed in the portal will get updated.
+ 
+![Figure 4.37: Refreshing](../../images/liferay-sync-ios-refresh.png)
+
+In order to delete a file or folder from the portal, swipe right and click on 
+the *Delete* button.
+
+![Figure 4.38: Deleting a file](../../images/liferay-sync-ios-delete.png)
+
+If you want to upload an image or video the portal, click on the add button on 
+the top right, you should see three options: 
+
+*Take a photo or video*, which will open your camera app and let you take a 
+photo or record a video and upload it.
+
+*Choose Existing*, allows you to upload an existing photo or video.
+
+*Create New Folder*, will let you type the name of the folder and create it in 
+the portal.
+
+![Figure 4.39: Upload photos and videos](../../images/liferay-sync-ios-more.png)
+
+All downloaded images are stored in your device indefinitely, if you want to 
+delete them only locally but don't want to remove from the portal, go to 
+*Settings* and click on the *Clear Cache* button.
+
+![Figure 4.40: Deleting local copies](../../images/liferay-sync-ios-cache.png)
+
 ## Summary [](id=lp-6-1-ugen04-summary-0)
 
 In this chapter, we examined Liferay's Documents and Media Library, a powerful
