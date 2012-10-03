@@ -501,4 +501,5 @@ with Security Manager turned on will know you're a "law abiding" citizen,
 because you've specified what services your applications need to access in order
 to function.
 
-Let's look at Liferay Marketplace next!
+Next, we'll show you what it takes to develop apps for publishing to *Liferay Marketplace*.
+
