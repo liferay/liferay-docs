@@ -742,46 +742,49 @@ correct behaviors for handling both keyword and text fields, for example.
 In Liferay 6.1, this functionality has been upgraded. Lucene analyzers are now
 defined in Spring configuration files. The default analyzer configuration is
 defined in `/portal-impl/src/META-INF/search-spring.xml`. Liferay 6.1 introduced
-per field analyzers, allowing Lucene's query parser to identify the correct
+per-field analyzers, allowing Lucene's query parser to identify the correct
 analyzer to handle any field.
 
 There are two common scenarios where it's useful to configure Lucene analyzers.
-The first case involves language analyzers. Liferay provides a large number of
-language analyzers in `search-spring.xml` out of the box and uses regular
+The first scenario involves language analyzers. Liferay provides a large number
+of language analyzers in `search-spring.xml` out of the box and uses regular
 expression matching to map localized fields to specific analyzers. However, if
 your language is not included among the defaults or you're not satisfied with
 one of the default language analyzers, you can override a default analyzer with
-a custom analyzer. The second case involves creating custom indexers. If you've
-created a custom indexer to index new fields, you can use the default analyzer
-for your new fields, select a specific one such as one of the KeywordAnalyzers,
-or define a custom analyzer.
+a custom analyzer. The second scenario involves creating custom indexers. If
+you've created a custom indexer to index new fields, you can use the default
+analyzer for your new fields, select a specific one (such as one of the
+`KeywordAnalyzers`), or define a custom analyzer.
 
 In order to customize the Lucene analyzer configuration, you need to create an
 Ext plugin. Since the Analyzer classes reference the Lucene APIs directly, it's
 not possible to configure Lucene analyzers from a hook plugin. Within your Ext
-plugin, you need to create a
-`/docroot/WEB-INF/ext-impl/src/META-INF/ext-spring.xml` file and declare the
-beans that you'd like to override with a custom configuration. Here are a few of
-the pre-configured analyzers from the
-`com.liferay.portal.search.lucene.PerFieldAnalyzerWrapper` bean configuration in
-`search-spring.xml`:
+plugin, create a `/docroot/WEB-INF/ext-impl/src/META-INF/ext-spring.xml` file
+and declare the beans that you'd like to override with a custom configuration.
+Here are a few of the pre-configured analyzers from the
+`com.liferay.portal.search.lucene.PerFieldAnalyzerWrapper` bean configuration
+in `search-spring.xml`:
 
     <entry key="tag"
-    value-ref="com.liferay.portal.search.lucene.LikeKeywordAnalyzer" /> <entry
-    key="templateId" value-ref="org.apache.lucene.analysis.KeywordAnalyzer" />
+           value-ref="com.liferay.portal.search.lucene.LikeKeywordAnalyzer" /> 
+    <entry key="templateId" 
+           value-ref="org.apache.lucene.analysis.KeywordAnalyzer" />
     <entry key="treePath"
-    value-ref="com.liferay.portal.search.lucene.LikeKeywordAnalyzer" /> <entry
-    key="type" value-ref="org.apache.lucene.analysis.KeywordAnalyzer" /> <entry
-    key="userName"
-    value-ref="com.liferay.portal.search.lucene.LikeKeywordAnalyzer" /> <entry
-    key=".*_ar" value-ref="org.apache.lucene.analysis.ar.ArabicAnalyzer" />
+           value-ref="com.liferay.portal.search.lucene.LikeKeywordAnalyzer" /> 
+    <entry key="type" 
+           value-ref="org.apache.lucene.analysis.KeywordAnalyzer" /> 
+    <entry key="userName"
+           value-ref="com.liferay.portal.search.lucene.LikeKeywordAnalyzer" /> 
+    <entry key=".*_ar" 
+           value-ref="org.apache.lucene.analysis.ar.ArabicAnalyzer" />
     <entry key=".*_de_DE"
-    value-ref="org.apache.lucene.analysis.de.GermanAnalyzer" /> <entry
-    key=".*_el_GR" value-ref="org.apache.lucene.analysis.el.GreekAnalyzer" />
+           value-ref="org.apache.lucene.analysis.de.GermanAnalyzer" /> 
+    <entry key=".*_el_GR" 
+           value-ref="org.apache.lucene.analysis.el.GreekAnalyzer" />
     <entry key=".*_fa_IR"
-    value-ref="org.apache.lucene.analysis.fa.PersianAnalyzer" /> <entry
-    key=".*_fr_[A-Z]{2}"
-    value-ref="org.apache.lucene.analysis.fr.FrenchAnalyzer" />
+           value-ref="org.apache.lucene.analysis.fa.PersianAnalyzer" /> 
+    <entry key=".*_fr_[A-Z]{2}"
+           value-ref="org.apache.lucene.analysis.fr.FrenchAnalyzer" />
 
 Note that you can define custom analyzers for any fields, including custom
 fields.
