@@ -229,7 +229,7 @@ guidelines.
 Next, let's learn how to use the Plugins SDK to create a plugin that extends
 another plugin.
 
-## Creating Plugins to extend Plugins
+## Creating Plugins to extend Plugins [](id=lp-6-1-dgen02-creating-plugins-to-extend-plugins-0)
 
 For Liferay plugins, it's possible to create a new plugin that extends an
 existing one. This allows you to utilize all the features of the existing plugin

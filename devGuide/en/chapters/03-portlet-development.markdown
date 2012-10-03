@@ -1012,7 +1012,7 @@ the following operations:
 
 Next, we'll see how to localize portlet titles and descriptions. 
 
-### Portlet Title and Description In Control Panel
+### Portlet Title and Description In Control Panel [](id=lp-6-1-dgen03-portlet-title-and-description-in-control-panel-0)
 
 Some of you may have noticed that your Control Panel-enabled portlets are
 missing that super fancy must-have portlet title and description in Control
@@ -1092,7 +1092,7 @@ pulled using the following two keys:
 
 ---
 
-### Overriding Liferay portal translations
+### Overriding Liferay portal translations [](id=lp-6-1-dgen03-overriding-liferay-portal-translations-0)
 
 If you want your translations available throughout the portal, or if you want to
 override an existing translation, please chapter 7, specifically the *Overriding a
@@ -1100,7 +1100,7 @@ Language.properties File* section which describes how to use hook to override
 existing Liferay translations. Using this technique, you can share your keys
 with other portlets, as well as override existing Liferay translations. 
 
-### Summary
+### Summary [](id=lp-6-1-dgen03-summary-0)
 
 When localization is important, always consider statements in a *localization
 plan*, since some portlets in your plugin and hard customer requests can make a
