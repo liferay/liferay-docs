@@ -127,7 +127,9 @@ configure these settings, go to the categories administration page and mouse
 over the vocabulary in the list until you see the edit icon to the right. Select
 the icon to reveal a dialog box like the one below.
 
-![Figure 5.11: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
+![Figure 5.11: You can target vocabularies by checking the *Allow Multiple 
+Categories* checkbox and then selecting the 
+Asset Types.](../../images/targeted-vocabularies.png)
 
 The default value for *Associated Asset Types* is *All Asset Types*. You can
 fine tune your choices by using the *+* and *-* buttons, which narrows the scope
@@ -142,7 +144,9 @@ You can now decide if the user can choose one or more categories from the same
 vocabulary to categorize an asset. If a vocabulary is single-valued you can only
 choose one, and if it allows more, you can choose several categories.
 
-![Figure 5.12: Single-valued vocabularies, on the left, use radio buttons while multi-valued vocabularies use checkboxes. .](../../images/multi-valued-vocabularies.png)
+![Figure 5.12: Single-valued vocabularies, on the left, use radio buttons while 
+multi-valued vocabularies use 
+checkboxes. .](../../images/multi-valued-vocabularies.png)
 
 Setting vocabulary values is done through the categories administration page.
 Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set
@@ -155,7 +159,8 @@ The third important improvement is every vocabulary has its own separated
 widget. These widgets appear in the Categorization section of every asset and
 they allow users to easily select appropriate categories for that asset.
 
-![Figure 5.13: Now that vocabularies have their own widgets, it's easy to select available  categories.](../../images/separated-widgets.png)
+![Figure 5.13: Now that vocabularies have their own widgets, it's easy to select 
+available  categories.](../../images/separated-widgets.png)
 
 It's important to use tags and categories with all your content, so that content
 is easier for users to find. Let's look at one of the ways users will make use
@@ -594,18 +599,18 @@ Facets are positioned with the largest values at the top. (yes, the current
 implementation is counter-intuitive and perhaps could be reversed in future
 versions).
 
-Configuring search using a JSON object is a bit unusual, but as you can see, it's
-not as hard as it looks initially. 
+Configuring search using a JSON object is a bit unusual, but as you can see,
+it's not as hard as it looks initially.
 
 ### Summary  [](id=lp-6-1-ugen05-summary--0)
 
 Search is a powerful component of Liferay Portal's asset framework. The
 proclivity of assets means that there is an extensible, robust, and configurable
-search mechanism throughout the portal that allows administrators to optimize the search
-experience of their users. Users also get an easy to use search interface that
-makes use of the tags and categories that they themselves apply to various
-pieces of content, regardless of the type of content. This makes Liferay's
-search truly "for the people." 
+search mechanism throughout the portal that allows administrators to optimize
+the search experience of their users. Users also get an easy to use search
+interface that makes use of the tags and categories that they themselves apply
+to various pieces of content, regardless of the type of content. This makes
+Liferay's search truly "for the people."
 
 Power users can learn an extended search syntax that lets them craft very
 specific searches. These searches can be used on large installations with lots
@@ -876,8 +881,8 @@ Filter options let you set minimum requirements for displaying assets by their
 categories, tags, and custom fields. Ordering and Grouping allows you to
 organize assets using the same criteria. Display settings allow you to customize
 how asssets are shown in the portlet. They can be listed by title, in a table,
-by abstract or full content. You can convert assets to different document
-types like ODT, PDF, and RTF. You can choose to show various metadata fields such as
+by abstract or full content. You can convert assets to different document types
+like ODT, PDF, and RTF. You can choose to show various metadata fields such as
 author, modification date, tags, and view count. You can even enable RSS
 subscriptions and customize their display settings.
 
