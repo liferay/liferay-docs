@@ -148,7 +148,7 @@ There are several other events for which you can define custom actions using hoo
 You've learned how to perform a custom action by extending a portal action. Now,
 let's take a look at overriding and adding Struts actions from a hook plugin.
 
-## Overriding and adding Struts actions
+## Overriding and adding Struts actions [](id=lp-6-1-dgen06-overriding-and-adding-struts-actions-0)
 
 If you've wanted to add new Struts actions to Liferay portal from a hook plugin
 or have wanted the ability to override other existing actions, you have the
