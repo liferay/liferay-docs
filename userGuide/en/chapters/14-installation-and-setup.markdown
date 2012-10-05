@@ -1873,23 +1873,23 @@ First we'll take care of dependencies and potential conflicts.
 
 3. Next we'll delete JBoss's Hibernate Validator and HSQL JARs to prevent
    conflicts with Liferay's JARs. Remove the following files from
-   $JBOSS_HOME/common/lib:
+   `$JBOSS_HOME/common/lib`:
 
     hibernate-validator.jar
     hsqldb.jar
     hsqldb-plugin.jar
 
-Next we need to cleanup the entries for the JAR files that we deleted.
+Next we need to clean up the entries for the JAR files that we deleted.
 
-1. Open $JBOSS_HOME/server/default/conf/login-config.xml in a text editor.
+1. Open `$JBOSS_HOME/server/default/conf/login-config.xml` in a text editor.
 
-2. Comment out the blocks with the name "HsqlDBRealm" and "JmsXARealm" around
+2. Comment out the blocks with the name `HsqlDBRealm` and `JmsXARealm` around
    lines 41-64.
 
 We'll also delete some other files that can cause conflicts with Liferay when
 it's deployed.
 
-1.  Remove the following files from $JBOSS_HOME/../server/default/deploy:
+1.  Remove the following files from `$JBOSS_HOME/../server/default/deploy`:
 
     /messaging
 	ejb2-container-jboss-beans.xml
@@ -1905,7 +1905,7 @@ it's deployed.
     profile-service-secured.jar
     uuid-key-generator.sar
 
-2. Delete the following in $JBOSS_HOME/../server/default/deployers:
+2. Delete the following in `$JBOSS_HOME/../server/default/deployers`:
 
     jboss-ejb3-endpoint-deployer.jar
     messaging-definitions-jboss-beans.xml
@@ -1915,12 +1915,12 @@ it's deployed.
 Now that we've added all of the necessary dependencies and removed unnecessary
 files, it's time to deploy Liferay.
 
-1. Navigate to $JBOSS_HOME/../server/default/deploy/ROOT.war/ and delete all
+1. Navigate to `$JBOSS_HOME/../server/default/deploy/ROOT.war` and delete all
    the content of the folder.
 
 2. Extract the contents of the Liferay WAR file into this folder.
 
-3. Delete the following files from the $JBOSS_HOME/ROOT.war/WEB-INF/lib:
+3. Delete the following files from the `$JBOSS_HOME/ROOT.war/WEB-INF/lib`:
 	
     jaxrpc.jar
     stax.jar
@@ -1938,6 +1938,7 @@ files, it's time to deploy Liferay.
 
 5. Start the JBoss Application Server.
 
+Liferay is now successfully installed on JBoss 5.1. 
 
 ## Installing Liferay on JBoss 7 [](id=lp-6-1-ugen11-installing-liferay-on-jboss-7-0)
 
