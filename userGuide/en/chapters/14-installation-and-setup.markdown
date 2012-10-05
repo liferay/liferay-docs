@@ -1845,6 +1845,100 @@ wizard.
 
 You've just installed and deployed Liferay Portal on Jetty - way to go!
 
+## Installing Liferay on JBoss 5.1
+
+**Liferay Home** is one folder above JBoss's install location.
+
+1. Download and install JBoss EAP 5.1.x into your preferred directory. This
+   directory is referred to as `$JBOSS_HOME` throughout this section.
+
+2. Download the latest version of the Liferay Portal `.war` file.
+
+3. Download Liferay's Portal Dependencies.
+
+Now that you have all of your installation files, you are ready to start
+installing and configuring Liferay on JBoss.
+
+### Configuring Dependencies
+
+First we'll take care of dependencies and potential conflicts.
+
+1. Unzip Liferay's dependencies to `$JBOSS_HOME/server/default/lib`.
+
+2. Download your database driver `.jar` file and put it into the folder as
+   well. For demonstration purposes, we'll download the MySQL Connector/J
+   driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
+   and put its `.jar` file into the `$JBOSS_HOME/server/default/lib` folder.
+
+
+3. Next we'll delete JBoss's Hibernate Validator and HSQL JARs to prevent
+   conflicts with Liferay's JARs. Remove the following files from
+   $JBOSS_HOME/common/lib:
+
+    hibernate-validator.jar
+    hsqldb.jar
+    hsqldb-plugin.jar
+
+Next we need to cleanup the entries for the JAR files that we deleted.
+
+1. Open $JBOSS_HOME/server/default/conf/login-config.xml in a text editor.
+
+2. Comment out the blocks with the name "HsqlDBRealm" and "JmsXARealm" around
+   lines 41-64.
+
+We'll also delete some other files that can cause conflicts with Liferay when
+it's deployed.
+
+1.  Remove the following files from $JBOSS_HOME/../server/default/deploy:
+
+    /messaging
+	ejb2-container-jboss-beans.xml
+    ejb2-timer-service.xml
+    ejb3-connections-jboss-beans.xml
+    ejb3-container-jboss-beans.xml
+    ejb3-interceptors-aop.xml
+    ejb3-timerservice-jboss-beans.xml
+    hsqldb-ds.xml
+    jms-ra.rar
+    mail-ra.rar
+    mail-service.xml
+    profile-service-secured.jar
+    uuid-key-generator.sar
+
+2. Delete the following in $JBOSS_HOME/../server/default/deployers:
+
+    jboss-ejb3-endpoint-deployer.jar
+    messaging-definitions-jboss-beans.xml
+
+### Deploying Liferay
+
+Now that we've added all of the necessary dependencies and removed unnecessary
+files, it's time to deploy Liferay.
+
+1. Navigate to $JBOSS_HOME/../server/default/deploy/ROOT.war/ and delete all
+   the content of the folder.
+
+2. Extract the contents of the Liferay WAR file into this folder.
+
+3. Delete the following files from the $JBOSS_HOME/ROOT.war/WEB-INF/lib:
+	
+    jaxrpc.jar
+    stax.jar
+    xercesImpl.jar
+    xml-apis.jar
+
+4. Create a portal-ext.properties file in `$LIFERAY_HOME` (one level above
+   `$JBOSS_HOME` and add the following properties:
+
+     NOTE: The autodeploy folder must be set with the full name of the folder -
+	 you can't use any variables to define the location
+
+		auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy 
+		auto.deploy.deploy.dir=C:/JBoss-<version>/deploy
+
+5. Start the JBoss Application Server.
+
+
 ## Installing Liferay on JBoss 7 [](id=lp-6-1-ugen11-installing-liferay-on-jboss-7-0)
 
 **Liferay Home** is one folder above JBoss's install location.
