@@ -119,7 +119,7 @@ There are a several new enhancements to vocabularies and categories in Liferay
 6.1. The three main features are targeted vocabularies, single/multi-valued
 vocabularies, and separated widgets for every vocabulary.
 
-#### Targeted Vocabularies [](id=lp-6-1-ugen05-targeted-vocabularies-0)
+## Targeted Vocabularies [](id=lp-6-1-ugen05-targeted-vocabularies-0)
 
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
@@ -138,7 +138,7 @@ vocabulary `Famous Noses` is configured to be available for Blogs and Web
 Content, but it is not required. It is mandatory, however, for Documents and
 Media Documents.
 
-#### Single and Multi-valued Vocabularies [](id=lp-6-1-ugen05-single-and-multi-valued-vocabularies-0)
+### Single and Multi-valued Vocabularies [](id=lp-6-1-ugen05-single-and-multi-valued-vocabularies-0)
 
 You can now decide if the user can choose one or more categories from the same
 vocabulary to categorize an asset. If a vocabulary is single-valued you can only
@@ -153,7 +153,7 @@ Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set
 single value vocabularies or use the default option to set multi-value
 vocabularies.
 
-#### Separated Widgets [](id=lp-6-1-ugen05-separated-widgets-0)
+### Separated Widgets [](id=lp-6-1-ugen05-separated-widgets-0)
 
 The third important improvement is every vocabulary has its own separated
 widget. These widgets appear in the Categorization section of every asset and
