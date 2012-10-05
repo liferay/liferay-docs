@@ -127,7 +127,7 @@ configure these settings, go to the categories administration page and mouse
 over the vocabulary in the list until you see the edit icon to the right. Select
 the icon to reveal a dialog box like the one below.
 
-![Figure 5.11: You can target vocabularies by checking the *Allow Multiple 
+![Figure 5.4: You can target vocabularies by checking the *Allow Multiple 
 Categories* checkbox and then selecting the 
 Asset Types.](../../images/targeted-vocabularies.png)
 
@@ -144,7 +144,7 @@ You can now decide if the user can choose one or more categories from the same
 vocabulary to categorize an asset. If a vocabulary is single-valued you can only
 choose one, and if it allows more, you can choose several categories.
 
-![Figure 5.12: Single-valued vocabularies, on the left, use radio buttons while 
+![Figure 5.5: Single-valued vocabularies, on the left, use radio buttons while 
 multi-valued vocabularies use 
 checkboxes. .](../../images/multi-valued-vocabularies.png)
 
@@ -159,7 +159,7 @@ The third important improvement is every vocabulary has its own separated
 widget. These widgets appear in the Categorization section of every asset and
 they allow users to easily select appropriate categories for that asset.
 
-![Figure 5.13: Now that vocabularies have their own widgets, it's easy to select 
+![Figure 5.6: Now that vocabularies have their own widgets, it's easy to select 
 available  categories.](../../images/separated-widgets.png)
 
 It's important to use tags and categories with all your content, so that content
@@ -196,7 +196,7 @@ To get started, drop the Search portlet on a page and search for something.
 You'll see a page with results on the right and a collection of *facets* on the
 left. 
 
-![Figure 5.4: The first set of facets is content types. You can drill down to
+![Figure 5.7: The first set of facets is content types. You can drill down to
 specific types of content that contain the search terms you
 entered.](../../images/faceted-search-1.png)
 
@@ -212,7 +212,7 @@ you were looking for. If, however, your memory is more foggy than that, or
 you're searching for something you're not sure is actually there, then the asset
 tags or asset categories facets may be more helpful to you. 
 
-![Figure 5.5: Asset tag facets provide you with more information about content
+![Figure 5.8: Asset tag facets provide you with more information about content
 that contains the terms for which you searched.](../../images/faceted-search-2.png)
 
 In this case, if you searched for a wireless phone, you may be more interested
@@ -228,7 +228,7 @@ works.
 To drill down into the search, click a facet to add it to the filter list, and
 the results to the right are refined by the facet you selected. 
 
-![Figure 5.6: Drilling down creates a list of what you selected at the top of
+![Figure 5.9: Drilling down creates a list of what you selected at the top of
 the screen.](../../images/05-faceted-search-drill-down-1.png)
 
 Here we can see that we've selected one of the tags, *liferay*, to further
@@ -238,7 +238,7 @@ relevancy of our search. But maybe selecting only the tag isn't enough to filter
 our search into something small enough to sort through. In this case, we can
 further refine the search by selecting another facet, as below. 
 
-![Figure 5.7: Selecting another facet further refines the
+![Figure 5.10: Selecting another facet further refines the
 search.](../../images/05-faceted-search-drill-down-2.png)
 
 Now we've selected web content, which is one particular content type within
@@ -349,7 +349,7 @@ Next, we'll look at how the Search portlet can be configured.
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
 
-![Figure 5.8: Basic search configuration is pretty straightforward.
+![Figure 5.11: Basic search configuration is pretty straightforward.
 ](../../images/05-faceted-search-configuration.png)
 
 **Display Asset Type Facet:** Toggles whether the Asset Type facet appears. 
@@ -660,7 +660,7 @@ the Asset Publisher that you want to select content manually. You can select
 what you want to be published within the portlet, or you can create new content
 from within the Asset Publisher.
 
-![Figure 5.9: Selecting assets manually is very similar to the Web Content
+![Figure 5.12: Selecting assets manually is very similar to the Web Content
 Display portlet, except you have many other content types to choose
 from.](../../images/04-web-content-asset-publisher-manual.png)
 
@@ -695,7 +695,7 @@ selected.
 specific type, such as only web content, only wiki entries, or any combinations
 of multiple types.
 
-![Figure 5.10: You can filter by tags and categories, and you can set up as many
+![Figure 5.13: You can filter by tags and categories, and you can set up as many
 filter rules as you
 need.](../../images/04-web-content-asset-publisher-filter.png)
 

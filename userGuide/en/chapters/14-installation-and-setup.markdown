@@ -1845,7 +1845,7 @@ wizard.
 
 You've just installed and deployed Liferay Portal on Jetty - way to go!
 
-## Installing Liferay on JBoss 5.1
+## Installing Liferay on JBoss 5.1 [](id=lp-6-1-ugen14-installing-liferay-on-jboss-51-0)
 
 **Liferay Home** is one folder above JBoss's install location.
 
@@ -1859,7 +1859,7 @@ You've just installed and deployed Liferay Portal on Jetty - way to go!
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on JBoss.
 
-### Configuring Dependencies
+### Configuring Dependencies [](id=lp-6-1-ugen14-configuring-dependencies-0)
 
 First we'll take care of dependencies and potential conflicts.
 
@@ -1910,7 +1910,7 @@ it's deployed.
     jboss-ejb3-endpoint-deployer.jar
     messaging-definitions-jboss-beans.xml
 
-### Deploying Liferay
+### Deploying Liferay [](id=lp-6-1-ugen14-deploying-liferay-0)
 
 Now that we've added all of the necessary dependencies and removed unnecessary
 files, it's time to deploy Liferay.
