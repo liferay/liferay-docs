@@ -620,35 +620,50 @@ in the console output when the debug log level is set:
 At this point, scanning and registration is done and all service methods (those
 of `DLAppService` and of other services) are registered as JSON Web Services.
 
+#### Registering plugins
+
 Custom portlets can be registered and scanned, too, and their services can
 become part of the JSON API. Since scanning of portlet services is not enabled
 by default, you must add the following servlet definition in the `web.xml` of
 your portlet:
 
 	<web-app>
-
 		...
+		<filter>
+			<filter-name>Secure JSON Web Service Servlet Filter</filter-name>
+			<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+			<init-param>
+				<param-name>filter-class</param-name>
+				<param-value>com.liferay.portal.servlet.filters.secure.SecureFilter</param-value>
+			</init-param>
+			<init-param>
+				<param-name>basic_auth</param-name>
+				<param-value>true</param-value>
+			</init-param>
+			<init-param>
+				<param-name>portal_property_prefix</param-name>
+				<param-value>jsonws.servlet.</param-value>
+			</init-param>
+		</filter>
+		<filter-mapping>
+			<filter-name>Secure JSON Web Service Servlet Filter</filter-name>
+			<url-pattern>/api/jsonws/*</url-pattern>
+		</filter-mapping>
 
 		<servlet>
 			<servlet-name>JSON Web Service Servlet</servlet-name>
-				<servlet-class>com.liferay.portal.kernel.servlet.PortalClassLoaderServlet</servlet-class>
-				<init-param>
-					<param-name>servlet-class</param-name>
-					<param-value>com.liferay.portal.jsonwebservice.JSONWebServiceServlet</param-value>
-				</init-param>
+			<servlet-class>com.liferay.portal.kernel.servlet.PortalClassLoaderServlet</servlet-class>
+			<init-param>
+				<param-name>servlet-class</param-name>
+				<param-value>com.liferay.portal.jsonwebservice.JSONWebServiceServlet</param-value>
+			</init-param>
 			<load-on-startup>0</load-on-startup>
 		</servlet>
 		<servlet-mapping>
 			<servlet-name>JSON Web Service Servlet</servlet-name>
 			<url-pattern>/api/jsonws/*</url-pattern>
 		</servlet-mapping>
-		<servlet-mapping>
-			<servlet-name>JSON Web Service Servlet</servlet-name>
-			<url-pattern>/api/secure/jsonws/*</url-pattern>
-		</servlet-mapping>
-
 		...
-
 	</web-app>
 
 This enables the servlet to scan and register your portlet's JSON Web Services.
@@ -683,12 +698,17 @@ names starting with `get`, `is` or `has` are assumed to be read-only methods and
 are therefore mapped as GET HTTP methods, by default. All other methods are
 mapped as POST HTTP methods.
 
-Non-public service methods require the user to be registered before invoking the
-method. For those calls, users must specify a URL of the following convention:
+##### Plugins mapping
 
-	http://[server]:[port]/api/secure/jsonws/[service-class-name]/[service-method-name]
+For plugins, you have two options how to access JSON Web Services. The first one is via plugin context:
 
-Note the `secure` part of the URL.
+	http://localhost:8080/[portlet-context]/api/jsonws/[service-class-name]/[service-method-name]
+
+This way, however, we are calling the service in separate web application, that is not aware of the current user session at portal; therefore accessing services this way requires additional authentication. More convenient way to access plugin JSON Web Services is via portal context:
+
+	http://localhost:8080/api/jsonws/[portlet-context].[service-class-name]/[service-method-name]
+
+Requests sent this way share authentication information with portal. Liferay JavaScript API for services is calling plugin services this way.
 
 #### Listing available JSON Web Services [](id=lp-6-1-dgen08-listing-available-json-web-services-0)
 
