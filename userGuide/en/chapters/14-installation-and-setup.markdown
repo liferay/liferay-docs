@@ -241,8 +241,8 @@ can skip to the next section.
 
 ![Tip](../../images/02-tip.png) **Note:** This is not the recommended set up
 for Liferay installations but is documented here so enterprises with more
-restrictive standards can install Liferay with more strict-—but
-suboptimal—-database settings. If it's at all possible, Liferay recommends that
+restrictive standards can install Liferay with more strict -- but
+suboptimal -- database settings. If it's at all possible, Liferay recommends that
 you use the automatic method as documented above instead of the procedure
 outlined below.
 
@@ -254,8 +254,8 @@ the permissions over the database necessary for Liferay and its plugins to
 maintain their tables. For these organizations, Select, Insert, Update and
 Delete are the only permissions allowed so we will go over how to set up the
 database manually. If your organization *is* willing to grant the Liferay user
-ID permissions to create and drop tables in the database—-and this is the
-recommended configuration-—by all means, use the recommended configuration. 
+ID permissions to create and drop tables in the database -- and this is the
+recommended configuration -- by all means, use the recommended configuration. 
 
 Creating the database is simple: grant the ID Liferay uses to access the
 database full rights to do anything to the database. Then install Liferay and
@@ -1845,6 +1845,101 @@ wizard.
 
 You've just installed and deployed Liferay Portal on Jetty - way to go!
 
+## Installing Liferay on JBoss 5.1 [](id=lp-6-1-ugen14-installing-liferay-on-jboss-51-0)
+
+**Liferay Home** is one folder above JBoss's install location.
+
+1. Download and install JBoss EAP 5.1.x into your preferred directory. This
+   directory is referred to as `$JBOSS_HOME` throughout this section.
+
+2. Download the latest version of the Liferay Portal `.war` file.
+
+3. Download Liferay's Portal Dependencies.
+
+Now that you have all of your installation files, you are ready to start
+installing and configuring Liferay on JBoss.
+
+### Configuring Dependencies [](id=lp-6-1-ugen14-configuring-dependencies-0)
+
+First we'll take care of dependencies and potential conflicts.
+
+1. Unzip Liferay's dependencies to `$JBOSS_HOME/server/default/lib`.
+
+2. Download your database driver `.jar` file and put it into the folder as
+   well. For demonstration purposes, we'll download the MySQL Connector/J
+   driver from [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/)
+   and put its `.jar` file into the `$JBOSS_HOME/server/default/lib` folder.
+
+
+3. Next we'll delete JBoss's Hibernate Validator and HSQL JARs to prevent
+   conflicts with Liferay's JARs. Remove the following files from
+   `$JBOSS_HOME/common/lib`:
+
+    hibernate-validator.jar
+    hsqldb.jar
+    hsqldb-plugin.jar
+
+Next we need to clean up the entries for the JAR files that we deleted.
+
+1. Open `$JBOSS_HOME/server/default/conf/login-config.xml` in a text editor.
+
+2. Comment out the blocks with the name `HsqlDBRealm` and `JmsXARealm` around
+   lines 41-64.
+
+We'll also delete some other files that can cause conflicts with Liferay when
+it's deployed.
+
+1.  Remove the following files from `$JBOSS_HOME/../server/default/deploy`:
+
+    /messaging
+	ejb2-container-jboss-beans.xml
+    ejb2-timer-service.xml
+    ejb3-connections-jboss-beans.xml
+    ejb3-container-jboss-beans.xml
+    ejb3-interceptors-aop.xml
+    ejb3-timerservice-jboss-beans.xml
+    hsqldb-ds.xml
+    jms-ra.rar
+    mail-ra.rar
+    mail-service.xml
+    profile-service-secured.jar
+    uuid-key-generator.sar
+
+2. Delete the following in `$JBOSS_HOME/../server/default/deployers`:
+
+    jboss-ejb3-endpoint-deployer.jar
+    messaging-definitions-jboss-beans.xml
+
+### Deploying Liferay [](id=lp-6-1-ugen14-deploying-liferay-0)
+
+Now that we've added all of the necessary dependencies and removed unnecessary
+files, it's time to deploy Liferay.
+
+1. Navigate to `$JBOSS_HOME/../server/default/deploy/ROOT.war` and delete all
+   the content of the folder.
+
+2. Extract the contents of the Liferay WAR file into this folder.
+
+3. Delete the following files from the `$JBOSS_HOME/ROOT.war/WEB-INF/lib`:
+	
+    jaxrpc.jar
+    stax.jar
+    xercesImpl.jar
+    xml-apis.jar
+
+4. Create a portal-ext.properties file in `$LIFERAY_HOME` (one level above
+   `$JBOSS_HOME` and add the following properties:
+
+     NOTE: The autodeploy folder must be set with the full name of the folder -
+	 you can't use any variables to define the location
+
+		auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy 
+		auto.deploy.deploy.dir=C:/JBoss-<version>/deploy
+
+5. Start the JBoss Application Server.
+
+Liferay is now successfully installed on JBoss 5.1. 
+
 ## Installing Liferay on JBoss 7 [](id=lp-6-1-ugen11-installing-liferay-on-jboss-7-0)
 
 **Liferay Home** is one folder above JBoss's install location.
@@ -2273,14 +2368,14 @@ for your main application cluster. Please see the following example:
 - If you're on Windows, create a batch script `$RESIN_HOME/bin/run.bat` and
   insert the following text in the script:
 
-	..\resin.exe console
+        ..\resin.exe console
 
 - If you're on Unix/Linux, create shell script `$RESIN_HOME/bin/run.sh` and
   insert the following text in the script:
 
-	#!/bin/sh
+        #!/bin/sh
 
-	./resin.sh $
+        ./resin.sh $
 
 3. Create the folder `$RESIN_HOME/log` if it doesn't already exist. As you run
    Resin, the server generates log files `access`, `jvm-default` and

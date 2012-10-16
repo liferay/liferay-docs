@@ -681,12 +681,69 @@ a 6.1 installation. If you're running a previous version of Liferay and need to
 upgrade to 6.0 first, please see the instructions in the previous version of
 this document. 
 
-### Upgrading Liferay Portal 6.0 to Liferay Portal 6.1 [](id=lp-6-1-ugen16-upgrading-liferay-portal-60-to-liferay-portal-61-0)
+### Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1 [](id=lp-6-1-ugen16-upgrading-liferay-portal-60-to-liferay-portal-61-0)
 
-There are a few things you'll want to prepare before you actually perform the
-upgrade. Specifically, you'll need to review your image gallery usage, review
-new Liferay 6.1 defaults, and catalog all the plugins you have installed. After
-you've performed these three tasks, you'll be ready to upgrade. 
+There are a few things you should prepare before you actually perform the
+upgrade. Specifically, you need to make sure you've migrated to permission
+algorithm 6, reviewed your image gallery usage, reviewed new Liferay 6.1
+defaults, and cataloged all the plugins you have installed. After you've
+performed these three tasks, you're ready to upgrade. Let's look at them one by
+one. 
+
+### Migrate to Algorithm 6 [](id=lp-6-1-ugen17-migrate-to-algorithm-6-0)
+
+If your Liferay installation has existed for a while, you may be on a different
+permission algorithm than the one that's available in Liferay Portal 6.1.
+Permission algorithms 1-5 were deprecated in Liferay Portal 6.0, and they've now
+been removed in 6.1, which means you must migrate *before* you upgrade. 
+
+If you're on Liferay 5.2 or below, you need to upgrade to the latest available
+release of Liferay 6.0 first. Please follow the instructions in the [*Liferay
+Portal Administrator's
+Guide*](https://www.liferay.com/documentation/liferay-portal/6.0/administration/-/ai/upgrading-lifer-4)
+to do this. We will assume for the rest of this section that you have 6.0
+running, and that it's configured to use an older algorithm than algorithm 6. 
+
+The first thing you need to do, if this is not done already, is to upgrade your
+installation to algorithm 5. If you've already done that, great! You can skip
+the rest of this paragraph. If not, shut down your server, edit your
+`portal-ext.properties` file, and modify/add the following property so that it
+reads like this: 
+
+	permissions.user.check.algorithm=5
+
+Restart your server. As Liferay starts, it upgrades your permissions algorithm
+to algorithm 5. Review your system to make sure that your permissions
+configuration is working properly (it should be). 
+
+Next, log in as an Administrator and navigate to the Control Panel. Go to *Server
+Administration* and select *Data Migration* from the menu along the top of the
+screen. A section entitled *Legacy Permissions Migration* appears at the
+bottom of the page.
+
+![Figure 17.9: Update your permissions algorithm by clicking the *Execute*
+button.](../../images/17-convert-permissions-algorithm.png)
+
+Algorithms 5 and 6 do not support adding permissions at the user level. If you
+have permissions set for individual users, the converter can simulate this for
+you. To do this, it auto-generates roles for each individual permission, and
+then assigns those roles to the users who have individualized permissions. If
+you have a lot of these, you'll likely want to go through and clean them up
+after the conversion process. To generate these roles, check the *Generate
+Custom Roles* box. If you do not generate the roles, all custom permissions set
+for individual users are discarded. 
+
+Click *Execute* to convert all existing users and roles to algorithm 6. When the
+process completes, shut down your server. Edit your `portal-ext.properties` file
+and modify the algorithm property to show that you're now using algorithm 6: 
+
+	permissions.user.check.algorithm=6
+
+Restart your server. Congratulations! You've successfully migrated your
+installation to use the latest, highest performing permissions algorithm. Next,
+you'll need to explicitly set your Image Gallery storage option. 
+
+### Migrate Your Image Gallery Images [](id=lp-6-1-ugen17-migrate-your-image-gallery-images-0)
 
 Liferay 6.1 introduces a major change to how Liferay handles files. No longer do
 we have a separate Document Library and Image Gallery; instead, these have been
@@ -707,6 +764,16 @@ process. Below are the three properties; you'll need to set only *one* of them
     image.hook.impl=com.liferay.portal.image.DatabaseHook
     image.hook.impl=com.liferay.portal.image.DLHook
     image.hook.impl=com.liferay.portal.image.FileSystemHook
+
+By default, Liferay 6.0 used the `FileSystemHook`. If you never customized this
+property for your installation, you'd use the `FileSystemHook` property above.
+If you customized the property, you should know which one you used, and it is
+likely already in your `portal-ext.properties` file. 
+
+The third thing you need to do to prepare for your upgrade is to review the new
+property defaults. 
+
+### Review the New 6.1 Properties Defaults [](id=lp-6-1-ugen17-review-the-new-61-properties-defaults-0)
 
 The next thing you'll need to look at are the defaults that have changed from
 6.0 to 6.1. These are preserved in `portal-legacy-6.0.properties` in the source.
@@ -734,7 +801,13 @@ JAVA_OPTS. The scripts `setenv.sh` or `setenv.bat` are not delivered with
 default Tomcat, but do exist in the bundles. If they're there, Tomcat uses them
 in the startup process, so it's a nice way to separate your own settings from
 Tomcat's default shell scripts. Alternatively, of course, you can override some
-or all of them in your `portal-ext.properties` along with your other overrides. 
+or all of them in your `portal-ext.properties` along with your other overrides.
+
+If you're not using Tomcat, check your application server's documentation to see
+how to modify runtime properties. Your final task is to catalog all the plugins
+you have installed, so you can install the new versions in your upgraded system. 
+
+### Catalog all the plugins you have installed [](id=lp-6-1-ugen17-catalog-all-the-plugins-you-have-installed-0)
 
 Finally, you need to take note of any plugins you have installed. Liferay's
 plugins are usually version-specific, so you'll need to obtain new versions of
@@ -743,9 +816,9 @@ development team, they'll need to build, test, and optionally modify them to
 work with the new release of Liferay. Don't attempt an upgrade without
 collecting all the plugins you'll need first. 
 
-Once you've reviewed your properties and collected all the plugins you'll need,
-you're ready to follow the upgrade procedure. Remember to back up your system
-before you begin. 
+Once you've upgraded your permissions algorithm, reviewed your properties, and
+collected all the plugins you'll need, you're ready to follow the upgrade
+procedure. Remember to back up your system before you begin. 
 
 There are two different procedures to upgrade Liferay. The first one, upgrading
 a Liferay bundle, is the most common. The second procedure is for upgrading a
@@ -778,19 +851,20 @@ longest.
    2. Copy your `portal-ext.properties` file and your `data` folder to the new
       bundle. 
 
-   3. Review your `portal-ext.properties` file as described above. If you were
-      using the Image Gallery, make the necessary modifications so your files
-      are migrated to Documents and Media. Review the new defaults and decide
-      whether you want to use them. Review any other modifications you've made. 	
+   3. Review your `portal-ext.properties` file as described above. Make sure
+	  you're using permissions algorithm 6. If you were using the Image Gallery,
+      make the necessary modifications so your files are migrated to Documents and
+      Media. Review the new defaults and decide whether you want to use them. Review
+      any other modifications you've made. 	
 
    4. Start your application server. Watch the console as Liferay starts: it
-      should upgrade the database automatically.
+      upgrades the database automatically.
 
    5. When the upgrade completes, install any plugins you were using in your old
       version of Liferay. Make sure you use the versions of those plugins that
       are designed for Liferay 6.1. If you have your own plugins, your
       development team will need to migrate the code in these ahead of time and
-      provide .war files to you.  
+      provide .war files for you.  
 
    6. Browse around in your new installation and verify everything is working.
       Have your QA team test everything. If all looks good, you can delete the
