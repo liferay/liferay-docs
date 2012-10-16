@@ -1186,10 +1186,17 @@ acquired the plugin, you need to download and install it. To do so, navigate to
 the Purchased section of the Control Panel, find your Device Recognition
 Provider plugin, and click on *Download* and then *Install*.
 
-Installation Note: in case your server doesn't have access to the web, you will get an error ("SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder"").
-This occurs because WURLF needs to download device information from the web. 
-It can be easily fixed by downloading download from http://www.slf4j.org/download.html, copying slf4j-log4j12.jar to <LIFERAY_HOME>/wurfl-web/WEB-INF/lib folder 
-and restart your Liferay instance.
+**Installation Note:** If your server doesn't have access to the outside
+Internet, an error appears in your log: `SLF4J: Failed to load class
+"org.slf4j.impl.StaticLoggerBinder`. This occurs because WURFL by default
+downloads device information from the web. You can provide the same information
+to WURFL manually by downloading the SLF4J distribution from
+[http://www.slf4j.org/download.html](http://www.slf4j.org/download.html),
+unzipping the resulting file, copying `slf4j-log4j12.jar` to
+`[WEB_APP_HOME]/wurfl-web/WEB-INF/lib` folder, and restarting your Liferay
+instance. On some application servers, you'll need to add this .jar file to the
+`wurfl-web.war` file first (in the directory noted above) before deploying the
+file to your server. 
 
 You can access the Mobile Device Rules administrative page from the Content
 section of the Control Panel. Select the appropriate scope using the context
