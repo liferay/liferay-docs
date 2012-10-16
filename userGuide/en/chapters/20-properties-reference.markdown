@@ -5834,19 +5834,6 @@ Set the HTTP connection timeout in milliseconds for reading RSS feeds.
 
 	rss.connection.timeout=2000	
 
-## Search Portlet [](id=search-portlet)
-
-Set any of these to `false` to disable the portlet from being searched by the Search portlet.
-
-	com.liferay.portlet.blogs.util.BlogsOpenSearchImpl=true
-	com.liferay.portlet.bookmarks.util.BookmarksOpenSearchImpl=true
-	com.liferay.portlet.calendar.util.CalendarOpenSearchImpl=true
-	com.liferay.portlet.directory.util.DirectoryOpenSearchImpl=true
-	com.liferay.portlet.documentlibrary.util.DLOpenSearchImpl=true
-	com.liferay.portlet.journal.util.JournalOpenSearchImpl=true
-	com.liferay.portlet.messageboards.util.MBOpenSearchImpl=true
-	com.liferay.portlet.wiki.util.WikiOpenSearchImpl=true
-
 ## Sites Admin Portlet [](id=sites-admin-portlet)
 
 Set this to `true` to allow site members to see the Sites Admin portlet and the sites he is a member of in the control panel. Setting this to `false` will only allow administrators to see this portlet in the control panel.

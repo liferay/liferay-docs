@@ -913,3 +913,202 @@ For more information on friendly URL mapping, you can check full discussion of
 this topic in [*Liferay in Action*](http://manning.com/sezov). But, next, let's
 make our site look "top notch" by using Liferay Themes.
 
+## Localize Your Portlet [](id=localize-your-portlet)
+
+If your portlets target international customers, you need to localize your
+portlet user interface for particular locations. What's nice about this is that
+all existing translated messages in the portal core are accessible from plugins
+projects and this is wind at developers' backs. You can always check for
+presence of any key in core `Language.properties` file and include it in your
+jsp with `<liferay-ui:message>` tag:
+
+	<liferay-ui:message key="your-message-key" />
+
+Doing this saves a lot of time needed for maintenance and translation, 
+since you'll always have up to date translations for multiple languages.
+Additionally, your portlet blends better into Liferay's UI conventions. If you
+need further localization keys, you can follow the instructions below and
+deliver a perfect portlet to your customers.
+
+### Your Localization Plan [](id=your-localization-plan)
+
+Before we dive into localizations, we should consider some questions that
+will make our life easier later:
+
+- Does my plugin contain more than one portlet? This is very important if
+  portlets share the same UI elements and messages; you don't want to maintain
+  the same data in ten places.
+
+- Do my portlets need localized titles in portlet headers and administrative
+  tools? 
+
+- Do my portlets have to be accessible in the Control Panel? This is important
+  if you want to provide your customers fancy *Title* and *Description* features
+  like the majority of core liferay portlets. 
+
+To prove that happy-day scenarios exist not only in books, we can answer all
+these questions with "Yes!" Let's see how to do it. 
+
+### Create Resource Bundles [](id=create-resource-bundles)
+
+First, let's create resource bundles files to keep translations for the
+fictional portlets My Finances, Asset Ticker and Portfolio Manager. All three
+portlets share something in common:
+
+- All portlets use existing Liferay core messages to handle some standard
+  UI cases
+
+- All portlets deal with common financial terms and we don't want to repeat them
+  again and again for each portlet
+
+- All portlets have special keys like title, description or some context
+  related content
+
+So, assuming you have already created a plugin project and added portlets, let's
+start! Create a `content` package within your `src` plugin project folder. Next,
+create the following files:
+
+`Language.properties`: this file defines all keys that our portlets need. 
+
+For each portlet, update its `<portlet>` node in `portlet.xml` to refer to the
+resource bundle correctly:
+
+	<portlet>
+		<portlet-name>finances</portlet-name>
+		...
+		<resource-bundle>content.Language</resource-bundle>
+		...
+	</portlet>
+	<portlet>
+		<portlet-name>portfolio</portlet-name>
+		...
+		<resource-bundle>content.Language</resource-bundle>
+		...
+	</portlet>
+	<portlet>
+		<portlet-name>ticker</portlet-name>
+		...
+		<resource-bundle>content.Language</resource-bundle>
+		...
+	</portlet>
+
+At this point our portlets are ready to deliver a localized UI.
+
+Please note: despite the fact that you can name your localization file as you
+want, and you can name different files for each existing portlet inside your
+plugin, there is a huge benfit if you follow the Liferay naming convention: your
+portlets can share properties, and the `build-lang` Ant task works. Once 
+you've created `Language.properties` and have filled it with keys and values,
+you use the Ant `build-lang` task to build the translations. This task performs
+the following operations: 
+
+- Creates translation files for other languages
+
+- Translates English text to target language if you've set up the API key
+
+- Keeps all created translations synchronized with `Language.properties`. You can
+  run this task any time during development. It significantly reduces the 
+  time spent on the maintanance of translations. 
+
+Next, we'll see how to localize portlet titles and descriptions. 
+
+### Portlet Title and Description In Control Panel [](id=lp-6-1-dgen03-portlet-title-and-description-in-control-panel-0)
+
+Some of you may have noticed that your Control Panel-enabled portlets are
+missing that super fancy must-have portlet title and description in Control
+Panel. To make your portlet look cool within the Control Panel, for each portlet
+you can create specially tailored description and title keys in
+`Language.properties`. You can do this by creating a key from the following
+components: 
+
+- `javax.portlet.title.` prefix that marks the key as title
+
+- `javax.portlet.description.` prefix that marks the key as description
+
+- portlet name defined in `<portlet-name>` node but with all spacers removed
+  (eg. My Portlet would be myportlet)
+
+- token `WAR`
+
+- plugin name (as created by the create script) but with all spacers/delimiters
+  removed (eg. personal-finance-portlet would be personalfinanceportlet)
+
+For example, if we had a portlet called *Portfolio*, in a portlet
+project called *personal-finance-portlet*, our key would look like this:
+`javax.portlet.title.portfolio_WAR_personalfinanceportlet`. Long enough? If you
+think this is too long for your taste, and you think you can keep track of which
+portlet is which, then apply the Liferay core portlet naming convention--set
+your portlet names as numbers! If we change our `portlet.xml` this way:
+
+	<portlet>
+		<portlet-name>1</portlet-name>
+		...
+		<resource-bundle>content.Language</resource-bundle>
+		...
+	</portlet>
+	<portlet>
+		<portlet-name>2</portlet-name>
+		...
+		<resource-bundle>content.Language</resource-bundle>
+		...
+	</portlet>
+	<portlet>
+		<portlet-name>3</portlet-name>
+		...
+		<resource-bundle>content.Language</resource-bundle>
+		...
+	</portlet>
+
+our title and description keys in `Language.properties` would be:
+
+	javax.portlet.description.1_WAR_personalfinanceportlet=...
+	javax.portlet.description.2_WAR_personalfinanceportlet=...
+	javax.portlet.description.3_WAR_personalfinanceportlet=...
+	javax.portlet.title.1_WAR_personalfinanceportlet=...
+	javax.portlet.title.2_WAR_personalfinanceportlet=...
+	javax.portlet.title.3_WAR_personalfinanceportlet=...
+
+
+---
+
+![tip](../../images/tip-pen-paper.png)**Tip:** Do you know how portlet title is
+processed? If your portlet doesn't define a resource bundle or
+`javax.portlet.title` within it, the portal container next checks the
+`<portlet-info>` and inner `<portlet-title>` node in the `portlet.xml`
+descriptor. If they are missing too, the `<portlet-name>` node value is rendered
+as portlet title.
+
+---
+
+---
+
+![tip](../../images/tip-pen-paper.png)**Tip:** Be aware that using Struts
+portlet and referring to a `StrutsResource` bundle in your `portlet.xml` engages a
+different title and description algorithm. Instead, titles and long titles are
+pulled using the following two keys:
+
+- javax.portlet.long-title.1_WAR_personalfinanceportlet
+- javax.portlet.title.1_WAR_personalfinanceportlet
+
+---
+
+### Overriding Liferay portal translations [](id=lp-6-1-dgen03-overriding-liferay-portal-translations-0)
+
+If you want your translations available throughout the portal, or if you want to
+override an existing translation, please chapter 7, specifically the *Overriding a
+Language.properties File* section which describes how to use hook to override
+existing Liferay translations. Using this technique, you can share your keys
+with other portlets, as well as override existing Liferay translations. 
+
+### Summary [](id=lp-6-1-dgen03-summary-0)
+
+When localization is important, always consider statements in a *localization
+plan*, since some portlets in your plugin and hard customer requests can make a
+mess in your localization files and keys. If possible, always reuse Liferay core
+language keys. The benefit is huge. 
+
+If there is no key you can use, you can create your own, as we have described.
+Liferay gives you all the tools necessary to make localization possible, and
+also uses a web service to provide rudimentary translations for you to use. 
+
+
