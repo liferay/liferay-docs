@@ -55,30 +55,32 @@ we also improved our release process.
 Starting with Liferay 6, each release follows a prescribed structure that is
 consistent from one release to the next. Each release has a specific number
 sequence attached to it signifying the type of release it is, whether it's a
-major, minor or maintenance relase. Each release will also have a term attached
+major, minor or maintenance release. Each release will also have a term attached
 to it to indicate its intended level of quality.
 
+The following diagram represents Liferay's release cycle:
+
+<img src="http://cdn.www.liferay.com/image/image_gallery?uuid=1d148c2c-358f-4af9-a9eb-67bc65544905&amp;groupId=10439&amp;t=1280310811791">
+
+<!--
+Change out the image since it contains SP2 & SP3, etc.???
+-->
+
 Let's start with an explanation of Liferay's version structure. Liferay versions
-are organized in a striaghtforward numerical system consisting of a three digit
-number. For example, 6.0.2. These numbers represent the type of the release:
+are organized in a straightforward numerical system consisting of a three digit
+number. For example, 6.1.2. These numbers represent the type of the release:
 Major.Minor.Maintenance.
 
-#### Maintenance Release
+#### Major Release
 
-A change in the third digit of the version scheme (e.g, 6.0.5 to 6.0.6) is a
-maintenance release, also known as a *Service Pack*. This means that:
+A change in the first digit of the version scheme (e.g., 6.x to 7.x) is a major
+release. This means that:
 
-- Each maintenance release provides an improved level of security and
-reliability.
+- There are major changes in functionality or new functionality based on high
+demand.
 
-- Customizations are generally safe, but we recommend doing a review.
-
-- No new features are included. It's possible, however, the first few
-maintenance releases can contain some changes to existing features, based on
-community feedback. For example, there were exceptions made in some 5.2
-maintenance releases, but there won't be any made for Liferay 6.
-
-These rules are relaxed when a minor or major release is still in beta quality.
+- There are architectural changes, changes to API's (as part of the deprecation
+process), or changes to internal schema.
 
 #### Minor Release
 
@@ -91,16 +93,23 @@ release. This means that:
 
 - Customers should leverage the upgrade tools and documentation.
 
-#### Major Release
+#### Maintenance Release
 
-A change in the first digit of the version scheme (e.g., 6.x to 7.x) is a major
-release. This means that:
+A change in the third digit of the version scheme (e.g, 6.1.5 to 6.1.6) is a
+maintenance release, also known as either a *Fix Pack* or a *Service Pack*. This
+means that:
 
-- There are major changes in functionality or new functionality based on high
-demand.
+- Each maintenance release provides an improved level of security and
+reliability.
 
-- There are architectural changes, changes to API's (as part of the deprecation
-process), or changes to internal schema.
+- Customizations are generally safe, but we recommend doing a review.
+
+- No new features are included. It's possible, however, the first few
+maintenance releases can contain some changes to existing features, based on
+community feedback. For example, there were exceptions made in some 5.2
+maintenance releases, but there won't be any made for Liferay 6.
+
+These rules are relaxed when a minor or major release is still in beta quality.
 
 Now lets delve into the evolution of versions.
 
@@ -129,19 +138,35 @@ minor ones. When bugs are found, Liferay fixes the issues and releases a new GA
 version. Several GA versions may be made available before the engineering team
 releases an EE version.
 
-- **Service Packs:** (6 SP1, 6 SP2, ...) These maintenance releases continue to
-come out for four years after the original release date. These releases are only
-available to customers who have the update service that comes with every
-Enterprise Edition. Liferay has a dedicated team to keep testing and do
-corrective improvements to this release, ensuring the highest quality. All fixes
-done in the service packs are also done in SVN and are part of the next minor or
-major release. This ensures the entire community benefits from having more
-people working on QA as more customers buy Liferay's Enterprise Edition
-services.
+- **Fix Packs:** (fixpack-core-1-6120,
+fixpack-documents-and-media-1-6120 ...) These are a small number of
+component-based fixes that address customers' needs. These packs will be
+released every several weeks, based on the fix pack team's discretion for
+Liferay's Enterprise Edition customers to download and install. This allows
+customers to download component-specific fixes rather than large-scale portal
+changes. Component-based fix packs also enable customers to upgrade their
+product quickly rather than waiting several months for a new service pack
+release.
 
-The following diagram represents Liferay's release cycle:
+<!--   EE-only link?
+For more details on Fix Packs, see the 
+[Fix Pack FAQ](http://www.liferay.com/group/customer/knowledge/fix-pack-faq#general-information-4).
+-->
 
-<img src="http://cdn.www.liferay.com/image/image_gallery?uuid=1d148c2c-358f-4af9-a9eb-67bc65544905&amp;groupId=10439&amp;t=1280310811791">
+- **Service Packs:** These maintenance releases just include fixes and will be
+the aggregation of fix packs bundled together. They are only available to
+customers who have the update service that comes with every Enterprise Edition.
+Liferay has a dedicated team to keep testing and do corrective improvements to
+this release, ensuring the highest quality. All fixes done in the service packs
+are also done in Git and Github and are part of the next minor or major release.
+This ensures the entire community benefits from having more people working on QA
+as more customers buy Liferay's Enterprise Edition services.
+
+- **Hot Fixes:** Hot fixes are short-term fixes given for each customer issue
+until a full fix pack is released. Unlike fix packs, hot fixes will be provided
+only on a per-ticket basis through our Liferay support team. Customers should
+always replace their hot fixes after a component-based fix pack has been
+released.
 
 #### Recommendations
 
@@ -156,28 +181,30 @@ provide us their feedback. Please note, we do not recommend using beta releases
 in production, or even during development, if you have tight deadlines since you
 may find road blocks. 
 
-- Always update to the latest maintainance release available for the minor or
-major version you are using. We recommend you switch to take advantage of bug
-fixes found by other Liferay users.
+- Always update to the latest maintenance release available for the minor or
+major version you are using. So, at the time of writing, you should be using
+Liferay 6 GA2. If Liferay releases GA3, we recommend you switch to it to take
+advantage of bug fixes found by other Liferay users.
 
 - Updating to a new maintenance release is a process requiring little effort
-from the first GA forward. For example, you can upgrade from Liferay 6 GA 1 to
-any future Liferay 6 GA or any Liferay 6 SP within hours, or days in the worst
+from the first GA forward. For example, you can upgrade from Liferay 6 GA1 to
+any future Liferay 6 GA or any fix pack within hours, or days in the worst
 case scenarios.
 
 - To ensure the updates are as easy as possible, and also to ease upgrades to
 new minor or major versions, use the best development practices when extending
-Liferay. These can be found in Liferay's
-[javadocs](http://docs.liferay.com/portal/6.1/javadocs/). At the very least, use
-plugins instead of the extension environment (or ext plugin) whenever possible.
-And always use APIs that are meant to be public (especially when using ext).
-Also avoid overriding JSPs that use a lot of logic or keep a very tight control
-of them and review them when updating for changes to the originals.
+Liferay. These can be found in Liferay's 
+[Development Guide](http://www.liferay.com/documentation/liferay-portal/6.1/development). 
+At the very least, use plugins instead of the extension environment (or ext
+plugin) whenever possible. And always use APIs that are meant to be public
+(especially when using ext). Also avoid overriding JSPs that use a lot of logic
+or keep a very tight control of them and review them when updating for changes
+to the originals.
 
-- Plugins that work in any GA or SP version will work in any later maintenance
-version. That is, a plugin developed for Liferay 6 GA 1 will also work in
-Liferay 6 GA or Liferay 6 SP3. Starting with Liferay 6, we put in place a
-testing process to ensure compatability. 
+- Plugins that work in any GA or Fix Pack version will work in any later
+maintenance version. That is, a plugin developed for Liferay 6 GA1 will also
+work in Liferay 6 GA2 or GA2 fix pack. Starting with Liferay 6, we put in place
+a testing process to ensure compatibility.
 
 - Consider investing in the updates and support services of the Enterprise
 Edition. This benefits you in two ways. First, you get quality services that add
@@ -186,11 +213,15 @@ new features that, again, enhance your Liferay installation.
 
 Liferay Portal is a very flexible application that runs well on several
 different server environments. It's easy to install and comes in either a
-Community Eddition or an Enterprise Editon, depending on your needs. Liferay
+Community Edition or an Enterprise Edition, depending on your needs. Liferay
 follows a systematic versioning system that makes it easy to keep current with
 the latest updates. The strength of the Liferay community helps detect potential
 issues early that are then reported through the forums and are later fixed in a
 series of maintenance releases.
+
+For more details on updating Liferay Portal, see the 
+[Upgrading Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/upgrading-lifer-6) 
+section in chapter 17.
 
 Now let's learn about Liferay bundles.
 
