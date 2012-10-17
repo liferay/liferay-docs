@@ -158,7 +158,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </zip>
     </target>
 
-    <target name="dist-win" depends="clean-lang, prepare-dist, concat-markdown-files-win" description="prepares document zip file for asset import on windows">
+    <target name="dist-win" depends="clean-lang, prepare-dist, concat-markdown-files" description="prepares document zip file for asset import on windows">
         <copy todir="${dist.dir}/${lang}">
             <fileset dir="${build.dir}/${lang}">
                 <include name="${lang}-${doc.dir}.markdown"/>
@@ -172,28 +172,11 @@ directory to convert the userGuide into complete English markdown, html, odt, an
 
     <target name="concat-markdown-files" depends="prepare" description="concatinates multiple markdown files into a single one">
         <echo message="... concatinating markdown files for ${doc.dir} (${lang})"/>
-        <concat destfile="./${build.dir}/${lang}/${lang}-${doc.dir}.markdown">
+        <concat destfile="./${build.dir}/${lang}/${lang}-${doc.dir}.markdown" fixlastline = "yes">
             <fileset dir="./${lang}" casesensitive="yes">
                 <include name="**/*.markdown"/>
             </fileset>
         </concat>
-    </target>
-
-    <target name="concat-markdown-files-win" depends="prepare" 
-	    description="concatinates multiple markdown files into a single one">
-	<echo message="... concatinating markdown files for ${doc.dir} (${lang}) on Windows"/>
-        <exec executable="cmd">
-            <arg value="/C" />
-            <arg value="for"/>
-            <arg value="%f"/>
-            <arg value="in"/>
-            <arg value="(.\\${lang}\\chapters\\*.markdown)"/>
-            <arg value="do"/>
-            <arg value="type"/>
-            <arg value="&quot;%f&quot;"/>
-            <arg value="&gt;&gt;"/>
-	    <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
-        </exec>
     </target>
 
     <target name="markdown-to-html" depends="check-images, add-markdown-metadata" description="converts markdown file to an html file">
@@ -214,7 +197,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </exec>      
     </target>
 
-    <target name="markdown-to-html-win" depends="check-images, concat-markdown-files-win" description="converts markdown file to an html file on windows">
+    <target name="markdown-to-html-win" depends="check-images, concat-markdown-files" description="converts markdown file to an html file on windows">
         <echo message="... converting ${doc.dir} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html +RTS K64m -RTS -o 01-chapter-02.html  01-chapter-02.markdown -->
         <exec executable="cmd">
@@ -252,7 +235,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </exec>      
     </target>
 
-    <target name="markdown-to-odt-win" depends="concat-markdown-files-win" description="converts markdown file to an ODT file on Windows">
+    <target name="markdown-to-odt-win" depends="concat-markdown-files" description="converts markdown file to an ODT file on Windows">
         <echo message="... converting ${doc.dir} (${lang}) to odt on windows"/>
         <!-- pandoc -f markdown -t odt +RTS K64m -RTS -o 01-chapter-02.odt 01-chapter-02.markdown -->
         <exec executable="cmd">
@@ -290,7 +273,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </exec>      
     </target>
 
-    <target name="markdown-to-epub-win" depends="concat-markdown-files-win" description="converts markdown file to an epub file on windows">
+    <target name="markdown-to-epub-win" depends="concat-markdown-files" description="converts markdown file to an epub file on windows">
         <echo message="... converting ${doc.dir} (${lang}) to epub"/>
         <exec executable="cmd">
             <arg value="/C" />
