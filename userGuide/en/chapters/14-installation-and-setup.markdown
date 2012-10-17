@@ -201,7 +201,7 @@ plugin) whenever possible. And always use APIs that are meant to be public
 or keep a very tight control of them and review them when updating for changes
 to the originals.
 
-- Plugins that work in any GA or Fix Pack version will work in any later
+- Plugins that work in any GA or fix pack version will work in any later
 maintenance version. That is, a plugin developed for Liferay 6 GA1 will also
 work in Liferay 6 GA2 or GA2 fix pack. Starting with Liferay 6, we put in place
 a testing process to ensure compatibility.
