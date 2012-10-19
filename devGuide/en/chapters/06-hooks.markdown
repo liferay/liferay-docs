@@ -5,7 +5,7 @@ Liferay Hooks are the preferred plugin to use in customizing Liferay's core feat
 
 -	Performing custom actions on portal startup or user login
 
--	Overriding or extend portal JSPs
+-	Overriding or extending portal JSPs
 
 -	Modifying portal properties
 
@@ -113,45 +113,87 @@ If you wish to avoid this drawback and make your JSP modifications less invasive
 
 Since this technique involves String manipulation, it's mainly useful for making a small number of changes to a JSP.
 
-## Using Application Adapters
+## Customizing Sites and Site Templates with Application Adapters
 
-Every task we have completed to this point has affected the entire portal. Wouldn't it be nice to make changes on a specific site without them being implemented portal wide? This is possible with the use of *Application Adapters*. Unlike standard hooks, application adapters allow you to scope changes to a site. In Liferay 6.1, overwriting of JSPs is supported by application adapters; that is, you can create application adapters that allow you to overwrite JSPs for a specific site in your portal.
+The hook features we have demonstrated to this point have been scoped to the portal. Wouldn't it be nice to make customizations to specific sites without propagating the customizations throughout the entire portal? This is possible with *Application Adapters* hook plugins. Unlike standard hooks, which scope changes to the portal, Application Adapters let you scope changes to sites.
 
-The first requirement is to set the "custom-jsp-global" setting to false. This will install an application adapter to your instance under the name of the hook. Also, when you are overwriting a JSP from the portal, it is recommended to include the original one, if possible. In order to include the original file using application adapters, you should use the `<liferay-util:include>` tag with the attribute `useCustomPage` set to false. Note that this is different from the mechanism used for global hooks that includes the original JSP.
+In Liferay 6.1, only overwriting of JSPs is supported by Application Adapters. That is, you can create Application Adapters for overwriting JSPs.
 
-We will complete a brief exercise which shows these requirements. Our exercise will overwrite the `view.jsp` in the *Navigation* portlet, but still include the original JSP. Follow the steps below:
+Our Sample Application Adapter can be found in the [Liferay Plugins Repository](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-application-adapter-hook). Let's go over what is required to build an Application Adapter of our own.
 
-1. First, you will need to install an application adapter to your instance. Do this by navigating to `liferay-hook.xml` in the `example-hook/docroot/WEB-INF` directory. Then add the `<custom-jsp-global>false</custom-jsp-global>` line directly beneath your existing `<custom-jsp-dir>` tags.
+### Required settings
 
-2. Navigate to `example-hook/docroot/META-INF/custom_jsps/html/portlet/navigation` and create a `view.jsp` file. Within the JSP, insert the following code:
+To create an Application Adapter, all you need is a hook with custom JSPs and the hook's global custom JSP setting turned off. Configure your `liferay-hook.xml` with the following:
 
-		<%@ taglib uri="http://liferay.com/tld/util" 
-		prefix="liferay-util" %>
+        <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+        <custom-jsp-global>false</custom-jsp-global>
 
-		<liferay-util:include page="/html/portlet/navigation/view.jsp" 
-		useCustomPage="false" />
+On deployment of the hook, Liferay installs the Application Adapter to your instance, under the name of the hook. For example, for an Application Adapter hook named "Social Office", the hook would be available to sites and site templates as an Application Adapter under the name "Social Office Hook".
 
-		<p>
-		This was modified by the Example Application Adapter.
-		</p>
+### Including an original JSP
 
-3. Go to your browser running Liferay Portal and navigate to your preferred site.
+If you overwrite a JSP from the portal, we recommende you include the original JSP (when possible).
 
-4. Select *Manage* &rarr; *Site Settings* and you will notice an *Application Adapter* field. Select *example* from the drop-down and click *Save*.
+As we've demonstrated in previous sections, for global hooks, the mechanism to include the original JSP is including the same file ending with the `.portal.jsp` suffix. For example, including the original Navigation portlet's view JSP in a global hook would look like this:
 
-	![Figure 6.5: How to enable your *Application Adapter* setting.](../../images/06-hooks-6.png)
+        <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
-5. Now navigate back to your site's navigation portlet and you will find the modification message you placed in the `view.jsp` file.
+        <liferay-util:include page="/html/portlet/navigation/view.portal.jsp" />
 
-	![Figure 6.6: You are able to view your *Example Application Adapter* message.](../../images/06-hooks-7.png)
+However, for Application Adapter hooks, the mechanism to include the original JSP involves setting the `<liferay-util:include>` tag's `useCustomPage` attribute to `false`:
 
-6. Return to a previous site and your navigation portlet will not have the modification message.
+        <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
-As you can see, the process of adding application adapters is quick and easy. Application adapters allow the implementation of custom solutions needing unique JSPs without modifying your entire portal.
+        <liferay-util:include page="/html/portlet/navigation/view.jsp" useCustomPage="false" />
 
-Likewise, developers are able to package their solutions with site templates to create a seamless experience for the user. This feature allows users to easily add templates that are customized for certain sites on their Liferay instance.
+Note, the view JSP is specified as `view.jsp`, *not* `view.portal.jsp`.
 
-Now that we are able to add application adapters, let's take a look at performing custom actions.
+### Creating an Application Adapter 
+
+Let's create an Application Adapter to overwrite the Navigation portlet's `view.jsp`. We'll include the original JSP, but add custom text after it.
+
+Follow these steps:
+
+1. Modify your hook's `liferay-hook.xml` to specify the location of your custom JSP and set the global custom JSP setting to `false`:
+
+        <hook>
+            <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+            <custom-jsp-global>false</custom-jsp-global>
+        </hook>
+
+2. Create a new `view.jsp` file in your hook's  `docroot/META-INF/custom_jsps/html/portlet/navigation` directory and insert the following code to include the original JSP:
+
+        <%@ taglib uri="http://liferay.com/tld/util" 
+        prefix="liferay-util" %>
+
+        <liferay-util:include page="/html/portlet/navigation/view.jsp" 
+        useCustomPage="false" />
+
+        <p>
+        This was modified by the Example Application Adapter.
+        </p>
+
+3. Deploy your Application Adapter hook plugin.
+
+4. Open your Liferay Portal instance in your browser and go to the site in which you want to use the Application Adapter.
+
+5. Select *Manage* &rarr; *Site Settings* and notice the *Application Adapter* field. Select *example* from its drop-down menu and click *Save*.
+
+    ![Figure 6.5: Your *Application Adapters* are easily accessible in your Site's settings.](../../images/06-hooks-select-site-app-adapter.png)
+
+6. Navigate back to your site's Navigation portlet to verify the modification message displayed by your Application Adapter hook plugin's `view.jsp` file.
+
+    ![Figure 6.6: You are able to view the custom message of your *Example Application Adapter*.](../../images/06-hooks-app-adapter-content-displays.png)
+
+7. Navigate to a different site's Navigation portlet to verify that only the content of the portlet's *original* `view.jsp` file displays.
+
+See how easy it is to add an Application Adapter?!
+
+Application Adapters can also be applied to Site Templates. Developers can package their solutions with Site Templates that leverage Application Adapters, making them seamless to the user. 
+
+For example, you could make an Enterprise Resource Planning (ERP) solution for a company's departments. Since your ERP solution requires an extension of Liferay's Wiki Portlet, you implement that extension as an Application Adapter. You incorporate the Application Adapter in a Site Template (named "ERP site") for the company's ERP sites. The company's administrative user creates the sites by going to *Control Panel* &rarr; *Sites* and adding sites based on the "ERP site" template. The added sites include your Application Adapter automatically.
+
+Now that you know how to make site customizations using Application Adapters, let's take a look at performing custom actions.
 
 ## Performing a Custom Action [](id=performing-a-custom-acti-4)
 
