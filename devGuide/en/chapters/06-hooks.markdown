@@ -3,6 +3,8 @@
 
 Liferay Hooks are the preferred plugin to use in customizing Liferay's core features. Hooks can fill a wide variety of the common needs for overriding Liferay core functionality. Hooks should be used in place of Ext plugins, whenever possible, as they are hot-deployable and more forward compatible. Some common scenarios to which you can apply a hook are:
 
+-   Overriding web resources
+
 -	Performing custom actions on portal startup or user login
 
 -	Overriding Struts actions
@@ -83,7 +85,20 @@ In Developer Studio, the hook structure can be viewed in the *Package Explorer* 
 
 ![Figure 6.4: Package Explorer view of hook plugin](../../images/06-hooks-3.png)
 
-## Overriding a JSP [](id=overriding-a-j-4)
+In the next section, we'll take a look at how a hook can override web resources, and we'll demonstrate replacing a portal JSP using a hook.
+
+## Overriding web resources [](id=overriding-a-j-4)
+
+A common use for hooks is overriding web resources. Likewise, you can overwrite any resource in `portal-web`. For example, you can use a hook to override JSP files, JSPF files, Javascript files, CSS files, or images.
+
+---
+
+![important](../../images/tip-pen-paper.png)**Important:** Note the requisites for the following resources:
+
+-	***JSPF:*** when modifying a JSPF file, the changes won't take effect unless you modify the JSP which is including it.
+-	***CSS:*** when modifying a CSS file which is imported by another one, the changes won't take effect unless you modify the parent CSS file (usually `main.css`).
+
+---
 
 One of the simplest tasks a hook can perform is replacing a portal JSP. In this example we will modify your portal's *Terms of Use* page. First, create the directory `hooks/example-hook/docroot/META-INF/custom_jsps`. Next, edit `hooks/example-hook/docroot/WEB-INF/liferay-hook.xml`, and add the following between `<hook></hook>`:
 
