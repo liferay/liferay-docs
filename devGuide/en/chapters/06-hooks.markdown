@@ -3,6 +3,8 @@
 
 Liferay Hooks are the preferred plugin to use in customizing Liferay's core features. Hooks can fill a wide variety of the common needs for overriding Liferay core functionality. Hooks should be used in place of Ext plugins, whenever possible, as they are hot-deployable and more forward compatible. Some common scenarios to which you can apply a hook are:
 
+-   Overriding web resources
+
 -	Performing custom actions on portal startup or user login
 
 -	Overriding Struts actions
