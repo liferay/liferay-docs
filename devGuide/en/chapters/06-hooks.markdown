@@ -149,15 +149,15 @@ On deployment of the hook, Liferay installs the Application Adapter to your inst
 
 ### Including an original JSP
 
-If you overwrite a JSP from the portal, we recommende you include the original JSP (when possible).
+If you overwrite a JSP from the portal, we recommend you include the original JSP (when possible).
 
-As we've demonstrated in previous sections, for global hooks, the mechanism to include the original JSP is including the same file ending with the `.portal.jsp` suffix. For example, including the original Navigation portlet's view JSP in a global hook would look like this:
+As we've demonstrated in previous sections, for global hooks, the mechanism to include the original JSP is to reference the original JSP file from an `<liferay-util:include>` tag, but to modify the original file's name to end with a `.portal.jsp` suffix. For example, including the original Navigation portlet's view JSP in a global hook would look like this:
 
         <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
         <liferay-util:include page="/html/portlet/navigation/view.portal.jsp" />
 
-However, for Application Adapter hooks, the mechanism to include the original JSP involves setting the `<liferay-util:include>` tag's `useCustomPage` attribute to `false`:
+However, for Application Adapter hooks, the mechanism to include the original JSP simply involves setting the `<liferay-util:include>` tag's `useCustomPage` attribute to `false`:
 
         <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
@@ -167,7 +167,7 @@ Note, the view JSP is specified as `view.jsp`, *not* `view.portal.jsp`.
 
 ### Creating an Application Adapter 
 
-Let's create an Application Adapter to overwrite the Navigation portlet's `view.jsp`. We'll include the original JSP, but add custom text after it.
+Let's create an Application Adapter hook plugin, named `example-hook`, to overwrite the Navigation portlet's `view.jsp`. We'll include the original Navigation portlet's JSP, but add custom text after its contents.
 
 Follow these steps:
 
