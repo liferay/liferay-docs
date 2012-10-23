@@ -453,7 +453,6 @@ portal Struts action. Insert the following code:
 	
 	---
 
-
     You're done implementing the override of the Struts actions! Next, let's get
     our new Struts path working.
 
@@ -501,7 +500,7 @@ Try your new Struts path by accessing it from your browser (e.g.
 browser.](../../images/06-hooks-5.png)
 
 So, as you might have expected, it is just as easy to extend or override portal
-properties. Let's take a look! properties. Let's take a look!
+properties. Let's take a look!
 
 ## Extending and Overriding *portal.properties* [](id=extending-and-overriding-<em>portal-properties<-e-1)
 
