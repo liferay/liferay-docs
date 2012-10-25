@@ -142,14 +142,13 @@ product quickly, rather than waiting several months for a new release.
 
 - **Hot Fixes:** These are short-term fixes given for each customer issue until
 a full fix pack is released. Unlike fix packs, hot fixes will be provided only
-on a per-ticket basis through our Liferay support team. Customers should always
-replace their hot fixes after a component-based fix pack has been released.
+on a per-ticket basis through our Liferay support team.
 
 - **Aggregated Fix Packs:** These maintenance releases include only fixes and
-will be a combination of previous fix packs bundled together. A new bundle of
-Liferay will be released approximately every six months, or so. These fix packs
-will be integrated into the release before the customer downloads the new
-bundles.
+will be a combination of previous fix packs bundled together. A new bundle will
+be released approximately every six months to one year, depending on the nature
+of the fixes. These fix packs will be integrated into the release before the
+customer downloads the new bundles.
 
 #### Comments and Recommendations
 
