@@ -130,7 +130,7 @@ If you wish to avoid this drawback and make your JSP modifications less invasive
 
 Since this technique involves String manipulation, it's mainly useful for making a small number of changes to a JSP.
 
-## Customizing Sites and Site Templates with Application Adapters
+## Customizing Sites and Site Templates with Application Adapters [](id=lp-6-1-dgen06-customizing-sites-and-site-templates-with-application-adapt-0)
 
 The hook features we have demonstrated to this point have been scoped to the portal. Wouldn't it be nice to make customizations to specific sites without propagating the customizations throughout the entire portal? This is possible with *Application Adapters* hook plugins. Unlike standard hooks, which scope changes to the portal, Application Adapters let you scope changes to sites.
 
@@ -138,7 +138,7 @@ In Liferay 6.1, only overwriting of JSPs is supported by Application Adapters. T
 
 Our Sample Application Adapter can be found in the [Liferay Plugins Repository](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-application-adapter-hook). Let's go over what is required to build an Application Adapter of our own.
 
-### Required settings
+### Required settings [](id=lp-6-1-dgen06-required-settings-0)
 
 To create an Application Adapter, all you need is a hook with custom JSPs and the hook's global custom JSP setting turned off. Configure your `liferay-hook.xml` with the following:
 
@@ -147,7 +147,7 @@ To create an Application Adapter, all you need is a hook with custom JSPs and th
 
 On deployment of the hook, Liferay installs the Application Adapter to your instance, under the name of the hook. For example, for an Application Adapter hook named "Social Office", the hook would be available to sites and site templates as an Application Adapter under the name "Social Office Hook".
 
-### Including an original JSP
+### Including an original JSP [](id=lp-6-1-dgen06-including-an-original-jsp-0)
 
 If you overwrite a JSP from the portal, we recommend you include the original JSP (when possible).
 
@@ -165,7 +165,7 @@ However, for Application Adapter hooks, the mechanism to include the original JS
 
 Note, the view JSP is specified as `view.jsp`, *not* `view.portal.jsp`.
 
-### Creating an Application Adapter 
+### Creating an Application Adapter  [](id=lp-6-1-dgen06-creating-an-application-adapter--0)
 
 Let's create an Application Adapter hook plugin, named `example-hook`, to overwrite the Navigation portlet's `view.jsp`. We'll include the original Navigation portlet's JSP, but add custom text after its contents.
 
@@ -496,7 +496,7 @@ Both of your custom Struts actions are executed via your Struts action hook!
 Try your new Struts path by accessing it from your browser (e.g.
 `http://localhost:8080/c/portal/sample`).
 
-![Figure 6.5: Your new Struts action displays *Hello World!* in your
+![Figure 6.7: Your new Struts action displays *Hello World!* in your
 browser.](../../images/06-hooks-5.png)
 
 So, as you might have expected, it is just as easy to extend or override portal
