@@ -32,12 +32,18 @@ other than the portal host, or even from the portal host itself.
 - *Service Security:* Leveraging the service security layers provided in
 Liferay's service oriented architecture (SOA).
 
--	*SOAP Web Services:* Consuming services via Liferay's SOAP interface.
+- *SOAP Web Services:* Consuming services via Liferay's SOAP interface.
 
 - *JSON Web Services:* Consuming services via Liferay's JSON service interface.
 
 - *Service Context:* Understanding what the service context is, how it can be
 used in services, and how to use it in calling services.
+
+- *Using Message Bus:* Exchanging string messages within Liferay using the
+Message Bus.
+
+- *Device Detection:* Detecting the capabilities of a device that is making
+requests to a portal.
 
 First, let's consider invoking Liferay's services locally.
 
@@ -2265,7 +2271,79 @@ following from Message Bus:
 -	*Serial* and *in-parallel* message dispatching
 -	Java and JSON message types
 
-You're really getting the hang of Liferay's APIs. Way to go!
+In the next section, you'll explore the Device Detection API and its capabilities. 
+
+## Device Detection
+
+As you know, internet traffic has risen exponentially over the past decade and
+shows no sign of stopping. With the latest and greatest devices, mobile internet
+access has become the norm and is predicted to pass PC based internet access
+soon. Because of the mobile boom, new obstacles and challenges are presented for
+content management. How will content adapt to all devices with different
+capabilities? How can your grandma's gnarly tablet and cousin's awesome new
+mobile phone request the same information from your portal?
+
+The Device Detection API is used for detecting the capabilities of a device that
+is making a request to your portal. In addition, the Device Detection API allows
+Liferay to detect which mobile device or operating system is being used for any
+given request and alters the rendering of pages based on the detected device. To
+install this feature, you will need to install the *Device Recognition Provider*
+app from Liferay Marketplace. Based on your Liferay edition, you can select the
+appropriate link for more info and download information: [Device Recognition
+CE](http://www.liferay.com/marketplace/-/mp/application/15193341) or [Device
+Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132).
+
+The *Device Recognition* plugin, which is bundled inside the Device Recognition
+Provider app, uses a device database called *WURFL* to determine the
+capabilities of your device. You can visit their site for more information at
+[http://wurfl.sourceforge.net/](http://wurfl.sourceforge.net/).
+
+You could create your own plugin to use your own device's database. Let's go
+through some simple ways to use the Device Detection API and its capabilities.
+
+### Using the Device API
+
+We will go over a couple of code snippets that will help you get started. The
+object `Device` can be obtained from the `themeDisplay` object like this:
+
+    Device device = themeDisplay.getDevice();
+
+For reference, you can view the API in the [Device
+Javadocs](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
+Using some of the methods from the javadocs, here is an example that obtains the
+dimensions of a device:
+
+    Dimensions dimensions =device.getScreenSize();
+    float height = dimensions.getHeight();
+    float width = dimensions.getWidth();
+
+Now, your device can obtain the `Device` object and can obtain the dimensions of
+a device. Of course, you can acquire many other values that take care of those
+pesky problems that arise when sending content to different devices. Simply
+refer to the previously mentioned Device javadocs for assistance. Let's go
+through some device capabilities.
+
+### Device capabilities
+
+Most of the capabilities of a device can be detected, but this depends on the
+device detection implementation you're using. For the Device Recognition plugin,
+you can view its device database's (WURFL) list of capabilities
+[here](http://www.scientiamobile.com/wurflCapability/tree). For an example, you
+can obtain the capability of a brand name by using this code:
+
+    String brand = device.getCapability("brand_name");
+
+Furthermore, you can grab many other values such as model_name, marketing_name,
+release_date, etc. Also, there are boolean values that can be acquired that
+include: is_wireless_device, is_tablet, etc. Keeping the capabilities list in
+mind when configuring your device is very helpful.
+
+You're able to detect the capabilites of a device making a request to your
+portal by using the Device Detection API. Through the use of this API, your
+grandma's gnarly tablet and cousin's awesome new mobile phone can make requests
+to your portal and receive identical content. This will make everyone happy!
+
+You're really getting the hang of Liferay's APIs. Way to go! 
 
 ## Conclusion [](id=conclusi-4)
 
