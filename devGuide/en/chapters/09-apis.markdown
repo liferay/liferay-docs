@@ -620,7 +620,7 @@ in the console output when the debug log level is set:
 At this point, scanning and registration is done and all service methods (those
 of `DLAppService` and of other services) are registered as JSON Web Services.
 
-#### Registering Plugin JSON Web Services
+#### Registering Plugin JSON Web Services [](id=lp-6-1-dgen09-registering-plugin-json-web-services-0)
 
 Custom portlets can be registered and scanned for JSON web services, too.
 Services that use the `@JSONWebService` annotation become part of the JSON API. Since scanning of portlet
