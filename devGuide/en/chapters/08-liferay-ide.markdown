@@ -1238,12 +1238,6 @@ email notification template.
 ![Figure 8.66: You can edit your email template using the Freemarker
 editor.](../../images/kaleo-42.png)
 
-<!-- TODO incorporate applicable information in this chapter
-For more information on writing email notifications, visit the Liferay
-blog [Workflow in Action: Kaleo email
-notifications](http://www.liferay.com/web/igor.beslic/blog/-/blogs/workflow-in-action-kaleo-email-notifications?_33_redirect=http%3A%2F%2Fwww.liferay.com%2Fweb%2Figor.beslic%2Fblog%3Fp_p_id%3D33%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-2%26p_p_col_count%3D1).
--->
-
 You've successfully completed setting up an email notification! Now, when the
 Project Management task node is activated in the workflow, the user we specified
 (i.e. *joe*) will receive the notification email dressed up with your FreeMarker
@@ -1252,8 +1246,147 @@ template.
 As you can see, template editors, such as the FreeMarker template editors
 bundled with Developer Studio, make customizing your notification templates
 easier than ever. And you can create Velocity templates just as easy using the
-Velocity editor you installed. Next, we'll explain how to view your workflow
-definition XML file within Developer Studio.
+Velocity editor you installed. In the next section, you can view a list of
+workflow and service context content that can be used when creating a customized
+script or template.
+
+#### Kaleo Workflow context variables
+
+The purpose of a context variable is to provide a uniform variable that can be
+inserted into templates and scripts. A context variable, when executed, is
+automatically deleted and replaced with the value pertaining to that key. When
+creating notifications for your workflow, assigning Liferay Portal context
+variables allows for a cleaner and more efficient process. Instead of having
+notifications follow the exact same format for every recipient, context
+variables allow for customization and a personal look and feel. The context
+variables you declare in your notifications refer to your Liferay instance and
+the values it holds for your declarations.
+
+Below, we have listed a plethora of context variables and serviceContext
+content. Notice for each table, the serviceContext content is separated from the
+workflow context variables, since its keys depend on asset type. Also, note the
+**!**'s which indicate context variables that depend on workflow activity.
+
+| &nbsp;Workflow context variables for *Web Content* |||
+   Key | &nbsp;Example Value | &nbsp;Type |
+------ | ------------------- | ---------- |
+   `companyId` | &nbsp;10152 | &nbsp;java.lang.String |            
+   `entryClassName` | &nbsp;com.liferay.portlet.journal.model.JournalArticles | &nbsp;java.lang.String |
+   `entryClassPK` | &nbsp;11302 | &nbsp;java.lang.String |
+   `entryType` | &nbsp;Web Content | &nbsp;java.lang.String |
+   `groupId` | &nbsp;10178 | &nbsp;java.lang.string |
+   **!**`taskComments` | &nbsp;Comment somebody puts when assigning... | &nbsp;java.lang.String |
+   **!**`transitionName` | &nbsp;approve | &nbsp;java.lang.String |
+   `userId` | &nbsp;10194 | &nbsp;java.lang.String |
+   **serviceContext content - obtain via key serviceContext** |||
+   `articleId` || &nbsp;java.lang.String |
+   `articleURL` | &nbsp;LINK TO ARTICLE IN MAXIMIZED MODE | &nbsp;java.lang.String
+   `assetLinkEntryIds` || &nbsp;java.lang.String |
+   `assetLinksSearchContainerPrimaryKeys` || &nbsp;java.lang.String |
+   `assetTagNames` || &nbsp;java.lang.String |
+   `autoArticleId` | &nbsp;true | &nbsp;java.lang.String |
+   `classNameId` | &nbsp;0 | &nbsp;java.lang.String |
+   `classPK` | &nbsp;0 | &nbsp;java.lang.String |
+   `content` | &nbsp; This is my web content body... | &nbsp;java.lang.String |
+   `defaultLanguageId` | &nbsp;en_US | &nbsp;java.lang.String |
+   `description_en_US` || &nbsp;java.lang.String |
+   `displayDateDay` | &nbsp;11 | &nbsp;java.lang.String |
+   `displayDateHour` | &nbsp;11 | &nbsp;java.lang.String |
+   `displayDateMinute` | &nbsp;37 | &nbsp;java.lang.String |
+   `displayDateMonth` | &nbsp;5 | &nbsp;java.lang.String |
+   `displayDateYear` | &nbsp;2012 | &nbsp;java.lang.String |
+   `doAsGroupId` | &nbsp;10178 | &nbsp;java.lang.String |
+   `folderId` | &nbsp;0 | &nbsp;java.lang.String |
+   `indexable` | &nbsp;true | &nbsp;java.lang.String |
+   `indexableCheckbox` | &nbsp;on | &nbsp;java.lang.String |
+   `inputPermissionsShowOptions` | &nbsp;false | &nbsp;java.lang.String|
+   `inputPermissionsViewRole` | &nbsp;Guest | &nbsp;java.lang.String |
+   `languageId` | &nbsp;en_US | &nbsp;java.lang.String |
+   `localized` | &nbsp;true | &nbsp;java.lang.String |
+   `neverExpire` | &nbsp;true | &nbsp;java.lang.String |
+   `neverExpireCheckbox` | &nbsp;true | &nbsp;java.lang.String |
+   `neverReview` | &nbsp;true | &nbsp;java.lang.String |
+   `neverReviewCheckbox` | &nbsp;true | &nbsp;java.lang.String |
+   `refererPlid` | &nbsp;10422 | &nbsp;java.lang.String |
+   `smallImage` | &nbsp;false | &nbsp;java.lang.String |
+   `smallImageURL` || &nbsp;java.lang.String |
+   `structureDescription` || &nbsp;java.lang.String |
+   `structureId` || &nbsp;java.lang.String |
+   `structureName` | &nbsp;Default | &nbsp;java.lang.String |
+   `structureXSD` | &nbsp;STRUCTURE XSD (removed to improve readability) | &nbsp;java.lang.String |
+   `templateId` || &nbsp;java.lang.String |
+   `title_en_US` | &nbsp;This is English title | &nbsp;java.lang.String |
+   `type` | &nbsp;general | &nbsp;java.lang.String |
+   `variableName` | &nbsp;content | &nbsp;java.lang.String |
+   `version` | &nbsp;1.0 | &nbsp;java.lang.String |
+   `workflowAction` | &nbsp;1 | &nbsp;java.lang.String |
+---
+
+| &nbsp;Workflow context variables for *Blog Entries* |||
+   Key | &nbsp;Example Value | &nbsp;Type |
+------ | ------------------- | ---------- |
+   `companyId` | &nbsp;10152 | &nbsp;java.lang.String |
+   `entryClassName` | &nbsp;com.liferay.portlet.blogs.model.BlogsEntry | &nbsp;java.lang.String |
+   `entryClassPK` | &nbsp;11329 | &nbsp;java.lang.String |
+   `entryType` | &nbsp;Blogs Entry | &nbsp;java.lang.String |
+   `groupId` | &nbsp;10178 | &nbsp;java.lang.string |
+   **!**`taskComments` | &nbsp;Comment somebody puts when assigning... | &nbsp;java.lang.String |
+   **!**`transitionName` | &nbsp;approve | &nbsp;java.lang.String |
+   `userId` | &nbsp;10194 | &nbsp;java.lang.String |
+   **serviceContext content - obtain via key serviceContext** |||
+   `assetLinkEntryIds` || &nbsp;java.lang.String |
+   `assetLinksSearchContainerPrimaryKeys` || &nbsp;java.lang.String |
+   `assetTagNames` | &nbsp;history, news, programming | &nbsp;java.lang.String |
+   `attachments` || &nbsp;java.lang.String |
+   `content` | &nbsp;This is my blog entry... | &nbsp;java.lang.String |
+   `description` || &nbsp;java.lang.String |
+   `displayDateAMPm` | &nbsp;0 | &nbsp;java.lang.String |
+   `displayDateDay` | &nbsp;12 | &nbsp;java.lang.String |
+   `displayDateHour` | &nbsp;3 | &nbsp;java.lang.String |
+   `displayDateMinute` | &nbsp;26 | &nbsp;java.lang.String |
+   `displayDateMonth` | &nbsp;5 | &nbsp;java.lang.String |
+   `displayDateYear` | &nbsp;2012 | &nbsp;java.lang.String |
+   `doAsGroupId` | &nbsp;10178 | &nbsp;java.lang.String |
+   `editor` | &nbsp;Always blog and share! | &nbsp;java.lang.String |
+   `entryId` | &nbsp;11329 | &nbsp;java.lang.String |
+   `refererPlid` | &nbsp;10422 | &nbsp;java.lang.String |
+   `smallImage` | &nbsp;false | &nbsp;java.lang.String |
+   `smallImageURL` || &nbsp;java.lang.String |
+   `title` | &nbsp;Today we blog... | &nbsp;java.lang.String |
+   `workflowAction` | &nbsp; 1 | &nbsp;java.lang.String |
+---
+
+| &nbsp;Workflow context variables for *Message Board Messages* |||
+   Key | &nbsp;Example Value | &nbsp;Type |
+------ | ------------------- | ---------- |
+   `companyId` | &nbsp;10152 | &nbsp;java.lang.String |
+   `entryClassName` | &nbsp;com.liferay.portlet.messageboards.model.MBMessage | &nbsp;java.lang.String |
+   `entryClassPK` | &nbsp;11362 | &nbsp;java.lang.String |
+   `entryType` | &nbsp;Message Boards Message | &nbsp;java.lang.String |
+   `groupId` | &nbsp;10178 | &nbsp;java.lang.string |
+   **!**`taskComments` | &nbsp;Comment somebody puts when assigning... | &nbsp;java.lang.String |
+   **!**`transitionName` | &nbsp;reject | &nbsp;java.lang.String |
+   `userId` | &nbsp;10194 | &nbsp;java.lang.String |
+   **serviceContext content - obtain via key serviceContext** |||
+   `anonymous` | &nbsp;false | &nbsp;java.lang.String |
+   `assetLinkEntryIds` || &nbsp;java.lang.String |
+   `assetLinksSearchContainerPrimaryKeys` || &nbsp;java.lang.String | 
+   `assetTagNames` | &nbsp;sea, sailing swimming | &nbsp;java.lang.String |
+   `attachments` | &nbsp;false | &nbsp;java.lang.String |
+   `body` | &nbsp;This is my question... | &nbsp;java.lang.String |
+   `editory` | &nbsp;This is my question... | &nbsp;java.lang.String |
+   `mbCategoryId` | &nbsp;0 | &nbsp;java.lang.String |
+   `messageId` | &nbsp;0 | &nbsp;java.lang.String |           
+   `parentMessageId` | &nbsp;0 | &nbsp;java.lang.String |
+   `preview` | &nbsp;false | &nbsp;java.lang.Boolean |
+   `question` | &nbsp;falese | &nbsp;java.lang.String |
+   `subject` | &nbsp;My MB Subject | &nbsp;java.lang.String |
+   `threadId` | &nbsp;0 | &nbsp;java.lang.String |
+   `workflowAction` | &nbsp;1 | &nbsp;java.lang.String |
+---
+
+Next, we'll explain how to view your workflow definition XML file within
+Developer Studio.
 
 ### Viewing workflow definition XML source [](id=lp-6-1-dgen08-viewing-workflow-definition-xml-source-0)
 
