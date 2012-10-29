@@ -32,12 +32,18 @@ other than the portal host, or even from the portal host itself.
 - *Service Security:* Leveraging the service security layers provided in
 Liferay's service oriented architecture (SOA).
 
--	*SOAP Web Services:* Consuming services via Liferay's SOAP interface.
+- *SOAP Web Services:* Consuming services via Liferay's SOAP interface.
 
 - *JSON Web Services:* Consuming services via Liferay's JSON service interface.
 
 - *Service Context:* Understanding what the service context is, how it can be
 used in services, and how to use it in calling services.
+
+- *Using Message Bus:* Exchanging string messages within Liferay using the
+Message Bus.
+
+- *Device Detection:* Detecting the capabilities of a device that is making
+requests to a portal.
 
 First, let's consider invoking Liferay's services locally.
 
@@ -620,36 +626,51 @@ in the console output when the debug log level is set:
 At this point, scanning and registration is done and all service methods (those
 of `DLAppService` and of other services) are registered as JSON Web Services.
 
-Custom portlets can be registered and scanned, too, and their services can
-become part of the JSON API. Since scanning of portlet services is not enabled
-by default, you must add the following servlet definition in the `web.xml` of
-your portlet:
+#### Registering Plugin JSON Web Services [](id=lp-6-1-dgen09-registering-plugin-json-web-services-0)
 
-	<web-app>
+Custom portlets can be registered and scanned for JSON web services, too.
+Services that use the `@JSONWebService` annotation become part of the JSON API. Since scanning of portlet
+services is not enabled by default, add the following servlet definition in your
+portlet's `web.xml`:
 
-		...
+		<web-app>
+			...
+			<filter>
+				<filter-name>Secure JSON Web Service Servlet Filter</filter-name>
+				<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+				<init-param>
+					<param-name>filter-class</param-name>
+					<param-value>com.liferay.portal.servlet.filters.secure.SecureFilter</param-value>
+				</init-param>
+				<init-param>
+					<param-name>basic_auth</param-name>
+					<param-value>true</param-value>
+				</init-param>
+				<init-param>
+					<param-name>portal_property_prefix</param-name>
+					<param-value>jsonws.servlet.</param-value>
+				</init-param>
+			</filter>
+			<filter-mapping>
+				<filter-name>Secure JSON Web Service Servlet Filter</filter-name>
+				<url-pattern>/api/jsonws/*</url-pattern>
+			</filter-mapping>
 
-		<servlet>
-			<servlet-name>JSON Web Service Servlet</servlet-name>
+			<servlet>
+				<servlet-name>JSON Web Service Servlet</servlet-name>
 				<servlet-class>com.liferay.portal.kernel.servlet.PortalClassLoaderServlet</servlet-class>
 				<init-param>
 					<param-name>servlet-class</param-name>
 					<param-value>com.liferay.portal.jsonwebservice.JSONWebServiceServlet</param-value>
 				</init-param>
-			<load-on-startup>0</load-on-startup>
-		</servlet>
-		<servlet-mapping>
-			<servlet-name>JSON Web Service Servlet</servlet-name>
-			<url-pattern>/api/jsonws/*</url-pattern>
-		</servlet-mapping>
-		<servlet-mapping>
-			<servlet-name>JSON Web Service Servlet</servlet-name>
-			<url-pattern>/api/secure/jsonws/*</url-pattern>
-		</servlet-mapping>
-
-		...
-
-	</web-app>
+				<load-on-startup>0</load-on-startup>
+			</servlet>
+			<servlet-mapping>
+				<servlet-name>JSON Web Service Servlet</servlet-name>
+				<url-pattern>/api/jsonws/*</url-pattern>
+			</servlet-mapping>
+			...
+		</web-app>
 
 This enables the servlet to scan and register your portlet's JSON Web Services.
 
@@ -683,12 +704,23 @@ names starting with `get`, `is` or `has` are assumed to be read-only methods and
 are therefore mapped as GET HTTP methods, by default. All other methods are
 mapped as POST HTTP methods.
 
-Non-public service methods require the user to be registered before invoking the
-method. For those calls, users must specify a URL of the following convention:
+For plugins, you have two options for accessing their JSON Web Services.
 
-	http://[server]:[port]/api/secure/jsonws/[service-class-name]/[service-method-name]
+*Option 1* - Accessing the plugin service via the plugin context (e.g. your custom portlet's context):
 
-Note the `secure` part of the URL.
+		http://[server]:[port]/[plugin-context]/api/jsonws/[service-class-name]/[service-method-name]
+
+However, this calls the plugin's service in a separate web application, that is
+not aware of the user's current session in the portal. As a result, accessing
+the service in this manner requires additional authentication.
+
+*Option 2* - Accessing the plugin service via the portal context:
+
+		http://[server]:[port]/[portal-context]/api/jsonws/[plugin-context].[service-class-name]/[service-method-name]
+
+Requests sent this way can conveniently leverage the user's authentication in
+his current portal session. Liferay's JavaScript API for services calls plugin
+services this way.
 
 #### Listing available JSON Web Services [](id=lp-6-1-dgen08-listing-available-json-web-services-0)
 
@@ -705,10 +737,10 @@ arguments, list exceptions that can be thrown, and even read its Javadoc!
 Moreover, you can even invoke the service method for testing purposes using
 simple form right from within your browser.
 
-To list registered services on a portlet, don't forget to use portlet context
-path:
+To list registered services on a plugin (e.g. a custom portlet), don't forget to
+use its context path:
 
-	http://localhost:8080/[portlet-context]/api/jsonws
+	http://localhost:8080/[plugin-context]/api/jsonws
 
 This will list the JSON Web Service API for the portlet.
 
@@ -2239,7 +2271,79 @@ following from Message Bus:
 -	*Serial* and *in-parallel* message dispatching
 -	Java and JSON message types
 
-You're really getting the hang of Liferay's APIs. Way to go!
+In the next section, you'll explore the Device Detection API and its capabilities. 
+
+## Device Detection
+
+As you know, internet traffic has risen exponentially over the past decade and
+shows no sign of stopping. With the latest and greatest devices, mobile internet
+access has become the norm and is predicted to pass PC based internet access
+soon. Because of the mobile boom, new obstacles and challenges are presented for
+content management. How will content adapt to all devices with different
+capabilities? How can your grandma's gnarly tablet and cousin's awesome new
+mobile phone request the same information from your portal?
+
+The Device Detection API is used for detecting the capabilities of a device that
+is making a request to your portal. In addition, the Device Detection API allows
+Liferay to detect which mobile device or operating system is being used for any
+given request and alters the rendering of pages based on the detected device. To
+install this feature, you will need to install the *Device Recognition Provider*
+app from Liferay Marketplace. Based on your Liferay edition, you can select the
+appropriate link for more info and download information: [Device Recognition
+CE](http://www.liferay.com/marketplace/-/mp/application/15193341) or [Device
+Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132).
+
+The *Device Recognition* plugin, which is bundled inside the Device Recognition
+Provider app, uses a device database called *WURFL* to determine the
+capabilities of your device. You can visit their site for more information at
+[http://wurfl.sourceforge.net/](http://wurfl.sourceforge.net/).
+
+You could create your own plugin to use your own device's database. Let's go
+through some simple ways to use the Device Detection API and its capabilities.
+
+### Using the Device API
+
+We will go over a couple of code snippets that will help you get started. The
+object `Device` can be obtained from the `themeDisplay` object like this:
+
+    Device device = themeDisplay.getDevice();
+
+For reference, you can view the API in the [Device
+Javadocs](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
+Using some of the methods from the javadocs, here is an example that obtains the
+dimensions of a device:
+
+    Dimensions dimensions =device.getScreenSize();
+    float height = dimensions.getHeight();
+    float width = dimensions.getWidth();
+
+Now, your device can obtain the `Device` object and can obtain the dimensions of
+a device. Of course, you can acquire many other values that take care of those
+pesky problems that arise when sending content to different devices. Simply
+refer to the previously mentioned Device javadocs for assistance. Let's go
+through some device capabilities.
+
+### Device capabilities
+
+Most of the capabilities of a device can be detected, but this depends on the
+device detection implementation you're using. For the Device Recognition plugin,
+you can view its device database's (WURFL) list of capabilities
+[here](http://www.scientiamobile.com/wurflCapability/tree). For an example, you
+can obtain the capability of a brand name by using this code:
+
+    String brand = device.getCapability("brand_name");
+
+Furthermore, you can grab many other values such as model_name, marketing_name,
+release_date, etc. Also, there are boolean values that can be acquired that
+include: is_wireless_device, is_tablet, etc. Keeping the capabilities list in
+mind when configuring your device is very helpful.
+
+You're able to detect the capabilites of a device making a request to your
+portal by using the Device Detection API. Through the use of this API, your
+grandma's gnarly tablet and cousin's awesome new mobile phone can make requests
+to your portal and receive identical content. This will make everyone happy!
+
+You're really getting the hang of Liferay's APIs. Way to go! 
 
 ## Conclusion [](id=conclusi-4)
 
