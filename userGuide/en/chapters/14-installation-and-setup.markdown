@@ -134,16 +134,15 @@ version.
 
 - **Fix Packs:** The term fix pack can stand for one of two things. First, it is
 the format by which patches are installed using Liferay's patching tool.
-Packaged as .zip files, they contain specified files, folders and instructions.
-
-Secondly, it is a group of 1-10 patches (in fix pack format) delivered by
-Liferay's support team that address specific customers' issues. They will be
-released every several weeks, at the discretion of the fix pack team, through
-the Customer Portal. They allow customers to download component-specific fixes
-rather than large-scale portal changes. Component-based fix packs also enable
-customers to upgrade their product quickly, rather than waiting several months
-for a new release. Identified by component, they have names like ldap-1, core-2,
-staging-1, and upgrade-4 fix packs.
+Packaged as .zip files, they contain specified files, folders and
+instructions.Secondly, it is a group of 1-10 patches (in fix pack format)
+delivered by Liferay's support team that address specific customers' issues.
+They will be released every several weeks, at the discretion of the fix pack
+team, through the Customer Portal. They allow customers to download
+component-specific fixes rather than large-scale portal changes. Component-based
+fix packs also enable customers to upgrade their product quickly, rather than
+waiting several months for a new release. Identified by component, they have
+names like ldap-1, core-2, staging-1, and upgrade-4 fix packs.
 
 - **Hot Fixes:** These are short-term patches given for each customer issue
 before they're released later in a component-based fix pack or a new version.
