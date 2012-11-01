@@ -132,23 +132,35 @@ bug-free, so they monitor the community to see if they find new bugs, usually
 minor ones. When bugs are found, Liferay fixes the issues and releases a new GA
 version.
 
-- **Fix Packs:** (fixpack-core-1-6120, fixpack-documents-and-media-1-6120 ...)
-These are a small number of patches delivered by Liferay's support team that
-address specific customers' issues. These packs will be released every several
-weeks, at the discretion of the fix pack team, through the Customer Portal. This
-allows customers to download component-specific fixes rather than large-scale
-portal changes. Component-based fix packs also enable customers to upgrade their
-product quickly, rather than waiting several months for a new release.
+- **Fix Packs:** The term fix pack can stand for one of two things. First, it is
+the format by which patches are installed using Liferay's patching tool.
+Packaged as .zip files, they contain specified files, folders and instructions.
 
-- **Hot Fixes:** These are short-term fixes given for each customer issue until
-a full fix pack is released. Unlike fix packs, hot fixes will be provided only
-on a per-ticket basis through our Liferay support team.
+Secondly, it is a group of 1-10 patches (in fix pack format) delivered by
+Liferay's support team that address specific customers' issues. They will be
+released every several weeks, at the discretion of the fix pack team, through
+the Customer Portal. They allow customers to download component-specific fixes
+rather than large-scale portal changes. Component-based fix packs also enable
+customers to upgrade their product quickly, rather than waiting several months
+for a new release. Identified by component, they have names like ldap-1, core-2,
+staging-1, and upgrade-4 fix packs.
+
+- **Hot Fixes:** These are short-term patches given for each customer issue
+before they're released later in a component-based fix pack or a new version.
+Hot fixes are provided only on a per-ticket basis to customers through our
+Liferay support team. Customers should always replace their hot fixes after a
+component-based fix pack has been released.
 
 - **Aggregated Fix Packs:** These maintenance releases include only fixes and
-will be a combination of previous fix packs bundled together. A new bundle will
-be released approximately every six months to one year, depending on the nature
-of the fixes. These fix packs will be integrated into the release before the
-customer downloads the new bundles.
+are a combination of previous fix packs bundled together. A new bundle of
+Liferay will be released approximately every six months, or so. These fix packs
+will be integrated into the release before the customer downloads the new
+bundles.
+
+- **Security Fixes:** These are fix pack format patches on the Customer Portal
+that are not component-based. These packages usually only contain one fix only,
+however sometimes several fixes are grouped together and released at once. All
+customers should install these fixes.
 
 #### Comments and Recommendations
 
@@ -167,6 +179,12 @@ project with Liferay 6.1.0 GA1, it is recommended that you switch to GA2 to take
 advantage of bug fixes found by other Liferay users. If you have a subscription,
 you can benefit from the fixes faster by requesting fix packs and hot fixes from
 the support team.
+
+- Always install the Liferay security fixes. 
+
+- Install fix packs related to the components used in your installation of
+Liferay. For example, if you don't upgrade to the next version of Liferay, you
+don't need the upgrade fix pack.
 
 - You are always welcome to use any preview, beta or release candidate version.
 In fact, that's why they exist - so as many people as possible start using it
