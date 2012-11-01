@@ -135,7 +135,7 @@ version.
 - **Fix Packs:** The term fix pack can stand for one of two things. First, it is
 the format by which patches are installed using Liferay's patching tool.
 Packaged as .zip files, they contain specified files, folders and
-instructions.Secondly, it is a group of 1-10 patches (in fix pack format)
+instructions. Secondly, it is a group of 1-10 patches (in fix pack format)
 delivered by Liferay's support team that address specific customers' issues.
 They will be released every several weeks, at the discretion of the fix pack
 team, through the Customer Portal. They allow customers to download
