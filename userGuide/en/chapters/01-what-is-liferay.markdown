@@ -132,7 +132,9 @@ By default, Liferay Portal starts with a single site that has a single page. You
 can build any web site you wish out of this, complete with multi-nested page
 hierarchies, as the figure below shows. 
 
-![Figure 1.1: ](../../images/01-page-hierarchy.png)
+![Figure 1.1: Liferay's page hierarchies are easy to create, using a tree
+structure that's familiar to anyone who has used a file
+manager.](../../images/01-page-hierarchy.png)
 
 These pages can have any layout you like: Liferay Portal ships with several
 built-in, and you can create your own custom layouts and deploy them easily.

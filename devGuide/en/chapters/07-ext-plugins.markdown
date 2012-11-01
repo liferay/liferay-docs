@@ -731,7 +731,7 @@ code of Liferay (you may need to look at them for reference):
 
     -   Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-look-and-feel.xml`
 
-#### Configuring Lucene Analyzers
+#### Configuring Lucene Analyzers [](id=lp-6-1-dgen07-configuring-lucene-analyzers-0)
 
 Liferay uses Lucene to facilitate search and indexing within the portal. In old
 versions of Liferay, Lucene analyzers could be configured from
