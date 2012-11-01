@@ -299,6 +299,49 @@ The repository is displayed in the left side of the window in the Home folder.
 
 ![Figure 4.8: Viewing a repository](../../images/05-repository.jpg)
 
+<!-- Don't end a section with an image :) -->
+
+<!--
+ENTER SECTION ON MOUNTING EXTERANL SHAREPOINT REPO HERE
+
+### Example Repository Setup: Sharepoint
+
+
+(Explain the scenario: Portal’s Documents and Media connecting with an external Sharepoint server as a CMIS repository.
+Note, this section is geared towards the portal system administrator and administrator of the respective external repo. (i.e. the sys admin of the Sharepoint server)
+
+“User can mount a remote repository via CMIS AtomPub and SharePoint SOAP webservices.”
+)
+
+(Give background on CMIS, as necessary based on what is already in the Using External Repositories section -- see Mika’s Background on CMIS and Sharepoint Soap Services)
+
+(Explain supported features -- see Mika’s Features Supported)
+
+#### Sharepoint server setup and configuration
+
+Current version: Sharepoint 2010
+Install the SharePoint 2010 Administrator Toolkit … for its CMIS Connectors (includes file spcmis.wsp).
+Install and deploy the CMIS Connectors as a Farm Solution on Sharepoint.
+Give steps from Mika’s Install WSP.
+Enable the Sharepoint site to be a CMIS Producer. This is the site with the doc library you want to use.
+Test CMIS. And explain getting the GUID. (Note, they can use Firefox to see the GUID)
+Enable Basic Authentication on the Sharepoint host machine (see Mika’s section on this)
+
+
+#### Setting up Liferay Portal to use the Sharepoint repository
+
+(see Mika’s Connecting to a Repository with the doc library portlet, and Ben’s wiki)
+Set portal-ext.properties. (TODO check if both or one of these are required after the Sharepoint repo has been added)
+Have the session store user’s password.
+Set screen name as the authentication type.
+Deploying the Sharepoint hook
+Add the doc’s and media portlet
+Adding the Sharepoint repository
+Note, in your example, your Sharepoint Library named “Shared Documents” requires %20 in the value used in the Site Path.
+(Note to self, liferay-jf4ic can be referred to as the value for host; as this could possibly be a name or an IP address)
+
+-->
+
 ## Configuring the Documents and Media portlet [](id=lp-6-1-ugen04-configuring-the-documents-and-media-portlet-0)
 
 To configure the Documents and Media portlet, click on the wrench icon at the
