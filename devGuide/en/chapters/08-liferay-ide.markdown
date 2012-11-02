@@ -1250,7 +1250,7 @@ Velocity editor you installed. In the next section, you can view a list of
 workflow and service context content that can be used when creating a customized
 script or template.
 
-#### Workflow context variables and service context content [](id=lp-6-1-dgen08-workflow-context-variables-and-service-context-content-0)
+#### Workflow Context and Service Context Variables [](id=lp-6-1-dgen08-workflow-context-and-service-context-variables-0)
 
 The purpose of a context variable is to provide a uniform variable that can be
 inserted into templates and scripts. A context variable, when executed, is
@@ -1270,7 +1270,7 @@ variables because service context keys depend on asset type, while context
 variables do not. Also, note the `*`'s which indicate context variables that
 depend on workflow activity.
 
-| &nbsp;Workflow Context Variables |||
+| &nbsp;*Workflow* Context Variables |||
    Key | Type | Description |
 ------ | ---------- | ------------------|
    `companyId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the company |          
@@ -1284,7 +1284,7 @@ depend on workflow activity.
    `userId` | &nbsp;&nbsp;java.lang.String | Primary key of the assigned user |
 ---
 
-| &nbsp;*Web Content* Service Context content - obtain via key serviceContext |||
+| &nbsp;*Web Content* Service Context Variables - obtain via key serviceContext |||
    Key | Type | Description |
 ------ | ---------- | ------------------|
    `articleId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the web content |
@@ -1330,7 +1330,7 @@ depend on workflow activity.
    `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 1) |
 ---
 
-| &nbsp;*Blog Entry* Service Context content - obtain via key serviceContext  |||
+| &nbsp;*Blog Entry* Service Context Variables - obtain via key serviceContext  |||
    Key | Type | Description |
 ------ | ---------- | ------------------|
    `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary keys of the asset entries linked to the blog entry |
@@ -1355,7 +1355,7 @@ depend on workflow activity.
    `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 2) |
 ---
 
-| &nbsp;*Message Board Message* Service Context content - obtain via key serviceContext |||
+| &nbsp;*Message Board Message* Service Context Variables - obtain via key serviceContext |||
    Key | Type | Description |
 ------ | ---------- | ------------------|
    `anonymous` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is anonymous (e.g. true) |
