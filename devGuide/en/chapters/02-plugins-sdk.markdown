@@ -324,8 +324,9 @@ analysis on Maven's features and what it can do for you, visit [Maven: The
 Complete Reference](http://www.sonatype.com/books/mvnref-book/reference/)
 created by Sonatype, Inc. You can download Maven from
 [http://maven.apache.org/download.html](http://maven.apache.org/download.html).
-Maven is a great alternative if it fits your needs for building and managing
-project builds.
+After downloading, we recommend putting the Maven executable in your system's
+path to ensure a quick development process. Maven is a great alternative if it
+fits your needs for building and managing project builds.
 
 You'll be happy to know that we have archetypes to help you build various types
 of plugins including Liferay portlets, themes, hooks, layouts, web plugins, and
@@ -382,6 +383,12 @@ later.
 
 ---
 
+<!-- TODO: It appears there needs to be some explanation on how to reference the
+Central Repository when using the CE artifacts. When downloading the
+liferay-portal-maven-<ce-version> bundle, the CE artifacts are installed to a
+local repository and never reference the Central repo. We need to find out how
+to reference Central. -->
+
 However, it is sometimes useful to have a remote repository so you can access
 your Liferay artifacts on multiple machines. Also, it is advantageous to allow
 other people to have access to your projects. We will present guides that show
@@ -403,44 +410,49 @@ To create and configure a Nexus repository, follow the steps below:
 2. Follow the installation steps provided by Sonatype in [Installing
 Nexus](http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html).
 
-3. To start Nexus, open a command prompt (make sure to run as administrator) and
+3. To begin using Nexus, open a command prompt (make sure to run as administrator) and
 navigate to `${NEXUS_HOME}\bin\jsw\${OPERATING_SYSTEM}`. Make sure to replace
 the `${NEXUS_HOME}` and `${OPERATING_SYSTEM}` variables with the appropriate
 content (e.g. `E:\nexus\nexus-2.1.2\bin\jsw\windows-x86-64`).
 
-4. Run the appropriate start file that corresponds to your operating system to
-start your Nexus repository. For example, in Windows, type `start-nexus`. This
-process appears similarly to the snapshot below:
+4. Type `install-nexus` to install Nexus onto your computer. After the
+installation process is complete, your command prompt appears like the
+snapshot below:
 
-	![Figure 2.1: Your command prompt should indicate that Nexus has started.](../../images/maven-start-nexus.png)
+	![Figure 2.1: When running `install-nexus`, your command prompt should confirm Nexus is installed.](../../images/maven-install-nexus.png)
 
-5. Access your Nexus repository by going to your browser and opening
+5. Type `start-nexus` to start your Nexus repository. This process appears
+similarly to the snapshot below:
+
+	![Figure 2.2: Your command prompt should indicate that Nexus has started.](../../images/maven-start-nexus.png)
+
+6. Access your Nexus repository by going to your browser and opening
 [http://localhost:8081/nexus](http://localhost:8081/nexus).
 
-6. Login as the administrator by using the following default credentials:
+7. Login as the administrator by using the following default credentials:
 
-	Username: admin
-	
-	Password: admin123
+	`Username: admin`
 
-7. Click on *Repositories* and then navigate to *Add...* &rarr; *Hosted
+	`Password: admin123`
+
+8. Click on *Repositories* and then navigate to *Add...* &rarr; *Hosted
 Repository*.
 
-	![Figure 2.2: You need to add a custom Liferay repository for your artifacts to reside.](../../images/maven-nexus-create-repo.png)
+	![Figure 2.3: You need to add a custom Liferay repository for your artifacts to reside.](../../images/maven-nexus-create-repo.png)
 	
 	Note: To learn more about each type of repository, visit Sonatype's
 	[Managing
 	Repositories](http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html)
 	section.
 
-8. Give the repository the following credentials:
+9. Give the repository the following credentials:
 
--	Repository ID: liferay-ee-releases
--	Repository Name: Liferay EE Release Repository
--	Provider: Maven2
--	Repository Policy: Release
+	-	Repository ID: liferay-ee-releases
+	-	Repository Name: Liferay EE Release Repository
+	-	Provider: Maven2
+	-	Repository Policy: Release
 
-Note that a common practice is to have a release repository and a snapshot
+Note that a common practice is to have a *release* repository and a *snapshot*
 repository to house releases and snapshots of your Liferay artifacts. For our
 demonstration, we will only show the deployment for the release repository.
 
@@ -469,7 +481,21 @@ artifacts as well. You can download this package
 (`liferay-portal-maven-<version>`) for CE by clicking
 [here](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.1.1%20GA2/liferay-portal-maven-6.1.1-ce-ga2-20120731132656558.zip/download).
 The Liferay EE Maven package can be downloaded by visiting Liferay's Customer
-Portal.
+Portal. To access the Liferay Customer Portal and begin downloading Liferay
+Maven EE artifacts, follow the steps below:
+
+1. Navigate to [www.liferay.com](https://www.liferay.com/) and sign in.
+
+2. Go to *Places* &rarr; *Customer Portal*.
+
+3. Select *Liferay Portal* from the *Downloads* panel
+
+4. Inside the *Filter by:* application, enter the appropriate version and
+*Development*.
+
+5. Select *Download* listed under *Liferay Portal <Version> Maven*.
+
+	![Figure 2.4: You can download the Liferay Maven EE artifacts by visiting the Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
 As you can see, Liferay offers many resources to help aid you in creating and
 maintaining your Liferay artifacts using Maven. Next, let's install and deploy
@@ -524,17 +550,21 @@ exist on your machine, create it.
 your work and has not been altered by anyone else. You can visit the [How to
 Generate PGP Signatures with
 Maven](https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven)
-document to learn more about these values and how to find them. We will use the
-`gpg.keyname` and `gpg.passphrase` in the next step.
+document to learn more about these values and how to find them. Although using a
+GPG key and passphrase is optional, it is highly recommended to use them in a
+production environment. We demonstrate specifying them for your project in the
+next step.
 
 4. Create a `build.${USER_NAME}.properties` file in your
 `liferay.portal.maven-<version>` directory and input the following values:
 
-			gpg.keyname=${YOUR_GPG_KEYNAME}
-			gpg.passphrase=${YOUR_GPG_PASSPHRASE}
-			lp.maven.repository.id=liferay-ee-releases
-			lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-ee-releases
-			lp.version.maven=${MAVEN_VERSION}
+		gpg.keyname=${YOUR_GPG_KEYNAME}
+		gpg.passphrase=${YOUR_GPG_PASSPHRASE}
+		lp.maven.repository.id=liferay-ee-releases
+		lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-ee-releases
+
+	Note that the `build.${USER_NAME}.properties` file overrides the
+	`build.properties` file.
 
 5. In your command prompt, navigate to the `liferay-portal-maven-<version>`
 directory. Then type `ant deploy`.
@@ -544,12 +574,12 @@ Your console will begin deploying the contents of the
 Nexus. To verify that your artifacts deployed, first navigate to the
 *Repositories* page and select the *Liferay EE Release Repository*.
 
-![Figure 2.3: You can easily navigate to your new Liferay remote repository.](../../images/maven-select-repository2.png)
+![Figure 2.5: You can easily navigate to your new Liferay remote repository.](../../images/maven-select-repository2.png)
 
 You will notice a window appears below and you can see that the Liferay
 artifacts are now in your repository:
 
-![Figure 2.4: Your remote repository now holds your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
+![Figure 2.6: Your remote repository now holds your Liferay Maven artifacts.](../../images/maven-verify-deployment2.png)
 
 That's it! You now have a local repository and a remote repository storing your
 Liferay Maven artifacts. Also, you are aware of Liferay's abundance of resources
@@ -580,21 +610,23 @@ plugins and, then, add a portlet project to it. Follow the instructions below:
 
 1. Create a new directory which will be your project root. If you were using
 Ant, this is the place where you would extract Liferay plugins SDK. For this
-example, we will name the project root `sample-project`.
+example, we will name the project root `sample-parent-project`. Your parent
+project can be placed anywhere on the file system and still has the ability to
+interact with your configured Liferay instance.
 
-2. Inside the `sample-project` directory, create a `pom.xml` file and insert the
-following code:
+2. Inside the `sample-parent-project` directory, create a `pom.xml` file and
+insert the following code:
 
 		<?xml version="1.0" encoding="UTF-8"?>
 		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<modelVersion>4.0.0</modelVersion>
 
 			<groupId>com.liferay.sample</groupId>
-			<artifactId>sample-project</artifactId>
+			<artifactId>sample-parent-project</artifactId>
 			<version>1.0-SNAPSHOT</version>
 			<packaging>pom</packaging>
 
-			<name>sample-project</name>
+			<name>sample-parent-project</name>
 			<url>http://www.liferay.com</url>
 
 			<properties>
@@ -608,7 +640,10 @@ following code:
 ![note](../../images/tip-pen-paper.png)**Note:** When creating your own project,
 you will need to modify these settings. If you are following along with creating
 this sample project, you will only need to replace the
-`${liferay.auto.deploy.dir}` and `${liferay.version}` variables.
+`${liferay.auto.deploy.dir}` and `${liferay.version}` variables. Because you
+specify your Liferay instance's deploy directory in the parent project's
+`pom.xml`, the location of the parent project directory is irrelevant and will
+work from anywhere on your file system.
 
 ---
 
@@ -633,16 +668,17 @@ the following command:
 	If your output looks similar to the snapshot below, Maven is correctly
 	installed and you're officially a Maven developer!
 
-	![Figure 2.5: After running `mvn -v`, Maven's version information appears, indicating Maven is installed on your system.](../../images/maven-verify.png)
+	![Figure 2.7: After running `mvn -v`, Maven's version information appears, indicating Maven is installed on your system.](../../images/maven-verify.png)
 
-6. Inside the command prompt, navigate to your `sample-project` directory. We
-will now create a portlet that will reside inside the `sample-project` directory
-using a Liferay portlet archetype. Run the following command:
+6. Inside the command prompt, navigate to your `sample-parent-project`
+directory. We will now create a portlet that will reside inside the
+`sample-parent-project` directory using a Liferay portlet archetype. Run the
+following command:
 
 		mvn archetype:generate
 
-	This command will create a list of available project archetypes which
-	appears similarly to the output below:
+	This command creates a list of available project archetypes which appears
+	similarly to the output below:
 	
 		...
 		39: remote -> com.liferay.maven.archetypes:liferay-hook-archetype
@@ -660,14 +696,14 @@ using a Liferay portlet archetype. Run the following command:
 
 7. Choose the number that corresponds with
 `com.liferay.maven.archetypes:liferay-portlet-archetype`. For the output listed
-above, we will select number *41*. As an alternate way to select the portlet
+above, select number *41*. As an alternate way to select the portlet
 archetype, you can type in `liferay-portlet-archetype` instead of the number
 *41*. Then type the number *1* to select it from the new list.
 
 8. The next prompt asks you to choose an archetype version. Choose the version
 you prefer. The snapshot below illustrates this message:
 
-	![Figure 2.6: You are asked to input the archetype version when setting up a portlet plugin.](../../images/maven-archetype-version.png)
+	![Figure 2.8: You are asked to input the archetype version when setting up a portlet plugin.](../../images/maven-archetype-version.png)
 
 	For this example, we will choose the number *9*, which corresponds with
 	`6.1.20`.
@@ -679,44 +715,105 @@ the archetype version that corresponds with your Liferay instance. Older
 archetype versions are compatible with updated Liferay bundles.
 
 ---
+9. After entering your archetype version, you are be asked to provide your
+*groupId*, *artifactId*, *version*, and *package* coordinates. Enter their
+values accordingly:
 
-9. After entering your archetype version, you will be asked to provide your
-`groupId`, `artifactId`, `version`, and `package` properties. Enter their values
-accordingly:
-
-		'groupId': com.liferay.sample
-		'artifactId': sample-portlet
-		'version': 1.0-SNAPSHOT
-		'package': com.liferay.sample
+		groupId: com.liferay.sample
+		artifactId: sample-portlet
+		version: 1.0-SNAPSHOT
+		package: com.liferay.sample
 
     This process is illustrated in the snapshot below:
 
-	![Figure 2.7: When creating your portlet plugin, you must enter your `groupId`, `artifactId`, `version`, and `package` properties.](../../images/maven-portlet-plugin-settings.png)
+	![Figure 2.9: When creating your portlet plugin, you must enter your `groupId`, `artifactId`, `version`, and `package` properties.](../../images/maven-portlet-plugin-settings.png)
 
-10. Type the letter `Y` to confirm these values. This will create a separate
-folder inside your `sample-project` folder where your portlet plugin will
-reside. Also, you will see an automatically generated `pom.xml` file for your
-new portlet project. You will not need to modify this file. For more information
-on defining these properties, visit [Apache's POM
+10. Type the letter `Y` to confirm these coordinates. This creates a separate
+folder inside your `sample-parent-project` folder where your portlet plugin
+resides. Also, a new `pom.xml` file is automatically generated within your new
+portlet project. You don't need to modify this file. For more information on
+defining these Maven coordinates, visit [Apache's POM
 reference](http://maven.apache.org/pom.html#Maven_Coordinates).
 
-11. In the command prompt, navigate to the `sample-portlet` directory and run
-the command:
+11. If you have any customizations you would like to add to your `sample-portlet`,
+add them in the `<portlet-plugin>/src/main/webapp` directory. For a breakdown of
+the Maven portlet anatomy, reference the structure below:
+
+	-	sample-portlet/
+		-	src/
+			-	main/
+				-	java/
+				-	resources/
+				-	webapp/
+					-	WEB-INF/
+						-	liferay-display.xml
+						-	liferay-plugin-package.properties
+						-	liferay-portlet.xml
+						-	portlet.xml
+						-	web.xml
+					-	css/
+						-	main.css
+					-	js/
+						-	main.js
+				-	icon.png
+				-	view.jsp
+
+	For example, your `main.css` file path would be
+	`<portlet-plugin>/src/main/webapp/css/main.css`.
+
+---
+
+![note](../../images/tip-pen-paper.png)**Note:** If you're familiar with
+developing plugins with Ant, compare the different customization directory
+locations:
+
+Ant Customization directory: `<portlet-plugin>/docroot`
+
+Maven Customization directory: `<portlet-plugin>/src/main/webapp`
+
+If you'd like to view the anatomy of a portlet developed by Ant or would just like
+to learn more about portlet structures, visit the [Anatomy of a
+Portlet](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-portl-4)
+section in Liferay's Development Guide.
+
+---
+
+
+12. In the command prompt, navigate to the `sample-portlet` directory
+
+13. Run the command:
 
 		mvn package
 
-	This will compile any classes and packages in the target directory. Also,
-	the command will create the `sample-portlet`'s WAR file.
+	This compiles any classes and packages in the target directory. Also, the
+	command creates the `sample-portlet`'s WAR file. The snapshot below
+	illustrates the output you should expect after packaging your portlet
+	plugin.
+	
+	![Figure 2.10: The command prompt gives useful feedback during the packaging process.](../../images/maven-package.png)
 
-12. Deploy the portlet into your Liferay bundle by running:
+14. Deploy the portlet into your Liferay instance by running:
 
 		mvn liferay:deploy
 
-13. Start up your Liferay instance that you have used during this exercise.
-Navigate to *Add* &rarr; *More...* &rarr; *sample-portlet*. Your
-*sample-portlet* will appear like the snapshot below:
+---
 
-	![Figure 2.8: The portlet plugin you created is now available in your Liferay Portal.](../../images/maven-sample-portlet.png)
+![note](../../images/tip-pen-paper.png)**Note:** If you get the following error
+executing `mvn liferay:deploy`, check to see if you're executing the command
+from your plugin's directory (e.g. `sample-portlet`).
+
+`[ERROR] No plugin found for prefix 'liferay' in the current project and in the
+plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available from the
+repositories [local (C:\Users\cdhoag\.m2\repository), central (http://repo.maven
+.apache.org/maven2)] -> [Help 1]`
+
+---
+
+14. Start up your Liferay instance that you have used during this exercise.
+Navigate to *Add* &rarr; *More...* &rarr; *sample-portlet*. Your
+*sample-portlet* appears like the snapshot below:
+
+	![Figure 2.11: The portlet plugin you created is now available in your Liferay Portal.](../../images/maven-sample-portlet.png)
 
 <!-- TODO: This section may require some details on *how* to customize a
 portlet, similar to what was done with the theme. This information was not given
@@ -739,11 +836,12 @@ using Maven so your portal has a lasting effect on anyone who visits it.
 
 The process of creating a theme plugin is similar to the previous portlet we
 created. Our theme plugin demonstration will begin where step 5 left off on the
-portlet plugin instructions. You do not need to create a new `sample-project`
-directory, but simply navigate to it and begin our theme exercise.
+portlet plugin instructions. You do not need to create a new
+`sample-parent-project` directory, but simply navigate to it and begin our theme
+exercise.
 
-1. In the command prompt, navigate to your `sample-project` directory and run
-the following command:
+1. In the command prompt, navigate to your `sample-parent-project` directory and
+run the following command:
 
 		mvn archetype:generate
 
@@ -766,16 +864,16 @@ the following command:
 
 2. Choose the number that corresponds with
 `com.liferay.maven.archetypes:liferay-theme-archetype`. For the output listed
-above, we will select number *47*. As an alternate way to select the theme
+above, select number *47*. As an alternate way to select the theme
 archetype, you can type in `liferay-theme-archetype` instead of the number *47*.
 Then type the number *1* to select it from the new list.
 
 3. The next prompt asks you to choose an archetype version. Choose the version
-you prefer. For this example, we will choose the number *9*, which corresponds
+you prefer. For this example, choose the number *9*, which corresponds
 with `6.1.20`.
 
 4. After entering your archetype version, you will be asked to provide your
-`groupId`, `artifactId`, `version`, and `package` properties. Enter their values
+*groupId*, *artifactId*, *version*, and *package* properties. Enter their values
 accordingly:
 
 		'groupId': com.liferay.sample
@@ -807,15 +905,46 @@ chapter of the Development Guide.
 ---
 
 6. If you have any customizations you would like to add to your `sample-theme`,
-add them in the `../src/main/webapp` directory. If you're familiar with
-developing plugins with Ant, follow the same structure you would use in the
-`_diffs` folder. For example, your `custom.css` file path would be
-`../src/main/webapp/css/custom.css`. Visit the [Anatomy of a
-Theme](http://www.liferay.com/documentation/liferay-portal/6.0/development/-/ai/anatomy-of-a-theme)
-section in Liferay's Development Guide for more details.
+add them in the `<theme-plugin>/src/main/webapp` directory. For a breakdown of
+the Maven theme anatomy, reference the structure below:
 
-7. In the command prompt, navigate to the `sample-theme` directory and run the
-command:
+	-	sample-theme/
+		-	pom.xml
+		-	src/
+			-	main/
+				-	resources/
+				-	webapp/
+					-	WEB-INF/
+						-	liferay-plugin-package.properties
+						-	web.xml
+					-	css/ (optional for customizations)
+					-	images/ (optional for customizations)
+					-	js/ (optional for customizations)
+					-	templates/ (optional for customizations)
+
+	For example, your `custom.css` file path would be
+	`<theme-plugin>/src/main/webapp/css/custom.css`.
+
+---
+
+![note](../../images/tip-pen-paper.png)**Note:** If you're familiar with
+developing plugins with Ant, compare the different customization directory
+locations:
+
+Ant Customization directory: `<theme-plugin>/docroot/_diffs`
+
+Maven Customization directory: `<theme-plugin>/src/main/webapp`
+
+If you'd like to view the anatomy of a theme developed by Ant or would just like
+to learn more about theme structures, visit the [Anatomy of a
+Theme](http://www.liferay.com/documentation/liferay-portal/6.0/development/-/ai/anatomy-of-a-theme)
+section in Liferay's Development Guide.
+
+---
+
+7. In the command prompt, navigate to the `sample-theme` directory.
+
+8. Run the command:
 
 		mvn package
 
@@ -837,15 +966,15 @@ image files, the sample theme has no thumbnail or snapshot. The answer to this
 question may also offer more material to present when describing the
 <liferay.parent.theme> tags. -->
 
-8. Deploy the theme into your Liferay bundle by running:
+9. Deploy the theme into your Liferay bundle by running:
 
 		mvn liferay:deploy
 		
-9. Start up your Liferay instance that you have used during this exercise. Then,
+10. Start up your Liferay instance that you have used during this exercise. Then,
 navigate to *Manage* &rarr; *Page* &rarr; *Look and Feel*.
 
-10. Select the *Define a specific look and feel for this page* option and you
-will see your `sample-theme` listed as an available theme.
+11. Select the *Define a specific look and feel for this page* option and the
+`sample-theme` is listed as an available theme.
 
 You have successfully developed a Liferay theme using Maven. Great job!
 
