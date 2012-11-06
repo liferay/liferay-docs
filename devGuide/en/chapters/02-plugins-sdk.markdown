@@ -410,10 +410,10 @@ To create and configure a Nexus repository, follow the steps below:
 2. Follow the installation steps provided by Sonatype in [Installing
 Nexus](http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html).
 
-3. To begin using Nexus, open a command prompt (make sure to run as administrator) and
-navigate to `${NEXUS_HOME}\bin\jsw\${OPERATING_SYSTEM}`. Make sure to replace
-the `${NEXUS_HOME}` and `${OPERATING_SYSTEM}` variables with the appropriate
-content (e.g. `E:\nexus\nexus-2.1.2\bin\jsw\windows-x86-64`).
+3. To begin using Nexus, open a command prompt (make sure to run as
+administrator) and navigate to `${NEXUS_HOME}\bin\jsw\${OPERATING_SYSTEM}`. Make
+sure to replace the `${NEXUS_HOME}` and `${OPERATING_SYSTEM}` variables with the
+appropriate content (e.g. `E:\nexus\nexus-2.1.2\bin\jsw\windows-x86-64`).
 
 4. Type `install-nexus` to install Nexus onto your computer. After the
 installation process is complete, your command prompt appears like the
@@ -735,9 +735,9 @@ portlet project. You don't need to modify this file. For more information on
 defining these Maven coordinates, visit [Apache's POM
 reference](http://maven.apache.org/pom.html#Maven_Coordinates).
 
-11. If you have any customizations you would like to add to your `sample-portlet`,
-add them in the `<portlet-plugin>/src/main/webapp` directory. For a breakdown of
-the Maven portlet anatomy, reference the structure below:
+11. If you have any customizations you would like to add to your
+`sample-portlet`, add them in the `<portlet-plugin>/src/main/webapp` directory.
+For a breakdown of the Maven portlet anatomy, reference the structure below:
 
 	-	sample-portlet/
 		-	src/
@@ -771,8 +771,8 @@ Ant Customization directory: `<portlet-plugin>/docroot`
 
 Maven Customization directory: `<portlet-plugin>/src/main/webapp`
 
-If you'd like to view the anatomy of a portlet developed by Ant or would just like
-to learn more about portlet structures, visit the [Anatomy of a
+If you'd like to view the anatomy of a portlet developed by Ant or would just
+like to learn more about portlet structures, visit the [Anatomy of a
 Portlet](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-portl-4)
 section in Liferay's Development Guide.
 
@@ -970,8 +970,8 @@ question may also offer more material to present when describing the
 
 		mvn liferay:deploy
 		
-10. Start up your Liferay instance that you have used during this exercise. Then,
-navigate to *Manage* &rarr; *Page* &rarr; *Look and Feel*.
+10. Start up your Liferay instance that you have used during this exercise.
+Then, navigate to *Manage* &rarr; *Page* &rarr; *Look and Feel*.
 
 11. Select the *Define a specific look and feel for this page* option and the
 `sample-theme` is listed as an available theme.
