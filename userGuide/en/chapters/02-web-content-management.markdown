@@ -1087,9 +1087,6 @@ portlet. Call the new content *Course Offerings* and enter some content. Notice
 that the Publish button is now gone. In its place is a *Submit for Publication*
 button. Go ahead and click it.
 
-![Figure 2.22: Pending
-Workflow](../../images/04-web-content-workflow-config.png)
-
 Next, go to the *Workflow Tasks* in Control Panel and then select *My Workflow
 Tasks*. You will see the option to Review Content for Sales Goals. It shows
 because you are logged in as an Administrator. There is also a Content Approvers
@@ -1103,7 +1100,7 @@ Taking ownership of, reviewing and approving content is very easy:
 
 1.  Click the *Assign to Me* button. Alternatively, you could assign it to
     someone else in the Content Approvers role or create / update a due date for
-the content's approval.
+    the content's approval.
 2.  Once you've assigned it to yourself, buttons allowing you to approve or
     reject the content appear. Click *Approve*.
 3.  You're asked to submit a comment. You'd have to do this for either *Approve*
@@ -1119,11 +1116,6 @@ workflow allows you to design workflows that go through as many steps as you
 need to conform to your business processes. We look at Kaleo workflow in more
 detail in chapter 6.
 
-<!--
-Next up is Site memberships, where you'll learn how to administer sites and
-define users and permissions. ## Site memberships
-[](id=lp-6-1-ugen02-site-memberships-0) Need text here
--->
 
 ## Summary [](id=summ-25)
 
