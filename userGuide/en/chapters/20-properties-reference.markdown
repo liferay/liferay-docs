@@ -4042,6 +4042,8 @@ Set this to `true` to enable ImageMagick. You must install Ghostscript and Image
     imagemagick.global.search.path[unix]=/usr/local/bin
     imagemagick.global.search.path[windows]=C:\\Program Files\\ImageMagick
 
+If you're unable to properly use ImageMagick, you may need to update to the latest version (ImageMagick 6.7.9-6 2012-09-25 Q16 or later). To check for the latest ImageMagick versions, visit [http://www.imagemagick.org/script/binary-releases.php](http://www.imagemagick.org/script/binary-releases.php). See [http://issues.liferay.com/browse/LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on efforts to identify incompatible application versions with Liferay.
+
 ## Invoker [](id=invoker)
 
 The invoker filter will attempt to cache `InvokerFilterChain` objects based on the request URI and dispatcher. Set this property configure the maximum number of cached `InvokerFilterChain` objects. Set this property to `0` to disable caching of `InvokerFilterChain` objects.
