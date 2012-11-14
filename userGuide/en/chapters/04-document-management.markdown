@@ -280,8 +280,8 @@ forms of web content that can be created in Liferay, including documents.
 ## Using External Repositories [](id=lp-6-1-ugen04-repositories-0)
 
 Adding repositories in Documents and Media is a new feature in Liferay 6.1.
-Documents and Media allows to connect to multiple third-party repositories that
-support CMIS 1.0 with AtomPUB and Web Services protocols. You can add new
+Documents and Media allows users to connect to multiple third-party repositories
+that support CMIS 1.0 with AtomPub and Web Services protocols. You can add new
 repositories from the UI by clicking the *Add* button from the Home folder.
 Repositories can only be mounted in the Home folder.
 
@@ -294,10 +294,297 @@ that the credentials and authentication are the same. In order to authenticate
 with the third-party repository you need to enable the following property:
 
     session.store.password=false
+    
+<!-- I THINK THIS SHOULD BE SET TO "TRUE"   -->
 
 The repository is displayed in the left side of the window in the Home folder.
 
 ![Figure 4.8: Viewing a repository](../../images/05-repository.jpg)
+
+It may be helpful, at this time, to walk through an example of setting up a
+external repository. As noted previously, there are several programs that work
+well with Liferay using CMIS. One program familiar to many users is SharePoint.
+In the exercise below, we'll set up a SharePoint repository using the AtomPub
+protocol.
+
+### Example Repository Setup: SharePoint
+
+With Liferay Portal's Documents and Media you can connect an external SharePoint
+server as a CMIS repository. This will allow users to collaborate and share
+documents more easily between both environments. You can mount a remote
+repository via CMIS AtomPub and SharePoint SOAP webservices.
+
+---
+
+![Tip](../../images/tip.png) Note, this section is geared towards the portal 
+system administrator and system administrator of the respective external 
+repository, (i.e. the SharePoint server).
+
+---
+
+Requirements to complete this exercise:
+
+- Use Liferay 6.1 and above
+- Use the current version of SharePoint 2010
+- Configure SharePoint for CMIS
+- Deploy the SharePoint hook
+
+So without further ado, let's begin.
+
+#### CMIS background
+
+Content Management Interoperability Services (CMIS) is a specification for 
+improving interoperability between Enterprise Content Management systems. 
+Liferay uses a combination of SOAP and Representational State Transfer (REST), 
+based on the Atom convention, to connect to the SharePoint Repository.
+
+#### Explain supported features
+
+SharePoint 2010 provides various SOAP services allowing access to modify and 
+query the data from the document library. Liferay uses Axis2 to generate the 
+SOAP calls to the SharePoint server. 
+
+For documentation of SharePoint SOAP services, see 
+[Lists Service](http://msdn.microsoft.com/en-us/library/websvclists.lists_methods.aspx),
+[Versions Service](http://msdn.microsoft.com/en-us/library/websvcversions.versions_methods.aspx),
+and [other webservices](http://msdn.microsoft.com/en-us/library/ee538665.aspx). 
+Click the following link for documentation of Apache Software's 
+[Axis2](http://axis.apache.org/axis2/java/core/docs/quickstartguide.html#clients).
+
+
+Some of the features supported include:
+
+- CRUD operations of Documents and Folders
+- Check in, undo check out, and check out documents
+- Downloading documents
+- Moving folders and documents within the repository
+- Revision history
+- Revert to revision
+
+[Transitional text goes here?]
+
+#### SharePoint server configuration
+
+Before you can use SharePoint as an external repository with Liferay portal, you
+need to verify that SharePoint is properly configured. Several services must be
+set up on the SharePoint 2010 server before synchronizing with Liferay. First,
+the CMIS Connector must be installed and configured. Second, the CMIS Producer
+must be set up. Third, SharePoint's Basic Authentication must be enabled for the
+connector and producer to work.
+
+Be sure you're using the current version of SharePoint 2010. 
+
+#### Configuring the CMIS connector
+
+SharePoint utilizes a CMIS Connector and a CMIS Producer to interface with
+Liferay Portal. The Connector is installed by the SharePoint 2010 Administrator
+Toolkit using a solution package called a Windows SharePoint file (.wsp). If you
+don't have it already, install the SharePoint 2010 Administrator Toolkit for its
+CMIS Connectors. Install and deploy the CMIS Connectors as a Farm Solution on
+SharePoint.
+
+Follow these steps to install the SharePoint 2010 Administrator Toolkit:
+
+1. Download the SharePoint 2010 Administrator Toolkit and run the executable 
+file. This will install the CMIS Connector as the file spcmis.wsp.
+
+2. Select *Content Management Interoperability Services* and the required
+features and click *Next*. The installer deploys a WSP to the directory
+`C:\Program Files\Microsoft\SharePoint 2010 Administration Toolkit\Content
+Management Interoperability Services (CMIS) Connectors` called `spcmis.wsp`.
+
+Once this is done, it's time to deploy the WSP following these steps:
+
+1. Go to the SharePoint 2010 Management Shell.
+2. Run the following command: `Add-SPSolution -LiteralPath 'C:\Program
+Files\Microsoft\Sharepoint 2010 Administration Toolkit\Content Management
+Interoperability Services (CMIS) Connectors\spcmis.wsp'`.
+3. Go to *Central Administration &rarr; System Settings &rarr; Manage Farm 
+Solutions*.
+4. Click *spscmis.wsp*, choose the appropriate deployment settings, and click 
+*Deploy Solutions*.
+
+When deployment is complete, Solution Properties should show that the solution
+was successfully deployed to all target sites. Now it's time to configure the
+CMIS Producer.
+
+#### Enable SharePoint to be a CMIS Producer. 
+
+The Producer allows SharePoint repositories, called libraries, to be available
+through the CMIS connector. Choose the SharePoint site where the document
+libraries will be used as document repositories. Every document library in this
+site will be available as a repository through the CMIS connector.
+
+Follow these steps to enable the CMIS producer:
+
+1. Go to the site with the document library you want to use as repository.
+2. Go to the site Settings.
+3. Go to site Features. 
+4. Enable the *Content Management Interoperability Services (CMIS) Producer* 
+feature.
+
+Now any document library created under this site will be CMIS enabled.
+
+To verify CMIS is working correctly, enter the CMIS REST AtomPub URL into a
+browser. The basic structure of the AtomPub URL looks like the
+following:
+
+http://[server-name]/_vti_bin/cmis/rest/[repositoryid]?getRepositoryInfo
+
+The [server-name] is also the host name. [Which one is preferred?] The
+[repository id] is the list or library GUID. 
+
+(globally unique identifier)
+
+It is easiest to find the list/library GUID by using the Firefox browser with
+the following steps:
+
+1. Open the library.
+2. Under Library Tools select *Library*.
+3. Click on *Library Settings*.
+4. From the resulting URL, select the value of the List parameter without the *{*
+and *}* or *%7B* and *%7D*. Convert any *%2D* to *-*.
+
+For example from the URL, 
+
+http://liferay-20jf4ic/_layouts/listedit.aspx?List=%7B5353596F%2D1D58%2D43D7%2D9442%2D44371E2E5E0D%7D, 
+
+the resulting List GUID is 5353596F-1D58-43D7-9442-44371E2E5E0D. Thus, the
+AtomPub URL you'd use to verify the CMIS would look like this:
+
+http://liferay-20jf4ic/CMIS/_vti_bin/cmis/rest/5353596F-1D58-43D7-9442-44371E2E5E0D?getRepositoryInfo.
+
+When we're satisfied the CMIS is working correctly, we must then enable Basic
+Authentication in SharePoint.
+
+#### Enable Basic Authentication on the SharePoint host machine
+
+For the CMIS connector and producer to work, you must enable Basic
+Authentication on IIS. This will allow Liferay's SharePoint hook to authenticate
+against web services. In Windows, run the following steps:
+
+1. Go to *Start &rarr; All Programs &rarr; Administrative Tools &rarr; Internet
+Information Services (IIS) Manager*.
+2. Expand the *Sites* node and select the *SharePoint* site.
+3. Open *Authentication* under IIS.
+4. Change the status of Basic Authentication to *Enabled*.
+
+Those are the final steps to prepare SharePoint to be mounted as an external
+repository. Now we need to prepare Liferay portal.
+
+#### Setting up Liferay Portal to use the SharePoint repository
+
+Now that the SharePoint server has been configured, we can turn our attention 
+to Liferay. In order for Liferay to connect with the external repository, we 
+must configure the portal environment. So naturally, we'll start by going back 
+in to SharePoint.
+
+Copy and save the Repository ID from the Firefox browser.
+ 
+1. Sign in to SharePoint with the User Name *Administrator* and the Password
+*password*. 
+2. Go to *Site Actions &rarr; New Document Library* and create a repository
+named *CMIS Repository Test*. 
+3. Give it a description and set Documents Version History to *Yes*.
+4. Click *Create*. 
+5. Go to *Library &rarr; Library Settings*
+
+Copy the Repository ID in between the braces and store it in a secure location. 
+
+In Liferay, we need to configure portal to connect with SharePoint's external 
+repository. Start by downloading the SharePoint hook from Marketplace and 
+installing it on portal. This will deploy the hook automatically.
+
+To log into a CMIS repository, we need to pass the credentials used in Liferay 
+through to CMIS. We do this by setting the portal.properties to allow Liferay 
+to store the user's password in the session:
+
+	session.store.password=true.
+
+Next, we need to make sure the login and password for Liferay are the same as 
+the external repository. This is easily accomplished by using identical screen 
+names, so in `portal-ext.properties` add the following: 
+
+	company.security.auth.type=screenName.
+
+This can alternatively be configured in the Control Panel under Portal 
+Settings &rarr; Authentication.
+
+Startup your server and login as the administrator. In the Control Panel, go to 
+Add &rarr; New &rarr; User and create the default user for SharePoint. Use 
+*Administrator* for the Screen Name and *password* for the Password. Give the 
+new user Administrator status under Roles. Then sign out of Liferay and sign in 
+again as the new user, Administrator.
+
+Mounting the SharePoint repository in Liferay is accomplished using the 
+Documents and Media portlet. If you haven't already done so, add a Page and 
+add the Documents and Media portlet to that page. In the portlet click *Add 
+Repository*. Enter *SharePoint* as the Name and Description for the repository.
+Under Repository Type select *SharePoint (AtomPub)*. In the AtomPub URL field 
+enter your data using the following format:
+
+http://[Host Name]/_vti_bin/cmis/rest/[Repository ID]?getRepositoryInfo.
+
+This is the same URL used above to verify that CMIS was working correctly.
+ 
+The [Host Name] can be the server's IP address or the computer's name(?) The 
+[Repository ID] comes from the SharePoint server's URL. This can be found using 
+the Firefox browser, as demonstrated above. The following is an example of what 
+the URL might look like:
+
+http://liferay-20jf4ic/CMIS/_layouts/listedit.aspx?List={6D06FDA9-B547-4D1D-BF85-976863CDF533}.
+
+The information in between the braces, 6D06FDA9-B547-4D1D-BF85-976863CDF533, 
+is the repository ID. The resulting AtomPub URL will therefore look like this:
+
+http://liferay-20jf4ic/CMIS/_vti_bin/cmis/rest/6D06FDA9-B547-4D1D-BF85-976863CDF533?getRepositoryInfo.
+
+Leave the Repository ID field blank. The system will search for the first 
+repository using the given parameters and set it to that one.
+
+In the Site Path field enter data using the following format:
+
+http://[Host Name]/[Repository Name].
+
+In the example below, notice how the repository has the two-word name, Shared 
+Documents. This is the URL taken from the Firefox browser:
+
+http://liferay-20jf4ic/CMIS/Shared Documents/Forms/AllItems.aspx.
+
+The space between the words in the repository name must be accounted for when 
+setting the site path. Replace the empty space with the figure *%20* so the 
+site path now looks like this:
+
+http://liferay-20jf4ic/CMIS/Shared%20Documents/Forms/AllItems.aspx.
+
+Click *Save*.
+
+You should now see the repository listed in the left navigation panel of the
+Documents and Media portlet.
+
+
+<!-- 
+(Note to self, liferay-jf4ic can be referred to as the value for host; as this 
+could possibly be a name or an IP address)
+-->
+
+
+When testing multiple repositories it's easier to add the user *test/test* to the 
+repositories. That way all you have to do is Sign In as test/test in liferay to 
+test all of the repositories at once.
+
+[Transition/summary?]
+
+
+
+
+
+
+
+
+
+
+<!--    END OF NEW SECTION     -->
 
 ## Configuring the Documents and Media portlet [](id=lp-6-1-ugen04-configuring-the-documents-and-media-portlet-0)
 
