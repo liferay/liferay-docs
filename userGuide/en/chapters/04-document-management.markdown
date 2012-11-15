@@ -481,8 +481,7 @@ On Windows, run the following steps:
 4. Change the status of Basic Authentication to *Enabled*.
 
 ![Figure 4.XX: The Windows panel Internet Information Services (IIS) Manager is 
-where we enable SharePoint's Basic 
-Authentication.](../../images/SharePoint_basic_authentication.png)
+where we enable SharePoint's Basic Authentication.](../../images/SharePoint_basic_authentication.png)
 
 Those are the final steps for preparing SharePoint to be mounted as an external
 repository. Now we need to prepare Liferay portal.
