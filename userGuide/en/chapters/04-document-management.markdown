@@ -302,7 +302,7 @@ The repository is displayed in the left side of the window in the Home folder.
 
 ![Figure 4.8: Viewing a repository](../../images/05-repository.jpg)
 
-It may be helpful, at this time, to walk through an example of setting up a
+It may be helpful, at this time, to walk through an example of setting up an
 external repository. As noted previously, there are several programs that work
 well with Liferay using CMIS. One program familiar to many users is SharePoint.
 In the exercise below, we'll set up a SharePoint repository using the AtomPub
@@ -346,7 +346,7 @@ and search for the Lists web service, the Versions web service, or other
 SharePoint Foundation web services. For documentation of Axis2, visit Apache's
 QuickStart Guide at 
 [http://axis.apache.org/axis2/java/core/docs/quickstartguide.html#clients](http://axis.apache.org/axis2/java/core/docs/quickstartguide.html#clients)
-and search for Axis2 Services and SOAP messsages.
+and search for Axis2 Services and SOAP messages.
 
 Some of the features supported include:
 
@@ -435,8 +435,8 @@ repository.
 at the top of the list. 
 4. Enable the CMIS Producer by clicking *Activate*. 
 
-![Figure 4.XX: By enabling the CMIS producer, you allow SharePoint librariess to 
-be usesd as repositories.](../../images/SharePoint_CMIS_producer.png)
+![Figure 4.XX: By enabling the CMIS producer, you allow SharePoint libraries to 
+be used as repositories.](../../images/SharePoint_CMIS_producer.png)
 
 Now any document library created under this site will be CMIS enabled.
 
@@ -523,9 +523,10 @@ names, so in `portal-ext.properties` add the following:
 This can alternatively be configured in the Control Panel under *Portal 
 Settings* &rarr; *Authentication*.
 
-Now let's create a new default user for SharePoint by running the following steps:
+Now let's create a new default user for SharePoint by running the following
+steps:
 
-1. Startup your server and login as the administrator. 
+1. Start up your server and login as the administrator. 
 2. In the Control Panel, go to *Add* &rarr; *New* &rarr; *User* and create the
 default user for SharePoint. 
 3. Use *Administrator* for the Screen Name and *password* for the Password.
@@ -550,15 +551,6 @@ http://[Host Name]/_vti_bin/cmis/rest/[Repository ID]?getRepositoryInfo.
 The [Host Name] can be the server's IP address or the computer's name. The
 [Repository ID] comes from the SharePoint server's URL. This is the same URL we
 used above to verify that CMIS was working correctly using the Firefox browser.
-
-The following is an example of what the URL might look like:
-
-http://liferay-20jf4ic/CMIS/_layouts/listedit.aspx?List={6D06FDA9-B547-4D1D-BF85-976863CDF533}.
-
-The information in between the braces, 6D06FDA9-B547-4D1D-BF85-976863CDF533, 
-is the repository ID. The resulting AtomPub URL will therefore look like this:
-
-http://liferay-20jf4ic/CMIS/_vti_bin/cmis/rest/6D06FDA9-B547-4D1D-BF85-976863CDF533?getRepositoryInfo.
 
 5. Leave the *Repository ID* field blank. The system will search for the first 
 repository using the given parameters and set it to that one.
@@ -585,15 +577,15 @@ so the site path now looks like this:
 
 http://liferay-20jf4ic/CMIS/Shared%20Documents/Forms/AllItems.aspx.
 
-This should alleviate any confusion.
+This should alleviate any potential confusion.
 
 ---
 
 That about does it for this exercise. Remember that connecting to an external
 SharePoint server and adding it as a Documents and Media repository is a great
 way to give users flexibility when collaborating and sharing documents. But this
-is not the only way Documents and Media can be used to share resources between
-Liferay portal and another environemnt.
+is not the only way to share resources between Liferay portal and another
+environment.
 
 Documents and Media has another feature similar to an external repository that
 is called *Access From Desktop*. This feature uses the WebDAV protocol to allow
