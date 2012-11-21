@@ -288,7 +288,7 @@ they're forced to focus on the wrapper instead of the asset. With Social Office,
 you'll be free to concentrate on the assets--the system gets out of your way so
 that it's a simple matter for your team to work together. 
 
-## What features does Social Office add to Liferay Portal?
+## Social Office features
 [](id=lp-2-0-soen01-what-features-does-social-office-add-to-liferay-portal-0)
 
 Liferay Portal is a full featured web portal, containing an industry-leading
@@ -681,6 +681,63 @@ information he missed, as well as a notification about the updated Wiki.
 Additionally, he can easily access those pages to catch up on what he missed.
 This works because Social Office automatically keeps everyone up to date on the
 activities of the teams they work with every day.
+
+### Social Office EE Features
+
+Social Office EE provides several useful features in addition to the ones
+provided by Social Office CE. These additional features include the following:
+
+- A Social Office User management tool that provides an easier way to assign
+  users to the Social Office User role
+- Enhanced auditing tools for the Documents and Media library
+- The ability to mount Sharepoint and Documentum repositories to the Documents
+  and Media library.
+- The ability for Liferay Sync users to sync with multiple Social Office sites
+- Bug fixes and usability improvements since Social Office 2.0 CE GA2
+- Access to Liferay Support
+
+After installing Social Office EE to your Liferay EE instance, you'll be
+directed to the following screen when you log in as an administrator:
+
+![Figure 1.x: The Social Office Configurations page of the Control Panel
+provides a quick and easy way to assign the Social Office User role to users,
+organizations, or user groups.](../../images/so-ee-configurations.png)
+
+This page allows you to assign the Social Office User role to users,
+organizations, or user groups. If you aren't immediately sure who should be
+assigned to the Social Office User role, you can come back to this page later.
+It's called Social Office Configurations and it appears at the bottom of the
+Portal section of the Control Panel.
+
+Other features provided by Social Office EE include auditing improvements to the
+Documents and Media library. Once you've installed Social Office EE, you'll find
+the option to select either a major or a minor revision each time you edit or
+check in a document. You'll also be prompted to enter a change log message.
+Without Social Office EE, the version number will be automatically incremented
+but there's no way to specify a major/minor revision or enter a change log
+message.
+
+![Figure 1.x: Social Office EE allows you to specify a major or minor revision
+and enter a change log message each time you edit or check in a
+document.](../../images/so-ee-doclib-checkin-screen.png)
+
+Additionally, Social Office EE allows comments to be added to specific versions
+of a document. Without Social Office EE, there's just a general comments area
+for each document that's not specific to any version.
+
+![Figure 1.x: Social Office EE allows you to specify a major or minor revision
+and enter a change log message each time you edit or check in a
+document.](../../images/so-ee-doclib-comments.png)
+
+If you've been using Social Office CE and upgrade to EE, any comments that were
+added when you were using CE will appear in a section entitled *Previous
+Comments*.
+
+![Figure 1.x: Social Office EE allows you to specify a major or minor revision
+and enter a change log message each time you edit or check in a
+document.](../../images/so-ee-doclib-previous-comments.png)
+
+Next, let's look at Social Office's upgrade process.
 
 ## Upgrade Process [](id=lp-2-0-soen01-upgrade-process-0)
 
