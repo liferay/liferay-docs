@@ -521,6 +521,45 @@ That about does it for this exercise. Remember that connecting to an external
 SharePoint server and adding it as a Documents and Media repository is a great
 way to give users flexibility when collaborating and sharing documents. 
 
+Another feature that gives users and organizations great flexibility
+when working with Documents and Media is Liferay's integration with Microsoft
+Office. Let's look at that next.
+
+## Microsoft Office integration
+
+With Liferay's Documents and Media you can access Microsoft Office files
+directly from within your Office program. Liferay implements the MS-DWSS
+SharePoint protocol to allow users to save and retrieve documents to and from
+Liferay Portal as if it were a SharePoint server. This makes it convenient to
+update Documents and Media files without having to go into portal to retrieve
+them first.
+
+For example, if you are working in Word, you can open a file that's in your
+Documents and Media without leaving Word. Simply go to Open in your Word file
+menu and in the window you will see the drive *sharepoint to localhost.*
+Navigate to your document library to see the files in Documents and Media.
+Select the Word file you want and it will open in your Word program.
+
+![Figure 4.x: Navigate to the document library in Documents and Media to access 
+your Office files.](../../images/MSOffice3.png
+
+When you're done working in the file, save it. Now anyone with access to
+Documents and Media will see the file with the most recent changes. Liferay
+takes care of version control and check-in/check-out. Users can add comments,
+ratings, and tags as they wish.
+
+<!-- THIS PART IS UNVERIFIED  --> 
+  
+You can also save Office files to the document library from your local machine.
+When saving the file in your Office program, navigate to the drive `sharepoint
+to localhost` to save your file in the appropriate Documents and Media location.
+
+With Liferay's integration of Microsoft Office, the Documents and Media portlet
+can be a powerful tool to help your organization manage files from a single
+location. Collaboration becomes simpler when everyone can access the most
+up-to-date versions of your files. And if you need to share documents with other
+users, simply add them to the site and they will have access.
+
 Now let's look at configuring the Documents and Media portlet.
 
 ## Configuring the Documents and Media portlet [](id=lp-6-1-ugen04-configuring-the-documents-and-media-portlet-0)
