@@ -684,8 +684,10 @@ activities of the teams they work with every day.
 
 ### Social Office EE Features
 
-Social Office EE provides several useful features in addition to the ones
-provided by Social Office CE. These additional features include the following:
+Social Office EE can only be installed on a Liferay EE instance; it's not
+possible to install Social Office EE on Liferay CE. Social Office EE provides
+several useful features in addition to the ones provided by Social Office CE.
+These additional features include the following:
 
 - A Social Office User management tool that provides an easier way to assign
   users to the Social Office User role
