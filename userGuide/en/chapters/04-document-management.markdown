@@ -527,38 +527,34 @@ Office. Let's look at that next.
 
 ## Microsoft Office integration
 
-With Liferay's Documents and Media you can access Microsoft Office files
-directly from within your Office program. Liferay implements the MS-DWSS
-SharePoint protocol to allow users to save and retrieve documents to and from
-Liferay Portal as if it were a SharePoint server. This makes it convenient to
-update Documents and Media files without having to go into portal to retrieve
-them first.
+With Liferay you can access Microsoft Office files in Documents and Media
+directly from your Office program. Liferay implements the MS-DWSS SharePoint
+protocol to allow users to save and retrieve documents from Liferay Portal as if
+it were a SharePoint server. This is a convenient way to update your Office
+files without having to exit your Office program.
 
-For example, if you are working in Word, you can open a file that's in your
-Documents and Media without leaving Word. Simply go to Open in your Word file
-menu and in the window you will see the drive *sharepoint to localhost.*
-Navigate to your document library to see the files in Documents and Media.
-Select the Word file you want and it will open in your Word program.
+For example, if you are working in Word locally on your machine, you can open a
+Word file in your document library to make any desired changes. Simply go to
+Open in the file menu and enter `http://localhost:8080/sharepoint/` in the file
+name field. Click *Open* and log in using your Portal credentials.
 
-![Figure 4.x: Navigate to the document library in Documents and Media to access 
-your Office files.](../../images/MSOffice3.png
+![Figure 4.x: Enter the location `http://localhost:8080/sharepoint/` to access 
+the document library in Documents and Media.](../../images/office_path.png
 
-When you're done working in the file, save it. Now anyone with access to
-Documents and Media will see the file with the most recent changes. Liferay
-takes care of version control and check-in/check-out. Users can add comments,
-ratings, and tags as they wish.
+In the list of folders displayed, navigate to *guest* &rarr; *document_library*
+and select *All Files* to see the contents of your Documents and Media portlet.
+Open the desired Word file to make changes. Click *Save* when you are finished
+and close the file. 
 
-<!-- THIS PART IS UNVERIFIED  --> 
-  
-You can also save Office files to the document library from your local machine.
-When saving the file in your Office program, navigate to the drive `sharepoint
-to localhost` to save your file in the appropriate Documents and Media location.
+Now anyone with appropriate permission can see the latest version of the file
+with these updates. Liferay takes care of version control as well as file
+Checkout and Checkin. Users can add comments, ratings, and tags should they
+choose.
 
 With Liferay's integration of Microsoft Office, the Documents and Media portlet
-can be a powerful tool to help your organization manage files from a single
-location. Collaboration becomes simpler when everyone can access the most
-up-to-date versions of your files. And if you need to share documents with other
-users, simply add them to the site and they will have access.
+can be a powerful tool to help your organization manage files. Collaboration
+becomes simpler when everyone can access the most up-to-date versions of your
+files.
 
 Now let's look at configuring the Documents and Media portlet.
 
