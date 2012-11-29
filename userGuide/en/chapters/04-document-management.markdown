@@ -539,7 +539,7 @@ Open in the file menu and enter `http://localhost:8080/sharepoint/` in the file
 name field. Click *Open* and log in using your Portal credentials.
 
 ![Figure 4.x: Enter the location `http://localhost:8080/sharepoint/` to access 
-the document library in Documents and Media.](../../images/office_path.png
+the document library in Documents and Media.](../../images/office_path.png)
 
 In the list of folders displayed, navigate to *guest* &rarr; *document_library*
 and select *All Files* to see the contents of your Documents and Media portlet.
