@@ -473,7 +473,7 @@ Here are the steps specific to configuring Liferay to use SharePoint:
 *Downloading and Installing Apps* section of the *Leveraging the Liferay
 Marketplace* chapter of this document for more information.
 
-2. Add the Documents and Media portlet to a page, if you haven't already done so
+2. Add the Documents and Media portlet to a page, if you haven't done so
 already.
 
 3. In the Documents and Media portlet click *Add Repository* and enter the
@@ -492,14 +492,14 @@ following information:
         http://[host]/CMIS/_vti_bin/cmis/rest/[repository ID]?getRepositoryInfo
 
     **Repository ID:** Leave this field empty. Liferay searches for the first
-    repository using the given parameters and sets the values to that
+    repository using the given parameters and sets this value to that
     repository's ID.
 
     **Site Path:** Enter data using the format below, the SharePoint server's
     host information for *[host]* and the SharePoint document library's
-    repository ID for *[repository ID]*:
+    repository name for *[repository path]*:
 
-		http://[host]/[repository name]
+		http://[host]/[repository path]
 
 4. Click *Save*.
 
@@ -509,7 +509,7 @@ new repository.
 ---
 
 ![Tip](../../images/tip.png) In the site path example below, notice how the
-repository named `Shared Documents` consists of two words.
+repository path has a folder `Shared Documents` consisting of two words.
 
 		http://liferay-20jf4ic/CMIS/Shared Documents/Forms/AllItems.aspx
 
