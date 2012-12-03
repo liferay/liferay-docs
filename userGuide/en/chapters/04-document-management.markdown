@@ -547,7 +547,7 @@ Simply select *File*&rarr; *Open* in Word and enter
 in using your Portal credentials.
 
 ![Figure 4.x: Enter the URL of your `sharepoint` location on Liferay to access
-Documents and Media.](../../images/office_path.png)
+Documents and Media.](../../images/office-path.png)
 
 In the list of folders displayed, navigate to *guest* &rarr; *document_library*
 and select *All Files* to see your Documents and Media files.
