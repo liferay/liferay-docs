@@ -308,15 +308,6 @@ Lastly, keep in mind your third-party repository may require installation and
 deployment of an appropriate Liferay plugin. Plugins for SharePoint and
 Documentum are available through Liferay's Marketplace.
 
-<!-- TODO note in paragraph above, where to find out plugins/hooks a repository
-requires 
-
-Rich/Jim I was only able to find a connector (hook) for SharePoint and
-Documentum in Liferay Marketplace. From what I can tell, it seems both Nuxeo and
-Alfresco are designed to work with Liferay out of the box.
-
--->
-
 Let's go through those steps, starting with setting our portal properties.
 
 ##### Adjusting portal properties
@@ -372,144 +363,159 @@ repository.
 ### Example Repository Setup: SharePoint
 
 With Liferay Portal you can connect to an external SharePoint server and add it
-as a Documents and Media repository. This will allow users to collaborate and
+as a Documents and Media repository. This lets users collaborate and
 share documents more easily between both environments. We will mount a
-SharePoint repository via CMIS AtomPub and SharePoint SOAP webservices. Liferay
-uses a combination of SOAP and Representational State Transfer (REST), based on
-the Atom convention, to connect to the SharePoint Repository.
+SharePoint repository via CMIS AtomPub and SharePoint SOAP web services.
 
-SharePoint provides various SOAP services allowing access to modify and 
-query the data from the document library. Liferay uses Axis2 to generate the 
-SOAP calls to the SharePoint server. 
+Liferay uses a combination of SOAP and Representational State Transfer (REST),
+based on the Atom convention, to connect to the SharePoint repository.
+SharePoint provides various SOAP services for modifying and querying data from
+its document library. Liferay uses Axis2 to generate SOAP calls to the
+SharePoint server.
 
-To use SharePoint as a Liferay Documents and Media repository, we'll
-do the following on the SharePoint server:
+To use SharePoint as a Liferay Documents and Media repository, we'll do the
+following:
 
 - Configure the CMIS Connector on SharePoint.
 - Activate a SharePoint site as a CMIS Producer.
+- Acquire your SharePoint document library's repository ID.
 - Enable Basic Authentication on the SharePoint host.
+- Add SharePoint as a Liferay Documents and Media repository.
 
-Note, this section is geared towards portal system administrators and system
-administrators of your SharePoint server.
+Note, this section is geared towards portal system administrators and SharePoint
+system administrators.
 
 Before you can use SharePoint as an external repository with Liferay portal, you
-need to verify that SharePoint is properly configured. Several services must be
-set up on the SharePoint server before synchronizing with Liferay. First,
-the CMIS Connector must be installed and configured. Second, the CMIS Producer
-must be set up. Third, SharePoint's Basic Authentication must be enabled for the
-connector and producer to work.
+must verify that SharePoint is properly configured. Several services must be
+set up on the SharePoint server before synchronizing with Liferay.
 
-##### Configuring the CMIS Connector on SharePoint
+#### Configuring the CMIS Connector on SharePoint
 
 SharePoint utilizes a CMIS Connector and a CMIS Producer to interface with
-Liferay Portal. The Connector is installed by the SharePoint Administrator
+Liferay Portal. The Connector is installed with the SharePoint Administrator
 Toolkit using a solution package called a Windows SharePoint file (.wsp). If you
-don't have it already, install the SharePoint Administrator Toolkit for its
-CMIS Connectors. Install and deploy the CMIS Connectors as a Farm Solution on
+don't have it already, install the SharePoint Administrator Toolkit for its CMIS
+Connector. Install and deploy the CMIS Connector as a Farm Solution on
 SharePoint.
 
 The folder `Content Management Interoperability Services (CMIS) Connectors`
-should contain the file called `spscmis.wsp`. Choose the appropriate deployment
-settings, and deploy. When deployment is complete, Solution Properties should
-show that the solution was successfully deployed to all target sites. Now it's
-time to configure the CMIS Producer.
+contains the `spscmis.wsp` file. Choose the appropriate deployment settings, and
+deploy that file. When deployment completes, Solution Properties shows the
+solution is successfully deployed to all target sites. Now it's time to
+configure the CMIS Producer.
 
-##### Activating a SharePoint site as a CMIS Producer
+#### Activating a SharePoint site as a CMIS Producer
 
-The Producer allows SharePoint repositories to be available
-through the CMIS connector. Choose the SharePoint site where the document
-libraries will be used as document repositories. Every document library in this
-site will be available as a repository through the CMIS connector.
+The Producer makes SharePoint repositories available through the CMIS Connector.
+Choose the SharePoint site containing the document libraries to be used as
+document repositories. Every document library in this site is made available as
+a repository through the CMIS connector.
 
-Go to *Site Actions* &rarr; *Site Settings* &rarr; *Manage Site Features*. There
-you should see *Content Management Interoperability Services (CMIS) Producer*.
-Enable it by clicking *Activate*. Now any document library created under this
-site will be CMIS enabled. The next step is to enable Basic Authentication in
-SharePoint.
+Go to *Site Actions* &rarr; *Site Settings* &rarr; *Manage Site Features*.
+Enable the *Content Management Interoperability Services (CMIS) Producer* by
+clicking *Activate*.
 
-##### Enabling Basic Authentication on the SharePoint host
+Now any document library created under this site is CMIS enabled. Before we
+leave our SharePoint console, let's take note of our SharePoint document
+library's repository ID.
 
-For the CMIS connector and producer to work, you must enable Basic
-Authentication on IIS. This will allow Liferay's SharePoint hook to authenticate
-against web services. 
+#### Acquiring the SharePoint document library's repository ID
 
-On Windows, navigate to *Administrative Tools* &rarr; *Internet Information
-Services (IIS) Manager*. Expand the *Sites* node and select the *SharePoint*
-site. Select *Authentication* under IIS, then click *Open Feature*. Change the
-status of Basic Authentication to *Enabled*.
-
-Those are the final steps for preparing SharePoint to be mounted as an external
-repository. Now we need to prepare Liferay portal.
-
----
-
-![Tip](../../images/tip.png) Acquiring the proper repository ID, or list ID, for
-a SharePoint document library is important because it is a critical piece of the
-AtomPub URL that Liferay uses to connect with the external repository. Finding
-it, however, can be a little confusing. The easiest way to find the repository
-ID is by accessing the SharePoint repository using the Firefox browser.
+Acquiring your SharePoint document library's repository ID, or list ID, is
+important as it must be specified in the AtomPub URL Liferay uses to connect
+with the external repository. Finding it, however, can be a little confusing.
+The easiest way to find the repository ID is by accessing the SharePoint
+repository using a browser such as Mozilla Firefox.
 
 Follow these steps to get the repository ID:
 
 1. In SharePoint, open the desired library. 
-2. Under Library Tools select *Library*. 
-3. Click on *Library Settings*, located to the far right. 
-4. The browser window will refresh and the resulting URL will display the value
-of the repository ID between braces.
 
-![Figure 4.x: The repository ID can be found by displaying the 
-repository's URL in a Firefox browser.](../../images/List_ID.png)
+2. Under Library Tools select *Library*.
 
-The repository ID is highlighted in the figure above. For this particular
-example, the repository ID is 6DFDA9-B547-4D1D-BF85-976863CDF53306.
-Therefore, the AtomPub URL you'd use when adding a repository in Documents and
-Media would resemble this: 
+3. Click on *Library Settings*, located to the far right.
 
-		http://liferay-20jf4ic/CMIS/_vti_bin/cmis/rest/6DFDA9-B547-4D1D-BF85-976863CDF53306?getRepositoryInfo.
+4. The browser window refreshes displaying the repository ID between curly
+braces '{' and '}' in the browser's address bar.
 
-Be sure to save this URL so you can use it to configure Documents and Media in
-your portal installation.
+    ![Figure 4.x: The repository ID can be found by displaying the repository's
+    URL in a Firefox browser.](../../images/List_ID.png)
 
----
+    The repository ID is highlighted in the figure above. For this particular
+    example, the repository ID is `6DFDA9-B547-4D1D-BF85-976863CDF533`.
+    Therefore, the AtomPub URL you'd use when adding this repository in
+    Documents and Media would resemble this: 
 
-#### Setting up Liferay Portal to use the SharePoint repository
+        http://liferay-20jf4ic/CMIS/_vti_bin/cmis/rest/6DFDA9-B547-4D1D-BF85-976863CDF533?getRepositoryInfo.
 
-With the SharePoint server configured, we can now turn our attention to
-Liferay. In order for Liferay to connect with the external repository, we must
-configure the portal environment. We'll start by downloading the SharePoint hook
-from Marketplace and installing it on portal. This will deploy the hook
-automatically.
+Be sure to copy down this URL so you can use it to configure SharePoint as a
+repository in Documents and Media. Next, let's enable Basic Authentication on
+the SharePoint host.
 
-Mounting the SharePoint repository in Liferay is accomplished using the 
-Documents and Media portlet. If you haven't already done so, add a Page and then
-add the Documents and Media portlet to that page. 
+#### Enabling Basic Authentication on the SharePoint host
 
-Add a repository to Documents and Media by clicking *Add Repository*. Enter the
-name and description for the repository. Under Repository Type select
-*SharePoint (AtomPub)*. In the AtomPub URL field enter your data using the
-following format:
+For the CMIS connector and producer to work, Basic Authentication on IIS must be
+enabled. This lets Liferay's SharePoint hook authenticate against the SharePoint
+web services. Enable Basic Authentication on your SharePoint host.
 
-		http://[host]/_vti_bin/cmis/rest/[repository ID]?getRepositoryInfo
+You are now prepared to mount SharePoint as an external repository.
 
-Leave the *Repository ID* field blank. The system will search for the first
-repository using the given parameters and set it to that one. In the *Site Path*
-field enter data using the following format:
+#### Adding SharePoint as a Liferay Documents and Media repository
+
+With the SharePoint server configured, we now turn our attention to Liferay. As
+mentioned in the common steps for adding an external repository, be sure to
+adjust the portal properties and add any user accounts required by the
+repository.
+
+Here are the steps specific to configuring Liferay to use SharePoint:
+
+1. Download and install the SharePoint hook from Marketplace. See the
+*Downloading and Installing Apps* section of the *Leveraging the Liferay
+Marketplace* chapter of this document for more information.
+
+2. Add the Documents and Media portlet to a page, if you haven't already done so
+already.
+
+3. In the Documents and Media portlet click *Add Repository* and enter the
+following information:
+
+    **Name:** Enter an arbitrary name for the repository.
+
+    **Description:** Describe the repository.
+
+    **Repository Type:** Select *SharePoint (AtomPub)*.
+
+    **AtomPub URL:** Enter the applicable URL using the format below,
+    substituting the SharePoint server's host name for *[host]* and the
+    SharePoint document library's repository ID for *[repository ID]*:
+
+        http://[host]/CMIS/_vti_bin/cmis/rest/[repository ID]?getRepositoryInfo
+
+    **Repository ID:** Leave this field empty. Liferay searches for the first
+    repository using the given parameters and sets the values to that
+    repository's ID.
+
+    **Site Path:** Enter data using the format below, the SharePoint server's
+    host information for *[host]* and the SharePoint document library's
+    repository ID for *[repository ID]*:
 
 		http://[host]/[repository name]
 
-Click *Save* when you're done. You should now see the repository listed in the
-left navigation panel of the Documents and Media portlet.
+4. Click *Save*.
+
+The left navigation panel of your Documents and Media portlet now lists your
+new repository.
 
 ---
 
 ![Tip](../../images/tip.png) In the site path example below, notice how the
-repository, Shared Documents, has a two-word name.
+repository named `Shared Documents` consists of two words.
 
 		http://liferay-20jf4ic/CMIS/Shared Documents/Forms/AllItems.aspx
 
 The space between the words in the repository name must be accounted for when
 setting the site path in Liferay. Replace the empty space with the string *%20*
-so the site path now looks like this:
+so the site path value now looks like this:
 
 		http://liferay-20jf4ic/CMIS/Shared%20Documents/Forms/AllItems.aspx
 
@@ -517,44 +523,44 @@ This should be done for any multi-word repository name.
 
 ---
 
-That about does it for this exercise. Remember that connecting to an external
+That about does it for this exercise. Remember connecting to an external
 SharePoint server and adding it as a Documents and Media repository is a great
-way to give users flexibility when collaborating and sharing documents. 
+way to give users flexibility for sharing and collaborating on Microsoft Office
+documents.
 
-Another feature that gives users and organizations great flexibility
-when working with Documents and Media is Liferay's integration with Microsoft
-Office. Let's look at that next.
+To further enhance your use of Microsoft Office documents with Documents and
+Media, Liferay provides integration directly with Microsoft Office. Let's look
+at that next.
 
 ## Microsoft Office integration
 
-With Liferay you can access Microsoft Office files in Documents and Media
-directly from your Office program. Liferay implements the MS-DWSS SharePoint
-protocol to allow users to save and retrieve documents from Liferay Portal as if
-it were a SharePoint server. This is a convenient way to update your Office
-files without having to exit your Office program.
+Liferay let's you access Microsoft Office files in Documents and Media directly
+from your Microsoft Office applications. Liferay implements the MS-DWSS
+SharePoint protocol to allow saving and retrieving documents from Liferay Portal
+as if it were a SharePoint server. You can conveniently update your Microsoft
+Office (Office) files without having to exit your Office program.
 
-For example, if you are working in Word locally on your machine, you can open a
-Word file in your document library to make any desired changes. Simply go to
-Open in the file menu and enter `http://localhost:8080/sharepoint/` in the file
-name field. Click *Open* and log in using your Portal credentials.
+For example, if you are working in Microsoft Word (Word) locally on your
+machine, you can open a Word file from Documents and Media to view or edit it.
+Simply select *File*&rarr; *Open* in Word and enter
+`http://localhost:8080/sharepoint/` in the file name field. Click *Open* and log
+in using your Portal credentials.
 
-![Figure 4.x: Enter the location `http://localhost:8080/sharepoint/` to access 
-the document library in Documents and Media.](../../images/office-path.png)
+![Figure 4.x: Enter the URL of your `sharepoint` location on Liferay to access
+Documents and Media.](../../images/office_path.png)
 
 In the list of folders displayed, navigate to *guest* &rarr; *document_library*
-and select *All Files* to see the contents of your Documents and Media portlet.
+and select *All Files* to see your Documents and Media files.
 Open the desired Word file to make changes. Click *Save* when you are finished
 and close the file. 
 
 Now anyone with appropriate permission can see the latest version of the file
 with these updates. Liferay takes care of version control as well as file
-Checkout and Checkin. Users can add comments, ratings, and tags should they
-choose.
+Checkout and Checkin. Users can add comments, ratings, and tags.
 
-With Liferay's integration of Microsoft Office, the Documents and Media portlet
-can be a powerful tool to help your organization manage files. Collaboration
-becomes simpler when everyone can access the most up-to-date versions of your
-files.
+Liferay's integration with Microsoft Office, lets users leverage Documents and
+Media in managing their Office files. Collaboration is simplified as users share
+their most up-to-date versions of Office files.
 
 Now let's look at configuring the Documents and Media portlet.
 
