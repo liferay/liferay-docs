@@ -364,6 +364,15 @@ Administration* &rarr; *External Services* page, check the *Enabled* checkbox
 for ImageMagick and verify the paths to the ImageMagick and Ghostscript
 executables are correct.
 
+Note that some older versions of ImageMagick are unable to properly run with
+Liferay. If this is the case, update to the latest version (ImageMagick 6.7.9-6
+2012-09-25 Q16 or later). To check for the latest ImageMagick versions, visit
+[http://www.imagemagick.org/script/binary-releases.php](http://www.imagemagick.org/script/binary-releases.php).
+See
+[http://issues.liferay.com/browse/LPS-30291](http://issues.liferay.com/browse/LPS-30291)
+for information on efforts to identify incompatible application versions with
+Liferay.
+
 #### Xuggler configuration [](id=lp-6-1-ugen19-xuggler-configuration-0)
 
 Once you've installed the correct version of
