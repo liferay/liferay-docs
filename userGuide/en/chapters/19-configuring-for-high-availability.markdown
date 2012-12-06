@@ -249,10 +249,11 @@ this (modified section is in bold):
         \
         META-INF/jpa-spring.xml,\
         \
+        META-INF/executor-spring.xml,\
+        \
         META-INF/audit-spring.xml,\
         META-INF/cluster-spring.xml,\
         META-INF/editor-spring.xml,\
-        META-INF/executor-spring.xml,\
         META-INF/jcr-spring.xml,\
         META-INF/ldap-spring.xml,\
         META-INF/messaging-core-spring.xml,\
@@ -271,13 +272,14 @@ this (modified section is in bold):
         META-INF/portal-spring.xml,\
         META-INF/portlet-container-spring.xml,\
         META-INF/staging-spring.xml,\
+        META-INF/virtual-layouts-spring.xml,\
         \
         #META-INF/dynamic-data-source-spring.xml,\
-        **META-INF/shard-data-source-spring.xml,\**
+        *META-INF/shard-data-source-spring.xml,\*
         #META-INF/memcached-spring.xml,\
         #META-INF/monitoring-spring.xml,\
         \
-        META-INF/ext-spring.xml
+        classpath*:META-INF/ext-spring.xml
 
 That's all there is to it. Your system is now set up for sharding. Now that
 you've got your database set up and optimized for a large installation, let's
