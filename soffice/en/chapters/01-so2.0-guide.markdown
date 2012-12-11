@@ -34,7 +34,7 @@ less time than it takes to brew a pot of coffee.
 Social Office is a dynamic team collaboration solution for the enterprise that's
 designed to streamline communication, save time, and raise productivity.
 Organizations and groups can use Social Office to share resources, collaborate
-on projects, and raise the visisbility of important activity. Social Office
+on projects, and raise the visibility of important activity. Social Office
 features a robust suite of integrated, easy-to-use web applications. It's ready
 to use right out of the box. Once installed, a quick setup wizard will help you
 set up a team collaboration site so you can begin working immediately.
@@ -103,7 +103,7 @@ Unlike previous versions of Social Office, Social Office 2.0 is available as an
 application that can be installed on Liferay Portal 6.1. Liferay applications,
 or apps, are packages of Liferay plugins that are grouped together with
 descriptions, version information, and other metadata. You can identify
-downloaded Liferay apps by their `.lpkg` file extenstions. They're available
+downloaded Liferay apps by their `.lpkg` file extensions. They're available
 from Liferay Marketplace at
 [http://www.liferay.com/marketplace](http://www.liferay.com/marketplace). Prior
 to version 2.0, Social Office was provided as an independent product that was
@@ -288,7 +288,7 @@ they're forced to focus on the wrapper instead of the asset. With Social Office,
 you'll be free to concentrate on the assets--the system gets out of your way so
 that it's a simple matter for your team to work together. 
 
-## What features does Social Office add to Liferay Portal?
+## Social Office features
 [](id=lp-2-0-soen01-what-features-does-social-office-add-to-liferay-portal-0)
 
 Liferay Portal is a full featured web portal, containing an industry-leading
@@ -414,7 +414,7 @@ to display portal activities from different scopes: *Connections* shows a list
 of activities from users you have established a social connection with,
 *Following* shows activities from users you're following, and *My Sites* shows
 all the activities from sites you belong to. You can also select *Me* to view
-just your own activites. The Upcoming Tasks portlet displays a list of tasks
+just your own activities. The Upcoming Tasks portlet displays a list of tasks
 that have been created for you or that you've assigned to yourself. The Events
 portlet integrates with the calendar portlet belonging to your scope to show
 upcoming events for the next few days. There's also a Microblogs Status Update
@@ -553,7 +553,7 @@ navigate to any of the contacts' Profile pages.
 contacts, and status updates.](../../images/profile-page.png)
 
 By default, the Profile page displays several pieces of information about
-a user: their profile and profile picture, their lastest microblog status, their
+a user: their profile and profile picture, their latest microblog status, their
 contacts, the sites they belong to, their tags, and their recent activities. The
 Profile portlet is designed to display relevant professional information about
 a user. A completed profile includes the following pieces of information:
@@ -577,10 +577,10 @@ page of the control panel to update your profile picture.
 If you're viewing another user's Profile page, the *Edit Profile* button is
 replaced with buttons for adding or removing the user as a connection, following
 or unfollowing a user, and blocking or unblocking a user. In addition to the
-Profile, Microblogs Status Update, and Activites portlets, the Profile page also
+Profile, Microblogs Status Update, and Activities portlets, the Profile page also
 contains Sites and Tags portlets to help with navigation. Note that when placed
 on a public page, the Microblogs Status Update portlet does not allow you to
-make updates--it just shows the lastest status update. You have to make status
+make updates--it just shows the latest status update. You have to make status
 updates from your private site.
 
 The public Contacts and Microblogs applications have their own public pages.
@@ -630,7 +630,7 @@ include.](../../images/new-site-wizard2.png)
 When visiting an open Social Office site, users can use the *Join* link at the
 top of the page to join the site. This link, along with the *My Sites* portlet
 on the Dashboard, makes it very easy for Social Office users to manage their
-site memberships. This, in turn, helps them keep abreast of the activites and
+site memberships. This, in turn, helps them keep abreast of the activities and
 content that they're interested in. The *Join* link is replaced by a *Request
 Membership* link for restricted sites. When users have requested membership for
 a restricted site, the *Request Membership* link is replaced by a *Membership
@@ -682,6 +682,65 @@ Additionally, he can easily access those pages to catch up on what he missed.
 This works because Social Office automatically keeps everyone up to date on the
 activities of the teams they work with every day.
 
+### Social Office EE Features
+
+Social Office EE can only be installed on a Liferay EE instance; it's not
+possible to install Social Office EE on Liferay CE. Social Office EE provides
+several useful features in addition to the ones provided by Social Office CE.
+These additional features include the following:
+
+- A Social Office User management tool that provides an easier way to assign
+  users to the Social Office User role
+- Enhanced auditing tools for the Documents and Media library
+- The ability to mount Sharepoint and Documentum repositories to the Documents
+  and Media library.
+- The ability for Liferay Sync users to sync with multiple Social Office sites
+- Bug fixes and usability improvements since Social Office 2.0 CE GA2
+- Access to Liferay Support
+
+After installing Social Office EE to your Liferay EE instance, you'll be
+directed to the following screen when you log in as an administrator:
+
+![Figure 1.x: The Social Office Configurations page of the Control Panel
+provides a quick and easy way to assign the Social Office User role to users,
+organizations, or user groups.](../../images/so-ee-configurations.png)
+
+This page allows you to assign the Social Office User role to users,
+organizations, or user groups. If you aren't immediately sure who should be
+assigned to the Social Office User role, you can come back to this page later.
+It's called Social Office Configurations and it appears at the bottom of the
+Portal section of the Control Panel.
+
+Other features provided by Social Office EE include auditing improvements to the
+Documents and Media library. Once you've installed Social Office EE, you'll find
+the option to select either a major or a minor revision each time you edit or
+check in a document. You'll also be prompted to enter a change log message.
+Without Social Office EE, the version number will be automatically incremented
+but there's no way to specify a major/minor revision or enter a change log
+message.
+
+![Figure 1.x: Social Office EE allows you to specify a major or minor revision
+and enter a change log message each time you edit or check in a
+document.](../../images/so-ee-doclib-checkin-screen.png)
+
+Additionally, Social Office EE allows comments to be added to specific versions
+of a document. Without Social Office EE, there's just a general comments area
+for each document that's not specific to any version.
+
+![Figure 1.x: Social Office EE allows you to specify a major or minor revision
+and enter a change log message each time you edit or check in a
+document.](../../images/so-ee-doclib-comments.png)
+
+If you've been using Social Office CE and upgrade to EE, any comments that were
+added when you were using CE will appear in a section entitled *Previous
+Comments*.
+
+![Figure 1.x: Social Office EE allows you to specify a major or minor revision
+and enter a change log message each time you edit or check in a
+document.](../../images/so-ee-doclib-previous-comments.png)
+
+Next, let's look at Social Office's upgrade process.
+
 ## Upgrade Process [](id=lp-2-0-soen01-upgrade-process-0)
 
 Social Office 1.5b runs on Liferay Portal 5.2.7. If you're running Social Office
@@ -689,8 +748,8 @@ Social Office 1.5b runs on Liferay Portal 5.2.7. If you're running Social Office
 version 6.1.1 CE. Please see the Upgrading Liferay section in chapter 17 of
 Liferay's User Guide for details about Liferay's upgrade process:
 [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
-Before starting the the following Social Office upgrade process, make sure
-you've already upgraded your portal to version 6.1.1 CE, and backed up your old
+Before starting the following Social Office upgrade process, make sure you've
+already upgraded your portal to version 6.1.1 CE, and backed up your old
 `portal-ext.properties` file, data folder, and database.
 
 1. In your new 6.1.1 portal bundle, add the following properties into your
