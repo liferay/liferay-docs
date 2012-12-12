@@ -713,11 +713,11 @@ Portal section of the Control Panel.
 
 Other features provided by Social Office EE include auditing improvements to the
 Documents and Media library. Once you've installed Social Office EE, you'll find
-the option to select either a major or a minor revision each time you edit or
+the option to specify either a major or a minor revision each time you edit or
 check in a document. You'll also be prompted to enter a change log message.
 Without Social Office EE, the version number will be automatically incremented
-but there's no way to specify a major/minor revision or enter a change log
-message.
+when a file is edited but there's no way to specify a major/minor revision or
+enter a change log message.
 
 ![Figure 1.22: Social Office EE allows you to specify a major or minor revision
 and enter a change log message each time you edit or check in a
@@ -727,9 +727,9 @@ Additionally, Social Office EE allows comments to be added to specific versions
 of a document. Without Social Office EE, there's just a general comments area
 for each document that's not specific to any version.
 
-![Figure 1.23: Social Office EE allows you to specify a major or minor revision
-and enter a change log message each time you edit or check in a
-document.](../../images/so-ee-doclib-comments.png)
+![Figure 1.23: Social Office EE allows you to comment on particular versions of
+files in the Documents and Media
+repository.](../../images/so-ee-doclib-comments.png)
 
 If you've been using Social Office CE and upgrade to EE, any comments that were
 added when you were using CE will appear in a section entitled *Previous
