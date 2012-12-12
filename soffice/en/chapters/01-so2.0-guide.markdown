@@ -103,15 +103,60 @@ Unlike previous versions of Social Office, Social Office 2.0 is available as an
 application that can be installed on Liferay Portal 6.1. Liferay applications,
 or apps, are packages of Liferay plugins that are grouped together with
 descriptions, version information, and other metadata. You can identify
-downloaded Liferay apps by their `.lpkg` file extensions. They're available
-from Liferay Marketplace at
+downloaded Liferay apps by their `.lpkg` file extensions. They're available from
+Liferay Marketplace at
 [http://www.liferay.com/marketplace](http://www.liferay.com/marketplace). Prior
 to version 2.0, Social Office was provided as an independent product that was
 based on, but separate from, Liferay Portal.
 
 To install Social Office manually, you just need to deploy the Social Office
-`.lpkg` file to your Liferay installation. The Social Office `.lpkg` file is
-hot-deployable and includes the following Liferay plugins: 
+`.lpkg` file to your Liferay installation. If you're installing Social Office
+CE, you can install it just like any other app from Liferay Marketplace.
+Remember that there are two ways to access Liferay Marketplace: from
+[http://www.liferay.com/marketplace](http://www.liferay.com/marketplace) or from
+the Marketplace section of your Liferay instance's Control Panel. If you
+purchase Social Office EE, you need to deploy the license order id that you'll
+receive before you can install Social Office. 
+
+To find Social Office EE on Liferay Marketplace, click on the *EE Marketplace*
+link and look for the Social Office EE app. Once you've found it, click on it to
+view some details about the app. If you'd like to install Social Office EE, you
+can either purchase the app or you can obtain a free 30-day trial.
+
+![Figure 1.x: If you'd like to try out Social Office EE, click on the *30-Day
+Trial* button. If you'd like to purchase Social Office EE, click on the *Order*
+button.](../../so-ee-order-trial.png)
+
+Whichever option you choose, you'll be prompted to select a purchase type. If
+you'd like to obtain the free 30-day trial, you'll need to agree to the End User
+License Agreement and Terms of Service before you can click *Free* to obtain the
+trial license.
+
+![Figure 1.x: As with other apps on Liferay Marketplace, you can purchase Social
+Office EE for your personal liferay.com account or for your
+company.](../../so-ee-order-trial.png)
+
+If you'd like to place an order to purchase Social Office EE, click *Next* after
+selecting a purchase type. Then you'll need to choose a license type, provide
+your name, address, and contact information, and agree to the terms of use.
+Once you click *Order*, a Liferay sales representative will contact you to
+fulfill your order.
+
+![Figure 1.x: To deploy your Social Office EE license, enter your order id
+license into the field provided, click *Query*, and select *Social Office
+EE*.](../../so-ee-order-id-license.png)
+
+Once you've obtained a Social Office EE license (trial or otherwise), you should
+deploy the license to your Liferay instance. To do so, first click on *License
+Manager* at the bottom of the Server Administration section of the Control
+Panel. Then enter your order id into the field provided, click *Query*, and
+select *Social Office EE*. Now you're able to install Social Office EE! Note: If
+you already downloaded Social Office EE and attempted to install it before
+deploying your order id license, you'll need to restart your Liferay server
+after deploying the license in order for Social Office EE to deploy.
+
+The Social Office `.lpkg` file is hot-deployable and includes the following
+Liferay plugins: 
 
 - chat-portlet
 - contacts-portlet
@@ -164,7 +209,7 @@ Without this workaround, Liferay will not read the
 `portal-setup-wizard.properties` file with your saved configuration when you
 restart your server and you'll see the setup wizard again. Furthermore, Social
 Office will not be redeployed and won't be functional. This means that the
-Dashboard button on the dockbar won't show up. If you manually navigate to the
+Dashboard button on the Dockbar won't show up. If you manually navigate to the
 dashboard URL, you see the pages but they'll be unthemed and the portlets will
 be greyed out with a message stating that they've been undeployed. 
 
@@ -339,7 +384,7 @@ User. Assigning users to the Social Office User role provides them with personal
 sites pre-built with pages and applications designed to help them manage their
 work, share information, and communicate with each other. Assign yourself to the
 Social Office User role to see how it works. Once your user account has been
-granted the Social Office User role, a *Dashboard* link appears in the dockbar.
+granted the Social Office User role, a *Dashboard* link appears in the Dockbar.
 Now you can explore the extra features added to Liferay by Social Office.
 
 If all your portal users will be using Social Office, you should add this role
