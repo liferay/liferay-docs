@@ -113,11 +113,15 @@ To install Social Office manually, you just need to deploy the Social Office
 `.lpkg` file to your Liferay installation. The Social Office `.lpkg` file is
 hot-deployable and includes the following Liferay plugins: 
 
+- chat-portlet
 - contacts-portlet
+- deploy-listener-hook
 - events-display-portlet
 - microblogs-portlet
+- portal-compat-hook (EE-only)
 - private-messaging-portlet
 - resource-importer
+- so-configurations-portlet (EE-only)
 - so-hook
 - so-portlet
 - so-theme
@@ -197,10 +201,11 @@ the log and once you log out, you won't be able to log in again.
 ## Managing the Social Office welcome theme [](id=lp-2-0-soen01-managing-the-social-office-welcome-theme-0)
 [](id=lp-2-0-soen01-managing-the-social-office-welcome-theme-0)
 
-The Social Office welcome theme and resource importer are included in the Social
-Office 2.0 package available from Marketplace. The Social Office welcome theme
-provides a clean login screen for Social Office when Social Office 2.0 is
-installed on a fresh portal instance.
+The Social Office welcome theme is a CE-only feature. The welcome theme and
+resource importer are included in the CE Social Office 2.0 package available
+from Marketplace. The Social Office welcome theme provides a clean login screen
+for Social Office when Social Office 2.0 is installed on a fresh portal
+instance.
 
 ![Figure 1.4: The Social Office 2.0 welcome theme provides a clean and
 attractive login screen.](../../images/so-welcome-theme1.png)
