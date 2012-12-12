@@ -121,7 +121,7 @@ receive before you can install Social Office.
 To find Social Office EE on Liferay Marketplace, click on the *EE Marketplace*
 link and look for the Social Office EE app. Once you've found it, click on it to
 view some details about the app. If you'd like to install Social Office EE, you
-have two options: you can purchase the app or you can use a free 30-day trial.
+can either purchase the app or you can obtain a free 30-day trial.
 
 ![Figure 1.x: If you'd like to try out Social Office EE, click on the *30-Day
 Trial* button. If you'd like to purchase Social Office EE, click on the *Order*
@@ -209,7 +209,7 @@ Without this workaround, Liferay will not read the
 `portal-setup-wizard.properties` file with your saved configuration when you
 restart your server and you'll see the setup wizard again. Furthermore, Social
 Office will not be redeployed and won't be functional. This means that the
-Dashboard button on the dockbar won't show up. If you manually navigate to the
+Dashboard button on the Dockbar won't show up. If you manually navigate to the
 dashboard URL, you see the pages but they'll be unthemed and the portlets will
 be greyed out with a message stating that they've been undeployed. 
 
@@ -384,7 +384,7 @@ User. Assigning users to the Social Office User role provides them with personal
 sites pre-built with pages and applications designed to help them manage their
 work, share information, and communicate with each other. Assign yourself to the
 Social Office User role to see how it works. Once your user account has been
-granted the Social Office User role, a *Dashboard* link appears in the dockbar.
+granted the Social Office User role, a *Dashboard* link appears in the Dockbar.
 Now you can explore the extra features added to Liferay by Social Office.
 
 If all your portal users will be using Social Office, you should add this role
