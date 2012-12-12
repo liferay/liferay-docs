@@ -1,4 +1,4 @@
-# Working Smarter with Liferay Social Office
+# Working Smarter with Liferay Social Office [](id=lp-2-0-soen01-working-smarter-with-liferay-social-office-0)
 [](id=lp-2-0-soen01-working-smarter-with-liferay-social-office-0)
 
 Liferay Social Office is Liferay's social collaboration product for the
@@ -166,7 +166,7 @@ be greyed out with a message stating that they've been undeployed.
 
 ---
 
-### Installation peculiarities for specific apps servers
+### Installation peculiarities for specific apps servers [](id=lp-2-0-soen01-installation-peculiarities-for-specific-apps-servers-0)
 [](id=lp-2-0-soen01-installation-peculiarities-for-specific-apps-servers-0)
 
 After installing Social Office on Glassfish, you need to restart the server
@@ -194,7 +194,7 @@ Otherwise, the portal will always be looking for the `/so/login` page which no
 longer exists since the hook is gone. This will produce a number of errors in
 the log and once you log out, you won't be able to log in again.
 
-## Managing the Social Office welcome theme
+## Managing the Social Office welcome theme [](id=lp-2-0-soen01-managing-the-social-office-welcome-theme-0)
 [](id=lp-2-0-soen01-managing-the-social-office-welcome-theme-0)
 
 The Social Office welcome theme and resource importer are included in the Social
@@ -223,13 +223,13 @@ first remove the Social Office welcome theme. To do so, follow these steps:
    Settings on the guest site.
 3. Set the Application Adapter field to none.
 
-![Figure 1.6: Editing the default site's
+![Figure 1.5: Editing the default site's
 settings](../../images/so-welcome-theme2.png)
 
 4. Set the theme of the site back to the classic theme or to your theme of
    choice.
 
-![Figure 1.7: Editing the default site's
+![Figure 1.6: Editing the default site's
 settings](../../images/so-welcome-theme3.png)
 
 If you'd like to install the SO welcome theme when the guest site has already
@@ -252,7 +252,7 @@ page.
 
 ---
 
-![Figure 1.5: Tip](../../images/tip.png) **Warning:** Installing the Social
+![Figure 1.7: Tip](../../images/tip.png) **Warning:** Installing the Social
 Office welcome theme overwrites any pages and customizations that have already
 been made to the guest site.
 
@@ -260,7 +260,7 @@ been made to the guest site.
 
 Next, let's discuss how Social Office facilitates team collaboration.
 
-## What can you do with Social Office?
+## What can you do with Social Office? [](id=lp-2-0-soen01-what-can-you-do-with-social-office-0)
 [](id=lp-2-0-soen01-what-can-you-do-with-social-office-0)
 
 Social Office gives you the social collaboration features you need to do virtual
@@ -288,7 +288,7 @@ they're forced to focus on the wrapper instead of the asset. With Social Office,
 you'll be free to concentrate on the assets--the system gets out of your way so
 that it's a simple matter for your team to work together. 
 
-## Social Office features
+## Social Office features [](id=lp-2-0-soen01-social-office-features-0)
 [](id=lp-2-0-soen01-what-features-does-social-office-add-to-liferay-portal-0)
 
 Liferay Portal is a full featured web portal, containing an industry-leading
@@ -326,7 +326,7 @@ to fit the size of your browser window. You can click the button again to return
 the portlets to their default size. In addition to the standard Social Office
 theme, there's another theme for Social Office's Welcome page.
 
-### Using the Social Office User role and personal sites
+### Using the Social Office User role and personal sites [](id=lp-2-0-soen01-using-the-social-office-user-role-and-personal-sites-0)
 [](id=lp-2-0-soen01-using-the-social-office-user-role-and-personal-sites-0)
 
 The Social Office plugin adds a special role to Liferay Portal: Social Office
@@ -361,7 +361,7 @@ right-most item of the Dockbar becomes a drop-down list containing a link to
 your public *Profile* page as well as a link your *My Account* page of the
 control panel and the *Sign Out* link.
 
-#### Using the Dashboard and other private pages
+#### Using the Dashboard and other private pages [](id=lp-2-0-soen01-using-the-dashboard-and-other-private-pages-0)
 [](id=lp-2-0-soen01-using-the-dashboard-and-other-private-pages-0)
 
 The private page sets of Social Office users serve as personal workspaces. Each
@@ -531,7 +531,7 @@ that you've created.](../../images/tasks-portlet.png)
 The *Permissions* button at the top left of the Tasks portlet lets you choose
 which roles grant permission to add new tasks or edit existing ones.
 
-#### Using the Profile page and other public pages
+#### Using the Profile page and other public pages [](id=lp-2-0-soen01-using-the-profile-page-and-other-public-pages-0)
 [](id=lp-2-0-soen01-using-the-profile-page-and-other-public-pages-0)
 
 You can access your public Profile page from the Dashboard by clicking on your
@@ -588,7 +588,7 @@ These function the same way as the ones in a user's private site except that
 other users can only view, not edit them. However, the Timeline tab of the
 Microblogs portlet allows users to comment on entries.
 
-### Using Social Office sites for collaboration
+### Using Social Office sites for collaboration [](id=lp-2-0-soen01-using-social-office-sites-for-collaboration-0)
 [](id=lp-2-0-soen01-using-social-office-sites-for-collaboration---0)
 
 Social Office not only provides custom pages and applications for users'
@@ -682,7 +682,7 @@ Additionally, he can easily access those pages to catch up on what he missed.
 This works because Social Office automatically keeps everyone up to date on the
 activities of the teams they work with every day.
 
-### Social Office EE Features
+### Social Office EE Features [](id=lp-2-0-soen01-social-office-ee-features-0)
 
 Social Office EE can only be installed on a Liferay EE instance; it's not
 possible to install Social Office EE on Liferay CE. Social Office EE provides
@@ -701,7 +701,7 @@ These additional features include the following:
 After installing Social Office EE to your Liferay EE instance, you'll be
 directed to the following screen when you log in as an administrator:
 
-![Figure 1.x: The Social Office Configurations page of the Control Panel
+![Figure 1.21: The Social Office Configurations page of the Control Panel
 provides a quick and easy way to assign the Social Office User role to users,
 organizations, or user groups.](../../images/so-ee-configurations.png)
 
@@ -719,7 +719,7 @@ Without Social Office EE, the version number will be automatically incremented
 but there's no way to specify a major/minor revision or enter a change log
 message.
 
-![Figure 1.x: Social Office EE allows you to specify a major or minor revision
+![Figure 1.22: Social Office EE allows you to specify a major or minor revision
 and enter a change log message each time you edit or check in a
 document.](../../images/so-ee-doclib-checkin-screen.png)
 
@@ -727,7 +727,7 @@ Additionally, Social Office EE allows comments to be added to specific versions
 of a document. Without Social Office EE, there's just a general comments area
 for each document that's not specific to any version.
 
-![Figure 1.x: Social Office EE allows you to specify a major or minor revision
+![Figure 1.23: Social Office EE allows you to specify a major or minor revision
 and enter a change log message each time you edit or check in a
 document.](../../images/so-ee-doclib-comments.png)
 
@@ -735,7 +735,7 @@ If you've been using Social Office CE and upgrade to EE, any comments that were
 added when you were using CE will appear in a section entitled *Previous
 Comments*.
 
-![Figure 1.x: Social Office EE allows you to specify a major or minor revision
+![Figure 1.24: Social Office EE allows you to specify a major or minor revision
 and enter a change log message each time you edit or check in a
 document.](../../images/so-ee-doclib-previous-comments.png)
 
