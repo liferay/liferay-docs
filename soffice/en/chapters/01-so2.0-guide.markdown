@@ -1,5 +1,5 @@
-# Working Smarter with Liferay Social Office [](id=lp-2-0-soen01-working-smarter-with-liferay-social-office-0)
-[](id=lp-2-0-soen01-working-smarter-with-liferay-social-office-0)
+# Working Smarter with Liferay Social Office 
+
 
 Liferay Social Office is Liferay's social collaboration product for the
 enterprise. Previously released as a separate product that was based on Liferay
@@ -65,7 +65,7 @@ addresses on our Contact Us page
 here to serve you, our users and customers, and to help make your experience
 using Social Office the best it can be. 
 
-## Introduction [](id=lp-2-0-soen01-introduction-0)
+## Introduction 
 
 "Help!"
 
@@ -97,7 +97,7 @@ small businesses alike. With Liferay Social Office, you'll have the system and
 your workgroups up and running in no time, with all the tools necessary for them
 to work more efficiently and more easily than before.
 
-## Installation [](id=lp-2-0-soen01-installation-0)
+## Installation 
 
 Unlike previous versions of Social Office, Social Office 2.0 is available as an
 application that can be installed on Liferay Portal 6.1. Liferay applications,
@@ -215,8 +215,8 @@ be greyed out with a message stating that they've been undeployed.
 
 ---
 
-### Installation peculiarities for specific apps servers [](id=lp-2-0-soen01-installation-peculiarities-for-specific-apps-servers-0)
-[](id=lp-2-0-soen01-installation-peculiarities-for-specific-apps-servers-0)
+### Installation peculiarities for specific apps servers 
+
 
 After installing Social Office on Glassfish, you need to restart the server
 before Social Office will be fully deployed. If you don't restart, Glassfish
@@ -228,7 +228,7 @@ you don't restart the server, the Dashboard link won't appear although you can
 find other content added by Social Office if you use the *Go To* &rarr; *My
 Public/My Private Pages* menu. To fix this issue, simply restart your server.
 
-### Uninstalling Social Office [](id=lp-2-0-soen01-uninstalling-social-office-0)
+### Uninstalling Social Office 
 
 If you'd like to uninstall Social Office, you can do so from the *Purchased*
 page of the control panel, under the Marketplace heading. However, after you've
@@ -243,8 +243,8 @@ Otherwise, the portal will always be looking for the `/so/login` page which no
 longer exists since the hook is gone. This will produce a number of errors in
 the log and once you log out, you won't be able to log in again.
 
-## Managing the Social Office welcome theme [](id=lp-2-0-soen01-managing-the-social-office-welcome-theme-0)
-[](id=lp-2-0-soen01-managing-the-social-office-welcome-theme-0)
+## Managing the Social Office welcome theme 
+
 
 The Social Office welcome theme is a CE-only feature. The welcome theme and
 resource importer are included in the CE Social Office 2.0 package available
@@ -310,8 +310,8 @@ been made to the guest site.
 
 Next, let's discuss how Social Office facilitates team collaboration.
 
-## What can you do with Social Office? [](id=lp-2-0-soen01-what-can-you-do-with-social-office-0)
-[](id=lp-2-0-soen01-what-can-you-do-with-social-office-0)
+## What can you do with Social Office? 
+
 
 Social Office gives you the social collaboration features you need to do virtual
 teamwork. You can coordinate calendars and schedules, write shared blog entries,
@@ -338,8 +338,8 @@ they're forced to focus on the wrapper instead of the asset. With Social Office,
 you'll be free to concentrate on the assets--the system gets out of your way so
 that it's a simple matter for your team to work together. 
 
-## Social Office features [](id=lp-2-0-soen01-social-office-features-0)
-[](id=lp-2-0-soen01-what-features-does-social-office-add-to-liferay-portal-0)
+## Social Office features 
+
 
 Liferay Portal is a full featured web portal, containing an industry-leading
 suite of built-in applications and tools. It's highly customizable and
@@ -376,8 +376,8 @@ to fit the size of your browser window. You can click the button again to return
 the portlets to their default size. In addition to the standard Social Office
 theme, there's another theme for Social Office's Welcome page.
 
-### Using the Social Office User role and personal sites [](id=lp-2-0-soen01-using-the-social-office-user-role-and-personal-sites-0)
-[](id=lp-2-0-soen01-using-the-social-office-user-role-and-personal-sites-0)
+### Using the Social Office User role and personal sites 
+
 
 The Social Office plugin adds a special role to Liferay Portal: Social Office
 User. Assigning users to the Social Office User role provides them with personal
@@ -411,8 +411,8 @@ right-most item of the Dockbar becomes a drop-down list containing a link to
 your public *Profile* page as well as a link your *My Account* page of the
 control panel and the *Sign Out* link.
 
-#### Using the Dashboard and other private pages [](id=lp-2-0-soen01-using-the-dashboard-and-other-private-pages-0)
-[](id=lp-2-0-soen01-using-the-dashboard-and-other-private-pages-0)
+#### Using the Dashboard and other private pages 
+
 
 The private page sets of Social Office users serve as personal workspaces. Each
 private page displays a navigation menu and the Sites portlet in the left column
@@ -581,8 +581,8 @@ that you've created.](../../images/tasks-portlet.png)
 The *Permissions* button at the top left of the Tasks portlet lets you choose
 which roles grant permission to add new tasks or edit existing ones.
 
-#### Using the Profile page and other public pages [](id=lp-2-0-soen01-using-the-profile-page-and-other-public-pages-0)
-[](id=lp-2-0-soen01-using-the-profile-page-and-other-public-pages-0)
+#### Using the Profile page and other public pages 
+
 
 You can access your public Profile page from the Dashboard by clicking on your
 name, which appears above the page navigation menu in the left column. Your
@@ -638,8 +638,8 @@ These function the same way as the ones in a user's private site except that
 other users can only view, not edit them. However, the Timeline tab of the
 Microblogs portlet allows users to comment on entries.
 
-### Using Social Office sites for collaboration [](id=lp-2-0-soen01-using-social-office-sites-for-collaboration-0)
-[](id=lp-2-0-soen01-using-social-office-sites-for-collaboration---0)
+### Using Social Office sites for collaboration 
+
 
 Social Office not only provides custom pages and applications for users'
 personal sites but also for general sites that can have many members. A portal
@@ -732,7 +732,7 @@ Additionally, he can easily access those pages to catch up on what he missed.
 This works because Social Office automatically keeps everyone up to date on the
 activities of the teams they work with every day.
 
-### Social Office EE Features [](id=lp-2-0-soen01-social-office-ee-features-0)
+### Social Office EE Features 
 
 Social Office EE can only be installed on a Liferay EE instance; it's not
 possible to install Social Office EE on Liferay CE. Social Office EE provides
@@ -791,7 +791,7 @@ document.](../../images/so-ee-doclib-previous-comments.png)
 
 Next, let's look at Social Office's upgrade process.
 
-## Upgrade Process [](id=lp-2-0-soen01-upgrade-process-0)
+## Upgrade Process 
 
 Social Office 1.5b runs on Liferay Portal 5.2.7. If you're running Social Office
 1.5b and you'd like to upgrade to 2.0, you first need to upgrade your portal to

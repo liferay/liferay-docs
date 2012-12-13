@@ -1,5 +1,5 @@
 
-# Properties Reference [](id=configuring-liferay-s-properties)
+# Properties Reference 
 
 Liferay is configured by a combination of settings that are stored in the
 database (configured by the use of the control panel) and settings which are
@@ -28,7 +28,7 @@ Remember that your customizations in the `portal-ext.properties` or
 `portal.properties` file. You should never modify the `portal.properties` file
 directly. 
 
-## Using an overridden configuration file [](id=using-an-overridden-configuration-file)
+## Using an overridden configuration file 
 
 Liferay's properties files differ from the configuration files of most other
 products in that changing the default configuration file is discouraged. In
@@ -54,7 +54,7 @@ overriding the defaults from the `portal.properties` file. These are presented
 in a logical order, not an alphabetical one, as many properties relate to other
 properties in the system.
 
-## Properties Override [](id=properties-override)
+## Properties Override 
 
 This property specifies where to get the overridden properties. By default, it
 is `portal-ext.properties`. Updates should not be made in `portal.properties` or
@@ -106,7 +106,7 @@ then portal-legacy-5.1.properties.
 	include-and-override=${external-properties}
 	include-and-override=${liferay.home}/${external-properties}
 
-## Liferay Home [](id=liferay-home)
+## Liferay Home 
 
 This property specifies the Liferay home directory.
 
@@ -116,7 +116,7 @@ This property is available for backwards compatibility. Please set the property 
 
 	resource.repositories.root=${default.liferay.home}
 
-## Portal Context [](id=portal-context)
+## Portal Context 
 
 This property specifies the path of the portal servlet context. This is needed because `javax.servlet.ServletContext` did not have access to the context path until Java EE 5.
 
@@ -135,13 +135,13 @@ Set this property if the application server is served behind a proxy and a prefi
 
     portal.proxy.path=
 
-## TCK (Technology Compatibility Kit) [](id=tck-technology-compatibility-kit-)
+## TCK (Technology Compatibility Kit) 
 
 Set this to `true` to enable programmatic configuration to let the Portlet TCK obtain a URL for each test. This should never be set to `true` unless you are running the TCK tests.
 
 	tck.url=false
 
-## Schema [](id=schema)
+## Schema 
 
 Set this to `true` to automatically create tables and populate with default data if the database is empty.
 
@@ -151,7 +151,7 @@ Set this to to `true` to populate with the minimal amount of data. Set this to `
 
 	schema.run.minimal=true
 
-## Upgrade [](id=upgrade)
+## Upgrade 
 
 Input a list of comma delimited class names that implement `com.liferay.portal.upgrade.UpgradeProcess`. These classes will run on startup to upgrade older data to match with the latest version. Escape the comma so that the property can be properly interpolated. For example, the property "upgrade.processes.6100" will not properly reference the property "upgrade.processes.default" unless the commas are escaped. See `StartupHelper#getUpgradeProcessClassNames(String)`.
 
@@ -272,7 +272,7 @@ The following are upgrade processes for EE releases.
 
     upgrade.processes.6012=${upgrade.processes.6011}
 
-## Verify [](id=verify)
+## Verify 
 
 Input a list of comma delimited class names that implement `com.liferay.portal.integrity.VerifyProcess`. These classes will run on startup to verify and fix any integrity problems found in the database.
 
@@ -288,7 +288,7 @@ Constants in `VerifyProcess`:
 
 	verify.frequency=1
 	
-## Convert [](id=convert)
+## Convert 
 
 Input a list of comma delimited class names that implement `com.liferay.portal.convert.ConvertProcess`. These classes can be run from within the Admin portlet to convert older data to match a new configuration of the portal.
 
@@ -300,7 +300,7 @@ Input a list of comma delimited class names that implement `com.liferay.portal.c
 		com.liferay.portal.convert.ConvertPermissionTuner,\
 		com.liferay.portal.convert.ConvertWikiCreole	
 
-## Auto Deploy [](id=auto-deploy)
+## Auto Deploy 
 
 Input a list of comma delimited class names that implement `com.liferay.portal.kernel.deploy.auto.AutoDeployListener`. These classes are used to process the auto deployment of WARs.
 
@@ -395,7 +395,7 @@ Set the URLs of Libraries that might be needed to download during the auto deplo
 	library.download.url.resin.jar=http://cdn.files.liferay.com/public/quercus/4.0.11/resin.jar
 	library.download.url.script-10.jar=http://cdn.files.liferay.com/public/quercus/3.1.9/script-10.jar
 
-## Hot Deploy [](id=hot-deploy)
+## Hot Deploy 
 
 Input a list of comma delimited class names that implement `com.liferay.portal.kernel.deploy.hot.HotDeployListener`. These classes are used to process the deployment and undeployment of WARs at runtime.
 
@@ -414,7 +414,7 @@ Note: `PluginPackageHotDeployListener` must always be first.
 		\
 		com.liferay.portal.deploy.hot.MessagingHotDeployListener
 
-## Hot Undeploy [](id=hot-undeploy)
+## Hot Undeploy 
 
 Set this to `true` to enable undeploying plugins.
 
@@ -428,7 +428,7 @@ Set this to `true` to undeploy a plugin before deploying a new version. This pro
 
 	hot.undeploy.on.redeploy=false
 
-## Sandbox Deploy [](id=sandbox-deploy)
+## Sandbox Deploy 
 
 Input a list of comma delimited class names that implement `com.liferay.portal.kernel.deploy.sandbox.SandboxDeployListener`. These classes are used to process sandbox style plugins.
 
@@ -448,7 +448,7 @@ Set the interval in milliseconds on how often to scan the directory for changes.
 
 	sandbox.deploy.interval=3000
 
-## Plugin [](id=plugin)
+## Plugin 
 
 Input a list of comma delimited supported plugin types.
 
@@ -467,7 +467,7 @@ Input a list of plugin packages ids separated by `\n` characters. Administrators
 
 	plugin.notifications.packages.ignored=liferay/sample-jsp-portlet
 
-## Portlet [](id=portlet)
+## Portlet 
 
 This property sets the default virtual path for all hot deployed portlets. See [liferay-portlet-app_6_1_0.dtd](http://docs.liferay.com/portal/6.1/definitions/liferay-portlet-app_6_1_0.dtd.html) and the `virtual-path` element for more information.
 
@@ -501,7 +501,7 @@ Input a regular expression to ban paths that cannot be used to serve resources i
 
     portlet.resource.id.banned.paths.regexp=.*/(?:META-INF|WEB-INF)/.*
     
-## Portlet Coordination [](id=portlet-coordination)
+## Portlet Coordination 
 
 Set this property to specify how events are distributed. If the value is `layout-set`, then events will be distributed to all portlets contained in a layout set. If the value is `layout`, then events will be distributed to all portlets that are present in a layout.
 
@@ -511,7 +511,7 @@ Set this property to specify how public render parameters are distributed. If th
 
     portlet.public.render.parameter.distribution=layout
 
-## Theme [](id=theme)
+## Theme 
 
 Set this property to `true` to load the theme's merged CSS files for faster loading for production. Set this property to `false` for easier debugging for development. You can also disable fast loading by setting the URL parameter `css_fast_load` to `0`.
 
@@ -552,7 +552,7 @@ Set this to `true` to expose sharing icons for portlets by default.
 
     theme.portlet.sharing.default=false
 
-## Resource Actions [](id=resource-actions)
+## Resource Actions 
 
 Input a list of comma delimited resource action configurations that will be read from the class path.
 
@@ -562,7 +562,7 @@ This should only be set to `false` when it is called by Service Builder outside 
 
     resource.actions.read.portlet.resources=true
 
-## Model Hints [](id=model-hints)
+## Model Hints 
 
 Input a list of comma delimited model hints configurations.
 
@@ -572,7 +572,7 @@ Input a list of comma delimited model hints configurations.
 		META-INF/ext-model-hints.xml,\
 		META-INF/portlet-model-hints.xml
 
-## Service Builder [](id=service-build-3)
+## Service Builder 
 
 Input a list of comma delimited method prefixes designated for read-only transactions. Service Builder will use these prefixes to annotate methods that are to run in read-only transactions.
 
@@ -585,7 +585,7 @@ Input a list of comma delimited method prefixes designated for read-only transac
 		reindex,\    
 		search
 
-## Spring [](id=spring)
+## Spring 
 
 Input a list of comma delimited Spring configurations. These will be loaded after the bean definitions specified in the `contextConfigLocation` parameter in `web.xml`.
 
@@ -646,7 +646,7 @@ Set this property to `false` to manually open and close sessions.
 
     spring.hibernate.session.delegated=true	
     
-## Persistence [](id=persistence)
+## Persistence 
 
 Set the provider used for ORM persistence. If this property is set to `jpa`, then the properties with the prefix `jpa.` will be read. If this property is set to `hibernate`, then the properties with the prefix `hibernate.` will be read.
 
@@ -657,7 +657,7 @@ Note that this property affects the loading of `hibernate-spring.xml` or `jpa-sp
 	persistence.provider=hibernate
 	persistence.provider=jpa    
 
-## Hibernate [](id=hibernate)
+## Hibernate 
 
 Input a list of comma delimited Hibernate configurations.
 
@@ -735,7 +735,7 @@ Set this property to `true` to enable Hibernate cache monitoring. See [http://is
 
     hibernate.generate_statistics=false
     
-## JPA [](id=jpa)
+## JPA 
 
 Set this property to `none` to disable the JPA validation. Some application servers have the validation JARs in the global class path which causes conflicts with Hibernate. See LPS-22453 for more information.
 
@@ -799,7 +799,7 @@ Liferay will automatically detect the database type by initializing DBUtil. You 
 
 	jpa.database.type=    
 
-## JDBC [](id=jdbc)
+## JDBC 
 
 Set the JNDI name to lookup the JDBC data source. If none is set, then the portal will attempt to create the JDBC data source based on the properties prefixed with `jdbc.default.`.
 
@@ -953,7 +953,7 @@ The following properties will be read by Tomcat JDBC Connection Pool if Liferay 
     jdbc.default.timeBetweenEvictionRunsMillis=30000
     jdbc.default.useEquals=false
 
-## Custom SQL [](id=custom-sql)
+## Custom SQL 
 
 Input a list of comma delimited custom SQL configurations. Liferay Administrators should never need to customize this; this is more of an option for developers who are customizing Liferay's behavior.
 
@@ -963,32 +963,32 @@ Some databases do not recognize a NULL IS NULL check. Set the `custom.sql.functi
 
 There is no need to manually set these properties because `com.liferay.portal.spring.PortalHibernateConfiguration` already sets it. These properties are available, however, so that you can see how you can override it for a database that `PortalHibernateConfiguration` does not yet know how to auto configure.
 
-### DB2 [](id=lp-6-1-ugen14-db2-0)
+### DB2 
 
 	custom.sql.function.isnull=CAST(? AS VARCHAR(32672)) IS NULL
 	custom.sql.function.isnotnull=CAST(? AS VARCHAR(32672)) IS NOT NULL
 	
-### MySQL (for testing only) [](id=lp-6-1-ugen14-mysql-for-testing-only-0)
+### MySQL (for testing only) 
 
 	custom.sql.function.isnull=IFNULL(?, '1') = '1'
 	custom.sql.function.isnotnull=IFNULL(?, '1') = '0'
 
-### Sybase [](id=lp-6-1-ugen14-sybase-0)
+### Sybase 
 
 	custom.sql.function.isnull=CONVERT(VARCHAR,?) IS NULL
 	custom.sql.function.isnotnull=CONVERT(VARCHAR,?) IS NOT NULL	
 
-### Database [](id=lp-6-1-ugen14-database-0)
+### Database 
 
 Specify any database vendor specific settings.
 
-## MySQL [](id=mysql)
+## MySQL 
 
 Set the MySQL engine type. InnoDB is the recommended engine because it provides transactional integrity.
 
 	database.mysql.engine=InnoDB
 	
-## Transaction [](id=transaction)
+## Transaction 
 
 Set the transaction isolation level for the Counter service. See `transaction.isolation.portal` for more information. The preferred value is `8` when the transaction manager supports it. If the transaction manager does not support it, (i.e. when using JPA and JpaTransactionManager) set this to `-1` to use the database's default isolation level.
 
@@ -1019,13 +1019,13 @@ Additional properties that follow the pattern `transaction.manager.property.\*` 
 	transaction.manager.property.allowCustomIsolationLevels=true
 	transaction.manager.property.globalRollbackOnParticipationFailure=false	
 	
-## Transactional Cache [](id=transactional-cache)
+## Transactional Cache 
 
 Set this property to `true` to enable transactional cache. When enabled, changes to caches take effect when transactions commit successfully. Caches rollback when transactions rollback.
 
 	transactional.cache.enable=true
 	
-## Sharded Databases [](id=sharded-databases)
+## Sharded Databases 
 
 Set the database that is to be used for the default company and globally used tables in a sharded environment.
 
@@ -1038,7 +1038,7 @@ Specify an algorithm for selecting a new shard on portal instance creation. Use 
 	shard.selector=com.liferay.portal.dao.shard.RoundRobinShardSelector
 	shard.selector=com.liferay.portal.dao.shard.ManualShardSelector	
 
-## Ehcache [](id=ehcache)
+## Ehcache 
 
 Set the classpath to the location of the Ehcache config file for internal caches. Edit the file specified in the property `ehcache.multi-vm.config.location` to enable clustered cache.
 
@@ -1085,7 +1085,7 @@ Set this to `true` to enable Ehcache statistics.
 
 	ehcache.statistics.enabled=false
 
-## JavaScript [](id=javascri-3)
+## JavaScript 
 
 Set a list of JavaScript files that will be loaded automatically in `/html/common/themes/top_js.jsp`.
 
@@ -1327,7 +1327,7 @@ Set this to `true` to enable the display of JavaScript logging.
 
     javascript.log.enabled=false
 
-## SQL Data [](id=sql-data)
+## SQL Data 
 
 Set the default SQL IDs for common objects.
 
@@ -1342,7 +1342,7 @@ Set the maximum parameters that a SQL transaction query can contain. Some databa
 
     sql.data.max.parameters=1000
 
-## Company [](id=company)
+## Company 
 
 This sets the default web id. Omniadmin users must belong to the company with this web id.
 
@@ -1455,7 +1455,7 @@ Input a list of sections that will be included as part of the company settings f
 	company.settings.form.identification=addresses,phone-numbers,additional-email-addresses,websites
 	company.settings.form.miscellaneous=display-settings,google-apps
 
-## Users [](id=users)
+## Users 
 
 Set this to `false` if users cannot be deleted.
 
@@ -1571,7 +1571,7 @@ Input a list of user attributes that will be included when exporting users to a 
 
 	users.export.csv.fields=fullName,emailAddress   
 
-## Groups and Roles [](id=groups-and-roles)
+## Groups and Roles 
 
 Input a list of comma delimited system group names that will exist in addition to the standard system groups. When the server starts, the portal checks to ensure all system groups exist. Any missing system group will be created by the portal.
 
@@ -1669,7 +1669,7 @@ Set this to `true` when you want the validation to allow for creation of roles w
 
 	roles.name.allow.numeric=false
 
-## Organizations [](id=organizations)
+## Organizations 
 
 Specify the names of your organization(s). For example, you could use Teams, Clubs, Parishes, or anything which describes your hierarchical structure.
 
@@ -1716,13 +1716,13 @@ Set this to `true` to search organizations from the index. Set this to `false` t
 
 	organizations.search.with.index=true
 	
-## User Groups [](id=user-groups)
+## User Groups 
     
 Set this to `true` when you want the validation to allow for creation of user groups with numeric names.
     
     user.groups.name.allow.numeric=false
 
-## Languages and Time Zones [](id=languages-and-time-zones)
+## Languages and Time Zones 
 
 Specify the available locales. Messages corresponding to a specific language are specified in properties files with file names matching that of `content/Language_*.properties`. These values can also be overridden in properties files with file names matching that of `content/Language-ext_*.properties`. Use a comma to separate each entry.
 
@@ -1807,7 +1807,7 @@ Specify the available time zones. The specified ids must match those from the cl
         Pacific/Enderbury,\
         Pacific/Kiritimati
         
-## Look and Feel [](id=look-and-feel)
+## Look and Feel 
 
 Set this to `false` if the system does not allow users to modify the look and feel.
 
@@ -1838,13 +1838,13 @@ Set this to `true` if you want a change in the theme selection of the public or 
 
 	theme.sync.on.group=false
 	
-## Request [](id=request)
+## Request 
 
 Portlets that have been configured to use private request attributes in `liferay-portlet.xml` may still want to share some request attributes. This property allows you to configure which request attributes will be shared. Set a comma delimited list of attribute names that will be shared when the attribute name starts with one of the specified attribute names. For example, if you set the value to `hello_,world_`, then all attribute names that start with `hello_` or `world_` will be shared.
 
 	request.shared.attributes=LIFERAY_SHARED_
 
-## Session [](id=session)
+## Session 
 
 Specify the delimiter for parsing compound session ids.
 
@@ -1959,7 +1959,7 @@ Enter a list of comma delimited paths that should not be tracked.
 		\
 		/document_library/get_file
 
-## JAAS [](id=jaas)
+## JAAS 
 
 Set this to false to disable JAAS security checks. Disabling JAAS speeds up login. JAAS must be disabled if administrators are to be able to impersonate other users.
 
@@ -1988,7 +1988,7 @@ Set this to `true` to enable administrators to impersonate other users.
 
 	portal.impersonation.enable=true
 
-## Security Manager [](id=security-manager)
+## Security Manager 
 
 Set this property to `default` to use the default security manager configured by the application server. A security manager will not be used if the application server did not configure one.
 
@@ -2000,7 +2000,7 @@ Set this property to `smart` to allow the portal decide which strategy to use ba
 
 	portal.security.manager.strategy=smart
 
-## LDAP [](id=ldap)
+## LDAP 
 
 Set the values used to connect to a LDAP store.
 
@@ -2200,13 +2200,13 @@ New users and groups will be created at the specified DN. This will only be acti
 	ldap.users.dn.0=ou=users,dc=example,dc=com
 	ldap.groups.dn.0=ou=groups,dc=example,dc=com
 	
-## Basic Authentication [](id=basic-authentication)
+## Basic Authentication 
 
 Set this to `true` to require a password when using basic authentication. Only set this to `false` if additional security measures are in place to ensure users have been properly authenticated.
 
 	basic.auth.password.required=true	
 
-## CAS [](id=cas)
+## CAS 
 
 Set this to `true` to enable CAS single sign on. NTLM will work only if LDAP authentication is also enabled and the authentication is made by screen name. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.CASAutoLogin` and the filter `com.liferay.portal.servlet.filters.sso.cas.CASFilter` must be referenced in `web.xml`.
 
@@ -2234,7 +2234,7 @@ Set this to `true` to log out the user from CAS when the portal session expires.
 
 	cas.logout.on.session.expiration=false
 
-## Facebook Connect SSO [](id=facebook-connect-sso)
+## Facebook Connect SSO 
 
     facebook.connect.auth.enabled=false
     facebook.connect.app.id=
@@ -2244,7 +2244,7 @@ Set this to `true` to log out the user from CAS when the portal session expires.
     facebook.connect.oauth.redirect.url=http://localhost:8080/c/login/facebook_connect_oauth
     facebook.connect.oauth.token.url=https://graph.facebook.com/oauth/access_token	
 	
-## NTLM [](id=ntlm)
+## NTLM 
 
 Set this to `true` to enable NTLM single sign on. NTLM will work only if LDAP authentication is also enabled and the authentication is made by screen name. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.NtlmAutoLogin` and the filter `com.liferay.portal.servlet.filters.sso.ntlm.NtlmFilter` must be referenced in `web.xml`.
 
@@ -2266,13 +2266,13 @@ See [http://jcifs.samba.org/src/docs/ntlmhttpauth.html](http://jcifs.samba.org/s
 	jcifs.netbios.cachePolicy=30
 	jcifs.smb.client.soTimeout=35000
 
-## OpenID [](id=openid)
+## OpenID 
 
 Set this to `true` to enable OpenId authentication. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.OpenIdAutoLogin`.
 
 	open.id.auth.enabled=true
 
-## OpenSSO [](id=opensso)
+## OpenSSO 
 
 These properties control Liferay's integration with OpenSSO.
 
@@ -2296,13 +2296,13 @@ Set this to `true` to log out the user off OpenSSO when the portal session expir
 
 	open.sso.logout.on.session.expiration=false
 	
-## Request Header Authentication [](id=request-header-authentication)
+## Request Header Authentication 
 
 Set this to `true` to automatically import users from LDAP if they do not exist in the portal. The property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.RequestHeaderAutoLogin` to enable request header authentication.
 
 	request.header.auth.import.from.ldap=false	
 
-## SiteMinder [](id=siteminder)
+## SiteMinder 
 
 Set this to `true` to enable CA SiteMinder single sign on. If set to `true`, then the property `auto.login.hooks` must contain a reference to the class `com.liferay.portal.security.auth.SiteMinderAutoLogin` and the `logout.events.post` must have a reference to `com.liferay.portal.events.SiteMinderLogoutAction` for logout to work.
 
@@ -2316,7 +2316,7 @@ Set this to the name of the user header that SiteMinder passes to the portal.
 
 	siteminder.user.header=SM_USER
 
-## Authentication Pipeline [](id=authentication-pipeline)
+## Authentication Pipeline 
 
 Input a list of comma delimited class names that implement `com.liferay.portal.security.auth.Authenticator`. These classes will run before or after the portal authentication begins.
 
@@ -2464,7 +2464,7 @@ Enter a list of comma delimited paths that do not require authentication.
 		/wiki/get_page_attachment,\
 		/wiki/rss
 		
-## Authentication Token [](id=authentication-token)
+## Authentication Token 
 
 Set this to `true` to enable authentication token security checks. The checks can be disabled for specific actions via the property `auth.token.ignore.actions` or for specific portlets via the init parameter `check-auth-token` in `portlet.xml`.
 
@@ -2542,7 +2542,7 @@ Set the shared secret that is used for requests where it is not possible to gene
 
 	auth.token.shared.secret=BAHyWOT9TbPB
 
-## Auto Login [](id=auto-login)
+## Auto Login 
 
 Input a list of comma delimited class names that implement `com.liferay.portal.security.auth.AutoLogin`. These classes will run in consecutive order for all unauthenticated users until one of them returns a valid user id and password combination. If no valid combination is returned, then the request continues to process normally. If a valid combination is returned, then the portal will automatically login that user with the returned user id and password combination.
 
@@ -2560,7 +2560,7 @@ Set the paths that will be ignored for auto login.
 
 	auto.login.ignore.paths=
 
-## SSO with MAC (Message Authentication Code) [](id=sso-with-mac-message-authentication-code-)
+## SSO with MAC (Message Authentication Code) 
 
 To use SSO with MAC, post to an URL like:
 
@@ -2589,7 +2589,7 @@ Set the shared key used to generate the MAC.
 
 	auth.mac.shared.key=
 
-## Passwords [](id=passwords)
+## Passwords 
 
 Set the following encryption algorithm to encrypt passwords. The default algorithm is SHA (SHA-1). If set to `NONE`, passwords are stored in the database as plain text. The SHA-512 algorithm is currently unsupported.
 
@@ -2662,7 +2662,7 @@ Set the name of the default password policy.
 
 	passwords.default.policy.name=Default Password Policy
 
-## Permissions [](id=permissio-4)
+## Permissions 
 
 Set the default permission checker class used by `com.liferay.portal.security.permission.PermissionCheckerFactory` to check permissions for actions on objects. This class can be overriden with a custom class that implements `com.liferay.portal.security.permission.PermissionChecker`.
 
@@ -2728,7 +2728,7 @@ The actual logic of how permissions are propagated among models is specified per
 
 	permissions.propagation.enabled=false
 
-## Captcha [](id=captcha)
+## Captcha 
 
 Set the maximum number of captcha checks per portlet session. Set this value to `0` to always check. Set this value to a number less than `0` to never check. Unauthenticated users will always be checked on every request if captcha checks is enabled.
 
@@ -2797,7 +2797,7 @@ Input a list of comma delimited class names that implement `nl.captcha.text.rend
 	captcha.engine.simplecaptcha.word.renderers=nl.captcha.text.renderer.DefaultWordRenderer
 	captcha.engine.simplecaptcha.word.renderers=nl.captcha.text.renderer.ColoredEdgesWordRenderer,nl.captcha.text.renderer.DefaultWordRenderer
 
-## Startup Events [](id=startup-events)
+## Startup Events 
 
 Input a list of comma delimited class names that extend `com.liferay.portal.struts.SimpleAction`. These classes will run at the specified event.
 
@@ -2812,7 +2812,7 @@ Application startup event that runs once for every web site instance of the port
 	application.startup.events=com.liferay.portal.events.AddDefaultDataAction,com.liferay.portal.events.AppStartupAction,com.liferay.portal.events.ChannelHubAppStartupAction
 	application.startup.events=com.liferay.portal.events.AppStartupAction,com.liferay.portal.events.SampleAppStartupAction
 
-## Shutdown Events [](id=shutdown-events)
+## Shutdown Events 
 
 Input a list of comma delimited class names that extend `com.liferay.portal.struts.SimpleAction`. These classes will run at the specified event.
 
@@ -2830,7 +2830,7 @@ See [http://issues.liferay.com/browse/LEP-2048](http://issues.liferay.com/browse
 
 	shutdown.programmatically.exit=false
 
-## Portal Events [](id=portal-events)
+## Portal Events 
 
 
 Input a list of comma delimited class names that extend `com.liferay.portal.kernel.events.Action`. These classes will run before or after the specified event.
@@ -2865,7 +2865,7 @@ Similarly, events can be defined for the logout event.
 	logout.events.post=com.liferay.portal.events.LogoutPostAction,com.liferay.portal.events.DefaultLogoutPageAction,com.liferay.portal.events.SiteMinderLogoutAction
 	logout.events.post=com.liferay.portal.events.LogoutPostAction,com.liferay.portal.events.GarbageCollectorAction
 
-## Default Landing Page [](id=default-landing-page)
+## Default Landing Page 
 
 Set the default landing page path for logged in users relative to the server path. This is the page users are automatically redirected to after logging in. For example, if you want the default landing page to be [http://localhost:8080/web/guest/login](http://localhost:8080/web/guest/login), set this to `/web/guest/login`. To activate this feature, set `auth.forward.by.last.path` to `true`. To customize the behavior, see `com.liferay.portal.events.DefaultLandingPageAction` in the `login.events.post` property above.
 
@@ -2874,7 +2874,7 @@ Set the default landing page path for logged in users relative to the server pat
 	default.landing.page.path=
 	default.landing.page.path=/web/guest/login
 
-## Default Logout Page [](id=default-logout-page)
+## Default Logout Page 
 
 Set the default logout page path for users relative to the server path. This is the page users are automatically redirected to after logging out. For example, if you want the default logout page to be [http://localhost:8080/web/guest/logout](http://localhost:8080/web/guest/logout), set this to `/web/guest/logout`. To activate this feature, set `auth.forward.by.last.path` to `true`. To customize the behavior, see `com.liferay.portal.events.DefaultLogoutPageAction` in the `logout.events.post` property above.
 
@@ -2883,7 +2883,7 @@ Set the default logout page path for users relative to the server path. This is 
 	default.logout.page.path=
 	default.logout.page.path=/web/guest/logout
 
-## Default Guest Public Layouts [](id=default-guest-public-layouts)
+## Default Guest Public Layouts 
 
 The Guest group must have at least one public page. The settings for the initial public page are specified in the following properties.
 
@@ -2940,7 +2940,7 @@ Specify a LAR file that can be used to create the guest public layouts. If this 
 
 	default.guest.public.layouts.lar=${liferay.home}/deploy/default_guest_public.lar
 
-## Default User Private Layouts [](id=default-user-private-layouts)
+## Default User Private Layouts 
 
 If the properties `layout.user.private.layouts.enabled` and `layout.user.private.layouts.auto.create` are both set to `true`, then users will have private layouts and they will be automatically created. The settings below are used for the creation of the initial private pages.
 
@@ -2997,7 +2997,7 @@ Specify a LAR file that can be used to create the user private layouts. If this 
 
 	default.user.private.layouts.lar=${liferay.home}/deploy/default_user_private.lar
 
-## Default User Public Layouts [](id=default-user-public-layouts)
+## Default User Public Layouts 
 
 If the properties `layout.user.public.layouts.enabled` and `layout.user.public.layouts.auto.create` are both set to `true`, then users will have public layouts and they will be automatically created. The settings below are used for the creation of the initial public pages.
 
@@ -3054,7 +3054,7 @@ Specify a LAR file that can be used to create the user public layouts. If this p
 
 	default.user.public.layouts.lar=${liferay.home}/deploy/default_user_public.lar
 
-## Default Admin [](id=default-admin)
+## Default Admin 
 
 Set the default admin password.
 
@@ -3080,7 +3080,7 @@ Set the default admin last name.
 
 	default.admin.last.name=Test
 
-## Layouts [](id=layouts)
+## Layouts 
 
 Set the list of layout types. The display text of each of the layout types is set in `content/Language.properties` and prefixed with `layout.types.`.
 
@@ -3344,7 +3344,7 @@ Set this to specify the initial number of child pages to display in the Manage P
 
 	layout.manage.pages.initial.children=20
 	
-## Layout Prototypes [](id=lp-6-1-ugen20-layout-prototypes-0)
+## Layout Prototypes 
 
 Set this property to true to enable the propagation of changes to a page from its page template by default.
 
@@ -3358,7 +3358,7 @@ The number of seconds we should expect a lock to last before we recognize that a
 
     layout.prototype.merge.lock.max.time=300
 
-## Layout Set Prototypes [](id=lp-6-1-ugen20-layout-set-prototypes-0)
+## Layout Set Prototypes 
 
 In the case that a site template would fail to merge, make sure that we prevent repeated attempts that will inevitably fail by having a fail threshold.
 
@@ -3368,7 +3368,7 @@ The number of seconds we should expect a lock to last before we recognize that a
 
     layout.set.prototype.merge.lock.max.time=600
 
-## Portlet URL [](id=portlet-url)
+## Portlet URL 
 
 Set this to `true` if calling `setParameter` on a portlet URL appends the parameter value versus replacing it. There is some disagreement in the interpretation of the JSR 168 spec among portlet developers over this specific behavior. Liferay Portal successfully passes the portlet TCK tests whether this value is set to `true` or `false`.
 
@@ -3390,13 +3390,13 @@ Set a list of comma delimited reserved parameters that will not be added to refr
 
 	portlet.url.refresh.url.reserved.parameters=password,password1,password2,pop3Password,properties--jdbc.default.password,settings--google.apps.password,smtpPassword,settings--ldap.security.credentials
 
-## Preferences [](id=preferences)
+## Preferences 
 
 Set the following to `true` to validate portlet preferences on startup.
 
 	preference.validate.on.startup=false
 
-## Redirect [](id=redirect)
+## Redirect 
 
 Set this property to `ip` or `domain` for the redirect security method. If set to `domain`, the portal will only redirect users to domains listed in the property `redirect.url.domain.allowed`. If set to `ip`, the portal will only redirect to domains whose IP address resolves to an IP address listed in the property `redirect.url.ip.allowed`.
 
@@ -3413,13 +3413,13 @@ Input a list of comma delimited IPs which the portal is allowed to redirect to. 
 
 	redirect.url.ips.allowed=127.0.0.1,SERVER_IP
 	
-## Struts [](id=struts)
+## Struts 
 
 Input the custom Struts request processor that will be used by Struts based portlets. The custom class must extend `com.liferay.portal.struts.PortletRequestProcessor` and have the same constructor.
 
 	struts.portlet.request.processor=com.liferay.portal.struts.PortletRequestProcessor
 
-## Images [](id=images)
+## Images 
 
 Set this to `true` if the Image servlet will automatically scale an image based on the request `height` and `width` parameters.
 
@@ -3457,7 +3457,7 @@ This is a legacy property used by the `FileSystemHook` to allow data migration f
 
 	image.hook.file.system.root.dir=${liferay.home}/data/images
 
-## Editors [](id=editors)
+## Editors 
 
 You can configure individual JSP pages to use a specific implementation of the available WYSIWYG editors: `bbcode`, `ckeditor`, `ckeditor_bbcode`, `ckeditor_creole`, `fckeditor`, `simple`, `tinymce`, or `tinymce_simple`.
 
@@ -3482,7 +3482,7 @@ You can configure individual JSP pages to use a specific implementation of the a
 	editor.wysiwyg.portal-web.docroot.html.portlet.wiki.edit.creole.jsp=ckeditor_creole
 	editor.wysiwyg.portal-web.docroot.html.portlet.wiki.edit.html.jsp=ckeditor
 
-## Fields [](id=fields)
+## Fields 
 
 Set the following fields to `false` so users cannot see them. Some company policies require gender and birthday information to always be hidden.
 
@@ -3504,13 +3504,13 @@ Set all three values if all users can edit the specified field. Set a combinatio
 	field.editable.com.liferay.portal.model.User.emailAddress=administrator,user-with-mx,user-without-mx
 
 
-## Mime Types [](id=mime-types)
+## Mime Types 
 
 Input a list of comma delimited extensions for which the content disposition header has to be set to `inline`.
 
 	mime.types.content.disposition.inline=flv,gif,jpg,pdf,png,swf,wmv
 
-## Amazon [](id=amazon)
+## Amazon 
 
 Enter an Amazon access key ID and an Amazon associate tag. This is made available only for personal use. Please see the Amazons license at [http://www.amazon.com](http://www.amazon.com) for more information.
 
@@ -3520,19 +3520,19 @@ Enter an Amazon access key ID and an Amazon associate tag. This is made availabl
 	amazon.associate.tag=
 	amazon.secret.access.key=
 	
-## Browser Cache [](id=browser-cache)
+## Browser Cache 
 
 Set this to `true` if you want the portal to force the browser cache to be disabled. It will only disable the cache for the rendered HTML response for logged in users. It will not have impact on static content or other resources. This is useful to ensure that logged in users cannot go to the sign in page by clicking on the back button in their browsers.
 
 	browser.cache.signed.in.disabled=false	
 
-## Browser Launcher [](id=browser-launcher)
+## Browser Launcher 
 
 Enter a URL to automatically launch a browser to that URL when the portal has fully initialized. Enter a blank URL to disable this feature.
 
 	browser.launcher.url=http://localhost:8080
 
-## Control Panel [](id=control-pan-2)
+## Control Panel 
 
 Set the name of the layout.
 
@@ -3554,7 +3554,7 @@ Set the name of a class that implements `com.liferay.portlet.ControlPanelEntry`.
 
 	control.panel.default.entry.class=com.liferay.portlet.DefaultControlPanelEntry
 
-## Instant Messenger [](id=instant-messenger)
+## Instant Messenger 
 
 Set the AIM login and password by which the system will use AIM to communicate with users.
 
@@ -3585,7 +3585,7 @@ Set the YM login and password by which the system will use YM to communicate wit
 	ym.login=
 	ym.password=
 
-## Lucene Search [](id=lucene-search)
+## Lucene Search 
 
 Set this to `true` to enable highlighting of search results.
 
@@ -3714,14 +3714,14 @@ Set this to `true` if you want the portal to replicate an index write across all
 
 	lucene.replicate.write=false
 	
-## Multi Value Map [](id=multi-value-map)
+## Multi Value Map 
 
 Set the multi value map property to `0` to store the map in memory and `1` to store the map in the file system.
 
 	multi.value.map.com.liferay.portal.convert.ConvertPermissionAlgorithm.convertResourcePermission=0
 	multi.value.map.com.liferay.portal.convert.ConvertPermissionAlgorithm.convertRoles=0
 	
-## Setup Wizard [](id=setup-wizard)
+## Setup Wizard 
 
 Set a comma delimited list of supported databases.
 
@@ -3749,7 +3749,7 @@ Set this property to true if the Setup Wizard should be displayed the first the 
 
 	setup.wizard.enabled=false	
 
-## SourceForge [](id=sourceforge)
+## SourceForge 
 
     source.forge.mirrors=\
         http://downloads.sourceforge.net,\      # Redirect
@@ -3771,7 +3771,7 @@ Set this property to true if the Setup Wizard should be displayed the first the 
         http://nchc.dl.sourceforge.net,\        # Tainan, Taiwan
         http://optusnet.dl.sourceforge.net      # Sydney, Australia
 
-## Value Object [](id=value-object)
+## Value Object 
 
 You can add a listener for a specific class by setting the property `value.object.listener` with a list of comma delimited class names that implement `com.liferay.portal.model.ModelListener`. These classes are pooled and reused and must be thread safe.
 
@@ -3827,24 +3827,24 @@ Finder level caching for a specific type of value object can be configured by us
 	value.object.finder.cache.enabled.com.liferay.portal.model.User=true
 	value.object.finder.cache.enabled.Users_Roles=true
 
-## Audit Message [](id=audit-message)
+## Audit Message 
 
     audit.message.com.liferay.portal.model.Layout.VIEW=false
 
-## Buffered Increment [](id=buffered-increment)
+## Buffered Increment 
 
 Set the queue size for the message bus destinations used to buffer increments.
 
 	buffered.increment.parallel.queue.size=100000
 	buffered.increment.serial.queue.size=100000
 
-## Cache [](id=cache)
+## Cache 
 
 The cache filter caches processed web content. Set the threshold size to prevent caching resources that are too large. The default value is 500 kb.
     
     cache.content.threshold.size=512000
 	
-## Cluster Link [](id=cluster-link)
+## Cluster Link 
 
 Set this to `true` to enable the cluster link. This is required if you want to cluster indexing and other features that depend on the cluster link.
 
@@ -3881,7 +3881,7 @@ Set this property to autodetect the default outgoing IP address so that JGroups 
 
 	cluster.link.autodetect.address=www.google.com:80
 
-## Cluster Executor [](id=cluster-executor)
+## Cluster Executor 
 
 	cluster.executor.heartbeat.interval=5000
 
@@ -3889,7 +3889,7 @@ Set this to `true` to enable the cluster executor debugging. This will attach a 
 
 	cluster.executor.debug.enabled=false
 
-## Combo [](id=combo)
+## Combo 
 
 The combo servlet combines multiple JavaScript files into a bundle based on shared dependencies. This makes loading JavaScript files much faster. Set this to `false` if the combination should refresh when one of its JavaScript files has changed. This property should be set to `true` during development for easier debugging but set to `false` during production for faster performance.
 
@@ -3899,7 +3899,7 @@ Set the minimum wait interval in milliseconds between timestamp checks on resour
 
 	combo.check.timestamp.interval=1000
 
-## Content Delivery Network [](id=content-delivery-network)
+## Content Delivery Network 
 
 Set the hostname that will be used to serve static content via a CDN for requests made over the HTTP protocol. This property can be overridden dynamically at runtime by setting the URL parameter `cdn_host`. The value must always include the full protocol.
 
@@ -3909,7 +3909,7 @@ Set the hostname that will be used to serve static content via a CDN for request
 
 	cdn.host.https=
 
-## Counter [](id=counter)
+## Counter 
 
 The counter operates with its own data source to prevent deadlocks. By default, the data source created for the counter uses the same settings as those used to create the data source used for the rest of the portal. That happens because the counter service will look up the properties prefixed with `jdbc.default.` to create its data source. See the JDBC properties prefixed with `jdbc.default.` for more information.
 
@@ -3925,7 +3925,7 @@ You can further fine tune the counter increment for specific counter names. This
 
 	counter.increment.com.liferay.portal.model.Layout=1
 	
-## Direct Servlet Context [](id=direct-servlet-context)
+## Direct Servlet Context 
 
 Set this to `true` to enable dispatching to a servlet directly to speed up request dispatching. This property only takes effect when a developer programmatically wraps a normal `ServletContext` with a `DirectServletContext`. See [http://issues.liferay.com/browse/LPS-13776](LPS-13776) for more information.
 
@@ -3937,13 +3937,13 @@ Set this to `true` to refresh the servlet associated with a JSP when the JSP has
 
 	direct.servlet.context.reload=true
 
-## Finalize Manager [](id=finalize-manager)
+## Finalize Manager 
 
 Set this to `true` to enable the finalize manager to use a separate thread to do clean up. Otherwise, finalize manager will only do clean up during registration.
 
 	finalize.manager.thread.enabled=false	
 
-## FreeMarker Engine [](id=freemarker-engine)
+## FreeMarker Engine 
 
 
 	freemarker.engine.cache.storage=com.liferay.portal.freemarker.LiferayCacheStorage
@@ -3962,7 +3962,7 @@ Input a list of comma delimited macros that will be loaded. These files must exi
 
 	freemarker.engine.macro.library=FTL_liferay.ftl as liferay	
 	
-## Google Apps [](id=google-apps)
+## Google Apps 
 
 Set the default user name and password for Google Apps integration. The domain used by Google Apps is retrieved from the portal's mail domain. See [http://code.google.com/apis/apps](http://code.google.com/apis/apps) for more information.
 
@@ -3971,13 +3971,13 @@ Google Apps integration is not used unless the property `mail.hook.impl` is set 
 	google.apps.username=
 	google.apps.password=	
 	
-## GZip [](id=gzip)
+## GZip 
 
 The GZip filter will compress files using the specified compression level. Set the value to `-1` to use the default compression level. Set the value between `0` and `9` for other compression levels as documented in `java.util.zip.Deflater`.
 
 	gzip.compression.level=-1
 
-## HTTP [](id=http)
+## HTTP 
 
 See `system.properties` for more HTTP settings.
 
@@ -4023,19 +4023,19 @@ Set the connection timeout when fetching HTTP content.
 	com.liferay.portal.util.HttpImpl.timeout=10000
 	com.liferay.portal.util.HttpImpl.timeout[rss.news.yahoo.com]=10000
 	
-## HTTP Header Response [](id=http-header-response)
+## HTTP Header Response 
 
 Set the level of verbosity to use for the Liferay-Portal field in the HTTP header response. Valid values are `full`, which gives all of the version information (e.g. Liferay Portal Community Edition 6.1.0 CE etc.) or `partial`, which gives only the name portion (e.g. Liferay Portal Community Edition).
 
 	http.header.version.verbosity=full
 
-## HTTP Tunneling [](id=http-tunneling)
+## HTTP Tunneling 
 
 Do not set this property to `false` in production environments. It overrides the SSL hostname verification and is used for self assigned certificates. See [http://issues.liferay.com/browse/LPS-18038](http://issues.liferay.com/browse/LPS-18038).
 
 	com.liferay.portal.service.http.TunnelUtil.verify.ssl.hostname=true
 
-## ImageMagick [](id=imagemagick)
+## ImageMagick 
 
 Set this to `true` to enable ImageMagick. You must install Ghostscript and Imagemagick. See [http://www.ghostscript.com](http://www.ghostscript.com) and [http://www.imagemagick.org](http://www.imagemagick.org) for more information.
 
@@ -4046,13 +4046,13 @@ Set this to `true` to enable ImageMagick. You must install Ghostscript and Image
 
 If you're unable to properly use ImageMagick, you may need to update to the latest version (ImageMagick 6.7.9-6 2012-09-25 Q16 or later). To check for the latest ImageMagick versions, visit [http://www.imagemagick.org/script/binary-releases.php](http://www.imagemagick.org/script/binary-releases.php). See [http://issues.liferay.com/browse/LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on efforts to identify incompatible application versions with Liferay.
 
-## Invoker [](id=invoker)
+## Invoker 
 
 The invoker filter will attempt to cache `InvokerFilterChain` objects based on the request URI and dispatcher. Set this property configure the maximum number of cached `InvokerFilterChain` objects. Set this property to `0` to disable caching of `InvokerFilterChain` objects.
 
 	invoker.filter.chain.cache.size=10000	
 
-## JCR [](id=jcr)
+## JCR 
 
 Liferay includes Jackrabbit [http://jackrabbit.apache.org](http://jackrabbit.apache.org) by default as its JSR-170 Java Content Repository.
 
@@ -4068,7 +4068,7 @@ Liferay includes Jackrabbit [http://jackrabbit.apache.org](http://jackrabbit.apa
     jcr.jackrabbit.credentials.username=none
     jcr.jackrabbit.credentials.password=none
     
-## JSON [](id=json)
+## JSON 
 
 Input a list of comma delimited class names that cannot be invoked via JSON.
     
@@ -4080,13 +4080,13 @@ Input a list of comma delimited class names that cannot be invoked via JSON.
         com.liferay.portal.service.PortalServiceUtil,\
         com.liferay.portal.service.PortletServiceUtil    
 
-## Live Users [](id=live-users)
+## Live Users 
 
 Set this to `true` to enable tracking via Live Users.
 
 	live.users.enabled=false
 
-## Lock [](id=lock)
+## Lock 
 
 Set the lock expiration time for each class.
 
@@ -4102,7 +4102,7 @@ Locks for message board threads should never expire.
 
 	lock.expiration.time.com.liferay.portlet.messageboards.model.MBThread=0
 
-## Mail [](id=ma-5)
+## Mail 
 
 Set the JNDI name to lookup the Java Mail session. If none is set, then the portal will attempt to create the Java Mail session based on the properties prefixed with `mail.session.`.
 
@@ -4143,7 +4143,7 @@ Set the name of a class that implements `com.liferay.mail.util.Hook`. The mail s
 	mail.hook.impl=com.liferay.mail.util.SendmailHook
 	mail.hook.impl=com.liferay.mail.util.ShellHook
 
-## CyrusHook [](id=cyrushook)
+## CyrusHook 
 
 Set the commands for adding, updating and deleting a user where %1% is the user id. Replace the password with the password for the cyrus user.
 
@@ -4155,7 +4155,7 @@ Set the commands for adding, updating and deleting a user where %1% is the user 
 	mail.hook.cyrus.delete.user=cyrus_userdel password %1%
 	mail.hook.cyrus.home=/home/cyrus
 
-## FuseMailHook [](id=fusemailhook)
+## FuseMailHook 
 
 See [http://www.fusemail.com/support/email-hosting/api-documentation/](http://www.fusemail.com/support/email-hosting/api-documentation/) for more information. You must also update the `mail.account.finder` property.
 
@@ -4165,11 +4165,11 @@ See [http://www.fusemail.com/support/email-hosting/api-documentation/](http://ww
 	mail.hook.fusemail.account.type=group_subaccount
 	mail.hook.fusemail.group.parent=
 	
-## GoogleHook [](id=googlehook)
+## GoogleHook 
 
 See the properties `google.apps.username` and `google.apps.password`.
 
-## SendMailHook [](id=sendmailhook)
+## SendMailHook 
 
 Set the commands for adding, updating and deleting a user where %1% is the user id and %2% is the password. Set the home and virtual user table information.
 
@@ -4180,13 +4180,13 @@ Set the commands for adding, updating and deleting a user where %1% is the user 
 	mail.hook.sendmail.virtusertable=/etc/mail/virtusertable
 	mail.hook.sendmail.virtusertable.refresh=bash -c "makemap hash /etc/mail/virtusertable < /etc/mail/virtusertable"
 
-## ShellHook [](id=shellhook)
+## ShellHook 
 
 Set the location of the shell script that will interface with any mail server.
 
 	mail.hook.shell.script=/usr/sbin/mailadmin.ksh
 	
-## Minifier [](id=minifier)
+## Minifier 
 
 The strip filter will attempt to cache inline minified CSS and JavaScript content. Set this property to configure the maximum pieces of cached content. Set this property to `0` to disable caching of inline minified content.
 
@@ -4200,13 +4200,13 @@ Input a list of comma delimited values that will cause the minified JavaScript t
 
 	minifier.inline.content.cache.skip.javascript=getSessionId,encryptedUserId	
 	
-## Mobile Device Rules [](id=mobile-device-rules)
+## Mobile Device Rules 
 
 This property defines the postfix that will be localized and appended to the name of a copied rule group.
 
 	mobile.device.rules.rule.group.copy.postfix=copy
 	
-## Monitoring [](id=monitoring)
+## Monitoring 
 
 Configure the appropriate level for monitoring Liferay. Valid values are: `HIGH`, `LOW`, `MEDIUM`, `OFF`.
 
@@ -4245,7 +4245,7 @@ Set this to `true` to show data samples at the bottom of each portal page as HTM
 	
 
 	
-## Multicast [](id=multicast)
+## Multicast 
 
 Consolidate multicast address and port settings in one location for easier maintenance. These settings must correlate to your physical network configuration (i.e. firewall, switch and other network hardware matter) to ensure speedy and accurate communication across a cluster.
 
@@ -4276,13 +4276,13 @@ See the properties `ehcache.multi.vm.config.location` and `ehcache.multi.vm.conf
 	multicast.group.address["multi-vm"]=239.255.0.5
 	multicast.group.port["multi-vm"]=23305
 	
-## Notifications [](id=notifications)
+## Notifications 
 
 Set the maximum number of transient events allowed to queue for a user. In case of excess events, the events with the closest expiration time are removed.
 
 	notifications.max.events=100
 
-## OpenOffice [](id=openoffice)
+## OpenOffice 
 
 Enabling OpenOffice integration allows the Document Library portlet and the Wiki portlet to provide conversion functionality. This is tested with OpenOffice 2.3.x through 3.2.x. It is recommended that you have OpenOffice on the same machine. Using a remote host for the instance is not fully supported and could lead to various problems. To start OpenOffice as a service, run the command: 
 
@@ -4307,7 +4307,7 @@ Specify the file extensions of files to allow conversions to. Entries must be li
 	openoffice.conversion.target.extensions[spreadsheet]=csv,ods,pdf,sxc,tsv,xls
 	openoffice.conversion.target.extensions[text]=doc,odt,pdf,rtf,sxw,txt
 
-## OSGi [](id=osgi)
+## OSGi 
 
 Set this property to true to enable OSGi. Set this to false for compatibility with older application servers.
 
@@ -4382,7 +4382,7 @@ Set a comma delimited list of java packages that are exported to the OSGi framew
         org.slf4j.helpers;version="1.5.11",\
         org.slf4j.spi;version="1.5.11"	
 	
-## Poller [](id=poller)
+## Poller 
 
 Specify the notification events timout in milliseconds. This prevents the poller from locking up the application server.
 
@@ -4392,7 +4392,7 @@ Specify the poller request timeout in milliseconds. This prevents the poller fro
 
 	poller.request.timeout=1000
 
-## POP [](id=pop)
+## POP 
 
 Set this to `true` to enable polling of email notifications from a POP server. The user credentials are the same used for SMTP authentication and are specified in the `mail/MailSession` configuration for each application server.
 
@@ -4408,7 +4408,7 @@ This approach may not be allowed for some organizations. If you cannot use the s
 
 	pop.server.subdomain=events
 
-## Quartz [](id=quartz)
+## Quartz 
 
 	memory.cluster.scheduler.lock.cache.enabled=false
 
@@ -4432,31 +4432,31 @@ This approach may not be allowed for some organizations. If you cannot use the s
     persisted.scheduler.org.quartz.threadPool.threadCount=5
     persisted.scheduler.org.quartz.threadPool.threadPriority=5
     
-## REST Proxy [](id=rest-proxy)
+## REST Proxy 
 
 Input a list of comma delimited URL prefixes which the portal is allowed to make proxy requests to. Input a blank list to allow any URLs.
 
 	rest.proxy.url.prefixes.allowed=http://search.yahooapis.com/ContentAnalysisService
 
-## Robots.txt [](id=robots-txt)
+## Robots.txt 
 
     robots.txt.with.sitemap=com/liferay/portal/dependencies/robots_txt_with_sitemap.tmpl
     robots.txt.without.sitemap=com/liferay/portal/dependencies/robots_txt_without_sitemap.tmpl
 
-## RSS [](id=12597699)
+## RSS 
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect RSS feeds.
 
 	rss.feeds.hosts.allowed=
 	rss.feeds.https.required=false
 
-## Sanitizer [](id=sanitizer)
+## Sanitizer 
 
 Set the name of a class that implements `com.liferay.portal.kernel.sanitizer.Sanitizer`. This class is used to sanitize content.
 
 	sanitizer.impl=com.liferay.portal.sanitizer.DummySanitizerImpl    
 
-## Scheduler [](id=scheduler)
+## Scheduler 
 
 Set this to `false` to disable all scheduler classes defined in `liferay-portlet.xml` and in the property `scheduler.classes`.
 
@@ -4472,7 +4472,7 @@ Set the maximum length of description, group name and job name fields.
 	scheduler.group.name.max.length=80
 	scheduler.job.name.max.length=80
 	
-## Scripting [](id=scripting)
+## Scripting 
 
 Input a list of comma delimited class names that will never be available to user defined server side scripts. The special string `all_classes` disables access to any Java class. This property is only effective when using the Scripting service and invoking `eval` or `exec` methods.
 
@@ -4501,7 +4501,7 @@ Set the load paths for the jruby engine. These paths allow jruby to locate gems 
         classpath:/gems/fssm-0.2.7/lib,\
         classpath:/gems/sass-3.1.7/lib
 
-## Search Container [](id=search-container)
+## Search Container 
 
 Set the default number of entries to display per page.
 
@@ -4522,7 +4522,7 @@ Set this to `false` to remove the pagination controls above or below results.
 	search.container.show.pagination.top=true
 	search.container.show.pagination.bottom=true
 
-## Sharepoint [](id=sharepoint)
+## Sharepoint 
 
 Set the tokens for supported Sharepoint storage paths.
 
@@ -4532,7 +4532,7 @@ Set the class names for supported Sharepoint storage classes.
 
 	sharepoint.storage.class[document_library]=com.liferay.portlet.documentlibrary.sharepoint.DLSharepointStorageImpl
 
-## Sprite [](id=sprite)
+## Sprite 
 
 Set the file names used for the auto generated sprites. The default file name used to be `.sprite.png` but is now `_sprite.png` because SiteMinder does not allow file names to start with a period. This property will not need to be changed unless your deployment has a conflict with file names that start with an underline.
 
@@ -4543,13 +4543,13 @@ Set the root directory for the autogenerated sprites. Not setting the directory 
 
 	sprite.root.dir=	
 
-## Strip [](id=strip)
+## Strip 
 
 Enter a list of comma delimited paths that should not have its content stripped by the strip filter.
 
 	strip.ignore.paths=/document_library/get_file	
 	
-## Social Activity [](id=social-activity)
+## Social Activity 
 
 Set the length of the counter period for social activities. The value is in a number of days or the special keyword "month" to specify a month.
 
@@ -4562,7 +4562,7 @@ Enter a list of comma separated values to use in drop down lists in the Social A
 	social.activity.participation.increments=0,1,2,3,4,5,10,20,50,100
 	social.activity.participation.limit.values=0,1,2,3,4,5,10,20	
 	
-## Social Bookmarks [](id=social-bookmarks)
+## Social Bookmarks 
 
 The Blogs portlet allows for the posting of entries to various popular social bookmarking sites. The example ones are the defaults; to configure more, just add the site in the format below.
 
@@ -4572,7 +4572,7 @@ The Blogs portlet allows for the posting of entries to various popular social bo
     social.bookmark.jsp[plusone]=/html/taglib/ui/social_bookmark/plusone.jsp
     social.bookmark.jsp[twitter]=/html/taglib/ui/social_bookmark/twitter.jsp
 
-## Text Extraction [](id=text-extraction)
+## Text Extraction 
 
 Set this to `true` if you want text extraction of certain MIME types to use a separate Java process. This will utilize extra resources from the operating system while improving the portal's stability.
 
@@ -4582,19 +4582,19 @@ Input a list of comma delimited MIME types that will trigger text extraction usi
 
 	text.extraction.fork.process.mime.types=application/x-tika-ooxml
 
-## Thread Dump [](id=thread-dump)
+## Thread Dump 
 
 The thread dump filter will log a thread dump if the portal takes longer than the specified number of seconds to process. The thread dump filter must be enabled via the property `com.liferay.portal.servlet.filters.threaddump.ThreadDumpFilter`.
 
 	thread.dump.speed.threshold=5
 
-## User Notifications [](id=user-notifications)
+## User Notifications 
 
 Set this to `true` if you want users to acknowledge receipt of user notification events.
 
 	user.notification.event.confirmation.enabled=false
 
-## Vaadin [](id=vaadin)
+## Vaadin 
 
 Specify the location of the portal wide Vaadin themes and widget set (client side JavaScript).
 
@@ -4608,7 +4608,7 @@ Specify the shared widget set (client side JavaScript) that is used by all Vaadi
 
 	vaadin.widgetset=com.vaadin.portal.gwt.PortalDefaultWidgetSet
     
-## Velocity Engine [](id=velocity-engine)
+## Velocity Engine 
 
 Input a list of comma delimited class names that extend `com.liferay.util.velocity.VelocityResourceListener`. These classes will run in sequence to allow you to find the applicable `ResourceLoader` to load a Velocity template.
 
@@ -4634,7 +4634,7 @@ Set the Velocity logging configuration.
 	velocity.engine.logger=org.apache.velocity.runtime.log.SimpleLog4JLogSystem
 	velocity.engine.logger.category=org.apache.velocity
 
-## Virtual Hosts [](id=virtual-hosts)
+## Virtual Hosts 
 
 Set the extensions that will be ignored for virtual hosts.
 
@@ -4685,13 +4685,13 @@ Specify the site name that will default to the company's virtual host. If the sp
 
 	virtual.hosts.default.site.name=Guest
 	
-## XML Validation [](id=xml-validation)
+## XML Validation 
 
 Set this property to `false` to disable XML validation in the portal. XML validation should only be disabled if validation cannot be performed because the servers hosting the external DTD or XSD files are not available.
 
 	xml.validation.enabled=true
 
-## Xuggler [](id=xuggler)
+## Xuggler 
 
 Set this to `true` to enable conversion and previewing of videos in the Document Library portlet. See [http://www.xuggle.com/xuggler/downloads/build.jsp](http://www.xuggle.com/xuggler/downloads/build.jsp) for more information.
 
@@ -4699,13 +4699,13 @@ Set this to `true` to enable conversion and previewing of videos in the Document
 
 	xuggler.enabled=false
 
-## JSP [](id=jsp)
+## JSP 
 
 Set the `JspWriter` buffer size. `JspFactoryWrapper` reads this value as the buffer size when creating new JspWriters. This value should be kept at `0` for performance reasons.
 
 	jsp.writer.buffer.size=0	
 
-## Servlet Filters [](id=servlet-filters)
+## Servlet Filters 
 
 The absolute redirects filter is used to ensure that all redirects are absolute. It should not be disabled because it also sets the company id in the request so that subsequent calls in the thread have the company id properly set. This filter should also always be the first filter in the list of filters.
 
@@ -4827,7 +4827,7 @@ The virtual host filter maps hosts to public and private pages. For example, if 
 
 	com.liferay.portal.servlet.filters.virtualhost.VirtualHostFilter=true
     
-## Upload Servlet Request [](id=upload-servlet-request)
+## Upload Servlet Request 
 
 Set the maximum file size. Default is 1024 * 1024 * 100.
 
@@ -4847,7 +4847,7 @@ Set the threshold size to prevent out of memory exceptions caused by caching exc
 
 	com.liferay.portal.upload.LiferayInputStream.threshold.size=10485760
 
-## Web Server [](id=web-server)
+## Web Server 
 
 Set the HTTP and HTTPs ports when running the portal in a J2EE server that is sitting behind another web server like Apache. Set the values to `-1` if the portal is not running behind another web server like Apache.
 
@@ -4872,7 +4872,7 @@ Set this to `true` to enable support for legacy proxy servers (Apache 1.x).
 
 	web.server.proxy.legacy.mode=false
 
-## WebDAV [](id=webdav)
+## WebDAV 
 
 Set a list of files for the WebDAV servlet to ignore processing.
 
@@ -4882,7 +4882,7 @@ Specify the number of minutes before a generated nonce expires. When a client co
 
 	webdav.nonce.expiration=30	
 
-## Main Servlet [](id=main-servlet)
+## Main Servlet 
 
 Servlets can be protected by `com.liferay.portal.servlet.filters.secure.SecureFilter`.
 
@@ -4894,68 +4894,68 @@ Set this to `true` if this servlet can only be accessed via https.
 
 	main.servlet.https.required=false
 	
-## Atom Servlet [](id=atom-servlet)
+## Atom Servlet 
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
 	atom.servlet.hosts.allowed=127.0.0.1,SERVER_IP
 	atom.servlet.https.required=false	
 
-## Axis Servlet [](id=axis-servlet)
+## Axis Servlet 
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
 	axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP
 	axis.servlet.https.required=false
 
-## Google Gadget Servlet [](id=google-gadget-servlet)
+## Google Gadget Servlet 
 
 Set the servlet mapping for the Google Gadget servlet.
 
 	google.gadget.servlet.mapping=/google_gadget
 
-## JSON Servlet [](id=json-servlet)
+## JSON Servlet 
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
 	json.servlet.hosts.allowed=
 	json.servlet.https.required=false
 	
-## JSON Web Service Servlet [](id=json-web-service-servlet)
+## JSON Web Service Servlet 
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
 	jsonws.servlet.hosts.allowed=
 	jsonws.servlet.https.required=false	
 
-## Liferay Tunnel Servlet [](id=liferay-tunnel-servlet)
+## Liferay Tunnel Servlet 
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
 	tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP
 	tunnel.servlet.https.required=false
 
-## Netvibes Servlet [](id=netvibes-servlet)
+## Netvibes Servlet 
 
 Set the servlet mapping for the Netvibes servlet.
 
 	netvibes.servlet.mapping=/netvibes
 
-## Spring Remoting Servlet [](id=spring-remoting-servlet)
+## Spring Remoting Servlet 
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
 	spring.remoting.servlet.hosts.allowed=127.0.0.1,SERVER_IP
 	spring.remoting.servlet.https.required=false
 	
-## Tunnel Servlet [](id=lp-6-1-ugen20-tunnel-servlet-0)
+## Tunnel Servlet 
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP
     tunnel.servlet.https.required=false	
 	
-## Web Server Servlet [](id=web-server-servlet)
+## Web Server Servlet 
 
 Set this to a comma delimited list of MIME types to send an Accept-Ranges header.
 
@@ -4973,20 +4973,20 @@ Set the level of verbosity to use in the server information line printed by the 
 
     web.server.servlet.version.verbosity=full
     
-## WebDAV Servlet [](id=webdav-servlet)
+## WebDAV Servlet 
 
 See the properties `main.servlet.hosts.allowed` and `main.servlet.https.required` on how to protect this servlet.
 
 	webdav.servlet.hosts.allowed=
 	webdav.servlet.https.required=false    
 
-## Widget Servlet [](id=lp-6-1-ugen20-widget-servlet-0)
+## Widget Servlet 
 
 Set the servlet mapping for the widget servlet.
 
 	widget.servlet.mapping=/widget
 
-## Admin Portlet [](id=admin-portlet)
+## Admin Portlet 
 
 Input a list of default group names separated by `\n` characters that are associated with newly created users.
 
@@ -5035,7 +5035,7 @@ Configure email notification settings.
 	admin.email.verification.subject=com/liferay/portlet/admin/dependencies/email_verification_subject.tmpl
 	admin.email.verification.body=com/liferay/portlet/admin/dependencies/email_verification_body.tmpl
 
-## Announcements Portlet [](id=announcements-portlet)
+## Announcements Portlet 
 
 Configure email notification settings.
 
@@ -5056,7 +5056,7 @@ Set the interval on which the `CheckEntryMessageListener` will run. The value is
 
 	announcements.entry.check.interval=15
 
-## Asset [](id=asset)
+## Asset 
 
 Input a list of comma delimited default properties for new categories. Each item of the list should have the following format: `key:value`.
 
@@ -5100,13 +5100,13 @@ Set a property with the prefix `asset.renderer.enabled.` and a suffix with the a
 	asset.renderer.enabled.com.liferay.portlet.documentlibrary.asset.DLFileEntryAssetRendererFactory=false
 	asset.renderer.enabled.com.liferay.portlet.messageboards.asset.MBDiscussionAssetRendererFactory=false
 
-## Asset Publisher Portlet [](id=asset-publisher-portlet)
+## Asset Publisher Portlet 
 
 Input a list of comma separated display styles that will be available in the configuration screen of Asset Publisher portlet.
 
 	asset.publisher.display.styles=table,title-list,abstracts,full-content	
 	
-## Blogs Portlet [](id=blogs-portlet)
+## Blogs Portlet 
 
 Configure email notification settings.
 
@@ -5169,7 +5169,7 @@ Set this to `true` if blogs should be published to live by default.
 
 	blogs.publish.to.live.by.default=false
 
-## Breadcrumb Portlet [](id=breadcrumb-portlet)
+## Breadcrumb Portlet 
 
 Set this to `true` to show the Guest Site as the top level parent in the breadcrumbs. It will only show if it has at least one page.
 
@@ -5183,7 +5183,7 @@ Specify the options that will be provided to the user in the edit configuration 
 
 	breadcrumb.display.style.options=horizontal,vertical
 
-## Calendar Portlet [](id=calendar-portlet)
+## Calendar Portlet 
 
 Set the list of event types. The display text of each of the event types is set in `content/Language.properties`.
 
@@ -5210,7 +5210,7 @@ Configure email notification settings.
 	calendar.email.event.reminder.subject=com/liferay/portlet/calendar/dependencies/email_event_reminder_subject.tmpl
 	calendar.email.event.reminder.body=com/liferay/portlet/calendar/dependencies/email_event_reminder_body.tmpl
 
-## Discussion Tag Library [](id=discussion-tag-library)
+## Discussion Tag Library 
 
 Configure email notification settings for discussions.
 
@@ -5233,7 +5233,7 @@ Set this property to `true` if users can edit their own discussion comments even
 
     discussion.comments.always.editable.by.owner=false	
 
-## Document Library Portlet [](id=document-library-portlet)
+## Document Library Portlet 
 
 Set this property to `true` to enable execution of antivirus check when files are submitted into a store. Setting this value to `true` will prevent any potential virus files from entering the store but will not allow for file quarantines.
 
@@ -5423,13 +5423,13 @@ Set the default display view.
 
 	dl.default.display.view=icon
 
-## Dockbar Portlet [](id=dockbar-portlet)
+## Dockbar Portlet 
 
 Set the portlet ids that will be shown directly in the *Add Application* menu.
 
 	dockbar.add.portlets=56,101,110,71
 	
-## Dynamic Data Lists Portlet [](id=dynamic-data-lists-portlet)
+## Dynamic Data Lists Portlet 
 
 Set this to `true` if dynamic data lists record set keys should always be autogenerated.
 
@@ -5453,7 +5453,7 @@ Input a list of comma delimited class names that extend `com.liferay.portal.kern
 
 	dynamic.data.lists.transformer.listener=	
 	
-## Dynamic Data Mapping Portlet [](id=dynamic-data-mapping-portlet)
+## Dynamic Data Mapping Portlet 
 
 Set this to `true` if dynamic data mapping structure keys should always be autogenerated.
 
@@ -5469,7 +5469,7 @@ Set the location of the default content for each language type.
 	dynamic.data.mapping.template.language.content[ftl]=com/liferay/portlet/dynamicdatamapping/dependencies/template.ftl
 	dynamic.data.mapping.template.language.content[vm]=com/liferay/portlet/dynamicdatamapping/dependencies/template.vm
 	
-## Flags Portlet [](id=flags-portlet)
+## Flags Portlet 
 
 Input a list of questions used for flag reasons.
 
@@ -5487,13 +5487,13 @@ Set this to `true` to enable guest users to flag content.
 
 	flags.guest.users.enabled=false
 
-## Icon Menu Tag Library [](id=icon-menu-tag-library)
+## Icon Menu Tag Library 
 
 Configure maximum number of items to display when using the Icon Menu tag library. If the number of items is higher than the maximum allowed, then the icon menu will provide an autocomplete search box to display the items.
 
 	icon.menu.max.display.items=15
 
-## IFrame Portlet [](id=iframe-portlet)
+## IFrame Portlet 
 
 Specify a role name that a user must be associated with to configure the IFrame portlet to use the `@password@` token. This token is used to post the password of users who access this portlet to automatically login to the framed site.
 
@@ -5501,13 +5501,13 @@ No role is required by default. However, it is recommended that you specify a ro
 
 	iframe.password.token.role=
 	
-## Invitation Portlet [](id=invitation-portlet)
+## Invitation Portlet 
 
     invitation.email.max.recipients=20
     invitation.email.message.body=com/liferay/portlet/invitation/dependencies/email_message_body.tmpl
     invitation.email.message.subject=com/liferay/portlet/invitation/dependencies/email_message_subject.tmpl
 
-## Journal Portlet [](id=journal-portlet)
+## Journal Portlet 
     
 Input a list of sections that will be included as part of the article form when adding an article.
 
@@ -5667,7 +5667,7 @@ Specify the path to the template used for providing error messages on\ Journal t
 	journal.error.template.velocity=com/liferay/portlet/journal/dependencies/error.vm
 	journal.error.template.xsl=com/liferay/portlet/journal/dependencies/error.xsl    
     
-## Journal Articles Portlet [](id=journal-articles-portlet)
+## Journal Articles Portlet 
 
 Set the available values for the number of articles to display per page.
 
@@ -5677,13 +5677,13 @@ Set this to `true` to search articles from the index. Set this to `false` to sea
 
 	journal.articles.search.with.index=false	
 	
-## Journal Content Search Portlet [](id=journal-content-search-portlet)
+## Journal Content Search Portlet 
 
 Set whether unlisted articles are excluded from search results.
 
 	journal.content.search.show.listed=true	
 	
-## Login Portlet [](id=login-portlet)
+## Login Portlet 
 
 Configure email notification settings.
 
@@ -5694,7 +5694,7 @@ Set this to `true` to allow the user to choose a password during account creatio
 
 	login.create.account.allow.custom.password=false
 
-## Message Boards Portlet [](id=message-boards-portlet)
+## Message Boards Portlet 
 
 Configure email notification settings.
 
@@ -5760,7 +5760,7 @@ Set this to `true` if message boards should be published to live by default.
 
 	message.boards.publish.to.live.by.default=false
 
-## My Places Portlet [](id=my-places-portlet)
+## My Places Portlet 
 
 Set the display style for the My Places navigation menu.
 
@@ -5789,7 +5789,7 @@ Set the maximum number of elements that will be shown in the My Sites navigation
 
 	my.sites.max.elements=10
 
-## Navigation Portlet [](id=navigation-portlet)
+## Navigation Portlet 
 
 Specify the options that will be provided to the user in the edit configuration mode of the portlet.
 
@@ -5804,7 +5804,7 @@ Define each mode with 4 comma delimited strings that represent the form: `header
 	navigation.display.style[from-level-1-to-all-sublevels]=none,absolute,1,all,true
 	navigation.display.style[from-level-0]=none,absolute,0,auto,true
 
-## Nested Portlets Portlet [](id=nested-portlets-portlet)
+## Nested Portlets Portlet 
 
 	nested.portlets.layout.template.default=2_columns_i
 
@@ -5812,13 +5812,13 @@ Add a comma separated list of layout template ids that should not be allowed in 
 
 	nested.portlets.layout.template.unsupported=freeform,1_column
 
-## Portlet CSS Portlet [](id=portlet-css-portlet)
+## Portlet CSS Portlet 
 
 Set this to `true` to enable the ability to modify portlet CSS at runtime via the Look and Feel icon. Disabling it can speed up performance.
 
 	portlet.css.enabled=true
 	
-## Ratings Tag Library [](id=ratings-tag-library)
+## Ratings Tag Library 
 
 Set the number of stars that will be used by the ratings tag library by default.
 
@@ -5832,13 +5832,13 @@ Set the number of max score and min score that will be used by the ratings tag l
     ratings.max.score[com.liferay.portlet.messageboards.model.MBMessage]=1
     ratings.min.score[com.liferay.portlet.messageboards.model.MBMessage]=-1	
 
-## RSS Portlet [](id=rss-portlet)
+## RSS Portlet 
 
 Set the HTTP connection timeout in milliseconds for reading RSS feeds.
 
 	rss.connection.timeout=2000	
 
-## Sites Admin Portlet [](id=sites-admin-portlet)
+## Sites Admin Portlet 
 
 Set this to `true` to allow site members to see the Sites Admin portlet and the sites he is a member of in the control panel. Setting this to `false` will only allow administrators to see this portlet in the control panel.
 
@@ -5867,7 +5867,7 @@ Configure email notification settings.
 	sites.email.membership.request.subject=com/liferay/portlet/sites/dependencies/email_membership_request_subject.tmpl
 	sites.email.membership.request.body=com/liferay/portlet/sites/dependencies/email_membership_request_body.tmpl
 	
-## Shopping Portlet [](id=shopping-portlet)
+## Shopping Portlet 
 
 Set this to `true` if cart quantities must be a multiple of the item's minimum quantity.
 
@@ -5912,7 +5912,7 @@ Set this to `true` to enable comments for shopping orders.
 
 	shopping.order.comments.enabled=true
 
-## Software Catalog Portlet [](id=software-catalog-portlet)
+## Software Catalog Portlet 
 
 Set the maximum file size and dimensions for thumbnnails. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
 
@@ -5924,19 +5924,19 @@ Set this to `true` to enable comments for software catalog products.
 
 	sc.product.comments.enabled=true
 
-## Tags Compiler Portlet [](id=tags-compiler-portlet)
+## Tags Compiler Portlet 
 
 Set this to `true` to enable the ability to compile tags from the URL. Disabling it can speed up performance.
 
 	tags.compiler.enabled=true
 	
-## Translator Portlet [](id=translator-portlet)
+## Translator Portlet 
 
 Set the default languages to translate a given text.
 
 	translator.default.languages=en_es
 
-## Wiki Portlet [](id=wiki-portlet)
+## Wiki Portlet 
 
 Set the name of the default page for a wiki node. The name for the default page must be a valid wiki word. A wiki word follows the format of having an upper case letter followed by a series of lower case letters followed by another upper case letter and another series of lower case letters. See [http://www.usemod.com/cgi-bin/wiki.pl?WhatIsaWiki](http://www.usemod.com/cgi-bin/wiki.pl?WhatIsaWiki) for more information on wiki naming conventions.
 
@@ -6026,6 +6026,6 @@ Configure email notification settings.
 
 	wiki.rss.abstract.length=200
 
-## Summary [](id=summ-35)
+## Summary 
 
 In this very long chapter we looked at all of the options which can be customized in your `portal-ext.properties` file. This chapter serves as a reference section for the file, so you can quickly find documentation for any property you might encounter. Also, if you would like to make a customization to Liferay, you can use this section to search for a property that does what you want. Once you find it, just add the appropriate line(s) to your `portal-ext.properties` file.

@@ -1,4 +1,4 @@
-# Document Management [](id=documents-and-media)
+# Document Management 
 
 Liferay's Documents and Media library provides a mechanism for storing files
 online using the same type of structure that you use to store files locally. You
@@ -17,7 +17,7 @@ metadata sets are an addition to, not a replacement for, the portal's system of
 tags and categories. Let's start exploring how to use the Documents and Media
 portlet.
 
-## Getting Started with the Documents and Media [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-0)
+## Getting Started with the Documents and Media 
 
 The Documents and Media portlet is non-instanceable. This means that each page
 on your portal can host at most one such portlet. Furthermore, if you add
@@ -43,7 +43,7 @@ portlet window shows only documents that belong to the selected document type.
 When you add custom document types, which we discuss below, they are added to
 the filter list. Next, let's look at how to navigate around Documents and Media. 
 
-### Navigating the Documents and Media Portlet [](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0)
+### Navigating the Documents and Media Portlet 
 
 In the main window of the Documents and Media portlet, you can click on a
 document to view details about it. Its version number, version history, status,
@@ -90,7 +90,7 @@ at once, you can use the navigation tool at the bottom of the portlet window to
 either switch your view to another page or configure the page to display more
 documents per page. 
 
-#### Actions [](id=lp-6-1-ugen04-actions-0)
+#### Actions 
 
 The Actions menu will only be displayed if you have selected one or more
 documents with the check boxes.
@@ -113,7 +113,7 @@ same time. Moving documents and folders is also possible via drag & drop.
 **Delete:** allows you to remove a document or folder from the portlet. You can
 delete multiple documents and folders at the same time.
 
-#### Add [](id=lp-6-1-ugen04-add-0)
+#### Add 
 
 From the Add button, you can add documents, folders and shortcuts just like on
 your local file system.
@@ -153,7 +153,7 @@ upload, you can select that document type from the Add menu. This will associate
 the metadata fields associated with the document type to your document and you
 will be asked to fill out the fields.
 
-#### Sort [](id=lp-6-1-ugen04-sort-0)
+#### Sort 
 
 You can sort the items displayed in the main window of the Documents and Media
 portlet using the Sort By menu. You can sort by title, create date, modified
@@ -170,7 +170,7 @@ downloaded.
 
 **Size:** lets you sort documents by how much disk space they use.
 
-#### Manage [](id=lp-6-1-ugen04-manage-0)
+#### Manage 
 
 The Manage menu allows you to view the names of document types and metadata
 sets, as well as the last times they were edited.
@@ -180,7 +180,7 @@ sets, as well as the last times they were edited.
 **Metadata Sets:** shows you a list of defined metadata sets as well as their
 portal IDs.
 
-## Document Types and Metadata Sets [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
+## Document Types and Metadata Sets 
 
 Customizable document types and metadata sets are new features in Liferay 6.1.
 When a user assigns a document type to a document, the user is required to fill
@@ -277,7 +277,7 @@ been created they can be included in any number of document types as additional
 metadata sets. Next, let's take a look at tags. Tags can be attached to most
 forms of web content that can be created in Liferay, including documents.
 
-## Using External Repositories [](id=lp-6-1-ugen04-repositories-0)
+## Using External Repositories 
 
 Adding repositories in Documents and Media is a new feature in Liferay 6.1.
 Content Management Interoperability Services (CMIS) is a specification for
@@ -561,7 +561,7 @@ their most up-to-date versions of Office files.
 
 Now let's look at configuring the Documents and Media portlet.
 
-## Configuring the Documents and Media portlet [](id=lp-6-1-ugen04-configuring-the-documents-and-media-portlet-0)
+## Configuring the Documents and Media portlet 
 
 To configure the Documents and Media portlet, click on the wrench icon at the
 top of the portlet window and select *Configuration*. The portlet-specific
@@ -612,7 +612,7 @@ they think the comment is unhelpful or misleading, they can click on the thumbs
 down icon. If you'd like to disable comment ratings for files within your
 portlet, uncheck the *Enable Comment Ratings* box.
 
-## Automatic Previews and metadata [](id=lp-6-1-ugen04-automatic-previews-and-metadata-0)
+## Automatic Previews and metadata 
 
 Whenever possible, Liferay 6.1 generates previews of documents added to the
 Documents and Media library. Out of the box, Liferay only ships with Java-based
@@ -667,7 +667,7 @@ falls back to a Flash player.
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for. 
 
-### Automatic extraction of RAW Metadata [](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0)
+### Automatic extraction of RAW Metadata 
 
 When adding new documents or viewing existing documents, a process is triggered
 automatically that extracts the file's metadata. The library used by this
@@ -676,7 +676,7 @@ process is TIKA and it's already included in Liferay out of the box.
 You can see the metadata when viewing the document, in the right side of the
 window.
 
-### Document type restrictions and workflow per folder [](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0)
+### Document type restrictions and workflow per folder 
 
 You can force users to add only certain document types to a folder. By default,
 child folders inherit the restrictions of their parent folder. You can change
@@ -697,7 +697,7 @@ Document types are a powerful way to enforce rules for documents uploaded by
 users. Next, we'll see a way to make it incredibly easy for users to access
 documents stored in Liferay's Documents and Media repositories. 
 
-### WebDAV access [](id=lp-6-1-ugen04-webdav-access-0)
+### WebDAV access 
 
 Wouldn't it be great if you could access documents and folders belonging to
 Liferay's Documents and Media library from your own machine's file manager? You
@@ -748,7 +748,7 @@ Now you know just how easy it is to store your files using Liferay's Documents
 and Media portlet. In the next section we'll review some ways to organize and
 manage your assets so you're getting the most out of your content.
 
-## Liferay Sync [](id=lp-6-1-ugen04-liferay-sync-0)
+## Liferay Sync 
 
 Liferay Sync, released in September 2012, is an add-on product for Liferay 6.1
 CE and EE that synchronizes files between your Liferay server and users' desktop
@@ -763,7 +763,7 @@ the supported environments. Liferay Sync stores files locally so that they're
 always available, even when you're offline. It automatically synchronizes your
 files upon reconnection.
 
-### How does it work? [](id=lp-6-1-ugen04-how-does-it-work-0)
+### How does it work? 
 
 Liferay Sync manages documents and site information through Liferay 6.1's
 built-in web services. Clients securely communicate to Liferay using
@@ -798,7 +798,7 @@ you've installed Social Office CE on Liferay Portal EE, then you can sync any
 site from Portal, but only one from Social Office. If you've installed Social
 Office EE on Liferay Portal EE, then you can sync any and all sites.
 
-### Installing Liferay Sync [](id=lp-6-1-ugen04-installing-liferay-sync-0)
+### Installing Liferay Sync 
 
 For Windows or Mac OS, visit the Liferay Sync product page [Liferay Sync Product
 Page](http://www.liferay.com/products/liferay-sync/features), and click *Get it
@@ -809,7 +809,7 @@ be named `liferay-sync-<version>-<date>.exe`. For Mac OS, it should be
 installer wizard to configure your client to connect to an existing Liferay 6.1
 deployment using your Liferay credentials.
 
-#### Windows [](id=lp-6-1-ugen04-windows-0)
+#### Windows 
 
 Upon launching the Windows application installer, you'll be prompted to choose
 an installation location for Liferay Sync. Browse to an appropriate location on
@@ -836,7 +836,7 @@ server.](../../images/liferay-sync-new-account-info.png)
 
 The options for the Mac OS application installer are similar.
 
-#### Mac OS [](id=lp-6-1-ugen04-mac-os-0)
+#### Mac OS 
 
 Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG mounts
 it as a disk image, and opens a window showing the contents of the image. To
@@ -860,7 +860,7 @@ you wish to change any of your settings, click the icon to open the Liferay Sync
 menu and click on *Preferences*. Note that on Windows, the Sync menu says
 *Properties*, not *Preferences*.
 
-#### Mobile [](id=lp-6-1-ugen04-mobile-0)
+#### Mobile 
 
 For iOS, visit the App Store, search for Liferay, and install the Liferay Sync
 App.
@@ -870,7 +870,7 @@ App.
 
 Once the mobile apps are installed, follow the on-screen instructions as below.
 
-### Using Liferay Sync on the Desktop [](id=lp-6-1-ugen04-using-liferay-sync-0)
+### Using Liferay Sync on the Desktop 
 
 Once installed, you'll see a Liferay Sync icon in your taskbar whenever it's
 running. A green checkmark means Liferay Sync has a working connection to your
@@ -947,7 +947,7 @@ link to Liferay's home page.
 from [liferay.com](liferay.com) and allows you to set whether or not Liferay
 Sync should automatically check for updates.
 
-#### Using your Sync folder [](id=lp-6-1-ugen04-using-your-sync-folder-0)
+#### Using your Sync folder 
 
 Once Liferay Sync has been configured and is running, any files you add to or
 modify in your Sync folder are automatically detected and uploaded to your
@@ -997,7 +997,7 @@ Download the file again, and you'll see that it now says *second test*--your
 edit was uploaded to the server. You can be confident that this edit was also
 downloaded by all other Liferay Sync clients connected to your site.
 
-#### Demonstrating Liferay Sync Permissions [](id=lp-6-1-ugen04-demonstrating-liferay-sync-permissions-0)
+#### Demonstrating Liferay Sync Permissions 
 
 Liferay Sync uses the default Liferay permissions to determine which files and
 folders are synced to the user's machine. This means that whatever files a user
@@ -1029,14 +1029,14 @@ credentials of another user who doesn't belong to the *Secret Site*, the
 a Liferay Sync folder that can only be accessed by the *secretagent* user and
 your administrators.
 
-### Using Liferay Sync Mobile [](id=lp-6-1-ugen04-using-liferay-sync-mobile-0)
+### Using Liferay Sync Mobile 
 
 Once you've installed Liferay Sync on your Android or iOS mobile environment,
 you'll be able to access the same functionality that's available when using Sync
 on a desktop environment. However, the interface differs from that of the Sync
 desktop clients.
 
-#### Android [](id=lp-6-1-ugen04-using-liferay-sync-android-0)
+#### Android 
 
 After installing Liferay Sync for Android, an empty screen appears asking you
 to set up the app. This screen appears whenever preferences are missing.
@@ -1120,7 +1120,7 @@ upload images, videos, and audio files. If you have installed an app on your
 device that can open and browse any type of file, you will also see an option
 called *Other files*.
 
-#### iOS  [](id=lp-6-1-ugen04-using-liferay-sync-ios-0)
+#### iOS  
 
 After installing the iOS app, click on *Settings* in the toolbar, enter your
 Liferay server credentials by filling in your *Login*, *Password*, and *Server*
@@ -1183,7 +1183,7 @@ All downloaded images are stored in your device indefinitely.
 If you want to delete downloaded files locally but don't want to remove them
 from the portal, go to *Settings* and click on the *Clear Cache* button.
 
-## Summary [](id=lp-6-1-ugen04-summary-0)
+## Summary 
 
 In this chapter, we examined Liferay's Documents and Media Library, a powerful
 and customizable virtual shared drive. Liferay 6.1 introduced the ability to

@@ -1,5 +1,5 @@
 
-# Kaleo Forms: Defining Business Processes [](id=lp-6-1-ugen11-kaleo-forms-defining-business-processes-head-ref-0)
+# Kaleo Forms: Defining Business Processes 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -26,7 +26,7 @@ create workflow definitions without having to write XML.
 
 Let's look at Kaleo Forms first. 
 
-## Kaleo Forms [](id=lp-6-1-ugen06-kaleo-forms-0)
+## Kaleo Forms 
 
 Add the Workflow Forms portlet to a page. The initial state, the *Summary* tab
 displays the same information you might have seen in *My Workflow Tasks* in the
@@ -67,7 +67,7 @@ You probably noticed when choosing a workflow, you also have the option to
 create a new one. This is where the Kaleo Workflow Designer can help you build a
 workflow without having to write any XML. Let's see how this works. 
 
-## Kaleo Designer [](id=lp-6-1-ugen06-kaleo-designer-0)
+## Kaleo Designer 
 
 Kaleo Designer provides a drag and drop interface for users to create custom
 workflows. It's an incredibly powerful tool for managing workflow defintions.
@@ -144,7 +144,7 @@ default workflow, only a tiny bit messier, as the nodes display in the order
 they were created, not in the logical order that happens when a human writes the
 code. Save your definition and it's ready to use.
 
-## Summary [](id=summ-28)
+## Summary 
 
 <!-- | TODO: This summary is too thin. It should summarize what you covered in
 the chapter. Going back and looking at the chapter headings can help you write a

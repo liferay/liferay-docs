@@ -1,5 +1,5 @@
 
-# Liferay Frameworks [](id=liferay-framewor-1)
+# Liferay Frameworks 
 
 This chapter provides you with a brief overview of several of the essential
 frameworks provided by Liferay to developers. A framework, in the context of an
@@ -10,7 +10,7 @@ categories, comments, etc.
 This chapter will keep evolving with more information about the existing APIs
 and frameworks and how to use it. So look back for more information often.
 
-## Service Builder [](id=service-build-5)
+## Service Builder 
 
 Service Builder is a model-driven code generation tool built by Liferay to
 automate the creation of interfaces and classes for database persistence and a
@@ -29,7 +29,7 @@ over the Internet or your local network. Service Builder automatically generates
 the code necessary to allow access to the remote services using SOAP, JSON and
 Java RMI.
 
-### Define the Model [](id=lp-6-1-dgen09-define-the-model-0)
+### Define the Model 
 
 The first step in using Service Builder is to define your model classes and
 their attributes in a `service.xml` file. For convenience, we will define the
@@ -68,7 +68,7 @@ the following content:
         </entity>
     </service-builder>
 
-#### Overview of *service.xml* [](id=lp-6-1-dgen09-overview-of-servicexml-0)
+#### Overview of *service.xml* 
 
     <service-builder package-path="com.sample.portlet.library">
 
@@ -100,7 +100,7 @@ automatically be generated for these attributes.
 
 ---
 
-### Generate the Service [](id=lp-6-1-dgen09-generate-the-service-0)
+### Generate the Service 
 
 Next, we'll build a service using our `service.xml`. We can do this by using
 either of the following methods: using *Liferay Developer Studio* or using the
@@ -209,7 +209,7 @@ generated. An overview of these files is provided below:
 Out of all of these classes only three can be manually modified:
 `BookLocalServiceImpl`, `BookServiceImpl` and `BookImpl`.
 
-### Write the Local Service Class [](id=lp-6-1-dgen09-write-the-local-service-class-0)
+### Write the Local Service Class 
 
 In the file overview above, you will see that `BookLocalService` is the
 interface for the local service. It contains the signatures of every method in
@@ -262,7 +262,7 @@ the database by making the following call
 
     BookLocalServiceUtil.addBook(userId, "A new title");
 
-### Overview of *service.properties* [](id=lp-6-1-dgen09-overview-of-serviceproperties-0)
+### Overview of *service.properties* 
 
 Service Builder generates the properties file `service.properties` in the `src`
 directory of your service. Liferay Portal uses these properties to alter your
@@ -278,7 +278,7 @@ is needed in projects in which it is preferred to manually manage the changes to
 the database or in which the SQL schema has been modified manually after
 generation by Service Builder.
 
-### Built-In Liferay Services [](id=lp-6-1-dgen09-built-in-liferay-services-0)
+### Built-In Liferay Services 
 
 In addition to the services you create using Service Builder, your portlets may
 also access a variety of services built into Liferay. These include the
@@ -305,7 +305,7 @@ following:
 For more information on these services, see Liferay's Javadocs at
 [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
-## Security and Permissions [](id=security-and-permissio-4)
+## Security and Permissions 
 
 JSR-286 (and JSR-168) defines a simple security scheme using portlet roles and
 their mapping to portal roles. On top of that, Liferay provides a fine-grained
@@ -314,7 +314,7 @@ their custom portlets. This section of the document gives an overview of the
 JSR-286 (JSR-168) security system, Liferay's permission system, and how to use
 them in your own portlets.
 
-### JSR Portlet Security [](id=lp-6-1-dgen09-jsr-portlet-security-0)
+### JSR Portlet Security 
 
 The JSR specification defines the means to specify the roles that will be used
 by each portlet within its definition in `portlet.xml`. For example, the
@@ -410,7 +410,7 @@ achieve more *fine-grained* security. The next section describes Liferay's
 Permission System and how to use it in your portlets, so that you can decide
 which option fits your needs best.
 
-### Liferay's Permission System Overview [](id=lp-6-1-dgen09-liferays-permission-system-overview-0)
+### Liferay's Permission System Overview 
 
 Adding permissions to custom portlets consists of four main steps (also known as
 DRAC):
@@ -424,7 +424,7 @@ This is also known as *adding resources.*
 
 4.  **C**heck permission before returning resources.
 
-### Implementing Permissions [](id=lp-6-1-dgen09-implementing-permissions-0)
+### Implementing Permissions 
 
 Before you can add permissions to a portlet, let's get an understanding of the
 following two critical terms used throughout this section:
@@ -648,7 +648,7 @@ of how permissions are defined in the context of a portlet plugin, checkout
 Next, let's consider the permission algorithm for this version of Liferay
 Portal.
 
-### Permission Algorithms [](id=lp-6-1-dgen09-permission-algorithms-0)
+### Permission Algorithms 
 
 There are 6 permission algorithms that Liferay has used over the years for
 checking permissions. Liferay 5 introduced algorithm 5 that was based on RBAC
@@ -667,7 +667,7 @@ Panel &rarr; Server Administration &rarr; Data Migration.)
 For more information see options for `permissions.user.check.algorithm` in the
 `portal.properties` file. But next, we'll cover how to add resources.
 
-### Adding a Resource [](id=lp-6-1-dgen09-adding-a-resource-0)
+### Adding a Resource 
 
 After defining resources and actions, the next task is to writing code that adds
 resources into the permissions system. A lot of the logic to add resources is
@@ -723,7 +723,7 @@ this operation by calling the `deleteResource(...)` method of
 
 Great! Now that you know how to work with resource permissions, let's consider how to provide a user interface for managing resource permissions.
 
-### Adding Permission [](id=lp-6-1-dgen09-adding-permission-0)
+### Adding Permission 
 
 On the portlet level, no code needs to be written in order to have the
 permission system work for your custom portlet. Your custom portlet will
@@ -771,7 +771,7 @@ resources.
 
 Next, we'll show you how to implement permissions checking.
 
-### Checking Permissions [](id=lp-6-1-dgen09-checking-permissions-0)
+### Checking Permissions 
 
 The last major step to implementing permissions for your custom portlet is to
 add some checks that guarantee that the configured permissions are enforced.
@@ -864,7 +864,7 @@ variable called `permissionChecker`.
         PermissionChecker permissionChecker =
         	themeDisplay.getPermissionChecker();
 
-### Creating Helper Classes for Permission Checking [](id=lp-6-1-dgen09-creating-helper-classes-for-permission-checking-0)
+### Creating Helper Classes for Permission Checking 
 
 Often, it is a good practice to create helper classes that encapsulate the use
 of permissionChecker and the names of the resources for a specific portlet. This
@@ -929,7 +929,7 @@ implement security in your custom Liferay portlets!
 
 Next, let's learn how to use the Asset Framework.
 
-## Asset Framework [](id=/asset-framewo-4)
+## Asset Framework 
 
 The asset framework provides a set of functionalities that are common to several
 different content types. It was initially created to be able to add tags to blog
@@ -996,7 +996,7 @@ are also optional but offer interesting functionalities such as how to allow
 your custom assets to be published through the Asset Publisher. Next, let's dive
 into adding, updating, and deleting assets.
 
-#### Adding, updating and deleting assets [](id=lp-6-1-dgen09-adding-updating-and-deleting-assets-0)
+#### Adding, updating and deleting assets 
 
 Whenever one of your custom content is created you need to let the asset
 framework know. Don't worry, it is simple. You just need to invoke a method of
@@ -1085,7 +1085,7 @@ Here is an example invocation extracted again from the blogs portlet:
 Now that you've learned how to create and modify assets, have you considered
 tagging and categorizing them? Let's tackle that next.
 
-#### Entering and displaying tags and categories [](id=lp-6-1-dgen09-entering-and-displaying-tags-and-categories-0)
+#### Entering and displaying tags and categories 
 
 The previous section showed how you can let the asset framework know about the
 tags and categories that have been associated with a given asset; but how does a
@@ -1148,7 +1148,7 @@ Great! You'll have no problem associating tags and categories with your assets.
 But before we go further with our example, let's take a look at more JSP tags
 that leverage the features available for assets.
 
-#### More JSP tags for assets [](id=lp-6-1-dgen09-more-jsp-tags-for-assets-0)
+#### More JSP tags for assets 
 
 In addition to using tags and categories, there are even more features that the
 asset framework provides you. These features allow users to do the following
@@ -1225,7 +1225,7 @@ become familiar with them:
 These tags from Liferay's taglib make it easy to apply these features to your
 assets. No problem, right? So let's get the assets published in your portal.
 
-#### Publishing assets with Asset Publisher [](id=lp-6-1-dgen09-publishing-assets-with-asset-publisher-0)
+#### Publishing assets with Asset Publisher 
 
 One of the nice benefits of using the asset framework is leveraging the Asset
 Publisher portlet to publish lists of your custom asset types. The lists can be
@@ -1522,7 +1522,7 @@ Now you can start enjoying the benefits of the asset framework in your custom
 portlets. Next we'll learn how to leverage the File Storage Framework of Liferay
 Portal.
 
-## File Storage Framework [](id=file-storage-framewo-1)
+## File Storage Framework 
 
 The File Storage Framework: Allows storing files using the back-end of the
 Document Library. By using this framework you won't have to worry yourself about
@@ -1532,7 +1532,7 @@ boards of Liferay to store attached files in pages and posts respectively. You
 can check the source code of these two portlets for great real-life examples of
 how to use the framework.
 
-## Other frameworks [](id=other-framewor-4)
+## Other frameworks 
 
 Liferay has a wide variety of frameworks that make it much easier to develop
 complex functionalities for your own applications with little effort. These

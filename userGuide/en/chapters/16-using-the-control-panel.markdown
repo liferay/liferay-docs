@@ -1,5 +1,5 @@
 
-# Using the Control Panel [](id=lp-6-1-ugen19-using-the-control-panel-0)
+# Using the Control Panel 
 
 In this chapter, we continue our coverage of Liferay's control panel that we
 began in chapter 15. We'll cover the following topics:
@@ -21,14 +21,14 @@ began in chapter 15. We'll cover the following topics:
 
 Let's begin with mail host names.
 
-### Mail Host Names [](id=lp-6-1-ugen12-mail-host-names-0)
+### Mail Host Names 
 
 Mail Host Names appears after Authentication and Users on the Portal Settings
 page of the control panel. You can enter other mail host names (one per line)
 besides the one you configured on the General tab. This lets the portal know
 which mail host names are owned by your organization.
 
-### Email Notifications [](id=lp-6-1-ugen12-email-notifications-0)
+### Email Notifications 
 
 There are five tabs under the Email Notifications page of Portal Settings. The
 Sender tab allows you to set the portal's administrative name and email address.
@@ -49,14 +49,14 @@ A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
 the custom email messages.
 
-### Identification [](id=lp-6-1-ugen12-identification-0)
+### Identification 
 
 The identification section has several links for addresses, phone numbers and
 other information you can configure in your portal. This allows you to set up
 contact information for the organization that owns the portal. Developers can
 query for this information in their applications.
 
-### Miscellaneous: Display Settings [](id=lp-6-1-ugen12-miscellaneous-display-settings-0)
+### Miscellaneous: Display Settings 
 
 This section allows you to set the default portal language and the time zone.
 You can also set up a portal-wide logo which appears in the top left corners of
@@ -72,7 +72,7 @@ overlap with the navigation. Next, let's look at how to customize different
 types of portal assets using custom fields.
 
 <!--  should we provide a range of recommended parameters for custom logos?  -->
-## Custom Fields [](id=lp-6-1-ugen12-custom-fields-0)
+## Custom Fields 
 
 Custom fields appear beneath Portal Settings in the Portal section of the
 control panel. Custom fields are a way to add attributes to many types of assets
@@ -102,13 +102,13 @@ You can create fields of many different types: text fields (indexed or secret),
 integers, selection of multiple values and more. Once you've created a field,
 you cannot change its type.
 
-## Monitoring [](id=lp-6-1-ugen12-monitoring-0)
+## Monitoring 
 
 The next link on the left side of the control panel is for monitoring. You can
 use the Monitoring page to view all of the live sessions in the portal. For
 performance reasons, this setting is usually turned off in production.
 
-## Plugins Configuration [](id=lp-6-1-ugen12-plugins-configuration-0)
+## Plugins Configuration 
 
 The Plugins Configuration page contains tabs for three types of plugins:
 portlets, themes and layouts. You can use these tabs to view which roles can add
@@ -121,14 +121,14 @@ permissions to new roles for a given portlet, use the Roles section of the
 control panel and the *Actions &rarr; Define Permissions* button. Next, let's
 look at how to apply server configurations.
 
-## Server Administration [](id=lp-6-1-ugen12-server-administration-0)
+## Server Administration 
 
 The Server Administration page of the control panel lets you perform various
 tasks related to the portal server itself, as opposed to the resources in the
 portal. Clicking the link makes this clear: you're immediately presented with a
 graph showing the resources available in the JVM.
 
-### Resources [](id=lp-6-1-ugen12-resources-0)
+### Resources 
 
 The first tab is called *Resources* . This tab contains the aforementioned graph
 plus several server wide actions that an administrator can execute. These are:
@@ -167,7 +167,7 @@ the Guest and User roles for all portlets. Likewise the same permission is
 reduced in scope for Power Users from portal wide to scoped to "User Personal
 Site."
 
-### Log Levels [](id=lp-6-1-ugen12-log-levels-0)
+### Log Levels 
 
 The Log Levels tab of the Server Administration page allows you to dynamically
 modify the log levels for any class hierarchy in the portal. If you have custom
@@ -178,7 +178,7 @@ log levels changed. If you are testing something specific, it is much better to
 be as specific as you can when you change log levels. Modifying them too high in
 the hierarchy generates a lot more log messages than you need.
 
-### Properties [](id=lp-6-1-ugen12-properties-0)
+### Properties 
 
 Liferay and the JVM contain many settings which are defined as properties. There
 are two subtabs of the properties tab of the Server Administration page: one
@@ -195,7 +195,7 @@ properties in chapter 20. If you need to check the current value of a particular
 property, it can be viewed from this screen without having to shut down the
 portal or open any properties files.
 
-### Captcha [](id=lp-6-1-ugen12-captcha-0)
+### Captcha 
 
 By default, Liferay ships with its own simple captcha service which is designed
 to thwart bots from registering for accounts on sites powered by Liferay. If you
@@ -206,7 +206,7 @@ Simply check the *Enable ReCaptcha* box and enter your public and private keys
 into the provided fields, then click *Save*. Liferay Portal will then use
 reCaptcha instead of simple captcha.
 
-### Data Migration [](id=lp-6-1-ugen12-data-migration-0)
+### Data Migration 
 
 If you are upgrading from a previous release of Liferay Portal or if you need to
 migrate your data from one system to another, the Data Migration tab helps you
@@ -232,7 +232,7 @@ and then restart.
 
 Similarly, you can migrate images from the Image Gallery in the same manner.
 
-### File Uploads [](id=lp-6-1-ugen12-file-uploads-0)
+### File Uploads 
 
 Since Liferay allows users to upload files in various places, you may want to
 lock down the type of files and the size of files users are allowed to upload.
@@ -242,7 +242,7 @@ Liferay. You can limit the allowed file extensions generally or by application.
 You have a lot of flexibility as to how you want files to be managed within your
 portal.
 
-### Mail [](id=lp-6-1-ugen12-mail-0)
+### Mail 
 
 Rather than using the `portal-ext.properties` file as we did in the installation
 chapter, you can configure a mail server from the Mail tab of the Server
@@ -254,7 +254,7 @@ can connect to an SMTP server here as well and this is highly recommended.
 Note that if you add your mail server settings here, they will override anything
 in your `portal-ext.properties` file.
 
-### External Services [](id=lp-6-1-ugen12-external-services-0)
+### External Services 
 
 Liferay Portal enables users to upload and share content via the Documents and
 Media library, a customizable and permissionable online repository. Users can
@@ -291,7 +291,7 @@ install it from the binaries:
 Once you've installed these tools, you can use the External Services tab of the
 control panel to configure Liferay to use them.
 
-#### OpenOffice/LibreOffice configuration [](id=lp-6-1-ugen19-openofficelibreoffice-configuration-0)
+#### OpenOffice/LibreOffice configuration 
 
 OpenOffice and LibreOffice are open source office suites which are usually run
 in graphical mode to create documents but they can also be run in "server" mode.
@@ -342,7 +342,7 @@ both in the command to start OpenOffice/LibreOffice in server mode and on the
 control panel's External Services configuration page. When you are finished,
 click *Save*. Now Liferay can perform many types of document conversions.
 
-#### ImageMagick configuration [](id=lp-6-1-ugen19-imagemagick-configuration-0)
+#### ImageMagick configuration 
 
 Once you've installed the correct version of
 [*ImageMagick*](http://www.imagemagick.org) for your operating system, which
@@ -373,7 +373,7 @@ See
 for information on efforts to identify incompatible application versions with
 Liferay.
 
-#### Xuggler configuration [](id=lp-6-1-ugen19-xuggler-configuration-0)
+#### Xuggler configuration 
 
 Once you've installed the correct version of
 [*Xuggler*](http://www.xuggle.com/xuggler) for your operating system, you need
@@ -397,7 +397,7 @@ To configure Liferay to use Xuggler in the control panel, navigate to the
 That's it! You've successfully configured the Documents and Media library to use
 Xuggler for audio and video files.
 
-### Script [](id=lp-6-1-ugen12-script-0)
+### Script 
 
 Liferay includes a scripting console which lets administrators execute migration
 or management code instantly. Several scripting languages are supported,
@@ -405,7 +405,7 @@ including JavaScript, Groovy, Python, Ruby and Beanshell. For further
 information about Liferay's APIs, see the JavaDoc or [*Liferay in
 Action*](http://manning.com/sezov).
 
-### Shutdown [](id=lp-6-1-ugen12-shutdown-0)
+### Shutdown 
 
 If you ever need to shut down your Liferay Portal server while users are logged
 in, you can use the Shutdown tab to inform your logged-in users of the impending
@@ -418,7 +418,7 @@ message saying the portal has been shut down. At this point, the server will
 need to be restarted to restore access. Next, let's examine how to manage
 multiple portal instances.
 
-## Portal Instances [](id=lp-6-1-ugen12-portal-instances-0)
+## Portal Instances 
 
 Liferay Portal allows you to run more than one portal instance on a single
 server. The Portal Instances page of the control panel lets you manage these
@@ -453,7 +453,7 @@ portal using your new domain name. You will see you are brought to what looks
 like a clean install of Liferay. This is your new portal instance which can now
 be configured any way you like.
 
-## Plugins Installation [](id=lp-6-1-ugen12-plugins-installation-0)
+## Plugins Installation 
 
 The *Plugins Installation* page of the control panel shows all of the plugins
 currently installed. These are divided into tabs for portlets, themes, layout
@@ -463,7 +463,7 @@ Installer, where you can browse Liferay's repository of portlets or install your
 own plugins. We covered the plugins installer and explained how to install
 plugins manually in chapter 13.
 
-## Summary [](id=summ-33)
+## Summary 
 
 In this chapter, we finished our overview of Liferay's control panel that we
 began in chapter 15. We saw how to configure mail host names, email

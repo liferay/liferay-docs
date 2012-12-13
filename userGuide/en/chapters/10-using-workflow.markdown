@@ -1,5 +1,5 @@
 
-# Using Workflow [](id=workflow-with-kal-3)
+# Using Workflow 
 
 Liferay Portal includes a workflow engine called Kaleo. In Greek, this word
 means "called ones," which is appropriate for a workflow engine that calls users
@@ -26,7 +26,7 @@ approval process for basic web content. Once we're done with this chapter, you
 should be familiar with how to use Liferay's Kaleo workflow to set up approval
 process for any kind of content before it is published to your portal. 
 
-## Enabling workflow [](id=installati-3)
+## Enabling workflow 
 
 Liferay's Kaleo workflow engine ships with CE versions of Liferay. If you have
 EE or if you uninstalled it, the plugin can be installed through the Liferay
@@ -54,7 +54,7 @@ Content Reviewer.
 
 Let's jump right in and create a workflow process definition. 
 
-## Creating new workflow definitions [](id=creating-process-definitions)
+## Creating new workflow definitions 
 
 A Kaleo workflow, called a *process definition*, is defined in an XML file and
 is executed by users on the portal. You can create as many different workflow
@@ -92,7 +92,7 @@ different transition to the Approved state.
 
 Let's look in detail at how you'd create a workflow using a single approver.
 
-### Starting a workflow definition [](id=lp-6-1-ugen06-starting-a-workflow-definition-0)
+### Starting a workflow definition 
 
 Below is a diagram of a single approver workflow definition. It has only two
 tasks and two states.  
@@ -123,7 +123,7 @@ control panel when users choose and configure workflows.
 
 After that, you define your initial state. 
 
-### Creating an initial state [](id=lp-6-1-ugen06-creating-an-initial-state-0)
+### Creating an initial state 
 
 In this case, the state is simply that the asset has been created. States can
 contain actions and transitions. Actions can contain scripts. You can specify
@@ -151,7 +151,7 @@ is blocked so the asset can be reviewed.
 
 The next step is to create a task. 
 
-### Creating tasks [](id=lp-6-1-ugen06-creating-tasks-0)
+### Creating tasks 
 
 The task has several parts and is the most complex part of the definition. Tasks
 are linked with roles in order to choose who should complete the task. Roles are
@@ -220,7 +220,7 @@ content creators any time a new item is submitted. Regardless of who you're
 notifying, you definitely want to send a notification to anyone who is
 responsible for approving content.
 
-### Sending notifications [](id=lp-6-1-ugen06-sending-notifications-0)
+### Sending notifications 
 
 Notifications need an `execution-type` which can be `onAssignment`, `onEntry` or
 `onExit`.
@@ -294,7 +294,7 @@ notification based on the scope and can be set as *community*, *organization* or
 
 Once the content is approved you'll want to transition to a new state. 
 
-### Using transitions [](id=lp-6-1-ugen06-using-transitions-0)
+### Using transitions 
 
 In this case, you only need a single approver, then the transition goes to the
 final approved state. In more complex workflows, you might transition to a
@@ -351,7 +351,7 @@ transition to the *approved* state.
 
 You can also use *forks* and *joins* to create more complex workflows.
 
-### Using forks and joins [](id=lp-6-1-ugen06-using-forks-and-joins-0)
+### Using forks and joins 
 
 Forks and joins are used for parallel processing. For example, say you have a
 new offer you'd like to put up on your site but it needs to go through both the
@@ -411,7 +411,7 @@ of making them wait in line, timers allow you to add some urgency to the
 process.
 	
 <!-- | TODO I accidentally removed this one too -->
-### Timers [](id=lp-6-1-ugen06-timers-0)
+### Timers 
 
 **Timers** are a new workflow feature in 6.1, which help make sure important
 tasks in a workflow aren't forgotten or left undone because of an oversight or
@@ -519,7 +519,7 @@ having multiple bottlenecks through the process. Using timers in conjunction
 with other workflow features can help you create powerful workflows for your
 organization.
 
-### Putting it all together [](id=lp-6-1-ugen06-putting-it-all-together-0)
+### Putting it all together 
 
 The Kaleo workflow engine is deeply integrated with Liferay Portal. It can
 generate roles scoped for organizations, sites and for the whole portal based on
@@ -541,7 +541,7 @@ administrators can customize the settings for their sites and organizations. Now
 that we've seen how to create workflow definitions, let's discuss how to use
 them. 
 
-## Configuring assets to use workflow process definitions [](id=using-workflow-in-the-control-panel)
+## Configuring assets to use workflow process definitions 
 
 Most of your workflow configuration is done via the control panel. Everything
 you need to do in the portal can be done through simple GUI controls.
@@ -569,7 +569,7 @@ individually through the *Workflow Configuration* page.
 Clicking on *Submissions* will let you view any currently pending assets or any
 assets which were previously approved.
 
-### Configuring workflow [](id=lp-6-1-ugen06-configuring-workflow-0)
+### Configuring workflow 
 
 After you have uploaded workflow definitions and set the default workflow
 behavior you can go up to *Workflow Configuration* and tweak the definitions
@@ -583,7 +583,7 @@ any site in the portal. All the options under that heading, including Workflow
 Configuration, now apply to that particular site. Using workflow is just as
 easy. 
 
-### My Workflow Tasks [](id=lp-6-1-ugen06-my-workflow-tasks-0)
+### My Workflow Tasks 
 
 My Workflow Tasks is a personalized version of the Workflow Tasks and it's found
 in your personal section of the control panel. Here are specific tasks which
@@ -596,7 +596,7 @@ It's here workflow users review and approve content. By clicking on the actions
 next to a piece of content, a user can view the content, then choose to approve
 or reject it and add comments. 
 
-### My Submissions [](id=lp-6-1-ugen06-my-submissions-0)
+### My Submissions 
 
 My Submissions is found under your user's personal information in the control
 panel. From this screen you can view any assets  you have submitted to review.
@@ -609,7 +609,7 @@ Page](../../images/kaleo-workflow-my-submissions.png)
 Besides viewing your work, you can also withdraw a submission from the review
 process by clicking on *Withdraw Submission* from the *Pending* tab.
 
-### Using Kaleo Workflow Processes in Liferay Portal [](id=using-kaleo-workflow-processes-in-liferay-portal)
+### Using Kaleo Workflow Processes in Liferay Portal 
 
 Before workflow can be used, you must define which types of assets on the portal
 are workflow-enabled. If you have created additional definitions, you must also
@@ -641,14 +641,14 @@ web content display portlet.
 There's more. EE customers get extra features that enable them to create
 workflows without having to deal with XML. 
 
-## Using workflow with other applications [](id=lp-6-1-ugen10-using-workflow-with-other-applications-0)
+## Using workflow with other applications 
 
 We saw an example of how to use workflow with Liferay web content in chapter 2.
 In this section, we'll discuss how to use workflow with other applications.
 First, we'll look at using workflow with Documents and Media. After that, we'll
 look at using workflow with Blogs, Wikis, and Message Boards.
 
-### Documents and media [](id=lp-6-1-ugen10-documents-and-media-0)
+### Documents and media 
 
 You can enable workflow for most portal resources, including page revisions for
 staging, web content, and collaborative applications, from the Control Panel.
@@ -693,7 +693,7 @@ document. Then click *Actions* &rarr; *Approve* next to the document when it
 appears in the *Assigned to Me* category. That's it--your document has passed
 through the workflow!
 
-### Collaboration [](id=lp-6-1-ugen10-collaboration-0)
+### Collaboration 
 
 To enable workflow for collaborative applications, first navigate to the Control
 Panel and select a scope in the context menu selector. You can enable workflow
@@ -738,7 +738,7 @@ submitted for publication appear under *Assigned to My Roles*. Click *Actions*
 category. That's it--your blog post, message board thread, and wiki article have
 passed through the workflow!
 
-## Summary [](id=lp-6-1-ugen10-summary-0)
+## Summary 
 
 In this chapter, we explained how to install the Kaleo workflow plugin for
 Liferay EE. Liferay's Kaleo workflow engine is included with Liferay CE. We

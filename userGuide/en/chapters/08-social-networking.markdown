@@ -1,5 +1,5 @@
 
-# Social Networking [](id=social-networking-with-liferay)
+# Social Networking 
 
 Since the first social networks rose to popularity, concepts such as *Friend*
 and later *Like*--previously reserved for direct human interaction--have taken
@@ -37,7 +37,7 @@ popularity of other social networks. In this chapter, we'll discuss:
 When we're finished, you'll be well equipped to use Liferay to power your social
 network.
 
-## Leveraging Social Portlets, Activities Tracking and User Connections [](id=lp-6-1-ugen08-leveraging-social-portlets-activities-tracking-and-user-con-0)
+## Leveraging Social Portlets, Activities Tracking and User Connections 
 	
 Liferay has many portlets available for social interaction and collaboration.
 Some of these portlets are designed to help you work together as a team, while
@@ -57,7 +57,7 @@ the portlet to other web sites. They do not have any way to change options like
 feed length or display styles. Some styling changes, however, can be made
 through custom CSS.
 
-### Installing the social portlets [](id=lp-6-1-ugen08-installing-the-social-portlets-0)
+### Installing the social portlets 
 
 The social portlets are all included with the Liferay Community Edition
 distribution, but need to be installed separately for Enterprise Edition. If
@@ -72,7 +72,7 @@ select the latest version of the Social Networking Portlet and click *Install*.
 Once the install process finishes, you can start using the social networking
 portlets. 
 
-### Using social networking on public pages [](id=lp-6-1-ugen08-using-social-networking-on-public-pages-0)
+### Using social networking on public pages 
 
 There are several social portlets that are designed for use on public portal
 pages. The goal of these is to use social connections to help a group work
@@ -165,7 +165,7 @@ using the GeoLite City database, use the following steps:
 Next, let's look at the social networking portlets designed for use on personal
 pages.
 
-### Using social networking on personal pages [](id=lp-6-1-ugen08-using-social-networking-on-personal-pages-0)
+### Using social networking on personal pages 
 
 In addition to the portlets available for general use, there are a handful that
 can only be used on personal pages. These include the Summary, Wall, Friends,
@@ -201,7 +201,7 @@ Now that we've discussed the functions of the suite of social networking
 portlets that ships with Liferay, let's put them all together and make a social
 web site.
 
-### Liferay's social tools in action [](id=lp-6-1-ugen08-liferays-social-tools-in-action-0)
+### Liferay's social tools in action 
 
 To get started with Liferay's social features, let's set up the public pages of
 our users' personal sites to include social apps. Because of Liferay's flexible
@@ -209,7 +209,7 @@ page layout options, we have a large number of options for how to set the pages
 up. For simplicity's sake, we'll make something that's fairly similar to the
 original Facebook layout.
 
-#### Setting up users' personal pages [](id=lp-6-1-ugen08-setting-up-users-personal-pages-0)
+#### Setting up users' personal pages 
 
 Before we start adding portlets to pages, we should configure Liferay so that
 everyone (or some subset of everyone) has the same social features. We have two
@@ -276,7 +276,7 @@ User Groups section. Now all users on the portal get a Social Profile page. Now
 the question is, how do we encourage users to visit each others fancy new
 profile pages?
 
-#### Connecting users through collaboration [](id=lp-6-1-ugen08-connecting-users-through-collaboration-0)
+#### Connecting users through collaboration 
 
 There are many ways that social networks connect users. These generally involve
 some kind of mutual interest or experience. On a site like Facebook, you can
@@ -325,7 +325,7 @@ that you've got all these social applications running on your system, you might
 wonder: how can I measure social interaction? How do I make identify the best
 contributors to my site? Liferay has an answer: social activity measurements.
 
-## Measuring social activity [](id=measuring-social-activity)
+## Measuring social activity 
 
 <!-- | TODO This is all out of date. It's been reimplemented for Liferay 6.1.
 Please rewrite. | --> When you have a lot of user interaction on your web site,
@@ -425,7 +425,7 @@ for each site, increasing the flexibility of your portal.
 
 Beyond Liferay's social API, there is also support for the OpenSocial standard.
 
-## Exporting portal applications as widgets and OpenSocial gadgets [](id=lp-6-1-ugen08-exporting-portal-applications-as-widgets-and-opensocial-gad-0)
+## Exporting portal applications as widgets and OpenSocial gadgets 
 
 OpenSocial is a framework designed for the creation of socially themed
 application programming interfaces (APIs). OpenSocial applications, called
@@ -448,7 +448,7 @@ on pages (community/team pages), applications (gadgets/widgets/portlets), data,
 users, roles and authorization, and policies. In short, you can develop gadgets
 to allow individuals to access and share data within their social networks.
 
-### Adding OpenSocial gadgets [](id=lp-6-1-ugen08-using-opensocial-gadgets-0)
+### Adding OpenSocial gadgets 
 
 The OpenSocial plugin can be installed through Liferay Marketplace for both
 Liferay CE and EE. Installing the OpenSocial plugin enables you to add
@@ -460,7 +460,7 @@ of gadgets:
 
 First, we'll go through steps to add an Adhoc gadget to a page.
 
-#### Adding Adhoc gadgets [](id=lp-6-1-ugen08-adding-adhoc-gadgets-0)
+#### Adding Adhoc gadgets 
 
 This method is a quick way to add a gadget to a single page. To do this, go to
 the *Add* &rarr; *More* menu and add *OpenSocial Gadget* to the page. The
@@ -490,7 +490,7 @@ flexibility to fit them into your themed sites. As you find gadgets that would
 work nicely throughout your portal, you can publish them for portal-wide use.
 You'll learn that next.
 
-#### Adding gadgets for portal-wide use [](id=lp-6-1-ugen08-adding-gadgets-for-portal-wide-use-0)
+#### Adding gadgets for portal-wide use 
 
 You can easily make gadgets available for adding to pages as you would any other
 application. We'll demonstrate this by adding a *To-Do List* gadget for
@@ -539,7 +539,7 @@ category.](../../images/15-opensocial-4.png)
 In the next section, we will demonstrate how to share OpenSocial gadgets with
 other sites.
 
-### Sharing OpenSocial Gadgets [](id=lp-6-1-ugen08-sharing-opensocial-gadgets-0)
+### Sharing OpenSocial Gadgets 
 
 OpenSocial consists of a set of APIs for social networking. Liferay implements
 the OpenSocial standard, so you can be assured that your gadgets run on Liferay.
@@ -593,7 +593,7 @@ portal at a glance. As you can imagine, you can share all kinds of information
 from your portal gadgets and portlets with your various circles of friends,
 colleagues, and fellow community members.
 
-### Gadget Personalization [](id=lp-6-1-ugen08-gadget-personalization-0)
+### Gadget Personalization 
 
 Liferay allows gadgets on your site to be personalized with data from
 third-party applications. Some of the third-party sites that authorize users to
@@ -638,7 +638,7 @@ assures the user that his personal information is safe but gives him freedom to
 take advantage of valuable resources he typically uses from the service
 provider's site.
 
-#### OAuth Admin Configuration [](id=lp-6-1-ugen08-oauth-admin-configuration-0)
+#### OAuth Admin Configuration 
 
 OpenSocial defines a specification that allows gadgets to incorporate OAuth to
 access protected resources from service providers. A brief example is provided
@@ -719,7 +719,7 @@ Congratulations! Your Twitter gadget is now configured with OAuth.
 
 Next, we'll configure the gadget within Liferay Portal.
 
-### Incorporating OAuth within your site [](id=lp-6-1-ugen08-incorporating-oauth-within-your-site-0)
+### Incorporating OAuth within your site 
 
 Now that your gadget is registered with Twitter and is configured with OAuth,
 you can add it to your Liferay Portal. The OAuth client you configured in the
@@ -765,7 +765,7 @@ OAuth-configured gadget to your page.
 As you can see, OAuth is easy to configure and offers users the freedom to
 securely add valuable data from third-party sites.
 
-### Creating and editing OpenSocial gadgets [](id=lp-6-1-ugen08-creating-and-editing-opensocial-gadgets-0)
+### Creating and editing OpenSocial gadgets 
 
 OpenSocial gadgets are XML documents, so as part of Liferay's OpenSocial
 integration, a gadget editor is included. The gadget editor is a complete
@@ -785,7 +785,7 @@ In addition to the social interactions that you can create on your portal,
 Liferay can integrate with some other popular social networks. This enables you
 to leverage their power and popularity for your portal's content.
 
-## Integrating with Facebook [](id=facebook-integration)
+## Integrating with Facebook 
 
 Facebook is currently the number one social network in the world with somewhere
 in the neighborhood of 750 million active users. If you're trying to build a
@@ -793,14 +793,14 @@ community on your portal, you don't want to neglect a bridge to nearly a billion
 possible users. With that in mind, Liferay provides a few easy ways for you to
 integrate your portal with Facebook.
 
-### Facebook sign on [](id=lp-6-1-ugen08-facebook-sign-on-0)
+### Facebook sign on 
 
 Like many web sites you may visit, any portal running on Liferay can be set up
 to use Facebook for sign in. This makes it easier for users to sign in to your
 site, since they won't need to remember another user name and password, For more
 information on setting up Facebook sign on, see chapter 15.
 
-### Using your portlets as Facebook applications [](id=lp-6-1-ugen08-using-your-portlets-as-facebook-applications-0)
+### Using your portlets as Facebook applications 
 
 You can add any Liferay portlet as an application on Facebook. To do this, you
 must first get a developer key. A link for doing this is provided to you in the
@@ -814,7 +814,7 @@ Wikis and other content on your portal available to a much larger audience
 (unless you already have a billion users on your site, in which case, kudos to
 you).
 
-## Summary [](id=summ-30)
+## Summary 
 
 <!-- | TODO: This is too thin. Please use the headings to summarize what the
 chapter was about. | -->

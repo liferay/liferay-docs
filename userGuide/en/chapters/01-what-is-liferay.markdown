@@ -1,4 +1,4 @@
-# What is Liferay?  [](id=lp-6-1-ugen01-what-is-liferay--0)
+# What is Liferay?  
 
 If you're reading this, we're going to make a wild guess and say that you're
 probably looking for some software to help you run your web site. Creating a
@@ -75,7 +75,7 @@ ground up, all the benefits of existing, integrated, robust applications, and a
 development framework that makes your application a first class citizen. It's
 called Liferay Portal. 
 
-## What makes Liferay Portal unique [](id=lp-6-1-ugen01-what-makes-liferay-portal-unique-0)
+## What makes Liferay Portal unique 
 
 Liferay Portal is a web experience platform that contains all of the common
 applications you'd use as building blocks for your web site. Because of this,
@@ -99,7 +99,7 @@ In short, Liferay Portal is more than a development platform, more than a
 content management system, more than a social network, and more than a set of
 collaboration tools. It's the best way to build a web site. 
 
-## Using Liferay Portal as a content management system [](id=lp-6-1-ugen01-using-liferay-portal-as-a-content-management-system-0)
+## Using Liferay Portal as a content management system 
 
 One of the most common uses of Liferay Portal is as a content management system.
 In fact, many use Liferay Portal just for content management, whether it be web
@@ -113,7 +113,7 @@ So what can it do? We'll answer that question, but take it in two parts. First,
 we'll look at Liferay Portal's role as a web content management system, and then
 we'll see how Liferay Portal excels at file-based content management. 
 
-### Effectively building a site with Liferay WCM [](id=lp-6-1-ugen01-effectively-building-a-site-with-liferay-wcm-0)
+### Effectively building a site with Liferay WCM 
 
 The first thing you'll want to understand about Liferay WCM is that it scales to
 work for the tiniest of sites all the way up to the largest of sites. For
@@ -215,7 +215,7 @@ related assets, and more.
 This is just the web content portion of Liferay's content management system.
 Liferay Portal is also great at managing file-based content. 
 
-### Keeping track of documents, images, video, and more [](id=lp-6-1-ugen01-keeping-track-of-documents-images-video-and-more-0)
+### Keeping track of documents, images, video, and more 
 
 It's rare to find in an open source project a full-featured content management
 system. Most of the time, you'll find web content management systems and
@@ -281,7 +281,7 @@ the system in-depth in the body of this book, but for now we need to look at
 some of the other ways you can use Liferay Portal, starting with its fantastic
 collaborative tools. 
 
-## Using Liferay Portal as a collaborative platform [](id=lp-6-1-ugen01-using-liferay-portal-as-a-collaborative-platform-0)
+## Using Liferay Portal as a collaborative platform 
 
 Many sites have grown organically. You may have grown your community by using
 separate tools: first a forums application, and then a wiki for collaborative
@@ -334,7 +334,7 @@ questions, and personal productivity applications like a calendar and email.
 Liferay Portal includes every application you'll need to enable users to
 collaborate. Next, we'll see how you can use Lifeay Portal as a social platform. 
 
-## Using Liferay as a social platform [](id=lp-6-1-ugen01-using-liferay-as-a-social-platform-0)
+## Using Liferay as a social platform 
 
 Whether you plan to build a social network or enable social applications as part
 of your overall user experience, Liferay Portal has the tools to make those
@@ -386,7 +386,7 @@ this, Liferay Portal is easily configured to be used as a shared hosting
 platform for multiple web sites. Let's look at the benefits you can reap by
 using Liferay Portal in these ways. 
 
-## Using Liferay as a web platform [](id=lp-6-1-ugen01-using-liferay-as-a-web-platform-0)
+## Using Liferay as a web platform 
 
 We can't even begin to imagine what you're thinking of building, but whatever it
 is, you're going to put your heart and soul into it. Building it on Liferay's
@@ -395,7 +395,7 @@ support your application, so you can concentrate solely on what *you're*
 building, and not the rest of the features your users expect will come along
 with it. 
 
-### Liferay as an application development platform [](id=lp-6-1-ugen01-liferay-as-an-application-development-platform-0)
+### Liferay as an application development platform 
 
 Imagine your application for a moment. Does it require users to register with
 your site? Will they be able to comment on content contained within your
@@ -422,7 +422,7 @@ You get all this--not to mention the automatic Facebook and OpenSocial
 integration mentioned above--simply by using Liferay's development platform.
 It's a very powerful platform, and certainly worth your investigation. 
 
-### A great integration platform [](id=lp-6-1-ugen01-a-great-integration-platform-0)
+### A great integration platform 
 
 If you're building an enterprise system, portals were designed in the first
 place to be a single point of entry to your users' applications and content.
@@ -438,7 +438,7 @@ use of any APIs provided by other systems to integrate their data into an
 application window in Liferay. And applications you create with Liferay's
 Service Builder API are web service-enabled from the start. 
 
-### Hosting multiple sites on Liferay Portal [](id=lp-6-1-ugen01-hosting-multiple-sites-on-liferay-portal-0)
+### Hosting multiple sites on Liferay Portal 
 
 Liferay Portal excels as a multi-site hosting platform. You can use it to host
 multiple sites under the same overall architecture (like Facebook, MySpace, or
@@ -470,7 +470,7 @@ installation. Users of each instance have access to the same powerful content
 management, collaboration, social, and web development platform that they'd have
 if they were operating from a single, standalone installation.
 
-## Extending and customizing Liferay for your own needs [](id=lp-6-1-ugen01-extending-and-customizing-liferay-for-your-own-needs--0)
+## Extending and customizing Liferay for your own needs 
 
 Beyond using Liferay as a development platform for new applications, Liferay
 Portal has also been designed to be extended and modified. As an open source
@@ -489,7 +489,7 @@ we're sure you know that it's a whole lot easier to customize something that
 *almost* does things exactly the way you want than it is to write that feature
 from scratch. With Liferay Portal, you *can* have your cake and eat it too. 
 
-## Summary [](id=lp-6-1-ugen01-summary-0)
+## Summary 
 
 So what is Liferay? As you can see, it's hard to describe, because it does so
 much. What we've essentially done is say it's a totally awesome content and
