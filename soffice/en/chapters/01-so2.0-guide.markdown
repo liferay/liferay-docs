@@ -134,7 +134,7 @@ trial license.
 
 ![Figure 1.2: As with other apps on Liferay Marketplace, you can purchase Social
 Office EE for your personal liferay.com account or for your
-company.](../../so-ee-order-trial.png)
+company.](../../so-ee-order-type.png)
 
 If you'd like to place an order to purchase Social Office EE, click *Next* after
 selecting a purchase type. Then you'll need to choose a license type, provide
