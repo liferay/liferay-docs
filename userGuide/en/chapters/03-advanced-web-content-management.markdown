@@ -862,10 +862,10 @@ LAR file. These features look similar to the snapshot below:
 After you've completed the initial setup and saved your ADT, you can select the
 *Actions* button next to your new ADT and are provided several options.
 
-- *Edit*: modify the ADT's setup properties
-- *Permissions*: manage the *Delete*, *Permissions*, *Update*, and *View*
-permissions of the ADT
-- *Delete*: delete the ADT
+- *Edit*: lets you modify the ADT's setup properties.
+- *Permissions*: lets you manage the *Delete*, *Permissions*, *Update*, and
+*View* permissions of the ADT.
+- *Delete*: deletes the ADT.
 
 To implement your ADT for a portlet, navigate to the portlet you want to modify
 and open the *Configuration* menu. In the *Display Settings* sub-tab located
