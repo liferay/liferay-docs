@@ -1,4 +1,4 @@
-# Preface [](id=pref-11)
+# Preface 
 This guide was written as a quick reference to help you get started developing
 on the Liferay Portal platform. It is a guide for those who want to get their
 hands dirty using Liferay's framework and APIs to create fantastic websites.
@@ -11,7 +11,7 @@ published by Manning Publications. You can find this book online at
 The information contained herein has been organized in a format similar to a
 reference, so that it will be easier to find specific details later.
 
-## Publisher Notes [](id=publisher-not-3)
+## Publisher Notes 
 
 It is our hope that this guide will be valuable to you, and that it will be an
 indispensable resource as you begin to develop on the Liferay platform. If you

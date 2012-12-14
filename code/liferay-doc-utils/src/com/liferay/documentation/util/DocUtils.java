@@ -12,7 +12,7 @@ public class DocUtils {
 		String command = args[0];
 		System.out.println(command);
 		if (args[0] == null) {
-			System.out.println("Please specify an argument: NumberImages, ResetImages, AddMarkdownMetadata (deprecated), or AddMarkdownChTemplate");
+			System.out.println("Please specify an argument: NumberImages, ResetImages, StripHeaderIds, AddMarkdownMetadata (deprecated), or AddMarkdownChTemplate");
 		} 
 		else {
 			if (command.equalsIgnoreCase("NumberImages")) {
@@ -30,6 +30,16 @@ public class DocUtils {
 				if (markdownFilePath != null) {
 					try {
 						ResetImages.resetImages(markdownFilePath);
+					} catch (IOException e) {
+						System.out.println("IOException: " + e.getMessage());
+					}
+				}
+			}
+			else if (command.equalsIgnoreCase("StripHeaderIds")) {
+				String markdownFilePath = args[1];
+				if (markdownFilePath != null) {
+					try {
+						StripHeaderIds.stripHeaderIds(markdownFilePath);
 					} catch (IOException e) {
 						System.out.println("IOException: " + e.getMessage());
 					}

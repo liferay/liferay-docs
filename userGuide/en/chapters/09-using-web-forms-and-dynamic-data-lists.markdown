@@ -1,5 +1,5 @@
 
-# Using Web Forms and Dynamic Data Lists [](id=dynamic-data-lists-in-liferay)
+# Using Web Forms and Dynamic Data Lists 
 
 As needs change in business and organizations, the technology used to fulfill
 those needs must adapt as well. People use electronic means to do things that
@@ -34,7 +34,7 @@ your use case covered. Combined with the flexibility provided through templates
 and the power of languages like Velocity, entire applications can be built in a
 short time.
 
-## Building a list platform in Liferay [](id=building-a-list-platform-in-liferay)
+## Building a list platform in Liferay 
 
 To expand and extend the social capabilities of our site, we want to build a
 new, radical platform on Liferay: custom-built lists that users can share and
@@ -46,7 +46,7 @@ of certain types of lists (surveys, anyone?). Liferay makes this as simple as
 throwing some Dynamic Data List Display and Form portlets on a user's private
 and public user pages. 
 
-## Defining data types [](id=defining-data-types)
+## Defining data types 
 
 When new users log in to `list.it`, they are going to want to build a few lists
 for themselves. Chances are, many of the lists they would want to create--to do
@@ -194,7 +194,7 @@ then instantly updated with the new or changed fields.
 
 All that's left to do is build a new data list and let your users play with it.
 
-## Creating data lists [](id=creating-data-lists)
+## Creating data lists 
 
 Building out new lists really isn't all that different from creating new pieces
 of web content. Just as you can create new Web Content Structures to control the
@@ -234,7 +234,7 @@ But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet
 or that boring Jobs Listing look? The answers to these pressing, burning
 questions bring us to the mecca that is the display side of this equation.
 
-### Using data list forms [](id=lp-6-1-ugen05-using-data-list-forms-0)
+### Using data list forms 
 
 A nice way to enable people to use your forms is the Dynamic Data List Forms
 portlet. This portlet is tailored to entering new records. When you deploy that
@@ -261,7 +261,7 @@ Liferay Marketplace, grab it and install it.
 You can publish your lists anywhere in your portal too. Read on to find out more
 about that. 
 
-### Using default displays [](id=lp-6-1-ugen05-using-default-displays-0)
+### Using default displays 
 
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If Listies don't customize the display, their lists look something like this:
@@ -311,7 +311,7 @@ his B.O. problem. For reasons like that, you'll need to customize the data entry
 form or the display of the list. Liferay lets you do exactly that using a custom
 *detail template* or *list template*. 
 
-## Make it pretty: creating custom displays [](id=make-it-pretty-creating-custom-displays)
+## Make it pretty: creating custom displays 
 
 When creating custom lists and data definitions, you can control not only how
 the input form appears to your users but also how the list itself displays.
@@ -323,7 +323,7 @@ to customize: detail templates and list templates. This covers the forms of
 lists (*detail templates*), as well as the display of the list contents (*list
 templates*). 
 
-### Detail templates [](id=lp-6-1-ugen05-detail-templates-0)
+### Detail templates 
 
 The default data entry form is the entire data model you created in a data
 definition, including required and optional fields. Listies who create new lists
@@ -355,7 +355,7 @@ few mouse clicks. Now that you have such a vast amount of data collection
 options, how will you display them? However you want, as you're about to find
 out.
 
-### List templates [](id=lp-6-1-ugen05-list-templates-0)
+### List templates 
 
 For every data definition, you have an unlimited number of displays you can
 create. If you created a special "Thanksgiving Dinner Sign-Up" list using your
@@ -499,7 +499,7 @@ environment that requires approval from other users, then it's not enough to
 just create the list and display a form. What you need is a real integration
 with Workflow. Workflow integrates smoothly with Dynamic Data Lists.
 
-### Using workflow [](id=lp-6-1-ugen05-using-workflow-0)
+### Using workflow 
 
 Liferay integrates the powerful features of workflow and the data capabilities
 of dynamic data lists in *Kaleo Forms*. Workflow is not enabled in the dynamic
@@ -521,7 +521,7 @@ Choose the workflow you would like to use, then every record has to go through
 the workflow process. Now if you need to preview or edit entries as they're
 coming in, it's easy to work in to your daily workflow.
 
-#### Creating a Kaleo Form [](id=lp-6-1-ugen05-creating-a-kaleo-form-0)
+#### Creating a Kaleo Form 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -536,7 +536,7 @@ Inside Kaleo Forms, users can create lists that follow a workflow, called a
 *process*, or create new *entries* in a process. Creating a new process is easy,
 straightforward, and effective.
 
-#### Starting a new Process [](id=lp-6-1-ugen05-starting-a-new-process-0)
+#### Starting a new Process 
 
 Defining processes that must be followed in data collection and entry is a
 fundamental part of business. Historically, this hasn't been fun or easy but
@@ -568,7 +568,7 @@ While the form looks complicated, it can be straightforward. There are a few
 pieces that make up a process and clicking on each one takes you to the relevant
 list of options to insert.
 
-##### Selecting an Entry Definition [](id=lp-6-1-ugen05-selecting-an-entry-definition-0)
+##### Selecting an Entry Definition 
 
 The first part of a new Kaleo process is also the simplest: the entry
 definition. This is just another way to refer to a data definition. All of the
@@ -576,7 +576,7 @@ avaliable data definitions can be chosen, including our awesome "Volunteer
 Sign-Up List." Just like with normal data lists, you can always create a new
 entry definition from the list view by clicking on *Add new definition*.
 
-##### Selecting an Initial Form [](id=lp-6-1-ugen05-selecting-an-initial-form-0)
+##### Selecting an Initial Form 
 
 One of the great advantages to using Kaleo forms to present your list as a
 process is having total control over the detail template. You can always use a
@@ -602,7 +602,7 @@ form](../../images/05-kaleo-forms-detail-templates.png)
 Once you have chosen the initial display you want, all that's left to do is
 configure the workflow for your process.
 
-##### Selecting a Workflow [](id=lp-6-1-ugen05-selecting-a-workflow-0)
+##### Selecting a Workflow 
 
 You can now select a workflow to apply to your new list-defined process. All the
 avaliable workflows can be chosen and you can create new ones from the selection
@@ -616,7 +616,7 @@ We'll keep ours simple and just choose "Single Approver Definition." This gives
 us a starting point (entry creation) and a 'review' task, which we can use to
 add additional information in a secondary form.
 
-##### Assigning Workflow Task Forms [](id=lp-6-1-ugen05-assigning-workflow-task-forms-0)
+##### Assigning Workflow Task Forms 
 
 Many workflows offer you the option of having multiple editorial and review
 stages. During these stages, you might want to offer different forms that allow
@@ -642,7 +642,7 @@ You can assign forms to as many tasks as you need until you're satisfied with
 the workflow. After this stage, save the process and it's ready to be used in
 Kaleo Forms.
 
-#### Using a Kaleo Form [](id=lp-6-1-ugen05-using-a-kaleo-form-0)
+#### Using a Kaleo Form 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -673,7 +673,7 @@ If you are a Listie, or a `list.it` developer, you're now prepared to show your
 lists to the world. That is, in fact, the reason you created `list.it` in the
 first place, right? 
 
-## Summary [](id=summ-27)
+## Summary 
 
 Our `list.it` experience is now much more enjoyable than when we first signed
 up. As new Listies, we had no idea how to define our own data types for our

@@ -1,5 +1,5 @@
 
-# Using Scripting for Advanced Flexibility [](id=lp-6-1-ugen18-using-scripting-for-advanced-flexibility-0)
+# Using Scripting for Advanced Flexibility 
 
 Liferay provides a robust script engine that can be used to interpret scripts in
 Beanshell, Javascript, Groovy, Python and Ruby. The script engine came out of
@@ -28,7 +28,7 @@ The most common thing you'll want to do is access Liferay's services. If you
 have any familiarity with Liferay's developer tools and API, this will be a snap
 for you. 
 
-## Accessing Liferay Services [](id=accessing-liferay-services)
+## Accessing Liferay Services 
 
 In many cases, you'll want to interact with one of Liferay's many services. This
 is possible from all of the scripting languages supported, but the syntax is a
@@ -59,7 +59,7 @@ example in Java pseudo-code.
 				
 Let's see first how this would work in Beanshell, which is very similar to Java. 
 				
-### Beanshell [](id=lp-6-1-ugen13-beanshell-0)
+### Beanshell 
 
 Beanshell is a Java scripting language that's designed to run Java code with
 little or no changes. In this example, we only have one small change to make
@@ -79,7 +79,7 @@ because Beanshell doesn't support the use of Java Generics.
 Next, we'll show the same thing in Groovy, another scripting language designed
 to be similar to Java. 
 
-### Groovy [](id=lp-6-1-ugen13-groovy-0)
+### Groovy 
 
 Groovy is also based on Java and is perhaps a little easier than Beanshell
 because literally any code written in Java also runs in Groovy. This means we
@@ -111,7 +111,7 @@ The script engine supports more than just Java-like languages. Despite the name,
 you should be aware that Javascript bears little resemblance to Java, but you
 can still use it in Liferay's script engine. 
 
-### Javascript [](id=lp-6-1-ugen13-javascript-0)
+### Javascript 
 
 Liferay uses the Rhino Javascript Engine to provide Javascript support in the
 script engine. The following code provides a Javascript version of our original
@@ -128,7 +128,7 @@ Java program.
 	
 You can see the Javascript example is compact. Ruby is even more compact. 
 
-### Ruby [](id=lp-6-1-ugen13-ruby-0)
+### Ruby 
 
 Ruby is supported throgh the use of JRuby and our previous example could be
 implemented in Ruby as follows: 
@@ -139,7 +139,7 @@ implemented in Ruby as follows:
 	
 Python users aren't left out either. 
 
-### Python [](id=lp-6-1-ugen13-python-0)
+### Python 
 
 Lastly, Liferay provides Python support based on Jython and the previous example
 could be implemented with the following code. 
@@ -156,7 +156,7 @@ could be implemented with the following code.
 As you can see, Liferay's services can be accessed from any of these languages.
 Let's look at some practical examples of how you'd use this. 
 		
-## Running scripts from the control panel [](id=running-scripts-from-the-control-panel)
+## Running scripts from the control panel 
 
 To see a very simple example of the script console in action, log into the
 portal as an administrator and navigate to the control panel &rarr; Server
@@ -235,7 +235,7 @@ your scripts on non-production systems before you run them on production.
 Of course, the script engine has uses beyond the script console. One of the main
 uses of it is in designing workflows. 
 
-## Leveraging the Script Engine in Workflow [](id=leveraging-the-script-engine-in-workflow)
+## Leveraging the Script Engine in Workflow 
 
 Liferay's Kaleo workflow engine provides a robust system for reviewing and
 approving content in an enterprise environment. Just with the standard feature
@@ -351,7 +351,7 @@ definition. For more information on creating definitions with Kaleo Workflow see
 
 <!-- TODO - Jonathon? -->
 
-## Custom Java Tools in the Script Engine [](id=custom-java-tools-in-the-script-engine)
+## Custom Java Tools in the Script Engine 
 
 There are several challenges when working with the Script Engine, including
 debugging and logging. One approach to overcome these challenges is to develop
@@ -480,7 +480,7 @@ and enter the following script:
 	
 You should see the results of your script displayed right under the script. 
 
-## Summary [](id=summ-34)
+## Summary 
 
 In this chapter we saw how Liferay's script engine opens up many exciting
 posibilities for working with Liferay regardless of your language of choice. We

@@ -1,4 +1,4 @@
-# Liferay IDE [](id=liferay-i-4)
+# Liferay IDE 
 
 Liferay's developers use a variety of tools to develop the product and as a
 consequence of that they have always tried hard to allow other developers to use
@@ -28,11 +28,11 @@ comes with Liferay Portal Enterprise Edition, you can skip directly to the
 section titled *Testing/Launching Liferay Tomcat Server* since it comes already
 preconfigured.
 
-## Installation [](id=installati-6)
+## Installation 
 
 This section is a detailed guide to install Liferay IDE.
 
-### Requirements [](id=lp-6-1-dgen07-requirements-0)
+### Requirements 
 
 -   Java 5.0 JRE or greater
 
@@ -40,7 +40,7 @@ This section is a detailed guide to install Liferay IDE.
 developers/indigosr1) or [Eclipse Helios Java EE (3.6.2)]
 (http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
 
-### Installation steps [](id=lp-6-1-dgen07-installation-steps-0)
+### Installation steps 
 
 1.  Install Eclipse Indigo or Helios (unzip download file from above).
 
@@ -85,7 +85,7 @@ badge for Liferay IDE that shows you have it properly installed.
 
 	![Figure 8.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
-### Alternative installation [](id=lp-6-1-dgen07-alternative-installation-0)
+### Alternative installation 
 
 The next set of instructions describe how to install Liferay IDE without typing
 the URL of an update site:
@@ -98,12 +98,12 @@ the downloaded zip file.
 
 3.  Installation proceeds the same as previous section.
 
-## Set up [](id=set--4)
+## Set up 
 
 This section describes the setup necessary to begin doing Liferay development
 and testing your developments.
 
-### Requirements [](id=lp-6-1-dgen07-requirements-1)
+### Requirements 
 
 Before getting started you should satisfy the next requirements:
 
@@ -117,7 +117,7 @@ Before getting started you should satisfy the next requirements:
 Note: Earlier versions of Liferay, eg 5.2.x, are not supported yet by the
 Liferay IDE.
 
-### Liferay Plugins SDK Setup [](id=lp-6-1-dgen07-liferay-plugins-sdk-setup-0)
+### Liferay Plugins SDK Setup 
 
 Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK
 and Liferay Portal must be installed and configured in the IDE.
@@ -143,7 +143,7 @@ the name of the directory but you can change it if you wish.
  at least one SDK to be the default which is represented by the SDK that has the
  checkbox selected.
 
-### Liferay Portal Tomcat Runtime / Server Setup [](id=lp-6-1-dgen07-liferay-portal-tomcat-runtime--server-setup-0)
+### Liferay Portal Tomcat Runtime / Server Setup 
 
 1. In Eclipse open the Runtime environments preference page (Go to Window &rarr;
 Preferences &rarr; Server &rarr; Runtime environments).
@@ -186,7 +186,7 @@ the Liferay v6 Runtime that you had previously created.
 	![Figure 8.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-
 type.png)
 
-## Testing/Launching Liferay Tomcat Server [](id=testing-launching-liferay-tomcat-serv-4)
+## Testing/Launching Liferay Tomcat Server 
 
 Once your Liferay Portal Server setup is complete you can launch the server from
 the servers tab of Eclipse. Simply select the server and then click on the green
@@ -204,7 +204,7 @@ context menu of the Liferay Tomcat server in the Servers view:
 
 ![Figure 8.14: Opening Portal Home from within Liferay IDE](../../images/ide-open-portal-home.png)
 
-## Creating New Liferay Projects [](id=creating-new-liferay-projec-4)
+## Creating New Liferay Projects 
 
 Now that an SDK and portal server have been configured you can create a new
 Liferay plug-in project. Go to File &rarr; New Project... &rarr; Liferay &rarr;
@@ -224,7 +224,7 @@ If it worked you should see a new plugin project in the package explorer.
 ![Figure 8.17: Viewing the new project in the Package Explorer view](../../images/ide-package-
 explorer-demo-portlet.png)
 
-## Deploying New Liferay Projects to Liferay Server [](id=deploying-new-liferay-projects-to-liferay-serv-4)
+## Deploying New Liferay Projects to Liferay Server 
 
 Now with the newly created project, right-click the Liferay Server in the
 Servers view and select *Add and Remove...*.
@@ -255,7 +255,7 @@ the Demo application. You should see the correctly deployed portlet on the page.
 
 ![Figure 8.21: Adding a portlet to the page](../../images/ide-add-portlet-to-page.png)
 
-## Importing Existing Projects into Liferay IDE [](id=importing-existing-projects-into-liferay-i-4)
+## Importing Existing Projects into Liferay IDE 
 
 If you have been following the examples of this guide using the Plugins SDK or
 have previous plugins developed with it that you want to keep developing with
@@ -272,7 +272,7 @@ workspace.
 
  The following subsections describe the steps for each of them with more detail.
 
-### Importing existing Liferay Project from a Plugins SDK [](id=lp-6-1-dgen07-importing-existing-liferay-project-from-a-plugins-sdk-0)
+### Importing existing Liferay Project from a Plugins SDK 
 
 An existing Liferay project that has been created by the Plugins SDK but has not yet been added to an Eclipse workspace or have not been added to the current workspace open in Eclipse/Liferay IDE. These projects may or may not have .project or .classpth files. Whether they do or don't we will follow the same steps and use the same wizard.
 
@@ -284,7 +284,7 @@ Note: The two next sections assume that you have Liferay plug-ins SDK directory
 structure and you have previously created projects inside of that directory
 structure.
 
-#### Create one single project from one plugin in an existing sources [](id=lp-6-1-dgen07-create-one-single-project-from-one-plugin-in-an-existing-so-0)
+#### Create one single project from one plugin in an existing sources 
 
 This option will create one project for a single plugin that already exists
 inside a Plugins SDK.
@@ -328,7 +328,7 @@ to create a new Liferay portal runtime (Tomcat bundle only supported).
 6. Read the section below on verifying the success of an import process to make
 sure that your project was configured correctly as a Liferay IDE project.
 
-#### Create multiple projects for all plugins in a Plugins SDK [](id=lp-6-1-dgen07-create-multiple-projects-for-all-plugins-in-a-plugins-sdk-0)
+#### Create multiple projects for all plugins in a Plugins SDK 
 
 This option will transverse an existing Plugins SDK and will allow creating one
 project for each of the plugins it finds inside in one single step.
@@ -379,7 +379,7 @@ plugin.png)
 11. Read the section below on verifying the success of an import process to make
 sure that your project was configured correctly as a Liferay IDE project.
 
-### Importing an existing Eclipse Project that is not aware of the Liferay IDE [](id=lp-6-1-dgen07-importing-an-existing-eclipse-project-that-is-not-aware-of--0)
+### Importing an existing Eclipse Project that is not aware of the Liferay IDE 
 
 If your project is not in your Eclipse workspace, you can use the first set of
 steps above. If your project is already in your workspace (see it in project
@@ -413,7 +413,7 @@ have a Liferay Runtime define use the *New...* action to create one.
 5. Read the section below on verifying the success of an import process to make
 sure that your project was configured correctly as a Liferay IDE project.
 
-### Importing an existing Liferay IDE project [](id=lp-6-1-dgen07-importing-an-existing-liferay-ide-project-0)
+### Importing an existing Liferay IDE project 
 
 This section describes the steps that can be followed if you have previously
 created or converted a Liferay IDE project in your workspace but it is no longer
@@ -439,7 +439,7 @@ or the runtime id used doesn't exist in your new workspace. You can modify the
 SDK name in the Project Properties &rarr; Liferay page and you can modify the
 targeted runtime in the Project properties &rarr; Targeted Runtimes page.
 
-### Verifying that the import has succeeded [](id=lp-6-1-dgen07-verifying-that-the-import-has-succeeded-0)
+### Verifying that the import has succeeded 
 
 Follow the following steps to verify that either of the previous import
 processes has been successful.
@@ -463,7 +463,7 @@ Great! You've confirmed that your imported project is good to go.
 In the next section, we will explain Developer Studio's Kaleo Designer for Java
 and how you can design workflows for enhanced business logic.
 
-## Designing workflows with Kaleo Designer for Java [](id=lp-6-1-dgen08-designing-workflows-with-kaleo-designer-for-java-0)
+## Designing workflows with Kaleo Designer for Java 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -567,7 +567,7 @@ properties view, and outline view.
 Next, let's dive into creating a workflow using the Kaleo Workflow
 Designer for Java.
 
-### Creating a workflow [](id=lp-6-1-dgen08-creating-a-workflow-0)
+### Creating a workflow 
 
 Developer Studio adds another dimension to working with your Kaleo workflows
 making it easy for Java developers to enhance workflow business logic. Let's
@@ -629,7 +629,7 @@ workflow graphically. Graphical features and toolbars allow you to customize
 your workflow definition. The Palette view is one of Designer's most commonly
 used tools. Let's explore it next.
 
-#### Palette and floating palette [](id=lp-6-1-dgen08-palette-and-floating-palette-0)
+#### Palette and floating palette 
 
 The Palette lets you to customize your workflow with nodes and transitions.
 In addition, you can choose different behaviors for your mouse pointer.
@@ -780,7 +780,7 @@ disappear after their assignments are specified.](../../images/kaleo-27.png)
 While we're using Designer's Workflow Diagram, let's go over some of its
 features.
 
-#### Workflow Diagram features [](id=lp-6-1-dgen08-workflow-diagram-features-0)
+#### Workflow Diagram features 
 
 Within the workflow diagram, there are other miscellaneous features offered by
 Developer Studio. Below are lists of some of these small features that
@@ -829,7 +829,7 @@ You have probably noticed the *Properties* view below your workflow diagram.
 Let's explore what it does and how it lets you customize your workflow
 definition.
 
-#### Properties View and Outline Views [](id=lp-6-1-dgen08-properties-view-and-outline-views-0)
+#### Properties View and Outline Views 
 
 More cool features that can help you customize your workflow are the
 *Properties* and *Outline* views, located on the bottom and bottom right of
@@ -886,7 +886,7 @@ workflow easier than ever! Developer Studio offers a useful programming
 capability for editing your workflow scripts. We will give you a tour of
 what Developer Studio has to offer for using workflow scripts!
 
-### Using Workflow Scripts [](id=lp-6-1-dgen08-using-workflow-scripts-0)
+### Using Workflow Scripts 
 
 We will now explain how to use Developer Studio to edit your workflow scripts.
 Developer Studio is configured to recognize multiple script languages to let the
@@ -1090,14 +1090,14 @@ in the *Configuring a DDL record* section of this chapter.
 Next, we'll create a custom notification and write a template for it
 using a template editor.
 
-### Leveraging template editors for notifications [](id=lp-6-1-dgen08-leveraging-template-editors-for-notifications-0)
+### Leveraging template editors for notifications 
 
 Designer lets you leverage FreeMarker and Velocity editors in customizing
 templates for your workflow notifications. A FreeMarker editor comes bundled
 with Developer Studio. For editing Velocity templates, you'll need to install an
 editor.
 
-#### Add-on: Install Velocity Editor Support [](id=lp-6-1-dgen08-add-on-install-velocity-editor-support-0)
+#### Add-on: Install Velocity Editor Support 
 
 Liferay Developer Studio comes with additional add-on support for editing
 velocity template notifications in the Kaleo Designer for Java. To use this
@@ -1132,7 +1132,7 @@ If you edit a notification template that is set to the Velocity type, the
 template opens in the Velocity editor (a small "v" icon is in the left side of
 the editor's tab).
 
-#### Creating notifications [](id=lp-6-1-dgen08-creating-notifications-0)
+#### Creating notifications 
 
 To access the template editors, click on the node of your choice and select the
 *Notifications* sub-tab in your *Properties* view. Create a new notification by
@@ -1238,12 +1238,6 @@ email notification template.
 ![Figure 8.66: You can edit your email template using the Freemarker
 editor.](../../images/kaleo-42.png)
 
-<!-- TODO incorporate applicable information in this chapter
-For more information on writing email notifications, visit the Liferay
-blog [Workflow in Action: Kaleo email
-notifications](http://www.liferay.com/web/igor.beslic/blog/-/blogs/workflow-in-action-kaleo-email-notifications?_33_redirect=http%3A%2F%2Fwww.liferay.com%2Fweb%2Figor.beslic%2Fblog%3Fp_p_id%3D33%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-2%26p_p_col_count%3D1).
--->
-
 You've successfully completed setting up an email notification! Now, when the
 Project Management task node is activated in the workflow, the user we specified
 (i.e. *joe*) will receive the notification email dressed up with your FreeMarker
@@ -1252,10 +1246,139 @@ template.
 As you can see, template editors, such as the FreeMarker template editors
 bundled with Developer Studio, make customizing your notification templates
 easier than ever. And you can create Velocity templates just as easy using the
-Velocity editor you installed. Next, we'll explain how to view your workflow
-definition XML file within Developer Studio.
+Velocity editor you installed. In the next section, you can view a list of
+workflow and service context content that can be used when creating a customized
+script or template.
 
-### Viewing workflow definition XML source [](id=lp-6-1-dgen08-viewing-workflow-definition-xml-source-0)
+#### Workflow Context and Service Context Variables 
+
+The purpose of a context variable is to provide a uniform variable that can be
+inserted into templates and scripts. A context variable, when executed, is
+automatically deleted and replaced with the value pertaining to that key. When
+creating notifications for your workflow, assigning Liferay Portal context
+variables allows for a cleaner and more efficient process. Instead of having
+notifications follow the exact same format for every recipient, context
+variables allow for customization and a personal look and feel. The context
+variables you declare in your notifications refer to your Liferay instance and
+the values it holds for your declarations.
+
+Below, we have listed a plethora of context variables and service context
+content. Notice the context variables are in a separate table, followed by the
+service context content for web content, blog entries, and message board
+messages. Service context content is separated from the workflow context
+variables because service context keys depend on asset type, while context
+variables do not. Also, note the `*`'s which indicate context variables that
+depend on workflow activity.
+
+| &nbsp;*Workflow* Context Variables |||
+   Key | Type | Description |
+------ | ---------- | ------------------|
+   `companyId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the company |          
+   `entryClassName` | &nbsp;&nbsp;java.lang.String | Class name for entry used by the task (e.g. com.liferay.portlet.journal.model.JournalArticle) |
+   `entryClassPK` | &nbsp;&nbsp;java.lang.String | Primary key of the entry class |
+   `entryType` | &nbsp;&nbsp;java.lang.String | Type of entry used by the task (e.g. Web Content, Blog Entry, MB Message) |
+   `groupId` | &nbsp;&nbsp;java.lang.string | Primary key of the assigned group |
+   `taskComments*` | &nbsp;&nbsp;java.lang.String | Workflow comments assigned to the task |
+   `taskName*` | &nbsp;&nbsp;java.lang.String | Workflow task that activates the notification (e.g. review) |
+   `transitionName*` | &nbsp;&nbsp;java.lang.String | Name of transition pointing to the task (e.g. approve) |
+   `userId` | &nbsp;&nbsp;java.lang.String | Primary key of the assigned user |
+---
+
+| &nbsp;*Web Content* Service Context Variables - obtain via key serviceContext |||
+   Key | Type | Description |
+------ | ---------- | ------------------|
+   `articleId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the web content |
+   `articleURL` | &nbsp;&nbsp;java.lang.String | Link to the web content in maximized mode |
+   `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the web content |
+   `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
+   `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset |
+   `autoArticleId` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether an article ID is generated (e.g. false) |
+   `classNameId` | &nbsp;&nbsp;java.lang.String | Primary key of the class name used by the task |
+   `classPK` | &nbsp;&nbsp;java.lang.String | Primary key of the model entity |
+   `content` | &nbsp;&nbsp;java.lang.String | Content of the web content |
+   `defaultLanguageId` | &nbsp;&nbsp;java.lang.String | Primary key of the default language (e.g. en_US) |
+   `description_en_US` | &nbsp;&nbsp;java.lang.String | Description of the web content (in English) |
+   `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the web content is set to display (e.g. 12) |
+   `displayDateHour` | &nbsp;&nbsp;java.lang.String | Hour the web content is set to display (e.g. 4) |
+   `displayDateMinute` | &nbsp;&nbsp;java.lang.String | Minute the web content is set to display (e.g. 26) |
+   `displayDateMonth` | &nbsp;&nbsp;java.lang.String | Month the web content is set to display (e.g. 5) |
+   `displayDateYear` | &nbsp;&nbsp;java.lang.String | Year the web content is set to display (e.g. 2012) |
+   `doAsGroupId` | &nbsp;&nbsp;java.lang.String | Primary key of the organization associated with the web content |
+   `folderId` | &nbsp;&nbsp;java.lang.String | Primary key of the web content's folder |
+   `indexable` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the web content is searchable (e.g. true) |
+   `indexableCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Searchable* checkbox is checked (e.g. false) |
+   `inputPermissionsShowOptions` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether permission options are viewable (e.g. true) |
+   `inputPermissionsViewRole` | &nbsp;&nbsp;java.lang.String | Role type that has permission to view web content (e.g. Site Member) |
+   `languageId` | &nbsp;&nbsp;java.lang.String | Primary key of the selected language (e.g. en_US) |
+   `localized` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Localizable* checkbox is selected (e.g. false) |
+   `neverExpire` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the web content is set to expire (e.g. true) |
+   `neverExpireCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Never Auto Expire* checkbox is checked (e.g. false) |
+   `neverReview` | &nbsp;&nbsp;java.lang.String |  Boolean variable indicating whether the web content is set to review (e.g. true) |
+   `neverReviewCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Never Review* checkbox is checked (e.g. false) |
+   `refererPlid` | &nbsp;&nbsp;java.lang.String | Primary key of the page hosting the web content |
+   `smallImage` | &nbsp;&nbsp;java.lang.String | Indicates whether a small image is being used (e.g. on) |
+   `smallImageURL` | &nbsp;&nbsp;java.lang.String | URL for the web content's attached image |
+   `structureDescription` | &nbsp;&nbsp;java.lang.String | Description of the configured structure |
+   `structureId` | &nbsp;&nbsp;java.lang.String | Primary key of the configured structure |
+   `structureName` | &nbsp;&nbsp;java.lang.String | Name of the configured structure |
+   `structureXSD` | &nbsp;&nbsp;java.lang.String | The XML schema definition used for the configured structure |
+   `templateId` | &nbsp;&nbsp;java.lang.String | Primary key of the configured template |
+   `title_en_US` | &nbsp;&nbsp;java.lang.String | Title of the web content (in English) |
+   `type` | &nbsp;&nbsp;java.lang.String | Categorization type associated with the web content  (e.g. Press Release) |
+   `variableName` | &nbsp;&nbsp;java.lang.String | Custom variable name set for the web content's configured structure (e.g. Content) |
+   `version` | &nbsp;&nbsp;java.lang.String | Current version of the web content (e.g. 1.0) |
+   `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 1) |
+---
+
+| &nbsp;*Blog Entry* Service Context Variables - obtain via key serviceContext  |||
+   Key | Type | Description |
+------ | ---------- | ------------------|
+   `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary keys of the asset entries linked to the blog entry |
+   `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the blog entry |
+   `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset (e.g. history, news, programming) |
+   `attachments` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if blog entry has any attachments (e.g. true) |
+   `content` | &nbsp;&nbsp;java.lang.String | Content of the blog entry |
+   `description` | &nbsp;&nbsp;java.lang.String | Description of the blog entry (e.g. The comparison between two Fortune 500 companies) |
+   `displayDateAmPm` | &nbsp;&nbsp;java.lang.String | Time "period" (based on the 12-hour clock) the blog entry is set to display (AM=0, PM=1) |
+   `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the blog entry is set to display (e.g. 3) |
+   `displayDateHour` | &nbsp;&nbsp;java.lang.String | Hour the blog entry is set to display (e.g. 26) |
+   `displayDateMinute` | &nbsp;&nbsp;java.lang.String | Minute the blog entry is set to display (e.g. 32) |
+   `displayDateMonth` | &nbsp;&nbsp;java.lang.String | Month the blog entry is set to display (e.g. 8) |
+   `displayDateYear` | &nbsp;&nbsp;java.lang.String | Year the blog entry is set to display (e.g 2012) |
+   `doAsGroupId` | &nbsp;&nbsp;java.lang.String | Primary key of the organization associated with the blog entry |
+   `editor` | &nbsp;&nbsp;java.lang.String | Content of the blog entry (equivalent to the `content` value) |
+   `entryId` | &nbsp;&nbsp;java.lang.String | Primary key of the blog entry |
+   `refererPlid` | &nbsp;&nbsp;java.lang.String | Primary key of the page hosting the blog entry |
+   `smallImage` | &nbsp;&nbsp;java.lang.String | Indicates whether a small image is being used (e.g. on) |
+   `smallImageURL` | &nbsp;&nbsp;java.lang.String | URL for the blog entry's attached image |
+   `title` | &nbsp;&nbsp;java.lang.String | Title of the blog entry (e.g. My Blog Entry) |
+   `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 2) |
+---
+
+| &nbsp;*Message Board Message* Service Context Variables - obtain via key serviceContext |||
+   Key | Type | Description |
+------ | ---------- | ------------------|
+   `anonymous` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is anonymous (e.g. true) |
+   `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the message |
+   `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
+   `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset (e.g. sea, sailing, swimming) |
+   `attachments` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the message has any attachments (e.g. false) |
+   `body` | &nbsp;&nbsp;java.lang.String | Content of the message |
+   `editor` | &nbsp;&nbsp;java.lang.String | Content of the message (equivalent to the `body` value) |
+   `mbCategoryId` | &nbsp;&nbsp;java.lang.String | Primary key of the message's category |
+   `messageId` | &nbsp;&nbsp;java.lang.String | Primary key of the message |
+   `parentMessageId` | &nbsp;&nbsp;java.lang.String | Primary key of the message's parent message |
+   `preview` | &nbsp;&nbsp;java.lang.Boolean&nbsp;&nbsp; | Boolean variable indicating if message is available to preview (e.g. true) |
+   `question` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is marked as a question (e.g. false) |
+   `subject` | &nbsp;&nbsp;java.lang.String | Subject line of the message (e.g. My MB Subject) |
+   `threadId` | &nbsp;&nbsp;java.lang.String | Primary key of the message board thread hosting the message |
+   `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 3) |
+---
+
+Next, we'll explain how to view your workflow definition XML file within
+Developer Studio.
+
+### Viewing workflow definition XML source 
 
 It is often convenient to view the workflow definition XML file as source code
 to make edits to it and review changes you've made. To view the XML
@@ -1295,7 +1418,7 @@ editing while using Developer Studio's powerful graphical features.
 Let's dive into saving your workflow definition and publishing it to your
 Liferay server.
 
-### Publishing workflows to the server [](id=lp-6-1-dgen08-publishing-workflows-to-the-server-0)
+### Publishing workflows to the server 
 
 After you've created your new workflow or modified an existing workflow, you'll
 want to publish it onto your Liferay server for your site's members to use.
@@ -1356,7 +1479,7 @@ For a finale of our overview for using Kaleo Designer for Java in Developer
 Studio, let's set up the DDL record within Liferay Portal and try out our new
 workflow!
 
-### Using workflows in Portal [](id=lp-6-1-dgen08-using-workflows-in-portal-0)
+### Using workflows in Portal 
 
 Congratulations! You have successfully used Kaleo Designer for Java to create a
 workflow! Now, let's put the finishing touches on your workflow and put it to
@@ -1376,7 +1499,7 @@ data
 types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
 in *Using Liferay Portal*. We'll demonstrate how easy it is.
 
-### Using DDLs with workflows [](id=lp-6-1-dgen08-using-ddls-with-workflows-0)
+### Using DDLs with workflows 
 
 Dynamic Data Lists can be used for many different things, but for our example we
 will integrate a DDL record into our ticket process workflow. If you would like
@@ -1421,7 +1544,7 @@ workflow for our new Kaleo Forms process to use. Lastly, save the DDL.
 Now, our DDL is set for use inside our ticket process workflow! Lastly, we will
 use the Kaleo Forms portlet to test our new workflow definition!
 
-#### Using Kaleo Forms to run workflows [](id=lp-6-1-dgen08-using-kaleo-forms-to-run-workflows-0)
+#### Using Kaleo Forms to run workflows 
 
 Let's use the Kaleo Forms portlet to invoke our workflow from Liferay Portal.
 Deploy the Kaleo Forms portlet to your portal and add it to a page on your site.
@@ -1468,7 +1591,7 @@ directly to your existing Liferay server makes the configuration process quick
 and easy. With all of these great features, the Kaleo Designer for Java in
 Developer Studio is a powerful tool that couldn't be easier to use!
 
-## Conclusion [](id=conclusi-3)
+## Conclusion 
 
 In this chapter we've explored the Liferay IDE and have gone through
 step-by-step instructions with regards to installation and setup, creating and

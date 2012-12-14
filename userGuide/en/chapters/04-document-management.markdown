@@ -1,4 +1,4 @@
-# Document Management [](id=documents-and-media)
+# Document Management 
 
 Liferay's Documents and Media library provides a mechanism for storing files
 online using the same type of structure that you use to store files locally. You
@@ -17,7 +17,7 @@ metadata sets are an addition to, not a replacement for, the portal's system of
 tags and categories. Let's start exploring how to use the Documents and Media
 portlet.
 
-## Getting Started with the Documents and Media [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media-0)
+## Getting Started with the Documents and Media 
 
 The Documents and Media portlet is non-instanceable. This means that each page
 on your portal can host at most one such portlet. Furthermore, if you add
@@ -43,7 +43,7 @@ portlet window shows only documents that belong to the selected document type.
 When you add custom document types, which we discuss below, they are added to
 the filter list. Next, let's look at how to navigate around Documents and Media. 
 
-### Navigating the Documents and Media Portlet [](id=lp-6-1-ugen04-navigating-the-documents-and-media-portlet-0)
+### Navigating the Documents and Media Portlet 
 
 In the main window of the Documents and Media portlet, you can click on a
 document to view details about it. Its version number, version history, status,
@@ -90,7 +90,7 @@ at once, you can use the navigation tool at the bottom of the portlet window to
 either switch your view to another page or configure the page to display more
 documents per page. 
 
-#### Actions [](id=lp-6-1-ugen04-actions-0)
+#### Actions 
 
 The Actions menu will only be displayed if you have selected one or more
 documents with the check boxes.
@@ -113,7 +113,7 @@ same time. Moving documents and folders is also possible via drag & drop.
 **Delete:** allows you to remove a document or folder from the portlet. You can
 delete multiple documents and folders at the same time.
 
-#### Add [](id=lp-6-1-ugen04-add-0)
+#### Add 
 
 From the Add button, you can add documents, folders and shortcuts just like on
 your local file system.
@@ -153,7 +153,7 @@ upload, you can select that document type from the Add menu. This will associate
 the metadata fields associated with the document type to your document and you
 will be asked to fill out the fields.
 
-#### Sort [](id=lp-6-1-ugen04-sort-0)
+#### Sort 
 
 You can sort the items displayed in the main window of the Documents and Media
 portlet using the Sort By menu. You can sort by title, create date, modified
@@ -170,7 +170,7 @@ downloaded.
 
 **Size:** lets you sort documents by how much disk space they use.
 
-#### Manage [](id=lp-6-1-ugen04-manage-0)
+#### Manage 
 
 The Manage menu allows you to view the names of document types and metadata
 sets, as well as the last times they were edited.
@@ -180,7 +180,7 @@ sets, as well as the last times they were edited.
 **Metadata Sets:** shows you a list of defined metadata sets as well as their
 portal IDs.
 
-## Document Types and Metadata Sets [](id=lp-6-1-ugen04-document-types-and-metadata-sets-0)
+## Document Types and Metadata Sets 
 
 Customizable document types and metadata sets are new features in Liferay 6.1.
 When a user assigns a document type to a document, the user is required to fill
@@ -277,29 +277,291 @@ been created they can be included in any number of document types as additional
 metadata sets. Next, let's take a look at tags. Tags can be attached to most
 forms of web content that can be created in Liferay, including documents.
 
-## Using External Repositories [](id=lp-6-1-ugen04-repositories-0)
+## Using External Repositories 
 
 Adding repositories in Documents and Media is a new feature in Liferay 6.1.
-Documents and Media allows to connect to multiple third-party repositories that
-support CMIS 1.0 with AtomPUB and Web Services protocols. You can add new
-repositories from the UI by clicking the *Add* button from the Home folder.
-Repositories can only be mounted in the Home folder.
+Content Management Interoperability Services (CMIS) is a specification for
+improving interoperability between Enterprise Content Management systems.
+Documents and Media allows users to connect to multiple third-party repositories
+that support CMIS 1.0 with AtomPub and Web Services protocols.
 
-![Figure 4.7: Adding a new repository](../../images/05-new-repository.png)
+Some of the features supported with third-party repositories include:
+
+- Reading/writing documents and folders
+- Document check-in, check-out, and undo check-out
+- Downloading documents
+- Moving folders and documents within the repository
+- Getting revision history
+- Reverting to revision
+
+There are some subtle differences in setting up the different kinds of
+third-party repositories for use in Documents and Media. But there are plenty of
+similarities too.
+
+Common Liferay configuration steps:
+
+- Adjust the portal properties.
+- Add any user accounts required by the repository.
+- Add the repository.
+
+Lastly, keep in mind your third-party repository may require installation and
+deployment of an appropriate Liferay plugin. Plugins for SharePoint and
+Documentum are available through Liferay's Marketplace.
+
+Let's go through those steps, starting with setting our portal properties.
+
+##### Adjusting portal properties
 
 The admin must ensure that the same credentials and authentication are being
 used in Liferay and in the external repository. This is normally synchronized
 using a mechanism like LDAP. If you don't have LDAP, you need to ensure manually
 that the credentials and authentication are the same. In order to authenticate
-with the third-party repository you need to enable the following property:
+with the third-party repository, you need to store passwords for the user
+sessions. Set the following portal property in your `portal-ext.properties`:
 
-    session.store.password=false
+    session.store.password=true
 
-The repository is displayed in the left side of the window in the Home folder.
+Next, we need to make sure the login and password for Liferay are the same as 
+the external repository. This is easily accomplished by using identical screen 
+names, so in `portal-ext.properties` add the following: 
+
+    company.security.auth.type=screenName
+
+Alternatively, configure these properties in the Control Panel under *Portal 
+Settings* &rarr; *Authentication*.
+
+##### Adding required repository users
+
+Once these properties are set, you must create a user in Liferay with a
+screen name and password matching the administrative user of your external
+repository. Be sure to assign appropriate roles (e.g. Administrator) to that
+user. Sign out of Liferay and sign in again as that new user. See sections of
+the *Management* chapter on adding and managing users.
+
+##### Adding the repository
+
+You can add new repositories from the UI by clicking the *Add* button from the
+Home folder. Repositories can only be mounted in the Home folder.
+
+![Figure 4.7: Adding a new repository](../../images/05-new-repository.png)
+    
+All fields in this form are required, except for *Repository ID*. Leave this
+field blank, and a repository ID is automatically generated by the system. 
+
+When finished, the repository is displayed in the left side of the window in the
+Home folder.
 
 ![Figure 4.8: Viewing a repository](../../images/05-repository.jpg)
 
-## Configuring the Documents and Media portlet [](id=lp-6-1-ugen04-configuring-the-documents-and-media-portlet-0)
+Using this information, we can now add an example repository. As noted
+previously, there are several repositories that work well with Liferay using
+CMIS. One that is familiar to many users is SharePoint. In the exercise below,
+we'll set up SharePoint as a Documents and Media repository.
+
+### Example Repository Setup: SharePoint
+
+With Liferay Portal you can connect to an external SharePoint server and add it
+as a Documents and Media repository. This lets users collaborate and
+share documents more easily between both environments. We will mount a
+SharePoint repository via CMIS AtomPub and SharePoint SOAP web services.
+
+Liferay uses a combination of SOAP and Representational State Transfer (REST),
+based on the Atom convention, to connect to the SharePoint repository.
+SharePoint provides various SOAP services for modifying and querying data from
+its document library. Liferay uses Axis2 to generate SOAP calls to the
+SharePoint server.
+
+To use SharePoint as a Liferay Documents and Media repository, we'll do the
+following:
+
+- Configure the CMIS Connector on SharePoint.
+- Activate a SharePoint site as a CMIS Producer.
+- Acquire your SharePoint document library's repository ID.
+- Enable Basic Authentication on the SharePoint host.
+- Add SharePoint as a Liferay Documents and Media repository.
+
+Note that this section is geared towards portal system administrators and
+SharePoint system administrators.
+
+Before you can use SharePoint as an external repository with Liferay portal, you
+must verify that SharePoint is properly configured. Several services must be
+set up on the SharePoint server before synchronizing with Liferay.
+
+#### Configuring the CMIS Connector on SharePoint
+
+SharePoint utilizes a CMIS Connector and a CMIS Producer to interface with
+Liferay Portal. The Connector is installed with the SharePoint Administrator
+Toolkit using a solution package called a Windows SharePoint file (.wsp). If you
+don't have it already, install the SharePoint Administrator Toolkit for its CMIS
+Connector. Install and deploy the CMIS Connector as a Farm Solution on
+SharePoint.
+
+The folder `Content Management Interoperability Services (CMIS) Connectors`
+contains the `spscmis.wsp` file. Choose the appropriate deployment settings and
+deploy that file. When deployment completes, Solution Properties shows the
+solution is successfully deployed to all target sites. Now it's time to
+configure the CMIS Producer.
+
+#### Activating a SharePoint site as a CMIS Producer
+
+The Producer makes SharePoint repositories available through the CMIS Connector.
+Choose the SharePoint site containing the document libraries to be used as
+document repositories. Every document library in this site is made available as
+a repository through the CMIS connector.
+
+Go to *Site Actions* &rarr; *Site Settings* &rarr; *Manage Site Features*.
+Enable the *Content Management Interoperability Services (CMIS) Producer* by
+clicking *Activate*.
+
+Now any document library created under this site is CMIS enabled. Before we
+leave our SharePoint console, let's take note of our SharePoint document
+library's repository ID.
+
+#### Acquiring the SharePoint document library's repository ID
+
+Acquiring your SharePoint document library's repository ID, or list ID, is
+important as it must be specified in the AtomPub URL Liferay uses to connect
+with the external repository. Finding it, however, can be a little confusing.
+The easiest way to find the repository ID is by accessing the SharePoint
+repository using a browser such as Mozilla Firefox.
+
+Follow these steps to get the repository ID:
+
+1. In SharePoint, open the desired library. 
+
+2. Under Library Tools select *Library*.
+
+3. Click on *Library Settings*, located to the far right.
+
+4. The browser window refreshes displaying the repository ID between curly
+braces '{' and '}' in the browser's address bar.
+
+    ![Figure 4.x: The repository ID can be found by displaying the repository's
+    URL in a Firefox browser.](../../images/05-sharepoint-list-id.png)
+
+    The repository ID is highlighted in the figure above. For this 
+    example, the repository ID is `6DFDA9-B547-4D1D-BF85-976863CDF533`.
+    Therefore, the AtomPub URL you'd use when adding this repository in
+    Documents and Media would resemble this: 
+
+        http://liferay-20jf4ic/CMIS/_vti_bin/cmis/rest/6DFDA9-B547-4D1D-BF85-976863CDF533?getRepositoryInfo.
+
+Be sure to copy down this URL so you can use it to configure SharePoint as a
+repository in Documents and Media. Next, let's enable Basic Authentication on
+the SharePoint host.
+
+#### Enabling Basic Authentication on the SharePoint host
+
+For the CMIS connector and producer to work, Basic Authentication on IIS must be
+enabled. This lets Liferay's SharePoint hook authenticate against the SharePoint
+web services. Enable Basic Authentication on your SharePoint host.
+
+You are now prepared to mount SharePoint as an external repository.
+
+#### Adding SharePoint as a Liferay Documents and Media repository
+
+With the SharePoint server configured, we now turn our attention to Liferay. As
+mentioned in the common steps for adding an external repository, be sure to
+adjust the portal properties and add any user accounts required by the
+repository.
+
+Here are the steps specific to configuring Liferay to use SharePoint:
+
+1. Download and install the SharePoint hook from Marketplace. See the
+*Downloading and Installing Apps* section of the *Leveraging the Liferay
+Marketplace* chapter of this document for more information.
+
+2. Add the Documents and Media portlet to a page, if you haven't done so
+already.
+
+3. In the Documents and Media portlet click *Add Repository* and enter the
+following information:
+
+    **Name:** Enter an arbitrary name for the repository.
+
+    **Description:** Describe the repository.
+
+    **Repository Type:** Select *SharePoint (AtomPub)*.
+
+    **AtomPub URL:** Enter the applicable URL using the format below,
+    substituting the SharePoint server's host name for *[host]* and the
+    SharePoint document library's repository ID for *[repository ID]*:
+
+        http://[host]/CMIS/_vti_bin/cmis/rest/[repository ID]?getRepositoryInfo
+
+    **Repository ID:** Leave this field empty. Liferay searches for the first
+    repository using the given parameters and sets this value to that
+    repository's ID.
+
+    **Site Path:** Enter data using the format below, the SharePoint server's
+    host information for *[host]* and the SharePoint document library's
+    repository name for *[repository path]*:
+
+		http://[host]/[repository path]
+
+4. Click *Save*.
+
+The left navigation panel of your Documents and Media portlet now lists your
+new repository.
+
+---
+
+![Tip](../../images/tip.png) In the site path example below, notice how the
+repository path has a folder `Shared Documents` consisting of two words.
+
+		http://liferay-20jf4ic/CMIS/Shared Documents/Forms/AllItems.aspx
+
+The space between the words in the repository name must be accounted for when
+setting the site path in Liferay. Replace the empty space with the string *%20*
+so the site path value now looks like this:
+
+		http://liferay-20jf4ic/CMIS/Shared%20Documents/Forms/AllItems.aspx
+
+This should be done for any multi-word repository name.
+
+---
+
+Remember that connecting to an external SharePoint server and adding it as a
+Documents and Media repository is a great way to give users flexibility for
+sharing and collaborating on Microsoft Office documents.
+
+To further enhance your use of Microsoft Office documents with Documents and
+Media, Liferay provides integration directly with Microsoft Office. Let's look
+at that next.
+
+## Microsoft Office integration
+
+Liferay lets you access Microsoft Office files in Documents and Media directly
+from your Microsoft Office applications. Liferay implements the MS-DWSS
+SharePoint protocol to allow saving and retrieving documents from Liferay Portal
+as if it were a SharePoint server. You can conveniently update your Microsoft
+Office (Office) files without having to exit your Office program.
+
+For example, if you are working in Microsoft Word locally on your
+machine, you can open a file from Documents and Media to view or edit it.
+Simply select *File*&rarr; *Open* in Word and enter
+`http://localhost:8080/sharepoint/` in the file name field. Click *Open* and log
+in using your Portal credentials.
+
+![Figure 4.x: Enter the URL of your `sharepoint` location on Liferay to access
+Documents and Media.](../../images/office-path.png)
+
+In the list of folders displayed, navigate to *guest* &rarr; *document_library*
+and select *All Files* to see your Documents and Media files.
+Open the desired Word file to make changes. Click *Save* when you are finished
+and close the file. 
+
+Now anyone with appropriate permission can see the latest version of the file
+with these updates. Liferay takes care of version control as well as file
+check out and check in. Users can add comments, ratings, and tags.
+
+Liferay's integration with Microsoft Office lets users leverage Documents and
+Media in managing their Office files. Collaboration is simplified as users share
+their most up-to-date versions of Office files.
+
+Now let's look at configuring the Documents and Media portlet.
+
+## Configuring the Documents and Media portlet 
 
 To configure the Documents and Media portlet, click on the wrench icon at the
 top of the portlet window and select *Configuration*. The portlet-specific
@@ -350,7 +612,7 @@ they think the comment is unhelpful or misleading, they can click on the thumbs
 down icon. If you'd like to disable comment ratings for files within your
 portlet, uncheck the *Enable Comment Ratings* box.
 
-## Automatic Previews and metadata [](id=lp-6-1-ugen04-automatic-previews-and-metadata-0)
+## Automatic Previews and metadata 
 
 Whenever possible, Liferay 6.1 generates previews of documents added to the
 Documents and Media library. Out of the box, Liferay only ships with Java-based
@@ -405,7 +667,7 @@ falls back to a Flash player.
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for. 
 
-### Automatic extraction of RAW Metadata [](id=lp-6-1-ugen04-automatic-extraction-of-raw-metadata-0)
+### Automatic extraction of RAW Metadata 
 
 When adding new documents or viewing existing documents, a process is triggered
 automatically that extracts the file's metadata. The library used by this
@@ -414,7 +676,7 @@ process is TIKA and it's already included in Liferay out of the box.
 You can see the metadata when viewing the document, in the right side of the
 window.
 
-### Document type restrictions and workflow per folder [](id=lp-6-1-ugen04-document-type-restrictions-and-workflow-per-folder-0)
+### Document type restrictions and workflow per folder 
 
 You can force users to add only certain document types to a folder. By default,
 child folders inherit the restrictions of their parent folder. You can change
@@ -435,7 +697,7 @@ Document types are a powerful way to enforce rules for documents uploaded by
 users. Next, we'll see a way to make it incredibly easy for users to access
 documents stored in Liferay's Documents and Media repositories. 
 
-### WebDAV access [](id=lp-6-1-ugen04-webdav-access-0)
+### WebDAV access 
 
 Wouldn't it be great if you could access documents and folders belonging to
 Liferay's Documents and Media library from your own machine's file manager? You
@@ -486,7 +748,7 @@ Now you know just how easy it is to store your files using Liferay's Documents
 and Media portlet. In the next section we'll review some ways to organize and
 manage your assets so you're getting the most out of your content.
 
-## Liferay Sync [](id=lp-6-1-ugen04-liferay-sync-0)
+## Liferay Sync 
 
 Liferay Sync, released in September 2012, is an add-on product for Liferay 6.1
 CE and EE that synchronizes files between your Liferay server and users' desktop
@@ -501,7 +763,7 @@ the supported environments. Liferay Sync stores files locally so that they're
 always available, even when you're offline. It automatically synchronizes your
 files upon reconnection.
 
-### How does it work? [](id=lp-6-1-ugen04-how-does-it-work-0)
+### How does it work? 
 
 Liferay Sync manages documents and site information through Liferay 6.1's
 built-in web services. Clients securely communicate to Liferay using
@@ -536,7 +798,7 @@ you've installed Social Office CE on Liferay Portal EE, then you can sync any
 site from Portal, but only one from Social Office. If you've installed Social
 Office EE on Liferay Portal EE, then you can sync any and all sites.
 
-### Installing Liferay Sync [](id=lp-6-1-ugen04-installing-liferay-sync-0)
+### Installing Liferay Sync 
 
 For Windows or Mac OS, visit the Liferay Sync product page [Liferay Sync Product
 Page](http://www.liferay.com/products/liferay-sync/features), and click *Get it
@@ -547,7 +809,7 @@ be named `liferay-sync-<version>-<date>.exe`. For Mac OS, it should be
 installer wizard to configure your client to connect to an existing Liferay 6.1
 deployment using your Liferay credentials.
 
-#### Windows [](id=lp-6-1-ugen04-windows-0)
+#### Windows 
 
 Upon launching the Windows application installer, you'll be prompted to choose
 an installation location for Liferay Sync. Browse to an appropriate location on
@@ -574,7 +836,7 @@ server.](../../images/liferay-sync-new-account-info.png)
 
 The options for the Mac OS application installer are similar.
 
-#### Mac OS [](id=lp-6-1-ugen04-mac-os-0)
+#### Mac OS 
 
 Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG mounts
 it as a disk image, and opens a window showing the contents of the image. To
@@ -598,7 +860,7 @@ you wish to change any of your settings, click the icon to open the Liferay Sync
 menu and click on *Preferences*. Note that on Windows, the Sync menu says
 *Properties*, not *Preferences*.
 
-#### Mobile [](id=lp-6-1-ugen04-mobile-0)
+#### Mobile 
 
 For iOS, visit the App Store, search for Liferay, and install the Liferay Sync
 App.
@@ -608,7 +870,7 @@ App.
 
 Once the mobile apps are installed, follow the on-screen instructions as below.
 
-### Using Liferay Sync on the Desktop [](id=lp-6-1-ugen04-using-liferay-sync-0)
+### Using Liferay Sync on the Desktop 
 
 Once installed, you'll see a Liferay Sync icon in your taskbar whenever it's
 running. A green checkmark means Liferay Sync has a working connection to your
@@ -685,7 +947,7 @@ link to Liferay's home page.
 from [liferay.com](liferay.com) and allows you to set whether or not Liferay
 Sync should automatically check for updates.
 
-#### Using your Sync folder [](id=lp-6-1-ugen04-using-your-sync-folder-0)
+#### Using your Sync folder 
 
 Once Liferay Sync has been configured and is running, any files you add to or
 modify in your Sync folder are automatically detected and uploaded to your
@@ -735,7 +997,7 @@ Download the file again, and you'll see that it now says *second test*--your
 edit was uploaded to the server. You can be confident that this edit was also
 downloaded by all other Liferay Sync clients connected to your site.
 
-#### Demonstrating Liferay Sync Permissions [](id=lp-6-1-ugen04-demonstrating-liferay-sync-permissions-0)
+#### Demonstrating Liferay Sync Permissions 
 
 Liferay Sync uses the default Liferay permissions to determine which files and
 folders are synced to the user's machine. This means that whatever files a user
@@ -767,14 +1029,14 @@ credentials of another user who doesn't belong to the *Secret Site*, the
 a Liferay Sync folder that can only be accessed by the *secretagent* user and
 your administrators.
 
-### Using Liferay Sync Mobile [](id=lp-6-1-ugen04-using-liferay-sync-mobile-0)
+### Using Liferay Sync Mobile 
 
 Once you've installed Liferay Sync on your Android or iOS mobile environment,
 you'll be able to access the same functionality that's available when using Sync
 on a desktop environment. However, the interface differs from that of the Sync
 desktop clients.
 
-#### Android [](id=lp-6-1-ugen04-using-liferay-sync-android-0)
+#### Android 
 
 After installing Liferay Sync for Android, an empty screen appears asking you
 to set up the app. This screen appears whenever preferences are missing.
@@ -858,7 +1120,7 @@ upload images, videos, and audio files. If you have installed an app on your
 device that can open and browse any type of file, you will also see an option
 called *Other files*.
 
-#### iOS  [](id=lp-6-1-ugen04-using-liferay-sync-ios-0)
+#### iOS  
 
 After installing the iOS app, click on *Settings* in the toolbar, enter your
 Liferay server credentials by filling in your *Login*, *Password*, and *Server*
@@ -921,7 +1183,7 @@ All downloaded images are stored in your device indefinitely.
 If you want to delete downloaded files locally but don't want to remove them
 from the portal, go to *Settings* and click on the *Clear Cache* button.
 
-## Summary [](id=lp-6-1-ugen04-summary-0)
+## Summary 
 
 In this chapter, we examined Liferay's Documents and Media Library, a powerful
 and customizable virtual shared drive. Liferay 6.1 introduced the ability to

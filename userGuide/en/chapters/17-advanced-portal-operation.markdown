@@ -1,5 +1,5 @@
 
-# Advanced Portal Operation [](id=lp-6-1-ugen17-advanced-portal-operation-0)
+# Advanced Portal Operation 
 
 In this chapter we discuss several advanced features of Liferay Portal,
 including audit trails and portal maintainence, backup, and logging. Audit
@@ -28,7 +28,7 @@ We'll discuss the following topics in this section:
 
 Let's get started with audit trails.
 
-## Audit Trails [](id=using-audit-trails)
+## Audit Trails 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -83,7 +83,7 @@ We'll come back to Tom, Dick and Harry's story later in the chapter. For now,
 let's look at how to install Liferay's audit plugins so you can do the same
 thing Harry's about to do. 
 
-### Installing and configuring the audit plugins [](id=installing-and-configuring-the-audit-plugins)
+### Installing and configuring the audit plugins 
 
 Liferay's audit functionality is composed of two parts: a back-end piece that
 hooks into Liferay events and a front-end piece that gives you an interface to
@@ -109,7 +109,7 @@ above, place them in your `portal-ext.properties` file and restart your Liferay
 server. Once it comes up, audit events are captured by Liferay, and you'll be
 able to use them to see what's happening in your portal. 
 
-### Using audit events [](id=using-audit-events)
+### Using audit events 
 
 Now that you're capturing audit events, it's easy to use them to view activities
 in your portal. Navigate to the control panel and you'll find a new entry in the
@@ -143,7 +143,7 @@ which will definitely be the most often triggered event in your portal.
 Now that you know how to browse and view audit events, let's look at searching
 for specific events. 
 
-### Viewing audit reports [](id=viewing-audit-reports)
+### Viewing audit reports 
 
 Finding what you want in a big list of events is, to use the expression, like
 searching for a needle in a haystack. This is why the audit portlet gives you a
@@ -216,7 +216,7 @@ happening in your portal. You can use this information to troubleshoot problems,
 determine ownership of particular actions, or, as Harry is about to do, find out
 who made permission changes they weren't supposed to make. 
 
-### Conclusion of the Story [](id=conclusion)
+### Conclusion of the Story 
 
 "Okay," says Harry, "let's fire up Liferay's audit system and see if we can
 figure out what happened." 
@@ -259,7 +259,7 @@ better day than Melvin is.
 Now that we've seen how you can use audit trails, let's look at some tools and
 best practices for maintaining your Liferay installation.
 
-## Liferay monitoring using Google Analytics [](id=liferay-monitoring-using-google-analyti-5)
+## Liferay monitoring using Google Analytics 
 
 Liferay includes built-in support for Google Analytics, allowing administrators
 to make use of Google's tool set for analyzing site traffic data. When you sign
@@ -297,7 +297,7 @@ advantage of some great tools to help you visualize who's coming to your site
 and from where. Next, we discuss some topics germane to maintaining your Liferay
 installation as it's used. Let's start with backup.
 
-## Backing up a Liferay installation [](id=backing-up-a-liferay-installati-5)
+## Backing up a Liferay installation 
 
 Once you have an installation of Liferay Portal running, you'll want to have
 proper backup procedures in place in case of a catastrophic hardware failure of
@@ -305,7 +305,7 @@ some kind. Liferay isn't very different from any other application that may be
 running on your application server. Nevertheless, there are some specific
 components you should include in your backup plan.
 
-### Backing up source code [](id=lp-6-1-ugen16-backing-up-source-code-0)
+### Backing up source code 
 
 If you have extended Liferay or have written any plugins, they should be stored
 in a source code repository such as Git, Subversion, or CVS, unless you're Linus
@@ -322,7 +322,7 @@ need to build your extension and deploy it to a server.
 
 Let's look at the items that need to be backed up in your Liferay installation. 
 
-### Backing up Liferay's file system [](id=lp-6-1-ugen16-backing-up-liferays-file-system-0)
+### Backing up Liferay's file system 
 
 Liferay's configuration file, `portal-ext.properties`, gets stored in the
 *Liferay Home* folder, which is generally one folder up from where your
@@ -348,7 +348,7 @@ should also back up this location.
 That about covers the file system locations Liferay uses. Next, let's discuss
 how to back up Liferay's database.
 
-### Backing up Liferay's database [](id=lp-6-1-ugen16-backing-up-liferays-database-0)
+### Backing up Liferay's database 
 
 Liferay's database is the central repository for all of the Portal's information
 and is the most important component that needs to be backed up. You can do this
@@ -381,7 +381,7 @@ hardware failure.
 But what about maintenance while your server is running? Liferay lets you view a
 lot of what is going on through its logging system. 
 
-## Liferay's Logging System [](id=liferay-s-logging-syst-5)
+## Liferay's Logging System 
 
 Liferay uses Log4j extensively to implement logging for nearly every class in
 the portal. If you need to debug something specific while the system is running,
@@ -447,7 +447,7 @@ Logs are great for figuring out issues in production. But what if Liferay
 contacts you via its support channel with a bug fix or a security enhancement?
 Read on to learn how to patch Liferay. 
 
-## Patching Liferay [](id=patching-liferay)
+## Patching Liferay 
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -473,7 +473,7 @@ always going to want to patch.
 
 Now that you know what patching is all about, let's check out the tool. 
 
-### Installing the patching tool [](id=lp-6-1-ugen16-installing-the-patching-tool-0)
+### Installing the patching tool 
 
 If you're using a Liferay bundle, congratulations! The patching tool is already
 installed. Your job isn't done yet, however, because Liferay *might* have
@@ -524,7 +524,7 @@ you'd issue this command:
 In all, this is pretty simple. Now let's see how to use the patching tool to get
 your patches installed. 
 
-### Installing patches [](id=lp-6-1-ugen16-installing-patches-0)
+### Installing patches 
 
 The absolute first thing you must do when installing one or more patches is to
 shut down your server. On Windows operating systems, files that are in use are
@@ -551,7 +551,7 @@ Your patches are now installed. You can verify this by using the
 `./patching-tool.sh info` command, which now shows your patch in the list of
 installed patches. Let's look now at how you'd manage your patches. 
 
-#### Handling hot fixes and patches [](id=lp-6-1-ugen16-handling-hot-fixes-and-patches-0)
+#### Handling hot fixes and patches 
 
 As stated above, hot fixes are short term fixes provided as quickly as possible
 and fix packs are larger bundles of hot fixes provided to all customers at
@@ -566,7 +566,7 @@ If a new version of a fix pack is released, you can use the patching tool to
 install it. The patching tool uninstalls the old fix pack and installs the new
 version in its place. 
 
-#### Fix pack dependencies [](id=lp-6-1-ugen16-fix-pack-dependencies-0)
+#### Fix pack dependencies 
 
 Some fix packs require other fix packs to be installed first. If you attempt to
 install a fix pack that depends on another fix pack, the patching tool will
@@ -576,7 +576,7 @@ folder, the patching tool will install them.
 
 The patching tool can also remove patches. 
 
-### Removing or reverting patches [](id=lp-6-1-ugen16-removing-or-reverting-patches-0)
+### Removing or reverting patches 
 
 Have you noticed that the patching tool only seems to have an `install` command?
 This is because patches are managed not by the command, but by what appears in
@@ -592,7 +592,7 @@ What we've described so far is the simplest way to use the patching tool, but
 you can also use the patching tool in the most complex, multi-VM, clustered
 environments. This is done by using profiles. 
 
-### Using profiles with the patching tool [](id=lp-6-1-ugen16-using-profiles-with-the-patching-tool-0)
+### Using profiles with the patching tool 
 
 When you ran the auto-discovery task after installing the patching tool, it
 created a default profile that points to the application server it discovered.
@@ -651,7 +651,7 @@ patch all of them. This helps to keep all your installations in sync.
 Now that you know how to patch an existing installation of Liferay, let's turn
 to how you'd upgrade Liferay from an older release to the current release. 
 
-## Upgrading Liferay [](id=upgrading-lifer-5)
+## Upgrading Liferay 
 
 Liferay upgrades are fairly straightforward. A consistent set of steps is all
 you need to follow to upgrade a standard Liferay installation. Things do get
@@ -681,7 +681,7 @@ a 6.1 installation. If you're running a previous version of Liferay and need to
 upgrade to 6.0 first, please see the instructions in the previous version of
 this document. 
 
-### Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1 [](id=lp-6-1-ugen16-upgrading-liferay-portal-60-to-liferay-portal-61-0)
+### Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1 
 
 There are a few things you should prepare before you actually perform the
 upgrade. Specifically, you need to make sure you've migrated to permission
@@ -690,7 +690,7 @@ defaults, and cataloged all the plugins you have installed. After you've
 performed these three tasks, you're ready to upgrade. Let's look at them one by
 one. 
 
-### Migrate to Algorithm 6 [](id=lp-6-1-ugen17-migrate-to-algorithm-6-0)
+### Migrate to Algorithm 6 
 
 If your Liferay installation has existed for a while, you may be on a different
 permission algorithm than the one that's available in Liferay Portal 6.1.
@@ -743,7 +743,7 @@ Restart your server. Congratulations! You've successfully migrated your
 installation to use the latest, highest performing permissions algorithm. Next,
 you'll need to explicitly set your Image Gallery storage option. 
 
-### Migrate Your Image Gallery Images [](id=lp-6-1-ugen17-migrate-your-image-gallery-images-0)
+### Migrate Your Image Gallery Images 
 
 Liferay 6.1 introduces a major change to how Liferay handles files. No longer do
 we have a separate Document Library and Image Gallery; instead, these have been
@@ -773,7 +773,7 @@ likely already in your `portal-ext.properties` file.
 The third thing you need to do to prepare for your upgrade is to review the new
 property defaults. 
 
-### Review the New 6.1 Properties Defaults [](id=lp-6-1-ugen17-review-the-new-61-properties-defaults-0)
+### Review the New 6.1 Properties Defaults 
 
 The next thing you'll need to look at are the defaults that have changed from
 6.0 to 6.1. These are preserved in `portal-legacy-6.0.properties` in the source.
@@ -807,7 +807,7 @@ If you're not using Tomcat, check your application server's documentation to see
 how to modify runtime properties. Your final task is to catalog all the plugins
 you have installed, so you can install the new versions in your upgraded system. 
 
-### Catalog all the plugins you have installed [](id=lp-6-1-ugen17-catalog-all-the-plugins-you-have-installed-0)
+### Catalog all the plugins you have installed 
 
 Finally, you need to take note of any plugins you have installed. Liferay's
 plugins are usually version-specific, so you'll need to obtain new versions of
@@ -834,7 +834,7 @@ repeating ourselves: back up your database.
 
 Let's look at upgrading a bundle, which is the easiest upgrade path. 
 
-#### Upgrading a bundle [](id=lp-6-1-ugen16-upgrading-a-bundle-0)
+#### Upgrading a bundle 
 
 If you're running a Liferay bundle, the best way to do the upgrade is to follow
 the steps below. The new Liferay is installed in a newer version of your bundle
@@ -877,7 +877,7 @@ versions are mandated by the environment you're in or by management. For this
 reason, Liferay also ships as an installable .war file that can be used on any
 supported application server.    
 
-#### Upgrading using a .war file [](id=lp-6-1-ugen16-upgrading-using-a-war-file-0)
+#### Upgrading using a .war file 
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
@@ -919,7 +919,7 @@ That's all there is to it. Most everything is handled by Liferay's upgrade
 procedure. Note as stated above, if you have to upgrade over several Liferay
 versions, you will need to repeat these steps for each major release. 
 
-## Summary [](id=summ-37)
+## Summary 
 
 Liferay Portal is an easy environment to maintain. Backup procedures are simple
 and straightforward. Administrators have all the options they need to view and
