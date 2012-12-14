@@ -725,7 +725,7 @@ Have we determined that this IS an EE-only feature?
 ### Exporting and Importing Site Templates and Page Templates [](id=lp-6-1-ugen03-exporting-and-importing-site-templates-and-page-templates-0)
 
 If you want to export a site that uses site or page Templates to a different
-environment (trough a LAR file or remote publication), the Templates must be
+environment (through a LAR file or remote publication), the Templates must be
 exported and imported manually in advance or the import will fail.
 
 To export a Site using a Site Template, use the following process:
@@ -791,9 +791,50 @@ can make sure those fields aren't listed as localizable. When you follow the
 steps above to localize content, only fields within the structure that had the
 *Localizable* box checked appear within the translation window.
 
+## Using application display templates
+
+Application display templates work similarly to the previously explained site and page templates, but at the portlet level. The application display template (ADT) framework allows you to define how portlets display their information on a page. For example, you may want to show blog entries horizontally instead of vertically, or list your assets in the asset publisher portlet in different sizes. These customized upgrades to your portlets are possible with the use of ADTs.
+
+The *Application Display Templates* page of the Control Panel directs you to a list of available templates for your portlets to use. First, you have the ability to choose the context of your ADT by selecting the site you want it to reside in. This can be done in the Control Panel menu.
+
+![Figure 3.18: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
+
+The *Global* context allows your template to be available across all sites. Furthermore, you can select individual sites to primarily host your ADT. If you select the *Global* context, you're given default ADTs that are being used for your portlets. Below is a listing of these portlets and their default template descriptions:
+
+- Wiki: displays social bookmarks and ratings for wiki pages and their child pages.
+- Categories Navigation: displays a column for each vocabulary. Each column includes the name of a vocabulary with the vocabulary's top level categories listed underneath.
+- Asset Publisher: displays abstracts, icons, related assets, and print/edit actions for assets. Optionally includes asset bookmarks and ratings.
+- Site Map: displays a column for each top level page. Each column includes the name of a top level page with the page's immediate children listed underneath.
+- Tags Navigation: displays asset tags colored by popularity: red (high), yellow (medium), and green (low).
+- Blogs: displays titles, authors, and abstracts compactly for blog entries.
+
+<!-- TODO: Add D&M once available (has option to create template in Control Panel, but not available to select ADT within D&M portlet)-->
+
+To create a new ADT, click *Add* and select the template you'd like to create, based on portlet type. Then enter the name, description, and optional small image you'd like to use. You also have the option of selecting the language type of your template editor (FTL, VM, XSL). Lastly, the *Script* option allows you to either browse your file system for a configured template or launch the editor and create one yourself. For more information on how to create a custom template, visit Liferay's Developer Guide.
+
+<!-- TODO: When the Dev Guide section for templates is complete, add the exact link above -->
+
+![Figure 3.18: Liferay offers multiple options to customize your ADT.](../../images/adt-setup-menu.png)
+
+Another cool feature is the *Export/Import* functionality. You can take advantage of this feature by clicking the wrench icon at the top right of the screen and selecting *Export/Import*. Maybe you want to share your ADT with someone or import your buddy's ADT to use in your own portlet. The export feature bundles your ADT into a LAR file and gives you options on what to include. Likewise, the import feature overwrites selected data by extracting a LAR file. These features look similar to the snapshot below:
+
+![Figure 3.19: The *Export/Import* feature allows you to share and overwrite your ADTs.](../../images/adt-export-import.png)
+
+After you've completed the initial setup and saved your ADT, you can select the *Actions* button next to your new ADT and are provided several options.
+
+- *Edit*: modify the ADT's setup properties
+- *Permissions*: manage the *Delete*, *Permissions*, *Update*, and *View* permissions of the ADT
+- *Delete*: delete the ADT
+
+To implement your ADT for a portlet, navigate to the portlet you want to modify and open the *Configuration* menu. In the *Display Settings* sub-tab located within the *Setup* tab, you're able to select your ADT from the drop-down menu. You'll notice they're separated by context type. Also, an administrator has the ability to select the display template that can be viewed by guests of the site. This can be done by simply clicking the *Manage Display Templates for Guest* link and selecting an ADT.
+
+![Figure 3.19: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
+
+The layout of your portlets provides the ultimate experience for Liferay users. Next, we'll discuss how to allow users to customize their site pages.
+
 ## Allowing users to customize site pages [](id=lp-6-1-ugen03-advanced-publishing-options-0)
 
-As we discussed above, as your site becomes larger and more complex, management
+As we discussed before, as your site becomes larger and more complex, management
 of the content becomes more challenging. We've gone over Liferay management
 tools that help you create content quickly and in an orderly fashion. You
 created a simple announcement with Liferay's structure editor that allows you to
