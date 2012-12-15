@@ -807,18 +807,24 @@ vertically, or list your assets in the asset publisher portlet in different
 sizes. These customized upgrades to your portlets are possible with the use of
 ADTs.
 
+<!-- TODO: Let's expand the above paragraph. We want to fire the imaginations of
+users and give them ideas as to why they'd want to use ADTs. Can you come up
+with examples, given that most of the readers of this section are building their
+own web sites and wanting to customize the presentation of various portlets?
+-->
+
 The *Application Display Templates* page of the Control Panel directs you to a
-list of available templates for your portlets to use. First, you have the
-ability to choose the context of your ADT by selecting the site you want it to
-reside in. This can be done in the Control Panel menu.
+list of available templates for your portlets to use. First, you can choose the
+context of your ADT by selecting the site you want it to reside in. This is done
+in the Control Panel menu.
 
 ![Figure 3.18: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
 
-The *Global* context allows your template to be available across all sites.
-Furthermore, you can select individual sites to primarily host your ADT. If you
-select the *Global* context, you're given default ADTs that are being used for
-your portlets. Below is a listing of these portlets and their default template
-descriptions:
+The *Global* context makes your template available across all sites.
+Furthermore, you can select individual sites to host your ADT. If you select the
+*Global* context, you can see the default ADTs that come with the portal. These
+are being used for your portlets. Below is a listing of these portlets and their
+default template descriptions:
 
 - Wiki: displays social bookmarks and ratings for wiki pages and their child
 pages.
@@ -838,11 +844,11 @@ Panel, but not available to select ADT within D&M portlet)-->
 
 To create a new ADT, click *Add* and select the template you'd like to create,
 based on portlet type. Then enter the name, description, and optional small
-image you'd like to use. You also have the option of selecting the language type
-of your template editor (FTL, VM, XSL). Lastly, the *Script* option allows you
-to either browse your file system for a configured template or launch the editor
-and create one yourself. For more information on how to create a custom
-template, visit Liferay's Developer Guide.
+image you'd like to use. You have the option of selecting the language type for
+your template (FTL, VM, XSL). Lastly, the *Script* option lets you browse your
+file system for a configured template or launch the editor and create one
+yourself. For more information on how to create a custom template, visit the 
+*Liferay's Developer Guide*.
 
 <!-- TODO: When the Dev Guide section for templates is complete, add the exact
 link above -->
@@ -859,26 +865,27 @@ LAR file. These features look similar to the snapshot below:
 
 ![Figure 3.20: The *Export/Import* feature allows you to share and overwrite your ADTs.](../../images/adt-export-import.png)
 
-After you've completed the initial setup and saved your ADT, you can select the
-*Actions* button next to your new ADT and are provided several options.
+After you've completed the initial set up and saved your ADT, you can manage
+your ADT through its *Actions* button. This provides several options:
 
 - *Edit*: lets you modify the ADT's setup properties.
 - *Permissions*: lets you manage the *Delete*, *Permissions*, *Update*, and
 *View* permissions of the ADT.
 - *Delete*: deletes the ADT.
 
-To implement your ADT for a portlet, navigate to the portlet you want to modify
+To enable your ADT for a portlet, navigate to the portlet you want to modify
 and open the *Configuration* menu. In the *Display Settings* sub-tab located
 within the *Setup* tab, you're able to select your ADT from the drop-down menu.
-You'll notice they're separated by context type. Also, an administrator has the
-ability to select the display template that can be viewed by guests of the site.
-This can be done by simply clicking the *Manage Display Templates for Guest*
+You'll notice they're separated by context type. Also, an administrator can
+select the display template that can be viewed by guests of the site. This can
+be done by simply clicking the *Manage Display Templates for Guest*
 link and selecting an ADT.
 
 ![Figure 3.21: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
 
-The layout of your portlets provides the ultimate experience for Liferay users.
-Next, we'll discuss how to allow users to customize their site pages.
+Controlling the layout of your portlets provides the ultimate customization
+experience for Liferay users. Next, we'll discuss how to allow users to
+customize their site pages.
 
 ## Allowing users to customize site pages 
 
