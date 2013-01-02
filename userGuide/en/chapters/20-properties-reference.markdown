@@ -4458,13 +4458,9 @@ Set the name of a class that implements `com.liferay.portal.kernel.sanitizer.San
 
 ## Scheduler [](id=scheduler)
 
-Set this to `false` to disable all scheduler classes defined in `liferay-portlet.xml` and in the property `scheduler.classes`.
+Set this to `false` to disable all scheduler classes defined in `liferay-portlet.xml`.
 
 	scheduler.enabled=true
-
-Input a list of comma delimited class names that implement `com.liferay.portal.kernel.job.Scheduler`. These classes allow jobs to be scheduled on startup. These classes are not associated to any one portlet.
-
-	scheduler.classes=
 
 Set the maximum length of description, group name and job name fields.
 
