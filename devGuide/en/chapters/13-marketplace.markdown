@@ -115,7 +115,7 @@ requirements to keep in mind.
 	
 	- WAR file names must conform to the following naming convention:
 	
-	*context_name*`-`*plugin_type*`-`A`.`B`.`C`.`D`.war`
+	*context_name*`-` *plugin_type* `-`A`.`B`.`C`.`D`.war`
 
     Where:
     
