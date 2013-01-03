@@ -1,4 +1,3 @@
-
 # Liferay Marketplace [](id=lp-6-1-dgen10-liferay-marketplace-0)
 
 The **Liferay Marketplace** is an exciting new hub for sharing, browsing and
@@ -121,15 +120,15 @@ requirements to keep in mind.
     Where:
     
     - *context_name* - Alpha-numeric (including `-` and `_`) short name of
-    your app.  This name will be used as the deployment context, and should not
+    your app.  This name is used as the deployment context, and should not
     duplicate any other app's context (you will see a warning if you use a
     context name of any other app on the Marketplace).
     
     - *plugin_type* - one of the following: `ext`, `hook`, `layouttpl`,
     `portlet`, `theme`, or `web`.
     
-    - `A`.`B`.`C`.`D` - The version of your WAR file.  There must be 4
-    digits.
+    - `A`.`B`.`C`.`D` - The 4 digit version of your WAR file.  4 digits must
+    be used.
     
     - Example: `my-super-app-1.0.0.0.war`
 
@@ -299,8 +298,8 @@ Liferay 6.1 CE GA2 *and later*, add this line to your
     liferay-versions=6.1.1+ 
 
 This means that the app works with any 6.1 CE or EE release starting with CE
-GA2, and Marketplace will create a package that is compatible with 6.1 CE GA2
-*and later*.
+GA2, and Marketplace will create a package that is compatible with the 6.1 CE GA2
+release and *later* versions.
 
  ![note](../../images/tip-pen-paper.png)**Note:** Any version specification you
  include in your packaging directives *must* be terminated with a version using
@@ -553,8 +552,7 @@ apps that you have personally developed and published.
 
 If your app is rejected, an email will be sent to the email address associated
 with the app, along with a note explaining the reasons for rejection.  At that
-point, you can make the requested changes, and re-submit the app for approval
-again.
+point, you can make the requested changes, and re-submit the app for approval.
 
 Now that you have successfully published your first app, you'll likely get all
 kinds of feedback from users and yourself about what's right and wrong with it.
