@@ -130,7 +130,7 @@ requirements to keep in mind.
     - `A`.`B`.`C`.`D` - The 4 digit version of your WAR file.  4 digits must
     be used.
     
-    - Example: `my-super-app-1.0.0.0.war`
+    - Example: `myapp-portlet-1.0.0.0.war`
 
 - *liferay-plugin-package.properties file*:
     - Property `recommended.deployment.context` must not be set.
