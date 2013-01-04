@@ -133,6 +133,11 @@ Let's look next at how to manage organizations.
 
 ### Organizations
 
+<!-- | This section needs to mention that organization administrators can manage
+the users in those organizations, while site administrators cannot. This is an
+important difference. Organizations are designed for distributed portal
+administration. See  http://issues.liferay.com/browse/LRDOCS-378 | --> 
+
 Organizations are used to represent hierarchical structures such as those of
 companies, non-profit organizations, churches, schools and clubs. They have been
 used to represent a sports league, with various sports (soccer, baseball,
