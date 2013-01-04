@@ -131,8 +131,7 @@ of the above functions because you have administrative access.
 
 Let's look next at how to manage organizations. 
 
-<!-- This is Section i, subsection a --> ### Organizations
-
+### Organizations
 
 Organizations are used to represent hierarchical structures such as those of
 companies, non-profit organizations, churches, schools and clubs. They have been
