@@ -1,3 +1,4 @@
+
 # Advanced Web Content Management  
 
 In the previous chapter we looked at some basic ways you can use Liferay to
@@ -78,22 +79,35 @@ can then write a template which loops through these blocks and presents your
 content in innovative ways, such as in sliding navigation bars, content which
 scrolls with the user and more.
 
-Let's look at how we edit a structure.
+Let's look at how we can create and edit structures through the Manage
+Structures interface.
 
 ##### Editing a Structure 
 
-Go back to the Control Panel and select *Web Content* from the Site section.
-Click *Add* from the Web Content page to add another piece of content to your
-portal. Instead of going right for the content, this time we'll create a
-structure. To edit a structure, simply click on the *Edit* icon next to the
-*Structure* heading near the top of the page.
+Go back to the Control Panel and select *Web Content* from the content section.
+The first way to access the Manage Structures interface is simply by clicking
+*Manage* &rarr; *Structures*. This opens a popup showing all the web content
+structures that exist in your currently selected scope. Here, you can add new
+web content structures, edit existing ones, manage the templates associated with
+a structure, edit the permissions of a structure, and copy or delete structures.
 
-It's very easy to edit structures: all you have to do is drag elements into the
-structure and then give them names. For instance, select the *Checkbox* element
-under the *Form Controls* tab and drag it onto the structure. You can do the
-same with any of the elements. To remove it from the structure, simply select
-the *Delete* icon (black circle with X) in the upper right corner of the
-element. Take a moment to add, delete and rearrange different elements.
+![Figure 3.1: You can access the Manage Structures interface by clicking
+*Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
+
+The second way to access the Manage Structures interface is directly from the
+web content article WYSIWYG editor. Click *Add* &rarr; *Basic Web Content* from
+the Web Content page to add another piece of content to your portal. Instead of
+going right for the content, this time we'll first create a structure. To access
+the Manage Structures interface, simply click on *Select* next to the
+*Structure* heading near the top of the page. To create a new structure in your
+chosen scope, simply click on the *Add* button in the Manage Structures popup.
+
+It's very easy to create and edit structures: all you have to do is drag
+elements into the structure and then give them names. For instance, select the
+*Checkbox* element under the *Form Controls* tab and drag it onto the structure.
+You can do the same with any of the elements. To remove it from the structure,
+simply select the *Delete* icon (black circle with X) in the upper right corner
+of the element. Take a moment to add, delete and rearrange different elements.
 
 ![Figure 3.1: Structure Elements](../../images/04-web-content-structure-editor.png)
 
@@ -137,14 +151,15 @@ closely at the form elements.
 
 ##### Editing form elements 
 
-When creating a new structure it is essential you set variable names template
-writers can use to refer to elements on your form. If you don't do this, Liferay
-generates random variable names and these can be difficult for a template writer
-to follow. For example, consider a field called *Author*. You might create this
-field in your form but the underlying variable name in the structure might look
-something like `TextField4882`. The template writer needs to create markup for
-your structure and place the Author field in a certain spot in the markup. How
-will he or she know which field is Author when they're all named randomly?
+When creating a new structure, it is essential that you set variable names.
+Template writers can use these variables to refer to elements on your form. If
+you don't set variable names, Liferay generates random variable names and these
+can be difficult for a template writer to follow. For example, consider a field
+called *Author*. You might create this field in your form but the underlying
+variable name in the structure might look something like `TextField4882`. The
+template writer needs to create markup for your structure and place the Author
+field in a certain spot in the markup. How will he or she know which field is
+Author when they're all named randomly?
 
 To solve this problem, all you need to do is set a variable name for each field
 as you add it to your structure. Let's do this now. In your structure, add an
@@ -181,16 +196,18 @@ article.
 **Required:** Check the box to mark the field required. If a field is required,
 users must enter a value for it in order to submit content using this structure. 
 
-For the Nosester structure, type something in the *Instructions for the User*
+For the Nose-ster structure, type something in the *Instructions for the User*
 field that helps users know what to put into the Body element (example: *this is
 an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
 instructions are displayed.
 
-##### Structure Default Values 
+##### Specifying predefined values for structure forms
 
-Structure Default Values allow you to create one structure that uses common data
-from multiple articles.
+Specifying predefined values for structure forms is a way to specify defaults.
+When a user creates a new web content article based on a structure that has
+predefined values for various fields, the predefined values appear in the form
+as defaults for those fields.
 
 Returning to our newspaper scenario again, let's say you want all sports
 articles to have the same display page (sports page), the same categories, or
@@ -201,8 +218,8 @@ structure. There are two ways to edit structure default values: creating a new
 structure or editing an existing structure.
 
 For a new structure, you must first create the structure before editing its
-default values. Navigate to *Web Content* in the Control Panel and click the
-*Structures* tab, then select the *Add Structure* button. Under the *XML Schema
+default values. Navigate to *Web Content* in the Control Panel and click on
+*Manage* &rarr; *Structures*. Then click *Add*. Under the *XML Schema
 Definition* section of the new structure form, use the *Add Row* button to
 create different types of fields for the structure. Or you can use the editor to
 create the structure manually: the Launch Editor button allows you to edit the
@@ -301,31 +318,36 @@ systematically to go along with the format we've defined for our content.
 
 ![Figure 3.5: Adding Template Interface](../../images/04-web-content-templates-create.png)
 
-1. Go back to the Web Content section of the Control Panel and click *Add* under
-*Web Content*.
-2.  Click the *Edit* icon for Structures.
-3.  Remove the Content field and add the following fields:
+1. Go back to the Web Content section of the Control Panel and click *Add*
+   &rarr; *Basic Web Content*.
+2. Click *Select* next to the Structures heading to access the Manage Structures
+   interface.
+3. Click on the *Add* button.
+4. Add the following fields:
 
-Field Type		Variable Name
-----------		-------------
-Text				*title*
-Text Box		 	*abstract*
-Image			*image*
-Text Area		*body*
+Field Type		        Variable Name
+----------		        -------------
+Text				    *title*
+Text Box		 	    *abstract*
+Documents and Media     *image*
+Text Area		        *body*
 
-4.  Select *Save* and give the structure a name.
-5.  Go back to the main web content page and select the *Templates* tab.
-6.  Select *Add Template.*
-7.  Type in a name and description.
-8.  De-select the box labeled *Cacheable.*
-9.  Select VM as the language.
-10. Click *Select* and choose a Structure that goes with the Templates.
-11. If you've written the script beforehand, you can select *Browse* to upload
-it from your machine. Otherwise, you can click *Launch Editor* to type the
-script directly into the small editor window that appears.
-12. Select *Save.*
-13. Return to the Web Content tab and open the Company News content. You'll see
-the new element labeled Abstract just below the Title.
+5.  Name the structure *News Article* and click *Save*.
+6.  Back on the Manage Structures interface, click *Actions* &rarr; *Manage
+    Templates* next to the News Article structure that you created.
+7.  Click *Add*.
+8.  Enter the name *News Article* and add a description.
+9.  Make sure Velocity is selected as the script language (it's the default).
+10. If you've written the script beforehand, you can select *Browse* to upload
+    it from your machine. Otherwise, you can click *Launch Editor* to type the
+    script directly into the small editor window that appears.
+11. Click *Save*.
+12. Click *Back*.
+13. Select the News Article structure.
+14. On the New Web Content form, you'll see the Title, Abstract, Image, and Body
+    fields that you defined for the News Article structure. The News Article
+    template should also be selected.
+15. Populate the fields and click *Publish* to publish your News Article.
 
 Below is the template script for this structure. It is written in Velocity:
 
