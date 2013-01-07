@@ -760,7 +760,9 @@ drop-down selector attached to the heading.
 Once you have the Nose-ster site selected, click on the *Web Content* link in
 the Control Panel. You'll see a folder structure containing all of the web
 content articles that exist in the currently selected scope (the Nose-ster
-site). You can click *Add* &rarr; *Folder* to create a new folder. Click *Add*
+site). You can click *Add* &rarr; *Folder* to create a new folder. For sites
+with lots of content and web content articles, it can be very useful to use
+folders to group certain kinds of web content articles together. Click *Add*
 &rarr; *Basic Web Content* to create a new web content article.
 
 ![Figure 2.x: Click *Add* &rarr; *Basic Web Content* to create a new
