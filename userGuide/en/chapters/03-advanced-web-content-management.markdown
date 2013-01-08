@@ -90,6 +90,16 @@ The first way to access the Manage Structures interface is simply by clicking
 structures that exist in your currently selected scope. Here, you can add new
 web content structures, edit existing ones, manage the templates associated with
 a structure, edit the permissions of a structure, and copy or delete structures.
+Copying web content structures can be useful if you'd like to create a new web
+content structure that's similar to an existing one, but you don't want to start
+from scratch. Liferay generates a unique portal ID for the copied structure, but
+every other attribute of the copied structure, including the name, is the same
+as that of the original. Once you've copied a web content structure, you should
+enter a new name for it to avoid confusing it with the original. When you copy a
+web content structure, you'll be prompted to choose whether to copy any detail
+templates or list templates associated with the structure. For information on
+detail templates and list templates, please refer to chapter 9 on Dynamic Data
+Lists.
 
 ![Figure 3.1: You can access the Manage Structures interface by clicking
 *Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
@@ -181,8 +191,10 @@ can have it indexed by keyword, which filters out common words such as *and*,
 *but*, *the*, and so on, or you can have it index the full text of the field. By
 default, indexing is turned off.
 
-**Predefined Value:** If there's a common default value for this field, type it
-here.
+**Predefined Value:** Specifying predefined values for structure forms is a way
+to specify defaults. When a user creates a new web content article based on a
+structure that has predefined values for various fields, the predefined values
+appear in the form as defaults for those fields.
 
 **Instructions for the User:** Check this box and type a description of what the
 field is for to display it as a tooltip for the user. 
@@ -202,47 +214,8 @@ an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
 instructions are displayed.
 
-##### Specifying predefined values for structure forms
-
-Specifying predefined values for structure forms is a way to specify defaults.
-When a user creates a new web content article based on a structure that has
-predefined values for various fields, the predefined values appear in the form
-as defaults for those fields.
-
-Returning to our newspaper scenario again, let's say you want all sports
-articles to have the same display page (sports page), the same categories, or
-the same set of tags. Instead of adding them for each article or wondering if
-your users are adding them to every web content, you can add these
-characteristics once for every sports article by creating default values for the
-structure. There are two ways to edit structure default values: creating a new
-structure or editing an existing structure.
-
-For a new structure, you must first create the structure before editing its
-default values. Navigate to *Web Content* in the Control Panel and click on
-*Manage* &rarr; *Structures*. Then click *Add*. Under the *XML Schema
-Definition* section of the new structure form, use the *Add Row* button to
-create different types of fields for the structure. Or you can use the editor to
-create the structure manually: the Launch Editor button allows you to edit the
-XML for the structure if you wish to do it via code. When you are done, click
-*Save and Continue* to go to the Structure Default Values form.
-
-![Figure 3.2: You can create fields for structure default values via the XML
-Schema Definition section of the new structure
-form.](../../images/xml-schema-definitions.png)
-
-To edit an existing structure, go to *Web Content* in the Control Panel and
-click the *Structures* tab to see the structures list. Find the *Actions* button
-for the desired structure and select *Edit Default Values* from the menu to view
-a window like the one below. This form allows you to manage the structure
-settings.
-
-![Figure 3.3: You can edit default values via the Actions button of the structure  form.](../../images/structure-default-values-sports.png)
-
-Every new web content you create with this structure is preloaded with the
-data you inserted.
-
-As with everything else in Liferay, you can set permissions on structures. Let's
-see how you'd do that.
+As with everything else in Liferay, you can set permissions on structures. Next,
+let's look at how to do that.
 
 ##### Assigning Permissions 
 
