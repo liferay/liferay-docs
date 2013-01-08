@@ -533,7 +533,7 @@ section.
 your site. It uses the sitemap protocol, which is an industry standard. You can
 publish your site to Yahoo or Google and their web crawlers will use the sitemap
 to index your site. Liferay Portal makes this very simple for administrators by
-generating the sitemap XML ally for all public web sites.
+generating the sitemap XML for all public web sites.
 
 By selecting one of the search engine links, the sitemap will be sent to them.
 It's only necessary to do this once per site. The search engine crawler will
@@ -553,7 +553,7 @@ full explanation of Staging, see chapter 3: Advanced web content management.
 
 **Analytics:** allows you to integrate your pages with Google Analytics. Liferay
 provides seamless integration with Google Analytics, allowing you to place your
-ID in one place, then it will get inserted ally on every page. This enables you
+ID in one place, then it will get inserted on every page. This enables you
 to focus your efforts on building the page, rather than remembering to put the
 code everywhere. Google Analytics is a free service which lets you do all kinds
 of traffic analysis on your site so you can see who visits, where visitors are
