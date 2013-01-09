@@ -1,4 +1,4 @@
-# Liferay APIs [](id=liferay-ap-1)
+# Liferay APIs 
 
 This chapter provides an overview of several of the essential Liferay
 *application programming interfaces* (*APIs*) available to developers. An API is
@@ -47,7 +47,7 @@ requests to a portal.
 
 First, let's consider invoking Liferay's services locally.
 
-## Invoking the API locally [](id=invoking-the-api-locally)
+## Invoking the API locally 
 
 Each service provides a local interface to clients running in the same JVM as
 the portal. There are two ways to invoke the methods of a service API:
@@ -121,7 +121,7 @@ This JSP code invokes static method `getOrganizationStatsUsers()` on the
 
 We'll look at invoking services remotely, next.
 
-## Invoking the API remotely [](id=invoking-the-api-remotely)
+## Invoking the API remotely 
 
 Liferay services can also be invoked in a *remote* manner. The services API is
 available to *remote* clients -- clients running outside of the portal JVM or
@@ -144,7 +144,7 @@ have plenty of good options for leveraging Liferay's API.
 Next, we'll step back for a moment and consider the security layers of Liferay's
 *service oriented* architecture and how they can be configured.
 
-## Service Security Layers [](id=service-security-layers)
+## Service Security Layers 
 
 By default, a user connecting from the same machine Liferay is running on can
 access remote services so long as that user has permission to use those services
@@ -267,7 +267,7 @@ security checks:
 
 Next, we'll learn about Liferay's SOAP web services.
 
-## SOAP Web Services [](id=soap-web-services)
+## SOAP Web Services 
 
 Liferay's services also provide access via *Simple Object Access Protocol*
 (*SOAP*) over HTTP. SOAP is the *packaging* protocol and HTTP is the *transport*
@@ -329,7 +329,7 @@ with your login credentials to the SOAP service locator for your service.
 
 Next, let's invoke the web service!
 
-### SOAP Java Client [](id=lp-6-1-dgen08-soap-java-client-0)
+### SOAP Java Client 
 
 A Java web service client can easily be set up using the Eclipse IDE. Here is
 how you can do it:
@@ -521,7 +521,7 @@ specified in the WSDL for each Liferay web service. It's all there for you!
 Next, let's try accomplishing the same behavior by using a client implemented in
 PHP.
 
-### SOAP PHP Client [](id=lp-6-1-dgen08-soap-php-client-0)
+### SOAP PHP Client 
 
 Now, let's say you want write your client in a language other than Java ... no
 problem! You can use any language that supports web services invocation.
@@ -573,7 +573,7 @@ web services, go ahead and try it out on Liferay's SOAP web services!
 
 Next, we'll explore Liferay's JSON Web Services.
 
-## JSON Web Services [](id=json-web-services)
+## JSON Web Services 
 
 JSON Web Services provide convenient access to portal service methods by
 exposing them as JSON HTTP API. This makes services methods easily accessible
@@ -584,7 +584,7 @@ JSON Web Service functionality can be split into the following topics:
 registration, configuration, invocation and results. We'll cover each topic
 here.
 
-### Registering JSON Web Services [](id=lp-6-1-dgen08-registering-json-web-services-0)
+### Registering JSON Web Services 
 
 Liferay's developers use a tool called *Service Builder* to build services. All
 remote-enabled services (i.e. entities with `remote-service="true"` in
@@ -626,7 +626,7 @@ in the console output when the debug log level is set:
 At this point, scanning and registration is done and all service methods (those
 of `DLAppService` and of other services) are registered as JSON Web Services.
 
-#### Registering Plugin JSON Web Services [](id=lp-6-1-dgen09-registering-plugin-json-web-services-0)
+#### Registering Plugin JSON Web Services 
 
 Custom portlets can be registered and scanned for JSON web services, too.
 Services that use the `@JSONWebService` annotation become part of the JSON API. Since scanning of portlet
@@ -674,7 +674,7 @@ portlet's `web.xml`:
 
 This enables the servlet to scan and register your portlet's JSON Web Services.
 
-#### Mapping and naming conventions [](id=lp-6-1-dgen08-mapping-and-naming-conventions-0)
+#### Mapping and naming conventions 
 
 Mapped URLs of exposed service methods are formed using the following naming
 convention:
@@ -722,7 +722,7 @@ Requests sent this way can conveniently leverage the user's authentication in
 his current portal session. Liferay's JavaScript API for services calls plugin
 services this way.
 
-#### Listing available JSON Web Services [](id=lp-6-1-dgen08-listing-available-json-web-services-0)
+#### Listing available JSON Web Services 
 
 To overview a service and verify which service methods are registered and
 available, you can get a service listing in your browser by opening the base
@@ -744,14 +744,14 @@ use its context path:
 
 This will list the JSON Web Service API for the portlet.
 
-#### More on registration [](id=lp-6-1-dgen08-more-on-registration-0)
+#### More on registration 
 
 As said, you can control registration by using annotations in your
 `-ServiceImpl` class. This overrides any configuration defined in the interface.
 Moreover, you can fine-tune which *methods* are visible/hidden using annotations
 at the method level.
 
-##### Ignoring a method [](id=lp-6-1-dgen08-ignoring-a-method-0)
+##### Ignoring a method 
 
 To ignore a method from being exposed as a service, just annotate the method
 with:
@@ -760,7 +760,7 @@ with:
 
 Any methods annotated like this do not become part of the JSON Web Service API.
 
-##### HTTP method name and URL [](id=lp-6-1-dgen08-http-method-name-and-url-0)
+##### HTTP method name and URL 
 
 It is also possible to define custom HTTP method names and URL names, using a
 similar annotation at the method level.
@@ -788,7 +788,7 @@ in class-level annotation:
 This maps all the service methods of the class to URL class name `dla` instead
 of the `dlapp` default.
 
-##### Manual registration mode [](id=lp-6-1-dgen08-manual-registration-mode-0)
+##### Manual registration mode 
 
 Up to now, it is expected most of the service methods are going to be exposed;
 that only specific methods are to be hidden (the *blacklist* approach). But
@@ -812,14 +812,14 @@ of this service are to be excluded from the API.
 Next, let's take a look at portal configuration options that apply to JSON Web
 Services.
 
-### Portal Configuration of JSON Web Services [](id=lp-6-1-dgen08-portal-configuration-of-json-web-services-0)
+### Portal Configuration of JSON Web Services 
 
 JSON Web Services are enabled on Liferay Portal by default but can be easily
 disabled by specifying the following portal property setting:
 
 	json.web.service.enabled=false
 
-#### Strict HTTP methods [](id=lp-6-1-dgen08-strict-http-methods-0)
+#### Strict HTTP methods 
 
 JSON Web Service services are, by default, mapped to either GET or POST HTTP
 methods. If a service method has a name that starts with `get`, `is` or `has`,
@@ -836,7 +836,7 @@ portal property:
 When using strict mode, you must use the correct HTTP methods in calling service
 methods.
 
-#### Disabling HTTP methods [](id=lp-6-1-dgen08-disabling-http-methods-0)
+#### Disabling HTTP methods 
 
 When strict HTTP method mode is enabled, you can even filter web service access
 based on HTTP methods used by the services. For example, you can set the portal
@@ -847,7 +847,7 @@ GET. For example:
 
 Now all requests that use HTTP methods from the list above are simply ignored.
 
-#### Controlling public access [](id=lp-6-1-dgen08-controlling-public-access-0)
+#### Controlling public access 
 
 Each service method determines for itself whether it can be executed by
 unauthenticated users and whether a user has adequate permission for the chosen
@@ -867,14 +867,14 @@ to enable access to all exposed methods specify `*`.
 
 Lastly, let's consider how to invoke JSON Web Services.
 
-### Invoking JSON Web Services [](id=lp-6-1-dgen08-invoking-json-web-services-0)
+### Invoking JSON Web Services 
 
 JSON Web Services can be invoked in several ways depending on how their
 parameters (i.e. method arguments) are passed in. But before we dive into
 different ways of passing parameters, it's important to understand how your
 invocation is matched to a method.
 
-#### Matching service methods [](id=lp-6-1-dgen08-matching-service-methods-0)
+#### Matching service methods 
 
 It is important to understand how calls to service methods are matched,
 especially when a service method is overloaded.
@@ -889,7 +889,7 @@ parameters, etc.) is not important nor is the order of the parameters.
 An exception to the rule of *all* parameters being required, is when using
 numeric *hints* to match methods. Let's look at using hints next.
 
-#### Using hints [](id=lp-6-1-dgen08-using-hints-0)
+#### Using hints 
 
 It is possible to add numeric hints that specify how many method arguments a
 service has. Hints are added as numbers separated by a dot in the method name.
@@ -908,7 +908,7 @@ Therefore, the previous example may be called with ...
 
 ... and `param2` will automatically be set to `null`.
 
-#### Passing parameters as part of URL path [](id=lp-6-1-dgen08-passing-parameters-as-part-of-url-path-0)
+#### Passing parameters as part of URL path 
 
 Parameters can be passed as part of the URL path. After the service URL, you can
 append methods parameters in name/value pairs. Parameter names must be formed
@@ -923,7 +923,7 @@ in which the arguments specified in the method signatures.
 When a method name is overloaded, the *best match* will be used: The method that
 contains the least number of undefined arguments is invoked.
 
-#### Passing parameters as URL query [](id=lp-6-1-dgen08-passing-parameters-as-url-query-0)
+#### Passing parameters as URL query 
 
 Parameters can be passed as request parameters, too. The difference is parameter
 names are specified as is (e.g. camel-case) and are set equal to their argument
@@ -934,12 +934,12 @@ values:
 As with passing parameters as part of a URL path, the parameter order is not
 important, the *best match* rule applies for overloaded methods, etc.
 
-#### Mixed way of passing parameters [](id=lp-6-1-dgen08-mixed-way-of-passing-parameters-0)
+#### Mixed way of passing parameters 
 
 Parameters can be passed in a mixed way: some can be part of the URL path and
 some can be specified as request parameters.
 
-#### Type conversion of the parameters [](id=lp-6-1-dgen09-type-conversion-of-the-parameters-0)
+#### Type conversion of the parameters 
 
 Parameter values are sent as strings using the HTTP protocol. Before a matching
 Java service method is invoked, each parameter value is converted from a string
@@ -976,7 +976,7 @@ service parameters for a `List<Locale>` Java method argument type:
 *Step 2 - Generification - * Each string is converted to the `Locale` (the
 generics type), resulting in the `List<Locale>` Java argument type.
 
-#### Sending NULL values [](id=lp-6-1-dgen08-sending-null-values-0)
+#### Sending NULL values 
 
 To pass a `null` value for an argument, simply prefix the parameter name with a
 dash `-`. For example:
@@ -997,7 +997,7 @@ without a prefix. For example:
 
 	"last-access-date" : null
 
-#### Parameters encoding [](id=lp-6-1-dgen08-parameters-encoding-0)
+#### Parameters encoding 
 
 Although often forgotten, there is a difference between URL encoding and query
 (i.e. request parameters) encoding. An illustrative example of this is the
@@ -1022,7 +1022,7 @@ request parameters. The resulting value is the string
 received, this value is first going to be translated to an array of 10 bytes
 (URL decoded) and then converted to a UTF-8 string of the 5 original characters.
 
-#### Sending files as arguments [](id=lp-6-1-dgen08-sending-files-as-arguments-0)
+#### Sending files as arguments 
 
 Files can be uploaded using multipart forms and requests. Example:
 
@@ -1039,7 +1039,7 @@ Files can be uploaded using multipart forms and requests. Example:
 As you see, it's a common upload form that invokes the `addFileEntry` method of
 the `DLAppService` class.
 
-#### JSON RPC [](id=lp-6-1-dgen08-json-rpc-0)
+#### JSON RPC 
 
 JSON Web Service may be invoked using [JSON RPC](http://json-rpc.org/). A good
 part of JSON RPC 2.0 specification is supported in Liferay JSON Web Services.
@@ -1057,7 +1057,7 @@ Here is an example of invoking a JSON web service using JSON RPC:
 		"jsonrpc":"2.0"
 	}
 
-#### Default parameters [](id=lp-6-1-dgen08-default-parameters-0)
+#### Default parameters 
 
 When accessing *secure* JSON web services (user has to be authenticated), some
 parameters are made available to the web services by default. They need not to
@@ -1071,7 +1071,7 @@ Default parameters are:
 + `companyId` - users company
 + `serviceContext` - empty service context object 
 
-#### Object parameters [](id=lp-6-1-dgen08-object-parameters-0)
+#### Object parameters 
 
 Most services accept simple parameters: numbers, strings etc. However, sometimes
 you need to provide an object (a non-simple type) as a service parameter.
@@ -1116,7 +1116,7 @@ or in JSON RPC:
 All these examples specify a concrete implementation for `foo` service method
 parameter.
 
-#### Inner Parameters [](id=lp-6-1-dgen08-inner-parameters-0)
+#### Inner Parameters 
 
 In many cases, you'll need to populate objects that are passed as parameters. A
 good example is a default parameter `serviceContext` of type `ServiceContext`
@@ -1144,7 +1144,7 @@ and are ignored during matching.
 
 ---
 
-### Returned values [](id=lp-6-1-dgen08-returned-values-0)
+### Returned values 
 
 No matter how a JSON web service is invoked, it returns a JSON string that
 represents the service method result. Any returned objects are *loosely*
@@ -1178,12 +1178,12 @@ To find out how to serialize Java objects, maps and lists, check out article
 Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization)
 by Igor Spasi&#263;.
 
-### Common JSON WebService errors [](id=lp-6-1-dgen09-common-json-webservice-errors-0)
+### Common JSON WebService errors 
 
 While working with JSON Web Services, you may encounter some of the common
 errors described in the following subsections.
 
-#### Missing value for parameter [](id=lp-6-1-dgen09-missing-value-for-parameter-0)
+#### Missing value for parameter 
 
 This error means you didn't pass a parameter value along with the parameter name
 in your the URL path. The parameter value must follow the parameter name in the
@@ -1199,7 +1199,7 @@ parameter name:
 
 	/api/jsonws/user/get-user-by-id/userId/173
 
-#### No JSON web service action associated [](id=lp-6-1-dgen09-no-json-web-service-action-associated-0)
+#### No JSON web service action associated 
 
 This is error means no service method could be matched with the provided data
 (method name and argument names). This can be due to various reasons: arguments
@@ -1209,12 +1209,12 @@ API will automatically be propagated to the JSON web services. For example, if a
 new argument is added to a method or an existing argument is removed from a
 method, the parameter data must match that of the new method signature.
 
-#### Unmatched argument type [](id=lp-6-1-dgen09-unmatched-argument-type-0)
+#### Unmatched argument type 
 
 This error appears when you try to instantiate a method argument using an
 incompatible argument type.
 
-### JSON Web Services Invoker [](id=lp-6-1-dgen09-json-web-services-invoker-0)
+### JSON Web Services Invoker 
 
 Using JSON Web Services is easy, you send a request that defines a service
 method and parameters and you receive the result as JSON object. But you may
@@ -1234,7 +1234,7 @@ Well, you do -- the *JSON Web Service Invoker*.
 Liferay's JSON Web Service Invoker helps you optimize your use of JSON Web
 Services. In the following sections, we'll show you how.
 
-#### A simple Invoker call [](id=lp-6-1-dgen09-a-simple-invoker-call-0)
+#### A simple Invoker call 
 
 The Invoker is accessible on the fixed address:
 
@@ -1274,7 +1274,7 @@ Service call:
 Before we dive into more features, let's learn how to use variables with the
 Invoker.
 
-#### Invoker variables [](id=lp-6-1-dgen09-invoker-variables-0)
+#### Invoker variables 
 
 Variables are used to reference objects returned from service calls. Variable
 names must start with a `$` (dollar sign) prefix. In our previous example, the
@@ -1289,7 +1289,7 @@ service call returned a user object that can be assigned to a variable:
 Here, the variable `$user` holds the returned user object. You can reference the
 user's contact ID using the syntax `$user.contactId`.
 
-#### Nested service calls [](id=lp-6-1-dgen09-nested-service-calls-0)
+#### Nested service calls 
 
 With nested service calls, you can magically bind information from related
 objects together in a JSON object. This feature allows you to not only call
@@ -1326,7 +1326,7 @@ property named `contact`
 One remark: you need to *flag* parameters that take values from existing
 variables. Flagging is done using the `@` prefix before the parameter name.
 
-#### Filtering results [](id=lp-6-1-dgen09-filtering-results-0)
+#### Filtering results 
 
 Many of Liferay Portal's model objects are rich with properties. But, you may
 only need a handful of an object's properties for your business logic. By
@@ -1350,7 +1350,7 @@ In this example, the returned user object has only the `firstName` and the
 *white-list* properties in square brackets (`[...]`) immediately following the
 name of your variable.
 
-#### Batching calls [](id=lp-6-1-dgen09-batching-calls-0)
+#### Batching calls 
 
 As mentioned previously, nesting service calls allows you to invoke multiple
 services within a single HTTP request. Using a single request for multiple
@@ -1373,7 +1373,7 @@ leverage JSON Web Services in Liferay. Good job!
 Next, let's consider the `ServiceContext` class used by so many Liferay services
 and how it can be helpful to use in your services.
 
-## Service Context [](id=service-conte-1)
+## Service Context 
 
 The `ServiceContext` class is a parameter class to be used in passing contextual
 information for a service. By using a parameter class, it is possible to
@@ -1392,7 +1392,7 @@ This section covers:
 
 First, we'll take a look at the fields of the `ServiceContext` class.
 
-### Service Context Fields [](id=lp-6-1-dgen08-service-context-fields-0)
+### Service Context Fields 
 
 There are a good number of fields found in `ServiceContext`. The best
 descriptions of these fields are found in the Javadoc comments for of their
@@ -1454,7 +1454,7 @@ But what may also be helpful is the following categorical listing of the fields:
 In case you are wondering how the `ServiceContext` fields get populated, we're
 going to look at that next.
 
-### Creating and Populating a Service Context  [](id=lp-6-1-dgen08-creating-and-populating-a-service-context--0)
+### Creating and Populating a Service Context  
 
 All of the fields of the `ServiceContext` class are optional, although your
 services that store any type of content will require you to specify at least the
@@ -1543,7 +1543,7 @@ request object. As an example, see
 `portal-web/docroot/html/portlet/blogs/edit_entry.jsp`. Next, let's take a look
 at an example of accessing information from a `ServiceContext`.
 
-### Accessing Service Context data [](id=lp-6-1-dgen08-accessing-service-context-data-0)
+### Accessing Service Context data 
 
 This section provides code snippets from
 `BlogsEntryLocalServiceImpl.addEntry(..., ServiceContext)` that demonstrates how
@@ -1642,7 +1642,7 @@ use Expando attributes to carry these *custom* attributes along in your
 As we've demonstrated, the `ServiceContext` can be used to transfer lots of
 useful information for your services.
 
-## Using Message Bus [](id=lp-6-1-dgen09-using-message-bus-0)
+## Using Message Bus 
 
 The Message Bus is a service level API used to exchange messages within Liferay.
 The Message Bus exchanges only String messages, providing loose coupling between
@@ -1671,7 +1671,7 @@ In this section, you will learn about
 For starters, let's get a handle on the architecture of Liferay's Message Bus
 System.
 
-### The Message Bus System [](id=lp-6-1-dgen09-the-message-bus-system-0)
+### The Message Bus System 
 
 The Message Bus system is comprised of the following:
 
@@ -1745,7 +1745,7 @@ we'll show you how easy it is to create your destinations, register listeners,
 and send your messages. To help demonstrate, we'll implemenet a business
 use-case.
 
-### Example Use-Case - Procurement process [](id=lp-6-1-dgen09-example-use-case---procurement-process-0)
+### Example Use-Case - Procurement process 
 
 For our use-case, we'll consider a fictitious company Jungle Gyms R-Us. They
 distribute playground equipment, buying the equipment from manufacturers and
@@ -1798,7 +1798,7 @@ Here are the inter-department message exchanges we'll accomodate:
 
 Let's implement Procurement's request to Finance first.
 
-### Synchronous messaging [](id=lp-6-1-dgen09-synchronous-messaging-0)
+### Synchronous messaging 
 
 In our example, equipment purchases cannot proceed without approval from Finance
 and Legal departments. But, since these special offers from the manufacturers
@@ -2032,7 +2032,7 @@ Department has no gripes about the slide's safety ratings!!
 Next, let's have Procurement notify the Sales and Warehouse departments to
 solicit their feedback.
 
-### Asynchronous messaging with callbacks [](id=lp-6-1-dgen09-asynchronous-messaging-with-callbacks-0)
+### Asynchronous messaging with callbacks 
 
 As a refresher, asynchronous messaging consists of sending a message and then
 continuing on with processing. Importantly, the sender does not block waiting
@@ -2224,7 +2224,7 @@ are registered to listen for the inter-departmental responses.
 Lastly, let's remember to send news of these new products to *all* Jungle Gym
 employees.
 
-### Asynchronous "Send and Forget" [](id=lp-6-1-dgen09-asynchronous-send-and-forget-0)
+### Asynchronous "Send and Forget" 
 
 In the "send and forget" model of asynchronous messaging, the sender simply
 sends out messages and continues processing. We'll apply this behavior to Jungle
@@ -2345,7 +2345,7 @@ to your portal and receive identical content. This will make everyone happy!
 
 You're really getting the hang of Liferay's APIs. Way to go! 
 
-## Conclusion [](id=conclusi-4)
+## Conclusion 
 
 Well, you've covered a lot of ground here in learning how to use the API locally
 and remotely, how to enable/disable remote services and access to them, and how

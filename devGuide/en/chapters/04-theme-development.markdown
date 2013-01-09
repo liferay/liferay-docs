@@ -1,5 +1,5 @@
 
-# Creating Liferay Themes [](id=creating-liferay-them-7)
+# Creating Liferay Themes 
 
 Themes are hot deployable plugins which can completely transform the look and
 feel of the portal. Theme creators can make themes to provide an interface that
@@ -15,7 +15,7 @@ overriding them only where necessary. This allows themes to be smaller and less
 cluttered with extraneous data that already exists in the default theme (such as
 graphics for emoticons for the message boards portlet).
 
-## Introduction [](id=introduct-14)
+## Introduction 
 
 Liferay's themes are designed in such way that they can be very easy to create.
 You can start by making changes in CSS files and as your customization
@@ -40,7 +40,7 @@ To follow the examples of this guide you will also need some familiarity with
 using the command line. Alternatively you can use the Liferay IDE and use its
 menus instead of the commands used in the text.
 
-## Creating a Theme [](id=creating-a-the-4)
+## Creating a Theme 
 
 The process for creating a new theme is nearly identical to the one for making a
 portlet. You will need both a project name (without spaces) and a display name
@@ -77,7 +77,7 @@ this folder. When you initially create your theme, it will be empty. But later,
 when you run `ant deploy`, all the files and folders of the theme will be
 populated.
 
-### Setting a base Theme [](id=lp-6-1-dgen04-setting-a-base-theme-0)
+### Setting a base Theme 
 
 All themes in Liferay are built on top of the *_unstyled* and *_styled* themes,
 which contain very limited styling. By default, when you create a theme, it will
@@ -97,7 +97,7 @@ If you want to use a different base theme than the default, you can edit the
 to the name of any theme currently available in your environment that you wish
 to use.
 
-### Deploying the Theme [](id=lp-6-1-dgen04-deploying-the-theme-0)
+### Deploying the Theme 
 
 ***To deploy in Developer Studio:*** Click and drag your theme project onto your
 server.
@@ -126,7 +126,7 @@ over **Manage** at the top of the page, and click on *Page*. Directly underneath
 the words **Manage Pages** select the *Look and Feel* tab. Simply click on your
 theme to activate it.
 
-## Anatomy of a Theme [](id=anatomy-of-a-the-4)
+## Anatomy of a Theme 
 
 Custom themes are based on differences from one of several built-in Liferay
 themes.
@@ -223,7 +223,7 @@ your changes.
 Also make sure that you copy any changes you make back into your *_diffs*
 folder, or they will be overwritten when you redeploy your theme.
 
-## Thumbnails [](id=thumbnai-4)
+## Thumbnails 
 
 You will notice that in the *Look and Feel* settings the *Classic* theme has a
 thumbnail preview of what it looks like, while our theme has only a broken
@@ -234,7 +234,7 @@ same directory with the name `screenshot.png`. Its size must be exactly 1080
 pixels wide by 864 pixels high. After redeploying your theme, it will have a
 thumbnail preview just like the *Classic* theme.
 
-## JavaScript [](id=javascri-5)
+## JavaScript 
 
 Liferay now includes its own JavaScript library called Alloy, which is an
 extension to Yahoo's YUI3 framework. Developers can take advantage of the full
@@ -258,7 +258,7 @@ was just loaded. `node` is the Alloy Node object of the same portlet.
 
 Executed after everything -- including AJAX portlets -- has finished loading.
 
-## Settings [](id=settin-4)
+## Settings 
 
 Each theme can define settings to make it configurable. These settings are
 defined in a file named `liferay-look-and-feel.xml` inside `WEB-INF`. This file
@@ -370,7 +370,7 @@ display the new footer containing the slogan.
 
 Next, we'll take a look at how to manage color schemes in your theme.
 
-## Color Schemes [](id=color-schem-4)
+## Color Schemes 
 
 Color schemes are specified using a CSS class name, with which you can not only
 change colors, but also choose different background images, different border
@@ -423,7 +423,7 @@ schemes for it to affect both). For our example, create the folders
 each of these folders place a `thumbnail.png` and `screenshot.png` file with the
 same sizes as before.
 
-## Portal Predefined Settings [](id=portal-predefined-settin-4)
+## Portal Predefined Settings 
 
 The portal defines some settings that allow the theme to determine certain
 behaviors. So far there are only two predefined settings but this number may
@@ -475,7 +475,7 @@ code. In this case the bullet style option is **modern**:
 Using CSS and/or some unobtrusive Javascript it's possible to implement any type
 of menu.
 
-## Theme inheritance [](id=theme-inheritan-4)
+## Theme inheritance 
 
 By default, themes are based on the **_styled** theme, which provides only basic
 styling of portlets. If you open the `build.xml` file in your theme's directory

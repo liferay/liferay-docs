@@ -1,5 +1,5 @@
 
-# Collaboration Suite [](id=liferay-collaboration-sui-4)
+# Collaboration Suite 
 
 Liferay Portal ships with a robust suite of collaboration applications which
 you can use to build communities of users for your site. These applications
@@ -25,7 +25,7 @@ how to set up and administer:
 We'll discuss how these features work together to facilitate information flow
 within your portal and provide an enhanced experience for your users.
 
-## Understanding Liferay's common configuration options [](id=lp-6-1-ugen07-understanding-liferays-common-configuration-options-0)
+## Understanding Liferay's common configuration options 
 
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include
@@ -34,7 +34,7 @@ configurations, and exporting/importing portlet data. So before we get into the
 nitty gritty of the applications themselves, it's best to cover these common
 features first, starting with the look and feel configuration options.
 
-### Look and Feel [](id=lp-6-1-ugen07-look-and-feel-0)
+### Look and Feel 
 
 An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the wrench icon at the top right corner of the portlet
@@ -157,7 +157,7 @@ specify an initial window state.](../../images/look-and-feel-wap-styling.png)
 
 Next, let's discuss exporting and importing portlet data.
 
-### Export/Import [](id=lp-6-1-ugen07-exportimport-0)
+### Export/Import 
 
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
@@ -203,7 +203,7 @@ portlets on others pages may be referencing this data.
 
 Next, let's discuss the concept of a portlet's scope.
 
-### Scope [](id=lp-6-1-ugen04-scope-0)
+### Scope 
 
 As we learned earlier, roles can be scoped by the portal, by a site, or by an
 organization. A role only takes effect within its scope. For example, a Message
@@ -264,7 +264,7 @@ site as you want, provided they are all added to separate pages.
 
 Another useful feature of Liferay's portlets is Archived Setups.  
 
-### Archived Setups [](id=lp-6-1-ugen04-archived-setups-0)
+### Archived Setups 
 
 Once you've configured a portlet, Archived Setups enables you to save those
 settings in an "archive". If someone goes in and changes the settings of a
@@ -289,7 +289,7 @@ configuration options, such as the Message Boards portlet.
 
 Next, we'll see how permissions apply to Liferay portlets in general. 
 
-### Permissions [](id=lp-6-1-ugen04-permissions-0)
+### Permissions 
 
 All of Liferay's portlets support Liferay's robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab
@@ -307,7 +307,7 @@ blogs portlet. We'll go over permissions for specific applications in the
 sections for those applications. For now, let's move on to sharing
 applications.
 
-### Communication [](id=lp-6-1-ugen07-communication-0)
+### Communication 
 
 Liferay implements several communication mechanisms across portlets including
 those specified by the JSR-286 standard: public render parameters and events.
@@ -346,7 +346,7 @@ This can be achieved by setting the value of the title parameter of the Wiki
 portlet to be read from the country parameter of the administration portlet.
 Cool, isn't it?
 
-### Sharing [](id=lp-6-1-ugen04-sharing-0)
+### Sharing 
 
 The web was once thought of as a number of islands of applications in a vast
 universe of "cyberspace." Many web sites attempted to make their island the
@@ -373,14 +373,14 @@ from the portlet's title bar and select the *Sharing* tab. There are five
 subtabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and
 Friends.
 
-#### Any Web Site [](id=lp-6-1-ugen04-any-web-site-0)
+#### Any Web Site 
 
 Copy and paste the provided snippet of JavaScript code into the web site to
 which you want to add the portlet as a widget. That's all you need to do. When
 a user loads the page on the other web site, the code will pull the relevant
 portlet from your site and display it.
 
-#### Facebook [](id=lp-6-1-ugen04-facebook-0)
+#### Facebook 
 
 You can add any Liferay portlet as an application on Facebook. To do this, you
 must first get a developer key. A link for doing this is provided to you in the
@@ -396,7 +396,7 @@ Incidentally, this makes Liferay a fantastic platform upon which to build
 applications for Facebook. See the *Liferay Developer's Guide* or [*Liferay in
 Action*](http://manning.com/sezov) for more details. 
 
-#### OpenSocial Gadget [](id=lp-6-1-ugen04-opensocial-gadget-0)
+#### OpenSocial Gadget 
 
 OpenSocial comprises a container and a set of APIs for social networking and
 other web applications. iGoogle is a service provided by Google that lets users
@@ -417,7 +417,7 @@ portal at a glance, using asset publishers or custom RSS feeds. You could also
 use Liferay's API to build your own portlet and provide the URL for users to
 place on their iGoogle pages.
 
-#### Netvibes [](id=lp-6-1-ugen04-netvibes-0)
+#### Netvibes 
 
 Netvibes offers a similar service to iGoogle--users can log in, create their
 own personal portal, called a *dashboard*, and add customizable widgets to the
@@ -426,7 +426,7 @@ portlet, check the *Allow users to add [portlet-name] to Netvibes pages* box.
 You can then use the provided URL to create a custom Netvibes widget based on
 the instance of the portlet that you're using.
 
-#### Friends [](id=lp-6-1-ugen04-friends-0)
+#### Friends 
 
 The final sub-tab of the *Sharing* tab is called *Friends*. This tab has a
 single check box that allows you to give your friends permission to add the
@@ -436,7 +436,7 @@ for your blog or calendar if you wish to share them.
 Now that we've seen all the common options available in Liferay's portlet
 applications, we can move on to specific applications, starting with blogs.
 
-## Expressing yourself using Blogs [](id=blo-4)
+## Expressing yourself using Blogs 
 
 The word *Blog* is an apostrophe-less contraction of the two words *web* and
 *log*. Blogs were first popularized by web sites such as Slashdot
@@ -468,7 +468,7 @@ also a Blogs Aggregator portlet which can take entries from multiple users'
 blogs and put them all in one larger list. We will go over how to use both of
 these portlets to create a blogging site for your users.
 
-### The Blogs Portlet [](id=lp-6-1-ugen04-the-blogs-portlet-0)
+### The Blogs Portlet 
 
 The Blogs portlet is available from the *Collaboration* section of the *Add
 &rarr; More* menu. Notice that it is an instanceable portlet, meaning that it
@@ -490,7 +490,7 @@ empty. There are several display options to let you configure it to look the
 way you want it to look. Before we start adding entries, let's configure the
 portlet so that it displays entries the way you want them.
 
-#### Configuring the Blogs Portlet [](id=lp-6-1-ugen07-configuring-the-blogs-portlet-0)
+#### Configuring the Blogs Portlet 
 
 The Blogs portlet is easy to configure. Click on the *Menu* icon in the
 portlet's title bar and select *Configuration*. Beneath the Setup tab, there is
@@ -561,7 +561,7 @@ or Atom 1.0.
 Now that you have the Blogs portlet looking the way you want it, you'll want to
 review permissions for it--especially if you're working on a shared blog. 
 
-#### Permissions [](id=lp-6-1-ugen04-permissions-1)
+#### Permissions 
 
 If you have a personal blog, the default permissions should work well for you.
 If you have a shared blog, you may want to modify the permissions on the blog.
@@ -580,7 +580,7 @@ blog.
 
 Now that everyone's able to post, let's look at how posts work. 
 
-#### Adding Blog Entries [](id=lp-6-1-ugen04-adding-blog-entries-0)
+#### Adding Blog Entries 
 
 Now you're ready to begin adding blog entries. Click the *Add Blog Entry*
 button. The following data entry screen appears: 
@@ -660,7 +660,7 @@ information from multiple places. For that reason, it also includes the Blogs
 Aggregator portlet so that you can "bubble up" blog entries from multiple users
 and highlight them on your site. Let's look next at how that works. 
 
-### Aggregating Blog Entries [](id=lp-6-1-ugen04-aggregating-blog-entries-0)
+### Aggregating Blog Entries 
 
 You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator portlet allows you to publish entries from multiple bloggers on one
@@ -700,7 +700,7 @@ close the dialog box. You'll notice the Blogs Aggregator looks very much like
 the Blogs portlet, except that the entries come from more than one author. This
 makes it nice and familiar for your users to navigate. 
 
-### The Blogs Admininistrator Portlet [](id=lp-6-1-ugen07-the-blogs-admininistrator-portlet-0)
+### The Blogs Admininistrator Portlet 
 
 In the Control Panel there's a portlet for managing your site's blog entries.
 Most of the time, the Blogs portlet is the only tool you'll need to manage your
@@ -716,7 +716,7 @@ tools for managing blog entries, your best bet is to use the Blogs portlet.
 We've already talked a little bit about connecting content across the portal by
 using Related Assets; now let's take a look at the Related Assets portlet.
 
-## Organizing and sharing events with the Calendar [](id=calend-4)
+## Organizing and sharing events with the Calendar 
 
 Liferay's Calendar portlet is a complete calendaring solution. You can schedule
 any number of events of different types, receive alarms via email or text
@@ -731,7 +731,7 @@ In a similar way to the Blogs portlet, you can use the Calendar portlet as a
 shared calendar on a web site or as a personal calendar -- or both. Let's look
 at how to configure it. 
 
-### Configuring the Calendar Portlet [](id=lp-6-1-ugen07-configuring-the-calendar-portlet-0)
+### Configuring the Calendar Portlet 
 
 Open the *Configuration* dialog box from the menu in the portlet's title bar.
 The Setup tab allows you to configure three different options in subtabs:
@@ -764,7 +764,7 @@ ratings.
 
 Now that you've successfully set up your calendar, let's look at how to use it. 
 
-### Using the Calendar Portlet [](id=lp-6-1-ugen07-using-the-calendar-portlet-0)
+### Using the Calendar Portlet 
 
 The Calendar portlet inherits its interface from the rest of Liferay's portlet
 library, so you should find shared features in the same place that you find
@@ -833,7 +833,7 @@ As you can see, the Calendar portlet is easy to use and convenient for users of
 the portal. Next, let's look at one of the most widely used applications
 provided by Liferay: its message boards.
 
-## Discuss, ask and answer using the Message Boards [](id=message-boar-4)
+## Discuss, ask and answer using the Message Boards 
 
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
@@ -858,7 +858,7 @@ title bar and click *Configuration*. There are two rows of tabs. The first tab
 in the top row is titled *Setup*. This is where you can configure the
 application the way you want it to behave on your site.
 
-### General [](id=lp-6-1-ugen04-general-0)
+### General 
 
 The first tab beneath *Setup* is labeled *General*. Here, you can enable
 anonymous posting, subscribe by default, flags, ratings, and thread as question
@@ -891,13 +891,13 @@ Liferay Portal's social equity system to rank your site members by how helpful
 their contributions are. You can read more about social equity later in this
 chapter and in chapter 9.
 
-### Email From [](id=lp-6-1-ugen04-email-from-0)
+### Email From 
 
 This tab allows you to configure the email address that messages from the
 Message Boards portlet come from. By default, the name is `Joe Bloggs` and the
 email address is `test@liferay.com`.
 
-### Message Added Email [](id=lp-6-1-ugen04-message-added-email-0)
+### Message Added Email 
 
 This tab allows you to customize the email message that users receive when a
 message is added to a topic to which they are subscribed.
@@ -921,13 +921,13 @@ certain variables which you can use in the fields above to customize the email
 message. Some of these variables are for the message board category name, the
 site name, and more.
 
-### Message Updated Email [](id=lp-6-1-ugen04-message-updated-email-0)
+### Message Updated Email 
 
 The Message Updated Email tab is identical to the Message Added Email tab,
 except it defines the email message that users receive whenever a topic is
 updated.
 
-### Thread Priorities [](id=lp-6-1-ugen04-thread-priorities-0)
+### Thread Priorities 
 
 You can define custom priorities for message threads on this tab. These allow
 administrators to tag certain threads with certain priorities in order to
@@ -940,7 +940,7 @@ There is also a field on this form that allows you to select a localized
 language for your priorities. If you need to do this, you can select the
 language from the selection box.
 
-### User Ranks [](id=lp-6-1-ugen04-user-ranks-0)
+### User Ranks 
 
 On this tab, users can be ranked according to the number of messages they have
 posted. You can set up custom ranks here. Defaults have been provided for you,
@@ -975,7 +975,7 @@ rank.
 As with thread priorities, on this tab you can define whether your ranks are
 localized in a particular language.
 
-### RSS [](id=lp-6-1-ugen04-rss-0)
+### RSS 
 
 Message board threads can be published as RSS feeds. This tab allows you to
 define how the feeds are generated.
@@ -988,7 +988,7 @@ an abstract, or just the title of a thread.
 
 **Format:** allows you to choose the format: RSS 1.0, RSS 2.0, or Atom 1.0.
 
-### Permissions [](id=lp-6-1-ugen04-permissions-2)
+### Permissions 
 
 The default page that the Message Boards portlet displays has three buttons on
 it. Click the one labeled *Permissions*. This allows you to define which roles
@@ -996,7 +996,7 @@ have the ability to add a category of threads or to ban abusive users from the
 message boards. Select the roles and permissions you want to configure and then
 click *Submit*.
 
-### Adding Categories and Mailing Lists [](id=lp-6-1-ugen07-adding-categories-and-mailing-lists-0)
+### Adding Categories and Mailing Lists 
 
 You are now ready to add categories to your message boards. Click the *Add
 Category* button. You may merge with a Parent Category by enabling the *Merge
@@ -1088,7 +1088,7 @@ unlimited level. For usability reasons, you don't want to nest your categories
 too deep, or your users will have trouble finding them. You can always add more
 categories as your message boards grow.
 
-### Using the Message Boards [](id=lp-6-1-ugen04-using-the-message-boards-0)
+### Using the Message Boards 
 
 Upon seeing Liferay's Message Boards portlet, your users will immediately
 recognize that the interface is similar to many other implementations they've
@@ -1113,7 +1113,7 @@ has a list of who the top posters to your message boards are. The Banned Users
 tab shows all of the users who have been banned from posting on the message
 boards.
 
-### Posting New Threads [](id=lp-6-1-ugen04-posting-new-threads-0)
+### Posting New Threads 
 
 To post a new thread simply select the *Post New Thread* button. You will see a
 message editing form. The body field on this form is different from that of the
@@ -1171,7 +1171,7 @@ management features. Posts on the message board show users' pictures if they
 have uploaded one for themselves, as well as the dates that users created an ID
 on your site.
 
-### Message Board Administrative Functions [](id=lp-6-1-ugen07-message-board-administrative-functions-0)
+### Message Board Administrative Functions 
 
 The Message Boards portlet provides for the day to day administration of the
 message threads. You may wish to separate this function out by a role, and then
@@ -1199,7 +1199,7 @@ permissions. Message Board administrators can perform all of the functions we
 have already presented, including creating and deleting categories and posting
 threads. In addition to these, a number of other functions are available.
 
-#### Moving Threads [](id=lp-6-1-ugen04-moving-threads-0)
+#### Moving Threads 
 
 Many times a user will post a thread in the wrong category. Administrators may
 in this case want to move a thread to the proper category. This is very easy to
@@ -1212,7 +1212,7 @@ allows you to post a message explaining why the thread was moved. This message
 will be posted as a reply to the thread you are moving. When finished, click
 the *Move Thread* button and the thread will be moved.
 
-#### Deleting Threads [](id=lp-6-1-ugen04-deleting-threads-0)
+#### Deleting Threads 
 
 Users with administrative access to the message boards can delete threads.
 Sometimes users begin discussing topics that are inappropriate or that reveal
@@ -1222,7 +1222,7 @@ to every thread is an *Actions* button. Click *Actions &rarr; Delete* to delete
 the thread. This does not prevent users from re-posting the information, so you
 may need to be vigilant in deleting threads or consider the next option.
 
-#### Banning Users [](id=lp-6-1-ugen04-banning-users-0)
+#### Banning Users 
 
 Unfortunately, sometimes certain users become abusive. If you wind up with a
 user like this, you can certainly make attempts to warn him or her that the
@@ -1239,7 +1239,7 @@ abusive behavior, you can choose to reinstate the user. To do this, click the
 list of all banned users. Find the user in the list and select *Unban this
 User*.
 
-#### Splitting Threads [](id=lp-6-1-ugen04-splitting-threads-0)
+#### Splitting Threads 
 
 Sometimes a thread will go on for a while and the discussion completely changes
 into something else. In this case, you can split the thread where the
@@ -1248,14 +1248,14 @@ Administrative users will see a *Split Thread* link on each post. To split the
 thread, click the link. You will be brought to a form which allows you to add
 an explanation post to the split thread. Click *Ok* to split the thread.
 
-#### Editing Posts [](id=lp-6-1-ugen04-editing-posts-0)
+#### Editing Posts 
 
 Administrative users can edit anyone's posts, not just their own. Sometimes
 users will post links to copyrighted material or unsuitable pictures. You can
 edit these posts, which allows you to redact information that should not be
 posted or to censor profanity that is not allowed on your message boards.
 
-#### Permissions [](id=lp-6-1-ugen04-permissions-3)
+#### Permissions 
 
 Permissions can be set not only on threads, but also on individual posts. You
 can choose to limit a particular conversation or a post to only a select group
@@ -1267,7 +1267,7 @@ thread, while others are only allowed to view it. Other combinations of the
 above permissions are also possible. Next, let's discuss Liferay's Wiki
 portlet.
 
-## Working together with the Wiki [](id=wik-4)
+## Working together with the Wiki 
 
 Liferay's Wiki portlet, like the Message Boards portlet, is a full-featured
 wiki application which has all of the features you would expect in a state of
@@ -1297,7 +1297,7 @@ be familiar to users of other wikis. The portlet provides a handy cheat sheet
 for the syntax on the page editing form, with a link to the full documentation
 if you wish to use some of WikiCreole's advanced features.
 
-### Getting Started with the Liferay Wiki [](id=lp-6-1-ugen07-getting-started-with-the-liferay-wiki-0)
+### Getting Started with the Liferay Wiki 
 
 The Wiki portlet works just like the other portlets developed by Liferay. Add
 the portlet to a page using the *Add &rarr; More* menu and then click
@@ -1338,7 +1338,7 @@ parameter of the other portlet.
 
 Once you have set the options the way you want them, click *Save*.
 
-### Managing Wikis [](id=lp-6-1-ugen04-managing-wikis-0)
+### Managing Wikis 
 
 The Wiki portlet can contain many wikis. By default, it contains only one,
 called *Main*. To manage Wikis, navigate to the *Control Panel* and select
@@ -1402,7 +1402,7 @@ private for site members.
 Finally, the Wiki portlet also supports RSS feeds as the other collaboration
 portlets do, and you can configure its options in the *RSS* tab.
 
-### Adding and Editing Wiki Pages [](id=lp-6-1-ugen07-adding-and-editing-wiki-pages-0)
+### Adding and Editing Wiki Pages 
 
 By default, there is one page added to your wiki, called *FrontPage*. To get
 started adding data to your wiki, click the *Edit* link at the top right of the
@@ -1459,14 +1459,14 @@ create wiki pages. This allows you to organize your content in a more formal
 fashion. You can create categories using the Control Panel, in the *Categories*
 section.
 
-### Page Details [](id=lp-6-1-ugen04-page-details-0)
+### Page Details 
 
 When viewing a page, you can view its details by clicking the *Details* link
 which appears in the top right of the page. This allows you to view many
 properties of the page. There are several tabs which organize all of the
 details into convenient categories.
 
-#### Details [](id=lp-6-1-ugen04-details-0)
+#### Details 
 
 The Details tab shows various statistics about the page, and also allows you to
 perform some actions on the page.
@@ -1493,27 +1493,27 @@ wiki or just to this page.
 **Advanced Actions:** contains links allowing you to modify the permissions on
 the page, make a copy of the page, move (rename) the page, or delete the page.
 
-#### History [](id=lp-6-1-ugen04-history-0)
+#### History 
 
 This tab shows a list of all of the versions of the wiki page since it was
 created. You can revert a page back to a previous state and you can also
 compare the differences between versions by selecting the versions and then
 clicking the *Compare Versions* button.
 
-#### Incoming/Outgoing Links [](id=lp-6-1-ugen04-incomingoutgoing-links-0)
+#### Incoming/Outgoing Links 
 
 The next two tabs are for incoming and outgoing links. These are wiki links to
 and from the page. You can use this tab to examine how this page links to other
 pages and how other pages link back to this page.
 
-#### Attachments [](id=lp-6-1-ugen04-attachments-0)
+#### Attachments 
 
 The last tab is for attachments. You can attach any file to the wiki. This is
 mostly used to attach images to wiki articles which can then be referenced in
 the text. Referencing them using the proper WikiCreole syntax renders the image
 inline, which is a nice way to include illustrations in your wiki documents.
 
-### Navigating in the Wiki Portlet [](id=lp-6-1-ugen07-navigating-in-the-wiki-portlet-0)
+### Navigating in the Wiki Portlet 
 
 At the top of the portlet is a list of links which allow you to navigate around
 the wiki. Next to the *Manage Wikis* button is a list of wikis that are
@@ -1546,7 +1546,7 @@ The Wiki portlet is another full-featured Liferay application with all of the
 features you expect from a state of the art wiki. Next, we'll look at how
 Liferay handles live chat.
 
-## Find out what others think or do using Polls [](id=lp-6-1-ugen07-find-out-what-others-think-or-do-using-polls-0)
+## Find out what others think or do using Polls 
 
 How well do you know your users? Do you ever wonder what they're thinking? Is
 using your site easy for them? How do they feel about the hot-button issues of
@@ -1576,7 +1576,7 @@ several questions inside a nested portlet to create a survey.
 
 We'll begin by creating a poll in the Control Panel.
 
-### Creating a Poll [](id=lp-6-1-ugen07-creating-a-poll-0)
+### Creating a Poll 
 
 In the Control Panel, navigate to the *Polls* link under Content. Click the
 *Add Question* button. A form appears that allows you to fill out all the
@@ -1620,7 +1620,7 @@ further information about permissions, please see chapters 15 and 16.
 As you can see, creating a poll is fairly straightforward. Next, let's complete
 the two-step process and put your poll on a page.
 
-### Adding a Poll to a Page [](id=lp-6-1-ugen07-adding-a-poll-to-a-page-0)
+### Adding a Poll to a Page 
 
 Now that you have created your poll question, it's time to present it to your
 users. Navigate to your portal and add the Polls Display portlet to a page. It
@@ -1669,7 +1669,7 @@ You can also manage the Polls Display portlet by clicking the wrench symbol in
 the upper right corner of the portlet's title bar. Now let's see the poll
 results.
 
-### Viewing the Poll Results [](id=lp-6-1-ugen07-viewing-the-poll-results-0)
+### Viewing the Poll Results 
 
 When you create a poll question, it appears in a list in the Control Panel.
 After users vote in the poll, the data is collected here. If you select it, the
@@ -1696,7 +1696,7 @@ questions or you can use Polls to create a little fun for your community. As
 with most things in Liferay, you are only limited by your imagination. Now
 let's see what you can do with Liferay's Chat feature.
 
-## Staying in touch with the Chat [](id=ch-4)
+## Staying in touch with the Chat 
 
 Liferay's Chat portlet provides a convenient way of allowing users to send each
 other instant messages when they are logged into your web site. It appears as a
@@ -1722,7 +1722,7 @@ your friends who are online. Click the *Online Friends* link and then click on
 a friend's name to open a chat window. You can have multiple chats open at a
 time, and can have one or more of them minimized.
 
-### Jabber Server Integration [](id=lp-6-1-ugen04-jabber-server-integration-0)
+### Jabber Server Integration 
 
 Liferay 6.1 introduced Jabber server integration to Liferay's Chat portlet.
 Jabber is the original name of the XMPP (Extensible Messaging and Presence
@@ -1739,7 +1739,7 @@ override some properties of your Chat portlet's `portlet.properties` file. You
 could modify your Chat portlet's `portlet.properties` file directly, but it's a
 best practice to override it instead.
 
-#### Installation Steps [](id=lp-6-1-ugen04-installation-steps-0)
+#### Installation Steps 
 
 You can use any chat server that supports Jabber. The Chat portlet's Jabber
 server integration feature was tested with versions 3.7.0 and 3.7.1 of
@@ -1781,7 +1781,7 @@ chat server on a remote machine or chose to not use the default port, change
 3. Deploy your Chat portlet. Remember that this portlet must be of version 6.1
 or higher.
 
-#### Single Sign On [](id=lp-6-1-ugen04-single-sign-on-0)
+#### Single Sign On 
 
 If the property `jabber.import.user.enabled` is set to `true`, the Chat portlet
 will import the user automatically to Jabber after he logs in to the portal.
@@ -1806,7 +1806,7 @@ and your portal is also using LDAP for authentication, you can disable the
 Next, let's look at how you can integrate your email addresses with Lifray's
 Mail portlet.
 
-## Integrating your email with Liferay Mail [](id=ma-4)
+## Integrating your email with Liferay Mail 
 
 Liferay's Mail portlet enables your users to interact with their email using an
 easy to use, ubiquitous web interface. If your mail system supports the IMAP
@@ -1874,7 +1874,7 @@ as manage all of your folders in Liferay's Mail portlet.
 The Mail portlet is a great way to integrate a familiar service with other the
 collaboration features that Liferay provides. 
 
-## Summary [](id=summ-26)
+## Summary 
 
 We have explored many of the portlets in Liferay's collaboration suite. You
 have seen how you can configure all of the portlets in a similar fashion using

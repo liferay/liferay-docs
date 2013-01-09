@@ -1,4 +1,4 @@
-# Advanced Web Content Management  [](id=lp-6-1-ugen03-advanced-web-content-management--0)
+# Advanced Web Content Management  
 
 In the previous chapter we looked at some basic ways you can use Liferay to
 handle your web content. In this chapter we'll delve deeper into slightly more
@@ -23,7 +23,7 @@ sections on creating teams and rules for presenting site pages to mobile
 devices. Once finished with this chapter, you'll be the envy of your peers as
 they'll think you really know what you're doing.
 
-## Advanced content with structures and templates [](id=lp-6-1-ugen03-advanced-content-creation-0)
+## Advanced content with structures and templates 
 
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of
@@ -46,7 +46,7 @@ everything from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-#### Using structures [](id=lp-6-1-ugen03-using-structures-0)
+#### Using structures 
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -80,7 +80,7 @@ scrolls with the user and more.
 
 Let's look at how we edit a structure.
 
-##### Editing a Structure [](id=lp-6-1-ugen03-editing-a-structure-0)
+##### Editing a Structure 
 
 Go back to the Control Panel and select *Web Content* from the Site section.
 Click *Add* from the Web Content page to add another piece of content to your
@@ -135,7 +135,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
 closely at the form elements.
 
-##### Editing form elements [](id=lp-6-1-ugen03-editing-form-elements-0)
+##### Editing form elements 
 
 When creating a new structure it is essential you set variable names template
 writers can use to refer to elements on your form. If you don't do this, Liferay
@@ -187,18 +187,18 @@ an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
 instructions are displayed.
 
-##### Structure Default Values [](id=lp-6-1-ugen03-structure-default-values-0)
+##### Structure Default Values 
 
 Structure Default Values allow you to create one structure that uses common data
 from multiple articles.
 
 Returning to our newspaper scenario again, let's say you want all sports
-articles to have the same display page (sports page), the same categories, or the
-same set of tags. Instead of adding them for each article or wondering if your
-users are adding them to every web content, you can add these characteristics once
-for every sports article by creating default values for the structure. There are
-two ways to edit structure default values: creating a new structure or editing
-an existing structure.
+articles to have the same display page (sports page), the same categories, or
+the same set of tags. Instead of adding them for each article or wondering if
+your users are adding them to every web content, you can add these
+characteristics once for every sports article by creating default values for the
+structure. There are two ways to edit structure default values: creating a new
+structure or editing an existing structure.
 
 For a new structure, you must first create the structure before editing its
 default values. Navigate to *Web Content* in the Control Panel and click the
@@ -227,7 +227,7 @@ data you inserted.
 As with everything else in Liferay, you can set permissions on structures. Let's
 see how you'd do that.
 
-##### Assigning Permissions [](id=lp-6-1-ugen03-assigning-permissions-1)
+##### Assigning Permissions 
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -245,7 +245,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of Liferay's web content management system: templates.
 
-#### Using templates [](id=lp-6-1-ugen03-using-templates-0)
+#### Using templates 
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -259,7 +259,7 @@ using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-##### Template Types (VM, XSL, FTL and CSS) [](id=lp-6-1-ugen03-template-types-vm-xsl-ftl-and-css-0)
+##### Template Types (VM, XSL, FTL and CSS) 
 
 Liferay supports templates written in four different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -291,7 +291,7 @@ straightforward and modifications are simple (colors, fonts, layouts, etc). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
-##### Adding a Template [](id=lp-6-1-ugen03-adding-a-template-0)
+##### Adding a Template 
 
 Liferay WCM makes it easy to create structures, templates and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -366,7 +366,7 @@ When this template is rendered, it looks something like this:
 Now that you've created a handsome template, it's time to decide who the lucky
 people are that get to use it.
 
-#### Assigning template permissions [](id=lp-6-1-ugen03-assigning-template-permissions-0)
+#### Assigning template permissions 
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.
@@ -388,7 +388,7 @@ your organization.
 Now that you understand the role structures and templates play in creating web
 content, let's look at how you can use Liferay to manage multiple sites.
 
-## Leveraging Liferay's multi-site capabilities [](id=lp-6-1-ugen12-sites-0)
+## Leveraging Liferay's multi-site capabilities 
 
 As stated in chapter 1, a site is a set of pages that can be used to publish
 content or applications. Sites can be independent or they can be associated with
@@ -457,7 +457,13 @@ Settings*.
 
 ---
 
-![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, there were two ways of creating sites: organizations and communities. This has been simplified to provide more ease of use and allow for more flexibility. The main role of organizations is still to organize the users of the portal in a hierarchy but they can also have associated sites. Communities can still be created through independent sites but the new name reflects the fact that sites can be used for many different purposes besides communities.
+![tip](../../images/01-tip.png) **Tip:** Prior to Liferay 6.1, there were two
+ways of creating sites: organizations and communities. This has been simplified
+to provide more ease of use and allow for more flexibility. The main role of
+organizations is still to organize the users of the portal in a hierarchy but
+they can also have associated sites. Communities can still be created through
+independent sites but the new name reflects the fact that sites can be used for
+many different purposes besides communities.
 
 ---
 
@@ -540,7 +546,7 @@ permission to do so.
 Site templates are very powerful for managing many similiar sites. Let's look
 further at how they work.
 
-## Using site templates [](id=lp-6-1-ugen12-site-templates-0)
+## Using site templates 
 
 Site Templates can be administered in the Control Panel within the portal
 section of the left menu.
@@ -636,7 +642,7 @@ streamlines the site creation process for administrators, making it easy to
 create sites quickly. Next, let's discuss how to create and apply page
 templates.
 
-## Using page templates [](id=lp-6-1-ugen12-page-templates-0)
+## Using page templates 
 
 Page templates function similarly to site templates but at the page level. Page
 templates provide a pre-configured page to reuse. Within a page template it is
@@ -722,10 +728,10 @@ Have we determined that this IS an EE-only feature?
 ![EE Only Feature]
 -->
 
-### Exporting and Importing Site Templates and Page Templates [](id=lp-6-1-ugen03-exporting-and-importing-site-templates-and-page-templates-0)
+### Exporting and Importing Site Templates and Page Templates 
 
 If you want to export a site that uses site or page Templates to a different
-environment (trough a LAR file or remote publication), the Templates must be
+environment (through a LAR file or remote publication), the Templates must be
 exported and imported manually in advance or the import will fail.
 
 To export a Site using a Site Template, use the following process:
@@ -754,7 +760,7 @@ The page template can now be imported normally to this new environment.
 
 Next, let's examine the tools Liferay provides for handling translations.
 
-#### Localization [](id=lp-6-1-ugen03-localization-0)
+#### Localization 
 
 Previous versions of Liferay had the ability to create and manage different
 translations of your web content but with Liferay 6.1 we've added several
@@ -791,9 +797,99 @@ can make sure those fields aren't listed as localizable. When you follow the
 steps above to localize content, only fields within the structure that had the
 *Localizable* box checked appear within the translation window.
 
-## Allowing users to customize site pages [](id=lp-6-1-ugen03-advanced-publishing-options-0)
+## Using application display templates
 
-As we discussed above, as your site becomes larger and more complex, management
+Application display templates work similarly to the previously explained site
+and page templates, but at the portlet level. The application display template
+(ADT) framework allows you to define how portlets display their information on a
+page. For example, you may want to show blog entries horizontally instead of
+vertically, or list your assets in the asset publisher portlet in different
+sizes. These customized upgrades to your portlets are possible with the use of
+ADTs.
+
+<!-- TODO: Let's expand the above paragraph. We want to fire the imaginations of
+users and give them ideas as to why they'd want to use ADTs. Can you come up
+with examples, given that most of the readers of this section are building their
+own web sites and wanting to customize the presentation of various portlets?
+-->
+
+The *Application Display Templates* page of the Control Panel directs you to a
+list of available templates for your portlets to use. First, you can choose the
+context of your ADT by selecting the site you want it to reside in. This is done
+in the Control Panel menu.
+
+![Figure 3.18: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
+
+The *Global* context makes your template available across all sites.
+Furthermore, you can select individual sites to host your ADT. If you select the
+*Global* context, you can see the default ADTs that come with the portal. These
+are being used for your portlets. Below is a listing of these portlets and their
+default template descriptions:
+
+- Wiki: displays social bookmarks and ratings for wiki pages and their child
+pages.
+- Categories Navigation: displays a column for each vocabulary. Each column
+includes the name of a vocabulary with the vocabulary's top level categories
+listed underneath.
+- Asset Publisher: displays abstracts, icons, related assets, and print/edit
+actions for assets. Optionally includes asset bookmarks and ratings.
+- Site Map: displays a column for each top level page. Each column includes the
+name of a top level page with the page's immediate children listed underneath.
+- Tags Navigation: displays asset tags colored by popularity: red (high), yellow
+(medium), and green (low).
+- Blogs: displays titles, authors, and abstracts compactly for blog entries.
+
+<!-- TODO: Add D&M once available (has option to create template in Control
+Panel, but not available to select ADT within D&M portlet)-->
+
+To create a new ADT, click *Add* and select the template you'd like to create,
+based on portlet type. Then enter the name, description, and optional small
+image you'd like to use. You have the option of selecting the language type for
+your template (FTL, VM, XSL). Lastly, the *Script* option lets you browse your
+file system for a configured template or launch the editor and create one
+yourself. For more information on how to create a custom template, visit the 
+*Liferay's Developer Guide*.
+
+<!-- TODO: When the Dev Guide section for templates is complete, add the exact
+link above -->
+
+![Figure 3.19: Liferay offers multiple options to customize your ADT.](../../images/adt-setup-menu.png)
+
+Another cool feature is the *Export/Import* functionality. You can take
+advantage of this feature by clicking the wrench icon at the top right of the
+screen and selecting *Export/Import*. Maybe you want to share your ADT with
+someone or import your buddy's ADT to use in your own portlet. The export
+feature bundles your ADT into a LAR file and gives you options on what to
+include. Likewise, the import feature overwrites selected data by extracting a
+LAR file. These features look similar to the snapshot below:
+
+![Figure 3.20: The *Export/Import* feature allows you to share and overwrite your ADTs.](../../images/adt-export-import.png)
+
+After you've completed the initial set up and saved your ADT, you can manage
+your ADT through its *Actions* button. This provides several options:
+
+- *Edit*: lets you modify the ADT's setup properties.
+- *Permissions*: lets you manage the *Delete*, *Permissions*, *Update*, and
+*View* permissions of the ADT.
+- *Delete*: deletes the ADT.
+
+To enable your ADT for a portlet, navigate to the portlet you want to modify
+and open the *Configuration* menu. In the *Display Settings* sub-tab located
+within the *Setup* tab, you're able to select your ADT from the drop-down menu.
+You'll notice they're separated by context type. Also, an administrator can
+select the display template that can be viewed by guests of the site. This can
+be done by simply clicking the *Manage Display Templates for Guest*
+link and selecting an ADT.
+
+![Figure 3.21: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
+
+Controlling the layout of your portlets provides the ultimate customization
+experience for Liferay users. Next, we'll discuss how to allow users to
+customize their site pages.
+
+## Allowing users to customize site pages 
+
+As we discussed before, as your site becomes larger and more complex, management
 of the content becomes more challenging. We've gone over Liferay management
 tools that help you create content quickly and in an orderly fashion. You
 created a simple announcement with Liferay's structure editor that allows you to
@@ -814,7 +910,7 @@ Additionally, you may want to create content and send it through an approval and
 reviewal process weeks before you want it displayed on the web site. Liferay
 gives you this flexibility with the *Schedule* and *Workflow* features.
 
-#### Scheduling Web Content [](id=lp-6-1-ugen03-scheduling-web-content-0)
+#### Scheduling Web Content 
 
 Liferay's WCM lets you define when your content goes live. You can determine
 when the content is displayed, expired and/or reviewed. This is an excellent to
@@ -822,7 +918,7 @@ way to keep your site current and free from outdated (and perhaps incorrect)
 information. The scheduler is built right into the form your users access to add
 web content, in the same column as the structure and template selectors.
 
-![Figure 3.18: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
+![Figure 3.22: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -843,7 +939,7 @@ growing inventory of content.
 Similar to scheduling, Liferay's staging feature also allows you to manipulate
 time, in a manner of speaking.
 
-## Staging page publication [](id=lp-6-1-ugen03-staging-and-workflow-0)
+## Staging page publication 
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish it all
@@ -869,7 +965,7 @@ staged pages, so you can manage several future versions of a site
 simultaneously. Variations can be merged and published through an intuitive UI.
 Let's jump in to see how to use staging.
 
-#### Enabling the staging environment [](id=lp-6-1-ugen03-enabling-the-staging-environment-0)
+#### Enabling the staging environment 
 
 Staging configuration can be found in the Site Settings UI. The Staging tab
 allows us to make changes in a staging environment and preview our work before
@@ -884,7 +980,7 @@ Now we're ready to activate the staging feature for this site. Go to the Control
 Panel then to *Site Settings* and select *Staging* from under the *Advanced*
 heading.
 
-![Figure 3.19: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.23: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 We'll assume we don't have a separate staging server so we'll select the staging
 type *Local Live*. If you want to set up a remote staging environment, it's
@@ -915,7 +1011,7 @@ on multiple versions of the same pages and it gives you the flexibility to
 revert easily to a previous version if you encounter any issues. Check *Enabled
 On Public Pages* so we can look at versioning.
 
-#### Using the staging environment [](id=lp-6-1-ugen03-using-the-staging-environment-0)
+#### Using the staging environment 
 
 If you navigate back to the News and Events page you'll now notice some new
 items along the top of the screen. These will help us manage staged pages.
@@ -925,7 +1021,7 @@ environment to do that. Click on *Staging* to view the staged area. Your
 management options are restored and you have some new options related to
 staging.
 
-![Figure 3.20: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.24: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that
 the Calendar portlet isn't there. That's because you've staged a change to the
@@ -972,13 +1068,13 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for Calendar Events, the event needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.21: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
+![Figure 3.25: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
 
 One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
 different purposes.
 
-#### Site Pages Variations [](id=lp-6-1-ugen03-site-pages-variations-0)
+#### Site Pages Variations 
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
@@ -1063,13 +1159,13 @@ variations toolbar. When you decide which page variation should be published,
 mark it as *Ready for Publication*. Only one page variation can be marked as
 ready for publication and that is the one that gets published to the live site.
 
-![Figure 3.22: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
+![Figure 3.26: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
 
 For example, we could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 3.23: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.27: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations.
 To merge two Site Pages Variations, you need to go to the Manage Site Variations
@@ -1090,7 +1186,7 @@ Variation, it will just add more versions, pages and page variations as needed.
 
 Let's finish our discussion of staging by outlining a few more features.
 
-#### Wrapping up staging [](id=lp-6-1-ugen03-wrapping-up-staging-0)
+#### Wrapping up staging 
 
 You can enable staging on an individual site basis, depending on your needs.
 This makes it easy to put strict controls in place for your public web site,
@@ -1101,7 +1197,7 @@ maintaining a content-rich web site a snap.
 Liferay 6.0 introduced a new feature to the permissions system called teams.
 Let's examine them next.
 
-## Creating teams for advanced site membership management [](id=lp-6-1-ugen12-teams-0)
+## Creating teams for advanced site membership management 
 
 Teams don't appear as a link in the Control Panel because they exist *within*
 sites. Teams allow site administrators a greater degree of flexibility than was
@@ -1121,7 +1217,7 @@ Sites* page then and then select *Actions &rarr; Manage Memberships* for the
 site within which you want to create a team. Finally, click *View &rarr; Teams*
 and click the Add Team button.
 
-![Figure 3.24: Creating a Team within a Site](../../images/01-creating-a-team.png)
+![Figure 3.28: Creating a Team within a Site](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
 click *Save*. Your new team will appear in the list. To add members, simply
@@ -1133,7 +1229,7 @@ itself. Remember the portlet options link is the wrench symbol at the top of a
 portlet. This enables users who wouldn't have access to all of the necessary
 options in the Control Panel to manage permissions through teams.
 
-![Figure 3.25: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
+![Figure 3.29: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
 
 To give a team access to a particular portlet function, access the *Permissions*
 tab of a portlet residing on a page, check the boxes corresponding to
@@ -1141,7 +1237,7 @@ permissions you want to assign to the teams, then click *Save*. That's it! Now
 your team is ready to perform their functions. Next, let's look at how to
 configure Liferay for mobile devices.
 
-## Displaying site pages to mobile devices [](id=lp-6-1-ugen03-mobile-device-rules-0)
+## Displaying site pages to mobile devices 
 
 Mobile device rules allow you to configure sets of rules to alter the behavior
 of the portal based on the device being used to access Liferay. The proportion
@@ -1206,7 +1302,7 @@ and lets you add more. To add rules to a rule group, select *Actions*
 &rarr; *Manage Rules*, or click on a rule group to edit it, and then click
 the *Manage Rules* link.
 
-![Figure 3.26: You can manage device rules from the Mobile Device Rules
+![Figure 3.30: You can manage device rules from the Mobile Device Rules
 administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups
@@ -1219,7 +1315,7 @@ available.  The rules are designed, however, to be extensible, and additional
 rule types can be added by your developers. Once added, you can edit the rule to
 specify a device type and operating system.
 
-![Figure 3.27: You need to install the Device Recognition Provider plugin to
+![Figure 3.31: You need to install the Device Recognition Provider plugin to
 populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them,
@@ -1239,7 +1335,7 @@ site or page and order them by priority. The rule groups are checked in
 decreasing order of priority: the actions defined by the first rule group that
 applies are executed.
 
-![Figure 3.28: You can select a mobile device rule group to apply for a site or
+![Figure 3.32: You can select a mobile device rule group to apply for a site or
 page from the Site Pages section of the Control
 Panel.](../../images/mobile-device-selection.png)
 
@@ -1291,7 +1387,7 @@ Rules page of the Control Panel. Click on *Add Rule Group*, enter the name
 *Android and Bada Mobile Phones*, and click *Save*. You'll see the message, *No
 rules are configured for this rule group.*
 
-![Figure 3.29: After adding a new rule, you'll see a message indicating that no
+![Figure 3.33: After adding a new rule, you'll see a message indicating that no
 rules have been configured for the rule
 group.](../../images/no-rule-groups-configured.png)
 
@@ -1305,7 +1401,7 @@ click *Save*. Now we just need to define the redirect action for our rule group.
 Make sure Liferay is still selected in the context menu selector and click on
 *Site Pages*. Click on *Mobile Rule Groups* in the navigation menu to the right.
 
-![Figure 3.30: To apply a mobile device rule group to a page set of a site,
+![Figure 3.34: To apply a mobile device rule group to a page set of a site,
 select the site in the context menu selector, click on *Mobile Rule Groups*,
 click *Select Rule Group*, and select the desired rule
 group.](../../images/site-pages-mobile-device-rules.png)
@@ -1348,7 +1444,7 @@ Lastly, select the *1 Column* layout template (or whichever one you like) and
 click *Save*. Good job!  Now the Liferay site's pages are presented to Android
 and iOS tablet users with the 1 Column layout template.
 
-## Summary [](id=lp-6-1-ugen03-summary-0)
+## Summary 
 
 This chapter has been your guide to Liferay site management and advanced Web
 Content Management. We've seen how you can use Liferay to manage both simple
