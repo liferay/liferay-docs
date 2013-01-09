@@ -108,15 +108,39 @@ requirements to keep in mind.
 
 - *WAR (`.war`) files*:
 
-	- WARs must contain a `liferay-plugin-package.properties` file.
+	- WARs must contain a `WEB-INF/liferay-plugin-package.properties` file.
 
-	- WARs must not contain any `liferay-plugin-package.xml` file.
+	- WARs must not contain any `WEB-INF/liferay-plugin-package.xml` file.
 
 	- WAR file names must not contain any commas.
+	
+	- WAR file names must conform to the following naming convention:
+	
+	*context_name*`-` *plugin_type* `-`A`.`B`.`C`.`D`.war`
 
-- *liferay-plugin-package.properties file*: Property
-`recommended.deployment.context` must not be set.
+    Where:
+    
+    - *context_name* - Alpha-numeric (including `-` and `_`) short name of
+    your app.  This name is used as the deployment context, and should not
+    duplicate any other app's context (you will see a warning if you use a
+    context name of any other app on the Marketplace).
+    
+    - *plugin_type* - one of the following: `ext`, `hook`, `layouttpl`,
+    `portlet`, `theme`, or `web`.
+    
+    - `A`.`B`.`C`.`D` - The 4 digit version of your WAR file.  4 digits must
+    be used.
+    
+    - Example: `my-super-app-1.0.0.0.war`
 
+- *liferay-plugin-package.properties file*:
+    - Property `recommended.deployment.context` must not be set.
+    - Property `security-manager-enabled` must be set to `true`.  This enables
+    Liferay's Plugin Security Manager.  Read the
+[Plugin Security Management Chapter](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen11-plugin-security-management-0)
+    in this guide for information on developing secure apps.  Every
+    app you submit on the Marketplace must use this framework.
+    
 - *Deployment contexts*:
 
 	- Liferay reserves the right to deny an application if any of its plugin
@@ -274,27 +298,28 @@ Liferay 6.1 CE GA2 *and later*, add this line to your
 
     liferay-versions=6.1.1+ 
 
-This means that the app works with any 6.1 CE release starting with GA2, and
-Marketplace will create a package that is compatible with 6.1 CE GA2 *and
-later*. Here are some additional examples:
+This means that the app works with any 6.1 CE or EE release starting with CE
+GA2, and Marketplace will create a package that is compatible with the 6.1 CE GA2
+release and *later* versions.
 
-	# works with Liferay 6.1 CE GA2 *only*
-	liferay-versions=6.1.1
+ ![note](../../images/tip-pen-paper.png)**Note:** Any version specification you
+ include in your packaging directives *must* be terminated with a version using
+ the `+` symbol.  This ensures that your app will be deployable onto future
+ versions of Liferay (but does not guarantee your app will work in future
+ versions).  So, `6.1.2` will not work, but `6.1.2+` will work.
 
-	# works with Liferay 6.1 CE GA2 and later (i.e. NOT compatible with 6.1 GA1)
+
+Here are some additional examples:
+
+	# works with Liferay 6.1 CE GA2 and later (NOT compatible with 6.1 GA1).
+	# Note that 6.1.1+ also means it is compatible with EE GA1 and later.
 	liferay-versions=6.1.1+
 
-	# works with Liferay 6.1 CE GA2 and CE GA3 only
-	liferay-versions=6.1.1,6.1.2
+	# works with Liferay 6.1 CE GA2, GA3, and GA5 (but not GA4)
+	liferay-versions=6.1.1,6.1.2,6.1.4+
 	
-	# works with Liferay 6.1 EE GA2 only
-	liferay-versions=6.1.20
-
-	# works with Liferay 6.1 EE GA2 and later
+	# works with Liferay 6.1 EE GA2 and later (NOT compatible with CE)
 	liferay-versions=6.1.20+
-
-	# works with Liferay 6.1 CE GA2 and later, and 6.1 EE GA2 and later
-	liferay-versions=6.1.1+,6.1.20+
 
 If some plugins within your app must be built for multiple releases, ensure that
 the respective plugins have appropriate versioning information in them. For
@@ -303,7 +328,7 @@ portlet is simple, and uses standard API calls that work on all Liferay 6.1
 releases. However, the hook is different for CE vs. EE because it takes
 advantage of some feature of EE.
 
-In this case, your portlet plugin would have `liferay-versions=6.1.1+,6.1.20+`,
+In this case, your portlet plugin would have `liferay-versions=6.1.1+`,
 but because the hook must be built against a different API for Liferay EE, you'd
 have *two* hook plugins. The first one would specify `liferay-versions=6.1.1+`
 (indicating it works with CE GA2 and later), and the second hook plugin would
@@ -525,6 +550,10 @@ Once your app is approved by Marketplace staff, congratulations! You will
 receive an email confirmation and at that moment, your app is in the
 Marketplace. The app is also shown on your public Profile page, which lists all
 apps that you have personally developed and published.
+
+If your app is rejected, an email will be sent to the email address associated
+with the app, along with a note explaining the reasons for rejection.  At that
+point, you can make the requested changes, and re-submit the app for approval.
 
 Now that you have successfully published your first app, you'll likely get all
 kinds of feedback from users and yourself about what's right and wrong with it.
