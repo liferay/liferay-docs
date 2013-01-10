@@ -1,4 +1,3 @@
-
 # Using Scripting for Advanced Flexibility 
 
 Liferay provides a robust script engine that can be used to interpret scripts in
@@ -166,8 +165,8 @@ current code to look like the following:
     number = com.liferay.portal.service.UserLocalServiceUtil.getUsersCount(); 
     out.println(number); 
 
-Click the execute button and check the console or the log for your output.  
- 
+Click the execute button and check the console or the log for your output. 
+
 Let's implement a more realistic example. We'll retrieve some user information
 from the database, make some changes and then update the database with our
 changes. Our company has updated the terms of use and requires that everyone be
