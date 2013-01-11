@@ -438,6 +438,10 @@ public class PortalPropertiesParser implements XMLReader {
 								}
 							}
 
+							if (!previousData.alternativeValues.isEmpty()) {
+								hiddenValue.insert(0,"\n");
+							}
+
 							propertyData.value = hiddenValue.toString();
 						}
 
