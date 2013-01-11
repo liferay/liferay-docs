@@ -174,6 +174,7 @@
 					<xsl:for-each select="value[@alt='true']">
 						<xsl:value-of select="." />
 						<br />
+						<br />
 					</xsl:for-each>
 				</pre>
 			</div>

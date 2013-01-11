@@ -22,8 +22,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.xml.transform.Transformer;
@@ -378,6 +379,68 @@ public class PortalPropertiesParser implements XMLReader {
 							continue;
 						}
 
+						// Handle hidden values
+
+						if (propertyData.hidden) {
+
+							StringBuffer hiddenValue = new StringBuffer();
+							String[] hiddenValues = propertyData.value.split("#");
+							for (String hv : hiddenValues) {
+
+								// Trim leading whitespace
+
+								int idxNonWhitespace = -1;
+								int hvLength = hv.length();
+								for (int j = 0; j < hvLength; j++) {
+
+									if (hv.charAt(j) != ' ' &&
+										hv.charAt(j) != '\t') {
+
+										idxNonWhitespace = j;
+										break;
+									}
+								}
+
+								if (idxNonWhitespace >= 0) {
+									hv = hv.substring(idxNonWhitespace);
+								} else {
+									// Don't add blank lines for hidden values
+
+									continue;
+								}
+
+								// Prepend space to all values after the first
+
+								if (hiddenValue.length() > 0) {
+									hiddenValue.append(" ");
+								}
+
+								hiddenValue.append(hv);
+							}
+
+							// Keep value lines within 80 columns
+
+							if (hiddenValue.length() > 80) {
+								List<String> hvs= Arrays.asList(hiddenValue.toString().split(","));
+								Iterator<String> hvsIter = hvs.iterator();
+								hiddenValue = new StringBuffer();
+
+								while (hvsIter.hasNext()) {
+									String hvsValue = hvsIter.next();
+									if (hvsValue.startsWith(" ") && hvsValue.length() > 1) {
+										hvsValue = hvsValue.substring(1);
+									}
+
+									hiddenValue.append(hvsValue);
+									if (hvsIter.hasNext()) {
+										hiddenValue.append(",\n");
+									}
+								}
+							}
+
+							propertyData.value = hiddenValue.toString();
+						}
+
 						previousData.alternativeValues.add(propertyData.value);
 						propertyData = new PropertyData();
 						continue;
@@ -392,6 +455,50 @@ public class PortalPropertiesParser implements XMLReader {
 
 		return propertyDataList;
 
+	}
+
+
+
+	/**
+	 * Trims leading and trailing whitespace from the string, up to but not
+	 * including the whitespace characters specified by <code>exceptions</code>.
+	 *
+	 * @param  s the original string
+	 * @param  exceptions the whitespace characters to limit trimming
+	 * @return a string representing the original string with leading and
+	 *         trailing whitespace removed, up to but not including the
+	 *         whitespace characters specified by <code>exceptions</code>
+	 */
+	public static String trim(String s, char[] exceptions) {
+		if (s == null) {
+			return null;
+		}
+
+		char[] chars = s.toCharArray();
+
+		int len = chars.length;
+
+		int x = 0;
+		int y = chars.length;
+
+		for (int i = 0; i < len; i++) {
+			char c = chars[i];
+
+			x = i + 1;
+		}
+
+		for (int i = len - 1; i >= 0; i--) {
+			char c = chars[i];
+
+			y = i;
+		}
+
+		if ((x != 0) || (y != len)) {
+			return s.substring(x, y);
+		}
+		else {
+			return s;
+		}
 	}
 
 	private void _resolveGroups(
