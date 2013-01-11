@@ -348,7 +348,7 @@ public class PortalPropertiesParser implements XMLReader {
 						continue;
 					}
 
-					paragraph += line.substring(1).trim();
+					paragraph += line.substring(1);
 					if (!lines[i + 1].matches("[\\s]*?#[\\s][^\\s].*")) {
 						propertyData.descriptionParagraphs.add(paragraph);
 						paragraph = "";
@@ -379,8 +379,6 @@ public class PortalPropertiesParser implements XMLReader {
 			propertyData.value = value;
 
 			// check previous property for alternative values
-			System.out.println(propertyData.descriptionParagraphs.isEmpty());
-			System.out.println();
 			if (propertyData.descriptionParagraphs.isEmpty()) {
 
 				if (propertyDataList.isEmpty() == false) {

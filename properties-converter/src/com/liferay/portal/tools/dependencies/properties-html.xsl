@@ -153,7 +153,11 @@
 		</h3>
 
 		<div class="description">
-			<xsl:value-of select="description" />
+			<xsl:for-each select="paragraph">
+				<p>
+					<xsl:value-of select="." />
+				</p>
+			</xsl:for-each>
 		</div>
 
 		<xsl:if test="@hidden='false'">
