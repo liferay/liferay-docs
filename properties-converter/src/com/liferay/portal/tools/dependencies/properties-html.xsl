@@ -1,7 +1,9 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	
-	<xsl:param name="title">Portal Properties</xsl:param>
+
+	<xsl:param name="title">
+		Portal Properties
+	</xsl:param>
 
 	<xsl:output method="html" indent="yes" />
 
@@ -28,7 +30,7 @@
 			</style>
 			<body>
 				<h1>
-					<xsl:value-of select="$title"/>
+					<xsl:value-of select="$title" />
 				</h1>
 
 				<xsl:call-template name="toc">
@@ -114,7 +116,11 @@
 		</div>
 
 		<div class="description">
-			<xsl:value-of select="description" />
+			<xsl:for-each select="paragraph">
+				<p>
+					<xsl:value-of select="." />
+				</p>
+			</xsl:for-each>
 		</div>
 
 		<xsl:if test="@hidden='false'">
@@ -169,7 +175,7 @@
 
 		<xsl:if test="count(value[@alt='true']) > 0">
 			<div class="value alt">
-				Other sample values:
+				Example values:
 				<pre>
 					<xsl:for-each select="value[@alt='true']">
 						<xsl:value-of select="." />
