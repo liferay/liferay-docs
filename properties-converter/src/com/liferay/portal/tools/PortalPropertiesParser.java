@@ -76,8 +76,8 @@ public class PortalPropertiesParser implements XMLReader {
 
 		TransformerFactory factory = TransformerFactory.newInstance();
 
-		InputStream xsl = ClassLoader
-				.getSystemResourceAsStream("com/liferay/portal/tools/dependencies/properties-html.xsl");
+		InputStream xsl = ClassLoader.getSystemResourceAsStream(
+			"com/liferay/portal/tools/dependencies/properties-html.xsl");
 
 		StreamSource xslSource = new StreamSource(xsl);
 
@@ -157,8 +157,9 @@ public class PortalPropertiesParser implements XMLReader {
 	public void setProperty(String s, Object o) {
 	}
 
-	private void _attributeAdd(AttributesImpl attributes, String key,
-			String value) {
+	private void _attributeAdd(
+			AttributesImpl attributes, String key, String value) {
+
 		attributes.addAttribute(_namespaceURI, key, key, "", value);
 	}
 
@@ -170,7 +171,6 @@ public class PortalPropertiesParser implements XMLReader {
 		_tag("name", propertyData.name);
 		_tag("anchor", propertyData.anchor);
 
-		// _tag("description", propertyData.description);
 		for (String paragraph : propertyData.descriptionParagraphs) {
 			_tag("paragraph", paragraph);
 		}
@@ -340,7 +340,8 @@ public class PortalPropertiesParser implements XMLReader {
 				if ((line.length() >= 2) && (line.charAt(1) != ' ')) {
 					line = line.substring(1);
 					hidden = true;
-				} else {
+				}
+				else {
 					// if (only contains '#' and zero or more whitespace) {
 					// continue;
 					// }
@@ -366,8 +367,8 @@ public class PortalPropertiesParser implements XMLReader {
 			propertyData.name = line.substring(0, equalNdx);
 			propertyData.anchor = nameToAnchor(propertyData.name + '+' + i);
 			propertyData.hidden = hidden;
-			propertyData.prefix = _makePrefix(propertyData.name,
-					PARAM_MIN_LEFT, PARAM_DEEP_RIGHT);
+			propertyData.prefix = _makePrefix(
+				propertyData.name, PARAM_MIN_LEFT, PARAM_DEEP_RIGHT);
 
 			String value = line.substring(equalNdx + 1);
 			while (value.endsWith("\\")) {
@@ -383,8 +384,8 @@ public class PortalPropertiesParser implements XMLReader {
 
 				if (propertyDataList.isEmpty() == false) {
 
-					PropertyData previousData = propertyDataList
-							.get(propertyDataList.size() - 1);
+					PropertyData previousData = 
+						propertyDataList.get(propertyDataList.size() - 1);
 
 					if (previousData.name.equals(propertyData.name)) {
 
@@ -398,8 +399,8 @@ public class PortalPropertiesParser implements XMLReader {
 						if (propertyData.hidden) {
 
 							StringBuffer hiddenValue = new StringBuffer();
-							String[] hiddenValues = propertyData.value
-									.split("#");
+							String[] hiddenValues = propertyData.value.split("#");
+
 							for (String hv : hiddenValues) {
 
 								// Trim leading whitespace
@@ -408,8 +409,8 @@ public class PortalPropertiesParser implements XMLReader {
 								int hvLength = hv.length();
 								for (int j = 0; j < hvLength; j++) {
 
-									if (hv.charAt(j) != ' '
-											&& hv.charAt(j) != '\t') {
+									if (hv.charAt(j) != ' ' &&
+										hv.charAt(j) != '\t') {
 
 										idxNonWhitespace = j;
 										break;
@@ -436,15 +437,17 @@ public class PortalPropertiesParser implements XMLReader {
 							// Keep value lines within 80 columns
 
 							if (hiddenValue.length() > 80) {
-								List<String> hvs = Arrays.asList(hiddenValue
-										.toString().split(","));
+
+								List<String> hvs = Arrays.asList(
+									hiddenValue.toString().split(","));
 								Iterator<String> hvsIter = hvs.iterator();
 								hiddenValue = new StringBuffer();
 
 								while (hvsIter.hasNext()) {
 									String hvsValue = hvsIter.next();
-									if (hvsValue.startsWith(" ")
-											&& hvsValue.length() > 1) {
+									if (hvsValue.startsWith(" ") &&
+										hvsValue.length() > 1) {
+
 										hvsValue = hvsValue.substring(1);
 									}
 
@@ -482,10 +485,8 @@ public class PortalPropertiesParser implements XMLReader {
 	 * Trims leading and trailing whitespace from the string, up to but not
 	 * including the whitespace characters specified by <code>exceptions</code>.
 	 * 
-	 * @param s
-	 *            the original string
-	 * @param exceptions
-	 *            the whitespace characters to limit trimming
+	 * @param s the original string
+	 * @param exceptions the whitespace characters to limit trimming
 	 * @return a string representing the original string with leading and
 	 *         trailing whitespace removed, up to but not including the
 	 *         whitespace characters specified by <code>exceptions</code>
@@ -516,7 +517,8 @@ public class PortalPropertiesParser implements XMLReader {
 
 		if ((x != 0) || (y != len)) {
 			return s.substring(x, y);
-		} else {
+		}
+		else {
 			return s;
 		}
 	}
@@ -530,10 +532,11 @@ public class PortalPropertiesParser implements XMLReader {
 			PropertyData prev = propertyDataList.get(i - 1);
 			PropertyData curr = propertyDataList.get(i);
 
-			if (prev.hidden == curr.hidden && prev.alternativeValues.isEmpty()
-					&& curr.alternativeValues.isEmpty()
-					&& prev.prefix.equals(curr.prefix)
-					&& (curr.descriptionParagraphs.isEmpty())) {
+			if (prev.hidden == curr.hidden &&
+				prev.alternativeValues.isEmpty() &&
+				curr.alternativeValues.isEmpty() &&
+				prev.prefix.equals(curr.prefix) &&
+				(curr.descriptionParagraphs.isEmpty())) {
 
 				// group founded
 
@@ -578,16 +581,16 @@ public class PortalPropertiesParser implements XMLReader {
 
 	private void _tagStart(String tagName) throws SAXException {
 
-		_contentHandler.startElement(_namespaceURI, tagName, tagName,
-				_attributes);
+		_contentHandler.startElement(
+			_namespaceURI, tagName, tagName, _attributes);
 
 	}
 
 	private void _tagStart(String tagName, Attributes attributes)
 			throws SAXException {
 
-		_contentHandler.startElement(_namespaceURI, tagName, tagName,
-				attributes);
+		_contentHandler.startElement(
+			_namespaceURI, tagName, tagName, attributes);
 
 	}
 
