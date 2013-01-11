@@ -45,7 +45,7 @@
 
 	<xsl:template name="toc">
 		<xsl:param name="fullToc" />
-		TOC
+		Table of Contents
 		<ul id="toc">
 			<xsl:for-each select="properties/section">
 				<li>
