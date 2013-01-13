@@ -70,8 +70,7 @@ developers/indigosr1) or [Eclipse Helios Java EE (3.6.2)]
 
 5.  After pasting in URL press enter.
 
-	![Figure 8.2: Entering the information for Liferay IDE](../../images/ide-install-available-
-software.png)
+	![Figure 8.2: Entering the information for Liferay IDE](../../images/ide-install-available-software.png)
 
 6. The Liferay IDE features should be detected, select it before clicking
 *Next*.
@@ -127,8 +126,7 @@ and Liferay Portal must be installed and configured in the IDE.
 2. Open Preference page for Liferay &rarr; Installed SDKs (Go to Window &rarr;
 Preferences &rarr; Liferay &rarr; Installed Plugin SDKs).
 
-	![Figure 8.4: Creating a Liferay plugin project](../../images/ide-new-project-liferay-
-project.png)
+	![Figure 8.4: Creating a Liferay plugin project](../../images/ide-new-project-liferay-project.png)
 
 3.  Add your SDK using the add button which brings up the Add SDK Dialog.
 
@@ -157,8 +155,7 @@ under the Liferay, Inc. category and click Next.
 
 3. Click Browse and select the location of the liferay-portal-6.1.x directory.
 
-	![Figure 8.8: Browsing to your Liferay portal directory](../../images/ide-select-liferay-
-portal-directory.png)
+	![Figure 8.8: Browsing to your Liferay portal directory](../../images/ide-select-liferay-portal-directory.png)
 
 4. Once you have selected the Liferay portal directory, if a bundle JRE is
 present, this bundle will be automatically selected as the JRE to use for
@@ -170,8 +167,7 @@ then you will need to select the JRE to use for launch.
 5. Click finish and you should see the Liferay portal runtime in the list of
 runtimes in the preference page.
 
-	![Figure 8.10: Liferay portal in the list of available runtimes](../../images/ide-add-
-server-runtime.png)
+	![Figure 8.10: Liferay portal in the list of available runtimes](../../images/ide-add-server-runtime.png)
 
 6. Click ok to save the runtime preferences.
 
@@ -183,8 +179,7 @@ servers view before you can test the server.
 8. Find the Liferay, Inc category and select the Liferay v6 Server and choose
 the Liferay v6 Runtime that you had previously created.
 
-	![Figure 8.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-
-type.png)
+	![Figure 8.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-type.png)
 
 ## Testing/Launching Liferay Tomcat Server 
 
@@ -216,13 +211,11 @@ In the Liferay project wizard page, the newly configured SDK and Liferay Runtime
 should be pre-selected. Also the plugin type *portlet* is the default. Simply
 type in a project name and cooresponding display name and click Finish.
 
-![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-
-project.png)
+![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-project.png)
 
 If it worked you should see a new plugin project in the package explorer. 
 
-![Figure 8.17: Viewing the new project in the Package Explorer view](../../images/ide-package-
-explorer-demo-portlet.png)
+![Figure 8.17: Viewing the new project in the Package Explorer view](../../images/ide-package-explorer-demo-portlet.png)
 
 ## Deploying New Liferay Projects to Liferay Server 
 
@@ -240,8 +233,7 @@ and then click *Finish*.
 You should see the project get deployed to Liferay Tomcat server and in the
 console see a message about 1 new portlet being available:
 
-![Figure 8.20: Verifying the output in the Console view](../../images/ide-console-portlet-
-available.png)
+![Figure 8.20: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
 
 Open Liferay Portal Home http://localhost:8080/ in most cases and login within
 the following credentials:
@@ -292,13 +284,11 @@ inside a Plugins SDK.
 1. In Eclipse, go to File &rarr; New &rarr; Project... &rarr; Liferay &rarr;
 Liferay Project from Existing Source.
 
-	![Figure 8.22: Importing a Liferay Project](../../images/ide-select-liferay-project-from-
-existing.png)
+	![Figure 8.22: Importing a Liferay Project](../../images/ide-select-liferay-project-from-existing.png)
 
     Or you can invoke the same wizard from the Liferay shortcut bar.
 
-	![Figure 8.23: Alternate method of Importing a project](../../images/ide-new-proj-existing-
-source.png)
+	![Figure 8.23: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
 
 2. Browse to the location of the project folder. Note: the project folder should
 be a sub-directory of one of the plugin types, e.g. portlets, hooks, themes,
@@ -307,15 +297,13 @@ plugin project folder you should see the plugin type and SDK version values get
 updated to correct values. If the SDK is not recent enough or project type is
 not correct it will be marked with an error.
 
-	![Figure 8.24: Setting the Project location](../../images/ide-import-project-from-
-existing.png)
+	![Figure 8.24: Setting the Project location](../../images/ide-import-project-from-existing.png)
 
 3. Once you select the plugin project folder you should see the plugin type and
 SDK version values get updated to correct values. If the SDK is not recent
 enough or project type is not correct it will be marked with an error.
 
-	![Figure 8.25: Verifying the plugin type and version](../../images/ide-plugin-type-and-
-version.png)
+	![Figure 8.25: Verifying the plugin type and version](../../images/ide-plugin-type-and-version.png)
 
 4. Next you will need to select a Liferay Runtime to configure on the project
 once it is imported. If you don't have a Liferay Runtime, use the New... button
@@ -336,8 +324,7 @@ project for each of the plugins it finds inside in one single step.
 1. In Eclipse go to File &rarr; Import... &rarr; Liferay &rarr; Liferay Plugin
 SDK projects.
 
-	![Figure 8.27: Choosing the project type for import](../../images/ide-import-from-plugin-
-sdk.png)
+	![Figure 8.27: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
 
 2. First you must select the Plugins SDK that you want to import projects from
 in the combo box at the top of the wizard.
@@ -355,16 +342,14 @@ from.
 and then the SDK location and version will be filled in. If either are not valid
 it will be marked with an error.
 
-	![Figure 8.29: Verifying the SDK version and location](../../images/ide-select-configured-
-plugins-sdk.png)
+	![Figure 8.29: Verifying the SDK version and location](../../images/ide-select-configured-plugins-sdk.png)
 
 6. After the SDK is selected the list of projects that are available for import
 will be shown in the table. If the projects are already in the workspace they
 will be disabled. If the project is available for import it will have a empty
 checkbox that can be selected.
 
-	![Figure 8.30: Importing a project](../../images/ide-sample-service-builder-portlet-
-plugin.png)
+	![Figure 8.30: Importing a project](../../images/ide-sample-service-builder-portlet-plugin.png)
 
 6.  Select which projects that you wish to import.
 
@@ -394,8 +379,7 @@ Liferay &rarr; Convert to Liferay plug-in project.
     Java and Dynamic Web project facets configured and will need to be
     configured accordingly.
 
-    ![Figure 8.32: Selecting the convert option](../../images/ide-select-convert-to-liferay-
-project.png)
+    ![Figure 8.32: Selecting the convert option](../../images/ide-select-convert-to-liferay-project.png)
 
 2. When the convert dialog wizard opens your project should be auto-selected and
 the SDK location and SDK version should be auto-detected. If they are not valid
@@ -448,8 +432,7 @@ processes has been successful.
 inside Eclipse and it should have an "L" overlay image to show its a Liferay
 project.
 
-	![Figure 8.35: Verifying that the import suceeded](../../images/ide-liferay-project-w-
-overlay-image.png)
+	![Figure 8.35: Verifying that the import suceeded](../../images/ide-liferay-project-w-overlay-image.png)
 
 2. Secondly, to make sure the project is now a *Liferay IDE* project is to check
 the target runtime project property (right-click project &rarr; properties
