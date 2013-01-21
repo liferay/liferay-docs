@@ -1329,7 +1329,7 @@ Set this to `true` to enable the display of JavaScript logging.
 
 ## SQL Data [](id=sql-data)
 
-Set the default SQL IDs for common objects.
+Set the default SQL ids for common objects.
 
     sql.data.com.liferay.portal.model.Country.country.id=19
     sql.data.com.liferay.portal.model.Region.region.id=5
@@ -1338,7 +1338,7 @@ Set the default SQL IDs for common objects.
     sql.data.com.liferay.portal.model.ListType.contact.email.address=11003
     sql.data.com.liferay.portal.model.ListType.organization.status=12017
 
-Set the maximum parameters that a SQL transaction query can contain. Some databases do not allow for more than 2000 paremters in a query.
+Set the maximum parameters that a SQL transaction query can contain. Some databases do not allow for more than 2000 parameters in a query.
 
     sql.data.max.parameters=1000
 
@@ -1496,14 +1496,14 @@ Set this to `true` if you want the last name to be required when creating users.
 
 	users.last.name.required=false
 
-Input a class name that implements `com.liferay.portal.security.auth.FullNameGenerator`. This class will be called to generate a full name from the user's first, middle and last names.
+Input a class name that implements `com.liferay.portal.security.auth.FullNameGenerator`. This class will be called to generate a full name from the user's first, middle, and last names.
 
 *Examples:*
 
 	users.full.name.generator=com.liferay.portal.security.auth.DefaultFullNameGenerator
 	users.full.name.generator=com.liferay.portal.security.auth.FamilyNameFirstFullNameGenerator
 
-Input a class name that implements `com.liferay.portal.security.auth.FullNameValidator`. This class will be called to validate user first, middle and last names.
+Input a class name that implements `com.liferay.portal.security.auth.FullNameValidator`. This class will be called to validate the user's first, middle, and last names.
 
 	users.full.name.validator=com.liferay.portal.security.auth.DefaultFullNameValidator
 
@@ -1644,7 +1644,7 @@ Set the description of the Site Owner system site role.
 
 Omniadmin users can administer the portal's core functionality: gc, shutdown, etc. Omniadmin users must belong to the default company.
 
-Multiple portal instances might be deployed on one application server and not all of the administrators should have access to this core functionality. Input the ids of users who are omniadmin users.
+Multiple portal instances might be deployed on one application server, but not all of the administrators should have access to this core functionality. Input the ids of users who are omniadmin users.
 
 Leave this field blank if users who belong to the right company and have the Administrator role are allowed to administer the portal's core functionality.
 
@@ -1704,7 +1704,7 @@ Set this property to `false` if you want any administrator of an organization to
 
 	organizations.assignment.strict=true
 
-Set this property to `true` if you want users to only be members of the organizations to which they are assigned explicitly. By default they will also become implicit members of the ancestors of those organizations. for example if a user belongs to Liferay Spain he will implicitly be a member of the ancestors Liferay Europe and Liferay Global and will be able to access their private pages.
+Set this property to `true` if you want users to only be members of the organizations to which they are assigned explicitly. By default, they will also become implicit members of the ancestors of those organizations. For example, if a user belongs to Liferay Spain, he will implicitly be a member of the ancestors Liferay Europe and Liferay Global and will be able to access their private pages.
 
 	organizations.membership.strict=false
 	
@@ -1730,7 +1730,7 @@ If there is more than one locale for the same language, the first one in the lis
 
 All locales must use UTF-8 encoding.
 
-See the following links specifiy language and country codes:
+See the following links, which specify language and country codes:
 -   [http://ftp.ics.uci.edu/pub/ietf/http/related/iso639.txt](http://ftp.ics.uci.edu/pub/ietf/http/related/iso639.txt)
 -   [http://userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html](http://userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html)
 
@@ -1752,7 +1752,7 @@ Set this to `0` if the locale is not automatically prepended to a URL. This mean
 Set this to `1` if the locale is automatically prepended to a URL when the requested locale is not the default locale. This means that each URL points to just one language. For example, the URL [http://localhost:8080/web/guest/home](http://localhost:8080/web/guest/home) would point to the default language. The URL [http://localhost:8080/zh/web/guest/home](http://localhost:8080/zh/web/guest/home) and
 [http://localhost:8080/zh_CN/web/guest/home](http://localhost:8080/zh_CN/web/guest/home) would both point to the Chinese language.
 
-In cases where the prepended locale is `zh` and not complete locale `zh_CN`, then the full locale returned will be based on the order in which the locales appear in the property `locales`. If `zh_CN` appears before `zh_TW`, then `zh` will be a short hand for `zh_TW`.
+In cases where the prepended locale is `zh` and not the complete locale `zh_CN`, then the full locale returned will be based on the order in which the locales appear in the property `locales`. If `zh_CN` appears before `zh_TW`, then `zh` will be a short hand for `zh_TW`.
 
 The default language is set in system.properties with the properties `user.country` and `user.language`.
 
@@ -1865,7 +1865,7 @@ Specify the number of minutes before a warning is sent to the user informing the
  
 	session.timeout.warning=1
 
-Set the auto-extend mode to `true` to avoid having to ask the user whether to extend the session or not. Instead it will be automatically extended. The purpose of this mode is to keep the session open as long as the user browser is open and with a portal page loaded. It is recommended to use this setting along with a smaller `session.timeout`, such as 5 minutes for better performance.
+Set the auto-extend mode to `true` to avoid having to ask the user whether to extend the session or not. Instead, it will be automatically extended. The purpose of this mode is to keep the session open as long as the user's browser is open with a portal page loaded. It is recommended to use this setting along with a smaller `session.timeout`, such as 5 minutes, for better performance.
 
 	session.timeout.auto.extend=false
 
@@ -1905,7 +1905,7 @@ The login process sets several cookies if persistent cookies are enabled. Set th
 
 	session.cookie.domain=
 
-Set this to `true` to invalidate the session when a user logs into the portal. This helps prevents phishing. Set this to `false` if you need the guest user and the authenticated user to have the same session.
+Set this to `true` to invalidate the session when a user logs into the portal. This helps prevent phishing. Set this to `false` if you need the guest user and the authenticated user to have the same session.
 
 Set this to `false` if the property `company.security.auth.requires.https` is set to `true` and you want to maintain the same credentials across HTTP and HTTPS sessions.
 
@@ -2002,12 +2002,12 @@ Set this property to `smart` to allow the portal decide which strategy to use ba
 
 ## LDAP [](id=ldap)
 
-Set the values used to connect to a LDAP store.
+Set the values used to connect to an LDAP store.
 
 	ldap.factory.initial=com.sun.jndi.ldap.LdapCtxFactory
 	ldap.referral=follow
 
-Settings for `com.liferay.portal.security.auth.LDAPAuth` can be configured from the Admin portlet. It provides out-of-the box support for Apache Directory Server, Microsoft Active Directory Server, Novell eDirectory and OpenLDAP. The default settings are for Apache Directory Server.
+Settings for `com.liferay.portal.security.auth.LDAPAuth` can be configured from the Admin portlet. It provides out-of-the box support for the Apache Directory Server, Microsoft Active Directory Server, Novell eDirectory and OpenLDAP. The default settings are for the Apache Directory Server.
 
 The `LDAPAuth` class must be specified in the property `auth.pipeline.pre` to be executed.
 
@@ -2016,7 +2016,7 @@ Encryption is implemented by `com.liferay.util.Encryptor.provider.class` in `sys
 	ldap.auth.enabled=false
 	ldap.auth.required=false
 
-Set the page size for directory servers that support paging. This value needs to be `1000` or less for Microsoft Active Directory Server.
+Set the page size for directory servers that support paging. This value needs to be `1000` or less for the Microsoft Active Directory Server.
 
 	ldap.page.size=1000
 
@@ -2056,7 +2056,7 @@ Settings for importing users and groups from LDAP to the portal.
 	ldap.import.on.startup=false
 	ldap.import.interval=10
 
-Set either `user` or `group` for import method. If set to `user`, the portal will import all users and the groups associated with those users. If set to `group`, the portal import all groups and the users associated those groups. This value should be set based on how your LDAP server stores group membership information.
+Set either `user` or `group` for import method. If set to `user`, the portal will import all users and the groups associated with those users. If set to `group`, the portal will import all groups and the users associated those groups. This value should be set based on how your LDAP server stores group membership information.
 
 *Examples:*
 
@@ -2113,7 +2113,7 @@ Set this to `true` if groups and their associations should be exported from the 
 
 	ldap.export.group.enabled=true
 
-Set the values used to connect to a LDAP store.
+Set the values used to connect to an LDAP store.
 
 The list of properties must end with a subsequent integer (`0`, `1`, etc.) and it is assumed that the list has reached an end when the pattern or replacement is not set.
 
@@ -2124,7 +2124,7 @@ The list of properties must end with a subsequent integer (`0`, `1`, etc.) and i
 
 Active Directory stores information about the user account as a series of bit fields in the `UserAccountControl` attribute.
 
-If you want to prevent disabled accounts from logging into the portal you need to use a search filter similiar to the following:
+If you want to prevent disabled accounts from logging into the portal you need to use a search filter similar to the following:
 
 	(&(objectclass=person)(userprincipalname=@email_address@)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
 
@@ -2190,7 +2190,7 @@ When importing groups, the portal will use this mapping to connect LDAP group at
 
 	ldap.group.mappings.0=groupName=cn\ndescription=description\nuser=uniqueMember
 
-Settings for importing users and groups from LDAP to the portal. These setttings are not used unless the property `ldap.import.enabled` is set to `true`.
+Settings for importing users and groups from LDAP to the portal. These settings are not used unless the property `ldap.import.enabled` is set to `true`.
 
 	ldap.import.user.search.filter.0=(objectClass=inetOrgPerson)
 	ldap.import.group.search.filter.0=(objectClass=groupOfUniqueNames)
@@ -2292,7 +2292,7 @@ Set this to `true` if you want to import the users from LDAP after successful lo
 	open.sso.first.name.attr=givenname
 	open.sso.last.name.attr=sn
 
-Set this to `true` to log out the user off OpenSSO when the portal session expires.
+Set this to `true` to log a user out of OpenSSO when the portal session expires.
 
 	open.sso.logout.on.session.expiration=false
 	
@@ -2364,7 +2364,7 @@ Set this to `true` if users are forwarded to the last visited path upon successf
 
 The login page reads a redirect by a parameter named `redirect`. If this property is set to `true`, then users will be redirected to the given redirect path upon successful login. If the user does not have permission to view that page, then the rule set by the property `auth.forward.by.last.path` will apply.
 
-You can set the redirect manually from another application, by appending the `redirect` parameter in a url that looks like this: `/c/portal/login?redirect=%2Fgroup%2Femployees%2Fcalendar`. This url will redirect the user to the path `/group/employees/calendar` upon successful login.
+You can set the redirect manually from another application by appending the `redirect` parameter in a url that looks like this: `/c/portal/login?redirect=%2Fgroup%2Femployees%2Fcalendar`. This url will redirect the user to the path `/group/employees/calendar` upon successful login.
 
 	auth.forward.by.redirect=true
 
@@ -2382,7 +2382,7 @@ Enter a friendly URL of a page that will be used to login portal users whenever 
 
 	auth.login.site.url=/login
 
-Enter the name of the login portlet used in a page identified by the URL of the previous property (if one has been set). This will allow the portlet to have access to the redirect parameter and thus forward the user to the page where he was trying to access when necessary. You should leave the default value unless you have your own custom login portlet.
+Enter the name of the login portlet used in a page identified by the URL of the previous property (if one has been set). This will allow the portlet to have access to the redirect parameter and forward the user to the page he was trying to access, when necessary. You should leave the default value unless you have your own custom login portlet.
 
 	auth.login.portlet.name=58
 
@@ -2562,7 +2562,7 @@ Set the paths that will be ignored for auto login.
 
 ## SSO with MAC (Message Authentication Code) [](id=sso-with-mac-message-authentication-code-)
 
-To use SSO with MAC, post to an URL like:
+To use SSO with MAC, post to a URL like:
 
     http://localhost:8080/c/portal/login?cmd=already-registered&login=<userId|emailAddress>&password=<MAC>
 
@@ -2714,7 +2714,7 @@ Set this to `true` to use permission checking when writing custom attributes by 
 
 	permissions.custom.attribute.write.check.by.default=true
 
-Set the following to `true` to automatically check the view permission on parent categories or folders when checking the permission on an specific item.
+Set the following to `true` to automatically check the view permission on parent categories or folders when checking the permission on a specific item.
 
 For example, if set to `true`, to be able to have access to a document, a user must have the view permission on the document's folder and all its parent folders. Or, to have access to a comment, a user must have the view permission on the comments's category and all its parent categories.
 
@@ -3001,7 +3001,7 @@ Specify a LAR file that can be used to create the user private layouts. If this 
 
 If the properties `layout.user.public.layouts.enabled` and `layout.user.public.layouts.auto.create` are both set to `true`, then users will have public layouts and they will be automatically created. The settings below are used for the creation of the initial public pages.
 
-If you need to add more than one page, set the property `default.user.public.layouts.lar` to specifiy a LAR file instead.
+If you need to add more than one page, set the property `default.user.public.layouts.lar` to specify a LAR file instead.
 
 For even more complex behavior, override the `addDefaultUserPublicLayouts` method in `com.liferay.portal.events.ServicePreAction`.
 
@@ -3328,7 +3328,7 @@ Set this to `true` to cache the content of layout templates. This is recommended
 
 	layout.template.cache.enabled=true
 
-Set the default value for the `p_l_reset` parameter. If set to `true`, then render parameters are cleared when different pages are hit. This is not the behavior promoted by the portlet specification, but is the one that most end users seem to prefer.
+Set the default value for the `p_l_reset` parameter. If set to `true`, render parameters are cleared when different pages are hit. This is not the behavior promoted by the portlet specification, but is the one that most end users seem to prefer.
 
 	layout.default.p_l_reset=true
 
@@ -3512,7 +3512,7 @@ Input a list of comma delimited extensions for which the content disposition hea
 
 ## Amazon [](id=amazon)
 
-Enter an Amazon access key ID and an Amazon associate tag. This is made available only for personal use. Please see the Amazons license at [http://www.amazon.com](http://www.amazon.com) for more information.
+Enter an Amazon access key id and an Amazon associate tag. This is made available only for personal use. Please see the Amazon license at [http://www.amazon.com](http://www.amazon.com) for more information.
 
 *Examples:*
 
@@ -3522,7 +3522,7 @@ Enter an Amazon access key ID and an Amazon associate tag. This is made availabl
 	
 ## Browser Cache [](id=browser-cache)
 
-Set this to `true` if you want the portal to force the browser cache to be disabled. It will only disable the cache for the rendered HTML response for logged in users. It will not have impact on static content or other resources. This is useful to ensure that logged in users cannot go to the sign in page by clicking on the back button in their browsers.
+Set this to `true` if you want the portal to force the browser cache to be disabled. It will only disable the cache for the rendered HTML response for logged in users. It will not have an impact on static content or other resources. This is useful to ensure that logged in users cannot go to the sign in page by clicking on the back button in their browsers.
 
 	browser.cache.signed.in.disabled=false	
 
@@ -3546,7 +3546,7 @@ Set the theme of the layout.
 
 	control.panel.layout.regular.theme.id=controlpanel
 
-Set the maximum number of sites that will be shown in the navigation menus. A large value might cause performance problems if the number of sites that the user can administrate is very large.
+Set the maximum number of sites that will be shown in the navigation menus. A large value might cause performance problems if the number of sites a user can administer is very large.
 
 	control.panel.navigation.max.sites=100
 
@@ -3595,7 +3595,7 @@ Set the fragment size returned from the search result highlighter
 
 	index.search.highlight.fragment.size=80
 
-Set the number of lines for the snippet returned by search engine.
+Set the number of lines for the snippet returned by a search engine.
 
 	index.search.highlight.snippet.size=3
 	
@@ -3603,7 +3603,7 @@ Set the limit for results used when performing index searches.
 
 	index.search.limit=10000
 
-Set this to `true` to enable scoring of results
+Set this to `true` to enable scoring of results.
 
 	index.search.scoring.enabled=true
 
@@ -3635,7 +3635,7 @@ Set the date format used for storing dates as text in the index.
 
 	index.date.format.pattern=yyyyMMddHHmmss
 
-Set this to `true` if you want to use compress index files before they are dumped.
+Set this to `true` if you want to compress index files before they are dumped.
 
 	index.dump.compression.enabled=true
 
@@ -3745,7 +3745,7 @@ Set a comma delimited list of supported databases.
 	setup.database.url[sqlserver]=jdbc:jtds:sqlserver://localhost/lportal
 	setup.database.url[sybase]=jdbc:jtds:sybase://localhost:5000/lportal
 
-Set this property to true if the Setup Wizard should be displayed the first the portal is started.
+Set this property to true if the Setup Wizard should be displayed the first time the portal is started.
 
 	setup.wizard.enabled=false	
 
@@ -3939,7 +3939,7 @@ Set this to `true` to refresh the servlet associated with a JSP when the JSP has
 
 ## Finalize Manager [](id=finalize-manager)
 
-Set this to `true` to enable the finalize manager to use a separate thread to do clean up. Otherwise, finalize manager will only do clean up during registration.
+Set this to `true` to enable the finalize manager to use a separate thread to do clean up. Otherwise, the finalize manager will only do clean up during registration.
 
 	finalize.manager.thread.enabled=false	
 
@@ -3950,7 +3950,7 @@ Set this to `true` to enable the finalize manager to use a separate thread to do
 	freemarker.engine.localized.lookup=false
 	freemarker.engine.modification.check.interval=60
 
-Exception handler can have it's value set to the name of a class implementing FreeMarker `TemplateExceptionHandler` or `rethrow`, `debug`, `debug_html`, `ignore`.
+The exception handler can have it's value set to the name of a class implementing FreeMarker's `TemplateExceptionHandler`, or to `rethrow`, `debug`, `debug_html`, or `ignore`.
 
 	freemarker.engine.template.exception.handler=rethrow
 
@@ -4124,7 +4124,7 @@ Set the properties used to create the Java Mail session. The property prefix `ma
 	mail.session.mail.store.protocol=pop3
 	mail.session.mail.transport.protocol=smtp
 
-Set this to `false` if administrator should not be allowed to change the mail domain via the Admin portlet.
+Set this to `false` if an administrator should not be allowed to change the mail domain via the Admin portlet.
 
 	mail.mx.update=true
 
@@ -4755,7 +4755,7 @@ The I18n filter is used to internationalize URLs. See the property `locale.prepe
 
 	com.liferay.portal.servlet.filters.i18n.I18nFilter=true
 
-The Language filter replaces JavaScript code that make a client side call to translate a piece of text with the actual translated value. For example, a typical piece of JavaScript code fits the pattern `Liferay.Language.get('key')` where `'key'` is the text to translate. This filter will replace the entire piece of code with the translated text. This is very useful because it will lower the number of client calls by translating the text before the browser receives the JavaScript file.
+The Language filter replaces JavaScript code that makes a client side call to translate a piece of text with the actual translated value. For example, a typical piece of JavaScript code fits the pattern `Liferay.Language.get('key')` where `'key'` is the text to translate. This filter will replace the entire piece of code with the translated text. This is very useful because it will lower the number of client calls by translating the text before the browser receives the JavaScript file.
 
 	com.liferay.portal.servlet.filters.language.LanguageFilter=true
 
@@ -5098,7 +5098,7 @@ Set a property with the prefix `asset.renderer.enabled.` and a suffix with the a
 
 ## Asset Publisher Portlet [](id=asset-publisher-portlet)
 
-Input a list of comma separated display styles that will be available in the configuration screen of Asset Publisher portlet.
+Input a list of comma delimited display styles that will be available in the configuration screen of Asset Publisher portlet.
 
 	asset.publisher.display.styles=table,title-list,abstracts,full-content	
 	
@@ -5326,7 +5326,7 @@ You can map a GIF for the extension by adding the image to the theme's image dis
 
 	dl.file.icons=.bmp,.css,.doc,.docx,.dot,.gif,.gz,.htm,.html,.jpeg,.jpg,.js,.lar,.odb,.odf,.odg,.odp,.ods,.odt,.pdf,.png,.ppt,.pptx,.rtf,.swf,.sxc,.sxi,.sxw,.tar,.tiff,.tgz,.txt,.vsd,.xls,.xlsx,.xml,.zip,.jrxml
 
-Set which files extensions are comparable by the diff tool. Any binary files listed here will only be comparable if OpenOffice is enabled and the the file is convertable to text.
+Set which file extensions are comparable by the diff tool. Any binary files listed here will only be comparable if OpenOffice is enabled and the the file is convertable to text.
 
 	dl.comparable.file.extensions=.css,.doc,.docx,.js,.htm,.html,.odt,.rtf,.sxw,.txt,.xml
 
@@ -5607,7 +5607,7 @@ Input a list of comma delimited class names that extend `com.liferay.portal.kern
 		com.liferay.portlet.journal.util.RegexTransformerListener,\
 		com.liferay.portlet.journal.util.ViewCounterTransformerListener
 
-Enter a list of regular expression patterns and replacements that will be applied to outputted Journal content. The list of  properties must end with a subsequent integer (`0`, `1`, etc.) and it is assumed the list has reached an end when the pattern or replacement is not set. See `com.liferay.portlet.journal.util.RegexTransformerListener` for implementation details.
+Enter a list of regular expression patterns and replacements that will be applied to outputted Journal content. The list of properties must end with a subsequent integer (`0`, `1`, etc.) and it is assumed the list has reached an end when the pattern or replacement is not set. See `com.liferay.portlet.journal.util.RegexTransformerListener` for implementation details.
 
 *Examples:*
 
@@ -5791,7 +5791,7 @@ Specify the options that will be provided to the user in the edit configuration 
 
 	navigation.display.style.options=relative-with-breadcrumb,from-level-2-with-title,from-level-1-with-title,from-level-1,from-level-1-to-all-sublevels,from-level-0
 
-Define each mode with 4 comma delimited strings that represent the form: `headerType`, `rootLayoutType`, `rootLayoutLevel`, `includedLayouts` and `nestedChildren`.
+Define each mode with four comma delimited strings that represent the form: `headerType`, `rootLayoutType`, `rootLayoutLevel`, `includedLayouts` and `nestedChildren`.
 
 	navigation.display.style[relative-with-breadcrumb]=breadcrumb,relative,0,auto,true
 	navigation.display.style[from-level-2-with-title]=root-layout,absolute,2,auto,true
@@ -5804,7 +5804,7 @@ Define each mode with 4 comma delimited strings that represent the form: `header
 
 	nested.portlets.layout.template.default=2_columns_i
 
-Add a comma separated list of layout template ids that should not be allowed in the Nested Portlets Portlet.
+Add a comma delimited list of layout template ids that should not be allowed in the Nested Portlets Portlet.
 
 	nested.portlets.layout.template.unsupported=freeform,1_column
 
@@ -5836,7 +5836,7 @@ Set the HTTP connection timeout in milliseconds for reading RSS feeds.
 
 ## Sites Admin Portlet [](id=sites-admin-portlet)
 
-Set this to `true` to allow site members to see the Sites Admin portlet and the sites he is a member of in the control panel. Setting this to `false` will only allow administrators to see this portlet in the control panel.
+Set this to `true` to allow site members to see the Sites Admin portlet and the sites he is a member of in the Control Panel. Setting this to `false` will only allow administrators to see this portlet in the Control Panel.
 
 	sites.control.panel.members.visible=true
 
@@ -5910,7 +5910,7 @@ Set this to `true` to enable comments for shopping orders.
 
 ## Software Catalog Portlet [](id=software-catalog-portlet)
 
-Set the maximum file size and dimensions for thumbnnails. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
+Set the maximum file size and dimensions for thumbnails. A value of `0` for the maximum file size can be used to indicate unlimited file size. However, the maximum file size allowed is set in the property `com.liferay.portal.upload.UploadServletRequestImpl.max.size`.
 
 	sc.image.max.size=307200
 	sc.image.thumbnail.max.height=200
