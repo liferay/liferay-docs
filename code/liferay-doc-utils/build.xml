@@ -60,4 +60,8 @@
         </jar>
     </target>
 
+    <target name="deploy" depends="dist">
+		<copy file="${dist.dir}/liferay-doc-utils.jar" todir="../../lib"/>
+	</target>
+
 </project>
