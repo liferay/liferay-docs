@@ -2338,12 +2338,28 @@ release_date, etc. Also, there are boolean values that can be acquired that
 include: is_wireless_device, is_tablet, etc. Keeping the capabilities list in
 mind when configuring your device is very helpful.
 
-You're able to detect the capabilites of a device making a request to your
+You're able to detect the capabilities of a device making a request to your
 portal by using the Device Detection API. Through the use of this API, your
 grandma's gnarly tablet and cousin's awesome new mobile phone can make requests
 to your portal and receive identical content. This will make everyone happy!
 
 You're really getting the hang of Liferay's APIs. Way to go! 
+
+## Liferay's Deprecation Policy
+
+Methods in Liferay's APIs are generally deprecated when they are no longer
+called by Liferay internally. Methods can be deprecated at any time within a
+maintenance release. Recall that Liferay version numbers consist of a
+three-digit number in the form of major.minor.maintenance, e.g., 6.0.2 (major
+version 6, minor version, maintenance version). A change in the third number
+(e.g., 6.0.2 to 6.0.3) is a maintenance update, also known as a fix pack. Major
+and minor releases introduce new features so they are called feature releases.
+Maintenance updates do not include new features. When a method is deprecated, it
+should no longer be used for custom development.  However, you don't need to
+immediately update your custom code so that it doesn't call the deprecated
+method. Deprecated methods will not be removed during the maintenance of any
+feature release. However, deprecated methods may be removed in future feature
+releases.
 
 ## Conclusion 
 
