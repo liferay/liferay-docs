@@ -81,7 +81,7 @@ To install the mode file, copy it into your `.jedit/modes` folder, and edit the
 `catalog` file which is in the same folder. Add this line to the file, between
 the <MODES> tags: 
 
-	<MODE NAME="markdown" FILE="markdown.xml" FILE_NAME_GLOB="*.markdown" />
+	<MODE NAME="markdown" FILE="markdown.xml" FILE_NAME_GLOB="*.{markdown,md}" />
 
 
 Save the file and restart jEdit. While editing, you now have syntax highlighting
