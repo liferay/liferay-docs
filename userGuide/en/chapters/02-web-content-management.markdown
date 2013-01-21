@@ -50,10 +50,9 @@ Liferay WCM makes this possible include:
     can use them to query for data stored elsewhere in Liferay.
 
 Once you get familiar with Liferay WCM you'll wonder how you ever got along
-without it.  
+without it. 
 
 ### What Features Does Liferay WCM Have? 
-
 
 Liferay's WCM has a host of features the makes managing the content of your site
 easier.
@@ -281,13 +280,12 @@ Feel.
 
 ##### Customizing the Look and Feel 
 
-
 When you open the Manage Site Pages dialog box it defaults to the Look and Feel
 tab. On this tab, you're presented with an interface that allows you to choose a
 theme for the current site. Themes can transform the entire look of the portal.
 They are created by developers and are easily installed using the Liferay
 Marketplace. Since we don't have any themes beyond the default one installed
-yet, we'll use the default theme for our pages.  
+yet, we'll use the default theme for our pages. 
 
 ![Figure 2.6: Look and Feel Interface](../../images/04-look-and-feel.png)
 
@@ -331,14 +329,13 @@ way for the logo.
 
 In the logo tab, you can also choose whether or not to display the site name on
 the site. If you check the box labeled *Show Site Name* the site name will
-appear in the the top right corner of the page. This option is enabled by
-default and cannot be disabled if the *Allow Site Administrators to set their
-own logo* option is disabled in *Portal Settings*. It is also not available for
-the default site -- only newly created sites and user pages have the option to
-have the name display.
+appear in the top right corner of the page. This option is enabled by default
+and cannot be disabled if the *Allow Site Administrators to set their own logo*
+option is disabled in *Portal Settings*. It is also not available for the
+default site -- only newly created sites and user pages have the option to have
+the name display.
 
 #### Changing options for individual pages 
-
 
 When you select a single page, some different options appear. Let's look at what
 these do. 
@@ -377,7 +374,7 @@ of a specific URL will all be considered references to the same page.]
 the available installed templates to modify the layout. It's very easy for
 developers to define custom layouts and add them to the list. This is covered
 more thoroughly in both the *Liferay Developer's Guide* and in [*Liferay in
-Action*](http://manning.com/sezov).  
+Action*](http://manning.com/sezov). 
 
 **JavaScript:** gives you the ability to paste custom JavaScript code to be
 executed on this page. 
@@ -426,7 +423,7 @@ This portlet is a container for other portlets. It lets you select from any of
 the layouts installed in Liferay, just like the layouts for a page. This gives
 you virtually unlimited options for laying out your pages.
 
-The next option in the *Manage* menu is page customizations.  
+The next option in the *Manage* menu is page customizations. 
 
 #### Page Customizations 
 
@@ -473,7 +470,7 @@ needs of the site. Users can join and leave an open site at will. To join a
 restricted site, a user has to be added by the site administrator. A user can
 also request to be added through the Sites section of the Control Panel. A
 private site is like a restricted site but doesn't appear in the Sites section
-of the Control Panel for users who aren't members.  
+of the Control Panel for users who aren't members. 
 
 **Pages:** From Site Settings, click on *Pages* to manage some basic features of
 the pages on a site. If no pages have been defined yet, you can set site
@@ -564,7 +561,6 @@ Now that you know how to configure sites, let's look at page templates and site
 templates.
 
 #### Page Templates and Site Templates 
-
 
 *Page Templates* and *Site Templates* are invaluable tools for building similar
 pages on larger portals. As you continue to add pages to sites in your portal,
@@ -738,7 +734,6 @@ publishing features such as the built-in workflow and Asset Publisher.
 
 ### Creating content the simple way 
 
-
 As we've stated above, content is the reason web sites exist. Liferay Portal has
 made it easier than ever to get content published to your site. Because Liferay
 Portal is so flexible, you can use basic authoring tools right away or take
@@ -758,28 +753,57 @@ When you manage web content from the Control Panel you can select the location
 where the content resides. For instance, you can add content that's available to
 a specific site or globally across the portal. The Content section of the
 Control Panel displays as its heading the name of the site you're currently
-working on. This heading is called the *context menu selector*: you can change
+working on. This heading is called the *Context Menu Selector*: you can change
 the scope of where you'd like to view, edit or create content by using the
 drop-down selector attached to the heading. 
 
+Once you have the Nose-ster site selected, click on the *Web Content* link in
+the Control Panel. You'll see a folder structure containing all of the web
+content articles that exist in the currently selected scope (the Nose-ster
+site). You can click *Add* &rarr; *Folder* to create a new folder. For sites
+with lots of content and web content articles, it can be very useful to use
+folders to group certain kinds of web content articles together. Click *Add*
+&rarr; *Basic Web Content* to create a new web content article.
+
+![Figure 2.x: Click *Add* &rarr; *Basic Web Content* to create a new
+simple web content article. To create a new web content article based on an
+existing web content structure, click *Add* and then click on the name of the
+structure you'd like to use.](../../images/web-content-add-menu.png)
+
+Existing web content structures also appear in the *Add* menu. This provides
+users with shortcuts for creating specific kinds of web content articles. For
+example, if a web content structure called *FAQ* has been created for Frequently
+Asked Questions articles in your currently selected scope, you can create a new
+FAQ article by clicking *Add* &rarr; *FAQ*.
+
+Click *Manage* &rarr; *Structures* to view a list of web content structures that
+have already been created in your chosen scope. You can add new web content
+structures here. Web Content templates are always associated with a particular
+web content structure, so you can click *Actions* &rarr; *Manage Templates* to
+view the web content templates associated with a structure or add a new
+template to a structure. In the next chapter, we'll cover advanced features such
+as structures, templates, and content scheduling in detail. 
+
 ### Rich, WYSIWYG Editing 
 
-Once you have the Nose-ster site selected, click on the *Web Content* link in
-the Control Panel. Next, click the *Add* button under the *Web Content* tab.
-This is a highly customizable form that by default has two fields: a title and a
-powerful WYSIWYG editor. We could customize this form to contain whatever fields
-our content needs but let's keep things simple for now. We'll cover more
-advanced features such as structures, templates and content scheduling later in
-this chapter.
+Once you've clicked *Add* &rarr; *Basic Web Content*, you'll find a highly
+customizable form that by default has two fields: a title and a powerful WYSIWYG
+editor. We could customize this form to contain whatever fields our content
+needs but we'll keep things simple for now. If web content structures have
+already been created in your currently selected scope, you can select one for
+your new web content article by clicking *Select* next to the *Structure*
+heading.
 
-For now, type the words *Welcome to Nose-ster* in the *Name* field. Notice that
-content can be localized in whatever language you want. If you click on the
-*localize* checkbox, two select boxes appear which allow you to pick the
-language you're working in and the default language. You can enter translations
-of your content for any language in the list. The screenshot below shows this
-interface but for now, we won't be using it, so you can leave it unchecked. In
-the content field, add a short sentence announcing the web site is up and
-running.
+![Figure 2.x: If you'd like to select a web content structure for your web
+content article, click *Select* next to the *Structure* heading.](../../images/web-content-structure-select.png)
+
+Type the words *Welcome to Nose-ster* in the *Name* field. Notice that content
+can be localized in whatever language you want. If you click on the *localize*
+checkbox, two select boxes appear which allow you to pick the language you're
+working in and the default language. You can enter translations of your content
+for any language in the list. The figure below shows this interface but for now,
+we won't be using it, so you can leave it unchecked. In the content field, add a
+short sentence announcing the web site is up and running.
 
 ![Figure 2.13: The Web Content Editor provides many options for
 customization.](../../images/04-web-content-wysiwyg.png)
@@ -921,7 +945,6 @@ it works.
 
 ## Publishing (basic) content 
 
-
 Now that we've created and published our first piece of web content for
 Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
 to our Welcome page by selecting *Add &rarr; Web Content Display* from the
@@ -1026,7 +1049,6 @@ workflow.
 
 ## Using Liferay's workflow with WCM 
 
-
 Workflow is essentially a predetermined sequence of connected steps. In Liferay
 WCM, workflow is designed to manage the creation, modification and publication
 of web content. You can set up a workflow so content can't be published without
@@ -1066,7 +1088,6 @@ organization's approval process. For Nose-ster's implementation we'll use the
 *Single Approver* workflow which ships with the product.
 
 #### Defining Workflows for Web Content 
-
 
 Let's set up Liferay's Workflow for the Nose-ster web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear
@@ -1115,7 +1136,6 @@ was of a very straightforward workflow, as it has only a single approver. Kaleo
 workflow allows you to design workflows that go through as many steps as you
 need to conform to your business processes. We look at Kaleo workflow in more
 detail in chapter 6.
-
 
 ## Summary 
 
