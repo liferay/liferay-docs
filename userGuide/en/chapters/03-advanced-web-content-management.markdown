@@ -796,17 +796,22 @@ steps above to localize content, only fields within the structure that had the
 
 Application display templates work similarly to the previously explained site
 and page templates, but at the portlet level. The application display template
-(ADT) framework allows you to define how portlets display their information on a
-page. For example, you may want to show blog entries horizontally instead of
-vertically, or list your assets in the asset publisher portlet in different
-sizes. These customized upgrades to your portlets are possible with the use of
-ADTs.
+(ADT) framework allows portal administrators to define custom display templates
+used to render asset-centric applications, overriding the default display
+templates. For example, you may want to show blog entries horizontally instead
+of vertically, or list your assets in the asset publisher portlet in different
+sizes. You may be wondering "Why would I want to go away from what Liferay has
+offered me?" or "Will customizing a portlet's display really help my site?".
 
-<!-- TODO: Let's expand the above paragraph. We want to fire the imaginations of
-users and give them ideas as to why they'd want to use ADTs. Can you come up
-with examples, given that most of the readers of this section are building their
-own web sites and wanting to customize the presentation of various portlets?
--->
+Let's go through a simple use case where creating a custom ADT would help
+bolster your site. Consider you're customizing the Nosester site and want users
+to spread ideas to social networks. For instance, you want to configure the Wiki
+portlet for social colloboration with popular social networks like Facebook or
+Twitter. With the use of ADTs, you're able to launch a template editor, create a
+custom template which offers sharing capabilites of the wiki to social networks,
+and enable your portlet to host that template. In a sense, ADTs allow you to
+upgrade your portlet and give you ultimate control over its appearance and
+functionality in your portal.
 
 The *Application Display Templates* page of the Control Panel directs you to a
 list of available templates for your portlets to use. First, you can choose the
@@ -817,9 +822,9 @@ in the Control Panel menu.
 
 The *Global* context makes your template available across all sites.
 Furthermore, you can select individual sites to host your ADT. If you select the
-*Global* context, you can see the default ADTs that come with the portal. These
-are being used for your portlets. Below is a listing of these portlets and their
-default template descriptions:
+*Global* context, you can view pre-made ADTs that can be used to override
+default display templates. Below is a listing of these portlets and their
+template descriptions:
 
 - Wiki: displays social bookmarks and ratings for wiki pages and their child
 pages.
@@ -835,7 +840,11 @@ name of a top level page with the page's immediate children listed underneath.
 - Blogs: displays titles, authors, and abstracts compactly for blog entries.
 
 <!-- TODO: Add D&M once available (has option to create template in Control
-Panel, but not available to select ADT within D&M portlet)-->
+Panel, but not available to select ADT within D&M portlet). 
+UPDATE: The ADT for D&M can be used for the Media Gallery Portlet. There is not
+yet a preinstalled default template for D&M. The goal is to finish the
+implementation for D&M and provide ADT support for several other portlets such
+as Web Content List.-->
 
 To create a new ADT, click *Add* and select the template you'd like to create,
 based on portlet type. Then enter the name, description, and optional small
@@ -843,7 +852,7 @@ image you'd like to use. You have the option of selecting the language type for
 your template (FTL, VM, XSL). Lastly, the *Script* option lets you browse your
 file system for a configured template or launch the editor and create one
 yourself. For more information on how to create a custom template, visit the 
-*Liferay's Developer Guide*.
+*Liferay Developer's Guide*.
 
 <!-- TODO: When the Dev Guide section for templates is complete, add the exact
 link above -->
