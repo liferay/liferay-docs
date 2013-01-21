@@ -252,7 +252,7 @@ is a great way to take content from one environment (say, a development or QA
 environment) and move it all in one shot to your production server. Note that
 you should not make this a regular occurrence. If you want to regularly move
 pages from one server to another, you should use Liferay's staging environment,
-which is covered in chapter 2. 
+which is covered in chapter 3. 
 
 LARs are also a good way to back up your site's content. You can export them to
 a specific location on your server which is backed up, and if you ever have to
