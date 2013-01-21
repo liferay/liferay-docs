@@ -74,7 +74,7 @@ For Markdown, jEdit has a Markdown plugin that can render a Markdown document
 into HTML, and there's also a syntax highlighting mode file that you can
 install. The Markdown plugin is available in jEdit's plugin manager, and the
 mode file can be downloaded from
-[https://github.com/peterlynch/jEdit-modes|Github](https://github.com/peterlynch/jEdit-modes). 
+[https://github.com/peterlynch/jEdit-modes|Github](https://github.com/peterlynch/jEdit-modes) or [http://hasseg.org/blog/post/302/markdown-and-pod-syntax-highlighting-modes-for-jedit](http://hasseg.org/blog/post/302/markdown-and-pod-syntax-highlighting-modes-for-jedit).  
 
 
 To install the mode file, copy it into your `.jedit/modes` folder, and edit the
