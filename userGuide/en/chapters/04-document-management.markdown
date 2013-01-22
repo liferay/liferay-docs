@@ -1052,12 +1052,12 @@ screen.
 Enter your Liferay server credentials by filling in your *Login*, *Password*,
 and *Server* information. Your *Login* is either your user account's email
 address or screen name. Use the same credentials you use to log in to the portal
-in a browser.  In the *Server* field, enter your portal's URL. In this example,
+in a browser. In the *Server* field, enter your portal's URL. In this example,
 the server URL is *http://www.liferay.com*. Click the key icon on the top right
 to test your connection and check if everything is correct.
 
 Note for Gingerbread users: If you can't see some of the features described
-here, click on the menu button and it displays all possible actions. This
+here, click on the menu button to view a list of all possible actions. This
 includes options to refresh, open the settings menu, upload files, take photos,
 test your connection, etc.
 
@@ -1074,49 +1074,47 @@ of the folders and files belonging to the site that you have permission to view.
 ![Figure 4.29: Folder and files](../../images/liferay-sync-android-files-list.png)
 
 From here, you can click on a folder and browse deeper into the folder hierarchy
-or click the *back* button to navigate back to parent folders up to the initial
+or click the *Back* button to navigate back to parent folders up to the initial
 *Sites* list.
 
-Single tap on a file to open with external apps and view its content, if the
-file has never been downloaded before, Sync will download it and open after it
-has finished downloading. You can only view the file content if your device has
-an app installed that can open the file type, for example, in order to open a
-PDF, you need some PDF viewer app installed, otherwise you will see a message
-informing you that no viewer is available and you need to install an app that
-can open it.
+Single-tap on a file to open it. If the file has never been downloaded before,
+Sync will download it and open after it has finished downloading. You can only
+view the file's contents if your device has an app installed that can open the
+file type. For example, in order to open a PDF, you must have at least one PDF
+viewer app installed. Otherwise, you will see a message informing you that no
+viewer is available and you need to install an app that can open the file.
 
-Long press on any folder or file to find a list of actions you can take on a
-given entry: *Add to Favorites*, *View Details*, *Download*, *Rename* or
-*Delete*. This action list varies depending on which entry type is selected (if
-it is a file or folder).
+Long-press on any folder or file to find a list of actions you can take on it:
+*Add to Favorites*, *View Details*, *Download*, *Rename* or *Delete*. This
+actions menu varies depending on which entry type is selected: file or folder. 
 
-On Gingerbread this menu looks like this:
+On Gingerbread, the actions menu looks like this:
 
-![Figure 4.x: Gigerbread menu](../../images/liferay-sync-android-gingerbread-context.png)
+![Figure 4.x: Gingerbread menu](../../images/liferay-sync-android-gingerbread-context.png)
 
-On Ice Cream Sandwich and above, you will see all action icons and menu on the
+On Ice Cream Sandwich and above, you can find the action icons and menu at the
 top right:
 
 ![Figure 4.x: ICS menu](../../images/liferay-sync-android-ics-context.png)
 
-Clicking on *Add to Favorites* (Gingerbread) or the gray star
-(Ice Cream Sandwich) will add the selected file to the *Favorites* list.
-*Favorites* are special files that can be accessed and viewed even when you are
-offline (more details bellow). If a file is already marked as favorite you
-should see a *Remove from Favorites* or blue star instead, clicking
-on it will remove the selected file from the *Favorites* list.
+Clicking on *Add to Favorites* (Gingerbread) or the gray star (Ice Cream
+Sandwich) adds the selected file to the *Favorites* list. *Favorites* are
+special files that can be accessed and viewed even when you are offline (more
+details below). If a file is already marked as a favorite, you'll see a
+*Remove from Favorites* or blue star instead. Clicking on it removes the
+selected file from the *Favorites* list.
 
 Clicking on *View Details* (Gingerbread) or the round icon with the letter "i"
-(Ice Cream Sandwich) will open the details view, which displays entry's metadata
-such as creation date, author, version, description, etc:
+(Ice Cream Sandwich) opens the details view, which displays the entry's metadata
+such as creation date, author, version, description, etc.:
 
 ![Figure 4.x: View details](../../images/liferay-sync-android-details.png)
 
 If you click on *Download* (floppy disk icon on Ice Cream Sandwich), it
 downloads and overwrites the local file copy.
 
-You can rename a folder or file by clicking on the *Rename* option, this will
-rename the entry in the portal.
+You can rename a folder or file by clicking on the *Rename* option. This renames
+the entry in the portal.
 
 Clicking on *Delete* deletes the file/folder from the remote portal, and 
 other users won't be able to view or download it. On Ice Cream Sandwich and
@@ -1128,7 +1126,7 @@ Some actions are not related to a specific folder or file. You can find these
 actions in the menu on the top action bar when no entry is selected (Gingerbread
 users need to click on the device menu button). Depending on the device screen
 width, some icons may overflow to the three dots button on the right. Click on
-it to see all available actions.
+this button to see all of the available actions.
 
 ![Figure 4.x: More options](../../images/liferay-sync-android-more.png)
 
@@ -1144,7 +1142,7 @@ in the portal.
 
 The *Upload* button displays the types of local files you can upload to the
 portal. Choosing *Image*, for example, shows all images that are stored locally
-in your device. Once you choose the files and confirm, these files are uploaded
+on your device. Once you choose the files and confirm, these files are uploaded
 to the portal and are placed in the current folder. By default, you can upload
 images, videos, and audio files. If you have installed an app on your device
 that can open and browse any type of file, you will also see an option called
@@ -1152,15 +1150,17 @@ that can open and browse any type of file, you will also see an option called
 
 ![Figure 4.x: Upload local files](../../images/liferay-sync-android-upload.png)
 
-The *Favorites* menu option opens the favorites list. All files that were marked
-as favorites will show up in this list. You should mark your most important
-files as favorite because, as mentioned earlier, the *Favorites* feature gives 
-ou quick offline access to them. From there you can view their content, their
-metadata and, of course, remove them from the favorites list.
+The *Favorites* menu option opens the favorites list. All files that have been
+marked as favorites show up in this list. You should mark your most important
+files as favorites because, as mentioned earlier, the *Favorites* feature gives
+you quick offline access to them. You can view the contents of items in the
+*Favorites* list, view their metadata and, of course, remove them from the list.
 
 ![Figure 4.x: Favorites](../../images/liferay-sync-android-favorites.png)
 
-#### iOS  
+Next, let's look at the iOS Sync app.
+
+#### iOS 
 
 After installing the iOS app, click on *Settings* in the toolbar, enter your
 Liferay server credentials by filling in your *Login*, *Password*, and *Server*
