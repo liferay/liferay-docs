@@ -1215,11 +1215,30 @@ icon.](../../images/kaleo-33.png)
 Now, click the pencil icon located beneath the green "plus" symbol. The
 FreeMarker template editor appears.
 
-Insert FreeMarker code into the FreeMarker editor to specify your
-email notification template. 
+Insert FreeMarker code into the FreeMarker editor to specify your email
+notification template. We've provided an example code snippet of what an email
+notification looks like written in FreeMarker.
 
-![Figure 8.66: You can edit your email template using the Freemarker
-editor.](../../images/kaleo-42.png)
+    <#assign comments = taskComments!"">
+    <#assign portalURL = serviceContext.portalURL!"">
+    <#assign wTasksURL = portalURL+"/group/control_panel/manage?p_p_id=153&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&doAsGroupId="+groupId+"&refererPlid=">
+
+    <!-- email body -->
+    <p> There is a new submission of ${entryType} waiting for review in the workflow. </p>
+
+    <!-- personal message to assignee -->
+    <p> Please review the code waiting for you in your workflow tasks.
+    <#if comments != "" > <br/> Assignment comment says: <strong>${comments}</strong> </#if>
+    </p>
+    <p> <a href="${wTasksURL}">Click here</a> to see workflow tasks assigned to you. </p>
+
+    <!-- signature -->
+    <p>Sincerely,<br /><strong>Liferay Portal Workflow</strong></p>
+
+Furthermore, the snapshot below gives an illustration of what the snippet sends
+to the configured email recipient.
+
+![Figure 8.66: This is how the email notification will appear when it's received.](../../images/kaleo-43.png)
 
 You've successfully completed setting up an email notification! Now, when the
 Project Management task node is activated in the workflow, the user we specified

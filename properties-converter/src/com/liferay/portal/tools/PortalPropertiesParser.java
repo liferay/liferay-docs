@@ -22,8 +22,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.xml.transform.Transformer;
@@ -64,7 +65,7 @@ public class PortalPropertiesParser implements XMLReader {
 
 			parser.setGenerateFullToc(fullToc);
 		}
-		
+
 		File propertiesFile = new File(args[0]);
 
 		FileInputStream props = new FileInputStream(propertiesFile);
@@ -76,14 +77,14 @@ public class PortalPropertiesParser implements XMLReader {
 		TransformerFactory factory = TransformerFactory.newInstance();
 
 		InputStream xsl = ClassLoader.getSystemResourceAsStream(
-				"com/liferay/portal/tools/dependencies/properties-html.xsl");
+			"com/liferay/portal/tools/dependencies/properties-html.xsl");
 
 		StreamSource xslSource = new StreamSource(xsl);
 
 		Transformer transformer = factory.newTransformer(xslSource);
 
 		StreamResult result = new StreamResult(destinationHtml);
-		
+
 		transformer.setParameter("title", args[3]);
 
 		transformer.transform(saxSource, result);
@@ -158,18 +159,22 @@ public class PortalPropertiesParser implements XMLReader {
 
 	private void _attributeAdd(
 			AttributesImpl attributes, String key, String value) {
+
 		attributes.addAttribute(_namespaceURI, key, key, "", value);
 	}
 
-	private void _createProperty
-			(String propertyTagName, Attributes attrs,
-			 PropertyData propertyData) throws SAXException {
+	private void _createProperty(String propertyTagName, Attributes attrs,
+			PropertyData propertyData) throws SAXException {
 
 		_tagStart(propertyTagName, attrs);
 
 		_tag("name", propertyData.name);
 		_tag("anchor", propertyData.anchor);
-		_tag("description", propertyData.description);
+
+		for (String paragraph : propertyData.descriptionParagraphs) {
+			_tag("paragraph", paragraph);
+		}
+
 		_tag("value", propertyData.value);
 
 		for (String alternativeValue : propertyData.alternativeValues) {
@@ -194,8 +199,7 @@ public class PortalPropertiesParser implements XMLReader {
 			_attributeAdd(attrs, "hidden",
 					Boolean.toString(propertyData.hidden));
 
-			_attributeAdd(attrs, "group",
-					Integer.toString(propertyData.group));
+			_attributeAdd(attrs, "group", Integer.toString(propertyData.group));
 
 			if (propertyData.groupStart) {
 				_attributeAdd(attrs, "prefix", propertyData.prefix);
@@ -322,6 +326,8 @@ public class PortalPropertiesParser implements XMLReader {
 
 		boolean hidden;
 
+		String paragraph = "";
+
 		for (int i = 0; i < lines.length; i++) {
 			String line = lines[i];
 			line = line.trim();
@@ -336,8 +342,18 @@ public class PortalPropertiesParser implements XMLReader {
 					hidden = true;
 				}
 				else {
-					propertyData.description += line.substring(1) + '\n';
-					continue;
+					// if (only contains '#' and zero or more whitespace) {
+					// continue;
+					// }
+					if (line.substring(1).matches("[\\s]*?")) {
+						continue;
+					}
+
+					paragraph += line.substring(1);
+					if (!lines[i + 1].matches("[\\s]*?#[\\s][^\\s].*")) {
+						propertyData.descriptionParagraphs.add(paragraph);
+						paragraph = "";
+					}
 				}
 			}
 
@@ -351,8 +367,8 @@ public class PortalPropertiesParser implements XMLReader {
 			propertyData.name = line.substring(0, equalNdx);
 			propertyData.anchor = nameToAnchor(propertyData.name + '+' + i);
 			propertyData.hidden = hidden;
-			propertyData.prefix =_makePrefix(
-					propertyData.name, PARAM_MIN_LEFT, PARAM_DEEP_RIGHT);
+			propertyData.prefix = _makePrefix(
+				propertyData.name, PARAM_MIN_LEFT, PARAM_DEEP_RIGHT);
 
 			String value = line.substring(equalNdx + 1);
 			while (value.endsWith("\\")) {
@@ -364,18 +380,89 @@ public class PortalPropertiesParser implements XMLReader {
 			propertyData.value = value;
 
 			// check previous property for alternative values
-			if (propertyData.description.length() == 0) {
+			if (propertyData.descriptionParagraphs.isEmpty()) {
 
 				if (propertyDataList.isEmpty() == false) {
 
-					PropertyData previousData =
-							propertyDataList.get(propertyDataList.size() - 1);
+					PropertyData previousData = 
+						propertyDataList.get(propertyDataList.size() - 1);
 
 					if (previousData.name.equals(propertyData.name)) {
 
 						if (previousData.value.equals(propertyData.value)) {
 							propertyData = new PropertyData();
 							continue;
+						}
+
+						// Handle hidden values
+
+						if (propertyData.hidden) {
+
+							StringBuffer hiddenValue = new StringBuffer();
+							String[] hiddenValues = propertyData.value.split("#");
+
+							for (String hv : hiddenValues) {
+
+								// Trim leading whitespace
+
+								int idxNonWhitespace = -1;
+								int hvLength = hv.length();
+								for (int j = 0; j < hvLength; j++) {
+
+									if (hv.charAt(j) != ' ' &&
+										hv.charAt(j) != '\t') {
+
+										idxNonWhitespace = j;
+										break;
+									}
+								}
+
+								if (idxNonWhitespace >= 0) {
+									hv = hv.substring(idxNonWhitespace);
+								} else {
+									// Don't add blank lines for hidden values
+
+									continue;
+								}
+
+								// Prepend space to all values after the first
+
+								if (hiddenValue.length() > 0) {
+									hiddenValue.append(" ");
+								}
+
+								hiddenValue.append(hv);
+							}
+
+							// Keep value lines within 80 columns
+
+							if (hiddenValue.length() > 80) {
+
+								List<String> hvs = Arrays.asList(
+									hiddenValue.toString().split(","));
+								Iterator<String> hvsIter = hvs.iterator();
+								hiddenValue = new StringBuffer();
+
+								while (hvsIter.hasNext()) {
+									String hvsValue = hvsIter.next();
+									if (hvsValue.startsWith(" ") &&
+										hvsValue.length() > 1) {
+
+										hvsValue = hvsValue.substring(1);
+									}
+
+									hiddenValue.append(hvsValue);
+									if (hvsIter.hasNext()) {
+										hiddenValue.append(",\n");
+									}
+								}
+							}
+
+							if (!previousData.alternativeValues.isEmpty()) {
+								hiddenValue.insert(0, "\n");
+							}
+
+							propertyData.value = hiddenValue.toString();
 						}
 
 						previousData.alternativeValues.add(propertyData.value);
@@ -394,8 +481,49 @@ public class PortalPropertiesParser implements XMLReader {
 
 	}
 
-	private void _resolveGroups(
-			List<PropertyData> propertyDataList) {
+	/**
+	 * Trims leading and trailing whitespace from the string, up to but not
+	 * including the whitespace characters specified by <code>exceptions</code>.
+	 * 
+	 * @param s the original string
+	 * @param exceptions the whitespace characters to limit trimming
+	 * @return a string representing the original string with leading and
+	 *         trailing whitespace removed, up to but not including the
+	 *         whitespace characters specified by <code>exceptions</code>
+	 */
+	public static String trim(String s, char[] exceptions) {
+		if (s == null) {
+			return null;
+		}
+
+		char[] chars = s.toCharArray();
+
+		int len = chars.length;
+
+		int x = 0;
+		int y = chars.length;
+
+		for (int i = 0; i < len; i++) {
+			char c = chars[i];
+
+			x = i + 1;
+		}
+
+		for (int i = len - 1; i >= 0; i--) {
+			char c = chars[i];
+
+			y = i;
+		}
+
+		if ((x != 0) || (y != len)) {
+			return s.substring(x, y);
+		}
+		else {
+			return s;
+		}
+	}
+
+	private void _resolveGroups(List<PropertyData> propertyDataList) {
 
 		int groupCount = 0;
 		boolean newGroup = true;
@@ -404,13 +532,11 @@ public class PortalPropertiesParser implements XMLReader {
 			PropertyData prev = propertyDataList.get(i - 1);
 			PropertyData curr = propertyDataList.get(i);
 
-			if (
-					prev.hidden == curr.hidden &&
-					prev.alternativeValues.isEmpty() &&
-					curr.alternativeValues.isEmpty() &&
-					prev.prefix.equals(curr.prefix) &&
-					(curr.description.length() == 0)
-					) {
+			if (prev.hidden == curr.hidden &&
+				prev.alternativeValues.isEmpty() &&
+				curr.alternativeValues.isEmpty() &&
+				prev.prefix.equals(curr.prefix) &&
+				(curr.descriptionParagraphs.isEmpty())) {
 
 				// group founded
 
@@ -456,7 +582,7 @@ public class PortalPropertiesParser implements XMLReader {
 	private void _tagStart(String tagName) throws SAXException {
 
 		_contentHandler.startElement(
-				_namespaceURI, tagName, tagName, _attributes);
+			_namespaceURI, tagName, tagName, _attributes);
 
 	}
 
@@ -464,7 +590,7 @@ public class PortalPropertiesParser implements XMLReader {
 			throws SAXException {
 
 		_contentHandler.startElement(
-				_namespaceURI, tagName, tagName, attributes);
+			_namespaceURI, tagName, tagName, attributes);
 
 	}
 
@@ -480,7 +606,7 @@ public class PortalPropertiesParser implements XMLReader {
 	private static class PropertyData {
 		public List<String> alternativeValues = new ArrayList<String>();
 		public String anchor = "";
-		public String description = "";
+		public List<String> descriptionParagraphs = new ArrayList<String>();
 		public int group;
 		public boolean groupStart;
 		public boolean hidden;
