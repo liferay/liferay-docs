@@ -812,7 +812,7 @@ social networks, and enable your portlet to host that template. Custom templates
 allow you to upgrade your portlet and give you ultimate control over its
 appearance and functionality in your portal.
 
-The *Application Display Templates* page of the Control Panel's Content Menu directs you to a
+The *Application Display Templates* page of the Control Panel directs you to a
 list of available templates for your portlets to use. First, you can choose the
 context of your ADT by selecting the site you want it to reside in. This is done
 in the Control Panel menu.
