@@ -819,10 +819,11 @@ in the Control Panel menu.
 
 ![Figure 3.18: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
 
-The *Global* context makes your template available across all sites. If you
-select the *Global* context, you can view pre-made ADTs that can be used to
-override default display templates. Below is a listing of these portlets and
-their template descriptions:
+If you select an individual site from the context menu, your ADT will be hosted
+only on that site. If you select the *Global* context, you can view pre-made
+ADTs that can be used to override default display templates. The *Global*
+context makes your template available across all sites. Below is a listing of
+these portlets and their template descriptions:
 
 - Wiki: displays social bookmarks and ratings for wiki pages and their child
 pages.
@@ -844,14 +845,12 @@ yet a preinstalled default template for D&M. The goal is to finish the
 implementation for D&M and provide ADT support for several other portlets such
 as Web Content List.-->
 
-Furthermore, you can select individual sites to host your ADT. 
-
 To create a new ADT, click *Add* and select the template you'd like to create,
 based on portlet type. Then enter the name, description, and optional small
 image you'd like to use. You have the option of selecting the language type for
 your template (FTL, VM, XSL). Lastly, the *Script* option lets you browse your
 file system for a configured template or launch the editor and create one
-yourself. For more information on how to create a custom template, visit the 
+yourself. For more information on how to create a custom template, visit the
 *Liferay Developer's Guide*.
 
 <!-- TODO: When the Dev Guide section for templates is complete, add the exact
