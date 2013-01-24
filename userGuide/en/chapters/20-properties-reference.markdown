@@ -4689,9 +4689,7 @@ Set this property to `false` to disable XML validation in the portal. XML valida
 
 ## Xuggler [](id=xuggler)
 
-Set this to `true` to enable conversion and previewing of videos in the Document Library portlet. See [http://www.xuggle.com/xuggler/downloads/build.jsp](http://www.xuggle.com/xuggler/downloads/build.jsp) for more information.
-
-<!-- This link above appears to be broken.  -->
+Set this to `true` to enable conversion and previewing of videos in the Document Library portlet. See [http://www.xuggle.com/xuggler/downloads](http://www.xuggle.com/xuggler/downloads) for more information.
 
 	xuggler.enabled=false
 
