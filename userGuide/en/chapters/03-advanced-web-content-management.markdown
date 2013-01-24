@@ -822,7 +822,7 @@ site's portlets.
 
 ![Figure 3.18: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
 
-If you want to create your own ADT, you need to select the portlet whose
+If you'd like to add an ADT, first select the portlet whose
 template you'd like to create. Below is a list of the portlets that can be
 customized using ADTs, and their template descriptions:
 
