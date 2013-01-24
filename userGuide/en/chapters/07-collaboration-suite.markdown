@@ -1760,10 +1760,14 @@ portlet, create the `portlet-ext.properties` file in your
 /chat-portlet/WEB-INF/classes/ directory. The contents of your
 `portlet-ext.properties` file should like this:
 
-	jabber.enabled=true jabber.import.user.enabled=true
-jabber.host=localhost jabber.port=5222   jabber.service.name=<Host Name>
-jabber.resource=Liferay    jabber.sock5.proxy.enabled=false
-jabber.sock5.proxy.port=-1
+		jabber.enabled=true
+		jabber.import.user.enabled=true
+		jabber.host=localhost
+		jabber.port=5222
+		jabber.service.name=<Host Name>
+		jabber.resource=Liferay
+		jabber.sock5.proxy.enabled=false
+		jabber.sock5.proxy.port=-1
 
 Note that you must change `jabber.service.name` to the "Host Name". If you are
 using Openfire, you can find the Host Name by using the Openfire administration
@@ -1803,7 +1807,7 @@ Alternatively, since Openfire integrates with LDAP, if you are using Openfire
 and your portal is also using LDAP for authentication, you can disable the
 `jabber.import.user.enabled` property.
 
-Next, let's look at how you can integrate your email addresses with Lifray's
+Next, let's look at how you can integrate your email addresses with Liferay's
 Mail portlet.
 
 ## Integrating your email with Liferay Mail [](id=ma-4)
