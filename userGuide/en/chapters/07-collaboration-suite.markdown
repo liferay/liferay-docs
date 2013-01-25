@@ -30,9 +30,10 @@ within your portal and provide an enhanced experience for your users.
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include
 look and feel, communication, scoping, sharing, permissions, archive
-configurations, and exporting/importing portlet data. So before we get into the
-nitty gritty of the applications themselves, it's best to cover these common
-features first, starting with the look and feel configuration options.
+configurations, exporting/importing portlet data, and the recycle bin. So before
+we get into the nitty gritty of the applications themselves, it's best to cover
+these common features first, starting with the look and feel configuration
+options.
 
 ### Look and Feel 
 
@@ -435,6 +436,85 @@ for your blog or calendar if you wish to share them.
 
 Now that we've seen all the common options available in Liferay's portlet
 applications, we can move on to specific applications, starting with blogs.
+
+### Recycle Bin
+
+#### Recycling Assets in Liferay 
+
+Have you ever deleted a Liferay asset and regretted it? With Recycle Bin, the
+*Delete* option is replaced with the *Remove to Recycle Bin* option for certain
+content types. It works just like you think it does. Instead of permanently
+deleting your content, it's temporarily kept in the Recycle Bin. If you need
+recently recycled content, just restore it using the Recycle Bin feature.
+
+<!--To Do: Documents and Media Use Case Goes here. Maybe use the Wiki to give a
+robust example and include the special case of Wiki attachments--> 
+
+#### Which Assets can I Recycle?
+
+You can recycle content from several portals:
+ - *Documents and Media*
+ - *Blogs*
+ - *Wiki*
+ - *Message Board*
+
+<!---To do: Add content types to this list, and add exceptions to the common
+method for recycling and restoring assets, if there are additional
+exceptions/added complexity, such as with Wiki attachments -->
+
+#### Restoring Content
+
+To begin using the Recycle Bin feature, you'll need to ensure it's enabled for
+your site and set the duration for which you'd like to store recycled content
+before deletion. In the Control Panel, select the site from the Context Menu,
+and click *Site Settings* in the Content Menu. From here, click the *Recycle
+Bin* link in the site settings menu under the *Advanced* heading. You'll see two
+dropdown menus that let you:
+
+ 1. Enable or Disable the Recycle Bin feature
+ 2. Specify the number of days that files will be kept in the Recycle Bin 
+
+By default, the feature is enabled, and the duration is set at 30 days.
+
+Content can be moved to the Recycle Bin from the Portlet or the Control Panel.
+The process for recycling content while in a portal will be slightly different
+depending on the type of content you're recycling:
+
+ - *Blogs*: Click the *Move to the Recycle Bin* link under the blog post title.
+ You have this option in the main Blogs portlet window and in any specific blog
+ post's window.
+ 
+ - *Documents and Media*: Select the content you're recycling then choose *Move
+ to the Recycle Bin* in the *Actions* dropdown menu. Alternatively, click a
+ specific document or folder and recycle it by clicking the button *Move to the
+ Reycle Bin* under the content's title. Folders
+ 
+ - *Message Board*: The *Actions* dropdown let's you move a Message Board post
+ to the recycle bin. Additionally, the detail window for a specific Message
+ Board post has a *Move to the Recycle Bin* link.
+ 
+ - *Wiki*: Click on the *Edit* link for a Wiki item. In the *Content* tab,
+ scroll to the row of buttons near the bottom of the page and choose *Move to
+ the Reycle Bin*. Your Wiki page and any attachments will be moved to the
+ Recycle Bin. If you want to recycle only a Wiki's attachment, go to the
+ *Attachments* tab and click the *Remove* link for the attachment you're
+ recycling. Deleted Wiki attachments aren't kept in the Recycle Bin, so don't
+ worry when you notice they aren't there. Simply navigate back to the
+ *Attachments* tab of the ppropriate Wiki article and find the *Recently Removed
+ Attachments* link to locate and restore the attachment.
+ 
+ <!---Discuss special case of recycling and restoring just the attachments from Wiki articles-->
+ 
+ <!---Document the ability to move content from the recycle bin using the Control Panel-->
+ 
+ <!---Document the restoration of content from the Recycle Bin and emptying the recycle bin-->
+
+#### Benefiting from the Recycle Bin
+<!---Does this really need its own heading?-->
+
+The Recycle Bin saves you time by letting you restore content that's been
+recycled. Instead of recreating or re-uploading content, you'll be tailoring
+your Liferay portal to fully leverage its capabilities.
 
 ## Expressing yourself using Blogs 
 
