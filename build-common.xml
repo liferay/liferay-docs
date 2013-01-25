@@ -158,32 +158,22 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     </target>
 
     <target name="dist" depends="clean-lang, prepare-dist, concat-markdown-files" description="prepares document zip file for asset import">
+    <property file="./doc.properties" />
         <copy todir="${dist.dir}/${lang}">
 		    <fileset dir="${build.dir}/${lang}">
-                <include name="${lang}-${doc.dir}.markdown"/>
+                <include name="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
             </fileset>
         </copy>
-        <zip destfile="${dist.dir}/${lang}/${lang}-${doc.dir}.zip">
-            <fileset dir="${dist.dir}/${lang}" includes="images/*.*"/>
-            <fileset dir="${dist.dir}/${lang}" includes="${lang}-${doc.dir}.markdown"/>
-        </zip>
-    </target>
-
-    <target name="dist-win" depends="clean-lang, prepare-dist, concat-markdown-files" description="prepares document zip file for asset import on windows">
-        <copy todir="${dist.dir}/${lang}">
-            <fileset dir="${build.dir}/${lang}">
-                <include name="${lang}-${doc.dir}.markdown"/>
-            </fileset>
-        </copy>
-        <zip destfile="${dist.dir}/${lang}/${lang}-${doc.dir}.zip">
+        <zip destfile="${dist.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.zip">
             <fileset dir="${dist.dir}/${lang}" includes="images/*.*"/>
             <fileset dir="${dist.dir}/${lang}" includes="${lang}-${doc.dir}.markdown"/>
         </zip>
     </target>
 
     <target name="concat-markdown-files" depends="prepare" description="concatinates multiple markdown files into a single one">
+    <property file="./doc.properties" />
         <echo message="... concatinating markdown files for ${doc.dir} (${lang})"/>
-        <concat destfile="./${build.dir}/${lang}/${lang}-${doc.dir}.markdown" fixlastline = "yes">
+        <concat destfile="./${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown" fixlastline = "yes">
             <fileset dir="./${lang}" casesensitive="yes">
                 <include name="**/*.markdown"/>
             </fileset>
