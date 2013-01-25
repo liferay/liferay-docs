@@ -194,7 +194,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
             <arg value="-smart"/>-->
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.html"/>
-            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
+            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -214,7 +214,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
             <arg value="-smart"/>
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.html"/>
-            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
+            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -232,7 +232,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
             <arg value="-smart"/>
             <arg value="-o"/>
             <arg value="./${lang}-${doc.dir}.odt"/>
-            <arg value="./${lang}-${doc.dir}.markdown"/>
+            <arg value="./${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -252,7 +252,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
             <arg value="-smart"/>
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.odt"/>
-            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
+            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -270,7 +270,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
             <arg value="-smart"/>-->
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.epub"/>
-            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
+            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -288,7 +288,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
             <arg value="-RTS"/>-->
             <arg value="-o"/>
             <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.epub"/>
-            <arg value="${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
+            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </exec>      
     </target>
 
@@ -460,7 +460,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         <echo message="... adding metadata to ${doc.dir} (${lang})"/>
         <java jar="../lib/liferay-doc-utils.jar" fork="true">
 	    <arg value="AddMarkdownMetadata"/>
-            <arg value="./${build.dir}/${lang}/${lang}-${doc.dir}.markdown"/>
+            <arg value="./${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
             <arg value="${title}"/>
             <arg value="${author}"/>
             <arg value="${date}"/>
