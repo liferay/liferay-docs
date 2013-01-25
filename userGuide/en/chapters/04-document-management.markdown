@@ -1168,7 +1168,7 @@ to set up the app. This screen appears whenever preferences are missing.
 
 ![Figure 4.x: iOS Settings](../../images/liferay-sync-ios-empty.png)
 
-Click on *Settings* in the toolbar, enter your Liferay server credentials by
+Click on *Settings* in the toolbar and enter your Liferay server credentials by
 filling in your *Login*, *Password*, and *Server* information. Your *Login*
 is either your user account's email address or screen name, whichever you use
 to log in to the portal in a browser. In the *Server* field, enter your
@@ -1182,17 +1182,18 @@ toolbar section and you'll see a list of Liferay sites you have access to.
 
 ![Figure 4.x: Sites](../../images/liferay-sync-ios-sites.png)
 
-You can browse the files of a site by tapping on any of them. This opens a list
-of the folders and files belonging to the site that you have permission to view.
+You can browse the files of a site by tapping on its name or icon. This opens a
+list of the folders and files belonging to the site that you have permission to
+view.
 
 ![Figure 4.x: Folder and files](../../images/liferay-sync-ios-files-list.png)
 
-From here, you can click on a folder and browse deeper into the folder hierarchy
-or click the *Back* button to navigate back to parent folders up to the initial
-*Sites* list.
+From here, you can click on a folder to browse deeper into the folder hierarchy.
+You can also click on the *Back* button to navigate back to parent folders up to
+the initial *Sites* list.
 
-You can refresh the list by pushing it down. All files and folders that have
-been changed in the portal are then updated.
+You can refresh the list by pushing it down. This updates all the files and
+folders that have been changed in the portal.
 
 ![Figure 4.x: Refreshing](../../images/liferay-sync-ios-refresh.png)
 
@@ -1203,7 +1204,7 @@ it opens the local copy.
 
 ![Figure 4.x: Opening a file](../../images/liferay-sync-ios-open.png)
 
-There are 3 icons at the bottom when you open file:
+There are 3 icons at the bottom of the screen when you open a file:
 
 Clicking on the leftmost round icon with the letter "i" opens the details view,
 which displays the entry's metadata such as creation date, author, version,
@@ -1213,28 +1214,29 @@ description, etc.:
 
 Clicking on the star icon at the center adds the selected file to the
 *Favorites* list. *Favorites* are special files that can be accessed and viewed
-even when you are offline (more details below). If a file is already marked as a
-favorite, the star icon will be enabled. Clicking on it removes the selected
-file from the *Favorites* list.
+even when you are offline (more details below). If a file has already been
+marked as a favorite, a star icon will appear next to it. Clicking on the star
+next to the selected file removes the file from the *Favorites* list.
 
-Clicking on the rightmost icon displays sharing options, you can, for example,
-send the file as an email attachment, print the file or copy to the clipboard.
-Some external apps may also appear in this list, you can share your file with
-social apps and messengers if they are available.
+Clicking on the rightmost icon displays sharing options. You can, for example,
+send the file as an email attachment, print the file, or copy it to your
+clipboard. Some external apps may also appear in this list. For example, you can
+share your file with social apps and messengers if they are available.
 
 ![Figure 4.x: Share options](../../images/liferay-sync-ios-share.png)
 
-In the file list there's an Edit button, clicking on it will switch the app to
-the edit mode as shown bellow:
+In the file list, there's an Edit button. Clicking on it switches the app to
+the edit mode as shown below:
 
 ![Figure 4.x: Edit mode](../../images/liferay-sync-ios-edit.png)
 
-Selecting one or more files/folders and clicking on the *Delete* button deletes
-the selected files/folders from the remote portal, and other users won't be able
-to view or download it.
+Selecting one or more files or folders and clicking on the *Delete* button
+deletes the selected files or folders from the remote portal. Once you delete
+files or folders from the remote portal, other users won't be able to view or
+download them.
 
-Selecting only one file or folder will enable the *Rename* button. Click on it
-to change the entry's name locally and remotely.
+Selecting only one file or folder enables the *Rename* button. Click on it to
+change the entry's name locally and remotely.
 
 To quickly delete a file or folder from the portal, you can also swipe right and
 click on the *Delete* button in the file list view:
@@ -1247,7 +1249,7 @@ at the top right corner. You should see three options:
 *Take a photo or video* opens your camera app and lets you take a photo or
 record a video and upload it.
 
-*Choose Existing* allows you to upload multiple photos or videos stored in your
+*Choose Existing* allows you to upload multiple photos or videos stored on your
 device.
 
 *Create New Folder* lets you type the name of the folder and creates it in the
@@ -1264,12 +1266,12 @@ from the list.
 
 ![Figure 4.x: Favorites](../../images/liferay-sync-ios-favorites.png)
 
-All downloaded files are stored in your device indefinitely. 
+All downloaded files are stored on your device indefinitely. 
+
+![Figure 4.x: Deleting local copies](../../images/liferay-sync-ios-cache.png)
 
 If you want to delete downloaded files locally but don't want to remove them
 from the portal, go to *Settings* and click on the *Clear Cache* button.
-
-![Figure 4.x: Deleting local copies](../../images/liferay-sync-ios-cache.png)
 
 ## Summary 
 
