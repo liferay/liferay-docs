@@ -170,9 +170,9 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </zip>
     </target>
 
-    <target name="concat-markdown-files" depends="prepare" description="concatinates multiple markdown files into a single one">
+    <target name="concat-markdown-files" depends="prepare" description="concatenates multiple markdown files into a single one">
     <property file="./doc.properties" />
-        <echo message="... concatinating markdown files for ${product.abbrev} ${product.version}-${doc.dir} (${lang})"/>
+        <echo message="... concatenating markdown files for ${product.abbrev} ${product.version}-${doc.dir} (${lang})"/>
         <concat destfile="./${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown" fixlastline = "yes">
             <fileset dir="./${lang}" casesensitive="yes">
                 <include name="**/*.markdown"/>
