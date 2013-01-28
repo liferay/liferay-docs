@@ -1215,8 +1215,8 @@ description, etc.:
 Clicking on the star icon at the center adds the selected file to the
 *Favorites* list. *Favorites* are special files that can be accessed and viewed
 even when you are offline (more details below). If a file has already been
-marked as a favorite, clicking on the star removes the file from the *Favorites*
-list.
+marked as a favorite, clicking on the star icon removes the file from the
+*Favorites* list.
 
 Clicking on the rightmost icon displays sharing options. You can, for example,
 send the file as an email attachment, print the file, or copy it to your
