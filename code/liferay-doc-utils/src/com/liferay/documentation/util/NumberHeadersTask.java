@@ -125,6 +125,7 @@ public class NumberHeadersTask extends Task {
 
 	private  String extractHeading(String line, int indexOfFirstHeaderChar) {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
+		heading2 = heading2.trim();
 
 		// Replace each space with a dash
 
@@ -230,7 +231,7 @@ public class NumberHeadersTask extends Task {
 
 			int headingLen = heading.length();
 
-			int idCount = 0;
+			int idCount = -1;
 			String newHeading = null;
 			while (true) {
 
@@ -277,8 +278,12 @@ public class NumberHeadersTask extends Task {
 		headingSb.append(chapter);
 		headingSb.append("-");
 		headingSb.append(heading);
-		headingSb.append("-");
-		headingSb.append(idCount);
+
+		if (idCount > -1) {
+			headingSb.append("-");
+			headingSb.append(idCount);
+		}
+
 		return headingSb.toString();
 	}
 
