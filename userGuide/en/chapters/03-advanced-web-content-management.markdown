@@ -984,6 +984,13 @@ First, you'll add a new page. Click *Add &rarr; Page* from the toolbar in the
 default site and name the new page *News and Events*. Next, click the *View
 Pages* button and add the Alerts and Announcements portlets to it.
 
+When you activate staging, Liferay creates a duplicate of all existing content
+on your site and uses that to create the staging site. Because of this, we
+recommend only activating staging on relatively new, clean sites.  Having a few
+pages and some portlets (like the site we've created) is no big deal, but if you
+have already created a large amount of content you may not be able to enable
+staging on that site.
+
 Now we're ready to activate the staging feature for this site. Go to the Control
 Panel then to *Site Settings* and select *Staging* from under the *Advanced*
 heading.
