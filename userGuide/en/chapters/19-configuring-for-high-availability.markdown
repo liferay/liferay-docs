@@ -625,10 +625,21 @@ Next, extract the file `schema.xml` from the plugin. It should be in the
 `docroot/WEB-INF/conf` folder. This file tells Solr how to index the data coming
 from Liferay, and can be customized for your installation. Copy this file to
 `$SOLR_HOME/conf` on your Solr box (you may have to create the `conf`
-directory). Now you can go ahead and start Solr.
+directory).
 
-You can now hot deploy the `solr-web` plugin to all your nodes. See the next
-section for instructions on hot deploying to a cluster.
+Before you start Solr, you should provide Solr with a list of **synonyms** and
+**stop words**. Synonyms are words that should be equivalent in search. For
+example, if a user searches for *important information*, you may want to
+show results for *required* *information* or *critical information*. You
+can define these in `synonyms.txt`. Stop words are defined in `stopwords.txt`
+and are words that should not be indexed: articles, pronouns, and other words
+that have little value in a search. Place these files in your
+`$SOLR_HOME/conf` folder. Examples for both of these files are found in the
+Solr archive in the `solr-4.1.0/example/solr/collection1/conf` folder.
+Additional Solr configuration options, most importantly `solrconfig.xml` and
+`elevate.xml`, are in the `$SOLR_HOME/conf` folder. Now you can start Solr.
+After Solr has started, hot deploy the `solr-web` plugin to all your nodes. See
+the next section for instructions on hot deploying to a cluster.
 
 Once the plugin is hot deployed, your Liferay server's search is automatically
 upgraded to use Solr. It's likely, however, that initial searches will come up
