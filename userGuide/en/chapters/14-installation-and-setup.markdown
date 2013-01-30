@@ -1336,7 +1336,8 @@ The Liferay `.war` file should be called `liferay-portal-6.1.x-<date>.war` and
 the dependencies file should be called
 `liferay-portal-dependencies-6.1.x-<date>.zip`.
 
-These instructions assume that you have already configured a domain and server
+These instructions assume that you are running the latest supported version of
+Glassfish (currently 3.1.2.2), have already configured a domain and server,
 and that you have access to the GlassFish administrative console.
 
 Let's start out by installing the JAR files you will need.
@@ -1353,51 +1354,12 @@ should also have installed your database driver.
 Unzip the Liferay dependencies archive so that its `.jar` files are extracted
 into this `lib` folder.
 
-Note, on GlassFish 3.0.1, you will need to extract `commons-codec.jar` from the
-Liferay Portal WAR file, rename it to `commons-codec-repackaged.jar`, and copy
-it into `[Liferay Home]/glassfish/modules/`, overwriting GlassFish's version of
-the file.
-
 2. Make sure the JDBC driver for your database is accessible to GlassFish as
    well. Obtain the JDBC driver for your version of the database server. In the
    case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can
    download the latest MySQL JDBC driver from
    [http://www.mysql.com/products/connector/](http://www.mysql.com/products/connector/).
    Extract the JAR file and copy it to `lib`.
-
-3. Next, you will need apply several patches to Glassfish `.jar` files due to
-   the following known issues. The best way to get the appropriate versions of
-   these files is to download the Liferay source code and get them from there.
-   Once you have downloaded the Liferay source, unzip the source into a
-   temporary folder. We'll refer to the location of the Liferay source as
-   `$LIFERAY_SOURCE`.
-
-<!-- | TODO: We have to streamline this somehow, as these instructions
-aren't going to be acceptable to most large enterprises. | -->
-
----
-
-![tip](../../images/01-tip.png)**Note:** These patches are already applied in
-Liferay's Glassfish bundle. 
-
----
-
-- For issue [GLASSFISH-17242](http://java.net/jira/browse/GLASSFISH-17242) /
-  [LPS-22813](http://issues.liferay.com/browse/LPS-22813), copy
-  `$LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/org/glassfish/deployment/admin/InstanceDeployCommand.class`
-  into `org/glassfish/deployment/admin/` of
-  `$GLASSFISH_HOME/modules/deployment-admin.jar`. Also, copy
-  `$LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/com/sun/enterprise/deployment/deploy/shared/Util.class`
-  into `com/sun/enterprise/deployment/deploy/shared/` of
-  `$GLASSFISH_HOME/modules/deployment-common.jar`. Also, copy
-  `$LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/com/sun/enterprise/v3/server/SnifferManagerImpl$1.class`
-  *and*
-  `$LIFERAY_SOURCE/tools/servers/glassfish/patches/GLASSFISH-17242/classes/com/sun/enterprise/v3/server/SnifferManagerImpl.class`
-  into `com/sun/enterprise/v3/server/` of `$GLASSFISH_HOME/modules/kernel.jar`.
-
-- For issue [GRIZZLY-1060](http://java.net/jira/browse/GRIZZLY-1060), copy
-  `$LIFERAY_SOURCE/tools/servers/glassfish/patches/GRIZZLY-1060/classes/com/sun/grizzly/util/OutputWriter.class`
-  into `com/sun/grizzly/util/` of `$GLASSFISH_HOME/modules/grizzly-utils.jar`.
 
 Terrific, you have your JAR files just where you'll need them. Next we'll
 configure your domain.
