@@ -24,7 +24,7 @@ This chapter covers the following topics:
 Let's begin our examination of Liferay's control panel by looking at how to
 manage and organize users in Liferay Portal.
 
-## Managing Users
+## Managing Users [](id=lp-6-1-ugen15-managing-users-0)
 [](id=managing-users-user-groups-organizations-sites-teams-and-roles)
 
 The Portal section of the control panel is used for most administrative tasks.
@@ -131,7 +131,7 @@ of the above functions because you have administrative access.
 
 Let's look next at how to manage organizations. 
 
-### Organizations
+### Organizations [](id=lp-6-1-ugen15-organizations-0)
 [](id=lp-6-1-ugen12-managing-organizations-0)
 
 Organizations are used to represent hierarchical structures such as those of
