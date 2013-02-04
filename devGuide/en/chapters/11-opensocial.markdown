@@ -353,10 +353,10 @@ below:
    previously with other gadgets. The URLs are given below:
 
     *Google Address URL*:
-    `http://opensocialdeju.googlecode.com/svn-history/r31/GoogleMaps/GoogleMapsPublisher.xml`
+    `http://opensocialdeju.googlecode.com/svn/GoogleMaps/GoogleMapsPublisher.xml`
 
     *Google Map URL*:
-    `http://opensocialdeju.googlecode.com/svn-history/r31/GoogleMaps/GoogleMapsViewer.xml`
+    `http://opensocialdeju.googlecode.com/svn/GoogleMaps/GoogleMapsViewer.xml`
 
 2. Add both gadgets to a page.
 
@@ -404,7 +404,7 @@ First, we'll look at the contents of the *Google Maps* XML file
 				<tr>
 					<td>Address:</td>
 					<td>
-						<input type="text" id="address" name="address" size="40" value="1220 Brea Canyon Rd, Walnut, CA 91789">
+						<input type="text" id="address" name="address" size="40" value="1400 Montefino Ave, Diamond Bar, CA 91765">
 					</td>
 					<td>
 						<input type="button" value="Update" onclick="updateLoc()">
@@ -662,8 +662,8 @@ address entirely from our gadget's text window.
 
 6. Locate the following element in the gadget XML:
 
-      <input type="text" id="address" name="address" size="40" value="1400
-      Montefino Avenue, Diamond Bar, CA 91765"> 91765">
+        <input type="text" id="address" name="address" size="40" value="1400
+        Montefino Avenue, Diamond Bar, CA 91765">
 
     Then, remove the `value="1400 Montefino Avenue, Diamond Bar, CA 91765"`
     setting and save the file.

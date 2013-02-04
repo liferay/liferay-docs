@@ -1,3 +1,4 @@
+
 # Document Management 
 
 Liferay's Documents and Media library provides a mechanism for storing files
@@ -1041,144 +1042,233 @@ desktop clients.
 After installing Liferay Sync for Android, an empty screen appears asking you
 to set up the app. This screen appears whenever preferences are missing.
 
-![Figure 4.25: First screen](../../images/liferay-sync-android-empty.png)
+![Figure 4.x: First screen](../../images/liferay-sync-android-empty.png)
 
 Touch the screen and it displays the *Settings* view. You can always go back
 to *Settings* by clicking on the wrench icon at the top right corner of the
 screen. 
 
-![Figure 4.26: Android settings](../../images/liferay-sync-android-settings.png)
+![Figure 4.x: Android settings](../../images/liferay-sync-android-settings.png)
 
 Enter your Liferay server credentials by filling in your *Login*, *Password*,
 and *Server* information. Your *Login* is either your user account's email
 address or screen name. Use the same credentials you use to log in to the portal
-in a browser.  In the *Server* field, enter your portal's URL. In this example,
-the server URL is *http://in.liferay.com*. Click the key icon on the top right
+in a browser. In the *Server* field, enter your portal's URL. In this example,
+the server URL is *http://www.liferay.com*. Click the key icon on the top right
 to test your connection and check if everything is correct.
 
 Note for Gingerbread users: If you can't see some of the features described
-here, click on the menu button and it displays all possible actions. These
-include options to refresh, open the settings menu, upload files, take photos,
+here, click on the menu button to view a list of all possible actions. This
+includes options to refresh, open the settings menu, upload files, take photos,
 test your connection, etc.
 
-![Figure 4.27: Gingerbread](../../images/liferay-sync-android-gingerbread.png)
+![Figure 4.x: Gingerbread](../../images/liferay-sync-android-gingerbread.png)
 
 After you have successfully tested your connection, hit the *back* button and
 you'll see a list of Liferay sites you have access to.
 
-![Figure 4.28: Sites](../../images/liferay-sync-android-sites.png)
+![Figure 4.x: Sites](../../images/liferay-sync-android-sites.png)
 
 You can browse the files of a site by tapping on any of them. This opens a list
 of the folders and files belonging to the site that you have permission to view.
 
-![Figure 4.29: Folder and files](../../images/liferay-sync-android-files-list.png)
+![Figure 4.x: Folder and files](../../images/liferay-sync-android-files-list.png)
 
 From here, you can click on a folder and browse deeper into the folder hierarchy
-or click the *back* button to navigate back to parent folders up to the initial
+or click the *Back* button to navigate back to parent folders up to the initial
 *Sites* list.
 
-Long press on any folder or file to find a list of actions you can take on a
-given entry: *Open*, *Download* or  *Delete*. 
+Single-tap on a file to open it. If the file has never been downloaded before,
+Sync will download it and open after it has finished downloading. You can only
+view the file's contents if your device has an app installed that can open the
+file type. For example, in order to open a PDF, you must have at least one PDF
+viewer app installed. Otherwise, you will see a message informing you that no
+viewer is available and you need to install an app that can open the file.
 
-If you click on *Open*, you'll see a list of file viewer apps. If you have no
-app installed that can open the selected file type, you'll see a message
-informing you that no viewer is available and you need to install an app that
-can open it. The *Open* action downloads the file if there's no local copy.
+Long-press on any folder or file to find a list of actions you can take on it:
+*Add to Favorites*, *View Details*, *Download*, *Rename* or *Delete*. This
+actions menu varies depending on which entry type is selected: file or folder. 
 
-If you click on *Download*, it downloads and overwrites the local file copy.
+On Gingerbread, the actions menu looks like this:
+
+![Figure 4.x: Gingerbread menu](../../images/liferay-sync-android-gingerbread-context.png)
+
+On Ice Cream Sandwich and above, you can find the action icons and menu at the
+top right:
+
+![Figure 4.x: ICS menu](../../images/liferay-sync-android-ics-context.png)
+
+Clicking on *Add to Favorites* (Gingerbread) or the gray star (Ice Cream
+Sandwich) adds the selected file to the *Favorites* list. *Favorites* are
+special files that can be accessed and viewed even when you are offline (more
+details below). If a file is already marked as a favorite, you'll see a
+*Remove from Favorites* or blue star instead. Clicking on it removes the
+selected file from the *Favorites* list.
+
+Clicking on *View Details* (Gingerbread) or the round icon with the letter "i"
+(Ice Cream Sandwich) opens the details view, which displays the entry's metadata
+such as creation date, author, version, description, etc.:
+
+![Figure 4.x: View details](../../images/liferay-sync-android-details.png)
+
+If you click on *Download* (floppy disk icon on Ice Cream Sandwich), it
+downloads and overwrites the local file copy.
+
+You can rename a folder or file by clicking on the *Rename* option. This renames
+the entry in the portal.
 
 Clicking on *Delete* deletes the file/folder from the remote portal, and 
-other users won't be able to view or download it.
+other users won't be able to view or download it. On Ice Cream Sandwich and
+above, you can select multiple entries for deletion:
 
-![Figure 4.30: Actions](../../images/liferay-sync-android-delete.png)
+![Figure 4.x: Actions](../../images/liferay-sync-android-delete.png)
 
 Some actions are not related to a specific folder or file. You can find these
-actions in the menu on the top action bar (Gingerbread users need to click on
-the device menu button). Depending on the device screen width, some icons may
-overflow to the three dots button on the right. Click on it to see all available
-actions.
+actions in the menu on the top action bar when no entry is selected (Gingerbread
+users need to click on the device menu button). Depending on the device screen
+width, some icons may overflow to the three dots button on the right. Click on
+this button to see all of the available actions.
 
-![Figure 4.31: More options](../../images/liferay-sync-android-more.png)
+![Figure 4.x: More options](../../images/liferay-sync-android-more.png)
 
 The *Refresh* button fetches and updates the list of folders and files that have
 been changed in the portal.
 
 The *Camera* button allows you to quickly take a picture and upload the image to
-the current folder. The image file name is automatically generated with a
-time stamp.
+the current folder. The image file name is automatically generated with a time
+stamp.
 
 The *New Folder* button asks you for the name of the folder you want to create
 in the portal.
 
-![Figure 4.32: Upload local files](../../images/liferay-sync-android-upload.png)
-
 The *Upload* button displays the types of local files you can upload to the
-portal. Choosing *Image*, for example, shows all images that are stored
-locally in your device. Once you choose the file and confirm, this file is
-uploaded to the portal and is placed in the current folder. By default, you can
-upload images, videos, and audio files. If you have installed an app on your
-device that can open and browse any type of file, you will also see an option
-called *Other files*.
+portal. Choosing *Image*, for example, shows all images that are stored locally
+on your device. Once you choose the files and confirm, these files are uploaded
+to the portal and are placed in the current folder. By default, you can upload
+images, videos, and audio files. If you have installed an app on your device
+that can open and browse any type of file, you will also see an option called
+*Other files*.
 
-#### iOS  
+![Figure 4.x: Upload local files](../../images/liferay-sync-android-upload.png)
 
-After installing the iOS app, click on *Settings* in the toolbar, enter your
-Liferay server credentials by filling in your *Login*, *Password*, and *Server*
-information. Your *Login* is either your user account's email address or screen
-name, whichever you use to log in to the portal in a browser. In the *Server*
-field, enter your portal's URL. In this example, the server URL is
-*http://in.liferay.com*. Click on *Test Connection* to check if your
-configuration is correct.
+The *Favorites* menu option opens the favorites list. All files that have been
+marked as favorites show up in this list. You should mark your most important
+files as favorites because, as mentioned earlier, the *Favorites* feature gives
+you quick offline access to them. You can view the contents of items in the
+*Favorites* list, view their metadata and, of course, remove them from the list.
 
-![Figure 4.33: iOS Settings](../../images/liferay-sync-ios-settings.png)
+![Figure 4.x: Favorites](../../images/liferay-sync-android-favorites.png)
 
-After testing your connection, click on *Guest* in the *Sites* section to see a
-list of available sites. These are the sites you belong to; choose one by
-clicking on its name. Click on *Back* to switch to a different site at
-any time.
+Next, let's look at the iOS Sync app.
 
-![Figure 4.34: Sites](../../images/liferay-sync-ios-sites.png)
+#### iOS 
 
-When you select a site, you can browse its folders and files by clicking on the
-*Documents* toolbar section. You'll see a list containing all the folders and
-files that you have permission to access. From here, you can click on any folder
-to go deeper into the folder hierarchy.
+After installing Liferay Sync for iOS, an empty screen appears asking you
+to set up the app. This screen appears whenever preferences are missing.
 
-![Figure 4.35: Files list](../../images/liferay-sync-ios-files-list.png)
- 
+![Figure 4.x: iOS Settings](../../images/liferay-sync-ios-empty.png)
+
+Click on *Settings* in the toolbar and enter your Liferay server credentials by
+filling in your *Login*, *Password*, and *Server* information. Your *Login*
+is either your user account's email address or screen name, whichever you use
+to log in to the portal in a browser. In the *Server* field, enter your
+portal's URL. In this example, the server URL is *http://www.liferay.com*. Click
+on *Test Connection* to check if your configuration is correct.
+
+![Figure 4.x: iOS Settings](../../images/liferay-sync-ios-settings.png)
+
+After you have successfully tested your connection, tap on the *Documents*
+toolbar section and you'll see a list of Liferay sites you have access to.
+
+![Figure 4.x: Sites](../../images/liferay-sync-ios-sites.png)
+
+You can browse the files of a site by tapping on its name or icon. This opens a
+list of the folders and files belonging to the site that you have permission to
+view.
+
+![Figure 4.x: Folder and files](../../images/liferay-sync-ios-files-list.png)
+
+From here, you can click on a folder to browse deeper into the folder hierarchy.
+You can also click on the *Back* button to navigate back to parent folders up to
+the initial *Sites* list.
+
+You can refresh the list by pushing it down. This updates all the files and
+folders that have been changed in the portal.
+
+![Figure 4.x: Refreshing](../../images/liferay-sync-ios-refresh.png)
+
 When you click on a file, this file is downloaded from the remote portal
 and, if a previewer for this file type is available, you can view the contents
 of the file. The next time you open a file, it won't download it again; instead,
 it opens the local copy.
 
-![Figure 4.36: Opening a file](../../images/liferay-sync-ios-open.png)
+![Figure 4.x: Opening a file](../../images/liferay-sync-ios-open.png)
 
-You can refresh the list by pushing it down. All files and folders that have
-been changed in the portal are then updated.
- 
-![Figure 4.37: Refreshing](../../images/liferay-sync-ios-refresh.png)
+There are 3 icons at the bottom of the screen when you open a file:
 
-To delete a file or folder from the portal, swipe right and click on the
-*Delete* button.
+Clicking on the leftmost round icon with the letter "i" opens the details view,
+which displays the entry's metadata such as creation date, author, version,
+description, etc.:
 
-![Figure 4.38: Deleting a file](../../images/liferay-sync-ios-delete.png)
+![Figure 4.x: View details](../../images/liferay-sync-ios-details.png)
 
-If you want to upload an image or video to the portal, click the *Add* button at
-the top right corner. You should see three options: 
+Clicking on the star icon at the center adds the selected file to the
+*Favorites* list. *Favorites* are special files that can be accessed and viewed
+even when you are offline (more details below). If a file has already been
+marked as a favorite, clicking on the star icon removes the file from the
+*Favorites* list.
+
+Clicking on the rightmost icon displays sharing options. You can, for example,
+send the file as an email attachment, print the file, or copy it to your
+clipboard. Some external apps may also appear in this list. For example, you can
+share your file with social apps and messengers if they are available.
+
+![Figure 4.x: Share options](../../images/liferay-sync-ios-share.png)
+
+In the file list, there's an Edit button. Clicking on it switches the app to
+the edit mode as shown below:
+
+![Figure 4.x: Edit mode](../../images/liferay-sync-ios-edit.png)
+
+Selecting one or more files or folders and clicking on the *Delete* button
+deletes the selected files or folders from the remote portal. Once you delete
+files or folders from the remote portal, other users won't be able to view or
+download them.
+
+Selecting only one file or folder enables the *Rename* button. Click on it to
+change the entry's name locally and remotely.
+
+To quickly delete a file or folder from the portal, you can also swipe right and
+click on the *Delete* button in the file list view:
+
+![Figure 4.x: Deleting a file](../../images/liferay-sync-ios-delete.png)
+
+If you want to upload an image or video to the portal, click the *Plus* button
+at the top right corner. You should see three options: 
 
 *Take a photo or video* opens your camera app and lets you take a photo or
 record a video and upload it.
 
-*Choose Existing* allows you to upload an existing photo or video.
+*Choose Existing* allows you to upload multiple photos or videos stored on your
+device.
 
 *Create New Folder* lets you type the name of the folder and creates it in the
 portal.
 
-![Figure 4.39: Upload photos and videos](../../images/liferay-sync-ios-more.png)
+![Figure 4.x: Upload photos and videos](../../images/liferay-sync-ios-more.png)
 
-All downloaded images are stored in your device indefinitely. 
+The *Favorites* toolbar section opens the favorites list. All files that have
+been marked as favorites show up in this list. You should mark your most
+important files as favorites because, as mentioned earlier, the *Favorites*
+feature gives you quick offline access to them. You can view the contents of
+items in the *Favorites* list, view their metadata and, of course, remove them
+from the list.
 
-![Figure 4.40: Deleting local copies](../../images/liferay-sync-ios-cache.png)
+![Figure 4.x: Favorites](../../images/liferay-sync-ios-favorites.png)
+
+All downloaded files are stored on your device indefinitely. 
+
+![Figure 4.x: Deleting local copies](../../images/liferay-sync-ios-cache.png)
 
 If you want to delete downloaded files locally but don't want to remove them
 from the portal, go to *Settings* and click on the *Clear Cache* button.

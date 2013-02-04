@@ -30,9 +30,10 @@ within your portal and provide an enhanced experience for your users.
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include
 look and feel, communication, scoping, sharing, permissions, archive
-configurations, and exporting/importing portlet data. So before we get into the
-nitty gritty of the applications themselves, it's best to cover these common
-features first, starting with the look and feel configuration options.
+configurations, exporting/importing portlet data, and the recycle bin. So before
+we get into the nitty gritty of the applications themselves, it's best to cover
+these common features first, starting with the look and feel configuration
+options.
 
 ### Look and Feel 
 
@@ -436,6 +437,85 @@ for your blog or calendar if you wish to share them.
 Now that we've seen all the common options available in Liferay's portlet
 applications, we can move on to specific applications, starting with blogs.
 
+### Recycle Bin
+
+#### Recycling Assets in Liferay 
+
+Have you ever deleted a Liferay asset and regretted it? With Recycle Bin, the
+*Delete* option is replaced with the *Remove to Recycle Bin* option for certain
+content types. It works just like you think it does. Instead of permanently
+deleting your content, it's temporarily kept in the Recycle Bin. If you need
+recently recycled content, just restore it using the Recycle Bin feature.
+
+<!--To Do: Documents and Media Use Case Goes here. Maybe use the Wiki to give a
+robust example and include the special case of Wiki attachments--> 
+
+#### Which Assets can I Recycle?
+
+You can recycle content from several portals:
+ - *Documents and Media*
+ - *Blogs*
+ - *Wiki*
+ - *Message Board*
+
+<!---To do: Add content types to this list, and add exceptions to the common
+method for recycling and restoring assets, if there are additional
+exceptions/added complexity, such as with Wiki attachments -->
+
+#### Restoring Content
+
+To begin using the Recycle Bin feature, you'll need to ensure it's enabled for
+your site and set the duration for which you'd like to store recycled content
+before deletion. In the Control Panel, select the site from the Context Menu,
+and click *Site Settings* in the Content Menu. From here, click the *Recycle
+Bin* link in the site settings menu under the *Advanced* heading. You'll see two
+dropdown menus that let you:
+
+ 1. Enable or Disable the Recycle Bin feature
+ 2. Specify the number of days that files will be kept in the Recycle Bin 
+
+By default, the feature is enabled, and the duration is set at 30 days.
+
+Content can be moved to the Recycle Bin from the Portlet or the Control Panel.
+The process for recycling content while in a portal will be slightly different
+depending on the type of content you're recycling:
+
+ - *Blogs*: Click the *Move to the Recycle Bin* link under the blog post title.
+ You have this option in the main Blogs portlet window and in any specific blog
+ post's window.
+ 
+ - *Documents and Media*: Select the content you're recycling then choose *Move
+ to the Recycle Bin* in the *Actions* dropdown menu. Alternatively, click a
+ specific document or folder and recycle it by clicking the button *Move to the
+ Reycle Bin* under the content's title. Folders
+ 
+ - *Message Board*: The *Actions* dropdown let's you move a Message Board post
+ to the recycle bin. Additionally, the detail window for a specific Message
+ Board post has a *Move to the Recycle Bin* link.
+ 
+ - *Wiki*: Click on the *Edit* link for a Wiki item. In the *Content* tab,
+ scroll to the row of buttons near the bottom of the page and choose *Move to
+ the Reycle Bin*. Your Wiki page and any attachments will be moved to the
+ Recycle Bin. If you want to recycle only a Wiki's attachment, go to the
+ *Attachments* tab and click the *Remove* link for the attachment you're
+ recycling. Deleted Wiki attachments aren't kept in the Recycle Bin, so don't
+ worry when you notice they aren't there. Simply navigate back to the
+ *Attachments* tab of the ppropriate Wiki article and find the *Recently Removed
+ Attachments* link to locate and restore the attachment.
+ 
+ <!---Discuss special case of recycling and restoring just the attachments from Wiki articles-->
+ 
+ <!---Document the ability to move content from the recycle bin using the Control Panel-->
+ 
+ <!---Document the restoration of content from the Recycle Bin and emptying the recycle bin-->
+
+#### Benefiting from the Recycle Bin
+<!---Does this really need its own heading?-->
+
+The Recycle Bin saves you time by letting you restore content that's been
+recycled. Instead of recreating or re-uploading content, you'll be tailoring
+your Liferay portal to fully leverage its capabilities.
+
 ## Expressing yourself using Blogs 
 
 The word *Blog* is an apostrophe-less contraction of the two words *web* and
@@ -716,7 +796,7 @@ tools for managing blog entries, your best bet is to use the Blogs portlet.
 We've already talked a little bit about connecting content across the portal by
 using Related Assets; now let's take a look at the Related Assets portlet.
 
-## Organizing and sharing events with the Calendar 
+## Organizing and sharing events with the Calendar Portlet
 
 Liferay's Calendar portlet is a complete calendaring solution. You can schedule
 any number of events of different types, receive alarms via email or text
@@ -830,8 +910,229 @@ When you have finished adding your event, click *Save*. You can view calendar
 events by day, week, month, year, or in a simple list. 
 
 As you can see, the Calendar portlet is easy to use and convenient for users of
-the portal. Next, let's look at one of the most widely used applications
-provided by Liferay: its message boards.
+the portal. Next, let's look at Liferay's improved Calendar portlet, released
+with Liferay 6.2 and available from Liferay Marketplace.
+
+## Managing events and calendar resources with Liferay's new Calendar portlet
+
+Liferay's new Calendar portlet upgrades several features of the old Calendar
+portlet and adds some additional features. It's possible to have both Calendar
+portlets deployed to your Liferay Portal instance at the same time. You can even
+add both Calendar portlets to the same page if you'd like to compare
+them--they're completely compatible. The features you're used to from the old
+Calendar portlet are still available. You can add events and configure email
+notifications and you can use the Calendar portlet as a shared calendar for an
+entire site or as a personal calendar. Some of the new features include an
+improved look and feel, more configuration options, the ability to assign
+multiple calendars to a site or user, the concept of calendar resources, and
+event invitations.
+
+<!-- Add installation instructions for the new Calendar portlet here. Confirm
+that it's available from Marketplace. Briefly describe the differences between
+the CE and EE versions of the new Calendar portlet. -->
+
+### Configuring the new Calendar portlet
+
+Once you've added the new Calendar portlet to page, open its configuration
+dialog box by clicking on the wrench icon in the portlet's title bar and
+selecting *Configuration*. The Setup tab provides three subtabs of configurable
+settings: *User Settings*, *Templates*, and *Email From*.
+
+![Figure 7.x: The Setup &rarr; User Settings tab provides several new
+configuration options that weren't available from the old Calendar
+portlet.](../../images/new-calendar-configuration.png)
+
+**User Settings:** On this screen, you can customize your calendar's default
+view and settings. You can set the *Time Format* to *AM/PM* or to *24 Hour*.
+*AM/PM* is the default; with this time format, times such as 8AM or 11PM are
+displayed. With the *24 Hour* time format, these times are displayed as 08:00
+and 21:00. *Default Duration* refers to event duration. When you add a new event
+to the calendar, the time you set here specifies how long events last by
+default.  You can set the *Default View* to *Day*, *Week*, or *Month*. You can
+set *Week Starts On* to *Sunday*, *Monday*, or *Saturday*. For *Time Zone*, you
+can either specify a particular time zone like *Pacific Standard Time* or *China
+Standard Time* or you can check the *Use Global Time Zone* box. If you check
+*Use Global Time Zone*, your calendar uses the portal-wide time zone that an
+administrator can set via *Control Panel* &rarr; *Portal Settings* &rarr;
+*Display Settings* &rarr; *Time Zone*.
+
+![Figure 7.x: The Setup &rarr; Templates tab lets you customize the email
+templates for emails that are automatically sent out to remind users of upcoming
+events or invite users to new
+events.](../../images/new-calendar-configuration2.png)
+
+**Templates:** On this screen, you can configure email templates for event
+reminders or invitations. Currently, there's only one option for the
+*Notification Type*: *Email*. For the *Notification Template Type*, you can
+select *Reminder* or *Invitation*. For the *Subject* and *Body* of your email,
+you can enter whatever information you'd like to be automatically sent. Remember
+that you can use the following variables in your email templates:
+
+![Figure 7.x: You can use these variables in your email
+templates.](../../images/new-calendar-configuration3.png)
+
+**Email From:** This screen allows you to specify the name and email address
+that's used to send the automatic emails for event reminders and invitations. 
+
+![Figure 7.x: The *Email From* Screen allows you to specify the name and email
+address that's used to send the automatic emails for event reminders and
+invitations.](../../images/new-calendar-configuration4.png)
+
+Next, let's look at how to use the new Calendar portlet.
+
+### Using the new Calendar portlet
+
+The first thing you'll notice about Liferay's new Calendar portlet is its
+revamped look and feel. There's a monthly mini-calendar which provides you with
+an overview of upcoming events. There's also a larger, more detailed calendar
+area. You can set the large calendar area to display a *Day*, *Week*, or *Month*
+view. The *Day* view displays a day as a single column, divided into hours and
+half-hours. The *Week* view is similar but displays seven days as seven columns,
+divided into hours and half-hours. The month view displays a traditional
+calendar view with days represented as boxes. In the previous section, we saw
+how to configure the default display view of the calendar.
+
+You can add new personal or site calendars from the default view of the new
+Calendar portlet and choose which calendar's events to display. To manage your
+personal or site calendars, mouse over *My Calendars* or *Current Site
+Calendars*, click on the arrow icon, and select *Manage Calendars*. Any user can
+manage their personal calendars. By default, only site administrators can manage
+site calendars.
+
+![Figure 7.x: Click on *Manage Calendars* to see a list of calendars.
+](../../images/new-calendar-manage-calendars.png)
+
+On the Manage Calendars, screen you can click *Add Calendar* to create a new
+calendar. As usual, you can enter a name and description for the calendar and
+configure its permissions. Also, you can specify a color for your calendar.
+Events created in the new calendar will default to the color you choose.
+
+![Figure 7.x: Click on *Actions* *rarr; *Edit* next to a calendar to customize
+its color and specify whether or not it's the default
+calendar.](../../images/new-calendar-edit-calendar.png)
+
+You can edit a calendar to change its color. You can also specify whether or not
+the calendar should be the default calendar. Each site, including personal
+sites, have a default calendar. When a calendar is first visited, the events
+from the default calendar are displayed. You can customize the events that
+appear in the main area of the calendar portlet by clicking on the colored boxes
+corresponding to the calendars. Once you've clicked on a box, its color
+disappears and the events of that calendar are no longer displayed.
+
+![Figure 7.x: Click on the colored boxes next to your calendars to choose
+whether or not the calendar's events should be
+displayed.](../../images/new-calendar-toggles.png)
+
+It's very easy to add events to the calendar: just click on any day of the
+calendar and you'll see an event creation popup appear. If you've selected the
+*Day* or *Month* view, you can click on the specific time when your event
+begins.
+
+![Figure 7.x: When you click anywhere on the calendar, you'll see the event
+creation popup appear. Click on *Edit Details* to specify details for your
+event.](../../images/new-calendar-event-popup.png)
+
+In the new event popup, you can select the calendar in which you'd like to
+create the new event. This is useful since sites and users can have multiple
+calendars. You can click *Save* to create the event right away or you can click
+*Edit Details* to specify more event information.
+
+![Figure 7.x: You can specify event details such as the event title, start date,
+end date, description, location, and
+more.](../../images/new-calendar-event-details.png)
+
+The *Title* you enter determines the name of the event as it's displayed on the
+calendar. The *Start Date* and *End Date* times determine when your event takes
+place. You can click on the calendar icon to change the day and you can specify
+times by selecting a particular hour and minute of the day. Note: Even though
+the *Day* and *Week* views of the calendar break days into hours and half-hours
+and display events in these time-slots, that's just for convenience. You're free
+to specify whatever start times and end times you like, such as 11:37am and
+12:08pm. Check the *All Day* box if your event lasts for an entire day. Check
+the *Repeat* box if your event takes place over multiple days. Checking this box
+opens another popup.
+
+![Figure 7.x: The *Repeat* box allows you to specify whether an events repeats
+daily, weekly, monthly, or yearly, how often it repeats, and when (or if) it
+ends.](../../images/new-calendar-event-repeat.png)
+
+In the Details collapsible section, you can specify three pieces of information.
+Under *Calendar*, you can select the calendar to which you'd like to add your
+event. Remember that sites and users can have multiple calendars. Under
+*Description*, you can explain the purpose of your event and add any details
+that you think might be useful. Use the *Location* field to specify where your
+event takes place. The Reminders collapsible section lets you specify up to two
+times when event reminder notifications will be sent via email. For example, you
+might like event reminders to be send one day and one hour before your event.
+Email is currently the only supported event reminder type.
+
+![Figure 7.x: You can invite users, organizations, or other calendar resources
+to your event and can check their availability in a calendar
+view.](../../images/new-calendar-event-invitations.png)
+
+You can also invite users, organizations, or other calendar resources to your
+event. To invite a user, group, or resource, start typing the name of the entity
+you'd like to invite and a list of matches will appear. Select the one you want
+or hit *Enter* if the entity you'd like to invite is at the top of the list. All
+the entities you've invited to your event appear as a list under the *Pending*
+heading, which shows how many pending invitations there are. If you accidentally
+invited the wrong entity, mouse over its name in the *Pending* list, click on
+the arrow icon that appears, and click *Remove*. If you'd just like to check the
+status of a resource, click on *Check Availability* instead. The last item in
+the *Edit Event Details* popup is the resources availability calendar view. When
+you click on *Check Availability* for a calendar resource, its schedule is
+displayed in this calendar view. If you like to overview the availability of all
+the invited entities, just click on *Resources Availability*. When you're done
+specifying event details, click *Save*.
+
+You might be wondering, "It makes sense to invite users and organizations to an
+event, but what about other calendar resources? What are they? Why are they
+useful? And how can you add them?" Good question. Calendar resources can
+represent just about anything that you think might be important to an event. For
+example, your department might have a limited number of rooms and projectors to
+use for presentations. You can add the various rooms and projectors as calendar
+resources and add them to events. This way, when new events are added, the event
+organizer can check the availability of important resources against events that
+have already been planned. So, how can you add new calendar resources? You might
+have noticed that the new Calendar portlet has two tabs in the main portlet
+window: Calendar and Resources. Click on the *Resources* tab of the portlet to
+view, edit, add, or delete resources.
+
+![Figure 7.x: Click on the *Resources* tab of the portlet to view, edit, add, or
+delete resources.](../../images/new-calendar-resources.png)
+
+Click on the *Add Resource* button to add a new calendar resource. You'll be
+able to enter a name and description for your resource, specify whether or not
+it should be active, and configure its permissions. You'll also be able to
+select a specific resource type. The resource types that appear in the list are
+specified in the new Calendar portlet's `portlet.properties` file. Remember that
+it's a best practice not to edit `portlet.properties` directly, but to create a
+separate `portlet-ext.properties` file containing the properties to override.
+
+![Figure 7.x: To manage a calendar resource and view the calendars on which it
+appears, use the Actions
+button.](../../images/new-calendar-resource-calendars.png)
+
+Once you've created a calendar resource, you can click on the *Actions* button
+next to it and select one of the following four options: *Edit*, *Permissions*,
+*Delete*, or *View Calendars*. The *View Calendars* option exists since calendar
+resources can be made available to multiple calendars. For example, different
+departments in your company, represented by different sites, might both want to
+use a certain room or projector at the same time. Adding the calendar resources
+representing the rooms and projectors helps prevent conflicts. Click *Actions*
+&rarr; *View Calendars* and then click on *Add Calendar* to add a new calendar
+in which the selected calendar resource appears.
+
+![Figure 7.x: Click on *Add Calendar* to add a new calendar in which the
+selected calendar resource
+appears.](../../images/new-calendar-resource-calendars2.png)
+
+Liferay's new Calendar portlet provides an easy-to-use scheduling tool. Sites
+and users can have multiple calendars, calendar events can include calendar
+resources and calendar resources have their own schedules of availability. We
+hope this flexible system meets the needs of your organization. Next, let's look
+at one of the most widely used applications provided by Liferay: its message
+boards.
 
 ## Discuss, ask and answer using the Message Boards 
 
@@ -1760,10 +2061,14 @@ portlet, create the `portlet-ext.properties` file in your
 /chat-portlet/WEB-INF/classes/ directory. The contents of your
 `portlet-ext.properties` file should like this:
 
-	jabber.enabled=true jabber.import.user.enabled=true
-jabber.host=localhost jabber.port=5222   jabber.service.name=<Host Name>
-jabber.resource=Liferay    jabber.sock5.proxy.enabled=false
-jabber.sock5.proxy.port=-1
+		jabber.enabled=true
+		jabber.import.user.enabled=true
+		jabber.host=localhost
+		jabber.port=5222
+		jabber.service.name=<Host Name>
+		jabber.resource=Liferay
+		jabber.sock5.proxy.enabled=false
+		jabber.sock5.proxy.port=-1
 
 Note that you must change `jabber.service.name` to the "Host Name". If you are
 using Openfire, you can find the Host Name by using the Openfire administration
@@ -1803,7 +2108,7 @@ Alternatively, since Openfire integrates with LDAP, if you are using Openfire
 and your portal is also using LDAP for authentication, you can disable the
 `jabber.import.user.enabled` property.
 
-Next, let's look at how you can integrate your email addresses with Lifray's
+Next, let's look at how you can integrate your email addresses with Liferay's
 Mail portlet.
 
 ## Integrating your email with Liferay Mail 
