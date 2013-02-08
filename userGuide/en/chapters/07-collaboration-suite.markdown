@@ -2076,7 +2076,7 @@ web tool. If you did not set up administrative credentials when you started
 Openfire, the default credentials are username: admin, password: admin.
 
 ![Figure 7.50: Openfire Administration Web
-Tool](../../images/jabber.service.name.png)
+Tool](../../images/jabber-service-name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added
 the correct values to `jabber.host` and `jabber.port`. If you installed your
