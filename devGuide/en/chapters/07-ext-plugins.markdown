@@ -995,3 +995,5 @@ the desired functionality can be implemented through portlets, hooks or web
 plugins instead. If you do need to use an Ext plugin, make it as small as
 possible and make sure you follow the instructions in this guide carefully to
 avoid issues.
+
+Next we'll learn how to develop Liferays using the Maven build framework.

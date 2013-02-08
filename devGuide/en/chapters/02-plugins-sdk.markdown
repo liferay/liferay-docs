@@ -1,4 +1,3 @@
-
 # The Plugins SDK [](id=the-plugins-s-3)
 
 Java developers have a wide variety of tools and development environments.
@@ -26,10 +25,7 @@ with your Liferay Portal server.
 - *Structure of the SDK:* Where to develop your plugin within the SDK and what
 Apache Ant targets are available.
 
--	*Best Practices:* Suggests helpful ways for organizing your plugin projects.
-
-- *Maven:* Refers to recent developments in using Apache Maven in developing
-Liferay plugins.
+- *Best Practices:* Suggests helpful ways for organizing your plugin projects.
 
 Setting up the Plugins SDK is easy. Let's get to it.
 
@@ -75,7 +71,7 @@ applications in folders with spaces in their name.
 
  ![tip](../../images/tip-pen-paper.png)**Tip**: By default Liferay Portal
  Community Edition comes bundled with many plugins. It's common to remove them
- to speed up the server startup. To do this, in the
+ to speed up the server start-up. To do this, in the
  `liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory, delete
  all the directories except for `ROOT` and `tunnel-web.`
 
@@ -224,7 +220,7 @@ compilation, archiving and deployment targets.
 - `format-source` - Formats the source code per Liferay's source code
 guidelines.
 
--	`format-javadoc` - Formats the Javadoc per Liferay's Javadoc guildelines.
+-	`format-javadoc` - Formats the Javadoc per Liferay's Javadoc guidelines.
 
 Next, let's learn how to use the Plugins SDK to create a plugin that extends
 another plugin.
@@ -244,7 +240,7 @@ steps:
 2. Remove all the auto-generated files except `build.xml` and the docroot folder
    which should be empty.
 
-3. Copy the origin WAR file of the plguin you'd like to extend (for example,
+3. Copy the origin WAR file of the plugin you'd like to extend (for example,
    social-networking-portlet-6.1.10.1-ee-ga1.war) to the root folder of your new
    plugin.
 
@@ -254,9 +250,9 @@ steps:
     <property name="original.war.file" value="social-networking-portlet-6.1.10.1-ee-ga1.war" />
 
 5. Copy any files from the original plugin that you'd like to overwrite to your
-   new plugin (using the same folder structure) and run the ant target `merge`.
+   new plugin (using the same folder structure) and run the Ant target `merge`.
    Please note that the `merge` target is called whenever the plugin is
-   compiled. All you have to do is to check the ant output: 
+   compiled. All you have to do is to check the Ant output: 
 
     dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
     Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.xml
@@ -294,22 +290,24 @@ SDK project for each portlet or theme project.
 It is also possible to use use the Plugins SDK as a simple cross-platform
 project generator. You can create a plugin project using the Plugins SDK and
 then copy the resulting project folder to your IDE of choice. This method
-requires some manual modification of the ant scripts, but it makes it possible
+requires some manual modification of the Ant scripts, but it makes it possible
 to conform to the strict standards some organizations have for their Java
 projects.
+
+Next, we'll discuss an alternative solution for developing and managing plugins:
+Maven.
 
 ## Maven alternative [](id=maven-alternative)
 
 As an alternative to developing plugins using the SDK, you can leverage the
 Apache Maven build management framework. You'll be happy to know that we have
 archetypes to help you build various types of plugins including Liferay
-portlets, themes, and layout templates. Here are links to articles, written by
-Mika Koivisto, to help you get started with the Liferay Maven SDK and deploying
-Liferay artifacts to your Maven repository.
+portlets, themes, and layout templates.
 
--	[Getting started with the Liferay Maven SDK](http://www.liferay.com/web/mika.koivisto/blog/-/blogs/getting-started-with-liferay-maven-sdk)
+To find out more, read the *Developing plugins using Maven* chapter of this
+guide. 
 
--	[Deploying Liferay artifacts to your own Maven repository](http://www.liferay.com/web/mika.koivisto/blog/-/blogs/12618414?_33_redirect=http%3A%2F%2Fwww.liferay.com%2Fcommunity%2Fblogs%3Fp_p_id%3D115%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-2%26p_p_col_pos%3D1%26p_p_col_count%3D2%26_115_advancedSearch%3Dfalse%26_115_keywords%3D%26_115_delta%3D5%26_115_cur%3D1%26_115_struts_action%3D%252Fblogs_aggregator%252Fview%26_115_andOperator%3Dtrue)
+## Summary [](id=lp-6-1-dgen02-summary-0)
 
 Now that you have your Plugins SDK configured, know the directory structure and
 available targets, and have learned some best practices, you are ready to start
