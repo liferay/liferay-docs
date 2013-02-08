@@ -2273,7 +2273,7 @@ following from Message Bus:
 
 In the next section, you'll explore the Device Detection API and its capabilities. 
 
-## Device Detection
+## Device Detection [](id=device-detection)
 
 As you know, internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile internet
@@ -2301,7 +2301,7 @@ capabilities of your device. You can visit their site for more information at
 You could create your own plugin to use your own device's database. Let's go
 through some simple ways to use the Device Detection API and its capabilities.
 
-### Using the Device API
+### Using the Device API [](id=using-the-device-api)
 
 We will go over a couple of code snippets that will help you get started. The
 object `Device` can be obtained from the `themeDisplay` object like this:
@@ -2323,7 +2323,7 @@ pesky problems that arise when sending content to different devices. Simply
 refer to the previously mentioned Device javadocs for assistance. Let's go
 through some device capabilities.
 
-### Device capabilities
+### Device capabilities [](id=device-capabilities)
 
 Most of the capabilities of a device can be detected, but this depends on the
 device detection implementation you're using. For the Device Recognition plugin,

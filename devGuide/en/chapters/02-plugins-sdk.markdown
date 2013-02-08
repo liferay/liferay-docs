@@ -307,7 +307,7 @@ portlets, themes, and layout templates.
 To find out more, read the *Developing plugins using Maven* chapter of this
 guide. 
 
-## Summary
+## Summary [](id=lp-6-1-dgen02-summary-0)
 
 Now that you have your Plugins SDK configured, know the directory structure and
 available targets, and have learned some best practices, you are ready to start

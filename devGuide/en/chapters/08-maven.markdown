@@ -1,4 +1,4 @@
-## Developing plugins using Maven
+## Developing plugins using Maven [](id=developing-plugins-using-maven)
 
 As an alternative to developing plugins using Liferay's Ant-based Plugins SDK,
 you can leverage the Apache Maven build management framework. To mention just a
@@ -48,7 +48,7 @@ plugins and more. You can also install and deploy Liferay artifacts to your
 repositories. We'll dive into all these topics in this chapter, so buckle up
 and prepare to be Mavenized!
 
-### Installing Maven
+### Installing Maven [](id=installing-maven)
 
 You can download Maven from
 [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi) and
@@ -59,7 +59,7 @@ easily from your command prompt.
 Next, let's learn about the types of repositories you can use with Maven
 projects.
 
-### Using Maven repositories
+### Using Maven repositories [](id=using-maven-repositories)
 
 Wouldn't it be nice to install and deploy your Liferay artifacts to a
 repository? Great news! With Maven, you can install your artifacts to your
@@ -84,7 +84,7 @@ Now that you've been introduced to local and remote Maven repositories and proxy
 servers, let's consider using a repository management server to create and
 manage your Maven repositories.
 
-#### Managing Maven repositories
+#### Managing Maven repositories [](id=managing-maven-repositories)
 
 If you want to share Liferay artifacts and plugins with teammates or want to
 manage your repositories using a GUI, you can use Nexus OSS. It is a Maven
@@ -105,7 +105,7 @@ To create a repository using Nexus, do the following:
 
 2. Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*.
 
-    ![Figure 8.x: Adding a repository to hold your Liferay artifacts is easy
+    ![Figure 8.1: Adding a repository to hold your Liferay artifacts is easy
     with Nexus OSS.](../../images/maven-nexus-create-repo.png)
 
     Note: To learn more about each type of Nexus repository, read Sonatype's
@@ -147,7 +147,7 @@ snapshots (i.e., *liferay-snapshots*).
 Let's configure your new repository servers in your Maven environment so you
 can install artifacts to the them. 
 
-#### Configuring local Maven settings 
+#### Configuring local Maven settings  [](id=configuring-local-maven-settings)
 
 In order to use your repository servers and/or any repository mirrors, you must
 specify them in your Maven environment settings. With regards to your
@@ -203,7 +203,7 @@ artifacts you'll download and Liferay plugin artifacts you'll create!
 
 Now, let's get the Liferay artifacts you'll need to create your plugins.
 
-###  Installing required Liferay artifacts
+###  Installing required Liferay artifacts [](id=installing-required-liferay-artifacts)
 
 In order to create Liferay plugins using Maven, you'll need Liferay's required
 archives (e.g., required JAR and WAR files). Good news! Liferay provides them as
@@ -225,7 +225,7 @@ Note, the EE and CE zip files provide a means to *install* the artifacts to a
 Maven repository of your choice. In the next few sections, we'll show you how to
 execute both the zip file and Central Repository installation options.
 
-#### Installing EE/CE artifacts from a zip file
+#### Installing EE/CE artifacts from a zip file [](id=installing-artifacts-from-a-zip-file)
 
 In this section, you'll learn how to download and install the Liferay EE and CE
 artifacts from the zip files that Liferay provides for their respective
@@ -244,7 +244,7 @@ Liferay Maven EE artifacts, follow these steps:
 4. Inside *Filter by:*, select the appropriate Liferay version in the first
 field and select the *Development* value in the second field.
 
-    ![Figure 8.x: You can download the Liferay Maven EE artifacts from the
+    ![Figure 8.2: You can download the Liferay Maven EE artifacts from the
     Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
 5. Click *Download* from under the desired *Liferay Portal \<Version\> Maven*.
@@ -260,7 +260,7 @@ The Liferay CE artifacts package can be downloaded from SourceForge:
 example, if you want Maven artifacts for Liferay Portal 6.1.1 CE GA2, select
 version *6.1.1 GA2*.
 
-    ![Figure 8.x: After selecting the Liferay version, simply select the Liferay
+    ![Figure 8.3: After selecting the Liferay version, simply select the Liferay
     Portal Maven zip file to download.](../../images/maven-select-download.png)
 
 3. Select the desired zip file. The zip files use naming convention
@@ -274,7 +274,7 @@ convenient script to install and deploy the artifacts to your repositories.
 We'll show you how to install these required Liferay release artifacts to your
 *liferay-releases* repository.
 
-##### Installing downloaded artifacts to a repository
+##### Installing downloaded artifacts to a repository [](id=installing-downloaded-artifacts-to-a-repository)
 
 Let's *install* the Liferay release artifacts to your local Maven repository for
 sharing with your team.
@@ -296,7 +296,7 @@ Liferay plugins. Wasn't that easy?
 
 Next, let's *deploy* the Liferay artifacts to a release repository server.
 
-##### Deploying downloaded artifacts to a repository
+##### Deploying downloaded artifacts to a repository [](id=deploying-downloaded-artifacts-to-a-repository)
 
 You may find it worthwhile to share your Liferay artifacts with teammates.
 
@@ -350,13 +350,13 @@ repository's ID and URL, respectively.
     To verify your artifacts are deployed, navigate to the *Repositories* page
     of your Nexus OSS server and select your repository.
 
-    ![Figure 8.x: You can easily navigate to your Liferay release repository in
+    ![Figure 8.4: You can easily navigate to your Liferay release repository in
     Nexus.](../../images/maven-select-repository2.png)
 
     Notice a window appears below displaying the Liferay artifacts now deployed
     to your repository.
 
-    ![Figure 8.x: Your repository server now provides access to your Liferay
+    ![Figure 8.5: Your repository server now provides access to your Liferay
     Maven artifacts.](../../images/maven-verify-deployment2.png)
 
 Congratulations! You've downloaded the Liferay artifacts, installed them to your
@@ -367,7 +367,7 @@ If you are working with Liferay CE, the other installation option you have is to
 rely on Maven to download the Liferay Maven CE artifacts automatically. We'll
 cover that next.
 
-#### Installing CE artifacts from the Central Repository
+#### Installing CE artifacts from the Central Repository [](id=installing-artifacts-from-the-central-repository)
 
 Liferay offers an option for obtaining and installing Liferay CE artifacts,
 automatically. The CE artifacts are publicly available on the *Central
@@ -383,7 +383,7 @@ You'll get to see that in action when you package your Liferay CE plugins.
 Next, we'll consider the benefits of using a Maven *parent* project with your
 plugin projects.
 
-### Using a parent plugin project
+### Using a parent plugin project [](id=using-a-parent-plugin-project)
 
 Maven supports project inheritance through the use of *parent* projects.
 Project inheritance comes in handy when you have properties common to multiple
@@ -509,7 +509,7 @@ Now that you know how to specify dependencies on required Liferay artifacts,
 let's use the *archetypes* Liferay provides for creating Liferay plugin
 projects.
 
-### Creating Liferay plugins with Maven
+### Creating Liferay plugins with Maven [](id=creating-liferay-plugins-with-maven)
 
 Liferay offers many archetypes to help you create Maven projects for multiple
 types of Liferay plugins, including portlet, theme, hook, and layout template
@@ -597,7 +597,7 @@ se, as older archetype versions are compatible with updated Liferay bundles.
 
     The snapshot below illustrates choosing the archetype version:
 
-    ![Figure 8.x: You are prompted by Maven Archetype to input the version of
+    ![Figure 8.6: You are prompted by Maven Archetype to input the version of
     the archetype to generate.](../../images/maven-archetype-version.png)
 
 6. Enter values for the *groupId*, *artifactId*, *version*, and *package*
@@ -614,7 +614,7 @@ coordinates, see
 
     This process is illustrated in the snapshot below:
 
-    ![Figure 8.x: When creating your portlet plugin, you must enter your
+    ![Figure 8.7: When creating your portlet plugin, you must enter your
     *groupId*, *artifactId*, *version*, and *package*
     properties.](../../images/maven-portlet-plugin-settings.png)
 
@@ -629,7 +629,7 @@ coordinates, see
     configured the mirror pointing to your public repository on Nexus, the
     plugin is installed there as well.
     
-    ![Figure 8.x: Your archetype and its dependencies are now available in
+    ![Figure 8.8: Your archetype and its dependencies are now available in
     your local repository.](../../images/maven-public-plugin.png)
 
 You can use Maven's Archetype tool to generate other types of plugins in the
@@ -646,7 +646,7 @@ individual plugin to a remote repository.
 Next, we'll go through some brief examples to demonstrate how to deploy your
 plugins to Liferay Portal using Maven.
 
-### Deploying Liferay plugins with Maven
+### Deploying Liferay plugins with Maven [](id=deploying-liferay-plugins-with-maven)
 
 Maven makes it easy to deploy plugins to a Liferay Portal instance. We'll show
 you how.
@@ -732,7 +732,7 @@ plugin's `pom.xml`.
     `<distributionManagement>` element, select the *Summary* tab for each of your
     repositories.
 
-    ![Figure 8.x: Select the *Summary* tab of your repository to see how to
+    ![Figure 8.9: Select the *Summary* tab of your repository to see how to
     specify it for distribution management in your plugin's
     POM.](../../images/maven-repository-summary.png)
 
@@ -758,7 +758,7 @@ snapshot version (e.g., `<version>1.0-SNAPSHOT</version>`).
 Now that you've deployed a plugin using Maven, let's take a look at some of the
 types of Liferay plugins you can develop using Liferay Maven archetypes.
 
-### Liferay plugin types to develop with Maven
+### Liferay plugin types to develop with Maven [](id=liferay-plugin-types-to-develop-with-maven)
 
 In this section, we'll highlight the various Liferay plugin types you can
 develop with Maven, how you create them with Maven, and compare them with
@@ -782,7 +782,7 @@ The sub-sections that follow cover:
 
 Let's dive into portlet plugins next.
 
-#### Developing Liferay portlet plugins with Maven
+#### Developing Liferay portlet plugins with Maven [](id=developing-liferay-portlet-plugins-with-maven)
 
 One of the plugins you can create using Maven is a Liferay portlet.
 
@@ -859,7 +859,7 @@ chapter of this guide.
 Next, let's run through a brief example for developing a theme plugin using
 Maven.
 
-### Developing Liferay theme plugins with Maven
+### Developing Liferay theme plugins with Maven [](id=developing-liferay-theme-plugins-with-maven)
 
 Imagine yourself sitting in a luxurious chair next to a bustling fire on a cold
 winter's night (in front of your computer, of course). Now imagine yourself
@@ -963,7 +963,7 @@ chapter of this document.
 You have successfully developed a Liferay theme using Maven. Let's look at
 developing hook plugins next.
 
-### Developing Liferay hook plugins with Maven
+### Developing Liferay hook plugins with Maven [](id=developing-liferay-hook-plugins-with-maven)
 
 Hooks are the preferred plugin to use in customizing Liferay's core features.
 You can create hook plugins in much the same way that you do portlet plugins in
@@ -1028,7 +1028,7 @@ chapter of this guide.
 OK, you've learned how to create hook plugins with Maven. Let's round things out
 by considering how to develop a layout template as well.
 
-### Developing Liferay layout template plugins with Maven
+### Developing Liferay layout template plugins with Maven [](id=developing-liferay-layout-template-plugins-with-maven)
 
 You can create your own layout templates to enhance the flow of portlets on your
 page and to embed commonly used portlets. Let's consider how to create a layout
@@ -1098,7 +1098,7 @@ You've proved yourself at developing yet another plugin type with Maven. Way to
 go! In the next section we'll mention some more plugin types for which Liferay
 provides Maven archetypes.
 
-### Developing more Liferay plugins with Maven
+### Developing more Liferay plugins with Maven [](id=developing-more-liferay-plugins-with-maven)
 
 Just when you thought the archetype list was complete, the Liferay team has come
 up with even more plugins that you can create using Maven archetypes.
@@ -1123,7 +1123,7 @@ has been added to theme archetype
 
 You now have plenty of archetypes at your disposal!
 
-## Summary
+## Summary [](id=lp-6-1-dgen08-summary-0)
 
 Developing plugins using Maven follows a uniform process which includes
 generating the archetypes and selecting the options you're interested in. Then,
