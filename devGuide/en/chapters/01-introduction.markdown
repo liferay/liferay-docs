@@ -318,8 +318,8 @@ repeat the steps described in the guide using the Liferay IDE.
 developers prefer one of the alternatives to Apache Ant. The most popular of
 these alternatives is Maven. To support developers that want to use Maven we
 have *mavenized* Liferay artifacts so that they can easily be referenced in your
-`pom.xml`. We are in the process of writing a chapter about using Maven for
-Liferay development and will be adding it to this guide in the future.
+`pom.xml`. We have a chapter *Developing plugins using Maven* dedicated to just
+that topic.
 
 **What if I don't like Eclipse and prefer to use Netbeans, IntelliJ IDEA or
 other another IDE?** There are many IDEs out there and each one has its
