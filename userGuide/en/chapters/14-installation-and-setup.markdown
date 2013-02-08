@@ -909,13 +909,13 @@ installation choices: a "standard" or "custom" installation.
 <!-- The following two figures are difficult to read and should be replaced with
 ones having more readable text.  -->
 
-![Figure 14.10: Installation type](../../images/tcat-html_766a1d6e.gif)
+![Figure 14.10: Installation type](../../images/tcat-html_766a1d6e.png)
 
 You should select the "Custom" installation option to provide better control of
 where Tcat Server is installed.
 
 ![Figure 14.11: Installation component
-selections](../../images/tcat-html_55494177.gif)
+selections](../../images/tcat-html_55494177.png)
 
 After selecting the custom installation option, the Tcat installer prompts you
 to select the desired components. 
@@ -952,7 +952,7 @@ started as root.
 <!-- The following figure is difficult to read and should be replaced with a
 better one.  -->
 
-![Figure 14.13: Port configuration](../../images/tcat-html_5b760cd.gif)
+![Figure 14.13: Port configuration](../../images/tcat-html_5b760cd.png)
 
 After selecting the appropriate installation location, the installation wizard
 prompts you to specify the appropriate port numbers. If this is the first time
@@ -970,7 +970,7 @@ user.
 <!-- The following three figures are difficult to read and should be replaced
 with better ones.  -->
 
-![Figure 14.15: Install service](../../images/tcat-html_mf7bb10c.gif)
+![Figure 14.15: Install service](../../images/tcat-html_mf7bb10c.png)
 
 To ensure the operating system starts the Tcat Server and Administrator Console,
 you must create a service startup script in `/etc/init.d`. The next step in the
@@ -980,13 +980,13 @@ In the service installation screen, you may enter an appropriate service name or
 use the default. If you have multiple installations of Tcat, you should select a
 more appropriate name than what is supplied by default. 
 
-![Figure 14.16: Symbolic link creation](../../images/tcat-html_m55bbff3f.gif)
+![Figure 14.16: Symbolic link creation](../../images/tcat-html_m55bbff3f.png)
 
 The final configuration step before installation is the creation of a symbolic
 link so the Tcat executable can be accessed more easily. This step is optional
 and you may choose to not create the symbolic link.
 
-![Figure 14.17: ](../../images/tcat-html_78e73740.gif)
+![Figure 14.17: ](../../images/tcat-html_78e73740.png)
 
 Now that Tcat is installed, you can add Liferay to it. 
 
@@ -1038,7 +1038,7 @@ during the installation process.
 <!--  We might want to replace this screen shot.  -->
 
 ![Figure 14.21: Tcat service startup on
-Linux](../../images/tcat-html_352642da.gif)
+Linux](../../images/tcat-html_352642da.png)
 
 To start the Tcat Server Administration Console, execute the service script in
 `/etc/init.d`.
