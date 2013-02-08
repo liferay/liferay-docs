@@ -2,8 +2,8 @@
 
 As an alternative to developing plugins using Liferay's Ant-based Plugins SDK,
 you can leverage the Apache Maven build management framework. To mention just a
-few of its features, Maven offers a simple build process, a project object model
-, a project life cycle, and a dependency management system. Maven's core
+few of its features, Maven offers a simple build process, a project object
+model, a project life cycle, and a dependency management system. Maven's core
 installation is light-weight providing core plugins for compiling source code
 and creating distributions, but the abundance of non-core plugins for Maven lets
 you extend it easily for customizations.
@@ -38,14 +38,14 @@ primarily intended for Java-based projects, so you may find it difficult to
 manage your project's non-Java source code. We encourage you to consider Maven's
 advantages and disadvantages in deciding what is best for managing your
 projects. For an in-depth look at Maven's features and what Maven can do for
-you, visit *Maven: The Complete Reference* by Sonatype, Inc., at
+you, visit *Maven: The Complete Reference* by Sonatype, Inc. at
 [http://www.sonatype.com/books/mvnref-book/reference/](http://www.sonatype.com/books/mvnref-book/reference/)
 and continue reading this chapter.
 
 You'll be happy to know Liferay provides Maven archetypes to help you build
 various plugins including Liferay portlets, themes, hooks, layout templates, web
 plugins and more. You can also install and deploy Liferay artifacts to your
-repositories. We will dive into all these topics in this chapter, so buckle up
+repositories. We'll dive into all these topics in this chapter, so buckle up
 and prepare to be Mavenized!
 
 ### Installing Maven
@@ -87,7 +87,7 @@ manage your Maven repositories.
 #### Managing Maven repositories
 
 If you want to share Liferay artifacts and plugins with teammates or want to
-manage your repositories using a GUI, you can use Nexus OSS. It is a maven
+manage your repositories using a GUI, you can use Nexus OSS. It is a Maven
 repository management server that facilitates creating and managing release
 servers, snapshot servers, and proxy servers. If you are not interested in using
 Nexus as a repository management server, you can skip this section.
@@ -95,7 +95,7 @@ Nexus as a repository management server, you can skip this section.
 Let's create a Maven repository using Nexus OSS. You can download Nexus OSS from
 [http://www.sonatype.org/nexus/](http://www.sonatype.org/nexus/) and follow
 instructions at
-[http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html](http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html)
+[http://www.sonatype.com/books/nexus-book/reference/\_installing_nexus.html](http://www.sonatype.com/books/nexus-book/reference/\_installing_nexus.html)
 for installing it and starting it up.
 
 To create a repository using Nexus, do the following:
@@ -126,7 +126,7 @@ repository server!
 
 Let's take it one step further and create a Maven repository to hold snapshots
 of the Liferay plugins we create. The steps for creating a *snapshot* repository
-are almost identicle to the steps for creating a *release* repository. The only
+are almost identical to the steps for creating a *release* repository. The only
 difference is that we'll specify *Snapshot* as its repository policy:
 
 1. Go to your Nexus repository server in your browser.
@@ -141,7 +141,7 @@ difference is that we'll specify *Snapshot* as its repository policy:
     - *Repository Policy:* `Snapshot`
 
 Voila! You not only have a repository for your Liferay releases (i.e.,
-*liferay-releases*) and you also have a repository for your Liferay plugin
+*liferay-releases*), you also have a repository for your Liferay plugin
 snapshots (i.e., *liferay-snapshots*).
 
 Let's configure your new repository servers in your Maven environment so you
@@ -522,7 +522,7 @@ Archetype tool steps to generate all kinds of Liferay plugin projects.
 
 ---
 
- ![note](../../images/tip-pen-paper.png) Make sure Maven is installed and that
+ ![note](../../images/tip-pen-paper.png)**Note:** Make sure Maven is installed and that
  its executable is in your path environment variable. 
 
 ---
@@ -729,7 +729,7 @@ plugin's `pom.xml`.
         </distributionManagement>
 
     To get you started with the proper contents for your
-    \<distributionManagement\> element, select the *Summary* tab for each of your
+    `<distributionManagement>` element, select the *Summary* tab for each of your
     repositories.
 
     ![Figure 8.x: Select the *Summary* tab of your repository to see how to
@@ -788,7 +788,7 @@ One of the plugins you can create using Maven is a Liferay portlet.
 
 **Creating a portlet plugin**
 
-To create a Liferay portlet plugin project follow the *Creating Liferay plugin
+To create a Liferay portlet plugin project, follow the *Creating Liferay plugin
 projects with Maven* section.
 
 ---
@@ -827,7 +827,7 @@ anatomy:
                 - view.jsp
     - pom.xml
 
-There are couple of directory structure differences between plugin projects
+There are a couple of directory structure differences between plugin projects
 created using Liferay Maven archetypes and those created using the Liferay
 Plugins SDK. The following table illustrates the differences in location of the
 Java source code and web source code.
@@ -931,7 +931,7 @@ The theme plugin project POM has two additional properties:
 - *liferay.theme.parent* - Sets the parent theme. This property allows you to
 define basically any WAR artifact as the parent using the syntax
 *groupId:artifactId:version*. Or you can use the core themes by specifying
-either *_unstyled*, *_styled*, *classic* or *control_panel*.
+either *_unstyled*, *_styled*, *classic*, or *control_panel*.
 
 - *liferay.theme.type* - Sets the template theme language
 
@@ -971,7 +971,7 @@ Maven. Let's take a look.
 
 **Creating a hook plugin**
 
-To create a Liferay hook plugin project follow the *Creating Liferay plugin
+To create a Liferay hook plugin project, follow the *Creating Liferay plugin
 projects with Maven* section.
 
 ---
