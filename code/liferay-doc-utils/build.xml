@@ -62,10 +62,9 @@
 			update="true">
             <manifest>
                 <attribute name="Main-Class" value="com.liferay.documentation.util.DocUtils"/>
-                <attribute name="Class-Path" value="."/>
+                <attribute name="Class-Path" value="commons-io-2.0.1.jar"/>
             </manifest>
             <fileset dir="${build.dir}"/>
-            <zipfileset excludes="META-INF/*.SF" src="${lib.dir}/commons-io-2.0.1.jar"/>
         </jar>
     </target>
 
