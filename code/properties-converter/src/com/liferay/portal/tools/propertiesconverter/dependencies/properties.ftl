@@ -17,6 +17,7 @@
 		#toc li
 		{font-size:14px;}
 		#toc li li {font-size:12px;}
+		pre {background-color: #efe;}
 	</style>
 	<head>
 		<title>${pageTitle!"Portal Properties"}</title>
@@ -39,8 +40,15 @@
 		<#list sections as section>
 			<#if section.isSectionTitle>
 				<a name="${section.name}"></a><a href="properties.html">Table of Contents</a>
+				<h3>${section.name}</h3>
+			<#else>
+				<#if section.descriptionParagraphs?has_content>
+					<#list section.descriptionParagraphs as descriptionParagraph>
+						<p>${descriptionParagraph}</p>
+					</#list>
+				</#if>
+				<p><pre>${section.propertiesParagraph}</pre></p>
 			</#if>
-			<p><pre>${section.paragraph}</pre></p>
 		</#list>
 	</body>
 </html>

@@ -56,7 +56,7 @@ public class PropertiesParser {
 		ArrayList<Section> sections = new ArrayList<Section>();
 		for (int i = 0; i < paragraphs.length; i++) {
 			if (paragraphs[i].startsWith("##")) {
-				Section section = new Section(true, paragraphs[i].replace("#", "").trim(), paragraphs[i], new ArrayList<String>(), new ArrayList<String>());
+				Section section = new Section(true, paragraphs[i].replace("#", "").trim(), paragraphs[i], new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), "");
 				sections.add(section);
 			}
 			else {
@@ -72,12 +72,12 @@ public class PropertiesParser {
 						}
 					}
 				}
-				Section section = new Section(false, "", paragraphs[i], properties, new ArrayList<String>());
+				Section section = new Section(false, "", paragraphs[i], properties, new ArrayList<String>(), new ArrayList<String>(), "");
 				sections.add(section);
 			}
 		}
 		
-		// Populate sectionProperties field with correct properties (none for section titles)
+		// Populate sectionProperties
 		for (int i = 0; i < sections.size(); i++) {
 			if (sections.get(i).isSectionTitle) {
 				for (int j = i + 1; j < sections.size(); j++) {
@@ -92,6 +92,40 @@ public class PropertiesParser {
 				}
 			}
 		}
+		
+		// Populate descriptionParagraphs
+		for (int i = 0; i < sections.size(); i++) {
+			String paragraph = "";
+			List<String> descriptionParagraphs = new ArrayList<String>();
+			if (sections.get(i).getParagraph().trim().startsWith("#\n")) {
+				String[] lines = sections.get(i).getParagraph().trim().split("\n", 0);
+				for (int j = 0; j < lines.length; j++) {
+					lines[j] = lines[j].trim();
+				}
+				for (int j = 0; j < lines.length; j++) {
+					if (lines[j].matches("#[\\s]+[^\\s].*")) {
+						paragraph += lines[j].substring(1);
+					}
+					else {
+						if (!paragraph.isEmpty()) {
+							descriptionParagraphs.add(paragraph.trim());
+							paragraph = "";
+						}
+					}
+				}
+			}
+			sections.get(i).setDescriptionParagraphs(descriptionParagraphs);
+		}
+		
+		// Populate porpertiesParagraph
+		for (int i = 0; i < sections.size(); i++) {
+			if (sections.get(i).getProperties().isEmpty()) {
+				continue;
+			}
+			String propertiesParagraph = sections.get(i).getParagraph().substring(sections.get(i).getParagraph().lastIndexOf("#\n") + 1);
+			sections.get(i).setPropertiesParagraph(propertiesParagraph);
+		}
+		
 		root.put("sections", sections);
 
 		// Get the Freemarker template and merge it with the data model
