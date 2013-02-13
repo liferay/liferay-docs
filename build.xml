@@ -2,11 +2,13 @@
 
 <project name="Properties to HTML conversion" default="properties-to-html" basedir=".">
 
+	<property name="properties.file" value="portal.properties" />
+
 	<target name="properties-to-html" description="runs the properties converter">
 		<java fork="true" jar="./lib/properties-converter.jar">
 			<arg value="" />
 			<arg value="" />
-			<arg value="portal.properties" />
+			<arg value="${properties.file}" />
 		</java>
 	</target>
 
