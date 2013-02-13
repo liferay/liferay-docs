@@ -928,7 +928,7 @@ to our Welcome page by selecting *Add &rarr; Web Content Display* from the
 Dockbar.
 
 ![Figure 2.18: Adding the Web Content Display
-Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
+Portlet](../../images/add-web-content-display.png)
 
 Once the portlet appears, drag it to the position on the page where you want
 your content to appear. You can have as many Web Content Display portlets on a

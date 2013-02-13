@@ -1,0 +1,550 @@
+\select@language {english}
+\contentsline {chapter}{Contents}{i}{section*.1}
+\contentsline {chapter}{Preface}{vi}{chapter*.2}
+\contentsline {section}{What's New in the Fifth Edition}{vi}{section*.3}
+\contentsline {section}{Conventions}{vii}{section*.3}
+\contentsline {section}{Publisher Notes}{vii}{section*.3}
+\contentsline {chapter}{\chapternumberline {1}What is Liferay? }{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}What makes Liferay Portal unique }{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Using Liferay Portal as a content management system }{3}{section.1.2}
+\contentsline {subsection}{Effectively building a site with Liferay WCM }{4}{section.1.2}
+\contentsline {subsection}{Keeping track of documents, images, video, and more }{7}{section.1.2}
+\contentsline {section}{\numberline {1.3}Using Liferay Portal as a collaborative platform }{9}{section.1.3}
+\contentsline {section}{\numberline {1.4}Using Liferay as a social platform }{11}{section.1.4}
+\contentsline {section}{\numberline {1.5}Using Liferay as a web platform }{13}{section.1.5}
+\contentsline {subsection}{Liferay as an application development platform }{13}{section.1.5}
+\contentsline {subsection}{A great integration platform }{14}{section.1.5}
+\contentsline {subsection}{Hosting multiple sites on Liferay Portal }{14}{section.1.5}
+\contentsline {section}{\numberline {1.6}Extending and customizing Liferay for your own needs }{15}{section.1.6}
+\contentsline {section}{\numberline {1.7}Summary }{16}{section.1.7}
+\contentsline {chapter}{\chapternumberline {2}Web Content Management }{17}{chapter.2}
+\contentsline {section}{\numberline {2.1}How Can Liferay's WCM Help You? }{18}{section.2.1}
+\contentsline {subsection}{What Features Does Liferay WCM Have? }{19}{section.2.1}
+\contentsline {section}{\numberline {2.2}Creating sites and managing pages }{19}{section.2.2}
+\contentsline {subsection}{Creating and managing pages }{21}{section.2.2}
+\contentsline {subsubsection}{More page management tools }{22}{section.2.2}
+\contentsline {paragraph}{Backing up and Restoring Pages }{25}{section.2.2}
+\contentsline {paragraph}{Customizing the Look and Feel }{25}{section.2.2}
+\contentsline {paragraph}{Using a custom logo }{27}{section.2.2}
+\contentsline {subsubsection}{Changing options for individual pages }{27}{section.2.2}
+\contentsline {subsubsection}{Modifying Page Layouts }{29}{section.2.2}
+\contentsline {subsubsection}{Page Customizations }{29}{section.2.2}
+\contentsline {subsubsection}{Configuring Site Settings }{30}{section.2.2}
+\contentsline {subsubsection}{Page Templates and Site Templates }{33}{section.2.2}
+\contentsline {subsubsection}{Site Content }{33}{section.2.2}
+\contentsline {subsection}{Creating the Nose-ster pages }{34}{section.2.2}
+\contentsline {subsubsection}{Portlets }{35}{section.2.2}
+\contentsline {subsubsection}{Page Permissions }{36}{Item.8}
+\contentsline {section}{\numberline {2.3}Authoring (basic) content }{38}{section.2.3}
+\contentsline {subsection}{Creating content the simple way }{38}{section.2.3}
+\contentsline {subsection}{Rich, WYSIWYG Editing }{39}{section.2.3}
+\contentsline {paragraph}{Creating a display page }{43}{section.2.3}
+\contentsline {section}{\numberline {2.4}Publishing (basic) content }{45}{section.2.4}
+\contentsline {paragraph}{Editing Content }{48}{section.2.4}
+\contentsline {section}{\numberline {2.5}Using Liferay's workflow with WCM }{48}{section.2.5}
+\contentsline {subsubsection}{Defining Workflows for Web Content }{50}{section.2.5}
+\contentsline {section}{\numberline {2.6}Summary }{51}{section.2.6}
+\contentsline {chapter}{\chapternumberline {3}Advanced Web Content Management}{52}{chapter.3}
+\contentsline {section}{\numberline {3.1}Advanced content with structures and templates }{53}{section.3.1}
+\contentsline {subsection}{Using structures }{53}{section.3.1}
+\contentsline {subsubsection}{Editing a Structure }{54}{section.3.1}
+\contentsline {subsubsection}{Editing form elements }{56}{section.3.1}
+\contentsline {subsubsection}{Structure Default Values }{57}{section.3.1}
+\contentsline {subsubsection}{Assigning Permissions }{58}{section.3.1}
+\contentsline {subsection}{Using templates }{58}{section.3.1}
+\contentsline {subsubsection}{Template Types (VM, XSL, FTL and CSS) }{58}{section.3.1}
+\contentsline {subsubsection}{Adding a Template }{60}{section.3.1}
+\contentsline {subsubsection}{Assigning template permissions }{64}{Item.35}
+\contentsline {section}{\numberline {3.2}Leveraging Liferay's multi-site capabilities }{64}{section.3.2}
+\contentsline {section}{\numberline {3.3}Using site templates }{69}{section.3.3}
+\contentsline {section}{\numberline {3.4}Using page templates }{73}{section.3.4}
+\contentsline {subsection}{Exporting and Importing Site Templates and Page Templates }{77}{section.3.4}
+\contentsline {subsubsection}{Localization }{77}{section.3.4}
+\contentsline {section}{\numberline {3.5}Allowing users to customize site pages }{80}{section.3.5}
+\contentsline {subsubsection}{Scheduling Web Content }{80}{section.3.5}
+\contentsline {section}{\numberline {3.6}Staging page publication }{81}{section.3.6}
+\contentsline {subsubsection}{Enabling the staging environment }{82}{section.3.6}
+\contentsline {subsubsection}{Using the staging environment }{84}{section.3.6}
+\contentsline {subsubsection}{Site Pages Variations }{86}{section.3.6}
+\contentsline {subsubsection}{Wrapping up staging }{89}{section.3.6}
+\contentsline {section}{\numberline {3.7}Creating teams for advanced site membership management }{89}{section.3.7}
+\contentsline {section}{\numberline {3.8}Displaying site pages to mobile devices }{91}{section.3.8}
+\contentsline {section}{\numberline {3.9}Summary }{98}{section.3.9}
+\contentsline {chapter}{\chapternumberline {4}Document Management }{100}{chapter.4}
+\contentsline {section}{\numberline {4.1}Getting Started with Documents and Media }{101}{section.4.1}
+\contentsline {subsection}{Navigating the Documents and Media Portlet }{101}{section.4.1}
+\contentsline {subsubsection}{Actions }{102}{section.4.1}
+\contentsline {subsubsection}{Add }{103}{section.4.1}
+\contentsline {subsubsection}{Sort }{104}{section.4.1}
+\contentsline {subsubsection}{Manage }{104}{section.4.1}
+\contentsline {section}{\numberline {4.2}Document Types and Metadata Sets }{105}{section.4.2}
+\contentsline {section}{\numberline {4.3}Using External Repositories }{109}{section.4.3}
+\contentsline {paragraph}{Adjusting portal properties }{110}{section.4.3}
+\contentsline {paragraph}{Adding required repository users }{111}{section.4.3}
+\contentsline {paragraph}{Adding the repository }{111}{section.4.3}
+\contentsline {subsection}{Example Repository Setup: SharePoint }{112}{section.4.3}
+\contentsline {subsubsection}{Configuring the CMIS Connector on SharePoint }{113}{section.4.3}
+\contentsline {subsubsection}{Activating a SharePoint site as a CMIS Producer }{113}{section.4.3}
+\contentsline {subsubsection}{Acquiring the SharePoint document library's repository ID }{113}{section.4.3}
+\contentsline {subsubsection}{Enabling Basic Authentication on the SharePoint host }{114}{Item.43}
+\contentsline {subsubsection}{Adding SharePoint as a Liferay Documents and Media repository }{114}{Item.43}
+\contentsline {section}{\numberline {4.4}Microsoft Office integration }{116}{section.4.4}
+\contentsline {section}{\numberline {4.5}Configuring the Documents and Media portlet }{117}{section.4.5}
+\contentsline {section}{\numberline {4.6}Automatic Previews and metadata }{119}{section.4.6}
+\contentsline {subsection}{Automatic extraction of RAW Metadata }{121}{section.4.6}
+\contentsline {subsection}{Document type restrictions and workflow per folder }{122}{section.4.6}
+\contentsline {subsection}{WebDAV access }{123}{section.4.6}
+\contentsline {section}{\numberline {4.7}Liferay Sync }{125}{section.4.7}
+\contentsline {subsection}{How does it work? }{126}{section.4.7}
+\contentsline {subsection}{Installing Liferay Sync }{127}{section.4.7}
+\contentsline {subsubsection}{Windows }{127}{section.4.7}
+\contentsline {subsubsection}{Mac OS }{129}{section.4.7}
+\contentsline {subsubsection}{Mobile }{129}{section.4.7}
+\contentsline {subsection}{Using Liferay Sync on the Desktop }{130}{section.4.7}
+\contentsline {subsubsection}{Using your Sync folder }{133}{section.4.7}
+\contentsline {subsubsection}{Demonstrating Liferay Sync Permissions }{134}{section.4.7}
+\contentsline {subsection}{Using Liferay Sync Mobile }{136}{section.4.7}
+\contentsline {subsubsection}{Android }{136}{section.4.7}
+\contentsline {subsubsection}{iOS }{141}{section.4.7}
+\contentsline {section}{\numberline {4.8}Summary }{148}{section.4.8}
+\contentsline {chapter}{\chapternumberline {5}Leveraging the Asset Framework}{149}{chapter.5}
+\contentsline {section}{\numberline {5.1}Tagging and Categorizing Content }{150}{section.5.1}
+\contentsline {subsection}{Tags }{151}{section.5.1}
+\contentsline {subsection}{Categories }{152}{section.5.1}
+\contentsline {section}{\numberline {5.2}Targeted Vocabularies }{153}{section.5.2}
+\contentsline {subsection}{Single and Multi-valued Vocabularies }{153}{section.5.2}
+\contentsline {subsection}{Separated Widgets }{155}{section.5.2}
+\contentsline {section}{\numberline {5.3}Using Faceted Search }{156}{section.5.3}
+\contentsline {subsection}{Searching for Portal Content }{156}{section.5.3}
+\contentsline {subsubsection}{Asset Types }{158}{section.5.3}
+\contentsline {subsubsection}{Asset Tags }{158}{section.5.3}
+\contentsline {subsubsection}{Asset Categories }{159}{section.5.3}
+\contentsline {subsection}{Advanced Searching }{159}{section.5.3}
+\contentsline {subsection}{Setting Search Options }{160}{section.5.3}
+\contentsline {subsection}{Summary }{165}{section.5.3}
+\contentsline {section}{\numberline {5.4}Using the Asset Publisher }{166}{section.5.4}
+\contentsline {subsubsection}{Querying for Content }{166}{section.5.4}
+\contentsline {paragraph}{Selecting assets manually }{167}{section.5.4}
+\contentsline {paragraph}{Selecting assets dynamically }{168}{section.5.4}
+\contentsline {section}{\numberline {5.5}Setting up Display Pages }{169}{section.5.5}
+\contentsline {paragraph}{Display Style }{169}{section.5.5}
+\contentsline {paragraph}{Other Settings }{170}{section.5.5}
+\contentsline {subsubsection}{Display Page }{170}{section.5.5}
+\contentsline {section}{\numberline {5.6}Defining content relationships }{173}{section.5.6}
+\contentsline {section}{\numberline {5.7}Summary }{174}{section.5.7}
+\contentsline {chapter}{\chapternumberline {6}Personalization and Customization}{175}{chapter.6}
+\contentsline {section}{\numberline {6.1}User Personal Sites }{176}{section.6.1}
+\contentsline {section}{\numberline {6.2}Page Customizations }{177}{section.6.2}
+\contentsline {section}{\numberline {6.3}Using Liferay's rules engine }{181}{section.6.3}
+\contentsline {subsection}{Why use a rules engine? }{181}{section.6.3}
+\contentsline {subsection}{Installation }{182}{section.6.3}
+\contentsline {subsubsection}{Configuring the sample Drools portlet }{182}{section.6.3}
+\contentsline {subsubsection}{Rules Definitions }{183}{section.6.3}
+\contentsline {section}{\numberline {6.4}Summary }{187}{section.6.4}
+\contentsline {chapter}{\chapternumberline {7}Collaboration Suite }{188}{chapter.7}
+\contentsline {section}{\numberline {7.1}Understanding Liferay's common configuration options }{189}{section.7.1}
+\contentsline {subsection}{Look and Feel }{189}{section.7.1}
+\contentsline {subsection}{Export/Import }{195}{section.7.1}
+\contentsline {subsection}{Scope }{197}{section.7.1}
+\contentsline {subsection}{Archived Setups }{198}{Item.56}
+\contentsline {subsection}{Permissions }{199}{Item.56}
+\contentsline {subsection}{Communication }{199}{Item.56}
+\contentsline {subsection}{Sharing }{200}{Item.56}
+\contentsline {subsubsection}{Any Web Site }{201}{Item.56}
+\contentsline {subsubsection}{Facebook }{202}{Item.56}
+\contentsline {subsubsection}{OpenSocial Gadget }{203}{Item.56}
+\contentsline {subsubsection}{Netvibes }{203}{Item.56}
+\contentsline {subsubsection}{Friends }{203}{Item.56}
+\contentsline {section}{\numberline {7.2}Expressing yourself using Blogs }{203}{section.7.2}
+\contentsline {subsection}{The Blogs Portlet }{205}{section.7.2}
+\contentsline {subsubsection}{Configuring the Blogs Portlet }{205}{section.7.2}
+\contentsline {subsubsection}{Permissions }{207}{section.7.2}
+\contentsline {subsubsection}{Adding Blog Entries }{208}{section.7.2}
+\contentsline {subsection}{Aggregating Blog Entries }{211}{section.7.2}
+\contentsline {subsection}{The Blogs Admininistrator Portlet }{213}{section.7.2}
+\contentsline {section}{\numberline {7.3}Organizing and sharing events with the Calendar }{213}{section.7.3}
+\contentsline {subsection}{Configuring the Calendar Portlet }{214}{section.7.3}
+\contentsline {subsection}{Using the Calendar Portlet }{214}{section.7.3}
+\contentsline {section}{\numberline {7.4}Discuss, ask and answer using the Message Boards }{216}{section.7.4}
+\contentsline {subsection}{General }{217}{section.7.4}
+\contentsline {subsection}{Email From }{217}{section.7.4}
+\contentsline {subsection}{Message Added Email }{218}{section.7.4}
+\contentsline {subsection}{Message Updated Email }{218}{section.7.4}
+\contentsline {subsection}{Thread Priorities }{218}{section.7.4}
+\contentsline {subsection}{User Ranks }{218}{section.7.4}
+\contentsline {subsection}{RSS }{219}{section.7.4}
+\contentsline {subsection}{Permissions }{219}{section.7.4}
+\contentsline {subsection}{Adding Categories and Mailing Lists }{220}{section.7.4}
+\contentsline {subsection}{Using the Message Boards }{222}{section.7.4}
+\contentsline {subsection}{Posting New Threads }{222}{section.7.4}
+\contentsline {subsection}{Message Board Administrative Functions }{225}{section.7.4}
+\contentsline {subsubsection}{Moving Threads }{225}{section.7.4}
+\contentsline {subsubsection}{Deleting Threads }{226}{section.7.4}
+\contentsline {subsubsection}{Banning Users }{227}{section.7.4}
+\contentsline {subsubsection}{Splitting Threads }{227}{section.7.4}
+\contentsline {subsubsection}{Editing Posts }{227}{section.7.4}
+\contentsline {subsubsection}{Permissions }{227}{section.7.4}
+\contentsline {section}{\numberline {7.5}Working together with the Wiki }{228}{section.7.5}
+\contentsline {subsection}{Getting Started with the Liferay Wiki }{228}{section.7.5}
+\contentsline {subsection}{Managing Wikis }{230}{section.7.5}
+\contentsline {subsection}{Adding and Editing Wiki Pages }{231}{section.7.5}
+\contentsline {subsection}{Page Details }{232}{section.7.5}
+\contentsline {subsubsection}{Details }{233}{section.7.5}
+\contentsline {subsubsection}{History }{234}{section.7.5}
+\contentsline {subsubsection}{Incoming/Outgoing Links }{234}{section.7.5}
+\contentsline {subsubsection}{Attachments }{234}{section.7.5}
+\contentsline {subsection}{Navigating in the Wiki Portlet }{234}{section.7.5}
+\contentsline {section}{\numberline {7.6}Find out what others think or do using Polls }{235}{section.7.6}
+\contentsline {subsection}{Creating a Poll }{236}{section.7.6}
+\contentsline {subsection}{Adding a Poll to a Page }{237}{section.7.6}
+\contentsline {subsection}{Viewing the Poll Results }{239}{section.7.6}
+\contentsline {section}{\numberline {7.7}Staying in touch with the Chat }{239}{section.7.7}
+\contentsline {subsection}{Jabber Server Integration }{241}{section.7.7}
+\contentsline {subsubsection}{Installation Steps }{242}{section.7.7}
+\contentsline {subsubsection}{Single Sign On }{243}{Item.59}
+\contentsline {section}{\numberline {7.8}Integrating your email with Liferay Mail }{245}{section.7.8}
+\contentsline {section}{\numberline {7.9}Summary }{246}{section.7.9}
+\contentsline {chapter}{\chapternumberline {8}Social Networking }{248}{chapter.8}
+\contentsline {section}{\numberline {8.1}Leveraging Social Portlets, Activities Tracking and User Connections }{249}{section.8.1}
+\contentsline {subsection}{Installing the social portlets }{250}{section.8.1}
+\contentsline {subsection}{Using social networking on public pages }{250}{section.8.1}
+\contentsline {subsection}{Using social networking on personal pages }{253}{Item.70}
+\contentsline {subsection}{Liferay's social tools in action }{255}{Item.70}
+\contentsline {subsubsection}{Setting up users' personal pages }{255}{Item.70}
+\contentsline {subsubsection}{Connecting users through collaboration }{257}{Item.70}
+\contentsline {section}{\numberline {8.2}Measuring social activity }{258}{section.8.2}
+\contentsline {section}{\numberline {8.3}Exporting portal applications as widgets and OpenSocial gadgets }{262}{section.8.3}
+\contentsline {subsection}{Adding OpenSocial gadgets }{263}{section.8.3}
+\contentsline {subsubsection}{Adding Adhoc gadgets }{263}{section.8.3}
+\contentsline {subsubsection}{Adding gadgets for portal-wide use }{265}{section.8.3}
+\contentsline {subsection}{Sharing OpenSocial Gadgets }{265}{Item.75}
+\contentsline {subsection}{Gadget Personalization }{267}{Item.81}
+\contentsline {subsubsection}{OAuth Admin Configuration }{271}{Item.81}
+\contentsline {subsection}{Incorporating OAuth within your site }{274}{Item.92}
+\contentsline {subsection}{Creating and editing OpenSocial gadgets }{276}{Item.98}
+\contentsline {section}{\numberline {8.4}Integrating with Facebook }{276}{section.8.4}
+\contentsline {subsection}{Facebook sign on }{279}{section.8.4}
+\contentsline {subsection}{Using your portlets as Facebook applications }{279}{section.8.4}
+\contentsline {section}{\numberline {8.5}Summary }{279}{section.8.5}
+\contentsline {chapter}{\chapternumberline {9}Using Web Forms and Dynamic Data Lists }{281}{chapter.9}
+\contentsline {section}{\numberline {9.1}Building a list platform in Liferay }{282}{section.9.1}
+\contentsline {section}{\numberline {9.2}Defining data types }{282}{section.9.2}
+\contentsline {section}{\numberline {9.3}Creating data lists }{286}{section.9.3}
+\contentsline {subsection}{Using data list forms }{287}{Item.103}
+\contentsline {subsection}{Using default displays }{289}{Item.103}
+\contentsline {section}{\numberline {9.4}Make it pretty: creating custom displays }{291}{section.9.4}
+\contentsline {subsection}{Detail templates }{291}{section.9.4}
+\contentsline {subsection}{List templates }{292}{section.9.4}
+\contentsline {subsection}{Using workflow }{295}{Item.112}
+\contentsline {subsubsection}{Creating a Kaleo Form }{296}{Item.112}
+\contentsline {subsubsection}{Starting a new Process }{296}{Item.112}
+\contentsline {paragraph}{Selecting an Entry Definition }{297}{Item.117}
+\contentsline {paragraph}{Selecting an Initial Form }{297}{Item.117}
+\contentsline {paragraph}{Selecting a Workflow }{298}{Item.117}
+\contentsline {paragraph}{Assigning Workflow Task Forms }{300}{Item.117}
+\contentsline {subsubsection}{Using a Kaleo Form }{301}{Item.121}
+\contentsline {section}{\numberline {9.5}Summary }{303}{section.9.5}
+\contentsline {chapter}{\chapternumberline {10}Using Workflow }{304}{chapter.10}
+\contentsline {section}{\numberline {10.1}Enabling workflow }{305}{section.10.1}
+\contentsline {section}{\numberline {10.2}Creating new workflow definitions }{305}{section.10.2}
+\contentsline {subsection}{Starting a workflow definition }{306}{section.10.2}
+\contentsline {subsection}{Creating an initial state }{307}{section.10.2}
+\contentsline {subsection}{Creating tasks }{308}{section.10.2}
+\contentsline {subsection}{Sending notifications }{309}{section.10.2}
+\contentsline {subsection}{Using transitions }{311}{section.10.2}
+\contentsline {subsection}{Using forks and joins }{312}{section.10.2}
+\contentsline {subsection}{Putting it all together }{317}{section.10.2}
+\contentsline {section}{\numberline {10.3}Configuring assets to use workflow process definitions }{317}{section.10.3}
+\contentsline {subsection}{Configuring workflow }{318}{section.10.3}
+\contentsline {subsection}{My Workflow Tasks }{319}{section.10.3}
+\contentsline {subsection}{My Submissions }{319}{section.10.3}
+\contentsline {subsection}{Using Kaleo Workflow Processes in Liferay Portal }{320}{section.10.3}
+\contentsline {section}{\numberline {10.4}Using workflow with other applications }{322}{section.10.4}
+\contentsline {subsection}{Documents and media }{322}{section.10.4}
+\contentsline {subsection}{Collaboration }{325}{section.10.4}
+\contentsline {section}{\numberline {10.5}Summary }{326}{section.10.5}
+\contentsline {chapter}{\chapternumberline {11}Kaleo Forms: Defining Business Processes }{327}{chapter.11}
+\contentsline {section}{\numberline {11.1}Kaleo Forms }{328}{section.11.1}
+\contentsline {section}{\numberline {11.2}Kaleo Designer }{330}{section.11.2}
+\contentsline {section}{\numberline {11.3}Summary }{335}{section.11.3}
+\contentsline {chapter}{\chapternumberline {12}Liferay Utility Applications }{336}{chapter.12}
+\contentsline {section}{\numberline {12.1}Capturing Web Sites with the Bookmarks Portlet }{337}{section.12.1}
+\contentsline {subsection}{Organizing Bookmarks by Folder }{337}{section.12.1}
+\contentsline {subsubsection}{Moving a Link }{337}{section.12.1}
+\contentsline {subsection}{Adding and Using Bookmarks }{341}{section.12.1}
+\contentsline {section}{\numberline {12.2}Creating Your Own Plugin Repository }{345}{section.12.2}
+\contentsline {subsection}{Software Catalog }{346}{Item.125}
+\contentsline {subsubsection}{Generating The Software Catalog }{351}{Item.125}
+\contentsline {subsubsection}{Benefits of the Software Catalog }{353}{Item.125}
+\contentsline {subsection}{Manually Creating A Software Catalog }{354}{Item.125}
+\contentsline {subsection}{Connecting to a Software Catalog }{354}{Item.125}
+\contentsline {section}{\numberline {12.3}Shopping }{355}{section.12.3}
+\contentsline {subsection}{Setting up shop }{355}{section.12.3}
+\contentsline {subsubsection}{Creating Categories }{356}{section.12.3}
+\contentsline {subsubsection}{Creating Items }{357}{section.12.3}
+\contentsline {subsection}{Configuration }{358}{section.12.3}
+\contentsline {subsubsection}{Payment Settings }{360}{section.12.3}
+\contentsline {subsubsection}{Shipping and Insurance Calculation }{362}{section.12.3}
+\contentsline {subsubsection}{Emails }{362}{section.12.3}
+\contentsline {subsection}{Using the shopping cart }{364}{section.12.3}
+\contentsline {subsubsection}{Customizing the shopping cart with a hook }{368}{section.12.3}
+\contentsline {subsection}{Managing Orders }{368}{section.12.3}
+\contentsline {subsection}{Managing Coupons }{368}{section.12.3}
+\contentsline {subsubsection}{Integrating the Amazon Rankings portlet }{373}{section.12.3}
+\contentsline {paragraph}{Setting up your Amazon Web Services account }{373}{section.12.3}
+\contentsline {paragraph}{Setting up the Amazon Rankings portlet }{373}{section.12.3}
+\contentsline {section}{\numberline {12.4}Knowledge Base }{375}{section.12.4}
+\contentsline {subsection}{Knowledge Base Display Portlet }{375}{section.12.4}
+\contentsline {subsection}{Knowledge Base Page of the Control Panel }{378}{section.12.4}
+\contentsline {subsection}{Knowledge Base Article Portlet }{380}{section.12.4}
+\contentsline {subsection}{Knowledge Base Section Portlet }{381}{section.12.4}
+\contentsline {subsection}{Knowledge Base Navigation }{382}{section.12.4}
+\contentsline {section}{\numberline {12.5}Summary }{384}{section.12.5}
+\contentsline {chapter}{\chapternumberline {13}Leveraging the Liferay Marketplace }{385}{chapter.13}
+\contentsline {section}{\numberline {13.1}Marketplace Concepts: Users, Companies and Apps }{386}{section.13.1}
+\contentsline {section}{\numberline {13.2}Accessing the Liferay Marketplace }{386}{section.13.2}
+\contentsline {subsection}{The Basics }{386}{Item.127}
+\contentsline {subsection}{Logging In }{390}{Item.127}
+\contentsline {subsection}{Marketplace Profile }{390}{Item.127}
+\contentsline {subsection}{Managing Apps }{390}{Item.127}
+\contentsline {subsection}{Creating a Company }{392}{Item.127}
+\contentsline {section}{\numberline {13.3}Finding Apps }{392}{section.13.3}
+\contentsline {subsection}{Versions }{394}{Item.128}
+\contentsline {subsection}{Compatibility }{395}{Item.128}
+\contentsline {section}{\numberline {13.4}Downloading and Installing Apps }{397}{section.13.4}
+\contentsline {subsection}{Downloading and Installing }{398}{section.13.4}
+\contentsline {subsection}{Liferay Hot Deploy }{399}{section.13.4}
+\contentsline {subsection}{Installing through the Control Panel }{399}{section.13.4}
+\contentsline {subsection}{Downloading through liferay.com }{401}{section.13.4}
+\contentsline {section}{\numberline {13.5}Creating and Uploading Apps }{402}{section.13.5}
+\contentsline {section}{\numberline {13.6}Plugin Management }{402}{section.13.6}
+\contentsline {subsection}{Portlets }{402}{section.13.6}
+\contentsline {subsection}{Themes }{404}{section.13.6}
+\contentsline {subsection}{Layout Templates }{405}{section.13.6}
+\contentsline {subsection}{Hook Plugins }{405}{section.13.6}
+\contentsline {subsection}{Web Plugins }{405}{section.13.6}
+\contentsline {subsection}{Installing Plugins from Repositories }{405}{section.13.6}
+\contentsline {subsection}{Installing Plugins Manually }{409}{section.13.6}
+\contentsline {subsection}{Plugin Troubleshooting }{412}{section.13.6}
+\contentsline {subsubsection}{Liferay Configuration Issues }{412}{section.13.6}
+\contentsline {subsubsection}{Deploy Issues for Specific Containers }{414}{section.13.6}
+\contentsline {paragraph}{Example: WebSphere ® Application Server }{416}{section.13.6}
+\contentsline {subsubsection}{Changing the Configuration Options in Multiple Places }{417}{Item.136}
+\contentsline {section}{\numberline {13.7}Summary }{417}{section.13.7}
+\contentsline {chapter}{\chapternumberline {14}Installation and Setup }{419}{chapter.14}
+\contentsline {section}{\numberline {14.1}Editions of Liferay }{419}{section.14.1}
+\contentsline {subsection}{Liferay's Versioning Schema }{420}{section.14.1}
+\contentsline {subsubsection}{Major Release }{420}{section.14.1}
+\contentsline {subsubsection}{Minor Release }{421}{section.14.1}
+\contentsline {subsubsection}{Maintenance Release }{421}{section.14.1}
+\contentsline {subsubsection}{Release Process }{421}{section.14.1}
+\contentsline {subsubsection}{Comments and Recommendations }{422}{section.14.1}
+\contentsline {section}{\numberline {14.2}Obtaining Liferay Portal }{423}{section.14.2}
+\contentsline {section}{\numberline {14.3}Installing a bundle }{424}{section.14.3}
+\contentsline {section}{\numberline {14.4}App servers }{426}{section.14.4}
+\contentsline {subsection}{Liferay Home }{427}{section.14.4}
+\contentsline {subsection}{Liferay's database }{427}{section.14.4}
+\contentsline {subsection}{Liferay installation overview }{428}{section.14.4}
+\contentsline {subsubsection}{Using data sources }{429}{Item.144}
+\contentsline {subsubsection}{Using mail sessions }{429}{Item.144}
+\contentsline {subsubsection}{The portal-ext.properties file }{430}{Item.144}
+\contentsline {section}{\numberline {14.5}Using Liferay's setup wizard }{431}{section.14.5}
+\contentsline {section}{\numberline {14.6}Manual Configuration }{434}{section.14.6}
+\contentsline {section}{\numberline {14.7}Installing Liferay on an existing application server }{436}{section.14.7}
+\contentsline {subsection}{Installing Liferay in five easy steps }{436}{section.14.7}
+\contentsline {section}{\numberline {14.8}Installing Liferay on Mule Tcat }{437}{section.14.8}
+\contentsline {subsection}{Installing the Administration Console on Windows }{438}{section.14.8}
+\contentsline {subsection}{Installing the Administraton Console on Linux (Ubuntu) }{441}{section.14.8}
+\contentsline {subsection}{Adding Liferay Portal packages }{445}{section.14.8}
+\contentsline {subsection}{Tcat Server Managed Server Installation }{447}{section.14.8}
+\contentsline {subsection}{Registering the managed server }{451}{section.14.8}
+\contentsline {subsection}{Deploying Liferay Portal }{456}{section.14.8}
+\contentsline {subsection}{Deploying Liferay plugins on Mule Tcat }{460}{Item.152}
+\contentsline {section}{\numberline {14.9}Installing Liferay on GlassFish 3 }{462}{section.14.9}
+\contentsline {subsection}{Dependency Jars }{463}{section.14.9}
+\contentsline {paragraph}{Domain Configuration }{465}{Item.154}
+\contentsline {subsection}{Database Configuration }{467}{Item.156}
+\contentsline {subsection}{Mail Configuration }{472}{Item.171}
+\contentsline {subsection}{Domain Configuration - Continued }{472}{Item.171}
+\contentsline {subsection}{Deploy Liferay }{473}{Item.174}
+\contentsline {section}{\numberline {14.10}Installing Liferay on Jetty 7 }{474}{section.14.10}
+\contentsline {subsection}{Dependency Jars }{475}{section.14.10}
+\contentsline {subsection}{Jetty Configuration }{476}{Item.185}
+\contentsline {subsection}{Database Configuration }{478}{Item.192}
+\contentsline {subsection}{Mail Configuration }{479}{Item.194}
+\contentsline {subsection}{Configuring data sources and mail sessions }{480}{Item.194}
+\contentsline {subsection}{Deploy Liferay }{481}{Item.197}
+\contentsline {section}{\numberline {14.11}Installing Liferay on JBoss 5.1 }{482}{section.14.11}
+\contentsline {subsection}{Configuring Dependencies }{482}{Item.204}
+\contentsline {subsection}{Deploying Liferay }{483}{Item.211}
+\contentsline {section}{\numberline {14.12}Installing Liferay on JBoss 7 }{484}{section.14.12}
+\contentsline {subsection}{Dependency Jars }{484}{Item.219}
+\contentsline {subsection}{Configuring JBoss }{485}{Item.222}
+\contentsline {subsection}{Database Configuration }{487}{Item.228}
+\contentsline {subsection}{Mail Configuration }{488}{Item.230}
+\contentsline {subsection}{Configuring data sources and mail sessions }{488}{Item.230}
+\contentsline {subsection}{Deploy Liferay }{489}{Item.233}
+\contentsline {section}{\numberline {14.13}Installing Liferay on Resin 4 }{491}{section.14.13}
+\contentsline {subsection}{Dependency Jars }{491}{section.14.13}
+\contentsline {subsection}{Configuring Resin }{492}{Item.245}
+\contentsline {subsection}{Database Configuration }{493}{Item.248}
+\contentsline {subsection}{Mail Configuration }{494}{Item.248}
+\contentsline {subsection}{Configuring data source and mail session }{494}{Item.248}
+\contentsline {subsection}{Deploy Liferay }{495}{Item.251}
+\contentsline {section}{\numberline {14.14}Installing Liferay on Tomcat 7 }{497}{section.14.14}
+\contentsline {subsection}{Dependency Jars }{497}{section.14.14}
+\contentsline {subsection}{Tomcat Configuration }{498}{Item.263}
+\contentsline {subsection}{Database Configuration }{500}{Item.268}
+\contentsline {subsection}{Mail Configuration }{501}{Item.270}
+\contentsline {subsection}{Configuring your database and mail session }{501}{Item.270}
+\contentsline {subsection}{Deploy Liferay }{502}{Item.272}
+\contentsline {section}{\numberline {14.15}Installing Liferay on JOnAS 5.2 }{503}{section.14.15}
+\contentsline {subsection}{Configuring JOnAS for Liferay }{504}{section.14.15}
+\contentsline {subsection}{Configuring Containers in JOnAS }{507}{Item.287}
+\contentsline {subsection}{Starting JOnAS }{508}{Item.292}
+\contentsline {section}{\numberline {14.16}Installing Liferay on WebLogic 10 }{509}{section.14.16}
+\contentsline {subsection}{Dependency Jars }{509}{section.14.16}
+\contentsline {subsection}{Database Configuration }{510}{Item.305}
+\contentsline {subsection}{Mail Configuration }{511}{Item.314}
+\contentsline {subsection}{Domain Configuration - Continued }{512}{Item.321}
+\contentsline {subsection}{Deploy Liferay }{513}{Item.324}
+\contentsline {section}{\numberline {14.17}Installing Liferay on Oracle WebLogic 10.3 }{515}{section.14.17}
+\contentsline {subsection}{Dependency Jars }{516}{section.14.17}
+\contentsline {subsection}{Database Configuration }{516}{Item.336}
+\contentsline {subsection}{Mail Configuration }{518}{Item.344}
+\contentsline {subsection}{Domain Configuration - Continued }{518}{Item.347}
+\contentsline {subsection}{Deploy Liferay }{520}{Item.349}
+\contentsline {section}{\numberline {14.18}Installing Liferay on WebSphere 8.0 }{522}{section.14.18}
+\contentsline {subsection}{Preparing WebSphere for Liferay }{522}{section.14.18}
+\contentsline {subsection}{Copying portal dependencies }{526}{Item.367}
+\contentsline {subsection}{Database Configuration }{527}{Item.367}
+\contentsline {subsection}{Mail Configuration }{530}{Item.388}
+\contentsline {subsection}{Deploy Liferay }{531}{Item.393}
+\contentsline {subsection}{Start Liferay }{531}{Item.399}
+\contentsline {section}{\numberline {14.19}Making Liferay Coexist with Other Java EE Applications }{532}{section.14.19}
+\contentsline {section}{\numberline {14.20}Summary }{533}{section.14.20}
+\contentsline {chapter}{\chapternumberline {15}Management }{534}{chapter.15}
+\contentsline {section}{\numberline {15.1}Managing Users }{535}{section.15.1}
+\contentsline {section}{\numberline {15.2}Adding users }{535}{section.15.2}
+\contentsline {section}{\numberline {15.3}User management }{537}{section.15.3}
+\contentsline {subsection}{Organizations }{538}{section.15.3}
+\contentsline {section}{\numberline {15.4}User Groups }{541}{section.15.4}
+\contentsline {subsection}{Creating and editing a User Group }{544}{section.15.4}
+\contentsline {subsection}{Assigning Members to a User Group }{544}{section.15.4}
+\contentsline {subsection}{User Group Sites }{545}{section.15.4}
+\contentsline {section}{\numberline {15.5}Roles and Permissions }{547}{section.15.5}
+\contentsline {subsection}{Defining Permissions on a Role }{550}{section.15.5}
+\contentsline {subsection}{Special Note about the Power Users Role }{555}{section.15.5}
+\contentsline {section}{\numberline {15.6}Managing Portal Settings }{556}{section.15.6}
+\contentsline {subsection}{Password Policies }{556}{section.15.6}
+\contentsline {subsection}{Portal Settings }{558}{section.15.6}
+\contentsline {subsection}{General }{558}{section.15.6}
+\contentsline {subsection}{Authentication }{560}{section.15.6}
+\contentsline {section}{\numberline {15.7}Integrating Liferay users into your enterprise }{561}{section.15.7}
+\contentsline {subsection}{LDAP }{561}{section.15.7}
+\contentsline {subsubsection}{Adding LDAP Servers }{563}{section.15.7}
+\contentsline {subsubsection}{LDAP Options Not Available in the GUI }{567}{section.15.7}
+\contentsline {subsection}{SSO }{568}{section.15.7}
+\contentsline {subsection}{Authentication: Central Authentication Service (CAS) }{569}{section.15.7}
+\contentsline {subsection}{Authentication: Facebook }{570}{section.15.7}
+\contentsline {subsection}{Authentication: NTLM }{570}{section.15.7}
+\contentsline {subsection}{Authentication: OpenID }{571}{section.15.7}
+\contentsline {subsection}{Atlassian Crowd }{571}{section.15.7}
+\contentsline {subsection}{Authentication: OpenSSO }{571}{section.15.7}
+\contentsline {subsection}{Authentication: SiteMinder }{572}{section.15.7}
+\contentsline {subsection}{Users }{572}{section.15.7}
+\contentsline {section}{\numberline {15.8}Summary }{573}{section.15.8}
+\contentsline {chapter}{\chapternumberline {16}Using the Control Panel }{574}{chapter.16}
+\contentsline {subsection}{Mail Host Names }{575}{chapter.16}
+\contentsline {subsection}{Email Notifications }{575}{chapter.16}
+\contentsline {subsection}{Identification }{576}{chapter.16}
+\contentsline {subsection}{Miscellaneous: Display Settings }{576}{chapter.16}
+\contentsline {section}{\numberline {16.1}Monitoring }{578}{section.16.1}
+\contentsline {section}{\numberline {16.2}Plugins Configuration }{578}{section.16.2}
+\contentsline {section}{\numberline {16.3}Server Administration }{580}{section.16.3}
+\contentsline {subsection}{Resources }{580}{section.16.3}
+\contentsline {subsection}{Log Levels }{581}{section.16.3}
+\contentsline {subsection}{Properties }{581}{section.16.3}
+\contentsline {subsection}{Captcha }{582}{section.16.3}
+\contentsline {subsection}{Data Migration }{582}{section.16.3}
+\contentsline {subsection}{File Uploads }{583}{section.16.3}
+\contentsline {subsection}{Mail }{583}{section.16.3}
+\contentsline {subsection}{External Services }{583}{section.16.3}
+\contentsline {subsubsection}{OpenOffice/LibreOffice configuration }{584}{section.16.3}
+\contentsline {subsubsection}{ImageMagick configuration }{585}{section.16.3}
+\contentsline {subsubsection}{Xuggler configuration }{586}{section.16.3}
+\contentsline {subsection}{Script }{586}{section.16.3}
+\contentsline {subsection}{Shutdown }{586}{section.16.3}
+\contentsline {section}{\numberline {16.4}Portal Instances }{587}{section.16.4}
+\contentsline {section}{\numberline {16.5}Plugins Installation }{587}{section.16.5}
+\contentsline {section}{\numberline {16.6}Summary }{588}{section.16.6}
+\contentsline {chapter}{\chapternumberline {17}Advanced Portal Operation }{589}{chapter.17}
+\contentsline {section}{\numberline {17.1}Audit Trails }{590}{section.17.1}
+\contentsline {subsection}{Installing and configuring the audit plugins }{591}{section.17.1}
+\contentsline {subsection}{Using audit events }{591}{section.17.1}
+\contentsline {subsection}{Viewing audit reports }{594}{section.17.1}
+\contentsline {subsection}{Conclusion of the Story }{597}{section.17.1}
+\contentsline {section}{\numberline {17.2}Liferay monitoring using Google Analytics }{597}{section.17.2}
+\contentsline {section}{\numberline {17.3}Backing up a Liferay installation }{599}{section.17.3}
+\contentsline {subsection}{Backing up source code }{599}{section.17.3}
+\contentsline {subsection}{Backing up Liferay's file system }{599}{section.17.3}
+\contentsline {subsection}{Backing up Liferay's database }{600}{section.17.3}
+\contentsline {section}{\numberline {17.4}Liferay's Logging System }{600}{section.17.4}
+\contentsline {section}{\numberline {17.5}Patching Liferay }{603}{section.17.5}
+\contentsline {subsection}{Installing the patching tool }{604}{section.17.5}
+\contentsline {subsection}{Installing patches }{605}{section.17.5}
+\contentsline {subsubsection}{Handling hot fixes and patches }{605}{section.17.5}
+\contentsline {subsubsection}{Fix pack dependencies }{606}{section.17.5}
+\contentsline {subsection}{Removing or reverting patches }{606}{section.17.5}
+\contentsline {subsection}{Using profiles with the patching tool }{606}{section.17.5}
+\contentsline {section}{\numberline {17.6}Upgrading Liferay }{607}{section.17.6}
+\contentsline {subsection}{Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1 }{608}{section.17.6}
+\contentsline {subsection}{Migrate to Algorithm 6 }{608}{section.17.6}
+\contentsline {subsection}{Migrate Your Image Gallery Images }{610}{section.17.6}
+\contentsline {subsection}{Review the New 6.1 Properties Defaults }{610}{section.17.6}
+\contentsline {subsection}{Catalog all the plugins you have installed }{611}{section.17.6}
+\contentsline {subsubsection}{Upgrading a bundle }{612}{section.17.6}
+\contentsline {subsubsection}{Upgrading using a .war file }{613}{Item.413}
+\contentsline {section}{\numberline {17.7}Summary }{614}{section.17.7}
+\contentsline {chapter}{\chapternumberline {18}Using Scripting for Advanced Flexibility}{615}{chapter.18}
+\contentsline {section}{\numberline {18.1}Accessing Liferay Services }{616}{section.18.1}
+\contentsline {subsection}{Beanshell }{616}{section.18.1}
+\contentsline {subsection}{Groovy }{617}{section.18.1}
+\contentsline {subsection}{Javascript }{617}{section.18.1}
+\contentsline {subsection}{Ruby }{618}{section.18.1}
+\contentsline {subsection}{Python }{618}{section.18.1}
+\contentsline {section}{\numberline {18.2}Running scripts from the control panel }{618}{section.18.2}
+\contentsline {section}{\numberline {18.3}Leveraging the Script Engine in Workflow }{620}{section.18.3}
+\contentsline {section}{\numberline {18.4}Custom Java Tools in the Script Engine }{622}{section.18.4}
+\contentsline {section}{\numberline {18.5}Summary }{627}{section.18.5}
+\contentsline {chapter}{\chapternumberline {19}Configuring Liferay for High Availability}{629}{chapter.19}
+\contentsline {section}{\numberline {19.1}Liferay Clustering }{630}{section.19.1}
+\contentsline {subsection}{All nodes should be pointing to the same Liferay database }{632}{section.19.1}
+\contentsline {subsubsection}{Read-Writer database configuration }{632}{section.19.1}
+\contentsline {subsubsection}{Database Sharding }{633}{section.19.1}
+\contentsline {subsection}{Documents and Media Library clustering }{637}{section.19.1}
+\contentsline {subsubsection}{Using the File System store }{637}{section.19.1}
+\contentsline {subsubsection}{Using the Advanced File System store }{639}{section.19.1}
+\contentsline {subsubsection}{Using the CMIS store }{640}{section.19.1}
+\contentsline {subsubsection}{Using the JCR store }{640}{section.19.1}
+\contentsline {paragraph}{Using Amazon Simple Storage Service }{642}{section.19.1}
+\contentsline {paragraph}{Using the Documentum store }{642}{section.19.1}
+\contentsline {subsection}{Clustering search }{643}{section.19.1}
+\contentsline {subsubsection}{Using Pluggable Enterprise Search }{643}{section.19.1}
+\contentsline {paragraph}{Configuring the Solr Search Server }{644}{section.19.1}
+\contentsline {paragraph}{Installing the Solr Liferay Plugin }{645}{section.19.1}
+\contentsline {subsubsection}{Clustering Lucene indexes on all nodes }{646}{section.19.1}
+\contentsline {subsubsection}{Sharing a search index (not recommended unless you have a file locking-aware SAN) }{647}{section.19.1}
+\contentsline {subsection}{Distributed Caching }{648}{section.19.1}
+\contentsline {subsubsection}{Enabling distributed caching }{649}{section.19.1}
+\contentsline {subsubsection}{Modifying the cache settings with a plugin }{649}{section.19.1}
+\contentsline {subsubsection}{Modifying the Ehcache settings directly }{651}{section.19.1}
+\contentsline {subsubsection}{Customizing Hibernate cache settings }{652}{section.19.1}
+\contentsline {subsubsection}{Enhanced distributed cache algorithm }{653}{section.19.1}
+\contentsline {subsection}{Hot Deploy }{656}{section.19.1}
+\contentsline {section}{\numberline {19.2}Performance Tuning }{657}{section.19.2}
+\contentsline {subsection}{Memory }{657}{section.19.2}
+\contentsline {subsection}{Garbage Collection }{658}{section.19.2}
+\contentsline {subsection}{Properties File Changes }{660}{section.19.2}
+\contentsline {subsection}{Disabling unused servlet filters }{661}{section.19.2}
+\contentsline {section}{\numberline {19.3}Summary }{662}{section.19.3}

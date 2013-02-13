@@ -653,13 +653,12 @@ social networks to enhance your existing site.
 
 \begin{figure}[htbp]
 
-\sidecapmargin{right}
-        \begin{sidecaption}{Figure 1.7: Liferay Portal provides feeds of social activities.
-These feeds can contain entries from any of Liferay's built-in
-applications or applications that you write.}[ ]
 \centering
 \includegraphics{../../images/01-social-activities.png}
-        \end{sidecaption}
+\caption{\\Figure 1.7: Liferay Portal provides feeds of social activities.
+These feeds can contain entries from any of Liferay's built-in
+applications or applications that you write.}
+
 \end{figure}
 
 Social relationships within Liferay Portal are ideally suited for many
@@ -1102,8 +1101,8 @@ for the Recent Bloggers and Wiki portlets.
 
 \begin{figure}[htbp]
 \centering
-\scalegraphics{../../images/04-web-content-add-page.png}
-\caption{Figure 2.4: Adding Pages}
+\includegraphics{../../images/04-web-content-add-page.png}
+\caption{\\Figure 2.4: Adding Pages}
 \end{figure}
 
 When you create a new page, you can create either a blank page or a page
@@ -1214,7 +1213,7 @@ for our pages.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/04-look-and-feel.png}
-\caption{Figure 2.6: Look and Feel Interface}
+\caption{\\Figure 2.6: Look and Feel Interface}
 \end{figure}
 
 Many themes include more than one color scheme. This allows you to keep
@@ -1789,7 +1788,7 @@ create and publish our first pieces of content.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/04-web-content-context-dropdown.png}
-\caption{Figure 2.12: Choosing a Site in the Content Section}
+\caption{\\Figure 2.12: Choosing a Site in the Content Section}
 \end{figure}
 
 When you manage web content from the Control Panel you can select the
@@ -2003,8 +2002,8 @@ Content Display} from the Dockbar.
 
 \begin{figure}[htbp]
 \centering
-\scalegraphics{../../images/portal-admin-ch4_html_m5a656d59.jpg}
-\caption{Figure 2.18: Adding the Web Content Display Portlet}
+\scalegraphics{../../images/add-web-content-display.png}
+\caption{\\Figure 2.18: Adding the Web Content Display Portlet}
 \end{figure}
 
 Once the portlet appears, drag it to the position on the page where you
@@ -2094,7 +2093,7 @@ WYSIWYG editor and from there you can make any necessary changes.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/web-content-display-icons.png}
-\caption{Figure 2.20: Edit, Select and Add Icons of Web Content Display
+\caption{\\Figure 2.20: Edit, Select and Add Icons of Web Content Display
 Portlet}
 \end{figure}
 
@@ -2310,7 +2309,7 @@ site.
 
 All of this starts with structures.
 
-\subsubsection{Using structures
+\subsection{Using structures
 }
 
 Structures are the foundation for web content. They determine which
@@ -2349,7 +2348,7 @@ scrolls with the user and more.
 
 Let's look at how we edit a structure.
 
-\paragraph{Editing a Structure
+\subsubsection{Editing a Structure
 }
 
 Go back to the Control Panel and select \emph{Web Content} from the Site
@@ -2414,7 +2413,7 @@ structures to model everything from articles, to video metadata, to
 databases of wildlife. You're limited only by your imagination. To fire
 that imagination, let's look more closely at the form elements.
 
-\paragraph{Editing form elements
+\subsubsection{Editing form elements
 }
 
 When creating a new structure it is essential you set variable names
@@ -2474,7 +2473,7 @@ content}). Also enable the \emph{Display as Tooltip} box. Now, when
 users hover over the Help icon near your title, your instructions are
 displayed.
 
-\paragraph{Structure Default Values
+\subsubsection{Structure Default Values
 }
 
 Structure Default Values allow you to create one structure that uses
@@ -2526,7 +2525,7 @@ the data you inserted.
 As with everything else in Liferay, you can set permissions on
 structures. Let's see how you'd do that.
 
-\paragraph{Assigning Permissions
+\subsubsection{Assigning Permissions
 }
 
 Setting permissions on structures is done using the same procedure as
@@ -2550,7 +2549,7 @@ Now that you understand what structures are used for, you need to
 understand the other half of Liferay's web content management system:
 templates.
 
-\subsubsection{Using templates
+\subsection{Using templates
 }
 
 Developers create templates to display the elements of the structure in
@@ -2566,7 +2565,7 @@ using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-\paragraph{Template Types (VM, XSL, FTL and CSS)
+\subsubsection{Template Types (VM, XSL, FTL and CSS)
 }
 
 Liferay supports templates written in four different templating
@@ -2601,7 +2600,7 @@ is very straightforward and modifications are simple (colors, fonts,
 layouts, etc). If your structure is more complex, however, you'll need
 to use one of the other options.
 
-\paragraph{Adding a Template
+\subsubsection{Adding a Template
 }
 
 Liferay WCM makes it easy to create structures, templates and content
@@ -2970,6 +2969,8 @@ in your site when it is first created. Changes to a site template's
 content, however, are not propagated to existing sites that are linked
 to the site template.
 
+\clearpage
+
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
       \includegraphics{../../images/01-tip.png}
@@ -2979,6 +2980,7 @@ publish a piece of web content to many sites and ensure modifications
 are applied to all, don't use site template content for that purpose.
 Instead, place the content in the global scope and then reference it
 from a \emph{Web Content Display} application in each site.
+\newline
 
 \end{roundedframe}
 
@@ -3744,14 +3746,18 @@ then \emph{Install}.
 
 \textbf{Installation Note:} If your server doesn't have access to the
 outside Internet, an error appears in your log:
-\texttt{SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder}.
+
+\begin{verbatim}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder
+\end{verbatim}
+
 This occurs because WURFL by default downloads device information from
-the web. You can provide the same information to WURFL manually by
-downloading the SLF4J distribution from
+the web. You can provide the same information to WURFL manually. 
+Download the SLF4J distribution from
 \href{http://www.slf4j.org/download.html}{http://www.slf4j.org/download.html},
-unzipping the resulting file, copying \texttt{slf4j-log4j12.jar} to
-\texttt{{[}WEB\_APP\_HOME{]}/wurfl-web/WEB-INF/lib} folder, and
-restarting your Liferay instance. On some application servers, you'll
+unzip the resulting file, copy \texttt{slf4j-log4j12.jar} to
+\texttt{{[}WEB\_APP\_HOME{]}/wurfl-web/WEB\-INF/lib} folder, and
+restart your Liferay instance. On some application servers, you'll
 need to add this .jar file to the \texttt{wurfl-web.war} file first (in
 the directory noted above) before deploying the file to your server.
 
@@ -3998,7 +4004,7 @@ metadata sets are an addition to, not a replacement for, the portal's
 system of tags and categories. Let's start exploring how to use the
 Documents and Media portlet.
 
-\section{Getting Started with the Documents and Media
+\section{Getting Started with Documents and Media
 }
 
 The Documents and Media portlet is non-instanceable. This means that
@@ -4536,10 +4542,10 @@ Follow these steps to get the repository ID:
   URL you'd use when adding this repository in Documents and Media would
   resemble this:
 
-\begin{verbatim}
-http://liferay-20jf4ic/CMIS/_vti_bin/cmis/rest/6DFDA9-B547-4D1D-BF85-976863CDF533?getRepositoryInfo.
-\end{verbatim}
 \end{enumerate}
+\begin{verbatim}
+http://liferay/CMIS/_vti_bin/cmis/rest/6DFDA9-B547-4D1D-BF85-976863CDF533?getRepositoryInfo
+\end{verbatim}
 
 Be sure to copy down this URL so you can use it to configure SharePoint
 as a repository in Documents and Media. Next, let's enable Basic
@@ -4612,16 +4618,18 @@ http://[host]/[repository path]
 The left navigation panel of your Documents and Media portlet now lists
 your new repository.
 
+\clearpage
+
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
 In the site path example below,
-notice how the repository path has a folder \texttt{Shared Documents}
+notice how the repository path has a folder \textit{Shared Documents}
 consisting of two words.
 
 \begin{verbatim}
-    http://liferay-20jf4ic/CMIS/Shared Documents/Forms/AllItems.aspx
+    http://[host]/CMIS/Shared Documents/Forms/AllItems.aspx
 \end{verbatim}
 
 The space between the words in the repository name must be accounted for
@@ -4702,7 +4710,7 @@ the original Home folder would no longer be accessible.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/docs-and-media-portlet-config.png}
-\caption{Figure 4.11: To make portlet-specific configurations for
+\caption{\\Figure 4.11: To make portlet-specific configurations for
 Documents and Media, click on the wrench icon at the top of the portlet
 window and select \emph{Configuration}.}
 \end{figure}
@@ -4890,7 +4898,7 @@ our example) and select \emph{Access from Desktop}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/webdav-access-from-desktop.png}
-\caption{Figure 4.17: Select \emph{Access from Desktop} to get the
+\caption{\\Figure 4.17: Select \emph{Access from Desktop} to get the
 WebDAV URL of a folder.}
 \end{figure}
 
@@ -5006,7 +5014,7 @@ appropriate location on your machine and click \emph{Next}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-setup.png}
-\caption{Figure 4.18: Use the Liferay Sync Installation wizard to choose
+\caption{\\Figure 4.18: Use the Liferay Sync Installation wizard to choose
 an installation location.}
 \end{figure}
 
@@ -5016,7 +5024,7 @@ Liferay Sync after you click \emph{Finish}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-setup-complete.png}
-\caption{Figure 4.19: You'll see the following screen once Liferay Sync
+\caption{\\Figure 4.19: You'll see the following screen once Liferay Sync
 has been installed. Click \emph{Finish} to exit the installation
 wizard.}
 \end{figure}
@@ -5030,7 +5038,7 @@ it should authenticate.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-new-account-info.png}
-\caption{Figure 4.20: The first time you run Liferay Sync, you'll have
+\caption{\\Figure 4.20: The first time you run Liferay Sync, you'll have
 to tell it how to communicate with your Liferay server.}
 \end{figure}
 
@@ -5047,7 +5055,7 @@ to run it.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-mac-install.png}
-\caption{Figure 4.21: Drag the Liferay Sync icon to the Applications
+\caption{\\Figure 4.21: Drag the Liferay Sync icon to the Applications
 folder.}
 \end{figure}
 
@@ -5059,7 +5067,7 @@ through the brief setup process that was described above for Windows.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-mac-preferences.png}
-\caption{Figure 4.22: You can provide the same information requested by
+\caption{\\Figure 4.22: You can provide the same information requested by
 the Windows application installer.}
 \end{figure}
 
@@ -5093,7 +5101,7 @@ Liferay Sync icon in your taskbar to bring up the menu.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-taskbar-menu.png}
-\caption{Figure 4.23: Open the Liferay Sync taskbar menu to access the
+\caption{\\Figure 4.23: Open the Liferay Sync taskbar menu to access the
 following options.}
 \end{figure}
 
@@ -5110,12 +5118,12 @@ you belong to.
   \begin{wrapfigure}{l}{0.12\textwidth}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
- Note for administrators: If you
-don't have a Documents and Media portlet anywhere on a site that's been
-selected for syncing, you'll have to add the portlet. Otherwise, users
-will get a \emph{The requested resource was not found} error when they
+Note for administrators: If you don't have a Documents and Media portlet
+anywhere on a site that's been selected for syncing, you'll have to add the
+portlet. Otherwise, users will get a \emph{The requested resource was not
+found} error when they
 try to use the \emph{Open Website} link from their Sync menus.
-
+\newline
 \end{roundedframe}
 
 \emph{Recent Files} shows a list of recently created or modified files
@@ -5131,7 +5139,7 @@ Liferay credentials.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-properties.png}
-\caption{Figure 4.24: Open the Liferay Sync menu and select
+\caption{\\Figure 4.24: Open the Liferay Sync menu and select
 \emph{Properties} (\emph{Preferences}, on Mac OS) to edit the settings
 you configured during setup.}
 \end{figure}
@@ -5188,7 +5196,7 @@ folder, a \texttt{.liferay-sync.deletions} file is created there with
 the names of the files you deleted. This lets Liferay Sync know that you
 don't want these files in your Sync folder, so it won't download them
 the next time it syncs. Note that the files listed in your
-\texttt{.liferay-sync.deletions} file are only local deletions. You can
+\texttt{.liferay\-sync.deletions} file are only local deletions. You can
 remove entries from your \texttt{.liferay-sync.deletions} file to have
 Liferay Sync download them the next time it syncs. Of course, you can
 use Sync for more than just local deletions. If you have the required
@@ -5228,7 +5236,7 @@ incremented.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-README.png}
-\caption{Figure 4.26: Updating a file through Liferay Sync increments
+\caption{\\Figure 4.26: Updating a file through Liferay Sync increments
 the file's version number. You can view a file's version number through
 the web interface.}
 \end{figure}
@@ -5293,7 +5301,7 @@ are missing.
 \begin{figure}[htbp]
 \centering
 \includegraphics{../../images/liferay-sync-android-empty.png}
-\caption{Figure 4.27: First screen}
+\caption{\\Figure 4.27: First screen}
 \end{figure}
 
 Touch the screen and it displays the \emph{Settings} view. You can
@@ -5303,7 +5311,7 @@ top right corner of the screen.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-settings.png}
-\caption{Figure 4.28: Android settings}
+\caption{\\Figure 4.28: Android settings}
 \end{figure}
 
 Enter your Liferay server credentials by filling in your \emph{Login},
@@ -5322,7 +5330,7 @@ upload files, take photos, test your connection, etc.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-gingerbread.png}
-\caption{Figure 4.29: Gingerbread}
+\caption{\\Figure 4.29: Gingerbread}
 \end{figure}
 
 After you have successfully tested your connection, hit the \emph{back}
@@ -5331,7 +5339,7 @@ button and you'll see a list of Liferay sites you have access to.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-sites.png}
-\caption{Figure 4.30: Sites}
+\caption{\\Figure 4.30: Sites}
 \end{figure}
 
 You can browse the files of a site by tapping on any of them. This opens
@@ -5341,7 +5349,7 @@ permission to view.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-files-list.png}
-\caption{Figure 4.31: Folder and files}
+\caption{\\Figure 4.31: Folder and files}
 \end{figure}
 
 From here, you can click on a folder and browse deeper into the folder
@@ -5366,7 +5374,7 @@ On Gingerbread, the actions menu looks like this:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-gingerbread-context.png}
-\caption{Figure 4.32: Gingerbread menu}
+\caption{\\Figure 4.32: Gingerbread menu}
 \end{figure}
 
 On Ice Cream Sandwich and above, you can find the action icons and menu
@@ -5375,7 +5383,7 @@ at the top right:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-ics-context.png}
-\caption{Figure 4.33: ICS menu}
+\caption{\\Figure 4.33: ICS menu}
 \end{figure}
 
 Clicking on \emph{Add to Favorites} (Gingerbread) or the gray star (Ice
@@ -5394,7 +5402,7 @@ description, etc.:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-details.png}
-\caption{Figure 4.34: View details}
+\caption{\\Figure 4.34: View details}
 \end{figure}
 
 If you click on \emph{Download} (floppy disk icon on Ice Cream
@@ -5410,7 +5418,7 @@ Cream Sandwich and above, you can select multiple entries for deletion:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-delete.png}
-\caption{Figure 4.35: Actions}
+\caption{\\Figure 4.35: Actions}
 \end{figure}
 
 Some actions are not related to a specific folder or file. You can find
@@ -5423,7 +5431,7 @@ available actions.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-more.png}
-\caption{Figure 4.36: More options}
+\caption{\\Figure 4.36: More options}
 \end{figure}
 
 The \emph{Refresh} button fetches and updates the list of folders and
@@ -5448,7 +5456,7 @@ files}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-upload.png}
-\caption{Figure 4.37: Upload local files}
+\caption{\\Figure 4.37: Upload local files}
 \end{figure}
 
 The \emph{Favorites} menu option opens the favorites list. All files
@@ -5461,7 +5469,7 @@ metadata and, of course, remove them from the list.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-android-favorites.png}
-\caption{Figure 4.38: Favorites}
+\caption{\\Figure 4.38: Favorites}
 \end{figure}
 
 Next, let's look at the iOS Sync app.
@@ -5475,7 +5483,7 @@ missing.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-empty.png}
-\caption{Figure 4.39: iOS Settings}
+\caption{\\Figure 4.39: iOS Settings}
 \end{figure}
 
 Click on \emph{Settings} in the toolbar and enter your Liferay server
@@ -5490,7 +5498,7 @@ correct.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-settings.png}
-\caption{Figure 4.40: iOS Settings}
+\caption{\\Figure 4.40: iOS Settings}
 \end{figure}
 
 After you have successfully tested your connection, tap on the
@@ -5500,7 +5508,7 @@ you have access to.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-sites.png}
-\caption{Figure 4.41: Sites}
+\caption{\\Figure 4.41: Sites}
 \end{figure}
 
 You can browse the files of a site by tapping on its name or icon. This
@@ -5510,7 +5518,7 @@ have permission to view.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-files-list.png}
-\caption{Figure 4.42: Folder and files}
+\caption{\\Figure 4.42: Folder and files}
 \end{figure}
 
 From here, you can click on a folder to browse deeper into the folder
@@ -5523,7 +5531,7 @@ and folders that have been changed in the portal.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-refresh.png}
-\caption{Figure 4.43: Refreshing}
+\caption{\\Figure 4.43: Refreshing}
 \end{figure}
 
 When you click on a file, this file is downloaded from the remote portal
@@ -5534,7 +5542,7 @@ it again; instead, it opens the local copy.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-open.png}
-\caption{Figure 4.44: Opening a file}
+\caption{\\Figure 4.44: Opening a file}
 \end{figure}
 
 There are 3 icons at the bottom of the screen when you open a file:
@@ -5546,7 +5554,7 @@ author, version, description, etc.:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-details.png}
-\caption{Figure 4.45: View details}
+\caption{\\Figure 4.45: View details}
 \end{figure}
 
 Clicking on the star icon at the center adds the selected file to the
@@ -5564,7 +5572,7 @@ they are available.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-share.png}
-\caption{Figure 4.46: Share options}
+\caption{\\Figure 4.46: Share options}
 \end{figure}
 
 In the file list, there's an Edit button. Clicking on it switches the
@@ -5573,7 +5581,7 @@ app to the edit mode as shown below:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-edit.png}
-\caption{Figure 4.47: Edit mode}
+\caption{\\Figure 4.47: Edit mode}
 \end{figure}
 
 Selecting one or more files or folders and clicking on the \emph{Delete}
@@ -5590,7 +5598,7 @@ right and click on the \emph{Delete} button in the file list view:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-delete.png}
-\caption{Figure 4.48: Deleting a file}
+\caption{\\Figure 4.48: Deleting a file}
 \end{figure}
 
 If you want to upload an image or video to the portal, click the
@@ -5609,7 +5617,7 @@ creates it in the portal.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-more.png}
-\caption{Figure 4.49: Upload photos and videos}
+\caption{\\Figure 4.49: Upload photos and videos}
 \end{figure}
 
 The \emph{Favorites} toolbar section opens the favorites list. All files
@@ -5622,7 +5630,7 @@ metadata and, of course, remove them from the list.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-favorites.png}
-\caption{Figure 4.50: Favorites}
+\caption{\\Figure 4.50: Favorites}
 \end{figure}
 
 All downloaded files are stored on your device indefinitely.
@@ -5630,7 +5638,7 @@ All downloaded files are stored on your device indefinitely.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-sync-ios-cache.png}
-\caption{Figure 4.51: Deleting local copies}
+\caption{\\Figure 4.51: Deleting local copies}
 \end{figure}
 
 If you want to delete downloaded files locally but don't want to remove
@@ -5912,7 +5920,7 @@ of \emph{facets} on the left.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/faceted-search-1.png}
-\caption{Figure 5.7: The first set of facets is content types. You can
+\caption{\\Figure 5.7: The first set of facets is content types. You can
 drill down to specific types of content that contain the search terms
 you entered.}
 \end{figure}
@@ -5934,28 +5942,14 @@ more helpful to you.
 \centering
 \scalegraphics{../../images/faceted-search-2.png}
 \caption{Figure 5.8: Asset tag facets provide you with more information
-about content that contains the terms for which you searched.}
-\end{figure}
-
-In this case, if you searched for a wireless phone, you may be more
-interested in content that has your search terms in it and has also been
-tagged by users. One or more of the tags may help you to find what
-you're looking for. Note that the number of tags that appear is
-configurable: by default it's 10, but there could be many more as a
-result of a particular search. We'll look at the configuration options
-later in the chapter. For now, let's see how drilling down works.
-
-\subsection{Drilling Down to the Data You Want
-}
-
-To drill down into the search, click a facet to add it to the filter
 list, and the results to the right are refined by the facet you
-selected.
+selected.}
+\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/05-faceted-search-drill-down-1.png}
-\caption{Figure 5.9: Drilling down creates a list of what you selected
+\caption{\\Figure 5.9: Drilling down creates a list of what you selected
 at the top of the screen.}
 \end{figure}
 
@@ -5970,7 +5964,7 @@ selecting another facet, as below.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/05-faceted-search-drill-down-2.png}
-\caption{Figure 5.10: Selecting another facet further refines the
+\caption{\\Figure 5.10: Selecting another facet further refines the
 search.}
 \end{figure}
 
@@ -6290,7 +6284,7 @@ above.
 represents a particular template implementation which is used to render
 the facet. These templates are normally JSP pages (but can also be
 implemented as Velocity or Freemarker templates provided by a theme if
-the portal property \texttt{theme.jsp.override.enabled} is set to
+the portal property \texttt{theme.jsp.over\-ride.en\-abled} is set to
 \texttt{true}). The method of matching the string to a JSP is simply
 done by prefixing the string with /html/portlet/search/facets/ and
 appending the .jsp extension.
@@ -6340,7 +6334,7 @@ allows for the creation of pre-configured search results.
 
 Imagine you would like to create a pre-configured search that returns
 only images (i.e.~the asset type is
-\texttt{com.liferay.portlet.documentlibrary.model.DLFileEntry} and the
+\texttt{DLFileEntry} and the
 indexed field extension should contain the values bmp, gif, jpeg, jpg,
 odg, png, or svg). We would need two static facets, one with
 ``fieldName'': ``entryClassName'' and another with ``fieldName'':
@@ -6800,7 +6794,7 @@ layout.user.private.layouts.enabled=false
 Note that the public and private
 page sets of personal sites are handled separately. You can leave one
 page set enabled while disabling the other.
-
+\\*
 \end{roundedframe}
 
 What if you initially had user personal sites enabled for your portal
@@ -6810,10 +6804,10 @@ removed.
 
 You can allow users to create personal sites but not have them
 automatically created for new users. To do this, first make sure that
-\texttt{layout.user.public.layouts.enabled} and
-\texttt{layout.user.private.layouts.enabled} are not set to
+\texttt{layout.user.pub\-lic.lay\-outs.enabled} and
+\texttt{layout.user.pri\-vate.lay\-outs.enabled} are not set to
 \texttt{false}. You don't need to explicitly set them to
-\texttt{true}--\texttt{true} is the default. Then add the following
+\texttt{true}---\texttt{true} is the default. Then add the following
 properties to your \texttt{portal-ext.properties} file:
 
 \begin{verbatim}
@@ -6821,10 +6815,7 @@ layout.user.public.layouts.auto.create=false
 layout.user.private.layouts.auto.create=false
 \end{verbatim}
 
-If the properties \texttt{layout.user.public.layouts.enabled},
-\texttt{layout.user.private.layouts.enabled},
-\texttt{layout.user.public.layouts.auto.create}, and
-\texttt{layout.user.private.layouts.auto.create} are all set to
+If all of these properties are set to
 \texttt{true}, which is the default, then users will have personal sites
 and public and private pages will be automatically created for new
 users. There are number of portal properties you can use to customize
@@ -6858,7 +6849,7 @@ from modifying something, remove the permission from the User role.
 Historically (prior to Liferay 5.1), only power users received personal
 sites. Back then, they were called personal communities. If you'd like
 only power users to receive personal sites, add the following properties
-to your \texttt{portal-ext.properties} file:
+to your \texttt{portal-ext.\-prop\-erties} file:
 
 \begin{verbatim}
 layout.user.public.layouts.power.user.required=true
@@ -6889,8 +6880,7 @@ page you'd like to let site members modify. Then select \emph{Manage} →
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/page-customizations.png}
-\caption{Figure 6.1: To enable page customizations, select \emph{Manage}
-→ \emph{Page Customizations} from the Dockbar.}
+\caption{\\Figure 6.1: To enable page customizations, select \emph{Manage} $\rightarrow$ \emph{Page Customizations} from the Dockbar.}
 \end{figure}
 
 Once you've selected \emph{Manage} → \emph{Page Customizations}, you'll
@@ -7098,7 +7088,10 @@ wrench}) and then select \emph{Configuration}. You need to replace the
 rules defined in the \emph{Rules} section of the Configuration screen
 with contents of the \emph{rules\_user\_custom\_attribute\_content.drl}
 file. The rule file can be found in the deployed portlet at
-\texttt{sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules\_user\_custom\_attribute\_content.drl}.
+\begin{verbatim}
+sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies/rules/_user/  \
+      _custom/_attribute/_content.drl
+\end{verbatim}
 In the same Configuration screen, add \texttt{networth} to the
 user-custom-attribute-names field. Save your changes and close the
 pop-up window. Navigate to the Control Panel and add a Custom Field on
@@ -7126,13 +7119,15 @@ for business users to create and maintain your applications rules but
 does require some additional work up front. For additional information
 on creating a DSL for your problem domain please refer to the Domain
 Specific Languages section of the official Drools Documentation at
-\href{http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html\#d0e6217}{http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html\#d0e6217}.
+\href{http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html\#d0e6217}{docs.jboss.org}. 
 
 To see examples of a rules definition file, access the following
-directory in the Sample Drools Portlet
-\texttt{sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies}.
+directory in the Sample Drools Portlet: 
+\begin{verbatim}
+sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies
+\end{verbatim}
 To see how rules work in action we'll look at the rule defined in
-\texttt{rules\_user\_address\_content.drl}.
+\texttt{rules/\_user/\_ad\-dress/\_con\-tent.drl}.
 
 At first glance, this .drl file looks a lot like a Java class file. This
 example starts with a comment describing the rule. Single line comments
@@ -7230,9 +7225,10 @@ like this:
 
 \begin{verbatim}
 import function
+
+com.liferay.sampledrools.dependencies.AddressContentHelper.getAssetEntries;
 \end{verbatim}
 
-com.liferay.sampledrools.dependencies.AddressContentHelper.getAsetEntries;
 
 The last section of the rules file contains the actual rules. The syntax
 of a rule is very straightforward.
@@ -7429,7 +7425,7 @@ language.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/look-and-feel-portlet-configuration.png}
-\caption{Figure 7.1: The Porlet Configuration tab of the Look and Feel
+\caption{Figure 7.1: The Portlet Configuration tab of the Look and Feel
 Box allows you to define a custom portlet title, link porlet URLs to a
 specific page, and select whether or not portlet borders should be
 displayed.}
@@ -7567,7 +7563,7 @@ data across an entire site.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/portlet-export.png}
-\caption{Figure 7.8: When exporting portlet data, you can choose which
+\caption{\\Figure 7.8: When exporting portlet data, you can choose which
 categories of information to include.}
 \end{figure}
 
@@ -7993,7 +7989,7 @@ to pull into their blog entry for readers to view.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/05-related-assets.png}
-\caption{Figure 7.17: Related Assets}
+\caption{\\Figure 7.17: Related Assets}
 \end{figure}
 
 \emph{Enable Ratings:} lets readers rate your blog entries from one to
@@ -8063,7 +8059,7 @@ Entry} button. The following data entry screen appears:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/05-new-blog-entry.png}
-\caption{Figure 7.18: Adding a Blog Entry}
+\caption{\\Figure 7.18: Adding a Blog Entry}
 \end{figure}
 
 There isn't much difference between this screen and any other data entry
@@ -8199,19 +8195,18 @@ for your users to navigate.
 
 \subsection{The Blogs Admininistrator Portlet
 }
+\begin{figure}[H]
+\centering
+\scalegraphics{../../images/04-blogs-administrator.png}
+\caption{\\Figure 7.21: The Blogs Administrator portlet lets you delete
+large sets of blog entries.}
+\end{figure}
 
 In the Control Panel there's a portlet for managing your site's blog
 entries. Most of the time, the Blogs portlet is the only tool you'll
 need to manage your blog entries. If, however, you need to massively
 delete blog entries, the blogs administrator portlet is the perfect tool
 for you.
-
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/04-blogs-administrator.png}
-\caption{Figure 7.21: The Blogs Administrator portlet lets you delete
-large sets of blog entries.}
-\end{figure}
 
 Note that it's only for batch processing of blog entries; for the full
 set of tools for managing blog entries, your best bet is to use the
@@ -8229,12 +8224,6 @@ schedule any number of events of different types, receive alarms via
 email or text message, import and export your calendar, and much more.
 Additionally, you can import and export the calendar to and from the
 popular iCalendar format for use in other applications.
-
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/05-calendar-portlet.png}
-\caption{Figure 7.22: The Liferay Calendar Portlet}
-\end{figure}
 
 In a similar way to the Blogs portlet, you can use the Calendar portlet
 as a shared calendar on a web site or as a personal calendar -- or both.
@@ -8288,6 +8277,12 @@ The Calendar portlet inherits its interface from the rest of Liferay's
 portlet library, so you should find shared features in the same place
 that you find them in other Liferay portlets.
 
+\begin{figure}[htb]
+\centering
+\scalegraphics{../../images/05-calendar-portlet.png}
+\caption{\\Figure 7.22: The Liferay Calendar Portlet}
+\end{figure}
+
 To get started, you may want to click the \emph{Permissions} button.
 Here you'll find an interface that should be becoming familiar: a list
 of roles with check boxes. For the Calendar, these denote whether the
@@ -8327,7 +8322,7 @@ the event regardless of time zone.
 \textbf{Location:} specify the physical location of the event.
 
 \textbf{Type:} select a pre-configured event type. You can change these
-in the \texttt{portal-ext.properties} file.
+in the \texttt{por\-tal-ext.pro\-perties} file.
 
 \textbf{Permissions:} manage who can view and edit the event.
 
@@ -8700,7 +8695,7 @@ use.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/05-emoticons.png}
-\caption{Figure 7.25: Emoticons Available in the Editor}
+\caption{\\Figure 7.25: Emoticons Available in the Editor}
 \end{figure}
 
 Users who have Moderator access to the board can modify the priority of
@@ -9330,7 +9325,7 @@ results represented in various graphs. The graphs are \emph{Area},
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/polls-results-pie-chart.png}
-\caption{Figure 7.34: This is what the pie chart for the Ice Cream poll
+\caption{\\Figure 7.34: This is what the pie chart for the Ice Cream poll
 results looks like.}
 \end{figure}
 
@@ -9401,8 +9396,8 @@ best practice to override it instead.
 You can use any chat server that supports Jabber. The Chat portlet's
 Jabber server integration feature was tested with versions 3.7.0 and
 3.7.1 of Openfire, a real time collaboration server distributed under
-the Open Source Apache License. You can download Openfire from
-\href{http://www.igniterealtime.org/projects/openfire/}{http://www.igniterealtime.org/projects/openfire/}.
+the Open Source Apache License. You can download Openfire from the web
+site\footnote{\href{http://www.igniterealtime.org/projects/openfire/}{http://www.igniterealtime.org/projects/openfire/}}.
 To enable Jabber chat integration, follow these steps:
 
 \begin{enumerate}[1.]
@@ -9618,8 +9613,8 @@ community.
 \chapter{Social Networking }
 
 Since the first social networks rose to popularity, concepts such as
-\emph{Friend} and later \emph{Like}--previously reserved for direct
-human interaction--have taken on new meaning in an always-online,
+\emph{Friend} and later \emph{Like}---previously reserved for direct
+human interaction---have taken on new meaning in an always-online,
 information driven culture. It could be argued that social networks have
 transformed the way people interact with their friends, relatives and
 colleagues. Friends, connections, followers, circles and lists have
@@ -9683,6 +9678,12 @@ As you might guess, the portlets for personal page use are more focused
 on simple social interactions, while the ones which can be placed on any
 site help improve productivity.
 
+\begin{wrapfigure}{r}{.4\textwidth}
+\centering
+\scalegraphics{../../images/XX-social-networking-members-portlet.png}
+\caption{\\Figure 8.2: The Members Portlet}
+\end{wrapfigure}
+
 Unless otherwise noted, these portlets are all provided with minimal
 configuration options. Most of them have two configuration options--the
 option to change permissions for the portlet view and sharing options
@@ -9716,20 +9717,19 @@ group work together more closely. These include the \textbf{Members},
 
 \begin{figure}[htbp]
 \centering
-\scalegraphics{../../images/XX-social-networking-members-portlet.png}
-\caption{Figure 8.2: The Members Portlet}
+\scalegraphics{../../images/XX-social-networking-meetups.png}
+\caption{Figure 8.3: The Meetups Portlet}
 \end{figure}
 
 The Members portlet is a simple list of all the current site's members.
 The only configuration options you have are permissions, which are the
+\begin{wrapfigure}{l}{.4\textwidth}
+\centering
+\scalegraphics{../../images/XX-social-networking-activities.png}
+\caption{\\Figure 8.4: The Activities Portlet}
+\end{wrapfigure}
 same for every portlet. For example, you might change the permissions so
 only members of the current site can view the portlet.
-
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/XX-social-networking-meetups.png}
-\caption{Figure 8.3: The Meetups Portlet}
-\end{figure}
 
 The Meetups portlet is a tool for creating casual meetings for users of
 your portal. Anyone can create a ``meetup'' and give it a title,
@@ -9743,12 +9743,6 @@ creating a calendar event and the Meetups portlet shares some
 functionality with the Calendar. For more information on the Calendar
 portlet and configuring events, see chapter 7.
 
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/XX-social-networking-activities.png}
-\caption{Figure 8.4: The Activities Portlet}
-\end{figure}
-
 The Activities portlet comes in two varieties: the standard Activities
 portlet and the Members' Activities portlet. The basic function of the
 portlets are the same--they both display a feed of what users are doing
@@ -9761,11 +9755,11 @@ portlet, you can use the \emph{Maximum Activities to Display} dropdown
 menu to set a limit on how many activities can be displayed at once in
 the portlet window.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{r}{.3\textwidth}
 \centering
 \scalegraphics{../../images/map-portlet.png}
-\caption{Figure 8.5: The Map Portlet}
-\end{figure}
+\caption{\\Figure 8.5: The Map Portlet}
+\end{wrapfigure}
 
 The Map portlet allows you to view the locations of site members, both
 locally and internationally. Only members of the site to which the Map
@@ -9773,12 +9767,13 @@ portlet has been added are displayed. In order to configure the Map
 portlet, you need to install the IP Geocoder portlet (available from
 Liferay Marketplace) and configure it to access MaxMind GeoIP or GeoLite
 on your server. For more information on configuring geolocation
-services, visit the MaxMind support page at
-\href{http://www.maxmind.com/app/installation?city=1}{http://www.maxmind.com/app/installation?city=1}.
+services, visit the MaxMind support
+page\footnote{\href{http://www.maxmind.com/app/installation?city=1}{http://www.maxmind.com/app/installation?city=1}}.
 Once you've installed the Geocoder portlet and configured it to access
 MaxMind GeoIP or GeoLite, you'll need a key from Google to access
-Google's Maps API so your Map portlet will work. Visit
-\href{http://code.google.com/apis/maps/documentation/javascript/v2/introduction.html\#Obtaining\_Key}{http://code.google.com/apis/maps/documentation/javascript/v2/introduction.html\#Obtaining\_Key}
+Google's Maps API so your Map portlet will work. Visit the Google Maps web
+site\footnote{
+\href{http://code.google.com/apis/maps/documentation/javascript/v2/introduction.html\#Obtaining\_Key}{http://code.google.com/apis/maps/documentation/javascript/v2/introduction.html\#Obtaining\_Key}}
 to learn how to obtain a valid Google API key. To configure the Map
 portlet using the GeoLite City database, use the following steps:
 
@@ -9791,22 +9786,22 @@ portlet using the GeoLite City database, use the following steps:
 \item
   Shut down your application server.
 \item
-  Download the Geo Lite City database from
-  \href{http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz}{http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz}.
+		Download the Geo Lite City
+		database.\footnote{\href{http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz}{http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz}}.
 \item
   Unzip the \texttt{.dat} file to your desired storage location on your
   server.
 \item
   Create a \texttt{portlet-ext.properties} file in the
-  \texttt{/\{ROOT\}/webapps/ip-geocoder-portlet/WEB-INF/classes/}
+  \texttt{/\{ROOT\}/webapps/ip-geo\-coder-portlet/WEB\-INF/classes/}
   directory of your Liferay installation.
 \item
   Add the property
-  \texttt{maxmind.database.file=\{GeoIP Lite City database .dat file    path\}}
+  \texttt{maxmind.database.file=\{GeoIP Lite City database .dat file path\}}
   to this file.
 \item
   Create a \texttt{portlet-ext.properties} file in the
-  \texttt{/\{ROOT\}/webapps/social-networking-portlet/WEB-INF/classes/}
+  \texttt{/\{ROOT\}/webapps/social\-networking-portlet/WEB-INF/classes/}
   directory of your Liferay installation.
 \item
   Add the property \texttt{map.google.maps.api.key=\{Your API Key\}} to
