@@ -5,93 +5,93 @@ import java.util.List;
 
 public class Section {
 
-	boolean isSectionTitle;
-	String name;
-	String paragraph;
-	List<String> properties;
-	List<String> sectionProperties;
-	List<String> descriptionParagraphs;
-	String propertiesParagraph;
-
 	public Section(boolean isSectionTitle, String name, String paragraph, List<String> properties, List<String> sectionProperties, List<String> descriptionParagraphs, String propertiesParagraph) {
 
-		this.isSectionTitle = isSectionTitle;
-		this.name = name;
-		this.paragraph = paragraph;
-		this.properties = properties;
-		this.sectionProperties = sectionProperties;
-		this.descriptionParagraphs = descriptionParagraphs;
-		this.propertiesParagraph = propertiesParagraph;
+		_isSectionTitle = isSectionTitle;
+		_name = name;
+		_paragraph = paragraph;
+		_properties = properties;
+		_sectionProperties = sectionProperties;
+		_descriptionParagraphs = descriptionParagraphs;
+		_propertiesParagraph = propertiesParagraph;
 	}
 	
 	public boolean getIsSectionTitle() {
 	
-		return isSectionTitle;
+		return _isSectionTitle;
 	}
 	
 	public String getName() {
 	
-		return name;
+		return _name;
 	}
 	
 	public String getParagraph() {
 	
-		return paragraph;
+		return _paragraph;
 	}
 	
 	public List<String> getProperties() {
 	
-		return properties;
+		return _properties;
 	}
 	
 	public List<String> getSectionProperties() {
 	
-		return sectionProperties;
+		return _sectionProperties;
 	}
 	
 	public List<String> getDescriptionParagraphs() {
 	
-		return descriptionParagraphs;
+		return _descriptionParagraphs;
 	}
 	
 	public String getPropertiesParagraph() {
 	
-		return propertiesParagraph;
+		return _propertiesParagraph;
 	}
 	
 	public void setIsSectionTitle(boolean isSectionTitle) {
 	
-		this.isSectionTitle = isSectionTitle;
+		_isSectionTitle = isSectionTitle;
 	}
 	
 	public void setName(String name) {
 	
-		this.name = name;
+		_name = name;
 	}
 	
 	public void setParagraph(String paragraph) {
 	
-		this.paragraph = paragraph;
+		_paragraph = paragraph;
 	}
 	
 	public void setProperties(List<String> properties) {
 	
-		this.properties = properties;
+		_properties = properties;
 	}
 	
 	public void setSectionProperties(List<String> sectionProperties) {
 	
-		this.sectionProperties = sectionProperties;
+		_sectionProperties = sectionProperties;
 	}
 	
 	public void setDescriptionParagraphs(List<String> descriptionParagraphs) {
 	
-		this.descriptionParagraphs = descriptionParagraphs;
+		_descriptionParagraphs = descriptionParagraphs;
 	}
 	
 	public void setPropertiesParagraph(String propertiesParagraph) {
 	
-		this.propertiesParagraph = propertiesParagraph;
+		_propertiesParagraph = propertiesParagraph;
 	}
+	
+	private boolean _isSectionTitle;
+	private String _name;
+	private String _paragraph;
+	private List<String> _properties;
+	private List<String> _sectionProperties;
+	private List<String> _descriptionParagraphs;
+	private String _propertiesParagraph;
 	
 }
