@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<project name="Properties to HTML conversion" default="properties-to-html" basedir=".">
+
+	<target name="properties-to-html" description="runs the properties converter">
+		<java fork="true" jar="./lib/properties-converter.jar">
+			<arg value="" />
+			<arg value="" />
+			<arg value="portal.properties" />
+		</java>
+	</target>
+
+</project>
