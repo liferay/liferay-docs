@@ -9910,7 +9910,7 @@ select \emph{Site Templates} from under the \emph{Portal} section. Click
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/social-networking-site-template.png}
-\caption{Figure 8.7: Creating the Site Template}
+\caption{\\Figure 8.7: Creating the Site Template}
 \end{figure}
 
 \begin{roundedframe}
@@ -9922,7 +9922,7 @@ Site Administrators to Modify the Pages Associated with this Site
 Template} only prevents users from modifying the specific pages
 contained in the template but does not disable a user's ability to add
 or modify additional pages.
-
+\\*
 \end{roundedframe}
 
 Once you've created the template, choose \emph{Actions → Manage Pages}
@@ -10005,7 +10005,7 @@ to my site? Liferay has an answer: social activity measurements.
 \section{Measuring social activity
 }
 
- When you have a lot of user interaction on your web site, it can be
+When you have a lot of user interaction on your web site, it can be
 helpful to try to separate the signal from the noise. Liferay contains a
 lot of applications which end users can use to communicate with each
 other and provide information. Some of this information is good and
@@ -10016,7 +10016,7 @@ contributions.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/05-social-equity.png}
-\caption{Figure 8.9: The Social Equity Page of the Control Panel}
+\caption{Figure 8.9: The Social Activity Page of the Control Panel}
 \end{figure}
 
 To activate Social Activity, you'll first need to determine which
@@ -10202,7 +10202,7 @@ new gadget is visible on your page.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/15-opensocial-2.png}
-\caption{Figure 8.14: The calculator gadget displays seemlessly on your
+\caption{\\Figure 8.14: The calculator gadget displays seamlessly on your
 page.}
 \end{figure}
 
@@ -10214,6 +10214,12 @@ publish them for portal-wide use. You'll learn that next.
 
 \subsubsection{Adding gadgets for portal-wide use
 }
+
+\begin{figure}[htbp]
+\centering
+\scalegraphics{../../images/15-opensocial-38.png}
+\caption{\\Figure 8.15: Configure new gadgets with ease.}
+\end{figure}
 
 You can easily make gadgets available for adding to pages as you would
 any other application. We'll demonstrate this by adding a \emph{To-Do
@@ -10227,20 +10233,16 @@ List} gadget for portal-wide use.
   Click \emph{Publish Gadget}
 \item
   Insert the URL for the \emph{To-Do List} gadget:
-  \texttt{http://www.labpixies.com/campaigns/todo/todo.xml}
+  \begin{verbatim}
+  http://www.labpixies.com/campaigns/todo/todo.xml
+  \end{verbatim}
 \item
   Select an appropriate category for your gadget
 \item
   Click \emph{Save}
 \end{enumerate}
 
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/15-opensocial-38.png}
-\caption{Figure 8.15: Configure new gadgets with ease.}
-\end{figure}
-
-Your \emph{OpenSocial Gadget Publisher} should now look like this:
+Your \emph{OpenSocial Gadget Publisher} should now look like the next figure. 
 
 \begin{figure}[htbp]
 \centering
@@ -10263,17 +10265,17 @@ the portlet.
 \emph{Delete}, and \emph{Permissions} options for each role on your
 site.
 
+\begin{wrapfigure}{l}{.35\textwidth}
+\centering
+\scalegraphics{../../images/15-opensocial-4.png}
+\caption{\\Figure 8.17: You can conveniently list your gadgets within the
+\emph{Gadgets} category.}
+\end{wrapfigure}
+
 \emph{Delete:} removes the listing for the gadget.
 
 If you navigate to \emph{Add} → \emph{More} → \emph{Gadgets}, you should
 see the \emph{To-Do List} gadget.
-
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/15-opensocial-4.png}
-\caption{Figure 8.17: You can conveniently list your gadgets within the
-\emph{Gadgets} category.}
-\end{figure}
 
 In the next section, we will demonstrate how to share OpenSocial gadgets
 with other sites.
@@ -10292,6 +10294,12 @@ Liferay Portal users can share their portlets and other OpenSocial
 gadgets on iGoogle or any other OpenSocial-compatible site. Let's try
 this now.
 
+  \begin{figure}[htbp]
+  \centering
+  \scalegraphics{../../images/15-opensocial-6.png}
+  \caption{\\Figure 8.18: Select the \emph{Configuration} button.}
+  \end{figure}
+
 For our example, we'll share Liferay's \emph{Loan Calculator} on
 iGoogle.
 
@@ -10301,25 +10309,11 @@ iGoogle.
 \item
   Click the wrench icon in the upper right corner of the portlet and
   select \emph{Configuration}
-
-  \begin{figure}[htbp]
-  \centering
-  \scalegraphics{../../images/15-opensocial-6.png}
-  \caption{Figure 8.18: Select the \emph{Configuration} button.}
-  \end{figure}
 \item
   Select the \emph{Sharing} tab and the \emph{OpenSocial Gadget} sub-tab
 \item
   Check the box labeled \emph{Allow users to add Loan Calculator to
-  iGoogle}. Also, replace ``localhost:8080'' with the name of your
-  public domain and port.
-
-  \begin{figure}[htbp]
-  \centering
-  \scalegraphics{../../images/15-opensocial-7.png}
-  \caption{Figure 8.19: Allow users to add your portlet as an OpenSocial
-  Gadget in iGoogle.}
-  \end{figure}
+  iGoogle}. Enter the name of your public domain and port.
 \item
   Click Save
 \item
@@ -10327,14 +10321,14 @@ iGoogle.
   right corner of your portlet. There is a new option named \emph{Add to
   iGoogle} available. Click on this button to add your portlet to your
   iGoogle page.
+\end{enumerate}
 
   \begin{figure}[htbp]
   \centering
-  \scalegraphics{../../images/15-opensocial-8.png}
-  \caption{Figure 8.20: Users simply click the \emph{Add to iGoogle}
-  button to add your portlet to their iGoogle page.}
+  \scalegraphics{../../images/15-opensocial-7.png}
+  \caption{Figure 8.19: Allow users to add your portlet as an OpenSocial
+  Gadget in iGoogle.}
   \end{figure}
-\end{enumerate}
 
 Your portlet is now available on your iGoogle page!
 
@@ -10342,6 +10336,13 @@ By going through this process, Liferay shared the URL of your portlet to
 iGoogle. The URL you provided is unique to your specific instance of the
 portlet. This allows you to share multiple instances of the same portlet
 as different Google Gadgets.
+
+  \begin{figure}[htbp]
+  \centering
+  \scalegraphics{../../images/15-opensocial-8.png}
+  \caption{\\Figure 8.20: Users simply click the \emph{Add to iGoogle}
+  button to add your portlet to their iGoogle page.}
+  \end{figure}
 
 You could use this sharing capability to let users view what's happening
 on your portal at a glance. As you can imagine, you can share all kinds
@@ -10362,15 +10363,22 @@ protect your credentials while you access resources on these sites.
 Keep these concepts in mind when going through the OAuth sections:
 
 \textbf{Service Provider:} a web application that uses OAuth for access
+
 \textbf{Protected Resources:} data controlled by the service provider,
 which can be accessed by the gadget through authentication
+
 \textbf{Consumer Key:} a value used by the gadget to identify itself to
-the service provider \textbf{Consumer Secret:} a secret the gadget uses
-to establish ownership of the consumer key \textbf{Request Token:} a
-value the gadget uses to obtain user authorization, which is exchanged
-for an access token \textbf{Access Token:} a value the gadget uses to
-gain access to the protected resources on behalf of the user, instead of
-using the user's service provider credentials
+the service provider 
+
+\textbf{Consumer Secret:} a secret the gadget uses
+to establish ownership of the consumer key 
+
+\textbf{Request Token:} a value the gadget uses to obtain user authorization,
+which is exchanged for an access token 
+
+\textbf{Access Token:} a value the gadget uses to gain access to the protected
+resources on behalf of the user, instead of using the user's service provider
+credentials
 
 OAuth is an open standard that authorizes third-party applications to
 interact with a user's resources. Users can share their private
@@ -10450,7 +10458,7 @@ http://opensocialdeju.googlecode.com/svn-history/r15/Twitter/TwitterDemo.xml
   \begin{figure}[htbp]
   \centering
   \scalegraphics{../../images/15-opensocial-11.png}
-  \caption{Figure 8.23: Select \emph{Create an app} from within the
+  \caption{\\Figure 8.23: Select \emph{Create an app} from within the
   \emph{Developers} page.}
   \end{figure}
 \item
@@ -10543,7 +10551,7 @@ we'll demonstrate how to add the OAuth-configured gadget to your page.
   \begin{figure}[htbp]
   \centering
   \scalegraphics{../../images/15-opensocial-14.png}
-  \caption{Figure 8.28: Your OAuth configured Twitter gadget awaits
+  \caption{\\Figure 8.28: Your OAuth configured Twitter gadget awaits
   personalization with your Twitter account.}
   \end{figure}
 \item
@@ -10556,7 +10564,7 @@ we'll demonstrate how to add the OAuth-configured gadget to your page.
   \begin{figure}[htbp]
   \centering
   \scalegraphics{../../images/15-opensocial-15.png}
-  \caption{Figure 8.29: Authorizing your OpenSocial application to use
+  \caption{\\Figure 8.29: Authorizing your OpenSocial application to use
   your account is straightforward.}
   \end{figure}
 \item
@@ -10566,7 +10574,7 @@ we'll demonstrate how to add the OAuth-configured gadget to your page.
   \begin{figure}[htbp]
   \centering
   \scalegraphics{../../images/15-opensocial-16.png}
-  \caption{Figure 8.30: Check out your Twitter gadget timeline!}
+  \caption{\\Figure 8.30: Check out your Twitter gadget timeline!}
   \end{figure}
 \item
   Using this gadget, you can tweet your current status and have it
@@ -10768,11 +10776,11 @@ find them in the content section of the control panel, selecting
 data lists section, you can either create a new data type (\emph{Manage
 Data Definitions}) or a new list from an existing data type.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{l}{.35\textwidth}
 \centering
 \scalegraphics{../../images/05-ddl-control-panel.png}
-\caption{Figure 9.1: Data Lists in the control panel.}
-\end{figure}
+\caption{\\Figure 9.1: Data Lists in the control panel.}
+\end{wrapfigure}
 
 If you have a new data type, you need to create a definition for it
 first. Click \emph{Manage Data Definitions} and click the \emph{Add}
@@ -11242,7 +11250,8 @@ source for the template:
 <h1>Task Summary</h1>
 
 Here are the tasks that people have signed up for on "$reserved_record_set_name.data".
-#set ($ddlRecordsUtil = $serviceLocator.findService("com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService"))
+#set ($ddlRecordsUtil = $serviceLocator.findService( 
+    "com.liferay.portlet.dynamicdatalists.service.DDLRecordLocalService"))
 
 #set ($recordSetId = $getterUtil.getLong($reserved_record_set_id.data))
 #set ($records = ${ddlRecordsUtil.getRecords($recordSetId)})
@@ -11304,7 +11313,7 @@ option when creating a list:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/05-ddl-add-workflow.png}
-\caption{Figure 9.8: Enabling workflow on a list}
+\caption{\\Figure 9.8: Enabling workflow on a list}
 \end{figure}
 
 Choose the workflow you would like to use, then every record has to go
@@ -11499,18 +11508,12 @@ it:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/05-kaleo-forms-complete-form.png}
-\caption{Figure 9.14: Completing a form in the next workflow task}
+\caption{\\Figure 9.14: Completing a form in the next workflow task}
 \end{figure}
 
 After the new entry has worked its way through the entire workflow, it
 is added to the data set collected. The owner of that data set (who
 created the Kaleo process) can view and edit the entries collected.
-
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/05-kaleo-forms-view.png}
-\caption{Viewing a completed list}
-\end{figure}
 
 If you are a Listie, or a \texttt{list.it} developer, you're now
 prepared to show your lists to the world. That is, in fact, the reason
@@ -11660,7 +11663,7 @@ represent transitions and boxes represent states and tasks.}
 \end{figure}
 
 First you define the schema. For Liferay workflows using Kaleo,
-\texttt{liferay-worklow-definition-6\_1\_0.xsd} should be your schema.
+\texttt{liferay\-workflow-definition-6\_1\_0.xsd} should be your schema.
 You can find this schema in the \texttt{definitions} folder of the
 Liferay source or a good XML editor can cache it from Liferay's web
 site.
@@ -11832,7 +11835,7 @@ speaking, email notifications work best with \texttt{onExit} or
 Email and private message notifications can also be created as plain
 text or you can create formatted content using Freemarker or Velocity
 templating languages. When creating the notification, you need to
-specify the \texttt{template-language} as \texttt{text},
+specify the \texttt{tem\-plate-lan\-guage} as \texttt{text},
 \texttt{freemarker} or \texttt{velocity}.
 
 In this workflow, anyone who is capable of approving the content is
@@ -11927,7 +11930,9 @@ details to meet your needs.
     <name>approve</name>
     <execution-type>onEntry</execution-type>
     <script>
-    <![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"), workflowContext);]]>
+    <![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.  \
+    	updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.  \
+			toStatus("approved"), workflowContext);]]>
     </script>
     <script-language>javascript</script-language>
     </action>
@@ -12012,9 +12017,9 @@ using parallel workflow enables you to speed up your process by getting
 content in front more people at once, instead of making them wait in
 line, timers allow you to add some urgency to the process.
 
- \#\#\# Timers 
+\section{Timers} 
 
-\textbf{Timers} are a new workflow feature in 6.1, which help make sure
+\textbf{Timers} are a new workflow feature in 6.1 that help make sure
 important tasks in a workflow aren't forgotten or left undone because of
 an oversight or the absence of someone on the critical path. The basic
 concept of the timer is that after a period of time specified, a
@@ -12050,7 +12055,7 @@ duration is talking about - seconds, minutes, hours, days, weeks, months
 or years. Once you've determined the time, you'll want to pick an action
 - either a notification, reassignment or a custom script.
 
-Notifications are pretty simple - if a certain amount of time passes and
+Notifications are pretty simple---if a certain amount of time passes and
 an action isn't completed yet, the user assigned to the task will
 receive a fresh notification. With the timer, you have all of the
 standard notification types available and you can choose a different
@@ -12163,12 +12168,6 @@ Most of your workflow configuration is done via the control panel.
 Everything you need to do in the portal can be done through simple GUI
 controls.
 
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/kaleo-workflow-new-definition-control-panel.png}
-\caption{Figure 10.3: Adding a Workflow Definition}
-\end{figure}
-
 You can find the Workflow section under the Portal heading in the
 control panel. There are three options under Workflow:
 \emph{Definitions}, \emph{Default Configuration} and \emph{Submissions}.
@@ -12179,6 +12178,12 @@ Single Approver workflow appears here. Clicking \emph{Add} allows you to
 enter a title for a new workflow definition and upload the XML file.
 Once you add a file here, it's added to the portal and is immediately
 available for use.
+
+\begin{wrapfigure}{l}{.42\textwidth}
+\centering
+\scalegraphics{../../images/kaleo-workflow-new-definition-control-panel.png}
+\caption{\\Figure 10.3: Adding a Workflow Definition}
+\end{wrapfigure}
 
 Under \emph{Default Configuration}, you can set the workflow behavior
 (if any) for all workflow-enabled applications on the portal. You can
@@ -12256,7 +12261,7 @@ each asset that is workflow-enabled.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/kaleo-workflow-control-panel-context-selector.png}
-\caption{Figure 10.7: You can select which site to work on by using the
+\caption{\\Figure 10.7: You can select which site to work on by using the
 drop-down menu in the Content section of the control panel.}
 \end{figure}
 
@@ -12530,12 +12535,12 @@ State nodes, with certain fields prefilled to help streamline the
 creation process. Since every workflow has a start and end state, you'd
 have to do this anyway.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{l}{.3\textwidth}
 \centering
 \scalegraphics{../../images/kaleo-designer-submenu.png}
-\caption{Figure 11.4: The Node Configuration Menu shows options to edit
+\caption{\\Figure 11.4: The Node Configuration Menu shows options to edit
 or delete your node.}
-\end{figure}
+\end{wrapfigure}
 
 Each node you add has a pop-up menu letting you edit or delete the node.
 As you hover your mouse over the edges of a node, notice your mouse
@@ -12549,7 +12554,7 @@ node, continue dragging the connector to that node.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/kaleo-connector.png}
-\caption{Figure 11.5: Create transitions to existing or new nodes. The
+\caption{\\Figure 11.5: Create transitions to existing or new nodes. The
 connector pop-up let's you create and connect to new nodes on-the-fly.}
 \end{figure}
 
@@ -12578,7 +12583,7 @@ transition to \textbf{Update}, one receiving a transition from
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/kaleo-designer-basic-workflow.png}
-\caption{Figure 11.7: Your workflow should look something like this.}
+\caption{\\Figure 11.7: Your workflow should look like this.}
 \end{figure}
 
 Next, we want to add the correct assignments and notifications. Click on
@@ -12603,7 +12608,7 @@ the transition from Review to the EndNode to \emph{Approve}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/kaleo-designer-basic-workflow-complete.png}
-\caption{Figure 11.8: Your completed workflow should look like this.}
+\caption{\\Figure 11.8: Your completed workflow should look like this.}
 \end{figure}
 
 Now let's take a look at the generated XML. It should look a lot like
