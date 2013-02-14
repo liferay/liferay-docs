@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2013.1.23)  13 FEB 2013 11:49
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2013.1.23)  14 FEB 2013 00:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3478,15 +3478,28 @@ File: ../../images/bookmarks-folder-view-wide.png Graphic file (type QTm)
  <use  "../../images/bookmarks-folder-view-wide.png" >
 File: ../../images/bookmarks-folder-view-wide.png Graphic file (type QTm)
 
-<use  "../../images/bookmarks-folder-view-wide.png" >
+<use  "../../images/bookmarks-folder-view-wide.png" > [332]
 File: ../../images/bookmarks-select-remove-buttons.png Graphic file (type QTm)
 
 <use  "../../images/bookmarks-select-remove-buttons.png" >
 File: ../../images/bookmarks-select-remove-buttons.png Graphic file (type QTm)
 
-<use  "../../images/bookmarks-select-remove-buttons.png" > [332] [333]
-File: ../../images/bookmarks-choosing-subfolder.png Graphic file (type QTm)
+<use  "../../images/bookmarks-select-remove-buttons.png" >
+Underfull \hbox (badness 2384) in paragraph at lines 12728--12736
+\EU1/LinuxLibertineO(0)/m/n/9 from the Actions button for the
+ []
 
+
+Underfull \hbox (badness 1297) in paragraph at lines 12728--12736
+\EU1/LinuxLibertineO(0)/m/n/9 link. In the Edit view, find the
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 12728--12736
+\EU1/LinuxLibertineO(0)/m/n/9 levels. Currently, there are two
+ []
+
+File: ../../images/bookmarks-choosing-subfolder.png Graphic file (type QTm)
 <use  "../../images/bookmarks-choosing-subfolder.png" >
 File: ../../images/bookmarks-choosing-subfolder.png Graphic file (type QTm)
 
@@ -3496,7 +3509,7 @@ File: ../../images/bookmarks-choosing-subfolder2.png Graphic file (type QTm)
 <use  "../../images/bookmarks-choosing-subfolder2.png" >
 File: ../../images/bookmarks-choosing-subfolder2.png Graphic file (type QTm)
 
-<use  "../../images/bookmarks-choosing-subfolder2.png" > [334]
+<use  "../../images/bookmarks-choosing-subfolder2.png" > [333]
 File: ../../images/bookmarks-link-move.png Graphic file (type QTm)
 
 <use  "../../images/bookmarks-link-move.png" >
@@ -3509,8 +3522,19 @@ File: ../../images/bookmarks-link-move2.png Graphic file (type QTm)
 File: ../../images/bookmarks-link-move2.png Graphic file (type QTm)
 
 <use  "../../images/bookmarks-link-move2.png" >
+Overfull \hbox (4.26826pt too wide) in paragraph at lines 12780--12781
+ [][] 
+ []
+
+
+Underfull \vbox (badness 4341) has occurred while \output is active []
+
+ [334]
+Underfull \hbox (badness 7081) in paragraph at lines 12785--12789
+[][]\EU1/LinuxLibertineO(0)/m/n/9 In the resulting window, se-
+ []
+
 File: ../../images/bookmarks-link-move3.png Graphic file (type QTm)
-
 <use  "../../images/bookmarks-link-move3.png" >
 File: ../../images/bookmarks-link-move3.png Graphic file (type QTm)
 
@@ -3520,28 +3544,22 @@ File: ../../images/bookmarks-add-portlet.png Graphic file (type QTm)
 <use  "../../images/bookmarks-add-portlet.png" >
 File: ../../images/bookmarks-add-portlet.png Graphic file (type QTm)
 
-<use  "../../images/bookmarks-add-portlet.png" > [336]
+<use  "../../images/bookmarks-add-portlet.png" >
 File: ../../images/bookmarks-add-new-folder-form.png Graphic file (type QTm)
 
 <use  "../../images/bookmarks-add-new-folder-form.png" >
 File: ../../images/bookmarks-add-new-folder-form.png Graphic file (type QTm)
 
-<use  "../../images/bookmarks-add-new-folder-form.png" > [337]
+<use  "../../images/bookmarks-add-new-folder-form.png" >
 File: ../../images/bookmarks-add-new-form.png Graphic file (type QTm)
 
 <use  "../../images/bookmarks-add-new-form.png" >
 File: ../../images/bookmarks-add-new-form.png Graphic file (type QTm)
 
-<use  "../../images/bookmarks-add-new-form.png" > [338] [339]
-Overfull \hbox (237.79164pt too wide) in paragraph at lines 12903--12906
-[]\EU1/LinuxLibertineO(0)/m/n/9 Create an XML file using the Liferay Plugin Rep
-ository DTD (\EU1/lmtt/m/n/9 http://www.liferay.com/dtd/liferay-plugin-reposito
-ry_6_0_0.dtd\EU1/LinuxLibertineO(0)/m/n/9 )
- []
-
-[340]
+<use  "../../images/bookmarks-add-new-form.png" > [336] [337] [338] [339]
 File: ../../images/marketplace-software-catalog.png Graphic file (type QTm)
- <use  "../../images/marketplace-software-catalog.png" >
+
+<use  "../../images/marketplace-software-catalog.png" >
 File: ../../images/marketplace-software-catalog.png Graphic file (type QTm)
 
 <use  "../../images/marketplace-software-catalog.png" >
@@ -3552,8 +3570,8 @@ e QTm)
 File: ../../images/marketplace-populated-software-catalog.png Graphic file (typ
 e QTm)
 
-<use  "../../images/marketplace-populated-software-catalog.png" > [341]
-[342]
+<use  "../../images/marketplace-populated-software-catalog.png" > [340]
+[341]
 File: ../../images/marketplace-adding-product-to-software-catalog.png Graphic f
 ile (type QTm)
 
@@ -3562,7 +3580,7 @@ File: ../../images/marketplace-adding-product-to-software-catalog.png Graphic f
 ile (type QTm)
 
 <use  "../../images/marketplace-adding-product-to-software-catalog.png" >
-[343] [344]
+[342] [343]
 File: ../../images/marketplace-adding-product-version-software-catalog.png Grap
 hic file (type QTm)
 
@@ -3571,44 +3589,43 @@ File: ../../images/marketplace-adding-product-version-software-catalog.png Grap
 hic file (type QTm)
 
 <use  "../../images/marketplace-adding-product-version-software-catalog.png" >
-[345] [346]
-Overfull \hbox (153.854pt too wide) in paragraph at lines 13211--13211
-[]\EU1/lmtt/m/n/6 <download-url\>[http://www.liferay.com/portlets/my-summary-po
-rtlet-6.0.4.war](http://www.liferay.com/portlets/my-summary-portlet-5.2.2.war)[
-] 
+[344] [345] [346] [347]
+Overfull \hbox (1.03899pt too wide) in paragraph at lines 13286--13294
+\EU1/LinuxLibertineO(0)/m/n/9 source or on the Liferay web site[][][] It is a f
+ile called \EU1/lmtt/m/n/9 liferay-plugin-package_-
  []
 
-[347] [348]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [349]
+Underfull \vbox (badness 1460) has occurred while \output is active []
+
+ [348]
 File: ../../images/shopping-add-portlet.png Graphic file (type QTm)
 
 <use  "../../images/shopping-add-portlet.png" >
 File: ../../images/shopping-add-portlet.png Graphic file (type QTm)
 
-<use  "../../images/shopping-add-portlet.png" > [350]
+<use  "../../images/shopping-add-portlet.png" > [349]
 File: ../../images/shopping-categories.png Graphic file (type QTm)
 
 <use  "../../images/shopping-categories.png" >
 File: ../../images/shopping-categories.png Graphic file (type QTm)
 
-<use  "../../images/shopping-categories.png" >
+<use  "../../images/shopping-categories.png" > [350]
 File: ../../images/shopping-category-breadcrumbs.png Graphic file (type QTm)
 
 <use  "../../images/shopping-category-breadcrumbs.png" >
 File: ../../images/shopping-category-breadcrumbs.png Graphic file (type QTm)
 
 <use  "../../images/shopping-category-breadcrumbs.png" >
-Underfull \vbox (badness 7649) has occurred while \output is active []
+Underfull \hbox (badness 2521) in paragraph at lines 13402--13406
+\EU1/LinuxLibertineO(0)/m/n/9 egories and subcategories, navigational
+ []
 
- [351]
 File: ../../images/shopping-item-options.png Graphic file (type QTm)
-
 <use  "../../images/shopping-item-options.png" >
 File: ../../images/shopping-item-options.png Graphic file (type QTm)
 
-<use  "../../images/shopping-item-options.png" > [352]
+<use  "../../images/shopping-item-options.png" > [351]
 File: ../../images/shopping-item-image2.png Graphic file (type QTm)
 
 <use  "../../images/shopping-item-image2.png" >
@@ -3626,33 +3643,37 @@ File: ../../images/shopping-item-breadcrumb-change.png Graphic file (type QTm)
 <use  "../../images/shopping-item-breadcrumb-change.png" >
 File: ../../images/shopping-item-breadcrumb-change.png Graphic file (type QTm)
 
-<use  "../../images/shopping-item-breadcrumb-change.png" > [353] [354] [355]
-[356]
+<use  "../../images/shopping-item-breadcrumb-change.png" > [352] [353]
+Underfull \hbox (badness 4713) in paragraph at lines 13470--13472
+[][]\EU1/LinuxLibertineO(0)/m/n/9 You can make changes to any item
+ []
+
+[354]
 File: ../../images/shopping-confirmation-email-form.png Graphic file (type QTm)
 
  <use  "../../images/shopping-confirmation-email-form.png" >
 File: ../../images/shopping-confirmation-email-form.png Graphic file (type QTm)
 
 
-<use  "../../images/shopping-confirmation-email-form.png" > [357] [358]
+<use  "../../images/shopping-confirmation-email-form.png" >
 File: ../../images/shopping-item.png Graphic file (type QTm)
 
 <use  "../../images/shopping-item.png" >
 File: ../../images/shopping-item.png Graphic file (type QTm)
 
-<use  "../../images/shopping-item.png" >
+<use  "../../images/shopping-item.png" > [355] [356]
 File: ../../images/shopping-cart-order.png Graphic file (type QTm)
 
 <use  "../../images/shopping-cart-order.png" >
 File: ../../images/shopping-cart-order.png Graphic file (type QTm)
 
-<use  "../../images/shopping-cart-order.png" >
+<use  "../../images/shopping-cart-order.png" > [357] [358]
 File: ../../images/shopping-order-summary.png Graphic file (type QTm)
 
 <use  "../../images/shopping-order-summary.png" >
 File: ../../images/shopping-order-summary.png Graphic file (type QTm)
 
-<use  "../../images/shopping-order-summary.png" > [359] [360] [361] [362]
+<use  "../../images/shopping-order-summary.png" >
 File: ../../images/shopping-orders.png Graphic file (type QTm)
 
 <use  "../../images/shopping-orders.png" >
@@ -3664,27 +3685,27 @@ File: ../../images/shopping-order-detail.png Graphic file (type QTm)
 <use  "../../images/shopping-order-detail.png" >
 File: ../../images/shopping-order-detail.png Graphic file (type QTm)
 
-<use  "../../images/shopping-order-detail.png" >
+<use  "../../images/shopping-order-detail.png" > [359] [360]
 File: ../../images/shopping-coupon.png Graphic file (type QTm)
 
 <use  "../../images/shopping-coupon.png" >
 File: ../../images/shopping-coupon.png Graphic file (type QTm)
 
-<use  "../../images/shopping-coupon.png" > [363]
+<use  "../../images/shopping-coupon.png" > [361] [362]
 File: ../../images/shopping-coupon-discount-limits.png Graphic file (type QTm)
 
 <use  "../../images/shopping-coupon-discount-limits.png" >
 File: ../../images/shopping-coupon-discount-limits.png Graphic file (type QTm)
 
 <use  "../../images/shopping-coupon-discount-limits.png" >
-Underfull \vbox (badness 4378) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [364]
-[365] [366] [367]
-Overfull \hbox (32.24pt too wide) in paragraph at lines 13742--13748
+ [363]
+[364]
+Overfull \hbox (3.89001pt too wide) in paragraph at lines 13744--13750
 \EU1/LinuxLibertineO(0)/m/it/9 cess key id \EU1/LinuxLibertineO(0)/m/n/9 and th
 e \EU1/LinuxLibertineO(0)/m/it/9 secret access key \EU1/LinuxLibertineO(0)/m/n/
-9 that also must go into your \EU1/lmtt/m/n/9 portal-ext.properties
+9 that also must go into your \EU1/lmtt/m/n/9 portal-ext.pro-
  []
 
 File: ../../images/shopping-amazon-rankings-config.png Graphic file (type QTm)
@@ -3697,7 +3718,7 @@ File: ../../images/shopping-and-amazon-rankings.png Graphic file (type QTm)
 <use  "../../images/shopping-and-amazon-rankings.png" >
 File: ../../images/shopping-and-amazon-rankings.png Graphic file (type QTm)
 
-<use  "../../images/shopping-and-amazon-rankings.png" > [368] [369]
+<use  "../../images/shopping-and-amazon-rankings.png" > [365] [366]
 File: ../../images/liferay-collaboration-kb-display-portlet.png Graphic file (t
 ype QTm)
 
@@ -3705,7 +3726,7 @@ ype QTm)
 File: ../../images/liferay-collaboration-kb-display-portlet.png Graphic file (t
 ype QTm)
 
-<use  "../../images/liferay-collaboration-kb-display-portlet.png" > [370]
+<use  "../../images/liferay-collaboration-kb-display-portlet.png" > [367]
 File: ../../images/liferay-collaboration-kb-new-article.png Graphic file (type 
 QTm)
 
@@ -3721,7 +3742,7 @@ QTm)
 File: ../../images/liferay-collaboration-kb-permissions.png Graphic file (type 
 QTm)
 
-<use  "../../images/liferay-collaboration-kb-permissions.png" > [371] [372]
+<use  "../../images/liferay-collaboration-kb-permissions.png" > [368] [369]
 File: ../../images/liferay-collaboration-kb-control-panel.png Graphic file (typ
 e QTm)
 
@@ -3729,7 +3750,7 @@ e QTm)
 File: ../../images/liferay-collaboration-kb-control-panel.png Graphic file (typ
 e QTm)
 
-<use  "../../images/liferay-collaboration-kb-control-panel.png" > [373]
+<use  "../../images/liferay-collaboration-kb-control-panel.png" > [370]
 File: ../../images/liferay-collaboration-kb-new-template.png Graphic file (type
  QTm)
 
@@ -3745,7 +3766,7 @@ ype QTm)
 File: ../../images/liferay-collaboration-kb-section-portlet.png Graphic file (t
 ype QTm)
 
-<use  "../../images/liferay-collaboration-kb-section-portlet.png" > [374]
+<use  "../../images/liferay-collaboration-kb-section-portlet.png" > [371]
 File: ../../images/liferay-collaboration-kb-article-portlet.png Graphic file (t
 ype QTm)
 
@@ -3753,34 +3774,28 @@ ype QTm)
 File: ../../images/liferay-collaboration-kb-article-portlet.png Graphic file (t
 ype QTm)
 
-<use  "../../images/liferay-collaboration-kb-article-portlet.png" > [375]
-Overfull \hbox (10.65517pt too wide) in paragraph at lines 14007--14019
-\EU1/lmtt/m/n/9 admin.kb.article.sections=World,Politics,Business,Entertainment
-\EU1/LinuxLibertineO(0)/m/n/9 ,
- []
+<use  "../../images/liferay-collaboration-kb-article-portlet.png" > [372]
+[373]
+File: ../../images/liferay-collaboration-kb-section-portlet.png Graphic file (t
+ype QTm)
+ <use  "../../images/liferay-collaboration-kb-section-portlet.png" >
+File: ../../images/liferay-collaboration-kb-section-portlet.png Graphic file (t
+ype QTm)
 
-[376]
-Overfull \hbox (35.72899pt too wide) in paragraph at lines 14020--14026
+<use  "../../images/liferay-collaboration-kb-section-portlet.png" >
+Overfull \hbox (7.379pt too wide) in paragraph at lines 14029--14035
 []\EU1/LinuxLibertineO(0)/m/n/9 Once you have defined some sections in your kno
-wledge base’s \EU1/lmtt/m/n/9 portlet.properties
+wledge base’s \EU1/lmtt/m/n/9 portlet.pro-
  []
 
-File: ../../images/liferay-collaboration-kb-section-portlet.png Graphic file (t
-ype QTm)
-<use  "../../images/liferay-collaboration-kb-section-portlet.png" >
-File: ../../images/liferay-collaboration-kb-section-portlet.png Graphic file (t
-ype QTm)
-
-<use  "../../images/liferay-collaboration-kb-section-portlet.png" >
+[374]
+File: ../../images/liferay-collaboration-kb-search-portlet.png Graphic file (ty
+pe QTm)
+ <use  "../../images/liferay-collaboration-kb-search-portlet.png" >
 File: ../../images/liferay-collaboration-kb-search-portlet.png Graphic file (ty
 pe QTm)
 
 <use  "../../images/liferay-collaboration-kb-search-portlet.png" >
-File: ../../images/liferay-collaboration-kb-search-portlet.png Graphic file (ty
-pe QTm)
-
-<use  "../../images/liferay-collaboration-kb-search-portlet.png" > [377]
-[378]
 File: ../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png Gra
 phic file (type QTm)
 
@@ -3789,16 +3804,20 @@ File: ../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png Gra
 phic file (type QTm)
 
 <use  "../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png" >
-[379]
-Overfull \hbox (6.03201pt too wide) in paragraph at lines 14087--14093
+
+Underfull \vbox (badness 1546) has occurred while \output is active []
+
+ [375]
+[376]
+Overfull \hbox (6.03201pt too wide) in paragraph at lines 14090--14096
 \EU1/LinuxLibertineO(0)/m/n/9 and enhance their existing platforms, developers 
 and software vendors are search-
  []
 
-[380
+[377
 
 ]
-Overfull \hbox (54.91399pt too wide) in paragraph at lines 14127--14143
+Overfull \hbox (54.91399pt too wide) in paragraph at lines 14130--14146
 \EU1/LinuxLibertineO(0)/m/n/9 Anyone can browse the apps available on Liferay M
 arketplace at []http://liferay.com/marketplace[]
  []
@@ -3807,23 +3826,23 @@ File: ../../images/marketplace-homepage.png Graphic file (type QTm)
 <use  "../../images/marketplace-homepage.png" >
 File: ../../images/marketplace-homepage.png Graphic file (type QTm)
 
-<use  "../../images/marketplace-homepage.png" > [381] [382]
+<use  "../../images/marketplace-homepage.png" > [378] [379]
 File: ../../images/marketplace-app-details.png Graphic file (type QTm)
 
 <use  "../../images/marketplace-app-details.png" >
 File: ../../images/marketplace-app-details.png Graphic file (type QTm)
 
-<use  "../../images/marketplace-app-details.png" > [383]
+<use  "../../images/marketplace-app-details.png" > [380]
 File: ../../images/marketplace-browsing-apps.png Graphic file (type QTm)
 
 <use  "../../images/marketplace-browsing-apps.png" >
 File: ../../images/marketplace-browsing-apps.png Graphic file (type QTm)
 
-<use  "../../images/marketplace-browsing-apps.png" > [384]
+<use  "../../images/marketplace-browsing-apps.png" > [381]
 File: ../../images/01-tip.png Graphic file (type QTm)
 
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 14254--14255
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 14257--14258
 [][] 
  []
 
@@ -3831,7 +3850,7 @@ File: ../../images/marketplace-purchased-apps.png Graphic file (type QTm)
 <use  "../../images/marketplace-purchased-apps.png" >
 File: ../../images/marketplace-purchased-apps.png Graphic file (type QTm)
 
-<use  "../../images/marketplace-purchased-apps.png" > [385] [386]
+<use  "../../images/marketplace-purchased-apps.png" > [382] [383]
 File: ../../images/marketplace-upload-app.png Graphic file (type QTm)
 
 <use  "../../images/marketplace-upload-app.png" >
@@ -3845,7 +3864,7 @@ File: ../../images/marketplace-creating-new-company.png Graphic file (type QTm)
 File: ../../images/marketplace-creating-new-company.png Graphic file (type QTm)
 
 
-<use  "../../images/marketplace-creating-new-company.png" > [387] [388]
+<use  "../../images/marketplace-creating-new-company.png" > [384] [385]
 File: ../../images/marketplace-browsing-categories.png Graphic file (type QTm)
 
 <use  "../../images/marketplace-browsing-categories.png" >
@@ -3860,7 +3879,7 @@ File: ../../images/marketplace-search-box.png Graphic file (type QTm)
 <use  "../../images/marketplace-search-box.png" >
 Underfull \vbox (badness 2351) has occurred while \output is active []
 
- [389]
+ [386]
 File: ../../images/marketplace-app-version-history.png Graphic file (type QTm)
 
 <use  "../../images/marketplace-app-version-history.png" >
@@ -3875,8 +3894,8 @@ File: ../../images/marketplace-app-information.png Graphic file (type QTm)
 <use  "../../images/marketplace-app-information.png" >
 Underfull \vbox (badness 2426) has occurred while \output is active []
 
- [390]
-[391] [392]
+ [387]
+[388] [389]
 File: ../../images/marketplace-app-version-history-and-reviews.png Graphic file
  (type QTm)
 
@@ -3884,7 +3903,7 @@ File: ../../images/marketplace-app-version-history-and-reviews.png Graphic file
 File: ../../images/marketplace-app-version-history-and-reviews.png Graphic file
  (type QTm)
 
-<use  "../../images/marketplace-app-version-history-and-reviews.png" > [393]
+<use  "../../images/marketplace-app-version-history-and-reviews.png" > [390]
 File: ../../images/marketplace-control-panel-entries.png Graphic file (type QTm
 )
 
@@ -3898,11 +3917,11 @@ File: ../../images/marketplace-login.png Graphic file (type QTm)
 <use  "../../images/marketplace-login.png" >
 File: ../../images/marketplace-login.png Graphic file (type QTm)
 
-<use  "../../images/marketplace-login.png" > [394]
+<use  "../../images/marketplace-login.png" > [391]
 File: ../../images/01-tip.png Graphic file (type QTm)
 
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 14527--14528
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 14530--14531
 [][] 
  []
 
@@ -3912,22 +3931,22 @@ ype QTm)
 File: ../../images/marketplace-purchased-apps-control-panel.png Graphic file (t
 ype QTm)
 
-<use  "../../images/marketplace-purchased-apps-control-panel.png" > [395]
-[396]
-Overfull \hbox (35.96pt too wide) in paragraph at lines 14578--14591
+<use  "../../images/marketplace-purchased-apps-control-panel.png" > [392]
+[393]
+Overfull \hbox (35.96pt too wide) in paragraph at lines 14581--14594
 []\EU1/LinuxLibertineO(0)/m/n/9 In this case, using your browser, you will find
  the app on \EU1/lmtt/m/n/9 liferay.com/marketplace\EU1/LinuxLibertineO(0)/m/n/
 9 .
  []
 
-[397]
+[394]
 File: ../../images/01-tip.png Graphic file (type QTm)
  <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 14628--14629
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 14631--14632
 [][] 
  []
 
-[398]
+[395]
 File: ../../images/marketplace-envision-theme.png Graphic file (type QTm)
  <use  "../../images/marketplace-envision-theme.png" >
 File: ../../images/marketplace-envision-theme.png Graphic file (type QTm)
@@ -3938,13 +3957,13 @@ File: ../../images/marketplace-murali-theme.png Graphic file (type QTm)
 <use  "../../images/marketplace-murali-theme.png" >
 File: ../../images/marketplace-murali-theme.png Graphic file (type QTm)
 
-<use  "../../images/marketplace-murali-theme.png" > [399]
-Overfull \hbox (0.35603pt too wide) in paragraph at lines 14756--14761
+<use  "../../images/marketplace-murali-theme.png" > [396]
+Overfull \hbox (0.35603pt too wide) in paragraph at lines 14759--14764
 \EU1/LinuxLibertineO(0)/m/n/9 Liferay Portal has a section of the control panel
  called Plugins Installation, which
  []
 
-[400]
+[397]
 File: ../../images/marketplace-plugins-installation-portlet-tab.png Graphic fil
 e (type QTm)
  <use  "../../images/marketplace-plugins-installation-portlet-tab.png" >
@@ -3959,13 +3978,13 @@ File: ../../images/marketplace-plugins-installation-theme-tab.png Graphic file
 File: ../../images/marketplace-plugins-installation-theme-tab.png Graphic file 
 (type QTm)
 
-<use  "../../images/marketplace-plugins-installation-theme-tab.png" > [401]
+<use  "../../images/marketplace-plugins-installation-theme-tab.png" > [398]
 File: ../../images/marketplace-plugins-installer.png Graphic file (type QTm)
 
 <use  "../../images/marketplace-plugins-installer.png" >
 File: ../../images/marketplace-plugins-installer.png Graphic file (type QTm)
 
-<use  "../../images/marketplace-plugins-installer.png" > [402]
+<use  "../../images/marketplace-plugins-installer.png" > [399]
 File: ../../images/marketplace-installing-web-form-portlet.png Graphic file (ty
 pe QTm)
 
@@ -3973,24 +3992,18 @@ pe QTm)
 File: ../../images/marketplace-installing-web-form-portlet.png Graphic file (ty
 pe QTm)
 
-<use  "../../images/marketplace-installing-web-form-portlet.png" > [403]
-[404]
+<use  "../../images/marketplace-installing-web-form-portlet.png" > [400]
+[401]
 File: ../../images/marketplace-plugin-installer-upload-file.png Graphic file (t
 ype QTm)
  <use  "../../images/marketplace-plugin-installer-upload-file.png" >
 File: ../../images/marketplace-plugin-installer-upload-file.png Graphic file (t
 ype QTm)
 
-<use  "../../images/marketplace-plugin-installer-upload-file.png" > [405]
-Overfull \hbox (38.61502pt too wide) in paragraph at lines 14912--14916
+<use  "../../images/marketplace-plugin-installer-upload-file.png" > [402]
+Overfull \hbox (38.61502pt too wide) in paragraph at lines 14915--14919
 \EU1/LinuxLibertineO(0)/m/n/9 where you like by modifying the appropriate prope
 rties in your \EU1/lmtt/m/n/9 portal-ext.properties
- []
-
-
-Overfull \hbox (20.04204pt too wide) in paragraph at lines 14924--14924
-[]\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
-4/deploy/weather-portlet-6.0.4.1.war[] 
  []
 
 
@@ -4000,21 +4013,21 @@ Overfull \hbox (20.04204pt too wide) in paragraph at lines 14927--14927
  []
 
 
-Overfull \hbox (26.414pt too wide) in paragraph at lines 14929--14929
+Overfull \hbox (20.04204pt too wide) in paragraph at lines 14930--14930
+[]\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
+4/deploy/weather-portlet-6.0.4.1.war[] 
+ []
+
+
+Overfull \hbox (26.414pt too wide) in paragraph at lines 14932--14932
 []\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
 4/tomcat-6.0.26/temp/20100729161147694[] 
  []
 
 
-Overfull \hbox (51.902pt too wide) in paragraph at lines 14932--14932
+Overfull \hbox (51.902pt too wide) in paragraph at lines 14935--14935
 []\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
 4/tomcat-6.0.26/temp/20100729161147694/WEB-INF[] 
- []
-
-
-Overfull \hbox (77.39pt too wide) in paragraph at lines 14935--14935
-[]\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
-4/tomcat-6.0.26/temp/20100729161147694/WEB-INF/classes[] 
  []
 
 
@@ -4024,15 +4037,15 @@ Overfull \hbox (77.39pt too wide) in paragraph at lines 14938--14938
  []
 
 
-Overfull \hbox (55.088pt too wide) in paragraph at lines 14941--14941
+Overfull \hbox (77.39pt too wide) in paragraph at lines 14941--14941
 []\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
-4/tomcat-6.0.26/temp/20100729161147694/META-INF[] 
+4/tomcat-6.0.26/temp/20100729161147694/WEB-INF/classes[] 
  []
 
 
-Overfull \hbox (29.60004pt too wide) in paragraph at lines 14944--14944
+Overfull \hbox (55.088pt too wide) in paragraph at lines 14944--14944
 []\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
-4/tomcat-6.0.26/webapps/weather-portlet[] 
+4/tomcat-6.0.26/temp/20100729161147694/META-INF[] 
  []
 
 
@@ -4042,57 +4055,63 @@ Overfull \hbox (29.60004pt too wide) in paragraph at lines 14947--14947
  []
 
 
-Overfull \hbox (26.414pt too wide) in paragraph at lines 14950--14950
+Overfull \hbox (29.60004pt too wide) in paragraph at lines 14950--14950
+[]\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
+4/tomcat-6.0.26/webapps/weather-portlet[] 
+ []
+
+
+Overfull \hbox (26.414pt too wide) in paragraph at lines 14953--14953
 []\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
 4/tomcat-6.0.26/temp/20100729161147694[] 
  []
 
 
-Overfull \hbox (20.04204pt too wide) in paragraph at lines 14953--14953
+Overfull \hbox (20.04204pt too wide) in paragraph at lines 14956--14956
 []\EU1/lmtt/m/n/6 /Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.
 4/deploy/weather-portlet-6.0.4.1.war[] 
  []
 
-[406]
+[403]
 File: ../../images/01-tip.png Graphic file (type QTm)
  <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 15002--15003
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 15005--15006
 [][] 
  []
 
-[407]
-Overfull \hbox (33.965pt too wide) in paragraph at lines 15025--15036
+[404]
+Overfull \hbox (33.965pt too wide) in paragraph at lines 15028--15039
 []\EU1/LinuxLibertineO(0)/m/n/9 In versions of Liferay prior to 4.3.5, there is
  a property called \EU1/lmtt/m/n/9 auto.deploy.dest.dir
  []
 
 
-Overfull \hbox (17.26102pt too wide) in paragraph at lines 15037--15047
+Overfull \hbox (17.26102pt too wide) in paragraph at lines 15040--15050
 []\EU1/LinuxLibertineO(0)/m/n/9 For example, Glassfish defines the hot deploy f
 older as a folder called \EU1/lmtt/m/n/9 autodeploy
  []
 
 
-Overfull \hbox (47.21pt too wide) in paragraph at lines 15054--15059
+Overfull \hbox (47.21pt too wide) in paragraph at lines 15057--15062
 \EU1/LinuxLibertineO(0)/m/n/9 have this value, there are two places in which yo
 u can set it: in the \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
 
-Overfull \hbox (0.38301pt too wide) in paragraph at lines 15060--15071
+Overfull \hbox (0.38301pt too wide) in paragraph at lines 15063--15074
 []\EU1/LinuxLibertineO(0)/m/n/9 To change this setting in the \EU1/lmtt/m/n/9 p
 ortal-ext.properties \EU1/LinuxLibertineO(0)/m/n/9 file, browse to where
  []
 
 
-Overfull \hbox (17.97697pt too wide) in paragraph at lines 15060--15071
+Overfull \hbox (17.97697pt too wide) in paragraph at lines 15063--15074
 \EU1/LinuxLibertineO(0)/m/n/9 file. Open this file in a text editor and look fo
 r the property \EU1/lmtt/m/n/9 auto.deploy.dest.dir\EU1/LinuxLibertineO(0)/m/n/
 9 .
  []
 
-[408]
-Overfull \hbox (53.11699pt too wide) in paragraph at lines 15086--15095
+[405]
+Overfull \hbox (53.11699pt too wide) in paragraph at lines 15089--15098
 []\EU1/LinuxLibertineO(0)/m/n/9 Instead of changing the hot deploy destination 
 directory in your \EU1/lmtt/m/n/9 portal-ext.properties
  []
@@ -4105,128 +4124,128 @@ File: ../../images/marketplace-plugin-installer-configuration.png Graphic file
 
 <use  "../../images/marketplace-plugin-installer-configuration.png" >
 
-LaTeX Warning: Float too large for page by 46.67677pt on input line 15100.
+LaTeX Warning: Float too large for page by 46.67677pt on input line 15103.
 
-[409] [410]
-Overfull \hbox (4.17621pt too wide) in paragraph at lines 15162--15166
+[406] [407]
+Overfull \hbox (4.17621pt too wide) in paragraph at lines 15165--15169
 []\EU1/LinuxLibertineO(0)/m/n/9 Create a folder called \EU1/lmtt/m/n/9 webspher
 e-deploy \EU1/LinuxLibertineO(0)/m/n/9 inside your \EU1/lmtt/m/n/9 $LIFERAY_HOM
 E \EU1/LinuxLibertineO(0)/m/n/9 folder.
  []
 
 
-Overfull \hbox (8.006pt too wide) in paragraph at lines 15174--15176
+Overfull \hbox (8.006pt too wide) in paragraph at lines 15177--15179
 []\EU1/LinuxLibertineO(0)/m/n/9 Liferay versions 5.2.2 and higher will automati
 cally inject this into the \EU1/lmtt/m/n/9 web.xml
  []
 
-[411] [412] [413] [414
+[408] [409] [410] [411
 
-] [415] [416] [417]
-Overfull \hbox (46.39928pt too wide) in paragraph at lines 15448--15454
+] [412] [413] [414]
+Overfull \hbox (46.39928pt too wide) in paragraph at lines 15451--15457
 \EU1/LinuxLibertineO(0)/m/n/9 The CE version of Liferay is freely downloadable 
 from our web site at []http://www.liferay.com[].
  []
 
-[418]
+[415]
 File: ../../images/02-bundle-directory-structure.png Graphic file (type QTm)
  <use  "../../images/02-bundle-directory-structure.png" >
 File: ../../images/02-bundle-directory-structure.png Graphic file (type QTm)
 
-<use  "../../images/02-bundle-directory-structure.png" > [419]
-Overfull \hbox (20.54301pt too wide) in paragraph at lines 15549--15553
+<use  "../../images/02-bundle-directory-structure.png" > [416]
+Overfull \hbox (20.54301pt too wide) in paragraph at lines 15552--15556
 \EU1/LinuxLibertineO(0)/m/n/9 doesn’t load the wizard, launch your web browse
 r and then go to []http://localhost:8080[]. 
  []
 
-[420] [421]
-Overfull \hbox (52.847pt too wide) in paragraph at lines 15632--15638
+[417] [418]
+Overfull \hbox (52.847pt too wide) in paragraph at lines 15635--15641
 \EU1/LinuxLibertineO(0)/m/n/9 created there and you can also put a special conf
 iguration file called \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 15641--15642
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 15644--15645
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15643--15650
+Underfull \hbox (badness 10000) in paragraph at lines 15646--15653
 [][]\EU1/LinuxLibertineO(0)/bx/n/9 Note: \EU1/LinuxLibertineO(0)/m/n/9 To use d
 atabase properties from a
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 15643--15650
+Underfull \hbox (badness 2875) in paragraph at lines 15646--15653
 \EU1/lmtt/m/n/9 portal-ext.properties \EU1/LinuxLibertineO(0)/m/n/9 file you mu
 st disable the Setup
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 15643--15650
+Underfull \hbox (badness 1735) in paragraph at lines 15646--15653
 \EU1/LinuxLibertineO(0)/m/n/9 in \EU1/lmtt/m/n/9 portal-setup-wizard.properties
  \EU1/LinuxLibertineO(0)/m/n/9 (the file created in
  []
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 15671--15672
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 15674--15675
 [][] 
  []
 
-[422] [423] [424]
-Overfull \hbox (20.29298pt too wide) in paragraph at lines 15817--15822
+[419] [420] [421]
+Overfull \hbox (20.29298pt too wide) in paragraph at lines 15820--15825
 \EU1/LinuxLibertineO(0)/m/n/9 inside of the \EU1/lmtt/m/n/9 portal-impl.jar \EU
 1/LinuxLibertineO(0)/m/n/9 file. This \EU1/lmtt/m/n/9 .jar \EU1/LinuxLibertineO
 (0)/m/n/9 file is in Liferay Portal’s \EU1/lmtt/m/n/9 WEB-INF/lib
  []
 
 
-Overfull \hbox (33.124pt too wide) in paragraph at lines 15817--15822
+Overfull \hbox (33.124pt too wide) in paragraph at lines 15820--15825
 \EU1/LinuxLibertineO(0)/m/n/9 folder. The file used to override the configurati
 on manually is \EU1/lmtt/m/n/9 portal-ext.properties\EU1/LinuxLibertineO(0)/m/n
 /9 . 
  []
 
 
-Overfull \hbox (78.686pt too wide) in paragraph at lines 15823--15830
+Overfull \hbox (78.686pt too wide) in paragraph at lines 15826--15833
 []\EU1/LinuxLibertineO(0)/m/n/9 Complicating matters, the setup wizard creates 
 a file called \EU1/lmtt/m/n/9 portal-setup-wizard.properties\EU1/LinuxLibertine
 O(0)/m/n/9 .
  []
 
-[425]
+[422]
 File: ../../images/01-tip.png Graphic file (type QTm)
  <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 15838--15839
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 15841--15842
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15856--15860
+Underfull \hbox (badness 10000) in paragraph at lines 15859--15863
 []\EU1/LinuxLibertineO(0)/m/n/9 Without this workaround, Liferay will not read 
 the
  []
 
 
-Underfull \hbox (badness 5161) in paragraph at lines 15856--15860
+Underfull \hbox (badness 5161) in paragraph at lines 15859--15863
 \EU1/lmtt/m/n/9 portal-setup-wizard.properties \EU1/LinuxLibertineO(0)/m/n/9 fi
 le with your saved configura-
  []
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 15885--15886
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 15888--15889
 [][] 
  []
 
-[426]
+[423]
 File: ../../images/setup-wizard-1.png Graphic file (type QTm)
  <use  "../../images/setup-wizard-1.png" >
 File: ../../images/setup-wizard-1.png Graphic file (type QTm)
 
-<use  "../../images/setup-wizard-1.png" > [427]
+<use  "../../images/setup-wizard-1.png" > [424]
 File: ../../images/setup-wizard-2.png Graphic file (type QTm)
 
 <use  "../../images/setup-wizard-2.png" >
@@ -4235,44 +4254,44 @@ File: ../../images/setup-wizard-2.png Graphic file (type QTm)
 <use  "../../images/setup-wizard-2.png" >
 File: ../../images/01-tip.png Graphic file (type QTm)
  <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 15991--15992
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 15994--15995
 [][] 
  []
 
-[428] [429] [430]
-Overfull \hbox (1.15999pt too wide) in paragraph at lines 16093--16095
+[425] [426] [427]
+Overfull \hbox (1.15999pt too wide) in paragraph at lines 16096--16098
 \EU1/LinuxLibertineO(0)/m/n/9 There are five generic steps to installing Lifera
 y on an existing application server: 
  []
 
 
-Overfull \hbox (12.40599pt too wide) in paragraph at lines 16114--16120
+Overfull \hbox (12.40599pt too wide) in paragraph at lines 16117--16123
 \EU1/LinuxLibertineO(0)/m/n/9 supports. Liferay supports a wide combination of 
 application servers and databases.
  []
 
-[431]
+[428]
 File: ../../images/01-tip.png Graphic file (type QTm)
  <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 16131--16132
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 16134--16135
 [][] 
  []
 
 
-Overfull \hbox (6.14604pt too wide) in paragraph at lines 16156--16160
+Overfull \hbox (6.14604pt too wide) in paragraph at lines 16159--16163
 []\EU1/LinuxLibertineO(0)/m/n/9 Tcat Server provides several tools to make Tomc
 at more administrator friendly,
  []
 
 
-Overfull \hbox (182.111pt too wide) in paragraph at lines 16174--16178
+Overfull \hbox (182.111pt too wide) in paragraph at lines 16177--16181
 \EU1/LinuxLibertineO(0)/m/n/9 For full documentation, you’ll find more detail
 ed information here: []http://www.mulesoft.org/documentation/display/TCAT/Home[
 ] 
  []
 
-[432]
-Overfull \hbox (80.55202pt too wide) in paragraph at lines 16222--16227
+[429]
+Overfull \hbox (80.55202pt too wide) in paragraph at lines 16225--16230
 []\EU1/LinuxLibertineO(0)/m/n/9 Next, download the appropriate Tcat platform in
 stallation at: []http://www.mulesoft.com/download-
  []
@@ -4287,7 +4306,7 @@ File: ../../images/tcat-html_m230ba580.png Graphic file (type QTm)
 <use  "../../images/tcat-html_m230ba580.png" >
 File: ../../images/tcat-html_m230ba580.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_m230ba580.png" > [433] [434]
+<use  "../../images/tcat-html_m230ba580.png" > [430] [431]
 File: ../../images/tcat-html_261b594a.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_261b594a.png" >
@@ -4311,7 +4330,7 @@ File: ../../images/tcat-html_3f911eab.png Graphic file (type QTm)
 <use  "../../images/tcat-html_3f911eab.png" >
 File: ../../images/tcat-html_3f911eab.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_3f911eab.png" > [435]
+<use  "../../images/tcat-html_3f911eab.png" > [432]
 File: ../../images/tcat-html_766a1d6e.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_766a1d6e.png" >
@@ -4323,7 +4342,7 @@ File: ../../images/tcat-html_55494177.png Graphic file (type QTm)
 <use  "../../images/tcat-html_55494177.png" >
 File: ../../images/tcat-html_55494177.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_55494177.png" > [436] [437]
+<use  "../../images/tcat-html_55494177.png" > [433] [434]
 File: ../../images/tcat-html_7df6aabf.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_7df6aabf.png" >
@@ -4335,7 +4354,7 @@ File: ../../images/tcat-html_5b760cd.png Graphic file (type QTm)
 <use  "../../images/tcat-html_5b760cd.png" >
 File: ../../images/tcat-html_5b760cd.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_5b760cd.png" > [438]
+<use  "../../images/tcat-html_5b760cd.png" > [435]
 File: ../../images/tcat-html_749e9b40.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_749e9b40.png" >
@@ -4353,7 +4372,7 @@ File: ../../images/tcat-html_m55bbff3f.png Graphic file (type QTm)
 <use  "../../images/tcat-html_m55bbff3f.png" >
 File: ../../images/tcat-html_m55bbff3f.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_m55bbff3f.png" > [439]
+<use  "../../images/tcat-html_m55bbff3f.png" > [436]
 File: ../../images/tcat-html_78e73740.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_78e73740.png" >
@@ -4365,7 +4384,7 @@ File: ../../images/tcat-html_12074416.png Graphic file (type QTm)
 <use  "../../images/tcat-html_12074416.png" >
 File: ../../images/tcat-html_12074416.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_12074416.png" > [440]
+<use  "../../images/tcat-html_12074416.png" > [437]
 File: ../../images/tcat-html_mf987314.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_mf987314.png" >
@@ -4377,13 +4396,13 @@ File: ../../images/tcat-html_3b2f5fb4.png Graphic file (type QTm)
 <use  "../../images/tcat-html_3b2f5fb4.png" >
 File: ../../images/tcat-html_3b2f5fb4.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_3b2f5fb4.png" > [441]
+<use  "../../images/tcat-html_3b2f5fb4.png" > [438]
 File: ../../images/tcat-html_352642da.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_352642da.png" >
 File: ../../images/tcat-html_352642da.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_352642da.png" > [442]
+<use  "../../images/tcat-html_352642da.png" > [439]
 File: ../../images/tcat-html_261b594a.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_261b594a.png" >
@@ -4395,33 +4414,33 @@ File: ../../images/tcat-html_66274d0c.png Graphic file (type QTm)
 <use  "../../images/tcat-html_66274d0c.png" >
 File: ../../images/tcat-html_66274d0c.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_66274d0c.png" > [443] [444]
-Overfull \hbox (64.64598pt too wide) in paragraph at lines 16612--16612
+<use  "../../images/tcat-html_66274d0c.png" > [440] [441]
+Overfull \hbox (64.64598pt too wide) in paragraph at lines 16615--16615
 []\EU1/lmtt/m/n/6 common.loader=${catalina.base}/lib,${catalina.base}/lib/\*.ja
 r,${catalina.home}/lib,${catalina.home}/lib/\*.jar[] 
  []
 
 
-Overfull \hbox (246.24797pt too wide) in paragraph at lines 16618--16618
+Overfull \hbox (246.24797pt too wide) in paragraph at lines 16621--16621
 []\EU1/lmtt/m/n/6 common.loader=${catalina.base}/lib,${catalina.base}/lib/\*.ja
 r,${catalina.home}/lib,${catalina.home}/lib/\*.jar,${catalina.home}/lib/ext,${c
 atalina.home}/lib/ext/\*.jar[] 
  []
 
 
-Overfull \hbox (0.90799pt too wide) in paragraph at lines 16628--16634
+Overfull \hbox (0.90799pt too wide) in paragraph at lines 16631--16637
 \EU1/LinuxLibertineO(0)/m/n/9 After completing the installation process and sta
 rting the appropriate TcatServer
  []
 
 
-Overfull \hbox (81.47298pt too wide) in paragraph at lines 16628--16634
+Overfull \hbox (81.47298pt too wide) in paragraph at lines 16631--16637
 \EU1/LinuxLibertineO(0)/m/n/9 previous installation example, you should point y
 our browser to \EU1/lmtt/m/n/9 http://localhost:8080/console\EU1/LinuxLibertine
 O(0)/m/n/9 .
  []
 
-[445]
+[442]
 File: ../../images/tcat-html_m4bda7997.png Graphic file (type QTm)
  <use  "../../images/tcat-html_m4bda7997.png" >
 File: ../../images/tcat-html_m4bda7997.png Graphic file (type QTm)
@@ -4433,23 +4452,23 @@ File: ../../images/tcat-html_5d43770f.png Graphic file (type QTm)
 File: ../../images/tcat-html_5d43770f.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_5d43770f.png" >
-Overfull \hbox (1.40001pt too wide) in paragraph at lines 16653--16656
+Overfull \hbox (1.40001pt too wide) in paragraph at lines 16656--16659
 []\EU1/LinuxLibertineO(0)/m/n/9 First make sure that you have started the previ
 ously installed managed server.
  []
 
-[446]
+[443]
 File: ../../images/tcat-html_34603e60.png Graphic file (type QTm)
  <use  "../../images/tcat-html_34603e60.png" >
 File: ../../images/tcat-html_34603e60.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_34603e60.png" >
-Overfull \hbox (58.685pt too wide) in paragraph at lines 16677--16679
+Overfull \hbox (58.685pt too wide) in paragraph at lines 16680--16682
 []\EU1/LinuxLibertineO(0)/m/n/9 More information is available at []\EU1/LinuxLi
 bertineO(0)/m/it/9 http://www.mulesoft.org/documentation/display/TCAT/Home[]. 
  []
 
-[447] [448] [449] [450]
+[444] [445] [446] [447]
 File: ../../images/tcat-html_7e61df5a.png Graphic file (type QTm)
  <use  "../../images/tcat-html_7e61df5a.png" >
 File: ../../images/tcat-html_7e61df5a.png Graphic file (type QTm)
@@ -4466,7 +4485,7 @@ File: ../../images/tcat-html_m2d96341c.png Graphic file (type QTm)
 <use  "../../images/tcat-html_m2d96341c.png" >
 File: ../../images/tcat-html_m2d96341c.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_m2d96341c.png" > [451]
+<use  "../../images/tcat-html_m2d96341c.png" > [448]
 File: ../../images/tcat-html_m5c7a2b8c.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_m5c7a2b8c.png" >
@@ -4478,7 +4497,7 @@ File: ../../images/tcat-html_53af6680.png Graphic file (type QTm)
 <use  "../../images/tcat-html_53af6680.png" >
 File: ../../images/tcat-html_53af6680.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_53af6680.png" > [452]
+<use  "../../images/tcat-html_53af6680.png" > [449]
 File: ../../images/tcat-html_m1f86eaab.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_m1f86eaab.png" >
@@ -4490,14 +4509,14 @@ File: ../../images/tcat-html_m54d58d30.png Graphic file (type QTm)
 <use  "../../images/tcat-html_m54d58d30.png" >
 File: ../../images/tcat-html_m54d58d30.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_m54d58d30.png" > [453]
-Overfull \hbox (11.00299pt too wide) in paragraph at lines 16836--16838
+<use  "../../images/tcat-html_m54d58d30.png" > [450]
+Overfull \hbox (11.00299pt too wide) in paragraph at lines 16839--16841
 []\EU1/LinuxLibertineO(0)/m/n/9 Since we are deploying Liferay Portal for the f
 irst time, we choose the ROOT.war
  []
 
 
-Overfull \hbox (7.05203pt too wide) in paragraph at lines 16839--16842
+Overfull \hbox (7.05203pt too wide) in paragraph at lines 16842--16845
 []\EU1/LinuxLibertineO(0)/m/n/9 After selecting the appropriate web application
 , you may choose which Servers
  []
@@ -4506,91 +4525,91 @@ File: ../../images/tcat-html_68a00002.png Graphic file (type QTm)
 <use  "../../images/tcat-html_68a00002.png" >
 File: ../../images/tcat-html_68a00002.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_68a00002.png" > [454]
+<use  "../../images/tcat-html_68a00002.png" > [451]
 File: ../../images/tcat-html_2b08ac2c.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_2b08ac2c.png" >
 File: ../../images/tcat-html_2b08ac2c.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_2b08ac2c.png" > [455]
+<use  "../../images/tcat-html_2b08ac2c.png" > [452]
 File: ../../images/tcat-html_19e9e6d6.png Graphic file (type QTm)
 
 <use  "../../images/tcat-html_19e9e6d6.png" >
 File: ../../images/tcat-html_19e9e6d6.png Graphic file (type QTm)
 
-<use  "../../images/tcat-html_19e9e6d6.png" > [456]
-Overfull \hbox (125.86113pt too wide) in paragraph at lines 16915--16918
+<use  "../../images/tcat-html_19e9e6d6.png" > [453]
+Overfull \hbox (125.86113pt too wide) in paragraph at lines 16918--16921
 []\EU1/LinuxLibertineO(0)/m/n/9 For example, if your domain location is \EU1/lm
 tt/m/n/9 /glassfish-3.1-web/glassfish3/glassfish/domains/domain1\EU1/LinuxLiber
 tineO(0)/m/n/9 ,
  []
 
 
-Overfull \hbox (38.753pt too wide) in paragraph at lines 16919--16924
+Overfull \hbox (38.753pt too wide) in paragraph at lines 16922--16927
 \EU1/LinuxLibertineO(0)/m/n/9 you download a Liferay/GlassFish bundle from []ht
 tp://www.liferay.com/downloads/liferay-
  []
 
 
-Overfull \hbox (18.161pt too wide) in paragraph at lines 16925--16932
+Overfull \hbox (18.161pt too wide) in paragraph at lines 16928--16935
 \EU1/LinuxLibertineO(0)/m/n/9 file and Liferay Portal dependencies from []http:
 //www.liferay.com/downloads/liferay-
  []
 
 
-Overfull \hbox (76.717pt too wide) in paragraph at lines 16925--16932
+Overfull \hbox (76.717pt too wide) in paragraph at lines 16928--16935
 \EU1/LinuxLibertineO(0)/m/n/9 portal/additional-files[]. The Liferay \EU1/lmtt/
 m/n/9 .war \EU1/LinuxLibertineO(0)/m/n/9 file should be called \EU1/lmtt/m/n/9 
 liferay-portal-6.1.x-<date>.war
  []
 
 
-Overfull \hbox (72.00507pt too wide) in paragraph at lines 16925--16932
+Overfull \hbox (72.00507pt too wide) in paragraph at lines 16928--16935
 \EU1/LinuxLibertineO(0)/m/n/9 and the dependencies file should be called \EU1/l
 mtt/m/n/9 liferay-portal-dependencies-6.1.x-<date>.zip\EU1/LinuxLibertineO(0)/m
 /n/9 . 
  []
 
-[457]
-Overfull \hbox (237.41013pt too wide) in paragraph at lines 16947--16951
+[454]
+Overfull \hbox (237.41013pt too wide) in paragraph at lines 16950--16954
 \EU1/LinuxLibertineO(0)/m/n/9 stalling Liferay. Inside this folder is a sub-fol
 der named \EU1/lmtt/m/n/9 lib \EU1/LinuxLibertineO(0)/m/n/9 (e.g. \EU1/lmtt/m/n
 /9 /glassfish-3.1-web/glassfish3/glassfish/domains/domain1/lib\EU1/LinuxLiberti
 neO(0)/m/n/9 ). 
  []
 
-[458]
-Overfull \hbox (66.15848pt too wide) in paragraph at lines 16959--16966
+[455]
+Overfull \hbox (66.15848pt too wide) in paragraph at lines 16962--16969
 \EU1/LinuxLibertineO(0)/m/n/9 can download the latest MySQL JDBC driver from []
 http://www.mysql.com/products/connector/[].
  []
 
-[459]
-Overfull \hbox (107.10008pt too wide) in paragraph at lines 16996--17001
+[456]
+Overfull \hbox (107.10008pt too wide) in paragraph at lines 16999--17004
 []\EU1/LinuxLibertineO(0)/m/n/9 Modify \EU1/lmtt/m/n/9 /glassfish-3.1-web/glass
 fish3/glassfish/domains/domain1/config/domain.xml
  []
 
-[460]
-Overfull \hbox (62.283pt too wide) in paragraph at lines 17005--17005
+[457]
+Overfull \hbox (62.283pt too wide) in paragraph at lines 17008--17008
  []\EU1/lmtt/m/n/6 <jvm-options>-Dorg.apache.catalina.loader.WebappClassLoader.
 ENABLE_CLEAR_REFERENCES=false</jvm-options>[] 
  []
 
 
-Overfull \hbox (193.33504pt too wide) in paragraph at lines 17011--17016
+Overfull \hbox (193.33504pt too wide) in paragraph at lines 17014--17019
 \EU1/lmtt/m/n/9 -Djava.net.preferIPv4Stack\EU1/LinuxLibertineO(0)/m/n/9 , \EU1/
 lmtt/m/n/9 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENC
 ES\EU1/LinuxLibertineO(0)/m/n/9 ,
  []
 
-[461] [462]
+[458] [459]
 File: ../../images/11-glassfish31-connection-pools.png Graphic file (type QTm)
  <use  "../../images/11-glassfish31-connection-pools.png" >
 File: ../../images/11-glassfish31-connection-pools.png Graphic file (type QTm)
 
 <use  "../../images/11-glassfish31-connection-pools.png" >
-Overfull \hbox (14.92896pt too wide) in paragraph at lines 17069--17073
+Overfull \hbox (14.92896pt too wide) in paragraph at lines 17072--17076
 []\EU1/LinuxLibertineO(0)/m/n/9 In the first screen (Step 1 of 2), give your co
 nnection pool the name \EU1/lmtt/m/n/9 LiferayPool\EU1/LinuxLibertineO(0)/m/n/9
  ,
@@ -4602,7 +4621,7 @@ QTm)
 File: ../../images/11-glassfish-31-jdbc-connection-pool.png Graphic file (type 
 QTm)
 
-<use  "../../images/11-glassfish-31-jdbc-connection-pool.png" > [463]
+<use  "../../images/11-glassfish-31-jdbc-connection-pool.png" > [460]
 File: ../../images/11-glassfish-31-jdbc-connection-pool-props.png Graphic file 
 (type QTm)
 
@@ -4611,52 +4630,52 @@ File: ../../images/11-glassfish-31-jdbc-connection-pool-props.png Graphic file
 (type QTm)
 
 <use  "../../images/11-glassfish-31-jdbc-connection-pool-props.png" >
-Overfull \hbox (26.41411pt too wide) in paragraph at lines 17111--17111
+Overfull \hbox (26.41411pt too wide) in paragraph at lines 17114--17114
 []\EU1/lmtt/m/n/6 jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterE
 ncoding=UTF-8&amp;emulateLocators=true[] 
  []
 
-[464] [465] [466]
-Overfull \hbox (2.782pt too wide) in paragraph at lines 17163--17165
+[461] [462] [463]
+Overfull \hbox (2.782pt too wide) in paragraph at lines 17166--17168
 []\EU1/LinuxLibertineO(0)/m/n/9 Congratulations! You’ve now configured your d
 omain’s data source on Glass-
  []
 
 
-Overfull \hbox (42.85028pt too wide) in paragraph at lines 17169--17173
+Overfull \hbox (42.85028pt too wide) in paragraph at lines 17172--17176
 \EU1/LinuxLibertineO(0)/m/n/9 documentation on configuring a JavaMail session w
 ith a JNDI name of \EU1/lmtt/m/n/9 mail/MailSession\EU1/LinuxLibertineO(0)/m/n/
 9 .
  []
 
-[467]
-Overfull \hbox (44.08301pt too wide) in paragraph at lines 17234--17238
+[464]
+Overfull \hbox (44.08301pt too wide) in paragraph at lines 17237--17241
 \EU1/LinuxLibertineO(0)/m/n/9 matically invoked. If you want to re-run the wiza
 rd, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=true
  []
 
 
-Overfull \hbox (81.19398pt too wide) in paragraph at lines 17251--17255
+Overfull \hbox (81.19398pt too wide) in paragraph at lines 17254--17258
 []\EU1/LinuxLibertineO(0)/m/n/9 To startup the server without triggering the se
 tup wizard, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=false
  []
 
 
-Overfull \hbox (46.97798pt too wide) in paragraph at lines 17251--17255
+Overfull \hbox (46.97798pt too wide) in paragraph at lines 17254--17258
 \EU1/LinuxLibertineO(0)/m/n/9 in your properties (e.g. \EU1/lmtt/m/n/9 portal-s
 etup-wizard.properties \EU1/LinuxLibertineO(0)/m/n/9 or \EU1/lmtt/m/n/9 portal-
 ext.properties
  []
 
-[468]
+[465]
 File: ../../images/01-tip.png Graphic file (type QTm)
  <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 17266--17267
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 17269--17270
 [][] 
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 17268--17271
+Underfull \hbox (badness 4001) in paragraph at lines 17271--17274
 [][]\EU1/LinuxLibertineO(0)/m/n/9 Property values in \EU1/lmtt/m/n/9 portal-set
 up-wizard.properties
  []
@@ -4668,58 +4687,58 @@ File: ../../images/11-deploying-liferay-in-glassfish-31.png Graphic file (type
 QTm)
 
 <use  "../../images/11-deploying-liferay-in-glassfish-31.png" >
-Overfull \hbox (14.402pt too wide) in paragraph at lines 17318--17324
+Overfull \hbox (14.402pt too wide) in paragraph at lines 17321--17327
 []\EU1/LinuxLibertineO(0)/m/n/9 For this section, we’ll refer to Jetty server
 ’s installation location as \EU1/lmtt/m/n/9 $JETTY_HOME\EU1/LinuxLibertineO(0
 )/m/n/9 .
  []
 
 
-Overfull \hbox (28.20206pt too wide) in paragraph at lines 17318--17324
+Overfull \hbox (28.20206pt too wide) in paragraph at lines 17321--17327
 \EU1/LinuxLibertineO(0)/m/n/9 a Liferay/Jetty bundle from []http://www.liferay.
 com/downloads/liferay-portal/available-
  []
 
 
-Overfull \hbox (18.161pt too wide) in paragraph at lines 17325--17332
+Overfull \hbox (18.161pt too wide) in paragraph at lines 17328--17335
 \EU1/LinuxLibertineO(0)/m/n/9 file and Liferay Portal dependencies from []http:
 //www.liferay.com/downloads/liferay-
  []
 
 
-Overfull \hbox (76.717pt too wide) in paragraph at lines 17325--17332
+Overfull \hbox (76.717pt too wide) in paragraph at lines 17328--17335
 \EU1/LinuxLibertineO(0)/m/n/9 portal/additional-files[]. The Liferay \EU1/lmtt/
 m/n/9 .war \EU1/LinuxLibertineO(0)/m/n/9 file should be called \EU1/lmtt/m/n/9 
 liferay-portal-6.1.x-<date>.war
  []
 
 
-Overfull \hbox (72.00507pt too wide) in paragraph at lines 17325--17332
+Overfull \hbox (72.00507pt too wide) in paragraph at lines 17328--17335
 \EU1/LinuxLibertineO(0)/m/n/9 and the dependencies file should be called \EU1/l
 mtt/m/n/9 liferay-portal-dependencies-6.1.x-<date>.zip\EU1/LinuxLibertineO(0)/m
 /n/9 . 
  []
 
-[469] [470]
-Overfull \hbox (2.123pt too wide) in paragraph at lines 17357--17359
+[466] [467]
+Overfull \hbox (2.123pt too wide) in paragraph at lines 17360--17362
 []\EU1/LinuxLibertineO(0)/m/n/9 Copy the following jars from \EU1/lmtt/m/n/9 $L
 IFERAY_SOURCE/lib/development \EU1/LinuxLibertineO(0)/m/n/9 to your
  []
 
 
-Overfull \hbox (14.04547pt too wide) in paragraph at lines 17374--17382
+Overfull \hbox (14.04547pt too wide) in paragraph at lines 17377--17385
 \EU1/LinuxLibertineO(0)/m/n/9 the latest MySQL JDBC driver from []http://www.my
 sql.com/products/connector/[].
  []
 
 
-Overfull \hbox (15.33398pt too wide) in paragraph at lines 17400--17405
+Overfull \hbox (15.33398pt too wide) in paragraph at lines 17403--17408
 []\EU1/LinuxLibertineO(0)/m/n/9 Extract the default start config file \EU1/lmtt
 /m/n/9 org/eclipse/jetty/start/start.config
  []
 
 
-Overfull \hbox (91.03894pt too wide) in paragraph at lines 17400--17405
+Overfull \hbox (91.03894pt too wide) in paragraph at lines 17403--17408
 \EU1/LinuxLibertineO(0)/m/n/9 from the \EU1/lmtt/m/n/9 start.jar \EU1/LinuxLibe
 rtineO(0)/m/n/9 into \EU1/lmtt/m/n/9 $JETTY_HOME/etc \EU1/LinuxLibertineO(0)/m/
 n/9 so you have the file \EU1/lmtt/m/n/9 $JETTY_HOME/etc/start.config\EU1/Linux
@@ -4727,39 +4746,39 @@ LibertineO(0)/m/n/9 .
  []
 
 
-Overfull \hbox (6.39696pt too wide) in paragraph at lines 17405--17408
+Overfull \hbox (6.39696pt too wide) in paragraph at lines 17408--17411
 []\EU1/LinuxLibertineO(0)/m/n/9 Add the following property assignment to \EU1/l
 mtt/m/n/9 $JETTY_HOME/etc/start.config
  []
 
-[471]
-Overfull \hbox (33.99998pt too wide) in paragraph at lines 17429--17431
+[468]
+Overfull \hbox (33.99998pt too wide) in paragraph at lines 17432--17434
 []\EU1/LinuxLibertineO(0)/m/n/9 ../etc/jetty.xml ../etc/jetty-deploy.xml ../etc
 /jetty-webapps.xml ../etc/jetty-contexts.xml
  []
 
 
-Overfull \hbox (358.58102pt too wide) in paragraph at lines 17456--17456
+Overfull \hbox (358.58102pt too wide) in paragraph at lines 17459--17459
  []    \EU1/lmtt/m/n/6 set "JAVA_OPTS=-Djetty.version=7.5.4 -Djetty.version.dat
 e=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4S
 tack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"[] 
  []
 
-[472]
-Overfull \hbox (368.13902pt too wide) in paragraph at lines 17481--17481
+[469]
+Overfull \hbox (368.13902pt too wide) in paragraph at lines 17484--17484
  []    \EU1/lmtt/m/n/6 export JAVA_OPTS="-Djetty.version=7.5.4 -Djetty.version.
 date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIP
 v4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"[] 
  []
 
 
-Overfull \hbox (71.18802pt too wide) in paragraph at lines 17496--17496
+Overfull \hbox (71.18802pt too wide) in paragraph at lines 17499--17499
  []\EU1/lmtt/m/n/6 <!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Conf
 igure//EN" "http://jetty.mortbay.org/configure.dtd">[] 
  []
 
 
-Overfull \hbox (1182.04051pt too wide) in paragraph at lines 17500--17500
+Overfull \hbox (1182.04051pt too wide) in paragraph at lines 17503--17503
  []    \EU1/lmtt/m/n/6 <Set name="extraClasspath"><SystemProperty name="jetty.h
 ome" />/lib/jetty-server-<SystemProperty name="jetty.version" />.v<SystemProper
 ty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/je
@@ -4770,84 +4789,84 @@ emProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" /
  []
 
 
-Overfull \hbox (29.84793pt too wide) in paragraph at lines 17529--17535
+Overfull \hbox (29.84793pt too wide) in paragraph at lines 17532--17538
 []\EU1/LinuxLibertineO(0)/m/n/9 Management of databases in Jetty is done via th
 e file \EU1/lmtt/m/n/9 $JETTY_HOME/etc/jetty.xml\EU1/LinuxLibertineO(0)/m/n/9 .
 
  []
 
 
-Overfull \hbox (23.41896pt too wide) in paragraph at lines 17529--17535
+Overfull \hbox (23.41896pt too wide) in paragraph at lines 17532--17538
 \EU1/LinuxLibertineO(0)/m/n/9 Edit \EU1/lmtt/m/n/9 jetty.xml \EU1/LinuxLibertin
 eO(0)/m/n/9 and insert the following text within the root element \EU1/lmtt/m/n
 /9 <Configure>
  []
 
 
-Overfull \hbox (42.74695pt too wide) in paragraph at lines 17529--17535
+Overfull \hbox (42.74695pt too wide) in paragraph at lines 17532--17538
 \EU1/LinuxLibertineO(0)/m/n/9 to specify the data pool for your data source. Be
  sure to pass in value \EU1/lmtt/m/n/9 jdbc/LiferayPool
  []
 
-[473]
-Overfull \hbox (2.09993pt too wide) in paragraph at lines 17558--17563
+[470]
+Overfull \hbox (2.09993pt too wide) in paragraph at lines 17561--17566
 \EU1/LinuxLibertineO(0)/m/n/9 those classes at runtime. Your \EU1/lmtt/m/n/9 $J
 ETTY_HOME/etc/start.config \EU1/LinuxLibertineO(0)/m/n/9 file should
  []
 
 
-Overfull \hbox (94.53796pt too wide) in paragraph at lines 17583--17589
+Overfull \hbox (94.53796pt too wide) in paragraph at lines 17586--17592
 []\EU1/LinuxLibertineO(0)/m/n/9 Management of mail sessions in Jetty is done vi
 a the configuration file \EU1/lmtt/m/n/9 $JETTY_HOME/etc/jetty.xml\EU1/LinuxLib
 ertineO(0)/m/n/9 .
  []
 
 
-Overfull \hbox (12.629pt too wide) in paragraph at lines 17583--17589
+Overfull \hbox (12.629pt too wide) in paragraph at lines 17586--17592
 \EU1/LinuxLibertineO(0)/m/n/9 Edit \EU1/lmtt/m/n/9 jetty.xml \EU1/LinuxLibertin
 eO(0)/m/n/9 and insert the following text within the root element \EU1/lmtt/m/n
 /9 <Configure>
  []
 
-[474]
-Overfull \hbox (0.92615pt too wide) in paragraph at lines 17608--17608
+[471]
+Overfull \hbox (0.92615pt too wide) in paragraph at lines 17611--17611
 []                    \EU1/lmtt/m/n/6 <Put name="mail.smtp.socketFactory.class"
 >javax.net.ssl.SSLSocketFactory</Put>[] 
  []
 
-[475]
-Overfull \hbox (14.47699pt too wide) in paragraph at lines 17668--17670
+[472]
+Overfull \hbox (14.47699pt too wide) in paragraph at lines 17671--17673
 \EU1/LinuxLibertineO(0)/m/n/9 Liferay can be deployed as an exploded web archiv
 e within \EU1/lmtt/m/n/9 $JETTY_HOME/webapps\EU1/LinuxLibertineO(0)/m/n/9 . 
  []
 
 
-Overfull \hbox (6.56793pt too wide) in paragraph at lines 17673--17677
+Overfull \hbox (6.56793pt too wide) in paragraph at lines 17676--17680
 []\EU1/LinuxLibertineO(0)/m/n/9 If you already have an application folder \EU1/
 lmtt/m/n/9 $JETTY_HOME/webapps/root\EU1/LinuxLibertineO(0)/m/n/9 , delete
  []
 
 
-Overfull \hbox (52.55196pt too wide) in paragraph at lines 17677--17680
+Overfull \hbox (52.55196pt too wide) in paragraph at lines 17680--17683
 []\EU1/LinuxLibertineO(0)/m/n/9 Then extract the contents of the Liferay portal
  \EU1/lmtt/m/n/9 .war \EU1/LinuxLibertineO(0)/m/n/9 file into \EU1/lmtt/m/n/9 $
 JETTY_HOME/webapps/root\EU1/LinuxLibertineO(0)/m/n/9 . 
  []
 
 
-Overfull \hbox (40.597pt too wide) in paragraph at lines 17691--17695
+Overfull \hbox (40.597pt too wide) in paragraph at lines 17694--17698
 \EU1/LinuxLibertineO(0)/m/n/9 on server startup. If you want to re-run the wiza
 rd, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=true
  []
 
 
-Overfull \hbox (71.74399pt too wide) in paragraph at lines 17708--17712
+Overfull \hbox (71.74399pt too wide) in paragraph at lines 17711--17715
 []\EU1/LinuxLibertineO(0)/m/n/9 To start the server without triggering the setu
 p wizard, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=false
  []
 
 
-Overfull \hbox (46.97798pt too wide) in paragraph at lines 17708--17712
+Overfull \hbox (46.97798pt too wide) in paragraph at lines 17711--17715
 \EU1/LinuxLibertineO(0)/m/n/9 in your properties (e.g. \EU1/lmtt/m/n/9 portal-s
 etup-wizard.properties \EU1/LinuxLibertineO(0)/m/n/9 or \EU1/lmtt/m/n/9 portal-
 ext.properties
@@ -4855,226 +4874,226 @@ ext.properties
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 17723--17724
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 17726--17727
 [][] 
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 17725--17728
+Underfull \hbox (badness 4001) in paragraph at lines 17728--17731
 [][]\EU1/LinuxLibertineO(0)/m/n/9 Property values in \EU1/lmtt/m/n/9 portal-set
 up-wizard.properties
  []
 
 
-Overfull \hbox (2.67099pt too wide) in paragraph at lines 17736--17738
+Overfull \hbox (2.67099pt too wide) in paragraph at lines 17739--17741
 []\EU1/LinuxLibertineO(0)/m/n/9 Start Liferay Portal by executing \EU1/lmtt/m/n
 /9 run.bat \EU1/LinuxLibertineO(0)/m/n/9 (Windows) or \EU1/lmtt/m/n/9 run.sh \E
 U1/LinuxLibertineO(0)/m/n/9 (Unix/Linux)
  []
 
-[476]
-Overfull \hbox (37.67096pt too wide) in paragraph at lines 17789--17792
+[473]
+Overfull \hbox (37.67096pt too wide) in paragraph at lines 17792--17795
 \EU1/LinuxLibertineO(0)/m/n/9 flicts with Liferay’s JARs. Remove the followin
 g files from \EU1/lmtt/m/n/9 $JBOSS_HOME/common/lib\EU1/LinuxLibertineO(0)/m/n/
 9 : 
  []
 
 
-Overfull \hbox (7.94197pt too wide) in paragraph at lines 17803--17805
+Overfull \hbox (7.94197pt too wide) in paragraph at lines 17806--17808
 []\EU1/LinuxLibertineO(0)/m/n/9 Comment out the blocks with the name \EU1/lmtt/
 m/n/9 HsqlDBRealm \EU1/LinuxLibertineO(0)/m/n/9 and \EU1/lmtt/m/n/9 JmsXARealm 
 \EU1/LinuxLibertineO(0)/m/n/9 around
  []
 
-[477]
-Overfull \hbox (10.288pt too wide) in paragraph at lines 17812--17814
+[474]
+Overfull \hbox (10.288pt too wide) in paragraph at lines 17815--17817
 []\EU1/LinuxLibertineO(0)/m/n/9 Remove the following files from \EU1/lmtt/m/n/9
  $JBOSS_HOME/../server/default/deploy\EU1/LinuxLibertineO(0)/m/n/9 : 
  []
 
 
-Overfull \hbox (30.31897pt too wide) in paragraph at lines 17815--17821
+Overfull \hbox (30.31897pt too wide) in paragraph at lines 17818--17824
 []\EU1/LinuxLibertineO(0)/m/n/9 /messaging ejb2-container-jboss-beans.xml ejb2-
 timer-service.xml ejb3-connections-
  []
 
 
-Overfull \hbox (11.96797pt too wide) in paragraph at lines 17815--17821
+Overfull \hbox (11.96797pt too wide) in paragraph at lines 17818--17824
 \EU1/LinuxLibertineO(0)/m/n/9 jboss-beans.xml ejb3-container-jboss-beans.xml ej
 b3-interceptors-aop.xml ejb3-
  []
 
 
-Overfull \hbox (22.45895pt too wide) in paragraph at lines 17815--17821
+Overfull \hbox (22.45895pt too wide) in paragraph at lines 17818--17824
 \EU1/LinuxLibertineO(0)/m/n/9 timerservice-jboss-beans.xml hsqldb-ds.xml jms-ra
 .rar mail-ra.rar mail-service.xml
  []
 
 
-Overfull \hbox (15.93404pt too wide) in paragraph at lines 17835--17838
+Overfull \hbox (15.93404pt too wide) in paragraph at lines 17838--17841
 []\EU1/LinuxLibertineO(0)/m/n/9 Navigate to \EU1/lmtt/m/n/9 $JBOSS_HOME/../serv
 er/default/deploy/ROOT.war \EU1/LinuxLibertineO(0)/m/n/9 and delete
  []
 
 
-Overfull \hbox (25.88121pt too wide) in paragraph at lines 17845--17847
+Overfull \hbox (25.88121pt too wide) in paragraph at lines 17848--17850
 []\EU1/LinuxLibertineO(0)/m/n/9 Create a portal-ext.properties file in \EU1/lmt
 t/m/n/9 $LIFERAY_HOME \EU1/LinuxLibertineO(0)/m/n/9 (one level above \EU1/lmtt/
 m/n/9 $JBOSS_HOME
  []
 
-[478]
-Overfull \hbox (2.97403pt too wide) in paragraph at lines 17886--17892
+[475]
+Overfull \hbox (2.97403pt too wide) in paragraph at lines 17889--17895
 []\EU1/LinuxLibertineO(0)/m/n/9 Create folder \EU1/lmtt/m/n/9 $JBOSS_HOME/modul
 es/com/liferay/portal/main \EU1/LinuxLibertineO(0)/m/n/9 and un-
  []
 
 
-Overfull \hbox (113.66203pt too wide) in paragraph at lines 17886--17892
+Overfull \hbox (113.66203pt too wide) in paragraph at lines 17889--17895
 \EU1/LinuxLibertineO(0)/m/n/9 Make sure the zip file’s jar files are extracte
 d into the \EU1/lmtt/m/n/9 $JBOSS_HOME/modules/com/liferay/portal/main
  []
 
 
-Overfull \hbox (138.44801pt too wide) in paragraph at lines 17892--17900
+Overfull \hbox (138.44801pt too wide) in paragraph at lines 17895--17903
 []\EU1/LinuxLibertineO(0)/m/n/9 Download your database driver \EU1/lmtt/m/n/9 .
 jar \EU1/LinuxLibertineO(0)/m/n/9 file and put it into the \EU1/lmtt/m/n/9 $JBO
 SS_HOME/modules/com/liferay/portal/main
  []
 
 
-Overfull \hbox (47.52702pt too wide) in paragraph at lines 17900--17903
+Overfull \hbox (47.52702pt too wide) in paragraph at lines 17903--17906
 []\EU1/LinuxLibertineO(0)/m/n/9 Create the file \EU1/lmtt/m/n/9 module.xml \EU1
 /LinuxLibertineO(0)/m/n/9 in the \EU1/lmtt/m/n/9 $JBOSS_HOME/modules/com/lifera
 y/portal/main
  []
 
-[479]
-Overfull \hbox (138.84702pt too wide) in paragraph at lines 17959--17962
+[476]
+Overfull \hbox (138.84702pt too wide) in paragraph at lines 17962--17965
 \EU1/LinuxLibertineO(0)/m/n/9 element \EU1/lmtt/m/n/9 <subsystem xmlns="urn:jbo
 ss:domain:web:1.0" default-virtual-server="default-host">\EU1/LinuxLibertineO(0
 )/m/n/9 . 
  []
 
 
-Overfull \hbox (25.18896pt too wide) in paragraph at lines 17969--17971
+Overfull \hbox (25.18896pt too wide) in paragraph at lines 17972--17974
 []\EU1/LinuxLibertineO(0)/m/n/9 Add a timeout for the deployment scanner by set
 ting \EU1/lmtt/m/n/9 deployment-timeout="120"
  []
 
 
-Overfull \hbox (232.61215pt too wide) in paragraph at lines 17974--17974
+Overfull \hbox (232.61215pt too wide) in paragraph at lines 17977--17977
  []        \EU1/lmtt/m/n/6 <deployment-scanner name="default" path="deployments
 " scan-enabled="true" scan-interval="5000" relative-to="jboss.server.base.dir" 
 deployment-timeout="120"/>[] 
  []
 
 
-Overfull \hbox (47.74821pt too wide) in paragraph at lines 17978--17981
+Overfull \hbox (47.74821pt too wide) in paragraph at lines 17981--17984
 []\EU1/LinuxLibertineO(0)/m/n/9 Add the following JAAS security domain to the s
 ecurity subsystem \EU1/lmtt/m/n/9 <security-domains>
  []
 
 
-Overfull \hbox (21.93102pt too wide) in paragraph at lines 17978--17981
+Overfull \hbox (21.93102pt too wide) in paragraph at lines 17981--17984
 \EU1/LinuxLibertineO(0)/m/n/9 defined in element \EU1/lmtt/m/n/9 <subsystem xml
 ns="urn:jboss:domain:security:1.0">\EU1/LinuxLibertineO(0)/m/n/9 . 
  []
 
 
-Overfull \hbox (28.70813pt too wide) in paragraph at lines 17985--17985
+Overfull \hbox (28.70813pt too wide) in paragraph at lines 17988--17988
  []            \EU1/lmtt/m/n/6 <login-module code="com.liferay.portal.security.
 jaas.PortalLoginModule" flag="required"/>[] 
  []
 
-[480]
-Overfull \hbox (27.18726pt too wide) in paragraph at lines 18026--18028
+[477]
+Overfull \hbox (27.18726pt too wide) in paragraph at lines 18029--18031
 []\EU1/LinuxLibertineO(0)/m/n/9 Then add the following \EU1/lmtt/m/n/9 JAVA_OPT
 S \EU1/LinuxLibertineO(0)/m/n/9 assignment one line above the \EU1/lmtt/m/n/9 :
 JAVA_OPTS_SET
  []
 
 
-Overfull \hbox (142.17216pt too wide) in paragraph at lines 18030--18030
+Overfull \hbox (142.17216pt too wide) in paragraph at lines 18033--18033
 []        \EU1/lmtt/m/n/6 set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Dja
 va.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 [] 
  []
 
 
-Overfull \hbox (138.74698pt too wide) in paragraph at lines 18040--18040
+Overfull \hbox (138.74698pt too wide) in paragraph at lines 18043--18043
  []    \EU1/lmtt/m/n/6 JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.p
 referIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m[] 
  []
 
-[481]
-Overfull \hbox (148.71405pt too wide) in paragraph at lines 18065--18065
+[478]
+Overfull \hbox (148.71405pt too wide) in paragraph at lines 18068--18068
  []\EU1/lmtt/m/n/6 <datasource jndi-name="java:/jdbc/LiferayPool" pool-name="Li
 ferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">[] 
 
  []
 
 
-Overfull \hbox (34.94495pt too wide) in paragraph at lines 18090--18093
+Overfull \hbox (34.94495pt too wide) in paragraph at lines 18093--18096
 []\EU1/LinuxLibertineO(0)/m/n/9 Then add your driver to the \EU1/lmtt/m/n/9 <dr
 ivers> \EU1/LinuxLibertineO(0)/m/n/9 element also found within the \EU1/lmtt/m/
 n/9 <datasources>
  []
 
 
-Overfull \hbox (163.41219pt too wide) in paragraph at lines 18106--18106
+Overfull \hbox (163.41219pt too wide) in paragraph at lines 18109--18109
 []            \EU1/lmtt/m/n/6 <datasource jndi-name="java:/jdbc/LiferayPool" po
 ol-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm
 ="true">[] 
  []
 
-[482] [483]
-Overfull \hbox (16.65704pt too wide) in paragraph at lines 18214--18219
+[479] [480]
+Overfull \hbox (16.65704pt too wide) in paragraph at lines 18217--18222
 \EU1/LinuxLibertineO(0)/m/n/9 wise, create a new folder \EU1/lmtt/m/n/9 $JBOSS_
 HOME/standalone/deployments/ROOT.war\EU1/LinuxLibertineO(0)/m/n/9 . 
  []
 
 
-Overfull \hbox (33.56197pt too wide) in paragraph at lines 18222--18228
+Overfull \hbox (33.56197pt too wide) in paragraph at lines 18225--18231
 []\EU1/LinuxLibertineO(0)/m/n/9 To trigger deployment of \EU1/lmtt/m/n/9 ROOT.w
 ar\EU1/LinuxLibertineO(0)/m/n/9 , create an empty file named \EU1/lmtt/m/n/9 RO
 OT.war.dodeploy
  []
 
 
-Overfull \hbox (4.12498pt too wide) in paragraph at lines 18222--18228
+Overfull \hbox (4.12498pt too wide) in paragraph at lines 18225--18231
 \EU1/LinuxLibertineO(0)/m/n/9 in your \EU1/lmtt/m/n/9 $JBOSS_HOME/standalone/de
 ployments/ \EU1/LinuxLibertineO(0)/m/n/9 folder. On startup, JBoss
  []
 
 
-Overfull \hbox (104.0651pt too wide) in paragraph at lines 18228--18236
+Overfull \hbox (104.0651pt too wide) in paragraph at lines 18231--18239
 []\EU1/LinuxLibertineO(0)/m/n/9 Remove \EU1/lmtt/m/n/9 eclipselink.jar \EU1/Lin
 uxLibertineO(0)/m/n/9 from \EU1/lmtt/m/n/9 $JBOSS_HOME/standalone/deployments/R
 OOT.war/WEB-INF/lib
  []
 
 
-Overfull \hbox (122.01898pt too wide) in paragraph at lines 18228--18236
+Overfull \hbox (122.01898pt too wide) in paragraph at lines 18231--18239
 \EU1/LinuxLibertineO(0)/m/n/9 vided in the \EU1/lmtt/m/n/9 eclipselink.jar\EU1/
 LinuxLibertineO(0)/m/n/9 . Note, JBoss 7.0.2 has a known issue []http://communi
 ty.jboss.org/thread/169944[]
  []
 
-[484]
-Overfull \hbox (40.597pt too wide) in paragraph at lines 18247--18251
+[481]
+Overfull \hbox (40.597pt too wide) in paragraph at lines 18250--18254
 \EU1/LinuxLibertineO(0)/m/n/9 on server startup. If you want to re-run the wiza
 rd, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=true
  []
 
 
-Overfull \hbox (71.74399pt too wide) in paragraph at lines 18264--18268
+Overfull \hbox (71.74399pt too wide) in paragraph at lines 18267--18271
 []\EU1/LinuxLibertineO(0)/m/n/9 To start the server without triggering the setu
 p wizard, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=false
  []
 
 
-Overfull \hbox (46.97798pt too wide) in paragraph at lines 18264--18268
+Overfull \hbox (46.97798pt too wide) in paragraph at lines 18267--18271
 \EU1/LinuxLibertineO(0)/m/n/9 in your properties (e.g. \EU1/lmtt/m/n/9 portal-s
 etup-wizard.properties \EU1/LinuxLibertineO(0)/m/n/9 or \EU1/lmtt/m/n/9 portal-
 ext.properties
@@ -5082,121 +5101,121 @@ ext.properties
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 18279--18280
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 18282--18283
 [][] 
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 18281--18284
+Underfull \hbox (badness 4001) in paragraph at lines 18284--18287
 [][]\EU1/LinuxLibertineO(0)/m/n/9 Property values in \EU1/lmtt/m/n/9 portal-set
 up-wizard.properties
  []
 
-[485]
-Overfull \hbox (46.10301pt too wide) in paragraph at lines 18315--18322
+[482]
+Overfull \hbox (46.10301pt too wide) in paragraph at lines 18318--18325
 \EU1/LinuxLibertineO(0)/m/n/9 mend you download a Liferay/Resin bundle from []h
 ttp://www.liferay.com/downloads/liferay-
  []
 
 
-Overfull \hbox (18.161pt too wide) in paragraph at lines 18323--18330
+Overfull \hbox (18.161pt too wide) in paragraph at lines 18326--18333
 \EU1/LinuxLibertineO(0)/m/n/9 file and Liferay Portal dependencies from []http:
 //www.liferay.com/downloads/liferay-
  []
 
 
-Overfull \hbox (76.717pt too wide) in paragraph at lines 18323--18330
+Overfull \hbox (76.717pt too wide) in paragraph at lines 18326--18333
 \EU1/LinuxLibertineO(0)/m/n/9 portal/additional-files[]. The Liferay \EU1/lmtt/
 m/n/9 .war \EU1/LinuxLibertineO(0)/m/n/9 file should be called \EU1/lmtt/m/n/9 
 liferay-portal-6.1.x-<date>.war
  []
 
 
-Overfull \hbox (72.00507pt too wide) in paragraph at lines 18323--18330
+Overfull \hbox (72.00507pt too wide) in paragraph at lines 18326--18333
 \EU1/LinuxLibertineO(0)/m/n/9 and the dependencies file should be called \EU1/l
 mtt/m/n/9 liferay-portal-dependencies-6.1.x-<date>.zip\EU1/LinuxLibertineO(0)/m
 /n/9 . 
  []
 
 
-Overfull \hbox (9.06693pt too wide) in paragraph at lines 18355--18359
+Overfull \hbox (9.06693pt too wide) in paragraph at lines 18358--18362
 []\EU1/LinuxLibertineO(0)/m/n/9 Go to \EU1/lmtt/m/n/9 $LIFERAY_SOURCE/lib/porta
 l \EU1/LinuxLibertineO(0)/m/n/9 and copy \EU1/lmtt/m/n/9 log4j.jar\EU1/LinuxLib
 ertineO(0)/m/n/9 , \EU1/lmtt/m/n/9 slf4j-api.jar
  []
 
 
-Overfull \hbox (0.83647pt too wide) in paragraph at lines 18361--18367
+Overfull \hbox (0.83647pt too wide) in paragraph at lines 18364--18370
 \EU1/LinuxLibertineO(0)/m/n/9 latest MySQL JDBC driver from []http://www.mysql.
 com/products/connector/[].
  []
 
-[486]
-Overfull \hbox (21.76097pt too wide) in paragraph at lines 18375--18380
+[483]
+Overfull \hbox (21.76097pt too wide) in paragraph at lines 18378--18383
 \EU1/LinuxLibertineO(0)/m/n/9 The primary file used in configuring your domain 
 is \EU1/lmtt/m/n/9 $RESIN_HOME/conf/resin.xml\EU1/LinuxLibertineO(0)/m/n/9 .
  []
 
-[487]
-Overfull \hbox (25.13797pt too wide) in paragraph at lines 18449--18453
+[484]
+Overfull \hbox (25.13797pt too wide) in paragraph at lines 18452--18456
 \EU1/LinuxLibertineO(0)/m/n/9 Resin, the server generates log files \EU1/lmtt/m
 /n/9 access\EU1/LinuxLibertineO(0)/m/n/9 , \EU1/lmtt/m/n/9 jvm-default \EU1/Lin
 uxLibertineO(0)/m/n/9 and \EU1/lmtt/m/n/9 watchdog-manager
  []
 
 
-Overfull \hbox (90.07695pt too wide) in paragraph at lines 18465--18471
+Overfull \hbox (90.07695pt too wide) in paragraph at lines 18468--18474
 []\EU1/LinuxLibertineO(0)/m/n/9 Management of databases in Resin is done via th
 e configuration file \EU1/lmtt/m/n/9 $RESIN_HOME/conf/resin.xml\EU1/LinuxLibert
 ineO(0)/m/n/9 .
  []
 
 
-Overfull \hbox (7.29822pt too wide) in paragraph at lines 18478--18478
+Overfull \hbox (7.29822pt too wide) in paragraph at lines 18481--18481
 []            \EU1/lmtt/m/n/6 <url>jdbc:mysql://localhost/lportal?useUnicode=tr
 ue&amp;characterEncoding=UTF-8</url>[] 
  []
 
-[488]
-Overfull \hbox (102.31395pt too wide) in paragraph at lines 18503--18510
+[485]
+Overfull \hbox (102.31395pt too wide) in paragraph at lines 18506--18513
 []\EU1/LinuxLibertineO(0)/m/n/9 Management of mail sessions in Resin is done vi
 a the configuration file \EU1/lmtt/m/n/9 $RESIN_HOME/conf/resin.xml\EU1/LinuxLi
 bertineO(0)/m/n/9 .
  []
 
-[489]
-Overfull \hbox (14.47699pt too wide) in paragraph at lines 18587--18589
+[486]
+Overfull \hbox (14.47699pt too wide) in paragraph at lines 18590--18592
 \EU1/LinuxLibertineO(0)/m/n/9 Liferay can be deployed as an exploded web archiv
 e within \EU1/lmtt/m/n/9 $RESIN_HOME/webapps\EU1/LinuxLibertineO(0)/m/n/9 . 
  []
 
 
-Overfull \hbox (6.41792pt too wide) in paragraph at lines 18592--18596
+Overfull \hbox (6.41792pt too wide) in paragraph at lines 18595--18599
 []\EU1/LinuxLibertineO(0)/m/n/9 If you already have an application folder \EU1/
 lmtt/m/n/9 $RESIN_HOME/webapps/ROOT\EU1/LinuxLibertineO(0)/m/n/9 , delete
  []
 
 
-Overfull \hbox (28.97496pt too wide) in paragraph at lines 18596--18599
+Overfull \hbox (28.97496pt too wide) in paragraph at lines 18599--18602
 []\EU1/LinuxLibertineO(0)/m/n/9 Extract the contents of the Liferay portal \EU1
 /lmtt/m/n/9 .war \EU1/LinuxLibertineO(0)/m/n/9 file into \EU1/lmtt/m/n/9 RESIN_
 HOME/webapps/ROOT\EU1/LinuxLibertineO(0)/m/n/9 .
  []
 
-[490]
-Overfull \hbox (42.097pt too wide) in paragraph at lines 18634--18638
+[487]
+Overfull \hbox (42.097pt too wide) in paragraph at lines 18637--18641
 \EU1/LinuxLibertineO(0)/m/n/9 on server start up. If you want to re-run the wiz
 ard, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=true
  []
 
 
-Overfull \hbox (71.74399pt too wide) in paragraph at lines 18651--18655
+Overfull \hbox (71.74399pt too wide) in paragraph at lines 18654--18658
 []\EU1/LinuxLibertineO(0)/m/n/9 To start the server without triggering the setu
 p wizard, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=false
  []
 
 
-Overfull \hbox (46.97798pt too wide) in paragraph at lines 18651--18655
+Overfull \hbox (46.97798pt too wide) in paragraph at lines 18654--18658
 \EU1/LinuxLibertineO(0)/m/n/9 in your properties (e.g. \EU1/lmtt/m/n/9 portal-s
 etup-wizard.properties \EU1/LinuxLibertineO(0)/m/n/9 or \EU1/lmtt/m/n/9 portal-
 ext.properties
@@ -5204,64 +5223,64 @@ ext.properties
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 18666--18667
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 18669--18670
 [][] 
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 18668--18671
+Underfull \hbox (badness 4001) in paragraph at lines 18671--18674
 [][]\EU1/LinuxLibertineO(0)/m/n/9 Property values in \EU1/lmtt/m/n/9 portal-set
 up-wizard.properties
  []
 
 
-Overfull \hbox (21.39699pt too wide) in paragraph at lines 18677--18679
+Overfull \hbox (21.39699pt too wide) in paragraph at lines 18680--18682
 []\EU1/LinuxLibertineO(0)/m/n/9 Start Liferay Portal by executing your \EU1/lmt
 t/m/n/9 run.bat \EU1/LinuxLibertineO(0)/m/n/9 (Windows) or \EU1/lmtt/m/n/9 run.
 sh \EU1/LinuxLibertineO(0)/m/n/9 (Unix/Linux)
  []
 
-[491]
-Overfull \hbox (53.23102pt too wide) in paragraph at lines 18699--18706
+[488]
+Overfull \hbox (53.23102pt too wide) in paragraph at lines 18702--18709
 \EU1/LinuxLibertineO(0)/m/n/9 mend you download a Liferay/Tomcat bundle from []
 http://www.liferay.com/downloads/liferay-
  []
 
 
-Overfull \hbox (18.161pt too wide) in paragraph at lines 18707--18714
+Overfull \hbox (18.161pt too wide) in paragraph at lines 18710--18717
 \EU1/LinuxLibertineO(0)/m/n/9 file and Liferay Portal dependencies from []http:
 //www.liferay.com/downloads/liferay-
  []
 
 
-Overfull \hbox (76.717pt too wide) in paragraph at lines 18707--18714
+Overfull \hbox (76.717pt too wide) in paragraph at lines 18710--18717
 \EU1/LinuxLibertineO(0)/m/n/9 portal/additional-files[]. The Liferay \EU1/lmtt/
 m/n/9 .war \EU1/LinuxLibertineO(0)/m/n/9 file should be called \EU1/lmtt/m/n/9 
 liferay-portal-6.1.x-<date>.war
  []
 
 
-Overfull \hbox (72.00507pt too wide) in paragraph at lines 18707--18714
+Overfull \hbox (72.00507pt too wide) in paragraph at lines 18710--18717
 \EU1/LinuxLibertineO(0)/m/n/9 and the dependencies file should be called \EU1/l
 mtt/m/n/9 liferay-portal-dependencies-6.1.x-<date>.zip\EU1/LinuxLibertineO(0)/m
 /n/9 . 
  []
 
 
-Overfull \hbox (0.91296pt too wide) in paragraph at lines 18739--18742
+Overfull \hbox (0.91296pt too wide) in paragraph at lines 18742--18745
 []\EU1/LinuxLibertineO(0)/m/n/9 Copy the following jars from \EU1/lmtt/m/n/9 $L
 IFERAY_SOURCE/lib/development \EU1/LinuxLibertineO(0)/m/n/9 to your
  []
 
-[492]
-Overfull \hbox (69.75993pt too wide) in paragraph at lines 18762--18764
+[489]
+Overfull \hbox (69.75993pt too wide) in paragraph at lines 18765--18767
 []\EU1/LinuxLibertineO(0)/m/n/9 Copy the following jar from \EU1/lmtt/m/n/9 $LI
 FERAY_SOURCE/lib/portal \EU1/LinuxLibertineO(0)/m/n/9 to your \EU1/lmtt/m/n/9 $
 TOMCAT_HOME/lib/ext
  []
 
 
-Overfull \hbox (53.13799pt too wide) in paragraph at lines 18771--18774
+Overfull \hbox (53.13799pt too wide) in paragraph at lines 18774--18777
 []\EU1/LinuxLibertineO(0)/m/it/9 Note: \EU1/LinuxLibertineO(0)/m/n/9 Tomcat 6 u
 sers should \EU1/LinuxLibertineO(0)/m/it/9 not \EU1/LinuxLibertineO(0)/m/n/9 co
 py the \EU1/lmtt/m/n/9 ccpp.jar \EU1/LinuxLibertineO(0)/m/n/9 file into their \
@@ -5269,180 +5288,180 @@ EU1/lmtt/m/n/9 $TOMCAT_HOME/lib/ext
  []
 
 
-Overfull \hbox (0.91296pt too wide) in paragraph at lines 18778--18782
+Overfull \hbox (0.91296pt too wide) in paragraph at lines 18781--18785
 []\EU1/LinuxLibertineO(0)/m/n/9 Copy the following jars from \EU1/lmtt/m/n/9 $L
 IFERAY_SOURCE/lib/development \EU1/LinuxLibertineO(0)/m/n/9 to your
  []
 
 
-Overfull \hbox (24.19014pt too wide) in paragraph at lines 18778--18782
+Overfull \hbox (24.19014pt too wide) in paragraph at lines 18781--18785
 \EU1/lmtt/m/n/9 $TOMCAT_HOME/temp/liferay/com/liferay/portal/deploy/dependencie
 s
  []
 
 
-Overfull \hbox (51.81548pt too wide) in paragraph at lines 18794--18802
+Overfull \hbox (51.81548pt too wide) in paragraph at lines 18797--18805
 \EU1/LinuxLibertineO(0)/m/n/9 download the latest MySQL JDBC driver from []http
 ://www.mysql.com/products/connector/[].
  []
 
 
-Overfull \hbox (120.88797pt too wide) in paragraph at lines 18802--18807
+Overfull \hbox (120.88797pt too wide) in paragraph at lines 18805--18810
 \EU1/LinuxLibertineO(0)/m/n/9 Liferay manually. You may find this .jar here: []
 http://www.oracle.com/technetwork/java/javaee/jta/index.html[].
  []
 
-[493]
-Overfull \hbox (374.75027pt too wide) in paragraph at lines 18850--18850
+[490]
+Overfull \hbox (374.75027pt too wide) in paragraph at lines 18853--18853
 []    \EU1/lmtt/m/n/6 set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF8 -Djava.ne
 t.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CL
 EAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"[] 
  []
 
 
-Overfull \hbox (258.99228pt too wide) in paragraph at lines 18854--18854
+Overfull \hbox (258.99228pt too wide) in paragraph at lines 18857--18857
 []    \EU1/lmtt/m/n/6 JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.c
 atalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=
 GMT -Xmx1024m -XX:MaxPermSize=256m"[] 
  []
 
-[494]
-Overfull \hbox (69.06396pt too wide) in paragraph at lines 18902--18902
+[491]
+Overfull \hbox (69.06396pt too wide) in paragraph at lines 18905--18905
  []\EU1/lmtt/m/n/6 common.loader=${catalina.base}/lib,${catalina.base}/lib/*.ja
 r,${catalina.home}/lib,${catalina.home}/lib/*.jar[] 
  []
 
 
-Overfull \hbox (245.18604pt too wide) in paragraph at lines 18909--18909
+Overfull \hbox (245.18604pt too wide) in paragraph at lines 18912--18912
 []    \EU1/lmtt/m/n/6 common.loader=${catalina.base}/lib,${catalina.base}/lib/*
 .jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,$
 {catalina.home}/lib/ext/*.jar[] 
  []
 
 
-Overfull \hbox (46.54219pt too wide) in paragraph at lines 18918--18922
+Overfull \hbox (46.54219pt too wide) in paragraph at lines 18921--18925
 []\EU1/LinuxLibertineO(0)/m/n/9 To ensure consistent use of UTF-8 URI Encoding,
  edit \EU1/lmtt/m/n/9 $TOMCAT_HOME/conf/server.xml
  []
 
 
-Overfull \hbox (69.06407pt too wide) in paragraph at lines 18924--18924
+Overfull \hbox (69.06407pt too wide) in paragraph at lines 18927--18927
  []\EU1/lmtt/m/n/6 <Connector port="8080" protocol="HTTP/1.1" connectionTimeout
 ="20000" redirectPort="8443" URIEncoding="UTF-8" />[] 
  []
 
 
-Overfull \hbox (30.39093pt too wide) in paragraph at lines 18927--18929
+Overfull \hbox (30.39093pt too wide) in paragraph at lines 18930--18932
 []\EU1/LinuxLibertineO(0)/m/n/9 Make sure there is no \EU1/lmtt/m/n/9 support-c
 atalina.jar \EU1/LinuxLibertineO(0)/m/n/9 file in your \EU1/lmtt/m/n/9 $TOMCAT_
 HOME/webapps
  []
 
-[495]
-Overfull \hbox (145.68704pt too wide) in paragraph at lines 18968--18972
+[492]
+Overfull \hbox (145.68704pt too wide) in paragraph at lines 18971--18975
 []\EU1/LinuxLibertineO(0)/m/n/9 Create a mail session bound to \EU1/lmtt/m/n/9 
 mail/MailSession\EU1/LinuxLibertineO(0)/m/n/9 . Edit \EU1/lmtt/m/n/9 $TOMCAT_ H
 OME/conf/Catalina/localhost/ROOT.xml
  []
 
-[496]
-Overfull \hbox (23.66597pt too wide) in paragraph at lines 19043--19045
+[493]
+Overfull \hbox (23.66597pt too wide) in paragraph at lines 19046--19048
 \EU1/LinuxLibertineO(0)/m/n/9 We’ll deploy Liferay as an exploded web archive
  within your \EU1/lmtt/m/n/9 $TOMCAT_HOME/webapps
  []
 
 
-Overfull \hbox (84.42595pt too wide) in paragraph at lines 19048--19054
+Overfull \hbox (84.42595pt too wide) in paragraph at lines 19051--19057
 \EU1/LinuxLibertineO(0)/m/n/9 the default Tomcat home page. Then extract the Li
 feray \EU1/lmtt/m/n/9 .war \EU1/LinuxLibertineO(0)/m/n/9 file to \EU1/lmtt/m/n/
 9 $TOMCAT_HOME/webapps/ROOT\EU1/LinuxLibertineO(0)/m/n/9 . 
  []
 
 
-Overfull \hbox (40.597pt too wide) in paragraph at lines 19065--19069
+Overfull \hbox (40.597pt too wide) in paragraph at lines 19068--19072
 \EU1/LinuxLibertineO(0)/m/n/9 on server startup. If you want to re-run the wiza
 rd, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=true
  []
 
 
-Overfull \hbox (71.74399pt too wide) in paragraph at lines 19082--19086
+Overfull \hbox (71.74399pt too wide) in paragraph at lines 19085--19089
 []\EU1/LinuxLibertineO(0)/m/n/9 To start the server without triggering the setu
 p wizard, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=false
  []
 
 
-Overfull \hbox (46.97798pt too wide) in paragraph at lines 19082--19086
+Overfull \hbox (46.97798pt too wide) in paragraph at lines 19085--19089
 \EU1/LinuxLibertineO(0)/m/n/9 in your properties (e.g. \EU1/lmtt/m/n/9 portal-s
 etup-wizard.properties \EU1/LinuxLibertineO(0)/m/n/9 or \EU1/lmtt/m/n/9 portal-
 ext.properties
  []
 
-[497]
-Overfull \hbox (6.95598pt too wide) in paragraph at lines 19091--19094
+[494]
+Overfull \hbox (6.95598pt too wide) in paragraph at lines 19094--19097
 []\EU1/LinuxLibertineO(0)/m/n/9 The \EU1/lmtt/m/n/9 portal-setup-wizard.propert
 ies \EU1/LinuxLibertineO(0)/m/n/9 file the setup wizard creates should
  []
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 19097--19098
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 19100--19101
 [][] 
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 19099--19102
+Underfull \hbox (badness 4001) in paragraph at lines 19102--19105
 [][]\EU1/LinuxLibertineO(0)/m/n/9 Property values in \EU1/lmtt/m/n/9 portal-set
 up-wizard.properties
  []
 
 
-Overfull \hbox (89.94394pt too wide) in paragraph at lines 19110--19112
+Overfull \hbox (89.94394pt too wide) in paragraph at lines 19113--19115
 []\EU1/LinuxLibertineO(0)/m/n/9 Start Tomcat by executing \EU1/lmtt/m/n/9 $TOMC
 AT_HOME/bin/startup.bat \EU1/LinuxLibertineO(0)/m/n/9 or \EU1/lmtt/m/n/9 $TOMCA
 T_HOME/bin/startup.sh\EU1/LinuxLibertineO(0)/m/n/9 . 
  []
 
 
-Overfull \hbox (110.40126pt too wide) in paragraph at lines 19138--19141
+Overfull \hbox (110.40126pt too wide) in paragraph at lines 19141--19144
 \EU1/LinuxLibertineO(0)/m/n/9 available Liferay-JOnAS bundle, which can be down
 loaded from []http://www.liferay.com/ja/downloads/liferay-
  []
 
-[498]
-Overfull \hbox (75.40399pt too wide) in paragraph at lines 19175--19179
+[495]
+Overfull \hbox (75.40399pt too wide) in paragraph at lines 19178--19182
 \EU1/LinuxLibertineO(0)/m/n/9 tion Guide, found at []http://jonas.ow2.org/JONAS
 _5_2_2/doc/doc-en/html/configuration_guide.html[]. 
  []
 
-[499] [500] [501] [502]
-Overfull \hbox (5.87802pt too wide) in paragraph at lines 19441--19445
+[496] [497] [498] [499]
+Overfull \hbox (5.87802pt too wide) in paragraph at lines 19444--19448
 []\EU1/LinuxLibertineO(0)/m/n/9 Copy the \EU1/lmtt/m/n/9 .jar \EU1/LinuxLiberti
 neO(0)/m/n/9 files from \EU1/lmtt/m/n/9 liferay-portal-dependencies-6.1.x-<date
 >/
  []
 
 
-Overfull \hbox (120.00412pt too wide) in paragraph at lines 19481--19485
+Overfull \hbox (120.00412pt too wide) in paragraph at lines 19484--19488
 \EU1/LinuxLibertineO(0)/m/n/9 eray. For example, if your domain location is \EU
 1/lmtt/m/n/9 /Oracle/Middleware/user_projects/domains/base_domain\EU1/LinuxLibe
 rtineO(0)/m/n/9 ,
  []
 
-[503]
-Overfull \hbox (18.161pt too wide) in paragraph at lines 19489--19496
+[500]
+Overfull \hbox (18.161pt too wide) in paragraph at lines 19492--19499
 \EU1/LinuxLibertineO(0)/m/n/9 file and Liferay Portal dependencies from []http:
 //www.liferay.com/downloads/liferay-
  []
 
 
-Overfull \hbox (76.717pt too wide) in paragraph at lines 19489--19496
+Overfull \hbox (76.717pt too wide) in paragraph at lines 19492--19499
 \EU1/LinuxLibertineO(0)/m/n/9 portal/additional-files[]. The Liferay \EU1/lmtt/
 m/n/9 .war \EU1/LinuxLibertineO(0)/m/n/9 file should be called \EU1/lmtt/m/n/9 
 liferay-portal-6.1.x-<date>.war
  []
 
 
-Overfull \hbox (72.00507pt too wide) in paragraph at lines 19489--19496
+Overfull \hbox (72.00507pt too wide) in paragraph at lines 19492--19499
 \EU1/LinuxLibertineO(0)/m/n/9 and the dependencies file should be called \EU1/l
 mtt/m/n/9 liferay-portal-dependencies-6.1.x-<date>.zip\EU1/LinuxLibertineO(0)/m
 /n/9 . 
@@ -5450,41 +5469,41 @@ mtt/m/n/9 liferay-portal-dependencies-6.1.x-<date>.zip\EU1/LinuxLibertineO(0)/m
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 19502--19503
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 19505--19506
 [][] 
  []
 
 
-Overfull \hbox (2.7482pt too wide) in paragraph at lines 19526--19530
+Overfull \hbox (2.7482pt too wide) in paragraph at lines 19529--19533
 []\EU1/LinuxLibertineO(0)/m/n/9 If WebLogic does not already have access to the
  JDBC driver for your database,
  []
 
-[504]
+[501]
 File: ../../images/02-weblogic-data-sources.png Graphic file (type QTm)
  <use  "../../images/02-weblogic-data-sources.png" >
 File: ../../images/02-weblogic-data-sources.png Graphic file (type QTm)
 
-<use  "../../images/02-weblogic-data-sources.png" > [505]
+<use  "../../images/02-weblogic-data-sources.png" > [502]
 File: ../../images/02-weblogic-mail-sessions.png Graphic file (type QTm)
 
 <use  "../../images/02-weblogic-mail-sessions.png" >
 File: ../../images/02-weblogic-mail-sessions.png Graphic file (type QTm)
 
-<use  "../../images/02-weblogic-mail-sessions.png" > [506] [507]
-Overfull \hbox (40.597pt too wide) in paragraph at lines 19691--19695
+<use  "../../images/02-weblogic-mail-sessions.png" > [503] [504]
+Overfull \hbox (40.597pt too wide) in paragraph at lines 19694--19698
 \EU1/LinuxLibertineO(0)/m/n/9 on server startup. If you want to re-run the wiza
 rd, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=true
  []
 
 
-Overfull \hbox (71.74399pt too wide) in paragraph at lines 19708--19712
+Overfull \hbox (71.74399pt too wide) in paragraph at lines 19711--19715
 []\EU1/LinuxLibertineO(0)/m/n/9 To start the server without triggering the setu
 p wizard, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=false
  []
 
 
-Overfull \hbox (46.97798pt too wide) in paragraph at lines 19708--19712
+Overfull \hbox (46.97798pt too wide) in paragraph at lines 19711--19715
 \EU1/LinuxLibertineO(0)/m/n/9 in your properties (e.g. \EU1/lmtt/m/n/9 portal-s
 etup-wizard.properties \EU1/LinuxLibertineO(0)/m/n/9 or \EU1/lmtt/m/n/9 portal-
 ext.properties
@@ -5492,43 +5511,43 @@ ext.properties
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 19723--19724
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 19726--19727
 [][] 
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 19725--19728
+Underfull \hbox (badness 4001) in paragraph at lines 19728--19731
 [][]\EU1/LinuxLibertineO(0)/m/n/9 Property values in \EU1/lmtt/m/n/9 portal-set
 up-wizard.properties
  []
 
-[508]
+[505]
 File: ../../images/02-weblogic-deployments.png Graphic file (type QTm)
  <use  "../../images/02-weblogic-deployments.png" >
 File: ../../images/02-weblogic-deployments.png Graphic file (type QTm)
 
-<use  "../../images/02-weblogic-deployments.png" > [509]
-Overfull \hbox (111.68613pt too wide) in paragraph at lines 19792--19795
+<use  "../../images/02-weblogic-deployments.png" > [506]
+Overfull \hbox (111.68613pt too wide) in paragraph at lines 19795--19798
 []\EU1/LinuxLibertineO(0)/m/n/9 For example, if your domain location is \EU1/lm
 tt/m/n/9 /Oracle/Middleware/user_projects/domains/base_domain\EU1/LinuxLibertin
 eO(0)/m/n/9 ,
  []
 
 
-Overfull \hbox (18.161pt too wide) in paragraph at lines 19799--19806
+Overfull \hbox (18.161pt too wide) in paragraph at lines 19802--19809
 \EU1/LinuxLibertineO(0)/m/n/9 file and Liferay Portal dependencies from []http:
 //www.liferay.com/downloads/liferay-
  []
 
 
-Overfull \hbox (76.717pt too wide) in paragraph at lines 19799--19806
+Overfull \hbox (76.717pt too wide) in paragraph at lines 19802--19809
 \EU1/LinuxLibertineO(0)/m/n/9 portal/additional-files[]. The Liferay \EU1/lmtt/
 m/n/9 .war \EU1/LinuxLibertineO(0)/m/n/9 file should be called \EU1/lmtt/m/n/9 
 liferay-portal-6.1.x-<date>.war
  []
 
 
-Overfull \hbox (72.00507pt too wide) in paragraph at lines 19799--19806
+Overfull \hbox (72.00507pt too wide) in paragraph at lines 19802--19809
 \EU1/LinuxLibertineO(0)/m/n/9 and the dependencies file should be called \EU1/l
 mtt/m/n/9 liferay-portal-dependencies-6.1.x-<date>.zip\EU1/LinuxLibertineO(0)/m
 /n/9 . 
@@ -5536,28 +5555,28 @@ mtt/m/n/9 liferay-portal-dependencies-6.1.x-<date>.zip\EU1/LinuxLibertineO(0)/m
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 19815--19816
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 19818--19819
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19817--19821
+Underfull \hbox (badness 10000) in paragraph at lines 19820--19824
 [][]\EU1/LinuxLibertineO(0)/m/n/9 There is a known issue with the Sun and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19817--19821
+Underfull \hbox (badness 10000) in paragraph at lines 19820--19824
 \EU1/LinuxLibertineO(0)/m/n/9 JRockit JVMs bundled with WebLogic 10.3.2 (see
  []
 
 
-Underfull \hbox (badness 8113) in paragraph at lines 19817--19821
+Underfull \hbox (badness 8113) in paragraph at lines 19820--19824
 []\EU1/LinuxLibertineO(0)/m/n/9 http://bugs.sun.com/view_bug.do?bug_id=6795561[
 ]). To re-
  []
 
-[510]
-Overfull \hbox (2.7482pt too wide) in paragraph at lines 19838--19841
+[507]
+Overfull \hbox (2.7482pt too wide) in paragraph at lines 19841--19844
 []\EU1/LinuxLibertineO(0)/m/n/9 If WebLogic does not already have access to the
  JDBC driver for your database,
  []
@@ -5566,7 +5585,7 @@ File: ../../images/02-weblogic-10-3-data-sources.png Graphic file (type QTm)
 <use  "../../images/02-weblogic-10-3-data-sources.png" >
 File: ../../images/02-weblogic-10-3-data-sources.png Graphic file (type QTm)
 
-<use  "../../images/02-weblogic-10-3-data-sources.png" > [511]
+<use  "../../images/02-weblogic-10-3-data-sources.png" > [508]
 File: ../../images/02-creating-a-data-source-in-weblogic.png Graphic file (type
  QTm)
 
@@ -5574,38 +5593,38 @@ File: ../../images/02-creating-a-data-source-in-weblogic.png Graphic file (type
 File: ../../images/02-creating-a-data-source-in-weblogic.png Graphic file (type
  QTm)
 
-<use  "../../images/02-creating-a-data-source-in-weblogic.png" > [512]
+<use  "../../images/02-creating-a-data-source-in-weblogic.png" > [509]
 File: ../../images/02-weblogic-10-3-mail-sessions.png Graphic file (type QTm)
 
 <use  "../../images/02-weblogic-10-3-mail-sessions.png" >
 File: ../../images/02-weblogic-10-3-mail-sessions.png Graphic file (type QTm)
 
 <use  "../../images/02-weblogic-10-3-mail-sessions.png" >
-Overfull \hbox (6.18623pt too wide) in paragraph at lines 19925--19928
+Overfull \hbox (6.18623pt too wide) in paragraph at lines 19928--19931
 []\EU1/LinuxLibertineO(0)/m/n/9 Give it the name Liferay Mail and give it the J
 NDI name of \EU1/lmtt/m/n/9 mail/MailSession
  []
 
-[513] [514]
-Overfull \hbox (4.45099pt too wide) in paragraph at lines 19994--19996
+[510] [511]
+Overfull \hbox (4.45099pt too wide) in paragraph at lines 19997--19999
 \EU1/LinuxLibertineO(0)/m/n/9 This section provides instructions for deploying 
 Liferay to your application server
  []
 
 
-Overfull \hbox (40.597pt too wide) in paragraph at lines 20007--20011
+Overfull \hbox (40.597pt too wide) in paragraph at lines 20010--20014
 \EU1/LinuxLibertineO(0)/m/n/9 on server startup. If you want to re-run the wiza
 rd, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=true
  []
 
 
-Overfull \hbox (71.74399pt too wide) in paragraph at lines 20024--20028
+Overfull \hbox (71.74399pt too wide) in paragraph at lines 20027--20031
 []\EU1/LinuxLibertineO(0)/m/n/9 To start the server without triggering the setu
 p wizard, specify \EU1/lmtt/m/n/9 setup.wizard.enabled=false
  []
 
 
-Overfull \hbox (46.97798pt too wide) in paragraph at lines 20024--20028
+Overfull \hbox (46.97798pt too wide) in paragraph at lines 20027--20031
 \EU1/LinuxLibertineO(0)/m/n/9 in your properties (e.g. \EU1/lmtt/m/n/9 portal-s
 etup-wizard.properties \EU1/LinuxLibertineO(0)/m/n/9 or \EU1/lmtt/m/n/9 portal-
 ext.properties
@@ -5613,55 +5632,55 @@ ext.properties
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 20039--20040
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 20042--20043
 [][] 
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 20041--20044
+Underfull \hbox (badness 4001) in paragraph at lines 20044--20047
 [][]\EU1/LinuxLibertineO(0)/m/n/9 Property values in \EU1/lmtt/m/n/9 portal-set
 up-wizard.properties
  []
 
-[515]
+[512]
 File: ../../images/02-weblogic-10-3-deployments.png Graphic file (type QTm)
  <use  "../../images/02-weblogic-10-3-deployments.png" >
 File: ../../images/02-weblogic-10-3-deployments.png Graphic file (type QTm)
 
-<use  "../../images/02-weblogic-10-3-deployments.png" > [516]
+<use  "../../images/02-weblogic-10-3-deployments.png" > [513]
 File: ../../images/01-tip.png Graphic file (type QTm)
 
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 20095--20096
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 20098--20099
 [][] 
  []
 
 
-Underfull \hbox (badness 1521) in paragraph at lines 20097--20108
+Underfull \hbox (badness 1521) in paragraph at lines 20100--20111
 [][]\EU1/LinuxLibertineO(0)/bx/n/9 Note: \EU1/LinuxLibertineO(0)/m/n/9 After Li
 feray is installed, you may see an error
  []
 
 
-Underfull \hbox (badness 3601) in paragraph at lines 20097--20108
+Underfull \hbox (badness 3601) in paragraph at lines 20100--20111
 \EU1/LinuxLibertineO(0)/m/n/9 configured by default within WebLogic cannot comp
 ile a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20097--20108
+Underfull \hbox (badness 10000) in paragraph at lines 20100--20111
 \EU1/LinuxLibertineO(0)/m/n/9 folder may be \EU1/lmtt/m/n/9 [$WEBLOGIC_HOME]/jr
 ockit_160_05/jre/lib/ext\EU1/LinuxLibertineO(0)/m/n/9 ;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20097--20108
+Underfull \hbox (badness 10000) in paragraph at lines 20100--20111
 \EU1/LinuxLibertineO(0)/m/n/9 if your are using Sun JDK, this folder may be
  []
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 20118--20119
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 20121--20122
 [][] 
  []
 
@@ -5669,7 +5688,7 @@ File: ../../images/Websphere-8_html_5a8a0a4b.png Graphic file (type QTm)
 <use  "../../images/Websphere-8_html_5a8a0a4b.png" >
 File: ../../images/Websphere-8_html_5a8a0a4b.png Graphic file (type QTm)
 
-<use  "../../images/Websphere-8_html_5a8a0a4b.png" > [517]
+<use  "../../images/Websphere-8_html_5a8a0a4b.png" > [514]
 File: ../../images/Websphere-8_html_m3feb4e9f.png Graphic file (type QTm)
 
 <use  "../../images/Websphere-8_html_m3feb4e9f.png" >
@@ -5681,7 +5700,7 @@ File: ../../images/Websphere-8_html_1327271c.png Graphic file (type QTm)
 <use  "../../images/Websphere-8_html_1327271c.png" >
 File: ../../images/Websphere-8_html_1327271c.png Graphic file (type QTm)
 
-<use  "../../images/Websphere-8_html_1327271c.png" > [518]
+<use  "../../images/Websphere-8_html_1327271c.png" > [515]
 File: ../../images/Websphere-8_html_2eb820b.png Graphic file (type QTm)
 
 <use  "../../images/Websphere-8_html_2eb820b.png" >
@@ -5693,19 +5712,19 @@ File: ../../images/Websphere-8_html_m6b754c08.png Graphic file (type QTm)
 <use  "../../images/Websphere-8_html_m6b754c08.png" >
 File: ../../images/Websphere-8_html_m6b754c08.png Graphic file (type QTm)
 
-<use  "../../images/Websphere-8_html_m6b754c08.png" > [519]
+<use  "../../images/Websphere-8_html_m6b754c08.png" > [516]
 File: ../../images/Websphere-8_html_m2eef7200.png Graphic file (type QTm)
 
 <use  "../../images/Websphere-8_html_m2eef7200.png" >
 File: ../../images/Websphere-8_html_m2eef7200.png Graphic file (type QTm)
 
-<use  "../../images/Websphere-8_html_m2eef7200.png" > [520] [521]
+<use  "../../images/Websphere-8_html_m2eef7200.png" > [517] [518]
 File: ../../images/02-websphere-jdbc-providers.png Graphic file (type QTm)
 
 <use  "../../images/02-websphere-jdbc-providers.png" >
 File: ../../images/02-websphere-jdbc-providers.png Graphic file (type QTm)
 
-<use  "../../images/02-websphere-jdbc-providers.png" > [522] [523]
+<use  "../../images/02-websphere-jdbc-providers.png" > [519] [520]
 File: ../../images/02-modifying-data-source-properties-in-websphere.png Graphic
  file (type QTm)
 
@@ -5714,26 +5733,26 @@ File: ../../images/02-modifying-data-source-properties-in-websphere.png Graphic
  file (type QTm)
 
 <use  "../../images/02-modifying-data-source-properties-in-websphere.png" >
-Overfull \hbox (3.95801pt too wide) in paragraph at lines 20346--20349
+Overfull \hbox (3.95801pt too wide) in paragraph at lines 20349--20352
 []\EU1/LinuxLibertineO(0)/m/n/9 Select the user property and give it the value 
 of the user name to your database.
  []
 
 
-Overfull \hbox (373.19583pt too wide) in paragraph at lines 20349--20354
+Overfull \hbox (373.19583pt too wide) in paragraph at lines 20352--20357
 \EU1/LinuxLibertineO(0)/m/n/9 your database. For example, the MySQL URL would b
 e: \EU1/lmtt/m/n/9 jdbc:mysql://localhost/lportal?useUnicode=true&characterEnco
 ding=UTF-8&useFastDateParsing=false\EU1/LinuxLibertineO(0)/m/n/9 .
  []
 
-[524] [525]
-Overfull \hbox (54.12395pt too wide) in paragraph at lines 20415--20419
+[521] [522]
+Overfull \hbox (54.12395pt too wide) in paragraph at lines 20418--20422
 \EU1/LinuxLibertineO(0)/m/n/9 use WebSphere’s data source and mail session, c
 reate a file called \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
 
-Overfull \hbox (20.51494pt too wide) in paragraph at lines 20420--20423
+Overfull \hbox (20.51494pt too wide) in paragraph at lines 20423--20426
 []\EU1/LinuxLibertineO(0)/m/n/9 jdbc.default.jndi.name=jdbc/LiferayPool mail.se
 ssion.jndi.name=mail/MailSession
  []
@@ -5742,48 +5761,48 @@ File: ../../images/Websphere-8_html_m7420ff51.png Graphic file (type QTm)
 <use  "../../images/Websphere-8_html_m7420ff51.png" >
 File: ../../images/Websphere-8_html_m7420ff51.png Graphic file (type QTm)
 
-<use  "../../images/Websphere-8_html_m7420ff51.png" > [526] [527]
-Overfull \hbox (35.15002pt too wide) in paragraph at lines 20490--20493
+<use  "../../images/Websphere-8_html_m7420ff51.png" > [523] [524]
+Overfull \hbox (35.15002pt too wide) in paragraph at lines 20493--20496
 []\EU1/LinuxLibertineO(0)/bx/n/9 Note for WebLogic Users: \EU1/LinuxLibertineO(
 0)/m/n/9 WebLogic also requires that you modify the \EU1/lmtt/m/n/9 weblogic.xm
 l
  []
 
 
-Overfull \hbox (1.04pt too wide) in paragraph at lines 20498--20504
+Overfull \hbox (1.04pt too wide) in paragraph at lines 20501--20507
 []\EU1/LinuxLibertineO(0)/m/n/9 Change this so it matches the path you set in y
 our \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
-[528] [529
+[525] [526
 
 ]
 File: ../../images/01-add-user-screen.png Graphic file (type QTm)
  <use  "../../images/01-add-user-screen.png" >
 File: ../../images/01-add-user-screen.png Graphic file (type QTm)
 
-<use  "../../images/01-add-user-screen.png" > [530]
+<use  "../../images/01-add-user-screen.png" > [527]
 File: ../../images/01-user-account-editor.png Graphic file (type QTm)
 
 <use  "../../images/01-user-account-editor.png" >
 File: ../../images/01-user-account-editor.png Graphic file (type QTm)
 
-<use  "../../images/01-user-account-editor.png" > [531] [532] [533]
+<use  "../../images/01-user-account-editor.png" > [528] [529] [530]
 File: ../../images/01-add-organization-screen.png Graphic file (type QTm)
 
 <use  "../../images/01-add-organization-screen.png" >
 File: ../../images/01-add-organization-screen.png Graphic file (type QTm)
 
-<use  "../../images/01-add-organization-screen.png" > [534]
+<use  "../../images/01-add-organization-screen.png" > [531]
 File: ../../images/01-tip.png Graphic file (type QTm)
 
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 20763--20764
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 20766--20767
 [][] 
  []
 
-[535]
-Overfull \hbox (6.23985pt too wide) in paragraph at lines 20841--20847
+[532]
+Overfull \hbox (6.23985pt too wide) in paragraph at lines 20844--20850
 \EU1/LinuxLibertineO(0)/m/it/9 University Employees \EU1/LinuxLibertineO(0)/m/n
 /9 and \EU1/LinuxLibertineO(0)/m/it/9 Students and Teachers Collaboration Site 
 \EU1/LinuxLibertineO(0)/m/n/9 by adding
@@ -5795,40 +5814,40 @@ Tm)
 File: ../../images/server-configuration-new-user-group.png Graphic file (type Q
 Tm)
 
-<use  "../../images/server-configuration-new-user-group.png" > [536] [537]
+<use  "../../images/server-configuration-new-user-group.png" > [533] [534]
 File: ../../images/01-editing-a-user-group.png Graphic file (type QTm)
 
 <use  "../../images/01-editing-a-user-group.png" >
 File: ../../images/01-editing-a-user-group.png Graphic file (type QTm)
 
-<use  "../../images/01-editing-a-user-group.png" > [538]
+<use  "../../images/01-editing-a-user-group.png" > [535]
 File: ../../images/01-adding-members-to-user-group.png Graphic file (type QTm)
 
 <use  "../../images/01-adding-members-to-user-group.png" >
 File: ../../images/01-adding-members-to-user-group.png Graphic file (type QTm)
 
-<use  "../../images/01-adding-members-to-user-group.png" > [539] [540]
+<use  "../../images/01-adding-members-to-user-group.png" > [536] [537]
 File: ../../images/01-tip.png Graphic file (type QTm)
 
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 21037--21038
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 21040--21041
 [][] 
  []
 
-[541]
+[538]
 File: ../../images/user-group-site-template-selected.png Graphic file (type QTm
 )
  <use  "../../images/user-group-site-template-selected.png" >
 File: ../../images/user-group-site-template-selected.png Graphic file (type QTm
 )
 
-<use  "../../images/user-group-site-template-selected.png" > [542] [543]
+<use  "../../images/user-group-site-template-selected.png" > [539] [540]
 File: ../../images/01-roles-and-role-actions.png Graphic file (type QTm)
 
 <use  "../../images/01-roles-and-role-actions.png" >
 File: ../../images/01-roles-and-role-actions.png Graphic file (type QTm)
 
-<use  "../../images/01-roles-and-role-actions.png" > [544]
+<use  "../../images/01-roles-and-role-actions.png" > [541]
 File: ../../images/01-defining-permissions-on-a-role.png Graphic file (type QTm
 )
 
@@ -5836,7 +5855,7 @@ File: ../../images/01-defining-permissions-on-a-role.png Graphic file (type QTm
 File: ../../images/01-defining-permissions-on-a-role.png Graphic file (type QTm
 )
 
-<use  "../../images/01-defining-permissions-on-a-role.png" > [545]
+<use  "../../images/01-defining-permissions-on-a-role.png" > [542]
 File: ../../images/01-message-board-content-permissions.png Graphic file (type 
 QTm)
 
@@ -5844,7 +5863,7 @@ QTm)
 File: ../../images/01-message-board-content-permissions.png Graphic file (type 
 QTm)
 
-<use  "../../images/01-message-board-content-permissions.png" > [546] [547]
+<use  "../../images/01-message-board-content-permissions.png" > [543] [544]
 File: ../../images/user-group-manager-role.png Graphic file (type QTm)
 
 <use  "../../images/user-group-manager-role.png" >
@@ -5856,16 +5875,16 @@ File: ../../images/no-users-found.png Graphic file (type QTm)
 <use  "../../images/no-users-found.png" >
 File: ../../images/no-users-found.png Graphic file (type QTm)
 
-<use  "../../images/no-users-found.png" > [548] [549]
+<use  "../../images/no-users-found.png" > [545] [546]
 File: ../../images/01-tip.png Graphic file (type QTm)
 
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 21284--21285
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 21287--21288
 [][] 
  []
 
-[550] [551] [552]
-Overfull \hbox (1.04597pt too wide) in paragraph at lines 21420--21425
+[547] [548] [549]
+Overfull \hbox (1.04597pt too wide) in paragraph at lines 21423--21428
 \EU1/lmtt/m/n/9 mycompany.com \EU1/LinuxLibertineO(0)/m/n/9 but you might use \
 EU1/lmtt/m/n/9 mycompany-marketing.com \EU1/LinuxLibertineO(0)/m/n/9 for your e
 mail
@@ -5878,38 +5897,38 @@ File: ../../images/server-configuration-portal-settings-pages.png Graphic file
 (type QTm)
 
 <use  "../../images/server-configuration-portal-settings-pages.png" >
-Overfull \hbox (4.53502pt too wide) in paragraph at lines 21454--21459
+Overfull \hbox (4.53502pt too wide) in paragraph at lines 21457--21462
 \EU1/LinuxLibertineO(0)/m/n/9 The Authentication page has several tabs: General
 , LDAP, CAS, Facebook, NTLM,
  []
 
-[553] [554] [555]
-Overfull \hbox (11.774pt too wide) in paragraph at lines 21526--21544
+[550] [551] [552]
+Overfull \hbox (11.774pt too wide) in paragraph at lines 21529--21547
 \EU1/LinuxLibertineO(0)/m/n/9 tings in the database will be merged with the set
 tings in \EU1/lmtt/m/n/9 portal-ext.properties\EU1/LinuxLibertineO(0)/m/n/9 .
  []
 
-[556] [557] [558]
-Overfull \hbox (6.446pt too wide) in paragraph at lines 21675--21677
+[553] [554] [555]
+Overfull \hbox (6.446pt too wide) in paragraph at lines 21678--21680
 []\EU1/LinuxLibertineO(0)/m/n/9 /some/path/jdk1.5.0_11/jre/lib/security/cacerts
  -storepass changeit -noprompt
  []
 
 
-Overfull \hbox (55.85287pt too wide) in paragraph at lines 21708--21714
+Overfull \hbox (55.85287pt too wide) in paragraph at lines 21711--21717
 \EU1/LinuxLibertineO(0)/m/n/9 ways to identify the user. Generally, the default
  setting (\EU1/lmtt/m/n/9 objectClass=inetOrgPerson\EU1/LinuxLibertineO(0)/m/n/
 9 )
  []
 
-[559]
+[556]
 File: ../../images/server-configuration-testing-ldap-users.jpg Graphic file (ty
 pe QTm)
  <use  "../../images/server-configuration-testing-ldap-users.jpg" >
 File: ../../images/server-configuration-testing-ldap-users.jpg Graphic file (ty
 pe QTm)
 
-<use  "../../images/server-configuration-testing-ldap-users.jpg" > [560]
+<use  "../../images/server-configuration-testing-ldap-users.jpg" > [557]
 File: ../../images/server-configuration-mapping-ldap-groups.jpg Graphic file (t
 ype QTm)
 
@@ -5917,39 +5936,39 @@ ype QTm)
 File: ../../images/server-configuration-mapping-ldap-groups.jpg Graphic file (t
 ype QTm)
 
-<use  "../../images/server-configuration-mapping-ldap-groups.jpg" > [561]
-[562]
-Overfull \hbox (3.49101pt too wide) in paragraph at lines 21869--21873
+<use  "../../images/server-configuration-mapping-ldap-groups.jpg" > [558]
+[559]
+Overfull \hbox (3.49101pt too wide) in paragraph at lines 21872--21876
 []\EU1/LinuxLibertineO(0)/m/n/9 ldap.error.password.history=history ldap.error.
 password.not.changeable=not
  []
 
 
-Overfull \hbox (30.88402pt too wide) in paragraph at lines 21869--21873
+Overfull \hbox (30.88402pt too wide) in paragraph at lines 21872--21876
 \EU1/LinuxLibertineO(0)/m/n/9 allowed to change ldap.error.password.syntax=synt
 ax ldap.error.password.trivial=trivial
  []
 
-[563]
-Overfull \hbox (12.61928pt too wide) in paragraph at lines 21956--21959
+[560]
+Overfull \hbox (12.61928pt too wide) in paragraph at lines 21959--21962
 []\EU1/LinuxLibertineO(0)/m/n/9 If you are on a Windows system, replace \EU1/lm
 tt/m/n/9 $JAVA_HOME \EU1/LinuxLibertineO(0)/m/n/9 above with \EU1/lmtt/m/n/9 %J
 AVA_HOME%\EU1/LinuxLibertineO(0)/m/n/9 .
  []
 
-[564]
-Overfull \hbox (26.21599pt too wide) in paragraph at lines 22019--22032
+[561]
+Overfull \hbox (26.21599pt too wide) in paragraph at lines 22022--22035
 []\EU1/LinuxLibertineO(0)/m/n/9 http://profile.livedoor.com/username[] and Live
 Journal []http://username.livejournal.com[].
  []
 
-[565]
-Overfull \hbox (1.10204pt too wide) in paragraph at lines 22067--22072
+[562]
+Overfull \hbox (1.10204pt too wide) in paragraph at lines 22070--22075
 \EU1/LinuxLibertineO(0)/m/n/9 base of Sun’s System Access Manager product. Li
 feray integrates with OpenSSO,
  []
 
-[566] [567] [568] [569
+[563] [564] [565] [566
 
 ]
 File: ../../images/server-configuration-account-created-notification.png Graphi
@@ -5960,7 +5979,7 @@ File: ../../images/server-configuration-account-created-notification.png Graphi
 c file (type QTm)
 
 <use  "../../images/server-configuration-account-created-notification.png" >
-[570]
+[567]
 File: ../../images/server-configuration-definition-of-terms.png Graphic file (t
 ype QTm)
  <use  "../../images/server-configuration-definition-of-terms.png" >
@@ -5977,9 +5996,9 @@ hic file (type QTm)
 
 <use  "../../images/server-configuration-miscellaneous-display-settings.png" >
 
-LaTeX Warning: Float too large for page by 59.12697pt on input line 22254.
+LaTeX Warning: Float too large for page by 59.12697pt on input line 22257.
 
-[571] [572]
+[568] [569]
 File: ../../images/server-configuration-custom-fields-resource-list.png Graphic
  file (type QTm)
 
@@ -5989,10 +6008,10 @@ File: ../../images/server-configuration-custom-fields-resource-list.png Graphic
 
 <use  "../../images/server-configuration-custom-fields-resource-list.png" >
 
-LaTeX Warning: Float too large for page by 76.81793pt on input line 22280.
+LaTeX Warning: Float too large for page by 76.81793pt on input line 22283.
 
 
-Overfull \hbox (35.26698pt too wide) in paragraph at lines 22282--22289
+Overfull \hbox (35.26698pt too wide) in paragraph at lines 22285--22292
 \EU1/LinuxLibertineO(0)/m/n/9 can access custom fields programatically through 
 the \EU1/lmtt/m/n/9 <liferay-ui:custom-attribute
  []
@@ -6004,67 +6023,67 @@ File: ../../images/server-configuration-custom-fields-integrated.png Graphic fi
 le (type QTm)
 
 <use  "../../images/server-configuration-custom-fields-integrated.png" >
-Overfull \hbox (0.63203pt too wide) in paragraph at lines 22311--22314
+Overfull \hbox (0.63203pt too wide) in paragraph at lines 22314--22317
 \EU1/LinuxLibertineO(0)/m/n/9 The Plugins Configuration page contains tabs for 
 three types of plugins: portlets,
  []
 
-[573] [574] [575] [576] [577] [578]
-Overfull \hbox (7.75702pt too wide) in paragraph at lines 22533--22538
+[570] [571] [572] [573] [574] [575]
+Overfull \hbox (7.75702pt too wide) in paragraph at lines 22536--22541
 \EU1/LinuxLibertineO(0)/m/n/9 mode, you can configure Liferay to use it either 
 in your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
 
-Overfull \hbox (67.915pt too wide) in paragraph at lines 22533--22538
+Overfull \hbox (67.915pt too wide) in paragraph at lines 22536--22541
 \EU1/LinuxLibertineO(0)/m/n/9 file or from the control panel. To enable OpenOff
 ice/LibreOffice in your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
-[579]
-Overfull \hbox (34.22499pt too wide) in paragraph at lines 22583--22593
+[576]
+Overfull \hbox (34.22499pt too wide) in paragraph at lines 22586--22596
 \EU1/LinuxLibertineO(0)/m/n/9 ure Liferay to use ImageMagick. You can do this e
 ither in your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
 
-Overfull \hbox (32.185pt too wide) in paragraph at lines 22583--22593
+Overfull \hbox (32.185pt too wide) in paragraph at lines 22586--22596
 \EU1/LinuxLibertineO(0)/m/n/9 file or from the control panel. To enable ImageMa
 gick in your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
 
-Overfull \hbox (93.32028pt too wide) in paragraph at lines 22596--22596
+Overfull \hbox (93.32028pt too wide) in paragraph at lines 22599--22599
 []\EU1/lmtt/m/n/6 imagemagick.global.search.path[apple]=/opt/local/bin:/opt/loc
 al/share/ghostscript/fonts:/opt/local/share/fonts/urw-fonts[] 
  []
 
 
-Overfull \hbox (90.13428pt too wide) in paragraph at lines 22597--22597
+Overfull \hbox (90.13428pt too wide) in paragraph at lines 22600--22600
 []\EU1/lmtt/m/n/6 imagemagick.global.search.path[unix]=/usr/local/bin:/usr/loca
 l/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts[] 
  []
 
 
-Overfull \hbox (72.73901pt too wide) in paragraph at lines 22606--22615
+Overfull \hbox (72.73901pt too wide) in paragraph at lines 22609--22618
 []\EU1/LinuxLibertineO(0)/m/n/9 http://www.imagemagick.org/script/binary-releas
 es.php[]. See []http://issues.liferay.com/browse/LPS-
  []
 
-[580] [581] [582] [583] [584
+[577] [578] [579] [580] [581
 
 ]
 File: ../../images/ee-feature-web.png Graphic file (type QTm)
  <use  "../../images/ee-feature-web.png" >
 File: ../../images/ee-feature-web.png Graphic file (type QTm)
 
-<use  "../../images/ee-feature-web.png" > [585]
+<use  "../../images/ee-feature-web.png" > [582]
 File: ../../images/control-panel-audit-reports.png Graphic file (type QTm)
 
 <use  "../../images/control-panel-audit-reports.png" >
 File: ../../images/control-panel-audit-reports.png Graphic file (type QTm)
 
-<use  "../../images/control-panel-audit-reports.png" > [586] [587]
+<use  "../../images/control-panel-audit-reports.png" > [583] [584]
 File: ../../images/audit-list-events.png Graphic file (type QTm)
 
 <use  "../../images/audit-list-events.png" >
@@ -6077,7 +6096,7 @@ File: ../../images/audit-detail.png Graphic file (type QTm)
 File: ../../images/audit-detail.png Graphic file (type QTm)
 
 <use  "../../images/audit-detail.png" >
-Overfull \hbox (1.57336pt too wide) in paragraph at lines 22908--22915
+Overfull \hbox (1.57336pt too wide) in paragraph at lines 22911--22918
 \EU1/lmtt/m/n/9 audit.message.com.liferay.portal.model.Layout.VIEW \EU1/LinuxLi
 bertineO(0)/m/n/9 property set to
  []
@@ -6085,37 +6104,37 @@ bertineO(0)/m/n/9 property set to
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [588]
-[589]
+ [585]
+[586]
 File: ../../images/audit-unassign-search.png Graphic file (type QTm)
  <use  "../../images/audit-unassign-search.png" >
 File: ../../images/audit-unassign-search.png Graphic file (type QTm)
 
-<use  "../../images/audit-unassign-search.png" > [590]
+<use  "../../images/audit-unassign-search.png" > [587]
 File: ../../images/audit-unassign-detail.png Graphic file (type QTm)
 
 <use  "../../images/audit-unassign-detail.png" >
 File: ../../images/audit-unassign-detail.png Graphic file (type QTm)
 
-<use  "../../images/audit-unassign-detail.png" > [591] [592]
+<use  "../../images/audit-unassign-detail.png" > [588] [589]
 File: ../../images/maintaining-google-analytics.png Graphic file (type QTm)
 
 <use  "../../images/maintaining-google-analytics.png" >
 File: ../../images/maintaining-google-analytics.png Graphic file (type QTm)
 
-<use  "../../images/maintaining-google-analytics.png" > [593] [594] [595]
+<use  "../../images/maintaining-google-analytics.png" > [590] [591] [592]
 File: ../../images/maintaining-log-levels.png Graphic file (type QTm)
 
 <use  "../../images/maintaining-log-levels.png" >
 File: ../../images/maintaining-log-levels.png Graphic file (type QTm)
 
-<use  "../../images/maintaining-log-levels.png" > [596]
+<use  "../../images/maintaining-log-levels.png" > [593]
 File: ../../images/maintaining-add-log-category.png Graphic file (type QTm)
 
 <use  "../../images/maintaining-add-log-category.png" >
 File: ../../images/maintaining-add-log-category.png Graphic file (type QTm)
 
-<use  "../../images/maintaining-add-log-category.png" > [597]
+<use  "../../images/maintaining-add-log-category.png" > [594]
 File: ../../images/ee-feature-web.png Graphic file (type QTm)
 
 <use  "../../images/ee-feature-web.png" >
@@ -6124,94 +6143,94 @@ File: ../../images/ee-feature-web.png Graphic file (type QTm)
 <use  "../../images/ee-feature-web.png" >
 Underfull \vbox (badness 1546) has occurred while \output is active []
 
- [598]
-Overfull \hbox (42.49901pt too wide) in paragraph at lines 23323--23332
+ [595]
+Overfull \hbox (42.49901pt too wide) in paragraph at lines 23326--23335
 \EU1/LinuxLibertineO(0)/m/n/9 Liferay Home folder. This is the folder where you
 ’ve placed your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
-[599]
-Overfull \hbox (36.01001pt too wide) in paragraph at lines 23404--23408
+[596]
+Overfull \hbox (36.01001pt too wide) in paragraph at lines 23407--23411
 []\EU1/LinuxLibertineO(0)/m/n/9 Your patches are now installed. You can verify 
 this by using the \EU1/lmtt/m/n/9 ./patching-tool.sh
  []
 
-[600]
-Overfull \hbox (15.92302pt too wide) in paragraph at lines 23449--23452
+[597]
+Overfull \hbox (15.92302pt too wide) in paragraph at lines 23452--23455
 []\EU1/LinuxLibertineO(0)/m/n/9 If you want to remove all patches you’ve inst
 alled, use the \EU1/lmtt/m/n/9 ./patching-tool.sh
  []
 
 
-Overfull \hbox (5.18001pt too wide) in paragraph at lines 23469--23474
+Overfull \hbox (5.18001pt too wide) in paragraph at lines 23472--23477
 []\EU1/LinuxLibertineO(0)/m/n/9 The auto-discovery task creates a properties fi
 le called \EU1/lmtt/m/n/9 default.properties\EU1/LinuxLibertineO(0)/m/n/9 .
  []
 
-[601] [602]
-Overfull \hbox (33.04901pt too wide) in paragraph at lines 23589--23594
+[598] [599]
+Overfull \hbox (33.04901pt too wide) in paragraph at lines 23592--23597
 \EU1/LinuxLibertineO(0)/m/n/9 rest of this paragraph. If not, shut down your se
 rver, edit your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
-[603]
+[600]
 File: ../../images/17-convert-permissions-algorithm.png Graphic file (type QTm)
 
  <use  "../../images/17-convert-permissions-algorithm.png" >
 File: ../../images/17-convert-permissions-algorithm.png Graphic file (type QTm)
 
 
-<use  "../../images/17-convert-permissions-algorithm.png" > [604]
-Overfull \hbox (7.29813pt too wide) in paragraph at lines 23684--23684
+<use  "../../images/17-convert-permissions-algorithm.png" > [601]
+Overfull \hbox (7.29813pt too wide) in paragraph at lines 23687--23687
 []\EU1/lmtt/m/n/6 editor.wysiwyg.portal-web.docroot.html.portlet.message_boards
 .edit_message.bb_code.jsp=bbcode[] 
  []
 
 
-Overfull \hbox (35.97215pt too wide) in paragraph at lines 23694--23694
+Overfull \hbox (35.97215pt too wide) in paragraph at lines 23697--23697
 []\EU1/lmtt/m/n/6 editor.wysiwyg.portal-web.docroot.html.portlet.message_boards
 .edit_message.bb_code.jsp=ckeditor_bbcode[] 
  []
 
-[605] [606] [607] [608] [609] [610
+[602] [603] [604] [605] [606] [607
 
-] [611] [612] [613]
-Overfull \hbox (44.13199pt too wide) in paragraph at lines 24085--24092
+] [608] [609] [610]
+Overfull \hbox (44.13199pt too wide) in paragraph at lines 24088--24095
 []\EU1/LinuxLibertineO(0)/m/n/9 Now we’ll actually update each user in the sy
 stem to set his or her \EU1/lmtt/m/n/9 agreedToTermsOfUse
  []
 
-[614]
-Overfull \hbox (0.92618pt too wide) in paragraph at lines 24155--24155
+[611]
+Overfull \hbox (0.92618pt too wide) in paragraph at lines 24158--24158
 []\EU1/lmtt/m/n/6 <![CDATA[Packages.com.liferay.portal.kernel.workflow.Workflow
 StatusManagerUtil.updateStatus[] 
  []
 
 
-Overfull \hbox (50.8402pt too wide) in paragraph at lines 24156--24156
+Overfull \hbox (50.8402pt too wide) in paragraph at lines 24159--24159
 []    \EU1/lmtt/m/n/6 (Packages.com.liferay.portal.kernel.workflow.WorkflowCons
 tants.toStatus("approved"),workflowContext);]]>[] 
  []
 
-[615] [616]
+[612] [613]
 File: ../../images/13-new-liferay-project.png Graphic file (type QTm)
  <use  "../../images/13-new-liferay-project.png" >
 File: ../../images/13-new-liferay-project.png Graphic file (type QTm)
 
-<use  "../../images/13-new-liferay-project.png" > [617] [618]
+<use  "../../images/13-new-liferay-project.png" > [614] [615]
 File: ../../images/13-new-interface.png Graphic file (type QTm)
 
 <use  "../../images/13-new-interface.png" >
 File: ../../images/13-new-interface.png Graphic file (type QTm)
 
-<use  "../../images/13-new-interface.png" > [619]
-Overfull \hbox (16.828pt too wide) in paragraph at lines 24322--24327
+<use  "../../images/13-new-interface.png" > [616]
+Overfull \hbox (16.828pt too wide) in paragraph at lines 24325--24330
 []\EU1/LinuxLibertineO(0)/m/n/9 Next, create the implementation class. Right cl
 ick on the \EU1/lmtt/m/n/9 docroot/WEB-INF/src
  []
 
 
-Overfull \hbox (3.87997pt too wide) in paragraph at lines 24322--24327
+Overfull \hbox (3.87997pt too wide) in paragraph at lines 24325--24330
 \EU1/LinuxLibertineO(0)/m/n/9 folder and select \EU1/LinuxLibertineO(0)/m/it/9 
 New \EU1/LinuxLibertineO(0)/m/n/9 → \EU1/LinuxLibertineO(0)/m/it/9 Class\EU1/
 LinuxLibertineO(0)/m/n/9 . Create the interface in the \EU1/lmtt/m/n/9 com.life
@@ -6219,7 +6238,7 @@ ray.sample
  []
 
 
-Overfull \hbox (47.85097pt too wide) in paragraph at lines 24322--24327
+Overfull \hbox (47.85097pt too wide) in paragraph at lines 24325--24330
 \EU1/LinuxLibertineO(0)/m/n/9 package and name it \EU1/lmtt/m/n/9 ScriptUtilImp
 l\EU1/LinuxLibertineO(0)/m/n/9 . Be sure to select \EU1/lmtt/m/n/9 com.liferay.
 sample.ScripUtil
@@ -6230,38 +6249,38 @@ File: ../../images/13-new-class.png Graphic file (type QTm)
 File: ../../images/13-new-class.png Graphic file (type QTm)
 
 <use  "../../images/13-new-class.png" >
-Overfull \hbox (25.81622pt too wide) in paragraph at lines 24364--24369
+Overfull \hbox (25.81622pt too wide) in paragraph at lines 24367--24372
 \EU1/LinuxLibertineO(0)/m/n/9 bean definition which you’ll declare in an XML 
 file named \EU1/lmtt/m/n/9 applicationContext.xml\EU1/LinuxLibertineO(0)/m/n/9 
 .
  []
 
 
-Overfull \hbox (33.84805pt too wide) in paragraph at lines 24372--24372
+Overfull \hbox (33.84805pt too wide) in paragraph at lines 24375--24375
 []\EU1/lmtt/m/n/6 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.
 springframework.org/dtd/spring-beans.dtd">[] 
  []
 
-[620] [621]
-Overfull \hbox (20.35298pt too wide) in paragraph at lines 24383--24389
+[617] [618]
+Overfull \hbox (20.35298pt too wide) in paragraph at lines 24386--24392
 \EU1/LinuxLibertineO(0)/m/n/9 tener in our Hook to provide a \EU1/lmtt/m/n/9 Be
 anLocator\EU1/LinuxLibertineO(0)/m/n/9 . Open the \EU1/lmtt/m/n/9 docroot/WEB-I
 NF/web.xml
  []
 
 
-Overfull \hbox (96.50613pt too wide) in paragraph at lines 24392--24392
+Overfull \hbox (96.50613pt too wide) in paragraph at lines 24395--24395
 []\EU1/lmtt/m/n/6 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web 
 Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">[] 
  []
 
 
-Overfull \hbox (52.96417pt too wide) in paragraph at lines 24396--24396
+Overfull \hbox (52.96417pt too wide) in paragraph at lines 24399--24399
 []        \EU1/lmtt/m/n/6 <listener-class>com.liferay.portal.kernel.spring.cont
 ext.PortletContextLoaderListener</listener-class>[] 
  []
 
-[622] [623] [624
+[619] [620] [621
 
 ]
 File: ../../images/enterprise-configuration.png Graphic file (type QTm)
@@ -6269,64 +6288,64 @@ File: ../../images/enterprise-configuration.png Graphic file (type QTm)
 File: ../../images/enterprise-configuration.png Graphic file (type QTm)
 
 <use  "../../images/enterprise-configuration.png" >
-Overfull \hbox (1.10387pt too wide) in paragraph at lines 24518--24521
+Overfull \hbox (1.10387pt too wide) in paragraph at lines 24521--24524
 []\EU1/LinuxLibertineO(0)/m/n/9 Search should be configured for replication or 
 should use a separate search
  []
 
-[625] [626]
+[622] [623]
 File: ../../images/01-tip.png Graphic file (type QTm)
  <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 24546--24547
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 24549--24550
 [][] 
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 24548--24556
+Underfull \hbox (badness 1142) in paragraph at lines 24551--24559
 \EU1/LinuxLibertineO(0)/m/n/9 party software, such as Java EE application serve
 rs, HTTP
  []
 
 
-Overfull \hbox (2.398pt too wide) in paragraph at lines 24589--24592
+Overfull \hbox (2.398pt too wide) in paragraph at lines 24592--24595
 []\EU1/LinuxLibertineO(0)/m/n/9 Enabling a read-writer database is simple. In y
 our \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
-[627]
-Overfull \hbox (187.83821pt too wide) in paragraph at lines 24595--24595
+[624]
+Overfull \hbox (187.83821pt too wide) in paragraph at lines 24598--24598
 []\EU1/lmtt/m/n/6 jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true
 &characterEncoding=UTF-8&useFastDateParsing=false     jdbc.read.username=**your
  user name**[] 
  []
 
 
-Overfull \hbox (197.39621pt too wide) in paragraph at lines 24598--24598
+Overfull \hbox (197.39621pt too wide) in paragraph at lines 24601--24601
 []\EU1/lmtt/m/n/6 jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=tr
 ue&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.write.username=**y
 our user name**[] 
  []
 
-[628]
-Overfull \hbox (67.83215pt too wide) in paragraph at lines 24687--24687
+[625]
+Overfull \hbox (67.83215pt too wide) in paragraph at lines 24690--24690
 []\EU1/lmtt/m/n/6 jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=tr
 ue&characterEncoding=UTF-8&useFastDateParsing=false[] 
  []
 
 
-Overfull \hbox (126.24219pt too wide) in paragraph at lines 24691--24691
+Overfull \hbox (126.24219pt too wide) in paragraph at lines 24694--24694
 []\EU1/lmtt/m/n/6 jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&
 characterEncoding=UTF-8&useFastDateParsing=false     jdbc.one.username=[] 
  []
 
 
-Overfull \hbox (58.27414pt too wide) in paragraph at lines 24694--24694
+Overfull \hbox (58.27414pt too wide) in paragraph at lines 24697--24697
 []\EU1/lmtt/m/n/6 jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&
 characterEncoding=UTF-8&useFastDateParsing=false[] 
  []
 
 
-Overfull \hbox (10.159pt too wide) in paragraph at lines 24706--24710
+Overfull \hbox (10.159pt too wide) in paragraph at lines 24709--24713
 \EU1/LinuxLibertineO(0)/m/n/9 ters data into each instance one by one. If you�
 �re using the \EU1/lmtt/m/n/9 ManualShardSelector
  []
@@ -6339,16 +6358,16 @@ Tm)
 
 <use  "../../images/enterprise-sharding-portal-instance.png" >
 
-LaTeX Warning: Float too large for page by 33.04997pt on input line 24716.
+LaTeX Warning: Float too large for page by 33.04997pt on input line 24719.
 
-[629] [630] [631]
-Overfull \hbox (31.16202pt too wide) in paragraph at lines 24810--24815
+[626] [627] [628]
+Overfull \hbox (31.16202pt too wide) in paragraph at lines 24813--24818
 \EU1/LinuxLibertineO(0)/m/n/9 bound to the Liferay database. By default, docume
 nts are stored in a \EU1/lmtt/m/n/9 document_library
  []
 
 
-Overfull \hbox (20.69203pt too wide) in paragraph at lines 24816--24821
+Overfull \hbox (20.69203pt too wide) in paragraph at lines 24819--24824
 \EU1/LinuxLibertineO(0)/m/n/9 database. If, for example, you upload a presentat
 ion with the file name \EU1/lmtt/m/n/9 workflow.odp
  []
@@ -6357,10 +6376,10 @@ File: ../../images/enterprise-file-system-store.png Graphic file (type QTm)
 <use  "../../images/enterprise-file-system-store.png" >
 File: ../../images/enterprise-file-system-store.png Graphic file (type QTm)
 
-<use  "../../images/enterprise-file-system-store.png" > [632]
+<use  "../../images/enterprise-file-system-store.png" > [629]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [633]
+ [630]
 File: ../../images/enterprise-adv-file-system-store.png Graphic file (type QTm)
 
 
@@ -6368,21 +6387,21 @@ File: ../../images/enterprise-adv-file-system-store.png Graphic file (type QTm)
 File: ../../images/enterprise-adv-file-system-store.png Graphic file (type QTm)
 
 
-<use  "../../images/enterprise-adv-file-system-store.png" > [634] [635]
-Overfull \hbox (14.476pt too wide) in paragraph at lines 24932--24937
+<use  "../../images/enterprise-adv-file-system-store.png" > [631] [632]
+Overfull \hbox (14.476pt too wide) in paragraph at lines 24935--24940
 \EU1/LinuxLibertineO(0)/m/n/9 edit Jackrabbit’s configuration file. Instead, 
 find the section in \EU1/lmtt/m/n/9 portal.properties
  []
 
-[636]
-Overfull \hbox (13.20201pt too wide) in paragraph at lines 25000--25005
+[633]
+Overfull \hbox (13.20201pt too wide) in paragraph at lines 25003--25008
 \EU1/LinuxLibertineO(0)/m/n/9 your specifications, all you need to do is declar
 e them in \EU1/lmtt/m/n/9 portal-ext.properties\EU1/LinuxLibertineO(0)/m/n/9 : 
 
  []
 
 
-Overfull \hbox (9.047pt too wide) in paragraph at lines 25012--25014
+Overfull \hbox (9.047pt too wide) in paragraph at lines 25015--25017
 []\EU1/LinuxLibertineO(0)/m/n/9 Once you have these configured, set your store 
 implementation to the \EU1/lmtt/m/n/9 S3Store\EU1/LinuxLibertineO(0)/m/n/9 : 
  []
@@ -6391,145 +6410,145 @@ File: ../../images/ee-feature-web.png Graphic file (type QTm)
 <use  "../../images/ee-feature-web.png" >
 File: ../../images/ee-feature-web.png Graphic file (type QTm)
 
-<use  "../../images/ee-feature-web.png" > [637] [638]
-Overfull \hbox (10.121pt too wide) in paragraph at lines 25118--25124
+<use  "../../images/ee-feature-web.png" > [634] [635]
+Overfull \hbox (10.121pt too wide) in paragraph at lines 25121--25127
 \EU1/LinuxLibertineO(0)/m/n/9 edit \EU1/lmtt/m/n/9 catalina.sh \EU1/LinuxLibert
 ineO(0)/m/n/9 or \EU1/lmtt/m/n/9 catalina.bat \EU1/LinuxLibertineO(0)/m/n/9 and
  append the following to the \EU1/lmtt/m/n/9 $JAVA_OPTS
  []
 
-[639]
-Overfull \hbox (37.12901pt too wide) in paragraph at lines 25152--25156
+[636]
+Overfull \hbox (37.12901pt too wide) in paragraph at lines 25155--25159
 []\EU1/LinuxLibertineO(0)/m/n/9 Open or extract the plugin. Inside the plugin, 
 you’ll find a file called \EU1/lmtt/m/n/9 solr-spring.xml
  []
 
 
-Overfull \hbox (138.98616pt too wide) in paragraph at lines 25162--25162
+Overfull \hbox (138.98616pt too wide) in paragraph at lines 25165--25165
 []\EU1/lmtt/m/n/6 <bean id="com.liferay.portal.search.solr.server.BasicAuthSolr
 Server" class="com.liferay.portal.search.solr.server.BasicAuthSolrServer">[] 
  []
 
 
-Overfull \hbox (66.343pt too wide) in paragraph at lines 25171--25176
+Overfull \hbox (66.343pt too wide) in paragraph at lines 25174--25179
 []\EU1/LinuxLibertineO(0)/m/n/9 Next, extract the file \EU1/lmtt/m/n/9 schema.x
 ml \EU1/LinuxLibertineO(0)/m/n/9 from the plugin. It should be in the \EU1/lmtt
 /m/n/9 docroot/WEB-INF/conf
  []
 
 
-Overfull \hbox (88.79306pt too wide) in paragraph at lines 25177--25193
+Overfull \hbox (88.79306pt too wide) in paragraph at lines 25180--25196
 \EU1/LinuxLibertineO(0)/m/n/9 both of these files are found in the Solr archive
  in the \EU1/lmtt/m/n/9 solr-4.1.0/example/solr/collection1/conf
  []
 
 
-Overfull \hbox (6.62498pt too wide) in paragraph at lines 25177--25193
+Overfull \hbox (6.62498pt too wide) in paragraph at lines 25180--25196
 \EU1/LinuxLibertineO(0)/m/n/9 folder. Additional Solr configuration options, mo
 st importantly \EU1/lmtt/m/n/9 solrconfig.xml
  []
 
-[640]
-Overfull \hbox (71.52501pt too wide) in paragraph at lines 25231--25233
+[637]
+Overfull \hbox (71.52501pt too wide) in paragraph at lines 25234--25236
 []\EU1/LinuxLibertineO(0)/m/n/9 You can enable Cluster Link by setting the foll
 owing property in your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
 
-Overfull \hbox (31.68495pt too wide) in paragraph at lines 25245--25248
+Overfull \hbox (31.68495pt too wide) in paragraph at lines 25248--25251
 []\EU1/LinuxLibertineO(0)/m/n/9 If you have \EU1/lmtt/m/n/9 cluster.link.enable
 d=true \EU1/LinuxLibertineO(0)/m/n/9 but \EU1/lmtt/m/n/9 lucene.replicate.write
 =false\EU1/LinuxLibertineO(0)/m/n/9 ,
  []
 
 
-Overfull \hbox (23.45897pt too wide) in paragraph at lines 25249--25255
+Overfull \hbox (23.45897pt too wide) in paragraph at lines 25252--25258
 []\EU1/LinuxLibertineO(0)/m/n/9 Of course, \EU1/lmtt/m/n/9 cluster.link.enabled
 =true \EU1/LinuxLibertineO(0)/m/n/9 and \EU1/lmtt/m/n/9 lucene.replicate.write=
 true
  []
 
-[641]
-Overfull \hbox (75.002pt too wide) in paragraph at lines 25270--25275
+[638]
+Overfull \hbox (75.002pt too wide) in paragraph at lines 25273--25278
 []\EU1/LinuxLibertineO(0)/m/n/9 The Lucene configuration can be changed by modi
 fying values in your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
-[642]
-Overfull \hbox (1.66101pt too wide) in paragraph at lines 25309--25316
+[639]
+Overfull \hbox (1.66101pt too wide) in paragraph at lines 25312--25319
 []\EU1/LinuxLibertineO(0)/m/n/9 The next time Liferay is started, new tables ar
 e created in the Liferay database,
  []
 
 File: ../../images/01-tip.png Graphic file (type QTm)
 <use  "../../images/01-tip.png" >
-Overfull \hbox (6.76505pt too wide) in paragraph at lines 25319--25320
+Overfull \hbox (6.76505pt too wide) in paragraph at lines 25322--25323
 [][] 
  []
 
-[643] [644]
-Overfull \hbox (59.09598pt too wide) in paragraph at lines 25419--25423
+[640] [641]
+Overfull \hbox (59.09598pt too wide) in paragraph at lines 25422--25426
 []\EU1/LinuxLibertineO(0)/m/n/9 In your project, create a text file called \EU1
 /lmtt/m/n/9 portlet.properties \EU1/LinuxLibertineO(0)/m/n/9 in the \EU1/lmtt/m
 /n/9 docroot/WEB-INF/src
  []
 
 
-Overfull \hbox (34.111pt too wide) in paragraph at lines 25419--25423
+Overfull \hbox (34.111pt too wide) in paragraph at lines 25422--25426
 \EU1/LinuxLibertineO(0)/m/n/9 folder. This file can override properties in your
  portal just like \EU1/lmtt/m/n/9 portal-ext.properties\EU1/LinuxLibertineO(0)/
 m/n/9 .
  []
 
 
-Overfull \hbox (83.56299pt too wide) in paragraph at lines 25430--25447
+Overfull \hbox (83.56299pt too wide) in paragraph at lines 25433--25450
 \EU1/lmtt/m/n/9 WEB-INF/lib \EU1/LinuxLibertineO(0)/m/n/9 folder. The files you
  want are \EU1/lmtt/m/n/9 hibernate-clustered.xml\EU1/LinuxLibertineO(0)/m/n/9 
 , \EU1/lmtt/m/n/9 liferay-single-vm.xml\EU1/LinuxLibertineO(0)/m/n/9 ,
  []
 
 
-Overfull \hbox (4.373pt too wide) in paragraph at lines 25430--25447
+Overfull \hbox (4.373pt too wide) in paragraph at lines 25433--25450
 \EU1/LinuxLibertineO(0)/m/n/9 and \EU1/lmtt/m/n/9 liferay-multi-vm-clustered.xm
 l\EU1/LinuxLibertineO(0)/m/n/9 , and they’ll be in the \EU1/lmtt/m/n/9 /ehcac
 he \EU1/LinuxLibertineO(0)/m/n/9 folder
  []
 
 
-Overfull \hbox (46.30925pt too wide) in paragraph at lines 25448--25455
+Overfull \hbox (46.30925pt too wide) in paragraph at lines 25451--25458
 \EU1/lmtt/m/n/9 docroot \EU1/LinuxLibertineO(0)/m/n/9 folder, you’d copy the 
 three XML configuration files (\EU1/lmtt/m/n/9 hibernate-clustered.xml\EU1/Linu
 xLibertineO(0)/m/n/9 ,
  []
 
-[645]
-Overfull \hbox (12.78197pt too wide) in paragraph at lines 25479--25492
+[642]
+Overfull \hbox (12.78197pt too wide) in paragraph at lines 25482--25495
 \EU1/lmtt/m/n/9 Home]/webapps/ROOT\EU1/LinuxLibertineO(0)/m/n/9 . Inside this f
 older is the folder structure \EU1/lmtt/m/n/9 WEB-INF/classes\EU1/LinuxLibertin
 eO(0)/m/n/9 .
  []
 
 
-Overfull \hbox (122.53705pt too wide) in paragraph at lines 25493--25499
+Overfull \hbox (122.53705pt too wide) in paragraph at lines 25496--25502
 \EU1/LinuxLibertineO(0)/m/n/9 into your \EU1/lmtt/m/n/9 portal-ext.properties \
 EU1/LinuxLibertineO(0)/m/n/9 file and then modify the \EU1/lmtt/m/n/9 net.sf.eh
 cache.configurationResourceName
  []
 
-[646]
-Overfull \hbox (1.66708pt too wide) in paragraph at lines 25538--25547
+[643]
+Overfull \hbox (1.66708pt too wide) in paragraph at lines 25541--25550
 \EU1/LinuxLibertineO(0)/m/n/9 cache is the User object (\EU1/lmtt/m/n/9 com.lif
 eray.``portal``.model.impl.UserImpl\EU1/LinuxLibertineO(0)/m/n/9 ).
  []
 
 
-Overfull \hbox (58.27417pt too wide) in paragraph at lines 25568--25568
+Overfull \hbox (58.27417pt too wide) in paragraph at lines 25571--25571
 []    \EU1/lmtt/m/n/6 <bootstrapCacheLoaderFactory class="com.liferay.portal.ca
 che.ehcache.LiferayBootstrapCacheLoaderFactory" />[] 
  []
 
-[647]
-Overfull \hbox (58.27417pt too wide) in paragraph at lines 25589--25589
+[644]
+Overfull \hbox (58.27417pt too wide) in paragraph at lines 25592--25592
 []    \EU1/lmtt/m/n/6 <bootstrapCacheLoaderFactory class="com.liferay.portal.ca
 che.ehcache.LiferayBootstrapCacheLoaderFactory" />[] 
  []
@@ -6538,7 +6557,7 @@ File: ../../images/ee-feature-web.png Graphic file (type QTm)
 <use  "../../images/ee-feature-web.png" >
 File: ../../images/ee-feature-web.png Graphic file (type QTm)
 
-<use  "../../images/ee-feature-web.png" > [648]
+<use  "../../images/ee-feature-web.png" > [645]
 File: ../../images/19-ehcache-inefficient-algorithm.png Graphic file (type QTm)
 
 
@@ -6546,49 +6565,49 @@ File: ../../images/19-ehcache-inefficient-algorithm.png Graphic file (type QTm)
 File: ../../images/19-ehcache-inefficient-algorithm.png Graphic file (type QTm)
 
 
-<use  "../../images/19-ehcache-inefficient-algorithm.png" > [649]
+<use  "../../images/19-ehcache-inefficient-algorithm.png" > [646]
 File: ../../images/19-ehcache-efficient-algorithm.png Graphic file (type QTm)
 
 <use  "../../images/19-ehcache-efficient-algorithm.png" >
 File: ../../images/19-ehcache-efficient-algorithm.png Graphic file (type QTm)
 
-<use  "../../images/19-ehcache-efficient-algorithm.png" > [650] [651] [652]
+<use  "../../images/19-ehcache-efficient-algorithm.png" > [647] [648] [649]
 File: ../../images/portal-admin-ch7_html_518957a7.png Graphic file (type QTm)
 
 <use  "../../images/portal-admin-ch7_html_518957a7.png" >
 File: ../../images/portal-admin-ch7_html_518957a7.png Graphic file (type QTm)
 
-<use  "../../images/portal-admin-ch7_html_518957a7.png" > [653] [654] [655]
-Overfull \hbox (39.16399pt too wide) in paragraph at lines 25944--25949
+<use  "../../images/portal-admin-ch7_html_518957a7.png" > [650] [651] [652]
+Overfull \hbox (39.16399pt too wide) in paragraph at lines 25947--25952
 []\EU1/LinuxLibertineO(0)/m/n/9 You can disable servlet filters you’re not us
 ing by using your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
-[656]
+[653]
 
 Class memoir Warning: The material used in the headers is too large
 (20.0pt) for the given head height (11.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 25983.
+(in both cases you will find help in the memoir manual). on input line 25986.
 
-[657]
+[654]
 \tf@toc=\write6
 \openout6 = `en-userGuide.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25983.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 25983.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25986.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 25986.
  (./en-userGuide.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 25983.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 25983.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 25983.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 25986.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 25986.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 25986.
  ) 
 Here is how much of TeX's memory you used:
- 24573 strings out of 494003
- 470623 string characters out of 3152809
+ 24575 strings out of 494003
+ 470654 string characters out of 3152809
  519424 words of memory out of 3000000
- 27174 multiletter control sequences out of 15000+200000
- 6734 words of font info for 57 fonts, out of 3000000 for 9000
+ 27175 multiletter control sequences out of 15000+200000
+ 6742 words of font info for 58 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 49i,12n,48p,939b,587s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,12n,48p,939b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on en-userGuide.pdf (667 pages).
+Output written on en-userGuide.pdf (664 pages).

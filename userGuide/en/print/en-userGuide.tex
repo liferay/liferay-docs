@@ -12671,6 +12671,13 @@ books, sea shells, or fabulous shoes. The list goes on and on. But have
 you considered URLs collectible? Having a thorough collection of links
 can be a great way to add value to your portal's usability.
 
+\begin{figure}[htbp]
+\centering
+\scalegraphics{../../images/bookmarks-folder-view-wide.png}
+\caption{Figure 12.1: Individual bookmarks, not associated with a
+folder, are listed separately.}
+\end{figure}
+
 With Liferay's Bookmarks application, users collect and manage URLs in
 the portal. They can add, edit, delete, export and import bookmarks.
 Users can use links to access regularly visited web sites.
@@ -12687,13 +12694,6 @@ displayed on a page. Bookmark folders can have any number of subfolders.
 
 Here's an example of what one bookmarks portlet might look like.
 Bookmark Folders are displayed above individual bookmarks.
-
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/bookmarks-folder-view-wide.png}
-\caption{Figure 12.1: Individual bookmarks, not associated with a
-folder, are listed separately.}
-\end{figure}
 
 In this example, there are eight bookmark folders, four of which have
 subfolders. The columns showing the number of folders and the number of
@@ -12718,12 +12718,12 @@ Nonfiction subfolder in the Literature folder. The Nonfiction subfolder
 is a child of the Literature folder. We need to move the link to the
 Literature folder first before moving it into the Nonfiction subfolder.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{r}{.51\textwidth}
 \centering
 \scalegraphics{../../images/bookmarks-select-remove-buttons.png}
-\caption{Figure 12.2: You can move a link one level at a time by
+\caption{\\Figure 12.2: You can move a link one level at a time by
 selecting the Select button.}
-\end{figure}
+\end{wrapfigure}
 
 To achieve this, we select \emph{Edit} from the Actions button for the
 link. In the Edit view, find the section called \emph{Folder}. When
@@ -12737,7 +12737,7 @@ out of folders and subfolders back into the main Bookmarks view.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/bookmarks-choosing-subfolder.png}
-\caption{Figure 12.3: Select the Choose button next to the desired
+\caption{\\Figure 12.3: Select the Choose button next to the desired
 folder.}
 \end{figure}
 
@@ -12745,12 +12745,12 @@ Now choose the \emph{Literature} folder. When you do this, notice how
 the link's Folder section changes to reflect the new location of the
 link.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{l}{.5\textwidth}
 \centering
 \scalegraphics{../../images/bookmarks-choosing-subfolder2.png}
-\caption{Figure 12.4: When you choose a folder, the folder navigation
+\caption{\\Figure 12.4: When you choose a folder, the folder navigation
 changes to reflect the new location of the link.}
-\end{figure}
+\end{wrapfigure}
 
 When you choose \emph{Save}, you return to the Bookmarks portlet. Notice
 that the Liferay link is no longer under the Bookmarks section. Select
@@ -12775,12 +12775,12 @@ Piece of cake, right?
 To move a link out of a subfolder and into a higher-level folder, Edit
 the link in the subfolder and choose \emph{Select}.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{l}{.5\textwidth}
 \centering
 \scalegraphics{../../images/bookmarks-link-move2.png}
-\caption{Figure 12.6: To move a link up to a higher-level folder, choose
+\caption{\\Figure 12.6: To move a link up to a higher-level folder, choose
 the appropriate folder from the breadcrumbs in the Select view.}
-\end{figure}
+\end{wrapfigure}
 
 In the resulting window, select the appropriate folder from the
 breadcrumbs at the top. In this example, we selected \emph{Literature}
@@ -12818,7 +12818,7 @@ default:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/bookmarks-add-portlet.png}
-\caption{Figure 12.8: Initially, no bookmarks are listed in this form
+\caption{\\Figure 12.8: Initially, no bookmarks are listed in this form
 until they're created.}
 \end{figure}
 
@@ -12847,7 +12847,7 @@ reveals this form:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/bookmarks-add-new-folder-form.png}
-\caption{Figure 12.9: It's not necessary to enter a description for a
+\caption{\\Figure 12.9: It's not necessary to enter a description for a
 Bookmarks folder.}
 \end{figure}
 
@@ -12862,7 +12862,7 @@ similar to the New Folder form but has a few more options.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/bookmarks-add-new-form.png}
-\caption{Figure 12.10: When you use the Add Bookmark form, you must
+\caption{\\Figure 12.10: When you use the Add Bookmark form, you must
 enter a valid URL in the required field.}
 \end{figure}
 
@@ -12901,7 +12901,6 @@ You can create your plugin repository in two ways:
   by using its graphical interface and an HTTP server.
 \item
   Create an XML file using the Liferay Plugin Repository DTD
-  (\texttt{http://www.liferay.com/dtd/liferay-plugin-repository\_6\_0\_0.dtd})
   and an HTTP server.
 \end{enumerate}
 
@@ -13174,59 +13173,61 @@ If you have configured everything properly, an XML document should be
 returned:
 
 \begin{verbatim}
-<?xml version="1.0" encoding="UTF-8"?\>
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<plugin-repository>
+	
+	<settings/>
+	
+	<plugin-package>
+	
+		<name>My Summary</name>
+	
+		<module-id>old-computers/my-summary-portlet/1.0/war</module-id>
+	
+		<modified-date>Thu, 23 Apr 2009 20:40:16 +0000</modified-date>
+	
+		<types>
+	
+			<type>portlet</type>
+	
+		</types>
+	
+		<tags>
+	
+			<tag>social</tag>
+	
+			<tag>profile</tag>
+	
+		</tags>
+	
+		<short-description>My Summary</short-description>
+	
+		<long-description>My Summary</long-description>
+	
+		<change-log>Initial Version</change-log>
+	
+		<download-url>
+        http://www.liferay.com/portlets/my-summary-portlet-6.0.4.war
 
-<plugin-repository\>
+	</download-url>
+	
+		<author>Rich Sezov</author>
+	
+		<screenshots/>
+	
+		<licenses>
+	
+			<license osi-approved="true">MIT License</license>
+	
+		</licenses>
+	
+		<liferay-versions/>
+	
+	</plugin-package>
+	
+</plugin-repository>
 
-<settings/\>
-
-<plugin-package\>
-
-<name\>My Summary</name\>
-
-<module-id\>old-computers/my-summary-portlet/1.0/war</module-id\>
-
-<modified-date\>Thu, 23 Apr 2009 20:40:16 +0000</modified-date\>
-
-<types\>
-
-<type\>portlet</type\>
-
-</types\>
-
-<tags\>
-
-<tag\>social</tag\>
-
-<tag\>profile</tag\>
-
-</tags\>
-
-<short-description\>My Summary</short-description\>
-
-<long-description\>My Summary</long-description\>
-
-<change-log\>Initial Version</change-log\>
-
-<download-url\>[http://www.liferay.com/portlets/my-summary-portlet-6.0.4.war](http://www.liferay.com/portlets/my-summary-portlet-5.2.2.war)
-
-</download-url\>
-
-<author\>Rich Sezov</author\>
-
-<screenshots/\>
-
-<licenses\>
-
-<license osi-approved="true"\>MIT License</license\>
-
-</licenses\>
-
-<liferay-versions/\>
-
-</plugin-package\>
-
-</plugin-repository\>
 \end{verbatim}
 
 You can now give the URL to your software repository out on your web
@@ -13285,9 +13286,10 @@ software.
 If you still wish to use a text editor to create your software catalog,
 you can. To manually create a software catalog, obtain the DTD for the
 XML file from Liferay's source code. You will find this DTD in the
-\emph{definitions} folder in the Liferay source. It is a file called
-\texttt{liferay-plugin-package\_6\_0\_0.dtd}. Use this DTD with a
-validating XML editor (a good, free choice is jEdit with all the XML
+\emph{definitions} folder in the Liferay source or on the Liferay web
+site\footnote{\texttt{http://www.liferay.com/dtd/liferay-plugin-repository\_6\_1\_0.dtd}}
+It is a file called \texttt{liferay-plugin-package\_\-6\-\_1\_0.dtd}. Use this DTD
+with a validating XML editor (a good, free choice is jEdit with all the XML
 plugins) to create your software catalog manually.
 
 \subsection{Connecting to a Software Catalog
@@ -13330,12 +13332,6 @@ Before we start printing money, let's first create an online store.
 
 \subsection{Setting up shop }
 
-To begin setting up a store, place the Shopping application on a page in
-your site. Like the Message Boards portlet, the Shopping portlet takes
-up a lot of space. It's best, therefore, to dedicate an entire page to
-the application. The Shopping portlet is available from the \emph{Add} →
-\emph{More} menu in the Dockbar under Shopping.
-
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/shopping-add-portlet.png}
@@ -13343,7 +13339,21 @@ the application. The Shopping portlet is available from the \emph{Add} →
 categories in the shopping portlet.}
 \end{figure}
 
+To begin setting up a store, place the Shopping application on a page in
+your site. Like the Message Boards portlet, the Shopping portlet takes
+up a lot of space. It's best, therefore, to dedicate an entire page to
+the application. The Shopping portlet is available from the \emph{Add} →
+\emph{More} menu in the Dockbar under Shopping.
+
 The shopping portlet has four tabs across the top:
+
+\begin{figure}[htbp]
+\centering
+\scalegraphics{../../images/shopping-categories.png}
+\caption{Figure 12.16: In this figure there are three subcategories for
+the \texttt{Aromatherapy} category. The first subcategory has three
+items, the second has two, and the third is empty.}
+\end{figure}
 
 \textbf{Categories:} shows the categories of items in your store. For
 example, if you're selling music, you might have categories for various
@@ -13377,25 +13387,17 @@ Category} button to display the Category form. In this form enter the
 \emph{Name}, \emph{Description}, and set the \emph{Permissions} for the
 category. That's all there is to it.
 
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/shopping-categories.png}
-\caption{Figure 12.16: In this figure there are three subcategories for
-the \texttt{Aromatherapy} category. The first subcategory has three
-items, the second has two, and the third is empty.}
-\end{figure}
-
 When you click \emph{Save}, your new category is listed in the portlet,
 along with the number of subcategories and the number of items that are
 in the category. You can edit the category, set permissions for it or
 delete it using the \emph{Actions} button.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{r}{.43\textwidth}
 \centering
 \scalegraphics{../../images/shopping-category-breadcrumbs.png}
-\caption{Figure 12.17: Breadcrumbs are an important navigational tool in
+\caption{\\Figure 12.17: Breadcrumbs are an important navigational tool in
 the shopping portlet.}
-\end{figure}
+\end{wrapfigure}
 
 Each category can have unlimited subcategories and you can add
 subcategories to any category. Notice as you add categories and
@@ -13421,7 +13423,7 @@ menus, as in the figure below.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/shopping-item-options.png}
-\caption{Figure 12.18: The additional fields you create for an item
+\caption{\\Figure 12.18: The additional fields you create for an item
 appear in the item description form as menu options.}
 \end{figure}
 
@@ -13436,7 +13438,7 @@ to display. When you're finished creating a new item, click \emph{Save}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/shopping-item-image2.png}
-\caption{Figure 12.19: The image in this figure is the medium sized
+\caption{\\Figure 12.19: The image in this figure is the medium sized
 option.}
 \end{figure}
 
@@ -13458,12 +13460,12 @@ Choose the desired category from the list to relocate the item to its
 new location. Notice how the breadcrumbs reflect this change in the item
 form.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{l}{.4\textwidth}
 \centering
 \scalegraphics{../../images/shopping-item-breadcrumb-change.png}
-\caption{Figure 12.21: When an item moves into a category, the
+\caption{\\Figure 12.21: When an item moves into a category, the
 breadcrumb navigation updates accordingly.}
-\end{figure}
+\end{wrapfigure}
 
 You can make changes to any item through \emph{Actions} → \emph{Edit}.
 Finding an item is easy, using the \emph{Search} function.
@@ -13534,7 +13536,7 @@ customers.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/shopping-confirmation-email-form.png}
-\caption{Figure 12.22: Shopping emails can be configured in a myriad of
+\caption{\\Figure 12.22: Shopping emails can be configured in a myriad of
 ways to suit your needs.}
 \end{figure}
 
@@ -13571,7 +13573,7 @@ item's description might look like.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/shopping-item.png}
-\caption{Figure 12.23: You can include images of each item in your
+\caption{\\Figure 12.23: You can include images of each item in your
 store. (Medium sized images display on the item's description form).}
 \end{figure}
 
@@ -13595,7 +13597,7 @@ description.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/shopping-cart-order.png}
-\caption{Figure 12.24: This shopping cart has two items in it so far.}
+\caption{\\Figure 12.24: This shopping cart has two items in it so far.}
 \end{figure}
 
 Each time you add an item to the cart, a running tally of the cart's
@@ -13620,7 +13622,7 @@ add comments about the order if necessary.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/shopping-order-summary.png}
-\caption{Figure 12.25: All the information pertaining an order can be
+\caption{\\Figure 12.25: All the information pertaining an order can be
 seen in the order summary view.}
 \end{figure}
 
@@ -13700,7 +13702,7 @@ search for coupons and create new coupons from this form.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/shopping-coupon.png}
-\caption{Figure 12.28: Create a coupon code automatically when you
+\caption{\\Figure 12.28: Create a coupon code automatically when you
 select the Autogenerate Code box.}
 \end{figure}
 
@@ -13744,11 +13746,10 @@ Program account. This gives you the \emph{associate ID tag} you need to
 enter in your \texttt{portal-ext.properties} file. Then you need to join
 the Amazon Product Advertising API group. This yields the \emph{access
 key id} and the \emph{secret access key} that also must go into your
-\texttt{portal-ext.properties} file.
+\texttt{portal-ext.pro\-perties} file.
 
-Amazon License Keys are available here:
-
-\href{https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/}{https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/}
+Amazon License Keys are available at their web
+site\footnote{\href{https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/}{https://aws-portal.amazon.com/gp/aws/developer/registration/index.html/}}. 
 
 Add the following lines to your \texttt{portal-ext.properties} file and
 populate the values for the associate ID tag, access key id, and secret
@@ -13860,7 +13861,7 @@ some HTML yourself.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-collaboration-kb-new-article.png}
-\caption{Figure 12.33: New Knowledge Base Article}
+\caption{\\Figure 12.33: New Knowledge Base Article}
 \end{figure}
 
 In addition to entering a title and creating content for your article,
@@ -14007,28 +14008,30 @@ article.
 The Knowledge Base Section portlet allows administrators to selectively
 show articles associated with a specific section. For example, a news
 site might have a \emph{World} section, a \emph{Politics} section, a
-\emph{Business} section and an \emph{Entertainment} section. In order to
+\emph{Business} section and an \emph{Enter\-tain\-ment} section. In order to
 use sections, you need to set the \texttt{admin.kb.article.sections}
-property in your knowledge base portlet's \texttt{portlet.properties}
+property in your knowledge base portlet's \texttt{port\-let.pro\-per\-ties}
 file and redeploy the portlet. You can find the
 \texttt{portlet.properties} file in the knowledge base portlet's source
 directory. Updating the one in your server's directory won't work. Use
-comma delimited section names to set the property, like
-\texttt{admin.kb.article.sections=World,Politics,Business,Entertainment},
-for example.
+comma delimited section names to set the property, for example: 
 
-Once you have defined some sections in your knowledge base's
-\texttt{portlet.properties} file, your users will see a multi-select box
-in the Add Article and Edit Article screens that allows them to select
-which section an article belongs to. You can add any number of Knowledge
-Base section portlets to a page and you can configure each portlet to
-display articles from any number of sections.
+\begin{verbatim}
+admin.kb.article.sections=World,Politics,Business,Entertainment
+\end{verbatim}
 
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-collaboration-kb-section-portlet.png}
-\caption{Figure 12.39: Knowledge Base Section Portlets}
+\caption{\\Figure 12.39: Knowledge Base Section Portlets}
 \end{figure}
+
+Once you have defined some sections in your knowledge base's
+\texttt{port\-let.pro\-per\-ties} file, your users will see a multi-select box
+in the Add Article and Edit Article screens that allows them to select
+which section an article belongs to. You can add any number of Knowledge
+Base section portlets to a page and you can configure each portlet to
+display articles from any number of sections.
 
 The Knowledge Base section portlet has some additional configurations
 that allow an administrator to select a display style (title or

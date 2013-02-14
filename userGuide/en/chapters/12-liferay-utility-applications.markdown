@@ -422,59 +422,62 @@ you would use the following URL:
 
 If you have configured everything properly, an XML document should be returned:
 
-	<?xml version="1.0" encoding="UTF-8"?\>
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<plugin-repository>
+	
+	   <settings/>
+	
+   	   <plugin-package>
+	
+		   <name>My Summary</name>
+	
+   		   <module-id>old-computers/my-summary-portlet/1.0/war</module-id>
+	
+		   <modified-date>Thu, 23 Apr 2009 20:40:16 +0000</modified-date>
+	
+		<types>
+	
+			<type>portlet</type>
+	
+		</types>
+	
+		<tags>
+	
+			<tag>social</tag>
+	
+			<tag>profile</tag>
+	
+		</tags>
+	
+		<short-description>My Summary</short-description>
+	
+		<long-description>My Summary</long-description>
+	
+		<change-log>Initial Version</change-log>
+	
+		<download-url>
+            http://www.liferay.com/portlets/my-summary-portlet-6.0.4.war
 
-	<plugin-repository\>
+	    </download-url>
+	
+	    <author>Rich Sezov</author>
+	
+	    <screenshots/>
+	
+	    <licenses>
+	
+		    <license osi-approved="true">MIT License</license>
+	
+	    </licenses>
+	
+	    <liferay-versions/>
+	
+	    </plugin-package>
+	
+    </plugin-repository>
 
-	<settings/\>
 
-	<plugin-package\>
-
-	<name\>My Summary</name\>
-
-	<module-id\>old-computers/my-summary-portlet/1.0/war</module-id\>
-
-	<modified-date\>Thu, 23 Apr 2009 20:40:16 +0000</modified-date\>
-
-	<types\>
-
-	<type\>portlet</type\>
-
-	</types\>
-
-	<tags\>
-
-	<tag\>social</tag\>
-
-	<tag\>profile</tag\>
-
-	</tags\>
-
-	<short-description\>My Summary</short-description\>
-
-	<long-description\>My Summary</long-description\>
-
-	<change-log\>Initial Version</change-log\>
-
-	<download-url\>[http://www.liferay.com/portlets/my-summary-portlet-6.0.4.war](http://www.liferay.com/portlets/my-summary-portlet-5.2.2.war)
-
-	</download-url\>
-
-	<author\>Rich Sezov</author\>
-
-	<screenshots/\>
-
-	<licenses\>
-
-	<license osi-approved="true"\>MIT License</license\>
-
-	</licenses\>
-
-	<liferay-versions/\>
-
-	</plugin-package\>
-
-	</plugin-repository\>
 
 You can now give the URL to your software repository out on your web site and
 other administrators of Liferay can enter it into the Plugins Installation

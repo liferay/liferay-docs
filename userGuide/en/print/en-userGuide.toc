@@ -271,281 +271,281 @@
 \contentsline {chapter}{\chapternumberline {12}Liferay Utility Applications }{331}{chapter.12}
 \contentsline {section}{\numberline {12.1}Capturing Web Sites with the Bookmarks Portlet }{332}{section.12.1}
 \contentsline {subsection}{Organizing Bookmarks by Folder }{332}{section.12.1}
-\contentsline {subsubsection}{Moving a Link }{332}{section.12.1}
+\contentsline {subsubsection}{Moving a Link }{333}{section.12.1}
 \contentsline {subsection}{Adding and Using Bookmarks }{336}{section.12.1}
-\contentsline {section}{\numberline {12.2}Creating Your Own Plugin Repository }{340}{section.12.2}
-\contentsline {subsection}{Software Catalog }{341}{Item.125}
-\contentsline {subsubsection}{Generating The Software Catalog }{346}{Item.125}
-\contentsline {subsubsection}{Benefits of the Software Catalog }{348}{Item.125}
-\contentsline {subsection}{Manually Creating A Software Catalog }{349}{Item.125}
-\contentsline {subsection}{Connecting to a Software Catalog }{349}{Item.125}
-\contentsline {section}{\numberline {12.3}Shopping }{350}{section.12.3}
-\contentsline {subsection}{Setting up shop }{350}{section.12.3}
+\contentsline {section}{\numberline {12.2}Creating Your Own Plugin Repository }{339}{section.12.2}
+\contentsline {subsection}{Software Catalog }{340}{Item.125}
+\contentsline {subsubsection}{Generating The Software Catalog }{345}{Item.125}
+\contentsline {subsubsection}{Benefits of the Software Catalog }{347}{Item.125}
+\contentsline {subsection}{Manually Creating A Software Catalog }{348}{Item.125}
+\contentsline {subsection}{Connecting to a Software Catalog }{348}{Item.125}
+\contentsline {section}{\numberline {12.3}Shopping }{349}{section.12.3}
+\contentsline {subsection}{Setting up shop }{349}{section.12.3}
 \contentsline {subsubsection}{Creating Categories }{351}{section.12.3}
-\contentsline {subsubsection}{Creating Items }{352}{section.12.3}
-\contentsline {subsection}{Configuration }{353}{section.12.3}
-\contentsline {subsubsection}{Payment Settings }{355}{section.12.3}
-\contentsline {subsubsection}{Shipping and Insurance Calculation }{357}{section.12.3}
-\contentsline {subsubsection}{Emails }{357}{section.12.3}
-\contentsline {subsection}{Using the shopping cart }{359}{section.12.3}
-\contentsline {subsubsection}{Customizing the shopping cart with a hook }{363}{section.12.3}
-\contentsline {subsection}{Managing Orders }{363}{section.12.3}
-\contentsline {subsection}{Managing Coupons }{363}{section.12.3}
-\contentsline {subsubsection}{Integrating the Amazon Rankings portlet }{368}{section.12.3}
-\contentsline {paragraph}{Setting up your Amazon Web Services account }{368}{section.12.3}
-\contentsline {paragraph}{Setting up the Amazon Rankings portlet }{368}{section.12.3}
-\contentsline {section}{\numberline {12.4}Knowledge Base }{370}{section.12.4}
-\contentsline {subsection}{Knowledge Base Display Portlet }{370}{section.12.4}
-\contentsline {subsection}{Knowledge Base Page of the Control Panel }{373}{section.12.4}
-\contentsline {subsection}{Knowledge Base Article Portlet }{375}{section.12.4}
-\contentsline {subsection}{Knowledge Base Section Portlet }{376}{section.12.4}
-\contentsline {subsection}{Knowledge Base Navigation }{377}{section.12.4}
-\contentsline {section}{\numberline {12.5}Summary }{379}{section.12.5}
-\contentsline {chapter}{\chapternumberline {13}Leveraging the Liferay Marketplace }{380}{chapter.13}
-\contentsline {section}{\numberline {13.1}Marketplace Concepts: Users, Companies and Apps }{381}{section.13.1}
-\contentsline {section}{\numberline {13.2}Accessing the Liferay Marketplace }{381}{section.13.2}
-\contentsline {subsection}{The Basics }{381}{Item.127}
-\contentsline {subsection}{Logging In }{385}{Item.127}
-\contentsline {subsection}{Marketplace Profile }{385}{Item.127}
-\contentsline {subsection}{Managing Apps }{385}{Item.127}
-\contentsline {subsection}{Creating a Company }{387}{Item.127}
-\contentsline {section}{\numberline {13.3}Finding Apps }{387}{section.13.3}
-\contentsline {subsection}{Versions }{389}{Item.128}
-\contentsline {subsection}{Compatibility }{390}{Item.128}
-\contentsline {section}{\numberline {13.4}Downloading and Installing Apps }{392}{section.13.4}
-\contentsline {subsection}{Downloading and Installing }{393}{section.13.4}
-\contentsline {subsection}{Liferay Hot Deploy }{394}{section.13.4}
-\contentsline {subsection}{Installing through the Control Panel }{394}{section.13.4}
-\contentsline {subsection}{Downloading through liferay.com }{396}{section.13.4}
-\contentsline {section}{\numberline {13.5}Creating and Uploading Apps }{397}{section.13.5}
-\contentsline {section}{\numberline {13.6}Plugin Management }{397}{section.13.6}
-\contentsline {subsection}{Portlets }{397}{section.13.6}
-\contentsline {subsection}{Themes }{399}{section.13.6}
-\contentsline {subsection}{Layout Templates }{400}{section.13.6}
-\contentsline {subsection}{Hook Plugins }{400}{section.13.6}
-\contentsline {subsection}{Web Plugins }{400}{section.13.6}
-\contentsline {subsection}{Installing Plugins from Repositories }{400}{section.13.6}
-\contentsline {subsection}{Installing Plugins Manually }{404}{section.13.6}
-\contentsline {subsection}{Plugin Troubleshooting }{407}{section.13.6}
-\contentsline {subsubsection}{Liferay Configuration Issues }{407}{section.13.6}
-\contentsline {subsubsection}{Deploy Issues for Specific Containers }{409}{section.13.6}
-\contentsline {paragraph}{Example: WebSphere ® Application Server }{411}{section.13.6}
-\contentsline {subsubsection}{Changing the Configuration Options in Multiple Places }{412}{Item.136}
-\contentsline {section}{\numberline {13.7}Summary }{412}{section.13.7}
-\contentsline {chapter}{\chapternumberline {14}Installation and Setup }{414}{chapter.14}
-\contentsline {section}{\numberline {14.1}Editions of Liferay }{414}{section.14.1}
-\contentsline {subsection}{Liferay's Versioning Schema }{415}{section.14.1}
-\contentsline {subsubsection}{Major Release }{415}{section.14.1}
-\contentsline {subsubsection}{Minor Release }{416}{section.14.1}
-\contentsline {subsubsection}{Maintenance Release }{416}{section.14.1}
-\contentsline {subsubsection}{Release Process }{416}{section.14.1}
-\contentsline {subsubsection}{Comments and Recommendations }{417}{section.14.1}
-\contentsline {section}{\numberline {14.2}Obtaining Liferay Portal }{418}{section.14.2}
-\contentsline {section}{\numberline {14.3}Installing a bundle }{419}{section.14.3}
-\contentsline {section}{\numberline {14.4}App servers }{421}{section.14.4}
-\contentsline {subsection}{Liferay Home }{422}{section.14.4}
-\contentsline {subsection}{Liferay's database }{422}{section.14.4}
-\contentsline {subsection}{Liferay installation overview }{423}{section.14.4}
-\contentsline {subsubsection}{Using data sources }{424}{Item.144}
-\contentsline {subsubsection}{Using mail sessions }{424}{Item.144}
-\contentsline {subsubsection}{The portal-ext.properties file }{425}{Item.144}
-\contentsline {section}{\numberline {14.5}Using Liferay's setup wizard }{426}{section.14.5}
-\contentsline {section}{\numberline {14.6}Manual Configuration }{429}{section.14.6}
-\contentsline {section}{\numberline {14.7}Installing Liferay on an existing application server }{431}{section.14.7}
-\contentsline {subsection}{Installing Liferay in five easy steps }{431}{section.14.7}
-\contentsline {section}{\numberline {14.8}Installing Liferay on Mule Tcat }{432}{section.14.8}
-\contentsline {subsection}{Installing the Administration Console on Windows }{433}{section.14.8}
-\contentsline {subsection}{Installing the Administraton Console on Linux (Ubuntu) }{436}{section.14.8}
-\contentsline {subsection}{Adding Liferay Portal packages }{440}{section.14.8}
-\contentsline {subsection}{Tcat Server Managed Server Installation }{442}{section.14.8}
-\contentsline {subsection}{Registering the managed server }{446}{section.14.8}
-\contentsline {subsection}{Deploying Liferay Portal }{451}{section.14.8}
-\contentsline {subsection}{Deploying Liferay plugins on Mule Tcat }{455}{Item.152}
-\contentsline {section}{\numberline {14.9}Installing Liferay on GlassFish 3 }{457}{section.14.9}
-\contentsline {subsection}{Dependency Jars }{458}{section.14.9}
-\contentsline {paragraph}{Domain Configuration }{460}{Item.154}
-\contentsline {subsection}{Database Configuration }{462}{Item.156}
-\contentsline {subsection}{Mail Configuration }{467}{Item.171}
-\contentsline {subsection}{Domain Configuration - Continued }{467}{Item.171}
-\contentsline {subsection}{Deploy Liferay }{468}{Item.174}
-\contentsline {section}{\numberline {14.10}Installing Liferay on Jetty 7 }{469}{section.14.10}
-\contentsline {subsection}{Dependency Jars }{470}{section.14.10}
-\contentsline {subsection}{Jetty Configuration }{471}{Item.185}
-\contentsline {subsection}{Database Configuration }{473}{Item.192}
-\contentsline {subsection}{Mail Configuration }{474}{Item.194}
-\contentsline {subsection}{Configuring data sources and mail sessions }{475}{Item.194}
-\contentsline {subsection}{Deploy Liferay }{476}{Item.197}
-\contentsline {section}{\numberline {14.11}Installing Liferay on JBoss 5.1 }{477}{section.14.11}
-\contentsline {subsection}{Configuring Dependencies }{477}{Item.204}
-\contentsline {subsection}{Deploying Liferay }{478}{Item.211}
-\contentsline {section}{\numberline {14.12}Installing Liferay on JBoss 7 }{479}{section.14.12}
-\contentsline {subsection}{Dependency Jars }{479}{Item.219}
-\contentsline {subsection}{Configuring JBoss }{480}{Item.222}
-\contentsline {subsection}{Database Configuration }{482}{Item.228}
-\contentsline {subsection}{Mail Configuration }{483}{Item.230}
-\contentsline {subsection}{Configuring data sources and mail sessions }{483}{Item.230}
-\contentsline {subsection}{Deploy Liferay }{484}{Item.233}
-\contentsline {section}{\numberline {14.13}Installing Liferay on Resin 4 }{486}{section.14.13}
-\contentsline {subsection}{Dependency Jars }{486}{section.14.13}
-\contentsline {subsection}{Configuring Resin }{487}{Item.245}
-\contentsline {subsection}{Database Configuration }{488}{Item.248}
-\contentsline {subsection}{Mail Configuration }{489}{Item.248}
-\contentsline {subsection}{Configuring data source and mail session }{489}{Item.248}
-\contentsline {subsection}{Deploy Liferay }{490}{Item.251}
-\contentsline {section}{\numberline {14.14}Installing Liferay on Tomcat 7 }{492}{section.14.14}
-\contentsline {subsection}{Dependency Jars }{492}{section.14.14}
-\contentsline {subsection}{Tomcat Configuration }{493}{Item.263}
-\contentsline {subsection}{Database Configuration }{495}{Item.268}
-\contentsline {subsection}{Mail Configuration }{496}{Item.270}
-\contentsline {subsection}{Configuring your database and mail session }{496}{Item.270}
-\contentsline {subsection}{Deploy Liferay }{497}{Item.272}
-\contentsline {section}{\numberline {14.15}Installing Liferay on JOnAS 5.2 }{498}{section.14.15}
-\contentsline {subsection}{Configuring JOnAS for Liferay }{499}{section.14.15}
-\contentsline {subsection}{Configuring Containers in JOnAS }{502}{Item.287}
-\contentsline {subsection}{Starting JOnAS }{503}{Item.292}
-\contentsline {section}{\numberline {14.16}Installing Liferay on WebLogic 10 }{504}{section.14.16}
-\contentsline {subsection}{Dependency Jars }{504}{section.14.16}
-\contentsline {subsection}{Database Configuration }{505}{Item.305}
-\contentsline {subsection}{Mail Configuration }{506}{Item.314}
-\contentsline {subsection}{Domain Configuration - Continued }{507}{Item.321}
-\contentsline {subsection}{Deploy Liferay }{508}{Item.324}
-\contentsline {section}{\numberline {14.17}Installing Liferay on Oracle WebLogic 10.3 }{510}{section.14.17}
-\contentsline {subsection}{Dependency Jars }{511}{section.14.17}
-\contentsline {subsection}{Database Configuration }{511}{Item.336}
-\contentsline {subsection}{Mail Configuration }{513}{Item.344}
-\contentsline {subsection}{Domain Configuration - Continued }{513}{Item.347}
-\contentsline {subsection}{Deploy Liferay }{515}{Item.349}
-\contentsline {section}{\numberline {14.18}Installing Liferay on WebSphere 8.0 }{517}{section.14.18}
-\contentsline {subsection}{Preparing WebSphere for Liferay }{517}{section.14.18}
-\contentsline {subsection}{Copying portal dependencies }{521}{Item.367}
-\contentsline {subsection}{Database Configuration }{522}{Item.367}
-\contentsline {subsection}{Mail Configuration }{525}{Item.388}
-\contentsline {subsection}{Deploy Liferay }{526}{Item.393}
-\contentsline {subsection}{Start Liferay }{526}{Item.399}
-\contentsline {section}{\numberline {14.19}Making Liferay Coexist with Other Java EE Applications }{527}{section.14.19}
-\contentsline {section}{\numberline {14.20}Summary }{528}{section.14.20}
-\contentsline {chapter}{\chapternumberline {15}Management }{529}{chapter.15}
-\contentsline {section}{\numberline {15.1}Managing Users }{530}{section.15.1}
-\contentsline {section}{\numberline {15.2}Adding users }{530}{section.15.2}
-\contentsline {section}{\numberline {15.3}User management }{532}{section.15.3}
-\contentsline {subsection}{Organizations }{533}{section.15.3}
-\contentsline {section}{\numberline {15.4}User Groups }{536}{section.15.4}
-\contentsline {subsection}{Creating and editing a User Group }{539}{section.15.4}
-\contentsline {subsection}{Assigning Members to a User Group }{539}{section.15.4}
-\contentsline {subsection}{User Group Sites }{540}{section.15.4}
-\contentsline {section}{\numberline {15.5}Roles and Permissions }{542}{section.15.5}
-\contentsline {subsection}{Defining Permissions on a Role }{545}{section.15.5}
-\contentsline {subsection}{Special Note about the Power Users Role }{550}{section.15.5}
-\contentsline {section}{\numberline {15.6}Managing Portal Settings }{551}{section.15.6}
-\contentsline {subsection}{Password Policies }{551}{section.15.6}
-\contentsline {subsection}{Portal Settings }{553}{section.15.6}
-\contentsline {subsection}{General }{553}{section.15.6}
-\contentsline {subsection}{Authentication }{555}{section.15.6}
-\contentsline {section}{\numberline {15.7}Integrating Liferay users into your enterprise }{556}{section.15.7}
-\contentsline {subsection}{LDAP }{556}{section.15.7}
-\contentsline {subsubsection}{Adding LDAP Servers }{558}{section.15.7}
-\contentsline {subsubsection}{LDAP Options Not Available in the GUI }{562}{section.15.7}
-\contentsline {subsection}{SSO }{563}{section.15.7}
-\contentsline {subsection}{Authentication: Central Authentication Service (CAS) }{564}{section.15.7}
-\contentsline {subsection}{Authentication: Facebook }{565}{section.15.7}
-\contentsline {subsection}{Authentication: NTLM }{565}{section.15.7}
-\contentsline {subsection}{Authentication: OpenID }{566}{section.15.7}
-\contentsline {subsection}{Atlassian Crowd }{566}{section.15.7}
-\contentsline {subsection}{Authentication: OpenSSO }{566}{section.15.7}
-\contentsline {subsection}{Authentication: SiteMinder }{567}{section.15.7}
-\contentsline {subsection}{Users }{567}{section.15.7}
-\contentsline {section}{\numberline {15.8}Summary }{568}{section.15.8}
-\contentsline {chapter}{\chapternumberline {16}Using the Control Panel }{569}{chapter.16}
-\contentsline {subsection}{Mail Host Names }{570}{chapter.16}
-\contentsline {subsection}{Email Notifications }{570}{chapter.16}
-\contentsline {subsection}{Identification }{571}{chapter.16}
-\contentsline {subsection}{Miscellaneous: Display Settings }{571}{chapter.16}
-\contentsline {section}{\numberline {16.1}Monitoring }{573}{section.16.1}
-\contentsline {section}{\numberline {16.2}Plugins Configuration }{573}{section.16.2}
-\contentsline {section}{\numberline {16.3}Server Administration }{575}{section.16.3}
-\contentsline {subsection}{Resources }{575}{section.16.3}
-\contentsline {subsection}{Log Levels }{576}{section.16.3}
-\contentsline {subsection}{Properties }{576}{section.16.3}
-\contentsline {subsection}{Captcha }{577}{section.16.3}
-\contentsline {subsection}{Data Migration }{577}{section.16.3}
-\contentsline {subsection}{File Uploads }{578}{section.16.3}
-\contentsline {subsection}{Mail }{578}{section.16.3}
-\contentsline {subsection}{External Services }{578}{section.16.3}
-\contentsline {subsubsection}{OpenOffice/LibreOffice configuration }{579}{section.16.3}
-\contentsline {subsubsection}{ImageMagick configuration }{580}{section.16.3}
-\contentsline {subsubsection}{Xuggler configuration }{581}{section.16.3}
-\contentsline {subsection}{Script }{581}{section.16.3}
-\contentsline {subsection}{Shutdown }{581}{section.16.3}
-\contentsline {section}{\numberline {16.4}Portal Instances }{582}{section.16.4}
-\contentsline {section}{\numberline {16.5}Plugins Installation }{582}{section.16.5}
-\contentsline {section}{\numberline {16.6}Summary }{583}{section.16.6}
-\contentsline {chapter}{\chapternumberline {17}Advanced Portal Operation }{584}{chapter.17}
-\contentsline {section}{\numberline {17.1}Audit Trails }{585}{section.17.1}
-\contentsline {subsection}{Installing and configuring the audit plugins }{586}{section.17.1}
-\contentsline {subsection}{Using audit events }{586}{section.17.1}
-\contentsline {subsection}{Viewing audit reports }{589}{section.17.1}
-\contentsline {subsection}{Conclusion of the Story }{592}{section.17.1}
-\contentsline {section}{\numberline {17.2}Liferay monitoring using Google Analytics }{592}{section.17.2}
-\contentsline {section}{\numberline {17.3}Backing up a Liferay installation }{594}{section.17.3}
-\contentsline {subsection}{Backing up source code }{594}{section.17.3}
-\contentsline {subsection}{Backing up Liferay's file system }{594}{section.17.3}
-\contentsline {subsection}{Backing up Liferay's database }{595}{section.17.3}
-\contentsline {section}{\numberline {17.4}Liferay's Logging System }{595}{section.17.4}
-\contentsline {section}{\numberline {17.5}Patching Liferay }{598}{section.17.5}
-\contentsline {subsection}{Installing the patching tool }{599}{section.17.5}
-\contentsline {subsection}{Installing patches }{600}{section.17.5}
-\contentsline {subsubsection}{Handling hot fixes and patches }{600}{section.17.5}
-\contentsline {subsubsection}{Fix pack dependencies }{601}{section.17.5}
-\contentsline {subsection}{Removing or reverting patches }{601}{section.17.5}
-\contentsline {subsection}{Using profiles with the patching tool }{601}{section.17.5}
-\contentsline {section}{\numberline {17.6}Upgrading Liferay }{602}{section.17.6}
-\contentsline {subsection}{Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1 }{603}{section.17.6}
-\contentsline {subsection}{Migrate to Algorithm 6 }{603}{section.17.6}
-\contentsline {subsection}{Migrate Your Image Gallery Images }{605}{section.17.6}
-\contentsline {subsection}{Review the New 6.1 Properties Defaults }{605}{section.17.6}
-\contentsline {subsection}{Catalog all the plugins you have installed }{606}{section.17.6}
-\contentsline {subsubsection}{Upgrading a bundle }{607}{section.17.6}
-\contentsline {subsubsection}{Upgrading using a .war file }{608}{Item.413}
-\contentsline {section}{\numberline {17.7}Summary }{609}{section.17.7}
-\contentsline {chapter}{\chapternumberline {18}Using Scripting for Advanced Flexibility}{610}{chapter.18}
-\contentsline {section}{\numberline {18.1}Accessing Liferay Services }{611}{section.18.1}
-\contentsline {subsection}{Beanshell }{611}{section.18.1}
-\contentsline {subsection}{Groovy }{612}{section.18.1}
-\contentsline {subsection}{Javascript }{612}{section.18.1}
-\contentsline {subsection}{Ruby }{613}{section.18.1}
-\contentsline {subsection}{Python }{613}{section.18.1}
-\contentsline {section}{\numberline {18.2}Running scripts from the control panel }{613}{section.18.2}
-\contentsline {section}{\numberline {18.3}Leveraging the Script Engine in Workflow }{615}{section.18.3}
-\contentsline {section}{\numberline {18.4}Custom Java Tools in the Script Engine }{617}{section.18.4}
-\contentsline {section}{\numberline {18.5}Summary }{622}{section.18.5}
-\contentsline {chapter}{\chapternumberline {19}Configuring Liferay for High Availability}{624}{chapter.19}
-\contentsline {section}{\numberline {19.1}Liferay Clustering }{625}{section.19.1}
-\contentsline {subsection}{All nodes should be pointing to the same Liferay database }{627}{section.19.1}
-\contentsline {subsubsection}{Read-Writer database configuration }{627}{section.19.1}
-\contentsline {subsubsection}{Database Sharding }{628}{section.19.1}
-\contentsline {subsection}{Documents and Media Library clustering }{632}{section.19.1}
-\contentsline {subsubsection}{Using the File System store }{632}{section.19.1}
-\contentsline {subsubsection}{Using the Advanced File System store }{634}{section.19.1}
-\contentsline {subsubsection}{Using the CMIS store }{635}{section.19.1}
-\contentsline {subsubsection}{Using the JCR store }{635}{section.19.1}
-\contentsline {paragraph}{Using Amazon Simple Storage Service }{637}{section.19.1}
-\contentsline {paragraph}{Using the Documentum store }{637}{section.19.1}
-\contentsline {subsection}{Clustering search }{638}{section.19.1}
-\contentsline {subsubsection}{Using Pluggable Enterprise Search }{638}{section.19.1}
-\contentsline {paragraph}{Configuring the Solr Search Server }{639}{section.19.1}
-\contentsline {paragraph}{Installing the Solr Liferay Plugin }{640}{section.19.1}
-\contentsline {subsubsection}{Clustering Lucene indexes on all nodes }{641}{section.19.1}
-\contentsline {subsubsection}{Sharing a search index (not recommended unless you have a file locking-aware SAN) }{642}{section.19.1}
-\contentsline {subsection}{Distributed Caching }{643}{section.19.1}
-\contentsline {subsubsection}{Enabling distributed caching }{644}{section.19.1}
-\contentsline {subsubsection}{Modifying the cache settings with a plugin }{644}{section.19.1}
-\contentsline {subsubsection}{Modifying the Ehcache settings directly }{646}{section.19.1}
-\contentsline {subsubsection}{Customizing Hibernate cache settings }{647}{section.19.1}
-\contentsline {subsubsection}{Enhanced distributed cache algorithm }{648}{section.19.1}
-\contentsline {subsection}{Hot Deploy }{651}{section.19.1}
-\contentsline {section}{\numberline {19.2}Performance Tuning }{652}{section.19.2}
-\contentsline {subsection}{Memory }{652}{section.19.2}
-\contentsline {subsection}{Garbage Collection }{653}{section.19.2}
-\contentsline {subsection}{Properties File Changes }{655}{section.19.2}
-\contentsline {subsection}{Disabling unused servlet filters }{656}{section.19.2}
-\contentsline {section}{\numberline {19.3}Summary }{657}{section.19.3}
+\contentsline {subsubsection}{Creating Items }{351}{section.12.3}
+\contentsline {subsection}{Configuration }{354}{section.12.3}
+\contentsline {subsubsection}{Payment Settings }{354}{section.12.3}
+\contentsline {subsubsection}{Shipping and Insurance Calculation }{355}{section.12.3}
+\contentsline {subsubsection}{Emails }{355}{section.12.3}
+\contentsline {subsection}{Using the shopping cart }{355}{section.12.3}
+\contentsline {subsubsection}{Customizing the shopping cart with a hook }{359}{section.12.3}
+\contentsline {subsection}{Managing Orders }{359}{section.12.3}
+\contentsline {subsection}{Managing Coupons }{361}{section.12.3}
+\contentsline {subsubsection}{Integrating the Amazon Rankings portlet }{365}{section.12.3}
+\contentsline {paragraph}{Setting up your Amazon Web Services account }{365}{section.12.3}
+\contentsline {paragraph}{Setting up the Amazon Rankings portlet }{365}{section.12.3}
+\contentsline {section}{\numberline {12.4}Knowledge Base }{367}{section.12.4}
+\contentsline {subsection}{Knowledge Base Display Portlet }{367}{section.12.4}
+\contentsline {subsection}{Knowledge Base Page of the Control Panel }{370}{section.12.4}
+\contentsline {subsection}{Knowledge Base Article Portlet }{372}{section.12.4}
+\contentsline {subsection}{Knowledge Base Section Portlet }{374}{section.12.4}
+\contentsline {subsection}{Knowledge Base Navigation }{375}{section.12.4}
+\contentsline {section}{\numberline {12.5}Summary }{376}{section.12.5}
+\contentsline {chapter}{\chapternumberline {13}Leveraging the Liferay Marketplace }{377}{chapter.13}
+\contentsline {section}{\numberline {13.1}Marketplace Concepts: Users, Companies and Apps }{378}{section.13.1}
+\contentsline {section}{\numberline {13.2}Accessing the Liferay Marketplace }{378}{section.13.2}
+\contentsline {subsection}{The Basics }{378}{Item.127}
+\contentsline {subsection}{Logging In }{382}{Item.127}
+\contentsline {subsection}{Marketplace Profile }{382}{Item.127}
+\contentsline {subsection}{Managing Apps }{382}{Item.127}
+\contentsline {subsection}{Creating a Company }{384}{Item.127}
+\contentsline {section}{\numberline {13.3}Finding Apps }{384}{section.13.3}
+\contentsline {subsection}{Versions }{386}{Item.128}
+\contentsline {subsection}{Compatibility }{387}{Item.128}
+\contentsline {section}{\numberline {13.4}Downloading and Installing Apps }{389}{section.13.4}
+\contentsline {subsection}{Downloading and Installing }{390}{section.13.4}
+\contentsline {subsection}{Liferay Hot Deploy }{391}{section.13.4}
+\contentsline {subsection}{Installing through the Control Panel }{391}{section.13.4}
+\contentsline {subsection}{Downloading through liferay.com }{393}{section.13.4}
+\contentsline {section}{\numberline {13.5}Creating and Uploading Apps }{394}{section.13.5}
+\contentsline {section}{\numberline {13.6}Plugin Management }{394}{section.13.6}
+\contentsline {subsection}{Portlets }{394}{section.13.6}
+\contentsline {subsection}{Themes }{396}{section.13.6}
+\contentsline {subsection}{Layout Templates }{397}{section.13.6}
+\contentsline {subsection}{Hook Plugins }{397}{section.13.6}
+\contentsline {subsection}{Web Plugins }{397}{section.13.6}
+\contentsline {subsection}{Installing Plugins from Repositories }{397}{section.13.6}
+\contentsline {subsection}{Installing Plugins Manually }{401}{section.13.6}
+\contentsline {subsection}{Plugin Troubleshooting }{404}{section.13.6}
+\contentsline {subsubsection}{Liferay Configuration Issues }{404}{section.13.6}
+\contentsline {subsubsection}{Deploy Issues for Specific Containers }{406}{section.13.6}
+\contentsline {paragraph}{Example: WebSphere ® Application Server }{408}{section.13.6}
+\contentsline {subsubsection}{Changing the Configuration Options in Multiple Places }{409}{Item.136}
+\contentsline {section}{\numberline {13.7}Summary }{409}{section.13.7}
+\contentsline {chapter}{\chapternumberline {14}Installation and Setup }{411}{chapter.14}
+\contentsline {section}{\numberline {14.1}Editions of Liferay }{411}{section.14.1}
+\contentsline {subsection}{Liferay's Versioning Schema }{412}{section.14.1}
+\contentsline {subsubsection}{Major Release }{412}{section.14.1}
+\contentsline {subsubsection}{Minor Release }{413}{section.14.1}
+\contentsline {subsubsection}{Maintenance Release }{413}{section.14.1}
+\contentsline {subsubsection}{Release Process }{413}{section.14.1}
+\contentsline {subsubsection}{Comments and Recommendations }{414}{section.14.1}
+\contentsline {section}{\numberline {14.2}Obtaining Liferay Portal }{415}{section.14.2}
+\contentsline {section}{\numberline {14.3}Installing a bundle }{416}{section.14.3}
+\contentsline {section}{\numberline {14.4}App servers }{418}{section.14.4}
+\contentsline {subsection}{Liferay Home }{419}{section.14.4}
+\contentsline {subsection}{Liferay's database }{419}{section.14.4}
+\contentsline {subsection}{Liferay installation overview }{420}{section.14.4}
+\contentsline {subsubsection}{Using data sources }{421}{Item.144}
+\contentsline {subsubsection}{Using mail sessions }{421}{Item.144}
+\contentsline {subsubsection}{The portal-ext.properties file }{422}{Item.144}
+\contentsline {section}{\numberline {14.5}Using Liferay's setup wizard }{423}{section.14.5}
+\contentsline {section}{\numberline {14.6}Manual Configuration }{426}{section.14.6}
+\contentsline {section}{\numberline {14.7}Installing Liferay on an existing application server }{428}{section.14.7}
+\contentsline {subsection}{Installing Liferay in five easy steps }{428}{section.14.7}
+\contentsline {section}{\numberline {14.8}Installing Liferay on Mule Tcat }{429}{section.14.8}
+\contentsline {subsection}{Installing the Administration Console on Windows }{430}{section.14.8}
+\contentsline {subsection}{Installing the Administraton Console on Linux (Ubuntu) }{433}{section.14.8}
+\contentsline {subsection}{Adding Liferay Portal packages }{437}{section.14.8}
+\contentsline {subsection}{Tcat Server Managed Server Installation }{439}{section.14.8}
+\contentsline {subsection}{Registering the managed server }{443}{section.14.8}
+\contentsline {subsection}{Deploying Liferay Portal }{448}{section.14.8}
+\contentsline {subsection}{Deploying Liferay plugins on Mule Tcat }{452}{Item.152}
+\contentsline {section}{\numberline {14.9}Installing Liferay on GlassFish 3 }{454}{section.14.9}
+\contentsline {subsection}{Dependency Jars }{455}{section.14.9}
+\contentsline {paragraph}{Domain Configuration }{457}{Item.154}
+\contentsline {subsection}{Database Configuration }{459}{Item.156}
+\contentsline {subsection}{Mail Configuration }{464}{Item.171}
+\contentsline {subsection}{Domain Configuration - Continued }{464}{Item.171}
+\contentsline {subsection}{Deploy Liferay }{465}{Item.174}
+\contentsline {section}{\numberline {14.10}Installing Liferay on Jetty 7 }{466}{section.14.10}
+\contentsline {subsection}{Dependency Jars }{467}{section.14.10}
+\contentsline {subsection}{Jetty Configuration }{468}{Item.185}
+\contentsline {subsection}{Database Configuration }{470}{Item.192}
+\contentsline {subsection}{Mail Configuration }{471}{Item.194}
+\contentsline {subsection}{Configuring data sources and mail sessions }{472}{Item.194}
+\contentsline {subsection}{Deploy Liferay }{473}{Item.197}
+\contentsline {section}{\numberline {14.11}Installing Liferay on JBoss 5.1 }{474}{section.14.11}
+\contentsline {subsection}{Configuring Dependencies }{474}{Item.204}
+\contentsline {subsection}{Deploying Liferay }{475}{Item.211}
+\contentsline {section}{\numberline {14.12}Installing Liferay on JBoss 7 }{476}{section.14.12}
+\contentsline {subsection}{Dependency Jars }{476}{Item.219}
+\contentsline {subsection}{Configuring JBoss }{477}{Item.222}
+\contentsline {subsection}{Database Configuration }{479}{Item.228}
+\contentsline {subsection}{Mail Configuration }{480}{Item.230}
+\contentsline {subsection}{Configuring data sources and mail sessions }{480}{Item.230}
+\contentsline {subsection}{Deploy Liferay }{481}{Item.233}
+\contentsline {section}{\numberline {14.13}Installing Liferay on Resin 4 }{483}{section.14.13}
+\contentsline {subsection}{Dependency Jars }{483}{section.14.13}
+\contentsline {subsection}{Configuring Resin }{484}{Item.245}
+\contentsline {subsection}{Database Configuration }{485}{Item.248}
+\contentsline {subsection}{Mail Configuration }{486}{Item.248}
+\contentsline {subsection}{Configuring data source and mail session }{486}{Item.248}
+\contentsline {subsection}{Deploy Liferay }{487}{Item.251}
+\contentsline {section}{\numberline {14.14}Installing Liferay on Tomcat 7 }{489}{section.14.14}
+\contentsline {subsection}{Dependency Jars }{489}{section.14.14}
+\contentsline {subsection}{Tomcat Configuration }{490}{Item.263}
+\contentsline {subsection}{Database Configuration }{492}{Item.268}
+\contentsline {subsection}{Mail Configuration }{493}{Item.270}
+\contentsline {subsection}{Configuring your database and mail session }{493}{Item.270}
+\contentsline {subsection}{Deploy Liferay }{494}{Item.272}
+\contentsline {section}{\numberline {14.15}Installing Liferay on JOnAS 5.2 }{495}{section.14.15}
+\contentsline {subsection}{Configuring JOnAS for Liferay }{496}{section.14.15}
+\contentsline {subsection}{Configuring Containers in JOnAS }{499}{Item.287}
+\contentsline {subsection}{Starting JOnAS }{500}{Item.292}
+\contentsline {section}{\numberline {14.16}Installing Liferay on WebLogic 10 }{501}{section.14.16}
+\contentsline {subsection}{Dependency Jars }{501}{section.14.16}
+\contentsline {subsection}{Database Configuration }{502}{Item.305}
+\contentsline {subsection}{Mail Configuration }{503}{Item.314}
+\contentsline {subsection}{Domain Configuration - Continued }{504}{Item.321}
+\contentsline {subsection}{Deploy Liferay }{505}{Item.324}
+\contentsline {section}{\numberline {14.17}Installing Liferay on Oracle WebLogic 10.3 }{507}{section.14.17}
+\contentsline {subsection}{Dependency Jars }{508}{section.14.17}
+\contentsline {subsection}{Database Configuration }{508}{Item.336}
+\contentsline {subsection}{Mail Configuration }{510}{Item.344}
+\contentsline {subsection}{Domain Configuration - Continued }{510}{Item.347}
+\contentsline {subsection}{Deploy Liferay }{512}{Item.349}
+\contentsline {section}{\numberline {14.18}Installing Liferay on WebSphere 8.0 }{514}{section.14.18}
+\contentsline {subsection}{Preparing WebSphere for Liferay }{514}{section.14.18}
+\contentsline {subsection}{Copying portal dependencies }{518}{Item.367}
+\contentsline {subsection}{Database Configuration }{519}{Item.367}
+\contentsline {subsection}{Mail Configuration }{522}{Item.388}
+\contentsline {subsection}{Deploy Liferay }{523}{Item.393}
+\contentsline {subsection}{Start Liferay }{523}{Item.399}
+\contentsline {section}{\numberline {14.19}Making Liferay Coexist with Other Java EE Applications }{524}{section.14.19}
+\contentsline {section}{\numberline {14.20}Summary }{525}{section.14.20}
+\contentsline {chapter}{\chapternumberline {15}Management }{526}{chapter.15}
+\contentsline {section}{\numberline {15.1}Managing Users }{527}{section.15.1}
+\contentsline {section}{\numberline {15.2}Adding users }{527}{section.15.2}
+\contentsline {section}{\numberline {15.3}User management }{529}{section.15.3}
+\contentsline {subsection}{Organizations }{530}{section.15.3}
+\contentsline {section}{\numberline {15.4}User Groups }{533}{section.15.4}
+\contentsline {subsection}{Creating and editing a User Group }{536}{section.15.4}
+\contentsline {subsection}{Assigning Members to a User Group }{536}{section.15.4}
+\contentsline {subsection}{User Group Sites }{537}{section.15.4}
+\contentsline {section}{\numberline {15.5}Roles and Permissions }{539}{section.15.5}
+\contentsline {subsection}{Defining Permissions on a Role }{542}{section.15.5}
+\contentsline {subsection}{Special Note about the Power Users Role }{547}{section.15.5}
+\contentsline {section}{\numberline {15.6}Managing Portal Settings }{548}{section.15.6}
+\contentsline {subsection}{Password Policies }{548}{section.15.6}
+\contentsline {subsection}{Portal Settings }{550}{section.15.6}
+\contentsline {subsection}{General }{550}{section.15.6}
+\contentsline {subsection}{Authentication }{552}{section.15.6}
+\contentsline {section}{\numberline {15.7}Integrating Liferay users into your enterprise }{553}{section.15.7}
+\contentsline {subsection}{LDAP }{553}{section.15.7}
+\contentsline {subsubsection}{Adding LDAP Servers }{555}{section.15.7}
+\contentsline {subsubsection}{LDAP Options Not Available in the GUI }{559}{section.15.7}
+\contentsline {subsection}{SSO }{560}{section.15.7}
+\contentsline {subsection}{Authentication: Central Authentication Service (CAS) }{561}{section.15.7}
+\contentsline {subsection}{Authentication: Facebook }{562}{section.15.7}
+\contentsline {subsection}{Authentication: NTLM }{562}{section.15.7}
+\contentsline {subsection}{Authentication: OpenID }{563}{section.15.7}
+\contentsline {subsection}{Atlassian Crowd }{563}{section.15.7}
+\contentsline {subsection}{Authentication: OpenSSO }{563}{section.15.7}
+\contentsline {subsection}{Authentication: SiteMinder }{564}{section.15.7}
+\contentsline {subsection}{Users }{564}{section.15.7}
+\contentsline {section}{\numberline {15.8}Summary }{565}{section.15.8}
+\contentsline {chapter}{\chapternumberline {16}Using the Control Panel }{566}{chapter.16}
+\contentsline {subsection}{Mail Host Names }{567}{chapter.16}
+\contentsline {subsection}{Email Notifications }{567}{chapter.16}
+\contentsline {subsection}{Identification }{568}{chapter.16}
+\contentsline {subsection}{Miscellaneous: Display Settings }{568}{chapter.16}
+\contentsline {section}{\numberline {16.1}Monitoring }{570}{section.16.1}
+\contentsline {section}{\numberline {16.2}Plugins Configuration }{570}{section.16.2}
+\contentsline {section}{\numberline {16.3}Server Administration }{572}{section.16.3}
+\contentsline {subsection}{Resources }{572}{section.16.3}
+\contentsline {subsection}{Log Levels }{573}{section.16.3}
+\contentsline {subsection}{Properties }{573}{section.16.3}
+\contentsline {subsection}{Captcha }{574}{section.16.3}
+\contentsline {subsection}{Data Migration }{574}{section.16.3}
+\contentsline {subsection}{File Uploads }{575}{section.16.3}
+\contentsline {subsection}{Mail }{575}{section.16.3}
+\contentsline {subsection}{External Services }{575}{section.16.3}
+\contentsline {subsubsection}{OpenOffice/LibreOffice configuration }{576}{section.16.3}
+\contentsline {subsubsection}{ImageMagick configuration }{577}{section.16.3}
+\contentsline {subsubsection}{Xuggler configuration }{578}{section.16.3}
+\contentsline {subsection}{Script }{578}{section.16.3}
+\contentsline {subsection}{Shutdown }{578}{section.16.3}
+\contentsline {section}{\numberline {16.4}Portal Instances }{579}{section.16.4}
+\contentsline {section}{\numberline {16.5}Plugins Installation }{579}{section.16.5}
+\contentsline {section}{\numberline {16.6}Summary }{580}{section.16.6}
+\contentsline {chapter}{\chapternumberline {17}Advanced Portal Operation }{581}{chapter.17}
+\contentsline {section}{\numberline {17.1}Audit Trails }{582}{section.17.1}
+\contentsline {subsection}{Installing and configuring the audit plugins }{583}{section.17.1}
+\contentsline {subsection}{Using audit events }{583}{section.17.1}
+\contentsline {subsection}{Viewing audit reports }{586}{section.17.1}
+\contentsline {subsection}{Conclusion of the Story }{589}{section.17.1}
+\contentsline {section}{\numberline {17.2}Liferay monitoring using Google Analytics }{589}{section.17.2}
+\contentsline {section}{\numberline {17.3}Backing up a Liferay installation }{591}{section.17.3}
+\contentsline {subsection}{Backing up source code }{591}{section.17.3}
+\contentsline {subsection}{Backing up Liferay's file system }{591}{section.17.3}
+\contentsline {subsection}{Backing up Liferay's database }{592}{section.17.3}
+\contentsline {section}{\numberline {17.4}Liferay's Logging System }{592}{section.17.4}
+\contentsline {section}{\numberline {17.5}Patching Liferay }{595}{section.17.5}
+\contentsline {subsection}{Installing the patching tool }{596}{section.17.5}
+\contentsline {subsection}{Installing patches }{597}{section.17.5}
+\contentsline {subsubsection}{Handling hot fixes and patches }{597}{section.17.5}
+\contentsline {subsubsection}{Fix pack dependencies }{598}{section.17.5}
+\contentsline {subsection}{Removing or reverting patches }{598}{section.17.5}
+\contentsline {subsection}{Using profiles with the patching tool }{598}{section.17.5}
+\contentsline {section}{\numberline {17.6}Upgrading Liferay }{599}{section.17.6}
+\contentsline {subsection}{Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1 }{600}{section.17.6}
+\contentsline {subsection}{Migrate to Algorithm 6 }{600}{section.17.6}
+\contentsline {subsection}{Migrate Your Image Gallery Images }{602}{section.17.6}
+\contentsline {subsection}{Review the New 6.1 Properties Defaults }{602}{section.17.6}
+\contentsline {subsection}{Catalog all the plugins you have installed }{603}{section.17.6}
+\contentsline {subsubsection}{Upgrading a bundle }{604}{section.17.6}
+\contentsline {subsubsection}{Upgrading using a .war file }{605}{Item.413}
+\contentsline {section}{\numberline {17.7}Summary }{606}{section.17.7}
+\contentsline {chapter}{\chapternumberline {18}Using Scripting for Advanced Flexibility}{607}{chapter.18}
+\contentsline {section}{\numberline {18.1}Accessing Liferay Services }{608}{section.18.1}
+\contentsline {subsection}{Beanshell }{608}{section.18.1}
+\contentsline {subsection}{Groovy }{609}{section.18.1}
+\contentsline {subsection}{Javascript }{609}{section.18.1}
+\contentsline {subsection}{Ruby }{610}{section.18.1}
+\contentsline {subsection}{Python }{610}{section.18.1}
+\contentsline {section}{\numberline {18.2}Running scripts from the control panel }{610}{section.18.2}
+\contentsline {section}{\numberline {18.3}Leveraging the Script Engine in Workflow }{612}{section.18.3}
+\contentsline {section}{\numberline {18.4}Custom Java Tools in the Script Engine }{614}{section.18.4}
+\contentsline {section}{\numberline {18.5}Summary }{619}{section.18.5}
+\contentsline {chapter}{\chapternumberline {19}Configuring Liferay for High Availability}{621}{chapter.19}
+\contentsline {section}{\numberline {19.1}Liferay Clustering }{622}{section.19.1}
+\contentsline {subsection}{All nodes should be pointing to the same Liferay database }{624}{section.19.1}
+\contentsline {subsubsection}{Read-Writer database configuration }{624}{section.19.1}
+\contentsline {subsubsection}{Database Sharding }{625}{section.19.1}
+\contentsline {subsection}{Documents and Media Library clustering }{629}{section.19.1}
+\contentsline {subsubsection}{Using the File System store }{629}{section.19.1}
+\contentsline {subsubsection}{Using the Advanced File System store }{631}{section.19.1}
+\contentsline {subsubsection}{Using the CMIS store }{632}{section.19.1}
+\contentsline {subsubsection}{Using the JCR store }{632}{section.19.1}
+\contentsline {paragraph}{Using Amazon Simple Storage Service }{634}{section.19.1}
+\contentsline {paragraph}{Using the Documentum store }{634}{section.19.1}
+\contentsline {subsection}{Clustering search }{635}{section.19.1}
+\contentsline {subsubsection}{Using Pluggable Enterprise Search }{635}{section.19.1}
+\contentsline {paragraph}{Configuring the Solr Search Server }{636}{section.19.1}
+\contentsline {paragraph}{Installing the Solr Liferay Plugin }{637}{section.19.1}
+\contentsline {subsubsection}{Clustering Lucene indexes on all nodes }{638}{section.19.1}
+\contentsline {subsubsection}{Sharing a search index (not recommended unless you have a file locking-aware SAN) }{639}{section.19.1}
+\contentsline {subsection}{Distributed Caching }{640}{section.19.1}
+\contentsline {subsubsection}{Enabling distributed caching }{641}{section.19.1}
+\contentsline {subsubsection}{Modifying the cache settings with a plugin }{641}{section.19.1}
+\contentsline {subsubsection}{Modifying the Ehcache settings directly }{643}{section.19.1}
+\contentsline {subsubsection}{Customizing Hibernate cache settings }{644}{section.19.1}
+\contentsline {subsubsection}{Enhanced distributed cache algorithm }{645}{section.19.1}
+\contentsline {subsection}{Hot Deploy }{648}{section.19.1}
+\contentsline {section}{\numberline {19.2}Performance Tuning }{649}{section.19.2}
+\contentsline {subsection}{Memory }{649}{section.19.2}
+\contentsline {subsection}{Garbage Collection }{650}{section.19.2}
+\contentsline {subsection}{Properties File Changes }{652}{section.19.2}
+\contentsline {subsection}{Disabling unused servlet filters }{653}{section.19.2}
+\contentsline {section}{\numberline {19.3}Summary }{654}{section.19.3}
