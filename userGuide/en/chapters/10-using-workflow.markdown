@@ -28,11 +28,10 @@ process for any kind of content before it is published to your portal.
 
 ## Enabling workflow [](id=installati-3)
 
-Liferay's Kaleo workflow engine ships with CE versions of Liferay. If you have
-EE or if you uninstalled it, the plugin can be installed through the Liferay
-marketplace. The name is `kaleo-web` and you'll find it in the list of web
-plugins. Installing the plugin adds a number of new options to the control
-panel: 
+Liferay's Kaleo workflow engine can be installed for both CE and EE versions of
+Liferay. The web plugin's name is `kaleo-web` and is bundled in the *Kaleo Forms
+EE* and *Kaleo Workflow CE* apps on Liferay marketplace. Installing the plugin
+adds a number of new options to the control panel:
 
 -   My Workflow Tasks
 
