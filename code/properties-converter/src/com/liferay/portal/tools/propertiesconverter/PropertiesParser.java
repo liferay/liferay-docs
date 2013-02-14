@@ -36,6 +36,7 @@ public class PropertiesParser {
 		cfg.setObjectWrapper(new DefaultObjectWrapper());
 		
 		// Create a data model for Freemarker
+		
 		Map root = new HashMap();
 		
 		String pageTitle = "Portal Properties";
@@ -51,17 +52,19 @@ public class PropertiesParser {
 		root.put("toc", toc);
 		
 		// Parse properties file and create sections for the data model
+		
 		File propertiesFile = new File(System.getProperty("user.dir") + "/" + args[2]);
 		String propertiesString = read(propertiesFile);
 		String[] paragraphs = propertiesString.split("\n\n");
 		ArrayList<Section> sections = new ArrayList<Section>();
+		
 		for (int i = 0; i < paragraphs.length; i++) {
 			if (paragraphs[i].startsWith("##")) {
 				Section section =
 					new Section(
-						true, paragraphs[i].replace("#", "").trim(),
-						paragraphs[i], new ArrayList<String>(),
-						new ArrayList<String>(), new ArrayList<String>(), "");
+						new ArrayList<String>(), true, paragraphs[i].replace(
+							"#", "").trim(), paragraphs[i],
+						new ArrayList<String>(), "", new ArrayList<String>());
 				sections.add(section);
 			}
 			else {
@@ -79,13 +82,14 @@ public class PropertiesParser {
 				}
 				Section section =
 					new Section(
-						false, "", paragraphs[i], properties,
-						new ArrayList<String>(), new ArrayList<String>(), "");
+						new ArrayList<String>(), false, "", paragraphs[i],
+						properties, "", new ArrayList<String>());
 				sections.add(section);
 			}
 		}
 		
 		// Populate sectionProperties
+		
 		for (int i = 0; i < sections.size(); i++) {
 			if (sections.get(i).getIsSectionTitle()) {
 				for (int j = i + 1; j < sections.size(); j++) {
@@ -103,6 +107,7 @@ public class PropertiesParser {
 		}
 		
 		// Populate descriptionParagraphs
+		
 		for (int i = 0; i < sections.size(); i++) {
 			String paragraph = "";
 			List<String> descriptionParagraphs = new ArrayList<String>();
@@ -128,6 +133,7 @@ public class PropertiesParser {
 		}
 		
 		// Populate propertiesParagraph
+		
 		for (int i = 0; i < sections.size(); i++) {
 			if (sections.get(i).getProperties().isEmpty()) {
 				continue;
@@ -141,6 +147,7 @@ public class PropertiesParser {
 		root.put("sections", sections);
 
 		// Get the Freemarker template and merge it with the data model
+		
 		try {
 			Template temp = cfg.getTemplate("properties.ftl");
 			File propertiesHtml =

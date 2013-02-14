@@ -5,15 +5,21 @@ import java.util.List;
 
 public class Section {
 
-	public Section(boolean isSectionTitle, String name, String paragraph, List<String> properties, List<String> sectionProperties, List<String> descriptionParagraphs, String propertiesParagraph) {
+	public Section(List<String> descriptionParagraphs, boolean isSectionTitle, String name, String paragraph, List<String> properties, String propertiesParagraph, List<String> sectionProperties) {
 
+		_descriptionParagraphs = descriptionParagraphs;
 		_isSectionTitle = isSectionTitle;
 		_name = name;
 		_paragraph = paragraph;
 		_properties = properties;
-		_sectionProperties = sectionProperties;
-		_descriptionParagraphs = descriptionParagraphs;
 		_propertiesParagraph = propertiesParagraph;
+		_sectionProperties = sectionProperties;
+		
+	}
+	
+	public List<String> getDescriptionParagraphs() {
+	
+		return _descriptionParagraphs;
 	}
 	
 	public boolean getIsSectionTitle() {
@@ -36,19 +42,19 @@ public class Section {
 		return _properties;
 	}
 	
+	public String getPropertiesParagraph() {
+	
+		return _propertiesParagraph;
+	}
+	
 	public List<String> getSectionProperties() {
 	
 		return _sectionProperties;
 	}
 	
-	public List<String> getDescriptionParagraphs() {
+	public void setDescriptionParagraphs(List<String> descriptionParagraphs) {
 	
-		return _descriptionParagraphs;
-	}
-	
-	public String getPropertiesParagraph() {
-	
-		return _propertiesParagraph;
+		_descriptionParagraphs = descriptionParagraphs;
 	}
 	
 	public void setIsSectionTitle(boolean isSectionTitle) {
@@ -71,27 +77,22 @@ public class Section {
 		_properties = properties;
 	}
 	
-	public void setSectionProperties(List<String> sectionProperties) {
-	
-		_sectionProperties = sectionProperties;
-	}
-	
-	public void setDescriptionParagraphs(List<String> descriptionParagraphs) {
-	
-		_descriptionParagraphs = descriptionParagraphs;
-	}
-	
 	public void setPropertiesParagraph(String propertiesParagraph) {
 	
 		_propertiesParagraph = propertiesParagraph;
 	}
 	
+	public void setSectionProperties(List<String> sectionProperties) {
+	
+		_sectionProperties = sectionProperties;
+	}
+	
+	private List<String> _descriptionParagraphs;
 	private boolean _isSectionTitle;
 	private String _name;
 	private String _paragraph;
 	private List<String> _properties;
-	private List<String> _sectionProperties;
-	private List<String> _descriptionParagraphs;
 	private String _propertiesParagraph;
+	private List<String> _sectionProperties;
 	
 }
