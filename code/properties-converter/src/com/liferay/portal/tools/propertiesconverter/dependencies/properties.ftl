@@ -2,20 +2,9 @@
 	<style type="text/css">
 		h1 {color:red;}
 		h2 {color:blue;}
-		h3
-		{color:darkgreen;}
-		h4 {color:white; background-color:red;}
-		.content
-		{border: 1px dotted #666; padding: 10px;}
-		.description {color: #444;}
-		.value {background-color: #efe; font-size: 14px; padding: 4px;
-		margin: 10px 20px 20px 20px; font-weight:bold;}
-		.alt {font-weight:
-		normal; background-color: #eef;}
-		.hidden {background-color: #eee;}
+		h3 {color:darkgreen;}
 		#toc {color:#555; border: 1px dotted #555; width: 700px;}
-		#toc li
-		{font-size:14px;}
+		#toc li {font-size:14px;}
 		#toc li li {font-size:12px;}
 		pre {background-color: #efe;}
 	</style>
