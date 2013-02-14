@@ -438,13 +438,14 @@ Timers occur within a Task element and are formatted like:
 		...
 	</task>
 		
-The outer element is <task-timers> because you can have multiple timers with
-multiple actions. The specific <task-timer> then contains the element <delay>
-which has a <duration> and <scale>. The duration can be any number, whole or
-fractional, and it's significance is defined by the scale. The scale tells you
-what unit of time the duration is talking about - seconds, minutes, hours, days,
-weeks, months or years. Once you've determined the time, you'll want to pick an
-action - either a notification, reassignment or a custom script.
+The outer element is `<task-timers>` because you can have multiple timers with
+multiple actions. The specific `<task-timer>` then contains the element
+`<delay>` which has a `<duration>` and `<scale>`. The duration can be any
+number, whole or fractional, and it's significance is defined by the scale. The
+scale tells you what unit of time the duration is talking about - seconds,
+minutes, hours, days, weeks, months or years. Once you've determined the time,
+you'll want to pick an action - either a notification, reassignment or a custom
+script.
 
 Notifications are pretty simple - if a certain amount of time passes and an
 action isn't completed yet, the user assigned to the task will receive a fresh
