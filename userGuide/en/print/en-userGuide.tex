@@ -14124,12 +14124,12 @@ installation to access and install applications onto the running Liferay
 web site. Once installed, you can manage the applications through
 Liferay's control panel.
 
-\section{Marketplace Concepts: Users, Companies and Apps
+\section{Marketplace Concepts: Users, Companies, and Apps
 }
 
-Anyone can browse the apps available on Liferay Marketplace at
-\href{http://liferay.com/marketplace}{http://liferay.com/marketplace}
-but a \texttt{liferay.com} user account is required for purchasing and
+Anyone can browse the apps available on Liferay
+Marketplace,\footnote{\href{http://liferay.com/marketplace}{http://liferay.com/marketplace}}
+but a \texttt{life\-ray.com} user account is required for purchasing and
 downloading apps, whether from the Marketplace website or from an
 existing Liferay installation. Many official Liferay apps, as well as
 some third party apps, are available free of charge. Other apps require
@@ -14253,13 +14253,15 @@ Marketplace. Once you submit your app, it will be reviewed before
 appearing on the \texttt{liferay.com} Marketplace.
 
 \begin{roundedframe}
-  \begin{wrapfigure}{l}{0.12\textwidth}
+		\begin{wrapfigure}{l}{0.12\textwidth}
+				\vspace{-20pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
+\vspace{12pt}
 Your \texttt{liferay.com} Home
 page is a private page. It's distinct from your public
 \texttt{liferay.com} Profile page.
-
+\vspace{18pt}
 \end{roundedframe}
 
 \subsection{Managing Apps }
@@ -14297,7 +14299,7 @@ on this topic).
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/marketplace-upload-app.png}
-\caption{Figure 13.5: Upload an App}
+\caption{\\Figure 13.5: Upload an App}
 \end{figure}
 
 Clicking on \emph{Add an App} allows you to upload a new app and make it
@@ -14341,6 +14343,12 @@ you can promote some of them to be company Marketplace admins too.
 
 \section{Finding Apps }
 
+\begin{figure}[htbp]
+\centering
+\scalegraphics{../../images/marketplace-browsing-categories.png}
+\caption{Figure 13.7: Browsing Categories}
+\end{figure}
+
 There are several ways to search for and find apps you are interested
 in.
 
@@ -14354,24 +14362,18 @@ in.
   Most Viewed apps within that category.
 \end{enumerate}
 
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/marketplace-browsing-categories.png}
-\caption{Figure 13.7: Browsing Categories}
-\end{figure}
-
  2. Searching. To search for an app, type in search criteria in the
 search box under the navigation menu on the left and click
 \emph{Search}. Apps matching the specified search criteria are
 displayed.
 
-\begin{figure}[htbp]
+\subsection{Versions }
+
+\begin{wrapfigure}{r}{.3\textwidth}
 \centering
 \scalegraphics{../../images/marketplace-search-box.png}
-\caption{Figure 13.8: Marketplace Search Box}
-\end{figure}
-
-\subsection{Versions }
+\caption{\\Figure 13.8: Marketplace Search Box}
+\end{wrapfigure}
 
 Apps are often updated to include new features or fix bugs. Each time an
 app is updated, its version number is changed. The version number is
@@ -14506,11 +14508,11 @@ local machine and that you can log in as an administrator. Once you are
 logged in as an administrator, click the \emph{Go to} menu on the
 Dockbar and choose \emph{Control Panel}.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{r}{.3\textwidth}
 \centering
 \scalegraphics{../../images/marketplace-control-panel-entries.png}
-\caption{Figure 13.12: Marketplace from the Control Panel}
-\end{figure}
+\caption{\\Figure 13.12: Marketplace from the Control Panel}
+\end{wrapfigure}
 
 Click on either the \emph{Store} or the \emph{Purchased} link in the
 Marketplace category at the upper-left. Before you can access
@@ -14523,8 +14525,19 @@ Marketplace.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/marketplace-login.png}
-\caption{Figure 13.13: Marketplace Login Screen}
+\caption{\\Figure 13.13: Marketplace Login Screen}
 \end{figure}
+
+Once you've successfully linked the accounts, you will be presented with
+the same Marketplace screens as you would have if you were directly
+accessing the Marketplace. You will be able to browse, search, and
+install directly from the Marketplace. Click on the \emph{Store} link
+under the Marketplace heading in the control panel to browse the apps
+available from the \texttt{liferay.com} Marketplace. Browse to the app
+you wish to install, click the \emph{Purchase} button, and then the
+\emph{Buy} button on the next screen. The app will be downloaded and
+deployed to your local Liferay installation.
+
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
       \includegraphics{../../images/01-tip.png}
@@ -14539,16 +14552,6 @@ account and a \texttt{liferay.com} account, there is no way to undo
 this, short of re-installing Liferay.
 \end{roundedframe}
 
-Once you've successfully linked the accounts, you will be presented with
-the same Marketplace screens as you would have if you were directly
-accessing the Marketplace. You will be able to browse, search, and
-install directly from the Marketplace. Click on the \emph{Store} link
-under the Marketplace heading in the control panel to browse the apps
-available from the \texttt{liferay.com} Marketplace. Browse to the app
-you wish to install, click the \emph{Purchase} button, and then the
-\emph{Buy} button on the next screen. The app will be downloaded and
-deployed to your local Liferay installation.
-
 All apps that you've bought are listed on the \emph{Purchased} page of
 the Marketplace control panel. Clicking on the \emph{Purchased} link
 will show you a list of those apps which you have downloaded in the
@@ -14558,7 +14561,7 @@ Liferay installations.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/marketplace-purchased-apps-control-panel.png}
-\caption{Figure 13.14: Purchased Apps}
+\caption{\\Figure 13.14: Purchased Apps}
 \end{figure}
 
 The apps which you downloaded and installed on the currently running
@@ -14578,8 +14581,8 @@ directly to your production environment, or in cases where the target
 Liferay instance that is to receive the app is behind a corporate
 firewall or otherwise does not have direct access to the Marketplace.
 
-In this case, using your browser, you will find the app on
-\texttt{liferay.com/marketplace}. Once found, click on the
+In this case, using your browser, you will find the app on Liferay
+Marketplace.\footnote{\texttt{liferay.com/marketplace}} Once found, click on the
 \emph{Purchase} button when viewing the individual app. This will cause
 the app to be placed in your \emph{Purchased} list on your personal Home
 page. Navigate to your Home page, click on \emph{App Manager} and visit
@@ -14756,6 +14759,12 @@ Liferay portlets to provide functionality.
 \subsection{Installing Plugins from Repositories
 }
 
+\begin{figure}[htbp]
+\centering
+\scalegraphics{../../images/marketplace-plugins-installation-portlet-tab.png}
+\caption{Figure 13.17: Plugins Installation Portlet Tab Default View}
+\end{figure}
+
 Liferay Portal has a section of the control panel called Plugins
 Installation, which you can find under the Server heading. This section
 not only allows you to see what plugins are installed in your portal,
@@ -14774,14 +14783,8 @@ which portal roles can access them.
 
 \begin{figure}[htbp]
 \centering
-\scalegraphics{../../images/marketplace-plugins-installation-portlet-tab.png}
-\caption{Figure 13.17: Plugins Installation Portlet Tab Default View}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
 \scalegraphics{../../images/marketplace-plugins-installation-theme-tab.png}
-\caption{Figure 13.18: Plugins Installation Theme Tab Default View}
+\caption{\\Figure 13.18: Plugins Installation Theme Tab Default View}
 \end{figure}
 
 If you would like to see what plugins are available, you can do so by
@@ -14802,7 +14805,7 @@ portlets.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/marketplace-plugins-installer.png}
-\caption{Figure 13.19: Installing Plugins}
+\caption{\\Figure 13.19: Installing Plugins}
 \end{figure}
 
 After you click the \emph{Install More } button, a new view appears.
@@ -14824,12 +14827,6 @@ displayed which describes the portlet plugin in more detail. Below the
 description is an \emph{Install} button. Click this button to install
 your plugin.
 
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/marketplace-installing-web-form-portlet.png}
-\caption{Figure 13.20: Installing the Web Form Portlet}
-\end{figure}
-
 Once you click \emph{Install}, your chosen plugin will automatically
 download and be installed on your instance of Liferay. If you have the
 Liferay console open, you can view the deployment as it happens. When it
@@ -14842,6 +14839,12 @@ tab, you would use the appropriate tab for the type of plugin you wish
 to install to view the list of plugins of that type. For themes,
 convenient thumbnails (plus a larger version when you click on the
 details of a particular theme) are shown in the list.
+
+\begin{figure}[htbp]
+\centering
+\scalegraphics{../../images/marketplace-installing-web-form-portlet.png}
+\caption{\\Figure 13.20: Installing the Web Form Portlet}
+\end{figure}
 
 After clicking on the \emph{Install} button for a theme, the theme
 becomes available on the \emph{Look and Feel} tab of any page.
@@ -14877,12 +14880,6 @@ click the \emph{Upload File} tab. This gives you a simple interface for
 uploading a \texttt{.war} file containing a plugin to your Liferay
 Portal.
 
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/marketplace-plugin-installer-upload-file.png}
-\caption{Figure 13.21: Installing a Plugin Manually}
-\end{figure}
-
 Click the \emph{Browse} button and navigate your file system to find the
 portlet or theme \texttt{.war} you have downloaded. The other field on
 the page is optional: you can specify your own context for deployment.
@@ -14895,6 +14892,12 @@ your portlet, theme, layout template, hook or web module. Click the
 deployed. If it is a portlet, you should see it in the \emph{Add
 Content} window. If it is a theme, it will be available on the
 \emph{Look and Feel} tab in the page definition.
+
+\begin{figure}[htbp]
+\centering
+\scalegraphics{../../images/marketplace-plugin-installer-upload-file.png}
+\caption{\\Figure 13.21: Installing a Plugin Manually}
+\end{figure}
 
 If you do not wish to use the Update Manager or Plugin Installer to
 deploy plugins, you can also deploy them at the operating system level.
@@ -14914,8 +14917,8 @@ fact, this is what the Plugin Installer is doing behind the scenes.
 
 You can change the defaults for this directory structure so it is stored
 anywhere you like by modifying the appropriate properties in your
-\texttt{portal-ext.properties} file. Please see the above section on the
-\texttt{portal-ext.properties} file for more information.
+\texttt{portal-ext\-.properties} file. Please see the above section on the
+\texttt{portal-ext.pro\-per\-ties} file for more information.
 
 To have Liferay hot deploy a portlet or theme plugin, copy the plugin
 into your hot deploy folder, which by default is in
@@ -14924,36 +14927,36 @@ console, you should see messages like the following:
 
 \begin{verbatim}
 16:11:47,616 INFO [PortletAutoDeployListener:71] Copying portlets for
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/deploy/weather-portlet-6.0.4.1.war
+/liferay-portal-6.0.4/deploy/weather-portlet-6.0.4.1.war
 
 Expanding:
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/deploy/weather-portlet-6.0.4.1.war
+/liferay-portal-6.0.4/deploy/weather-portlet-6.0.4.1.war
 into
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694
+/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694
 
 Copying 1 file to
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694/WEB-INF
+/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694/WEB-INF
 
 Copying 1 file to
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694/WEB-INF/classes
+/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694/WEB-INF/classes
 
 Copying 1 file to
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694/WEB-INF/classes
+/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694/WEB-INF/classes
 
 Copying 1 file to
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694/META-INF
+/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694/META-INF
 
 Copying 37 files to
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/tomcat-6.0.26/webapps/weather-portlet
+/liferay-portal-6.0.4/tomcat-6.0.26/webapps/weather-portlet
 
 Copying 1 file to
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/tomcat-6.0.26/webapps/weather-portlet
+/liferay-portal-6.0.4/tomcat-6.0.26/webapps/weather-portlet
 
 Deleting directory
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694
+/liferay-portal-6.0.4/tomcat-6.0.26/temp/20100729161147694
 
 16:11:48,072 INFO [PortletAutoDeployListener:81] Portlets for
-/Users/stephenkostas/java/liferay/bundles/liferay-portal-6.0.4/deploy/weather-portlet-6.0.4.1.war
+/liferay-portal-6.0.4/deploy/weather-portlet-6.0.4.1.war
 copied successfully. Deployment will start in a few seconds.
 
 Jul 29, 2010 4:11:50 PM org.apache.catalina.startup.HostConfig
@@ -15010,7 +15013,7 @@ are able to auto detect the type of server it is running on, which makes
 things a lot easier. If you are running a newer version of Liferay, you
 can skip this section. If you are upgrading from one of these versions,
 continue reading.
-
+\vspace{9pt}
 \end{roundedframe}
 
 Liferay by default comes as a bundle or as a \texttt{.war} file. Though
@@ -15026,7 +15029,7 @@ these settings is the manual override of the default value of
 \texttt{auto.deploy.dest.dir}.
 
 In versions of Liferay prior to 4.3.5, there is a property called
-\texttt{auto.deploy.dest.dir} that defines the folder where plugins are
+\texttt{auto.de\-ploy.dest.dir} that defines the folder where plugins are
 deployed after the hot deploy utilities have finished preparing them.
 This folder maps to a folder the container defines as an auto-deploy or
 a hot deploy folder. By default in older versions of Liferay, this
@@ -15038,7 +15041,7 @@ value is automatically set to the default for the application server
 upon which Liferay is running.
 
 For example, Glassfish defines the hot deploy folder as a folder called
-\texttt{autodeploy} inside of the domain folder in which your server is
+\texttt{auto\-deploy} inside of the domain folder in which your server is
 running. By default, this is in
 \texttt{\textless{}Glassfish Home\textgreater{}/domains/domain1/autodeploy}.
 JBoss defines the hot deploy folder as a root folder inside the
@@ -15057,14 +15060,14 @@ folder, follow the instructions below.
 You will first need to determine where the hot deploy folder is for the
 container you are running. Consult your product documentation for this.
 Once you have this value, there are two places in which you can set it:
-in the \texttt{portal-ext.properties} file and in the Plugin Installer
+in the \texttt{por\-tal-ext.pro\-perties} file and in the Plugin Installer
 portlet.
 
 To change this setting in the \texttt{portal-ext.properties} file,
 browse to where Liferay was deployed in your application server. Inside
 of this folder should be a \texttt{WEB-INF/classes} folder. Here you
 will find the \texttt{portal-ext.properties} file. Open this file in a
-text editor and look for the property \texttt{auto.deploy.dest.dir}. If
+text editor and look for the property \texttt{auto.de\-ploy.\-dest.dir}. If
 it does not appear in the file, you can add it. The safest way to set
 this property, as we will see later, is to define the property using an
 absolute path from the root of your file system to your application
@@ -15087,7 +15090,7 @@ Save the file and then restart your container. Now plugins should
 install correctly.
 
 Instead of changing the hot deploy destination directory in your
-\texttt{portal-ext.properties} file, you can do it via the Plugin
+\texttt{por\-tal\-ext.pro\-per\-ties} file, you can do it via the Plugin
 Installer. To change the setting this way, navigate to the Plugins
 Installation page of the control panel, click the \emph{Install More }
 button. This will bring you to the Plugin Installer page. Next, click on
@@ -15099,7 +15102,7 @@ repositories and so on.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/marketplace-plugin-installer-configuration.png}
-\caption{Figure 13.22: Changing the Hot Deploy Destination Directory}
+\caption{\\Figure 13.22: Changing the Hot Deploy Destination Directory}
 \end{figure}
 
 The setting to change is the field labeled \emph{Destination Directory}.
