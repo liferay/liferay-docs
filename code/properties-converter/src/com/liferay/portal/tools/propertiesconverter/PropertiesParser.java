@@ -51,6 +51,12 @@ public class PropertiesParser {
 		}
 		root.put("toc", toc);
 		
+		String propertiesFileName = "portal.properties";
+		if (!args[2].isEmpty()) {
+			propertiesFileName = args[2];
+		}
+		root.put("propertiesFileName", propertiesFileName);
+		
 		// Parse properties file and create sections for the data model
 		
 		System.out.println("Converting " + System.getProperty("user.dir") +
@@ -156,7 +162,8 @@ public class PropertiesParser {
 		try {
 			Template temp = cfg.getTemplate("properties.ftl");
 			File propertiesHtml =
-				new File(System.getProperty("user.dir") + "/" + args[2] + ".html");
+				new File(System.getProperty("user.dir") + "/" + args[2] +
+					".html");
 			Writer out = new FileWriter(propertiesHtml);
 			try {
 				temp.process(root, out);
