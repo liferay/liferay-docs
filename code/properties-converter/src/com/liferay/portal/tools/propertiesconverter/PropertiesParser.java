@@ -53,7 +53,10 @@ public class PropertiesParser {
 		
 		String propertiesFileName = "portal.properties";
 		if (!args[2].isEmpty()) {
-			propertiesFileName = args[2];
+			int ndx = args[2].lastIndexOf("/");
+			if (ndx != -1) {
+				propertiesFileName = args[2].substring(ndx + 1);
+			}
 		}
 		root.put("propertiesFileName", propertiesFileName);
 		
