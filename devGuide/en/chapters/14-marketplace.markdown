@@ -294,7 +294,7 @@ using this form: `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE`
 are replaced with the corresponding Liferay Releases with which your app is
 compatible).
 
- [note](../../images/tip-pen-paper.png)**Note:** If your app is compatible with
+ ![note](../../images/tip-pen-paper.png)**Note:** If your app is compatible with
  both CE and EE, you must specify a set of versions for both CE and EE releases.
  If you only specify compatibility with CE, then your app will not be compatible
  with (and will fail to deploy to) any EE release.
