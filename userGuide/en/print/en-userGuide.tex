@@ -9786,8 +9786,8 @@ portlet using the GeoLite City database, use the following steps:
 \item
   Shut down your application server.
 \item
-		Download the Geo Lite City
-		database.\footnote{\href{http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz}{http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz}}.
+        Download the Geo Lite City
+        database.\footnote{\href{http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz}{http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz}}.
 \item
   Unzip the \texttt{.dat} file to your desired storage location on your
   server.
@@ -11931,8 +11931,8 @@ details to meet your needs.
     <execution-type>onEntry</execution-type>
     <script>
     <![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.  \
-    	updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.  \
-			toStatus("approved"), workflowContext);]]>
+        updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.  \
+            toStatus("approved"), workflowContext);]]>
     </script>
     <script-language>javascript</script-language>
     </action>
@@ -13174,58 +13174,58 @@ returned:
 
 \begin{verbatim}
 <?xml version="1.0" encoding="UTF-8"?>
-	
+    
 <plugin-repository>
-	
-	<settings/>
-	
-	<plugin-package>
-	
-		<name>My Summary</name>
-	
-		<module-id>old-computers/my-summary-portlet/1.0/war</module-id>
-	
-		<modified-date>Thu, 23 Apr 2009 20:40:16 +0000</modified-date>
-	
-		<types>
-	
-			<type>portlet</type>
-	
-		</types>
-	
-		<tags>
-	
-			<tag>social</tag>
-	
-			<tag>profile</tag>
-	
-		</tags>
-	
-		<short-description>My Summary</short-description>
-	
-		<long-description>My Summary</long-description>
-	
-		<change-log>Initial Version</change-log>
-	
-		<download-url>
+    
+    <settings/>
+    
+    <plugin-package>
+    
+        <name>My Summary</name>
+    
+        <module-id>old-computers/my-summary-portlet/1.0/war</module-id>
+    
+        <modified-date>Thu, 23 Apr 2009 20:40:16 +0000</modified-date>
+    
+        <types>
+    
+            <type>portlet</type>
+    
+        </types>
+    
+        <tags>
+    
+            <tag>social</tag>
+    
+            <tag>profile</tag>
+    
+        </tags>
+    
+        <short-description>My Summary</short-description>
+    
+        <long-description>My Summary</long-description>
+    
+        <change-log>Initial Version</change-log>
+    
+        <download-url>
         http://www.liferay.com/portlets/my-summary-portlet-6.0.4.war
 
-	</download-url>
-	
-		<author>Rich Sezov</author>
-	
-		<screenshots/>
-	
-		<licenses>
-	
-			<license osi-approved="true">MIT License</license>
-	
-		</licenses>
-	
-		<liferay-versions/>
-	
-	</plugin-package>
-	
+    </download-url>
+    
+        <author>Rich Sezov</author>
+    
+        <screenshots/>
+    
+        <licenses>
+    
+            <license osi-approved="true">MIT License</license>
+    
+        </licenses>
+    
+        <liferay-versions/>
+    
+    </plugin-package>
+    
 </plugin-repository>
 
 \end{verbatim}
@@ -14253,8 +14253,8 @@ Marketplace. Once you submit your app, it will be reviewed before
 appearing on the \texttt{liferay.com} Marketplace.
 
 \begin{roundedframe}
-		\begin{wrapfigure}{l}{0.12\textwidth}
-				\vspace{-20pt}
+        \begin{wrapfigure}{l}{0.12\textwidth}
+                \vspace{-20pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
 \vspace{12pt}
@@ -15451,8 +15451,8 @@ Now let's learn about Liferay bundles.
 
 \section{Obtaining Liferay Portal }
 
-The CE version of Liferay is freely downloadable from our web site at
-\href{http://www.liferay.com}{http://www.liferay.com}. Click the
+The CE version of Liferay is freely downloadable from our web
+site.\footnote{\href{http://www.liferay.com}{http://www.liferay.com}} Click the
 \emph{Downloads} link at the top of the page and you are presented with
 multiple options for getting a copy of Liferay, including our convenient
 bundles or a \texttt{.war} package for installation on your application
@@ -15497,11 +15497,11 @@ application server. The top-level folder is named for the release of
 Liferay. This folder is called \emph{Liferay Home} and we refer to it
 thoughout this documentation.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{r}{.3\textwidth}
 \centering
 \scalegraphics{../../images/02-bundle-directory-structure.png}
-\caption{Figure 14.1: Bundle directory structure}
-\end{figure}
+\caption{\\Figure 14.1: Bundle directory structure}
+\end{wrapfigure}
 
 Inside this folder, there are folders for various purposes:
 
@@ -15554,7 +15554,7 @@ tail -f ../logs/catalina.out
 
 Once Tomcat has completed its start up, it automatically launches a web
 browser that displays Liferay's setup wizard. If for some reason your
-browser doesn't load the wizard, launch your web browser and then go to
+browser doesn't load the wizard, launch your browser and go to
 \href{http://localhost:8080}{http://localhost:8080}.
 
 Liferay CE ships with a sample web site that showcases Liferay's
@@ -15638,7 +15638,7 @@ running Liferay and that becomes Liferay Home.
 As described above in the \emph{Bundles} section, the home folder is
 very important to the operation of Liferay. The aforementioned folders
 (\emph{data} and \emph{deploy}) are created there and you can also put a
-special configuration file called \texttt{portal-ext.properties} there.
+special configuration file called \texttt{por\-tal\-ext.properties} there.
 This file is fully documented in chapter 20, a reference for Liferay
 properties.
 
@@ -15822,14 +15822,14 @@ of Liferay.
 
 The default configuration file is called \texttt{portal.properties} and
 it resides inside of the \texttt{portal-impl.jar} file. This
-\texttt{.jar} file is in Liferay Portal's \texttt{WEB-INF/lib} folder.
+\texttt{.jar} file is in Liferay Portal's \texttt{WEB\-INF/lib} folder.
 The file used to override the configuration manually is
-\texttt{portal-ext.properties}.
+\texttt{portal\-ext.properties}.
 
 Complicating matters, the setup wizard creates a file called
-\texttt{portal-setup-wizard.properties}. This file performs the same
-function as \texttt{portal-ext.properties}, and you can use it in place
-of that file if you wish. The \texttt{portal-ext.properties} file is
+\texttt{portal-setup\-wizard.properties}. This file performs the same
+function as \texttt{portal-ext.pro\-perties}, and you can use it in place
+of that file if you wish. The \texttt{portal-ext.pro\-perties} file is
 read before the \texttt{portal-setup-wizard.properties file}, so if you
 have both files in your configuration, note that the settings in the
 setup wizard file override the ones in \texttt{portal-ext.properties}.
@@ -16179,8 +16179,7 @@ You may use the console to:
 
 This isn't a complete guide to Mule Tcat; it just covers Liferay
 installation. For full documentation, you'll find more detailed
-information here:
-\href{http://www.mulesoft.org/documentation/display/TCAT/Home}{http://www.mulesoft.org/documentation/display/TCAT/Home}
+information at MuleSoft's web site.\footnote{\href{http://www.mulesoft.org/documentation/display/TCAT/Home}{http://www.mulesoft.org/documentation/display/TCAT/Home}}
 
 To obtain Liferay Portal Tcat Edition, you need access to the Liferay
 Customer Portal and the Mulesoft Tcat Server web site. If you are not a
@@ -16225,8 +16224,7 @@ portal. You'll need two files:
   application server and the Tcat management agent.
 \end{itemize}
 
-Next, download the appropriate Tcat platform installation at:
-\href{http://www.mulesoft.com/download-tcat}{http://www.mulesoft.com/download-tcat}.
+Next, download the appropriate Tcat platform installation.\footnote{\href{http://www.mulesoft.com/download-tcat}{http://www.mulesoft.com/download-tcat}}
 You may select installation wizards for Windows (32 and 64-bit), Mac,
 Unix, Solaris and Linux (32 and 64-bit) as well as a manual installation
 zip.
@@ -16247,7 +16245,7 @@ installation choices, a ``standard'' or ``custom'' installation.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_2589582e.png}
-\caption{Figure 14.4: Installation selection}
+\caption{\\Figure 14.4: Installation selection}
 \end{figure}
 
 You should select the ``Custom'' installation option to provide better
@@ -16256,7 +16254,7 @@ control of where Tcat Server is installed.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_m230ba580.png}
-\caption{Figure 14.5: Installation component selection}
+\caption{\\Figure 14.5: Installation component selection}
 \end{figure}
 
 After selecting the custom installation option, the Tcat installer
@@ -16290,7 +16288,7 @@ Console in addition to Tcat Server.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_261b594a.png}
-\caption{Figure 14.6: Installation location}
+\caption{\\Figure 14.6: Installation location}
 \end{figure}
 
 After selecting Tcat Server and the Administration Console for
@@ -16301,7 +16299,7 @@ Server.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_66274d0c.png}
-\caption{Figure 14.7: Port configurations}
+\caption{\\Figure 14.7: Port configurations}
 \end{figure}
 
 After selecting the appropriate installation location, the installation
@@ -16314,7 +16312,7 @@ of this installation, we will assume the above ports are correct.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_7936c58a.png}
-\caption{Figure 14.8: Windows service installation}
+\caption{\\Figure 14.8: Windows service installation}
 \end{figure}
 
 To ensure the operating system starts the Tcat Server and Administrator
@@ -16329,7 +16327,7 @@ name other than \emph{TcatServer}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_3f911eab.png}
-\caption{Figure 14.9: Start menu shortcuts}
+\caption{\\Figure 14.9: Start menu shortcuts}
 \end{figure}
 
 The final step in the installation wizard is to configure Start Menu
@@ -16362,7 +16360,7 @@ installation choices: a ``standard'' or ``custom'' installation.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_766a1d6e.png}
-\caption{Figure 14.10: Installation type}
+\caption{\\Figure 14.10: Installation type}
 \end{figure}
 
 You should select the ``Custom'' installation option to provide better
@@ -16371,7 +16369,7 @@ control of where Tcat Server is installed.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_55494177.png}
-\caption{Figure 14.11: Installation component selections}
+\caption{\\Figure 14.11: Installation component selections}
 \end{figure}
 
 After selecting the custom installation option, the Tcat installer
@@ -16409,7 +16407,7 @@ directory.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_7df6aabf.png}
-\caption{Figure 14.12: Installation location}
+\caption{\\Figure 14.12: Installation location}
 \end{figure}
 
 Please select the desired installation directory for the Tcat Server.
@@ -16419,7 +16417,7 @@ has been started as root.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_5b760cd.png}
-\caption{Figure 14.13: Port configuration}
+\caption{\\Figure 14.13: Port configuration}
 \end{figure}
 
 After selecting the appropriate installation location, the installation
@@ -16432,7 +16430,7 @@ of this installation, we will assume the above ports are correct.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_749e9b40.png}
-\caption{Figure 14.14: Configure Tcat system user}
+\caption{\\Figure 14.14: Configure Tcat system user}
 \end{figure}
 
 For security considerations, Tcat runs as a non-root system user. If the
@@ -16442,7 +16440,7 @@ daemon user.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_mf7bb10c.png}
-\caption{Figure 14.15: Install service}
+\caption{\\Figure 14.15: Install service}
 \end{figure}
 
 To ensure the operating system starts the Tcat Server and Administrator
@@ -16457,7 +16455,7 @@ should select a more appropriate name than what is supplied by default.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_m55bbff3f.png}
-\caption{Figure 14.16: Symbolic link creation}
+\caption{\\Figure 14.16: Symbolic link creation}
 \end{figure}
 
 The final configuration step before installation is the creation of a
@@ -16467,7 +16465,7 @@ step is optional and you may choose to not create the symbolic link.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_78e73740.png}
-\caption{Figure 14.17:}
+\caption{\\Figure 14.17:}
 \end{figure}
 
 Now that Tcat is installed, you can add Liferay to it.
@@ -16538,7 +16536,7 @@ name you choose during the installation process.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_352642da.png}
-\caption{Figure 14.21: Tcat service startup on Linux}
+\caption{\\Figure 14.21: Tcat service startup on Linux}
 \end{figure}
 
 To start the Tcat Server Administration Console, execute the service
@@ -16557,7 +16555,7 @@ components.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_261b594a.png}
-\caption{Figure 14.22: Installation location}
+\caption{\\Figure 14.22: Installation location}
 \end{figure}
 
 The next step is to specify an installation location. If you have other
@@ -16571,7 +16569,7 @@ perhaps install the managed server to
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_66274d0c.png}
-\caption{Figure 14.23: Managed server port configurations}
+\caption{\\Figure 14.23: Managed server port configurations}
 \end{figure}
 
 During the managed server installation, as with the administration
@@ -16615,13 +16613,16 @@ of your Tcat Server installation.
 You will need to change the text:
 
 \begin{verbatim}
-common.loader=${catalina.base}/lib,${catalina.base}/lib/\*.jar,${catalina.home}/lib,${catalina.home}/lib/\*.jar
+common.loader=${catalina.base}/lib,${catalina.base}/lib/\*.jar,   \
+   ${catalina.home}/lib,${catalina.home}/lib/\*.jar
 \end{verbatim}
 
 To:
 
 \begin{verbatim}
-common.loader=${catalina.base}/lib,${catalina.base}/lib/\*.jar,${catalina.home}/lib,${catalina.home}/lib/\*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/\*.jar
+common.loader=${catalina.base}/lib,${catalina.base}/lib/\*.jar,   \
+   ${catalina.home}/lib,${catalina.home}/lib/\*.jar,   \
+   ${catalina.home}/lib/ext,${catalina.home}/lib/ext/\*.jar
 \end{verbatim}
 
 By modifying the \texttt{common.loader} property, you instruct Tcat
@@ -16634,14 +16635,19 @@ classpath.
 After completing the installation process and starting the appropriate
 TcatServer processes, open a browser to
 \texttt{{[}SERVER NAME{]}:{[}PORT{]}/console}. Using the previous
-installation example, you should point your browser to
-\texttt{http://localhost:8080/console}. The browser should render the
+installation example, you should point your browser to: 
+
+\begin{verbatim}
+http://localhost:8080/console 
+\end{verbatim}
+
+The browser should render the
 TcatServer Administration Console shown below.
 
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_m4bda7997.png}
-\caption{Figure 14.24: Tcat Admin Console log in}
+\caption{\\Figure 14.24: Tcat Admin Console log in}
 \end{figure}
 
 The default login is: admin/admin.
@@ -16653,7 +16659,7 @@ dismissed the ``Tcat Server - Quick Start'' panel.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_5d43770f.png}
-\caption{Figure 14.25: Customizable Tcat Admin Console}
+\caption{\\Figure 14.25: Customizable Tcat Admin Console}
 \end{figure}
 
 First make sure that you have started the previously installed managed
@@ -16672,7 +16678,7 @@ this guide, we'll register the server to the Development group.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_34603e60.png}
-\caption{Figure 14.26: Monitoring a registered server}
+\caption{\\Figure 14.26: Monitoring a registered server}
 \end{figure}
 
 After registering the server, you will have access to view its health
@@ -16681,7 +16687,7 @@ examine its capabilities, like reviewing log files, current thread
 status and deployed web applications.
 
 More information is available at
-\emph{\href{http://www.mulesoft.org/documentation/display/TCAT/Home}{http://www.mulesoft.org/documentation/display/TCAT/Home}.}
+\href{http://www.mulesoft.org/documentation/display/TCAT/Home}{MuleSoft's web site}.
 
 \textbf{Managing and Monitoring Servers}
 
@@ -16731,7 +16737,7 @@ tab.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_7e61df5a.png}
-\caption{Figure 14.27: Tcat Repository profiles}
+\caption{\\Figure 14.27: Tcat Repository profiles}
 \end{figure}
 
 There are two components in the Tcat Repository:
@@ -16748,7 +16754,7 @@ There are two components in the Tcat Repository:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_m4af27eb5.png}
-\caption{Figure 14.28: Tcat Repository: Applications}
+\caption{\\Figure 14.28: Tcat Repository: Applications}
 \end{figure}
 
 To begin Liferay deployment, we must first create a Liferay license
@@ -16757,7 +16763,7 @@ profile to be deployed to the managed server:
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_m2d96341c.png}
-\caption{Figure 14.29: Creating a new workspace for Liferay license
+\caption{\\Figure 14.29: Creating a new workspace for Liferay license
 profile}
 \end{figure}
 
@@ -16784,7 +16790,7 @@ the option to create a new profile.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_m5c7a2b8c.png}
-\caption{Figure 14.30: Viewing server profiles}
+\caption{\\Figure 14.30: Viewing server profiles}
 \end{figure}
 
 When creating a server profile for the Liferay Portal Trial License, you
@@ -16798,7 +16804,7 @@ license, you may begin deploying Liferay to the managed server.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_53af6680.png}
-\caption{Figure 14.31: Apply Liferay Portal trial license}
+\caption{\\Figure 14.31: Apply Liferay Portal trial license}
 \end{figure}
 
 The first step is to apply two server profiles, one for the license and
@@ -16808,7 +16814,7 @@ require a restart of the server.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_m1f86eaab.png}
-\caption{Figure 14.32: Apply Liferay profile}
+\caption{\\Figure 14.32: Apply Liferay profile}
 \end{figure}
 
 The second profile to be applied is the Liferay server profile. In the
@@ -16830,7 +16836,7 @@ groups.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_m54d58d30.png}
-\caption{Figure 14.33: Choosing a web application for deployment}
+\caption{\\Figure 14.33: Choosing a web application for deployment}
 \end{figure}
 
 When creating a deployment, you may choose a WAR file already uploaded
@@ -16849,7 +16855,7 @@ labeled \emph{Liferay Portal Instance 1}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_68a00002.png}
-\caption{Figure 14.34: Completing Liferay Portal deployment}
+\caption{\\Figure 14.34: Completing Liferay Portal deployment}
 \end{figure}
 
 After choosing to deploy the application, the Tcat console informs you
@@ -16860,7 +16866,7 @@ you will be able to access Liferay Portal on the target Tomcat instance.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_2b08ac2c.png}
-\caption{Figure 14.35: Accessing Liferay Portal on Liferay Portal
+\caption{\\Figure 14.35: Accessing Liferay Portal on Liferay Portal
 Instance 1}
 \end{figure}
 
@@ -16905,7 +16911,7 @@ manually add them to the Tcat repository.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/tcat-html_19e9e6d6.png}
-\caption{Figure 14.36: Uploading new plugins into Tcat}
+\caption{\\Figure 14.36: Uploading new plugins into Tcat}
 \end{figure}
 
 Mule Tcat provides an enterprise grade solution to managing Tomcat
@@ -16919,22 +16925,29 @@ robust portal environment for your enterprise.
 \emph{Liferay Home} is three folders above your GlassFish domain folder.
 
 For example, if your domain location is
-\texttt{/glassfish-3.1-web/glassfish3/glassfish/domains/domain1},
-Liferay Home is \texttt{/glassfish-3.1-web/glassfish3/}.
+\begin{verbatim}
+/glassfish-3.1-web/glassfish3/glassfish/domains/domain1,
+\end{verbatim}
+Liferay Home is 
+\begin{verbatim}
+/glassfish-3.1-web/glassfish3/.
+\end{verbatim}
 
 If you don't already have an existing GlassFish server, we recommend
-that you download a Liferay/GlassFish bundle from
-\href{http://www.liferay.com/downloads/liferay-portal/available-releases}{http://www.liferay.com/downloads/liferay-portal/available-releases}.
+that you download a Liferay/GlassFish bundle.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/available-releases}{http://www.liferay.com/downloads/liferay-portal/available-releases}}
 If you have an existing GlassFish server or would like to install
 Liferay on GlassFish manually, please follow the steps below.
 
 Before you begin, make sure you have downloaded the latest Liferay
-\texttt{.war} file and Liferay Portal dependencies from
-\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}.
+\texttt{.war} file and Liferay Portal dependencies.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}}
 The Liferay \texttt{.war} file should be called
-\texttt{liferay-portal-6.1.x-\textless{}date\textgreater{}.war} and the
-dependencies file should be called
-\texttt{liferay-portal-dependencies-6.1.x-\textless{}date\textgreater{}.zip}.
+\begin{verbatim}
+liferay-portal-6.1.x-[date].war
+\end{verbatim}
+and the dependencies file should be called
+\begin{verbatim}
+liferay-portal-dependencies-6.1.x-[date].zip
+\end{verbatim}
 
 These instructions assume that you are running the latest supported
 version of Glassfish (currently 3.1.2.2), have already configured a
@@ -16952,8 +16965,7 @@ You should also have installed your database driver.
 \item
   Navigate to the folder that corresponds to the domain in which you'll
   be installing Liferay. Inside this folder is a sub-folder named
-  \texttt{lib} (e.g.
-  \texttt{/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/lib}).
+  \texttt{lib}. 
 \end{enumerate}
 
 Unzip the Liferay dependencies archive so that its \texttt{.jar} files
@@ -16966,8 +16978,7 @@ are extracted into this \texttt{lib} folder.
   as well. Obtain the JDBC driver for your version of the database
   server. In the case of MySQL, use
   \texttt{mysql-connector-java-\{\$version\}-bin.jar}. You can download
-  the latest MySQL JDBC driver from
-  \href{http://www.mysql.com/products/connector/}{http://www.mysql.com/products/connector/}.
+  the latest MySQL JDBC driver.\footnote{\href{http://www.mysql.com/products/connector/}{http://www.mysql.com/products/connector/}}
   Extract the JAR file and copy it to \texttt{lib}.
 \end{enumerate}
 
@@ -17000,7 +17011,9 @@ use Liferay Portal.
   Increase the default amount of memory available.
 
   Modify
-  \texttt{/glassfish-3.1-web/glassfish3/glassfish/domains/domain1/config/domain.xml}
+  \begin{verbatim}
+  /glassfish-3.1-web/glassfish3/glassfish/domains/domain1/config/domain.xml
+  \end{verbatim}
   merging in the following JVM options into the current list of JVM
   options within your \texttt{\textless{}java-config\textgreater{}}
   element:
@@ -17008,17 +17021,22 @@ use Liferay Portal.
 \begin{verbatim}
 <jvm-options>-Dfile.encoding=UTF8</jvm-options> 
 <jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options>
-<jvm-options>-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false</jvm-options>
+<jvm-options>-Dorg.apache.catalina.loader.WebappClassLoader.   \
+     ENABLE_CLEAR_REFERENCES=false</jvm-options>
 <jvm-options>-Duser.timezone=GMT</jvm-options>
 <jvm-options>-Xmx1024m</jvm-options>
 <jvm-options>-XX:MaxPermSize=512m</jvm-options>
 \end{verbatim}
 
   Be sure that any existing options with values such as
-  \texttt{-Dfile.encoding}, \texttt{-Djava.net.preferIPv4Stack},
-  \texttt{-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE\_CLEAR\_REFERENCES},
-  \texttt{-Duser.timezone} or \texttt{-XX:MaxPermSize} are replaced with
-  the new values listed above.
+\begin{verbatim}
+  -Dfile.encoding
+  -Djava.net.preferIPv4Stack
+  -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES
+  -Duser.timezone
+  -XX:MaxPermSize
+\end{verbatim}  
+  are replaced with the new values listed above.
 \end{itemize}
 
 For example, replace:
@@ -17041,6 +17059,12 @@ with this:
   displayed.
 \end{enumerate}
 
+\begin{figure}[htbp]
+\centering
+\scalegraphics{../../images/11-glassfish31-connection-pools.png}
+\caption{\\Figure 14.37: Navigate to JDBC Connection Pools}
+\end{figure}
+
 Next, let's get your database configured.
 
 \subsection{Database Configuration
@@ -17061,19 +17085,13 @@ Portal to manage your data source, you can skip this section.
   → \emph{JDBC Connection Pools}
 \end{enumerate}
 
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/11-glassfish31-connection-pools.png}
-\caption{Figure 14.37: Navigate to JDBC Connection Pools}
-\end{figure}
-
 \begin{enumerate}[1.]
 \setcounter{enumi}{3}
 \item
   Click \emph{New\ldots{}}.
 \item
   In the first screen (Step 1 of 2), give your connection pool the name
-  \texttt{LiferayPool}, the resource type of
+  \texttt{Liferay\-Pool}, the resource type of
   \texttt{javax.sql.ConnectionPoolDataSource} and select your database
   driver vendor (e.g. \texttt{MySQL}) as follows:
 \end{enumerate}
@@ -17081,7 +17099,7 @@ Portal to manage your data source, you can skip this section.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/11-glassfish-31-jdbc-connection-pool.png}
-\caption{Figure 14.38: Glassfish JDBC Connection Pool}
+\caption{\\Figure 14.38: Glassfish JDBC Connection Pool}
 \end{figure}
 
 \begin{enumerate}[1.]
@@ -17114,7 +17132,8 @@ Portal to manage your data source, you can skip this section.
 For example,
 
 \begin{verbatim}
-jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8&amp;emulateLocators=true
+jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8   \
+    &amp;emulateLocators=true
 \end{verbatim}
 
 Note, if you are using the above example, you should specify the name of
@@ -17174,7 +17193,11 @@ GlassFish!
 
 If you want to use GlassFish to manage your mail session, follow
 GlassFish's documentation on configuring a JavaMail session with a JNDI
-name of \texttt{mail/MailSession}. If you want to use Liferay Portal to
+name of 
+\begin{verbatim}
+mail/MailSession
+\end{verbatim}
+If you want to use Liferay Portal to
 manage your mail session, you can skip this step.
 
 \subsection{Domain Configuration - Continued
@@ -17239,7 +17262,7 @@ whether you want to also start the setup wizard.
 
 If this is your first time starting Liferay Portal 6.1, the setup wizard
 is automatically invoked. If you want to re-run the wizard, specify
-\texttt{setup.wizard.enabled=true} in your properties file (e.g.
+\texttt{setup.wizard.en\-abled=true} in your properties file (e.g.
 \texttt{portal-setup-wizard.properties}).
 
 \begin{verbatim}
@@ -17254,9 +17277,9 @@ The setup wizard is then invoked during server startup.
   this if want to preserve your current portal settings.
 \end{itemize}
 
-To startup the server without triggering the setup wizard, specify
-\texttt{setup.wizard.enabled=false} in your properties (e.g.
-\texttt{portal-setup-wizard.properties} or
+To start the server without triggering the setup wizard, specify
+\texttt{setup.wiz\-ard.enabled=false} in your properties (e.g.
+\texttt{portal-setup-wizard.pro\-perties} or
 \texttt{portal-ext.properties} file).
 
 \begin{verbatim}
@@ -17269,11 +17292,13 @@ Once you run the setup wizard, the
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
+      \vspace{-18pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
 Property values in
 \texttt{portal-setup-wizard.properties} override property values in
 \texttt{portal-ext.properties}.
+\vspace{18pt}
 
 \end{roundedframe}
 
@@ -17322,15 +17347,16 @@ Your installation of Liferay Portal on GlassFish is complete!
 \textbf{Liferay Home} is one folder above Jetty's install location.
 
 For this section, we'll refer to Jetty server's installation location as
-\texttt{\$JETTY\_HOME}. If you do not already have an existing Jetty
-server, we recommend you download a Liferay/Jetty bundle from
-\href{http://www.liferay.com/downloads/liferay-portal/available-releases}{http://www.liferay.com/downloads/liferay-portal/available-releases}.
+\begin{verbatim}
+$JETTY_HOME
+\end{verbatim}
+If you do not already have an existing Jetty
+server, we recommend you download a Liferay/Jetty bundle from Liferay's web site.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/available-releases}{http://www.liferay.com/downloads/liferay-portal/available-releases}}
 If you have an existing Jetty server or would like to install Liferay on
 Jetty manually, please follow the steps below.
 
 Before you begin, make sure you have downloaded the latest Liferay
-\texttt{.war} file and Liferay Portal dependencies from
-\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}.
+\texttt{.war} file and Liferay Portal dependencies.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}} 
 The Liferay \texttt{.war} file should be called
 \texttt{liferay-portal-6.1.x-\textless{}date\textgreater{}.war} and the
 dependencies file should be called
@@ -17380,9 +17406,7 @@ to your \texttt{\$JETTY\_HOME/lib/ext/liferay} folder:
   Make sure the JDBC driver for your database is accessible to Jetty.
   Obtain the JDBC driver for your version of the database server. In the
   case of MySQL, use
-  \texttt{mysql-connector-java-\{\$version\}-bin.jar}. You can download
-  the latest MySQL JDBC driver from
-  \href{http://www.mysql.com/products/connector/}{http://www.mysql.com/products/connector/}.
+  \texttt{mysql-connector-java-\{\$version\}-bin.jar}\footnote{\href{http://www.mysql.com/products/connector/}{http://www.mysql.com/products/connector/}}.
   Extract the JAR file and copy it to
   \texttt{\$JETTY\_HOME/lib/ext/liferay}.
 \end{enumerate}
@@ -17404,9 +17428,10 @@ run scripts.
   on the default one found in \texttt{start.jar}.
 \item
   Extract the default start config file
-  \texttt{org/eclipse/jetty/start/start.config} from the
-  \texttt{start.jar} into \texttt{\$JETTY\_HOME/etc} so you have the
-  file \texttt{\$JETTY\_HOME/etc/start.config}.
+  \texttt{org/eclipse/jetty/start/start.con\-fig} from the
+  \texttt{start.jar} into \texttt{\$JETTY\_HOME/\-etc}. The
+  file \texttt{\$JETTY\_HOME/\-etc/start.config} should be in the
+  \texttt{\$JETTY\_HOME/etc} folder.  
 \item
   Add the following property assignment to
   \texttt{\$JETTY\_HOME/etc/start.config} to specify where Jetty should
@@ -17430,10 +17455,16 @@ Jetty's startup process.
 \item
   Create initialization file: \texttt{\$JETTY\_HOME/bin/start.ini}
 
-  START=../etc/start.config OPTIONS=Server,jsp,resources
+  \begin{verbatim}
+  START=../etc/start.config 
+  OPTIONS=Server,jsp,resources
 
-  ../etc/jetty.xml ../etc/jetty-deploy.xml ../etc/jetty-webapps.xml
-  ../etc/jetty-contexts.xml ../etc/jetty-testrealm.xml
+  ../etc/jetty.xml 
+  ../etc/jetty-deploy.xml 
+  ../etc/jetty-webapps.xml
+  ../etc/jetty-contexts.xml 
+  ../etc/jetty-testrealm.xml
+  \end{verbatim}
 \end{enumerate}
 
 This initialization file does the following:
@@ -17459,7 +17490,10 @@ This initialization file does the following:
 
     if "" == "%JAVA_HOME%" goto errorJavaHome
 
-    set "JAVA_OPTS=-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+    set "JAVA_OPTS=-Djetty.version=7.5.4 -Djetty.version.date=20111024    \
+        -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp    \
+        -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT    \
+        -Xmx1024m -XX:MaxPermSize=256m"
 
     "%JAVA_HOME%/bin/java" %JAVA_OPTS% -jar ../start.jar
 
@@ -17484,7 +17518,10 @@ This initialization file does the following:
         exit
     fi
 
-    export JAVA_OPTS="-Djetty.version=7.5.4 -Djetty.version.date=20111024 -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+    export JAVA_OPTS="-Djetty.version=7.5.4 -Djetty.version.date=20111024    \
+       -Dfile.encoding=UTF8 -Djava.io.tmpdir=../temp    \
+       -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT    \
+       -Xmx1024m -XX:MaxPermSize=256m"
 
     $JAVA_HOME/bin/java $JAVA_OPTS -jar ../start.jar
 \end{verbatim}
@@ -17499,13 +17536,24 @@ This initialization file does the following:
 
 \begin{verbatim}
 <?xml version="1.0"?>
-<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
-
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" 
+   "http://jetty.mortbay.org/configure.dtd">
 <Configure class="org.eclipse.jetty.webapp.WebAppContext">
     <Set name="contextPath">/</Set>
-    <Set name="extraClasspath"><SystemProperty name="jetty.home" />/lib/jetty-server-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-util-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar,<SystemProperty name="jetty.home" />/lib/jetty-webapp-<SystemProperty name="jetty.version" />.v<SystemProperty name="jetty.version.date" />.jar</Set>
-    <Set name="resourceBase"><SystemProperty name="jetty.home" />/webapps/root</Set>
+    <Set name="extraClasspath">
+        <SystemProperty name="jetty.home" />/lib/jetty-server-
+        <SystemProperty name="jetty.version" />.v
+        <SystemProperty name="jetty.version.date" />.jar,
+        <SystemProperty name="jetty.home" />/lib/jetty-util-
+        <SystemProperty name="jetty.version" />.v
+        <SystemProperty name="jetty.version.date" />.jar,
+        <SystemProperty name="jetty.home" />/lib/jetty-webapp-
+        <SystemProperty name="jetty.version" />.v
+        <SystemProperty name="jetty.version.date" />.jar</Set>
+    <Set name="resourceBase">
+        <SystemProperty name="jetty.home" />/webapps/root</Set>
 </Configure>
+
 \end{verbatim}
 \item
   Lastly, create the following folders:
@@ -17533,7 +17581,7 @@ Liferay data source, you can skip this section.
 \begin{enumerate}[1.]
 \item
   Management of databases in Jetty is done via the file
-  \texttt{\$JETTY\_HOME/etc/jetty.xml}. Edit \texttt{jetty.xml} and
+  \texttt{\$JETTY\_HOME/etc/jet\-ty.xml}. Edit \texttt{jetty.xml} and
   insert the following text within the root element
   \texttt{\textless{}Configure\textgreater{}} to specify the data pool
   for your data source. Be sure to pass in value
@@ -17587,7 +17635,7 @@ instructions. If you want to use the built-in Liferay mail session, you
 can skip this section.
 
 Management of mail sessions in Jetty is done via the configuration file
-\texttt{\$JETTY\_HOME/etc/jetty.xml}. Edit \texttt{jetty.xml} and insert
+\texttt{\$JET\-TY\_HOME/etc/jetty.xml}. Edit \texttt{jetty.xml} and insert
 the following text within the root element
 \texttt{\textless{}Configure\textgreater{}} to specify your mail
 session. Be sure to pass in value \texttt{mail/MailSession} as the first
@@ -17672,7 +17720,7 @@ Let's start your server and deploy Liferay Portal!
 \subsection{Deploy Liferay }
 
 Liferay can be deployed as an exploded web archive within
-\texttt{\$JETTY\_HOME/webapps}.
+\texttt{\$JETTY\_HOME/web\-apps}.
 
 \begin{enumerate}[1.]
 \item
@@ -17681,7 +17729,7 @@ Liferay can be deployed as an exploded web archive within
   location outside of \texttt{\$JETTY\_HOME/webapps}.
 \item
   Then extract the contents of the Liferay portal \texttt{.war} file
-  into \texttt{\$JETTY\_HOME/webapps/root}.
+  into \texttt{\$JETTY\_HOME/web\-apps/root}.
 \item
   Before you start Liferay Portal, let's consider whether you want to
   also start the setup wizard.
@@ -17696,7 +17744,7 @@ Liferay can be deployed as an exploded web archive within
 
 If this is your first time starting Liferay Portal 6.1, the setup wizard
 is invoked on server startup. If you want to re-run the wizard, specify
-\texttt{setup.wizard.enabled=true} in your properties file (e.g.
+\texttt{setup.wizard.en\-abled=true} in your properties file (e.g.
 \texttt{portal-setup-wizard.properties}).
 
 \begin{verbatim}
@@ -17712,8 +17760,8 @@ The setup wizard is invoked during server startup.
 \end{itemize}
 
 To start the server without triggering the setup wizard, specify
-\texttt{setup.wizard.enabled=false} in your properties (e.g.
-\texttt{portal-setup-wizard.properties} or
+\texttt{setup.wiz\-ard.enabled=false} in your properties (e.g.
+\texttt{portal-setup-wizard.pro\-perties} or
 \texttt{portal-ext.properties} file).
 
 \begin{verbatim}
@@ -17721,17 +17769,18 @@ setup.wizard.enabled=false
 \end{verbatim}
 
 The \texttt{portal-setup-wizard.properties} file the setup wizard
-creates has \texttt{setup.wizard.enabled=false} conveniently specified
+creates has \texttt{setup.wizard.en\-abled=false} conveniently specified
 for you.
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
+          \vspace{-18pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
 Property values in
 \texttt{portal-setup-wizard.properties} override property values in
 \texttt{portal-ext.properties}.
-
+\vspace{18pt}
 \end{roundedframe}
 
 Now its time to launch Liferay Portal!
@@ -17794,7 +17843,7 @@ First we'll take care of dependencies and potential conflicts.
 \item
   Next we'll delete JBoss's Hibernate Validator and HSQL JARs to prevent
   conflicts with Liferay's JARs. Remove the following files from
-  \texttt{\$JBOSS\_HOME/common/lib}:
+  \texttt{\$JBOSS\_HOME/com\-mon/lib}:
 
   hibernate-validator.jar hsqldb.jar hsqldb-plugin.jar
 \end{enumerate}
@@ -17818,16 +17867,30 @@ when it's deployed.
   Remove the following files from
   \texttt{\$JBOSS\_HOME/../server/default/deploy}:
 
-  /messaging ejb2-container-jboss-beans.xml ejb2-timer-service.xml
-  ejb3-connections-jboss-beans.xml ejb3-container-jboss-beans.xml
-  ejb3-interceptors-aop.xml ejb3-timerservice-jboss-beans.xml
-  hsqldb-ds.xml jms-ra.rar mail-ra.rar mail-service.xml
-  profile-service-secured.jar uuid-key-generator.sar
+  \begin{verbatim}
+  /messaging 
+  ejb2-container-jboss-beans.xml 
+  ejb2-timer-service.xml
+  ejb3-connections-jboss-beans.xml 
+  ejb3-container-jboss-beans.xml
+  ejb3-interceptors-aop.xml 
+  ejb3-timerservice-jboss-beans.xml
+  hsqldb-ds.xml 
+  jms-ra.rar 
+  mail-ra.rar 
+  mail-service.xml
+  profile-service-secured.jar 
+  uuid-key-generator.sar
+  \end{verbatim}
+
 \item
   Delete the following in
   \texttt{\$JBOSS\_HOME/../server/default/deployers}:
 
-  jboss-ejb3-endpoint-deployer.jar messaging-definitions-jboss-beans.xml
+  \begin{verbatim}
+  jboss-ejb3-endpoint-deployer.jar 
+  messaging-definitions-jboss-beans.xml
+  \end{verbatim}
 \end{enumerate}
 
 \subsection{Deploying Liferay
@@ -17845,11 +17908,15 @@ unnecessary files, it's time to deploy Liferay.
 \item
   Delete the following files from the
   \texttt{\$JBOSS\_HOME/ROOT.war/WEB-INF/lib}:
-
-  jaxrpc.jar stax.jar xercesImpl.jar xml-apis.jar
+  \begin{verbatim}
+  jaxrpc.jar 
+  stax.jar 
+  xercesImpl.jar 
+  xml-apis.jar
+  \end{verbatim}
 \item
-  Create a portal-ext.properties file in \texttt{\$LIFERAY\_HOME} (one
-  level above \texttt{\$JBOSS\_HOME} and add the following properties:
+        Create a \texttt{portal-ext.properties} file in \texttt{\$LIFERAY\_HOME} 
+ and add the following properties:
 
   NOTE: The autodeploy folder must be set with the full name of the
   folder - you can't use any variables to define the location
@@ -17891,12 +17958,11 @@ Let's work with the dependency jar files first.
 \item
   Create folder \texttt{\$JBOSS\_HOME/modules/com/liferay/portal/main}
   and unzip the jar files found in the Liferay Portal Dependencies zip
-  file to this folder. Make sure the zip file's jar files are extracted
-  into the \texttt{\$JBOSS\_HOME/modules/com/liferay/portal/main}
-  folder.
+  file to this folder. Make sure there are no subdirectories; the files should
+  be in this folder directly. 
 \item
   Download your database driver \texttt{.jar} file and put it into the
-  \texttt{\$JBOSS\_HOME/modules/com/liferay/portal/main} folder as well.
+ same folder as above.  
   For demonstration purposes, we'll download the MySQL Connector/J
   driver from
   \href{http://dev.mysql.com/downloads/connector/j/}{http://dev.mysql.com/downloads/connector/j/}
@@ -17904,7 +17970,7 @@ Let's work with the dependency jar files first.
   \texttt{\$JBOSS\_HOME/modules/com/liferay/portal/main} folder.
 \item
   Create the file \texttt{module.xml} in the
-  \texttt{\$JBOSS\_HOME/modules/com/liferay/portal/main} folder and
+  \texttt{\$JBOSS\_HOME/modules/com/life\-ray/por\-tal/main} folder and
   insert the following contents.
 
 \begin{verbatim}
@@ -17963,10 +18029,11 @@ the changes to \texttt{standalone.xml}.
 \end{verbatim}
 \item
   Insert the following \texttt{\textless{}configuration\textgreater{}}
-  element within the web subsystem element
-  \texttt{\textless{}subsystem xmlns="urn:jboss:domain:web:1.0"        default-virtual-server="default-host"\textgreater{}}.
+  element within the web subsystem element: 
 
 \begin{verbatim}
+  <subsystem xmlns="urn:jboss:domain:web:1.0" default-virtual-server="default-host">
+
     <configuration>
         <jsp-configuration development="true" />
     </configuration>
@@ -17977,7 +18044,8 @@ the changes to \texttt{standalone.xml}.
 
 \begin{verbatim}
     <subsystem xmlns="urn:jboss:domain:deployment-scanner:1.0">
-        <deployment-scanner name="default" path="deployments" scan-enabled="true" scan-interval="5000" relative-to="jboss.server.base.dir" deployment-timeout="120"/>
+        <deployment-scanner name="default" path="deployments" scan-enabled="true" 
+		   scan-interval="5000" relative-to="jboss.server.base.dir" deployment-timeout="120"/>
     </subsystem>
 \end{verbatim}
 \item
@@ -18033,7 +18101,8 @@ Then add the following \texttt{JAVA\_OPTS} assignment one line above the
 \texttt{:JAVA\_OPTS\_SET} line found at end of the file:
 
 \begin{verbatim}
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true     \
+   	      -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 \end{verbatim}
 
 \begin{itemize}
@@ -18043,7 +18112,8 @@ Then add the following \texttt{JAVA\_OPTS} assignment one line above the
   found in the assignment below:
 
 \begin{verbatim}
-    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
+    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true   \
+        -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m
 \end{verbatim}
 \end{itemize}
 
@@ -18068,7 +18138,13 @@ sources subsystem.
   \texttt{\textless{}datasources\textgreater{}} element.
 
 \begin{verbatim}
-<datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+<datasource jndi-name="java:/jdbc/LiferayPool" 
+            pool-name="LiferayPool" 
+			enabled="true" 
+			jta="true" 
+			use-java-context="true" 
+			use-ccm="true">
+
     <connection-url>
         jdbc:mysql://localhost/lportal
     </connection-url>
@@ -18109,7 +18185,13 @@ Your final data sources subsystem should look something like this:
 \begin{verbatim}
     <subsystem xmlns="urn:jboss:domain:datasources:1.0">
         <datasources>
-            <datasource jndi-name="java:/jdbc/LiferayPool" pool-name="LiferayPool" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+            <datasource jndi-name="java:/jdbc/LiferayPool" 
+			            pool-name="LiferayPool" 
+						enabled="true" 
+						jta="true" 
+						use-java-context="true" 
+						use-ccm="true">
+
                 <connection-url>
                     jdbc:mysql://localhost/lportal
                 </connection-url>
@@ -18211,7 +18293,7 @@ mail session:
 
 You've completed the steps necessary for your deployment of Liferay so
 Liferay Portal can now communicate with your data source and mail
-session--way to go! Now you're ready to deploy Liferay Portal.
+session---way to go! Now you're ready to deploy Liferay Portal.
 
 \subsection{Deploy Liferay }
 
@@ -18226,13 +18308,13 @@ session--way to go! Now you're ready to deploy Liferay Portal.
   folder.
 \item
   To trigger deployment of \texttt{ROOT.war}, create an empty file named
-  \texttt{ROOT.war.dodeploy} in your
+  \texttt{ROOT.war.do\-deploy} in your
   \texttt{\$JBOSS\_HOME/standalone/deployments/} folder. On startup,
   JBoss detects the presence of this file and deploys it as a web
   application.
 \item
   Remove \texttt{eclipselink.jar} from
-  \texttt{\$JBOSS\_HOME/standalone/deployments/ROOT.war/WEB-INF/lib} to
+  \texttt{\$JBOSS\_HOME/standalone/deploy\-ments\-/ROOT.war/WEB-INF/lib} to
   assure the Hibernate persistence provider is used instead of the one
   provided in the \texttt{eclipselink.jar}. Note, JBoss 7.0.2 has a
   known issue
@@ -18252,8 +18334,8 @@ session--way to go! Now you're ready to deploy Liferay Portal.
 
 If this is your first time starting Liferay Portal 6.1, the setup wizard
 is invoked on server startup. If you want to re-run the wizard, specify
-\texttt{setup.wizard.enabled=true} in your properties file (e.g.
-\texttt{portal-setup-wizard.properties}).
+\texttt{setup.wizard.en\-abled=true} in your properties file (e.g.
+\texttt{portal-setup-wiz\-ard.pro\-per\-ties}).
 
 \begin{verbatim}
 setup.wizard.enabled=true
@@ -18268,9 +18350,9 @@ The setup wizard is invoked during server startup.
 \end{itemize}
 
 To start the server without triggering the setup wizard, specify
-\texttt{setup.wizard.enabled=false} in your properties (e.g.
-\texttt{portal-setup-wizard.properties} or
-\texttt{portal-ext.properties} file).
+\texttt{set\-up.wiz\-ard.en\-abled=false} in your properties (e.g.
+\texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties} or
+\texttt{por\-tal-ext.pro\-per\-ties} file).
 
 \begin{verbatim}
 setup.wizard.enabled=false
@@ -18282,11 +18364,14 @@ for you.
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
+	  \vspace{-24pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
+  \vspace{12pt}
 Property values in
 \texttt{portal-setup-wizard.properties} override property values in
 \texttt{portal-ext.properties}.
+\vspace{12pt}
 
 \end{roundedframe}
 
@@ -18313,823 +18398,6 @@ wizard.
 Now you are truly \emph{the boss} when it comes to deploying Liferay
 Portal on JBoss!
 
-\section{Installing Liferay on Resin 4
-}
-
-\textbf{Liferay Home} is one folder above Resin's install location.
-
-For this section, we will refer to your Resin server's installation
-location as \texttt{\$RESIN\_HOME}. If you do not already have an
-existing Resin server, we recommend you download a Liferay/Resin bundle
-from
-\href{http://www.liferay.com/downloads/liferay-portal/available-releases}{http://www.liferay.com/downloads/liferay-portal/available-releases}.
-If you have an existing Resin server or would like to install Liferay on
-Resin manually, please follow the steps below.
-
-Before you begin, make sure you have downloaded the latest Liferay
-\texttt{.war} file and Liferay Portal dependencies from
-\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}.
-The Liferay \texttt{.war} file should be called
-\texttt{liferay-portal-6.1.x-\textless{}date\textgreater{}.war} and the
-dependencies file should be called
-\texttt{liferay-portal-dependencies-6.1.x-\textless{}date\textgreater{}.zip}.
-
-Now that you have all of your installation files, you are ready to start
-installing and configuring Liferay on Resin.
-
-\subsection{Dependency Jars }
-
-Let's work with the depenency jar files first.
-
-\begin{enumerate}[1.]
-\item
-  Unzip the jar files found in the Liferay Portal Dependencies zip file
-  to your \texttt{\$RESIN\_HOME/ext-lib} folder. Take care to extract
-  the zip file's \texttt{.jar} files directly into this folder.
-\item
-  Next, you need several \texttt{.jar} files which are included as part
-  of the Liferay source distribution. Many application servers ship with
-  these already on the class path but Resin does not. The best way to
-  get the appropriate versions of these files is to download the Liferay
-  source code and get them from there. Once you have downloaded the
-  Liferay source, unzip the source into a temporary folder. We'll refer
-  to the location of the Liferay source as \texttt{\$LIFERAY\_SOURCE}.
-\item
-  Go to \texttt{\$LIFERAY\_SOURCE/lib/development} and copy
-  \texttt{saxpath.jar} into \texttt{\$RESIN\_HOME/lib}.
-\item
-  Go to \texttt{\$LIFERAY\_SOURCE/lib/portal} and copy
-  \texttt{log4j.jar}, \texttt{slf4j-api.jar} and
-  \texttt{slf4j-log4j12.jar} into \texttt{\$RESIN\_HOME/lib}.
-\item
-  If folder \texttt{\$RESIN\_HOME/extlib} doesn't exist, create it.
-\item
-  Make sure the JDBC driver for your database is accessible by Resin.
-  Obtain the JDBC driver for the database you want to use. In the case
-  of MySQL, use \texttt{mysql-connector-java-\{\$version\}-bin.jar}. You
-  can download the latest MySQL JDBC driver from
-  \href{http://www.mysql.com/products/connector/}{http://www.mysql.com/products/connector/}.
-  Extract the JAR file and copy it to \texttt{\$RESIN\_HOME/extlib}.
-\end{enumerate}
-
-Great! now you have your \texttt{.jar} files in place. Next, let's
-configure Resin for Liferay.
-
-\subsection{Configuring Resin
-}
-
-The primary file used in configuring your domain is
-\texttt{\$RESIN\_HOME/conf/resin.xml}. You need to make common
-modifications necessary to support Liferay Portal. You'll also create a
-run script and add a folder to hold Resin's logs. But let's start with
-the changes to \texttt{resin.xml}.
-
-\begin{enumerate}[1.]
-\item
-  Make the following modifications to your \texttt{resin.xml}. These
-  modifications to your application cluster make the following
-  configuration changes:
-\end{enumerate}
-
-\begin{itemize}
-\item
-  Set the file encoding.
-\item
-  Set the preferred protocol stack.
-\item
-  Set the user time-zone.
-\item
-  Increase the default amount of memory available.
-\end{itemize}
-
-To accomplish this, insert the following
-\texttt{\textless{}jvm-arg\textgreater{}} elements as server defaults
-for your main application cluster. Please see the following example:
-
-\begin{verbatim}
-<cluster id="app-tier">
-    ...
-    <server-default>
-        ...
-        <jvm-arg>-Dfile.encoding=UTF-8</jvm-arg>
-        <jvm-arg>-Djava.net.preferIPv4Stack=true</jvm-arg>
-        <jvm-arg>-Duser.timezone=GMT</jvm-arg>
-        <jvm-arg>-Xmx1024m</jvm-arg>
-        <jvm-arg>-XX:MaxPermSize=256m</jvm-arg>
-        ...
-    </server-default>
-</cluster>
-\end{verbatim}
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{1}
-\item
-  Create an appropriate script in \texttt{\$RESIN\_HOME/bin} to help you
-  start Resin.
-\end{enumerate}
-
-\begin{itemize}
-\item
-  If you're on Windows, create a batch script
-  \texttt{\$RESIN\_HOME/bin/run.bat} and insert the following text in
-  the script:
-
-\begin{verbatim}
-..\resin.exe console
-\end{verbatim}
-\item
-  If you're on Unix/Linux, create shell script
-  \texttt{\$RESIN\_HOME/bin/run.sh} and insert the following text in the
-  script:
-
-\begin{verbatim}
-#!/bin/sh
-
-./resin.sh $
-\end{verbatim}
-\end{itemize}
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{2}
-\item
-  Create the folder \texttt{\$RESIN\_HOME/log} if it doesn't already
-  exist. As you run Resin, the server generates log files
-  \texttt{access}, \texttt{jvm-default} and \texttt{watchdog-manager} in
-  this folder.
-\end{enumerate}
-
-Now that you've completed some important common configuration tasks to
-support Liferay, let's consider database configuration.
-
-\subsection{Database Configuration
-}
-
-If you want to manage your data source within Resin, continue following
-the instructions in this section. If you want to use the built-in
-Liferay data source, you can skip this section.
-
-Management of databases in Resin is done via the configuration file
-\texttt{\$RESIN\_HOME/conf/resin.xml}. Edit \texttt{resin.xml} and
-insert a \texttt{\textless{}database\textgreater{}} element for your
-database. Be sure to give it the JNDI name \texttt{jdbc/LiferayPool} and
-add it within the application tier cluster element as in the example
-below:
-
-\begin{verbatim}
-<cluster id="app-tier">
-    ...
-    <database>
-        <jndi-name>jdbc/LiferayPool</jndi-name>
-        <driver type="com.mysql.jdbc.Driver">
-            <url>jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8</url>
-            <user>root</user>
-            <password>root</password>
-        </driver>
-        <prepared-statement-cache-size>8</prepared-statement-cache-size>
-        <max-connections>20</max-connections>
-        <max-idle-time>30s</max-idle-time>
-      </database>
-      ...
-</cluster>
-\end{verbatim}
-
-Be sure to replace the URL database value (i.e. \texttt{lportal}), user
-value and password value with values specific to your database.
-
-Resin is now managing your database connection. Let's consider next how
-to configure mail.
-
-\subsection{Mail Configuration
-}
-
-If you want to manage your mail session within Resin, use the following
-instructions. If you want to use the built-in Liferay mail session, you
-can skip this section.
-
-Management of mail sessions in Resin is done via the configuration file
-\texttt{\$RESIN\_HOME/conf/resin.xml}. Edit \texttt{resin.xml} and
-insert a \texttt{\textless{}mail\textgreater{}} element that specifies
-your mail session. Be sure to give it the JNDI name
-\texttt{mail/MailSession}. Add your mail element within the application
-tier cluster element. Use the example below, replacing its values with
-the values of your mail session.
-
-\begin{verbatim}
-<cluster id="app-tier">
-    ...
-    <mail jndi-name="mail/MailSession">
-        <properties>
-            mail.pop3.host=pop.gmail.com
-            mail.pop3.port=110
-            mail.pop3.user=
-            mail.pop3.password=
-            mail.smtp.host=smtp.gmail.com
-            mail.smtp.password=password
-            mail.smtp.user=user
-            mail.smtp.port=465
-            mail.transport.protocol=smtp
-            mail.smtp.auth=true
-            mail.smtp.starttls.enable=true
-            mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
-            mail.imap.host=imap.gmail.com
-            mail.imap.port=993
-            mail.store.protocol=imap
-        </properties>
-    </mail>
-      ...
-</cluster>
-\end{verbatim}
-
-You can specify additional properties for your mail session as needed.
-
-Now that your mail session is squared away, we'll make sure Liferay can
-access it.
-
-\subsection{Configuring data source and mail session
-}
-
-Let's make sure Liferay's connected to your data source and mail
-session.
-
-\begin{enumerate}[1.]
-\item
-  First, navigate to the \emph{Liferay Home} folder, which is one folder
-  above Resin's install location (i.e. \texttt{\$RESIN\_HOME/..}).
-\item
-  If you're using \emph{Resin} to manage your data source, add the
-  following to your \texttt{portal-ext.properties} file in your
-  \emph{Liferay Home} to refer to your data source:
-
-  jdbc.default.jndi.name=jdbc/LiferayPool
-\end{enumerate}
-
-If you're using \emph{Liferay Portal} to manage your data source, follow
-the instructions in the \emph{Deploy Liferay} section for using the
-setup wizard.
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{2}
-\item
-  If want to use \emph{Liferay Portal} to manage your mail session,
-  configure the mail session within Liferay Portal. That is, after
-  starting your portal as described in the \emph{Deploy Liferay}
-  section, go to \emph{Control Panel → Server Administration → Mail} and
-  enter the settings for your mail session.
-\end{enumerate}
-
-If you're using \emph{Resin} to manage your mail session, add the
-following to your \texttt{portal-ext.properties} file to reference that
-mail session:
-
-\begin{verbatim}
-mail.session.jndi.name=mail/MailSession
-\end{verbatim}
-
-Great! Now Liferay can access your database and your mail session. Now,
-let's deploy Liferay.
-
-\subsection{Deploy Liferay }
-
-Liferay can be deployed as an exploded web archive within
-\texttt{\$RESIN\_HOME/webapps}.
-
-\begin{enumerate}[1.]
-\item
-  If you already have an application folder
-  \texttt{\$RESIN\_HOME/webapps/ROOT}, delete it or move it to a
-  location outside of \texttt{\$RESIN\_HOME/webapps}.
-\item
-  Extract the contents of the Liferay portal \texttt{.war} file into
-  \texttt{RESIN\_HOME/webapps/ROOT}. The following files should now
-  exist in your \texttt{RESIN\_HOME/webapps/ROOT} folder:
-\end{enumerate}
-
-\begin{itemize}
-\item
-  dtd (folder)
-\item
-  errors (folder)
-\item
-  html (folder)
-\item
-  layouttpl (folder)
-\item
-  META-INF (folder)
-\item
-  wap (folder)
-\item
-  WEB-INF (folder)
-\item
-  index.jsp
-\end{itemize}
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{2}
-\item
-  Before you start Liferay Portal, consider whether you want to also
-  start the setup wizard.
-\end{enumerate}
-
-\begin{itemize}
-\item
-  \textbf{Start the setup wizard along with Liferay Portal} - Do this if
-  you want to configure your portal, set up your site's administrative
-  account and/or manage your database within Liferay.
-\end{itemize}
-
-If this is your first time starting Liferay Portal 6.1, the setup wizard
-is invoked on server start up. If you want to re-run the wizard, specify
-\texttt{setup.wizard.enabled=true} in your properties file (e.g.
-\texttt{portal-setup-wizard.properties}).
-
-\begin{verbatim}
-setup.wizard.enabled=true
-\end{verbatim}
-
-The setup wizard is invoked during server startup.
-
-\begin{itemize}
-\item
-  \textbf{Start Liferay Portal without invoking the setup wizard} - Do
-  this if want to preserve your current portal settings.
-\end{itemize}
-
-To start the server without triggering the setup wizard, specify
-\texttt{setup.wizard.enabled=false} in your properties (e.g.
-\texttt{portal-setup-wizard.properties} or
-\texttt{portal-ext.properties} file).
-
-\begin{verbatim}
-setup.wizard.enabled=false
-\end{verbatim}
-
-The \texttt{portal-setup-wizard.properties} file the setup wizard
-creates has \texttt{setup.wizard.enabled=false} conveniently specified
-for you.
-
-\begin{roundedframe}
-  \begin{wrapfigure}{l}{0.12\textwidth}
-      \includegraphics{../../images/01-tip.png}
-  \end{wrapfigure}
-Property values in
-\texttt{portal-setup-wizard.properties} override property values in
-\texttt{portal-ext.properties}.
-
-\end{roundedframe}
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{3}
-\item
-  Start Liferay Portal by executing your \texttt{run.bat} (Windows) or
-  \texttt{run.sh} (Unix/Linux) script from \texttt{\$RESIN\_HOME/bin}.
-\end{enumerate}
-
-\begin{itemize}
-\item
-  If the setup wizard was disabled, your site's home page opens in your
-  browser at \href{http://localhost:8080}{http://localhost:8080}.
-\item
-  Otherwise, the setup wizard opens in your browser.
-\end{itemize}
-
-Please see the section above describing how to use the setup wizard.
-
-Congratulations! You've installed Liferay Portal on Resin and have it up
-and running.
-
-\section{Installing Liferay on Tomcat 7
-}
-
-\textbf{Liferay Home} is one folder above Tomcat's install location.
-
-For this section, we will refer to your Tomcat server's installation
-location as \texttt{\$TOMCAT\_HOME}. If you do not already have an
-existing Tomcat server, we recommend you download a Liferay/Tomcat
-bundle from
-\href{http://www.liferay.com/downloads/liferay-portal/available-releases}{http://www.liferay.com/downloads/liferay-portal/available-releases}.
-If you have an existing Tomcat server or would like to install Liferay
-on Tomcat manually, please follow the steps below.
-
-Before you begin, make sure you have downloaded the latest Liferay
-\texttt{.war} file and Liferay Portal dependencies from
-\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}.
-The Liferay \texttt{.war} file should be called
-\texttt{liferay-portal-6.1.x-\textless{}date\textgreater{}.war} and the
-dependencies file should be called
-\texttt{liferay-portal-dependencies-6.1.x-\textless{}date\textgreater{}.zip}.
-
-Next, let's get started by addressing Liferay's library dependencies.
-
-\subsection{Dependency Jars }
-
-Liferay Portal needs to have the Liferay Portal Dependency JARs, an
-appropriate JDBC driver and a few other JARs installed.
-
-\begin{enumerate}[1.]
-\item
-  Create folder \texttt{\$TOMCAT\_HOME/lib/ext}.
-\item
-  Extract the Liferay dependencies file to
-  \texttt{\$TOMCAT\_HOME/lib/ext}. If the files do not extract to this
-  directory, you can copy the dependencies archive to this directory,
-  extract them and then delete the archive.
-\item
-  Next, you need several \texttt{.jar} files which are included as part
-  of the Liferay source distribution. Many application servers ship with
-  these already on the class path but Tomcat does not. The best way to
-  get the appropriate versions of these files is to download the Liferay
-  source code and get them from there. Once you have downloaded the
-  Liferay source, unzip the source into a temporary folder. We'll refer
-  to the location of the Liferay source as \texttt{\$LIFERAY\_SOURCE}.
-\item
-  Copy the following jars from
-  \texttt{\$LIFERAY\_SOURCE/lib/development} to your
-  \texttt{\$TOMCAT\_HOME/lib/ext} folder:
-\end{enumerate}
-
-\begin{itemize}
-\item
-  \texttt{activation.jar}
-\item
-  \texttt{jms.jar}
-\item
-  \texttt{jta.jar}
-\item
-  \texttt{jutf7.jar}
-\item
-  \texttt{mail.jar}
-\item
-  \texttt{persistence.jar}
-\end{itemize}
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{1}
-\item
-  Copy the following jar from \texttt{\$LIFERAY\_SOURCE/lib/portal} to
-  your \texttt{\$TOMCAT\_HOME/lib/ext} folder:
-\end{enumerate}
-
-\begin{itemize}
-\item
-  \texttt{ccpp.jar}
-\end{itemize}
-
-\emph{Note:} Tomcat 6 users should \emph{not} copy the \texttt{ccpp.jar}
-file into their \texttt{\$TOMCAT\_HOME/lib/ext} folder and should delete
-it from this folder if it already exists.
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{2}
-\item
-  Copy the following jars from
-  \texttt{\$LIFERAY\_SOURCE/lib/development} to your
-  \texttt{\$TOMCAT\_HOME/temp/liferay/com/liferay/portal/deploy/dependencies}
-  folder:
-\end{enumerate}
-
-\begin{itemize}
-\item
-  \texttt{resin.jar}
-\item
-  \texttt{script-10.jar}
-\end{itemize}
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{3}
-\item
-  Make sure the JDBC driver for your database is accessible by Tomcat.
-  Obtain the JDBC driver for your version of the database server. In the
-  case of MySQL, use
-  \texttt{mysql-connector-java-\{\$version\}-bin.jar}. You can download
-  the latest MySQL JDBC driver from
-  \href{http://www.mysql.com/products/connector/}{http://www.mysql.com/products/connector/}.
-  Extract the JAR file and copy it to \texttt{\$TOMCAT\_HOME/lib/ext}.
-\item
-  Liferay requires an additional .jar on Tomcat installations to manage
-  transactions. This is included in the bundle but you need to add it if
-  you're installing Liferay manually. You may find this .jar here:
-  \href{http://www.oracle.com/technetwork/java/javaee/jta/index.html}{http://www.oracle.com/technetwork/java/javaee/jta/index.html}.
-  Place this file in Tomcat's lib/ext folder.
-\end{enumerate}
-
-Now that you have the necessary libraries in place, we'll move on to
-configuring your domain.
-
-\subsection{Tomcat Configuration
-}
-
-The steps in this section focus on:
-
-\begin{itemize}
-\item
-  Setting environment variables
-\item
-  Creating a context for your web application
-\item
-  Modifying the list of classes/JARs to be loaded
-\item
-  Specifying URI encoding
-\end{itemize}
-
-Let's get started with our configuration tasks.
-
-\begin{enumerate}[1.]
-\item
-  Create a \texttt{setenv.bat} (Windows) or \texttt{setenv.sh} file
-  (Unix, Linux, Mac OS) in the \texttt{\$TOMCAT\_HOME/bin} directory.
-  When you start Tomcat, Catalina calls \texttt{setenv.bat} or
-  \texttt{setenv.sh}. Edit the file and populate it with following
-  contents:
-\end{enumerate}
-
-setenv.bat:
-
-\begin{verbatim}
-    if exist "%CATALINA_HOME%/jre@java.version@/win" (
-        if not "%JAVA_HOME%" == "" (
-            set JAVA_HOME=
-        )
-
-        set "JRE_HOME=%CATALINA_HOME%/jre@java.version@/win"
-    )
-
-    set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
-
-setenv.sh:
-
-    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
-\end{verbatim}
-
-This sets the character encoding to UTF-8, sets the time zone to
-Greenwich Mean Time and allocates memory to the Java virtual machine.
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{1}
-\item
-  Create the directory \texttt{\$TOMCAT\_HOME/conf/Catalina/localhost}
-  and create a \texttt{ROOT.xml} file in it. Edit this file and populate
-  it with the following contents to set up a portal web application:
-
-\begin{verbatim}
-<!--<Realm
-    className="org.apache.catalina.realm.JAASRealm"
-    appName="PortalRealm"
-    userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
-    roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
-/>-->
-
-<!--
-Uncomment the following to disable persistent sessions across reboots.
--->
-
-<!--<Manager pathname="" />-->
-
-<!--
-Uncomment the following to not use sessions. See the property
-"session.disabled" in portal.properties.
--->
-
-<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
-\end{verbatim}
-\end{enumerate}
-
-Setting \texttt{crossContext="true"} allows multiple web apps to use the
-same class loader. In the content above you will also find commented
-instructions and tags for configuring a JAAS realm, disabling persistent
-sessions and disabling sessions in general.
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{2}
-\item
-  Open \texttt{\$TOMCAT\_HOME/conf/catalina.properties} and replace the
-  line:
-
-\begin{verbatim}
-common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
-\end{verbatim}
-\end{enumerate}
-
-with:
-
-\begin{verbatim}
-    common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
-
-This allows Catalina to access the dependency jars you extracted to
-`$TOMCAT_HOME/lib/ext`.
-\end{verbatim}
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{3}
-\item
-  To ensure consistent use of UTF-8 URI Encoding, edit
-  \texttt{\$TOMCAT\_HOME/conf/server.xml} and add the attribute
-  \texttt{URIEncoding="UTF-8"} to your connector on port 8080. Below is
-  an example of specifying this encoding on the connector:
-
-\begin{verbatim}
-<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
-\end{verbatim}
-\item
-  Make sure there is no \texttt{support-catalina.jar} file in your
-  \texttt{\$TOMCAT\_HOME/webapps} directory. If you find one, remove it.
-\end{enumerate}
-
-Excellent work! Now let's consider configuration of your database.
-
-\subsection{Database Configuration
-}
-
-If you want Tomcat to manage your data source, use the following
-procedure. If you want to use Liferay's built-in data source, you can
-skip this section.
-
-\begin{enumerate}[1.]
-\item
-  Make sure your database server is installed and working. If it's
-  installed on a different machine, make sure it's accessible from your
-  Liferay machine.
-\item
-  Add your data source as a resource in the context of your web
-  application specified in
-  \texttt{\$TOMCAT\_HOME/conf/Catalina/localhost/ROOT.xml}.
-
-   
-\end{enumerate}
-
-Note the above resource definition assumes your database name is
-\emph{lportal} and your MySQL username and password are both
-\emph{root}. You'll have to update these values with your own database
-name and credentials.
-
-Your Tomcat managed data source is now configured. Let's move on to your
-mail session.
-
-\subsection{Mail Configuration
-}
-
-If you want to manage your mail session within Tomcat, use the following
-instructions. If you want to use the built-in Liferay mail session, you
-can skip this section.
-
-Create a mail session bound to \texttt{mail/MailSession}. Edit
-\texttt{\$TOMCAT\_ HOME/conf/Catalina/localhost/ROOT.xml} and configure
-a mail session. Be sure to replace the mail session values with your
-own.
-
-\begin{verbatim}
-<Context...>
-    <Resource
-        name="mail/MailSession"
-        auth="Container"
-        type="javax.mail.Session"
-        mail.pop3.host="pop.gmail.com"
-        mail.pop3.port="110"
-        mail.smtp.host="smtp.gmail.com"
-        mail.smtp.port="465"
-        mail.smtp.user="user"
-        mail.smtp.password="password"
-        mail.smtp.auth="true"
-        mail.smtp.starttls.enable="true"
-        mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
-        mail.imap.host="imap.gmail.com"
-        mail.imap.port="993"
-        mail.transport.protocol="smtp"
-        mail.store.protocol="imap"
-    />
-</Context>
-\end{verbatim}
-
-Super! Your mail session is configured. Next, we'll make sure Liferay
-will be able to access your mail session and database.
-
-\subsection{Configuring your database and mail session
-}
-
-In this section we'll specify appropriate properties for Liferay to use
-in connecting to your database and mail session.
-
-\begin{enumerate}[1.]
-\item
-  If you are using \emph{Tomcat} to manage your data source, add the
-  following to your \texttt{portal-ext.properties} file in your
-  \emph{Liferay Home} to refer to your data source:
-
-\begin{verbatim}
-jdbc.default.jndi.name=jdbc/LiferayPool
-\end{verbatim}
-\end{enumerate}
-
-Otherwise, if you are using \emph{Liferay Portal} to manage your data
-source, follow the instructions in the \emph{Deploy Liferay} section for
-using the setup wizard.
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{1}
-\item
-  If want to use \emph{Liferay Portal} to manage your mail session, you
-  can configure the mail session within Liferay Portal. That is, after
-  starting your portal as described in the \emph{Deploy Liferay}
-  section, go to \emph{Control Panel → Server Administration → Mail} and
-  enter the settings for your mail session.
-\end{enumerate}
-
-Otherwise, if you are using \emph{Tomcat} to manage your mail session,
-add the following to your \texttt{portal-ext.properties} file to
-reference that mail session:
-
-\begin{verbatim}
-mail.session.jndi.name=mail/MailSession
-\end{verbatim}
-
-It's just that easy! Now it's time to deploy Liferay Portal on your
-Tomcat server.
-
-\subsection{Deploy Liferay }
-
-We'll deploy Liferay as an exploded web archive within your
-\texttt{\$TOMCAT\_HOME/webapps} folder.
-
-\begin{enumerate}[1.]
-\item
-  If you are manually installing Liferay on a clean Tomcat server,
-  delete the contents of the \texttt{\$TOMCAT\_HOME/webapps/ROOT}
-  directory. This undeploys the default Tomcat home page. Then extract
-  the Liferay \texttt{.war} file to
-  \texttt{\$TOMCAT\_HOME/webapps/ROOT}.
-\item
-  Before you start Liferay Portal, consider whether you want to use the
-  setup wizard.
-\end{enumerate}
-
-\begin{itemize}
-\item
-  \textbf{Start the setup wizard along with Liferay Portal} - Do this if
-  you want to configure your portal, set up your site's administrative
-  account and/or manage your database within Liferay.
-\end{itemize}
-
-If this is your first time starting Liferay Portal 6.1, the setup wizard
-is invoked on server startup. If you want to re-run the wizard, specify
-\texttt{setup.wizard.enabled=true} in your properties file (e.g.
-\texttt{portal-setup-wizard.properties}).
-
-\begin{verbatim}
-setup.wizard.enabled=true
-\end{verbatim}
-
-The setup wizard is invoked during server startup.
-
-\begin{itemize}
-\item
-  \textbf{Start Liferay Portal without invoking the setup wizard} - Do
-  this if you want to preserve your current portal settings.
-\end{itemize}
-
-To start the server without triggering the setup wizard, specify
-\texttt{setup.wizard.enabled=false} in your properties (e.g.
-\texttt{portal-setup-wizard.properties} or
-\texttt{portal-ext.properties} file).
-
-\begin{verbatim}
-setup.wizard.enabled=false
-\end{verbatim}
-
-The \texttt{portal-setup-wizard.properties} file the setup wizard
-creates should have \texttt{setup.wizard.enabled=false} conveniently
-specified for you.
-
-\begin{roundedframe}
-  \begin{wrapfigure}{l}{0.12\textwidth}
-      \includegraphics{../../images/01-tip.png}
-  \end{wrapfigure}
-Property values in
-\texttt{portal-setup-wizard.properties} override property values in
-\texttt{portal-ext.properties}.
-
-\end{roundedframe}
-
-I bet you can't wait to start Liferay Portal - let's do it!
-
-\begin{enumerate}[1.]
-\setcounter{enumi}{2}
-\item
-  Start Tomcat by executing \texttt{\$TOMCAT\_HOME/bin/startup.bat} or
-  \texttt{\$TOMCAT\_HOME/bin/startup.sh}.
-\end{enumerate}
-
-\begin{itemize}
-\item
-  If the setup wizard was disabled, your site's home page opens in your
-  browser at \href{http://localhost:8080}{http://localhost:8080}.
-\item
-  Otherwise, the setup wizard opens in your browser.
-\end{itemize}
-
-To use the setup wizard, please see the section above.
-
-Congratulations on successfully installing and deploying Liferay on
-Tomcat!
-
 \section{Installing Liferay on JOnAS 5.2
 }
 
@@ -19142,8 +18410,7 @@ developers of JOnAS as a way to cleanly deploy so you can revert to
 default settings later.
 
 If you don't have an existing JOnAS installation, it is recommeded to
-use the available Liferay-JOnAS bundle, which can be downloaded from
-\href{http://www.liferay.com/ja/downloads/liferay-portal/available-releases}{http://www.liferay.com/ja/downloads/liferay-portal/available-releases}.
+use the available Liferay-JOnAS bundle.\footnote{\href{http://www.liferay.com/ja/downloads/liferay-portal/available-releases}{http://www.liferay.com/ja/downloads/liferay-portal/available-releases}}
 
 Given the unique nature of the server, there are a few steps to consider
 in the configuration stage. Otherwise, installing on JOnAS follows much
@@ -19169,19 +18436,18 @@ application and configuration.
 The structure of \texttt{\$JONAS\_BASE} is:
 
 \begin{verbatim}
-/conf    -    configuration files
-/deploy    -    main deployment directory (Liferay is deployed here)
-/lib    -    used for extending the main server classloaders
-+----/ext    -    extensions for unbundled applications
-/logs    -    logs for the running instance
-/work    -    the working directory, used by containers such as Tomcat
-/repositories    -    contains OSGi bundles for deployment; not used for Liferay installation
+/conf           - configuration files
+/deploy         - main deployment directory (Liferay is deployed here)
+/lib            - used for extending the main server classloaders
++----/ext       - extensions for unbundled applications
+/logs           - logs for the running instance
+/work           - the working directory, used by containers such as Tomcat
+/repositories   - contains OSGi bundles for deployment; not used for Liferay installation
 \end{verbatim}
 
 By default, the \texttt{\$JONAS\_BASE} directory is the same as
 \texttt{\$JONAS\_ROOT}. Creating a new \texttt{\$JONAS\_BASE} is a
-simple process, outlined in the JOnAS Configuration Guide, found at
-\href{http://jonas.ow2.org/JONAS\_5\_2\_2/doc/doc-en/html/configuration\_guide.html}{http://jonas.ow2.org/JONAS\_5\_2\_2/doc/doc-en/html/configuration\_guide.html}.
+simple process, outlined in the JOnAS Configuration Guide.\footnote{\href{http://jonas.ow2.org/JONAS\_5\_2\_2/doc/doc-en/html/configuration\_guide.html}{http://jonas.ow2.org/JONAS\_5\_2\_2/doc/doc-en/html/configuration\_guide.html}}
 
 To remove sample files and unneeded configuration:
 
@@ -19481,20 +18747,872 @@ start JOnAS:
 JOnAS starts and Liferay opens a browser to
 \texttt{http://localhost:8080}.
 
+\section{Installing Liferay on Resin 4
+}
+
+\textbf{Liferay Home} is one folder above Resin's install location.
+
+For this section, we will refer to your Resin server's installation
+location as \texttt{\$RESIN\_HOME}. If you do not already have an
+existing Resin server, we recommend you download a Liferay/Resin
+bundle.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/available-releases}{http://www.liferay.com/downloads/liferay-portal/available-releases}}
+If you have an existing Resin server or would like to install Liferay on
+Resin manually, please follow the steps below.
+
+Before you begin, make sure you have downloaded the latest Liferay
+\texttt{.war} file and Liferay Portal
+dependencies.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}}
+The Liferay \texttt{.war} file should be called
+\texttt{liferay-por\-tal-6.1.x-\textless{}date\textgreater{}.war} and the
+dependencies file should be called
+\texttt{liferay-portal-dependencies-6.1.x-\textless{}date\textgreater{}.zip}.
+
+Now that you have all of your installation files, you are ready to start
+installing and configuring Liferay on Resin.
+
+\subsection{Dependency Jars }
+
+Let's work with the dependency jar files first.
+
+\begin{enumerate}[1.]
+\item
+  Unzip the jar files found in the Liferay Portal Dependencies zip file
+  to your \texttt{\$RESIN\_HOME/ext-lib} folder. Take care to extract
+  the zip file's \texttt{.jar} files directly into this folder.
+\item
+  Next, you need several \texttt{.jar} files which are included as part
+  of the Liferay source distribution. Many application servers ship with
+  these already on the class path but Resin does not. The best way to
+  get the appropriate versions of these files is to download the Liferay
+  source code and get them from there. Once you have downloaded the
+  Liferay source, unzip the source into a temporary folder. We'll refer
+  to the location of the Liferay source as \texttt{\$LIFERAY\_SOURCE}.
+\item
+  Go to \texttt{\$LIFERAY\_SOURCE/lib/development} and copy
+  \texttt{saxpath.jar} into \texttt{\$RESIN\_HOME/lib}.
+\item
+  Copy the following files from \texttt{\$LIFERAY\_SOURCE/lib/portal} to
+  \texttt{\$RESIN\_\-HOME/lib}.
+  \begin{verbatim}
+
+  log4j.jar 
+  slf4j-api.jar 
+  slf4j-log4j12.jar
+  \end{verbatim}
+
+  If folder \texttt{\$RESIN\_HOME/extlib} doesn't exist, create it.
+\item
+  Make sure the JDBC driver for your database is accessible by Resin.
+  Obtain the JDBC driver for the database you want to use. In the case
+  of MySQL, use \texttt{mysql-connector-java-\{\$version\}-bin.jar}. You
+  can download the latest MySQL JDBC driver from
+  \href{http://www.mysql.com/products/connector/}{http://www.mysql.com/products/connector/}.
+  Extract the JAR file and copy it to \texttt{\$RESIN\_HOME/extlib}.
+\end{enumerate}
+
+Great! now you have your \texttt{.jar} files in place. Next, let's
+configure Resin for Liferay.
+
+\subsection{Configuring Resin
+}
+
+The primary file used in configuring your domain is
+\texttt{\$RESIN\_HOME/conf/res\-in.xml}. You need to make common
+modifications necessary to support Liferay Portal. You'll also create a
+run script and add a folder to hold Resin's logs. But let's start with
+the changes to \texttt{resin.xml}.
+
+\begin{enumerate}[1.]
+\item
+  Make the following modifications to your \texttt{resin.xml}. These
+  modifications to your application cluster make the following
+  configuration changes:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Set the file encoding.
+\item
+  Set the preferred protocol stack.
+\item
+  Set the user time-zone.
+\item
+  Increase the default amount of memory available.
+\end{itemize}
+
+To accomplish this, insert the following
+\texttt{\textless{}jvm-arg\textgreater{}} elements as server defaults
+for your main application cluster. Please see the following example:
+
+\begin{verbatim}
+<cluster id="app-tier">
+    ...
+    <server-default>
+        ...
+        <jvm-arg>-Dfile.encoding=UTF-8</jvm-arg>
+        <jvm-arg>-Djava.net.preferIPv4Stack=true</jvm-arg>
+        <jvm-arg>-Duser.timezone=GMT</jvm-arg>
+        <jvm-arg>-Xmx1024m</jvm-arg>
+        <jvm-arg>-XX:MaxPermSize=256m</jvm-arg>
+        ...
+    </server-default>
+</cluster>
+\end{verbatim}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{1}
+\item
+  Create an appropriate script in \texttt{\$RESIN\_HOME/bin} to help you
+  start Resin.
+\end{enumerate}
+
+\begin{itemize}
+\item
+  If you're on Windows, create a batch script
+  \texttt{\$RESIN\_HOME/bin/run.bat} and insert the following text in
+  the script:
+
+\begin{verbatim}
+..\resin.exe console
+\end{verbatim}
+\item
+  If you're on Unix/Linux, create shell script
+  \texttt{\$RESIN\_HOME/bin/run.sh} and insert the following text in the
+  script:
+
+\begin{verbatim}
+#!/bin/sh
+
+./resin.sh $
+\end{verbatim}
+\end{itemize}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{2}
+\item
+  Create the folder \texttt{\$RESIN\_HOME/log} if it doesn't already
+  exist. As you run Resin, the server generates these log files here: 
+  \begin{verbatim}
+  access 
+  jvm-default 
+  watchdog-manager
+  \end{verbatim}
+\end{enumerate}
+
+Now that you've completed some important common configuration tasks to
+support Liferay, let's consider database configuration.
+
+\subsection{Database Configuration
+}
+
+If you want to manage your data source within Resin, continue following
+the instructions in this section. If you want to use the built-in
+Liferay data source, you can skip this section.
+
+Management of databases in Resin is done via the configuration file
+\texttt{\$RESIN\_\-HOME/conf/res\-in.xml}. Edit \texttt{resin.xml} and
+insert a \texttt{\textless{}database\textgreater{}} element for your
+database. Be sure to give it the JNDI name \texttt{jdbc/LiferayPool} and
+add it within the application tier cluster element as in the example
+below:
+
+\begin{verbatim}
+<cluster id="app-tier">
+    ...
+    <database>
+        <jndi-name>jdbc/LiferayPool</jndi-name>
+        <driver type="com.mysql.jdbc.Driver">
+            <url>jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8</url>
+            <user>root</user>
+            <password>root</password>
+        </driver>
+        <prepared-statement-cache-size>8</prepared-statement-cache-size>
+        <max-connections>20</max-connections>
+        <max-idle-time>30s</max-idle-time>
+      </database>
+      ...
+</cluster>
+\end{verbatim}
+
+Be sure to replace the URL database value (i.e. \texttt{lportal}), user
+value and password value with values specific to your database.
+
+Resin is now managing your database connection. Let's consider next how
+to configure mail.
+
+\subsection{Mail Configuration
+}
+
+If you want to manage your mail session within Resin, use the following
+instructions. If you want to use the built-in Liferay mail session, you
+can skip this section.
+
+Management of mail sessions in Resin is done via the configuration file
+\texttt{\$RES\-IN\_HOME/conf/resin.xml}. Edit \texttt{resin.xml} and
+insert a \texttt{\textless{}mail\textgreater{}} element that specifies
+your mail session. Be sure to give it the JNDI name
+\texttt{mail/MailSession}. Add your mail element within the application
+tier cluster element. Use the example below, replacing its values with
+the values of your mail session.
+
+\begin{verbatim}
+<cluster id="app-tier">
+    ...
+    <mail jndi-name="mail/MailSession">
+        <properties>
+            mail.pop3.host=pop.gmail.com
+            mail.pop3.port=110
+            mail.pop3.user=
+            mail.pop3.password=
+            mail.smtp.host=smtp.gmail.com
+            mail.smtp.password=password
+            mail.smtp.user=user
+            mail.smtp.port=465
+            mail.transport.protocol=smtp
+            mail.smtp.auth=true
+            mail.smtp.starttls.enable=true
+            mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
+            mail.imap.host=imap.gmail.com
+            mail.imap.port=993
+            mail.store.protocol=imap
+        </properties>
+    </mail>
+      ...
+</cluster>
+\end{verbatim}
+
+You can specify additional properties for your mail session as needed.
+
+Now that your mail session is squared away, we'll make sure Liferay can
+access it.
+
+\subsection{Configuring data source and mail session
+}
+
+Let's make sure Liferay's connected to your data source and mail
+session.
+
+\begin{enumerate}[1.]
+\item
+  First, navigate to the \emph{Liferay Home} folder, which is one folder
+  above Resin's install location (i.e. \texttt{\$RESIN\_HOME/..}).
+\item
+  If you're using \emph{Resin} to manage your data source, add the
+  following to your \texttt{portal-ext.properties} file in your
+  \emph{Liferay Home} to refer to your data source:
+
+  jdbc.default.jndi.name=jdbc/LiferayPool
+\end{enumerate}
+
+If you're using \emph{Liferay Portal} to manage your data source, follow
+the instructions in the \emph{Deploy Liferay} section for using the
+setup wizard.
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{2}
+\item
+  If want to use \emph{Liferay Portal} to manage your mail session,
+  configure the mail session within Liferay Portal. That is, after
+  starting your portal as described in the \emph{Deploy Liferay}
+  section, go to \emph{Control Panel → Server Administration → Mail} and
+  enter the settings for your mail session.
+\end{enumerate}
+
+If you're using \emph{Resin} to manage your mail session, add the
+following to your \texttt{portal-ext.properties} file to reference that
+mail session:
+
+\begin{verbatim}
+mail.session.jndi.name=mail/MailSession
+\end{verbatim}
+
+Great! Now Liferay can access your database and your mail session. Now,
+let's deploy Liferay.
+
+\subsection{Deploy Liferay }
+
+Liferay can be deployed as an exploded web archive within
+\texttt{\$RESIN\_HOME/webapps}.
+
+\begin{enumerate}[1.]
+\item
+  If you already have an application folder
+  \texttt{\$RESIN\_HOME/webapps/ROOT}, delete it or move it to a
+  location outside of \texttt{\$RESIN\_HOME/webapps}.
+\item
+  Extract the contents of the Liferay portal \texttt{.war} file into
+  \texttt{RES\-IN\_HOME/web\-apps/ROOT}. The following files should now
+  exist in your \texttt{RES\-IN\_HOME/web\-apps/ROOT} folder:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  dtd (folder)
+\item
+  errors (folder)
+\item
+  html (folder)
+\item
+  layouttpl (folder)
+\item
+  META-INF (folder)
+\item
+  wap (folder)
+\item
+  WEB-INF (folder)
+\item
+  index.jsp
+\end{itemize}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{2}
+\item
+  Before you start Liferay Portal, consider whether you want to also
+  start the setup wizard.
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \textbf{Start the setup wizard along with Liferay Portal} - Do this if
+  you want to configure your portal, set up your site's administrative
+  account and/or manage your database within Liferay.
+\end{itemize}
+
+If this is your first time starting Liferay Portal 6.1, the setup wizard
+is invoked on server start up. If you want to re-run the wizard, specify
+\texttt{set\-up.wiz\-ard.en\-abled=true} in your properties file (e.g.
+\texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties}).
+
+\begin{verbatim}
+setup.wizard.enabled=true
+\end{verbatim}
+
+The setup wizard is invoked during server startup.
+
+\begin{itemize}
+\item
+  \textbf{Start Liferay Portal without invoking the setup wizard} - Do
+  this if want to preserve your current portal settings.
+\end{itemize}
+
+To start the server without triggering the setup wizard, specify
+\texttt{set\-up.wiz\-ard.en\-abled=false} in your properties (e.g.
+\texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties} or
+\texttt{por\-tal-ext.pro\-per\-ties} file).
+
+\begin{verbatim}
+setup.wizard.enabled=false
+\end{verbatim}
+
+The \texttt{portal-setup-wizard.properties} file the setup wizard
+creates has \texttt{setup.wizard.enabled=false} conveniently specified
+for you.
+
+\begin{roundedframe}
+  \begin{wrapfigure}{l}{0.12\textwidth}
+	  \vspace{-24pt}
+      \includegraphics{../../images/01-tip.png}
+  \end{wrapfigure}
+  \vspace{12pt}
+Property values in
+\texttt{portal-setup-wizard.properties} override property values in
+\texttt{portal-ext.properties}.
+\vspace{12pt}
+\end{roundedframe}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{3}
+\item
+  Start Liferay Portal by executing your \texttt{run.bat} (Windows) or
+  \texttt{run.sh} (Unix/Linux) script from \texttt{\$RESIN\_HOME/bin}.
+\end{enumerate}
+
+\begin{itemize}
+\item
+  If the setup wizard was disabled, your site's home page opens in your
+  browser at \href{http://localhost:8080}{http://localhost:8080}.
+\item
+  Otherwise, the setup wizard opens in your browser.
+\end{itemize}
+
+Please see the section above describing how to use the setup wizard.
+
+Congratulations! You've installed Liferay Portal on Resin and have it up
+and running.
+
+\section{Installing Liferay on Tomcat 7
+}
+
+\textbf{Liferay Home} is one folder above Tomcat's install location.
+
+For this section, we will refer to your Tomcat server's installation
+location as \texttt{\$TOMCAT\_HOME}. If you do not already have an
+existing Tomcat server, we recommend you download a Liferay/Tomcat
+bundle.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/available-releases}{http://www.liferay.com/downloads/liferay-portal/available-releases}}
+If you have an existing Tomcat server or would like to install Liferay
+on Tomcat manually, please follow the steps below.
+
+Before you begin, make sure you have downloaded the latest Liferay
+\texttt{.war} file and Liferay Portal dependencies.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}}
+The Liferay \texttt{.war} file should be called
+\texttt{life\-ray-portal-6.1.x-\textless{}date\textgreater{}.war} and the
+dependencies file should be called
+\texttt{liferay-portal-dependencies-6.1.x-\textless{}date\textgreater{}.zip}.
+
+Next, let's get started by addressing Liferay's library dependencies.
+
+\subsection{Dependency Jars }
+
+Liferay Portal needs to have the Liferay Portal Dependency JARs, an
+appropriate JDBC driver and a few other JARs installed.
+
+\begin{enumerate}[1.]
+\item
+  Create folder \texttt{\$TOMCAT\_HOME/lib/ext}.
+\item
+  Extract the Liferay dependencies file to
+  \texttt{\$TOMCAT\_HOME/lib/ext}. If the files do not extract to this
+  directory, you can copy the dependencies archive to this directory,
+  extract them and then delete the archive.
+\item
+  Next, you need several \texttt{.jar} files which are included as part
+  of the Liferay source distribution. Many application servers ship with
+  these already on the class path but Tomcat does not. The best way to
+  get the appropriate versions of these files is to download the Liferay
+  source code and get them from there. Once you have downloaded the
+  Liferay source, unzip the source into a temporary folder. We'll refer
+  to the location of the Liferay source as \texttt{\$LIFERAY\_SOURCE}.
+\item
+  Copy the following jars from
+  \texttt{\$LIFERAY\_SOURCE/lib/development} to your
+  \texttt{\$TOMCAT\_HOME/lib/ext} folder:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \texttt{activation.jar}
+\item
+  \texttt{jms.jar}
+\item
+  \texttt{jta.jar}
+\item
+  \texttt{jutf7.jar}
+\item
+  \texttt{mail.jar}
+\item
+  \texttt{persistence.jar}
+\end{itemize}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{1}
+\item
+  Copy the following jar from \texttt{\$LIFERAY\_SOURCE/lib/portal} to
+  your \texttt{\$TOMCAT\_HOME/lib/ext} folder:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \texttt{ccpp.jar}
+\end{itemize}
+
+\emph{Note:} Tomcat 6 users should \emph{not} copy the \texttt{ccpp.jar}
+file into their \texttt{\$TOM\-CAT\_HOME/lib/ext} folder and should delete
+it from this folder if it already exists.
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{2}
+\item
+  Copy the following jars from
+  \texttt{\$LIFERAY\_SOURCE/lib/development} to your
+  \texttt{\$TOMCAT\_HOME/temp/liferay/com/liferay/portal/de\-ploy/de\-pen\-den\-cies}
+  folder:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \texttt{resin.jar}
+\item
+  \texttt{script-10.jar}
+\end{itemize}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{3}
+\item
+  Make sure the JDBC driver for your database is accessible by Tomcat.
+  Obtain the JDBC driver for your version of the database server. In the
+  case of MySQL, use
+  \texttt{mysql-connector-java-\{\$version\}-bin.jar}.\footnote{You can download
+  the latest MySQL JDBC driver from
+  \href{http://www.mysql.com/products/connector/}{http://www.mysql.com/products/connector/}}
+  Extract the JAR file and copy it to \texttt{\$TOMCAT\_HOME/lib/ext}.
+\item
+  Liferay requires an additional .jar on Tomcat installations to manage
+  transactions. This is included in the bundle but you need to add it if
+  you're installing Liferay manually.\footnote{You may find this .jar here:
+  \href{http://www.oracle.com/technetwork/java/javaee/jta/index.html}{http://www.oracle.com/technetwork/java/javaee/jta/index.html}}
+  Place this file in Tomcat's lib/ext folder.
+\end{enumerate}
+
+Now that you have the necessary libraries in place, we'll move on to
+configuring your domain.
+
+\subsection{Tomcat Configuration
+}
+
+The steps in this section focus on:
+
+\begin{itemize}
+\item
+  Setting environment variables
+\item
+  Creating a context for your web application
+\item
+  Modifying the list of classes/JARs to be loaded
+\item
+  Specifying URI encoding
+\end{itemize}
+
+Let's get started with our configuration tasks.
+
+\begin{enumerate}[1.]
+\item
+  Create a \texttt{setenv.bat} (Windows) or \texttt{setenv.sh} file
+  (Unix, Linux, Mac OS) in the \texttt{\$TOMCAT\_HOME/bin} directory.
+  When you start Tomcat, Catalina calls \texttt{setenv.bat} or
+  \texttt{setenv.sh}. Edit the file and populate it with following
+  contents:
+\end{enumerate}
+
+setenv.bat:
+
+\begin{verbatim}
+    if exist "%CATALINA_HOME%/jre@java.version@/win" (
+        if not "%JAVA_HOME%" == "" (
+            set JAVA_HOME=
+        )
+
+        set "JRE_HOME=%CATALINA_HOME%/jre@java.version@/win"
+    )
+
+    set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true    \
+         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false  \
+         -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+
+setenv.sh:
+
+    JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8    \
+        -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false    \
+        -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+\end{verbatim}
+
+This sets the character encoding to UTF-8, sets the time zone to
+Greenwich Mean Time and allocates memory to the Java virtual machine.
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{1}
+\item
+  Create the directory \texttt{\$TOMCAT\_HOME/conf/Catalina/localhost}
+  and create a \texttt{ROOT.xml} file in it. Edit this file and populate
+  it with the following contents to set up a portal web application:
+
+\begin{verbatim}
+<!--<Realm
+    className="org.apache.catalina.realm.JAASRealm"
+    appName="PortalRealm"
+    userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+    roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+/>-->
+
+<!--
+Uncomment the following to disable persistent sessions across reboots.
+-->
+
+<!--<Manager pathname="" />-->
+
+<!--
+Uncomment the following to not use sessions. See the property
+"session.disabled" in portal.properties.
+-->
+
+<!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
+\end{verbatim}
+\end{enumerate}
+
+Setting \texttt{crossContext="true"} allows multiple web apps to use the
+same class loader. In the content above you will also find commented
+instructions and tags for configuring a JAAS realm, disabling persistent
+sessions and disabling sessions in general.
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{2}
+\item
+  Open \texttt{\$TOMCAT\_HOME/conf/catalina.properties} and replace the
+  line:
+
+\begin{verbatim}
+common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,   \
+   ${catalina.home}/lib/*.jar
+\end{verbatim}
+\end{enumerate}
+
+with:
+
+\begin{verbatim}
+    common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,   \
+       ${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
+
+This allows Catalina to access the dependency jars you extracted to
+`$TOMCAT_HOME/lib/ext`.
+\end{verbatim}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{3}
+\item
+  To ensure consistent use of UTF-8 URI Encoding, edit
+  \texttt{server.xml} in the \texttt{\$TOMCAT\_HOME/conf} directory and add the
+  attribute \texttt{URIEncoding="UTF-8"} to your connector on port 8080. Below
+  is an example of specifying this encoding on the connector:
+
+\begin{verbatim}
+<Connector port="8080" 
+           protocol="HTTP/1.1" 
+           connectionTimeout="20000" 
+           redirectPort="8443" 
+           URIEncoding="UTF-8" />
+\end{verbatim}
+\item
+  Make sure there is no \texttt{support-catalina.jar} file in 
+  \texttt{\$TOMCAT\_HOME/webapps}. If you find one, remove it.
+\end{enumerate}
+
+Excellent work! Now let's consider configuration of your database.
+
+\subsection{Database Configuration
+}
+
+If you want Tomcat to manage your data source, use the following
+procedure. If you want to use Liferay's built-in data source, you can
+skip this section.
+
+\begin{enumerate}[1.]
+\item
+  Make sure your database server is installed and working. If it's
+  installed on a different machine, make sure it's accessible from your
+  Liferay machine.
+\item
+  Add your data source as a resource in the context of your web
+  application specified in
+  \texttt{\$TOMCAT\_HOME/conf/Catalina/localhost/ROOT.xml}.
+
+   
+\end{enumerate}
+
+Note the above resource definition assumes your database name is
+\emph{lportal} and your MySQL username and password are both
+\emph{root}. You'll have to update these values with your own database
+name and credentials.
+
+Your Tomcat managed data source is now configured. Let's move on to your
+mail session.
+
+\subsection{Mail Configuration
+}
+
+If you want to manage your mail session within Tomcat, use the following
+instructions. If you want to use the built-in Liferay mail session, you
+can skip this section.
+
+Create a mail session bound to \texttt{mail/MailSession}. Edit
+\texttt{ROOT.xml} in the \texttt{\$TOMCAT\_ HOME/conf/Catalina/localhost}
+directory and configure a mail session. Be sure to replace the mail session
+values with your own.
+
+\begin{verbatim}
+<Context...>
+    <Resource
+        name="mail/MailSession"
+        auth="Container"
+        type="javax.mail.Session"
+        mail.pop3.host="pop.gmail.com"
+        mail.pop3.port="110"
+        mail.smtp.host="smtp.gmail.com"
+        mail.smtp.port="465"
+        mail.smtp.user="user"
+        mail.smtp.password="password"
+        mail.smtp.auth="true"
+        mail.smtp.starttls.enable="true"
+        mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+        mail.imap.host="imap.gmail.com"
+        mail.imap.port="993"
+        mail.transport.protocol="smtp"
+        mail.store.protocol="imap"
+    />
+</Context>
+\end{verbatim}
+
+Super! Your mail session is configured. Next, we'll make sure Liferay
+will be able to access your mail session and database.
+
+\subsection{Configuring your database and mail session
+}
+
+In this section we'll specify appropriate properties for Liferay to use
+in connecting to your database and mail session.
+
+\begin{enumerate}[1.]
+\item
+  If you are using \emph{Tomcat} to manage your data source, add the
+  following to your \texttt{portal-ext.properties} file in your
+  \emph{Liferay Home} to refer to your data source:
+
+\begin{verbatim}
+jdbc.default.jndi.name=jdbc/LiferayPool
+\end{verbatim}
+\end{enumerate}
+
+Otherwise, if you are using \emph{Liferay Portal} to manage your data
+source, follow the instructions in the \emph{Deploy Liferay} section for
+using the setup wizard.
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{1}
+\item
+  If want to use \emph{Liferay Portal} to manage your mail session, you
+  can configure the mail session within Liferay Portal. That is, after
+  starting your portal as described in the \emph{Deploy Liferay}
+  section, go to \emph{Control Panel → Server Administration → Mail} and
+  enter the settings for your mail session.
+\end{enumerate}
+
+Otherwise, if you are using \emph{Tomcat} to manage your mail session,
+add the following to your \texttt{portal-ext.properties} file to
+reference that mail session:
+
+\begin{verbatim}
+mail.session.jndi.name=mail/MailSession
+\end{verbatim}
+
+It's just that easy! Now it's time to deploy Liferay Portal on your
+Tomcat server.
+
+\subsection{Deploy Liferay }
+
+We'll deploy Liferay as an exploded web archive within your
+\texttt{\$TOMCAT\_HOME/web\-apps} folder.
+
+\begin{enumerate}[1.]
+\item
+  If you are manually installing Liferay on a clean Tomcat server,
+  delete the contents of the \texttt{\$TOMCAT\_HOME/webapps/ROOT}
+  directory. This undeploys the default Tomcat home page. Then extract
+  the Liferay \texttt{.war} file to
+  \begin{verbatim}
+     \$TOMCAT\_HOME/webapps/ROOT
+  \end{verbatim}
+\item
+  Before you start Liferay Portal, consider whether you want to use the
+  setup wizard.
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \textbf{Start the setup wizard along with Liferay Portal} - Do this if
+  you want to configure your portal, set up your site's administrative
+  account and/or manage your database within Liferay.
+\end{itemize}
+
+If this is your first time starting Liferay Portal 6.1, the setup wizard
+is invoked on server startup. If you want to re-run the wizard, specify
+\texttt{set\-up.wiz\-ard.en\-abled=true} in your properties file (e.g.
+\texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties}).
+
+\begin{verbatim}
+setup.wizard.enabled=true
+\end{verbatim}
+
+The setup wizard is invoked during server startup.
+
+\begin{itemize}
+\item
+  \textbf{Start Liferay Portal without invoking the setup wizard} - Do
+  this if you want to preserve your current portal settings.
+\end{itemize}
+
+To start the server without triggering the setup wizard, specify
+\texttt{set\-up.wiz\-ard.en\-abled=false} in your properties (e.g.
+\texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties} or
+\texttt{por\-tal-ext.pro\-per\-ties} file).
+
+\begin{verbatim}
+setup.wizard.enabled=false
+\end{verbatim}
+
+The \texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties} file the setup wizard
+creates should have \texttt{set\-up.wiz\-ard.en\-abled=false} conveniently
+specified for you.
+
+\begin{roundedframe}
+  \begin{wrapfigure}{l}{0.12\textwidth}
+	  \vspace{-24pt}
+      \includegraphics{../../images/01-tip.png}
+  \end{wrapfigure}
+  \vspace{12pt}
+Property values in
+\texttt{portal-setup-wizard.properties} override property values in
+\texttt{portal-ext.properties}.
+\vspace{12pt}
+\end{roundedframe}
+
+I bet you can't wait to start Liferay Portal---let's do it!
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{2}
+\item
+  Start Tomcat by executing 
+  \begin{verbatim} 
+  $TOMCAT_HOME/bin/startup.bat 
+  \end{verbatim}
+  or
+  \begin{verbatim}
+  $TOMCAT_HOME/bin/startup.sh
+  \end{verbatim}
+\end{enumerate}
+
+\begin{itemize}
+\item
+  If the setup wizard was disabled, your site's home page opens in your
+  browser at \href{http://localhost:8080}{http://localhost:8080}.
+\item
+  Otherwise, the setup wizard opens in your browser.
+\end{itemize}
+
+To use the setup wizard, please see the section above.
+
+Congratulations on successfully installing and deploying Liferay on
+Tomcat!
+
+
 \section{Installing Liferay on WebLogic 10
 }
 
 \textbf{Liferay Home} is one folder above the domain to which you will
 be installing Liferay. For example, if your domain location is
-\texttt{/Oracle/Middleware/user\_projects/domains/base\_domain}, then
-your Liferay Home is \texttt{/Oracle/Middleware/user\_projects/domains}.
+
+\begin{verbatim}
+/Oracle/Middleware/user_projects/domains/base_domain
+\end{verbatim}
+
+then your Liferay Home is 
+
+\begin{verbatim}
+/Oracle/Middleware/user_projects/domains.
+\end{verbatim}
 
 For this section, we will refer to your WebLogic server's installation
 location as \texttt{\$WEBLOGIC\_HOME}.
 
 Before you begin, make sure you have downloaded the latest Liferay
-\texttt{.war} file and Liferay Portal dependencies from
-\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}.
+\texttt{.war} file and Liferay Portal dependencies.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}}
 The Liferay \texttt{.war} file should be called
 \texttt{liferay-portal-6.1.x-\textless{}date\textgreater{}.war} and the
 dependencies file should be called
@@ -19505,11 +19623,13 @@ server and that you have access to the WebLogic console.
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
+	  \vspace{-24pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
+  \vspace{12pt}
 WebLogic 10.0 supports JDK 1.5
 but does \emph{not} support JDK 1.6.
-
+\vspace{12pt}
 \end{roundedframe}
 
 Now that you have all of your installation files, you are ready to start
@@ -19557,7 +19677,7 @@ skip this section.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/02-weblogic-data-sources.png}
-\caption{Figure 14.41: WebLogic Data Sources}
+\caption{\\Figure 14.41: WebLogic Data Sources}
 \end{figure}
 
 \begin{enumerate}[1.]
@@ -19607,7 +19727,7 @@ skip this section.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/02-weblogic-mail-sessions.png}
-\caption{Figure 14.42: WebLogic: Mail Sessions}
+\caption{\\Figure 14.42: WebLogic: Mail Sessions}
 \end{figure}
 
 \begin{enumerate}[1.]
@@ -19696,8 +19816,8 @@ setup wizard.
 
 If this is your first time starting Liferay Portal 6.1, the setup wizard
 is invoked on server startup. If you want to re-run the wizard, specify
-\texttt{setup.wizard.enabled=true} in your properties file (e.g.
-\texttt{portal-setup-wizard.properties}).
+\texttt{set\-up.wiz\-ard.en\-abled=true} in your properties file (e.g.
+\texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties}).
 
 \begin{verbatim}
 setup.wizard.enabled=true
@@ -19708,30 +19828,32 @@ The setup wizard is invoked during server startup.
 \begin{itemize}
 \item
   \textbf{Start Liferay Portal without invoking the setup wizard} - Do
-  this if want to preserve your current portal settings.
+  this if you want to preserve your current portal settings.
 \end{itemize}
 
 To start the server without triggering the setup wizard, specify
-\texttt{setup.wizard.enabled=false} in your properties (e.g.
-\texttt{portal-setup-wizard.properties} or
-\texttt{portal-ext.properties} file).
+\texttt{set\-up.wiz\-ard.en\-abled=false} in your properties (e.g.
+\texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties} or
+\texttt{por\-tal-ext.pro\-per\-ties} file).
 
 \begin{verbatim}
 setup.wizard.enabled=false
 \end{verbatim}
 
-The \texttt{portal-setup-wizard.properties} file the setup wizard
-creates has \texttt{setup.wizard.enabled=false} conveniently specified
+The \texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties} file the setup wizard
+creates has \texttt{set\-up.wiz\-ard.en\-abled=false} conveniently specified
 for you.
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
+	  \vspace{-24pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
+  \vspace{12pt}
 Property values in
 \texttt{portal-setup-wizard.properties} override property values in
 \texttt{portal-ext.properties}.
-
+\vspace{12pt}
 \end{roundedframe}
 
 Now that you have enabled or disabled the setup wizard, let's move on to
@@ -19740,7 +19862,7 @@ deployment of Liferay Portal.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/02-weblogic-deployments.png}
-\caption{Figure 14.43: WebLogic Deployments}
+\caption{\\Figure 14.43: WebLogic Deployments}
 \end{figure}
 
 \begin{enumerate}[1.]
@@ -19796,15 +19918,19 @@ Congratulations on your deployment of Liferay Portal on WebLogic 10!
 be installing Liferay.
 
 For example, if your domain location is
-\texttt{/Oracle/Middleware/user\_projects/domains/base\_domain}, then
-your Liferay Home is \texttt{/Oracle/Middleware/user\_projects/domains}.
+\begin{verbatim}
+/Oracle/Middleware/user_projects/domains/base_domain
+\end{verbatim}
+then your Liferay Home is 
+\begin{verbatim}
+/Oracle/Middleware/user_projects/domains
+\end{verbatim}
 
 For this section, we will use \texttt{\$WEBLOGIC\_HOME} to refer to your
 WebLogic server's installation \texttt{/Oracle/Middleware}.
 
 Before you begin, make sure you have downloaded the latest Liferay
-\texttt{.war} file and Liferay Portal dependencies from
-\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}.
+\texttt{.war} file and Liferay Portal dependencies.\footnote{\href{http://www.liferay.com/downloads/liferay-portal/additional-files}{http://www.liferay.com/downloads/liferay-portal/additional-files}}
 The Liferay \texttt{.war} file should be called
 \texttt{liferay-portal-6.1.x-\textless{}date\textgreater{}.war} and the
 dependencies file should be called
@@ -19818,13 +19944,13 @@ first.
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
+          \vspace{-16pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
-There is a known issue with the
-Sun and JRockit JVMs bundled with WebLogic 10.3.2 (see
-\href{issue}{http://bugs.sun.com/view\_bug.do?bug\_id=6795561}). To
+There is a known issue with the Sun and JRockit JVMs bundled with WebLogic
+10.3.2.\footnote{see \href{issue}{http://bugs.sun.com/view\_bug.do?bug\_id=6795561}} To
 resolve, use Sun JVM 1.6.0\_u24 or JRockit JVM 1.6.0\_24.
-
+\vspace{12pt}
 \end{roundedframe}
 
 Let's get started by installing the JAR files Liferay needs.
@@ -19861,7 +19987,7 @@ skip this section.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/02-weblogic-10-3-data-sources.png}
-\caption{Figure 14.44: WebLogic Data Sources}
+\caption{\\Figure 14.44: WebLogic Data Sources}
 \end{figure}
 
 \begin{enumerate}[1.]
@@ -19880,7 +20006,7 @@ skip this section.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/02-creating-a-data-source-in-weblogic.png}
-\caption{Figure 14.45: Creating a data source in WebLogic 10.3}
+\caption{\\Figure 14.45: Creating a data source in WebLogic 10.3}
 \end{figure}
 
 \begin{enumerate}[1.]
@@ -19920,7 +20046,7 @@ skip this section.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/02-weblogic-10-3-mail-sessions.png}
-\caption{Figure 14.46: WebLogic Mail Sessions}
+\caption{\\Figure 14.46: WebLogic Mail Sessions}
 \end{figure}
 
 \begin{enumerate}[1.]
@@ -19997,8 +20123,8 @@ Now its the moment you've been waiting for: Liferay deployment!
 
 \subsection{Deploy Liferay }
 
-This section provides instructions for deploying Liferay to your
-application server domain.
+Follow the instructions in this section to deploy Liferay Portal to your
+domain.
 
 Before you deploy Liferay Portal, consider whether you want to use the
 setup wizard.
@@ -20012,8 +20138,8 @@ setup wizard.
 
 If this is your first time starting Liferay Portal 6.1, the setup wizard
 is invoked on server startup. If you want to re-run the wizard, specify
-\texttt{setup.wizard.enabled=true} in your properties file (e.g.
-\texttt{portal-setup-wizard.properties}).
+\texttt{set\-up.wiz\-ard.en\-abled=true} in your properties file (e.g.
+\texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties}).
 
 \begin{verbatim}
 setup.wizard.enabled=true
@@ -20024,30 +20150,32 @@ The setup wizard is invoked during server startup.
 \begin{itemize}
 \item
   \textbf{Start Liferay Portal without invoking the setup wizard} - Do
-  this if want to preserve your current portal settings.
+  this if you want to preserve your current portal settings.
 \end{itemize}
 
 To start the server without triggering the setup wizard, specify
-\texttt{setup.wizard.enabled=false} in your properties (e.g.
-\texttt{portal-setup-wizard.properties} or
-\texttt{portal-ext.properties} file).
+\texttt{set\-up.wiz\-ard.en\-abled=false} in your properties (e.g.
+\texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties} or
+\texttt{por\-tal-ext.pro\-per\-ties} file).
 
 \begin{verbatim}
-    setup.wizard.enabled=false
+setup.wizard.enabled=false
 \end{verbatim}
 
-The \texttt{portal-setup-wizard.properties} file the setup wizard
-creates has \texttt{setup.wizard.enabled=false} conveniently specified
+The \texttt{por\-tal-set\-up-wiz\-ard.pro\-per\-ties} file the setup wizard
+creates has \texttt{set\-up.wiz\-ard.en\-abled=false} conveniently specified
 for you.
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
+	  \vspace{-24pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
+  \vspace{12pt}
 Property values in
 \texttt{portal-setup-wizard.properties} override property values in
 \texttt{portal-ext.properties}.
-
+\vspace{12pt}
 \end{roundedframe}
 
 Now, let's deploy Liferay Portal.
@@ -20064,7 +20192,7 @@ Now, let's deploy Liferay Portal.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/02-weblogic-10-3-deployments.png}
-\caption{Figure 14.47: WebLogic Deployments}
+\caption{\\Figure 14.47: WebLogic Deployments}
 \end{figure}
 
 \begin{enumerate}[1.]
@@ -20108,7 +20236,7 @@ To re-enable this portlet, extract \texttt{xalan.jar} and
 \texttt{serializer.jar} from the Liferay \texttt{.war} archive and copy
 them to your JDK's endorsed folder for libraries. If you are using
 JRockit, this folder may be
-\texttt{{[}\$WEBLOGIC\_HOME{]}/jrockit\_160\_05/jre/lib/ext}; if your
+\texttt{{[}\$WEBLOGIC\_HOME{]}/jrockit\_160\_05/jre/lib/ext}; if you
 are using Sun JDK, this folder may be
 \texttt{{[}\$WEBLOGIC\_HOME{]}/jdk160\_24/jre/lib/ext}.
 
@@ -20121,13 +20249,14 @@ Congratulations! You are now running Liferay on Oracle WebLogic.
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
+          \vspace{-16pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
 \textbf{Tip:} Throughout this
 installation and configuration process, WebSphere prompts you to Click
 Save to apply changes to Master Configuration. Do so intermittently to
 save your changes.
-
+\vspace{9pt}
 \end{roundedframe}
 
 \textbf{Liferay Home} is in a folder called \texttt{liferay} in the home
@@ -20244,7 +20373,7 @@ may want to enable it.}
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/Websphere-8_html_m2eef7200.png}
-\caption{Figure 14.53: WebSphere gives you a nice user interface for
+\caption{\\Figure 14.53: WebSphere gives you a nice user interface for
 customizing the ports your server uses.}
 \end{figure}
 
@@ -20343,7 +20472,7 @@ after the install.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/02-modifying-data-source-properties-in-websphere.png}
-\caption{Figure 14.55: Modifying data source properties in WebSphere}
+\caption{\\Figure 14.55: Modifying data source properties in WebSphere}
 \end{figure}
 
 \begin{enumerate}[1.]
@@ -20354,7 +20483,10 @@ after the install.
 \item
   Do another filter search for the url property. Give it a value that
   points to your database. For example, the MySQL URL would be:
-  \texttt{jdbc:mysql://localhost/lportal?useUnicode=true\&characterEncoding=UTF-8\&useFastDateParsing=false}.
+  \begin{verbatim}
+  jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8   \
+     &useFastDateParsing=false
+  \end{verbatim}
   Click \emph{OK} and save to master configuration.
 \item
   Do another filter search for the password property. Enter the password
@@ -20420,11 +20552,14 @@ Great! Now you're ready to deploy Liferay.
 \item
   If you plan to use Liferay's setup wizard, skip to the next step. If
   you wish to use WebSphere's data source and mail session, create a
-  file called \texttt{portal-ext.properties} in your Liferay Home
+  file called \texttt{por\-tal-ext.pro\-per\-ties} in your Liferay Home
   folder. Place the following text in the file:
 
+  \begin{verbatim}
   jdbc.default.jndi.name=jdbc/LiferayPool
-  mail.session.jndi.name=mail/MailSession setup.wizard.enabled=false
+  mail.session.jndi.name=mail/MailSession 
+  setup.wizard.enabled=false
+  \end{verbatim}
 \item
   Select the Liferay application and click \emph{Start}.
 \end{enumerate}
@@ -20494,7 +20629,7 @@ A full discussion of the \texttt{portal-ext.properties} file appears in
 Chapter 20.
 
 \textbf{Note for WebLogic Users:} WebLogic also requires that you modify
-the \texttt{weblogic.xml} file which is included with Liferay. In this
+the \texttt{web\-logic.xml} file which is included with Liferay. In this
 file are tags for the context root:
 
 \begin{verbatim}
