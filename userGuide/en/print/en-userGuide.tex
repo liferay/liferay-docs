@@ -20901,6 +20901,7 @@ the direct parent of the organization you are creating. Click the
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
+          \vspace{-14pt}
       \includegraphics{../../images/01-tip.png}
   \end{wrapfigure}
 \textbf{Tip:} Note that you're
@@ -21000,7 +21001,7 @@ control panel.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/server-configuration-new-user-group.png}
-\caption{Figure 15.4: Creating a New User Group}
+\caption{\\Figure 15.4: Creating a New User Group}
 \end{figure}
 
 Note in the figure above how each user group may have a site, with
@@ -21223,7 +21224,7 @@ and make any changes desired, add additional pages, etc.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/user-group-site-template-selected.png}
-\caption{Figure 15.7: Selecting a Template for the User Group Site}
+\caption{\\Figure 15.7: Selecting a Template for the User Group Site}
 \end{figure}
 
 Also, try visiting the public site of one of the users who belongs to
@@ -21334,7 +21335,7 @@ see an application in the control panel.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/01-message-board-content-permissions.png}
-\caption{Figure 15.10: Message Board Content Permissions}
+\caption{\\Figure 15.10: Message Board Content Permissions}
 \end{figure}
 
 Each possible action to which permissions can be granted is listed. To
@@ -21374,7 +21375,7 @@ that user group managers can manage user groups from the Control Panel.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/user-group-manager-role.png}
-\caption{Figure 15.11: Make sure to test the permissions you grant to
+\caption{\\Figure 15.11: Make sure to test the permissions you grant to
 custom roles.}
 \end{figure}
 
@@ -21393,7 +21394,7 @@ the \emph{Available} tab, they'll see an empty list.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/no-users-found.png}
-\caption{Figure 15.12: Users assigned to the User Group Manager role
+\caption{\\Figure 15.12: Users assigned to the User Group Manager role
 can't find any users to add!}
 \end{figure}
 
@@ -21571,7 +21572,7 @@ password changes, etc. You can customize those messages here.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/server-configuration-portal-settings-pages.png}
-\caption{Figure 15.13: Portal Settings Pages}
+\caption{\\Figure 15.13: Portal Settings Pages}
 \end{figure}
 
 Let's discuss these settings next.
@@ -21810,11 +21811,12 @@ to import the certificate into the \emph{cacerts keystore}. The import
 is handled by a command like the following:
 
 \begin{verbatim}
-keytool -import -trustcacerts -keystore
+keytool -import -trustcacerts -keystore /some/path/jdk1.5.0_11/jre/    \
+   lib/security/cacerts -storepass changeit -noprompt -alias MyRootCA    \
+   -file /some/path/MyRootCA.cer
+
 \end{verbatim}
 
-/some/path/jdk1.5.0\_11/jre/lib/security/cacerts -storepass changeit
--noprompt -alias MyRootCA -file /some/path/MyRootCA.cer
 
 The \emph{keytool} utility ships as part of the Java SDK.
 
@@ -21844,11 +21846,13 @@ LDAP directory.
   method to use screen names instead of the email addresses, you would
   modify the search filter so it can match the entered log in name:
 
+  \begin{verbatim}
   (cn=@screen\_name@)
+  \end{verbatim}
 \item
   \emph{Import Search Filter:} Depending on the \textbf{LDAP} server,
   there are different ways to identify the user. Generally, the default
-  setting (\texttt{objectClass=inetOrgPerson}) is fine but if you want
+  setting\footnote{\texttt{objectClass=inetOrgPerson}} is fine but if you want
   to search for only a subset of users or users that have different
   object classes, you can change this.
 \item
@@ -21986,9 +21990,9 @@ it with the user's password in Liferay, syncing the two.
 
 \begin{verbatim}
 ldap.auth.password.encryption.algorithm=
+ldap.auth.password.encryption.algorithm.types=MD5,SHA
 \end{verbatim}
 
-ldap.auth.password.encryption.algorithm.types=MD5,SHA
 
 Set the password encryption to used to compare passwords if the property
 \texttt{ldap.auth.method} is set to \texttt{password-compare}.
@@ -22004,13 +22008,13 @@ If you have users who do not belong to any groups, they will not be
 imported.
 
 \begin{verbatim}
-ldap.error.password.age=age ldap.error.password.expired=expired
-\end{verbatim}
-
 ldap.error.password.history=history
 ldap.error.password.not.changeable=not allowed to change
 ldap.error.password.syntax=syntax ldap.error.password.trivial=trivial
 ldap.error.user.lockout=retry limit
+ldap.error.password.age=age ldap.error.password.expired=expired
+\end{verbatim}
+
 
 These properties are a list of phrases from error messages which can
 possibly be returned by the LDAP server. When a user binds to LDAP, the
@@ -22089,10 +22093,10 @@ Finally, to import the key into your Java key store, use the following
 command:
 
 \begin{verbatim}
-keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit -keystore
+keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit -keystore   \
+   \$JAVA\_HOME/jre/lib/security/cacerts
 \end{verbatim}
 
-\$JAVA\_HOME/jre/lib/security/cacerts
 
 If you are on a Windows system, replace \texttt{\$JAVA\_HOME} above with
 \texttt{\%JAVA\_HOME\%}. Of course, all of this needs to be done on the
@@ -22161,12 +22165,18 @@ OpenID is a new single sign-on standard which is implemented by multiple
 vendors. The idea is multiple vendors can implement the standard and
 then users can register for an ID with the vendor they trust. The
 credential issued by that vendor can be used by all the web sites that
-support OpenID. Some high profile OpenID vendors are AOL
-\href{http://openid.aol.com/screenname}{http://openid.aol.com/screenname},
+support OpenID. Some high profile OpenID vendors are 
+\begin{itemize}
+   \item
+AOL
+\href{http://openid.aol.com/screenname}{http://openid.aol.com/screenname}
+\item
 LiveDoor
 \href{http://profile.livedoor.com/username}{http://profile.livedoor.com/username}
-and LiveJournal
-\href{http://username.livejournal.com/}{http://username.livejournal.com}.
+\item
+LiveJournal
+\href{http://username.livejournal.com/}{http://username.livejournal.com}
+\end{itemize}
 Please see the OpenID site
 \href{http://www.openid.net/}{http://www.openid.net} for a more complete
 list.
