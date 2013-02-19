@@ -71,9 +71,9 @@ how versions relate to one another.
 
 Keep in mind that the version of your app is completely up to you to specify,
 but the releases of Liferay with which your app works must be specified using
-the Liferay versioning scheme. See the *Specify App Compatibility* section below
-for details on how to specify the releases of Liferay for which your app is
-designed.
+the Liferay versioning scheme. See the *Specify App Packaging Directives*
+section below for details on how to specify the releases of Liferay for which
+your app is designed.
 
 ### What is a package? [](id=lp-6-1-dgen10-what-is-a-package-0)
 
@@ -289,33 +289,47 @@ comma-separated list of Liferay releases with which your app is compatible, and
 for which packages should be generated, using the `liferay-versions` keyword.
 Marketplace will create packages that contain your plugins based on these
 packaging directives (and will intelligently group them together as each plugin
-is uploaded).
+is uploaded).  You should specify CE versions first, followed by EE versions,
+using this form: `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE`
+are replaced with the corresponding Liferay Releases with which your app is
+compatible).
+
+ [note](../../images/tip-pen-paper.png)**Note:** If your app is compatible with
+ both CE and EE, you must specify a set of versions for both CE and EE releases.
+ If you only specify compatibility with CE, then your app will not be compatible
+ with (and will fail to deploy to) any EE release.
 
 For example, to specify that a particular plugin in your app is compatible with
-Liferay 6.1 CE GA2 *and later*, add this line to your
-`liferay-plugin-packages.properties` file:
+Liferay 6.1 CE GA2 (and later), and 6.1 EE GA2 (and later), add this line to
+your `liferay-plugin-packages.properties` file:
 
-    liferay-versions=6.1.1+ 
+    liferay-versions=6.1.1+,6.1.20+
 
-This means that the app works with any 6.1 CE or EE release starting with CE
-GA2, and Marketplace will create a package that is compatible with the 6.1 CE GA2
-release and *later* versions.
+This means that the app works with any 6.1 CE release starting with CE GA2, and
+and 6.1 EE release starting with EE GA2. Marketplace will create two packages,
+one that is compatible with the 6.1 CE GA2 release and *later*, and another that
+is compatible with 6.1 EE GA2 release and *later*.
 
- ![note](../../images/tip-pen-paper.png)**Note:** Any version specification you
+ ![note](../../images/tip-pen-paper.png)**Note:** Any CE or EE versions you
  include in your packaging directives *must* be terminated with a version using
  the `+` symbol.  This ensures that your app will be deployable onto future
  versions of Liferay (but does not guarantee your app will work in future
- versions).  So, `6.1.2` will not work, but `6.1.2+` will work.
+ versions).  So, `liferay-versions=6.1.1,6.1.2` will not work, but
+ `liferay-versions=6.1.1,6.1.2+` will work.  Similarly,
+ `liferay-versions=6.1.1+,6.1.20,6.1.21` will not work (as the EE versions are
+ not properly terminated), but `liferay=versions=6.1.1+,6.1.20,6.1.21+` will
+ work.
 
 
 Here are some additional examples:
 
-	# works with Liferay 6.1 CE GA2 and later (NOT compatible with 6.1 GA1).
-	# Note that 6.1.1+ also means it is compatible with EE GA1 and later.
-	liferay-versions=6.1.1+
+	# works with Liferay 6.1 CE and EE GA2 and later (NOT compatible with 6.1
+	# CE or EE GA1).  This is most likely what you want to use.
+	liferay-versions=6.1.1+,6.1.20+
 
-	# works with Liferay 6.1 CE GA2, GA3, and GA5 (but not GA4)
-	liferay-versions=6.1.1,6.1.2,6.1.4+
+	# works with Liferay 6.1 CE GA2, GA3, and GA5 (but not GA4), and EE GA2
+	# and later
+	liferay-versions=6.1.1,6.1.2,6.1.4+,6.1.20+
 	
 	# works with Liferay 6.1 EE GA2 and later (NOT compatible with CE)
 	liferay-versions=6.1.20+
@@ -327,20 +341,21 @@ portlet is simple, and uses standard API calls that work on all Liferay 6.1
 releases. However, the hook is different for CE vs. EE because it takes
 advantage of some feature of EE.
 
-In this case, your portlet plugin would have `liferay-versions=6.1.1+`,
-but because the hook must be built against a different API for Liferay EE, you'd
-have *two* hook plugins. The first one would specify `liferay-versions=6.1.1+`
-(indicating it works with CE GA2 and later), and the second hook plugin would
-specify `liferay-versions=6.1.20+` (indicating it works with EE GA2 and later,
-but not CE GA2). As you upload these plugins later on in this example, you will
-notice that they are grouped into separate packages of plugins for each
-supported release. In some cases, if a plugin is compatible with multiple
-releases, it will be automatically copied for use in all of the releases for
-which your app supports. Also, in some cases, if Marketplace cannot determine
-the appropriate package into which to place your plugin, it may reject it. For
-example, if you specified `liferay-versions=1.0.0+`, because you are confident
-your plugin works with any Liferay release, Marketplace likely will reject it as
-`1.0` is not a known Liferay release.
+In this case, your portlet plugin would have `liferay-versions=6.1.1+,6.1.20+`,
+indicating that it is compatible with CE and EE. However, because the hook must
+be built against a different API for Liferay EE, you'd built *two* hook plugins.
+The first one would specify `liferay-versions=6.1.1+` (indicating it works with
+CE GA2 and later, but not EE), and the second hook plugin would specify
+`liferay-versions=6.1.20+` (indicating it works with EE GA2 and later, but not
+CE GA2). As you upload these plugins later on in this example, you will notice
+that they are grouped into separate packages of plugins for each supported
+release. In some cases, if a plugin is compatible with multiple releases, it
+will be automatically copied for use in all of the releases for which your app
+supports. Also, in some cases, if Marketplace cannot determine the appropriate
+package into which to place your plugin, it may reject it. For example, if you
+specified `liferay-versions=1.0.0+`, because you are confident your plugin
+works with any Liferay release, Marketplace likely will reject it as `1.0` is
+not a known Liferay release.
 
 Now that you have developed your app, it's time to get started with Marketplace!
 
