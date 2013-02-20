@@ -50,7 +50,7 @@ public class PropertiesParser {
 		root.put("toc", toc);
 		
 		// Parse properties file and create sections for the data model
-		File propertiesFile = new File(System.getProperty("user.dir") + "/code/properties-converter/" + args[2]);
+		File propertiesFile = new File(System.getProperty("user.dir") + "/" + args[2]);
 		String propertiesString = read(propertiesFile);
 		String[] paragraphs = propertiesString.split("\n\n");
 		ArrayList<Section> sections = new ArrayList<Section>();
@@ -131,7 +131,7 @@ public class PropertiesParser {
 		// Get the Freemarker template and merge it with the data model
 		try {
 			Template temp = cfg.getTemplate("properties.ftl");
-			File propertiesHtml = new File (System.getProperty("user.dir") + "/code/properties-converter/properties.html");
+			File propertiesHtml = new File (System.getProperty("user.dir") + "/properties.html");
 			Writer out = new FileWriter(propertiesHtml);
 			try {
 				temp.process(root, out);
@@ -156,7 +156,7 @@ public class PropertiesParser {
 				String line = null;
 				while ((line = input.readLine()) != null) {
 					contents.append(line);
-					contents.append(System.getProperty("line.separator"));
+					contents.append("\n");
 				}
 			}
 			finally {

@@ -39,7 +39,7 @@
 		<h2>Properties</h2>
 		<#list sections as section>
 			<#if section.isSectionTitle>
-				<a name="${section.name}"></a><a href="properties.html">Table of Contents</a>
+				<a name="${section.name}"></a><a href="properties.html">Top of Page</a>
 				<h3>${section.name}</h3>
 			<#else>
 				<#if section.descriptionParagraphs?has_content>
