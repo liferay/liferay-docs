@@ -28,11 +28,10 @@ process for any kind of content before it is published to your portal.
 
 ## Enabling workflow  
 
-Liferay's Kaleo workflow engine ships with CE versions of Liferay. If you have
-EE or if you uninstalled it, the plugin can be installed through the Liferay
-marketplace. The name is `kaleo-web` and you'll find it in the list of web
-plugins. Installing the plugin adds a number of new options to the control
-panel: 
+Liferay's Kaleo workflow engine can be installed for both CE and EE versions of
+Liferay. The web plugin's name is `kaleo-web` and is bundled in the *Kaleo Forms
+EE* and *Kaleo Workflow CE* apps on Liferay marketplace. Installing the plugin
+adds a number of new options to the control panel:
 
 -   My Workflow Tasks
 
@@ -64,7 +63,7 @@ already exist in your portal.
 
 The XML file has several parts which define the workflow. To get an idea of how
 this works, we'll examine the default `single-approver-definition.xml` file
-which is included in the the Liferay Kaleo plugin.
+which is included in the Liferay Kaleo plugin.
 
 The key parts of the workflow definition are the asset that's running through
 the workflow, the nodes of the workflow and the transitions between nodes. The
@@ -129,7 +128,7 @@ In this case, the state is simply that the asset has been created. States can
 contain actions and transitions. Actions can contain scripts. You can specify
 the language of the script with the `<script-language>` tag. Scripts can be
 written in Groovy, JavaScript, Ruby or Python (see chapter 18 for more
-information on leveraging scipts in workflow). For a state, the action is
+information on leveraging scripts in workflow). For a state, the action is
 triggered automatically and then executes a transition. Transitions move you to
 a new state or task.
 
@@ -245,7 +244,7 @@ logs back in. Generally speaking, email notifications work best with `onExit` or
 `onAssignment`, while IM or private message work better with `onEntry`.
 
 Email and private message notifications can also be created as plain text or you
-can create formatted content using Freemarker or Velocity templating languages.
+can create formatted content using FreeMarker or Velocity templating languages.
 When creating the notification, you need to specify the `template-language` as
 `text`, `freemarker` or `velocity`.
 
@@ -438,19 +437,20 @@ Timers occur within a Task element and are formatted like:
 		...
 	</task>
 		
-The outer element is <task-timers> because you can have multiple timers with
-multiple actions. The specific <task-timer> then contains the element <delay>
-which has a <duration> and <scale>. The duration can be any number, whole or
-fractional, and it's significance is defined by the scale. The scale tells you
-what unit of time the duration is talking about - seconds, minutes, hours, days,
-weeks, months or years. Once you've determined the time, you'll want to pick an
-action - either a notification, reassignment or a custom script.
+The outer element is `<task-timers>` because you can have multiple timers with
+multiple actions. The specific `<task-timer>` then contains the element
+`<delay>` which has a `<duration>` and `<scale>`. The duration can be any
+number, whole or fractional, and it's significance is defined by the scale. The
+scale tells you what unit of time the duration is talking about - seconds,
+minutes, hours, days, weeks, months or years. Once you've determined the time,
+you'll want to pick an action - either a notification, reassignment or a custom
+script.
 
 Notifications are pretty simple - if a certain amount of time passes and an
 action isn't completed yet, the user assigned to the task will receive a fresh
 notification. With the timer, you have all of the standard notification types
 available and you can choose a different notification type than was used for the
-original notifcation. For example, you could create a definition such that when
+original notification. For example, you could create a definition such that when
 a new item is submitted to the workflow, all members of the *Content Reviewer*
 role receive a notification. You could then use a timer to say if the content
 hasn't been reviewed within two hours each member of the *Content Reviewer* role
@@ -473,7 +473,7 @@ out of the office. With a timer set to reassign, after the specified amount of
 time has passed, the task can be assigned to a new role. Building off of our
 example above, if the Content Reviewers all received the IM notification after
 two hours, but the content still wasn't approved after four hours, the workflow
-could be set to automatically reassign to the task to the *Adminstrator* role.
+could be set to automatically reassign to the task to the *Administrator* role.
 
 A Reassignment would be formatted like this:
 
@@ -491,7 +491,7 @@ A Reassignment would be formatted like this:
 		</reassignments>
     </timer-actions>
     
-Obviously we can't think of eveything, so if you have an idea for using timers
+Obviously we can't think of everything, so if you have an idea for using timers
 in your workflow that doesn't fit into our design, you could access Liferay's
 scripting engine to create a custom action to happen after a specified amount of
 time. For example, if you had means of sending electric shocks through employees
@@ -578,7 +578,7 @@ you're using for each site individually.
 ![Figure 10.4: The Workflow Configuration
 Page](../../images/kaleo-workflow-configuration.png)
 
-Using the context selector drop-down menu in the control canel, you can select
+Using the context selector drop-down menu in the control panel, you can select
 any site in the portal. All the options under that heading, including Workflow
 Configuration, now apply to that particular site. Using workflow is just as
 easy. 
@@ -667,9 +667,9 @@ By default, the *Use document type restrictions and workflow of the parent
 folder* button is selected. To enable workflow for this folder, select the
 *Define specific document type restrictions and workflow for this folder*
 button. After you've selected this button, a *Default Workflow for all Document
-Types* dropdown menu appears. By default, you can select *No workflow* or
+Types* drop-down menu appears. By default, you can select *No workflow* or
 *Single Approver*. Any custom workflows that you added also appear in this
-dropdown menu. You can add custom workflows through the Workflow page in the
+drop-down menu. You can add custom workflows through the Workflow page in the
 Portal section of the Control Panel.
 
 ![Figure 10.10: You can use the document type restrictions and workflow of the
@@ -705,9 +705,9 @@ portal resources for which you can select a workflow.
 resources for which can select a workflow for your chosen
 scope.](../../images/workflow-configuration.png)
 
-To select a workflow, click on the Workflow dropdown menu and choose a workflow.
+To select a workflow, click on the Workflow drop-down menu and choose a workflow.
 By default, you can only select *No workflow* or *Single Approver*. Custom
-workflows that you added also appear in this dropdown menu. You can add custom
+workflows that you added also appear in this drop-down menu. You can add custom
 workflows through the Workflow page in the Portal section of the Control Panel.
 To enable workflow for the collaborative applications, select the *Single
 Approver* for the Blogs Entry, Message Boards Message and Wiki Page resources,
