@@ -24218,14 +24218,14 @@ information from the database, make some changes and then update the
 database with our changes. Our company has updated the terms of use and
 requires that everyone be presented with the updated terms of use on the
 next log in. When users agree to the terms of use, a boolean attribute
-called \texttt{agreedToTermsOfUse} is set in their user records. As long
+called \texttt{ag\-reed\-To\-Terms\-Of\-Use} is set in their user records. As long
 as the boolean is \texttt{true}, Liferay will not present the user with
 the terms of use. However, if we set this flag to \texttt{false} for
 everyone, all users will have to agree to it again to use the site.
 
 We'll again use Groovy, so ensure the script type is set to Groovy and
 execute the following code to check the status of the
-\texttt{agreedToTermsOfUse} attribute:
+\texttt{ag\-reed\-To\-Terms\-Of\-Use} attribute:
 
 \begin{verbatim}
 import com.liferay.portal.service.UserLocalServiceUtil
@@ -24239,7 +24239,7 @@ for (user in users) {
 \end{verbatim}
 
 Now we'll actually update each user in the system to set his or her
-\texttt{agreedToTermsOfUse} attribute to false. We'll be sure to skip
+\texttt{ag\-reed\-To\-Terms\-Of\-Use} attribute to false. We'll be sure to skip
 the default user as the default user is not required to agree to the
 Terms of Use. We'll also skip the admin user that's currently logged in
 and running the script. If you're logged in as somoene other than
@@ -24308,8 +24308,10 @@ with the workflow to set the status of the content to \emph{approved}.
 
 \begin{verbatim}
 <script>
-<![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus
-    (Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"),workflowContext);]]>
+<![CDATA[
+   Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus
+    (Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"),
+       workflowContext);]]>
 </script>
 <script-language>javascript</script-language>
 \end{verbatim}
@@ -24437,7 +24439,7 @@ for the Plugin Type and then select \emph{Finish}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/13-new-liferay-project.png}
-\caption{Figure 18.1: Creating a new utilities project is easy if you
+\caption{\\Figure 18.1: Creating a new utilities project is easy if you
 use Liferay IDE or Liferay Developer Studio.}
 \end{figure}
 
@@ -24457,7 +24459,7 @@ interface in the \texttt{com.liferay.sample} package. Name it
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/13-new-interface.png}
-\caption{Figure 18.2: Create a new Java Interface which you'll later
+\caption{\\Figure 18.2: Create a new Java Interface which you'll later
 implement.}
 \end{figure}
 
@@ -24476,15 +24478,15 @@ public interface ScriptUtil {
 \end{verbatim}
 
 Next, create the implementation class. Right click on the
-\texttt{docroot/WEB-INF/src} folder and select \emph{New} →
-\emph{Class}. Create the interface in the \texttt{com.liferay.sample}
+\texttt{doc\-root/WEB\-INF/src} folder and select \emph{New} →
+\emph{Class}. Create the interface in the \texttt{com.life\-ray.sam\-ple}
 package and name it \texttt{ScriptUtilImpl}. Be sure to select
-\texttt{com.liferay.sample.ScripUtil} as the Interface.
+\texttt{com.\-life\-ray.sam\-ple.Script\-Util} as the Interface.
 
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/13-new-class.png}
-\caption{Figure 18.3: Create a new Java Class that implements the
+\caption{\\Figure 18.3: Create a new Java Class that implements the
 interface you created earlier.}
 \end{figure}
 
@@ -24520,12 +24522,13 @@ public class ScriptUtilImpl implements ScriptUtil {
 Liferay makes extensive use of the Spring Framework and you'll be using
 it here to inject your implementation class into the application. Spring
 needs a bean definition which you'll declare in an XML file named
-\texttt{applicationContext.xml}. Create this file in the
+\texttt{app\-li\-ca\-tion\-Con\-text.xml}. Create this file in the
 \texttt{docroot/WEB-INF/} directory and add the following code:
 
 \begin{verbatim}
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+   "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
     <bean id="com.liferay.sample.ScriptUtil" class="com.liferay.sample.ScriptUtilImpl" />
@@ -24540,16 +24543,19 @@ If you're adding your utility to a Service Builder enabled plugin, then
 you'll already have a \texttt{BeanLocator} and you can skip this step.
 Since this Hook plugin is not already using Service Builder, you'll need
 to define a context loader listener in our Hook to provide a
-\texttt{BeanLocator}. Open the \texttt{docroot/WEB-INF/web.xml} file and
+\texttt{BeanLocator}. Open the \texttt{doc\-root/WEB-INF/\-web.xml} file and
 replace its contents with the following code:
 
 \begin{verbatim}
 <?xml version="1.0"?>
-<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+   "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
     <listener>
-        <listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
+        <listener-class>
+           com.liferay.portal.kernel.spring.context.PortletContextLoaderListener
+        </listener-class>
     </listener>
 </web-app>
 \end{verbatim}
