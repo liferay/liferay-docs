@@ -484,69 +484,69 @@
 \contentsline {section}{\numberline {17.1}Audit Trails }{581}{section.17.1}
 \contentsline {subsection}{Installing and configuring the audit plugins }{582}{section.17.1}
 \contentsline {subsection}{Using audit events }{582}{section.17.1}
-\contentsline {subsection}{Viewing audit reports }{585}{section.17.1}
-\contentsline {subsection}{Conclusion of the Story }{588}{section.17.1}
+\contentsline {subsection}{Viewing audit reports }{583}{section.17.1}
+\contentsline {subsection}{Conclusion of the Story }{586}{section.17.1}
 \contentsline {section}{\numberline {17.2}Liferay monitoring using Google Analytics }{588}{section.17.2}
-\contentsline {section}{\numberline {17.3}Backing up a Liferay installation }{590}{section.17.3}
-\contentsline {subsection}{Backing up source code }{590}{section.17.3}
-\contentsline {subsection}{Backing up Liferay's file system }{590}{section.17.3}
-\contentsline {subsection}{Backing up Liferay's database }{591}{section.17.3}
-\contentsline {section}{\numberline {17.4}Liferay's Logging System }{591}{section.17.4}
-\contentsline {section}{\numberline {17.5}Patching Liferay }{594}{section.17.5}
-\contentsline {subsection}{Installing the patching tool }{595}{section.17.5}
-\contentsline {subsection}{Installing patches }{596}{section.17.5}
-\contentsline {subsubsection}{Handling hot fixes and patches }{596}{section.17.5}
-\contentsline {subsubsection}{Fix pack dependencies }{597}{section.17.5}
-\contentsline {subsection}{Removing or reverting patches }{597}{section.17.5}
-\contentsline {subsection}{Using profiles with the patching tool }{597}{section.17.5}
-\contentsline {section}{\numberline {17.6}Upgrading Liferay }{598}{section.17.6}
-\contentsline {subsection}{Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1 }{599}{section.17.6}
-\contentsline {subsection}{Migrate to Algorithm 6 }{599}{section.17.6}
-\contentsline {subsection}{Migrate Your Image Gallery Images }{601}{section.17.6}
-\contentsline {subsection}{Review the New 6.1 Properties Defaults }{601}{section.17.6}
-\contentsline {subsection}{Catalog all the plugins you have installed }{602}{section.17.6}
-\contentsline {subsubsection}{Upgrading a bundle }{603}{section.17.6}
-\contentsline {subsubsection}{Upgrading using a .war file }{604}{Item.412}
-\contentsline {section}{\numberline {17.7}Summary }{605}{section.17.7}
-\contentsline {chapter}{\chapternumberline {18}Using Scripting for Advanced Flexibility}{606}{chapter.18}
-\contentsline {section}{\numberline {18.1}Accessing Liferay Services }{607}{section.18.1}
-\contentsline {subsection}{Beanshell }{607}{section.18.1}
-\contentsline {subsection}{Groovy }{608}{section.18.1}
-\contentsline {subsection}{Javascript }{608}{section.18.1}
-\contentsline {subsection}{Ruby }{609}{section.18.1}
-\contentsline {subsection}{Python }{609}{section.18.1}
-\contentsline {section}{\numberline {18.2}Running scripts from the control panel }{609}{section.18.2}
-\contentsline {section}{\numberline {18.3}Leveraging the Script Engine in Workflow }{611}{section.18.3}
-\contentsline {section}{\numberline {18.4}Custom Java Tools in the Script Engine }{613}{section.18.4}
-\contentsline {section}{\numberline {18.5}Summary }{618}{section.18.5}
-\contentsline {chapter}{\chapternumberline {19}Configuring Liferay for High Availability}{620}{chapter.19}
-\contentsline {section}{\numberline {19.1}Liferay Clustering }{621}{section.19.1}
-\contentsline {subsection}{All nodes should be pointing to the same Liferay database }{623}{section.19.1}
-\contentsline {subsubsection}{Read-Writer database configuration }{623}{section.19.1}
-\contentsline {subsubsection}{Database Sharding }{624}{section.19.1}
-\contentsline {subsection}{Documents and Media Library clustering }{628}{section.19.1}
-\contentsline {subsubsection}{Using the File System store }{628}{section.19.1}
-\contentsline {subsubsection}{Using the Advanced File System store }{630}{section.19.1}
-\contentsline {subsubsection}{Using the CMIS store }{631}{section.19.1}
-\contentsline {subsubsection}{Using the JCR store }{631}{section.19.1}
-\contentsline {paragraph}{Using Amazon Simple Storage Service }{633}{section.19.1}
-\contentsline {paragraph}{Using the Documentum store }{633}{section.19.1}
-\contentsline {subsection}{Clustering search }{634}{section.19.1}
-\contentsline {subsubsection}{Using Pluggable Enterprise Search }{634}{section.19.1}
-\contentsline {paragraph}{Configuring the Solr Search Server }{635}{section.19.1}
-\contentsline {paragraph}{Installing the Solr Liferay Plugin }{636}{section.19.1}
-\contentsline {subsubsection}{Clustering Lucene indexes on all nodes }{637}{section.19.1}
-\contentsline {subsubsection}{Sharing a search index (not recommended unless you have a file locking-aware SAN) }{638}{section.19.1}
-\contentsline {subsection}{Distributed Caching }{639}{section.19.1}
-\contentsline {subsubsection}{Enabling distributed caching }{640}{section.19.1}
-\contentsline {subsubsection}{Modifying the cache settings with a plugin }{640}{section.19.1}
-\contentsline {subsubsection}{Modifying the Ehcache settings directly }{642}{section.19.1}
-\contentsline {subsubsection}{Customizing Hibernate cache settings }{643}{section.19.1}
-\contentsline {subsubsection}{Enhanced distributed cache algorithm }{644}{section.19.1}
-\contentsline {subsection}{Hot Deploy }{647}{section.19.1}
-\contentsline {section}{\numberline {19.2}Performance Tuning }{648}{section.19.2}
-\contentsline {subsection}{Memory }{648}{section.19.2}
-\contentsline {subsection}{Garbage Collection }{649}{section.19.2}
-\contentsline {subsection}{Properties File Changes }{651}{section.19.2}
-\contentsline {subsection}{Disabling unused servlet filters }{652}{section.19.2}
-\contentsline {section}{\numberline {19.3}Summary }{653}{section.19.3}
+\contentsline {section}{\numberline {17.3}Backing up a Liferay installation }{588}{section.17.3}
+\contentsline {subsection}{Backing up source code }{589}{section.17.3}
+\contentsline {subsection}{Backing up Liferay's file system }{589}{section.17.3}
+\contentsline {subsection}{Backing up Liferay's database }{590}{section.17.3}
+\contentsline {section}{\numberline {17.4}Liferay's Logging System }{590}{section.17.4}
+\contentsline {section}{\numberline {17.5}Patching Liferay }{592}{section.17.5}
+\contentsline {subsection}{Installing the patching tool }{593}{section.17.5}
+\contentsline {subsection}{Installing patches }{594}{section.17.5}
+\contentsline {subsubsection}{Handling hot fixes and patches }{595}{section.17.5}
+\contentsline {subsubsection}{Fix pack dependencies }{595}{section.17.5}
+\contentsline {subsection}{Removing or reverting patches }{596}{section.17.5}
+\contentsline {subsection}{Using profiles with the patching tool }{596}{section.17.5}
+\contentsline {section}{\numberline {17.6}Upgrading Liferay }{597}{section.17.6}
+\contentsline {subsection}{Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1 }{598}{section.17.6}
+\contentsline {subsection}{Migrate to Algorithm 6 }{598}{section.17.6}
+\contentsline {subsection}{Migrate Your Image Gallery Images }{599}{section.17.6}
+\contentsline {subsection}{Review the New 6.1 Properties Defaults }{600}{section.17.6}
+\contentsline {subsection}{Catalog all the plugins you have installed }{601}{section.17.6}
+\contentsline {subsubsection}{Upgrading a bundle }{601}{section.17.6}
+\contentsline {subsubsection}{Upgrading using a .war file }{602}{Item.412}
+\contentsline {section}{\numberline {17.7}Summary }{603}{section.17.7}
+\contentsline {chapter}{\chapternumberline {18}Using Scripting for Advanced Flexibility}{605}{chapter.18}
+\contentsline {section}{\numberline {18.1}Accessing Liferay Services }{606}{section.18.1}
+\contentsline {subsection}{Beanshell }{606}{section.18.1}
+\contentsline {subsection}{Groovy }{607}{section.18.1}
+\contentsline {subsection}{Javascript }{607}{section.18.1}
+\contentsline {subsection}{Ruby }{608}{section.18.1}
+\contentsline {subsection}{Python }{608}{section.18.1}
+\contentsline {section}{\numberline {18.2}Running scripts from the control panel }{608}{section.18.2}
+\contentsline {section}{\numberline {18.3}Leveraging the Script Engine in Workflow }{610}{section.18.3}
+\contentsline {section}{\numberline {18.4}Custom Java Tools in the Script Engine }{612}{section.18.4}
+\contentsline {section}{\numberline {18.5}Summary }{617}{section.18.5}
+\contentsline {chapter}{\chapternumberline {19}Configuring Liferay for High Availability}{619}{chapter.19}
+\contentsline {section}{\numberline {19.1}Liferay Clustering }{620}{section.19.1}
+\contentsline {subsection}{All nodes should be pointing to the same Liferay database }{622}{section.19.1}
+\contentsline {subsubsection}{Read-Writer database configuration }{622}{section.19.1}
+\contentsline {subsubsection}{Database Sharding }{623}{section.19.1}
+\contentsline {subsection}{Documents and Media Library clustering }{627}{section.19.1}
+\contentsline {subsubsection}{Using the File System store }{627}{section.19.1}
+\contentsline {subsubsection}{Using the Advanced File System store }{629}{section.19.1}
+\contentsline {subsubsection}{Using the CMIS store }{630}{section.19.1}
+\contentsline {subsubsection}{Using the JCR store }{630}{section.19.1}
+\contentsline {paragraph}{Using Amazon Simple Storage Service }{632}{section.19.1}
+\contentsline {paragraph}{Using the Documentum store }{632}{section.19.1}
+\contentsline {subsection}{Clustering search }{633}{section.19.1}
+\contentsline {subsubsection}{Using Pluggable Enterprise Search }{633}{section.19.1}
+\contentsline {paragraph}{Configuring the Solr Search Server }{634}{section.19.1}
+\contentsline {paragraph}{Installing the Solr Liferay Plugin }{635}{section.19.1}
+\contentsline {subsubsection}{Clustering Lucene indexes on all nodes }{636}{section.19.1}
+\contentsline {subsubsection}{Sharing a search index (not recommended unless you have a file locking-aware SAN) }{637}{section.19.1}
+\contentsline {subsection}{Distributed Caching }{638}{section.19.1}
+\contentsline {subsubsection}{Enabling distributed caching }{639}{section.19.1}
+\contentsline {subsubsection}{Modifying the cache settings with a plugin }{639}{section.19.1}
+\contentsline {subsubsection}{Modifying the Ehcache settings directly }{641}{section.19.1}
+\contentsline {subsubsection}{Customizing Hibernate cache settings }{642}{section.19.1}
+\contentsline {subsubsection}{Enhanced distributed cache algorithm }{643}{section.19.1}
+\contentsline {subsection}{Hot Deploy }{646}{section.19.1}
+\contentsline {section}{\numberline {19.2}Performance Tuning }{647}{section.19.2}
+\contentsline {subsection}{Memory }{647}{section.19.2}
+\contentsline {subsection}{Garbage Collection }{648}{section.19.2}
+\contentsline {subsection}{Properties File Changes }{650}{section.19.2}
+\contentsline {subsection}{Disabling unused servlet filters }{651}{section.19.2}
+\contentsline {section}{\numberline {19.3}Summary }{652}{section.19.3}

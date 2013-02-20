@@ -23027,7 +23027,7 @@ a new entry in the \emph{Portal} section labeled \emph{Audit Reports}
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/control-panel-audit-reports.png}
-\caption{Figure 17.1: Once the Audit Reports plugins are installed, an
+\caption{\\Figure 17.1: Once the Audit Reports plugins are installed, an
 entry appears in the control panel.}
 \end{figure}
 
@@ -23147,7 +23147,7 @@ Stephen Professor from the role of Power User.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/audit-unassign-detail.png}
-\caption{Figure 17.5: If you've delegated portal administration to
+\caption{\\Figure 17.5: If you've delegated portal administration to
 multiple users, you can use the audit plugins to determine who made what
 change. And, of course, you'll never leave the default administrative
 user enabled in a production system, right?}
@@ -23222,6 +23222,13 @@ is running. Doing this, however, requires a theme developer to make
 specific changes to the theme and it prevents users from using the many
 themes that are freely available for Liferay ``out of the box.''
 
+\begin{wrapfigure}{l}{.5\textwidth}
+\centering
+\scalegraphics{../../images/maintaining-google-analytics.png}
+\caption{\\Figure 17.6: Setting up Google Analytics for your site is very
+easy: sign up for the ID and then enter it into this field.}
+\end{wrapfigure}
+
 Because of this, support for Google Analytics has been built into
 Liferay, and can be turned on through a simple user interface. This
 allows Liferay administrators to make use of Google Analytics on a
@@ -23230,13 +23237,6 @@ community by community basis and turn it on and off when needed.
 To enable Google Analytics support, go to \emph{Site Settings} in the
 control panel, and then select \emph{Analytics} on the right. You'll see
 a very simple form, pictured below.
-
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/maintaining-google-analytics.png}
-\caption{Figure 17.6: Setting up Google Analytics for your site is very
-easy: sign up for the ID and then enter it into this field.}
-\end{figure}
 
 Put your Google Analytics ID (which should have been provided to you
 when you signed up for the service) in the field and click \emph{Save}.
@@ -23414,7 +23414,7 @@ the control panel, click the \emph{Add Category} tab on the same
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/maintaining-add-log-category.png}
-\caption{Figure 17.8: Adding your own logging classes is as simple as
+\caption{\\Figure 17.8: Adding your own logging classes is as simple as
 specifying it in this field.}
 \end{figure}
 
@@ -23474,7 +23474,7 @@ the patching system to make it run as smoothly as possible.
 You follow the same procedure whether you're installing or upgrading the
 patching tool. Once you've obtained it from the customer portal, unzip
 it to the Liferay Home folder. This is the folder where you've placed
-your \texttt{portal-ext.properties} file and where by default the
+your \texttt{por\-tal-ext.pro\-per\-ties} file and where by default the
 \texttt{data} folder resides. This is generally one folder up from where
 your application server is installed, but some application servers are
 different. If you don't know where Liferay Home is on your system, check
@@ -23553,7 +23553,7 @@ following command:
 \end{verbatim}
 
 Your patches are now installed. You can verify this by using the
-\texttt{./patching-tool.sh info} command, which now shows your patch in
+\texttt{./pat\-ching-tool.sh info} command, which now shows your patch in
 the list of installed patches. Let's look now at how you'd manage your
 patches.
 
@@ -23595,10 +23595,13 @@ command, but by what appears in the \texttt{patches} folder. You manage
 the patches you have installed by adding or removing patches from this
 folder. If you currently have a patch installed and you don't want it
 installed, remove it from the \texttt{patches} folder. Then run the
-\texttt{./patching-tool.sh install} command, and the patch is removed.
+\texttt{./pat\-ching-tool.sh in\-stall} command, and the patch is removed.
 
 If you want to remove all patches you've installed, use the
-\texttt{./patching-tool.sh revert} command. This removes all patches
+\begin{verbatim}
+./patching-tool.sh revert
+\end{verbatim}
+command. This removes all patches
 from your installation.
 
 What we've described so far is the simplest way to use the patching
@@ -23740,7 +23743,7 @@ use an older algorithm than algorithm 6.
 The first thing you need to do, if this is not done already, is to
 upgrade your installation to algorithm 5. If you've already done that,
 great! You can skip the rest of this paragraph. If not, shut down your
-server, edit your \texttt{portal-ext.properties} file, and modify/add
+server, edit your \texttt{por\-tal-ext.pro\-per\-ties} file, and modify/add
 the following property so that it reads like this:
 
 \begin{verbatim}
@@ -23832,7 +23835,8 @@ from 6.0 to 6.1. These are preserved in
 \begin{verbatim}
 users.last.name.required=true
 layout.types=portlet,panel,embedded,article,url,link_to_layout
-editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=bbcode
+editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=   \
+   bbcode
 setup.wizard.enabled=false discussion.subscribe.by.default=false
 message.boards.subscribe.by.default=false
 \end{verbatim}
@@ -23842,7 +23846,8 @@ The 6.1 values have changed to:
 \begin{verbatim}
 users.last.name.required=false
 layout.types=portlet,panel,embedded,url,link_to_layout
-editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=ckeditor_bbcode
+editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp=   \
+    ckeditor_bbcode
 setup.wizard.enabled=true discussion.subscribe.by.default=true
 message.boards.subscribe.by.default=true
 \end{verbatim}
