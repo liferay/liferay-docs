@@ -61,4 +61,9 @@
 		</jar>
 	</target>
 
+	<target name="deploy" depends="dist" description="deploys the properties-converter.jar to liferay-docs/lib">
+		<copy file="${dist.dir}/properties-converter.jar" tofile="../../lib/properties-converter.jar" />
+		<antcall target="clean" />
+	</target>
+
 </project>
