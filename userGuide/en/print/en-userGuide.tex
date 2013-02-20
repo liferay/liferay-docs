@@ -24754,10 +24754,14 @@ sources for Liferay to use, one for reading, and one for writing:
 
 \begin{verbatim}
 jdbc.read.driverClassName=com.mysql.jdbc.Driver
-jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.read.username=**your user name**
+jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8   \
+   &useFastDateParsing=false
+jdbc.read.username=**your user name**
 jdbc.read.password=**your password**
 jdbc.write.driverClassName=com.mysql.jdbc.Driver
-jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.write.username=**your user name**
+jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8   \
+   &useFastDateParsing=false     
+jdbc.write.username=**your user name**
 jdbc.write.password=**your password**
 \end{verbatim}
 
@@ -24846,14 +24850,18 @@ server's. Set your various database shards in your
 
 \begin{verbatim}
 jdbc.default.driverClassName=com.mysql.jdbc.Driver
-jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8   \
+   &useFastDateParsing=false
 jdbc.default.username=
 jdbc.default.password=
 jdbc.one.driverClassName=com.mysql.jdbc.Driver
-jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false     jdbc.one.username=
+jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8   
+   &useFastDateParsing=false
+jdbc.one.username=
 jdbc.one.password=
 jdbc.two.driverClassName=com.mysql.jdbc.Driver
-jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8   \
+   &useFastDateParsing=false
 jdbc.two.username=
 jdbc.two.password=
 shard.available.names=default,one,two
@@ -24865,15 +24873,15 @@ go to the control panel and click \emph{Portal Instances} in the Server
 category. Create two to three instances bound to the DNS names you have
 configured.
 
-If you're using the RoundRobinShardSelector class, Liferay automatically
+If you're using the \texttt{RoundRobinShardSelector} class, Liferay automatically
 enters data into each instance one by one. If you're using the
-\texttt{ManualShardSelector} class, you'll have to specify a shard for
+\texttt{Man\-u\-al\-Shard\-Se\-lec\-tor} class, you'll have to specify a shard for
 each instance using the UI.
 
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/enterprise-sharding-portal-instance.png}
-\caption{Figure 19.2: When creating a shard using the manual shard
+\caption{\\Figure 19.2: When creating a shard using the manual shard
 selector, specify the shard you want to use for that instance.}
 \end{figure}
 
@@ -24971,22 +24979,22 @@ a clustered file system.
 
 The file system store was the first store created for Liferay and is
 heavily bound to the Liferay database. By default, documents are stored
-in a \texttt{document\_library} subfolder of the \texttt{data} folder in
+in a \texttt{doc\-u\-ment\_lib\-rar\-y} subfolder of the \texttt{data} folder in
 a Liferay bundle. Of course, you can change this path to anything you
-want by using the \texttt{dl.store.file.system.root.dir=} property.
+want by using the \texttt{dl.store.fi\-le.sys\-tem.root.dir=} property.
+
+\begin{wrapfigure}{l}{.3\textwidth}
+\centering
+\scalegraphics{../../images/enterprise-file-system-store.png}
+\caption{\\Figure 19.3: Liferay's file system store creates a folder
+structure based on primary keys in Liferay's database.}
+\end{wrapfigure}
 
 This store creates a folder structure based on primary keys in the
 Liferay database. If, for example, you upload a presentation with the
-file name \texttt{workflow.odp} into a folder called \emph{stuff}, the
+file name \texttt{work\-flow.odp} into a folder called \emph{stuff}, the
 file system store creates a folder structure which looks like figure
 19.3.
-
-\begin{figure}[htbp]
-\centering
-\scalegraphics{../../images/enterprise-file-system-store.png}
-\caption{Figure 19.3: Liferay's file system store creates a folder
-structure based on primary keys in Liferay's database.}
-\end{figure}
 
 The first folder is the company ID to which the site belongs. The second
 folder is the group ID of the site where the document resides. The third
@@ -25014,12 +25022,12 @@ system--which, of course, could be a remote file system mount. It uses a
 slightly different folder structure to store files, which is pictured
 below.
 
-\begin{figure}[htbp]
+\begin{wrapfigure}{r}{.3\textwidth}
 \centering
 \scalegraphics{../../images/enterprise-adv-file-system-store.png}
-\caption{Figure 19.4: The advanced file system store creates a more
+\caption{\\Figure 19.4: The advanced file system store creates a more
 nested folder structure than the file system store.}
-\end{figure}
+\end{wrapfigure}
 
 So what makes the advanced file system store \emph{advanced}? Several
 operating systems have limitations on the number of files which can be
@@ -25093,8 +25101,8 @@ operates as a cluster within Liferay's cluster.
 
 To move the default repository location to a shared folder, you do not
 need to edit Jackrabbit's configuration file. Instead, find the section
-in \texttt{portal.properties} labeled \textbf{JCR} and copy/paste that
-section into your \texttt{portal-ext.properties} file. One of the
+in \texttt{por\-tal.pro\-per\-ties} labeled \textbf{JCR} and copy/paste that
+section into your \texttt{por\-tal-ext.pro\-per\-ties} file. One of the
 properties, by default, is the following:
 
 \begin{verbatim}
@@ -25163,7 +25171,7 @@ This is easy to set up. When you sign up for the service, Amazon assigns
 you some unique keys which link you to your account. In Amazon's
 interface, you can create ``buckets'' of data optimized by region. Once
 you've created these to your specifications, all you need to do is
-declare them in \texttt{portal-ext.properties}:
+declare them in \texttt{por\-tal-ext.pro\-per\-ties}:
 
 \begin{verbatim}
 dl.store.s3.access.key=
@@ -25172,7 +25180,7 @@ dl.store.s3.bucket.name=
 \end{verbatim}
 
 Once you have these configured, set your store implementation to the
-\texttt{S3Store}:
+\texttt{S3\-Store}:
 
 \begin{verbatim}
 dl.store.impl=com.liferay.portlet.documentlibrary.store.S3Store
@@ -25282,7 +25290,7 @@ your application server's start up configuration as a parameter to your
 JVM. This is configured differently per application server, but again,
 if you're using Tomcat, edit \texttt{catalina.sh} or
 \texttt{catalina.bat} and append the following to the
-\texttt{\$JAVA\_OPTS} variable:
+\texttt{\$JAVA\-\_OPTS} variable:
 
 \begin{verbatim}
 -Dsolr.solr.home=$SOLR_HOME
@@ -25312,7 +25320,7 @@ case, go to the Liferay Marketplace and download the plugin to your
 system.
 
 Open or extract the plugin. Inside the plugin, you'll find a file called
-\texttt{solr-spring.xml} in the \texttt{WEB-INF/classes/META-INF}
+\texttt{sol\-r-spring.xml} in the \texttt{WEB-INF/classes/META-INF}
 folder. Open this file in a text editor and you will see the entry which
 defines where the Solr server can be found by Liferay:
 
@@ -25321,7 +25329,8 @@ defines where the Solr server can be found by Liferay:
 
 <!-- Solr search engine -->
 
-<bean id="com.liferay.portal.search.solr.server.BasicAuthSolrServer" class="com.liferay.portal.search.solr.server.BasicAuthSolrServer">
+<bean id="com.liferay.portal.search.solr.server.BasicAuthSolrServer" 
+    class="com.liferay.portal.search.solr.server.BasicAuthSolrServer">
     <constructor-arg type="java.lang.String" value="http://localhost:8080/solr" />
 </bean>
 \end{verbatim}
@@ -25331,7 +25340,7 @@ save the file and put it back into the plugin archive in the same place
 it was before.
 
 Next, extract the file \texttt{schema.xml} from the plugin. It should be
-in the \texttt{docroot/WEB-INF/conf} folder. This file tells Solr how to
+in the \texttt{doc\-root/WEB-INF/conf} folder. This file tells Solr how to
 index the data coming from Liferay, and can be customized for your
 installation. Copy this file to \texttt{\$SOLR\_HOME/conf} on your Solr
 box (you may have to create the \texttt{conf} directory).
@@ -25346,9 +25355,9 @@ can define these in \texttt{synonyms.txt}. Stop words are defined in
 articles, pronouns, and other words that have little value in a search.
 Place these files in your \texttt{\$SOLR\_HOME/conf} folder. Examples
 for both of these files are found in the Solr archive in the
-\texttt{solr-4.1.0/example/solr/collection1/conf} folder. Additional
+\texttt{solr-4.1.0/ex\-amp\-le/solr/col\-lec\-tion1/conf} folder. Additional
 Solr configuration options, most importantly \texttt{solrconfig.xml} and
-\texttt{elevate.xml}, are in the \texttt{\$SOLR\_HOME/conf} folder. Now
+\texttt{elevate.xml}, are in the \texttt{\$SOLR\-\_HOME\-/conf} folder. Now
 you can start Solr. After Solr has started, hot deploy the
 \texttt{solr-web} plugin to all your nodes. See the next section for
 instructions on hot deploying to a cluster.
@@ -25391,7 +25400,7 @@ But this should rarely happen, making it a good tradeoff if you don't
 have the extra hardware to implement a Solr search server.
 
 You can enable Cluster Link by setting the following property in your
-\texttt{portal-ext.properties} file:
+\texttt{por\-tal-ext.pro\-per\-ties} file:
 
 \begin{verbatim}
 cluster.link.enabled=true
@@ -25405,11 +25414,11 @@ lucene.replicate.write=true
 \end{verbatim}
 
 If you have \texttt{cluster.link.enabled=true} but
-\texttt{lucene.replicate.write=false}, you'll enable cache replication
+\texttt{lu\-cene.rep\-li\-cate.\-write\-=false}, you'll enable cache replication
 but not index replication.
 
 Of course, \texttt{cluster.link.enabled=true} and
-\texttt{lucene.replicate.write=true} need to be set on all your nodes.
+\texttt{lucene.replicate.write\-=true} need to be set on all your nodes.
 That's all you need to do to sync your indexes. Pretty easy, right? Of
 course, if you have existing indexes, you'll want to do a reindex as
 described in the previous section once you have Cluster Link enabled on
@@ -25430,10 +25439,10 @@ you'll need to either share the index on the file system or in the
 database. This requires changing your Lucene configuration.
 
 The Lucene configuration can be changed by modifying values in your
-\texttt{portal-ext.properties} file. Open your
-\texttt{portal.properties} file and search for the text \emph{Lucene}.
+\texttt{por\-tal-ext.pro\-per\-ties} file. Open your
+\texttt{por\-tal.pro\-per\-ties} file and search for the text \emph{Lucene}.
 Copy that section and then paste it into your
-\texttt{portal-ext.properties} file.
+\texttt{por\-tal-ext.pro\-per\-ties} file.
 
 If you wish to store the Lucene search index on a file system that is
 shared by all of the Liferay nodes (not recommended: you've been
@@ -25579,8 +25588,8 @@ Next, create a hook plugin by selecting \emph{File} → \emph{New} →
 your project a name. Click \emph{Finish} and your project is created.
 
 In your project, create a text file called \texttt{portlet.properties}
-in the \texttt{docroot/WEB-INF/src} folder. This file can override
-properties in your portal just like \texttt{portal-ext.properties}. Into
+in the \texttt{doc\-root/WEB-INF/src} folder. This file can override
+properties in your portal just like \texttt{por\-tal-ext.pro\-per\-ties}. Into
 this file place the following three properties:
 
 \begin{verbatim}
@@ -25600,8 +25609,8 @@ them from Liferay's \texttt{.war} file or Liferay's source code. In
 either place, you'll find the files in the \texttt{portal-impl.jar}
 file, which is in Liferay's \texttt{WEB-INF/lib} folder. The files you
 want are \texttt{hibernate-clustered.xml},
-\texttt{liferay-single-vm.xml}, and
-\texttt{liferay-multi-vm-clustered.xml}, and they'll be in the
+\texttt{life\-ray-sin\-gle-vm.xml}, and
+\texttt{life\-ray-mult\-i-vm-clus\-tered.xml}, and they'll be in the
 \texttt{/ehcache} folder in this \texttt{.jar}. Once you have these,
 make a subfolder of the \texttt{docroot} folder in your project. Place
 the files you extracted into this folder and then specify this folder in
@@ -25609,10 +25618,10 @@ the properties above.
 
 For example, if you created a folder called \texttt{custom\_cache} in
 your project's \texttt{docroot} folder, you'd copy the three XML
-configuration files (\texttt{hibernate-clustered.xml},
-\texttt{liferay-single-vm.xml}, and
-\texttt{liferay-multi-vm-clustered.xml}) there. Then you'd edit your
-\texttt{portlet.properties} and specify your configuration files in the
+configuration files (\texttt{hib\-er\-nate-clus\-tered.xml},
+\texttt{life\-ray-sin\-gle-vm.xml}, and
+\texttt{life\-ray-mult\-i-vm-clus\-tered.xml}) there. Then you'd edit your
+\texttt{port\-let.pro\-per\-ties} and specify your configuration files in the
 three properties above:
 
 \begin{verbatim}
@@ -25647,7 +25656,7 @@ servers, and if this is the case, you'll need to use the plugin method
 described above). For example, say you're running Liferay on Tomcat.
 Tomcat stores the deployed version of Liferay in
 \texttt{{[}Tomcat Home{]}/webapps/ROOT}. Inside this folder is the
-folder structure \texttt{WEB-INF/classes}. You can create a new folder
+folder structure \texttt{WEB-INF/clas\-ses}. You can create a new folder
 in here called \texttt{custom\_cache} to store the custom versions of
 the cache configuration files. Copy the files you extracted from Liferay
 into this folder.
@@ -25655,7 +25664,7 @@ into this folder.
 You then need to modify the properties in \texttt{portal-ext.properties}
 that point to these files. Copy/paste the \textbf{Hibernate} section of
 \texttt{portal.properties} into your \texttt{portal-ext.properties} file
-and then modify the \texttt{net.sf.ehcache.configurationResourceName}
+and then modify the \texttt{net.sf.eh\-cache.con\-fig\-ur\-a\-tion\-Re\-source\-Name}
 property to point to the clustered version of the configuration file
 that is now in your custom folder:
 
@@ -25727,7 +25736,8 @@ the class you want to cache:
         properties="replicatePuts=false,replicateUpdatesViaCopy=false"
         propertySeparator=","
     />
-    <bootstrapCacheLoaderFactory class="com.liferay.portal.cache.ehcache.LiferayBootstrapCacheLoaderFactory" />
+    <bootstrapCacheLoaderFactory class=
+      "com.liferay.portal.cache.ehcache.LiferayBootstrapCacheLoaderFactory" />
 </cache>
 \end{verbatim}
 
@@ -25748,7 +25758,8 @@ configure a block with the \texttt{MBMessageImpl} class:
         properties="replicatePuts=false,replicateUpdatesViaCopy=false"
         propertySeparator=","
     />
-    <bootstrapCacheLoaderFactory class="com.liferay.portal.cache.ehcache.LiferayBootstrapCacheLoaderFactory" />
+    <bootstrapCacheLoaderFactory class=
+      "com.liferay.portal.cache.ehcache.LiferayBootstrapCacheLoaderFactory" />
 </cache>
 \end{verbatim}
 
@@ -25966,7 +25977,7 @@ your server hardware, operating system, and application server.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/portal-admin-ch7_html_518957a7.png}
-\caption{Figure 19.7: Java Memory}
+\caption{\\Figure 19.7: Java Memory}
 \end{figure}
 
 The Java heap is divided into sections for the young generation, the old
@@ -26104,8 +26115,8 @@ page, you can increase performance by disabling the ones you're not
 using.
 
 You can disable servlet filters you're not using by using your
-\texttt{portal-ext.properties} file. Copy the \emph{Servlet Filters}
-section from the original \texttt{portal.properties} file into your
+\texttt{por\-tal-ext.pro\-per\-ties} file. Copy the \emph{Servlet Filters}
+section from the original \texttt{por\-tal.pro\-per\-ties} file into your
 customized file, and then go through the list and see if there are any
 you can disable, by setting them to \texttt{false}.
 
