@@ -460,25 +460,26 @@
 \contentsline {subsection}{Email Notifications }{566}{chapter.16}
 \contentsline {subsection}{Identification }{567}{chapter.16}
 \contentsline {subsection}{Miscellaneous: Display Settings }{567}{chapter.16}
-\contentsline {section}{\numberline {16.1}Monitoring }{569}{section.16.1}
-\contentsline {section}{\numberline {16.2}Plugins Configuration }{569}{section.16.2}
-\contentsline {section}{\numberline {16.3}Server Administration }{571}{section.16.3}
-\contentsline {subsection}{Resources }{571}{section.16.3}
-\contentsline {subsection}{Log Levels }{572}{section.16.3}
-\contentsline {subsection}{Properties }{572}{section.16.3}
-\contentsline {subsection}{Captcha }{573}{section.16.3}
-\contentsline {subsection}{Data Migration }{573}{section.16.3}
-\contentsline {subsection}{File Uploads }{574}{section.16.3}
-\contentsline {subsection}{Mail }{574}{section.16.3}
-\contentsline {subsection}{External Services }{574}{section.16.3}
-\contentsline {subsubsection}{OpenOffice/LibreOffice configuration }{575}{section.16.3}
-\contentsline {subsubsection}{ImageMagick configuration }{576}{section.16.3}
-\contentsline {subsubsection}{Xuggler configuration }{577}{section.16.3}
-\contentsline {subsection}{Script }{577}{section.16.3}
-\contentsline {subsection}{Shutdown }{577}{section.16.3}
-\contentsline {section}{\numberline {16.4}Portal Instances }{578}{section.16.4}
-\contentsline {section}{\numberline {16.5}Plugins Installation }{578}{section.16.5}
-\contentsline {section}{\numberline {16.6}Summary }{579}{section.16.6}
+\contentsline {section}{\numberline {16.1}Custom Fields}{567}{section.16.1}
+\contentsline {section}{\numberline {16.2}Monitoring }{570}{section.16.2}
+\contentsline {section}{\numberline {16.3}Plugins Configuration }{570}{section.16.3}
+\contentsline {section}{\numberline {16.4}Server Administration }{571}{section.16.4}
+\contentsline {subsection}{Resources }{571}{section.16.4}
+\contentsline {subsection}{Log Levels }{572}{section.16.4}
+\contentsline {subsection}{Properties }{572}{section.16.4}
+\contentsline {subsection}{Captcha }{572}{section.16.4}
+\contentsline {subsection}{Data Migration }{572}{section.16.4}
+\contentsline {subsection}{File Uploads }{573}{section.16.4}
+\contentsline {subsection}{Mail }{573}{section.16.4}
+\contentsline {subsection}{External Services }{574}{section.16.4}
+\contentsline {subsubsection}{OpenOffice/LibreOffice configuration }{574}{section.16.4}
+\contentsline {subsubsection}{ImageMagick configuration }{576}{section.16.4}
+\contentsline {subsubsection}{Xuggler configuration }{576}{section.16.4}
+\contentsline {subsection}{Script }{577}{section.16.4}
+\contentsline {subsection}{Shutdown }{577}{section.16.4}
+\contentsline {section}{\numberline {16.5}Portal Instances }{577}{section.16.5}
+\contentsline {section}{\numberline {16.6}Plugins Installation }{578}{section.16.6}
+\contentsline {section}{\numberline {16.7}Summary }{578}{section.16.7}
 \contentsline {chapter}{\chapternumberline {17}Advanced Portal Operation }{580}{chapter.17}
 \contentsline {section}{\numberline {17.1}Audit Trails }{581}{section.17.1}
 \contentsline {subsection}{Installing and configuring the audit plugins }{582}{section.17.1}

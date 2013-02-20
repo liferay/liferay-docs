@@ -22375,7 +22375,7 @@ are sent to users each time any of those four events occur.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/server-configuration-definition-of-terms.png}
-\caption{Figure 16.2: Definition of Terms for Automated Emails}
+\caption{\\Figure 16.2: Definition of Terms for Automated Emails}
 \end{figure}
 
 A list of tokens, entitled ``Definition of Terms,'' is provided so you
@@ -22400,7 +22400,7 @@ left corners of portal pages.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/server-configuration-miscellaneous-display-settings.png}
-\caption{Figure 16.3: Server Configuration Miscellaneous Display
+\caption{\\Figure 16.3: Server Configuration Miscellaneous Display
 Settings}
 \end{figure}
 
@@ -22411,7 +22411,7 @@ something too big, it might overlap with the navigation. Next, let's
 look at how to customize different types of portal assets using custom
 fields.
 
- \#\# Custom Fields 
+\section{Custom Fields}
 
 Custom fields appear beneath Portal Settings in the Portal section of
 the control panel. Custom fields are a way to add attributes to many
@@ -22427,7 +22427,7 @@ next to it and select \emph{Add Custom Field}.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/server-configuration-custom-fields-resource-list.png}
-\caption{Figure 16.4: Custom Fields Resource List}
+\caption{\\Figure 16.4: Custom Fields Resource List}
 \end{figure}
 
 From here you will need to add the custom field key. The key appears as
@@ -22436,12 +22436,12 @@ User), custom fields are a separate section of the form. For others, as
 can be seen above, custom fields are integrated with the default fields
 on the form. Additionally, developers can access custom fields
 programatically through the
-\texttt{\textless{}liferay-ui:custom-attribute /\textgreater{}} tag.
+\texttt{\textless{}liferay-ui:cus\-tom-at\-tri\-bute /\textgreater{}} tag.
 
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/server-configuration-custom-fields-integrated.png}
-\caption{Figure 16.5: Custom Fields Integrated with the Rest of the
+\caption{\\Figure 16.5: Custom Fields Integrated with the Rest of the
 Fields on the Wiki Form}
 \end{figure}
 
@@ -22683,8 +22683,8 @@ soffice --headless --accept="socket,host=127.0.0.1,port=8100;urp;"
 
 Once OpenOffice or LibreOffice has been installed and is running in
 server mode, you can configure Liferay to use it either in your
-\texttt{portal-ext.properties} file or from the control panel. To enable
-OpenOffice/LibreOffice in your \texttt{portal-ext.properties} file, add
+\texttt{por\-tal-ext.pro\-per\-ties} file or from the control panel. To enable
+OpenOffice/LibreOffice in your \texttt{por\-tal-ext.pro\-per\-ties} file, add
 the following line:
 
 \begin{verbatim}
@@ -22744,8 +22744,10 @@ environments.
 
 \begin{verbatim}
 imagemagick.enabled=true
-imagemagick.global.search.path[apple]=/opt/local/bin:/opt/local/share/ghostscript/fonts:/opt/local/share/fonts/urw-fonts
-imagemagick.global.search.path[unix]=/usr/local/bin:/usr/local/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts
+imagemagick.global.search.path[apple]=/opt/local/bin:/opt/local/share    \
+     /ghostscript/fonts:/opt/local/share/fonts/urw-fonts
+imagemagick.global.search.path[unix]=/usr/local/bin:/usr/local/share/ghostscript/fonts:   \
+   /usr/local/share/fonts/urw-fonts
 imagemagick.global.search.path[windows]=C:\\Program Files\\ImageMagick
 \end{verbatim}
 
@@ -22757,10 +22759,8 @@ ImageMagick and Ghostscript executables are correct.
 Note that some older versions of ImageMagick are unable to properly run
 with Liferay. If this is the case, update to the latest version
 (ImageMagick 6.7.9-6 2012-09-25 Q16 or later). To check for the latest
-ImageMagick versions, visit
-\href{http://www.imagemagick.org/script/binary-releases.php}{http://www.imagemagick.org/script/binary-releases.php}.
-See
-\href{http://issues.liferay.com/browse/LPS-30291}{http://issues.liferay.com/browse/LPS-30291}
+ImageMagick versions, visit their web site.\footnote{\href{http://www.imagemagick.org/script/binary-releases.php}{http://www.imagemagick.org/script/binary-releases.php}}
+See Liferay's issues ticketing system\footnote{\href{http://issues.liferay.com/browse/LPS-30291}{http://issues.liferay.com/browse/LPS-30291}}
 for information on efforts to identify incompatible application versions
 with Liferay.
 

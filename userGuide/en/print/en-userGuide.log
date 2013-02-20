@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2013.1.23)  19 FEB 2013 18:23
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2013.1.23)  19 FEB 2013 20:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5186,9 +5186,6 @@ File: ../../images/server-configuration-miscellaneous-display-settings.png Grap
 hic file (type QTm)
 
 <use  "../../images/server-configuration-miscellaneous-display-settings.png" >
-
-LaTeX Warning: Float too large for page by 59.12697pt on input line 22405.
-
 [567] [568]
 File: ../../images/server-configuration-custom-fields-resource-list.png Graphic
  file (type QTm)
@@ -5198,40 +5195,30 @@ File: ../../images/server-configuration-custom-fields-resource-list.png Graphic
  file (type QTm)
 
 <use  "../../images/server-configuration-custom-fields-resource-list.png" >
-
-LaTeX Warning: Float too large for page by 76.81793pt on input line 22431.
-
-
-Overfull \hbox (35.26698pt too wide) in paragraph at lines 22433--22440
-\EU1/LinuxLibertineO(0)/m/n/9 can access custom fields programatically through 
-the \EU1/lmtt/m/n/9 <liferay-ui:custom-attribute
- []
-
 File: ../../images/server-configuration-custom-fields-integrated.png Graphic fi
 le (type QTm)
+
 <use  "../../images/server-configuration-custom-fields-integrated.png" >
 File: ../../images/server-configuration-custom-fields-integrated.png Graphic fi
 le (type QTm)
 
 <use  "../../images/server-configuration-custom-fields-integrated.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [569]
 Overfull \hbox (0.63203pt too wide) in paragraph at lines 22462--22465
 \EU1/LinuxLibertineO(0)/m/n/9 The Plugins Configuration page contains tabs for 
 three types of plugins: portlets,
  []
 
-[569] [570] [571] [572] [573] [574]
-Overfull \hbox (7.75702pt too wide) in paragraph at lines 22684--22689
-\EU1/LinuxLibertineO(0)/m/n/9 mode, you can configure Liferay to use it either 
-in your \EU1/lmtt/m/n/9 portal-ext.properties
- []
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (67.915pt too wide) in paragraph at lines 22684--22689
-\EU1/LinuxLibertineO(0)/m/n/9 file or from the control panel. To enable OpenOff
-ice/LibreOffice in your \EU1/lmtt/m/n/9 portal-ext.properties
- []
+ [570]
+Underfull \vbox (badness 1281) has occurred while \output is active []
 
-[575]
+ [571]
+[572] [573] [574]
 Overfull \hbox (34.22499pt too wide) in paragraph at lines 22734--22744
 \EU1/LinuxLibertineO(0)/m/n/9 ure Liferay to use ImageMagick. You can do this e
 ither in your \EU1/lmtt/m/n/9 portal-ext.properties
@@ -5243,25 +5230,7 @@ Overfull \hbox (32.185pt too wide) in paragraph at lines 22734--22744
 gick in your \EU1/lmtt/m/n/9 portal-ext.properties
  []
 
-
-Overfull \hbox (93.32028pt too wide) in paragraph at lines 22747--22747
-[]\EU1/lmtt/m/n/6 imagemagick.global.search.path[apple]=/opt/local/bin:/opt/loc
-al/share/ghostscript/fonts:/opt/local/share/fonts/urw-fonts[] 
- []
-
-
-Overfull \hbox (90.13428pt too wide) in paragraph at lines 22748--22748
-[]\EU1/lmtt/m/n/6 imagemagick.global.search.path[unix]=/usr/local/bin:/usr/loca
-l/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts[] 
- []
-
-
-Overfull \hbox (72.73901pt too wide) in paragraph at lines 22757--22766
-[]\EU1/LinuxLibertineO(0)/m/n/9 http://www.imagemagick.org/script/binary-releas
-es.php[]. See []http://issues.liferay.com/browse/LPS-
- []
-
-[576] [577] [578] [579] [580
+[575] [576] [577] [578] [579] [580
 
 ]
 File: ../../images/ee-feature-web.png Graphic file (type QTm)
@@ -5795,7 +5764,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 26134.
 Here is how much of TeX's memory you used:
  24575 strings out of 494003
  470654 string characters out of 3152809
- 520425 words of memory out of 3000000
+ 520500 words of memory out of 3000000
  27175 multiletter control sequences out of 15000+200000
  6742 words of font info for 58 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
