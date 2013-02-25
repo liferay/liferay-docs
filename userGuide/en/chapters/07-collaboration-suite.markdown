@@ -40,7 +40,7 @@ options.
 An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the wrench icon at the top right corner of the portlet
 and selecting *Look and Feel*. The location of the wrench icon and other
-portlet icons (minimixe, maximize, and remove) may vary, depending on your
+portlet icons (minimize, maximize, and remove) may vary, depending on your
 theme. Liferay portlets' look and feel dialog boxes contain seven tabs:
 
 - Portlet Configuration
@@ -59,16 +59,16 @@ button to discard them.
 On the Portlet Configuration tab, you can check the *Use Custom Title* box to
 rename your portlet's title. The value you enter in the Portlet Title box will
 be displayed at the top of the portlet window on the page. You can also select
-a language from the Portlet Title dropdown menu. If you've provided a language
+a language from the Portlet Title drop-down menu. If you've provided a language
 key translation for the language you select, the your portlet's title will be
 displayed in the selected language.
 
-![Figure 7.1: The Porlet Configuration tab of the Look and Feel Box allows you
-to define a custom portlet title, link porlet URLs to a specific page, and
+![Figure 7.1: The Portlet Configuration tab of the Look and Feel Box allows you
+to define a custom portlet title, link portlet URLs to a specific page, and
 select whether or not portlet borders should be
 displayed.](../../images/look-and-feel-portlet-configuration.png)
 
-If you select a page in the *Link Portlet URLs to Page* dropdown menu, all
+If you select a page in the *Link Portlet URLs to Page* drop-down menu, all
 portlet URLs will point to the page you selected. The current page is the
 default. Note that you can use the Asset Publisher's View in a Specific Portlet
 feature and web content articles' Display Page attribute to achieve a more
@@ -165,7 +165,7 @@ many of Liferay's collaborative applications, such as the Blogs, Wiki, and
 Message Boards portlets. To export or import portlet data, right-click on the
 wrench icon of your portlet and select *Export/Import*. Exporting portlet data
 produces a `.lar` file that you can save and import into another portlet
-applicaton of the same type. To import portlet data, you must select a `.lar`
+application of the same type. To import portlet data, you must select a `.lar`
 file. Be careful not to confuse portlet-specific `.lar` files with
 site-specific `.lar` files. See the Backing up and Restoring Pages section of
 chapter 2 for a discussion of exporting and importing data across an entire
@@ -182,7 +182,7 @@ Preferences* box selects saved portlet configurations of specific users. The
 export. When you check the *Data* box, more options appear, allowing you to
 choose specific kinds of metadata to include and to select a data range. Check
 the *Permissions* box if you'd like to export your the permissions defined for
-your portlet. When you check this box, a subbox called *Permissions Assigned to
+your portlet. When you check this box, a sub-box called *Permissions Assigned to
 Roles* appears. If you wish, you can export your portlet's permissions but not
 the permissions assigned to roles. Finally, you can check the *Categories* box
 to include categories for export. When selected, all categories referenced by
@@ -192,7 +192,7 @@ portlet data will be exported or imported, keeping their hierarchy.
 information to use.](../../images/portlet-import.png)
 
 When you import portlet data, only the data types you select will be
-overwriten. If you'd like to import portlet data, you have to select a `.lar`
+overwritten. If you'd like to import portlet data, you have to select a `.lar`
 file. You can import any items that were included when your `.lar` file was
 created. Note that user preferences can only be successfully imported when the
 user UUIDs match. Additionally, you can import any archived setups into your
@@ -371,7 +371,7 @@ Box](../../images/liferay-collaboration-portlet-configuration-sharing.png)
 
 To share one of your portlets as a widget, open the *Configuration* dialog box
 from the portlet's title bar and select the *Sharing* tab. There are five
-subtabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and
+sub-tabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and
 Friends.
 
 #### Any Web Site  
@@ -469,7 +469,7 @@ your site and set the duration for which you'd like to store recycled content
 before deletion. In the Control Panel, select the site from the Context Menu,
 and click *Site Settings* in the Content Menu. From here, click the *Recycle
 Bin* link in the site settings menu under the *Advanced* heading. You'll see two
-dropdown menus that let you:
+drop-down menus that let you:
 
  1. Enable or Disable the Recycle Bin feature
  2. Specify the number of days that files will be kept in the Recycle Bin 
@@ -485,22 +485,22 @@ depending on the type of content you're recycling:
  post's window.
  
  - *Documents and Media*: Select the content you're recycling then choose *Move
- to the Recycle Bin* in the *Actions* dropdown menu. Alternatively, click a
+ to the Recycle Bin* in the *Actions* drop-down menu. Alternatively, click a
  specific document or folder and recycle it by clicking the button *Move to the
- Reycle Bin* under the content's title. Folders
+ Recycle Bin* under the content's title. Folders
  
- - *Message Board*: The *Actions* dropdown let's you move a Message Board post
+ - *Message Board*: The *Actions* drop-down let's you move a Message Board post
  to the recycle bin. Additionally, the detail window for a specific Message
  Board post has a *Move to the Recycle Bin* link.
  
  - *Wiki*: Click on the *Edit* link for a Wiki item. In the *Content* tab,
  scroll to the row of buttons near the bottom of the page and choose *Move to
- the Reycle Bin*. Your Wiki page and any attachments will be moved to the
+ the Recycle Bin*. Your Wiki page and any attachments will be moved to the
  Recycle Bin. If you want to recycle only a Wiki's attachment, go to the
  *Attachments* tab and click the *Remove* link for the attachment you're
  recycling. Deleted Wiki attachments aren't kept in the Recycle Bin, so don't
  worry when you notice they aren't there. Simply navigate back to the
- *Attachments* tab of the ppropriate Wiki article and find the *Recently Removed
+ *Attachments* tab of the appropriate Wiki article and find the *Recently Removed
  Attachments* link to locate and restore the attachment.
  
  <!---Discuss special case of recycling and restoring just the attachments from Wiki articles-->
@@ -780,7 +780,7 @@ close the dialog box. You'll notice the Blogs Aggregator looks very much like
 the Blogs portlet, except that the entries come from more than one author. This
 makes it nice and familiar for your users to navigate. 
 
-### The Blogs Admininistrator Portlet  
+### The Blogs Administrator Portlet  
 
 In the Control Panel there's a portlet for managing your site's blog entries.
 Most of the time, the Blogs portlet is the only tool you'll need to manage your
@@ -814,7 +814,7 @@ at how to configure it.
 ### Configuring the Calendar Portlet  
 
 Open the *Configuration* dialog box from the menu in the portlet's title bar.
-The Setup tab allows you to configure three different options in subtabs:
+The Setup tab allows you to configure three different options in sub-tabs:
 *Email From*, *Event Reminder Email*, and *Display Settings*.
 
 **Email From:** set the *Name* and *Email Address* system generated emails come
@@ -935,7 +935,7 @@ the CE and EE versions of the new Calendar portlet. -->
 
 Once you've added the new Calendar portlet to page, open its configuration
 dialog box by clicking on the wrench icon in the portlet's title bar and
-selecting *Configuration*. The Setup tab provides three subtabs of configurable
+selecting *Configuration*. The Setup tab provides three sub-tabs of configurable
 settings: *User Settings*, *Templates*, and *Email From*.
 
 ![Figure 7.23: The Setup &rarr; User Settings tab provides several new
@@ -1007,7 +1007,7 @@ calendar. As usual, you can enter a name and description for the calendar and
 configure its permissions. Also, you can specify a color for your calendar.
 Events created in the new calendar will default to the color you choose.
 
-![Figure 7.28: Click on *Actions* *rarr; *Edit* next to a calendar to customize
+![Figure 7.28: Click on *Actions* &rarr; *Edit* next to a calendar to customize
 its color and specify whether or not it's the default
 calendar.](../../images/new-calendar-edit-calendar.png)
 
@@ -1486,7 +1486,7 @@ administer a Message Boards portlet in only the organization or site which
 assigned the role to them.
 
 Go to the Control Panel and create this role. Once it is created, click
-*Actions &rarr; Define Permissions*. Click the *Add Permissions* dropdown list.
+*Actions &rarr; Define Permissions*. Click the *Add Permissions* drop-down list.
 Browse the list until you find the Message Boards portlet under the Site
 Content section and then click on it. You will then see a screen which allows
 you to configure the various permissions on the portlet.
@@ -1547,7 +1547,7 @@ into something else. In this case, you can split the thread where the
 discussion diverges and create a whole new thread for the new topic.
 Administrative users will see a *Split Thread* link on each post. To split the
 thread, click the link. You will be brought to a form which allows you to add
-an explanation post to the split thread. Click *Ok* to split the thread.
+an explanation post to the split thread. Click *OK* to split the thread.
 
 #### Editing Posts  
 
@@ -1930,7 +1930,7 @@ menu.
 
 The Polls Display portlet may look strange when it first appears on your page.
 That's because it's not configured. Before visitors to your site can use the
-poll, they must be able to access it. Click on the link labelled *Please
+poll, they must be able to access it. Click on the link labeled *Please
 configure this portlet to make it visible to all users*, and a dialog box like
 the one below appears.
 
@@ -1962,7 +1962,7 @@ expired.](../../images/polls-config-buttons.png)
 poll. 
 
 **Select Question:** Displays the same dialog box as Configuration, allowing
-you to choose different questions from the dropdown menu. 
+you to choose different questions from the drop-down menu. 
 
 **Add Question:** Allows you to create a new question. 
 
