@@ -6,6 +6,7 @@
 	<property name="dist.dir" value="${project.dir}/dist" />
 	<property name="lib.dir" value="${project.dir}/lib" />
 	<property name="src.dir" value="${project.dir}/src" />
+	<property name="deploy.dir" value="${project.dir}/../../lib" />
 
 	<path id="lib.classpath">
 		<fileset dir="${lib.dir}" includes="*.jar" />
@@ -59,5 +60,9 @@
             <zipfileset excludes="META-INF/*.SF" src="${lib.dir}/commons-io-2.0.1.jar"/>
         </jar>
     </target>
+
+	<target name="deploy" depends="dist" description="deploys liferay-doc-utils.jar to liferay-docs/lib">
+		<copy file="${dist.dir}/liferay-doc-utils.jar" tofile="${deploy.dir}/liferay-doc-utils.jar"/>
+	</target>
 
 </project>
