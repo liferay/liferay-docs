@@ -485,4 +485,23 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </java>
     </target>
 
+	<target name="add-index" description="adds an index to the LaTeX source of a document before converting it to PDF">
+		<echo message="... adding index"/>
+		<java jar="../lib/liferay-doc-utils.jar" fork="true">
+			<arg value="AddIndex"/>
+			<arg value="en/print/en-userGuide.tex"/>
+			<arg value="userguide.lexicon"/>
+			<arg value="en/print/indexed-en-userGuide.tex"/>
+		</java>
+		<exec executable="xelatex">
+			<arg value="en/print/indexed-en-userGuide.tex"/>
+		</exec>
+		<exec executable="makeindex">
+			<arg value="en/print/indexed-en-userGuide"/>
+		</exec>
+		<exec executable="xelatex">
+			<arg value="en/print/indexed-en-userGuide.tex"/>
+		</exec>
+	</target>
+
 </project>
