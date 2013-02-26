@@ -4,9 +4,9 @@
 
 	<property name="build.dir" value="${project.dir}/classes" />
 	<property name="dist.dir" value="${project.dir}/dist" />
-	<property name="docs.lib.dir" value="${project.dir}/../../lib" />
 	<property name="lib.dir" value="${project.dir}/lib" />
 	<property name="src.dir" value="${project.dir}/src" />
+	<property name="deploy.dir" value="${project.dir}/../../lib" />
 
 	<path id="lib.classpath">
 		<fileset dir="${lib.dir}" includes="*.jar" />
@@ -47,25 +47,22 @@
 		/>
 	</target>
 
-	<target name="deploy" depends="dist"
-	description="calls dist target and  copies the JAR to liferay-docs/lib/">
-		<copy todir="${docs.lib.dir}" overwrite="true" verbose="true">
-			<fileset dir="${dist.dir}" includes="**/*.jar" />
-		</copy>
-	</target>
-
-    <target name="dist" depends="clean, compile"
-	description="calls clean and compile targets, and creates a runnable JAR file for the project">
+    <target name="dist" depends="compile"
+	description="compiles the code and creates a runnable JAR file for the project">
 		<mkdir dir="${dist.dir}" />
         <jar destfile="${dist.dir}/liferay-doc-utils.jar"
-			filesetmanifest="mergewithoutmain"
-			update="true">
+			filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="com.liferay.documentation.util.DocUtils"/>
-                <attribute name="Class-Path" value="commons-io-2.0.1.jar"/>
+                <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="${build.dir}"/>
+            <zipfileset excludes="META-INF/*.SF" src="${lib.dir}/commons-io-2.0.1.jar"/>
         </jar>
     </target>
+
+	<target name="deploy" depends="dist" description="deploys liferay-doc-utils.jar to liferay-docs/lib">
+		<copy file="${dist.dir}/liferay-doc-utils.jar" tofile="${deploy.dir}/liferay-doc-utils.jar"/>
+	</target>
 
 </project>
