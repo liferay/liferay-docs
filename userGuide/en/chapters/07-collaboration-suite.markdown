@@ -444,6 +444,17 @@ applications, we can move on to specific applications, starting with blogs.
 
 ## Recycling Assets with the Recycle Bin
 
+<!-- Q/A: Q -- Is this the place we want the Recycle Bin section to reside? It
+seems a bit out of place compared to the "configuration options" or
+"collaboration" tools in this chapter. However, the Recycle Bin seems to be a
+beast of its own, and doesn't really fit perfectly into any chapter. I was
+thinking maybe further along in this chapter (maybe after the Liferay Mail
+section) may be a nice place for the Recycle Bin to call home. The 15-Management
+or 16-Using-the-Control-Panel chapters could be other possible alternatives.
+
+		  A --
+-->
+
 Have you ever had that life altering experience where you deleted an important
 file and immediately regretted its deletion? The deed is usually followed by a
 palm to the forehead or a sick feeling. Good news! Liferay is here to turn that
@@ -536,6 +547,13 @@ two of which are configurable from within the portal. Therefore, I wrote
 summaries of the two properties that can only be implemented using the
 properties from portal.properties. -->
 
+<!-- Q/A: Q -- Is including properties from portal.properties appropriate for
+the User Guide? Do we even want to mention specific properties (like above),
+provide a link when the converter is available, both, or neither?
+
+		  A --
+-->
+
 The next thing you'll need to do is make sure you have the appropriate
 permissions checked for those you want handling/viewing the assets in the
 Recycle Bin. The ability to view a document in the Recycle Bin will be available
@@ -615,6 +633,18 @@ content was restored back to its original place.
 Congratulations! You now know the two general processes of sending and restoring
 content to/from the Recycle Bin. For other asset types, the Recycle Bin works
 similarly.
+
+<!-- Q/A: Q -- Is it beneficial to insert specific use cases for each asset
+(Russ had begun a nice list, which is listed below)? It seems to me that the
+location of the "Move to the Recycle Bin" button for each asset type is
+self-explanatory. I ran through an example for Web Content, which should give a
+basic idea of where this button is located. Also, although the list of supported
+assets is short now, this list will continue to grow, adding required
+maintenence on possibly 10-12 bullets. I'm leaning towards removing this
+section, but wanted to check before removing the text.
+
+		  A -- 
+-->
 
 <!--
 Content can be moved to the Recycle Bin from the Portlet or the Control Panel.
