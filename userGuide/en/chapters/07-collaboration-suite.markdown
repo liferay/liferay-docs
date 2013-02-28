@@ -35,6 +35,9 @@ we get into the nitty gritty of the applications themselves, it's best to cover
 these common features first, starting with the look and feel configuration
 options.
 
+<!-- TODO: May need to move recycle bin reference above if the section is
+moved. -Cody -->
+
 ### Look and Feel  
 
 An administrator can access the look and feel configuration menu of any Liferay
@@ -437,84 +440,308 @@ for your blog or calendar if you wish to share them.
 Now that we've seen all the common options available in Liferay's portlet
 applications, we can move on to specific applications, starting with blogs.
 
-### Recycle Bin 
+<!-- TODO: Add transition-->
 
-#### Recycling Assets in Liferay  
+## Recycling Assets with the Recycle Bin
 
-Have you ever deleted a Liferay asset and regretted it? With Recycle Bin, the
-*Delete* option is replaced with the *Remove to Recycle Bin* option for certain
-content types. It works just like you think it does. Instead of permanently
-deleting your content, it's temporarily kept in the Recycle Bin. If you need
-recently recycled content, just restore it using the Recycle Bin feature.
+Have you ever had that life altering experience where you deleted an important
+file and immediately regretted its deletion? The deed is usually followed by a
+palm to the forehead or a sick feeling. Good news! Liferay is here to turn that
+frown upside down with the *Recycle Bin* feature. With the Recycle Bin, the
+*Delete* option is replaced with the *Move to the Recycle Bin* option for
+certain asset types. Instead of permanently deleting your content, it's
+temporarily stored in the Recycle Bin. Then, if desired, the content can be
+restored back to its original state. Furthermore, the recycled items can have a
+custom set age limit which, if exceeded, will result in their permanent
+deletion. Before diving into how the Recycle Bin works, let's look at how to
+configure it.
 
-<!--To Do: Documents and Media Use Case Goes here. Maybe use the Wiki to give a
-robust example and include the special case of Wiki attachments--> 
+### Configuring the Recycle Bin
 
-#### Which Assets can I Recycle? 
+To begin using the Recycle Bin, you'll need to ensure that it's enabled in
+areas you plan to use it. The Recycle Bin can be configured for portal-wide
+scoping or site-specific scoping. For either scope, you're also able to set the
+duration for which the recycled content is stored before deletion. First, let's
+configure the Recycle Bin for portal-wide use. In the Control Panel, select
+*Global* from the Context Menu, and then click *Portal Settings* located under
+the *Portal* heading. Next, click *Recycle Bin* in the portal settings menu
+under the *Configuration* heading. You'll notice a few configurable options,
+which include:
 
-You can recycle content from several portals:
- - *Documents and Media*
- - *Blogs*
- - *Wiki*
- - *Message Board*
+**Enable Recycle Bin:** enable and disable settings for the Recycle Bin's portal
+scope.
 
-<!---To do: Add content types to this list, and add exceptions to the common
-method for recycling and restoring assets, if there are additional
-exceptions/added complexity, such as with Wiki attachments -->
+- *Enabled by Default:* enables the Recycle Bin while allowing site
+administrators to disable it per site (default).
 
-#### Restoring Content 
+- *Disabled by Default:* disables the Recycle Bin while allowing site
+administrators to enable it per site.
 
-To begin using the Recycle Bin feature, you'll need to ensure it's enabled for
-your site and set the duration for which you'd like to store recycled content
-before deletion. In the Control Panel, select the site from the Context Menu,
-and click *Site Settings* in the Content Menu. From here, click the *Recycle
-Bin* link in the site settings menu under the *Advanced* heading. You'll see two
-drop-down menus that let you:
+- *Disabled:* disables the Recycle Bin for all sites.
 
- 1. Enable or Disable the Recycle Bin feature
- 2. Specify the number of days that files will be kept in the Recycle Bin 
+**Number of Days That Files Will Be Kept in the Recycle Bin:** customize the
+number of days a file is kept in the Recycle Bin until its deletion (default is
+30 days).
 
-By default, the feature is enabled, and the duration is set at 30 days.
+![Figure 7.x: The Recycle Bin offers several configurable options for your portal.](../../images/recycle-bin-portal-settings.png)
 
+Now, let's explore the site-specific scoping of the Recycle Bin. In the Control
+Panel, select your site from the Context Menu, and then click *Site Settings*.
+Next, click *Recycle Bin* in the site settings menu under the *Advanced*
+heading. The options are nearly identical to the portal settings menu except for
+the enabling option.
+
+**Enable Recycle Bin:** enable and disable settings for the Recycle Bin's
+site-specific scope.
+
+- *Use Portal Settings (Currently: \<PORTAL_SETTINGS_CONFIGURATION\>:* uses the
+Recycle Bin's portal settings (default).
+
+- *Enabled:* enables the Recycle Bin for the specific site only.
+
+- *Disabled:* disables the Recycle Bin for the specific site only.
+
+![Figure 7.x: The Recycle Bin also offers configurable options for your specific site.](../../images/recycle-bin-site-settings.png)
+
+When you've finished configuring your Recycle Bin settings, click *Save*.
+
+---
+
+ ![note](../../images/tip.png)**Note:** If you disable the Recycle Bin while
+ it's still holding recycled items, the recycled items reappear in the Recycle
+ Bin if it is re-enabled.
+
+---
+
+Another way to configure the Recycle Bin is by using the properties located in
+the `portal.properties` file. Remember that it's a best practice not to edit the
+`portal.properties` directly, but to create a separate `portal-ext.properties`
+file containing the properties to override. The two options we discussed
+previously can be configured from the `portal.properties` file, as well as:
+
+**Trash Search Limit:** set the limit for results used when performing searches
+in the Recycle Bin (default is 500).
+
+**Trash Check Interval:** set the interval in days on how often the trash
+handler will run to check for and delete trash entries that have been in the
+Recycle Bin longer than the maximum age (default is 1).
+
+<!-- Visit the `portal.properties` file at <link> to view all of the
+configurable properties for the Recycle Bin. -->
+
+<!-- TODO: After the properties converter is finished, it would be useful to
+insert a link here explaining where to find all the configurable properties (in
+portal.properties) for the Recycle Bin. At this time, there are four properties,
+two of which are configurable from within the portal. Therefore, I wrote
+summaries of the two properties that can only be implemented using the
+properties from portal.properties. -->
+
+The next thing you'll need to do is make sure you have the appropriate
+permissions checked for those you want handling/viewing the assets in the
+Recycle Bin. The ability to view a document in the Recycle Bin will be available
+to users who had *View* permissions on the document when it was recycled. The
+ability to restore a document will be provided to users who had *Update* or
+*Delete* permissions on the document when it was recycled.
+
+Now that you've successfully configured the Recycle Bin, let's look at how to
+use it.
+
+### Using the Recycle Bin
+
+The Recycle Bin is temporary storage configured for multiple asset types across
+the portal. Instead of offering a specific Recycle Bin for each asset type,
+Liferay provides a central master Recycle Bin where different asset types can be
+stored. This provides an easy search and recovery process.
+
+![Figure 7.x: The Recycle Bin provides a seamless administration experience for deleting and removing content.](../../images/recycle-bin-overview.png)
+
+You can recycle several different types of assets, which include:
+
+- Blogs
+- Bookmarks
+- Documents and Media
+- Message Boards
+- Web Content
+- Wiki
+
+<!-- TODO: Planned for RB compatibility - Calendar (LPS-28161), Attachments (for
+wiki and MB) (LPS-28165), Pages (LPS-29964), Structures (LPS-29970), Templates
+(LPS-29970). -->
+
+<!-- NOTE: The wiki/MB attachments can currently be recycled, but the recycle
+button is currently listed as *Remove*. The attachment does not get sent to the
+Recycle Bin, but can be restored from within the Wiki/MB portlet. I assume this
+gets changed to the consistent *Move to the Recycle Bin* expression and sent to
+the Recycle Bin when the attachments feature is fully supported. -->
+
+For a quick example to show how easy the Recycle Bin is to use, let's send a web
+content article to the Recycle Bin and then restore it. We'll run through two
+different methods of restoring the file.
+
+1. Navigate to *Control Panel* &rarr; *Web Content*.
+
+2. Select the *Add* button and click *Basic Web Content*.
+
+3. Enter some text for the *Title* and *Content* and click *Publish*.
+
+4. In the top right corner of the web content, select the arrow and click *Move
+to the Recycle Bin*.
+
+	![Figure 7.x: By clicking the top right arrow, you're given the option to send the content to the Recycle Bin.](../../images/recycle-bin-button.png)
+
+	Note that the *Delete* button is not listed. Liferay avoids the risk of
+	accidental deletion of your files by funneling the content through the
+	Recycle Bin.
+
+5. After deleting the file, a success message appears offering an *Undo* option.
+Click *Undo*. The web content is retrieved from the Recycle Bin and stored in
+its original place.
+
+6. Select the *Move to the Recycle Bin* button again.
+
+7. Click the Recycle Bin button from the Control Panel menu.
+
+	![Figure 7.x: The Recycle Bin portlet is built into the Control Panel.](../../images/recycle-bin-portlet.png)
+
+8. Find your sample web content and click its *Actions* tab.
+
+9. You have the option to restore or delete the content. Select *Restore*.
+
+	![Figure 7.x: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
+
+10. Navigate back to the *Web Content* screen and notice that your sample web
+content was restored back to its original place.
+
+Congratulations! You now know the two general processes of sending and restoring
+content to/from the Recycle Bin. For other asset types, the Recycle Bin works
+similarly.
+
+<!--
 Content can be moved to the Recycle Bin from the Portlet or the Control Panel.
-The process for recycling content while in a portal will be slightly different
-depending on the type of content you're recycling:
+The process for recycling content will be slightly different depending on the
+type of content you're recycling:
 
- - *Blogs*: Click the *Move to the Recycle Bin* link under the blog post title.
- You have this option in the main Blogs portlet window and in any specific blog
- post's window.
- 
- - *Documents and Media*: Select the content you're recycling then choose *Move
- to the Recycle Bin* in the *Actions* drop-down menu. Alternatively, click a
- specific document or folder and recycle it by clicking the button *Move to the
- Recycle Bin* under the content's title. Folders
- 
- - *Message Board*: The *Actions* drop-down let's you move a Message Board post
- to the recycle bin. Additionally, the detail window for a specific Message
- Board post has a *Move to the Recycle Bin* link.
- 
- - *Wiki*: Click on the *Edit* link for a Wiki item. In the *Content* tab,
- scroll to the row of buttons near the bottom of the page and choose *Move to
- the Recycle Bin*. Your Wiki page and any attachments will be moved to the
- Recycle Bin. If you want to recycle only a Wiki's attachment, go to the
- *Attachments* tab and click the *Remove* link for the attachment you're
- recycling. Deleted Wiki attachments aren't kept in the Recycle Bin, so don't
- worry when you notice they aren't there. Simply navigate back to the
- *Attachments* tab of the appropriate Wiki article and find the *Recently Removed
- Attachments* link to locate and restore the attachment.
- 
- <!---Discuss special case of recycling and restoring just the attachments from Wiki articles-->
- 
- <!---Document the ability to move content from the recycle bin using the Control Panel-->
- 
- <!---Document the restoration of content from the Recycle Bin and emptying the recycle bin-->
+- *Blogs:* Click the *Move to the Recycle Bin* link under the blog post title.
+You have this option in the main Blogs portlet window and in any specific blog
+post's window.
 
-#### Benefiting from the Recycle Bin 
-<!---Does this really need its own heading?-->
+- *Bookmarks:* 
+
+
+- *Documents and Media:* Select the content you're recycling then choose *Move
+to the Recycle Bin* in the *Actions* drop-down menu. Alternatively, click a
+specific document or folder and recycle it by clicking the button *Move to the
+Recycle Bin* under the content's title.
+ 
+- *Message Boards:* The *Actions* drop-down let's you move a Message Board post
+to the recycle bin. Additionally, the detail window for a specific Message Board
+post has a *Move to the Recycle Bin* link. (attachments not yet implemented)
+
+- *Web Content:*
+
+ 
+- *Wiki:* Click on the *Edit* link for a Wiki item. In the *Content* tab, scroll
+to the row of buttons near the bottom of the page and choose *Move to the
+Recycle Bin*. Your Wiki page and any attachments will be moved to the Recycle
+Bin. If you want to recycle only a Wiki's attachment, ... (not yet implemented).
+-->
+
+You're also able to send folders and sub-folders to the Recycle Bin. Keep in
+mind that this will transport the entire folder/sub-folder and its child files
+to the Recycle Bin. Folders and sub-folders are restored and deleted the same
+way as a single file. Also, expired content can be moved to the Recycle Bin and
+restored, just like a regular file.
+
+In step 9 of the example, you probably noticed the *Delete* button from within
+the Recycle Bin. This is the permanent delete button. Once you select this, your
+file cannot be retrieved and is gone forever. There is also an *Empty the
+Recycle Bin* button located at the top of the Recycle Bin screen. This will
+permanently delete all the files from the Recycle Bin. Next, let's discuss how
+to use the drag and drop feature.
+
+#### Drag and Drop
+
+A quick and easy way to dispose of your unwanted assets is to use the drag and
+drop feature for the Recycle Bin. While you're in the Control Panel, you can
+simply click an asset and drag it to the Recycle Bin portlet located on the
+Control Panel menu. When you click and begin dragging the asset, a message
+appears near your cursor notifying you of the amount of files ready to be moved.
+In addition, the Recycle Bin is highlighted, prompting the administrator where
+the files can be dropped. After you drop the asset onto the Recycle Bin portlet,
+the asset is removed from its original location and transferred to the Recycle
+Bin.
+
+![Figure 7.x: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
+
+Next, let's explore the Recycle Bin's intelligence and behind the scenes support
+that aids in a seamless recycling experience.
+
+#### Recycle Bin intelligence and support
+
+Have you ever wondered if it's possible to check the IQ of a software feature?
+Unfortunatley, there is no tangible way to do this; however, if there was, the
+Liferay Recycle Bin would be at the top of its class. As we've mentioned
+already, it supports multiple asset types, a drag and drop feature, an Undo
+option, and many more. Have you ever wondered what happens to file shortcuts if
+it's linked asset is recycled? What if you restore a file that has the same name
+as another file currently stored in your site/portal? The Recycle Bin is
+automatically configured to handle these types of issues for a seamless user
+experience.
+
+When documents with shortcuts are moved to the Recycle Bin, the shortcuts are
+invalidated. This ensures your portal has active links and shortcuts at all
+times. This cuts down on maintenance time and backtracking after recycling an
+important asset.
+
+Another important trait is the duplicate name recognition feature. When a file
+is restored, the Recycle Bin scans the corresponding asset type files currently
+in the site/portal to check for duplicate file names. If a duplicate file name
+is found, the Recycle Bin prompts you to overwrite the existing file or rename
+the file name you're trying to restore. Let's set up an example for a clearer
+representation of this feature. Suppose you have the document `file1` stored in
+the Recycle Bin and you have a separate document you created later with the same
+name residing in the document library. If you try to restore the `file1`
+document, the Recycle Bin will recognize duplicate names and prompt you to
+overwrite the existing document in the document library or rename the document
+you're trying to restore.
+
+![Figure 7.x: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
+
+Although the Recycle Bin prohibits the restoration of files that match
+pre-existing file names in your site/portal, it will store files with matching
+names.
+
+Have you thought about how the Recycle Bin works during the staging process?
+Although we stated earlier that there is only one master Recycle Bin, the
+staging process requires a bit more flexibility with the Recycle Bin to maximize
+its productivity. Therefore, there is a separate Recycle Bin for the staging
+process. Thus, when you enable staging, you're given a Staging Recycle Bin that
+only recycles and restores content when staging is enabled.
+
+![Figure 7.x: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
+
+When you publish your staged material to live, the staged Recycle Bin content
+will be transferred to the live Recycle Bin.
+
+<!-- TODO: The Staging RB is still being produced and an accurate snapshot of
+options provided by the RB when publishing to Live aren't final. Need to
+check-up on progress periodically. (Bug in LP build, need to test when snapshot
+appears the same as in LPS-26266.) -->
+
+---
+
+ ![note](../../images/tip.png)**Note:** The Staging Recycle Bin will save its
+ contents until the staged material has been published to live. This means that
+ you're able to turn the Staging mode on and off without losing your recycled
+ material.
+
+---
 
 The Recycle Bin saves you time by letting you restore content that's been
 recycled. Instead of recreating or re-uploading content, you'll be tailoring
 your Liferay portal to fully leverage its capabilities.
+
+<!-- TODO: Add transition -->
 
 ## Expressing yourself using Blogs  
 
