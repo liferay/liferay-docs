@@ -1,21 +1,53 @@
-Liferay Portal
-single sign-on
+# App Servers
+
 LDAP
 GlassFish
 JBoss
 Jetty
 JOnAS
-Pramati
 Resin
+Mule Tcat
 Tomcat
+WebSphere
+WebLogic
+
+# WCM
+
+tag
+categories
+related assets
+CMS
+web content
+structure
+template
+staging
+layouts
+LAR file
+sitemap
+Velocity
+Freemarker
+XSL
+Asset Publisher
+scope
+site pages
+page layouts
+page customizations
+site settings
+site URL
+site template
+page template
+
+Solr
 bundle
 ajax
+single sign-on
 WebDAV
 portlet
 service builder
 css
 theme
 permissions
+Kaleo
 workflow
 portal-ext.properties
 plugin
@@ -32,7 +64,7 @@ user groups
 roles
 organizations
 locations
-community
+site
 language
 time zone
 look and feel
@@ -96,31 +128,13 @@ MySQL
 WEB-INF
 app.server.properties
 release.properties
-WebSphere
-WebLogic
-Solr
 JSR-286
 Control Panel
 JSR-168
 JSR-170
 message boards
 Kaleo
-Social Equity
-tag
-categories
-CMS
-web content
-structure
-template
-staging
-layouts
-LAR file
-sitemap
-Velocity
-Freemarker
-XSL
-Asset Publisher
-scope
+Social Activity
 Blog
 calendar
 mailing list
