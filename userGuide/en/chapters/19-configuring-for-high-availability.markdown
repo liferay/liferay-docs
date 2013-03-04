@@ -664,13 +664,13 @@ Lucene, the search indexer which Liferay uses, can be configured to sync indexes
 across each cluster node. This is the easiest configuration to implement, though
 of course, it's not as "clean" a configuration as using pluggable enterprise
 search. Sometimes, however, you just don't have another server to use for search
-indexing, so you need a way to keep all your nodes in sync. Liferay provides a
-method called Cluster Link which can send indexing requests to all nodes in the
-cluster to keep them in sync. This configuration doesn't require any additional
-hardware, and it performs very well. It may increase network traffic when an
-individual server reboots, since a full reindex will be needed. But this should
-rarely happen, making it a good tradeoff if you don't have the extra hardware to
-implement a Solr search server.
+indexing, so you need a way to keep all your nodes in sync. By default, Liferay
+provides a method called Cluster Link which can send indexing requests to all
+nodes in the cluster to keep them in sync. This configuration doesn't require
+any additional hardware, and it performs very well. It may increase network
+traffic when an individual server reboots, since a full reindex will be needed.
+But this should rarely happen, making it a good tradeoff if you don't have the
+extra hardware to implement a Solr search server.
 
 You can enable Cluster Link by setting the following property in your
 `portal-ext.properties` file:
@@ -686,80 +686,15 @@ you'll enable cache replication but not index replication.
 
 Of course, `cluster.link.enabled=true` and `lucene.replicate.write=true` need to
 be set on all your nodes. That's all you need to do to sync your indexes. Pretty
-easy, right? Of course, if you have existing indexes, you'll want to do a
-reindex as described in the previous section once you have Cluster Link enabled
-on all your nodes. 
-
-Next, we'll show how to share indexes in a database. This is actually not a
-recommended configuration, as it's slow (databases are always slower than file
-systems), but for completeness, we'll go ahead and tell you how to do it anyway.
-But you've been forewarned: it's far better to use one of the other methods of
-clustering your search index. 
-
-#### Sharing a search index (not recommended unless you have a file locking-aware SAN)   
-
-If you wish to have a shared index (and we really hope you don't), you'll need
-to either share the index on the file system or in the database. This requires
-changing your Lucene configuration.
-
-The Lucene configuration can be changed by modifying values in your
-`portal-ext.properties` file. Open your `portal.properties` file and search for
-the text *Lucene*. Copy that section and then paste it into your
-`portal-ext.properties` file.
-
-If you wish to store the Lucene search index on a file system that is shared by
-all of the Liferay nodes (not recommended: you've been warned), you can modify
-the location of the search index by changing the `lucene.dir` property. By
-default, this property points to the `lucene` folder inside the Liferay home
-folder:
-
-    lucene.dir=${liferay.home}/data/lucene/
-
-Change this to the folder of your choice. You'll need to restart Liferay for the
-changes to take effect. You can point all of the nodes to this folder and they
-will use the same index.
-
-Like Jackrabbit, however, this is not the best way to share the search index, as
-it could result in file corruption if different nodes try reindexing at the same
-time. We do not recommend this for a production system. A better way (though
-still not great) is to share the index via a database, where the database can
-enforce data integrity on the index. This is very easy to do; it is a simple
-change to your `portal-ext.properties` file. Of course, we also don't recommend
-this for a production system, as accessing the index from a database will be
-slower than from a file system. If, however, you have no other option and want
-to do this anyway, keep reading. 
-
-There is a single property called `lucene.store.type`. By default this is set to
-go to the file system. You can change this so that the index is stored in the
-database by making it the following:
-
-    lucene.store.type=jdbc
-
-The next time Liferay is started, new tables are created in the Liferay
-database, and the index is stored there. If all the Liferay nodes point to the
-same database tables, they will be able to share the index. Again, performance
-on this is not very good. Your DBAs may be able to tweak the database indexes a
-bit to improve performance. For better performance, you should consider using a
-separate search server or syncing the indexes on the nodes' file systems.
-
----
-
-![Tip](../../images/01-tip.png)**Note:** MySQL users need to modify their JDBC
-connection string for this to work. Add the following parameter to your
-connection string:
-
-    emulateLocators=true
-
----
-
-Alternatively, you can leave the configuration alone, and each node will have
-its own index. This ensures against collisions when multiple nodes update the
-index. However, the indices will quickly get out of sync since they don't
-replicate. For this reason, this is not a recommended configuration either.
-Again, for a better configuration, replicate the indexes with Cluster Link or
-use a separate search server (see the section on Solr above).
+easy, right? Of course, if you have existing indexes, you'll want to reindex as
+described in the previous section once you have Cluster Link enabled on all your
+nodes. 
 
 ### Distributed Caching  
+
+Enabling Cluster Link automatically activates distributed caching. Distributed
+caching enables some RMI (Remote Method Invocation) cache listeners that are
+designed to replicate the cache across a cluster. 
 
 Liferay uses **Ehcache**, which has robust distributed caching support. This
 means that the cache can be distributed across multiple Liferay nodes running
@@ -781,21 +716,6 @@ post available immediately from the local cache. Without that, the second user
 would need to wait until the cache was invalidated on the node he or she
 connected to before he or she could see the updated forum post. 
 
-There are two ways to enable distributed caching. If you use the default
-settings, it's very easy. If you need to tweak the cache for your site, there
-are a few more steps, but it's still pretty easy. 
-
-#### Enabling distributed caching  
-
-You must have Cluster Link enabled in order to activate distributed caching.
-Since you already did this, you have only one more property to add to your
-`portal-ext.properties` file: 
-
-	ehcache.cluster.link.replication=true
-
-What this does is enable some RMI (Remote Method Invocation) cache listeners
-that are designed to replicate the cache across a cluster. 
-
 Once you enable distributed caching, of course, you should do some due diligence
 and test your system under a load that best simulates the kind of traffic your
 system needs to handle. If you'll be serving up a lot of message board messages,
@@ -808,7 +728,72 @@ settings yourself. You can modify the Liferay installation directly or you can
 use a plugin to do it. Either way, the settings you change are the same. Let's
 see how to do this with a plugin first. 
 
-#### Modifying the cache settings with a plugin  
+The next thing we'll cover about caching is a special EE-only optimization that
+can be made to the cache. 
+
+#### Enhanced distributed cache algorithm
+
+![EE Only Feature](../../images/ee-feature-web.png)
+
+By default, Liferay's distributed cache uses the RMI replication mechanism,
+which uses a point to point communication topology. As you can guess, this kind
+of structure doesn't scale well for a large cluster with many nodes. Because
+each node has to send the same event to other nodes `N - 1` times, network
+traffic becomes a bottleneck when `N` is too large. Ehcache also has a
+performance issue of its own, in that it creates a replication thread for each
+cache entity. In a large system like Liferay Portal, it's very common to have
+more than 100 cached entities. This translates to 100+ cache replication
+threads. Threads are expensive, because they take resources (memory and CPU
+power). Most of the time, these threads are sleeping, because they only need to
+work when a cached entity has to talk to remote peers. 
+
+![Figure 19.5: The default algorithm requires each node to create massive
+amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
+
+Putting heap memory aside (because the amount of memory on the heap depends on
+the application(s) running), consider the stack memory footprint of those 100+
+threads. By default on most platforms, the thread stack size is 2 MB; for 100
+threads, that's more than 200 MB. If you include the heap memory size, this
+number can become as high as 500 MB for just one node. And that massive amount
+of threads can also cause frequent context switch overhead, which translates to
+increased CPU cycles.
+
+For large installations containing many nodes, Liferay has developed an enhanced
+algorithm for handling cache replication that can can fix both the `1` to `N -
+1` network communication bottleneck, as well as the massive threads bottleneck.
+The default implementation uses JGroups' UDP multicast to communicate. 
+
+![Figure 19.6: Liferay's algorithm uses a single UDP multicast channel, so that
+nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
+
+To reduce the number of replication threads, we provide a small pool of
+dispatching threads. These deliver cache cluster events to remote peers. Since
+all cache entities' cluster events must go through our pool of dispatching
+threads to communicate, this gives us a chance to coalesce events: if two
+modifications to the same cache object happen at almost the same time, we can
+combine the changes into one, and then we only need to notify remote peers once.
+This reduces traffic on the network. We should also note that newer versions of
+Ehcache support the JGroups replicator and can also fix the `1` to `N - 1`
+network communication; however, they cannot fix the massive threads issue and
+they cannot coalesce cache events.
+
+For EE customers who are interested in this feature, all you have to do to
+enable the enhanced algorithm is to install a plugin from the Liferay
+Marketplace and set the following property in the `portal-ext.properties` files
+of each of your nodes:
+
+	ehcache.cluster.link.replication.enabled=true
+
+Search Liferay Marketplace for the *Ehcache Cluster EE* plugin, which is free to
+all EE customers, and install it on each of your nodes. The new algorithm is
+immediately activated and you can reap the benefits right away.
+
+Next, let's discuss how to modify your Ehache settings. As we've seen, it's easy
+to use the default Ehcache settings just by enabling Cluster Link. If you need
+to tweak the cache for your site, you have two options: you can modify Ehcache
+settings with a plugin or you can modify them directly.
+
+#### Modifying the Ehcache settings with a plugin  
 
 A benefit of working with plugins is that you can quickly install a plugin on
 each node of your cluster without taking down the cluster. We'll cover this
@@ -990,66 +975,78 @@ experiment with the memory settings on your JVM as well as the cache settings
 above. You can find the specifics about these settings in the documentation for
 Ehcache.
 
-The last thing we'll cover about caching is a special EE-only optimization that
-can be made to the cache. 
+Next, we'll show how to share indexes in a database. This is actually not a
+recommended configuration, as it's slow (databases are always slower than file
+systems), but for completeness, we'll go ahead and tell you how to do it anyway.
+But you've been forewarned: it's far better to use one of the other methods of
+clustering your search index. 
 
-#### Enhanced distributed cache algorithm  
+#### Sharing a search index (not recommended unless you have a file locking-aware SAN)   
 
-![EE Only Feature](../../images/ee-feature-web.png)
+If you wish to have a shared index (and we really hope you don't), you'll need
+to either share the index on the file system or in the database. This requires
+changing your Lucene configuration.
 
-By default, Liferay's distributed cache uses the RMI replication mechanism,
-which uses a point to point communication topology. As you can guess, this kind
-of structure doesn't scale well for a large cluster with many nodes. Because each
-node has to send the same event to other nodes `N - 1` times, network traffic
-becomes a bottleneck when `N` is too large. Ehcache also has a performance issue
-of its own, in that it creates a replication thread for each cache entity. In a
-large system like Liferay Portal, it's very common to have more than 100 cached
-entities. This translates to 100+ cache replication threads. Threads are
-expensive, because they take resources (memory and CPU power). Most of the time,
-these threads are sleeping, because they only need to work when a cached entity
-has to talk to remote peers. 
+The Lucene configuration can be changed by modifying values in your
+`portal-ext.properties` file. Open your `portal.properties` file and search for
+the text *Lucene*. Copy that section and then paste it into your
+`portal-ext.properties` file.
 
-![Figure 19.5: The default algorithm requires each node to create massive
-amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
+If you wish to store the Lucene search index on a file system that is shared by
+all of the Liferay nodes (not recommended: you've been warned), you can modify
+the location of the search index by changing the `lucene.dir` property. By
+default, this property points to the `lucene` folder inside the Liferay home
+folder:
 
+    lucene.dir=${liferay.home}/data/lucene/
 
-Putting heap memory aside (because the amount of memory on the heap depends on
-the application(s) running), consider the stack memory footprint of those 100+
-threads. By default on most platforms, the thread stack size is 2 MB; for 100
-threads, that's more than 200 MB. If you include the heap memory size, this number can
-become as high as 500 MB for just one node. And that massive amount of threads
-can also cause frequent context switch overhead, which translates to increased
-CPU cycles.
+Change this to the folder of your choice. You'll need to restart Liferay for the
+changes to take effect. You can point all of the nodes to this folder and they
+will use the same index.
 
-For large installations containing many nodes, Liferay has developed an
-alternative algorithm for handling cache replication that can can fix both the
-`1` to `N - 1` network communication bottleneck, as well as the massive threads
-bottleneck. The default implementation uses JGroups' UDP multicast to
-communicate. 
+Like Jackrabbit, however, this is not the best way to share the search index, as
+it could result in file corruption if different nodes try reindexing at the same
+time. We do not recommend this for a production system. A better way (though
+still not great) is to share the index via a database, where the database can
+enforce data integrity on the index. This is very easy to do; it is a simple
+change to your `portal-ext.properties` file. Of course, we also don't recommend
+this for a production system, as accessing the index from a database will be
+slower than from a file system. If, however, you have no other option and want
+to do this anyway, keep reading. 
 
-![Figure 19.6: Liferay's algorithm uses a single UDP multicast channel, so that
-nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
+There is a single property called `lucene.store.type`. By default this is set to
+go to the file system. You can change this so that the index is stored in the
+database by making it the following:
 
-To reduce the number of replication threads, we provide a small pool of
-dispatching threads. These deliver cache cluster events to remote peers. Since
-all cache entities' cluster events must go through our pool of dispatching
-threads to communicate, this gives us a chance to coalesce events: if two
-modifications to the same cache object happen at almost the same time, we can
-combine the changes into one, and then we only need to notify remote peers once.
-This reduces traffic on the network. We should also note that newer versions of
-Ehcache support the JGroups replicator and can also fix the `1` to `N - 1`
-network communication; however, they cannot fix the massive threads issue and
-they cannot coalesce cache events.
+    lucene.store.type=jdbc
 
-For EE customers who are interested in this feature, all you have to do to
-enable the alternate algorithm is to install a plugin from the Liferay
-Marketplace. Search for the *Ehcache Cluster EE* plugin, which is free to all EE
-customers, and install it on all your nodes. The new algorithm is immediately
-activated and you can reap the benefits right away. 
+The next time Liferay is started, new tables are created in the Liferay
+database, and the index is stored there. If all the Liferay nodes point to the
+same database tables, they will be able to share the index. Again, performance
+on this is not very good. Your DBAs may be able to tweak the database indexes a
+bit to improve performance. For better performance, you should consider using a
+separate search server or syncing the indexes on the nodes' file systems.
+
+---
+
+![Tip](../../images/01-tip.png)**Note:** MySQL users need to modify their JDBC
+connection string for this to work. Add the following parameter to your
+connection string:
+
+    emulateLocators=true
+
+---
+
+Alternatively, you can leave the configuration alone, and each node will have
+its own index. This ensures against collisions when multiple nodes update the
+index. However, the indices will quickly get out of sync since they don't
+replicate. For this reason, this is not a recommended configuration either.
+Again, for a better configuration, replicate the indexes with Cluster Link or
+use a separate search server (see the section on Solr above).
 
 Now we can look at the last consideration when clustering Liferay: hot deploy. 
 
-### Hot Deploy  
+### Hot Deploy
 
 Plugins which are hot deployed will need to be deployed separately to all the
 Liferay nodes. The best way to do this is to configure your application server
