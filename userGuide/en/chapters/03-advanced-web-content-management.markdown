@@ -830,6 +830,7 @@ pages.
 - Categories Navigation: displays a column for each vocabulary. Each column
 includes the name of a vocabulary with the vocabulary's top level categories
 listed underneath.
+- Documents and Media: displays images in a carousel.
 - Asset Publisher: displays abstracts, icons, related assets, and print/edit
 actions for assets. Optionally includes asset bookmarks and ratings.
 - Site Map: displays a column for each top level page. Each column includes the
@@ -838,12 +839,25 @@ name of a top level page with the page's immediate children listed underneath.
 (medium), and green (low).
 - Blogs: displays titles, authors, and abstracts compactly for blog entries.
 
-<!-- TODO: Add D&M once available (has option to create template in Control
-Panel, but not available to select ADT within D&M portlet). 
-UPDATE: The ADT for D&M can be used for the Media Gallery Portlet. There is not
-yet a preinstalled default template for D&M. The goal is to finish the
-implementation for D&M and provide ADT support for several other portlets such
-as Web Content List.-->
+<!-- UPDATE: The ADT for D&M can be used for the Media Gallery Portlet. The D&M
+portlet is not yet able to support the D&M ADT. The goal is to finish the
+implementation for D&M and provide ADT support for several other portlets.
+
+================================================
+Current outlook on ADT Development per portlet
+================================================
+*Portlet*		*LPS #*		*Status*
+Media Gallery	30818		Awaiting PM Review
+Polls			31433		Backlog
+Navigation		27113		Backlog
+
+[Web Content List was mentioned by Eduardo Garcia by email as future ADT
+supported portlet (D&M template), but not yet task in JIRA.]
+-->
+
+<!-- TODO: May need to document what portlets and ADTs are compatible. Not sure
+if each portlet will have its own category for ADT or if they'll be able to
+support multiple different kinds -->
 
 To create a new ADT, click *Add* and select the template you'd like to create,
 based on portlet type. Then enter the name, description, and optional small
@@ -857,11 +871,6 @@ directly. For more information on how to create a custom template, visit the
 link above -->
 
 ![Figure 3.18: Liferay offers multiple options to customize your ADT.](../../images/adt-setup-menu.png)
-
-<!-- TODO: the below paragraph should point to the relevant section at the
-beginning of the next chapter, where import/export is covered. In fact, this
-whole section should probably be moved to the next chapter, since it's not
-dealing with web content, but with applications. Let's discuss. -->
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the wrench icon at the top right of the
