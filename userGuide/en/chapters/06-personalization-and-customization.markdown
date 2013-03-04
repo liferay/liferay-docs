@@ -6,6 +6,7 @@ topics:
 
 - Personal Sites
 - Customizable Pages and Applications
+- Application Display Templates
 - Using a Rules Engine
 
 Personal sites allow each portal user to manage and customize a set of public
@@ -14,10 +15,11 @@ provide a means of making content publicly available while private pages provide
 a means of hiding information from other users. Liferay 6.1 introduced
 customizable pages and applications. Administrators can designate certain pages
 or applications as "customizable," which allows each user to make and save their
-own customizations. Liferay Enterprise Edition provides a rules engine which
-allows administrators to create custom portal rules and simplify complex blocks
-of code containing lots of `if-else` statements. Let's start by discussing
-personal sites.
+own customizations. Portlet layouts can also be customized with the use of
+Application Display Templates. Liferay Enterprise Edition provides a rules
+engine which allows administrators to create custom portal rules and simplify
+complex blocks of code containing lots of `if-else` statements. Let's start by
+discussing personal sites.
 
 ## User Personal Sites  
 
@@ -195,6 +197,119 @@ assigned to the role *Site Member*.
 In addition to granting the ability to customize portlet configurations, the
 *Customize* permission allows users to customize the look and feel of portlets
 and to import or export portlet settings. Next, let's look at how to use
+application display templates.
+
+## Using application display templates 
+
+Application display templates work similarly to site and page templates, but at
+the portlet level. The application display template (ADT) framework allows
+portal administrators to override the default display templates, removing
+limitations to the way your site's content is displayed. With ADTs, you can
+define custom display templates used to render asset-centric applications. For
+example, you may want to show blog entries horizontally instead of vertically,
+or list your assets in the asset publisher portlet in different sizes.
+
+Let's go through a simple use case to illustrate how creating a custom ADT can
+improve your site. Consider you're customizing the Nosester site and want to
+allow users to spread their noses to other social networks. Specifically, you
+want to configure the Wiki portlet for colloboration with Facebook or Twitter.
+With ADTs, you can launch a template editor, create a custom template, and
+make your portlet host that template. Custom templates let you re-skin your
+portlet and give you ultimate control over its appearance and functionality in
+your portal.
+
+Before attempting to change the ADT for your application, use the context menu
+in the Control panel to choose the location for your custom tempate. The
+*Global* context makes your template available across all sites. If you select
+the Global context, the *Application Display Templates* page of the Control
+Panel's Content Menu shows you a list of pre-made templates available for
+your portlets. If you choose a site to host your template, you must create a
+custom template for that site's portlets.
+
+![Figure 6.5: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
+
+If you'd like to add an ADT, select the portlet you'd like to customize. Below
+is a list of the portlets that can be customized using ADTs, and their template
+descriptions:
+
+- Wiki: displays social bookmarks and ratings for wiki pages and their child
+pages.
+- Categories Navigation: displays a column for each vocabulary. Each column
+includes the name of a vocabulary with the vocabulary's top level categories
+listed underneath.
+- Documents and Media: displays images in a carousel.
+- Asset Publisher: displays abstracts, icons, related assets, and print/edit
+actions for assets. Optionally includes asset bookmarks and ratings.
+- Site Map: displays a column for each top level page. Each column includes the
+name of a top level page with the page's immediate children listed underneath.
+- Tags Navigation: displays asset tags colored by popularity: red (high), yellow
+(medium), and green (low).
+- Blogs: displays titles, authors, and abstracts compactly for blog entries.
+
+<!-- UPDATE: The ADT for D&M can be used for the Media Gallery Portlet. The D&M
+portlet is not yet able to support the D&M ADT. The goal is to finish the
+implementation for D&M and provide ADT support for several other portlets.
+
+================================================
+Current outlook on ADT Development per portlet
+================================================
+*Portlet*		*LPS #*		*Status*
+Media Gallery	30818		Awaiting PM Review
+Polls			31433		Backlog
+Navigation		27113		Backlog
+
+[Web Content List was mentioned by Eduardo Garcia by email as future ADT
+supported portlet (D&M template), but not yet task in JIRA.]
+-->
+
+<!-- TODO: May need to document what portlets and ADTs are compatible. Not sure
+if each portlet will have its own category for ADT or if they'll be able to
+support multiple different kinds -->
+
+To create a new ADT, click *Add* and select the template you'd like to create,
+based on portlet type. Then enter the name, description, and optional small
+image you'd like to use. You can select the language type for your template
+(FTL, VM, XSL). Lastly, the *Script* option lets you browse your file system
+for a template on your file system, or you can launch the editor and create one
+directly. For more information on how to create a custom template, visit the
+*Liferay Developer's Guide*.
+
+<!-- TODO: When the Dev Guide section for templates is complete, add the exact
+link above -->
+
+![Figure 6.6: Liferay offers multiple options to customize your ADT.](../../images/adt-setup-menu.png)
+
+Another cool feature is the *Export/Import* functionality. You can take
+advantage of this feature by clicking the wrench icon at the top right of the
+screen and selecting *Export/Import*. For more information on using this
+feature, visit the *Export/Import* sub-section in the [Understanding Liferay's
+common configuration options
+](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen07-understanding-liferays-common-configuration-options-0)
+section of this guide. The Export/Import feature for ADTs looks similar to the
+snapshot below:
+
+![Figure 6.7: The *Export/Import* feature allows you to share and overwrite your ADTs.](../../images/adt-export-import.png)
+
+After you've completed the initial set up and saved your ADT, you can manage
+your ADT through its *Actions* button. This provides several options:
+
+- *Edit*: lets you modify the ADT's setup properties. 
+- *Permissions*: lets you manage the permissions *Delete*, *Permissions*,
+  *Update*, and *View* for the ADT. 
+- *Delete*: deletes the ADT.
+
+To enable your ADT for a portlet, navigate to the portlet you want to modify and
+open its *Configuration* menu. In the *Display Settings* sub-tab located within
+the *Setup* tab, select your ADT from the *Display Template* drop-down
+menu. You'll notice they're separated by context type. Also, an administrator
+can select the display template that can be viewed by guests of the site: do
+this by clicking the *Manage Display Templates for Guest* link and selecting an
+ADT.
+
+![Figure 6.8: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
+
+Customizing the user interface of Liferay's bundled portlets provides the
+ultimate customization experience for Liferay users. Next, let's look at how to use
 Liferay's rules engine.
 
 ## Using Liferay's rules engine  
