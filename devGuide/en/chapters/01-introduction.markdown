@@ -1,8 +1,7 @@
 # Introduction [](id=introduct-12)
 
-Welcome to Liferay's Developer's Guide, the official guide for all developers
-that want to develop portals based on Liferay or that want to develop
-applications that anyone can use in their Liferay portals. This guide assumes
+Welcome to the Liferay Developer's Guide, the official guide for developers
+seeking to develop Liferay-based portals or applications. This guide assumes
 you already know what a portal is and how to use Liferay from an end-user
 perspective. If you don't, please read the [What is a
 Portal?](http://www.liferay.com/products/what-is-a-portal) article on
@@ -10,11 +9,18 @@ liferay.com and the [What is
 Liferay](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/what-is-lifera-1)
 chapter in *Using Liferay Portal*. 
 
+This chapter overviews how to to develop applications for Liferay and how to
+customize Liferay's built-in applications. Liferay plugins are used in both
+application development and customization, so we'll explain the technologies and
+tools available in developing your plugins. You'll use different Liferay plugins
+for different purposes, so we'll explain the technologies and tools available
+for you to use in developing your plugins.
+
 This chapter provides an overview of how to develop applications for Liferay and
 how to customize Liferay's built-in applications. You will use Liferay plugins
 to do these things and use different types of Liferay plugins to use for
 different purposes. We'll explain the technologies and tools available for you
-to use in developing your plugins. 
+to use in developing your plugins.
 
 This chapter covers the following: 
 
@@ -33,48 +39,47 @@ Let's get started developing applications for Liferay.
 
 According to Wikipedia "A web application is an application that is accessed
 over a network such as the Internet or an intranet." A portal application is a
-web application that can coexist with many other applications in a civilized way
-and can leverage functionality provided by the portal platform to
-reduce development time and deliver a more consistent experience to end users. 
+web application that can civilly coexist with other applications. Portal
+applications leverage functionality provided by the portal platform to reduce
+development time and deliver a more consistent experience to end users.
 
 If you are reading this, you probably want to (or need to) develop applications
-that run on top of Liferay Portal. And you might be looking for an
-answer to the question *what is the best and quickest way to do it?* Liferay
-supports two main technologies for incorporating applications, and both are
-based on standards: 
+that run on top of Liferay Portal. And you might be looking for an answer to the
+question *what is the best and quickest way to do it?* Liferay supports two main
+technologies for incorporating applications, and both are based on standards:
 
-- **Portlets:** are small web applications written in Java that follow a certain
-set of rules to allow cohabitation of applications within the same portal or
-even within the same page. Portlets can be used to build applications as complex
-as you want since the full suite of technologies and libraries for the Java
-platform can be used. 
+- **Portlets:** Portlets are small web applications written in Java that follow
+a certain set of rules to allow cohabitation of multiple applications within the
+same portal or even within the same page. Portlets can be used to build complex
+applications since the full suite of technologies and libraries for the Java
+platform can be used.
 
-- **OpenSocial gadgets:** are usually small applications, written using
-browser-side technologies such as HTML and JavaScript. Where "standard"
-applications work with data on a per-user basis, "social" applications share
-data within well defined networks, facilitating communication of information
-between groups of users. Gadgets lend themselves well to sharing, are simple to
-write, and are easy to deploy. However if a gadget application becomes more
-complicated you will need a complimentary back-end technology, such as portlets
-or regular Java web applications. 
+- **OpenSocial gadgets:** OpenSocial gadgets are usually small applications,
+written using browser-side technologies such as HTML and JavaScript. Where
+"standard" applications work with data on a per-user basis, "social"
+applications share data within well defined networks, facilitating communication
+of information between groups of users. Gadgets lend themselves well to sharing,
+are simple to write, and are easy to deploy. However, if a gadget application
+becomes more complicated you will need a complimentary back-end technology, such
+as portlets or regular Java web applications.
 
-The following sections describe these two technologies in more detail. 
+Let's look at these two technologies in more detail. 
 
 ### Portlets [](id=6-1-devguide-portlets-intro)
 
 Portlets are small web applications written in Java that run in a portion of a
 web page. The heart of any portal implementation is its portlets, because they
-contain the actual functionality. The portlet container is only responsible for
-aggregating the set of portlets that are to appear on any particular page. 
+contain the actual functionality. The portlet container just aggregates the set
+of portlets that are to appear on a page.
 
-Portlets are the least invasive form of extension to Liferay, as they are
-entirely self contained. Consequentially portlets are also the the most forward
+Since they're entirely self-contained, portlets are the least invasive form of
+extension to Liferay, and are also the most forward
 compatible development option. They are hot-deployed as plugins into Liferay
 instances, resulting in zero downtime. A single plugin can contain multiple
 portlets, allowing you to split up your functionality into several smaller
 pieces that can be arranged dynamically on a page. Portlets can be written using
 any of the Java web frameworks that support portlet development, including
-Liferay's specific frameworks: MVC Portlet and Alloy Portlet. 
+Liferay's specific frameworks: MVC Portlet and Alloy Portlet.
 
 ### OpenSocial Gadgets [](id=lp-6-1-dgen01-opensocial-gadgets-0)
 
@@ -328,7 +333,7 @@ other another IDE?** There are many IDEs out there and each one has its
 strengths. We decided to build Liferay IDE on top of Eclipse because it is the
 most popular open source option. But we also want to make sure you can use the
 IDE of your choice. In fact quite a few core developers use Netbeans and
-Intellij IDEA (who has gracefully provided an open source license to Liferay's
+Intellij IDEA (who has graciously provided an open source license to Liferay's
 core developers). Both of these IDEs have support for integration with Apache
 Ant, so you can use the Plugins SDK with them. Additionally, Sun Microsystems
 developed an extension to Netbeans called the *Portal Pack* that is explicitly
