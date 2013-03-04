@@ -865,11 +865,12 @@ dealing with web content, but with applications. Let's discuss. -->
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the wrench icon at the top right of the
-screen and selecting *Export/Import*. Maybe you want to share your ADT with
-someone or import your friend's ADT to use in your own portlet. The export
-feature bundles your ADT into a LAR file and gives you options on what to
-include. Likewise, the import feature overwrites selected data by extracting a
-LAR file. These features look similar to the snapshot below:
+screen and selecting *Export/Import*. For more information on using this
+feature, visit the *Export/Import* sub-section in the [Understanding Liferay's
+common configuration options
+](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen07-understanding-liferays-common-configuration-options-0)
+section of this guide. The Export/Import feature for ADTs looks similar to the
+snapshot below:
 
 ![Figure 3.19: The *Export/Import* feature allows you to share and overwrite your ADTs.](../../images/adt-export-import.png)
 
