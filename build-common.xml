@@ -158,7 +158,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     </target>
 
     <target name="dist" depends="clean-lang, prepare-dist, concat-markdown-files" description="prepares document zip file for asset import">
-    <property file="./doc.properties" />
+        <property file="./doc.properties" />
         <copy todir="${dist.dir}/${lang}">
 		    <fileset dir="${build.dir}/${lang}">
                 <include name="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
@@ -171,7 +171,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     </target>
 
     <target name="concat-markdown-files" depends="prepare" description="concatenates multiple markdown files into a single one">
-    <property file="./doc.properties" />
+        <property file="./doc.properties" />
         <echo message="... concatenating markdown files for ${product.abbrev} ${product.version}-${doc.dir} (${lang})"/>
         <concat destfile="./${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown" fixlastline = "yes">
             <fileset dir="./${lang}" casesensitive="yes">
@@ -474,5 +474,24 @@ directory to convert the userGuide into complete English markdown, html, odt, an
             <arg value="./${lang}/chapters/${chapter}.markdown"/>
         </java>
     </target>
+
+	<target name="add-index" description="adds an index to the LaTeX source of a document before converting it to PDF">
+		<echo message="... adding index"/>
+		<java jar="../lib/liferay-doc-utils.jar" fork="true">
+			<arg value="AddIndex"/>
+			<arg value="en/print/en-userGuide.tex"/>
+			<arg value="userguide.lexicon"/>
+			<arg value="en/print/indexed-en-userGuide.tex"/>
+		</java>
+		<exec executable="xelatex">
+			<arg value="en/print/indexed-en-userGuide.tex"/>
+		</exec>
+		<exec executable="makeindex">
+			<arg value="en/print/indexed-en-userGuide"/>
+		</exec>
+		<exec executable="xelatex">
+			<arg value="en/print/indexed-en-userGuide.tex"/>
+		</exec>
+	</target>
 
 </project>
