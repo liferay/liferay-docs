@@ -444,29 +444,6 @@ applications, we can move on to specific applications, starting with blogs.
 
 ## Recycling Assets with the Recycle Bin
 
-<!-- Q/A: Q -- Is this the place we want the Recycle Bin section to reside? It
-seems a bit out of place compared to the "configuration options" or
-"collaboration" tools in this chapter. However, the Recycle Bin seems to be a
-beast of its own, and doesn't really fit perfectly into any chapter. I was
-thinking maybe further along in this chapter (maybe after the Liferay Mail
-section) may be a nice place for the Recycle Bin to call home. The 15-Management
-or 16-Using-the-Control-Panel chapters could be other possible alternatives.
-
-		  A -- Give me your arguments for why it should be moved to a particular
-area, and we can then hash it out. I'm not absolutely convinced it should be
-here, but I need to quantify what "out of place" means to you. I was placing it
-here for the following reasons: 
-
-1. Other functions that affect multiple portlets are here. Since the recycle bin
-   is one of those functions, it seemed logical to me to have it here. 
-2. Recycle Bin is a feature of all the portlets in this section. For that
-   reason, it's nice to hit the feature globally right away, so that when a
-   reader sees the feature in the particular portlet, he/she already knows what
-   it's all about. 
-3. We might consider moving this whole section into a chapter all by itself,
-   near the beginning of the book. Thoughts? 
--->
-
 Have you ever had that life-altering experience where you deleted an important
 file and immediately regretted deleting it? The deed is usually followed by a
 palm to the forehead or a sick feeling. Good news! Liferay is here to turn that
@@ -487,7 +464,7 @@ deleted.
 First, let's configure the Recycle Bin for portal-wide use. In the Control
 Panel, select *Global* from the Context Menu, and then click *Portal Settings*
 under the *Portal* heading. Next, click *Recycle Bin* in the portal settings
-menu under the *Configuration* heading.  You'll notice a few configurable
+menu under the *Configuration* heading. You'll notice a few configurable
 options: 
 
 **Enable Recycle Bin:** enable and disable settings for the Recycle Bin's portal
@@ -525,6 +502,10 @@ Recycle Bin's portal settings (default).
 
 ![Figure 7.x: The Recycle Bin also offers configurable options for your specific site.](../../images/recycle-bin-site-settings.png)
 
+<!-- TODO/UPDATE: These options are now different after rebuilding Portal from
+trunk. It seems none of these settings are final and are still being modified.
+Need to check status periodically. -->
+
 When you've finished configuring your Recycle Bin settings, click *Save*.
 
 ---
@@ -539,35 +520,23 @@ You can also configure the Recycle Bin via properties in the `portal.properties`
 file. Remember that it's a best practice not to edit the `portal.properties`
 directly, but to create a separate `portal-ext.properties` file containing the
 properties to override. There are some additional options not available in the
-GUI that you can set: 
+GUI that you can set:
 
-<!-- These don't look like properties to me. Can you list them as properties
-(i.e., trash.search.limit=)? -->
+`trash.search.limit=500`: set the limit for results used when performing
+searches in the Recycle Bin (default is 500).
 
-**Trash Search Limit:** set the limit for results used when performing searches
-in the Recycle Bin (default is 500).
-
-**Trash Check Interval:** set the interval in days for how often the trash
+`trash.entry.check.interval=1`: set the interval in days for how often the trash
 handler runs to delete trash entries that have been in the Recycle Bin longer
 than the maximum age (default is 1).
 
 <!-- Visit the `portal.properties` file at <link> to view all of the
 configurable properties for the Recycle Bin. -->
 
-<!-- TODO: After the properties converter is finished, it would be useful to
-insert a link here explaining where to find all the configurable properties (in
-portal.properties) for the Recycle Bin. At this time, there are four properties,
-two of which are configurable from within the portal. Therefore, I wrote
-summaries of the two properties that can only be implemented using the
-properties from portal.properties. -->
-
-<!-- Q/A: Q -- Is including properties from portal.properties appropriate for
-the User Guide? Do we even want to mention specific properties (like above),
-provide a link when the converter is available, both, or neither?
-
-		  A -- Absolutely, yes, and we want to provide links. The User Guide's
-audience is not just end users, but also system admins responsible for setting
-up a server. 
+<!-- TODO/UPDATE: After updating master and building from trunk, the properties
+have been modified and the portal and site settings in the configuration section
+are now different. I have left the properties and options the same, for now. It
+appears these options are still in progress and not 100% implemented. I will
+need to check periodically with the progress of these options/configurations.
 -->
 
 Next, you should make sure permissions are set properly for users who can
@@ -611,10 +580,6 @@ For a quick example to show how easy the Recycle Bin is to use, let's send a web
 content article to the Recycle Bin and then restore it. We'll run through two
 different methods of restoring the file.
 
-<!-- There are too many images in this section. One image per 500 words, please.
-I recommend removing recycle-bin-button.png and recycle-bin-portlet.png. 
--->
-
 1. Navigate to *Control Panel* &rarr; *Web Content*.
 
 2. Select the *Add* button and click *Basic Web Content*.
@@ -624,21 +589,17 @@ I recommend removing recycle-bin-button.png and recycle-bin-portlet.png.
 4. In the top right corner of the web content, select the arrow and click *Move
 to the Recycle Bin*.
 
-	![Figure 7.x: By clicking the top right arrow, you're given the option to send the content to the Recycle Bin.](../../images/recycle-bin-button.png)
-
 	Note that the *Delete* button is not listed. Liferay avoids the risk of
 	accidental deletion of your files by funneling the content through the
 	Recycle Bin.
 
 5. After deleting the file, a success message appears, offering an *Undo*
-   option.  Click *Undo*. The web content is retrieved from the Recycle Bin and
-   stored in its original place.
+option. Click *Undo*. The web content is retrieved from the Recycle Bin and
+stored in its original place.
 
 6. Select the *Move to the Recycle Bin* button again.
 
 7. Click the Recycle Bin button from the Control Panel menu.
-
-	![Figure 7.x: The Recycle Bin portlet is built into the Control Panel.](../../images/recycle-bin-portlet.png)
 
 8. Find your sample web content and click its *Actions* tab.
 
@@ -652,20 +613,6 @@ content was restored back to its original place.
 Congratulations! You now know the two general processes of sending and restoring
 content to/from the Recycle Bin. For other asset types, the Recycle Bin works
 similarly.
-
-<!-- Q/A: Q -- Is it beneficial to insert specific use cases for each asset
-(Russ had begun a nice list, which is listed below)? It seems to me that the
-location of the "Move to the Recycle Bin" button for each asset type is
-self-explanatory. I ran through an example for Web Content, which should give a
-basic idea of where this button is located. Also, although the list of supported
-assets is short now, this list will continue to grow, adding required
-maintenence on possibly 10-12 bullets. I'm leaning towards removing this
-section, but wanted to check before removing the text.
-
-		  A -- I agree with you. This is supposed to be a general overview of
-the Recycle Bin feature. We can tackle its use in the sections for those
-specific portlets, rather than here. For that reason, I've removed the section. 
--->
 
 Some Liferay applications, such as Web Content and Documents and Media, support
 folders into which their content can be organized. You can also send folders and
@@ -736,17 +683,22 @@ names.
 Have you thought about how the Recycle Bin works during the staging process?
 Although we stated earlier that there is only one master Recycle Bin, the
 staging process requires a bit more flexibility with the Recycle Bin to maximize
-its productivity. Therefore, there is a separate Recycle Bin for the staging
-process. Thus, when you enable staging, you're given a Staging Recycle Bin that
-only recycles and restores content when staging is enabled.
-
-<!-- The above is unclear. Do you mean it only recycles staged content, and
-there's a separate recycle bin for unstaged content? --> 
+its productivity. Therefore, when staging is enabled, there is a new and
+separate Recycle Bin: the *Staging* Recycle Bin. The original Recycle Bin, or
+*Live* Recycle Bin, holding unstaged material is still viewable while in
+staging; however, it is never used.
 
 ![Figure 7.x: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
 
-When you publish your staged material to live, the staged Recycle Bin content
-is transferred to the live Recycle Bin.
+During staging, everything you recycle is sent to the Staging Recycle Bin. This
+prevents staged and unstaged recycled content from mixing. Do you see why this
+would be a problem? Consider you have an unstaged document currently on your
+live site. Next, you enable staging and delete that document. If you were to
+turn staging off and return to the live site, without separate Recycle Bins, the
+live document would be located on your site and in the Recycle Bin! Because of
+this, the separate Staging Recycle Bin is necessary and only used during the
+staging process. Finally, when you publish your staged material to live, the
+Staging Recycle Bin content is transferred to the Live Recycle Bin.
 
 <!-- TODO: The Staging RB is still being produced and an accurate snapshot of
 options provided by the RB when publishing to Live aren't final. Need to
@@ -756,8 +708,8 @@ appears the same as in LPS-26266.) -->
 ---
 
  ![note](../../images/tip.png)**Note:** The Staging Recycle Bin saves its
- contents until the staged material has been published to live. This means that
- can turn staging mode on and off without losing your recycled material.
+contents until the staged material has been published to live. This means that
+you can turn the staging mode on and off without losing your recycled material.
 
 ---
 
