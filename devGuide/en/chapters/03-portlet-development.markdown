@@ -1,22 +1,21 @@
 
 # Portlet Development 
 
-In this chapter we will create and deploy a simple portlet using the Plugins
-SDK. It will allow a customized greeting to be saved in the portlet's
-preferences, and then display it whenever the portlet is viewed. Finally we will
-add a friendly URL mapping to the portlet to clean up its URLs.
+In this chapter we'll create and deploy a simple portlet using the Plugins SDK.
+It will allow a customized greeting to be saved in the portlet's preferences
+and then display it whenever the portlet is viewed. Last we'll clean up the
+portlet's URLs by adding a friendly URL mapping.
 
-In developing your own portlets, you are free to use any framework you prefer,
-such as Struts, Spring MVC, or JSF. For this portlet we will use the Liferay
-MVCPortlet framework as it is simple, lightweight, and easy to understand.
+You're free to use any framework you prefer to develop your portlets,
+including Struts, Spring MVC, or JSF. Here we'll use the Liferay
+MVCPortlet framework, because it's simple, lightweight, and easy to understand.
 
-Additionally, Liferay allows for the consuming of PHP and Ruby applications as
-portlets, so you do not need to be a Java developer in order to take advantage
-of Liferay's built-in features (such as user and organization management, page
-building and content management). You can use the Plugins SDK to deploy your PHP
-or Ruby application as a portlet, and it will run seamlessly inside of Liferay.
-There are plenty of examples of this; to see them, check out the directory
-*plugins/trunk* from Liferay's public Subversion repository.
+You don't have to be a Java developer to take advantage of Liferay's
+built-in features (such as user and organization management, page building and
+content management). An application developed using Ruby or PHP can be deployed
+as a portlet using the Plugins SDK, and it will run seamlessly inside of Liferay.
+For examples, check out the directory *plugins/trunk* from Liferay's public
+Subversion repository.
 
 We will discuss the following topics in this chapter:
 
@@ -38,15 +37,15 @@ First, let's create the portlet that we'll use throughout this chapter.
 
 ## Creating a Portlet 
 
-Creating portlets with the Plugins SDK is extremely simple. As noted before,
-there is a *portlets* folder inside of the Plugins SDK folder. This is where
-your portlet projects will reside. To create a new portlet, first decide what
-its name is going to be. You need both a project name (without spaces) and a
-display name (which can have spaces). When you have decided on your portlet's
-name, you are ready to create the project. For the greeting portlet, the project
-name is "my-greeting", and the portlet title is "My Greeting". There are several
-different ways to create this portlet. First, we will demonstrate by using
-Liferay Developer Studio.
+Portlet creation using the Plugins SDK is simple. There's a *portlets* folder
+inside of the Plugins SDK folder, where your portlet projects will reside. The
+first thing to do is give your portlet a project name (without spaces) and a
+display name (which can have spaces). For the greeting portlet, the project name
+is "my-greeting", and the portlet title is "My Greeting".
+
+Once you've named your portlet, you're ready to begin creating the project.There
+are several different ways to create this portlet. First, we will demonstrate by
+using Liferay Developer Studio.
 
 ***In Developer Studio:*** Go to File &rarr; New &rarr; Liferay Project
 
