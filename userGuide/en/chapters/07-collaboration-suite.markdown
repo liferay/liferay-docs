@@ -35,12 +35,15 @@ we get into the nitty gritty of the applications themselves, it's best to cover
 these common features first, starting with the look and feel configuration
 options.
 
+<!-- TODO: May need to move recycle bin reference above if the section is
+moved. -Cody -->
+
 ### Look and Feel  
 
 An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the wrench icon at the top right corner of the portlet
 and selecting *Look and Feel*. The location of the wrench icon and other
-portlet icons (minimixe, maximize, and remove) may vary, depending on your
+portlet icons (minimize, maximize, and remove) may vary, depending on your
 theme. Liferay portlets' look and feel dialog boxes contain seven tabs:
 
 - Portlet Configuration
@@ -59,16 +62,16 @@ button to discard them.
 On the Portlet Configuration tab, you can check the *Use Custom Title* box to
 rename your portlet's title. The value you enter in the Portlet Title box will
 be displayed at the top of the portlet window on the page. You can also select
-a language from the Portlet Title dropdown menu. If you've provided a language
+a language from the Portlet Title drop-down menu. If you've provided a language
 key translation for the language you select, the your portlet's title will be
 displayed in the selected language.
 
-![Figure 7.1: The Porlet Configuration tab of the Look and Feel Box allows you
-to define a custom portlet title, link porlet URLs to a specific page, and
+![Figure 7.1: The Portlet Configuration tab of the Look and Feel Box allows you
+to define a custom portlet title, link portlet URLs to a specific page, and
 select whether or not portlet borders should be
 displayed.](../../images/look-and-feel-portlet-configuration.png)
 
-If you select a page in the *Link Portlet URLs to Page* dropdown menu, all
+If you select a page in the *Link Portlet URLs to Page* drop-down menu, all
 portlet URLs will point to the page you selected. The current page is the
 default. Note that you can use the Asset Publisher's View in a Specific Portlet
 feature and web content articles' Display Page attribute to achieve a more
@@ -165,7 +168,7 @@ many of Liferay's collaborative applications, such as the Blogs, Wiki, and
 Message Boards portlets. To export or import portlet data, right-click on the
 wrench icon of your portlet and select *Export/Import*. Exporting portlet data
 produces a `.lar` file that you can save and import into another portlet
-applicaton of the same type. To import portlet data, you must select a `.lar`
+application of the same type. To import portlet data, you must select a `.lar`
 file. Be careful not to confuse portlet-specific `.lar` files with
 site-specific `.lar` files. See the Backing up and Restoring Pages section of
 chapter 2 for a discussion of exporting and importing data across an entire
@@ -182,7 +185,7 @@ Preferences* box selects saved portlet configurations of specific users. The
 export. When you check the *Data* box, more options appear, allowing you to
 choose specific kinds of metadata to include and to select a data range. Check
 the *Permissions* box if you'd like to export your the permissions defined for
-your portlet. When you check this box, a subbox called *Permissions Assigned to
+your portlet. When you check this box, a sub-box called *Permissions Assigned to
 Roles* appears. If you wish, you can export your portlet's permissions but not
 the permissions assigned to roles. Finally, you can check the *Categories* box
 to include categories for export. When selected, all categories referenced by
@@ -192,7 +195,7 @@ portlet data will be exported or imported, keeping their hierarchy.
 information to use.](../../images/portlet-import.png)
 
 When you import portlet data, only the data types you select will be
-overwriten. If you'd like to import portlet data, you have to select a `.lar`
+overwritten. If you'd like to import portlet data, you have to select a `.lar`
 file. You can import any items that were included when your `.lar` file was
 created. Note that user preferences can only be successfully imported when the
 user UUIDs match. Additionally, you can import any archived setups into your
@@ -371,7 +374,7 @@ Box](../../images/liferay-collaboration-portlet-configuration-sharing.png)
 
 To share one of your portlets as a widget, open the *Configuration* dialog box
 from the portlet's title bar and select the *Sharing* tab. There are five
-subtabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and
+sub-tabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and
 Friends.
 
 #### Any Web Site  
@@ -437,84 +440,284 @@ for your blog or calendar if you wish to share them.
 Now that we've seen all the common options available in Liferay's portlet
 applications, we can move on to specific applications, starting with blogs.
 
-### Recycle Bin 
+<!-- TODO: Add transition-->
 
-#### Recycling Assets in Liferay  
+## Recycling Assets with the Recycle Bin
 
-Have you ever deleted a Liferay asset and regretted it? With Recycle Bin, the
-*Delete* option is replaced with the *Remove to Recycle Bin* option for certain
-content types. It works just like you think it does. Instead of permanently
-deleting your content, it's temporarily kept in the Recycle Bin. If you need
-recently recycled content, just restore it using the Recycle Bin feature.
+Have you ever had that life-altering experience where you deleted an important
+file and immediately regretted deleting it? The deed is usually followed by a
+palm to the forehead or a sick feeling. Good news! Liferay is here to turn that
+frown upside down with the *Recycle Bin* feature. With the Recycle Bin, the
+*Move to the Recycle Bin* action replaces *Delete* for certain asset types.
+Content is now temporarily stored in the Recycle Bin. This allows the content to
+be restored back to its original state. Recycled items can expire after a
+certain period of time, resulting in their permanent deletion. Before diving
+into how the Recycle Bin works, let's look at how to configure it.
 
-<!--To Do: Documents and Media Use Case Goes here. Maybe use the Wiki to give a
-robust example and include the special case of Wiki attachments--> 
+### Configuring the Recycle Bin
 
-#### Which Assets can I Recycle? 
+To begin using the Recycle Bin, you must enable it where you plan to use it. The
+Recycle Bin supports portal-wide scope or site-specific scope. For either
+scope, you can also set the expire time for recycled content, after which it is
+deleted. 
 
-You can recycle content from several portals:
- - *Documents and Media*
- - *Blogs*
- - *Wiki*
- - *Message Board*
+First, let's configure the Recycle Bin for portal-wide use. In the Control
+Panel, select *Global* from the Context Menu, and then click *Portal Settings*
+under the *Portal* heading. Next, click *Recycle Bin* in the portal settings
+menu under the *Configuration* heading. You'll notice a few configurable
+options: 
 
-<!---To do: Add content types to this list, and add exceptions to the common
-method for recycling and restoring assets, if there are additional
-exceptions/added complexity, such as with Wiki attachments -->
+**Enable Recycle Bin:** enable and disable settings for the Recycle Bin's portal
+scope.
 
-#### Restoring Content 
+- *Enabled by Default:* enables the Recycle Bin while allowing site
+administrators to disable it per site (default).
 
-To begin using the Recycle Bin feature, you'll need to ensure it's enabled for
-your site and set the duration for which you'd like to store recycled content
-before deletion. In the Control Panel, select the site from the Context Menu,
-and click *Site Settings* in the Content Menu. From here, click the *Recycle
-Bin* link in the site settings menu under the *Advanced* heading. You'll see two
-dropdown menus that let you:
+- *Disabled by Default:* disables the Recycle Bin while allowing site
+administrators to enable it per site.
 
- 1. Enable or Disable the Recycle Bin feature
- 2. Specify the number of days that files will be kept in the Recycle Bin 
+- *Disabled:* disables the Recycle Bin for all sites.
 
-By default, the feature is enabled, and the duration is set at 30 days.
+**Number of Days That Files Will Be Kept in the Recycle Bin:** customize the
+number of days a file is kept in the Recycle Bin until its deletion (default is
+30 days).
 
-Content can be moved to the Recycle Bin from the Portlet or the Control Panel.
-The process for recycling content while in a portal will be slightly different
-depending on the type of content you're recycling:
+![Figure 7.x: The Recycle Bin offers several configurable options for your portal.](../../images/recycle-bin-portal-settings.png)
 
- - *Blogs*: Click the *Move to the Recycle Bin* link under the blog post title.
- You have this option in the main Blogs portlet window and in any specific blog
- post's window.
- 
- - *Documents and Media*: Select the content you're recycling then choose *Move
- to the Recycle Bin* in the *Actions* dropdown menu. Alternatively, click a
- specific document or folder and recycle it by clicking the button *Move to the
- Reycle Bin* under the content's title. Folders
- 
- - *Message Board*: The *Actions* dropdown let's you move a Message Board post
- to the recycle bin. Additionally, the detail window for a specific Message
- Board post has a *Move to the Recycle Bin* link.
- 
- - *Wiki*: Click on the *Edit* link for a Wiki item. In the *Content* tab,
- scroll to the row of buttons near the bottom of the page and choose *Move to
- the Reycle Bin*. Your Wiki page and any attachments will be moved to the
- Recycle Bin. If you want to recycle only a Wiki's attachment, go to the
- *Attachments* tab and click the *Remove* link for the attachment you're
- recycling. Deleted Wiki attachments aren't kept in the Recycle Bin, so don't
- worry when you notice they aren't there. Simply navigate back to the
- *Attachments* tab of the ppropriate Wiki article and find the *Recently Removed
- Attachments* link to locate and restore the attachment.
- 
- <!---Discuss special case of recycling and restoring just the attachments from Wiki articles-->
- 
- <!---Document the ability to move content from the recycle bin using the Control Panel-->
- 
- <!---Document the restoration of content from the Recycle Bin and emptying the recycle bin-->
+Now let's explore the site-specific scoping of the Recycle Bin. In the Control
+Panel, select your site from the Context Menu, and then click *Site Settings*.
+Next, click *Recycle Bin* in the site settings menu under the *Advanced*
+heading. The options are nearly identical to the portal settings menu except for
+the *enabling* option.
 
-#### Benefiting from the Recycle Bin 
-<!---Does this really need its own heading?-->
+**Enable Recycle Bin:** enable and disable settings for the Recycle Bin's
+site-specific scope.
+
+- *Use Portal Settings (Currently: \<PORTAL_SETTINGS_CONFIGURATION\>:* uses the
+Recycle Bin's portal settings (default).
+
+- *Enabled:* enables the Recycle Bin for the specific site only.
+
+- *Disabled:* disables the Recycle Bin for the specific site only.
+
+![Figure 7.x: The Recycle Bin also offers configurable options for your specific site.](../../images/recycle-bin-site-settings.png)
+
+<!-- TODO/UPDATE: These options are now different after rebuilding Portal from
+trunk. It seems none of these settings are final and are still being modified.
+Need to check status periodically. -->
+
+When you've finished configuring your Recycle Bin settings, click *Save*.
+
+---
+
+ ![note](../../images/tip.png)**Note:** If you disable the Recycle Bin while
+ it's still holding recycled items, the recycled items reappear in the Recycle
+ Bin if it is re-enabled.
+
+---
+
+You can also configure the Recycle Bin via properties in the `portal.properties`
+file. Remember that it's a best practice not to edit the `portal.properties`
+directly, but to create a separate `portal-ext.properties` file containing the
+properties to override. There are some additional options not available in the
+GUI that you can set:
+
+`trash.search.limit=500`: set the limit for results used when performing
+searches in the Recycle Bin (default is 500).
+
+`trash.entry.check.interval=1`: set the interval in days for how often the trash
+handler runs to delete trash entries that have been in the Recycle Bin longer
+than the maximum age (default is 1).
+
+<!-- Visit the `portal.properties` file at <link> to view all of the
+configurable properties for the Recycle Bin. -->
+
+<!-- TODO/UPDATE: After updating master and building from trunk, the properties
+have been modified and the portal and site settings in the configuration section
+are now different. I have left the properties and options the same, for now. It
+appears these options are still in progress and not 100% implemented. I will
+need to check periodically with the progress of these options/configurations.
+-->
+
+Next, you should make sure permissions are set properly for users who can
+handle/view the assets in the Recycle Bin. Users who had *View* permissions on
+a document when it was recycled can also view that document in the Recycle
+Bin. Users who had *Update* or *Delete* permissions on a document when it was
+recycled can restore the document. 
+
+Now that you've successfully configured the Recycle Bin, let's look at how to
+use it.
+
+### Using the Recycle Bin
+
+The Recycle Bin is temporary storage configured for multiple asset types across
+the portal. Instead of offering a specific Recycle Bin for each asset type,
+Liferay provides a central master Recycle Bin where different asset types can be
+stored. This provides an easy search and recovery process.
+
+![Figure 7.x: The Recycle Bin provides a seamless administration experience for deleting and removing content.](../../images/recycle-bin-overview.png)
+
+You can recycle several different types of assets, including:
+
+- Blogs
+- Bookmarks
+- Documents and Media
+- Message Boards
+- Web Content
+- Wiki
+
+<!-- TODO: Planned for RB compatibility - Calendar (LPS-28161), Attachments (for
+wiki and MB) (LPS-28165), Pages (LPS-29964), Structures (LPS-29970), Templates
+(LPS-29970). -->
+
+<!-- NOTE: The wiki/MB attachments can currently be recycled, but the recycle
+button is currently listed as *Remove*. The attachment does not get sent to the
+Recycle Bin, but can be restored from within the Wiki/MB portlet. I assume this
+gets changed to the consistent *Move to the Recycle Bin* expression and sent to
+the Recycle Bin when the attachments feature is fully supported. -->
+
+For a quick example to show how easy the Recycle Bin is to use, let's send a web
+content article to the Recycle Bin and then restore it. We'll run through two
+different methods of restoring the file.
+
+1. Navigate to *Control Panel* &rarr; *Web Content*.
+
+2. Select the *Add* button and click *Basic Web Content*.
+
+3. Enter some text for the Title and Content and click *Publish*.
+
+4. In the top right corner of the web content, select the arrow and click *Move
+to the Recycle Bin*.
+
+	Note that the *Delete* button is not listed. Liferay avoids the risk of
+	accidental deletion of your files by funneling the content through the
+	Recycle Bin.
+
+5. After deleting the file, a success message appears, offering an *Undo*
+option. Click *Undo*. The web content is retrieved from the Recycle Bin and
+stored in its original place.
+
+6. Select the *Move to the Recycle Bin* button again.
+
+7. Click the Recycle Bin button from the Control Panel menu.
+
+8. Find your sample web content and click its *Actions* tab.
+
+9. You can restore or delete the content. Select *Restore*.
+
+	![Figure 7.x: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
+
+10. Navigate back to the Web Content screen and notice that your sample web
+content was restored back to its original place.
+
+Congratulations! You now know the two general processes of sending and restoring
+content to/from the Recycle Bin. For other asset types, the Recycle Bin works
+similarly.
+
+Some Liferay applications, such as Web Content and Documents and Media, support
+folders into which their content can be organized. You can also send folders and
+sub-folders to the Recycle Bin. Keep in mind that this sends the entire
+folder/sub-folder structure and all files to the Recycle Bin. Folders and
+sub-folders are restored and deleted the same way as a single file. Also,
+expired web content can be moved to the Recycle Bin and restored, just like a
+regular file.
+
+In step 9 of the example, you probably noticed the *Delete* button from within
+the Recycle Bin. This is the permanent delete button. Once you select this, your
+file cannot be retrieved and is gone forever. There is also an *Empty the
+Recycle Bin* button located at the top of the Recycle Bin screen. This
+permanently deletes all the files from the Recycle Bin. Next, let's discuss how
+to use the drag and drop feature.
+
+#### Drag and Drop
+
+A quick and easy way to dispose of your unwanted assets is to drag and drop them
+into the Recycle Bin. While you're in the Control Panel, you can simply select
+an asset and drag it to the Recycle Bin portlet located on the Control Panel
+menu. When you click and begin dragging the asset, a message appears near your
+cursor notifying you of the amount of files ready to be moved, and the
+Recycle Bin is highlighted, showing you where the files can be dropped. After
+you drop the asset onto the Recycle Bin portlet, the asset is removed from its
+original location and transferred to the Recycle Bin.
+
+![Figure 7.x: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
+
+Next, let's explore the Recycle Bin's intelligence and behind the scenes support
+that aids in a seamless recycling experience.
+
+#### Recycle Bin intelligence and support
+
+Have you ever wondered if it's possible to check the IQ of a software feature?
+Unfortunately, there is no tangible way to do this; however, if there were, the
+Liferay Recycle Bin would be at the top of its class. As we've mentioned
+already, it supports multiple asset types, a drag and drop feature, an Undo
+option, and many more. Have you ever wondered what happens to file shortcuts if
+their linked assets are recycled? What if you restore a file that has the same
+name as another file currently stored in your site/portal? The Recycle Bin
+already knows how to handle these types of issues for a seamless user
+experience.
+
+When documents with shortcuts are moved to the Recycle Bin, the shortcuts are
+invalidated. This ensures your portal has active links and shortcuts at all
+times. This cuts down on maintenance time and backtracking after recycling an
+important asset.
+
+Another important trait is the duplicate name recognition feature. When a file
+is restored, the Recycle Bin scans the corresponding asset type files currently
+in the site/portal to check for duplicate file names. If a duplicate file name
+is found, the Recycle Bin prompts you to overwrite the existing file or rename
+the file name you're trying to restore. 
+
+For example, suppose you have the document `file1` stored in the Recycle Bin and
+you have a separate document you created later with the same name in the
+document library. If you try to restore the `file1` document, the Recycle Bin
+recognizes duplicate names and prompts you to overwrite the existing document
+in the document library or rename the document you're trying to restore.
+
+![Figure 7.x: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
+
+Although the Recycle Bin prohibits the restoration of files that match
+pre-existing file names in your site/portal, it will store files with matching
+names.
+
+Have you thought about how the Recycle Bin works during the staging process?
+Although we stated earlier that there is only one master Recycle Bin, the
+staging process requires a bit more flexibility with the Recycle Bin to maximize
+its productivity. Therefore, when staging is enabled, there is a new and
+separate Recycle Bin: the *Staging* Recycle Bin. The original Recycle Bin, or
+*Live* Recycle Bin, holding unstaged material is still viewable while in
+staging; however, it is never used.
+
+![Figure 7.x: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
+
+During staging, everything you recycle is sent to the Staging Recycle Bin. This
+prevents staged and unstaged recycled content from mixing. Do you see why this
+would be a problem? Consider you have an unstaged document currently on your
+live site. Next, you enable staging and delete that document. If you were to
+turn staging off and return to the live site, without separate Recycle Bins, the
+live document would be located on your site and in the Recycle Bin! Because of
+this, the separate Staging Recycle Bin is necessary and only used during the
+staging process. Finally, when you publish your staged material to live, the
+Staging Recycle Bin content is transferred to the Live Recycle Bin.
+
+<!-- TODO: The Staging RB is still being produced and an accurate snapshot of
+options provided by the RB when publishing to Live aren't final. Need to
+check-up on progress periodically. (Bug in LP build, need to test when snapshot
+appears the same as in LPS-26266.) -->
+
+---
+
+ ![note](../../images/tip.png)**Note:** The Staging Recycle Bin saves its
+contents until the staged material has been published to live. This means that
+you can turn the staging mode on and off without losing your recycled material.
+
+---
 
 The Recycle Bin saves you time by letting you restore content that's been
 recycled. Instead of recreating or re-uploading content, you'll be tailoring
 your Liferay portal to fully leverage its capabilities.
+
+<!-- TODO: Add transition -->
 
 ## Expressing yourself using Blogs  
 
@@ -780,7 +983,7 @@ close the dialog box. You'll notice the Blogs Aggregator looks very much like
 the Blogs portlet, except that the entries come from more than one author. This
 makes it nice and familiar for your users to navigate. 
 
-### The Blogs Admininistrator Portlet  
+### The Blogs Administrator Portlet  
 
 In the Control Panel there's a portlet for managing your site's blog entries.
 Most of the time, the Blogs portlet is the only tool you'll need to manage your
@@ -814,7 +1017,7 @@ at how to configure it.
 ### Configuring the Calendar Portlet  
 
 Open the *Configuration* dialog box from the menu in the portlet's title bar.
-The Setup tab allows you to configure three different options in subtabs:
+The Setup tab allows you to configure three different options in sub-tabs:
 *Email From*, *Event Reminder Email*, and *Display Settings*.
 
 **Email From:** set the *Name* and *Email Address* system generated emails come
@@ -935,7 +1138,7 @@ the CE and EE versions of the new Calendar portlet. -->
 
 Once you've added the new Calendar portlet to page, open its configuration
 dialog box by clicking on the wrench icon in the portlet's title bar and
-selecting *Configuration*. The Setup tab provides three subtabs of configurable
+selecting *Configuration*. The Setup tab provides three sub-tabs of configurable
 settings: *User Settings*, *Templates*, and *Email From*.
 
 ![Figure 7.23: The Setup &rarr; User Settings tab provides several new
@@ -1007,7 +1210,7 @@ calendar. As usual, you can enter a name and description for the calendar and
 configure its permissions. Also, you can specify a color for your calendar.
 Events created in the new calendar will default to the color you choose.
 
-![Figure 7.28: Click on *Actions* *rarr; *Edit* next to a calendar to customize
+![Figure 7.28: Click on *Actions* &rarr; *Edit* next to a calendar to customize
 its color and specify whether or not it's the default
 calendar.](../../images/new-calendar-edit-calendar.png)
 
@@ -1486,7 +1689,7 @@ administer a Message Boards portlet in only the organization or site which
 assigned the role to them.
 
 Go to the Control Panel and create this role. Once it is created, click
-*Actions &rarr; Define Permissions*. Click the *Add Permissions* dropdown list.
+*Actions &rarr; Define Permissions*. Click the *Add Permissions* drop-down list.
 Browse the list until you find the Message Boards portlet under the Site
 Content section and then click on it. You will then see a screen which allows
 you to configure the various permissions on the portlet.
@@ -1547,7 +1750,7 @@ into something else. In this case, you can split the thread where the
 discussion diverges and create a whole new thread for the new topic.
 Administrative users will see a *Split Thread* link on each post. To split the
 thread, click the link. You will be brought to a form which allows you to add
-an explanation post to the split thread. Click *Ok* to split the thread.
+an explanation post to the split thread. Click *OK* to split the thread.
 
 #### Editing Posts  
 
@@ -1930,7 +2133,7 @@ menu.
 
 The Polls Display portlet may look strange when it first appears on your page.
 That's because it's not configured. Before visitors to your site can use the
-poll, they must be able to access it. Click on the link labelled *Please
+poll, they must be able to access it. Click on the link labeled *Please
 configure this portlet to make it visible to all users*, and a dialog box like
 the one below appears.
 
@@ -1962,7 +2165,7 @@ expired.](../../images/polls-config-buttons.png)
 poll. 
 
 **Select Question:** Displays the same dialog box as Configuration, allowing
-you to choose different questions from the dropdown menu. 
+you to choose different questions from the drop-down menu. 
 
 **Add Question:** Allows you to create a new question. 
 
