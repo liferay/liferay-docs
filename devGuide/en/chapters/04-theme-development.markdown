@@ -497,3 +497,114 @@ so much already done for you, there won't be as much flexibility to build the
 desired design. It's a compromise between creating a theme as quickly as
 possible versus having full control of the result. It's your choice.
 
+## Resources Importer
+
+The resources importer application is a tool provided by Liferay that allows a
+theme developer to have files and web content automatically imported into a site
+template when a theme is deployed. Portal administrators can use the site
+template created by the resources importer to create an actual site that is
+designed to showcase the theme. This is a great way for theme developers to
+provide a sample context that optimizes the design of their theme. In fact, all
+standalone themes that are uploaded to Liferay Marketplace must use the
+resources importer. This ensures a uniform experience for Marketplace users: a
+user can download a theme from Marketplace, install it on their portal, go to
+Site Templates in the Control Panel and immediately see their new theme in an
+example site designed to showcase the theme's features. In this section, we
+discuss how you can use the resources importer for your own theme development.
+
+You can download the resources importer application from Liferay Marketplace.
+Search for either *Resources Importer CE* or Resources Importer EE*, depending
+on your Liferay Portal platform. Deploy the resources importer to your Liferay
+instance the same way you would deploy any other Liferay plugin.
+
+---
+
+ ![tip](../../images/tip-pen-paper.png)**Tip:** By default, as of Liferay 6.1,
+ theme plugins require the resources importer application to be installed, even
+ if the theme doesn't actually *use* the resources importer to import any
+ content. If you deploy a theme to your Liferay Portal instance and don't have
+ the resources importer already deployed, you'll see a message like this:
+ 
+	19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queueing test-theme for deploy because it is missing resources-importer-web
+
+---
+
+As of Liferay 6.1, when you create a new theme project using the Plugins SDK,
+two entries related the resources importer are added to your theme's
+`/docroot/WEB-INF/liferay-plugin-package.properties` file:
+
+	required-deployment-contexts=\
+	    resources-importer-web
+	
+	resources-importer-developer-mode-enabled=true
+
+The first entry, `required-deployment-contexts=resources-importer-web`, declares
+the dependency between your theme and the resources importer plugin. If you're
+not going to use the resources importer with your theme and you don't want to
+deploy the resources importer, you can remove this entry. The second entry,
+`resources-importer-developer-mode-enabled=true`, is a convenience feature for
+theme developers. This setting allows the site template associated with your
+theme's resource importer to be recreated without having to delete the sites
+that are using the site template. Without enabling this setting, a theme
+developer would have to manually delete the sites built using the resource
+importer's site template each time anything in the theme's
+`/WEB-INF/src/resources-importer` folder changed.
+
+All of the resources that a theme uses with the resource importer go in the
+`<theme-name>/WEB-INF/src/resources-importer` folder. A JSON file named
+`sitemap.json` in this folder describes the site pages, layouts, web content,
+and portlet configurations provided with the theme. This file describes the
+contents and hierarchy of the site and allows Liferay to import it as a site
+template. Even if you're not familiar with JSON, the `sitemap.json` file is easy
+to understand.  Let's examine a sample `sitemap.json` file:
+
+	{ "layoutTemplateId": "1_2_columns_i",
+		"layouts": [
+			{
+				"title": "Welcome",
+				"name": "Welcome",
+				"friendlyURL": "/welcome",
+				"layoutTemplateId": "1_2_columns_i",
+				"columns": [
+					[
+						"Welcome Banner.html"
+					],
+					[
+						{
+							"portletId": "101",
+							"portletPreferences": {
+								"anyAssetType": "false",
+								"classNameIds": "10009"
+							}
+						}
+					],
+					[
+						"Sending Stuff Into Space.html"
+					],
+					[
+						"Resize Browser.html"
+					]
+				]
+			}
+		]
+	}
+
+The first thing you have to declare in `sitemap.json` is a layout template ID so
+that your site template knows which layout template to use. You can find layout
+templates in your Liferay installation's `/layouttpl` folder. Next, you have to
+declare the layouts, or pages, that your site template should use. Note that
+pages are called *layouts* in Liferay's code. You can declare web content to be
+displayed on page simply by specifying an HTML file. You can declare portlets by
+specifying their portlet IDs which can be found in Liferay's
+`WEB-INF/portlet-custom.xml` file. You can also specify portlet preferences for
+each portlet.
+
+Once you've added your resources to the
+`<theme-name>/WEB-INF/src/resources-importer` folder and referenced these
+resources in `sitemap.json`, you're ready to deploy your theme. Optionally, you
+can add an archive.lar file to the `<theme-name>/WEB-INF/src/resources-importer`
+folder. When you deploy your theme, the resources importer will use your theme's
+resources to create the site template that you specified in `sitemap.json`,
+adding the contents of the `archive.lar` file, if found. You can log in to your
+portal as an administrator and create a new site using your site template to see
+your theme in action.
