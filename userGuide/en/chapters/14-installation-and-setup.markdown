@@ -732,9 +732,8 @@ successfully. If you still need to install your application server, please
 follow your vendor's instructions first.
 
 Since Liferay uses the UTF-8 character encoding, make sure that your application
-server has the Java -Dfile.encoding=UTF-8 parameter set before you proceed. This
-parameter is usually set in the JAVA_OPTS environment variable. Note that
-different application servers provide different means for setting this
+server has the Java -Dfile.encoding=UTF-8 parameter set before you proceed. Note
+that different application servers provide different means for setting this
 parameter. For example, in Tomcat this parameter goes in the setenv.sh or
 setenv.bat script. For other application servers, this parameter might go in a
 different script or might have to be set through an administration console.
