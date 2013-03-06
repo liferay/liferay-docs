@@ -693,12 +693,12 @@ staging; however, it is never used.
 During staging, everything you recycle is sent to the Staging Recycle Bin. This
 prevents staged and unstaged recycled content from mixing. Do you see why this
 would be a problem? Consider you have an unstaged document currently on your
-live site. Next, you enable staging and decide to delete that document. If you
-were to turn staging off and return to the live site, without separate Recycle
-Bins, the live document would be located on your site and in the Recycle Bin!
-Because of this, the separate Staging Recycle Bin is necessary and only used
-during the staging process. Finally, when you publish your staged material to
-live, the Staging Recycle Bin content is transferred to the Live Recycle Bin.
+live site. Next, you enable staging and delete that document. If you were to
+turn staging off and return to the live site, without separate Recycle Bins, the
+live document would be located on your site and in the Recycle Bin! Because of
+this, the separate Staging Recycle Bin is necessary and only used during the
+staging process. Finally, when you publish your staged material to live, the
+Staging Recycle Bin content is transferred to the Live Recycle Bin.
 
 <!-- TODO: The Staging RB is still being produced and an accurate snapshot of
 options provided by the RB when publishing to Live aren't final. Need to
