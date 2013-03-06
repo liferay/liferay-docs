@@ -295,7 +295,7 @@ get the sample data undeployed before setting up your server.
 If you're using Liferay EE, you don't have the sample site so you don't need to
 worry about this. The next step is to run through the setup wizard, which we'll
 cover below. 
-   
+
 As you can see, bundles are the easiest way to get started with Liferay. They
 come pre-configured with a running Liferay instance that can be used immediately
 to explore all of the things that Liferay can do. Bundles are the fastest way to
@@ -730,6 +730,13 @@ to set up Liferay manually.
 We also assume your application server is already installed and running
 successfully. If you still need to install your application server, please
 follow your vendor's instructions first.
+
+Since Liferay uses the UTF-8 character encoding, make sure that your application
+server has the Java -Dfile.encoding=UTF-8 parameter set before you proceed. Note
+that different application servers provide different means for setting this
+parameter. For example, in Tomcat this parameter goes in the setenv.sh or
+setenv.bat script. For other application servers, this parameter might go in a
+different script or might have to be set through an administration console.
 
 The following instructions assume an installation on a local machine. When
 installing to a remote server, substitute `localhost` with the host name or IP
