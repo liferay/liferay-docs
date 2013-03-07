@@ -36,6 +36,17 @@ site settings
 site URL
 site template
 page template
+public pages
+private pages
+portlet pages
+panel pages
+embedded pages
+URL pages
+link to page
+custom logo
+SEO
+Mobile Rule Groups
+Content Display Page
 
 Solr
 bundle

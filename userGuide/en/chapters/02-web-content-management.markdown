@@ -53,7 +53,6 @@ Once you get familiar with Liferay WCM you'll wonder how you ever got along
 without it.  
 
 ### What Features Does Liferay WCM Have? [](id=lp-6-1-ugen02-what-features-does-liferay-wcm-have-0)
-[](id=lp-6-1-ugen03-what-features-does-liferay-wcm-have-0)
 
 Liferay's WCM has a host of features the makes managing the content of your site
 easier.
@@ -241,7 +240,6 @@ Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works. 
 
 ##### Backing up and Restoring Pages [](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
-[](id=lp-6-1-ugen02-backing-up-and-restoring-pages-0)
 
 Next to the *Add Page* button in the Manage Site Pages screen are two buttons
 labeled *Export* and *Import*. The Export button exports the pages you create
@@ -598,7 +596,7 @@ You can manage the following kinds of content:
 - Software Catalog
 - Tags
 - Categories
-- Social Equity
+- Social Activity
 - Dynamic Data Lists
 
 For details about Liferay's social collaboration suite, see chapter 10. 
@@ -1066,7 +1064,6 @@ organization's approval process. For Nose-ster's implementation we'll use the
 *Single Approver* workflow which ships with the product.
 
 #### Defining Workflows for Web Content [](id=lp-6-1-ugen02-defining-workflows-for-web-content-0)
-[](id=lp-6-1-ugen03-defining-workflows-for-web-content-0)
 
 Let's set up Liferay's Workflow for the Nose-ster web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear
