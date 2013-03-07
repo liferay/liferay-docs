@@ -36,14 +36,14 @@ By default, these are `Joe Bloggs` and `test@liferay.com`. You can change them
 to whatever you want. This name and email address will appear in the From field
 in all email messages sent by the portal.
 
-![Figure 16.1: Automated Emails: Account Created Notification](../../images/server-configuration-account-created-notification.png)
+![Figure 17.1: Automated Emails: Account Created Notification](../../images/server-configuration-account-created-notification.png)
 
 The other four tabs are Account Created Notification, Email Verification
 Notification, Password Changed Notification and Password Reset Notification.
 These tabs allow you to customize the email messages that are sent to users each
 time any of those four events occur.
 
-![Figure 16.2: Definition of Terms for Automated Emails](../../images/server-configuration-definition-of-terms.png)
+![Figure 17.2: Definition of Terms for Automated Emails](../../images/server-configuration-definition-of-terms.png)
 
 A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
@@ -62,7 +62,7 @@ This section allows you to set the default portal language and the time zone.
 You can also set up a portal-wide logo which appears in the top left corners of
 portal pages. 
 
-![Figure 16.3: Server Configuration Miscellaneous Display
+![Figure 17.3: Server Configuration Miscellaneous Display
 Settings](../../images/server-configuration-miscellaneous-display-settings.png)
 
 Liferay's default theme is configured to display the portal logo. For custom
@@ -85,7 +85,7 @@ To add a custom field, click on the *Custom Fields* link in the control panel.
 Then choose a resource, click on the *Edit* link next to it and select *Add
 Custom Field*.
 
-![Figure 16.4: Custom Fields Resource
+![Figure 17.4: Custom Fields Resource
 List](../../images/server-configuration-custom-fields-resource-list.png)
 
 From here you will need to add the custom field key. The key appears as the
@@ -95,7 +95,7 @@ custom fields are integrated with the default fields on the form. Additionally,
 developers can access custom fields programatically through the
 `<liferay-ui:custom-attribute />` tag.
 
-![Figure 16.5: Custom Fields Integrated with the Rest of the Fields on the Wiki
+![Figure 17.5: Custom Fields Integrated with the Rest of the Fields on the Wiki
 Form](../../images/server-configuration-custom-fields-integrated.png)
 
 You can create fields of many different types: text fields (indexed or secret),

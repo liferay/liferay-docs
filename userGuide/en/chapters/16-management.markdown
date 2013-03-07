@@ -69,7 +69,7 @@ Organizations* page under the *Portal* category. Click the *Add* button and
 select *User*. Fill out the Add User form using your name and email address.
 When you are finished, click *Save*.
 
-![Figure 15.1: The Add User Screen](../../images/01-add-user-screen.png)
+![Figure 16.1: The Add User Screen](../../images/01-add-user-screen.png)
 
 After you submit the form, the page reloads with a message saying the save was
 successful. An expanded form appears that allows you to fill out a lot more
@@ -79,7 +79,7 @@ generated and, if Liferay was correctly installed (see chapter 14), an email
 message with the password in it was sent to the user. This, of course, requires
 that Liferay can properly communicate with your SMTP mail server.
 
-![Figure 15.2: Liferay's User Account
+![Figure 16.2: Liferay's User Account
 Editor](../../images/01-user-account-editor.png)
 
 If you haven't yet set up your mail server, you'll need to use this page to
@@ -195,7 +195,7 @@ organization. To attach a site when you create an organization, click the
 don't know right now if your organization needs a web site, that's fine. You can
 always add one later if the need arises. 
 
-![Figure 15.3: Adding an
+![Figure 16.3: Adding an
 organization](../../images/01-add-organization-screen.png)
 
 **Name:** Enter a name for the organization.
@@ -293,7 +293,7 @@ Groups* link and then click the *Add* button. There are only two fields to fill
 out: Name and Description. Click *Save* and you will be redirected back to the
 *User Groups* page of the control panel.
 
-![Figure 15.4: Creating a New User
+![Figure 16.4: Creating a New User
 Group](../../images/server-configuration-new-user-group.png)
 
 Note in the figure above how each user group may have a site, with public and
@@ -308,7 +308,7 @@ certain areas as customizable, just like they can for regular sites. This allows
 users to decide which applications they want to place in certain areas of each
 page, as well as change their configuration.
 
-![Figure 15.5: User Group Actions](../../images/01-editing-a-user-group.png)
+![Figure 16.5: User Group Actions](../../images/01-editing-a-user-group.png)
 
 As with the other resources in the portal, you can click the *Actions* button
 next to a user group to perform various operations on that group.
@@ -365,7 +365,7 @@ Then navigate to the User Groups page of the control panel and click *Actions*
 &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to
 see a list of users that can be assigned to the group.
 
-![Figure 15.6: Assigning Members to a User
+![Figure 16.6: Assigning Members to a User
 Group](../../images/01-adding-members-to-user-group.png)
 
 From that list, one or more users can be assigned as members of the user group.
@@ -478,7 +478,7 @@ down menu for the user group's public pages and click *Save*. After the page
 reloads you can click to see the pages and make any changes desired, add
 additional pages, etc.
 
-![Figure 15.7: Selecting a Template for the User Group
+![Figure 16.7: Selecting a Template for the User Group
 Site](../../images/user-group-site-template-selected.png)
 
 Also, try visiting the public site of one of the users who belongs to the user
@@ -507,7 +507,7 @@ title, the title will be displayed in the list of roles on the Roles page of the
 control panel. If you do not enter a title, the name will be displayed. When you
 have finished, click *Save*.
 
-![Figure 15.8: Roles Page and Role Actions
+![Figure 16.8: Roles Page and Role Actions
 Menu](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what
@@ -538,7 +538,7 @@ Roles serve as repositories of permissions to be assigned to users who belong to
 them. So, to use a role, you need to assign members to it and define the
 permissions you want to grant to members of the role.
 
-![Figure 15.9: Defining Permissions on a
+![Figure 16.9: Defining Permissions on a
 Role](../../images/01-defining-permissions-on-a-role.png)
 
 When you click the *Actions* button on portal-scoped role and select *Define
@@ -571,7 +571,7 @@ control panel. Some control panel portlets have a Configuration button, so you
 can define who gets to see that, as well as who gets to see an application in
 the control panel.
 
-![Figure 15.10: Message Board Content
+![Figure 16.10: Message Board Content
 Permissions](../../images/01-message-board-content-permissions.png)
 
 Each possible action to which permissions can be granted is listed. To grant a
@@ -604,7 +604,7 @@ menu and select *User Groups* under the *Control Panel: Portal* heading and
 check the *Access in Control Panel* and *View* permissions so that user group
 managers can manage user groups from the Control Panel.
 
-![Figure 15.11: Make sure to test the permissions you grant to custom
+![Figure 16.11: Make sure to test the permissions you grant to custom
 roles.](../../images/user-group-manager-role.png)
 
 You might expect that these permissions would be enough to allow users assigned
@@ -618,7 +618,7 @@ user groups, they don't have permission to view users at the portal level. This
 means that if they click *Assign Members* for a user group and click on the
 *Available* tab, they'll see an empty list.
 
-![Figure 15.12: Users assigned to the User Group Manager role can't find any
+![Figure 16.12: Users assigned to the User Group Manager role can't find any
 users to add!](../../images/no-users-found.png)
 
 To fix this, click *Go To* &rarr; *Control Panel*. Click on *Roles* and then
@@ -773,7 +773,7 @@ newsletters. Any domain names associated with your organization can go here.
 notifications for certain events, such as user registrations, password changes,
 etc. You can customize those messages here.
 
-![Figure 15.13: Portal Settings
+![Figure 16.13: Portal Settings
 Pages](../../images/server-configuration-portal-settings-pages.png)
 
 Let's discuss these settings next.
@@ -1045,7 +1045,7 @@ You can also add your own mappings if you wish.
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
 and match them with their mappings as a preview.
 
-![Figure 15.14: Testing LDAP
+![Figure 16.14: Testing LDAP
 Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay.
@@ -1083,7 +1083,7 @@ location.
 classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
 view the Object Class attributes stored in LDAP for that group.
 
-![Figure 15.15: Mapping LDAP
+![Figure 16.15: Mapping LDAP
 Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From

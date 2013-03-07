@@ -96,7 +96,7 @@ Let's look in detail at how you'd create a workflow using a single approver.
 Below is a diagram of a single approver workflow definition. It has only two
 tasks and two states.  
 
-![Figure 10.1: The default single approver workflow. Arrows represent
+![Figure 11.1: The default single approver workflow. Arrows represent
 transitions and boxes represent states and
 tasks.](../../images/kaleo-workflow-single-approver.png)
 
@@ -360,7 +360,7 @@ This way, you're not waiting for one manager's approval before you can send the
 notification to the other manager. The below illustration shows how a workflow
 with a fork and a join might be designed. 
 
-<!-- | TODO - I deleted the original one... --> ![Figure 10.2: Parallel Approval
+<!-- | TODO - I deleted the original one... --> ![Figure 11.2: Parallel Approval
 Design](../../images/kaleo-workflow-parallel-approval.png)
 
 You can transition to a fork from a task or state. From the fork, you can
@@ -546,7 +546,7 @@ them.
 Most of your workflow configuration is done via the control panel. Everything
 you need to do in the portal can be done through simple GUI controls.
 
-![Figure 10.3: Adding a Workflow
+![Figure 11.3: Adding a Workflow
 Definition](../../images/kaleo-workflow-new-definition-control-panel.png)
 
 You can find the Workflow section under the Portal heading in the control panel.
@@ -575,7 +575,7 @@ After you have uploaded workflow definitions and set the default workflow
 behavior you can go up to *Workflow Configuration* and tweak the definitions
 you're using for each site individually.
 
-![Figure 10.4: The Workflow Configuration
+![Figure 11.4: The Workflow Configuration
 Page](../../images/kaleo-workflow-configuration.png)
 
 Using the context selector drop-down menu in the control panel, you can select
@@ -590,7 +590,7 @@ in your personal section of the control panel. Here are specific tasks which
 have been assigned to you or assigned to a role of which you are a member. You
 can also view your completed tasks.
 
-![Figure 10.5: My Workflow Tasks Page](../../images/kaleo-workflow-my-tasks.png)
+![Figure 11.5: My Workflow Tasks Page](../../images/kaleo-workflow-my-tasks.png)
 
 It's here workflow users review and approve content. By clicking on the actions
 next to a piece of content, a user can view the content, then choose to approve
@@ -603,7 +603,7 @@ panel. From this screen you can view any assets  you have submitted to review.
 Those currently under review are listed under the *Pending* tab and those that
 have been reviewed are listed under the *Completed* tab.
 
-![Figure 10.6: The My Submissions
+![Figure 11.6: The My Submissions
 Page](../../images/kaleo-workflow-my-submissions.png)
 
 Besides viewing your work, you can also withdraw a submission from the review
@@ -615,7 +615,7 @@ Before workflow can be used, you must define which types of assets on the portal
 are workflow-enabled. If you have created additional definitions, you must also
 choose the workflow definition to use for each asset that is workflow-enabled.
 
-![Figure 10.7: You can select which site to work on by using the drop-down menu
+![Figure 11.7: You can select which site to work on by using the drop-down menu
 in the Content section of the control
 panel.](../../images/kaleo-workflow-control-panel-context-selector.png)
 
@@ -631,7 +631,7 @@ for Publication*. This triggers the workflow process and notifies the Content
 Reviewer. When the Content Reviewer logs in, he or she can assign the workflow
 task to him- or herself and approve the content.
 
-![Figure 10.8: Before a Content Reviewer can approve content, he must assign it
+![Figure 11.8: Before a Content Reviewer can approve content, he must assign it
 to himself or have an administrator assign it to
 him.](../../images/kaleo-workflow-assign-to-me.png)
 
@@ -660,7 +660,7 @@ add the Documents and Media portlet to this page. Then click *Add* &rarr;
 My Documents folder, click on the gray icon that appears at the top right corner
 of the folder, and select *Edit*.
 
-![Figure 10.9: Workflow for Documents and Media must be enabled at the folder
+![Figure 11.9: Workflow for Documents and Media must be enabled at the folder
 level. Edit a folder to select a workflow.](../../images/folder-edit.png)
 
 By default, the *Use document type restrictions and workflow of the parent
@@ -672,7 +672,7 @@ Types* drop-down menu appears. By default, you can select *No workflow* or
 drop-down menu. You can add custom workflows through the Workflow page in the
 Portal section of the Control Panel.
 
-![Figure 10.10: You can use the document type restrictions and workflow of the
+![Figure 11.10: You can use the document type restrictions and workflow of the
 parent folder or you can define specific document type restrictions and workflow
 for this folder.](../../images/folder-workflow.png)
 
@@ -701,7 +701,7 @@ globally, or for a specific site. Once you've chosen a scope, click on *Workflow
 Configuration* in the content section of the Control Panel. This page lists the
 portal resources for which you can select a workflow.
 
-![Figure 10.11: The Workflow Configuration page of the Control Panel lists the
+![Figure 11.11: The Workflow Configuration page of the Control Panel lists the
 resources for which can select a workflow for your chosen
 scope.](../../images/workflow-configuration.png)
 

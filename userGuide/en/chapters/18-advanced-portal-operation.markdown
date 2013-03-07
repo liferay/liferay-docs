@@ -115,7 +115,7 @@ Now that you're capturing audit events, it's easy to use them to view activities
 in your portal. Navigate to the control panel and you'll find a new entry in the
 *Portal* section labeled *Audit Reports* (see figure 17.1). 
 
-![Figure 17.1: Once the Audit Reports plugins are installed, an entry appears in
+![Figure 18.1: Once the Audit Reports plugins are installed, an entry appears in
 the control panel.](../../images/control-panel-audit-reports.png)
 
 Clicking the entry shows you a list of the events Liferay has already captured
@@ -123,14 +123,14 @@ Clicking the entry shows you a list of the events Liferay has already captured
 browse the list if you want, but it's likely you'll need to use the search to
 find what you're looking for. 
 
-![Figure 17.2: Liferay captures and stores events as soon as the audit plugins
+![Figure 18.2: Liferay captures and stores events as soon as the audit plugins
 are installed.](../../images/audit-list-events.png)
 
 Figure 17.2 shows Stephen Professor logged in and did some things on the site.
 To see the detail of any of these events, all you need to do is click one to see
 more information. You'll then see something like figure 17.3. 
 
-![Figure 17.3: Clicking an event in the list shows the details of that event.
+![Figure 18.3: Clicking an event in the list shows the details of that event.
 This event shows it must've been Stephen Professor's first time logging into the
 site, because he's accepting the terms of use.](../../images/audit-detail.png)
 
@@ -197,7 +197,7 @@ unassigned a user from a particular role, you might search for a resource name
 of *user* and a resource action of *unassign*. The results of such a search
 might look something like figure 17.4. 
 
-![Figure 17.4: Searching audit events is easy with the search form provided by
+![Figure 18.4: Searching audit events is easy with the search form provided by
 the audit portlet. You can quickly drill down to find the types of events you're
 looking for.](../../images/audit-unassign-search.png)
 
@@ -206,7 +206,7 @@ returned to see the detail page for that record. Figure 17.5 shows, in this
 particular case, the default administrative user removed Stephen Professor from
 the role of Power User. 
 
-![Figure 17.5: If you've delegated portal administration to multiple users, you
+![Figure 18.5: If you've delegated portal administration to multiple users, you
 can use the audit plugins to determine who made what change. And, of course,
 you'll never leave the default administrative user enabled in a production
 system, right?](../../images/audit-unassign-detail.png)
@@ -283,7 +283,7 @@ To enable Google Analytics support, go to *Site Settings* in the control panel,
 and then select *Analytics* on the right. You'll see a very simple form,
 pictured below. 
 
-![Figure 17.6: Setting up Google Analytics for your site is very easy: sign up
+![Figure 18.6: Setting up Google Analytics for your site is very easy: sign up
 for the ID and then enter it into this field.
 ](../../images/maintaining-google-analytics.png)
 
@@ -408,7 +408,7 @@ place higher up in the hierarchy and select the package name instead of an
 individual class name. If you do this, messages for every class lower in the
 hierarchy will be displayed in your application server's log file.
 
-![Figure 17.7: Log levels can be dynamically changed at runtime, whenever you
+![Figure 18.7: Log levels can be dynamically changed at runtime, whenever you
 need to debug an issue. ](../../images/maintaining-log-levels.png) 
 
 Be careful when you do this. If you set the log level to DEBUG somewhere near
@@ -434,7 +434,7 @@ the various logging levels:
 To enable your logging messages to appear in your server's log file via the
 control panel, click the *Add Category* tab on the same *Log Levels* page.
 
-![Figure 17.8: Adding your own logging classes is as simple as specifying it in
+![Figure 18.8: Adding your own logging classes is as simple as specifying it in
 this field.](../../images/maintaining-add-log-category.png) 
 
 You'll see you can add a logging category. Put in the fully qualified name of
@@ -721,7 +721,7 @@ Administration* and select *Data Migration* from the menu along the top of the
 screen. A section entitled *Legacy Permissions Migration* appears at the
 bottom of the page.
 
-![Figure 17.9: Update your permissions algorithm by clicking the *Execute*
+![Figure 18.9: Update your permissions algorithm by clicking the *Execute*
 button.](../../images/17-convert-permissions-algorithm.png)
 
 Algorithms 5 and 6 do not support adding permissions at the user level. If you
