@@ -22,8 +22,7 @@ how to set up and administer:
 -   Chat
 -   Mail
 
-We'll discuss how these features work together to facilitate information flow
-within your portal and provide an enhanced experience for your users.
+Let's jump right in and begin by exploring Blogs.
 
 ## Expressing yourself using Blogs  
 
@@ -1690,15 +1689,11 @@ collaboration features that Liferay provides.
 
 ## Summary  
 
-We have explored many of the portlets in Liferay's collaboration suite. You
-have seen how you can configure all of the portlets in a similar fashion using
-a unified user interface. After this, we went over all of the portlets in
-succession.
-
-The Blogs and Blogs Aggregation portlets can be used to manage shared blogs or
-blogs belonging to a group of people at once. These portlets have all the
-features you would want in a blog, including rich text editing, links to news
-aggregators, tags, RSS feeds, and more.
+We have explored many of the portlets in Liferay's collaboration suite. The
+Blogs and Blogs Aggregation portlets can be used to manage shared blogs or blogs
+belonging to a group of people at once. These portlets have all the features you
+would want in a blog, including rich text editing, links to news aggregators,
+tags, RSS feeds, and more.
 
 The Calendar portlet likewise can be used to manage a shared calendar or a
 group calendar. It includes features for events, event notification, repeatable

@@ -1,18 +1,16 @@
 
-## Understanding Liferay's common configuration options  
+# Configuring Liferay Applications 
 
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include
 look and feel, communication, scoping, sharing, permissions, archive
-configurations, exporting/importing portlet data, and the recycle bin. So before
-we get into the nitty gritty of the applications themselves, it's best to cover
-these common features first, starting with the look and feel configuration
-options.
+configurations, exporting/importing portlet data, and the Recycle Bin. We'll
+discuss how these features work together to facilitate information flow within
+your portal and provide an enhanced experience for your users. So before we get
+into the nitty gritty of the applications themselves, it's best to cover these
+common features first, starting with the look and feel configuration options.
 
-<!-- TODO: May need to move recycle bin reference above if the section is
-moved. -Cody -->
-
-### Look and Feel  
+## Look and Feel  
 
 An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the wrench icon at the top right corner of the portlet
@@ -40,7 +38,7 @@ a language from the Portlet Title drop-down menu. If you've provided a language
 key translation for the language you select, the your portlet's title will be
 displayed in the selected language.
 
-![Figure 8.1: The Portlet Configuration tab of the Look and Feel Box allows you
+![Figure 4.1: The Portlet Configuration tab of the Look and Feel Box allows you
 to define a custom portlet title, link portlet URLs to a specific page, and
 select whether or not portlet borders should be
 displayed.](../../images/look-and-feel-portlet-configuration.png)
@@ -68,7 +66,7 @@ alignment to left, center, right, or justified. (Justified text is both left
 and right aligned.) You can set an underline, overline, or strikethrough as the
 text decoration. The default text decoration is none.
 
-![Figure 8.2: The Text Styles tab lets you configure the format of the text
+![Figure 4.2: The Text Styles tab lets you configure the format of the text
 that appears in the portlet.](../../images/look-and-feel-text-styles.png)
 
 You can set the word spacing anywhere from -1 em to 0.95 em, with 0.5 em
@@ -81,14 +79,14 @@ The Background Styles tab allows you to specify the portlet's background color.
 You can enter any six digit hex color code or you click on the pencil icon to
 use the color palette.
 
-![Figure 8.3: The Background Styles tab lets you specify the portlet's
+![Figure 4.3: The Background Styles tab lets you specify the portlet's
 background color.](../../images/look-and-feel-background-styles.png)
 
 On the Border Styles tab, you can configure your portlet's border width, border
 style, and border color. For each of these attributes, leave the *Same for All*
 box checked to apply the same settings to top, right, bottom, and left borders. 
 
-![Figure 8.4: The Border Styles tab lets you specify a border width, style, and
+![Figure 4.4: The Border Styles tab lets you specify a border width, style, and
 color for each side of the
 portlet.](../../images/look-and-feel-border-styles.png)
 
@@ -103,7 +101,7 @@ the edges of your portlet. Just like for border styles, leave the *Same for
 All* box checked to apply the same settings to each side (top, right, bottom,
 and left) of the portlet.
 
-![Figure 8.5: The Margin and Padding tab allows you to specify margin and
+![Figure 4.5: The Margin and Padding tab allows you to specify margin and
 paddings lengths for the sides of your
 portlet.](../../images/look-and-feel-margin-and-padding.png)
 
@@ -113,7 +111,7 @@ value.
 The Advanced Styling tab displays current information about your portlet,
 including your portlet's Liferay ID and CSS classes.
 
-![Figure 8.6: The Advanced Styling tab displays your portlet's Liferay ID and
+![Figure 4.6: The Advanced Styling tab displays your portlet's Liferay ID and
 allows you to enter CSS code to customize the look and feel of your
 portlet.](../../images/look-and-feel-advanced-styling.png)
 
@@ -129,13 +127,13 @@ displayed when mobile devices using the Wireless Application Protocol make page
 requests. You can also set the initial window state to normal or minimized.
 Normal is the default.
 
-![Figure 8.7: The WAP Styling tab lets you enter a custom portlet title to be
+![Figure 4.7: The WAP Styling tab lets you enter a custom portlet title to be
 displayed to devices making page requests via WAP; it also allows you to
 specify an initial window state.](../../images/look-and-feel-wap-styling.png)
 
 Next, let's discuss exporting and importing portlet data.
 
-### Export/Import  
+## Export/Import  
 
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
@@ -148,7 +146,7 @@ site-specific `.lar` files. See the Backing up and Restoring Pages section of
 chapter 2 for a discussion of exporting and importing data across an entire
 site.
 
-![Figure 8.8: When exporting portlet data, you can choose which categories of
+![Figure 4.8: When exporting portlet data, you can choose which categories of
 information to include.](../../images/portlet-export.png)
 
 Each portlet has different configuration options. Checking the *Setup* box
@@ -165,7 +163,7 @@ the permissions assigned to roles. Finally, you can check the *Categories* box
 to include categories for export. When selected, all categories referenced by
 portlet data will be exported or imported, keeping their hierarchy.
 
-![Figure 8.9: When importing portlet data, you can choose which categories of
+![Figure 4.9: When importing portlet data, you can choose which categories of
 information to use.](../../images/portlet-import.png)
 
 When you import portlet data, only the data types you select will be
@@ -181,7 +179,7 @@ portlets on others pages may be referencing this data.
 
 Next, let's discuss the concept of a portlet's scope.
 
-### Scope  
+## Scope  
 
 As we learned earlier, roles can be scoped by the portal, by a site, or by an
 organization. A role only takes effect within its scope. For example, a Message
@@ -233,7 +231,7 @@ configure the scope of a portlet with just a few simple steps.
 
 5.  Click *Save*.
 
-![Figure 8.10: Changing the scope of a
+![Figure 4.10: Changing the scope of a
 portlet](../../images/05-changing-portlet-scope.png)
 
 That's all it takes to change the scope for a particular portlet instance. By
@@ -242,7 +240,7 @@ site as you want, provided they are all added to separate pages.
 
 Another useful feature of Liferay's portlets is Archived Setups.  
 
-### Archived Setups  
+## Archived Setups  
 
 Once you've configured a portlet, Archived Setups enables you to save those
 settings in an "archive". If someone goes in and changes the settings of a
@@ -267,7 +265,7 @@ configuration options, such as the Message Boards portlet.
 
 Next, we'll see how permissions apply to Liferay portlets in general. 
 
-### Permissions  
+## Permissions  
 
 All of Liferay's portlets support Liferay's robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab
@@ -285,7 +283,7 @@ blogs portlet. We'll go over permissions for specific applications in the
 sections for those applications. For now, let's move on to sharing
 applications.
 
-### Communication  
+## Communication  
 
 Liferay implements several communication mechanisms across portlets including
 those specified by the JSR-286 standard: public render parameters and events.
@@ -295,7 +293,7 @@ this communication mechanism. To access this UI, open your portlet's
 configuration window by clicking on the wrench icon and selecting
 *Configuration*. Then click on the *Communication* tab. 
 
-![Figure 8.11: You can configure portlets to communicate with each other using
+![Figure 4.11: You can configure portlets to communicate with each other using
 public render parameters.](../../images/portlet-communication-tab.png)
 
 The screenshot above is for the Wiki portlet, which has six public render
@@ -324,7 +322,7 @@ This can be achieved by setting the value of the title parameter of the Wiki
 portlet to be read from the country parameter of the administration portlet.
 Cool, isn't it?
 
-### Sharing  
+## Sharing  
 
 The web was once thought of as a number of islands of applications in a vast
 universe of "cyberspace." Many web sites attempted to make their island the
@@ -343,7 +341,7 @@ instance of a portlet running on your site into another site, such as Facebook.
 This opens up a whole new avenue of exposure to your web site that you would
 not have had otherwise. In fact, this is how all those Facebook games work.
 
-![Figure 8.12: Sharing Tab of the Portlet Configuration Dialog
+![Figure 4.12: Sharing Tab of the Portlet Configuration Dialog
 Box](../../images/liferay-collaboration-portlet-configuration-sharing.png)
 
 To share one of your portlets as a widget, open the *Configuration* dialog box
@@ -351,14 +349,14 @@ from the portlet's title bar and select the *Sharing* tab. There are five
 sub-tabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and
 Friends.
 
-#### Any Web Site  
+### Any Web Site  
 
 Copy and paste the provided snippet of JavaScript code into the web site to
 which you want to add the portlet as a widget. That's all you need to do. When
 a user loads the page on the other web site, the code will pull the relevant
 portlet from your site and display it.
 
-#### Facebook  
+### Facebook  
 
 You can add any Liferay portlet as an application on Facebook. To do this, you
 must first get a developer key. A link for doing this is provided to you in the
@@ -367,14 +365,14 @@ and canvas page URL from Facebook. Once you've done this, you can copy and
 paste their values into the Facebook tab. Your portlet will now be available on
 Facebook as a Facebook application.
 
-![Figure 8.13: Liferay's Forums on
+![Figure 4.13: Liferay's Forums on
 Facebook](../../images/05-liferay-forum-facebook.png)
 
 Incidentally, this makes Liferay a fantastic platform upon which to build
 applications for Facebook. See the *Liferay Developer's Guide* or [*Liferay in
 Action*](http://manning.com/sezov) for more details. 
 
-#### OpenSocial Gadget  
+### OpenSocial Gadget  
 
 OpenSocial comprises a container and a set of APIs for social networking and
 other web applications. iGoogle is a service provided by Google that lets users
@@ -411,10 +409,7 @@ single check box that allows you to give your friends permission to add the
 application as a widget to another web site. This could be particularly useful
 for your blog or calendar if you wish to share them.
 
-Now that we've seen all the common options available in Liferay's portlet
-applications, we can move on to specific applications, starting with blogs.
-
-<!-- TODO: Add transition-->
+Next, let's explore what the Recycle Bin does for your Liferay applications.
 
 ## Recycling Assets with the Recycle Bin
 
@@ -456,7 +451,7 @@ administrators to enable it per site.
 number of days a file is kept in the Recycle Bin until its deletion (default is
 30 days).
 
-![Figure 8.x: The Recycle Bin offers several configurable options for your portal.](../../images/recycle-bin-portal-settings.png)
+![Figure 4.14: The Recycle Bin offers several configurable options for your portal.](../../images/recycle-bin-portal-settings.png)
 
 Now let's explore the site-specific scoping of the Recycle Bin. In the Control
 Panel, select your site from the Context Menu, and then click *Site Settings*.
@@ -474,7 +469,7 @@ Recycle Bin's portal settings (default).
 
 - *Disabled:* disables the Recycle Bin for the specific site only.
 
-![Figure 8.x: The Recycle Bin also offers configurable options for your specific site.](../../images/recycle-bin-site-settings.png)
+![Figure 4.15: The Recycle Bin also offers configurable options for your specific site.](../../images/recycle-bin-site-settings.png)
 
 <!-- TODO/UPDATE: These options are now different after rebuilding Portal from
 trunk. It seems none of these settings are final and are still being modified.
@@ -529,7 +524,7 @@ the portal. Instead of offering a specific Recycle Bin for each asset type,
 Liferay provides a central master Recycle Bin where different asset types can be
 stored. This provides an easy search and recovery process.
 
-![Figure 8.x: The Recycle Bin provides a seamless administration experience for deleting and removing content.](../../images/recycle-bin-overview.png)
+![Figure 4.16: The Recycle Bin provides a seamless administration experience for deleting and removing content.](../../images/recycle-bin-overview.png)
 
 You can recycle several different types of assets, including:
 
@@ -579,7 +574,7 @@ stored in its original place.
 
 9. You can restore or delete the content. Select *Restore*.
 
-	![Figure 8.x: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
+	![Figure 4.17: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
 
 10. Navigate back to the Web Content screen and notice that your sample web
 content was restored back to its original place.
@@ -614,7 +609,7 @@ Recycle Bin is highlighted, showing you where the files can be dropped. After
 you drop the asset onto the Recycle Bin portlet, the asset is removed from its
 original location and transferred to the Recycle Bin.
 
-![Figure 8.x: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
+![Figure 4.18: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
 
 Next, let's explore the Recycle Bin's intelligence and behind the scenes support
 that aids in a seamless recycling experience.
@@ -648,7 +643,7 @@ document library. If you try to restore the `file1` document, the Recycle Bin
 recognizes duplicate names and prompts you to overwrite the existing document
 in the document library or rename the document you're trying to restore.
 
-![Figure 8.x: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
+![Figure 4.19: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
 
 Although the Recycle Bin prohibits the restoration of files that match
 pre-existing file names in your site/portal, it will store files with matching
@@ -662,7 +657,7 @@ separate Recycle Bin: the *Staging* Recycle Bin. The original Recycle Bin, or
 *Live* Recycle Bin, holding unstaged material is still viewable while in
 staging; however, it is never used.
 
-![Figure 8.x: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
+![Figure 4.20: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
 
 During staging, everything you recycle is sent to the Staging Recycle Bin. This
 prevents staged and unstaged recycled content from mixing. Do you see why this
@@ -691,4 +686,15 @@ The Recycle Bin saves you time by letting you restore content that's been
 recycled. Instead of recreating or re-uploading content, you'll be tailoring
 your Liferay portal to fully leverage its capabilities.
 
-<!-- TODO: Add transition -->
+## Summary
+
+In this chapter, we explored the configuration options available for Liferay
+applications. We showed how to customize your applications, export/import
+portlet data, take advantage of different scopes, and communicate between
+portlets. We also examined the different uses of social applications like
+Facebook and Netvibes for your Liferay applications. Besides the general
+configuration options, we also explored the Recycle Bin. This feature is a
+special file directory allowing users to browse, retrieve, or permanently delete
+recycled content. In all, Liferay gives you an abundance of options to leverage
+the full capability of your applications.
+
