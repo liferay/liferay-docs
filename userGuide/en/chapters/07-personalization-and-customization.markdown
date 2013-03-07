@@ -115,7 +115,7 @@ To enable page customizations as an administrator, first navigate to the page
 you'd like to let site members modify. Then select *Manage* &rarr; *Page
 Customizations* from the Dockbar.
 
-![Figure 6.1: To enable page customizations, select *Manage* &rarr; *Page
+![Figure 7.1: To enable page customizations, select *Manage* &rarr; *Page
 Customizations* from the Dockbar.](../../images/page-customizations.png)
 
 Once you've selected *Manage* &rarr; *Page Customizations*, you'll see one or
@@ -124,7 +124,7 @@ more of the *Customizable* boxes to allow site members to customize certain
 sections of the page. Regions that you've designated as customizable are colored
 green.
 
-![Figure 6.2: Check one or more of the *Customizable* boxes to allow site
+![Figure 7.2: Check one or more of the *Customizable* boxes to allow site
 members to customize certain sections of the
 page.](../../images/customizable-regions.png)
 
@@ -144,7 +144,7 @@ of the page that they're allowed to customize. If they click *View Default
 Page*, the Add menu will disappear from the Dockbar since they're not allowed to
 modify the default page.
 
-![Figure 6.3: Non-administrator site members can customize their own versions of
+![Figure 7.3: Non-administrator site members can customize their own versions of
 customizble pages but can't modify the default
 page.](../../images/default-customizable-page.png)
 
@@ -181,7 +181,7 @@ their language in the Language portlet to view a translation of the portal into
 their native language. After closing the Configuration dialog box of the
 Language portlet, the customized portal homepage looks like this:
 
-![Figure 6.4: In this example, Joe Bloggs removed the Hello World portlet, added
+![Figure 7.4: In this example, Joe Bloggs removed the Hello World portlet, added
 the Language portlet, and changed the display style from icons to a select
 box.](../../images/customized-portal-homepage.png)
 
@@ -226,7 +226,7 @@ Panel's Content Menu shows you a list of pre-made templates available for
 your portlets. If you choose a site to host your template, you must create a
 custom template for that site's portlets.
 
-![Figure 6.5: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
+![Figure 7.5: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
 
 If you'd like to add an ADT, select the portlet you'd like to customize. Below
 is a list of the portlets that can be customized using ADTs, and their template
@@ -277,7 +277,7 @@ directly. For more information on how to create a custom template, visit the
 <!-- TODO: When the Dev Guide section for templates is complete, add the exact
 link above -->
 
-![Figure 6.6: Liferay offers multiple options to customize your ADT.](../../images/adt-setup-menu.png)
+![Figure 7.6: Liferay offers multiple options to customize your ADT.](../../images/adt-setup-menu.png)
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the wrench icon at the top right of the
@@ -288,7 +288,7 @@ common configuration options
 section of this guide. The Export/Import feature for ADTs looks similar to the
 snapshot below:
 
-![Figure 6.7: The *Export/Import* feature allows you to share and overwrite your ADTs.](../../images/adt-export-import.png)
+![Figure 7.7: The *Export/Import* feature allows you to share and overwrite your ADTs.](../../images/adt-export-import.png)
 
 After you've completed the initial set up and saved your ADT, you can manage
 your ADT through its *Actions* button. This provides several options:
@@ -306,7 +306,7 @@ can select the display template that can be viewed by guests of the site: do
 this by clicking the *Manage Display Templates for Guest* link and selecting an
 ADT.
 
-![Figure 6.8: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
+![Figure 7.8: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
 
 Customizing the user interface of Liferay's bundled portlets provides the
 ultimate customization experience for Liferay users. Next, let's look at how to use

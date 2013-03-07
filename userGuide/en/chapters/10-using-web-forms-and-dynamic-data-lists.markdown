@@ -73,7 +73,7 @@ or *Manage &rarr; Site Content &rarr; Dynamic Data Lists*. Within the dynamic
 data lists section, you can either create a new data type (*Manage Data
 Definitions*) or a new list from an existing data type.
 
-![Figure 9.1: Data Lists in the control
+![Figure 10.1: Data Lists in the control
 panel.](../../images/05-ddl-control-panel.png)
 
 If you have a new data type, you need to create a definition for it first. Click
@@ -117,7 +117,7 @@ box. Can be configured to allow multiple selections, unlike `Radio`.
 
 **Text Box:** a large text box for long text input.
 
-![Figure 9.2: Data definition
+![Figure 10.2: Data definition
 fields.](../../images/05-data-definition-screen.png)
 
 Using that reference as a nice cheat-sheet, you can now create the data type you
@@ -176,7 +176,7 @@ default to Documents and Media's home location.
 the form on the page. It does not affect the values that are stored. Possible
 values are `Small`, `Medium` and `Large`.
 
-![Figure 9.3: Data field
+![Figure 10.3: Data field
 properties.](../../images/05-data-definition-field-properties.png)
 
 In addition to dragging the fields around to create your desired forms, you can
@@ -228,7 +228,7 @@ you know to sign up. But what would it look like for them to add an entry to
 this list? The data definition you've previously created (or selected) defines
 the layout as well, which means the form looks just the way you laid it out. 
 
-![Figure 9.4: Entering a new data record.](../../images/05-ddl-add-record.png)
+![Figure 10.4: Entering a new data record.](../../images/05-ddl-add-record.png)
 
 But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet
 or that boring Jobs Listing look? The answers to these pressing, burning
@@ -266,7 +266,7 @@ about that.
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If Listies don't customize the display, their lists look something like this:
 
-![Figure 9.5: The default data list
+![Figure 10.5: The default data list
 display.](../../images/05-ddl-list-display.png)
 
 This isn't all that exciting, but it allows users to see the list's contents,
@@ -298,7 +298,7 @@ permission.
 allows users with permission to interact with the list in the same way as in a
 standard spreadsheet program.
 
-![Figure 9.6: The spreadsheet view](../../images/05-ddl-spreadsheet-view.png)
+![Figure 10.6: The spreadsheet view](../../images/05-ddl-spreadsheet-view.png)
 
 Now, as useful as this default display is, and it's certainly useful for my to
 do list and my memo notes, it can be an awkward way to ask my volunteers to sign
@@ -486,7 +486,7 @@ Once you've typed your source into the editor window, click *Update* and then
 save the list template. With the list template selected, your list display can
 now be a summary of tasks as shown below. 
 
-![Figure 9.7: A list template in action](../../images/05-ddl-list-template.png)
+![Figure 10.7: A list template in action](../../images/05-ddl-list-template.png)
 
 All the knowledge you have accrued through building out your award-winning
 content can be brought to bear in list templates. With the full power of
@@ -515,7 +515,7 @@ More Portlets &rarr; Web Plugins* and finding Kaleo Web in the list. You can
 also copy the Kaleo `.war` file to the deploy folder of you application server.
 Once workflow is installed, you have a new option when creating a list:
 
-![Figure 9.8: Enabling workflow on a list](../../images/05-ddl-add-workflow.png)
+![Figure 10.8: Enabling workflow on a list](../../images/05-ddl-add-workflow.png)
 
 Choose the workflow you would like to use, then every record has to go through
 the workflow process. Now if you need to preview or edit entries as they're
@@ -561,7 +561,7 @@ To build a list in Kaleo Forms with a workflow:
 
 5. Click *Save* to save your process.
 
-![Figure 9.9: New Kaleo Forms
+![Figure 10.9: New Kaleo Forms
 process](../../images/05-ddl-kaleo-forms-new-process.png)
 
 While the form looks complicated, it can be straightforward. There are a few
@@ -596,7 +596,7 @@ information that should. Other stages in the workflow may be a great place to
 store that additional information. No required fields have to be present on an
 edit mode form.
 
-![Figure 9.10: Selecting a detail template as the initial
+![Figure 10.10: Selecting a detail template as the initial
 form](../../images/05-kaleo-forms-detail-templates.png)
 
 Once you have chosen the initial display you want, all that's left to do is
@@ -609,7 +609,7 @@ avaliable workflows can be chosen and you can create new ones from the selection
 screen. Simply choose *Add Workflow* and a Workflow Designer screen appears
 allowing you to define a new workflow by dragging elements in a flow chart.
 
-![Figure 9.11: Creating a new workflow with Kaleo
+![Figure 10.11: Creating a new workflow with Kaleo
 Designer](../../images/05-kaleo-forms-kaleo-designer.png)
 
 We'll keep ours simple and just choose "Single Approver Definition." This gives
@@ -635,7 +635,7 @@ When inside the view to assign forms to tasks:
 
 4. Click *Save* to save the form assignment.
 
-![Figure 9.12: Assigning forms to workflow
+![Figure 10.12: Assigning forms to workflow
 tasks](../../images/05-kaleo-forms-task-form.png)
 
 You can assign forms to as many tasks as you need until you're satisfied with
@@ -650,7 +650,7 @@ Once you have a new Kaleo Form process, you can add new entries through the
 Summary tab in Kaleo Forms. Once the form is filled out and submitted, it enters
 the workflow you selected for the process.
 
-![Figure 9.13: Adding a new entry to a
+![Figure 10.13: Adding a new entry to a
 process](../../images/05-kaleo-form-new-entry.png)
 
 After you have created an entry, the next task in the workflow may have an
@@ -660,7 +660,7 @@ additional form to complete. If so, there is also an option to enter it:
 
 2. Click *Complete form*.
 
-![Figure 9.14: Completing a form in the next workflow
+![Figure 10.14: Completing a form in the next workflow
 task](../../images/05-kaleo-forms-complete-form.png)
 
 After the new entry has worked its way through the entire workflow, it is added

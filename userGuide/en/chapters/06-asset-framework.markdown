@@ -41,7 +41,7 @@ content is easy. You can do it at the bottom of the same form you use to add
 content. If you open the *Categorization* section of the form, you'll be
 presented with an interface for adding tags and categories.
 
-![Figure 5.1: Tagging and categorizing content can be done at the same time you
+![Figure 6.1: Tagging and categorizing content can be done at the same time you
 create it.](../../images/04-web-content-categorization.png)
 
 The Control Panel contains an interface for managing tags and categories for
@@ -60,7 +60,7 @@ fashion on a web page. There are two ways to create tags: you can do it through
 the administrative console in the Control Panel, or on the fly as content is
 created.
 
-![Figure 5.2: The Add Tag Dialog](../../images/05-add-tag.png)
+![Figure 6.2: The Add Tag Dialog](../../images/05-add-tag.png)
 
 To create tags in the Control Panel, select the site that you want to create
 tags for, and select *Tags*. From this screen, you will be able to view any
@@ -92,7 +92,7 @@ selected the site you want to work on, select *Categories* from the content
 section of the Control Panel, and you will be presented with the categories
 administration page.
 
-![Figure 5.3: Categories Administration Page](../../images/05-categories.png)
+![Figure 6.3: Categories Administration Page](../../images/05-categories.png)
 
 Clicking on a vocabulary on the left displays any categories that have been
 created under that vocabulary. You can create new vocabularies simply by
@@ -127,7 +127,7 @@ configure these settings, go to the categories administration page and mouse
 over the vocabulary in the list until you see the edit icon to the right. Select
 the icon to reveal a dialog box like the one below.
 
-![Figure 5.4: You can target vocabularies by checking the *Allow Multiple 
+![Figure 6.4: You can target vocabularies by checking the *Allow Multiple 
 Categories* checkbox and then selecting the 
 Asset Types.](../../images/targeted-vocabularies.png)
 
@@ -144,7 +144,7 @@ You can now decide if the user can choose one or more categories from the same
 vocabulary to categorize an asset. If a vocabulary is single-valued you can only
 choose one, and if it allows more, you can choose several categories.
 
-![Figure 5.5: Single-valued vocabularies, on the left, use radio buttons while 
+![Figure 6.5: Single-valued vocabularies, on the left, use radio buttons while 
 multi-valued vocabularies use 
 checkboxes. .](../../images/multi-valued-vocabularies.png)
 
@@ -159,7 +159,7 @@ The third important improvement is every vocabulary has its own separated
 widget. These widgets appear in the Categorization section of every asset and
 they allow users to easily select appropriate categories for that asset.
 
-![Figure 5.6: Now that vocabularies have their own widgets, it's easy to select 
+![Figure 6.6: Now that vocabularies have their own widgets, it's easy to select 
 available  categories.](../../images/separated-widgets.png)
 
 It's important to use tags and categories with all your content, so that content
@@ -196,7 +196,7 @@ To get started, drop the Search portlet on a page and search for something.
 You'll see a page with results on the right and a collection of *facets* on the
 left. 
 
-![Figure 5.7: The first set of facets is content types. You can drill down to
+![Figure 6.7: The first set of facets is content types. You can drill down to
 specific types of content that contain the search terms you
 entered.](../../images/faceted-search-1.png)
 
@@ -212,7 +212,7 @@ you were looking for. If, however, your memory is more foggy than that, or
 you're searching for something you're not sure is actually there, then the asset
 tags or asset categories facets may be more helpful to you. 
 
-![Figure 5.8: Asset tag facets provide you with more information about content
+![Figure 6.8: Asset tag facets provide you with more information about content
 that contains the terms for which you searched.](../../images/faceted-search-2.png)
 
 In this case, if you searched for a wireless phone, you may be more interested
@@ -228,7 +228,7 @@ works.
 To drill down into the search, click a facet to add it to the filter list, and
 the results to the right are refined by the facet you selected. 
 
-![Figure 5.9: Drilling down creates a list of what you selected at the top of
+![Figure 6.9: Drilling down creates a list of what you selected at the top of
 the screen.](../../images/05-faceted-search-drill-down-1.png)
 
 Here we can see that we've selected one of the tags, *liferay*, to further
@@ -238,7 +238,7 @@ relevancy of our search. But maybe selecting only the tag isn't enough to filter
 our search into something small enough to sort through. In this case, we can
 further refine the search by selecting another facet, as below. 
 
-![Figure 5.10: Selecting another facet further refines the
+![Figure 6.10: Selecting another facet further refines the
 search.](../../images/05-faceted-search-drill-down-2.png)
 
 Now we've selected web content, which is one particular content type within
@@ -349,7 +349,7 @@ Next, we'll look at how the Search portlet can be configured.
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
 
-![Figure 5.11: Basic search configuration is pretty straightforward.
+![Figure 6.11: Basic search configuration is pretty straightforward.
 ](../../images/05-faceted-search-configuration.png)
 
 **Display Asset Type Facet:** Toggles whether the Asset Type facet appears. 
@@ -660,7 +660,7 @@ the Asset Publisher that you want to select content manually. You can select
 what you want to be published within the portlet, or you can create new content
 from within the Asset Publisher.
 
-![Figure 5.12: Selecting assets manually is very similar to the Web Content
+![Figure 6.12: Selecting assets manually is very similar to the Web Content
 Display portlet, except you have many other content types to choose
 from.](../../images/04-web-content-asset-publisher-manual.png)
 
@@ -695,7 +695,7 @@ selected.
 specific type, such as only web content, only wiki entries, or any combinations
 of multiple types.
 
-![Figure 5.13: You can filter by tags and categories, and you can set up as many
+![Figure 6.13: You can filter by tags and categories, and you can set up as many
 filter rules as you
 need.](../../images/04-web-content-asset-publisher-filter.png)
 
@@ -786,7 +786,7 @@ print, enable comments, enable ratings, etc.
 **Show Metadata:** Allows you to select from the available metadata types (see
 below).
 
-![Figure 5.14: Available metadata
+![Figure 6.14: Available metadata
 types](../../images/available-metadata-fields.png)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS
@@ -835,7 +835,7 @@ page, add a Web Content Display portlet. Click the *Add Web Content* button,
 enter a title and some content, click on *Display Page* at the right, and select
 the Display Page you just created. Then click *Publish*.
 
-![Figure 5.15: Selecting a Display
+![Figure 6.15: Selecting a Display
 Page](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, you can now click
@@ -848,7 +848,7 @@ a configured Asset Publisher portlet but also a Tags Navigation, a Categories
 Navigation, and a Search portlet. These tools help users to quickly identify
 relevant content.
 
-![Figure 5.16: The Canonical URL](../../images/04-web-content-canonical-url.png)
+![Figure 6.16: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
 Let's move on to another new featured introduced by Liferay 6.1.
 
@@ -892,7 +892,7 @@ the setup`, but there still aren't any assets displayed in the related assets
 portlet. Why? You cannot see any related assets until you select an
 asset in the Asset Publisher.
 
-![Figure 5.17: Select an asset in the Asset Publisher to see its related assets
+![Figure 6.17: Select an asset in the Asset Publisher to see its related assets
 displayed in the Related Assets
 portlet.](../../images/related-assets-portlet-after.png)
 

@@ -21,7 +21,7 @@ defined network. This variation is a huge advantage when trying to communicate
 important information to a large group of people. This difference in
 communication settings is illustrated below:
 
-![Figure 8.1: Standard Apps vs. Social Apps](../../images/15-opensocial-5.png)
+![Figure 9.1: Standard Apps vs. Social Apps](../../images/15-opensocial-5.png)
 
 Liferay has a constantly improving set of social features which enable you to
 encourage social interactions on your own portal and to leverage the power and
@@ -79,7 +79,7 @@ pages. The goal of these is to use social connections to help a group work
 together more closely. These include the **Members**, **Meetups**, **Summary**,
 and **Activities** portlets.
 
-![Figure 8.2: The Members
+![Figure 9.2: The Members
 Portlet](../../images/XX-social-networking-members-portlet.png)
 
 The Members portlet is a simple list of all the current site's members. The only
@@ -87,7 +87,7 @@ configuration options you have are permissions, which are the same for every
 portlet. For example, you might change the permissions so only members of the
 current site can view the portlet. 
 
-![Figure 8.3: The Meetups
+![Figure 9.3: The Meetups
 Portlet](../../images/XX-social-networking-meetups.png)
 
 The Meetups portlet is a tool for creating casual meetings for users of your
@@ -101,7 +101,7 @@ a calendar event and the Meetups portlet shares some functionality with the
 Calendar. For more information on the Calendar portlet and configuring events,
 see chapter 7.
 
-![Figure 8.4: The Activities
+![Figure 9.4: The Activities
 Portlet](../../images/XX-social-networking-activities.png)
 
 The Activities portlet comes in two varieties: the standard Activities portlet
@@ -115,7 +115,7 @@ Activities portlet, you can use the *Maximum Activities to Display* dropdown
 menu to set a limit on how many activities can be displayed at once in the
 portlet window.
 
-![Figure 8.5: The Map Portlet](../../images/map-portlet.png)
+![Figure 9.5: The Map Portlet](../../images/map-portlet.png)
 
 The Map portlet allows you to view the locations of site members, both locally
 and internationally. Only members of the site to which the Map portlet has been
@@ -172,7 +172,7 @@ can only be used on personal pages. These include the Summary, Wall, Friends,
 and Friends' Activities portlets. These portlets can be used to create profile
 pages similar to Facebook's or Google+'s. 
 
-![Figure 8.6: Social Networking Portlets in a Facebook-like
+![Figure 9.6: Social Networking Portlets in a Facebook-like
 Layout](../../images/XX-social-networking-personal-portlets.png)
 
 The Summary portlet provides a quick overview of a user's profile. When posted
@@ -242,7 +242,7 @@ the layouts. As an administrator, go to the control panel and select *Site
 Templates* from under the *Portal* section. Click *Add* and fill out the form.
 We'll call our new site template *Social Layout*. Click *Save*.
 
-![Figure 8.7: Creating the Site
+![Figure 9.7: Creating the Site
 Template](../../images/social-networking-site-template.png)
 
 ---
@@ -261,7 +261,7 @@ portlets to the page. In the screenshot below, we removed the borders to make
 the page look more integrated, and also used Nested Portlets to make the layout
 more interesting.
 
-![Figure 8.8: Social Profile Site
+![Figure 9.8: Social Profile Site
 Template](../../images/social-networking-profile-template.png)
 
 Back in the control panel, select *Users and Organizations* from the *Portal*
@@ -335,7 +335,7 @@ provide information. Some of this information is good and helpful and some of it
 can be rather unhelpful. Using Liferay's Social Activity feature will help show
 which users are making real, valuable contributions.
 
-![Figure 8.9: The Social Equity Page of the Control
+![Figure 9.9: The Social Equity Page of the Control
 Panel](../../images/05-social-equity.png)
 
 To activate Social Activity, you'll first need to determine which collaboration
@@ -366,7 +366,7 @@ on the asset will receive 1 participation point, the user who created the asset
 will receive 5 contribution points, and the asset will receive 5 popularity
 points. 
 
-![Figure 8.10: Setting limits in Social
+![Figure 9.10: Setting limits in Social
 Activity](../../images/social-equity-limits.png)
 
 It's easy to assign points--you can arbitrarily assign points for just about
@@ -400,7 +400,7 @@ points, you can click the *plus* button to add one and the *minus* button to
 remove one. You can have as many data points displayed as you want, but
 displaying too many might make your portlet a little unwieldy.
 
-![Figure 8.11: The User Statistics
+![Figure 9.11: The User Statistics
 portlet](../../images/user-statistics-portlet.png)
 
 The **Group Statistics** portlet provides some more advanced data analytics. If
@@ -466,7 +466,7 @@ This method is a quick way to add a gadget to a single page. To do this, go to
 the *Add* &rarr; *More* menu and add *OpenSocial Gadget* to the page. The
 portlet displays a link to pick a gadget for display:
 
-![Figure 8.12: Configure a gadget to display in your
+![Figure 9.12: Configure a gadget to display in your
 portlet.](../../images/15-opensocial-1.png)
 
 Click the configure link and a configuration window opens. Next, you need to
@@ -475,13 +475,13 @@ calculator which is:
 
     http://www.labpixies.com/campaigns/calc/calc.xml
 
-![Figure 8.13: Configuring an adhoc gadget with your portlet is as easy as
+![Figure 9.13: Configuring an adhoc gadget with your portlet is as easy as
 pasting the gadget's URL.](../../images/15-opensocial-37.png)
 
 After pasting the URL into the text field, click *Save* and your new gadget is
 visible on your page.
 
-![Figure 8.14: The calculator gadget displays seemlessly on your
+![Figure 9.14: The calculator gadget displays seemlessly on your
 page.](../../images/15-opensocial-2.png)
 
 This particular gadget allows you to change its "skins" to fit your needs.
@@ -508,12 +508,12 @@ portal-wide use.
 
 5. Click *Save*
 
-![Figure 8.15: Configure new gadgets with
+![Figure 9.15: Configure new gadgets with
 ease.](../../images/15-opensocial-38.png)
 
 Your *OpenSocial Gadget Publisher* should now look like this:
 
-![Figure 8.16: Publish gadgets for portal-wide use via the OpenSocial Gadget
+![Figure 9.16: Publish gadgets for portal-wide use via the OpenSocial Gadget
 Publisher.](../../images/15-opensocial-3.png)
 
 Clicking *Actions* next to the gadget enables you to edit, refresh, change
@@ -533,7 +533,7 @@ options for each role on your site.
 If you navigate to *Add* &rarr; *More* &rarr; *Gadgets*, you should see the
 *To-Do List* gadget.
 
-![Figure 8.17: You can conveniently list your gadgets within the *Gadgets*
+![Figure 9.17: You can conveniently list your gadgets within the *Gadgets*
 category.](../../images/15-opensocial-4.png)
 
 In the next section, we will demonstrate how to share OpenSocial gadgets with
@@ -561,7 +561,7 @@ For our example, we'll share Liferay's *Loan Calculator* on iGoogle.
 2. Click the wrench icon in the upper right corner of the portlet and select
    *Configuration*
 
-    ![Figure 8.18: Select the *Configuration*
+    ![Figure 9.18: Select the *Configuration*
     button.](../../images/15-opensocial-6.png)
 
 3. Select the *Sharing* tab and the *OpenSocial Gadget* sub-tab
@@ -569,7 +569,7 @@ For our example, we'll share Liferay's *Loan Calculator* on iGoogle.
 4. Check the box labeled *Allow users to add Loan Calculator to iGoogle*. Also,
    replace "localhost:8080" with the name of your public domain and port.
 
-    ![Figure 8.19: Allow users to add your portlet as an OpenSocial Gadget in
+    ![Figure 9.19: Allow users to add your portlet as an OpenSocial Gadget in
     iGoogle.](../../images/15-opensocial-7.png)
 
 5. Click Save
@@ -578,7 +578,7 @@ For our example, we'll share Liferay's *Loan Calculator* on iGoogle.
    corner of your portlet. There is a new option named *Add to iGoogle*
    available. Click on this button to add your portlet to your iGoogle page.
 
-    ![Figure 8.20: Users simply click the *Add to iGoogle* button to add your
+    ![Figure 9.20: Users simply click the *Add to iGoogle* button to add your
     portlet to their iGoogle page.](../../images/15-opensocial-8.png)
 
 Your portlet is now available on your iGoogle page!
@@ -662,17 +662,17 @@ key and secret given by the service provider.
    your gadget. You must also register your gadget with Twitter to access the
    Consumer Key and Consumer Secret.
 
-    ![Figure 8.21: Twitter allows you to manage OAuth for your Twitter
+    ![Figure 9.21: Twitter allows you to manage OAuth for your Twitter
     gadget.](../../images/15-opensocial-9.png)
 
 4. Go to [https://www.twitter.com](https://www.twitter.com) and, before logging
    in, scroll to the bottom of the page and select *Developers*. Then click
    *Create an app* to begin registering your gadget.
 
-    ![Figure 8.22: Select the *Developers* tab on
+    ![Figure 9.22: Select the *Developers* tab on
     Twitter.](../../images/15-opensocial-10.png)
 
-    ![Figure 8.23: Select *Create an app* from within the *Developers*
+    ![Figure 9.23: Select *Create an app* from within the *Developers*
     page.](../../images/15-opensocial-11.png)
 
 5. Fill in the *Name*, *Description*, and *Website* fields with what you prefer.
@@ -687,13 +687,13 @@ key and secret given by the service provider.
     b. Finally, select the *Create your Twitter application* tab at the bottom
     of the page.
 
-    ![Figure 8.24: Fill in *Application Details* to setup connectivity between
+    ![Figure 9.24: Fill in *Application Details* to setup connectivity between
     your Twitter gadget and your portal.](../../images/15-opensocial-12.png)
 
 6. You are given the OAuth setting that you need to configure your gadget on
    Liferay. Copy the Consumer Key and Consumer Secret to your clipboard.
 
-    ![Figure 8.25: Here are the *Consumer Key* and *Consumer Secret* (values are
+    ![Figure 9.25: Here are the *Consumer Key* and *Consumer Secret* (values are
     blacked out for security).](../../images/15-opensocial-13.png)
 
 7. Enter your Consumer Key and Consumer Secret under the *Manage OAuth* that you
@@ -706,13 +706,13 @@ key and secret given by the service provider.
 
 8. Navigate to the *Settings* tab
 
-    ![Figure 8.26: Configure the settings for your Twitter
+    ![Figure 9.26: Configure the settings for your Twitter
     gadget.](../../images/15-opensocial-18.png)
 
 9. Under *Application Type*, select *Read and Write*. Then click *Update this
    Twitter application's settings* at the bottom of the page.
 
-    ![Figure 8.27: Select the *Read and Write* option to enable two way
+    ![Figure 9.27: Select the *Read and Write* option to enable two way
     communication.](../../images/15-opensocial-19.png)
 
 Congratulations! Your Twitter gadget is now configured with OAuth.
@@ -731,20 +731,20 @@ OAuth-configured gadget to your page.
    *Twitter Gadget*. If your gadget is configured correctly, it should appear
    like this:
 
-    ![Figure 8.28: Your OAuth configured Twitter gadget awaits personalization
+    ![Figure 9.28: Your OAuth configured Twitter gadget awaits personalization
     with your Twitter account.](../../images/15-opensocial-14.png)
 
 2. Click on *Personalize this gadget* to be redirected to the service provider.
 
 3. Fill in your Twitter user name and password and select *Authorize app*
 
-    ![Figure 8.29: Authorizing your OpenSocial application to use your account
+    ![Figure 9.29: Authorizing your OpenSocial application to use your account
     is straightforward.](../../images/15-opensocial-15.png)
 
 4. Your Twitter Gadget should now show your last 20 tweets from your timeline.
    Your gadget should look similar to the snapshot below:
 
-    ![Figure 8.30: Check out your Twitter gadget
+    ![Figure 9.30: Check out your Twitter gadget
     timeline!](../../images/15-opensocial-16.png)
 
 5. Using this gadget, you can tweet your current status and have it display on
@@ -753,13 +753,13 @@ OAuth-configured gadget to your page.
    *Configuration*.  Under the *Setup* tab, you can type the number of tweets to
    display.
 
-    ![Figure 8.31: Configure the number of Tweets to
+    ![Figure 9.31: Configure the number of Tweets to
     display.](../../images/15-opensocial-17.png)
 
 6. Lastly, you can tweet and view your Twitter timeline. The snapshot below
    displays what the Twitter Gadget looks like when tweeting.
 
-    ![Figure 8.32: Here is your Twitter gadget just the way you like
+    ![Figure 9.32: Here is your Twitter gadget just the way you like
     it!](../../images/15-opensocial-20.png)
 
 As you can see, OAuth is easy to configure and offers users the freedom to

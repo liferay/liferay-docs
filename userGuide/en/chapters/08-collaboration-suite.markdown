@@ -66,7 +66,7 @@ a language from the Portlet Title drop-down menu. If you've provided a language
 key translation for the language you select, the your portlet's title will be
 displayed in the selected language.
 
-![Figure 7.1: The Portlet Configuration tab of the Look and Feel Box allows you
+![Figure 8.1: The Portlet Configuration tab of the Look and Feel Box allows you
 to define a custom portlet title, link portlet URLs to a specific page, and
 select whether or not portlet borders should be
 displayed.](../../images/look-and-feel-portlet-configuration.png)
@@ -94,7 +94,7 @@ alignment to left, center, right, or justified. (Justified text is both left
 and right aligned.) You can set an underline, overline, or strikethrough as the
 text decoration. The default text decoration is none.
 
-![Figure 7.2: The Text Styles tab lets you configure the format of the text
+![Figure 8.2: The Text Styles tab lets you configure the format of the text
 that appears in the portlet.](../../images/look-and-feel-text-styles.png)
 
 You can set the word spacing anywhere from -1 em to 0.95 em, with 0.5 em
@@ -107,14 +107,14 @@ The Background Styles tab allows you to specify the portlet's background color.
 You can enter any six digit hex color code or you click on the pencil icon to
 use the color palette.
 
-![Figure 7.3: The Background Styles tab lets you specify the portlet's
+![Figure 8.3: The Background Styles tab lets you specify the portlet's
 background color.](../../images/look-and-feel-background-styles.png)
 
 On the Border Styles tab, you can configure your portlet's border width, border
 style, and border color. For each of these attributes, leave the *Same for All*
 box checked to apply the same settings to top, right, bottom, and left borders. 
 
-![Figure 7.4: The Border Styles tab lets you specify a border width, style, and
+![Figure 8.4: The Border Styles tab lets you specify a border width, style, and
 color for each side of the
 portlet.](../../images/look-and-feel-border-styles.png)
 
@@ -129,7 +129,7 @@ the edges of your portlet. Just like for border styles, leave the *Same for
 All* box checked to apply the same settings to each side (top, right, bottom,
 and left) of the portlet.
 
-![Figure 7.5: The Margin and Padding tab allows you to specify margin and
+![Figure 8.5: The Margin and Padding tab allows you to specify margin and
 paddings lengths for the sides of your
 portlet.](../../images/look-and-feel-margin-and-padding.png)
 
@@ -139,7 +139,7 @@ value.
 The Advanced Styling tab displays current information about your portlet,
 including your portlet's Liferay ID and CSS classes.
 
-![Figure 7.6: The Advanced Styling tab displays your portlet's Liferay ID and
+![Figure 8.6: The Advanced Styling tab displays your portlet's Liferay ID and
 allows you to enter CSS code to customize the look and feel of your
 portlet.](../../images/look-and-feel-advanced-styling.png)
 
@@ -155,7 +155,7 @@ displayed when mobile devices using the Wireless Application Protocol make page
 requests. You can also set the initial window state to normal or minimized.
 Normal is the default.
 
-![Figure 7.7: The WAP Styling tab lets you enter a custom portlet title to be
+![Figure 8.7: The WAP Styling tab lets you enter a custom portlet title to be
 displayed to devices making page requests via WAP; it also allows you to
 specify an initial window state.](../../images/look-and-feel-wap-styling.png)
 
@@ -174,7 +174,7 @@ site-specific `.lar` files. See the Backing up and Restoring Pages section of
 chapter 2 for a discussion of exporting and importing data across an entire
 site.
 
-![Figure 7.8: When exporting portlet data, you can choose which categories of
+![Figure 8.8: When exporting portlet data, you can choose which categories of
 information to include.](../../images/portlet-export.png)
 
 Each portlet has different configuration options. Checking the *Setup* box
@@ -191,7 +191,7 @@ the permissions assigned to roles. Finally, you can check the *Categories* box
 to include categories for export. When selected, all categories referenced by
 portlet data will be exported or imported, keeping their hierarchy.
 
-![Figure 7.9: When importing portlet data, you can choose which categories of
+![Figure 8.9: When importing portlet data, you can choose which categories of
 information to use.](../../images/portlet-import.png)
 
 When you import portlet data, only the data types you select will be
@@ -259,7 +259,7 @@ configure the scope of a portlet with just a few simple steps.
 
 5.  Click *Save*.
 
-![Figure 7.10: Changing the scope of a
+![Figure 8.10: Changing the scope of a
 portlet](../../images/05-changing-portlet-scope.png)
 
 That's all it takes to change the scope for a particular portlet instance. By
@@ -321,7 +321,7 @@ this communication mechanism. To access this UI, open your portlet's
 configuration window by clicking on the wrench icon and selecting
 *Configuration*. Then click on the *Communication* tab. 
 
-![Figure 7.11: You can configure portlets to communicate with each other using
+![Figure 8.11: You can configure portlets to communicate with each other using
 public render parameters.](../../images/portlet-communication-tab.png)
 
 The screenshot above is for the Wiki portlet, which has six public render
@@ -369,7 +369,7 @@ instance of a portlet running on your site into another site, such as Facebook.
 This opens up a whole new avenue of exposure to your web site that you would
 not have had otherwise. In fact, this is how all those Facebook games work.
 
-![Figure 7.12: Sharing Tab of the Portlet Configuration Dialog
+![Figure 8.12: Sharing Tab of the Portlet Configuration Dialog
 Box](../../images/liferay-collaboration-portlet-configuration-sharing.png)
 
 To share one of your portlets as a widget, open the *Configuration* dialog box
@@ -393,7 +393,7 @@ and canvas page URL from Facebook. Once you've done this, you can copy and
 paste their values into the Facebook tab. Your portlet will now be available on
 Facebook as a Facebook application.
 
-![Figure 7.13: Liferay's Forums on
+![Figure 8.13: Liferay's Forums on
 Facebook](../../images/05-liferay-forum-facebook.png)
 
 Incidentally, this makes Liferay a fantastic platform upon which to build
@@ -482,7 +482,7 @@ administrators to enable it per site.
 number of days a file is kept in the Recycle Bin until its deletion (default is
 30 days).
 
-![Figure 7.x: The Recycle Bin offers several configurable options for your portal.](../../images/recycle-bin-portal-settings.png)
+![Figure 8.x: The Recycle Bin offers several configurable options for your portal.](../../images/recycle-bin-portal-settings.png)
 
 Now let's explore the site-specific scoping of the Recycle Bin. In the Control
 Panel, select your site from the Context Menu, and then click *Site Settings*.
@@ -500,7 +500,7 @@ Recycle Bin's portal settings (default).
 
 - *Disabled:* disables the Recycle Bin for the specific site only.
 
-![Figure 7.x: The Recycle Bin also offers configurable options for your specific site.](../../images/recycle-bin-site-settings.png)
+![Figure 8.x: The Recycle Bin also offers configurable options for your specific site.](../../images/recycle-bin-site-settings.png)
 
 <!-- TODO/UPDATE: These options are now different after rebuilding Portal from
 trunk. It seems none of these settings are final and are still being modified.
@@ -555,7 +555,7 @@ the portal. Instead of offering a specific Recycle Bin for each asset type,
 Liferay provides a central master Recycle Bin where different asset types can be
 stored. This provides an easy search and recovery process.
 
-![Figure 7.x: The Recycle Bin provides a seamless administration experience for deleting and removing content.](../../images/recycle-bin-overview.png)
+![Figure 8.x: The Recycle Bin provides a seamless administration experience for deleting and removing content.](../../images/recycle-bin-overview.png)
 
 You can recycle several different types of assets, including:
 
@@ -605,7 +605,7 @@ stored in its original place.
 
 9. You can restore or delete the content. Select *Restore*.
 
-	![Figure 7.x: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
+	![Figure 8.x: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
 
 10. Navigate back to the Web Content screen and notice that your sample web
 content was restored back to its original place.
@@ -640,7 +640,7 @@ Recycle Bin is highlighted, showing you where the files can be dropped. After
 you drop the asset onto the Recycle Bin portlet, the asset is removed from its
 original location and transferred to the Recycle Bin.
 
-![Figure 7.x: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
+![Figure 8.x: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
 
 Next, let's explore the Recycle Bin's intelligence and behind the scenes support
 that aids in a seamless recycling experience.
@@ -674,7 +674,7 @@ document library. If you try to restore the `file1` document, the Recycle Bin
 recognizes duplicate names and prompts you to overwrite the existing document
 in the document library or rename the document you're trying to restore.
 
-![Figure 7.x: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
+![Figure 8.x: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
 
 Although the Recycle Bin prohibits the restoration of files that match
 pre-existing file names in your site/portal, it will store files with matching
@@ -688,7 +688,7 @@ separate Recycle Bin: the *Staging* Recycle Bin. The original Recycle Bin, or
 *Live* Recycle Bin, holding unstaged material is still viewable while in
 staging; however, it is never used.
 
-![Figure 7.x: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
+![Figure 8.x: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
 
 During staging, everything you recycle is sent to the Staging Recycle Bin. This
 prevents staged and unstaged recycled content from mixing. Do you see why this
@@ -740,7 +740,7 @@ that they would not otherwise have, and the ubiquity and wide reach of the
 Internet ensures that if you have something important and interesting to say,
 somebody will read it.
 
-![Figure 7.14: Slashdot, one of the first blogs on the
+![Figure 8.14: Slashdot, one of the first blogs on the
 Internet](../../images/05-slashdot.jpg)
 
 Liferay Portal has a Blogs portlet which allows you to provide a blogging
@@ -764,7 +764,7 @@ user's personal site creates a blog just for that user. The Blogs portlet works
 the same way in both cases. And of course, you can change the Blog portlet's
 scope to have different blogs on different pages in the same site.
 
-![Figure 7.15: Initial View of the Blogs
+![Figure 8.15: Initial View of the Blogs
 Portlet](../../images/05-initial-view-blogs-portlet.jpg)
 
 By default, the Blogs portlet displays the latest entry in its entirety. When
@@ -792,7 +792,7 @@ when a new Blog entry has been updated.
 choose the right settings, you should think about the best way to display your
 entries as well as how you want users to interact with bloggers.
 
-![Figure 7.16: Blogs Configuration](../../images/05-blogs-configuration.png)
+![Figure 8.16: Blogs Configuration](../../images/05-blogs-configuration.png)
 
 *Maximum Items to Display:* choose the total number of blog entries to display
 on the initial page. You can select up to one hundred to be displayed.
@@ -808,7 +808,7 @@ administrators.
 *Enable Related Assets:* select related content from other portlets to pull
 into their blog entry for readers to view.
 
-![Figure 7.17: Related Assets](../../images/05-related-assets.png)
+![Figure 8.17: Related Assets](../../images/05-related-assets.png)
 
 *Enable Ratings:* lets readers rate your blog entries from one to five stars.
 
@@ -868,7 +868,7 @@ Now that everyone's able to post, let's look at how posts work.
 Now you're ready to begin adding blog entries. Click the *Add Blog Entry*
 button. The following data entry screen appears: 
 
-![Figure 7.18: Adding a Blog Entry](../../images/05-new-blog-entry.png)
+![Figure 8.18: Adding a Blog Entry](../../images/05-new-blog-entry.png)
 
 There isn't much difference between this screen and any other data entry screen
 within Liferay Portal. You get a title, a way of scheduling when the entry is
@@ -921,7 +921,7 @@ list of entries, and now your entry is displayed. Here is what it looks like
 when the display style is set to *Full Content* and the number of entries is
 set to ten:
 
-![Figure 7.19: First Blog Entry
+![Figure 8.19: First Blog Entry
 Added](../../images/05-first-blog-entry-added.png)
 
 You can see that in the summary view, you don't see the trackback/pingback
@@ -955,7 +955,7 @@ If you click *Configuration* from the menu button in the title bar of the
 portlet, the Blogs Aggregator's configuration page appears. From here, you can
 set several configuration options.
 
-![Figure 7.20: Blogs Aggregator
+![Figure 8.20: Blogs Aggregator
 Configuration](../../images/05-blogs-aggregator-configuration.png)
 
 **Selection Method:** select Users or Scope here. If you select Users, the
@@ -990,7 +990,7 @@ Most of the time, the Blogs portlet is the only tool you'll need to manage your
 blog entries. If, however, you need to massively delete blog entries, the blogs
 administrator portlet is the perfect tool for you. 
 
-![Figure 7.21: The Blogs Administrator portlet lets you delete large sets of
+![Figure 8.21: The Blogs Administrator portlet lets you delete large sets of
 blog entries.](../../images/04-blogs-administrator.png)
 
 Note that it's only for batch processing of blog entries; for the full set of
@@ -1007,7 +1007,7 @@ message, import and export your calendar, and much more. Additionally, you can
 import and export the calendar to and from the popular iCalendar format for use
 in other applications.
 
-![Figure 7.22: The Liferay Calendar
+![Figure 8.22: The Liferay Calendar
 Portlet](../../images/05-calendar-portlet.png)
 
 In a similar way to the Blogs portlet, you can use the Calendar portlet as a
@@ -1141,7 +1141,7 @@ dialog box by clicking on the wrench icon in the portlet's title bar and
 selecting *Configuration*. The Setup tab provides three sub-tabs of configurable
 settings: *User Settings*, *Templates*, and *Email From*.
 
-![Figure 7.23: The Setup &rarr; User Settings tab provides several new
+![Figure 8.23: The Setup &rarr; User Settings tab provides several new
 configuration options that weren't available from the old Calendar
 portlet.](../../images/new-calendar-configuration.png)
 
@@ -1159,7 +1159,7 @@ Standard Time* or you can check the *Use Global Time Zone* box. If you check
 administrator can set via *Control Panel* &rarr; *Portal Settings* &rarr;
 *Display Settings* &rarr; *Time Zone*.
 
-![Figure 7.24: The Setup &rarr; Templates tab lets you customize the email
+![Figure 8.24: The Setup &rarr; Templates tab lets you customize the email
 templates for emails that are automatically sent out to remind users of upcoming
 events or invite users to new
 events.](../../images/new-calendar-configuration2.png)
@@ -1171,13 +1171,13 @@ select *Reminder* or *Invitation*. For the *Subject* and *Body* of your email,
 you can enter whatever information you'd like to be automatically sent. Remember
 that you can use the following variables in your email templates:
 
-![Figure 7.25: You can use these variables in your email
+![Figure 8.25: You can use these variables in your email
 templates.](../../images/new-calendar-configuration3.png)
 
 **Email From:** This screen allows you to specify the name and email address
 that's used to send the automatic emails for event reminders and invitations. 
 
-![Figure 7.26: The *Email From* Screen allows you to specify the name and email
+![Figure 8.26: The *Email From* Screen allows you to specify the name and email
 address that's used to send the automatic emails for event reminders and
 invitations.](../../images/new-calendar-configuration4.png)
 
@@ -1202,7 +1202,7 @@ Calendars*, click on the arrow icon, and select *Manage Calendars*. Any user can
 manage their personal calendars. By default, only site administrators can manage
 site calendars.
 
-![Figure 7.27: Click on *Manage Calendars* to see a list of calendars.
+![Figure 8.27: Click on *Manage Calendars* to see a list of calendars.
 ](../../images/new-calendar-manage-calendars.png)
 
 On the Manage Calendars, screen you can click *Add Calendar* to create a new
@@ -1210,7 +1210,7 @@ calendar. As usual, you can enter a name and description for the calendar and
 configure its permissions. Also, you can specify a color for your calendar.
 Events created in the new calendar will default to the color you choose.
 
-![Figure 7.28: Click on *Actions* &rarr; *Edit* next to a calendar to customize
+![Figure 8.28: Click on *Actions* &rarr; *Edit* next to a calendar to customize
 its color and specify whether or not it's the default
 calendar.](../../images/new-calendar-edit-calendar.png)
 
@@ -1222,7 +1222,7 @@ appear in the main area of the calendar portlet by clicking on the colored boxes
 corresponding to the calendars. Once you've clicked on a box, its color
 disappears and the events of that calendar are no longer displayed.
 
-![Figure 7.29: Click on the colored boxes next to your calendars to choose
+![Figure 8.29: Click on the colored boxes next to your calendars to choose
 whether or not the calendar's events should be
 displayed.](../../images/new-calendar-toggles.png)
 
@@ -1231,7 +1231,7 @@ calendar and you'll see an event creation popup appear. If you've selected the
 *Day* or *Month* view, you can click on the specific time when your event
 begins.
 
-![Figure 7.30: When you click anywhere on the calendar, you'll see the event
+![Figure 8.30: When you click anywhere on the calendar, you'll see the event
 creation popup appear. Click on *Edit Details* to specify details for your
 event.](../../images/new-calendar-event-popup.png)
 
@@ -1240,7 +1240,7 @@ create the new event. This is useful since sites and users can have multiple
 calendars. You can click *Save* to create the event right away or you can click
 *Edit Details* to specify more event information.
 
-![Figure 7.31: You can specify event details such as the event title, start date,
+![Figure 8.31: You can specify event details such as the event title, start date,
 end date, description, location, and
 more.](../../images/new-calendar-event-details.png)
 
@@ -1255,7 +1255,7 @@ to specify whatever start times and end times you like, such as 11:37am and
 the *Repeat* box if your event takes place over multiple days. Checking this box
 opens another popup.
 
-![Figure 7.32: The *Repeat* box allows you to specify whether an events repeats
+![Figure 8.32: The *Repeat* box allows you to specify whether an events repeats
 daily, weekly, monthly, or yearly, how often it repeats, and when (or if) it
 ends.](../../images/new-calendar-event-repeat.png)
 
@@ -1269,7 +1269,7 @@ times when event reminder notifications will be sent via email. For example, you
 might like event reminders to be send one day and one hour before your event.
 Email is currently the only supported event reminder type.
 
-![Figure 7.33: You can invite users, organizations, or other calendar resources
+![Figure 8.33: You can invite users, organizations, or other calendar resources
 to your event and can check their availability in a calendar
 view.](../../images/new-calendar-event-invitations.png)
 
@@ -1301,7 +1301,7 @@ have noticed that the new Calendar portlet has two tabs in the main portlet
 window: Calendar and Resources. Click on the *Resources* tab of the portlet to
 view, edit, add, or delete resources.
 
-![Figure 7.34: Click on the *Resources* tab of the portlet to view, edit, add, or
+![Figure 8.34: Click on the *Resources* tab of the portlet to view, edit, add, or
 delete resources.](../../images/new-calendar-resources.png)
 
 Click on the *Add Resource* button to add a new calendar resource. You'll be
@@ -1312,7 +1312,7 @@ specified in the new Calendar portlet's `portlet.properties` file. Remember that
 it's a best practice not to edit `portlet.properties` directly, but to create a
 separate `portlet-ext.properties` file containing the properties to override.
 
-![Figure 7.35: To manage a calendar resource and view the calendars on which it
+![Figure 8.35: To manage a calendar resource and view the calendars on which it
 appears, use the Actions
 button.](../../images/new-calendar-resource-calendars.png)
 
@@ -1326,7 +1326,7 @@ representing the rooms and projectors helps prevent conflicts. Click *Actions*
 &rarr; *View Calendars* and then click on *Add Calendar* to add a new calendar
 in which the selected calendar resource appears.
 
-![Figure 7.36: Click on *Add Calendar* to add a new calendar in which the
+![Figure 8.36: Click on *Add Calendar* to add a new calendar in which the
 selected calendar resource
 appears.](../../images/new-calendar-resource-calendars2.png)
 
@@ -1519,7 +1519,7 @@ easily added:
 
 **Question:** designed for discussions in a format of questions and answers.
 
-![Figure 7.37: Editing a Message Boards
+![Figure 8.37: Editing a Message Boards
 Category](../../images/05-editing-message-board-category.png)
 
 At the bottom of the form is a check box that allows you to enable the mailing
@@ -1635,7 +1635,7 @@ message boards. Besides this, many users of message boards are familiar with
 BBCode and are used to it, and the editor that is provided for Liferay's
 Message Boards portlet makes it very easy to use.
 
-![Figure 7.38: Editing a Message Boards
+![Figure 8.38: Editing a Message Boards
 Post](../../images/05-editing-message-board-post.png)
 
 The message boards editor is quite rich. It supports bold, italicized,
@@ -1643,7 +1643,7 @@ underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
 more. There are even a bunch of smiley faces that you can use.
 
-![Figure 7.39: Emoticons Available in the
+![Figure 8.39: Emoticons Available in the
 Editor](../../images/05-emoticons.png)
 
 Users who have Moderator access to the board can modify the priority of
@@ -1694,7 +1694,7 @@ Browse the list until you find the Message Boards portlet under the Site
 Content section and then click on it. You will then see a screen which allows
 you to configure the various permissions on the portlet.
 
-![Figure 7.40: Defining Permissions for the Message Board Administrators
+![Figure 8.40: Defining Permissions for the Message Board Administrators
 Role](../../images/05-defining-permissions-message-board-admin-role.png)
 
 Select the permissions you would like message board administrators to have and
@@ -1811,7 +1811,7 @@ application with websites, Facebook, Google Gadgets, etc. You will also notice
 that the communication tab has some additional options not seen in the other
 portlets.
 
-![Figure 7.41: Communication Tab of the Wiki
+![Figure 8.41: Communication Tab of the Wiki
 Portlet](../../images/05-wiki-configuration.png)
 
 The communication tab of the configuration window allows you to configure
@@ -1912,7 +1912,7 @@ By default, there is one page added to your wiki, called *FrontPage*. To get
 started adding data to your wiki, click the *Edit* link at the top right of the
 portlet. You will be brought to a blank editing page.
 
-![Figure 7.42: Editing the Default Page in the Wiki
+![Figure 8.42: Editing the Default Page in the Wiki
 Portlet](../../images/05-editing-wiki-page.jpg)
 
 You can now begin to add content to the page. Notice that there is a very
@@ -1940,7 +1940,7 @@ sections that have already been added.
 
 This would produce the following wiki page:
 
-![Figure 7.43: Wiki Text Added to Front
+![Figure 8.43: Wiki Text Added to Front
 Page](../../images/05-wiki-front-page.png)
 
 This adds a simple heading, a paragraph of text, and several links to the page.
@@ -2086,7 +2086,7 @@ In the Control Panel, navigate to the *Polls* link under Content. Click the
 *Add Question* button. A form appears that allows you to fill out all the
 information for your poll. 
 
-![Figure 7.44: Besides the Title and the Polls Question, you must enter data
+![Figure 8.44: Besides the Title and the Polls Question, you must enter data
 for each of the Choices fields when creating a new
 poll.](../../images/polls-add-new-question.png)
 
@@ -2137,7 +2137,7 @@ poll, they must be able to access it. Click on the link labeled *Please
 configure this portlet to make it visible to all users*, and a dialog box like
 the one below appears.
 
-![Figure 7.45: In the initial configuration of the Polls Display portlet, the
+![Figure 8.45: In the initial configuration of the Polls Display portlet, the
 Question field will remain blank until you select the appropriate poll
 question. ](../../images/polls-display-config.png)
 
@@ -2157,7 +2157,7 @@ perform other tasks by using the icons in the lower left corner of the portlet.
 Besides adding questions, you can also edit the currently selected question or
 select existing questions.
 
-![Figure 7.46: These three buttons, highlighted in red, allow you to manage the
+![Figure 8.46: These three buttons, highlighted in red, allow you to manage the
 configuration of the poll. Notice this poll has
 expired.](../../images/polls-config-buttons.png)
 
@@ -2181,14 +2181,14 @@ name and the question, as well as a breakdown of the poll results appears,
 including percentages and total number of votes per answer and the total number
 of votes cast.
 
-![Figure 7.47: Selecting a poll in the Polls portlet allows you to see all the
+![Figure 8.47: Selecting a poll in the Polls portlet allows you to see all the
 information related to the poll results.](../../images/polls-results.png)
 
 Below this is an item called *Charts*. This option shows the poll results
 represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*,
 *Pie* and *Vertical Bar*.
 
-![Figure 7.48: This is what the pie chart for the Ice Cream poll results looks
+![Figure 8.48: This is what the pie chart for the Ice Cream poll results looks
 like.](../../images/polls-results-pie-chart.png)
 
 There is also a listing of the users who voted in your poll, how they voted,
@@ -2207,7 +2207,7 @@ other instant messages when they are logged into your web site. It appears as a
 bar at the bottom of every page, showing who is logged on, their statuses, and
 any chats the logged-in user has open.
 
-![Figure 7.49: Liferay's Chat
+![Figure 8.49: Liferay's Chat
 Portlet](../../images/05-liferay-chat-portlet.jpg)
 
 The Chat portlet is distributed with the Liferay bundles, but is not included
@@ -2278,7 +2278,7 @@ using Openfire, you can find the Host Name by using the Openfire administration
 web tool. If you did not set up administrative credentials when you started
 Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 7.50: Openfire Administration Web
+![Figure 8.50: Openfire Administration Web
 Tool](../../images/jabber-service-name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added
@@ -2329,7 +2329,7 @@ install the Mail portlet by going to the Control Panel, clicking *Plugins
 Installation*, and then clicking the *Install More Portlets* button. Find the
 *Mail* portlet in the list, click on it, and then click *Install*.
 
-![Figure 7.51: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
+![Figure 8.51: Liferay's Mail Portlet](../../images/05-mail-portlet.png)
 
 To connect the Mail portlet with an email account, click the *Add a New Email
 Account* link. From there, you are given a choice between a Custom email
