@@ -166,7 +166,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
         </copy>
         <zip destfile="${dist.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.zip">
             <fileset dir="${dist.dir}/${lang}" includes="images/*.*"/>
-            <fileset dir="${dist.dir}/${lang}" includes="${lang}-${doc.dir}.markdown"/>
+            <fileset dir="${dist.dir}/${lang}" includes="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
         </zip>
     </target>
 
