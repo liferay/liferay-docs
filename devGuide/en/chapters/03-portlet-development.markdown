@@ -183,7 +183,7 @@ structure which looks like the following:
 The portlet we just created is fully functional and deployable to your Liferay
 instance.
 
-By defaultm new portlets are configured to use the MVCPortlet framework, a very
+By default, new portlets are configured to use the MVCPortlet framework, a very
 light framework that hides part of the complexity of portlets and makes the most
 common operations easier. MVCPortlet uses separate JSPs for each page in the
 portlet. By default, MVCPortlet uses a JSP with the mode name for each of the
@@ -191,77 +191,73 @@ registered portlet modes. For example, 'edit.jsp' for edit mode, 'help.jsp' for
 help mode, etc.
 
 Here's a snapshot of files for a portlet plugin named *my-greeting portlet* as
-shown in Developer Studio's *Package Explorer*. We will add and edit files in
+shown in Developer Studio's *Package Explorer*. We'll add and edit files in
 this directory to create a new and improved portlet! 
 
 ![Figure 3.4: Package Explorer of the My Greeting portlet](../../images/02-portlet-development-3.png)
 
 The **Java Source** is stored in the `docroot/WEB-INF/src` folder
 
-The **Configuration Files** are stored in the `docroot/WEB-INF` folder. The
-standard JSR-286 portlet configuration file `portlet.xml` is here, as well as
-three Liferay-specific configuration files. The Liferay-specific configuration
-files are completely optional, but are important if your portlets are going to
-be deployed on a Liferay Portal server. Described below are the Liferay-specific
-configuration files:
+The **Configuration Files** are stored in the `docroot/WEB-INF` folder. Files
+stored here include the standard JSR-286 portlet configuration file
+`portlet.xml`, as well as three optional Liferay-specific configuration files.
+The Liferay-specific configuration files, while optional, are important if your
+portlets are going to be deployed on a Liferay Portal server. Here's a
+description of the Liferay-specific files: 
 
-- *liferay-display.xml*: This file describes what category the portlet should
+- *liferay-display.xml*: Describes what category the portlet should
 appear under in the *Add* menu of the dockbar (the horizontal bar that appears
 at the top of the page to all logged-in users). 
 
-- *liferay-portlet.xml*: This file describes some optional Liferay-specific
-enhancements for JSR-286 portlets that are installed on a Liferay Portal server.
-For example, you can set whether a portlet is instanceable, which means that you
-can place more than one portlet instance on a page, and each one will have its
-own separate data. Please see the DTD for this file for further details, as
-there are too many settings to mention here. The DTD may be found in the
-`definitions` folder in the Liferay Portal source code. 
+- *liferay-portlet.xml*: Describes options for Liferay-specific enhancements for
+JSR-286 portlets installed on a Liferay Portal server. For example, you can set
+whether a portlet is instanceable, controlling whether multiple portlet
+instances on a page use separate or shared data. For a complete listing
+of this file's settings. its DTD is found in the `definitions` folder in the
+Liferay Portal source code. 
 
-- *liferay-plugin-package.properties*: This file describes the plugin to
-Liferay's hot deployer. Dependency JAR files (`.jar`) can be configured in this
+- *liferay-plugin-package.properties*: Describes the plugin to
+Liferay's hot deployer. Dependency JAR files (`.jar`) are configured in this
 file. If a portlet plugin has dependencies on particular `.jar` files that
-already come with Liferay, you can specify them in this file and the hot
-deployer will modify the `.war` file on deployment to copy those `.jar` files
-from inside the `.war` file. That way you don't have to include the `.jars`
-yourself and the `.war` will be lighter. 
+already come with Liferay, specify them in this file and the hot
+deployer modifies the `.war` file on deployment to copy those `.jar` files
+from inside the `.war` file. That way you don't have to include the `.jar`s
+yourself and the `.war` is lighter. 
 
 **Client Side Files** are the `.jsp`, `.css`, and JavaScript files that you
 write to implement your portlet's user interface. These files should go in the
-`docroot` folder somewhere—either in the root of the folder or in a folder
-structure of their own. Remember that with portlets you are only dealing with a
-portion of the HTML document that is getting returned to the browser. Any HTML
-code you have in your client side files should be free of global tags such as
-`<html>` or `<head>`. Additionally, all CSS classes and element IDs must be
-name-spaced to prevent conflicts with other portlets. Liferay provides tools (a
-taglib and API methods) to generate the namespace that you should use. 
+`docroot` folder—either in the root of the folder or in a folder structure of
+their own. Remember, with portlets you're only dealing with a portion of the
+HTML document that is getting returned to the browser. Any HTML code in your
+client side files should be free of global tags like `<html>` or `<head>`.
+Additionally, namespace all CSS classes and element IDs to prevent conflicts
+with other portlets. Liferay provides two tools, a taglib and API methods, to
+generate the namespace that you should use. 
 
 ### A Closer Look at the My Greeting Portlet [](id=lp-6-1-dgen03-a-closer-look-at-the-my-greeting-portlet-0)
 
-If you are new to portlet development, this section will give you a better
-understanding of the configuration options of a portlet. 
+If you're new to portlet development, this section will enhance your
+understanding of portlet configuration options. 
 
 **docroot/WEB-INF/portlet.xml**
 
-When using the Plugins SDK, the default content of the portlet descriptor is as
-follows (shown using Developer Studio's Portlet Application Configuration
-Editor):
+In the Plugins SDK, the default content of the portlet descriptor looks like
+this (shown using Developer Studio's Portlet Application Configuration Editor): 
 
 ![Figure 3.5: Portlet XML file of the My Greeting portlet](../../images/02-portlet-development-4.png)
 
-Here is a basic summary of what each of the elements represents:
+Here's a basic summary of what each element represents: 
 
     portlet-name
 
-The portlet-name element contains the canonical name of the portlet. Each
-portlet name is unique within the portlet application (that is, within the
-portlet plugin). This is also referred to within Liferay Portal as the portlet
-id. 
+The portlet-name element contains the portlet's canonical name. Each portlet
+name is unique within the portlet application (that is, within the portlet
+plugin). Within Liferay Portal this is also referred to as the portlet id. 
 
     display-name
 
-The display-name type contains a short name that is intended to be displayed by
-tools. It is used by `display-name` elements. The display name need not be
-unique. 
+The display-name type contains a short name intended to be displayed by tools.
+It's used by `display-name` elements. The display name need not be unique. 
 
     portlet-class
 
@@ -281,16 +277,15 @@ expires. A value of `-1` indicates that the output never expires.
 
     supports
 
-The supports element contains the supported mime-type. The element also
-indicates the portlet modes a portlet supports for a specific content type. All
-portlets must support the view mode. The concept of "portlet modes" is defined
-by the portlet specification. Modes are used to separate certain views of the
-portlet from others. What is special about portlet modes is that the portal
-knows about them and can provide generic ways to navigate between portlet modes
-(for example through links in the box surrounding the portlet when it is added
-to a page). For that reason they are useful for operations that are common to
-all or most portlets. The most common usage is to create an edit screen where
-each user can specify personal preferences for the portlet. 
+The supports element contains the supported mime-type, and indicates the portlet
+modes supported for a specific content type. The concept of "portlet modes" is
+defined by the portlet specification. Modes are used to separate certain views
+of the portlet from others. The portal is aware of the portlet modes and
+provides generic ways to navigate between them (for example, using links in the
+box surrounding the portlet when it's added to a page), so they're useful for
+operations that are common to all or most portlets. The most common usage is to
+create an edit screen where each user can specify personal preferences for the
+portlet. All portlets must support the view mode. 
 
     portlet-info
 
@@ -298,7 +293,7 @@ Portlet-info defines portlet information.
 
     security-role-ref
 
-This element contains the declaration of a security role reference in the code
+Security-role-ref contains the declaration of a security role reference in the code
 of the web application. Specifically in Liferay, the `role-name` references
 which roles can access the portlet. 
 
@@ -309,7 +304,7 @@ Plugins SDK sets the contents of this descriptor, as shown in Developer Studio:
 
 ![Figure 3.6: Liferay-Portlet XML file of the My Greeting portlet](../../images/02-portlet-development-5.png)
 
-Here is a basic summary of what some of the elements represents. 
+Here's a basic summary of what some of the elements represents. 
 
     portlet-name
 
@@ -336,31 +331,30 @@ The path to the `.js` file for this portlet, to be included at the end of the
 page before the `</body>` tag. 
 
 There are many more elements that you should be aware of for more advanced
-development. Please see the DTD for this file in the `definitions` folder in the
-Liferay Portal source code for more information. 
+development. They're all listed in the DTD for this file, which is found in the
+`definitions` folder in the Liferay Portal source code. 
 
 ## Writing the My Greeting Portlet [](id=writing-the-my-greeting-portl-4)
 
-Now that you are familiar with the structure of a portlet, it's time to actually
-make it do something useful. Our portlet will have two pages:
+Now you're familiar with the structure of a portlet, so let's make it do
+something useful. Our portlet will have two pages: 
 
-- **view.jsp** will display the greeting and provide a link to the *edit* page.
+- **view.jsp** displays the greeting and provides a link to the *edit* page. 
 
-- **edit.jsp** will show a form with a text field allowing the greeting to be
-changed and a link back to the *view* page.
+- **edit.jsp** shows a form with a text field, allowing the greeting to be
+changed and a link back to the *view* page. 
 
 The `MVCPortlet` class will handle the rendering of our JSPs, so for this
-example, we won't have to write a single Java class. 
+example, we won't write a single Java class. 
 
-First, we don't want multiple greetings on the same page, so we are going to
-make the My Greeting portlet non-instanceable. To do this, edit
-`liferay-portlet.xml` and change the value of the element `instanceable` from
-`true` to `false` so that it looks like this:
+First, since we don't want multiple greetings on the same page, let's make the
+My Greeting portlet non-instanceable. Just edit `liferay-portlet.xml`,
+changing the value of the element `instanceable` from `true` to `false`.  Here's what it looks like: 
 
     <instanceable>false</instanceable>
 
-Next, we will create our JSP templates. Start by editing `view.jsp`, found in
-your portlet's `docroot` directory, replacing its current contents with the
+Now we'll create our JSP templates. Start by editing `view.jsp`, found in
+your portlet's `docroot` directory. Replace its current contents with the
 following:
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
@@ -382,7 +376,7 @@ following:
 
     <p><a href="<%= editGreetingURL %>">Edit greeting</a></p>
 
-Next, create `edit.jsp` in the same directory as `view.jsp` with the following
+Next, create `edit.jsp` in the same directory as `view.jsp`, with the following
 content:
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
@@ -447,55 +441,55 @@ a custom greeting.
 
 ---
 
-There are a few important details to notice in this implementation. First, the
-links between pages are created using the `<portlet:renderURL>` tag, which is
-defined by the `http://java.sun.com/portlet_2_0` tag library. These URLs have
+There are a few important details to note concerning this implementation. First,
+the links between pages are created using the `<portlet:renderURL>` tag, which
+is defined by the `http://java.sun.com/portlet_2_0` tag library. These URLs have
 only one parameter named `mvcPath`, which is used by MVCPortlet to determine
-which JSP to render for each request. You must always use taglibs to generate
-URLs to your portlet. This restriction exists because the portlet does not own
-the whole page, only a fragment of it, so the URL must always go to the portal
-responsible for rendering, not only your portlet but also any others that the
-user might put in the page. The portal will be able to interpret the taglib and
-create a URL with enough information to be able to render the whole page. 
+which JSP to render for each request. Always use taglibs to generate URLs to
+your portlet, because the portlet doesn't own the whole page, only a fragment of
+it. The URL must always go to the portal responsible for rendering, and this
+applies to your portlet and any others that the user might put in the page. The
+portal will be able to interpret the taglib and create a URL with enough
+information to render the whole page. 
 
 Second, notice that the form in `edit.jsp` has the prefix `aui`, signifying that
-it is part of the Alloy UI tag library. Alloy greatly simplifies the code
-required to create nice looking and accessible forms, by providing tags that
-will render both the label and the field at once. You can also use regular HTML
-or any other taglibs to create forms based on your own preferences. 
+it's part of the Alloy UI tag library. Alloy greatly simplifies the code
+required to create attractive and accessible forms by providing tags that render
+both the label and the field at once. You can also use regular HTML or any other
+taglibs to create forms based on your own preferences. 
 
-Another JSP tag that you may have noticed is `<portlet:defineObjects/>`. The
-portlet specification defined this tag in order to be able to insert into the
-JSP a set of implicit variables that are useful for portlet developers such as
-`renderRequest`, `portletConfig`, `portletPreferences`, ... etc. 
+Another JSP tag you may have noticed is `<portlet:defineObjects/>`. The portlet
+specification defined this tag in order to be able to insert a set of implicit
+variables into the JSP that are useful for portlet developers, such as
+`renderRequest`, `portletConfig`, `portletPreferences`, etc. 
 
-**One word of warning** about the portlet we have just built. For the purpose of
-making this example as simple and easy to follow as possible, we have cheated a
-little bit. The portlet specification does not allow setting preferences from a
-JSP, because they are executed in what is known as the render state. There are
-good reasons for this restriction, that are explained in the next section. 
+**A warning about our newly created portlet:** For the purpose of making
+this example easy to follow, we cheated a little bit. The portlet
+specification doesn't allow setting preferences from a JSP, because they are
+executed in what is known as the render state. There are good reasons for this
+restriction, and they're explained in the next section. 
 
 ## Understanding the Two phases of Portlet Execution [](id=understanding-the-two-phases-of-portlet-executi-4)
 
-One of the characteristics of portlet development that confuses most developers
-used to regular servlet development or who are used to other environments such
-as PHP, Python or Ruby, is the need for two phases. The good news is that once
-you get acquainted with them, they become simple and useful. 
+One characteristic of portlet development that's confusing to most developers
+used to regular servlet development or used to other environments such as PHP,
+Python or Ruby, is the need for two phases. Thankfully, once you get acquainted
+with them, they become simple and useful. 
 
-The reason why two phases are needed is because a portlet does not own a whole
-HTML page, it only generates a fragment of it. The portal that holds the portlet
-is responsible for generating the page by invoking one or several portlets and
-adding some additional HTML around them. Usually, when the user interacts with
-the page, for example by clicking a link or a button, she's doing it within a
-specific portlet. The portal must forward the action performed by the user to
-that portlet and after that the portal must render the whole page, showing the
-content of that portlet, which may have changed, and also the content of the
-other portlets. To get the content of the other portlets in the page which have
-not been invoked by the user, the portal repeats the last invocation (with the
-assumption that the invocation will yield the same result). 
+Two phases are needed in portlet development because a portlet does not own a
+whole HTML page, just a fragment of it. The portal holding the portlet generates
+the page by invoking one or more portlets and adding some additional HTML around
+them. When the user interacts with the page, say by clicking a link or a button,
+she's usually doing it within a specific portlet. The portal must forward the
+action performed by the user to the portlet, then render the whole page, showing
+the content of that portlet, which may have changed. If there are portlets in
+the page that haven't been invoked by the user, the portal produces their
+content by repeating the last invocation of the portlet (and assumes that the
+invocation will yield the same result).
 
-Now imagine this scenario: we have a page with two portlets, a navigation
-portlet and a shopping portlet. A user comes to the page and does the following:
+With the above in mind, imagine a scenario where we have a page with two
+portlets; a navigation portlet and a shopping portlet. A user comes to the page
+and does the following:
 
 1.  Loads the page.
 
@@ -508,14 +502,14 @@ default view.
 portlet to change. After that, the portal must also show the content of the
 shopping portlet, so it repeats the last action (the one in which the user
 clicked a button), which causes a new charge on the credit card and the start of
-a new shipping process.
+a new shipping process!
 
-I guess that by now you can tell that this is not right. Since the portal
-doesn't know whether the last operation on a portlet was an action, it would
-have no option but to repeat it over and over to obtain the content of the
-portlet again (at least until the Credit Card reached its limit). 
+Obviously, we'd like to avoid the situation described in step 3 above, but the
+portal doesn't know whether the last operation on a portlet was an action. It
+has no option but to repeat the last action over and over to obtain the content
+of the portlet (at least until the Credit Card reached its limit).
 
-Fortunately portals don't work that way. In order to prevent situations like the
+Fortunately, that's not how portals work. To prevent situations like the
 one described above, the portlet specification defines two phases for every
 request of a portlet, to allow the portal to differentiate *when an action is
 being performed* (and should not be repeated) and *when the content is being
