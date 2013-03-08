@@ -34,90 +34,125 @@ These are just a few scenarios that may ring true for you. When you're
 responsible for keeping your system running well 24x7, you can't be too cautious
 in protecting your portal, system and network.
 
-## How plugin security works 
+## How plugin security works
 
-When enabled, Liferay Portal's Plugin Security Manager checks a *Portal Access
-Control List* that's deployed with the plugin. This list describes what APIs the
-plugin accesses, so that you can review what it does without having to look at
-the source code. If the plugin tries to access anything that's not on this list,
-the plugin's request is stopped dead in its tracks, throwing exceptions to let
-you know what went wrong.
+When the Plugin Security Manager is enabled for your plugin, it checks your
+plugin's *Portal Access Control List (PACL)*. This list describes what APIs the plugin
+accesses, so people deploying the plugin can review what it does without seeing
+its source code. If the plugin tries to access anything that's not on this list,
+the plugin's request is stopped dead in its tracks with the security manager
+logging information on the attempt to access unauthorized APIs or resources. 
 
-Access to APIs is authorized by means of the property values specified in the
-plugin's `liferay-plugin-package.properties` file. This file must be specified
-in your plugin's `WEB-INF` directory. These security manager properties are
-collectively known as the plugin's *Portal Access Control List (PACL)*.
+Access to APIs and resources is authorized by means of property values specified
+in the plugin's `liferay-plugin-package.properties` file. This file must be
+specified in your plugin's `WEB-INF` directory. These security manager
+properties are collectively known as the plugin's PACL. 
 
 As you develop plugins for Liferay Marketplace or for distribution within your
 organization, you'll need to set the security manager properties appropriately.
 Before we dive into the intricacies of these properties, let's consider a plugin
 development approach that involves designing an app for the security manager
-from the ground up.
+from the ground up. 
 
-## Developing Plugins with security in mind 
+## Developing plugins with security in mind
 
 At the start of plugin developement, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
 suggest you go ahead and develop your plugin first and address plugin security
-afterwards. Liferay Portal's Plugin Security Manager uncovers the resources your
-plugin tries to access by throwing exceptions if a PACL property does not
-specifically grant access to those resources. So at the end of development, you
-may as well put the security manager to work and make it earn its keep.
+afterwards. 
 
 Here is the suggested plugin development approach: 
 
--	Develop your plugin
--	Turn on the Plugin Security Manager
--	Declare the PACL property values required to satisfy the security manager
+- Develop your plugin 
+- Build your plugin's PACL 
+- Enable the Plugin Security Manager 
 
-The Plugin Security Manager intercepts requests for protected Liferay APIs,
-letting you know instantly the portal items which you are unauthorized to
-access. In this way, you can fill in the security manager properties of your
-plugin's PACL, so that any protected API you're accessing can be declared to
-users of your plugin.
+Let's go over each part of this approach. 
 
-### Develop your plugin 
+### Develop your plugin
 
 First, create your plugin the way you normally would. Design your application,
 write code, unit test your code, have users beta test your code. In essence, do
-everything you normally would do.
+everything you normally would do. Do all of this with the Plugin Security
+Manager disabled via your plugin's `liferay-plugin-package.properties` file: 
 
-### Turn on the Plugin Security Manager 
+	security-manager-enabled=false
 
-Next, turn on the security manager (see below), and re-test your application's
-functionality. If anything you're doing in the application needs to be declared
-in a PACL, this will be revealed to you. As you test, keep track of any issues
-the security manager reveals during testing.
+Before the Plugin Security Manager is enabled, you must specify the resources
+your plugin accesses. Let's build a list of these resources in your plugin's
+PACL. 
 
-### Declare the PACL properties 
+### Build your plugin's PACL
 
-Once you've identified what you need to declare, add the appropriate properties
-to your PACL in `liferay-plugin-package.properties`. Save this file and retest.
-Make sure everything works. If not, there are other properties you'll have to
-declare, so add those and test again. Repeat this process until you have an
-error-free deployment.
+Rather than tediously figuring out all of the resources your plugin accesses on
+your own, let Liferay's PACL Policy Generation tool to give you a head start.
+The generation tool detects resources your plugin accesses and writes
+corresponding PACL properties to a policy file. You can then merge the PACL
+properties from your policy file with those in your plugin's
+`liferay-plugin-package.properties` file. 
 
-Once this is done, you're ready to distribute your application. 
+Here's how you generate a PACL policy for your plugin: 
 
-## Enabling the Security Manager 
+1. Specify your Liferay home in your `portal-ext.properties` file, if you
+haven't done so already. For example: 
 
-If you want to distribute a plugin either through the Liferay Marketplace or
+        liferay.home=C:/liferay-portal-[version]/bundles
+
+    You must restart Liferay for the property to take affect.
+
+2. Turn on the security manager's *generate* mode in your plugin by setting the
+following property in your `liferay-plugin-package.properties` file: 
+
+        security-manager-enabled=generate
+
+3. Deploy your plugin. 
+
+    The PACL Policy Generation tool writes a PACL policy file: 
+
+        ${liferay.home}/pacl-policy/${servletContextName}.policy
+
+    The security manager performs security checks on your plugin; but rather
+    than throwing errors on failed checks, the generator tool writes suggested
+    rules for resolving the failures. 
+
+4. Lastly, merge the properties found in your newly generated PACL policy file
+into your plugin's `liferay-plugin-package.properties` file. 
+
+Now that your plugin has a thoroughly specified list of resources it accesses,
+enable the security manager and do final testing of your PACL properties. We
+cover enabling the security manager in the next section. 
+
+## Enabling the Security Manager
+
+If you want to distribute plugins either through the Liferay Marketplace or
 through your web site, you have to assume any potential users have Security
 Manager turned on. For this reason, you should have it turned on when doing
-final testing on your applications.
+final testing on your plugins (i.e., applications). 
 
-It's very easy to activate the security manager. Set the following property to
-true:
+It's very easy to activate the security manager. Set the following
+`liferay-plugin-package.properties` property to true: 
 
 	security-manager-enabled=true
 
-As a suggested plugin development approach, disable the security manager (by
-setting this property to `false`) until after you are done developing your
-plugin. By default, the security manager is turned off.
+Then re-deploy your plugin and re-test it's functionality. If anything you're
+doing in the application needs to be declared in a PACL, this will be revealed
+to you in errors logged by the security manager. As you test, keep track of any
+security related errors so that you authorize access to those resources by
+specifying them in your PACL properties in your
+`liferay-plugin-package.properties` file. Save changes to the file, re-deploy
+the plugin, and re-test it. Make sure everything works. If not, there are other
+properties you'll have to declare. Refer to the Portal Access Control List
+(PACL) Properties section later in this chapter to see all of the PACL
+properties and example values. 
+
+Repeat the process of adjusting PACL properties and re-testing until you have an
+error-free deployment. Then, you can distribute your plugin on Liferay
+Marketplace. You can do so with confidence because you've specified all of the
+resources your application uses up front in the application's PACL and your
+application satisfies Liferay Portal's Security Manager. 
 
 Next, we'll look at exactly what APIs the security manager protects, and how you
-can declare whether your application uses any of these properties.
-
+can declare whether your application uses any of these properties. 
 
 ## Portal Access Control List (PACL) Properties 
 
