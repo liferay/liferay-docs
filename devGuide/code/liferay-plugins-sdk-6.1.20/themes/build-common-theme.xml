@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-common-theme">
+	<property name="project.dir" value="../.." />
+
+	<import file="../build-common-plugin.xml" />
+
+	<target name="build-css">
+		<java
+			classname="com.liferay.portal.tools.SassToCssBuilder"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+			<arg value="sass.dir=${basedir}/docroot" />
+		</java>
+	</target>
+
+	<target name="clean">
+		<if>
+			<available file="docroot/_diffs" />
+			<then>
+				<delete includeemptydirs="true" quiet="true" failonerror="false">
+					<fileset
+						dir="docroot"
+						excludes=".gitignore,_diffs.*,_diffs/**,WEB-INF/**"
+					/>
+				</delete>
+			</then>
+		</if>
+
+		<antcall target="build-common-plugin.clean" />
+	</target>
+
+	<target name="compile">
+		<if>
+			<available file="docroot/_diffs/images" />
+			<then>
+				<for param="file">
+					<path>
+						<fileset
+							dir="docroot/_diffs/images"
+							includes="**/screenshot.png"
+						/>
+					</path>
+					<sequential>
+						<propertyregex input="@{file}" override="yes" property="thumbnail.file" regexp="screenshot\.png" replace="thumbnail\.png" />
+
+						<java
+							classname="com.liferay.portal.tools.ThumbnailBuilder"
+							classpathref="portal.classpath"
+						>
+							<arg value="thumbnail.original.file=@{file}" />
+							<arg value="thumbnail.thumbnail.file=${thumbnail.file}" />
+							<arg value="thumbnail.height=120" />
+							<arg value="thumbnail.width=160" />
+							<arg value="thumbnail.overwrite=false" />
+						</java>
+					</sequential>
+				</for>
+			</then>
+		</if>
+
+		<if>
+			<not>
+				<isset property="theme.type" />
+			</not>
+			<then>
+				<property name="theme.type" value="vm" />
+			</then>
+		</if>
+
+		<if>
+			<equals arg1="${theme.parent}" arg2="_unstyled" />
+			<then>
+				<copy todir="docroot" overwrite="true" preservelastmodified="true">
+					<fileset
+						dir="${app.server.portal.dir}/html/themes/_unstyled"
+						excludes="templates/**"
+					/>
+				</copy>
+
+				<copy todir="docroot/templates" overwrite="true" preservelastmodified="true">
+					<fileset
+						dir="${app.server.portal.dir}/html/themes/_unstyled/templates"
+						excludes="init.${theme.type}"
+						includes="*.${theme.type}"
+					/>
+				</copy>
+			</then>
+			<elseif>
+				<equals arg1="${theme.parent}" arg2="_styled" />
+				<then>
+					<copy todir="docroot" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/_unstyled"
+							excludes="templates/**"
+						/>
+					</copy>
+
+					<copy todir="docroot/templates" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/_unstyled/templates"
+							excludes="init.${theme.type}"
+							includes="*.${theme.type}"
+						/>
+					</copy>
+
+					<copy todir="docroot" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/_styled"
+						/>
+					</copy>
+				</then>
+			</elseif>
+			<elseif>
+				<equals arg1="${theme.parent}" arg2="classic" />
+				<then>
+					<copy todir="docroot" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/classic"
+							excludes="_diffs/**,templates/**"
+						/>
+					</copy>
+
+					<copy todir="docroot/templates" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/classic/templates"
+							includes="*.${theme.type}"
+						/>
+					</copy>
+				</then>
+			</elseif>
+			<elseif>
+				<equals arg1="${theme.parent}" arg2="control_panel" />
+				<then>
+					<copy todir="docroot" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/control_panel"
+							excludes="_diffs/**,templates/**"
+						/>
+					</copy>
+
+					<copy todir="docroot/templates" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/control_panel/templates"
+							includes="*.${theme.type}"
+						/>
+					</copy>
+				</then>
+			</elseif>
+			<elseif>
+				<isset property="theme.parent" />
+				<then>
+					<ant dir="${theme.parent}" target="compile" inheritAll="false" />
+
+					<copy todir="docroot" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${theme.parent}/docroot"
+							excludes="_diffs/**,WEB-INF/*.properties,WEB-INF/*.xml"
+						/>
+					</copy>
+				</then>
+			</elseif>
+		</if>
+
+		<if>
+			<available file="docroot/_diffs" />
+			<then>
+				<copy todir="docroot" overwrite="true" preservelastmodified="true">
+					<fileset
+						dir="docroot/_diffs"
+					/>
+				</copy>
+			</then>
+		</if>
+
+		<if>
+			<available file="docroot/WEB-INF/src" />
+			<then>
+				<antcall target="build-common-plugin.compile" />
+			</then>
+			<else>
+				<if>
+					<available file="overwrite" />
+					<then>
+						<copy overwrite="true" preservelastmodified="true" todir="docroot">
+							<fileset dir="overwrite" />
+						</copy>
+					</then>
+				</if>
+			</else>
+		</if>
+	</target>
+
+	<target name="war" depends="compile">
+		<antcall target="build-css" />
+
+		<if>
+			<not>
+				<available file="docroot/images/screenshot.png" />
+			</not>
+			<then>
+				<echo>screenshot.png does not exist.</echo>
+			</then>
+		</if>
+
+		<if>
+			<not>
+				<available file="docroot/images/thumbnail.png" />
+			</not>
+			<then>
+				<echo>thumbnail.png does not exist.</echo>
+			</then>
+		</if>
+
+		<mkdir dir="${project.dir}/dist" />
+
+		<delete file="${plugin.file}" />
+
+		<zip
+			basedir="docroot"
+			destfile="${plugin.file}"
+			excludes="_diffs.*,_diffs/**,${plugins.war.excludes}"
+		/>
+	</target>
+</project>
