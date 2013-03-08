@@ -1,0 +1,435 @@
+/* ---------- Portlet wrapper and icons ---------- */
+.freeform .portlet {
+  margin-bottom: 0; }
+
+body.portlet {
+  border: none; }
+
+.portlet-topper {
+  position: relative; }
+
+.portlet-title {
+  display: block;
+  font-size: 1em;
+  margin: 0; }
+  .portlet-title img {
+    vertical-align: middle; }
+
+.portlet-title-text {
+  cursor: pointer; }
+
+.panel-page-content .portlet-title-text, .panel-page-body .portlet-title-text {
+  cursor: auto; }
+
+.portlet-topper-toolbar {
+  margin: 0;
+  padding: 2px;
+  position: absolute;
+  right: 3px;
+  text-align: right;
+  top: 3px; }
+  .portlet-topper-toolbar .nobr {
+    display: block;
+    float: left;
+    padding: 1px; }
+
+.portlet-content, .portlet-minimized .portlet-content-container {
+  padding: 12px 10px 10px; }
+
+.portlet-minimized .portlet-content {
+  padding: 0; }
+
+.portlet-icon-back {
+  background: url(../images/arrows/01_left.png) no-repeat 0 50%;
+  font-weight: bold;
+  padding: 5px 5px 5px 18px; }
+
+.portlet-nested-portlets .portlet-boundary {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important; }
+
+/* ---------- Borderless portlet ---------- */
+.portlet-borderless-container {
+  min-height: 2.5em;
+  position: relative; }
+
+.portlet-borderless-bar {
+  background: #333;
+  color: #FFF;
+  font-size: 10px;
+  opacity: 0.3;
+  padding: 2px 5px 1px;
+  position: absolute;
+  right: 0;
+  text-shadow: -1px -1px black;
+  top: 0;
+  z-index: 200; }
+  .portlet-borderless-bar a {
+    background: url() no-repeat 0 50%;
+    color: #3AF;
+    display: inline-block;
+    height: 16px;
+    margin-left: 5px;
+    text-indent: -9999px;
+    vertical-align: top;
+    width: 16px; }
+  .portlet-borderless-bar .portlet-actions {
+    display: none;
+    float: left;
+    margin-right: 20px; }
+  .portlet-borderless-bar .portlet-title-default, .portlet-borderless-bar .portlet-actions {
+    min-height: 20px;
+    vertical-align: top; }
+  .portlet-borderless-bar .portlet-action-separator {
+    display: none; }
+  .portlet-borderless-bar .portlet-back a {
+    height: auto;
+    text-indent: 0;
+    width: auto; }
+  .portlet-borderless-bar .portlet-close a {
+    background-image: url(../images/portlet/close_borderless.png); }
+  .portlet-borderless-bar .portlet-options li.lfr-trigger strong a {
+    background-image: url(../images/portlet/options_borderless.png); }
+
+.portlet-borderless-container:hover .portlet-borderless-bar {
+  opacity: 1; }
+  .portlet-borderless-container:hover .portlet-borderless-bar .portlet-actions {
+    display: inline; }
+
+.portlet-title-default {
+  display: inline-block;
+  float: right;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.portlet-draggable .portlet-topper {
+  cursor: move; }
+.portlet-draggable .portlet-title-default {
+  background: url(../images/portlet/draggable_borderless.png) no-repeat 0 50%;
+  cursor: move;
+  padding-left: 20px; }
+
+/* ---------- Panel Page ---------- */
+.lfr-panel-page {
+  width: 100%; }
+  .lfr-panel-page .portlet-title {
+    font-size: 13px; }
+  .lfr-panel-page .lfr-add-content h2 span {
+    background-color: #D3DADD; }
+
+/* ---------- Standard styles defined in the JSR 168 ---------- */
+/* ---------- Fonts ---------- */
+/* ---------- Font attributes for the 'normal' fragment font ---------- */
+/* ---------- Font attributes similar to the .portlet-font but the color is lighter ---------- */
+/* ---------- Messages ---------- */
+.portlet-msg, .portlet-msg-info, .portlet-msg-help, .lfr-message-help, .portlet-msg-progress, .lfr-message-progress, .lfr-message-info, .portlet-msg-error, .lfr-message-error, .portlet-msg-alert, .lfr-message-alert, .portlet-msg-success, .lfr-message-success {
+  background: #EEE none no-repeat 6px 50%;
+  border: 1px solid #555;
+  color: #34404F;
+  display: block;
+  font-weight: bold;
+  margin: 2px auto 14px;
+  padding: 6px 6px 6px 30px;
+  text-align: left; }
+
+/* ---------- Status of the current operation ---------- */
+/* ---------- Help messages, general additional information, etc. ---------- */
+.portlet-msg-info, .portlet-msg-help, .lfr-message-help, .portlet-msg-progress, .lfr-message-progress, .lfr-message-info {
+  background-color: #DFF4FF;
+  background-image: url(../images/messages/info.png);
+  border-color: #A7CEDF; }
+
+.portlet-msg-help, .lfr-message-help {
+  background-image: url(../images/portlet/help.png); }
+
+.portlet-msg-progress, .lfr-message-progress {
+  background-image: url(../images/aui/loading_indicator.gif); }
+
+/* ---------- Error messages ---------- */
+.portlet-msg-error, .lfr-message-error {
+  background-color: #FDD;
+  background-image: url(../images/messages/error.png);
+  border-color: #F00; }
+
+/* ---------- Warning messages ---------- */
+.portlet-msg-alert, .lfr-message-alert {
+  background-color: #FFC;
+  background-image: url(../images/messages/alert.png);
+  background-position: 6px 20%;
+  border-color: #FC0; }
+
+/* ---------- Success messages ---------- */
+.portlet-msg-success, .lfr-message-success {
+  background-color: #F4FDEF;
+  background-image: url(../images/messages/success.png);
+  border-color: #ACDFA7;
+  color: #384F34; }
+
+/* ---------- Message labels ---------- */
+.portlet-msg-alert-label, .portlet-msg-error-label, .portlet-msg-info-label, .portlet-msg-progress-label, .portlet-msg-success-label {
+  background: none no-repeat 0 50%;
+  padding: 3px 3px 3px 20px;
+  font-weight: bold; }
+
+.portlet-msg-alert-label {
+  background-image: url(../images/messages/alert.png);
+  color: #663; }
+
+.portlet-msg-error-label {
+  background-image: url(../images/messages/error.png);
+  color: #900; }
+
+.portlet-msg-info-label, .portlet-msg-help-label, .portlet-msg-progress-label {
+  background-image: url(../images/messages/info.png);
+  color: #34404F; }
+
+.portlet-msg-help-label {
+  background-image: url(../images/portlet/help.png); }
+
+.portlet-msg-progress-label {
+  background-image: url(../images/aui/loading_indicator.gif); }
+
+.portlet-msg-success-label {
+  background-image: url(../images/messages/success.png);
+  color: #384F34; }
+
+/* ---------- Liferay Messages ---------- */
+.lfr-message-content, .lfr-message-info, .lfr-message-help, .lfr-message-error, .lfr-message-alert, .lfr-message-success {
+  border-left-width: 0;
+  border-right-width: 0; }
+
+.lfr-message {
+  position: relative; }
+  .lfr-message .lfr-message-control {
+    background-color: #333;
+    display: inline-block; }
+  .lfr-message .lfr-message-controls {
+    display: none;
+    left: 3px;
+    margin: -8px 8px 0 3px;
+    position: absolute;
+    top: 50%;
+    z-index: 10; }
+  .lfr-message .lfr-message-close {
+    background-image: url(../images/portlet/close_borderless.png);
+    background-position: 0 0;
+    background-repeat: no-repeat; }
+  .lfr-message .lfr-message-close-all {
+    color: #FFF;
+    display: none;
+    font-size: 0.8em;
+    margin-left: 10px;
+    padding: 1px 10px;
+    text-shadow: 1px 1px 0 #000;
+    vertical-align: top; }
+    .lfr-message .lfr-message-close-all a {
+      color: #FFF; }
+  .lfr-message .lfr-message-controls-hover .lfr-message-close-all {
+    display: inline-block; }
+  .lfr-message.pending {
+    background-image: url(../images/common/time.png); }
+
+.lfr-message-dismissible.lfr-message-hover .lfr-message-content {
+  background-image: none; }
+.lfr-message-dismissible.lfr-message-hover .lfr-message-controls {
+  display: block; }
+
+.lfr-message-trigger, .lfr-message-close {
+  cursor: pointer; }
+
+/* ---------- Sections ---------- */
+/* ---------- Table or section header ---------- */
+/* ---------- Normal text in a table cell ---------- */
+/* ---------- Text in every other row in the cell ---------- */
+/* ---------- Text in a selected cell range ---------- */
+.portlet-section-selected, .portlet-section-selected a {
+  background: #727C81;
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none; }
+.portlet-section-selected a:hover, .portlet-section-selected a:focus {
+  background-color: #727C81; }
+
+/* ---------- Text of a subheading ---------- */
+/* ---------- Table or section footnote ---------- */
+/* ---------- Text that belongs to the table but does not fall in one of the other categories (e.g. explanatory or help text that is associated with the section) ---------- */
+/* ---------- Forms ---------- */
+/* ---------- Text used for the descriptive label of the whole form (not the labels for fields) ---------- */
+/* ---------- Text of the user-input in an input field ---------- */
+/* ---------- Text on a button ---------- */
+/* ---------- Text that appears beside a context dependent action icon ---------- */
+/* ---------- Text that appears beside a 'standard' icon (e.g. Ok, or Cancel) ---------- */
+/* ---------- Text for a separator of fields (e.g. checkboxes, etc.) ---------- */
+/* ---------- Text for a field (not input field, e.g. checkboxes, etc.) ---------- */
+/* ---------- Menus ---------- */
+/* ---------- General menu settings such as background color, margins, etc. ---------- */
+/* ---------- Normal, unselected menu item ---------- */
+/* ---------- Selected menu item ---------- */
+/* ---------- Normal, unselected menu item when the mouse hovers over it ---------- */
+/* ---------- Selected menu item when the mouse hovers over it ---------- */
+/* ---------- Normal, unselected menu item that has sub-menus ---------- */
+/* ---------- Selected sub-menu item that has sub-menus ---------- */
+/* ---------- Descriptive text for the menu (e.g. in a help context below the menu) ---------- */
+/* ---------- Menu caption ---------- */
+/* ---------- Miscellaneous portlet styles ---------- */
+.restricted, .restricted td {
+  background: #FDD;
+  border: none; }
+.restricted * {
+  color: #727C81; }
+
+.alt.restricted td {
+  background-color: #FFC0C0; }
+
+.hover.restricted td {
+  background-color: #D3BDC0; }
+
+.restricted td.col-1, .alt.restricted td.col-1 {
+  background-image: url(../images/messages/error.png);
+  background-position: 5px 50%;
+  background-repeat: no-repeat;
+  padding-left: 28px; }
+
+/* ---------- Permissions ---------- */
+.results-row.lfr-role .col-1, .results-row.hover.lfr-role .col-1 {
+  background-image: url();
+  background-position: 5px 50%;
+  background-repeat: no-repeat;
+  padding-left: 30px; }
+.results-row.lfr-role-guest .col-1, .results-row.hover.lfr-role-guest .col-1 {
+  background-image: url(../images/common/guest_icon.png); }
+.results-row.lfr-role-regular .col-1, .results-row.hover.lfr-role-regular .col-1 {
+  background-image: url(../images/common/user_icon.png); }
+.results-row.lfr-role-site .col-1, .results-row.hover.lfr-role-site .col-1 {
+  background-image: url(../images/common/site_icon.png); }
+.results-row.lfr-role-organization .col-1, .results-row.hover.lfr-role-organization .col-1 {
+  background-image: url(../images/common/organization_icon.png); }
+.results-row.lfr-role-team .col-1, .results-row.hover.lfr-role-team .col-1 {
+  background-image: url(../images/common/team_icon.png); }
+
+/* ---------- Miscellaneous component styles ---------- */
+/* ---------- Add content dialog ---------- */
+.lfr-portlet-item, .lfr-portlet-item p a {
+  font-size: 1em; }
+
+/* ---------- Actions button ---------- */
+.lfr-actions.lfr-extended, .lfr-actions.lfr-extended ul {
+  background: white url(../images/forms/button.png) repeat-x 0 100%;
+  border: 1px solid;
+  border-color: #DEDEDE #BFBFBF #BFBFBF #DEDEDE; }
+.lfr-actions ul {
+  bottom: -1px; }
+.lfr-actions .lfr-trigger, .lfr-actions .lfr-trigger strong {
+  background: none; }
+.lfr-actions .lfr-trigger li {
+  background: transparent;
+  border-bottom: 1px solid #DEDEDE;
+  padding: 2px; }
+  .lfr-actions .lfr-trigger li a {
+    padding: 5px 10px 5px 25px; }
+    .lfr-actions .lfr-trigger li a:hover {
+      background-color: #828F95;
+      color: #FFF; }
+  .lfr-actions .lfr-trigger li img {
+    left: 3px;
+    position: absolute; }
+  .lfr-actions .lfr-trigger li.last {
+    border-bottom: none; }
+.lfr-actions.portlet-options {
+  background: none;
+  border: none;
+  float: left; }
+  .lfr-actions.portlet-options .lfr-trigger {
+    padding: 0; }
+    .lfr-actions.portlet-options .lfr-trigger strong {
+      min-width: 0;
+      padding: 1px; }
+      .lfr-actions.portlet-options .lfr-trigger strong a {
+        background-image: url(../images/portlet/options.png);
+        background-position: 0 0;
+        display: block;
+        font-size: 0;
+        height: 16px;
+        padding: 0;
+        text-indent: -9999px;
+        width: 16px; }
+
+.visible.portlet-options .lfr-trigger strong a {
+  background-image: url(../images/portlet/options_selected.png); }
+
+/*------ Breadcrumbs taglib ------*/
+.breadcrumbs:before, .breadcrumbs:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden; }
+.breadcrumbs:after {
+  clear: both; }
+
+.breadcrumbs-vertical {
+  display: inline-block; }
+
+.breadcrumbs-horizontal li {
+  display: inline-block;
+  vertical-align: middle; }
+
+/* ---------- Calendar taglib ---------- */
+.taglib-calendar tr.portlet-section-header th, .taglib-calendar tr td {
+  border: none; }
+.taglib-calendar tr td a {
+  background-color: #F0F5F7;
+  border: 1px solid #FFF;
+  border-bottom: none;
+  border-left: none;
+  display: block;
+  height: 15px;
+  padding: 5px 0; }
+  .taglib-calendar tr td a:hover {
+    background-color: #727C81;
+    color: #FFF; }
+.taglib-calendar tr td.calendar-inactive {
+  background-color: #FFF;
+  color: #B5BFC4; }
+.taglib-calendar tr th {
+  border-bottom-color: #D7D7D7; }
+.taglib-calendar table td {
+  border-width: 0; }
+.taglib-calendar .calendar-current-day, .taglib-calendar .calendar-current-day a {
+  background-color: #FFF; }
+.taglib-calendar .calendar-current-day a {
+  border: 1px solid #727C81;
+  color: #369;
+  text-decoration: underline; }
+
+.ie .portlet-borderless-bar {
+  -ms-filter: alpha(opacity=20);
+  filter: alpha(opacity=20); }
+.ie .portlet-borderless-container:hover .portlet-borderless-bar {
+  -ms-filter: alpha(opacity=100);
+  filter: alpha(opacity=100); }
+.ie .taglib-calendar tr td.first a {
+  border-right: none; }
+
+.ie6 .portlet-borderless-bar .portlet-actions, .ie7 .portlet-borderless-bar .portlet-actions {
+  margin-right: 0;
+  margin-left: 20px; }
+.ie6 .portlet-title-default, .ie7 .portlet-title-default {
+  float: left; }
+.ie6 .breadcrumbs-vertical, .ie6 .breadcrumbs-horizontal li, .ie7 .breadcrumbs-vertical, .ie7 .breadcrumbs-horizontal li {
+  display: inline;
+  zoom: 1; }
+
+.ie6 .portlet-topper-toolbar .icon {
+  height: 16px;
+  width: 16px; }
+.ie6 .portlet-borderless-container {
+  height: 2.5em; }
+.ie6 .portlet-borderless-bar {
+  filter: alpha(opacity=90); }
+  .ie6 .portlet-borderless-bar .portlet-actions {
+    display: inline;
+    filter: alpha(opacity=90); }
+.ie6 .breadcrumbs {
+  zoom: 1; }
+

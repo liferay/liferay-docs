@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-common-shared">
+	<property name="project.dir" value="../.." />
+
+	<import file="../build-common-plugin.xml" />
+
+	<target name="clean">
+		<delete dir="classes" />
+		<delete file="${plugin.file}" />
+	</target>
+
+	<target name="compile">
+		<if>
+			<not>
+				<equals arg1="${plugin.name}" arg2="portal-compat-shared" />
+			</not>
+			<then>
+				<ant dir="${project.dir}/shared/portal-compat-shared" target="compile" inheritAll="false" />
+			</then>
+		</if>
+
+		<if>
+			<available file="src" />
+			<then>
+				<mkdir dir="classes" />
+
+				<copy todir="classes">
+					<fileset dir="src" excludes="**/*.java" />
+				</copy>
+
+				<if>
+					<available file="lib" />
+					<then>
+						<path id="plugin-lib.classpath">
+							<fileset dir="lib" includes="*.jar" />
+							<pathelement location="classes" />
+							<pathelement location="${project.dir}/shared/portal-compat-shared/classes" />
+						</path>
+					</then>
+					<else>
+						<path id="plugin-lib.classpath">
+							<pathelement location="classes" />
+							<pathelement location="${project.dir}/shared/portal-compat-shared/classes" />
+						</path>
+					</else>
+				</if>
+
+				<antcall target="compile-java">
+					<param name="javac.classpathref" value="plugin.classpath" />
+					<param name="javac.destdir" value="classes" />
+					<param name="javac.srcdir" value="src" />
+					<reference refid="plugin-lib.classpath" torefid="plugin-lib.classpath" />
+				</antcall>
+			</then>
+		</if>
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="${project.dir}/dist" />
+
+		<jar
+			basedir="classes"
+			jarfile="${plugin.file}"
+		/>
+	</target>
+
+	<target name="war">
+		<antcall target="jar" />
+	</target>
+</project>
