@@ -97,8 +97,8 @@ On Linux (Unix or Mac OS X), if your Ant installation directory is
 and adjust your path by specifying the following in your `.bash_profile` or from
 your terminal: 
 
-        export ANT_HOME=/java/apache-ant-<version>
-        export PATH=$PATH:$ANT_HOME/bin
+    export ANT_HOME=/java/apache-ant-<version>
+    export PATH=$PATH:$ANT_HOME/bin
 
 On Windows, if your Ant installation folder is
 `C:\Java\apache-ant-<version>`, set your `ANT_HOME` and path environment
