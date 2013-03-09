@@ -37,11 +37,12 @@ in protecting your portal, system and network.
 ## How plugin security works
 
 When the Plugin Security Manager is enabled for your plugin, it checks your
-plugin's *Portal Access Control List (PACL)*. This list describes what APIs the plugin
-accesses, so people deploying the plugin can review what it does without seeing
-its source code. If the plugin tries to access anything that's not on this list,
-the plugin's request is stopped dead in its tracks with the security manager
-logging information on the attempt to access unauthorized APIs or resources. 
+plugin's *Portal Access Control List (PACL)*. This list describes what APIs the
+plugin accesses, so people deploying the plugin can review what it does without
+seeing its source code. If the plugin tries to access anything that's not on
+this list, the plugin's request is stopped dead in its tracks with the security
+manager logging information on the attempt to access unauthorized APIs or
+resources. 
 
 Access to APIs and resources is authorized by means of property values specified
 in the plugin's `liferay-plugin-package.properties` file. This file must be
@@ -116,7 +117,8 @@ following property in your `liferay-plugin-package.properties` file:
     rules for resolving the failures. 
 
 4. Lastly, merge the properties found in your newly generated PACL policy file
-into your plugin's `liferay-plugin-package.properties` file. 
+into your plugin's `liferay-plugin-package.properties` file. It's just a matter
+of merging the properties that start with the "security-manager-" prefix. 
 
 Now that your plugin has a thoroughly specified list of resources it accesses,
 enable the security manager and do final testing of your PACL properties. We
@@ -168,6 +170,27 @@ The sections that follow describe the PACL properties: explaining each
 property's purpose, its possible values, and the syntax to use in specifying its
 value.
 
+## AWT Security
+
+Specify the AWT operations the plugin is permitted to access. 
+
+*Example:*
+
+    security-manager-awt-operations=\
+        accessClipboard,\
+        accessEventQueue,\
+        accessSystemTray,\
+        createRobot,\
+        fullScreenExclusive,\
+        listenToAllAWTEvents,\
+        readDisplayPixels,\
+        replaceKeyboardFocusManager,\
+        setAppletStub,\
+        setWindowAlwaysOnTop,\
+        showWindowWithoutWarningBanner,\
+        toolkitModality,\
+        watchMousePointer
+
 ## Class Loader Security 
 
 Specify the reference IDs of plugins for this plugin to access.
@@ -178,16 +201,29 @@ Specify the reference IDs of plugins for this plugin to access.
 		1_WAR_flashportlet,\
 		flash-portlet
 
-## Expando Bridge 
+## Environment Variable Security
+
+Specify regular expression patterns used to match any environment variables for
+the plugin to access. 
+
+*Example:*
+
+    security-manager-environment-variables=\
+        java.home,\
+        java.vendor,\
+        java.version,\
+        java.vm.v.*
+
+## Expando Bridge
 
 Specify models having Expando Bridge attributes the plugin is permitted to
-access. The plugin can also access Expando Bridge attributes via the wrapper
-classes of the models.
+access. The plugin can also access Expando Bridge attributes via the
+wrapper classes of the models. 
 
 *Example:*
 
 	security-manager-expando-bridge=\
-    	com.liferay.portal.model.User
+        com.liferay.portal.model.User
 
 ## File Security 
 
@@ -231,10 +267,27 @@ Specify files the plugin is permitted to overwrite.
 		../webapps/chat-portlet/WEB-INF/*,\
 		../webapps/chat-portlet/WEB-INF/src/com/liferay/chat/util/ChatUtil.java
 
-## Hook Security 
+## Bean Security
 
-Set to `true` if the hook plugin is permitted use custom JSPs. This property's
-default value is `false`.
+Specify bean properties the plugin is permitted to acquire. 
+
+*Example:*
+
+    security-manager-get-bean-property=\
+        com.liferay.portal.kernel.xml.SAXReaderUtil,\
+        com.liferay.portal.util.PortalUtil
+
+Specify bean properties the plugin is permitted to set. 
+
+*Example:*
+
+    security-manager-set-bean-property=\
+        com.liferay.portal.kernel.dao.orm.PortalCustomSQLUtil
+
+## Hook Security
+
+Set to `true` if the hook plugin is permitted use custom JSPs. By default, the
+hook plugin is not permitted to use custom JSPs. 
 
 *Example:*
 
@@ -242,66 +295,65 @@ default value is `false`.
 
 Specify entities for which the hook plugin is permitted to customize indexing.
 Customizing the indexing can involve modifying the search, summary and/or
-queries for these entities.
+queries for these entities. 
 
 *Example:*
 
 	security-manager-hook-indexers=\
 		com.liferay.portal.model.User
 
-Specify which language property locales the plugin is permitted to override.
+Specify which language property locales the plugin is permitted to override. 
 
 *Example:*
 
 This example grants the plugin permission to override the Great Britain locale
-of English, the Spain locale of Spanish, and *all* Portuguese locales.
+of English, the Spain locale of Spanish, and *all* Portuguese locales. 
 
 	security-manager-hook-language-properties-locales=\
 		en_GB,\
 		es_ES,\
 		pt
 
-Specify which portal properties your plugin is permitted to override.
+Specify which portal properties the plugin is permitted to override. 
 
 *Example:*
 
 	security-manager-hook-portal-properties-keys=\
 		phone.number.format.impl
 
-Specify which services your plugin is permitted access.
+Specify which services the plugin is permitted to access. 
 
 *Example:*
 
 	security-manager-hook-services=\
 		com.liferay.portlet.blogs.service.BlogsEntryLocalService
 
-Specify whether to allow your plugin's [servlet filter
-hooks](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/other-hooks).
-Setting this to `true` gives your plugin permission to pre-process requests
-going to the portal's servlets and post-process requests coming from the
-portal's servlets. This property's default value is `false`.
+Specify whether to allow the plugin's servlet filter hooks. Setting this to
+`true` gives the plugin permission to pre-process requests going to the portal's
+servlets and post-process requests coming from the portal's servlets. By
+default, the plugin's servlet filter hooks are not allowed. 
 
 	security-manager-hook-servlet-filters-enabled=false
 
 Specify struts action paths that the hook plugin is permitted to add or
-override.
+override. 
 
 *Example:*
 
 	security-manager-hook-struts-action-paths=\
 		/portal/test/pacl/success
 
-## JNDI Security 
+## JNDI Security
 
 Specify which services the plugin can look up. You can use regular expressions
-to make this dynamic.
+to make this dynamic. 
 
 *Example:*
 
-In this example, the plugin can look up objects for key names `matthew`, `mark`,
-`Mark`, `luke`, and `Luke`. In addition, the plugin can look-up objects for key
-names containing `john` with zero or more characters preceding and/or trailing
-`john`.
+Using the sample values below, the plugin can look up objects for key names
+`matthew`, `mark`, `Mark`, `luke`, and `Luke`. In addition, the plugin can
+look-up objects for key names containing `john` with zero or more characters
+preceding and/or trailing `john`. 
 
 	security-manager-jndi-names=\
 		test-pacl-matthew,\
@@ -330,29 +382,19 @@ messages to) via the portal's message bus.
 		liferay/test_pacl_listen_success,\
 		liferay/test_pacl_send_success
 
-## Search Engine IDs 
+## Search Engine Security
 
-Specify the IDs of search engines the plugin is permitted to access.
+Specify the IDs of search engines the plugin is permitted to access. 
 
 *Example:*
+
 	security-manager-search-engine-ids=\
 		SYSTEM_ENGINE
 
-## Portlet Service Security 
-
-Specify portlet service classes and/or methods the plugin is permitted to
-access. Use `#` as a delimiter between a class and its method.
-
-*Example:*
-
-	security-manager-services[chat-portlet]=\
-		com.liferay.chat.service.EntryLocalService,\
-		com.liferay.chat.service.StatusLocalService#getStatuses
-
-## Portal Service Security 
+## Portal Service Security
 
 Specify portal service classes and/or methods the plugin is permitted to access.
-Use `#` as a delimiter between a class and its method.
+Use the `#` character as a delimiter between a class and its method. 
 
 *Example:*
 
@@ -363,42 +405,20 @@ Use `#` as a delimiter between a class and its method.
 		com.liferay.portlet.blogs.service.BlogsEntryLocalService,\
 		com.liferay.portlet.blogs.service.BlogsStatsUserLocalService
 
-## Bean Property Security 
+## Portlet Service Security
 
-Specify bean properties the plugin is permitted to get.
+For each portlet the plugin accesses, replicate this property substituting
+`some-portlet` in the `[` square brackets `]` with the name of the accessible
+portlet. 
 
-*Example:*
-	
-	security-manager-get-bean-property=\
-		com.liferay.portal.kernel.cache.CacheRegistryUtil,\
-		com.liferay.portal.kernel.cache.key.CacheKeyGeneratorUtil,\
-		com.liferay.portal.kernel.configuration.ConfigurationFactoryUtil,\
-		com.liferay.portal.kernel.dao.db.DBFactoryUtil,\
-		com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil,\
-		com.liferay.portal.kernel.dao.orm.FinderCacheUtil,\
-		com.liferay.portal.kernel.dao.orm.PortalCustomSQLUtil,\
-		com.liferay.portal.kernel.deploy.DeployManagerUtil,\
-		com.liferay.portal.kernel.executor.PortalExecutorManagerUtil,\
-		com.liferay.portal.kernel.format.PhoneNumberFormatUtil,\
-		com.liferay.portal.kernel.language.LanguageUtil,\
-		com.liferay.portal.kernel.messaging.MessageBusUtil,\
-		com.liferay.portal.kernel.servlet.DirectRequestDispatcherFactoryUtil,\
-		com.liferay.portal.kernel.servlet.DirectServletRegistryUtil,\
-		com.liferay.portal.kernel.spring.util.SpringFactoryUtil,\
-		com.liferay.portal.kernel.util.FileUtil,\
-		com.liferay.portal.kernel.util.HtmlUtil,\
-		com.liferay.portal.kernel.util.HttpUtil,\
-		com.liferay.portal.kernel.util.InfrastructureUtil,\
-		com.liferay.portal.kernel.util.PropsUtil,\
-		com.liferay.portal.kernel.xml.SAXReaderUtil,\
-		com.liferay.portal.util.PortalUtil
-
-Specify bean properties the plugin is permitted to set.
+Specify portlet service classes and/or methods the plugin is permitted to
+access. Use the `#` character as a delimiter between a class and its method. 
 
 *Example:*
 
-	security-manager-set-bean-property=\
-		com.liferay.portal.kernel.dao.orm.PortalCustomSQLUtil
+	security-manager-services[some-portlet]=\
+		com.liferay.chat.service.EntryLocalService,\
+		com.liferay.chat.service.StatusLocalService#getStatuses
 
 ## Socket Security 
 
@@ -536,5 +556,6 @@ with Security Manager turned on will know you're a "law abiding" citizen,
 because you've specified what services your applications need to access in order
 to function.
 
-Next, we'll show you what it takes to develop apps for publishing to *Liferay Marketplace*.
+Next, we'll show you what it takes to develop apps for publishing to *Liferay
+Marketplace*. 
 
