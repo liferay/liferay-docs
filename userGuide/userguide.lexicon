@@ -13,11 +13,9 @@ WebLogic
 
 # WCM
 
-tag
-categories
-related assets
-CMS
 web content
+CMS
+WCM
 structure
 template
 staging
@@ -27,11 +25,8 @@ sitemap
 Velocity
 Freemarker
 XSL
-Asset Publisher
-scope
 site pages
 page layouts
-page customizations
 site settings
 site URL
 site template
@@ -64,11 +59,74 @@ page variations
 mobile device rules
 rule group
 
+# Document Management
+
+document types
+metadata sets
+WebDAV
+checkin
+checkout
+CMIS
+SharePoint
+Microsoft Office
+Liferay Sync
+Sync Folder
+Sync Mobile
+
+# Asset Framework
+
+tag
+categories
+related assets
+vocabularies
+faceted search
+search portlet
+advanced search
+indexed fields
+Asset Publisher
+Filter Rules
+Asset Link Behavior
+Display Page
+
+# Personalization and Customization
+
+personal sites
+page customizations
+drools
+rules engine
+rules definition
+salience
+
+# Collaboration Suite
+
+Blogs
+Message Boards
+Wiki
+Polls
+Chat
+Mail
+portlet URL
+Portlet Configuration
+Text Styles
+Background Styles
+Border Styles
+Margin and Padding
+Advanced Styling
+WAP Styling
+Export/Import
+scope
+Archived Setups
+public render parameters
+widgets
+Facebook
+OpenSocial
+Netvibes
+Display Style
+
 Solr
 bundle
 ajax
 single sign-on
-WebDAV
 portlet
 service builder
 css
@@ -115,14 +173,10 @@ Social Bookmarks
 Velocity
 Virtual Host
 servlet
-Blogs
 Calendar
 Document Library
 Image Gallery
 Invitation
-Journal
-Communities
-Message Boards
 My Places
 Navigation
 Shopping
@@ -169,3 +223,13 @@ wiki
 sharding
 read-writer database
 data migration
+
+# Operating Systems
+
+Mac OS
+Linux
+Windows
+KDE
+Gnome
+Android
+iOS
