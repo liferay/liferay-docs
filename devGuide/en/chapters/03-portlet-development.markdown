@@ -4,36 +4,37 @@
 In this chapter we'll create and deploy a simple portlet using the Plugins SDK.
 It will allow a customized greeting to be saved in the portlet's preferences and
 then display it whenever the portlet is viewed. Last we'll clean up the
-portlet's URLs by adding a friendly URL mapping.
+portlet's URLs by adding a friendly URL mapping. 
 
 You're free to use any framework you prefer to develop your portlets, including
 Struts, Spring MVC, or JSF. Here we'll use the Liferay MVCPortlet framework,
-because it's simple, lightweight, and easy to understand.
+because it's simple, lightweight, and easy to understand. 
 
 You don't have to be a Java developer to take advantage of Liferay's built-in
 features (such as user and organization management, page building and content
 management). An application developed using Ruby or PHP can be deployed as a
 portlet using the Plugins SDK, and it will run seamlessly inside of Liferay. For
 examples, check out the directory *plugins/trunk* from Liferay's public
-Subversion repository.
+Subversion repository. 
 
-We will discuss the following topics in this chapter:
+We'll discuss the following topics as we learn about developing portlets for
+Liferay:
 
--	*Creating a Portlet* 
+- **Creating a Portlet** 
 
--	*Anatomy of a Portlet*
+- **Anatomy of a Portlet**
 
--	*Writing the My Greeting Portlet*
+- **Writing the My Greeting Portlet**
 
--	*Understanding the two phases of Portlet Execution*
+- **Understanding the two phases of Portlet Execution**
 
--	*Passing Information from the Action Phase to the Render Phase*
+- **Passing Information from the Action Phase to the Render Phase**
 
--	*Developing a Portlet with Multiple Actions*
+- **Developing a Portlet with Multiple Actions**
 
--	*Adding Friendly URL Mapping to the Portlet*
+- **Adding Friendly URL Mapping to the Portlet**
 
-First, let's create the portlet that we'll use throughout this chapter.
+First, let's create the portlet that we'll use throughout this chapter. 
 
 ## Creating a Portlet [](id=creating-a-portl-3)
 
@@ -41,41 +42,49 @@ Portlet creation using the Plugins SDK is simple. There's a *portlets* folder
 inside of the Plugins SDK folder, where your portlet projects reside. The first
 thing to do is give your portlet a project name (without spaces) and a display
 name (which can have spaces). For the greeting portlet, the project name is
-"my-greeting", and the portlet title is "My Greeting".
+"my-greeting", and the portlet title is "My Greeting". 
 
 Once you've named your portlet, you're ready to begin creating the project.
 There are several different ways to create this portlet. Let's try it using
-Liferay Developer Studio and the terminal.
+Liferay Developer Studio first, then by using the terminal. 
 
-***In Developer Studio:*** Go to File &rarr; New &rarr; Liferay Project
+***In Developer Studio***: 
 
-Next, go through the following steps to setup your new portlet:
+1. Go to File &rarr; New &rarr; Liferay Project.
 
-1. Fill in the *Project* and *Display* names with *my-greeting-portlet* and *My
-Greeting*, respectively
-2. Select the Liferay Plugins SDK and Portal Runtime that you've configured
-3. Select *Portlet* as your Plugin type
-4. Click *Finish*
+2. Next, go through the following steps to setup your new portlet:
+
+    2.1. Fill in the *Project* and *Display* names with *my-greeting-portlet*
+    and *My Greeting*, respectively. 
+    
+    2.2. Select the Liferay Plugins SDK and Portal Runtime that you've 
+    configured. 
+
+    2.3. Select *Portlet* as your Plugin type. 
+
+    2.4. Click *Finish*. 
 
 ![Figure 3.1: Creating the My Greeting portlet](../../images/02-portlet-development-1.png)
 
 With Developer Studio, you can create a new plugin project or just create a new
 plugin in an existing project, since a single plugin can contain multiple
-portlet plugins.
+portlet plugins. 
 
-***Using the Terminal:*** Navigate to the `portlets` directory in the terminal
-and enter the following command (Linux and Mac OS X):
+***Using the Terminal***: Navigate to the `portlets` directory in the terminal
+and enter the appropriate command for your operating system:
+
+1. In Linux and Mac OS X, enter
 
     ./create.sh my-greeting "My Greeting"
 
-On Windows, enter the following instead:
+2. In Windows, enter
 
     create.bat my-greeting "My Greeting"
 
 After you see a BUILD SUCCESSFUL message from Ant, there will be a new folder
 inside of the `portlets` folder in your Plugins SDK. This is your new portlet
 project, where your functionality is implemented. Notice that the Plugins SDK
-automatically appends "-portlet" to the project name when creating this folder.
+automatically appends "-portlet" to the project name when creating this folder. 
 
 If you're not using the Plugins SDK to house your portlet projects, copy your
 newly created portlet project into your IDE of choice and work with it there.
@@ -91,7 +100,7 @@ necessary to build your newly created portlet project.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** If you are using a source
+ ![tip](../../images/tip-pen-paper.png)**Tip**: If you are using a source
  control system such as Subversion, CVS, Mercurial, Git, etc., this might be
  a good moment to do an initial check-in of your changes. After building the
  plugin for deployment, several additional files will be generated that should
@@ -120,7 +129,7 @@ used throughout this guide.
 
 ---
 
-***Deploying in Developer Studio*** - Drag your portlet project onto your
+***Deploying in Developer Studio***: Drag your portlet project onto your
 server. Upon deploying your plugin, your server will output messages indicating
 that your plugin was read, registered and is now available for use. 
 
@@ -133,8 +142,8 @@ right click your portlet located underneath your server and select *Redeploy*.
 
 ![Figure 3.2: Redeployment of the My Greeting portlet](../../images/02-portlet-development-2.png)
 
-***Deploying in the terminal*** - Open a terminal window in your
-`portlets/my-greeting-portlet` directory and enter:
+***Deploying in the terminal***: Open a terminal window in your
+`portlets/my-greeting-portlet` directory and enter
 
     ant deploy
 
@@ -156,47 +165,60 @@ Congratulations, you've just created your first portlet!
 
 A portlet project is made up of at least three components:
 
-1.  Java Source
+1. Java Source.
 
-2.  Configuration files
+2. Configuration files.
 
-3.  Client-side files (`*.jsp`, `*.css`, `*.js`, graphics files, etc.)
+3. Client-side files (`.jsp`, `.css`, `.js`, graphics files, etc.).
 
 When using Liferay's Plugins SDK, these files are stored in a standard directory
-structure which looks like the following:
+structure that looks like the following:
 
--	PORTLET-NAME/
-	-	build.xml
-	-	docroot/
-		-	css/
-		-	js/
-		-	WEB-INF/
-			-	src/ (not created by default)
-			-	liferay-display.xml
-			-	liferay-plugin-package.properties
-			-	liferay-portlet.xml
-			-	portlet.xml
-			-	web.xml (not created by default)
-		-	icon.png
-		-	view.jsp
+- `PORTLET-NAME/`
+    
+    - `build.xml`
+    
+    - `docroot/`
+     
+        - `css/`
+        
+        - `js/`
+        
+        - `WEB-INF/`
+            
+            - `src/` - not created by default.
+            
+            - `liferay-display.xml`
+            
+            - `liferay-plugin-package.properties`
+            
+            - `liferay-portlet.xml`
+            
+            - `portlet.xml`
+            
+            - `web.xml` - not created by default.
+        
+        - `icon.png`
+        
+        - `view.jsp`
 
 The portlet we just created is fully functional and deployable to your Liferay
-instance.
+instance. 
 
 By default, new portlets are configured to use the MVCPortlet framework, a very
 light framework that hides part of the complexity of portlets and makes the most
 common operations easier. MVCPortlet uses separate JSPs for each page in the
 portlet. By default, MVCPortlet uses a JSP with the mode name for each of the
 registered portlet modes. For example, 'edit.jsp' for edit mode, 'help.jsp' for
-help mode, etc.
+help mode, etc. 
 
 Here's a snapshot of files for a portlet plugin named *my-greeting portlet* as
 shown in Developer Studio's *Package Explorer*. We'll add and edit files in this
-directory to create a new and improved portlet!
+directory to create a new and improved portlet! 
 
 ![Figure 3.4: Package Explorer of the My Greeting portlet](../../images/02-portlet-development-3.png)
 
-The **Java Source** is stored in the `docroot/WEB-INF/src` folder.
+The **Java Source** is stored in the `docroot/WEB-INF/src` folder. 
 
 The **Configuration Files** are stored in the `docroot/WEB-INF` folder. Files
 stored here include the standard JSR-286 portlet configuration file
@@ -205,38 +227,38 @@ The Liferay-specific configuration files, while optional, are important if your
 portlets are going to be deployed on a Liferay Portal server. Here's a
 description of the Liferay-specific files:
 
-- *liferay-display.xml*: Describes what category the portlet should appear under
+- `liferay-display.xml`- Describes what category the portlet should appear under
 in the *Add* menu of the dockbar (the horizontal bar that appears at the top of
-the page to all logged-in users).
+the page to all logged-in users). 
 
-- *liferay-portlet.xml*: Describes options for Liferay-specific enhancements for
+- `liferay-portlet.xml`- Describes options for Liferay-specific enhancements for
 JSR-286 portlets installed on a Liferay Portal server. For example, you can set
 whether a portlet is instanceable, controlling whether multiple portlet
 instances on a page use separate or shared data. For a complete listing of this
 file's settings. its DTD is found in the `definitions` folder in the Liferay
-Portal source code.
+Portal source code. 
 
-- *liferay-plugin-package.properties*: Describes the plugin to Liferay's hot
+- `liferay-plugin-package.properties`- Describes the plugin to Liferay's hot
 deployer. Dependency JAR files (`.jar`) are configured in this file. If a
 portlet plugin has dependencies on particular `.jar` files that already come
 with Liferay, specify them in this file and the hot deployer modifies the `.war`
 file on deployment to copy those `.jar` files from inside the `.war` file. That
-way you don't have to include the `.jar`s yourself and the `.war` is lighter.
+way you don't have to include the `.jar`s yourself and the `.war` is lighter. 
 
-**Client Side Files** are the `.jsp`, `.css`, and JavaScript files that you
+**Client Side Files** are the `.jsp`, `.css`, and `.js` files that you
 write to implement your portlet's user interface. These files should go in the
-`docroot` folder—either in the root of the folder or in a folder structure of
+`docroot` folder, either in the root of the folder or in a folder structure of
 their own. Remember, with portlets you're only dealing with a portion of the
 HTML document that is getting returned to the browser. Any HTML code in your
 client side files should be free of global tags like `<html>` or `<head>`.
 Additionally, namespace all CSS classes and element IDs to prevent conflicts
 with other portlets. Liferay provides two tools, a taglib and API methods, to
-generate the namespace that you should use.
+generate the namespace that you should use. 
 
 ### A Closer Look at the My Greeting Portlet [](id=lp-6-1-dgen03-a-closer-look-at-the-my-greeting-portlet-0)
 
 If you're new to portlet development, this section will enhance your
-understanding of portlet configuration options.
+understanding of portlet configuration options. 
 
 **docroot/WEB-INF/portlet.xml**
 
