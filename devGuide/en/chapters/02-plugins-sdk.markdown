@@ -1,42 +1,42 @@
 # The Plugins SDK
 
-Java developers have a wide variety of tools and development environments.
-Liferay makes every effort to remain tool agnostic, so that you can choose the
-tools that work best for you. For that reason, we provide a Plugins Software
-Development Kit (SDK) which is based on Apache Ant and may be used along with
-any editor or Integrated Development Environment (IDE). Much of this guide uses
-the Plugins SDK and a text editor, but you may use whatever tool you are
-comfortable with. In a later chapter we also introduce Liferay IDE, a plugin for
-Eclipse that simplifies development for Liferay. 
+Java developers use a wide variety of tools and development environments.
+Liferay makes every effort to remain tool agnostic, so you can choose the tools
+that work best for you. To that end, we provide a Plugins Software Development
+Kit (SDK) based on Apache Ant and can be used along with any editor or
+Integrated Development Environment (IDE). Much of this guide uses the Plugins
+SDK and a text editor, but use whatever tool you're most comfortable with. As an
+alternative to the Plugins SDK, in Chapter 9 we discuss Liferay IDE, a plugin
+for Eclipse that simplifies development for Liferay. 
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip**: If you are an Eclipse user and
- prefer to start working with it from the very beginning, you can read that
- chapter first before reading continuing to read this chapter. 
+ ![tip](../../images/tip-pen-paper.png)**Tip**: If you use Eclipse and intend to
+ use it from the very beginning, you might want to chek out Chapter 9 first
+ before reading this chapter.
 
 ---
 
 We discuss the following topics in this chapter: 
 
-- **Initial Setup:** How to install the Plugins SDK and configure it for your
-use with your Liferay Portal server 
+- **Initial Setup:** Install the Plugins SDK and configure it to use with your
+Liferay Portal server. 
 
 - **Structure of the SDK:** Where to develop your plugin within the SDK and what
-Apache Ant targets are available 
+Apache Ant targets are available. 
 
-- **Best Practices:** Suggests helpful ways for organizing your plugin projects 
+- **Best Practices:** Helpful ways for organizing your plugin projects. 
 
 Setting up the Plugins SDK is easy. Let's get to it. 
 
 ## Installing the SDK
 
-Setting up your environment for Liferay development is straightforward. First,
-you need Liferay Portal. If you have yet to install Liferay with an application
-server, follow instructions in the [Installation and
+Setting up your environment for Liferay development is straightforward. But
+first you need Liferay Portal. If you haven't already installed Liferay with an
+application server, follow the instructions in the [Installation and
 Setup](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-lifer-1)
 chapter of *Using Liferay Portal*. Many people use the Tomcat application server
-for development, as it is small, fast, and takes up less resources than most
+for development, as it's small, fast, and takes up less resources than most
 other servlet containers. Although you can use any application server supported
 by Liferay Portal for development, our examples use Tomcat. 
 
@@ -53,47 +53,47 @@ by Liferay Portal for development, our examples use Tomcat.
 
 Installation steps:
 
-1. The Plugins SDK is downloadable from our web site at
-[http://www.liferay.com](http://www.liferay.com). Download the Plugins SDK:
+1. Download The Plugins SDK from our web site at
+[http://www.liferay.com](http://www.liferay.com). 
 
     1.1. Click the *Downloads* link at the top of the page. 
 
-    1.2. Then, within the *Liferay Portal 6.1 Community Edition* section, select
-    the *Plugins SDK* option. 
+    1.2. From the *Liferay Portal 6.1 Community Edition* section, select the
+    *Plugins SDK* option. 
 
     1.3. Click *Download*. 
 
-2. Unzip the archive to a folder of your choosing. Avoid using a folder name
-that contains spaces because some operating systems have problems running Java
-applications in folders with spaces in their name. 
+2. Unzip the archive to a folder of your choosing. Because some operating
+systems have trouble running Java applications from folders with names
+containing spaces, avoiding using spaces when naming your folder.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip**: By default Liferay Portal
+ ![tip](../../images/tip-pen-paper.png)**Tip**: By default, Liferay Portal
  Community Edition comes bundled with many plugins. It's common to remove them
- to speed up the server start-up. To do this, in the
- `liferay-portal-<version>/tomcat-<tomcat-version>/webapps` directory, delete
- all the directories except for `ROOT` and `tunnel-web.` 
+ to speed up the server start-up. Just navigate to the
+ `liferay-portal-<version>/tomcat-<tomcat-version>/webapps` directory and delete
+ all its subdirectories except for `ROOT` and `tunnel-web`. 
 
 ---
 
-Now that you have Plugins SDK installed, let's configure Apache Ant for use in
+Now that you've installed the Plugins SDK, let's configure Apache Ant for use in
 developing your plugins. 
 
 ### Ant Configuration
 
-Building projects in the Plugins SDK requires that you have Ant (version 1.7 or
-higher) installed on your machine. Download the latest version of Ant from
+Building projects in the Plugins SDK requires that you install Ant (version 1.7
+or higher) on your machine. Download the latest version of Ant from
 [http://ant.apache.org/](http://ant.apache.org/). Extract the archive's contents
 into a folder of your choosing. 
 
-Now that you have Ant installed, you should set an `ANT_HOME` environment
-variable to your Ant installation location. Then put Ant's `bin` directory
-(e.g., `$ANT_HOME/bin`) in your path. The following gives examples of doing this
-on Linux (Unix or Mac OS X) and Windows. 
+Now that Ant is installed, set an `ANT_HOME` environment variable to your Ant
+installation location. Then put Ant's `bin` directory (e.g., `$ANT_HOME/bin`) in
+your path. We'll give you examples of doing this on Linux (Unix or Mac OS X) and
+Windows. 
 
 On Linux (Unix or Mac OS X), if your Ant installation directory is
-`/java/apache-ant-<version>` and you are running in Bash, set your `ANT_HOME`
+`/java/apache-ant-<version>` and you're running in Bash, set your `ANT_HOME`
 and adjust your path by specifying the following in your `.bash_profile` or from
 your terminal: 
 
@@ -110,21 +110,21 @@ variables appropriately in your system properties:
 
 3. In the *System variables* section, click *New...*. 
 
-4. Enter ...
+4. Sett the `ANT_HOME` variable:
 
-    **Variable name:** `ANT_HOME`
+    4.1. **Variable name:** `ANT_HOME`. 
 
-    **Variable value:** *<Ant installation path>* (e.g.,
-`C:\Java\apache-ant-<version>`)
+    4.2. **Variable value:** *<Ant installation path>* (e.g.,
+    `C:\Java\apache-ant-<version>`). 
 
-    ... and click *OK*. 
+    4.3. Click *OK*. 
 
 5. Also in the *System variables* section, select your path variable and click
 *Edit...*. 
 
 6. Insert `%ANT_HOME%\bin;` after `%JAVA_HOME%\bin;` and click *OK*. 
 
-7. Click *OK* to close out all of the system property windows. 
+7. Click *OK* to close all system property windows. 
 
 8. Open a new command prompt for your new environment variables to take affect. 
      
@@ -136,20 +136,19 @@ sure your output looks similar to this:
 If the version information doesn't display, make sure your Ant installation is
 referenced in your path. 
 
-Now that you have Ant configured, let's set up your Plugins SDK environment. 
+Now that Ant is configured, let's set up your Plugins SDK environment. 
 
 ### Plugins SDK Configuration
 
-Now that all the proper tools are in place, we must configure the Plugins SDK to
-be able to deploy into your Liferay instance. Notice the Plugins
-SDK contains a `build.properties` file. This file contains the default
-settings about the location of your Liferay installation and your deployment
-folder. You can use this file as a reference, but you should not modify it
-directly (In fact, you will see the message "DO NOT EDIT THIS FILE" at the top
-if you open it). In order to override the default settings, create a new file
-named `build.<username>.properties` in the same folder, where `<username>` is
-your user ID on your machine. For example, if your user name is jsmith (for John
-Smith), you would create a file named `build.jsmith.properties`. 
+Now we have the proper tools, but we need to configure the Plugins SDK to deploy
+into your Liferay instance. The Plugins SDK contains a `build.properties` file
+that contains the default settings about the location of your Liferay
+installation and your deployment folder. You can use this file as a reference,
+but you shouldn't modify it directly (In fact, you will see the message "DO NOT
+EDIT THIS FILE" at the top if you open it). In order to override the default
+settings, create a new file named `build.<username>.properties` in the same
+folder, where `<username>` is your user ID on your machine. For example, if your
+user name is jsmith, your file name would be `build.jsmith.properties`. 
 
 Edit this file and add the following lines: 
 
@@ -160,11 +159,11 @@ Edit this file and add the following lines:
     app.server.type=tomcat
     app.server.dir=the directory containing your application server
 
-In case you are using Liferay Portal bundled with Tomcat,
-`app.server.dir` should be the absolute path to your directory (e.g.
+If you use Liferay Portal bundled with Tomcat, `app.server.dir` should be the
+absolute path to your directory (e.g.
 `c:/liferay-portal-<version>/bundles/tomcat-<tomcat-version>`). We specify
-`app.server.type` as it is a best practice to specify the application server
-type along with the application server properties we are overriding. 
+`app.server.type` as it's a best practice to specify the application server type
+along with the application server properties we are overriding. 
 
 Save the file. 
 
@@ -177,9 +176,9 @@ type. Here is the directory structure of the Plugins SDK:
 
 - `liferay-plugins-<version>/` - Plugins SDK root directory 
 
-    - `clients/` - client applications directory 
+    - `clients/` - client applications directory. 
 
-    - `dist/` - archived plugins for distribution and deployment 
+    - `dist/` - archived plugins for distribution and deployment. 
 
     - `ext/` - Ext plugins directory. See chapter 7 on Ext plugins. 
 
@@ -188,53 +187,52 @@ type. Here is the directory structure of the Plugins SDK:
     - `layouttpl/` - layout templates directory. See chapter 4 on creating Liferay
     Themes. 
 
-    - `lib/` - commonly referenced libraries 
+    - `lib/` - commonly referenced libraries. 
 
     - `misc/` - development configuration files. Example, a source code
-    formatting specification file 
+    formatting specification file. 
 
     - `portlets/` - portlet plugins directory. See chapter 3 on portlet
     development. 
 
-    - `themes/` - themes plugins directory. See chapter 4 on creating Liferay
+    - `themes/` - themes plugins directory. See Chapter 4 on creating Liferay
     themes. 
 
-    - `tools/` - plugin templates and utilities 
+    - `tools/` - plugin templates and utilities. 
 
-    - `webs/` - web plugins directory 
+    - `webs/` - web plugins directory. 
 
-    - `build.properties` - default SDK properties 
+    - `build.properties` - default SDK properties. 
 
-    - `build.<username>.properties` - (optional) override SDK properties 
+    - `build.<username>.properties` - (optional) override SDK properties. 
 
-    - `build.xml` - contains targets to invoke in the SDK 
+    - `build.xml` - contains targets to invoke in the SDK. 
 
     - `build-common.xml` - contains common targets and properties referenced
-    throughout the SDK 
+    throughout the SDK. 
 
     - `build-common-plugin.xml` - contains common targets and properties
-    referenced by each plugin 
+    referenced by each plugin. 
 
     - `build-common-plugins.xml` - contains common targets and properties
-    referenced by each plugin type 
+    referenced by each plugin type. 
 
 New plugins are placed in their own subdirectory of the appropriate plugin type.
 For instance, a new portlet called "greeting-portlet" would reside in
 `liferay-plugins-<version>/portlets/greeting-portlet`. 
 
-As you may notice, there is an Ant build file (`build.xml`) in each of the
-plugins directories. Here are some Ant targets you'll commonly use in developing
-your plugins: 
+There's an Ant build file (`build.xml`) in each of the plugins directories. Here
+are some Ant targets you'll commonly use in developing your plugins:
 
 - `build-service` - builds the plugin into a service using Liferay Service
-Builder 
+Builder. 
 
 - `clean` - cleans the residual files created by the invocations of the
-compilation, archiving, and deployment targets 
+compilation, archiving, and deployment targets. 
 
-- `compile` - compiles the plugin source code 
+- `compile` - compiles the plugin source code. 
 
-- `deploy` - builds and deploys the plugin to your application server 
+- `deploy` - builds and deploys the plugin to your application server. 
 
 - `format-source` - formats the source code per Liferay's source code
 guidelines, informing you of violations that must be addressed. See the
@@ -245,37 +243,35 @@ community wiki page for details.
 the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
 community wiki page for details. 
 
-Next, let's learn how to use the Plugins SDK to create a plugin that extends
-another plugin. 
+Next let's use the Plugins SDK to create a plugin that extends another plugin. 
 
 ## Creating Plugins to extend Plugins
 
-For Liferay plugins, it's possible to create a new plugin that extends an
-existing one. This allows you to utilize all the features of the existing plugin
-in your new plugin while keeping your changes/extensions separate from the
-existing plugin's source code. 
+For Liferay plugins, you can create a new plugin that extends an existing one.
+By extending a plugin, you can use all its features in your new plugin while
+keeping your changes/extensions separate from the existing plugin's source code. 
 
-In order to create a plugin which extends another, you just need to follow these
+To create a plugin which extends another, just follow these
 steps: 
 
 1. Create a new empty plugin in the Plugins SDK. 
 
-2. Remove all the auto-generated files except `build.xml` and the docroot folder
-   which should be empty. 
+2. Remove all the auto-generated files except `build.xml` and the docroot
+   folder, which should be empty. 
 
 3. Copy the original WAR file of the plugin you'd like to extend (for example,
    social-networking-portlet-6.1.10.1-ee-ga1.war) to the root folder of your new
    plugin. 
 
-4. Add the following line to your `build.xml` inside of the `<project>` tag in
-   order to reference the original WAR file you are going to extend: 
+4. Add the following line to your `build.xml` inside of the `<project>` tag to
+   reference the original WAR file you are going to extend:
 
         <property name="original.war.file" value="social-networking-portlet-6.1.10.1-ee-ga1.war" />
 
 5. Copy any files from the original plugin that you'd like to overwrite to your
    new plugin (using the same folder structure) and run the Ant target `merge`.
-   Please note that the `merge` target is called whenever the plugin is
-   compiled. All you have to do is to check the Ant output: 
+   Please note that the `merge` target is called whenever the plugin is compiled.
+   All you have to do is to check the Ant output:
 
         dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
         Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.xml
@@ -303,22 +299,23 @@ Next, let's consider some best practices for developing plugins using the SDK.
 
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you
 can have separate Plugins SDK projects for each plugin. For example, if you have
-an internal Intranet using Liferay with some custom portlets, you could keep
-those portlets and themes in their own Plugins SDK project in your source code
+an internal Intranet using Liferay with some custom portlets, you can keep those
+portlets and themes in their own Plugins SDK project in your source code
 repository. If you also have an external instance of Liferay for your public
-Internet web site, you could have a separate Plugins SDK with those projects as
-well. Or you could further separate your projects by having a different Plugins
-SDK project for each portlet or theme project. 
+Internet web site, you can have a separate Plugins SDK that also has those
+projects. Or, you can further separate your projects by having a different
+Plugins SDK project for each portlet or theme project. 
 
-It is also possible to use use the Plugins SDK as a simple cross-platform
-project generator. You can create a plugin project using the Plugins SDK and
-then copy the resulting project folder to your IDE of choice. This method
-requires some manual modification of the Ant scripts, but it makes it possible
-to conform to the strict standards some organizations have for their Java
-projects. 
+It's also possible to use use the Plugins SDK as a simple cross-platform project
+generator. Create a plugin project using the Plugins SDK and then copy the
+resulting project folder to your IDE of choice. You'll have to manually modify
+the Ant scripts, but this process makes it possible to create plugins with the
+Plugins SDK while conforming to the strict standards some organizations have for
+their Java projects.
 
-Next, we'll discuss an alternative solution for developing and managing plugins:
-Maven. 
+If you've read this far and aren't sure you want to develop your plugins using
+the Plugins SDK, next we'll point you to an alternative solution for developing
+and managing plugins: Maven. 
 
 ## Maven alternative
 
@@ -327,12 +324,12 @@ Apache Maven build management framework. You'll be happy to know that we have
 archetypes to help you build various types of plugins including Liferay
 portlets, themes, and layout templates. 
 
-To find out more developing plugins using Maven, see chapter 8.  
+To learn more about developing plugins using Maven, see Chapter 8. 
 
 ## Summary
 
-Now that you have your Plugins SDK configured, know the directory structure and
-available targets, and have learned some best practices, you are ready to start
-developing plugins using Liferay's Plugins SDK. 
+Now your Plugins SDK is configured, you know the directory structure and
+available targets, and you've learned some best practices. You're ready to start
+developing plugins using Liferay's Plugins SDK! 
 
-In the next chapter, we'll start portlet development. 
+In the next chapter, we'll start developing portlets! 
