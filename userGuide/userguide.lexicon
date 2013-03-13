@@ -122,6 +122,35 @@ Facebook
 OpenSocial
 Netvibes
 Display Style
+pingback
+trackback
+Calendar
+Event Reminder
+Time Zone
+User Ranks
+moderator
+RSS
+Mailing Lists
+thread
+compare versions
+chat
+Jabber
+
+# Social Networking
+
+Social Activity
+meetups
+Activities Portlet
+wall portlet
+summary portlet
+friends portlet
+Group Statistics
+gadget
+OAuth
+
+# Web Forms and DDL
+
+
 
 Solr
 bundle
@@ -173,21 +202,16 @@ Social Bookmarks
 Velocity
 Virtual Host
 servlet
-Calendar
-Document Library
-Image Gallery
 Invitation
 My Places
 Navigation
 Shopping
-Software Catalog
 Web Form
 Wiki
 Services Oriented Architecture
 WSDL
 clustering
 caching
-chat
 Performance Tuning
 backup
 logs
@@ -215,7 +239,6 @@ JSR-168
 JSR-170
 message boards
 Kaleo
-Social Activity
 Blog
 calendar
 mailing list
