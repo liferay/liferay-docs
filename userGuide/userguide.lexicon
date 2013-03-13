@@ -160,8 +160,24 @@ Spreadsheet View
 detail templates
 list templates
 
+# Workflow
+
+Kaleo
+workflow
+state machine
+notification
+onAssignment
+onEntry
+onExit
+forks
+joins
+timers
+process definitions
+My Workflow Tasks
+My Submissions
 
 Solr
+XML
 bundle
 ajax
 single sign-on
@@ -170,8 +186,6 @@ service builder
 css
 theme
 permissions
-Kaleo
-workflow
 portal-ext.properties
 plugin
 schema
@@ -247,9 +261,6 @@ Control Panel
 JSR-168
 JSR-170
 message boards
-Kaleo
-Blog
-calendar
 mailing list
 wiki
 sharding
