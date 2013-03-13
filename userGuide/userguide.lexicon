@@ -163,7 +163,6 @@ list templates
 # Workflow
 
 Kaleo
-workflow
 state machine
 notification
 onAssignment
@@ -175,6 +174,30 @@ timers
 process definitions
 My Workflow Tasks
 My Submissions
+
+# Kaleo Forms
+
+workflow designer
+Kaleo Forms
+Kaleo Designer
+
+# Liferay Utility Applications
+
+Bookmarks
+plugin repository
+software catalog
+group ID
+shopping
+cart
+orders
+coupons
+prices
+Paypal
+credit cards
+tax
+shipping
+Amazon
+Knowledge Base
 
 Solr
 XML
