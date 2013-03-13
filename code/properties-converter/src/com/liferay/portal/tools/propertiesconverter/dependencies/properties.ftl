@@ -17,9 +17,9 @@
 			<h2>Table of Contents</h2>
 			<ul id="toc">
 				<#list sections as section>
-			 		<#if section.name?has_content>
+					<#if section.title?has_content>
 			 			<li>
-			 				<a href="${propertiesFileName}.html#${section.name}">${section.name}</a>
+			 				<a href="${propertiesFileName}.html#${section.title}">${section.title}</a>
 			 			</li>
 			 		</#if>
 				</#list>
@@ -27,16 +27,24 @@
 		</#if>
 		<h2>Properties</h2>
 		<#list sections as section>
-			<#if section.isSectionTitle>
-				<a name="${section.name}"></a><a href="${propertiesFileName}.html">Top of Page</a>
-				<h3>${section.name}</h3>
-			<#else>
-				<#if section.descriptionParagraphs?has_content>
-					<#list section.descriptionParagraphs as descriptionParagraph>
-						<p>${descriptionParagraph}</p>
-					</#list>
-				</#if>
-				<p><pre>${section.propertiesParagraph}</pre></p>
+			<#if section.description?has_content>
+				<#list section.description as description>
+					<p>${description}</p>
+				</#list>
+			</#if>
+			<#if section.title?has_content>
+				<a name="${section.title}"></a><a href="${propertiesFileName}.html">Top of Page</a>
+				<h3>${section.title}</h3>
+				<#list section.properties as property>
+					<#if property.description?has_content>
+						<#list property.description as description>
+							<p>${description}</p>
+						</#list>
+					</#if>
+					<#if property.propertiesParagraph?has_content>
+						<p><pre>${property.propertiesParagraph}</pre></p>
+					</#if>
+				</#list>
 			</#if>
 		</#list>
 	</body>

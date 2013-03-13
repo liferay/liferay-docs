@@ -2,16 +2,16 @@
 
 <project name="Properties to HTML conversion" default="properties-to-html" basedir=".">
 
-	<property name="page.title" value="Portal Properties" />
-	<property name="toc" value="true" />
-	<property name="properties.file" value="portal.properties" />
+	<property name="properties.title" value="Portal Properties" />
+	<property name="properties.toc" value="true" />
+	<property name="properties.file.path" value="portal.properties" />
 
-	<!-- To run the properties converter, use a command of the form ant -Dpage.title="My Page Title" -Dtoc="false" -Dproperties.file=/path/to/my/properties/file -->
+	<!-- To run the properties converter, use a command of the form ant -Dpage.title="My Page Title" -Dtoc="false" -Dproperties.file=/path/to/properties/file -->
 	<target name="properties-to-html" description="runs the properties converter">
 		<java fork="true" jar="./lib/properties-converter.jar">
-			<arg value="${page.title}" />
-			<arg value="${toc}" />
-			<arg value="${properties.file}" />
+			<arg value="${properties.title}" />
+			<arg value="${properties.toc}" />
+			<arg value="${properties.file.path}" />
 		</java>
 	</target>
 
