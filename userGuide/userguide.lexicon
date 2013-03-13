@@ -199,22 +199,37 @@ shipping
 Amazon
 Knowledge Base
 
+# Liferay Marketplace
+
+marketplace
+App Manager
+Creating a Company
+version history
+Latest Version
+Supported By
+Developer Profile
+Developer Website
+Purchase
+Downloading
+Uploading
+portlet
+plugin
+hook plugin
+hot deploy
+
 Solr
 XML
 bundle
 ajax
 single sign-on
-portlet
 service builder
 css
 theme
 permissions
 portal-ext.properties
-plugin
 schema
 upgrade
 auto deploy
-hot deploy
 spring
 hibernate
 ehcache
