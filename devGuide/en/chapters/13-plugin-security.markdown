@@ -203,8 +203,8 @@ Specify the reference IDs of plugins for this plugin to access.
 
 ## Environment Variable Security
 
-Specify regular expression patterns used to match any environment variables for
-the plugin to access. 
+Specify regular expression patterns used to match environment variables
+that the plugin is permitted to access. 
 
 *Example:*
 
@@ -381,6 +381,17 @@ messages to) via the portal's message bus.
 		liferay/test_pacl_listen_failure,\
 		liferay/test_pacl_listen_success,\
 		liferay/test_pacl_send_success
+
+## Portlet Bag Pool Security
+
+Specify regular expression patterns used to match any portlet IDs that the
+plugin is permitted to access from the portlet bag pool. 
+
+*Example:*
+
+    security-manager-portlet-bag-pool-portlet-ids=\
+        1_WAR_flashportlet,\
+        .*_WAR_chatportlet
 
 ## Search Engine Security
 
