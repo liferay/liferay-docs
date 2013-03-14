@@ -1,16 +1,3 @@
-# App Servers
-
-LDAP
-GlassFish
-JBoss
-Jetty
-JOnAS
-Resin
-Mule Tcat
-Tomcat
-WebSphere
-WebLogic
-
 # WCM
 
 web content
@@ -217,16 +204,50 @@ plugin
 hook plugin
 hot deploy
 
+# Installation and Setup
+
+Community Edition
+Enterprise Edition
+Fix Packs
+Hot Fixes
+Major Release
+Minor Release
+Maintenance Release
+bundle
+Liferay Home
+portal-ext.properties
+JDBC
+data source
+mail session
+setup wizard
+DB2
+Ingres
+MySQL
+Oracle
+PostgreSQL
+SQL Server
+Sybase
+connection pool
+GlassFish
+JBoss
+Jetty
+JOnAS
+Resin
+Mule Tcat
+Tomcat
+WebSphere
+WebLogic
+coexist
+
+
 Solr
 XML
-bundle
 ajax
 single sign-on
 service builder
 css
 theme
 permissions
-portal-ext.properties
 schema
 upgrade
 auto deploy
@@ -304,6 +325,7 @@ wiki
 sharding
 read-writer database
 data migration
+LDAP
 
 # Operating Systems
 
