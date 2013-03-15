@@ -286,6 +286,19 @@ ImageMagick
 Xuggler
 portal instance
 
+# Advanced Portal Operation
+
+Audit Trails
+audit plugins
+audit events
+audit reports
+Backing up
+patching tool
+patches
+Upgrading
+upgrade
+Image Gallery
+
 Solr
 XML
 ajax
