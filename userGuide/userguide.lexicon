@@ -269,6 +269,23 @@ OpenSSO
 SiteMinder
 Atlassian Crowd
 
+# Control Panel
+
+Mail Host Names
+Email Notifications
+Display Settings
+reindex
+garbage collection
+JVM
+thread dump
+log levels
+Captcha
+LibreOffice
+OpenOffice
+ImageMagick
+Xuggler
+portal instance
+
 Solr
 XML
 ajax
@@ -295,7 +312,6 @@ Auto Login
 SSO with MAC
 Passwords
 Permissions
-Captcha
 Lucene
 JCR
 Jackrabbit
@@ -307,7 +323,6 @@ servlet
 Invitation
 My Places
 Navigation
-Shopping
 Web Form
 Wiki
 Services Oriented Architecture

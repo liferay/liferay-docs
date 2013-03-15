@@ -9,7 +9,7 @@ began in chapter 15. We'll cover the following topics:
 
 - Custom fields
 
-- Montoring
+- Monitoring
 
 - Plugins configuration
 
