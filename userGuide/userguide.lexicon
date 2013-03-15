@@ -299,6 +299,19 @@ Upgrading
 upgrade
 Image Gallery
 
+# Script Engine
+
+script engine
+service layer
+Liferay services
+Beanshell
+Groovy
+JavaScript
+Ruby
+Python
+Hook Plugin
+Spring
+
 Solr
 XML
 ajax

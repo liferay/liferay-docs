@@ -110,7 +110,7 @@ The script engine supports more than just Java-like languages. Despite the name,
 you should be aware that Javascript bears little resemblance to Java, but you
 can still use it in Liferay's script engine. 
 
-### Javascript [](id=lp-6-1-ugen13-javascript-0)
+### JavaScript [](id=lp-6-1-ugen13-javascript-0)
 
 Liferay uses the Rhino Javascript Engine to provide Javascript support in the
 script engine. The following code provides a Javascript version of our original
