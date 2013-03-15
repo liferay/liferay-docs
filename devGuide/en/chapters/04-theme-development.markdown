@@ -834,16 +834,45 @@ copy and paste its contents into a new XML file for the template in the
 `resources-importer/journal/templates/` folder. The template defines how the
 data should be displayed.
 
-Once you've added your resources to the
-`<theme-name>/docroot/WEB-INF/src/resources-importer` folder and referenced
-these resources in `sitemap.json`, you're ready to deploy your theme. Once your
-theme has been deployed, you can log in to your portal as an administrator and
-check the Sites or Site Templates section of the Control Panel to make sure that
-your resources were deployed correctly.  If you used the default setting in
-`liferay-plugin-package.properties`, to import your themes resources into a site
-template, you can either view the site template pages directly or you can create
-a new site based on the site template to see your theme in the context for which
-it was designed.
+Here is an outline of steps you can use in developing your theme and its
+resources:
+
+1. Create your theme.
+
+2. Add your resources under the 
+`<theme-name>/docroot/WEB-INF/src/resources-importer` folder and its subfolders.
+
+3. Create a `sitemap.json` file in your `resources-importer/` folder. In this
+file, define the pages of the site or site template to be imported, along with
+the layout templates, portlets, and portlet preferences of these pages.
+
+4. Create an `assets.json` file in your `resources-importer/` folder.  In this
+file, specify details of your resources assets.
+
+5. In your `liferay-plugin-package.properties` file, include
+`resources-importer-web` in your `required-deployment-contexts` property's list
+and set `resources-importer-developer-mode-enabled=true`. For the
+`resources-importer-target-value` property, specify the name of the site or site
+template into which you are importing or comment it out to use the theme's name.
+For the `resources-importer-target-class-name` property, comment it out to
+import to a site template or set it to `com.liferay.portal.model.Group` to
+import directly into a site.
+
+6. Deploy your plugin into your Liferay instance.
+
+7. View your theme, and its resources, from within Liferay. Log in to your
+portal as an administrator and check the Sites or Site Templates section of the
+Control Panel to make sure that your resources were deployed correctly. From the
+Control Panel you can easily view your theme and its resources:
+
+    - If you imported into a site template, select its *Actions* &rarr; *View
+    Pages* to see it.
+
+    - If you imported directly into a site, select its
+    *Actions* &rarr; *Go to Public Pages* to see it.
+    
+You can go back to any of the beginning steps in this outline to make
+refinements. It's just that easy to develop a theme with resources intact!
 
 To see a simple working example of the resources importer in action, visit
 [https://github.com/liferay/liferay-docs/tree/master/devGuide/code/test-resources-importer-theme-6.1.1.1.war](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/test-resources-importer-theme-6.1.1.1.war).
