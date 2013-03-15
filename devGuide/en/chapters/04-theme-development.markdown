@@ -807,20 +807,32 @@ for the `Child Web Content 1.xml` article structure:
 		]
 	}
 
-At this point, you might be wondering how to use resources that you've developed
-using Liferay's UI (web content articles, structures, and templates) in your
-theme. We've already seen the directory structure into which these items should
-be placed and how to reference these items in `sitemap.json`. If you've
-developed web content, structures, or templates in Liferay, just copy your files
-as HTML (basic web content), XML (structures), or VM or FTL (templates) files.
-For basic web content in Liferay, just edit the article, click *Source* in the
-editor, and copy the HTML source. For web content based on a structure and
-template, edit the article and click *Download* to download the article's
-`article.xml`. For structures and templates themselves, edit them in Liferay's
-UI, click the *Launch Editor* button, and copy and paste the contents into a new
-file. The structure XML sets a wireframe, or blueprint, for an article's data.
-The article XML fills in the data required by the structure and the article's
-template defines how the data should be displayed.
+Now that you've learned about the directory structure for your resources, the
+`sitemap.json` file for referencing your resources, and the `assets.json` file
+for describing the assets of your resources, it's time to put resources into
+your theme. You can create resources from scratch and/or bring in resources that
+you've already created in Liferay. Let's go over how to leverage your HTML
+(basic web content), XML (structures), or VM or FTL (templates) files from
+Liferay:
+
+- **web content (basic):** Edit the the article, click *Source*, and copy its
+contents into an HTML file in the `resources-importer/journal/articles/` folder.
+
+- **web content (based on structure and template):** Edit the article, click
+*Download* to download it as a file `article.xml`. Create a folder for the
+template under `resources-importer/journal/articles/`, rename the downloaded
+`article.xml` file as desired, and copy it into the folder for the template. The
+web content article's XML fills in the data required by the structure.
+
+- **structure:** Edit the structure by clicking the *Launch Editor* button, and
+copy and paste its contents into a new XML file for the structure in the
+`resources-importer/journal/structures/` folder. The structure XML sets a
+wireframe, or blueprint, for an article's data.
+
+- **template:** Edit the template by clicking the *Launch Editor* button, and
+copy and paste its contents into a new XML file for the template in the
+`resources-importer/journal/templates/` folder. The template defines how the
+data should be displayed.
 
 Once you've added your resources to the
 `<theme-name>/docroot/WEB-INF/src/resources-importer` folder and referenced
