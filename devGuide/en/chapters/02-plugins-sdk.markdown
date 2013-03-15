@@ -110,7 +110,7 @@ variables appropriately in your system properties:
 
 3. In the *System variables* section, click *New...*. 
 
-4. Sett the `ANT_HOME` variable:
+4. Set the `ANT_HOME` variable:
 
     4.1. **Variable name:** `ANT_HOME`. 
 
