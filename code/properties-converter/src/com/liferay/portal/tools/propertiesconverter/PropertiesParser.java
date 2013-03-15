@@ -76,22 +76,18 @@ public class PropertiesParser {
 				String[] paragraphLines = paragraphs[i].split("\n");
 				
 				if (paragraphLines.length > 3) {
-					System.out.println("paragraphLines.length = " + paragraphLines.length);
 					List<String> description = new ArrayList<String>();
 					StringBuilder paragraph = new StringBuilder();
 					
 					for (int j = 0; j < paragraphLines.length; j++) {
-						System.out.println("j = " + j +", replacing '## ' with ''");
 						paragraphLines[j] = paragraphLines[j].replace("##", "").trim();
 					}
 					
 					for (int j = 0; j < paragraphLines.length; j++) {
 						if (!paragraphLines[j].isEmpty()) {
-							System.out.println("paragraphLines[j]: " + paragraphLines[j]);
 							paragraph.append(paragraphLines[j] + " ");
 						}
 						else {
-							System.out.println("paragraph.toString(): " + paragraph.toString());
 							if (!paragraph.toString().isEmpty()) {
 								description.add(paragraph.toString().trim());
 								paragraph = new StringBuilder();
