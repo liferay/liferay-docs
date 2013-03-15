@@ -312,54 +312,48 @@ Python
 Hook Plugin
 Spring
 
+# High Availability
+
+clustering
+distributed caching
+advanced file system store
 Solr
 XML
-ajax
 single sign-on
 service builder
-css
 theme
 schema
-upgrade
 auto deploy
-spring
 hibernate
 ehcache
-javascript
+heap
 company id
-organizations
 locations
-site
-language
-time zone
-look and feel
 Authentication Pipeline
 Auto Login
 SSO with MAC
 Passwords
-Permissions
 Lucene
-JCR
-Jackrabbit
+CMIS store
+JCR store
+Amazon Simple Storage Service
+Documentum
+stop words
 SMTP
 Social Bookmarks
-Velocity
 Virtual Host
 servlet
 Invitation
 My Places
 Navigation
 Web Form
-Wiki
 Services Oriented Architecture
 WSDL
-clustering
-caching
 Performance Tuning
+Concurrent Mark-Sweep
 backup
 logs
 logging
-xml
 html
 zip
 jar file
@@ -372,7 +366,6 @@ jsp
 Language.properties
 portal.properties
 HSQL
-MySQL
 WEB-INF
 app.server.properties
 release.properties
@@ -380,9 +373,6 @@ JSR-286
 Control Panel
 JSR-168
 JSR-170
-message boards
-mailing list
-wiki
 sharding
 read-writer database
 data migration
