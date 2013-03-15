@@ -25,7 +25,6 @@ Let's begin our examination of Liferay's control panel by looking at how to
 manage and organize users in Liferay Portal.
 
 ## Managing Users [](id=lp-6-1-ugen15-managing-users-0)
-[](id=managing-users-user-groups-organizations-sites-teams-and-roles)
 
 The Portal section of the control panel is used for most administrative tasks.
 You'll find there an interface for the creation and maintenance of
@@ -1101,7 +1100,8 @@ file that match settings already configured in the GUI will be ignored. The GUI,
 which stores the settings in the database, always takes precedence over the
 properties file.
 
-    ldap.auth.method=bind #ldap.auth.method=password-compare
+    ldap.auth.method=bind 
+    #ldap.auth.method=password-compare
 
 Set either bind or password-compare for the LDAP authentication method. Bind is
 preferred by most vendors so you don't have to worry about encryption
@@ -1122,10 +1122,14 @@ portion of the LDAP tree. If you set this to `group`, Liferay will search all
 the groups and import the users in each group. If you have users who do not
 belong to any groups, they will not be imported.
 
-    ldap.error.password.age=age ldap.error.password.expired=expired
-ldap.error.password.history=history ldap.error.password.not.changeable=not
-allowed to change ldap.error.password.syntax=syntax
-ldap.error.password.trivial=trivial ldap.error.user.lockout=retry limit
+    ldap.error.password.age=age 
+    ldap.error.password.expired=expired
+
+    ldap.error.password.history=history 
+    ldap.error.password.not.changeable=notallowed to change 
+    ldap.error.password.syntax=syntax
+    ldap.error.password.trivial=trivial 
+    ldap.error.user.lockout=retry limit
 
 These properties are a list of phrases from error messages which can possibly be
 returned by the LDAP server. When a user binds to LDAP, the server can return

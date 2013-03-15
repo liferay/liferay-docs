@@ -239,6 +239,35 @@ WebSphere
 WebLogic
 coexist
 
+# Management
+
+User
+Password Policies
+Portal Settings
+Custom Fields
+Monitoring
+Plugins Configuration
+Role
+User Group
+Organization
+Organization Roles
+Site Roles
+Regular Organization
+User Group Sites
+permissions
+Power Users
+password history
+password expiration
+LDAP
+CAS
+Base DN
+LDAP Groups
+JAAS
+NTLM
+OpenID
+OpenSSO
+SiteMinder
+Atlassian Crowd
 
 Solr
 XML
@@ -247,7 +276,6 @@ single sign-on
 service builder
 css
 theme
-permissions
 schema
 upgrade
 auto deploy
@@ -256,20 +284,12 @@ hibernate
 ehcache
 javascript
 company id
-user groups
-roles
 organizations
 locations
 site
 language
 time zone
 look and feel
-JAAS
-CAS
-NTLM
-OpenID
-OpenSSO
-SiteMinder
 Authentication Pipeline
 Auto Login
 SSO with MAC
@@ -325,7 +345,6 @@ wiki
 sharding
 read-writer database
 data migration
-LDAP
 
 # Operating Systems
 
