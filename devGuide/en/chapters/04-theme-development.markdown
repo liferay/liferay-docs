@@ -594,17 +594,17 @@ All of the resources that a theme uses with the resource importer go in the
 `<theme-name>/docroot/WEB-INF/src/resources-importer` folder. The assets to be
 imported by your theme should be placed in the following directory structure:
 
--	<theme-name>/docroot/WEB-INF/src/resources-importer/
-	-	document_library/
-		-	documents/
-			-	<documents>
-	-	journal/
-		-	articles/
-			-	<web content articles>
-		-	structures/
-			-	<web content structures>
-		-	templates/
-			-	<web content templates>
+-	`<theme-name>/docroot/WEB-INF/src/resources-importer/`
+	-	`document_library/`
+		-	`documents/`
+			-	`<documents>`
+	-	`journal/`
+		-	`articles/`
+			-	`<web content articles>`
+		-	`structures/`
+			-	`<web content structures>`
+		-	`templates/`
+			-	`<web content templates>`
 
 When you create a new theme using the Liferay Plugins SDK
 (liferay-plugins-sdk-6.1.1-ce-ga2-20121004092655026 or later), this folder
