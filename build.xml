@@ -6,13 +6,44 @@
 	<property name="properties.toc" value="true" />
 	<property name="properties.file.path" value="portal.properties" />
 
-	<!-- To run the properties converter, use a command of the form ant -Dpage.title="My Page Title" -Dtoc="false" -Dproperties.file=/path/to/properties/file -->
+	<property name="portal.properties.file" value="portal.properties" />
+	<property name="system.properties.file" value="system.properties" />
+	<property name="liferay-plugin-package_6_1_0.properties.file" value="liferay-plugin-package_6_1_0.properties" />
+	<property name="liferay-plugin-package_6_2_0.properties.file" value="liferay-plugin-package_6_2_0.properties" />
+
+	<!-- To run the properties converter, use a command of the form ant -Dpage.title="Page Title" -Dtoc="false" -Dproperties.file=/path/to/properties/file -->
 	<target name="properties-to-html" description="runs the properties converter">
 		<java fork="true" jar="./lib/properties-converter.jar">
 			<arg value="${properties.title}" />
 			<arg value="${properties.toc}" />
 			<arg value="${properties.file.path}" />
 		</java>
+	</target>
+
+	<target name="build-properties-docs" description="runs the properties converter to generate HTML versions of portal.properties, system.properties, and liferay-plugin-package.properties">
+		<antcall target="properties-to-html">
+			<param name="page.title" value="Portal Properties"/>
+			<param name="toc" value="true"/>
+			<param name="properties.file" value="${portal.properties.file}"/>
+		</antcall>
+
+		<antcall target="properties-to-html">
+			<param name="page.title" value="System Properties"/>
+			<param name="toc" value="true"/>
+			<param name="properties.file" value="${system.properties.file}"/>
+		</antcall>
+
+		<antcall target="properties-to-html">
+			<param name="page.title" value="Liferay Plugin Package Properties 6.1"/>
+			<param name="toc" value="true"/>
+			<param name="properties.file" value="${liferay-plugin-package_6_1_0.properties.file}"/>
+		</antcall>
+
+		<antcall target="properties-to-html">
+			<param name="page.title" value="Liferay Plugin Package Properties 6.2"/>
+			<param name="toc" value="true"/>
+			<param name="properties.file" value="${liferay-plugin-package_6_2_0.properties.file}"/>
+		</antcall>
 	</target>
 
 </project>
