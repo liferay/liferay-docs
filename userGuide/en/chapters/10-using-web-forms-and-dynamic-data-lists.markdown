@@ -597,7 +597,7 @@ store that additional information. No required fields have to be present on an
 edit mode form.
 
 ![Figure 10.10: Selecting a form template as the initial
-form](../../images/05-kaleo-forms-detail-templates.png)
+form](../../images/05-kaleo-forms-form-templates.png)
 
 Once you have chosen the initial display you want, all that's left to do is
 configure the workflow for your process.
