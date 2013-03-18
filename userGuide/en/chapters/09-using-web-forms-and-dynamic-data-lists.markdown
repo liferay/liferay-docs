@@ -217,7 +217,7 @@ To create a new volunteer list with the "Volunteer Sign-Up" definition:
 3. Give the data list a name, like *Spring Move-In* and a description to assist
    administrative users in the future.
 
-4. Last and most importantly, click *Select* under the *Data Defition*
+4. Last and most importantly, click *Select* under the *Data Definition*
    section--this is where you set the data model that drives this list.
 
 5. Choose the *Volunteer Sign-Up* data definition you created, then click
@@ -316,7 +316,7 @@ form or the display of the list. Liferay lets you do exactly that using a custom
 When creating custom lists and data definitions, you can control not only how
 the input form appears to your users but also how the list itself displays.
 Eventually you may realize you need to create another sign-up sheet but you
-don't need the asme level of detail provided by the Volunteer Sign-Up data
+don't need the same level of detail provided by the Volunteer Sign-Up data
 definition you created. Liferay empowers you to customize both the input and
 output of your lists to unlimited levels. Dynamic data lists provide two areas
 to customize: detail templates and list templates. This covers the forms of
@@ -346,7 +346,7 @@ as you might need, and you can prototype them in the portlets to see how each
 feels. 
 
 Now your friends and enemies alike will be impressed with your `list.it` skills.
-It may look to the untrained eye like you've singlehandedly created three or
+It may look to the untrained eye like you've single-handedly created three or
 four different data types for your lists but you know better. You used the power
 that detail templates provide, using one data model that encompasses the maximum
 information you might need (like preferred activity, favorite color and ideal
@@ -362,7 +362,7 @@ create. If you created a special "Thanksgiving Dinner Sign-Up" list using your
 "Volunteer Sign-Up" definition, you wouldn't want to confuse fellow Listies by
 displaying data fields you never asked for. "Preferred task?" a friend might
 say, "I don't remember seeing *that* on the sign-up form!" To avoid such
-embarassing situations, you should create a custom display to match that list.
+embarrassing situations, you should create a custom display to match that list.
 Taking it even further, you could provide a fancy, JavaScript-driven image
 carousel preview of all the attendees of the party. This would complement your
 other displays and be another bragging right on `list.it`. List templates give
@@ -371,7 +371,7 @@ you the power to do all this and more.
 Just like detail templates, list templates are found in the Manage Templates
 section of a data definition. With list templates you can customize the display
 of a list in precisely the same way as you can customize web content. List
-templates can be written in Freemarker or Velocity, pulling data from the data
+templates can be written in FreeMarker or Velocity, pulling data from the data
 definition in the same way that web content templates pull data from their
 structures. We'll look at a simple example, but for more information on using
 template scripts to pull data from a backing structure, see web content
@@ -411,7 +411,7 @@ From the control panel:
 3. Now you can click on *Add List Template* to create a new template.
 
 Fill out the form with a title and a description. Next, choose a templating
-language. Just like web content templates, you can choose between Freemarker or
+language. Just like web content templates, you can choose between FreeMarker or
 Velocity. There is no functional difference between the two. Once you choose the
 script language, you can upload a template file or choose *Launch Editor* to
 type in a script manually. Inside the editor you can also choose to use plain
@@ -492,7 +492,7 @@ All the knowledge you have accrued through building out your award-winning
 content can be brought to bear in list templates. With the full power of
 Velocity templates at your fingertips, you have easy access to all the data in
 the list, as well as the full complement of helper methods and the Alloy UI
-Javascript library to make easy work of dynamic displays. 
+JavaScript library to make easy work of dynamic displays. 
 
 If you're not a Listie, and you happen to be deploying custom lists in an
 environment that requires approval from other users, then it's not enough to
@@ -572,7 +572,7 @@ list of options to insert.
 
 The first part of a new Kaleo process is also the simplest: the entry
 definition. This is just another way to refer to a data definition. All of the
-avaliable data definitions can be chosen, including our awesome "Volunteer
+available data definitions can be chosen, including our awesome "Volunteer
 Sign-Up List." Just like with normal data lists, you can always create a new
 entry definition from the list view by clicking on *Add new definition*.
 
@@ -605,7 +605,7 @@ configure the workflow for your process.
 ##### Selecting a Workflow [](id=lp-6-1-ugen05-selecting-a-workflow-0)
 
 You can now select a workflow to apply to your new list-defined process. All the
-avaliable workflows can be chosen and you can create new ones from the selection
+available workflows can be chosen and you can create new ones from the selection
 screen. Simply choose *Add Workflow* and a Workflow Designer screen appears
 allowing you to define a new workflow by dragging elements in a flow chart.
 
