@@ -594,22 +594,29 @@ All of the resources a theme uses with the resources importer go in the
 `<theme-name>/docroot/WEB-INF/src/resources-importer` folder. The assets to be
 imported by your theme should be placed in the following directory structure:
 
--	`<theme-name>/docroot/WEB-INF/src/resources-importer/`
-	-	`document_library/`
-		-	`documents/`
-			-	`<documents>`
-	-	`journal/`
-		-	`articles/`
-			-	`<web content articles>`
-		-	`structures/`
-			-	`<web content structures>`
-		-	`templates/`
-			-	`<web content templates>`
+- `<theme-name>/docroot/WEB-INF/src/resources-importer/`
+    - `sitemap.json` - defines the pages, layout templates, and portlets
+    - `assets.json` - (optional) specifies details on the assets
+    - `document_library/`
+        - `documents/` - contains documents and media files
+    - `journal/`
+        - `articles/` - contains web content (HTML) and folders grouping web
+        content articles (XML) by template. Each folder name must match the file
+        name of the corresponding template. For example, create folder `Template
+        1/` to hold an article based on template file `Template 1.vm`.
+        - `structures/` - contains structures (XML) and folders of child
+        structures. Each folder name must match the file name of the
+        corresponding parent structure. For example, create folder `Structure
+        1/` to hold a child of structure file `Structure 1.xml`.
+        - `templates/` - groups templates (VM or FTL) into folders by structure.
+        Each folder name must match the file name of the corresponding
+        structure. For example, create folder `Structure 1/` to hold a template
+        for structure file `Structure 1.xml`.
 
 When you create a new theme using the Liferay Plugins SDK
 (liferay-plugins-sdk-6.1.1-ce-ga2-20121004092655026 or later), this folder
 structure is created automatically. Also, a default `sitemap.json` file is
-created in the `resources-importer` folder and a default
+created and a default
 `liferay-plugin-package.properties` file is created in the `WEB-INF` folder.
 
 You have two options for specifying resources to be imported with your theme.
