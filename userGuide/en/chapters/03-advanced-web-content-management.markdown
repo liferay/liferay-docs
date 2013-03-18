@@ -963,7 +963,7 @@ Publication* is published.
 The dropdown next to the Staging link at the top gives you the option to
 *Publish to Live Now* or *Schedule Publication to Live*.
 
-**Publish to Live Now:** immedatiately pushes any changes to the Live Site.
+**Publish to Live Now:** immediately pushes any changes to the Live Site.
 
 **Schedule Publication to Live:** lets you set a specific date to publish or to
 setup recurring publishing. You could use this, for example, to publish all
@@ -981,7 +981,30 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for Calendar Events, the event needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.20: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
+![Figure 3.20: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+
+Web content tends to be frequently updated, often more so than other kinds of
+content. For some web content articles, this can result in very high numbers of
+versions, sometimes hundreds. Such high version numbers can make it very slow to
+publish web content articles. Liferay 6.2 addresses this issue by allowing site
+administrators to choose whether or not to publish a web content article's
+version history when a staged article is ready to be published. To use this
+feature, staging must be enabled. Edit a web content article that's being
+displayed in a Web Content Display portlet on one of your pages and then click
+*Staging* &rarr; *Publish to Live Now* from just below the Dockbar. In the
+popup, expand the Applications heading and scroll down until you see the section
+for Web Content.
+
+![Figure 3.x: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+
+Liferay 6.2 also added a portal property,
+`journal.publish.version.history.by.default`, that sets the default behavior. By
+default, this property is set to `true` so site administrators have to manually
+manually uncheck the *Version History* box mentioned above if they only want to
+publish the latest approved version of web content articles. If you'd like to
+change the default behavior, add the following line to your
+`portal-ext.properties` file:
+`journal.publish.version.history.by.default=false`.
 
 One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
