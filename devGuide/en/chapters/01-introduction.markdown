@@ -60,7 +60,7 @@ or regular Java web applications.
 
 The following sections describe these two technologies in more detail. 
 
-### Portlets
+### Portlets [](id=6-1-devguide-portlets-intro)
 
 Portlets are small web applications written in Java that run in a portion of a
 web page. The heart of any portal implementation is its portlets, because they

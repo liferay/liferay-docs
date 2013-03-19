@@ -497,7 +497,7 @@ so much already done for you, there won't be as much flexibility to build the
 desired design. It's a compromise between creating a theme as quickly as
 possible versus having full control of the result. It's your choice.
 
-## Importing resources with your themes
+## Importing resources with your themes [](id=6-1-importing-resources-with-themes)
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
@@ -522,7 +522,7 @@ introduced in Liferay 6.1 is only applied out-of-the-box in Liferay CE.) The
 welcome theme and the pages and content that it imports to the default site
 provide a good example of the resources importer's functionality.
 
-![Figure 4.x: The welcome theme uses the resources importer to import pages and
+![Figure 4.9: The welcome theme uses the resources importer to import pages and
 content to the default site of a fresh Liferay
 installation.](../../images/welcome-theme.png)
 
