@@ -46,7 +46,7 @@ applications into Liferay: **Portlets** and **OpenSocial gadgets**.
 
 Portlets are small web applications written in Java that run in a portion of a
 web page. The heart of any portal implementation is its portlets, because they
-contain the actual functionality. The portlet container just aggregates the
+contain the actual functionality. The portlet container just aggregates the set 
 of portlets to appear on each page. 
 
 Since they're entirely self-contained, portlets are the least invasive mechanism
@@ -79,31 +79,25 @@ An OpenSocial gadget is deployed in Liferay as one of the following types:
 - **Remote gadget:** is executed in a remote server but presented in a given
 page as if it were another platform application. Remote gadget deployment is
 simple, but the portal depends on the remote server for the gadget to work.
-Deployment as a remote gadget is not a viable option in some intranet
+Deployment as a remote gadget is not a viable option in some Intranet
 environments that lack full access to the Internet.
 
 - **Local gadget:** is deployed in the Liferay server in a similar manner to
-portlets. Since a gadget is defined in an XML file, just upload the XML file to
-deploy the gadget. Upload XML files directly through the file system, FTP, or
-similar protocol. Alternatively, publish the XML file to your portal
-via Liferay's *Documents and Media* portlet. Then copy its URL, go to *Control
-Panel* &rarr; *OpenSocial Gadget Publisher*, click the *Publish Gadget* button,
-and paste the URL as shown in the following screenshot:
+portlets. Since a gadget is defined in an XML file, uploading this file is all
+that's necessary to deploy the gadget.
 
-    ![Figure 1.1: All you need is your OpenSocial gadget's URL to publish it in
-Liferay.](../../images/open-social-gadget-new-ctrl-panel.png)
+<!-- I removed the specifics about deploying a gadget, because it's TMI (Too
+Much Information) for the introduction. This can be more adequately covered in
+the specific section where we'll deploy a gadget. --> 
 
 Once you've saved your new gadget, it appears as an application that
 administrators can add to their site's pages. 
 
 Liferay lets you expose portlets to the outsde world as OpenSocial gadgets. That
 is, you can develop a portlet and then let anyone with access to your portlet
-add it as a remote gadget to pages of other portals or social networks. 
+add it as a remote gadget to pages on other portals or social networks. 
 
-Since an OpenSocial gadget is defined in an XML file, creating a plugin (that is
-a WAR file) to deploy it is unnecessary. Just make the XML file accessible
-within the same server or another server and provide Liferay the URL. 
-
+<!-- Again, TMI; paragraph removed. -->
 ### Reusing existing web applications
 
 What if you already have an existing application that has not been implemented
@@ -112,15 +106,20 @@ as a portlet or OpenSocial gadget? You have many options, including:
 - Rewrite the application as a portlet. 
 
 - Create simple portlets that interact with the application (possibly using Web
-Services) and offer all or part of the functionality to end-users. 
+Services) and offer that functionality to end-users. 
 
-- Create an OpenSocial gadget as a wrapper for the application. The gadget will
+- Create an OpenSocial gadget as a wrapper for the application. The gadget can
 use an IFrame to show part of the application in the portal page. 
 
 - Create a portlet that integrates the remote application either using an IFrame
 or an HTTP proxy (e.g., using Liferay's WebProxy portlet). This requires
-implementing a means to transfer authentication between the portal and the
-application. 
+implementing single sign-on between the portal and the application. 
+
+- If the application is implemented using Struts 1.x, it can be converted to a
+  portlet application with only a few changes. 
+
+- If the application is implemented using JSF, it can be converted to a portlet
+  application with only a few changes. 
 
 There are many more options, each with its own merits. Reviewing them all is out
 of the scope of this guide; however, the above options are worth considering. 
@@ -129,23 +128,27 @@ If the existing application has been developed as a Java EE application, Liferay
 provides a technology called Web Application Integrator that prototypes the
 integration and provides several nice features. 
 
-In order to use Web Application Integrator all you need to do is deploy the WAR
-file of your web application as you would any Liferay plugin (for example, by
-using the control panel or by copying it to the hot-deploy directory). As a
-result, Liferay automatically creates a portlet that integrates your application
-using an IFrame. 
+<!-- Do we still maintain this? I haven't heard anything about it in a long
+time. -->
+
+In order to use Web Application Integrator all you need to do is deploy its WAR
+file as you would any Liferay plugin. Liferay automatically creates a portlet
+that integrates your application using an IFrame. 
+
+<!-- I think you have to do more than just deploy it. I think there's an
+additional deployment descriptor. -->
 
 Next let's consider some of the technology frameworks Liferay supports. 
 
 ### Supported technology frameworks
 
 Liferay, as a platform, strives to provide compatibility with any Java
-technology a developer may want to use to develop their applications.
-Thanks to the portlet and the Java EE specifications, each portlet application
-can use its own set of libraries and technologies, whether they are
-used by Liferay or not. This section refers mainly to portlet plugins,
-other plugin types are more restricted. For example, the Ext plugins can only
-use libraries that are compatible with the ones used by the core Liferay code. 
+technology you may want to use to develop your applications. Thanks to the
+portlet and Java EE specifications, each portlet application can use its own
+set of libraries and technologies, whether they are used by Liferay or not. This
+section refers mainly to portlet plugins; other plugin types are more
+restricted. For example, Ext plugins can only use libraries that are compatible
+with the ones used by the core Liferay code. 
 
 Since the choice of available frameworks and technologies is very broad,
 choosing the appropriate one can be daunting. We'll provide some advice to help
@@ -154,57 +157,60 @@ you choose the best frameworks for your needs, summarized as follows:
 1. *Use what you know:* If you already know a framework, that can be your
 first option (Struts 2, Spring MVC, PHP, Ruby, etc). 
 
-2. *Adapt to your real needs:* Component based frameworks, such as
+2. *Adapt to your real needs:* Component-based frameworks, such as
 JavaServer&trade; Faces (JSF), Vaadin, and Google Web Toolkit (GWT), are
 especially good for desktop-like applications. MVC frameworks, on the other
 hand, provide more flexibility. 
 
 3. *When in doubt, pick the simpler solution:* Portlet applications are often
-more simple to implement than standalone web applications; so, when in
+more simple to implement than standalone web applications. When in
 doubt, use the simpler framework (e.g. Liferay's MVC Portlet or Alloy Portlet).  
 
 Some of the frameworks mentioned above include their own JavaScript code to
-provide a very high degree of interaction. That is the case with GWT, Vaadin,
-and JSF implementations (e.g. IceFaces or Rich Faces). You may prefer to write
+provide a high degree of interaction. That is the case with GWT, Vaadin,
+and JSF implementations (e.g. ICEfaces or Rich Faces). You may prefer to write
 your own JavaScript code and leverage one of the JavaScript libraries available.
-Some of the most common libraries that can be used with Liferay are jQuery,
-Dojo, YUI, Sencha (previously known as ExtJs), and Sproutcore. Since version 6,
-Liferay has provided its own library called *Alloy UI* which is based on YUI 3.
-Alloy UI has a large set of components specifically designed for efficient
-interactive applications, such as those in portal environments. Liferay's core
-portlets use Alloy UI throughout their JavaScript code. You can use Alloy UI for
-your custom portlets or use another JavaScript library, as long as the
-library does not conflict with libraries referenced by other portlets deployed
-in the same portal. 
+You can use any JavaScript library with Liferay, including jQuery, Dojo, YUI,
+Sencha (previously known as ExtJs), and Sproutcore. 
+
+Since version 6, however, Liferay has its own library called *Alloy UI* which is
+based on YUI 3. Alloy UI has a large set of components specifically designed for
+modern user interfaces. Liferay's core portlets make use Alloy UI. You can use
+Alloy UI for your custom portlets or use another JavaScript library, as long as
+the library does not conflict with libraries referenced by other portlets
+deployed in the same portal. 
+
+<!-- There should be some mention of Service Builder here. --> 
 
 In addition to those mentioned above, there are thousands more frameworks and
-libraries available to you for handling persistence, caching,
-connections to remote services, and much more. Liferay does not impose specific
-requirements on the use of any of those frameworks. You, the portal
-developer, choose the best tools for your projects. 
+libraries available to you for handling persistence, caching, connections to
+remote services, and much more. Liferay does not impose specific requirements on
+the use of any of those frameworks. You, the portal developer, choose the best
+tools for your projects. 
 
 ## Extending and customizing Liferay
 
 Liferay provides many out-of-the-box features, including a fully featured
 content management system, a social collaboration suite, and several
-productivity tools. For some portals, these features might be exactly what you
-need; but for other portals, you'll need to extend these features or
-customize their behavior and appearance. 
+productivity tools. For most installations, these features are exactly what you
+need; but sometimes you'll want to extend these features or customize their
+behavior and appearance. 
 
-Liferay provides several plugin types that are specialized for different kinds
-of customizations. Multiple plugins and plugin types can be combined into a
-single WAR file. Let's take a look at these plugin types and how they
-can be used. 
+Liferay is designed to be customized. Multiple plugins and plugin types can be
+combined into a single WAR file. Let's take a look at these plugin types and how
+they can be used. 
 
 ### Customizing the look and feel: Themes
 
 Themes let you specify the look of your Liferay portal using a combination of
-CSS and Velocity templates. In many cases, it is possible to adapt the default
-Liferay theme to a desired look using only CSS; this is the most forward
-compatible approach. If CSS alone is insufficient, you can create a theme
-consisting of only a subset of the required templates and rely on the remaining
-templates being copied from the default theme at deployment. Like portlets,
-themes are hot-deployed as plugins into Liferay instances. 
+CSS and Velocity or FreeMarker templates. In many cases, it is possible to adapt
+the default Liferay theme to a desired look using only CSS; this is the most
+forward compatible approach. If CSS alone is insufficient, you can create a
+theme consisting of only a subset of the required templates and rely on the
+remaining templates being copied from the default theme at deployment. Like
+portlets, themes are hot-deployed as plugins into Liferay instances. 
+
+<!-- This borders on TMI; we need to make this higher level. --> 
 
 ### Adding new predefined page layouts: Layout Templates
 
@@ -216,28 +222,26 @@ Velocity and are hot-deployable.
 
 ### Customizing or extending the out-of-box functionality: Hook plugins
 
-Hook plugins are the recommended method of customizing the the core
-functionality of Liferay at many predefined extension points. Hook plugins can
-be used to modify portal properties or to perform custom actions on startup,
-shutdown, login, logout, session creation, and session destruction. Using
-service wrappers, a hook plugin can replace any of the core Liferay services
-with a custom implementation. Hook plugins can also replace the JSP templates
-used by any of the default portlets, letting you customize the appearance of the
-portlets. Best of all, hooks are hot-deployable plugins just like portlets. 
+Hook plugins are how you customize the core functionality of Liferay at many
+predefined extension points. Hook plugins are used to modify portal properties
+or to perform custom actions on startup, shutdown, login, logout, session
+creation, and session destruction. Using service wrappers, a hook plugin can
+replace any of the core Liferay services with a custom implementation. Hook
+plugins can also replace the JSP templates used by any of the default portlets.
+Best of all, hooks are hot-deployable plugins just like portlets. 
 
 ### Advanced customization: Ext plugins
 
 Ext plugins provide the largest degree of flexibility in modifying the Liferay
 core, allowing you to replace essentially any class with a custom
 implementation. However, it is highly unlikely that an Ext plugin written for
-one version of Liferay will continue to work in the next version, without
+one version of Liferay will continue to work in the next version without
 modification. For this reason, Ext plugins are only recommended for cases in
-which an advanced customization is truly necessary and there is no alternative.
-Make sure you are very familiar with the Liferay core so your Ext plugin doesn't
-negatively effect existing funcitonalities. Even though Ext plugins are deployed
+which an advanced customization is truly necessary, and there is no alternative.
+Make sure you are familiar with the Liferay core so your Ext plugin doesn't
+negatively effect existing funcitonality. Even though Ext plugins are deployed
 as plugins, the server must be restarted for their customizations to take
-effect. For this reason, Ext plugins should not be combined with other types of
-plugins. 
+effect. 
 
 ---
 
@@ -256,28 +260,27 @@ using.
 
 ## Choosing your development tools
 
-The Java ecosystem is known for providing a wide variety of options for almost
-any type of software development. This variety is advantageous because you can
-find the tool that best fits your needs and the way you work. Naturally, when
-you get comfortable with a tool, you want to keep using it. 
+The Java ecosystem is known for providing a variety of options for almost any
+type of software development. This is advantageous because you can find the tool
+that best fits your needs and the way you work. Naturally, when you get
+comfortable with a tool, you want to keep using it. 
 
 If you're a newcomer, the wide variety of tools available can be overwhelming.
-You're choosing between tools without enough experience to know which tools best
-address your needs. Throughout this guide, we'll give you the best of both
-worlds showing you how to develop plugins in two environments that use open
-source technologies 1) A command-line environment that integrates with a wide
-variety of tools. 2) An easy-to-use IDE that minimizes your learning curve while
-giving you powerful development features. Here are those two environments:
+Throughout this guide, we'll give you the best of both worlds showing you how to
+develop plugins in two environments that use open source technologies 1) A
+command-line environment that integrates with a wide variety of tools. 2) An
+easy-to-use IDE that minimizes your learning curve while giving you powerful
+development features. Here are those two environments:
 
-- **Apache Ant and the Plugins SDK:** Liferay provides a development environment
+**Apache Ant and the Plugins SDK:** Liferay provides a development environment
 called the *Plugins SDK* that lets you develop plugins of all types by executing
 a set of predefined commands (known as *targets*, in Ant's nomenclature). You
 can use the Plugins SDK directly from the command-line and use file editors like
-Emacs, Vi, EditPlus, or even Notepad. You can also integrate the Plugins SDK
+Emacs, Vim, EditPlus, or even Notepad. You can also integrate the Plugins SDK
 with your favorite IDE, since most IDEs provide support for Apache Ant. The next
 chapter describes how to use the Plugins SDK. 
 
-- **Eclipse and the Liferay IDE:** Eclipse is the most popular and well known
+**Eclipse and the Liferay IDE:** Eclipse is the most popular and well known
 Java IDE and it provides a wide variety of features. *Liferay IDE* is a plugin
 for Eclipse that extends its functionality to facilitate developing all types of
 Liferay plugins. Liferay IDE uses the Plugins SDK underneath, but you don't need
@@ -298,16 +301,15 @@ popular of these alternatives is Maven. To support developers that want to use
 Maven we have *mavenized* Liferay artifacts for referencing in your Maven
 projects. See chapter 8 for an in-depth look at developing plugins in Maven. 
 
-**What if I don't like Eclipse and prefer to use Netbeans, IntelliJ IDEA or
-other another IDE?** There are many IDEs available and each one
-has its strengths. We built Liferay IDE on top of Eclipse because it's the most
-popular open source option. We also want to make sure you can use the IDE of
-your choice. In fact, many core developers use Netbeans and Intellij IDEA.
-Both of these IDEs have support for integration with Apache Ant, so you can use
-the Plugins SDK with them. Additionally, Sun Microsystems developed an extension
-to Netbeans called the *Portal Pack* that is explicitly designed for develop
-plugins for Liferay (and their Liferay flavor called WebSpace). You can find
-more about the Portal Pack at
-[http://netbeans.org/kb/articles/portalpack.html](http://netbeans.org/kb/articles/portalpack.html).
+**What if I don't like Eclipse and prefer to use NetBeans, IntelliJ IDEA or
+other another IDE?** There are many IDEs available, and each one has its
+strengths. We built Liferay IDE on top of Eclipse because it's the most popular
+open source option. We also want to make sure you can use the IDE of your
+choice. In fact, many core developers use NetBeans and IntelliJ IDEA. Both of
+these IDEs have support for integration with Apache Ant, so you can use the
+Plugins SDK with them. Additionally, there is an extension to NetBeans called
+the *Portal Pack* that is explicitly designed for develop plugins for Liferay. 
+You can find more about the Portal Pack at
+[http://contrib.netbeans.org/portalpack](http://contrib.netbeans.org/portalpack).
 
 That's it for the introduction. Let's get started with real development work! 
