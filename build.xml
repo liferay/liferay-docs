@@ -1,61 +1,65 @@
 <?xml version="1.0"?>
 
-<project name="Properties to HTML conversion" default="properties-to-html" basedir=".">
+<project name="Properties to HTML conversion" default="build-properties-docs" basedir=".">
 
 	<property name="dist" value="dist" />
 	<property name="index.html" value="code/properties-converter/index.html" />
-	<property name="liferay-portal-dir" value="../liferay-portal" />
+	<property name="liferay.portal.dir" value="../liferay-portal" />
 
 	<property name="properties.title" value="Portal Properties" />
 	<property name="properties.toc" value="true" />
 	<property name="properties.file.path" value="portal.properties" />
+	<property name="properties.dest.file.path" value="${dist}"/>
 
-	<property name="portal.properties.file.path" value="../liferay-portal/portal-impl/src/portal.properties" />
-	<property name="system.properties.file.path" value="../liferay-portal/portal-impl/src/system.properties" />
-	<property name="liferay-plugin-package_6_1_0.properties.file.path" value="../liferay-portal/definitions/liferay-plugin-package_6_1_0.properties" />
-	<property name="liferay-plugin-package_6_2_0.properties.file.path" value="../liferay-portal/definitions/liferay-plugin-package_6_2_0.properties" />
+	<property name="portal.properties.file.path" value="${liferay.portal.dir}/portal-impl/src/portal.properties" />
+	<property name="system.properties.file.path" value="${liferay.portal.dir}/portal-impl/src/system.properties" />
+	<property name="liferay-plugin-package_6_1_0.properties.file.path" value="${liferay.portal.dir}/definitions/liferay-plugin-package_6_1_0.properties" />
+	<property name="liferay-plugin-package_6_2_0.properties.file.path" value="${liferay.portal.dir}/definitions/liferay-plugin-package_6_2_0.properties" />
 
-	<!-- To run the properties converter, use a command of the form ant -Dpage.title="Page Title" -Dtoc="false" -Dproperties.file=/path/to/properties/file -->
+	<!-- To run the properties converter, use a command of the form ant -Dproperties.title="Page Title" -Dtoc="false" -Dproperties.file=/path/to/properties/file -->
 	<target name="properties-to-html" description="runs the properties converter">
 		<java fork="true" jar="./lib/properties-converter.jar">
 			<arg value="${properties.title}" />
 			<arg value="${properties.toc}" />
 			<arg value="${properties.file.path}" />
+			<arg value="${properties.dest.file.path}" />
 		</java>
 	</target>
 
-	<target name="build-properties-docs" description="runs the properties converter to generate HTML versions of portal.properties, system.properties, and liferay-plugin-package.properties">
-		<antcall target="properties-to-html">
-			<param name="page.title" value="Portal Properties"/>
-			<param name="toc" value="true"/>
-			<param name="properties.file.path" value="${portal.properties.file.path}"/>
-		</antcall>
-
-		<antcall target="properties-to-html">
-			<param name="page.title" value="System Properties"/>
-			<param name="toc" value="true"/>
-			<param name="properties.file.path" value="${system.properties.file.path}"/>
-		</antcall>
-
-		<antcall target="properties-to-html">
-			<param name="page.title" value="Liferay Plugin Package Properties 6.1"/>
-			<param name="toc" value="true"/>
-			<param name="properties.file.path" value="${liferay-plugin-package_6_1_0.properties.file.path}"/>
-		</antcall>
-
-		<antcall target="properties-to-html">
-			<param name="page.title" value="Liferay Plugin Package Properties 6.2"/>
-			<param name="toc" value="true"/>
-			<param name="properties.file.path" value="${liferay-plugin-package_6_2_0.properties.file.path}"/>
-		</antcall>
+	<target name="build-properties-docs" description="runs the properties converter to generate HTML versions of portal.properties, system.properties, and liferay-plugin-package.properties.">
+		<echo message="Run &quot;ant -Dliferay.portal.dir=yourPortalDir&quot; if your portal is not ${liferay.portal.dir}."/>
 
 		<mkdir dir="${dist}"/>
-		<move file="${liferay-portal-dir}/portal-impl/src/portal.properties.html" todir="${dist}"/>
-		<move file="${liferay-portal-dir}/portal-impl/src/system.properties.html" todir="${dist}"/>
-		<move file="${liferay-portal-dir}/definitions/liferay-plugin-package_6_1_0.properties.html" todir="${dist}"/>
-		<move file="${liferay-portal-dir}/definitions/liferay-plugin-package_6_2_0.properties.html" todir="${dist}"/>
-		<copy file="${index.html}" todir="${dist}"/>
 
+		<antcall target="properties-to-html">
+			<param name="properties.title" value="Portal Properties"/>
+			<param name="properties.toc" value="true"/>
+			<param name="properties.file.path" value="${portal.properties.file.path}"/>
+			<param name="properties.dest.file.path" value="${dist}"/>
+		</antcall>
+
+		<antcall target="properties-to-html">
+			<param name="properties.title" value="System Properties"/>
+			<param name="properties.toc" value="true"/>
+			<param name="properties.file.path" value="${system.properties.file.path}"/>
+			<param name="properties.dest.file.path" value="${dist}"/>
+		</antcall>
+
+		<antcall target="properties-to-html">
+			<param name="properties.title" value="Liferay Plugin Package Properties 6.1"/>
+			<param name="properties.toc" value="true"/>
+			<param name="properties.file.path" value="${liferay-plugin-package_6_1_0.properties.file.path}"/>
+			<param name="properties.dest.file.path" value="${dist}"/>
+		</antcall>
+
+		<antcall target="properties-to-html">
+			<param name="properties.title" value="Liferay Plugin Package Properties 6.2"/>
+			<param name="properties.toc" value="true"/>
+			<param name="properties.file.path" value="${liferay-plugin-package_6_2_0.properties.file.path}"/>
+			<param name="properties.dest.file.path" value="${dist}"/>
+		</antcall>
+
+		<copy file="${index.html}" todir="${dist}"/>
 	</target>
 
 </project>

@@ -35,6 +35,10 @@ public class PropertiesParser {
 
 		String propertiesFilePath = args[2];
 
+		System.out.println("Converting " + propertiesFilePath + " to HTML");
+
+		String destDir = args[3];
+
 		int pos = propertiesFilePath.lastIndexOf("/");
 		
 		String propertiesFileName = "";
@@ -51,15 +55,7 @@ public class PropertiesParser {
 		// Parse properties file and create sections and properties for the data
 		// model
 
-		StringBuilder sb = new StringBuilder(3);
-
-		sb.append(System.getProperty("user.dir"));
-		sb.append("/");
-		sb.append(propertiesFilePath);
-
-		System.out.println("Converting " + sb.toString() + " to HTML");
-
-		File propertiesFile = new File(sb.toString());
+		File propertiesFile = new File(propertiesFilePath);
 
 		String propertiesString = "";
 
@@ -179,14 +175,11 @@ public class PropertiesParser {
 		
 		// Get the Freemarker template and merge it with the data model
 
-		System.out.println("Writing " + sb.toString() + ".html");
-
 		try {
 			Configuration configuration = new Configuration();
 
 			File file = new File(
-				System.getProperty("user.dir") +
-					"/code/properties-converter/src/com/liferay/portal/tools/" +
+					"code/properties-converter/src/com/liferay/portal/tools/" +
 						"propertiesconverter/dependencies");
 
 			try {
@@ -200,7 +193,11 @@ public class PropertiesParser {
 
 			Template template = configuration.getTemplate("properties.ftl");
 
-			File propertiesHTMLFile = new File(sb.toString() + ".html");
+			String htmlFilePath = destDir + "/"  + propertiesFileName + ".html";
+
+			System.out.println("Writing " + htmlFilePath);
+
+			File propertiesHTMLFile = new File(htmlFilePath);
 
 			Writer writer = new FileWriter(propertiesHTMLFile);
 
