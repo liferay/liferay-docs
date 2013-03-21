@@ -263,10 +263,11 @@ PDFBox and uses it to generate automatic previews for certain types of
 documents, by default. You can also install three additional tools that offer
 higher quality previews and document conversion functionality: OpenOffice or
 LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these
-tools, you can generate automatic previews for many types of files incuding text
-files, office suite files, PDFs, images, audio files and videos. Users will also
-be able to use the conversion functionality to download documents in a variety
-of formats. Please see chapter 4 on Documents and Media for more information.
+tools, you can generate automatic previews for many types of files including
+text files, office suite files, PDFs, images, audio files and videos. Users will
+also be able to use the conversion functionality to download documents in a
+variety of formats. Please see chapter 4 on Documents and Media for more
+information.
 
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org),
 ImageMagick is available here: [ImageMagick](http://www.imagemagick.org) and
@@ -478,7 +479,7 @@ various caches. We learned how to debug parts of the portal by changing log
 levels and by viewing the various properties defined in the portal.
 
 Finally, we learned how to properly notify users that the portal is about to
-shut down and how to set up exernal services like OpenOffice integration. We
+shut down and how to set up external services like OpenOffice integration. We
 looked at how to create multiple portal instances on a single installation of
 Liferay and we showed how to view currently installed plugins.
 
