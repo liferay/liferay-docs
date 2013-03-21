@@ -241,7 +241,6 @@ way for you to back them up to separate files. Let's see how that works.
 
 ##### Backing up and Restoring Pages  
 
-
 Next to the *Add Page* button in the Manage Site Pages screen are two buttons
 labeled *Export* and *Import*. The Export button exports the pages you create
 into a single file, called a LAR (Liferay Archive). You can then import this
@@ -278,7 +277,7 @@ selecting it.
 Next, we'll look at the options on the right side menu, starting with Look and
 Feel. 
 
-##### Customizing the Look and Feel  
+##### Customizing the Look and Feel of Site Pages
 
 When you open the Manage Site Pages dialog box it defaults to the Look and Feel
 tab. On this tab, you're presented with an interface that allows you to choose a
@@ -318,7 +317,7 @@ or overriding existing ones.
 
 The next option configures the logo that appears for your site. 
 
-##### Using a custom logo  
+##### Using a custom logo for a site
 
 If you want to use your own logo for a specific site, use the Logo tab. Adding a
 custom logo is easy: select the Logo tab and browse to the location of your
@@ -393,6 +392,32 @@ you can set an icon for the page that appears in the navigation menu.
 **Mobile Rule Groups:** allows you to apply rules for how this page should be
 rendered for various mobile devices. You can set these up in the *Mobile Device
 Rules* section of the Control Panel. 
+
+**Embedded Portlets:** only appears if you have embedded one or more portlets on
+the page. To embed a portlet on a page, first look up its portlet name in
+Liferay's `WEB-INF/portlet-custom.xml` file. Portlet names in
+`portlet-custom.xml` are sometimes referred to as portlet IDs. What we usually
+mean by "portlet names," `portlet-custom.xml` refers to as "display names".
+Next, add a web content display content to the page, create a new web content
+article, switch to source, and paste in the following:
+
+	<runtime-portlet name="" />
+
+Then add the portlet name (ID) inside of the quotation marks, publish the web
+content article, and select the article in the web content display portlet. Once
+you've selected the new web content article, the embedded portlet appears on the
+page.
+
+---
+
+![tip](../../images/01-tip.png) Usually, you don't want the web content display
+portlet that you're using to embed a portlet to be visible. To make the web
+content display portlet invisible, click on the wrench icon of the web content
+display portlet, select *Look and Feel*, set *Show Borders* to *No*, and click
+*Save*. Once you've refreshed the page, only the embedded portlet will be
+visible.
+
+---
 
 **Customization Settings:** lets you mark specific sections of the page you want
 users to be able to customize.
