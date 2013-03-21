@@ -3,7 +3,7 @@
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
 that work best for you. To that end, we provide a Plugins Software Development
-Kit (SDK) based on Apache Ant and can be used along with any editor or
+Kit (SDK) based on Apache Ant that can be used along with any editor or
 Integrated Development Environment (IDE). Much of this guide uses the Plugins
 SDK and a text editor, but use whatever tool you're most comfortable with. As an
 alternative to the Plugins SDK, in Chapter 9 we discuss Liferay IDE, a plugin
@@ -31,14 +31,13 @@ Setting up the Plugins SDK is easy. Let's get to it.
 
 ## Installing the SDK
 
-Setting up your environment for Liferay development is straightforward. But
-first you need Liferay Portal. If you haven't already installed Liferay with an
-application server, follow the instructions in the [Installation and
+The first thing you should do is install Liferay Portal. If you haven't already
+installed a Liferay bundle, follow the instructions in the [Installation and
 Setup](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-lifer-1)
-chapter of *Using Liferay Portal*. Many people use the Tomcat application server
-for development, as it's small, fast, and takes up less resources than most
-other servlet containers. Although you can use any application server supported
-by Liferay Portal for development, our examples use Tomcat. 
+chapter of *Using Liferay Portal*. Many people use the Tomcat bundle for
+development, as it's small, fast, and takes up fewer resources than most other
+servlet containers. Although you can use any application server supported by
+Liferay Portal for development, our examples use the Tomcat bundle. 
 
 ---
 
@@ -65,14 +64,14 @@ Installation steps:
 
 2. Unzip the archive to a folder of your choosing. Because some operating
 systems have trouble running Java applications from folders with names
-containing spaces, avoiding using spaces when naming your folder.
+containing spaces, avoid using spaces when naming your folder.
 
 ---
 
  ![tip](../../images/tip-pen-paper.png)**Tip**: By default, Liferay Portal
  Community Edition comes bundled with many plugins. It's common to remove them
  to speed up the server start-up. Just navigate to the
- `liferay-portal-<version>/tomcat-<tomcat-version>/webapps` directory and delete
+ `liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and delete
  all its subdirectories except for `ROOT` and `tunnel-web`. 
 
 ---
@@ -93,16 +92,15 @@ your path. We'll give you examples of doing this on Linux (Unix or Mac OS X) and
 Windows. 
 
 On Linux (Unix or Mac OS X), if your Ant installation directory is
-`/java/apache-ant-<version>` and you're running in Bash, set your `ANT_HOME`
-and adjust your path by specifying the following in your `.bash_profile` or from
-your terminal: 
+`/java/apache-ant-<version>` and your shell is Bash, set `ANT_HOME` and adjust
+your path by specifying the following in `.bash_profile` or from your terminal: 
 
     export ANT_HOME=/java/apache-ant-<version>
     export PATH=$PATH:$ANT_HOME/bin
 
-On Windows, if your Ant installation folder is
-`C:\Java\apache-ant-<version>`, set your `ANT_HOME` and path environment
-variables appropriately in your system properties: 
+On Windows, if your Ant installation folder is `C:\Java\apache-ant-<version>`,
+set your `ANT_HOME` and path environment variables appropriately in your system
+properties: 
 
 1. Select *Start*, then right-select *Computer* &rarr; *Properties*. 
 
@@ -146,8 +144,8 @@ that contains the default settings about the location of your Liferay
 installation and your deployment folder. You can use this file as a reference,
 but you shouldn't modify it directly (In fact, you will see the message "DO NOT
 EDIT THIS FILE" at the top if you open it). In order to override the default
-settings, create a new file named `build.<username>.properties` in the same
-folder, where `<username>` is your user ID on your machine. For example, if your
+settings, create a new file named `build.[username].properties` in the same
+folder, where `[username]` is your user ID on your machine. For example, if your
 user name is jsmith, your file name would be `build.jsmith.properties`. 
 
 Edit this file and add the following lines: 
@@ -161,7 +159,7 @@ Edit this file and add the following lines:
 
 If you use Liferay Portal bundled with Tomcat, `app.server.dir` should be the
 absolute path to your directory (e.g.
-`c:/liferay-portal-<version>/bundles/tomcat-<tomcat-version>`). We specify
+`c:/liferay-portal-[version]/bundles/tomcat-[tomcat-version]`). We specify
 `app.server.type` as it's a best practice to specify the application server type
 along with the application server properties we are overriding. 
 
@@ -219,12 +217,12 @@ type. Here is the directory structure of the Plugins SDK:
 
 New plugins are placed in their own subdirectory of the appropriate plugin type.
 For instance, a new portlet called "greeting-portlet" would reside in
-`liferay-plugins-<version>/portlets/greeting-portlet`. 
+`liferay-plugins-[version]/portlets/greeting-portlet`. 
 
 There's an Ant build file (`build.xml`) in each of the plugins directories. Here
 are some Ant targets you'll commonly use in developing your plugins:
 
-- `build-service` - builds the plugin into a service using Liferay Service
+- `build-service` - builds the service layer for a plugin, using Liferay Service
 Builder. 
 
 - `clean` - cleans the residual files created by the invocations of the
@@ -245,14 +243,15 @@ community wiki page for details.
 
 Next let's use the Plugins SDK to create a plugin that extends another plugin. 
 
+<!-- RS: I don't think this section should go here; it's confusing for the beginner. -->
+
 ## Creating Plugins to extend Plugins
 
 For Liferay plugins, you can create a new plugin that extends an existing one.
 By extending a plugin, you can use all its features in your new plugin while
 keeping your changes/extensions separate from the existing plugin's source code. 
 
-To create a plugin which extends another, just follow these
-steps: 
+To create a plugin which extends another, follow these steps: 
 
 1. Create a new empty plugin in the Plugins SDK. 
 
@@ -268,7 +267,7 @@ steps:
 
         <property name="original.war.file" value="social-networking-portlet-6.1.10.1-ee-ga1.war" />
 
-5. Copy any files from the original plugin that you'd like to overwrite to your
+5. Copy any files from the original plugin that you're overwriting to your
    new plugin (using the same folder structure) and run the Ant target `merge`.
    Please note that the `merge` target is called whenever the plugin is compiled.
    All you have to do is to check the Ant output:
@@ -314,10 +313,7 @@ Plugins SDK while conforming to the strict standards some organizations have for
 their Java projects.
 
 If you've read this far and aren't sure you want to develop your plugins using
-the Plugins SDK, next we'll point you to an alternative solution for developing
-and managing plugins: Maven. 
-
-## Maven alternative
+the Plugins SDK, you also have the option to use Maven.
 
 As an alternative to developing plugins using the SDK, you can leverage the
 Apache Maven build management framework. You'll be happy to know that we have
