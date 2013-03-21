@@ -277,7 +277,7 @@ popular. It has some advantages over Velocity for which it sacrifices some
 simplicity, yet it is still easy to use.
 
 **CSS** (Cascading Style Sheets): You can use CSS if your structure is very
-straightforward and modifications are simple (colors, fonts, layouts, etc). If
+straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
@@ -392,7 +392,7 @@ you can create as many different sites as you like within the context of a
 single portal.
 
 You can use sites in Liferay to build many different kinds of websites. Whether
-you're builing a large corporate website, a company intranet, or a small site
+you're building a large corporate website, a company intranet, or a small site
 designed to facilitate collaboration among team members, Liferay's framework
 provides all the tools you need. To support different kinds of collaboration and
 social scenarios, Liferay's sites provide three membership types:
@@ -538,13 +538,13 @@ permission to do so.
 
 ![Figure 3.9: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
-Site templates are very powerful for managing many similiar sites. Let's look
+Site templates are very powerful for managing many similar sites. Let's look
 further at how they work.
 
 ## Using site templates  
 
-Site Templates can be administered in the Control Panel within the portal
-section of the left menu.
+Site Templates can be administered from the Control Panel. To get started, click
+on *Site Templates* in the Portal section of the Control Panel.
 
 Creating or modifying a site template is done using the same tools used to
 manage a site. You can use these tools to add a hierarchy of pages. Each page
@@ -572,15 +572,16 @@ site.
 By default, the following site templates are provided:
 
 - **Community Site:** Provides a preconfigured site for building online
-communities. The home of a *community site* provides message boards, search, a
-display of a poll and statistics of the activity of community members. The site
-will also be created with a page for a community calendar and a page for a wiki.
+  communities. The home of a *community site* provides message boards, search, a
+  display of a poll and statistics of the activity of community members. The
+  site will also be created with a page for a community calendar and a page for
+  a wiki.
 
 - **Intranet Site:** Provides a preconfigured site for an intranet. The Home
-page displays the activities of the members of the site, search, a language
-chooser and a list of the recent content created in the intranet. It also
-provides 3 additional pages for *Documents and Media*, *Calendar* and external
-*News* obtained through public feeds.
+  page displays the activities of the members of the site, search, a language
+  chooser and a list of the recent content created in the intranet. It also
+  provides 3 additional pages for *Documents and Media*, *Calendar* and external
+  *News* obtained through public feeds.
 
 The following figure displays the form shown when editing the *Community Site*
 template:
@@ -639,36 +640,39 @@ templates.
 
 ## Using page templates  
 
-Page templates function similarly to site templates but at the page level. Page
-templates provide a pre-configured page to reuse. Within a page template it is
-possible to set up a theme, a layout and specific applications and their
-configuration. Both sites and site templates can utilize page templates for
-creating new pages.
+Click on *Page Templates* in the Control Panel to see a list of page templates.
+Page templates function similarly to site templates but at the page level. Each
+page template provides a pre-configured page to reuse. Within a page template,
+it's possible to select a theme, a layout template, to add portlets to the page
+and to configure portlet preferences. Both sites and site templates can utilize
+page templates for creating new pages.
 
 ![Figure 3.12: Page Templates](../../images/server-configuration-page-templates.png)
 
-The Page Templates page of the Control Panel shows a list of templates and lets
-you create new ones. It also allows you to edit existing templates and configure
-their permissions. By default three sample page templates are provided:
+You can edit or delete existing page templates, configure their permissions, or
+add new page templates. By default three sample page templates are provided:
 
-- Blog: provides a page with three applications related to blogging. It has two
-columns, the main left column contains the blogs portlet and the small right
-column provides two side portlets, Tag Cloud and Recent Bloggers. The tag cloud
-application will show the tags used within the site and will allow navigating
-through the blog entries shown in the main blogs portlet.
-- Wiki: provides a page with three applications related to authoring a wiki. It
-also has two columns, the main left column with the wiki application and two
-right side portlets to allow navigating through pages by tags and categories.
-- Content Display Page: provides a page preconfigured to display content. It has
-three auxiliary applications (Tags Navigation, Categories Navigation, and
-Search) and an Asset Publisher. The most significant aspect of this page is that
-the Asset Publisher is preconfigured to be display any web content associated
-with this page. This means that you can select any page created from this page
-template as a *Display Page* for a web content article. You can choose a display
-page for a web content article when creating a new web content article or when
-editing an existing one. When you create a new web content article, a unique
-(canonical) URL for the web content pointing to this page will be assigned to
-it.
+- **Blog:** provides a page with three applications related to blogging. It has
+  two columns, the main left column contains the blogs portlet and the small
+  right column provides two side portlets, Tag Cloud and Recent Bloggers. The
+  tag cloud application will show the tags used within the site and will allow
+  navigating through the blog entries shown in the main blogs portlet.
+
+- **Content Display Page:** provides a page preconfigured to display content. It
+  has three auxiliary applications (Tags Navigation, Categories Navigation, and
+  Search) and an Asset Publisher. The most significant aspect of this page is
+  that the Asset Publisher is preconfigured to be display any web content
+  associated with this page. This means that you can select any page created
+  from this page template as a *Display Page* for a web content article. You can
+  choose a display page for a web content article when creating a new web
+  content article or when editing an existing one. When you create a new web
+  content article, a unique (canonical) URL for the web content pointing to this
+  page will be assigned to it.
+
+- **Wiki:** provides a page with three applications related to authoring a wiki.
+  It also has two columns, the main left column with the wiki application and
+  two right side portlets to allow navigating through pages by tags and
+  categories.
 
 To add a new page template, click the *Add* button. Then enter a name and
 description for your template. Leave the *Active* button checked. Click *Save*
@@ -1148,7 +1152,7 @@ permissions defined by it would only apply within the scope of a designated
 site. Furthermore, team members, unlike user group members, are guaranteed to be
 members of the desired site.
 
-To create a team within a site, first naviagte to the *Control Panel &rarr;
+To create a team within a site, first navigate to the *Control Panel &rarr;
 Sites* page then and then select *Actions &rarr; Manage Memberships* for the
 site within which you want to create a team. Finally, click *View &rarr; Teams*
 and click the Add Team button.
