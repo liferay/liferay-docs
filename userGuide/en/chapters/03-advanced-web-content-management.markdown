@@ -538,26 +538,44 @@ permission to do so.
 
 ![Figure 3.9: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
-Site templates are very powerful for managing many similar sites. Let's look
-further at how they work.
+Site templates are a powerful tool for managing many similar sites. Let's look
+at how they work.
 
 ## Using site templates  
 
-Site Templates can be administered from the Control Panel. To get started, click
-on *Site Templates* in the Portal section of the Control Panel.
+Site Templates can be administered from the Control Panel. They allow portal
+administrators to create multiple sites with same default set of pages and
+content. Site templates can contain multiple pages, each with its own theme,
+layout template, portlets, and portlet configurations. Site templates can also
+contain content just like actual sites. This allows administrators to use site
+templates to create new sites that are each created with the same default pages,
+portlets, and content. After they've been created, these sites and their pages
+can be modified by site administrators. Using site templates can save site
+administrators a lot of work even if each site that was created from a given
+site template ends up being very different.
 
-Creating or modifying a site template is done using the same tools used to
-manage a site. You can use these tools to add a hierarchy of pages. Each page
-can have any configuration and any number of applications, just like a regular
-site. When you create a site using a site template, the configuration of pages
-and applications are copied from the template to the site. By default, all
-changes made to the site template are automatically copied to sites based on
-that template.
+To get started, click on *Site Templates* in the Portal section of the Control
+Panel. Here, you can add, manage, or delete site templates. You can also
+configure the site template's permissions. As long as a site is linked to the
+site template it was created from, changes to the site template's pages,
+portlets, and portlet configurations are propagated to the site. Changes to a
+site template's content, however, are not propagated to existing sites that are
+linked to the site template. We discuss the propagation of changes between sites
+templates and sites in more detail below.
 
-Site templates can also contain content just like actual sites. This allows you
-to use a site template to create sample content that appears in your site when
-it is first created. Changes to a site template's content, however, are not
-propagated to existing sites that are linked to the site template.
+To manage the pages of a site template, click on *Site Templates* in the Control
+Panel and then click *Actions* &rarr; *Manage Pages*. From here, you can add or
+remove pages from a site template or select themes and layout templates to apply
+to the site template. Click on a specific page if you'd like to select a
+different theme or layout template for that page. To edit the pages themselves,
+click *Actions* &rarr; *View Pages*. You can add specific portlets to each page of
+a site template and configure the preferences of each portlet. Each page can
+have any configuration and any number of portlet applications, just like a page
+of a regular site. Just as with site pages, you can organize the pages of a site
+template into hierarchies.When you create a site using a site template, the
+configuration of pages and portlets are copied from the template to the site. By
+default, all changes made to the site template are automatically copied to sites
+based on that template.
 
 ---
 
