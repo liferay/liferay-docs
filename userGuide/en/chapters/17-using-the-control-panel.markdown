@@ -130,28 +130,35 @@ graph showing the resources available in the JVM.
 
 ### Resources  
 
-The first tab is called *Resources* . This tab contains the aforementioned graph
-plus several server wide actions that an administrator can execute. These are:
+The first tab is called *Resources*. This tab contains the aforementioned graph
+plus several server wide actions that an administrator can execute. These
+include the following:
 
-**Garbage collection:** You can send in a request to the JVM to begin the
+**Run the garbage collector:** You can send in a request to the JVM to begin the
 garbage collection task.
 
-**Clearing VM caches:** You can send in a request to the JVM to clear a single
-VM cache.
+**Clear content cached by this VM:** You can send in a request to the JVM to
+clear a single VM cache.
 
-**Clearing caches across the cluster:** You can send in a request to the JVM to
-clear content cached across the entire cluster.
+**Clear content cached across the cluster:** You can send in a request to the
+JVM to clear content cached across the entire cluster.
 
-**Clearing database caches:** You can send in a request to the JVM to clear the
+**Clear the database cache:** You can send in a request to the JVM to clear the
 database cache.
+
+**Clear the direct servlet cache:** You can send in a request to the JVM to
+clear the direct servlet cache.
 
 **Reindex all search indexes:** You can send in a request to regenerate all
 search indexes. If you are not using a Solr search server this will impact
 portal performance so try to do this at non-peak times.
 
-**Reset Document Library preview and thumbnail files:** You can send in a
-request to reset the preview and thumbnail files for each item in your portal's
-Documents and Media libraries.
+**Reindex all spell check indexes:** You can send in a request to regenerate all
+spell check indexes.
+
+**Reset preview and thumbnail files for the Documents and Media portlet:** You
+can send in a request to reset the preview and thumbnail files for each item in
+your portal's Documents and Media libraries.
 
 **Generate Thread Dump:** If you are performance testing, you can generate a
 thread dump which can be examined later to determine if there are any deadlocks
@@ -161,9 +168,9 @@ and where they might be.
 indexes for accuracy of data retrieval.
 
 **Clean up Permissions:** This process removes the assignment of some
-permissions on the Guest, User and Power User roles to simplify the management
-of "User Customizable Pages". Notably, "Add To Page" permissions is removed from
-the Guest and User roles for all portlets. Likewise the same permission is
+permissions on the Guest, User, and Power User roles to simplify the management
+of "User Customizable Pages". Notably, the "Add To Page" permissions is removed
+from the Guest and User roles for all portlets. Likewise, the same permission is
 reduced in scope for Power Users from portal wide to scoped to "User Personal
 Site."
 
