@@ -544,7 +544,7 @@ at how they work.
 ## Using site templates  
 
 Site Templates can be administered from the Control Panel. They allow portal
-administrators to create multiple sites with same default set of pages and
+administrators to create multiple sites with the same default set of pages and
 content. Site templates can contain multiple pages, each with its own theme,
 layout template, portlets, and portlet configurations. Site templates can also
 contain content just like actual sites. This allows administrators to use site
@@ -556,11 +556,11 @@ site template ends up being very different.
 
 To get started, click on *Site Templates* in the Portal section of the Control
 Panel. Here, you can add, manage, or delete site templates. You can also
-configure the site template's permissions. As long as a site is linked to the
+configure the permissions of site templates. As long as a site is linked to the
 site template it was created from, changes to the site template's pages,
 portlets, and portlet configurations are propagated to the site. Changes to a
 site template's content, however, are not propagated to existing sites that are
-linked to the site template. We discuss the propagation of changes between sites
+linked to the site template. We discuss the propagation of changes between site
 templates and sites in more detail below.
 
 To manage the pages of a site template, click on *Site Templates* in the Control
@@ -568,14 +568,14 @@ Panel and then click *Actions* &rarr; *Manage Pages*. From here, you can add or
 remove pages from a site template or select themes and layout templates to apply
 to the site template. Click on a specific page if you'd like to select a
 different theme or layout template for that page. To edit the pages themselves,
-click *Actions* &rarr; *View Pages*. You can add specific portlets to each page of
-a site template and configure the preferences of each portlet. Each page can
-have any configuration and any number of portlet applications, just like a page
-of a regular site. Just as with site pages, you can organize the pages of a site
-template into hierarchies.When you create a site using a site template, the
-configuration of pages and portlets are copied from the template to the site. By
-default, all changes made to the site template are automatically copied to sites
-based on that template.
+click *Actions* &rarr; *View Pages*. You can add specific portlets to each page
+of a site template and configure the preferences of each portlet. Each page can
+have any theme, any layout template, and any number of portlet applications,
+just like a page of a regular site. As with site pages, you can organize the
+pages of a site template into hierarchies. When you create a site using a site
+template, the configuration of pages and portlets is copied from the template to
+the site.  By default, all changes made to the site template are automatically
+copied to sites based on that template.
 
 ---
 
@@ -608,53 +608,66 @@ template:
 
 To view and manage the pages of a site template, click the *Open site template*
 link. This opens the template in a new browser window (or tab) and it can be
-navigated or managed like a regular site..
+navigated or managed like a regular site.
 
-<!-- | TODO: I would change the example below to not use organizations to
-simplify things | -->
-
-For example, let's suppose we need to create sites for three suborganizations of
-the Nosester organization: Engineering, Marketing and Legal. These are to be
-private sites designed for each organization's internal use. We could design
-each site separately but we can save ourselves some work if we create a site
+For example, suppose we need to create the following three sites for Nose-ster's
+internal use: Engineering, Marketing, and Legal. These should be private sites
+that are only accessible to members of these respective departments. We could
+design each site separately but can save ourselves some work if we create a site
 template to use instead.
 
 To create a site template, navigate to the Control Panel and click *Site
 Templates*. Then click *Add* and enter a name for your template: we'll use
-*Organization Site Template* for our example. Leave the *Active* and *Allow Site
-Administrators to Modify the Pages Associated with This Site Template* boxes
-checked. The *Active* box must be checked for your template to be usable. If
-your template is still a work in progress, you can uncheck it so no one uses it
-until it's ready. Checking *Allow Site Administrators to Modify the Pages
-Associated with This Site Template* allows Site Administrators to modify or
-remove the pages and portlets the template introduces to their sites--if you
-want the templates to be completely static, you should uncheck this.
+*Department* for our example. Leave the *Active* and *Allow Site Administrators
+to Modify the Pages Associated with This Site Template* boxes checked. The
+*Active* box must be checked for your template to be usable. If your template is
+still a work in progress, you can uncheck it to ensure that no one uses it until
+it's ready. Checking *Allow Site Administrators to Modify the Pages Associated
+with This Site Template* allows site administrators to modify or remove the
+pages and portlets that the template introduces to their sites--if you want the
+templates to be completely static, you should uncheck this.
 
-Click on the *Open site template* link to begin adding pages and portlets and
-configuring the layouts. For our example, we would like our template to include
-four pages: a Home page with the Activities, Announcements and Calendar
-portlets, a Documents and Media page with the Documents and Media portlet, a
+From the list of site templates, click on the *Department* site template that
+you created. Then click on the *Open site template* link to begin adding pages
+and portlets and configuring the layouts. When you click this link, the site
+template opens in a new browser tab or window. For our example, we would like
+our site template to include four pages. First, we'd like a Home page with the
+Activities, Announcements, and Calendar portlets. Next, we'd like a Documents
+and Media page with the Documents and Media portlet. Finally, we should create a
 Wiki page with the Wiki and Tag Cloud portlets and a Message Boards page with
-the Message Boards and Tag Cloud portlets. The changes are automatically saved
-as you make them, so once you're finished, return to the Site Templates page of
-the Control Panel and select *Save*.
+the Message Boards and Tag Cloud portlets. When you're done creating and
+configuring the pages of your site template, just close the browser tab or
+window that opened when you clicked *Open site template*. Changes to site
+templates are automatically saved as you make them, so you don't need to return
+to the Site Templates page of the Control Panel and select *Save*.
 
 ![Figure 3.11: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
 
-Now let's create the Engineering, Marketing and Legal organizations whose sites
-we want to create with our template. Go to the Control Panel and click *Users
-and Organizations*. Then click the *Add* button and select *Regular
-Organization*. Enter a name for your organization, select the *Organization
-site* tab and check the *Create Site* box. When you check this box, two
-drop-down lists appear: one for the site's Public Pages and one for its Private
-Pages. To use your template to create the site, select the name of your
-template, *Organization Site*, from the Private Pages drop-down list. Click
-*Save* to create your site. You can view the new site by clicking the *Open
-private pages* link from the newly created organization page. The new site will
-have all the pages and portlets you created in the template. This feature
-streamlines the site creation process for administrators, making it easy to
-create sites quickly. Next, let's discuss how to create and apply page
-templates.
+Next, let's use our site template to create our Engineering, Marketing and Legal
+sites. Go to the Control Panel and click on *Sites*. Then click *Add* &rarr;
+*Department*. Enter *Engineering* for the site name and set the Membership Type
+to *Private*. Recall that private sites don't appear in the My Sites portlet so
+that regular portal users won't even know that the Engineering site exists.
+Also, the only way users can be added to a private site is via an invitation
+from a site administrator. Leave the *Active* box checked so that your site can
+be used immediately. Select the *Copy as Private Pages* option since our
+Engineering site is intended for internal use only. Leave the *Enable
+propagation of changes from the site template* box checked so that the
+Engineering site receives updates if the Department site template is modified.
+Finally, click *Save* to create your the Engineering site.
+
+Repeat these steps to create the Marketing and Legal sites. The new sites have
+all the pages and portlets you created in the site template. To view the pages
+of the new sites, click on *Sites* in the Control Panel and then click on
+*Actions* &rarr; *Go to Private Pages* next to one of your new sites. Using site
+templates streamlines the site creation process for administrators, making it
+easy to create sites quickly. Now each Nose-ster department has its own
+calendar, documents and media library, wiki, and message boards application.
+Although the pages and portlets of each department's site are the same, each
+site will quickly be filled with department-specific information as users add
+and share content within the sites. Also, site administrators can add new pages,
+portlets, and content to their sites, further differentiating each department's
+site from the others. Next, let's discuss how to create and use page templates.
 
 ## Using page templates  
 
