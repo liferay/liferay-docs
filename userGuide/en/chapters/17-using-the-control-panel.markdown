@@ -138,16 +138,30 @@ include the following:
 garbage collection task.
 
 **Clear content cached by this VM:** You can send in a request to the JVM to
-clear a single VM cache.
+clear content stored in the local cache. Ehcache usage is split into two groups:
+local JVM scope and cluster scope. This action only clears the content of the
+local Ehcache.
 
 **Clear content cached across the cluster:** You can send in a request to the
-JVM to clear content cached across the entire cluster.
+JVM to clear content cached across the entire cluster. This action clears the
+content of the clustered Ehcache.
 
 **Clear the database cache:** You can send in a request to the JVM to clear the
-database cache.
+database cache. Liferay uses Ehcache mainly, but not only, at the persistence
+layer for caching objects obtained from the database. This action only clears
+the database result cache.
 
 **Clear the direct servlet cache:** You can send in a request to the JVM to
-clear the direct servlet cache.
+clear the direct servlet cache. The direct servlet context is a feature that
+optimizes JSP serving performance by caching and accessing the generated
+servlets directly instead of accessing them over the application server's
+dispatcher chain. This is only suitable for cases where no filter is required
+for the JSPs. For production mode, this cache should be enabled to improve
+performance. In case emergency fixes need to be applied, this action allows an
+administrator to manually clear out the cache to force JSPs to reload. For
+development mode, the direct servlet context should be disabled to allow JSP
+servlets to be reloaded on the fly. See the Direct Servlet Context section of
+the `portal.properties` file for details.
 
 **Reindex all search indexes:** You can send in a request to regenerate all
 search indexes. If you are not using a Solr search server this will impact
