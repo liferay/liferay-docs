@@ -463,15 +463,17 @@ many different purposes besides communities.
 ---
 
 Sites can be created through the Control Panel by a portal administrator. To add
-a site, click the *Sites* link on the left side of the Control Panel in the
-Portal section and then click *Add* in the toolbar. If there is at least one
-site template available, a dropdown menu will be shown allowing you to select a
-*Blank Site*. Other site templates will appear in the menu as they become
-available. *Site templates* provide a preconfigured set of pages, applications
-and content that can be used as the basis of the site.
-
-The following figure shows the form that needs to be filled when creating a
-*Blank Site*.
+a site, click on *Sites* under the Portal section of the Control Panel and then
+click *Add*. If there is at least one site template available, a dropdown menu
+appears. Site templates provide a preconfigured set of pages, portlet
+applications, and content that can be used as the basis of a site's public or
+private page set. To create a site from scratch, select *Blank Site*. Otherwise,
+select the name of the site template you'd like to use. If you opt to create a
+site from a site template, you have to choose whether to copy the site
+template's pages as your new site's public or private page set. If other site
+templates are created, they will appear in the Add menu as they become
+available. The following figure shows the form that needs to be filled when
+creating a *Blank Site*.
 
 ![Figure 3.7: Adding a Site](../../images/01-add-site-screen.png)
 
@@ -538,8 +540,8 @@ permission to do so.
 
 ![Figure 3.9: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
-Site templates are a powerful tool for managing many similar sites. Let's look
-at how they work.
+Site templates are a powerful tool for managing many similar sites. Let's
+examine how they work.
 
 ## Using site templates  
 
@@ -561,7 +563,8 @@ site template it was created from, changes to the site template's pages,
 portlets, and portlet configurations are propagated to the site. Changes to a
 site template's content, however, are not propagated to existing sites that are
 linked to the site template. We discuss the propagation of changes between site
-templates and sites in more detail below.
+templates and sites in more detail in the section on site templates use cases
+below.
 
 To manage the pages of a site template, click on *Site Templates* in the Control
 Panel and then click *Actions* &rarr; *Manage Pages*. From here, you can add or
@@ -610,11 +613,13 @@ To view and manage the pages of a site template, click the *Open site template*
 link. This opens the template in a new browser window (or tab) and it can be
 navigated or managed like a regular site.
 
-For example, suppose we need to create the following three sites for Nose-ster's
-internal use: Engineering, Marketing, and Legal. These should be private sites
-that are only accessible to members of these respective departments. We could
-design each site separately but can save ourselves some work if we create a site
-template to use instead.
+### Site templates example
+
+Suppose we need to create the following three sites for Nose-ster's internal
+use: Engineering, Marketing, and Legal. These should be private sites that are
+only accessible to members of these respective departments. We could design each
+site separately but can save ourselves some work if we create a site template to
+use instead.
 
 To create a site template, navigate to the Control Panel and click *Site
 Templates*. Then click *Add* and enter a name for your template: we'll use
@@ -667,7 +672,35 @@ Although the pages and portlets of each department's site are the same, each
 site will quickly be filled with department-specific information as users add
 and share content within the sites. Also, site administrators can add new pages,
 portlets, and content to their sites, further differentiating each department's
-site from the others. Next, let's discuss how to create and use page templates.
+site from the others.
+
+### Propagating changes from site templates to sites
+
+It's possible for site template administrators to add, update, or delete site
+template pages. Changes made to a site template can be propagated to sites whose
+pages sets are linked to the site template. Such a link is created when you
+create a site based on a site template and leave the *Enable propagation of
+changes from the site template* box checked. To disable or re-enable this link
+for a site, select the site in the Control Panel's context menu selector. Then
+click on *Site Settings* and uncheck or recheck the *Enable propagation of
+changes from the site template* checkbox. You can can also access the Site
+Settings interface via the Dockbar by clicking *Manage* &rarr; *Site Settings*.
+In this section, we explain the propagation of changes from site templates to
+sites and discuss the options available to site administrators and site template
+administrators.
+
+If a site's page set has been created from a site template and the propagation
+of changes from the site template is enabled, site administrators can add new
+pages but cannot remove or reorder the site template pages. The site template
+pages always appear first; custom pages added by site administrators appear
+after the site template pages. Only site template administrators can remove,
+reorder, or add site template pages. Similarly, site administrators can add or
+remove custom pages after the site template pages. Site administrators can
+reorder custom pages as long as they're all positioned after the site template
+pages. Site template administrators cannot add, remove, or reorder custom site
+pages.
+
+Next, let's discuss how to create and use page templates.
 
 ## Using page templates  
 
