@@ -82,7 +82,7 @@ scrolls with the user and more.
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
 
-##### Editing a Structure  
+##### Editing structures
 
 Go back to the Control Panel and select *Web Content* from the content section.
 The first way to access the Manage Structures interface is simply by clicking
@@ -217,7 +217,7 @@ instructions are displayed.
 As with everything else in Liferay, you can set permissions on structures. Next,
 let's look at how to do that.
 
-##### Assigning Permissions  
+##### Assigning permissions  
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -281,7 +281,7 @@ straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
-##### Adding a Template  
+##### Adding templates
 
 Liferay WCM makes it easy to create structures, templates and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -758,7 +758,7 @@ Have we determined that this IS an EE-only feature?
 ![EE Only Feature]
 -->
 
-### Exporting and Importing Site Templates and Page Templates  
+### Exporting and importing site templates and page templates  
 
 If you want to export a site that uses site or page Templates to a different
 environment (through a LAR file or remote publication), the Templates must be
@@ -851,7 +851,7 @@ Additionally, you may want to create content and send it through an approval and
 reviewal process weeks before you want it displayed on the web site. Liferay
 gives you this flexibility with the *Schedule* and *Workflow* features.
 
-#### Scheduling Web Content  
+#### Scheduling web content  
 
 Liferay's WCM lets you define when your content goes live. You can determine
 when the content is displayed, expired and/or reviewed. This is an excellent to
