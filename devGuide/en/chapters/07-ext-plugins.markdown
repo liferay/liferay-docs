@@ -328,100 +328,102 @@ directory and enter either of these commands:
 ---
 
  ![tip](../../images/tip-pen-paper.png)**Tip:** The `direct-deploy` target
- deploys all the plugin changes directly to the appropriate directories in the
- Liferay application. If instead you deploy the plugin using the `deploy`
- target, the Liferay server needs to apply the changes from the resulting `.war`
- file at startup, possibly slowing down your development process. For this
- reason, using `direct-deploy` is the usually preferred method for deploying Ext
- plugins during development. But note, `direct-deploy` does not work with
- WebLogic Server or WebSphere application server environments.
+ deploys all plugin changes directly to the appropriate directories in the
+ Liferay application. If you use the `deploy` target, the Liferay server needs
+ to apply the changes from the resulting `.war` file at startup, possibly
+ slowing down your development process. Using `direct-deploy` is usually
+ preferred for deploying Ext plugins during development. However,
+ `direct-deploy` does not work in WebLogic Server or WebSphere application
+ server environments. 
 
 ---
 
-Upon deployment, you should get a `BUILD SUCCESSFUL` message, which means that
-your plugin is now being deployed. If you switch to the console window running
-Liferay and wait for a few seconds, you should see the message:
+A `BUILD SUCCESSFUL` message indicates your plugin is now being deployed. If you
+switch to the console window running Liferay, within few seconds you should see
+the message:
 
 	Extension environment for example-ext has been applied. You must reboot the
 	server and redeploy all other plugins
 
-It may not be absolutely necessary to redeploy all other plugins, but it's a
-best practice. You should certainly redeploy all plugins if any of the changes
-applied through the Ext plugin could affect the deployment process itself.
+You may not have to redeploy all other plugins, but it's a best practice.
+Definitely redeploy all plugins if any of the changes applied through the Ext
+plugin could affect the deployment process itself. 
 
-The `ant deploy` target builds a `.war` file with all the changes you have made
-and copies them to the auto-deploy directory inside the Liferay installation.
-When the server starts, it detects the `.war` file, inspects it, and copies its
+The `ant deploy` target builds a `.war` file with all the changes you made and
+copies them to the auto-deploy directory inside the Liferay installation. When
+the server starts, it detects the `.war` file, inspects it, and copies its
 content to the appropriate destinations within the deployed and running Liferay
-application inside your application server. You must now restart your
-application server to *publish* your changes.
+application, inside your application server. Now you restart your application
+server to *publish* your changes. 
 
-#### Publish the plugin 
+#### Publish the plugin
 
-You need to publish your plugin to the Liferay server to complete the deployment
-process. You can do so in Liferay IDE/Studio or in the terminal.
+Publishing your plugin to the Liferay server completes the deployment process.
+As with deployment, you can publish using Liferay Developer Studio or your
+terminal. 
 
-***Using Developer Studio:*** While selecting the Liferay server in the
-*Servers* view, select the server's *Publish* option
+***Publishing in Developer Studio:*** 
+
+1. Select the Liferay server in the *Servers* view. 
+
+2. Select the server's *Publish* option. 
 
 ![Figure 7.4: How to publish the Ext Plugin](../../images/07-ext-plugins-3.png)
 
-***Using the terminal:*** Restart the Liferay server
+***Publishing in the terminal:*** Restart the Liferay server.
 
-Let's try our Ext plugin within our portal. Once the server has started, log in
+Let's try our Ext plugin within our portal. Once your server has started, log in
 as an administrator and go to *Control Panel &rarr; Users and Organizations*.
 Edit an existing user and verify that the right navigation menu only shows the
-five sections that were referenced from the `users.form.update.main` property.
+five sections that we referenced from the `users.form.update.main` property. 
 
 ![Figure 7.5: You should see these five sections under the User Information heading](../../images/ext-plugin-five-sections.png)
 
-Once you've applied this simple modification to Liferay, we'll proceed with a
-slightly more complex customization. This will give us an opportunity to learn
+Now that you've applied a simple modification to Liferay with an Ext plugin,
+we'll proceed with a more complex customization. It's an opportunity to learn
 the proper way to *redeploy* an Ext plugin, which is different from *initial
-deployment*.
+deployment*. 
 
-For this example, we'll customize the *details* section of the user profile. We
-could do that just by overwriting its JSP, but this time we'll use a more
-powerful method which also allows adding new sections or even merging the
-existing ones. Liferay allows referring to custom sections from the
-`portal-ext.properties` and implementing them just by creating a JSP. In our
-case, we'll modify the property `users.form.update.main` once again and also
-modify property `users.form.add.main` to set the following:
+For this example, let's customize the *details* section of the user profile. We
+could just overwrite its JSP, but let's use a more powerful method that lets us
+add new sections or even merging existing ones. With Liferay we can refer to
+custom sections from the `portal-ext.properties` and implement them just by
+creating a JSP. We'll modify the property `users.form.update.main` again and the
+property `users.form.add.main` to set the following:
 
 	users.form.add.main=basic,organizations,personal-site
 	users.form.update.main=basic,password,organizations,sites,roles
 
-That is, we removed the *details* section and added a new custom one called
-*basic*. When Liferay Portal's user administration reads this property, it looks
-for the implementation of each section based on the following conventions:
+We removed the original *details* section and added a custom one called *basic*.
+When Liferay Portal's user administration reads the property, it looks for the
+implementation of each section based on the following conventions:
 
--   The section should be implemented in a JSP inside the directory:
+- The section should be implemented in a JSP inside the directory:
 
 	ext-web/docroot/html/portlet/users_admin/user/
 
-- The name of the JSP should be like the name of the section plus the `.jsp`
-extension. There is one exception. If the section name has a dash sign (`"-"`),
-it will be converted to an underscore sign (`"_"`). For example, if the section
-is called *my-info*, the JSP should be named `my_info.jsp`. This is done to
-comply with common JSP naming standards.
+- The name of the JSP should use the name of the section, with the `.jsp`
+extension. If the section name has a dash sign (`"-"`), it get's converted to an
+underscore sign (`"_"`). For example, if the section is called *my-info*, the
+JSP should be named `my_info.jsp` to comply with common JSP naming standards. 
 
-- The name of the section that will be shown to the user comes from the language
-bundles. When using a key/value that is not already among the ones included with
-Liferay, you should add the key/value to the your Ext plugin's
-`Language-ext.properties` file and the properties file for each of the language
-variants for which you want to provide a translation. These files belong in the
-`ext-impl/src` directory of your Ext plugin.
+- The name of the section that's shown to the user comes from the language
+bundles. When using a key/value that is not included with Liferay, add the
+key/value to your Ext plugin's `Language-ext.properties` file and the
+language-specific properties file for each language variant you're providing a
+translation for. These files go in the `ext-impl/src` directory of your Ext
+plugin. 
 
-For our example, we need to create a file within the Ext plugin with the
-following path:
+For our example, we'll create a file within the Ext plugin with the following
+path:
 
     ext-web/docroot/html/portlet/users_admin/user/basic.jsp
 
-For the contents of the file, we can write them from scratch or make a copy of
-the `details.jsp` file from Liferay's source code and modify from there. We
-decided to do the latter and then remove some fields, leaving the screen name,
-email address, first name, and last name fiels to simplify user creation and
-user update. Here's the resulting JSP code:
+We can write the contents of the file from scratch or just copy the
+`details.jsp` file from Liferay's source code and modify from there. Let's do
+the latter and then remove some fields, leaving the screen name, email address,
+first name, and last name fields to simplify user creation and user update.
+Here's the resulting JSP code:
 
 	<%@ include file="/html/portlet/users_admin/init.jsp" %>
 	
@@ -522,7 +524,7 @@ language bundle.
 
 We are now ready to redeploy our Ext plugin so we can check the changes we made.
 
-### Redeployment 
+### Redeployment
 
 So far, the development process has been very similar to that of other plugin
 types. The differences appear when you need to redeploy an Ext plugin. As
