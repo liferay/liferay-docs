@@ -691,16 +691,51 @@ administrators.
 
 If a site's page set has been created from a site template and the propagation
 of changes from the site template is enabled, site administrators can add new
-pages but cannot remove or reorder the site template pages. The site template
-pages always appear first; custom pages added by site administrators appear
-after the site template pages. Only site template administrators can remove,
-reorder, or add site template pages. Similarly, site administrators can add or
-remove custom pages after the site template pages. Site administrators can
-reorder custom pages as long as they're all positioned after the site template
-pages. Site template administrators cannot add, remove, or reorder custom site
-pages.
+pages but cannot remove or reorder the pages imported from the site template.
+If a site has both pages imported from a site template and custom site pages,
+the site template pages always appear first; custom pages added by site
+administrators appear after the site template pages. Only site template
+administrators can remove, reorder, or add site template pages. Site
+administrators can add or remove custom site pages. They can also reorder custom
+site pages as long as they're all positioned after the site template pages. Site
+template administrators cannot add, remove, or reorder custom site pages.
 
-Next, let's discuss how to create and use page templates.
+If a site administrator changes a page that was imported from a site template
+and refreshes the page, the following message appears:
+
+	This page has been changed since the last update from the site template. No
+	further updates from the site template will be applied. Click *Reset* to
+	overwrite the changes and receive updates from the site template.
+
+If the site administrator clicks the *Reset* button, changes are propagated from
+the site template to all the pages of the site that were imported from the site
+template. Clicking the *Reset* button makes two kinds of updates. First, changes
+made by site administrators to pages that were imported from the site template
+are undone. Second, changes made by site template administrators to site
+template pages are applied to the site pages.
+
+Site template administrators can set preferences for portlets on site template
+pages. When a portal administrator creates a site from a site template, the
+portlet preferences are copied from the site template's portlets, overriding any
+default portlet preferences. When merging site template and site changes, e.g.,
+when resetting, portlet preferences are copied from site template portlets to
+site portlets. Only global portlet preferences or local portlet preferences
+which don't refer to IDs are overwritten.
+
+Site administrators can also add data to site template portlets. For example,
+site template administrators can add the Wiki portlet to a site template page
+and use the Wiki to create lots of articles. When a portal administrator creates
+a site from a site template, data is copied from the site template's portlets to
+the site's portlets. The preferences of the site's portlets are updated with the
+IDs of the copied data. For example, if a site is created from a site template
+that has a Wiki portlet with lots of wiki articles, the wiki articles are copied
+from the site template's scope to the site's scope and site's Wiki portlet is
+updated with the IDs of the copied wiki articles. Portlet data is only copied
+from a site template to a site when the site is first created; data is not
+copied copied during a site reset.
+
+Now that we've learned how site templates work, let's discuss how to use page
+templates. 
 
 ## Using page templates  
 
