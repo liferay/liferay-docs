@@ -5,6 +5,7 @@
 	<property name="dist" value="dist" />
 	<property name="index.html" value="code/properties-converter/index.html" />
 	<property name="liferay.portal.dir" value="../liferay-portal" />
+	<property name="lp.version" value="6.1" />
 
 	<property name="properties.title" value="Portal Properties" />
 	<property name="properties.toc" value="true" />
@@ -32,14 +33,14 @@
 		<mkdir dir="${dist}"/>
 
 		<antcall target="properties-to-html">
-			<param name="properties.title" value="Portal Properties"/>
+			<param name="properties.title" value="Liferay ${lp.version} Portal Properties"/>
 			<param name="properties.toc" value="true"/>
 			<param name="properties.file.path" value="${portal.properties.file.path}"/>
 			<param name="properties.dest.file.path" value="${dist}"/>
 		</antcall>
 
 		<antcall target="properties-to-html">
-			<param name="properties.title" value="System Properties"/>
+			<param name="properties.title" value="Liferay ${lp.version} System Properties"/>
 			<param name="properties.toc" value="true"/>
 			<param name="properties.file.path" value="${system.properties.file.path}"/>
 			<param name="properties.dest.file.path" value="${dist}"/>
@@ -67,7 +68,7 @@
 
 	<target name="bundle-properties-docs" description="bundles the properties HTML files with an index.html file that lists the included files">
 		<taskdef name="bundle-properties" classname="com.liferay.portal.tools.propertiesconverter.PropertiesBundlerTask" classpath="./lib/properties-converter.jar"/>
-		<bundle-properties/>
+		<bundle-properties lpVersion="${lp.version}"/>
 	</target>
 
 	<target name="clean" description="deletes the dist directory">

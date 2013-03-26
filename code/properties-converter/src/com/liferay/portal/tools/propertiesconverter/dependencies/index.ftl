@@ -1,14 +1,14 @@
 <html>
 	<head>
-		<title>Liferay Portal Properties</title>
+		<title>Liferay Portal ${lpVersion} Properties</title>
 	</head>
 	<body>
 		<p>
-			<strong>Liferay Portal Properties</strong>
+			<strong>Liferay Portal ${lpVersion} Properties</strong>
 		</p>
 		
 		<p>
-			Here is a listing of Liferay Portal properties files and properties definition files:
+			Here is a listing of Liferay Portal ${lpVersion} properties files and properties definition files:
 		</p>
 
 		<ul>

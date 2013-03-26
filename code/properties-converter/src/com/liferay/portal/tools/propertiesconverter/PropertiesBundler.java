@@ -19,11 +19,13 @@ public class PropertiesBundler {
 	/**
 	 * @param args
 	 */
-	public static void bundleProperties() {
+	public static void bundleProperties(String lpVersion) {
 
 		// Create a data model for Freemarker
 
 		Map root = new HashMap();
+		
+		root.put("lpVersion", lpVersion);
 
 		ArrayList properties = new ArrayList<String>();
 
