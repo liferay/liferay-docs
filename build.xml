@@ -26,7 +26,7 @@
 		</java>
 	</target>
 
-	<target name="build-properties-docs" description="runs the properties converter to generate HTML versions of portal.properties, system.properties, and liferay-plugin-package.properties.">
+	<target name="build-properties-docs" description="runs the properties converter to generate HTML versions of portal.properties, system.properties, and liferay-plugin-package.properties">
 		<echo message="Run &quot;ant -Dliferay.portal.dir=yourPortalDir&quot; if your portal is not ${liferay.portal.dir}."/>
 
 		<mkdir dir="${dist}"/>
@@ -60,6 +60,18 @@
 		</antcall>
 
 		<copy file="${index.html}" todir="${dist}"/>
+
+		<antcall target="bundle-properties-docs"/>
+
+	</target>
+
+	<target name="bundle-properties-docs" description="bundles the properties HTML files with an index.html file that lists the included files">
+		<taskdef name="bundle-properties" classname="com.liferay.portal.tools.propertiesconverter.PropertiesBundlerTask" classpath="./lib/properties-converter.jar"/>
+		<bundle-properties/>
+	</target>
+
+	<target name="clean" description="deletes the dist directory">
+		<delete dir="${dist}"/>
 	</target>
 
 </project>
