@@ -27,8 +27,12 @@
 		</java>
 	</target>
 
+	<!-- To build the properties HTML files, use a command of the form ant
+		 -Dliferay.portal.dir=<path-to-your-liferay-portal> -Dlp.version=<your-liferay-portal-version> -->
 	<target name="build-properties-docs" description="runs the properties converter to generate HTML versions of portal.properties, system.properties, and liferay-plugin-package.properties">
 		<echo message="Run &quot;ant -Dliferay.portal.dir=yourPortalDir&quot; if your portal is not ${liferay.portal.dir}."/>
+
+		<echo message="Run &quot;ant -Dlp.version=yourPortalVersion&quot; if your portal version is not ${lp.version}."/>
 
 		<mkdir dir="${dist}"/>
 
