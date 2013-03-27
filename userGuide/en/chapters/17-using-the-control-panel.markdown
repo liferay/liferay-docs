@@ -130,28 +130,49 @@ graph showing the resources available in the JVM.
 
 ### Resources  
 
-The first tab is called *Resources* . This tab contains the aforementioned graph
-plus several server wide actions that an administrator can execute. These are:
+The first tab is called *Resources*. This tab contains the aforementioned graph
+plus several server wide actions that an administrator can execute. These
+include the following:
 
-**Garbage collection:** You can send in a request to the JVM to begin the
+**Run the garbage collector:** You can send in a request to the JVM to begin the
 garbage collection task.
 
-**Clearing VM caches:** You can send in a request to the JVM to clear a single
-VM cache.
+**Clear content cached by this VM:** You can send in a request to the JVM to
+clear content stored in the local cache. Ehcache usage is split into two groups:
+local JVM scope and cluster scope. This action only clears the content of the
+local Ehcache.
 
-**Clearing caches across the cluster:** You can send in a request to the JVM to
-clear content cached across the entire cluster.
+**Clear content cached across the cluster:** You can send in a request to the
+JVM to clear content cached across the entire cluster. This action clears the
+content of the clustered Ehcache.
 
-**Clearing database caches:** You can send in a request to the JVM to clear the
-database cache.
+**Clear the database cache:** You can send in a request to the JVM to clear the
+database cache. Liferay uses Ehcache mainly, but not only, at the persistence
+layer for caching objects obtained from the database. This action only clears
+the database result cache.
+
+**Clear the direct servlet cache:** You can send in a request to the JVM to
+clear the direct servlet cache. The direct servlet context is a feature that
+optimizes JSP serving performance by caching and accessing the generated
+servlets directly instead of accessing them over the application server's
+dispatcher chain. This is only suitable for cases where no filter is required
+for the JSPs. For production mode, this cache should be enabled to improve
+performance. In case emergency fixes need to be applied, this action allows an
+administrator to manually clear out the cache to force JSPs to reload. For
+development mode, the direct servlet context should be disabled to allow JSP
+servlets to be reloaded on the fly. See the Direct Servlet Context section of
+the `portal.properties` file for details.
 
 **Reindex all search indexes:** You can send in a request to regenerate all
 search indexes. If you are not using a Solr search server this will impact
 portal performance so try to do this at non-peak times.
 
-**Reset Document Library preview and thumbnail files:** You can send in a
-request to reset the preview and thumbnail files for each item in your portal's
-Documents and Media libraries.
+**Reindex all spell check indexes:** You can send in a request to regenerate all
+spell check indexes.
+
+**Reset preview and thumbnail files for the Documents and Media portlet:** You
+can send in a request to reset the preview and thumbnail files for each item in
+your portal's Documents and Media libraries.
 
 **Generate Thread Dump:** If you are performance testing, you can generate a
 thread dump which can be examined later to determine if there are any deadlocks
@@ -161,9 +182,9 @@ and where they might be.
 indexes for accuracy of data retrieval.
 
 **Clean up Permissions:** This process removes the assignment of some
-permissions on the Guest, User and Power User roles to simplify the management
-of "User Customizable Pages". Notably, "Add To Page" permissions is removed from
-the Guest and User roles for all portlets. Likewise the same permission is
+permissions on the Guest, User, and Power User roles to simplify the management
+of "User Customizable Pages". Notably, the "Add To Page" permissions is removed
+from the Guest and User roles for all portlets. Likewise, the same permission is
 reduced in scope for Power Users from portal wide to scoped to "User Personal
 Site."
 
@@ -263,7 +284,7 @@ PDFBox and uses it to generate automatic previews for certain types of
 documents, by default. You can also install three additional tools that offer
 higher quality previews and document conversion functionality: OpenOffice or
 LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these
-tools, you can generate automatic previews for many types of files incuding text
+tools, you can generate automatic previews for many types of files including text
 files, office suite files, PDFs, images, audio files and videos. Users will also
 be able to use the conversion functionality to download documents in a variety
 of formats. Please see chapter 4 on Documents and Media for more information.
@@ -478,7 +499,7 @@ various caches. We learned how to debug parts of the portal by changing log
 levels and by viewing the various properties defined in the portal.
 
 Finally, we learned how to properly notify users that the portal is about to
-shut down and how to set up exernal services like OpenOffice integration. We
+shut down and how to set up external services like OpenOffice integration. We
 looked at how to create multiple portal instances on a single installation of
 Liferay and we showed how to view currently installed plugins.
 
