@@ -1,8 +1,8 @@
 # Creating Liferay Layout Templates
 
 By now, you've likely added portlets to a page by dragging them from the *Add*
-menu and dropping them into place on the page. Are there times, though, when you
-find yourself limited by Liferay's page layout options? Maybe your Feng Shui
+menu and dropping them into place. Are there times, though, when you find
+yourself limited by Liferay's page layout options? Maybe your Feng Shui
 (pronounced *fung SHWAY*) senses are picking up on some negative energy? Or
 perhaps you find yourself adding the same portlets over and over again onto the
 same types of pages? Don't despair! Break the monotony by creating your own
@@ -10,21 +10,18 @@ custom layout templates. Layout template plugins let you design layouts that
 flow nicely, embed commonly used portlets, and apply CSS, Velocity, and HTML to
 make your pages visually pop. 
 
-In this chapter, you'll learn about:
+In this chapter, you'll learn everything you need to kno about layout templates:
 
 - **Creating a layout template:** Creating custom layout templates using the
 Plugins SDK. 
 
-- **Designing a layout template:** Designing templates with Liferay Developer
-Studio. 
+- Designing a layout template 
 
-- **Anatomy of a layout template project:** Directory structure and files of a
-layout template project. 
+- Anatomy of a layout template project 
 
-- **Embedding portlets in a layout template:** Ensure that specified portlets
-are consistently placed on a page in a desired location. 
+- Embedding portlets in a layout template 
 
-- **Available variables:** Variables available for use in TPL files. 
+- Available variables 
 
 Let's create a custom layout template!
 
@@ -50,7 +47,7 @@ our layout template called "Columns 1 4 1".
 ![Figure 5.1: Creating a custom layout template project in Studio](../../images/layout-template-new-project.png)
 
 ***Using the terminal:*** Navigate to your Plugins SDK's `layouttpl` folder,
-then execute the *create* script in your terminal. Here's the generic version of
+and execute the *create* script in your terminal. Here's the generic version of
 the *create* script, followed by operating system-specific commands:
 
     ./create.[sh|bat] <project-name> "<layout template title>"
@@ -69,9 +66,7 @@ generate layout template projects in your Plugin SDK's `layouttpl` folder.
 ## Anatomy of a Layout Template Project
 
 Let's look at the directory structure of a layout template project and learn
-about its various files. 
-
-Directory structure of a layout template project named "Columns 1 4 1":
+about its various files:  
 
 - `columns-1-4-1-layouttpl/
 
@@ -91,19 +86,20 @@ Directory structure of a layout template project named "Columns 1 4 1":
 
 	- `build.xml`
 
-To name the parent folder, Plugins SDK automatically appended "-layouttpl" to
-your project name. A project can contain multiple layout templates. The
-directory structure is the same, but you'll have a `.png`, `.tpl`, and`.wap.tpl`
-file for each layout template in the `docroot/` folder. The "liferay-" files
-describe the layout templates for packaging and deployment. 
+To name the parent folder, the Plugins SDK automatically appended "-layouttpl"
+to your project name. A project can contain multiple layout templates. The
+directory structure is the same, but you'll have a `.png`, `.tpl`,
+and`.wap.tpl` file for each layout template in the `docroot/` folder. The
+"liferay-" files describe the layout templates for packaging and deployment. 
+
+<!-- Missing transition here --> 
 
 ### Layout template files
 
 One or more layout template plugins can reside in a layout template project.
-Let's see what each of the template files actually does:
+Let's see what each of the template files does: 
 
-- `<project-name>.tpl`: Velocity template that generates the HTML structure of
-the template. 
+- `<project-name>.tpl`: Generates the HTML structure of the template. 
 
 - `<project-name>.wap.tpl`: Variant template for mobile devices. WAP stands for
 wireless application protocol. 
@@ -114,7 +110,7 @@ image, but you can use the default PNG for layout templates as a starting point.
 
 ![Figure 5.2: Default layout template thumbnail](../../images/blank_columns.png)
 
-### Liferay configuration files
+### Liferay configuration files 
 
 In addition to the three template-specific files, a layout template project
 has two Liferay configuration files:
@@ -125,14 +121,14 @@ templates and the location of their TPL and PNG files.
 - `liferay-plugin-package.properties`: Describes the plugin project to
 Liferay's hot deployer. 
 
-Now you're familiar with the layout template's files and directory
-structure. Let's deploy a layout template on the server. 
+Now that you're familiar with the layout template's files and directory
+structure, let's deploy a layout template on the server. 
 
-### Deploying Layout Templates
+### Deploying Layout Templates 
 
-If you've ever deployed a theme or portlet that you developed for Liferay, you
-already know how to deploy your layout templates! Use Developer Studio or the
-terminal to deploy your layout templates:
+If you've ever deployed a theme or portlet, you already know how to deploy
+layout templates! Use Developer Studio or the terminal to deploy your layout
+templates:
 
 - ***Deploying in Developer Studio:*** Drag your layout template project onto
 your server. 
@@ -140,10 +136,10 @@ your server.
 - ***Deploying in the terminal:*** From your layout template project directory,
 enter
 
-		ant deploy
+    ant deploy
 
-When deploying your plugin, your server displays messages indicating that your
-plugin was read, registered and is now available for use. 
+When deploying your plugin, the server displays messages indicating that your
+plugin was read, registered, and is now available for use. 
 
 Example server output:
 
@@ -159,7 +155,7 @@ our layout template.
 
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you design layout templates. If this seems overwhelming, don't worry.
-With the handy pallette in Devleoper Studio's *Layout Template Editor*,
+With the handy palette in Devleoper Studio's *Layout Template Editor*,
 designing templates becomes fun! Let's try it:
 
 1. Open your layout template's TPL file in Developer Studio's *Layout Template
@@ -212,7 +208,7 @@ layout, let's increase our control over the layout by embedding portlets.
 ## Embedding portlets in a layout template
 
 Are there portlets you need displayed in the same location on all pages using
-one of your layout templates? Perhaps you want to prevent others from disrupting
+a particular layout template? Perhaps you want to prevent others from disrupting
 the Feng Shui you've generated with your design? You can embed portlets in
 layout templates, ensuring that specified portlets always display in consistent
 locations on your pages. Users can minimize embedded portlets but can't move or
@@ -236,8 +232,8 @@ custom.
 - ***Instanceable:*** Specify whether multiple instances of the portlet can
 exist in the portal. 
 
-- ***Web Application Context*** - Required for *custom* portlets only. Login to
-your Liferay Portal, Go to the portlet's *Look and Feel* &rarr; *Advanced
+- ***Web Application Context*** - Required for *custom* portlets only. Log into
+your Liferay Portal. Go to the portlet's *Look and Feel* &rarr; *Advanced
 Styling* to find the context in the Fully Qualified Portlet ID (FQPI). The
 context is the portion of the Portlet ID string that follows `WAR_`. The *Web
 Application Context* in the following figure is *myhelloworldportlet*. 
@@ -296,9 +292,11 @@ portals.
 
 See how simple it is to embed portlets in your pages? 
 
+<!-- Missing transition here --> 
+
 ## Available variables
 
-A number of variables are avalable for you to use in your custom TPL files. For
+A number of variables are available for you to use in your custom TPL files. For
 your convenience, we've listed all of them in the following table. 
 
 | Variable | &nbsp;Type | &nbsp;Description |
@@ -323,7 +321,7 @@ your convenience, we've listed all of them in the following table.
 
 Now your layout template toolbox is complete. 
 
-## Conclusion
+## Summary 
 
 In this chapter we created layout templates, arranged their rows and columns,
 and embedded portlets in them. Congratulations on mastering the fundamentals of
@@ -332,4 +330,4 @@ widely known, your friends may ask you to re-arrange their living room
 furniture! 
 
 If you're up for it, let's learn how to customize core Liferay portlets using
-hooks -- sounds "catchy", right?! 
+hooks--sounds "catchy", right?! 
