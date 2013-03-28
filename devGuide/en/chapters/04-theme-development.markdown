@@ -21,6 +21,8 @@ In this chapter you'll learn all about Liferay themes:
 
 - **Anatomy of a Theme**
 
+- **Developer Mode**
+
 - **Thumbnails**
 
 - **Javascript**
@@ -255,6 +257,75 @@ Alternatively, redeploy your theme by opening a terminal, navigating to
 Wait a few seconds until the theme deploys, then refresh your browser to see
 your changes. 
 
+## Developer Mode
+
+Do you want to develop Liferay resources without having to redeploy to see your
+portal modifications? Use Liferay Developer Mode! In Developer mode all caches
+are removed, so any changes you make are visible right away. You won't have to
+reboot the server as often if you use Developer Mode.
+<!-- Not certain I got that right. -Russ -->
+
+Before you use Developer Mode, you'll have to add the
+`portal-developer.properties` file to your application server's configuration
+file. Each application server has a different configuration file or UI to
+specify system properties. Let's demonstrate using Tomcat application server.
+
+In your `setenv.sh` file (`setenv.bat` in Windows), find the line setting the
+`JAVA_OPTS` variable and add the following to the list of options:
+    
+    `Dexternal-properties=portal-developer.properties` 
+
+The following is an example of what the `JAVA_OPTS` line might look like with
+your code included:
+
+        JAVA_OPTS="-Xms256m -Xmx1024m -XX:PermSize=32m -XX:MaxPermSize=160m
+        -Dfile.encoding=UTF8 -Duser.timezone=GMT+2
+        -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.config
+        -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
+        -Dexternal-properties=portal-developer.properties"
+    
+ [tip](../../images/tip-pen-paper.png)**Tip:** If you're already using the
+ system property `external-properties` to load other properties files, add
+ `portal-developer.properties` to the list and use a comma to separate it from
+ other entries.
+
+ <!-- Ended here on 3/28 -Russ -->
+
+At the time of writing, the developer mode applies the following changes:
+
+    The CSS of the themes is loaded as individual files instead as one big file
+    (theme.css.fast.load=false) This means that changes to the individual files
+    of the theme will be applied immediately The Javascript will be loaded as
+    individual files instead as one big file (javascript.fast.load=false). This
+    applies to all the portal javascript file plus any portlet javascript file
+    registered through liferay-portlet.xml The Javascript logs are enabled
+    (javascript.log.enabled=true) The cache of layout templates is disabled
+    (layout.template.cache.enabled=false) The server won't start a browser when
+    starting up, This is a new behavior introduced in 5.2 that is not desired
+    while developing (browser.launcher.url=) The modification-based cache of web
+    resources (such as the global CSS file, css_cached.jsp) is disabled
+    (last.modified.check=false) The velocity templates of themes and journal
+    articles won't be cached so changes will be applied immediately.
+    (velocity.engine.resource.manager.cache.enabled=false) By the time you read
+    this there might be new settings so make sure to check the
+    portal-developer.properties file in your version of Liferay for the most
+    accurate information.
+
+Avoiding minifying the HTML returned #
+
+Starting with Liferay v5.2 (and v5.1.4EE) the HTML that is returned from the
+portal is minified to reduce it's size and increase the parsing speed once in
+the browser.
+
+While this is great in general it might be inconvenient when trying to debug a
+problem related to the HTML output or the CSS or JavaScript that it may have
+inline. To avoid that all you have to do is to append the following parameter to
+the URL:
+
+&strip=0
+
+We've decided to not do this by default in the developer mode because the minify
+process is sometimes useful to find certain types of problem in the HTML.
 ---
 
  ![tip](../../images/tip-pen-paper.png)**Tip:** You can see changes more quickly
