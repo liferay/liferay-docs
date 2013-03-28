@@ -74,8 +74,7 @@ generated and, if Liferay was correctly installed (see chapter 14), an email
 message with the password in it was sent to the user. This, of course, requires
 that Liferay can properly communicate with your SMTP mail server.
 
-![Figure 16.2: Liferay's User Account
-Editor](../../images/01-user-account-editor.png)
+![Figure 16.2: Liferay's User Account Editor](../../images/01-user-account-editor.png)
 
 If you haven't yet set up your mail server, you'll need to use this page to
 change the default password for the user ID to something you can remember. You
@@ -127,11 +126,6 @@ of the above functions because you have administrative access.
 Let's look next at how to manage organizations. 
 
 ### Organizations 
-
-<!-- | This section needs to mention that organization administrators can manage
-the users in those organizations, while site administrators cannot. This is an
-important difference. Organizations are designed for distributed portal
-administration. See  http://issues.liferay.com/browse/LRDOCS-378 | --> 
 
 Organizations are used to represent hierarchical structures of users such as
 those of companies, businesses, non-profit organizations, churches, schools, and
@@ -321,39 +315,44 @@ can be assigned to organizations when they fit into a hierarchical structure.
 Users groups provide a more ad hoc way to group users than sites and
 organizations. Let's look at them next.
 
-## User Groups  
+## User groups  
 
-User Groups are arbitrary groupings of users. These groups are created by portal
-administrators to group users together who don't necessarily share an obvious
-hierarchical attribute. Users can be assigned to multiple user groups. User
-Groups are most often used to achieve one of the following goals:
+User Groups are designed to allow portal administrators to create groups of
+users that traverse the organizations hierarchy. They can be used to create
+arbitrary groupings of users who don't necessarily share an obvious hierarchical
+attribute. Users can be assigned to multiple user groups. For example, consider
+a software company with many offices and departments within each office. The
+company's office/department structure could be modeled through organizations. In
+this situation, it might make sense to create user groups for developers, office
+managers, accountant, etc. User Groups are most often used to achieve one of the
+following goals:
 
-- Simplify the assignment of several roles to a group of users. For example, in
-  a University portal, a user group could be created to group all teachers
-independently of their organization to make it easier to assign one or several
-roles at once to all the teachers.
+- To simplify the assignment of several roles to a group of users. For example,
+  in a University portal, a user group could be created to group all teachers
+  independently of their organizations to make it easier to assign one or
+  several roles at once to all the teachers.
 
-- Simplify membership to one or more sites by specifying a group of users. Using
-  the previous example, all teachers could be members of the sites *University
-Employees* and *Students and Teachers Collaboration Site* by adding the
-*Teachers* user group as a member.
+- To simplify membership to one or more sites by specifying a group of users.
+  Using the previous example, all teachers could be members of the sites
+  *University Employees* and *Students and Teachers Collaboration Site* by
+  adding the *Teachers* user group as a member.
 
-- Provide predefined public or private pages to the users who belong to the user
-  group. For example, the *Teachers* user group could be created to ensure the
-home page on all teachers' personal sites has the same layout and applications.
+- To provide predefined public or private pages to the users who belong to the
+  user group. For example, the *Teachers* user group could be created to ensure
+  the home page on all teachers' personal sites has the same layout and
+  applications.
 
 Creating a user group is easy. Navigate to the control panel, click the *Users
 Groups* link and then click the *Add* button. There are only two fields to fill
 out: Name and Description. Click *Save* and you will be redirected back to the
 *User Groups* page of the control panel.
 
-![Figure 16.4: Creating a New User
-Group](../../images/server-configuration-new-user-group.png)
+![Figure 16.4: Creating a New User Group](../../images/server-configuration-new-user-group.png)
 
 Note in the figure above how each user group may have a site, with public and
 private pages. This is a special type of site that determines the base pages on
 all user group members' personal sites. The user group site works in a similar
-way to Site Templates, except in this case the the User Group Site pages are not
+way to Site Templates, except in this case the User Group Site pages are not
 copied for each user but are rather shown dynamically along with any custom
 pages the user may have on his/her personal site. For this reason, users are not
 allowed to make any modifications to the pages that are *inherited* from the
@@ -393,7 +392,7 @@ group's Actions menu. Clicking one of these links opens the user group's site in
 a new browser window. Any changes you make to the site are saved automatically.
 You can safely close the browser window when you're done.
 
-### Creating and editing a User Group  
+### Creating and editing a user group  
 
 A user group's site can be administered from the control panel. Select *User
 Groups* from the control panel to see a list of existing user groups. To edit a
@@ -412,15 +411,14 @@ group, and optionally, a description. Click *Save* to create your user group.
 
 Our next step is to assign an existing user to the *Bloggers* group.
 
-### Assigning Members to a User Group  
+### Assigning members to a user group  
 
 Navigate to *Users and Organizations* and create a new user called *Joe Bloggs*.
 Then navigate to the User Groups page of the control panel and click *Actions*
 &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to
 see a list of users that can be assigned to the group.
 
-![Figure 16.6: Assigning Members to a User
-Group](../../images/01-adding-members-to-user-group.png)
+![Figure 16.6: Assigning Members to a User Group](../../images/01-adding-members-to-user-group.png)
 
 From that list, one or more users can be assigned as members of the user group.
 
@@ -439,7 +437,7 @@ assigning a role to users from the roles management UI.
 The next section describes a more advanced usage of user groups: User Group
 Sites.
 
-### User Group Sites  
+### User group sites  
 
 Liferay allows users to each have a personal site consisting of public and
 private pages. Permissions can be granted to allow users to customize their
@@ -532,23 +530,22 @@ down menu for the user group's public pages and click *Save*. After the page
 reloads you can click to see the pages and make any changes desired, add
 additional pages, etc.
 
-![Figure 16.7: Selecting a Template for the User Group
-Site](../../images/user-group-site-template-selected.png)
+![Figure 16.7: Selecting a Template for the User Group Site](../../images/user-group-site-template-selected.png)
 
 Also, try visiting the public site of one of the users who belongs to the user
 group. You will see how all of the pages in the user group appear as part of the
 user site, including the ones copied from the site template and the ones added
 afterwards.
 
-## Roles and Permissions  
+## Roles and permissions  
 
-Roles are groupings of users that share a particular function within the portal,
-according to a particular scope. Roles can be granted permissions to various
-functions within portlet applications. You can think of a role as a description
-of a function, such as Message Board Administrators. A role with that name is
-likely to have permissions relevant to the specific Message Board portlets
-delegated to it. Users who are placed in this role will inherit these
-permissions.
+Roles are used to collect permissions that define a particular function within
+the portal, according to a particular scope. Roles can be granted permissions to
+various functions within portlet applications. A roles is basically just a
+collection of permissions that defines a function, such as Message Board
+Administrator. A role with that name is likely to have permissions relevant to
+the specific Message Board portlets delegated to it. Users who are placed in
+this role will inherit these permissions.
 
 The roles page of the control panel serves as a single interface which lets you
 create roles, assign permissions to them and assign users to the roles. Roles
@@ -561,8 +558,29 @@ title, the title will be displayed in the list of roles on the Roles page of the
 control panel. If you do not enter a title, the name will be displayed. When you
 have finished, click *Save*.
 
-![Figure 16.8: Roles Page and Role Actions
-Menu](../../images/01-roles-and-role-actions.png)
+In addition to regular roles, site roles, and organization roles, there are also
+teams. Teams can be created by site administrators within a specific site. The
+permissions granted to a team are defined and applied only within the team's
+site. The permissions defined by regular, site, and organization roles, by
+contrast, are defined at the portal level, although they are applied to
+different scopes. The differences between the four types of roles can be
+described as follows:
+
+- Regular role: Permissions are defined at the *portal* level and are applied at
+  the *portal* level.
+
+- Site role: Permissions are defined at the *portal* level and are applied to
+  one *specific site*.
+
+- Organization role: Permissions are defined at the *portal* level and are
+  applied to one *specific organization*.
+
+- Team: Permissions are defined within a *specific site* and are assigned within
+  that *specific site*.
+
+For more information about teams, please refer to chapter 3.
+
+![Figure 16.8: Roles Page and Role Actions Menu](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what
 functions you can perform on your new role, click the *Actions* button.
@@ -586,14 +604,13 @@ role.
 
 Next, let's examine how to configure the permissions granted by different roles.
 
-### Defining Permissions on a Role  
+### Defining permissions on a role  
 
 Roles serve as repositories of permissions to be assigned to users who belong to
 them. So, to use a role, you need to assign members to it and define the
 permissions you want to grant to members of the role.
 
-![Figure 16.9: Defining Permissions on a
-Role](../../images/01-defining-permissions-on-a-role.png)
+![Figure 16.9: Defining Permissions on a Role](../../images/01-defining-permissions-on-a-role.png)
 
 When you click the *Actions* button on portal-scoped role and select *Define
 Permissions*, you will be shown a list of all the permissions defined for that
@@ -625,8 +642,7 @@ control panel. Some control panel portlets have a Configuration button, so you
 can define who gets to see that, as well as who gets to see an application in
 the control panel.
 
-![Figure 16.10: Message Board Content
-Permissions](../../images/01-message-board-content-permissions.png)
+![Figure 16.10: Message Board Content Permissions](../../images/01-message-board-content-permissions.png)
 
 Each possible action to which permissions can be granted is listed. To grant a
 permission, check the box next to it. If you want to limit the scope of the
@@ -658,8 +674,7 @@ menu and select *User Groups* under the *Control Panel: Portal* heading and
 check the *Access in Control Panel* and *View* permissions so that user group
 managers can manage user groups from the Control Panel.
 
-![Figure 16.11: Make sure to test the permissions you grant to custom
-roles.](../../images/user-group-manager-role.png)
+![Figure 16.11: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
 
 You might expect that these permissions would be enough to allow users assigned
 to the User Group Manager role to add or remove any users to or from any user
@@ -672,8 +687,7 @@ user groups, they don't have permission to view users at the portal level. This
 means that if they click *Assign Members* for a user group and click on the
 *Available* tab, they'll see an empty list.
 
-![Figure 16.12: Users assigned to the User Group Manager role can't find any
-users to add!](../../images/no-users-found.png)
+![Figure 16.12: Users assigned to the User Group Manager role can't find any users to add!](../../images/no-users-found.png)
 
 To fix this, click *Go To* &rarr; *Control Panel*. Click on *Roles* and then
 *Actions* &rarr; *Define Permissions*. Then click on the *Add Permissions*
@@ -686,7 +700,7 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-### Special Note about the Power Users Role  
+### Special note about the power users role  
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets
 allowed power users, but not regular users, to access them. Liferay 6.0 and
@@ -712,7 +726,7 @@ Now that we've seen how to use organizations and user groups to manage users and
 how to use roles to define permissions, let's examine the general portal
 settings you can configure.
 
-## Managing Portal Settings  
+## Managing portal settings  
 
 After you have created users, user groups, organizations, roles, sites and teams
 your portal will be ready to host content and applications. You can configure
@@ -731,7 +745,7 @@ the portal operates and integrates with other systems you may have. Let's begin
 our discussion of Liferay's portal settings by examining how to configure
 password policies.
 
-### Password Policies  
+### Password policies  
 
 Password policies can enhance the security of your portal. You can set
 requirements on password strength, frequency of password expiration and more.
@@ -797,7 +811,7 @@ policy. You cannot delete the default policy.
 
 Next, let's examine Liferay's Portal Settings.
 
-### Portal Settings  
+### Portal settings  
 
 Most global portal settings can be configured from the Portal Settings section
 of the control panel. The Configuration heading contains the following links:
@@ -827,8 +841,7 @@ newsletters. Any domain names associated with your organization can go here.
 notifications for certain events, such as user registrations, password changes,
 etc. You can customize those messages here.
 
-![Figure 16.13: Portal Settings
-Pages](../../images/server-configuration-portal-settings-pages.png)
+![Figure 16.13: Portal Settings Pages](../../images/server-configuration-portal-settings-pages.png)
 
 Let's discuss these settings next.
 
@@ -976,7 +989,7 @@ for setting this. See below for instructions describing how to do this.
 Once you've finished configuring LDAP, click the *Save* button. Next, let's look
 at how to add LDAP servers.
 
-#### Adding LDAP Servers  
+#### Adding LDAP servers  
 
 The Add button beneath the LDAP servers heading allows you to add LDAP servers.
 If you have more than one, you can arrange the servers by order of preference
@@ -1099,8 +1112,7 @@ You can also add your own mappings if you wish.
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
 and match them with their mappings as a preview.
 
-![Figure 16.14: Testing LDAP
-Users](../../images/server-configuration-testing-ldap-users.jpg)
+![Figure 16.14: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay.
 
@@ -1137,14 +1149,13 @@ location.
 classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
 view the Object Class attributes stored in LDAP for that group.
 
-![Figure 16.15: Mapping LDAP
-Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
+![Figure 16.15: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-#### LDAP Options Not Available in the GUI  
+#### LDAP options not available in the GUI  
 
 Although most of the LDAP configuration can be done from the control panel,
 there are several configuration parameters that are only available by editing
