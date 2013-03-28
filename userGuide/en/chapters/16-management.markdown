@@ -8,57 +8,52 @@ you want to create users, sites, organizations, configure permissions and
 plugins and pretty much anything else, you'll do it with the control panel. The
 nice thing about the control panel is it makes all this very easy to do. This
 chapter takes all the concepts you learned about Liferay in chapter 1 (sites,
-organizations and more) and makes them concrete. Here, you'll learn how to
+organizations, and more) and makes them concrete. Here, you'll learn how to
 create and manage every aspect of Liferay's configuration. 
 
-<!-- This intro sounds like it would work for the next chapter, "Using the
-Control panel." Check chapter reference.  --> This chapter covers the following
-topics:
+This chapter explains how to use the control panel to manage the following:
 
--   Using the control panel to manage users, organizations, user groups, and
-    roles
+- Users
 
--   Using the control panel to manage password policies, authentication
-    settings, and global user settings
+- Organizations
 
-Let's begin our examination of Liferay's control panel by looking at how to
-manage and organize users in Liferay Portal.
-
-<!-- Section i  Managing users --> ## Managing Users
-
-
-The Portal section of the control panel is used for most administrative tasks.
-You'll find there an interface for the creation and maintenance of
-
-- Users, User Groups and Organizations
-
-- Sites and Teams
-
-- Site Templates
-
-- Page Templates
+- User Groups
 
 - Roles
 
-Additionally, you can configure many server settings, including:
-
 - Password Policies
 
-- Portal Settings
+- Authentication Policies
 
-- Custom Fields
+- Global User Settings
 
-- Monitoring
+Let's begin our examination of Liferay's control panel by looking at how to
+manage users in Liferay Portal.
 
-- Plugins Configuration
+## The Portal section of the control panel
 
-You'll use the Portal section of the control panel to create your portal
-structure, implement security and administer your users. Configurable portal
-settings include mail host names, email notifications and authentication options
-including single sign-on and LDAP integration. Note that only users with the
-administrator role, which is a portal scoped role, have permission to view this
-section of the control panel. You can, of course, grant custom roles permissions
-to one or more sections.
+The Portal section of the control panel is used for most administrative tasks.
+You'll find there an interface for the creation and maintenance of the following
+portal entities: users, organizations, user groups, sites, teams, site
+templates, page templates, and roles. Additionally, you can configure many
+settings, including the following: password policies, portal settings, custom
+fields, monitoring, and plugins configuration.
+
+![Figure 16.x: The Portal Section of the control panel allows portal administrators to manage users, organizations, sites, teams, site templates, page templates, and roles, as well as various portal settings.](../../images/portal-section-control-panel.png)
+
+Since we explained how to manage sites, teams, site templates, and page
+templates in chapters 2 and 3, we won't discuss them in detail here. In this
+chapter, we'll focus on using the control panel for user management. We'll
+finish our coverage of the control panel in the next chapter, discussing portal
+and server administration.
+
+As a portal administrator, you'll use the Portal section of the control panel to
+create your portal structure, implement security, and administer your users.
+Configurable portal settings include mail host names, email notifications and
+authentication options including single sign-on and LDAP integration. Note that
+only users with the administrator role, which is a portal scoped role, have
+permission to view this section of the control panel. You can, of course, grant
+permissions to one or more sections to custom roles.
 
 ## Adding users  
 
@@ -138,65 +133,124 @@ the users in those organizations, while site administrators cannot. This is an
 important difference. Organizations are designed for distributed portal
 administration. See  http://issues.liferay.com/browse/LRDOCS-378 | --> 
 
-Organizations are used to represent hierarchical structures such as those of
-companies, non-profit organizations, churches, schools and clubs. They have been
-used to represent a sports league, with various sports (soccer, baseball,
-basketball, etc.) and their teams as sub-organizations. If you have a collection
-of users that fit into a hierarchical structure, you can model that as an
-organization.
+Organizations are used to represent hierarchical structures of users such as
+those of companies, businesses, non-profit organizations, churches, schools, and
+clubs. They are designed to allow distributed user administration. Organizations
+can be used, for example, to represent a sports league. The league itself could
+be modeled as a top-level organization and the various sports (soccer, baseball,
+basketball, etc.) could be modeled as suborganizations. The teams belonging to
+the various sports could be modeled as sub-organizations of the sports
+organizations. So, for example, you could have an organization hierarchy that
+looks like this:
 
-Your portal design might not need organizations or it might have one or several,
-depending on your portal's function. For example, a simple photo-sharing web
-site could be powered by sites only (see below for information on sites). On the
-other hand, organizations are useful for corporations or educational
-institutions since their users can be placed easily into a hierarchical
-structure. In fact, organizations in Liferay are designed to model any group
-hierarchy, from those of government agencies all the way down to those of small
-clubs. Of course, your portal can use both organizations and independent sites.
-For example, a corporation or educational institution could create a social
-networking site open to all portal users, even ones from separate organizations. 
+- Atlantic Sports League
+	- Atlantic Soccer Association
+		- Midway Soccer Club
+		- Fairview Soccer Club
+		- Oak Grove Soccer Club
+	- Atlantic Baseball Association
+		- Five Points Baseball Club
+		- Riverside Baseball Club
+		- Pleasant Hill Baseball Club
+	- Atlantic Basketball Association
+		- Bethel Basketball Club
+		- Centerville Basketball Club
+		- New Hope Basketball Club
 
-Organizations and suborganizations can be created in a hierarchy to unlimited
-levels and users can be members of one or many organizations. These
-organizations can all reside in a single hierarchy or cut across different
-hierarchies. Note the rights of an organization administrator apply both to
-his/her organization and to any child organizations. By default, members of
-child organizations are members of the parent organizations. This behavior can
-be customized in your portal's `portal-ext.properties` configuration file.
+Whenever you have a collection of users that fit into a hierarchical structure,
+you can use organizations to model those users. In Liferay, organization
+administrators can manage all the users in their organization *and* in any
+suborganization. Referring to the hierarchy above, for example, an organization
+administrator of the Atlantic Sports League could manage any users belonging to
+the league itself, to any of the associations, or to any of the associations'
+clubs. An organization administrator of the Atlantic Soccer Association could
+manage any users belonging to the Atlantic Soccer Association itself, or to the
+Midway Soccer Club, Fairview Soccer Club, or Oak Grove Soccer Club. However, an
+administrator of the Atlantic Soccer Club would not be able to manage users
+belonging to the Atlantic Baseball Association or to the Bethel Basketball Club.
 
-Additionally, Organizations can be associated with roles. One application of
-this in a corporate setting might be an IT Security group. You could have a
-suborganizaton of your IT organization that handles security for all of the
-applications company-wide. If you grant the IT Security organization the same
-administrator role you just gave to your own ID, all members of the organization
-would have administrative access to the portal. Suppose now a user in this
-organization later was hired by the Human Resources department. The simple act
-of removing the user from the IT Security organization also removes the user's
-administrative privileges, since the privilege came from the IT Security group's
-role. By adding the user to the HR organization, any roles the HR organization
-has (such as access to a benefits system in the portal) are transferred to the
-user. In this manner, you can design your portal to correspond with your
-existing organization chart and users' permissions are granted according to
-their positions in the chart.
+Organizations and suborganization hierarchies can be created to unlimited
+levels. Users can be members of one or many organizations. The rights of an
+organization administrator apply both to his/her organization and to any child
+organizations. By default, members of child organizations are implicit members
+of their parent organizations. This means, for example, that members of child
+organizations can access the private pages of their parent organizations. This
+behavior can be customized in your portal's `portal-ext.properties`
+configuration file.
+
+Since organizations are designed for distributed user administration,
+organization administrators have an entirely different set of privileges than
+site administrators. Site administrators are responsible for the pages,
+portlets, and content of their site. They are also responsible for managing the
+membership of their site. To this end, they can set the membership type to Open,
+Restricted, or Private. They can also add users to or remove users from their
+site but cannot manage the users themselves. Organization administrators, on the
+other hand, can edit users belonging to their organization or any
+suborganization. They cannot add existing users to their organization but they
+can create new users within their organization. Only portal administrators can
+add existing users to an organization.
+
+Many simple portal designs don't use organizations at all; they only use sites
+(see chapters 2 and 3 for more information on sites). Remember that the main
+purpose of organizations is to allow for distributed user management. They allow
+portal administrators to delegate some of their user management responsibilities
+to organization administrators. If you don't anticipate needing to delegate user
+management responsibilities, your portal design need not include organizations.
+In order to decide whether or not your portal design should include
+organization, think about your portal's function. A simple photo-sharing web
+site, for example, could be powered by sites only. On the other hand,
+organizations are useful for corporations or educational institutions since
+their users can easily be placed into a hierarchical structure. In fact,
+organizations in Liferay are designed to model any group hierarchy, from those
+of government agencies all the way down to those of small clubs. Of course,
+users can belong both to organizations and to independent sites. For example, a
+corporation or educational institution could create a social networking site
+open to all portal users, even ones from separate organizations. 
+
+Additionally, organization administrators can assign organization-scoped roles
+to members of their organization. For example, consider an IT Security group in
+a corporate setting. You could have a suborganizaton of your IT organization
+that handles security for all of the applications company-wide. If you grant the
+IT Security organization the portal administrator role, all the members of the
+organization would have administrative access to the entire portal. Suppose
+further that a user in this organization was later hired by the Human Resources
+department. The simple act of removing the user from the IT Security
+organization also removes the user's administrative privileges, since the
+privilege came from the IT Security organization's role. By adding the user to
+the HR organization, any roles the HR organization has (such as access to a
+benefits system in the portal) are transferred to the user. In this manner, you
+can design your portal to correspond with your existing organization chart and
+users' permissions are granted according to their positions in the chart.
 
 Of course, this is only one way to design it. If you have more complex
-requirements, you can combine organizations with teams and scoped roles to
-assemble the sets of permissions you wish to grant to particular users. But
-we'll get to that. Let's first see how to manage organizations. 
+requirements for permissions within an organization, you can create custom
+organization-scoped roles to assemble the permissions you wish to grant to
+particular users. Alternatively, you could consider attaching a site to your
+organization and using site teams to assemble the sets of permissions (see
+below). We'll discuss roles and permissions in more detail later in this
+chapter.
+
+Does your organization need to have its own site? Many organizations don't, but
+since some do, Liferay allows sites to be attached to organizations. If an
+organization has an attached site, the organization's administrators are treated
+as the site administrators of the attached site. This means that they can manage
+the pages, portlets, and content of the site as well as the users of the
+organization. Members of an organization with an attached site are treated as
+members of the organization's site. This means that they can access the private
+pages of the organization's site, along with any portlets or content there. The
+capability of attaching sites to organizations allows portal administrators to
+use organizations to facilitate distributed portal administration, not just
+distributed user administration.  Next, let's learn how to create and manage
+organizations. 
 
 To add an organization, click the *Users and Organizations* link on the left
 side of the control panel. Then click the *Add* button and choose *Regular
-Organization*. 
-
-Does your organization need to have its own web site? Most organizations don't,
-but some do, and Liferay provides this ability by attaching a site to an
-organization. To attach a site when you create an organization, click the
+Organization*. To attach a site when you create an organization, click the
 *Organization Site* tab at the right and check the *Create Site* box. If you
-don't know right now if your organization needs a web site, that's fine. You can
+don't know right now if your organization needs a site, that's fine. You can
 always add one later if the need arises. 
 
-![Figure 16.3: Adding an
-organization](../../images/01-add-organization-screen.png)
+![Figure 16.3: Adding an organization](../../images/01-add-organization-screen.png)
 
 **Name:** Enter a name for the organization.
 
