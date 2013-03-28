@@ -51,7 +51,7 @@ you should know:
 To follow the examples in this guide, you should be familiar with the command
 line or the Liferay IDE. 
 
-<!-- Transition goes here. -->
+Let's create a theme! 
 
 ## Creating a Theme
 
@@ -272,29 +272,31 @@ Make sure you copy any changes you make back into your `_diffs` folder, or
 they'll be overwritten when you redeploy your theme. 
 <!-- Does this go with what's in the "tip" above? -->
 <!-- Yes. --> 
-<!-- Transition goes here. -->
+<!-- I guess it will get taken care of when we document Developer Mode here -->
+
+You have a theme now, but unlike Liferay's *Classic* theme, yours has no
+thumbnail preview in Liferay Portal. Let's add one. 
 
 ## Thumbnails
 
-In the *Look and Feel* settings, the *Classic* theme has a thumbnail preview of
-what it looks like, but our theme has only a broken image. Here's the remedy:
-
-<!-- The below procedure is incorrect; it's actually much easier to do. See
-slide 48 of 02-building-a-theme.fodp in the Themes course for the correct
-procedure. --> 
-
-1. Take a screenshot of your theme and save it in `_diffs/images` with the name
-`thumbnail.png`. It must be precisely 150 pixels wide by 120 pixels
-high. 
-
-2. Save another version of the same screenshot, this time precisely 1080 pixels
-wide by 864 pixels high. Save in the `_diffs/images` directory with the name
+In the *Look and Feel* settings, the *Classic* theme has a thumbnail preview
+image, but our theme has only a broken image. To remedy this, create a PNG file
+named `screenshot.png` and place it in your theme's `docroot/_diffs/images`
+directory. The image must be precisely 1080 pixels wide by 864 pixels high. On
+redeployment, the thumbnail will be automatically generated from
 `screenshot.png`.
 
-After redeploying your theme, it's thumbnail preview will be shown in the *Look
-and Feel* settings just like the *Classic* theme. 
+Now go to the *Look and Feel* settings. Your theme's thumbnail should appear
+there, along with the *Classic* theme's thumbnail. 
 
-<!-- Transition goes here. --> 
+ ![tip](../../images/tip-pen-paper.png)**Tip:** To achieve the 1080x864
+ resolution in a new browser window, use the button provided in the Resize
+ Browser web content article displayed on the Welcome page. 
+ 
+<!-- This tip comes verbatim from the ADDING A SCREENSHOT/THUMBNAIL slide in the
+Themes course's 02-building-a-theme.fodp slideshow -->
+ 
+Let's talk about Liferay's JavaScript library next. 
 
 ## JavaScript
 
@@ -316,9 +318,7 @@ Node object of the same portlet.
 
 ![Figure 4.4: Content of main.js](../../images/05-themes-4.png)
 
-<!-- Never end a section with an image. --> 
-
-<!-- Transition goes here. -->
+Now let's make your theme configurable by defining settings. 
 
 ## Settings
 
@@ -491,7 +491,7 @@ both). For our example, create the folders `_diffs/images/color_schemes/day` and
 `screenshot.png` file, according to the specifications defined in the Thumbanils
 section above. 
 
-<!-- Transition goes here. --> 
+Let's review the predefined settings available for your theme. 
 
 ## Portal Predefined Settings
 
@@ -513,11 +513,13 @@ Override default behavior for individual portlets using:
 
 * `liferay-portlet.xml`
 
+<!-- Really had a hard time figuring out where we transition from portlet borders to bullet styles.  Still don't know. -Russ-->
+
 * Portlet CSS popup setting: Used by the *Navigation* portlet to determine the
 CSS class name of the list of pages. The value must be a comma separated list of
 valid bullet styles. 
 
-<!-- Is the above paragraph describing PortletCSS popup settings? --> 
+<!-- Is the above paragraph describing PortletCSS popup settings? -Russ--> 
 <!-- Beats me. --> 
 
 Example:
@@ -525,6 +527,8 @@ Example:
     <settings>
 		<setting key="bullet-style-options" value="classic,modern,tablemenu" />
     </settings>
+
+<!-- Is this where we begin talking about bullet styles? I was ocnfused in this section -Russ-->
 
 The user can change the bullet style in the *Navigation* portlet's configuration
 menu. The chosen style is applied as a CSS class on the `<div>` containing the
@@ -546,7 +550,7 @@ case the bullet style option is **modern**:
 Using CSS, and maybe some unobtrusive JavaScript, you can create any type of
 menu. 
 
-<!-- Transition goes here. --> 
+Next we'll see how Liferay lets your theme inherit styling from a parent theme. 
 
 ## Theme inheritance
 
@@ -568,4 +572,14 @@ design. It's a compromise between creating a theme as quickly as possible versus
 having full control of the result. It's your choice, and another example of the
 flexibility Liferay offers.
 
-<!-- This chapter needs a Summary section. -->
+## Summary
+
+In this chapter you learned how to customize the look and feel of your Liferay
+Portal to the extent that you desire with custom themes. In the process you
+created your own theme, learned about its directory structure, and discovered
+the value of stlye inheritance from a parent theme. You also learned about
+Liferay's JavaScript library, AlloyUI, and how to and how to make your theme
+configurable by adding settings that portal administrators can manage within
+Liferay. Your CSS options, including color schemes, and predefined settings for
+your theme, were discussed to round out your understanding of theme development. 
+<!-- Took a crack at writing a summary. -Russ -->
