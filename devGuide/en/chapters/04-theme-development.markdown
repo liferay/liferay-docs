@@ -257,6 +257,12 @@ Alternatively, redeploy your theme by opening a terminal, navigating to
 Wait a few seconds until the theme deploys, then refresh your browser to see
 your changes. 
 
+Would you rather see your changes immediately, rather than having to redeploy to
+make your changes visible? Let's talk about Liferay Developer Mode to learn how. 
+
+<!-- Developer Mode section needs editing. I don't understand this concept very
+well. Hopefully this start is useful. -Russ --> 
+
 ## Developer Mode
 
 Do you want to develop Liferay resources without having to redeploy to see your
@@ -275,8 +281,8 @@ In your `setenv.sh` file (`setenv.bat` in Windows), find the line setting the
     
     `Dexternal-properties=portal-developer.properties` 
 
-The following is an example of what the `JAVA_OPTS` line might look like with
-your code included:
+The following is an example of the `JAVA_OPTS` variable lines with your code
+included:
 
         JAVA_OPTS="-Xms256m -Xmx1024m -XX:PermSize=32m -XX:MaxPermSize=160m
         -Dfile.encoding=UTF8 -Duser.timezone=GMT+2
@@ -289,64 +295,31 @@ your code included:
  `portal-developer.properties` to the list and use a comma to separate it from
  other entries.
 
- <!-- Ended here on 3/28 -Russ -->
+How does Developer Mode let you see your changes more quickly? In Developer
+Mode, there are several changes to the normal order of operations:
 
-At the time of writing, the developer mode applies the following changes:
+    - CSS files are loaded individually rather than being combined and loaded as
+    a single CSS file.
 
-    The CSS of the themes is loaded as individual files instead as one big file
-    (theme.css.fast.load=false) This means that changes to the individual files
-    of the theme will be applied immediately The Javascript will be loaded as
-    individual files instead as one big file (javascript.fast.load=false). This
-    applies to all the portal javascript file plus any portlet javascript file
-    registered through liferay-portlet.xml The Javascript logs are enabled
-    (javascript.log.enabled=true) The cache of layout templates is disabled
-    (layout.template.cache.enabled=false) The server won't start a browser when
-    starting up, This is a new behavior introduced in 5.2 that is not desired
-    while developing (browser.launcher.url=) The modification-based cache of web
-    resources (such as the global CSS file, css_cached.jsp) is disabled
-    (last.modified.check=false) The velocity templates of themes and journal
-    articles won't be cached so changes will be applied immediately.
-    (velocity.engine.resource.manager.cache.enabled=false) By the time you read
-    this there might be new settings so make sure to check the
-    portal-developer.properties file in your version of Liferay for the most
-    accurate information.
+    - JavaScript files are also loaded individually, including JavaScript for
+    the portal itself and JavaScript related to any portlet registered through
+    `liferay-portlet.xml`. JavaScript logs are also enabled in Developer Mode. 
 
-Avoiding minifying the HTML returned #
+    - Modification-based caching of web resources is disabled. 
 
-Starting with Liferay v5.2 (and v5.1.4EE) the HTML that is returned from the
-portal is minified to reduce it's size and increase the parsing speed once in
-the browser.
+    - Velocity Templates for themes and journal articles are not cached, so
+    changes will be applied immediately. 
 
-While this is great in general it might be inconvenient when trying to debug a
-problem related to the HTML output or the CSS or JavaScript that it may have
-inline. To avoid that all you have to do is to append the following parameter to
-the URL:
+Individual file loading of your styling and behaviors, combined with disabled
+caching for web resources and Velocity Templates, let's you see your changes
+more quickly when operating in Developer Mode. 
 
-&strip=0
+Now, when you modify your theme's `custom.css` file directly in your Liferay
+Bundle, you can see your changes applied as you make them! Make sure you copy
+any changes you make back into your `_diffs` folder, or they'll be overwritten
+when you redeploy your theme. 
 
-We've decided to not do this by default in the developer mode because the minify
-process is sometimes useful to find certain types of problem in the HTML.
----
-
- ![tip](../../images/tip-pen-paper.png)**Tip:** You can see changes more quickly
- by using Liferay Developer Mode and modifying your theme's 'custom.css' file
- directly in your Liferay bundle. Our theme's `custom.css` file is in
- `liferay-portal-[version]/tomcat-[tomcat-version]/webapps/deep-blue-theme/css`.
- See the Liferay wiki for more information about Liferay Developer Mode. 
-
----
-
-<!-- Developer Mode should be documented here, and then this tip should be
-removed. We don't want to point people to the wiki. --> 
-
-Make sure you copy any changes you make back into your `_diffs` folder, or
-they'll be overwritten when you redeploy your theme. 
-<!-- Does this go with what's in the "tip" above? -->
-<!-- Yes. --> 
-<!-- I guess it will get taken care of when we document Developer Mode here -->
-
-You have a theme now, but unlike Liferay's *Classic* theme, yours has no
-thumbnail preview in Liferay Portal. Let's add one. 
+Let's add a thumbnail image for our theme now. 
 
 ## Thumbnails
 
