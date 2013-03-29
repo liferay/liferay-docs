@@ -1,61 +1,64 @@
-# Ext plugins 
+# Ext plugins
 
-Ext plugins offer you a powerful method of extending Liferay. Due to the
-increased complexity you introduce when using Ext plugins, they're designed to
-be used only in special scenarios in which no other plugin type can meet the
-needs of the project.
+Ext plugins are a powerful tool for extending Liferay. Because they increase the
+complexity of your Liferay instance, you should only employ an Ext plugin if
+you're sure you can't accomplish your goal using a different tool; check out the
+hook plugins in Chapter 6 for the available alternatives. If a hook won't
+suffice, keep reading to discover the use cases for Ext plugins and how to set
+one up. First let's talk about why you should avoid Ext plugins when possible. 
 
-Before deciding to use an Ext plugin, consider the costs of using such a
-powerful tool. The biggest cost is increased maintenance requirements. Because
-Ext plugins allow using internal APIs or even overwriting files provided in the
-Liferay core, when updating to a new version of Liferay (even if it's a
-maintenance version or a service pack), you have to review all changes. Also,
-Ext plugins require the server to be restarted after deployment (they're not hot
-deployable), and require additional steps when deploying or redeploying to
-production systems.
+As someone once said, "With great power comes great responsibility" (okay, many
+people have said that many times; let's not argue about who said it first).
+Before deciding to use an Ext plugin, weigh the costs of using such a powerful
+tool. Ext plugins allow using internal APIs or even overwriting files provided
+in the Liferay core; when updating to a new version of Liferay (even if it's a
+maintenance version or a service pack), you have to review all changes and
+manually modify your Ext plugin wherever necessary. Additionally, Ext plugins aren't hot
+deployable--you'll have to restart the server after deployment. Lastly, with
+Ext plugins, additional steps are required to deploy or redeploy to production
+systems.
 
-The main use cases in which an Ext plugin may be needed are:
+Now you know why not to use an Ext plugin, but they can be useful. Let's look at
+their main use cases: 
 
 - Specifying custom classes as portal property values. For example, to specify a
 property that needs a custom class (e.g.
-`global.startup.events=my.custom.MyStartupAction`), an Ext plugin is the only
-way to add that custom class to the portal class loader.
+`global.startup.events=my.custom.MyStartupAction`), you need an Ext plugin to
+add your custom class to the portal class loader. 
 
-- Providing custom implementations for any of the Liferay beans declared in
-Liferay's Spring files (use service wrappers from a hook instead if possible)
+- Providing custom implementations for any Liferay beans declared in Liferay's
+Spring files (when possible, use service wrappers from a hook instead of an Ext
+plugin). 
 
-- Adding JSPs that are referenced from portal properties that can only be
-changed from an Ext plugin (be sure to check if the property can be modified
-from a hook plugin before doing this)
+- Adding those JSPs referenced from portal properties that can only be changed
+from an Ext plugin (check if the property can be modified from a hook plugin
+first). 
 
-- Direct overwriting of a class (not recommended unless it's strictly necessary)
+- Overwriting a class (not recommended unless it's strictly necessary). 
 
-While keeping these use cases in mind, we'll discuss the following topics:
+Keeping these use cases in mind, we'll discuss the following topics:
 
-- **Creating an Ext plugin:** Create an Ext plugin and learn its structure. 
+- Creating an Ext plugin
 
-- **Developing an Ext plugin:** How to develop and deploy an Ext plugin and
-learn advanced customization techniques. 
+- Developing an Ext plugin
 
-- **Deploying in production:** Compares two methods for deployment of an Ext
-plugin to production. 
+- Deploying in production
 
-- **Migrating old extension environments:** How to migrate from extension
-environments to Ext plugins. 
+- Migrating old extension environments
 
 Let's start by creating an Ext plugin.
 
 ## Creating an Ext plugin
 
-You can create your Ext plugin in Liferay Developer Studio, Liferay IDE, or in
-your terminal environment. Ext plugins are stored in the `ext` directory of the
-Plugins SDK (see Chapter 2, *The Plugins SDK*). 
+You can create your Ext plugin in Liferay Developer Studio or in your terminal
+environment. Either way Ext plugins are stored in the `ext` directory of the
+Plugins SDK (see Chapter 2, The Plugins SDK). 
 
 ***Using Developer Studio:*** 
 
 1. Go to File &rarr; New &rarr; Liferay Project.
 
-2. Next, go through the following steps to setup your new Ext plugin:
+2. Use the following steps to setup your new Ext plugin:
 
     2.1. Fill in *example* for Project name and *Example* for Display name.
 
@@ -89,7 +92,7 @@ automatically appends "-ext" to the project name when creating this folder.
 
 ### Anatomy of the Ext Plugin
 
-The structure of your new `example-ext` folder looks like this:
+The structure of your new `example-ext` folder looks like this: 
 
 - `example-ext/`
 
@@ -127,14 +130,13 @@ The structure of your new `example-ext` folder looks like this:
 			
 				- `docroot/`
 				
-Here's what `example-ext` looks like in Developer Studio's *Package
-Explorer*:
 
-![Figure 7.2: The Ext plugin's Package Explorer](../../images/07-ext-plugins-2.png)
+![Figure 7.2: Here's the directory structure in the Ext plugin's Package Explorer](../../images/07-ext-plugins-2.png)
 
-The most important directories are under the `docroot/WEB-INF` directory. In
-particular, you should be familiar with the following:
+The most notable directories are in `docroot/WEB-INF`. Let's look at a few of
+these in more detail:
 
+<!--Ended Fri 3/29 -Russ -->
 - **ext-impl/src:** Contains the `portal-ext.properties` configuration file,
 custom implementation classes, and in advanced scenarios, classes that override
 core classes within `portal-impl.jar.` 
