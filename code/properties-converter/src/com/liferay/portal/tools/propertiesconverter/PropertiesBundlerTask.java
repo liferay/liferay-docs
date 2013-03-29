@@ -1,8 +1,6 @@
 
 package com.liferay.portal.tools.propertiesconverter;
 
-import java.io.IOException;
-
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
@@ -13,7 +11,9 @@ public class PropertiesBundlerTask extends Task {
 		throws BuildException {
 
 		try {
-			PropertiesBundler.bundleProperties(lpVersion);
+			PropertiesBundler bundler = new PropertiesBundler();
+
+			bundler.bundleProperties(propertiesDir, lpVersion);
 		}
 		catch (BuildException be) {
 			System.out.println(be.getLocalizedMessage());
@@ -23,7 +23,12 @@ public class PropertiesBundlerTask extends Task {
 	public void setLpVersion(String lpVersion) {
 		this.lpVersion = lpVersion;
 	}
-	
+
+	public void setPropertiesDir(String propertiesDir) {
+		this.propertiesDir = propertiesDir;
+	}
+
 	private String lpVersion;
+	private String propertiesDir;
 
 }

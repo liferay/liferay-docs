@@ -12,9 +12,9 @@
 		</p>
 
 		<ul>
-			<#list properties as property>
+			<#list htmlFiles as htmlFile>
 				<li>
-					<a href="${property}" title="${property}">${property}</a>
+					<a href="${htmlFile.fileName}" title="${htmlFile.fileName}">${htmlFile.propertiesFileName}</a>
 				</li>
 			</#list>
 		</ul>
