@@ -124,20 +124,6 @@ implementing single sign-on between the portal and the application.
 There are many more options, each with its own merits. Reviewing them all is out
 of the scope of this guide; however, the above options are worth considering. 
 
-If the existing application has been developed as a Java EE application, Liferay
-provides a technology called Web Application Integrator that prototypes the
-integration and provides several nice features. 
-
-<!-- Do we still maintain this? I haven't heard anything about it in a long
-time. -->
-
-In order to use Web Application Integrator all you need to do is deploy its WAR
-file as you would any Liferay plugin. Liferay automatically creates a portlet
-that integrates your application using an IFrame. 
-
-<!-- I think you have to do more than just deploy it. I think there's an
-additional deployment descriptor. -->
-
 Next let's consider some of the technology frameworks Liferay supports. 
 
 ### Supported technology frameworks
@@ -180,7 +166,13 @@ Alloy UI for your custom portlets or use another JavaScript library, as long as
 the library does not conflict with libraries referenced by other portlets
 deployed in the same portal. 
 
-<!-- There should be some mention of Service Builder here. --> 
+Liferay's Service Builder automates creation of interfaces and classes for
+database persistence and service layers. It generates most of the common code
+that implements operations accessing the database, letting you focus on higher
+level aspects of service design. You implement the local interface with your
+business logic and implement the remote interface with your permission checks.
+Objects on the portal instance interact with the local interface, while objects
+outside interact with the remote interface via JSON, SOAP, and Java RMI. 
 
 In addition to those mentioned above, there are thousands more frameworks and
 libraries available to you for handling persistence, caching, connections to
@@ -202,15 +194,15 @@ they can be used.
 
 ### Customizing the look and feel: Themes
 
-Themes let you specify the look of your Liferay portal using a combination of
-CSS and Velocity or FreeMarker templates. In many cases, it is possible to adapt
-the default Liferay theme to a desired look using only CSS; this is the most
-forward compatible approach. If CSS alone is insufficient, you can create a
-theme consisting of only a subset of the required templates and rely on the
-remaining templates being copied from the default theme at deployment. Like
-portlets, themes are hot-deployed as plugins into Liferay instances. 
-
-<!-- This borders on TMI; we need to make this higher level. --> 
+Themes let you dictate your site's look and feel. You can specify color schemes
+and commonly used images. You'll apply styling for UI elements such as its
+fonts, links, navigation elements, page headers, and page footers, using a
+combination of CSS and Velocity or FreeMarker templates. With Liferay's Alloy UI
+tag library, you use a consistent interface to common UI technologies tailored
+to Liferay. And themes facilitate creating sites that respond well to the window
+widths of your user's desktop, tablet, and mobile devices. Most importantly,
+themes let you focus on designing your site's UI, without worrying about its
+functionality. 
 
 ### Adding new predefined page layouts: Layout Templates
 
