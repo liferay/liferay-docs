@@ -53,20 +53,11 @@ This section is a detailed guide on how to install Liferay IDE.
 	*Eclipse Juno Update Site*
 	[http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
 
-	[http://releases.liferay.com/tools/ide/eclipse/juno/nightly/](http://releases.liferay.com/tools/ide/eclipse/juno/nightly/)
-	(Nightly builds are unstable but contain new features more quickly)
-
     *Eclipse Indigo Update Site*
     [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
 
-    [http://releases.liferay.com/tools/ide/eclipse/indigo/nightly/](http://releases.liferay.com/tools/ide/eclipse/indigo/nightly/)
-    (Nightly builds are unstable but contain new features more quickly)
-
     *Eclipse Helios Update Site*
     [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
-
-    [http://releases.liferay.com/tools/ide/eclipse/helios/nightly/](http://releases.liferay.com/tools/ide/eclipse/helios/nightly/)
-    (Nightly builds are unstable but contain new features more quickly)
 
 5. After pasting in the URL, press *Enter*.
 
@@ -113,8 +104,8 @@ Before getting started you should satisfy the next requirements:
 3. Eclipse IDE for Java EE Developers (Helios version or greater) + Liferay IDE
    (see the Installation steps).
 
-Note: Earlier versions of Liferay, eg 5.2.x, are not supported yet by the
-Liferay IDE.
+Note: Earlier versions of Liferay, eg 5.2.x, are not supported by the Liferay
+IDE.
 
 ### Liferay Plugins SDK Setup 
 
