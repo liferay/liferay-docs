@@ -445,8 +445,17 @@ launched and managed one. The remote instance of Liferay Portal must have the
 Remote IDE Connector application installed from Liferay Marketplace. This
 application installs the server-manager-web plugin for Liferay that provides an
 API for Liferay IDE's Remote Server Adapter to use for all its remote
-operations. In this section, we explain how to set up and use Liferay IDE's
-Remote Server Adapter.
+operations. In this section, we discuss the basic use case for the Remote Server
+Adapter and explain how to set up and use it.
+
+The basic use case of the Remote Server Adapter is to allow developers to deploy
+local projects to a remote development server for testing or QA. Any developers
+using Liferay IDE who have access to a remote server on which the Remote IDE
+Connector application has been installed can deploy projects to the remote
+server for testing. While it's possible to install the Remote IDE Connector
+application on a production server to enable developers to deploy projects
+remotely, we recommend against this practice since it would present an
+unnecessary security risk.
 
 To complete this section's tutorial, you'll need the following resources:
 
