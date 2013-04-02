@@ -56,11 +56,11 @@ operating system-specific commands:
 
 1. Example in Linux and Mac OS X:
 
-    ./create.sh 1-4-1-columns "1-4-1 Columns"
+        ./create.sh 1-4-1-columns "1-4-1 Columns"
 
 2. Example in Windows:
 
-    create.bat 1-4-1-columns "1-4-1 Columns"
+        create.bat 1-4-1-columns "1-4-1 Columns"
 
 Developer Studio's *New Project* wizard and the *create* scripts in terminal
 both generate layout template projects in your Plugin SDK's `layouttpl` folder.
@@ -74,7 +74,7 @@ about its various files.
 
 Directory structure of a layout template project named "Columns 1 4 1":
 
-- `columns-1-4-1-layouttpl/
+- `columns-1-4-1-layouttpl/`
 
 	- `docroot/`
 
@@ -94,7 +94,7 @@ Directory structure of a layout template project named "Columns 1 4 1":
 
 The SDK automatically appends "-layouttpl" to your project name. Although we've
 only shown the `.png`, `.tpl`, and`.wap.tpl` files for one layout template in
-our directory structure, a project can contai multiple layout templates. Each
+our directory structure, a project can contain multiple layout templates. Each
 should have its own thumbnail image (PNG), regular template (TPL) and mobile
 device template (WAP TPL). The "liferay-" files help to describe the layout
 templates for packaging and deployment. 
@@ -157,7 +157,7 @@ Example server output:
 Wait a minute! We know how to deploy the template, but we still haven't designed
 it. Let's design your layout next. 
 
-## Designing a layout template 
+## Designing a layout template
 
 The layout template's generated TPL files are initially empty, a fresh canvas on
 which you design your layout templates. This can seem overwhelming, but don't
