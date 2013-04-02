@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-common">
+	<property environment="env" />
+
+	<property file="${project.dir}/build.${user.name}.properties" />
+	<property file="${project.dir}/build.${env.COMPUTERNAME}.properties" />
+	<property file="${project.dir}/build.${env.HOST}.properties" />
+	<property file="${project.dir}/build.${env.HOSTNAME}.properties" />
+	<property file="${project.dir}/build.properties" />
+
+	<property name="app.server.classes.portal.dir" value="${app.server.portal.dir}/WEB-INF/classes" />
+	<property name="app.server.lib.portal.dir" location="${app.server.portal.dir}/WEB-INF/lib" />
+
+	<path id="lib.classpath">
+		<fileset dir="${project.dir}/lib" includes="*.jar" />
+	</path>
+
+	<path id="plugin.classpath">
+		<path refid="plugin-lib.classpath" />
+		<fileset dir="${app.server.lib.global.dir}" includes="*.jar" />
+		<fileset dir="${app.server.lib.portal.dir}" includes="annotations.jar,commons-logging.jar,log4j.jar,util-bridges.jar,util-java.jar,util-taglib.jar" />
+		<fileset dir="${project.dir}/lib" includes="activation.jar,jsp-api.jar,mail.jar,servlet-api.jar" />
+	</path>
+
+	<path id="portal.classpath">
+		<pathelement location="${app.server.classes.portal.dir}" />
+		<fileset dir="${app.server.lib.global.dir}" includes="*.jar" />
+		<fileset dir="${app.server.lib.portal.dir}" includes="*.jar" />
+		<fileset dir="${project.dir}/lib" includes="activation.jar,jargs.jar,jsp-api.jar,qdox.jar,servlet-api.jar" />
+	</path>
+
+	<path id="test.classpath">
+		<path refid="plugin.classpath" />
+		<fileset dir="${app.server.lib.portal.dir}" includes="commons-io.jar" />
+		<fileset dir="${project.dir}/lib" includes="junit.jar" />
+		<pathelement location="test-classes/integration" />
+		<pathelement location="test-classes/unit" />
+	</path>
+
+	<taskdef classpathref="lib.classpath" resource="net/sf/antcontrib/antlib.xml" />
+	<taskdef classpathref="lib.classpath" resource="ise/antelope/tasks/antlib.xml" uri="antlib:ise.antelope.tasks" />
+
+	<condition property="correct.ant.version">
+		<antversion atleast="1.7.0" />
+	</condition>
+
+	<if>
+		<not>
+			<equals arg1="${correct.ant.version}" arg2="true" />
+		</not>
+		<then>
+			<fail>Please use Ant 1.7.0 or above.</fail>
+		</then>
+	</if>
+
+	<whichresource resource="/org/eclipse/jdt/core/JDTCompilerAdapter.class" property="ecj.compiler" />
+
+	<if>
+		<and>
+			<equals arg1="${javac.compiler}" arg2="org.eclipse.jdt.core.JDTCompilerAdapter" />
+			<not>
+				<isset property="ecj.compiler" />
+			</not>
+		</and>
+		<then>
+			<copy file="${project.dir}/lib/ecj.jar" todir="${ant.home}/lib" />
+
+			<fail>
+.
+
+Task cannot continue because ECJ is not installed.
+
+ECJ was automatically installed. Please rerun your task.
+			</fail>
+		</then>
+	</if>
+
+	<target name="compile-java">
+		<copy todir="${javac.destdir}">
+			<fileset dir="${javac.srcdir}" excludes="**/*.java" />
+		</copy>
+
+		<javac
+			classpathref="${javac.classpathref}"
+			compiler="${javac.compiler}"
+			debug="${javac.debug}"
+			deprecation="${javac.deprecation}"
+			destdir="${javac.destdir}"
+			encoding="${javac.encoding}"
+			includeAntRuntime="false"
+			nowarn="${javac.nowarn}"
+			srcdir="${javac.srcdir}"
+		/>
+	</target>
+
+	<target name="format-javadoc">
+		<java
+			classname="com.liferay.portal.tools.JavadocFormatter"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Xmx512m" />
+			<arg value="javadoc.init=${init}" />
+			<arg value="javadoc.input.dir=${input.dir}" />
+			<arg value="javadoc.limit=${limit}" />
+			<arg value="javadoc.output.file.prefix=${output.file.prefix}" />
+			<arg value="javadoc.update=${update}" />
+		</java>
+	</target>
+
+	<target name="format-source">
+		<java
+			classname="com.liferay.portal.tools.SourceFormatter"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Xmx512m" />
+			<jvmarg value="-Xss2048k" />
+		</java>
+
+		<delete file="ServiceBuilder.temp" />
+	</target>
+
+	<target name="print-current-time">
+		<tstamp>
+			<format property="current.time" pattern="MMMM d, yyyy 'at' hh:mm aa" />
+		</tstamp>
+
+		<echo message="${current.time}" />
+	</target>
+
+	<target name="setup-eclipse">
+		<java
+			classname="com.liferay.portal.tools.PluginsEnvironmentBuilder"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Dplugins.env.dir=." />
+		</java>
+	</target>
+</project>
