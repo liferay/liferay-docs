@@ -98,6 +98,7 @@ is, you can develop a portlet and then let anyone with access to your portlet
 add it as a remote gadget to pages on other portals or social networks. 
 
 <!-- Again, TMI; paragraph removed. -->
+
 ### Reusing existing web applications
 
 What if you already have an existing application that has not been implemented
