@@ -172,7 +172,7 @@ Next, let's consider the structure of the Plugins SDK.
 Each folder in the Plugins SDK contains scripts for creating new plugins of that
 type. Here is the directory structure of the Plugins SDK: 
 
-- `liferay-plugins-<version>/` - Plugins SDK root directory 
+- `liferay-plugins-<version>/` - Plugins SDK root directory. 
 
     - `clients/` - client applications directory. 
 
@@ -239,58 +239,7 @@ community wiki page for details.
 
 - `format-javadoc` - formats the Javadoc per Liferay's Javadoc guidelines. See
 the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
-community wiki page for details. 
-
-Next let's use the Plugins SDK to create a plugin that extends another plugin. 
-
-<!-- RS: I don't think this section should go here; it's confusing for the beginner. -->
-
-## Creating Plugins to extend Plugins
-
-For Liferay plugins, you can create a new plugin that extends an existing one.
-By extending a plugin, you can use all its features in your new plugin while
-keeping your changes/extensions separate from the existing plugin's source code. 
-
-To create a plugin which extends another, follow these steps: 
-
-1. Create a new empty plugin in the Plugins SDK. 
-
-2. Remove all the auto-generated files except `build.xml` and the docroot
-   folder, which should be empty. 
-
-3. Copy the original WAR file of the plugin you'd like to extend (for example,
-   social-networking-portlet-6.1.10.1-ee-ga1.war) to the root folder of your new
-   plugin. 
-
-4. Add the following line to your `build.xml` inside of the `<project>` tag to
-   reference the original WAR file you are going to extend:
-
-        <property name="original.war.file" value="social-networking-portlet-6.1.10.1-ee-ga1.war" />
-
-5. Copy any files from the original plugin that you're overwriting to your
-   new plugin (using the same folder structure) and run the Ant target `merge`.
-   Please note that the `merge` target is called whenever the plugin is compiled.
-   All you have to do is to check the Ant output:
-
-        dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
-        Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.xml
-        
-        compile:
-        
-        merge:
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/classes
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/lib
-        
-        merge-unzip:
-        [unzip] Expanding: /home/dsanz/sdk/portlets/my-social-networking-portlet/social-networking-portlet-6.1.10.1-ee-ga1.war into /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
-        [copy] Copying 2 files to /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/docroot/WEB-INF/classes
-        
-        ...
-
-This generates a plugin (you can find the WAR file in the `/dist` folder of your
-plugins SDK) which combines the original one with your changes. 
+community wiki page for details.
 
 Next, let's consider some best practices for developing plugins using the SDK. 
 
