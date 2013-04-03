@@ -86,10 +86,6 @@ environments that lack full access to the Internet.
 portlets. Since a gadget is defined in an XML file, uploading this file is all
 that's necessary to deploy the gadget.
 
-<!-- I removed the specifics about deploying a gadget, because it's TMI (Too
-Much Information) for the introduction. This can be more adequately covered in
-the specific section where we'll deploy a gadget. --> 
-
 Once you've saved your new gadget, it appears as an application that
 administrators can add to their site's pages. 
 
@@ -97,7 +93,6 @@ Liferay lets you expose portlets to the outsde world as OpenSocial gadgets. That
 is, you can develop a portlet and then let anyone with access to your portlet
 add it as a remote gadget to pages on other portals or social networks. 
 
-<!-- Again, TMI; paragraph removed. -->
 ### Reusing existing web applications
 
 What if you already have an existing application that has not been implemented
