@@ -884,20 +884,78 @@ explore localization of the portlet's user interface.
 
 If your portlets target an international audience, you can localize the user
 interface. Localizing your portlet's language is done using language keys for
-each language you wish to support. You can translate these manually or 
-use a web service to translate them for you. Conveniently, all existing
-translated messages in the portal core are accessible from plugin projects. You
-can check for the presence of a key in the core `Language.properties` file and
-include it in your jsp with the `<liferay-ui:message>` tag:
+each language you wish to support. You can translate these manually or use a web
+service to translate them for you. Conveniently, all existing translated
+messages in the portal core are accessible from plugin projects. You can check
+for the presence of specific language keys in the core `Language.properties`
+file found in `portal-impl/src/content`. Leveraging portal's core language keys
+saves you time, since these keys always have up to date translations for
+multiple languages. Additionally, your portlet blends better into Liferay's UI
+conventions.
 
-    <liferay-ui:message key="your-message-key" />
+You can use a language key in your JSP via a `<liferay-ui:message />` tag. 
 
-This procedure saves you time, since these keys always have up to date
-translations for multiple languages. Additionally, your portlet blends better
-into Liferay's UI conventions. 
+    <liferay-ui:message key="message-key" />
 
-If you need to add localization keys, follow the instructions below to deliver
-a locally tailored portlet to your customers. 
+You specify the message key corresponding to the message from
+`Language.properties` you want displayed. For example, to welcome a user in
+their language, specify the message key named `welcome`. This key maps to the
+user's translation of "welcome". Here is the language property from Liferay's
+`Language.properties` file. 
+
+    welcome=Welcome
+
+The `<liferay-ui:message />` tag also supports passing arguments for displaying
+in messages. For example, to welcome a user by his name, pass in the user's name
+as an argument for message with key `welcome-x`. Here is the core message
+property. 
+
+    welcome-x=Welcome{0}!
+
+Notice, it references the first argument, denoted by `{0}`. An arbitrary number
+of arguments can be used with a message. They are referenced as `{0}`, `{1}`,
+... etc, based on the order they are passed in via the message tag. To
+demonstrate, let's say you assign a JSP variable named `userName` the name of
+the user. Then you pass that variable as an argument in the following message
+tag:
+
+    <liferay-ui:message arguments="<%= userName %>" key="welcome-x" />
+
+If the user's name is "Joe" and he's using the default locale, he will be
+greeted with a cheerful "Welcome Joe!" from the JSP. 
+
+Some other message tags to use are the `<liferay-ui:success />` and
+`<liferay-ui:error />` tags. Use the success tag to give positive feedback to
+your user's actions. Use the error tag to alert your user to
+exceptional conditions based on his actions. Both tags trigger on their key
+values being present in the current `SessionMessage` instance accompanying your
+request. Add a key value to your to the `SessionMessage` like so:
+
+    SessionMessages.add(request, "emailFromAddress");
+
+For example, if the request was rendering the Blogs portlet's
+`configuration.jsp`, an error message would be triggered by the following
+tag found in that JSP:
+
+    <liferay-ui:error key="emailFromAddress" message="please-enter-a-valid-email-address" />
+
+On the tag being invoked, Liferay looks up the message for message key
+`please-enter-a-valid-email-address` and displays the following text marked up
+as an error message to the user. 
+
+    Please enter a valid email address.
+
+The `<liferay-ui:success />` is triggerd in the same manner, but it displays a
+message marked up as a success to the user. 
+
+Note, in order to use any of these three tags, you'll need to import the
+`liferay-ui` tag library into your JSP.  
+
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+That's all you need to do to leverage Liferay's core localization keys. If you
+need to add localization keys, follow the instructions below to deliver a
+locally tailored portlet to your customers. 
 
 ### Your Localization Plan 
 
@@ -945,45 +1003,70 @@ start:
     <portlet>
         <portlet-name>finances</portlet-name>
         ...
-        <resource-bundle>content.Language</resource-bundle>
+        <resource-bundle>content/Language</resource-bundle>
         ...
     </portlet>
     <portlet>
-		<portlet-name>portfolio</portlet-name>
+        <portlet-name>portfolio</portlet-name>
         ...
-        <resource-bundle>content.Language</resource-bundle>
+        <resource-bundle>content/Language</resource-bundle>
         ...
     </portlet>
     <portlet>
         <portlet-name>ticker</portlet-name>
         ...
-        <resource-bundle>content.Language</resource-bundle>
+        <resource-bundle>content/Language</resource-bundle>
         ...
     </portlet>
 
-At this point our portlets are ready to deliver a localized UI. 
+At this point our portlets are ready to deliver a localized UI.
 
 **Please note:** It's best to use the Liferay naming convention for language
-bundles so your portlets can share properties, and the `build-lang` Ant task
-works. 
+bundles so your portlets can share properties, and the Plugins SDK Ant task used
+to build the translations works.
 
-Once you create `Language.properties` and have filled it with keys and values,
-use the Ant `build-lang` task to build the translations. The `build-lang` task
-performs the following operations:
+In order for a user to see a message in his own locale, the message value must
+be specified in a resource bundle file with a name ending in his locale's two
+character code. For example, a resource bundle file named
+`Language_es.properties` containing a message property with key `welcome` must
+be present with a Spanish translation of the word "Welcome". Good news, Plugins
+SDK provides a means for you to get translatations for your default resource
+bundle.
 
-- Creates translation files for other languages. 
+The Plugins SDK uses the Bing Translator service
+[http://www.microsofttranslator.com/](http://www.microsofttranslator.com/) to
+translate all of the resources in your Language.properties file to multiple
+languages. It provides a base translation for you to start with. To create base
+translations using the Bing Translator service, you'll need to do the following:
 
-- Translates English text to target language if you've set up the API key. 
+1. Signup for an Azure Marketploace account and register your application. Be
+sure to write down your ID and secret given to you for your application.
 
-- Keeps all created translations synchronized with `Language.properties`. You can
-  run this task any time during development. It significantly reduces the 
-  time spent on the maintanance of translations. 
+2. Edit the `portal-ext.properties` file in your Liferay Home directory by
+adding the following two lines replaced with your values:
 
-Next, let's localize portlet titles and descriptions. 
+        microsoft.translator.client.id=your-id
+        microsoft.translator.client.secret=your-secret
 
-<!-- The above is no longer correct. Yahoo shut down their Translate service,
-and now you need to edit your build.[username].properties file and provide a
-Bing translate key to get the automatic translations to work. --> 
+3. In Developer Studio, right-click on the `Language.properties` file &rarr;
+Liferay &rarr; Build Languages.
+
+    3.1 If prompted, choose the option to force Eclipse to accept the
+        `Language.properties` file as UTF-8.
+
+    3.2 Make sure you are connected to the Internet when you execute this.
+
+When the build completes, you'll find the generated files with all of the
+translations, in the same folder as your `Language.properties` file.
+
+By using Studio's language building capability, you can keep all created
+translations synchronized with your default `Language.properties`. You can run
+it any time during development. It significantly reduces the time spent on the
+maintanance of translations. Of course, you'll want to have someone fluent in
+that language review the translation before deploying the translation to a
+Production environment. 
+
+Next, let's localize titles and descriptions of our various fictitious portlets. 
 
 ### Portlet Title and Description In Control Panel
 
@@ -1015,19 +1098,19 @@ our `portlet.xml` this way:
     <portlet>
         <portlet-name>1</portlet-name>
         ...
-        <resource-bundle>content.Language</resource-bundle>
+        <resource-bundle>content/Language</resource-bundle>
         ...
     </portlet>
     <portlet>
         <portlet-name>2</portlet-name>
         ...
-        <resource-bundle>content.Language</resource-bundle>
+        <resource-bundle>content/Language</resource-bundle>
         ...
     </portlet>
     <portlet>
         <portlet-name>3</portlet-name>
         ...
-        <resource-bundle>content.Language</resource-bundle>
+        <resource-bundle>content/Language</resource-bundle>
         ...
     </portlet>
 
