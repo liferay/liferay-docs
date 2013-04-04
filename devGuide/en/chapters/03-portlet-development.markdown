@@ -136,10 +136,10 @@ is a method of deployment used throughout this guide.
 server. When deploying your plugin, your server displays messages indicating
 that your plugin was read, registered and is now available for use. 
 
-	Reading plugin package for my-greeting-portlet
-	Registering portlets for my-greeting-portlet
-	1 portlet for my-greeting-portlet is available for use
-	
+    Reading plugin package for my-greeting-portlet
+    Registering portlets for my-greeting-portlet
+    1 portlet for my-greeting-portlet is available for use
+
 If at any time you need to redeploy your portlet while in Developer Studio,
 right-click your portlet located underneath your server and select *Redeploy*. 
 
@@ -351,9 +351,9 @@ portlet's `docroot` directory. Replace its current contents with the following:
     <portlet:defineObjects />
 
     <%
-	PortletPreferences prefs = renderRequest.getPreferences();
-	String greeting = (String)prefs.getValue(
-	"greeting", "Hello! Welcome to our portal.");
+    PortletPreferences prefs = renderRequest.getPreferences();
+    String greeting = (String)prefs.getValue(
+    "greeting", "Hello! Welcome to our portal.");
     %>
 
     <p><%= greeting %></p>
@@ -375,36 +375,36 @@ content:
     <portlet:defineObjects />
 
     <%
-	PortletPreferences prefs = renderRequest.getPreferences();
-	String greeting = renderRequest.getParameter("greeting");
-	if (greeting != null) {
-		prefs.setValue("greeting", greeting);
-		prefs.store();
+    PortletPreferences prefs = renderRequest.getPreferences();
+    String greeting = renderRequest.getParameter("greeting");
+    if (greeting != null) {
+        prefs.setValue("greeting", greeting);
+        prefs.store();
     %>
 
-		<p>Greeting saved successfully!</p>
+        <p>Greeting saved successfully!</p>
 
     <%
-	}
+    }
     %>
 
     <%
-	greeting = (String)prefs.getValue(
-		"greeting", "Hello! Welcome to our portal.");
+    greeting = (String)prefs.getValue(
+        "greeting", "Hello! Welcome to our portal.");
     %>
 
     <portlet:renderURL var="editGreetingURL">
-		<portlet:param name="mvcPath" value="/edit.jsp" />
+        <portlet:param name="mvcPath" value="/edit.jsp" />
     </portlet:renderURL>
 
     <aui:form action="<%= editGreetingURL %>" method="post">
-		<aui:input label="greeting" name="greeting" type="text" value="<%=
-	greeting %>" />
-		<aui:button type="submit" />
+        <aui:input label="greeting" name="greeting" type="text" value="<%=
+    greeting %>" />
+        <aui:button type="submit" />
     </aui:form>
 
     <portlet:renderURL var="viewGreetingURL">
-		<portlet:param name="mvcPath" value="/view.jsp" />
+        <portlet:param name="mvcPath" value="/view.jsp" />
     </portlet:renderURL>
 
     <p><a href="<%= viewGreetingURL %>">&larr; Back</a></p>
@@ -566,14 +566,14 @@ in your portal project.
 The file `portlet.xml` must also be changed so that it points to your new class:
 
     <portlet>
-	<portlet-name>my-greeting</portlet-name>
-	<display-name>My Greeting</display-name>
-	<portlet-class>com.liferay.samples.MyGreetingPortlet</portlet-class>
-	<init-param>
-	    <name>view-template</name>
-	    <value>/view.jsp</value>
-	</init-param>
-	...
+    <portlet-name>my-greeting</portlet-name>
+    <display-name>My Greeting</display-name>
+    <portlet-class>com.liferay.samples.MyGreetingPortlet</portlet-class>
+    <init-param>
+        <name>view-template</name>
+        <value>/view.jsp</value>
+    </init-param>
+    ...
 
 Finally, make a minor change in the `edit.jsp` file, changing the URL to which
 the form is sent in order to let the portal know to execute the action phase.
@@ -716,8 +716,8 @@ Next, in `view.jsp`, add the `liferay-ui:success` JSP tag and add the taglib
 declarations below:
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %> 
-	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %> 
-	<%@ page import="javax.portlet.PortletPreferences" %>
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %> 
+    <%@ page import="javax.portlet.PortletPreferences" %>
 
     <portlet:defineObjects />
 
@@ -842,11 +842,11 @@ rather than in the query string. To add this functionality, first edit
 before `<instanceable>`. 
 
     <friendly-url-mapper-class>
-    	com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper
+        com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper
     </friendly-url-mapper-class>
     <friendly-url-mapping>my-greeting</friendly-url-mapping>
     <friendly-url-routes>
-    	com/liferay/samples/my-greeting-friendly-url-routes.xml
+        com/liferay/samples/my-greeting-friendly-url-routes.xml
     </friendly-url-routes>
 
 Next, create the file (remove the line break):
