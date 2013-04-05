@@ -899,65 +899,92 @@ You can use a language key in your JSP via a `<liferay-ui:message />` tag.
 
     <liferay-ui:message key="message-key" />
 
-You specify the message key corresponding to the message from
-`Language.properties` you want displayed. For example, to welcome a user in
-their language, specify the message key named `welcome`. This key maps to the
-user's translation of "welcome". Here is the language property from Liferay's
-`Language.properties` file. 
+You specify the message key corresponding to the language key in the
+`Language.properties` file you want to display. For example, to welcome a user
+in their language, specify the message key named `welcome`.
+
+    <liferay-ui:message key="welcome" />
+
+This key maps to the of the word "Welcome", in your translation of it to the
+user's locale. Here is the `welcome` language key from Liferay's
+`Language.properties` file.
 
     welcome=Welcome
 
-The `<liferay-ui:message />` tag also supports passing arguments for displaying
-in messages. For example, to welcome a user by his name, pass in the user's name
-as an argument for message with key `welcome-x`. Here is the core message
-property. 
+Let's add the `welcome` language key in front of our greeting in the
+`view.jsp` file of the `my-greeting-portlet` we created earlier. Replace its
+current greeting paragraph with this:
 
-    welcome-x=Welcome{0}!
+    <p><liferay-ui:message key="welcome" />! <%= greeting %></p>
 
-Notice, it references the first argument, denoted by `{0}`. An arbitrary number
-of arguments can be used with a message. They are referenced as `{0}`, `{1}`,
-... etc, based on the order they are passed in via the message tag. To
-demonstrate, let's say you assign a JSP variable named `userName` the name of
-the user. Then you pass that variable as an argument in the following message
-tag:
+Revisit the page to see the word "Welcome", from `Language.properties`, now
+precedes your greeting!
 
-    <liferay-ui:message arguments="<%= userName %>" key="welcome-x" />
-
-If the user's name is "Joe" and he's using the default locale, he will be
-greeted with a cheerful "Welcome Joe!" from the JSP. 
-
-Some other message tags to use are the `<liferay-ui:success />` and
-`<liferay-ui:error />` tags. Use the success tag to give positive feedback to
-your user's actions. Use the error tag to alert your user to
-exceptional conditions based on his actions. Both tags trigger on their key
-values being present in the current `SessionMessage` instance accompanying your
-request. Add a key value to your to the `SessionMessage` like so:
-
-    SessionMessages.add(request, "emailFromAddress");
-
-For example, if the request was rendering the Blogs portlet's
-`configuration.jsp`, an error message would be triggered by the following
-tag found in that JSP:
-
-    <liferay-ui:error key="emailFromAddress" message="please-enter-a-valid-email-address" />
-
-On the tag being invoked, Liferay looks up the message for message key
-`please-enter-a-valid-email-address` and displays the following text marked up
-as an error message to the user. 
-
-    Please enter a valid email address.
-
-The `<liferay-ui:success />` is triggerd in the same manner, but it displays a
-message marked up as a success to the user. 
-
-Note, in order to use any of these three tags, you'll need to import the
-`liferay-ui` tag library into your JSP.  
+Note, in order to use the `<liferay-ui:message />` tag, or any of the
+`liferay-ui` tags, you must include the following line in your JSP. It imports
+the `liferay-ui` tag library. 
 
     <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
+The `<liferay-ui:message />` tag also supports passing strings as arguments to
+a language key. For example, the `welcome-x` key expects one argument. Here is
+`welcome-x` key from the `Language.properties` file:
+
+    welcome-x=Welcome{0}!
+
+It references `{0}`, which denotes the first argument of the argument list. An
+arbitrary number of arguments can be passed in via message tag, but only those
+arguments expected by the language key are used. The arguments are referenced in
+order as `{0}`, `{1}`, etc. Let's pass in the user's screen name as an argument
+to the `welcome-x` language key in the "My Greeting" portlet. 
+
+1. Open the `view.jsp` file. 
+
+2. Add the following lines near the top of the JSP, just above the
+`<portlet:defineObjects />` tag. The first line imports the `liferay-theme` tag
+library. The second line defines the library's objects, providing access to the
+`user` object holding the user's screen name. 
+
+        <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme"%>
+
+        <liferay-theme:defineObjects />
+
+2. Replace the current welcome message tag,
+`<liferay-ui:message key="welcome" />`, in the JSP with the following:
+
+        <liferay-ui:message key="welcome" /> <%= user.getScreenName() %>
+
+When you refesh your page, your "My Greeting" portlet greets you by your screen
+name!
+
+![Figure 3.11: By passing the user's screen name as an argument to Liferay's
+`welcome-x` language key, we were able to display a personalized
+greeting.](../../images/portlets-welcome-user-screenname.png)
+
+Other message tags you'll want to use are the `<liferay-ui:success />` and
+`<liferay-ui:error />` tags. The `<liferay-ui:success />` helps you give
+positive feedback, marked up in a pleasant green background. The
+`<liferay-ui:error />` tag helps you warn your users of invalid input or
+exceptional conditions. The error messages are marked up in an appropriate red
+background. 
+
+The `<liferay-ui:success />` tag is triggered when its key value is found in the
+`SessionMessages` object. Earlier in our `MyGreetingPortlet` class, we triggered
+the success message `<liferay-ui:success key="success" ... />` by adding its key
+to the `SessionMessages` object with the following call: 
+
+    SessionMessages.add(actionRequest, "success");
+
+Similarly, the `<liferay-ui:error />` tag is triggered when its key value is
+found in the `SessionErrors` object. Likewise, in our `MyGreetingPortlet` class,
+we triggered the error message `<liferay-ui:error key="error" ... />` by adding
+its key to the `SessionErrors` object with the following call: 
+
+    SessionErrors.add(actionRequest, "error");
+
 That's all you need to do to leverage Liferay's core localization keys. If you
-need to add localization keys, follow the instructions below to deliver a
-locally tailored portlet to your customers. 
+need to add localization keys, follow the instructions below to deliver locally
+tailored portlets to your customers. 
 
 ### Your Localization Plan 
 
