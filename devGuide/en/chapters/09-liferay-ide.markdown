@@ -1,16 +1,16 @@
 # Liferay IDE [](id=liferay-i-4)
 
-Liferay's developers use a variety of tools to develop the product and as a
-consequence of that they have always tried hard to allow other developers to use
-any tools they wanted for their own development. Because of this you can develop
-portals based on Liferay with complex IDEs Eclipse, Netbeans or IntelliJ Idea or
-just use text editors such as Notepad. You can write your persistence layer
-directly using SQL and JDBC or you can use advanced object-relational mapping
-libraries such as hibernate or iBatis.
+Liferay's developers use a variety of tools to develop the product. As a
+consequence, they have always tried hard to allow other developers to use any
+tools for their own development. For this reason, you can develop portals based
+on Liferay with complex IDEs such as Eclipse, Netbeans or IntelliJ Idea.
+Alternatively, you can just use text editors such as Notepad, Vim, or Emacs. You
+can write your persistence layer directly using SQL and JDBC or you can use
+advanced object-relational mapping libraries such as Hibernate or iBatis.
 
-But while being agnostic is great, specially for more experienced developers who
+While being tool-agnostic is great, especially for experienced developers who
 can reuse their existing knowledge, it can be overwhelming for newcomers. For
-that reason Liferay has also develped specific development tools that can be
+this reason, Liferay has also developed specific development tools that can be
 used to ease the learning curve when developing portlets with Liferay. The most
 significant of these tools is Liferay IDE, a fully featured Integrated
 Development Environment based on Eclipse.
@@ -30,73 +30,65 @@ preconfigured.
 
 ## Installation [](id=installati-6)
 
-This section is a detailed guide to install Liferay IDE.
+This section is a detailed guide on how to install Liferay IDE.
 
 ### Requirements [](id=lp-6-1-dgen07-requirements-0)
 
--   Java 5.0 JRE or greater
+- Java 5.0 JRE or greater
 
--   [Eclipse Indigo Java EE (3.7.1)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-
-developers/indigosr1) or [Eclipse Helios Java EE (3.6.2)]
-(http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
+- [Eclipse Juno Java EE (4.2.x)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junosr1),
+  [Eclipse Indigo Java EE (3.7.x)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2),
+or [Eclipse Helios Java EE (3.6.x)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
 
 ### Installation steps [](id=lp-6-1-dgen07-installation-steps-0)
 
-1.  Install Eclipse Indigo or Helios (unzip download file from above).
+1. Install Eclipse Juno, Indigo, or Helios (unzip download file from above).
 
-2.  Run eclipse executable (eclipse.exe).
+2. Run eclipse executable (eclipse.exe).
 
-3.  When eclipse opens, go to *Help* &rarr; *Install New Software...*.
+3. When eclipse opens, go to *Help* &rarr; *Install New Software...*.
 
-	![Figure 8.1: Installing new software in Eclipse](../../images/ide-install-new-software.png)
+![Figure 8.1: Installing new software in Eclipse](../../images/ide-install-new-software.png)
 
-4.  In the *Work with* field, paste in one of the following update sites:
+4. In the *Work with* field, paste in one of the following update sites:
+
+	*Eclipse Juno Update Site*
+	[http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
 
     *Eclipse Indigo Update Site*
-    [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/]
-(http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
-
-    [http://releases.liferay.com/tools/ide/eclipse/indigo/nightly/]
-(http://releases.liferay.com/tools/ide/eclipse/indigo/nightly/)
-    (Nightly builds are unstable but contain new features more quickly)
+    [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
 
     *Eclipse Helios Update Site*
-    [http://releases.liferay.com/tools/ide/eclipse/helios/stable/]
-(http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
+    [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
 
-    [http://releases.liferay.com/tools/ide/eclipse/helios/nightly/]
-(http://releases.liferay.com/tools/ide/eclipse/helios/nightly/)
-    (Nightly builds are unstable but contain new features more quickly)
+5. After pasting in the URL, press *Enter*.
 
-5.  After pasting in URL press enter.
+![Figure 8.2: Entering the information for Liferay IDE](../../images/ide-install-available-software.png)
 
-	![Figure 8.2: Entering the information for Liferay IDE](../../images/ide-install-available-
-software.png)
+6. The Liferay IDE features should be detected. Select them before clicking
+   *Next*.
 
-6. The Liferay IDE features should be detected, select it before clicking
-*Next*.
+7. After calculating dependencies, click *Next* to complete installation.
 
-7.	After calculating dependencies, click Next to complete installation.
+8. After installation, restart Eclipse to verify that installation is complete.
 
-8.	After installation restart Eclipse to verify installation is complete.
+9. After restarting Eclipse, go to *Help* &rarr; *About* and you should see an
+   icon badge for Liferay IDE that shows you have it properly installed.
 
-9. After restarting Eclipse go to Help &rarr; About and you should see and icon
-badge for Liferay IDE that shows you have it properly installed.
-
-	![Figure 8.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
+![Figure 8.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
 ### Alternative installation [](id=lp-6-1-dgen07-alternative-installation-0)
 
-The next set of instructions describe how to install Liferay IDE without typing
-the URL of an update site:
+The next set of instructions describes how to install Liferay IDE without
+entering the URL of an update site:
 
 1. Instead of typing in a URL, you can download the lastest version from the
-releases page. [Eclipse Update Site](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
+   releases page. [Liferay IDE Downloads Page](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
 
 2. In Add Site dialog, click the *Archive* button and browse to the location of
-the downloaded zip file.
+   the downloaded zip file.
 
-3.  Installation proceeds the same as previous section.
+3. Installation proceeds the same as in the previous section.
 
 ## Set up [](id=set--4)
 
@@ -107,28 +99,27 @@ and testing your developments.
 
 Before getting started you should satisfy the next requirements:
 
-1.  Liferay Portal 6.0 (6.0.5 or greater) downloaded and unzipped.
+1. Liferay Portal 6.0 (6.0.5 or greater) downloaded and unzipped.
 
-2.  Liferay plug-ins SDK (6.0.5 or greater) downloaded and unzipped.
+2. Liferay plug-ins SDK (6.0.5 or greater) downloaded and unzipped.
 
 3. Eclipse IDE for Java EE Developers (Helios version or greater) + Liferay IDE
-(see the Installation steps).
+   (see the Installation steps).
 
-Note: Earlier versions of Liferay, eg 5.2.x, are not supported yet by the
-Liferay IDE.
+Note: Earlier versions of Liferay, eg 5.2.x, are not supported by the Liferay
+IDE.
 
 ### Liferay Plugins SDK Setup [](id=lp-6-1-dgen07-liferay-plugins-sdk-setup-0)
 
 Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK
 and Liferay Portal must be installed and configured in the IDE.
 
-1.  Open Eclipse with Liferay IDE installed.
+1. Open Eclipse with Liferay IDE installed.
 
 2. Open Preference page for Liferay &rarr; Installed SDKs (Go to Window &rarr;
 Preferences &rarr; Liferay &rarr; Installed Plugin SDKs).
 
-	![Figure 8.4: Creating a Liferay plugin project](../../images/ide-new-project-liferay-
-project.png)
+	![Figure 8.4: Creating a Liferay plugin project](../../images/ide-new-project-liferay-project.png)
 
 3.  Add your SDK using the add button which brings up the Add SDK Dialog.
 
@@ -157,8 +148,7 @@ under the Liferay, Inc. category and click Next.
 
 3. Click Browse and select the location of the liferay-portal-6.1.x directory.
 
-	![Figure 8.8: Browsing to your Liferay portal directory](../../images/ide-select-liferay-
-portal-directory.png)
+	![Figure 8.8: Browsing to your Liferay portal directory](../../images/ide-select-liferay-portal-directory.png)
 
 4. Once you have selected the Liferay portal directory, if a bundle JRE is
 present, this bundle will be automatically selected as the JRE to use for
@@ -170,8 +160,7 @@ then you will need to select the JRE to use for launch.
 5. Click finish and you should see the Liferay portal runtime in the list of
 runtimes in the preference page.
 
-	![Figure 8.10: Liferay portal in the list of available runtimes](../../images/ide-add-
-server-runtime.png)
+	![Figure 8.10: Liferay portal in the list of available runtimes](../../images/ide-add-server-runtime.png)
 
 6. Click ok to save the runtime preferences.
 
@@ -183,8 +172,7 @@ servers view before you can test the server.
 8. Find the Liferay, Inc category and select the Liferay v6 Server and choose
 the Liferay v6 Runtime that you had previously created.
 
-	![Figure 8.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-
-type.png)
+	![Figure 8.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-type.png)
 
 ## Testing/Launching Liferay Tomcat Server [](id=testing-launching-liferay-tomcat-serv-4)
 
@@ -216,13 +204,11 @@ In the Liferay project wizard page, the newly configured SDK and Liferay Runtime
 should be pre-selected. Also the plugin type *portlet* is the default. Simply
 type in a project name and cooresponding display name and click Finish.
 
-![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-
-project.png)
+![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-project.png)
 
 If it worked you should see a new plugin project in the package explorer. 
 
-![Figure 8.17: Viewing the new project in the Package Explorer view](../../images/ide-package-
-explorer-demo-portlet.png)
+![Figure 8.17: Viewing the new project in the Package Explorer view](../../images/ide-package-explorer-demo-portlet.png)
 
 ## Deploying New Liferay Projects to Liferay Server [](id=deploying-new-liferay-projects-to-liferay-serv-4)
 
@@ -240,8 +226,7 @@ and then click *Finish*.
 You should see the project get deployed to Liferay Tomcat server and in the
 console see a message about 1 new portlet being available:
 
-![Figure 8.20: Verifying the output in the Console view](../../images/ide-console-portlet-
-available.png)
+![Figure 8.20: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
 
 Open Liferay Portal Home http://localhost:8080/ in most cases and login within
 the following credentials:
@@ -292,13 +277,11 @@ inside a Plugins SDK.
 1. In Eclipse, go to File &rarr; New &rarr; Project... &rarr; Liferay &rarr;
 Liferay Project from Existing Source.
 
-	![Figure 8.22: Importing a Liferay Project](../../images/ide-select-liferay-project-from-
-existing.png)
+	![Figure 8.22: Importing a Liferay Project](../../images/ide-select-liferay-project-from-existing.png)
 
     Or you can invoke the same wizard from the Liferay shortcut bar.
 
-	![Figure 8.23: Alternate method of Importing a project](../../images/ide-new-proj-existing-
-source.png)
+	![Figure 8.23: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
 
 2. Browse to the location of the project folder. Note: the project folder should
 be a sub-directory of one of the plugin types, e.g. portlets, hooks, themes,
@@ -307,15 +290,13 @@ plugin project folder you should see the plugin type and SDK version values get
 updated to correct values. If the SDK is not recent enough or project type is
 not correct it will be marked with an error.
 
-	![Figure 8.24: Setting the Project location](../../images/ide-import-project-from-
-existing.png)
+	![Figure 8.24: Setting the Project location](../../images/ide-import-project-from-existing.png)
 
 3. Once you select the plugin project folder you should see the plugin type and
 SDK version values get updated to correct values. If the SDK is not recent
 enough or project type is not correct it will be marked with an error.
 
-	![Figure 8.25: Verifying the plugin type and version](../../images/ide-plugin-type-and-
-version.png)
+	![Figure 8.25: Verifying the plugin type and version](../../images/ide-plugin-type-and-version.png)
 
 4. Next you will need to select a Liferay Runtime to configure on the project
 once it is imported. If you don't have a Liferay Runtime, use the New... button
@@ -336,8 +317,7 @@ project for each of the plugins it finds inside in one single step.
 1. In Eclipse go to File &rarr; Import... &rarr; Liferay &rarr; Liferay Plugin
 SDK projects.
 
-	![Figure 8.27: Choosing the project type for import](../../images/ide-import-from-plugin-
-sdk.png)
+	![Figure 8.27: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
 
 2. First you must select the Plugins SDK that you want to import projects from
 in the combo box at the top of the wizard.
@@ -355,16 +335,14 @@ from.
 and then the SDK location and version will be filled in. If either are not valid
 it will be marked with an error.
 
-	![Figure 8.29: Verifying the SDK version and location](../../images/ide-select-configured-
-plugins-sdk.png)
+	![Figure 8.29: Verifying the SDK version and location](../../images/ide-select-configured-plugins-sdk.png)
 
 6. After the SDK is selected the list of projects that are available for import
 will be shown in the table. If the projects are already in the workspace they
 will be disabled. If the project is available for import it will have a empty
 checkbox that can be selected.
 
-	![Figure 8.30: Importing a project](../../images/ide-sample-service-builder-portlet-
-plugin.png)
+	![Figure 8.30: Importing a project](../../images/ide-sample-service-builder-portlet-plugin.png)
 
 6.  Select which projects that you wish to import.
 
@@ -394,8 +372,7 @@ Liferay &rarr; Convert to Liferay plug-in project.
     Java and Dynamic Web project facets configured and will need to be
     configured accordingly.
 
-    ![Figure 8.32: Selecting the convert option](../../images/ide-select-convert-to-liferay-
-project.png)
+    ![Figure 8.32: Selecting the convert option](../../images/ide-select-convert-to-liferay-project.png)
 
 2. When the convert dialog wizard opens your project should be auto-selected and
 the SDK location and SDK version should be auto-detected. If they are not valid
@@ -448,8 +425,7 @@ processes has been successful.
 inside Eclipse and it should have an "L" overlay image to show its a Liferay
 project.
 
-	![Figure 8.35: Verifying that the import suceeded](../../images/ide-liferay-project-w-
-overlay-image.png)
+	![Figure 8.35: Verifying that the import suceeded](../../images/ide-liferay-project-w-overlay-image.png)
 
 2. Secondly, to make sure the project is now a *Liferay IDE* project is to check
 the target runtime project property (right-click project &rarr; properties
@@ -1232,11 +1208,30 @@ icon.](../../images/kaleo-33.png)
 Now, click the pencil icon located beneath the green "plus" symbol. The
 FreeMarker template editor appears.
 
-Insert FreeMarker code into the FreeMarker editor to specify your
-email notification template. 
+Insert FreeMarker code into the FreeMarker editor to specify your email
+notification template. We've provided an example code snippet of what an email
+notification looks like written in FreeMarker.
 
-![Figure 8.66: You can edit your email template using the Freemarker
-editor.](../../images/kaleo-42.png)
+    <#assign comments = taskComments!"">
+    <#assign portalURL = serviceContext.portalURL!"">
+    <#assign wTasksURL = portalURL+"/group/control_panel/manage?p_p_id=153&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&doAsGroupId="+groupId+"&refererPlid=">
+
+    <!-- email body -->
+    <p> There is a new submission of ${entryType} waiting for review in the workflow. </p>
+
+    <!-- personal message to assignee -->
+    <p> Please review the code waiting for you in your workflow tasks.
+    <#if comments != "" > <br/> Assignment comment says: <strong>${comments}</strong> </#if>
+    </p>
+    <p> <a href="${wTasksURL}">Click here</a> to see workflow tasks assigned to you. </p>
+
+    <!-- signature -->
+    <p>Sincerely,<br /><strong>Liferay Portal Workflow</strong></p>
+
+Furthermore, the snapshot below gives an illustration of what the snippet sends
+to the configured email recipient.
+
+![Figure 8.66: This is how the email notification will appear when it's received.](../../images/kaleo-43.png)
 
 You've successfully completed setting up an email notification! Now, when the
 Project Management task node is activated in the workflow, the user we specified
