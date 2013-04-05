@@ -357,9 +357,9 @@ portlet's `docroot` directory. Replace its current contents with the following:
     %>
 
     <p><%= greeting %></p>
-    <portlet:renderURL var="editGreetingURL">
-    <portlet:param name="mvcPath" value="/edit.jsp" />
 
+    <portlet:renderURL var="editGreetingURL">
+        <portlet:param name="mvcPath" value="/edit.jsp" />
     </portlet:renderURL>
 
     <p><a href="<%= editGreetingURL %>">Edit greeting</a></p>
@@ -592,7 +592,7 @@ response.
 
 Let's change the `edit.jsp` file to use an *actionURL*, using the JSP tag of
 the same name. We'll also remove the previous code that was saving the
-preference:
+preference. Overwrite the `edit.jsp` file contents with the following:
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
     <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
@@ -725,12 +725,13 @@ declarations below:
     />
 
     <% PortletPreferences prefs = renderRequest.getPreferences(); String
-    greeting = (String)prefs.getValue( "greeting", "Hello! Welcome to our
-    portal."); %>
+    greeting = (String)prefs.getValue(
+        "greeting", "Hello! Welcome to our portal."); %>
 
-    <p><%= greeting %></p> <portlet:renderURL var="editGreetingURL">
-    <portlet:param name="mvcPath" value="/edit.jsp" />
+    <p><%= greeting %></p>
 
+    <portlet:renderURL var="editGreetingURL">
+        <portlet:param name="mvcPath" value="/edit.jsp" />
     </portlet:renderURL>
 
     <p><a href="<%= editGreetingURL %>">Edit greeting</a></p>
@@ -738,7 +739,7 @@ declarations below:
 After this change, redeploy the portlet, go to the edit screen and save it. You
 should see a nice message that looks like this:
 
-![Figure 3.7: The sample "My Greetings" portlet showing a success message](../../images/portlet-greeting-save.png)
+![Figure 3.7: The sample "My Greeting" portlet showing a success message](../../images/portlet-greeting-save.png)
 
 There's also an equivalent utility class for error notification; it's commonly
 used after catching an exception in the `processAction` method. For example:
@@ -746,6 +747,7 @@ used after catching an exception in the `processAction` method. For example:
     try {
         prefs.setValue("greeting", greeting);
         prefs.store();
+        SessionMessages.add(actionRequest, "success");
     }
     catch(Exception e) {
         SessionErrors.add(actionRequest, "error");
@@ -759,7 +761,7 @@ The error, if it exists, is shown in your `view.jsp` using the
 
 If an error occurred, you'd see this in your portlet:
 
-![Figure 3.8: The sample "My Greetings" portlet showing an error message](../../images/portlet-invalid-data.png)
+![Figure 3.8: The sample "My Greeting" portlet showing an error message](../../images/portlet-invalid-data.png)
 
 The first message is automatically added by Liferay. The second one is the one
 you added in your JSP. 
