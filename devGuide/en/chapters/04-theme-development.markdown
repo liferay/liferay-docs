@@ -290,7 +290,7 @@ included:
         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
         -Dexternal-properties=portal-developer.properties"
     
- [tip](../../images/tip-pen-paper.png)**Tip:** If you're already using the
+ ![tip](../../images/tip-pen-paper.png)**Tip:** If you're already using the
  system property `external-properties` to load other properties files, add
  `portal-developer.properties` to the list and use a comma to separate it from
  other entries.
@@ -449,19 +449,19 @@ with your company's name (e.g. Nosester) in the footer of your site pages:
 2. Declare the two theme setting variables in your `liferay-look-and-feel.xml`,
 located in your theme's `WEB-INF` folder:
 
-    <settings>
-    	<setting configurable="true" 
-                 key="slogan" 
-                 type="textarea" 
-                 value="" 
-        />
-
-       	<setting configurable="true" 
-                 key="display-slogan-footer" 
-                 type="checkbox" 
-                 value="true"
-        />
-    </settings>
+        <settings>
+            <setting configurable="true" 
+                     key="slogan" 
+                     type="textarea" 
+                     value="" 
+            />
+    
+            <setting configurable="true" 
+                     key="display-slogan-footer" 
+                     type="checkbox" 
+                     value="true"
+            />
+        </settings>
 
 The portal administrator can enter a slogan and activate it for the portal via
 the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
