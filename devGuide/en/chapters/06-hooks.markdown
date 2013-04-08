@@ -162,7 +162,7 @@ hook to modify your portal's *Terms of Use* page.
 2. Edit `hooks/example-hook/docroot/WEB-INF/liferay-hook.xml` by adding the
 following between `<hook></hook>`:
 
-    <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+        <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
 
 When your hook is deployed, any JSP you put in the `custom_jsps` directory
 replaces a corresponding JSP with the same name and relative path found inside
