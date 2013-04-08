@@ -161,7 +161,7 @@ Alloy UI for your custom portlets or use another JavaScript library, as long as
 the library does not conflict with libraries referenced by other portlets
 deployed in the same portal. 
 
-Liferay's Service Builder automates creatiing interfaces and classes for
+Liferay's Service Builder automates creating interfaces and classes for
 database persistence and service layers. It generates most of the common code
 that implements database access, letting you focus on higher level aspects of
 service design. You implement the local interface with your business logic, and

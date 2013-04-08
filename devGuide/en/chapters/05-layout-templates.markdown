@@ -10,14 +10,13 @@ custom layout templates. Layout template plugins let you design layouts that
 flow nicely, embed commonly used portlets, and apply CSS, Velocity, and HTML to
 make your pages visually pop. 
 
-In this chapter, you'll learn everything you need to kno about layout templates:
+In this chapter, you'll learn everything you need to know about layout templates:
 
-- **Creating a layout template:** Creating custom layout templates using the
-Plugins SDK. 
-
-- Designing a layout template 
+- Creating a layout template project 
 
 - Anatomy of a layout template project 
+
+- Designing a layout template 
 
 - Embedding portlets in a layout template 
 
@@ -68,7 +67,7 @@ generate layout template projects in your Plugin SDK's `layouttpl` folder.
 Let's look at the directory structure of a layout template project and learn
 about its various files:  
 
-- `columns-1-4-1-layouttpl/
+- `columns-1-4-1-layouttpl/`
 
 	- `docroot/`
 
@@ -249,7 +248,6 @@ Here's a description of the portlets we're embedding in the layout:
  Hello World | &nbsp;`my-hello-world-portlet` | &nbsp;1 | &nbsp;1 | &nbsp;custom | &nbsp;no | &nbsp;myhelloworldportlet |
  Goodbye World | &nbsp;`my-goodbye-world-portlet` | &nbsp;3 | &nbsp;1 | &nbsp;custom | &nbsp;yes | &nbsp;myhelloworldportlet |
 ---
-<!-- The tables in this chapter didn't render properly as HTML for me. -->
 
 Here's the TPL that implements embedding of these portlets:
 

@@ -12,7 +12,7 @@ for Eclipse that simplifies development for Liferay.
 ---
 
  ![tip](../../images/tip-pen-paper.png)**Tip**: If you use Eclipse and intend to
- use it from the very beginning, you might want to chek out Chapter 9 first
+ use it from the very beginning, you might want to check out Chapter 9 first
  before reading this chapter.
 
 ---

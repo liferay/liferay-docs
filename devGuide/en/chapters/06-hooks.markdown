@@ -162,7 +162,7 @@ hook to modify your portal's *Terms of Use* page.
 2. Edit `hooks/example-hook/docroot/WEB-INF/liferay-hook.xml` by adding the
 following between `<hook></hook>`:
 
-    <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+        <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
 
 When your hook is deployed, any JSP you put in the `custom_jsps` directory
 replaces a corresponding JSP with the same name and relative path found inside
@@ -562,7 +562,7 @@ of `BaseStrutsAction`, but not the `execute(StrutsAction, HttpServletRequest,
 HttpServletResponse)` method. The original Struts action's `execute()` method
 is ignored. That's fine for our example.
 
-    **Best Practice**
+**Best Practice**
 
 When overriding an existing Struts action, it's usually best to override the
 method that takes the original Struts action handle as a parameter and execute
@@ -627,10 +627,10 @@ following code:
 7. Add `/portal/sample` to your portal's list of paths that don't require
 authentication. 
 
- 7.1. Copy your existing `auth.public.paths` property assignment from your
-portal's `portal.properties` into your `portal-ext.properties` file. 
+    7.1. Copy your existing `auth.public.paths` property assignment from your
+    portal's `portal.properties` into your `portal-ext.properties` file. 
 
- 7.2. Add `/portal/sample` to the end of the value list. It looks similar to
+    7.2. Add `/portal/sample` to the end of the value list. It looks similar to
     the assignment below:
 
             auth.public.paths=\
@@ -716,29 +716,29 @@ Liferay to use your service class instead of the original.
 1. Inside `example-hook/docroot/WEB-INF/src/com/liferay/sample/hook` create
 a new file called `MyUserLocalServiceImpl.java` with the following content:
 
-    package com.liferay.sample.hook;
-
-    import com.liferay.portal.kernel.exception.PortalException;
-    import com.liferay.portal.kernel.exception.SystemException;
-    import com.liferay.portal.model.User;
-    import com.liferay.portal.service.UserLocalService;
-    import com.liferay.portal.service.UserLocalServiceWrapper;
-
-    public class MyUserLocalServiceImpl extends UserLocalServiceWrapper {
-
-		public MyUserLocalServiceImpl(UserLocalService userLocalService) {
-			super(userLocalService);
-		}
-
-		public User getUserById(long userId)
-			throws PortalException, SystemException {
-
-			System.out.println(
-				"## MyUserLocalServiceImpl.getUserById(" + userId + ")");
-
-			return super.getUserById(userId);
-		}
-    }
+        package com.liferay.sample.hook;
+    
+        import com.liferay.portal.kernel.exception.PortalException;
+        import com.liferay.portal.kernel.exception.SystemException;
+        import com.liferay.portal.model.User;
+        import com.liferay.portal.service.UserLocalService;
+        import com.liferay.portal.service.UserLocalServiceWrapper;
+    
+        public class MyUserLocalServiceImpl extends UserLocalServiceWrapper {
+    
+            public MyUserLocalServiceImpl(UserLocalService userLocalService) {
+                super(userLocalService);
+            }
+    
+            public User getUserById(long userId)
+                throws PortalException, SystemException {
+    
+                System.out.println(
+                    "## MyUserLocalServiceImpl.getUserById(" + userId + ")");
+    
+                return super.getUserById(userId);
+            }
+        }
 
 ---
 
