@@ -10,14 +10,13 @@ custom layout templates. Layout template plugins let you design layouts that
 flow nicely, embed commonly used portlets, and apply CSS, Velocity, and HTML to
 make your pages visually pop. 
 
-In this chapter, you'll learn everything you need to kno about layout templates:
+In this chapter, you'll learn everything you need to know about layout templates:
 
-- **Creating a layout template:** Creating custom layout templates using the
-Plugins SDK. 
-
-- Designing a layout template 
+- Creating a layout template project 
 
 - Anatomy of a layout template project 
+
+- Designing a layout template 
 
 - Embedding portlets in a layout template 
 
