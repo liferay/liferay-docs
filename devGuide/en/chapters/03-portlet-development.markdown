@@ -260,7 +260,7 @@ In the Plugins SDK, the portlet descriptor's default content looks like this
 
 Here's a basic summary of what each element represents:
 
-`portlet-name`: Contains the portlet's canonical name. Each portlet name is
+- `portlet-name`: Contains the portlet's canonical name. Each portlet name is
   unique within the portlet application (that is, within the portlet plugin). In
 Liferay Portal, this is also referred to as the portlet ID. 
 
@@ -1031,24 +1031,24 @@ start:
 3. For each portlet, update its `<portlet>` node in `portlet.xml` to refer to
    the resource bundle correctly:
 
-    <portlet>
-        <portlet-name>finances</portlet-name>
-        ...
-        <resource-bundle>content/Language</resource-bundle>
-        ...
-    </portlet>
-    <portlet>
-        <portlet-name>portfolio</portlet-name>
-        ...
-        <resource-bundle>content/Language</resource-bundle>
-        ...
-    </portlet>
-    <portlet>
-        <portlet-name>ticker</portlet-name>
-        ...
-        <resource-bundle>content/Language</resource-bundle>
-        ...
-    </portlet>
+        <portlet>
+            <portlet-name>finances</portlet-name>
+            ...
+            <resource-bundle>content/Language</resource-bundle>
+            ...
+        </portlet>
+        <portlet>
+            <portlet-name>portfolio</portlet-name>
+            ...
+            <resource-bundle>content/Language</resource-bundle>
+            ...
+        </portlet>
+        <portlet>
+            <portlet-name>ticker</portlet-name>
+            ...
+            <resource-bundle>content/Language</resource-bundle>
+            ...
+        </portlet>
 
 At this point our portlets are ready to deliver a localized UI.
 
@@ -1172,8 +1172,8 @@ missing too, the `<portlet-name>` node value is rendered as portlet title.
  a different title and description algorithm. Titles and long titles are pulled
  using two different keys:
 
-- javax.portlet.long-title.1_WAR_personalfinanceportlet
-- javax.portlet.title.1_WAR_personalfinanceportlet
+ - `javax.portlet.long-title.1_WAR_personalfinanceportlet` 
+ - `javax.portlet.title.1_WAR_personalfinanceportlet`
 
 ---
 
@@ -1201,7 +1201,7 @@ To create a plugin which extends another, follow these steps:
    folder, which should be empty. 
 
 3. Copy the original WAR file of the plugin you'd like to extend (for example,
-   social-networking-portlet-6.1.10.1-ee-ga1.war) to the root folder of your new
+   `social-networking-portlet-6.1.10.1-ee-ga1.war`) to the root folder of your new
    plugin. 
 
 4. Add the following line to your `build.xml` inside of the `<project>` tag to
