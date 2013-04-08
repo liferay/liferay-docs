@@ -161,13 +161,13 @@ Alloy UI for your custom portlets or use another JavaScript library, as long as
 the library does not conflict with libraries referenced by other portlets
 deployed in the same portal. 
 
-Liferay's Service Builder automates creation of interfaces and classes for
+Liferay's Service Builder automates creatiing interfaces and classes for
 database persistence and service layers. It generates most of the common code
-that implements operations accessing the database, letting you focus on higher
-level aspects of service design. You implement the local interface with your
-business logic and implement the remote interface with your permission checks.
-Objects on the portal instance interact with the local interface, while objects
-outside interact with the remote interface via JSON, SOAP, and Java RMI. 
+that implements database access, letting you focus on higher level aspects of
+service design. You implement the local interface with your business logic, and
+the remote interface with your permission checks. Objects on the portal
+instance interact with the local interface, while objects outside interact with
+the remote interface via JSON, SOAP, and Java RMI. 
 
 In addition to those mentioned above, there are thousands more frameworks and
 libraries available to you for handling persistence, caching, connections to
@@ -190,14 +190,14 @@ they can be used.
 ### Customizing the look and feel: Themes
 
 Themes let you dictate your site's look and feel. You can specify color schemes
-and commonly used images. You'll apply styling for UI elements such as its
-fonts, links, navigation elements, page headers, and page footers, using a
-combination of CSS and Velocity or FreeMarker templates. With Liferay's Alloy UI
-tag library, you use a consistent interface to common UI technologies tailored
-to Liferay. And themes facilitate creating sites that respond well to the window
-widths of your user's desktop, tablet, and mobile devices. Most importantly,
-themes let you focus on designing your site's UI, without worrying about its
-functionality. 
+and commonly used images. You'll apply styling for UI elements such as fonts,
+links, navigation elements, page headers, and page footers, using a combination
+of CSS and Velocity or FreeMarker templates. With Liferay's Alloy UI API
+framework, you use a consistent interface to common UI elements that make up
+your page. This makes it easy to create sites that respond well to the window
+widths of your users' desktop, tablet, and mobile devices. Most importantly,
+themes let you focus on designing your site's UI, while leaving its
+functionality to the portlets. 
 
 ### Adding new predefined page layouts: Layout Templates
 
