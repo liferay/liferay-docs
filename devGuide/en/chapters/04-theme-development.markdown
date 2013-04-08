@@ -439,12 +439,10 @@ with your company's name (e.g. Nosester) in the footer of your site pages:
         </footer>
 
  ![note](../../images/tip-pen-paper.png)**Note:** Let's look more closely at two
- theme setting variables appearing in the above logic:
-
- - **display-slogan-footer:** Holds a boolean value indicating whether to
- display the version of the footer that contains your slogan.
-
- - **slogan:** holds your slogan text.
+ theme setting variables appearing in the above logic. The
+ `display-slogan-footer` variable holds a boolean value indicating whether to
+ display the version of the footer that contains your slogan. The `slogan`
+ variable holds your slogan text.
 
 2. Declare the two theme setting variables in your `liferay-look-and-feel.xml`,
 located in your theme's `WEB-INF` folder:
