@@ -147,7 +147,7 @@ Example server output:
 	1 layout template for columns-1-4-1-layouttpl is available for use
 
 Wait a minute! We can deploy the template, but we still haven't designed it.
-We'll need to add content to the TPL files that were gewnerated when we created
+We'll need to add content to the TPL files that were generated when we created
 our layout template. 
 
 ## Designing a layout template 
