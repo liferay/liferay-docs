@@ -211,11 +211,11 @@ your Ext plugin.
 ## Developing an Ext Plugin 
 
 Because an Ext plugin changes the Liferay web applicaiton itself when deployed,
-it's not a separate compnent that can be easily removed at any time. For this
-reason, Ext plugin development is differently than for other plugin types. It's
-important to remmebr that once an Ext plugin is deployed, some of its files are
-*copied* inside the Liferay installation; the only way to remove its changes is
-by *redeploying* an unmodified Liferay application. 
+it's not a separate component that can be easily removed at any time. For this
+reason, Ext plugin development is done differently than for other plugin types.
+It's important to remember that once an Ext plugin is deployed, some of its
+files are *copied* inside the Liferay installation; the only way to remove its
+changes is by *redeploying* an unmodified Liferay application. 
 
 The Plugins SDK let's you deploy and redeploy Ext plugins during your
 development phase. Redeployment involves *cleaning* (i.e. removing) your
@@ -238,7 +238,7 @@ Liferay Portal on your application server.
 
 - Distribution: How to package Ext plugins for distribution. 
 
-- **Advanced customization techniques:** Here we'll provide examples that
+- Advanced customization techniques: Here we'll provide examples that
 require advanced techniques to customize Liferay Portal. 
 
 Now let's look at each development step in more detail. 
@@ -384,7 +384,7 @@ deployment*.
 
 For this example, let's customize the *details* section of the user profile. We
 could just overwrite its JSP, but let's use a more powerful method that lets us
-add new sections or even merging existing ones. With Liferay we can refer to
+add new sections or even merge existing ones. With Liferay we can refer to
 custom sections from the `portal-ext.properties` and implement them just by
 creating a JSP. We'll modify the property `users.form.update.main` again and the
 property `users.form.add.main` to set the following:
@@ -398,7 +398,7 @@ implementation of each section based on the following conventions:
 
 - The section should be implemented in a JSP inside the directory:
 
-	ext-web/docroot/html/portlet/users_admin/user/
+        ext-web/docroot/html/portlet/users_admin/user/
 
 - The name of the JSP should use the name of the section, with the `.jsp`
 extension. If the section name has a dash sign (`"-"`), it get's converted to an
@@ -531,7 +531,7 @@ mentioned earlier, when the plugin is first deployed, some of its files are
 plugin, we recommend that you consider the following redeployment approaches:
 
 **Clean Redeployment:** If you removed part(s) of your plugin, if there are
-changes to your plugin that can affect the deployment of plugins, or if your
+changes to your plugin that can affect the deployment of plugins, or if you
 simply want to start with a clean Liferay environment, we recommend you
 *undeploy* your plugin and *clean* your application server before redeploying
 your Ext plugins. By *cleaning* the application server, the existing Liferay
