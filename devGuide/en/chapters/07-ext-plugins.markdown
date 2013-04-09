@@ -80,11 +80,11 @@ Ext plugin:
 
 1. In Linux and Mac OS, enter
 	
-	./create.sh example "Example"
+    ./create.sh example "Example"
 	
 2. In Windows, enter
 	
-	create.bat example "Example"
+    create.bat example "Example"
 	
 A `BUILD SUCCESSFUL` message from Ant tells you there's a new folder named
 `example-ext` inside the `ext` folder in your Plugins SDK. The Plugins SDK
@@ -210,23 +210,22 @@ your Ext plugin.
 
 ## Developing an Ext Plugin 
 
-Because an Ext plugin changes the Liferay web applicaiton itself when deployed,
-it's not a separate compnent that can be easily removed at any time. For this
-reason, Ext plugin development is differently than for other plugin types. It's
-important to remmebr that once an Ext plugin is deployed, some of its files are
-*copied* inside the Liferay installation; the only way to remove its changes is
-by *redeploying* an unmodified Liferay application. 
+Ext plugins change Liferay itself when deployed; it's not a separate compnent
+that can be easily removed at any time. For this reason, Ext plugin development
+is done differently than with other plugin types. It's important to remmebr that
+once an Ext plugin is deployed, some of its files are *copied* inside the
+Liferay installation; the only way to remove its changes is by *redeploying* an
+unmodified Liferay application. 
 
 The Plugins SDK let's you deploy and redeploy Ext plugins during your
 development phase. Redeployment involves *cleaning* (i.e. removing) your
 application server and unzipping your specified Liferay bundle to start from
 scratch. That way any changes made to the Ext plugin during development are
 properly applied, and files removed from your plugin by previous changes aren't
-left behind in the Liferay application. This added complexity with Ext plugins
-is why we recommend using another plugin type to accomplish your goals, whenever
-possible. 
+left behind in the Liferay application. This introduced complexity is why we
+recommend using another plugin type to accomplish your goals, whenever possible. 
 
-Let's look at the steps required to develop Ext plugins: 
+Let's look at the steps required to develop an Ext plugin: 
 
 - Set up: Configure your Plugins SDK environment to develop Ext plugins for
 Liferay Portal on your application server. 
@@ -234,76 +233,75 @@ Liferay Portal on your application server.
 - Initial deployment: Deploy and publish your Ext plugin. 
 
 - Redeployment: After making changes to your Ext plugin, you'll either need to
-*redeploy* it as normal or use a *clean redeployment* process. 
+*redeploy* it normally or use a *clean redeployment* process. 
 
-- Distribution: How to package Ext plugins for distribution. 
+- Distribution: Packaging Ext plugins for distribution. 
 
-- **Advanced customization techniques:** Here we'll provide examples that
-require advanced techniques to customize Liferay Portal. 
+- Advanced customization techniques: Here we'll provide examples that require
+advanced techniques to customize Liferay Portal. 
 
-Now let's look at each development step in more detail. 
+Now let's look at each step of the development proces in more detail. 
 
 ### Set up 
 
-Before deploying an Ext plugin, the `build.{username}.properties` file in the
-root folder of your Plugins SDK needs editing. If the file doesn't exist yet,
-create it. Substitute `{username}` with your user ID on your computer. Once
-you've opened your build properties file, add the following properties, making
-sure the individual paths reflect the right locations on your system:
+Before deploying an Ext plugin, you'll need to edit the
+`build.<username>.properties` file in the root folder of your Plugins SDK. If
+the file doesn't exist yet, you can create it now. Substitute `<username>` with
+your user ID on your computer. Once you've opened your build properties file,
+add the following properties--make sure the individual paths reflect the right
+locations on your system: 
 
-    ext.work.dir={work}
+    ext.work.dir=<work>
 
-    app.server.dir={work}/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23
+    app.server.dir=<work>/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23
 
-    app.server.zip.name={...}/liferay-portal-tomcat-6.1.0-ce-ga1-20120106155615760.zip
+    app.server.zip.name=<...>/liferay-portal-tomcat-6.1.0-ce-ga1-20120106155615760.zip
 
 Your `app.server.zip.name` property should specify the path to your Liferay
 bundle `.zip` file. Your *work* directory, specified by your `ext.work.dir`
-property, is the destination for the contents of your Liferay bundle `.zip`
-file. Lastly, your `app.server.dir` property should point to your application
-server's directory within your *work* directory. Look in your Liferay bundle at
-the path to the application server directory in order to determine the value you
-should use for your `app.server.dir` property.
+property, is where you'll put the contents of your Liferay bundle `.zip` file.
+Your `app.server.dir` property should point to your application server's
+directory within your work directory. Look in your Liferay bundle at the path to
+the application server directory to determine the value to use for your
+`app.server.dir` property. 
 
-For example, let's make `C:\work` our `ext.work.dir` value. If we have a Liferay
+For example, `C:\work` could be your `ext.work.dir` value. If we have a Liferay
 bundle `.zip` file
 `C:\downloads\liferay-portal-tomcat-6.1.0-ce-ga1-20120106155615760.zip` which we
-set as the value for our `app.server.zip.name` property, we discover the
-*relative path* to the application server *within* our Liferay bundle `.zip`
-file is `liferay-portal-6.1.0-ce-ga1\tomcat-7.0.23`. So we must specify
+set as the value for our `app.server.zip.name` property, the *relative path* to
+the application server *within* our Liferay bundle `.zip` file is
+`liferay-portal-6.1.0-ce-ga1\tomcat-7.0.23`. We'd then specify
 `C:\work\liferay-portal-6.1.0-ce-ga1\tomcat-7.0.23` as our `app.server.dir`
 property value. 
 
 ---
 
  ![note](../../images/tip-pen-paper.png)**Note:** Some Liferay bundles come
- installed with a sample website for a fictional company called 7-Cogs. This
- sample website is useful for showcasing certain features of Liferay. However,
- once you've removed it, you don't want the Ant targets to reinstall it every
- time your bundle is unzipped again. To make sure this doesn't happen, unzip
- your bundle, delete the
- `{work}/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23/webapps/sevencogs-hook`
+ installed with a sample website for a fictional company called 7-Cogs. It's
+ useful for showcasing certain features of Liferay, but if you removed it, you
+ likely don't want it reinstalled each time your bundle is unzipped. To prevent
+ the reinstallation of 7-Cogs, unzip your bundle, delete the
+ `<work>/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23/webapps/sevencogs-hook`
  folder, then re-zip your bundle. 
 
 ---
 
-Next, we'll make some changes to the Ext plugin we created and deploy it.
+Next we'll change our newly created Ext plugin and deploy it. 
 
-### Initial deployment
+### Initial deployment 
 
-With our environment set up, we're ready to start customizing. We'll show the
-process using a simple example -- customizing the sections of a user profile.
-Liferay allows this configuration to be made through the `portal-ext.properties`
-configuration file, but the property we'll be changing can't be changed from a
-hook plugin. To make our change, open the
-`docroot/WEB-INF/ext-impl/src/portal-ext.properties` file and paste the
-following contents inside:
+Our environment is set up and we're ready to start customizing. First let's look
+at a simple example that customizes the sections of a user profile. The
+configuration can be made through the `portal-ext.properties` configuration
+file, but a hook plugin won't let us modify the property we're customizing. To
+Open the `docroot/WEB-INF/ext-impl/src/portal-ext.properties` file and paste the
+following contents inside: 
 
     users.form.update.main=details,password,organizations,sites,roles
 
-This removes the sections for user groups, personal sites, and categorizations
-from the user profile page. We might make this change to ensure that these
-entities won't be used in our portal. 
+We've removed the sections for user groups, personal sites, and categorizations
+from the user profile page. This ensures that these entities won't be used in
+our portal. 
 
 Now we're ready to deploy. 
 
@@ -311,54 +309,55 @@ Now we're ready to deploy.
 
 You can deploy your plugin from Liferay Developer Studio or the terminal. 
 
-***Deploying In Developer Studio:*** Simply drag your `example-ext` project from
+***Deploying In Developer Studio:*** Drag your `example-ext` project from
 your *Package Explorer* onto your server. 
 
 ![Figure 7.3: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
 
 ***Deploying In the terminal:*** Open a terminal window in your `ext/example-ext`
-directory and enter either of these commands:
+directory and enter one of these commands:
 	
-	- ant deploy
+    - ant deploy
 
-	- ant direct-deploy
+    - ant direct-deploy
 
 ---
 
  ![tip](../../images/tip-pen-paper.png)**Tip:** The `direct-deploy` target
  deploys all plugin changes directly to the appropriate directories in the
- Liferay application. If you use the `deploy` target, the Liferay server needs
- to apply the changes from the resulting `.war` file at startup, possibly
- slowing down your development process. Using `direct-deploy` is usually
- preferred for deploying Ext plugins during development. However,
- `direct-deploy` does not work in WebLogic Server or WebSphere application
- server environments. 
+ Liferay application. If you use the `deploy` target, your changes need to be
+ applied from the resulting `.war` file upon server starup; this can slow down
+ your development process. Using `direct-deploy` is usually preferred for
+ deploying Ext plugins during development. However, `direct-deploy` does not
+ work in WebLogic Server or WebSphere application server environments. 
 
 ---
 
 A `BUILD SUCCESSFUL` message indicates your plugin is now being deployed. If you
 switch to the console window running Liferay, within few seconds you should see
-the message:
+the message
 
 	Extension environment for example-ext has been applied. You must reboot the
 	server and redeploy all other plugins
 
-You may not have to redeploy all other plugins, but it's a best practice.
-Definitely redeploy all plugins if any of the changes applied through the Ext
-plugin could affect the deployment process itself. 
+If any changes applied through the Ext plugin affect the deployment process
+itself, you must redeploy all other plugins. Even if the Ext plugin doesn't
+affect the deploym,ent process, it's a best practice to redeploy all your other
+plugins following initial deployment of the Ext plugin. 
 
-The `ant deploy` target builds a `.war` file with all the changes you made and
-copies them to the auto-deploy directory inside the Liferay installation. When
-the server starts, it detects the `.war` file, inspects it, and copies its
-content to the appropriate destinations within the deployed and running Liferay
-application, inside your application server. Now you restart your application
-server to *publish* your changes. 
+The `ant deploy` target builds a `.war` file with your changes and copies them
+to the auto-deploy directory inside the Liferay installation. When the server
+starts, it detects the `.war` file, inspects it, and copies its contents to the
+appropriate destinations within the deployed and running Liferay application.
 
-#### Publish the plugin
+Restart your application server, and let's find out about *publishing* your
+changes. 
 
-Publishing your plugin to the Liferay server completes the deployment process.
-As with deployment, you can publish using Liferay Developer Studio or your
-terminal. 
+#### Publish the plugin 
+
+To complete the deployment process, your Ext plugin must be published to the
+Liferay server. As with deployment, you can publish using Liferay Developer
+Studio or your terminal. 
 
 ***Publishing in Developer Studio:*** 
 
@@ -368,52 +367,50 @@ terminal.
 
 ![Figure 7.4: How to publish the Ext Plugin](../../images/07-ext-plugins-3.png)
 
-***Publishing in the terminal:*** Restart the Liferay server.
+***Publishing in the terminal:*** Restart the Liferay server. 
 
-Let's try our Ext plugin within our portal. Once your server has started, log in
-as an administrator and go to *Control Panel &rarr; Users and Organizations*.
+Let's try our Ext plugin within Liferay portal. Once your server restarts, log
+in as an administrator and go to Control Panel &rarr; Users and Organizations.
 Edit an existing user and verify that the right navigation menu only shows the
 five sections that we referenced from the `users.form.update.main` property. 
 
 ![Figure 7.5: You should see these five sections under the User Information heading](../../images/ext-plugin-five-sections.png)
 
-Now that you've applied a simple modification to Liferay with an Ext plugin,
-we'll proceed with a more complex customization. It's an opportunity to learn
-the proper way to *redeploy* an Ext plugin, which is different from *initial
-deployment*. 
+That was a simple application of an Ext plugin. Let's proceed with a more
+complex customization that illustrates the proper way to *redeploy* an Ext
+plugin, which is different from *initial deployment*. 
 
-For this example, let's customize the *details* section of the user profile. We
-could just overwrite its JSP, but let's use a more powerful method that lets us
-add new sections or even merging existing ones. With Liferay we can refer to
-custom sections from the `portal-ext.properties` and implement them just by
-creating a JSP. We'll modify the property `users.form.update.main` again and the
-property `users.form.add.main` to set the following:
+Let's customize the *details* section of the user profile. Rather than overwrite
+its JSP, we'll use a more powerful method that lets us add new sections or even
+merge existing ones. With Liferay we can refer to custom sections from the
+`portal-ext.properties` and implement them just by creating a JSP. We'll modify
+the property `users.form.update.main` again and the property
+`users.form.add.main` to set the following:
 
-	users.form.add.main=basic,organizations,personal-site
-	users.form.update.main=basic,password,organizations,sites,roles
+    users.form.add.main=basic,organizations,personal-site
+    users.form.update.main=basic,password,organizations,sites,roles
 
 We removed the original *details* section and added a custom one called *basic*.
 When Liferay Portal's user administration reads the property, it looks for the
 implementation of each section based on the following conventions:
 
-- The section should be implemented in a JSP inside the directory:
+- The section is implemented in a JSP inside the following directory: 
 
-	ext-web/docroot/html/portlet/users_admin/user/
+    ext-web/docroot/html/portlet/users_admin/user/
 
-- The name of the JSP should use the name of the section, with the `.jsp`
-extension. If the section name has a dash sign (`"-"`), it get's converted to an
-underscore sign (`"_"`). For example, if the section is called *my-info*, the
-JSP should be named `my_info.jsp` to comply with common JSP naming standards. 
+- The name of the JSP uses the name of the section, with the `.jsp` extension.
+If the section name has a dash sign (`"-"`), convert it to an underscore sign
+(`"_"`). For example, if the section is called *my-info*, the JSP should be
+named `my_info.jsp` to comply with JSP naming standards. 
 
-- The name of the section that's shown to the user comes from the language
-bundles. When using a key/value that is not included with Liferay, add the
-key/value to your Ext plugin's `Language-ext.properties` file and the
-language-specific properties file for each language variant you're providing a
-translation for. These files go in the `ext-impl/src` directory of your Ext
-plugin. 
+- The section name that's shown to the user comes from the language bundles.
+When using a key/value that is not included with Liferay, add it to both your
+Ext plugin's `Language-ext.properties` file and the language-specific properties
+file for each language variant you're providing a translation for. These files
+go in the `ext-impl/src` directory of your Ext plugin. 
 
 For our example, we'll create a file within the Ext plugin with the following
-path:
+path: 
 
     ext-web/docroot/html/portlet/users_admin/user/basic.jsp
 
@@ -421,184 +418,186 @@ We can write the contents of the file from scratch or just copy the
 `details.jsp` file from Liferay's source code and modify from there. Let's do
 the latter and then remove some fields, leaving the screen name, email address,
 first name, and last name fields to simplify user creation and user update.
-Here's the resulting JSP code:
+Here's the resulting JSP code: 
 
-	<%@ include file="/html/portlet/users_admin/init.jsp" %>
+    <%@ include file="/html/portlet/users_admin/init.jsp" %>
 	
-	<%
-	User selUser = (User)request.getAttribute("user.selUser");
-	Contact selContact = (Contact)request.getAttribute("user.selContact");
-	%>
+    <%
+    User selUser = (User)request.getAttribute("user.selUser");
+    Contact selContact = (Contact)request.getAttribute("user.selContact");
+    %>
 	
-	<liferay-ui:error-marker key="errorSection" value="details" />
+    <liferay-ui:error-marker key="errorSection" value="details" />
 	
-	<aui:model-context bean="<%= selUser %>" model="<%= User.class %>" />
+    <aui:model-context bean="<%= selUser %>" model="<%= User.class %>" />
 	
-	<h3><liferay-ui:message key="details" /></h3>
+    <h3><liferay-ui:message key="details" /></h3>
 	
-	<aui:fieldset column="<%= true %>" cssClass="aui-w50">
-		<liferay-ui:success key="verificationEmailSent" message="your-email-verification-code-has-been-sent-and-the-new-email-address-will-be-applied-to-your-account-once-it-has-been-verified" />
+    <aui:fieldset column="<%= true %>" cssClass="aui-w50">
+        <liferay-ui:success key="verificationEmailSent" message="your-email-verification-code-has-been-sent-and-the-new-email-address-will-be-applied-to-your-account-once-it-has-been-verified" />
 	
-		<liferay-ui:error exception="<%= DuplicateUserScreenNameException.class %>" message="the-screen-name-you-requested-is-already-taken" />
+        <liferay-ui:error exception="<%= DuplicateUserScreenNameException.class %>" message="the-screen-name-you-requested-is-already-taken" />
 	
-		<liferay-ui:error exception="<%= GroupFriendlyURLException.class %>">
+        <liferay-ui:error exception="<%= GroupFriendlyURLException.class %>">
 	
-			<%
-			GroupFriendlyURLException gfurle = (GroupFriendlyURLException)errorException;
-			%>
+            <%
+            GroupFriendlyURLException gfurle = (GroupFriendlyURLException)errorException;
+            %>
 	
-			<c:if test="<%= gfurle.getType() == GroupFriendlyURLException.DUPLICATE %>">
-				<liferay-ui:message key="the-screen-name-you-requested-is-associated-with-an-existing-friendly-url" />
-			</c:if>
-		</liferay-ui:error>
+            <c:if test="<%= gfurle.getType() == GroupFriendlyURLException.DUPLICATE %>">
+                <liferay-ui:message key="the-screen-name-you-requested-is-associated-with-an-existing-friendly-url" />
+            </c:if>
+        </liferay-ui:error>
 	
-		<liferay-ui:error exception="<%= ReservedUserScreenNameException.class %>" message="the-screen-name-you-requested-is-reserved" />
-		<liferay-ui:error exception="<%= UserScreenNameException.class %>" message="please-enter-a-valid-screen-name" />
+        <liferay-ui:error exception="<%= ReservedUserScreenNameException.class %>" message="the-screen-name-you-requested-is-reserved" />
+        <liferay-ui:error exception="<%= UserScreenNameException.class %>" message="please-enter-a-valid-screen-name" />
 	
-		<c:if test="<%= !PrefsPropsUtil.getBoolean(company.getCompanyId(), PropsKeys.USERS_SCREEN_NAME_ALWAYS_AUTOGENERATE) || (selUser != null) %>">
-			<c:choose>
-				<c:when test="<%= PrefsPropsUtil.getBoolean(company.getCompanyId(), PropsKeys.USERS_SCREEN_NAME_ALWAYS_AUTOGENERATE) || ((selUser != null) && !UsersAdminUtil.hasUpdateScreenName(permissionChecker, selUser)) %>">
-					<aui:field-wrapper name="screenName">
-						<%= selUser.getScreenName() %>
+        <c:if test="<%= !PrefsPropsUtil.getBoolean(company.getCompanyId(), PropsKeys.USERS_SCREEN_NAME_ALWAYS_AUTOGENERATE) || (selUser != null) %>">
+            <c:choose>
+                <c:when test="<%= PrefsPropsUtil.getBoolean(company.getCompanyId(), PropsKeys.USERS_SCREEN_NAME_ALWAYS_AUTOGENERATE) || ((selUser != null) && !UsersAdminUtil.hasUpdateScreenName(permissionChecker, selUser)) %>">
+                    <aui:field-wrapper name="screenName">
+                        <%= selUser.getScreenName() %>
 	
-						<aui:input name="screenName" type="hidden" value="<%= selUser.getScreenName() %>" />
-					</aui:field-wrapper>
-				</c:when>
-				<c:otherwise>
-					<aui:input name="screenName" />
-				</c:otherwise>
-			</c:choose>
-		</c:if>
+                        <aui:input name="screenName" type="hidden" value="<%= selUser.getScreenName() %>" />
+                    </aui:field-wrapper>
+                </c:when>
+                <c:otherwise>
+                    <aui:input name="screenName" />
+                </c:otherwise>
+            </c:choose>
+        </c:if>
 	
-		<liferay-ui:error exception="<%= DuplicateUserEmailAddressException.class %>" message="the-email-address-you-requested-is-already-taken" />
-		<liferay-ui:error exception="<%= ReservedUserEmailAddressException.class %>" message="the-email-address-you-requested-is-reserved" />
-		<liferay-ui:error exception="<%= UserEmailAddressException.class %>" message="please-enter-a-valid-email-address" />
+        <liferay-ui:error exception="<%= DuplicateUserEmailAddressException.class %>" message="the-email-address-you-requested-is-already-taken" />
+        <liferay-ui:error exception="<%= ReservedUserEmailAddressException.class %>" message="the-email-address-you-requested-is-reserved" />
+        <liferay-ui:error exception="<%= UserEmailAddressException.class %>" message="please-enter-a-valid-email-address" />
 	
-		<c:choose>
-			<c:when test="<%= (selUser != null) && !UsersAdminUtil.hasUpdateEmailAddress(permissionChecker, selUser) %>">
-				<aui:field-wrapper name="emailAddress">
-					<%= selUser.getDisplayEmailAddress() %>
+        <c:choose>
+            <c:when test="<%= (selUser != null) && !UsersAdminUtil.hasUpdateEmailAddress(permissionChecker, selUser) %>">
+                <aui:field-wrapper name="emailAddress">
+                    <%= selUser.getDisplayEmailAddress() %>
 	
-					<aui:input name="emailAddress" type="hidden" value="<%= selUser.getEmailAddress() %>" />
-				</aui:field-wrapper>
-			</c:when>
-			<c:otherwise>
+                    <aui:input name="emailAddress" type="hidden" value="<%= selUser.getEmailAddress() %>" />
+                </aui:field-wrapper>
+            </c:when>
+            <c:otherwise>
 	
-				<%
-				User displayEmailAddressUser = null;
+                <%
+                User displayEmailAddressUser = null;
 	
-				if (selUser != null) {
-					displayEmailAddressUser = (User)selUser.clone();
+                if (selUser != null) {
+                    displayEmailAddressUser = (User)selUser.clone();
 	
-					displayEmailAddressUser.setEmailAddress(displayEmailAddressUser.getDisplayEmailAddress());
-				}
-				%>
+                    displayEmailAddressUser.setEmailAddress(displayEmailAddressUser.getDisplayEmailAddress());
+                }
+                %>
 	
-				<aui:input bean="<%= displayEmailAddressUser %>" model="<%= User.class %>" name="emailAddress">
-					<c:if test="<%= PrefsPropsUtil.getBoolean(company.getCompanyId(), PropsKeys.USERS_EMAIL_ADDRESS_REQUIRED) %>">
-						<aui:validator name="required" />
-					</c:if>
-				</aui:input>
-			</c:otherwise>
-		</c:choose>
+                <aui:input bean="<%= displayEmailAddressUser %>" model="<%= User.class %>" name="emailAddress">
+                    <c:if test="<%= PrefsPropsUtil.getBoolean(company.getCompanyId(), PropsKeys.USERS_EMAIL_ADDRESS_REQUIRED) %>">
+                        <aui:validator name="required" />
+                    </c:if>
+                </aui:input>
+            </c:otherwise>
+        </c:choose>
 	
-		<liferay-ui:error exception="<%= ContactFirstNameException.class %>" message="please-enter-a-valid-first-name" />
-		<liferay-ui:error exception="<%= ContactFullNameException.class %>" message="please-enter-a-valid-first-middle-and-last-name" />
+        <liferay-ui:error exception="<%= ContactFirstNameException.class %>" message="please-enter-a-valid-first-name" />
+        <liferay-ui:error exception="<%= ContactFullNameException.class %>" message="please-enter-a-valid-first-middle-and-last-name" />
 	
-		<aui:input name="firstName" />
+        <aui:input name="firstName" />
 	
-		<liferay-ui:error exception="<%= ContactLastNameException.class %>" message="please-enter-a-valid-last-name" />
+        <liferay-ui:error exception="<%= ContactLastNameException.class %>" message="please-enter-a-valid-last-name" />
 	
-		<aui:input name="lastName">
-			<c:if test="<%= PrefsPropsUtil.getBoolean(company.getCompanyId(), PropsKeys.USERS_LAST_NAME_REQUIRED, PropsValues.USERS_LAST_NAME_REQUIRED) %>">
-				<aui:validator name="required" />
-			</c:if>
-		</aui:input>
-	</aui:fieldset>
+        <aui:input name="lastName">
+            <c:if test="<%= PrefsPropsUtil.getBoolean(company.getCompanyId(), PropsKeys.USERS_LAST_NAME_REQUIRED, PropsValues.USERS_LAST_NAME_REQUIRED) %>">
+                <aui:validator name="required" />
+            </c:if>
+        </aui:input>
+    </aui:fieldset>
 
-In our case, we don't need to add a new key to `Language-ext.properties`,
-because an entry for the key named *basic* is already included in Liferay's
-language bundle.
+We don't need to add a new key to `Language-ext.properties`, because an entry
+for the key named *basic* is already included in Liferay's language bundle. 
 
-We are now ready to redeploy our Ext plugin so we can check the changes we made.
+Let's redeploy our Ext plugin to review the changes we made. 
 
-### Redeployment
+### Redeployment 
 
-So far, the development process has been very similar to that of other plugin
-types. The differences appear when you need to redeploy an Ext plugin. As
-mentioned earlier, when the plugin is first deployed, some of its files are
-*copied* into the Liferay installation. After making any change to an Ext
-plugin, we recommend that you consider the following redeployment approaches:
+So far Ext plugin development has been similar to the development of other
+plugin types. You've now reached the point of divergence. When the plugin is
+first deployed, some of its files are *copied* into the Liferay installation.
+After changing an Ext plugin, you'll either *redeploy* or *clean redeploy*,
+depending on the specific modifcations you made to your plugin following the
+intiial deployment. Let's talk about each redeployment method and when to use
+each one.
 
-**Clean Redeployment:** If you removed part(s) of your plugin, if there are
-changes to your plugin that can affect the deployment of plugins, or if your
-simply want to start with a clean Liferay environment, we recommend you
-*undeploy* your plugin and *clean* your application server before redeploying
-your Ext plugins. By *cleaning* the application server, the existing Liferay
-installation is removed and the bundle specified in your Plugin SDK environment
-(e.g. value of `app.server.zip.name` in `build.{username}.properties`) is
-unzipped in its place. Here are the steps to take depending on whether you are
-working from Liferay IDE/Studio or the terminal:
+*Clean Redeployment:* If you removed part(s) of your plugin, there are changes
+to your plugin that can affect the deployment of plugins, or you simply want to
+start with a clean Liferay environment, *undeploy* your plugin and *clean* your
+application server before redeploying your Ext plugins. By cleaning the
+application server, the existing Liferay installation is removed and the bundle
+specified in your Plugin SDK environment (e.g. value of `app.server.zip.name` in
+`build.<username>.properties`) is unzipped in its place. The exact steps you
+take will differ based on whether you're developing in Liferay Developer Studio
+or your terminal: 
 
--	***From Developer Studio:***
+- Using Developer Studio:
 
-	1. Remove the plugin from the server: While selecting the Ext plugin in the
-	*Servers* view, select the plugin's *Remove* option
+    1. Remove the plugin from the server--while selecting the Ext plugin in the
+    *Servers* view, select the plugin's *Remove* option. 
 
-		![Figure 7.6: Removing Ext Plugin from the server](../../images/07-ext-plugins-4.png)
+        ![Figure 7.6: Removing Ext Plugin from the server](../../images/07-ext-plugins-4.png)
 
-	2. Clean the application server: While selecting the Ext plugin project in
-	the *Package Explorer* view, select the plugin's *Liferay* &rarr; *Clean App
-	Server...* option
+    2. Clean the application server--while selecting the Ext plugin project in
+    the *Package Explorer* view, select the plugin's *Liferay* &rarr; *Clean App
+    Server...* option. 
 
-		![Figure 7.7: How to clean app server](../../images/07-ext-plugins-5.png)
+        ![Figure 7.7: How to clean app server](../../images/07-ext-plugins-5.png)
 
-	3.	Start the Liferay server
+    3. Start the Liferay server. 
 
-		![Figure 7.8: Start the Liferay server](../../images/07-ext-plugins-6.png)
+        ![Figure 7.8: Start the Liferay server](../../images/07-ext-plugins-6.png)
 
-	4.	Drag-and-drop the Ext plugin to the Liferay server
+    4. Drag the Ext plugin and drop it into the Liferay server. 
 
-		![Figure 7.9: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
+        ![Figure 7.9: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
 
-	5. While selecting the Liferay server in the *Servers* view, select the
-	server's *Publish* option
+    5. While selecting the Liferay server in the *Servers* view, click the
+    *Publish* option. 
 
 		![Figure 7.10: Publish your server](../../images/07-ext-plugins-8.png)
 
--	***From the terminal:***
+- Using the terminal: 
 	
-	1.	Stop the Liferay server
+    1. Stop the Liferay server. 
 
-	2.	For each Ext plugin to be deployed ...
+    2. For each Ext plugin you're deploying, enter the following into your
+    console: 
 
-		I.	`cd <your-plugin-ext>`
+        I. `cd <your-plugin-ext>`
 
-		II.	`ant clean-app-server`
+        II. `ant clean-app-server`
 
-		III.	`ant direct-deploy`
+        III. `ant direct-deploy`
 
-	3.	Start the Liferay server
+    3. Start the Liferay server. 
 
-**Redeployment:** If you've only added parts to your plugin or made
-modifications that do not affect the plugin deployment process, you can choose
-the option to redeploy.
+*Redeployment:* If you only added to your plugin or made modifications that
+don't affect the plugin deployment process, you can redeploy using the following
+steps: 
 
-- ***Using Developer's Studio:*** Right click your plugin located underneath
-your server and select *Redeploy*.
+- Using Developer Studio: Right click your plugin located underneath your server
+and select *Redeploy*. 
 
 	![Figure 7.11: How to redeploy your Ext plugin](../../images/07-ext-plugins-9.png)
 
-- ***Using the terminal:*** Redeploy and publish the plugin as you initially
-did, as described in section *Initial deployment*.
+- Using the terminal: Redeploy and publish the plugin as you initially did, as
+described in section *Initial deployment*. 
 
 After your `example-ext` plugin is published on Liferay Portal, you can see the
-*basic* details page by choosing to add a user or view an existing user.
+*basic* details page by choosing to add a user or view an existing user. 
 
 ![Figure 7.12: You should only see user fields for screen name, email address, first name, and last name](../../images/ext-plugin-user-basic-details.png)
 
-After you've completed developing your Ext plugin, you'll want to package it up
-for distribution and production.
+After you've completed developing your Ext plugin, you can package it for
+distribution and production. 
 
 ### Distribution 
 
