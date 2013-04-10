@@ -588,15 +588,23 @@ and select *Redeploy*.
 
 	![Figure 7.11: How to redeploy your Ext plugin](../../images/07-ext-plugins-9.png)
 
-- Using the terminal: Redeploy and publish the plugin as you initially did, as
-described in section *Initial deployment*. 
+- Using the terminal: Redeploy in the terminal using the same procedure as for
+intiial deployment. Open a terminal window in your `ext/example-ext` directory
+and enter one of these commands: 
+	
+    - ant deploy
+
+    - ant direct-deploy
+
+See the *Tip* in the *Initial Deployment* section if you're not sure which
+command to use. 
 
 After your `example-ext` plugin is published on Liferay Portal, you can see the
 *basic* details page by choosing to add a user or view an existing user. 
 
 ![Figure 7.12: You should only see user fields for screen name, email address, first name, and last name](../../images/ext-plugin-user-basic-details.png)
 
-After you've completed developing your Ext plugin, you can package it for
+That completes the development process. Let's learn how you can package it for
 distribution and production. 
 
 ### Distribution 
