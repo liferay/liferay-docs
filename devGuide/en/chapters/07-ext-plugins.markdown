@@ -399,9 +399,9 @@ implementation of each section based on the following conventions:
         ext-web/docroot/html/portlet/users_admin/user/
 
 - The name of the JSP uses the name of the section, with the `.jsp` extension.
-If the section name has a dash sign (`"-"`), convert it to an underscore sign
-(`"_"`). For example, if the section is called *my-info*, the JSP should be
-named `my_info.jsp` to comply with JSP naming standards. 
+If the section name has a dash, (`"-"`), replace it with an underscore (`"_"`).
+For example, if the section is called *my-info*, the JSP should be named
+`my_info.jsp` to comply with JSP naming standards. 
 
 - The section name that's shown to the user comes from the language bundles.
 When using a key/value that is not included with Liferay, add it to both your
@@ -412,7 +412,7 @@ go in the `ext-impl/src` directory of your Ext plugin.
 For our example, we'll create a file within the Ext plugin with the following
 path: 
 
-    ext-web/docroot/html/portlet/users_admin/user/basic.jsp
+        ext-web/docroot/html/portlet/users_admin/user/basic.jsp
 
 We can write the contents of the file from scratch or just copy the
 `details.jsp` file from Liferay's source code and modify from there. Let's do
@@ -538,7 +538,7 @@ specified in your Plugin SDK environment (e.g. value of `app.server.zip.name` in
 take will differ based on whether you're developing in Liferay Developer Studio
 or your terminal: 
 
-- Using Developer Studio:
+- ***Using Developer Studio:***
 
     1. Remove the plugin from the server--while selecting the Ext plugin in the
     *Servers* view, select the plugin's *Remove* option. 
@@ -564,7 +564,7 @@ or your terminal:
 
 		![Figure 7.10: Publish your server](../../images/07-ext-plugins-8.png)
 
-- Using the terminal: 
+- ***Using the terminal:*** 
 	
     1. Stop the Liferay server. 
 
@@ -583,14 +583,14 @@ or your terminal:
 don't affect the plugin deployment process, you can redeploy using the following
 steps: 
 
-- Using Developer Studio: Right click your plugin located underneath your server
+- ***Using Developer Studio:*** Right click your plugin located underneath your server
 and select *Redeploy*. 
 
 	![Figure 7.11: How to redeploy your Ext plugin](../../images/07-ext-plugins-9.png)
 
-- Using the terminal: Redeploy in the terminal using the same procedure as for
-intiial deployment. Open a terminal window in your `ext/example-ext` directory
-and enter one of these commands: 
+- ***Using the terminal:*** Redeploy in the terminal using the same procedure as
+for intiial deployment. Open a terminal window in your `ext/example-ext`
+directory and enter one of these commands: 
 	
     - ant deploy
 
@@ -599,192 +599,190 @@ and enter one of these commands:
 See the *Tip* in the *Initial Deployment* section if you're not sure which
 command to use. 
 
-After your `example-ext` plugin is published on Liferay Portal, you can see the
+After your `example-ext` plugin is published to Liferay Portal, check out your
 *basic* details page by choosing to add a user or view an existing user. 
 
 ![Figure 7.12: You should only see user fields for screen name, email address, first name, and last name](../../images/ext-plugin-user-basic-details.png)
 
-That completes the development process. Let's learn how you can package it for
-distribution and production. 
+That completes the development process. Let's learn how you can package your Ext
+plugin for distribution and production. 
 
 ### Distribution 
 
-Once you have finished developing your plugin, you can package it up in a `.war`
-file for distribution and production deployment.
+Once you're finished developing the plugin, you can package it in a `.war` file
+for distribution and production deployment. 
 
-- ***Using Developer Studio:*** While selecting the Ext plugin project in the
+- ***Using Developer Studio:*** With your Ext plugin project selected in the
 *Package Explorer* view, select the project's *Liferay* &rarr; *SDK* &rarr;
-*war* option
+*war* option. 
 
 ![Figure 7.13: Accessing the *war* option](../../images/07-ext-plugins-10.png)
 
--	***Using the terminal:***
+- ***Using the terminal:*** From your Ext plugin's directory (e.g.,
+`ext/example-ext`), enter
 
-	1.	`cd <your-plugin-ext>`
-
-	2.	`ant war`
+    `ant war`
 
 The `.war` file is written to your `[liferay-plugins]/dist` directory.
 
-Now that you've learned the basics of Ext plugin development, let's look at some
-advanced customizations that you can do.
+We've covered the basics, so let's look at some more advanced customization
+scenarios that require Ext plugins. 
 
 ### Advanced customization techniques 
 
-This section covers additional customization techniques that are possible
-through an Ext plugin. As mentioned above, you can change almost everything
-within Liferay when using an Ext plugin. But you must be very careful.
+With Ext plugins, you can change almost everything within Liferay. Let's look at
+some additional customization techniques made possible by Ext plugins. As
+always, be careful when using Ext plugins. 
 
-Always keep in mind that with every new Liferay version, implementation classes
-may have changed. Thus, if you've changed Liferay source code directly, you may
-have to merge your changes into the newer Liferay version. The general approach
-for minimizing conflicts is not to change anything, only extend.
+With each new version of Liferay, there can be changes to its implementation
+classes. If you change Liferay's source code directly, you'll have to merge your
+changes into the newer Liferay version. To minimize such conflicts, the best
+approach is not to change anything. Rather, you can extend the class you want to
+change and override the required methods. Then use the requisite Liferay
+configuration files to reference your subclass as a replacement for the original
+class. 
 
-Alternatively, you can extend the class you want to change and override the
-required methods. Then use some of Liferay's configuration files to reference
-your subclass as a replacement for the original class.
+In the following subsections, we'll cover these topics:
 
-In the subsections that follow, we'll cover:
+- *Using advanced configuration files*
 
--	**Using advanced configuration files**
+- *Changing the API of a core service*
 
--	**Changing the API of a core service**
+- *Replacing core classes in portal-impl*
 
--	**Replacing core classes in portal-impl**
-
-Let's check out how to use advanced configuration files next.
+Let's leanr to use advanced configuration files next. 
 
 #### Using advanced configuration files 
 
-Liferay uses several internal configuration files for easier maintenance and
-also to configure the libraries and frameworks it depends on, like Struts and
-Spring. For advanced customization needs, it may be useful to override the
-configuration specified in these files. Liferay provides a clean way to do this
-from an Ext plugin without modifying the original files.
+Liferay uses several internal configuration files for it's own architecture; in
+addition, there are configuration files for the libraries and frameworks Liferay
+depends on, like Struts and Spring. Configuration could be accomplished using
+fewer files with more properties in each, but maintenance and use is made easier
+by splitting up the configration properties into several files. For advanced
+customization needs, it may be useful to override the configuration specified in
+multiple configuration files. Liferay provides a clean way to do this from an
+Ext plugin without modifying the original files. 
 
-Next, we present a list of all these files, along with a description and a
-reference to the original file in the path where they can be found in the source
-code of Liferay (you may need to look at them for reference):
+Below we list all the configuration files in Liferay by their path in your Ext
+plugin folder. We provide a description of the properties in the file and the
+path to the original file in Liferay Portal: 
 
--   `ext-impl/src/META-INF/ext-model-hints.xml`
+- `ext-impl/src/META-INF/ext-model-hints.xml`
 
-    - Description: This file allows overwriting the default properties of the
-    fields of the data models used by Liferay's core portlets. These properties
-    determine how the form to create or edit each model is rendered.
+    - Description: Allows overwriting the default properties of the fields of
+    the data models used by Liferay's core portlets. These properties determine
+    how the form to create or edit each model is rendered. 
 
-    -   Original file in Liferay: `portal-impl/src/META-INF/portal-model-hints.xml`
+    - Original file in Liferay: `portal-impl/src/META-INF/portal-model-hints.xml`
 
--   `ext-impl/src/META-INF/ext-spring.xml`
+- `ext-impl/src/META-INF/ext-spring.xml`
 
-    - Description: This file allows overwriting the Spring configuration used by
-    Liferay and any of its core portlets. The most common usage is to configure
-    specific datasources or to swap the implementation of a given service with a
-    custom one.
+    - Description: Allows overwriting the Spring configuration used by Liferay
+    and any of its core portlets. It's most commonly used to configure specific
+    datasources or swap the implementation of a given service with a custom one. 
 
-    -   Original files in Liferay: `portal-impl/src/META-INF/*-spring.xml`
+    - Original files in Liferay: `portal-impl/src/META-INF/*-spring.xml`
 
--   `ext-impl/src/content/Language-ext_*.properties`
+- `ext-impl/src/content/Language-ext_*.properties`
 
-    - Description: These files allow overwriting the value of any key used by
-    Liferay's UI to support *I18N*.
+    - Description: Allow overwriting the value of any key used by Liferay's UI
+    to support *I18N*. 
 
-    -   Original file in Liferay: `portal-impl/src/content/Language-*.properties`
+    - Original file in Liferay: `portal-impl/src/content/Language-*.properties`
 
--   `ext-impl/src/META-INF/portal-log4j-ext.xml`
+- `ext-impl/src/META-INF/portal-log4j-ext.xml`
 
-    - Description: This file allows overwriting the log4j configuration. The
-    most common usage is to increase or decrease the log level of a given
-    package or class, to obtain more information or hide unneeded information
-    from the logs.
+    - Description: Allows overwriting the log4j configuration. It's most
+    commonly used to increase or decrease the log level of a given package or
+    class, to obtain more information, or hide unneeded information from the
+    logs. 
 
-    -   Original file in Liferay: `portal-impl/src/META-INF/portal-log4j.xml`
+    - Original file in Liferay: `portal-impl/src/META-INF/portal-log4j.xml`
 
--   `ext-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository-ext.xml`
+- `ext-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository-ext.xml`
 
-    - Description: This file allows overwriting the configuration of the
-    Jackrabbit repository. Refer to the Jackrabbit configuration documentation
-    for details
-    ([http://jackrabbit.apache.org/jackrabbit-](http://jackrabbit.apache.org/jackrabbit-configuration.html)[configuration.html](http://jackrabbit.apache.org/jackrabbit-configuration.html))
+    - Description: Allows overwriting the configuration of the Jackrabbit
+    repository. Refer to the Jackrabbit configuration documentation for details
+    ([http://jackrabbit.apache.org/jackrabbit-](http://jackrabbit.apache.org/jackrabbit-configuration.html)[configuration.html](http://jackrabbit.apache.org/jackrabbit-configuration.html)) 
 
-    -   Original file in Liferay: `portal-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository.xml`
+    - Original file in Liferay: `portal-impl/src/com/liferay/portal/jcr/jackrabbit/dependencies/repository.xml`
 
--   `ext-web/docroot/WEB-INF/portlet-ext.xml`
+- `ext-web/docroot/WEB-INF/portlet-ext.xml`
 
-    - Description: This file allows overwriting the declaration of the core
-    portlets included in Liferay. The most common usage is to change the init
-    parameters or the roles specified.
+    - Description: Allows overwriting the declaration of the core portlets
+    included in Liferay. It's most commonly used to change the init parameters
+    or the roles specified. 
 
-    -   Original file in Liferay: `portal-web/docroot/WEB-INF/portlet-custom.xml`
+    - Original file in Liferay: `portal-web/docroot/WEB-INF/portlet-custom.xml`
 
--   `ext-web/docroot/WEB-INF/liferay-portlet-ext.xml`
+- `ext-web/docroot/WEB-INF/liferay-portlet-ext.xml`
 
-    - Description: This file allows overwriting the Liferay-specific declaration
-    of the core portlets included in Liferay. Refer to the
+    - Description: Allows overwriting the Liferay-specific declaration of the
+    core portlets included in Liferay. Refer to the
     `liferay-portlet-app_6_1_0.dtd` file for details on all the available
-    options. Use this file with care since the code of the portlets may be
-    assuming some of these options to be set to certain values.
+    options. Use this file with care; the code of the portlets may be assuming
+    some of these options to be set to certain values. 
 
-    -   Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-portlet.xml`
+    - Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-portlet.xml`
 
--   `ext-web/docroot/WEB-INF/liferay-display.xml`
+- `ext-web/docroot/WEB-INF/liferay-display.xml`
 
-    - Description: This file allows overwriting the portlets that will be shown
-    in the "Add application" pop-up and the categories in which they'll be
-    organized. The most common usage is to change the categorization, hide some
-    portlets or make some Control Panel portlets available to be added to a
-    page.
+    - Description: Allows overwriting the portlets that will be shown in the
+    "Add application" pop-up and the categories in which they'll be organized.
+    It's most commonly used to change the categorization, hide certain portlets,
+    or make specific Control Panel portlets available to be added to a page. 
 
-    -   Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-display.xml`
+    - Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-display.xml`
 
--   `ext-web/docroot/WEB-INF/liferay-layout-templates-ext.xml`
+- `ext-web/docroot/WEB-INF/liferay-layout-templates-ext.xml`
 
-    - Description: This file allows specifying custom template files for each of
-    the layout templates provided by default with Liferay. You should not need
-    to do this except for very advanced needs.
+    - Description: Allows specifying custom template files for each of Liferay's
+    standard layout templates. This is rarely necessary. 
 
-    -   Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-layout-templates.xml`
+    - Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-layout-templates.xml`
 
--   `ext-web/docroot/WEB-INF/liferay-look-and-feel-ext.xml`
+- `ext-web/docroot/WEB-INF/liferay-look-and-feel-ext.xml`
 
-    - Description: This file allows changing the properties of the default
-    themes provided by default with Liferay. You should not need to do this
-    except for very advanced needs.
+    - Description: Allows changing the properties of Liferay's default themes.
+    This is a very advanced customization and is rarely used. 
 
-    -   Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-look-and-feel.xml`
+    - Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-look-and-feel.xml`
 
 #### Configuring Lucene Analyzers 
 
 Liferay uses Lucene to facilitate search and indexing within the portal. In old
-versions of Liferay, Lucene analyzers could be configured from
-`portal-ext.properties`. This was convenient but there was only a single
-analyzer for all portal-indexed fields. This made it difficult to provide
-correct behaviors for handling both keyword and text fields, for example.
+versions of Liferay, you could configure Lucene analyzers from
+`portal-ext.properties`. While convenient, it was problematic to have only a
+single analyzer for all portal-indexed fields. For example, it was difficult to
+provide correct behaviors for handling both keyword and text fields. 
 
-In Liferay 6.1, this functionality has been upgraded. Lucene analyzers are now
-defined in Spring configuration files. The default analyzer configuration is
-defined in `/portal-impl/src/META-INF/search-spring.xml`. Liferay 6.1 introduced
-per-field analyzers, allowing Lucene's query parser to identify the correct
-analyzer to handle any field.
+In Liferay 6.1, you no longer configure Lucen from `portal-ext.properties`.
+Instead, Lucene analyzers are defined in Spring configuration files. The default
+analyzer configuration is defined in
+`/portal-impl/src/META-INF/search-spring.xml`. Liferay 6.1 introduced per-field
+analyzers, allowing Lucene's query parser to identify the correct analyzer to
+handle any field. 
 
-There are two common scenarios where it's useful to configure Lucene analyzers.
-The first scenario involves language analyzers. Liferay provides a large number
-of language analyzers in `search-spring.xml` out of the box and uses regular
-expression matching to map localized fields to specific analyzers. However, if
+There are two common cenarios where it's useful to configure Lucene analyzers:
+when creating custom language analyzers to override a Liferay language analyzer,
+and when creating a custom indexer to index new fields. Liferay provides a large
+number of language analyzers in `search-spring.xml` out of the box and uses
+regular expression matching to map localized fields to specific analyzers. If
 your language is not included among the defaults or you're not satisfied with
-one of the default language analyzers, you can override a default analyzer with
-a custom analyzer. The second scenario involves creating custom indexers. If
-you've created a custom indexer to index new fields, you can use the default
-analyzer for your new fields, select a specific one (such as one of the
-`KeywordAnalyzers`), or define a custom analyzer.
+one of the default language analyzers, you can override it with a custom
+analyzer. If you've created a custom indexer to index new fields, you can use
+the default analyzer for your new fields, select a specific one (such as one of
+the `KeywordAnalyzers`), or define a custom analyzer. 
 
-In order to customize the Lucene analyzer configuration, you need to create an
-Ext plugin. Since the Analyzer classes reference the Lucene APIs directly, it's
-not possible to configure Lucene analyzers from a hook plugin. Within your Ext
+To customize the Lucene analyzer configuration, you'll need to create an Ext
+plugin. The Analyzer classes reference the Lucene APIs directly, so it's not
+possible to configure Lucene analyzers from a hook plugin. Within your Ext
 plugin, create a `/docroot/WEB-INF/ext-impl/src/META-INF/ext-spring.xml` file
-and declare the beans that you'd like to override with a custom configuration.
+and declare the beans you'll override with a custom configuration. 
+
 Here are a few of the pre-configured analyzers from the
-`com.liferay.portal.search.lucene.PerFieldAnalyzerWrapper` bean configuration
-in `search-spring.xml`:
+`com.liferay.portal.search.lucene.PerFieldAnalyzerWrapper` bean configuration in
+`search-spring.xml`:
 
     <entry key="tag"
            value-ref="com.liferay.portal.search.lucene.LikeKeywordAnalyzer" /> 
@@ -807,100 +805,100 @@ in `search-spring.xml`:
     <entry key=".*_fr_[A-Z]{2}"
            value-ref="org.apache.lucene.analysis.fr.FrenchAnalyzer" />
 
-Note that you can define custom analyzers for any fields, including custom
-fields.
+You can define custom analyzers for any fields, including custom fields. 
 
 #### Changing the API of a core service 
 
-One advanced customization need that appears in some scenarios is to change the
-API of a method provided by one of Liferay's services, like `UserLocalService`,
-for example.
+Sometimes you might need to change the API of a method provided by one of
+Liferay's services (e.g., `UserLocalService`). This is an advanced customization
+need. 
 
-Is it possible to do that? The short answer is no. The long answer is that you
-can, but it will require modifying Liferay's source code directly and making
-manual changes to quite a few files. The good news is that there is a better
-alternative to achieve the end goal.
+Is it even possible to change the API of a core service? The short answer is
+*no*. Don't worry, we didn't put this section here just to tell you it's not
+possible. The long answer is *yes*, you can, but it requires modifying Liferay's
+source code directly and making manual changes to a slew of files. Here's the
+good news--there's a better way to do it. 
 
-The best way to extend an existing service is to create a complementary custom
-service, for example a `MyUserLocalService` that includes all the new methods.
-Your custom code can invoke this service instead of the default service and the
-implementation of your service can invoke the original service as needed.
+The best way to extend an existing service is by creating a custom service
+that's complementary ( e.g., a `MyUserLocalService` that includes all the new
+methods). Your custom code can invoke this service instead of the default
+service, and the implementation of your service can invoke the original service
+as needed. 
 
-Note that this technique does not require an Ext plugin since it can be done
-from portlet plugins. In fact, using Service Builder for an Ext plugin is
-deprecated but is supported for migration from the old extension environment.
+This technique doesn't require an Ext plugin since it can be done from portlet
+plugins. In fact, using Service Builder for an Ext plugin is deprecated, but
+it's supported for migration from the old extension environment. 
 
-In some advanced circumstances, it's desired to change the implementation of the
-original service to call your custom one, which can only be done from an Ext
-plugin. To achieve this, override the Spring definition for
-`UserLocalServiceUtil` in `ext-spring.xml` and point it to your
-`MyUserLocalServiceImpl` (instead of `UserLocalServiceImpl`). This way both
+Sometimes it's desirable to change the implementation of the original service to
+call your custom one; that's when you'll need an Ext plugin. Override the Spring
+definition for `UserLocalServiceUtil` in `ext-spring.xml` and point it to your
+`MyUserLocalServiceImpl` (instead of `UserLocalServiceImpl`). Now both
 `MyUserLocalServiceUtil` and `UserLocalServiceUtil` will use the same Spring
-bean: your new implementation.
+bean: your new implementation. 
 
 #### Replacing core classes in portal-impl 
 
-If you really need to change a core portal-impl class and this class cannot be
-replaced in any configuration file, then the best way to avoid conflicts and
-easily merge with a new portal version is to:
+If you're sure you need to change a core portal-impl class, and certain it can't
+be replaced in a configuration file, here's the best way to do it while avoiding
+conflicts when merging with a new portal version: 
 
-1.  Rename original class (e.g. `DeployUtil` &rarr; `MyDeployUtil`)
+1. Rename the original class (e.g. `DeployUtil` &rarr; `MyDeployUtil`). 
 
 2. Create a new subclass with the old name (e.g. `DeployUtil extends
-MyDeployUtil`)
+MyDeployUtil`). 
 
-3.  Override methods you need to change
+3. Override any methods you need to change. 
 
-4.  Delegate static methods
+4. Delegate static methods. 
 
-5. Use a logger with appropriate class name for both classes (e.g. `DeployUtil`)
+5. Use a logger with and appropriate class name for both classes (e.g.
+`DeployUtil`). 
 
-This strategy will help you determine what you will need to merge in the future
-when a new version of Liferay is released.
+This strategy will help you determine what you'll need to merge when a new
+version of Liferay is released. 
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** This is a very advanced
- technique that, especially if abused, may have a high impact on the
- maintainability of your code. Try to look for alternatives and if you confirm
- that this is your only alternative try to apply it only for the short term and
- get in touch with Liferay's developers to apply the necessary changes to the
- product source code.
+ ![tip](../../images/tip-pen-paper.png)**Tip:** This is an advanced technique;
+ it may have a large impact on the maintainability of your code, especially if
+ abused. Seek alternatives, and if you're sure this is your only option, think
+ of it as a short term solution. Contact Liferay's developers about applying the
+ necessary changes to the product's source code. 
 
 ---
 
 ## Deploying in production 
 
-In production or pre-production environments, it's often not possible to use Ant
-to deploy web applications. Also, some application servers such as WebSphere or
-Weblogic have their own deployment tools and it isn't possible to use Liferay's
-autodeploy process. This section describes two methods for deploying and
-redeploying Ext plugins in these scenarios.
+Often times you can't use Ant to deploy web applications in production or
+pre-production environments. Additionally, some application servers such as
+WebSphere or Weblogic have their own deployment tools, and Liferay's autodeploy
+process won't work. Let's look at two methods for deploying and redeploying Ext
+plugins in these scenarios. 
 
 ### Method 1: Redeploying Liferay's web application 
 
-This method can be used in any application server that supports auto-deploy,
-such as Tomcat or JBoss. Its main benefit is that the only artifact that needs
-to be transferred to the production system is your Ext plugin's `.war` file,
-produced using the `ant war` target. This `.war` file is usually small making it
-easy to transport. Here are the steps that need to be executed on the server:
+You can use this method in any application server that supports auto-deploy;
+Tomcat and JBoss are two examples. What's the benefit? The only artifact that
+needs to be transferred to the production system is your Ext plugin's `.war`
+file, produced using the `ant war` target. This `.war` file is usually small and
+easy to transport. Execute these steps on the server: 
 
-1.  Redeploy Liferay:
+1. Redeploy Liferay:
 
-	If this is the first time you are deploying your Ext plugin to this server,
-	you can skip this step. Otherwise, start by executing the same steps you
-	first used to deploy Liferay on your app server. If you're using a bundle,
-	you can just unzip the bundle again. If you've installed Liferay manually on
-	an existing application server, you'll need to redeploy the Liferay `.war`
-	file and copy the libraries required globally by Liferay and your Ext plugin
-	to the appropriate directory within the application server.
+    If this is your first time deploying your Ext plugin to this server, skip
+    this step. Otherwise, start by executing the same steps you first used to
+    deploy Liferay on your app server. If you're using a bundle, just unzip it
+    again. If you installed Liferay manually on an existing application server,
+    you'll need to redeploy the Liferay `.war` file and copy both the libraries
+    required globally by Liferay and your Ext plugin to the appropriate
+    directory within the application server. 
 
 2. Copy the Ext plugin `.war` into the auto-deploy directory. For a bundled
 Liferay distribution, the `deploy` folder is in Liferay's *root* folder of your
-bundle (e.g. `liferay-portal-6.1.0-ce-ga1/`).
+bundle (e.g. `liferay-portal-6.1.0-ce-ga1/`). 
 
 3. Once the Ext plugin is detected and deployed by Liferay, restart the Liferay
-server.
+server. 
 
 ### Method 2: Generate an aggregated WAR file 
 
