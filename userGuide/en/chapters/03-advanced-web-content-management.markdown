@@ -82,7 +82,7 @@ scrolls with the user and more.
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
 
-##### Editing a Structure  
+##### Editing structures
 
 Go back to the Control Panel and select *Web Content* from the content section.
 The first way to access the Manage Structures interface is simply by clicking
@@ -217,7 +217,7 @@ instructions are displayed.
 As with everything else in Liferay, you can set permissions on structures. Next,
 let's look at how to do that.
 
-##### Assigning Permissions  
+##### Assigning permissions  
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -277,11 +277,11 @@ popular. It has some advantages over Velocity for which it sacrifices some
 simplicity, yet it is still easy to use.
 
 **CSS** (Cascading Style Sheets): You can use CSS if your structure is very
-straightforward and modifications are simple (colors, fonts, layouts, etc). If
+straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
-##### Adding a Template  
+##### Adding templates
 
 Liferay WCM makes it easy to create structures, templates and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -392,7 +392,7 @@ you can create as many different sites as you like within the context of a
 single portal.
 
 You can use sites in Liferay to build many different kinds of websites. Whether
-you're builing a large corporate website, a company intranet, or a small site
+you're building a large corporate website, a company intranet, or a small site
 designed to facilitate collaboration among team members, Liferay's framework
 provides all the tools you need. To support different kinds of collaboration and
 social scenarios, Liferay's sites provide three membership types:
@@ -463,15 +463,17 @@ many different purposes besides communities.
 ---
 
 Sites can be created through the Control Panel by a portal administrator. To add
-a site, click the *Sites* link on the left side of the Control Panel in the
-Portal section and then click *Add* in the toolbar. If there is at least one
-site template available, a dropdown menu will be shown allowing you to select a
-*Blank Site*. Other site templates will appear in the menu as they become
-available. *Site templates* provide a preconfigured set of pages, applications
-and content that can be used as the basis of the site.
-
-The following figure shows the form that needs to be filled when creating a
-*Blank Site*.
+a site, click on *Sites* under the Portal section of the Control Panel and then
+click *Add*. If there is at least one site template available, a dropdown menu
+appears. Site templates provide a preconfigured set of pages, portlet
+applications, and content that can be used as the basis of a site's public or
+private page set. To create a site from scratch, select *Blank Site*. Otherwise,
+select the name of the site template you'd like to use. If you opt to create a
+site from a site template, you have to choose whether to copy the site
+template's pages as your new site's public or private page set. If other site
+templates are created, they will appear in the Add menu as they become
+available. The following figure shows the form that needs to be filled when
+creating a *Blank Site*.
 
 ![Figure 3.7: Adding a Site](../../images/01-add-site-screen.png)
 
@@ -538,26 +540,45 @@ permission to do so.
 
 ![Figure 3.9: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
-Site templates are very powerful for managing many similiar sites. Let's look
-further at how they work.
+Site templates are a powerful tool for managing many similar sites. Let's
+examine how they work.
 
 ## Using site templates  
 
-Site Templates can be administered in the Control Panel within the portal
-section of the left menu.
+Site Templates can be administered from the Control Panel. They allow portal
+administrators to create multiple sites with the same default set of pages and
+content. Site templates can contain multiple pages, each with its own theme,
+layout template, portlets, and portlet configurations. Site templates can also
+contain content just like actual sites. This allows administrators to use site
+templates to create new sites that are each created with the same default pages,
+portlets, and content. After they've been created, these sites and their pages
+can be modified by site administrators. Using site templates can save site
+administrators a lot of work even if each site that was created from a given
+site template ends up being very different.
 
-Creating or modifying a site template is done using the same tools used to
-manage a site. You can use these tools to add a hierarchy of pages. Each page
-can have any configuration and any number of applications, just like a regular
-site. When you create a site using a site template, the configuration of pages
-and applications are copied from the template to the site. By default, all
-changes made to the site template are automatically copied to sites based on
-that template.
+To get started, click on *Site Templates* in the Portal section of the Control
+Panel. Here, you can add, manage, or delete site templates. You can also
+configure the permissions of site templates. As long as a site is linked to the
+site template it was created from, changes to the site template's pages,
+portlets, and portlet configurations are propagated to the site. Changes to a
+site template's content, however, are not propagated to existing sites that are
+linked to the site template. We discuss the propagation of changes between site
+templates and sites in more detail in the section on site templates use cases
+below.
 
-Site templates can also contain content just like actual sites. This allows you
-to use a site template to create sample content that appears in your site when
-it is first created. Changes to a site template's content, however, are not
-propagated to existing sites that are linked to the site template.
+To manage the pages of a site template, click on *Site Templates* in the Control
+Panel and then click *Actions* &rarr; *Manage Pages*. From here, you can add or
+remove pages from a site template or select themes and layout templates to apply
+to the site template. Click on a specific page if you'd like to select a
+different theme or layout template for that page. To edit the pages themselves,
+click *Actions* &rarr; *View Pages*. You can add specific portlets to each page
+of a site template and configure the preferences of each portlet. Each page can
+have any theme, any layout template, and any number of portlet applications,
+just like a page of a regular site. As with site pages, you can organize the
+pages of a site template into hierarchies. When you create a site using a site
+template, the configuration of pages and portlets is copied from the template to
+the site.  By default, all changes made to the site template are automatically
+copied to sites based on that template.
 
 ---
 
@@ -572,15 +593,16 @@ site.
 By default, the following site templates are provided:
 
 - **Community Site:** Provides a preconfigured site for building online
-communities. The home of a *community site* provides message boards, search, a
-display of a poll and statistics of the activity of community members. The site
-will also be created with a page for a community calendar and a page for a wiki.
+  communities. The home of a *community site* provides message boards, search, a
+  display of a poll and statistics of the activity of community members. The
+  site will also be created with a page for a community calendar and a page for
+  a wiki.
 
 - **Intranet Site:** Provides a preconfigured site for an intranet. The Home
-page displays the activities of the members of the site, search, a language
-chooser and a list of the recent content created in the intranet. It also
-provides 3 additional pages for *Documents and Media*, *Calendar* and external
-*News* obtained through public feeds.
+  page displays the activities of the members of the site, search, a language
+  chooser and a list of the recent content created in the intranet. It also
+  provides 3 additional pages for *Documents and Media*, *Calendar* and external
+  *News* obtained through public feeds.
 
 The following figure displays the form shown when editing the *Community Site*
 template:
@@ -589,86 +611,167 @@ template:
 
 To view and manage the pages of a site template, click the *Open site template*
 link. This opens the template in a new browser window (or tab) and it can be
-navigated or managed like a regular site..
+navigated or managed like a regular site.
 
-<!-- | TODO: I would change the example below to not use organizations to
-simplify things | -->
+### Site templates example
 
-For example, let's suppose we need to create sites for three suborganizations of
-the Nosester organization: Engineering, Marketing and Legal. These are to be
-private sites designed for each organization's internal use. We could design
-each site separately but we can save ourselves some work if we create a site
-template to use instead.
+Suppose we need to create the following three sites for Nose-ster's internal
+use: Engineering, Marketing, and Legal. These should be private sites that are
+only accessible to members of these respective departments. We could design each
+site separately but can save ourselves some work if we create a site template to
+use instead.
 
 To create a site template, navigate to the Control Panel and click *Site
 Templates*. Then click *Add* and enter a name for your template: we'll use
-*Organization Site Template* for our example. Leave the *Active* and *Allow Site
-Administrators to Modify the Pages Associated with This Site Template* boxes
-checked. The *Active* box must be checked for your template to be usable. If
-your template is still a work in progress, you can uncheck it so no one uses it
-until it's ready. Checking *Allow Site Administrators to Modify the Pages
-Associated with This Site Template* allows Site Administrators to modify or
-remove the pages and portlets the template introduces to their sites--if you
-want the templates to be completely static, you should uncheck this.
+*Department* for our example. Leave the *Active* and *Allow Site Administrators
+to Modify the Pages Associated with This Site Template* boxes checked. The
+*Active* box must be checked for your template to be usable. If your template is
+still a work in progress, you can uncheck it to ensure that no one uses it until
+it's ready. Checking *Allow Site Administrators to Modify the Pages Associated
+with This Site Template* allows site administrators to modify or remove the
+pages and portlets that the template introduces to their sites--if you want the
+templates to be completely static, you should uncheck this.
 
-Click on the *Open site template* link to begin adding pages and portlets and
-configuring the layouts. For our example, we would like our template to include
-four pages: a Home page with the Activities, Announcements and Calendar
-portlets, a Documents and Media page with the Documents and Media portlet, a
+From the list of site templates, click on the *Department* site template that
+you created. Then click on the *Open site template* link to begin adding pages
+and portlets and configuring the layouts. When you click this link, the site
+template opens in a new browser tab or window. For our example, we would like
+our site template to include four pages. First, we'd like a Home page with the
+Activities, Announcements, and Calendar portlets. Next, we'd like a Documents
+and Media page with the Documents and Media portlet. Finally, we should create a
 Wiki page with the Wiki and Tag Cloud portlets and a Message Boards page with
-the Message Boards and Tag Cloud portlets. The changes are automatically saved
-as you make them, so once you're finished, return to the Site Templates page of
-the Control Panel and select *Save*.
+the Message Boards and Tag Cloud portlets. When you're done creating and
+configuring the pages of your site template, just close the browser tab or
+window that opened when you clicked *Open site template*. Changes to site
+templates are automatically saved as you make them, so you don't need to return
+to the Site Templates page of the Control Panel and select *Save*.
 
 ![Figure 3.11: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
 
-Now let's create the Engineering, Marketing and Legal organizations whose sites
-we want to create with our template. Go to the Control Panel and click *Users
-and Organizations*. Then click the *Add* button and select *Regular
-Organization*. Enter a name for your organization, select the *Organization
-site* tab and check the *Create Site* box. When you check this box, two
-drop-down lists appear: one for the site's Public Pages and one for its Private
-Pages. To use your template to create the site, select the name of your
-template, *Organization Site*, from the Private Pages drop-down list. Click
-*Save* to create your site. You can view the new site by clicking the *Open
-private pages* link from the newly created organization page. The new site will
-have all the pages and portlets you created in the template. This feature
-streamlines the site creation process for administrators, making it easy to
-create sites quickly. Next, let's discuss how to create and apply page
-templates.
+Next, let's use our site template to create our Engineering, Marketing and Legal
+sites. Go to the Control Panel and click on *Sites*. Then click *Add* &rarr;
+*Department*. Enter *Engineering* for the site name and set the Membership Type
+to *Private*. Recall that private sites don't appear in the My Sites portlet so
+that regular portal users won't even know that the Engineering site exists.
+Also, the only way users can be added to a private site is via an invitation
+from a site administrator. Leave the *Active* box checked so that your site can
+be used immediately. Select the *Copy as Private Pages* option since our
+Engineering site is intended for internal use only. Leave the *Enable
+propagation of changes from the site template* box checked so that the
+Engineering site receives updates if the Department site template is modified.
+Finally, click *Save* to create your the Engineering site.
+
+Repeat these steps to create the Marketing and Legal sites. The new sites have
+all the pages and portlets you created in the site template. To view the pages
+of the new sites, click on *Sites* in the Control Panel and then click on
+*Actions* &rarr; *Go to Private Pages* next to one of your new sites. Using site
+templates streamlines the site creation process for administrators, making it
+easy to create sites quickly. Now each Nose-ster department has its own
+calendar, documents and media library, wiki, and message boards application.
+Although the pages and portlets of each department's site are the same, each
+site will quickly be filled with department-specific information as users add
+and share content within the sites. Also, site administrators can add new pages,
+portlets, and content to their sites, further differentiating each department's
+site from the others.
+
+### Propagating changes from site templates to sites
+
+It's possible for site template administrators to add, update, or delete site
+template pages. Changes made to a site template can be propagated to sites whose
+pages sets are linked to the site template. Such a link is created when you
+create a site based on a site template and leave the *Enable propagation of
+changes from the site template* box checked. To disable or re-enable this link
+for a site, select the site in the Control Panel's context menu selector. Then
+click on *Site Settings* and uncheck or recheck the *Enable propagation of
+changes from the site template* checkbox. You can can also access the Site
+Settings interface via the Dockbar by clicking *Manage* &rarr; *Site Settings*.
+In this section, we explain the propagation of changes from site templates to
+sites and discuss the options available to site administrators and site template
+administrators.
+
+If a site's page set has been created from a site template and the propagation
+of changes from the site template is enabled, site administrators can add new
+pages but cannot remove or reorder the pages imported from the site template.
+If a site has both pages imported from a site template and custom site pages,
+the site template pages always appear first; custom pages added by site
+administrators appear after the site template pages. Only site template
+administrators can remove, reorder, or add site template pages. Site
+administrators can add or remove custom site pages. They can also reorder custom
+site pages as long as they're all positioned after the site template pages. Site
+template administrators cannot add, remove, or reorder custom site pages.
+
+If a site administrator changes a page that was imported from a site template
+and refreshes the page, the following message appears:
+
+	This page has been changed since the last update from the site template. No
+	further updates from the site template will be applied. Click *Reset* to
+	overwrite the changes and receive updates from the site template.
+
+If the site administrator clicks the *Reset* button, changes are propagated from
+the site template to all the pages of the site that were imported from the site
+template. Clicking the *Reset* button makes two kinds of updates. First, changes
+made by site administrators to pages that were imported from the site template
+are undone. Second, changes made by site template administrators to site
+template pages are applied to the site pages.
+
+Site template administrators can set preferences for portlets on site template
+pages. When a portal administrator creates a site from a site template, the
+portlet preferences are copied from the site template's portlets, overriding any
+default portlet preferences. When merging site template and site changes, e.g.,
+when resetting, portlet preferences are copied from site template portlets to
+site portlets. Only global portlet preferences or local portlet preferences
+which don't refer to IDs are overwritten.
+
+Site administrators can also add data to site template portlets. For example,
+site template administrators can add the Wiki portlet to a site template page
+and use the Wiki to create lots of articles. When a portal administrator creates
+a site from a site template, data is copied from the site template's portlets to
+the site's portlets. The preferences of the site's portlets are updated with the
+IDs of the copied data. For example, if a site is created from a site template
+that has a Wiki portlet with lots of wiki articles, the wiki articles are copied
+from the site template's scope to the site's scope and site's Wiki portlet is
+updated with the IDs of the copied wiki articles. Portlet data is only copied
+from a site template to a site when the site is first created; data is not
+copied copied during a site reset.
+
+Now that we've learned how site templates work, let's discuss how to use page
+templates. 
 
 ## Using page templates  
 
-Page templates function similarly to site templates but at the page level. Page
-templates provide a pre-configured page to reuse. Within a page template it is
-possible to set up a theme, a layout and specific applications and their
-configuration. Both sites and site templates can utilize page templates for
-creating new pages.
+Click on *Page Templates* in the Control Panel to see a list of page templates.
+Page templates function similarly to site templates but at the page level. Each
+page template provides a pre-configured page to reuse. Within a page template,
+it's possible to select a theme, a layout template, to add portlets to the page
+and to configure portlet preferences. Both sites and site templates can utilize
+page templates for creating new pages.
 
 ![Figure 3.12: Page Templates](../../images/server-configuration-page-templates.png)
 
-The Page Templates page of the Control Panel shows a list of templates and lets
-you create new ones. It also allows you to edit existing templates and configure
-their permissions. By default three sample page templates are provided:
+You can edit or delete existing page templates, configure their permissions, or
+add new page templates. By default three sample page templates are provided:
 
-- Blog: provides a page with three applications related to blogging. It has two
-columns, the main left column contains the blogs portlet and the small right
-column provides two side portlets, Tag Cloud and Recent Bloggers. The tag cloud
-application will show the tags used within the site and will allow navigating
-through the blog entries shown in the main blogs portlet.
-- Wiki: provides a page with three applications related to authoring a wiki. It
-also has two columns, the main left column with the wiki application and two
-right side portlets to allow navigating through pages by tags and categories.
-- Content Display Page: provides a page preconfigured to display content. It has
-three auxiliary applications (Tags Navigation, Categories Navigation, and
-Search) and an Asset Publisher. The most significant aspect of this page is that
-the Asset Publisher is preconfigured to be display any web content associated
-with this page. This means that you can select any page created from this page
-template as a *Display Page* for a web content article. You can choose a display
-page for a web content article when creating a new web content article or when
-editing an existing one. When you create a new web content article, a unique
-(canonical) URL for the web content pointing to this page will be assigned to
-it.
+- **Blog:** provides a page with three applications related to blogging. It has
+  two columns, the main left column contains the blogs portlet and the small
+  right column provides two side portlets, Tag Cloud and Recent Bloggers. The
+  tag cloud application will show the tags used within the site and will allow
+  navigating through the blog entries shown in the main blogs portlet.
+
+- **Content Display Page:** provides a page preconfigured to display content. It
+  has three auxiliary applications (Tags Navigation, Categories Navigation, and
+  Search) and an Asset Publisher. The most significant aspect of this page is
+  that the Asset Publisher is preconfigured to be display any web content
+  associated with this page. This means that you can select any page created
+  from this page template as a *Display Page* for a web content article. You can
+  choose a display page for a web content article when creating a new web
+  content article or when editing an existing one. When you create a new web
+  content article, a unique (canonical) URL for the web content pointing to this
+  page will be assigned to it.
+
+- **Wiki:** provides a page with three applications related to authoring a wiki.
+  It also has two columns, the main left column with the wiki application and
+  two right side portlets to allow navigating through pages by tags and
+  categories.
 
 To add a new page template, click the *Add* button. Then enter a name and
 description for your template. Leave the *Active* button checked. Click *Save*
@@ -723,7 +826,7 @@ Have we determined that this IS an EE-only feature?
 ![EE Only Feature]
 -->
 
-### Exporting and Importing Site Templates and Page Templates  
+### Exporting and importing site templates and page templates  
 
 If you want to export a site that uses site or page Templates to a different
 environment (through a LAR file or remote publication), the Templates must be
@@ -790,110 +893,8 @@ can and can't be changed in the translation process. For example, if you don't
 want images or content titles to be changed when the content is translated, you
 can make sure those fields aren't listed as localizable. When you follow the
 steps above to localize content, only fields within the structure that had the
-*Localizable* box checked appear within the translation window.
-
-## Using application display templates 
-
-Application display templates work similarly to site and page templates, but at
-the portlet level. The application display template (ADT) framework allows
-portal administrators to override the default display templates, removing
-limitations to the way your site's content is displayed. With ADTs, you can
-define custom display templates used to render asset-centric applications. For
-example, you may want to show blog entries horizontally instead of vertically,
-or list your assets in the asset publisher portlet in different sizes.
-
-Let's go through a simple use case to illustrate how creating a custom ADT can
-improve your site. Consider you're customizing the Nosester site and want to
-allow users to spread their noses to other social networks. Specifically, you
-want to configure the Wiki portlet for colloboration with Facebook or Twitter.
-With ADTs, you can launch a template editor, create a custom template, and
-make your portlet host that template. Custom templates let you re-skin your
-portlet and give you ultimate control over its appearance and functionality in
-your portal.
-
-Before attempting to change the ADT for your application, use the context menu
-in the Control panel to choose the location for your custom tempate. The
-*Global* context makes your template available across all sites. If you select
-the Global context, the *Application Display Templates* page of the Control
-Panel's Content Menu shows you a list of pre-made templates available for
-your portlets. If you choose a site to host your template, you must create a
-custom template for that site's portlets.
-
-![Figure 3.17: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
-
-If you'd like to add an ADT, select the portlet you'd like to customize. Below
-is a list of the portlets that can be customized using ADTs, and their template
-descriptions:
-
-- Wiki: displays social bookmarks and ratings for wiki pages and their child
-pages.
-- Categories Navigation: displays a column for each vocabulary. Each column
-includes the name of a vocabulary with the vocabulary's top level categories
-listed underneath.
-- Asset Publisher: displays abstracts, icons, related assets, and print/edit
-actions for assets. Optionally includes asset bookmarks and ratings.
-- Site Map: displays a column for each top level page. Each column includes the
-name of a top level page with the page's immediate children listed underneath.
-- Tags Navigation: displays asset tags colored by popularity: red (high), yellow
-(medium), and green (low).
-- Blogs: displays titles, authors, and abstracts compactly for blog entries.
-
-<!-- TODO: Add D&M once available (has option to create template in Control
-Panel, but not available to select ADT within D&M portlet). 
-UPDATE: The ADT for D&M can be used for the Media Gallery Portlet. There is not
-yet a preinstalled default template for D&M. The goal is to finish the
-implementation for D&M and provide ADT support for several other portlets such
-as Web Content List.-->
-
-To create a new ADT, click *Add* and select the template you'd like to create,
-based on portlet type. Then enter the name, description, and optional small
-image you'd like to use. You can select the language type for your template
-(FTL, VM, XSL). Lastly, the *Script* option lets you browse your file system
-for a template on your file system, or you can launch the editor and create one
-directly. For more information on how to create a custom template, visit the
-*Liferay Developer's Guide*.
-
-<!-- TODO: When the Dev Guide section for templates is complete, add the exact
-link above -->
-
-![Figure 3.18: Liferay offers multiple options to customize your ADT.](../../images/adt-setup-menu.png)
-
-<!-- TODO: the below paragraph should point to the relevant section at the
-beginning of the next chapter, where import/export is covered. In fact, this
-whole section should probably be moved to the next chapter, since it's not
-dealing with web content, but with applications. Let's discuss. -->
-
-Another cool feature is the *Export/Import* functionality. You can take
-advantage of this feature by clicking the wrench icon at the top right of the
-screen and selecting *Export/Import*. Maybe you want to share your ADT with
-someone or import your friend's ADT to use in your own portlet. The export
-feature bundles your ADT into a LAR file and gives you options on what to
-include. Likewise, the import feature overwrites selected data by extracting a
-LAR file. These features look similar to the snapshot below:
-
-![Figure 3.19: The *Export/Import* feature allows you to share and overwrite your ADTs.](../../images/adt-export-import.png)
-
-After you've completed the initial set up and saved your ADT, you can manage
-your ADT through its *Actions* button. This provides several options:
-
-- *Edit*: lets you modify the ADT's setup properties. 
-- *Permissions*: lets you manage the permissions *Delete*, *Permissions*,
-  *Update*, and *View* for the ADT. 
-- *Delete*: deletes the ADT.
-
-To enable your ADT for a portlet, navigate to the portlet you want to modify and
-open its *Configuration* menu. In the *Display Settings* sub-tab located within
-the *Setup* tab, select your ADT from the *Display Template* drop-down
-menu. You'll notice they're separated by context type. Also, an administrator
-can select the display template that can be viewed by guests of the site: do
-this by clicking the *Manage Display Templates for Guest* link and selecting an
-ADT.
-
-![Figure 3.20: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
-
-Customizing the user interface of Liferay's bundled portlets provides the
-ultimate customization experience for Liferay users. Next, we'll discuss how to
-let users customize their site pages.
+*Localizable* box checked appear within the translation window. Next, we'll
+discuss how to let users customize their site pages.
 
 ## Allowing users to customize site pages  
 
@@ -918,7 +919,7 @@ Additionally, you may want to create content and send it through an approval and
 reviewal process weeks before you want it displayed on the web site. Liferay
 gives you this flexibility with the *Schedule* and *Workflow* features.
 
-#### Scheduling Web Content  
+#### Scheduling web content  
 
 Liferay's WCM lets you define when your content goes live. You can determine
 when the content is displayed, expired and/or reviewed. This is an excellent to
@@ -926,7 +927,7 @@ way to keep your site current and free from outdated (and perhaps incorrect)
 information. The scheduler is built right into the form your users access to add
 web content, in the same column as the structure and template selectors.
 
-![Figure 3.21: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
+![Figure 3.17: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -995,7 +996,7 @@ Now we're ready to activate the staging feature for this site. Go to the Control
 Panel then to *Site Settings* and select *Staging* from under the *Advanced*
 heading.
 
-![Figure 3.22: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.18: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 We'll assume we don't have a separate staging server so we'll select the staging
 type *Local Live*. If you want to set up a remote staging environment, it's
@@ -1036,7 +1037,7 @@ environment to do that. Click on *Staging* to view the staged area. Your
 management options are restored and you have some new options related to
 staging.
 
-![Figure 3.23: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.19: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that
 the Calendar portlet isn't there. That's because you've staged a change to the
@@ -1065,7 +1066,7 @@ Publication* is published.
 The dropdown next to the Staging link at the top gives you the option to
 *Publish to Live Now* or *Schedule Publication to Live*.
 
-**Publish to Live Now:** immedatiately pushes any changes to the Live Site.
+**Publish to Live Now:** immediately pushes any changes to the Live Site.
 
 **Schedule Publication to Live:** lets you set a specific date to publish or to
 setup recurring publishing. You could use this, for example, to publish all
@@ -1083,7 +1084,30 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for Calendar Events, the event needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.24: Ready to publish to the live site.  ](../../images/04-web-content-staging-publish.png)
+![Figure 3.20: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+
+Web content tends to be frequently updated, often more so than other kinds of
+content. For some web content articles, this can result in very high numbers of
+versions, sometimes hundreds. Such high version numbers can make it very slow to
+publish web content articles. Liferay 6.2 addresses this issue by allowing site
+administrators to choose whether or not to publish a web content article's
+version history when a staged article is ready to be published. To use this
+feature, staging must be enabled. Edit a web content article that's being
+displayed in a Web Content Display portlet on one of your pages and then click
+*Staging* &rarr; *Publish to Live Now* from just below the Dockbar. In the
+popup, expand the Applications heading and scroll down until you see the section
+for Web Content.
+
+![Figure 3.x: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+
+Liferay 6.2 also added a portal property,
+`journal.publish.version.history.by.default`, that sets the default behavior. By
+default, this property is set to `true` so site administrators have to manually
+manually uncheck the *Version History* box mentioned above if they only want to
+publish the latest approved version of web content articles. If you'd like to
+change the default behavior, add the following line to your
+`portal-ext.properties` file:
+`journal.publish.version.history.by.default=false`.
 
 One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
@@ -1174,13 +1198,13 @@ variations toolbar. When you decide which page variation should be published,
 mark it as *Ready for Publication*. Only one page variation can be marked as
 ready for publication and that is the one that gets published to the live site.
 
-![Figure 3.25: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
+![Figure 3.21: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
 
 For example, we could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 3.26: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.22: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations.
 To merge two Site Pages Variations, you need to go to the Manage Site Variations
@@ -1227,12 +1251,12 @@ permissions defined by it would only apply within the scope of a designated
 site. Furthermore, team members, unlike user group members, are guaranteed to be
 members of the desired site.
 
-To create a team within a site, first naviagte to the *Control Panel &rarr;
+To create a team within a site, first navigate to the *Control Panel &rarr;
 Sites* page then and then select *Actions &rarr; Manage Memberships* for the
 site within which you want to create a team. Finally, click *View &rarr; Teams*
 and click the Add Team button.
 
-![Figure 3.27: Creating a Team within a Site](../../images/01-creating-a-team.png)
+![Figure 3.23: Creating a Team within a Site](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
 click *Save*. Your new team will appear in the list. To add members, simply
@@ -1244,7 +1268,7 @@ itself. Remember the portlet options link is the wrench symbol at the top of a
 portlet. This enables users who wouldn't have access to all of the necessary
 options in the Control Panel to manage permissions through teams.
 
-![Figure 3.28: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
+![Figure 3.24: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
 
 To give a team access to a particular portlet function, access the *Permissions*
 tab of a portlet residing on a page, check the boxes corresponding to
@@ -1317,7 +1341,7 @@ and lets you add more. To add rules to a rule group, select *Actions*
 &rarr; *Manage Rules*, or click on a rule group to edit it, and then click
 the *Manage Rules* link.
 
-![Figure 3.29: You can manage device rules from the Mobile Device Rules
+![Figure 3.25: You can manage device rules from the Mobile Device Rules
 administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups
@@ -1330,7 +1354,7 @@ available.  The rules are designed, however, to be extensible, and additional
 rule types can be added by your developers. Once added, you can edit the rule to
 specify a device type and operating system.
 
-![Figure 3.30: You need to install the Device Recognition Provider plugin to
+![Figure 3.26: You need to install the Device Recognition Provider plugin to
 populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them,
@@ -1350,7 +1374,7 @@ site or page and order them by priority. The rule groups are checked in
 decreasing order of priority: the actions defined by the first rule group that
 applies are executed.
 
-![Figure 3.31: You can select a mobile device rule group to apply for a site or
+![Figure 3.27: You can select a mobile device rule group to apply for a site or
 page from the Site Pages section of the Control
 Panel.](../../images/mobile-device-selection.png)
 
@@ -1402,7 +1426,7 @@ Rules page of the Control Panel. Click on *Add Rule Group*, enter the name
 *Android and Bada Mobile Phones*, and click *Save*. You'll see the message, *No
 rules are configured for this rule group.*
 
-![Figure 3.32: After adding a new rule, you'll see a message indicating that no
+![Figure 3.28: After adding a new rule, you'll see a message indicating that no
 rules have been configured for the rule
 group.](../../images/no-rule-groups-configured.png)
 
@@ -1416,7 +1440,7 @@ click *Save*. Now we just need to define the redirect action for our rule group.
 Make sure Liferay is still selected in the context menu selector and click on
 *Site Pages*. Click on *Mobile Rule Groups* in the navigation menu to the right.
 
-![Figure 3.33: To apply a mobile device rule group to a page set of a site,
+![Figure 3.29: To apply a mobile device rule group to a page set of a site,
 select the site in the context menu selector, click on *Mobile Rule Groups*,
 click *Select Rule Group*, and select the desired rule
 group.](../../images/site-pages-mobile-device-rules.png)

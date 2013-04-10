@@ -1,16 +1,16 @@
 # Liferay IDE 
 
-Liferay's developers use a variety of tools to develop the product and as a
-consequence of that they have always tried hard to allow other developers to use
-any tools they wanted for their own development. Because of this you can develop
-portals based on Liferay with complex IDEs Eclipse, Netbeans or IntelliJ Idea or
-just use text editors such as Notepad. You can write your persistence layer
-directly using SQL and JDBC or you can use advanced object-relational mapping
-libraries such as hibernate or iBatis.
+Liferay's developers use a variety of tools to develop the product. As a
+consequence, they have always tried hard to allow other developers to use any
+tools for their own development. For this reason, you can develop portals based
+on Liferay with complex IDEs such as Eclipse, Netbeans or IntelliJ Idea.
+Alternatively, you can just use text editors such as Notepad, Vim, or Emacs. You
+can write your persistence layer directly using SQL and JDBC or you can use
+advanced object-relational mapping libraries such as Hibernate or iBatis.
 
-But while being agnostic is great, specially for more experienced developers who
+While being tool-agnostic is great, especially for experienced developers who
 can reuse their existing knowledge, it can be overwhelming for newcomers. For
-that reason Liferay has also develped specific development tools that can be
+this reason, Liferay has also developed specific development tools that can be
 used to ease the learning curve when developing portlets with Liferay. The most
 significant of these tools is Liferay IDE, a fully featured Integrated
 Development Environment based on Eclipse.
@@ -30,72 +30,65 @@ preconfigured.
 
 ## Installation 
 
-This section is a detailed guide to install Liferay IDE.
+This section is a detailed guide on how to install Liferay IDE.
 
 ### Requirements 
 
--   Java 5.0 JRE or greater
+- Java 5.0 JRE or greater
 
--   [Eclipse Indigo Java EE (3.7.1)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-
-developers/indigosr1) or [Eclipse Helios Java EE (3.6.2)]
-(http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
+- [Eclipse Juno Java EE (4.2.x)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junosr1),
+  [Eclipse Indigo Java EE (3.7.x)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2),
+or [Eclipse Helios Java EE (3.6.x)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliossr2)
 
 ### Installation steps 
 
-1.  Install Eclipse Indigo or Helios (unzip download file from above).
+1. Install Eclipse Juno, Indigo, or Helios (unzip download file from above).
 
-2.  Run eclipse executable (eclipse.exe).
+2. Run eclipse executable (eclipse.exe).
 
-3.  When eclipse opens, go to *Help* &rarr; *Install New Software...*.
+3. When eclipse opens, go to *Help* &rarr; *Install New Software...*.
 
-	![Figure 8.1: Installing new software in Eclipse](../../images/ide-install-new-software.png)
+![Figure 8.1: Installing new software in Eclipse](../../images/ide-install-new-software.png)
 
-4.  In the *Work with* field, paste in one of the following update sites:
+4. In the *Work with* field, paste in one of the following update sites:
+
+	*Eclipse Juno Update Site*
+	[http://releases.liferay.com/tools/ide/eclipse/juno/stable/](http://releases.liferay.com/tools/ide/eclipse/juno/stable/)
 
     *Eclipse Indigo Update Site*
-    [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/]
-(http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
-
-    [http://releases.liferay.com/tools/ide/eclipse/indigo/nightly/]
-(http://releases.liferay.com/tools/ide/eclipse/indigo/nightly/)
-    (Nightly builds are unstable but contain new features more quickly)
+    [http://releases.liferay.com/tools/ide/eclipse/indigo/stable/](http://releases.liferay.com/tools/ide/eclipse/indigo/stable/)
 
     *Eclipse Helios Update Site*
-    [http://releases.liferay.com/tools/ide/eclipse/helios/stable/]
-(http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
+    [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
 
-    [http://releases.liferay.com/tools/ide/eclipse/helios/nightly/]
-(http://releases.liferay.com/tools/ide/eclipse/helios/nightly/)
-    (Nightly builds are unstable but contain new features more quickly)
+5. After pasting in the URL, press *Enter*.
 
-5.  After pasting in URL press enter.
+![Figure 8.2: Entering the information for Liferay IDE](../../images/ide-install-available-software.png)
 
-	![Figure 8.2: Entering the information for Liferay IDE](../../images/ide-install-available-software.png)
+6. The Liferay IDE features should be detected. Select them before clicking
+   *Next*.
 
-6. The Liferay IDE features should be detected, select it before clicking
-*Next*.
+7. After calculating dependencies, click *Next* to complete installation.
 
-7.	After calculating dependencies, click Next to complete installation.
+8. After installation, restart Eclipse to verify that installation is complete.
 
-8.	After installation restart Eclipse to verify installation is complete.
+9. After restarting Eclipse, go to *Help* &rarr; *About* and you should see an
+   icon badge for Liferay IDE that shows you have it properly installed.
 
-9. After restarting Eclipse go to Help &rarr; About and you should see and icon
-badge for Liferay IDE that shows you have it properly installed.
-
-	![Figure 8.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
+![Figure 8.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
 ### Alternative installation 
 
-The next set of instructions describe how to install Liferay IDE without typing
-the URL of an update site:
+The next set of instructions describes how to install Liferay IDE without
+entering the URL of an update site:
 
 1. Instead of typing in a URL, you can download the lastest version from the
-releases page. [Eclipse Update Site](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
+   releases page. [Liferay IDE Downloads Page](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
 
 2. In Add Site dialog, click the *Archive* button and browse to the location of
-the downloaded zip file.
+   the downloaded zip file.
 
-3.  Installation proceeds the same as previous section.
+3. Installation proceeds the same as in the previous section.
 
 ## Set up 
 
@@ -106,22 +99,22 @@ and testing your developments.
 
 Before getting started you should satisfy the next requirements:
 
-1.  Liferay Portal 6.0 (6.0.5 or greater) downloaded and unzipped.
+1. Liferay Portal 6.0 (6.0.5 or greater) downloaded and unzipped.
 
-2.  Liferay plug-ins SDK (6.0.5 or greater) downloaded and unzipped.
+2. Liferay plug-ins SDK (6.0.5 or greater) downloaded and unzipped.
 
 3. Eclipse IDE for Java EE Developers (Helios version or greater) + Liferay IDE
-(see the Installation steps).
+   (see the Installation steps).
 
-Note: Earlier versions of Liferay, eg 5.2.x, are not supported yet by the
-Liferay IDE.
+Note: Earlier versions of Liferay, eg 5.2.x, are not supported by the Liferay
+IDE.
 
 ### Liferay Plugins SDK Setup 
 
 Before you can begin creating new Liferay plugin projects, a Liferay Plugins SDK
 and Liferay Portal must be installed and configured in the IDE.
 
-1.  Open Eclipse with Liferay IDE installed.
+1. Open Eclipse with Liferay IDE installed.
 
 2. Open Preference page for Liferay &rarr; Installed SDKs (Go to Window &rarr;
 Preferences &rarr; Liferay &rarr; Installed Plugin SDKs).

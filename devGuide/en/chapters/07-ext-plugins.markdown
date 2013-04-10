@@ -210,7 +210,7 @@ your Ext plugin.
 
 ## Developing an Ext Plugin 
 
-Ext plugins change Liferay itself when deployed; it's not a separate compnent
+An Ext plugin changes Liferay itself when deployed; it's not a separate compnent
 that can be easily removed at any time. For this reason, Ext plugin development
 is done differently than with other plugin types. It's important to remmebr that
 once an Ext plugin is deployed, some of its files are *copied* inside the
@@ -396,7 +396,7 @@ implementation of each section based on the following conventions:
 
 - The section is implemented in a JSP inside the following directory: 
 
-    ext-web/docroot/html/portlet/users_admin/user/
+        ext-web/docroot/html/portlet/users_admin/user/
 
 - The name of the JSP uses the name of the section, with the `.jsp` extension.
 If the section name has a dash sign (`"-"`), convert it to an underscore sign
