@@ -1,6 +1,5 @@
 # Working Smarter with Liferay Social Office 
 
-
 Liferay Social Office is Liferay's social collaboration product for the
 enterprise. Previously released as a separate product that was based on Liferay
 Portal, it's now available as an application that can be installed on Liferay.
@@ -156,23 +155,52 @@ deploying your order id license, you'll need to restart your Liferay server
 after deploying the license in order for Social Office EE to deploy.
 
 The Social Office `.lpkg` file is hot-deployable and includes the following
-Liferay plugins: 
+Liferay plugins. The plugins listed in italics belong only to either the CE or
+EE versions of Social Office.
+
+**CE Plugins:**
 
 - chat-portlet
 - contacts-portlet
 - deploy-listener-hook
 - events-display-portlet
 - microblogs-portlet
-- portal-compat-hook (EE-only)
+- portal-compat-hook
 - private-messaging-portlet
-- resource-importer
-- so-configurations-portlet (EE-only)
+- *resource-importer-web*
 - so-hook
 - so-portlet
 - so-theme
-- so-welcome-theme
+- *so-welcome-theme*
 - tasks-portlet
 - wysiwyg-portlet
+
+**EE Plugins:**
+
+- chat-portlet
+- contacts-portlet
+- deploy-listener-portlet
+- *documentum-hook*
+- events-display-portlet
+- microblogs-portlet
+- portal-compat-hook
+- private-messaging-portlet
+- *sharepoint-hook*
+- *so-configurations*
+- so-hook
+- so-portlet
+- so-theme
+- tasks-portlet
+- wysiwyg-portlet
+
+After deploying Social Office, we recommend that you restart your application
+server. Restarting may not be necessary in all cases but it can help you avoid
+potential caching problems. For example, sending and accepting connection
+invitations among Social Office users might not work without a server restart.
+For additional information, see the section below on installation peculiarities
+for specific application servers. If you want to avoid restarting, you should at
+least re-index Liferay's search indexes and database cache. These options are
+available from the Server Administration section of Liferay's Control Panel.
 
 ---
 
@@ -217,7 +245,6 @@ be greyed out with a message stating that they've been undeployed.
 
 ### Installation peculiarities for specific apps servers 
 
-
 After installing Social Office on Glassfish, you need to restart the server
 before Social Office will be fully deployed. If you don't restart, Glassfish
 doesn't recognize the so-hook and the hook won't be available. Once you've
@@ -244,7 +271,6 @@ longer exists since the hook is gone. This will produce a number of errors in
 the log and once you log out, you won't be able to log in again.
 
 ## Managing the Social Office welcome theme 
-
 
 The Social Office welcome theme is a CE-only feature. The welcome theme and
 resource importer are included in the CE Social Office 2.0 package available
@@ -312,7 +338,6 @@ Next, let's discuss how Social Office facilitates team collaboration.
 
 ## What can you do with Social Office? 
 
-
 Social Office gives you the social collaboration features you need to do virtual
 teamwork. You can coordinate calendars and schedules, write shared blog entries,
 work together on documents, discuss issues in forums, document everything in
@@ -339,7 +364,6 @@ you'll be free to concentrate on the assets--the system gets out of your way so
 that it's a simple matter for your team to work together. 
 
 ## Social Office features 
-
 
 Liferay Portal is a full featured web portal, containing an industry-leading
 suite of built-in applications and tools. It's highly customizable and
@@ -378,7 +402,6 @@ theme, there's another theme for Social Office's Welcome page.
 
 ### Using the Social Office User role and personal sites 
 
-
 The Social Office plugin adds a special role to Liferay Portal: Social Office
 User. Assigning users to the Social Office User role provides them with personal
 sites pre-built with pages and applications designed to help them manage their
@@ -412,7 +435,6 @@ your public *Profile* page as well as a link your *My Account* page of the
 control panel and the *Sign Out* link.
 
 #### Using the Dashboard and other private pages 
-
 
 The private page sets of Social Office users serve as personal workspaces. Each
 private page displays a navigation menu and the Sites portlet in the left column
@@ -583,7 +605,6 @@ which roles grant permission to add new tasks or edit existing ones.
 
 #### Using the Profile page and other public pages 
 
-
 You can access your public Profile page from the Dashboard by clicking on your
 name, which appears above the page navigation menu in the left column. Your
 public pages are laid out and styled the same way as the Dashboard and the rest
@@ -639,7 +660,6 @@ other users can only view, not edit them. However, the Timeline tab of the
 Microblogs portlet allows users to comment on entries.
 
 ### Using Social Office sites for collaboration 
-
 
 Social Office not only provides custom pages and applications for users'
 personal sites but also for general sites that can have many members. A portal

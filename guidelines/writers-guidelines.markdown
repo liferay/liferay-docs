@@ -233,7 +233,7 @@ during the editing process, when this becomes necessary.
 There should never be more than one trailing space after a sentence, paragraph,
 or bullet point. 
 
-### Spaces vs. Tabs
+### Spaces vs. Tabs 
 
 Unlike the Liferay source code, Liferay documentation should have no tabs in it.
 This is so that you can more easily differentiate various constructs within
