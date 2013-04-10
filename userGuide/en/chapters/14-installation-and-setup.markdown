@@ -1934,6 +1934,9 @@ You've just installed and deployed Liferay Portal on Jetty - way to go!
 
 ## Installing Liferay on JBoss 5.1 [](id=lp-6-1-ugen14-installing-liferay-on-jboss-51-0)
 
+Note: Out of the box, JBoss 5.1 is incompatible with Java 7. Use Java 5 or Java
+6 to run JBoss 5.1.
+
 **Liferay Home** is one folder above JBoss's install location.
 
 1. Download and install JBoss EAP 5.1.x into your preferred directory. This
@@ -2007,23 +2010,42 @@ files, it's time to deploy Liferay.
 
 2. Extract the contents of the Liferay WAR file into this folder.
 
-3. Delete the following files from the `$JBOSS_HOME/ROOT.war/WEB-INF/lib`:
+3. Create a file named `jboss-classloading.xml` in the
+   `$JBOSS_HOME/../server/default/ROOT.war/WEB-INF` directory and add the
+   following contents to it:
+
+	<classloading xmlns="urn:jboss:classloading:1.0"
+		parent-first="false"
+		domain="LiferayDomain"
+		export-all="NON_EMPTY" 
+		import-all="true">
+	</classloading>
+
+   This configuration file defines a domain that does not allow parent classes
+   to load first. Instead, Liferay Portal's classes are loaded first.
+
+4. Create a `portal-ext.properties` file in `$LIFERAY_HOME` (one level above
+   `$JBOSS_HOME`) and add the following properties:
+
+	hibernate.validator.apply_to_ddl=false
+	hibernate.validator.autoregister_listeners=false
+
+5. Delete the following files from the `$JBOSS_HOME/ROOT.war/WEB-INF/lib`:
 	
     jaxrpc.jar
     stax.jar
     xercesImpl.jar
     xml-apis.jar
 
-4. Create a portal-ext.properties file in `$LIFERAY_HOME` (one level above
-   `$JBOSS_HOME` and add the following properties:
+6. Add the following lines to your `portal-ext.properties` file:
 
-     NOTE: The autodeploy folder must be set with the full name of the folder -
-	 you can't use any variables to define the location
+	 NOTE: The autodeploy folder must be set with the full name of the folder;
+	 you can't use any variables to define the location.
 
 		auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy 
 		auto.deploy.deploy.dir=C:/JBoss-<version>/deploy
 
-5. Start the JBoss Application Server.
+7. Start the JBoss Application Server.
 
 Liferay is now successfully installed on JBoss 5.1. 
 
