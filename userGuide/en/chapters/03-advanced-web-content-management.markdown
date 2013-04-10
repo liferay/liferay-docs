@@ -951,30 +951,58 @@ time, in a manner of speaking.
 ## Staging page publication  
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
-simple one: you can modify your site behind the scenes and then publish it all
-in one shot. You don't want your users seeing your web site change before their
-eyes as you're modifying it, do you? Liferay's staging environment allows you to
-make changes to your site in a specialized *staging area*, and when you're
-finished, publish the whole site to your users.
+simple one: you can modify your site behind the scenes and then publish all your
+updates in one shot. You don't want users seeing your web site change before
+their eyes as you're modifying it, do you? Liferay's staging environment allows
+you to make changes to your site in a specialized *staging area*, and when
+you're finished, publish the whole site to your users.
 
-You can use staging in multiple ways. You can have a staging server—-a
-separate instance of Liferay Portal which is used just for staging. Content
-creators can then use this server to make their changes while the live server
+Liferay provides site administrators with two different ways to set up staging:
+Local Live and Remote Live. With Local Live staging, both your staging
+environment and your live environment are hosted on the same server. When Local
+Live staging is enabled for a site, a clone of the site is created containing
+copies of all of the site's existing pages. Portlet data is also copied,
+depending on which portlets are selected when staging is enabled. The cloned
+site becomes the staging environment and the original site becomes the live
+environment.
+
+When Remote Live staging is enabled for a site, a connection is established
+between the current site and another site on a remote Liferay server. The remote
+site becomes the live environment and the current site becomes the staging
+environment--an instance of Liferay Portal used solely for staging. Content
+creators can use the staging server to make their changes while the live server
 handles the incoming user traffic. When changes to the site are ready to be
-published, they are pushed over the network to the live server.
+published, they are pushed over the network to the remote live server. Whether
+you enable Local Live or Remote Live staging, the interface for managing and
+publishing staged pages is the same. 
 
-You can also use staging in the same instance of your Liferay Portal. In this
-configuration, you have a *local* staging environment: you host both your
-staging environment and your live environment on the same server. Either way the
-interface is the same, once set up; the only difference comes when it's actually
-time to publish your content.
+So when should you use Local Live staging and when should you use Remote Live
+Staging? Local Live staging allows you to publish site changes very quickly,
+since the staged and live environments are on the same server. It's also easier
+to switch between the staged and live environments using Local Live staging.
+However, since the staged content is stored in the same database as the
+production content, the content isn't as well protected or backed up as with
+Remote Live staging. Also, you can't install new versions of portlets for
+testing purposes in a Local Live staging environment since only one version of a
+portlet can be installed at any given time on a single Liferay server.
 
-In addition, Liferay 6.1 adds the capability to create multiple variations of
-staged pages, so you can manage several future versions of a site
-simultaneously. Variations can be merged and published through an intuitive UI.
-Let's jump in to see how to use staging.
+With Remote Live staging, your staging and live environments are hosted on
+separate servers. This allows you to deploy new versions of portlets and
+content to your staging environment without worrying about interfering with your
+live environment. With Remote Live staging, you can also use one Liferay
+instance as the staging server for multiple production servers. However,
+publishing is slower with Remote Live than with Local Live since data needs to
+be transferred over a network. And, of course, you need more hardware to run a
+separate staging server.
 
-#### Enabling the staging environment  
+Liferay 6.1 added a feature to staging called Page Versioning. This feature
+works with both Local Live and Remote Live staging and allows site
+administrators to create multiple variations of staged pages. This allows to
+several different versions of sites and pages to be developed at the same time.
+Variations can be created, merged, and published using a Git-like versioning
+system. Let's jump in to see how to use staging.
+
+### Enabling the staging environment  
 
 Staging configuration can be found in the Site Settings UI. The Staging tab
 allows us to make changes in a staging environment and preview our work before
@@ -1027,7 +1055,7 @@ on multiple versions of the same pages and it gives you the flexibility to
 revert easily to a previous version if you encounter any issues. Check *Enabled
 On Public Pages* so we can look at versioning.
 
-#### Using the staging environment  
+### Using the staging environment  
 
 If you navigate back to the News and Events page you'll now notice some new
 items along the top of the screen. These will help us manage staged pages.
@@ -1113,7 +1141,7 @@ One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
 different purposes.
 
-#### Site Pages Variations  
+### Site Pages Variations  
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
@@ -1225,7 +1253,7 @@ Variation, it will just add more versions, pages and page variations as needed.
 
 Let's finish our discussion of staging by outlining a few more features.
 
-#### Wrapping up staging  
+### Wrapping up staging  
 
 You can enable staging on an individual site basis, depending on your needs.
 This makes it easy to put strict controls in place for your public web site,
