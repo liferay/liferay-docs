@@ -1,90 +1,114 @@
 # Developing plugins using Maven
 
-As an alternative to developing plugins using Liferay's Ant-based Plugins SDK,
-you can leverage the Apache Maven build management framework. To mention just a
-few of its features, Maven offers a simple build process, a project object
-model, a project life cycle, and a dependency management system. Maven's core
-installation is light-weight providing core plugins for compiling source code
-and creating distributions, but the abundance of non-core plugins for Maven lets
-you extend it easily for customizations.
+"But the Maven still beguiling all my sad soul into smiling..."
+
+Edgar Allen Poe liked Maven too, so you're in good company. Okay, we admit up
+front that we changed 'raven' to 'Maven' in the above line which we ripped from
+Poe's "The Raven". We also admit to being slightly ashamed of the poor attempt
+at humor. But if Apache Maven does indeed make your sad soul smile, especially
+if your soul was made sad because you thought you had to use Liferay's Ant-based
+Plugins SDK to develop your plugins, then by all means, use it!
+
+<!--Alternative introduction, but equally cheesy:
+So, you don't want to develop your plugins using Liferay's Ant-based Plugins
+SDK? Whatever your reasons, we won't look down our noses at you. In fact, our
+noses can still be friends on Nosester, the newest hot social media website
+where all the cool noses go to fraternize. However, we might have to hide all
+your posts on our Nosester wall, so the other noses don't know we associate with
+your type.
+-->
+
+As an alternative to developing plugins using the Plugins SDK, you can leverage
+the Apache Maven build management framework. Let's look at a few of Maven's most
+exciting features: 
+
+-Offers a simple build process. 
+
+-Features a project object model. 
+
+-Has a defined project life cycle. 
+
+-Provides a dependency management system. 
+
+Maven's core installation is lightweight; there are core plugins for compiling
+source code and creating distributions, and an abundance of non-core plugins,
+letting you extend Maven easily for your customizations. 
 
 Many developers are switching from Ant to Maven because it offers a common
 interface for project builds. Maven's universal directory structure makes it
-easier for developers to understand each other's projects more quickly.
-Developers follow a simple process to build, install, and deploy project
-artifacts.
+easier for you to understand another developer's project more quickly. With
+Maven, there's a simple process to build, install, and deploy project artifacts. 
 
 Maven uses a *project object model (POM)* to describe a software project. The
-POM is specified as XML in a file named `pom.xml`. A project's POM describes its
-directories, required plugins, build sequence, and dependencies. The POM is like
-a blueprint of your project. Maven only needs the POM as a project's sole
-descriptive declaration. You create the `pom.xml` file, invoke the build
-process, and Maven does the rest, downloading your project's inferred
-dependencies and building your project artifacts! To get familiar with Maven's
-project object model, read Sonatype's documentation for it at
-[http://www.sonatype.com/books/mvnref-book/reference/pom-relationships.html](http://www.sonatype.com/books/mvnref-book/reference/pom-relationships.html).
+POM is specified as XML in a file named `pom.xml`. Think of `pom.xml` as a
+blueprint for your entire project; it describes your project's directories,
+required plugins, build sequence, and dependencies. The POM is your project's
+sole descriptive declaration. Once you create the `pom.xml` file and invoke the
+build process, Maven does the rest, downloading your project's inferred
+dependencies and building your project artifacts! Get familiar with Maven's
+project object model by reading Sonatype's documentation for it at
+[http://www.sonatype.com/books/mvnref-book/reference/pom-relationships.html](http://www.sonatype.com/books/mvnref-book/reference/pom-relationships.html). 
 
 Maven provides a clear definition of a project's structure and manages a project
 from a single piece of information--its POM. Understanding a Maven project can
-be much more simple than, for instance, understanding an Ant-based project's
-various build files. Maven forces projects to conform to a standard build
-process, whereas Ant projects can be built differently from project to project.
-Also, Maven provides an easy way to share artifacts (e.g., JARs, WARs, etc.)
-across projects via public repositories.
+be much more simple than understanding an Ant-based project's various build
+files. Maven forces projects to conform to a standard build process, whereas Ant
+projects can be built differently from project to project. Also, Maven provides
+an easy way to share artifacts (e.g., JARs, WARs, etc.) across projects via
+public repositories.
 
-However, you may find the Maven project structure too restrictive or you may
-find it cumbersome to reorganize your project to work with Maven. Maven is
-primarily intended for Java-based projects, so you may find it difficult to
-manage your project's non-Java source code. We encourage you to consider Maven's
-advantages and disadvantages in deciding what is best for managing your
-projects. For an in-depth look at Maven's features and what Maven can do for
-you, visit *Maven: The Complete Reference* by Sonatype, Inc. at
-[http://www.sonatype.com/books/mvnref-book/reference/](http://www.sonatype.com/books/mvnref-book/reference/)
-and continue reading this chapter.
+There are disadvantages to using Maven. You might find the Maven project
+structure too restrictive, or decide that reorganizing your projects to work
+with Maven is too cumbersome. Maven is intended primarily for Java-based
+projects, so it can be difficult to manage your project's non-Java source code.
+Consider Maven's advantages and disadvantages, then decide how you want to
+manage your projects. After you're finished reading about Maven here, there's
+another in-depth look at Maven at *Maven: The Complete Reference* by Sonatype,
+Inc. at
+[http://www.sonatype.com/books/mvnref-book/reference/](http://www.sonatype.com/books/mvnref-book/reference/). 
 
-You'll be happy to know Liferay provides Maven archetypes to help you build
-various plugins including Liferay portlets, themes, hooks, layout templates, web
-plugins and more. You can also install and deploy Liferay artifacts to your
-repositories. We'll dive into all these topics in this chapter, so buckle up
-and prepare to be Mavenized!
+Liferay provides Maven archetypes to help you build plugins of various types,
+including Liferay portlets, themes, hooks, layout templates, web plugins, and
+more. You can also install and deploy Liferay artifacts to your repositories.
+We'll dive into all these topics in this chapter, so buckle up and prepare to be
+Mavenized!
 
 ## Installing Maven
 
 You can download Maven from
-[http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi) and
-install it where you wish. We recommend putting your Maven installation's `bin`
-directory in your system's path, so you can run the Maven executable (*mvn*)
-easily from your command prompt.
+[http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi). We
+recommend putting your Maven installation's `bin` directory in your system's
+path, so you can run the Maven executable (*mvn*) easily from your command
+prompt.
 
-Next, let's learn about the types of repositories you can use with Maven
-projects.
+Let's learn about the types of repositories you can use with Maven projects. 
 
-## Using Maven repositories
+## Using Maven repositories 
 
-Wouldn't it be nice to install and deploy your Liferay artifacts to a
-repository? Great news! With Maven, you can install your artifacts to your
-machine's local repository and even deploy them to remote repositories for
-sharing privately with your team or publicly for general consumption. Your
-*local* repository holds downloaded artifacts and artifacts you install to it.
-*Remote* repositories are for sharing artifacts either privately within your
-development team or publicly to the community at large. To learn more about
-using artifact repositories see
-[http://maven.apache.org/guides/introduction/introduction-to-repositories.html](http://maven.apache.org/guides/introduction/introduction-to-repositories.html).
+Wouldn't it be nice if you could install and deploy your Liferay artifacts to a
+repository? Great news! Maven let's you install your artifacts to your machine's
+local repository and even deploy them to remote repositories; so you can share
+them privately with your team or or with the public for general consumption.
+Your *local* repository holds your downloaded artifacts and those artifacts you
+install to it. *Remote* repositories are for sharing artifacts either privately
+(e.g., within your development team) or publicly. To learn more about using
+artifact repositories see
+[http://maven.apache.org/guides/introduction/introduction-to-repositories.html](http://maven.apache.org/guides/introduction/introduction-to-repositories.html). 
 
-With Maven, you can also configure a proxy server to mediate your requests to
+Maven also lets you configure a proxy server; it mediates your requests to
 public Maven repositories and to cache artifacts locally. Using a local
-proxy/repository helps you build projects faster and more reliably, as accessing
-remote repositories is slower and remote repositories may sometimes be
-unavailable. Most Maven proxies can also host private repositories used for
-hosting your private artifacts. If you're interested in running your repository
-behind a proxy, see
-[http://www.sonatype.com/books/nexus-book/reference/install-sect-proxy.html](http://www.sonatype.com/books/nexus-book/reference/install-sect-proxy.html).
+proxy/repository helps you build projects faster and more reliably for two
+reasons: accessing remote repositories is slower, and remote repositories are
+sometimes unavailable. Most Maven proxy servers can also host private
+repositories that hold only your private artifacts. If you're interested in
+running your repository behind a proxy, see
+[http://www.sonatype.com/books/nexus-book/reference/install-sect-proxy.html](http://www.sonatype.com/books/nexus-book/reference/install-sect-proxy.html). 
 
-Now that you've been introduced to local and remote Maven repositories and proxy
-servers, let's consider using a repository management server to create and
-manage your Maven repositories.
+Now that you've been introduced to Maven repositories and proxy servers, let's
+consider using a repository management server to create and manage your Maven
+repositories. 
 
-### Managing Maven repositories
+### Managing Maven repositories 
 
 If you want to share Liferay artifacts and plugins with teammates or want to
 manage your repositories using a GUI, you can use Nexus OSS. It is a Maven
@@ -786,7 +810,7 @@ Let's dive into portlet plugins next.
 
 One of the plugins you can create using Maven is a Liferay portlet.
 
-**Creating a portlet plugin**
+#### Creating a portlet plugin
 
 To create a Liferay portlet plugin project, follow the *Creating Liferay plugin
 projects with Maven* section.
@@ -800,7 +824,7 @@ projects with Maven* section.
 
 ---
 
-**Anatomy**
+#### Anatomy
 
 A portlet project created from the
 *com.liferay.maven.archetypes:liferay-portlet-archetype* has the following
@@ -841,7 +865,7 @@ To view the anatomy of a portlet developed by Ant, visit the [Anatomy of a
 Portlet](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-portl-4)
 section in this guide.
 
-**Deployment**
+#### Deployment
 
 To deploy your portlet plugin, follow the instructions in the *Deploying Liferay
 plugins with Maven* section.
@@ -849,7 +873,7 @@ plugins with Maven* section.
 Congratulations! You have successfully created a Liferay portlet plugin using
 Maven.
 
-**More information**
+#### More information
 
 For detailed information on creating all kinds of portlets, see the [*Portlet
 Development*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/portlet-developme-3)
@@ -868,7 +892,7 @@ you're doing all the same. This "change in scenery" for your portal can really
 set the mood for your users. Luckily, you can develop your own theme plugin
 using Maven so your portal has a lasting effect on anyone who visits it.
 
-**Creating a theme plugin**
+#### Creating a theme plugin
 
 The process of creating a theme plugin is similar to the previous portlet we
 created. Our theme plugin demonstration also assumes you have already created
@@ -886,7 +910,7 @@ projects with Maven* section.
 
 ---
 
-**Anatomy**
+#### Anatomy
 
 A theme project created from the
 *com.liferay.maven.archetypes:liferay-theme-archetype* has the following
@@ -922,7 +946,7 @@ To view the anatomy of a theme developed by Ant, visit the [*Anatomy of a
 Theme*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-the-4)
 section in this guide.
 
-**Theme POM**
+#### Theme POM
 
 The theme plugin project POM has two additional properties:
 
@@ -940,7 +964,7 @@ either *_unstyled*, *_styled*, *classic*, or *control_panel*.
             <liferay.theme.type>vm</liferay.theme.type>
         </properties>
 
-**Deployment**
+#### Deployment
 
 To deploy your theme plugin, follow the instructions in the *Deploying Liferay
 plugins with Maven* section.
@@ -951,7 +975,7 @@ with your theme customizations on top of it. And a thumbnail image is created
 the theme output to the *target* directory. See
 `target/<theme>/images/screenshot.png` in your theme project.
 
-**More information**
+#### More information
 
 For more information on Liferay themes and its settings, visit Liferay's
 [*Creating Liferay
@@ -967,7 +991,7 @@ Hooks are the preferred plugin to use in customizing Liferay's core features.
 You can create hook plugins in much the same way that you do portlet plugins in
 Maven. Let's take a look.
 
-**Creating a hook plugin**
+#### Creating a hook plugin
 
 To create a Liferay hook plugin project, follow the *Creating Liferay plugin
 projects with Maven* section.
@@ -981,7 +1005,7 @@ projects with Maven* section.
 
 ---
 
-**Anatomy**
+#### Anatomy
 
 A hook project created from the
 *com.liferay.maven.archetypes:liferay-hook-archetype* has the following
@@ -1012,12 +1036,12 @@ To view the anatomy of a hook developed by Ant, visit the *Anatomy of a
 Hook* section of the [*Creating a Hook*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-a-ho-4)
 chapter in this guide.
 
-**Deployment**
+#### Deployment
 
 To deploy your hook plugin, follow the instructions in the *Deploying Liferay
 plugins with Maven* section.
 
-**More information**
+#### More information
 
 For detailed information on creating all kinds of hooks, see the [*Hooks*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4)
 chapter of this guide.
@@ -1031,7 +1055,7 @@ You can create your own layout templates to enhance the flow of portlets on your
 page and to embed commonly used portlets. Let's consider how to create a layout
 template plugin with Maven.
 
-**Creating a layout template plugin**
+#### Creating a layout template plugin
 
 To create a Liferay layout template plugin project follow the *Creating Liferay
 plugin projects with Maven* section.
@@ -1045,7 +1069,7 @@ plugin projects with Maven* section.
 
 ---
 
-**Anatomy**
+#### Anatomy
 
 A layout template project created from the
 *com.liferay.maven.archetypes:liferay-layouttpl-archetype* has the following
@@ -1079,12 +1103,12 @@ of a Layout Template
 Project*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-anatomy-of-a-layout-template-0)
 section in this guide.
 
-**Deployment**
+#### Deployment 
 
 To deploy your layout template plugin, follow the instructions in the *Deploying
 Liferay plugins with Maven* section.
 
-**More information**
+#### More information 
 
 For detailed information on creating all kinds of layout templates, see the
 [*Creating Liferay Layout
