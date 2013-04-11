@@ -47,7 +47,7 @@ everything from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-#### Using structures  
+### Using structures  
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -82,7 +82,7 @@ scrolls with the user and more.
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
 
-##### Editing structures
+#### Editing structures
 
 Go back to the Control Panel and select *Web Content* from the content section.
 The first way to access the Manage Structures interface is simply by clicking
@@ -159,7 +159,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
 closely at the form elements.
 
-##### Editing form elements  
+#### Editing form elements  
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -217,7 +217,7 @@ instructions are displayed.
 As with everything else in Liferay, you can set permissions on structures. Next,
 let's look at how to do that.
 
-##### Assigning permissions  
+#### Assigning permissions  
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -235,7 +235,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of Liferay's web content management system: templates.
 
-#### Using templates  
+### Using templates  
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -249,7 +249,7 @@ using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-##### Template Types (VM, XSL, FTL and CSS)  
+#### Template Types (VM, XSL, FTL and CSS)  
 
 Liferay supports templates written in four different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -281,7 +281,7 @@ straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
-##### Adding templates
+#### Adding templates
 
 Liferay WCM makes it easy to create structures, templates and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -361,7 +361,7 @@ When this template is rendered, it looks something like this:
 Now that you've created a handsome template, it's time to decide who the lucky
 people are that get to use it.
 
-#### Assigning template permissions  
+### Assigning template permissions  
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.
@@ -858,7 +858,7 @@ The page template can now be imported normally to this new environment.
 
 Next, let's examine the tools Liferay provides for handling translations.
 
-#### Localization  
+## Localization  
 
 Previous versions of Liferay had the ability to create and manage different
 translations of your web content but with Liferay 6.1 we've added several
@@ -919,11 +919,11 @@ Additionally, you may want to create content and send it through an approval and
 reviewal process weeks before you want it displayed on the web site. Liferay
 gives you this flexibility with the *Schedule* and *Workflow* features.
 
-#### Scheduling web content  
+## Scheduling web content  
 
 Liferay's WCM lets you define when your content goes live. You can determine
-when the content is displayed, expired and/or reviewed. This is an excellent to
-way to keep your site current and free from outdated (and perhaps incorrect)
+when the content is displayed, expired and/or reviewed. This is an excellent way
+to keep your site current and free from outdated (and perhaps incorrect)
 information. The scheduler is built right into the form your users access to add
 web content, in the same column as the structure and template selectors.
 
@@ -1505,7 +1505,7 @@ contains only tablets, so no devices can belong to both rule groups. Now we just
 need to define an action for our Android and iOS Tablets rule group to use a
 different layout: On the Site Pages page of the Control Panel, click on *Mobile
 Rule Groups*, and then on *Actions* &rarr; *Manage Actions* next to Android and
-iOS Tablets. Click on *Add Action*, enter the name Layout Template
+iOS Tablets. Click on *Add Action*, enter the name *Layout Template
 Modification*, and select the *Layout Template Modification* action type.
 Lastly, select the *1 Column* layout template (or whichever one you like) and
 click *Save*. Good job!  Now the Liferay site's pages are presented to Android
