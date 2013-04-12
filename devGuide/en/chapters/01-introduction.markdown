@@ -86,10 +86,6 @@ environments that lack full access to the Internet.
 portlets. Since a gadget is defined in an XML file, uploading this file is all
 that's necessary to deploy the gadget.
 
-<!-- I removed the specifics about deploying a gadget, because it's TMI (Too
-Much Information) for the introduction. This can be more adequately covered in
-the specific section where we'll deploy a gadget. --> 
-
 Once you've saved your new gadget, it appears as an application that
 administrators can add to their site's pages. 
 
