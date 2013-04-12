@@ -246,7 +246,7 @@ Whenever you make modifications to your theme in Developer Studio, redeploy it
 by right clicking your theme located underneath your server, and selecting
 *Redeploy* from the menu. 
 
-![Figure 4.4: How to redeploy your theme plugin](../../images/05-themes-2.png)
+![Figure 4.3: How to redeploy your theme plugin](../../images/05-themes-2.png)
 
 Alternatively, redeploy your theme by opening a terminal in
 `themes/deep-blue-theme` and enter this command:
@@ -305,7 +305,7 @@ Node object of the same portlet.
 - **Liferay.on('allPortletsReady', fn):** Executed after everything else --
 including AJAX portlets -- has finished loading. 
 
-![Figure 4.5: Content of main.js](../../images/05-themes-4.png)
+![Figure 4.4: Content of main.js](../../images/05-themes-4.png)
 
 ## Settings [](id=settin-4)
 
@@ -403,12 +403,12 @@ the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
 sites and managing pages* section of [Using Liferay
 Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
 
-![Figure 4.6: Setting the footer display slogan in the *Look and Feel* of  the site's page settings.](../../images/themes-custom-configurable-setting.png)
+![Figure 4.5: Setting the footer display slogan in the *Look and Feel* of  the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
 Then, when the portal administrator saves these settings, the site's pages
 display the new footer containing the slogan. 
 
-![Figure 4.7: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
+![Figure 4.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
 
  ![note](../../images/tip-pen-paper.png)**Note:** A language properties hook
@@ -530,7 +530,7 @@ By default, themes are based on the *_styled* theme, which provides only basic
 styling of portlets. If you open the `build.xml` file in your theme's directory
 using the Build Application Configuration Editor, you see the following:
 
-![Figure 4.8: Content of build.xml](../../images/05-themes-5.png)
+![Figure 4.7: Content of build.xml](../../images/05-themes-5.png)
 
 The `theme.parent` property determines which built-in theme your theme will
 inherit from. In addition to the *_styled* theme, you may also choose to inherit
