@@ -954,8 +954,8 @@ Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your
 updates in one shot. You don't want users seeing your web site change before
 their eyes as you're modifying it, do you? Liferay's staging environment allows
-you to make changes to your site in a specialized *staging area*, and when
-you're finished, publish the whole site to your users.
+you to make changes to your site in a specialized *staging area*. When you're
+finished, you can publish all your site changes at once.
 
 Liferay provides site administrators with two different ways to set up staging:
 Local Live and Remote Live. With Local Live staging, both your staging
@@ -1020,14 +1020,18 @@ versioning in more detail below.
 ### Enabling Remote Live staging
 
 When you enable Remote Live staging, the remote site becomes the live
-environment and the current site becomes the staging environment. Therefore,
-before a site administrator can enable Remote Live staging for a site, the
-remote Liferay server must first be added to the current Liferay server's list
-of allowed servers. The current Liferay server must also be added to the remote
-Liferay server's list of allowed servers. You can make these configurations in
-your Liferay servers' `portal-ext.properties` files. Your first step should be
-to add the following lines to your current Liferay server's
-`portal-ext.properties` file:
+environment and the current site becomes the staging environment. The remote
+(live) Liferay server and the local (staging) Liferay server should be
+completely separate systems. They should not, for example, share the same the
+database. When Remote Live staging is enabled, all the necessary information is
+transferred over the network connecting the two servers. Before a site
+administrator can enable Remote Live staging for a site, the remote Liferay
+server must first be added to the current Liferay server's list of allowed
+servers. The current Liferay server must also be added to the remote Liferay
+server's list of allowed servers. You can make these configurations in your
+Liferay servers' `portal-ext.properties` files. Your first step should be to add
+the following lines to your current Liferay server's `portal-ext.properties`
+file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
     axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Remote server IP address]
@@ -1066,7 +1070,25 @@ Finally, check the *Use a Secure Network Connection* field to secure the
 publication of pages from your local (staging) Liferay server to your remote
 (live) Liferay server.
 
-### Local Live staging example
+That's all you need to do to enable Remote Live Staging! However, when a user
+attempts to publish changes from the local (staging) server to the remote (live)
+server, Liferay passes the user's credentials to the remote server to perform a
+permission check. In order for a publishing operation to succeed, the operation
+must be performed by a user that has identical credentials and permissions on
+both the local (staging) and the remote (live) server. This is true regardless
+of whether the user attempts to publish the changes immediately or attempts to
+schedule the publication for later. If only a few users should have permission
+to publish changes from staging to production, it's easy enough to create a few
+user accounts on the remote server that match a selected few on the local
+server. However, the more user accounts that you have to create, the more
+tedious this job becomes and the more likely you are to make a mistake. And you
+not only have to create identical user accounts, you also have to ensure that
+these users have identical permissions. For this reason, we recommend that you
+use LDAP to copy selected user accounts from your local (staging) Liferay server
+to your remote (live) Liferay server. Liferay's Virtual LDAP Server application
+(EE-only), available on Liferay Marketplace, makes this easy.
+
+### Example: Enabling Local Live staging
 
 Let's create a Local Live staging environment for Nose-ster's home page. Before
 we begin, let's add a new page. Click *Add &rarr; Page* from the toolbar in the
@@ -1086,26 +1108,28 @@ update history won't be saved until you enable page versioning. Page versioning
 requires staging (either Local Live or Remote Live) to be enabled.
 
 Now we're ready to activate staging for this site. Go to the Control Panel then
-to *Site Settings* and select *Staging* from under the *Advanced* heading.
+to *Site Settings* and select *Staging* from under the *Advanced* heading. We'll
+assume we don't have a separate staging server so we'll select the *Local Live*
+staging type. If you do have a separate server to use for staging, follow the
+instructions in the previous section for configuring it and your local server
+for remote staging. Either way, once you make a selection (either *Local Live*
+or *Remote Live*), more options become available for page versioning and staged
+portlets.
 
-![Figure 3.18: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
-
-We'll assume we don't have a separate staging server so we'll select the *Local
-Live* staging type. If you do have a separate server to use for staging, follow
-the instructions in the previous section for configuring it and your local
-server for remote staging. Either way, once you make a selection (either *Local
-Live* or *Remote Live*), more options become available for page versioning and
-staged portlets.
+### Enabling page versioning and staged portlets
 
 Enabling page versioning for a site allows site administrators to work in
 parallel on multiple versions of the site's pages. Page versioning also
 maintains a history of all updates to the site from the time page versioning was
 enabled. Site administrators can revert to a previous version of the site at any
 time. This flexibility is very important in cases where a mistake is found and
-it's important to quickly publish a fix. Check *Enabled On Public Pages* to
-enable page versioning for our example and then click *Save*.
+it's important to quickly publish a fix. If you're following the Nose-ster
+example, check *Enabled On Public Pages* to enable page versioning for the
+Nose-ste site and then click *Save*.
 
-The Staged Portlets section lets you choose which portlets' data should be
+![Figure 3.18: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+
+Before you activate staging, you can choose which portlets' data should be
 copied to staging. We'll cover many of the collaboration portlets listed under
 the Staged Portlets heading when we come to chapter 8. For now, you just need to
 be aware that you can enable or disable staging for any of these portlets. Why
@@ -1123,13 +1147,15 @@ collaborative portlets.
 
 ### Using the staging environment  
 
-If you navigate back to the News and Events page you'll now notice some new
-items along the top of the screen. These will help us manage staged pages.
-You'll also notice most of your page management options have been removed,
-because now you can't directly edit live pages--you'll now use the staging
-environment to do that. Click on *Staging* to view the staged area. Your
-management options are restored and you have some new options related to
-staging.
+After enabling staging (either Local Live or Remote Live) for a site, you'll
+notice a colored bar with some new menus just below the Dockbar when you
+navigate to the site. These new menus help us manage staged pages. You'll also
+notice that most of your page management options have been removed, because now
+you can't directly edit live pages. You now must use the staging environment to
+make changes. Click on *Staging* to view the staged area. Your management
+options are restored and you can access some new options related to staging. If
+you're following along with the Nose-ster example, navigate back to the News and
+Events page and click on *Staging* to get your page editing capabilities back.
 
 ![Figure 3.19: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
@@ -1207,7 +1233,7 @@ One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
 different purposes.
 
-### Site Pages Variations  
+### Using site pages variations  
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
