@@ -55,7 +55,7 @@ line or the Liferay IDE.
 
 Let's create a theme! 
 
-## Creating a Theme
+## Creating a Theme [](id=creating-a-the-4)
 
 The theme creation process is nearly identical to the portlet creation process
 that we covered in the last chapter. Our theme will be named *Deep Blue*, so the
@@ -263,7 +263,7 @@ make your changes visible? Let's talk about Liferay Developer Mode to learn how.
 <!-- Developer Mode section needs editing. I don't understand this concept very
 well. Hopefully this start is useful. -Russ --> 
 
-## Developer Mode
+## Developer Mode [](id=lp-6-1-theme-developer-mode)
 
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer mode all caches
@@ -1017,7 +1017,7 @@ please examine the Zoe themes which you can find on Github here
 [https://github.com/liferay/liferay-plugins/tree/master/themes](https://github.com/liferay/liferay-plugins/tree/master/themes)
 and which you can download from Liferay Marketplace.
 
-## Summary
+## Summary [](id=lp-6-1-dgen04-summary-0)
 
 In this chapter you learned how to customize the look and feel of your Liferay
 Portal to the extent that you desire with custom themes. In the process you
