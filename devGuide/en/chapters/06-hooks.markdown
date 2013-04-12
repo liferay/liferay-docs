@@ -831,7 +831,7 @@ doesn't fully implement CMIS or has native features that you'd like to leverage,
 you can use a *CMIS extension hook* to apply your desired extension
 implementation. 
 
-## Summary
+## Summary [](id=conclusi-2)
 
 In this chapter we discussed some of the many uses of the versatile hook plugin,
 the preferred tool for customizing Liferay. You learned how to perform custom
