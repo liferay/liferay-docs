@@ -58,10 +58,15 @@ what was covered in the chapter.
 
 ## Sections 
 
-If you're a programmer, think of sections like a linked list. While each section needs to cover its own material, at the end of a section you should point to what's coming next. This is called a *segue*, and it generally sounds something like: 
+If you're a programmer, think of sections like linked lists. While each section
+needs to cover its own material, at the end of a section you should point to
+what's coming next. This is called a *segue*, and it generally sounds something
+like: 
 
->You can see from this how easy it is to do. 
->Next, we'll look at this other thing. 
+You can see from this how easy it is to do. Next, we'll look at this other
+thing. 
+
+Segues are discussed in more detail below. 
 
 Never end a section with an image. 
 
@@ -71,9 +76,13 @@ Never end a section with code.
 
 Headings and Subheadings should follow an outline format. This means that if
 they're in a hierarchy, there should always be at least two children: otherwise,
-you don't have a true hierarchy.
+you don't have a true hierarchy. 
 
-### Heading intros and outros 
+Because of the way Markdown is often parsed, header lines should never break. If
+you have set your text editor to automatically break lines, and you have a long
+header, make sure your header does not break. 
+
+### Segues
 
 Use segues to introduce new headings and to sum up completed ones. For example: 
 
@@ -213,6 +222,26 @@ Use a period for bullets that are sentences, like:
 
 Never end a section with bullet points, like I was about to do before I typed
 this sentence.
+
+### Trailing Spaces 
+
+The Markdown source files for the documentation should be clean. Every sentence,
+regardless of whether it ends a paragraph or not, should end with one--and only
+one--trailing space. This is so that paragraphs can be combined more easily
+during the editing process, when this becomes necessary. 
+
+There should never be more than one trailing space after a sentence, paragraph,
+or bullet point. 
+
+### Spaces vs. Tabs 
+
+Unlike the Liferay source code, Liferay documentation should have no tabs in it.
+This is so that you can more easily differentiate various constructs within
+Markdown. For example, preformatted text is denoted in Markdown by either one
+tab or four spaces. List levels are denoted by indenting by spaces. If you use
+spaces instead of tabs, you have three list levels to work with before your
+syntax-highlighting text editor mistakes your outline levels for preformatted
+text. 
 
 ## Images and Captions 
 
