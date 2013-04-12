@@ -885,7 +885,7 @@ For more information on friendly URL mapping, there's a detailed discussion in
 [*Liferay in Action*](http://manning.com/sezov). Our next step here is to
 explore localization of the portlet's user interface. 
 
-## Localizing your Portlet
+## Localizing your Portlet [](id=localize-your-portlet)
 
 If your portlets target an international audience, you can localize the user
 interface. Localizing your portlet's language is done using language keys for
@@ -1188,7 +1188,7 @@ other portlets, as well as override existing Liferay translations.
 
 Next let's use the Plugins SDK to create a plugin that extends another plugin. 
 
-## Creating Plugins to extend Plugins
+## Creating Plugins to extend Plugins [](id=lp-6-1-dgen02-creating-plugins-to-extend-plugins-0)
 
 For Liferay plugins, you can create a new plugin that extends an existing one.
 By extending a plugin, you can use all its features in your new plugin while
