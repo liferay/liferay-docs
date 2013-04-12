@@ -284,7 +284,7 @@ can select the display template that can be viewed by guests of the site: do
 this by clicking the *Manage Display Templates for Guest* link and selecting an
 ADT.
 
-![Figure 7.8: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
+![Figure 7.7: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
 
 Now that you know the general functions of ADTs, let's create our own. This
 brief demonstration will show just how easy, yet powerful ADTs can be for your
@@ -308,7 +308,7 @@ this portlet, navigate back to the *Options* wrench and click *Configuration*.
 6. From the *Display Template* drop-down menu, select *Carousel*. Then click
 *Save*.
 
-![Figure 7.9: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
+![Figure 7.8: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
 
 The Media Gallery portlet is transformed into a carousel slideshow. At this
 time, it's perfectly natural to be experiencing "I can conquer the world"
