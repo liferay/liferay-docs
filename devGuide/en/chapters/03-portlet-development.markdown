@@ -1099,7 +1099,7 @@ with other portlets, as well as override existing Liferay translations.
 When localization is important, always consider statements in a *localization
 plan*, since some portlets in your plugin and hard customer requests can make a
 mess in your localization files and keys. If possible, always reuse Liferay core
-language keys. The benefit is huge. 
+language keys. The benefit is huge.  
 
 If there is no key you can use, you can create your own, as we have described.
 Liferay gives you all the tools necessary to make localization possible, and
