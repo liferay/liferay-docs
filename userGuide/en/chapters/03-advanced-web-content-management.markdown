@@ -214,8 +214,42 @@ an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
 instructions are displayed.
 
-As with everything else in Liferay, you can set permissions on structures. Next,
-let's look at how to do that.
+##### Structure Default Values
+
+Structure Default Values allow you to create one structure that uses common data
+from multiple articles.
+
+Returning to our newspaper scenario again, let's say you want all sports
+articles to have the same display page (sports page), the same categories, or the
+same set of tags. Instead of adding them for each article or wondering if your
+users are adding them to every web content, you can add these characteristics once
+for every sports article by creating default values for the structure. There are
+two ways to edit structure default values: creating a new structure or editing
+an existing structure.
+
+For a new structure, you must first create the structure before editing its
+default values. Navigate to *Web Content* in the Control Panel and click the
+*Structures* tab, then select the *Add Structure* button. Under the *XML Schema
+Definition* section of the new structure form, use the *Add Row* button to
+create different types of fields for the structure. Or you can use the editor to
+create the structure manually: the Launch Editor button allows you to edit the
+XML for the structure if you wish to do it via code. When you are done, click
+*Save and Continue* to go to the Structure Default Values form.
+
+![Figure 3.2: You can create fields for structure default values via the XML
+Schema Definition section of the new structure
+form.](../../images/xml-schema-definitions.png)
+
+To edit an existing structure, go to *Web Content* in the Control Panel and
+click the *Structures* tab to see the structures list. Find the *Actions* button
+for the desired structure and select *Edit Default Values* from the menu to view
+a window like the one below. This form allows you to manage the structure
+settings.
+
+![Figure 3.3: You can edit default values via the Actions button of the structure  form.](../../images/structure-default-values-sports.png)
+
+Every new web content you create with this structure is preloaded with the
+data you inserted.
 
 #### Assigning permissions  
 
@@ -821,11 +855,6 @@ appear.
 We'll discuss staging in more detail later in this chapter. For now let's look
 at importing and exporting templates.
 
-<!--  
-Have we determined that this IS an EE-only feature?  
-![EE Only Feature]
--->
-
 ### Exporting and importing site templates and page templates  
 
 If you want to export a site that uses site or page Templates to a different
@@ -1189,7 +1218,7 @@ The dropdown next to the Staging link at the top gives you the option to
 **Publish to Live Now:** immediately pushes any changes to the Live Site.
 
 **Schedule Publication to Live:** lets you set a specific date to publish or to
-setup recurring publishing. You could use this, for example, to publish all
+set up recurring publishing. You could use this, for example, to publish all
 changes made during the week every Monday morning without any further
 intervention.
 
