@@ -760,7 +760,8 @@ the same manner as you edit other resources in the portal: click *Actions* and
 then click *Edit*.
 
 The Password Policy settings form contains the following fields. Enabling
-specific settings via the check boxes prompts setting-specfic options to appear.
+specific settings via the check boxes prompts setting-specific options to
+appear.
 
 **Name:** requires you to enter a name for the password policy.
 
@@ -904,15 +905,15 @@ email address is an important default for the following reasons:
 
 2.  People can generally remember their email addresses. If you have users who
     haven't logged into the portal for a while, it is possible they will forget
-their screen names, especially if they weren't allowed to use their screen names
-of choice (because they were already taken).
+    their screen names, especially if they weren't allowed to use their screen
+    names of choice (because they were already taken).
 
 3.  If a user changes his or her email address, it is more likely the user will
     forget to update his or her email address in his or her profile, if the
-email address is not used to authenticate. If the user's email address is not
-updated, all notifications sent by the portal will fail to reach the user. So it
-is important to keep the email address at the forefront of a user's mind when he
-or she logs in to help the user keep it up to date. 
+    email address is not used to authenticate. If the user's email address is
+    not updated, all notifications sent by the portal will fail to reach the
+    user. So it is important to keep the email address at the forefront of a
+    user's mind when he or she logs in to help the user keep it up to date. 
 
 We'll examine how to set up LDAP authentication next.
 
@@ -955,21 +956,22 @@ using the following options:
 
 * *Import Enabled:* Check this box to cause Liferay to do a mass import from
   your LDAP directories. If you want Liferay to only synchronize users when they
-log in, leave this box unchecked. Definitely leave this unchecked if you are
-working in a clustered environment. Otherwise, all of your nodes would try to do
-a mass import when each of them starts up.
+  log in, leave this box unchecked. Definitely leave this unchecked if you are
+  working in a clustered environment. Otherwise, all of your nodes would try to
+  do a mass import when each of them starts up.
 
 * *Import on Startup Enabled:* Check this box to have Liferay run the import
   when it starts up. Note: This box only appears if you check the *Import
-Enabled* box above.
+  Enabled* box above.
 
 * *Export Enabled:* Check this box to enable Liferay to export user accounts
   from the database to LDAP. Liferay uses a listener to track any changes made
-to the `User` object and will push these changes out to the LDAP server whenever
-the `User` object is updated. Note that by default on every login, fields such
-as `LastLoginDate` are updated. When export is enabled, this has the effect of
-causing a user export every time the user logs in. You can disable this by
-setting the following property in your `portal-ext.properties` file:
+  to the `User` object and will push these changes out to the LDAP server
+  whenever the `User` object is updated. Note that by default on every login,
+  fields such as `LastLoginDate` are updated. When export is enabled, this has
+  the effect of causing a user export every time the user logs in. You can
+  disable this by setting the following property in your `portal-ext.properties`
+  file:
 
     users.update.last.login=false
 
@@ -1008,18 +1010,18 @@ the form will be populated with the proper default values for that directory.
 
 * *Base Provider URL:* This tells the portal where the LDAP server is located.
   Make sure the machine on which Liferay is installed can communicate with the
-LDAP server. If there is a firewall between the two systems, check to make sure
-the appropriate ports are opened.
+  LDAP server. If there is a firewall between the two systems, check to make
+  sure the appropriate ports are opened.
 
 * *Base DN:* This is the Base Distinguished Name for your LDAP directory. It is
   usually modeled after your organization. For a commercial organization, it may
-look similar to this: `dc=companynamehere,dc=com`.
+  look similar to this: `dc=companynamehere,dc=com`.
 
 * *Principal:* By default, the administrator ID is populated here. If you have
   removed the default LDAP administrator, you will need to use the fully
-qualified name of the administrative credential you use instead. You need an
-administrative credential because Liferay will be using this ID to synchronize
-user accounts to and from LDAP .
+  qualified name of the administrative credential you use instead. You need an
+  administrative credential because Liferay will be using this ID to synchronize
+  user accounts to and from LDAP .
 
 * *Credentials:* This is the password for the administrative user.
 
@@ -1038,17 +1040,15 @@ For example, assuming your LDAP directory happens to be Microsoft Active
 Directory on Windows Server 2003, you would take the following steps to share
 the certificate:
 
-Click Start -> Administrative Tools $rarr; Certificate Authority. Highlight the
-machine that is the certificate authority, right click on it, and click
-Properties. From the General menu, click View Certificate. Select the Details
-view, and click Copy To File. Use the resulting wizard to save the certificate
-as a file.  As with the CAS install (see the below section entitled Single
-Sign-On), you will need to import the certificate into the *cacerts keystore*.
-The import is handled by a command like the following:
+Click *Start* &rarr; *Administrative Tools* &rarr; *Certificate Authority*.
+Highlight the machine that is the certificate authority, right-click on it, and
+click *Properties*. From the General menu, click *View Certificate*. Select the
+Details view, and click Copy To File. Use the resulting wizard to save the
+certificate as a file.  As with the CAS install (see the below section entitled
+Single Sign-On), you will need to import the certificate into the *cacerts
+keystore*. The import is handled by a command like the following:
 
-    keytool -import -trustcacerts -keystore
-/some/path/jdk1.5.0_11/jre/lib/security/cacerts -storepass changeit -noprompt
--alias MyRootCA -file /some/path/MyRootCA.cer
+    keytool -import -trustcacerts -keystore /some/path/jdk1.5.0_11/jre/lib/security/cacerts -storepass changeit -noprompt -alias MyRootCA -file /some/path/MyRootCA.cer
 
 The *keytool* utility ships as part of the Java SDK.
 
@@ -1066,26 +1066,26 @@ directory.
 
 * *Authentication Search Filter:* The search filter box can be used to determine
   the search criteria for user logins. By default, Liferay uses users' email
-addresses for their login names. If you have changed this setting, you will need
-to modify the search filter here, which has been configured to use the email
-address attribute from LDAP as a search criterion. For example, if you changed
-Liferay's authentication method to use screen names instead of the email
-addresses, you would modify the search filter so it can match the entered log in
-name:
+  addresses for their login names. If you have changed this setting, you will
+  need to modify the search filter here, which has been configured to use the
+  email address attribute from LDAP as a search criterion. For example, if you
+  changed Liferay's authentication method to use screen names instead of the
+  email addresses, you would modify the search filter so it can match the
+  entered log in name:
 
     (cn=@screen_name@)
 
 * *Import Search Filter:* Depending on the **LDAP** server, there are different
   ways to identify the user. Generally, the default setting
-(`objectClass=inetOrgPerson`) is fine but if you want to search for only a
-subset of users or users that have different object classes, you can change
-this.
+  (`objectClass=inetOrgPerson`) is fine but if you want to search for only a
+  subset of users or users that have different object classes, you can change
+  this.
 
 * *User Mapping:* The next series of fields allows you to define mappings from
   LDAP attributes to Liferay fields. Though your LDAP user attributes may be
-different from LDAP server to LDAP server, there are five fields Liferay
-requires to be mapped for the user to be recognized. You must define a mapping
-to the corresponding attributes in LDAP for the following Liferay fields:
+  different from LDAP server to LDAP server, there are five fields Liferay
+  requires to be mapped for the user to be recognized. You must define a mapping
+  to the corresponding attributes in LDAP for the following Liferay fields:
 
     +   *Screen Name*
 
@@ -1110,7 +1110,7 @@ You can also add your own mappings if you wish.
 
 * *Test LDAP Users:* Once you have your attribute mappings set up (see above),
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
-and match them with their mappings as a preview.
+  and match them with their mappings as a preview.
 
 ![Figure 16.14: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
@@ -1118,7 +1118,7 @@ and match them with their mappings as a preview.
 
 * *Import Search Filter:* This is the filter for finding LDAP groups you want to
   map to Liferay. Enter the LDAP group attributes you want retrieved for this
-mapping. The following attributes can be mapped:
+  mapping. The following attributes can be mapped:
 
     + Group Name
 
@@ -1133,21 +1133,21 @@ mapping. The following attributes can be mapped:
 
 * *Users DN:* Enter the location in your LDAP tree where the users will be
   stored. When Liferay does an export, it will export the users to this
-location.
+  location.
 
 * *User Default Object Classes:* When a user is exported, the user is created
   with the listed default object classes. To find out what your default object
-classes are, use an LDAP browser tool such as JXplorer to locate a user and view
-the Object Class attributes stored in LDAP for that user.
+  classes are, use an LDAP browser tool such as JXplorer to locate a user and
+  view the Object Class attributes stored in LDAP for that user.
 
 * *Groups DN:* Enter the location in your LDAP tree where the groups will be
   stored. When Liferay does an export, it will export the groups to this
-location.
+  location.
 
 * *Group Default Object Classes:* When a group is exported, the group is created
   with the listed default object classes. To find out what your default object
-classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
-view the Object Class attributes stored in LDAP for that group.
+  classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
+  view the Object Class attributes stored in LDAP for that group.
 
 ![Figure 16.15: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
@@ -1170,7 +1170,8 @@ file that match settings already configured in the GUI will be ignored. The GUI,
 which stores the settings in the database, always takes precedence over the
 properties file.
 
-    ldap.auth.method=bind #ldap.auth.method=password-compare
+    ldap.auth.method=bind
+    #ldap.auth.method=password-compare
 
 Set either bind or password-compare for the LDAP authentication method. Bind is
 preferred by most vendors so you don't have to worry about encryption
@@ -1179,7 +1180,7 @@ user's password out of LDAP, decrypts it and compares it with the user's
 password in Liferay, syncing the two.
 
     ldap.auth.password.encryption.algorithm=
-ldap.auth.password.encryption.algorithm.types=MD5,SHA
+    ldap.auth.password.encryption.algorithm.types=MD5,SHA
 
 Set the password encryption to used to compare passwords if the property
 `ldap.auth.method` is set to `password-compare`.
@@ -1191,10 +1192,13 @@ portion of the LDAP tree. If you set this to `group`, Liferay will search all
 the groups and import the users in each group. If you have users who do not
 belong to any groups, they will not be imported.
 
-    ldap.error.password.age=age ldap.error.password.expired=expired
-ldap.error.password.history=history ldap.error.password.not.changeable=not
-allowed to change ldap.error.password.syntax=syntax
-ldap.error.password.trivial=trivial ldap.error.user.lockout=retry limit
+    ldap.error.password.age=age
+    ldap.error.password.expired=expired
+    ldap.error.password.history=history
+    ldap.error.password.not.changeable=not allowed to change
+    ldap.error.password.syntax=syntax
+    ldap.error.password.trivial=trivial
+    ldap.error.user.lockout=retry limit
 
 These properties are a list of phrases from error messages which can possibly be
 returned by the LDAP server. When a user binds to LDAP, the server can return
@@ -1261,8 +1265,7 @@ To export the key to a file, use the following command:
 
 Finally, to import the key into your Java key store, use the following command:
 
-    keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit -keystore
-$JAVA_HOME/jre/lib/security/cacerts
+    keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit -keystore $JAVA_HOME/jre/lib/security/cacerts
 
 If you are on a Windows system, replace `$JAVA_HOME` above with `%JAVA_HOME%`.
 Of course, all of this needs to be done on the system on which CAS will be
@@ -1442,14 +1445,15 @@ want to enter those user groups here.
 In this chapter, we began to examine Liferay's control panel. Site memberships
 and teams aren't the only way for portal administrators to group and manage
 users: organizations can be used to arrange users into hierarchical structures
-and user groups are a flexible way to collect ad hoc groups of users. You can
-create roles to define permissions and scope them for the entire portal or for a
-particular site or organization. User groups can be assigned to roles; in this
-case, each member of the user group is assigned to the role. 
+and user groups are a flexible way to collect groups of users that transcend
+organizational hierarchies. You can create roles to define permissions and scope
+them for the entire portal or for a particular site or organization. User groups
+can be assigned to roles; in this case, each member of the user group is
+assigned to the role. 
 
-We also look at how to configure password policies for users. Next, we also
-looked at the different authentication options provided by Liferay. You can
-configure Liferay so that users can authenticate via LDAP, CAS, Facebook, NTLM,
-OpenID, OpenSSO, or SiteMinder. Finally, we examined some general configuration
-options for the portal users. We'll continue our coverage of Liferay's control
-panel in the next chapter.
+We also looked at how to configure password policies for users. Next, we looked
+at the different authentication options provided by Liferay. You can configure
+Liferay so that users can authenticate via LDAP, CAS, Facebook, NTLM, OpenID,
+OpenSSO, or SiteMinder. Finally, we examined some general configuration options
+for the portal users. We'll continue our coverage of Liferay's control panel in
+the next chapter.
