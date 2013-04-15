@@ -434,9 +434,191 @@ Liferay runtime and Liferay plug-in facets are properly configured.
 
 	![Figure 8.36: Project Facets](../../images/ide-project-facets.png)
 
-Great! You've confirmed that your imported project is good to go.
+Great! You've confirmed that your imported project is good to go. Next, let's
+explore Liferay IDE's Remote Server Adapter feature.
 
-In the next section, we will explain Developer Studio's Kaleo Designer for Java
+## Using Liferay IDE's Remote Server Adapter
+
+The Remote Server Adapter is a feature of Liferay IDE 1.6.2 that allows you to
+deploy your Liferay projects to a remote Liferay Portal server. The remote
+instance of Liferay Portal must be version 6.1 or later and must have the Remote
+IDE Connector application installed from Liferay Marketplace. This application
+contains the `server-manager-web` plugin for Liferay that provides an API for
+Liferay IDE's Remote Server Adapter to use for all its remote operations. In
+this section, we discuss the basic use case for the Remote Server Adapter, and
+explain how to set it up and use it. 
+
+The basic use case of the Remote Server Adapter is to allow developers to deploy
+local projects to a remote development server for testing purposes. Any
+developers using Liferay IDE, who have access to a remote server on which the
+Remote IDE Connector application has been installed, can deploy projects to the
+remote server. While it's possible to install the Remote IDE Connector
+application on a production server, we recommend against this practice since it
+would present an unnecessary security risk. Clients should not update, or
+hot-fix, remotely deployed plugins with the adapter; rather, the portal system
+administrator should use normal mechanisms to apply plugin updates and fixes. 
+
+To complete this section's tutorial, you'll need to install the following
+resources: 
+
+- From your local development machine, download [Liferay IDE
+1.6.2](http://www.liferay.com/downloads/liferay-projects/liferay-ide) from
+Liferay's downloads page or download [Liferay Developer Studio
+1.6.1](http://www.liferay.com/group/customer/products/developer-studio/1.6) from
+the Customer Portal. 
+
+- Download [Liferay Portal CE or
+EE](http://www.liferay.com/downloads/liferay-portal/available-releases), to your
+local development machine and remote test machine. This tutorial demonstrates
+using the Remote Server Adapter on Liferay Portal bundled with Apache Tomcat,
+but you can use the adapter with Liferay Portal running on any application
+server Liferay Portal supports. Install Liferay Portal, locally, for compiling
+the plugins you develop. Install Liferay Portal, remotely, on your test server
+for hosting the plugins you'll deploy to it.
+
+**Important:** Note your portal administrator login credentials (e.g.,
+username/password) for your remote Liferay server, as you'll use these
+credentials in configuring your connection from Liferay IDE to that Liferay
+server. 
+
+Let's start the tutorial by configuring the Remote Server Adapter.
+
+### Configuring the Remote Server Adapter
+
+You can use Liferay IDE's Remote Server wizard to both configure the Remote
+Server Adapter and install the Remote IDE Connector to your remote Liferay
+instance. Alternatively, you can install the Remote IDE Connector to your remote
+Liferay instance before configuring Liferay IDE's Remote Server Adapter. To
+configure the Remote Server Adapter, use the following steps:
+
+1. Start your remote Liferay Portal instance, if it's not already running, and
+   verify that you can log in with an administrator account.
+
+2. Launch Liferay IDE and open the new server wizard: go to *File* &rarr; *New*
+   &rarr; *Other*, select *Server* in the Server category, click *Next*, and
+   select *Remote Liferay Server (Liferay 6.1)* in the Liferay, Inc. category.
+
+3. Enter the IP address of the machine on which your remote Liferay Portal
+   instance is running into the *Server's host name* field. For the *Server
+   name*, enter *Liferay@[IP address]*, then click *Next*.
+
+    ![Figure 9.x: Define the remote Liferay
+    server.](../../images/remote_server_adapter_wizard_1.png)
+
+4. The next page of the wizard allows you to define the Liferay Portal runtime
+   stub. Defining a Liferay Portal runtime stub allows projects created for your
+   remote server to use the runtime stub for satisfying JAR dependencies needed
+   to compile various Liferay projects. Select the bundle type based on the
+   version of your local Liferay bundle, then browse to the bundle's
+   installation directory, and click *Next*. 
+
+    ![Figure 9.x: You need to specify the location of a local Liferay Portal
+    bundle that your Liferay projects can compile
+    against.](../../images/remote_server_adapter_wizard_2.png)
+
+5. On the next page of the wizard, you need to configure your connection to your
+   remote Liferay instance. Enter the IP address of your remote Liferay Portal
+   instance's machine into the *Hostname* field. Enter the port it runs on
+   (default: 8080) into the *HTTP port* field. Next, enter your administrator
+   credentials for the remote Liferay Portal instance into the *Username* and
+   *Password* fields. Leave the *Liferay Portal Context Path* and *Server
+   Manager Context Path* set to the defaults unless these values were changed
+   for your remote Liferay Portal instance.
+
+    ![Figure 9.x: Once you've configured the connection settings for your remote
+    Liferay Portal instance, click *Validate Connection* to make sure that your
+    connection works.](../../images/remote_server_adapter_wizard_3.png)
+
+6. In order for Liferay IDE's connection to your remote Liferay Portal instance
+to work, the Remote IDE Connector application must be installed on the remote
+portal. If you already downloaded the Remote IDE Connector application and
+installed it to your remote portal, your connection should work. If you haven't
+yet installed the Remote IDE Connector to your remote portal, click on the link
+in the wizard to navigate to the remote portal's Control Panel Marketplace page.
+
+7. Browse Liferay Marketplace for the Remote IDE Connector application. When
+   you've found it, click *Free* to purchase it. Follow
+   the on-screen prompts. 
+
+8. Once you've purchased the application, navigate to the *Purchased* page of
+   the Control Panel's Marketplace interface.
+
+    ![Figure 9.x: Click *Purchased* in the Marketplace section of the Control
+    Panel to download and install the Remote IDE Connector application that you
+    purchased.](../../images/remote_server_adapter_marketplace_2.png)
+
+9. Find your application in the list of purchased products. Then click
+   on the buttons to download and install the application. Once it's been
+   installed on your remote portal, return to the Remote Liferay Server
+   configuration wizard in Liferay IDE.
+
+10. When you click the *Validate Connection* button now, no warnings or errors
+should appear. If you see any warning or error messages in the configuration
+wizard, check your connection settings. 
+
+11. Once your Liferay IDE is connected to your remote Liferay Portal instance,
+   click *Finish* in the Remote Liferay Server configuration wizard.
+   
+    After you click *Finish*, the new remote server appears in Liferay IDE's
+    Servers tab. This tab appears in the bottom left corner of the Eclipse
+    window if you're using the Liferay perspective. If you entered your
+    connection settings correctly, Eclipse connects to your remote server and
+    displays the remote Liferay Portal instance's logs in the console. If your
+    remote server is in debug mode, the Eclipse Java debugger is attached to the
+    remote process automatically. 
+
+    ![Figure 9.x: If you've correctly configured the connection settings, your
+    remote server appears in the Servers tab of Eclipse and Eclipse's console
+    displays your remote server's Liferay
+    logs.](../../images/remote_server_adapter_console_1.png)
+
+12. You can change the remote server settings at any time. Double-click on your
+   remote server instance in the Servers tab to modify the settings
+   in the configuration editor. 
+
+Now that your remote Liferay Portal server is configured, let's test the remote
+server adapter!
+
+### Using the Remote Server Adapter
+
+Once you have your remote Liferay Portal server correctly configured and you are
+connected to it in Liferay IDE, you can begin using it as you would a local
+Liferay Portal server, publishing projects to it. 
+
+1. Right-click on the server and choose *Add and Remove...*.
+
+	**Note:** Make sure you have available projects configured in Liferay IDE.
+	If not, you'll get an error message indicating there are no
+	available resources to add or to remove from the server.
+
+2. Select the Liferay projects you wish to publish to your remote server, click
+   *Add* to add them to your remote server, and then click *Finish*.
+
+3. The deployment process starts immediately after you click *Finish*. After
+   your project is published to your remote server, you should see a message
+   saying that the plugin was successfully deployed.
+
+4. As you make changes to your plugin project, you must publish them so they
+take affect on the remote server. Alternatively, you can set your server's
+settings to publish projects automatically. To manually invoke the publishing
+operation after having modified some project files, right click on the server in
+the Servers view and select *Publish*.
+
+5. You can modify the publishing operation behavior from the server
+   configuration editor. Double-click on your remote server in the Servers tab
+   to configure its settings.
+
+    ![Figure 9.x: You can configure your server's publishing settings from the server configuration editor.](../../images/remote_server_adapter_configuration_editor.png)
+
+
+If you encounter problems, have questions, or want to learn more about Liferay
+IDE, visit the [Liferay IDE Community
+page](http://www.liferay.com/community/liferay-projects/liferay-ide/overview).
+From the Forums page, you can lookup resolutions to errors and ask
+questions. Be sure to describe any problems you have to get proper help. You can
+even track known issues from the Issue Tracker page. 
+
+In the next section, we'll explain Developer Studio's Kaleo Designer for Java
 and how you can design workflows for enhanced business logic.
 
 ## Designing workflows with Kaleo Designer for Java 

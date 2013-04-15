@@ -98,7 +98,7 @@ to receive personal sites, add the following properties to your
     
 Personal sites are a dynamic feature of Liferay Portal. They allow users to
 manage and customize their own pages and content on your portal. Next, let's
-look at how users can customize applicatons.
+look at how users can customize applications.
 
 ## Page Customizations  
 
@@ -145,7 +145,7 @@ Page*, the Add menu will disappear from the Dockbar since they're not allowed to
 modify the default page.
 
 ![Figure 7.3: Non-administrator site members can customize their own versions of
-customizble pages but can't modify the default
+customizable pages but can't modify the default
 page.](../../images/default-customizable-page.png)
 
 Administrators of customizable pages have the same two views as site members:
@@ -212,14 +212,14 @@ or list your assets in the asset publisher portlet in different sizes.
 Let's go through a simple use case to illustrate how creating a custom ADT can
 improve your site. Consider you're customizing the Nosester site and want to
 allow users to spread their noses to other social networks. Specifically, you
-want to configure the Wiki portlet for colloboration with Facebook or Twitter.
+want to configure the Wiki portlet for collaboration with Facebook or Twitter.
 With ADTs, you can launch a template editor, create a custom template, and
 make your portlet host that template. Custom templates let you re-skin your
 portlet and give you ultimate control over its appearance and functionality in
 your portal.
 
 Before attempting to change the ADT for your application, use the context menu
-in the Control panel to choose the location for your custom tempate. The
+in the Control Panel to choose the location for your custom template. The
 *Global* context makes your template available across all sites. If you select
 the Global context, the *Application Display Templates* page of the Control
 Panel's Content Menu shows you a list of pre-made templates available for
@@ -237,7 +237,8 @@ pages.
 - Categories Navigation: displays a column for each vocabulary. Each column
 includes the name of a vocabulary with the vocabulary's top level categories
 listed underneath.
-- Documents and Media: displays images in a carousel.
+- Media Gallery: displays images in a carousel (uses Documents and Media
+template).
 - Asset Publisher: displays abstracts, icons, related assets, and print/edit
 actions for assets. Optionally includes asset bookmarks and ratings.
 - Site Map: displays a column for each top level page. Each column includes the
@@ -245,26 +246,6 @@ name of a top level page with the page's immediate children listed underneath.
 - Tags Navigation: displays asset tags colored by popularity: red (high), yellow
 (medium), and green (low).
 - Blogs: displays titles, authors, and abstracts compactly for blog entries.
-
-<!-- UPDATE: The ADT for D&M can be used for the Media Gallery Portlet. The D&M
-portlet is not yet able to support the D&M ADT. The goal is to finish the
-implementation for D&M and provide ADT support for several other portlets.
-
-================================================
-Current outlook on ADT Development per portlet
-================================================
-*Portlet*		*LPS #*		*Status*
-Media Gallery	30818		Awaiting PM Review
-Polls			31433		Backlog
-Navigation		27113		Backlog
-
-[Web Content List was mentioned by Eduardo Garcia by email as future ADT
-supported portlet (D&M template), but not yet task in JIRA.]
--->
-
-<!-- TODO: May need to document what portlets and ADTs are compatible. Not sure
-if each portlet will have its own category for ADT or if they'll be able to
-support multiple different kinds -->
 
 To create a new ADT, click *Add* and select the template you'd like to create,
 based on portlet type. Then enter the name, description, and optional small
@@ -285,10 +266,7 @@ screen and selecting *Export/Import*. For more information on using this
 feature, visit the *Export/Import* sub-section in the [Understanding Liferay's
 common configuration options
 ](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen07-understanding-liferays-common-configuration-options-0)
-section of this guide. The Export/Import feature for ADTs looks similar to the
-snapshot below:
-
-![Figure 7.7: The *Export/Import* feature allows you to share and overwrite your ADTs.](../../images/adt-export-import.png)
+section of this guide.
 
 After you've completed the initial set up and saved your ADT, you can manage
 your ADT through its *Actions* button. This provides several options:
@@ -306,11 +284,41 @@ can select the display template that can be viewed by guests of the site: do
 this by clicking the *Manage Display Templates for Guest* link and selecting an
 ADT.
 
-![Figure 7.8: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
+![Figure 7.7: In the *Configuration* menu of a portlet, you can select your configured ADT and manage ADTs viewed by guests.](../../images/adt-configuration.png)
+
+Now that you know the general functions of ADTs, let's create our own. This
+brief demonstration will show just how easy, yet powerful ADTs can be for your
+Liferay Portal.
+
+1. Add the Media Gallery portlet by navigating to *Add* &rarr; *More...* &rarr;
+*Content Management* &rarr; *Media Gallery*.
+
+2. Select the *Options* wrench from the top right corner, then click
+*Configuration*.
+
+3. Enable the *Show Actions* and *Show Folder Menu* display settings. Then click
+*Save*.
+
+4. Click *Multiple Media* and select two custom photos to display. Then click
+*Save*, and navigate back to the main portlet screen.
+
+5. Notice the default format of the pictures. To change the display template for
+this portlet, navigate back to the *Options* wrench and click *Configuration*.
+
+6. From the *Display Template* drop-down menu, select *Carousel*. Then click
+*Save*.
+
+![Figure 7.8: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
+
+The Media Gallery portlet is transformed into a carousel slideshow. At this
+time, it's perfectly natural to be experiencing "I can conquer the world"
+feelings, just as our trusty mascot Ray exudes in the image above. ADTs have
+that kind of power to transform your site into an enjoyable and convenient home
+for users.
 
 Customizing the user interface of Liferay's bundled portlets provides the
-ultimate customization experience for Liferay users. Next, let's look at how to use
-Liferay's rules engine.
+ultimate customization experience for Liferay users. Next, let's look at how to
+use Liferay's rules engine.
 
 ## Using Liferay's rules engine  
 

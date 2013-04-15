@@ -47,7 +47,7 @@ everything from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-#### Using structures  
+### Using structures  
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -82,7 +82,7 @@ scrolls with the user and more.
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
 
-##### Editing structures
+#### Editing structures
 
 Go back to the Control Panel and select *Web Content* from the content section.
 The first way to access the Manage Structures interface is simply by clicking
@@ -159,7 +159,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
 closely at the form elements.
 
-##### Editing form elements  
+#### Editing form elements  
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -214,10 +214,44 @@ an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
 instructions are displayed.
 
-As with everything else in Liferay, you can set permissions on structures. Next,
-let's look at how to do that.
+##### Structure Default Values
 
-##### Assigning permissions  
+Structure Default Values allow you to create one structure that uses common data
+from multiple articles.
+
+Returning to our newspaper scenario again, let's say you want all sports
+articles to have the same display page (sports page), the same categories, or the
+same set of tags. Instead of adding them for each article or wondering if your
+users are adding them to every web content, you can add these characteristics once
+for every sports article by creating default values for the structure. There are
+two ways to edit structure default values: creating a new structure or editing
+an existing structure.
+
+For a new structure, you must first create the structure before editing its
+default values. Navigate to *Web Content* in the Control Panel and click the
+*Structures* tab, then select the *Add Structure* button. Under the *XML Schema
+Definition* section of the new structure form, use the *Add Row* button to
+create different types of fields for the structure. Or you can use the editor to
+create the structure manually: the Launch Editor button allows you to edit the
+XML for the structure if you wish to do it via code. When you are done, click
+*Save and Continue* to go to the Structure Default Values form.
+
+![Figure 3.2: You can create fields for structure default values via the XML
+Schema Definition section of the new structure
+form.](../../images/xml-schema-definitions.png)
+
+To edit an existing structure, go to *Web Content* in the Control Panel and
+click the *Structures* tab to see the structures list. Find the *Actions* button
+for the desired structure and select *Edit Default Values* from the menu to view
+a window like the one below. This form allows you to manage the structure
+settings.
+
+![Figure 3.3: You can edit default values via the Actions button of the structure  form.](../../images/structure-default-values-sports.png)
+
+Every new web content you create with this structure is preloaded with the
+data you inserted.
+
+#### Assigning permissions  
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -235,7 +269,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of Liferay's web content management system: templates.
 
-#### Using templates  
+### Using templates  
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -249,7 +283,7 @@ using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-##### Template Types (VM, XSL, FTL and CSS)  
+#### Template Types (VM, XSL, FTL and CSS)  
 
 Liferay supports templates written in four different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -281,7 +315,7 @@ straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
-##### Adding templates
+#### Adding templates
 
 Liferay WCM makes it easy to create structures, templates and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -361,7 +395,7 @@ When this template is rendered, it looks something like this:
 Now that you've created a handsome template, it's time to decide who the lucky
 people are that get to use it.
 
-#### Assigning template permissions  
+### Assigning template permissions  
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.
@@ -821,11 +855,6 @@ appear.
 We'll discuss staging in more detail later in this chapter. For now let's look
 at importing and exporting templates.
 
-<!--  
-Have we determined that this IS an EE-only feature?  
-![EE Only Feature]
--->
-
 ### Exporting and importing site templates and page templates  
 
 If you want to export a site that uses site or page Templates to a different
@@ -858,7 +887,7 @@ The page template can now be imported normally to this new environment.
 
 Next, let's examine the tools Liferay provides for handling translations.
 
-#### Localization  
+## Localization  
 
 Previous versions of Liferay had the ability to create and manage different
 translations of your web content but with Liferay 6.1 we've added several
@@ -919,11 +948,11 @@ Additionally, you may want to create content and send it through an approval and
 reviewal process weeks before you want it displayed on the web site. Liferay
 gives you this flexibility with the *Schedule* and *Workflow* features.
 
-#### Scheduling web content  
+## Scheduling web content  
 
 Liferay's WCM lets you define when your content goes live. You can determine
-when the content is displayed, expired and/or reviewed. This is an excellent to
-way to keep your site current and free from outdated (and perhaps incorrect)
+when the content is displayed, expired and/or reviewed. This is an excellent way
+to keep your site current and free from outdated (and perhaps incorrect)
 information. The scheduler is built right into the form your users access to add
 web content, in the same column as the structure and template selectors.
 
@@ -951,91 +980,211 @@ time, in a manner of speaking.
 ## Staging page publication  
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
-simple one: you can modify your site behind the scenes and then publish it all
-in one shot. You don't want your users seeing your web site change before their
-eyes as you're modifying it, do you? Liferay's staging environment allows you to
-make changes to your site in a specialized *staging area*, and when you're
-finished, publish the whole site to your users.
+simple one: you can modify your site behind the scenes and then publish all your
+updates in one shot. You don't want users seeing your web site change before
+their eyes as you're modifying it, do you? Liferay's staging environment allows
+you to make changes to your site in a specialized *staging area*. When you're
+finished, you can publish all your site changes at once.
 
-You can use staging in multiple ways. You can have a staging server—-a
-separate instance of Liferay Portal which is used just for staging. Content
-creators can then use this server to make their changes while the live server
+Liferay provides site administrators with two different ways to set up staging:
+Local Live and Remote Live. With Local Live staging, both your staging
+environment and your live environment are hosted on the same server. When Local
+Live staging is enabled for a site, a clone of the site is created containing
+copies of all of the site's existing pages. Portlet data is also copied,
+depending on which portlets are selected when staging is enabled. The cloned
+site becomes the staging environment and the original site becomes the live
+environment.
+
+When Remote Live staging is enabled for a site, a connection is established
+between the current site and another site on a remote Liferay server. The remote
+site becomes the live environment and the current site becomes the staging
+environment--an instance of Liferay Portal used solely for staging. Content
+creators can use the staging server to make their changes while the live server
 handles the incoming user traffic. When changes to the site are ready to be
-published, they are pushed over the network to the live server.
+published, they are pushed over the network to the remote live server. Whether
+you enable Local Live or Remote Live staging, the interface for managing and
+publishing staged pages is the same. 
 
-You can also use staging in the same instance of your Liferay Portal. In this
-configuration, you have a *local* staging environment: you host both your
-staging environment and your live environment on the same server. Either way the
-interface is the same, once set up; the only difference comes when it's actually
-time to publish your content.
+So when should you use Local Live staging and when should you use Remote Live
+Staging? Local Live staging allows you to publish site changes very quickly,
+since the staged and live environments are on the same server. It's also easier
+to switch between the staged and live environments using Local Live staging.
+However, since the staged content is stored in the same database as the
+production content, the content isn't as well protected or backed up as with
+Remote Live staging. Also, you can't install new versions of portlets for
+testing purposes in a Local Live staging environment since only one version of a
+portlet can be installed at any given time on a single Liferay server.
 
-In addition, Liferay 6.1 adds the capability to create multiple variations of
-staged pages, so you can manage several future versions of a site
-simultaneously. Variations can be merged and published through an intuitive UI.
-Let's jump in to see how to use staging.
+With Remote Live staging, your staging and live environments are hosted on
+separate servers. This allows you to deploy new versions of portlets and
+content to your staging environment without worrying about interfering with your
+live environment. With Remote Live staging, you can also use one Liferay
+instance as the staging server for multiple production servers. However,
+publishing is slower with Remote Live than with Local Live since data needs to
+be transferred over a network. And, of course, you need more hardware to run a
+separate staging server.
 
-#### Enabling the staging environment  
+Liferay 6.1 added a feature to staging called Page Versioning. This feature
+works with both Local Live and Remote Live staging and allows site
+administrators to create multiple variations of staged pages. This allows to
+several different versions of sites and pages to be developed at the same time.
+Variations can be created, merged, and published using a Git-like versioning
+system. Let's jump in to see how to use staging.
 
-Staging configuration can be found in the Site Settings UI. The Staging tab
-allows us to make changes in a staging environment and preview our work before
-publishing it to the live site. Let's create a staging environment for
-Nose-ster's home page.
+### Enabling Local Live staging
 
-First, you'll add a new page. Click *Add &rarr; Page* from the toolbar in the
+Site administrators can enable Staging for a site via the Site Settings UI. To
+reach this interface via the Control Panel, select a site in the context menu
+selector, click on *Site Settings* in the Control Panel menu, then click on
+*Staging* at the left. Under Staging Type, select either *Local Live* or *Remote
+Live* and additional options appear. Staging allows changes to be made in a
+staging environment so that work can be reviewed, possibly using a workflow,
+before it's published to a live site. Enabling Local Live staging is easy. Just
+select *Local Live* and decide whether you'd like to enable page versioning. You
+can enable page versioning on a site's public pages, private pages, both, or
+neither. Page versioning allows you to work in parallel on different versions of
+pages and maintains a history of all page modifications. We discuss page
+versioning in more detail below.
+
+### Enabling Remote Live staging
+
+When you enable Remote Live staging, the remote site becomes the live
+environment and the current site becomes the staging environment. The remote
+(live) Liferay server and the local (staging) Liferay server should be
+completely separate systems. They should not, for example, share the same the
+database. When Remote Live staging is enabled, all the necessary information is
+transferred over the network connecting the two servers. Before a site
+administrator can enable Remote Live staging for a site, the remote Liferay
+server must first be added to the current Liferay server's list of allowed
+servers. The current Liferay server must also be added to the remote Liferay
+server's list of allowed servers. You can make these configurations in your
+Liferay servers' `portal-ext.properties` files. Your first step should be to add
+the following lines to your current Liferay server's `portal-ext.properties`
+file:
+
+    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
+    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Remote server IP address]
+
+Then add the following lines to your remote Liferay server's
+`portal-ext.properties` file:
+
+    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
+    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Local server IP address]
+
+Remember to restart both Liferay servers after making these portal properties
+updates. After restarting, log back in to your local Liferay portal instance as
+a site administrator. Then navigate to the Control Panel and choose a site in
+the context menu selector. Then click on *Site Settings* in the Control Panel
+menu and then on *Staging* in the menu at the left. Select *Remote Live* under
+Staging Type and additional options appear.
+
+![Figure 3.x: After your remote Liferay server and local Liferay server have
+been configured to communicate with each other, you have to specify a few Remote
+Live connection settings.](../../images/remote-live-staging-settings.png)
+
+First, enter your remote Liferay server's IP address into the Remote Host/IP
+field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
+to the load balanced IP address of the cluster in order to increase the
+availability of the publishing process. Next, enter the port on which the remote
+Liferay instance is running into the Remote Port field. You only need to enter a
+Remote Path Context if a non-root portal servlet context is being used on the
+remote Liferay server. Finally, enter the site ID of the site on the remote
+Liferay server that will be used for the Live environment. If a site hasn't
+already been prepared for you on the remote Liferay server, you can log in to
+the remote Liferay server and create a new blank site. After the site has been
+created, note the site ID so you can enter it into the Remote Site ID field on
+your local Liferay server. You can find any site's ID by selecting *Actions
+&rarr; Edit* next to the site's name on the Sites page of the Control Panel.
+Finally, check the *Use a Secure Network Connection* field to secure the
+publication of pages from your local (staging) Liferay server to your remote
+(live) Liferay server.
+
+That's all you need to do to enable Remote Live Staging! However, when a user
+attempts to publish changes from the local (staging) server to the remote (live)
+server, Liferay passes the user's credentials to the remote server to perform a
+permission check. In order for a publishing operation to succeed, the operation
+must be performed by a user that has identical credentials and permissions on
+both the local (staging) and the remote (live) server. This is true regardless
+of whether the user attempts to publish the changes immediately or attempts to
+schedule the publication for later. If only a few users should have permission
+to publish changes from staging to production, it's easy enough to create a few
+user accounts on the remote server that match a selected few on the local
+server. However, the more user accounts that you have to create, the more
+tedious this job becomes and the more likely you are to make a mistake. And you
+not only have to create identical user accounts, you also have to ensure that
+these users have identical permissions. For this reason, we recommend that you
+use LDAP to copy selected user accounts from your local (staging) Liferay server
+to your remote (live) Liferay server. Liferay's Virtual LDAP Server application
+(EE-only), available on Liferay Marketplace, makes this easy.
+
+### Example: Enabling Local Live staging
+
+Let's create a Local Live staging environment for Nose-ster's home page. Before
+we begin, let's add a new page. Click *Add &rarr; Page* from the toolbar in the
 default site and name the new page *News and Events*. Next, click the *View
-Pages* button and add the Alerts and Announcements portlets to it.
+Pages* button to navigate to the pages. Then add the Alerts and Announcements
+portlets to the News and Events page.
 
-When you activate staging, Liferay creates a duplicate of all existing content
-on your site and uses that to create the staging site. Because of this, we
-recommend only activating staging on relatively new, clean sites.  Having a few
-pages and some portlets (like the site we've created) is no big deal, but if you
-have already created a large amount of content you may not be able to enable
-staging on that site.
+When you activate staging Local Live staging, Liferay creates a clone of your
+site. This clone became the staging environment. Because of this, we recommend
+only activating staging on new, clean sites. Having a few pages and some
+portlets (like those of the example site we've created) is no big deal. However,
+if you have already created a large amount of content you might not be able to
+enable staging on that site. Also, if you intend to use page versioning to track
+the history of updates to your site, we recommend that you enable it as early as
+possible, *before* your site has many pages and lots of content. Your site's
+update history won't be saved until you enable page versioning. Page versioning
+requires staging (either Local Live or Remote Live) to be enabled.
 
-Now we're ready to activate the staging feature for this site. Go to the Control
-Panel then to *Site Settings* and select *Staging* from under the *Advanced*
-heading.
+Now we're ready to activate staging for this site. Go to the Control Panel then
+to *Site Settings* and select *Staging* from under the *Advanced* heading. We'll
+assume we don't have a separate staging server so we'll select the *Local Live*
+staging type. If you do have a separate server to use for staging, follow the
+instructions in the previous section for configuring it and your local server
+for remote staging. Either way, once you make a selection (either *Local Live*
+or *Remote Live*), more options become available for page versioning and staged
+portlets.
+
+### Enabling page versioning and staged portlets
+
+Enabling page versioning for a site allows site administrators to work in
+parallel on multiple versions of the site's pages. Page versioning also
+maintains a history of all updates to the site from the time page versioning was
+enabled. Site administrators can revert to a previous version of the site at any
+time. This flexibility is very important in cases where a mistake is found and
+it's important to quickly publish a fix. If you're following the Nose-ster
+example, check *Enabled On Public Pages* to enable page versioning for the
+Nose-ste site and then click *Save*.
 
 ![Figure 3.18: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
-We'll assume we don't have a separate staging server so we'll select the staging
-type *Local Live*. If you want to set up a remote staging environment, it's
-easy. First select *Remote Live*, then supply the name or IP of the remote
-server where staged content should be published, the port (80 if Liferay is
-sitting behind a web server or the port your application server is listening on
-if not) and the remote site or organization ID. You can find this ID by
-selecting *Actions &rarr; Edit* on any site in the Control Panel. Either way,
-once you make a selection (*Local Live* or *Remote Live*), more options become
-available.
-
-We'll cover many of the collaboration portlets listed here when we come to
-chapter 6. For now you just need to be aware the option is available to enable
-or disable staging for any of them and you need to decide if you want to stage
-content for these portlets. In the case of the collaborative portlets, the
-answer is usually "no." Why? Because portlets such as the Message Boards are
-designed for user interaction. If their content were staged, you'd have to
-manually publish your site whenever somebody posted a message on the message
-boards to make that message appear on the live site.
-
+Before you activate staging, you can choose which portlets' data should be
+copied to staging. We'll cover many of the collaboration portlets listed under
+the Staged Portlets heading when we come to chapter 8. For now, you just need to
+be aware that you can enable or disable staging for any of these portlets. Why
+might you want to enable staging for some portlet types but not others? In the
+case of collaborative portlets, you probably *don't* want to enable staging
+since such portlets are designed for user interaction. If their content were
+staged, you'd have to manually publish your site whenever somebody posted a
+message on the message boards to make that message appear on the live site.
 Generally, you'll want web content to be staged because end users aren't
-creating that kind of content-—web content is the stuff you publish to your
-site. But portlets like the message boards or the wiki would likely benefit from
-*not* being staged.
+creating that kind of content--web content is the stuff you publish to your
+site. But portlets like the Message Boards or Wiki would likely benefit from
+*not* being staged. Notice which portlets are marked for staging by default: if
+you enable staging and accept the defaults, staging is *not* enabled for the
+collaborative portlets.
 
-Enabling *Page Versioning* makes it so you can work in parallel with other users
-on multiple versions of the same pages and it gives you the flexibility to
-revert easily to a previous version if you encounter any issues. Check *Enabled
-On Public Pages* so we can look at versioning.
+### Using the staging environment  
 
-#### Using the staging environment  
-
-If you navigate back to the News and Events page you'll now notice some new
-items along the top of the screen. These will help us manage staged pages.
-You'll also notice most of your page management options have been removed,
-because now you can't directly edit live pages--you'll now use the staging
-environment to do that. Click on *Staging* to view the staged area. Your
-management options are restored and you have some new options related to
-staging.
+After enabling staging (either Local Live or Remote Live) for a site, you'll
+notice a colored bar with some new menus just below the Dockbar when you
+navigate to the site. These new menus help us manage staged pages. You'll also
+notice that most of your page management options have been removed, because now
+you can't directly edit live pages. You now must use the staging environment to
+make changes. Click on *Staging* to view the staged area. Your management
+options are restored and you can access some new options related to staging. If
+you're following along with the Nose-ster example, navigate back to the News and
+Events page and click on *Staging* to get your page editing capabilities back.
 
 ![Figure 3.19: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
@@ -1069,7 +1218,7 @@ The dropdown next to the Staging link at the top gives you the option to
 **Publish to Live Now:** immediately pushes any changes to the Live Site.
 
 **Schedule Publication to Live:** lets you set a specific date to publish or to
-setup recurring publishing. You could use this, for example, to publish all
+set up recurring publishing. You could use this, for example, to publish all
 changes made during the week every Monday morning without any further
 intervention.
 
@@ -1113,7 +1262,7 @@ One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
 different purposes.
 
-#### Site Pages Variations  
+### Using site pages variations  
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
@@ -1225,7 +1374,7 @@ Variation, it will just add more versions, pages and page variations as needed.
 
 Let's finish our discussion of staging by outlining a few more features.
 
-#### Wrapping up staging  
+### Wrapping up staging  
 
 You can enable staging on an individual site basis, depending on your needs.
 This makes it easy to put strict controls in place for your public web site,
@@ -1234,7 +1383,7 @@ controls. Liferay's staging environment is extremely easy to use and makes
 maintaining a content-rich web site a snap.
 
 Liferay 6.0 introduced a new feature to the permissions system called teams.
-Let's examine them next.
+Let's examine teams next.
 
 ## Creating teams for advanced site membership management  
 
@@ -1477,7 +1626,7 @@ contains only tablets, so no devices can belong to both rule groups. Now we just
 need to define an action for our Android and iOS Tablets rule group to use a
 different layout: On the Site Pages page of the Control Panel, click on *Mobile
 Rule Groups*, and then on *Actions* &rarr; *Manage Actions* next to Android and
-iOS Tablets. Click on *Add Action*, enter the name Layout Template
+iOS Tablets. Click on *Add Action*, enter the name *Layout Template
 Modification*, and select the *Layout Template Modification* action type.
 Lastly, select the *1 Column* layout template (or whichever one you like) and
 click *Save*. Good job!  Now the Liferay site's pages are presented to Android
