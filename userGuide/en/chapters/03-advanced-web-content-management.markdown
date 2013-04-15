@@ -1,5 +1,5 @@
 
-# Advanced Web Content Management   
+# Advanced Web Content Management [](id=lp-6-1-ugen03-advanced-web-content-management--0)
 
 In the previous chapter we looked at some basic ways you can use Liferay to
 handle your web content. In this chapter we'll delve deeper into slightly more
@@ -24,7 +24,7 @@ sections on creating teams and rules for presenting site pages to mobile
 devices. Once finished with this chapter, you'll be the envy of your peers as
 they'll think you really know what you're doing.
 
-## Advanced content with structures and templates  
+## Advanced content with structures and templates [](id=lp-6-1-ugen03-advanced-content-creation-0)
 
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of
@@ -47,7 +47,7 @@ everything from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-### Using structures  
+### Using structures [](id=lp-6-1-ugen03-using-structures-0)
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -82,7 +82,7 @@ scrolls with the user and more.
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
 
-#### Editing structures
+#### Editing a Structure [](id=lp-6-1-ugen03-editing-a-structure-0)
 
 Go back to the Control Panel and select *Web Content* from the content section.
 The first way to access the Manage Structures interface is simply by clicking
@@ -159,7 +159,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
 closely at the form elements.
 
-#### Editing form elements  
+#### Editing form elements [](id=lp-6-1-ugen03-editing-form-elements-0)
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -214,7 +214,7 @@ an HTML Text area for the body of your content*). Also enable the *Display as
 Tooltip* box. Now, when users hover over the Help icon near your title, your
 instructions are displayed.
 
-##### Structure Default Values
+##### Structure Default Values [](id=lp-6-1-ugen03-structure-default-values-0)
 
 Structure Default Values allow you to create one structure that uses common data
 from multiple articles.
@@ -251,7 +251,7 @@ settings.
 Every new web content you create with this structure is preloaded with the
 data you inserted.
 
-#### Assigning permissions  
+#### Assigning permissions [](id=lp-6-1-ugen03-assigning-permissions-1)
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -269,7 +269,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of Liferay's web content management system: templates.
 
-### Using templates  
+### Using templates [](id=lp-6-1-ugen03-using-templates-0)
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -283,7 +283,7 @@ using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-#### Template Types (VM, XSL, FTL and CSS)  
+#### Template Types (VM, XSL, FTL and CSS) [](id=lp-6-1-ugen03-template-types-vm-xsl-ftl-and-css-0)
 
 Liferay supports templates written in four different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -315,7 +315,7 @@ straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
-#### Adding templates
+#### Adding templates [](id=lp-6-1-ugen03-adding-a-template-0)
 
 Liferay WCM makes it easy to create structures, templates and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -395,7 +395,7 @@ When this template is rendered, it looks something like this:
 Now that you've created a handsome template, it's time to decide who the lucky
 people are that get to use it.
 
-### Assigning template permissions  
+### Assigning template permissions [](id=lp-6-1-ugen03-assigning-template-permissions-0)
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.
@@ -417,7 +417,7 @@ your organization.
 Now that you understand the role structures and templates play in creating web
 content, let's look at how you can use Liferay to manage multiple sites.
 
-## Leveraging Liferay's multi-site capabilities  
+## Leveraging Liferay's multi-site capabilities [](id=lp-6-1-ugen12-sites-0)
 
 As stated in chapter 1, a site is a set of pages that can be used to publish
 content or applications. Sites can be independent or they can be associated with
@@ -577,7 +577,7 @@ permission to do so.
 Site templates are a powerful tool for managing many similar sites. Let's
 examine how they work.
 
-## Using site templates  
+## Using site templates [](id=lp-6-1-ugen12-site-templates-0)
 
 Site Templates can be administered from the Control Panel. They allow portal
 administrators to create multiple sites with the same default set of pages and
@@ -771,7 +771,7 @@ copied copied during a site reset.
 Now that we've learned how site templates work, let's discuss how to use page
 templates. 
 
-## Using page templates  
+## Using page templates [](id=lp-6-1-ugen12-page-templates-0)
 
 Click on *Page Templates* in the Control Panel to see a list of page templates.
 Page templates function similarly to site templates but at the page level. Each
@@ -855,7 +855,7 @@ appear.
 We'll discuss staging in more detail later in this chapter. For now let's look
 at importing and exporting templates.
 
-### Exporting and importing site templates and page templates  
+### Exporting and importing site templates and page templates [](id=lp-6-1-ugen03-exporting-and-importing-site-templates-and-page-templates-0)
 
 If you want to export a site that uses site or page Templates to a different
 environment (through a LAR file or remote publication), the Templates must be
@@ -887,7 +887,7 @@ The page template can now be imported normally to this new environment.
 
 Next, let's examine the tools Liferay provides for handling translations.
 
-## Localization  
+## Localization [](id=lp-6-1-ugen03-localization-0)
 
 Previous versions of Liferay had the ability to create and manage different
 translations of your web content but with Liferay 6.1 we've added several
@@ -925,7 +925,7 @@ steps above to localize content, only fields within the structure that had the
 *Localizable* box checked appear within the translation window. Next, we'll
 discuss how to let users customize their site pages.
 
-## Allowing users to customize site pages  
+## Allowing users to customize site pages [](id=lp-6-1-ugen03-advanced-publishing-options-0)
 
 As we discussed before, as your site becomes larger and more complex, management
 of the content becomes more challenging. We've gone over Liferay management
@@ -948,7 +948,7 @@ Additionally, you may want to create content and send it through an approval and
 reviewal process weeks before you want it displayed on the web site. Liferay
 gives you this flexibility with the *Schedule* and *Workflow* features.
 
-## Scheduling web content  
+## Scheduling web content [](id=lp-6-1-ugen03-scheduling-web-content-0)
 
 Liferay's WCM lets you define when your content goes live. You can determine
 when the content is displayed, expired and/or reviewed. This is an excellent way
@@ -977,7 +977,7 @@ growing inventory of content.
 Similar to scheduling, Liferay's staging feature also allows you to manipulate
 time, in a manner of speaking.
 
-## Staging page publication  
+## Staging page publication [](id=lp-6-1-ugen03-staging-and-workflow-0)
 
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your
@@ -1145,7 +1145,7 @@ for remote staging. Either way, once you make a selection (either *Local Live*
 or *Remote Live*), more options become available for page versioning and staged
 portlets.
 
-### Enabling page versioning and staged portlets
+### Enabling page versioning and staged portlets 
 
 Enabling page versioning for a site allows site administrators to work in
 parallel on multiple versions of the site's pages. Page versioning also
@@ -1174,7 +1174,7 @@ site. But portlets like the Message Boards or Wiki would likely benefit from
 you enable staging and accept the defaults, staging is *not* enabled for the
 collaborative portlets.
 
-### Using the staging environment  
+### Using the staging environment [](id=lp-6-1-ugen03-using-the-staging-environment-0)
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
 notice a colored bar with some new menus just below the Dockbar when you
@@ -1239,7 +1239,7 @@ One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
 different purposes.
 
-### Using site pages variations  
+### Using site pages variations [](id=lp-6-1-ugen03-site-pages-variations-0)
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
@@ -1351,7 +1351,7 @@ Variation, it will just add more versions, pages and page variations as needed.
 
 Let's finish our discussion of staging by outlining a few more features.
 
-### Wrapping up staging  
+### Wrapping up staging [](id=lp-6-1-ugen03-wrapping-up-staging-0)
 
 You can enable staging on an individual site basis, depending on your needs.
 This makes it easy to put strict controls in place for your public web site,
@@ -1362,7 +1362,7 @@ maintaining a content-rich web site a snap.
 Liferay 6.0 introduced a new feature to the permissions system called teams.
 Let's examine teams next.
 
-## Creating teams for advanced site membership management  
+## Creating teams for advanced site membership management [](id=lp-6-1-ugen12-teams-0)
 
 Teams don't appear as a link in the Control Panel because they exist *within*
 sites. Teams allow site administrators a greater degree of flexibility than was
@@ -1402,7 +1402,7 @@ permissions you want to assign to the teams, then click *Save*. That's it! Now
 your team is ready to perform their functions. Next, let's look at how to
 configure Liferay for mobile devices.
 
-## Displaying site pages to mobile devices  
+## Displaying site pages to mobile devices [](id=lp-6-1-ugen03-mobile-device-rules-0)
 
 Mobile device rules allow you to configure sets of rules to alter the behavior
 of the portal based on the device being used to access Liferay. The proportion
@@ -1609,7 +1609,7 @@ Lastly, select the *1 Column* layout template (or whichever one you like) and
 click *Save*. Good job!  Now the Liferay site's pages are presented to Android
 and iOS tablet users with the 1 Column layout template.
 
-## Summary  
+## Summary [](id=lp-6-1-ugen03-summary-0)
 
 This chapter has been your guide to Liferay site management and advanced Web
 Content Management. We've seen how you can use Liferay to manage both simple
