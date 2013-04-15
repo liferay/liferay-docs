@@ -2,13 +2,28 @@
 
 "But *Apache Maven* still beguiling all my sad soul into smiling..."
 
-Edgar Allen Poe liked Maven too, so you're in good company. Okay, we admit up
-front that we changed 'the raven' to 'Apache Maven' in the above line which we
-ripped from Poe's "The Raven". We also admit to being slightly ashamed of the
-poor attempt at humor. But if Apache Maven does indeed make your sad soul smile,
-especially if your soul was made sad because you thought you had to use
-Liferay's Ant-based Plugins SDK to develop your plugins, then by all means, use
-it! 
+Edgar Allen Poe liked Maven too, so you're in good company. Okay we admit it, we
+changed 'the raven' to 'Apache Maven' in the above line which we ripped from
+Poe's "The Raven". We also admit to being slightly ashamed of the poor attempt
+at humor. But if Apache Maven does indeed make your sad soul smile, especially
+if your soul was made sad because you thought you had to use Liferay's Ant-based
+Plugins SDK to develop your plugins, then by all means, use it! 
+
+Quoth the Maven, "Let us proceed undaunted in exploration of these topics:" 
+
+- Liferay Plugin Types to Develop with Maven
+
+- Deploying Liferay Plugins with Maven
+
+- Creating Liferay Plugins with Maven
+
+- Using a Parent Plugin Project
+
+- Installing Required Liferay Artifacts 
+
+- Using Maven Repositories
+
+- Installing Maven 
 
 <!--Alternative introduction, but equally cheesy:
 So, you don't want to develop your plugins using Liferay's Ant-based Plugins
@@ -258,15 +273,14 @@ from the Central Repository.
 Let's look at the manual process first; we'll download and install our Liferay
 artifacts from a zip file. 
 
-### Installing EE/CE Artifacts from a Zip File
+### Installing EE/CE Artifacts from a Zip File 
 
 Whether you're building plugins for Liferay EE or CE, you can get the Liferay
 artifacts you by manually installing them from a zip file. Let's download the
 Liferay EE artifacts first. 
 
-You can downloadThe Liferay EE artifacts package can be downloaded by visiting Liferay's
-Customer Portal. To access the Liferay Customer Portal and begin downloading
-Liferay Maven EE artifacts, follow these steps:
+You can download the Liferay EE artifacts package from Liferay's Customer
+Portal. Just follow these steps: 
 
 1. Navigate to [www.liferay.com](https://www.liferay.com/) and sign in.
 
@@ -280,32 +294,32 @@ field and select the *Development* value in the second field.
     ![Figure 8.2: You can download the Liferay Maven EE artifacts from the
     Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
-5. Click *Download* from under the desired *Liferay Portal \<Version\> Maven*.
+5. Click *Download* under the desired *Liferay Portal \<Version\> Maven*. 
 
     The Liferay Maven EE artifacts package downloads to your machine.
 
-The Liferay CE artifacts package can be downloaded from SourceForge:
+Get the the artifacts for Liferay CE from SourceForge by following these steps:
 
-1. Open your browser to *Liferay Portal* on SourceForge at
+1. Open your browser to *Liferay Portal* on SourceForge &rarr;
 [http://sourceforge.net/projects/lportal/files/Liferay%20Portal/](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/).
 
-2. Select the version information of the Liferay Maven artifacts you want. For
-example, if you want Maven artifacts for Liferay Portal 6.1.1 CE GA2, select
-version *6.1.1 GA2*.
+2. Select the Liferay version for which you need Maven artifacts. For example,
+if you need Maven artifacts for Liferay Portal 6.1.1 CE GA2, select version
+*6.1.1 GA2*. 
 
     ![Figure 8.3: After selecting the Liferay version, simply select the Liferay
     Portal Maven zip file to download.](../../images/maven-select-download.png)
 
-3. Select the desired zip file. The zip files use naming convention
-*liferay-portal-maven-\<version\>-\<date\>.zip*.
+3. Select the appropriate zip file. The zip files use naming convention
+*liferay-portal-maven-\<version\>-\<date\>.zip*. 
 
     The Liferay Maven CE artifacts package downloads to your machine.
 
 You can extract the Liferay EE/CE artifacts package zip file anywhere you like.
-The zip file not only includes the Liferay artifacts, but also includes a
-convenient script to install and deploy the artifacts to your repositories.
-We'll show you how to install these required Liferay release artifacts to your
-*liferay-releases* repository.
+The zip file you downloaded includes the Liferay artifacts and a convenient
+script to install and deploy the artifacts to your repositories. Next we'll show
+you how to install these required Liferay release artifacts to your
+*liferay-releases* repository. 
 
 #### Installing Downloaded Artifacts to a Repository
 
@@ -327,23 +341,24 @@ file.
 Your local repository now contains the Liferay artifacts required to build
 Liferay plugins. Wasn't that easy?
 
-Next, let's *deploy* the Liferay artifacts to a release repository server.
+If you want to share your Lifweray artifacts with tewammates, you'll have to
+*deploy* them to a release repository server. 
 
-#### Deploying Downloaded Artifacts to a Repository
+#### Deploying Downloaded Artifacts to a Repository 
 
 You may find it worthwhile to share your Liferay artifacts with teammates.
 
-Here is how you do it:
+Here's how you do it:
 
-1. Make sure you have created a repository server to hold the Liferay Maven
-artifacts. See the *Managing Maven repositories* section for instructions on
-creating a repository named *liferay-releases*.
+1. Make sure you've created a *liferay-releases* repository server to hold the
+Liferay Maven artifacts. If you haven't, see the *Managing Maven Repositories*
+section for instructions. 
 
-2. Check that the repository to hold your Liferay artifacts is specified as a
-server in your Maven `settings.xml` file. See the *Configuring local Maven
-settings* for instructions on adding an entry for the server.
+2. Ensure the repository to hold your Liferay artifacts is specified as a server
+in Maven's `settings.xml` file. If it isn't already, see the *Configuring Local
+Maven Settings* for instructions on adding an entry for the server. 
 
-    Here is an example setting for repository server named *liferay-releases*:
+    Here'ss an example setting for repository server named *liferay-releases*: 
 
         <servers>
             ...
@@ -359,11 +374,11 @@ settings* for instructions on adding an entry for the server.
 directory. This is the root directory extracted from the Liferay artifacts zip
 file.
 
-4. Create a `build.${USER_NAME}.properties` file (e.g.,
+4. Create a `build.$<USER_NAME>.properties` file (e.g.,
 `build.jblogs.properties`) in your *liferay-portal-maven-\<version\>* directory.
-In that properties file, specify values for `lp.maven.repository.id` and
-`lp.maven.repository.url` properties. These properties refer to your
-repository's ID and URL, respectively.
+In the new properties file, specify values for the properties
+`lp.maven.repository.id` and `lp.maven.repository.url`. These refer to your
+repository's ID and URL, respectively. 
 
     Here are some example property values:
 
@@ -373,7 +388,7 @@ repository's ID and URL, respectively.
     Note, if you created a repository in Nexus OSS, as demonstrated in section
     *Managing Maven repositories*, you can specify that repository's ID and URL.
 
-3. To deploy to your release repository server, execute
+5. To deploy to your release repository server, execute
 
         ant deploy
 
@@ -392,59 +407,64 @@ repository's ID and URL, respectively.
     ![Figure 8.5: Your repository server now provides access to your Liferay
     Maven artifacts.](../../images/maven-verify-deployment2.png)
 
-Congratulations! You've downloaded the Liferay artifacts, installed them to your
+Congratulations! Youe downloaded the Liferay artifacts, installed them to your
 local repository, and deployed them to your release repository server for
 sharing with teammates.
 
-If you are working with Liferay CE, the other installation option you have is to
-rely on Maven to download the Liferay Maven CE artifacts automatically. We'll
-cover that next.
+If you're working with Liferay CE, there's an alternative method of obtaining
+the necessary Liferay Maven artifacts--you can let Maven download them
+automatically. Let's see how.
 
-### Installing CE Artifacts from the Central Repository
+### Installing CE Artifacts from the Central Repository 
 
-Liferay offers an option for obtaining and installing Liferay CE artifacts,
-automatically. The CE artifacts are publicly available on the *Central
-Repository*, located at
+Liferay offers an option for automatic download and installation of Liferay CE
+Maven artifacts. They're publicly available on the *Central Repository*, located
+at
 [http://search.maven.org/#search|ga|1|liferay%20maven](http://search.maven.org/#search|ga|1|liferay%20maven),
 and are updated with each Liferay release (e.g., 6.1.0, 6.1.10, 6.1.20, etc.).
-The first time you use Maven to compile a Liferay plugin project, if the
-required Liferay CE artifacts are not found in your local repository and are not
-found in any of your configured repository servers, Maven automatically
-downloads the artifacts from the Central Repository into your local repository.
-You'll get to see that in action when you package your Liferay CE plugins.
+The first time you use Maven to compile a Liferay plugin project, Maven
+automatically downloads the required artifacts from the Central Repository into
+your local repository if they're not found in your local repository or any of
+your configured repository servers. You'll see it happen when you package your
+Liferay CE plugins. 
 
-Next, we'll consider the benefits of using a Maven *parent* project with your
-plugin projects.
+Next, we'll consider the benefits of using a Maven parent project with your
+plugin projects. 
 
-## Using a Parent Plugin Project
+## Using a Parent Plugin Project 
 
-Maven supports project inheritance through the use of *parent* projects.
-Project inheritance comes in handy when you have properties common to multiple
-projects--like when you are working on multiple Liferay plugin projects.
+Maven supports project inheritance. You can create a *parent* project that has
+any properties your plugin projects will have in common, and the rest of your
+projects (*child* projects if you like) can inherit those properties from the
+parent project. You'll save time since you won't need to specify those
+properties in each project. We'll assume you're interested in devleoping your
+Liferay plugins in Maven; if you'll develop moe than one, it makes sense to
+leverage project inheritance since all Liferay projects will have some
+properties in common. 
 
-If you don't already have a Maven project for developing your Liferay plugins or
-if you are curious about using a parent project to organize your Liferay plugin
-projects, we'll show you how. Otherwise, just follow along as we'll use this
-parent project paradigm in demonstrating how to use Liferay artifacts and
-develop Liferay plugins. See Maven's documentation on project inheritance found
+Our example will demonstrate project inheritance; we'll actually be building a
+parent project. Even if you're not going to leverage Maven's projecct
+inheritance capabiltiies when you build your Liferay plugins with Maven, the
+process is the same for creating any Liferay plugin with Maven's Liferay
+artifacts. For more information on project inheritance see Maven's documentation
 at
 [http://maven.apache.org/pom.html#Inheritance](http://maven.apache.org/pom.html#Inheritance).
 
-Let's specify some general settings you'll need to build plugins. First, we'll
-create a *parent* project. The parent project is similar to the project root of
-the Liferay Plugins SDK. The parent project's `pom.xml` file can specify
-information to be used by the plugin projects that refer to it. You can always
-specify information in each plugin's POM, but you will often find it convenient
-to use the parent project's POM for sharing common information.
+Let's create our prarent project then specify the general settings you'll need
+to build your plugins for Liferay. The parent project is similar to the project
+root of the Liferay Plugins SDK. It's `pom.xml` file can specify information to
+be used by any plugin projects that refer to it. You can always specify
+information in each plugin's POM, but it's more convenient to use the parent
+project's POM for sharing common information. 
 
-Let's create a parent project named *sample-parent-project*:
+Let's create a parent project named *sample-parent-project*: 
 
 1. Create a new directory for your parent project. For this example, we'll name
-the directory `sample-parent-project`. Your parent project can be placed
-anywhere on the file system and still interact with your Liferay instance.
+the directory `sample-parent-project`. Your can place the directory anywhere on
+your file system. 
 
 2. Inside the `sample-parent-project` directory, create a `pom.xml` file and
-insert the following lines:
+insert the following lines: 
 
         <?xml version="1.0" encoding="UTF-8"?>
         <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -507,8 +527,8 @@ insert the following lines:
 
         </project>
 
-    You can use this example POM replacing the version values with the version
-    of Liferay applicable to the plugins you are developing.
+    If you use this example POM, replace the `<version>` values with the version
+    of Liferay applicable to the plugins you're developing. 
 
 3. Modify the values of the *properties* to match your Liferay environment.
 
