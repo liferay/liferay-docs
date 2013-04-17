@@ -530,6 +530,8 @@ insert the following lines:
     If you use this example POM, replace the `<version>` values with the version
     of Liferay applicable to the plugins you're developing. 
 
+    <!--Change to 6.2 after release -->
+    
 3. Modify the values of the *properties* to match your Liferay environment.
 
     - Fill in the `<liferay.auto.deploy.dir>...</liferay.auto.deploy.dir>` tags
@@ -547,56 +549,64 @@ insert the following lines:
             <liferay.version>6.1.20</liferay.version>
         </properties>
 
-Because you've specified your Liferay instance's *deploy* directory in the POM,
-Maven knows exactly where to deploy your plugin artifacts.
+By specifying your Liferay instance's *deploy* directory in the POM, you're
+telling Maven exactly where to deploy your plugin artifacts. 
 
-Your parent now specifies common dependencies on required Liferay Maven
-artifacts. All of your parent project's modules (i.e., projects that refer to
-this parent) can leverage these dependencies.
-
-Note, you could just as easily include such dependencies in the POM of each of
-your plugin projects, but specifying them in a parent project makes them
-accessible to child projects through inheritance.
-
-Now that you know how to specify dependencies on required Liferay artifacts,
-let's use the *archetypes* Liferay provides for creating Liferay plugin
-projects.
-
-## Creating Liferay Plugins with Maven
-
-Liferay offers many archetypes to help you create Maven projects for multiple
-types of Liferay plugins, including portlet, theme, hook, and layout template
-plugins. And, of course, we provide archetypes for each of these plugin types
-for various versions of Liferay.
-
-Let's go through an example of creating a Liferay portlet project using
-*Archetype*, Maven's project templating toolkit. You'll be able to apply these
-Archetype tool steps to generate all kinds of Liferay plugin projects.
+Your parent project now specifies common dependencies on required Liferay Maven
+artifacts. All your parent project's modules (i.e., projects that refer to this
+parent) can leverage these dependencies. 
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Make sure Maven is installed and that
- it's executable is in your path environment variable. 
+ ![note](../../images/tip-pen-paper.png)**Note:**You could just as easily
+ include such dependencies in the POM of each of your plugin projects, but
+ specifying them in a parent project makes them accessible to child projects
+ through inheritance. 
+
+---
+ 
+Now you're able to specify dependencies on required Liferay artifacts; let's
+create a Liferay plgugin project using the *archetypes* Liferay provides. 
+
+## Creating Liferay Plugins with Maven 
+
+With Liferay, you get many archetypes to help create Maven projects for multiple
+Liferay plugin types, including portlet, theme, hook, and layout template
+plugins. Archetypes for each of plugin type for several versions of Liferay are
+provided, so you almost certainly have the archettype you need. 
+
+*Archetype* is Maven's project templating toolkit. Let's use it to create a
+Liferay portlet project. With Archetype, you can use the same steps we detail
+below to generate Liferay plugin projects of any type. 
 
 ---
 
-Here is how you use Archetype to generate a Liferay plugin project:
+ ![note](../../images/tip-pen-paper.png)**Note:** Make sure Maven is installed
+ and that it's executable is in your path environment variable. 
+
+---
+
+Here's how you use Archetype to generate a Liferay plugin project:
 
 1. Open the command prompt and navigate to the parent directory in which you
 want to create the plugin project. Archetype will create a sub-directory for
 the plugin project you create.
 
-    Note, if you haven't already created a parent project, you may want to
-    consider creating one to share common project information. See section
-    *Using a parent plugin project* for details.
+---
 
-2. Execute:
+ ![note](../../images/tip-pen-paper.png)**Note:** If you haven't already created
+ a parent project, you may want to consider creating one to share common project
+ information. See section *Using a parent plugin project* for details.
+
+---
+
+2. Execute the command
 
         mvn archetype:generate
 
-    Archetype starts up and lists all kinds of archetypes available to you.
-    Lastly, it prompts you to *choose* an archetype or *filter* on archetypes by
-    group / artifact ID. The output looks similar to the following:
+    Archetype starts and lists the archetypes available to you. You'll be
+    prompted to *choose* an archetype or *filter* archetypes by group / artifact
+    ID. The output looks similar to the following: 
     
         ...
         39: remote -> com.liferay.maven.archetypes:liferay-hook-archetype
@@ -612,13 +622,13 @@ the plugin project you create.
         ...
         Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains):
 
-3. To find the Liferay archetype you want, you can either scroll up to find it
-or apply filters to narrow the set of results. Filtering on "liferay" as your
-group ID, and a plugin type ("portlet", "hook", "theme", etc.) can help you find
-applicable Liferay archetypes.
+3. To find the right Liferay archetype for your project, you can either scroll
+up to find it or apply filters to narrow the set of results. Filtering on
+"liferay" as your group ID, and a plugin type ("portlet", "hook", "theme", etc.)
+can help you focus on more applicable Liferay archetypes. 
 
-    For example, you can enter "liferay:portlet" to get a listing of Liferay
-    portlet archetypes like below:
+    Entering "liferay:portlet" as a filter gives a listing of Liferay portlet
+    archetypes, like below: 
 
         Choose a number or apply filter (format: [groupId:]artifactId, case
         sensitive contains): : liferay:portlet Choose archetype:
@@ -643,22 +653,19 @@ applicable Liferay archetypes.
 
 4. Choose an archetype by entering its number.
 
-5. Next, you are prompted to choose the archetype version. Enter the number
-corresponding to the Liferay version for the archetype. You're not required to
-select the archetype version that corresponds with your Liferay instance per
-se, as older archetype versions are compatible with updated Liferay bundles.
+5. You'll be prompted to choose the archetype version. We recommend you enter
+the number corresponding to the Liferay version for the archetype. However,
+you're not required to select the archetype version that corresponds with your
+Liferay instance; older archetype versions are compatible with updated Liferay
+bundles. 
 
-    The snapshot below illustrates choosing the archetype version:
+    The snapshot below illustrates choosing the archetype version: 
 
-    ![Figure 8.6: You are prompted by Maven Archetype to input the version of
-    the archetype to generate.](../../images/maven-archetype-version.png)
+    ![Figure 8.6: You're prompted by Maven Archetype to enter the archetype
+    version.](../../images/maven-archetype-version.png)
 
 6. Enter values for the *groupId*, *artifactId*, *version*, and *package*
-coordinates (properties) of your project. For more information on defining Maven
-coordinates, see
-[http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
-
-    Here are some example values for a sample portlet:
+coordinates (properties) of your project. Here are some examples: 
 
         groupId: com.liferay.sample
         artifactId: sample-portlet
@@ -671,59 +678,63 @@ coordinates, see
     *groupId*, *artifactId*, *version*, and *package*
     properties.](../../images/maven-portlet-plugin-settings.png)
 
+    For more information on defining Maven coordinates, see
+    [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
+    
 6. Enter the letter *Y* to confirm your coordinates.
 
-    Maven's Archetype tool creates a Liferay plugin project directory, equipped
-    with a new `pom.xml` file and source code.
+    Maven's Archetype tool creates a Liferay plugin project directory with a new
+    `pom.xml` file and source code. 
 
-    Note, the archetype file is downloaded and installed automatically to your
-    local repository (i.e.,
-    `.m2/repository/com/liferay/maven/archetypes/<archetype>`). Likewise, if you
+    ![note](../../images/tip-pen-paper.png)**Note:** The archetype file is
+    downloaded and installed automatically to your local repository (e.g.,
+    `.m2/repository/com/liferay/maven/archetypes/<archetype>`). If you
     configured the mirror pointing to your public repository on Nexus, the
-    plugin is installed there as well.
+    plugin is installed there. 
     
     ![Figure 8.8: Your archetype and its dependencies are now available in
     your local repository.](../../images/maven-public-plugin.png)
 
-You can use Maven's Archetype tool to generate other types of plugins in the
-same manner.
+Following these steps, you can use Archetype to generate aall your Liferay
+plugins! 
 
-A plugin project generated from a Liferay archetype comes equipped with a POM
-that is ready to work with a parent project. It inherits the values for
-`liferay.version` and `liferay.auto.deploy.dir` properties from the parent.
+Plugin projects generated from a Liferay archetype are equipped with a POM
+that's ready to work with a parent project. It inherits the values for
+`liferay.version` and `liferay.auto.deploy.dir` properties from the parent. 
 
-When you're finished creating your plugin, you can package and deploy your
-project to a specified Liferay instance. You can even install and deploy the
-individual plugin to a remote repository.
+When your plugin is created, you can package and deploy your project to a
+specified Liferay instance. You can even install and deploy the individual
+plugin to a remote repository. 
 
-Next, we'll go through some brief examples to demonstrate how to deploy your
-plugins to Liferay Portal using Maven.
+Next we'll go through some brief examples to demonstrate deploying your plugins
+to Liferay Portal using Maven. 
 
-## Deploying Liferay Plugins with Maven
+## Deploying Liferay Plugins with Maven 
 
-Maven makes it easy to deploy plugins to a Liferay Portal instance. We'll show
-you how.
+With Maven it's easy to deploy plugins to a Liferay Portal instance. Just follow
+these steps: 
 
-1. Make sure your parent POM's Liferay specific properties specify the correct
-Liferay version and your Liferay Portal's deploy directory path.
+1. Make sure your parent POM's Liferay-specific properties specify the correct
+Liferay version and your Liferay Portal's deploy directory path. 
 
-    For example,
+    Here's an exmaple of these properties using Liferay 6.1.20 and a deploy
+    directory path of `E:\liferay-portal-6.1.20-ee-ga2\deploy`: 
 
         <properties>
             <liferay.auto.deploy.dir>E:\liferay-portal-6.1.20-ee-ga2\deploy</liferay.auto.deploy.dir>
             <liferay.version>6.1.20</liferay.version>
         </properties>
 
-    If you haven't already created a parent plugin project, see *Using a parent
-    plugin project* for details.
+    If you haven't already created a parent plugin project, see *Using a Parent
+    Plugin Project* for details. 
 
-2. Open your command prompt to the Liferay plugin project you want to deploy.
+2. In your command prompt, navigate to your Liferay plugin project's directory. 
 
-3. Package your plugin.
+3. Package your plugin by entering 
 
         mvn package
 
-    Your command output should look similar to the following:
+    Your command output should look similar to the following: 
 
         [INFO] Building war:
         E:\ce-plugins-maven\sample-parent-project\sample-portlet\target\sample-portlet-1.0-SNAPSHOT.war
@@ -732,19 +743,19 @@ Liferay version and your Liferay Portal's deploy directory path.
         [INFO] BUILD SUCCESS
         [INFO] ------------------------------------------------------------------------
 
-4. Deploy your plugin into your Liferay bundle.
+4. Deploy your plugin into your Liferay bundle by entering
 
         mvn liferay:deploy
 
-    The command output should look similar to the following:
+    The command output should look similar to the following: 
 
         [INFO] Deploying sample-portlet-1.0-SNAPSHOT.war to [liferay version]\deploy
         [INFO] ------------------------------------------------------------------------
         [INFO] BUILD SUCCESS
         [INFO] ------------------------------------------------------------------------
 
-    In the meantime, your Liferay console output should show your plugin
-    deploying.
+    Your Liferay console output should show your plugin deploying. It will look
+    like this: 
 
         INFO: Deploying web application directory [liferay version]\[tomcat version]\webapps\sample-portlet
         INFO  [pool-2-thread-2][HotDeployImpl:178] Deploying sample-portlet from queue
@@ -753,8 +764,8 @@ Liferay version and your Liferay Portal's deploy directory path.
     ---
     
      ![note](../../images/tip-pen-paper.png)**Note:** If you get the following
-     error executing `mvn liferay:deploy`, check to see if you're executing the
-     command from your plugin's directory (e.g. `sample-portlet`).
+     error after executing `mvn liferay:deploy`, make sure you're executing the
+     command from your plugin's directory (e.g. `sample-portlet`). 
     
      `[ERROR] No plugin found for prefix 'liferay' in the current project and in
      the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available
@@ -763,11 +774,11 @@ Liferay version and your Liferay Portal's deploy directory path.
     
     ---
 
-5. If you're interested in deploying the plugin to a release or snapshot
-repository, specify the repository in a distribution management section of your
-plugin's `pom.xml`.
+5. If you're deploying the plugin to a release or snapshot repository,
+specify the repository by adding a distribution management section to your
+plugin's `pom.xml`. 
 
-    For example,
+    Here's an example distribution management section for a snapshot repository: 
 
         <distributionManagement>
             <repository>
@@ -781,89 +792,89 @@ plugin's `pom.xml`.
             </snapshotRepository>
         </distributionManagement>
 
-    To get you started with the proper contents for your
-    `<distributionManagement>` element, select the *Summary* tab for each of your
-    repositories.
+    The proper contents for your `<distributionManagement>` element can be found
+    in the *Summary* tab for each of your repositories. 
 
     ![Figure 8.9: Select the *Summary* tab of your repository to see how to
     specify it for distribution management in your plugin's
-    POM.](../../images/maven-repository-summary.png)
+    POM.](../../images/maven-repository-summary.png) 
 
-Note, since we created the plugin as a snapshot, we must deploy it to a snapshot
-repository. You can also deploy a plugin as a release, but the plugin's POM
-*must* specify a valid release version (e.g., `<version>1.0</version>`), *not* a
-snapshot version (e.g., `<version>1.0-SNAPSHOT</version>`).
-
----
-
- ![note](../../images/tip-pen-paper.png)**Note:** You'll use the following three
- build phases in developing plugins with Maven:
-
- - Maven's *compile* phase results in explicit dependencies being downloaded to
- your local repository (i.e., `.m2\repository\com\liferay\portal`)
- - Maven's *package* phase results in the plugin's inferred dependencies
- being downloaded to your local repository. (`.m2\repository`).
- - Maven's *install* phase results in your plugin being installed to your local
- repository.
+Since you created the plugin as a snapshot, you'll have to deploy it to a
+snapshot repository. You can deploy a plugin as a release, but the plugin's POM
+must specify a valid release version (e.g., `<version>1.0</version>`), not a
+snapshot version (e.g., `<version>1.0-SNAPSHOT</version>`). 
 
 ---
 
-Now that you've deployed a plugin using Maven, let's take a look at some of the
-types of Liferay plugins you can develop using Liferay Maven archetypes.
+ ![note](../../images/tip-pen-paper.png)**Note:** There are three build phases
+ you'll use when developing plugins with Maven: 
 
-## Liferay Plugin Types to Develop with Maven
+ - In Maven's *compile* phase, explicit dependencies are downloaded to your
+ local repository (i.e., `.m2\repository\com\liferay\portal`).
+ 
+ - In Maven's *package* phase, the plugin's inferred dependencies are downloaded
+ to your local repository (i.e., `.m2\repository`). 
+ 
+ - Maven's *install* phase, when your plugin is installed to your local
+ repository. 
 
-In this section, we'll highlight the various Liferay plugin types you can
-develop with Maven, how you create them with Maven, and compare them with
-plugins you can create with the Liferay Plugins SDK. Throughout this section,
-we'll refer to previous sections applicable to creating and deploying these
-plugin types. And we'll also refer to other sections of this document that
-explain how you develop each type of plugin, regardless of development
-environment.
+---
 
-The sub-sections that follow cover:
+Now that you've deployed a plugin using Maven, let's consider the types of
+Liferay plugins you can develop with Liferay Maven archetypes. 
 
-- Developing Liferay *portlet* plugins with Maven
+## Liferay Plugin Types to Develop with Maven 
 
-- Developing Liferay *theme* plugins with Maven
+You can develop several of Liferay's plugin types with Maven; we'll deal with
+each in its own subsection:
 
-- Developing Liferay *layout template* plugins with Maven
+- Developing Liferay *Portlet* Plugins with Maven
 
-- Developing Liferay *hook* plugins with Maven
+- Developing Liferay *Theme* Plugins with Maven
 
-- Developing other Liferay plugins with Maven
+- Developing Liferay *Layout Template* Plugins with Maven
 
-Let's dive into portlet plugins next.
+- Developing Liferay *Hook* Plugins with Maven
 
-### Developing Liferay Portlet Plugins with Maven
+- Developing Other Liferay Plugins with Maven
 
-One of the plugins you can create using Maven is a Liferay portlet.
+For each plugin type listed above, we'll cover its creation with Maven and how
+it compares with the correpsonding plugin as created with the Liferay Plugins
+SDK. We'll often refer to the previous sections for creating and deploying these
+plugin types in Maven using Liferay artifacts. We'll also reference sections of
+some other chapters in this guide, where they explain how you develop each type
+of plugin regardless of development environment. 
 
-#### Creating a portlet plugin
+Let's start with portlet plugins. 
 
-To create a Liferay portlet plugin project, follow the *Creating Liferay plugin
-projects with Maven* section.
+### Developing Liferay Portlet Plugins with Maven 
+
+You can create your Liferay portlet plugins using Maven. 
+
+#### Creating a Portlet Plugin 
+
+To create a Liferay portlet plugin project, follow the *Creating Liferay Plugin
+Projects with Maven* section. 
 
 ---
 
  ![tip](../../images/tip-pen-paper.png)**Tip**: As you use Maven's Archetype
  tool to generate your portlet project, you can filter on group ID "liferay", or
- even group ID / artifact ID combination "liferay:portlet", to find the Liferay
- portlet archetypes.
+ even the group ID/artifact ID combination "liferay:portlet", to more easily
+ find the Liferay portlet archetypes. 
 
 ---
 
-#### Anatomy
+#### Anatomy 
 
 A portlet project created from the
 *com.liferay.maven.archetypes:liferay-portlet-archetype* has the following
-anatomy:
+directory structure: 
 
-- *portlet-plugin*/
+- portlet-plugin/
     - src/
         - main/
-            - java/ \* Holds Java source (e.g., 
-              `com.liferay.sample.SamplePortlet.java`)
+            - java/
             - resources/
             - webapp/
                 - css/
@@ -880,70 +891,77 @@ anatomy:
                 - view.jsp
     - pom.xml
 
-There are a couple of directory structure differences between plugin projects
-created using Liferay Maven archetypes and those created using the Liferay
-Plugins SDK. The following table illustrates the differences in location of the
-Java source code and web source code.
+The `portlet-plugin/src/main/java/` directory holds the portlet's Java source
+code (e.g., `com.liferay.sample.SamplePortlet.java`), and
+`portlet-plugin/src/main/webapp` holds it's web source code. If you've created
+any portlet plugins using the Plugins SDK, you might have noted it uses a
+different directory structure. 
+
+The following table illustrates the differences in location of the Java source
+and web source code for a Maven project and a Plugins SDK project: 
 
 Location    | &nbsp;Maven project | &nbsp;Plugins SDK project |
 ----------- | ----------------- | --------------------- |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
-To view the anatomy of a portlet developed by Ant, visit the [Anatomy of a
+To view the full directory structure of a portlet developed by Ant, visit our
+[Anatomy of a
 Portlet](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-portl-4)
-section in this guide.
+section in this guide. 
 
-#### Deployment
+#### Deployment 
 
-To deploy your portlet plugin, follow the instructions in the *Deploying Liferay
-plugins with Maven* section.
+To deploy your portlet plugin, follow the instructions detailed above in
+*Deploying Liferay plugins with Maven*. 
 
-Congratulations! You have successfully created a Liferay portlet plugin using
-Maven.
+Congratulations! You successfully created a Liferay portlet plugin using Maven. 
 
-#### More Information
+#### More Information 
 
-For detailed information on creating all kinds of portlets, see the [*Portlet
+For detailed information on creating portlet plugins, see the
+[*Portlet
 Development*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/portlet-developme-3)
-chapter of this guide.
+chapter of this guide. 
 
-Next, let's run through a brief example for developing a theme plugin using
-Maven.
+You can also develop theme plugins using Maven; we'll demonstrate in the next
+section. 
 
-### Developing Liferay Theme Plugins with Maven
+### Developing Liferay Theme Plugins with Maven 
 
-Imagine yourself sitting in a luxurious chair next to a bustling fire on a cold
-winter's night (in front of your computer, of course). Now imagine yourself
-sitting on a cold hard wooden chair inside a cubicle (again on your computer).
-These two descriptions paint two very different pictures, but describe what
-you're doing all the same. This "change in scenery" for your portal can really
-set the mood for your users. Luckily, you can develop your own theme plugin
-using Maven so your portal has a lasting effect on anyone who visits it.
+Imagine yourself sitting in a luxurious armchair next to a crackling, dancing
+fire; shadows dance on the tapestry-covered wall, and a cat is purring softly
+from its perch atop the mantle. You're passing this cold winter's night in grand
+style (in front of your computer, of course). Now imagine yourself sitting on a
+cold hard wooden chair inside an off-white cubicle with empty walls (you're
+still in front of your computer, of course). These two descriptions paint two
+very different pictures, but both describe what you're doing (sitting and
+computing). Changing the "scenery" of your portal sets the mood for your users.
+We'll show you how to develop your own theme plugin (i.e., your "scenery") using
+Maven so your portal has a lasting impression on anyone who visits. 
 
-#### Creating a Theme Plugin
+#### Creating a Theme Plugin 
 
-The process of creating a theme plugin is similar to the previous portlet we
-created. Our theme plugin demonstration also assumes you have already created
-the `sample-parent-project` and `pom.xml`.
+Theme plugin creation is similar to portlet plugin creation. We'll start by
+assuming you already created the `sample-parent-project` and its `pom.xml`. 
 
-To create a Liferay theme plugin project follow the *Creating Liferay plugin
-projects with Maven* section.
+To create your Liferay theme plugin project follow the *Creating Liferay Plugin
+Projects with Maven* section. 
 
 ---
 
  ![tip](../../images/tip-pen-paper.png)**Tip**: As you use Maven's Archetype
  tool to generate your theme project, you can filter on group ID "liferay", or
- even group ID / artifact ID combination "liferay:theme", to find the Liferay
- theme archetypes.
+ even the group ID/artifact ID combination "liferay:portlet", to more easily
+ find the Liferay portlet archetypes. 
 
 ---
 
-#### Anatomy
+#### Anatomy 
 
 A theme project created from the
 *com.liferay.maven.archetypes:liferay-theme-archetype* has the following
-anatomy:
+directory structure: 
 
 - sample-theme/
     - pom.xml
@@ -954,37 +972,49 @@ anatomy:
                 - WEB-INF/
                     - liferay-plugin-package.properties
                     - web.xml
-                - css/ \* optionally add this directory for CSS customizations
-                - images/ \* optionally add this directory for customizations
-                - js/ \* optionally add this directory JavaScript customizations
-                - templates/ \* optionally add this directory template customizations
+                - css/
+                - images/
+                - js/
+                - templates/
 
-There is a directory structure difference between plugin projects created
-using Liferay Maven archetypes and those created using the Liferay Plugins SDK.
-The following table illustrates this difference.
+Several of the directories listed in the structure above are not automatically
+created; you'll create them as needed, depending on the cusomtizations you're
+making. The following lists and descibes these directories: 
+
+- `src/main/css/`: Holds your CSS customizations.
+
+- `src/main/images/`: Holds custom images for your theme.
+
+- `src/main/js/`: Holds your JavaScript customizations.
+
+- `src/main/templates/`: Holds your template customizations. 
+
+The `src/main/webapp/` folder contains your theme's customizations. If you've
+ever created a theme plugin using the PLugins SDK, this foldes is used the same
+way as the `docroot/_diffs/` folder. For example, `custom.css` should go in
+`src/main/webapp/css/custom.css`. 
+
+Here's a table describing the directory structure differences between themes
+created using Maven and themes created using the Plugins SDK: 
 
 Location    | &nbsp;Maven project | &nbsp;Plugins SDK project |
 ----------- | ----------------- | --------------------- |
 customizations | `src/main/webapp`   | `docroot/_diffs` |
 
-Add your customizations in `src/main/webapp` following the same structure as you
-would in `docroot/_diffs` of the Plugins SDK. So, for example, your `custom.css`
-would go to `src/main/webapp/css/custom.css`.
-
-To view the anatomy of a theme developed by Ant, visit the [*Anatomy of a
+To view the directory structure of a theme developed by Ant, visit the [*Anatomy
+of a
 Theme*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-the-4)
-section in this guide.
+section in this guide. 
 
-#### Theme POM
+#### Theme POM 
 
-The theme plugin project POM has two additional properties:
+The theme plugin project POM has two additional properties: 
 
-- *liferay.theme.parent* - Sets the parent theme. This property allows you to
-define basically any WAR artifact as the parent using the syntax
-*groupId:artifactId:version*. Or you can use the core themes by specifying
-either *_unstyled*, *_styled*, *classic*, or *control_panel*.
+- `liferay.theme.parent`: Sets the parent theme. You can define almost any WAR
+artifact as the parent using the syntax `groupId:artifactId:version`, or use the
+core themes by specifying *_unstyled*, *_styled*, *classic*, or *control_panel*. 
 
-- *liferay.theme.type* - Sets the template theme language
+- `liferay.theme.type`: Sets the template theme language. 
 
     The default settings for the two theme properties look like this:
         
@@ -996,51 +1026,52 @@ either *_unstyled*, *_styled*, *classic*, or *control_panel*.
 #### Deployment
 
 To deploy your theme plugin, follow the instructions in the *Deploying Liferay
-plugins with Maven* section.
+Plugins with Maven* section. 
 
-Note, on executing the *package* goal, a WAR file just like the Maven WAR type
-project is created. Also, the parent theme is downloaded, copied, and overlaid
-with your theme customizations on top of it. And a thumbnail image is created
-the theme output to the *target* directory. See
-`target/<theme>/images/screenshot.png` in your theme project.
+ ![note](../../images/tip-pen-paper.png)**Note:** When you execute the *package*
+ goal, a WAR file is created; it's just like the Maven WAR type project.
+ Simultaneously, the parent theme is downloaded and copied, and your theme's
+ customizations are overlaid last. A thumbnail image of the theme is created and
+ placed in the *target* directory. Its path is
+ `target/<theme>/images/screenshot.png` in your theme project. 
 
-#### More Information
+#### More Information 
 
 For more information on Liferay themes and its settings, visit Liferay's
 [*Creating Liferay
 Themes*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-liferay-them-7)
 chapter of this document.
 
-You have successfully developed a Liferay theme using Maven. Let's look at
-developing hook plugins next.
+You successfully developed a Liferay theme using Maven. Find out about
+developing hook plugins next. 
 
-### Developing Liferay Hook Plugins with Maven
+### Developing Liferay Hook Plugins with Maven 
 
-Hooks are the preferred plugin to use in customizing Liferay's core features.
-You can create hook plugins in much the same way that you do portlet plugins in
-Maven. Let's take a look.
+Hooks are the optimal plugin type for customizing Liferay's core features.
+They're creation is almost identical to portlet plugin creation in Maven. Let's
+take a look. 
 
-#### Creating a Hook Plugin
+#### Creating a Hook Plugin 
 
-To create a Liferay hook plugin project, follow the *Creating Liferay plugin
-projects with Maven* section.
+To create a Liferay hook plugin project, follow the steps outlined in the
+*Creating Liferay Plugin Projects with Maven* section. 
 
 ---
 
  ![tip](../../images/tip-pen-paper.png)**Tip**: As you use Maven's Archetype
- tool to generate your hook project, you can filter on group ID "liferay", or
- even group ID / artifact ID combination "liferay:hook", to find the Liferay
- hook archetypes.
+ tool to generate your hook you can filter on group ID "liferay", or even the
+ group ID/artifact ID combination "liferay:portlet", to more easily find the
+ Liferay portlet archetypes.project. 
 
 ---
 
-#### Anatomy
+#### Anatomy 
 
 A hook project created from the
 *com.liferay.maven.archetypes:liferay-hook-archetype* has the following
-anatomy:
+directory structure: 
 
-- *hook-plugin*/
+- hook-plugin/
     - src/
         - main/
             - java/ \* Optionally add to hold Java source
@@ -1051,40 +1082,57 @@ anatomy:
                     - web.xml
     - pom.xml
 
-There are couple of directory structure differences between plugin projects
-created using Liferay Maven archetypes and those created using the Liferay
-Plugins SDK. The following table illustrates the difference in location of the
-Java source code and web source code.
+The `hook-plugin/src/main/java/` directory holds the hook's Java source code
+(e.g., `com.liferay.sample.SampleHook.java`), and `hook-plugin/src/main/webapp`
+holds it's web source code. If you're familiar with creating hook plugins using
+the Plugins SDK, you probably noticed that Maven uses a different plugin
+directory structure. 
+
+The following table illustrates the differences in location of the Java source
+and web source code for a Maven project and a Plugins SDK project: 
 
 Location    | &nbsp;Maven project | &nbsp;Plugins SDK project   |
 ----------- | ----------------- | --------------------- |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
-To view the anatomy of a hook developed by Ant, visit the *Anatomy of a
-Hook* section of the [*Creating a Hook*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-a-ho-4)
-chapter in this guide.
+To view the directory structure of a hook developed by Ant, visit the *Anatomy
+of a Hook* section of the [*Creating a
+Hook*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/creating-a-ho-4)
+chapter in this guide. 
 
-#### Deployment
+#### Deployment 
 
-To deploy your hook plugin, follow the instructions in the *Deploying Liferay
-plugins with Maven* section.
+To deploy your hook plugin, follow the instructions from the *Deploying Liferay
+Plugins with Maven* section. 
 
-#### More Information
+#### More Information 
 
-For detailed information on creating all kinds of hooks, see the [*Hooks*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4)
-chapter of this guide.
+For detailed information on creating hooks, see the
+[*Hooks*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4)
+chapter of this guide. 
 
-OK, you've learned how to create hook plugins with Maven. Let's round things out
-by considering how to develop a layout template as well.
+You're nearly a Maven maven Maven now; you can creatre portlets, themes, and
+hooks. Let's round things out by considering how to develop layout template. 
 
-### Developing Liferay Layout Template Plugins with Maven
+### Developing Liferay Layout Template Plugins with Maven 
 
-You can create your own layout templates to enhance the flow of portlets on your
-page and to embed commonly used portlets. Let's consider how to create a layout
-template plugin with Maven.
+You can create custom layout templates to customize the display of portlets on
+your page and to embed commonly used portlets. Layout templates can give your
+pages a standardize flow by allowing you to set the way portlets are displayed.
+In our introduction to themes we described a nice scene where you are relaxing
+in a luxurious chair, computer in your lap a cat purring on the mantle above a
+dancing fire. Sounds nice, doesn't it? It would be, but the chair's too small,
+so your knees are up in the air when your feet are flat on the ground, and your
+laptop is balaced precariously on top of them. The fire is also surprisingly
+large for that fireplace. In fact, it's flames are already licking at the bottom
+of the mantle--which is wood! Remember that softly purring cat on the mantle
+which we described in the themes section? He's going to cook if we don't do
+something! But it's so hard to get out of this tiny chair! Someone save the cat! 
 
-#### Creating a Layout Template Plugin
+Let's consider how to create a layout template plugin with Maven. 
+
+#### Creating a Layout Template Plugin 
 
 To create a Liferay layout template plugin project follow the *Creating Liferay
 plugin projects with Maven* section.
