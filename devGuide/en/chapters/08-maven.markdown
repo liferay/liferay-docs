@@ -35,8 +35,8 @@ your type.
 -->
 
 As an alternative to developing plugins using the Plugins SDK, you can leverage
-the Apache Maven build management framework. Let's look at a few of Maven's most
-exciting features: 
+the Apache Maven build management framework. Here's a list of some exciting
+Maven features: 
 
 -Offers a simple build process. 
 
@@ -170,10 +170,10 @@ property values:
 You just created a Maven repository accessible from your Nexus OSS repository
 server! Congratulations! 
 
-Let's take it another step and create a Maven repository to hold snapshots of
-each Liferay plugin we create. Creating a *snapshot* repository is almost
-identical to creating a *release* repository. The only difference is that we'll
-specify *Snapshot* as its repository policy: 
+Let's create a Maven repository to hold snapshots of each Liferay plugin we
+create. Creating a *snapshot* repository is almost identical to creating a
+*release* repository. The only difference is that we'll specify *Snapshot* as
+its repository policy: 
 
 1. Go to your Nexus repository server in your web browser.
 
@@ -190,8 +190,8 @@ specify *Snapshot* as its repository policy:
     - *Repository Policy:* `Snapshot`
 
 Voila! You not only have a repository for your Liferay releases (i.e.,
-*liferay-releases*), you also have a repository for your Liferay plugin
-snapshots (i.e., *liferay-snapshots*). 
+`liferay-releases`), you also have a repository for your Liferay plugin
+snapshots (i.e., `liferay-snapshots`). 
 
 Let's configure your new repository servers in your Maven environment so you can
 install artifacts to the them. 
@@ -219,7 +219,7 @@ artifacts.
 
 ---
 
-To configure your Maven environment to access your *liferay-releases* repository
+To configure your Maven environment to access your `liferay-releases` repository
 server, do the following:
 
 1. Navigate to your `$<USER_HOME>/.m2/` directory. 
@@ -227,7 +227,7 @@ server, do the following:
 2. Open your `settings.xml` file--create it if it doesn't yet exist.  
 
 3. Provide settings for your repository servers. Here are contents from a
-`settings.xml` file that has *liferay-releases* and *liferay-snapshots*
+`settings.xml` file that has `liferay-releases` and `liferay-snapshots`
 repository servers configured: 
 
         <?xml version="1.0"?>
@@ -259,7 +259,7 @@ Liferay (e.g., required JAR and WAR files). This won't be problem--Liferay
 provides them as Maven *artifacts*. 
 
 So how do you get the Liferay artifacts? The exact process depends on whether
-you're bulding plugins for Liferay EE or Liferay CE. If you're building plugins
+you're building plugins for Liferay EE or Liferay CE. If you're building plugins
 for Liferay EE, you'll have to install the Liferay Artifacts manually from a zip
 file. You can do the same if you're bulding plugins for Liferay CE, but there's
 a simpler option available to you--you can automatically install CE artifacts
@@ -311,7 +311,7 @@ if you need Maven artifacts for Liferay Portal 6.1.1 CE GA2, select version
     Portal Maven zip file to download.](../../images/maven-select-download.png)
 
 3. Select the appropriate zip file. The zip files use naming convention
-*liferay-portal-maven-\<version\>-\<date\>.zip*. 
+`liferay-portal-maven-\<version\>-\<date\>.zip`. 
 
     The Liferay Maven CE artifacts package downloads to your machine.
 
@@ -319,14 +319,14 @@ You can extract the Liferay EE/CE artifacts package zip file anywhere you like.
 The zip file you downloaded includes the Liferay artifacts and a convenient
 script to install and deploy the artifacts to your repositories. Next we'll show
 you how to install these required Liferay release artifacts to your
-*liferay-releases* repository. 
+`liferay-releases` repository. 
 
-#### Installing Downloaded Artifacts to a Repository
+#### Installing Downloaded Artifacts to a Repository 
 
 Let's *install* the Liferay release artifacts to your local Maven repository for
 sharing with your team.
 
-1. Using your command prompt, navigate to the *liferay-portal-maven-\<version\>*
+1. Using your command prompt, navigate to the `liferay-portal-maven-\<version\>`
 directory. This is the root directory extracted from the Liferay artifacts zip
 file.
 
@@ -341,7 +341,7 @@ file.
 Your local repository now contains the Liferay artifacts required to build
 Liferay plugins. Wasn't that easy?
 
-If you want to share your Lifweray artifacts with tewammates, you'll have to
+If you want to share your Liferay artifacts with teammates, you'll have to
 *deploy* them to a release repository server. 
 
 #### Deploying Downloaded Artifacts to a Repository 
@@ -350,7 +350,7 @@ You may find it worthwhile to share your Liferay artifacts with teammates.
 
 Here's how you do it:
 
-1. Make sure you've created a *liferay-releases* repository server to hold the
+1. Make sure you've created a `liferay-releases` repository server to hold the
 Liferay Maven artifacts. If you haven't, see the *Managing Maven Repositories*
 section for instructions. 
 
@@ -370,12 +370,12 @@ Maven Settings* for instructions on adding an entry for the server.
             ...
         </servers>
 
-3. Using your command prompt, navigate to the *liferay-portal-maven-\<version\>*
+3. Using your command prompt, navigate to the `liferay-portal-maven-\<version\>`
 directory. This is the root directory extracted from the Liferay artifacts zip
 file.
 
 4. Create a `build.$<USER_NAME>.properties` file (e.g.,
-`build.jblogs.properties`) in your *liferay-portal-maven-\<version\>* directory.
+`build.jblogs.properties`) in your `liferay-portal-maven-\<version\>` directory.
 In the new properties file, specify values for the properties
 `lp.maven.repository.id` and `lp.maven.repository.url`. These refer to your
 repository's ID and URL, respectively. 
@@ -407,13 +407,13 @@ repository's ID and URL, respectively.
     ![Figure 8.5: Your repository server now provides access to your Liferay
     Maven artifacts.](../../images/maven-verify-deployment2.png)
 
-Congratulations! Youe downloaded the Liferay artifacts, installed them to your
+Congratulations! You've downloaded the Liferay artifacts, installed them to your
 local repository, and deployed them to your release repository server for
-sharing with teammates.
+sharing with teammates. 
 
 If you're working with Liferay CE, there's an alternative method of obtaining
 the necessary Liferay Maven artifacts--you can let Maven download them
-automatically. Let's see how.
+automatically. Let's see how. 
 
 ### Installing CE Artifacts from the Central Repository 
 
@@ -437,27 +437,26 @@ Maven supports project inheritance. You can create a *parent* project that has
 any properties your plugin projects will have in common, and the rest of your
 projects (*child* projects if you like) can inherit those properties from the
 parent project. You'll save time since you won't need to specify those
-properties in each project. We'll assume you're interested in devleoping your
-Liferay plugins in Maven; if you'll develop moe than one, it makes sense to
+properties in each project. We'll assume you're interested in developing your
+Liferay plugins in Maven; if you'll develop more than one, it makes sense to
 leverage project inheritance since all Liferay projects will have some
 properties in common. 
 
 Our example will demonstrate project inheritance; we'll actually be building a
-parent project. Even if you're not going to leverage Maven's projecct
-inheritance capabiltiies when you build your Liferay plugins with Maven, the
-process is the same for creating any Liferay plugin with Maven's Liferay
-artifacts. For more information on project inheritance see Maven's documentation
-at
-[http://maven.apache.org/pom.html#Inheritance](http://maven.apache.org/pom.html#Inheritance).
+parent project. Even if you're not going to leverage Maven's project inheritance
+capabilities when you build your Liferay plugins with Maven, the process is the
+same for creating any Liferay plugin with Maven's Liferay artifacts. For more
+information on project inheritance see Maven's documentation at
+[http://maven.apache.org/pom.html#Inheritance](http://maven.apache.org/pom.html#Inheritance). 
 
-Let's create our prarent project then specify the general settings you'll need
-to build your plugins for Liferay. The parent project is similar to the project
+Let's create our parent project then specify the general settings you'll need to
+build your plugins for Liferay. The parent project is similar to the project
 root of the Liferay Plugins SDK. It's `pom.xml` file can specify information to
 be used by any plugin projects that refer to it. You can always specify
 information in each plugin's POM, but it's more convenient to use the parent
 project's POM for sharing common information. 
 
-Let's create a parent project named *sample-parent-project*: 
+Let's create a parent project named `sample-parent-project`: 
 
 1. Create a new directory for your parent project. For this example, we'll name
 the directory `sample-parent-project`. Your can place the directory anywhere on
@@ -549,7 +548,7 @@ insert the following lines:
             <liferay.version>6.1.20</liferay.version>
         </properties>
 
-By specifying your Liferay instance's *deploy* directory in the POM, you're
+By specifying your Liferay instance's deploy directory in the POM, you're
 telling Maven exactly where to deploy your plugin artifacts. 
 
 Your parent project now specifies common dependencies on required Liferay Maven
@@ -566,14 +565,14 @@ parent) can leverage these dependencies.
 ---
  
 Now you're able to specify dependencies on required Liferay artifacts; let's
-create a Liferay plgugin project using the *archetypes* Liferay provides. 
+create a Liferay plugin project using the archetypes provided by Liferay. 
 
 ## Creating Liferay Plugins with Maven 
 
 With Liferay, you get many archetypes to help create Maven projects for multiple
 Liferay plugin types, including portlet, theme, hook, and layout template
 plugins. Archetypes for each of plugin type for several versions of Liferay are
-provided, so you almost certainly have the archettype you need. 
+provided, so you almost certainly have the archetype you need. 
 
 *Archetype* is Maven's project templating toolkit. Let's use it to create a
 Liferay portlet project. With Archetype, you can use the same steps we detail
@@ -695,7 +694,7 @@ coordinates (properties) of your project. Here are some examples:
     ![Figure 8.8: Your archetype and its dependencies are now available in
     your local repository.](../../images/maven-public-plugin.png)
 
-Following these steps, you can use Archetype to generate aall your Liferay
+Following these steps, you can use Archetype to generate all your Liferay
 plugins! 
 
 Plugin projects generated from a Liferay archetype are equipped with a POM
@@ -815,7 +814,7 @@ snapshot version (e.g., `<version>1.0-SNAPSHOT</version>`).
  - In Maven's *package* phase, the plugin's inferred dependencies are downloaded
  to your local repository (i.e., `.m2\repository`). 
  
- - Maven's *install* phase, when your plugin is installed to your local
+ - In Maven's *install* phase, your plugin is installed to your local
  repository. 
 
 ---
@@ -825,8 +824,8 @@ Liferay plugins you can develop with Liferay Maven archetypes.
 
 ## Liferay Plugin Types to Develop with Maven 
 
-You can develop several of Liferay's plugin types with Maven; we'll deal with
-each in its own subsection:
+You can develop several Liferay plugin types with Maven; we'll deal with each in
+its own subsection: 
 
 - Developing Liferay *Portlet* Plugins with Maven
 
@@ -838,12 +837,13 @@ each in its own subsection:
 
 - Developing Other Liferay Plugins with Maven
 
-For each plugin type listed above, we'll cover its creation with Maven and how
-it compares with the correpsonding plugin as created with the Liferay Plugins
-SDK. We'll often refer to the previous sections for creating and deploying these
-plugin types in Maven using Liferay artifacts. We'll also reference sections of
-some other chapters in this guide, where they explain how you develop each type
-of plugin regardless of development environment. 
+You'll learn how to create each plugin type listed above using Maven, and we'll
+point out where each plguin's directory structure is different than if you
+created it using the Plugins SDK. We'll often refer to the previous sections for
+creating and deploying these plugin types in Maven using Liferay artifacts.
+We'll also reference sections of some other chapters in this guide, where they
+explain how you develop each type of plugin regardless of development
+environment. 
 
 Let's start with portlet plugins. 
 
@@ -868,7 +868,7 @@ Projects with Maven* section.
 #### Anatomy 
 
 A portlet project created from the
-*com.liferay.maven.archetypes:liferay-portlet-archetype* has the following
+`com.liferay.maven.archetypes:liferay-portlet-archetype` has the following
 directory structure: 
 
 - portlet-plugin/
@@ -960,7 +960,7 @@ Projects with Maven* section.
 #### Anatomy 
 
 A theme project created from the
-*com.liferay.maven.archetypes:liferay-theme-archetype* has the following
+`com.liferay.maven.archetypes:liferay-theme-archetype` has the following
 directory structure: 
 
 - sample-theme/
@@ -978,8 +978,8 @@ directory structure:
                 - templates/
 
 Several of the directories listed in the structure above are not automatically
-created; you'll create them as needed, depending on the cusomtizations you're
-making. The following lists and descibes these directories: 
+created; you'll create them as needed, depending on the customizations you're
+making. Here's a list of these directories, with a brief description of each: 
 
 - `src/main/css/`: Holds your CSS customizations.
 
@@ -990,7 +990,7 @@ making. The following lists and descibes these directories:
 - `src/main/templates/`: Holds your template customizations. 
 
 The `src/main/webapp/` folder contains your theme's customizations. If you've
-ever created a theme plugin using the PLugins SDK, this foldes is used the same
+ever created a theme plugin using the Plugins SDK, this folder is used the same
 way as the `docroot/_diffs/` folder. For example, `custom.css` should go in
 `src/main/webapp/css/custom.css`. 
 
@@ -1061,14 +1061,14 @@ To create a Liferay hook plugin project, follow the steps outlined in the
  ![tip](../../images/tip-pen-paper.png)**Tip**: As you use Maven's Archetype
  tool to generate your hook you can filter on group ID "liferay", or even the
  group ID/artifact ID combination "liferay:portlet", to more easily find the
- Liferay portlet archetypes.project. 
+ Liferay portlet archetypes. 
 
 ---
 
 #### Anatomy 
 
 A hook project created from the
-*com.liferay.maven.archetypes:liferay-hook-archetype* has the following
+`com.liferay.maven.archetypes:liferay-hook-archetype` has the following
 directory structure: 
 
 - hook-plugin/
@@ -1112,8 +1112,8 @@ For detailed information on creating hooks, see the
 [*Hooks*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4)
 chapter of this guide. 
 
-You're nearly a Maven maven Maven now; you can creatre portlets, themes, and
-hooks. Let's round things out by considering how to develop layout template. 
+You're nearly a Maven maven Maven now; you're able to create portlets, themes,
+and hooks. Let's round things out by learning to develop layout template. 
 
 ### Developing Liferay Layout Template Plugins with Maven 
 
@@ -1124,13 +1124,14 @@ In our introduction to themes we described a nice scene where you are relaxing
 in a luxurious chair, computer in your lap a cat purring on the mantle above a
 dancing fire. Sounds nice, doesn't it? It would be, but the chair's too small,
 so your knees are up in the air when your feet are flat on the ground, and your
-laptop is balaced precariously on top of them. The fire is also surprisingly
+laptop is balanced precariously on top of them. The fire is also surprisingly
 large for that fireplace. In fact, it's flames are already licking at the bottom
-of the mantle--which is wood! Remember that softly purring cat on the mantle
-which we described in the themes section? He's going to cook if we don't do
-something! But it's so hard to get out of this tiny chair! Someone save the cat! 
+of the mantle--which is made of wood! Remember that softly purring cat on the
+mantle which we described in the themes section? He's going to cook if we don't
+do something! But it's so hard to get out of this tiny chair! Someone save the
+cat! 
 
-Let's consider how to create a layout template plugin with Maven. 
+Let's create a layout template plugin with Maven. 
 
 #### Creating a Layout Template Plugin 
 
@@ -1146,100 +1147,114 @@ plugin projects with Maven* section.
 
 ---
 
-#### Anatomy
+#### Anatomy 
 
 A layout template project created from the
-*com.liferay.maven.archetypes:liferay-layouttpl-archetype* has the following
-anatomy:
+`com.liferay.maven.archetypes:liferay-layouttpl-archetype` has the followign directory structure:
 
-- *layouttpl-plugin*/
-	- src/
-		- main/
-			- resources/
-			- webapp/
-				- WEB-INF/
-					- liferay-layout-templates.xml
-					- liferay-plugin-package.properties
-					- web.xml
-				- sample-layout.png
-				- sample-layout.tpl
-				- sample-layout.wap.tpl
-	- pom.xml
+- layouttpl-plugin/
+    - src/
+        - main/
+            - resources/
+            - webapp/
+                - WEB-INF/
+                    - liferay-layout-templates.xml
+                    - liferay-plugin-package.properties
+                    - web.xml
+                - sample-layout.png
+                - sample-layout.tpl
+                - sample-layout.wap.tpl
+    - pom.xml
 
-There is a directory structure difference between plugin projects created
-using Liferay Maven archetypes and those created using the Liferay Plugins SDK.
-The following table illustrates this difference.
+There's a directory structure difference between plugin projects created using
+Liferay Maven archetypes and those created using the Liferay Plugins SDK. The
+following table illustrates this difference: 
 
 Location   | &nbsp;Maven project | &nbsp;Plugins SDK project |
 ---------- | ----------------- | --------- |
 Web source | `src/main/webapp` | `docroot` |
 
-
-To view the anatomy of a layout template developed by Ant, visit the [*Anatomy
-of a Layout Template
+To view the directory structure of a layout template developed by Ant, visit the
+[*Anatomy of a Layout Template
 Project*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-anatomy-of-a-layout-template-0)
-section in this guide.
+section in this guide. 
 
 #### Deployment 
 
-To deploy your layout template plugin, follow the instructions in the *Deploying
-Liferay plugins with Maven* section.
+To deploy your layout template plugin, follow the instructions detailed above in
+the *Deploying Liferay plugins with Maven* section. 
 
 #### More Information 
 
-For detailed information on creating all kinds of layout templates, see the
-[*Creating Liferay Layout
+For detailed information on creating layout templates, see the [*Creating
+Liferay Layout
 Templates*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen05-creating-liferay-layout-templates-0)
-chapter of this guide.
+chapter of this guide. 
 
-You've proved yourself at developing yet another plugin type with Maven. Way to
-go! In the next section we'll mention some more plugin types for which Liferay
-provides Maven archetypes.
+You've passed your trial by fire (the cat thanks you), developing yet another
+plugin type with Maven. Way to go! In the next section we'll cover more plugin
+types for which Liferay provides Maven archetypes. 
 
-### Developing More Liferay Plugins with Maven
+### Developing More Liferay Plugins with Maven 
 
-Just when you thought the archetype list was complete, the Liferay team has come
-up with even more plugins that you can create using Maven archetypes.
+Did you think we covered all the available archetypes for developing Liferay
+plugins? The Liferay team has been busy expanding our archetype list, and we're
+proud to show you some additional plugins that you can create using Maven
+archetypes. 
 
-Here are just a few more exciting archetypes available to you:
+<!--I got the sense these are new?-->
 
-- Liferay ServiceBuilder portlets
+Check out these exciting archetypes that are now available: 
 
-- Liferay webs
+- Liferay ServiceBuilder portlets 
 
-- Liferay Ext
+- Liferay webs 
 
-- JSF Portlet Archetype
+- Liferay Ext 
 
-- ICEFaces Portlet Archetype
+- JSF Portlet Archetype 
 
-- PrimeFaces Portlet Archetype
+- ICEFaces Portlet Archetype 
 
-- Liferay Faces Alloy Portlet Archetype
+- PrimeFaces Portlet Archetype 
 
-- Liferay Rich Faces Portlet Archetype
+- Liferay Faces Alloy Portlet Archetype 
 
-Plus, there are some more Maven *goals* available:
+- Liferay Rich Faces Portlet Archetype 
 
-- DBBuilder - build-db goal allows you to execute the DBBuilder to generate SQL
-files
-- SassToCSSBuilder - build-css goal precompiles SASS in your css and this goal
-has been added to theme archetype
+In addition, there are two new Maven *goals* now available: 
+
+- DBBuilder - The `build-db` goal lets you execute the DBBuilder to generate SQL
+files. 
+
+- SassToCSSBuilder - The `build-css` goal precompiles SASS in your css; this
+goal has been added to theme archetype. 
 
 You now have plenty of archetypes at your disposal!
 
-## Summary
+## Summary 
 
-Developing plugins using Maven follows a uniform process which includes
-generating the archetypes and selecting the options you're interested in. Then,
-you can customize the archetype to your liking. Using Maven to develop plugins
-offers an easy and effective way to customize your Liferay Portal.
+You can develop all your Liferay plugins using Maven; there's a standard process
+for generating the archetypes and selecting your plugin options for each plugin
+type. You can then customize the archetype to your liking. Using Maven to
+develop plugins offers an easy and effective way to customize your Liferay
+Portal.
 
-Now that you have Maven configured locally, have the required Liferay Maven
-artifacts, and have first-hand experience creating Liferay plugins with Maven,
-you're ready to create all kinds of Liferay plugins based on Liferay's plugin
-archetypes. At this point, consider yourself completely Mavenized!
+You accomplished a lot in this chapter. You configured Maven locally, downloaded
+and installed the required Liferay Maven artifacts, and learned to create
+Liferay plugins with Maven. You're ready to create all kinds of Liferay plugins
+based on Liferay's plugin archetypes. At this point, consider yourself
+completely Mavenized, a regular maven of Maven! 
 
-You have the Liferay Plugins SDK and Maven build framework to use in developing
-your plugins. How about an IDE to add to your toolbox--Liferay Developer Studio!
-We'll cover Liferay Developer Studio and Liferay IDE next.
+We've explored Maven in this chapter, and the Plugins SDK in earlier chapters.
+You;ve seen two powerful tools you can use to develop your Liferay plugins. In
+addition to these, there's Liferay IDE and Liferay Developer Studio! Let's look
+at Liferay IDE in the next chapter. 
+
+---
+
+ ![note](../../images/tip-pen-paper.png)**Note:** Are you wondering if we're
+ going to make more terrible jokes that steal from classic poetry? Quoth the
+ Maven, "Probably". 
+
+---
