@@ -1,19 +1,22 @@
 # Liferay IDE 
 
-Liferay's developers use a variety of tools to develop the product. As a
-consequence, they have always tried hard to allow other developers to use any
-tools for their own development. For this reason, you can develop portals based
-on Liferay with complex IDEs such as Eclipse, Netbeans or IntelliJ Idea.
-Alternatively, you can just use text editors such as Notepad, Vim, or Emacs. You
-can write your persistence layer directly using SQL and JDBC or you can use
-advanced object-relational mapping libraries such as Hibernate or iBatis.
+Every developer wants the ability to choose the tools they'll be working with.
+Since Liferay isn't developed using just one tool, we assume you're like us; you
+want to choose from a variety of development tools for customizing your Liferay
+instance. That's why we strive to provide you with as much flexibility as
+possible. You can develop your Liferay-based portal with tools ranging in
+complexity from IDEs like Eclipse, Netbeans or IntelliJ Idea, to text editors
+like Notepad, Vim, or Emacs. You can write your persistence layer directly using
+SQL and JDBC or you can use advanced object-relational mapping libraries like
+Hibernate or iBatis. 
 
-While being tool-agnostic is great, especially for experienced developers who
-can reuse their existing knowledge, it can be overwhelming for newcomers. For
-this reason, Liferay has also developed specific development tools that can be
-used to ease the learning curve when developing portlets with Liferay. The most
-significant of these tools is Liferay IDE, a fully featured Integrated
-Development Environment based on Eclipse.
+Tool-agnosticism is great, especially for experienced developers who can reuse
+their existing knowledge; it can be overwhelming for newcomers, though. So we
+removed some of the options to narrow down your choices and force you to use a
+tool we like, right? No! We actually developed specific development tools that
+soften the learning curve for Liferay plugin development. The most significant
+of these tools is Liferay IDE, a fully featured Integrated Development
+Environment based on Eclipse. 
 
 Liferay IDE is an extension for the Eclipse platform that supports development
 of plugin projects for the Liferay Portal platform. It is available as a set of
