@@ -5,7 +5,6 @@
 		h3 {color:darkgreen;}
 		#toc {color:#555; border: 1px dotted #555; width: 700px;}
 		#toc li {font-size:14px;}
-		#toc li li {font-size:12px;}
 		pre {background-color: #efe;}
 	</style>
 	<head>
@@ -17,9 +16,9 @@
 			<h2>Table of Contents</h2>
 			<ul id="toc">
 				<#list sections as section>
-					<#if section.title?has_content>
+					<#if section._title?has_content>
 			 			<li>
-			 				<a href="${propertiesFileName}.html#${section.title}">${section.title}</a>
+			 				<a href="${propertiesFileName}.html#${section._title}">${section._title}</a>
 			 			</li>
 			 		</#if>
 				</#list>
@@ -27,25 +26,28 @@
 		</#if>
 		<h2>Properties</h2>
 		<#list sections as section>
-			<#if section.description?has_content>
-				<#list section.description as description>
-					<p>${description}</p>
+			<#if section._title?has_content>
+				<a name="${section._title}"></a><a href="${propertiesFileName}.html">Top of Page</a>
+				<h3>${section._title}</h3>
+			</#if>
+			<#if section._descriptionParagraphs?has_content>
+				<#list section._descriptionParagraphs as paragraph>
+					<p>${paragraph}</p>
 				</#list>
 			</#if>
-			<#if section.title?has_content>
-				<a name="${section.title}"></a><a href="${propertiesFileName}.html">Top of Page</a>
-				<h3>${section.title}</h3>
-				<#list section.properties as property>
-					<#if property.description?has_content>
-						<#list property.description as description>
-							<p>${description}</p>
-						</#list>
-					</#if>
-					<#if property.propertiesParagraph?has_content>
-						<p><pre>${property.propertiesParagraph}</pre></p>
-					</#if>
+			<#if section._propertiesParagraphs?has_content>
+				<#list section._propertiesParagraphs as paragraph>
+					<p>${paragraph}</p>
 				</#list>
 			</#if>
-		</#list>
+			<#if section._activeProperties?has_content>
+				<em>Defaults:</em>
+				<p><pre>${section._activeProperties}</pre></p>
+			</#if>
+			<#if section._inactiveProperties?has_content>
+				<em>Examples:</em>
+				<p><pre>${section._inactiveProperties}</pre></p>
+			</#if>
+		</#list>	
 	</body>
 </html>
