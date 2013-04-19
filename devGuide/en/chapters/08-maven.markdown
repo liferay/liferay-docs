@@ -95,7 +95,7 @@ Nexus as a repository management server, you can skip this section.
 Let's create a Maven repository using Nexus OSS. You can download Nexus OSS from
 [http://www.sonatype.org/nexus/](http://www.sonatype.org/nexus/) and follow
 instructions at
-[http://www.sonatype.com/books/nexus-book/reference/\_installing_nexus.html](http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html)
+[http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html](http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html)
 for installing it and starting it up.
 
 To create a repository using Nexus, do the following:
