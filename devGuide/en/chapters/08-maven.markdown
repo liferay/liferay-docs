@@ -121,8 +121,9 @@ example repository property values:
     - *Provider:* `Maven2`
     - *Repository Policy:* `Release`
 
-Congratulations on creating a Maven repository accessible from your Nexus OSS
-repository server!
+Once you've filled out the required fields for creating a repository, click
+*Save*. Congratulations on creating a Maven repository accessible from your
+Nexus OSS repository server!
 
 Let's take it one step further and create a Maven repository to hold snapshots
 of the Liferay plugins we create. The steps for creating a *snapshot* repository
@@ -140,8 +141,8 @@ difference is that we'll specify *Snapshot* as its repository policy:
     - *Provider:* `Maven2`
     - *Repository Policy:* `Snapshot`
 
-Voila! You not only have a repository for your Liferay releases (i.e.,
-*liferay-releases*), you also have a repository for your Liferay plugin
+Click *Save*. Voila! You not only have a repository for your Liferay releases
+(i.e., *liferay-releases*), you also have a repository for your Liferay plugin
 snapshots (i.e., *liferay-snapshots*).
 
 Let's configure your new repository servers in your Maven environment so you
@@ -198,10 +199,13 @@ repository servers configured:
             </servers>
         </settings>
 
-You now have your repositories configured and ready to receive Liferay Maven
-artifacts you'll download and Liferay plugin artifacts you'll create!
+Note that the username `admin` and password `admin123` are the credentials of
+the default Nexus OSS administrator account. If you changed these credentials
+for your Nexus server, make sure to update `settings.xml` with these changes.
+Great! Your repositories are now ready to receive downloaded Liferay Maven
+artifacts and locally created Liferay plugin artifacts!
 
-Now, let's get the Liferay artifacts you'll need to create your plugins.
+Now, let's install the Liferay artifacts you'll need to create your plugins.
 
 ##  Installing required Liferay artifacts [](id=installing-required-liferay-artifacts)
 
