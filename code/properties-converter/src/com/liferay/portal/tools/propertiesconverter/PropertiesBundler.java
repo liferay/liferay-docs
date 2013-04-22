@@ -10,6 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.liferay.portal.kernel.util.StringPool;
+import com.liferay.portal.kernel.util.StringUtil;
+
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
 import freemarker.template.Template;
@@ -95,44 +98,6 @@ public class PropertiesBundler {
 		}
 
 	}
-	
-	/**
-	 * Replaces the last occurrence of the string <code>oldSub</code> in the
-	 * string <code>s</code> with the string <code>newSub</code>. (Copied from
-	 * portal's StringUtil.java)
-	 * 
-	 * @param s
-	 *            the original string
-	 * @param oldSub
-	 *            the string whose last occurrence in the original string is to
-	 *            be searched for and replaced
-	 * @param newSub
-	 *            the string with which to replace the last occurrence of the
-	 *            <code>oldSub</code> string
-	 * @return a string representing the original string except with the last
-	 *         occurrence of the string <code>oldSub</code> replaced with the
-	 *         string <code>newSub</code>
-	 */
-	public static String replaceLast(String s, String oldSub, String newSub) {
-		
-		if ((s == null) || (oldSub == null) || (newSub == null)) {
-			return null;
-		}
-
-		if (oldSub.equals(newSub)) {
-			return s;
-		}
-
-		int y = s.lastIndexOf(oldSub);
-
-		if (y >= 0) {
-			return s.substring(0, y).concat(newSub).concat(
-				s.substring(y + oldSub.length()));
-		}
-		else {
-			return s;
-		}
-	}
 
 	/**
 	 * Provides the name of the properties file and it's generated HTML file.
@@ -155,7 +120,8 @@ public class PropertiesBundler {
 		public PropertiesHtmlFile(String fileName) {
 			_fileName = fileName;
 
-			_propertiesFileName = replaceLast(_fileName, ".html", "");
+			_propertiesFileName = StringUtil.replaceLast(_fileName, ".html",
+				StringPool.BLANK);
 		}
 
 		/**
