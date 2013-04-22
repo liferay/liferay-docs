@@ -370,13 +370,15 @@ in your Liferay IDE Eclipse workspace. These projects might already have
 `.project` or `.classpth` files in them; regardless, we'll use the same
 procedure to import them.
 
-Let's look at two ways to create projects from existing sources. First, answer
-this question: do you want to create one project, or multiple projects, from
-your PLugins SDK? Your answer will dictate which method you choose.
+Do you want to create one project, or multiple projects, from your PLugins SDK?
+You can do either, and we'll show you how below. Regardless, any time you import
+a project into Liferay IDE, verify that it was successfully configured as a
+Liferay IDE project by using the process outlined in the section following the
+import instructions. 
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** The two next sections assume
+ ![note](../../images/tip-pen-paper.png)**Note:** The next two sections assume
  that you've created projects with the Plugins SDK and are familiar with the
  directory structure used by the Plugins SDK. 
 
@@ -423,34 +425,39 @@ create one now; Tomcat bundle is the only server runtime supported.
 
 5. Click *Finish* to perform the import. 
 
-You'll want to to make sure your project was configured correctly as a Liferay
-IDE project. Let's look at the verification steps in the next section. 
+Remember to verify that your project was configured correctly as a Liferay IDE
+project. Verification is described right after our next topic, which is making
+multiple Liferay IDE projects from a single Plugins SDK. 
 
 #### Create multiple projects for all plugins in a Plugins SDK 
 
-This option will transverse an existing Plugins SDK and will allow creating one
-project for each of the plugins it finds inside in one single step.
+Does your Plugins SDK contain multiple plugins? You can easily batch import each
+plugin in your Plugins SDK as its own Liferay IDE project. 
 
-1. In Eclipse go to File &rarr; Import... &rarr; Liferay &rarr; Liferay Plugin
-SDK projects.
+1. In Eclipse go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
+Plugin SDK Projects*. 
 
 	![Figure 8.27: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
 
-2. First you must select the Plugins SDK that you want to import projects from
-in the combo box at the top of the wizard.
+2. In the *Import Projects* window, use the combo box to select the *Liferay
+Plugins SDK* you're importing plugins from. 
 
 	![Figure 8.28: Choosing the SDK version](../../images/ide-import-plugins-sdk.png)
 
-3. If you don't have any SDKs configured in Liferay IDE use the *configure* link
-to add a setting that points to the Plugins SDK that you want to import projects
-from.
-
-4. To configure a Plugins SDK on the Installed SDKs on the pref page just click
+ ![note](../../images/tip-pen-paper.png)**Note:** If your SDK isn't configured
+ in Liferay IDE (i.e., it's not in the dropdown list of the *Import Projects*
+ window) use the *Configure* link to add a setting that points to the Plugins
+ SDK that you want to import projects from. To configure a Plugins SDK on the Installed SDKs on the pref page just click
 *Add* and then Browse to the directory of the Plugins SDK root directory.
 
 5. Once you have a configured Plugins SDK, you can select it in the Combo box
 and then the SDK location and version will be filled in. If either are not valid
-it will be marked with an error.
+it will be marked with an error.For more details on installing and
+ configuring and SDK in Liferay IDE see the *Setting Up Liferay IDE* section
+ above; there's a *Setting Up Liferay Plugins SDK* subsection that will guiode
+ you step by step.
+
+4. 
 
 	![Figure 8.29: Verifying the SDK version and location](../../images/ide-select-configured-plugins-sdk.png)
 
