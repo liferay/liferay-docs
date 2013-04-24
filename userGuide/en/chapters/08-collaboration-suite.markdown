@@ -671,34 +671,46 @@ application the way you want it to behave on your site.
 
 The first tab beneath *Setup* is labeled *General*. Here, you can enable
 anonymous posting, subscribe by default, flags, ratings, and thread as question
-by default. You can also choose whether you want the message format to be
-BBcode or HTML. Anonymous posting, subscribe by default, flags, and ratings are
+by default. You can also choose whether you want the message format to be BBcode
+or HTML. Anonymous posting, subscribe by default, flags, and ratings are
 selected by default and the default message format is BBcode. 
 
-Anonymous posting lets those without an account on the system post messages to
-your message boards. You may or may not want to do this, depending on the type
-of community you are building. Allowing anonymous posting opens your site to
-anyone who might want to spam your forums with unwanted or off topic
-advertising messages. For this reason, most of those who implement message
-boards turn anonymous posting off by unchecking this box.
+Enabling *Allow Anonymous Posting* allows users without an account on the system
+to post messages to your message boards. Whether or not you you'll want to do
+this depends on the type of community you are building. Allowing anonymous
+posting opens your site to anyone who might want to spam your forums with
+unwanted or off topic advertising messages. For this reason, most of those who
+implement message boards turn anonymous posting off by unchecking this box.
 
-The subscribe by default option automatically subscribes users to threads they
-participate in. The thread as question by default automatically checks the mark
-as question box in the new thread window. Threads marked as questions display
-the flag "waiting for an answer." Subsequent replies to the original message
-can be marked as an answer.
+Enabling the *Subscribe by Default* option automatically subscribes users to
+threads they participate in. Whenever a message in a thread is added or updated,
+Liferay sends a notification email to each user who is subscribed to the thread. 
 
-Flags allow your users to flag content which they consider to be objectionable.
-If you are allowing anonymous posting, you might use flags in combination with
-it if you have someone administering your message boards on a day-to-day basis.
-That way, any unwanted messages can be flagged by your community, and you can
-review those flagged messages and take whatever action is necessary. Using
-flags is also a good practice even if you're not allowing anonymous posting.
+You can set the *Message Format* to either BBCode or HTML. This determines the
+markup language of users' actual message board posts. Different WYSIWYG editors
+are presented to users depending on which option is enabled. Both editors have a
+*Source* button which allows users to view the underlying BBCode or HTML of a
+message. Users can compose messages using either the WYSIWYG or Source view and
+can switch between views during message composition by clicking on the *Source*
+button.
 
-Ratings enable your users to give certain posts a score. This score is used by
-Liferay Portal's social equity system to rank your site members by how helpful
-their contributions are. You can read more about social equity later in this
-chapter and in chapter 9.
+Enabling *Enable Flags* allows your users to flag content which they consider to
+be objectionable. If you are allowing anonymous posting, you might use flags in
+combination with it if you have someone administering your message boards on a
+day-to-day basis. That way, any unwanted messages can be flagged by your
+community, and you can review those flagged messages and take whatever action is
+necessary. Using flags is also a good practice even if you're not allowing
+anonymous posting.
+
+Enabling *Enable Ratings* enables your users to give certain posts a score. This
+score is used by Liferay Portal's social activity system to rank your site
+members by how helpful their contributions are. You can read more about social
+activity later in this chapter and in chapter 9.
+
+Enabling the *Thread as Question by Default* option automatically checks the
+mark as question box in the new thread window. Threads marked as questions
+display the flag "waiting for an answer." Subsequent replies to the original
+message can be marked as an answer.
 
 ### Email From  
 
