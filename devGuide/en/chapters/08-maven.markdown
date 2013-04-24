@@ -216,6 +216,7 @@ or Liferay CE, here are options to consider in obtaining and installing the
 Liferay Maven artifacts:
 
 - Install EE/CE artifacts from a ZIP file manually
+- Install CE artifacts from source manually
 - Install CE artifacts from the Central Repository automatically
 
 If you are using CE, the CE artifacts can be retrieved automatically during the
@@ -286,7 +287,9 @@ Maven artifacts from source, follow these steps:
 
 1. Navigate to your local Liferay Portal CE source project. If you don't already
    have a local Liferay Portal CE source project on your machine, you can fork
-   the [Liferay Portal CE Github repository](http://github.com/liferay/liferay-portal) and clone it your machine.
+   the [Liferay Portal CE Github
+   repository](http://github.com/liferay/liferay-portal) and clone it your
+   machine.
 
 2. Create a `app.server.${USER_NAME}.properties` in your local Liferay Portal CE
    source project root directory. Specify the following properties in it:
@@ -295,14 +298,14 @@ Maven artifacts from source, follow these steps:
 
     `app.server.${app.server.name}.dir=`
 
-    Of course, add the path of your application server's parent directory and the
-    path of your application server itself after the appropriate equals signs.
-    Also, replace `${app.server.name}` with the name of your application server.
-    Note that your `app.server.${app.server.name}.dir` directory doesn't need to
-    exist yet; you can create it by invoking an Ant target in the next step. For
-    example, if you're running Apache Tomcat 7.0.27 and your `${LIFERAY_HOME}`
-    directory is `/home/jbloggs/liferay/bundles/ce-6.1.x`, use the following
-    properties:
+    Of course, add the path of your application server's parent directory and
+    the path of your application server itself after the appropriate equals
+    signs. Also, replace `${app.server.name}` with the name of your application
+    server. Note that your `app.server.${app.server.name}.dir` directory doesn't
+    need to exist yet; you can create it by invoking an Ant target in the next
+    step. For example, if you're running Apache Tomcat 7.0.27 and your
+    `${LIFERAY_HOME}` directory is `/home/jbloggs/liferay/bundles/ce-6.1.x`, use
+    the following properties:
 
     `app.server.parent.dir=/home/jbloggs/liferay/bundles/ce-6.1.x`
 
@@ -333,19 +336,17 @@ Maven artifacts from source, follow these steps:
     continuing. Once you've installed GPG, generate a GPG key by running `gpg
     --gen-key` and following the instructions. Once you've generated a GPG key,
     you can find your GPG keyname by running `gpg --list-keys`.
+    
+    **Note**: The `releases.${USER_NAME}.properties` is not required if you only
+    plan to install the Liferay artifacts locally and not deploy them.
 
-5. Build the Liferay artifacts by running `ant clean start jar`.
+5. Open a command prompt, navigate to your `${LIFERAY_HOME}` directory, and
+   build the Liferay artifacts by running `ant clean start jar`.
 
 6. Build the Liferay Portal WAR file by running `ant -f build-dist.xml all
    zip-portal-war`.
 
-7. Build the Liferay Portal Javadoc packages by running `ant -f build-maven.xml
-   jar-javadoc`.
-
-8. Build the Liferay Portal source packages by running `ant -f build-maven.xml
-   jar-sources`.
-
-9. Deploy the Liferay artifacts to your Maven repository by running `ant -f
+7. Deploy the Liferay artifacts to your Maven repository by running `ant -f
    build-maven.xml deploy-artifacts`. If you want the Liferay artifacts to be
    installed locally but don't have a remote Maven repository or don't want the
    artifacts to be remotely deployed, you can run the install task instead of
@@ -353,6 +354,25 @@ Maven artifacts from source, follow these steps:
    task finishes, you should have a time-stamped directory containing the
    artifacts in your Local Liferay Portal CE source project's root directory,
    e.g., `liferay-portal/20121105174417071`.
+
+---
+
+ ![note](../../images/tip-pen-paper.png)**Warning:** During the process of
+ packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
+ may experience sluggish performance or an insuffient amount of Java heap space.
+ There are two solutions to this problem:
+ 
+1. ***Increase the memory available for the Javadoc packaging process.***
+Navigate to `${LIFERAY_HOME}/build.xml` and search for the `javadoc` target.
+Find the `maxmemory` property and increase it as desired.
+
+2. ***Skip the Javadoc packaging process.*** Navigate to
+`${LIFERAY_HOME}/build-maven.xml` and find the `prepare-maven` target. Within
+this target, comment out the `jar-javadoc` ant call target, like below:
+
+		<!-- <antcall target="jar-javadoc" /> -->
+		
+---
 
 Next, we'll show you how to install the required Liferay release artifacts to
 your local Maven repository (usually your `$HOME/.m2` directory) or to your
@@ -366,7 +386,7 @@ Let's *install* the Liferay release artifacts to your local Maven repository for
 sharing with your team.
 
 1. If you downloaded and extracted a Liferay artifacts ZIP file, navigate to the
-   *liferay-portal-maven-<version>* directory in a command prompy or terminal.
+   *liferay-portal-maven-<version>* directory in a command prompt or terminal.
    This is the root directory extracted from the Liferay artifacts ZIP file. If
    you built the artifacts from source, navigate to the time-stamped directory
    containing the artifacts in your Local Liferay Portal CE source project's
@@ -411,12 +431,12 @@ settings* for instructions on adding an entry for the server.
             ...
         </servers>
 
-3. Using your command prompt, navigate to your *liferay-portal-maven-<version>*
+3. Using your command prompt, navigate to your *liferay-portal-maven-\<version>*
    or to your time-stamped Liferay Portal artifacts directory. This is the root
    directory extracted from the Liferay artifacts ZIP file.
 
 4. Create a `build.${USER_NAME}.properties` file (e.g.,
-   `build.jbloggs.properties`) in your *liferay-portal-maven-<version>*
+   `build.jbloggs.properties`) in your *liferay-portal-maven-\<version>*
    directory.  In that properties file, specify values for
    `lp.maven.repository.id` and `lp.maven.repository.url` properties. These
    properties refer to your repository's ID and URL, respectively.
@@ -829,6 +849,10 @@ Note, since we created the plugin as a snapshot, we must deploy it to a snapshot
 repository. You can also deploy a plugin as a release, but the plugin's POM
 *must* specify a valid release version (e.g., `<version>1.0</version>`), *not* a
 snapshot version (e.g., `<version>1.0-SNAPSHOT</version>`).
+
+6. Deploy your plugin into your specified Nexus repository:
+
+		mvn deploy
 
 ---
 
