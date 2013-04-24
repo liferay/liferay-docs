@@ -6,13 +6,6 @@ it isn't, we need to guard ourselves and our portals from these evils. Enter
 Liferay Portal's Plugin Security Manager! It's like a super-hero in a cape and
 tights, except, well, it's not.
 
----
-
- ![note](../../images/tip-pen-paper.png)**Note:** The Plugin Security
- Management feature requires JDK 6 or higher.
-
----
-
 In its quest for peace within your portal, the Plugin Security Manager pledges
 to:
 
@@ -322,14 +315,6 @@ If you want to distribute plugins, either on the Liferay Marketplace or through
 your web site, you have to assume users will insist the Security Manager is
 enabled in your plugin. For this reason, you should enable it when testing your
 plugins and on packaging it for distribution. 
-
----
-
- ![note](../../images/tip-pen-paper.png)**Note:** The Plugin Security Managment
- feature requires JDK 6 or higher. Therefore, only enable the Security Manager
- if you are running Liferay on JDK 6 or higher.
-
----
 
 It's very easy to activate the security manager. Set the following
 `liferay-plugin-package.properties` property to true: 
