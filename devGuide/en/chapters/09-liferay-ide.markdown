@@ -797,80 +797,87 @@ and how you can design workflows for enhanced business logic.
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
-Liferay Portal includes a workflow engine called Kaleo. Kaleo allow portal
+Liferay Portal includes a workflow engine called *Kaleo Designer for Java*. Kaleo allows portal
 administrators to set up workflows for their oganizations needs; the workflow
 calls users to participate in processes designed for them. Kaleo workflows,
-called *process definitions*, are essentially an XML document. The Kaleo
-workflow engine supports a host of XML element types to trigger decisive actions
-in your business process instances. You can fine tune the logic of your process
-definition by incorporating scripts and templates. The *Kaleo Forms EE* app from
-Marketplace includes Liferay's *Kaleo Workflow Designer* that lets you create
-and modify portal workflows in your browser. With *Kaleo Designer for Java*, you
-can design and publish Kaleo workflows from Liferay Developer Studio! 
+called *process definitions*, are essentially XML documents. Kaleo supports a
+host of XML element types to trigger decisive actions in your business process
+instances. You can fine tune the logic of your process definition by
+incorporating scripts and templates. The *Kaleo Forms EE* app from Marketplace
+includes Liferay's *Kaleo Workflow Designer* that lets you create and modify
+portal workflows in your browser. With Kaleo Designer for Java, you can design
+and publish Kaleo workflows from Liferay Developer Studio!
 
 ![Figure 8.37: Kaleo Designer for Java gives you a powerful environment for
 designing, modifying, and publishing Kaleo
 workflows.](../../images/kaleo-designer-for-java.png)
 
 Kaleo Designer for Java lets you incorporate back end Java development and
-scripting in your workflows. Its graphical interface lets you drag
-and drop nodes into your workflow. A shortcut on each node gives you easy access
-to the node's XML, letting you edit its current implementation to make subtle
+scripting in your workflows. Its graphical interface lets you drag and drop
+nodes into your workflow. A shortcut on each node gives you easy access to the
+node's XML, letting you edit its current implementation to make subtle
 modifications or inject new business logic. In addition, Liferay Developer
 Studio comes bundled with a Java/Groovy editor (made available by Spring
-Source), giving you the same rich editing experience to which you may be
-accustomed in editing Kaleo [Groovy](http://groovy.codehaus.org/Documentation)
-scripts. From there you can delegate workflow decisions to your custom business
-logic APIs or access any of the Liferay Portal APIs. In Developer Studio, you
-can leverage editors for Beanshell, Drl, Javascript, Python, and Ruby scripting
+Source), giving you the same rich editing experience you're accustomed in
+editing Kaleo [Groovy](http://groovy.codehaus.org/Documentation) scripts. From
+the editor you can delegate workflow decisions to your custom business logic
+APIs or access any of the Liferay Portal APIs. In Developer Studio, you can
+leverage editors for Beanshell, Drl, Javascript, Python, and Ruby scripting
 languages. You can leverage editors for
 [FreeMarker](http://freemarker.sourceforge.net/) and
 [Velocity](http://velocity.apache.org/engine/releases/velocity-1.5/user-guide.html)
 template languages too. Kaleo Designer for Java gives you a rich tool set for
 creating/editing workflows, manipulating workflow nodes, and implementing
-business logic. But that is not all!
+business logic. But there's more!
 
-Kaleo Designer for Java gives you the capability to remotely add and update
-workflow definitions directly to and from your Liferay server. You can publish
-your workflow drafts to your portal by simply dragging the workflow file onto
-your portal server listed in your *Servers* view. The Servers view not only
-shows workflows you've published from studio, but also gives you access to
-workflows already published on the portal server. You can edit any of these
-existing workflows right in Developer Studio and republish them on your portal,
-letting you create business logic locally, without having to navigate back and
-forth from your portal and Developer Studio. As you can see, Kaleo Designer for
-Java is a powerful application for creating, modifying, and publishing workflows
-in Liferay Developer Studio.
+With Kaleo Designer for Java, you can remotely add and update workflow
+definitions directly to and from your Liferay server. You can publish your
+workflow drafts to your portal by simply dragging the workflow file onto your
+portal server in Developer Studio's *Servers* tab. The *Servers* tab shows
+workflows you've published from studio and gives you access to workflows already
+published on the portal server. You can edit existing workflows and create
+custom business logic in Developer Studio locally, then republish them on your
+portal; you don't have to navigate back and forth from your portal and Developer
+Studio to complete these tasks. As you can see, Kaleo Designer for Java is a
+powerful application for creating, modifying, and publishing workflows in
+Liferay Developer Studio. 
+
+<!--I only lightly edited the introduction to Kaleo. I don't think I understand
+enough about how it works from a development perspective--The above might be
+perfectly clear to a developer, but it's not to me. -Russ -->
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** The Kaleo Forms EE app comes
-with an existing workflow designer *within* Liferay Portal. This can be used to
-design workflow configuration and is described in the [Kaleo Forms: Defining
-Business
+![note](../../images/tip-pen-paper.png)**Note:** The *Kaleo Forms EE* app comes
+with an existing workflow designer that's used *within* Liferay Portal. It's
+used to design workflow configuration and is described in the [Kaleo Forms:
+Defining Business
 Processes](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen11-kaleo-forms-defining-business-processes-0)
-chapter of *Using Liferay Portal*. Also, refer to the [Using
+chapter of *Using Liferay Portal*. Refer to the [Using
 Workflow](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
-chapter of *Using Liferay Portal* if you are unfamiliar with basic Kaleo
+chapter of *Using Liferay Portal* if you're unfamiliar with basic Kaleo
 workflow concepts or want to know how to design your workflow within Liferay
-Portal.
+Portal. 
 
 ---
 
-To use Kaleo Designer for Java, follow the instructions below for installing the
-the *Kaleo Forms EE* apps. The Kaleo Workflow EE app
-includes the `kaleo-forms-portlet`, `kaleo-designer-portlet`, and `kaleo-web`
+To use Kaleo Designer for Java, install the *Kaleo Workflow EE*
+app from Liferay Marketplace. *Kaleo Workflow EE* includes three
+plugins--`kaleo-forms-portlet`, `kaleo-designer-portlet`, and `kaleo-web`
 plugins.
 
-Install Kaleo Designer for Java:
+Here's how to download and install *Kaleo Workflow EE*:
 
 1. Go to [Marketplace](https://www.liferay.com/marketplace).
 2. Click on [EE
 Marketplace](http://www.liferay.com/marketplace/-/mp/category/12729032) in the
 left navigation area.
-3. Download and install the *Kaleo Forms EE* app.
+3. Download and install the *Kaleo Workflow EE* app.
 
-After downloading and installing the Kaleo Forms EE application, restart the
+<!--I went to Marketplace and only saw *Kaleo Workflow EE*, not *Kaleo Forms
+EE*. -Russ -->
+
+After downloading and installing the Kaleo Workflow EE application, restart the
 Liferay Server and a *Kaleo Workflows* folder automatically appears underneath
 the server instance in the Servers view of Developer Studio.
 
