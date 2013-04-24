@@ -138,7 +138,7 @@ by clicking the *Settings* tab when the field is selected. Let's take a look at
 the properties you can edit for each of these field types: 
 
 **Type:** Lists the type of field placed in the definition. This is not editable
-but is available to reference from a list template.
+but is available to reference from a display template.
 
 **Field Label:** Sets the text that can be displayed with the field. This is the
 human-readable text that the user sees.
@@ -149,7 +149,7 @@ human-readable text that the user sees.
 to be submitted.
 
 **Name:** The name of the field internally, automatically generated. Since this
-is the variable name that you can read the data from in a list template, you
+is the variable name that you can read the data from in a display template, you
 should give a more memorable name here.
 
 **Predefined value:** If you would like example data or a default value for the
@@ -217,7 +217,7 @@ To create a new volunteer list with the "Volunteer Sign-Up" definition:
 3. Give the data list a name, like *Spring Move-In* and a description to assist
    administrative users in the future.
 
-4. Last and most importantly, click *Select* under the *Data Defition*
+4. Last and most importantly, click *Select* under the *Data Definition*
    section--this is where you set the data model that drives this list.
 
 5. Choose the *Volunteer Sign-Up* data definition you created, then click
@@ -309,32 +309,32 @@ to your health for everyone to see the responses. Then you don't have to explain
 why your sister-in-law won't work with your brother on the same task because of
 his B.O. problem. For reasons like that, you'll need to customize the data entry
 form or the display of the list. Liferay lets you do exactly that using a custom
-*detail template* or *list template*. 
+*form template* or *display template*. 
 
 ## Make it pretty: creating custom displays  
 
 When creating custom lists and data definitions, you can control not only how
 the input form appears to your users but also how the list itself displays.
 Eventually you may realize you need to create another sign-up sheet but you
-don't need the asme level of detail provided by the Volunteer Sign-Up data
+don't need the same level of detail provided by the Volunteer Sign-Up data
 definition you created. Liferay empowers you to customize both the input and
 output of your lists to unlimited levels. Dynamic data lists provide two areas
-to customize: detail templates and list templates. This covers the forms of
-lists (*detail templates*), as well as the display of the list contents (*list
+to customize: form templates and display templates. This covers the forms of
+lists (*form templates*), as well as the display of the list contents (*list
 templates*). 
 
-### Detail templates  
+### Form templates  
 
 The default data entry form is the entire data model you created in a data
 definition, including required and optional fields. Listies who create new lists
 using a data definition will see every item in that definition on the input
 form. What if, however, you want a quick sign-up form to find out who's coming
-to dinner tonight? Using a detail template you can customize the form's display
+to dinner tonight? Using a form template you can customize the form's display
 any way you want. You can limit the fields displayed for entry or change the
 order of elements. To access and create new templates, go to *Control Panel
 &rarr; Content &rarr; Dynamic Data Lists &rarr; Manage Data Definitions*, choose
 the data model you want to modify, click the *Actions* button and choose *Manage
-Templates*. When you click on *Add Detail Template*, you're presented with the
+Templates*. When you click on *Add Form Template*, you're presented with the
 same kind of graphical, drag-and-drop interface used for creating the data
 definition. Move items around, delete unwanted fields from view and save when
 ready. 
@@ -346,49 +346,49 @@ as you might need, and you can prototype them in the portlets to see how each
 feels. 
 
 Now your friends and enemies alike will be impressed with your `list.it` skills.
-It may look to the untrained eye like you've singlehandedly created three or
+It may look to the untrained eye like you've single-handedly created three or
 four different data types for your lists but you know better. You used the power
-that detail templates provide, using one data model that encompasses the maximum
+that form templates provide, using one data model that encompasses the maximum
 information you might need (like preferred activity, favorite color and ideal
-schedule). Then you quickly churned out four different detail templates with a
+schedule). Then you quickly churned out four different form templates with a
 few mouse clicks. Now that you have such a vast amount of data collection
 options, how will you display them? However you want, as you're about to find
 out.
 
-### List templates  
+### Display templates  
 
 For every data definition, you have an unlimited number of displays you can
 create. If you created a special "Thanksgiving Dinner Sign-Up" list using your
 "Volunteer Sign-Up" definition, you wouldn't want to confuse fellow Listies by
 displaying data fields you never asked for. "Preferred task?" a friend might
 say, "I don't remember seeing *that* on the sign-up form!" To avoid such
-embarassing situations, you should create a custom display to match that list.
+embarrassing situations, you should create a custom display to match that list.
 Taking it even further, you could provide a fancy, JavaScript-driven image
 carousel preview of all the attendees of the party. This would complement your
-other displays and be another bragging right on `list.it`. List templates give
-you the power to do all this and more.
+other displays and be another bragging right on `list.it`. Display templates
+give you the power to do all this and more.
 
-Just like detail templates, list templates are found in the Manage Templates
-section of a data definition. With list templates you can customize the display
-of a list in precisely the same way as you can customize web content. List
-templates can be written in Freemarker or Velocity, pulling data from the data
-definition in the same way that web content templates pull data from their
-structures. We'll look at a simple example, but for more information on using
-template scripts to pull data from a backing structure, see web content
+Just like form templates, display templates are found in the Manage Templates
+section of a data definition. With display templates you can customize the
+display of a list in precisely the same way as you can customize web content.
+Display templates can be written in FreeMarker or Velocity, pulling data from
+the data definition in the same way that web content templates pull data from
+their structures. We'll look at a simple example, but for more information on
+using template scripts to pull data from a backing structure, see web content
 templates in chapter 3.
 
-The first thing we need to do is create a new list template for our "Volunteer
-Sign-Up" data definition. Like other features in Liferay, there are several ways
-to do this, depending on your context.
+The first thing we need to do is create a new display template for our
+"Volunteer Sign-Up" data definition. Like other features in Liferay, there are
+several ways to do this, depending on your context.
 
 From the Dynamic Data List Display portlet:
 
 1. Navigate to where your DDL Display portlet is and make sure your list is
    selected.
 
-2. Find the *Create List Template* icon on the bottom-left of the portlet window
-   and click it to create a new template. If you don't see the icon, sign in as
-   a user with rights to create templates.
+2. Find the *Create Display Template* icon on the bottom-left of the portlet
+window and click it to create a new template. If you don't see the icon, sign in
+as a user with rights to create templates.
 
 From the Dockbar:
 
@@ -399,7 +399,7 @@ From the Dockbar:
 3. Find your data definition in the list, then click *Actions &rarr; Manage
    Templates*
 
-4. Now you can click on *Add List Template* to create a new template.
+4. Now you can click on *Add Display Template* to create a new template.
 
 From the control panel:
 
@@ -408,10 +408,10 @@ From the control panel:
 2. Find your data definition in the list, then click *Actions &rarr; Manage
    Templates*
 
-3. Now you can click on *Add List Template* to create a new template.
+3. Now you can click on *Add Display Template* to create a new template.
 
 Fill out the form with a title and a description. Next, choose a templating
-language. Just like web content templates, you can choose between Freemarker or
+language. Just like web content templates, you can choose between FreeMarker or
 Velocity. There is no functional difference between the two. Once you choose the
 script language, you can upload a template file or choose *Launch Editor* to
 type in a script manually. Inside the editor you can also choose to use plain
@@ -483,16 +483,16 @@ Here is the complete source for the template:
     </ul>
 
 Once you've typed your source into the editor window, click *Update* and then
-save the list template. With the list template selected, your list display can
-now be a summary of tasks as shown below. 
+save the display template. With the display template selected, your list display
+can now be a summary of tasks as shown below. 
 
-![Figure 10.7: A list template in action](../../images/05-ddl-list-template.png)
+![Figure 10.7: A display template in action](../../images/05-ddl-list-template.png)
 
 All the knowledge you have accrued through building out your award-winning
-content can be brought to bear in list templates. With the full power of
+content can be brought to bear in display templates. With the full power of
 Velocity templates at your fingertips, you have easy access to all the data in
 the list, as well as the full complement of helper methods and the Alloy UI
-Javascript library to make easy work of dynamic displays. 
+JavaScript library to make easy work of dynamic displays. 
 
 If you're not a Listie, and you happen to be deploying custom lists in an
 environment that requires approval from other users, then it's not enough to
@@ -572,17 +572,17 @@ list of options to insert.
 
 The first part of a new Kaleo process is also the simplest: the entry
 definition. This is just another way to refer to a data definition. All of the
-avaliable data definitions can be chosen, including our awesome "Volunteer
+available data definitions can be chosen, including our awesome "Volunteer
 Sign-Up List." Just like with normal data lists, you can always create a new
 entry definition from the list view by clicking on *Add new definition*.
 
 ##### Selecting an Initial Form  
 
 One of the great advantages to using Kaleo forms to present your list as a
-process is having total control over the detail template. You can always use a
+process is having total control over the form template. You can always use a
 default template, which displays all the fields from your entry definition.
-Greater flexibility comes, however, from creating multiple detail templates for
-use in different stages of the process. When you create a detail template you
+Greater flexibility comes, however, from creating multiple form templates for
+use in different stages of the process. When you create a form template you
 have the option of what *mode* to put it in:
 
 **Create:** *Create* mode gives a display for creating the initial entry. The
@@ -596,8 +596,8 @@ information that should. Other stages in the workflow may be a great place to
 store that additional information. No required fields have to be present on an
 edit mode form.
 
-![Figure 10.10: Selecting a detail template as the initial
-form](../../images/05-kaleo-forms-detail-templates.png)
+![Figure 10.10: Selecting a form template as the initial
+form](../../images/05-kaleo-forms-form-templates.png)
 
 Once you have chosen the initial display you want, all that's left to do is
 configure the workflow for your process.
@@ -605,7 +605,7 @@ configure the workflow for your process.
 ##### Selecting a Workflow  
 
 You can now select a workflow to apply to your new list-defined process. All the
-avaliable workflows can be chosen and you can create new ones from the selection
+available workflows can be chosen and you can create new ones from the selection
 screen. Simply choose *Add Workflow* and a Workflow Designer screen appears
 allowing you to define a new workflow by dragging elements in a flow chart.
 
@@ -631,7 +631,7 @@ When inside the view to assign forms to tasks:
 2. In the details pane on the left-hand side there is a property called `Forms`.
    Double click to edit the *value*.
 
-3. Start typing the name of a detail template and it appears.
+3. Start typing the name of a form template and it appears.
 
 4. Click *Save* to save the form assignment.
 
@@ -682,9 +682,9 @@ co-workers as you breeze through list setup and data definitions. Once you have
 your new lists set up, you can work through building new, custom input forms for
 the data. Your friends on `list.it` will thank you and wonder how you were able
 to accomplish it all. That's nothing next to the masterpiece of design that you
-can show off in your custom displays through list templates. Once the lists have
-the precise look and feel you envisioned, then living among the Listies will not
-only be easy, but fun and exciting.
+can show off in your custom displays through display templates. Once the lists
+have the precise look and feel you envisioned, then living among the Listies
+will not only be easy, but fun and exciting.
 
 With the ability to create dynamic sets of data and customize both the data
 display as well as the entry, the possible combinations are limitless. Dynamic
