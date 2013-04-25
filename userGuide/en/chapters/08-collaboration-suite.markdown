@@ -892,10 +892,10 @@ notifications. By default the following line is set in your portal properties:
 
 This property creates a special MX (mail exchange) subdomain to receive all
 portal-related email (e.g., events.liferay.com). If you don't want to use the
-subdomain approach, you can unset this value to tell Liferay to use the replyTo
-address specified in the portlet preferences to receive message board
-notification email replies. For example, the replyTo address could be set to
-*replies@liferay.com*.
+subdomain approach, you can unset this value to tell Liferay to use the *Email
+From* address specified in the portlet preferences to receive message board
+notification email replies. For example, the *Email From* address could be set
+to *replies@liferay.com*.
 
 If you don't want to use a mail server subdomain, add the following line to your
 `portal-ext.properties` file:
@@ -903,18 +903,14 @@ If you don't want to use a mail server subdomain, add the following line to your
     pop.server.subdomain=
 
 If you're not using a mail subdomain, Liferay parses the message headers of
-emails from the replyTo address to determine the message board category and
-message ID. If you keep the `pop.server.subdomain=events` default, the replyTo
-address takes the following form:
+emails from the *Email From* address to determine the message board category and
+message ID. If you keep the `pop.server.subdomain=events` default, the email
+notification address takes the following form:
 *mb.[category_id][message_id]@events.liferay.com*. In this case, Liferay parses
-the replyTo address to find the category and message ID. Parsing the replyTo
-address is safer than parsing message headers since different email clients
-treat message headers differently. This is why the `events` subdomain is enabled
-by default.
-
-<!--Is this replyTo address the same as the Email From address in the message
-board's portlet preferences?  This is the only configurable address that I can
-find in the Message Board portlet's configuration window.-->
+the email address to find the category and message ID. Parsing the email address
+is safer than parsing message headers since different email clients treat
+message headers differently. This is why the `events` subdomain is enabled by
+default.
 
 Additionally, you can configure the interval on which the
 POPNotificationListener runs. The value is set in one minute increments. The
@@ -948,7 +944,7 @@ to the specific inbox configured for the mailing list and copies messages to the
 appropriate message board category. With user subscriptions, by default, email
 replies to message board notifications are not imported to the message boards.
 This feature has to be enabled in your `portal-ext.properties` file. Once this
-feature has been enabled, users can reply to a specific replyTo address and have
+feature has been enabled, users can reply to a specific address and have
 their replies copied to the message board.
 
 Note: Since any number of sites can use a globally scoped message board,
