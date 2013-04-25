@@ -1185,115 +1185,136 @@ Workflow Diagram's canvas:
 	![Figure 8.54: Studio's Surveyor's Level helps you design your workflow for
 	an organized and professional look.](../../images/kaleo-32.png)
 
-You've probably noticed the *Properties* view below your workflow diagram. Let's
-explore what it does next. 
+You've probably noticed the *Properties* and *Oultine* views below your workflow
+diagram. Let's explore them next. 
 
-#### Properties View and Outline Views 
+#### Properties View and Outline View 
 
-More cool features that can help you customize your workflow are the
-*Properties* and *Outline* views, located on the bottom and bottom right of
-Developer Studio, respectively. The Properties view lets you edit the current
-node's properties. If no node is selected or you select the workflow canvas, the
-Properties view displays your workflow's general properties for you to edit.
-Once you click on an individual node, its properties appear in the Properties
-view.
+The *Properties* and *Outline* views contain more cool features you can use to
+customize your workflow; they're located on the bottom and bottom right of
+Developer Studio, respectively. 
+
+The *Properties* view lets you edit the current node's properties. If no node is
+selected or you select the workflow canvas, the Properties view displays your
+workflow's general properties; you can edit these, too. Once you click on an
+individual node, its properties appear. 
 
 Node properties are grouped as follows:
 
-- *Actions*: let you execute scripts with respect to your node. Each action has a
+- *Actions*: Execute scripts with respect to your node. Each action has a
 *Name*, *Script Language*, *Execution Type*, and a *Priority* (optional).
 Clicking *Edit Script* brings up the script in the default editor for the
-*Script Language* you specified.
+*Script Language* you specified. 
 
-- *Notifications*: let you notify users with respect to your node. Each
-notification has a *Name*, *Template Language*, *Execution Type*, and one or
-more *Notification Types*.
+- *Notifications*: Notify users with respect to your node. Each notification has
+a *Name*, *Template Language*, *Execution Type*, and one or more *Notification
+Types*. 
 
-- *Assignments*: let you assign tasks to users or roles. Click *Change Task
-Assignments* to specify or change the assignment.
+- *Assignments*: Assign tasks to users or roles. Click *Change Task Assignments*
+to specify or change the assignment. 
 
-- *Task Timers*: let you name timers for a task and whether the timers are
-blocking. Each task timer has a *Name* and *Blocking* indicator.
+- *Task Timers*: Name timers for a task and whether the timers are blocking.
+Each task timer has a *Name* and *Blocking* indicator. 
 
-- *Script*: lets you edit a script for your condition node. Clicking *Edit
-Script* brings up the script in the default editor for the *Script Language* you
-specified.
+- *Script*: Edit a script for your condition node. Clicking *Edit Script* brings
+up the script in the default editor for the *Script Language* you specified. 
 
-- *Other*: lets you edit miscellaneous properties, such as *Name* and
-*Description*, applicable to your node's type.
+- *Other*: Edit miscellaneous properties like *Name* and *Description*,
+applicable to your node's type. 
 
-Here is what the Properties view looks like in Developer Studio:
+Here's what the Properties view looks like in Developer Studio: 
 
 ![Figure 8.55: The Properties view gives you multiple sub-tabs to help customize
 your workflow nodes.](../../images/kaleo-11.png)
 
-Another useful tool is the Outline view. This gives a top level view of your
-entire workflow definition. As you can imagine, workflows can become extremely
-large over time and may not be able to fit on the viewing area of your workflow
-diagram screen. The Outline view lets you view your entire workflow definition,
-no matter how large it becomes. In addition, the Outline view shows what is
-currently visible on your Workflow diagram by highlighting it in blue. You can
-select this blue highlighted area and drag it to the area of your workflow you
-want visible on your Workflow Diagram. Below is a snapshot of an example
-workflow shown in the outline view in Developer Studio:
+Workflows frequently become too large to view in entirety on the workflow
+diagram screen; the *Outline* view is a huge asset when this happens. It's a top
+level view that displays your entire workflow definition, no matter how large it
+becomes. In addition, it highlights what you're currently viewing on your
+Workflow diagram, giving you a picture of where you're located in the broader
+picture of your workflow. You can use the *Outline* view to change your position
+in the Workflow Diagram by dragging the highlighted box where you'd like to
+focus. Below is a snapshot of an example workflow shown in the outline view in
+Developer Studio: 
 
 ![Figure 8.56: The Outline view lets you view your entire workflow
-definition.](../../images/kaleo-25.png)
+definition.](../../images/kaleo-25.png) 
 
-As you can see, the Properties and Outline views make customizing your
-workflow easier than ever! Developer Studio offers a useful programming
-capability for editing your workflow scripts. We will give you a tour of
-what Developer Studio has to offer for using workflow scripts!
+Developer Studio's *Properties* and *Outline* views make customizing your
+workflow easier than ever! Developer Studio also offers a convenient way to edit
+your workflow scripts, which will be our next topic. 
 
 ### Using Workflow Scripts 
 
-We will now explain how to use Developer Studio to edit your workflow scripts.
-Developer Studio is configured to recognize multiple script languages to let the
-developer use what they are most comfortable with. These script languages
-include: Beanshell, Drl, Groovy, Javascript, Python, and Ruby. Developer Studio
-offers many script editing features that can help you quickly and successfully
-implement business logic in your workflows.
+You can use Developer Studio to edit workflow scripts; it recognizes multiple
+script languages, so you can choose one you're comfortable with. Developer
+Studio provides you many script editing features so you can quickly implement
+business logic in your workflows. 
 
-Let's dive back into our software ticket process workflow and create a script.
-For most ticketing processes, it is not guaranteed that every ticket has a
-resolution. If the issue was due to a silly user error, there is no reason to
-change the product. In this case, the developer will resolve the ticket
-indicating there is no resolution. Regardless, we'll have the developer fill out
-an online Dynamic Data List (DDL) form to kick off processing a workflow for
-each of her tickets. Once the workflow is invoked, its associated DDL record is
-accessible from our workflow's context. Let's use a condition node to handle the
-ticket based on the DDL record.
+Script languages supported by Developer Studio include: 
 
-Drag and drop a condition node onto your workflow diagram and a *Create New
-Condition Node* menu appears. Name the node *Resolution*. Notice, the menu let's
-you choose a script language for the condition node. Select *Groovy* and you'll
+- Beanshell 
+
+- Drl 
+
+- Groovy 
+
+- Javascript 
+
+- Python 
+
+- Ruby 
+
+Let's dive back into our `software ticket` workflow definition and create a
+script. It's not guaranteed that every ticket submitted has a resolution. If the
+issue was due to a silly user error, there's no reason to change the product. In
+such cases the developer will resolve the ticket and indicat there is no
+resolution in the product (i.e., no modificaitons are were made). Regardless,
+we'll have the developer fill out an online Dynamic Data List (DDL) form to
+initiate a workflow for each of her tickets. Once the workflow is invoked, its
+associated DDL record is accessible from our workflow's context. Let's use a
+condition node to handle the ticket based on the DDL record. 
+
+To set up the workflow process we described above, we'll need to add a
+*Condition* node and two transitions. 
+
+1. Drag and drop a *Condition* node onto your workflow diagram. A *Create New
+Condition Node* menu should appear. 
+
+2. Name the node *Resolution*. 
+
+3. Choose a script language for the condition node. Select *Groovy* and you'll
 see how easy it is to embed Java code. In our Groovy script, we'll access the
-DDL record to determine whether the ticket is to be fixed. If the ticket is to
-be fixed, we'll assign it to a developer via the Developer task node. If the
-ticket is not to be fixed, we'll end the workflow by transitioning to the
-workflow's EndNode.
+DDL record to determine whether the ticket warrants a modification to the
+product. If it does, we'll assign it to a developer via the Developer task node.
+Otherwise we'll end the workflow by transitioning to the workflow's EndNode. 
 
-From the *Create New Condition Node* menu, add two transitions -- one transition
-to the Developer node and the other to the EndNode state. To add these
-transitions:
+4. From the *Create New Condition Node* menu, add two transitions--one to the
+*Developer* node and the other to the *EndNode* state. Here's how you add these
+transitions: 
 
-1. Click the green plus sign and select the transition icon from its menu. An
-entry for the transition appears in the named list of *Condition transitions*.
+    4.1. Click the green plus sign and select the transition icon from its menu.
+    An entry for the transition appears in the named list of *Condition
+    transitions*.
 
-2. Click the browse icon in the entry and select the Developer node.
+<!--When I select the green plus sign I get a list to choose from--Existing
+Node, New Condition, New Fork, New Join, New State, New Task. I do not see a
+transition icon to select. -->
 
-3. Repeat steps 1 and 2 to add a transition to the EndNode state.
+    4.2. Click the browse icon in the entry and select the *Developer* node.
 
-4. Click *Finish*
+    4.3. Repeat steps 1 and 2 to add a transition to the *EndNode* state.
 
-Here is a snapshot of the *Create New Condition Node* menu configured for the
-ticket process workflow.
+    4.4. Click *Finish*. 
 
-![Figure 8.57: When creating a condition node, you're able to set your preferred
-script language, name, and condition transitions.](../../images/kaleo-12.png)
+Here's a snapshot of the *Create New Condition Node* menu configured for the
+ticket process workflow. 
 
-Before adding a script to our condition node, let's make the following changes
-in our workflow transitions:
+![Figure 8.57: When creating a condition node, you can set your preferred script
+language, name, and condition transitions.](../../images/kaleo-12.png) 
+
+Before adding a script to our condition node, let's make some changes to our
+workflow transitions: 
 
 - Add a transition from the *Developer* task node to the *Pass To QA* fork node.
 
@@ -1315,76 +1336,78 @@ end following your pointer.
 3. Select a node to which the transition will end. The dotted line changes into
 a fixed ray with the arrow pointing to the transition's end node.
 
-4. To exit connector mode, hit *escape* on your keyboard and click your pointer
+4. To exit connector mode, hit *Escape* on your keyboard and click your pointer
 at empty space in your workflow diagram.
 
 You may notice the error marking on the condition node. When you hover over
 the marking, a hint indicates a script must be specified for the node.
 
-Invoke the script editor for your *Resolution* condition node by doing one of
-the following:
+Open the script editor for your *Resolution* condition node by doing one of the
+following: 
 
 - Select the node and click *Edit Script* from the *Script* tab of the
-Properties view.
+Properties view. 
 
-- Click the *Edit Script* tool from the node's floating palette.
+- Click the *Edit Script* tool from the node's floating palette. 
 
-- Right-click the node and select *Edit Script*.
+- Right-click the node and select *Edit Script*. 
 
-![Figure 8.58: You can access the *Edit Script* feature by navigating to
-the *Script* tab inside the Properties view.](../../images/kaleo-13.png)
+![Figure 8.58: You can access the *Edit Script* feature from the *Script* tab
+inside the Properties view.](../../images/kaleo-13.png) 
 
-Since we set our default script language to Groovy earlier, the Java/Groovy
-editor appears. To learn more about the Groovy editor, see the [Groovy User
-Guide](http://groovy.codehaus.org/User+Guide). Likewise, if you set the script
-language to another language, the editor for that specific language appears. The
-editor runs in the context of editing the specific node you selected. So
-anything you type in the script editor for this condition node is written inside
-the `<script></script>` tags for the `<condition/>` element that represents our node
-in our workflow definition XML file.
-
----
-
-![note](../../images/tip-pen-paper.png)**Note:** Developer Studio lets your use
-multiple script editors while modifying the same workflow definition XML file.
+We set our default script language to Groovy, so the Java/Groovy editor appears.
+To learn more about the Groovy editor, see the [Groovy User
+Guide](http://groovy.codehaus.org/User+Guide). If you set the script language to
+another language, the editor for that specific language appears. The editor runs
+in the context of editing the specific node you selected. Anything you type in
+the script editor for this condition node is written inside the
+`<script></script>` tags for the `<condition/>` element that represents our node
+in our workflow definition's XML file (in our case,
+`ticket-process-definition.xml`). 
 
 ---
 
-Also, notice the palette is different from when you were working in the workflow
-diagram.
+![note](../../images/tip-pen-paper.png)**Note:** Developer Studio lets you use
+multiple script editors even while modifying the same workflow definition XML
+file. 
 
-Here is a snapshot of how the palette appears with the *Context Variables*
-folder open for a view of its options:
+---
 
-![Figure 8.59: Each script editor is associated with a palette that lets you
-insert helpful snippets of code.](../../images/kaleo-14.png)
+The *Palette* view is much different from when you were working in the workflow
+diagram; it's associated with your Java/Groovy script editor now and includes
+folders containing the following entities for your script: 
 
-The palette associated with your Java/Groovy script editor includes folders
-containing the following entities available to your script:
+- Context Variables 
 
--	Context Variables
--	Dynamic Data Lists
--	Roles
--	Scripts
--	Status Updates
+- Dynamic Data Lists 
 
-The folders can be expanded and collapsed by simply clicking their name bars.
+- Roles 
 
-Drag and drop any entity from your palette onto your Java/Groovy editor and code
-representing that entity appears instantaneously in the editor. The inserted
-code is free of compile errors and warnings because the editor is running in the
-context of Liferay Portal. This means that all of the Liferay Portal APIs are
-available to you. The editor lets your invoke code-assist and access built in
-Kaleo workflow variables.
+- Scripts 
 
-Let's get a hold of the DDL record that's being worked on in our workflow
-process. To get the DDL record, we need the `serviceContext`. To learn more
-about Service Context and its parameters, see the [Service
+- Status Updates 
+
+You can expand and collapse a folder by clicking its name bar. 
+
+Here's a snapshot of the palette with the *Context Variables* folder open:
+
+![Figure 8.59: Each script editor is associated with a palette that contains
+helpful snippets of code you can insert.](../../images/kaleo-14.png) 
+
+Drag and drop an entity from your palette onto your Java/Groovy editor and code
+representing that entity appears in the editor. The inserted code is free of
+compile errors and warnings because the editor is running in the context of
+Liferay Portal. All of the Liferay Portal APIs are available to you. In the
+editor you can invoke code-assist and access built in Kaleo workflow variables. 
+
+Let's get the DDL record that's being worked on in our workflow process. We'll
+need the `serviceContext` entity, under `Context Variables` in the palette. To
+learn more about Service Context and its parameters, see the [Service
 Context](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/service-conte-1)
 section of this guide.
 
-Let's take advantage of Designer's palette features in conjunction with our
-Java/Groovy editor to implement our condition:
+Let's use Designer's palette features in conjunction with our Java/Groovy editor
+to implement our condition: 
 
 1. Drag and drop the *serviceContext* entity from the *Context Variables* folder
 in your palette onto the script editor. This grabs the Service Context.
@@ -1412,59 +1435,59 @@ Append the following Java code to your script:
 	}
 
 
-We pull out the status from the DDL record and return a value indicating "Yes"
-to continue fixing the ticket issue or "No" to transition to the workflow's
-end state.
+We're pulling out the status from the DDL record and returning a value
+indicating "Yes" to continue fixing the ticket issue or "No" to transition to
+the workflow's end state. 
 
-Lastly, add the following to the script's imports:
+Add the following to the script's imports to finsih things up: 
 
 	import com.liferay.portlet.dynamicdatamapping.storage.Field;
 
-Now, the script accurately implements the condition logic we want. As a
-reminder, all of the code was injected into our workflow's XML file within the
-`<condition/>` element that represents our condition node.
+Now the script accurately implements the condition logic we want. As a reminder,
+all of the code was injected into our workflow's XML file within the
+`<condition/>` element that represents our condition node. 
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Make sure to correctly name the
-transitions stemming from the condition node. In our example, the "No"
-transition should point to the EndNode, while the "Yes" transition should point
-to the Developer. If the condition script's return values do not match the
-transition names, the workflow engine will not know which transition to use.
+ ![note](../../images/tip-pen-paper.png)**Note:** Make sure you correctly name
+ the transitions stemming from the condition node. The "No" transition should
+ point to the EndNode, while the "Yes" transition should point to the Developer.
+ If the condition script's return values don't match the transition names, the
+ workflow engine won't know which transition to use. 
 
 ---
 
-Here is a snapshot of our current ticket process workflow after inserting the
-condition node:
+Here's a snapshot of our current ticket process workflow after inserting the
+condition node: 
 
 ![Figure 8.61: The ticket process workflow after inserting the condition
 node.](../../images/kaleo-30.png)
 
-Our workflow will need to a valid DDL record to invoke this workflow properly.
-You may be thinking "How do we set up a DDL record?" or "How does this DDL
-record thingy work?" Or you may even be jumping up and down screaming "Liferay
-is da bomb!" We welcome your reaction. But, don't worry; we'll address DDLs soon
-in the *Configuring a DDL record* section of this chapter.
+We need to create a valid DDL record to invoke this workflow properly. If you're
+thinking "How do we set up a DDL record?" or "How does this DDL record thingy
+work?" , you're on the right track. If you're jumping up and down screaming
+"Liferay is da bomb!" We welcome your reaction, too. Regardless, we'll address
+DDLs soon in the *Configuring a DDL record* section of this chapter. 
 
-Next, we'll create a custom notification and write a template for it
-using a template editor.
+Next let's create a custom notification and write a template for it using a
+template editor. 
 
-### Leveraging template editors for notifications 
+### Leveraging Template Editors for Notifications 
 
-Designer lets you leverage FreeMarker and Velocity editors in customizing
+Designer lets you leverage FreeMarker and Velocity editors to customize
 templates for your workflow notifications. A FreeMarker editor comes bundled
-with Developer Studio. For editing Velocity templates, you'll need to install an
-editor.
+with Developer Studio. To edit Velocity templates, you'll need to install an
+editor. Don't worry, Developer Studio makes it easy. 
 
 #### Add-on: Install Velocity Editor Support 
 
 Liferay Developer Studio comes with additional add-on support for editing
-velocity template notifications in the Kaleo Designer for Java. To use this
+Velocity template notifications in the Kaleo Designer for Java. To use this
 feature go to the Developer Studio 1.6 customer page
 [http://www.liferay.com/group/customer/products/developer-studio/1.6](http://www.liferay.com/group/customer/products/developer-studio/1.6),
 navigate to the *Add-on: Install Velocity Editor Support* section, and download
-the Liferay Developer Studio Velocity update site zip file and install it with
-the following steps:
+the Liferay Developer Studio Velocity update site zip file and install it. You
+can follow these steps: 
 
 1. From Liferay Developer Studio, Click *Help* &rarr; *Install New Software...*
 
@@ -1476,10 +1499,10 @@ the following steps:
 
 5. Click *OK* to close the *Add Repository* dialog.
 
-6. Expand the added repository and check the "Liferay Developer Studio Velocity"
+6. Expand the added repository and check the *Liferay Developer Studio Velocity*
 feature.
 
-7. Uncheck the option "Contact all update sites..."
+7. Uncheck the option *Contact all update sites...*
 
 8. Click *Next* to progress through the wizard.
 
@@ -1487,32 +1510,36 @@ feature.
 
 9. Restart Liferay Developer Studio to complete the install.
 
-If you edit a notification template that is set to the Velocity type, the
-template opens in the Velocity editor (a small "v" icon is in the left side of
-the editor's tab).
+When you edit a notification template set to the Velocity type, the template
+opens in the Velocity editor (a small "v" icon is in the left side of the
+editor's tab). 
 
-#### Creating notifications 
+#### Creating Notifications 
 
 To access the template editors, click on the node of your choice and select the
-*Notifications* sub-tab in your *Properties* view. Create a new notification by
-clicking the green "plus" sign.
+*Notifications* sub-tab in the *Properties* view. Create a new notification by
+clicking the green "plus" symbol. 
 
 ![Figure 8.62: When creating a notification, Developer Studio offers several options, like choosing 
 a template language.](../../images/kaleo-16.png)
 
-Specify the following for your notification:
+There are several fields to fill in for your notification: 
 
--	*Name*
--	*Template Language*
--	*Execution Type*
--	*Notification Type*
--	*Notification Transports*
--	*Addresses*
+- *Name*
 
-Clicking the pencil icon opens the editor associated with your notification's
-template language. Similar to the script editor, the template editor presents
-entities that you can drag and drop from your palette onto your workflow
-diagram.
+- *Template Language*
+
+- *Execution Type*
+
+- *Notification Type*
+
+- *Notification Transports*
+
+- *Addresses*
+
+Click the pencil icon to open the editor associated with your notification's
+template language. Like the script editor, the template editor's *Palette* view
+lists entities that you can drag and drop onto your workflow diagram. 
 
 ![Figure 8.63: The template editor's palette has helpful entities that make
 creating notifications quick and easy.](../../images/kaleo-17.png)
