@@ -1080,27 +1080,26 @@ over any node.](../../images/kaleo-10.png)
 
 The floating pallette has several features you can use: 
 
-- *Add (green cross)*: lets you add an action or notification on the node.
-To edit the added action or notification, bring up Designer's *Properties* view.
+- *Add* (green cross): Add an action or notification on the node. To edit the
+added action or notification, bring up Designer's *Properties* view. 
 
-- *Edit Actions (paper with arrow)*: lets you edit the node's existing actions.
+- *Edit Actions* (paper with arrow): Edit the node's existing actions. 
 
-- *Edit Notifications (envelope)*: lets you edit existing notifications on the
-node.
+- *Edit Notifications* (envelope): Edit existing notifications on the node. 
 
-- *Edit Script (pencil)*: lets you edit the script of the condition node. This
-feature only applies to the condition node.
+- *Edit Script* (pencil): Edit the script of the condition node. This feature
+only applies to the condition node. 
 
-- *Change Assignments (person)*: lets you assign/reassign the task. This
-feature only applies to the task node.
+- *Change Assignments* (person): Assign or reassign a task. This feature only
+applies to the *Task* node type. 
 
-- *Delete (red "X")*: deletes the node.
+- *Delete* (red "X"): Delete the node. 
 
-- *Show in Source (paper with folded corner and arrow)*: shows the node
-specified as as a model element in the workflow definition's XML source and
-switches the main editor to *Source* mode. 
+- *Show in Source* (paper with folded corner and arrow): Show the node specified
+as as a model element in the workflow definition's XML source and switches the
+main editor to *Source* mode. 
 
-- *Start Transition (black arrow)*: changes the pointer to transition mode
+- *Start Transition* (black arrow): Change the pointer to transition mode
 letting you create a workflow transition from the current node to another node.
 
 Obviously, there is still work to be done in our workflow definition. We have
@@ -1111,17 +1110,17 @@ for each node. The *Choose Assignment Type* menu appears for each node, letting
 you choose their assignment type. After we assign the QA and QA Management task
 nodes, the error markers disappear.
 
-For our ticket process workflow's QA tasks, we want to assign someone other than
-the asset creator. Realistically, we would assign each of these tasks to
-different roles in our site. For simplicity, lets assign both the QA and QA
-Management tasks to the same user. If you have a user in mind, specify that
-user. Otherwise, create a user named "Joe Bloggs" with screen name "joe". For
-the user to receive emails, he must be registered within Liferay Portal. If you
-haven't registered Joe Bloggs ("joe") already, see the [Adding
+For our `ticket process` workflow's QA tasks, let's assign someone other than
+the asset creator. Realistically, each of these tasks would be assigned to
+different site roles. For simplicity, lets assign both the QA and QA Management
+tasks to the same user. If you have a user in mind, specify that user.
+Otherwise, create a user named "Joe Bloggs" with screen name "joe". For the user
+to receive emails, he must be registered within Liferay Portal. If you haven't
+registered Joe Bloggs ("joe") already, see the [Adding
 users](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen12-adding-users-0)
 section of *Using Liferay Portal* for instructions. To configure the user's
 email, login to the user's account and visit *Control Panel* &rarr; *Server
-Administration* &rarr; *Mail* for setup options.
+Administration* &rarr; *Mail* for setup options. 
 
 Select the *Change Assignments* icon from the floating palette for each QA task
 node. Then, select *Assign to a specific user* from the *Choose Assignment
@@ -1132,34 +1131,34 @@ Type* menu and click *Next*. You have options to enter the user's *User-id*,
 ![Figure 8.50: Designer lets you assign a task to a specific user of Liferay
 Portal.](../../images/kaleo-29.png)
 
-Assigning the QA and QA Management task nodes resolved their error markings.
-Later, the join node's error marking will be disappear when we connect the join
-node to another task.
+Assigning the QA and QA Management task nodes resolved their error markings (no
+more red "X"!). The join node's error marking won't disappear until you connect
+the join node to another task. 
 
 ![Figure 8.51: The error markings for the QA and QA Management task nodes
 disappear after their assignments are specified.](../../images/kaleo-27.png)
 
 While we're using Designer's Workflow Diagram, let's go over some of its
-features.
+features. 
 
-#### Workflow Diagram features 
+#### Workflow Diagram Features 
 
-Within the workflow diagram, there are other miscellaneous features offered by
-Developer Studio. Below are lists of some of these small features that
-could make a huge difference when designing your workflow.
+Developer Studio provides you with additional features within the workflow
+diagram. Below we list some of these features; they can greatly enhance your
+workflow designing experience. 
 
-**Workflow Diagram Actions** are available via icons in the upper right
-corner toolbar of the Workflow Diagram:
+- *Workflow Diagram Actions* are available via the toolbar in the upper right
+corner of the Workflow Diagram: 
 
--	*Zoom In*
+    - *Zoom In*
 
--	*Zoom Out*
+    - *Zoom Out*
 
--	*Zoom Actual*
+    - *Zoom Actual*
 
--	*Save as Image*
+    - *Save as Image*
 
--	*Print*
+    - *Print*
 
 	These toolbar icons are shown in the figure below.
 	
@@ -1167,29 +1166,27 @@ corner toolbar of the Workflow Diagram:
 	for zooming, saving, and printing your workflow
 	diagram.](../../images/kaleo-23.png)
 
-**More Workflow Diagram Actions** are accessible by right-clicking in the
+- *More Workflow Diagram Actions* are accessible by right clicking on the
 Workflow Diagram's canvas:
 
-- The *Layout* feature lets you arrange nodes vertically or horizontally. This
-feature makes it easy to organize your workflow quickly without having to touch
-a node.
+    - The *Layout* feature lets you arrange nodes vertically or horizontally, so
+    it's easy to organize your workflow quickly without having to touch a node. 
 
 	![Figure 8.53: When right-clicking the graphical interface, you are given
 	options for viewing and editing your workflow
 	definition.](../../images/kaleo-24.png)
 
-- The *Rename* feature lets you rename a node or transition by simply
-double-clicking its current name and typing in a new name.
-
-- The *Surveyor's Level* feature helps you center a node, vertically or
-horizontally, with respect to another node.
+    - The *Rename* feature lets you rename a node or transition; select by
+    double clicking its current name and typing in a new name.
+    
+    - The *Surveyor's Level* feature helps you center a node, vertically or
+    horizontally, with respect to another node.
 
 	![Figure 8.54: Studio's Surveyor's Level helps you design your workflow for
 	an organized and professional look.](../../images/kaleo-32.png)
 
-You have probably noticed the *Properties* view below your workflow diagram.
-Let's explore what it does and how it lets you customize your workflow
-definition.
+You've probably noticed the *Properties* view below your workflow diagram. Let's
+explore what it does next. 
 
 #### Properties View and Outline Views 
 
