@@ -642,7 +642,7 @@ hope this flexible system meets the needs of your organization. Next, let's look
 at one of the most widely used applications provided by Liferay: its message
 boards.
 
-## Discuss, ask and answer using the Message Boards  
+## Discuss, Ask and Answer using the Message Boards  
 
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
@@ -718,7 +718,7 @@ This tab allows you to configure the name and email address from which message
 board email notifications are sent. The default name and email address are those
 of the default administrator account: The name is `Test Test` and the email
 address is `test@liferay.com`. Make sure to update this email address to a valid
-one that can be dedicated to delivering message board notifications.
+one that can be dedicated to notifications.
 
 ### Message Added Email  
 
@@ -884,19 +884,33 @@ configure mail to be left on the mail server, Liferay will repeatedly send
 copies of each retained message along with each new email notification that's
 sent to subscribed users.
 
-When enabling message boards to import replies to email notifications, you might
-also want to add to add the following line to your `portal-ext.properties` file:
+When enabling message boards to import replies to email notifications, you
+should decide whether or not you want to you a mail server subdomain to handle
+notifications. By default the following line is set in your portal properties:
+
+    pop.server.subdomain=events
+
+This property creates a special MX (mail exchange) subdomain to receive all
+portal-related email (e.g., events.liferay.com). If you don't want to use the
+subdomain approach, you can unset this value to tell Liferay to use the replyTo
+address specified in the portlet preferences to receive message board
+notification email replies. For example, the replyTo address could be set to
+*replies@liferay.com*.
+
+If you don't want to use a mail server subdomain, add the following line to your
+`portal-ext.properties` file:
 
     pop.server.subdomain=
 
-By default, `pop.server.subdomain=events`. This property creates a special MX
-subdomain to receive all portal-related email (e.g., events.liferay.com). If you
-don't want to use the subdomain approach, unsetting this value tells Liferay to
-use the replyTo address specified in the portlet preferences to receive message
-board notification email replies. For example, the replyTo address could be set
-to *replies@liferay.com*. If you keep the `pop.server.subdomain=events` default,
-the replyTo address takes the following form:
-*mb.[category_id][message_id]@events.liferay.com*
+If you're not using a mail subdomain, Liferay parses the message headers of
+emails from the replyTo address to determine the message board category and
+message ID. If you keep the `pop.server.subdomain=events` default, the replyTo
+address takes the following form:
+*mb.[category_id][message_id]@events.liferay.com*. In this case, Liferay parses
+the replyTo address to find the category and message ID. Parsing the replyTo
+address is safer than parsing message headers since different email clients
+treat message headers differently. This is why the `events` subdomain is enabled
+by default.
 
 <!--Is this replyTo address the same as the Email From address in the message
 board's portlet preferences?  This is the only configurable address that I can
@@ -933,9 +947,14 @@ However, with mailing lists, users reply to the mailing list and Liferay listens
 to the specific inbox configured for the mailing list and copies messages to the
 appropriate message board category. With user subscriptions, by default, email
 replies to message board notifications are not imported to the message boards.
-Once this feature is enabled in your `portal-ext.properties` file, users can
-reply to a specific replyTo address to have their replies copied to the message
-board.
+This feature has to be enabled in your `portal-ext.properties` file. Once this
+feature has been enabled, users can reply to a specific replyTo address and have
+their replies copied to the message board.
+
+Note: Since any number of sites can use a globally scoped message board,
+globally scoped message boards do not support user subscriptions or mailing
+lists. Make sure to use a site-scoped or page-scoped message board if you need
+user subscriptions or a mailing list with your message board.
 
 To enable the mailing list functionality for a category, you need a dedicated
 email address for the category. Once you click the *Active* check box, a number
