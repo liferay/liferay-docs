@@ -2256,7 +2256,6 @@ site templates, staging, and mobile device rules.
 
 \chapter{Advanced Web Content Management}
 
-
 In the previous chapter we looked at some basic ways you can use Liferay
 to handle your web content. In this chapter we'll delve deeper into
 slightly more complex web content management techniques. But don't be
@@ -2353,31 +2352,50 @@ template which loops through these blocks and presents your content in
 innovative ways, such as in sliding navigation bars, content which
 scrolls with the user and more.
 
-Let's look at how we edit a structure.
+Let's look at how we can create and edit structures through the Manage
+Structures interface. 
 
-\subsubsection{Editing a Structure
-}
+\subsubsection{Editing a Structure}
 
-Go back to the Control Panel and select \emph{Web Content} from the Site
-section. Click \emph{Add} from the Web Content page to add another piece
-of content to your portal. Instead of going right for the content, this
-time we'll create a structure. To edit a structure, simply click on the
-\emph{Edit} icon next to the \emph{Structure} heading near the top of
-the page.
-
-It's very easy to edit structures: all you have to do is drag elements
-into the structure and then give them names. For instance, select the
-\emph{Checkbox} element under the \emph{Form Controls} tab and drag it
-onto the structure. You can do the same with any of the elements. To
-remove it from the structure, simply select the \emph{Delete} icon
-(black circle with X) in the upper right corner of the element. Take a
-moment to add, delete and rearrange different elements.
+Go back to the Control Panel and select *Web Content* from the content section.
+The first way to access the Manage Structures interface is simply by clicking
+*Manage* &rarr; *Structures*. This opens a popup showing all the web content
+structures that exist in your currently selected scope. Here, you can add new
+web content structures, edit existing ones, manage the templates associated with
+a structure, edit the permissions of a structure, and copy or delete structures.
+Copying web content structures can be useful if you'd like to create a new web
+content structure that's similar to an existing one, but you don't want to start
+from scratch. Liferay generates a unique portal ID for the copied structure, but
+every other attribute of the copied structure, including the name, is the same
+as that of the original. Once you've copied a web content structure, you should
+enter a new name for it to avoid confusing it with the original. When you copy a
+web content structure, you'll be prompted to choose whether to copy any detail
+templates or list templates associated with the structure. For information on
+detail templates and list templates, please refer to chapter 9 on Dynamic Data
+Lists.
 
 \begin{figure}[htbp]
 \centering
-\scalegraphics{../../images/04-web-content-structure-editor.png}
-\caption{Figure 3.1: Structure Elements}
+\scalegraphics{../../images/manage-structures.png}
+\caption{Figure 3.1: You can access the Manage Structures interface by clicking
+\emph{manage} -> \emph{Structures} from the Web Content page of the Control
+Panel.}
 \end{figure}
+
+The second way to access the Manage Structures interface is directly from the
+web content article WYSIWYG editor. Click *Add* &rarr; *Basic Web Content* from
+the Web Content page to add another piece of content to your portal. Instead of
+going right for the content, this time we'll first create a structure. To access
+the Manage Structures interface, simply click on *Select* next to the
+*Structure* heading near the top of the page. To create a new structure in your
+chosen scope, simply click on the *Add* button in the Manage Structures popup.
+
+It's very easy to create and edit structures: all you have to do is drag
+elements into the structure and then give them names. For instance, select the
+*Checkbox* element under the *Form Controls* tab and drag it onto the structure.
+You can do the same with any of the elements. To remove it from the structure,
+simply select the *Delete* icon (black circle with X) in the upper right corner
+of the element. Take a moment to add, delete and rearrange different elements.
 
 Liferay supports the following elements in structures:
 
@@ -2420,19 +2438,17 @@ structures to model everything from articles, to video metadata, to
 databases of wildlife. You're limited only by your imagination. To fire
 that imagination, let's look more closely at the form elements.
 
-\subsubsection{Editing form elements
-}
+\subsubsection{Editing form elements}
 
-When creating a new structure it is essential you set variable names
-template writers can use to refer to elements on your form. If you don't
-do this, Liferay generates random variable names and these can be
-difficult for a template writer to follow. For example, consider a field
+When creating a new structure, it is essential that you set variable names.
+Template writers can use these variables to refer to elements on your form. If
+you don't set variable names, Liferay generates random variable names, and these
+can be difficult for a template writer to follow. For example, consider a field
 called \emph{Author}. You might create this field in your form but the
 underlying variable name in the structure might look something like
-\texttt{TextField4882}. The template writer needs to create markup for
-your structure and place the Author field in a certain spot in the
-markup. How will he or she know which field is Author when they're all
-named randomly?
+\texttt{TextField4882}. The template writer needs to create markup for your
+structure and place the Author field in a certain spot in the markup. How will
+he or she know which field is Author when they're all named randomly?
 
 To solve this problem, all you need to do is set a variable name for
 each field as you add it to your structure. Let's do this now. In your
@@ -2456,8 +2472,10 @@ words such as \emph{and}, \emph{but}, \emph{the}, and so on, or you can
 have it index the full text of the field. By default, indexing is turned
 off.
 
-\textbf{Predefined Value:} If there's a common default value for this
-field, type it here.
+\textbf{Predefined Value:} Specifying predefined values for structure forms is a
+way to specify defaults. When a user creates a new web content article based on
+a structure that has predefined values for various fields, the predefined values
+appear in the form as defaults for those fields. 
 
 \textbf{Instructions for the User:} Check this box and type a
 description of what the field is for to display it as a tooltip for the
@@ -2473,7 +2491,7 @@ for a particular article.
 is required, users must enter a value for it in order to submit content
 using this structure.
 
-For the Nosester structure, type something in the \emph{Instructions for
+For the Nose-ster structure, type something in the \emph{Instructions for
 the User} field that helps users know what to put into the Body element
 (example: \emph{this is an HTML Text area for the body of your
 content}). Also enable the \emph{Display as Tooltip} box. Now, when
@@ -2604,7 +2622,7 @@ sacrifices some simplicity, yet it is still easy to use.
 
 \textbf{CSS} (Cascading Style Sheets): You can use CSS if your structure
 is very straightforward and modifications are simple (colors, fonts,
-layouts, etc). If your structure is more complex, however, you'll need
+layouts, etc.). If your structure is more complex, however, you'll need
 to use one of the other options.
 
 \subsubsection{Adding a Template
@@ -2628,9 +2646,10 @@ defined for our content.
   Go back to the Web Content section of the Control Panel and click
   \emph{Add} under \emph{Web Content}.
 \item
-  Click the \emph{Edit} icon for Structures.
+  Click \emph{Select} next to the Structures heading to access the Manage
+  Structures interface. 
 \item
-  Remove the Content field and add the following fields:
+  Add the following fields:
 \end{enumerate}
 
 \ctable[pos = H, center, botcap]{ll}
@@ -2653,31 +2672,36 @@ Text Area & \emph{body}
 \begin{enumerate}[1.]
 \setcounter{enumi}{3}
 \item
-  Select \emph{Save} and give the structure a name.
+		Name the structure \emph{News Article} and click \emph{Save}.  
 \item
-  Go back to the main web content page and select the \emph{Templates}
-  tab.
+		Back on the Manage Structures interface, click \emph{Actions}
+		\rightarrow \emph{Manage Templates} next to the News Article structure
+		that you created. 
 \item
-  Select \emph{Add Template.}
+		Click \emph{add}. 
 \item
-  Type in a name and description.
+		Enter the name \emph{News Article} and add a description. 
 \item
-  De-select the box labeled \emph{Cacheable.}
+		Make sure Velocity is selected as the script language (it's the
+		default). 
 \item
-  Select VM as the language.
+		If you've written the script beforehand, you can select \emph{Browse} to
+		upload it from your machine. Otherwise, you can click \emph{Launch
+		Editor} to type the script directly into the small editor window that
+		appears. 
 \item
-  Click \emph{Select} and choose a Structure that goes with the
-  Templates.
+		Click \emph{Save}.  
 \item
-  If you've written the script beforehand, you can select \emph{Browse}
-  to upload it from your machine. Otherwise, you can click \emph{Launch
-  Editor} to type the script directly into the small editor window that
-  appears.
+		Click \emph{Back}.
 \item
-  Select \emph{Save.}
+		Select the News Article structure. 
 \item
-  Return to the Web Content tab and open the Company News content.
-  You'll see the new element labeled Abstract just below the Title.
+		On the New Web Content form, you'll see the Title, Abstract, Image, and
+		Body fields that you defined for the News Article structure. The News
+		Article template should also be selected. 
+\item
+		Populate the fields and click \emph{Publish} to publish your News
+		Article. 
 \end{enumerate}
 
 Below is the template script for this structure. It is written in
@@ -2718,7 +2742,7 @@ the rest of the script:
   sets the \texttt{read\_more} parameter.
 \end{itemize}
 
-When this template is rendered, it looks something like this:
+When this template is rendered, it looks like this:
 
 \begin{figure}[htbp]
 \centering
@@ -2843,23 +2867,25 @@ at any time through the Control Panel within \emph{Portal Settings}.
 6.1, there were two ways of creating sites: organizations and
 communities. This has been simplified to provide more ease of use and
 allow for more flexibility. The main role of organizations is still to
-organize the users of the portal in a hierarchy but they can also have
+organize the users of the portal in a hierarchy, but they can also have
 associated sites. Communities can still be created through independent
-sites but the new name reflects the fact that sites can be used for many
+sites, but the new name reflects the fact that sites can be used for many
 different purposes besides communities.
 
 \end{roundedframe}
 
-
 Sites can be created through the Control Panel by a portal
-administrator. To add a site, click the \emph{Sites} link on the left
-side of the Control Panel in the Portal section and then click
-\emph{Add} in the toolbar. If there is at least one site template
-available, a dropdown menu will be shown allowing you to select a
-\emph{Blank Site}. Other site templates will appear in the menu as they
-become available. \emph{Site templates} provide a preconfigured set of
-pages, applications and content that can be used as the basis of the
-site.
+administrator. To add a site, click on \emph{Sites} under the Portal section of the
+Control Panel and then click \emph{Add}. If there is at least one site template
+available, a dropdown menu appears. Site templates provide a preconfigured set
+of pages, portlet applications, and content that can be used as the basis of a
+site's public or private page set. To create a site from scratch, select \emph{Blank
+Site}. Otherwise, select the name of the site template you'd like to use. If you
+opt to create a site from a site template, you have to choose whether to copy
+the site template's pages as your new site's public or private page set. If
+other site templates are created, they will appear in the Add menu as they
+become available. The following figure shows the form that needs to be filled
+when creating a \emph{Blank Site}.
 
 The following figure shows the form that needs to be filled when
 creating a \emph{Blank Site}.
@@ -2954,29 +2980,44 @@ site's public pages or private pages.}
 \end{figure}
 
 Site templates are very powerful for managing many similiar sites. Let's
-look further at how they work.
+examine how they work.
 
-\section{Using site templates
-}
+\section{Using site templates}
 
-Site Templates can be administered in the Control Panel within the
-portal section of the left menu.
+Site Templates can be administered from the Control Panel. They allow portal
+administrators to create multiple sites with the same default set of pages and
+content. Site templates can contain multiple pages, each with its own theme,
+layout template, portlets, and portlet configurations. Site templates can also
+contain content just like actual sites. This allows administrators to use site
+templates to create new sites that are each created with the same default pages,
+portlets, and content. After they've been created, these sites and their pages
+can be modified by site administrators. Using site templates can save site
+administrators a lot of work even if each site that was created from a given
+site template ends up being very different.
 
-Creating or modifying a site template is done using the same tools used
-to manage a site. You can use these tools to add a hierarchy of pages.
-Each page can have any configuration and any number of applications,
-just like a regular site. When you create a site using a site template,
-the configuration of pages and applications are copied from the template
-to the site. By default, all changes made to the site template are
-automatically copied to sites based on that template.
+To get started, click on \emph{Site Templates} in the Portal section of the
+Control Panel. Here, you can add, manage, or delete site templates. You can also
+configure the permissions of site templates. As long as a site is linked to the
+site template it was created from, changes to the site template's pages,
+portlets, and portlet configurations are propagated to the site. Changes to a
+site template's content, however, are not propagated to existing sites that are
+linked to the site template. We discuss the propagation of changes between site
+templates and sites in more detail in the section on site templates use cases
+below.
 
-Site templates can also contain content just like actual sites. This
-allows you to use a site template to create sample content that appears
-in your site when it is first created. Changes to a site template's
-content, however, are not propagated to existing sites that are linked
-to the site template.
-
-\clearpage
+To manage the pages of a site template, click on \emph{Site Templates} in the
+Control Panel and then click \emph{Actions} \rightarrow \emph\{Manage Pages}.
+From here, you can add or remove pages from a site template or select themes and
+layout templates to apply to the site template. Click on a specific page if
+you'd like to select a different theme or layout template for that page. To edit
+the pages themselves, click \emph{Actions} \rightarrow \emph{View Pages}. You
+can add specific portlets to each page of a site template and configure the
+preferences of each portlet. Each page can have any theme, any layout template,
+and any number of portlet applications, just like a page of a regular site. As
+with site pages, you can organize the pages of a site template into hierarchies.
+When you create a site using a site template, the configuration of pages and
+portlets is copied from the template to the site.  By default, all changes made
+to the site template are automatically copied to sites based on that template.
 
 \begin{roundedframe}
   \begin{wrapfigure}{l}{0.12\textwidth}
@@ -2997,8 +3038,8 @@ By default, the following site templates are provided:
 \item
   \textbf{Community Site:} Provides a preconfigured site for building
   online communities. The home of a \emph{community site} provides
-  message boards, search, a display of a poll and statistics of the
-  activity of community members. The site will also be created with a
+  message boards, search, a display of a poll, and statistics of the
+  activity of community members. The site is also created with a
   page for a community calendar and a page for a wiki.
 \item
   \textbf{Intranet Site:} Provides a preconfigured site for an intranet.
@@ -3020,37 +3061,41 @@ The following figure displays the form shown when editing the
 
 To view and manage the pages of a site template, click the \emph{Open
 site template} link. This opens the template in a new browser window (or
-tab) and it can be navigated or managed like a regular site..
+tab) and it can be navigated or managed like a regular site.
 
-For example, let's suppose we need to create sites for three
-suborganizations of the Nosester organization: Engineering, Marketing
-and Legal. These are to be private sites designed for each
-organization's internal use. We could design each site separately but we
-can save ourselves some work if we create a site template to use
-instead.
+\subsection{Site Templates Example}
+
+Suppose we need to create the following three sites for Nose-ster's internal
+use: Engineering, Marketing, and Legal. These should be private sites that are
+only accessible to members of these respective departments. We could design each
+site separately but can save ourselves some work if we create a site template to
+use instead.
 
 To create a site template, navigate to the Control Panel and click
 \emph{Site Templates}. Then click \emph{Add} and enter a name for your
-template: we'll use \emph{Organization Site Template} for our example.
-Leave the \emph{Active} and \emph{Allow Site Administrators to Modify
-the Pages Associated with This Site Template} boxes checked. The
-\emph{Active} box must be checked for your template to be usable. If
-your template is still a work in progress, you can uncheck it so no one
-uses it until it's ready. Checking \emph{Allow Site Administrators to
-Modify the Pages Associated with This Site Template} allows Site
-Administrators to modify or remove the pages and portlets the template
-introduces to their sites--if you want the templates to be completely
-static, you should uncheck this.
+template: we'll use \emph{Department} for our example. Leave the \emph{Active}
+and \emph{Allow Site Administrators
+to Modify the Pages Associated with This Site Template} boxes checked. The
+\emph{Active} box must be checked for your template to be usable. If your template is
+still a work in progress, you can uncheck it to ensure that no one uses it until
+it's ready. Checking \emph{Allow Site Administrators to Modify the Pages Associated
+with This Site Template} allows site administrators to modify or remove the
+pages and portlets that the template introduces to their sites---if you want the
+templates to be completely static, you should uncheck this.
 
-Click on the \emph{Open site template} link to begin adding pages and
-portlets and configuring the layouts. For our example, we would like our
-template to include four pages: a Home page with the Activities,
-Announcements and Calendar portlets, a Documents and Media page with the
-Documents and Media portlet, a Wiki page with the Wiki and Tag Cloud
-portlets and a Message Boards page with the Message Boards and Tag Cloud
-portlets. The changes are automatically saved as you make them, so once
-you're finished, return to the Site Templates page of the Control Panel
-and select \emph{Save}.
+From the list of site templates, click on the \emph{Department} site template that
+you created. Then click on the \emph{Open site template} link to begin adding pages
+and portlets and configuring the layouts. When you click this link, the site
+template opens in a new browser tab or window. For our example, we would like
+our site template to include four pages. First, we'd like a Home page with the
+Activities, Announcements, and Calendar portlets. Next, we'd like a Documents
+and Media page with the Documents and Media portlet. Finally, we should create a
+Wiki page with the Wiki and Tag Cloud portlets and a Message Boards page with
+the Message Boards and Tag Cloud portlets. When you're done creating and
+configuring the pages of your site template, just close the browser tab or
+window that opened when you clicked \emph{Open site template}. Changes to site
+templates are automatically saved as you make them, so you don't need to return
+to the Site Templates page of the Control Panel and select \emph{Save}.
 
 \begin{figure}[htbp]
 \centering
@@ -3059,30 +3104,104 @@ and select \emph{Save}.
 currently editing}
 \end{figure}
 
-Now let's create the Engineering, Marketing and Legal organizations
-whose sites we want to create with our template. Go to the Control Panel
-and click \emph{Users and Organizations}. Then click the \emph{Add}
-button and select \emph{Regular Organization}. Enter a name for your
-organization, select the \emph{Organization site} tab and check the
-\emph{Create Site} box. When you check this box, two drop-down lists
-appear: one for the site's Public Pages and one for its Private Pages.
-To use your template to create the site, select the name of your
-template, \emph{Organization Site}, from the Private Pages drop-down
-list. Click \emph{Save} to create your site. You can view the new site
-by clicking the \emph{Open private pages} link from the newly created
-organization page. The new site will have all the pages and portlets you
-created in the template. This feature streamlines the site creation
-process for administrators, making it easy to create sites quickly.
-Next, let's discuss how to create and apply page templates.
+Next, let's use our site template to create our Engineering, Marketing and Legal
+sites. Go to the Control Panel and click on \emph{Sites}. Then click \emph{Add}
+\rightarrow
+\emph{Department}. Enter *Engineering* for the site name and set the Membership Type
+to \emph{Private}. Recall that private sites don't appear in the My Sites portlet so
+that regular portal users won't even know that the Engineering site exists.
+Also, the only way users can be added to a private site is via an invitation
+from a site administrator. Leave the \emph{Active} box checked so that your site can
+be used immediately. Select the \emph{Copy as Private Pages} option since our
+Engineering site is intended for internal use only. Leave the \emph{Enable
+propagation of changes from the site template} box checked so that the
+Engineering site receives updates if the Department site template is modified.
+Finally, click \emph{Save} to create your the Engineering site.
 
-\section{Using page templates
-}
+Repeat these steps to create the Marketing and Legal sites. The new sites have
+all the pages and portlets you created in the site template. To view the pages
+of the new sites, click on \emph{Sites} in the Control Panel and then click on
+\emph{Actions} \rightarrow \emph{Go to Private Pages} next to one of your new sites. Using site
+templates streamlines the site creation process for administrators, making it
+easy to create sites quickly. Now each Nose-ster department has its own
+calendar, documents and media library, wiki, and message boards application.
+Although the pages and portlets of each department's site are the same, each
+site will quickly be filled with department-specific information as users add
+and share content within the sites. Also, site administrators can add new pages,
+portlets, and content to their sites, further differentiating each department's
+site from the others.
 
-Page templates function similarly to site templates but at the page
-level. Page templates provide a pre-configured page to reuse. Within a
-page template it is possible to set up a theme, a layout and specific
-applications and their configuration. Both sites and site templates can
-utilize page templates for creating new pages.
+\subsection{Propagating changes from site templates to sites}
+
+It's possible for site template administrators to add, update, or delete site
+template pages. Changes made to a site template can be propagated to sites whose
+pages sets are linked to the site template. Such a link is created when you
+create a site based on a site template and leave the \emph{Enable propagation of
+changes from the site template} box checked. To disable or re-enable this link
+for a site, select the site in the Control Panel's context menu selector. Then
+click on \emph{Site Settings} and uncheck or recheck the \emph{Enable propagation of
+changes from the site template} checkbox. You can can also access the Site
+Settings interface via the Dockbar by clicking \emph{Manage} \rightarrow \emph{Site Settings}.
+In this section, we explain the propagation of changes from site templates to
+sites and discuss the options available to site administrators and site template
+administrators.
+
+If a site's page set has been created from a site template and the propagation
+of changes from the site template is enabled, site administrators can add new
+pages but cannot remove or reorder the pages imported from the site template.
+If a site has both pages imported from a site template and custom site pages,
+the site template pages always appear first; custom pages added by site
+administrators appear after the site template pages. Only site template
+administrators can remove, reorder, or add site template pages. Site
+administrators can add or remove custom site pages. They can also reorder custom
+site pages as long as they're all positioned after the site template pages. Site
+template administrators cannot add, remove, or reorder custom site pages.
+
+If a site administrator changes a page that was imported from a site template
+and refreshes the page, the following message appears:
+
+	This page has been changed since the last update from the site template. No
+	further updates from the site template will be applied. Click \emph{Reset} to
+	overwrite the changes and receive updates from the site template.
+
+If the site administrator clicks the \emph{Reset} button, changes are
+propagated from the site template to all the pages of the site that were
+imported from the site template. Clicking the *Reset* button makes two kinds of
+updates. First, changes made by site administrators to pages that were imported
+from the site template are undone. Second, changes made by site template
+administrators to site template pages are applied to the site pages.
+
+Site template administrators can set preferences for portlets on site template
+pages. When a portal administrator creates a site from a site template, the
+portlet preferences are copied from the site template's portlets, overriding any
+default portlet preferences. When merging site template and site changes, e.g.,
+when resetting, portlet preferences are copied from site template portlets to
+site portlets. Only global portlet preferences or local portlet preferences
+which don't refer to IDs are overwritten.
+
+Site administrators can also add data to site template portlets. For example,
+site template administrators can add the Wiki portlet to a site template page
+and use the Wiki to create lots of articles. When a portal administrator creates
+a site from a site template, data is copied from the site template's portlets to
+the site's portlets. The preferences of the site's portlets are updated with the
+IDs of the copied data. For example, if a site is created from a site template
+that has a Wiki portlet with lots of wiki articles, the wiki articles are copied
+from the site template's scope to the site's scope and site's Wiki portlet is
+updated with the IDs of the copied wiki articles. Portlet data is only copied
+from a site template to a site when the site is first created; data is not
+copied copied during a site reset.
+
+Now that we've learned how site templates work, let's discuss how to use page
+templates. 
+
+\section{Using page templates}
+
+Click on *Page Templates* in the Control Panel to see a list of page templates.
+Page templates function similarly to site templates but at the page level. Each
+page template provides a pre-configured page to reuse. Within a page template,
+it's possible to select a theme, a layout template, to add portlets to the page
+and to configure portlet preferences. Both sites and site templates can utilize
+page templates for creating new pages.
 
 \begin{figure}[htbp]
 \centering
@@ -3090,24 +3209,17 @@ utilize page templates for creating new pages.
 \caption{Figure 3.13: Page Templates}
 \end{figure}
 
-The Page Templates page of the Control Panel shows a list of templates
-and lets you create new ones. It also allows you to edit existing
-templates and configure their permissions. By default three sample page
-templates are provided:
+You can edit or delete existing page templates, configure their permissions, or
+add new page templates. By default three sample page templates are provided:
 
 \begin{itemize}
 \item
   Blog: provides a page with three applications related to blogging. It
-  has two columns, the main left column contains the blogs portlet and
+  has two columns: the main left column contains the blogs portlet and
   the small right column provides two side portlets, Tag Cloud and
-  Recent Bloggers. The tag cloud application will show the tags used
-  within the site and will allow navigating through the blog entries
+  Recent Bloggers. The tag cloud application shows the tags used
+  within the site and allows navigating through the blog entries
   shown in the main blogs portlet.
-\item
-  Wiki: provides a page with three applications related to authoring a
-  wiki. It also has two columns, the main left column with the wiki
-  application and two right side portlets to allow navigating through
-  pages by tags and categories.
 \item
   Content Display Page: provides a page preconfigured to display
   content. It has three auxiliary applications (Tags Navigation,
@@ -3120,6 +3232,11 @@ templates are provided:
   web content article or when editing an existing one. When you create a
   new web content article, a unique (canonical) URL for the web content
   pointing to this page will be assigned to it.
+\item
+  Wiki: provides a page with three applications related to authoring a
+  wiki. It also has two columns, the main left column with the wiki
+  application and two right side portlets to allow navigating through
+  pages by tags and categories.
 \end{itemize}
 
 To add a new page template, click the \emph{Add} button. Then enter a
@@ -3259,12 +3376,12 @@ example, if you don't want images or content titles to be changed when
 the content is translated, you can make sure those fields aren't listed
 as localizable. When you follow the steps above to localize content,
 only fields within the structure that had the \emph{Localizable} box
-checked appear within the translation window.
+checked appear within the translation window.Next, we'll discuss how to let
+users customize their site pages. 
 
-\section{Allowing users to customize site pages
-}
+\section{Allowing users to customize site pages}
 
-As we discussed above, as your site becomes larger and more complex,
+As we discussed before, as your site becomes larger and more complex,
 management of the content becomes more challenging. We've gone over
 Liferay management tools that help you create content quickly and in an
 orderly fashion. You created a simple announcement with Liferay's
@@ -3287,12 +3404,11 @@ approval and reviewal process weeks before you want it displayed on the
 web site. Liferay gives you this flexibility with the \emph{Schedule}
 and \emph{Workflow} features.
 
-\subsubsection{Scheduling Web Content
-}
+\subsubsection{Scheduling Web Content}
 
 Liferay's WCM lets you define when your content goes live. You can
 determine when the content is displayed, expired and/or reviewed. This
-is an excellent to way to keep your site current and free from outdated
+is an excellent way to keep your site current and free from outdated
 (and perhaps incorrect) information. The scheduler is built right into
 the form your users access to add web content, in the same column as the
 structure and template selectors.
@@ -3325,58 +3441,184 @@ content.
 Similar to scheduling, Liferay's staging feature also allows you to
 manipulate time, in a manner of speaking.
 
-\section{Staging page publication
-}
+\section{Staging page publication}
 
 Staging is an important feature of Liferay WCM. The concept of staging
-is a simple one: you can modify your site behind the scenes and then
-publish it all in one shot. You don't want your users seeing your web
-site change before their eyes as you're modifying it, do you? Liferay's
-staging environment allows you to make changes to your site in a
-specialized \emph{staging area}, and when you're finished, publish the
-whole site to your users.
+is a simple one: you can modify your site behind the scenes and then publish all
+your updates in one shot. You don't want users seeing your web site change
+before their eyes as you're modifying it, do you? Liferay's staging environment
+allows you to make changes to your site in a specialized *staging area*. When
+you're finished, you can publish all your site changes at once.
 
-You can use staging in multiple ways. You can have a staging server---a
-separate instance of Liferay Portal which is used just for staging.
-Content creators can then use this server to make their changes while
-the live server handles the incoming user traffic. When changes to the
-site are ready to be published, they are pushed over the network to the
-live server.
+Liferay provides site administrators with two different ways to set up staging:
+Local Live and Remote Live. With Local Live staging, both your staging
+environment and your live environment are hosted on the same server. When Local
+Live staging is enabled for a site, a clone of the site is created containing
+copies of all of the site's existing pages. Portlet data is also copied,
+depending on which portlets are selected when staging is enabled. The cloned
+site becomes the staging environment and the original site becomes the live
+environment.
 
-You can also use staging in the same instance of your Liferay Portal. In
-this configuration, you have a \emph{local} staging environment: you
-host both your staging environment and your live environment on the same
-server. Either way the interface is the same, once set up; the only
-difference comes when it's actually time to publish your content.
+When Remote Live staging is enabled for a site, a connection is established
+between the current site and another site on a remote Liferay server. The remote
+site becomes the live environment and the current site becomes the staging
+environment--an instance of Liferay Portal used solely for staging. Content
+creators can use the staging server to make their changes while the live server
+handles the incoming user traffic. When changes to the site are ready to be
+published, they are pushed over the network to the live server.  Whether you
+enable Local Live or Remote Live staging, the interface for managing and
+publishing staged pages is the same. 
 
-In addition, Liferay 6.1 adds the capability to create multiple
-variations of staged pages, so you can manage several future versions of
-a site simultaneously. Variations can be merged and published through an
-intuitive UI. Let's jump in to see how to use staging.
+So when should you use Local Live staging and when should you use Remote Live
+Staging? Local Live staging allows you to publish site changes very quickly,
+since the staged and live environments are on the same server. It's also easier
+to switch between the staged and live environments using Local Live staging.
+However, since the staged content is stored in the same database as the
+production content, the content isn't as well protected or backed up as with
+Remote Live staging. Also, you can't install new versions of portlets for
+testing purposes in a Local Live staging environment since only one version of a
+portlet can be installed at any given time on a single Liferay server.
 
-\subsubsection{Enabling the staging environment
-}
+With Remote Live staging, your staging and live environments are hosted on
+separate servers. This allows you to deploy new versions of portlets and
+content to your staging environment without worrying about interfering with your
+live environment. With Remote Live staging, you can also use one Liferay
+instance as the staging server for multiple production servers. However,
+publishing is slower with Remote Live than with Local Live since data needs to
+be transferred over a network. And, of course, you need more hardware to run a
+separate staging server.
 
-Staging configuration can be found in the Site Settings UI. The Staging
-tab allows us to make changes in a staging environment and preview our
-work before publishing it to the live site. Let's create a staging
-environment for Nose-ster's home page.
+Liferay 6.1 added a feature to staging called Page Versioning. This feature
+works with both Local Live and Remote Live staging and allows site
+administrators to create multiple variations of staged pages. This allows to
+several different versions of sites and pages to be developed at the same time.
+Variations can be created, merged, and published using a Git-like versioning
+system. Let's jump in to see how to use staging.
 
-First, you'll add a new page. Click \emph{Add → Page} from the toolbar
-in the default site and name the new page \emph{News and Events}. Next,
-click the \emph{View Pages} button and add the Alerts and Announcements
-portlets to it.
+\subsection{Enabling Local Live staging}
 
-When you activate staging, Liferay creates a duplicate of all existing
-content on your site and uses that to create the staging site. Because
-of this, we recommend only activating staging on relatively new, clean
-sites. Having a few pages and some portlets (like the site we've
-created) is no big deal, but if you have already created a large amount
-of content you may not be able to enable staging on that site.
+Site administrators can enable Staging for a site via the Site Settings UI. To
+reach this interface via the Control Panel, select a site in the context menu
+selector, click on *Site Settings* in the Control Panel menu, then click on
+*Staging* at the left. Under Staging Type, select either *Local Live* or *Remote
+Live* and additional options appear. Staging allows changes to be made in a
+staging environment so that work can be reviewed, possibly using a workflow,
+before it's published to a live site. Enabling Local Live staging is easy. Just
+select *Local Live* and decide whether you'd like to enable page versioning. You
+can enable page versioning on a site's public pages, private pages, both, or
+neither. Page versioning allows you to work in parallel on different versions of
+pages and maintains a history of all page modifications. We discuss page
+versioning in more detail below.
 
-Now we're ready to activate the staging feature for this site. Go to the
-Control Panel then to \emph{Site Settings} and select \emph{Staging}
-from under the \emph{Advanced} heading.
+\subsection{Enabling Remote Live staging}
+
+When you enable Remote Live staging, the remote site becomes the live
+environment and the current site becomes the staging environment. The remote
+(live) Liferay server and the local (staging) Liferay server should be
+completely separate systems. They should not, for example, share the same the
+database. When Remote Live staging is enabled, all the necessary information is
+transferred over the network connecting the two servers. Before a site
+administrator can enable Remote Live staging for a site, the remote Liferay
+server must first be added to the current Liferay server's list of allowed
+servers. The current Liferay server must also be added to the remote Liferay
+server's list of allowed servers. You can make these configurations in your
+Liferay servers' \texttt{por\-tal-ext.pro\-per\-ties} files. Your first step
+should be to add the following lines to your current Liferay server's
+\texttt{por\-tal-ext.pro\-per\-ties} file:
+
+\begin{verbatim}
+    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
+    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Remote server IP address]
+\end{verbatim}
+
+Then add the following lines to your remote Liferay server's
+\texttt{por\-tal-ext.pro\-per\-ties} file:
+
+\begin{verbatim}
+    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
+    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Local server IP address]
+\end{verbatim}
+
+Remember to restart both Liferay servers after making these portal properties
+updates. After restarting, log back in to your local Liferay portal instance as
+a site administrator. Then navigate to the Control Panel and choose a site in
+the context menu selector. Then click on \emph{Site Settings} in the Control
+Panel menu and then on \emph{Staging} in the menu at the left. Select
+\emph{Remote Live} under Staging Type and additional options appear.
+
+First, enter your remote Liferay server's IP address into the Remote Host/IP
+field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
+to the load balanced IP address of the cluster in order to increase the
+availability of the publishing process. Next, enter the port on which the remote
+Liferay instance is running into the Remote Port field. You only need to enter a
+Remote Path Context if a non-root portal servlet context is being used on the
+remote Liferay server. Finally, enter the site ID of the site on the remote
+Liferay server that will be used for the Live environment. If a site hasn't
+already been prepared for you on the remote Liferay server, you can log in to
+the remote Liferay server and create a new blank site. After the site has been
+created, note the site ID so you can enter it into the Remote Site ID field on
+your local Liferay server. You can find any site's ID by selecting
+\emph{Actions} \rightarrow \emph{Edit} next to the site's name on the Sites page
+of the Control Panel. Finally, check the *Use a Secure Network Connection*
+field to secure the publication of pages from your local (staging) Liferay
+server to your remote (live) Liferay server.
+
+That's all you need to do to enable Remote Live Staging! However, when a user
+attempts to publish changes from the local (staging) server to the remote (live)
+server, Liferay passes the user's credentials to the remote server to perform a
+permission check. In order for a publishing operation to succeed, the operation
+must be performed by a user that has identical credentials and permissions on
+both the local (staging) and the remote (live) server. This is true regardless
+of whether the user attempts to publish the changes immediately or attempts to
+schedule the publication for later. If only a few users should have permission
+to publish changes from staging to production, it's easy enough to create a few
+user accounts on the remote server that match a selected few on the local
+server. However, the more user accounts that you have to create, the more
+tedious this job becomes and the more likely you are to make a mistake. And you
+not only have to create identical user accounts, you also have to ensure that
+these users have identical permissions. For this reason, we recommend that you
+use LDAP to copy selected user accounts from your local (staging) Liferay server
+to your remote (live) Liferay server. Liferay's Virtual LDAP Server application
+(EE-only), available on Liferay Marketplace, makes this easy.
+
+\subsection{Example: Enabling Local Live staging}
+
+Let's create a Local Live staging environment for Nose-ster's home page. Before
+we begin, let's add a new page. Click \emph{Add} \rightarrow \emph{Page} from
+the toolbar in the default site and name the new page \emph{News and Events}.
+Next, click the \emph{View Pages} button to navigate to the pages. Then add the
+Alerts and Announcements portlets to the News and Events page. 
+
+When you activate Local Live staging, Liferay creates a clone of your
+site. This clone became the staging environment. Because of this, we recommend
+only activating staging on new, clean sites. Having a few pages and some
+portlets (like those of the example site we've created) is no big deal. However,
+if you have already created a large amount of content you might not be able to
+enable staging on that site. Also, if you intend to use page versioning to track
+the history of updates to your site, we recommend that you enable it as early as
+possible, *before* your site has many pages and lots of content. Your site's
+update history won't be saved until you enable page versioning. Page versioning
+requires staging (either Local Live or Remote Live) to be enabled.
+
+Now we're ready to activate staging for this site. Go to the Control Panel then
+to \emph{Site Settings} and select \emph{Staging} from under the \emph{Advanced}
+heading. We'll assume we don't have a separate staging server so we'll select
+the \emph{Local Live} staging type. If you do have a separate server to use for
+staging, follow the instructions in the previous section for configuring it and
+your local server for remote staging. Either way, once you make a selection
+(either \emph{Local Live} or \emph{Remote Live}), more options become available
+for page versioning and staged portlets.
+
+\subsection{Enabling Page Versioning and Staged Portlets}
+
+Enabling page versioning for a site allows site administrators to work in
+parallel on multiple versions of the site's pages. Page versioning also
+maintains a history of all updates to the site from the time page versioning was
+enabled. Site administrators can revert to a previous version of the site at any
+time. This flexibility is very important in cases where a mistake is found and
+it's important to quickly publish a fix. If you're following the Nose-ster
+example, check \emph{Enabled On Public Pages} to enable page versioning for the
+Nose-ster site and then click \emph{Save}.
 
 \begin{figure}[htbp]
 \centering
@@ -3385,48 +3627,33 @@ from under the \emph{Advanced} heading.
 content should be staged.}
 \end{figure}
 
-We'll assume we don't have a separate staging server so we'll select the
-staging type \emph{Local Live}. If you want to set up a remote staging
-environment, it's easy. First select \emph{Remote Live}, then supply the
-name or IP of the remote server where staged content should be
-published, the port (80 if Liferay is sitting behind a web server or the
-port your application server is listening on if not) and the remote site
-or organization ID. You can find this ID by selecting \emph{Actions →
-Edit} on any site in the Control Panel. Either way, once you make a
-selection (\emph{Local Live} or \emph{Remote Live}), more options become
-available.
-
-We'll cover many of the collaboration portlets listed here when we come
-to chapter 6. For now you just need to be aware the option is available
-to enable or disable staging for any of them and you need to decide if
-you want to stage content for these portlets. In the case of the
-collaborative portlets, the answer is usually ``no.'' Why? Because
-portlets such as the Message Boards are designed for user interaction.
-If their content were staged, you'd have to manually publish your site
-whenever somebody posted a message on the message boards to make that
-message appear on the live site.
-
+Before you activate staging, you can choose which portlets' data should be
+copied to staging. We'll cover many of the collaboration portlets listed under
+the Staged Portlets heading when we come to chapter 8. For now, you just need to
+be aware that you can enable or disable staging for any of these portlets. Why
+might you want to enable staging for some portlet types but not others? In the
+case of collaborative portlets, you probably \emph{don't} want to enable staging
+since such portlets are designed for user interaction. If their content were
+staged, you'd have to manually publish your site whenever somebody posted a
+message on the message boards to make that message appear on the live site.
 Generally, you'll want web content to be staged because end users aren't
 creating that kind of content----web content is the stuff you publish to
-your site. But portlets like the message boards or the wiki would likely
-benefit from \emph{not} being staged.
+your site. But portlets like the Message Boards or the Wiki would likely
+benefit from \emph{not} being staged. Notice which portlets are marked for
+staging by default: if you enable staging and accept the defaults, staging is
+\emph{not} enabled for the collaborative portlets. 
 
-Enabling \emph{Page Versioning} makes it so you can work in parallel
-with other users on multiple versions of the same pages and it gives you
-the flexibility to revert easily to a previous version if you encounter
-any issues. Check \emph{Enabled On Public Pages} so we can look at
-versioning.
+\subsection{Using the staging environment}
 
-\subsubsection{Using the staging environment
-}
-
-If you navigate back to the News and Events page you'll now notice some
-new items along the top of the screen. These will help us manage staged
-pages. You'll also notice most of your page management options have been
-removed, because now you can't directly edit live pages--you'll now use
-the staging environment to do that. Click on \emph{Staging} to view the
-staged area. Your management options are restored and you have some new
-options related to staging.
+After enabling staging (either Local Live or Remote Live) for a site, you'll
+notice a colored bar with some new menus just below the Dockbar when you
+navigate to the site. These new menus help us manage staged pages. You'll also
+notice that most of your page management options have been removed, because now
+you can't directly edit live pages. You now must use the staging environment to
+make changes. Click on \emph{Staging} to view the staged area. Your management
+options are restored and you can access some new options related to staging. If
+you're following along with the Nose-ster example, navigate back to the News and
+Events page and click on *Staging* to get your page editing capabilities back.
 
 \begin{figure}[htbp]
 \centering
@@ -17912,6 +18139,36 @@ unnecessary files, it's time to deploy Liferay.
   and delete all the content of the folder.
 \item
   Extract the contents of the Liferay WAR file into this folder.
+  \item
+		  Create a file named \texttt{jboss-classloading.xml} in
+		  \begin{verbatim}
+		  $JBOSS_HOME/../server/default/ROOT.war/WEB-INF
+		  \end{verbatim}
+		  and add the following contents to it: 
+		  
+		  \begin{verbatim}
+		  
+<classloading xmlns="urn:jboss:classloading:1.0"
+	parent-first="false"
+	domain="LiferayDomain"
+	export-all="NON_EMPTY" 
+	import-all="true">
+</classloading>
+\end{verbatim}
+
+This configuration file defines a domain that does not allow parent classes to
+load first. Instead, Liferay Portal's classes are loaded first. 
+
+\item
+		Create a \texttt{por\-tal.ext.pro\-per\-ties} file in
+		\texttt{$LIFE\-RAY_HOME} (one level above \texttt{$JBOSS_HOME}) and add
+		the following properties: 
+
+		\begin{verbatim}
+			hibernate.validator.apply_to_ddl=false
+			hibernate.validator.autoregister_listeners=false
+		\end{verbatim}
+
 \item
   Delete the following files from the
   \texttt{\$JBOSS\_HOME/ROOT.war/WEB-INF/lib}:
@@ -17922,11 +18179,11 @@ unnecessary files, it's time to deploy Liferay.
   xml-apis.jar
   \end{verbatim}
 \item
-        Create a \texttt{portal-ext.properties} file in \texttt{\$LIFERAY\_HOME} 
- and add the following properties:
+		Add the following lines to your \texttt{por\-tal.ext.pro\-per\-ties}
+		file: 
 
   NOTE: The autodeploy folder must be set with the full name of the
-  folder - you can't use any variables to define the location
+  folder; you can't use any variables to define the location. 
 
 \begin{verbatim}
 auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy 
@@ -20677,26 +20934,33 @@ organizations, configure permissions and plugins and pretty much
 anything else, you'll do it with the control panel. The nice thing about
 the control panel is it makes all this very easy to do. This chapter
 takes all the concepts you learned about Liferay in chapter 1 (sites,
-organizations and more) and makes them concrete. Here, you'll learn how
+organizations, and more) and makes them concrete. Here, you'll learn how
 to create and manage every aspect of Liferay's configuration.
 
-This chapter covers the following topics:
+This chapter explains how to use the Control Panel to manage the following
+items: 
 
 \begin{itemize}
 \item
-  Using the control panel to manage users, organizations, user groups,
-  and roles
+  Users
 \item
-  Using the control panel to manage password policies, authentication
-  settings, and global user settings
+  Organizations
+\item
+  User Groups
+\item
+		Roles
+\item
+		Password Policies
+\item
+		Authentication Policies
+\item
+		Global User Settings
 \end{itemize}
 
 Let's begin our examination of Liferay's control panel by looking at how
 to manage and organize users in Liferay Portal.
 
 \section{Managing Users }
-
-
 
 The Portal section of the control panel is used for most administrative
 tasks. You'll find there an interface for the creation and maintenance
@@ -20730,14 +20994,28 @@ Additionally, you can configure many server settings, including:
   Plugins Configuration
 \end{itemize}
 
-You'll use the Portal section of the control panel to create your portal
-structure, implement security and administer your users. Configurable
-portal settings include mail host names, email notifications and
-authentication options including single sign-on and LDAP integration.
-Note that only users with the administrator role, which is a portal
-scoped role, have permission to view this section of the control panel.
-You can, of course, grant custom roles permissions to one or more
-sections.
+\section{The Portal Section of the Control Panel}
+
+The Portal section of the Control Panel is used for most administrative tasks.
+You'll find there an interface for the creation and maintenance of the following
+portal entities: users, organizations, user groups, sites, teams, site
+templates, page templates, and roles. Additionally, you can configure many
+settings, including the following ones: password policies, portal settings,
+custom fields, monitoring, and plugins configuration
+
+Since we explained how to manage sites, teams, site templates, and page
+templates in chapters 2 and 3, we won't discuss them in detail here. In this
+chapter, we'll focus on using the Control Panel for user management. We'll
+finish our coverage of the Control Panel in the next chapter, discussing portal
+and server administration. 
+
+As a portal administrator, you'll use the Portal section of the Control Panel to
+create your portal structure, implement security, and administer your users.
+Configurable portal settings include mail host names, email notifications, and
+authentication options, including single sign-on and LDAP integration. Note that
+only users with the administrator role, which is a portal scoped role, have
+permission to view this section of the control panel. You can, of course, grant
+permissions to one or more sections to custom roles. 
 
 \section{Adding users }
 
@@ -20827,69 +21105,147 @@ Let's look next at how to manage organizations.
 \subsection{Organizations }
 
 
+Organizations are used to represent hierarchical structures of users such as
+those of companies, businesses, non-profit organizations, churches, schools, and
+clubs. They are designed to allow distributed user administration. Organizations
+can be used, for example, to represent a sports league. The league itself could
+be modeled as a top-level organization and the various sports (soccer, baseball,
+basketball, etc.) could be modeled as suborganizations. The teams belonging to
+the various sports could be modeled as sub-organizations of the sports
+organizations. So, for example, you could have an organization hierarchy that
+looks like this:
 
-Organizations are used to represent hierarchical structures such as
-those of companies, non-profit organizations, churches, schools and
-clubs. They have been used to represent a sports league, with various
-sports (soccer, baseball, basketball, etc.) and their teams as
-sub-organizations. If you have a collection of users that fit into a
-hierarchical structure, you can model that as an organization.
+\begin{itemize}
+	\item
+Atlantic Sports League
+	\begin{itemize}
+			\item
+	Atlantic Soccer Association
+		\begin{itemize}
+			\item
+		Midway Soccer Club
+			\item
+		Fairview Soccer Club
+			\item
+		Oak Grove Soccer Club
+		\end{itemize}
+	\item
+	Atlantic Baseball Association
+	\begin{itemize}
+			\item
+		Five Points Baseball Club
+			\item
+		Riverside Baseball Club
+			\item
+		Pleasant Hill Baseball Club
+	\end{itemize}
+	\item
+	- Atlantic Basketball Association
+		\begin{itemize}
+			\item
+		- Bethel Basketball Club
+			\item
+		- Centerville Basketball Club
+			\item
+		- New Hope Basketball Club
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
 
-Your portal design might not need organizations or it might have one or
-several, depending on your portal's function. For example, a simple
-photo-sharing web site could be powered by sites only (see below for
-information on sites). On the other hand, organizations are useful for
-corporations or educational institutions since their users can be placed
-easily into a hierarchical structure. In fact, organizations in Liferay
-are designed to model any group hierarchy, from those of government
-agencies all the way down to those of small clubs. Of course, your
-portal can use both organizations and independent sites. For example, a
-corporation or educational institution could create a social networking
-site open to all portal users, even ones from separate organizations.
+Whenever you have a collection of users that fit into a hierarchical structure,
+you can use organizations to model those users. In Liferay, organization
+administrators can manage all the users in their organization \emph{and} in any
+suborganization. Referring to the hierarchy above, for example, an organization
+administrator of the Atlantic Sports League could manage any users belonging to
+the league itself, to any of the associations, or to any of the associations'
+clubs. An organization administrator of the Atlantic Soccer Association could
+manage any users belonging to the Atlantic Soccer Association itself, or to the
+Midway Soccer Club, Fairview Soccer Club, or Oak Grove Soccer Club. However, an
+administrator of the Atlantic Soccer Club would not be able to manage users
+belonging to the Atlantic Baseball Association or to the Bethel Basketball Club.
 
-Organizations and suborganizations can be created in a hierarchy to
-unlimited levels and users can be members of one or many organizations.
-These organizations can all reside in a single hierarchy or cut across
-different hierarchies. Note the rights of an organization administrator
-apply both to his/her organization and to any child organizations. By
-default, members of child organizations are members of the parent
-organizations. This behavior can be customized in your portal's
-\texttt{portal-ext.properties} configuration file.
+Organizations and suborganization hierarchies can be created to unlimited
+levels. Users can be members of one or many organizations. The rights of an
+organization administrator apply both to his/her organization and to any child
+organizations. By default, members of child organizations are implicit members
+of their parent organizations. This means, for example, that members of child
+organizations can access the private pages of their parent organizations. This
+behavior can be customized in your portal's `portal-ext.properties`
+configuration file.
 
-Additionally, Organizations can be associated with roles. One
-application of this in a corporate setting might be an IT Security
-group. You could have a suborganizaton of your IT organization that
-handles security for all of the applications company-wide. If you grant
-the IT Security organization the same administrator role you just gave
-to your own ID, all members of the organization would have
-administrative access to the portal. Suppose now a user in this
-organization later was hired by the Human Resources department. The
-simple act of removing the user from the IT Security organization also
-removes the user's administrative privileges, since the privilege came
-from the IT Security group's role. By adding the user to the HR
-organization, any roles the HR organization has (such as access to a
-benefits system in the portal) are transferred to the user. In this
-manner, you can design your portal to correspond with your existing
-organization chart and users' permissions are granted according to their
-positions in the chart.
+Since organizations are designed for distributed user administration,
+organization administrators have an entirely different set of privileges than
+site administrators. Site administrators are responsible for the pages,
+portlets, and content of their site. They are also responsible for managing the
+membership of their site. To this end, they can set the membership type to Open,
+Restricted, or Private. They can also add users to or remove users from their
+site but cannot manage the users themselves. Organization administrators, on the
+other hand, can edit users belonging to their organization or any
+suborganization. They cannot add existing users to their organization but they
+can create new users within their organization. Only portal administrators can
+add existing users to an organization.
+
+Many simple portal designs don't use organizations at all; they only use sites
+(see chapters 2 and 3 for more information on sites). Remember that the main
+purpose of organizations is to allow for distributed user management. They allow
+portal administrators to delegate some of their user management responsibilities
+to organization administrators. If you don't anticipate needing to delegate user
+management responsibilities, your portal design need not include organizations.
+In order to decide whether or not your portal design should include
+organization, think about your portal's function. A simple photo-sharing web
+site, for example, could be powered by sites only. On the other hand,
+organizations are useful for corporations or educational institutions since
+their users can easily be placed into a hierarchical structure. In fact,
+organizations in Liferay are designed to model any group hierarchy, from those
+of government agencies all the way down to those of small clubs. Of course,
+users can belong both to organizations and to independent sites. For example, a
+corporation or educational institution could create a social networking site
+open to all portal users, even ones from separate organizations. 
+
+Additionally, organization administrators can assign organization-scoped roles
+to members of their organization. For example, consider an IT Security group in
+a corporate setting. You could have a suborganizaton of your IT organization
+that handles security for all of the applications company-wide. If you grant the
+IT Security organization the portal administrator role, all the members of the
+organization would have administrative access to the entire portal. Suppose
+further that a user in this organization was later hired by the Human Resources
+department. The simple act of removing the user from the IT Security
+organization also removes the user's administrative privileges, since the
+privilege came from the IT Security organization's role. By adding the user to
+the HR organization, any roles the HR organization has (such as access to a
+benefits system in the portal) are transferred to the user. In this manner, you
+can design your portal to correspond with your existing organization chart and
+users' permissions are granted according to their positions in the chart.
 
 Of course, this is only one way to design it. If you have more complex
-requirements, you can combine organizations with teams and scoped roles
-to assemble the sets of permissions you wish to grant to particular
-users. But we'll get to that. Let's first see how to manage
-organizations.
+requirements for permissions within an organization, you can create custom
+organization-scoped roles to assemble the permissions you wish to grant to
+particular users. Alternatively, you could consider attaching a site to your
+organization and using site teams to assemble the sets of permissions (see
+below). We'll discuss roles and permissions in more detail later in this
+chapter.
+
+Does your organization need to have its own site? Many organizations don't, but
+since some do, Liferay allows sites to be attached to organizations. If an
+organization has an attached site, the organization's administrators are treated
+as the site administrators of the attached site. This means that they can manage
+the pages, portlets, and content of the site as well as the users of the
+organization. Members of an organization with an attached site are treated as
+members of the organization's site. This means that they can access the private
+pages of the organization's site, along with any portlets or content there. The
+capability of attaching sites to organizations allows portal administrators to
+use organizations to facilitate distributed portal administration, not just
+distributed user administration.  Next, let's learn how to create and manage
+organizations. 
 
 To add an organization, click the \emph{Users and Organizations} link on
 the left side of the control panel. Then click the \emph{Add} button and
 choose \emph{Regular Organization}.
 
-Does your organization need to have its own web site? Most organizations
-don't, but some do, and Liferay provides this ability by attaching a
-site to an organization. To attach a site when you create an
-organization, click the \emph{Organization Site} tab at the right and
-check the \emph{Create Site} box. If you don't know right now if your
-organization needs a web site, that's fine. You can always add one later
-if the need arises.
+To attach a site when you create an organization, click the \emph{Organization
+Site} tab at the right and check the \emph{Create Site} box. If you don't know
+right now if your organization needs a web site, that's fine. You can always
+add one later if the need arises.
 
 \begin{figure}[htbp]
 \centering
@@ -20974,29 +21330,35 @@ users than sites and organizations. Let's look at them next.
 
 \section{User Groups }
 
-User Groups are arbitrary groupings of users. These groups are created
-by portal administrators to group users together who don't necessarily
-share an obvious hierarchical attribute. Users can be assigned to
-multiple user groups. User Groups are most often used to achieve one of
-the following goals:
+User Groups are designed to allow portal administrators to create groups of
+users that traverse the organizations hierarchy. They can be used to create
+arbitrary groupings of users who don't necessarily share an obvious hierarchical
+attribute. Users can be assigned to multiple user groups. For example, consider
+a software company with many offices and departments within each office. The
+company's office/department structure could be modeled through organizations. In
+this situation, it might make sense to create user groups for developers, office
+managers, accountant, etc. User Groups are most often used to achieve one of the
+following goals:
 
 \begin{itemize}
 \item
-  Simplify the assignment of several roles to a group of users. For
-  example, in a University portal, a user group could be created to
-  group all teachers independently of their organization to make it
-  easier to assign one or several roles at once to all the teachers.
+To simplify the assignment of several roles to a group of users. For example,
+in a University portal, a user group could be created to group all teachers
+independently of their organizations to make it easier to assign one or several
+roles at once to all the teachers.
+
 \item
-  Simplify membership to one or more sites by specifying a group of
-  users. Using the previous example, all teachers could be members of
-  the sites \emph{University Employees} and \emph{Students and Teachers
-  Collaboration Site} by adding the \emph{Teachers} user group as a
-  member.
+To simplify membership to one or more sites by specifying a group of users.
+Using the previous example, all teachers could be members of the sites
+*University Employees* and *Students and Teachers Collaboration Site* by adding
+the *Teachers* user group as a member.
+
 \item
-  Provide predefined public or private pages to the users who belong to
-  the user group. For example, the \emph{Teachers} user group could be
-  created to ensure the home page on all teachers' personal sites has
-  the same layout and applications.
+To provide predefined public or private pages to the users who belong to the
+user group. For example, the *Teachers* user group could be created to ensure
+the home page on all teachers' personal sites has the same layout and
+applications.
+
 \end{itemize}
 
 Creating a user group is easy. Navigate to the control panel, click the
@@ -21014,15 +21376,14 @@ control panel.
 Note in the figure above how each user group may have a site, with
 public and private pages. This is a special type of site that determines
 the base pages on all user group members' personal sites. The user group
-site works in a similar way to Site Templates, except in this case the
-the User Group Site pages are not copied for each user but are rather
-shown dynamically along with any custom pages the user may have on
-his/her personal site. For this reason, users are not allowed to make
-any modifications to the pages that are \emph{inherited} from the user
-group. Alternatively the administrators of the user group can define
-certain areas as customizable, just like they can for regular sites.
-This allows users to decide which applications they want to place in
-certain areas of each page, as well as change their configuration.
+site works in a similar way to Site Templates, except in this case the User
+Group Site pages are not copied for each user but are rather shown dynamically
+along with any custom pages the user may have on his/her personal site. For
+this reason, users are not allowed to make any modifications to the pages that
+are \emph{inherited} from the user group. Alternatively the administrators of
+the user group can define certain areas as customizable, just like they can for
+regular sites.  This allows users to decide which applications they want to
+place in certain areas of each page, as well as change their configuration.
 
 \begin{figure}[htbp]
 \centering
@@ -21239,16 +21600,15 @@ the user group. You will see how all of the pages in the user group
 appear as part of the user site, including the ones copied from the site
 template and the ones added afterwards.
 
-\section{Roles and Permissions
-}
+\section{Roles and Permissions}
 
-Roles are groupings of users that share a particular function within the
-portal, according to a particular scope. Roles can be granted
-permissions to various functions within portlet applications. You can
-think of a role as a description of a function, such as Message Board
-Administrators. A role with that name is likely to have permissions
-relevant to the specific Message Board portlets delegated to it. Users
-who are placed in this role will inherit these permissions.
+Roles are used to collect permissions that define a particular function within
+the portal, according to a particular scope. Roles can be granted permissions to
+various functions within portlet applications. A roles is basically just a
+collection of permissions that defines a function, such as Message Board
+Administrator. A role with that name is likely to have permissions relevant to
+the specific Message Board portlets delegated to it. Users who are placed in
+this role will inherit these permissions.
 
 The roles page of the control panel serves as a single interface which
 lets you create roles, assign permissions to them and assign users to
@@ -21261,6 +21621,28 @@ title and description are optional. If you enter a name and a title, the
 title will be displayed in the list of roles on the Roles page of the
 control panel. If you do not enter a title, the name will be displayed.
 When you have finished, click \emph{Save}.
+
+In addition to regular roles, site roles, and organization roles, there are also
+teams. Teams can be created by site administrators within a specific site. The
+permissions granted to a team are defined and applied only within the team's
+site. The permissions defined by regular, site, and organization roles, by
+contrast, are defined at the portal level, although they are applied to
+different scopes. The differences between the four types of roles can be
+described as follows:
+
+\textbf{Regular role:} Permissions are defined at the *portal* level and are
+applied at the *portal* level.
+
+\textbf{Site role:} Permissions are defined at the *portal* level and are
+applied to one *specific site*.
+
+\textbf{Organization role:} Permissions are defined at the *portal* level and
+are applied to one *specific organization*.
+
+\textbf{Team:} Permissions are defined within a *specific site* and are
+assigned within that *specific site*.
+
+For more information about teams, please refer to chapter 3.
 
 \begin{figure}[htbp]
 \centering
@@ -21486,7 +21868,7 @@ manner as you edit other resources in the portal: click \emph{Actions}
 and then click \emph{Edit}.
 
 The Password Policy settings form contains the following fields.
-Enabling specific settings via the check boxes prompts setting-specfic
+Enabling specific settings via the check boxes prompts setting-specific
 options to appear.
 
 \textbf{Name:} requires you to enter a name for the password policy.
