@@ -833,7 +833,7 @@ As you can see, the Calendar portlet is easy to use and convenient for users of
 the portal. Next, let's look at one of the most widely used applications
 provided by Liferay: its message boards.
 
-## Discuss, ask and answer using the Message Boards [](id=message-boar-4)
+## Discuss, Ask and Answer using the Message Boards [](id=message-boar-4)
 
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
@@ -850,7 +850,7 @@ portlet along with all of the other applications, Liferay provides a unique,
 integrated approach to building web sites. You can concentrate on building your
 site while Liferay does the integration work for you.
 
-The Message Boards portlet has a lot of configuration options, but they are
+The Message Boards portlet offers many configuration options. They are
 straightforward to use and are the reason why this portlet is a full-featured
 forum application for your web site. To get started, add a Message Boards
 portlet to your site. Once it is added, click the *Menu* icon in the portlet's
@@ -862,40 +862,54 @@ application the way you want it to behave on your site.
 
 The first tab beneath *Setup* is labeled *General*. Here, you can enable
 anonymous posting, subscribe by default, flags, ratings, and thread as question
-by default. You can also choose whether you want the message format to be
-BBcode or HTML. Anonymous posting, subscribe by default, flags, and ratings are
+by default. You can also choose whether you want the message format to be BBcode
+or HTML. Anonymous posting, subscribe by default, flags, and ratings are
 selected by default and the default message format is BBcode. 
 
-Anonymous posting lets those without an account on the system post messages to
-your message boards. You may or may not want to do this, depending on the type
-of community you are building. Allowing anonymous posting opens your site to
-anyone who might want to spam your forums with unwanted or off topic
-advertising messages. For this reason, most of those who implement message
-boards turn anonymous posting off by unchecking this box.
+Enabling *Allow Anonymous Posting* allows users without an account on the system
+to post messages to your message boards. Whether or not you you'll want to do
+this depends on the type of community you are building. Allowing anonymous
+posting opens your site to anyone who might want to spam your forums with
+unwanted or off topic advertising messages. For this reason, most of those who
+implement message boards turn anonymous posting off by unchecking this box.
 
-The subscribe by default option automatically subscribes users to threads they
-participate in. The thread as question by default automatically checks the mark
-as question box in the new thread window. Threads marked as questions display
-the flag "waiting for an answer." Subsequent replies to the original message
-can be marked as an answer.
+Enabling the *Subscribe by Default* option automatically subscribes users to
+threads they participate in. Whenever a message in a thread is added or updated,
+Liferay sends a notification email to each user who is subscribed to the thread. 
 
-Flags allow your users to flag content which they consider to be objectionable.
-If you are allowing anonymous posting, you might use flags in combination with
-it if you have someone administering your message boards on a day-to-day basis.
-That way, any unwanted messages can be flagged by your community, and you can
-review those flagged messages and take whatever action is necessary. Using
-flags is also a good practice even if you're not allowing anonymous posting.
+You can set the *Message Format* to either BBCode or HTML. This determines the
+markup language of users' actual message board posts. Different WYSIWYG editors
+are presented to users depending on which option is enabled. Both editors have a
+*Source* button which allows users to view the underlying BBCode or HTML of a
+message. Users can compose messages using either the WYSIWYG or Source view and
+can switch between views during message composition by clicking on the *Source*
+button.
 
-Ratings enable your users to give certain posts a score. This score is used by
-Liferay Portal's social equity system to rank your site members by how helpful
-their contributions are. You can read more about social equity later in this
-chapter and in chapter 9.
+Enabling *Enable Flags* allows your users to flag content which they consider to
+be objectionable. If you are allowing anonymous posting, you might use flags in
+combination with it if you have someone administering your message boards on a
+day-to-day basis. That way, any unwanted messages can be flagged by your
+community, and you can review those flagged messages and take whatever action is
+necessary. Using flags is also a good practice even if you're not allowing
+anonymous posting.
 
-### Email From [](id=lp-6-1-ugen04-email-from-0)
+Enabling *Enable Ratings* enables your users to give certain posts a score. This
+score is used by Liferay Portal's social activity system to rank your site
+members by how helpful their contributions are. You can read more about social
+activity later in this chapter and in chapter 9.
 
-This tab allows you to configure the email address that messages from the
-Message Boards portlet come from. By default, the name is `Joe Bloggs` and the
-email address is `test@liferay.com`.
+Enabling the *Thread as Question by Default* option automatically checks the
+mark as question box in the new thread window. Threads marked as questions
+display the flag "waiting for an answer." Subsequent replies to the original
+message can be marked as an answer.
+
+### Email From  
+
+This tab allows you to configure the name and email address from which message
+board email notifications are sent. The default name and email address are those
+of the default administrator account: The name is `Test Test` and the email
+address is `test@liferay.com`. Make sure to update this email address to a valid
+one that can be dedicated to notifications.
 
 ### Message Added Email [](id=lp-6-1-ugen04-message-added-email-0)
 
@@ -996,7 +1010,7 @@ have the ability to add a category of threads or to ban abusive users from the
 message boards. Select the roles and permissions you want to configure and then
 click *Submit*.
 
-### Adding Categories and Mailing Lists [](id=lp-6-1-ugen07-adding-categories-and-mailing-lists-0)
+### Adding Categories [](id=lp-6-1-ugen07-adding-categories-and-mailing-lists-0)
 
 You are now ready to add categories to your message boards. Click the *Add
 Category* button. You may merge with a Parent Category by enabling the *Merge
@@ -1018,18 +1032,126 @@ easily added:
 ![Figure 7.23: Editing a Message Boards
 Category](../../images/05-editing-message-board-category.png)
 
-At the bottom of the form is a check box that allows you to enable the mailing
-list function.
+You can add as many categories to your message boards as you wish. As we saw
+above, categories can have subcategories. You can add any number of top-level
+categories to a message board. You can also edit any category and add
+subcategories to an unlimited level. For usability reasons, you don't want to
+nest your categories too deep, or your users will have trouble finding them. You
+can always add more categories as your message boards grow. Finally, each
+category can have any number of threads.
 
-The mailing list function works in concert with the message notification
-emails. If a user subscribes to a message board category, he or she will get
-emails when someone posts messages to that category. Enabling the mailing list
-function allows those users to simply reply to the notification messages in
-their email clients, and those replies will be posted to the thread
-automatically.
+At the bottom of the form for creating or editing a message board category is a
+check box for enabling the mailing list function. If don't want to add a mailing
+list to the category you're creating, click *Save* now. You can always edit an
+existing category to add, edit, or remove a mailing list.
 
-To enable this functionality, you will need a mail account for the category.
-Once you click the check box, a number of other options will appear.
+Liferay's Message Boards portlet supports two different
+mechanisms for sending email notifications: user subscriptions and mailing
+lists. Let's discuss user subscriptions first and then mailing lists.
+
+### User Subscriptions and Mailing Lists
+
+The first mechanism Liferay uses for sending email notifications is user
+subscriptions. Users can subscribe to particular categories and threads. Liferay
+uses the message board's configured *Email From* address to send email
+notifications to subscribed users whenever a new post is created or an existing
+post is updated. Liferay can import email replies to message board notifications
+directly into the message board. This is a very useful features since it
+allows users to interact on the message board via email without needing to log
+in to the portal and view the message board page directly. However, this feature
+is not enabled by default. To enable this feature, add the following line to
+your `portal-ext.properties` file:
+
+    pop.server.notifications.enabled=true
+
+As this property suggests, Liferay's message boards user subscription mechanism
+uses the POP mail protocol. When an email reply to a message board notification
+is read by Liferay, the reply is posted to the message board and then deleted
+from the mail server. Deleting the message from the mail server is the POP
+protocol's default behavior and Liferay assumes that your POP mail server
+behaves this way. Most POP clients offer an option to leave mail on the mail
+server after it's been downloaded but you shouldn't exercise this option. If you
+configure mail to be left on the mail server, Liferay will repeatedly send
+copies of each retained message along with each new email notification that's
+sent to subscribed users.
+
+When enabling message boards to import replies to email notifications, you
+should decide whether or not you want to you a mail server subdomain to handle
+notifications. By default the following line is set in your portal properties:
+
+    pop.server.subdomain=events
+
+This property creates a special MX (mail exchange) subdomain to receive all
+portal-related email (e.g., events.liferay.com). If you don't want to use the
+subdomain approach, you can unset this value to tell Liferay to use the *Email
+From* address specified in the portlet preferences to receive message board
+notification email replies. For example, the *Email From* address could be set
+to *replies@liferay.com*.
+
+If you don't want to use a mail server subdomain, add the following line to your
+`portal-ext.properties` file:
+
+    pop.server.subdomain=
+
+If you're not using a mail subdomain, Liferay parses the message headers of
+emails from the *Email From* address to determine the message board category and
+message ID. If you keep the `pop.server.subdomain=events` default, the email
+notification address takes the following form:
+*mb.[category_id][message_id]@events.liferay.com*. In this case, Liferay parses
+the email address to find the category and message ID. Parsing the email address
+is safer than parsing message headers since different email clients treat
+message headers differently. This is why the `events` subdomain is enabled by
+default.
+
+Additionally, you can configure the interval on which the
+POPNotificationListener runs. The value is set in one minute increments. The
+default setting is to check for new mail every minute, but you can set it to
+whatever you like:
+
+    pop.server.notifications.interval=1
+
+The second mechanism Liferay uses for sending email notifications is mailing
+lists. Any category in a Liferay message board can have its own mailing list.
+Liferay's mailing list mechanism, unlike its user subscription mechanism,
+supports both the POP and the IMAP protocols. POP is the default protocol but
+each message board's mailing list is configured independently. If you choose the
+IMAP protocol for a category's mailing list, make sure to configure the IMAP
+inbox to delete messages as they are pulled by the email client that sends
+messages to the users on the mailing list. Otherwise, each email message that's
+retained on the server will be sent to the mailing list each time there's a new
+post or an update in the category.
+
+When a mailing list is enabled for a message board category, Liferay listens to
+the specific email inbox that's configured for the mailing list. Enabling the
+mailing list function allows users on the mailing list to simply reply to the
+notification messages in their email clients. Liferay pulls the messages from
+the email inbox it's configured to listen to and automatically copies those
+replies to the appropriate message board thread.
+
+With both user subscriptions and mailing lists, users can reply to message board
+notification emails and Liferay imports their replies to the message board.
+However, with mailing lists, users reply to the mailing list and Liferay listens
+to the specific inbox configured for the mailing list and copies messages to the
+appropriate message board category. With user subscriptions, by default, email
+replies to message board notifications are not imported to the message boards.
+This feature has to be enabled in your `portal-ext.properties` file. Once this
+feature has been enabled, users can reply to a specific address and have
+their replies copied to the message board.
+
+Note: Since any number of sites can use a globally scoped message board,
+globally scoped message boards do not support user subscriptions or mailing
+lists. Make sure to use a site-scoped or page-scoped message board if you need
+user subscriptions or a mailing list with your message board.
+
+To enable the mailing list functionality for a category, you need a dedicated
+email address for the category. Once you click the *Active* check box, a number
+of other options appear. When a mailing list is activated, Liferay imports
+messages it receives from the mailing list to the message board. Liferay looks
+for a Liferay user with the sender's email address. If the sender isn't a
+Liferay user and the *Allow Anonymous Emails* box is unchecked, the message is
+thrown away and not posted to the message board. If the *Allow Anonymous Emails*
+box is checked, anyone can send email to the message board category's dedicated
+email account and Liferay copies the messages to the message board.
 
 **Email Address:** lets you enter the email address of the account that will
 receive the messages.
@@ -1053,7 +1175,7 @@ your server supports it.
 **Password:** lets you enter the password for the account on the server.
 
 **Read Interval (Minutes):** allows you to specify how often Liferay will poll
-the server looking for new messages to post.
+the server looking for new messages to post to the message board.
 
 The Outgoing section has the following options:
 
@@ -1079,14 +1201,8 @@ if your server supports it.
 
 **Password:** lets you enter the password for the account on the mail server.
 
-When finished adding your category, click *Save*. Add as many categories to
-your message boards as you wish.
-
-Note that categories can have subcategories. You can add a number of top-level
-categories and then click on each one and add categories under that, to an
-unlimited level. For usability reasons, you don't want to nest your categories
-too deep, or your users will have trouble finding them. You can always add more
-categories as your message boards grow.
+When you're finished configuring the mailing list for your category, click
+*Save*. 
 
 ### Using the Message Boards [](id=lp-6-1-ugen04-using-the-message-boards-0)
 
