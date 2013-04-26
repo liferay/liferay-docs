@@ -22190,14 +22190,14 @@ For example, assuming your LDAP directory happens to be Microsoft Active
 Directory on Windows Server 2003, you would take the following steps to
 share the certificate:
 
-Click Start -\textgreater{} Administrative Tools \$rarr; Certificate
+Click Start \rightarrow Administrative Tools \rightarrow Certificate
 Authority. Highlight the machine that is the certificate authority,
-right click on it, and click Properties. From the General menu, click
-View Certificate. Select the Details view, and click Copy To File. Use
-the resulting wizard to save the certificate as a file. As with the CAS
-install (see the below section entitled Single Sign-On), you will need
-to import the certificate into the \emph{cacerts keystore}. The import
-is handled by a command like the following:
+right click on it, and click \emph{Properties}. From the General menu, click
+\emph{View Certificate}. Select the Details view, and click \emph{Copy To
+File}. Use the resulting wizard to save the certificate as a file. As with the
+CAS install (see the below section entitled Single Sign-On), you will need to
+import the certificate into the \emph{cacerts keystore}. The import is handled
+by a command like the following:
 
 \begin{verbatim}
 keytool -import -trustcacerts -keystore /some/path/jdk1.5.0_11/jre/    \
@@ -22368,7 +22368,8 @@ which stores the settings in the database, always takes precedence over
 the properties file.
 
 \begin{verbatim}
-ldap.auth.method=bind #ldap.auth.method=password-compare
+ldap.auth.method=bind 
+#ldap.auth.method=password-compare
 \end{verbatim}
 
 Set either bind or password-compare for the LDAP authentication method.
@@ -22693,18 +22694,18 @@ user groups here.
 In this chapter, we began to examine Liferay's control panel. Site
 memberships and teams aren't the only way for portal administrators to
 group and manage users: organizations can be used to arrange users into
-hierarchical structures and user groups are a flexible way to collect ad
-hoc groups of users. You can create roles to define permissions and
-scope them for the entire portal or for a particular site or
-organization. User groups can be assigned to roles; in this case, each
-member of the user group is assigned to the role.
+hierarchical structures and user groups are a flexible way to collect groups of
+users that transcend organizational hierarchies. You can create roles to define
+permissions and scope them for the entire portal or for a particular site or
+organization. User groups can be assigned to roles; in this case, each member of
+the user group is assigned to the role.
 
-We also look at how to configure password policies for users. Next, we
-also looked at the different authentication options provided by Liferay.
-You can configure Liferay so that users can authenticate via LDAP, CAS,
-Facebook, NTLM, OpenID, OpenSSO, or SiteMinder. Finally, we examined
-some general configuration options for the portal users. We'll continue
-our coverage of Liferay's control panel in the next chapter.
+We also looked at how to configure password policies for users. Next, we looked
+at the different authentication options provided by Liferay. You can configure
+Liferay so that users can authenticate via LDAP, CAS, Facebook, NTLM, OpenID,
+OpenSSO, or SiteMinder. Finally, we examined some general configuration options
+for the portal users. We'll continue our coverage of Liferay's Control Panel in
+the next chapter. 
 
 \chapter{Using the Control Panel
 }
