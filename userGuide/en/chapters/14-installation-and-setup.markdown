@@ -1934,8 +1934,8 @@ You've just installed and deployed Liferay Portal on Jetty - way to go!
 
 ## Installing Liferay on JBoss 5.1 [](id=lp-6-1-ugen14-installing-liferay-on-jboss-51-0)
 
-Note: Out of the box, JBoss 5.1 is incompatible with Java 7. Use Java 5 or Java
-6 to run JBoss 5.1.
+Note: Java 7 deprecated some classes used by JBoss 5.1. Use Java 5 or Java 6 to
+run JBoss 5.1.
 
 **Liferay Home** is one folder above JBoss's install location.
 
@@ -2022,7 +2022,12 @@ files, it's time to deploy Liferay.
 	</classloading>
 
    This configuration file defines a domain that does not allow parent classes
-   to load first. Instead, Liferay Portal's classes are loaded first.
+   to load first. Instead, Liferay Portal's classes are exported. Since JBoss
+   comes with its own Hibernate JARs, the above configuration is needed to tell
+   Liferay to ignore these JARs and to use its own JARs instead. If you omit
+   this configuration, you may encounter a Hibernate exception. It's also
+   necessary to add a `jboss-classloading.xml` file to the `WEB-INF` folder of
+   each Liferay plugin; see the *Deploying plugins* section below.
 
 4. Create a `portal-ext.properties` file in `$LIFERAY_HOME` (one level above
    `$JBOSS_HOME`) and add the following properties:
@@ -2048,6 +2053,41 @@ files, it's time to deploy Liferay.
 7. Start the JBoss Application Server.
 
 Liferay is now successfully installed on JBoss 5.1. 
+
+### Deploying plugins
+
+Add a `jboss-classloading.xml` to the `WEB-INF` folder of each plugin, with the
+following content:
+
+	<classloading xmlns="urn:jboss:classloading:1.0"
+		domain="PLUGINNAME-portlet"
+		parent-domain="LiferayDomain"
+		parent-first="false"
+		top-level-classloader="false"
+		export-all="NON_EMPTY"
+		import-all="false">
+	</classloading>
+
+The `LiferayDomain` referenced in the above configuration is the domain we
+defined above during step 3 of the *Deploying Liferay* section. Configuring
+plugins to use the Liferay domain ensures that if JBoss and Liferay have
+different versions of a JAR file, the plugin will use Liferay's version. Without
+this configuration, Liferay plugins might end up using the wrong versions of JAR
+files. You can make this configuration either before or after the plugin WAR has
+been deployed, as long as JBoss is not running. Of course, it's best to make
+this configuration before deployment. Otherwise, if there's a JAR conflict,
+you'll have to shut down your server, configure the plugin to use the Liferay
+domain, and restart the server.
+
+To set up a hot deploy folder and have plugins automatically copied to the right
+place, configure your `portal-ext.properties` file with the following:
+
+	auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy
+	# (This one can be left like this, Liferay should automatically create this
+	folder.)
+
+	auto.deploy.deploy.dir=G:/jboss-eap-5.1/deploy
+	# (This one needs to be the exact folder into which you are going to place your WAR files.) 
 
 ## Installing Liferay on JBoss 7 [](id=lp-6-1-ugen11-installing-liferay-on-jboss-7-0)
 
