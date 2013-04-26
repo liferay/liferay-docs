@@ -2080,14 +2080,17 @@ you'll have to shut down your server, configure the plugin to use the Liferay
 domain, and restart the server.
 
 To set up a hot deploy folder and have plugins automatically copied to the right
-place, configure your `portal-ext.properties` file with the following:
+place, add the following lines to your `portal-ext.properties` file:
 
 	auto.deploy.jboss.dest.dir=${jboss.home.dir}/server/default/deploy
-	# (This one can be left like this, Liferay should automatically create this
-	folder.)
-
 	auto.deploy.deploy.dir=G:/jboss-eap-5.1/deploy
-	# (This one needs to be the exact folder into which you are going to place your WAR files.) 
+
+The first line is the value for the default server; if you've installed Liferay
+in something other than the default, change it accordingly. The path in the
+second line should point to the `deploy` folder configured for JBoss. 
+
+Liferay also runs on JBoss 7. Let's see how we'd get it installed on that
+version of JBoss. 
 
 ## Installing Liferay on JBoss 7 [](id=lp-6-1-ugen11-installing-liferay-on-jboss-7-0)
 
