@@ -70,14 +70,14 @@ is required and can be formatted automatically using a template.
 
 You create a structure by adding form controls such as text fields, text boxes,
 text areas (HTML), check boxes, select boxes and multi-selection lists. Also you
-can add specialized, Liferay-specific application fields such as Image Uploader
-and Documents and Media right onto the structure. Furthermore, you can move the
-elements around by dragging them where you want them. This makes it easy for you
-to prototype different orders for your input fields. Additionally, elements can
-be grouped together into blocks which can then be repeatable. Template writers
-can then write a template which loops through these blocks and presents your
-content in innovative ways, such as in sliding navigation bars, content which
-scrolls with the user and more.
+can add specialized, Liferay-specific application fields such as an Image
+Uploader and Documents and Media right onto the structure. Furthermore, you can
+move the elements around by dragging them where you want them. This makes it
+easy for you to prototype different orders for your input fields. Additionally,
+elements can be grouped together into blocks which can then be repeatable.
+Template writers can then write a template which loops through these blocks and
+presents your content in innovative ways, such as in sliding navigation bars,
+content which scrolls with the user and more.
 
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
@@ -101,8 +101,7 @@ templates or list templates associated with the structure. For information on
 detail templates and list templates, please refer to chapter 9 on Dynamic Data
 Lists.
 
-![Figure 3.1: You can access the Manage Structures interface by clicking
-*Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
+![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
 
 The second way to access the Manage Structures interface is directly from the
 web content article WYSIWYG editor. Click *Add* &rarr; *Basic Web Content* from
@@ -114,52 +113,70 @@ chosen scope, simply click on the *Add* button in the Manage Structures popup.
 
 It's very easy to create and edit structures: all you have to do is drag
 elements into the structure and then give them names. For instance, select the
-*Checkbox* element under the *Form Controls* tab and drag it onto the structure.
-You can do the same with any of the elements. To remove it from the structure,
-simply select the *Delete* icon (black circle with X) in the upper right corner
-of the element. Take a moment to add, delete and rearrange different elements.
+*Text* element and drag it onto the structure. You can do the same with any of
+the elements. To remove it from the structure, simply select the *Delete* icon
+(red X) in the upper right corner of the element. You also have the ability to
+duplicate the element, which can be done by selecting the *Duplicate* button.
+We'll explain the *Edit* button later.
 
-![Figure 3.2: Structure Elements](../../images/04-web-content-structure-editor.png)
+Another method to edit your structure is switching to *Source* mode and manually
+customizing your structure by editing its XML file. You'll notice by default the
+*View* mode is selected. Click the *Source* tab to switch to Source mode. This
+method is for the more experienced developers.
 
-Liferay supports the following elements in structures:
+Take a moment to add, delete, and rearrange different elements.
 
-**FORM FIELDS**
+![Figure 3.2: The structure editor gives you many options to customize your Web Content.](../../images/04-web-content-structure-editor.png)
 
-**Text Field:** Used for items such a titles and headings.
+Liferay supports the following fields in structures:
 
-**Text Box:** Used for the body of your content or long descriptions.
+**Boolean:** Allows you to add a checkbox onto your structure, which stores
+either `true` (checked) or `false` (unchecked). Template developers can use this
+as a display rule.
 
-**Text Area (HTML):** An area that uses a WYSIWYG editor to enhance the content.
+**Date:** a preformatted text field that displays a convenient date picker to
+assist in selecting the desired data. The format for the date is governed by the
+current locale.
 
-**Checkbox:** Allows you to add a checkbox onto your structure. Template
-developers can use this as a display rule.
-
-**Selection List:** Allows you to add a select box onto your structure.
-
-**Multi-selection List:** Allows you to add a multi-selection list onto your
-structure.
-
-**APPLICATION FIELDS**
-
-**Image Uploader:** Allows you to add the upload image application into your
-structure.
+**Decimal:** Similar to *Number*, except that it required a decimal point (.) be
+present.
 
 **Documents and Media:** Allows you to add the Documents and Media folder
 hierarchy to your structure.
 
-**MISCELLANEOUS**
+**File Upload:** Uploads a document to attach. Uploads are stored in Documents
+and Media, in an existing folder or in the user's default upload action.
+
+**HTML:** An area that uses a WYSIWYG editor to enhance the content.
+
+**Image:** Allows you to add the browse image application into your
+structure.
+
+**Integer:** Similar to *Number*, except that it constrains user input to
+non-fractional numbers.
 
 **Link to Page:** Inserts a link to another page in the same site.
 
-**Selection Break:** Inserts a break in the content.
+**Number:** Presents a text box that only accepts numbers as inputs, but puts no
+constraints on the kind of number entered.
 
-These form elements provide all you need to model any information type you would
+**Radio:** Presents the user with a list of options to choose from using radio
+button inputs.
+
+**Select:** Allows you to add a select box (single or multi-selection) onto your
+structure.
+
+**Text:** Used for items such as titles and headings.
+
+**Text Box:** Used for the body of your content or long descriptions.
+
+These fields provide all you need to model any information type you would
 want to use as web content. Liferay customers have used structures to model
 everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
-closely at the form elements.
+closely at field settings.
 
-#### Editing form elements  
+#### Editing field settings  
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -173,46 +190,67 @@ Author when they're all named randomly?
 
 To solve this problem, all you need to do is set a variable name for each field
 as you add it to your structure. Let's do this now. In your structure, add an
-element *Text Area (HTML)* which has the Field Label *Instructions*. If we
-wanted to give it the variable name `Steps`, we can do it very easily: at the
-bottom of every form element is a **Variable Name** field. Replace the generated
-name with the name you want to use. Now your template writer has a variable by
-which he or she can refer to this field.
+element *HTML*. To change its field label and variable name, you'll need to
+access the field's settings. Click on the field and select the gear icon that
+appears in the upper right corner. Change the *Field Label* value to
+*Instructions* and the *Name* value (variable name) to `Steps`. Now your
+template writer has a variable by which he or she can refer to this field.
 
-Below each field is a button labeled *Edit Options*. This contains several other
-ways to configure your fields:
+Here's a list of all the configurable settings available for a structure's
+fields:
 
-**Field Type:** changes the field type, in case you dragged the wrong field type
-to this location in the form. **Field Label:** changes the displayed label for
-the field.
+**Type:** Lists the type of field placed in the definition. This is not editable
+but is available to reference from a template.
 
-**Index Type:** Choose how you want Liferay to index your field for search. You
-can have it indexed by keyword, which filters out common words such as *and*,
-*but*, *the*, and so on, or you can have it index the full text of the field. By
-default, indexing is turned off.
+**Field Label:** Sets the text that can be displayed with the field. This is the
+human-readable text that the user sees.
+
+**Show Label:** Select *Yes* to display the Field Label.
+
+**Required:** Select *Yes* to mark the field required. If a field is required,
+users must enter a value for it in order to submit content using this structure.
+
+**Name:** The name of the field internally, automatically generated. Since this
+is the variable name that you can read the data from in a template, you should
+give a more memorable name here.
 
 **Predefined Value:** Specifying predefined values for structure forms is a way
 to specify defaults. When a user creates a new web content article based on a
 structure that has predefined values for various fields, the predefined values
 appear in the form as defaults for those fields.
 
-**Instructions for the User:** Check this box and type a description of what the
-field is for to display it as a tooltip for the user. 
+**Tip:** Each field can have a small help icon, with a tooltip attached that
+displays helpful information. If you would like to provide text for the tooltip
+you may enter it here.
 
-**Repeatable:** If you want this field to be a repeatable element, check this
-box. Your users can then add as many copies of this field as they like. For
-example, if you're creating a structure for articles, you might want a
-repeatable Author field in case you have multiple authors for a particular
-article.
+**Indexable:** Select *Yes* to enable Liferay to index your field for search.
 
-**Required:** Check the box to mark the field required. If a field is required,
-users must enter a value for it in order to submit content using this structure. 
+**Repeatable:** Select *Yes* to make your field repeatable. Your users can then
+add as many copies of this field as they like. For example, if you're creating a
+structure for articles, you might want a repeatable Author field in case you
+have multiple authors for a particular article.
 
-For the Nose-ster structure, type something in the *Instructions for the User*
-field that helps users know what to put into the Body element (example: *this is
-an HTML Text area for the body of your content*). Also enable the *Display as
-Tooltip* box. Now, when users hover over the Help icon near your title, your
-instructions are displayed.
+**Width:** Changes the width of the field. The field width can be *small*,
+*medium*, or *large* (not available for Boolean, Documents and Media, Image,
+Radio, and Select.
+
+**Allowed File Extensions:** Specifies the file types allowed for upload (e.g.
+*pdf*, *html*, *txt*, etc.). Set this value to a comma-delimited list of
+extensions, including the character ., and Liferay checks the extension before
+the file can be uploaded. To allow all file types, input an asterisk: "\*" (only
+available for File Upload).
+
+**Options:** Changes the options available for radio selection. You're able to
+add and remove options as well as edit each individual option's display name and
+value (only available for Radio and Select).
+
+**Multiple:** Select *Yes* to enable a multi-selection list. (only available for
+Select).
+
+For the Nose-ster structure, type something in the *Tip* field that helps users
+know what to put into the Body element (example: *This is an HTML text area for
+the body of your content*). Now, when users hover over the Help icon near your
+title, your tip is displayed.
 
 ##### Structure Default Values
 
@@ -220,33 +258,20 @@ Structure Default Values allow you to create one structure that uses common data
 from multiple articles.
 
 Returning to our newspaper scenario again, let's say you want all sports
-articles to have the same display page (sports page), the same categories, or the
-same set of tags. Instead of adding them for each article or wondering if your
-users are adding them to every web content, you can add these characteristics once
-for every sports article by creating default values for the structure. There are
-two ways to edit structure default values: creating a new structure or editing
-an existing structure.
+articles to have the same display page (sports page), the same categories, or
+the same set of tags. Instead of adding them for each article or wondering if
+your users are adding them to every web content, you can add these
+characteristics once for every sports article by creating default values for the
+structure. Creating default values is not part of creating a new structure, so
+make sure you have an existing structure.
 
-For a new structure, you must first create the structure before editing its
-default values. Navigate to *Web Content* in the Control Panel and click the
-*Structures* tab, then select the *Add Structure* button. Under the *XML Schema
-Definition* section of the new structure form, use the *Add Row* button to
-create different types of fields for the structure. Or you can use the editor to
-create the structure manually: the Launch Editor button allows you to edit the
-XML for the structure if you wish to do it via code. When you are done, click
-*Save and Continue* to go to the Structure Default Values form.
+To edit a structure's default values, go to *Web Content* in the Control Panel
+and click *Manage* &rarr; *Structures* to see the structures list. Find the
+*Actions* button for the desired structure and select *Edit Default Values* from
+the menu to view a window like the one below. This form allows you to manage the
+structure settings.
 
-![Figure 3.2: You can create fields for structure default values via the XML
-Schema Definition section of the new structure
-form.](../../images/xml-schema-definitions.png)
-
-To edit an existing structure, go to *Web Content* in the Control Panel and
-click the *Structures* tab to see the structures list. Find the *Actions* button
-for the desired structure and select *Edit Default Values* from the menu to view
-a window like the one below. This form allows you to manage the structure
-settings.
-
-![Figure 3.3: You can edit default values via the Actions button of the structure  form.](../../images/structure-default-values-sports.png)
+![Figure 3.3: You can edit default values via the *Actions* button of the Manage Structures interface.](../../images/structure-actions.png)
 
 Every new web content you create with this structure is preloaded with the
 data you inserted.
@@ -258,10 +283,10 @@ permissions everywhere else in Liferay. Most users should not have the ability
 to edit structures. Structures are coupled with templates, which require some
 web development knowledge to create. This is why only trusted developers should
 be able to create structures and templates. Users, of course, should be able to
-view structures. The View permission enables them to make use of the structures
-to create content.
+view structures. The *View* permission enables them to make use of the
+structures to create content.
 
-![Figure 3.3: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.4: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles and this is the recommended way
 to handle permissions for structures.
@@ -323,7 +348,7 @@ structure, link it to a template and then create content using them both. We'll
 use Velocity for our template and we'll lay out the structure fields
 systematically to go along with the format we've defined for our content.
 
-![Figure 3.4: Adding Template Interface](../../images/04-web-content-templates-create.png)
+![Figure 3.6: Adding Template Interface](../../images/04-web-content-templates-create.png)
 
 1. Go back to the Web Content section of the Control Panel and click *Add*
    &rarr; *Basic Web Content*.
@@ -388,9 +413,9 @@ the abstract and the link created above, which sets the `read_more` parameter.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.5: Initial View](../../images/04-web-content-adv-example1.png)
+![Figure 3.7: Initial View](../../images/04-web-content-adv-example1.png)
 
-![Figure 3.6: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
+![Figure 3.8: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
 
 Now that you've created a handsome template, it's time to decide who the lucky
 people are that get to use it.
@@ -509,7 +534,7 @@ templates are created, they will appear in the Add menu as they become
 available. The following figure shows the form that needs to be filled when
 creating a *Blank Site*.
 
-![Figure 3.7: Adding a Site](../../images/01-add-site-screen.png)
+![Figure 3.9: Adding a Site](../../images/01-add-site-screen.png)
 
 **Name:** is the name of the site you wish to create.
 
@@ -529,7 +554,7 @@ Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created you can specify more details about the site using
 three categories: Basic Information, Search Engine Optimization and Advanced.
 
-![Figure 3.8: Editing a Site](../../images/01-site-editor.png)
+![Figure 3.10: Editing a Site](../../images/01-site-editor.png)
 
 **Details:** lets you edit the information you entered when you created the site
 and allows you to choose a site template for the public or private pages of your
@@ -572,7 +597,7 @@ template and changes to the site template propagate to any site based on it. A
 checkbox appears that allows users to unlink the site template if the user has
 permission to do so.
 
-![Figure 3.9: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
+![Figure 3.11: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
 Site templates are a powerful tool for managing many similar sites. Let's
 examine how they work.
