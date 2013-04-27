@@ -1563,43 +1563,43 @@ to customize notifications in your workflow definition.
 
 ---
 
-Let's continue editing our ticket process workflow by setting up a notification
-email that is sent to our Project Management team upon completion of the QA task
-assignments. First, we'll add a new task node that transitions from our join
-node. This new task node will hold our email notification. Typically, we would
+Let's continue editing our ticket process workflow. After completion of the QA
+task assignments, our Project Management team should be notified. To set up a
+notifcation email, we'll add a new task node that transitions from our join
+node. This new task node will hold our email notification. Typically, we'd
 assign this task to a project management role and email it to the project
-management team's email alias. But for demonstration purposes, we'll assign and
-email "Joe Blogs". As mentioned previously, you can specify an existing user
+management team's email alias. For demonstration purposes, we'll use "Joe Blogs"
+for both purposes. As mentioned previously, you can specify an existing user
 that has an email or create a user with screen name "joe" having your email
-address. This process is similar to how we assigned our previous task nodes.
+address. This process is similar to how we assigned our previous task nodes. 
 
-1. Drag a new task node onto the workflow diagram.
+1. Drag a new *Task* node onto your workflow diagram. 
 
-2. Name the new task node *Project Management* and select *Assign to a specific
-user*.
+2. Name the new node *Project Management* and select *Assign to a specific
+user*. 
 
-3. Click *Next*.
+3. Click *Next*. 
 
-3. Enter *Screen name* "joe".
+3. Enter *Screen name* "joe". 
 
-4. Click *Finish*.
+4. Click *Finish*. 
 
-Now all we have to do is incorporate the Project Management node into our
+Now we just need to incorporate the Project Management node into our
 workflow process. Add a transition named *Passed QA* from our join node to the
 Project Management node. Lastly, add a transition named *Completed* from our
-Project Management node to our *EndNode*. Here is an updated screenshot of what
-your workflow diagram should look like:
+Project Management node to our *EndNode*. Here's an updated screenshot of what
+your workflow diagram should look like: 
 
-![Figure 8.64: This will be the final view for the workflow diagram; however we
-still have work to do!](../../images/kaleo-31.png)
+![Figure 8.64: Our workflow diagram is busy now; but we're not finished
+yet!](../../images/kaleo-31.png) 
 
-For our newly created Project Management task node, we will create an email
-notification. As we discussed earlier, click on the Project Management node and
-then in the Properties window, select *Notifications*.
+Let's create our email notificaiton for our Project Management task node next.
+Click on the Project Management node and select *Notifications* in the
+Properties window. 
 
-To create the email notification, follow these steps:
+To create the email notification, follow these steps: 
 
-1. Click the green "plus" symbol to create a new notification.
+1. Click the green "plus" symbol to create a new notification. 
 
 2. In the *Name* text field, enter "ticket process email".
 
@@ -1609,18 +1609,16 @@ To create the email notification, follow these steps:
 
 5. Select *email* as the notification transport.
 
-The figure below depicts the steps we took defining our notification:
-
 ![Figure 8.65: After editing the notification inside the Properties view, you
 can access the template editor by selecting the pencil
-icon.](../../images/kaleo-33.png)
+icon.](../../images/kaleo-33.png) 
 
-Now, click the pencil icon located beneath the green "plus" symbol. The
-FreeMarker template editor appears.
+Now open the Freemarker template editor by clicking the pencil icon beneath the
+green "plus" symbol. 
 
 Insert FreeMarker code into the FreeMarker editor to specify your email
-notification template. We've provided an example code snippet of what an email
-notification looks like written in FreeMarker.
+notification template. We've provided an example email notification code snippet
+written in FreeMarker. 
 
     <#assign comments = taskComments!"">
     <#assign portalURL = serviceContext.portalURL!"">
@@ -1638,34 +1636,34 @@ notification looks like written in FreeMarker.
     <!-- signature -->
     <p>Sincerely,<br /><strong>Liferay Portal Workflow</strong></p>
 
-Furthermore, the snapshot below gives an illustration of what the snippet sends
-to the configured email recipient.
+The snapshot below illustrates what the snippet sends to the configured email
+recipient. 
 
-![Figure 8.66: This is how the email notification will appear when it's received.](../../images/kaleo-43.png)
+![Figure 8.66: This is how the email notification will appear when it's
+received.](../../images/kaleo-43.png) 
 
-You've successfully completed setting up an email notification! Now, when the
-Project Management task node is activated in the workflow, the user we specified
-(i.e. *joe*) will receive the notification email dressed up with your FreeMarker
-template.
+Your email notification is set up! Now, when the Project Management task node is
+activated in the workflow, the user we specified (i.e. *joe*) will receive the
+notification email dressed up with your FreeMarker template. 
 
-As you can see, template editors, such as the FreeMarker template editors
-bundled with Developer Studio, make customizing your notification templates
-easier than ever. And you can create Velocity templates just as easy using the
-Velocity editor you installed. In the next section, you can view a list of
-workflow and service context content that can be used when creating a customized
-script or template.
+With template editors, customizing your notification templates is easier than
+ever. Freemarker comes bundled with Developer Studio so it's obviously the
+simplest solution, but you can create Velocity templates just as easy by using
+the Velocity editor you installed. 
+
+In the next section you'll see a list of workflow and service context content
+you can use when creating a customized script or template. 
 
 #### Workflow Context and Service Context Variables 
 
-The purpose of a context variable is to provide a uniform variable that can be
-inserted into templates and scripts. A context variable, when executed, is
-automatically deleted and replaced with the value pertaining to that key. When
-creating notifications for your workflow, assigning Liferay Portal context
-variables allows for a cleaner and more efficient process. Instead of having
-notifications follow the exact same format for every recipient, context
-variables allow for customization and a personal look and feel. The context
-variables you declare in your notifications refer to your Liferay instance and
-the values it holds for your declarations.
+A context variable provides a uniform variable to insert into your templates and
+scripts. When executed, a context variable is automatically deleted and replaced
+with the value pertaining to that key. When you create notifications for a
+workflow, assign Liferay Portal context variables for a cleaner and more
+efficient process. With conext variables, your notifications become more
+customizable, rather than following the same format for every recipient. The
+context variables you declare in your notifications refer to your Liferay
+instance and the values it holds for your declarations.
 
 Below, we have listed a plethora of context variables and service context
 content. Notice the context variables are in a separate table, followed by the
