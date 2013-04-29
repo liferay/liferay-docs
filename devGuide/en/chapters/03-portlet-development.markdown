@@ -502,12 +502,51 @@ taglibs to create forms based on your own preferences.
 
 Another JSP tag you may have noticed is `<portlet:defineObjects/>`. The portlet
 specification defined this tag in order to be able to insert a set of implicit
-variables into the JSP that are useful for portlet developers, such as
-`renderRequest`, `portletConfig`, `portletPreferences`, etc. 
+variables into the JSP that are useful for portlet developers, including
+`renderRequest`, `portletConfig`, `portletPreferences`, etc. The
+`<portlet:defineObjects>` tag defines the following variables:
 
-<!-- It might be helpful to list these variables here. --> 
+- `RenderRequest renderRequest` (only available when included from within a
+  portlet's render method)
 
-**A warning about our newly created portlet:** For the purpose of making this
+- `ResourceRequest resourceRequest` (only available when included from within a
+  portlet's serveResource method)
+
+- `ActionRequest actionRequest` (only available when included from within a
+  portlet's processAction method)
+
+- `EventRequest eventRequest` (only available when included from within a
+  portlet's processEvent method)
+
+- `RenderResponse renderResponse` (only available when included from within a
+  portlet's render method)
+
+- `ResourceResponse resourceResponce` (only available when included from within
+  a portlet's serveResource method)
+
+- `ActionResponse actionResponse` (only available when included from within a
+  portlet's processAction method)
+
+- `EventResponse eventResponse` (only available when included from within a
+  portlet's processEvent method)
+
+- `PortletConfig portletConfig`
+
+- `PortletSession portletSession` (does not create a new session; only returns
+  an existing session or `null` if no session exists)
+
+- `Map<String, Object> portletSessionScope` (does not create a new session; only
+  returns a Map equivalent to the `PortletSession.getAtrributeMap()` call or an
+  empty Map if no session attributes exist)
+
+- `PortletPreferences portletPreferences` (provides access to a portlet's
+  preferences)
+
+- `Map<String, String[]> portletPreferencesValues` (returns the values of a
+  portlet's preferences as a Map equivalent to the `PortletPreferences.getMap()`
+  call or an empty Map if no portlet preferences exist)
+
+**A warning about our newly created portlet:** For the purpose of making our
 example easy to follow, we cheated a little bit. The portlet specification
 doesn't allow setting preferences from a JSP, because they are executed in what
 is known as the render state. There are good reasons for this restriction, and
