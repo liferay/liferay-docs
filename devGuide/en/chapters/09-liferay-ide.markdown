@@ -1629,9 +1629,10 @@ variables because service context keys depend on asset type, while context
 variables don't. Also, note the `*`'s; they flag context variables that depend
 on workflow activity. 
 
+
 | &nbsp;*Workflow* Context Variables |||
- | Key | Type | Description |
- |---- | ---- | ----------- |
+| Key | Type | Description |
+| --- | ---- | ----------- |
    `companyId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the company |          
    `entryClassName` | &nbsp;&nbsp;java.lang.String | Class name for entry used by the task (e.g. com.liferay.portlet.journal.model.JournalArticle) |
    `entryClassPK` | &nbsp;&nbsp;java.lang.String | Primary key of the entry class |
@@ -1643,9 +1644,9 @@ on workflow activity.
    `userId` | &nbsp;&nbsp;java.lang.String | Primary key of the assigned user |
 ---
 
-| &nbsp;*Web Content* Service Context Variables - obtain via key serviceContext |||
- | Key | Type | Description |
------- | ---------- | ------------------ |
+| &nbsp;*Web Content* Service Context Variables - obtain via key serviceContext  |||
+| Key | Type | Description |
+| --- | ---- | ------------|
    `articleId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the web content |
    `articleURL` | &nbsp;&nbsp;java.lang.String | Link to the web content in maximized mode |
    `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the web content |
@@ -1689,9 +1690,9 @@ on workflow activity.
    `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 1) |
 ---
 
-| &nbsp;*Blog Entry* Service Context Variables - obtain via key serviceContext  |||
-  | Key | Type | Description |
------- | ---------- | ------------------ |
+| &nbsp;*Blog Entry* Service Context Variables - obtain via key serviceContext |||
+| Key | Type | Description |
+| --- | ---- | ------------|
    `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary keys of the asset entries linked to the blog entry |
    `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the blog entry |
    `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset (e.g. history, news, programming) |
@@ -1715,8 +1716,8 @@ on workflow activity.
 ---
 
 | &nbsp;*Message Board Message* Service Context Variables - obtain via key serviceContext |||
-  | Key | Type | Description |
------- | ---------- | ------------------ |
+Key | Type | Description |
+------ | ---------- | ------------------|
    `anonymous` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is anonymous (e.g. true) |
    `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the message |
    `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
@@ -1733,6 +1734,9 @@ on workflow activity.
    `threadId` | &nbsp;&nbsp;java.lang.String | Primary key of the message board thread hosting the message |
    `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 3) |
 ---
+
+<!--Change these to HTML. -Russ -->
+
 
 Next you'll learn how to view your workflow definition XML file in Developer
 Studio. 
