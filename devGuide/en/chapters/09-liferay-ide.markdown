@@ -1804,14 +1804,14 @@ Workflows* under your server and select *Refresh*.
 
 ![Figure 8.69: Uploading a new workflow definition is quick and easy.](../../images/kaleo-19.png) 
 
-It's probably clear why you need to publish new workflow definitions onto the
-Liferay server; it might be less clear why you need to republish existing
-workflow definitions that you've modified. When you save changes to a workflow,
-they're not immediately available in your portal; it's still using the previous
-version of the workflow. Developer Studio saves the workflow as a draft, so you
-can work on multiple iterations of the same version until you're ready to
-publish your changes. Once you publish, you now have a new version to make
-changes on top of. For example, you might be working on *Version 1* of your
+You probably understand why it's necessary to publish new workflow definitions
+onto the Liferay server; it might be less clear why you need to republish
+existing workflow definitions that you've modified. When you save changes to a
+workflow, they're not immediately available in your portal; it's still using the
+previous version of the workflow. Developer Studio saves the workflow as a
+draft, so you can work on multiple iterations of the same version until you're
+ready to publish your changes. Once you publish, you now have a new version to
+make changes on top of. For example, you might be working on *Version 1* of your
 workflow definition; as you make changes, you save them in multiple drafts. When
 you are finished with all of your changes, you publish the workflow triggering
 creation of a new version (*Version 2*) of the workflow. The new version is made
@@ -1820,7 +1820,7 @@ associate with asset publications, DDLs, and with Kaleo Forms.
 
 Unlike other Java editors, Developer Studio lets you test your workflow
 definition as a draft. You can also publish your workflow definition straight to
-Liferay Portal for quick and easy configuration.
+Liferay Portal for quick and easy configuration. 
 
 Are you ready for our *Kaleo Designer for Java* finale? Let's set up the DDL
 record within Liferay Portal and try out our new workflow! 
@@ -1828,9 +1828,9 @@ record within Liferay Portal and try out our new workflow!
 ### Using workflows in Liferay Portal 
 
 Let's put some finishing touches on your workflow and test drive it in Liferay
-Portal. A workflow definition must be actiavated in your Liferay Portal before
-you can use it. Navigate to the Control Panel and select *Workflow*. Then, in
-the *Definitions* tab, click on the *Actions* button, and select *Activate*.
+Portal. Before you can use a workflow definition, it must be activated in your
+Liferay Portal, Navigate to the *Control Panel* and select *Workflow*. Then, in
+the *Definitions* tab, click on the *Actions* button, and select *Activate*. 
 
 ![Figure 8.70: Liferay portal's Control Panel lets you activate/deactivate workflow definitions.](../../images/kaleo-34.png) 
 
