@@ -288,10 +288,63 @@ operations that are common to all or most portlets. The most common usage is to
 create an edit screen where each user can specify personal preferences for the
 portlet. All portlets must support the view mode. 
 
-- `portlet-info`: Defines portlet information. 
+- `portlet-info`: Defines information that can be used for the portlet title-bar
+  and for the portal's categorization of the portlet. The JSR-286 specification
+  defines a few resource elements that can be used for these purposes: title,
+  short title, and keywords. These resource elements either be directly included
+  in the deployment descriptor's portlet definition or they can be placed in a
+  resource bundle. For example, a deployment descriptor defining portlet
+  information inline might look like this:
 
-<!-- The definition for portlet-info is insufficient. For further information
-about it, look at the JSR-286 reference document. --> 
+        <portlet>
+            ...
+            <portlet-info>
+                <title>Weather Portlet</title>
+                <short-title>Weather></short-title>
+                <keywords>weather,forecast</keywords>
+            </portlet-info>
+            ...
+        </portlet>
+
+    If the portlet resources are defined in a resource bundle, the portlet must
+    provide the name of the resource. For example, a deployment descriptor
+    defining portlet information in resources bundles might look like this,
+    assuming that there are `Language.properties`, `Language_en.properties`, and
+    `Language_de.properties` files in the `com.foo.content` package:
+
+        <portlet>
+            ...
+            <resource-bundle>com.foo.content.Language</resource-bundle>
+            <resource-bundle>com.foo.content.Language_en</resource-bundle>
+            <resource-bundle>com.foo.content.Language_de</resource-bundle>
+            ...
+        </portlet>
+
+    Providing localized values via resource bundles separates the deployment
+    descriptor values from the localized values. For this reason, we recommend
+    using a separate resource bundle containing the localized values rather than
+    embedding all localized values in the deployment descriptor. For example,
+    the following two resource bundles are for the English and German locales.
+    Their contents would go in the `Language_en.properties` and
+    `Language_de.properties files`, respectively.
+
+        # English Resource Bundle
+        #
+        # filename: Language_en.properties
+        # Portlet Info resource bundle example
+        javax.portlet.title=Weather Portlet
+        javax.portlet.short-title=Weather
+        javax.portlet.keywords=weather,forecast
+        
+        # German Resource Bundle
+        #
+        # filename: Language_de.properties
+        # Portlet Info resource bundle example
+        javax.portlet.title=Wetter Portlet
+        javax.portlet.short-title=Wetter
+        javax.portlet.keywords=wetter,vorhersage
+
+    Please refer to the [JSR-286 portlet specification](http://www.jcp.org/en/jsr/detail?id=286) for more details.
 
 - `security-role-ref`: Security-role-ref contains the declaration of a security
 role reference in the code of the web application. Specifically in Liferay, the
