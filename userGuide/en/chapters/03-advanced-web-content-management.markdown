@@ -286,7 +286,7 @@ be able to create structures and templates. Users, of course, should be able to
 view structures. The *View* permission enables them to make use of the
 structures to create content.
 
-![Figure 3.4: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.4: View Permissions for a Structure](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles and this is the recommended way
 to handle permissions for structures.
@@ -340,22 +340,27 @@ straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
+<!-- CSS was not available during testing of 6.2 feature. Need to find out if
+this is planned or if CSS category is still being developed -->
+
 #### Adding templates
 
-Liferay WCM makes it easy to create structures, templates and content from the
+Liferay WCM makes it easy to create structures, templates, and content from the
 same interface. Let's go through the entire flow of how you'd create a
 structure, link it to a template and then create content using them both. We'll
 use Velocity for our template and we'll lay out the structure fields
 systematically to go along with the format we've defined for our content.
 
-![Figure 3.6: Adding Template Interface](../../images/04-web-content-templates-create.png)
+<!-- Update Velocity template to FreeMarker -->
+
+![Figure 3.6: You can create a new Web Content template by browsing a pre-made template or creating one in the script editor.](../../images/04-web-content-templates-create.png)
 
 1. Go back to the Web Content section of the Control Panel and click *Add*
-   &rarr; *Basic Web Content*.
+&rarr; *Basic Web Content*.
 2. Click *Select* next to the Structures heading to access the Manage Structures
-   interface.
+interface.
 3. Click on the *Add* button.
-4. Add the following fields:
+4. Name the structure *News Article* and add the following fields:
 
 Field Type		        Variable Name
 ----------		        -------------
@@ -364,21 +369,23 @@ Text Box		 	    *abstract*
 Documents and Media     *image*
 Text Area		        *body*
 
-5.  Name the structure *News Article* and click *Save*.
-6.  Back on the Manage Structures interface, click *Actions* &rarr; *Manage
-    Templates* next to the News Article structure that you created.
-7.  Click *Add*.
-8.  Enter the name *News Article* and add a description.
-9.  Make sure Velocity is selected as the script language (it's the default).
+5. Click *Save*.
+6. In the Manage Structures interface, click *Choose* next to the News Article
+structure that you created.
+7. In the New Web Content form, click *Select* next to the Template heading to
+access the Manage Templates interface.
+8. Click *Add*, enter the name *News Article*, and add a description.
+9. Make sure Velocity is selected as the script language (it's the default).
 10. If you've written the script beforehand, you can select *Browse* to upload
-    it from your machine. Otherwise, you can click *Launch Editor* to type the
-    script directly into the small editor window that appears.
+it from your machine. Otherwise, you can type the script directly into the
+script editor window.
 11. Click *Save*.
-12. Click *Back*.
-13. Select the News Article structure.
+12. Exit the Manage Templates interface and click *Select* next to the Template
+heading again.
+13. Click *Choose* next to the News Article template you created.
 14. On the New Web Content form, you'll see the Title, Abstract, Image, and Body
-    fields that you defined for the News Article structure. The News Article
-    template should also be selected.
+fields that you defined for the News Article structure. The News Article
+template should also be selected.
 15. Populate the fields and click *Publish* to publish your News Article.
 
 Below is the template script for this structure. It is written in Velocity:
@@ -413,9 +420,9 @@ the abstract and the link created above, which sets the `read_more` parameter.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.7: Initial View](../../images/04-web-content-adv-example1.png)
+![Figure 3.7: The initial view for the Nose-ster News Article.](../../images/04-web-content-adv-example1.png)
 
-![Figure 3.8: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
+![Figure 3.8: After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example2.png)
 
 Now that you've created a handsome template, it's time to decide who the lucky
 people are that get to use it.
@@ -426,18 +433,14 @@ Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.
 You may, however, want to make the templates viewable to some content creators
 who understand the template scripting language but are not directly writing the
-scripts. You can determine who views the template by selecting from the
-*Viewable By* select box beneath the *Permissions* tab. By default the *Anyone
-(Guest Role)* is selected.
+scripts. You can determine who views and interacts with the template by
+navigating to *Manage* &rarr; *Templates* and selecting *Permissions* from the
+*Actions* button.
 
-You'll also want to determine how users can interact with the template. You can
-do this by selecting the *More* link.
-
-From the *More* link, you can grant or deny permissions based on Roles. For
-instance, you may create a role with the ability to update the template and
-create a second role that can both update and delete. Liferay Portal makes it
-possible to assign permissions based on the roles and responsibilities within
-your organization.
+You can grant or deny permissions based on Roles. For instance, you may create a
+role with the ability to update the template and create a second role that can
+both update and delete. Liferay Portal makes it possible to assign permissions
+based on the roles and responsibilities within your organization.
 
 Now that you understand the role structures and templates play in creating web
 content, let's look at how you can use Liferay to manage multiple sites.
