@@ -1826,68 +1826,76 @@ Unlike other Java editors, Developer Studio lets you test your workflow
 definition as a draft. You can also publish your workflow definition straight to
 Liferay Portal for quick and easy configuration. 
 
-Are you ready for our *Kaleo Designer for Java* finale? Let's set up the DDL
-record within Liferay Portal and try out our new workflow! 
+Are you ready for our *Kaleo Designer for Java* finale? You just have to
+activate the workflow in your Liferay Portal, then we'll set up the DDL record
+and try out our new workflow. Let's get activating! 
 
 ### Using workflows in Liferay Portal 
 
 Let's put some finishing touches on your workflow and test drive it in Liferay
 Portal. Before you can use a workflow definition, it must be activated in your
-Liferay Portal, Navigate to the *Control Panel* and select *Workflow*. Then, in
-the *Definitions* tab, click on the *Actions* button, and select *Activate*. 
+Liferay Portal. Navigate to the *Control Panel* and select *Workflow*. Then, in
+the *Definitions* tab, click on the *Actions* button and select *Activate*. 
 
-![Figure 8.70: Liferay portal's Control Panel lets you activate/deactivate workflow definitions.](../../images/kaleo-34.png) 
+![Figure 8.70: Liferay portal's Control Panel lets you activate or deactivate workflow definitions.](../../images/kaleo-34.png) 
 
 A workflow definition can be associated with publication of an asset or DDL
 record. Let's associate our ticket process workflow definition with a DDL record
-that lets a developer indicate whether she will fix a ticket's issue. You can
-reference how to specifically create a DDL by visiting the section [Defining
+that lets a developer indicate whether she'll fix a ticket's issue. You can
+find detailed instructions for creating a DDL by visiting the section [Defining
 data
 types](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/defining-data-typ-1)
-in *Using Liferay Portal*. We'll demonstrate how easy it is.
+in *Using Liferay Portal*. We'll demonstrate how easy it is. 
 
 ### Using DDLs with workflows 
 
-Dynamic Data Lists can be used for many different things, but for our example we
-will integrate a DDL record into our ticket process workflow. If you would like
-to learn more about Dynamic Data Lists, visit [Using Web Forms and Dynamic Data
+Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
+more about DDLs, visit [Using Web Forms and Dynamic Data
 Lists](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-lifer-1)
-located in *Using Liferay Portal*.
+in *Using Liferay Portal*. 
 
-Let's create a data definition that lets the user select a status value. Drag
-and drop the *Select* field from the *Fields* tab onto the canvas for the
-definition.
+First we'll create a data definition that lets the user select a status value. 
+
+1. In Liferay Portal, go to *Control Panel* &rarr; *Dynamic Data Lists*.
+
+2. Click the *Manage Data Definitions* link, then *Add* a new data definition.
+
+3. In the *Fields* tab, drag and drop the *Select* field onto the canvas. 
 
 ![Figure 8.71: Creating data definitions for your DDL is a snap with Liferay's graphical drag and drop interface.](../../images/kaleo-35.png)
 
-Then, from within the *Settings* tab give your field the name
-*status*. Also, edit the *Options* setting giving your *status* field option
-values of `fix` with label "Fix" and `not` with label "Do not fix".
+4. In the *Settings* tab, double click the *Name* property to open the property
+editor; enter *status* as the value. 
+
+5. Edit the *Options* setting; give your *status* field option values of `fix`
+with label "Fix" and `not` with label "Do not fix".  
+
+6. Click *Save*. 
 
 ![Figure 8.72: Set your data definition with appropriate values to use in your workflow definition.](../../images/kaleo-37.png)
 
 Recall the code we inserted for our condition node:
 
-	Field field = ddlRecord.getField("status");
+    Field field = ddlRecord.getField("status");
 
-	String status = GetterUtil.getString(field.getValue());
-	if (status.contains("not")) {
-		returnValue = "No"
-	}
-	else {
-		returnValue = "Yes"
-	}
+    String status = GetterUtil.getString(field.getValue());
+    if (status.contains("not")) {
+        returnValue = "No"
+    }
+    else {
+        returnValue = "Yes"
+    }
 
 In our code, the `getField()` method ingests the value of our DDL field named
-"status". When the script is invoked, if the value for the status field contains
-"not", the value "No" is returned and our workflow transitions to our EndNode
-state. Otherwise, the workflow transitions to our Developer task node.
+"status". When the script is invoked, if the value for the status field is
+`not`, the value *No* is returned and our workflow transitions to our EndNode
+state. Otherwise, the workflow transitions to our Developer task node. 
 
-After creating the data definition, make sure to select the ticket process
-workflow for our new Kaleo Forms process to use. Lastly, save the DDL.
+After you create the data definition, make sure you select the ticket process
+workflow for our new Kaleo Forms process to use. *Save* the DDL. 
 
-Now, our DDL is set for use inside our ticket process workflow! Lastly, we will
-use the Kaleo Forms portlet to test our new workflow definition!
+Now our DDL is set for use inside our ticket process workflow! Let's use the
+Kaleo Forms portlet to test our new workflow definition! 
 
 #### Using Kaleo Forms to run workflows 
 
@@ -1895,52 +1903,56 @@ Let's use the Kaleo Forms portlet to invoke our workflow from Liferay Portal.
 Deploy the Kaleo Forms portlet to your portal and add it to a page on your site.
 You can learn how to use Kaleo Forms in the [Kaleo
 Forms](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen06-kaleo-forms-0)
-section of *Using Liferay Portal*. But we'll give you a jump start on Kaleo
-Forms by using it with our ticket process workflow.
+section of *Using Liferay Portal*; we'll demonstrate its use here by using it
+with our ticket process workflow. 
 
-1. Create a new *Process* within Kaleo Forms and give it the name *Ticket Process*.
+1. Create a new *Process* in Kaleo Forms; name it *Ticket Process*. 
 
-2. Select the *status* data definition we created earlier.
+2. Select the *status* data definition we created earlier. 
 
-3. Add an *Initial Form* based on our *status* data definition.
+3. Add an *Initial Form* based on our *status* data definition. 
 
-4. Select our ticket process workflow.
+4. Select our ticket process workflow. 
 
-5. Leave *Workflow Task Forms* unassigned for our demonstration.
+5. Leave *Workflow Task Forms* unassigned for our demonstration. 
 
-![Figure 8.73: To test the ticket process workflow, you will need to indicate the name, entry definition, and workflow when creating a new process.](../../images/kaleo-41.png)
+![Figure 8.73: To test the ticket process workflow, create a new Kaleo Forms *Process*--provide a name, entry definition, and workflow.](../../images/kaleo-41.png)
 
 After saving, select the *Summary* tab in Kaleo Forms, click the *Submit New*
 button, and select *Ticket Process*.
 
 ![Figure 8.74: Submitting the ticket process invokes its corresponding workflow.](../../images/kaleo-40.png)
 
-You're now able to interact with the DDL and progress throughout the ticket
-process using Kaleo Forms. Remember, you will need to sign in as Joe Bloggs to
-access the tasks assigned to him. Joe Bloggs should also receive an email when
-the Project Management node is activated.
+Now you can interact with the DDL and progress throughout the ticket process
+using Kaleo Forms. Remember to sign in as Joe Bloggs to access the tasks
+assigned to him. Joe Bloggs should also receive an email when the Project
+Management node is activated. 
 
-You have successfully created a workflow definition and created a workflow
-process within Liferay Portal! You are officially a workflow master!
+You successfully created a workflow definition and created a workflow process
+within Liferay Portal! You're officially a workflow master (you can get your
+framed certification at the front desk on your way out--tell them we sent you)! 
 
-Developer Studio offers a dynamic workflow diagram, which helps you visualize
-your workflow and create steps to ensure a successful business process. Also,
-the script and template editors give you a convenient workspace that caters to
-any preference you may have as a developer. In addition, Developer Studio's
-access to your custom business logic APIs and Liferay Portal APIs makes it
-simple to customize your workflow definition. Lastly, the ability to publish
-directly to your existing Liferay server makes the configuration process quick
-and easy. With all of these great features, the Kaleo Designer for Java in
-Developer Studio is a powerful tool that couldn't be easier to use!
+## Summary 
 
-## Conclusion 
+In this chapter we explored Liferay IDE, an extension of Eclipse IDE. You
+learned to to install and set up Liferay IDE, then to create and deploy Liferay
+projects, as well as import existing projects into Liferay IDE. Admit it--it's a
+slick set of tools! We hope you take advantage of it in using Liferay Portal and
+developing your Liferay plugins. 
 
-In this chapter we've explored the Liferay IDE and have gone through
-step-by-step instructions with regards to installation and setup, creating and
-deploying Liferay projects, and importing existing projects into Liferay IDE.
-You must admit -- it is a slick tool-set! And we hope you take advantage of it
-in using Liferay Portal and developing your Liferay plugins.
+After learning all about Liferay IDE we looked at managing workflows using Kaleo
+Designer for Java in Liferay Developer Studio. With Developer Studio's dynamic
+workflow diagram, you can visualize your workflow and create steps to ensure a
+successful business process. The script and template editors give you a
+convenient workspace to further enhance your workflow development environment.
 
-Next, we'll get up-close and personal with Liferay's APIs!
+Because Developer Studio has access to your custom business logic APIs and
+Liferay Portal APIs, it's simple to customize your workflow definition. To get
+your workflows running in Liferay, you can publish directly to your existing
+Liferay server; the configuration process is quick and easy. With all of its
+features, the Kaleo Designer for Java in Developer Studio is a powerful yet
+simple tool. 
+
+Next, let's get up-close and personal with Liferay's APIs!
 <!-- Please leave the newline below this line -->
 
