@@ -728,14 +728,36 @@ site they belong to. For more information about these applications, please refer
 to Liferay's user guide, *Using Liferay Portal*, available at
 [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). 
 
-![Figure 1.23: Social Office's sites come with pre-build pages and applications
+![Figure 1.23: Social Office's sites come with pre-built pages and applications
 that facilitate team-based collaboration.](../../images/social-office-site.png)
 
-In addition to the Blogs portlet, the Blogs page contains a Related Content
-portlet. This portlet has a large number of possible configurations. By default,
-it dynamically displays content belonging to the scope of the current site. The
-Members page just contains a members portlet and an invitation portlet which can
-be used to invite users to join the site.
+In addition to the Blogs portlet, the Blogs page contains a Recent Blogs
+portlet. These two portlets are designed to work together. The Blogs portlet
+allows users with the appropriate permissions to publish new blog posts. By
+default, it also displays the full content of 5 recent posts. The Recent Blogs
+portlet, on the other hands, displays a list of recently published blog posts.
+The Recent Blogs portlet doesn't show the full content of each post. Instead,
+clicking on a post's title or on the *Read More* link in the Recent opens the
+full content of the post in the Blogs portlet.
+
+Previous versions of Social Office provided a Related Assets portlet on the
+Blogs page. This portlet is no longer provided on the Blogs page by default but
+can easily be added: just click *Add* &rarr; *More* from the Dockbar, search for
+*Related Assets*, and click *Add* next to its name to add it to the page.
+Whenever the Blogs portlet displays the full content of a blog post, the Related
+Assets portlet lists any of the post's related assets. Click on the name of any
+related asset to view the asset. If there are no related assets, the Related
+Assets portlet won't appear at all.
+
+The Members page contains a Members portlet and an Invitation portlet. By
+default, the Members portlet displays a list of all the members of the site.
+Using the Members portlet's dropdown selector, users can filter site members who
+are also social connections and site members who they're following. They can
+also select users in the Members portlet in order to send them connections
+requests, follow them, block them, send them private messages, or download their
+vCards. Please refer to the section on the Contacts portlet for more details.
+The Invitation portlet is only visible to site administrators. It allows
+administrators to send invitations to users to join the site.
 
 Here's an example of how it all comes together: Ryan, Jim, and Michael are all
 members of the Sales Site. Ryan schedules a meeting for the whole Sales team
