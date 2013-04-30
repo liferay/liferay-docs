@@ -87,8 +87,6 @@ of the links provided above).
 
 3. When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-![Figure 8.1: Installing new software in Eclipse](../../images/ide-install-new-software.png)
-
 4. In the *Work with* field, enter the update site URL for your Eclipse release,
 then press *Enter*. Your update site URL will be one of the following: 
 
@@ -100,9 +98,6 @@ then press *Enter*. Your update site URL will be one of the following:
 
     Eclipse Helios Update Site:
     [http://releases.liferay.com/tools/ide/eclipse/helios/stable/](http://releases.liferay.com/tools/ide/eclipse/helios/stable/)
-
-
-![Figure 8.2: Entering the information for Liferay IDE](../../images/ide-install-available-software.png)
 
 5. Liferay IDE features should be detected. Select them and click *Next*. 
 
@@ -144,8 +139,6 @@ version of Liferay IDE from the releases page:
 
 9. After restarting Eclipse, go to *Help* &rarr; *About*; if you see a Liferay
 IDE icon badge as in the screenshot below, it's properly installed. 
-
-![Figure 8.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
 <!--I don't know if I correctly added the right steps above, but I gave it a
 shot. It was confusing to me so I thought it needed to be beefed up. --> 
@@ -191,15 +184,13 @@ IDE.
 dropdown menu, click *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
 SDKs*.
 
-3.  Click *Add* to bring up the *Add SDK* Dialog. 
+2.  Click *Add* to bring up the *Add SDK* Dialog. 
 
-4. Browse to your Plugins SDK installation. The default name is the directory
+3. Browse to your Plugins SDK installation. The default name is the directory
 name; you can change it if you want. 
 
-5. Select *OK*, and verify that your SDK was added to the list of *Installed
+4. Select *OK*, and verify that your SDK was added to the list of *Installed
 Liferay Plugin SDKs*. 
-
-    ![Figure 8.5: Installed SDKs](../../images/ide-select-installed-sdk.png)
 
  ![note](../../images/tip-pen-paper.png)**Note:** You can have Multiple SDKs in
  your preferences--set one as the default SDK by checking its box in the list of
@@ -213,13 +204,9 @@ Liferay Plugin SDKs*.
     ![Figure 8.6: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
 2. Click *Add* to add a new Liferay runtime; find *Liferay v6.1 (Tomcat 7)*
-under the Liferay, Inc. category and click Next.
-
-    ![Figure 8.7: Adding a Liferay runtime](../../images/ide-create-new-local-server.png)
+under the *Liferay, Inc.* category and click Next.
 
 3. Click *Browse* and select your `liferay-portal-6.1.x directory`. 
-
-    ![Figure 8.8: Browsing to your Liferay portal directory](../../images/ide-select-liferay-portal-directory.png)
 
 4. If you've selected the Liferay portal directory and a bundle JRE is present,
 it will automatically be selected as the server's launch JRE. If no JRE bundle
@@ -231,8 +218,6 @@ is present then you'll have to select the JRE to use for launch by clicking
 5. Click *Finish*; you should see your Liferay portal runtime listed in
 *Preferences* &rarr; *Server Runtime Environments*.
 
-    ![Figure 8.10: Liferay portal in the list of available runtimes](../../images/ide-add-server-runtime.png)
-
 6. Click *OK* to save your runtime preferences. 
 
 7. If you haven't created a server, create one now from the *Servers*
@@ -242,8 +227,6 @@ view in Liferay IDE; then you can test the server.
 
 8. Scroll to the *Liferay, Inc* folder and select *Liferay v6... Server*. Choose
 the *Liferay v6...* runtime environment that you just created. 
-
-    ![Figure 8.12: Selecting Liferay for the Servers view](../../images/ide-define-new-server-type.png)
 
 Now your server is set up.  Let's launch it and perform some tests! 
 
@@ -273,8 +256,6 @@ From Eclipse's *Run* menu:
 <!--Did I get that wrong? The *Terminate* option is grayed out in my LDS's Run
 menu though the server is running. -Russ -->
 
-![Figure 8.13: You can start Liferay using either the icon, or by right clicking on the server and selecting the option from the menu](../../images/ide-start-server-debug-mode.png)
-
 Once the server is launched, you can open Liferay portal home from the *Servers*
 tab by right clicking your Liferay Tomcat server and selecting *Open Liferay
 Portal Home*. 
@@ -285,8 +266,6 @@ Your Plugins SDK and portal server are configured--let's see how to create a new
 Liferay plugin project in Liferay IDE. Go to File &rarr; New Project... &rarr;
 Liferay &rarr; Liferay Plugin Project. 
 
-![Figure 8.15: Creating a plugin project](../../images/ide-new-project-liferay-project.png)
-
 In the *New Liferay Plugin Project* dialog box, your newly configured SDK and
 Liferay Runtime should be selected. The plugin type *portlet* is the default
 plugin type. Type a project name and cooresponding display name, then click
@@ -295,8 +274,6 @@ plugin type. Type a project name and cooresponding display name, then click
 ![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-project.png)
 
 Your new plugin project should apear in the package explorer. 
-
-![Figure 8.17: Viewing the new project in the Package Explorer view](../../images/ide-package-explorer-demo-portlet.png)
 
 Now you need to deploy your new plugin project to your Liferay Server. 
 
@@ -310,11 +287,7 @@ the *Servers* tab;
 
 2. Select *Add and Remove...*. 
 
-![Figure 8.18: Deploying a project to the server](../../images/ide-servers-add-and-remove.png)
-
 3. Select your plugin project and click *Add* to deploy it to the server. 
-
-![Figure 8.19: Choosing which project to deploy](../../images/ide-add-resource-to-server.png)
 
 4. Click *Finish*. 
 
@@ -323,8 +296,8 @@ you'll see a message indicating your new portlet is available for use.
 
 ![Figure 8.20: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
 
-Open *Liferay Portal Home* (http://localhost:8080/ in most cases) and follow the
-instructions in the setup wizard.
+Open *Liferay Portal Home* (`http://localhost:8080/` in most cases) and follow
+the instructions in the setup wizard. 
 
 <!--
 Log in within the following credentials: 
@@ -338,8 +311,6 @@ Log in within the following credentials:
 Once you're logged in, click *Add* &rarr; *More*; expand the *Sample* categore
 and click the *Add* link next to your demo application. You should see the
 correctly deployed portlet on the page. 
-
-![Figure 8.21: Adding a portlet to the page](../../images/ide-add-portlet-to-page.png)
 
 ## Importing Existing Projects into Liferay IDE 
 
@@ -393,8 +364,6 @@ Plugins SDK, follow these steps:
 
 1. In Liferay IDE, go to *File* &rarr; *New* &rarr; *Project...* &rarr;
 *Liferay* &rarr; *Liferay Project from Existing Source*. 
-
-    ![Figure 8.22: Importing a Liferay Project](../../images/ide-select-liferay-project-from-existing.png)
 
     You can invoke the same wizard from the Liferay shortcut bar; just click
     the *Create a New Liferay Project* button.
