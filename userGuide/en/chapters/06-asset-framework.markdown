@@ -166,7 +166,7 @@ It's important to use tags and categories with all your content, so that content
 is easier for users to find. Let's look at one of the ways users will make use
 of tags and categories: searching for content. 
 
-## Using Faceted Search  
+## Searching for Content in Liferay
 
 To stay organized, I (RS) used to use a paper-based planner. It had various
 sections for various areas of my life. Its initial incarnation came from a
@@ -186,15 +186,62 @@ Liferay content can be like this. That important information you remember
 seeing--was it in a wiki article, a message boards post, or web content? Did you
 remember to tag it? If you don't have this kind of information, browsing to the
 content you're looking for could be difficult. Thankfully, Liferay includes a
-powerful, faceted search function, which means you can drill down through the
-different types of content, tags, and categories to refine your search and find
-what you want. Let's see how to use it. 
+powerful, faceted search function. You can access this function through the
+Search portlet, which lets you drill down through the different types of
+content, tags, and categories to refine your search. Let's look at the search
+features Liferay provides for specific kinds of content and then examine how to
+use Liferay's faceted search.
 
-### Searching for Portal Content  
+### Searching for Specific Types of Content
 
-To get started, drop the Search portlet on a page and search for something.
-You'll see a page with results on the right and a collection of *facets* on the
-left. 
+Liferay provides several applications that allow users and administrators to
+search for content. First, there's the Search portlet. The Search portlet can be
+placed a page to allow users to search for assets of any type. We'll learn how
+to use the Search portlet when we discuss Liferay's faceted search feature in
+the next section. There's also a Web Content Search portlet. This portlet can be
+placed on a page to allow users to search for web content articles. Users can't
+use the Web Content Search portlet to search for other kinds of content. The
+Blogs, Wiki, Message Boards, Documents and Media, and Web Content portlets all
+provide search bars that allow users to search among the specific types of
+assets with which these portlets allow users to interact. Note that all of these
+portlets are accessible from the Control Panel. They can also, except for the
+Web Content portlet, be placed on portal pages for end-users to use. The Web
+Content portlet is not designed for end users; it's intended for administrative
+use only.
+
+In order for content to be searchable, it must first be indexed. Liferay uses
+Lucene for indexing and searching for content. Please refer to the Lucene
+section of the portal properties file if you'd like to customize Liferay's
+indexing and search behavior. By default, Liferay indexes blog posts, wiki
+articles, and message board posts, Documents and Media files' descriptions, and
+web content articles. If a Documents and Media file is a text file, the file's
+content is indexed as well. Comments on blog posts, wiki articles, and Documents
+and Media files and text file attachments to wiki articles and message board
+posts are also indexed. Liferay automatically indexes content as it's added to
+the portal.
+
+If you'd like to search among assets of a specific type and you'd like to
+include comments and attachments in your search, use the search bar of the
+appropriate portlet. For example, if you'd like to search for the term *Liferay*
+among wiki articles, enter the term *Liferay* into the Wiki portlet's search
+bar. 
+
+![Figure 6.x: When using the Wiki portlet's search bar to search for *Liferay*, wiki articles, comments, and attachments containing the word *Liferay* are returned.](../../images/wiki-search.png)
+
+Wiki articles, comments, and text file attachments containing the word *Liferay*
+are returned as search results. The search results clearly show whether an
+individual search result is a wiki article, a comment, or an attachement. In the
+next section, we'll see how the Search portlet can be used to search through
+multiple types of content on Liferay. Its faceted search feature is a powerful
+tool that allows users to include or not include specific types of assets in a
+search.  However, the Search portlet does not return comments or attachments as
+search results.
+
+### Searching for Portal Content Using Facets
+
+To get started using faceted search, drop the Search portlet on a page and
+search for something. You'll see a page with results on the right and a
+collection of *facets* on the left. 
 
 ![Figure 6.7: The first set of facets is content types. You can drill down to
 specific types of content that contain the search terms you
@@ -222,8 +269,6 @@ the number of tags that appear is configurable: by default it's 10, but there
 could be many more as a result of a particular search. We'll look at the
 configuration options later in the chapter. For now, let's see how drilling down
 works. 
-
-### Drilling Down to the Data You Want  
 
 To drill down into the search, click a facet to add it to the filter list, and
 the results to the right are refined by the facet you selected. 
@@ -349,8 +394,7 @@ Next, we'll look at how the Search portlet can be configured.
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
 
-![Figure 6.11: Basic search configuration is pretty straightforward.
-](../../images/05-faceted-search-configuration.png)
+![Figure 6.11: Basic search configuration is pretty straightforward.](../../images/05-faceted-search-configuration.png)
 
 **Display Asset Type Facet:** Toggles whether the Asset Type facet appears. 
 
