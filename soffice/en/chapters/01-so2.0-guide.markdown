@@ -204,9 +204,9 @@ after deploying the license in order for Social Office EE to deploy.
 
 ### Completing your installation
 
-After deploying Social Office, check your server console log. There should not
+After deploying Social Office, check your server's console log. There should not
 be any console errors during installation. If you encounter any console errors,
-please refer to the Validating your Social Office Installation section.
+please refer to the Validating a Social Office Installation section.
 
 We recommend that you restart your application server after Social Office has
 been deployed. Restarting may not be necessary in all cases but it can help you
@@ -292,11 +292,14 @@ non-Social Office sites. However, no data will be deleted. Uninstalling only
 uninstalls the plugins included in Social Office, the Social Office role, and
 the site templates. 
 
-## Validating your Social Office Installation
+## Validating a Social Office Installation
 
 The Social Office `.lpkg` file is hot-deployable and includes the following
-Liferay plugins. The plugins listed in italics belong only to either the CE or
-EE versions of Social Office.
+Liferay plugins. After installing (or uninstalling) Social Office, you should
+confirm that these plugins have been successfully deployed. Your server's
+console log should indicate whether or each plugin has been successfully
+deployed. The plugins listed in italics belong only to either the CE or EE
+versions of Social Office.
 
 **CE Plugins:**
 
@@ -333,7 +336,79 @@ EE versions of Social Office.
 - tasks-portlet
 - wysiwyg-portlet
 
-### Managing the Social Office welcome theme 
+If all the Social Office plugins have been successfully deployed, check that
+you can access the following items in your portal, either in the Control Panel
+or on a default Social Office site:
+
+**Role**:
+
+- Social Office User
+
+**Site Templates**:
+
+- Default Social Office Site
+- Social Office User Home (Dashboard)
+- Social Office User Profile
+
+**Portlets**:
+
+- Chat
+- Contacts
+- Events Display
+- Microblogs
+- Private Messaging
+- Social Office Configurations (EE-only)
+- Social Office Portlet
+- Tasks
+- Wysiwyg
+
+**Hooks**:
+
+- Deploy Listener
+- Documentum Hook (EE-only)
+- Portal Compat Hook
+- Sharepoint Hook (EE-only)
+- Social Office Hook
+
+**Themes**:
+
+- Social Office theme
+- Social Office Welcome theme (CE-only)
+
+To actually start using Social Office, you need to grant the Social Office User
+role to one or more users. If you're using Social Office EE, you can access the
+Social Office Configurations portlet which provides a shortcut for this process.
+Please refer to the *Using Social Office* section for more details about the
+Social Office User role and the features provided by Social Office.
+
+### What to do if your Installation is Unsuccessful
+
+If your Social Office Installation was unsuccessful, please make sure that you
+haven't made one of the following installation mistakes:
+
+- Your Liferay database must use character set UTF-8 in order for Social Office
+  to work.
+- If you have the *plugin-deployment-1* patch installed, you need to install the
+  following patches on your Liferay Portal instance:
+    - Core-4 or above
+    - hotfxix-55
+    - hotfix-446
+- A previously failed installation of Social Office can produce a duplicate
+  entry exception and cause the installation to fail.
+    - In this case, it's best to uninstall Social Office through Marketplace
+      since this operation performs data clean up. 
+    - If uninstalling through Marketplace is not an option, you can delete the
+      following components manually through the Control Panel and attempt the
+      installation again.
+        - Social Office User Role
+        - Default Social Office Site Template
+        - Social Office User Home Template
+        - Social Office User Profile Template 
+
+If the tips above do not solve your installation problem, you can seek further
+assistance through the [Social Office Forum](http://www.liferay.com/community/forums/-/message_boards/category/1670998) or from [Liferay Support](http://www.liferay.com/group/customer/home).
+
+### Managing the Social Office welcome theme
 
 The Social Office welcome theme is a CE-only feature. The welcome theme and
 resource importer are included in the CE Social Office 2.0 package available
