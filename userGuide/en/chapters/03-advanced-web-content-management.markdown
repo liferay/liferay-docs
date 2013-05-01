@@ -101,8 +101,7 @@ templates or list templates associated with the structure. For information on
 detail templates and list templates, please refer to chapter 9 on Dynamic Data
 Lists.
 
-![Figure 3.1: You can access the Manage Structures interface by clicking
-*Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
+![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
 
 The second way to access the Manage Structures interface is directly from the
 web content article WYSIWYG editor. Click *Add* &rarr; *Basic Web Content* from
@@ -236,9 +235,7 @@ create the structure manually: the Launch Editor button allows you to edit the
 XML for the structure if you wish to do it via code. When you are done, click
 *Save and Continue* to go to the Structure Default Values form.
 
-![Figure 3.2: You can create fields for structure default values via the XML
-Schema Definition section of the new structure
-form.](../../images/xml-schema-definitions.png)
+![Figure 3.2: You can create fields for structure default values via the XML Schema Definition section of the new structure form.](../../images/xml-schema-definitions.png)
 
 To edit an existing structure, go to *Web Content* in the Control Panel and
 click the *Structures* tab to see the structures list. Find the *Actions* button
@@ -527,7 +524,7 @@ inaccessible but can be activated whenever a site administrator wishes.
 
 Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created you can specify more details about the site using
-three categories: Basic Information, Search Engine Optimization and Advanced.
+three categories: Basic Information, Search Engine Optimization, and Advanced.
 
 ![Figure 3.8: Editing a Site](../../images/01-site-editor.png)
 
@@ -627,10 +624,10 @@ site.
 By default, the following site templates are provided:
 
 - **Community Site:** Provides a preconfigured site for building online
-  communities. The home of a *community site* provides message boards, search, a
-  display of a poll and statistics of the activity of community members. The
-  site will also be created with a page for a community calendar and a page for
-  a wiki.
+  communities. The Home page of a *community site* provides message boards,
+  search, a display of a poll and statistics of the activity of community
+  members. The site will also be created with a page for a community calendar
+  and a page for a wiki.
 
 - **Intranet Site:** Provides a preconfigured site for an intranet. The Home
   page displays the activities of the members of the site, search, a language
@@ -1078,9 +1075,7 @@ the context menu selector. Then click on *Site Settings* in the Control Panel
 menu and then on *Staging* in the menu at the left. Select *Remote Live* under
 Staging Type and additional options appear.
 
-![Figure 3.x: After your remote Liferay server and local Liferay server have
-been configured to communicate with each other, you have to specify a few Remote
-Live connection settings.](../../images/remote-live-staging-settings.png)
+![Figure 3.x: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
 field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
@@ -1490,8 +1485,7 @@ and lets you add more. To add rules to a rule group, select *Actions*
 &rarr; *Manage Rules*, or click on a rule group to edit it, and then click
 the *Manage Rules* link.
 
-![Figure 3.25: You can manage device rules from the Mobile Device Rules
-administrative page.](../../images/mobile-device-rules.png)
+![Figure 3.25: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups
 selected for a particular site or page, determine which rule group's actions are
@@ -1503,8 +1497,7 @@ available.  The rules are designed, however, to be extensible, and additional
 rule types can be added by your developers. Once added, you can edit the rule to
 specify a device type and operating system.
 
-![Figure 3.26: You need to install the Device Recognition Provider plugin to
-populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.26: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a rule group
@@ -1523,9 +1516,7 @@ site or page and order them by priority. The rule groups are checked in
 decreasing order of priority: the actions defined by the first rule group that
 applies are executed.
 
-![Figure 3.27: You can select a mobile device rule group to apply for a site or
-page from the Site Pages section of the Control
-Panel.](../../images/mobile-device-selection.png)
+![Figure 3.27: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the Control Panel.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage
 Actions* button and then click *Add Action*. By default, there are four kinds of
@@ -1575,9 +1566,7 @@ Rules page of the Control Panel. Click on *Add Rule Group*, enter the name
 *Android and Bada Mobile Phones*, and click *Save*. You'll see the message, *No
 rules are configured for this rule group.*
 
-![Figure 3.28: After adding a new rule, you'll see a message indicating that no
-rules have been configured for the rule
-group.](../../images/no-rule-groups-configured.png)
+![Figure 3.28: After adding a new rule, you'll see a message indicating that no rules have been configured for the rule group.](../../images/no-rule-groups-configured.png)
 
 Click the *Manage Rules* link and we'll configure our rule group to apply only
 to mobile phones running Android or Bada. Click *Add Rule*, enter *Rule 1* for
@@ -1589,10 +1578,7 @@ click *Save*. Now we just need to define the redirect action for our rule group.
 Make sure Liferay is still selected in the context menu selector and click on
 *Site Pages*. Click on *Mobile Rule Groups* in the navigation menu to the right.
 
-![Figure 3.29: To apply a mobile device rule group to a page set of a site,
-select the site in the context menu selector, click on *Mobile Rule Groups*,
-click *Select Rule Group*, and select the desired rule
-group.](../../images/site-pages-mobile-device-rules.png)
+![Figure 3.29: To apply a mobile device rule group to a page set of a site, select the site in the context menu selector, click on *Mobile Rule Groups*, click *Select Rule Group*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
 
 Click *Select Rule Group* and then click the *Android and Bada Mobile Phones*
 rule group that you configured. Once you've selected your rule group, click 
