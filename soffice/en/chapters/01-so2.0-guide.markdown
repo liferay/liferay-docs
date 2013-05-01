@@ -385,7 +385,7 @@ the site templates.
 Next, let's discuss how to validate that Social Office has been successfully
 installed or uninstalled.
 
-## Validating a Social Office Installation [](id=lp-2-1-soen01-validating-a-social-office-installation)
+### Validating a Social Office Installation [](id=lp-2-1-soen01-validating-a-social-office-installation)
 
 The Social Office `.lpkg` file is hot-deployable and includes the following
 Liferay plugins. After installing (or uninstalling) Social Office, you should
@@ -633,6 +633,7 @@ portlet integrates with the calendar portlet belonging to your scope to show
 upcoming events for the next few days. There's also a Microblogs Status Update
 portlet on your Dashboard which lets you broadcast a Facebook-like status to the
 scope of your choice: to everyone, to your connections, or to your followers.
+
 Next, let's take a look at the applications provided on the other private pages
 of Social Office users' personal sites.
 
@@ -992,8 +993,10 @@ already upgraded your portal to version 6.1.1 CE, and backed up your old
 
    The following values are taken from the default 5.2 legacy properties in the
    portal folder.
-   
-    Default 5.2 users.image.max.height=0 users.image.max.width=0
+
+    users.image.max.height=0
+
+    users.image.max.width=0
 
     locale.prepend.friendly.url.style=0
 
@@ -1022,7 +1025,7 @@ already upgraded your portal to version 6.1.1 CE, and backed up your old
 
 5. Flag *Generate Custom Roles*.
 
-6. Click *Execute* to update the permission alogrithm.
+6. Click *Execute* to update the permission algorithm.
 
 7. Shut down your application server.
 
