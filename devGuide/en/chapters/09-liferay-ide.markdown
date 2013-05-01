@@ -376,20 +376,16 @@ Once you select the plugin project folder, its type and SDK version values are
 updated to the correct values. If the SDK isn't recent enough or the project
 type is incorrect it gets marked with an error. 
 
-    ![Figure 8.24: Setting the Project location](../../images/ide-import-project-from-existing.png)
-
 3. After you select the plugin project folder you should see the *Liferay plugin
-type* and *Liferay plugin SDK version* values updated. If your Plgins SDK is
+type* and *Liferay plugin SDK version* values updated. If your Plugins SDK is
 outdated or you entered an incorrect project type, its field gets marked with an
 error. 
-
-    ![Figure 8.25: Verifying the plugin type and version](../../images/ide-plugin-type-and-version.png)
 
 4. Select the *Liferay target runtime* to configure on the project once it's
 imported. If you don't have a Liferay Portal Runtime, use the *New...* button to
 create one now; Tomcat bundle is the only server runtime supported. 
 
-    ![Figure 8.26: Choosing the target runtime](../../images/ide-target-runtime-server.png)
+<!--Three figures were deleted here--one figure could be created to replace them if desirable. -Russ -->
 
 5. Click *Finish* to perform the import. 
 
@@ -410,37 +406,29 @@ Plugin SDK Projects*.
 2. In the *Import Projects* window, use the combo box to select the *Liferay
 Plugins SDK* you're importing plugins from. 
 
-    ![Figure 8.28: Choosing the SDK version](../../images/ide-import-plugins-sdk.png)
+---
+
+ ![note](../../images/tip-pen-paper.png)**Note:** If your SDK isn't configured
+ in Liferay IDE (i.e., it's not in the dropdown list of the *Import Projects*
+ window) use the *Configure* link to add a setting that points to the Plugins
+ SDK that you want to import projects from. To configure a Plugins SDK on the
+ Installed SDKs on the pref page just click *Add* and then Browse to the
+ directory of the Plugins SDK root directory.
 
 ---
 
-    ![note](../../images/tip-pen-paper.png)**Note:** If your SDK isn't
-    configured in Liferay IDE (i.e., it's not in the dropdown list of the
-    *Import Projects* window) use the *Configure* link to add a setting that
-    points to the Plugins SDK that you want to import projects from. To
-    configure a Plugins SDK on the Installed SDKs on the pref page just click
-    *Add* and then Browse to the directory of the Plugins SDK root directory.
-
----
-
-3. Once you select your Plugins SDK in the combo box, the SDK location and
-version are automatically filled in, as long as they're valid. Invalid entries
-are marked with an error. 
-
-    ![Figure 8.29: Verifying the SDK version and location](../../images/ide-select-configured-plugins-sdk.png)
+3. Once you select your Plugins SDK in the combo box, the *Liferay PLugin SDK
+Location* and *Liferay Plugin SDK Version* fields are automatically filled in,
+as long as they're valid. Invalid entries are marked with an error. 
 
 4. The list of projects that are available for import are displayed in a table.
 Any projects already in the workspace will be disabled. Projects available for
 import have an empty check box; select each project you'd like to import. 
 
-    ![Figure 8.30: Importing a project](../../images/ide-sample-service-builder-portlet-plugin.png)
-
 5. Select the Liferay runtime you want to set up for the imported projects. 
 
 6. If you don't have a liferay runtime, can add one now with the *New...*
 button. 
-
-    ![Figure 8.31: Selecting your runtime](../../images/ide-target-runtime-server.png)
 
 7. Click *Finish*. 
 
@@ -461,14 +449,12 @@ the import steps below to convert your project.
 
 ---
 
-    ![note](../../images/tip-pen-paper.png)**Note:** If you don't have a convert
-    action available it means either that the project is already a Liferay IDE
-    project, or that it is not faeted (i.e., Java and Dynamic Web project facets
-    are not yet configured). Configure accordingly before moving on. 
+ ![note](../../images/tip-pen-paper.png)**Note:** If you don't have a convert
+ action available it means either that the project is already a Liferay IDE
+ project, or that it is not faeted (i.e., Java and Dynamic Web project facets
+ are not yet configured). Configure accordingly before moving on. 
 
 ---
-
-    ![Figure 8.32: Selecting the convert option](../../images/ide-select-convert-to-liferay-project.png)
 
 2. In the *Convert Project* wizard, your project should be selected and the SDK
 location and SDK version should be detected automatically. If they aren't valid
@@ -477,9 +463,7 @@ an error message will be displayed.
     ![Figure 8.33: Converting a project](../../images/ide-convert-plugin-project.png)
 
 3. Select the Liferay runtime to set up for the project. If you don't have a
-Liferay Runtime defined, do so now using the *New...* action. 
-
-    ![Figure 8.34: Selecting the runtime](../../images/ide-target-runtime-server.png)
+Liferay Runtime defined, do so now by clicking *New...*. 
 
 4.  Click *Finish*. 
 
@@ -633,10 +617,9 @@ address]*, then click *Next*.
 4. The *New Server* wizard's next page will direct you to define the Liferay
 Portal runtime stub. Doing so allows projects created for your remote server to
 use the runtime stub for satisfying JAR dependencies needed to compile various
-Liferay projects. Select the bundle type based on the version of your local
-Liferay bundle, browse to the bundle's installation directory, and click *Next*.
-
-    ![Figure 9.x: You need to specify the location of a local Liferay Portal bundle that your Liferay projects can compile against.](../../images/remote_server_adapter_wizard_2.png)
+Liferay projects. Select the *Liferay bundle type* based on the version of your
+local Liferay bundle, browse to the *Liferay bundle directory*, and click
+*Next*. 
 
 5. On the next page of the wizard, you'll configure your connection to your
 remote Liferay instance. 
@@ -653,8 +636,6 @@ remote Liferay instance.
     Path* set to the defaults unless these values were changed for your remote
     Liferay Portal instance. 
 
-    ![Figure 9.x: Once you've configured the connection settings for your remote Liferay Portal instance, click *Validate Connection* to make sure that your connection works.](../../images/remote_server_adapter_wizard_3.png)
-
 6. Your remote Liferay Portal instance needs the Remote IDE Connector
 applicaiton installed; otherwise, Liferay IDE can't connect to it. If you
 haven't installed Liferay IDE Connector yet, click the *Remote IDE Connector*
@@ -662,9 +643,9 @@ link in the wizard. If you already downloaded the Remote IDE Connector
 application and installed it to your remote portal, skip to the next step and
 validate your connection. 
 
-    6.1. Browse Liferay Marketplace for the Remote IDE Connector application.
-    When you've found it, click *Free* to purchase it. Follow the on-screen
-    prompts.
+    6.1. Browse [Liferay Marketplace](http://www.liferay.com/marketplace) for
+    the Remote IDE Connector application. When you've found it, click *Free* to
+    purchase it. Follow the on-screen prompts.
 
     6.2. Once you've purchased the application, navigate to the *Purchased* page
     of the Control Panel's Marketplace interface.
@@ -691,8 +672,6 @@ click *Finish* in the Remote Liferay Server configuration wizard.
     remote server is in debug mode, the Eclipse Java debugger is attached to the
     remote process automatically.
 
-    ![Figure 9.x: If you've correctly configured the connection settings, your remote server appears in the Servers tab of Eclipse and Eclipse's console displays your remote server's Liferay logs.](../../images/remote_server_adapter_console_1.png)
-
 9. You can change the remote server settings at any time. Double-click on your
 remote server instance in the *Servers* tab to open the configuration editor,
 where you can modify the settings. 
@@ -712,10 +691,9 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
 
 ---
 
-    ![note](../../images/tip-pen-paper.png)**Note:** Make sure you have
-    available projects configured in Liferay IDE. If not, you'll get an error
-    message indicating there are no available resources to add or remove from
-    the server. 
+ ![note](../../images/tip-pen-paper.png)**Note:** Make sure you have available
+ projects configured in Liferay IDE. If not, you'll get an error message
+ indicating there are no available resources to add or remove from the server. 
 
 ---
 
@@ -733,8 +711,6 @@ automatically publish resources after changes are made, automatically publish
 after a buld event, or never to publish automatically. To manually invoke the
 publishing operation after having modified project files, right click on the
 server in the Servers view and select *Publish*. 
-
-    ![Figure 9.x: You can configure your server's publishing settings from the server configuration editor.](../../images/remote_server_adapter_configuration_editor.png)
 
 Have you noticed that there's a lot of depth to Liferay IDE? You can easily come
 across difficult questions and run into very specific problems; but someone else
@@ -824,7 +800,7 @@ plugins.
 
 Here's how to download and install *Kaleo Workflow EE*:
 
-1. Go to [Marketplace](https://www.liferay.com/marketplace).
+1. Go to [Liferay Marketplace](https://www.liferay.com/marketplace).
 2. Click on [EE
 Marketplace](http://www.liferay.com/marketplace/-/mp/category/12729032) in the
 left navigation area.
@@ -903,19 +879,6 @@ necessary to complete the initial setup of your new workflow definition.
     The snapshot below displays the setup menu for our
     ticket process workflow definition.
 
-    ![Figure 8.41: The wizard prompts you for information to setup your workflow.](../../images/kaleo-5.png)
-
-<!-- Is it preferable to explain the fields in the text or provide a screenshot.
-This one has a lot of fields so maybe a picture is better, but this chapter has
-a lot of images, too. -Russ -->
-
----
-
-![note](../../images/tip-pen-paper.png)**Note:** You must specify a Liferay
-project as a home for the workflow definitions you create. 
-
----
-
     When you're finished in this window click *Next*. 
 
     2.2. You'll be directed to the *Choose Assignment Type* window next.
@@ -928,11 +891,19 @@ project as a home for the workflow definitions you create.
     workflow is associated with an asset type. Later in our exercise, we'll
     associate our workflow with a Dynamic Data List (DDL). 
 
+<!--This type of instruction with heirarchical steps actually looks bad in my
+Markdown plugin for Jedit--very crammed -->
+    
     ![Figure 8.42: When choosing an assignment type for a task node, you are given multiple options.](../../images/kaleo-4.png)
 
-3. Click *Finish* to complete the initial setup of our workflow definition. 
+---
 
-![Figure 8.43: The workflows you create using the workflow wizard are displayed in Designer's workflow diagram.](../../images/kaleo-9.png)
+![note](../../images/tip-pen-paper.png)**Note:** You must specify a Liferay
+project as a home for the workflow definitions you create. 
+
+---
+
+3. Click *Finish* to complete the initial setup of our workflow definition. 
 
 Your workflow appears as a workflow diagram, letting you interact with your
 workflow graphically. Graphical features and toolbars allow you to customize
@@ -986,8 +957,6 @@ For our `ticket-process-definition` workflow diagram, we have a simple
 the `EndNode` *State* node. There are two transitions, from `StartNode` &rarr;
 `Developer` and from `Developer` &rarr; `EndNode`. 
 
-![Figure 8.45: The initial workflow definition of our `ticket process` needs some work!](../../images/kaleo-9.png) 
-
 We want a developer to approve his fix and send it for quality assurance to
 *QA*, where it must pass testing by a QA engineer. Then it'll go to *QA
 Management*, where it must be approved by a QA manager. Let's use a *Fork* node
@@ -1015,12 +984,8 @@ missing from your nodes. Hover your pointer over each error marker; Developer
 Studio displays hints on resolving each problem. Don't worry, we'll address
 these error markers momentarily. 
 
-![Figure 8.48: Error markings notify the user that something is wrong or needs to be specified within a node.](../../images/kaleo-26.png) 
-
 Hovering your pointer over a node brings up a floating palette; use it to make
 quick, convenient customizations to a node. 
-
-![Figure 8.49: A convenient floating palette appears when you hover your pointer over any node.](../../images/kaleo-10.png) 
 
 The floating pallette has several features you can use: 
 
@@ -1078,8 +1043,6 @@ Assigning the QA and QA Management task nodes resolved their error markings (no
 more red "X"!). The join node's error marking won't disappear until you connect
 the join node to another task. 
 
-![Figure 8.51: The error markings for the QA and QA Management task nodes disappear after their assignments are specified.](../../images/kaleo-27.png)
-
 While we're using Designer's Workflow Diagram, let's go over some of its
 features. 
 
@@ -1103,8 +1066,6 @@ corner of the Workflow Diagram:
     - *Print*
 
 	These toolbar icons are shown in the figure below.
-	
-	![Figure 8.52: The Workflow Diagram offers a toolbar with helpful option for zooming, saving, and printing your workflow diagram.](../../images/kaleo-23.png)
 
 - *More Workflow Diagram Actions* are accessible by right clicking on the
 Workflow Diagram's canvas:
@@ -1112,15 +1073,11 @@ Workflow Diagram's canvas:
     - The *Layout* feature lets you arrange nodes vertically or horizontally, so
     it's easy to organize your workflow quickly without having to touch a node. 
 
-    ![Figure 8.53: When right-clicking the graphical interface, you are given options for viewing and editing your workflow definition.](../../images/kaleo-24.png)
-
     - The *Rename* feature lets you rename a node or transition; select by
     double clicking its current name and typing in a new name.
     
     - The *Surveyor's Level* feature helps you center a node, vertically or
     horizontally, with respect to another node.
-
-    ![Figure 8.54: Studio's Surveyor's Level helps you design your workflow for an organized and professional look.](../../images/kaleo-32.png)
 
 You've probably noticed the *Properties* and *Oultine* views below your workflow
 diagram. Let's explore them next. 
