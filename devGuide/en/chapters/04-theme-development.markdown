@@ -117,7 +117,8 @@ own custom styling is added on top.
 
 To specify a base theme, edit the `build.xml` file for your theme and change
 *_styled* in `<property name="theme.parent" value="_styled>` to the name of any
-existing theme that's installed or in your Plugins SDK. 
+existing theme that's installed or in your Plugins SDK. Now that your base theme
+is set, let's deploy the theme to your portal instance.
 
 ### Deploying the Theme
 
@@ -153,7 +154,9 @@ Let's apply your theme to a page:
 2. Hover over **Manage** at the top of the page and click on *Page*. 
 
 3. Directly underneath the words **Manage Pages**, select the *Look and Feel*
-tab. Click on your theme to activate it. 
+tab. Click on your theme to activate it.
+
+Now that you've built and deployed a theme, let's study theme anatomy.
 
 ## Anatomy of a Theme
 
@@ -262,35 +265,28 @@ your changes.
 Would you rather see your changes immediately, rather than having to redeploy to
 make your changes visible? Let's talk about Liferay Developer Mode to learn how. 
 
-<!-- Developer Mode section needs editing. I don't understand this concept very
-well. Hopefully this start is useful. -Russ --> 
-
 ## Developer Mode
 
 Do you want to develop Liferay resources without having to redeploy to see your
-portal modifications? Use Liferay Developer Mode! In Developer mode all caches
-are removed, so any changes you make are visible right away. You won't have to
-reboot the server as often if you use Developer Mode.
-<!-- Not certain I got that right. -Russ -->
+portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
+are removed, so any changes you make are visible right away. Also, you won't
+have to reboot the server as often in Developer Mode.
 
 Before you use Developer Mode, you'll have to add the
 `portal-developer.properties` file to your application server's configuration
 file. Each application server has a different configuration file or UI to
-specify system properties. Let's demonstrate using Tomcat application server.
+specify system properties; so you'll need to find out the specific method for
+your application server. Let's demonstrate using the Tomcat application server.
 
-In your `setenv.sh` file (`setenv.bat` in Windows), find the line setting the
-`JAVA_OPTS` variable and add the following to the list of options:
+In your `setenv.sh` file (`setenv.bat` in Windows), find the `CATALINA_OPTS`
+variable and add the following to the list of options:
     
-    `Dexternal-properties=portal-developer.properties` 
+    -Dexternal-properties=portal-developer.properties
 
-The following is an example of the `JAVA_OPTS` variable lines with your code
-included:
+The following is an example of the `CATALINA_OPTS` variable lines with your code
+appended to the end (all code must be on one line):
 
-        JAVA_OPTS="-Xms256m -Xmx1024m -XX:PermSize=32m -XX:MaxPermSize=160m
-        -Dfile.encoding=UTF8 -Duser.timezone=GMT+2
-        -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.config
-        -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
-        -Dexternal-properties=portal-developer.properties"
+    CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m" -Dexternal-properties=portal-developer.properties"
 
 ---
 
@@ -302,22 +298,26 @@ included:
 ---
 
 How does Developer Mode let you see your changes more quickly? In Developer
-Mode, there are several changes to the normal order of operations:
+Mode, there are several changes to the normal order of operations. Some of these
+changes are listed below with the specific property that activates the behavior.
 
 - CSS files are loaded individually rather than being combined and loaded as a
-single CSS file.
+single CSS file (`theme.css.fast.load=false`).
 
-- JavaScript files are also loaded individually, including JavaScript for the
-portal itself and JavaScript related to any portlet registered through
-`liferay-portlet.xml`. JavaScript logs are also enabled in Developer Mode. 
+- Layout template caching is disabled (`layout.template.cache.enabled=false`).
 
-- Modification-based caching of web resources is disabled. 
+- The server will not start a browser when starting up
+(`browser.launcher.url=`).
 
-- Velocity Templates for themes and journal articles are not cached, so changes
-will be applied immediately. 
+- FreeMarker Templates for themes and web content are not cached, so changes
+will be applied immediately
+(`freemarker.engine.resource.modification.check.interval=0`). 
+
+- Minification of CSS and JavaScript resources is disabled
+(`minifier.enabled=false`).
 
 Individual file loading of your styling and behaviors, combined with disabled
-caching for web resources and Velocity Templates, let's you see your changes
+caching for layout and FreeMarker templates, let's you see your changes
 more quickly when operating in Developer Mode. 
 
 Now, when you modify your theme's `custom.css` file directly in your Liferay
@@ -351,8 +351,6 @@ there, along with the *Classic* theme's thumbnail.
 Themes course's 02-building-a-theme.fodp slideshow -->
  
 Let's talk about Liferay's JavaScript library next. 
-
-<!-- Transition goes here. --> 
 
 ## JavaScript
 
@@ -500,7 +498,7 @@ footer, including the slogan.
 
 ---
 
-Next let's customize your theme's color scheme. 
+Next, let's customize your theme's color scheme. 
 
 ## Color Schemes
 
@@ -663,6 +661,9 @@ much is already done for you, there's less flexibility when building your
 design. It's a compromise between creating a theme as quickly as possible versus
 having full control of the result. It's your choice, and another example of the
 flexibility Liferay offers.
+
+Want to learn how to import resources with your theme? We'll discuss how you can
+do this in the next section.
 
 ## Importing resources with your themes
 
@@ -1069,13 +1070,12 @@ and which you can download from Liferay Marketplace.
 
 ## Summary
 
-In this chapter you learned how to customize the look and feel of your Liferay
-Portal to the extent that you desire with custom themes. In the process you
-created your own theme, learned about its directory structure, and discovered
-the value of style inheritance from a parent theme. You also learned about
-Liferay's JavaScript library, AlloyUI, and how to make your theme
-configurable by adding settings that portal administrators can manage within
-Liferay. Your CSS options, including color schemes, and predefined settings for
-your theme, were discussed to round out your understanding of theme development. 
-<!-- Took a crack at writing a summary. -Russ -->
+In this chapter, you learned how to customize the look and feel of your Liferay
+Portal by creating custom themes. During this process, you created your own
+theme, learned about its directory structure, and discovered the value of style
+inheritance from a parent theme. You also learned about Liferay's JavaScript
+library, AlloyUI, and how to make your theme configurable by adding settings
+that portal administrators can manage within Liferay. Your CSS options,
+including color schemes, and predefined settings for your theme, were discussed
+to round out your understanding of theme development. 
 
