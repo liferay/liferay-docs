@@ -558,38 +558,40 @@ Let's review the predefined settings available for your theme.
 
 The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
-portlet borders and bullet styles, but more settings may be added in the future.
-Modify these settings from the `liferay-look-and-feel.xml` file. 
+portlet borders, bullet styles, and the site name, but more settings may be
+added in the future. Modify these settings from the `liferay-look-and-feel.xml`
+file. To override default behavior for individual portlets, you can modify the:
+
+- `liferay-portlet.xml`
+- Portlet CSS popup setting: used for the *Navigation* portlet to display bullet
+styles
+
+First, let's take a look at how to modify your portlet's borders.
+
+### Portlet Borders
 
 By default, portlet borders are turned on. If set to `false`, the portal's
 default behavior is to turn off portlet borders. 
 
-Here's how the XML looks when you modify the default to `false`:
+Here's how the XML looks when you modify the default value to `false`:
 
     <settings>
-		<setting key="portlet-setup-show-borders-default" value="false" />
+		<setting configurable="true" key="portlet-setup-show-borders-default" type="checkbox" value="false" />
     </settings>
 
-Override default behavior for individual portlets using:
+Next, let's configure the appropriate bullet styles for your portal.
 
-* `liferay-portlet.xml`
+### Bullet Styles
 
-<!-- Really had a hard time figuring out where we transition from portlet borders to bullet styles.  Still don't know. -Russ-->
-
-* Portlet CSS popup setting: Used by the *Navigation* portlet to determine the
-CSS class name of the list of pages. The value must be a comma separated list of
-valid bullet styles. 
-
-<!-- Is the above paragraph describing PortletCSS popup settings? -Russ--> 
-<!-- Beats me. --> 
+Bullet style options are used by the *Navigation* portlet to determine the CSS
+class name of the list of pages. The value must match one of the options, which
+are given in a comma separated list of valid bullet styles.
 
 Example:
 
     <settings>
-		<setting key="bullet-style-options" value="classic,modern,tablemenu" />
+		<setting configurable="true" key="bullet-style" options="dots,arrows,classic,modern value="dots" />
     </settings>
-
-<!-- Is this where we begin talking about bullet styles? I was ocnfused in this section -Russ-->
 
 The user can change the bullet style in the *Navigation* portlet's configuration
 menu. The chosen style is applied as a CSS class on the `<div>` containing the
@@ -600,7 +602,7 @@ navigation. This class is named in the following pattern:
     }
 
 Here's an example of the HTML code needed to add style through CSS code. In this
-case the bullet style option is **modern**:
+case, the bullet style option is **modern**:
 
     <div class="nav-menu nav-menu-style-modern">
 		<ul class="breadcrumbs lfr-component">
@@ -609,7 +611,36 @@ case the bullet style option is **modern**:
     </div>
 
 Using CSS, and maybe some unobtrusive JavaScript, you can create any type of
-menu. 
+menu. Next, let's take a look at how to enable the site name settings.
+
+### Site Names
+
+The site name settings allow site administrators to decide whether the site of
+the name should be shown or not. It is a common practice for some themes to
+specify their own logo by default when none has been specified by the site
+administrator. In these cases, the logo can conflict with the site name. Thus,
+the site name offers two configurable settings:
+
+- Set whether the site title should be shown by default.
+- Specify whether displaying the site title is supported.
+
+By default, the settings' `configurable` option is set to `false`. This sets
+whether or not the option is configurable from within the portal. If you'd like
+to allow users to configure the site name options from within the portal, set
+`configurable` to `true`. Similarly to the previos predefined theme settings, if
+you'd like to disable the site name settings, set the value to `false`.
+
+Example:
+
+	<settings>
+		<setting configurable="true" key="show-site-name-default" type="checkbox" value="true" />
+		<setting configurable="true" key="show-site-name-supported" type="checkbox" value="true" />
+	</settings>
+
+Here's a snapshot to illustrate how the predefined theme settings appear from
+the Control Panel's *Site Pages* &rarr; *Look and Feel* section of your portal.
+
+![Figure 4.7: The predefined settings section from within the portal.](../../images/theme-predefined-settings.png)
 
 Next we'll see how Liferay lets your theme inherit styling from a parent theme. 
 
@@ -619,7 +650,7 @@ By default, themes are based on the *_styled* theme, which provides only basic
 styling of portlets. If you open the `build.xml` file in your theme's directory
 using the Build Application Configuration Editor, you see the following code:
 
-![Figure 4.7: Content of build.xml](../../images/05-themes-5.png)
+![Figure 4.8: Content of build.xml](../../images/05-themes-5.png)
 
 The `theme.parent` property determines the theme your theme inherits its styling
 from. In addition to the *_styled* theme, you can choose to inherit from the
@@ -658,7 +689,7 @@ introduced in Liferay 6.1 is only applied out-of-the-box in Liferay CE.) The
 welcome theme and the pages and content that it imports to the default site
 provide a good example of the resources importer's functionality.
 
-![Figure 4.x: The welcome theme uses the resources importer to import pages and
+![Figure 4.9: The welcome theme uses the resources importer to import pages and
 content to the default site of a fresh Liferay
 installation.](../../images/welcome-theme.png)
 
