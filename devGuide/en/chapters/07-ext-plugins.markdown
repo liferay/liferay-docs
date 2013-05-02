@@ -1,6 +1,6 @@
 # Ext plugins 
 
-Ext plugins are a powerful tools for extending Liferay. Because they increase
+Ext plugins are powerful tools for extending Liferay. Because they increase
 the complexity of your Liferay instance, you should only use an Ext plugin if
 you're sure you can't accomplish your goal using a different tool. Check out
 the hook plugins in Chapter 6 for the available alternatives. If a hook won't
@@ -226,20 +226,22 @@ left behind in the Liferay application. This added complexity is why we
 recommend using another plugin type to accomplish your goals, whenever
 possible. 
 
-Let's look at the steps required to develop an Ext plugin: 
+Before digging in to the details, here's an overview of the steps required to
+develop Ext plugins:
 
-- **Set up:** Configure your Plugins SDK environment to develop Ext plugins for
-Liferay Portal on your application server. 
+- We'll show you how to *configure* your Plugins SDK environment to develop Ext
+plugins for Liferay Portal on your application server. 
 
-- **Initial deployment:** Deploy and publish your Ext plugin. 
+- We'll show you how to *deploy* and *publish* your Ext plugins for the first
+time. 
 
-- **Redeployment:** After making changes to your Ext plugin, you'll either need
-  to *redeploy* it normally or use a *clean redeployment* process. 
+- We'll show you how to to *redeploy* normally or use a *clean redeployment*
+process after making changes to your Ext plugins.
 
-- **Distribution:** Packaging Ext plugins for distribution. 
+- We'll show you how to package your Ext plugins for distribution. 
 
-- **Advanced customization techniques:** Here we'll provide examples that require
-advanced techniques to customize Liferay Portal. 
+- We'll show you examples of Liferay Portal customizations that require advanced
+customization techniques. 
 
 Now let's look at each step of the development proces in more detail. 
 
@@ -278,12 +280,12 @@ property value.
 ---
 
  ![note](../../images/tip-pen-paper.png)**Note:** Some Liferay bundles come
- installed with a sample website. It's useful for showcasing certain features
-of Liferay, but if you removed it, you likely don't want it reinstalled each
-time your bundle is unzipped. To prevent the reinstallation of 7-Cogs, unzip
-your bundle, delete the
-`[work]/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.27/webapps/welcome-theme`
-folder, then re-zip your bundle. 
+ installed with a sample website. It's useful for showcasing certain features of
+ Liferay, but if you removed it, you likely don't want it reinstalled each time
+ your bundle is unzipped. To prevent the reinstallation of 7-Cogs, unzip your
+ bundle, delete the
+ `[work]/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.27/webapps/welcome-theme`
+ folder, then re-zip your bundle. 
 
 ---
 
@@ -754,7 +756,7 @@ the original file in Liferay Portal:
    - Original file in Liferay:
      `portal-web/docroot/WEB-INF/liferay-look-and-feel.xml`
 
-<!-- Missing Segue --> 
+Let's learn how to configure a Lucene Analyzer next. 
 
 #### Configuring Lucene Analyzers 
 
@@ -815,7 +817,7 @@ Here are a few of the pre-configured analyzers from the
 
 You can define custom analyzers for any fields, including custom fields. 
 
-<!-- Missing segue -->
+Let's learnt to change the API of a core service next. 
 
 #### Changing the API of a core service 
 
@@ -846,7 +848,8 @@ definition for `UserLocalServiceUtil` in `ext-spring.xml` and point it to your
 `MyUserLocalServiceUtil` and `UserLocalServiceUtil` will use the same Spring
 bean: your new implementation. 
 
-<!-- Missing segue --> 
+You can also replace core classes in `portal-impl`. Keep reading to find out
+how. 
 
 #### Replacing core classes in portal-impl 
 
@@ -879,7 +882,8 @@ version of Liferay is released.
 
 ---
 
-<!-- Missing segue -->
+That's it for advanced customization techniques. Let's talk about deploying in
+porudction next. 
 
 ## Deploying in production 
 
@@ -948,7 +952,8 @@ another app server. It makes the erroneous case that Liferay is somehow
 "designed for" or "integrates best with" Tomcat, and that's not the message we
 want to send. I think we need to change this and get Tomcat out of it. --> 
 
-<!-- Missing segue -->
+Next we'll show you how to migrate your extension environment (from older
+verisons of Liferay) into Ext plugins. 
 
 ## Migrating old extension environments 
 
