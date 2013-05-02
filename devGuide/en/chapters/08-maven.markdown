@@ -1078,35 +1078,36 @@ project is created. Also, the parent theme is downloaded, copied, and overlaid
 with your theme customizations on top of it. And a thumbnail image is created
 the theme output to the *target* directory. See
 `target/<theme>/images/screenshot.png` in your theme project.
-
+  
 **Workaround for known issue: [https://issues.liferay.com/browse/MAVEN-48](https://issues.liferay.com/browse/MAVEN-48)**
 
-The issue referenced above is a bug that affects the Liferay Maven plugin for CE
-6.1.1 GA2 and EE 6.1.20 GA2. It's fixed in versions CE 6.1.1 SP1 and EE 6.1.20
-SP1. The bug is that the content of a Maven theme's `src/main/webapp` isn't
-copied to the target folder until the package phase. Since the build-css goal
-belongs to the generate-sources phase, no SASS processing is done and the target
-theme's CSS is built incorrectly. In order to work around this issue, you can
-configure Maven to copy the files in `src/main/webapp` before the package phase
-and to move the build-css goal to a phase that's executed after the files have
-been copied. The following steps provide details for this workaround.
+This is a known issue that affects the Liferay Maven theme plugin for CE 6.1.1
+GA2 and EE 6.1.20 GA2. The bug is that the content of a Maven theme's
+`src/main/webapp` isn't being copied to the target folder until the `package`
+phase. Since the `build-css` goal belongs to the `generate-sources` phase, no
+SASS processing is done and the target theme's CSS is built incorrectly. In
+order to work around this issue, you must configure Maven to copy the files from
+`src/main/webapp` to the target folder before the CSS is built. Follow these
+steps to implement this workaround:
 
-1. Edit the `pom.xml` file in your Maven theme's root directory.
+1. Edit your theme's `pom.xml` file.
 
-2. Find the executions tag containing the execution tag which contains the
-   generate-sources phase. It should look like this:
+2. Find the `<executions>` tag containing the `generate-sources` execution
+   phase. It should look like this:
 
         <executions>
             <execution>
         	<phase>generate-sources</phase>
         	<goals>
         	    <goal>theme-merge</goal>
+        	    <goal>build-css</goal>
+        	    <goal>build-thumbnail</goal>
         	</goals>
             </execution>
-        </executions>`
+        </executions>
 
-3. Separate the build-css goal into a separate phase, editing the contents of
-   the executions tag so that it looks like this:
+3. Move the `build-css` goal into a separate execution phase within the
+   `<executions>` tag, as shown below:
 
         <executions>
             <execution>
@@ -1126,7 +1127,8 @@ been copied. The following steps provide details for this workaround.
             </execution>
         </executions>
 
-4. Find the plugin tag for the maven-resources-plugin. It should look this this:
+4. Find the `<plugin>` tag for the `maven-resources-plugin`. It should look this
+   this:
 
         <plugin>
             <artifactId>maven-resources-plugin</artifactId>
@@ -1136,8 +1138,8 @@ been copied. The following steps provide details for this workaround.
             </configuration>
         </plugin>
 
-5. Add an copy-resources goal to the generate-sources phase, editing the plugin
-   tag so that it looks like this:
+5. After the the plugin's `</configuration>`, add an execution phase that
+includes the `copy-resources` goal, so that your `<plugin>` tag looks like this:
 
         <plugin>
             <artifactId>maven-resources-plugin</artifactId>
@@ -1165,9 +1167,8 @@ been copied. The following steps provide details for this workaround.
             </executions>
         </plugin>
 
-6. To exclude the `/css` folder from unnecessary copying while packaging, add
-   the following plugin configuration inside of the your `pom.xml`'s plugins
-   tag:
+6. To prevent unnessary copying of the `/css` folder during packaging, add
+   the following plugin configuration within your `<plugins>` tag:
 
         <plugin>
             <artifactId>maven-war-plugin</artifactId>
@@ -1177,8 +1178,9 @@ been copied. The following steps provide details for this workaround.
             </configuration>
         </plugin>
 
-Once you've set up this configuration in your theme's `pom.xml`, your theme's
-CSS files should be packaged correctly.
+7. Save these `pom.xml` file changes.
+
+Your theme's CSS should now build correctly.
 
 **More information**
 
