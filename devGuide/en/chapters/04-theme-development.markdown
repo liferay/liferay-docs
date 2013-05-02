@@ -289,26 +289,30 @@ included:
         -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.config
         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
         -Dexternal-properties=portal-developer.properties"
-    
+
+---
+
  ![tip](../../images/tip-pen-paper.png)**Tip:** If you're already using the
  system property `external-properties` to load other properties files, add
  `portal-developer.properties` to the list and use a comma to separate it from
  other entries.
 
+---
+
 How does Developer Mode let you see your changes more quickly? In Developer
 Mode, there are several changes to the normal order of operations:
 
-    - CSS files are loaded individually rather than being combined and loaded as
-    a single CSS file.
+- CSS files are loaded individually rather than being combined and loaded as a
+single CSS file.
 
-    - JavaScript files are also loaded individually, including JavaScript for
-    the portal itself and JavaScript related to any portlet registered through
-    `liferay-portlet.xml`. JavaScript logs are also enabled in Developer Mode. 
+- JavaScript files are also loaded individually, including JavaScript for the
+portal itself and JavaScript related to any portlet registered through
+`liferay-portlet.xml`. JavaScript logs are also enabled in Developer Mode. 
 
-    - Modification-based caching of web resources is disabled. 
+- Modification-based caching of web resources is disabled. 
 
-    - Velocity Templates for themes and journal articles are not cached, so
-    changes will be applied immediately. 
+- Velocity Templates for themes and journal articles are not cached, so changes
+will be applied immediately. 
 
 Individual file loading of your styling and behaviors, combined with disabled
 caching for web resources and Velocity Templates, let's you see your changes
@@ -333,9 +337,13 @@ redeployment, the thumbnail will be automatically generated from
 Now go to the *Look and Feel* settings. Your theme's thumbnail should appear
 there, along with the *Classic* theme's thumbnail. 
 
+---
+
  ![tip](../../images/tip-pen-paper.png)**Tip:** To achieve the 1080x864
  resolution in a new browser window, use the button provided in the Resize
- Browser web content article displayed on the Welcome page. 
+ Browser web content article displayed on the Welcome page.
+
+---
  
 <!-- This tip comes verbatim from the ADDING A SCREENSHOT/THUMBNAIL slide in the
 Themes course's 02-building-a-theme.fodp slideshow -->
@@ -438,11 +446,15 @@ with your company's name (e.g. Nosester) in the footer of your site pages:
             </p>
         </footer>
 
+---
+
  ![note](../../images/tip-pen-paper.png)**Note:** Let's look more closely at two
  theme setting variables appearing in the above logic. The
  `display-slogan-footer` variable holds a boolean value indicating whether to
  display the version of the footer that contains your slogan. The `slogan`
  variable holds your slogan text.
+
+---
 
 2. Declare the two theme setting variables in your `liferay-look-and-feel.xml`,
 located in your theme's `WEB-INF` folder:
@@ -473,11 +485,14 @@ footer, including the slogan.
 
 ![Figure 4.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
+---
 
  ![note](../../images/tip-pen-paper.png)**Note:** Use a language properties hook
  to display configurable theme settings properly, like the slogan text area and
  footer checkbox from the previous example. For details, see the [Overriding a *Language.properties* File](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
  section found in the *Hooks* chapter of this guide.
+
+---
 
 Next let's customize your theme's color scheme. 
 
@@ -528,7 +543,7 @@ You can create separate thumbnail images for your color schemes. The
 images (you only have to place this element in one color scheme for it to affect
 both). For our example, create the folders `_diffs/images/color_schemes/day` and
 `_diffs/images/color_schemes/night`. In each folder place a `thumbnail.png` and
-`screenshot.png` file, according to the specifications defined in the Thumbanils
+`screenshot.png` file, according to the specifications defined in the Thumbnails
 section above. 
 
 Let's review the predefined settings available for your theme. 
@@ -937,7 +952,7 @@ you've already created in Liferay. Let's go over how to leverage your HTML
 (basic web content), XML (structures), or VM or FTL (templates) files from
 Liferay:
 
-- **web content (basic):** Edit the the article, click *Source*, and copy its
+- **web content (basic):** Edit the article, click *Source*, and copy its
 contents into an HTML file in the `resources-importer/journal/articles/` folder.
 
 - **web content (based on structure and template):** Edit the article, click
@@ -1020,8 +1035,8 @@ and which you can download from Liferay Marketplace.
 In this chapter you learned how to customize the look and feel of your Liferay
 Portal to the extent that you desire with custom themes. In the process you
 created your own theme, learned about its directory structure, and discovered
-the value of stlye inheritance from a parent theme. You also learned about
-Liferay's JavaScript library, AlloyUI, and how to and how to make your theme
+the value of style inheritance from a parent theme. You also learned about
+Liferay's JavaScript library, AlloyUI, and how to make your theme
 configurable by adding settings that portal administrators can manage within
 Liferay. Your CSS options, including color schemes, and predefined settings for
 your theme, were discussed to round out your understanding of theme development. 
