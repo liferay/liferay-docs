@@ -159,7 +159,7 @@ access them for retrieving and installing artifacts.
 
  ![note](../../images/tip-pen-paper.png)**Note:** You're only required to
  configure a repository server if you're installing downloaded Liferay CE/EE
- artifacts from a zip file or if you want to share artifacts (e.g., Liferay
+ artifacts from a ZIP file or if you want to share artifacts (e.g., Liferay
  artifacts and/or your plugins) with others. If you are automatically installing
  Liferay CE artifacts from the Central Repository and are not interested in
  sharing artifacts, you don't need a repository server specified in your Maven
@@ -215,24 +215,24 @@ Maven *artifacts*. Depending on whether you are building plugins for Liferay EE
 or Liferay CE, here are options to consider in obtaining and installing the
 Liferay Maven artifacts:
 
-- Install EE/CE artifacts from a zip file manually
+- Install EE/CE artifacts from a ZIP file manually
 - Install CE artifacts from the Central Repository automatically
 
 If you are using CE, the CE artifacts can be retrieved automatically during the
-Maven build process. Or you can download the CE artifacts zip file manually, if
+Maven build process. Or you can download the CE artifacts ZIP file manually, if
 you like.
 
-If you are using EE, you must manually download the EE artifacts zip file, as
+If you are using EE, you must manually download the EE artifacts ZIP file, as
 the required EE artifacts are not available from the Central Repository.
 
-Note, the EE and CE zip files provide a means to *install* the artifacts to a
+Note, the EE and CE ZIP files provide a means to *install* the artifacts to a
 Maven repository of your choice. In the next few sections, we'll show you how to
-execute both the zip file and Central Repository installation options.
+execute both the ZIP file and Central Repository installation options.
 
-### Installing EE/CE artifacts from a zip file [](id=installing-artifacts-from-a-zip-file)
+### Installing EE/CE artifacts from a ZIP file [](id=installing-artifacts-from-a-zip-file)
 
 In this section, you'll learn how to download and install the Liferay EE and CE
-artifacts from the zip files that Liferay provides for their respective
+artifacts from the ZIP files that Liferay provides for their respective
 releases. Let's cover downloading the Liferay EE artifacts first.
 
 The Liferay EE artifacts package can be downloaded by visiting Liferay's
@@ -265,27 +265,112 @@ example, if you want Maven artifacts for Liferay Portal 6.1.1 CE GA2, select
 version *6.1.1 GA2*.
 
     ![Figure 8.3: After selecting the Liferay version, simply select the Liferay
-    Portal Maven zip file to download.](../../images/maven-select-download.png)
+    Portal Maven ZIP file to download.](../../images/maven-select-download.png)
 
-3. Select the desired zip file. The zip files use naming convention
-*liferay-portal-maven-\<version\>-\<date\>.zip*.
+3. Select the desired ZIP file. The ZIP files use naming convention
+   *liferay-portal-maven-\<version\>-\<date\>.zip*.
 
     The Liferay Maven CE artifacts package downloads to your machine.
 
-You can extract the Liferay EE/CE artifacts package zip file anywhere you like.
-The zip file not only includes the Liferay artifacts, but also includes a
-convenient script to install and deploy the artifacts to your repositories.
-We'll show you how to install these required Liferay release artifacts to your
-*liferay-releases* repository.
+You can extract the Liferay EE/CE artifacts package ZIP file anywhere you like.
+The ZIP file not only includes the Liferay artifacts, but also includes a
+convenient script to install and deploy the artifacts to your repositories. 
 
-#### Installing downloaded artifacts to a repository [](id=installing-downloaded-artifacts-to-a-repository)
+### Building CE Maven artifacts from source
+
+Downloading the Liferay Maven artifacts from Liferay's customer portal (EE) or
+from Sourceforge (CE) is useful if you're interested in using the artifacts for
+a particular release. However, if you'd like to use the very latest Liferay CE
+Maven artifacts, you can build them from source. To build the latest Liferay CE
+Maven artifacts from source, follow these steps:
+
+1. Navigate to your local Liferay Portal CE source project. If you don't already
+   have a local Liferay Portal CE source project on your machine, you can fork
+   the [Liferay Portal CE Github repository](http://github.com/liferay/liferay-portal) and clone it your machine.
+
+2. Create a `app.server.${USER_NAME}.properties` in your local Liferay Portal CE
+   source project root directory. Specify the following properties in it:
+
+    `app.server.parent.dir=`
+
+    `app.server.${app.server.name}.dir=`
+
+    Of course, add the path of your application server's parent directory and the
+    path of your application server itself after the appropriate equals signs.
+    Also, replace `${app.server.name}` with the name of your application server.
+    Note that your `app.server.${app.server.name}.dir` directory doesn't need to
+    exist yet; you can create it by invoking an Ant target in the next step. For
+    example, if you're running Apache Tomcat 7.0.27 and your `${LIFERAY_HOME}`
+    directory is `/home/jbloggs/liferay/bundles/ce-6.1.x`, use the following
+    properties:
+
+    `app.server.parent.dir=/home/jbloggs/liferay/bundles/ce-6.1.x`
+
+    `app.server.tomcat.dir=/home/jbloggs/liferay/bundles/ce-6.1.x/tomcat-7.0.27`
+
+3. If an application server doesn't already exist at the directory specified by
+   the `app.server.{app.server.name}.dir` property, run `ant -f build-dist.xml
+   unzip-${app.server.name}` to unzip a copy of your preferred application
+   server to the specified directory. For example, to unzip Apache Tomcat to the
+   directory specified by the `app.server.tomcat.dir` property, run `ant -f
+   build-dist.xml unzip-tomcat`.
+
+4. Create a `releases.${USER_NAME}.properties` in your local Liferay Portal CE
+   source project root directory and specify the following properties:
+
+    `gpg.keyname=${GPG_KEYNAME}`
+
+    `gpg.passphrase=${GPG_PASSPHRASE}`
+
+    `lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-snapshots`
+
+    `lp.maven.repository.id=liferay-snapshots`
+
+    Of course, replace the values specified above with your own GPG key and
+    Maven repository credentials. If you don't have GPG installed and don't have
+    a public/private GPG key, you should visit
+    [http://www.gnupg.org](http://www.gnupg.org) and install GPG before
+    continuing. Once you've installed GPG, generate a GPG key by running `gpg
+    --gen-key` and following the instructions. Once you've generated a GPG key,
+    you can find your GPG keyname by running `gpg --list-keys`.
+
+5. Build the Liferay artifacts by running `ant clean start jar`.
+
+6. Build the Liferay Portal WAR file by running `ant -f build-dist.xml all
+   zip-portal-war`.
+
+7. Build the Liferay Portal Javadoc packages by running `ant -f build-maven.xml
+   jar-javadoc`.
+
+8. Build the Liferay Portal source packages by running `ant -f build-maven.xml
+   jar-sources`.
+
+9. Deploy the Liferay artifacts to your Maven repository by running `ant -f
+   build-maven.xml deploy-artifacts`. If you want the Liferay artifacts to be
+   installed locally but don't have a remote Maven repository or don't want the
+   artifacts to be remotely deployed, you can run the install task instead of
+   the deploy task: `ant -f build-maven.xml install-artifacts`. Once the Ant
+   task finishes, you should have a time-stamped directory containing the
+   artifacts in your Local Liferay Portal CE source project's root directory,
+   e.g., `liferay-portal/20121105174417071`.
+
+Next, we'll show you how to install the required Liferay release artifacts to
+your local Maven repository (usually your `$HOME/.m2` directory) or to your
+remote Maven repository (called *liferay-releases*, if you're following our
+examples). You can install artifacts that you downloaded and extracted from a
+ZIP file or artifacts that you built from source.
+
+#### Installing artifacts to a local Maven repository [](id=installing-downloaded-artifacts-to-a-repository)
 
 Let's *install* the Liferay release artifacts to your local Maven repository for
 sharing with your team.
 
-1. Using your command prompt, navigate to the *liferay-portal-maven-\<version\>*
-directory. This is the root directory extracted from the Liferay artifacts zip
-file.
+1. If you downloaded and extracted a Liferay artifacts ZIP file, navigate to the
+   *liferay-portal-maven-<version>* directory in a command prompy or terminal.
+   This is the root directory extracted from the Liferay artifacts ZIP file. If
+   you built the artifacts from source, navigate to the time-stamped directory
+   containing the artifacts in your Local Liferay Portal CE source project's
+   root directory, e.g., `liferay-portal/20121105174417071`.
 
 2. To install the artifacts to your local repository, execute:
 
@@ -300,7 +385,7 @@ Liferay plugins. Wasn't that easy?
 
 Next, let's *deploy* the Liferay artifacts to a release repository server.
 
-#### Deploying downloaded artifacts to a repository [](id=deploying-downloaded-artifacts-to-a-repository)
+#### Deploying artifacts to a remote Maven repository [](id=deploying-downloaded-artifacts-to-a-repository)
 
 You may find it worthwhile to share your Liferay artifacts with teammates.
 
@@ -326,15 +411,15 @@ settings* for instructions on adding an entry for the server.
             ...
         </servers>
 
-3. Using your command prompt, navigate to the *liferay-portal-maven-\<version\>*
-directory. This is the root directory extracted from the Liferay artifacts zip
-file.
+3. Using your command prompt, navigate to your *liferay-portal-maven-<version>*
+   or to your time-stamped Liferay Portal artifacts directory. This is the root
+   directory extracted from the Liferay artifacts ZIP file.
 
 4. Create a `build.${USER_NAME}.properties` file (e.g.,
-`build.jblogs.properties`) in your *liferay-portal-maven-\<version\>* directory.
-In that properties file, specify values for `lp.maven.repository.id` and
-`lp.maven.repository.url` properties. These properties refer to your
-repository's ID and URL, respectively.
+   `build.jbloggs.properties`) in your *liferay-portal-maven-<version>*
+   directory.  In that properties file, specify values for
+   `lp.maven.repository.id` and `lp.maven.repository.url` properties. These
+   properties refer to your repository's ID and URL, respectively.
 
     Here are some example property values:
 
@@ -839,7 +924,7 @@ Java source code and web source code.
 Location    | &nbsp;Maven project | &nbsp;Plugins SDK project |
 ----------- | ----------------- | --------------------- |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
-Web source  | `src/main/webapp` | `docroot` |
+Web source  | `src/main/webapp` | `docroot`             |
 
 To view the anatomy of a portlet developed by Ant, visit the [Anatomy of a
 Portlet](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/anatomy-of-a-portl-4)
@@ -916,7 +1001,7 @@ The following table illustrates this difference.
 
 Location    | &nbsp;Maven project | &nbsp;Plugins SDK project |
 ----------- | ----------------- | --------------------- |
-customizations | `src/main/webapp` | `docroot/_diffs` |
+customizations | `src/main/webapp`   | `docroot/_diffs` |
 
 Add your customizations in `src/main/webapp` following the same structure as you
 would in `docroot/_diffs` of the Plugins SDK. So, for example, your `custom.css`
