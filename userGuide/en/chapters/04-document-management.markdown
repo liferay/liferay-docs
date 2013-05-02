@@ -594,6 +594,11 @@ Now anyone with appropriate permission can see the latest version of the file
 with these updates. Liferay takes care of version control as well as file
 check out and check in. Users can add comments, ratings, and tags.
 
+The Microsoft Office integration feature is currently broken for Windows 7 on
+Liferay CE 6.1.1 GA2 and EE 6.1.20 GA2. See
+[http://issues.liferay.com/browse/LPS-33762](http://issues.liferay.com/browse/LPS-33762)
+for more information. 
+
 Liferay's integration with Microsoft Office lets users leverage Documents and
 Media in managing their Office files. Collaboration is simplified as users share
 their most up-to-date versions of Office files.
