@@ -713,7 +713,7 @@ publishing operation after having modified project files, right click on the
 server in the Servers view and select *Publish*. 
 
 Have you noticed that there's a lot of depth to Liferay IDE? You can easily come
-across difficult questions and run into very specific problems; but someone else
+across difficult questions and run into very specific problems, but someone else
 might have already solved your issue or answered your question. So where would
 you go to find out? Don't reinvent the wheel, vsit the [Liferay IDE Community
 page](http://www.liferay.com/community/liferay-projects/liferay-ide/overview)!
@@ -1127,10 +1127,7 @@ becomes. In addition, it highlights what you're currently viewing on your
 Workflow diagram, giving you a picture of where you're located in the broader
 picture of your workflow. You can use the *Outline* view to change your position
 in the Workflow Diagram by dragging the highlighted box where you'd like to
-focus. Below is a snapshot of an example workflow shown in the outline view in
-Developer Studio: 
-
-![Figure 8.56: The Outline view lets you view your entire workflow definition.](../../images/kaleo-25.png) 
+focus. 
 
 Developer Studio's *Properties* and *Outline* views make customizing your
 workflow easier than ever! Developer Studio also offers a convenient way to edit
@@ -1189,16 +1186,16 @@ transitions:
     An entry for the transition appears in the named list of *Condition
     transitions*.
 
-<!--When I select the green plus sign I get a list to choose from--Existing
-Node, New Condition, New Fork, New Join, New State, New Task. I do not see a
-transition icon to select. -->
-
     4.2. Click the browse icon in the entry and select the *Developer* node.
 
     4.3. Repeat steps 1 and 2 to add a transition to the *EndNode* state.
 
     4.4. Click *Finish*. 
 
+<!--When I select the green plus sign I get a list to choose from--Existing
+Node, New Condition, New Fork, New Join, New State, New Task. I do not see a
+transition icon to select. -->
+    
 Here's a snapshot of the *Create New Condition Node* menu configured for the
 ticket process workflow. 
 
@@ -1242,8 +1239,6 @@ Properties view.
 - Click the *Edit Script* tool from the node's floating palette. 
 
 - Right-click the node and select *Edit Script*. 
-
-![Figure 8.58: You can access the *Edit Script* feature from the *Script* tab inside the Properties view.](../../images/kaleo-13.png) 
 
 We set our default script language to Groovy, so the Java/Groovy editor appears.
 To learn more about the Groovy editor, see the [Groovy User
@@ -1306,11 +1301,7 @@ your palette onto the script editor. We get the `ddlRecordId` from the Service
 Context and use that ID to look up the DDL record via Liferay service utility
 `DDLRecordLocalServiceUtil`.
 
-The code now looks like this:
-
-![Figure 8.60: You can add snippets of code by simply using the drag-and-drop method from your palette.](../../images/kaleo-28.png)
-
-Append the following Java code to your script:
+Append the following Java code to the `DDLRecordLocalServiceUtil` script: 
 
 	Field field = ddlRecord.getField("status");
 
