@@ -58,8 +58,9 @@ be displayed. You can perform several actions on the document here:
 
 **Get URL:** displays the URL of the document on the server.
 
-**Get WebDAV URL:** displays the WebDAV URL of the document on the server. See
-the WebDAV access section below for more information.
+**Get WebDAV URL:** displays the WebDAV URL of the document on the server.
+Specify this URL as the file name when opening the document from Microsoft
+Office. 
 
 **Edit:** lets you change contents of a document, point it to a different file,
 change its title, description or document type, or add tags, categories or
@@ -551,44 +552,6 @@ In the list of folders displayed, navigate to *guest* &rarr; *document_library*
 and select *All Files* to see your Documents and Media files.
 Open the desired Word file to make changes. Click *Save* when you are finished
 and close the file. 
-
-Before you use this integration feature, you must configure appropriate
-authentication dependencies. By default, this feature is configured to use
-Digest Authentication, which has the following requirements:
-
-- The Windows operating system, much support Digest Authentication. Operating
-systems earlier than Windows XP, such as Windows NT, do not support it. 
-
-- Users must have a valid Active Directory domain account. 
-
-- The application server running Liferay must be a member of the same forest as
-  the user accounts. 
-
-Alternatively, you can use Basic Authentication. Of course, you must configure
-Basic Authentication on your Windows operating systems. To configure Liferay to
-use Basic Authentication with this feature, do the following: 
-
-1. Edit Liferay Portal's `liferay-web.xml` file. 
-
-2. Find the filter named `Sharepoint Filter` and replace its `digest_auth` init
-parameter with a `basic_auth` init parameter. For example, replace this ... 
-
-        <init-param>
-            <param-name>digest_auth</param-name>
-            <param-value>true</param-value>
-        </init-param>
-
-    ... with this ... 
-
-         <init-param>
-            <param-name>basic_auth</param-name>
-            <param-value>true</param-value>
-        </init-param>
-
-3. Restart your server. 
-
-See your Microsoft Windows documentation for details on configuring Digest
-Authentication and Basic Authentication. 
 
 Now anyone with appropriate permission can see the latest version of the file
 with these updates. Liferay takes care of version control as well as file
