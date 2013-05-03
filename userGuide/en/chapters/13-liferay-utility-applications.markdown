@@ -1,15 +1,16 @@
 # Liferay Utility Applications  
 
 In this chapter we'll look at some Liferay utility applications that might be
-useful for you. The Software Catalog is currently packaged with Liferay but will
-soon be replaced by Liferay Marketplace. Please see chapter 13 for information
-about Liferay Marketplace and managing Liferay plugins. The Knowledge Base
-application is an EE-only plugin. In this chapter we'll discuss several of these
-applications:
+useful for you. The Software Catalog has been replaced by Liferay Marketplace
+but can still be installed as a plugin. Please see chapter 13 for information
+about Liferay Marketplace and managing Liferay plugins. The Reports,
+JasperReports, and Knowledge Base applications are only available to EE
+customers. In this chapter we'll discuss following applications:
 
 - Bookmarks
-- Software catalog
+- Software Catalog
 - Shopping
+- Reports and JasperReports
 - Knowledge Base
 
 Liferay's Bookmarks application is a simple way for users to keep track of URLs
@@ -924,7 +925,12 @@ book's Amazon page.
 ![Figure 13.31: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
 
 Now that you have a good grasp on Liferay's Shopping and Amazon Rankings
-applications, let's see what the Knowledge Base application has to offer.
+applications, let's learn how to generate reports in Liferay.
+
+## Generating Reports in Liferay
+
+Now that we understand how to generate Jasper reports in Liferay, let's see what
+the Knowledge base application has to offer.
 
 ## Knowledge Base  
 
@@ -1136,11 +1142,20 @@ You can select topics for articles when you are creating or editing them.
 
 ## Summary  
 
-In this chapter, we examined two Liferay utility applications: the Software
-Catalog and the Knowledge Base. The Software Catalog allows you to define a set
-of software items to make available to visitors to your portal. Remember that
-the Software Catalog will be replaced by Liferay Marketplace and will soon be
-deprecated. The Knowledge Base application is an EE-only application that allows
-you to create articles and organize them into full books or guides that be
-published on your portal. Next, let's take a tour of the Liferay Marketplace and
-learn how to manage Liferay plugins.
+In this chapter, we examined several Liferay utility applications: the Bookmarks
+portlet, the Shopping portlet, the Software Catalog, the Reports and
+JasperReports applications, and the Knowledge Base. The Bookmarks portlet allows
+users and administrators to collect and share useful link to pages either within
+or outside of the portal. The Shopping portlet allows you to use PayPal to set
+up your portal for E-commerce activity. The Software Catalog allows you to
+define a set of software items to make available to visitors to your portal.
+Remember that the Software Catalog has been replaced by Liferay Marketplace. If
+you want to use it, you'll have to manually install it as a plugin. The Reports
+application provides a Reports Admin portlet in the Control Panel for creating
+reports and scheduling report generation. When combined with a suitable
+implementation, such as the JasperReports application, you can upload report
+definitions in the Reports Admin portlet, generate reports, and export reports
+to a wide variety of formats. The Knowledge Base application is an EE-only
+application that allows you to create articles and organize them into full books
+or guides that be published on your portal. Next, let's take a tour of the
+Liferay Marketplace and learn how to manage Liferay plugins.
