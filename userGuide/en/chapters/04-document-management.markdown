@@ -58,8 +58,9 @@ be displayed. You can perform several actions on the document here:
 
 **Get URL:** displays the URL of the document on the server.
 
-**Get WebDAV URL:** displays the WebDAV URL of the document on the server. See
-the WebDAV access section below for more information.
+**Get WebDAV URL:** displays the WebDAV URL of the document on the server.
+Specify this URL as the file name when opening the document from Microsoft
+Office. 
 
 **Edit:** lets you change contents of a document, point it to a different file,
 change its title, description or document type, or add tags, categories or
@@ -532,6 +533,43 @@ at that next.
 
 ## Microsoft Office integration [](id=lp-6-1-ugen04-microsoft-office-integration-0)
 
+Liferay gives you flexibility in opening Microsoft Office files that reside in
+Documents and Media. You can open the files from within your Microsoft Internet
+Explorer browser or open them directly from your Microsoft Office applications.
+Let's open a file from your browser first.
+
+**Opening Microsoft Office files from Internet Explorer**
+
+Liferay let's you launch Microsoft Office right from Documents and Media.
+Simply, find the Microsoft Office file in Documents and Media that you want to
+edit. Then, click the drop-down icon in the upper-left corner of the document's
+thumbnail and click the *Open in MS Office* link. Liferay launches Microsoft
+Office, if it's not running already, and prompts you to log in using your Portal
+credentials. Once logged in, the file opens in your Microsoft Office
+application. 
+
+![Figure 4.10: Open Microsoft Office files from within your Internet Explorer browser by clicking the *Open in MS Office* link.](../../images/05-open-in-MS-office.png)
+
+Changes you save to the file from Microsoft Office are propagated to Documents
+and Media. 
+
+This feature currently limits you to opening Documents and Media files whose
+titles end in their file's extension (e.g., `.doc`, `.docx`, `.xls`, `.xlsx`,
+`.ppt`, or `.pptx`). See
+[http://issues.liferay.com/browse/LPS-31223](http://issues.liferay.com/browse/LPS-31223)
+for more information. 
+
+Also, 64-bit Microsoft Internet Explorer and 64-bit Microsoft Office versions do
+not currently support this feature. It is only supported on 32-bit Microsoft
+Internet Explorer versions with 32-bit versions of Microsoft Office. See
+[http://issues.liferay.com/browse/LPS-28718](http://issues.liferay.com/browse/LPS-28718)
+for more information. 
+
+Next we'll show you how to both navigate your Documents and Media folders and
+open a file, from within the Microsoft Office application. 
+
+**Opening Documents and Media files from Microsoft Office**
+
 Liferay lets you access Microsoft Office files in Documents and Media directly
 from your Microsoft Office applications. Liferay implements the MS-DWSS
 SharePoint protocol to allow saving and retrieving documents from Liferay Portal
@@ -544,7 +582,7 @@ Simply select *File*&rarr; *Open* in Word and enter
 `http://localhost:8080/sharepoint/` in the file name field. Click *Open* and log
 in using your Portal credentials.
 
-![Figure 4.10: Enter the URL of your `sharepoint` location on Liferay to access
+![Figure 4.11: Enter the URL of your `sharepoint` location on Liferay to access
 Documents and Media.](../../images/office-path.png)
 
 In the list of folders displayed, navigate to *guest* &rarr; *document_library*
@@ -555,6 +593,11 @@ and close the file.
 Now anyone with appropriate permission can see the latest version of the file
 with these updates. Liferay takes care of version control as well as file
 check out and check in. Users can add comments, ratings, and tags.
+
+The Microsoft Office integration feature is currently broken for Windows 7 on
+Liferay CE 6.1.1 GA2 and EE 6.1.20 GA2. See
+[http://issues.liferay.com/browse/LPS-33762](http://issues.liferay.com/browse/LPS-33762)
+for more information. 
 
 Liferay's integration with Microsoft Office lets users leverage Documents and
 Media in managing their Office files. Collaboration is simplified as users share
@@ -575,7 +618,7 @@ in the Documents and Media portlet's default Home folder.  If you set the My
 Documents folder to be your portlet's new root folder, the original Home folder
 would no longer be accessible.
 
-![Figure 4.11: To make portlet-specific configurations for Documents and Media,
+![Figure 4.12: To make portlet-specific configurations for Documents and Media,
 click on the wrench icon at the top of the portlet window and select
 *Configuration*.](../../images/docs-and-media-portlet-config.png)
 
@@ -652,18 +695,18 @@ chapter 16 for instructions on how to configure Liferay to use these tools.
 With the above tools installed and enabled, the Documents and Media library
 looks like this:
 
-![Figure 4.12: Previews in Documents and Media](../../images/05-previews.jpg)
+![Figure 4.13: Previews in Documents and Media](../../images/05-previews.jpg)
 
 You can view a document with a customized viewer that allows you to navigate
 through the different pages of the document and read its content.
 
-![Figure 4.13: Viewing an office document](../../images/05-document-preview.jpg)
+![Figure 4.14: Viewing an office document](../../images/05-document-preview.jpg)
 
 You can view a multimedia document (audio or video) and play it online. If the
 browser supports HTML5, it uses the native player of the browser. Otherwise it
 falls back to a Flash player.
 
-![Figure 4.14: Playing a video](../../images/05-video-preview.png)
+![Figure 4.15: Playing a video](../../images/05-video-preview.png)
 
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for. 
@@ -683,7 +726,7 @@ You can force users to add only certain document types to a folder. By default,
 child folders inherit the restrictions of their parent folder. You can change
 this behavior by editing the folder and selecting the allowed document types.
 
-![Figure 4.15: Restrict Marketing folder to use specific document
+![Figure 4.16: Restrict Marketing folder to use specific document
 types](../../images/05-document-type-restriction.png)
 
 If workflow is enabled, you can specify different workflow definitions per
@@ -691,7 +734,7 @@ folder. Furthermore, you can specify different workflow definitions per document
 type and per folder. You can set this by editing the folder. Then the UI will
 look like this:
 
-![Figure 4.16: Restrict Marketing folder to use specific document types and
+![Figure 4.17: Restrict Marketing folder to use specific document types and
 workflow](../../images/05-document-type-workflow-restriction.png)
 
 Document types are a powerful way to enforce rules for documents uploaded by
@@ -720,7 +763,7 @@ Next, navigate to the Documents and Media portlet hosting the folder you'd like
 to access. Mouse over the folder (*Image Gallery* for our example) and select
 *Access from Desktop*.
 
-![Figure 4.17: Select *Access from Desktop* to get the WebDAV URL of a
+![Figure 4.18: Select *Access from Desktop* to get the WebDAV URL of a
 folder.](../../images/webdav-access-from-desktop.png)
 
 Copy the WebDAV URL. On Windows, right-click on My Computer and select *Map
@@ -816,13 +859,13 @@ Upon launching the Windows application installer, you'll be prompted to choose
 an installation location for Liferay Sync. Browse to an appropriate location on
 your machine and click *Next*.
 
-![Figure 4.18: Use the Liferay Sync Installation wizard to choose an
+![Figure 4.19: Use the Liferay Sync Installation wizard to choose an
 installation location.](../../images/liferay-sync-setup.png)
 
 Leave the *Run Liferay Sync* button checked to automatically start Liferay Sync
 after you click *Finish*.
 
-![Figure 4.19: You'll see the following screen once Liferay Sync has been
+![Figure 4.20: You'll see the following screen once Liferay Sync has been
 installed. Click *Finish* to exit the installation
 wizard.](../../images/liferay-sync-setup-complete.png)
 
@@ -831,7 +874,7 @@ information. Sync needs to know where you'd like to locally store the files it's
 supposed to sync with your Liferay server. And, of course, it needs to know your
 server's URL and the account credentials with which it should authenticate.
 
-![Figure 4.20: The first time you run Liferay Sync, you'll have to tell it how to
+![Figure 4.21: The first time you run Liferay Sync, you'll have to tell it how to
 communicate with your Liferay
 server.](../../images/liferay-sync-new-account-info.png)
 
@@ -844,7 +887,7 @@ it as a disk image, and opens a window showing the contents of the image. To
 install Sync, drag the Liferay Sync icon to the Applications folder. Once it's
 installed, go to your Applications folder to run it.
 
-![Figure 4.21: Drag the Liferay Sync icon to the Applications
+![Figure 4.22: Drag the Liferay Sync icon to the Applications
 folder.](../../images/liferay-sync-mac-install.png)
 
 When you launch Liferay Sync, the first thing you need to do is provide it with
@@ -852,7 +895,7 @@ the URL for the Liferay server that you'll be using Sync with, along with your
 Liferay credentials. After that, you'll need to run through the brief setup
 process that was described above for Windows.
 
-![Figure 4.22: You can provide the same information requested by the Windows
+![Figure 4.23: You can provide the same information requested by the Windows
 application installer.](../../images/liferay-sync-mac-preferences.png)
 
 Once you've finished your configuration and have clicked *OK*, Liferay Sync
@@ -879,7 +922,7 @@ Liferay server and is updating the files in your Sync folder according to the
 interval you specified in the wizard. Click the Liferay Sync icon in your
 taskbar to bring up the menu.
 
-![Figure 4.23: Open the Liferay Sync taskbar menu to access the following
+![Figure 4.24: Open the Liferay Sync taskbar menu to access the following
 options.](../../images/liferay-sync-taskbar-menu.png)
 
 *Open Sync Folder* opens your Liferay Sync folder in your native file manager.
@@ -908,7 +951,7 @@ the account information you provided when you started Sync for the first time.
 For example, you can enter a new URL for your Liferay server and enter a
 different set of Liferay credentials.
 
-![Figure 4.24: Open the Liferay Sync menu and select *Properties*
+![Figure 4.25: Open the Liferay Sync menu and select *Properties*
 (*Preferences*, on Mac OS) to edit the settings you configured during
 setup.](../../images/liferay-sync-properties.png)
 
@@ -979,7 +1022,7 @@ sure the site you chose to sync with is selected in the context menu selector
 and click on *Documents and Media*. You should see your `README.txt` file listed
 there.
 
-![Figure 4.25: You can access the same files from Liferay Sync that you can from
+![Figure 4.26: You can access the same files from Liferay Sync that you can from
 Liferay's web interface.](../../images/liferay-sync-documents-and-media.png)
 
 Download the file (click the small triangle icon at the top right corner of the
@@ -990,7 +1033,7 @@ again, and then go back to your browser and refresh your Documents and Media
 page. Click on the *README.txt* icon, look at the information displayed to the
 right, and you'll see that its version number has incremented.
 
-![Figure 4.26: Updating a file through Liferay Sync increments the file's
+![Figure 4.27: Updating a file through Liferay Sync increments the file's
 version number. You can view a file's version number through the web
 interface.](../../images/liferay-sync-README.png)
 
@@ -1042,13 +1085,13 @@ desktop clients.
 After installing Liferay Sync for Android, an empty screen appears asking you
 to set up the app. This screen appears whenever preferences are missing.
 
-![Figure 4.27: First screen](../../images/liferay-sync-android-empty.png)
+![Figure 4.28: First screen](../../images/liferay-sync-android-empty.png)
 
 Touch the screen and it displays the *Settings* view. You can always go back
 to *Settings* by clicking on the wrench icon at the top right corner of the
 screen. 
 
-![Figure 4.28: Android settings](../../images/liferay-sync-android-settings.png)
+![Figure 4.29: Android settings](../../images/liferay-sync-android-settings.png)
 
 Enter your Liferay server credentials by filling in your *Login*, *Password*,
 and *Server* information. Your *Login* is either your user account's email
@@ -1062,17 +1105,17 @@ here, click on the menu button to view a list of all possible actions. This
 includes options to refresh, open the settings menu, upload files, take photos,
 test your connection, etc.
 
-![Figure 4.29: Gingerbread](../../images/liferay-sync-android-gingerbread.png)
+![Figure 4.30: Gingerbread](../../images/liferay-sync-android-gingerbread.png)
 
 After you have successfully tested your connection, hit the *back* button and
 you'll see a list of Liferay sites you have access to.
 
-![Figure 4.30: Sites](../../images/liferay-sync-android-sites.png)
+![Figure 4.31: Sites](../../images/liferay-sync-android-sites.png)
 
 You can browse the files of a site by tapping on any of them. This opens a list
 of the folders and files belonging to the site that you have permission to view.
 
-![Figure 4.31: Folder and files](../../images/liferay-sync-android-files-list.png)
+![Figure 4.32: Folder and files](../../images/liferay-sync-android-files-list.png)
 
 From here, you can click on a folder and browse deeper into the folder hierarchy
 or click the *Back* button to navigate back to parent folders up to the initial
@@ -1091,12 +1134,12 @@ actions menu varies depending on which entry type is selected: file or folder.
 
 On Gingerbread, the actions menu looks like this:
 
-![Figure 4.32: Gingerbread menu](../../images/liferay-sync-android-gingerbread-context.png)
+![Figure 4.33: Gingerbread menu](../../images/liferay-sync-android-gingerbread-context.png)
 
 On Ice Cream Sandwich and above, you can find the action icons and menu at the
 top right:
 
-![Figure 4.33: ICS menu](../../images/liferay-sync-android-ics-context.png)
+![Figure 4.34: ICS menu](../../images/liferay-sync-android-ics-context.png)
 
 Clicking on *Add to Favorites* (Gingerbread) or the gray star (Ice Cream
 Sandwich) adds the selected file to the *Favorites* list. *Favorites* are
@@ -1109,7 +1152,7 @@ Clicking on *View Details* (Gingerbread) or the round icon with the letter "i"
 (Ice Cream Sandwich) opens the details view, which displays the entry's metadata
 such as creation date, author, version, description, etc.:
 
-![Figure 4.34: View details](../../images/liferay-sync-android-details.png)
+![Figure 4.35: View details](../../images/liferay-sync-android-details.png)
 
 If you click on *Download* (floppy disk icon on Ice Cream Sandwich), it
 downloads and overwrites the local file copy.
@@ -1121,7 +1164,7 @@ Clicking on *Delete* deletes the file/folder from the remote portal, and
 other users won't be able to view or download it. On Ice Cream Sandwich and
 above, you can select multiple entries for deletion:
 
-![Figure 4.35: Actions](../../images/liferay-sync-android-delete.png)
+![Figure 4.36: Actions](../../images/liferay-sync-android-delete.png)
 
 Some actions are not related to a specific folder or file. You can find these
 actions in the menu on the top action bar when no entry is selected (Gingerbread
@@ -1129,7 +1172,7 @@ users need to click on the device menu button). Depending on the device screen
 width, some icons may overflow to the three dots button on the right. Click on
 this button to see all of the available actions.
 
-![Figure 4.36: More options](../../images/liferay-sync-android-more.png)
+![Figure 4.37: More options](../../images/liferay-sync-android-more.png)
 
 The *Refresh* button fetches and updates the list of folders and files that have
 been changed in the portal.
@@ -1149,7 +1192,7 @@ images, videos, and audio files. If you have installed an app on your device
 that can open and browse any type of file, you will also see an option called
 *Other files*.
 
-![Figure 4.37: Upload local files](../../images/liferay-sync-android-upload.png)
+![Figure 4.38: Upload local files](../../images/liferay-sync-android-upload.png)
 
 The *Favorites* menu option opens the favorites list. All files that have been
 marked as favorites show up in this list. You should mark your most important
@@ -1157,7 +1200,7 @@ files as favorites because, as mentioned earlier, the *Favorites* feature gives
 you quick offline access to them. You can view the contents of items in the
 *Favorites* list, view their metadata and, of course, remove them from the list.
 
-![Figure 4.38: Favorites](../../images/liferay-sync-android-favorites.png)
+![Figure 4.39: Favorites](../../images/liferay-sync-android-favorites.png)
 
 Next, let's look at the iOS Sync app.
 
@@ -1166,7 +1209,7 @@ Next, let's look at the iOS Sync app.
 After installing Liferay Sync for iOS, an empty screen appears asking you
 to set up the app. This screen appears whenever preferences are missing.
 
-![Figure 4.39: iOS Settings](../../images/liferay-sync-ios-empty.png)
+![Figure 4.40: iOS Settings](../../images/liferay-sync-ios-empty.png)
 
 Click on *Settings* in the toolbar and enter your Liferay server credentials by
 filling in your *Login*, *Password*, and *Server* information. Your *Login*
@@ -1175,18 +1218,18 @@ to log in to the portal in a browser. In the *Server* field, enter your
 portal's URL. In this example, the server URL is *http://www.liferay.com*. Click
 on *Test Connection* to check if your configuration is correct.
 
-![Figure 4.40: iOS Settings](../../images/liferay-sync-ios-settings.png)
+![Figure 4.41: iOS Settings](../../images/liferay-sync-ios-settings.png)
 
 After you have successfully tested your connection, tap on the *Documents*
 toolbar section and you'll see a list of Liferay sites you have access to.
 
-![Figure 4.41: Sites](../../images/liferay-sync-ios-sites.png)
+![Figure 4.42: Sites](../../images/liferay-sync-ios-sites.png)
 
 You can browse the files of a site by tapping on its name or icon. This opens a
 list of the folders and files belonging to the site that you have permission to
 view.
 
-![Figure 4.42: Folder and files](../../images/liferay-sync-ios-files-list.png)
+![Figure 4.43: Folder and files](../../images/liferay-sync-ios-files-list.png)
 
 From here, you can click on a folder to browse deeper into the folder hierarchy.
 You can also click on the *Back* button to navigate back to parent folders up to
@@ -1195,14 +1238,14 @@ the initial *Sites* list.
 You can refresh the list by pushing it down. This updates all the files and
 folders that have been changed in the portal.
 
-![Figure 4.43: Refreshing](../../images/liferay-sync-ios-refresh.png)
+![Figure 4.44: Refreshing](../../images/liferay-sync-ios-refresh.png)
 
 When you click on a file, this file is downloaded from the remote portal
 and, if a previewer for this file type is available, you can view the contents
 of the file. The next time you open a file, it won't download it again; instead,
 it opens the local copy.
 
-![Figure 4.44: Opening a file](../../images/liferay-sync-ios-open.png)
+![Figure 4.45: Opening a file](../../images/liferay-sync-ios-open.png)
 
 There are 3 icons at the bottom of the screen when you open a file:
 
@@ -1210,7 +1253,7 @@ Clicking on the leftmost round icon with the letter "i" opens the details view,
 which displays the entry's metadata such as creation date, author, version,
 description, etc.:
 
-![Figure 4.45: View details](../../images/liferay-sync-ios-details.png)
+![Figure 4.46: View details](../../images/liferay-sync-ios-details.png)
 
 Clicking on the star icon at the center adds the selected file to the
 *Favorites* list. *Favorites* are special files that can be accessed and viewed
@@ -1223,12 +1266,12 @@ send the file as an email attachment, print the file, or copy it to your
 clipboard. Some external apps may also appear in this list. For example, you can
 share your file with social apps and messengers if they are available.
 
-![Figure 4.46: Share options](../../images/liferay-sync-ios-share.png)
+![Figure 4.47: Share options](../../images/liferay-sync-ios-share.png)
 
 In the file list, there's an Edit button. Clicking on it switches the app to
 the edit mode as shown below:
 
-![Figure 4.47: Edit mode](../../images/liferay-sync-ios-edit.png)
+![Figure 4.48: Edit mode](../../images/liferay-sync-ios-edit.png)
 
 Selecting one or more files or folders and clicking on the *Delete* button
 deletes the selected files or folders from the remote portal. Once you delete
@@ -1241,7 +1284,7 @@ change the entry's name locally and remotely.
 To quickly delete a file or folder from the portal, you can also swipe right and
 click on the *Delete* button in the file list view:
 
-![Figure 4.48: Deleting a file](../../images/liferay-sync-ios-delete.png)
+![Figure 4.49: Deleting a file](../../images/liferay-sync-ios-delete.png)
 
 If you want to upload an image or video to the portal, click the *Plus* button
 at the top right corner. You should see three options: 
@@ -1255,7 +1298,7 @@ device.
 *Create New Folder* lets you type the name of the folder and creates it in the
 portal.
 
-![Figure 4.49: Upload photos and videos](../../images/liferay-sync-ios-more.png)
+![Figure 4.50: Upload photos and videos](../../images/liferay-sync-ios-more.png)
 
 The *Favorites* toolbar section opens the favorites list. All files that have
 been marked as favorites show up in this list. You should mark your most
@@ -1264,11 +1307,11 @@ feature gives you quick offline access to them. You can view the contents of
 items in the *Favorites* list, view their metadata and, of course, remove them
 from the list.
 
-![Figure 4.50: Favorites](../../images/liferay-sync-ios-favorites.png)
+![Figure 4.51: Favorites](../../images/liferay-sync-ios-favorites.png)
 
 All downloaded files are stored on your device indefinitely. 
 
-![Figure 4.51: Deleting local copies](../../images/liferay-sync-ios-cache.png)
+![Figure 4.52: Deleting local copies](../../images/liferay-sync-ios-cache.png)
 
 If you want to delete downloaded files locally but don't want to remove them
 from the portal, go to *Settings* and click on the *Clear Cache* button.
