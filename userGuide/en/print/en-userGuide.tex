@@ -49,11 +49,11 @@
 Liferay Portal}\\[2\baselineskip]
 {\Large\itshape A Complete Guide}\\[4\baselineskip]
 {\Large THE LIFERAY DOCUMENTATION TEAM}\par
-{\tiny Rich Sezov, Jr.}\par
-{\tiny Jim Hinkey}\par
-{\tiny Stephen Kostas}\par
-{\tiny Jesse Rao}\par
-{\tiny Cody Hoag}\par
+{\small Rich Sezov, Jr.}\par
+{\small Jim Hinkey}\par
+{\small Stephen Kostas}\par
+{\small Jesse Rao}\par
+{\small Cody Hoag}\par
 \vspace{0.25\textheight}
 {\noindent Liferay Press}\\[\baselineskip]
 }% end of vbox
@@ -150,7 +150,7 @@ The full version of this license is here:
 \href{http://creativecommons.org/licenses/by-sa/3.0}{http://creativecommons.org/licenses/by-sa/3.0}
 
 Portions of this document were contributed by additional authors: James Falkner,
-Bruno Farache, Jeffrey Handa, Mark Healy, and Jonathon Omahen. 
+Bruno Farache, Michael Han, Jeffrey Handa, Mark Healy, and Jonathon Omahen. 
 
 \clearpage
 
@@ -1458,7 +1458,7 @@ http://localhost:8080/group/best-bank/home
 
 Note that if you're adding a friendly URL for your portal's home page,
 you should update your portal's Home URL field so that page requests to
-http://localhost:8080 redirect properly. To do this, navigate to the
+your domain name redirect properly. To do this, navigate to the
 Portal Settings page of the Control Panel and find the Home URL field in
 the Navigation section. For our bank example, we would enter
 \emph{/web/best-bank/home} into the Home URL field. Once you've entered
@@ -3052,7 +3052,7 @@ By default, the following site templates are provided:
   public feeds.
 \end{itemize}
 
-The following figure displays the form shown when editing the
+Figure 3.11 displays the form shown when editing the
 \emph{Community Site} template:
 
 \begin{figure}[htbp]
@@ -4888,8 +4888,36 @@ To further enhance your use of Microsoft Office documents with Documents
 and Media, Liferay provides integration directly with Microsoft Office.
 Let's look at that next.
 
-\section{Microsoft Office integration
-}
+\section{Microsoft Office integration}
+
+Liferay lets you open Microsoft Office files that reside in Documents and
+Media. You can open the files from Microsoft Internet Explorer or open them
+directly from your Microsoft Office applications. Let's open a file from your
+browser first.
+
+Liferay lets you launch Microsoft Office right from folders in Documents and
+Media. First, find the Microsoft Office file that you want to edit. Then
+click the drop-down icon in the upper-left corner of the document's thumbnail
+and click the \emph{Open in MS Office} link. Liferay launches Microsoft Office 
+and prompts you to log in using your Portal credentials. Once logged in, the
+file opens in your Microsoft Office application. 
+
+When you save the file, it is stored automatically in the Documents and Media
+folder from which you opened it. 
+
+This feature currently limits you to opening Documents and Media files whose
+titles end in their file's extension (e.g., \texttt{.doc}, \texttt{.docx}, \texttt{.xls}, \texttt{.xlsx},
+\texttt{.ppt}, or \texttt{.pptx}). See the related issue\footnote{\href{http://issues.liferay.com/browse/LPS-31223}{http://issues.liferay.com/browse/LPS-31223}}
+for more information. 
+
+Note that 64-bit Microsoft Internet Explorer and 64-bit Microsoft Office
+versions do not currently support this feature. It is only supported on 32-bit
+Microsoft Internet Explorer versions with 32-bit versions of Microsoft Office.
+See the related issue\footnote{\href{http://issues.liferay.com/browse/LPS-28718}{http://issues.liferay.com/browse/LPS-28718}}
+for more information. 
+
+Next we'll show you how to navigate your Documents and Media folders and
+open a file from the Microsoft Office application. 
 
 Liferay lets you access Microsoft Office files in Documents and Media
 directly from your Microsoft Office applications. Liferay implements the
@@ -5781,8 +5809,7 @@ it again; instead, it opens the local copy.
 \caption{\\Figure 4.44: Opening a file}
 \end{figure}
 
-There are 3 icons at the bottom of the screen when you open a file:
-
+There are three icons at the bottom of the screen when you open a file.  
 Clicking on the leftmost round icon with the letter ``i'' opens the
 details view, which displays the entry's metadata such as creation date,
 author, version, description, etc.:
@@ -6091,7 +6118,7 @@ choose several categories.
 \centering
 \scalegraphics{../../images/multi-valued-vocabularies.png}
 \caption{Figure 5.5: Single-valued vocabularies, on the left, use radio
-buttons while multi-valued vocabularies use checkboxes. .}
+buttons while multi-valued vocabularies use checkboxes.}
 \end{figure}
 
 Setting vocabulary values is done through the categories administration
@@ -6177,7 +6204,7 @@ more helpful to you.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/faceted-search-2.png}
-\caption{Figure 5.8: Asset tag facets provide you with more information
+\caption{\\Figure 5.8: Asset tag facets provide you with more information
 list, and the results to the right are refined by the facet you
 selected.}
 \end{figure}
@@ -9374,6 +9401,8 @@ very convenient ``cheat sheet''? which can help with the wiki syntax.
 You can use this syntax to format your wiki pages. Consider, for
 example, the following wiki document:
 
+\begin{verbatim}
+
 == Welcome to Our Wiki! ==
 
 This is our new wiki, which should allow us to collaborate on
@@ -9391,6 +9420,8 @@ Below are links to some sections that have already been added.
 {[}{[}Support{]}{]}
 
 {[}{[}Community{]}{]}
+
+\end{verbatim}
 
 This would produce the following wiki page:
 
@@ -10615,6 +10646,13 @@ Clicking \emph{Actions} next to the gadget enables you to edit, refresh,
 change permissions on, or delete the gadget. Here is a brief listing of
 what these four buttons do:
 
+\begin{wrapfigure}{l}{.35\textwidth}
+\centering
+\scalegraphics{../../images/15-opensocial-4.png}
+\caption{\\Figure 8.17: You can conveniently list your gadgets within the
+\emph{Gadgets} category.}
+\end{wrapfigure}
+
 \emph{Edit:} allows you to change the URL or category.
 
 \emph{Refresh:} manually refreshes the gadget cache to reflect changes
@@ -10624,13 +10662,6 @@ the portlet.
 \emph{Permissions:} gives you the basic \emph{View}, \emph{Update},
 \emph{Delete}, and \emph{Permissions} options for each role on your
 site.
-
-\begin{wrapfigure}{l}{.35\textwidth}
-\centering
-\scalegraphics{../../images/15-opensocial-4.png}
-\caption{\\Figure 8.17: You can conveniently list your gadgets within the
-\emph{Gadgets} category.}
-\end{wrapfigure}
 
 \emph{Delete:} removes the listing for the gadget.
 
@@ -14332,7 +14363,7 @@ delete or change the permissions on templates.
 \begin{figure}[htbp]
 \centering
 \scalegraphics{../../images/liferay-collaboration-kb-section-portlet.png}
-\caption{Figure 12.37: Knowledge Base Section Portlets}
+\caption{\\Figure 12.37: Knowledge Base Section Portlets}
 \end{figure}
 
 To use a template to create a new article, you have to view the template
@@ -17566,10 +17597,11 @@ manage your mail session, you can skip this step.
 Let's tie up some loose ends with regards to Liferay being able to
 access your database and mail session.
 
-1.Shutdown your domain's application server if it is currently running.
 
 \begin{enumerate}[1.]
 \setcounter{enumi}{1}
+\item
+Shutdown your domain's application server if it is currently running.
 \item
   Create a \texttt{portal-ext.properties} file in the \emph{Liferay
   Home} folder mentioned at the beginning of this GlassFish installation
@@ -23453,7 +23485,7 @@ properties defined in the portal.
 Finally, we learned how to properly notify users that the portal is
 about to shut down and how to set up exernal services like OpenOffice
 integration. We looked at how to create multiple portal instances on a
-single installation of Liferay and we showed how to view currently
+single installation of Life\-ray and we showed how to view currently
 installed plugins.
 
 We hope this information helps you become an effective Liferay Portal
