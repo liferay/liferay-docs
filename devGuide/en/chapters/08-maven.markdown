@@ -1,13 +1,47 @@
 # Developing Plugins Using Maven
 
+"Once upon a midnight weary, while I pondered weak and weary..."
+
+Here's the scene--you're sitting in a luxurious armchair next to a dancing fire,
+hot beverage in hand. Shadows dance on the tapestry-covered wall, and your cat
+*Lenore II* is purring softly from her favorite perch atop the mantle.
+
+"Ah, distinctly I remember it was in the bleak December..."
+
+At least you're passing this cold December night in grand style (in front of
+your computer customizing Liferay Portal, of course). 
+
+"Eagerly I wished the morrow;--vainly I had sought to borrow 
+From *Liferay* surcease of sorrow--sorrow for my last Lenore--" 
+
+We're sorry to hear your previous cat, the original *Lenore*, has passed away.
+Just take good care of Lenore II, would you? 
+
+"And the silken sad uncertain rustling of each purple curtain
+Thrilled me--filled me with *Ant*astic terrors never felt before;"
+
+Okay now you're being melodramatic; nobody can disdain *Apache Ant* thatf
+vehemnetly. What about customizing Liferay Portal using the Ant-based Plugins
+SDK could make you feel sadness and terror? 
+
+"Deep into that darkness peering, long I stood there wondering, fearing..."
+
+We get it! You don't want to use our Ant-based Plugins SDK. Gives us surcease
+from the melodram, okay? 
+
+"Open here I flung the shutter, when, with many a flirt and flutter,
+In there stepped a stately *Maven* of the saintly days of yore."
+
+So, you'd rather use Apache Maven to develop your Liferay plugins? 
+
 "But *Apache Maven* still beguiling all my sad soul into smiling..."
 
-Edgar Allen Poe liked Maven too, so you're in good company. Okay we admit it, we
-changed "the raven" to "Apache Maven" in the above line which we ripped from
-Poe's "The Raven." But if Apache Maven does indeed make your sad soul smile,
-especially if your soul was made sad because you thought you had to use
-Liferay's Ant-based Plugins SDK to develop your plugins, then by all means, use
-it! 
+Edgar Allen Poe liked Maven too, so you're in good company. Okay we admit it,
+we've heavily quoted and modified Poe's "The Raven" to suit our purposes. But if
+Apache Maven does indeed make your sad soul smile, especially if your soul was
+made sad because you thought you had to use Liferay's Ant-based Plugins SDK to
+develop your plugins, then by all means, use it! And please, take care of
+Lenore II for all of us animal lovers, would you? 
 
 Quoth the Maven, "Let us proceed undaunted in exploration of these topics:" 
 
@@ -78,8 +112,10 @@ Sonatype, Inc. at
 Liferay provides Maven archetypes to help you build plugins of various types,
 including Liferay portlets, themes, hooks, layout templates, web plugins, and
 more. You can also install and deploy Liferay artifacts to your repositories.
-We'll dive into all these topics in this chapter, so buckle up and prepare to be
-Mavenized! 
+We'll dive into all these topics in this chapter.
+
+"Straight I wheeled a cushioned seat in front of computer desk once more;
+Then, upon the velvet falling, I betook to Maven installing..."
 
 ## Installing Maven 
 
@@ -906,16 +942,17 @@ Maven.
 
 ### Developing Liferay Theme Plugins with Maven 
 
-Imagine yourself sitting in a luxurious armchair next to a crackling, dancing
-fire; shadows dance on the tapestry-covered wall, and a cat is purring softly
-from its perch atop the mantle. You're passing this cold winter's night in grand
-style (in front of your computer, of course). Now imagine yourself sitting on a
-cold hard wooden chair inside an off-white cubicle with empty walls (you're
-still in front of your computer, of course). These two descriptions paint two
-very different pictures, but both describe what you're doing (sitting and
-computing). Changing the "scenery" of your portal sets the mood for your users.
-We'll show you how to develop your own theme plugin (i.e., your "scenery") using
-Maven so your portal has a lasting impression on anyone who visits. 
+So you're sitting in your armchair next to the fire, just as we described in our
+chapter introduction; shadows dance on the tapestry-covered wall, and Lenore II
+(your cat) is purring atop the mantle. Yes, you're passing this cold winter's
+night in grand style (in front of your computer, of course). Now imagine
+yourself sitting on a cold hard wooden chair inside an off-white cubicle with
+empty walls (you're still in front of your computer, of course). These two
+descriptions paint two very different pictures, but both describe what you're
+doing (sitting and computing). Changing the "scenery" of your portal sets the
+mood for your users. We'll show you how to develop your own theme plugin (i.e.,
+your "scenery") using Maven so your portal has a lasting impression on anyone
+who visits. 
 
 #### Creating a Theme Plugin 
 
@@ -1094,22 +1131,22 @@ For detailed information on creating hooks, see the
 [*Hooks*](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4)
 chapter of this guide. 
 
-You're nearly a Maven maven now; you're able to create portlets, themes, and
-hooks. Let's round things out by learning to develop layout template. 
+You're nearly a Maven expert now; you're able to create portlets, themes, and
+hooks. Let's round things out by learning to develop layout templates. 
 
 ### Developing Liferay Layout Template Plugins with Maven 
 
 You can create layout templates to customize the display of portlets on your
 page and to embed commonly used portlets. In our introduction to themes, we
-described a nice scene where you are relaxing in a luxurious chair, computer in
-your lap, a cat purring on the mantle above a dancing fire. Sounds nice, doesn't
-it? It would be, but the chair's too small, so your knees are up in the air when
-your feet are flat on the ground, and your laptop is balanced precariously on
-top of them. The fire is also surprisingly large for that fireplace. In fact,
-its flames are already licking at the bottom of the mantle--which is made of
-wood! Remember that softly purring cat on the mantle which we described in the
-themes section? He's going to cook if we don't do something! But it's so hard to
-get out of this tiny chair. Someone save the cat! 
+described a nice scene where you're relaxing in a luxurious chair, computer in
+your lap, LenoreII (your cat) purring on the mantle above a dancing fire. Sounds
+nice, doesn't it? It would be, but the chair's too small, so your knees are up
+in the air when your feet are flat on the ground, and your laptop is balanced
+precariously on top of them. The fire is also surprisingly large for that
+fireplace. In fact, its flames are already licking at the bottom of the
+mantle--which is made of wood! Remember Lenore II, softly purring on the mantle?
+She's going to cook (just like the original Lenore) if we don't do something!
+But it's so hard to get out of this tiny chair. Someone save Lenore II! 
 
 Let's create a layout template plugin with Maven. 
 
@@ -1212,17 +1249,19 @@ You now have plenty of archetypes at your disposal!
 
 ## Summary 
 
-You can develop all your Liferay plugins using Maven; there's a standard process
-for generating the archetypes and selecting your plugin options for each plugin
-type. You can then customize the archetype to your liking. Using Maven to
-develop plugins offers an easy and effective way to customize your Liferay
-Portal.
+"But the chair whose violet lining with the lamp-light gloating o'er,
+Lenore II shall press, ah, nevermore!"
+
+Lenore II didn't make it through the chapter, but you did. You can develop all
+your Liferay plugins using Maven; there's a standard process for generating the
+archetypes and selecting your plugin options for each plugin type. You can then
+customize the archetype to your liking. Using Maven to develop plugins offers an
+easy and effective way to customize your Liferay Portal. 
 
 You accomplished a lot in this chapter. You configured Maven locally, downloaded
 and installed the required Liferay Maven artifacts, and learned to create
 Liferay plugins with Maven. You're ready to create all kinds of Liferay plugins
-based on Liferay's plugin archetypes. At this point, consider yourself
-completely Mavenized, a regular maven of Maven! 
+based on Liferay's plugin archetypes. 
 
 We've explored Maven in this chapter, and the Plugins SDK in earlier chapters.
 You've seen two powerful tools you can use to develop your Liferay plugins. In
@@ -1245,3 +1284,7 @@ distracting. The cat on the mantle image is a good one; the Raven can be
 integrated into that (maybe the cat's name is Lenore and we can make a
 ridiculous prequel of sorts?). If we've kept the metaphor going through the
 chapter, this last note has more of an impact. -->
+
+<!--Hopefully the added detail in the introduction works, along with the
+modificaitons to the layout template and theme introductions. Removed the maven
+Maven jokes and the term "Mavenizing".  -Russ-->
