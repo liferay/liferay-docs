@@ -533,25 +533,22 @@ at that next.
 
 ## Microsoft Office integration [](id=lp-6-1-ugen04-microsoft-office-integration-0)
 
-Liferay gives you flexibility in opening Microsoft Office files that reside in
-Documents and Media. You can open the files from within your Microsoft Internet
-Explorer browser or open them directly from your Microsoft Office applications.
+Liferay lets you open Microsoft Office files that reside in
+Documents and Media. You can open the files from Microsoft Internet
+Explorer or open them directly from your Microsoft Office applications.
 Let's open a file from your browser first.
 
-**Opening Microsoft Office files from Internet Explorer**
-
-Liferay let's you launch Microsoft Office right from Documents and Media.
-Simply, find the Microsoft Office file in Documents and Media that you want to
-edit. Then, click the drop-down icon in the upper-left corner of the document's
-thumbnail and click the *Open in MS Office* link. Liferay launches Microsoft
-Office, if it's not running already, and prompts you to log in using your Portal
-credentials. Once logged in, the file opens in your Microsoft Office
-application. 
+Liferay lets you launch Microsoft Office right from folders in Documents and
+Media. First, find the Microsoft Office file that you want to edit. Then
+click the drop-down icon in the upper-left corner of the document's thumbnail
+and click the *Open in MS Office* link. Liferay launches Microsoft Office 
+and prompts you to log in using your Portal credentials. Once logged in, the
+file opens in your Microsoft Office application. 
 
 ![Figure 4.10: Open Microsoft Office files from within your Internet Explorer browser by clicking the *Open in MS Office* link.](../../images/05-open-in-MS-office.png)
 
-Changes you save to the file from Microsoft Office are propagated to Documents
-and Media. 
+When you save the file, it is stored automatically in the Documents and Media
+folder from which you opened it. 
 
 This feature currently limits you to opening Documents and Media files whose
 titles end in their file's extension (e.g., `.doc`, `.docx`, `.xls`, `.xlsx`,
@@ -559,16 +556,15 @@ titles end in their file's extension (e.g., `.doc`, `.docx`, `.xls`, `.xlsx`,
 [http://issues.liferay.com/browse/LPS-31223](http://issues.liferay.com/browse/LPS-31223)
 for more information. 
 
-Also, 64-bit Microsoft Internet Explorer and 64-bit Microsoft Office versions do
-not currently support this feature. It is only supported on 32-bit Microsoft
-Internet Explorer versions with 32-bit versions of Microsoft Office. See
+Note that 64-bit Microsoft Internet Explorer and 64-bit Microsoft Office
+versions do not currently support this feature. It is only supported on 32-bit
+Microsoft Internet Explorer versions with 32-bit versions of Microsoft Office.
+See
 [http://issues.liferay.com/browse/LPS-28718](http://issues.liferay.com/browse/LPS-28718)
 for more information. 
 
-Next we'll show you how to both navigate your Documents and Media folders and
-open a file, from within the Microsoft Office application. 
-
-**Opening Documents and Media files from Microsoft Office**
+Next we'll show you how to navigate your Documents and Media folders and
+open a file from the Microsoft Office application. 
 
 Liferay lets you access Microsoft Office files in Documents and Media directly
 from your Microsoft Office applications. Liferay implements the MS-DWSS
