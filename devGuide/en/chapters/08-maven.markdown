@@ -1,6 +1,6 @@
 # Developing Plugins Using Maven
 
-"Once upon a midnight weary, while I pondered weak and weary..."
+"Once upon a midnight dreary, while I pondered weak and weary..."
 
 Here's the scene--you're sitting in a luxurious armchair next to a dancing fire,
 hot beverage in hand. Shadows dance on the tapestry-covered wall, and your cat
