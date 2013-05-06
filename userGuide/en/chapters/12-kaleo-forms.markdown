@@ -28,10 +28,12 @@ Let's look at Kaleo Forms first.
 
 ## Kaleo Forms  
 
-Add the Workflow Forms portlet to a page. The initial state, the *Summary* tab
-displays the same information you might have seen in *My Workflow Tasks* in the
-control panel. Any forms available for processing through the workflow can be
-initiated through the *Submit New* button, as the below image indicates. 
+Add the Kaleo Forms portlet to a page. In the portlet's initial state, the
+*Summary* tab displays similar information to what you might see in the *My
+Workflow Tasks* portion of the Control Panel. Because the Kaleo Forms portlet is
+scoped to Kaleo Processes, tasks related to other assets cannot be managed from
+Kaleo Forms. Any forms available for processing through the workflow can be
+initiated through the *Submit New* button, as the below image indicates.
 
 ![Figure 12.1: Kaleo Forms give you a convenient way to manage all available workflows in the portal. ](../../images/kaleo-forms-initial-view.png)
 
@@ -40,7 +42,7 @@ ones. All available processes are listed here. If you're coming here for the
 first time, however, there won't be any, so let's create one. Click *Add*.
 You'll see the screen below. 
 
-![Figure 12.2: The Workflow Process Creation Page](../../images/kaleo-workflow-add-process.png)
+![Figure 12.2: The New Process page gives you several options when creating a new workflow.](../../images/kaleo-workflow-add-process.png)
 
 Set a name and a description. Next, you'll define an *Entry Definition* and an
 *Initial Form*, choose or create a *workflow* and *Workflow Task Forms*.
