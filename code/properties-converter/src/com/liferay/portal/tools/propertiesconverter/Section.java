@@ -5,24 +5,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Section {
+
+	public Section(String section, boolean title, boolean description, boolean propertyText, boolean	activeProperties, boolean inactiveProperties) {
 	
-	public Section(String descriptionSection, int position) {
+		if (title) {
+			_title = extractSectionTitle(section);
+		}
 
-		_descriptionParagraphs = extractDescriptionParagraphs(descriptionSection);
-	}
+		if (description) {
+			_descriptionParagraphs = extractDescriptionParagraphs(section);
+		}
 
-	public Section(String propertiesSection, int position, boolean dummy) {
+		if (propertyText) {
+			_propertiesParagraphs = extractPropertiesParagraphs(section);
+		}
 
-		_propertiesParagraphs = extractPropertiesParagraphs(propertiesSection);
-		
-		_activeProperties = extractActiveProperties(propertiesSection);
-		
-		_inactiveProperties = extractInactiveProperties(propertiesSection);
-	}
+		if (activeProperties) {
+			_activeProperties = extractActiveProperties(section);
+		}
 
-	public Section(String titleSection, int position, boolean dummy, boolean dummy2) {
-
-		_title = extractSectionTitle(titleSection);
+		if (inactiveProperties) {
+			_inactiveProperties = extractInactiveProperties(section);
+		}
 	}
 	
 	public List<String> get_descriptionParagraphs() {
@@ -118,9 +122,14 @@ public class Section {
 		StringBuilder currentParagraph = new StringBuilder();
 
 		for (int i = 0; i < lines.length; i++) {
-			String line = lines[i].trim();
+			String line = lines[i];
 
-			if (line.trim().startsWith("#     ")) {
+			if (line.startsWith("        #")) {
+				// skip comment embedded in value list
+
+				continue;
+			}
+			else if (line.trim().startsWith("#     ")) {
 				if (!(currentParagraph.length() == 0)) {
 					currentParagraph.append(" " + line.replaceFirst("#", ""));
 				}
@@ -157,15 +166,29 @@ public class Section {
 		StringBuilder activeProperties = new StringBuilder();
 		
 		String[] lines = propertiesSection.split("\n");
-		
+
+		boolean isActiveProperty = false;
 		for (int i = 0; i < lines.length; i++) {
-			
-			if (lines[i].trim().startsWith("# ") || lines[i].length() < 2) {
-				continue;
+			String line = lines[i];
+
+			if (!isActiveProperty) {
+				if (line.startsWith("#") || line.startsWith("    #")) {
+					continue;
+				}
+				else {
+					isActiveProperty = true;
+					activeProperties.append(line + "\n");
+				}
 			}
-			
-			if (lines[i].contains("=") && !lines[i].trim().startsWith("#")) {
-				activeProperties.append(lines[i] + "\n");
+			else {
+				if (line.startsWith("#") || line.startsWith("    #")) {
+					isActiveProperty = false;
+
+					continue;
+				}
+				else {
+					activeProperties.append(line + "\n");
+				}
 			}
 		}
 		
@@ -174,22 +197,36 @@ public class Section {
 
 	private static String extractInactiveProperties(String propertiesSection) {
 		
-		StringBuilder activeProperties = new StringBuilder();
+		StringBuilder inactiveProperties = new StringBuilder();
 		
 		String[] lines = propertiesSection.split("\n");
-		
+
+		boolean isInactiveProperty = false;
 		for (int i = 0; i < lines.length; i++) {
-			
-			if (lines[i].trim().startsWith("# ") || lines[i].length() < 2) {
-				continue;
+			String line = lines[i];
+
+			if (!isInactiveProperty) {
+				if (line.startsWith("    # ") || line.trim().equals("#")) {
+					continue;
+				}
+				else if (line.startsWith("    #")) {
+					isInactiveProperty = true;
+					inactiveProperties.append(line.replaceFirst("#", "") + "\n");
+				}
 			}
-			
-			if (lines[i].contains("=") && lines[i].trim().startsWith("#")) {
-				activeProperties.append(lines[i].replaceFirst("#", "") + "\n");
+			else {
+				if (!line.trim().startsWith("#")) {
+					isInactiveProperty = false;
+
+					continue;
+				}
+				else {
+					inactiveProperties.append(line.replaceFirst("#", "") + "\n");
+				}
 			}
 		}
 		
-		return activeProperties.toString();	
+		return inactiveProperties.toString();	
 	}
 
 	private static String extractSectionTitle(String titleSection) {
