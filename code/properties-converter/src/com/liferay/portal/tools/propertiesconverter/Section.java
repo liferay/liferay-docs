@@ -30,7 +30,7 @@ public class Section {
 		return _descriptionParagraphs;
 	}
 
-	public List<String> get_propertiesParagraphs() {
+	public List<PropertiesParagraph> get_propertiesParagraphs() {
 		
 		return _propertiesParagraphs;
 	}
@@ -57,7 +57,7 @@ public class Section {
 	}
 
 	public void set_propertiesParagraphs(
-			List<String> propertiesParagraphs) {
+			List<PropertiesParagraph> propertiesParagraphs) {
 		
 		_propertiesParagraphs = propertiesParagraphs;
 	}
@@ -109,29 +109,40 @@ public class Section {
 		return descriptionParagraphs;
 	}
 
-	private static List<String> extractPropertiesParagraphs(String propertiesSection) {
+	private static List<PropertiesParagraph> extractPropertiesParagraphs(String propertiesSection) {
 
-		List<String> propertiesParagraphs = new ArrayList<String>();
+		List<PropertiesParagraph> propertiesParagraphs = new ArrayList<PropertiesParagraph>();
 
 		String[] lines = propertiesSection.split("\n");
 
 		StringBuilder currentParagraph = new StringBuilder();
 
 		for (int i = 0; i < lines.length; i++) {
+			String line = lines[i].trim();
 
-			if (lines[i].trim().startsWith("# ")) {
+			if (line.trim().startsWith("#     ")) {
 				if (!(currentParagraph.length() == 0)) {
-					currentParagraph.append(" " + lines[i].replaceFirst("#", "").trim());
+					currentParagraph.append(" " + line.replaceFirst("#", ""));
 				}
 				else {
-					currentParagraph.append(lines[i].replaceFirst("#", "").trim());
+					currentParagraph.append(line.replaceFirst("#", ""));
+				}
+
+				currentParagraph.append("\n");
+			}
+			else if (line.trim().startsWith("# ")) {
+				if (!(currentParagraph.length() == 0)) {
+					currentParagraph.append(" " + line.replaceFirst("#", "").trim());
+				}
+				else {
+					currentParagraph.append(line.replaceFirst("#", "").trim());
 				}
 			}
-			else if (lines[i].trim().length() < 2) {
+			else if (line.trim().length() < 2) {
 				if (currentParagraph.length() == 0) {
 					continue;
 				} else {
-					propertiesParagraphs.add(currentParagraph.toString());
+					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
 					currentParagraph = new StringBuilder();
 				}
 			}
@@ -195,7 +206,7 @@ public class Section {
 	
 	// propertiesSection
 	
-	private List<String> _propertiesParagraphs;
+	private List<PropertiesParagraph> _propertiesParagraphs;
 	
 	private String _activeProperties;
 	
