@@ -1,10 +1,10 @@
 # Liferay APIs 
 
-An API is an *application programing interface* that can be invoked from your
-own code, either directly through a Java invocation or through web services, to
-perform an action or set of actions. This chapter provides an overview of
-several essential Liferay APIs available to you for use in developing your
-Liferay Portal. 
+An *Application Programing Interface* (API) is a protocol that, when invoked,
+performs an action or set of actions. You can invoke an API from your own code
+directly through a Java invocation, or through web services. This chapter
+provides an overview of several essential Liferay APIs available to you for use
+in developing your Liferay Portal. 
 
 Liferay comes with a host of APIs that provide powerful portal and portlet
 services. The following table shows you the entities for which services are
@@ -22,12 +22,12 @@ available:
 |*Layout*         |                 |
 ---
 
-You can call the Liferay APIs with a Java method or web service invocation. This
-flexibility lets you implement client code in Java or any other language (even a
-scripting language such as PHP) that supports web service invocations. The APIs
-can be called from within portlet or non-portlet code. You can make calls to the
-APIs *locally* from within the portal or *remotely* outside of the portal's
-*Java virtual machine* (*JVM*).
+The ability to call Liferay APIs with a Java method or web service invocation
+gives you the flexibility to implement client code in Java or any language
+(even a scripting language such as PHP) that supports web service invocations.
+The APIs can be called from within portlet or non-portlet code. You can make
+calls to the APIs *locally* from within the portal or *remotely* outside of the
+portal's *Java virtual machine* (*JVM*).
 
 This chapter covers the following topics:
 

@@ -45,19 +45,19 @@ Lenore II for all of us animal lovers, would you?
 
 Quoth the Maven, "Let us proceed undaunted in exploration of these topics:" 
 
-- Liferay Plugin Types to Develop with Maven
-
-- Deploying Liferay Plugins with Maven
-
-- Creating Liferay Plugins with Maven
-
-- Using a Parent Plugin Project
-
-- Installing Required Liferay Artifacts 
+- Installing Maven 
 
 - Using Maven Repositories
 
-- Installing Maven 
+- Installing Required Liferay Artifacts 
+
+- Using a Parent Plugin Project
+
+- Creating Liferay Plugins with Maven
+
+- Deploying Liferay Plugins with Maven
+
+- Liferay Plugin Types to Develop with Maven
 
 As an alternative to developing plugins using the Plugins SDK, you can leverage
 the Apache Maven build management framework. Here's a list of some exciting
