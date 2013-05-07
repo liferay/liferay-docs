@@ -90,7 +90,7 @@ Let's explore the different data types at our disposal:
 assist in selecting the desired date. The format for the date is governed by the
 current locale.
 
-**Decimal:** similar to `Number`, except that it requires a decimal point (`.`)
+**Decimal:** similar to *Number*, except that it requires a decimal point (`.`)
 be present.
 
 **Documents and Media:** select an existing uploaded document to attach to the
@@ -102,7 +102,7 @@ upload location.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
-**Integer:** similar to `Number`, except that it constrains user input to
+**Integer:** similar to *Number*, except that it constrains user input to
 non-fractional numbers.
 
 **Link to Page:** Inserts a link to another page in the same site.
@@ -111,22 +111,22 @@ non-fractional numbers.
 constraints on the kind of number entered.
 
 **Radio:** presents the user with a list of options to choose from using radio
-button inputs. Values are stored as `String`s. Similar to `Select`.
+button inputs. Values are stored as strings. Similar to *Select*.
 
 **Select:** a selection of options for the user to choose from using a combo
-box. Can be configured to allow multiple selections, unlike `Radio`.
+box. Can be configured to allow multiple selections, unlike *Radio*.
 
-**Text:** a simple text field for any `String` input.
+**Text:** a simple text field for any string input.
 
 **Text Box:** a large text box for long text input.
 
 ![Figure 10.2: Data definition fields.](../../images/05-data-definition-screen.png)
 
 Using that reference as a nice cheat-sheet, you can now create the data type you
-need for "Volunteer Work Sign-Up." Use a `Text` type for the name. For all the
-tasks your friends and family can volunteer to do for you, use `Select`
+need for "Volunteer Work Sign-Up." Use a *Text* type for the name. For all the
+tasks your friends and family can volunteer to do for you, use *Select*
 (obviously set to allow multiple options). Finally, you don't want to forget a
-`File Upload` so they can upload images of themselves. After all, how much more
+*File Upload* so they can upload images of themselves. After all, how much more
 official-feeling and fun is it if you can print out some nifty badges? To add
 these fields, drag them from the palette on the left to the work area on the
 right. 
@@ -145,9 +145,9 @@ but is available to reference from a display template.
 **Field Label:** Sets the text that can be displayed with the field. This is the
 human-readable text that the user sees.
 
-**Show Label:** When set to `Yes`, the label is shown with the form field.
+**Show Label:** When set to *Yes*, the label is shown with the form field.
 
-**Required:** When set to `Yes`, this field must have data in it for a new entry
+**Required:** When set to *Yes*, this field must have data in it for a new entry
 to be submitted (not available for Boolean).
 
 **Name:** The name of the field internally, automatically generated. Since this
@@ -162,14 +162,14 @@ adding a new entry (not available for File Upload).
 displays helpful information. If you would like to provide text for the tooltip
 you may enter it here.
 
-**Indexable:** When set to `Yes`, Liferay is able to index your field for
+**Indexable:** When set to *Yes*, Liferay is able to index your field for
 search.
 
-**Repeatable:** When set to `Yes`, the field is repeatable. Your users can then
+**Repeatable:** When set to *Yes*, the field is repeatable. Your users can then
 add as many copies of this field as they like.
 
 **Width:** Sets the visual width of the form on the page. It does not affect the
-values that are stored. Possible values are `Small`, `Medium` and `Large` (not
+values that are stored. Possible values are *Small*, *Medium* and *Large* (not
 available for Boolean, Documents and Media, File Upload, Radio, and Select).
 
 **Allowed File Extensions:** By default, form validation accepts
@@ -177,14 +177,14 @@ any file type to be submitted. Set this value to a comma-delimited list of
 extensions, including the character `.`, and Liferay checks the extension before
 the file can be uploaded (only available for File Upload).
 
-**Multiple:** When set to `Yes`, allows the user to select more than
+**Multiple:** When set to *Yes*, allows the user to select more than
 one option. This defaults to no (only available for Select).
 
 **Options:** Changes the options available for selection. You're able to add and
 remove options as well as edit each individual option's display name and value
 (only available for Radio and Select).
 
-**Read Only:** When set to `Yes`, uploaded files are unable to be deleted or
+**Read Only:** When set to *Yes*, uploaded files are unable to be deleted or
 modified by the user (only available for File Upload).
 
 ![Figure 10.3: Data field properties.](../../images/05-data-definition-field-properties.png)
@@ -208,7 +208,8 @@ helpful when you want to make a similar data definition to one you've already
 created. For instance, if you'd like to create an advanced sign-up sheet in
 addition to a regular sign-up sheet, you can simply inherit the characteristics
 of the regular sheet and only add the additional fields necessary for the
-advanced sheet.
+advanced sheet. When the advanced sheet is configured, it will display its
+parent's fields in addition to its own fields.
 
 After you've saved your data definition, Liferay provides a WebDAV URL and a
 static URL. These values access the XML source of your data definition. To
