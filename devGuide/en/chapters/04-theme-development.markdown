@@ -376,7 +376,7 @@ content:
 
     <look-and-feel>
 		<compatibility>
-			<version>6.1.10+</version>
+			<version>6.1.1+</version>
 		</compatibility>
 		<theme id="deep-blue" name="Deep Blue">
 			<settings>
