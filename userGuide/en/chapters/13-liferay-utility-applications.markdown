@@ -1007,7 +1007,23 @@ Once your data source has been saved, make sure that your report template is
 ready for use. If you're using Jasper and need to create a Jasper template,
 consider using a tool like iReport Designer or Jaspersoft Studio to create your
 template. iReport is built on top of Netbeans IDE while Jaspersoft Studio is
-Eclipse-based. Once you've created a Jasper template (`.jrxml` file), you're
+Eclipse-based. Make sure that the version of iReport Designer or Jaspersoft
+Studio that you use is compatible with the version of Jasper Reports that's
+bundled with your Jasper Reports application. For example, if you use iReport
+5.1.0 to create Jasper templates, the templates are created with `uuid`s
+included in `jasperReport` elements. If your Jasper Reports application is using
+`jasperreports-4.0.2.jar`, an error complaining about incompatible `uuid`s in
+the template's `jasperReport` elements will appear when you try to use generate
+a report using the template. There are two solutions to this issue:
+
+1. Switch to an earlier, compatible, version of iReport Designer. iReport 4.5.1
+   is the latest version that does not insert `uuid`s into Jasper templates.
+
+2. If you don't want to switch to an earlier version of iReport, you can search
+   for and remove all of the `uuid`s in your Jasper template. Then your reports
+   will be generated without problems.
+
+Once you've created a Jasper template (`.jrxml` file), you're
 ready to create a report definition. Liferay handles compiling the template,
 populating the template with data, and exporting the report. For more
 information on using iReport Designer and on the Jasper Report lifecycle, please
