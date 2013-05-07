@@ -19,13 +19,11 @@ for Eclipse that simplifies development for Liferay.
 
 We discuss the following topics in this chapter: 
 
-- **Initial Setup:** Install the Plugins SDK and configure it to use with your
-Liferay Portal server. 
+- Initial Setup
 
-- **Structure of the SDK:** Where to develop your plugin within the SDK and what
-Apache Ant targets are available. 
+- Structure of the SDK
 
-- **Best Practices:** Helpful ways for organizing your plugin projects. 
+- Best Practices
 
 Setting up the Plugins SDK is easy. Let's get to it. 
 
