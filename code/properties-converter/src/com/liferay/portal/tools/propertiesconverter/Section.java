@@ -1,6 +1,8 @@
 
 package com.liferay.portal.tools.propertiesconverter;
 
+import com.liferay.portal.kernel.util.StringUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,39 +123,80 @@ public class Section {
 
 		StringBuilder currentParagraph = new StringBuilder();
 
+		boolean isPreformatted = false;
+
 		for (int i = 0; i < lines.length; i++) {
-			String line = lines[i];
+			String line = StringUtil.trimTrailing(lines[i]);
 
 			if (line.startsWith("        #")) {
-				// skip comment embedded in value list
+				// comment embedded in value list
 
-				continue;
+				break;
 			}
 			else if (line.trim().startsWith("#     ")) {
-				if (!(currentParagraph.length() == 0)) {
-					currentParagraph.append(" " + line.replaceFirst("#", ""));
+
+				if (isPreformatted) {
+					currentParagraph.append(line.trim().replaceFirst("#", ""));
 				}
 				else {
-					currentParagraph.append(line.replaceFirst("#", ""));
+					isPreformatted = true;
+
+					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
+
+					currentParagraph = new StringBuilder();
+					currentParagraph.append(line.trim().replaceFirst("#", ""));
 				}
 
 				currentParagraph.append("\n");
 			}
 			else if (line.trim().startsWith("# ")) {
-				if (!(currentParagraph.length() == 0)) {
-					currentParagraph.append(" " + line.replaceFirst("#", "").trim());
+				if (isPreformatted) {
+					isPreformatted = false;
+
+					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
+
+					currentParagraph = new StringBuilder();
+					currentParagraph.append(line.trim().replaceFirst("#", "").trim());
 				}
 				else {
+					if (currentParagraph.length() > 0) {
+						currentParagraph.append(" ");
+					}
 					currentParagraph.append(line.replaceFirst("#", "").trim());
 				}
+
+				currentParagraph.append("\n");
 			}
-			else if (line.trim().length() < 2) {
-				if (currentParagraph.length() == 0) {
-					continue;
-				} else {
+			else if (line.trim().startsWith("#")) {
+				if (line.trim().length() < 2) {
+					if (i == 0) {
+						continue;
+					}
+
 					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
+
 					currentParagraph = new StringBuilder();
+
+					continue;
 				}
+				else {
+					// must be an inactive property assignment
+
+					if (currentParagraph.length() > 0) {
+						propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
+					}
+
+					break;
+				}
+			}
+			else {
+				// must be an active property assignment
+
+				if (currentParagraph.length() > 0) {
+					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
+				}
+
+				break;
 			}
 			
 		}
