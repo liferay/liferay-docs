@@ -4,21 +4,21 @@
 Liferay's Documents and Media library provides a mechanism for storing files
 online using the same type of structure that you use to store files locally. You
 can use it to store files of any kind; it serves as a virtual shared drive. The
-Documents and Media portlet of Liferay 6.1 takes its name from the fact that it
-represents a redesign of two portlets from previous versions: the Document
-Library and the Image Gallery. First, the Documents and Media library serves as
-a repository for all types of files; there's no need to store image files in a
-separate Image Gallery anymore. Second, Liferay 6.1's Media Gallery portlet does
-not serve as a repository but just displays selected content from the Documents
-and Media library. It can display image, audio and video files. Other features
-introduced with Liferay 6.1's Documents and Media library include customizable
-document types and metadata sets, automatic document preview generation and
-support for mounting multiple external repositories. The new document types and
-metadata sets are an addition to, not a replacement for, the portal's system of
-tags and categories. Let's start exploring how to use the Documents and Media
-portlet.
+Documents and Media portlet introduced in Liferay 6.1 takes its name from the
+fact that it represents a redesign of two portlets from previous versions: the
+Document Library and the Image Gallery. First, the Documents and Media library
+serves as a repository for all types of files; there's no need to store image
+files in a separate Image Gallery anymore. Second, the Media Gallery portlet
+introduced in Liferay 6.1 does not serve as a repository but just displays
+selected content from the Documents and Media library. It can display image,
+audio and video files. Other features introduced with Liferay 6.1's Documents
+and Media library include customizable document types and metadata sets,
+automatic document preview generation and support for mounting multiple external
+repositories. The new document types and metadata sets are an addition to, not a
+replacement for, the portal's system of tags and categories. Let's start
+exploring how to use the Documents and Media portlet.
 
-## Getting Started with the Documents and Media  [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media--0)
+## Getting Started with the Documents and Media Portlet [](id=lp-6-1-ugen04-getting-started-with-the-documents-and-media--0)
 
 The Documents and Media portlet is non-instanceable. This means that each page
 on your portal can host at most one such portlet. Furthermore, if you add
@@ -279,7 +279,41 @@ been created they can be included in any number of document types as additional
 metadata sets. Next, let's take a look at tags. Tags can be attached to most
 forms of web content that can be created in Liferay, including documents.
 
-## Using External Repositories  [](id=lp-6-1-ugen04-using-external-repositories--0)
+## Alternative File Repository Options
+
+By default, Liferay stores documents and media files on the file system of the
+server on which it's running. You can choose a specific location for the
+document library store's root directory by adding the following property to your
+`portal-ext.properties` file and replacing the default path with your custom
+path:
+
+    dl.store.file.system.root.dir=${liferay.home}/data/document_library
+
+You can also use an entirely different method for storing documents and media
+files. You can use any of the following documents and media library stores with
+Liferay:
+
+- Advanced File System Store
+- CMIS Store (Content Management Interoperability Services)
+- DBStore (Database Storage)
+- File System Store
+- JCRStore (Java Content Repository)
+- S3Store (Amazon Simple Storage)
+
+For example, you can store documents and media files in your Liferay instance's
+database using DBStore. To enable DStore, add the following line to your
+`portal-ext.properties` file:
+
+    dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
+
+Remember to restart your Liferay server after updating your
+`portal-ext.properties` file in order for your customizations to take effect.
+Please refer to the Document Library Portlet section of your `portal.properties`
+file to find a complete list of supported customizations. You can customize
+features such as the maximum allowed size of documents and media files, the list
+of allowed file extensions, which types of files should be indexed, etc.
+
+## Using External Repositories  
 
 Adding repositories in Documents and Media is a new feature in Liferay 6.1.
 Content Management Interoperability Services (CMIS) is a specification for
