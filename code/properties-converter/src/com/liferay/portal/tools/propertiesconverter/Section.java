@@ -125,24 +125,31 @@ public class Section {
 
 		boolean isPreformatted = false;
 
+		// Add property comments as paragraphs. Stop on the first property
+		// assignment.
+
 		for (int i = 0; i < lines.length; i++) {
 			String line = StringUtil.trimTrailing(lines[i]);
 
 			if (line.startsWith("        #")) {
-				// comment embedded in value list
+				// Comment embedded in value list
 
 				break;
 			}
 			else if (line.trim().startsWith("#     ")) {
+				// Found pre-formatted text
 
 				if (isPreformatted) {
+					// Append to previous pre-formatted text block
 					currentParagraph.append(line.trim().replaceFirst("#", ""));
 				}
 				else {
 					isPreformatted = true;
 
+					// Add previous pre-formated text block to list
 					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
 
+					// Start a new regular paragraph
 					currentParagraph = new StringBuilder();
 					currentParagraph.append(line.trim().replaceFirst("#", ""));
 				}
@@ -150,18 +157,24 @@ public class Section {
 				currentParagraph.append("\n");
 			}
 			else if (line.trim().startsWith("# ")) {
+				// Found a regular comment
+
 				if (isPreformatted) {
 					isPreformatted = false;
 
+					// Add previous pre-formated text block to list
 					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
 
+					// Start a new regular paragraph
 					currentParagraph = new StringBuilder();
 					currentParagraph.append(line.trim().replaceFirst("#", "").trim());
 				}
 				else {
+					// Append to current paragraph
 					if (currentParagraph.length() > 0) {
 						currentParagraph.append(" ");
 					}
+
 					currentParagraph.append(line.replaceFirst("#", "").trim());
 				}
 
@@ -170,6 +183,7 @@ public class Section {
 			else if (line.trim().startsWith("#")) {
 				if (line.trim().length() < 2) {
 					if (i == 0) {
+						// Continue past initial leading empty comment line
 						continue;
 					}
 
@@ -180,8 +194,9 @@ public class Section {
 					continue;
 				}
 				else {
-					// must be an inactive property assignment
+					// Inactive property assignment
 
+					// Add current paragraph to list and cease processing
 					if (currentParagraph.length() > 0) {
 						propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
 					}
@@ -190,8 +205,9 @@ public class Section {
 				}
 			}
 			else {
-				// must be an active property assignment
+				// Active property assignment
 
+				// Add current paragraph to list and cease processing
 				if (currentParagraph.length() > 0) {
 					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
 				}
