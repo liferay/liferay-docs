@@ -953,7 +953,7 @@ your portal as an administrator and navigate to the Control Panel. If your
 applications have been successfully deployed, you'll find a *Reports Admin*
 entry in the site section of the Control Panel.
 
-![Figure 13.x: To check that the Reports EE and Jasper Reports EE applications have been succesfully deployed to your Liferay server, look for the *Reports Admin* entry in the site section of the Control Panel.](../../images/reports-admin-control-panel.png)
+![Figure 13.32: To check that the Reports EE and Jasper Reports EE applications have been succesfully deployed to your Liferay server, look for the *Reports Admin* entry in the site section of the Control Panel.](../../images/reports-admin-control-panel.png)
 
 Click on *Reports Admin* in the Control Panel. The Reports Admin portlet has
 three tabs:
@@ -972,7 +972,7 @@ set up as a default data source called *Portal*. The *Portal* data source does
 not appear on the Sources tab but is selectable on the form for adding/editing a
 report definition.
 
-![Figure 13.x: Use the *Sources* tab of the Reports Admin portlet to define data sources for report definitions. Use the *Definitions* tab to define report definitions, generate reports, and schedule reports for generation. Use the *Reports* tab to browse through and download generated reports.](../../images/reports-admin-portlet.png)
+![Figure 13.33: Use the *Sources* tab of the Reports Admin portlet to define data sources for report definitions. Use the *Definitions* tab to define report definitions, generate reports, and schedule reports for generation. Use the *Reports* tab to browse through and download generated reports.](../../images/reports-admin-portlet.png)
 
 In order to generate a report, you need to a have one or more report definitions
 configured. To create a report definition, you need a data source and a report
@@ -1109,7 +1109,7 @@ Reports tab of the Reports Admin portlet. The Reports Display portlet allows
 users to download or deliver reports but not to add, edit, or delete report
 definitions or data sources.
 
-![Figure 13.x: Here, the Reports Display portlet shows only a single report.](../../images/reports-display-portlet.png)
+![Figure 13.34: Here, the Reports Display portlet shows only a single report.](../../images/reports-display-portlet.png)
 
 The Reports Display portlet is intended to be placed within a site's private
 pages to allow site members to access site-scoped reports. It can also be placed
@@ -1283,7 +1283,7 @@ we'll use a simple Jasper template that was created using iReport Designer.
 This report should list all of your portal's users, displaying the userId,
 screenName, emailAddress, createDate, and modfifiedDate of each user.
 
-![Figure 13.x: This reports lists all portal users by userId, screenName, emailAddress, createDate, and modifiedDate.](../../images/sample-report-users.png)
+![Figure 13.35: This reports lists all portal users by userId, screenName, emailAddress, createDate, and modifiedDate.](../../images/sample-report-users.png)
 
 Now that we understand how to generate Jasper reports in Liferay, let's see what
 the Knowledge base application has to offer. 
@@ -1319,7 +1319,7 @@ page, the Knowledge Base display portlet presents many of the same options to an
 administrator that are available from the Knowledge Base page of the control
 panel.
 
-![Figure 13.32: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
+![Figure 13.36: Knowledge Base Display Portlet](../../images/liferay-collaboration-kb-display-portlet.png)
 
 You can use the four links at the top of the Knowledge Base display portlet to
 control what it displays.
@@ -1343,7 +1343,7 @@ the same as wiki pages: they must be created in HTML, not MediaWiki or Creole.
 Click the *Source* button in the editor to view the HTML source of what you've
 written or write some HTML yourself.
 
-![Figure 13.33: New Knowledge Base
+![Figure 13.37: New Knowledge Base
 Article](../../images/liferay-collaboration-kb-new-article.png)
 
 In addition to entering a title and creating content for your article, you can
@@ -1362,7 +1362,7 @@ which roles can add articles and templates, which are granted knowledge base
 administrator privileges, which can change permissions on articles, which can
 subscribe to articles and which can view templates.
 
-![Figure 13.34: Knowledge Base
+![Figure 13.38: Knowledge Base
 Permissions](../../images/liferay-collaboration-kb-permissions.png)
 
 Users may need to be granted access to the knowledge base page of the control
@@ -1383,7 +1383,7 @@ one for templates. The articles tab shows all the articles in the knowledge base
 and lets you perform actions on them. The templates tab shows all the templates
 defined in the knowledge base and lets you perform actions on them.
 
-![Figure 13.35: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
+![Figure 13.39: Knowledge Base Control Panel Page](../../images/liferay-collaboration-kb-control-panel.png)
 
 Administrators can perform the following actions on an article:
 
@@ -1416,7 +1416,7 @@ template basically functions like a starting point for the creation of certain
 types of articles. Click the *Add Template* button on the Templates tab of the
 Knowledge Base page of the Control Panel to create a new template.
 
-![Figure 13.36: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
+![Figure 13.40: Adding a New Template From the Control Panel](../../images/liferay-collaboration-kb-new-template.png)
 
 Navigate back to the templates tab of the Knowledge Base page of the control
 panel. You can perform the following actions on a template:
@@ -1432,7 +1432,7 @@ permissions on templates.
 
 *Delete:* lets you remove a template from the knowledge base.
 
-![Figure 13.37: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 13.41: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 To use a template to create a new article, you have to view the template and
 then click *Use this Template*. This brings you to the New Article editor with
@@ -1447,7 +1447,7 @@ a link to the configuration dialog box for the portlet. Click *Select Article*
 to choose an article to display. Pick an article and then click *Save*. When
 your page refreshes it will display the article in the portlet.
 
-![Figure 13.38: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
+![Figure 13.42: Knowledge Base Article Portlet](../../images/liferay-collaboration-kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the
 article it displays. There are also links at the top of the portlet users can
@@ -1474,7 +1474,7 @@ article belongs to. You can add any number of Knowledge Base section portlets to
 a page and you can configure each portlet to display articles from any number of
 sections.
 
-![Figure 13.39: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 13.43: Knowledge Base Section Portlets](../../images/liferay-collaboration-kb-section-portlet.png)
 
 The Knowledge Base section portlet has some additional configurations that allow
 an administrator to select a display style (title or abstract), an article
@@ -1490,7 +1490,7 @@ to navigation. The Knowledge Base Search portlet allows you to search for
 articles in the knowledge base. This portlet presents the search results to you
 in order from most relevant to least relevant.
 
-![Figure 13.40: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
+![Figure 13.44: Knowledge Base Search Portlet](../../images/liferay-collaboration-kb-search-portlet.png)
 
 You can also use the Categories Navigation portlet in conjunction with the
 Knowledge Base display portlet. When both of these portlets are placed on a page
@@ -1498,7 +1498,7 @@ you can select a topic in the Categories Navigation portlet and the Knowledge
 Base display portlet will show all of the articles that match the topic. You can
 create topics from the Categories page of the Control Panel.
 
-![Figure 13.41: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+![Figure 13.45: Knowledge Base Category Navigation Portlet](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
 
 You can select topics for articles when you are creating or editing them.
 
