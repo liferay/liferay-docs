@@ -272,7 +272,7 @@ create the structure manually: the Launch Editor button allows you to edit the
 XML for the structure if you wish to do it via code. When you are done, click
 *Save and Continue* to go to the Structure Default Values form.
 
-![Figure 3.3: You can create fields for structure default values via the XML Schema Definition section of the new structure form.](../../images/xml-schema-definitions.png)
+![Figure 3.3: You can create fields for structure default values via the XML Schema Definition section of the new structure form.](../../images/xml-schema-definitions-new.png)
 
 To edit an existing structure, go to *Web Content* in the Control Panel and
 click the *Structures* tab to see the structures list. Find the *Actions* button
@@ -280,7 +280,7 @@ for the desired structure and select *Edit Default Values* from the menu to view
 a window like the one below. This form allows you to manage the structure
 settings.
 
-![Figure 3.4: You can edit default values via the Actions button of the structure  form.](../../images/structure-default-values-sports.png)
+![Figure 3.4: You can edit default values via the Actions button of the structure form.](../../images/structure-default-values.png)
 
 Every new web content you create with this structure is preloaded with the
 data you inserted.
