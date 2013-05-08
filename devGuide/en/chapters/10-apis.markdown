@@ -10,16 +10,16 @@ Liferay comes with a host of APIs that provide powerful portal and portlet
 services. The following table shows you the entities for which services are
 available:
 
-| Portal Services | Portlet Services |
-|-----------------| ----------------|
-|*User*           | *Documents and Media Library* |
-|*Organization*   | *Blogs*         |
-|*UserGroup*      | *Wikis*         |
-|*Company*        | *Assets*        |
-|*Role*           | *Social Equity* |
-|*Permission*     |                 |
-|*ResourcePermission* |             |
-|*Layout*         |                 |
+ Portal Services      | Portlet Services              |
+--------------------- | ----------------------------- |
+ *User*               | *Documents and Media Library* |
+ *Organization*       | *Blogs*                       |
+ *UserGroup*          | *Wikis*                       |
+ *Company*            | *Assets*                      |
+ *Role*               | *Social Equity*               |
+ *Permission*         |                               |
+ *ResourcePermission* |                               |
+ *Layout*             |                               |
 ---
 
 The ability to call Liferay APIs with a Java method or web service invocation
