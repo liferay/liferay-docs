@@ -1,24 +1,33 @@
 # Liferay APIs 
 
-This chapter provides an overview of several of the essential Liferay
-*application programming interfaces* (*APIs*) available to developers. An API is
-a programing interface that can be invoked from your own code, either directly
-through a Java invocation or through web services, to perform an action or set
-of actions.
+An *Application Programing Interface* (API) is a protocol that, when invoked,
+performs an action or set of actions. You can invoke an API from your own code
+directly through a Java invocation, or through web services. This chapter
+provides an overview of several essential Liferay APIs available to you for use
+in developing your Liferay Portal. 
 
-Liferay comes with a host of APIs that expose powerful portal and portlet
-services. You can access Liferay's built-in *portal* services for such entities
-as User, Organization, UserGroup, Company, Role, Permission, ResourcePermission
-and Layout. In addition, you can access Liferay's built-in *portlet* services
-for such portlets as those for blogs, wikis, assets, social equity, and the
-Documents & Media Library.
+Liferay comes with a host of APIs that provide powerful portal and portlet
+services. The following table shows you the entities for which services are
+available:
 
-The APIs can be called via Java method or web service invocations, giving you
-flexibility to implement client code in Java or any other language (even a
-scripting language such as PHP) that supports web service invocations. The APIs
-can be called from within portlet or non-portlet code. You can make calls to the
-APIs *locally* from within the portal or *remotely* outside of the portal's
-*Java virtual machine* (*JVM*).
+ Portal Services      | Portlet Services              |
+--------------------- | ----------------------------- |
+ *User*               | *Documents and Media Library* |
+ *Organization*       | *Blogs*                       |
+ *UserGroup*          | *Wikis*                       |
+ *Company*            | *Assets*                      |
+ *Role*               | *Social Equity*               |
+ *Permission*         |                               |
+ *ResourcePermission* |                               |
+ *Layout*             |                               |
+---
+
+The ability to call Liferay APIs with a Java method or web service invocation
+gives you the flexibility to implement client code in Java or any language
+(even a scripting language such as PHP) that supports web service invocations.
+The APIs can be called from within portlet or non-portlet code. You can make
+calls to the APIs *locally* from within the portal or *remotely* outside of the
+portal's *Java virtual machine* (*JVM*).
 
 This chapter covers the following topics:
 
