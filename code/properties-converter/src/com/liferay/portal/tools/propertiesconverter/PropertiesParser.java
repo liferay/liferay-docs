@@ -52,8 +52,7 @@ public class PropertiesParser {
 
 		root.put("propertiesFileName", propertiesFileName);
 
-		// Parse properties file and create sections and properties for the data
-		// model
+		// Parse properties file and create sections for the data model
 
 		File propertiesFile = new File(propertiesFilePath);
 
@@ -61,118 +60,47 @@ public class PropertiesParser {
 
 		propertiesString = read(propertiesFile);
 
-		String[] paragraphs = propertiesString.split("\n\n");
-
-		List<Section> sections = new ArrayList<Section>();
-
-		Section section = null;
-
-		for (int i = 0; i < paragraphs.length; i++) {
-			if (paragraphs[i].startsWith("##")) {
-				String[] paragraphLines = paragraphs[i].split("\n");
-				
-				if (paragraphLines.length > 3) {
-					List<String> description = new ArrayList<String>();
-					StringBuilder paragraph = new StringBuilder();
+		String[] sectionStrings = propertiesString.split("\n\n");
+		
+		List<Section> sections = new ArrayList<Section>(sectionStrings.length);
+		
+		Section section;
+		
+		for (int i = 0; i < sectionStrings.length; i++) {
+			
+			if (sectionStrings[i].startsWith("##")) {
+				int numLines = countLines(sectionStrings[i]);
+				if (numLines > 3) {
 					
-					for (int j = 0; j < paragraphLines.length; j++) {
-						paragraphLines[j] = paragraphLines[j].replace("##", "").trim();
-					}
+					// Description section
 					
-					for (int j = 0; j < paragraphLines.length; j++) {
-						if (!paragraphLines[j].isEmpty()) {
-							paragraph.append(paragraphLines[j] + " ");
-						}
-						else {
-							if (!paragraph.toString().isEmpty()) {
-								description.add(paragraph.toString().trim());
-								paragraph = new StringBuilder();
-							}
-						}
-					}
+					section = new Section(sectionStrings[i], i);
+					sections.add(section);
+				}
+				else if (numLines == 3) {
 					
-					section = new Section(description);
+					// Title section
 					
+					section = new Section(sectionStrings[i], i, false, false);
 					sections.add(section);
 				}
 				else {
-					String title =
-						paragraphs[i].replace(
-							"#", " ");
-
-					section = new Section(title.trim());
-
-					sections.add(section);
+					System.out.println("Error: Invalid section");
 				}
 			}
-			else {
-				String[] lines = paragraphs[i].split("\n");
-
-				Map<String, String> properties = new HashMap<String, String>();
-
-				for (String line : lines) {
-					if (line.trim().contains("=") &&
-						!line.trim().startsWith("# ")) {
-
-						int eqlPos = line.indexOf("=");
-
-						String propertyKey = line.substring(0, eqlPos);
-						String propertyValue = line.substring(eqlPos);
-
-						if (!properties.containsKey(propertyKey)) {
-							properties.put(propertyKey, propertyValue);
-						}
-					}
-				}
-
-				Property property = new Property(properties, paragraphs[i]);
-
-				section.addProperty(property);
+			else if (sectionStrings[i].trim().startsWith("#")) {
+				
+				// Properties section
+				
+				section = new Section(sectionStrings[i], i, false);
+				sections.add(section);
+				
 			}
+			
 		}
-
-		// Populate the properties of each section
-
-		for (Section curSection : sections) {
-			for (Property property : curSection.getProperties()) {
-				List<String> description = new ArrayList<String>();
-
-				String descriptionLine = " ";
-
-				String content = property.getContent();
-
-				String[] lines = content.trim().split("\n", 0);
-
-				for (String line : lines) {
-					line = line.trim();
-
-					if (line.matches("#[\\s]+[^\\s].*")) {
-						descriptionLine += line.substring(1);
-					}
-					else {
-						if (!descriptionLine.isEmpty()) {
-							description.add(descriptionLine);
-
-							descriptionLine = "";
-						}
-					}
-				}
-
-				property.setDescription(description);
-
-				if (property.getProperties().isEmpty()) {
-					continue;
-				}
-
-				String propertiesParagraph = content.substring(
-					content.lastIndexOf("#\n") + 1);
-
-				property.setPropertiesParagraph(propertiesParagraph);
-			}
-		}
-
-		root.put("sections", sections);
 		
+		root.put("sections", sections);
+
 		// Get the Freemarker template and merge it with the data model
 
 		try {
@@ -214,6 +142,11 @@ public class PropertiesParser {
 			ioe.printStackTrace();
 		}
 	}
+
+	private static int countLines(String str) {
+		   String[] lines = str.split("\r\n|\r|\n");
+		   return lines.length;
+		}
 
 	private static String read(File file) {
 
