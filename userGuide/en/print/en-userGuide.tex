@@ -12851,11 +12851,13 @@ Let's look at Kaleo Forms first.
 
 \section{Kaleo Forms }
 
-Add the Workflow Forms portlet to a page. The initial state, the
-\emph{Summary} tab displays the same information you might have seen in
-\emph{My Workflow Tasks} in the control panel. Any forms available for
-processing through the workflow can be initiated through the
-\emph{Submit New} button, as the below image indicates.
+Add the Kaleo Forms portlet to a page. In the portlet's initial state, the
+\emph{Summary} tab displays similar information to what you might see in the
+\emph{My Workflow Tasks} portion of the Control Panel. Because the Kaleo Forms
+portlet is scoped to Kaleo Processes, tasks related to other assets cannot be
+managed from Kaleo Forms. Any forms available for processing through the
+workflow can be initiated through the \emph{Submit New} button, as the below
+image indicates.
 
 \begin{figure}[htbp]
 \centering
@@ -12884,7 +12886,7 @@ can use an existing definition here or create a custom one through the
 UI.
 
 \textbf{Initial Form:} You can customize the display of the Entry
-Definition with the Inital Form. This can include things like adding
+Definition with the Initial Form. This can include things like adding
 Pagination or altering some other display feature.
 
 \textbf{Workflow:} You can choose any existing workflow definition here
@@ -12893,7 +12895,7 @@ or define a new one.
 \textbf{Workflow Task Forms:} This is where you can define how the
 workflow definition interacts with form definitions. You can trigger a
 workflow action to occur along with a form action, such as a
-notification, or have a multistep process where part of the form is
+notification, or have a multi-step process where part of the form is
 completed but needs to be approved before the user can complete another
 part of the form.
 
@@ -12902,11 +12904,11 @@ to create a new one. This is where the Kaleo Workflow Designer can help
 you build a workflow without having to write any XML. Let's see how this
 works.
 
-\section{Kaleo Designer }
+\section{Kaleo Designer}
 
 Kaleo Designer provides a drag and drop interface for users to create
 custom workflows. It's an incredibly powerful tool for managing workflow
-defintions. The Workflow Designer can only be accessed through the Kaleo
+definitions. The Workflow Designer can only be accessed through the Kaleo
 Forms portlet but definitions created can be used for other processes as
 well.
 
@@ -12917,7 +12919,7 @@ well.
 Designer.}
 \end{figure}
 
-There are seven types of nodes you can add to a defintion. The node
+There are seven types of nodes you can add to a definition. The node
 types are \textbf{Condition}, \textbf{End}, \textbf{Fork},
 \textbf{Join}, \textbf{Start}, \textbf{State} and \textbf{Task}. If
 you've read the entire chapter, you'll notice Start and End aren't node
@@ -12951,8 +12953,8 @@ connector pop-up let's you create and connect to new nodes on-the-fly.}
 
 To get a feel for how the designer works, let's use the workflow
 designer to duplicate the default workflow definition. When we choose
-the option to \emph{Add Defintion} from the Kaleo Forms portlet, it
-creates a blank workflow defintion with start and end nodes. To make
+the option to \emph{Add Definition} from the Kaleo Forms portlet, it
+creates a blank workflow definition with start and end nodes. To make
 this work, we'll add two tasks, fill in the relevant information, assign
 the tasks properly and create the transitions.
 
@@ -12969,7 +12971,7 @@ modifying its settings.}
 Next, connect the nodes so Review has four nodes, as follows: one
 receiving the transition from \textbf{StartNode}, one sending a
 transition to \textbf{Update}, one receiving a transition from
-\textbf{Update} and one sending a transition to \textbf{EndNode}.
+\textbf{Update}, and one sending a transition to \textbf{EndNode}.
 
 \begin{figure}[htbp]
 \centering
@@ -12978,23 +12980,24 @@ transition to \textbf{Update}, one receiving a transition from
 \end{figure}
 
 Next, we want to add the correct assignments and notifications. Click on
-\emph{Review}. The box on the left shows all the proprerties of the
+\emph{Review}. The box on the left shows all the properties of the
 Review node. In the \emph{assignments} category, assign the task to the
 \emph{Portal Content Reviewer} role. Click on \emph{Notifications} and
 create a notification with the type \emph{On Assignment}. Now move to
 the Update node and assign it to the \emph{Content Creator} with its own
 notification.
 
- Next let's go through all of the transitions and make sure they're
-named correctly. What are the transitions? Every time you created an
-arrow from one node to another it created a transtion. By default, these
-transitions get system generated names so we'll rename them all to
-something more human readable. First click on the arrow going from the
-Start node to the Review node and set the name as \emph{Submit} and set
-\emph{Default} to true--we'll leave all the others as false. Set the
-name of the transition from Review to Update to \emph{Reject} and the
-one from Update to Review to \emph{Resubmit}. Lastly, set the name of
-the transition from Review to the EndNode to \emph{Approve}.
+Next, let's go through all the transitions and make sure they're named
+correctly. What are the transitions? Workflow transitions connect one node to
+another. On exiting the first node, processing continues to the node pointed to
+by the transition. Every time you created an arrow from one node to another it
+created a transition. By default, these transitions get system generated names
+so we'll rename them all to something more human readable. First, click on the
+arrow going from the Start node to the Review node and set the name as
+\emph{Submit} and set \emph{Default} to true--we'll leave all the others as
+false. Set the name of the transition from Review to Update to \emph{Reject} and
+the one from Update to Review to \emph{Resubmit}. Lastly, set the name of the
+transition from Review to the EndNode to \emph{Approve}.
 
 \begin{figure}[htbp]
 \centering
@@ -13009,16 +13012,18 @@ a human writes the code. Save your definition and it's ready to use.
 
 \section{Summary }
 
- As you can see, Liferay Portal and the Kaleo Workflow engine combine to
-create a very robust environment for web content management. Simple
-workflows can be managed using the default configuration and GUI tools,
-while more complex workflows can be created to meet the workflow
-management needs of almost any portal. Through this chapter and the
-previous one, we've taken a look at the various elements of a workflow
-and shown how to use those elements to create your own custom workflows.
-We've also seen how to properly use the various elements of a workflow
-like Assignments and Notifications, as well as newer and more advanced
-features like Parallel Workflows, Timers and Custom Scripts.
+As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a
+very robust environment for web content management. The Kaleo Forms portlet
+allows you to manage all available workflows in the portal. You can create your
+portal's workflows by using the Kaleo Designer's unique drag and drop interface.
+Simple workflows can be managed using the default configuration and GUI tools,
+while more complex workflows can be created to meet the workflow management
+needs of almost any portal. Through this chapter and the previous one, we've
+taken a look at the various elements of a workflow and shown how to use those
+elements to create your own custom workflows. We've also seen how to properly
+use the various elements of a workflow like Assignments and Notifications, as
+well as newer and more advanced features like Parallel Workflows, Timers, and
+Custom Scripts.
 
 It's not enough to understand each individual step of the workflow
 process; one of the keys to using Kaleo workflow is to understand how
