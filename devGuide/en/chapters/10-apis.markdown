@@ -343,13 +343,13 @@ models. Let's look at how to determine the URLs for these services.
 the phrase from above. -Russ -->
 
 You can see a list of the services deployed on your portal by opening your
-browser to a URL with one of the following formats: 
+browser to a URL following one of these formats: 
 
-For your secure services (i.e., serevices requiring authentication) use
-`http://[host]:[port]/api/secure/axis` 
+- For your secure services (i.e., serevices requiring authentication) use
+`http://[host]:[port]/api/secure/axis`. 
 
-For your sevices that don't require authentication, use
-`http://[host]:[port]/api/axis`
+- For your sevices that don't require authentication, use
+`http://[host]:[port]/api/axis`. 
 
 Here's the list of *secure* web services for `UserGroup`: 
 
