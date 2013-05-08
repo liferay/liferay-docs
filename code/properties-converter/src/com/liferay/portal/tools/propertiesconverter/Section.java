@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Section {
 
-	public Section(String section, boolean title, boolean description, boolean propertyText, boolean	activeProperties, boolean inactiveProperties) {
+	public Section(String section, boolean title, boolean description, boolean propertyText, boolean activeProperties, boolean inactiveProperties) {
 	
 		if (title) {
 			_title = extractSectionTitle(section);
