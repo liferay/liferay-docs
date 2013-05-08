@@ -175,11 +175,11 @@ To create a repository using Nexus, follow these steps:
 
 2. Click on *Repositories* and navigate to *Add...* &rarr; *Hosted Repository*. 
 
-![Figure 8.1: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
+    ![Figure 8.1: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
 
-![note](../../images/tip-pen-paper.png)**Note:** To learn more about each
-type of Nexus repository, read Sonatype's *Managing Repositories* at
-[http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html](http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html).
+    ![note](../../images/tip-pen-paper.png)**Note:** To learn more about each
+    type of Nexus repository, read Sonatype's *Managing Repositories* at
+    [http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html](http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html).
 
 3. Enter repository properties appropriate to the access you'll provide its
 artifacts. We're installing release version artifacts into this repository, so
@@ -325,7 +325,7 @@ Portal. Just follow these steps:
 4. Inside *Filter by:*, select the appropriate Liferay version in the first
 field and select the *Development* value in the second field.
 
-![Figure 8.2: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
+    ![Figure 8.2: You can download the Liferay Maven EE artifacts from the Liferay Customer Portal.](../../images/maven-customer-portal.png)
 
 5. Click *Download* under the desired *Liferay Portal [Version] Maven*. 
 
@@ -340,7 +340,7 @@ Get the artifacts for Liferay CE from SourceForge by following these steps:
 if you need Maven artifacts for Liferay Portal 6.1.1 CE GA2, select version
 *6.1.1 GA2*. 
 
-![Figure 8.3: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
+    ![Figure 8.3: After selecting the Liferay version, simply select the Liferay Portal Maven zip file to download.](../../images/maven-select-download.png)
 
 3. Select the appropriate zip file. The zip files use naming convention
 `liferay-portal-maven-[version]-[date].zip`. 
@@ -412,13 +412,14 @@ In the new properties file, specify values for the properties
 `lp.maven.repository.id` and `lp.maven.repository.url`. These refer to your
 repository's ID and URL, respectively. 
 
-   Here are some example property values:
+    Here are some example property values:
 
         lp.maven.repository.id=liferay-releases
         lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-releases
 
-   Note, if you created a repository in Nexus OSS, as demonstrated in the section
-   *Managing Maven repositories*, you can specify that repository's ID and URL.
+    Note, if you created a repository in Nexus OSS, as demonstrated in the
+    section *Managing Maven repositories*, you can specify that repository's ID
+    and URL.
 
 5. To deploy to your release repository server, execute
 
@@ -621,13 +622,13 @@ Here's how you use Maven archetypes to generate a Liferay plugin project:
 want to create the plugin project. Archetype will create a sub-directory for
 the plugin project you create.
 
----
+    ---
 
-![note](../../images/tip-pen-paper.png)**Note:** If you haven't already created
-a parent project, you may want to consider creating one to share common project
-information. See section *Using a parent plugin project* for details.
+    ![note](../../images/tip-pen-paper.png)**Note:** If you haven't already
+    created a parent project, you may want to consider creating one to share
+    common project information. See section *Using a parent plugin project* for details.
 
----
+    ---
 
 2. Execute the command
 
@@ -690,7 +691,7 @@ can help you focus on more applicable Liferay archetypes.
 
     The snapshot below illustrates choosing the archetype version: 
 
-![Figure 8.6: You're prompted by Maven Archetype to enter the archetype version.](../../images/maven-archetype-version.png)
+    ![Figure 8.6: You're prompted by Maven Archetype to enter the archetype version.](../../images/maven-archetype-version.png)
 
 6. Enter values for the *groupId*, *artifactId*, *version*, and *package*
 coordinates (properties) of your project. Here are some examples: 
@@ -702,7 +703,7 @@ coordinates (properties) of your project. Here are some examples:
 
     This process is illustrated in the snapshot below:
 
-![Figure 8.7: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
+    ![Figure 8.7: When creating your portlet plugin, you must enter your *groupId*, *artifactId*, *version*, and *package* properties.](../../images/maven-portlet-plugin-settings.png)
 
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
@@ -790,18 +791,18 @@ Liferay version and your Liferay Portal's deploy directory path.
         INFO  [pool-2-thread-2][HotDeployImpl:178] Deploying sample-portlet from queue
         INFO  [pool-2-thread-2][PluginPackageUtil:1033] Reading plugin package for sample-portlet
 
----
+    ---
  
-![note](../../images/tip-pen-paper.png)**Note:** If you get the following
-error after executing `mvn liferay:deploy`, make sure you're executing the
-command from your plugin's directory (e.g. `sample-portlet`). 
+    ![note](../../images/tip-pen-paper.png)**Note:** If you get the following
+    error after executing `mvn liferay:deploy`, make sure you're executing the
+    command from your plugin's directory (e.g. `sample-portlet`). 
  
      `[ERROR] No plugin found for prefix 'liferay' in the current project and in
      the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available
      from the repositories [local (C:\Users\cdhoag\.m2\repository), central
      (http://repo.maven .apache.org/maven2)] -> [Help 1]`
     
----
+    ---
 
 5. If you're deploying the plugin to a release or snapshot repository,
 specify the repository by adding a distribution management section to your
