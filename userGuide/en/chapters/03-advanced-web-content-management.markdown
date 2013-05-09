@@ -70,14 +70,14 @@ is required and can be formatted automatically using a template.
 
 You create a structure by adding form controls such as text fields, text boxes,
 text areas (HTML), check boxes, select boxes and multi-selection lists. Also you
-can add specialized, Liferay-specific application fields such as Image Uploader
-and Documents and Media right onto the structure. Furthermore, you can move the
-elements around by dragging them where you want them. This makes it easy for you
-to prototype different orders for your input fields. Additionally, elements can
-be grouped together into blocks which can then be repeatable. Template writers
-can then write a template which loops through these blocks and presents your
-content in innovative ways, such as in sliding navigation bars, content which
-scrolls with the user and more.
+can add specialized, Liferay-specific application fields such as an Image
+Uploader and Documents and Media right onto the structure. Furthermore, you can
+move the elements around by dragging them where you want them. This makes it
+easy for you to prototype different orders for your input fields. Additionally,
+elements can be grouped together into blocks which can then be repeatable.
+Template writers can then write a template which loops through these blocks and
+presents your content in innovative ways, such as in sliding navigation bars,
+content which scrolls with the user and more.
 
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
@@ -101,8 +101,7 @@ templates or list templates associated with the structure. For information on
 detail templates and list templates, please refer to chapter 9 on Dynamic Data
 Lists.
 
-![Figure 3.1: You can access the Manage Structures interface by clicking
-*Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
+![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
 
 The second way to access the Manage Structures interface is directly from the
 web content article WYSIWYG editor. Click *Add* &rarr; *Basic Web Content* from
@@ -114,52 +113,70 @@ chosen scope, simply click on the *Add* button in the Manage Structures popup.
 
 It's very easy to create and edit structures: all you have to do is drag
 elements into the structure and then give them names. For instance, select the
-*Checkbox* element under the *Form Controls* tab and drag it onto the structure.
-You can do the same with any of the elements. To remove it from the structure,
-simply select the *Delete* icon (black circle with X) in the upper right corner
-of the element. Take a moment to add, delete and rearrange different elements.
+*Text* element and drag it onto the structure. You can do the same with any of
+the elements. To remove it from the structure, simply select the *Delete* icon
+(red X) in the upper right corner of the element. You also have the ability to
+duplicate the element, which can be done by selecting the *Duplicate* button.
+We'll explain the *Edit* button later.
 
-![Figure 3.2: Structure Elements](../../images/04-web-content-structure-editor.png)
+Another method to edit your structure is switching to *Source* mode and manually
+customizing your structure by editing its XML file. You'll notice by default the
+*View* mode is selected. Click the *Source* tab to switch to Source mode. This
+method is for the more experienced developers.
 
-Liferay supports the following elements in structures:
+Take a moment to add, delete, and rearrange different elements.
 
-**FORM FIELDS**
+![Figure 3.2: The structure editor gives you many options to customize your Web Content.](../../images/04-web-content-structure-editor.png)
 
-**Text Field:** Used for items such a titles and headings.
+Liferay supports the following fields in structures:
 
-**Text Box:** Used for the body of your content or long descriptions.
+**Boolean:** Allows you to add a checkbox onto your structure, which stores
+either `true` (checked) or `false` (unchecked). Template developers can use this
+as a display rule.
 
-**Text Area (HTML):** An area that uses a WYSIWYG editor to enhance the content.
+**Date:** a preformatted text field that displays a convenient date picker to
+assist in selecting the desired data. The format for the date is governed by the
+current locale.
 
-**Checkbox:** Allows you to add a checkbox onto your structure. Template
-developers can use this as a display rule.
-
-**Selection List:** Allows you to add a select box onto your structure.
-
-**Multi-selection List:** Allows you to add a multi-selection list onto your
-structure.
-
-**APPLICATION FIELDS**
-
-**Image Uploader:** Allows you to add the upload image application into your
-structure.
+**Decimal:** Similar to *Number*, except that it required a decimal point (.) be
+present.
 
 **Documents and Media:** Allows you to add the Documents and Media folder
 hierarchy to your structure.
 
-**MISCELLANEOUS**
+**File Upload:** Uploads a document to attach. Uploads are stored in Documents
+and Media, in an existing folder or in the user's default upload action.
+
+**HTML:** An area that uses a WYSIWYG editor to enhance the content.
+
+**Image:** Allows you to add the browse image application into your
+structure.
+
+**Integer:** Similar to *Number*, except that it constrains user input to
+non-fractional numbers.
 
 **Link to Page:** Inserts a link to another page in the same site.
 
-**Selection Break:** Inserts a break in the content.
+**Number:** Presents a text box that only accepts numbers as inputs, but puts no
+constraints on the kind of number entered.
 
-These form elements provide all you need to model any information type you would
+**Radio:** Presents the user with a list of options to choose from using radio
+button inputs.
+
+**Select:** Allows you to add a select box (single or multi-selection) onto your
+structure.
+
+**Text:** Used for items such as titles and headings.
+
+**Text Box:** Used for the body of your content or long descriptions.
+
+These fields provide all you need to model any information type you would
 want to use as web content. Liferay customers have used structures to model
 everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
-closely at the form elements.
+closely at field settings.
 
-#### Editing form elements  
+#### Editing field settings  
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -173,46 +190,67 @@ Author when they're all named randomly?
 
 To solve this problem, all you need to do is set a variable name for each field
 as you add it to your structure. Let's do this now. In your structure, add an
-element *Text Area (HTML)* which has the Field Label *Instructions*. If we
-wanted to give it the variable name `Steps`, we can do it very easily: at the
-bottom of every form element is a **Variable Name** field. Replace the generated
-name with the name you want to use. Now your template writer has a variable by
-which he or she can refer to this field.
+element *HTML*. To change its field label and variable name, you'll need to
+access the field's settings. Click on the field and select the gear icon that
+appears in the upper right corner. Change the *Field Label* value to
+*Instructions* and the *Name* value (variable name) to `Steps`. Now your
+template writer has a variable by which he or she can refer to this field.
 
-Below each field is a button labeled *Edit Options*. This contains several other
-ways to configure your fields:
+Here's a list of all the configurable settings available for a structure's
+fields:
 
-**Field Type:** changes the field type, in case you dragged the wrong field type
-to this location in the form. **Field Label:** changes the displayed label for
-the field.
+**Type:** Lists the type of field placed in the definition. This is not editable
+but is available to reference from a template.
 
-**Index Type:** Choose how you want Liferay to index your field for search. You
-can have it indexed by keyword, which filters out common words such as *and*,
-*but*, *the*, and so on, or you can have it index the full text of the field. By
-default, indexing is turned off.
+**Field Label:** Sets the text that can be displayed with the field. This is the
+human-readable text that the user sees.
+
+**Show Label:** Select *Yes* to display the Field Label.
+
+**Required:** Select *Yes* to mark the field required. If a field is required,
+users must enter a value for it in order to submit content using this structure.
+
+**Name:** The name of the field internally, automatically generated. Since this
+is the variable name that you can read the data from in a template, you should
+give a more memorable name here.
 
 **Predefined Value:** Specifying predefined values for structure forms is a way
 to specify defaults. When a user creates a new web content article based on a
 structure that has predefined values for various fields, the predefined values
 appear in the form as defaults for those fields.
 
-**Instructions for the User:** Check this box and type a description of what the
-field is for to display it as a tooltip for the user. 
+**Tip:** Each field can have a small help icon, with a tooltip attached that
+displays helpful information. If you would like to provide text for the tooltip
+you may enter it here.
 
-**Repeatable:** If you want this field to be a repeatable element, check this
-box. Your users can then add as many copies of this field as they like. For
-example, if you're creating a structure for articles, you might want a
-repeatable Author field in case you have multiple authors for a particular
-article.
+**Indexable:** Select *Yes* to enable Liferay to index your field for search.
 
-**Required:** Check the box to mark the field required. If a field is required,
-users must enter a value for it in order to submit content using this structure. 
+**Repeatable:** Select *Yes* to make your field repeatable. Your users can then
+add as many copies of this field as they like. For example, if you're creating a
+structure for articles, you might want a repeatable Author field in case you
+have multiple authors for a particular article.
 
-For the Nose-ster structure, type something in the *Instructions for the User*
-field that helps users know what to put into the Body element (example: *this is
-an HTML Text area for the body of your content*). Also enable the *Display as
-Tooltip* box. Now, when users hover over the Help icon near your title, your
-instructions are displayed.
+**Width:** Changes the width of the field. The field width can be *small*,
+*medium*, or *large* (not available for Boolean, Documents and Media, Image,
+Radio, and Select.
+
+**Allowed File Extensions:** Specifies the file types allowed for upload (e.g.
+*pdf*, *html*, *txt*, etc.). Set this value to a comma-delimited list of
+extensions, including the character ., and Liferay checks the extension before
+the file can be uploaded. To allow all file types, input an asterisk: "\*" (only
+available for File Upload).
+
+**Options:** Changes the options available for radio selection. You're able to
+add and remove options as well as edit each individual option's display name and
+value (only available for Radio and Select).
+
+**Multiple:** Select *Yes* to enable a multi-selection list. (only available for
+Select).
+
+For the Nose-ster structure, type something in the *Tip* field that helps users
+know what to put into the Body element (example: *This is an HTML text area for
+the body of your content*). Now, when users hover over the Help icon near your
+title, your tip is displayed.
 
 ##### Structure Default Values
 
@@ -220,33 +258,20 @@ Structure Default Values allow you to create one structure that uses common data
 from multiple articles.
 
 Returning to our newspaper scenario again, let's say you want all sports
-articles to have the same display page (sports page), the same categories, or the
-same set of tags. Instead of adding them for each article or wondering if your
-users are adding them to every web content, you can add these characteristics once
-for every sports article by creating default values for the structure. There are
-two ways to edit structure default values: creating a new structure or editing
-an existing structure.
+articles to have the same display page (sports page), the same categories, or
+the same set of tags. Instead of adding them for each article or wondering if
+your users are adding them to every web content, you can add these
+characteristics once for every sports article by creating default values for the
+structure. Creating default values is not part of creating a new structure, so
+make sure you have an existing structure.
 
-For a new structure, you must first create the structure before editing its
-default values. Navigate to *Web Content* in the Control Panel and click the
-*Structures* tab, then select the *Add Structure* button. Under the *XML Schema
-Definition* section of the new structure form, use the *Add Row* button to
-create different types of fields for the structure. Or you can use the editor to
-create the structure manually: the Launch Editor button allows you to edit the
-XML for the structure if you wish to do it via code. When you are done, click
-*Save and Continue* to go to the Structure Default Values form.
+To edit a structure's default values, go to *Web Content* in the Control Panel
+and click *Manage* &rarr; *Structures* to see the structures list. Find the
+*Actions* button for the desired structure and select *Edit Default Values* from
+the menu to view a window like the one below. This form allows you to manage the
+structure settings.
 
-![Figure 3.2: You can create fields for structure default values via the XML
-Schema Definition section of the new structure
-form.](../../images/xml-schema-definitions.png)
-
-To edit an existing structure, go to *Web Content* in the Control Panel and
-click the *Structures* tab to see the structures list. Find the *Actions* button
-for the desired structure and select *Edit Default Values* from the menu to view
-a window like the one below. This form allows you to manage the structure
-settings.
-
-![Figure 3.3: You can edit default values via the Actions button of the structure  form.](../../images/structure-default-values-sports.png)
+![Figure 3.3: You can edit default values via the *Actions* button of the Manage Structures interface.](../../images/structure-actions.png)
 
 Every new web content you create with this structure is preloaded with the
 data you inserted.
@@ -258,10 +283,10 @@ permissions everywhere else in Liferay. Most users should not have the ability
 to edit structures. Structures are coupled with templates, which require some
 web development knowledge to create. This is why only trusted developers should
 be able to create structures and templates. Users, of course, should be able to
-view structures. The View permission enables them to make use of the structures
-to create content.
+view structures. The *View* permission enables them to make use of the
+structures to create content.
 
-![Figure 3.3: View Permission for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.4: View Permissions for a Structure](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles and this is the recommended way
 to handle permissions for structures.
@@ -283,21 +308,24 @@ using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-#### Template Types (VM, XSL, FTL and CSS)  
+#### Template Types (FTL, VM, XSL, and CSS)  
 
 Liferay supports templates written in four different templating languages, to
 support the skill sets of the largest number of developers. This increases the
 chances you can jump right in and use whichever one you've already used before.
-If you haven't yet been exposed to any of them, your best bet is Velocity or
-Freemarker, as they are less "chatty" than XSL and extremely simple to
+If you haven't yet been exposed to any of them, your best bet is FreeMarker or
+Velocity, as they are less "chatty" than XSL and extremely simple to
 understand.
+
+**FTL** (FreeMarker Template Language): Freemarker is a templating language
+which could be considered a successor to Velocity. It has some advantages over
+Velocity for which it sacrifices some simplicity, yet it is still easy to use. If
+you haven't used any of the template languages before, we recommend using
+FreeMarker: you'll get up to speed the fastest.
 
 **VM** (Velocity Macro): Velocity is a scripting language that lets you mix
 logic with HTML. This is similar to other scripting languages, such as PHP,
-though Velocity is much simpler. Because it's been in the product the longest,
-it is probably the most widely used language for templates in Liferay WCM. If
-you haven't used any of the template languages before, we recommend using
-Velocity: you'll get up to speed the fastest.
+though Velocity is much simpler.
 
 **XSL** (Extensible Style Sheet Language): XSL is used in Liferay templates to
 transform the underlying XML of a structure into markup suitable for the
@@ -305,72 +333,72 @@ browser. While it may not be as clean and compact as Velocity or FTL, it's
 widely used for transforming XML into other formats and it's very likely your
 developers have already been exposed to it.
 
-**FTL** (FreeMarker Template Language): Freemarker is a templating language
-which could be considered a successor to Velocity, though it is not yet as
-popular. It has some advantages over Velocity for which it sacrifices some
-simplicity, yet it is still easy to use.
-
 **CSS** (Cascading Style Sheets): You can use CSS if your structure is very
 straightforward and modifications are simple (colors, fonts, layouts, etc.). If
 your structure is more complex, however, you'll need to use one of the other
 options.
 
+<!-- CSS was not available during testing of 6.2 feature. Need to find out if
+this is planned or if CSS category is still being developed. -->
+
 #### Adding templates
 
-Liferay WCM makes it easy to create structures, templates and content from the
+Liferay WCM makes it easy to create structures, templates, and content from the
 same interface. Let's go through the entire flow of how you'd create a
 structure, link it to a template and then create content using them both. We'll
-use Velocity for our template and we'll lay out the structure fields
+use FreeMarker for our template and we'll lay out the structure fields
 systematically to go along with the format we've defined for our content.
 
-![Figure 3.4: Adding Template Interface](../../images/04-web-content-templates-create.png)
+![Figure 3.5: You can create a new Web Content template by browsing a pre-made template or creating one in the script editor.](../../images/04-web-content-templates-create.png)
 
 1. Go back to the Web Content section of the Control Panel and click *Add*
-   &rarr; *Basic Web Content*.
+&rarr; *Basic Web Content*.
 2. Click *Select* next to the Structures heading to access the Manage Structures
-   interface.
+interface.
 3. Click on the *Add* button.
-4. Add the following fields:
+4. Name the structure *News Article* and add the following fields:
 
-Field Type		        Variable Name
-----------		        -------------
-Text				    *title*
-Text Box		 	    *abstract*
-Documents and Media     *image*
-Text Area		        *body*
+| Field Type | &nbsp;Field Label | &nbsp;Name |
+--------- | ---------- | ---------- |
+ Text  | &nbsp;Title | &nbsp;`title` |
+ Text Box | &nbsp;Abstract | &nbsp;`abstract` |
+ Documents and Media | &nbsp;Image | &nbsp;`image` |
+ HTML | &nbsp;Body | &nbsp;`body` |
 
-5.  Name the structure *News Article* and click *Save*.
-6.  Back on the Manage Structures interface, click *Actions* &rarr; *Manage
-    Templates* next to the News Article structure that you created.
-7.  Click *Add*.
-8.  Enter the name *News Article* and add a description.
-9.  Make sure Velocity is selected as the script language (it's the default).
+5. Click *Save*.
+6. In the Manage Structures interface, click *Choose* next to the News Article
+structure that you created.
+7. In the New Web Content form, click *Select* next to the Template heading to
+access the Manage Templates interface.
+8. Click *Add*, enter the name *News Article*, and add a description.
+9. Make sure FreeMarker is selected as the script language (it's the default).
 10. If you've written the script beforehand, you can select *Browse* to upload
-    it from your machine. Otherwise, you can click *Launch Editor* to type the
-    script directly into the small editor window that appears.
+it from your machine. Otherwise, you can type the script directly into the
+script editor window.
 11. Click *Save*.
-12. Click *Back*.
-13. Select the News Article structure.
+12. Exit the Manage Templates interface and click *Select* next to the Template
+heading again.
+13. Click *Choose* next to the News Article template you created.
 14. On the New Web Content form, you'll see the Title, Abstract, Image, and Body
-    fields that you defined for the News Article structure. The News Article
-    template should also be selected.
+fields that you defined for the News Article structure. The News Article
+template should also be selected.
 15. Populate the fields and click *Publish* to publish your News Article.
 
-Below is the template script for this structure. It is written in Velocity:
+Below is the template script for this structure. It is written in FreeMarker:
 
-    #set ($renderUrlMax = $request.get("render-url-maximized"))
-    #set ($namespace = $request.get("portlet-namespace"))
-    #set($readmore = $request.get("parameters").get("read_more"))
-	<h1>$title.getData()</h1>
-    #if ($readmore)
-	<p>$abstract.getData()</p>
-	<p>$body.getData()</p>
-    #else
-	<p>
-	<img src="${image.getData()}" border="0" align="right">
-	$abstract.getData()</p>
-	<a href="${renderUrlMax}&${namespace}read_more=true">Read More</a>
-    #end
+    <#assign renderUrlMax = request["render-url-maximized"]>
+    <#assign namespace = request["portlet-namespace"]>
+    <#assign readmore = request.parameters.read_more?exists>
+    <h1>${title.getData()}</h1>
+    <#if readmore>
+    <p>${abstract.getData()}</p>
+    <p>${body.getData()}</p>
+    <#else>
+    <p>
+    <img src="${image.getData()}" border="0" align="right">
+    ${abstract.getData()}</p>
+    <a href="${renderUrlMax}&${namespace}read_more=true">Read More</a>
+    </#if>
 
 This template is pretty small but it actually does quite a bit. First, a portlet
 URL which maximizes the portlet is created. Once this is done, the template gets
@@ -388,9 +416,9 @@ the abstract and the link created above, which sets the `read_more` parameter.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.5: Initial View](../../images/04-web-content-adv-example1.png)
+![Figure 3.6: The initial view for the Nose-ster News Article.](../../images/04-web-content-adv-example1.png)
 
-![Figure 3.6: After Clicking "Read More"](../../images/04-web-content-adv-example2.png)
+![Figure 3.7: After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example2.png)
 
 Now that you've created a handsome template, it's time to decide who the lucky
 people are that get to use it.
@@ -401,18 +429,14 @@ Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.
 You may, however, want to make the templates viewable to some content creators
 who understand the template scripting language but are not directly writing the
-scripts. You can determine who views the template by selecting from the
-*Viewable By* select box beneath the *Permissions* tab. By default the *Anyone
-(Guest Role)* is selected.
+scripts. You can determine who views and interacts with the template by
+navigating to *Manage* &rarr; *Templates* and selecting *Permissions* from the
+*Actions* button.
 
-You'll also want to determine how users can interact with the template. You can
-do this by selecting the *More* link.
-
-From the *More* link, you can grant or deny permissions based on Roles. For
-instance, you may create a role with the ability to update the template and
-create a second role that can both update and delete. Liferay Portal makes it
-possible to assign permissions based on the roles and responsibilities within
-your organization.
+You can grant or deny permissions based on Roles. For instance, you may create a
+role with the ability to update the template and create a second role that can
+both update and delete. Liferay Portal makes it possible to assign permissions
+based on the roles and responsibilities within your organization.
 
 Now that you understand the role structures and templates play in creating web
 content, let's look at how you can use Liferay to manage multiple sites.
@@ -509,7 +533,7 @@ templates are created, they will appear in the Add menu as they become
 available. The following figure shows the form that needs to be filled when
 creating a *Blank Site*.
 
-![Figure 3.7: Adding a Site](../../images/01-add-site-screen.png)
+![Figure 3.8: Adding a Site](../../images/01-add-site-screen.png)
 
 **Name:** is the name of the site you wish to create.
 
@@ -529,7 +553,7 @@ Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created you can specify more details about the site using
 three categories: Basic Information, Search Engine Optimization and Advanced.
 
-![Figure 3.8: Editing a Site](../../images/01-site-editor.png)
+![Figure 3.9: Editing a Site](../../images/01-site-editor.png)
 
 **Details:** lets you edit the information you entered when you created the site
 and allows you to choose a site template for the public or private pages of your
@@ -572,7 +596,7 @@ template and changes to the site template propagate to any site based on it. A
 checkbox appears that allows users to unlink the site template if the user has
 permission to do so.
 
-![Figure 3.9: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
+![Figure 3.10: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
 Site templates are a powerful tool for managing many similar sites. Let's
 examine how they work.
@@ -641,7 +665,7 @@ By default, the following site templates are provided:
 The following figure displays the form shown when editing the *Community Site*
 template:
 
-![Figure 3.10: Site Templates](../../images/01-site-templates.png)
+![Figure 3.11: Site Templates](../../images/01-site-templates.png)
 
 To view and manage the pages of a site template, click the *Open site template*
 link. This opens the template in a new browser window (or tab) and it can be
@@ -680,7 +704,7 @@ window that opened when you clicked *Open site template*. Changes to site
 templates are automatically saved as you make them, so you don't need to return
 to the Site Templates page of the Control Panel and select *Save*.
 
-![Figure 3.11: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
+![Figure 3.12: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
 
 Next, let's use our site template to create our Engineering, Marketing and Legal
 sites. Go to the Control Panel and click on *Sites*. Then click *Add* &rarr;
@@ -780,7 +804,7 @@ it's possible to select a theme, a layout template, to add portlets to the page
 and to configure portlet preferences. Both sites and site templates can utilize
 page templates for creating new pages.
 
-![Figure 3.12: Page Templates](../../images/server-configuration-page-templates.png)
+![Figure 3.13: Page Templates](../../images/server-configuration-page-templates.png)
 
 You can edit or delete existing page templates, configure their permissions, or
 add new page templates. By default three sample page templates are provided:
@@ -824,7 +848,7 @@ page templates when creating a new page. If you want any user who can create a
 page to be able to use the page template, just check the *View* permission for
 the *User* role.
 
-![Figure 3.13: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
+![Figure 3.14: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
 
 To use your template to create a new page, just navigate to a page over which
 you have site administrator privileges and select *Add* &rarr; *Page* from the
@@ -834,7 +858,7 @@ selector menu, select the site to which you'd like to add a page and then click
 on the *Site Pages* link. Then click the *Add Page* button, type a name, select
 your template from the drop down menu and click *Add Page* to finish.
 
-![Figure 3.14: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
+![Figure 3.15: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
 
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
@@ -900,7 +924,7 @@ translation, you must finish creating the content in your default language and
 save it. Once you've done that, editing the content provides you with the option
 to *Add Translation*.
 
-![Figure 3.15: Adding a translation](../../images/04-web-content-content-translation.png)
+![Figure 3.16: Adding a translation](../../images/04-web-content-content-translation.png)
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list or by entering the language you want to use in the search box.
@@ -909,7 +933,7 @@ you to easily compare the original with the new translation. Once you are done
 with the translation, click *Save* and the translation is added to the list of
 *Available Translations*.
 
-![Figure 3.16: Adding a translation](../../images/04-web-content-content-translation-2.png)
+![Figure 3.17: Adding a translation](../../images/04-web-content-content-translation-2.png)
 
 The ability to completely delete a translation in one step has also been added.
 Instead of simply disabling a translation or having to go through a multistep
@@ -956,7 +980,7 @@ to keep your site current and free from outdated (and perhaps incorrect)
 information. The scheduler is built right into the form your users access to add
 web content, in the same column as the structure and template selectors.
 
-![Figure 3.17: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
+![Figure 3.18: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -1078,7 +1102,7 @@ the context menu selector. Then click on *Site Settings* in the Control Panel
 menu and then on *Staging* in the menu at the left. Select *Remote Live* under
 Staging Type and additional options appear.
 
-![Figure 3.x: After your remote Liferay server and local Liferay server have
+![Figure 3.19: After your remote Liferay server and local Liferay server have
 been configured to communicate with each other, you have to specify a few Remote
 Live connection settings.](../../images/remote-live-staging-settings.png)
 
@@ -1156,7 +1180,7 @@ it's important to quickly publish a fix. If you're following the Nose-ster
 example, check *Enabled On Public Pages* to enable page versioning for the
 Nose-ste site and then click *Save*.
 
-![Figure 3.18: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.20: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 Before you activate staging, you can choose which portlets' data should be
 copied to staging. We'll cover many of the collaboration portlets listed under
@@ -1186,7 +1210,7 @@ options are restored and you can access some new options related to staging. If
 you're following along with the Nose-ster example, navigate back to the News and
 Events page and click on *Staging* to get your page editing capabilities back.
 
-![Figure 3.19: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.21: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that
 the Calendar portlet isn't there. That's because you've staged a change to the
@@ -1233,7 +1257,7 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for Calendar Events, the event needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.20: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+![Figure 3.22: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
 
 Web content tends to be frequently updated, often more so than other kinds of
 content. For some web content articles, this can result in very high numbers of
@@ -1247,7 +1271,7 @@ displayed in a Web Content Display portlet on one of your pages and then click
 popup, expand the Applications heading and scroll down until you see the section
 for Web Content.
 
-![Figure 3.x: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+![Figure 3.23: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
 
 Liferay 6.2 also added a portal property,
 `journal.publish.version.history.by.default`, that sets the default behavior. By
@@ -1347,13 +1371,13 @@ variations toolbar. When you decide which page variation should be published,
 mark it as *Ready for Publication*. Only one page variation can be marked as
 ready for publication and that is the one that gets published to the live site.
 
-![Figure 3.21: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
+![Figure 3.24: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
 
 For example, we could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 3.22: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.25: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations.
 To merge two Site Pages Variations, you need to go to the Manage Site Variations
@@ -1405,7 +1429,7 @@ Sites* page then and then select *Actions &rarr; Manage Memberships* for the
 site within which you want to create a team. Finally, click *View &rarr; Teams*
 and click the Add Team button.
 
-![Figure 3.23: Creating a Team within a Site](../../images/01-creating-a-team.png)
+![Figure 3.26: Creating a Team within a Site](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
 click *Save*. Your new team will appear in the list. To add members, simply
@@ -1417,7 +1441,7 @@ itself. Remember the portlet options link is the wrench symbol at the top of a
 portlet. This enables users who wouldn't have access to all of the necessary
 options in the Control Panel to manage permissions through teams.
 
-![Figure 3.24: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
+![Figure 3.27: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
 
 To give a team access to a particular portlet function, access the *Permissions*
 tab of a portlet residing on a page, check the boxes corresponding to
@@ -1490,7 +1514,7 @@ and lets you add more. To add rules to a rule group, select *Actions*
 &rarr; *Manage Rules*, or click on a rule group to edit it, and then click
 the *Manage Rules* link.
 
-![Figure 3.25: You can manage device rules from the Mobile Device Rules
+![Figure 3.28: You can manage device rules from the Mobile Device Rules
 administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups
@@ -1503,7 +1527,7 @@ available.  The rules are designed, however, to be extensible, and additional
 rule types can be added by your developers. Once added, you can edit the rule to
 specify a device type and operating system.
 
-![Figure 3.26: You need to install the Device Recognition Provider plugin to
+![Figure 3.29: You need to install the Device Recognition Provider plugin to
 populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them,
@@ -1523,7 +1547,7 @@ site or page and order them by priority. The rule groups are checked in
 decreasing order of priority: the actions defined by the first rule group that
 applies are executed.
 
-![Figure 3.27: You can select a mobile device rule group to apply for a site or
+![Figure 3.30: You can select a mobile device rule group to apply for a site or
 page from the Site Pages section of the Control
 Panel.](../../images/mobile-device-selection.png)
 
@@ -1575,7 +1599,7 @@ Rules page of the Control Panel. Click on *Add Rule Group*, enter the name
 *Android and Bada Mobile Phones*, and click *Save*. You'll see the message, *No
 rules are configured for this rule group.*
 
-![Figure 3.28: After adding a new rule, you'll see a message indicating that no
+![Figure 3.31: After adding a new rule, you'll see a message indicating that no
 rules have been configured for the rule
 group.](../../images/no-rule-groups-configured.png)
 
@@ -1589,7 +1613,7 @@ click *Save*. Now we just need to define the redirect action for our rule group.
 Make sure Liferay is still selected in the context menu selector and click on
 *Site Pages*. Click on *Mobile Rule Groups* in the navigation menu to the right.
 
-![Figure 3.29: To apply a mobile device rule group to a page set of a site,
+![Figure 3.32: To apply a mobile device rule group to a page set of a site,
 select the site in the context menu selector, click on *Mobile Rule Groups*,
 click *Select Rule Group*, and select the desired rule
 group.](../../images/site-pages-mobile-device-rules.png)

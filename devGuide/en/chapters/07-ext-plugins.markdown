@@ -544,46 +544,45 @@ Liferay Developer Studio or your terminal:
 
 - **Using Developer Studio:**
 
-    1. Remove the plugin from the server. While selecting the Ext plugin in the
-    *Servers* view, select the plugin's *Remove* option. 
+1. Remove the plugin from the server. While selecting the Ext plugin in the
+   *Servers* view, select the plugin's *Remove* option. 
 
-        ![Figure 7.6: Removing Ext Plugin from the server](../../images/07-ext-plugins-4.png)
+    ![Figure 7.6: Removing Ext Plugin from the server](../../images/07-ext-plugins-4.png)
 
-    2. Clean the application server--while selecting the Ext plugin project in
-    the *Package Explorer* view, select the plugin's *Liferay* &rarr; *Clean App
-    Server...* option. 
+2. Clean the application server--while selecting the Ext plugin project in
+   the *Package Explorer* view, select the plugin's *Liferay* &rarr; *Clean App
+   Server...* option. 
 
-        ![Figure 7.7: How to clean app server](../../images/07-ext-plugins-5.png)
+    ![Figure 7.7: How to clean app server](../../images/07-ext-plugins-5.png)
 
-    3. Start the Liferay server. 
+3. Start the Liferay server. 
 
-        ![Figure 7.8: Start the Liferay server](../../images/07-ext-plugins-6.png)
+    ![Figure 7.8: Start the Liferay server](../../images/07-ext-plugins-6.png)
 
-    4. Drag the Ext plugin and drop it into the Liferay server. 
+4. Drag the Ext plugin and drop it into the Liferay server. 
 
-        ![Figure 7.9: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
+    ![Figure 7.9: Drag-and-drop plugin onto server](../../images/07-ext-plugins-7.png)
 
-    5. While selecting the Liferay server in the *Servers* view, click the
-    *Publish* option. 
+5. While selecting the Liferay server in the *Servers* view, click the
+   *Publish* option. 
 
-		![Figure 7.10: Publish your server](../../images/07-ext-plugins-8.png)
+    ![Figure 7.10: Publish your server](../../images/07-ext-plugins-8.png)
 
 <!-- Way too many images here. 1 image per 500 words, please. --> 
 
-- **Using the terminal:** 
+**Using the terminal:** 
 	
-    1. Stop the Liferay server. 
+1. Stop the Liferay server. 
 
-    2. For each Ext plugin you're deploying, enter the following into your
-    console: 
+2. For each Ext plugin you're deploying, enter the following into your console: 
 
-        I. `cd [your-plugin-ext]`
+    I. `cd [your-plugin-ext]`
 
-        II. `ant clean-app-server`
+    II. `ant clean-app-server`
 
-        III. `ant direct-deploy`
+    III. `ant direct-deploy`
 
-    3. Start the Liferay server. 
+3. Start the Liferay server. 
 
 **Redeployment:** If you only added to your plugin or made modifications that
 don't affect the plugin deployment process, you can redeploy using the following

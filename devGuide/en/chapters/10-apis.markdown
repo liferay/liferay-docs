@@ -14,17 +14,16 @@ Liferay comes with a host of APIs that provide powerful portal and portlet
 services. The following table shows you the entities for which services are
 available:
 
-| Portal Services | Portlet Services |
-|-----------------| ----------------|
-|*User*           | *Documents and Media Library* |
-|*Organization*   | *Blogs*         |
-|*UserGroup*      | *Wikis*         |
-|*Company*        | *Assets*        |
-|*Role*           | *Social Equity* |
-|*Permission*     |                 |
-|*ResourcePermission* |             |
-|*Layout*         |                 |
-
+Portal Services      | Portlet Services              |
+--------------------- | ----------------------------- |
+ *User*               | *Documents and Media Library* |
+ *Organization*       | *Blogs*                       |
+ *UserGroup*          | *Wikis*                       |
+ *Company*            | *Assets*                      |
+ *Role*               | *Social Equity*               |
+ *Permission*         |                               |
+ *ResourcePermission* |                               |
+ *Layout*             |                               |
 ---
 
 The ability to call Liferay APIs with a Java method or web service invocation
@@ -32,7 +31,7 @@ gives you the flexibility to implement client code in Java or any language
 (even a scripting language such as PHP) that supports web service invocations.
 The APIs can be called from within portlet or non-portlet code. You can make
 calls to the APIs *locally* from within the portal or *remotely* outside of the
-portal's *Java Virtual Machine* (*JVM*).
+portal's *Java virtual machine* (*JVM*).
 
 This chapter covers the following topics: 
 
