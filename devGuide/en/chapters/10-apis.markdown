@@ -358,21 +358,21 @@ Here's the list of *secure* web services for `UserGroup`:
 
 ![note](../../images/tip-pen-paper.png)**Note:** Liferay's developers use a tool
 called *Service Builder* to expose their services via SOAP automatically. If
-you're interested in using Service Builder for your own services, check out the
-*Liferay Frameworks* chapter in this guide. 
+you're interested in using Service Builder, check out the *Liferay Frameworks*
+chapter in this guide. 
 
 ---
 
 Each web service is listed with its name, operations, and a link to its WSDL
-file. The WSDL is written in XML and provides a model for describing and
-locating the web service.
+file. The WSDL file is written in XML and provides a model for describing and
+locating the web service. 
 
 ![Figure 8.4: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.png)
 
 As you'll see in the example in the next section, you pass in the WSDL URL along
 with your login credentials to the SOAP service locator for your service.
 
-Next, let's invoke the web service!
+Next, let's invoke the web service! 
 
 ### SOAP Java Client 
 
@@ -395,8 +395,8 @@ For each client you create, you'll be prompted to enter the service definition
 With the WSDL specified, Eclipse automatically adds the auxiliary files and
 libraries required to consume that web service.  Nifty!
 
-Let's look at the code that locates and invokes operations to add a new
-UserGroup named `MyUserGroup` and assign to it a User with screen name `test`: 
+Here's the code that locates and invokes operations to add a new UserGroup named
+`MyUserGroup` and assign to it a User with screen name `test`: 
 
     import java.net.URL;
 
@@ -524,8 +524,7 @@ UserGroup named `MyUserGroup` and assign to it a User with screen name `test`:
 
 <!--I believe the above code block is too long. Not sure how to reduce it. -Russ -->
 
-As a result of running this client you should get output similar to the
-following:
+Running this client should produce output similar to the following: 
 
     userId for user named test is 10196
     User groups for user 10196 ...
@@ -535,42 +534,46 @@ following:
     User groups for user 10196 ...
         MyUserGroup
 
-As you can see, the user had no groups but then was added to UserGroup
-`MyUserGroup`.
+The output tells us the user had no groups, but was added to UserGroup
+`MyUserGroup`. 
 
-No worries about the `java.rmi.RemoteException` as it is thrown when invoking
-the UserGroup check with `usergroupsoap.getUserGroup(groupName)` because the
-UserGroup does not yet exist.
+You might be thinking, "But an error was thrown! We did something wrong!" Yes,
+an error was thrown (`java.rmi.RemoteException:`), but we're sitting here as
+cool as an iced cream sandwich all the same. The exception was thrown simply
+because the UserGroup check was invoked before the UserGroup was created.
+Because the very next line of the output says `Added user group named...`, we're
+okay. Don't worry, be happy! 
 
-Some things to note about the URL:
+Here are a few things to note about the URL: 
 
-- It is *secure* (authenticated) URL for the service. Authentication is done
-using HTTP Basic Authentication, which of course is not appropriate for a
-production environment, since the password is unencrypted, but is used for
-convenience in this example.
+- It's a *secure* (authenticated) URL for the service. Authentication is done
+using HTTP Basic Authentication, which isn't appropriate for a production
+environment, since the password is unencrypted. It's simply used for convenience
+in this example. 
 
-- The screen name and password are passed in as credentials.
+- The screen name and password are passed in as credentials. 
 
 - The name of the service (e.g. `Portal_UserGroupService`) is specified at the
-end of the URL. Remember, the service name can be found in the web service
-listing like the one we looked at previously.
+end of the URL. Remember that the service name can be found in the web service
+listing. 
 
 The operations `getCompanyByVirtualHost()`, `getUserIdByScreenName()`,
 `getUserUserGroups()`, `addUserGroup()` and `addUserGroupUsers()` are specified
 for the `-ServiceSOAP` classes `CompanyServiceSoap`, `UserServiceSoap` and
-`UserGroupServiceSoap` in the WSDL files. And information on parameter types,
+`UserGroupServiceSoap` in the WSDL files. Information on parameter types,
 parameter order, request type, response type, and return type are conveniently
 specified in the WSDL for each Liferay web service. It's all there for you!
 
-Next, let's try accomplishing the same behavior by using a client implemented in
-PHP.
+<!--Needs to be more straightforward--a table? -->
+
+Next let's implement a web service client implemented in PHP; just because we
+can! 
 
 ### SOAP PHP Client 
 
-Now, let's say you want write your client in a language other than Java ... no
-problem! You can use any language that supports web services invocation.
-
-The following invokes the same operations using PHP and the PHP SOAP Client:
+You can write your client in any language that supports web services invocation.
+Let's invoke the same operations as we did when we created our Java client, this
+time using PHP and the PHP SOAP Client: 
 
     <?php
         $groupName = "MyGroup2";
@@ -612,10 +615,11 @@ The following invokes the same operations using PHP and the PHP SOAP Client:
             print ($v->name) . " " . $v->userGroupId . "\n";
     ?>
 
-So, if you'd like to use a language, other than Java, that supports use of SOAP
-web services, go ahead and try it out on Liferay's SOAP web services!
+It's worth repeating; you can use any language that supports use of SOAP web
+services to create your web services client. Try it out on Liferay's SOAP web
+services!
 
-Next, we'll explore Liferay's JSON Web Services.
+Next we'll explore Liferay's JSON Web Services. 
 
 ## JSON Web Services 
 
