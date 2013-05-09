@@ -1,11 +1,11 @@
 # Ext plugins 
 
-Ext plugins are powerful tools for extending Liferay. Because they increase
-the complexity of your Liferay instance, you should only use an Ext plugin if
-you're sure you can't accomplish your goal using a different tool. Check out
-the hook plugins in Chapter 6 for the available alternatives. If a hook won't
-suffice, keep reading to discover the use cases for Ext plugins and how to set
-one up. First let's talk about why you should avoid Ext plugins when possible. 
+Ext plugins are powerful tools for extending Liferay. Because they increase the
+complexity of your Liferay instance, you should only use an Ext plugin if you're
+sure you can't accomplish your goal using a different tool. Check out Chapter 6,
+Hooks for the available alternatives. If a hook won't suffice, keep reading to
+discover the use cases for Ext plugins and how to set one up. First let's talk
+about why you should avoid Ext plugins when possible. 
 
 As someone once said, "With great power comes great responsibility" (okay, many
 people have said that many times).  Before deciding to use an Ext plugin, weigh
@@ -21,7 +21,7 @@ Now that you know the limitations of Ext plugins, let's look at why you'd want
 to use them: 
 
 - To specify custom classes as portal property values. For example, to specify a
-  property that needs a custom class (e.g.
+  property that needs a custom class (e.g.,
 `global.startup.events=my.custom.MyStartupAction`), you need an Ext plugin to
 add your custom class to the portal class loader. 
 
@@ -80,11 +80,11 @@ appropriate command for your operating system to create a new Ext plugin:
 
 1. In Linux and Mac OS, enter
 	
-    ./create.sh example "Example"
+        ./create.sh example "Example"
 	
 2. In Windows, enter
 	
-    create.bat example "Example"
+        create.bat example "Example"
 	
 A `BUILD SUCCESSFUL` message from Ant tells you there's a new folder named
 `example-ext` inside the `ext` folder in your Plugins SDK. The Plugins SDK
@@ -137,7 +137,7 @@ Let's look at a few of the `/docroot/WEB-INF/` subdirectories in more detail:
 
 `ext-impl/src`: Contains the `portal-ext.properties` configuration file,
 custom implementation classes, and in advanced scenarios, classes that override
-core classes within `portal-impl.jar.` 
+core classes within `portal-impl.jar`. 
 
 `ext-lib/global`: Contains libraries that should be copied to the
 application server's global classloader upon deployment of the Ext plugin. 
@@ -185,8 +185,8 @@ isn't assured, and you can cause unintended system behavior as a result.
     changes. 
 
     - `liferay-portlet-ext.xml`: This file is similar to `portlet-ext.xml`, but
-    is for additional definition elements specific to Liferay. To override
-    these definition elements, copy the complete definition of the desired portlet
+    is for additional definition elements specific to Liferay. To override these
+    definition elements, copy the complete definition of the desired portlet
     from `liferay-portlet.xml` within Liferay's source code, then apply the
     necessary changes. 
 
@@ -320,13 +320,13 @@ your Package Explorer onto your server.
 **Deploying In the terminal:** Open a terminal window in your `ext/example-ext`
 directory and enter one of these commands:
 	
-    - ant deploy
+        ant deploy
 
-    - ant direct-deploy
+        ant direct-deploy
 
 The `direct-deploy` target deploys all plugin changes directly to the
 appropriate directories in the Liferay application. The `deploy` target creates
-a .war file with your changes and then deploys it to your server. Either way,
+a `.war` file with your changes and then deploys it to your server. Either way,
 your server must be restarted after the deploy occurs. Using `direct-deploy`
 is usually preferred for deploying Ext plugins during development. However,
 `direct-deploy` does not work in WebLogic Server or WebSphere application
@@ -588,8 +588,8 @@ Liferay Developer Studio or your terminal:
 don't affect the plugin deployment process, you can redeploy using the following
 steps: 
 
-- **Using Developer Studio:** Right-click your plugin located underneath your server
-and select *Redeploy*. 
+- **Using Developer Studio:** Right-click your plugin located underneath your
+server and select *Redeploy*. 
 
 	![Figure 7.11: How to redeploy your Ext plugin](../../images/07-ext-plugins-9.png)
 
@@ -597,11 +597,11 @@ and select *Redeploy*.
 for initial deployment. Open a terminal window in your `ext/example-ext`
 directory and enter one of these commands: 
 	
-    ant deploy
+        ant deploy
 
-    ant direct-deploy
+        ant direct-deploy
 
-See above in the *Initial Deployment* section if you're not sure which command
+See above in the *Initial deployment* section if you're not sure which command
 to use. 
 
 After your `example-ext` plugin is published to Liferay Portal, check out your
@@ -626,7 +626,7 @@ for distribution and production deployment.
 **Using the terminal:** From your Ext plugin's directory (e.g.,
 `ext/example-ext`), enter
 
-    `ant war`
+    ant war
 
 The `.war` file is written to your `[liferay-plugins]/dist` directory.
 
@@ -669,7 +669,7 @@ multiple configuration files. Liferay provides a clean way to do this from an
 Ext plugin without modifying the original files. 
 
 Below we list all the configuration files in Liferay by their path in your Ext
-plugin folder. We provide a description what the file is for and the path to
+plugin folder. We provide a description of what the file is for and the path to
 the original file in Liferay Portal: 
 
 - `ext-impl/src/META-INF/ext-model-hints.xml`
@@ -734,8 +734,8 @@ the original file in Liferay Portal:
 
    - Description: Allows overriding the portlets that are shown in the
    Add Application pop-up and the categories in which they're organized. It's
-   most commonly used to change the categorization, hide certain portlets, or make
-   specific Control Panel portlets available to be added to a page. 
+   most commonly used to change the categorization, hide certain portlets, or
+   make specific Control Panel portlets available to be added to a page. 
 
    - Original file in Liferay: `portal-web/docroot/WEB-INF/liferay-display.xml`
 
@@ -816,7 +816,7 @@ Here are a few of the pre-configured analyzers from the
 
 You can define custom analyzers for any fields, including custom fields. 
 
-Let's learnt to change the API of a core service next. 
+Let's learn to change the API of a core service next. 
 
 #### Changing the API of a core service 
 
@@ -856,16 +856,16 @@ If you're sure you need to change a core portal-impl class, and certain it can't
 be replaced in a configuration file, here's the best way to do it while avoiding
 conflicts when merging with a new portal version: 
 
-1. Rename the original class (e.g. `DeployUtil` &rarr; `MyDeployUtil`). 
+1. Rename the original class (e.g., `DeployUtil` &rarr; `MyDeployUtil`). 
 
-2. Create a new subclass with the old name (e.g. `DeployUtil extends
+2. Create a new subclass with the old name (e.g., `DeployUtil extends
 MyDeployUtil`). 
 
 3. Override any methods you need to change. 
 
 4. Delegate static methods. 
 
-5. Use a logger with and appropriate class name for both classes (e.g.
+5. Use a logger with and appropriate class name for both classes (e.g.,
 `DeployUtil`). 
 
 This strategy will help you determine what you'll need to merge when a new
@@ -905,14 +905,14 @@ small and easy to transport. Execute these steps on the server:
    If this is your first time deploying your Ext plugin to this server, skip
    this step. Otherwise, start by executing the same steps you first used to
    deploy Liferay on your app server. If you're using a bundle, unzip it again.
-   If you installed Liferay manually on an existing application server, you'll need
-   to redeploy the Liferay `.war` file and copy both the libraries required
-   globally by Liferay and your Ext plugin to the appropriate directory within the
-   application server. 
+   If you installed Liferay manually on an existing application server, you'll
+   need to redeploy the Liferay `.war` file and copy both the libraries required
+   globally by Liferay and your Ext plugin to the appropriate directory within
+   the application server. 
 
 2. Copy the Ext plugin `.war` into the auto-deploy directory. For a bundled
 Liferay distribution, the `deploy` folder is in Liferay's *root* folder of your
-bundle (e.g. `liferay-portal-6.1.0-ce-ga1/`). 
+bundle (e.g., `liferay-portal-6.1.0-ce-ga1/`). 
 
 3. Once the Ext plugin is detected and deployed by Liferay, restart your Liferay
 server. 
@@ -1034,9 +1034,10 @@ instructions on how to contribute to Liferay:
 Ext plugins are a powerful way to extend Liferay. There are no limits to what
 you can use them to customize, so use them carefully. Before using an Ext
 plugin, see if you can implement all or part of the desired functionality
-through a different plugin type: portlets, hooks and web plugins offer you a lot
-of extension capabilities themselves, without introducing the complexity that's
-inherent with Ext plugins. If you need to use an Ext plugin, make it as small as
-possible and follow the instructions in this guide carefully to avoid issues.
+through a different plugin type: portlets, hooks, and web plugins offer you a
+lot of extension capabilities themselves, without introducing the complexity
+that's inherent with Ext plugins. If you need to use an Ext plugin, make it as
+small as possible and follow the instructions in this guide carefully to avoid
+issues.
 
 Next we'll learn how to develop Liferay using the Maven build framework. 
