@@ -306,7 +306,10 @@ you're building plugins for Liferay EE or Liferay CE. If you're building plugins
 for Liferay EE, you'll have to install the Liferay Artifacts manually from a zip
 file. You can do the same if you're building plugins for Liferay CE, but there's
 a simpler option available: you can automatically install CE artifacts
-from the Central Repository.
+from the Central Repository. Alternatively for Liferay CE, if you absolutely
+must the latest pre-release changes from our Liferay CE source repository, you
+can build the Liferay CE artifacts yourself. We'll demonstrate each of these
+options. 
 
 ---
 
@@ -364,11 +367,12 @@ You can extract the Liferay EE/CE artifacts package ZIP file anywhere you like.
 The ZIP file not only includes the Liferay artifacts, but also includes a
 convenient script to install and deploy the artifacts to your repositories. 
 
-If you want to install the very latest Liferay CE artifacts from the source
-repository, you can do so. We'll show you how to build the artifacts and install
-them into your repository. 
+If you're using a Liferay CE and you want the latest pre-release artifacts from
+the Liferay CE source repository, you can get them--but you'll have to build
+them yourself. Don't worry, it's easy. We'll show you how to build the artifacts
+from Liferay's source code next. 
 
-### Building CE Maven artifacts from source
+### Building CE Maven Artifacts from Source
 
 Downloading the Liferay Maven artifacts from Liferay's customer portal (EE) or
 from Sourceforge (CE) is useful if you're interested in using the artifacts for
@@ -377,81 +381,85 @@ Maven artifacts, you can build them from source. To build the latest Liferay CE
 Maven artifacts from source, follow these steps:
 
 1. Navigate to your local Liferay Portal CE source project. If you don't already
-   have a local Liferay Portal CE source project on your machine, you can fork the
-   Liferay Portal CE Github repository, found at
+   have a local Liferay Portal CE source project on your machine, you can fork
+   the Liferay Portal CE Github repository, found at
    [http://github.com/liferay/liferay-portal](http://github.com/liferay/liferay-portal),
    and clone it your machine.
 
-2. Create a `app.server.${USER_NAME}.properties` file in your local Liferay Portal CE
-   source project root directory. Specify the following properties in it:
+2. Create a `app.server.[user name].properties` file in your local Liferay
+   Portal CE source project root directory. Specify the following properties in
+   it:
 
-    `app.server.parent.dir=`
+        app.server.parent.dir=[app server parent directory]
 
-    `app.server.${app.server.name}.dir=`
+        app.server.[app server name].dir=[app server directory]
 
     Of course, add the path of your application server's parent directory and
     the path of your application server itself after the appropriate equals
-    signs. Also, replace `${app.server.name}` with the name of your application
-    server. Note that your `app.server.${app.server.name}.dir` directory doesn't
+    signs. Also, replace `[app server name]` with the name of your application
+    server. Note that your `app.server.[app server name].dir` directory doesn't
     need to exist yet; you can create it by invoking an Ant target in the next
     step. For example, if you're running Apache Tomcat 7.0.27 and your
-    `${LIFERAY_HOME}` directory is `/home/jbloggs/liferay/bundles/ce-6.1.x`, use
+    Liferay home directory is `/home/jbloggs/liferay/bundles/ce-6.1.x`, use
     the following properties:
 
-    `app.server.parent.dir=/home/jbloggs/liferay/bundles/ce-6.1.x`
+        app.server.parent.dir=/home/jbloggs/liferay/bundles/ce-6.1.x
 
-    `app.server.tomcat.dir=/home/jbloggs/liferay/bundles/ce-6.1.x/tomcat-7.0.27`
+        app.server.tomcat.dir=/home/jbloggs/liferay/bundles/ce-6.1.x/tomcat-7.0.27
 
 3. If an application server doesn't already exist at the directory specified by
-   your `app.server.{app.server.name}.dir` property, run `ant -f build-dist.xml
-   unzip-${app.server.name}` to unzip a copy of your preferred application
+   your `app.server.[app server name].dir` property, run `ant -f build-dist.xml
+   unzip-[app server name]` to unzip a copy of your preferred application
    server to the specified directory.
    
        For example, to unzip Apache Tomcat to the directory specified by your
        `app.server.tomcat.dir` property, run:
    
-       `ant -f build-dist.xml unzip-tomcat`
+           ant -f build-dist.xml unzip-tomcat
 
-4. Create a `releases.${USER_NAME}.properties` in your local Liferay Portal CE
+4. Create a `releases.[user name].properties` in your local Liferay Portal CE
    source project root directory and specify the following properties:
 
-    `gpg.keyname=${GPG_KEYNAME}`
+        gpg.keyname=[GPG key name]
 
-    `gpg.passphrase=${GPG_PASSPHRASE}`
+        gpg.passphrase=[GPG passphrase]
 
-    `lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-snapshots`
+        lp.maven.repository.url=http://localhost:8081/nexus/content/repositories/liferay-snapshots
 
-    `lp.maven.repository.id=liferay-snapshots`
+        lp.maven.repository.id=liferay-snapshots
 
     Of course, replace the values specified above with your own GPG and Maven
     repository credentials.
 
-    If you don't have GPG installed and don't have
-    a public/private GPG key, you should visit
-    [http://www.gnupg.org](http://www.gnupg.org) and install GPG before
-    continuing. Once you've installed GPG, generate a GPG key by running `gpg
-    --gen-key` and following the instructions. Once you've generated a GPG key,
-    you can find your GPG keyname by running `gpg --list-keys`.
+    If you don't have GPG installed and don't have a public/private GPG key, you
+    should visit [http://www.gnupg.org](http://www.gnupg.org) and install GPG
+    before continuing. Once you've installed GPG, generate a GPG key by running
+    `gpg --gen-key` and following the instructions. Once you've generated a GPG
+    key, you can find your GPG keyname by running `gpg --list-keys`.
     
-    **Note**: The `releases.${USER_NAME}.properties` is not required if you only
+    **Note**: The `releases.[user name].properties` is not required if you only
     plan to install the Liferay artifacts locally and not deploy them.
 
-5. Open a command prompt, navigate to your `${LIFERAY_HOME}` directory, and
-   build the Liferay artifacts by running `ant clean start jar`.
+5. Open a command prompt, navigate to your Liferay home directory, and build the
+   Liferay artifacts by running
 
-6. Build the Liferay Portal WAR file by running `ant -f build-dist.xml all
-   zip-portal-war`.
+    ant clean start jar
 
-7. Deploy the Liferay artifacts to your Maven repository by running `ant -f
-   build-maven.xml deploy-artifacts`.
+6. Build the Liferay Portal WAR file by running 
 
-   If you want the Liferay artifacts to be
-   installed locally but don't have a remote Maven repository or don't want the
-   artifacts to be remotely deployed, you can run the install target instead of
-   the deploy target: `ant -f build-maven.xml install-artifacts`. Once the Ant
-   target finishes, you should have a time-stamped directory containing the
-   artifacts in your Local Liferay Portal CE source project's root directory
-   (e.g., `liferay-portal/20121105174417071`).
+     ant -f build-dist.xml all zip-portal-war
+
+7. Deploy the Liferay artifacts to your Maven repository by running 
+
+    ant -f build-maven.xml deploy-artifacts
+
+   If you want the Liferay artifacts to be installed locally but don't have a
+   remote Maven repository or don't want the artifacts to be remotely deployed,
+   you can run the install target instead of the deploy
+   target: `ant -f build-maven.xml install-artifacts`. Once the Ant target
+   finishes, you should have a time-stamped directory containing the artifacts
+   in your Local Liferay Portal CE source project's root directory (e.g.,
+   `liferay-portal/20121105174417071`).
 
 ---
 
@@ -461,11 +469,11 @@ Maven artifacts from source, follow these steps:
  There are two solutions to this problem:
  
 - **Increase the memory available for the Javadoc packaging process:**
-Navigate to `${LIFERAY_HOME}/build.xml` and search for the `javadoc` target.
+Navigate to `[Liferay home]/build.xml` and search for the `javadoc` target.
 Find the `maxmemory` property and increase it as desired.
 
 - **Skip the Javadoc packaging process:** Navigate to
-`${LIFERAY_HOME}/build-maven.xml` and find the `prepare-maven` target. Within
+`[Liferay home]/build-maven.xml` and find the `prepare-maven` target. Within
 this target, comment out the call to the `jar-javadoc` target, like below:
 
 		<!-- <antcall target="jar-javadoc" /> -->
@@ -473,11 +481,9 @@ this target, comment out the call to the `jar-javadoc` target, like below:
 ---
 
 Next, we'll show you how to install the required Liferay release artifacts to
-your repositories. You can install them to your local Maven repository (usually
-your `$HOME/.m2` directory) or to your remote Maven repository (called
-*liferay-releases*, if you're following our examples). These steps are the same
-for installing artifacts that you downloaded and extracted from a ZIP file, and
-for installting artifacts that you built from source.
+your repositories. These steps are applicable for installing artifacts that you
+downloaded and extracted from a zip file, and for installing artifacts that you
+built from source. 
 
 #### Installing Artifacts to a Repository
 
