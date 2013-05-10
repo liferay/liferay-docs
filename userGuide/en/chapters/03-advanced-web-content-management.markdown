@@ -268,23 +268,32 @@ title, your tip is displayed.
 ##### Structure Default Values
 
 Structure Default Values allow you to create one structure that uses common data
-from multiple articles.
-
-Returning to our newspaper scenario again, let's say you want all sports
-articles to have the same display page (sports page), the same categories, or
-the same set of tags. Instead of adding them for each article or wondering if
-your users are adding them to every web content, you can add these
+from multiple articles. Returning to our newspaper scenario again, let's say you
+want all sports articles to have the same display page (sports page), the same
+categories, or the same set of tags. Instead of adding them for each article or
+wondering if your users are adding them to each article, you can add these
 characteristics once for every sports article by creating default values for the
-structure. Creating default values is not part of creating a new structure, so
-make sure you have an existing structure.
+structure. There are two ways to edit structure default values: creating a new
+structure or editing an existing structure.
 
-To edit a structure's default values, go to *Web Content* in the Control Panel
-and click *Manage* &rarr; *Structures* to see the structures list. Find the
-*Actions* button for the desired structure and select *Edit Default Values* from
-the menu to view a window like the one below. This form allows you to manage the
-structure settings.
+For a new structure, you must first create the structure before editing its
+default values. Navigate to *Web Content* in the Control Panel and click the
+*Structures* tab, then select the *Add Structure* button. Under the *XML Schema
+Definition* section of the new structure form, use the *Add Row* button to
+create different types of fields for the structure. Or you can use the editor to
+create the structure manually: the Launch Editor button allows you to edit the
+XML for the structure if you wish to do it via code. When you are done, click
+*Save and Continue* to go to the Structure Default Values form.
 
-![Figure 3.3: You can edit default values via the *Actions* button of the Manage Structures interface.](../../images/structure-actions.png)
+![Figure 3.3: You can create fields for structure default values via the XML Schema Definition section of the new structure form.](../../images/xml-schema-definitions-new.png)
+
+To edit an existing structure, go to *Web Content* in the Control Panel and
+click the *Structures* tab to see the structures list. Find the *Actions* button
+for the desired structure and select *Edit Default Values* from the menu to view
+a window like the one below. This form allows you to manage the structure
+settings.
+
+![Figure 3.4: You can edit default values via the Actions button of the structure form.](../../images/structure-default-values.png)
 
 Every new web content you create with this structure is preloaded with the
 data you inserted.
@@ -299,7 +308,7 @@ be able to create structures and templates. Users, of course, should be able to
 view structures. The *View* permission enables them to make use of the
 structures to create content.
 
-![Figure 3.4: View Permissions for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.5: View Permissions for a Structure](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles and this is the recommended way
 to handle permissions for structures.
@@ -362,7 +371,7 @@ structure, link it to a template and then create content using them both. We'll
 use FreeMarker for our template and we'll lay out the structure fields
 systematically to go along with the format we've defined for our content.
 
-![Figure 3.5: You can create a new Web Content template by browsing a pre-made template or creating one in the script editor.](../../images/04-web-content-templates-create.png)
+![Figure 3.6: You can create a new Web Content template by browsing a pre-made template or creating one in the script editor.](../../images/04-web-content-templates-create.png)
 
 1. Go back to the Web Content section of the Control Panel and click *Add*
 &rarr; *Basic Web Content*.
@@ -429,9 +438,9 @@ the abstract and the link created above, which sets the `read_more` parameter.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.6: The initial view for the Nose-ster News Article.](../../images/04-web-content-adv-example1.png)
+![Figure 3.7: The initial view for the Nose-ster News Article.](../../images/04-web-content-adv-example1.png)
 
-![Figure 3.7: After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example2.png)
+![Figure 3.8: After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example2.png)
 
 Now that you've created a handsome template, it's time to decide who the lucky
 people are that get to use it.
@@ -546,7 +555,7 @@ templates are created, they will appear in the Add menu as they become
 available. The following figure shows the form that needs to be filled when
 creating a *Blank Site*.
 
-![Figure 3.8: Adding a Site](../../images/01-add-site-screen.png)
+![Figure 3.9: Adding a Site](../../images/01-add-site-screen.png)
 
 **Name:** is the name of the site you wish to create.
 
@@ -564,9 +573,9 @@ inaccessible but can be activated whenever a site administrator wishes.
 
 Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created you can specify more details about the site using
-three categories: Basic Information, Search Engine Optimization and Advanced.
+three categories: Basic Information, Search Engine Optimization, and Advanced.
 
-![Figure 3.9: Editing a Site](../../images/01-site-editor.png)
+![Figure 3.10: Editing a Site](../../images/01-site-editor.png)
 
 **Details:** lets you edit the information you entered when you created the site
 and allows you to choose a site template for the public or private pages of your
@@ -609,7 +618,7 @@ template and changes to the site template propagate to any site based on it. A
 checkbox appears that allows users to unlink the site template if the user has
 permission to do so.
 
-![Figure 3.10: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
+![Figure 3.11: When creating a site from a site template, you need to choose whether the site template should be copied into the site's public pages or private pages.](../../images/creating-site-from-site-template.png)
 
 Site templates are a powerful tool for managing many similar sites. Let's
 examine how they work.
@@ -664,10 +673,10 @@ site.
 By default, the following site templates are provided:
 
 - **Community Site:** Provides a preconfigured site for building online
-  communities. The home of a *community site* provides message boards, search, a
-  display of a poll and statistics of the activity of community members. The
-  site will also be created with a page for a community calendar and a page for
-  a wiki.
+  communities. The Home page of a *community site* provides message boards,
+  search, a display of a poll and statistics of the activity of community
+  members. The site will also be created with a page for a community calendar
+  and a page for a wiki.
 
 - **Intranet Site:** Provides a preconfigured site for an intranet. The Home
   page displays the activities of the members of the site, search, a language
@@ -678,7 +687,7 @@ By default, the following site templates are provided:
 The following figure displays the form shown when editing the *Community Site*
 template:
 
-![Figure 3.11: Site Templates](../../images/01-site-templates.png)
+![Figure 3.12: Site Templates](../../images/01-site-templates.png)
 
 To view and manage the pages of a site template, click the *Open site template*
 link. This opens the template in a new browser window (or tab) and it can be
@@ -717,7 +726,7 @@ window that opened when you clicked *Open site template*. Changes to site
 templates are automatically saved as you make them, so you don't need to return
 to the Site Templates page of the Control Panel and select *Save*.
 
-![Figure 3.12: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
+![Figure 3.13: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
 
 Next, let's use our site template to create our Engineering, Marketing and Legal
 sites. Go to the Control Panel and click on *Sites*. Then click *Add* &rarr;
@@ -817,7 +826,7 @@ it's possible to select a theme, a layout template, to add portlets to the page
 and to configure portlet preferences. Both sites and site templates can utilize
 page templates for creating new pages.
 
-![Figure 3.13: Page Templates](../../images/server-configuration-page-templates.png)
+![Figure 3.14: Page Templates](../../images/server-configuration-page-templates.png)
 
 You can edit or delete existing page templates, configure their permissions, or
 add new page templates. By default three sample page templates are provided:
@@ -861,7 +870,7 @@ page templates when creating a new page. If you want any user who can create a
 page to be able to use the page template, just check the *View* permission for
 the *User* role.
 
-![Figure 3.14: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
+![Figure 3.15: Selecting a Page Template](../../images/control-panel-selecting-page-template.png)
 
 To use your template to create a new page, just navigate to a page over which
 you have site administrator privileges and select *Add* &rarr; *Page* from the
@@ -871,7 +880,7 @@ selector menu, select the site to which you'd like to add a page and then click
 on the *Site Pages* link. Then click the *Add Page* button, type a name, select
 your template from the drop down menu and click *Add Page* to finish.
 
-![Figure 3.15: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
+![Figure 3.16: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
 
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
@@ -937,7 +946,7 @@ translation, you must finish creating the content in your default language and
 save it. Once you've done that, editing the content provides you with the option
 to *Add Translation*.
 
-![Figure 3.16: Adding a translation](../../images/04-web-content-content-translation.png)
+![Figure 3.17: Adding a translation](../../images/04-web-content-content-translation.png)
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list or by entering the language you want to use in the search box.
@@ -946,7 +955,7 @@ you to easily compare the original with the new translation. Once you are done
 with the translation, click *Save* and the translation is added to the list of
 *Available Translations*.
 
-![Figure 3.17: Adding a translation](../../images/04-web-content-content-translation-2.png)
+![Figure 3.18: Adding a translation](../../images/04-web-content-content-translation-2.png)
 
 The ability to completely delete a translation in one step has also been added.
 Instead of simply disabling a translation or having to go through a multistep
@@ -993,7 +1002,7 @@ to keep your site current and free from outdated (and perhaps incorrect)
 information. The scheduler is built right into the form your users access to add
 web content, in the same column as the structure and template selectors.
 
-![Figure 3.18: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
+![Figure 3.19: Schedule for Publishing Content](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -1115,9 +1124,7 @@ the context menu selector. Then click on *Site Settings* in the Control Panel
 menu and then on *Staging* in the menu at the left. Select *Remote Live* under
 Staging Type and additional options appear.
 
-![Figure 3.19: After your remote Liferay server and local Liferay server have
-been configured to communicate with each other, you have to specify a few Remote
-Live connection settings.](../../images/remote-live-staging-settings.png)
+![Figure 3.20: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
 field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
@@ -1193,7 +1200,7 @@ it's important to quickly publish a fix. If you're following the Nose-ster
 example, check *Enabled On Public Pages* to enable page versioning for the
 Nose-ste site and then click *Save*.
 
-![Figure 3.20: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 Before you activate staging, you can choose which portlets' data should be
 copied to staging. We'll cover many of the collaboration portlets listed under
@@ -1223,7 +1230,7 @@ options are restored and you can access some new options related to staging. If
 you're following along with the Nose-ster example, navigate back to the News and
 Events page and click on *Staging* to get your page editing capabilities back.
 
-![Figure 3.21: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.22: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 Add the Calendar portlet and then click on *Live* from the Dockbar. Notice that
 the Calendar portlet isn't there. That's because you've staged a change to the
@@ -1270,7 +1277,7 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for Calendar Events, the event needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.22: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+![Figure 3.23: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
 
 Web content tends to be frequently updated, often more so than other kinds of
 content. For some web content articles, this can result in very high numbers of
@@ -1284,7 +1291,7 @@ displayed in a Web Content Display portlet on one of your pages and then click
 popup, expand the Applications heading and scroll down until you see the section
 for Web Content.
 
-![Figure 3.23: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+![Figure 3.24: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
 
 Liferay 6.2 also added a portal property,
 `journal.publish.version.history.by.default`, that sets the default behavior. By
@@ -1384,13 +1391,13 @@ variations toolbar. When you decide which page variation should be published,
 mark it as *Ready for Publication*. Only one page variation can be marked as
 ready for publication and that is the one that gets published to the live site.
 
-![Figure 3.24: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
+![Figure 3.25: Creating a new Page Variation](../../images/04-web-content-add-site-pages-variation.png)
 
 For example, we could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 3.25: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.26: The Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations.
 To merge two Site Pages Variations, you need to go to the Manage Site Variations
@@ -1442,7 +1449,7 @@ Sites* page then and then select *Actions &rarr; Manage Memberships* for the
 site within which you want to create a team. Finally, click *View &rarr; Teams*
 and click the Add Team button.
 
-![Figure 3.26: Creating a Team within a Site](../../images/01-creating-a-team.png)
+![Figure 3.27: Creating a Team within a Site](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
 click *Save*. Your new team will appear in the list. To add members, simply
@@ -1454,7 +1461,7 @@ itself. Remember the portlet options link is the wrench symbol at the top of a
 portlet. This enables users who wouldn't have access to all of the necessary
 options in the Control Panel to manage permissions through teams.
 
-![Figure 3.27: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
+![Figure 3.28: Assigning Portlet Permissions to a Team](../../images/01-assigning-portlet-permissions-to-teams.png)
 
 To give a team access to a particular portlet function, access the *Permissions*
 tab of a portlet residing on a page, check the boxes corresponding to
@@ -1527,8 +1534,7 @@ and lets you add more. To add rules to a rule group, select *Actions*
 &rarr; *Manage Rules*, or click on a rule group to edit it, and then click
 the *Manage Rules* link.
 
-![Figure 3.28: You can manage device rules from the Mobile Device Rules
-administrative page.](../../images/mobile-device-rules.png)
+![Figure 3.29: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups
 selected for a particular site or page, determine which rule group's actions are
@@ -1540,8 +1546,7 @@ available.  The rules are designed, however, to be extensible, and additional
 rule types can be added by your developers. Once added, you can edit the rule to
 specify a device type and operating system.
 
-![Figure 3.29: You need to install the Device Recognition Provider plugin to
-populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.30: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device rule groups and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a rule group
@@ -1560,9 +1565,7 @@ site or page and order them by priority. The rule groups are checked in
 decreasing order of priority: the actions defined by the first rule group that
 applies are executed.
 
-![Figure 3.30: You can select a mobile device rule group to apply for a site or
-page from the Site Pages section of the Control
-Panel.](../../images/mobile-device-selection.png)
+![Figure 3.31: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the Control Panel.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage
 Actions* button and then click *Add Action*. By default, there are four kinds of
@@ -1612,9 +1615,7 @@ Rules page of the Control Panel. Click on *Add Rule Group*, enter the name
 *Android and Bada Mobile Phones*, and click *Save*. You'll see the message, *No
 rules are configured for this rule group.*
 
-![Figure 3.31: After adding a new rule, you'll see a message indicating that no
-rules have been configured for the rule
-group.](../../images/no-rule-groups-configured.png)
+![Figure 3.32: After adding a new rule, you'll see a message indicating that no rules have been configured for the rule group.](../../images/no-rule-groups-configured.png)
 
 Click the *Manage Rules* link and we'll configure our rule group to apply only
 to mobile phones running Android or Bada. Click *Add Rule*, enter *Rule 1* for
@@ -1626,10 +1627,7 @@ click *Save*. Now we just need to define the redirect action for our rule group.
 Make sure Liferay is still selected in the context menu selector and click on
 *Site Pages*. Click on *Mobile Rule Groups* in the navigation menu to the right.
 
-![Figure 3.32: To apply a mobile device rule group to a page set of a site,
-select the site in the context menu selector, click on *Mobile Rule Groups*,
-click *Select Rule Group*, and select the desired rule
-group.](../../images/site-pages-mobile-device-rules.png)
+![Figure 3.33: To apply a mobile device rule group to a page set of a site, select the site in the context menu selector, click on *Mobile Rule Groups*, click *Select Rule Group*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
 
 Click *Select Rule Group* and then click the *Android and Bada Mobile Phones*
 rule group that you configured. Once you've selected your rule group, click 
