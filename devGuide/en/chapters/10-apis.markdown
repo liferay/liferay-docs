@@ -623,63 +623,71 @@ Next we'll explore Liferay's JSON Web Services.
 
 ## JSON Web Services 
 
-JSON Web Services provide convenient access to portal service methods by
-exposing them as JSON HTTP API. This makes services methods easily accessible
-using HTTP requests, not only from JavaScript within the portal, but also from
-any JSON-speaking client.
+*JSON Web Services* let you access portal service methods by exposing them as a
+JSON HTTP API. Services methods are made easily accessible using HTTP requests,
+both from JavaScript within the portal and from any JSON-speaking client. 
 
-JSON Web Service functionality can be split into the following topics:
-registration, configuration, invocation and results. We'll cover each topic
-here.
+We'll cover the following topics as we explore JSON Web Service
+functionality:
 
-### Registering JSON Web Services 
+- Registration
 
-Liferay's developers use a tool called *Service Builder* to build services. All
-remote-enabled services (i.e. entities with `remote-service="true"` in
-`service.xml`) built with Service Builder are exposed as JSON Web Services. When
-Service Builder creates each `-Service.java` interface for a remote-enabled
-service, the `@JSONWebService` annotation is added on the class level of that
-interface. Therefore, *all* of the public methods of that interface become
-registered and available as JSON Web Services.
+- Configuration
 
-A `-Service` interface is a generated source file which is not to be modified by
-by the user directly. Sometimes, however, you need more control over which
-methods to expose and/or hide. To do so, just simply configure the
-`-ServiceImpl` class of the service. When service implementation class
-(`-ServiceImpl`) is annotated with the `@JSONWebService` annotation, the service
-interface is ignored and only the service implementation class is used for
-configuration. In other words, `@JSONWebService` annotations in service
-implementation **override** any JSON Web Service configuration in service
-interface.
+- Invocation 
 
-And that's all! Upon start-up, Liferay Portal scans classes on the classpath for
-annotations. The scanning process is optimized so only portal and service JARs
-are scanned, as well as class raw bytecode content. Each class that uses the
-`@JSONWebService` annotation is loaded and further examined; its methods become
-exposed as JSON API. As explained previously, the `-ServiceImpl` configuration
-overrides the `-Service` interface configuration during registration.
+- Results.
 
-For example, let's look the `DLAppService`: 
+### Registering JSON Web Services
+
+Liferay's developers use a tool called *Service Builder* to build services. When
+you buuild services with Service Builder, all remote-enabled services (i.e.,
+`service.xml` entities with the property `remote-service="true"`) are exposed as
+JSON Web Services. When each `-Service.java` interface is created for a
+remote-enabled service, the `@JSONWebService` annotation is added on the class
+level of that interface. All of the public methods of that interface become
+registered and available as JSON Web Services. 
+
+For the most part, the `-Service.java` interface source file shouldn't be
+directly modified by the user. However, if you need more control over its
+methods (e.g., hiding some methods and exposing others), you can configure the
+`-ServiceImpl` class. When the service implementation class (`-ServiceImpl`) is
+annotated with the `@JSONWebService` annotation, the service interface is
+ignored and the service implementation class is used for configuration in its
+place. In other words, `@JSONWebService` annotations in service implementation
+override any JSON Web Service configuration in service interface.
+
+That's it! It's as easy as stealing candy from a baby (but not as mean)! When
+you start Liferay Portal, it scans classes on the classpath for annotations. The
+scanning process is optimized so only portal and service JARs are scanned, as
+well as class raw bytecode content. Each class that uses the `@JSONWebService`
+annotation is loaded and further examined; its methods become exposed as JSON
+API. As explained previously, the `-ServiceImpl` configuration overrides the
+`-Service` interface configuration during registration.
+
+As an example, let's register the `DLAppService`: 
 
     @JSONWebService
     public interface DLAppService {
     ...
 
-It contains the annotation found on portal startup. Notice the following lines
-in the console output when the debug log level is set:
+The `@JSONWebService` annotation is found on portal startup. You'll see the
+following lines in the console output when the debug log level is set:
 
     10:55:06,595 DEBUG [JSONWebServiceConfigurator:121] Configure JSON web service actions
     10:55:06,938 DEBUG [JSONWebServiceConfigurator:136] Configuring 820 actions in ... ms
 
-At this point, scanning and registration is done and all service methods (those
-of `DLAppService` and of other services) are registered as JSON Web Services.
+Scanning and registration is complete and all service methods (those of
+`DLAppService` and of other services) are registered as JSON Web Services. 
+
+<!--What "other services"? -->
 
 #### Registering Plugin JSON Web Services 
 
 Custom portlets can be registered and scanned for JSON web services, too.
-Services that use the `@JSONWebService` annotation become part of the JSON API. Since scanning of portlet
-services is not enabled by default, add the following servlet definition in your
-portlet's `web.xml`:
+Services that use the `@JSONWebService` annotation become part of the JSON API.
+Scanning of portlet services isn't enabled by default; you need to add the
+following servlet definition in your portlet's `web.xml`: 
 
         <web-app>
             ...
@@ -720,49 +728,56 @@ portlet's `web.xml`:
             ...
         </web-app>
 
-This enables the servlet to scan and register your portlet's JSON Web Services.
+Now the servlet can scan and register your portlet's JSON Web Services. 
 
 #### Mapping and naming conventions 
 
-Mapped URLs of exposed service methods are formed using the following naming
-convention:
+You can form mapped URLs of exposed service using the following naming
+convention: 
 
     http://[server]:[port]/api/jsonws/[service-class-name]/[service-method-name]
 
-where:
+The `[server]` and `[port]` items are self explanatory. Let's look at the other
+bracketed item more closely: 
 
-+ **service-class-name** is the name generated from service class name, by
-removing the `Service` or `ServiceImpl` suffix and converting it to a lowercase
-name.
-+ **service-method-name** is generated from the service method name, by
-converting the camel-case method name to a lowercase separated-by-dash name.
+- `service-class-name` is generated from the service's class name by removing
+the `Service` or `ServiceImpl` suffix and making it lower case. 
 
-For example, the following service method ...
+- `service-method-name` is generated from the service's method name by
+converting its camel case to lower case and using dashes (`-`) to separate
+words. 
+
+Let's demonstrate by mapping a service method's URL using the above naming
+conventions: 
+
+- First, here's the service method we want to map: 
 
     @JSONWebService
     public interface UserService {
         public com.liferay.portal.model.User getUserById(long userId) {...}
 
-... is mapped to the following URL:
+- Here's what the service method's URL looks like: 
 
     http://localhost:8080/api/jsonws/user-service/get-user-by-id
 
-Each service method is also bound to one HTTP method type. All methods having
-names starting with `get`, `is` or `has` are assumed to be read-only methods and
-are therefore mapped as GET HTTP methods, by default. All other methods are
-mapped as POST HTTP methods.
+Each service method is bound to one HTTP method type. Any method name starting
+with `get`, `is` or `has` are assumed to be read-only methods and are mapped as
+*GET HTTP* methods by default. All other methods are mapped as *POST HTTP*
+methods. 
 
-For plugins, you have two options for accessing their JSON Web Services.
+There are two ways to access a plugin's JSON Web Services. We'll call them,
+ingeniously, *Option 1* and *Option 2*. 
 
-*Option 1* - Accessing the plugin service via the plugin context (e.g. your custom portlet's context):
+- *Option 1*: Access the plugin service via the plugin context (e.g. your custom
+portlet's context):
 
         http://[server]:[port]/[plugin-context]/api/jsonws/[service-class-name]/[service-method-name]
 
-However, this calls the plugin's service in a separate web application, that is
-not aware of the user's current session in the portal. As a result, accessing
-the service in this manner requires additional authentication.
+This calls the plugin's service in a separate web application that is not aware
+of the user's current session in the portal. As a result, accessing the service
+in this manner requires additional authentication. Who has time for that? 
 
-*Option 2* - Accessing the plugin service via the portal context:
+- *Option 2*: Accessing the plugin service via the portal context:
 
         http://[server]:[port]/[portal-context]/api/jsonws/[plugin-context].[service-class-name]/[service-method-name]
 
