@@ -1055,10 +1055,10 @@ different directory structure.
 The following table illustrates the differences in location of the Java source
 and web source code for a Maven project and a Plugins SDK project: 
 
-Location    | &nbsp;Maven project | &nbsp;Plugins SDK project |
------------ | ------------------- | ------------------------- |
-Java source | &nbsp;&nbsp;`src/main/java`&nbsp;&nbsp;   | `docroot/WEB-INF/src` |
-Web source  | &nbsp;&nbsp;`src/main/webapp` | `docroot`             |
+Location    | Maven project     | Plugins SDK project   |
+----------- | ----------------- | --------------------- |
+Java source | `src/main/java`   | `docroot/WEB-INF/src` |
+Web source  | `src/main/webapp` | `docroot`             |
 
 To view the full directory structure of a portlet developed by Ant, visit our
 [Anatomy of a
@@ -1152,9 +1152,9 @@ way as the `docroot/_diffs/` folder. For example, `custom.css` should go in
 Here's a table describing the directory structure differences between themes
 created using Maven and themes created using the Plugins SDK: 
 
-Location       | &nbsp;Maven project | &nbsp;Plugins SDK project |
--------------- | ------------------- | ------------------------- |
-customizations | &nbsp;&nbsp;`src/main/webapp`&nbsp;&nbsp; | `docroot/_diffs` |
+Location       | Maven project     | Plugins SDK project |
+-------------- | ----------------- | ------------------- |
+customizations | `src/main/webapp` | `docroot/_diffs`    |
 
 To view the directory structure of a theme developed by Ant, visit the [Anatomy
 of a
