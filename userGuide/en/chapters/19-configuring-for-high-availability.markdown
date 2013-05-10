@@ -691,7 +691,7 @@ easy, right? Of course, if you have existing indexes, you'll want to reindex as
 described in the previous section once you have Cluster Link enabled on all your
 nodes. 
 
-### Distributed Caching  
+### Distributed Caching   [](id=lp-6-1-ugen19-distributed-caching---0)
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
@@ -732,7 +732,7 @@ see how to do this with a plugin first.
 The next thing we'll cover about caching is a special EE-only optimization that
 can be made to the cache. 
 
-#### Enhanced distributed cache algorithm
+#### Enhanced distributed cache algorithm [](id=lp-6-1-ugen19-enhanced-distributed-cache-algorithm-0)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -794,7 +794,7 @@ to use the default Ehcache settings just by enabling Cluster Link. If you need
 to tweak the cache for your site, you have two options: you can modify Ehcache
 settings with a plugin or you can modify them directly.
 
-#### Modifying the Ehcache settings with a plugin  
+#### Modifying the Ehcache settings with a plugin   [](id=lp-6-1-ugen19-modifying-the-ehcache-settings-with-a-plugin---0)
 
 A benefit of working with plugins is that you can quickly install a plugin on
 each node of your cluster without taking down the cluster. We'll cover this
@@ -982,7 +982,7 @@ systems), but for completeness, we'll go ahead and tell you how to do it anyway.
 But you've been forewarned: it's far better to use one of the other methods of
 clustering your search index. 
 
-#### Sharing a search index (not recommended unless you have a file locking-aware SAN)   
+#### Sharing a search index (not recommended unless you have a file locking-aware SAN)    [](id=lp-6-1-ugen19-sharing-a-search-index-not-recommended-unless-you-have-a-fi-0)
 
 If you wish to have a shared index (and we really hope you don't), you'll need
 to either share the index on the file system or in the database. This requires

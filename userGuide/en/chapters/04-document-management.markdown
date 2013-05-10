@@ -278,7 +278,7 @@ been created they can be included in any number of document types as additional
 metadata sets. Next, let's take a look at tags. Tags can be attached to most
 forms of web content that can be created in Liferay, including documents.
 
-## Alternative File Repository Options
+## Alternative File Repository Options [](id=lp-6-1-ugen04-alternative-file-repository-options-0)
 
 By default, Liferay stores documents and media files on the file system of the
 server where it's running. You can choose a specific location for the document
@@ -313,7 +313,7 @@ of allowed file extensions, which types of files should be indexed, and more.
 
 Next, let's look at mounting external repositories. 
 
-## Using External Repositories  
+## Using External Repositories   [](id=lp-6-1-ugen04-using-external-repositories---0)
 
 Adding repositories in Documents and Media is a new feature in Liferay 6.1.
 Content Management Interoperability Services (CMIS) is a specification for

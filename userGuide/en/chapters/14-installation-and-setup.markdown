@@ -2054,7 +2054,7 @@ files, it's time to deploy Liferay.
 
 Liferay is now successfully installed on JBoss 5.1. 
 
-### Deploying plugins
+### Deploying plugins [](id=lp-6-1-ugen14-deploying-plugins-0)
 
 Add a `jboss-classloading.xml` to the `WEB-INF` folder of each plugin, with the
 following content:
