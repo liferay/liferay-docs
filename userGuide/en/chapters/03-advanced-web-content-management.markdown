@@ -90,6 +90,7 @@ The first way to access the Manage Structures interface is simply by clicking
 structures that exist in your currently selected scope. Here, you can add new
 web content structures, edit existing ones, manage the templates associated with
 a structure, edit the permissions of a structure, and copy or delete structures.
+
 Copying web content structures can be useful if you'd like to create a new web
 content structure that's similar to an existing one, but you don't want to start
 from scratch. Liferay generates a unique portal ID for the copied structure, but
@@ -98,8 +99,8 @@ as that of the original. Once you've copied a web content structure, you should
 enter a new name for it to avoid confusing it with the original. When you copy a
 web content structure, you'll be prompted to choose whether to copy any detail
 templates or list templates associated with the structure. For information on
-detail templates and list templates, please refer to chapter 9 on Dynamic Data
-Lists.
+detail templates and list templates, please refer to chapter 9 on [Dynamic Data
+Lists](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-liferay).
 
 ![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
 
@@ -119,6 +120,16 @@ the elements. To remove it from the structure, simply select the *Delete* icon
 duplicate the element, which can be done by selecting the *Duplicate* button.
 We'll explain the *Edit* button later.
 
+Web content structures also have the capability of inheriting characteristics
+from other structures. When a parent structure is configured, the child
+structure inherits the parent's fields and settings. Using this feature is
+helpful when you want to make a similar structure to one that already exists.
+For example, if you'd like to create an in-depth Nose-ster sports article in
+addition to a regular Nose-ster sports article, you can simply inherit the
+characteristics of the regular article and only add additional fields to the
+more in-depth article. When the in-depth article is configured, it will display
+its parent's fields in addition to its own fields.
+
 Another method to edit your structure is switching to *Source* mode and manually
 customizing your structure by editing its XML file. You'll notice by default the
 *View* mode is selected. Click the *Source* tab to switch to Source mode. This
@@ -130,27 +141,26 @@ Take a moment to add, delete, and rearrange different elements.
 
 Liferay supports the following fields in structures:
 
-**Boolean:** Allows you to add a checkbox onto your structure, which stores
-either `true` (checked) or `false` (unchecked). Template developers can use this
-as a display rule.
+**Boolean:** Adds a checkbox onto your structure, which stores either `true`
+(checked) or `false` (unchecked). Template developers can use this as a display
+rule.
 
-**Date:** a preformatted text field that displays a convenient date picker to
-assist in selecting the desired data. The format for the date is governed by the
-current locale.
+**Date:** Adds a preformatted text field that displays a convenient date picker
+to assist in selecting the desired data. The format for the date is governed by
+the current locale.
 
 **Decimal:** Similar to *Number*, except that it required a decimal point (.) be
 present.
 
-**Documents and Media:** Allows you to add the Documents and Media folder
-hierarchy to your structure.
+**Documents and Media:** Adds the Documents and Media folder hierarchy to your
+structure.
 
 **File Upload:** Uploads a document to attach. Uploads are stored in Documents
 and Media, in an existing folder or in the user's default upload action.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
-**Image:** Allows you to add the browse image application into your
-structure.
+**Image:** Adds the browse image application into your structure.
 
 **Integer:** Similar to *Number*, except that it constrains user input to
 non-fractional numbers.
@@ -163,8 +173,8 @@ constraints on the kind of number entered.
 **Radio:** Presents the user with a list of options to choose from using radio
 button inputs.
 
-**Select:** Allows you to add a select box (single or multi-selection) onto your
-structure.
+**Select:** Presents a selection of options for the user to choose from using a
+combo box. Can be configured to allow multiple selections, unlike *Radio*.
 
 **Text:** Used for items such as titles and headings.
 
@@ -240,12 +250,15 @@ extensions, including the character ., and Liferay checks the extension before
 the file can be uploaded. To allow all file types, input an asterisk: "\*" (only
 available for File Upload).
 
-**Options:** Changes the options available for radio selection. You're able to
-add and remove options as well as edit each individual option's display name and
-value (only available for Radio and Select).
-
-**Multiple:** Select *Yes* to enable a multi-selection list. (only available for
+**Multiple:** Select *Yes* to enable a multi-selection list (only available for
 Select).
+
+**Options:** Changes the options available for selection. You're able to add and
+remove options as well as edit each individual option's display name and value
+(only available for Radio and Select).
+
+**Read Only:** Select *Yes* to disable the ability to modify or delete uploaded
+files (only available for File Upload).
 
 For the Nose-ster structure, type something in the *Tip* field that helps users
 know what to put into the Body element (example: *This is an HTML text area for
