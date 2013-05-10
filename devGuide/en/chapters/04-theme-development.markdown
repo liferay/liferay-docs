@@ -639,7 +639,7 @@ introduced in Liferay 6.1 is only applied out-of-the-box in Liferay CE.) The
 welcome theme and the pages and content that it imports to the default site
 provide a good example of the resources importer's functionality.
 
-![Figure 4.9: The welcome theme uses the resources importer to import pages and
+![Figure 4.8: The welcome theme uses the resources importer to import pages and
 content to the default site of a fresh Liferay
 installation.](../../images/welcome-theme.png)
 
