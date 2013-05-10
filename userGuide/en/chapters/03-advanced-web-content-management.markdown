@@ -7,6 +7,7 @@ complex web content management techniques. But don't be alarmed, it's not too
 intense. We'll cover the following topics:
 
 - Web content structures and templates
+- RSS Feeds
 - Leveraging Liferay's multi-site capabilities
 - Using page templates and site templates
 - Allowing users to customize site pages
@@ -461,7 +462,115 @@ both update and delete. Liferay Portal makes it possible to assign permissions
 based on the roles and responsibilities within your organization.
 
 Now that you understand the role structures and templates play in creating web
-content, let's look at how you can use Liferay to manage multiple sites.
+content, let's look at how to create RSS feeds in Liferay.
+
+## Managing RSS feeds in Liferay
+
+RSS is a family of web feed formats used to publish frequently updated works
+such as blog entries and news articles. RSS allows users to stay up-to-date with
+your site's content without actually having to visit your site! Instead, they
+can subscribe to your site's RSS feed with an RSS feed reader. Their RSS reader
+reads your site's RSS feed and displays information about all the web content
+that's published on your site, such as each article's title and publication
+date. If one of your site's web content articles grabs their attention, then
+they can follow their RSS reader's link to the article's full content on your
+site. Many RSS readers are available today, including web-based readers, ones
+for the Windows, Mac, and Linux platforms, and ones for mobile devices. Let's
+see how to create RSS feeds in Liferay.
+
+### Managing RSS feeds from the Control Panel
+
+To manage a Liferay site's RSS feeds, navigate to the Control Panel, select your
+site in the Control Panel's context menu selector, and click on *Web Content*.
+Site administrators can use this Web Content administration portlet to manage
+their site's web content, including web content structures and templates, which
+we examined above. Site administrators can also use the Control Panel Web
+Content administration portlet to manage their site's RSS feeds. Click *Manage*
+&rarr; *Feeds* if you'd like to add, edit, or delete RSS feeds.
+
+![Figure 3.x: Clicking *Manage* &rarr; *Feeds* from the Control Panel's Web Content administration portlet opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
+
+Click the *Add Feed* button to add a new feed. You need to enter a name and
+select a target page for the feed. A feed's target page serves two purposes:
+
+1. The site to which the target page belongs determines which web content
+   articles appear in the feed. For example, if the target page belongs to the
+   Marketing site, only web content articles belong to the Marketing site will
+   appear in the feed. 
+
+2. The target page is the page where "orphaned" web content articles will be
+   displayed. "Orphaned" web content articles are articles that have been
+   published in your site but have not been configured to be displayed in
+   specific Web Content Display portlets. Liferay RSS feeds can provide links to
+   any published web content articles, both "orphaned" articles and articles
+   that have been configured to be displayed in specific Web Content Display
+   portlets. For articles that have been configured to be displayed in a
+   specific portlet, the RSS feeds' links point to the portal page of that
+   portlet. For "orphaned" articles, the RSS feeds' links point to the feed's
+   target page. When users click on such links for "orphaned" articles, the full
+   content of the "orphaned" article is displayed on the target page.
+
+![Figure 3.x: To create a new RSS feed, you only need to specify a name and a target page. Of course, you can also configure other features the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
+
+To specify a target page, you need to enter the target page's friendly URL. Note
+that friendly URLs do not include the host name. For example, the friendly URL
+of a public page called *Welcome* belonging to a site called *Marketing* might
+look like this: `/web/marketing/welcome`. Optionally, you can specify a target
+portlet ID. This would be the portlet ID of a Web Content Display portlet on the
+target page in which "orphaned" web content should be displayed. The portlet
+must exist or else the content will not displayed. The URL field contains the
+address of your RSS feed. It appears after you've actually created the feed by
+clicking *Save*.
+
+The final two sections of the *Add Feed* form allow you customize which web
+content articles appear in your feed.
+
+1. The Web Content Constraints section allows you to select a web content type
+   and a structure with which to filter the articles that appear in your feed.
+   You can select a particular type of web content such as *Announcements*,
+   *News*, or *Press Release*. Only articles of the type you select will appear
+   in your feed. You can also choose for only web content articles that have a
+   particular structure to appear in your feed. This is useful since customized
+   kinds of web content articles are often created using web content structures.
+
+2. The Presentation Settings section allows you to customize additional details
+   about your feed and how articles are displayed in your feed. Leave the
+   Feed Item Content set to *Web Content Description* if you'd just like a
+   description of each article to appear in your feed. Set it to *Rendered Web
+   Content: Use Default Template* if you'd like the full content of each article
+   to appear in the feed. Customizing the Feed Type allows you to choose which
+   web feed language to use for your feed. You can choose *Atom 1.0* (the
+   default), *RSS 1.0*, or *RSS 2.0*. Customize the *Maximum Items to Display*
+   to choose the maximum number of articles should appear in your feed at one
+   time. Leave the Order By Column set to *Modified Date* to have articles
+   arranged in order from the last time they were published or modified. You can
+   set the Order by Column to *Display Date* if you want to have articles
+   arranged in order from the time they were configured to be displayed in a
+   specific Web Content Display portlet. Lastly, you can leave the Order by Type
+   set to *Ascending* to have the oldest articles at the top of the feed or you
+   can set it to *Descending* to have the newest articles at the top of the
+   feed.
+
+When you're done configuring your RSS feed, you can click *Preview* to see how
+your feed looks. If you're satisfied, click *Save* to create your feed.
+
+Once one or more feeds have been created, they'll appear in a list in the Feeds
+popup window when you click *Manage* &rarr; *Feeds*. You can edit existing feeds
+using the same form used for creating them. The main difference is that when you
+edit an existing feed, the URL field is populated. Copy this URL into a new
+browser tab or window to test your feed. From the Feeds popup window, you can
+also customize the permissions of feeds or delete feeds.
+
+It's possible to completely disable RSS feeds at the portal level. You can do
+this by setting the `rss.feeds.enabled` property to `false`. By default, it's
+set to `true`. If you keep the default, RSS enabled, you can make several other
+possible customizations. Please refer to the RSS section of your
+`portal.properties` file for details.
+
+### Using the RSS portlet
+
+Now that you understand how to create, manage, and use RSS feeds, let's look at
+how you can use Liferay to manage multiple sites.
 
 ## Leveraging Liferay's multi-site capabilities  
 
