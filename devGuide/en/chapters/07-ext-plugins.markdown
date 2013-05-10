@@ -195,7 +195,7 @@ isn't assured, and you can cause unintended system behavior as a result.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** After creating an Ext plugin,
+ ![tip](../../images/tip-pen-paper.png) **Tip:** After creating an Ext plugin,
  remove the files you don't need to customize from
  `docroot/WEB-INF/ext-web/docroot/WEB-INF`. Liferay keeps track of the files
  deployed by each Ext plugin and won't let you deploy multiple Ext plugins that
@@ -279,7 +279,7 @@ property value.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Some Liferay bundles come
+ ![note](../../images/tip-pen-paper.png) **Note:** Some Liferay bundles come
  installed with a sample website. It's useful for showcasing certain features of
  Liferay, but if you removed it, you likely don't want it reinstalled each time
  your bundle is unzipped. To prevent the reinstallation of 7-Cogs, unzip your
@@ -873,7 +873,7 @@ version of Liferay is released.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** This is an advanced technique;
+ ![tip](../../images/tip-pen-paper.png) **Tip:** This is an advanced technique;
  it may have a large impact on the maintainability of your code, especially if
  abused. Seek alternatives, and if you're sure this is your only option, think
  of it as a short term solution. Contact Liferay's developers about applying the
@@ -902,13 +902,13 @@ small and easy to transport. Execute these steps on the server:
 
 1. Redeploy Liferay:
 
-   If this is your first time deploying your Ext plugin to this server, skip
-   this step. Otherwise, start by executing the same steps you first used to
-   deploy Liferay on your app server. If you're using a bundle, unzip it again.
-   If you installed Liferay manually on an existing application server, you'll
-   need to redeploy the Liferay `.war` file and copy both the libraries required
-   globally by Liferay and your Ext plugin to the appropriate directory within
-   the application server. 
+    If this is your first time deploying your Ext plugin to this server, skip
+    this step. Otherwise, start by executing the same steps you first used to
+    deploy Liferay on your app server. If you're using a bundle, unzip it again.
+    If you installed Liferay manually on an existing application server, you'll
+    need to redeploy the Liferay `.war` file and copy both the libraries
+    required globally by Liferay and your Ext plugin to the appropriate
+    directory within the application server. 
 
 2. Copy the Ext plugin `.war` into the auto-deploy directory. For a bundled
 Liferay distribution, the `deploy` folder is in Liferay's *root* folder of your
@@ -963,7 +963,7 @@ news; migrating is automated and relatively easy.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** When migrating an extension
+ ![tip](../../images/tip-pen-paper.png) **Tip:** When migrating an extension
  environment, first consider whether any of the extension environment's features
  can be moved into other types of plugins. Portlets and hooks are designed to
  meet specific needs and they're easier to learn. Additionally, they're easier

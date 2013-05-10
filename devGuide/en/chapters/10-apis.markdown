@@ -1,24 +1,33 @@
 # Liferay APIs [](id=liferay-ap-1)
 
-This chapter provides an overview of several of the essential Liferay
-*application programming interfaces* (*APIs*) available to developers. An API is
-a programing interface that can be invoked from your own code, either directly
-through a Java invocation or through web services, to perform an action or set
-of actions.
+An *Application Programing Interface* (API) is a protocol that, when invoked,
+performs an action or set of actions. You can invoke an API from your own code
+directly through a Java invocation, or through web services. This chapter
+provides an overview of several essential Liferay APIs available to you for use
+in developing your Liferay Portal. 
 
-Liferay comes with a host of APIs that expose powerful portal and portlet
-services. You can access Liferay's built-in *portal* services for such entities
-as User, Organization, UserGroup, Company, Role, Permission, ResourcePermission
-and Layout. In addition, you can access Liferay's built-in *portlet* services
-for such portlets as those for blogs, wikis, assets, social equity, and the
-Documents & Media Library.
+Liferay comes with a host of APIs that provide powerful portal and portlet
+services. The following table shows you the entities for which services are
+available:
 
-The APIs can be called via Java method or web service invocations, giving you
-flexibility to implement client code in Java or any other language (even a
-scripting language such as PHP) that supports web service invocations. The APIs
-can be called from within portlet or non-portlet code. You can make calls to the
-APIs *locally* from within the portal or *remotely* outside of the portal's
-*Java virtual machine* (*JVM*).
+ Portal Services      | Portlet Services              |
+--------------------- | ----------------------------- |
+ *User*               | *Documents and Media Library* |
+ *Organization*       | *Blogs*                       |
+ *UserGroup*          | *Wikis*                       |
+ *Company*            | *Assets*                      |
+ *Role*               | *Social Equity*               |
+ *Permission*         |                               |
+ *ResourcePermission* |                               |
+ *Layout*             |                               |
+---
+
+The ability to call Liferay APIs with a Java method or web service invocation
+gives you the flexibility to implement client code in Java or any language
+(even a scripting language such as PHP) that supports web service invocations.
+The APIs can be called from within portlet or non-portlet code. You can make
+calls to the APIs *locally* from within the portal or *remotely* outside of the
+portal's *Java virtual machine* (*JVM*).
 
 This chapter covers the following topics:
 
@@ -2344,6 +2353,22 @@ grandma's gnarly tablet and cousin's awesome new mobile phone can make requests
 to your portal and receive identical content. This will make everyone happy!
 
 You're really getting the hang of Liferay's APIs. Way to go! 
+
+## Liferay's Deprecation Policy [](id=liferay-portal-6-1-api-deprecation-policy)
+
+Methods in Liferay's APIs are generally deprecated when they are no longer
+called by Liferay internally. Methods can be deprecated at any time within a
+maintenance release. Recall that Liferay version numbers consist of a
+three-digit number in the form of major.minor.maintenance, e.g., 6.0.2 (major
+version 6, minor version, maintenance version). A change in the third number
+(e.g., 6.0.2 to 6.0.3) is a maintenance update, also known as a fix pack. Major
+and minor releases introduce new features so they are called feature releases.
+Maintenance updates do not include new features. When a method is deprecated, it
+should no longer be used for custom development.  However, you don't need to
+immediately update your custom code so that it doesn't call the deprecated
+method. Deprecated methods will not be removed during the maintenance of any
+feature release. However, deprecated methods may be removed in future feature
+releases.
 
 ## Conclusion [](id=conclusi-4)
 
