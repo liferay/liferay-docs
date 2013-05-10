@@ -241,12 +241,12 @@ Application Context* in the following figure is *myhelloworldportlet*.
 
 Here's a description of the portlets we're embedding in the layout:
 
-| Portlet |  &nbsp;ID | &nbsp;Row | &nbsp;Column  | &nbsp;Type | &nbsp;Instanceable | &nbsp;Context |
---------- | ----------| --------- | ------------- | ---------- | ------------ | ------------- |
- Navigation  | &nbsp;`71` | &nbsp;2 | &nbsp;1 | &nbsp;core | &nbsp;yes | &nbsp;N/A |
- Search | &nbsp;`3` | &nbsp;2 | &nbsp;4 | &nbsp;core | &nbsp;no | &nbsp;N/A |
- Hello World | &nbsp;`my-hello-world-portlet` | &nbsp;1 | &nbsp;1 | &nbsp;custom | &nbsp;no | &nbsp;myhelloworldportlet |
- Goodbye World | &nbsp;`my-goodbye-world-portlet` | &nbsp;3 | &nbsp;1 | &nbsp;custom | &nbsp;yes | &nbsp;myhelloworldportlet |
+| Portlet      | ID                         | Row | Column | Type   | Instanceable | Context |
+-------------- | -------------------------- | --- | ------ | ------ | ------------ | ------- |
+ Navigation    | `71`                       | 2   | 1      | core   | yes | N/A |
+ Search        | `3`                        | 2   | 4      | core   | no  | N/A |
+ Hello World   | `my-hello-world-portlet`   | 1   | 1      | custom | no  | myhelloworldportlet |
+ Goodbye World | `my-goodbye-world-portlet` | 3   | 1      | custom | yes | myhelloworldportlet |
 ---
 
 Here's the TPL that implements embedding of these portlets:
@@ -297,24 +297,24 @@ See how simple it is to embed portlets in your pages?
 A number of variables are available for you to use in your custom TPL files. For
 your convenience, we've listed all of them in the following table. 
 
-| Variable | &nbsp;Type | &nbsp;Description |
-| -------- | ---------- | ----------------- |
- $processor | &nbsp;com.liferay.portlet.layoutconfiguration.util.velocity.TemplateProcessor | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portlet/layoutconfiguration/util/velocity/TemplateProcessor.html) |
- $request | &nbsp;javax.servlet.http.HttpServletRequest| |
- $themeDisplay | &nbsp;com.liferay.portal.theme.ThemeDisplay | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/ThemeDisplay.html) |
- $company | &nbsp;com.liferay.portal.model.Company | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Company.html) |
- $user | &nbsp;com.liferay.portal.model.User | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
- $realUser| &nbsp;com.liferay.portal.model.User | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
- $layout| &nbsp;com.liferay.portal.model.Layout | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Layout.html) |
- $layouts| &nbsp;java.util.List<com.liferay.portal.model.Layout> ||
- $plid| &nbsp;java.lang.Long ||
- $layoutTypePortlet| &nbsp;com.liferay.portal.model.LayoutTypePortlet | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/LayoutTypePortlet.html) |
- $portletGroupId| &nbsp;java.lang.Long ||
- $locale| &nbsp;java.util.Locale ||
- $timeZone| &nbsp;java.util.TimeZone ||
- $theme| &nbsp;com.liferay.taglib.util.VelocityTaglib | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/taglib/util/VelocityTaglib.html) |
- $colorScheme| &nbsp;com.liferay.portal.model.ColorScheme | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/ColorScheme.html) |
- $portletDisplay| &nbsp;com.liferay.portal.theme.PortletDisplay | &nbsp;[Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/PortletDisplay.html) |
+| Variable | Type | Description |
+| -------- | ---- | ----------- |
+ $processor | com.liferay.portlet.layoutconfiguration.util.velocity.TemplateProcessor | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portlet/layoutconfiguration/util/velocity/TemplateProcessor.html) |
+ $request | javax.servlet.http.HttpServletRequest| |
+ $themeDisplay | com.liferay.portal.theme.ThemeDisplay | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/ThemeDisplay.html) |
+ $company | com.liferay.portal.model.Company | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Company.html) |
+ $user | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
+ $realUser | com.liferay.portal.model.User | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/User.html) |
+ $layout | com.liferay.portal.model.Layout | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/Layout.html) |
+ $layouts | java.util.List<com.liferay.portal.model.Layout> ||
+ $plid | java.lang.Long ||
+ $layoutTypePortlet | com.liferay.portal.model.LayoutTypePortlet | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/LayoutTypePortlet.html) |
+ $portletGroupId | java.lang.Long ||
+ $locale | java.util.Locale ||
+ $timeZone| java.util.TimeZone ||
+ $theme | com.liferay.taglib.util.VelocityTaglib | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/taglib/util/VelocityTaglib.html) |
+ $colorScheme | com.liferay.portal.model.ColorScheme | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/model/ColorScheme.html) |
+ $portletDisplay | com.liferay.portal.theme.PortletDisplay | [Javadoc](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/theme/PortletDisplay.html) |
 ---
 
 Now your layout template toolbox is complete. 
