@@ -546,7 +546,7 @@ Great! You've confirmed that your import was successful; you can now make
 revisions to your configured Liferay IDE project. Next, let's explore Liferay
 IDE's Remote Server Adapter feature. 
 
-## Using Liferay IDE's Remote Server Adapter  [](id=lp-6-1-dgen09-using-liferay-ides-remote-server-adapter--0)
+## Using Liferay IDE's Remote Server Adapter  [](id=liferay-portal-6-1-liferay-ide-remote-server-adapter)
 
 The *Remote Server Adapter* is a feature that lets you deploy your Liferay
 projects to a remote Liferay Portal server; it first became available in Liferay
@@ -607,7 +607,7 @@ Liferay IDE to the remote Liferay server.
 
 Let's start by configuring the Remote Server Adapter. 
 
-### Configuring the Remote Server Adapter  [](id=lp-6-1-dgen09-configuring-the-remote-server-adapter--0)
+### Configuring the Remote Server Adapter  [](id=liferay-portal-6-1-liferay-ide-configure-remote-server-adapter)
 
 You can use Liferay IDE's Remote Server wizard to configure the Remote
 Server Adapter and install the Remote IDE Connector to your remote Liferay
@@ -693,7 +693,7 @@ where you can modify the settings.
 Now that your remote Liferay Portal server is configured, let's test the remote
 server adapter!
 
-### Using the Remote Server Adapter [](id=lp-6-1-dgen09-using-the-remote-server-adapter-0)
+### Using the Remote Server Adapter [](id=liferay-portal-6-1-how-to-use-remote-server-adapter)
 
 Once your remote Liferay Portal server is correctly configured and your local
 Liferay IDE is connected to it, you can begin publishing projects to it and
@@ -1562,109 +1562,109 @@ note the asterisks (`*`); they're used to flag context variables that depend on
 workflow activity. 
 
 
-| &nbsp;*Workflow* Context Variables |||
+| *Workflow* Context Variables |||
    Key | Type | Description |
    --- | ---- | ----------- |
-   `companyId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the company |          
-   `entryClassName` | &nbsp;&nbsp;java.lang.String | Class name for entry used by the task (e.g. com.liferay.portlet.journal.model.JournalArticle) |
-   `entryClassPK` | &nbsp;&nbsp;java.lang.String | Primary key of the entry class |
-   `entryType` | &nbsp;&nbsp;java.lang.String | Type of entry used by the task (e.g. Web Content, Blog Entry, MB Message) |
-   `groupId` | &nbsp;&nbsp;java.lang.string | Primary key of the assigned group |
-   `taskComments*` | &nbsp;&nbsp;java.lang.String | Workflow comments assigned to the task |
-   `taskName*` | &nbsp;&nbsp;java.lang.String | Workflow task that activates the notification (e.g. review) |
-   `transitionName*` | &nbsp;&nbsp;java.lang.String | Name of transition pointing to the task (e.g. approve) |
-   `userId` | &nbsp;&nbsp;java.lang.String | Primary key of the assigned user |
+  `companyId` | java.lang.String | Primary key of the company |          
+  `entryClassName` | java.lang.String | Class name for entry used by the task (e.g. com.liferay.portlet.journal.model.JournalArticle) |
+  `entryClassPK` | java.lang.String | Primary key of the entry class |
+  `entryType` | java.lang.String | Type of entry used by the task (e.g. Web Content, Blog Entry, MB Message) |
+  `groupId` | java.lang.string | Primary key of the assigned group |
+  `taskComments*` | java.lang.String | Workflow comments assigned to the task |
+  `taskName*` | java.lang.String | Workflow task that activates the notification (e.g. review) |
+  `transitionName*` | java.lang.String | Name of transition pointing to the task (e.g. approve) |
+  `userId` | java.lang.String | Primary key of the assigned user |
 ---
 
-| &nbsp;*Web Content* Service Context Variables - obtain via key serviceContext |||
+| *Web Content* Service Context Variables - obtain via key serviceContext |||
    Key | Type | Description |
    --- | ---- | ----------- |
-   `articleId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the web content |
-   `articleURL` | &nbsp;&nbsp;java.lang.String | Link to the web content in maximized mode |
-   `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the web content |
-   `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
-   `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset |
-   `autoArticleId` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether an article ID is generated (e.g. false) |
-   `classNameId` | &nbsp;&nbsp;java.lang.String | Primary key of the class name used by the task |
-   `classPK` | &nbsp;&nbsp;java.lang.String | Primary key of the model entity |
-   `content` | &nbsp;&nbsp;java.lang.String | Content of the web content |
-   `defaultLanguageId` | &nbsp;&nbsp;java.lang.String | Primary key of the default language (e.g. en_US) |
-   `description_en_US` | &nbsp;&nbsp;java.lang.String | Description of the web content (in English) |
-   `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the web content is set to display (e.g. 12) |
-   `displayDateHour` | &nbsp;&nbsp;java.lang.String | Hour the web content is set to display (e.g. 4) |
-   `displayDateMinute` | &nbsp;&nbsp;java.lang.String | Minute the web content is set to display (e.g. 26) |
-   `displayDateMonth` | &nbsp;&nbsp;java.lang.String | Month the web content is set to display (e.g. 5) |
-   `displayDateYear` | &nbsp;&nbsp;java.lang.String | Year the web content is set to display (e.g. 2012) |
-   `doAsGroupId` | &nbsp;&nbsp;java.lang.String | Primary key of the organization associated with the web content |
-   `folderId` | &nbsp;&nbsp;java.lang.String | Primary key of the web content's folder |
-   `indexable` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the web content is searchable (e.g. true) |
-   `indexableCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Searchable* checkbox is checked (e.g. false) |
-   `inputPermissionsShowOptions` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether permission options are viewable (e.g. true) |
-   `inputPermissionsViewRole` | &nbsp;&nbsp;java.lang.String | Role type that has permission to view web content (e.g. Site Member) |
-   `languageId` | &nbsp;&nbsp;java.lang.String | Primary key of the selected language (e.g. en_US) |
-   `localized` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Localizable* checkbox is selected (e.g. false) |
-   `neverExpire` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the web content is set to expire (e.g. true) |
-   `neverExpireCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Never Auto Expire* checkbox is checked (e.g. false) |
-   `neverReview` | &nbsp;&nbsp;java.lang.String |  Boolean variable indicating whether the web content is set to review (e.g. true) |
-   `neverReviewCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Never Review* checkbox is checked (e.g. false) |
-   `refererPlid` | &nbsp;&nbsp;java.lang.String | Primary key of the page hosting the web content |
-   `smallImage` | &nbsp;&nbsp;java.lang.String | Indicates whether a small image is being used (e.g. on) |
-   `smallImageURL` | &nbsp;&nbsp;java.lang.String | URL for the web content's attached image |
-   `structureDescription` | &nbsp;&nbsp;java.lang.String | Description of the configured structure |
-   `structureId` | &nbsp;&nbsp;java.lang.String | Primary key of the configured structure |
-   `structureName` | &nbsp;&nbsp;java.lang.String | Name of the configured structure |
-   `structureXSD` | &nbsp;&nbsp;java.lang.String | The XML schema definition used for the configured structure |
-   `templateId` | &nbsp;&nbsp;java.lang.String | Primary key of the configured template |
-   `title_en_US` | &nbsp;&nbsp;java.lang.String | Title of the web content (in English) |
-   `type` | &nbsp;&nbsp;java.lang.String | Categorization type associated with the web content  (e.g. Press Release) |
-   `variableName` | &nbsp;&nbsp;java.lang.String | Custom variable name set for the web content's configured structure (e.g. Content) |
-   `version` | &nbsp;&nbsp;java.lang.String | Current version of the web content (e.g. 1.0) |
-   `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 1) |
+  `articleId` | java.lang.String | Primary key of the web content |
+  `articleURL` | java.lang.String | Link to the web content in maximized mode |
+  `assetLinkEntryIds` | java.lang.String | Primary keys of the asset entries linked to the web content |
+  `assetLinksSearchContainerPrimaryKeys` | java.lang.String | Primary keys of the asset link search container |
+  `assetTagNames` | java.lang.String | Tag names applied the asset |
+  `autoArticleId` | java.lang.String | Boolean variable indicating whether an article ID is generated (e.g. false) |
+  `classNameId` | java.lang.String | Primary key of the class name used by the task |
+  `classPK` | java.lang.String | Primary key of the model entity |
+  `content` | java.lang.String | Content of the web content |
+  `defaultLanguageId` | java.lang.String | Primary key of the default language (e.g. en_US) |
+  `description_en_US` | java.lang.String | Description of the web content (in English) |
+  `displayDateDay` | java.lang.String | Calendar day the web content is set to display (e.g. 12) |
+  `displayDateHour` | java.lang.String | Hour the web content is set to display (e.g. 4) |
+  `displayDateMinute` | java.lang.String | Minute the web content is set to display (e.g. 26) |
+  `displayDateMonth` | java.lang.String | Month the web content is set to display (e.g. 5) |
+  `displayDateYear` | java.lang.String | Year the web content is set to display (e.g. 2012) |
+  `doAsGroupId` | java.lang.String | Primary key of the organization associated with the web content |
+  `folderId` | java.lang.String | Primary key of the web content's folder |
+  `indexable` | java.lang.String | Boolean variable indicating whether the web content is searchable (e.g. true) |
+  `indexableCheckbox` | java.lang.String | Boolean variable indicating whether the *Searchable* checkbox is checked (e.g. false) |
+  `inputPermissionsShowOptions` | java.lang.String | Boolean variable indicating whether permission options are viewable (e.g. true) |
+  `inputPermissionsViewRole` | java.lang.String | Role type that has permission to view web content (e.g. Site Member) |
+  `languageId` | java.lang.String | Primary key of the selected language (e.g. en_US) |
+  `localized` | java.lang.String | Boolean variable indicating whether the *Localizable* checkbox is selected (e.g. false) |
+  `neverExpire` | java.lang.String | Boolean variable indicating whether the web content is set to expire (e.g. true) |
+  `neverExpireCheckbox` | java.lang.String | Boolean variable indicating whether the *Never Auto Expire* checkbox is checked (e.g. false) |
+  `neverReview` | java.lang.String |  Boolean variable indicating whether the web content is set to review (e.g. true) |
+  `neverReviewCheckbox` | java.lang.String | Boolean variable indicating whether the *Never Review* checkbox is checked (e.g. false) |
+  `refererPlid` | java.lang.String | Primary key of the page hosting the web content |
+  `smallImage` | java.lang.String | Indicates whether a small image is being used (e.g. on) |
+  `smallImageURL` | java.lang.String | URL for the web content's attached image |
+  `structureDescription` | java.lang.String | Description of the configured structure |
+  `structureId` | java.lang.String | Primary key of the configured structure |
+  `structureName` | java.lang.String | Name of the configured structure |
+  `structureXSD` | java.lang.String | The XML schema definition used for the configured structure |
+  `templateId` | java.lang.String | Primary key of the configured template |
+  `title_en_US` | java.lang.String | Title of the web content (in English) |
+  `type` | java.lang.String | Categorization type associated with the web content  (e.g. Press Release) |
+  `variableName` | java.lang.String | Custom variable name set for the web content's configured structure (e.g. Content) |
+  `version` | java.lang.String | Current version of the web content (e.g. 1.0) |
+  `workflowAction` | java.lang.String | Numerical value for the workflow action in progress (e.g. 1) |
 ---
 
-| &nbsp;*Blog Entry* Service Context Variables - obtain via key serviceContext |||
-  Key | Type | Description |
-  --- | ---- | ----------- |
-   `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary keys of the asset entries linked to the blog entry |
-   `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the blog entry |
-   `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset (e.g. history, news, programming) |
-   `attachments` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if blog entry has any attachments (e.g. true) |
-   `content` | &nbsp;&nbsp;java.lang.String | Content of the blog entry |
-   `description` | &nbsp;&nbsp;java.lang.String | Description of the blog entry (e.g. The comparison between two Fortune 500 companies) |
-   `displayDateAmPm` | &nbsp;&nbsp;java.lang.String | Time "period" (based on the 12-hour clock) the blog entry is set to display (AM=0, PM=1) |
-   `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the blog entry is set to display (e.g. 3) |
-   `displayDateHour` | &nbsp;&nbsp;java.lang.String | Hour the blog entry is set to display (e.g. 26) |
-   `displayDateMinute` | &nbsp;&nbsp;java.lang.String | Minute the blog entry is set to display (e.g. 32) |
-   `displayDateMonth` | &nbsp;&nbsp;java.lang.String | Month the blog entry is set to display (e.g. 8) |
-   `displayDateYear` | &nbsp;&nbsp;java.lang.String | Year the blog entry is set to display (e.g 2012) |
-   `doAsGroupId` | &nbsp;&nbsp;java.lang.String | Primary key of the organization associated with the blog entry |
-   `editor` | &nbsp;&nbsp;java.lang.String | Content of the blog entry (equivalent to the `content` value) |
-   `entryId` | &nbsp;&nbsp;java.lang.String | Primary key of the blog entry |
-   `refererPlid` | &nbsp;&nbsp;java.lang.String | Primary key of the page hosting the blog entry |
-   `smallImage` | &nbsp;&nbsp;java.lang.String | Indicates whether a small image is being used (e.g. on) |
-   `smallImageURL` | &nbsp;&nbsp;java.lang.String | URL for the blog entry's attached image |
-   `title` | &nbsp;&nbsp;java.lang.String | Title of the blog entry (e.g. My Blog Entry) |
-   `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 2) |
----
-
-| &nbsp;*Message Board Message* Service Context Variables - obtain via key serviceContext |||
+| *Blog Entry* Service Context Variables - obtain via key serviceContext |||
    Key | Type | Description |
    --- | ---- | ----------- |
-   `anonymous` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is anonymous (e.g. true) |
-   `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the message |
-   `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
-   `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset (e.g. sea, sailing, swimming) |
-   `attachments` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the message has any attachments (e.g. false) |
-   `body` | &nbsp;&nbsp;java.lang.String | Content of the message |
-   `editor` | &nbsp;&nbsp;java.lang.String | Content of the message (equivalent to the `body` value) |
-   `mbCategoryId` | &nbsp;&nbsp;java.lang.String | Primary key of the message's category |
-   `messageId` | &nbsp;&nbsp;java.lang.String | Primary key of the message |
-   `parentMessageId` | &nbsp;&nbsp;java.lang.String | Primary key of the message's parent message |
-   `preview` | &nbsp;&nbsp;java.lang.Boolean&nbsp;&nbsp; | Boolean variable indicating if message is available to preview (e.g. true) |
-   `question` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is marked as a question (e.g. false) |
-   `subject` | &nbsp;&nbsp;java.lang.String | Subject line of the message (e.g. My MB Subject) |
-   `threadId` | &nbsp;&nbsp;java.lang.String | Primary key of the message board thread hosting the message |
-   `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 3) |
+  `assetLinkEntryIds` | java.lang.String | Primary keys of the asset entries linked to the blog entry |
+  `assetLinksSearchContainerPrimaryKeys` | java.lang.String | Primary keys of the asset entries linked to the blog entry |
+  `assetTagNames` | java.lang.String | Tag names applied the asset (e.g. history, news, programming) |
+  `attachments` | java.lang.String | Boolean variable indicating if blog entry has any attachments (e.g. true) |
+  `content` | java.lang.String | Content of the blog entry |
+  `description` | java.lang.String | Description of the blog entry (e.g. The comparison between two Fortune 500 companies) |
+  `displayDateAmPm` | java.lang.String | Time "period" (based on the 12-hour clock) the blog entry is set to display (AM=0, PM=1) |
+  `displayDateDay` | java.lang.String | Calendar day the blog entry is set to display (e.g. 3) |
+  `displayDateHour` | java.lang.String | Hour the blog entry is set to display (e.g. 26) |
+  `displayDateMinute` | java.lang.String | Minute the blog entry is set to display (e.g. 32) |
+  `displayDateMonth` | java.lang.String | Month the blog entry is set to display (e.g. 8) |
+  `displayDateYear` | java.lang.String | Year the blog entry is set to display (e.g 2012) |
+  `doAsGroupId` | java.lang.String | Primary key of the organization associated with the blog entry |
+  `editor` | java.lang.String | Content of the blog entry (equivalent to the `content` value) |
+  `entryId` | java.lang.String | Primary key of the blog entry |
+  `refererPlid` | java.lang.String | Primary key of the page hosting the blog entry |
+  `smallImage` | java.lang.String | Indicates whether a small image is being used (e.g. on) |
+  `smallImageURL` | java.lang.String | URL for the blog entry's attached image |
+  `title` | java.lang.String | Title of the blog entry (e.g. My Blog Entry) |
+  `workflowAction` | java.lang.String | Numerical value for the workflow action in progress (e.g. 2) |
+---
+
+| *Message Board Message* Service Context Variables - obtain via key serviceContext |||
+   Key | Type | Description |
+   --- | ---- | ----------- |
+  `anonymous` | java.lang.String | Boolean variable indicating if message is anonymous (e.g. true) |
+  `assetLinkEntryIds` | java.lang.String | Primary keys of the asset entries linked to the message |
+  `assetLinksSearchContainerPrimaryKeys` | java.lang.String | Primary keys of the asset link search container |
+  `assetTagNames` | java.lang.String | Tag names applied the asset (e.g. sea, sailing, swimming) |
+  `attachments` | java.lang.String | Boolean variable indicating whether the message has any attachments (e.g. false) |
+  `body` | java.lang.String | Content of the message |
+  `editor` | java.lang.String | Content of the message (equivalent to the `body` value) |
+  `mbCategoryId` | java.lang.String | Primary key of the message's category |
+  `messageId` | java.lang.String | Primary key of the message |
+  `parentMessageId` | java.lang.String | Primary key of the message's parent message |
+  `preview` | java.lang.Boolean | Boolean variable indicating if message is available to preview (e.g. true) |
+  `question` | java.lang.String | Boolean variable indicating if message is marked as a question (e.g. false) |
+  `subject` | java.lang.String | Subject line of the message (e.g. My MB Subject) |
+  `threadId` | java.lang.String | Primary key of the message board thread hosting the message |
+  `workflowAction` | java.lang.String | Numerical value for the workflow action in progress (e.g. 3) |
 ---
 
 <!--Rich says change these to HTML. -Russ -->
