@@ -177,7 +177,7 @@ To create a repository using Nexus, follow these steps:
 
     ![Figure 8.1: Adding a repository to hold your Liferay artifacts is easy with Nexus OSS.](../../images/maven-nexus-create-repo.png)
 
-    ![note](../../images/tip-pen-paper.png)**Note:** To learn more about each
+    ![note](../../images/tip-pen-paper.png) **Note:** To learn more about each
     type of Nexus repository, read Sonatype's *Managing Repositories* at
     [http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html](http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html).
 
@@ -239,7 +239,7 @@ artifacts.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** You only need to configure a
+![note](../../images/tip-pen-paper.png) **Note:** You only need to configure a
 repository server if you're installing downloaded Liferay CE/EE artifacts from
 a zip file or if you want to share artifacts (e.g., Liferay artifacts and/or
 your plugins) with others. If you're automatically installing Liferay CE
@@ -282,7 +282,7 @@ repository servers configured:
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** The username `admin` and
+![note](../../images/tip-pen-paper.png) **Note:** The username `admin` and
 password `admin123` are the credentials of the default Nexus OSS administrator
 account. If you changed these credentials for your Nexus server, make sure to
 update `settings.xml` with these changes.
@@ -313,7 +313,7 @@ options.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** The EE and CE zip files are a
+![note](../../images/tip-pen-paper.png) **Note:** The EE and CE zip files are a
 means to *install* the artifacts to a Maven repository of your choice. In the
 next few sections, we'll demonstrate the zip file and Central Repository
 installation options. 
@@ -463,7 +463,7 @@ Maven artifacts from source, follow these steps:
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Warning:** During the process of
+ ![note](../../images/tip-pen-paper.png) **Warning:** During the process of
  packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
  may experience sluggish performance or an insuffient amount of Java heap space.
  There are two solutions to this problem:
@@ -490,9 +490,12 @@ built from source.
 Let's install the Liferay release artifacts to your local Maven repository for
 sharing with your team.
 
-1. Using your command prompt, navigate to the `liferay-portal-maven-[version]`
-directory. This is the root directory extracted from the Liferay artifacts zip
-file.
+1. If you downloaded a Liferay artifacts zip file, navigate to the
+`liferay-portal-maven-[version]`directory. This is the root directory extracted
+from the Liferay artifacts zip file. If you built the artifacts from source,
+navigate to the time-stamped directory containing the artifacts in your Local
+Liferay Portal CE source project's root directory, (e.g.,
+`liferay-portal/20121105174417071`). 
 
 2. To install the artifacts to your local repository, execute
 
@@ -535,8 +538,10 @@ Maven Settings* section for instructions on adding an entry for the server.
         </servers>
 
 3. Using your command prompt, navigate to the `liferay-portal-maven-[version]`
-directory. This is the root directory extracted from the Liferay artifacts zip
-file.
+directory, or to your time-stamped Liferay Portal artifacts directory. This is
+the root directory extracted from the Liferay artifacts zip file. Or navigate to
+your time-stamped Liferay Portal artifacts directory, if you built the artifacts
+from source. 
 
 4. Create a `build.[user name].properties` file (e.g.,
 `build.jbloggs.properties`) in your `liferay-portal-maven-[version]` directory.
@@ -563,8 +568,7 @@ repository's ID and URL, respectively.
     To verify your artifacts are deployed, navigate to the *Repositories* page
     of your Nexus OSS server and select your repository.
 
-    ![Figure 8.4: You can easily navigate to your Liferay release repository in
-    Nexus.](../../images/maven-select-repository2.png)
+    ![Figure 8.4: You can easily navigate to your Liferay release repository in Nexus.](../../images/maven-select-repository2.png)
 
     Notice a window appears below displaying the Liferay artifacts now deployed
     to your repository.
@@ -701,7 +705,7 @@ insert the following lines:
     auto-deploy directory you will eventually copy your plugin to deploy on
     Liferay.
 
-    - Fill in the `<liferay.version>...</liferay.version>` tags with the version
+    Fill in the `<liferay.version>...</liferay.version>` tags with the version
     of Liferay you are using.
 
     Your POM's *properties* should look similar to the following:
@@ -720,7 +724,7 @@ parent) can leverage these dependencies.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** You could just as easily
+![note](../../images/tip-pen-paper.png) **Note:** You could just as easily
 include such dependencies in the POM of each of your plugin projects, but
 specifying them in a parent project makes them accessible to child projects
 through inheritance. 
@@ -743,7 +747,7 @@ below to generate Liferay plugin projects of any type.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Make sure Maven is installed
+![note](../../images/tip-pen-paper.png) **Note:** Make sure Maven is installed
  and that it's executable is in your path environment variable. 
 
 ---
@@ -756,7 +760,7 @@ the plugin project you create.
 
     ---
 
-    ![note](../../images/tip-pen-paper.png)**Note:** If you haven't already
+    ![note](../../images/tip-pen-paper.png) **Note:** If you haven't already
     created a parent project, you may want to consider creating one to share
     common project information. See section *Using a Parent Plugin Project* for
     details.
@@ -848,7 +852,7 @@ coordinates (properties) of your project. Here are some examples:
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** The archetype file is
+![note](../../images/tip-pen-paper.png) **Note:** The archetype file is
 downloaded and installed automatically to your local repository (e.g.,
 `.m2/repository/com/liferay/maven/archetypes/<archetype>`). If you
 configured the mirror pointing to your public repository on Nexus, the
@@ -926,7 +930,7 @@ Liferay version and your Liferay Portal's deploy directory path.
 
     ---
  
-    ![note](../../images/tip-pen-paper.png)**Note:** If you get the following
+    ![note](../../images/tip-pen-paper.png) **Note:** If you get the following
     error after executing `mvn liferay:deploy`, make sure you're executing the
     command from your plugin's directory (e.g., `sample-portlet`). 
  
@@ -971,7 +975,7 @@ plugin's `pom.xml`.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** There are three build phases
+![note](../../images/tip-pen-paper.png) **Note:** There are three build phases
 you'll use when developing plugins with Maven: 
 
 - In Maven's *compile* phase, explicit dependencies are downloaded to your
@@ -1009,7 +1013,7 @@ with Maven* section.
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip**: As you use Maven's Archetype
+![tip](../../images/tip-pen-paper.png) **Tip**: As you use Maven's Archetype
 tool to generate your portlet project, you can filter on group ID `liferay`, or
 even the group ID/artifact ID combination `liferay:portlet`, to 
 find the Liferay portlet archetypes more easily. 
@@ -1051,7 +1055,7 @@ different directory structure.
 The following table illustrates the differences in location of the Java source
 and web source code for a Maven project and a Plugins SDK project: 
 
-Location    | &nbsp;Maven project | &nbsp;Plugins SDK project |
+Location    | Maven project     | Plugins SDK project   |
 ----------- | ----------------- | --------------------- |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
@@ -1100,7 +1104,7 @@ with Maven* section.
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip**: As you use Maven's Archetype
+![tip](../../images/tip-pen-paper.png) **Tip**: As you use Maven's Archetype
 tool to generate your theme project, you can filter on group ID `liferay`, or
 even the group ID/artifact ID combination `liferay:portlet`, to more easily
 find the Liferay portlet archetypes. 
@@ -1148,9 +1152,9 @@ way as the `docroot/_diffs/` folder. For example, `custom.css` should go in
 Here's a table describing the directory structure differences between themes
 created using Maven and themes created using the Plugins SDK: 
 
-Location    | &nbsp;Maven project | &nbsp;Plugins SDK project |
------------ | ----------------- | --------------------- |
-customizations | `src/main/webapp`   | `docroot/_diffs` |
+Location       | Maven project     | Plugins SDK project |
+-------------- | ----------------- | ------------------- |
+customizations | `src/main/webapp` | `docroot/_diffs`    |
 
 To view the directory structure of a theme developed by Ant, visit the [Anatomy
 of a
@@ -1181,7 +1185,7 @@ Plugins with Maven* section.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** When you execute the *package*
+![note](../../images/tip-pen-paper.png) **Note:** When you execute the *package*
 goal, a WAR file is created; it's just like the Maven WAR type project.
 Simultaneously, the parent theme is downloaded and copied, and your theme's
 customizations are overlaid last. A thumbnail image of the theme is created and
@@ -1212,7 +1216,7 @@ To create a Liferay hook plugin project, follow the steps outlined in the
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip**: As you use Maven's Archetype
+![tip](../../images/tip-pen-paper.png) **Tip**: As you use Maven's Archetype
 tool to generate your hook you can filter on group ID `liferay`, or even the
 group ID/artifact ID combination `liferay:portlet`, to more easily find the
 Liferay portlet archetypes. 
@@ -1245,7 +1249,7 @@ directory structure.
 The following table illustrates the differences in location of the Java source
 and web source code for a Maven project and a Plugins SDK project: 
 
-Location    | &nbsp;Maven project | &nbsp;Plugins SDK project   |
+Location    | Maven project     | Plugins SDK project   |
 ----------- | ----------------- | --------------------- |
 Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
@@ -1291,7 +1295,7 @@ Plugins with Maven* section.
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip**: As you use Maven's Archetype
+![tip](../../images/tip-pen-paper.png) **Tip**: As you use Maven's Archetype
 tool to generate your layout template project, you can filter on group ID
 `liferay`, or even group ID / artifact ID combination `liferay:layout`, to find
 the Liferay layout template archetypes.
@@ -1322,8 +1326,8 @@ There's a directory structure difference between plugin projects created using
 Liferay Maven archetypes and those created using the Liferay Plugins SDK. The
 following table illustrates this difference: 
 
-Location   | &nbsp;Maven project | &nbsp;Plugins SDK project |
----------- | ----------------- | --------- |
+Location   | Maven project     | Plugins SDK project |
+---------- | ----------------- | ------------------- |
 Web source | `src/main/webapp` | `docroot` |
 
 To view the directory structure of a layout template developed by Ant, visit the
@@ -1404,7 +1408,7 @@ at Liferay IDE in the next chapter.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Are you wondering if we're
+![note](../../images/tip-pen-paper.png) **Note:** Are you wondering if we're
  going to make more terrible jokes that steal from classic poetry? Quoth the
  Maven, "Probably." 
 
