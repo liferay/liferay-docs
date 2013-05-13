@@ -564,10 +564,55 @@ also customize the permissions of feeds or delete feeds.
 It's possible to completely disable RSS feeds at the portal level. You can do
 this by setting the `rss.feeds.enabled` property to `false`. By default, it's
 set to `true`. If you keep the default, RSS enabled, you can make several other
-possible customizations. Please refer to the RSS section of your
+RSS property customizations. Please refer to the RSS section of your
 `portal.properties` file for details.
 
 ### Using the RSS portlet
+
+The RSS portlet allows you to display any number of RSS feeds and configure how
+they are displayed. If you're looking for a web-based RSS reader, look no
+further: just add the RSS portlet to one your personal site's private pages, and
+voila! You have your own personal RSS reader. Open the portlet's Configuration
+popup to select the feeds to be displayed and customize the display. The RSS
+portlet can also be placed on sites' public or private pages to make feeds
+available to guests or site members, respectively. In these cases, make sure
+that only site administrators have permission to customize the RSS portlet and
+select feeds to be displayed.
+
+Once you've added the RSS portlet to a page, open the portlet's Configuration
+popup window by clicking on the wrench icon at the top right corner of the
+portlet and selecting *Configuration*.
+
+![Figure 3.x: The RSS portlet's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../images/rss-portlet-config.png)
+
+By default, the RSS portlet displays two feeds. In the Feeds section, click on
+the green plus sign to add a new feed or on the red minus sign to remove a feed.
+Enter the URL of the RSS feed to display into the URL field. If you leave the
+Title field blank, the feed's title appears in the RSS portlet. If you enter a
+custom title into the Title field, the custom title appears instead of the
+feed's title.
+
+In the Display Settings section, use the following checkboxes to select the feed
+details that should be displayed:
+
+- Show Feed Title
+- Show Feed Published Date
+- Show Feed Description
+- Show Feed Image
+- Show Feed Item Author
+
+You can also select the number of entries and expanded entries that should be
+displayed per feed. Expanded entries show more of an article's actual content
+than regular entries. By default, each feed shows eight entries per feed but
+only one expanded entry per feed. You can set the feed image alignment to
+control whether feed images appear to the right or left of the text. By default,
+the feed image alignment is set to *Right*. Finally, you can select a header web
+content and/or a footer web content. These are web content articles that appear
+in the RSS portlet either above all of the feeds or below all of the feeds. You
+can use these to provide an introduction, description, or footnotes about the
+feeds that you've selected to be displayed.
+
+![Figure 3.x: By default, the RSS portlet is configured to display feeds from Yahoo News and the New York Times. Open the portlet's configuration window to add, edit, or feeds.](../../images/rss-portlet-default-view.png)
 
 Now that you understand how to create, manage, and use RSS feeds, let's look at
 how you can use Liferay to manage multiple sites.
