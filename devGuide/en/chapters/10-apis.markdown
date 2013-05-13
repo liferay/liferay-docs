@@ -641,7 +641,7 @@ functionality:
 ### Registering JSON Web Services
 
 Liferay's developers use a tool called *Service Builder* to build services. When
-you buuild services with Service Builder, all remote-enabled services (i.e.,
+you build services with Service Builder, all remote-enabled services (i.e.,
 `service.xml` entities with the property `remote-service="true"`) are exposed as
 JSON Web Services. When each `-Service.java` interface is created for a
 remote-enabled service, the `@JSONWebService` annotation is added on the class
@@ -663,7 +663,7 @@ scanning process is optimized so only portal and service JARs are scanned, as
 well as class raw bytecode content. Each class that uses the `@JSONWebService`
 annotation is loaded and further examined; its methods become exposed as JSON
 API. As explained previously, the `-ServiceImpl` configuration overrides the
-`-Service` interface configuration during registration.
+`-Service` interface configuration during registration. 
 
 As an example, let's register the `DLAppService`: 
 
@@ -686,8 +686,8 @@ Scanning and registration is complete and all service methods (those of
 
 Custom portlets can be registered and scanned for JSON web services, too.
 Services that use the `@JSONWebService` annotation become part of the JSON API.
-Scanning of portlet services isn't enabled by default; you need to add the
-following servlet definition in your portlet's `web.xml`: 
+Scanning of portlet services isn't enabled by default; the following servlet
+definition must be added in your portlet's `web.xml`: 
 
         <web-app>
             ...
@@ -732,13 +732,13 @@ Now the servlet can scan and register your portlet's JSON Web Services.
 
 #### Mapping and naming conventions 
 
-You can form mapped URLs of exposed service using the following naming
+You can form a mapped URL of an exposed service using the following naming
 convention: 
 
     http://[server]:[port]/api/jsonws/[service-class-name]/[service-method-name]
 
 The `[server]` and `[port]` items are self explanatory. Let's look at the other
-bracketed item more closely: 
+bracketed items more closely: 
 
 - `service-class-name` is generated from the service's class name by removing
 the `Service` or `ServiceImpl` suffix and making it lower case. 
@@ -773,60 +773,65 @@ portlet's context):
 
         http://[server]:[port]/[plugin-context]/api/jsonws/[service-class-name]/[service-method-name]
 
-This calls the plugin's service in a separate web application that is not aware
-of the user's current session in the portal. As a result, accessing the service
-in this manner requires additional authentication. Who has time for that? 
+    This calls the plugin's service in a separate web application that is not
+    aware of the user's current session in the portal. As a result, accessing
+    the service in this manner requires additional authentication. Who has time
+    for that?
 
 - *Option 2*: Accessing the plugin service via the portal context:
 
         http://[server]:[port]/[portal-context]/api/jsonws/[plugin-context].[service-class-name]/[service-method-name]
 
-Requests sent this way can conveniently leverage the user's authentication in
-his current portal session. Liferay's JavaScript API for services calls plugin
-services this way.
+    Conveniently, requests sent this way can leverage the user's authentication
+    in his current portal session. Liferay's JavaScript API for services calls
+    plugin services using this method.
 
 #### Listing available JSON Web Services 
 
-To overview a service and verify which service methods are registered and
-available, you can get a service listing in your browser by opening the base
-address:
+To see which service methods are registered and available for use, open your
+browser to the following base address: 
 
     http://localhost:8080/api/jsonws
 
-The resulting page lists all registered and exposed service methods of the
-portal. You can see more details of each method by clicking the method name. For
-example, you can see the full signature of the service method, list of all its
-arguments, list exceptions that can be thrown, and even read its Javadoc!
-Moreover, you can even invoke the service method for testing purposes using
-simple form right from within your browser.
+The page lists the portal's registered and exposed service methods. Get each
+method's details by clicking the method name. You'll see the full signature of
+the method, all its arguments, list exceptions that can be thrown, and read its
+Javadoc! Using a simple form from within your browser, you can even invoke the
+service method for testing purposes. 
 
 To list registered services on a plugin (e.g. a custom portlet), don't forget to
-use its context path:
+use its context path in your URL: 
 
     http://localhost:8080/[plugin-context]/api/jsonws
 
-This will list the JSON Web Service API for the portlet.
+This will list the JSON Web Service API for the portlet. 
 
 #### More on registration 
 
-As said, you can control registration by using annotations in your
-`-ServiceImpl` class. This overrides any configuration defined in the interface.
-Moreover, you can fine-tune which *methods* are visible/hidden using annotations
-at the method level.
+If you've been paying attention, you already know how to control registration by
+using the `@JSONWebService` annotation in your `-ServiceImpl` class. This
+overrides any configuration defined in the interface. What you might not know is
+that you can control the visibility of methods using annotations at the method
+level. 
+
+Let's find out how to ignore a specific method. 
 
 ##### Ignoring a method 
 
-To ignore a method from being exposed as a service, just annotate the method
-with:
+To ignore a method from being exposed as a service, annotate the method with the
+following:
 
     @JSONWebService(mode = JSONWebServiceMode.IGNORE)
 
-Any methods annotated like this do not become part of the JSON Web Service API.
+Methods with this annotation don't become part of the JSON Web Service API. 
+
+Annotating is easy and useful! Let's learn to define custom HTTP method names
+and URL names. 
 
 ##### HTTP method name and URL 
 
-It is also possible to define custom HTTP method names and URL names, using a
-similar annotation at the method level.
+At the method level, you can define custom HTTP method names and URL names. Just
+use an annotation following this example: 
 
     @JSONWebService(value = "add-file-wow", method = "PUT")
     public FileEntry addFileEntry(
@@ -872,32 +877,35 @@ Now only the `addFileEntry` method and any other method annotated with
 `@JSONWebService` are to be part of the JSON Web Service API; all other methods
 of this service are to be excluded from the API.
 
-Next, let's take a look at portal configuration options that apply to JSON Web
-Services.
+
+![note](../../images/tip-pen-paper.png)**Note:** Annotating is important to the
+registration at the class level and the method level. It's also so easy a potato
+can do it. Don't believe us? Then you've never seen an Anno*tater*! 
+
+Next let's look at portal configuration options that apply to JSON Web Services. 
 
 ### Portal Configuration of JSON Web Services 
 
-JSON Web Services are enabled on Liferay Portal by default but can be easily
-disabled by specifying the following portal property setting:
+JSON Web Services are enabled on Liferay Portal by default; If you need to
+disable them, specify this portal property setting: 
 
     json.web.service.enabled=false
 
 #### Strict HTTP methods 
 
-JSON Web Service services are, by default, mapped to either GET or POST HTTP
-methods. If a service method has a name that starts with `get`, `is` or `has`,
-the service is assumed to be read-only and is bound to the GET method; otherwise
-it is bound to POST.
+All JSON Web Service services are mapped to either GET or POST HTTP methods. If
+a service method name starts with `get`, `is` or `has`, the service is assumed
+to be read-only and is bound to the GET method; otherwise it's bound to POST. 
 
-By default, the portal does not check HTTP methods when invoking a service call;
-that is, the portal works in "non-strict http method" mode as services may be
-invoked using any HTTP method. If you need the strict mode, you can set it with
-portal property:
+By default, Liferay Portal doesn't check HTTP methods when invoking a service
+call; it works in *non-strict http method* mode, where services may be invoked
+using any HTTP method. If you need the strict mode, you can set it with this
+portal property: 
 
     jsonws.web.service.strict.http.method=true
 
 When using strict mode, you must use the correct HTTP methods in calling service
-methods.
+methods. 
 
 #### Disabling HTTP methods 
 
