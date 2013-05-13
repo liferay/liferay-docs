@@ -308,17 +308,22 @@ portlet. All portlets must support the view mode.
 
     If the portlet resources are defined in a resource bundle, the portlet must
     provide the name of the resource. For example, a deployment descriptor
-    defining portlet information in resources bundles might look like this,
-    assuming that there are `Language.properties`, `Language_en.properties`, and
-    `Language_de.properties` files in the `com.foo.content` package:
+    defining portlet information in a resource bundle might look like this:
 
         <portlet>
             ...
-            <resource-bundle>com.foo.content.Language</resource-bundle>
-            <resource-bundle>com.foo.content.Language_en</resource-bundle>
-            <resource-bundle>com.foo.content.Language_de</resource-bundle>
+            <resource-bundle>content.Language</resource-bundle>
             ...
         </portlet>
+
+    If your portlet's title, short title, and keywords won't have localized
+    values, it's a best practice to specify these properties inside of the
+    `<portlet-info>` tag in `portlet.xml`. If they will have localized values,
+    you should use a resource bundle instead. If you specify values for a
+    portlet's title, short title, and keywords both in the portlet's
+    `portlet-info` tag in `portlet.xml` and in a resource bundle (not
+    recommended), the values in the resource bundle take precedence over the
+    values in the `<portlet-info>` tag.
 
     Providing localized values via resource bundles separates the deployment
     descriptor values from the localized values. For this reason, we recommend
@@ -327,6 +332,14 @@ portlet. All portlets must support the view mode.
     the following two resource bundles are for the English and German locales.
     Their contents would go in the `Language_en.properties` and
     `Language_de.properties files`, respectively.
+
+    If there is a `Language_en.properties` file in the `com.foo.content` package
+    and the locale is set to English (this is the default setting), then the
+    `Language_en.properties` file will be used. If there is a
+    `Language_de.properties` file in the `com.foo.content` package and the
+    locale is set to German then the `Language_de.properties` file will be used.
+    If there is no language-specific properties file for the current locale,
+    then the `Language.properties` file will be used.
 
         # English Resource Bundle
         #
