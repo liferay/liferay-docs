@@ -173,7 +173,7 @@ requirements before proceeding:
 and the Liferay IDE extension--see the *Installation* section if you haven't
 already done this. 
 
- ![note](../../images/tip-pen-paper.png)**Note:** Earlier versions of Liferay
+ ![note](../../images/tip-pen-paper.png) **Note:** Earlier versions of Liferay
  (e.g., 5.2.x) are not supported by the Liferay IDE. 
 
 Let's set up your Liferay Plugins SDK. 
@@ -196,7 +196,7 @@ name; you can change it if you want.
 4. Select *OK*, and verify that your SDK was added to the list of *Installed
 Liferay Plugin SDKs*. 
 
- ![note](../../images/tip-pen-paper.png)**Note:** You can have Multiple SDKs in
+ ![note](../../images/tip-pen-paper.png) **Note:** You can have Multiple SDKs in
  your preferences--set one as the default SDK by checking its box in the list of
  *Installed Liferay Plugin SDKs*. 
 
@@ -359,7 +359,7 @@ import instructions.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** The next two sections assume
+ ![note](../../images/tip-pen-paper.png) **Note:** The next two sections assume
  that you've created projects with the Plugins SDK and are familiar with the
  directory structure used by the Plugins SDK. 
 
@@ -396,9 +396,9 @@ error.
 imported. If you don't have a Liferay Portal Runtime, use the *New...* button to
 create one now; Tomcat bundle is the only server runtime supported. 
 
-<!--Three figures were deleted here--one figure could be created to replace them if desirable. -Russ -->
-
 5. Click *Finish* to perform the import. 
+
+<!--Three figures were deleted here (above step 5)--one figure could be created to replace them if desirable. -Russ -->
 
 Remember to verify that your project was configured correctly as a Liferay IDE
 project. Verification is described right after our next topic, which is making
@@ -420,16 +420,16 @@ Plugin SDK Projects*.
 2. In the *Import Projects* window, use the combo box to select the *Liferay
 Plugins SDK* you're importing plugins from. 
 
----
+    ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** If your SDK isn't configured
- in Liferay IDE (i.e., it's not in the dropdown list of the *Import Projects*
- window) use the *Configure* link to add a setting that points to the Plugins
- SDK that you want to import projects from. To configure a Plugins SDK on the
- Installed SDKs on the pref page just click *Add* and then Browse to the
- directory of the Plugins SDK root directory.
+    ![note](../../images/tip-pen-paper.png) **Note:** If your SDK isn't
+    configured in Liferay IDE (i.e., it's not in the dropdown list of the
+    *Import Projects* window) use the *Configure* link to add a setting that
+    points to the Plugins SDK that you want to import projects from. To
+    configure a Plugins SDK on the Installed SDKs on the pref page just click
+    *Add* and then Browse to the directory of the Plugins SDK root directory.
 
----
+    ---
 
 3. Once you select your Plugins SDK in the combo box, the *Liferay Plugin SDK
 Location* and *Liferay Plugin SDK Version* fields are automatically filled in,
@@ -461,14 +461,14 @@ the import steps below to convert your project.
 1. In Eclipse, right click the project in your project explorer then select
 *Liferay* &rarr; *Convert to Liferay plugin project*. 
 
----
+    ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** If you don't have a convert
- action available it means either that the project is already a Liferay IDE
- project, or that it is not faceted (i.e., Java and Dynamic Web project facets
- are not yet configured). Configure accordingly before moving on. 
+    ![note](../../images/tip-pen-paper.png) **Note:** If you don't have a convert
+    action available it means either that the project is already a Liferay IDE
+    project, or that it is not faceted (i.e., Java and Dynamic Web project facets
+    are not yet configured). Configure accordingly before moving on. 
 
----
+    ---
 
 2. In the *Convert Project* wizard, your project should be selected and the SDK
 location and SDK version should be detected automatically. If they aren't valid
@@ -504,7 +504,7 @@ anymore? Here's how you can import it into your current workspace:
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** There are two common errors
+![note](../../images/tip-pen-paper.png) **Note:** There are two common errors
 that occur when importing existing Liferay IDE projects into your workspace:
 
 - The SDK name used in that project doesn't exist in your new workspace. 
@@ -703,13 +703,13 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
 
 1. Right click on the server and choose *Add and Remove...*. 
 
----
+    ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Make sure you have available
- projects configured in Liferay IDE. If not, you'll get an error message
- indicating there are no available resources to add or remove from the server. 
+    ![note](../../images/tip-pen-paper.png) **Note:** Make sure you have available
+    projects configured in Liferay IDE. If not, you'll get an error message
+    indicating there are no available resources to add or remove from the server. 
 
----
+    ---
 
 2. Select the Liferay projects to publish to your remote server; click *Add* to
 add them to your remote server, then click *Finish*. Deployment begins
@@ -794,7 +794,7 @@ perfectly clear to a developer, but it's not to me. -Russ -->
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** The *Kaleo Forms EE* app comes
+![note](../../images/tip-pen-paper.png) **Note:** The *Kaleo Forms EE* app comes
 with an existing workflow designer that's used *within* Liferay Portal. It's
 used to design workflow configuration and is described in the [Kaleo Forms:
 Defining Business
@@ -841,7 +841,7 @@ Developer Studio.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** When you open a workflow,
+![note](../../images/tip-pen-paper.png) **Note:** When you open a workflow,
 you'll be prompted to choose whether to switch to the Kaleo designer
 perspective. Clicking *Yes* lets you use the perspective's helpful features,
 including the palette toolbar, properties view, and outline view. 
@@ -906,19 +906,19 @@ necessary to complete the initial setup of your new workflow definition.
     workflow is associated with an asset type. Later in our exercise, we'll
     associate our workflow with a Dynamic Data List (DDL). 
 
-<!--This type of instruction with heirarchical steps actually looks bad in my
-Markdown plugin for Jedit--very crammed -->
-    
     ![Figure 9.18: When choosing an assignment type for a task node, you are given multiple options.](../../images/kaleo-4.png)
 
----
+    ---
 
-![note](../../images/tip-pen-paper.png)**Note:** You must specify a Liferay
-project as a home for the workflow definitions you create. 
+    ![note](../../images/tip-pen-paper.png) **Note:** You must specify a Liferay
+    project as a home for the workflow definitions you create. 
 
----
+    ---
 
 3. Click *Finish* to complete the initial setup of our workflow definition. 
+
+<!--This type of instruction, in step 2, with heirarchical steps actually looks
+bad in my Markdown plugin for Jedit--very crammed -->
 
 Your workflow appears as a workflow diagram, letting you interact with your
 workflow graphically. Graphical features and toolbars allow you to customize
@@ -1267,7 +1267,7 @@ in our workflow definition's XML file (in our case,
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Developer Studio lets you use
+![note](../../images/tip-pen-paper.png) **Note:** Developer Studio lets you use
 multiple script editors even while modifying the same workflow definition XML
 file. 
 
@@ -1343,7 +1343,7 @@ all of the code was injected into our workflow's XML file within the
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Make sure you correctly name
+ ![note](../../images/tip-pen-paper.png) **Note:** Make sure you correctly name
  the transitions stemming from the condition node. The "No" transition should
  point to the EndNode, while the "Yes" transition should point to the Developer.
  If the condition script's return values don't match the transition names, the
@@ -1448,7 +1448,7 @@ languages.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Similar to the bundled script
+![note](../../images/tip-pen-paper.png) **Note:** Similar to the bundled script
 editors, Developer Studio lets you use FreeMarker and Velocity template editors
 to customize notifications in your workflow definition.
 
@@ -1562,109 +1562,113 @@ note the asterisks (`*`); they're used to flag context variables that depend on
 workflow activity. 
 
 
-| &nbsp;*Workflow* Context Variables |||
-| Key | Type | Description |
-| --- | ---- | ----------- |
-   `companyId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the company |          
-   `entryClassName` | &nbsp;&nbsp;java.lang.String | Class name for entry used by the task (e.g. com.liferay.portlet.journal.model.JournalArticle) |
-   `entryClassPK` | &nbsp;&nbsp;java.lang.String | Primary key of the entry class |
-   `entryType` | &nbsp;&nbsp;java.lang.String | Type of entry used by the task (e.g. Web Content, Blog Entry, MB Message) |
-   `groupId` | &nbsp;&nbsp;java.lang.string | Primary key of the assigned group |
-   `taskComments*` | &nbsp;&nbsp;java.lang.String | Workflow comments assigned to the task |
-   `taskName*` | &nbsp;&nbsp;java.lang.String | Workflow task that activates the notification (e.g. review) |
-   `transitionName*` | &nbsp;&nbsp;java.lang.String | Name of transition pointing to the task (e.g. approve) |
-   `userId` | &nbsp;&nbsp;java.lang.String | Primary key of the assigned user |
+***Workflow* Context Variables**
+
+ Key | Type | Description |
+---- | ---- | ----------- |
+ `companyId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the company |          
+ `entryClassName` | &nbsp;&nbsp;java.lang.String | Class name for entry used by the task (e.g. com.liferay.portlet.journal.model.JournalArticle) |
+ `entryClassPK` | &nbsp;&nbsp;java.lang.String | Primary key of the entry class |
+ `entryType` | &nbsp;&nbsp;java.lang.String | Type of entry used by the task (e.g. Web Content, Blog Entry, MB Message) |
+ `groupId` | &nbsp;&nbsp;java.lang.string | Primary key of the assigned group |
+ `taskComments*` | &nbsp;&nbsp;java.lang.String | Workflow comments assigned to the task |
+ `taskName*` | &nbsp;&nbsp;java.lang.String | Workflow task that activates the notification (e.g. review) |
+ `transitionName*` | &nbsp;&nbsp;java.lang.String | Name of transition pointing to the task (e.g. approve) |
+ `userId` | &nbsp;&nbsp;java.lang.String | Primary key of the assigned user |
 ---
 
-| &nbsp;*Web Content* Service Context Variables - obtain via key serviceContext  |||
-| Key | Type | Description |
-| --- | ---- | ------------|
-   `articleId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the web content |
-   `articleURL` | &nbsp;&nbsp;java.lang.String | Link to the web content in maximized mode |
-   `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the web content |
-   `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
-   `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset |
-   `autoArticleId` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether an article ID is generated (e.g. false) |
-   `classNameId` | &nbsp;&nbsp;java.lang.String | Primary key of the class name used by the task |
-   `classPK` | &nbsp;&nbsp;java.lang.String | Primary key of the model entity |
-   `content` | &nbsp;&nbsp;java.lang.String | Content of the web content |
-   `defaultLanguageId` | &nbsp;&nbsp;java.lang.String | Primary key of the default language (e.g. en_US) |
-   `description_en_US` | &nbsp;&nbsp;java.lang.String | Description of the web content (in English) |
-   `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the web content is set to display (e.g. 12) |
-   `displayDateHour` | &nbsp;&nbsp;java.lang.String | Hour the web content is set to display (e.g. 4) |
-   `displayDateMinute` | &nbsp;&nbsp;java.lang.String | Minute the web content is set to display (e.g. 26) |
-   `displayDateMonth` | &nbsp;&nbsp;java.lang.String | Month the web content is set to display (e.g. 5) |
-   `displayDateYear` | &nbsp;&nbsp;java.lang.String | Year the web content is set to display (e.g. 2012) |
-   `doAsGroupId` | &nbsp;&nbsp;java.lang.String | Primary key of the organization associated with the web content |
-   `folderId` | &nbsp;&nbsp;java.lang.String | Primary key of the web content's folder |
-   `indexable` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the web content is searchable (e.g. true) |
-   `indexableCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Searchable* checkbox is checked (e.g. false) |
-   `inputPermissionsShowOptions` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether permission options are viewable (e.g. true) |
-   `inputPermissionsViewRole` | &nbsp;&nbsp;java.lang.String | Role type that has permission to view web content (e.g. Site Member) |
-   `languageId` | &nbsp;&nbsp;java.lang.String | Primary key of the selected language (e.g. en_US) |
-   `localized` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Localizable* checkbox is selected (e.g. false) |
-   `neverExpire` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the web content is set to expire (e.g. true) |
-   `neverExpireCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Never Auto Expire* checkbox is checked (e.g. false) |
-   `neverReview` | &nbsp;&nbsp;java.lang.String |  Boolean variable indicating whether the web content is set to review (e.g. true) |
-   `neverReviewCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Never Review* checkbox is checked (e.g. false) |
-   `refererPlid` | &nbsp;&nbsp;java.lang.String | Primary key of the page hosting the web content |
-   `smallImage` | &nbsp;&nbsp;java.lang.String | Indicates whether a small image is being used (e.g. on) |
-   `smallImageURL` | &nbsp;&nbsp;java.lang.String | URL for the web content's attached image |
-   `structureDescription` | &nbsp;&nbsp;java.lang.String | Description of the configured structure |
-   `structureId` | &nbsp;&nbsp;java.lang.String | Primary key of the configured structure |
-   `structureName` | &nbsp;&nbsp;java.lang.String | Name of the configured structure |
-   `structureXSD` | &nbsp;&nbsp;java.lang.String | The XML schema definition used for the configured structure |
-   `templateId` | &nbsp;&nbsp;java.lang.String | Primary key of the configured template |
-   `title_en_US` | &nbsp;&nbsp;java.lang.String | Title of the web content (in English) |
-   `type` | &nbsp;&nbsp;java.lang.String | Categorization type associated with the web content  (e.g. Press Release) |
-   `variableName` | &nbsp;&nbsp;java.lang.String | Custom variable name set for the web content's configured structure (e.g. Content) |
-   `version` | &nbsp;&nbsp;java.lang.String | Current version of the web content (e.g. 1.0) |
-   `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 1) |
+***Web Content* Service Context Variables - obtain via key serviceContext**
+
+ Key | Type | Description |
+---- | ---- | ----------- |
+ `articleId` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary key of the web content |
+ `articleURL` | &nbsp;&nbsp;java.lang.String | Link to the web content in maximized mode |
+ `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the web content |
+ `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
+ `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset |
+ `autoArticleId` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether an article ID is generated (e.g. false) |
+ `classNameId` | &nbsp;&nbsp;java.lang.String | Primary key of the class name used by the task |
+ `classPK` | &nbsp;&nbsp;java.lang.String | Primary key of the model entity |
+ `content` | &nbsp;&nbsp;java.lang.String | Content of the web content |
+ `defaultLanguageId` | &nbsp;&nbsp;java.lang.String | Primary key of the default language (e.g. en_US) |
+ `description_en_US` | &nbsp;&nbsp;java.lang.String | Description of the web content (in English) |
+ `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the web content is set to display (e.g. 12) |
+ `displayDateHour` | &nbsp;&nbsp;java.lang.String | Hour the web content is set to display (e.g. 4) |
+ `displayDateMinute` | &nbsp;&nbsp;java.lang.String | Minute the web content is set to display (e.g. 26) |
+ `displayDateMonth` | &nbsp;&nbsp;java.lang.String | Month the web content is set to display (e.g. 5) |
+ `displayDateYear` | &nbsp;&nbsp;java.lang.String | Year the web content is set to display (e.g. 2012) |
+ `doAsGroupId` | &nbsp;&nbsp;java.lang.String | Primary key of the organization associated with the web content |
+ `folderId` | &nbsp;&nbsp;java.lang.String | Primary key of the web content's folder |
+ `indexable` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the web content is searchable (e.g. true) |
+ `indexableCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Searchable* checkbox is checked (e.g. false) |
+ `inputPermissionsShowOptions` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether permission options are viewable (e.g. true) |
+ `inputPermissionsViewRole` | &nbsp;&nbsp;java.lang.String | Role type that has permission to view web content (e.g. Site Member) |
+ `languageId` | &nbsp;&nbsp;java.lang.String | Primary key of the selected language (e.g. en_US) |
+ `localized` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Localizable* checkbox is selected (e.g. false) |
+ `neverExpire` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the web content is set to expire (e.g. true) |
+ `neverExpireCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Never Auto Expire* checkbox is checked (e.g. false) |
+ `neverReview` | &nbsp;&nbsp;java.lang.String |  Boolean variable indicating whether the web content is set to review (e.g. true) |
+ `neverReviewCheckbox` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the *Never Review* checkbox is checked (e.g. false) |
+ `refererPlid` | &nbsp;&nbsp;java.lang.String | Primary key of the page hosting the web content |
+ `smallImage` | &nbsp;&nbsp;java.lang.String | Indicates whether a small image is being used (e.g. on) |
+ `smallImageURL` | &nbsp;&nbsp;java.lang.String | URL for the web content's attached image |
+ `structureDescription` | &nbsp;&nbsp;java.lang.String | Description of the configured structure |
+ `structureId` | &nbsp;&nbsp;java.lang.String | Primary key of the configured structure |
+ `structureName` | &nbsp;&nbsp;java.lang.String | Name of the configured structure |
+ `structureXSD` | &nbsp;&nbsp;java.lang.String | The XML schema definition used for the configured structure |
+ `templateId` | &nbsp;&nbsp;java.lang.String | Primary key of the configured template |
+ `title_en_US` | &nbsp;&nbsp;java.lang.String | Title of the web content (in English) |
+ `type` | &nbsp;&nbsp;java.lang.String | Categorization type associated with the web content  (e.g. Press Release) |
+ `variableName` | &nbsp;&nbsp;java.lang.String | Custom variable name set for the web content's configured structure (e.g. Content) |
+ `version` | &nbsp;&nbsp;java.lang.String | Current version of the web content (e.g. 1.0) |
+ `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 1) |
 ---
 
-| &nbsp;*Blog Entry* Service Context Variables - obtain via key serviceContext |||
-| Key | Type | Description |
-| --- | ---- | ------------|
-   `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary keys of the asset entries linked to the blog entry |
-   `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the blog entry |
-   `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset (e.g. history, news, programming) |
-   `attachments` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if blog entry has any attachments (e.g. true) |
-   `content` | &nbsp;&nbsp;java.lang.String | Content of the blog entry |
-   `description` | &nbsp;&nbsp;java.lang.String | Description of the blog entry (e.g. The comparison between two Fortune 500 companies) |
-   `displayDateAmPm` | &nbsp;&nbsp;java.lang.String | Time "period" (based on the 12-hour clock) the blog entry is set to display (AM=0, PM=1) |
-   `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the blog entry is set to display (e.g. 3) |
-   `displayDateHour` | &nbsp;&nbsp;java.lang.String | Hour the blog entry is set to display (e.g. 26) |
-   `displayDateMinute` | &nbsp;&nbsp;java.lang.String | Minute the blog entry is set to display (e.g. 32) |
-   `displayDateMonth` | &nbsp;&nbsp;java.lang.String | Month the blog entry is set to display (e.g. 8) |
-   `displayDateYear` | &nbsp;&nbsp;java.lang.String | Year the blog entry is set to display (e.g 2012) |
-   `doAsGroupId` | &nbsp;&nbsp;java.lang.String | Primary key of the organization associated with the blog entry |
-   `editor` | &nbsp;&nbsp;java.lang.String | Content of the blog entry (equivalent to the `content` value) |
-   `entryId` | &nbsp;&nbsp;java.lang.String | Primary key of the blog entry |
-   `refererPlid` | &nbsp;&nbsp;java.lang.String | Primary key of the page hosting the blog entry |
-   `smallImage` | &nbsp;&nbsp;java.lang.String | Indicates whether a small image is being used (e.g. on) |
-   `smallImageURL` | &nbsp;&nbsp;java.lang.String | URL for the blog entry's attached image |
-   `title` | &nbsp;&nbsp;java.lang.String | Title of the blog entry (e.g. My Blog Entry) |
-   `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 2) |
+***Blog Entry* Service Context Variables - obtain via key serviceContext**
+
+ Key | Type | Description |
+---- | ---- | ----------- |
+ `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String&nbsp;&nbsp;&nbsp; | Primary keys of the asset entries linked to the blog entry |
+ `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the blog entry |
+ `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset (e.g. history, news, programming) |
+ `attachments` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if blog entry has any attachments (e.g. true) |
+ `content` | &nbsp;&nbsp;java.lang.String | Content of the blog entry |
+ `description` | &nbsp;&nbsp;java.lang.String | Description of the blog entry (e.g. The comparison between two Fortune 500 companies) |
+ `displayDateAmPm` | &nbsp;&nbsp;java.lang.String | Time "period" (based on the 12-hour clock) the blog entry is set to display (AM=0, PM=1) |
+ `displayDateDay` | &nbsp;&nbsp;java.lang.String | Calendar day the blog entry is set to display (e.g. 3) |
+ `displayDateHour` | &nbsp;&nbsp;java.lang.String | Hour the blog entry is set to display (e.g. 26) |
+ `displayDateMinute` | &nbsp;&nbsp;java.lang.String | Minute the blog entry is set to display (e.g. 32) |
+ `displayDateMonth` | &nbsp;&nbsp;java.lang.String | Month the blog entry is set to display (e.g. 8) |
+ `displayDateYear` | &nbsp;&nbsp;java.lang.String | Year the blog entry is set to display (e.g 2012) |
+ `doAsGroupId` | &nbsp;&nbsp;java.lang.String | Primary key of the organization associated with the blog entry |
+ `editor` | &nbsp;&nbsp;java.lang.String | Content of the blog entry (equivalent to the `content` value) |
+ `entryId` | &nbsp;&nbsp;java.lang.String | Primary key of the blog entry |
+ `refererPlid` | &nbsp;&nbsp;java.lang.String | Primary key of the page hosting the blog entry |
+ `smallImage` | &nbsp;&nbsp;java.lang.String | Indicates whether a small image is being used (e.g. on) |
+ `smallImageURL` | &nbsp;&nbsp;java.lang.String | URL for the blog entry's attached image |
+ `title` | &nbsp;&nbsp;java.lang.String | Title of the blog entry (e.g. My Blog Entry) |
+ `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 2) |
 ---
 
-| &nbsp;*Message Board Message* Service Context Variables - obtain via key serviceContext |||
-Key | Type | Description |
------- | ---------- | ------------------|
-   `anonymous` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is anonymous (e.g. true) |
-   `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the message |
-   `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
-   `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset (e.g. sea, sailing, swimming) |
-   `attachments` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the message has any attachments (e.g. false) |
-   `body` | &nbsp;&nbsp;java.lang.String | Content of the message |
-   `editor` | &nbsp;&nbsp;java.lang.String | Content of the message (equivalent to the `body` value) |
-   `mbCategoryId` | &nbsp;&nbsp;java.lang.String | Primary key of the message's category |
-   `messageId` | &nbsp;&nbsp;java.lang.String | Primary key of the message |
-   `parentMessageId` | &nbsp;&nbsp;java.lang.String | Primary key of the message's parent message |
-   `preview` | &nbsp;&nbsp;java.lang.Boolean&nbsp;&nbsp; | Boolean variable indicating if message is available to preview (e.g. true) |
-   `question` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is marked as a question (e.g. false) |
-   `subject` | &nbsp;&nbsp;java.lang.String | Subject line of the message (e.g. My MB Subject) |
-   `threadId` | &nbsp;&nbsp;java.lang.String | Primary key of the message board thread hosting the message |
-   `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 3) |
+***Message Board Message* Service Context Variables - obtain via key serviceContext**
+
+ Key | Type | Description |
+---- | ---- | ----------- |
+ `anonymous` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is anonymous (e.g. true) |
+ `assetLinkEntryIds` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset entries linked to the message |
+ `assetLinksSearchContainerPrimaryKeys` | &nbsp;&nbsp;java.lang.String | Primary keys of the asset link search container |
+ `assetTagNames` | &nbsp;&nbsp;java.lang.String | Tag names applied the asset (e.g. sea, sailing, swimming) |
+ `attachments` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating whether the message has any attachments (e.g. false) |
+ `body` | &nbsp;&nbsp;java.lang.String | Content of the message |
+ `editor` | &nbsp;&nbsp;java.lang.String | Content of the message (equivalent to the `body` value) |
+ `mbCategoryId` | &nbsp;&nbsp;java.lang.String | Primary key of the message's category |
+ `messageId` | &nbsp;&nbsp;java.lang.String | Primary key of the message |
+ `parentMessageId` | &nbsp;&nbsp;java.lang.String | Primary key of the message's parent message |
+ `preview` | &nbsp;&nbsp;java.lang.Boolean&nbsp;&nbsp; | Boolean variable indicating if message is available to preview (e.g. true) |
+ `question` | &nbsp;&nbsp;java.lang.String | Boolean variable indicating if message is marked as a question (e.g. false) |
+ `subject` | &nbsp;&nbsp;java.lang.String | Subject line of the message (e.g. My MB Subject) |
+ `threadId` | &nbsp;&nbsp;java.lang.String | Primary key of the message board thread hosting the message |
+ `workflowAction` | &nbsp;&nbsp;java.lang.String | Numerical value for the workflow action in progress (e.g. 3) |
 ---
 
 <!--Rich says change these to HTML. -Russ -->
@@ -1696,7 +1700,7 @@ variables that are a part of the Kaleo workflow.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** *Using Liferay Portal* section
+![note](../../images/tip-pen-paper.png) **Note:** *Using Liferay Portal* section
 [Creating new workflow
 definitions](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/creating-process-definitio-1)
 explains how to define workflows via XML.
@@ -1728,7 +1732,7 @@ your *Package Explorer* view onto your Liferay server in your *Servers* view.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** To update your Kaleo Workflows
+![note](../../images/tip-pen-paper.png) **Note:** To update your Kaleo Workflows
 folder with the latest workflow versions created or modified in Liferay Portal
 using Kaleo Workflow Designer from the *Kaleo Forms* portlet, right click *Kaleo
 Workflows* under your server and select *Refresh*. 
@@ -1787,7 +1791,7 @@ First we'll create a data definition that lets the user select a status value.
 
 3. In the *Fields* tab, drag and drop the *Select* field onto the canvas. 
 
-![Figure 9.31: Creating data definitions for your DDL is a snap with Liferay's graphical drag and drop interface.](../../images/kaleo-35.png)
+    ![Figure 9.31: Creating data definitions for your DDL is a snap with Liferay's graphical drag and drop interface.](../../images/kaleo-35.png)
 
 4. In the *Settings* tab, double click the *Name* property to open the property
 editor--enter *status* as the value. 
