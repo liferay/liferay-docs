@@ -1562,7 +1562,7 @@ note the asterisks (`*`); they're used to flag context variables that depend on
 workflow activity. 
 
 
-***Workflow* Context Variables*
+***Workflow* Context Variables**
 
  Key | Type | Description |
 ---- | ---- | ----------- |
