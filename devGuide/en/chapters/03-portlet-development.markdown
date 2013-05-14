@@ -289,11 +289,14 @@ portlet. All portlets must support the view mode.
 
 - `portlet-info`: Defines information that can be used for the portlet title-bar
   and for the portal's categorization of the portlet. The JSR-286 specification
-  defines a few resource elements that can be used for these purposes: title,
-  short title, and keywords. These resource elements either be directly included
-  in the deployment descriptor's portlet definition or they can be placed in a
-  resource bundle. For example, a deployment descriptor defining portlet
-  information inline might look like this:
+  defines a few resource elements that can be used for these purposes: `title`,
+  `short-title`, and `keywords`. You can either include resource elements 
+  directly in a `portlet-info` element or you can place them in resource
+  bundles.
+
+    Specifying the information directly into the `portlet-info` element in your
+    `portlet.xml` file is straightforward. For example, to you could specify a
+    weather portlet's information, like this:
 
         <portlet>
             ...
@@ -305,9 +308,20 @@ portlet. All portlets must support the view mode.
             ...
         </portlet>
 
-    If the portlet resources are defined in a resource bundle, the portlet must
-    provide the name of the resource. For example, a deployment descriptor
-    defining portlet information in a resource bundle might look like this:
+    Alternatively, you can specify this same information as resources in a
+    resource bundle file for your portlet. For example, you could create file
+    `docroot/WEB-INF/src/content/Language.properties`, in your portlet project,
+    to specify your portlet's title, short title, and keywords:
+
+        # Default Resource Bundle
+        #
+        # filename: Language.properties
+        # Portlet Info resource bundle example
+        javax.portlet.title=Weather Portlet
+        javax.portlet.short-title=Weather
+        javax.portlet.keywords=weather,forecast
+
+    To use the resource bundle, you'd reference it in your `portlet.xml` file:
 
         <portlet>
             ...
@@ -315,30 +329,30 @@ portlet. All portlets must support the view mode.
             ...
         </portlet>
 
-    If your portlet's title, short title, and keywords won't have localized
-    values, it's a best practice to specify these properties inside of the
-    `<portlet-info>` tag in `portlet.xml`. If they will have localized values,
-    you should use a resource bundle instead. If you specify values for a
-    portlet's title, short title, and keywords both in the portlet's
-    `portlet-info` tag in `portlet.xml` and in a resource bundle (not
-    recommended), the values in the resource bundle take precedence over the
-    values in the `<portlet-info>` tag.
+    As a best practice, if you're not planning on supporting localized title,
+    short title, and keywords values for your portlet, simply specify them
+    within the `<portlet-info>` element in your `portlet.xml` file. Otherwise,
+    if you're ready to provide localized values, use a resource bundle for 
+    specifying your default values and specify the localized values in separate
+    resource bundles.
 
-    Providing localized values via resource bundles separates the deployment
-    descriptor values from the localized values. For this reason, we recommend
-    using a separate resource bundle containing the localized values rather than
-    embedding all localized values in the deployment descriptor. For example,
-    the following two resource bundles are for the English and German locales.
-    Their contents would go in the `Language_en.properties` and
-    `Language_de.properties files`, respectively.
+    ---
+    
+    ![note](../../images/tip-pen-paper.png) **Note:** You should not specify
+    values for a portlet's title, short title, and keywords in both a portlet's 
+    `<portlet-info>` element in `portlet.xml` and in a resource bundle. But if
+    by accident you do, the values in the resource bundle take precedence over
+    the values in the `<portlet-info>` element.
 
-    If there is a `Language_en.properties` file in the `com.foo.content` package
-    and the locale is set to English (this is the default setting), then the
-    `Language_en.properties` file will be used. If there is a
-    `Language_de.properties` file in the `com.foo.content` package and the
-    locale is set to German then the `Language_de.properties` file will be used.
-    If there is no language-specific properties file for the current locale,
-    then the `Language.properties` file will be used.
+    ---
+
+    Specifying *localized* values for your portlet's title, short title, and
+    keywords in resource bundles is easy. For example, if you're supporting
+    German and English locales, you'd create `Language_de.properties` and
+    `Language_en.properties` files, respectively, in your portlet's
+    `docroot/WEB-INF/src/content/` directory. This is the same directory as your
+    default resource bundle file `Language.properties`. The contents of the
+    German and English resource bundles may look like the following: 
 
         # English Resource Bundle
         #
@@ -356,7 +370,19 @@ portlet. All portlets must support the view mode.
         javax.portlet.short-title=Wetter
         javax.portlet.keywords=wetter,vorhersage
 
-    Please refer to the [JSR-286 portlet specification](http://www.jcp.org/en/jsr/detail?id=286) for more details.
+    You'd reference your default bundle and these localized bundles in your
+    `portlet.xml` file, like this:
+
+        <portlet>
+            ...
+            <resource-bundle>content.Language</resource-bundle>
+            <resource-bundle>content.Language_de</resource-bundle>
+            <resource-bundle>content.Language_en</resource-bundle>
+            ...
+        </portlet>
+
+    For more information see JSR-286 portlet specification, at
+    [http://www.jcp.org/en/jsr/detail?id=286](http://www.jcp.org/en/jsr/detail?id=286).
 
 - `security-role-ref`: Security-role-ref contains the declaration of a security
 role reference in the code of the web application. Specifically in Liferay, the
