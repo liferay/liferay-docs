@@ -169,6 +169,133 @@ Liferay.com. Then, remove the newer header ID from the other header and run ...
 Below are some tips for some constructs that are unique to Liferay
 documentation. 
 
+### Ordered Lists
+
+Explicitly number your lists like so ...
+
+    1. First step.
+    2. Second step.
+    3. Third step.
+
+List items (steps) can have multiple paragraphs, images, code blocks, etc. But
+all text blocks following a step's first paragraph, **must** be indented *4
+spaces* from the start of the step number. Otherwise, the continuous numbering
+is disrupted and the step that follows restarts at `1`.
+
+**Good steps (Markdown source) ...**
+
+    1. First step.
+
+        This paragraph supports step 1.
+
+    2. Second step.
+
+        Another paragraph and an image.
+
+        ![liferay-cube image](./images/liferay-cube.png)
+
+    3. Third step.
+
+        ---
+
+        ![note](./images/tip.png) A sidebar note.
+
+        ---
+
+    3. Finally! The third and final step. Code must be indented 4 spaces more.
+    Let's see a good code block ...
+
+            System.out.println("This code is mono-spaced");
+
+**Resulting HTML from *Good steps***
+
+1. First step.
+
+    This paragraph supports step 1.
+
+2. Second step.
+
+    Another paragraph and an image.
+
+    ![liferay-cube image](./images/liferay-cube.png)
+
+3. Third step.
+
+    ---
+
+    ![note](./images/tip.png) A sidebar note.
+
+    ---
+
+4. Finally! The fourth and final step. Code must be indented 4 spaces more.
+Let's see a good code block ...
+
+        System.out.println("This code is mono-spaced");
+
+All is well in the *Good steps*. Let's consider what NOT to do by way of
+example--the *Bad steps*.
+
+**Bad steps (Markdown source) ...**
+
+    1. First step.
+
+    This paragraph is not indented the full 4 spaces from the step number.
+
+    2. Second step.
+
+        Another paragraph and an image.
+
+    ![liferay-cube image](./images/liferay-cube.png)
+
+    3. Third step.
+
+    ---
+
+    ![note](./images/tip.png) This note disrupts continuous numbering.
+
+    ---
+
+    4. Finally! The fourth and final step. But the code is not monospace as it
+    needs to be indented 4 more spaces ...
+
+        System.out.println("Code should be mono-spaced");
+
+**Resulting HTML from *Bad steps* ...**
+
+1. First step.
+
+This paragraph is not indented 4 spaces from the step number.
+
+2. Second step.
+
+    Another paragraph and even the image and notes below are good.
+
+![liferay-cube image](./images/liferay-cube.png)
+
+3. Third step. 
+
+---
+
+![note](./images/tip.png) This sidebar note disrupts continuous numbering
+because it is not indented 4 spaces.
+
+---
+
+4. Finally! The fourth and final step. But the code is not monospace as it
+needs to be indented 4 more spaces ...
+
+    System.out.println("Code should be mono-spaced");
+
+Well, there you have it--the do's and don'ts of ordered lists.
+
+**Important:** Before you send a pull request, view your Markdown file converted
+to HTML, using your editor's Pegdown converter or by viewing your document
+blob on Github. That way you can be sure any ordered lists you have, preserve
+their consinutous numbering. 
+
+Next, let's learn about creating sidebar text.
+
+
 ### Sidebars
 
 Our documentation frequently has sidebars, which are for ancillary information
