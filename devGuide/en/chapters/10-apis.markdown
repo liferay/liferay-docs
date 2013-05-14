@@ -909,10 +909,10 @@ methods.
 
 #### Disabling HTTP methods 
 
-When strict HTTP method mode is enabled, you can even filter web service access
-based on HTTP methods used by the services. For example, you can set the portal
-JSON Web Services to work in read-only mode by disabling HTTP methods other than
-GET. For example:
+When strict HTTP method mode is enabled, you can filter web service access based
+on HTTP methods used by the services. For example, you can set the portal JSON
+Web Services to work in read-only mode by disabling HTTP methods other than GET.
+For example: 
 
     jsonws.web.service.invalid.http.methods=DELETE,POST,PUT
 
@@ -920,153 +920,179 @@ Now all requests that use HTTP methods from the list above are simply ignored.
 
 #### Controlling public access 
 
-Each service method determines for itself whether it can be executed by
-unauthenticated users and whether a user has adequate permission for the chosen
-action. Most of portal's read-only methods are open to public access.
+Each service method knows whether it can be executed by unauthenticated users
+and whether a user has adequate permission for the chosen action.  Most of portal's read-only methods are
+open to public access.
 
-If you are concerned about the security, it is possible to additionally restrict
-the access to exposed JSON API for public access. For this reason, there is a
-property that specifies a comma delimited list of public methods that can be
-accessed by unauthenticated users.
+![note](../../images/tip-pen-paper.png)**Note:** You might be worried about
+software that is self aware and controls who can access its services; we don't
+blame you, but we want to assure you that Liferay, Inc. is in no way part of
+Cyberdyne Systems (developers of Skynet, the artificial inteligence system
+responsible for the near destruction of mankind--in *The Terminator*, anyways). 
+
+If you're concerned about security, you can further restrict public access to
+exposed JSON APIs by explicitly stating which methods are *public* (i.e.,
+accessible to unauthenticated users). Use the following property to specify yuor
+public methods: 
 
     jsonws.web.service.public.methods=*
 
-Wildcards are supported, so, for example, you can simply set `get*,has*,is*` to
-only enable public access to read-only methods; additionally securing all other
-JSON methods. To disable access to all exposed methods specify an empty value or
-to enable access to all exposed methods specify `*`.
+The property supports wildcards; so, if you can specify `get*,has*,is*` on the
+right hand side of the `=` symbol, all read-only JSON methods will be publicly
+accessible. All other JSON methods will be secured. To disable access to *all*
+exposed methods, you can leave the right side of the `=` symbol empty; to enable
+access to all exposed methods, specify `*`. 
 
-Lastly, let's consider how to invoke JSON Web Services.
+Next find out how to invoke JSON Web Services. 
 
 ### Invoking JSON Web Services 
 
-JSON Web Services can be invoked in several ways depending on how their
-parameters (i.e. method arguments) are passed in. But before we dive into
-different ways of passing parameters, it's important to understand how your
-invocation is matched to a method.
+How you invoke a JSON web service depends on how its parameters (i.e. method
+arguments) are passed in. We'll discuss how to pass in paramters below, but
+first let's make sure you to understand how your invocation is matched to a
+method. 
 
 #### Matching service methods 
 
-It is important to understand how calls to service methods are matched,
-especially when a service method is overloaded.
+It's important to understand how calls to service methods are matched,
+especially when a service method is overloaded. 
 
-The general rule is that besides the method name, you must provide **all**
-parameters for that service method. Even if some parameter is to be `null`, you
-must still provide it.
+The general rule is that you provide the method name and *all* parameters for
+that service method. Even if some parameter is to be `null`, you must still
+provide it.
 
-Note that how parameters are provided (as part of the URL line, as request
-parameters, etc.) is not important nor is the order of the parameters.
+It's important to provide all paramters, but it doesn't matter *how* you do it
+(e.g., as part of the URL line, as request parameters, etc.). The order of the
+parameters doesn't matter, either. 
 
-An exception to the rule of *all* parameters being required, is when using
-numeric *hints* to match methods. Let's look at using hints next.
+Exceptions abound in life, and there's an exception to the rule that *all*
+parameters are required--when using numeric *hints* to match methods. Let's look
+at using hints next. 
 
 #### Using hints 
 
-It is possible to add numeric hints that specify how many method arguments a
-service has. Hints are added as numbers separated by a dot in the method name.
-For example:
+Adding numeric hints lets you specify how many method arguments a service has;
+then, if you don't specify an argument for a parameter, it's automatically
+passed in as `null`. Syntactically, you can add hints as numbers separated by a
+dot in the method name. Here's an example: 
 
     /foo/get-bar.2/param1/123/-param2
 
-Here, the `.2` is a hint, so only service methods with 2 arguments will be
-matched, others will be ignored for matching.
+Here, the `.2` is a numeric hint specifying that only service methods with two
+arguments will be matched; others will be ignored for matching. 
 
-One important difference when a hint is specified, is now you do not have to
-specify all of the parameters. All missing arguments are treated as `null`.
-Therefore, the previous example may be called with ...
+There's an important distinction to make between matching using hints and
+matching without hints; when a hint is specified, you don't have to specify all
+of the parameters. Any missing arguments are treated as `null`. The previous
+example may be called like this:
 
     /foo/get-bar.2/param1/123
 
-... and `param2` will automatically be set to `null`.
+In this example, `param2` will automatically be set to `null`. 
 
 #### Passing parameters as part of URL path 
 
-Parameters can be passed as part of the URL path. After the service URL, you can
-append methods parameters in name/value pairs. Parameter names must be formed
-from method argument names by converting them from camel-case to lowercase
-separated-by-dash names. Example:
+You can pass parameters as part of the URL path; it's kind of sneaky, but if
+you're trying to hack Skynet, it's worth trying. After the service URL, just
+specify method parameters in name-value pairs. Parameter names must be formed
+from method argument names by converting them from camelCase to names using all
+lower case and separated-by-dash. Here's an example: 
+
+<!--The hack Skynet thing might not work; I envision passing paramteres in the
+URL being a sneaky thing to do, sort of a trick. I have to admit I don't really
+understand a lot of this chapter so if this joke doesn't work, by all means
+remove it.-->
 
     http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries/repository-id/10172/folder-id/0
 
-Parameters may be given in **any** order; it's not necessary to follow the order
-in which the arguments specified in the method signatures.
+You can pass paramters in any order; it's not necessary to follow the order in
+which the arguments specified in the method signatures. 
 
-When a method name is overloaded, the *best match* will be used: The method that
-contains the least number of undefined arguments is invoked.
+When a method name is overloaded, the *best match* will be used; because Skynet
+is smarter than you, it chooses the method that contains the least number of
+undefined arguments and invokes it for you, human. 
+
+<!--Again, if this doesn't work, get rid of it. -->
+
+You can also pass paramters in a URL query, and we'll show you how next. 
 
 #### Passing parameters as URL query 
 
-Parameters can be passed as request parameters, too. The difference is parameter
-names are specified as is (e.g. camel-case) and are set equal to their argument
-values:
+You can pass in parameters as request parameters. Parameter names are specified
+as is (e.g. camelCase) and are set equal to their argument values, like this: 
 
     http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries?repositoryId=10172&folderId=0
 
 As with passing parameters as part of a URL path, the parameter order is not
-important, the *best match* rule applies for overloaded methods, etc.
+important, and the *best match* rule applies for overloaded methods. 
+
+Now that you kow a few different ways to pass paramters, next let's mix them all
+up and see if we can confuse Skynet into self-destruction! 
 
 #### Mixed way of passing parameters 
 
-Parameters can be passed in a mixed way: some can be part of the URL path and
-some can be specified as request parameters.
+Parameters can be passed in a mixed way; some can be part of the URL path and
+some can be specified as request parameters. You cannot confuse Skynet in this
+way--try again, human. 
 
 #### Type conversion of the parameters 
 
 Parameter values are sent as strings using the HTTP protocol. Before a matching
 Java service method is invoked, each parameter value is converted from a string
-to its target Java type. We use a 3rd party open-source library to convert each
-object to its appropriate common type. Of course, it is possible to add or
-change the conversion for certain types; but we'll just cover how the
-conversions work by as-is.
+to its target Java type. Liferay uses a third party open source library to
+convert each object to its appropriate common type. It's possible to add or
+change the conversion for certain types; but we'll just cover the standard
+conversions process. 
 
-Conversion for common types (`long`, `String`, `boolean`, etc.) is
-straightforward. All dates can be given in milliseconds. Locales, can be passed
-as locale names (e.g. `en` and `en_US`). To pass in an array of numbers, send a
+Conversion for common types (e.g., `long`, `String`, `boolean`) is
+straightforward. Dates can be given in milliseconds, locales can be passed as
+locale names (e.g. `en` and `en_US`). To pass in an array of numbers, send a
 string of comma-separated numbers (e.g. string `4,8,15,16,23,42` can be
-converted to `long[]` type). You get the picture!
+converted to `long[]` type). You get the picture! 
 
-Arguments can be of type `List` or `Map`, too! To pass a `List` argument, send a
-JSON array. To pass a `Map` argument, send a JSON object. The conversion then is
-done in two steps:
+In addition to the common types, arguments can be of type `List` or `Map`. To
+pass a `List` argument, send a JSON array. To pass a `Map` argument, send a JSON
+object. The conversion of these is done in two steps, ingeniously referred to
+below as *Step 1* and *Step 2*:
 
-*Step 1 - JSON deserialization - * JSON arrays are converted into `List<String>`
-and JSON objects are converted to `Map<String, String>`. Note, due to security
-reasons, it is forbidden to instantiate any type within JSON deserialization.
+- *Step 1--JSON deserialization*: JSON arrays are converted into `List<String>`
+and JSON objects are converted to `Map<String, String>`. Due to security
+reasons, it is forbidden to instantiate any type within JSON deserialization. 
 
-*Step 2 - Generification - * Each `String` element of the `List` and `Map` is
-converted to its target type (the argument's Java generics type specified in the
-method signature). Note, this step is only done if the Java argument type uses
-generics.
+- *Step 2--Generification*: Each `String` element of the `List` and `Map` is
+converted to its target type (the argument's generic Java type specified in the
+method signature). This step is only executed if the Java argument type uses
+generics. 
 
-For example, let's consider the conversion of string array `[en,fr]` as JSON web
-service parameters for a `List<Locale>` Java method argument type:
+As an example, let's consider the conversion of string array `[en,fr]` as JSON
+web service parameters for a `List<Locale>` Java method argument type: 
 
-*Step 1 - JSON deserialization - * The JSON array is deserialized to a
-`List<String>` containing strings `en` and `fr`.
+- *Step 1--JSON deserialization*: The JSON array is deserialized to a
+`List<String>` containing strings `en` and `fr`. 
 
-*Step 2 - Generification - * Each string is converted to the `Locale` (the
-generics type), resulting in the `List<Locale>` Java argument type.
+- *Step 2--Generification*: Each string is converted to the `Locale` (the
+generic type), resulting in the `List<Locale>` Java argument type. 
 
 #### Sending NULL values 
 
-To pass a `null` value for an argument, simply prefix the parameter name with a
-dash `-`. For example:
+To pass a `null` value for an argument, prefix the parameter name with a dash.
+Here's an example: 
 
     .../dlsync/get-d-l-sync-update/company-id/10151/repository-id/10195/-last-access-date
 
-Here the `last-access-date` parameter is interpreted as `null`.
+The `last-access-date` parameter is interpreted as `null`. 
 
-Null parameters, therefore, do not have specified values. Of course, null
-parameters do not have to be the last in the URL, as in this example. When a
-null parameter is passed as a request parameter, its value is ignored and `null`
-is used instead:
+Not surprisingly, null parameters do not have specified values. Null parameters
+do not have to be the last in the URL, as in the example above. When a null
+parameter is passed as a request parameter, its value is ignored and `null` is
+used instead: 
 
     <input type="hidden" name="-last-access-date" value=""/>
 
 When using JSON RPC (see below), null values may be sent explicitly, even
 without a prefix. For example:
 
-    "last-access-date" : null
+    "last-access-date":null
 
 #### Parameters encoding 
 
