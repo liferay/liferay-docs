@@ -66,6 +66,17 @@ directory to convert the userGuide into complete English markdown, html, odt, an
 		</classpath>
 	</taskdef>
 
+	<taskdef name="cleanimgs" classname="com.liferay.documentation.util.CleanImagesTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="numberheaders" classname="com.liferay.documentation.util.NumberHeadersTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -130,6 +141,11 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     <target name="clean-dist" description="deletes dist directory">
         <echo message="... deleting dist directory"/>
         <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="clean-images" description="removes unused images for a document">
+	<cleanimgs docdir="${doc.dir}" lang="${lang}">
+	</cleanimgs>
     </target>
 
     <target name="clean-lang" description="deletes build/${lang} directory">
