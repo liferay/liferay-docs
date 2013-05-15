@@ -676,7 +676,7 @@ in creating a more dynamic web site: you can place user-created wiki entries,
 blog posts or message board messages in context with your content. Let's look at
 some of its features.
 
-#### Querying for Content  
+### Querying for Content  
 
 The Asset Publisher portlet is a highly configurable application that lets you
 query for mixed types of content on the fly. By giving you the ability to
@@ -696,7 +696,7 @@ tags and categories.
 Let's first look at how we might select content manually. You'll see that it's
 very similar to the Web Content Display portlet.
 
-##### Selecting assets manually  
+#### Selecting assets manually  
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can select
@@ -724,7 +724,7 @@ display types to configure how the content appears.
 Most of the time, however, you'll likely be using the Asset Publisher to select
 content dynamically.
 
-##### Selecting assets dynamically  
+#### Selecting assets dynamically  
 
 The Asset Publisher's default behavior is to select assets dynamically according
 to rules that you give it. These rules can be stacked on top of each other so
@@ -771,7 +771,7 @@ control over how content is ordered and grouped in the list, but this is only
 one aspect of how your content will be displayed. You can refine the display
 through many other display settings.
 
-## Setting up Display Pages  
+### Setting up Display Pages  
 
 The Display Settings section gives you precise control over the display of your
 assets. There are a multitude of options available to configure how you want
@@ -781,7 +781,7 @@ conversions. Additionally, you can enable printing, flags, ratings, comments and
 comment ratings, and these work the same way they do in the Web Content Display
 portlet.
 
-##### Display Style  
+#### Display Style  
 
 **Abstracts:** Shows the first 200-500 characters of the content, defined by the
 **Abstract Length** field.
@@ -793,7 +793,7 @@ developer.
 
 **Full Content:** The entire content of the entry.
 
-##### Other Settings  
+#### Other Settings  
 
 **Asset Link Behavior:** The default value is *Show Full Content*. With this
 value selected, when the link to an asset is clicked, the full asset is
@@ -842,10 +842,46 @@ adjust the ones that apply to you. You'll want to use the Asset Publisher to
 query for mixed assets in the portal that have relevant information for your
 users.
 
+### Configuring Asset Publisher Subscriptions
+
+The Asset Publisher portlet supports two kinds of subscriptions: RSS
+subscriptions and email subscriptions. To enable subscriptions, open the Asset
+Publisher's configuration window (click on the wrench icon and select
+*Configuration*). In the configuration window, open the Subscriptions tab of the
+Setup tab. There are two options:
+
+- *Enable RSS Subscription*
+- *Enable Email Subscription*
+
+Enabling RSS subscription creates an RSS feed containing links to all of the
+assets that the Asset Publisher is configured to display. A link to this RSS
+feed appears in at the bottom of the Asset Publisher portlet.
+
+![Figure 6.x: When RSS subscriptions have been enabled for an Asset Publisher portlet, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../images/asset-publisher-rss.png)
+
+Enabling email subscription adds a *Subscribe* link to the Asset Publisher.
+Users wishing to be notified of newly published assets can click on this link to
+be added to the subscription list. Liferay periodically checks for new assets
+and sends emails to subscribed users informing them about the new assets. By
+default, Liferay performs this check every twenty-four hours but this can be
+customized by adding the following property to your `portal-ext.properties` file
+and changing the number:
+
+    asset.publisher.check.interval=24
+
+Also by default, Liferay limits the number of assets that are retrieved from the
+database during this check to twenty. If you're interested in optimizing
+Liferay's performance, you can lower this limit. If you're not concerned about
+performance, you can remove this limit entirely. To customize the number of
+assets about which Liferay notifies subscribed users, add the following property
+to your `portal-ext.properties` file and change the number:
+
+    asset.publisher.dynamic.subscription.limit=20
+
 Next, we'll look at Display Pages, an addition to the asset framework introduced
 by Liferay 6.1.
 
-#### Display Page  
+### Display Pages
 
 If you've been using Liferay for a while, or you've just spent a little bit of
 time with this guide, you might have noticed something about how Liferay handles
