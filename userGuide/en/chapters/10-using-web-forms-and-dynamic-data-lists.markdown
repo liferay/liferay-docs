@@ -73,8 +73,7 @@ or *Manage &rarr; Site Content &rarr; Dynamic Data Lists*. Within the dynamic
 data lists section, you can either create a new data type (*Manage Data
 Definitions*) or a new list from an existing data type.
 
-![Figure 10.1: Data Lists in the control
-panel.](../../images/05-ddl-control-panel.png)
+![Figure 10.1: Data Lists in the control panel.](../../images/05-ddl-control-panel.png)
 
 If you have a new data type, you need to create a definition for it first. Click
 *Manage Data Definitions* and click the *Add* button. The first thing you should
@@ -91,13 +90,7 @@ Let's explore the different data types at our disposal:
 assist in selecting the desired date. The format for the date is governed by the
 current locale.
 
-**Number:** a text box that only accepts numbers as inputs, but puts no
-constraints on the kind of number entered.
-
-**Integer:** similar to `Number`, except that it constrains user input to
-non-fractional numbers.
-
-**Decimal:** similar to `Number`, except that it requires a decimal point (`.`)
+**Decimal:** similar to *Number*, except that it requires a decimal point (`.`)
 be present.
 
 **Documents and Media:** select an existing uploaded document to attach to the
@@ -107,24 +100,33 @@ data record.
 stored in Documents and Media, in an existing folder or in the user's default
 upload location.
 
+**HTML:** An area that uses a WYSIWYG editor to enhance the content.
+
+**Integer:** similar to *Number*, except that it constrains user input to
+non-fractional numbers.
+
+**Link to Page:** Inserts a link to another page in the same site.
+
+**Number:** a text box that only accepts numbers as inputs, but puts no
+constraints on the kind of number entered.
+
 **Radio:** presents the user with a list of options to choose from using radio
-button inputs. Values are stored as `String`s. Similar to `Select`.
+button inputs. Values are stored as strings. Similar to *Select*.
 
 **Select:** a selection of options for the user to choose from using a combo
-box. Can be configured to allow multiple selections, unlike `Radio`.
+box. Can be configured to allow multiple selections, unlike *Radio*.
 
-**Text:** a simple text field for any `String` input.
+**Text:** a simple text field for any string input.
 
 **Text Box:** a large text box for long text input.
 
-![Figure 10.2: Data definition
-fields.](../../images/05-data-definition-screen.png)
+![Figure 10.2: Data definition fields.](../../images/05-data-definition-screen.png)
 
 Using that reference as a nice cheat-sheet, you can now create the data type you
-need for "Volunteer Work Sign-Up." Use a `Text` type for the name. For all the
-tasks your friends and family can volunteer to do for you, use `Select`
+need for "Volunteer Work Sign-Up." Use a *Text* type for the name. For all the
+tasks your friends and family can volunteer to do for you, use *Select*
 (obviously set to allow multiple options). Finally, you don't want to forget a
-`File Upload` so they can upload images of themselves. After all, how much more
+*File Upload* so they can upload images of themselves. After all, how much more
 official-feeling and fun is it if you can print out some nifty badges? To add
 these fields, drag them from the palette on the left to the work area on the
 right. 
@@ -143,41 +145,49 @@ but is available to reference from a display template.
 **Field Label:** Sets the text that can be displayed with the field. This is the
 human-readable text that the user sees.
 
-**Show Label:** When set to `Yes`, the label is shown with the form field.
+**Show Label:** When set to *Yes*, the label is shown with the form field.
 
-**Required:** When set to `Yes`, this field must have data in it for a new entry
-to be submitted.
+**Required:** When set to *Yes*, this field must have data in it for a new entry
+to be submitted (not available for Boolean).
 
 **Name:** The name of the field internally, automatically generated. Since this
 is the variable name that you can read the data from in a display template, you
 should give a more memorable name here.
 
-**Predefined value:** If you would like example data or a default value for the
+**Predefined Value:** If you would like example data or a default value for the
 user to start with, enter it here. The field's value defaults to this when
-adding a new entry.
+adding a new entry (not available for File Upload).
 
 **Tip:** Each field can have a small help icon, with a tooltip attached that
 displays helpful information. If you would like to provide text for the tooltip
 you may enter it here.
 
-**Multiple (Select):** When set to `Yes`, allows the user to select more than
-one option. This defaults to no.
+**Indexable:** When set to *Yes*, Liferay is able to index your field for
+search.
 
-**Allowed File Extensions (File Upload):** By default, form validation accepts
+**Repeatable:** When set to *Yes*, the field is repeatable. Your users can then
+add as many copies of this field as they like.
+
+**Width:** Sets the visual width of the form on the page. It does not affect the
+values that are stored. Possible values are *Small*, *Medium* and *Large* (not
+available for Boolean, Documents and Media, File Upload, Radio, and Select).
+
+**Allowed File Extensions:** By default, form validation accepts
 any file type to be submitted. Set this value to a comma-delimited list of
 extensions, including the character `.`, and Liferay checks the extension before
-the file can be uploaded.
+the file can be uploaded (only available for File Upload).
 
-**Folder (File Upload):** Set the location the document is uploaded to in
-Documents and Media. You can choose from an existing folder, create one or
-default to Documents and Media's home location.
+**Multiple:** When set to *Yes*, allows the user to select more than
+one option. This defaults to no (only available for Select).
 
-**Width (Text, Text Box, Decimal, Integer, Number):** Sets the visual width of
-the form on the page. It does not affect the values that are stored. Possible
-values are `Small`, `Medium` and `Large`.
+**Options:** Changes the options available for selection. You're able to add and
+remove options as well as edit each individual option's display name and value
+(only available for Radio and Select).
 
-![Figure 10.3: Data field
-properties.](../../images/05-data-definition-field-properties.png)
+**Read Only:** When set to *Yes*, uploaded files are unable to be deleted or
+modified by the user (only available for File Upload).
+
+![Figure 10.3: Data field properties.](../../images/05-data-definition-field-properties.png)
 
 In addition to dragging the fields around to create your desired forms, you can
 stack inputs within inputs by dragging a field within another field. You can
@@ -185,6 +195,25 @@ organize your data into unlimited levels of hierarchy, creating the clearest,
 most logical data model. There is also a duplicate button on each field (the
 middle button), allowing you to easily clone any field as many times as you
 need.
+
+Another method to edit your data definition is switching to *Source* mode and
+manually customizing your structure by editing its XML file. You'll notice by
+default the *View* mode is selected. Click the *Source* tab to switch to Source
+mode. This method is for the more experienced developers.
+
+Data definitions also have the capability of inheriting characteristics from
+other definitions. When a parent data definition is configured, the child
+definition inherits the parent's fields and settings. Using this feature is
+helpful when you want to make a similar data definition to one you've already
+created. For instance, if you'd like to create an advanced sign-up sheet in
+addition to a regular sign-up sheet, you can simply inherit the characteristics
+of the regular sheet and only add the additional fields necessary for the
+advanced sheet. When the advanced sheet is configured, it will display its
+parent's fields in addition to its own fields.
+
+After you've saved your data definition, Liferay provides a WebDAV URL and a
+static URL. These values access the XML source of your data definition. To
+obtain these values, return to your data definition after it has been saved.
 
 That really covers the basic tools that users of `list.it` need to get rolling
 with an unlimited array of custom types. Plus, you can always come back and
@@ -209,13 +238,13 @@ definition and robust data entry and delivery.
 
 To create a new volunteer list with the "Volunteer Sign-Up" definition:
 
-1. From the *Content* section of the Control Panel, select Dynamic Data Lists.
+1. From the *Content* section of the Control Panel, select *Dynamic Data Lists*.
 
 2. Click on *Add* to create a new list based on a data definition, which in our
    case is the volunteer sign-up.
 
-3. Give the data list a name, like *Spring Move-In* and a description to assist
-   administrative users in the future.
+3. Give the data list a name, like *Spring Move-In Sign Up* and a description to
+   assist administrative users in the future.
 
 4. Last and most importantly, click *Select* under the *Data Definition*
    section--this is where you set the data model that drives this list.
@@ -229,6 +258,9 @@ this list? The data definition you've previously created (or selected) defines
 the layout as well, which means the form looks just the way you laid it out. 
 
 ![Figure 10.4: Entering a new data record.](../../images/05-ddl-add-record.png)
+
+<!-- Photos from this point and below may need to be replaced. Will wait until
+after new theme is implemented for 6.2 -->
 
 But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet
 or that boring Jobs Listing look? The answers to these pressing, burning
@@ -266,8 +298,7 @@ about that.
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If Listies don't customize the display, their lists look something like this:
 
-![Figure 10.5: The default data list
-display.](../../images/05-ddl-list-display.png)
+![Figure 10.5: The default data list display.](../../images/05-ddl-list-display.png)
 
 This isn't all that exciting, but it allows users to see the list's contents,
 and if they have permission, to add and/or edit list items. Within a site like
@@ -561,8 +592,7 @@ To build a list in Kaleo Forms with a workflow:
 
 5. Click *Save* to save your process.
 
-![Figure 10.9: New Kaleo Forms
-process](../../images/05-ddl-kaleo-forms-new-process.png)
+![Figure 10.9: New Kaleo Forms process](../../images/05-ddl-kaleo-forms-new-process.png)
 
 While the form looks complicated, it can be straightforward. There are a few
 pieces that make up a process and clicking on each one takes you to the relevant
@@ -596,8 +626,7 @@ information that should. Other stages in the workflow may be a great place to
 store that additional information. No required fields have to be present on an
 edit mode form.
 
-![Figure 10.10: Selecting a form template as the initial
-form](../../images/05-kaleo-forms-form-templates.png)
+![Figure 10.10: Selecting a form template as the initial form](../../images/05-kaleo-forms-form-templates.png)
 
 Once you have chosen the initial display you want, all that's left to do is
 configure the workflow for your process.
@@ -609,8 +638,7 @@ available workflows can be chosen and you can create new ones from the selection
 screen. Simply choose *Add Workflow* and a Workflow Designer screen appears
 allowing you to define a new workflow by dragging elements in a flow chart.
 
-![Figure 10.11: Creating a new workflow with Kaleo
-Designer](../../images/05-kaleo-forms-kaleo-designer.png)
+![Figure 10.11: Creating a new workflow with Kaleo Designer](../../images/05-kaleo-forms-kaleo-designer.png)
 
 We'll keep ours simple and just choose "Single Approver Definition." This gives
 us a starting point (entry creation) and a 'review' task, which we can use to
@@ -635,8 +663,7 @@ When inside the view to assign forms to tasks:
 
 4. Click *Save* to save the form assignment.
 
-![Figure 10.12: Assigning forms to workflow
-tasks](../../images/05-kaleo-forms-task-form.png)
+![Figure 10.12: Assigning forms to workflow tasks](../../images/05-kaleo-forms-task-form.png)
 
 You can assign forms to as many tasks as you need until you're satisfied with
 the workflow. After this stage, save the process and it's ready to be used in
@@ -650,8 +677,7 @@ Once you have a new Kaleo Form process, you can add new entries through the
 Summary tab in Kaleo Forms. Once the form is filled out and submitted, it enters
 the workflow you selected for the process.
 
-![Figure 10.13: Adding a new entry to a
-process](../../images/05-kaleo-form-new-entry.png)
+![Figure 10.13: Adding a new entry to a process](../../images/05-kaleo-form-new-entry.png)
 
 After you have created an entry, the next task in the workflow may have an
 additional form to complete. If so, there is also an option to enter it:
@@ -660,8 +686,7 @@ additional form to complete. If so, there is also an option to enter it:
 
 2. Click *Complete form*.
 
-![Figure 10.14: Completing a form in the next workflow
-task](../../images/05-kaleo-forms-complete-form.png)
+![Figure 10.14: Completing a form in the next workflow task](../../images/05-kaleo-forms-complete-form.png)
 
 After the new entry has worked its way through the entire workflow, it is added
 to the data set collected. The owner of that data set (who created the Kaleo
