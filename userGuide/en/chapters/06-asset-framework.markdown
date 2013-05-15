@@ -230,7 +230,7 @@ bar.
 
 Wiki articles, comments, and text file attachments containing the word *Liferay*
 are returned as search results. The search results clearly show whether an
-individual search result is a wiki article, a comment, or an attachement. In the
+individual search result is a wiki article, a comment, or an attachment. In the
 next section, we'll see how the Search portlet can be used to search through
 multiple types of content on Liferay. Its faceted search feature is a powerful
 tool that allows users to include or not include specific types of assets in a
@@ -300,8 +300,7 @@ searched. Under the hood, this means that these entities use Liferay's Asset API
 and have an Indexer defined. 
 
 Developers can create custom searchable assets within the portal. This is
-described in the [Developer's
-Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/-asset-framewo-1).
+described in the [Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/-asset-framewo-1).
 For this reason, you may have additional asset types defined in your portal
 beyond the ones that Liferay ships with by default. If this is the case, you may
 wish to tweak the `frequency threshold` and the `max terms` settings to increase
@@ -802,10 +801,10 @@ displayed in the current Asset Publisher. If the value *View in a Specific
 Portlet* is selected, clicking on an asset causes that asset to be displayed in
 the portlet to which the asset belongs. For example, a blog entry would be
 displayed in the Blogs portlet where it was created. Likewise, a forum post
-would be displayed in the Message Boards porlet where it was created. Similarly,
-a generic Web Content article would be displayed in the Asset Publisher of its
-configurated Display Page. See the secton below on Display Pages for more
-information.
+would be displayed in the Message Boards portlet where it was created.
+Similarly, a generic Web Content article would be displayed in the Asset
+Publisher of its configured Display Page. See the section below on Display Pages
+for more information.
 
 **Maximum Items to Display:** You can display 1-100 items.
 
@@ -905,12 +904,12 @@ related assets within the display for a specific asset, and with the Related
 Assets portlet you can show links to any assets which are related to content
 displayed on that page.
 
-The Related Assets portlet is based on the Asset Publisher and possseses
+The Related Assets portlet is based on the Asset Publisher and possesses
 essentially the same interface with one key difference. The Asset publisher
 displays any content that meets the criteria selected in the portlet
 configuration. The Related Assets portlet only displays content that meets the
 criteria, and also is listed as a related asset for a piece of content that is
-currently published on the page where it is placed. Let's take a look at the the
+currently published on the page where it is placed. Let's take a look at the
 Related Assets portlet.
 
 As a prerequisite for the Related Assets portlet to display related assets, you
@@ -924,7 +923,7 @@ assets from the menu.
 Filter options let you set minimum requirements for displaying assets by their
 categories, tags, and custom fields. Ordering and Grouping allows you to
 organize assets using the same criteria. Display settings allow you to customize
-how asssets are shown in the portlet. They can be listed by title, in a table,
+how assets are shown in the portlet. They can be listed by title, in a table,
 by abstract or full content. You can convert assets to different document types
 like ODT, PDF, and RTF. You can choose to show various metadata fields such as
 author, modification date, tags, and view count. You can even enable RSS
