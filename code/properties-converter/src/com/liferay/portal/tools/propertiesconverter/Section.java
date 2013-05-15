@@ -1,28 +1,34 @@
 
 package com.liferay.portal.tools.propertiesconverter;
 
+import com.liferay.portal.kernel.util.StringUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Section {
+
+	public Section(String section, boolean title, boolean description, boolean propertyText, boolean activeProperties, boolean inactiveProperties) {
 	
-	public Section(String descriptionSection, int position) {
+		if (title) {
+			_title = extractSectionTitle(section);
+		}
 
-		_descriptionParagraphs = extractDescriptionParagraphs(descriptionSection);
-	}
+		if (description) {
+			_descriptionParagraphs = extractDescriptionParagraphs(section);
+		}
 
-	public Section(String propertiesSection, int position, boolean dummy) {
+		if (propertyText) {
+			_propertiesParagraphs = extractPropertiesParagraphs(section);
+		}
 
-		_propertiesParagraphs = extractPropertiesParagraphs(propertiesSection);
-		
-		_activeProperties = extractActiveProperties(propertiesSection);
-		
-		_inactiveProperties = extractInactiveProperties(propertiesSection);
-	}
+		if (activeProperties) {
+			_activeProperties = extractActiveProperties(section);
+		}
 
-	public Section(String titleSection, int position, boolean dummy, boolean dummy2) {
-
-		_title = extractSectionTitle(titleSection);
+		if (inactiveProperties) {
+			_inactiveProperties = extractInactiveProperties(section);
+		}
 	}
 	
 	public List<String> get_descriptionParagraphs() {
@@ -30,7 +36,7 @@ public class Section {
 		return _descriptionParagraphs;
 	}
 
-	public List<String> get_propertiesParagraphs() {
+	public List<PropertiesParagraph> get_propertiesParagraphs() {
 		
 		return _propertiesParagraphs;
 	}
@@ -57,7 +63,7 @@ public class Section {
 	}
 
 	public void set_propertiesParagraphs(
-			List<String> propertiesParagraphs) {
+			List<PropertiesParagraph> propertiesParagraphs) {
 		
 		_propertiesParagraphs = propertiesParagraphs;
 	}
@@ -109,31 +115,104 @@ public class Section {
 		return descriptionParagraphs;
 	}
 
-	private static List<String> extractPropertiesParagraphs(String propertiesSection) {
+	private static List<PropertiesParagraph> extractPropertiesParagraphs(String propertiesSection) {
 
-		List<String> propertiesParagraphs = new ArrayList<String>();
+		List<PropertiesParagraph> propertiesParagraphs = new ArrayList<PropertiesParagraph>();
 
 		String[] lines = propertiesSection.split("\n");
 
 		StringBuilder currentParagraph = new StringBuilder();
 
-		for (int i = 0; i < lines.length; i++) {
+		boolean isPreformatted = false;
 
-			if (lines[i].trim().startsWith("# ")) {
-				if (!(currentParagraph.length() == 0)) {
-					currentParagraph.append(" " + lines[i].replaceFirst("#", "").trim());
+		// Add property comments as paragraphs. Stop on the first property
+		// assignment.
+
+		for (int i = 0; i < lines.length; i++) {
+			String line = StringUtil.trimTrailing(lines[i]);
+
+			if (line.startsWith("        #")) {
+				// Comment embedded in value list
+
+				break;
+			}
+			else if (line.trim().startsWith("#     ")) {
+				// Found pre-formatted text
+
+				if (isPreformatted) {
+					// Append to previous pre-formatted text block
+					currentParagraph.append(line.trim().replaceFirst("#", ""));
 				}
 				else {
-					currentParagraph.append(lines[i].replaceFirst("#", "").trim());
+					isPreformatted = true;
+
+					// Add previous pre-formated text block to list
+					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
+
+					// Start a new regular paragraph
+					currentParagraph = new StringBuilder();
+					currentParagraph.append(line.trim().replaceFirst("#", ""));
+				}
+
+				currentParagraph.append("\n");
+			}
+			else if (line.trim().startsWith("# ")) {
+				// Found a regular comment
+
+				if (isPreformatted) {
+					isPreformatted = false;
+
+					// Add previous pre-formated text block to list
+					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
+
+					// Start a new regular paragraph
+					currentParagraph = new StringBuilder();
+					currentParagraph.append(line.trim().replaceFirst("#", "").trim());
+				}
+				else {
+					// Append to current paragraph
+					if (currentParagraph.length() > 0) {
+						currentParagraph.append(" ");
+					}
+
+					currentParagraph.append(line.replaceFirst("#", "").trim());
+				}
+
+				currentParagraph.append("\n");
+			}
+			else if (line.trim().startsWith("#")) {
+				if (line.trim().length() < 2) {
+					if (i == 0) {
+						// Continue past initial leading empty comment line
+						continue;
+					}
+
+					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
+
+					currentParagraph = new StringBuilder();
+
+					continue;
+				}
+				else {
+					// Inactive property assignment
+
+					// Add current paragraph to list and cease processing
+					if (currentParagraph.length() > 0) {
+						propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
+					}
+
+					break;
 				}
 			}
-			else if (lines[i].trim().length() < 2) {
-				if (currentParagraph.length() == 0) {
-					continue;
-				} else {
-					propertiesParagraphs.add(currentParagraph.toString());
-					currentParagraph = new StringBuilder();
+			else {
+				// Active property assignment
+
+				// Add current paragraph to list and cease processing
+				if (currentParagraph.length() > 0) {
+					propertiesParagraphs.add(new PropertiesParagraph(currentParagraph.toString()));
 				}
+
+				break;
 			}
 			
 		}
@@ -146,15 +225,29 @@ public class Section {
 		StringBuilder activeProperties = new StringBuilder();
 		
 		String[] lines = propertiesSection.split("\n");
-		
+
+		boolean isActiveProperty = false;
 		for (int i = 0; i < lines.length; i++) {
-			
-			if (lines[i].trim().startsWith("# ") || lines[i].length() < 2) {
-				continue;
+			String line = lines[i];
+
+			if (!isActiveProperty) {
+				if (line.startsWith("#") || line.startsWith("    #")) {
+					continue;
+				}
+				else {
+					isActiveProperty = true;
+					activeProperties.append(line + "\n");
+				}
 			}
-			
-			if (lines[i].contains("=") && !lines[i].trim().startsWith("#")) {
-				activeProperties.append(lines[i] + "\n");
+			else {
+				if (line.startsWith("#") || line.startsWith("    #")) {
+					isActiveProperty = false;
+
+					continue;
+				}
+				else {
+					activeProperties.append(line + "\n");
+				}
 			}
 		}
 		
@@ -163,22 +256,36 @@ public class Section {
 
 	private static String extractInactiveProperties(String propertiesSection) {
 		
-		StringBuilder activeProperties = new StringBuilder();
+		StringBuilder inactiveProperties = new StringBuilder();
 		
 		String[] lines = propertiesSection.split("\n");
-		
+
+		boolean isInactiveProperty = false;
 		for (int i = 0; i < lines.length; i++) {
-			
-			if (lines[i].trim().startsWith("# ") || lines[i].length() < 2) {
-				continue;
+			String line = lines[i];
+
+			if (!isInactiveProperty) {
+				if (line.startsWith("    # ") || line.trim().equals("#")) {
+					continue;
+				}
+				else if (line.startsWith("    #")) {
+					isInactiveProperty = true;
+					inactiveProperties.append(line.replaceFirst("#", "") + "\n");
+				}
 			}
-			
-			if (lines[i].contains("=") && lines[i].trim().startsWith("#")) {
-				activeProperties.append(lines[i].replaceFirst("#", "") + "\n");
+			else {
+				if (!line.trim().startsWith("#")) {
+					isInactiveProperty = false;
+
+					continue;
+				}
+				else {
+					inactiveProperties.append(line.replaceFirst("#", "") + "\n");
+				}
 			}
 		}
 		
-		return activeProperties.toString();	
+		return inactiveProperties.toString();	
 	}
 
 	private static String extractSectionTitle(String titleSection) {
@@ -195,7 +302,7 @@ public class Section {
 	
 	// propertiesSection
 	
-	private List<String> _propertiesParagraphs;
+	private List<PropertiesParagraph> _propertiesParagraphs;
 	
 	private String _activeProperties;
 	

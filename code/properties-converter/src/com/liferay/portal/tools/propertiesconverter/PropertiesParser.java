@@ -1,6 +1,8 @@
 
 package com.liferay.portal.tools.propertiesconverter;
 
+import com.liferay.portal.kernel.util.StringUtil;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -67,34 +69,37 @@ public class PropertiesParser {
 		Section section;
 		
 		for (int i = 0; i < sectionStrings.length; i++) {
-			
+
+			// Trim leading whitespace, except space charaters
+
+			sectionStrings[i] = StringUtil.trimLeading(sectionStrings[i], ' ');
+
 			if (sectionStrings[i].startsWith("##")) {
 				int numLines = countLines(sectionStrings[i]);
 				if (numLines > 3) {
 					
 					// Description section
 					
-					section = new Section(sectionStrings[i], i);
+					section = new Section(sectionStrings[i], false, true, false, false, false);
 					sections.add(section);
 				}
 				else if (numLines == 3) {
 					
 					// Title section
 					
-					section = new Section(sectionStrings[i], i, false, false);
+					section = new Section(sectionStrings[i], true, false, false, false, false);
 					sections.add(section);
 				}
 				else {
 					System.out.println("Error: Invalid section");
 				}
 			}
-			else if (sectionStrings[i].trim().startsWith("#")) {
+			else {
 				
 				// Properties section
 				
-				section = new Section(sectionStrings[i], i, false);
+				section = new Section(sectionStrings[i], false, false, true, true, true);
 				sections.add(section);
-				
 			}
 			
 		}
