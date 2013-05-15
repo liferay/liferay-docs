@@ -1215,89 +1215,100 @@ In JSON RPC, here's what it looks like:
 
     "+foo" : "com.liferay.impl.FooBean"
 
-All these examples specify a concrete implementation for the `foo` service
+All the examples above specify a concrete implementation for the `foo` service
 method parameter. 
+
+Once you p[ass in an object parameter, you might want to populate the object.
+Find out how next. 
 
 #### Inner Parameters 
 
-In many cases, you'll need to populate objects that are passed as parameters. A
-good example is a default parameter `serviceContext` of type `ServiceContext`
-(see the *Service Context* section in this chapter). Sometimes, you need to set
-some of the inner properties (i.e. fields) of the `ServiceContext`, such as:
-`addGroupPermissions`, `scopeGroupId`, etc., to make an appropriate call to a
-JSONWS.
+When you pass in an object paramter, you'll often need to populate it's inner
+parameters (i.e., fields). Consider a default parameter `serviceContext` of type
+`ServiceContext` (see the *Service Context* section in this chapter to find out
+more about this type). To make an appropriate call to JSONWS, you might need to
+set the `serviceContext` parameter's fields `addGroupPermissions` and
+`scopeGroupId`. 
 
-To pass inner parameters, just specify them using a 'dot' notation. That is,
-specify the name of the parameter, followed by a dot `.`, followed by the name
-of the inner parameter. For example, with regards to the `ServiceContext` inner
-parameters you can provide: `serviceContext.addGroupPermissions`,
-`serviceContext.scopeGroupId` parameters, together with other parameters of your
-web service call. They will be recognized as inner parameters (with a dot in the
-name) and their values will be *injected* into existing parameters, before the
-API service method is executed.
+You can pass inner parameters by specifying them using *dot* notation. Just
+apppend the name of the parameter with a dot (i.e., a period, `.`), followed by
+the name of the inner parameter. For the `ServiceContext` inner parameters we
+mentioned above you'd specify `serviceContext.addGroupPermissions` and
+`serviceContext.scopeGroupId`. They'll be recognized as inner parameters and
+their values will be *injected* into existing parameters before the API service
+method is executed. 
 
-Inner parameters are not counted as *regular* parameters for matching methods
-and are ignored during matching.
+Inner parameters aren't counted as *regular* parameters for matching methods
+and are ignored during matching. 
+
+---
+
+![tip](../../images/tip-pen-paper.png)**Tip:** Use inner parameters with object
+parameters to set inner content of created parameter instances! 
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** Use inner parameters with object
- parameters to set inner content of created parameter instances!
-
----
+Next let's see what values are returned when a JSON seb service is invoked. 
 
 ### Returned values 
 
 No matter how a JSON web service is invoked, it returns a JSON string that
-represents the service method result. Any returned objects are *loosely*
-serialized to a JSON string and returned to the caller.
+represents the service method result. Returned objects are *loosely* serialized
+to a JSON string and returned to the caller. 
 
-Let's take a look a some returned values from calls to services. In fact, let's
-create a UserGroup as we did in our previous SOAP web service client examples.
-To make it easy, we'll use the test form provided with the JSON web service in
-our browser.
+Let's look at some values returned from service calls. We'll create a
+*UserGroup* as we did in our SOAP web service client examples. To make it easy,
+we'll use the test form provided with the JSON web service in our browser. 
 
-1. Open your browser to the JSON web service method that adds a UserGroup:
+1. Open your browser to the JSON web service method that adds a *UserGroup*: 
 
         http://127.0.0.1:8080/api/jsonws?signature=/usergroup/add-user-group-2-name-description
 
-    or navigate to it by starting at `http://127.0.0.1:8080/api/jsonws`,
-    scrolling down to the section for *UserGroup* and clicking *add-user-group*.
+    Alternatively, navigate to it by starting at
+    `http://127.0.0.1:8080/api/jsonws` then scrolling down to the section for
+    *UserGroup*; click *add-user-group*. 
 
-2. Fill in the *name* field to "MyUserGroup3" and the *description* to some
-arbitrary value string like "Created using JSON WS".
+2. In the *name* field enter *UserGroup3* and set the *description* to an
+arbitrary value string like *Created using JSON WS*.
 
-3. Click *Invoke* to get a result similar to the following:
+3. Click *Invoke* and you'll get a result similar to the following: 
 
         {"addedByLDAPImport":false,"companyId":10154,"description":"Created using JSON WS","name":"MyUserGroup33","parentUserGroupId":0,"userGroupId":13162}
 
-Notice the JSON string returned represents the `UserGroup` object you just
-created. The object has been serialized into a JSON string. As a starting point
-for understanding JSON strings, go to [json.org](http://www.json.org/).
+The returned string represents the `UserGroup` object you just created,
+serialized into a JSON string. To find out more about JSON strings, go to
+[json.org](http://www.json.org/).
 
-To find out how to serialize Java objects, maps and lists, check out article
+To learn about serializing Java objects, maps and lists, check out the article
 [JSON
 Serialization](http://www.liferay.com/community/wiki/-/wiki/Main/JSON+Serialization)
-by Igor Spasi&#263;.
+by Igor Spasi&#263;. 
+
+Let's check out some common JSON WebService errors. 
 
 ### Common JSON WebService errors 
 
-While working with JSON Web Services, you may encounter some of the common
-errors described in the following subsections.
+While working with JSON Web Services, you may encounter errors. Don't worry,
+errors are part of what protects you from Skynet; it has a hard time predicting
+human behavior since it's logic is unflawed (Skynet was created to remove human
+error from military decision-making, of course). 
+
+Let's look at the most common errors in the following subsections. 
+
+<!--I would have put the subsections in an unordered list, but I'll leave them
+for now. Which is preferred?  Are they long enough to warrant subsections? --> 
 
 #### Missing value for parameter 
 
-This error means you didn't pass a parameter value along with the parameter name
-in your the URL path. The parameter value must follow the parameter name in the
-URL path.
-
-Here is an example, the URL path
+If you see this error, you didn't pass a parameter value along with the
+parameter name in your URL path. The parameter value must follow the parameter
+name, like in this example: 
 
     /api/jsonws/user/get-user-by-id/userId
 
-specifies the parameter named `userId`, but it does not specify the parameter's
-value. To resolve this error, simply provide the parameter value after the
-parameter name:
+The path above specifies a parameter named `userId`, but doesn't specify the
+parameter's value. You can resolve this error by providing the parameter value
+after the parameter name: 
 
     /api/jsonws/user/get-user-by-id/userId/173
 
@@ -1316,40 +1327,55 @@ method, the parameter data must match that of the new method signature.
 This error appears when you try to instantiate a method argument using an
 incompatible argument type.
 
+#### Judgment Day
+
+We hope you never see this error. It means that Skynet has initiated a nuclear
+war and most of humanity will be wiped out; survivors will need to battle
+*Terminator* cyborgs. If you see this error and survive *Judgment Day*, we
+recommend joining the *resistance*--they'll likely need good developers to
+support the cause, especially those familiar with time travel. 
+
+<!-- Too much?-->
+
+Next we'll show you how to optimize your use of JSON Web Serrvices by using the
+*JSON Web Services Invoker*. 
+
 ### JSON Web Services Invoker 
 
-Using JSON Web Services is easy, you send a request that defines a service
-method and parameters and you receive the result as JSON object. But you may
-need to use JSON Web Services more pragmatically.
+Using JSON Web Services is easy; you send a request that defines a service
+method and parameters and you receive the result as JSON object. Below we'll
+show you why that's not optimal, and introduce a tool that let's you use JSON
+Web Services more efficiently and pragmatically (efficiency and pragmatism are
+crucial if you want to take down Skynet before it's too late). 
 
-Consider the following example: You are working with two related objects, a
-`User` and its corresponding `Contact`. With simple JSON Web Service calls, you
-first call some user service to get the user object and then you call the
-contact service using the contact ID from the user object. So you end up sending
-two HTTP requests to get two JSON objects that are not even bound together;
-there is no contact information in the user object (i.e. no `user.contact`).
-Obviously, this approach has some impact on performance (sending two HTTP calls)
-and on usability (manually managing the relationship between two objects).
-Wouldn't it be nice if you had an easy-to-use tool to address these problems?
-Well, you do -- the *JSON Web Service Invoker*.
+Consider this example: You're working with two related objects, a `User` and its
+corresponding `Contact`. With simple JSON Web Service calls, you first call some
+user service to get the user object and then you call the contact service using
+the contact ID from the user object. You end up sending two HTTP requests to get
+two JSON objects that aren't even bound together; there's no contact information
+in the user object (i.e. no `user.contact`). This approach is suboptimal for
+performance (sending two HTTP calls) and usability (manually managing the
+relationship between two objects). It'd be nicer if you had a tool to address
+these inefficiencies. Fortunately, the *JSON Web Service Invoker* does just
+that! 
 
 Liferay's JSON Web Service Invoker helps you optimize your use of JSON Web
-Services. In the following sections, we'll show you how.
+Services. In the following sections, we'll show you how. 
 
 #### A simple Invoker call 
 
-The Invoker is accessible on the fixed address:
+The Invoker is accessible from the fixed address 
 
     http://[address]:[port]/api/jsonws/invoke
 
-It only accepts one request parameter: `cmd` -- the Invoker's command. If the
+It only accepts a `cmd` request parameter--this is the Invoker's command. If the
 command request parameter is missing, the request body is used as the command.
-So, basically, you can specify the command by either using the request parameter
-`cmd` or the request body.
+So you can specify the command by either using the request parameter `cmd` or
+the request body. 
 
-The Invoker command is a plain JSON map that describes how JSON Web Services are
-to be called and how the results are to be managed. Here is an example of how to
-call a simple service using the Invoker:
+The Invoker command is a plain JSON map describing how JSON Web Services are
+called and how the results are managed. Here's an example of how to call a
+simple service using the Invoker: 
 
     {
         "/user/get-user-by-id": {
@@ -1358,29 +1384,26 @@ call a simple service using the Invoker:
         }
     }
 
-As you can see, the service call is defined as a JSON map. The key specifies the
-service URL (i.e. the service method to be invoked) and the key's value
-specifies a map of service parameter names (i.e. `userId` and `param1`) and
-their values. In the example above, the retrieved user is returned as a JSON
-object. Moreover, since the command is a JSON string, null values can be
-specified explicitly using the `null` keyword. However, if you so choose, you
-can still use the less natural convention for specifying a null parameter that
-requires a dash before the parameter name and an explicit empty value (e.g.
-`"-param1": ''`).
+The service call is defined as a JSON map. The key specifies the service URL
+(i.e. the service method to be invoked) and the key's value specifies a map of
+service parameter names (i.e. `userId` and `param1`) and their values. In the
+example above, the retrieved user is returned as a JSON object. Since the
+command is a JSON string, null values can be specified by either explicitly
+using the `null` keyword or by placing a dash before the parameter name and an
+leaving the value empty (e.g. `"-param1": ''`). 
 
-Note, the example Invoker call is identical to the following standard JSON Web
-Service call:
+The example Invoker call functions exactly the same as the following standard
+JSON Web Service call: 
 
     /user/get-user-by-id?userId=123&-param1
 
-Before we dive into more features, let's learn how to use variables with the
-Invoker.
+Before diving into more features, let's learn to use variables with the Invoker. 
 
 #### Invoker variables 
 
-Variables are used to reference objects returned from service calls. Variable
-names must start with a `$` (dollar sign) prefix. In our previous example, the
-service call returned a user object that can be assigned to a variable:
+You can use variables to reference objects returned from service calls. Variable
+names must start with a dollar sign, `$`. In our previous example, the service
+call returned a user object that can be assigned to a variable:
 
     {
         "$user = /user/get-user-by-id": {
@@ -1388,15 +1411,16 @@ service call returned a user object that can be assigned to a variable:
         }
     }
 
-Here, the variable `$user` holds the returned user object. You can reference the
-user's contact ID using the syntax `$user.contactId`.
+The `$user` variable holds the returned user object. You can reference the
+user's contact ID using the syntax `$user.contactId`. 
 
 #### Nested service calls 
 
 With nested service calls, you can magically bind information from related
-objects together in a JSON object. This feature allows you to not only call
-other services within the same HTTP request, but also nest returned objects in a
-convenient way. See it in action:
+objects together in a JSON object (magic is good; Skynet can't handle magic).
+You can call other services within the same HTTP request and nest returned
+objects in a convenient way. Here's the magic of a nested service call in
+action: 
 
     {
         "$user = /user/get-user-by-id": {
@@ -1409,8 +1433,8 @@ convenient way. See it in action:
 
 This command defines two service calls in which the contact object returned from
 the second service call is nested in (i.e. injected into) the user object, as a
-property named `contact`. Finally, we can bind the user and its contact
-information together!
+property named `contact`. Now we can bind the user and its contact information
+together! 
 
 Let's analyze this command example to consider what the JSON Web Service Invoker
 does in the background within this single HTTP request:
