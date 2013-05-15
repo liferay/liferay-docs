@@ -1048,7 +1048,7 @@ Conversion for common types (e.g., `long`, `String`, `boolean`) is
 straightforward. Dates can be given in milliseconds, locales can be passed as
 locale names (e.g. `en` and `en_US`). To pass in an array of numbers, send a
 string of comma-separated numbers (e.g. string `4,8,15,16,23,42` can be
-converted to `long[]` type). You get the picture! 
+converted to `long[]` type). You get the picture!
 
 In addition to the common types, arguments can be of type `List` or `Map`. To
 pass a `List` argument, send a JSON array. To pass a `Map` argument, send a JSON
@@ -1080,36 +1080,34 @@ Here's an example:
 
     .../dlsync/get-d-l-sync-update/company-id/10151/repository-id/10195/-last-access-date
 
-The `last-access-date` parameter is interpreted as `null`. 
+The `last-access-date` parameter is interpreted as `null`. Although we have it
+last in the URL above, it's not necessary.
 
-Not surprisingly, null parameters do not have specified values. Null parameters
-do not have to be the last in the URL, as in the example above. When a null
-parameter is passed as a request parameter, its value is ignored and `null` is
-used instead: 
+Null parameters don't have specified values. When a null parameter is passed as
+a request parameter, its value is ignored and `null` is used instead: 
 
     <input type="hidden" name="-last-access-date" value=""/>
 
-When using JSON RPC (see below), null values may be sent explicitly, even
-without a prefix. For example:
+When using JSON RPC (see below), you can send null values explicitly, even
+without a prefix. Here's an example: 
 
     "last-access-date":null
 
 #### Parameters encoding 
 
-Although often forgotten, there is a difference between URL encoding and query
-(i.e. request parameters) encoding. An illustrative example of this is the
-difference in how the space character is encoded. When the space character is
-part of the URL path, it is encoded as `%20`; when it is part of the query it is
-encoded as plus sign (`+`).
+There's a difference between URL encoding and query (i.e. request parameters)
+encoding; the difference is crucial to the effort to defeat Skynet, so pay
+attention. The difference lies in how the space character is encoded. When the
+space character is part of the URL path, it'ss encoded as `%20`; when it's part
+of the query it's encoded as plus sign (`+`).
 
-Furthermore, all of these rules for encoding apply to international (non-ascii)
-characters, as well. Since Liferay Portal works in UTF-8 mode, parameter values
-must be encoded as UTF-8 values. However, the portal itself is not responsible
-for decoding request URLs and request parameter values to UTF-8. This task is
-done by the web-server layer (Tomcat, Apache, etc.). When accessing services
-through JSON-RPC, encoding parameters to UTF-8 is not enough -- we also need to
-send the encoding type in a Content-Type header (e.g. `Content-Type :
-"text/plain; charset=utf-8"`).
+All these encoding rules apply to international (non-ascii) characters, as well.
+Since Liferay Portal works in UTF-8 mode, parameter values must be encoded as
+UTF-8 values. Liferay Portal doesn't decode request URLs and request parameter
+values to UTF-8 itself; it relies on the webserver layer (e.g., Tomcat, Apache,
+etc.). When accessing services through JSON-RPC, encoding parameters to UTF-8
+isn't enough--you need to send the encoding type in a Content-Type header (e.g.
+`Content-Type : "text/plain; charset=utf-8"`). 
 
 For example, let's pass the value "&#1057;&#1091;&#1087;&#1077;&#1088;" ("Super"
 in Cyrillic) to some JSON Web Service method. This name first has to be
@@ -1121,7 +1119,7 @@ received, this value is first going to be translated to an array of 10 bytes
 
 #### Sending files as arguments 
 
-Files can be uploaded using multipart forms and requests. Example:
+Files can be uploaded using multipart forms and requests. Here's an example: 
 
     <form action="http://localhost:8080/api/secure/jsonws/dlapp/add-file-entry" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="repositoryId" value="10172"/>
@@ -1133,18 +1131,18 @@ Files can be uploaded using multipart forms and requests. Example:
         <input type="submit" value="addFileEntry(file)"/>
     </form>
 
-As you see, it's a common upload form that invokes the `addFileEntry` method of
-the `DLAppService` class.
+Thyis common upload form that invokes the `addFileEntry` method of the
+`DLAppService` class. 
 
 #### JSON RPC 
 
-JSON Web Service may be invoked using [JSON RPC](http://json-rpc.org/). A good
-part of JSON RPC 2.0 specification is supported in Liferay JSON Web Services.
-One limitation is parameters may be passed only as *named* parameters;
+You can invoke JSON Web Service using [JSON RPC](http://json-rpc.org/). Most of
+the JSON RPC 2.0 specification is supported in Liferay JSON Web Services. One
+important limitation is that parameters must be passed in as *named* parameters;
 positional parameters are not supported, as there are too many overloaded
-methods for convenient use of positional parameters.
+methods for convenient use of positional parameters. 
 
-Here is an example of invoking a JSON web service using JSON RPC:
+Here's an example of invoking a JSON web service using JSON RPC: 
 
     POST http://localhost:8080/api/secure/jsonws/dlapp
     {
@@ -1156,62 +1154,69 @@ Here is an example of invoking a JSON web service using JSON RPC:
 
 #### Default parameters 
 
-When accessing *secure* JSON web services (user has to be authenticated), some
-parameters are made available to the web services by default. They need not to
-be specified explicitly, unless you want to change their values to something
-other than their defaults.
+When accessing *secure* JSON web services (i.e., the user has to be
+authenticated), some parameters are made available to the web services by
+default. Unless you want to change their values to something other than their
+defaults, you don't have to specify them explicitly. 
 
-Default parameters are:
+Here are the default parameters:  
 
-+ `userId` - id of authenticated user
-+ `user` - full User object
-+ `companyId` - users company
-+ `serviceContext` - empty service context object 
+- `userId`: The id of authenticated user
+- `user`: The full User object
+- `companyId`: The users company
+- `serviceContext`: The empty service context object 
+
+Let's find out about object parameters next. 
 
 #### Object parameters 
 
-Most services accept simple parameters: numbers, strings etc. However, sometimes
-you need to provide an object (a non-simple type) as a service parameter.
+Most services accept simple parameters like numbers and strings. However,
+sometimes you might need to provide an object (a non-simple type) as a service
+parameter. 
 
-Similar to specifying null parameters by using the `-` prefix, to create an
-instance of an object parameter, just prefix the parameter name with a plus
-sign, `+`, without any parameter value at all. For example:
+To create an instance of an object parameter, prefix the parameter with a plus
+sign, `+` and don't assign it any other parameter vazlue. This is similar to
+when we specified a null parameter by prefixing the parameter with a dash
+symbol, `-`.
+
+Here's an example:
 
     /jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+foo
 
-or as a request parameter (note, the `+` sign must be encoded!):
+To create an instance of an object parameter as a request parameter, make sure
+you encody the `+` symbol: 
 
     /jsonws/foo/get-bar?zapId=10172&start=0&end=1&%2Bfoo
 
-or
+Here's an alternative syntax: 
 
     <input type="hidden" name="+foo" value=""/>
 
 If a parameter is an abstract class or an interface, it can't be instantiated as
 such. Instead, a concrete implementation class must be specified to create the
-argument value. This can be done by specifying the `+` prefix before the
-parameter name followed by specifying the concrete implementation class. For
-example:
+argument value. You can do this by specifying the `+` prefix before the
+parameter name followed by specifying the concrete implementation class. Check
+out this example: 
 
     /jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+foo:com.liferay.impl.FooBean
 
-or
+Here's another way of doing it: 
 
     <input type="hidden" name="+foo:com.liferay.impl.FooBean" value=""/>
 
 The examples above specify that a `com.liferay.impl.FooBean` object, presumed to
-implement the class of the parameter named `foo`, is to be created.
+implement the class of the parameter named `foo`, is to be created. 
 
-A concrete implementation can be set as a value, too! For example:
+You can also set a concrete implementation as a value. Here's an example: 
 
     <input type="hidden" name="+foo" value="com.liferay.impl.FooBean"/>
 
-or in JSON RPC:
+In JSON RPC, here's what it looks like:
 
     "+foo" : "com.liferay.impl.FooBean"
 
-All these examples specify a concrete implementation for `foo` service method
-parameter.
+All these examples specify a concrete implementation for the `foo` service
+method parameter. 
 
 #### Inner Parameters 
 
