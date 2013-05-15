@@ -124,12 +124,12 @@ that it's a simple matter for your team to work together.
 ## Installing Social Office [](id=lp-2-1-soen01-installing-social-office)
 
 Social Office 2.0 is available as an application that can be installed on
-Liferay Portal 6.1. Prior to version 2.0, Social Office was provided as an
-standalone product that was essentially a customized version of Liferay Portal.
-Liferay applications, or apps, are packages of Liferay plugins that are grouped
-together with descriptions, version information, and other metadata. You can
-identify downloaded Liferay apps by their `.lpkg` file extensions. Individual
-Liferay plugins have the standard `.war` file extensions.
+Liferay Portal CE 6.1 GA2 or EE 6.1 GA2. Prior to version 2.0, Social Office was
+provided as an standalone product that was essentially a customized version of
+Liferay Portal. Liferay applications, or apps, are packages of Liferay plugins
+that are grouped together with descriptions, version information, and other
+metadata. You can identify downloaded Liferay apps by their `.lpkg` file
+extensions. Individual Liferay plugins have the standard `.war` file extensions.
 
 ### Pre-installation Configuration [](id=lp-2-1-soen01-pre-installation-configuration)
 
@@ -250,23 +250,7 @@ section of Liferay's Control Panel.
 
 ---
 
-![Figure 1.4: Tip](../../images/tip.png) **Warning:** Social Office 2.0 is
-incompatible with 7 Cogs, the sample website that comes pre-installed with
-Liferay bundles. You need to remove 7 Cogs from your Liferay installation before
-installing Social Office. This is very easy to do. For a Tomcat bundle, just
-navigate to `<Liferay Home>/tomcat-<version>/webapps` and remove the
-`seven-cogs-hook` folder. For other application server bundles, navigate to the
-directory where web applications are installed and remove the `seven-cogs-hook`
-folder. Please refer to chapter 11 of Using Liferay Portal at
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server)
-if you're not sure where the web applications directory is on your application
-server.
-
----
-
----
-
-![Figure 1.5: Tip](../../images/tip.png) **Warning:** When you start Liferay for
+![Figure 1.4: Tip](../../images/tip.png) **Warning:** When you start Liferay for
 the first time, you're presented with a setup wizard. The configuration you make
 in the setup wizard is saved in a `portal-setup-wizard.properties` file in your
 Liferay Home directory. However, if you specify a different Liferay Home
@@ -309,7 +293,7 @@ from Marketplace. The Social Office welcome theme provides a clean login screen
 for Social Office when Social Office 2.0 is installed on a fresh portal
 instance.
 
-![Figure 1.6: The Social Office 2.0 welcome theme provides a clean and attractive login screen.](../../images/so-welcome-theme1.png)
+![Figure 1.5: The Social Office 2.0 welcome theme provides a clean and attractive login screen.](../../images/so-welcome-theme1.png)
 
 A fresh portal instance is an installation of Liferay Portal whose guest site
 (default liferay.com site) has not yet been modified. If the guest site has not
@@ -319,8 +303,8 @@ the resource-importer, which is why the resource-importer is also included in
 the Social Office package. 
 
 Note that the Social Office welcome theme is not intended for customization.
-It's simply intended to provide a simple login screen.  If you try to customize
-a page it's been applied to, you'll find that it hides the edit controls from
+It's simply intended to provide a simple login screen. If you try to customize a
+page it's been applied to, you'll find that it hides the edit controls from
 administrators. If you'd like to customize your portal's login page, you should
 first remove the Social Office welcome theme. To do so, follow these steps:
 
@@ -329,12 +313,12 @@ first remove the Social Office welcome theme. To do so, follow these steps:
    *Edit Settings* on the guest site.
 3. Set the Application Adapter field to *None*.
 
-![Figure 1.7: Editing the default site's settings](../../images/so-welcome-theme2.png)
+![Figure 1.6: Editing the default site's settings](../../images/so-welcome-theme2.png)
 
 4. Set the theme of the site back to the classic theme or to your theme of
    choice.
 
-![Figure 1.8: Editing the default site's
+![Figure 1.7: Editing the default site's
 settings](../../images/so-welcome-theme3.png)
 
 If you'd like to install the SO welcome theme when the guest site has already
@@ -357,30 +341,11 @@ page.
 
 ---
 
-![Figure 1.9: Tip](../../images/tip.png) **Warning:** Installing the Social
+![Figure 1.8: Tip](../../images/tip.png) **Warning:** Installing the Social
 Office welcome theme overwrites any pages and customizations that have already
 been made to the guest site.
 
 ---
-
-### Uninstalling Social Office  [](id=lp-2-1-soen01-uninstalling-social-office)
-
-If you'd like to completely uninstall Social Office, you can navigate to the
-*Marketplace* &rarr; *Purchased* page of the Control Panel and click on
-*Uninstall*. However, after you've uninstalled Social Office from Marketplace,
-you need to manually revert the friendly URL of the Welcome page. 
-
-![Figure 1.10: After uninstalling Social Office from Marketplace, you need to manually revert the friendly URL of the Welcome page.](../../images/site_pages_welcome_sologin.png)
-
-Otherwise, the portal will always be looking for the `/so/login` page which no
-longer exists since the hook is gone. This will produce a number of errors in
-the log and once you log out, you won't be able to log in again.
-
-Uninstalling Social Office reverts users' Profile and Dashboard pages to the
-default Liferay public and private pages and reverts Social Office sites to
-non-Social Office sites. However, no data will be deleted. Uninstalling only
-uninstalls the plugins included in Social Office, the Social Office role, and
-the site templates.
 
 Next, let's discuss how to validate that Social Office has been successfully
 installed or uninstalled.
@@ -475,7 +440,7 @@ Marketplace interface (recommended) uninstalls each Social Office plugin.
 To actually start using Social Office after it's been installed, you need to
 grant the Social Office User role to one or more users. If you're using Social
 Office EE, you can access the Social Office Configurations portlet which
-provides a shortcut for this process.  Please refer to the *Using Social Office*
+provides a shortcut for this process. Please refer to the *Using Social Office*
 section for more details about the Social Office User role and the features
 provided by Social Office.
 
@@ -506,7 +471,26 @@ haven't made one of the following installation mistakes:
 If the tips above do not solve your installation problem, you can seek further
 assistance through the [Social Office Forum](http://www.liferay.com/community/forums/-/message_boards/category/1670998) or from [Liferay Support](http://www.liferay.com/group/customer/home).
 
-Next, let's discuss how to use Social Office to facilitate team collaboration.
+### Uninstalling Social Office [](id=lp-2-1-soen01-uninstalling-social-office)
+
+If you'd like to completely uninstall Social Office, you can navigate to the
+*Marketplace* &rarr; *Purchased* page of the Control Panel and click on
+*Uninstall*. However, after you've uninstalled Social Office from Marketplace,
+you need to manually revert the friendly URL of the Welcome page. 
+
+![Figure 1.9: After uninstalling Social Office from Marketplace, you need to manually revert the friendly URL of the Welcome page.](../../images/site_pages_welcome_sologin.png)
+
+Otherwise, the portal will always be looking for the `/so/login` page which no
+longer exists since the hook is gone. This will produce a number of errors in
+the log and once you log out, you won't be able to log in again.
+
+Uninstalling Social Office reverts users' Profile and Dashboard pages to the
+default Liferay public and private pages and reverts Social Office sites to
+non-Social Office sites. However, no data will be deleted. Uninstalling only
+uninstalls the plugins included in Social Office, the Social Office role, and
+the site templates.
+
+Next, let's discuss how Social Office can facilitate team collaboration.
 
 ## Using Social Office [](id=lp-2-1-soen01-using-social-office)
 
@@ -545,7 +529,7 @@ to fit the size of your browser window. You can click the button again to return
 the portlets to their default size. In addition to the standard Social Office
 theme, there's another theme for Social Office's Welcome page.
 
-### Using the Social Office User role and personal sites  [](id=lp-2-1-soen01-using-the-social-office-user-role-and-personal-sites)
+### Using the Social Office User role and personal sites [](id=lp-2-1-soen01-using-the-social-office-user-role-and-personal-sites)
 
 The Social Office plugin adds a special role to Liferay Portal: Social Office
 User. Assigning users to the Social Office User role provides them with personal
@@ -570,7 +554,7 @@ The default personal pages provided by the Social Office user role include the
 private Dashboard page and the public Profile page. When a user who has been
 assigned to the Social Office User role logs in, several changes are made to his
 or her Dockbar. First, a *Dashboard* link appears to the right of the *Go to*
-menu.  You can click this link from anywhere in the portal to go to your virtual
+menu. You can click this link from anywhere in the portal to go to your virtual
 private workspace. Second, a *Notifications* button is added to the right of the
 Dashboard link. The Notifications button displays how many unread notifications
 you have. You'll be notified upon receiving a private message, an invitation to
@@ -579,7 +563,7 @@ right-most item of the Dockbar becomes a drop-down list containing a link to
 your public *Profile* page as well as a link your *My Account* page of the
 control panel and the *Sign Out* link.
 
-#### Using the Dashboard and other private pages  [](id=lp-2-1-soen01-using-the-dashboard-and-other-private-pages)
+#### Using the Dashboard and other private pages [](id=lp-2-1-soen01-using-the-dashboard-and-other-private-pages)
 
 The private page sets of Social Office users serve as personal workspaces. Each
 private page displays a navigation menu and the Sites portlet in the left column
@@ -594,7 +578,7 @@ sites you belong to. The private pages provided by Social Office include:
 - My Documents
 - Tasks
 
-![Figure 1.11: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
+![Figure 1.10: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
 
 The Sites portlet is an improved version of the basic My Sites portlet. It
 allows you to star various sites to customize your sites list. You can select
@@ -611,7 +595,7 @@ team collaboration. The *More Sites* button opens a site directory dialog box
 which you can use to join, leave sites, or star sites. If you have the required
 permissions, you can also delete sites.
 
-![Figure 1.12: The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
+![Figure 1.11: The Sites portlet lets you customize your sites list and create new Social Office sites with a simple wizard.](../../images/sites-portlet.png)
 
 The Dashboard page provides several portlet applications designed to keep you up
 to date with various kinds of portal activity:
@@ -637,7 +621,7 @@ scope of your choice: to everyone, to your connections, or to your followers.
 Next, let's take a look at the applications provided on the other private pages
 of Social Office users' personal sites.
 
-![Figure 1.13: The default Dashboard applications are designed to inform you about recent portal activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
+![Figure 1.12: The default Dashboard applications are designed to inform you about recent portal activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
 
 The Contacts Center is an important application for Social Office because it
 allows users to create LinkedIn-style connections and Twitter-style followers.
@@ -660,7 +644,7 @@ about him or her. For each user, you'll have the following options:
   is a file format standard for electronic business cards.
 - *Go to Profile* is a link to the selected user's public profile page.
 
-![Figure 1.14: Contacts Centers allows users to follow each other Twitter-style and set up Linked-In style connections.](../../images/contacts-center.png)
+![Figure 1.13: Contacts Centers allows users to follow each other Twitter-style and set up Linked-In style connections.](../../images/contacts-center.png)
 
 Social Office's Microblogs application allows you to broadcast your thoughts as
 a Facebook-like status to a chosen audience. You can choose for your status to
@@ -679,7 +663,7 @@ the Microblogs portlet chronologically displays all the status posts that you
 have permission to see. The Mentions tab displays all the posts in which you've
 been mentioned.
 
-![Figure 1.15: Microblogs allow users to broadcast their thoughts to a chosen audience.](../../images/microblogs.png)
+![Figure 1.14: Microblogs allow users to broadcast their thoughts to a chosen audience.](../../images/microblogs.png)
 
 Note that there are two different portlets for accessing the microblogs system:
 the Microblogs portlet and the Microblogs Status Update portlet. When placed on
@@ -697,7 +681,7 @@ email, you can enter a subject, a message body, and add attachments. Open the
 dropdown menu next to the *To* field to select a user or users to send your
 message to. You can select any number of users.
 
-![Figure 1.16: The Private Messaging Interface functions just like an email client for use within a Social Office instance.](../../images/private-messaging.png)
+![Figure 1.15: The Private Messaging Interface functions just like an email client for use within a Social Office instance.](../../images/private-messaging.png)
 
 Social Office provides a private document library to each Social Office user.
 Users can navigate to it by clicking the *My Documents* link in the Dashboard
@@ -707,7 +691,7 @@ Liferay Portal. Please refer to chapter 4 of Liferay's User Guide for
 information about document management: [Document
 Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/documents-and-med-1)
 
-![Figure 1.17: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
+![Figure 1.16: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
 
 With their private document libraries, each of your Social Office users can
 maintain a personal online repository of documents and files. Your users can use
@@ -729,7 +713,7 @@ assignee from your contacts (or assign to yourself), select a priority, and,
 optionally, enter a due date. It's also helpful, especially when there are large
 numbers of tasks, to tag your tasks. 
 
-![Figure 1.18: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../../images/tasks-portlet.png)
+![Figure 1.17: The Tasks portlet lets you create tasks and assign them to yourself or others. You can view tasks that have been assigned to you and tasks that you've created.](../../images/tasks-portlet.png)
 
 The *Permissions* button at the top left of the Tasks portlet lets you choose
 which roles grant permission to add new tasks or edit existing ones.
@@ -751,7 +735,7 @@ Office user's public site contains a My Contacts portlet. This portlet allows
 viewers of a user's public site to see all the user's contacts and lets them
 navigate to any of the contacts' Profile pages.
 
-![Figure 1.19: Users' Profile pages show relevant professional information, contacts, and status updates.](../../images/profile-page.png)
+![Figure 1.18: Users' Profile pages show relevant professional information, contacts, and status updates.](../../images/profile-page.png)
 
 By default, the Profile page displays several pieces of information about
 a user: their profile and profile picture, their latest microblog status, their
@@ -816,13 +800,13 @@ are invisible to non-members; members must be invited by a site administrator.
 By default, all the pages of an open Social Office site are public but
 restricted and private Social Office site pages are private.
 
-![Figure 1.20: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](../../images/new-site-wizard1.png)
+![Figure 1.19: The Social Office site wizard lets you quickly and easily set up sites for team collaboration.](../../images/new-site-wizard1.png)
 
 The Add Site wizard lets you choose which of default template pages you'd like
 to include in your site. Links to these pages are embedded in the left-most
 column of each page that belongs to the site.
 
-![Figure 1.21: You can choose a site template to use to create your new site and you can choose which template pages to include.](../../images/new-site-wizard2.png)
+![Figure 1.20: You can choose a site template to use to create your new site and you can choose which template pages to include.](../../images/new-site-wizard2.png)
 
 When visiting an open Social Office site, users can use the *Join* link at the
 top of the page to join the site. This link, along with the *My Sites* portlet
@@ -833,7 +817,7 @@ Membership* link for restricted sites. When users have requested membership for
 a restricted site, the *Request Membership* link is replaced by a *Membership
 Requested* notification to inform users that their request is pending.
 
-![Figure 1.22: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../../images/join-site-link.png)
+![Figure 1.21: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../../images/join-site-link.png)
 
 The Home page of the default Social Office site contains a number of useful
 portlets. The Activities and Recent Downloads portlets keep site members up to
@@ -854,7 +838,7 @@ site they belong to. For more information about these applications, please refer
 to Liferay's user guide, *Using Liferay Portal*, available at
 [http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). 
 
-![Figure 1.23: Social Office's sites come with pre-built pages and applications that facilitate team-based collaboration.](../../images/social-office-site.png)
+![Figure 1.22: Social Office's sites come with pre-built pages and applications that facilitate team-based collaboration.](../../images/social-office-site.png)
 
 In addition to the Blogs portlet, the Blogs page contains a Recent Blogs
 portlet. These two portlets are designed to work together. The Blogs portlet
@@ -918,7 +902,7 @@ These additional features include the following:
 After installing Social Office EE to your Liferay EE instance, you'll be
 directed to the following screen when you log in as an administrator:
 
-![Figure 1.24: The Social Office Configurations page of the Control Panel provides a quick and easy way to assign the Social Office User role to users, organizations, or user groups.](../../images/so-ee-configurations.png)
+![Figure 1.23: The Social Office Configurations page of the Control Panel provides a quick and easy way to assign the Social Office User role to users, organizations, or user groups.](../../images/so-ee-configurations.png)
 
 This page allows you to assign the Social Office User role to users,
 organizations, or user groups. If you aren't immediately sure who should be
@@ -934,19 +918,19 @@ Without Social Office EE, the version number will be automatically incremented
 when a file is edited but there's no way to specify a major/minor revision or
 enter a change log message.
 
-![Figure 1.25: Social Office EE allows you to specify a major or minor revision and enter a change log message each time you edit or check in a document.](../../images/so-ee-doclib-checkin-screen.png)
+![Figure 1.24: Social Office EE allows you to specify a major or minor revision and enter a change log message each time you edit or check in a document.](../../images/so-ee-doclib-checkin-screen.png)
 
 Additionally, Social Office EE allows comments to be added to specific versions
 of a document. Without Social Office EE, there's just a general comments area
 for each document that's not specific to any version.
 
-![Figure 1.26: Social Office EE allows you to comment on particular versions of files in the Documents and Media repository.](../../images/so-ee-doclib-comments.png)
+![Figure 1.25: Social Office EE allows you to comment on particular versions of files in the Documents and Media repository.](../../images/so-ee-doclib-comments.png)
 
 If you've been using Social Office CE and upgrade to EE, any comments that were
 added when you were using CE will appear in a section entitled *Previous
 Comments*.
 
-![Figure 1.27: Social Office EE allows you to specify a major or minor revision and enter a change log message each time you edit or check in a document.](../../images/so-ee-doclib-previous-comments.png)
+![Figure 1.26: Social Office EE allows you to specify a major or minor revision and enter a change log message each time you edit or check in a document.](../../images/so-ee-doclib-previous-comments.png)
 
 Next, let's look at Social Office's upgrade process.
 
