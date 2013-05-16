@@ -169,6 +169,186 @@ Liferay.com. Then, remove the newer header ID from the other header and run ...
 Below are some tips for some constructs that are unique to Liferay
 documentation. 
 
+### Figures 
+
+Previously, Open/LibreOffice added the words: *Illustration #* to captions when
+they were entered. This was nice, but is unfortunately something we'll need to
+abandon. To do figures, you should do it this way: 
+
+
+	![Figure 1.1: Logging into Liferay Portal](../../images/01-logging-into-liferay-portal.png)
+
+This causes Pandoc to create the following, easily styled markup: 
+
+
+	<div class="figure">
+	<img src="../../images/01-logging-into-liferay-portal.png" alt="Figure 1.1: Logging into Liferay Portal" />
+	<p class="caption">Figure 1.1: Logging into Liferay Portal</p>
+	</div>
+	
+We've duplicated this behavior in the Pegdown parser that we've implemented. 
+
+### Right Arrows 
+
+We are in the habit of using right arrows to denote a series of things a user
+can click on, such as Go To -> Control Panel -> Web Content. Open/LibreOffice
+would automatically replace the dash and greater-than sign with a right arrow. 
+
+We can do the same in Markdown using the HTML code for this character, which is
+`&rarr;`. I created a SuperAbbrev in jEdit which transforms `rightarrow` into
+`&rarr;`.
+
+### Tables
+
+Because Pegdown does not support the [Pandoc extension table
+syntax](http://johnmacfarlane.net/pandoc/README.html#tables), we use a table
+syntax similar to
+[MultiMarkdown](http://fletcher.github.com/peg-multimarkdown/mmd-manual.pdf),
+that supports the following features:
+
+* Cell content alignment (left, right, or center)
+* Cells containing links, code, images, and text that is plain, bold, italicized, double-quoted, or single-quoted
+* Cells containing strong text, emphasized text, double/single quotes, code, links, and images
+* Left alignment (default) with `:--- `
+* Right alignment with `: ---:`
+* Center alignment with `:---:`
+
+Here is MultiMarkdown-like source for an example table:
+
+    **Table Heading (outside of table)**
+
+	  Column1 |  &nbsp;Column2 | &nbsp;Type  | &nbsp;Example  |
+	--------- | :--------------| :---------: | -------------: |
+	  foo     | bar            | strong       | **powerful** |
+	  foo     | bar            | italics        | *emphasized* |
+	  foo     | bar            | double quotes | "Hey you!" |
+	  foo     | bar            | single quotes | 'yes' |
+	  foo     | bar            | code          | `System.out.println()` |
+	  foo     | bar            | link          | [Liferay.com](http://liferay.com) |
+	  foo     | bar            | image         | ![tip](../../images/tip-pen-paper.png)|
+
+Here is the table rendered in Github ...
+
+**Table Heading (outside of table)**
+
+  Column1 |  &nbsp;Column2 | &nbsp;Type  | &nbsp;Example  |
+--------- | :--------------| :---------: | -------------: |
+  foo     | bar            | strong       | **powerful** |
+  foo     | bar            | italics        | *emphasized* |
+  foo     | bar            | double quotes | "Hey you!" |
+  foo     | bar            | single quotes | 'yes' |
+  foo     | bar            | code          | `System.out.println()` |
+  foo     | bar            | link          | [Liferay.com](http://liferay.com) |
+  foo     | bar            | image         | ![tip](./images/tip.png)|
+
+Table Limitations:
+
+* Grid tables (tables with grid lines) are not supported
+* Table captions are not supported
+* The period character ( '.') cannot be used in an alignment/divider line
+
+Table Syntax Requirements:
+
+* There must be at least one '|' character per line.
+* The *separator* line must contain only |, -, :, or space characters.
+* Cell content must be on one line only.
+* Columns are separated by the '|' character.
+
+Table Options
+
+* You can pad out cell text using non-breaking spaces (i.e. `&nbsp;`) to the
+  left and/or right of the cell text.
+* You can use a horizontal rule to help separate the end of the table from
+  paragraphs or tables that follow.
+
+---
+
+ ![important](./images/tip.png) **Important:** - Pandoc does not 
+support MultiMarkdown table syntax. If you use Pandoc to build a document for
+test purposes, you'll notice that the table does not get converted as you would
+expect. If you are using Pandoc to convert a document for a final product
+(e.g. ePub), you'll need to temporarily change the table syntax to follow the
+Pandoc extension.
+
+ ![The example table converted using Pandoc](images/mmdTablePandocHTML.png)
+
+---
+
+Next, let's learn about creating sidebar text.
+
+
+### Sidebars
+
+Our documentation frequently has sidebars, which are for ancillary information
+that doesn't quite fit into the text itself. To do sidebars, set off your
+sidebar with two horizontal rules, like so: 
+
+
+	---
+
+	![tip](../../images/01-tip.png) Your sidebar text goes here. 
+
+	---
+
+Here is a sidebar rendered in Github ...
+
+---
+
+![tip](./images/tip.png) Your sidebar text goes here.
+
+---
+
+Leave a space between the closing parenthesis and your sidebar text. That way,
+formatting (e.g., bold, italics, etc.) will be rendered properly by Github for
+the leading text. Otherwise, you'll see the markdown characters. The following
+example markdown properly precedes its sidebar text with a space.
+
+    ---
+
+    ![tip](./images/tip.png) **Tip:** Your sidebar text goes here.
+
+    ---
+
+Without the space between the closing `)` and `**Tip:**`, its souce does not get
+converted by Github.
+
+    ---
+
+    ![tip](./images/tip.png)**Tip:** Preceding sidebar text with a space makes
+    for better formatting, than what is done in this example.
+
+    ---
+
+---
+
+![tip](./images/tip.png)**Tip:** Preceding sidebar text with a space makes
+for better formatting, than what is done in this example.
+
+---
+
+**Important:** Make sure that your horizontal rules have empty lines above and
+below them so that they do not trigger new headers to be created during
+conversion to HTML. 
+
+If you're using jEdit, you can make this easy with the SuperAbbrevs plugin.
+Create an abbreviation by going to *Plugins* -> *Plugin Options* ->
+*SuperAbbrevs*. Click the *+* button to add an abbreviation. Create an
+abbreviation called **sidebar** for the Markdown mode, and put the following in
+the template text: 
+
+
+	---
+
+	![tip](../../images/01-tip.png)$1
+
+	---
+
+Click *OK*, and *OK* again to come out of the Plugin Options dialog. Now,
+whenever you need to do a sidebar, you can simply type the word *sidebar* and
+hit your tab key, and the markup will be entered for you. 
+
+Let's look at ordered lists, next.
+
 ### Ordered Lists
 
 Explicitly number your lists like so ...
@@ -292,184 +472,6 @@ Well, there you have it--the do's and don'ts of ordered lists.
 to HTML, using your editor's Pegdown converter or by viewing your document
 blob on Github. That way you can be sure any ordered lists you have, preserve
 their consinutous numbering. 
-
-Next, let's learn about creating sidebar text.
-
-
-### Sidebars
-
-Our documentation frequently has sidebars, which are for ancillary information
-that doesn't quite fit into the text itself. To do sidebars, set off your
-sidebar with two horizontal rules, like so: 
-
-
-	---
-
-	![tip](../../images/01-tip.png) Your sidebar text goes here. 
-
-	---
-
-Here is a sidebar rendered in Github ...
-
----
-
-![tip](./images/tip.png) Your sidebar text goes here.
-
----
-
-**Important:** Make sure that your horizontal rules have empty lines above and
-below them so that they do not trigger new headers to be created during
-conversion to HTML. 
-
-Leave a space between the closing parenthesis and your sidebar text. That way,
-formatting (e.g., bold, italics, etc.) will be rendered properly by Github for
-the leading text. Otherwise, you'll see the markdown characters. The following
-example markdown properly precedes its sidebar text with a space.
-
-    ---
-
-    ![tip](./images/tip.png) **Tip:** Your sidebar text goes here.
-
-    ---
-
-Without the space between the closing `)` and `**Tip:**`, its souce does not get
-converted by Github.
-
-    ---
-
-    ![tip](./images/tip.png)**Tip:** Preceding sidebar text with a space makes
-    for better formatting, than what is done in this example.
-
-    ---
-
----
-
-![tip](./images/tip.png)**Tip:** Preceding sidebar text with a space makes
-for better formatting, than what is done in this example.
-
----
-
-If you're using jEdit, you can make this easy with the SuperAbbrevs plugin.
-Create an abbreviation by going to *Plugins* -> *Plugin Options* ->
-*SuperAbbrevs*. Click the *+* button to add an abbreviation. Create an
-abbreviation called **sidebar** for the Markdown mode, and put the following in
-the template text: 
-
-
-	---
-
-	![tip](../../images/01-tip.png)$1
-
-	---
-
-Click *OK*, and *OK* again to come out of the Plugin Options dialog. Now,
-whenever you need to do a sidebar, you can simply type the word *sidebar* and
-hit your tab key, and the markup will be entered for you. 
-
-### Figures 
-
-Previously, Open/LibreOffice added the words: *Illustration #* to captions when
-they were entered. This was nice, but is unfortunately something we'll need to
-abandon. To do figures, you should do it this way: 
-
-
-	![Figure 1.1: Logging into Liferay Portal](../../images/01-logging-into-liferay-portal.png)
-
-This causes Pandoc to create the following, easily styled markup: 
-
-
-	<div class="figure">
-	<img src="../../images/01-logging-into-liferay-portal.png" alt="Figure 1.1: Logging into Liferay Portal" />
-	<p class="caption">Figure 1.1: Logging into Liferay Portal</p>
-	</div>
-	
-We've duplicated this behavior in the Pegdown parser that we've implemented. 
-
-### Right Arrows 
-
-We are in the habit of using right arrows to denote a series of things a user
-can click on, such as Go To -> Control Panel -> Web Content. Open/LibreOffice
-would automatically replace the dash and greater-than sign with a right arrow. 
-
-We can do the same in Markdown using the HTML code for this character, which is
-`&rarr;`. I created a SuperAbbrev in jEdit which transforms `rightarrow` into
-`&rarr;`.
-
-### Tables
-
-Because Pegdown does not support the [Pandoc extension table
-syntax](http://johnmacfarlane.net/pandoc/README.html#tables), we use a table
-syntax similar to
-[MultiMarkdown](http://fletcher.github.com/peg-multimarkdown/mmd-manual.pdf),
-that supports the following features:
-
-* Cell content alignment (left, right, or center)
-* Cells containing links, code, images, and text that is plain, bold, italicized, double-quoted, or single-quoted
-* Cells containing strong text, emphasized text, double/single quotes, code, links, and images
-* Left alignment (default) with `:--- `
-* Right alignment with `: ---:`
-* Center alignment with `:---:`
-
-Here is MultiMarkdown-like source for an example table:
-
-    **Table Heading (outside of table)**
-
-	  Column1 |  &nbsp;Column2 | &nbsp;Type  | &nbsp;Example  |
-	--------- | :--------------| :---------: | -------------: |
-	  foo     | bar            | strong       | **powerful** |
-	  foo     | bar            | italics        | *emphasized* |
-	  foo     | bar            | double quotes | "Hey you!" |
-	  foo     | bar            | single quotes | 'yes' |
-	  foo     | bar            | code          | `System.out.println()` |
-	  foo     | bar            | link          | [Liferay.com](http://liferay.com) |
-	  foo     | bar            | image         | ![tip](../../images/tip-pen-paper.png)|
-
-Here is the table rendered in Github ...
-
-**Table Heading (outside of table)**
-
-  Column1 |  &nbsp;Column2 | &nbsp;Type  | &nbsp;Example  |
---------- | :--------------| :---------: | -------------: |
-  foo     | bar            | strong       | **powerful** |
-  foo     | bar            | italics        | *emphasized* |
-  foo     | bar            | double quotes | "Hey you!" |
-  foo     | bar            | single quotes | 'yes' |
-  foo     | bar            | code          | `System.out.println()` |
-  foo     | bar            | link          | [Liferay.com](http://liferay.com) |
-  foo     | bar            | image         | ![tip](./images/tip.png)|
-
-Table Limitations:
-
-* Grid tables (tables with grid lines) are not supported
-* Table captions are not supported
-* The period character ( '.') cannot be used in an alignment/divider line
-
-Table Syntax Requirements:
-
-* There must be at least one '|' character per line.
-* The *separator* line must contain only |, -, :, or space characters.
-* Cell content must be on one line only.
-* Columns are separated by the '|' character.
-
-Table Options
-
-* You can pad out cell text using non-breaking spaces (i.e. `&nbsp;`) to the
-  left and/or right of the cell text.
-* You can use a horizontal rule to help separate the end of the table from
-  paragraphs or tables that follow.
-
----
-
- ![important](./images/tip.png) **Important:** - Pandoc does not 
-support MultiMarkdown table syntax. If you use Pandoc to build a document for
-test purposes, you'll notice that the table does not get converted as you would
-expect. If you are using Pandoc to convert a document for a final product
-(e.g. ePub), you'll need to temporarily change the table syntax to follow the
-Pandoc extension.
-
- ![The example table converted using Pandoc](images/mmdTablePandocHTML.png)
-
----
 
 ### Markdown Metadata 
 
