@@ -597,7 +597,9 @@ are given in a comma separated list of valid bullet styles.
 Example:
 
     <settings>
+    	...
 		<setting configurable="true" key="bullet-style" options="dots,arrows,classic,modern value="dots" />
+		...
     </settings>
 
 The user can change the bullet style in the *Navigation* portlet's configuration
@@ -645,8 +647,10 @@ if you'd like to disable the site name settings, set the value to `false`.
 Example:
 
 	<settings>
+		...
 		<setting configurable="true" key="show-site-name-default" type="checkbox" value="true" />
 		<setting configurable="true" key="show-site-name-supported" type="checkbox" value="true" />
+		...
 	</settings>
 
 Here's a snapshot to illustrate how the predefined theme settings appear from
