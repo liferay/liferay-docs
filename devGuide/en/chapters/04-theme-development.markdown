@@ -283,14 +283,14 @@ variable and add the following to the list of options:
     
     -Dexternal-properties=portal-developer.properties
 
-The following is an example of the `CATALINA_OPTS` variable lines with your code
-appended to the end (all code must be on one line):
+The following is an example of the `CATALINA_OPTS` variable lines with the
+`external-properties` option appended to the end (all code must be on one line):
 
     CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m" -Dexternal-properties=portal-developer.properties"
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** If you're already using the
+ ![tip](../../images/tip-pen-paper.png) **Tip:** If you're already using the
  system property `external-properties` to load other properties files, add
  `portal-developer.properties` to the list and use a comma to separate it from
  other entries.
@@ -299,18 +299,19 @@ appended to the end (all code must be on one line):
 
 How does Developer Mode let you see your changes more quickly? In Developer
 Mode, there are several changes to the normal order of operations. Some of these
-changes are listed below with the specific property that activates the behavior.
+key behaviors are listed below, along with the portal property override
+settings that trigger them:
 
 - CSS files are loaded individually rather than being combined and loaded as a
 single CSS file (`theme.css.fast.load=false`).
 
 - Layout template caching is disabled (`layout.template.cache.enabled=false`).
 
-- The server will not start a browser when starting up
+- The server does not launch a browser when starting up
 (`browser.launcher.url=`).
 
 - FreeMarker Templates for themes and web content are not cached, so changes
-will be applied immediately
+are applied immediately
 (`freemarker.engine.resource.modification.check.interval=0`). 
 
 - Minification of CSS and JavaScript resources is disabled
@@ -318,7 +319,7 @@ will be applied immediately
 
 Individual file loading of your styling and behaviors, combined with disabled
 caching for layout and FreeMarker templates, let's you see your changes
-more quickly when operating in Developer Mode. 
+more quickly. 
 
 Now, when you modify your theme's `custom.css` file directly in your Liferay
 Bundle, you can see your changes applied as you make them! Make sure you copy
@@ -341,7 +342,7 @@ there, along with the *Classic* theme's thumbnail.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** To achieve the 1080x864
+ ![tip](../../images/tip-pen-paper.png) **Tip:** To achieve the 1080x864
  resolution in a new browser window, use the button provided in the Resize
  Browser web content article displayed on the Welcome page.
 
@@ -448,15 +449,15 @@ with your company's name (e.g. Nosester) in the footer of your site pages:
             </p>
         </footer>
 
----
+    ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Let's look more closely at two
- theme setting variables appearing in the above logic. The
- `display-slogan-footer` variable holds a boolean value indicating whether to
- display the version of the footer that contains your slogan. The `slogan`
- variable holds your slogan text.
+     ![note](../../images/tip-pen-paper.png) **Note:** Let's look more closely at two
+     theme setting variables appearing in the above logic. The
+     `display-slogan-footer` variable holds a boolean value indicating whether to
+     display the version of the footer that contains your slogan. The `slogan`
+     variable holds your slogan text.
 
----
+    ---
 
 2. Declare the two theme setting variables in your `liferay-look-and-feel.xml`,
 located in your theme's `WEB-INF` folder:
@@ -489,7 +490,7 @@ footer, including the slogan.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Use a language properties hook
+ ![note](../../images/tip-pen-paper.png) **Note:** Use a language properties hook
  to display configurable theme settings properly, like the slogan text area and
  footer checkbox from the previous example. For details, see the [Overriding a
  *Language.properties*
@@ -558,7 +559,8 @@ The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
 portlet borders, bullet styles, and the site name, but more settings may be
 added in the future. Modify these settings from the `liferay-look-and-feel.xml`
-file. To override default behavior for individual portlets, you can modify the:
+file. To override default behavior for individual portlets, you can modify the
+following:
 
 - `liferay-portlet.xml`
 - Portlet CSS popup setting: used for the *Navigation* portlet to display bullet
@@ -568,16 +570,23 @@ First, let's take a look at how to modify your portlet's borders.
 
 ### Portlet Borders
 
-By default, portlet borders are turned on. If set to `false`, the portal's
-default behavior is to turn off portlet borders. 
-
-Here's how the XML looks when you modify the default value to `false`:
+The theme turns on portlet borders, by default. But you can turn them off by
+setting `portlet-setup-show-borders-default` to `false` in your theme's
+`liferay-look-and-feel.xml` file. The following setting, makes showing the
+borders configurable for the portal administrator, and disables showing the
+borders as the default:
 
     <settings>
+	    ...
 		<setting configurable="true" key="portlet-setup-show-borders-default" type="checkbox" value="false" />
+        ...
     </settings>
 
-Next, let's configure the appropriate bullet styles for your portal.
+Note, a portlet can override this setting via its preferences in its
+`portlet.xml` file.
+    
+Now that you've configured portlet borders, let's configure bullet styles
+available in your portal.
 
 ### Bullet Styles
 
@@ -613,11 +622,13 @@ menu. Next, let's take a look at how to enable the site name settings.
 
 ### Site Names
 
-The site name settings allow site administrators to decide whether the site of
-the name should be shown or not. It is a common practice for some themes to
-specify their own logo by default when none has been specified by the site
-administrator. In these cases, the logo can conflict with the site name. Thus,
+The site name settings allow site administrators to decide whether a site's
+name should be shown. It is a common practice for some themes to
+specify their own logo, by default, if none has been specified by the site
+administrator. But the logo may conflict with the site name. Thus,
 the site name offers two configurable settings:
+
+<!-- Please give a concrete example of this conflict - Jim -->
 
 - Set whether the site title should be shown by default.
 - Specify whether displaying the site title is supported.
