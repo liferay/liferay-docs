@@ -321,6 +321,34 @@ Here is a sidebar rendered in Github ...
 below them so that they do not trigger new headers to be created during
 conversion to HTML. 
 
+Leave a space between the closing parenthesis and your sidebar text. That way,
+formatting (e.g., bold, italics, etc.) will be rendered properly by Github for
+the leading text. Otherwise, you'll see the markdown characters. The following
+example markdown properly precedes its sidebar text with a space.
+
+    ---
+
+    ![tip](./images/tip.png) **Tip:** Your sidebar text goes here.
+
+    ---
+
+Without the space between the closing `)` and `**Tip:**`, its souce does not get
+converted by Github.
+
+    ---
+
+    ![tip](./images/tip.png)**Tip:** Preceding sidebar text with a space makes
+    for better formatting, than what is done in this example.
+
+    ---
+
+---
+
+![tip](./images/tip.png)**Tip:** Preceding sidebar text with a space makes
+for better formatting, than what is done in this example.
+
+---
+
 If you're using jEdit, you can make this easy with the SuperAbbrevs plugin.
 Create an abbreviation by going to *Plugins* -> *Plugin Options* ->
 *SuperAbbrevs*. Click the *+* button to add an abbreviation. Create an
