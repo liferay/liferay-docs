@@ -75,7 +75,7 @@ A BUILD SUCCESSFUL message from Ant tells you there's a new folder named
 `example-hook` inside the Plugins SDK's `hooks` folder. The Plugins SDK
 automatically named the hook by appending "-hook" to the project name.  
 
-<!-- Missing transition -->
+Now that you've created a hook, let's go ahead and deploy it.
 
 ### Deploying the Hook [](id=lp-6-1-dgen05-deploying-the-hook-0)
 
@@ -207,7 +207,7 @@ Next, we'll look at a different way to customize a JSP.
 ## Customizing JSPs Without Overriding the Original [](id=customizing-jsps-without-overriding-the-origin-1)
 
 If we can override a JSP with a hook plugin, why learn another way to accomplish
-the same thing? Good question. Each time original (overridden) file is changed
+the same thing? Good question. Each time the original (overridden) file is changed
 by Liferay (for example, to fix a bug) after you override it, you'll have to
 make those changes manually to your customized file, to benefit from them. 
 
@@ -215,26 +215,41 @@ You can avoid this drawback and make your JSP modifications less invasive by
 rendering the original JSP into a string and modifying it dynamically
 afterwards. This way you can change minor elements of a JSP, like adding a new
 heading or button, without modifying your hook every time you upgrade Liferay.
-Here's an example that customizes the search portlet. Specifically, it removes
-the ability to use a search provider in the browser:
+Here's an example that customizes the search portlet. Specifically, it adds
+helpful text to aid the user in searching for content. Since this technique
+involves String manipulation, it's mainly useful for making a small number of
+changes to a JSP.
 
-	<%@ include file="/html/portlet/search/init.jsp" %>
+1. Open the
+`${LIFERAY_HOME}/tomcat-\<version>/webapps/ROOT/html/portlet/search/search.jsp`
+file.
+
+2. Insert the following code to the end of the JSP file:
 
 		<liferay-util:buffer var="html">
 			<liferay-util:include page="/html/portlet/search/view.portal.jsp" />
 		</liferay-util:buffer>
 
 		<%
-		html = StringUtil.add(html, "Enjoy your search!", "\n");
+		html = StringUtil.add(html, "Didn't find what you were looking for? Refine your search and try again!", "\n");
 		%>
 
 		<%= html %>
 
-<!-- This code doesn't look like it removes anything about search providers. It
-looks like it just adds a message to the bottom of the JSP. --> 
+3. Start your Liferay instance or restart it if you already have one running.
 
-Since this technique involves String manipulation, it's mainly useful for making
-a small number of changes to a JSP. 
+4. Add the *Search* portlet to a page by navigating to *Add* &rarr; *Content and
+Applications* &rarr; *Tools* &rarr; *Search*.
+
+5. Input text into the search field and click *Search*.
+
+You'll notice your custom string is displayed at the bottom of the Search
+portlet.
+
+![Figure 6.3: After customizing the JSP file, your custom string is displayed.](../../images/jsp-search-string.png)
+
+Next, we'll explore application adapters and what they can do for your sites and
+site templates.
 
 ## Customizing Sites and Site Templates with Application Adapters [](id=lp-6-1-dgen06-customizing-sites-and-site-templates-with-application-adapt-0)
 
@@ -244,9 +259,9 @@ throughout the entire portal? You can! *Application Adapters* are special hooks
 that let you make changes at the site level. In Liferay 6.1, Application
 Adapters are used for overriding JSPs. 
 
-There'a a Sample Application Adapter in the [Liferay Plugins
+There's a Sample Application Adapter in the [Liferay Plugins
 Repository](https://github.com/liferay/liferay-plugins/tree/master/hooks/sample-application-adapter-hook).
-How do we build an Applicaiton Adapter of our own? 
+How do we build an Application Adapter of our own? 
 
 To create an Application Adapter, you need a hook with custom JSPs, and you need
 to turn the hook's global custom JSP setting off. First, configure your
@@ -259,7 +274,7 @@ When you deploy your hook, Liferay installs the Application Adapter to your
 instance, under the name of the hook. An Application Adapter hook named *Foo*
 becomes available to sites and site templates under the name *Foo Hook*. 
 
-<!-- Missing transition -->
+Now, let's discuss the perks of including the original JSP when a JSP is being overridden.
 
 ### Including an original JSP [](id=lp-6-1-dgen06-including-an-original-jsp-0)
 
@@ -284,7 +299,9 @@ For Application Adapter hooks, we include the original JSP by setting the
     <liferay-util:include page="/html/portlet/navigation/view.jsp" useCustomPage="false" />
 
 The view JSP is specified as `view.jsp`, *not* `view.portal.jsp` as for global
-hooks. 
+hooks.
+
+In the next section, we'll create and test an application adapter. 
 
 ### Creating an Application Adapter  [](id=lp-6-1-dgen06-creating-an-application-adapter--0)
 
@@ -327,7 +344,7 @@ field's drop-down menu, select *example*. Then click *Save*.
     ![Figure 6.3: Your *Application Adapters* are easily accessible in your Site's settings.](../../images/06-hooks-select-site-app-adapter.png)
 
 6. Navigate back to your site's Navigation portlet, and make sure that the
-modificaiton message from your Application Adapter hook plugin's `view.jsp` file
+modification message from your Application Adapter hook plugin's `view.jsp` file
 is displayed there. 
 
 7. Navigate to a different site's Navigation portlet to verify that only the
@@ -402,6 +419,38 @@ others, extend `com.liferay.portal.struts.SimpleAction`.
  file for your version of Liferay in the [Portal
  Properties](http://www.liferay.com/community/wiki/-/wiki/Main/Portal+Properties)
  wiki page. 
+
+---
+
+Extending and overriding portal properties is just as easy, so let's do that
+next.
+
+## Extending and Overriding *portal.properties* [](id=extending-and-overriding-<em>portal-properties<-e-1)
+
+In our hook that created a custom login action, we modified the
+`login.events.pre` portal property of `portal.properties`. This property
+accepts *multiple* values, so our value was appended to the existing
+`login.events.pre` values. We can repeatedly modify the property from
+additional hooks because it accepts multiple values. Some portal properties
+only accept a *single* value, such as the `terms.of.use.required` property,
+which is either `true` or `false`.  Only modify single value properties from
+one hook; otherwise Liferay won't know which value to use. 
+
+To find out which properties accept multiple values, look in the [Configuring
+Liferay's
+Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties)
+section of [Using Liferay Portal
+6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) or in
+the `portal.properties` file. 
+
+---
+
+![note](../../images/tip-pen-paper.png)**Note:** You can't override all portal
+properties in a hook. To find a complete list of those you can, look in
+`liferay-hook-[liferay version].dtd`, in the `definitions` folder of the
+Liferay source code. In addition to defining custom actions, hooks can override
+portal properties to define model listeners, validators, generators, and
+content sanitizers. 
 
 ---
 
@@ -659,43 +708,7 @@ Try your new Struts path by accessing it from your browser (e.g.
 ![Figure 6.4: Your new Struts action displays *Hello World!* in your
 browser.](../../images/06-hooks-5.png)
 
-Extending and overriding portal properties is just as easy, so let's do that
-next. 
-
-## Extending and Overriding *portal.properties* [](id=extending-and-overriding-<em>portal-properties<-e-1)
-
-In our hook that created a custom login action, we modified the
-`login.events.pre` portal property of `portal.properties`. This property
-accepts *multiple* values, so our value was appended to the existing
-`login.events.pre` values. We can repeatedly modify the property from
-additional hooks because it accepts mulstiple values. Some portal properties
-only accept a *single* value, such as the `terms.of.use.required` property,
-which is either `true` or `false`.  Only modify single value properties from
-one hook; otherwise Liferay won't know which value to use. 
-
-To find out which properties accept multiple values, look in the [Configuring
-Liferay's
-Properties](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properties)
-section of [Using Liferay Portal
-6.1](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide) or in
-the `portal.properties` file. 
-
----
-
-![note](../../images/tip-pen-paper.png)**Note:** You can't override all portal
-properties in a hook. To find a complete list of those you can, look in
-`liferay-hook-[liferay version].dtd`, in the `definitions` folder of the
-Liferay source code. In addition to defining custom actions, hooks can override
-portal properties to define model listeners, validators, generators, and
-content sanitizers. 
-
----
-
-Next, let's override a portal service with a hook. 
-
-<!-- The above section should be appended to the section above where we append
-to a property. That way, all the info stays in one place. Having it here breaks
-the flow. --> 
+Let's continue our hooks expedition by overriding a portal service.
 
 ## Overriding a Portal Service [](id=overriding-a-portal-servi-4)
 
@@ -779,19 +792,19 @@ Javadocs for your version of Liferay at
 [http://docs.liferay.com/portal](http://docs.liferay.com/portal) and selecting
 the *javadocs* link. 
 
-<!-- Missing transition here -->
+Now that you know how to override a portal service, let's go a bit deeper and
+override a `Language.properties` file.
 
 ## Overriding a *Language.properties* File [](id=overriding-a-<em>language-properties<-em>-fi-1)
 
-<!-- Missing intro segue of what this is -->
-
-Change any of the messages displayed by Liferay to suit your needs, by
-overriding a `Language.properties` file from a hook. To do so, create a
-*Language* file for the language whose messages you want to customize, then
-refer to it from your `liferay-hook.xml`. For example, to override the Spanish
-and French message translations, create *Language* files of the same name and
-similar path in your hook project and refer to them in your `liferay-hook.xml`
-file as in the following:
+In addition to the uses of hooks we've already discussed, you can override a
+`Language.properties` file from a hook. This let's you change any of the
+messages displayed by Liferay to suit your needs. To do so, create a *Language*
+file for the language whose messages you want to customize, then refer to it
+from your `liferay-hook.xml`. For example, to override the Spanish and French
+message translations, create *Language* files of the same name and similar path
+in your hook project and refer to them in your `liferay-hook.xml` file as in the
+following:
 
     <hook>
 		...
