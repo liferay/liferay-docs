@@ -1397,13 +1397,14 @@ JSON Web Service call:
 
     /user/get-user-by-id?userId=123&-param1
 
-Before diving into more features, let's learn to use variables with the Invoker. 
+Before diving into more Invoker features, let's learn to use variables with the
+Invoker. 
 
 #### Invoker variables 
 
 You can use variables to reference objects returned from service calls. Variable
 names must start with a dollar sign, `$`. In our previous example, the service
-call returned a user object that can be assigned to a variable:
+call returned a user object you can assign to a variable: 
 
     {
         "$user = /user/get-user-by-id": {
@@ -1431,36 +1432,45 @@ action:
         }
     }
 
-This command defines two service calls in which the contact object returned from
-the second service call is nested in (i.e. injected into) the user object, as a
+This command defines two service calls; the contact object returned from the
+second service call is nested in (i.e. injected into) the user object, as a
 property named `contact`. Now we can bind the user and its contact information
 together! 
 
-Let's analyze this command example to consider what the JSON Web Service Invoker
-does in the background within this single HTTP request:
+Let's see what the Invoker did in the background when we used a single HTTP
+request to make the above nested service call: 
 
-+ Calls the Java service mapped to `/user/get-user-by-id` passing in a value for
-the `userId` parameter
-+ Assigns the resulting user object to variable `$user`
-+ Proceeds with invoking nested calls
-+ Calls the Java service mapped to `/contact/get-contact-by-id` using
-`contactId` parameter, with `$user.contactId` value from `$user` object
-+ Assigns the resulting contact object to variable `$contact`
-+ Injects the contact object referenced by `$contact` into the user object's
-property named `contact`
+- First the Invoker called the Java service mapped to `/user/get-user-by-id`,
+passing in a value for the `userId` parameter. 
 
-One remark: you need to *flag* parameters that take values from existing
-variables. Flagging is done using the `@` prefix before the parameter name.
+- Next, the resulting user object was assigned to the variable `$user`. 
+
+- The nested service calls were invoked. 
+
+- The Invoker called the Java service mapped to `/contact/get-contact-by-id`--it
+used the `contactId` parameter, with the `$user.contactId` value from the object
+`$user`. 
+
+- The resulting contact object was assigned to the variable `$contact`. 
+
+- Lastly, the Invoker injected the contact object referenced by `$contact` into
+the user object's property named `contact`. 
+
+![note](../../images/tip-pen-paper.png)**Note:** You must *flag* parameters that
+take values from existing variables. To flag a paramteter, insert the `@` prefix
+before the parameter name. 
 
 #### Filtering results 
 
-Many of Liferay Portal's model objects are rich with properties. But, you may
-only need a handful of an object's properties for your business logic. By
-reducing the number of properties returned in an object, you can minimize the
-network bandwith used by your web service invocation. Good news! With the JSON
-Web Service Invoker you can define a *white-list* of properties to include only
-specific properties in the object returned from your web service call. It's
-simple:
+Many of Liferay Portal's model objects are rich with properties. If you only
+need a handful of an object's properties for your business logic, making a web
+service incvocation that returns all of an objects properties is a waste of
+network bandwidth. Bandwidth is a scarce resource for the resistance to Skynet,
+so conserve it carefully. With the JSON Web Service Invoker, you can define a
+*white-list* of properties; only the specific properties you request in the
+object will be returned from your web service call. It's simple, and John Connor
+will potentially promote you for your stewardship of the resistance's bandwidth.
+Here's how you white-list the properties you need: 
 
     {
         "$user[firstName,emailAddress] = /user/get-user-by-id": {
@@ -1471,60 +1481,61 @@ simple:
         }
     }
 
-In this example, the returned user object has only the `firstName` and the
-`emailAddress` properties (and, of course, the `contact` property). You specify
-*white-list* properties in square brackets (`[...]`) immediately following the
-name of your variable.
+In this example, the returned user object has only the `firstName` and
+`emailAddress` properties (it still has the `contact` property, too). To specify
+*white-list* properties you simply place the properties in square brackets
+(e.g., `[whiteList]`) immediately following the name of your variable. 
 
 #### Batching calls 
 
-As mentioned previously, nesting service calls allows you to invoke multiple
-services within a single HTTP request. Using a single request for multiple
-service calls is helpful for gathering related information from the service call
-results. But you can also use a single request to invoke unrelated service
-calls. The Invoker command allows you to *batch* service calls together to
-improve performance. Again, it's simple, just pass a JSON array of commands:
+When we nested service calls earlier, the intent was to invoke multiple services
+with a single HTTP request. Using a single request for multiple service calls is
+helpful for gathering related information from the service call results, but it
+can also be advantageous to use a single request to invoke multiple unrelated
+service calls. The Invoker lets you *batch* service calls together to improve
+performance. It's simple--just pass in a JSON array of commands using the
+following format: 
 
     [
         {/* first command */},
         {/* second command */}
     ]
 
-The result is a JSON array populated with results from each of the commands. The
-commands are collectively invoked in a single HTTP request, one after another.
+The result is a JSON array populated with results from each command. The
+commands are collectively invoked in a single HTTP request, one after another. 
 
-Well, you've just added some powerful tools to your toolbox by learning how to
-leverage JSON Web Services in Liferay. Good job!
+By learning to leverage JSON Web Services in Liferay, you've added some powerful
+tools to your toolbox. Good job--with shapr folks like you in the fold, maybe
+the resistance can prevail after all! 
 
-Next, let's consider the `ServiceContext` class used by so many Liferay services
-and how it can be helpful to use in your services.
+Next let's consider the `ServiceContext` class that's used by many Liferay
+services.
 
 ## Service Context 
 
-The `ServiceContext` class is a parameter class to be used in passing contextual
-information for a service. By using a parameter class, it is possible to
-consolidate many different methods with different sets of optional parameters
-into a single, easier to use method. The class also aggregates information
-necessary for transversal features such as permissioning, tagging,
-categorization, etc.
+The `ServiceContext` class is a parameter class used for passing contextual
+information for a service. Using a parameter class lets you consolidate many
+different methods with different sets of optional parameters into a single,
+easier to use method. The class also aggregates information necessary for
+transversal features, including permissioning, tagging, categorization, and
+more. 
 
-This section covers:
+In this section we'll look at the Service Context fields, learn how to create
+and populate a Service Context, and learn to access Service Context data.
 
-- The Service Context fields
+<!--I got rid of the list here and replaced it with a paragraph, since I've only
+seen a list of contents for the entire chapter, if memory seves. -Russ -->
 
-- Creating and populating a Service Context
-
-- Accessing Service Context data
-
-First, we'll take a look at the fields of the `ServiceContext` class.
+First we'll look at the fields of the `ServiceContext` class. 
 
 ### Service Context Fields 
 
-There are a good number of fields found in `ServiceContext`. The best
-descriptions of these fields are found in the Javadoc comments for of their
-corresponding *getter* methods found at
+The `ServiceContext` class has many fields. The best field descriptions are
+found in the Javadoc comments of a field's corresponding *getter* method; these
+are found at
 [http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html](http://docs.liferay.com/portal/6.1/javadocs-all/com/liferay/portal/service/ServiceContext.html).
-But what may also be helpful is the following categorical listing of the fields:
+
+Here we'll give you a helpful categorical listing of the fields: 
 
 - Actions:
     - `_command`
@@ -1577,53 +1588,51 @@ But what may also be helpful is the following categorical listing of the fields:
     - `_remoteHost`
     - `_userDisplayURL`
 
-In case you are wondering how the `ServiceContext` fields get populated, we're
-going to look at that next.
+Are you wondering how the `ServiceContext` fields get populated? Good! We'll
+show you that next. 
 
 ### Creating and Populating a Service Context  
 
-All of the fields of the `ServiceContext` class are optional, although your
-services that store any type of content will require you to specify at least the
-scope group ID. Here is a simple example of how to create a `ServiceContext`
-instance and pass it as a parameter to a service API using Java:
+Although all of the `ServiceContext` class fields are optional, services that
+store any type of content need the scope group ID specified, at least. Here's a
+simple example of creating a `ServiceContext` instance and passing it as a
+parameter to a service API using Java: 
 
         ServiceContext serviceContext = new ServiceContext();
         serviceContext.setScopeGroupId(myGroupId);
         ...
         BlogsEntryServiceUtil.addEntry(...., serviceContext);
 
-If you are invoking the service from a servlet, a Struts action or any other
-front-end class which has access to the `PortletRequest`, use one of the
+If you invoke the service from a servlet, a Struts action or any other front end
+class which has access to the `PortletRequest`, use one of the
 `ServiceContextFactory.getInstance(...)` methods. These methods create the
-`ServiceContext` object and fill it with all the necessary values automatically.
-If you are invoking the service from a servlet, the above example could be
-rewritten as follows:
+`ServiceContext` object and automatically fill it with all necessary values. The
+above example would look a little different if you invoke the service from a
+servlet: 
 
         ServiceContext serviceContext =
                 ServiceContextFactory.getInstance(BlogsEntry.class.getName(),
                 portletRequest);
         BlogsEntryServiceUtil.addEntry(..., serviceContext);
 
-To see an example of how to populate a `ServiceContext` with information from a
-request object, check out the code of the
-`ServiceContextFactory.getInstance(...)` methods. Not only do the methods
-demonstrate setting parameters such as scope group ID, company ID, language ID,
-etc., but they also demonstrate accessing and populating more complex context
-parameters such as tags, categories, asset links, headers, and the attributes
-parameter. Note, by calling `ServiceContextFactory.getInstance(String className,
-PortletRequest portletRequest)`, you can assure your expando bridge attributes
-are also set on the `ServiceContext`.
+You can see an example of populating a `ServiceContext` with information from a
+request object in the code of the `ServiceContextFactory.getInstance(...)`
+methods. The methods demonstrate how to set parameters like *scope group ID*,
+*company ID*, *language ID*, and more; they also demonstrate how to access and
+populate more complex context parameters like *tags*, *categories*, *asset
+links*, *headers*, and the *attributes* parameter. By calling
+`ServiceContextFactory.getInstance(String className, PortletRequest
+portletRequest)`, you can assure your expando bridge attributes are set on the
+`ServiceContext`. 
 
-You're not limited to using only Java with ServiceContext; you can use
-ServiceContext from other languages like JavaScript. In fact, since our API can
-be invoked from JavaScript, it is often required to pass the ServiceContext from
-JavaScript to the server, and this can be done in a very simple way -- by
-passing the ServiceContext as any other JavaScript object. There are plenty of
-examples of this in the JavaScript code of Liferay's portlets. Here is an
-example from `[liferay-portal]/portal-web/html/portlet/journal/js/main.js` that
-demonstrates using ServiceContext in calling the `updateStructure` method of the
-JournalStructure service:
-
+With `ServiceContext`, you're not limited to Java; you can use it from other
+languages too. Since our API can be invoked from JavaScript, it's often required
+to pass the `ServiceContext` from JavaScript to the server. This can be done
+simply, by passing the `ServiceContext` as any other JavaScript object. There
+are many examples of this in the JavaScript code of Liferay's portlets. Here's
+an example from `[liferay-portal]/portal-web/html/portlet/journal/js/main.js`
+that demonstrates using `ServiceContext` in calling the `updateStructure` method
+of the `JournalStructure` service: 
 
     var instance = this;
 
@@ -1661,30 +1670,29 @@ JournalStructure service:
         }
     );
 
-Note, the example above uses JSON to populate the ServiceContext.
+The example above uses JSON to populate the ServiceContext. 
 
-On the front-end, you can use Alloy UI and Liferay UI tags in your forms to
+On the front end, you can use *Alloy UI* and *Liferay UI* tags in your forms to
 extract information and automatically insert the corresponding data into your
-request object. As an example, see
-`portal-web/docroot/html/portlet/blogs/edit_entry.jsp`. Next, let's take a look
-at an example of accessing information from a `ServiceContext`.
+request object. You can see an example at
+`portal-web/docroot/html/portlet/blogs/edit_entry.jsp`. 
+
+Next let's see an example of accessing information from a `ServiceContext`. 
 
 ### Accessing Service Context data 
 
-This section provides code snippets from
-`BlogsEntryLocalServiceImpl.addEntry(..., ServiceContext)` that demonstrates how
-to access information from a `ServiceContext` and provides comments on how the
-context information is being used.
+We'll use code snippets from `BlogsEntryLocalServiceImpl.addEntry(...,
+ServiceContext)` to show you how to access information from a `ServiceContext`
+and comment on how the context information is being used. 
 
-As previously mentioned, your service will need a scope group ID from your
-`ServiceContext`. The same holds true for the blogs entry service because the
-scope group ID provides the scope of the blogs entry (the entity being
-persisted). In the case of adding a blogs entry, the scope group ID is used in
-the following manner:
+As we mentioned, your service needs a scope group ID from your `ServiceContext`.
+The same holds true for the blogs entry service because the scope group ID
+provides the scope of the blogs entry (the entity being persisted). For the
+blogs entry, the scope group ID is used in the following way: 
 
-- Used as the groupId for the `BlogsEntry` entity
-- Used in generating a unique URL for the blog entry
-- Setting the scope for comments on the blog entry
+- It's used as the groupId for the `BlogsEntry` entity.
+- It's used to generate a unique URL for the blog entry.
+- It's used to set the scope for comments on the blog entry. 
 
 Here are the corresponding code snippets:
 
@@ -1704,16 +1712,17 @@ Here are the corresponding code snippets:
                 WorkflowConstants.ACTION_PUBLISH);
         }
 
-The `ServiceContext` is also used to access the UUID and the time this blog
-entry was added.
+Can `ServiceContext` be used to access the UUID of the blog entry? Absolutely!
+Can `ServiceContext` access retreive the time the blog entry was added? Sure it
+can. See here: 
 
         entry.setUuid(serviceContext.getUuid());
         ...
         entry.setCreateDate(serviceContext.getCreateDate(now));
 
 Can `ServiceContext` be used in setting permissions on resources? You bet! When
-adding a blog entry, new permissions can be added or existing permissions can be
-applied for the blog entry:
+adding a blog entry, you can add new permissions or apply existing permissions
+for the entry, like this: 
 
         // Resources
 
@@ -1730,8 +1739,8 @@ applied for the blog entry:
                 serviceContext.getGuestPermissions());
         }
 
-Categories, tag names, and the link entry IDs can be applied to the `AssetEntry`
-for the blogs entry, as demonstrated:
+Can `ServiceContext` apply categories, tag names, and the link entry IDs to the
+`AssetEntry` for the blogs entry? Yes! Allow us to demonstrate:
 
         // Asset
 
@@ -1740,9 +1749,9 @@ for the blogs entry, as demonstrated:
             serviceContext.getAssetTagNames(),
             serviceContext.getAssetLinkEntryIds());
 
-The `ServiceContext` also plays a part in starting a workflow instance for the
-blogs entry. As you can see, the scope group ID sets the scope for the workflow
-to be started for the blog entry.
+Does `ServiceContext` also play a role in starting a workflow instance for the
+blogs entry? Must you Ask? As you can see below, the scope group ID sets the
+scope for the workflow to be started for the blog entry:
 
         // Workflow
 
@@ -1757,93 +1766,98 @@ to be started for the blog entry.
             user.getCompanyId(), groupId, userId, BlogsEntry.class.getName(),
             entry.getEntryId(), entry, serviceContext);
 
-The previous snippet also demonstrates using the `trackbacks` attribute which is
-a *standard* attribute for the blogs entry service. But there may be cases where
-you need to pass in *custom* attributes to your blogs entry service. To do so,
-use Expando attributes to carry these *custom* attributes along in your
-`ServiceContext`. Expando attributes are set on the added blogs entry like so:
+The snippet above also demonstrates the `trackbacks` attribute, a *standard*
+attribute for the blogs entry service. There may be cases where you need to pass
+in *custom* attributes to your blogs entry service. Use Expando attributes to
+carry custom attributes along in your `ServiceContext`. Expando attributes are
+set on the added blogs entry like this: 
 
         entry.setExpandoBridgeAttributes(serviceContext);
 
-As we've demonstrated, the `ServiceContext` can be used to transfer lots of
-useful information for your services.
+You can see that the `ServiceContext` can be used to transfer lots of useful
+information for your services. About the only thing it's not useful for is
+taking down Skynet (or is it?). 
+
+Let's look at Message Bus next. 
 
 ## Using Message Bus 
 
-The Message Bus is a service level API used to exchange messages within Liferay.
-The Message Bus exchanges only String messages, providing loose coupling between
-message producers and consumers. For this reason, you won't have class loading
-issues. The Message Bus is located in portal-kernel, in the global class loader,
-making it accessible to every deployed webapp. Although, remote messaging is not
-supported, messages can be sent across a cluster using ClusterLink classes.
+The *Message Bus* is a service level API used to exchange messages within
+Liferay. The Message Bus exchanges only *String* messages, providing loose
+coupling between message producers and consumers to prevent class loading
+issues. It's located in `portal-kernel`, in the global class loader, making it
+accessible to every deployed web application. Remote messaging isn't supported,
+but messages can be sent across a cluster using *ClusterLink* classes.
 
-Common uses for Message Bus include:
+Message Bus has several common uses:
 
 - Sending search index write events
 - Sending subscription emails
 - Handling messages at scheduler endpoints
 - Running asynchronous processes
 
-You too can leverage Message Bus for sending messages between and within your
-plugins.
+You can leverage Message Bus to send messages between and within your plugins. 
 
-In this section, you will learn about
+We'll cover these subtopics as we show you Message Bus: 
 
 - The Message Bus System
 - Synchronous and Asynchronous messaging
 - Dispatching messages *serially* and *in-parallel* to multiple listeners
 - Java and JSON style message formats
 
-For starters, let's get a handle on the architecture of Liferay's Message Bus
-System.
+<!--Is a subtopic list okay? -->
+
+Let's first try to understand the architecture of Liferay's Message Bus System.
+Since you've been studying Skynet's complicated architecture this will be a
+piece of cake for you. 
 
 ### The Message Bus System 
 
-The Message Bus system is comprised of the following:
+The Message Bus system is comprised of the following components: 
 
-- **Message Bus** - Manages transfer of messages from message *senders* to
-message *listeners*
+- *Message Bus*: Manages transfer of messages from message *senders* to message
+*listeners*. 
 
-- **Destinations** - Are addresses or endpoints to which *listeners* register to
-receive messages
+- *Destinations*: Addresses or endpoints to which *listeners* register to
+receive messages. 
 
-- **Listeners** - Consume messages received at destinations. They receive all
-messages sent to their registered destinations.
+- *Listeners*: Consume messages received at destinations. They receive all
+messages sent to their registered destinations. 
 
-- **Senders** - Invoke the Message Bus to send messages to destinations
+- *Senders*: Invoke the Message Bus to send messages to destinations. 
 
-Your services can *send* messages to one or more destinations. And your services
-can *listen* to one or more destinations.
-
-The figure below depicts services sending messages to one or more destinations
-and services listening to one or more destinations. An individual service can be
-both a message sender and a message listener. In this figure, for example, both
-*Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and listen for messages.
+Your services can *send* messages to one or more destinations, and can *listen*
+to one or more destinations. The figure below depicts this. An individual
+service can be both a message sender and a message listener. For example, in the
+figure below both *Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and
+listen for messages. 
 
 ![Figure 9.1: Example, Message Bus system](../../images/msg-bus-system.png)
 
-The Message Bus supports synchronous and asynchronous messaging:
+The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
-- **Synchronous messaging** - After sending a message, the sender blocks waiting
-for a response from a recipient
+- *Synchronous messaging*: After sending a message, the sender blocks waiting
+for a response from a recipient.
 
-- **Asynchronous messaging** - After sending a message, the sender is free to
+<!--Des the above definition make sense? -->
+
+- *Asynchronous messaging*: After sending a message, the sender is free to
 continue processing. The sender can be configured to receive a call-back or can
-simply "send and forget." We'll cover both synchronous and asynchronous
-messaging implementations in this section.
+simply "send and forget." We'll show you both synchronous and asynchronous
+messaging implementations in this section. 
 
-    - **Call-back** - The sender can include a call-back destination key as the
+    - *Call-back*: The sender can include a call-back destination key as the
     *response destination* for the message. The recipient (listener) can then
     send a *response* message back to the sender via this *response
-    destination*.
+    destination*. 
 
-    - **"Send-and-Forget"** - The sender includes no call-back information in
-    the message sent and simply continues with processing
+    - *Send-and-Forget*: The sender includes no call-back information in the
+    message sent and simply continues with processing. 
 
-What's great is your destinations, listeners, and mappings between them are all
-configurable via Spring in your plugin's `messaging-spring.xml` file.
+Conveniently, your destinations, listeners, and the mappings between them are
+all configurable via Spring in your plugin's `messaging-spring.xml` file. 
 
-**Configuration** of Message Bus is done using the following files:
+Configuration of Message Bus is done using the following files:
 
 - `WEB-INF/src/META-INF/messaging-spring.xml` - Specifies your destinations,
 listeners, and their mappings to each other
