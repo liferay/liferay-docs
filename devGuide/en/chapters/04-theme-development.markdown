@@ -627,10 +627,11 @@ should be shown. In some cases, you may want to remove the site name display due
 to a conflict. For example, it is a common practice for some themes to specify
 their own logo, by default, if none has been specified by the site
 administrator. In many cases, the custom logo includes text that may conflict
-with the site's name. The additional effort required to remove the site name
-from each of the theme's sites can be skipped by simply turning off the site
-name for all sites using the theme. Thus, the site name offers two configurable
-settings:
+with the site's name. For instance, a company logo that includes its name would
+conflict with a site name that also includes the company name. The additional
+effort required to remove the site name from each of the theme's sites can be
+skipped by simply turning off the site name for all sites using the theme. Thus,
+the site name offers two configurable settings:
 
 - Set whether the site title should be shown by default.
 - Specify whether displaying the site title is supported.
