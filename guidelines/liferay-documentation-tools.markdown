@@ -382,7 +382,7 @@ is disrupted and the step that follows restarts at `1`.
 
         ---
 
-    3. Finally! The third and final step. Code must be indented 4 spaces more.
+    4. Finally! The fourth and final step. Code must be indented 4 spaces more.
     Let's see a good code block ...
 
             System.out.println("This code is mono-spaced");
@@ -411,6 +411,8 @@ is disrupted and the step that follows restarts at `1`.
 Let's see a good code block ...
 
         System.out.println("This code is mono-spaced");
+
+---
 
 All is well in the *Good steps*. Let's consider what NOT to do by way of
 example--the *Bad steps*.
@@ -465,6 +467,8 @@ because it is not indented 4 spaces.
 needs to be indented 4 more spaces ...
 
     System.out.println("Code should be mono-spaced");
+
+---
 
 Well, there you have it--the do's and don'ts of ordered lists.
 
