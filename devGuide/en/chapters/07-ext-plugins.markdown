@@ -633,6 +633,41 @@ The `.war` file is written to your `[liferay-plugins]/dist` directory.
 We've covered the basics, so let's look at some more advanced customization
 scenarios that require Ext plugins. 
 
+### Ext Plugin Packaging Requirements for JBoss 7
+
+If you're developing an Ext plugin that defines a new taglib, you need to take
+JBoss's classloading behavior into account. Before packaging this kind of Ext
+plugin, create a `jboss-deployment-structure.xml` file in the Ext plugin's
+`WEB-INF/` folder and add the following contents to it:
+
+    <jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.0">
+            <deployment>
+                    <dependencies>
+                            <module name="deployment.util-taglib"></module>
+                            <module name="com.liferay.portal"></module>
+                    </dependencies>
+            </deployment>
+                    <module name="deployment.util-taglib">
+                      <resources>
+                                    <resource-root path="WEB-INF/ext-util-taglib/ext-util-taglib.jar" />
+                                    <resource-root path="WEB-INF/lib/util-taglib.jar"></resource-root>
+                                    <resource-root path="WEB-INF/lib/util-java.jar"></resource-root>
+                            </resources>
+                            <dependencies>
+                                    <module name="javax.faces.api"></module>
+                                    <module name="javax.servlet.api" />
+                                    <module name="javax.servlet.jsp.api" />
+                                    <module name="com.liferay.portal"></module>
+                            </dependencies>
+                    </module>
+    </jboss-deployment-structure>
+
+Also, add the following line to the Ext plugin's
+`liferay-plugin-package.properties` file to add the `util-taglib.jar` as a
+dependency: `portal-dependency-jars=util-taglib.jar`. Once you've made these
+updates, you can package your plugin and install it using the process described
+above.
+
 ### Advanced customization techniques [](id=lp-6-1-dgen06-advanced-customization-techniques-0)
 
 With Ext plugins, you can change almost everything in Liferay. Let's look at
