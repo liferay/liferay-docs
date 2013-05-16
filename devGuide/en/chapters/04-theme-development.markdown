@@ -622,13 +622,15 @@ menu. Next, let's take a look at how to enable the site name settings.
 
 ### Site Names
 
-The site name settings allow site administrators to decide whether a site's
-name should be shown. It is a common practice for some themes to
-specify their own logo, by default, if none has been specified by the site
-administrator. But the logo may conflict with the site name. Thus,
-the site name offers two configurable settings:
-
-<!-- Please give a concrete example of this conflict - Jim -->
+The site name settings allow site administrators to decide whether a site's name
+should be shown. In some cases, you may want to remove the site name display due
+to a conflict. For example, it is a common practice for some themes to specify
+their own logo, by default, if none has been specified by the site
+administrator. In many cases, the custom logo includes text that may conflict
+with the site's name. The additional effort required to remove the site name
+from each of the theme's sites can be skipped by simply turning off the site
+name for all sites using the theme. Thus, the site name offers two configurable
+settings:
 
 - Set whether the site title should be shown by default.
 - Specify whether displaying the site title is supported.
@@ -636,8 +638,8 @@ the site name offers two configurable settings:
 By default, the settings' `configurable` option is set to `false`. This sets
 whether or not the option is configurable from within the portal. If you'd like
 to allow users to configure the site name options from within the portal, set
-`configurable` to `true`. Similarly to the previos predefined theme settings, if
-you'd like to disable the site name settings, set the value to `false`.
+`configurable` to `true`. Similarly to the previous predefined theme settings,
+if you'd like to disable the site name settings, set the value to `false`.
 
 Example:
 
