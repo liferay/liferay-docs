@@ -99,7 +99,7 @@ A BUILD SUCCESSFUL message indicates your hook is now being deployed. If you
 switch to the terminal window running Liferay, in a few seconds you
 should see the message "Hook for example-hook is available for use". 
 
- ![note](../../images/tip-pen-paper.png)**Note:** When we created portlets and
+ ![note](../../images/tip-pen-paper.png) **Note:** When we created portlets and
  themes, they were fully functional upon deployment. Hooks aren't like that,
 because they're Liferay customizations, and the default customization is the
 original implementation! 
@@ -143,7 +143,7 @@ files, CSS files, or images.
 
 ---
 
- ![important](../../images/tip-pen-paper.png)**Important:** Some resources have
+ ![important](../../images/tip-pen-paper.png) **Important:** Some resources have
  additional requisites:
 
  - ***JSPF:*** Changes won't take effect unless you modify the JSP that
@@ -194,7 +194,7 @@ won't know which version to use.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** We don't recommend changing
+ ![note](../../images/tip-pen-paper.png) **Note:** We don't recommend changing
  the *Terms of Use* with a hook. You can replace the *Terms of Use* with web
  content simply by setting two properties in `portal-ext.properties`. Although
  our hook wasn't necessary, it was a good way to demonstrate overriding a JSP
@@ -217,14 +217,14 @@ afterwards. This way you can change minor elements of a JSP, like adding a new
 heading or button, without modifying your hook every time you upgrade Liferay.
 Here's an example that customizes the search portlet. Specifically, it adds
 helpful text to aid the user in searching for content. Since this technique
-involves String manipulation, it's mainly useful for making a small number of
+involves string manipulation, it's mainly useful for making a small number of
 changes to a JSP.
 
 1. Open the
-`${LIFERAY_HOME}/tomcat-\<version>/webapps/ROOT/html/portlet/search/search.jsp`
+`[LIFERAY_HOME]/tomcat-[version]/webapps/ROOT/html/portlet/search/search.jsp`
 file.
 
-2. Insert the following code to the end of the JSP file:
+2. Append the following code to the end of the JSP file:
 
 		<liferay-util:buffer var="html">
 			<liferay-util:include page="/html/portlet/search/view.portal.jsp" />
@@ -238,7 +238,7 @@ file.
 
 3. Start your Liferay instance or restart it if you already have one running.
 
-4. Add the *Search* portlet to a page by navigating to *Add* &rarr; *Content and
+4. Add the *Search* portlet to a page by selecting *Add* &rarr; *Content and
 Applications* &rarr; *Tools* &rarr; *Search*.
 
 5. Input text into the search field and click *Search*.
@@ -274,7 +274,7 @@ When you deploy your hook, Liferay installs the Application Adapter to your
 instance, under the name of the hook. An Application Adapter hook named *Foo*
 becomes available to sites and site templates under the name *Foo Hook*. 
 
-Now, let's discuss the perks of including the original JSP when a JSP is being overridden.
+Now, let's discuss the perks of including the original JSP when overriding it.
 
 ### Including an original JSP
 
@@ -411,7 +411,7 @@ others, extend `com.liferay.portal.struts.SimpleAction`.
 
 ---
 
- ![important](../../images/tip-pen-paper.png)**Important:** For better forward
+ ![important](../../images/tip-pen-paper.png) **Important:** For better forward
  compatibility, use hooks to customize Struts actions rather than Ext plugins.
  For more information, see the [Properties
  Reference](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/configuring-liferay-s-properti-1)
@@ -445,7 +445,7 @@ the `portal.properties` file.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** You can't override all portal
+![note](../../images/tip-pen-paper.png) **Note:** You can't override all portal
 properties in a hook. To find a complete list of those you can, look in
 `liferay-hook-[liferay version].dtd`, in the `definitions` folder of the
 Liferay source code. In addition to defining custom actions, hooks can override
@@ -624,7 +624,7 @@ executed.
 	
 ---
 
-![Tip](../../images/tip-pen-paper.png)**Warning:** There's a
+![Tip](../../images/tip-pen-paper.png) **Warning:** There's a
 classloading bug that manifests under certain conditions when executing
 an original Struts action. The issue is fixed in
 [LPS-30162](http://issues.liferay.com/browse/LPS-30162). If you don't
@@ -705,8 +705,7 @@ Both custom Struts actions are executed via your Struts action hook!
 Try your new Struts path by accessing it from your browser (e.g.
 `http://localhost:8080/c/portal/sample`). 
 
-![Figure 6.4: Your new Struts action displays *Hello World!* in your
-browser.](../../images/06-hooks-5.png)
+![Figure 6.4: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
 
 Let's continue our hooks expedition by overriding a portal service.
 
@@ -755,7 +754,7 @@ a new file called `MyUserLocalServiceImpl.java` with the following content:
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Note:** The wrapper class
+![tip](../../images/tip-pen-paper.png) **Note:** The wrapper class
 (`MyUserLocalServiceImpl` in this example) will be loaded in the hook's class
 loader. That means it will have access to any other class included in the
 same WAR file, but *not* the *internal* classes of Liferay. 
@@ -797,14 +796,13 @@ override a `Language.properties` file.
 
 ## Overriding a *Language.properties* File
 
-In addition to the uses of hooks we've already discussed, you can override a
-`Language.properties` file from a hook. This let's you change any of the
-messages displayed by Liferay to suit your needs. To do so, create a *Language*
-file for the language whose messages you want to customize, then refer to it
-from your `liferay-hook.xml`. For example, to override the Spanish and French
-message translations, create *Language* files of the same name and similar path
-in your hook project and refer to them in your `liferay-hook.xml` file as in the
-following:
+Hooks let you change any of the messages displayed by Liferay, to suit your
+needs. To do so, create a *Language* file for the locale of the messages you
+want to customize, then refer to your file from your `liferay-hook.xml` file.
+For example, to override the Spanish and French message translations of portal's
+`Language.properties` file, create *Language* files for them in the same
+directory, and refer to these language files in your `liferay-hook.xml` file,
+like so:
 
     <hook>
 		...
@@ -815,11 +813,14 @@ following:
 
 ---
 
-![tip](../../images/tip-pen-paper.png)**Tip:** Check the DTD of each Liferay
+![tip](../../images/tip-pen-paper.png) **Tip:** Check the DTD of each Liferay
 XML file you modify for the elements and attributes that can be included in the
 XML and the specified order for those elements. 
 
 ---
+
+Great! You now know how to customize language keys. Next, let's consider some
+other types of hooks that may interest you.
 
 ## Other hooks
 
