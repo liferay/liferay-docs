@@ -630,8 +630,52 @@ for distribution and production deployment.
 
 The `.war` file is written to your `[liferay-plugins]/dist` directory.
 
-We've covered the basics, so let's look at some more advanced customization
-scenarios that require Ext plugins. 
+You really have the hang of building and packaging your Ext plugins! Our
+next section covers JBoss 7 requirements for packaging up an Ext plugin
+containing a new taglib. If this doesn't apply to you, feel free to skip over
+it and to start reading about advanced customization techniques. 
+
+### Ext Plugin Packaging Requirements for JBoss 7 [](id=liferay-portal-6-1-ext-plugin-packaging-requirements-for-jboss)
+
+If you're developing an Ext plugin that defines a new taglib, you need to take
+JBoss's classloading behavior into account. Before packaging this kind of Ext
+plugin, create a `jboss-deployment-structure.xml` file in the Ext plugin's
+`WEB-INF/` folder and add the following contents to it:
+
+    <jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.0">
+            <deployment>
+                    <dependencies>
+                            <module name="deployment.util-taglib"></module>
+                            <module name="com.liferay.portal"></module>
+                    </dependencies>
+            </deployment>
+                    <module name="deployment.util-taglib">
+                      <resources>
+                                    <resource-root path="WEB-INF/ext-util-taglib/ext-util-taglib.jar" />
+                                    <resource-root path="WEB-INF/lib/util-taglib.jar"></resource-root>
+                                    <resource-root path="WEB-INF/lib/util-java.jar"></resource-root>
+                            </resources>
+                            <dependencies>
+                                    <module name="javax.faces.api"></module>
+                                    <module name="javax.servlet.api" />
+                                    <module name="javax.servlet.jsp.api" />
+                                    <module name="com.liferay.portal"></module>
+                            </dependencies>
+                    </module>
+    </jboss-deployment-structure>
+
+Also, add the following line to your Ext plugin's
+`liferay-plugin-package.properties` file, setting the `util-taglib.jar` as a
+dependency:
+
+    portal-dependency-jars=util-taglib.jar
+
+Once you've made these updates, you can package your plugin and deploy it, per
+the normal process described previously in this chapter. 
+
+Now that you've learned the basics of Ext plugin development have covered this
+requirement for JBoss customizations, let's look at some advanced customizations
+that you can do.
 
 ### Advanced customization techniques [](id=lp-6-1-dgen06-advanced-customization-techniques-0)
 
