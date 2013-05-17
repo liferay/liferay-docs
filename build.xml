@@ -27,7 +27,10 @@
 
 	<!-- To run the properties converter, use a command of the form ant -Dproperties.title="Page Title" -Dtoc="false" -Dproperties.file=/path/to/properties/file -->
 	<target name="properties-to-html" description="runs the properties converter">
-		<java fork="true" jar="${lib.dir}/properties-converter.jar">
+		<java fork="true"
+			classname="com.liferay.portal.tools.propertiesconverter.PropertiesParser"
+			classpathref="lib.classpath"
+		>
 			<arg value="${properties.title}" />
 			<arg value="${properties.toc}" />
 			<arg value="${properties.file.path}" />

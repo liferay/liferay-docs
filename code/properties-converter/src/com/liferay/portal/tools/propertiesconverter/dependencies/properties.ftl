@@ -5,7 +5,7 @@
 		h3 {color:darkgreen;}
 		#toc {color:#555; border: 1px dotted #555; width: 700px;}
 		#toc li {font-size:14px;}
-		pre {background-color: #efe;}
+		.active {background-color: #efe;}
 		.inactive {background-color: #eee;}
 	</style>
 	<head>
@@ -40,12 +40,16 @@
 			<#if section._propertiesParagraphs?has_content>
 				<hr></hr>
 				<#list section._propertiesParagraphs as paragraph>
-					<p>${paragraph}</p>
+					<#if paragraph._isPreFormatted>
+						<p><pre>${paragraph._text}</pre></p>
+					<#else>
+						<p>${paragraph._text}</p>
+					</#if>
 				</#list>
 			</#if>
 			<#if section._activeProperties?has_content>
 				<em>Defaults:</em>
-				<p><pre>${section._activeProperties}</pre></p>
+				<p><pre class="active">${section._activeProperties}</pre></p>
 			</#if>
 			<#if section._inactiveProperties?has_content>
 				<em>Examples:</em>
