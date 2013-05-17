@@ -854,9 +854,20 @@ check box for enabling the mailing list function. If don't want to add a mailing
 list to the category you're creating, click *Save* now. You can always edit an
 existing category to add, edit, or remove a mailing list.
 
-Liferay's Message Boards portlet supports two different
-mechanisms for sending email notifications: user subscriptions and mailing
-lists. Let's discuss user subscriptions first and then mailing lists.
+Once one or more categories have been added to a message board, they appear in a
+list on the message board's home. The list displays the names of the categories
+and the numbers of subcategories, threads, and posts in each one. To add a
+subcategory to category, click on the category's name in the list and then click
+the *Add Subcategory* button. By default, when you click the *Add Subcategory*
+button, the form for adding a subcategory is populated with the properties of
+the parent category. This includes the parent category's display style (Default
+or Question) and mailing list configuration. Of course, you can change the
+display style or mailing list configuration of a subcategory just as with a new
+category.
+
+Liferay's Message Boards portlet supports two different mechanisms for sending
+email notifications: user subscriptions and mailing lists. Let's discuss user
+subscriptions first and then mailing lists.
 
 ### User Subscriptions and Mailing Lists
 

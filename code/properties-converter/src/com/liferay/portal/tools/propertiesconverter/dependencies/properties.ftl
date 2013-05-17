@@ -6,6 +6,7 @@
 		#toc {color:#555; border: 1px dotted #555; width: 700px;}
 		#toc li {font-size:14px;}
 		pre {background-color: #efe;}
+		.inactive {background-color: #eee;}
 	</style>
 	<head>
 		<title>${pageTitle!"Portal Properties"}</title>
@@ -27,6 +28,7 @@
 		<h2>Properties</h2>
 		<#list sections as section>
 			<#if section._title?has_content>
+				<hr></hr>
 				<a name="${section._title}"></a><a href="${propertiesFileName}.html">Top of Page</a>
 				<h3>${section._title}</h3>
 			</#if>
@@ -36,6 +38,7 @@
 				</#list>
 			</#if>
 			<#if section._propertiesParagraphs?has_content>
+				<hr></hr>
 				<#list section._propertiesParagraphs as paragraph>
 					<p>${paragraph}</p>
 				</#list>
@@ -46,7 +49,7 @@
 			</#if>
 			<#if section._inactiveProperties?has_content>
 				<em>Examples:</em>
-				<p><pre>${section._inactiveProperties}</pre></p>
+				<p><pre class="inactive">${section._inactiveProperties}</pre></p>
 			</#if>
 		</#list>	
 	</body>
