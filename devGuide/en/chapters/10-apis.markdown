@@ -1836,15 +1836,15 @@ listen for messages.
 
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
-- *Synchronous messaging*: After sending a message, the sender blocks waiting
-for a response from a recipient.
+- *Synchronous messaging*: After it sends a message, the sender blocks waiting
+for a response from a recipient. 
 
 <!--Des the above definition make sense? -->
 
-- *Asynchronous messaging*: After sending a message, the sender is free to
+- *Asynchronous messaging*: After it sends a message, the sender is free to
 continue processing. The sender can be configured to receive a call-back or can
-simply "send and forget." We'll show you both synchronous and asynchronous
-messaging implementations in this section. 
+simply send and forget. We'll show you how to implement both synchronous and
+asynchronous messaging in this section. 
 
     - *Call-back*: The sender can include a call-back destination key as the
     *response destination* for the message. The recipient (listener) can then
@@ -1854,76 +1854,103 @@ messaging implementations in this section.
     - *Send-and-Forget*: The sender includes no call-back information in the
     message sent and simply continues with processing. 
 
-Conveniently, your destinations, listeners, and the mappings between them are
-all configurable via Spring in your plugin's `messaging-spring.xml` file. 
-
 Configuration of Message Bus is done using the following files:
 
-- `WEB-INF/src/META-INF/messaging-spring.xml` - Specifies your destinations,
-listeners, and their mappings to each other
+- `WEB-INF/src/META-INF/messaging-spring.xml`: Specifies your destinations,
+listeners, and their mappings to each other. 
 
-- `WEB-INF/web.xml` - Holds a listing of deployment descriptors for your plugin.
-Be sure to add `messaging-spring.xml` to your list of Spring configurations in
-this file.
+- `WEB-INF/web.xml`: Holds a listing of deployment descriptors for your plugin.
+Make sure you add `messaging-spring.xml` to your list of Spring configurations
+in this file. 
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Internal file
+![note](../../images/tip-pen-paper.png)**Note:** The internal file
 `META-INF/messaging-core-spring.xml` of `portal-impl.jar` specifies the default
 Message Bus class, default asynchronous message sender class, and default
-synchronous message sender class for Liferay
+synchronous message sender class for Liferay. 
 
 ---
 
-**Message Types** include using either `Message` or `JSONObject` classes. Within
-Liferay core services, we typically serialize and deserialize in JSON. In our
-examples, we'll cover using both types of message classes.
+You can control your *Message Types* by using either the `Message` or
+`JSONObject` class. Liferay core services are typically serialized and
+deserialized in JSON. In our examples we'll demonstrate both types of message
+classes. 
 
-So far, we've introduced the Message Bus System including message types,
-destinations, senders, listeners, and approaches to sending messages. Next,
-we'll show you how easy it is to create your destinations, register listeners,
-and send your messages. To help demonstrate, we'll implemenet a business
-use-case.
+So far we've introduced the Message Bus System, including message types,
+destinations, senders, listeners, and approaches to sending messages. Next we'll
+show you how easy it is to create your destinations, register listeners, and
+send your messages. To demonstrate, we'll implemenet a business use case.
 
-### Example Use-Case - Procurement process 
+### Example Use Case--Procurement process 
 
-For our use-case, we'll consider a fictitious company Jungle Gyms R-Us. They
-distribute playground equipment, buying the equipment from manufacturers and
-selling the equipment to various retailers. We'll focus on the company's process
-for procuring new jungle gym equipment. Let's layout this process now.
+The Resistance runs a business, Jungle Gyms R-Us. We know it's hard to believe,
+but here's the backstory--Skynet finds it expedient to maintain a small human
+population to complete menial tasks, so the resistance distributes jungle gyms
+for the children of Skynet's human subjects. Other companies manufacture the
+equipment, and still others are the retailers that sell it back to Skynet--we're
+not yet sure who's behind these companies and what their aim is. Why doesn't
+Skynet manufacture its own jungle gyms and leave out the middle men, you ask?
+Skynet is primarily focused on developing war machines--it once attempted to
+develop jungle gyms for human children, but the results weren't pretty. We'll
+spare you the details. 
 
-Jungle Gyms R-Us (Jungle Gyms) involves the following departments in their
-procurement process:
+---
 
-- *Procurement Department* - Scouts out the latest equipment deals of
-manufacturers
+![note](../../images/tip-pen-paper.png)**Note:** Jungle Gyms R-Us is of course a
+front; the Resistance uses their transactions with Skynet to procure a precious
+metal (*mimetic polyalloy* to be specific) that Skynet exchanges as a sort of
+currency in the rudimentary economy it has set up. The Resistance is really
+interested in developing its own war machines to combat Skynet's Terminators,
+and eventually take on and defeat the T-1000000 protecting the Skynet core. 
 
-- *Finance Department* - Determines whether the equipment can be purchased based
-on budget
+---
 
-- *Legal Department* - Determines whether the equipment's safety ratings are
-acceptable
+Our use case will consider Jungle Gyms R-Us and it's distribution of playground
+equipment, buying the equipment from manufacturers and selling the equipment to
+retailers. We'll focus on the company's process for procuring new jungle gym
+equipment. Let's lay out this process now.
 
-- *Warehouse Department* - Recieves the equipment, stores it, and prepares it
-for shipping
+Jungle Gyms R-Us employs the following departments in their procurement process: 
 
-- *Sales Department* - Builds relationships with prospective customers to sell
-them products
+- *Procurement Department*: Scouts out the latest equipment deals of
+manufacturers.
+
+- *Finance Department*: Determines whether the equipment can be purchased based
+on budget.
+
+- *Legal Department*: Determines whether the equipment's safety ratings are
+acceptable.
+
+- *Warehouse Department*: Recieves the equipment, stores it, and prepares it for
+shipping.
+
+- *Sales Department*: Builds relationships with prospective customers to sell
+them products.
 
 The departments currently use email to exchange comments about new equipment
-purchases. But someone always seems to be left out of "the loop." For example,
-Sales will be "gung-ho" about getting their hands on the latest and greatest
-spring rider animals from Boingo-Boingo Industries, but they won't consider the
+purchases. But someone always seems to be left out of "the loop." One time,
+Sales was be "gung-ho" about getting their hands on the latest and greatest
+spring rider animals from Boingo-Boingo Industries, but they didn't consider the
 failing safety reviews discovered by the Legal department, because the Legal
 department forgot to copy the Sales department in their email to Procurement.
-Tempers fly, feelings get hurt, and everybody avoids hanging out in the company
-breakroom for the next couple weeks.
+Tempers fly, feelings get hurt, and it gets awkward when everyone is huddled
+together in the bunker during the regular air raids perpetrated by Skynet
+drones. 
 
-Liferay's [Workflow with
+<!--I either needed to change the above use case to detail some process the
+"Resistance" would use or else stick with this and remove references to Skynet
+and Terminator throughout the chapter--Like the Maven chapter, the
+jokes/metaphors should be consistent. Instead I tried to make Jungle Gyms R-Us a
+front business the Resistance uses to obtain the parts they need to build their
+own automated cyborgs which will do battle with the T-1000000 that protects
+Skynet's core, but it seems convoluted. Needs more work most likely, or else
+just to be scrapped--> 
+
+Jungle Gyms R-Us could use Liferay's [Workflow with
 Kaleo](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/workflow-with-kal-4)
-would be appropriate for resolving this. But to help demonstrate the components
-and capabilities of the Message Bus system we'll resolve the Jungle Gym's
-communication woes using Message Bus.
+to resolve the communication breakdown, but we'll resolve the Jungle Gym's
+communication woes using Message Bus, just for fun (really, because you're in the Message Bus section, not Kaleo Workflows. 
 
 Here are the inter-department message exchanges we'll accomodate:
 
@@ -1936,19 +1963,19 @@ Here are the inter-department message exchanges we'll accomodate:
   Broadcast equipment news | Procurement | Employees | none | none |
 ---
 
-Let's implement Procurement's request to Finance first.
+Let's implement Procurement's request to Finance first. 
 
 ### Synchronous messaging 
 
-In our example, equipment purchases cannot proceed without approval from Finance
-and Legal departments. But, since these special offers from the manufacturers
-often only last for a couple hours, Procurement makes it their top priority to
-get approval as soon as possible. Let's implement their exchange using
-*synchronous* messaging.
+In our example, equipment purchases can't proceed without approval from Finance
+and Legal departments. Since special offers from the manufacturers often only
+last for a couple hours, Procurement makes it their top priority to get approval
+as soon as possible. Implementing their exchange using *synchronous* messaging
+makes the most sense. 
 
 ![Figure 9.2: Synchronous messaging](../../images/msg-bus-sync-msg.png)
 
-The following table, describes how we'll set things up.
+The following table describes how we'll set things up: 
 
 | Destination |       |        |                                           |
   Key         | Type  | Sender | Receivers                                 |
@@ -1959,12 +1986,15 @@ The following table, describes how we'll set things up.
   `jungle/legal/purchase/response`   | synchronous | Legal | Procurement   |
 ---
 
-Notice we've planned for Finance to send its response messages to a destination
-on which Procurement will listen. This allows for a full-bodied response message
-to be sent back to Procurement in addition to the response object returned from
-sending the message.
+We've set it up so Finance sends its response messages to a destination on which
+Procurement will listen. That way a full-bodied response message is sent back to
+Procurement in addition to the response object returned from sending the
+message. 
 
-**Procurement Department *sends* a purchase approval request:**
+*The Procurement Department sends a purchase approval request:* 
+
+<!--Where does this code go? `messaging-spring.xml`? If so is the code here
+simply added to the file? And the code in subsequent descriptions too?-->
 
     Message message = new Message();
     message.put("department", "Procurement");
@@ -1999,18 +2029,21 @@ sending the message.
         e.printStackTrace();
     }
 
-Note, the following about this *sender*:
+This *sender* takes the following steps: 
 
-1. Creates the message using Liferay's `Message` class
-2. Stuffs the message with key/value pairs
+1. Creates the message using Liferay's `Message` class.
+
+2. Stuffs the message with key/value pairs.
+
 3. Sets a response ID and response destination for listeners to use in replying
-back
-4. Sends the message to the destination with a timeout value of 10,000
-milliseconds
-5. Blocks waiting for the response
+back.
 
-**Finance Department *listens* for purchase approval requests and *replies*
-back:**
+4. Sends the message to the destination with a timeout value of 10,000
+milliseconds.
+
+5. Blocks waiting for the response.
+
+*Finance Department listens for purchase approval requests and replies back:* 
 
     public class FinanceMessagingImpl implements MessageListener {
 
@@ -2047,29 +2080,36 @@ back:**
             LogFactoryUtil.getLog(FinanceMessagingImpl.class);
     }
 
-Note the following about this *listener*:
+This *listener* executes the following steps: 
 
 1. Implements the `receive(Message message)` method of the
-`com.liferay.portal.kernel.messaging.MessageListener` interface
-2. Extracts values from the `Message` parameter by *getting* values associated
-with known keys
-3. Creates a `Message` based on the message received via
-`MessageBusUtil.createResponseMessage(message)`. Method
-`MessageBusUtil.createResponseMessage(message)` accesses the response
-destination name from the `message` variable and sets the destination of the
-response message.
-4. Sets the *payload* of the response message
+`com.liferay.portal.kernel.messaging.MessageListener` interface. 
+
+2. Extracts values from the `Message` parameter by getting values associated
+with known keys. 
+
+3. Creates a `Message` based on the message received via the
+`MessageBusUtil.createResponseMessage(message)` method, which accesses the
+response destination name from the `message` variable and sets the destination
+of the response message. 
+
+4. Sets the *payload* of the response message. 
+
 5. Sends the response `Message` to the response destination.
 
-The listener for the Legal Department could be implemented in a similar manner.
-So, we'll account for Legal Department related classes in our configuration.
+You can implement the listener for the Legal Department similarly. Next we'll
+account for Legal Department related classes in our configuration.
 
-**Message Bus Configuration for the purchase approval request process:**
+*Message Bus Configuration for the purchase approval request process:*
 
-In order for the Message Bus to direct messages from destinations to listeners,
-we must register the listeners by configuring the appropriate mappings in our
-plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file. If you don't already
-have this file in your plugin then create it. Here is the configuration:
+For the Message Bus to direct messages from destinations to listeners, we must
+register the listeners by configuring the appropriate mappings in our plugin's
+`WEB-INF/src/META-INF/messaging-spring.xml` file (create this file if it's not
+already in your plugin). Here is the configuration: 
+
+<!--If the messaging-spring file potentiall hasn't been created yet where has
+the reader been putting the code snippets from above? Should this statement go
+before the ifrst code snippet?--> 
 
     <?xml version="1.0"?>
 
@@ -2143,17 +2183,18 @@ have this file in your plugin then create it. Here is the configuration:
         </bean>
     </beans>
 
-The configuration specifies the following:
+The configuration above specifies the following beans: 
 
-- *Listener beans* - Specify classes to handle messages
-- *Destination beans* - Specify the class *type* and *key* names of the
-destinations
-- *Configurator bean* - Maps listeners to their destinations
+- *Listener beans*: Specify classes to handle messages.
+- *Destination beans*: Specify the class *type* and *key* names of the
+destinations.
+- *Configurator bean*: Maps listeners to their destinations.
 
-Upon Finance sending its purchase approval request message for a new three-story
-spiral slide, the console reports Finance receiving the message, Procurement
-receiving the *callback* response from Finance, and Procurement receiving the
-*synchronous* response returned from sending the message:
+When Finance sends its purchase approval request message for a new three-story
+spiral slide, the console reports Finance's receipt of the message,
+Procurement's receipt of the *callback* response from Finance, and Procurement's
+receipt of the *synchronous* response returned from sending the message. Here's
+what the console message looks like: 
 
     Finance received purchase request for three-story spiral slide from Procurement
     Procurement received Finance callback response to purchase approval for three-
@@ -2166,7 +2207,7 @@ receiving the *callback* response from Finance, and Procurement receiving the
     Procurement received Legal sync response to purchase approval for three-story 
     spiral slide: yes
 
-Whew! Jungle Gym has the cash to purchase this cool new slide and the Legal
+Whew! Jungle Gyms R-Us has the cash to purchase this cool new slide and the Legal
 Department has no gripes about the slide's safety ratings!!
 
 Next, let's have Procurement notify the Sales and Warehouse departments to
@@ -2174,7 +2215,7 @@ solicit their feedback.
 
 ### Asynchronous messaging with callbacks 
 
-As a refresher, asynchronous messaging consists of sending a message and then
+ As a refresher, asynchronous messaging consists of sending a message and then
 continuing on with processing. Importantly, the sender does not block waiting
 for an immediate response. This leaves the sender free to continue on with other
 things. However, it is often important for the *listener* to have the means to
