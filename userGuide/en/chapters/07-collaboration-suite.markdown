@@ -903,7 +903,7 @@ mark as question box in the new thread window. Threads marked as questions
 display the flag "waiting for an answer." Subsequent replies to the original
 message can be marked as an answer.
 
-### Email From  
+### Email From   [](id=lp-6-1-ugen07-email-from---0)
 
 This tab allows you to configure the name and email address from which message
 board email notifications are sent. The default name and email address are those
@@ -1049,7 +1049,7 @@ Liferay's Message Boards portlet supports two different
 mechanisms for sending email notifications: user subscriptions and mailing
 lists. Let's discuss user subscriptions first and then mailing lists.
 
-### User Subscriptions and Mailing Lists
+### User Subscriptions and Mailing Lists [](id=lp-6-1-ugen07-user-subscriptions-and-mailing-lists-0)
 
 The first mechanism Liferay uses for sending email notifications is user
 subscriptions. Users can subscribe to particular categories and threads. Liferay

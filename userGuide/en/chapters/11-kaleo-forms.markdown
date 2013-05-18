@@ -28,21 +28,21 @@ Let's look at Kaleo Forms first.
 
 ## Kaleo Forms [](id=lp-6-1-ugen06-kaleo-forms-0)
 
-Add the Workflow Forms portlet to a page. The initial state, the *Summary* tab
-displays the same information you might have seen in *My Workflow Tasks* in the
-control panel. Any forms available for processing through the workflow can be
-initiated through the *Submit New* button, as the below image indicates. 
+Add the Kaleo Forms portlet to a page. In the portlet's initial state, the
+*Summary* tab displays similar information to what you might see in the *My
+Workflow Tasks* portion of the Control Panel. Because the Kaleo Forms portlet is
+scoped to Kaleo Processes, tasks related to other assets cannot be managed from
+Kaleo Forms. Any forms available for processing through the workflow can be
+initiated through the *Submit New* button, as the below image indicates.
 
-![Figure 11.1: Kaleo Forms give you a convenient way to manage all available
-workflows in the portal. ](../../images/kaleo-forms-initial-view.png)
+![Figure 11.1: Kaleo Forms give you a convenient way to manage all available workflows in the portal. ](../../images/kaleo-forms-initial-view.png)
 
 Click on *Processes* to view any existing workflow processes or to create new
 ones. All available processes are listed here. If you're coming here for the
 first time, however, there won't be any, so let's create one. Click *Add*.
 You'll see the screen below. 
 
-![Figure 11.2: The Workflow Process Creation
-Page](../../images/kaleo-workflow-add-process.png)
+![Figure 11.2: The New Process page gives you several options when creating a new workflow.](../../images/kaleo-workflow-add-process.png)
 
 Set a name and a description. Next, you'll define an *Entry Definition* and an
 *Initial Form*, choose or create a *workflow* and *Workflow Task Forms*.
@@ -51,7 +51,7 @@ Set a name and a description. Next, you'll define an *Entry Definition* and an
 existing definition here or create a custom one through the UI.
 
 **Initial Form:** You can customize the display of the Entry Definition with the
-Inital Form. This can include things like adding Pagination or altering some
+Initial Form. This can include things like adding Pagination or altering some
 other display feature.
 
 **Workflow:** You can choose any existing workflow definition here or define a
@@ -59,7 +59,7 @@ new one.
 
 **Workflow Task Forms:** This is where you can define how the workflow
 definition interacts with form definitions. You can trigger a workflow action to
-occur along with a form action, such as a notification, or have a multistep
+occur along with a form action, such as a notification, or have a multi-step
 process where part of the form is completed but needs to be approved before the
 user can complete another part of the form. 
 
@@ -70,22 +70,20 @@ workflow without having to write any XML. Let's see how this works.
 ## Kaleo Designer [](id=lp-6-1-ugen06-kaleo-designer-0)
 
 Kaleo Designer provides a drag and drop interface for users to create custom
-workflows. It's an incredibly powerful tool for managing workflow defintions.
+workflows. It's an incredibly powerful tool for managing workflow definitions.
 The Workflow Designer can only be accessed through the Kaleo Forms portlet but
 definitions created can be used for other processes as well.
 
-![Figure 11.3: Define business processes using Kaleo Workflow
-Designer.](../../images/kaleo-workflow-designer.png)
+![Figure 11.3: Define business processes using Kaleo Workflow Designer.](../../images/kaleo-workflow-designer.png)
 
-There are seven types of nodes you can add to a defintion. The node types are
+There are seven types of nodes you can add to a definition. The node types are
 **Condition**, **End**, **Fork**, **Join**, **Start**, **State** and **Task**.
 If you've read the entire chapter, you'll notice Start and End aren't node types
 we've previously discussed; that's because they're actually just State nodes,
 with certain fields prefilled to help streamline the creation process. Since
 every workflow has a start and end state, you'd have to do this anyway. 
 
-![Figure 11.4: The Node Configuration Menu shows options to edit or delete your
-node.](../../images/kaleo-designer-submenu.png)
+![Figure 11.4: The Node Configuration Menu shows options to edit or delete your node.](../../images/kaleo-designer-submenu.png)
 
 Each node you add has a pop-up menu letting you edit or delete the node. As
 you hover your mouse over the edges of a node, notice your mouse pointer changes
@@ -95,49 +93,45 @@ transition to another node. If you stop before reaching the edge of the next
 node, a pop-up displays node types you can create and connect to on-the-fly. To
 connect with an existing node, continue dragging the connector to that node. 
 
-![Figure 11.5: Create transitions to existing or new nodes. The connector pop-up
-let's you create and connect to new nodes
-on-the-fly.](../../images/kaleo-connector.png)
+![Figure 11.5: Create transitions to existing or new nodes. The connector pop-up let's you create and connect to new nodes on-the-fly.](../../images/kaleo-connector.png)
 
 To get a feel for how the designer works, let's use the workflow designer to
 duplicate the default workflow definition. When we choose the option to *Add
-Defintion* from the Kaleo Forms portlet, it creates a blank workflow defintion
+Definition* from the Kaleo Forms portlet, it creates a blank workflow definition
 with start and end nodes. To make this work, we'll add two tasks, fill in the
-relevant information, assign the tasks properly and create the transitions.
+relevant information, assign the tasks properly, and create the transitions.
 
 First add two tasks, then use the edit icon to name them *Review* and *Update*. 
 
-![Figure 11.6: Edit a node by clicking on its edit icon and modifying
-its settings.](../../images/kaleo-rename-node.png)
+![Figure 11.6: Edit a node by clicking on its edit icon and modifying its settings.](../../images/kaleo-rename-node.png)
 
 Next, connect the nodes so Review has four nodes, as follows: one receiving the
 transition from **StartNode**, one sending a transition to **Update**, one
-receiving a transition from **Update** and one sending a transition to
+receiving a transition from **Update**, and one sending a transition to
 **EndNode**.
 
-![Figure 11.7: Your workflow should look something like
-this.](../../images/kaleo-designer-basic-workflow.png)
+![Figure 11.7: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
 
 Next, we want to add the correct assignments and notifications. Click on
-*Review*. The box on the left shows all the proprerties of the Review node. In
+*Review*. The box on the left shows all the properties of the Review node. In
 the *assignments* category, assign the task to the *Portal Content Reviewer*
 role. Click on *Notifications* and create a notification with the type *On
 Assignment*. Now move to the Update node and assign it to the *Content Creator*
 with its own notification.
 
-<!-- | TODO: The below paragraph is confusing; please fix. --> 
-Next let's go through all of the transitions and make sure they're named
-correctly. What are the transitions? Every time you created an arrow from one
-node to another it created a transtion. By default, these transitions get system
-generated names so we'll rename them all to something more human readable. First
-click on the arrow going from the Start node to the Review node and set the name
-as *Submit* and set *Default* to true--we'll leave all the others as false. Set
-the name of the transition from Review to Update to *Reject* and the one from
-Update to Review to *Resubmit*. Lastly, set the name of the transition from
-Review to the EndNode to *Approve*.
+Next, let's go through all of the transitions and make sure they're named
+correctly. What are the transitions? Workflow transitions connect one node to
+another. On exiting the first node, processing continues to the node pointed to
+by the transition. Every time you created an arrow from one node to another it
+created a transition. By default, these transitions get system generated names
+so we'll rename them all to something more human readable. First, click on the
+arrow going from the Start node to the Review node and set the name as *Submit*
+and set *Default* to true--we'll leave all the others as false. Set the name of
+the transition from Review to Update to *Reject* and the one from Update to
+Review to *Resubmit*. Lastly, set the name of the transition from Review to the
+EndNode to *Approve*.
 
-![Figure 11.8: Your completed workflow should look like
-this.](../../images/kaleo-designer-basic-workflow-complete.png)
+![Figure 11.8: Your completed workflow should look like this.](../../images/kaleo-designer-basic-workflow-complete.png)
 
 Now let's take a look at the generated XML. It should look a lot like our
 default workflow, only a tiny bit messier, as the nodes display in the order
@@ -146,22 +140,22 @@ code. Save your definition and it's ready to use.
 
 ## Summary [](id=summ-28)
 
-<!-- | TODO: This summary is too thin. It should summarize what you covered in
-the chapter. Going back and looking at the chapter headings can help you write a
-good summary. | --> 
 As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a
-very robust environment for web content management. Simple workflows can be
-managed using the default configuration and GUI tools, while more complex
-workflows can be created to meet the workflow management needs of almost any
-portal. Through this chapter and the previous one, we've taken a look at the
-various elements of a workflow and shown how to use those elements to create
-your own custom workflows. We've also seen how to properly use the various
-elements of a workflow like Assignments and Notifications, as well as newer and
-more advanced features like Parallel Workflows, Timers and Custom Scripts.
+very robust environment for web content management. The Kaleo Forms portlet
+allows you to manage all available workflows in the portal. You can create your
+portal's workflows by using the Kaleo Designer's unique drag and drop interface.
+Simple workflows can be managed using the default configuration and GUI tools,
+while more complex workflows can be created to meet the workflow management
+needs of almost any portal. Through this chapter and the previous one, we've
+taken a look at the various elements of a workflow and shown how to use those
+elements to create your own custom workflows. We've also seen how to properly
+use the various elements of a workflow like Assignments and Notifications, as
+well as newer and more advanced features like Parallel Workflows, Timers, and
+Custom Scripts.
 
 It's not enough to understand each individual step of the workflow process; one
 of the keys to using Kaleo workflow is to understand how each step interacts
 with the other elements. If you understand these relationships, you can figure
 out which features will to work best for your organization. We hope you'll use
-the information we've covered on workflow to craft suitable processes for you
+the information we've covered on workflows to craft suitable processes for your
 portal.
