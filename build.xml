@@ -22,19 +22,19 @@
 		<fileset dir="${lib.dir}" includes="*.jar" />
 	</path>
 
-	<taskdef name="bundle-properties" classname="com.liferay.portal.tools.propertiesconverter.PropertiesBundlerTask"
+	<taskdef name="bundle-properties" classname="com.liferay.portal.tools.PropertiesBundlerTask"
 	 classpathref="lib.classpath"/>
 
 	<!-- To run the properties converter, use a command of the form ant -Dproperties.title="Page Title" -Dtoc="false" -Dproperties.file=/path/to/properties/file -->
 	<target name="properties-to-html" description="runs the properties converter">
 		<java fork="true"
-			classname="com.liferay.portal.tools.propertiesconverter.PropertiesParser"
+			classname="com.liferay.portal.tools.PropertiesConverter"
 			classpathref="lib.classpath"
 		>
-			<arg value="${properties.title}" />
-			<arg value="${properties.toc}" />
 			<arg value="${properties.file.path}" />
 			<arg value="${properties.dest.file.path}" />
+			<arg value="${properties.title}" />
+			<arg value="${properties.toc}" />
 		</java>
 	</target>
 
