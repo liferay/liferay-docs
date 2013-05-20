@@ -1037,14 +1037,16 @@ of the Control Panel.
 
 ![Figure 8.x: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the site section of the Control Panel.](../../images/message-boards-subscription-manager-control-panel.png)
 
-The subscription manager only allows managing the subscriptions of the
-site-scoped message board. It does not allow managing the subscriptions of other
-page-scoped message boards that may exist within the site. To access the Message
-Boards Subscription Manager, navigate to the Control Panel, select a site in the
-context menu selector, and click on *Message Boards Subscription Manager*.
-You'll see a list of the categories that have been created within your site's
-message board. Click *Actions* &rrar; *View* next to a category to view the
-category's threads in a new browser tab. Click *Actions* &rarr; *Manage
+The subscription manager allows managing the subscriptions of both the
+site-scoped message board and the subscriptions of any page-scoped message
+boards that may exist within the site. To access the Message Boards Subscription
+Manager, navigate to the Control Panel, select a site in the context menu
+selector, and click on *Message Boards Subscription Manager*. You'll see a list
+of the categories that have been created within your site's site-scoped message
+board. To manage the subscriptions of a page-scoped message board, select the
+appropriate scope in the control panel's scope selector under the control
+panel's site selector. Click *Actions* &rrar; *View* next to a category to view
+the category's threads in a new browser tab. Click *Actions* &rarr; *Manage
 Subscriptions* to view a list of users which can be subscribed or unsubscribed
 from the message board category.
 
