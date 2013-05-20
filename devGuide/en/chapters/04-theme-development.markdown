@@ -376,7 +376,7 @@ content:
 
     <look-and-feel>
 		<compatibility>
-			<version>6.1.10+</version>
+			<version>6.1.1+</version>
 		</compatibility>
 		<theme id="deep-blue" name="Deep Blue">
 			<settings>
@@ -476,9 +476,7 @@ footer, including the slogan.
 
  ![note](../../images/tip-pen-paper.png)**Note:** Use a language properties hook
  to display configurable theme settings properly, like the slogan text area and
- footer checkbox from the previous example. For details, see the [Overriding a
- *Language.properties*
- File](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
+ footer checkbox from the previous example. For details, see the [Overriding a *Language.properties* File](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
  section found in the *Hooks* chapter of this guide.
 
 Next let's customize your theme's color scheme. 
