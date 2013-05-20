@@ -1,5 +1,5 @@
 
-package com.liferay.portal.tools.propertiesconverter;
+package com.liferay.portal.tools;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -62,8 +62,7 @@ public class PropertiesBundler {
 
 			File templateDir =
 				new File(
-					"code/properties-converter/src/com/liferay/portal/tools/"
-						+ "propertiesconverter/dependencies");
+					"code/properties-converter/src/com/liferay/portal/tools/dependencies");
 
 			try {
 				configuration.setDirectoryForTemplateLoading(templateDir);

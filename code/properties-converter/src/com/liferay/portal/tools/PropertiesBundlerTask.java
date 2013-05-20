@@ -1,5 +1,5 @@
 
-package com.liferay.portal.tools.propertiesconverter;
+package com.liferay.portal.tools;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
