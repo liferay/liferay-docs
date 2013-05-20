@@ -5,8 +5,8 @@
 		h3 {color:darkgreen;}
 		#toc {color:#555; border: 1px dotted #555; width: 700px;}
 		#toc li {font-size:14px;}
-		.active {background-color: #efe;}
-		.inactive {background-color: #eee;}
+		.defaults {background-color: #efe;}
+		.examples {background-color: #eee;}
 	</style>
 	<head>
 		<title>${pageTitle!"Portal Properties"}</title>
@@ -17,9 +17,9 @@
 			<h2>Table of Contents</h2>
 			<ul id="toc">
 				<#list sections as section>
-					<#if section._title?has_content>
+					<#if section.hasTitle()>
 			 			<li>
-			 				<a href="${propertiesFileName}.html#${section._title}">${section._title}</a>
+			 				<a href="${propertiesFileName}.html#${section.title}">${section.title}</a>
 			 			</li>
 			 		</#if>
 				</#list>
@@ -27,34 +27,34 @@
 		</#if>
 		<h2>Properties</h2>
 		<#list sections as section>
-			<#if section._title?has_content>
+			<#if section.hasTitle()>
 				<hr></hr>
-				<a name="${section._title}"></a><a href="${propertiesFileName}.html">Top of Page</a>
-				<h3>${section._title}</h3>
+				<a name="${section.title}"></a><a href="${propertiesFileName}.html">Top of Page</a>
+				<h3>${section.title}</h3>
 			</#if>
-			<#if section._descriptionParagraphs?has_content>
-				<#list section._descriptionParagraphs as paragraph>
+			<#if section.hasComments()>
+				<#list section.comments as paragraph>
 					<p>${paragraph}</p>
 				</#list>
 			</#if>
-			<#if section._propertiesParagraphs?has_content>
+			<#if section.hasPropertyComments()>
 				<hr></hr>
-				<#list section._propertiesParagraphs as paragraph>
-					<#if paragraph._isPreFormatted>
-						<p><pre>${paragraph._text}</pre></p>
+				<#list section.propertyComments as paragraph>
+					<#if paragraph.isPreFormatted()>
+						<p><pre>${paragraph.comment}</pre></p>
 					<#else>
-						<p>${paragraph._text}</p>
+						<p>${paragraph.comment}</p>
 					</#if>
 				</#list>
 			</#if>
-			<#if section._activeProperties?has_content>
+			<#if section.hasDefaultProperties()>
 				<em>Defaults:</em>
-				<p><pre class="active">${section._activeProperties}</pre></p>
+				<p><pre class="defaults">${section.defaultProperties}</pre></p>
 			</#if>
-			<#if section._inactiveProperties?has_content>
+			<#if section.hasExampleProperties()>
 				<em>Examples:</em>
-				<p><pre class="inactive">${section._inactiveProperties}</pre></p>
+				<p><pre class="examples">${section.exampleProperties}</pre></p>
 			</#if>
-		</#list>	
+		</#list>
 	</body>
 </html>
