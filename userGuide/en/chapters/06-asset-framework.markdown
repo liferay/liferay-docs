@@ -166,7 +166,7 @@ It's important to use tags and categories with all your content, so that content
 is easier for users to find. Let's look at one of the ways users will make use
 of tags and categories: searching for content. 
 
-## Using Faceted Search  
+## Searching for Content in Liferay
 
 To stay organized, I (RS) used to use a paper-based planner. It had various
 sections for various areas of my life. Its initial incarnation came from a
@@ -186,15 +186,62 @@ Liferay content can be like this. That important information you remember
 seeing--was it in a wiki article, a message boards post, or web content? Did you
 remember to tag it? If you don't have this kind of information, browsing to the
 content you're looking for could be difficult. Thankfully, Liferay includes a
-powerful, faceted search function, which means you can drill down through the
-different types of content, tags, and categories to refine your search and find
-what you want. Let's see how to use it. 
+powerful, faceted search function. You can access this function through the
+Search portlet, which lets you drill down through the different types of
+content, tags, and categories to refine your search. Let's look at the search
+features Liferay provides for specific kinds of content and then examine how to
+use Liferay's faceted search.
 
-### Searching for Portal Content  
+### Searching for Specific Types of Content
 
-To get started, drop the Search portlet on a page and search for something.
-You'll see a page with results on the right and a collection of *facets* on the
-left. 
+Liferay provides several applications that allow users and administrators to
+search for content. First, there's the Search portlet. The Search portlet can be
+placed a page to allow users to search for assets of any type. We'll learn how
+to use the Search portlet when we discuss Liferay's faceted search feature in
+the next section. There's also a Web Content Search portlet. This portlet can be
+placed on a page to allow users to search for web content articles. Users can't
+use the Web Content Search portlet to search for other kinds of content. The
+Blogs, Wiki, Message Boards, Documents and Media, and Web Content portlets all
+provide search bars that allow users to search among the specific types of
+assets with which these portlets allow users to interact. Note that all of these
+portlets are accessible from the Control Panel. They can also, except for the
+Web Content portlet, be placed on portal pages for end-users to use. The Web
+Content portlet is not designed for end users; it's intended for administrative
+use only.
+
+In order for content to be searchable, it must first be indexed. Liferay uses
+Lucene for indexing and searching for content. Please refer to the Lucene
+section of the portal properties file if you'd like to customize Liferay's
+indexing and search behavior. By default, Liferay indexes blog posts, wiki
+articles, and message board posts, Documents and Media files' descriptions, and
+web content articles. If a Documents and Media file is a text file, the file's
+content is indexed as well. Comments on blog posts, wiki articles, and Documents
+and Media files and text file attachments to wiki articles and message board
+posts are also indexed. Liferay automatically indexes content as it's added to
+the portal.
+
+If you'd like to search among assets of a specific type and you'd like to
+include comments and attachments in your search, use the search bar of the
+appropriate portlet. For example, if you'd like to search for the term *Liferay*
+among wiki articles, enter the term *Liferay* into the Wiki portlet's search
+bar. 
+
+![Figure 6.x: When using the Wiki portlet's search bar to search for *Liferay*, wiki articles, comments, and attachments containing the word *Liferay* are returned.](../../images/wiki-search.png)
+
+Wiki articles, comments, and text file attachments containing the word *Liferay*
+are returned as search results. The search results clearly show whether an
+individual search result is a wiki article, a comment, or an attachment. In the
+next section, we'll see how the Search portlet can be used to search through
+multiple types of content on Liferay. Its faceted search feature is a powerful
+tool that allows users to include or not include specific types of assets in a
+search.  However, the Search portlet does not return comments or attachments as
+search results.
+
+### Searching for Portal Content Using Facets
+
+To get started using faceted search, drop the Search portlet on a page and
+search for something. You'll see a page with results on the right and a
+collection of *facets* on the left. 
 
 ![Figure 6.7: The first set of facets is content types. You can drill down to
 specific types of content that contain the search terms you
@@ -222,8 +269,6 @@ the number of tags that appear is configurable: by default it's 10, but there
 could be many more as a result of a particular search. We'll look at the
 configuration options later in the chapter. For now, let's see how drilling down
 works. 
-
-### Drilling Down to the Data You Want  
 
 To drill down into the search, click a facet to add it to the filter list, and
 the results to the right are refined by the facet you selected. 
@@ -255,8 +300,7 @@ searched. Under the hood, this means that these entities use Liferay's Asset API
 and have an Indexer defined. 
 
 Developers can create custom searchable assets within the portal. This is
-described in the [Developer's
-Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/-asset-framewo-1).
+described in the [Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/-asset-framewo-1).
 For this reason, you may have additional asset types defined in your portal
 beyond the ones that Liferay ships with by default. If this is the case, you may
 wish to tweak the `frequency threshold` and the `max terms` settings to increase
@@ -349,8 +393,7 @@ Next, we'll look at how the Search portlet can be configured.
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
 
-![Figure 6.11: Basic search configuration is pretty straightforward.
-](../../images/05-faceted-search-configuration.png)
+![Figure 6.11: Basic search configuration is pretty straightforward.](../../images/05-faceted-search-configuration.png)
 
 **Display Asset Type Facet:** Toggles whether the Asset Type facet appears. 
 
@@ -633,7 +676,7 @@ in creating a more dynamic web site: you can place user-created wiki entries,
 blog posts or message board messages in context with your content. Let's look at
 some of its features.
 
-#### Querying for Content  
+### Querying for Content  
 
 The Asset Publisher portlet is a highly configurable application that lets you
 query for mixed types of content on the fly. By giving you the ability to
@@ -653,7 +696,7 @@ tags and categories.
 Let's first look at how we might select content manually. You'll see that it's
 very similar to the Web Content Display portlet.
 
-##### Selecting assets manually  
+#### Selecting assets manually  
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can select
@@ -681,7 +724,7 @@ display types to configure how the content appears.
 Most of the time, however, you'll likely be using the Asset Publisher to select
 content dynamically.
 
-##### Selecting assets dynamically  
+#### Selecting assets dynamically  
 
 The Asset Publisher's default behavior is to select assets dynamically according
 to rules that you give it. These rules can be stacked on top of each other so
@@ -728,7 +771,7 @@ control over how content is ordered and grouped in the list, but this is only
 one aspect of how your content will be displayed. You can refine the display
 through many other display settings.
 
-## Setting up Display Pages  
+### Setting up Display Pages  
 
 The Display Settings section gives you precise control over the display of your
 assets. There are a multitude of options available to configure how you want
@@ -738,7 +781,7 @@ conversions. Additionally, you can enable printing, flags, ratings, comments and
 comment ratings, and these work the same way they do in the Web Content Display
 portlet.
 
-##### Display Style  
+#### Display Style  
 
 **Abstracts:** Shows the first 200-500 characters of the content, defined by the
 **Abstract Length** field.
@@ -750,7 +793,7 @@ developer.
 
 **Full Content:** The entire content of the entry.
 
-##### Other Settings  
+#### Other Settings  
 
 **Asset Link Behavior:** The default value is *Show Full Content*. With this
 value selected, when the link to an asset is clicked, the full asset is
@@ -758,10 +801,10 @@ displayed in the current Asset Publisher. If the value *View in a Specific
 Portlet* is selected, clicking on an asset causes that asset to be displayed in
 the portlet to which the asset belongs. For example, a blog entry would be
 displayed in the Blogs portlet where it was created. Likewise, a forum post
-would be displayed in the Message Boards porlet where it was created. Similarly,
-a generic Web Content article would be displayed in the Asset Publisher of its
-configurated Display Page. See the secton below on Display Pages for more
-information.
+would be displayed in the Message Boards portlet where it was created.
+Similarly, a generic Web Content article would be displayed in the Asset
+Publisher of its configured Display Page. See the section below on Display Pages
+for more information.
 
 **Maximum Items to Display:** You can display 1-100 items.
 
@@ -799,10 +842,46 @@ adjust the ones that apply to you. You'll want to use the Asset Publisher to
 query for mixed assets in the portal that have relevant information for your
 users.
 
+### Configuring Asset Publisher Subscriptions
+
+The Asset Publisher portlet supports two kinds of subscriptions: RSS
+subscriptions and email subscriptions. To enable subscriptions, open the Asset
+Publisher's configuration window (click on the wrench icon and select
+*Configuration*). In the configuration window, open the Subscriptions tab of the
+Setup tab. There are two options:
+
+- *Enable RSS Subscription*
+- *Enable Email Subscription*
+
+Enabling RSS subscription creates an RSS feed containing links to all of the
+assets that the Asset Publisher is configured to display. A link to this RSS
+feed appears in at the bottom of the Asset Publisher portlet.
+
+![Figure 6.x: When RSS subscriptions have been enabled for an Asset Publisher portlet, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../images/asset-publisher-rss.png)
+
+Enabling email subscription adds a *Subscribe* link to the Asset Publisher.
+Users wishing to be notified of newly published assets can click on this link to
+be added to the subscription list. Liferay periodically checks for new assets
+and sends emails to subscribed users informing them about the new assets. By
+default, Liferay performs this check every twenty-four hours but this can be
+customized by adding the following property to your `portal-ext.properties` file
+and changing the number:
+
+    asset.publisher.check.interval=24
+
+Also by default, Liferay limits the number of assets that are retrieved from the
+database during this check to twenty. If you're interested in optimizing
+Liferay's performance, you can lower this limit. If you're not concerned about
+performance, you can remove this limit entirely. To customize the number of
+assets about which Liferay notifies subscribed users, add the following property
+to your `portal-ext.properties` file and change the number:
+
+    asset.publisher.dynamic.subscription.limit=20
+
 Next, we'll look at Display Pages, an addition to the asset framework introduced
 by Liferay 6.1.
 
-#### Display Page  
+### Display Pages
 
 If you've been using Liferay for a while, or you've just spent a little bit of
 time with this guide, you might have noticed something about how Liferay handles
@@ -861,12 +940,12 @@ related assets within the display for a specific asset, and with the Related
 Assets portlet you can show links to any assets which are related to content
 displayed on that page.
 
-The Related Assets portlet is based on the Asset Publisher and possseses
+The Related Assets portlet is based on the Asset Publisher and possesses
 essentially the same interface with one key difference. The Asset publisher
 displays any content that meets the criteria selected in the portlet
 configuration. The Related Assets portlet only displays content that meets the
 criteria, and also is listed as a related asset for a piece of content that is
-currently published on the page where it is placed. Let's take a look at the the
+currently published on the page where it is placed. Let's take a look at the
 Related Assets portlet.
 
 As a prerequisite for the Related Assets portlet to display related assets, you
@@ -880,7 +959,7 @@ assets from the menu.
 Filter options let you set minimum requirements for displaying assets by their
 categories, tags, and custom fields. Ordering and Grouping allows you to
 organize assets using the same criteria. Display settings allow you to customize
-how asssets are shown in the portlet. They can be listed by title, in a table,
+how assets are shown in the portlet. They can be listed by title, in a table,
 by abstract or full content. You can convert assets to different document types
 like ODT, PDF, and RTF. You can choose to show various metadata fields such as
 author, modification date, tags, and view count. You can even enable RSS

@@ -854,9 +854,20 @@ check box for enabling the mailing list function. If don't want to add a mailing
 list to the category you're creating, click *Save* now. You can always edit an
 existing category to add, edit, or remove a mailing list.
 
-Liferay's Message Boards portlet supports two different
-mechanisms for sending email notifications: user subscriptions and mailing
-lists. Let's discuss user subscriptions first and then mailing lists.
+Once one or more categories have been added to a message board, they appear in a
+list on the message board's home. The list displays the names of the categories
+and the numbers of subcategories, threads, and posts in each one. To add a
+subcategory to category, click on the category's name in the list and then click
+the *Add Subcategory* button. By default, when you click the *Add Subcategory*
+button, the form for adding a subcategory is populated with the properties of
+the parent category. This includes the parent category's display style (Default
+or Question) and mailing list configuration. Of course, you can change the
+display style or mailing list configuration of a subcategory just as with a new
+category.
+
+Liferay's Message Boards portlet supports two different mechanisms for sending
+email notifications: user subscriptions and mailing lists. Let's discuss user
+subscriptions first and then mailing lists.
 
 ### User Subscriptions and Mailing Lists
 
@@ -1012,6 +1023,42 @@ if your server supports it.
 
 When you're finished configuring the mailing list for your category, click
 *Save*. 
+
+### Managing User Subscriptions with the Message Boards Subscription Manager
+
+The Message Boards Subscription Manager is available as an app from Liferay
+Marketplace. It allows site administrators to manage the subscriptions of their
+site's message board. Without the Message Boards Subscription Manager, users
+must manage their own message board subscriptions. The Message Boards
+Subscription Manager is available for both Liferay CE and EE--make sure to
+select the correct version when downloading and installing the app. Once
+installed, the Message Boards Subscription Manager appears in the site section
+of the Control Panel.
+
+![Figure 8.x: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the site section of the Control Panel.](../../images/message-boards-subscription-manager-control-panel.png)
+
+The subscription manager allows managing the subscriptions of both the
+site-scoped message board and the subscriptions of any page-scoped message
+boards that may exist within the site. To access the Message Boards Subscription
+Manager, navigate to the Control Panel, select a site in the context menu
+selector, and click on *Message Boards Subscription Manager*. You'll see a list
+of the categories that have been created within your site's site-scoped message
+board. To manage the subscriptions of a page-scoped message board, select the
+appropriate scope in the control panel's scope selector under the control
+panel's site selector. Click *Actions* &rrar; *View* next to a category to view
+the category's threads in a new browser tab. Click *Actions* &rarr; *Manage
+Subscriptions* to view a list of users which can be subscribed or unsubscribed
+from the message board category.
+
+![Figure 8.x: The Message Board Subscription Manager allows site administrators to subscribe or unsubscribe selected users from any category within their site's message board.](../../images/message-boards-subscription-manager.png)
+
+Click on the *Subscribe* or *Unsubscribe* links next to a user's name to
+subscribe or unsubscribe the user from the selected message board category.
+Alternatively, you can use the checkboxes to select a group of users and use the
+*Subscribe* or *Unsubscribe* buttons above the list of users to subscribe or
+unsubscribe a number of users at once. The Message Boards Subscription Manager
+is easy to use but it's a great tool for site administrators who need to make
+sure that certain users receive emails from important message board categories.
 
 ### Using the Message Boards  
 

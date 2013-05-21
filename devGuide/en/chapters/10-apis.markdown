@@ -1,24 +1,33 @@
 # Liferay APIs 
 
-This chapter provides an overview of several of the essential Liferay
-*application programming interfaces* (*APIs*) available to developers. An API is
-a programing interface that can be invoked from your own code, either directly
-through a Java invocation or through web services, to perform an action or set
-of actions.
+An *Application Programing Interface* (API) is a protocol that, when invoked,
+performs an action or set of actions. You can invoke an API from your own code
+directly through a Java invocation, or through web services. This chapter
+provides an overview of several essential Liferay APIs available to you for use
+in developing your Liferay Portal. 
 
-Liferay comes with a host of APIs that expose powerful portal and portlet
-services. You can access Liferay's built-in *portal* services for such entities
-as User, Organization, UserGroup, Company, Role, Permission, ResourcePermission
-and Layout. In addition, you can access Liferay's built-in *portlet* services
-for such portlets as those for blogs, wikis, assets, social equity, and the
-Documents & Media Library.
+Liferay comes with a host of APIs that provide powerful portal and portlet
+services. The following table shows you the entities for which services are
+available:
 
-The APIs can be called via Java method or web service invocations, giving you
-flexibility to implement client code in Java or any other language (even a
-scripting language such as PHP) that supports web service invocations. The APIs
-can be called from within portlet or non-portlet code. You can make calls to the
-APIs *locally* from within the portal or *remotely* outside of the portal's
-*Java virtual machine* (*JVM*).
+ Portal Services      | Portlet Services              |
+--------------------- | ----------------------------- |
+ *User*               | *Documents and Media Library* |
+ *Organization*       | *Blogs*                       |
+ *UserGroup*          | *Wikis*                       |
+ *Company*            | *Assets*                      |
+ *Role*               | *Social Equity*               |
+ *Permission*         |                               |
+ *ResourcePermission* |                               |
+ *Layout*             |                               |
+---
+
+The ability to call Liferay APIs with a Java method or web service invocation
+gives you the flexibility to implement client code in Java or any language
+(even a scripting language such as PHP) that supports web service invocations.
+The APIs can be called from within portlet or non-portlet code. You can make
+calls to the APIs *locally* from within the portal or *remotely* outside of the
+portal's *Java virtual machine* (*JVM*).
 
 This chapter covers the following topics:
 
@@ -1787,13 +1796,13 @@ communication woes using Message Bus.
 
 Here are the inter-department message exchanges we'll accomodate:
 
-| Message | &nbsp;Sender | &nbsp;Listener | &nbsp;Response | &nbsp;Response Listeners |
---------- | ------------ | ------------ | ---------------- | -------------- |
-  Request permission to proceed with purchase | &nbsp;Procurement | &nbsp;Finance | &nbsp;required | &nbsp;Procurement |
-  Request permission to proceed with purchase | &nbsp;Procurement | &nbsp;Legal | &nbsp;required | &nbsp;Procurement |
-  Notify and solicit feedback on new purchase | &nbsp;Procurement | &nbsp;Warehouse | &nbsp;optional | &nbsp;Procurement, Sales |
-  Notify and solicit feedback on new purchase | &nbsp;Procurement | &nbsp;Sales | &nbsp;optional | &nbsp;Procurement, Warehouse |
-  Broadcast equipment news | &nbsp;Procurement | &nbsp;Employees | &nbsp;none | &nbsp;none |
+| Message | Sender | Listener | Response | Response Listeners |
+--------- | ------ | -------- | -------- | ------------------ |
+  Request permission to proceed with purchase | Procurement | Finance | required | Procurement |
+  Request permission to proceed with purchase | Procurement | Legal | required | Procurement |
+  Notify and solicit feedback on new purchase | Procurement | Warehouse | optional | Procurement, Sales |
+  Notify and solicit feedback on new purchase | Procurement | Sales | optional | Procurement, Warehouse |
+  Broadcast equipment news | Procurement | Employees | none | none |
 ---
 
 Let's implement Procurement's request to Finance first.
@@ -1810,13 +1819,13 @@ get approval as soon as possible. Let's implement their exchange using
 
 The following table, describes how we'll set things up.
 
-| &nbsp;Destination | |           |                 |
-  Key | &nbsp;Type | &nbsp;Sender | &nbsp;Receivers |
------ | ---------- | ------------ | --------------- |
-  `jungle/finance/purchase` | &nbsp;synchronous | &nbsp;Procurement | &nbsp;Finance |
-  `jungle/finance/purchase/response` | &nbsp;synchronous | &nbsp;Finance | &nbsp;Procurement |
-  `jungle/legal/purchase` | &nbsp;synchronous | &nbsp;Procurement | &nbsp;Legal |
-  `jungle/legal/purchase/response` | &nbsp;synchronous | &nbsp;Legal | &nbsp;Procurement |
+| Destination |       |        |                                           |
+  Key         | Type  | Sender | Receivers                                 |
+------------- | ----- | ------ | ----------------------------------------- |
+  `jungle/finance/purchase`          | synchronous | Procurement | Finance |
+  `jungle/finance/purchase/response` | synchronous | Finance | Procurement |
+  `jungle/legal/purchase`            | synchronous | Procurement | Legal   |
+  `jungle/legal/purchase/response`   | synchronous | Legal | Procurement   |
 ---
 
 Notice we've planned for Finance to send its response messages to a destination
@@ -2048,11 +2057,11 @@ departments will be posted to a shared destination.
 
 The following table, describes how we'll set things up.
 
-| &nbsp;Destination | |            |                 |
-  Key | &nbsp;Type | &nbsp;Senders | &nbsp;Receivers |
------ | ---------- | ------------ | --------------- |
-  jungle/purchase | &nbsp;async serial | &nbsp;Procurement |  &nbsp;Sales, Warehouse |
-  jungle/purchase/response | &nbsp;synchronous | &nbsp;Sales, Warehouse | &nbsp;Procurement |
+| Destination              |       |        |                               |
+  Key                      | Type  | Sender | Receivers                     |
+-------------------------- | ----- | ------ | ----------------------------- |
+  jungle/purchase          | async serial | Procurement |  Sales, Warehouse |
+  jungle/purchase/response | synchronous  | Sales, Warehouse | Procurement  |
 ---
 
 The following image shows asynchronous messaging in which messages are

@@ -681,14 +681,13 @@ a 6.1 installation. If you're running a previous version of Liferay and need to
 upgrade to 6.0 first, please see the instructions in the previous version of
 this document. 
 
-### Preparing to Upgrade Liferay Portal 6.0 to Liferay Portal 6.1  
+### Preparing for an Upgrade
 
-There are a few things you should prepare before you actually perform the
-upgrade. Specifically, you need to make sure you've migrated to permission
-algorithm 6, reviewed your image gallery usage, reviewed new Liferay 6.1
-defaults, and cataloged all the plugins you have installed. After you've
-performed these three tasks, you're ready to upgrade. Let's look at them one by
-one. 
+You should make a few preparations before performing an upgrade. Specifically,
+you should make sure you've migrated to permission algorithm 6, reviewed your
+image gallery usage, reviewed the defaults of the new version of Liferay, and
+cataloged all the plugins you have installed. After you've performed these
+tasks, you're ready to upgrade. Let's look at them one by one. 
 
 ### Migrate to Algorithm 6  
 
@@ -918,6 +917,36 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
 That's all there is to it. Most everything is handled by Liferay's upgrade
 procedure. Note as stated above, if you have to upgrade over several Liferay
 versions, you will need to repeat these steps for each major release. 
+
+### Upgrading from Liferay 6.1 to Liferay 6.2
+
+If you're upgrading from Liferay 6.1 to Liferay 6.2, please note the following
+changes in behavior.
+
+1. By default, Liferay 6.1 used the DES encryption algorithm with a 56 bit key
+   size for the company level encryption algorithm.
+   
+        company.encryption.algorithm=DES
+        company.encryption.key.size=56
+   
+   By default, Liferay 6.2 uses the much stronger AES encryption algorithm with
+   a 128 bit key size for the company level encryption algorithm.
+   
+        company.encryption.algorithm=AES
+        company.encryption.key.size=128
+   
+   However, the upgrade for the `company.encryption.algorithm` property is only
+   performed if the value for this properties was not customized, i.e., if it
+   was still set to DES. The upgrade doesn't make any changes if a different
+   algorithm was explicitly selected. (Note that this does not affect password
+   encryption which is handled via a different property:
+   `passwords.encryption.algorithm`.)
+
+2. After upgrading from Liferay 6.1 to Liferay 6.2, users will have to sign back
+   in to the portal even if they were using the *Remember Me* feature of the
+   Sign In portlet. After the upgrade, the *Remember Me* feature works
+   correctly: users can log in to the portal, close their browser, open a new
+   browser window, navigate to the portal, and still be logged in.
 
 ## Summary  
 
