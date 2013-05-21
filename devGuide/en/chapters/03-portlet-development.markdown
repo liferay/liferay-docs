@@ -384,9 +384,9 @@ portlet. All portlets must support the view mode.
     For more information, see the JSR-286 portlet specification, at
     [http://www.jcp.org/en/jsr/detail?id=286](http://www.jcp.org/en/jsr/detail?id=286).
 
-- `security-role-ref`: Security-role-ref contains the declaration of a security
-role reference in the code of the web application. Specifically in Liferay, the
-`role-name` references which roles can access the portlet. 
+- `security-role-ref`: Contains the declaration of a security role reference in
+the code of the web application. Specifically in Liferay, the `role-name`
+references which roles can access the portlet. 
 
 **docroot/WEB-INF/liferay-portlet.xml**: In addition to the standard
 `portlet.xml` options, there are optional Liferay-specific enhancements for Java
@@ -544,8 +544,8 @@ variables into the JSP that are useful for portlet developers, including
 `renderRequest`, `portletConfig`, `portletPreferences`, etc. Note that the
 JSR-286 specification defines four lifecycle methods for a portlet:
 processAction, processEvent, render, and serveResource. Some of the variables
-defined by the `<portlet:defineObjects/>` tag are only to a JSP if the JSP was
-included during the appropriate phase of the portlet lifecycle. The
+defined by the `<portlet:defineObjects/>` tag are only available to a JSP if the
+JSP was included during the appropriate phase of the portlet lifecycle. The
 `<portlet:defineObjects>` tag makes the following portlet objects available to a
 JSP:
 
@@ -582,7 +582,7 @@ JSP:
   in the event-processing phase.
 
 - `PortletConfig portletConfig`: represents the portlet's configuration
-  including the portlet's name, initialization parameters, resource bundle, and
+  including, the portlet's name, initialization parameters, resource bundle, and
   application context. `portletConfig` is always available to a portlet JSP,
   regardless of the request-processing phase in which it was included.
 
@@ -604,9 +604,11 @@ JSP:
   the `portletPreferences.getMap()` call or an empty Map if no portlet
   preferences exist.
 
-The variables made available by the `<portlet:defineObjects/>` tag reference the
-same portlet API objects that are stored in the request object of the JSP. For
-more information about these objects, please refer to [Liferay's Portlet 2.0 Javadocs](http://docs.liferay.com/portlet-api/2.0/javadocs/).
+The variables made available by the `<portlet:defineObjects/>` tag reference are 
+the same portlet API objects that are stored in the request object of the JSP.
+For more information about these objects, please refer to
+the Liferay's Portlet 2.0 Javadocs at
+[http://docs.liferay.com/portlet-api/2.0/javadocs/](http://docs.liferay.com/portlet-api/2.0/javadocs/).
 
 **A warning about our newly created portlet:** For the purpose of making our
 example easy to follow, we cheated a little bit. The portlet specification
