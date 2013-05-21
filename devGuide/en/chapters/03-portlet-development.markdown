@@ -382,7 +382,7 @@ portlet. All portlets must support the view mode.
             ...
         </portlet>
 
-    For more information see JSR-286 portlet specification, at
+    For more information, see the JSR-286 portlet specification, at
     [http://www.jcp.org/en/jsr/detail?id=286](http://www.jcp.org/en/jsr/detail?id=286).
 
 - `security-role-ref`: Security-role-ref contains the declaration of a security
@@ -542,48 +542,72 @@ taglibs to create forms based on your own preferences.
 Another JSP tag you may have noticed is `<portlet:defineObjects/>`. The portlet
 specification defined this tag in order to be able to insert a set of implicit
 variables into the JSP that are useful for portlet developers, including
-`renderRequest`, `portletConfig`, `portletPreferences`, etc. The
-`<portlet:defineObjects>` tag defines the following variables:
+`renderRequest`, `portletConfig`, `portletPreferences`, etc. Note that the
+JSR-286 specification defines four lifecycle methods for a portlet:
+processAction, processEvent, render, and serveResource. Some of the variables
+defined by the `<portlet:defineObjects/>` tag are only to a JSP if the JSP was
+included during the appropriate phase of the portlet lifecycle. The
+`<portlet:defineObjects>` tag makes the following portlet objects available to a
+JSP:
 
-- `RenderRequest renderRequest` (only available when included from within a
-  portlet's render method)
+- `RenderRequest renderRequest`: represents the request sent to the portlet to
+  handle a render. `renderRequest` is only available to a JSP if the JSP was
+  included during the render request phase.
 
-- `ResourceRequest resourceRequest` (only available when included from within a
-  portlet's serveResource method)
+- `ResourceRequest resourceRequest`: represents the request sent to the portlet
+  for rendering resources. `resourceRequest` is only available to a JSP if the
+  JSP was included during the resource-serving phase.
 
-- `ActionRequest actionRequest` (only available when included from within a
-  portlet's processAction method)
+- `ActionRequest actionRequest`: represents the request sent to the portlet to
+  handle an action. `actionRequest` is only available to a JSP if the JSP was
+  included during the action-processing phase.
 
-- `EventRequest eventRequest` (only available when included from within a
-  portlet's processEvent method)
+- `EventRequest eventRequest`: represents the request sent to the portlet to
+  handle an event. `eventRequest` is only available to a JSP if the JSP was
+  included during the event-processing phase.
 
-- `RenderResponse renderResponse` (only available when included from within a
-  portlet's render method)
+- `RenderResponse renderResponse`: represents an object that assists the
+  portlet in sending a response to the portal. `renderResponse` is only
+  available to a JSP if the JSP was included during the render request phase.
 
-- `ResourceResponse resourceResponce` (only available when included from within
-  a portlet's serveResource method)
+- `ResourceResponse resourceResponse`: represents an object that assists the
+  portlet in rendering a resource. `resourceResponse` is only available to a JSP
+  if the JSP was included in the resource-serving phase.
 
-- `ActionResponse actionResponse` (only available when included from within a
-  portlet's processAction method)
+- `ActionResponse actionResponse`: represents the portlet response to an action
+  request. `actionResponse` is only available to a JSP if the JSP was included
+  in the action-processing phase.
 
-- `EventResponse eventResponse` (only available when included from within a
-  portlet's processEvent method)
+- `EventResponse eventResponse`: represents the portlet response to an event
+  request. `eventResponse` is only available to a JSP if the JSP was included
+  in the event-processing phase.
 
-- `PortletConfig portletConfig`
+- `PortletConfig portletConfig`: represents the portlet's configuration
+  including the portlet's name, initialization parameters, resource bundle, and
+  application context. `portletConfig` is always available to a portlet JSP,
+  regardless of the request-processing phase in which it was included.
 
-- `PortletSession portletSession` (does not create a new session; only returns
-  an existing session or `null` if no session exists)
+- `PortletSession portletSession`: provides a way to identify a user across more
+  than one request and to store transient information about a user. A
+  `portletSession` is created for each user client. `portletSession` is always
+  available to a portlet JSP, regardless of the request-processing phase in
+  which it was included. `portletSession` is `null` if no session exists.
 
-- `Map<String, Object> portletSessionScope` (does not create a new session; only
-  returns a Map equivalent to the `PortletSession.getAtrributeMap()` call or an
-  empty Map if no session attributes exist)
+- `Map<String, Object> portletSessionScope`: provides a Map equivalent to the
+  `PortletSession.getAtrributeMap()` call or an empty Map if no session
+  attributes exist.
 
-- `PortletPreferences portletPreferences` (provides access to a portlet's
-  preferences)
+- `PortletPreferences portletPreferences`: provides access to a portlet's
+  preferences. `portletPreferences` is always available to a portlet JSP,
+  regardless of the request-processing phase in which it was included.
 
-- `Map<String, String[]> portletPreferencesValues` (returns the values of a
-  portlet's preferences as a Map equivalent to the `PortletPreferences.getMap()`
-  call or an empty Map if no portlet preferences exist)
+- `Map<String, String[]> portletPreferencesValues`: provides a Map equivalent to
+  the `portletPreferences.getMap()` call or an empty Map if no portlet
+  preferences exist.
+
+The variables made available by the `<portlet:defineObjects/>` tag reference the
+same portlet API objects that are stored in the request object of the JSP. For
+more information about these objects, please refer to [Liferay's Portlet 2.0 Javadocs](http://docs.liferay.com/portlet-api/2.0/javadocs/).
 
 **A warning about our newly created portlet:** For the purpose of making our
 example easy to follow, we cheated a little bit. The portlet specification
@@ -1193,7 +1217,7 @@ be specified in a resource bundle file with a name ending in his locale's two
 character code. For example, a resource bundle file named
 `Language_es.properties` containing a message property with key `welcome` must
 be present with a Spanish translation of the word "Welcome". Good news, Plugins
-SDK provides a means for you to get translatations for your default resource
+SDK provides a means for you to get translations for your default resource
 bundle.
 
 The Plugins SDK uses the Bing Translator service
@@ -1202,7 +1226,7 @@ translate all of the resources in your Language.properties file to multiple
 languages. It provides a base translation for you to start with. To create base
 translations using the Bing Translator service, you'll need to do the following:
 
-1. Signup for an Azure Marketploace account and register your application. Be
+1. Signup for an Azure Marketplace account and register your application. Be
 sure to write down your ID and secret given to you for your application.
 
 2. Edit the `portal-ext.properties` file in your Liferay Home directory by
