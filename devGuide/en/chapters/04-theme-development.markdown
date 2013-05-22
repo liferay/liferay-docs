@@ -580,7 +580,7 @@ file.
 Let's get on with learning about predefining settings using themes. First, let's
 take a look at settings for portlet borders. 
 
-### Portlet Borders
+### Portlet Borders [](id=liferay-portal-6-1-configure-portlet-borders-with-theme)
 
 The theme turns on portlet borders, by default. But you can turn them off by
 setting `portlet-setup-show-borders-default` to `false` in your theme's
@@ -602,7 +602,7 @@ the borders as the default:
 Now that you've configured portlet borders, let's configure bullet styles
 used in your sites. 
 
-### Bullet Styles
+### Bullet Styles [](id=liferay-portal-6-1-configure-bullet-styles-with-theme)
 
 Liferay's Navigation portlet can be configured to use any bullet styles
 inherited by your theme or implementated in your theme. For example, if your
@@ -647,7 +647,7 @@ Using CSS, and maybe some unobtrusive JavaScript, you can create a navigation
 menu that looks just the way you want it. Next, let's take a look at how to
 configure display your site's name. 
 
-### Site Names
+### Site Names [](id=liferay-portal-6-1-configure-site-name-display-with-theme)
 
 The site name settings let site administrators decide whether to display a
 site's name (i.e., title). But, if you are using using logo, that mentions your
