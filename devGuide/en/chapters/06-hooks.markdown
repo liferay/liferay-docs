@@ -341,7 +341,7 @@ site where you'll use the Application Adapter.
 5. Select *Manage* &rarr; *Site Settings*. From the *Application Adapter*
 field's drop-down menu, select *example*. Then click *Save*. 
 
-    ![Figure 6.3: Your *Application Adapters* are easily accessible in your Site's settings.](../../images/06-hooks-select-site-app-adapter.png)
+    ![Figure 6.4: Your *Application Adapters* are easily accessible in your Site's settings.](../../images/06-hooks-select-site-app-adapter.png)
 
 6. Navigate back to your site's Navigation portlet, and make sure that the
 modification message from your Application Adapter hook plugin's `view.jsp` file
@@ -706,7 +706,7 @@ Both custom Struts actions are executed via your Struts action hook!
 Try your new Struts path by accessing it from your browser (e.g.
 `http://localhost:8080/c/portal/sample`). 
 
-![Figure 6.4: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
+![Figure 6.5: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
 
 Let's continue our hooks expedition by overriding a portal service.
 
