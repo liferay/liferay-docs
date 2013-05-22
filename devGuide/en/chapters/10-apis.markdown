@@ -2208,10 +2208,11 @@ what the console message looks like:
     Procurement received Legal sync response to purchase approval for three-story 
     spiral slide: yes
 
-Success! Jungle Gyms R-Us has the cash to purchase this cool new slide (which
-has lots of mimetic polyalloy, conveniently) and the Legal Department has no
-gripes about the slide's safety ratings (Skynet really doesn't like it when its
-next generation of human subjects are injured on playground equipment)! 
+Do you know what all those *yes* messages mean? Success! Jungle Gyms R-Us has
+the cash to purchase this cool new slide (which has lots of mimetic polyalloy,
+conveniently) and the Legal Department has no gripes about the slide's safety
+ratings (Skynet really doesn't like it when its next generation of human
+subjects are injured on playground equipment)! 
 
 Next let's have Procurement notify the Sales and Warehouse departments and
 solicit their feedback.
@@ -2252,7 +2253,7 @@ Let's package the message as a `JSONObject` and send it to the destination:
 
     MessageBusUtil.sendMessage("jungle/purchase", jsonObject.toString());
 
-Here's how the Warehouse Departments listens for and handles messages: 
+Here's how the Warehouse Department listens for and handles messages: 
 
     public void receive(Message message) {
 
@@ -2296,7 +2297,7 @@ Here's how this listener deserializes the `JSONObject` from the message:
 2. Creates a `JSONObject` from the payload string. 
 3. Gets values from the `JSONObject` using its *getter* methods. 
 
-The class also demonstrates how the Warehouse Department packages up a response
+The class also demonstrates how the Warehouse Department packages a response
 message and sends it back to the Procurement Department, using these steps: 
 
 1. Creates a `JSONObject`.  
@@ -2304,8 +2305,8 @@ message and sends it back to the Procurement Department, using these steps:
 3. Sends the response message to the response destination of the original
 message. 
 
-The Sales department can be implemented the same way, substituting "Sales" as
-the department value; the comment would likely be different, too. 
+The Sales department listener can be implemented the same way, substituting
+"Sales" as the department value; the comment would likely be different, too. 
 
 You just used the `JSONObject` message type to send an *asynchronous* response
 message using a call-back. If only it was that easy to program a Terminator!
@@ -2358,17 +2359,17 @@ messages differently depending on their destinations; messages to
 messages to `jungle/purchase/response` are treated as departmental responses to
 Procurement's purchase notifications.  The `doReceiveResponse(Message)` method
 performs animportant task, checking that the response comes from a department
-other than itself, and printing an error if it does not. 
+other than itself, and printing an error if it doesn't. 
 
 Here are the configuration elements we added to the `messaging-spring.xml` from
 the previous section:
 
-- Listener beans: 
+- *Listener beans*: 
 
         <bean id="messageListener.warehouse_listener" class="com.liferay.training.parts.messaging.impl.WarehouseMessagingImpl" />
         <bean id="messageListener.sales_listener" class="com.liferay.training.parts.messaging.impl.SalesMessagingImpl" />
 
-- Destination beans: The purchase notifications will be sent to a *serial*
+- *Destination beans*: The purchase notifications will be sent to a *serial*
   destination and the responses will be sent to a *synchronous* destination. 
 
         <bean id="destination.purchase" class="com.liferay.portal.kernel.messaging.SerialDestination">
@@ -2379,8 +2380,8 @@ the previous section:
             <property name="name" value="jungle/purchase/response" />
         </bean>
 
-- Configuration bean listener map entry: Warehouse and Sales are registered to
-  listen for the notifications from Procurement. All three departments are
+- *Configuration bean listener map entry*: Warehouse and Sales are registered
+  to listen for the notifications from Procurement. All three departments are
 registered to listen for inter-departmental responses.
 
         <entry key="jungle/purchase">
@@ -2397,40 +2398,40 @@ registered to listen for inter-departmental responses.
             </list>
         </entry>
 
-- Configuration bean destination list references: 
+- *Configuration bean destination list references*:
 
         <ref bean="destination.purchase"/>
         <ref bean="destination.purchase.response"/>
 
-Don't forget to send news of these new products to *all* Jungle Gym employees.
+Don't forget to send news of these new products to *all* Jungle Gyms R-Us
+employees (a.k.a. the Resistance).
 
 ### Asynchronous "Send and Forget" 
 
-In the "send and forget" model of asynchronous messaging, the sender simply
-sends out messages and continues processing. We'll apply this behavior to Jungle
-Gym's company wide notification of new products.
+In asynchronous messaging's *send and forget* model, the sender sends messages
+and continues processing. We'll apply this behavior to Jungle Gym's
+company-wide new product notification.
 
-Since Procurement is not expecting response messages from individual employees,
-there is no need for the employee's listener to package up a responses. But, we
-do however want everyone to get product news at the *same time*. So, instead of
+Procurement isn't expecting response messages from individual employees, so
+there's no need for the comany-wide listener to package up responses. We do,
+however, want everyone to get product news at the *same time*, so instead of
 dispatching news to employees *serially* we'll dispatch *in parallel*.
-
 
 ![Figure 9.4: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
 
 We'll specify a *parallel* destination type in our `messaging-spring.xml`:
 
-- Destination bean
+- *Destination bean*:
 
         <bean id="destination.employee.news" class="com.liferay.portal.kernel.messaging.ParallelDestination">
                 <property name="name" value="jungle/employee/news" />
         </bean>
 
-- Listener bean
+- *Listener bean*:
 
         <bean id="messageListener.employee_listener" class="com.liferay.training.parts.messaging.impl.EmployeeMessagingImpl" />
 
-- Configuration bean listener map entry
+- *Configuration bean listener map entry*: 
 
         <entry key="jungle/employee/news">
             <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
@@ -2438,44 +2439,62 @@ We'll specify a *parallel* destination type in our `messaging-spring.xml`:
             </list>
         </entry>
 
-- Configuration bean destination list reference
+- *Configuration bean destination list reference*: 
 
         <ref bean="destination.employee.news"/>
 
-Congratulations! You've implemented inter-departmental communications for the
-procurement process of Jungle Gyms R-Us. Along the way you've exercised the
-following from Message Bus:
+Congratulations! You implemented inter-departmental communications for the
+procurement process at Jungle Gyms R-Us.
 
-- Sender, listener, and destination components
-- Synchronous and Asynchronous messaging schemes
-- *Serial* and *in-parallel* message dispatching
-- Java and JSON message types
+Along the way you used Message Bus to implement the following:
 
-In the next section, you'll explore the Device Detection API and its capabilities. 
+- Sender, listener, and destination components. 
+- Synchronous and Asynchronous messaging schemes. 
+- *Serial* and *parallel* message dispatching. 
+- Java and JSON message types. 
+
+Next we'll show you the Device Detection API and its capabilities. 
 
 ## Device Detection
 
-As you know, internet traffic has risen exponentially over the past decade and
+<!--The existing introdcution is fine, but here's my recommended intro if we keep the
+Skynet/Resistance stuff: 
+-->
+
+To understate the matter, Skynet isn't a fan of Open Source technology; it's
+not keen on collaboration or competition. Skynet annihilates any life it
+detects, human or otherwise, that isn't a registered member of its human
+subject population.  However, the population of the Resistance continues to
+grow, and there are other population clusters as well. These disjointed, yet
+thriving, groups rely on mobile communication, and internet traffic is rising
+exponentially despite the technological setbacks experienced following Judgment
+Day. Mobile devices are extremely important to the remnant human population,
+but devices are not uniform in their capabilities. How can these disparate
+devices request the same information from your portal?  -->
+
+<!--As you know, internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile internet
 access has become the norm and is predicted to pass PC based internet access
 soon. Because of the mobile boom, new obstacles and challenges are presented for
 content management. How will content adapt to all devices with different
 capabilities? How can your grandma's gnarly tablet and cousin's awesome new
 mobile phone request the same information from your portal?
+-->
 
-The Device Detection API is used for detecting the capabilities of a device that
-is making a request to your portal. In addition, the Device Detection API allows
-Liferay to detect which mobile device or operating system is being used for any
-given request and alters the rendering of pages based on the detected device. To
-install this feature, you will need to install the *Device Recognition Provider*
-app from Liferay Marketplace. Based on your Liferay edition, you can select the
-appropriate link for more info and download information: [Device Recognition
+The *Device Detection* API detects the capabilities of a device making a
+request to your portal. It can also allow Liferay to detect what mobile device
+or operating system is used to make a request, and render pages based on the
+device. To use this feature you need to first install the *Device Recognition
+Provider* app from Liferay Marketplace. You can find more information on the
+app by following one of these links, depending on whether you use Liferay CE or
+EE:Select the appropriate link to get more information and download
+information: [Device Recognition
 CE](http://www.liferay.com/marketplace/-/mp/application/15193341) or [Device
 Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132).
 
-The *Device Recognition* plugin, which is bundled inside the Device Recognition
-Provider app, uses a device database called *WURFL* to determine the
-capabilities of your device. You can visit their site for more information at
+The *Device Recognition* plugin is bundled inside the Device Recognition
+Provider app; it uses a device database called *WURFL* to determine the
+capabilities of your device. Visit the WURFL website for more information at
 [http://wurfl.sourceforge.net/](http://wurfl.sourceforge.net/).
 
 You could create your own plugin to use your own device's database. Let's go
