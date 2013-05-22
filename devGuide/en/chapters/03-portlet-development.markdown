@@ -830,7 +830,9 @@ portlets.
 When you click the *Edit greeting* link, you're taken to a page with a URL that
 looks like this:
 
-    http://localhost:8080/web/guest/home?p_p_id=mygreeting_WAR_mygreetingportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&_mygreeting_WAR_mygreetingportlet_mvcPath=%2Fedit.jsp
+    http://localhost:8080/web/guest/home?p_p_id=mygreeting_WAR_mygreetingportlet
+        &p_p_lifecycle=0&p_p_state=normal&p_p_mode=view\&p_p_col_id=column-1&_my
+        greeting_WAR_mygreetingportlet_mvcPath=%2Fedit.jsp
     
 Since Liferay 6, there's a built-in feature that can easily change the ugly URL
 above to this:
@@ -866,7 +868,9 @@ file:
     <routes>
         <route>
             <pattern>/{mvcPathName}</pattern>
-            <generated-parameter name="mvcPath">/{mvcPathName}.jsp</generated-parameter>
+            <generated-parameter name="mvcPath">
+                /{mvcPathName}.jsp
+            </generated-parameter>
         </route>
     </routes>
 
@@ -1207,7 +1211,10 @@ To create a plugin which extends another, follow these steps:
 4. Add the following line to your `build.xml` inside of the `<project>` tag to
    reference the original WAR file you are going to extend:
 
-        <property name="original.war.file" value="social-networking-portlet-6.1.10.1-ee-ga1.war" />
+        <property
+            name="original.war.file"
+            value="social-networking-portlet-6.1.10.1-ee-ga1.war"
+        />
 
 5. Copy any files from the original plugin that you're overwriting to your
    new plugin (using the same folder structure) and run the Ant target `merge`.
@@ -1215,19 +1222,27 @@ To create a plugin which extends another, follow these steps:
    All you have to do is to check the Ant output:
 
         dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
-        Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.xml
+        Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.x
+            ml
         
         compile:
         
         merge:
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/classes
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/lib
+        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portl
+            et/tmp
+        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portl
+            et/tmp/WEB-INF/classes
+        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portl
+            et/tmp/WEB-INF/lib
         
         merge-unzip:
-        [unzip] Expanding: /home/dsanz/sdk/portlets/my-social-networking-portlet/social-networking-portlet-6.1.10.1-ee-ga1.war into /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
-        [copy] Copying 2 files to /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/docroot/WEB-INF/classes
+        [unzip] Expanding: /home/dsanz/sdk/portlets/my-social-networking-portlet
+            /social-networking-portlet-6.1.10.1-ee-ga1.war into /home/dsanz/sdk/
+            portlets/my-social-networking-portlet/tmp
+        [copy] Copying 2 files to /home/dsanz/sdk/portlets/my-social-networking-
+            portlet/tmp
+        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portl
+            et/docroot/WEB-INF/classes
         
         ...
 
