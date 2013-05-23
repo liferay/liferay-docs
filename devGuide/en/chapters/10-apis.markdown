@@ -2462,15 +2462,16 @@ Skynet/Resistance stuff:
 -->
 
 To understate the matter, Skynet isn't a fan of Open Source technology; it's
-not at all keen on collaboration or competition. Skynet employs cyborgs to
-annihilate any unauthorized life it detects, human or otherwise .  However, the
-population of the Resistance continues to grow, and there are other population
-clusters as well. These disjointed, yet thriving, groups rely on mobile
-communication, and internet traffic is rising exponentially despite the
-technological setbacks experienced following Judgment Day. It sounds similar to
-the situation in 2013, right down to the problem-- the mobile devices aren't
-uniform in their capabilities. How can these disparate devices request the same
-information from your portal? 
+not at all keen on collaboration, competition, or even the existence of life
+outside of its collection ofhuman subjects (now that's proprietary). Skynet
+employs cyborgs to annihilate all unauthorized life it detects, human or
+otherwise.  Despite this, the population of the Resistance continues to grow,
+and there are other population clusters as well. These disjointed, yet
+thriving, groups rely on mobile communication, and internet traffic is rising
+exponentially despite the technological setbacks experienced following Judgment
+Day. It sounds similar to the situation in 2013, right down to the problem--
+the mobile devices aren't uniform in their capabilities. How can these
+disparate devices request the same information from your portal? 
 
 <!--As you know, internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile internet
@@ -2481,15 +2482,15 @@ capabilities? How can your grandma's gnarly tablet and cousin's awesome new
 mobile phone request the same information from your portal?
 -->
 
-The *Device Detection* API detects the capabilities of a device making a
-request to your portal. It can also allow Liferay to determine what mobile
-device or operating system was used to make a request, and render pages based
-on the device. To use this feature you first need to install the *Device
-Recognition Provider* app from Liferay Marketplace. Find more information on
-the app by following one of these links, depending on whether you use Liferay
-CE or EE : [Device Recognition
+The *Device Detection* API detects the capabilities of any device making a
+request to your portal. It th the Device Detection API, Liferay can also
+determine what mobile device or operating system was used to make a request,
+and render pages based on the device. To use this feature you first need to
+install the *Device Recognition Provider* app from Liferay Marketplace. Find
+more information on the app by following one of these links, depending on
+whether you use Liferay CE or EE: [Device Recognition
 CE](http://www.liferay.com/marketplace/-/mp/application/15193341) or [Device
-Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132).
+Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132). 
 
 The *Device Recognition* plugin comes bundled inside the Device Recognition
 Provider app; it uses a device database called *WURFL* to determine the
@@ -2497,8 +2498,8 @@ capabilities of your device. Visit the WURFL website for more information at
 [http://wurfl.sourceforge.net/](http://wurfl.sourceforge.net/).
 
 You can create your own plugin to use your device's database. Let's look at
-some simple ways to use the Device Detection API and talk about its
-capabilities.
+some simple uses of the Device Detection API and talk about its
+capabilities. 
 
 ### Using the Device API 
 
@@ -2519,14 +2520,14 @@ device's dimensions:
 Now your device can obtain the `Device` object and the dimensions of a device.
 Of course this is just an example; you can acquire many other values that take
 care of the pesky problems that arise when sending content to different
-devices. Youcan refer to the Device javadocs mentioned above for assistance.
+devices. You can refer to the Device javadocs mentioned above for assistance.
 Let's look at some device capabilities next.
 
 ### Device capabilities
 
-Most of the capabilities of a device can be detected, but this depends on the
-device detection implementation you're using. For the Device Recognition plugin,
-you can view its device database's (WURFL) list of capabilities
+Most of the capabilities of a device can be detected, depending on the device
+detection implementation you're using. For the Device Recognition plugin, you
+can view its device database's (WURFL) list of capabilities
 [here](http://www.scientiamobile.com/wurflCapability/tree). For an example, you
 can obtain the capability of a brand name by using this code:
 
