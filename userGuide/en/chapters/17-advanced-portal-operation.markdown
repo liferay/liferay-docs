@@ -839,10 +839,8 @@ Let's look at upgrading a bundle, which is the easiest upgrade path.
 If you're running a Liferay bundle, the best way to do the upgrade is to follow
 the steps below. The new Liferay is installed in a newer version of your bundle
 runtime. For example, the Liferay/Tomcat bundle for 6.0 used Tomcat 6 by
-default; the 6.1 bundle uses Tomcat 7. Though there is a Tomcat 6 bundle of
-Liferay 6.1, that bundle also uses a newer release of Tomcat than the one from
-6.0. This is the case for all runtimes Liferay supports. We generally recommend
-you use the latest version of your runtime bundle, as it will be supported the
+default; the 6.1 bundle uses Tomcat 7. We generally recommend you use the
+latest version of your runtime bundle, as it will be supported the
 longest. 
 
    1. Obtain the new bundle. Unzip the bundle to an appropriate location on your
