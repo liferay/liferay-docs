@@ -2462,15 +2462,15 @@ Skynet/Resistance stuff:
 -->
 
 To understate the matter, Skynet isn't a fan of Open Source technology; it's
-not keen on collaboration or competition. Skynet annihilates any life it
-detects, human or otherwise, that isn't a registered member of its human
-subject population.  However, the population of the Resistance continues to
-grow, and there are other population clusters as well. These disjointed, yet
-thriving, groups rely on mobile communication, and internet traffic is rising
-exponentially despite the technological setbacks experienced following Judgment
-Day. Mobile devices are extremely important to the remnant human population,
-but devices are not uniform in their capabilities. How can these disparate
-devices request the same information from your portal?  -->
+not at all keen on collaboration or competition. Skynet employs cyborgs to
+annihilate any unauthorized life it detects, human or otherwise .  However, the
+population of the Resistance continues to grow, and there are other population
+clusters as well. These disjointed, yet thriving, groups rely on mobile
+communication, and internet traffic is rising exponentially despite the
+technological setbacks experienced following Judgment Day. It sounds similar to
+the situation in 2013, right down to the problem-- the mobile devices aren't
+uniform in their capabilities. How can these disparate devices request the same
+information from your portal? 
 
 <!--As you know, internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile internet
@@ -2482,45 +2482,45 @@ mobile phone request the same information from your portal?
 -->
 
 The *Device Detection* API detects the capabilities of a device making a
-request to your portal. It can also allow Liferay to detect what mobile device
-or operating system is used to make a request, and render pages based on the
-device. To use this feature you need to first install the *Device Recognition
-Provider* app from Liferay Marketplace. You can find more information on the
-app by following one of these links, depending on whether you use Liferay CE or
-EE:Select the appropriate link to get more information and download
-information: [Device Recognition
+request to your portal. It can also allow Liferay to determine what mobile
+device or operating system was used to make a request, and render pages based
+on the device. To use this feature you first need to install the *Device
+Recognition Provider* app from Liferay Marketplace. Find more information on
+the app by following one of these links, depending on whether you use Liferay
+CE or EE : [Device Recognition
 CE](http://www.liferay.com/marketplace/-/mp/application/15193341) or [Device
 Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132).
 
-The *Device Recognition* plugin is bundled inside the Device Recognition
+The *Device Recognition* plugin comes bundled inside the Device Recognition
 Provider app; it uses a device database called *WURFL* to determine the
 capabilities of your device. Visit the WURFL website for more information at
 [http://wurfl.sourceforge.net/](http://wurfl.sourceforge.net/).
 
-You could create your own plugin to use your own device's database. Let's go
-through some simple ways to use the Device Detection API and its capabilities.
+You can create your own plugin to use your device's database. Let's look at
+some simple ways to use the Device Detection API and talk about its
+capabilities.
 
-### Using the Device API
+### Using the Device API 
 
-We will go over a couple of code snippets that will help you get started. The
-object `Device` can be obtained from the `themeDisplay` object like this:
+Let's look at a couple of code snippets to get you started. You can obtain the
+object `Device` from the `themeDisplay` object like this:
 
     Device device = themeDisplay.getDevice();
 
-For reference, you can view the API in the [Device
+You can view the API in the [Device
 Javadocs](http://docs.liferay.com/portal/6.1/javadocs/com/liferay/portal/kernel/mobile/device/Device.html).
-Using some of the methods from the javadocs, here is an example that obtains the
-dimensions of a device:
+Using some of the methods from the javadocs, here's an example that obtains a
+device's dimensions:
 
     Dimensions dimensions =device.getScreenSize();
     float height = dimensions.getHeight();
     float width = dimensions.getWidth();
 
-Now, your device can obtain the `Device` object and can obtain the dimensions of
-a device. Of course, you can acquire many other values that take care of those
-pesky problems that arise when sending content to different devices. Simply
-refer to the previously mentioned Device javadocs for assistance. Let's go
-through some device capabilities.
+Now your device can obtain the `Device` object and the dimensions of a device.
+Of course this is just an example; you can acquire many other values that take
+care of the pesky problems that arise when sending content to different
+devices. Youcan refer to the Device javadocs mentioned above for assistance.
+Let's look at some device capabilities next.
 
 ### Device capabilities
 
