@@ -2518,8 +2518,8 @@ device's dimensions:
     float width = dimensions.getWidth();
 
 Now your device can obtain the `Device` object and the dimensions of a device.
-Of course this is just an example; you can acquire many other values that take
-care of the pesky problems that arise when sending content to different
+Of course this is just a single example; you can acquire many other values that
+take care of the pesky problems that arise when sending content to different
 devices. You can refer to the Device javadocs mentioned above for assistance.
 Let's look at some device capabilities next.
 
@@ -2533,33 +2533,42 @@ can obtain the capability of a brand name with this code:
 
     String brand = device.getCapability("brand_name");
 
-You can grab capabilities by other values as well, including `model_name`,
-`marketing_name`, and `release_date`. Also, there are boolean values that can be
-acquired that include: is_wireless_device, is_tablet, etc. Keeping the
-capabilities list in mind when configuring your device is very helpful.
+There are plenty of other values to grab device capabilities by, including
+`model_name`, `marketing_name`, and `release_date`. You can also get boolean
+values like `is_wireless_device`, `is_tablet`, etc.  Keeping the capabilities
+list in mind when configuring your device is very helpful.
 
-You're able to detect the capabilities of a device making a request to your
-portal by using the Device Detection API. Through the use of this API, your
-grandma's gnarly tablet and cousin's awesome new mobile phone can make requests
-to your portal and receive identical content. This will make everyone happy!
+<!--I was unsure whether  these values were a sort of filter for device
+capabilities or if these are the values, or capabilities, themselves that are
+returned.-->
+
+You can detect the capabilities of a device making a request to your portal by
+using With the Device Detection API, you can detect the capabilities of a
+device making request to your portal and render content accordingly; so your
+grandma's gnarly tablet and your cousin's awesome new mobile phone can make
+requests to your portal and receive identical content. This will make everyone
+happy!
 
 You're really getting the hang of Liferay's APIs. Way to go! 
 
 ## Liferay's Deprecation Policy
 
-Methods in Liferay's APIs are generally deprecated when they are no longer
-called by Liferay internally. Methods can be deprecated at any time within a
-maintenance release. Recall that Liferay version numbers consist of a
-three-digit number in the form of major.minor.maintenance, e.g., 6.0.2 (major
-version 6, minor version, maintenance version). A change in the third number
-(e.g., 6.0.2 to 6.0.3) is a maintenance update, also known as a fix pack. Major
-and minor releases introduce new features so they are called feature releases.
-Maintenance updates do not include new features. When a method is deprecated, it
-should no longer be used for custom development.  However, you don't need to
-immediately update your custom code so that it doesn't call the deprecated
-method. Deprecated methods will not be removed during the maintenance of any
-feature release. However, deprecated methods may be removed in future feature
-releases.
+Methods in Liferay's APIs are generally deprecated when they're no longer
+called by Liferay internally. Method deprecation can occur any time there's a
+maintenance release of Liferay. You'll know when there's a maintenance release
+if you understand the our release version notation., since that's how you'll
+know whether a release is a maintenance release and might include deprecation
+of API methods.Recall that Liferay version numbers consist of a three digit
+number--the standard notation for the version number is
+major.minor.maintenance, e.g., 6.0.2 (major version 6, minor version,
+maintenance version). A change in the third number (e.g., 6.0.2 to 6.0.3) is a
+maintenance update, also known as a fix pack. Major and minor releases
+introduce new features so they are called feature releases.  Maintenance
+updates do not include new features. When a method is deprecated, it should no
+longer be used for custom development.  However, you don't need to immediately
+update your custom code so that it doesn't call the deprecated method.
+Deprecated methods will not be removed during the maintenance of any feature
+release. However, deprecated methods may be removed in future feature releases.
 
 ## Conclusion 
 
