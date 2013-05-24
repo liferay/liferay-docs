@@ -211,7 +211,7 @@ If the IP address of the machine on which the batch job is running is listed
 with allowable hosts for the service, it's allowed to connect to Liferay's web
 services, pass in the appropriate user credentials, and upload the documents. 
 
-![Figure 8.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
+![Figure 10.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
 
 ---
 
@@ -240,7 +240,7 @@ member of this group (or the user ID of a user with individual rights to add
 documents to this folder). If you don't, you won't be allowed to use the Web
 Service. 
 
-![Figure 8.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
+![Figure 10.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
 
 With remote services, you can specify the user credentials using HTTP Basic
 authentication. Those credentials are specified unencrypted; it's recommended to
@@ -306,7 +306,7 @@ Next let's talk about Liferay's SOAP web services.
 
 ## SOAP Web Services 
 
-YTou can access Liferay's services via *Simple Object Access Protocol* (*SOAP*)
+You can access Liferay's services via *Simple Object Access Protocol* (*SOAP*)
 over HTTP. The *packaging* protocol is SOAP and the *transport* protocol is
 HTTP.
 
@@ -352,7 +352,7 @@ browser to a URL following one of these formats:
 
 Here's the list of *secure* web services for `UserGroup`: 
 
-![Figure 8.3: UserGroup Web Service listing](../../images/wsdl-summary-listing.png)
+![Figure 10.3: UserGroup Web Service listing](../../images/wsdl-summary-listing.png)
 
 ---
 
@@ -367,7 +367,7 @@ Each web service is listed with its name, operations, and a link to its WSDL
 file. The WSDL file is written in XML and provides a model for describing and
 locating the web service. 
 
-![Figure 8.4: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.png)
+![Figure 10.4: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.png)
 
 As you'll see in the example in the next section, you pass in the WSDL URL along
 with your login credentials to the SOAP service locator for your service.
@@ -383,14 +383,14 @@ plan to consume in your client code. For our purposes, the client we're building
 needs a *Web Service Client* for the portal's *Company*, *User*, and *UserGroup*
 services. 
 
-![Figure 8.5: New Web Service Client](../../images/api-new-web-svc-client.png)
+![Figure 10.5: New Web Service Client](../../images/api-new-web-svc-client.png)
 
 For each client you create, you'll be prompted to enter the service definition
 (WSDL) for the desired service. Here's an example: 
 
     http://localhost:8080/api/axis/Portal_UserService?wsdl
 
-![Figure 8.6: Service Definition](../../images/api-web-svc-wsdl.png)
+![Figure 10.6: Service Definition](../../images/api-web-svc-wsdl.png)
 
 With the WSDL specified, Eclipse automatically adds the auxiliary files and
 libraries required to consume that web service.  Nifty!
@@ -1832,7 +1832,7 @@ service can be both a message sender and a message listener. For example, in the
 figure below both *Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and
 listen for messages. 
 
-![Figure 9.1: Example, Message Bus system](../../images/msg-bus-system.png)
+![Figure 10.7: Example, Message Bus system](../../images/msg-bus-system.png)
 
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
@@ -1974,7 +1974,7 @@ last for a couple hours, Procurement makes it their top priority to get approval
 as soon as possible. Implementing their exchange using *synchronous* messaging
 makes the most sense. 
 
-![Figure 9.2: Synchronous messaging](../../images/msg-bus-sync-msg.png)
+![Figure 10.8: Synchronous messaging](../../images/msg-bus-sync-msg.png)
 
 The following table describes how we'll set things up: 
 
@@ -2241,7 +2241,7 @@ The following table describes how we'll set things up:
 The following image shows asynchronous messaging, with its serial dispatchment
 of messages: 
 
-![Figure 9.3: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
+![Figure 10.9: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
 
 Let's package the message as a `JSONObject` and send it to the destination: 
 
@@ -2417,7 +2417,7 @@ there's no need for the comany-wide listener to package up responses. We do,
 however, want everyone to get product news at the *same time*, so instead of
 dispatching news to employees *serially* we'll dispatch *in parallel*.
 
-![Figure 9.4: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
+![Figure 10.10: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
 
 We'll specify a *parallel* destination type in our `messaging-spring.xml`:
 
@@ -2542,41 +2542,47 @@ list in mind when configuring your device is very helpful.
 capabilities or if these are the values, or capabilities, themselves that are
 returned.-->
 
-You can detect the capabilities of a device making a request to your portal by
-using With the Device Detection API, you can detect the capabilities of a
-device making request to your portal and render content accordingly; so your
-grandma's gnarly tablet and your cousin's awesome new mobile phone can make
-requests to your portal and receive identical content. This will make everyone
-happy!
+With the Device Detection API, you can detect the capabilities of a device
+making request to your portal and render content accordingly; so your grandma's
+gnarly tablet and your cousin's awesome new mobile phone can make requests to
+your portal and receive identical content. Everyone is happy (except Skynet, of
+course)!
 
 You're really getting the hang of Liferay's APIs. Way to go! 
 
 ## Liferay's Deprecation Policy
 
-Methods in Liferay's APIs are generally deprecated when they're no longer
-called by Liferay internally. Method deprecation can occur any time there's a
-maintenance release of Liferay. You'll know when there's a maintenance release
-if you understand the our release version notation., since that's how you'll
-know whether a release is a maintenance release and might include deprecation
-of API methods.Recall that Liferay version numbers consist of a three digit
-number--the standard notation for the version number is
-major.minor.maintenance, e.g., 6.0.2 (major version 6, minor version,
-maintenance version). A change in the third number (e.g., 6.0.2 to 6.0.3) is a
-maintenance update, also known as a fix pack. Major and minor releases
-introduce new features so they are called feature releases.  Maintenance
-updates do not include new features. When a method is deprecated, it should no
-longer be used for custom development.  However, you don't need to immediately
-update your custom code so that it doesn't call the deprecated method.
-Deprecated methods will not be removed during the maintenance of any feature
-release. However, deprecated methods may be removed in future feature releases.
+Methods in Liferay's APIs are generally deprecated when they're no longer called
+by Liferay internally. Method deprecation occurs during a maintenance release of
+Liferay. You'll know when there's a maintenance release if you understand
+Liferay's release version notation. Liferay version numbers consist of a three
+digit number--knowing what each digit represents is key, so let's consider a
+case where you were using Liferay 6.0.2, and Liferay 6.0.3 has just been
+released:
 
-## Conclusion 
+- Digit 1 (**6**.0.3): The first digit represents the major release version,
+  which is a *feature release*; this simply means that new features have been
+released. In our example, this hasn't changed. 
 
-<!--Summary-->
+- Digit 2 (6.**0**.3): The second digit is the minor release, which is also a
+  feature release. It also did not change in our example. 
 
-Well, you've covered a lot of ground here in learning how to use the API locally
-and remotely, how to enable/disable remote services and access to them, and how
-to leverage ServiceContext objects in your use of Liferay services. You've also
-rolled up your sleeves in working with Message Bus. Well done! Next, we'll take
-a look at some of the powerful frameworks of Liferay Portal, learn how they work
-and how you can leverage them.
+- Digit 3 (6.0.**3**): The third digit represents the maintenance release, or
+  fix pack release. In our case, this changed from *2* to *3*, so we discovered
+a maintenance release, and we need to be aware that API methods might have been
+deprecated. If any have, you shouldn't use them for custom development.
+Deprecated methods won't be removed during the maintenance of a feature feature
+release, but they may be removed in future feature releases.
+
+## Summary  
+
+We've covered a lot of ground here, and you've handled it with the efficiency of
+a machine; you've been as focused as a Terminator programmed to eliminate a key
+member of the resistance. Wait a minute, you're not a Terminator who's been
+silently playing along, to infiltrate our ranks, are you? Tell us a joke to
+prove you're a human.  Regardless, you've learned how to use the API locally and
+remotely, how to enable and disable remote services and access to them, and how
+to leverage ServiceContext objects in your use of Liferay services.  You've
+really tested your neural net processor in working with Message Bus. Well done!
+Next we'll take a look at some of the powerful frameworks of Liferay Portal,
+learn how they work and how you can leverage them. 
