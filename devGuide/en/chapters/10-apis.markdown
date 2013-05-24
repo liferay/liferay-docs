@@ -2526,17 +2526,17 @@ Let's look at some device capabilities next.
 ### Device capabilities
 
 Most of the capabilities of a device can be detected, depending on the device
-detection implementation you're using. For the Device Recognition plugin, you
-can view its device database's (WURFL) list of capabilities
-[here](http://www.scientiamobile.com/wurflCapability/tree). For an example, you
-can obtain the capability of a brand name by using this code:
+detection implementation you're using. The Device Recognition plugin's device
+database (WURFL) has a list of capabilities
+[here](http://www.scientiamobile.com/wurflCapability/tree). For example, you
+can obtain the capability of a brand name with this code:
 
     String brand = device.getCapability("brand_name");
 
-Furthermore, you can grab many other values such as model_name, marketing_name,
-release_date, etc. Also, there are boolean values that can be acquired that
-include: is_wireless_device, is_tablet, etc. Keeping the capabilities list in
-mind when configuring your device is very helpful.
+You can grab capabilities by other values as well, including `model_name`,
+`marketing_name`, and `release_date`. Also, there are boolean values that can be
+acquired that include: is_wireless_device, is_tablet, etc. Keeping the
+capabilities list in mind when configuring your device is very helpful.
 
 You're able to detect the capabilities of a device making a request to your
 portal by using the Device Detection API. Through the use of this API, your
