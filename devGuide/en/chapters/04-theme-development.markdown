@@ -80,7 +80,7 @@ Studio first, and then with the terminal.
 
     2.4. Click *Finish*. 
 
-![Figure 4.1: Creating your theme plugin](../../images/05-themes-1.png)
+ ![Figure 4.1: Creating your theme plugin](../../images/05-themes-1.png)
 
 With Developer Studio, you can create a new plugin project, or if you already
 have a project, create a new plugin in an existing project. A single Liferay
@@ -91,11 +91,11 @@ and enter the appropriate command for your operating system:
 
 1. In Linux and Mac OS X, enter
 
-    ./create.sh deep-blue "Deep Blue"
+        ./create.sh deep-blue "Deep Blue"
 
 2. In Windows, enter
 
-    create.bat deep-blue "Deep Blue"
+        create.bat deep-blue "Deep Blue"
 
 Now there's a blank theme in your `themes` folder, which the Plugins SDK
 automatically named by appending "-theme" to your project name. Right now your
@@ -117,7 +117,8 @@ own custom styling is added on top.
 
 To specify a base theme, edit the `build.xml` file for your theme and change
 *_styled* in `<property name="theme.parent" value="_styled>` to the name of any
-existing theme that's installed or in your Plugins SDK. 
+existing theme that's installed or in your Plugins SDK. Now that your base theme
+is set, let's deploy the theme to your portal instance.
 
 ### Deploying the Theme
 
@@ -128,14 +129,14 @@ Studio or the terminal.
 ***Deploying in Developer Studio:*** Click and drag your theme project onto your
 server. 
 
-![Figure 4.2: Drag and drop your theme onto the server](../../images/05-themes-6.png)
+ ![Figure 4.2: Drag and drop your theme onto the server](../../images/05-themes-6.png)
 
 Upon deploying, your server outputs messages indicating your plugin is read,
 registered, and available for use. 
 
-	Reading plugin package for deep-blue-theme
-	Registering themes for deep-blue-theme
-	1 theme for deep-blue-theme is available for use
+    Reading plugin package for deep-blue-theme
+    Registering themes for deep-blue-theme
+    1 theme for deep-blue-theme is available for use
 
 ***Deploying in the terminal:*** Open a terminal window in your
 `themes/deep-blue-theme` directory and enter
@@ -153,7 +154,9 @@ Let's apply your theme to a page:
 2. Hover over **Manage** at the top of the page and click on *Page*. 
 
 3. Directly underneath the words **Manage Pages**, select the *Look and Feel*
-tab. Click on your theme to activate it. 
+tab. Click on your theme to activate it.
+
+Now that you've built and deployed a theme, let's study theme anatomy.
 
 ## Anatomy of a Theme
 
@@ -163,64 +166,65 @@ Liferay's built-in themes.
 The structure of a theme separates different types of resources into easily
 accessible folders. Here's the full structure of our Deep Blue theme:
 
--	`deep-blue-theme/`
+- `deep-blue-theme/`
 
-	-	`docroot/`
-	
-		-	`WEB-INF/`
-		
-			-	`liferay-plugin-package.properties`
-			
-		-	`_diffs/` - subfolders not created by default.
-		
-			-	`css/`
-			
-			-	`images/`
-			
-			-	`js/`
-			
-			-	`templates/`
-		
-		-	`css/`
-			-	`application.css`
-			
-			-	`base.css`
-			
-			-	`custom.css`
-			
-			-	`dockbar.css`
-			
-			-	`extras.css`
-			
-			-	`forms.css`
-			
-			-	`layout.css`
-			
-			-	`main.css`
-			
-			-	`navigation.css`
-			
-			-	`portlet.css`
-		
-		-	`images/`
-		
-			-	(many directories)
-		
-		-	`js/`
-			
-			-	`main.js`
-		
-		-	`templates/`
-			
-			-	`init_custom.vm`
-			
-			-	`navigation.vm`
-			
-			-	`portal_normal.vm`
-			
-			-	`portal_pop_up.vm`
-			
-			-	`portlet.vm`
+    - `docroot/`
+
+        - `WEB-INF/`
+
+            - `liferay-plugin-package.properties`
+
+        - `_diffs/` - subfolders not created by default.
+
+            - `css/`
+
+            - `images/`
+
+            - `js/`
+
+            - `templates/`
+
+        - `css/`
+
+            - `application.css`
+
+            - `base.css`
+
+            - `custom.css`
+
+            - `dockbar.css`
+
+            - `extras.css`
+
+            - `forms.css`
+
+            - `layout.css`
+
+            - `main.css`
+
+            - `navigation.css`
+
+            - `portlet.css`
+
+        - `images/`
+
+            -   (many directories)
+
+        - `js/`
+
+            - `main.js`
+
+        - `templates/`
+
+            - `init_custom.vm`
+
+            - `navigation.vm`
+
+            - `portal_normal.vm`
+
+            - `portal_pop_up.vm`
+
+            - `portlet.vm`
 
 The `_diffs` folder that's created inside the `docroot` directory of your theme
 is important; this is where you place your theme's code. The `_diffs` folder
@@ -249,12 +253,12 @@ Whenever you modify your theme in Developer Studio, redeploy it by
 right-clicking your theme (located underneath your server), then selecting
 *Redeploy* from the menu. 
 
-![Figure 4.3: How to redeploy your theme plugin](../../images/05-themes-2.png)
+ ![Figure 4.3: How to redeploy your theme plugin](../../images/05-themes-2.png)
 
 Alternatively, redeploy your theme by opening a terminal, navigating to
 `themes/deep-blue-theme` and entering the command
 
-	ant deploy 
+    ant deploy 
 
 Wait a few seconds until the theme deploys, then refresh your browser to see
 your changes. 
@@ -262,59 +266,68 @@ your changes.
 Would you rather see your changes immediately, rather than having to redeploy to
 make your changes visible? Let's talk about Liferay Developer Mode to learn how. 
 
-<!-- Developer Mode section needs editing. I don't understand this concept very
-well. Hopefully this start is useful. -Russ --> 
-
 ## Developer Mode
 
 Do you want to develop Liferay resources without having to redeploy to see your
-portal modifications? Use Liferay Developer Mode! In Developer mode all caches
-are removed, so any changes you make are visible right away. You won't have to
-reboot the server as often if you use Developer Mode.
-<!-- Not certain I got that right. -Russ -->
+portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
+are removed, so any changes you make are visible right away. Also, you won't
+have to reboot the server as often in Developer Mode.
 
 Before you use Developer Mode, you'll have to add the
 `portal-developer.properties` file to your application server's configuration
 file. Each application server has a different configuration file or UI to
-specify system properties. Let's demonstrate using Tomcat application server.
+specify system properties; so you'll need to find out the specific method for
+your application server. Let's demonstrate using the Tomcat application server.
 
-In your `setenv.sh` file (`setenv.bat` in Windows), find the line setting the
-`JAVA_OPTS` variable and add the following to the list of options:
+In your `setenv.sh` file (`setenv.bat` in Windows), find the `CATALINA_OPTS`
+variable and add the following to the list of options:
     
-    `Dexternal-properties=portal-developer.properties` 
+    -Dexternal-properties=portal-developer.properties
 
-The following is an example of the `JAVA_OPTS` variable lines with your code
-included:
+The following is an example of the `CATALINA_OPTS` variable lines with the
+`external-properties` option appended to the end (all code must be on one line):
 
-        JAVA_OPTS="-Xms256m -Xmx1024m -XX:PermSize=32m -XX:MaxPermSize=160m
-        -Dfile.encoding=UTF8 -Duser.timezone=GMT+2
-        -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.config
-        -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
-        -Dexternal-properties=portal-developer.properties"
-    
- ![tip](../../images/tip-pen-paper.png)**Tip:** If you're already using the
+    CATALINA_OPTS=
+        "$CATALINA_OPTS
+         -Dfile.encoding=UTF8
+         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
+         -Duser.timezone=GMT
+         -Xmx1024m
+         -XX:MaxPermSize=256m"
+         -Dexternal-properties=portal-developer.properties"
+
+---
+
+ ![tip](../../images/tip-pen-paper.png) **Tip:** If you're already using the
  system property `external-properties` to load other properties files, add
  `portal-developer.properties` to the list and use a comma to separate it from
  other entries.
 
+---
+
 How does Developer Mode let you see your changes more quickly? In Developer
-Mode, there are several changes to the normal order of operations:
+Mode, there are several changes to the normal order of operations. Some of these
+key behaviors are listed below, along with the portal property override
+settings that trigger them:
 
-    - CSS files are loaded individually rather than being combined and loaded as
-    a single CSS file.
+- CSS files are loaded individually rather than being combined and loaded as a
+single CSS file (`theme.css.fast.load=false`).
 
-    - JavaScript files are also loaded individually, including JavaScript for
-    the portal itself and JavaScript related to any portlet registered through
-    `liferay-portlet.xml`. JavaScript logs are also enabled in Developer Mode. 
+- Layout template caching is disabled (`layout.template.cache.enabled=false`).
 
-    - Modification-based caching of web resources is disabled. 
+- The server does not launch a browser when starting up
+(`browser.launcher.url=`).
 
-    - Velocity Templates for themes and journal articles are not cached, so
-    changes will be applied immediately. 
+- FreeMarker Templates for themes and web content are not cached, so changes
+are applied immediately
+(`freemarker.engine.resource.modification.check.interval=0`). 
+
+- Minification of CSS and JavaScript resources is disabled
+(`minifier.enabled=false`).
 
 Individual file loading of your styling and behaviors, combined with disabled
-caching for web resources and Velocity Templates, let's you see your changes
-more quickly when operating in Developer Mode. 
+caching for layout and FreeMarker templates, let's you see your changes
+more quickly. 
 
 Now, when you modify your theme's `custom.css` file directly in your Liferay
 Bundle, you can see your changes applied as you make them! Make sure you copy
@@ -335,16 +348,18 @@ redeployment, the thumbnail will be automatically generated from
 Now go to the *Look and Feel* settings. Your theme's thumbnail should appear
 there, along with the *Classic* theme's thumbnail. 
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** To achieve the 1080x864
+---
+
+ ![tip](../../images/tip-pen-paper.png) **Tip:** To achieve the 1080x864
  resolution in a new browser window, use the button provided in the Resize
- Browser web content article displayed on the Welcome page. 
+ Browser web content article displayed on the Welcome page.
+
+---
  
 <!-- This tip comes verbatim from the ADDING A SCREENSHOT/THUMBNAIL slide in the
 Themes course's 02-building-a-theme.fodp slideshow -->
  
 Let's talk about Liferay's JavaScript library next. 
-
-<!-- Transition goes here. --> 
 
 ## JavaScript
 
@@ -364,7 +379,7 @@ Node object of the same portlet.
 - **Liferay.on('allPortletsReady', fn):** Executed after everything else
 (including AJAX portlets) has finished loading. 
 
-![Figure 4.4: Content of main.js](../../images/05-themes-4.png)
+ ![Figure 4.4: Content of main.js](../../images/05-themes-4.png)
 
 Now let's make your theme configurable by defining settings. 
 
@@ -379,14 +394,14 @@ content:
     "http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd">
 
     <look-and-feel>
-		<compatibility>
-			<version>6.1.10+</version>
-		</compatibility>
-		<theme id="deep-blue" name="Deep Blue">
-			<settings>
-				<setting key="my-setting" value="my-value" />
-			</settings>
-		</theme>
+        <compatibility>
+            <version>6.1.1+</version>
+        </compatibility>
+        <theme id="deep-blue" name="Deep Blue">
+            <settings>
+                <setting key="my-setting" value="my-value" />
+            </settings>
+        </theme>
     </look-and-feel>
 
 To define additional settings, add more `<settings>` elements to the file.
@@ -402,9 +417,9 @@ one and define a setting that lets you choose which header is displayed.
 In the `portal_normal.vm` template, write:
 
     #if ($theme.getSetting("header-type") == "detailed")
-		#parse ("$full_templates_path/header_detailed.vm")
+        #parse ("$full_templates_path/header_detailed.vm")
     #else
-		#parse ("$full_templates_path/header_brief.vm")
+        #parse ("$full_templates_path/header_brief.vm")
     #end
 
 Then, add two different entries in the `liferay-look-and-feel.xml` file
@@ -412,14 +427,14 @@ that refer to the same theme, but have different values for the header-type
 setting:
 
     <theme id="deep-blue" name="Deep Blue">
-		<settings>
-			<setting key="header-type" value="detailed" />
-		</settings>
-		</theme>
-			<theme id="deep-blue-mini" name="Deep Blue Mini">
-		<settings>
-			<setting key="header-type" value="brief" />
-		</settings>
+        <settings>
+            <setting key="header-type" value="detailed" />
+        </settings>
+        </theme>
+            <theme id="deep-blue-mini" name="Deep Blue Mini">
+        <settings>
+            <setting key="header-type" value="brief" />
+        </settings>
     </theme>
 
 Alternatively, you can make your settings configurable from within Liferay
@@ -442,11 +457,15 @@ with your company's name (e.g. Nosester) in the footer of your site pages:
             </p>
         </footer>
 
- ![note](../../images/tip-pen-paper.png)**Note:** Let's look more closely at two
- theme setting variables appearing in the above logic. The
- `display-slogan-footer` variable holds a boolean value indicating whether to
- display the version of the footer that contains your slogan. The `slogan`
- variable holds your slogan text.
+    ---
+
+     ![note](../../images/tip-pen-paper.png) **Note:** Let's look more closely
+     at two theme setting variables appearing in the above logic. The
+     `display-slogan-footer` variable holds a boolean value indicating whether
+     to display the version of the footer that contains your slogan. The
+     `slogan` variable holds your slogan text.
+
+    ---
 
 2. Declare the two theme setting variables in your `liferay-look-and-feel.xml`,
 located in your theme's `WEB-INF` folder:
@@ -470,22 +489,25 @@ the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
 sites and managing pages* section of [Using Liferay
 Portal](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/managing-pages-in-liferay-port-1)). 
 
-![Figure 4.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
+ ![Figure 4.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
 When the portal administrator saves the settings, your site's pages show the new
 footer, including the slogan. 
 
-![Figure 4.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
+ ![Figure 4.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
+---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Use a language properties hook
+ ![note](../../images/tip-pen-paper.png) **Note:** Use a language properties hook
  to display configurable theme settings properly, like the slogan text area and
  footer checkbox from the previous example. For details, see the [Overriding a
  *Language.properties*
  File](https://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/overriding-a-%3Cem%3Elanguage-properties-lt-em-gt-fi-1)
  section found in the *Hooks* chapter of this guide.
 
-Next let's customize your theme's color scheme. 
+---
+
+Next, let's customize your theme's color scheme. 
 
 ## Color Schemes
 
@@ -495,16 +517,18 @@ choose different background images, different border colors, and more.
 Here's how you can define your color schemes in `liferay-look-and-feel.xml`:
 
     <theme id="deep-blue" name="Deep Blue">
-		<settings>
-			<setting key="my-setting" value="my-value" />
-		</settings>
-		<color-scheme id="01" name="Day">
-			<css-class>day</css-class>
-			<color-scheme-images-path>${images-path}/color_schemes/${css-class}</color-scheme-images-path>
-		</color-scheme>
-		<color-scheme id="02" name="Night">
-			<css-class>night</css-class>
-		</color-scheme>
+        <settings>
+            <setting key="my-setting" value="my-value" />
+        </settings>
+        <color-scheme id="01" name="Day">
+            <css-class>day</css-class>
+            <color-scheme-images-path>
+                ${images-path}/color_schemes/${css-class}
+            </color-scheme-images-path>
+        </color-scheme>
+        <color-scheme id="02" name="Night">
+            <css-class>night</css-class>
+        </color-scheme>
     </theme>
 
 In your `_diffs/css` folder, create a `color_schemes` folder and place a `.css`
@@ -534,7 +558,7 @@ You can create separate thumbnail images for your color schemes. The
 images (you only have to place this element in one color scheme for it to affect
 both). For our example, create the folders `_diffs/images/color_schemes/day` and
 `_diffs/images/color_schemes/night`. In each folder place a `thumbnail.png` and
-`screenshot.png` file, according to the specifications defined in the Thumbanils
+`screenshot.png` file, according to the specifications defined in the Thumbnails
 section above. 
 
 Let's review the predefined settings available for your theme. 
@@ -543,58 +567,128 @@ Let's review the predefined settings available for your theme.
 
 The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
-portlet borders and bullet styles, but more settings may be added in the future.
-Modify these settings from the `liferay-look-and-feel.xml` file. 
+portlet borders, bullet styles, and the site name, but more settings may be
+added in the future. Modify these settings from the `liferay-look-and-feel.xml`
+file.
 
-By default, portlet borders are turned on. If set to `false`, the portal's
-default behavior is to turn off portlet borders. 
+---
 
-Here's how the XML looks when you modify the default to `false`:
+ ![note](../../images/tip-pen-paper.png) **Note:** To override default behavior
+ for individual portlets, you can modify the a portlet's `liferay-portlet.xml`
+ file.
 
-    <settings>
-		<setting key="portlet-setup-show-borders-default" value="false" />
-    </settings>
+---
 
-Override default behavior for individual portlets using:
+Let's get on with learning about predefining settings using themes. First, let's
+take a look at settings for portlet borders. 
 
-* `liferay-portlet.xml`
+### Portlet Borders
 
-<!-- Really had a hard time figuring out where we transition from portlet borders to bullet styles.  Still don't know. -Russ-->
-
-* Portlet CSS popup setting: Used by the *Navigation* portlet to determine the
-CSS class name of the list of pages. The value must be a comma separated list of
-valid bullet styles. 
-
-<!-- Is the above paragraph describing PortletCSS popup settings? -Russ--> 
-<!-- Beats me. --> 
-
-Example:
+The theme turns on portlet borders, by default. But you can turn them off by
+setting `portlet-setup-show-borders-default` to `false` in your theme's
+`liferay-look-and-feel.xml` file. For example, the following setting, makes
+border display configurable for the portal administrator, and disables showing
+the borders as the default:
 
     <settings>
-		<setting key="bullet-style-options" value="classic,modern,tablemenu" />
+        ...
+        <setting
+            configurable="true"
+            key="portlet-setup-show-borders-default"
+            type="checkbox"
+            value="false"
+        />
+        ...
     </settings>
+    
+Now that you've configured portlet borders, let's configure bullet styles
+used in your sites. 
 
-<!-- Is this where we begin talking about bullet styles? I was ocnfused in this section -Russ-->
+### Bullet Styles
 
-The user can change the bullet style in the *Navigation* portlet's configuration
-menu. The chosen style is applied as a CSS class on the `<div>` containing the
-navigation. This class is named in the following pattern:
+Liferay's Navigation portlet can be configured to use any bullet styles
+inherited by your theme or implementated in your theme. For example, if your
+theme uses Liferay's *classic* theme as its base parent, you can leverage its
+*arrows* bullet style. Here is the arrow bullet style's class from the
+*classic* theme's `_diffs/css/custom.css` file:
 
-    .nav-menu-style-{BULLET_STYLE_OPTION} {
-		... CSS selectors ...
+    .nav-menu-style-arrows ul {
+    list-style-image: url(@theme_image_path@/navigation/bullet_selected.png);
     }
 
-Here's an example of the HTML code needed to add style through CSS code. In this
-case the bullet style option is **modern**:
+You can make this bullet style, along with any bullet styles you implement,
+available for site administrators to use in their site's Navigation portlet.
+Just follow the naming convention as demonstrated below, substituting `[bullet
+style name]`, with your bullet style's name:
 
-    <div class="nav-menu nav-menu-style-modern">
-		<ul class="breadcrumbs lfr-component">
-			...
-		</ul>
-    </div>
+    .nav-menu-style-[bullet style name] ul {
+        ... CSS selectors ...
+    }
 
-Using CSS, and maybe some unobtrusive JavaScript, you can create any type of
-menu. 
+Then, make the `bullet-style` setting configurable in your
+`liferay-look-and-feel.xml` file. From this setting, list optional bullet styles
+you want available to site administrators, and set a default bullet style as
+well:
+
+    <settings>
+        ...
+        <setting
+            configurable="true"
+            key="bullet-style"
+            options="arrows,dots,classic,modern
+            value="dots"
+        />
+        ...
+    </settings>
+
+Your site administrators can now choose the bullet style to apply to the
+Navigation portlet. They select it from the site's *Look and Feel* control
+page. 
+
+Using CSS, and maybe some unobtrusive JavaScript, you can create a navigation
+menu that looks just the way you want it. Next, let's take a look at how to
+configure display your site's name. 
+
+### Site Names
+
+The site name settings let site administrators decide whether to display a
+site's name (i.e., title). But, if you are using using logo, that mentions your
+company or site, on each site page, you may find the default site name display
+distracting.
+
+ ![Figure 4.7: By default, themes display the site's title on each page.](../../images/theme-site-name.png)
+
+Since the themes you create in the Plugins SDK use Liferay's *_unstyled* theme
+as a base theme, you have the following settings available for configuring site
+name display:
+
+- `show-site-name-default` configures site name display and lets you turn it
+on/off by default. 
+
+- `show-site-name-supported` configures support for site name display and lets
+you turn it on/off by default. 
+
+Here is how you might specify them in your `liferay-look-and-feel.xml` file:
+
+    <settings>
+        ...
+        <setting
+            configurable="true"
+            key="show-site-name-default"
+            type="checkbox"
+            value="true"
+        />
+        <setting
+            configurable="true"
+            key="show-site-name-supported"
+            type="checkbox"
+            value="true"
+        />
+        ...
+    </settings>
+
+With these settings configurable, site administrators can control site name
+display from the each site's *Look and Feel* control page.
 
 Next we'll see how Liferay lets your theme inherit styling from a parent theme. 
 
@@ -604,7 +698,7 @@ By default, themes are based on the *_styled* theme, which provides only basic
 styling of portlets. If you open the `build.xml` file in your theme's directory
 using the Build Application Configuration Editor, you see the following code:
 
-![Figure 4.7: Content of build.xml](../../images/05-themes-5.png)
+ ![Figure 4.8: Content of build.xml](../../images/05-themes-5.png)
 
 The `theme.parent` property determines the theme your theme inherits its styling
 from. In addition to the *_styled* theme, you can choose to inherit from the
@@ -617,6 +711,9 @@ much is already done for you, there's less flexibility when building your
 design. It's a compromise between creating a theme as quickly as possible versus
 having full control of the result. It's your choice, and another example of the
 flexibility Liferay offers.
+
+Want to learn how to import resources with your theme? We'll discuss how you can
+do this in the next section.
 
 ## Importing resources with your themes
 
@@ -643,7 +740,7 @@ introduced in Liferay 6.1 is only applied out-of-the-box in Liferay CE.) The
 welcome theme and the pages and content that it imports to the default site
 provide a good example of the resources importer's functionality.
 
-![Figure 4.x: The welcome theme uses the resources importer to import pages and
+ ![Figure 4.9: The welcome theme uses the resources importer to import pages and
 content to the default site of a fresh Liferay
 installation.](../../images/welcome-theme.png)
 
@@ -656,12 +753,12 @@ Marketplace app.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** If you deploy a theme to your
+ ![tip](../../images/tip-pen-paper.png) **Tip:** If you deploy a theme to your
  Liferay Portal instance and don't have the resources importer already deployed,
  you might see a message like this:
  
-	19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queueing test-theme
-	for deploy because it is missing resources-importer-web
+    19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queueing test-theme
+    for deploy because it is missing resources-importer-web
 
  Such a message appears if the resources importer is declared as a dependency in
  your theme's `liferay-plugin-package.properties` file but is not deployed. You
@@ -676,10 +773,10 @@ theme's `docroot/WEB-INF/liferay-plugin-package.properties` file for two entries
 related the resources importer. One or both of these might be commented out or
 missing, depending on the version of your Plugins SDK:
 
-	required-deployment-contexts=\
-	    resources-importer-web
-	
-	resources-importer-developer-mode-enabled=true
+    required-deployment-contexts=\
+        resources-importer-web
+
+    resources-importer-developer-mode-enabled=true
 
 The first entry, `required-deployment-contexts=resources-importer-web`, declares
 your theme's dependency on the resources importer plugin. If you're not going to
@@ -696,14 +793,14 @@ If you'd like to import your theme's resources directly into a site, instead of
 into a site template, you can specify the following in your
 `liferay-plugin-package.properties` file:
 
-	resources-importer-target-class-name=com.liferay.portal.model.Group
+    resources-importer-target-class-name=com.liferay.portal.model.Group
 
-	resources-importer-target-value=<site-name>
+    resources-importer-target-value=<site-name>
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Warning:** If you're developing themes
- for Liferay Marketplace, don't configure your theme to import resources
+ ![warning](../../images/tip-pen-paper.png) **Warning:** If you're developing
+ themes for Liferay Marketplace, don't configure your theme to import resources
  directly into a site. Instead, use the default: import the resources into a
  site template. Do this by commenting out the
  `resources-importer-target-class-name` property. This way, it'll be much safer
@@ -764,128 +861,128 @@ and hierarchy of the site for Liferay to import as a site or site template. Even
 if you're not familiar with JSON, the `sitemap.json` file is easy to understand.
 Let's examine a sample `sitemap.json` file:
 
-	{
-		"layouts": [
-			{
-				"columns": [
-					[
-						{
-							"portletId": "58"
-						},
-						{
-							"portletId": "71"
-						},
-						{
-							"portletId": "56",
-							"portletPreferences": {
-								"articleId": "Without Border.html",
-								"groupId": "${groupId}",
-								"portletSetupShowBorders": "false"
-							}
-						},
-						{
-							"portletId": "56",
-							"portletPreferences": {
-								"articleId": "Custom Title.html",
-								"groupId": "${groupId}",
-								"portletSetupShowBorders": "true",
-								"portletSetupTitle_en_US": "Web Content Display with Custom Title",
-								"portletSetupUseCustomTitle": "true"
-							}
-						}
-					],
-					[
-						{
-							"portletId": "47"
-						},
-						{
-							"portletId": "71_INSTANCE_${groupId}",
-							"portletPreferences": {
-								"displayStyle": "[custom]",
-								"headerType": "root-layout",
-								"includedLayouts": "all",
-								"nestedChildren": "1",
-								"rootLayoutLevel": "3",
-								"rootLayoutType": "relative"
-							}
-						},
-						"Web Content with Image.html",
-						{
-							"portletId": "118",
-							"portletPreferences": {
-								"columns": [
-									[
-										{
-											"portletId": "56",
-											"portletPreferences": {
-												"articleId": "Child Web Content 1.xml",
-												"groupId": "${groupId}",
-												"portletSetupShowBorders": "true",
-												"portletSetupTitle_en_US": "Web Content Display with Child Structure 1",
-												"portletSetupUseCustomTitle": "true"
-											}
-										}
-									],
-									[
-										{
-											"portletId": "56",
-											"portletPreferences": {
-												"articleId": "Child Web Content 2.xml",
-												"groupId": "${groupId}",
-												"portletSetupShowBorders": "true",
-												"portletSetupTitle_en_US": "Web Content Display with Child Structure 2",
-												"portletSetupUseCustomTitle": "true"
-											}
-										}
-									]
-								],
-								"layoutTemplateId": "2_columns_i"
-							}
-						}
-					]
-				],
-				"friendlyURL": "/home",
-				"name": "Welcome",
-				"title": "Welcome"
-			},
-			{
-				"columns": [
-					[
-						{
-							"portletId": "58"
-						}
-					],
-					[
-						{
-							"portletId": "47"
-						}
-					]
-				],
-				"friendlyURL": "/parent-page",
-				"layouts": [
-					{
-						"friendlyURL": "/child-page-1",
-						"name": "Child Page 1",
-						"title": "Child Page 1"
-					},
-					{
-						"friendlyURL": "/child-page-2",
-						"name": "Child Page 2",
-						"title": "Child Page 2"
-					}
-				],
-				"name": "Parent Page",
-				"title": "Parent Page"
-			},
-			{
-				"friendlyURL": "/hidden-page",
-				"name": "Hidden Page",
-				"title": "Hidden Page",
-				"hidden": "true"
-			}
-		],
-		"layoutTemplateId": "2_columns_ii"
-	}
+    {
+        "layouts": [
+            {
+                "columns": [
+                    [
+                        {
+                            "portletId": "58"
+                        },
+                        {
+                            "portletId": "71"
+                        },
+                        {
+                            "portletId": "56",
+                            "portletPreferences": {
+                                "articleId": "Without Border.html",
+                                "groupId": "${groupId}",
+                                "portletSetupShowBorders": "false"
+                            }
+                        },
+                        {
+                            "portletId": "56",
+                            "portletPreferences": {
+                                "articleId": "Custom Title.html",
+                                "groupId": "${groupId}",
+                                "portletSetupShowBorders": "true",
+                                "portletSetupTitle_en_US": "Web Content Display with Custom Title",
+                                "portletSetupUseCustomTitle": "true"
+                            }
+                        }
+                    ],
+                    [
+                        {
+                            "portletId": "47"
+                        },
+                        {
+                            "portletId": "71_INSTANCE_${groupId}",
+                            "portletPreferences": {
+                                "displayStyle": "[custom]",
+                                "headerType": "root-layout",
+                                "includedLayouts": "all",
+                                "nestedChildren": "1",
+                                "rootLayoutLevel": "3",
+                                "rootLayoutType": "relative"
+                            }
+                        },
+                        "Web Content with Image.html",
+                        {
+                            "portletId": "118",
+                            "portletPreferences": {
+                                "columns": [
+                                    [
+                                        {
+                                            "portletId": "56",
+                                            "portletPreferences": {
+                                                "articleId": "Child Web Content 1.xml",
+                                                "groupId": "${groupId}",
+                                                "portletSetupShowBorders": "true",
+                                                "portletSetupTitle_en_US": "Web Content Display with Child Structure 1",
+                                                "portletSetupUseCustomTitle": "true"
+                                            }
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "portletId": "56",
+                                            "portletPreferences": {
+                                                "articleId": "Child Web Content 2.xml",
+                                                "groupId": "${groupId}",
+                                                "portletSetupShowBorders": "true",
+                                                "portletSetupTitle_en_US": "Web Content Display with Child Structure 2",
+                                                "portletSetupUseCustomTitle": "true"
+                                            }
+                                        }
+                                    ]
+                                ],
+                                "layoutTemplateId": "2_columns_i"
+                            }
+                        }
+                    ]
+                ],
+                "friendlyURL": "/home",
+                "name": "Welcome",
+                "title": "Welcome"
+            },
+            {
+                "columns": [
+                    [
+                        {
+                            "portletId": "58"
+                        }
+                    ],
+                    [
+                        {
+                            "portletId": "47"
+                        }
+                    ]
+                ],
+                "friendlyURL": "/parent-page",
+                "layouts": [
+                    {
+                        "friendlyURL": "/child-page-1",
+                        "name": "Child Page 1",
+                        "title": "Child Page 1"
+                    },
+                    {
+                        "friendlyURL": "/child-page-2",
+                        "name": "Child Page 2",
+                        "title": "Child Page 2"
+                    }
+                ],
+                "name": "Parent Page",
+                "title": "Parent Page"
+            },
+            {
+                "friendlyURL": "/hidden-page",
+                "name": "Hidden Page",
+                "title": "Hidden Page",
+                "hidden": "true"
+            }
+        ],
+        "layoutTemplateId": "2_columns_ii"
+    }
 
 The first thing you should declare in your `sitemap.json` file is a layout
 template ID so the target site or site template can reference the layout
@@ -912,28 +1009,28 @@ file specifies two tags for the `company_logo.png` image, one tag for the
 `Custom Title.html` web content article, and an abstract summary and small image
 for the `Child Web Content 1.xml` article structure:
 
-	{
-		"assets": [
-			{
-				"name": "company_logo.png",
-				"tags": [
-					"logo",
-					"company"
-				]
-			},
-			{
-				"name": "Custom Title.html",
-				"tags": [
-					"web content"
-				]
-			},
-			{
-				"abstractSummary": "This is an abstract summary.",
-				"name": "Child Web Content 1.xml",
-				"smallImage": "company_logo.png"
-			}
-		]
-	}
+    {
+        "assets": [
+            {
+                "name": "company_logo.png",
+                "tags": [
+                    "logo",
+                    "company"
+                ]
+            },
+            {
+                "name": "Custom Title.html",
+                "tags": [
+                    "web content"
+                ]
+            },
+            {
+                "abstractSummary": "This is an abstract summary.",
+                "name": "Child Web Content 1.xml",
+                "smallImage": "company_logo.png"
+            }
+        ]
+    }
 
 Now that you've learned about the directory structure for your resources, the
 `sitemap.json` file for referencing your resources, and the `assets.json` file
@@ -943,7 +1040,7 @@ you've already created in Liferay. Let's go over how to leverage your HTML
 (basic web content), XML (structures), or VM or FTL (templates) files from
 Liferay:
 
-- **web content (basic):** Edit the the article, click *Source*, and copy its
+- **web content (basic):** Edit the article, click *Source*, and copy its
 contents into an HTML file in the `resources-importer/journal/articles/` folder.
 
 - **web content (based on structure and template):** Edit the article, click
@@ -998,7 +1095,7 @@ Control Panel you can easily view your theme and its resources:
 
     - If you imported directly into a site, select its
     *Actions* &rarr; *Go to Public Pages* to see it.
-    
+
 You can go back to any of the beginning steps in this outline to make
 refinements. It's just that easy to develop a theme with resources intact!
 
@@ -1023,13 +1120,12 @@ and which you can download from Liferay Marketplace.
 
 ## Summary
 
-In this chapter you learned how to customize the look and feel of your Liferay
-Portal to the extent that you desire with custom themes. In the process you
-created your own theme, learned about its directory structure, and discovered
-the value of stlye inheritance from a parent theme. You also learned about
-Liferay's JavaScript library, AlloyUI, and how to and how to make your theme
-configurable by adding settings that portal administrators can manage within
-Liferay. Your CSS options, including color schemes, and predefined settings for
-your theme, were discussed to round out your understanding of theme development. 
-<!-- Took a crack at writing a summary. -Russ -->
+In this chapter, you learned how to customize the look and feel of your Liferay
+Portal by creating custom themes. During this process, you created your own
+theme, learned about its directory structure, and discovered the value of style
+inheritance from a parent theme. You also learned about Liferay's JavaScript
+library, AlloyUI, and how to make your theme configurable by adding settings
+that portal administrators can manage within Liferay. Your CSS options,
+including color schemes, and predefined settings for your theme, were discussed
+to round out your understanding of theme development. 
 

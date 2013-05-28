@@ -292,22 +292,20 @@ of formats. Please see chapter 4 on Documents and Media for more information.
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org),
 ImageMagick is available here: [ImageMagick](http://www.imagemagick.org) and
 Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to
-choose the correct versions of these applications for your operating system. You
-can build Xuggler 3.4.1012, which works with Liferay 6.1, from source or you can
-install it from the binaries:
+choose the correct versions of these applications for your operating system. We
+recommend that you install the latest stable versions. LibreOffice 3.6,
+ImageMagick 6.7.7, and Xuggler 5.4 work with Liferay 6.2. You need to install
+LibreOffice and ImageMagick manually but you can install Xuggler from Liferay's
+Server Administration Control Panel interface.
 
-- [Source](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-src.tar.gz)
+---
 
-- [Linux
-  (32-bit)](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-i686-pc-linux-gnu.sh)
+![Tip](../../images/01-tip.png) **Tip:** If you're running Liferay on a Linux
+server and experience a problem enabling Xuggler, check your server's glibc
+version. You might have to update glibc to version 2.6 or later in order for
+Xuggler to work.
 
-- [Linux
-  (64-bit)](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-x86_64-unknown-linux-gnu.sh)
-
-- [Mac OS
-  X](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-i386-apple-darwin9.8.0.sh)
-
-- [Windows](http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.4.FINAL/xuggle-xuggler.3.4.1012-win32-setup.exe)
+---
 
 Once you've installed these tools, you can use the External Services tab of the
 control panel to configure Liferay to use them.
