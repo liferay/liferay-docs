@@ -14,10 +14,10 @@ frameworks and how they're used. So don't be a stranger, keep checking back.
 Wouldn't it be nice if Liferay gave you a tool that *automagically* generated
 most of your common code for implementing *find*, *create*, *update*, and
 *delete* operations on the database? If we did, we'd call it Service Builder!
-In fact, we do! Service Builder is a model-driven code generation tool built by
-Liferay to automate the creation of interfaces and classes for database
-persistence and a service layer. Service Builder lets you focus on
-the higher level aspects of service design. 
+In fact, we do! Service Builder is a model-driven code generation tool we built
+by Liferay to automate the creation of interfaces and classes for database
+persistence and a service layer. Service Builder lets you focus on the higher
+level aspects of service design. 
 
 Service Builder generates a service layer with an implementation class that
 retrieves data classes, stores them, and adds the necessary business logic
@@ -38,13 +38,12 @@ although it should really be placed inside a new portlet. Create a file named
 `service.xml` in `portlets/my-greeting-portlet/docroot/WEB-INF` within the
 Plugins SDK and add the following content: 
 
-    <?xml version="1.0"?>
-    <!DOCTYPE service-builder PUBLIC
-    "-//Liferay//DTD Service Builder 6.1.0//EN"
-    "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
-    <service-builder package-path="com.sample.portlet.library">
-        <namespace>Library</namespace>
-        <entity name="Book" local-service="true" remote-service="true">
+    <?xml version="1.0"?> <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD
+Service Builder 6.1.0//EN"
+"http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.sample.portlet.library">
+<namespace>Library</namespace> <entity name="Book" local-service="true"
+remote-service="true">
 
             <!-- PK fields -->
 
@@ -56,23 +55,15 @@ Plugins SDK and add the following content:
 
             <!-- Audit fields -->
 
-            <column name="companyId" type="long" />
-            <column name="userId" type="long" />
-            <column name="userName" type="String" />
-            <column name="createDate" type="Date" />
-            <column name="modifiedDate" type="Date" />
+            <column name="companyId" type="long" /> <column name="userId"
+type="long" /> <column name="userName" type="String" /> <column
+name="createDate" type="Date" /> <column name="modifiedDate" type="Date" />
 
             <!-- Other fields -->
 
-            <column name="title" type="String" />
-        </entity>
-    </service-builder>
+            <column name="title" type="String" /> </entity> </service-builder>
 
-Let's look a little more closely at the contents of our `service.xml` file. 
- 
-#### Overview of *service.xml* 
-
-Let's look at the elements of our `service.xml` file: 
+Let's look a little more closely at the contents of our `service.xml` file: 
 
 - `<service-builder package-path="com.sample.portlet.library">`: Here we
   specified the package path where the class will be generated. In this
@@ -103,189 +94,193 @@ Now that you have your `service.xml` file, let's generate the service.
 ### Generate the Service 
 
 Now let's use our `service.xml` to build a service. You can use Liferay
-Developer Studio or your terminal to build your sevice layer. 
+Developer Studio or your terminal to build your sevice layer. FIrst let's do it
+using Developer Studio. 
 
 #### Using Developer Studio to Generate a Service 
 
 From the *Package Explorer*, open your `service.xml` file; it should be in your
 `my-greeting-portlet/docroot/WEB-INF` folder. By default, the file opens up in
-the *Service Builder Editor*. Make sure you are in *Overview* mode, then select
+the *Service Builder Editor*. Make sure you're in *Overview* mode, then select
 *Build Services*. 
 
 ![Figure 10.1: *Overview* mode in editor](../../images/10-frameworks-1.png)
 
-You should receive a message in your console stating BUILD SUCCESSFUL along
-with a list of generated files. We'll overview these files later in this
-section.
+You should see a BUILD SUCCESSFUL message in your console, along with a list of
+generated files. Don't worry about these files for now; we'll talk about them
+later in this section. 
 
-The *Overview* mode in Developer Studio's *Service Builder Editor* can be used
-to build services or build web service deployment descriptors (WSDDs). The
-editor also has *Diagram* and *Source* modes. If we select *Diagram*, we are
-given a graph structured background onto which we can add entities and
-relationships from the *Palette* available on the right hand side of the editor.
-Here is a view of the editor in *Diagram* mode:
+You just used the *Overview* mode in Developer Studio's *Service Builder
+Editor* to build services; it can also build web service deployment descriptors
+(WSDDs). *Service Builder Editor* also has *Diagram* and *Source* modes. If you
+select *Diagram*, you're given a graph structured background; the *Palette* on
+the right hand side of the editor lets you add entities and relationships .
+Here's a view of the editor in *Diagram* mode: 
 
 ![Figure 10.2: *Diagram* mode in editor](../../images/10-frameworks-2.png)
 
-Lastly, select *Source* mode to edit the XML source directly. Here is an example
-`service.xml` shown in *Source* the editor's mode:
+*Source* mode lets you edit the XML source directly. Here's an example
+`service.xml` shown in the editor's *Source* mode: 
 
 ![Figure 10.3: *Source* mode in editor](../../images/10-frameworks-3.png)
 
-Developer Studio offers many options to help automate creating interfaces and
-classes for your database persistence and service layers.
+With Developer Studio, you have lots of tools to help automate the creation of
+interfaces and classes for your database persistence and service layers. 
+
+Next let's generate a service from the terminal. 
 
 #### Using the Terminal to Generate a Service 
 
-**Using the terminal:*** Open a terminal window in your
-`portlets/my-greeting-portlet` directory and enter this command:
-
-	ant build-service
-
-The service has been generated successfully when you see BUILD SUCCESSFUL in the
-terminal window, you should see that a large number of files have been
-generated. An overview of these files is provided below:
-
--   Persistence
-
-    -   `BookPersistence` - book persistence interface `@generated`
-
-    -   `BookPersistenceImpl` - book persistence `@generated`
-
-    - `BookUtil` - book persistence util, instances BookPersistenceImpl
-    `@generated`
-
--   Local Service
-
-    - **`BookLocalServiceImpl`** - local service implementation. This is the
-    only class within the local service that you will be able to modify
-    manually. Your business logic will be here.
-
-    -   `BookLocalService` - local service interface `@generated`
-
-    -   `BookLocalServiceBaseImpl` - local service base `@generated` `@abstract`
-
-    - `BookLocalServiceUtil` - local service util, instances
-    `BookLocalServiceImpl` `@generated`
-
-    - `BookLocalServiceWrapper` - local service wrapper, wraps
-    `BookLocalServiceImpl` `@generated`
-
--   Remote Service
-
-    - **`BookServiceImpl`** - remove service implementation. Put here the code
-    that adds additional security checks and invokes the local service.
-
-    -   `BookService` - remote service interface `@generated`
-
-    - `BookServiceBaseImpl` - remote service base `@generated` `@abstract`
-
-    - `BookServiceUtil` - remote service util, instances `BookServiceImpl`
-    `@generated`
-
-    - `BookServiceWrapper` - remote service wrapper, wraps `BookServiceImpl`
-    `@generated`
-
-    - `BookServiceSoap` - soap remote service, proxies `BookServiceUtil`
-    `@generated`
-
-    - `BookSoap` - soap book model, similar to `BookModelImpl`, does not
-    implement Book `@generated`
-
-    - `BookServiceHttp` - http remote service, proxies `BookServiceUtil`
-    `@generated`
-
--   Model
-
-    -   `BookModel` - book base model interface `@generated`
-
-    -   `BookModelImpl` - book base model `@generated`
-
-    -   `Book` - book model interface `@generated`
-
-    - **`BookImpl`** - book model implementation. You can use this class to add
-    additional methods to your model other than the auto-generated field getters
-    and setters.
-
-    -   `BookWrapper` - book wrapper, wraps `Book` `@generated`
-
-Out of all of these classes only three can be manually modified:
-`BookLocalServiceImpl`, `BookServiceImpl` and `BookImpl`.
-
-### Write the Local Service Class 
-
-In the file overview above, you will see that `BookLocalService` is the
-interface for the local service. It contains the signatures of every method in
-`BookLocalServiceBaseImpl` and `BookLocalServiceImpl`.
-`BookLocalServiceBaseImpl` contains a few automatically generated methods
-providing common functionality. Since this class is generated, you should never
-modify it, or your changes will be overwritten the next time you run Service
-Builder. Instead, all custom code should be placed in `BookLocalServiceImpl`.
-
-Open the following file:
-
-    /docroot/WEB-INF/src/com/sample/portlet/library/service/impl/BookLocalServiceImpl.java
-
-We will add the database interaction methods to this service layer class. Add
-the following method to the `BookLocalServiceImpl` class:
-
-    public Book addBook(long userId, String title)
-        throws PortalException, SystemException {
-        User user = UserUtil.findByPrimaryKey(userId);
-        Date now = new Date();
-        long bookId = CounterLocalServiceUtil.increment(Book.class.getName());
-
-        Book book = bookPersistence.create(bookId);
-
-        book.setTitle(title);
-        book.setCompanyId(user.getCompanyId());
-        book.setUserId(user.getUserId());
-        book.setUserName(user.getFullName());
-        book.setCreateDate(now);
-        book.setModifiedDate(now);
-        book.setTitle(title);
-
-        return bookPersistence.update(book, false);
-    }
-
-Before you can use this new method, you must add its signature to the
-`BookLocalService` interface by running service builder again.
-
-***Using Developer Studio:*** As we did before, open your `service.xml` file and
-make sure you are in the *Overview* mode. Then, select *Build Services*.
-
-***Using the terminal:*** Navigate to the root directory of your portlet in the
-terminal and run:
+To generate a service in your terminal window, navigate to your
+`portlets/my-greeting-portlet` directory and enter this command: 
 
     ant build-service
 
-Service Builder looks through `BookLocalServiceImpl` and automatically copies
-the signatures of each method into the interface. You can now add a new book to
-the database by making the following call
+A BUILD SUCCESSFUL message indicates that the service was generated
+successfully, and you should see that a large number of files have been
+generated. 
+
+Next let's look at the files generated when we built the service.
+
+#### Generated files 
+
+Whenever you build a service, there are a number of files automatically
+generated for you. Let's look at them briefly: 
+
+- Persistence
+
+    - `BookPersistence`: book persistence interface `@generated`
+
+    - `BookPersistenceImpl`: book persistence `@generated`
+
+    - `BookUtil`: book persistence util, instances BookPersistenceImpl
+      `@generated`
+
+- Local Service
+
+    - *`BookLocalServiceImpl`*: local service implementation. This is the only
+      class within the local service that you can modify manually. Your
+business logic will be here. 
+
+    - `BookLocalService`: local service interface `@generated`
+
+    - `BookLocalServiceBaseImpl`: local service base `@generated` `@abstract`
+
+    - `BookLocalServiceUtil`: local service util, instances
+      `BookLocalServiceImpl` `@generated`
+
+    - `BookLocalServiceWrapper`: local service wrapper, wraps
+      `BookLocalServiceImpl` `@generated`
+
+- Remote Service
+
+    - *`BookServiceImpl`*: remove service implementation. This is where you
+      should put the code that adds additional security checks and invokes the
+local service. 
+
+    - `BookService`: remote service interface `@generated`
+
+    - `BookServiceBaseImpl`: remote service base `@generated` `@abstract`
+
+    - `BookServiceUtil`: remote service util, instances `BookServiceImpl`
+      `@generated`
+
+    - `BookServiceWrapper`: remote service wrapper, wraps `BookServiceImpl`
+      `@generated`
+
+    - `BookServiceSoap`: soap remote service, proxies `BookServiceUtil`
+      `@generated`
+
+    - `BookSoap`: soap book model, similar to `BookModelImpl`, does not
+      implement Book `@generated`
+
+    - `BookServiceHttp`: http remote service, proxies `BookServiceUtil`
+      `@generated`
+
+- Model
+
+    - `BookModel`: book base model interface `@generated`
+
+    - `BookModelImpl`: book base model `@generated`
+
+    - `Book`: book model interface `@generated`
+
+    - *`BookImpl`*: book model implementation. You can use this class to add
+      methods to your model other than the auto-generated field getters and
+setters. 
+
+    - `BookWrapper`: book wrapper, wraps `Book` `@generated`
+
+Only three classes from the above list can be manually modified:
+`BookLocalServiceImpl`, `BookServiceImpl` and `BookImpl`. 
+
+Now let's write the local service class. 
+
+### Write the Local Service Class 
+
+In the file overview above, you can see that `BookLocalService` is the
+interface for the local service. It contains the signatures of every method in
+`BookLocalServiceBaseImpl` and `BookLocalServiceImpl`. The
+`BookLocalServiceBaseImpl` class contains a few automatically generated methods
+providing common functionality. Don't modify this class; it's automatically
+generated, so your changes would be overwritten the next time you ran Service
+Builder. Instead, place all your custom code in `BookLocalServiceImpl`. 
+
+To write the local service class, open the following file: 
+
+    /docroot/WEB-INF/src/com/sample/portlet/library/service/impl/BookLocalServiceImpl.java
+
+To add the database interaction methods to this service layer class, we'll add
+the following method to the `BookLocalServiceImpl` class: 
+
+    public Book addBook(long userId, String title) throws PortalException,
+SystemException { User user = UserUtil.findByPrimaryKey(userId); Date now = new
+Date(); long bookId = CounterLocalServiceUtil.increment(Book.class.getName());
+
+        Book book = bookPersistence.create(bookId);
+
+        book.setTitle(title); book.setCompanyId(user.getCompanyId());
+book.setUserId(user.getUserId()); book.setUserName(user.getFullName());
+book.setCreateDate(now); book.setModifiedDate(now); book.setTitle(title);
+
+        return bookPersistence.update(book, false); }
+
+Before you can use this new method, you must add its signature to the
+`BookLocalService` interface by building the service in Service Builder again.
+Let's review the procedure: 
+
+- *Using Developer Studio:* Open your `service.xml` file, make sure you're in
+  *Overview* mode, then select *Build Services*. 
+
+- *Using the terminal:* Navigate to the root directory of your portlet in the
+  terminal and run `ant build-service`. 
+
+Service Builder looks through `BookLocalServiceImpl` and copies the signatures
+of each method into the interface. Now you can add a new book to the database
+with the following call: 
 
     BookLocalServiceUtil.addBook(userId, "A new title");
 
 ### Overview of *service.properties* 
 
-Service Builder generates the properties file `service.properties` in the `src`
-directory of your service. Liferay Portal uses these properties to alter your
-service's database schema and load Spring configuration files to support
-deployment of your service. You should not modify this file, but rather make any
-necessary overrides in a `service-ext.properties` file in the `src` folder.
+Service Builder generates the properties file `service.properties` in your
+service's `src` directory. Liferay Portal uses these properties to alter your
+service's database schema and load Spring configuration files that support
+deployment of your service. You shouldn't modify `service.properties`; make any
+necessary overrides in a `service-ext.properties` file in the `src` folder. 
 
-The only property that you may need to override from this file is
+The property you're most likely to override from `service.properties` is
 `build.auto.upgrade`. Setting `build.auto.upgrade=false` in your
-`service-ext.properties` prevents Liferay from trying to automatically apply any
-changes to the database model when a new version of the plugin is deployed. This
-is needed in projects in which it is preferred to manually manage the changes to
-the database or in which the SQL schema has been modified manually after
-generation by Service Builder.
+`service-ext.properties` prevents Liferay from automatically applying changes
+to the database model when a new version of the plugin is deployed. This is
+needed in projects where you want to manually manage changes to the database or
+the SQL schema has been modified manually after generation by Service Builder. 
 
 ### Built-In Liferay Services 
 
-In addition to the services you create using Service Builder, your portlets may
-also access a variety of services built into Liferay. These include the
-following:
+In addition to the services you create using Service Builder, your portlets can 
+access a variety of services built into Liferay. These include the
+following: 
 
 - `UserService`
 
@@ -308,21 +303,20 @@ following:
 For more information on these services, see Liferay's Javadocs at
 [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
+Next we'll show you Liferay's security and permissions systems. 
 ## Security and Permissions 
 
 JSR-286 (and JSR-168) defines a simple security scheme using portlet roles and
-their mapping to portal roles. On top of that, Liferay provides a fine-grained
-permissions system, which developers can use to implement access security in
-their custom portlets. This section of the document gives an overview of the
-JSR-286 (JSR-168) security system, Liferay's permission system, and how to use
-them in your own portlets.
+their mapping to portal roles. On top of that, Liferay provides a fine grained
+permissions system you can use to implement access security in your custom
+portlets. Here we'll give an overview of the JSR-286 (JSR-168) security system,
+Liferay's permission system, and how to use them in your own portlets. 
 
 ### JSR Portlet Security 
 
-The JSR specification defines the means to specify the roles that will be used
-by each portlet within its definition in `portlet.xml`. For example, the
-Liferay's Blogs portlet definition references 3 roles - *guest*, *power-user*,
-and *user*:
+The JSR specification defines the means to specify the roles used by each
+portlet in its `portlet.xml` definition. For example, the Liferay *Blogs*
+portlet definition references the *guest*, *power-user*, and *user* roles: 
 
 	<portlet>
 		<portlet-name>33</portlet-name>
@@ -354,45 +348,45 @@ and *user*:
 		<supported-public-render-parameter>tag</supported-public-render-parameter>
 	</portlet>
 
-These roles need to be mapped to specific roles within the portal. The reason
-for this mapping is to provide a means for the deployer of a portlet to resolve
-conflicts between roles that have the same name but are from different portlets
-(e.g. portlets from different developers).
+Your `portlet.xml` roles need to be mapped to specific roles in the portal.
+That way the deployer of a portlet can resolve conflicts between roles with the
+same name that are from different portlets (e.g. portlets from different
+developers). 
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Each role named in a portlet's
- `<security-role-ref>` element is given permission to add the portlet to a page.
+![note](../../images/tip-pen-paper.png)**Note:** Each role named in a portlet's
+`<security-role-ref>` element is given permission to add the portlet to a page. 
 
 ---
 
-In order to do the mapping, it is necessary to use *portal-specific*
-configuration files. In the case of Liferay, you can define the mapping in
+To map the roles to the portal, you'll have to use *portal-specific*
+configuration files. With Liferay, you can define the mapping in
 `liferay-portlet.xml`. For an example, see the mapping defined inside
-`liferay-portlet.xml` found in `portal-web/docroot/WEB-INF`:
+`liferay-portlet.xml` found in `portal-web/docroot/WEB-INF`: 
 
-	<role-mapper>
-		<role-name>administrator</role-name>
-		<role-link>Administrator</role-link>
+    <role-mapper>
+        <role-name>administrator</role-name>
+        <role-link>Administrator</role-link>
     </role-mapper>
     <role-mapper>
-		<role-name>guest</role-name>
-		<role-link>Guest</role-link>
+        <role-name>guest</role-name>
+        <role-link>Guest</role-link>
     </role-mapper>
     <role-mapper>
-		<role-name>power-user</role-name>
-		<role-link>Power User</role-link>
+        <role-name>power-user</role-name>
+        <role-link>Power User</role-link>
     </role-mapper>
     <role-mapper>
-		<role-name>user</role-name>
-		<role-link>User</role-link>
-	</role-mapper>
+        <role-name>user</role-name>
+        <role-link>User</role-link>
+    </role-mapper>
 
-This means that if a portlet definition references the role `power-user`, that
-portlet will be mapped to the Liferay role in its database called *Power User*.
+If a portlet definition references the role `power-user`, that portlet is
+mapped to the Liferay role called *Power User* that's already in its database. 
 
-In your portlet's code, you can then use methods as defined in portlet
-specification:
+Once roles are mapped to the portal, you can use methods as defined in portlet
+specification: 
 
 - `getRemoteUser()`
 
@@ -400,188 +394,188 @@ specification:
 
 - `getUserPrincipal()`
 
-For example, the following code could be used to check if the current user has
+For example, you can use the following code to check if the current user has
 the `power-user` role:
 
     if (renderRequest.isUserInRole("power-user")) {
         // ...
     }
 
-Note by default, Liferay doesn't use the `isUserInRole()` method in any of the
-built-in portlets. Instead Liferay uses its own permission system directly to
-achieve more *fine-grained* security. The next section describes Liferay's
-Permission System and how to use it in your portlets, so that you can decide
-which option fits your needs best.
+By default, Liferay doesn't use the `isUserInRole()` method in any built-in
+portlets. Liferay uses its own permission system directly to achieve more
+*fine-grained* security. Next we'll describe Liferay's Permission System and
+how to use it in your portlets, and you can decide which option fits your needs
+best. 
 
-### Liferay's Permission System Overview 
+### Liferay's Permission System 
 
-Adding permissions to custom portlets consists of four main steps (also known as
-DRAC):
+You can add permissions to your custom portlets using four easy steps (also
+known as DRAC): 
 
-1.  **D**efine all resources and their permissions.
+1. **D**efine all resources and their permissions. 
 
-2. **R**egister all the resources defined in step 1 in the permissions system.
-This is also known as *adding resources.*
+2. **R**egister all defined resources in the permissions system.  This is also
+   known as *adding resources*. 
 
-3.  **A**ssociate the necessary permissions with resources.
+3. **A**ssociate the necessary permissions with resources. 
 
-4.  **C**heck permission before returning resources.
+4. **C**heck permission before returning resources. 
 
 ### Implementing Permissions 
 
-Before you can add permissions to a portlet, let's get an understanding of the
-following two critical terms used throughout this section:
+Before you start adding permissions to a portlet, make sure you underestand two
+critical terms used throughout this section: 
 
-- **Resource** - A generic term for any object represented in the portal.
-Examples of resources include portlets (e.g. Message Boards, Calendar, etc.),
-Java classes (e.g. Message Board Topics, Calendar Events, etc.), and files (e.g.
-documents, images, etc.)
+- *Resource*: A generic term for any object represented in the portal.
+  Examples of resources include portlets (e.g. Message Boards, Calendar, etc.),
+Java classes (e.g. Message Board Topics, Calendar Events, etc.), and files
+(e.g.  documents, images, etc.). 
 
-- **Permission** - An action on a resource. For example, the *view* action with
-respect to *viewing the calendar portlet* is defined as a permission in Liferay.
+- *Permission*: An action on a resource. For example, the *view* action with
+respect to *viewing the calendar portlet* is defined as a permission in Liferay. 
 
-Keep in mind that permissions for a *portlet* resource are implemented a little
-differently from other resources such as Java classes and files. In each of the
-subsections below, the permission implementation for the *portlet* resource is
-explained first, then the model (and file) resource.
+It's important to know that permissions for *portlet* resources are implemented
+a little differently than for other resources like Java classes and files. In
+each subsection below, we'll describe permission implementation for the
+*portlet* resource first, followed by the model (and file) resource. 
 
-The first step is to define your resources and permissions (or *actions*). So
-let's consider how this is done for the blogs portlet. Look at resource-actions
-XML file `blogs.xml` in `portal-impl/src/resource-actions` to see the following
-mapping of resources to actions:
+The first step is to define your resources and permissions (or *actions*).
+Let's consider how this is done for the *blogs* portlet. Open the `blogs.xml`
+file in `portal-impl/src/resource-actions` to see the following mapping of
+resources to actions: 
 
-	<?xml version="1.0"?>
-	<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
+    <?xml version="1.0"?>
+    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
 
-	<resource-action-mapping>
-		<portlet-resource>
-			<portlet-name>33</portlet-name>
-			<permissions>
-				<supports>
-					<action-key>ADD_TO_PAGE</action-key>
-					<action-key>CONFIGURATION</action-key>
+    <resource-action-mapping>
+        <portlet-resource>
+            <portlet-name>33</portlet-name>
+            <permissions>
+                <supports>
+                    <action-key>ADD_TO_PAGE</action-key>
+                    <action-key>CONFIGURATION</action-key>
 					<action-key>VIEW</action-key>
-				</supports>
-				<site-member-defaults>
-					<action-key>VIEW</action-key>
-				</site-member-defaults>
-				<guest-defaults>
-					<action-key>VIEW</action-key>
-				</guest-defaults>
-				<guest-unsupported>
-					<action-key>CONFIGURATION</action-key>
-				</guest-unsupported>
-			</permissions>
-		</portlet-resource>
-		<portlet-resource>
-			<portlet-name>161</portlet-name>
-			<permissions>
-				<supports>
-					<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-					<action-key>CONFIGURATION</action-key>
-					<action-key>VIEW</action-key>
-				</supports>
-				<site-member-defaults>
-					<action-key>VIEW</action-key>
-				</site-member-defaults>
-				<guest-defaults>
-					<action-key>VIEW</action-key>
-				</guest-defaults>
-				<guest-unsupported>
-					<action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-					<action-key>CONFIGURATION</action-key>
-				</guest-unsupported>
-			</permissions>
-		</portlet-resource>
-		<model-resource>
-			<model-name>com.liferay.portlet.blogs</model-name>
-			<portlet-ref>
-				<portlet-name>33</portlet-name>
-			</portlet-ref>
-			<permissions>
-				<supports>
-					<action-key>ADD_ENTRY</action-key>
-					<action-key>PERMISSIONS</action-key>
-					<action-key>SUBSCRIBE</action-key>
-				</supports>
-				<site-member-defaults />
-				<guest-defaults />
-				<guest-unsupported>
-					<action-key>ADD_ENTRY</action-key>
-					<action-key>PERMISSIONS</action-key>
-					<action-key>SUBSCRIBE</action-key>
-				</guest-unsupported>
-			</permissions>
-		</model-resource>
-		<model-resource>
-			<model-name>com.liferay.portlet.blogs.model.BlogsEntry</model-name>
-			<portlet-ref>
-				<portlet-name>33</portlet-name>
-			</portlet-ref>
-			<permissions>
-				<supports>
-					<action-key>ADD_DISCUSSION</action-key>
-					<action-key>DELETE</action-key>
-					<action-key>DELETE_DISCUSSION</action-key>
-					<action-key>PERMISSIONS</action-key>
-					<action-key>UPDATE</action-key>
-					<action-key>UPDATE_DISCUSSION</action-key>
-					<action-key>VIEW</action-key>
-				</supports>
-				<site-member-defaults>
-					<action-key>ADD_DISCUSSION</action-key>
-					<action-key>VIEW</action-key>
-				</site-member-defaults>
-				<guest-defaults>
-					<action-key>ADD_DISCUSSION</action-key>
-					<action-key>VIEW</action-key>
-				</guest-defaults>
-				<guest-unsupported>
-					<action-key>DELETE</action-key>
-					<action-key>DELETE_DISCUSSION</action-key>
-					<action-key>PERMISSIONS</action-key>
-					<action-key>UPDATE</action-key>
-					<action-key>UPDATE_DISCUSSION</action-key>
-				</guest-unsupported>
-			</permissions>
-			...
-		</model-resource>
-	</resource-action-mapping>
+                </supports>
+                <site-member-defaults>
+                    <action-key>VIEW</action-key>
+                </site-member-defaults>
+                <guest-defaults>
+                    <action-key>VIEW</action-key>
+                </guest-defaults>
+                <guest-unsupported>
+                    <action-key>CONFIGURATION</action-key>
+                </guest-unsupported>
+            </permissions>
+        </portlet-resource>
+        <portlet-resource>
+            <portlet-name>161</portlet-name>
+            <permissions>
+                <supports>
+                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+                    <action-key>CONFIGURATION</action-key>
+                    <action-key>VIEW</action-key>
+                </supports>
+                <site-member-defaults>
+                    <action-key>VIEW</action-key>
+                </site-member-defaults>
+                <guest-defaults>
+                    <action-key>VIEW</action-key>
+                </guest-defaults>
+                <guest-unsupported>
+                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+                    <action-key>CONFIGURATION</action-key>
+                </guest-unsupported>
+            </permissions>
+        </portlet-resource>
+        <model-resource>
+            <model-name>com.liferay.portlet.blogs</model-name>
+            <portlet-ref>
+                <portlet-name>33</portlet-name>
+            </portlet-ref>
+            <permissions>
+                <supports>
+                    <action-key>ADD_ENTRY</action-key>
+                    <action-key>PERMISSIONS</action-key>
+                    <action-key>SUBSCRIBE</action-key>
+                </supports>
+                <site-member-defaults />
+                <guest-defaults />
+                <guest-unsupported>
+                    <action-key>ADD_ENTRY</action-key>
+                    <action-key>PERMISSIONS</action-key>
+                    <action-key>SUBSCRIBE</action-key>
+                </guest-unsupported>
+            </permissions>
+        </model-resource>
+        <model-resource>
+            <model-name>com.liferay.portlet.blogs.model.BlogsEntry</model-name>
+            <portlet-ref>
+                <portlet-name>33</portlet-name>
+            </portlet-ref>
+            <permissions>
+                <supports>
+                    <action-key>ADD_DISCUSSION</action-key>
+                    <action-key>DELETE</action-key>
+                    <action-key>DELETE_DISCUSSION</action-key>
+                    <action-key>PERMISSIONS</action-key>
+                    <action-key>UPDATE</action-key>
+                    <action-key>UPDATE_DISCUSSION</action-key>
+                    <action-key>VIEW</action-key>
+                </supports>
+                <site-member-defaults>
+                    <action-key>ADD_DISCUSSION</action-key>
+                    <action-key>VIEW</action-key>
+                </site-member-defaults>
+                <guest-defaults>
+                    <action-key>ADD_DISCUSSION</action-key>
+                    <action-key>VIEW</action-key>
+                </guest-defaults>
+                <guest-unsupported>
+                    <action-key>DELETE</action-key>
+                    <action-key>DELETE_DISCUSSION</action-key>
+                    <action-key>PERMISSIONS</action-key>
+                    <action-key>UPDATE</action-key>
+                    <action-key>UPDATE_DISCUSSION</action-key>
+                </guest-unsupported>
+            </permissions>
+            ...
+        </model-resource>
+    </resource-action-mapping>
 
-Permissions in the blogs portlet are defined at several different levels,
-coinciding with the different sections of the resource-actions XML file. In the
-`<portlet-resource>` level, actions and default permissions are defined on the
-portlet itself. Changes to portlet level permissions are performed on a per-site
-basis. These settings affect whether users can add the portlet to a page, edit
-the portlet's configuration, or view the portlet at all, regardless of portlet's
-content. All these actions are defined inside the `<supports>` tag for the
-permissions of the portlet resource. The default portlet-level permissions for
-members of the site are defined inside the `<site-member-defaults>` tag. In the
-case of this blogs portlet, members of the site should be able to view any blog
-in the site. Likewise, default guest permissions are defined in the
-`<guest-defaults>` tag. Lastly, the `<guest-unsupported>` tag contains
-permissions forbidden to guests. So in the case of this portlet, guests cannot
-be given permission to configure the portlet, even by a user with the
-administrator role.
+Permissions in the blogs portlet are defined at several different levels; each
+level coincides with a section of the `resource-actions` XML file (in this
+case, `blogs.xml`). At the `<portlet-resource>` level, actions and default
+permissions are defined on the portlet itself. Changes to portlet level
+permissions are performed on a per-site basis. Portlet permissions affect
+whether users can add the portlet to a page, edit the portlet's configuration,
+or view the portlet at all, regardless of it's content. All these actions are
+defined inside the `<supports>` tag for the permissions of the portlet
+resource. The default portlet-level permissions for members of the site are
+defined inside the `<site-member-defaults>` tag. In the case of this blogs
+portlet, members of the site should be able to view any blog in the site.
+Likewise, default guest permissions are defined in the `<guest-defaults>` tag.
+Lastly, the `<guest-unsupported>` tag contains permissions forbidden to guests.
+In the case of this portlet, guests can't be given permission to configure the
+portlet, even by a user with an administrator role. 
 
-The next level of permissions is defined in the `<model-resource>` section. This
+The `<model-resource>` section contains the next level of permissions. This
 level of permissions is based on the *scope* of an individual instance of the
-portlet. A *scope* in Liferay is simply a way of specifying how widely the data
-from an instance of a portlet is shared. For example, if you place a blogs
-portlet on a page in the guest site and then place another blogs portlet on
-another page in the *same* site, the two blogs will share the same set of posts.
-This demonstrates the default or *site-level* scope. However, if you reconfigure
-one of the two blogs changing its scope to the current page, that blogs portlet
-instance will no longer share content with the other instance (or any of the
-other blogs instances in that site). Thus, with respect to permissions, a
-portlet *instance* can either span an entire site or be restricted to a single
-page.
+portlet. A *scope* in Liferay refers to how widely the data from an instance of
+a portlet is shared . For example, if you place a blogs portlet on a page in
+the guest site and place another blogs portlet on another page in the *same*
+site, the two blogs will share the same set of posts.  That happens because
+blogs portlets are given a *site level* scope by default. If you reconfigure
+one of the two blogs, changing its scope to be the current page, that blogs
+portlet instance will no longer share content with the other instance (or any
+of the other blogs instances in that site). With respect to permissions, a
+portlet instance's scope can either span an entire site or be restricted to a
+single page. 
 
 The differences between the portlet instance permissions defined in the
 `<model-resource>` section and the portlet permissions defined in the
-`<portlet-resource>` section are subtle, but critical. Notice that permissions,
+`<portlet-resource>` section are subtle. Notice that permissions,
 such as the ability to *add* or *subscribe to* a blog entry, are defined at the
-portlet instance level. This makes it possible to have multiple distinct blog
+portlet instance level.  makes it possible to have multiple distinct blog
 instances within a site, each with different permissions for site users. For
 example, a food site could have one blog open to posts from any site member, but
 also have a separate informational blog about the site itself restricted to
