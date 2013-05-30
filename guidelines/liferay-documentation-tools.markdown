@@ -137,8 +137,9 @@ Example - `devGuide/doc.properties`:
 
 
     product.abbrev=lp
-    product.version=6.1
-    doc.abbrev=dg
+    product.name=Liferay Portal
+    product.version=6.2
+    doc.name=Dev Guide
 
 2. Number the section headers of your document
 
@@ -151,7 +152,7 @@ Example - Output from header ID conflict
 
 	...  number-headers:
 	[numberheaders] Numbering headers for files in ..\devGuide\en\chapters ...
-	[numberheaders] Dup id:lp-6-1-dgen10-summary-0 file:11-marketplace.markdown line:305 (already used by file:10-plugin-security.markdown)
+	[numberheaders] Dup id:summary-liferay-portal-6-2-dev-guide-06-en file:06-hooks.markdown line:305 (already used by file:06-hooks.markdown)
 	...
 
 To resolve a conflict, you *must* be sure to preserve the header ID that existed
