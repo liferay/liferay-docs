@@ -430,8 +430,8 @@ known as DRAC):
 
 ### Implementing Permissions [](id=lp-6-1-dgen09-implementing-permissions-0)
 
-Before you start adding permissions to a portlet, make sure you underestand two
-critical terms used throughout this section: 
+Before you start adding permissions to a portlet, make sure you underestand
+these two critical terms used throughout this section: 
 
 - *Resource*: A generic term for any object represented in the portal.
   Examples of resources include portlets (e.g. Message Boards, Calendar, etc.),
@@ -447,8 +447,8 @@ each subsection below, we'll describe permission implementation for the
 *portlet* resource first, followed by the model (and file) resource. 
 
 The first step is to define your resources and permissions (or *actions*).
-Let's consider how this is done for the *blogs* portlet. Open the `blogs.xml`
-file in `portal-impl/src/resource-actions` to see the following mapping of
+Let' use the *blogs* portlet to demonstrate. Open the `blogs.xml` file in
+`portal-impl/src/resource-actions` and you'll see the following mapping of
 resources to actions: 
 
     <?xml version="1.0"?>
@@ -553,246 +553,265 @@ Permissions in the blogs portlet are defined at several different levels; each
 level coincides with a section of the `resource-actions` XML file (in this
 case, `blogs.xml`). At the `<portlet-resource>` level, actions and default
 permissions are defined on the portlet itself. Changes to portlet level
-permissions are performed on a per-site basis. Portlet permissions affect
-whether users can add the portlet to a page, edit the portlet's configuration,
-or view the portlet at all, regardless of it's content. All these actions are
-defined inside the `<supports>` tag for the permissions of the portlet
-resource. The default portlet-level permissions for members of the site are
-defined inside the `<site-member-defaults>` tag. In the case of this blogs
-portlet, members of the site should be able to view any blog in the site.
-Likewise, default guest permissions are defined in the `<guest-defaults>` tag.
-Lastly, the `<guest-unsupported>` tag contains permissions forbidden to guests.
-In the case of this portlet, guests can't be given permission to configure the
-portlet, even by a user with an administrator role. 
+permissions are performed on a per-site basis, and change whether users can add
+the portlet to a page, edit the portlet's configuration, or view the portlet.
+All these actions are defined inside the `<supports>` tag for the permissions
+of the portlet resource. The default portlet-level permissions for members of
+the site are defined inside the `<site-member-defaults>` tag. In the case of
+this blogs portlet, site members can view any blog in the site.  Similarly,
+default guest permissions are defined in the `<guest-defaults>` tag.  The
+`<guest-unsupported>` tag contains permissions forbidden to guests. Here,
+guests can't be given permission to configure the portlet, even by a user with
+an administrator role. 
 
-The `<model-resource>` section contains the next level of permissions. This
-level of permissions is based on the *scope* of an individual instance of the
-portlet. A *scope* in Liferay refers to how widely the data from an instance of
-a portlet is shared . For example, if you place a blogs portlet on a page in
-the guest site and place another blogs portlet on another page in the *same*
-site, the two blogs will share the same set of posts.  That happens because
-blogs portlets are given a *site level* scope by default. If you reconfigure
-one of the two blogs, changing its scope to be the current page, that blogs
-portlet instance will no longer share content with the other instance (or any
-of the other blogs instances in that site). With respect to permissions, a
-portlet instance's scope can either span an entire site or be restricted to a
-single page. 
+The `<model-resource>` section contains the next level of permissions, based on
+the *scope* of an individual instance of the portlet. A *scope* in Liferay
+refers to how widely the data from an instance of a portlet is shared . For
+example, if you place a blogs portlet on a page in the guest site and place
+another blogs portlet on another page in the *same* site, the two blogs will
+share the same set of posts.  That happens because blogs portlets are given a
+*site level* scope by default. If you reconfigure one of the two blogs,
+changing its scope to be the current page, that blogs portlet instance will no
+longer share content with the other instance (or any other blogs instance in
+that site). A portlet instance's scope-based permissions can either span an
+entire site or be restricted to a single page. 
 
-The differences between the portlet instance permissions defined in the
-`<model-resource>` section and the portlet permissions defined in the
-`<portlet-resource>` section are subtle. Notice that permissions,
-such as the ability to *add* or *subscribe to* a blog entry, are defined at the
-portlet instance level.  makes it possible to have multiple distinct blog
-instances within a site, each with different permissions for site users. For
-example, a food site could have one blog open to posts from any site member, but
-also have a separate informational blog about the site itself restricted to
-posts from administrators.
+The differences between the `<model-resource>` section's portlet instance
+permissions and the `<portlet-resource>` section's portlet permissions are
+subtle.  Permissions, like the ability to *add* or *subscribe to* a blog entry,
+are defined at the portlet instance level. It's possible to have multiple
+distinct blog instances within a site, each with different permissions for site
+users.  For example, a food site could have one blog open to posts from any
+site member, but also have a separate informational blog about the site itself
+restricted to posts from administrators. 
 
-After defining the portlet and portlet instance as resources, we move on to
-defining models within the portlet that also require permissions. The model
-resource is surrounded by the `<model-resource>` tag. Within this tag, we first
-define the model name. Notice that the `<model-name>` is not the name of an
-actual Java class, but simply the fully qualified name of the portlet's package
-(e.g. the blog portlet's package `com.liferay.portlet.blogs`). This is the
-recommended convention for permissions that refer to an instance of the portlet
-as a whole. Next is the `<portlet-ref>` element which contains a
-`<portlet-name>`. The value of the `<portlet-name>` references the name of the
-portlet to which the model resource belongs; though unlikely, a model resource
-can belong to multiple portlets referenced with multiple `<portlet-name>`
-elements. Similar to the portlet resource, the model resource also allows you to
-define a list of supported actions that require permission to perform. You must
-list out all the performable actions that require a permission check. As you can
-see for a blog entry, users must belong to appropriate roles for permission to
-*add comments* to an entry, *delete* an entry, *change the permission* setting
-of an entry, *update* an entry, or simply to *view* an entry. The
-`<site-member-defaults>` tag, `<guest-defaults>` tag, and `<guest-unsupported>`
-tag have similar meaning for a *model resource* as they do for a *portlet
-resource*.
+After defining the portlet and portlet instance as resources, we need to define
+models in the portlet; they'll also require permissions. The model resource is
+surrounded by the `<model-resource>` tag. Inside the tag, we first define the
+model name; the `<model-name>` isn't the name of a Java class, but the fully
+qualified name of the portlet's package (e.g. the blog portlet's package
+`com.liferay.portlet.blogs`). This is the recommended convention for
+permissions that refer to an instance of the portlet as a whole. The
+`<portlet-ref>` element comes next and contains a `<portlet-name>`. The value
+of `<portlet-name>` references the name of the portlet to which the model
+resource belongs; a model resource can belong to multiple portlets referenced
+with multiple `<portlet-name>` elements, but this is uncommon. Like the portlet
+resource, the model resource lets you define a list of supported actions that
+require permission to perform. You must list all the performable actions that
+require a permission check.  For a blog entry, users must belong to appropriate
+roles for permission to do the following: 
 
-After defining resource permissions for your custom portlet, you then need to
-refer Liferay to the resource-actions XML file that provides these definitions
-(e.g. `blogs.xml` for the blogs portlet). For Liferay core, the resource-actions
-XML files would normally reside in `portal/portal-impl/classes/resource-actions`
-and a a file named `default.xml` file would refer to each of these files. Here
-is an excerpt from the `default.xml` that references the resource permission
-definition files for all of the Liferay built-in portlets (including the blogs
-portlet):
+- *Add comments* to an entry 
 
-	<?xml version="1.0"?>
-	<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
+- *Delete* an entry 
+
+- *Change the permission* setting of an entry 
+
+- *Update* an entry 
+
+- *View* an entry 
+
+As with a *portlet resource*, the `<site-member-defaults>` tag,
+`<guest-defaults>` tag, and `<guest-unsupported>` tag define default
+permissions for site members and guests, respectively, for *model resources*. 
+
+After defining resource permissions for your custom portlet, you need to refer
+Liferay to the `resource-actions` XML file that contains your definitions (e.g.
+`blogs.xml` for the blogs portlet). For Liferay core, the `resource-actions`
+XML files are in the `portal/portal-impl/classes/resource-actions` directory
+and the file named `default.xml` file refers to each of these files. This
+excerpt from `default.xml` references the resource permission definition files
+for all built-in Liferay portlets (including the blogs portlet): 
+
+    <?xml version="1.0"?>
+    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_1_0.dtd">
 	
-	<resource-action-mapping>
-		<resource file="resource-actions/portal.xml" />
-		<resource file="resource-actions/announcements.xml" />
-		<resource file="resource-actions/asset.xml" />
-		<resource file="resource-actions/blogs.xml" />
-		...
-	</resource-action-mapping>
+    <resource-action-mapping>
+        <resource file="resource-actions/portal.xml" />
+        <resource file="resource-actions/announcements.xml" />
+        <resource file="resource-actions/asset.xml" />
+        <resource file="resource-actions/blogs.xml" />
+        ...
+    </resource-action-mapping>
 
-For your plugin, you should put your resource-actions XML file(s) (e.g.
-`default.xml` and `blogs.xml`) in a directory that is in your project's
-classpath. Then create a properties file (typically named `portlet.properties`)
-for your portlet that references the the file that specifies your
-`<resource-action-mapping>` element (e.g. `default.xml`). Within this portlet
-properties file, create a property named `resource.actions.configs` with the
-relative path to your portlet's resource-action mapping file (e.g.
-`default.xml`) as its value. For example, you could specify the property in this
-manner:
+You should put your plugin's `resource-actions` XML files (e.g.  `default.xml`
+and `blogs.xml`) in a directory in your project's classpath. Then create a
+properties file (typically named `portlet.properties`) for your portlet that
+references the the file that specifies your `<resource-action-mapping>` element
+(e.g. `default.xml`). Within this portlet properties file, create a property
+named `resource.actions.configs` with the relative path to your portlet's
+resource-action mapping file (e.g.  `default.xml`) as its value. Here's what
+this property specification might look like: 
 
     resource.actions.configs=resource-actions/default.xml
 
+Check out a copy of the Liferay source code from the Liferay public
+*Subversion* repository to see an example of a portlet that defines its
+resources and permissions as we just described; start by looking at the
+definition files found in the `portal-impl/src/resource-actions` directory. For
+an example of defining permissions in the context of a portlet plugin, check
+out `plugins/trunk` and look at the portlet `sample-permissions-portlet`. 
 
-To see an example of a portlet that defines its resources and permissions in the
-manner we just described, check out a copy of the Liferay source code from the
-Liferay public Subversion repository and start by looking at the definition
-files found in the `portal-impl/src/resource-actions` directory. For an example
-of how permissions are defined in the context of a portlet plugin, checkout
-`plugins/trunk` , and look at the portlet `sample-permissions-portlet`.
-
-Next, let's consider the permission algorithm for this version of Liferay
-Portal.
+Next, let's talk about the permission algorithm for this version of Liferay
+Portal. 
 
 ### Permission Algorithms [](id=lp-6-1-dgen09-permission-algorithms-0)
 
-There are 6 permission algorithms that Liferay has used over the years for
-checking permissions. Liferay 5 introduced algorithm 5 that was based on RBAC
-system. Liferay 6 used algorithm 6 which was an optimized version of algorithm 5
-that improved performance by using a reduced set of database tables.
+Liferay has used six permission-checking algorithms over the years. *Liferay 5*
+introduced the fifth algorithm, which was based on *RBAC* system. The sixth
+algorithm was introduced with  *Liferay 6*; it was an optimized version of the
+fifth algorithm that improved performance by using a reduced set of database
+tables. 
 
-It's important to note that once a permission algorithm is configured and
-resources are created, the algorithm cannot be changed; otherwise the existing
-permissions will be lost (and some system features may fail).
+Importantly, once a permission algorithm is configured and resources are
+created, the algorithm can't be changed, or the existing permissions will be
+lost, and some system features may fail. 
 
-For all new deployments it is strongly recommended you use algorithm 6. For
-deployments that are using other algorithms it's recommended you migrate to
-algorithm 6 using the migration tools provided in the Control Panel (see Control
-Panel &rarr; Server Administration &rarr; Data Migration.)
+For all new deployments, we strongly recommended you use the sixth algorithm.
+For deployments using other algorithms, it's recommended you migrate to the
+sixth algorithm using the *Control Panel* migration tools: 
 
-For more information see options for `permissions.user.check.algorithm` in the
-`portal.properties` file. But next, we'll cover how to add resources.
+        Control Panel &rarr; Server Administration &rarr; Data Migration
+
+For more information, see options for `permissions.user.check.algorithm` in the
+`portal.properties` file. 
+
+Next we'll show you how to add resources. 
 
 ### Adding a Resource [](id=lp-6-1-dgen09-adding-a-resource-0)
 
-After defining resources and actions, the next task is to writing code that adds
-resources into the permissions system. A lot of the logic to add resources is
-encapsulated in the `ResourceLocalServiceImpl` class. So adding resources is as
-easy as calling the `addResources(...)` method of the `ResourceLocalServiceUtil`
-class. Here is the signature of that method:
+After defining resources and actions, it's time to add resources into the
+permissions system. A lot of the logic to add resources is encapsulated in the
+`ResourceLocalServiceImpl` class. Adding resources is as easy as calling the
+`addResources(...)` method of the `ResourceLocalServiceUtil` class. Here's the
+signature of that method: 
 
-	public void addResources(
-			long companyId, long groupId, long userId, String name,
-			String primKey, boolean portletActions,
-			boolean addGroupPermissions, boolean addGuestPermissions)
+    public void addResources(
+            long companyId, long groupId, long userId, String name,
+            String primKey, boolean portletActions,
+            boolean addGroupPermissions, boolean addGuestPermissions)
 
-For all the Java objects that require access permission, you need to make sure
-that they are added as resources every time a new object is created. For
-example, every time a user adds a new entry to her blog, the `addResources(...)`
-method should be called to add the new entry object to the resource system.
-Here's an example of the call from the `BlogsEntryLocalServiceImpl` class:
+Each Java object that requires access permission must be added as a resource
+every time a new object is created. For example, every time a user adds a new
+entry to her blog, the `addResources(...)` method should be called to add the
+new entry object to the resource system. Here's an example of the call from the
+`BlogsEntryLocalServiceImpl` class: 
 
     resourceLocalService.addResources(
-			entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
-			BlogsEntry.class.getName(), entry.getEntryId(), false,
-			addGroupPermissions, addGuestPermissions);
+            entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
+            BlogsEntry.class.getName(), entry.getEntryId(), false,
+            addGroupPermissions, addGuestPermissions);
 
 In the `addResources(...)` method, the parameters `companyId`, `groupId`, and
-`userId` should be self explanatory. The `name` parameter is the fully qualified
-Java class name for the resource object being added. The `primKey` parameter is
-the primary key of the resource object. As for the `portletActions` parameter,
-set this to `true` if you're adding portlet action permissions. In our example,
-we set it to `false` because we're adding a model resource, which should be
-associated with permissions related to the model action defined in `blogs.xml`.
-The `addGroupPermissions` and the `addGuestPermissions` parameters are inputs
-from the user. If set to `true`, `ResourceLocalService` will then add the
+`userId` are self explanatory. Let's look more closely at the remaining
+parameters: 
+
+- The `name` parameter is the fully qualified Java class name for the resource
+  object being added. 
+
+- The `primKey` parameter is the primary key of the resource object. 
+
+- The `portletActions` parameter should be set to `true` if you're adding
+  portlet action permissions. In our example, it's `false` because we're adding
+a model resource, which should be associated with permissions related to the
+model action defined in `blogs.xml`. 
+
+- The `addGroupPermissions` and the `addGuestPermissions` parameters are inputs
+  from the user. If set to `true`, `ResourceLocalService` will then add the
 default permissions to the current group and the guest group for this resource,
 respectively.
 
-To give your user the ability to choose whether to add the default site
-permission and/or the guest permission for the your custom portlet resources,
-Liferay has a custom JSP tag `<liferay-ui:input-permissions />` that you can use
-to quickly add that functionality. Simply insert the tag into the appropriate
-JSP and the checkboxes will show up on that JSP. Make sure, of course, that the
-tag is within the appropriate `<form>` tags.
+You can let your users choose whether to add the default site permission and/or
+the guest permission for your custom portlet resources; Liferay has a custom
+JSP tag `<liferay-ui:input-permissions />` that you can use to quickly add that
+functionality. You just insert the tag into the appropriate JSP and the
+checkboxes will show up on that JSP. Make sure that the tag is within the
+appropriate `<form>` tags, and that's all there is to it. 
 
-When removing entities from the database it is also good to remove permissions
-mapped directly to the entity. To prevent having a lot of dead resources taking
-up space in the `Resource_` database table, you must remember to remove them
-from the `Resource_` table when the resource is no longer applicable. Perform
-this operation by calling the `deleteResource(...)` method of
-`ResourceLocalServiceService`. Here's an example of a blogs entry being removed:
+When you remove entities from the database, it's good practice to remove
+permissions mapped directly to the entity. To prevent dead resources from
+taking up space in the `Resource_` database table, remember to remove them from
+the `Resource_` table when the resource no longer applies. Do this by calling
+the `deleteResource(...)` method of `ResourceLocalServiceService`. Here's an
+example of a blogs entry being removed: 
 
-	resourceLocalService.deleteResource(
-		entry.getCompanyId(), BlogsEntry.class.getName(),
-		ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
+    resourceLocalService.deleteResource(
+        entry.getCompanyId(), BlogsEntry.class.getName(),
+        ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
 
-Great! Now that you know how to work with resource permissions, let's consider how to provide a user interface for managing resource permissions.
+Great! Now that you know how to work with resource permissions, we'll show you
+how to provide a user interface for managing resource permissions. 
 
 ### Adding Permission [](id=lp-6-1-dgen09-adding-permission-0)
 
 On the portlet level, no code needs to be written in order to have the
 permission system work for your custom portlet. Your custom portlet will
-automatically have all the permission features. If you've defined any custom
-permissions (supported actions) in your `portlet-resource` tag, they are
-automatically added to a list of permissions that users can readily choose. Of
-course, for your custom permissions to have any value, you'll need to show or
-hide certain functionality in your portlet. You can do that by checking the
-permission *before* performing the intended action on the resource.
+automatically have permission features. If you've defined any custom
+permissions (supported actions) in your `portlet-resource` tag, they're
+automatically added to a list of permissions users can choose from. However,
+what good are permissions if you don't to show or hide certain functionality in
+your portlet based on permissions? You can do that by checking the permission
+*before* performing the intended action on the resource. 
 
-In order to allow a user to set permissions on model resources, you will need to
-expose the permission interface to the user. This can be done by adding two
-Liferay UI tags to your JSP. The first one is the
-`<liferay-security:permissionsURL>` tag which returns a URL that takes the user
-to the page to configure the permission settings. The second tag is the
-`<liferay-ui:icon>` tag that shows a permission icon to the user. The example
-below demonstrates using these two tags and is from the file
-`view_entry_content.jspf`.
+To let a user set permissions on model resources, you'll need to
+expose the permission interface to the user. Just add these two
+Liferay UI tags to your JSP:
+
+1.  `<liferay-security:permissionsURL>`: Returns a URL that takes the
+    user to the page to configure the permission settings. 
+
+2. `<liferay-ui:icon>`: Shows a permission icon to the user. 
+
+This example demonstrates the use of both tags; it comes from the
+`view_entry_content.jspf`file. 
 
     <liferay-security:permissionsURL
-	modelResource="<%= BlogsEntry.class.getName() %>"
-	modelResourceDescription="<%= entry.getTitle() %>"
-	resourcePrimKey="<%= entry.getPrimaryKey().toString() %>"
-	var="entryURL"
-	/>
+    modelResource="<%= BlogsEntry.class.getName() %>"
+    modelResourceDescription="<%= entry.getTitle() %>"
+    resourcePrimKey="<%= entry.getPrimaryKey().toString() %>"
+    var="entryURL"
+    />
 
     <liferay-ui:icon image="permissions" url="<%= entryURL %>" />
 
-The attributes you need to specify for the first tag are `modelResource`,
-`modelResourceDescription`, `resourcePrimKey`, and `var`. The `modelResource`
-attribute is the fully qualified Java object class name. This class name gets
-translated into its more readable name as specified in file
-`Language.properties`.
+For the first tag, you need to specify the following attributes: 
+- `modelResource`: The fully qualified Java object class name.  This class name
+  gets translated into its more readable name as specified in
+`Language.properties`. 
 
-As for the `modelResourceDescription` attribute, you can pass in anything that
-best describes this model instance. In this example, the blogs title was passed
-in. The `resourcePrimKey` attribute is simply the primary key of your model
-instance. The `var` attribute specifies the name of the variable to be assigned
-the resulting URL String. This variable is then passed to the
-`<liferay-ui:icon>` tag so the permission icon will have the proper URL link.
-There's also an optional attribute redirect that's available if you want to
-override the default behavior of the upper right arrow link. That is all you
-need to do to allow users to configure the permission settings for model
-resources.
+- `modelResourceDescription`: You can pass in anything that best describes this
+  model instance. In this example, the blogs title was passed in. 
 
-Next, we'll show you how to implement permissions checking.
+- `resourcePrimKey`: The primary key of your model instance. 
+
+- `var`: Specifies the name of the variable to be assigned the resulting URL
+  String. The variable is then passed to the `<liferay-ui:icon>` tag so the
+permission icon will have the proper URL link. 
+
+There's an optional attribute redirect that's available if you want to override
+the default behavior of the upper right arrow link. That's it; now your users
+can configure the permission settings for model resources. 
+
+Next we'll show you how to implement permissions checking. 
 
 ### Checking Permissions [](id=lp-6-1-dgen09-checking-permissions-0)
 
-The last major step to implementing permissions for your custom portlet is to
-add some checks that guarantee that the configured permissions are enforced.
-This may be done in a couple of places. For example, your business layer should
-check for permission before deleting a resource, or your user interface should
-hide a button that adds a model (e.g. a calendar event) if the user does not
-have permission to do so.
+The last major step toward implementing permissions for your custom portlet is
+to ensure the configured permissions are enforced.  You'll do this by adding
+checks in a couple of places. For example, your business layer can check for
+permission before deleting a resource, or your user interface can hide a button
+that adds a model (e.g. a calendar event) if the user doesn't have permission. 
 
-Similar to the other steps, the default permissions for the portlet resources
-are automatically checked for you. You do not need to implement anything for
-your portlet to discriminate whether a user is allowed to view or to configure
+As with the preceding steps, the default permissions for the portlet resources
+are automatically checked for you. You don't need to implement anything for
+your portlet to discriminate whether a user is allowed to view or configure
 the portlet itself. However, you do need to implement checking of any custom
-permission you have defined in your resource-actions XML file. In the blogs
-portlet, one custom supported action is `ADD_ENTRY`. There are two places in the
-source code to check for this permission. The first place to check for the add
-entry permission is in your JSP files. The presence of the add entry button is
-contingent on whether the user has permission to add entry.
+permissions you defined in your `resource-actions` XML file. In the blogs
+portlet, one supported custom action is `ADD_ENTRY`. There are two places in
+the source code to check for this permission;in your JSP files and in the
+business logic.  The presence of the add entry button is contingent on whether
+the user has permission to add entry. Here's the `ADD_ENTRY` action in a JSP
+file: 
 
     <%
 	if (permissionChecker.hasPermission(
@@ -802,9 +821,9 @@ contingent on whether the user has permission to add entry.
 	}
     %>
 
-The second place to check for the add entry permission is in the business logic.
-If the check fails, a `PrincipalException` is thrown `and the add entry request
-is aborted.`
+The second place to check for the add entry permission is in the business
+logic.  If the check fails, a `PrincipalException` is thrown `and the add entry
+request is aborted:`
 
     if (!permissionChecker.hasPermission(
 	scopeGroupId, "com.liferay.portlet.blogs.model",
@@ -814,18 +833,18 @@ is aborted.`
 
     blogsEntryLocalService.addEntry(...);
 
-The `PermissionChecker` class has a method called `hasPermission(...)` that
-checks whether a user making a resource request has the necessary access
-permission. If the user is not signed in (guest user), it checks for guest
-permissions. Otherwise, it checks for user permissions. Let's do a quick review
-of the parameters of this method:
+The `PermissionChecker` class has a method `hasPermission(...)` that checks
+whether a user making a resource request has the necessary access permission.
+If the user isn't signed in (guest user), it checks for guest permissions.
+Otherwise, it checks for user permissions. Let's quickly review the parameters
+of this method: 
 
-- `groupId`: represents the scope in which the permission check is being
-performed. In Liferay, the scopes can be a specific site, an organization, a
-personal site of a user, etc. This is important because a user may be allowed to
-add blog entries in a given site but not in another. For resources that do not
-belong to an scope like those mentioned, the value of this parameter should be
-`0`. There are several ways to obtain the `groupId` of the current scope:
+- `groupId`: Represents the scope where the permission check is performed. In
+  Liferay, many scopes are available, including a specific site, organization,
+personal site of a user, and more. This is important because a user may be
+allowed to add blog entries in one site, but not in another. For resources that
+don't belong to a scope, set the value of this parameter to `0`. There
+are several ways to obtain the `groupId` of the current scope:
 
     - JSP that uses the `<theme:defineObjects/>` tag: there is an implicit
     variable called `scopeGroupId`.
