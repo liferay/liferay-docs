@@ -80,6 +80,8 @@ public class NumberHeadersTask extends Task {
 
 					if (line.startsWith("#")) {
 						
+						line = line.trim();
+						
 						String newHeadingLine = handleHeaderLine(line, filename,
 							in.getLineNumber(), props);
 						if (newHeadingLine != null) {
@@ -127,9 +129,9 @@ public class NumberHeadersTask extends Task {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
 		heading2 = heading2.trim();
 
-		// Replace each space with a dash
+		// Replace each space, dot, and spaced dash with a dash
 
-		heading2 = heading2.replace(' ', '-').toLowerCase();
+		heading2 = heading2.replace(" - ", "-").replace(' ', '-').replace('.', '-').toLowerCase();
 
 		// Filter out characters other than dashes, letters, and digits
 
@@ -269,15 +271,17 @@ public class NumberHeadersTask extends Task {
 	private String assembleId(String heading, Properties props, String chapter,
 			int idCount) {
 		StringBuffer headingSb = new StringBuffer();
-		headingSb.append(props.getProperty(PRODUCT_ABBREV));
+		headingSb.append(heading);
+		headingSb.append("-");
+		headingSb.append(props.getProperty(PRODUCT_NAME).toLowerCase().replace(' ', '-'));
 		headingSb.append("-");
 		headingSb.append(props.getProperty(PRODUCT_VERSION).replace('.', '-'));
 		headingSb.append("-");
-		headingSb.append(props.getProperty(DOC_ABBREV));
-		headingSb.append(lang);
+		headingSb.append(props.getProperty(DOC_NAME).toLowerCase().replace(' ', '-'));
+		headingSb.append("-");
 		headingSb.append(chapter);
 		headingSb.append("-");
-		headingSb.append(heading);
+		headingSb.append(lang);
 
 		if (idCount > -1) {
 			headingSb.append("-");
@@ -289,10 +293,10 @@ public class NumberHeadersTask extends Task {
 
 	private static final String DOC_PROPERTIES = "doc.properties";
 
-	private static final int MAX_ID_LEN = 75;
+	private static final int MAX_ID_LEN = 76;
 
-	private static final String DOC_ABBREV = "doc.abbrev";
-	private static final String PRODUCT_ABBREV = "product.abbrev";
+	private static final String DOC_NAME = "doc.name";
+	private static final String PRODUCT_NAME = "product.name";
 	private static final String PRODUCT_VERSION = "product.version";
 
 	private static HashMap<String, String> IDS = new HashMap<String, String>();
