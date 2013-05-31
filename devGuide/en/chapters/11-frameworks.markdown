@@ -1029,26 +1029,25 @@ the content.
 The remaining steps are optional but offer interesting functionalities, like
 allowing your custom assets to be published through the Asset Publisher. 
 
-Next let's dive intod first into the first step; informing the Asset Framework
+Next let's dive head first into the first step; informing the Asset Framework
 when you add, update, or delete assets. 
 
 #### Adding, updating and deleting assets 
 
-Whenever one of your custom content is created you need to let the asset
-framework know. Don't worry, it is simple. You just need to invoke a method of
-the asset framework. When invoking this method you will also let the framework
-know about the tags and/or categories of the content that was just authored.
+Whenever one of your custom content entries is created, you need to let the
+Asset Framework know. It's simple; you just invoke a method of the Asset
+Framework. When invoking this method, the framework becomes aware of the tags
+and categories of the created content. 
 
-All the methods that you will need to invoke are part of the
-`AssetEntryLocalService`. In particular you should access these methods using
-either the static methods of `AssetLocalServiceUtil` or by using an instance of
-the `AssetEntryLocalService` injected by Spring. To make this section simpler we
-will be using the former, since it doesn't require any special setup in your
-application.
+All the methods you need to invoke are part of `AssetEntryLocalService`.
+Specifically, you should access these methods using either the static methods
+of `AssetLocalServiceUtil` or an instance of the `AssetEntryLocalService`
+injected by Spring. To simplify this section, we'll be using the static methods
+of `AssetLocalServiceUtil`, since it doesn't require any special setup in your
+application. 
 
-The method that you need to invoke when one of your custom content has been
-added or updated is the same and is called `updateEntry`. Here is the full
-signature:
+The method to invoke when one of your custom content entries is added or
+updated is the same, and is called `updateEntry`. Here's the full signature: 
 
     AssetEntry updateEntry(
             long userId, long groupId, String className, long classPK,
@@ -1060,8 +1059,8 @@ signature:
             boolean sync)
         throws PortalException, SystemException
 
-Here is an example invocation of this method extracted from the blogs portlet
-that comes bundled with Liferay:
+Here's an example of this method's invocation extracted from the built in
+blogs portlet: 
 
     assetEntryLocalService.updateEntry(
             userId, entry.getGroupId(), BlogsEntry.class.getName(),
@@ -1070,67 +1069,67 @@ that comes bundled with Liferay:
             ContentTypes.TEXT_HTML, entry.getTitle(), null, summary, null, null,
             0, 0, null, false);
 
-Here is a quick summary of the most important parameters of this method:
+Here's a quick summary of the most important parameters of this method: 
 
--   *userId*: is the identifier of the user who created the content
+- *userId*: The identifier of the user who created the content. 
 
-- *groupId*: identifies the scope in which the content has been created. If your
-content does not support scopes, you can just pass `0` as the value.
+- *groupId*: Identifies the scope of the created content. If your content
+  doesn't support scopes, just pass `0` as the value. 
 
-- *className*: identifies the type of asset. By convention we recommend that it
-is the name of the Java class that represents your content type, but you can
-actually use any String you want as long as you are sure that it is unique.
+- *className*: Identifies the type of asset. The recommended convention is to
+  use the name of the Java class that represents your content type, but you can
+actually use any String you want as long as you are sure that it is unique. 
 
-- *classPK*: identifies the specific content being created among any other of
-the same type. It is usually the primary key of the table where the custom
-content is stored. The *classUuid* parameter can optionally be used to specify a
-secondary identifier that is guaranteed to be universally unique. This type of
-identifier is especially useful if your contents will be exported and imported
-across separate portals.
+- *classPK*: Identifies the specific content being created among others of the
+  same type. It's usually the primary key of the table where the custom content
+is stored. If you want, you can use the *classUuid* parameter to specify a
+secondary identifier; it's guaranteed to be universally unique. It's especially
+useful if your contents will be exported and imported across separate portals. 
 
-- *assetCategoryIds* and *assetTagNames*: represent the categories and tags that
-have been selected by the author of the content. The asset framework will sotre
-them for you.
+- *assetCategoryIds* and *assetTagNames*: Represent the categories and tags
+  selected by the author of the content. The Asset Framework will store them
+for you. 
 
-- *visible*: specifies whether this content should be shown at all by Asset
-Publisher.
+- *visible*: Specifies whether the content should be shown at all by Asset
+  Publisher. 
 
-- *title,* *description* and *summary:* are descriptive fields that will be used
-by the Asset Publisher when displaying entries of your content type.
+- *title,* *description* and *summary:* Descriptive fields used by the Asset
+  Publisher when displaying entries of your content type. 
 
-- *publishDate* and *expirationDate:* can optionally be specified to let the
-Asset Publisher know that it should not show the content before a given
-publication date of after a given expiration date.
+- *publishDate* and *expirationDate:* You can specify these to let Asset
+  Publisher know it shouldn't show the content before a given publication date
+or after a given expiration date. 
 
-- All other fields are optional and might not make sense to include in some
-cases. The *sync* parameter should always be false unless you are doing
-something very advanced (look at the code if you are really curious).
+- All other fields are optional; it  might not make sense to include them in
+  some cases. The *sync* parameter should always be *false* unless you're doing
+something very advanced (feel free to look at the code if you're really
+curious). 
 
-When one of your custom content is deleted you should also let the Asset
-Framework know, to clean up the information stored and also to make sure that
+When one of your custom content entries is deleted, you should let Asset
+Framework know. That way it can clean up stored information and make sure that
 the Asset Publisher doesn't show any information for the content that has been
-deleted. The signature of method to delete an asset entry is:
+deleted. The signature of method to delete an asset entry is: 
 
     void deleteEntry(String className, long classPK)
 
-Here is an example invocation extracted again from the blogs portlet:
+Here is an example invocation extracted again from the blogs portlet: 
 
     assetEntryLocalService.deleteEntry(
-    	BlogsEntry.class.getName(), entry.getEntryId());
+        BlogsEntry.class.getName(), entry.getEntryId());
 
-Now that you've learned how to create and modify assets, have you considered
-tagging and categorizing them? Let's tackle that next.
+Now that you can create and modify assets, have you considered tagging and
+categorizing them? Let's tackle that next. 
 
 #### Entering and displaying tags and categories 
 
-The previous section showed how you can let the asset framework know about the
-tags and categories that have been associated with a given asset; but how does a
-content author specify such tags and categories?
+The previous section covered letting the asset framework know about the tags
+and categories that have been associated with a given asset; but how does a
+content author specify such tags and categories? 
 
-The answer is that you can choose any method that you prefer, but Liferay
-provides a set of JSP tags that you can use to make this task very easy. The
-following Liferay UI tags can be used within your forms to create content that
-can be associated with new/existing tags or predefined categories:
+Liferay provides a set of JSP tags that you can use to make this task very
+easy, but you can use a different method if you like. You can use the following
+Liferay UI tags within your forms to create content that can be associated with
+new or existing tags, or predefined categories: 
 
     <label>Tags</label>
     <liferay-ui:asset-tags-selector
