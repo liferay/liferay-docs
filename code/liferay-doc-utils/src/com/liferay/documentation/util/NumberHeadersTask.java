@@ -242,6 +242,11 @@ public class NumberHeadersTask extends Task {
 
 				int lenDiff = newHeading.length() - MAX_ID_LEN;
 				if (lenDiff > 0) {
+					if (idCount > -1) {
+
+						lenDiff++;
+					}
+					
 					// Trim heading
 					heading = heading.substring(0, headingLen - lenDiff);
 				}
@@ -293,7 +298,7 @@ public class NumberHeadersTask extends Task {
 
 	private static final String DOC_PROPERTIES = "doc.properties";
 
-	private static final int MAX_ID_LEN = 76;
+	private static final int MAX_ID_LEN = 75;
 
 	private static final String DOC_NAME = "doc.name";
 	private static final String PRODUCT_NAME = "product.name";
