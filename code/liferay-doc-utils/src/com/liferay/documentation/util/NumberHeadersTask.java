@@ -242,13 +242,14 @@ public class NumberHeadersTask extends Task {
 
 				int lenDiff = newHeading.length() - MAX_ID_LEN;
 				if (lenDiff > 0) {
-					if (idCount > -1) {
+					if (headingLen <= 40) {
 
-						lenDiff++;
+						// Trim heading
+						heading = heading.substring(0, headingLen - lenDiff);
 					}
-					
-					// Trim heading
-					heading = heading.substring(0, headingLen - lenDiff);
+					else {
+						heading = heading.substring(0, 40);
+					}
 				}
 
 				newHeading = assembleId(heading, props, chapter, idCount);
