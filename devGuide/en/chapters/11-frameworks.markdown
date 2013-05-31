@@ -719,7 +719,7 @@ model action defined in `blogs.xml`.
 - The `addGroupPermissions` and the `addGuestPermissions` parameters are inputs
   from the user. If set to `true`, `ResourceLocalService` will then add the
 default permissions to the current group and the guest group for this resource,
-respectively.
+respectively. 
 
 You can let your users choose whether to add the default site permission and/or
 the guest permission for your custom portlet resources; Liferay has a custom
@@ -808,17 +808,17 @@ your portlet to discriminate whether a user is allowed to view or configure
 the portlet itself. However, you do need to implement checking of any custom
 permissions you defined in your `resource-actions` XML file. In the blogs
 portlet, one supported custom action is `ADD_ENTRY`. There are two places in
-the source code to check for this permission;in your JSP files and in the
+the source code to check for this permission; in your JSP files and in the
 business logic.  The presence of the add entry button is contingent on whether
 the user has permission to add entry. Here's the `ADD_ENTRY` action in a JSP
 file: 
 
     <%
-	if (permissionChecker.hasPermission(
-	scopeGroupId, "com.liferay.portlet.blogs.model",
-	scopeGroupId, "ADD_ENTRY") {
-	// Show add entry button
-	}
+    if (permissionChecker.hasPermission(
+    scopeGroupId, "com.liferay.portlet.blogs.model",
+    scopeGroupId, "ADD_ENTRY") {
+    // Show add entry button
+    }
     %>
 
 The second place to check for the add entry permission is in the business
@@ -826,9 +826,9 @@ logic.  If the check fails, a `PrincipalException` is thrown `and the add entry
 request is aborted:`
 
     if (!permissionChecker.hasPermission(
-	scopeGroupId, "com.liferay.portlet.blogs.model",
-	scopeGroupId, "ADD_ENTRY")) {
-	    throw new PrincipalException();
+    scopeGroupId, "com.liferay.portlet.blogs.model",
+    scopeGroupId, "ADD_ENTRY")) {
+        throw new PrincipalException();
     }
 
     blogsEntryLocalService.addEntry(...);
@@ -844,180 +844,200 @@ of this method:
 personal site of a user, and more. This is important because a user may be
 allowed to add blog entries in one site, but not in another. For resources that
 don't belong to a scope, set the value of this parameter to `0`. There
-are several ways to obtain the `groupId` of the current scope:
+are several ways you can obtain the `groupId` of the current scope: 
 
-    - JSP that uses the `<theme:defineObjects/>` tag: there is an implicit
+    - JSP that uses the `<theme:defineObjects/>` tag: there's an implicit
     variable called `scopeGroupId`.
 
-    - Business logic class: When using the ServiceContext pattern, it can be
-    obtained using `serviceContext.getScopeGroupId()`. - Other cases: it can be
-    obtained from the theme display request object:
+    - Business logic class: If you're using the ServiceContext pattern, you can
+      obtain the `groupId` by using `serviceContext.getScopeGroupId()`. If
+you're not using the ServiceContext pattern, your can obtain `groupId` from the
+theme display request object: 
 
             ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
-            	WebKeys.THEME_DISPLAY);
+                WebKeys.THEME_DISPLAY);
             long scopeGroupId = themeDisplay.getScopeGroupId();
 
 - `name`: The name of the resource as specified in the XML file of the previous
-sections.
+sections. 
 
-- `primKey`: The primary key of the resource. In this example, since the
-resource doesn't exist as an entry in the database we use the groupId again. If
-we were checking for a permission on a given blog entry, we would use the
-primary key of that blog entry instead.
+- `primKey`: The primary key of the resource. In this example the resource
+  doesn't exist as an entry in the database, so we use the `groupId` again. If
+we were checking for a permission on a given blog entry, we'd use the primary
+key of that blog entry instead. 
 
-- `actionId`: The name of the action as entered in the XML file. It is a common
-practice to create a helper class with constants for all the actions defined, so
-that it's easier to search usages.
+- `actionId`: The name of the action as it appears in the XML file. To simplify
+  searching for usages, consider creating a helper class that has constants for
+all the actions defined. 
 
-In the examples above, we are assuming that there is a variable called
+In the examples above, we're assuming there's a variable called
 `permissionChecker` already available. Liferay automatically creates a
-`PermissionChecker` instance for every request that has all the necessary
-information from the user and caches the security checks to ensure good
-performance. There are several ways to obtain this instance:
+`PermissionChecker` instance for every request that has the necessary
+information from the user. Liferay also caches the security checks to ensure
+good performance. There are several ways to obtain this instance: 
 
-- In a JSP that uses the `<theme:defineObjects/>` tag: there is an implicit
-variable called `permissionChecker`.
+- In a JSP that uses the `<theme:defineObjects/>` tag, there's an implicit
+variable called `permissionChecker`. 
 
-- When using ServiceBuilder, every service implementation class can access the
-`PermissionChecker` instance by using the method `getPermissionChecker()`.
+- With Service Builder, every service implementation class can access the
+  `PermissionChecker` instance by using the method `getPermissionChecker()`. 
 
-- Other cases: it can be obtained from the theme display request object:
+- If you're not using Service Builder, `PermissionChecker` can be obtained from
+  the theme display request object: 
 
         ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
         PermissionChecker permissionChecker =
-        	themeDisplay.getPermissionChecker();
+            themeDisplay.getPermissionChecker();
+
+Next you'll learn about creating helper classes for permission checking. 
 
 ### Creating Helper Classes for Permission Checking [](id=lp-6-1-dgen09-creating-helper-classes-for-permission-checking-0)
 
-Often, it is a good practice to create helper classes that encapsulate the use
-of permissionChecker and the names of the resources for a specific portlet. This
-is especially useful when there are complex parent/child relationships or if
+It's helpful to create helper classes that encapsulate the use of
+`permissionChecker` and the names of the resources for a specific portlet. This
+is especially useful when there are complex parent-child relationships, or if
 your permission logic calls for checking multiple action types.
-`BlogsPermission` is an example of a permission helper class. See how
-`BlogsPermission` may be used in a JSP.
+`BlogsPermission` is an example of a permission helper class. Here's how
+`BlogsPermission` is used in a JSP: 
 
     <%
-	if (BlogsPermission.contains(permissionChecker, scopeGroupId,
-	    ActionKeys.ADD_ENTRY)) {
-		// show add entry button
-	    }
+    if (BlogsPermission.contains(permissionChecker, scopeGroupId,
+        ActionKeys.ADD_ENTRY)) {
+        // show add entry button
+        }
     %>
 
-Now, let's take a look at how a `ServiceImpl` class `BlogsEntryServiceImpl` uses
-the `BlogsPermission` helper class. In method
+Now let's see how a `ServiceImpl` class `BlogsEntryServiceImpl` uses the
+`BlogsPermission` helper class. In method
 `BlogsEntryServiceImpl.addEntry(...)`, a call is made to check whether the
 incoming request has permission to add entry. The check is done using helper
 class `BlogsPermission`. If the check fails, it throws a `PrincipalException`
-and the add entry request aborts.
+and the add entry request aborts. 
 
-	public BlogsEntry addEntry(
-			String title, String description, String content,
-			int displayDateMonth, int displayDateDay, int displayDateYear,
-			int displayDateHour, int displayDateMinute, boolean allowPingbacks,
-			boolean allowTrackbacks, String[] trackbacks, boolean smallImage,
-			String smallImageURL, String smallImageFileName,
-			InputStream smallImageInputStream, ServiceContext serviceContext)
-		throws PortalException, SystemException {
+    public BlogsEntry addEntry(
+            String title, String description, String content,
+            int displayDateMonth, int displayDateDay, int displayDateYear,
+            int displayDateHour, int displayDateMinute, boolean allowPingbacks,
+            boolean allowTrackbacks, String[] trackbacks, boolean smallImage,
+            String smallImageURL, String smallImageFileName,
+            InputStream smallImageInputStream, ServiceContext serviceContext)
+        throws PortalException, SystemException {
 
-		BlogsPermission.check(
-			getPermissionChecker(), serviceContext.getScopeGroupId(),
-			ActionKeys.ADD_ENTRY);
+        BlogsPermission.check(
+            getPermissionChecker(), serviceContext.getScopeGroupId(),
+            ActionKeys.ADD_ENTRY);
 
-		return blogsEntryLocalService.addEntry(
-			getUserId(), title, description, content, displayDateMonth,
-			displayDateDay, displayDateYear, displayDateHour, displayDateMinute,
-			allowPingbacks, allowTrackbacks, trackbacks, smallImage,
-			smallImageURL, smallImageFileName, smallImageInputStream,
-			serviceContext);
-	}
+        return blogsEntryLocalService.addEntry(
+            getUserId(), title, description, content, displayDateMonth,
+            displayDateDay, displayDateYear, displayDateHour, displayDateMinute,
+            allowPingbacks, allowTrackbacks, trackbacks, smallImage,
+            smallImageURL, smallImageFileName, smallImageInputStream,
+            serviceContext);
+    }
 
-Note the parameters passed into the `check(...)` method. Again, the
+Check out the parameters passed into the `check(...)` method. Again, the
 `getPermissionChecker()` method is readily available in all `ServiceImpl`
-classes. The blogs entry ID is available in the serviceContext indicating that
-the permission check is against the blogs portlet. `ActionKeys.ADD_ENTRY` is a
-static String to indicate the action requiring the permission check. Likewise,
-you are encouraged to use custom portlet action keys.
+classes. The blogs entry ID is available in the `serviceContext`, indicating
+that the permission check is against the blogs portlet. `ActionKeys.ADD_ENTRY`
+is a static string used to indicate the action requiring the permission check.
+Likewise, you're encouraged to use custom portlet action keys. 
 
 Let's review what we've just covered. Implementing permission into your custom
-portlet consists of four main steps. First step is to define any custom
-resources and actions. Next step is to implement code to register (or add) any
-newly created resources such as a `BlogsEntry` object. The third step is to
-provide an interface for the user to configure permission. Lastly, implement
-code to check permission before returning resources or showing custom features.
-Two major resources are portlets and Java objects. There is not a lot that needs
-to be done for the portlet resource to implement the permission system since
-Liferay Portal has a lot of that work done for you. You mainly focus your
-efforts on any custom Java objects you've built. You're now well equipped to
-implement security in your custom Liferay portlets!
+portlet consists of four main steps: 
+ 
+1. Define any custom resources and actions. 
 
-Next, let's learn how to use the Asset Framework.
+2. Implement code to register (or add) any newly created resources, such as a
+   `BlogsEntry` object. 
+
+3. Provide an interface for the user to configure permission. 
+
+4. Implement code to check permission before returning resources or showing
+   custom features.  
+
+The two major resources are *portlets* and *Java objects*; there's not a lot to
+be done for the portlet resource to implement the permission system, since
+Liferay Portal does most of the work for you. You can focus your efforts on any
+custom Java objects you've built. 
+
+You're now well equipped to implement security in your custom Liferay portlets! 
+
+Next, let's learn how to use the *Asset Framework*. 
 
 ## Asset Framework [](id=asset-framewo-4)
 
-The asset framework provides a set of functionalities that are common to several
-different content types. It was initially created to be able to add tags to blog
-entries, wiki pages, web content, etc without having to re-implement this same
-functionality over and over. Since then, it has grown to include more
-functionalities and it has been made possible to use the framework for custom
-applications even if they are implemented within a plugin.
+The asset framework provides a set of functionalities common to several content
+types, including blog entries, wiki pages, web content, and more. It was
+initially created to add tags to content without having to repeatedly
+re-implement the same functionality. Since then, the Asset Framework has grown
+to include more functionalities, and you can now use the framework for custom
+applications even if they're implemented inside a plugin. 
 
-The term *asset* is used as a generic way to refer to any type of content
-regardless of whether it's purely text, an external file, a URL, an image, an
-record in an online book library, etc. From now on, whenever the word asset is
-used, think of it as a generic way to refer to documents, blog entries,
-bookmarks, wiki pages, etc.
+The term *asset* is a generic term referring to *any* type of content,
+including text, an external file, a URL, an image, or a record in an online
+book library. Consequently, when we use the term *asset* here, we're referring
+to some type of Liferay content, like documents, blog entries, bookmarks, wiki
+pages, and more. 
 
-Here are the main functionalities that you will be able to reuse thanks to the
-asset framework:
+Here are the main functionalities you can reuse thanks to the asset framework: 
 
-- Associate tags to custom content types (new tags will be created automatically
-when the author assigns them to the content)
+- Associate tags to custom content types. New tags are created automatically
+  when the author assigns them to the content. 
 
-- Associate categories to custom content types (authors will only be allowed to
-select from predefined categories within several predefined vocabularies)
+- Associate categories to custom content types. Authors are only allowed to
+  select from predefined categories within several predefined vocabularies. 
 
-- Manage tags from the control panel (including merging tags)
+- Manage tags from the control panel, including merging tags. 
 
-- Manage categories from the control panel (including creating complex
-hierarchies).
+- Manage categories from the control panel, including creating complex
+  hierarchies. 
 
-- Associate comments with assets
+- Associate comments with assets. 
 
-- Rate of assets on a five star rating system
+- Rate assets using a five star rating system. 
 
-- Assign social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus))
-to assets
+- Assign social bookmarks to asssets, inlcuding via tweet, Facebook like, or +1
+  (Google Plus). 
 
--	Add custom fields to assets
+- Add custom fields to assets. 
 
--	Relate assets to one another
+- Relate assets to one another. 
 
--	Flag asset content as inappropriate
+- Flag asset content as inappropriate. 
 
--   Keep track of the number of visualizations of an asset
+- Keep track of the number of visualizations of an asset. 
 
--	Integrate workflow with assets
+- Integrate workflow with assets. 
 
-- Publish your content using the Asset Publisher portlet. Asset Publisher is
-able to publish dynamic lists of assets or manually selected lists of assets. It
-is also able to show a summary view of an asset and offer a link to the full
-view if desired. Because of this it will save you time since for many use cases
-it will make it unnecessary to develop custom portlets for your custom content
-types.
+- Publish your content using the Asset Publisher portlet. Asset Publisher can
+  publish dynamic asset lists or manually selected asset lists. It can also
+show a summary view of an asset and offer a link to the full view. This saves
+you time, since it will often make it unnecessary to develop custom portlets
+for your custom content types. 
 
-If these functionalities seem useful for your case, then you might be wondering,
-what do I have to do to benefit from them?
+If you'd like to benefit from Asset Framework's functionality, you might be
+asking, "How do I leverage Asset Framework's functionality?" Excellent
+question, and perfect timing; we couldn't have said it better ourselves. 
 
-The following subsections describe the steps involved in using the asset
-framework. The first one is mandatory and consists on letting the framework know
-whenever one of your custom content entries is added, updated or deleted. The
-second part is optional but can save a lot of time so most developers will
-probably make use of it. It consists on using a set of taglibs to provide
-widgets that allow authors to enter tags and categories as well as how to show
-the entered tags and categories along with the content. The rest of the sections
-are also optional but offer interesting functionalities such as how to allow
-your custom assets to be published through the Asset Publisher. Next, let's dive
-into adding, updating, and deleting assets.
+The subsections below describe the steps involved in using Asset Framework.
+We'll describe the first two briefly herebefore we dive in head first: 
+
+- The first step is mandatory; you must let the framework know whenever one of
+  your custom content entries is added, updated or deleted. 
+
+- The second step is optional, but it can save you a lot of time; you can use a
+  set of taglibs to provide widgets that allow authors to enter tags and
+categories, as well as how to show the entered tags and categories along with
+the content. 
+
+<!--I don't understand the second half of the second step, after the comma.
+-Russ -->
+
+The remaining steps are optional but offer interesting functionalities, like
+allowing your custom assets to be published through the Asset Publisher. 
+
+Next let's dive intod first into the first step; informing the Asset Framework
+when you add, update, or delete assets. 
 
 #### Adding, updating and deleting assets [](id=lp-6-1-dgen09-adding-updating-and-deleting-assets-0)
 
