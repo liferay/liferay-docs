@@ -1004,13 +1004,13 @@ Here are the main functionalities you can reuse thanks to the asset framework:
 
 - Publish your content using the Asset Publisher portlet. Asset Publisher can
   publish dynamic asset lists or manually selected asset lists. It can also
-show a summary view of an asset and offer a link to the full view. This saves
-you time, since it will often make it unnecessary to develop custom portlets
-for your custom content types. 
+show an asset summary view with a link to the full view. This saves you time,
+since it likely won't be necessary to develop custom portlets for your custom
+content types. 
 
-If you'd like to benefit from Asset Framework's functionality, you might be
-asking, "How do I leverage Asset Framework's functionality?" Excellent
-question, and perfect timing; we couldn't have said it better ourselves. 
+At this point you might be saying. "Asset Framework sounds great; but how do I
+leverage all these awesome functions?" Excellent question, young padawan, and
+perfect timing; we couldn't have said it better ourselves. 
 
 The subsections below describe the steps involved in using Asset Framework.
 We'll describe the first two briefly herebefore we dive in head first: 
@@ -1071,65 +1071,64 @@ blogs portlet:
 
 Here's a quick summary of the most important parameters of this method: 
 
-- *userId*: The identifier of the user who created the content. 
+- `userId` is the identifier of the user who created the content. 
 
-- *groupId*: Identifies the scope of the created content. If your content
+- `groupId` identifies the scope of the created content. If your content
   doesn't support scopes, just pass `0` as the value. 
 
-- *className*: Identifies the type of asset. The recommended convention is to
+- `className` identifies the type of asset. The recommended convention is to
   use the name of the Java class that represents your content type, but you can
 actually use any String you want as long as you are sure that it is unique. 
 
-- *classPK*: Identifies the specific content being created among others of the
+- `classPK` identifies the specific content being created among others of the
   same type. It's usually the primary key of the table where the custom content
 is stored. If you want, you can use the *classUuid* parameter to specify a
 secondary identifier; it's guaranteed to be universally unique. It's especially
 useful if your contents will be exported and imported across separate portals. 
 
-- *assetCategoryIds* and *assetTagNames*: Represent the categories and tags
+- `assetCategoryIds` and *assetTagNames* represent the categories and tags
   selected by the author of the content. The Asset Framework will store them
 for you. 
 
-- *visible*: Specifies whether the content should be shown at all by Asset
+- `visible` specifies whether the content should be shown at all by Asset
   Publisher. 
 
-- *title,* *description* and *summary:* Descriptive fields used by the Asset
+- `title,` `description` and `summary` are descriptive fields used by the Asset
   Publisher when displaying entries of your content type. 
 
-- *publishDate* and *expirationDate:* You can specify these to let Asset
-  Publisher know it shouldn't show the content before a given publication date
-or after a given expiration date. 
+- `publishDate` and `expirationDate`, when specified, tell Asset Publisher it
+  shouldn't show the content before a given publication date or after a given
+expiration date, respsectively. 
 
-- All other fields are optional; it  might not make sense to include them in
-  some cases. The *sync* parameter should always be *false* unless you're doing
-something very advanced (feel free to look at the code if you're really
-curious). 
+- All other fields are optional; it won't always make sense to include them.
+  The *sync* parameter should always be *false* unless you're doing something
+very advanced (feel free to look at the code if you're really curious). 
 
-When one of your custom content entries is deleted, you should let Asset
-Framework know. That way it can clean up stored information and make sure that
-the Asset Publisher doesn't show any information for the content that has been
-deleted. The signature of method to delete an asset entry is: 
+When one of your custom content entries is deleted, you should once again let
+Asset Framework know. That way it can clean up stored information and make sure
+that the Asset Publisher doesn't show any information for the content that has
+been deleted. The signature of method to delete an asset entry is: 
 
     void deleteEntry(String className, long classPK)
 
-Here is an example invocation extracted again from the blogs portlet: 
+Here's an example invocation extracted again from the blogs portlet: 
 
     assetEntryLocalService.deleteEntry(
         BlogsEntry.class.getName(), entry.getEntryId());
 
-Now that you can create and modify assets, have you considered tagging and
-categorizing them? Let's tackle that next. 
+Now that you can create and modify assets, consider tagging and categorizing
+them. Let's tackle that next. 
 
 #### Entering and displaying tags and categories 
 
-The previous section covered letting the asset framework know about the tags
-and categories that have been associated with a given asset; but how does a
-content author specify such tags and categories? 
+In the last section we let Asset Framework know about the tags and categories
+that we associated with a given asset; but how does a content author specify
+the tags and categories? 
 
-Liferay provides a set of JSP tags that you can use to make this task very
-easy, but you can use a different method if you like. You can use the following
-Liferay UI tags within your forms to create content that can be associated with
-new or existing tags, or predefined categories: 
+Liferay provides a set of JSP tags you can use to make this task very easy, but
+you can use a different method if you like. You can put the following Liferay
+UI tags in your forms to create content that can be associated with new or
+existing tags, or predefined categories: 
 
     <label>Tags</label>
     <liferay-ui:asset-tags-selector
@@ -1143,21 +1142,20 @@ new or existing tags, or predefined categories:
             classPK="<%= entry.getPrimaryKey() %>"
     />
 
-These two taglibs create appropriate form controls that allow the user to search
-for a tag or create a new tag, and select a existing category.
+These two taglibs create appropriate form controls that allow the user to
+search for a tag or create a new one, and select an existing category. 
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip:** If you are using Liferay's Alloy
- Form taglibs, creating fields to enter tags and categories is even simpler. You
- just need to use <aui:input name="tags" type="assetTags" /> and <aui:input
- name="categories" type="assetCategories" /> respectively.
+![tip](../../images/tip-pen-paper.png)**Tip:** If you're using Liferay's Alloy
+Form taglibs, creating fields to enter tags and categories is even simpler. You
+just use <aui:input name="tags" type="assetTags" /> and <aui:input
+name="categories" type="assetCategories" />, respectively. 
 
 ---
 
-Once the tags and categories have been entered you will want to show them along
-with the content of the asset. The following demonstrates how to display the
-tags and categories:
+Once the tags and categories have been entered you'll want to show them along
+with the content of the asset. Here's how to display the tags and categories: 
 
     <label>Tags</label>
     <liferay-ui:asset-tags-summary
@@ -1171,91 +1169,88 @@ tags and categories:
         classPK="<%= entry.getPrimaryKey() %>"
     />
 
-In both tags, you can also specify an optional `portletURL` parameter. Each tag
-that uses the `portletURL` parameter will be a link containing the `portletURL`
-*and* `tag` or `categoryId` parameter value respectively. This supports tags
-navigation and categories navigation within your portlet. But you will need to
-implement the look-up functionality in your portlet code by reading the values
-of those two parameters and using the `AssetEntryService` to query the database
-for entries based on the specified tag or category.
+Inside both tags, you can also specify a `portletURL` parameter; each tag that
+uses it will be a link containing the `portletURL` *and* `tag` or `categoryId`
+parameter value, respectively. This supports tags navigation and categories
+navigation within your portlet. You'll need to implement the look-up
+functionality in your portlet code; do this by reading the values of those two
+parameters and using the `AssetEntryService` to query the database for entries
+based on the specified tag or category. 
 
-Great! You'll have no problem associating tags and categories with your assets.
-But before we go further with our example, let's take a look at more JSP tags
-that leverage the features available for assets.
+Great job! You'll have no problem associating tags and categories with your
+assets. Before we go further with our example, let's take a look at more JSP
+tags you can use to leverage the available asset features. 
 
 #### More JSP tags for assets 
 
-In addition to using tags and categories, there are even more features that the
-asset framework provides you. These features allow users to do the following
-with your assets:
+In addition tags and categories, there are more features that Asset Framework
+provides you. These features allow users to do the following with your assets: 
 
--	Add comments
+- Add comments
 
--	Rate comments of other users
+- Rate comments of other users
 
--	Rate assets
+- Rate assets
 
--	Apply social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus))
+- Apply social bookmarks (e.g. via tweet, Facebook like, or +1 (Google Plus))
 
--	Relate assets to one another
+- Relate assets to one another
 
--	Flag content as inappropriate to notify the portal administrator
+- Flag content as inappropriate and notify the portal administrator
 
-There are JSP tags, called *Liferay UI* tags, associated with each of these
-feartures. You can find these tags used throughout the JSPs for Liferay's
-built-in portlets (e.g. `edit_entry.jsp` of the Blogs portlet).
+There are JSP tags, called *Liferay UI* tags, associated with each feature. You
+can find these tags used in the JSPs for Liferay's built-in portlets (e.g. the
+`edit_entry.jsp` of the Blogs portlet).  Here are some examples of the JSP tags
+from the Blogs portlet: 
 
-Here are some examples of the JSP tags from the Blogs portlet so that you can
-become familiar with them:
+- *Comments and comment ratings:* 
 
--	**Comments and comment ratings:**
+        <portlet:actionURL var="discussionURL">
+            <portlet:param name="struts_action" value="/blogs/edit_entry_discussion" />
+        </portlet:actionURL>
 
-		<portlet:actionURL var="discussionURL">
-			<portlet:param name="struts_action" value="/blogs/edit_entry_discussion" />
-		</portlet:actionURL>
+        <liferay-ui:discussion
+            className="<%= BlogsEntry.class.getName() %>"
+            classPK="<%= entry.getEntryId() %>"
+            formAction="<%= discussionURL %>"
+            formName="fm2"
+            ratingsEnabled="<%= enableCommentRatings %>"
+            redirect="<%= currentURL %>"
+            subject="<%= entry.getTitle() %>"
+            userId="<%= entry.getUserId() %>"
+        />
 
-		<liferay-ui:discussion
-			className="<%= BlogsEntry.class.getName() %>"
-			classPK="<%= entry.getEntryId() %>"
-			formAction="<%= discussionURL %>"
-			formName="fm2"
-			ratingsEnabled="<%= enableCommentRatings %>"
-			redirect="<%= currentURL %>"
-			subject="<%= entry.getTitle() %>"
-			userId="<%= entry.getUserId() %>"
-		/>
+- *Rate assets:* 
 
--	**Rate assets:**
+        <liferay-ui:ratings
+            className="<%= BlogsEntry.class.getName() %>"
+            classPK="<%= entry.getEntryId() %>"
+        />
 
-		<liferay-ui:ratings
-			className="<%= BlogsEntry.class.getName() %>"
-			classPK="<%= entry.getEntryId() %>"
-		/>
+- *Social Bookmarks:* 
 
--	**Social Bookmarks:**
+        <liferay-ui:social-bookmarks
+            displayStyle="<%= socialBookmarksDisplayStyle %>"
+            target="_blank"
+            title="<%= entry.getTitle() %>"
+            url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(), themeDisplay) %>"
+        />
 
-		<liferay-ui:social-bookmarks
-			displayStyle="<%= socialBookmarksDisplayStyle %>"
-			target="_blank"
-			title="<%= entry.getTitle() %>"
-			url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(), themeDisplay) %>"
-		/>
+- *Related assets:* 
 
--	**Related assets:**
+        <liferay-ui:input-asset-links
+            className="<%= BlogsEntry.class.getName() %>"
+            classPK="<%= entryId %>"
+        />
 
-		<liferay-ui:input-asset-links
-			className="<%= BlogsEntry.class.getName() %>"
-			classPK="<%= entryId %>"
-		/>
+- *Flag as inappropriate:* 
 
--	**Flag as inappropriate:**
-
-		<liferay-ui:flags
-			className="<%= BlogsEntry.class.getName() %>"
-			classPK="<%= entry.getEntryId() %>"
-			contentTitle="<%= entry.getTitle() %>"
-			reportedUserId="<%= entry.getUserId() %>"
-		/>
+        <liferay-ui:flags
+            className="<%= BlogsEntry.class.getName() %>"
+            classPK="<%= entry.getEntryId() %>"
+            contentTitle="<%= entry.getTitle() %>"
+            reportedUserId="<%= entry.getUserId() %>"
+        />
 
 These tags from Liferay's taglib make it easy to apply these features to your
 assets. No problem, right? So let's get the assets published in your portal.
