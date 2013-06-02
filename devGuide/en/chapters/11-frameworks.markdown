@@ -1179,7 +1179,7 @@ based on the specified tag or category.
 
 Great job! You'll have no problem associating tags and categories with your
 assets. Before we go further with our example, let's take a look at more JSP
-tags you can use to leverage the available asset features. 
+tags you can use to leverage Asset Framework's features. 
 
 #### More JSP tags for assets 
 
@@ -1252,52 +1252,48 @@ from the Blogs portlet:
             reportedUserId="<%= entry.getUserId() %>"
         />
 
-These tags from Liferay's taglib make it easy to apply these features to your
-assets. No problem, right? So let's get the assets published in your portal.
+With Liferay's taglib tags, you can easily apply these features to your assets.
+No problemo, right? So let's get the assets published in your portal. 
 
 #### Publishing assets with Asset Publisher 
 
-One of the nice benefits of using the asset framework is leveraging the Asset
-Publisher portlet to publish lists of your custom asset types. The lists can be
-dynamically specified (for example, based on the asset tags or categories) by
-the user or statically specified by an administrator. The Asset Publisher
-portlet is part of the Liferay distribution.
+A huge benefit of using Asset Framework is that you can leverage the Asset
+Publisher portlet to publish lists of your custom asset types. You can choose
+to have users specify lists dynamically (e.g., based on the asset tags or
+categories) or have administrators do it statically. The Asset Publisher
+portlet is part of the Liferay distribution. 
 
-In order to be able to display your assets, the Asset Publisher needs to know
-how to access the metadata of your assets. Additionally, you need to provide the
-Asset Publisher with templates for the types of views (e.g. *full* view and
-abstract view) available to display your assets.
+To display your assets, the Asset Publisher needs to know how to access their
+metadata. You also need to provide the Asset Publisher templates for the types
+of views (e.g. *full* view and *abstract* view) available to display your
+assets. You can provide all this to the Asset Publisher by implementing these
+two interfaces: 
 
-You can provide all this to the Asset Publisher by implementing the following
-pair of interfaces - AssetRendererFactory and AssetRenderer:
+- `AssetRendererFactory`: A class that knows how to retrieve specific assets
+  from the persistent storage using the class `classPK`. The `classPK` class is
+typically the asset's primary key, but can be anything you specified to the
+`updateAsset` method, which you use to add or update the asset. Your factory
+implementation can grab the asset from a `groupId` (identifies a scope of data)
+and a `urlTitle` (a title that can be used in friendly URLs to refer uniquely
+to the asset within a given scope). Finally, the asset renderer factory can
+provide a URL for the Asset Publisher to use when a user wants to add a new
+asset of your custom type. This URL should point to your own portlet.  There
+are other less important methods of the interface, but you can avoid
+implementing them by extending `BaseAssetRendererFactory`.  By extending this
+*base* class instead of implementing the interface directly, your code will be
+more robust to possible interface changes in future versions of Liferay, since
+the base implementation will be updated to accommodate the interface changes. 
 
-- **AssetRendererFactory:** this class knows how to retrieve specific assets
-from the persistent storage via the class `classPK`. The `classPK` is typically
-the asset's primary key, but can be anything you have specified to the
-`updateAsset` method used to add or update the asset. Your factory
-implementation should be able to grab the asset from a `groupId` (identifies a
-scope of data) and a `urlTitle` (a title that can be used in friendly URLs to
-refer uniquely to the asset within a given scope). Finally, the asset renderer
-factory can provide a URL for the Asset Publisher to use when a user wants to
-add a new asset of your custom type. This URL should point to your own portlet.
-There are other less important methods of the interface, but you can avoid
-implementing them by extending **BaseAssetRendererFactory**. Extending this
-*base* class, instead of implementing the interface directly, will make your
-code more robust to possible interface changes in future versions of Liferay,
-since the base implementation will already be updated to accommodate the
-interface changes.
+- `AssetRenderer`: The class that provides metadata information about one
+  specific asset. It checks whether the current user has permission to edit or
+view the asset and renders the asset for the different templates (e.g. abstract
+and full content view) by forwarding to a specific and appropriate JSP. We
+recommend that you extend the `BaseAssetRenderer` class rather than directly
+implementing the interface. The *base* class provides helpful defaults and is
+robust robust for methods that get added to the interface in the future. 
 
-- **AssetRenderer:** this is the class that provides metadata information about
-one specific asset. It verifies whether the current user has permission to edit
-or view the asset. And this class is responsible for rendering the asset for the
-different templates (e.g. abstract and full content view) by forwarding to a
-specific an appropriate JSP. It is recommended that you extend the
-**BaseAssetRenderer** class rather than directly implementing the interface. The
-*base* class provides nice defaults and robustness for methods that could be
-added to the interface in the future.
-
-Let's see an example of these two classes. Again we will pick Liferay's Blogs
-portlet. Lets start with the implementation for the `AssetRendererFactory`:
+Let's look at an example of these two classes. We'll use Liferay's Blogs
+portlet again, and we'll start by implementing `AssetRendererFactory`: 
 
     public class BlogsEntryAssetRendererFactory extends BaseAssetRendererFactory {
 
@@ -1380,7 +1376,7 @@ portlet. Lets start with the implementation for the `AssetRendererFactory`:
         private static final boolean _LINKABLE = true;
     }
 
-And here is the AssetRenderer implementation:
+Here's the `AssetRenderer` implementation: 
 
     public class BlogsEntryAssetRenderer extends BaseAssetRenderer {
 
@@ -1519,11 +1515,11 @@ And here is the AssetRenderer implementation:
 
     }
 
-Note that in the render method, there is a forward to a JSP in the case of the
-abstract and the full content templates. The abstract is not mandatory and if it
-is not provided, the Asset Publisher will show the title and the summary
-obtained through the appropriate methods of the renderer. The full content
-template should always be provided. Here is how it looks like for blogs entries:
+In the render method, there's a forward to a JSP in the case of the abstract
+and the full content templates. The abstract isn't mandatory and if it isn't
+provided, the Asset Publisher shows the title and the summary from the
+appropriate methods of the renderer. The full content template should always be
+provided. Here's how it looks for blogs entries: 
 
     <%@ include file="/html/portlet/blogs/init.jsp" %>
 
@@ -1542,70 +1538,70 @@ template should always be provided. Here is how it looks like for blogs entries:
         />
     </liferay-ui:custom-attributes-available>
 
-That's about it. It wasn't that hard, right? Now, to get really fancy, you may
-need to extend the capabilities of the `AssetRendererFactory` for one of
-Liferay's core portlets. If so, check out article [Extending an
+That's about it. It wasn't that hard, right? Now it's time to get really fancy;
+put on your dancing shoes. If you need to extend the capabilities of the
+`AssetRendererFactory` for one of Liferay's core portlets, check out the
+article [Extending an
 AssetRendererFactory](http://www.liferay.com/web/juan.fernandez/blog/-/blogs/extending-an-assetrendererfactory)
-by Juan Fern&agrave;ndez that talks about doing just that.
+by Juan Fern&agrave;ndez; he talks about doing just that. 
 
-Now you can start enjoying the benefits of the asset framework in your custom
-portlets. Next we'll learn how to leverage the File Storage Framework of Liferay
-Portal.
+Now get out there and start enjoying the benefits of the Asset Framework in
+your custom portlets. 
+
+Let's learn how to leverage Liferay Portal's File Storage Framework. 
 
 ## File Storage Framework 
 
-The File Storage Framework: Allows storing files using the back-end of the
-Document Library. By using this framework you won't have to worry yourself about
-clustering or backups since that will already be taken care of for the Document
-Library itself. This framework is used, for example, by the wiki and the message
-boards of Liferay to store attached files in pages and posts respectively. You
-can check the source code of these two portlets for great real-life examples of
-how to use the framework.
+The File Storage Framework lets you store files using the back end of the
+Document Library. If you use this framework you won't have to worry about
+clustering or backups, since they'll already be taken care of for the Document
+Library itself. To see examples of this framework in action, check out the
+source code for the built in *wiki* and *message boards* portlets of Liferay;
+the File Storage Framework stores their attached files in pages and posts,
+respectively. 
 
 ## Other frameworks 
 
-Liferay has a wide variety of frameworks that make it much easier to develop
-complex functionalities for your own applications with little effort. These
-frameworks have evolved from the applications bundled with Liferay out of the
-box so they have been proven in the real world, even in very high performance
-portals.
+Liferay has a variety of frameworks that simplify development of complex
+functionalities for your own applications. Liferay's frameworks have evolved
+from its built in applications, so they're proven to work in the real world,
+even in high performance portals. 
 
-This chapter is a placeholder that provides a quick description to the main
-frameworks provided with Liferay 6.1. Note that what follows is a work in
-progress since more sections will be added over time and some of the current
-sections will evolve into its own chapter as we add more information and
-detailed instructions on how to use them over time.
+This section is a placeholder that provides a brief description of the main
+frameworks provided with Liferay 6.1. The following list is a work in progress,
+since we'll add more sections  to this chapter over time, and some of the
+current sections might evolve into their own chapters as we add more
+information and detailed instructions on how to use them. 
 
-- Workflow Framework: Allows adding Workflow functionality to your own portlets.
-One great benefit of using this framework is that you will be able to reuse all
-of the workflow management UIs provided by Liferay. Also you will be able to
-abstract your code from the specific workflow engine that will be used (JBPM,
-Liferay Kaleo, ...). Many Liferay portlets use this framework. If you want a
-simple example to learn how to use it, the blogs portlet is a good start.
+- *Workflow Framework*: Lets you add Workflow functionality to your own
+  portlets. One benefit of using this framework is that you can reuse all the
+workflow management UIs Liferay provides. You can also abstract your code from
+the specific workflow engine that will be used (e.g., JBPM or Liferay Kaleo).
+Many Liferay portlets use this framework; to see a simple example and learn how
+you can use it, the blogs portlet is a good start. 
 
-- Custom fields: A portlet that uses custom fields will allow the end user to
-extend the fields of its data entries with custom ones defined by the end user.
-To see a list of data types in Liferay that support this functionality just go
-to the Control Panel &rarr; Custom Fields.
+- *Custom Fields*: A portlet that uses custom fields lets the end user extend
+  the fields of its data entries with custom fields defined by the end user.
+To see a list of data types that support this functionality go to Liferay's
+Control Panel &rarr; Custom Fields. 
 
-- Inline permissions Framework: Allows enhancing your SQL queries so that the
-database takes care of checking for view permissions. This is particularly
-useful when doing queries for data entries that could result in a large number
-of items (and thus checking of permissions afterward would be very inefficient)
-or when you want to implement pagination (which would not work fine if
-permissions are checked afterward and an item is removed). The Document Library
-or the Message Boards of Liferay are examples of portlets that use this
-functionality.
+- *Inline Permissions Framework*: Lets you enhance your SQL queries so the
+  database checks for view permissions. This is particularly useful when doing
+queries for data entries that might result in many of items, making the
+checking of permissions afterward inefficient. It's also useful when you want
+to implement pagination (which wouldn't work if permissions are checked
+afterward and an item is removed). Liferay's *Document Library* and *Message
+Boards* portlets both use this functionality. 
 
-- Faceted Search: A new API was introduced which allows for simple creation of
-new facet configurations and searches. This API uses a JSON based configuration
-to define the details of facets used for the search. To find out more, see the
-[Faceted
+- *Faceted Search*: A new API that simplifies the creation new facet
+  configurations and searches. It uses a JSON based configuration to define the
+details of facets used for the search. To find out more, see the [Faceted
 Search](http://www.liferay.com/community/wiki/-/wiki/1071674/Faceted+Search)
-wiki by Ray Aug&#233;)
+wiki by Ray Aug&#233;.
 
-Check in the near future for new editions of the Developer's Guide for extended
-information on each of these frameworks.
+Check back in the near future; new editions of the Developer's Guide will have
+extended information on each of these frameworks. 
 
 Next, we'll explore the seemingly mysterious world of plugin security
 management.
+<!--Needs a summary-->
