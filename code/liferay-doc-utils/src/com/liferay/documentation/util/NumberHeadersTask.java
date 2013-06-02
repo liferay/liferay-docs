@@ -242,13 +242,13 @@ public class NumberHeadersTask extends Task {
 
 				int lenDiff = newHeading.length() - MAX_ID_LEN;
 				if (lenDiff > 0) {
-					if (headingLen <= 40) {
 
-						// Trim heading
-						heading = heading.substring(0, headingLen - lenDiff);
+					if (idCount > -1) {
+						heading = heading.substring(0, heading.length() - 2);
 					}
 					else {
-						heading = heading.substring(0, 40);
+						// Trim heading
+						heading = heading.substring(0, headingLen - lenDiff);
 					}
 				}
 
