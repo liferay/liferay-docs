@@ -9,6 +9,18 @@ permission systems, tags, categories, comments, and more.
 This chapter will evolve as we add information about the existing APIs and
 frameworks and how they're used. So don't be a stranger, keep checking back. 
 
+These are the frameworks this chapter's current iteration covers: 
+
+- Service Builder 
+
+- Security and Permissions 
+
+- Asset Framework 
+
+- File Storage Framework 
+
+- Other Frameworks 
+
 ## Service Builder 
 
 Wouldn't it be nice if Liferay gave you a tool that *automagically* generated
@@ -35,15 +47,14 @@ When you start using Service Builder, your first order of business is to define
 your model classes and their attributes in a `service.xml` file. For
 convenience, we'll define the service within the *my-greeting* portlet,
 although it should really be placed inside a new portlet. Create a file named
-`service.xml` in `portlets/my-greeting-portlet/docroot/WEB-INF` within the
-Plugins SDK and add the following content: 
+`service.xml` in `portlets/my-greeting-portlet/docroot/WEB-INF` in the Plugins
+SDK and add the following content: 
 
     <?xml version="1.0"?> <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD
-Service Builder 6.1.0//EN"
-"http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
-<service-builder package-path="com.sample.portlet.library">
-<namespace>Library</namespace> <entity name="Book" local-service="true"
-remote-service="true">
+    Service Builder 6.1.0//EN"
+    "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+    <service-builder package-path="com.sample.portlet.library">
+        <namespace>Library</namespace> <entity name="Book" local-service="true" remote-service="true">
 
             <!-- PK fields -->
 
@@ -55,9 +66,11 @@ remote-service="true">
 
             <!-- Audit fields -->
 
-            <column name="companyId" type="long" /> <column name="userId"
-type="long" /> <column name="userName" type="String" /> <column
-name="createDate" type="Date" /> <column name="modifiedDate" type="Date" />
+            <column name="companyId" type="long" /> 
+            <column name="userId" type="long" /> 
+            <column name="userName" type="String" /> 
+            <column name="createDate" type="Date" /> 
+            <column name="modifiedDate" type="Date" />
 
             <!-- Other fields -->
 
@@ -94,7 +107,7 @@ Now that you have your `service.xml` file, let's generate the service.
 ### Generate the Service 
 
 Now let's use our `service.xml` to build a service. You can use Liferay
-Developer Studio or your terminal to build your sevice layer. FIrst let's do it
+Developer Studio or your terminal to build your service layer. First let's do it
 using Developer Studio. 
 
 #### Using Developer Studio to Generate a Service 
@@ -114,15 +127,8 @@ You just used the *Overview* mode in Developer Studio's *Service Builder
 Editor* to build services; it can also build web service deployment descriptors
 (WSDDs). *Service Builder Editor* also has *Diagram* and *Source* modes. If you
 select *Diagram*, you're given a graph structured background; the *Palette* on
-the right hand side of the editor lets you add entities and relationships .
-Here's a view of the editor in *Diagram* mode: 
-
-![Figure 10.2: *Diagram* mode in editor](../../images/10-frameworks-2.png)
-
-*Source* mode lets you edit the XML source directly. Here's an example
-`service.xml` shown in the editor's *Source* mode: 
-
-![Figure 10.3: *Source* mode in editor](../../images/10-frameworks-3.png)
+the right hand side of the editor lets you add entities and relationships.
+*Source* mode lets you edit the XML source directly. 
 
 With Developer Studio, you have lots of tools to help automate the creation of
 interfaces and classes for your database persistence and service layers. 
@@ -134,7 +140,7 @@ Next let's generate a service from the terminal.
 To generate a service in your terminal window, navigate to your
 `portlets/my-greeting-portlet` directory and enter this command: 
 
-    ant build-service
+        ant build-service
 
 A BUILD SUCCESSFUL message indicates that the service was generated
 successfully, and you should see that a large number of files have been
@@ -211,8 +217,8 @@ setters.
 
     - `BookWrapper`: book wrapper, wraps `Book` `@generated`
 
-Only three classes from the above list can be manually modified:
-`BookLocalServiceImpl`, `BookServiceImpl` and `BookImpl`. 
+From the above list only `BookLocalServiceImpl`, `BookServiceImpl` and
+`BookImpl` can be manually modified. 
 
 Now let's write the local service class. 
 
@@ -233,17 +239,24 @@ To write the local service class, open the following file:
 To add the database interaction methods to this service layer class, we'll add
 the following method to the `BookLocalServiceImpl` class: 
 
-    public Book addBook(long userId, String title) throws PortalException,
-SystemException { User user = UserUtil.findByPrimaryKey(userId); Date now = new
-Date(); long bookId = CounterLocalServiceUtil.increment(Book.class.getName());
+    public Book addBook(long userId, String title) 
+        throws PortalException, SystemException { 
+        User user = UserUtil.findByPrimaryKey(userId); 
+        Date now = new Date(); 
+        long bookId = CounterLocalServiceUtil.increment(Book.class.getName());
 
         Book book = bookPersistence.create(bookId);
 
-        book.setTitle(title); book.setCompanyId(user.getCompanyId());
-book.setUserId(user.getUserId()); book.setUserName(user.getFullName());
-book.setCreateDate(now); book.setModifiedDate(now); book.setTitle(title);
+        book.setTitle(title); 
+        book.setCompanyId(user.getCompanyId());
+        book.setUserId(user.getUserId()); 
+        book.setUserName(user.getFullName());
+        book.setCreateDate(now); 
+        book.setModifiedDate(now); 
+        book.setTitle(title);
 
-        return bookPersistence.update(book, false); }
+        return bookPersistence.update(book, false); 
+    }
 
 Before you can use this new method, you must add its signature to the
 `BookLocalService` interface by building the service in Service Builder again.
@@ -304,6 +317,7 @@ For more information on these services, see Liferay's Javadocs at
 [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/).
 
 Next we'll show you Liferay's security and permissions systems. 
+
 ## Security and Permissions 
 
 JSR-286 (and JSR-168) defines a simple security scheme using portlet roles and
@@ -423,7 +437,7 @@ known as DRAC):
 
 ### Implementing Permissions 
 
-Before you start adding permissions to a portlet, make sure you underestand
+Before you start adding permissions to a portlet, make sure you understand
 these two critical terms used throughout this section: 
 
 - *Resource*: A generic term for any object represented in the portal.
@@ -562,7 +576,7 @@ the *scope* of an individual instance of the portlet. A *scope* in Liferay
 refers to how widely the data from an instance of a portlet is shared . For
 example, if you place a blogs portlet on a page in the guest site and place
 another blogs portlet on another page in the *same* site, the two blogs will
-share the same set of posts.  That happens because blogs portlets are given a
+share the same set of posts.  That happens because *blogs* portlets are given a
 *site level* scope by default. If you reconfigure one of the two blogs,
 changing its scope to be the current page, that blogs portlet instance will no
 longer share content with the other instance (or any other blogs instance in
@@ -815,7 +829,7 @@ file:
     %>
 
 The second place to check for the add entry permission is in the business
-logic.  If the check fails, a `PrincipalException` is thrown `and the add entry
+logic. If the check fails, a `PrincipalException` is thrown `and the add entry
 request is aborted:`
 
     if (!permissionChecker.hasPermission(
@@ -953,7 +967,7 @@ be done for the portlet resource to implement the permission system, since
 Liferay Portal does most of the work for you. You can focus your efforts on any
 custom Java objects you've built. 
 
-You're now well equipped to implement security in your custom Liferay portlets! 
+You're now equipped to implement security in your custom Liferay portlets! 
 
 Next, let's learn how to use the *Asset Framework*. 
 
@@ -1013,7 +1027,7 @@ leverage all these awesome functions?" Excellent question, young padawan, and
 perfect timing; we couldn't have said it better ourselves. 
 
 The subsections below describe the steps involved in using Asset Framework.
-We'll describe the first two briefly herebefore we dive in head first: 
+We'll describe the first two briefly here before we dive in head first: 
 
 - The first step is mandatory; you must let the framework know whenever one of
   your custom content entries is added, updated or deleted. 
@@ -1098,10 +1112,10 @@ for you.
 
 - `publishDate` and `expirationDate`, when specified, tell Asset Publisher it
   shouldn't show the content before a given publication date or after a given
-expiration date, respsectively. 
+expiration date, respectively. 
 
 - All other fields are optional; it won't always make sense to include them.
-  The *sync* parameter should always be *false* unless you're doing something
+  The `sync` parameter should always be *false* unless you're doing something
 very advanced (feel free to look at the code if you're really curious). 
 
 When one of your custom content entries is deleted, you should once again let
@@ -1515,6 +1529,8 @@ Here's the `AssetRenderer` implementation:
 
     }
 
+<!--Some long code blocks in here. Not sure if they're too long? -->
+
 In the render method, there's a forward to a JSP in the case of the abstract
 and the full content templates. The abstract isn't mandatory and if it isn't
 provided, the Asset Publisher shows the title and the summary from the
@@ -1604,4 +1620,13 @@ extended information on each of these frameworks.
 
 Next, we'll explore the seemingly mysterious world of plugin security
 management.
-<!--Needs a summary-->
+
+## Summary 
+
+With Liferay's frameworks, implementing complex functionality in your custom
+portlets becomes easy. We covered Service Builder, security and permissions,
+Asset Framework, the file storage framework, and some other interesting
+frameworks that aren't yet fully documented. Make sure  you check back
+regularly to find more detailed descriptions of current frameworks and discover
+brand new frameworks that'll knock your socks off, or at least simplify your
+custom portlet development. 
