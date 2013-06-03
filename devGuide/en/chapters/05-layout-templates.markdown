@@ -10,7 +10,8 @@ custom layout templates. Layout template plugins let you design layouts that
 flow nicely, embed commonly used portlets, and apply CSS, Velocity, and HTML to
 make your pages visually pop. 
 
-In this chapter, you'll learn everything you need to know about layout templates:
+In this chapter, you'll learn everything you need to know about layout
+templates:
 
 - Creating a layout template project 
 
@@ -88,10 +89,11 @@ about its various files:
 To name the parent folder, the Plugins SDK automatically appended "-layouttpl"
 to your project name. A project can contain multiple layout templates. The
 directory structure is the same, but you'll have a `.png`, `.tpl`,
-and`.wap.tpl` file for each layout template in the `docroot/` folder. The
+and `.wap.tpl` file for each layout template in the `docroot/` folder. The
 "liferay-" files describe the layout templates for packaging and deployment. 
 
-<!-- Missing transition here --> 
+Now that you're well-versed on the anatomy of a layout template, let's begin
+exploring layout template files. 
 
 ### Layout template files [](id=lp-6-1-dgen05-layout-template-files-0)
 
@@ -109,7 +111,9 @@ image, but you can use the default PNG for layout templates as a starting point.
 
 ![Figure 5.2: Default layout template thumbnail](../../images/blank_columns.png)
 
-### Liferay configuration files [](id=lp-6-1-dgen05-liferay-configuration-files-0)
+Let's move on to Liferay configuration files.
+
+### Liferay configuration files  [](id=lp-6-1-dgen05-liferay-configuration-files-0)
 
 In addition to the three template-specific files, a layout template project
 has two Liferay configuration files:
@@ -154,7 +158,7 @@ our layout template.
 
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you design layout templates. If this seems overwhelming, don't worry.
-With the handy palette in Devleoper Studio's *Layout Template Editor*,
+With the handy palette in Developer Studio's *Layout Template Editor*,
 designing templates becomes fun! Let's try it:
 
 1. Open your layout template's TPL file in Developer Studio's *Layout Template
@@ -290,7 +294,8 @@ portals.
 
 See how simple it is to embed portlets in your pages? 
 
-<!-- Missing transition here --> 
+Wouldn't it be nice to have an organized reference of available layout template
+variables? You're in luck! We'll dive into available variables next!
 
 ## Available variables [](id=lp-6-1-dgen05-available-variables-0)
 
