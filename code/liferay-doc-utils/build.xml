@@ -47,7 +47,7 @@
 		/>
 	</target>
 
-    <target name="dist" depends="compile"
+    <target name="dist" depends="clean, compile"
 	description="compiles the code and creates a runnable JAR file for the project">
 		<mkdir dir="${dist.dir}" />
         <jar destfile="${dist.dir}/liferay-doc-utils.jar"
