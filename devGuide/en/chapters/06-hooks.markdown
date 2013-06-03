@@ -83,9 +83,9 @@ Now that you've created a hook, let's go ahead and deploy it.
 Upon deployment, your server displays messages indicating that your hook was
 read, registered and is now available for use. 
 
-	Reading plugin package for example-hook
-	Registering hook for example-hook
-	Hook for example-hook is available for use
+    Reading plugin package for example-hook
+    Registering hook for example-hook
+    Hook for example-hook is available for use
 
 If you ever need to redeploy your plugin while in Developer Studio, right-click
 your plugin's icon located underneath your server and select *Redeploy*. 
@@ -111,20 +111,20 @@ by mirroring the structure of Liferay's code that you plan to customize. A hook
 plugin is built to contain this: 
 
 - `example-hook/`
-	
-	- `docroot/`
-		
-		- `META-INF/`
-		
-		- `WEB-INF/`
-			
-			- `lib`
-			
-			- `liferay-hook.xml`
-			
-			- `liferay-plugin-package.properties`
-	
-	- `build.xml`
+
+    - `docroot/`
+
+        - `META-INF/`
+
+        - `WEB-INF/`
+
+            - `lib`
+
+            - `liferay-hook.xml`
+
+            - `liferay-plugin-package.properties`
+
+    - `build.xml`
 
 In Developer Studio's *Package Explorer*, here's what the hook structure looks
 like:
@@ -226,16 +226,19 @@ file.
 
 2. Append the following code to the end of the JSP file:
 
-		<liferay-util:buffer var="html">
-			<liferay-util:include page="/html/portlet/search/view.portal.jsp" />
-		</liferay-util:buffer>
+        <liferay-util:buffer var="html">
+            <liferay-util:include page="/html/portlet/search/view.portal.jsp" />
+        </liferay-util:buffer>
 
-		<%
-		html = StringUtil.add(html, 
-            "Didn't find what you were looking for? Refine your search and try again!", "\n");
-		%>
+        <%
+        html = StringUtil.add(
+            html, 
+            "Didn't find what you were looking for? Refine your search and " +
+                "try again!",
+            "\n");
+        %>
 
-		<%= html %>
+        <%= html %>
 
 3. Start your Liferay instance or restart it if you already have one running.
 
@@ -296,7 +299,10 @@ For Application Adapter hooks, we include the original JSP by setting the
 
     <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
-    <liferay-util:include page="/html/portlet/navigation/view.jsp" useCustomPage="false" />
+    <liferay-util:include
+        page="/html/portlet/navigation/view.jsp"
+        useCustomPage="false"
+    />
 
 The view JSP is specified as `view.jsp`, *not* `view.portal.jsp` as for global
 hooks.
@@ -326,8 +332,10 @@ to include the original JSP:
         <%@ taglib uri="http://liferay.com/tld/util" 
         prefix="liferay-util" %>
 
-        <liferay-util:include page="/html/portlet/navigation/view.jsp" 
-        useCustomPage="false" />
+        <liferay-util:include
+            page="/html/portlet/navigation/view.jsp" 
+            useCustomPage="false"
+        />
 
         <p>
         This was modified by the Example Application Adapter.
@@ -341,7 +349,7 @@ site where you'll use the Application Adapter.
 5. Select *Manage* &rarr; *Site Settings*. From the *Application Adapter*
 field's drop-down menu, select *example*. Then click *Save*. 
 
-    ![Figure 6.3: Your *Application Adapters* are easily accessible in your Site's settings.](../../images/06-hooks-select-site-app-adapter.png)
+    ![Figure 6.4: Your *Application Adapters* are easily accessible in your Site's settings.](../../images/06-hooks-select-site-app-adapter.png)
 
 6. Navigate back to your site's Navigation portlet, and make sure that the
 modification message from your Application Adapter hook plugin's `view.jsp` file
@@ -385,10 +393,10 @@ custom action. Hooks make this a simple task.
         import javax.servlet.http.HttpServletResponse;
 
         public class LoginAction extends Action {
-			public void run(HttpServletRequest req, HttpServletResponse res) {
-				System.out.println("## My custom login action");
-			}
-		}
+            public void run(HttpServletRequest req, HttpServletResponse res) {
+                System.out.println("## My custom login action");
+            }
+        }
 
 2. Create a `portal.properties` file inside `example-hook/docroot/WEB-INF/src`
 with this content:
@@ -494,8 +502,15 @@ Here's the current action in your portal's `struts-config.xml` file:
 
     <action path="/login/login"
         type="com.liferay.portlet.login.action.LoginAction">
-        <forward name="portlet.login.login" path="portlet.login.login" />
-        <forward name="portlet.login.login_redirect" path="portlet.login.login_redirect" />
+
+        <forward
+            name="portlet.login.login"
+            path="portlet.login.login"
+        />
+        <forward
+            name="portlet.login.login_redirect"
+            path="portlet.login.login_redirect"
+        />
     </action>
 
 1. Navigate to your `example-hook/docroot/WEB-INF` folder and open
@@ -505,11 +520,15 @@ Here's the current action in your portal's `struts-config.xml` file:
 
         <struts-action>
             <struts-action-path>/portal/sample</struts-action-path>
-            <struts-action-impl>com.liferay.sample.hook.action.ExampleStrutsAction</struts-action-impl>
+            <struts-action-impl>
+            com.liferay.sample.hook.action.ExampleStrutsAction
+            </struts-action-impl>
         </struts-action>
         <struts-action>
             <struts-action-path>/login/login</struts-action-path>
-            <struts-action-impl>com.liferay.sample.hook.action.ExampleStrutsPortletAction</struts-action-impl>
+            <struts-action-impl>
+            com.liferay.sample.hook.action.ExampleStrutsPortletAction
+            </struts-action-impl>
         </struts-action>
 
 3. Create a new package `com.liferay.sample.hook.action` in your
@@ -539,8 +558,8 @@ will wrap the login portlet Struts action. Insert the following code:
                     PortletConfig portletConfig, ActionRequest actionRequest,
                     ActionResponse actionResponse)
                 throws Exception {
-                ThemeDisplay themeDisplay = (ThemeDisplay)actionRequest
-                        .getAttribute(WebKeys.THEME_DISPLAY);
+                ThemeDisplay themeDisplay =
+                    (ThemeDisplay)actionRequest.getAttribute(WebKeys.THEME_DISPLAY);
 
                 Long currentuser = themeDisplay.getUserId();
 
@@ -622,7 +641,7 @@ as a parameter and don't explicitly execute it, the original action won't be
 executed. If you override the `execute` method that *does not take* the original
 action as a parameter, you are ignoring the original action and it won't be
 executed.
-	
+
 ---
 
 ![Tip](../../images/tip-pen-paper.png) **Warning:** There's a
@@ -635,31 +654,35 @@ Then, in a corresponding `finally` block, reset the classloader back to
 the original classloader. 
 
 Here's an example for the temporary workaround:
-	
+
     public class SampleLayoutStrutsAction extends BaseStrutsAction {
-	
+
             @Override
-			public String execute(StrutsAction originalStrutsAction,
-				HttpServletRequest request, HttpServletResponse response)
-				throws Exception {
-	
-				System.out.println("SampleLayoutStrutsAction.execute() - " +
-					request.getRequestURI());
-	
-				Thread currentThread = Thread.currentThread();
-				ClassLoader contextClassLoader = currentThread.getContextClassLoader();
-				currentThread.setContextClassLoader(PortalClassLoaderUtil.getClassLoader());
-	
-				try {
-					return originalStrutsAction.execute(request, response);
-				}
-				finally {
-					currentThread.setContextClassLoader(contextClassLoader);
-				}
-			}
-	
-		}
-	
+            public String execute(StrutsAction originalStrutsAction,
+                HttpServletRequest request, HttpServletResponse response)
+                throws Exception {
+
+                System.out.println("SampleLayoutStrutsAction.execute() - " +
+                    request.getRequestURI());
+
+                Thread currentThread = Thread.currentThread();
+
+                ClassLoader contextClassLoader =
+                    currentThread.getContextClassLoader();
+
+                currentThread.setContextClassLoader(
+                    PortalClassLoaderUtil.getClassLoader());
+
+                try {
+                    return originalStrutsAction.execute(request, response);
+                }
+                finally {
+                    currentThread.setContextClassLoader(contextClassLoader);
+                }
+            }
+
+        }
+
 ---
 
 That's it for overriding the Struts actions! Now Let's get our new Struts
@@ -706,7 +729,7 @@ Both custom Struts actions are executed via your Struts action hook!
 Try your new Struts path by accessing it from your browser (e.g.
 `http://localhost:8080/c/portal/sample`). 
 
-![Figure 6.4: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
+![Figure 6.5: Your new Struts action displays *Hello World!* in your browser.](../../images/06-hooks-5.png)
 
 Let's continue our hooks expedition by overriding a portal service.
 
@@ -766,8 +789,8 @@ same WAR file, but *not* the *internal* classes of Liferay.
 directory, by adding the following after `</custom-jsp-dir>`:
 
     <service>
-		<service-type>com.liferay.portal.service.UserLocalService</service-type>
-		<service-impl>com.liferay.sample.hook.MyUserLocalServiceImpl</service-impl>
+        <service-type>com.liferay.portal.service.UserLocalService</service-type>
+        <service-impl>com.liferay.sample.hook.MyUserLocalServiceImpl</service-impl>
     </service>
 
 Redeploy your hook and refresh your browser. In the terminal window running
@@ -806,10 +829,10 @@ directory, and refer to these language files in your `liferay-hook.xml` file,
 like so:
 
     <hook>
-		...
-		<language-properties>content/Language_es.properties</language-properties>
-		<language-properties>content/Language_fr.properties</language-properties>
-		...
+        ...
+        <language-properties>content/Language_es.properties</language-properties>
+        <language-properties>content/Language_fr.properties</language-properties>
+        ...
     </hook>
 
 ---
