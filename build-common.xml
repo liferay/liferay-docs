@@ -188,7 +188,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
 
     <target name="concat-markdown-files" depends="prepare" description="concatenates multiple markdown files into a single one">
         <property file="./doc.properties" />
-        <echo message="... concatenating markdown files for ${product.abbrev} ${product.version}-${doc.dir} (${lang})"/>
+        <echo message="... concatenating markdown files for ${product.name} ${product.version}-${doc.name} (${lang})"/>
         <concat destfile="./${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown" fixlastline = "yes">
             <fileset dir="./${lang}" casesensitive="yes">
                 <include name="**/*.markdown"/>
@@ -197,7 +197,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     </target>
 
     <target name="markdown-to-html" depends="check-images, add-markdown-metadata" description="converts markdown file to an html file">
-        <echo message="... converting ${product.abbrev} ${product.version}-${doc.dir} (${lang}) to html"/>
+        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html -o test-guide.html  test-guide.markdown -->
         <exec executable="${pandoc.app}">
             <arg value="-f" />
@@ -215,7 +215,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     </target>
 
     <target name="markdown-to-html-win" depends="check-images, concat-markdown-files" description="converts markdown file to an html file on windows">
-        <echo message="... converting ${product.abbrev} ${product.version}-${doc.dir} (${lang}) to html"/>
+        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to html"/>
         <!-- pandoc -f markdown -t html +RTS K64m -RTS -o 01-chapter-02.html  01-chapter-02.markdown -->
         <exec executable="cmd">
             <arg value="/C" />
@@ -235,7 +235,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     </target>
 
     <target name="markdown-to-odt" depends="add-markdown-metadata" description="converts markdown file to an odt file">
-        <echo message="... converting ${product.abbrev} ${product.version}-${doc.dir} (${lang}) to odt"/>
+        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to odt"/>
         <!-- pandoc -f markdown -t odt -o test-guide.odt  test-guide.markdown -->
         <exec executable="${pandoc.app}" dir="${build.dir}/${lang}">
             <arg value="-f" />
@@ -253,7 +253,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     </target>
 
     <target name="markdown-to-odt-win" depends="concat-markdown-files" description="converts markdown file to an ODT file on Windows">
-        <echo message="... converting ${product.abbrev} ${product.version}-${doc.dir} (${lang}) to odt on windows"/>
+        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to odt on windows"/>
         <!-- pandoc -f markdown -t odt +RTS K64m -RTS -o 01-chapter-02.odt 01-chapter-02.markdown -->
         <exec executable="cmd">
             <arg value="/C" />
@@ -273,7 +273,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     </target>
 
     <target name="markdown-to-epub" depends="add-markdown-metadata" description="converts markdown file to an epub file">
-        <echo message="... converting ${product.abbrev} ${product.version}-${doc.dir} (${lang}) to epub"/>
+        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to epub"/>
         <!-- pandoc -f markdown -t epub -o test-guide.epub  test-guide.markdown -->
         <exec executable="${pandoc.app}">
             <arg value="-f" />
@@ -291,7 +291,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
     </target>
 
     <target name="markdown-to-epub-win" depends="concat-markdown-files" description="converts markdown file to an epub file on windows">
-        <echo message="... converting ${product.abbrev} ${product.version}-${doc.dir} (${lang}) to epub"/>
+        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to epub"/>
         <exec executable="cmd">
             <arg value="/C" />
             <arg value="pandoc"/>
@@ -473,7 +473,7 @@ directory to convert the userGuide into complete English markdown, html, odt, an
 
  <!-- deprecated on Jan. 6, 2012 -->
     <target name="add-markdown-metadata" depends="concat-markdown-files" description="adds metadata to the top of a concatenated markdown file">
-        <echo message="... adding metadata to ${product.abbrev} ${product.version}-${doc.dir} (${lang})"/>
+        <echo message="... adding metadata to ${product.name} ${product.version}-${doc.name} (${lang})"/>
         <java jar="../lib/liferay-doc-utils.jar" fork="true">
 	    <arg value="AddMarkdownMetadata"/>
             <arg value="./${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
