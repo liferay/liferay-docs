@@ -41,7 +41,7 @@ This chapter covers the following topics:
 
 - Invoking the API Remotely
 
-- Service Security
+- Service Security Layers
 
 - SOAP Web Services
 
@@ -57,7 +57,7 @@ Before learning to invoke an API, you need to know where to find Liferay APIs.
 
 <!--I know it's more than wordsmithing and formatting, but it seems important to
 elevate the Findining Services content since it's ncessary whether you'll
-involke locally or remotely. Russ -->
+invoke locally or remotely. Russ -->
 
 ## Finding Services 
 
@@ -76,13 +76,14 @@ Portal Javadocs. Here's how you find the *Organization* services:
 [http://docs.liferay.com/portal/6.1/javadocs/](http://docs.liferay.com/portal/6.1/javadocs/) 
 
 2. Under *Portal Services*, click the link for the `com.liferay.portal.service`
-package, since the services for the Organization entity belong to the *portal*.
+   package, since the services for the Organization entity belong to the
+*Portal* scope. 
 
 <!--I changed this based on navigating to the link specified and looking for the
 link. There was no Packages frame, but there was a Portal Services frame
 with the com.liferay.portal.service link Russ -->
 
-3. Find and click on the `-ServiceUtil` class (in this case
+3. Find and click on the `-ServiceUtil` class (in this case,
 `OrganizationLocalServiceUtil`) in the *Class Summary* table or the *Classes*
 list at the bottom of the page. 
 
@@ -156,7 +157,7 @@ Next, find out how you can invoke Liferay's service APIs remotely.
 
 *Remote* clients run outside of the portal JVM or on a remote machine, but they
 can still access Liferay's service APIs. The main benefit of remotely accessing
-servie APIs is that security checks are performed. Unless you want to avoid
+service APIs is that security checks are performed. Unless you want to avoid
 permission checking, develop your client (even if it's local) so it triggers the
 front-end security layer.
 
@@ -211,7 +212,7 @@ If the IP address of the machine on which the batch job is running is listed
 with allowable hosts for the service, it's allowed to connect to Liferay's web
 services, pass in the appropriate user credentials, and upload the documents. 
 
-![Figure 8.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
+![Figure 10.1:  Liferay SOA's first layer of security](../../images/soa-security-layer-1.png)
 
 ---
 
@@ -240,7 +241,7 @@ member of this group (or the user ID of a user with individual rights to add
 documents to this folder). If you don't, you won't be allowed to use the Web
 Service. 
 
-![Figure 8.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
+![Figure 10.2: Liferay SOA's second layer of security](../../images/soa-security-layer-2.png)
 
 With remote services, you can specify the user credentials using HTTP Basic
 authentication. Those credentials are specified unencrypted; it's recommended to
@@ -277,13 +278,13 @@ administrator can set the portal's authentication type to any of the following:
 <!--Not sure which is better here, authentication type or authorization type.
 I went with authentication. Russ -->
 
-- screen name
-- user ID
-- email address
+- *screen name*
+- *user ID*
+- *email address*
 
 Your Liferay Portal *Password Policies* (see chapter
 [Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/administering-liferay-port-1)
-of *Using Liferay Portal*) are an important consideration, since they'll ne
+of *Using Liferay Portal*) are an important consideration, since they'll be
 enforced on your administrative ID as well. If the portal is enforcing password
 policies on its users (e.g., requiring them to change their passwords on a
 periodic basis), an administrative ID accessing Liferay's web services in a
@@ -306,18 +307,18 @@ Next let's talk about Liferay's SOAP web services.
 
 ## SOAP Web Services 
 
-YTou can access Liferay's services via *Simple Object Access Protocol* (*SOAP*)
+You can access Liferay's services via *Simple Object Access Protocol* (*SOAP*)
 over HTTP. The *packaging* protocol is SOAP and the *transport* protocol is
 HTTP.
 
 As an example, let's look at the SOAP web service classes for Liferay's
 `Company`, `User`, and `UserGroup` portal services to execute the following:
 
-1. List each UserGroup to which user `test` belongs. 
+1. List each UserGroup to which user *test* belongs. 
 
-2. Add a new UserGroup named `MyGroup`. 
+2. Add a new UserGroup named *MyGroup*. 
 
-3. Add user `test` to the UserGroup. 
+3. Add user *test* to the UserGroup. 
 
 We'll use these SOAP related classes: 
 
@@ -335,7 +336,7 @@ all have suffixes `-ServiceSoapServiceLocator`, `-ServiceSoap`, and `-Soap`. The
 `-ServiceSoapServiceLocator` class *finds* the `-ServiceSoap` by means of the
 service's URL you provide. The `-ServiceSoap` class is the interface to the
 services specified in the *Web Services Definition Language* (*WSDL*) file for
-each service. The `-Soap` classes are the serializeable implementations of the
+each service. The `-Soap` classes are the serializable implementations of the
 models. Let's look at how to determine the URLs for these services. 
 
 <!--Is SOAP related classes the proper way to refer to these? I just recycled
@@ -352,7 +353,7 @@ browser to a URL following one of these formats:
 
 Here's the list of *secure* web services for `UserGroup`: 
 
-![Figure 8.3: UserGroup Web Service listing](../../images/wsdl-summary-listing.png)
+![Figure 10.3: `UserGroup` Web Service listing](../../images/wsdl-summary-listing.png)
 
 ---
 
@@ -367,10 +368,10 @@ Each web service is listed with its name, operations, and a link to its WSDL
 file. The WSDL file is written in XML and provides a model for describing and
 locating the web service. 
 
-![Figure 8.4: WSDL Excerpt for the addUserGroup operation of UserGroup](../../images/wsdl-for-user-group-service.png)
+![Figure 10.4: WSDL Excerpt for the `addUserGroup` operation of `UserGroup`](../../images/wsdl-for-user-group-service.png)
 
-As you'll see in the example in the next section, you pass in the WSDL URL along
-with your login credentials to the SOAP service locator for your service.
+You pass in the WSDL URL along with your login credentials to the SOAP service
+locator for your service--we'll show you an example in the next section. 
 
 Next, let's invoke the web service! 
 
@@ -383,20 +384,20 @@ plan to consume in your client code. For our purposes, the client we're building
 needs a *Web Service Client* for the portal's *Company*, *User*, and *UserGroup*
 services. 
 
-![Figure 8.5: New Web Service Client](../../images/api-new-web-svc-client.png)
+![Figure 10.5: New Web Service Client](../../images/api-new-web-svc-client.png)
 
 For each client you create, you'll be prompted to enter the service definition
-(WSDL) for the desired service. Here's an example: 
+(WSDL) for the desired service. Here's an example WSDL: 
 
     http://localhost:8080/api/axis/Portal_UserService?wsdl
 
-![Figure 8.6: Service Definition](../../images/api-web-svc-wsdl.png)
+![Figure 10.6: Service Definition](../../images/api-web-svc-wsdl.png)
 
 With the WSDL specified, Eclipse automatically adds the auxiliary files and
 libraries required to consume that web service.  Nifty!
 
 Here's the code that locates and invokes operations to add a new UserGroup named
-`MyUserGroup` and assign to it a User with screen name `test`: 
+*MyUserGroup* and assign to it a User with screen name *test*: 
 
     import java.net.URL;
 
@@ -861,9 +862,9 @@ of the `dlapp` default.
 Up to now, it is expected most of the service methods are going to be exposed;
 that only specific methods are to be hidden (the *blacklist* approach). But
 sometimes you might need a different behavior: to explicitly specify only those
-methods that are to be exposed (*whitelist* approach). This is possible, too,
-using so-called *manual mode* on class-level annotation. Then, it is up to you
-annotate only those methods which are to be exposed.
+methods that are to be exposed (the *whitelist* approach). This is possible,
+too, using so-called *manual mode* on class-level annotation. Then, it is up to
+you annotate only those methods which are to be exposed.
 
 Then you can annotate only methods that have to be exposed.
 
@@ -921,13 +922,13 @@ Now all requests that use HTTP methods from the list above are simply ignored.
 #### Controlling public access 
 
 Each service method knows whether it can be executed by unauthenticated users
-and whether a user has adequate permission for the chosen action.  Most of portal's read-only methods are
-open to public access.
+and whether a user has adequate permission for the chosen action.  Most of
+portal's read-only methods are open to public access.
 
 ![note](../../images/tip-pen-paper.png)**Note:** You might be worried about
 software that is self aware and controls who can access its services; we don't
 blame you, but we want to assure you that Liferay, Inc. is in no way part of
-Cyberdyne Systems (developers of Skynet, the artificial inteligence system
+Cyberdyne Systems (developers of Skynet, the artificial intelligence system
 responsible for the near destruction of mankind--in *The Terminator*, anyways). 
 
 If you're concerned about security, you can further restrict public access to
@@ -948,7 +949,7 @@ Next find out how to invoke JSON Web Services.
 ### Invoking JSON Web Services 
 
 How you invoke a JSON web service depends on how its parameters (i.e. method
-arguments) are passed in. We'll discuss how to pass in paramters below, but
+arguments) are passed in. We'll discuss how to pass in parameters below, but
 first let's make sure you to understand how your invocation is matched to a
 method. 
 
@@ -998,14 +999,14 @@ specify method parameters in name-value pairs. Parameter names must be formed
 from method argument names by converting them from camelCase to names using all
 lower case and separated-by-dash. Here's an example: 
 
-<!--The hack Skynet thing might not work; I envision passing paramteres in the
+<!--The hack Skynet thing might not work; I envision passing parameters in the
 URL being a sneaky thing to do, sort of a trick. I have to admit I don't really
 understand a lot of this chapter so if this joke doesn't work, by all means
 remove it.-->
 
     http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries/repository-id/10172/folder-id/0
 
-You can pass paramters in any order; it's not necessary to follow the order in
+You can pass parameters in any order; it's not necessary to follow the order in
 which the arguments specified in the method signatures. 
 
 When a method name is overloaded, the *best match* will be used; because Skynet
@@ -1014,7 +1015,7 @@ undefined arguments and invokes it for you, human.
 
 <!--Again, if this doesn't work, get rid of it. -->
 
-You can also pass paramters in a URL query, and we'll show you how next. 
+You can also pass parameters in a URL query, and we'll show you how next. 
 
 #### Passing parameters as URL query 
 
@@ -1026,7 +1027,7 @@ as is (e.g. camelCase) and are set equal to their argument values, like this:
 As with passing parameters as part of a URL path, the parameter order is not
 important, and the *best match* rule applies for overloaded methods. 
 
-Now that you kow a few different ways to pass paramters, next let's mix them all
+Now that you know a few different ways to pass parameters, next let's mix them all
 up and see if we can confuse Skynet into self-destruction! 
 
 #### Mixed way of passing parameters 
@@ -1098,7 +1099,7 @@ without a prefix. Here's an example:
 There's a difference between URL encoding and query (i.e. request parameters)
 encoding; the difference is crucial to the effort to defeat Skynet, so pay
 attention. The difference lies in how the space character is encoded. When the
-space character is part of the URL path, it'ss encoded as `%20`; when it's part
+space character is part of the URL path, it's encoded as `%20`; when it's part
 of the query it's encoded as plus sign (`+`).
 
 All these encoding rules apply to international (non-ascii) characters, as well.
@@ -1131,7 +1132,7 @@ Files can be uploaded using multipart forms and requests. Here's an example:
         <input type="submit" value="addFileEntry(file)"/>
     </form>
 
-Thyis common upload form that invokes the `addFileEntry` method of the
+This is common upload form that invokes the `addFileEntry` method of the
 `DLAppService` class. 
 
 #### JSON RPC 
@@ -1161,10 +1162,10 @@ defaults, you don't have to specify them explicitly.
 
 Here are the default parameters:  
 
-- `userId`: The id of authenticated user
-- `user`: The full User object
-- `companyId`: The users company
-- `serviceContext`: The empty service context object 
+- *userId*: The id of authenticated user
+- *user*: The full User object
+- *companyId*: The users company
+- *serviceContext*: The empty service context object 
 
 Let's find out about object parameters next. 
 
@@ -1175,7 +1176,7 @@ sometimes you might need to provide an object (a non-simple type) as a service
 parameter. 
 
 To create an instance of an object parameter, prefix the parameter with a plus
-sign, `+` and don't assign it any other parameter vazlue. This is similar to
+sign, `+` and don't assign it any other parameter value. This is similar to
 when we specified a null parameter by prefixing the parameter with a dash
 symbol, `-`.
 
@@ -1184,7 +1185,7 @@ Here's an example:
     /jsonws/foo/get-bar/zap-id/10172/start/0/end/1/+foo
 
 To create an instance of an object parameter as a request parameter, make sure
-you encody the `+` symbol: 
+you encode the `+` symbol: 
 
     /jsonws/foo/get-bar?zapId=10172&start=0&end=1&%2Bfoo
 
@@ -1337,7 +1338,7 @@ support the cause, especially those familiar with time travel.
 
 <!-- Too much?-->
 
-Next we'll show you how to optimize your use of JSON Web Serrvices by using the
+Next we'll show you how to optimize your use of JSON Web Services by using the
 *JSON Web Services Invoker*. 
 
 ### JSON Web Services Invoker 
@@ -1457,14 +1458,14 @@ used the `contactId` parameter, with the `$user.contactId` value from the object
 the user object's property named `contact`. 
 
 ![note](../../images/tip-pen-paper.png)**Note:** You must *flag* parameters that
-take values from existing variables. To flag a paramteter, insert the `@` prefix
+take values from existing variables. To flag a parameter, insert the `@` prefix
 before the parameter name. 
 
 #### Filtering results 
 
 Many of Liferay Portal's model objects are rich with properties. If you only
 need a handful of an object's properties for your business logic, making a web
-service incvocation that returns all of an objects properties is a waste of
+service invocation that returns all of an objects properties is a waste of
 network bandwidth. Bandwidth is a scarce resource for the resistance to Skynet,
 so conserve it carefully. With the JSON Web Service Invoker, you can define a
 *white-list* of properties; only the specific properties you request in the
@@ -1505,7 +1506,7 @@ The result is a JSON array populated with results from each command. The
 commands are collectively invoked in a single HTTP request, one after another. 
 
 By learning to leverage JSON Web Services in Liferay, you've added some powerful
-tools to your toolbox. Good job--with shapr folks like you in the fold, maybe
+tools to your toolbox. Good job--with sharp folks like you in the fold, maybe
 the resistance can prevail after all! 
 
 Next let's consider the `ServiceContext` class that's used by many Liferay
@@ -1524,7 +1525,7 @@ In this section we'll look at the Service Context fields, learn how to create
 and populate a Service Context, and learn to access Service Context data.
 
 <!--I got rid of the list here and replaced it with a paragraph, since I've only
-seen a list of contents for the entire chapter, if memory seves. Russ -->
+seen a list of contents for the entire chapter, if memory serves. Russ -->
 
 First we'll look at the fields of the `ServiceContext` class. 
 
@@ -1832,7 +1833,7 @@ service can be both a message sender and a message listener. For example, in the
 figure below both *Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and
 listen for messages. 
 
-![Figure 9.1: Example, Message Bus system](../../images/msg-bus-system.png)
+![Figure 10.7: Example, Message Bus system](../../images/msg-bus-system.png)
 
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
@@ -1974,7 +1975,7 @@ last for a couple hours, Procurement makes it their top priority to get approval
 as soon as possible. Implementing their exchange using *synchronous* messaging
 makes the most sense. 
 
-![Figure 9.2: Synchronous messaging](../../images/msg-bus-sync-msg.png)
+![Figure 10.8: Synchronous messaging](../../images/msg-bus-sync-msg.png)
 
 The following table describes how we'll set things up: 
 
@@ -2110,7 +2111,7 @@ already in your plugin). Here is the configuration:
 
 <!--If the messaging-spring file potentially hasn't been created yet where has
 the reader been putting the code snippets from above? Should this statement go
-before the ifrst code snippet?--> 
+before the first code snippet?--> 
 
     <?xml version="1.0"?>
 
@@ -2225,7 +2226,7 @@ sender to continue with other tasks. However, it's often important that the
 listener can respond to the sender. This can be done using a call-back.
 
 Jungle Gyms R-Us's Procurement Department must notify the Sales and Warehouse
-departments ofincoming equipment while simultaneously soliciting their
+departments of incoming equipment while simultaneously soliciting their
 feedback. To assure all three departments are in up to speed, any responses
 from the Sales or Warehouse departments will be posted to a shared destination. 
 
@@ -2241,7 +2242,7 @@ The following table describes how we'll set things up:
 The following image shows asynchronous messaging, with its serial dispatchment
 of messages: 
 
-![Figure 9.3: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
+![Figure 10.9: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
 
 Let's package the message as a `JSONObject` and send it to the destination: 
 
@@ -2358,7 +2359,7 @@ messages differently depending on their destinations; messages to
 `jungle/purchase` are handled as Procurement's purchase notifications, while
 messages to `jungle/purchase/response` are treated as departmental responses to
 Procurement's purchase notifications.  The `doReceiveResponse(Message)` method
-performs animportant task, checking that the response comes from a department
+performs an important task, checking that the response comes from a department
 other than itself, and printing an error if it doesn't. 
 
 Here are the configuration elements we added to the `messaging-spring.xml` from
@@ -2417,7 +2418,7 @@ there's no need for the comany-wide listener to package up responses. We do,
 however, want everyone to get product news at the *same time*, so instead of
 dispatching news to employees *serially* we'll dispatch *in parallel*.
 
-![Figure 9.4: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
+![Figure 10.10: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
 
 We'll specify a *parallel* destination type in our `messaging-spring.xml`:
 
@@ -2462,15 +2463,16 @@ Skynet/Resistance stuff:
 -->
 
 To understate the matter, Skynet isn't a fan of Open Source technology; it's
-not at all keen on collaboration or competition. Skynet employs cyborgs to
-annihilate any unauthorized life it detects, human or otherwise .  However, the
-population of the Resistance continues to grow, and there are other population
-clusters as well. These disjointed, yet thriving, groups rely on mobile
-communication, and internet traffic is rising exponentially despite the
-technological setbacks experienced following Judgment Day. It sounds similar to
-the situation in 2013, right down to the problem-- the mobile devices aren't
-uniform in their capabilities. How can these disparate devices request the same
-information from your portal? 
+not at all keen on collaboration, competition, or even the existence of life
+outside of its collection ofhuman subjects (now that's proprietary). Skynet
+employs cyborgs to annihilate all unauthorized life it detects, human or
+otherwise.  Despite this, the population of the Resistance continues to grow,
+and there are other population clusters as well. These disjointed, yet
+thriving, groups rely on mobile communication, and internet traffic is rising
+exponentially despite the technological setbacks experienced following Judgment
+Day. It sounds similar to the situation in 2013, right down to the problem--
+the mobile devices aren't uniform in their capabilities. How can these
+disparate devices request the same information from your portal? 
 
 <!--As you know, internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile internet
@@ -2481,15 +2483,15 @@ capabilities? How can your grandma's gnarly tablet and cousin's awesome new
 mobile phone request the same information from your portal?
 -->
 
-The *Device Detection* API detects the capabilities of a device making a
-request to your portal. It can also allow Liferay to determine what mobile
-device or operating system was used to make a request, and render pages based
-on the device. To use this feature you first need to install the *Device
-Recognition Provider* app from Liferay Marketplace. Find more information on
-the app by following one of these links, depending on whether you use Liferay
-CE or EE : [Device Recognition
+The *Device Detection* API detects the capabilities of any device making a
+request to your portal. It th the Device Detection API, Liferay can also
+determine what mobile device or operating system was used to make a request,
+and render pages based on the device. To use this feature you first need to
+install the *Device Recognition Provider* app from Liferay Marketplace. Find
+more information on the app by following one of these links, depending on
+whether you use Liferay CE or EE: [Device Recognition
 CE](http://www.liferay.com/marketplace/-/mp/application/15193341) or [Device
-Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132).
+Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132). 
 
 The *Device Recognition* plugin comes bundled inside the Device Recognition
 Provider app; it uses a device database called *WURFL* to determine the
@@ -2497,8 +2499,8 @@ capabilities of your device. Visit the WURFL website for more information at
 [http://wurfl.sourceforge.net/](http://wurfl.sourceforge.net/).
 
 You can create your own plugin to use your device's database. Let's look at
-some simple ways to use the Device Detection API and talk about its
-capabilities.
+some simple uses of the Device Detection API and talk about its
+capabilities. 
 
 ### Using the Device API 
 
@@ -2517,56 +2519,71 @@ device's dimensions:
     float width = dimensions.getWidth();
 
 Now your device can obtain the `Device` object and the dimensions of a device.
-Of course this is just an example; you can acquire many other values that take
-care of the pesky problems that arise when sending content to different
-devices. Youcan refer to the Device javadocs mentioned above for assistance.
+Of course this is just a single example; you can acquire many other values that
+take care of the pesky problems that arise when sending content to different
+devices. You can refer to the Device javadocs mentioned above for assistance.
 Let's look at some device capabilities next.
 
 ### Device capabilities
 
-Most of the capabilities of a device can be detected, but this depends on the
-device detection implementation you're using. For the Device Recognition plugin,
-you can view its device database's (WURFL) list of capabilities
-[here](http://www.scientiamobile.com/wurflCapability/tree). For an example, you
-can obtain the capability of a brand name by using this code:
+Most of the capabilities of a device can be detected, depending on the device
+detection implementation you're using. The Device Recognition plugin's device
+database (WURFL) has a list of capabilities
+[here](http://www.scientiamobile.com/wurflCapability/tree). For example, you
+can obtain the capability of a brand name with this code:
 
     String brand = device.getCapability("brand_name");
 
-Furthermore, you can grab many other values such as model_name, marketing_name,
-release_date, etc. Also, there are boolean values that can be acquired that
-include: is_wireless_device, is_tablet, etc. Keeping the capabilities list in
-mind when configuring your device is very helpful.
+There are plenty of other values to grab device capabilities by, including
+`model_name`, `marketing_name`, and `release_date`. You can also get boolean
+values like `is_wireless_device`, `is_tablet`, etc.  Keeping the capabilities
+list in mind when configuring your device is very helpful.
 
-You're able to detect the capabilities of a device making a request to your
-portal by using the Device Detection API. Through the use of this API, your
-grandma's gnarly tablet and cousin's awesome new mobile phone can make requests
-to your portal and receive identical content. This will make everyone happy!
+<!--I was unsure whether  these values were a sort of filter for device
+capabilities or if these are the values, or capabilities, themselves that are
+returned.-->
+
+With the Device Detection API, you can detect the capabilities of a device
+making request to your portal and render content accordingly; so your grandma's
+gnarly tablet and your cousin's awesome new mobile phone can make requests to
+your portal and receive identical content. Everyone is happy (except Skynet, of
+course)!
 
 You're really getting the hang of Liferay's APIs. Way to go! 
 
 ## Liferay's Deprecation Policy
 
-Methods in Liferay's APIs are generally deprecated when they are no longer
-called by Liferay internally. Methods can be deprecated at any time within a
-maintenance release. Recall that Liferay version numbers consist of a
-three-digit number in the form of major.minor.maintenance, e.g., 6.0.2 (major
-version 6, minor version, maintenance version). A change in the third number
-(e.g., 6.0.2 to 6.0.3) is a maintenance update, also known as a fix pack. Major
-and minor releases introduce new features so they are called feature releases.
-Maintenance updates do not include new features. When a method is deprecated, it
-should no longer be used for custom development.  However, you don't need to
-immediately update your custom code so that it doesn't call the deprecated
-method. Deprecated methods will not be removed during the maintenance of any
-feature release. However, deprecated methods may be removed in future feature
-releases.
+Methods in Liferay's APIs are generally deprecated when they're no longer called
+by Liferay internally. Method deprecation occurs during a maintenance release of
+Liferay. You'll know when there's a maintenance release if you understand
+Liferay's release version notation. Liferay version numbers consist of a three
+digit number--knowing what each digit represents is key, so let's consider a
+case where you were using Liferay 6.0.2, and Liferay 6.0.3 has just been
+released:
 
-## Conclusion 
+- Digit 1 (**6**.0.3): The first digit represents the major release version,
+  which is a *feature release*; this simply means that new features have been
+released. In our example, this hasn't changed. 
 
-<!--Summary-->
+- Digit 2 (6.**0**.3): The second digit is the minor release, which is also a
+  feature release. It also did not change in our example. 
 
-Well, you've covered a lot of ground here in learning how to use the API locally
-and remotely, how to enable/disable remote services and access to them, and how
-to leverage ServiceContext objects in your use of Liferay services. You've also
-rolled up your sleeves in working with Message Bus. Well done! Next, we'll take
-a look at some of the powerful frameworks of Liferay Portal, learn how they work
-and how you can leverage them.
+- Digit 3 (6.0.**3**): The third digit represents the maintenance release, or
+  fix pack release. In our case, this changed from *2* to *3*, so we discovered
+a maintenance release, and we need to be aware that API methods might have been
+deprecated. If any have, you shouldn't use them for custom development.
+Deprecated methods won't be removed during the maintenance of a feature feature
+release, but they may be removed in future feature releases.
+
+## Summary  
+
+We've covered a lot of ground here, and you've handled it with the efficiency of
+a machine; you've been as focused as a Terminator programmed to eliminate a key
+member of the resistance. Wait a minute, you're not a Terminator who's been
+silently playing along, to infiltrate our ranks, are you? Tell us a joke to
+prove you're a human.  Regardless, you've learned how to use the API locally and
+remotely, how to enable and disable remote services and access to them, and how
+to leverage ServiceContext objects in your use of Liferay services.  You've
+really tested your neural net processor in working with Message Bus. Well done!
+Next we'll take a look at some of the powerful frameworks of Liferay Portal,
+learn how they work and how you can leverage them. 
