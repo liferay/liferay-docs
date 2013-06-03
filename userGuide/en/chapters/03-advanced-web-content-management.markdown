@@ -140,6 +140,8 @@ Take a moment to add, delete, and rearrange different elements.
 
 ![Figure 3.2: The structure editor gives you many options to customize your Web Content.](../../images/04-web-content-structure-editor.png)
 
+<!-- Pic above needs to be replaced. Missing images at first image update cycle. -->
+
 Liferay supports the following fields in structures:
 
 **Boolean:** Adds a checkbox onto your structure, which stores either `true`
@@ -269,35 +271,26 @@ title, your tip is displayed.
 ##### Structure Default Values
 
 Structure Default Values allow you to create one structure that uses common data
-from multiple articles. Returning to our newspaper scenario again, let's say you
-want all sports articles to have the same display page (sports page), the same
-categories, or the same set of tags. Instead of adding them for each article or
-wondering if your users are adding them to each article, you can add these
+from multiple articles.
+
+Returning to our newspaper scenario again, let's say you want all sports
+articles to have the same display page (sports page), the same categories, or
+the same set of tags. Instead of adding them for each article or wondering if
+your users are adding them to every web content, you can add these
 characteristics once for every sports article by creating default values for the
-structure. There are two ways to edit structure default values: creating a new
-structure or editing an existing structure.
+structure. Creating default values is not part of creating a new structure, so
+make sure you have an existing structure.
 
-For a new structure, you must first create the structure before editing its
-default values. Navigate to *Web Content* in the Control Panel and click the
-*Structures* tab, then select the *Add Structure* button. Under the *XML Schema
-Definition* section of the new structure form, use the *Add Row* button to
-create different types of fields for the structure. Or you can use the editor to
-create the structure manually: the Launch Editor button allows you to edit the
-XML for the structure if you wish to do it via code. When you are done, click
-*Save and Continue* to go to the Structure Default Values form.
+To edit a structure's default values, go to *Web Content* in the Control Panel
+and click *Manage* &rarr; *Structures* to see the structures list. Find the
+*Actions* button for the desired structure and select *Edit Default Values* from
+the menu to view a window like the one below. This form allows you to manage the
+structure settings.
 
-![Figure 3.3: You can create fields for structure default values via the XML Schema Definition section of the new structure form.](../../images/xml-schema-definitions-new.png)
-
-To edit an existing structure, go to *Web Content* in the Control Panel and
-click the *Structures* tab to see the structures list. Find the *Actions* button
-for the desired structure and select *Edit Default Values* from the menu to view
-a window like the one below. This form allows you to manage the structure
-settings.
-
-![Figure 3.4: You can edit default values via the Actions button of the structure form.](../../images/structure-default-values.png)
+![Figure 3.3: You can edit default values via the *Actions* button of the Manage Structures interface.](../../images/structure-actions.png)
 
 Every new web content you create with this structure is preloaded with the
-data you inserted.
+data you inserted. Next, let's demonstrate assigning permissions.
 
 #### Assigning permissions  
 
