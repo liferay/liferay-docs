@@ -69,21 +69,21 @@ about its various files:
 
 - `columns-1-4-1-layouttpl/`
 
-	- `docroot/`
+    - `docroot/`
 
-		- `WEB-INF/`
+        - `WEB-INF/`
 
-			- `liferay-layout-templates.properties`
+            - `liferay-layout-templates.properties`
 
-			- `liferay-plugin-package.properties`
+            - `liferay-plugin-package.properties`
 
-		- `columns_1_4_1.png`
+        - `columns_1_4_1.png`
 
-		- `columns_1_4_1.tpl`
+        - `columns_1_4_1.tpl`
 
-		- `columns_1_4_1.wap.tpl`
+        - `columns_1_4_1.wap.tpl`
 
-	- `build.xml`
+    - `build.xml`
 
 To name the parent folder, the Plugins SDK automatically appended "-layouttpl"
 to your project name. A project can contain multiple layout templates. The
@@ -142,9 +142,9 @@ plugin was read, registered, and is now available for use.
 
 Example server output:
 
-	Reading plugin package for columns-1-4-1-layouttpl
-	Registering layout templates for columns-1-4-1-layouttpl
-	1 layout template for columns-1-4-1-layouttpl is available for use
+    Reading plugin package for columns-1-4-1-layouttpl
+    Registering layout templates for columns-1-4-1-layouttpl
+    1 layout template for columns-1-4-1-layouttpl is available for use
 
 Wait a minute! We can deploy the template, but we still haven't designed it.
 We'll need to add content to the TPL files that were generated when we created
@@ -185,15 +185,17 @@ of the page width, adjust that row's first column (`column-2`) from 20% to 25%.
 
 Here's how the original 20% column width definition looks:
 
-	<div class="aui-w20 portlet-column portlet-column-first" id="column-2">
-		$processor.processColumn("column-2", "portlet-column-content portlet-column-content-first")
-	</div>
+    <div class="aui-w20 portlet-column portlet-column-first" id="column-2">
+        $processor.processColumn(
+            "column-2", "portlet-column-content portlet-column-content-first")
+    </div>
 
 Here's the column width definition modified to 25%:
 
-	<div class="aui-w25 portlet-column portlet-column-first" id="column-2">
-		$processor.processColumn("column-2", "portlet-column-content portlet-column-content-first")
-	</div>
+    <div class="aui-w25 portlet-column portlet-column-first" id="column-2">
+        $processor.processColumn(
+            "column-2", "portlet-column-content portlet-column-content-first")
+    </div>
 
 It's hard to see, but we changed the column's class `aui-w20` value to
 `aui-w25`. 
@@ -251,36 +253,45 @@ Here's a description of the portlets we're embedding in the layout:
 
 Here's the TPL that implements embedding of these portlets:
 
-	<div class="columns_1_4_1" id="main-content" role="main">
-		<div class="portlet-layout">
-			<div class="portlet-column portlet-column-only" id="column-1">
-				$processor.processPortlet("my-hello-world-portlet_WAR_myhelloworldportlet")
-				$processor.processColumn("column-1", "portlet-column-content portlet-column-content-only")
-			</div>
-		</div>
-		<div class="portlet-layout">
-			<div class="aui-w25 portlet-column portlet-column-first" id="column-2">
-				$processor.processPortlet("71_INSTANCE_xyz1")
-				$processor.processColumn("column-2", "portlet-column-content portlet-column-content-first")
-			</div>
-			<div class="aui-w25 portlet-column" id="column-3">
-				$processor.processColumn("column-3", "portlet-column-content")
-			</div>
-			<div class="aui-w25 portlet-column" id="column-4">
-				$processor.processColumn("column-4", "portlet-column-content")
-			</div>
-			<div class="aui-w25 portlet-column portlet-column-last" id="column-5">
-				$processor.processPortlet("3")
-				$processor.processColumn("column-5", "portlet-column-content portlet-column-content-last")
-			</div>
-		</div>
-		<div class="portlet-layout">
-			<div class="portlet-column portlet-column-only" id="column-6">
-				$processor.processPortlet("my-goodbye-world-portlet_WAR_myhelloworldportlet_INSTANCE_jkl1")
-				$processor.processColumn("column-6", "portlet-column-content portlet-column-content-only")
-			</div>
-		</div>
-	</div>
+    <div class="columns_1_4_1" id="main-content" role="main">
+        <div class="portlet-layout">
+            <div class="portlet-column portlet-column-only" id="column-1">
+                $processor.processPortlet(
+                    "my-hello-world-portlet_WAR_myhelloworldportlet")
+                $processor.processColumn("column-1",
+                    "portlet-column-content portlet-column-content-only")
+            </div>
+        </div>
+        <div class="portlet-layout">
+            <div class="aui-w25 portlet-column portlet-column-first" id="column-2">
+                $processor.processPortlet("71_INSTANCE_xyz1")
+                $processor.processColumn(
+                    "column-2",
+                    "portlet-column-content portlet-column-content-first")
+            </div>
+            <div class="aui-w25 portlet-column" id="column-3">
+                $processor.processColumn("column-3", "portlet-column-content")
+            </div>
+            <div class="aui-w25 portlet-column" id="column-4">
+                $processor.processColumn("column-4", "portlet-column-content")
+            </div>
+            <div class="aui-w25 portlet-column portlet-column-last" id="column-5">
+                $processor.processPortlet("3")
+                $processor.processColumn(
+                    "column-5",
+                    "portlet-column-content portlet-column-content-last")
+            </div>
+        </div>
+        <div class="portlet-layout">
+            <div class="portlet-column portlet-column-only" id="column-6">
+                $processor.processPortlet(
+                "my-goodbye-world-portlet_WAR_myhelloworldportlet_INSTANCE_jkl1")
+                $processor.processColumn(
+                    "column-6",
+                    "portlet-column-content portlet-column-content-only")
+            </div>
+        </div>
+    </div>
 
 What would a page using our "Columns 1 4 1" layout template look like? Check out
 the following figure for a screenshot of our layout template with its embedded
