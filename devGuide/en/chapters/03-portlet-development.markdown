@@ -287,14 +287,106 @@ operations that are common to all or most portlets. The most common usage is to
 create an edit screen where each user can specify personal preferences for the
 portlet. All portlets must support the view mode. 
 
-- `portlet-info`: Defines portlet information. 
+- `portlet-info`: Defines information that can be used for the portlet title-bar
+  and for the portal's categorization of the portlet. The JSR-286 specification
+  defines a few resource elements that can be used for these purposes: `title`,
+  `short-title`, and `keywords`. You can either include resource elements 
+  directly in a `portlet-info` element or you can place them in resource
+  bundles.
 
-<!-- The definition for portlet-info is insufficient. For further information
-about it, look at the JSR-286 reference document. --> 
+    Specifying the information directly into the `portlet-info` element in your
+    `portlet.xml` file is straightforward. For example, to you could specify a
+    weather portlet's information, like this:
 
-- `security-role-ref`: Security-role-ref contains the declaration of a security
-role reference in the code of the web application. Specifically in Liferay, the
-`role-name` references which roles can access the portlet. 
+        <portlet>
+            ...
+            <portlet-info>
+                <title>Weather Portlet</title>
+                <short-title>Weather></short-title>
+                <keywords>weather,forecast</keywords>
+            </portlet-info>
+            ...
+        </portlet>
+
+    Alternatively, you can specify this same information as resources in a
+    resource bundle file for your portlet. For example, you could create file
+    `docroot/WEB-INF/src/content/Language.properties`, in your portlet project,
+    to specify your portlet's title, short title, and keywords:
+
+        # Default Resource Bundle
+        #
+        # filename: Language.properties
+        # Portlet Info resource bundle example
+        javax.portlet.title=Weather Portlet
+        javax.portlet.short-title=Weather
+        javax.portlet.keywords=weather,forecast
+
+    To use the resource bundle, you'd reference it in your `portlet.xml` file:
+
+        <portlet>
+            ...
+            <resource-bundle>content.Language</resource-bundle>
+            ...
+        </portlet>
+
+    As a best practice, if you're not planning on supporting localized title,
+    short title, and keywords values for your portlet, simply specify them
+    within the `<portlet-info>` element in your `portlet.xml` file. Otherwise,
+    if you're ready to provide localized values, use a resource bundle for 
+    specifying your default values and specify the localized values in separate
+    resource bundles.
+
+    ---
+    
+    ![note](../../images/tip-pen-paper.png) **Note:** You should not specify
+    values for a portlet's title, short title, and keywords in both a portlet's 
+    `<portlet-info>` element in `portlet.xml` and in a resource bundle. But if
+    by accident you do, the values in the resource bundle take precedence over
+    the values in the `<portlet-info>` element.
+
+    ---
+
+    Specifying *localized* values for your portlet's title, short title, and
+    keywords in resource bundles is easy. For example, if you're supporting
+    German and English locales, you'd create `Language_de.properties` and
+    `Language_en.properties` files, respectively, in your portlet's
+    `docroot/WEB-INF/src/content/` directory. This is the same directory as your
+    default resource bundle file `Language.properties`. The contents of the
+    German and English resource bundles may look like the following: 
+
+        # English Resource Bundle
+        #
+        # filename: Language_en.properties
+        # Portlet Info resource bundle example
+        javax.portlet.title=Weather Portlet
+        javax.portlet.short-title=Weather
+        javax.portlet.keywords=weather,forecast
+        
+        # German Resource Bundle
+        #
+        # filename: Language_de.properties
+        # Portlet Info resource bundle example
+        javax.portlet.title=Wetter Portlet
+        javax.portlet.short-title=Wetter
+        javax.portlet.keywords=wetter,vorhersage
+
+    You'd reference your default bundle and these localized bundles in your
+    `portlet.xml` file, like this:
+
+        <portlet>
+            ...
+            <resource-bundle>content.Language</resource-bundle>
+            <resource-bundle>content.Language_de</resource-bundle>
+            <resource-bundle>content.Language_en</resource-bundle>
+            ...
+        </portlet>
+
+    For more information, see the JSR-286 portlet specification, at
+    [http://www.jcp.org/en/jsr/detail?id=286](http://www.jcp.org/en/jsr/detail?id=286).
+
+- `security-role-ref`: Contains the declaration of a security role reference in
+the code of the web application. Specifically in Liferay, the `role-name`
+references which roles can access the portlet. 
 
 **docroot/WEB-INF/liferay-portlet.xml**: In addition to the standard
 `portlet.xml` options, there are optional Liferay-specific enhancements for Java
@@ -448,12 +540,77 @@ taglibs to create forms based on your own preferences.
 
 Another JSP tag you may have noticed is `<portlet:defineObjects/>`. The portlet
 specification defined this tag in order to be able to insert a set of implicit
-variables into the JSP that are useful for portlet developers, such as
-`renderRequest`, `portletConfig`, `portletPreferences`, etc. 
+variables into the JSP that are useful for portlet developers, including
+`renderRequest`, `portletConfig`, `portletPreferences`, etc. Note that the
+JSR-286 specification defines four lifecycle methods for a portlet:
+processAction, processEvent, render, and serveResource. Some of the variables
+defined by the `<portlet:defineObjects/>` tag are only available to a JSP if the
+JSP was included during the appropriate phase of the portlet lifecycle. The
+`<portlet:defineObjects>` tag makes the following portlet objects available to a
+JSP:
 
-<!-- It might be helpful to list these variables here. --> 
+- `RenderRequest renderRequest`: represents the request sent to the portlet to
+  handle a render. `renderRequest` is only available to a JSP if the JSP was
+  included during the render request phase.
 
-**A warning about our newly created portlet:** For the purpose of making this
+- `ResourceRequest resourceRequest`: represents the request sent to the portlet
+  for rendering resources. `resourceRequest` is only available to a JSP if the
+  JSP was included during the resource-serving phase.
+
+- `ActionRequest actionRequest`: represents the request sent to the portlet to
+  handle an action. `actionRequest` is only available to a JSP if the JSP was
+  included during the action-processing phase.
+
+- `EventRequest eventRequest`: represents the request sent to the portlet to
+  handle an event. `eventRequest` is only available to a JSP if the JSP was
+  included during the event-processing phase.
+
+- `RenderResponse renderResponse`: represents an object that assists the
+  portlet in sending a response to the portal. `renderResponse` is only
+  available to a JSP if the JSP was included during the render request phase.
+
+- `ResourceResponse resourceResponse`: represents an object that assists the
+  portlet in rendering a resource. `resourceResponse` is only available to a JSP
+  if the JSP was included in the resource-serving phase.
+
+- `ActionResponse actionResponse`: represents the portlet response to an action
+  request. `actionResponse` is only available to a JSP if the JSP was included
+  in the action-processing phase.
+
+- `EventResponse eventResponse`: represents the portlet response to an event
+  request. `eventResponse` is only available to a JSP if the JSP was included
+  in the event-processing phase.
+
+- `PortletConfig portletConfig`: represents the portlet's configuration
+  including, the portlet's name, initialization parameters, resource bundle, and
+  application context. `portletConfig` is always available to a portlet JSP,
+  regardless of the request-processing phase in which it was included.
+
+- `PortletSession portletSession`: provides a way to identify a user across more
+  than one request and to store transient information about a user. A
+  `portletSession` is created for each user client. `portletSession` is always
+  available to a portlet JSP, regardless of the request-processing phase in
+  which it was included. `portletSession` is `null` if no session exists.
+
+- `Map<String, Object> portletSessionScope`: provides a Map equivalent to the
+  `PortletSession.getAtrributeMap()` call or an empty Map if no session
+  attributes exist.
+
+- `PortletPreferences portletPreferences`: provides access to a portlet's
+  preferences. `portletPreferences` is always available to a portlet JSP,
+  regardless of the request-processing phase in which it was included.
+
+- `Map<String, String[]> portletPreferencesValues`: provides a Map equivalent to
+  the `portletPreferences.getMap()` call or an empty Map if no portlet
+  preferences exist.
+
+The variables made available by the `<portlet:defineObjects/>` tag reference are 
+the same portlet API objects that are stored in the request object of the JSP.
+For more information about these objects, please refer to
+the Liferay's Portlet 2.0 Javadocs at
+[http://docs.liferay.com/portlet-api/2.0/javadocs/](http://docs.liferay.com/portlet-api/2.0/javadocs/).
+
+**A warning about our newly created portlet:** For the purpose of making our
 example easy to follow, we cheated a little bit. The portlet specification
 doesn't allow setting preferences from a JSP, because they are executed in what
 is known as the render state. There are good reasons for this restriction, and
@@ -830,7 +987,9 @@ portlets.
 When you click the *Edit greeting* link, you're taken to a page with a URL that
 looks like this:
 
-    http://localhost:8080/web/guest/home?p_p_id=mygreeting_WAR_mygreetingportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&_mygreeting_WAR_mygreetingportlet_mvcPath=%2Fedit.jsp
+    http://localhost:8080/web/guest/home?p_p_id=mygreeting_WAR_mygreetingportlet
+        &p_p_lifecycle=0&p_p_state=normal&p_p_mode=view\&p_p_col_id=column-1&_my
+        greeting_WAR_mygreetingportlet_mvcPath=%2Fedit.jsp
     
 Since Liferay 6, there's a built-in feature that can easily change the ugly URL
 above to this:
@@ -866,7 +1025,9 @@ file:
     <routes>
         <route>
             <pattern>/{mvcPathName}</pattern>
-            <generated-parameter name="mvcPath">/{mvcPathName}.jsp</generated-parameter>
+            <generated-parameter name="mvcPath">
+                /{mvcPathName}.jsp
+            </generated-parameter>
         </route>
     </routes>
 
@@ -1061,7 +1222,7 @@ be specified in a resource bundle file with a name ending in his locale's two
 character code. For example, a resource bundle file named
 `Language_es.properties` containing a message property with key `welcome` must
 be present with a Spanish translation of the word "Welcome". Good news, Plugins
-SDK provides a means for you to get translatations for your default resource
+SDK provides a means for you to get translations for your default resource
 bundle.
 
 The Plugins SDK uses the Bing Translator service
@@ -1070,7 +1231,7 @@ translate all of the resources in your Language.properties file to multiple
 languages. It provides a base translation for you to start with. To create base
 translations using the Bing Translator service, you'll need to do the following:
 
-1. Signup for an Azure Marketploace account and register your application. Be
+1. Signup for an Azure Marketplace account and register your application. Be
 sure to write down your ID and secret given to you for your application.
 
 2. Edit the `portal-ext.properties` file in your Liferay Home directory by
@@ -1207,7 +1368,10 @@ To create a plugin which extends another, follow these steps:
 4. Add the following line to your `build.xml` inside of the `<project>` tag to
    reference the original WAR file you are going to extend:
 
-        <property name="original.war.file" value="social-networking-portlet-6.1.10.1-ee-ga1.war" />
+        <property
+            name="original.war.file"
+            value="social-networking-portlet-6.1.10.1-ee-ga1.war"
+        />
 
 5. Copy any files from the original plugin that you're overwriting to your
    new plugin (using the same folder structure) and run the Ant target `merge`.
@@ -1215,19 +1379,27 @@ To create a plugin which extends another, follow these steps:
    All you have to do is to check the Ant output:
 
         dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
-        Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.xml
+        Buildfile: /home/dsanz/sdk/portlets/my-social-networking-portlet/build.x
+            ml
         
         compile:
         
         merge:
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/classes
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/lib
+        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portl
+            et/tmp
+        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portl
+            et/tmp/WEB-INF/classes
+        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portl
+            et/tmp/WEB-INF/lib
         
         merge-unzip:
-        [unzip] Expanding: /home/dsanz/sdk/portlets/my-social-networking-portlet/social-networking-portlet-6.1.10.1-ee-ga1.war into /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
-        [copy] Copying 2 files to /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
-        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portlet/docroot/WEB-INF/classes
+        [unzip] Expanding: /home/dsanz/sdk/portlets/my-social-networking-portlet
+            /social-networking-portlet-6.1.10.1-ee-ga1.war into /home/dsanz/sdk/
+            portlets/my-social-networking-portlet/tmp
+        [copy] Copying 2 files to /home/dsanz/sdk/portlets/my-social-networking-
+            portlet/tmp
+        [mkdir] Created dir: /home/dsanz/sdk/portlets/my-social-networking-portl
+            et/docroot/WEB-INF/classes
         
         ...
 
