@@ -129,9 +129,13 @@ public class NumberHeadersTask extends Task {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
 		heading2 = heading2.trim();
 
-		// Replace each space, dot, and spaced dash with a dash
+		// Replace each spaced dash, space, dot, and slash with a dash
 
-		heading2 = heading2.replace(" - ", "-").replace(' ', '-').replace('.', '-').toLowerCase();
+		heading2 = heading2.replace(" - ", "-");
+		heading2 = heading2.replace(' ', '-');
+		heading2 = heading2.replace('.', '-');
+		heading2 = heading2.replace('/', '-');
+		heading2 = heading2.toLowerCase();
 
 		// Filter out characters other than dashes, letters, and digits
 
@@ -229,31 +233,12 @@ public class NumberHeadersTask extends Task {
 
 			String chapter = extractChapterNumber(filename);
 
-			// Note, length of heading
-
-			int headingLen = heading.length();
-
 			int idCount = -1;
 			String newHeading = null;
 			while (true) {
 
-				
 				newHeading = assembleId(heading, props, chapter, idCount);
 
-				int lenDiff = newHeading.length() - MAX_ID_LEN;
-				if (lenDiff > 0) {
-
-					if (idCount > -1) {
-						heading = heading.substring(0, heading.length() - 2);
-					}
-					else {
-						// Trim heading
-						heading = heading.substring(0, headingLen - lenDiff);
-					}
-				}
-
-				newHeading = assembleId(heading, props, chapter, idCount);
-				
 				if (IDS.get(newHeading) == null) {
 
 					// Heading is unique
@@ -276,25 +261,43 @@ public class NumberHeadersTask extends Task {
 
 	private String assembleId(String heading, Properties props, String chapter,
 			int idCount) {
-		StringBuffer headingSb = new StringBuffer();
-		headingSb.append(heading);
-		headingSb.append("-");
-		headingSb.append(props.getProperty(PRODUCT_NAME).toLowerCase().replace(' ', '-'));
-		headingSb.append("-");
-		headingSb.append(props.getProperty(PRODUCT_VERSION).replace('.', '-'));
-		headingSb.append("-");
-		headingSb.append(props.getProperty(DOC_NAME).toLowerCase().replace(' ', '-'));
-		headingSb.append("-");
-		headingSb.append(chapter);
-		headingSb.append("-");
-		headingSb.append(lang);
 
+		String namespace = getNamespace(props, chapter);
+
+		String count = "";
 		if (idCount > -1) {
-			headingSb.append("-");
-			headingSb.append(idCount);
+			count = "-" + idCount;
 		}
 
-		return headingSb.toString();
+		int idLength = heading.length() + namespace.length() + count.length();
+		if (idLength >  MAX_ID_LEN) {
+			heading = heading.substring(
+				0,
+				(heading.length() - Math.abs(idLength -  MAX_ID_LEN)));
+		}
+
+		StringBuffer sb = new StringBuffer(heading);
+		sb.append(namespace);
+		sb.append(count);
+
+		return sb.toString();
+	}
+
+	private String getNamespace(Properties props, String chapter) {
+		StringBuffer sb = new StringBuffer();
+
+		sb.append("-");
+		sb.append(props.getProperty(PRODUCT_NAME).toLowerCase().replace(' ', '-'));
+		sb.append("-");
+		sb.append(props.getProperty(PRODUCT_VERSION).replace('.', '-'));
+		sb.append("-");
+		sb.append(props.getProperty(DOC_NAME).toLowerCase().replace(' ', '-'));
+		sb.append("-");
+		sb.append(chapter);
+		sb.append("-");
+		sb.append(lang);
+
+		return sb.toString();
 	}
 
 	private static final String DOC_PROPERTIES = "doc.properties";
