@@ -182,8 +182,8 @@ type. Here is the directory structure of the Plugins SDK:
 
     - `hooks/` - hook plugins directory. See chapter 6 on hooks. 
 
-    - `layouttpl/` - layout templates directory. See chapter 4 on creating Liferay
-    Themes. 
+    - `layouttpl/` - layout templates directory. See chapter 4 on creating
+    Liferay Themes. 
 
     - `lib/` - commonly referenced libraries. 
 
