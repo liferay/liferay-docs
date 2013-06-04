@@ -85,12 +85,13 @@ Structures interface.
 
 #### Editing structures
 
-Go back to the Control Panel and select *Web Content* from the content section.
-The first way to access the Manage Structures interface is simply by clicking
-*Manage* &rarr; *Structures*. This opens a popup showing all the web content
-structures that exist in your currently selected scope. Here, you can add new
-web content structures, edit existing ones, manage the templates associated with
-a structure, edit the permissions of a structure, and copy or delete structures.
+Go back to the Site Administration page and select *Web Content* from the
+content section. The first way to access the Manage Structures interface is
+simply by clicking *Manage* &rarr; *Structures*. This opens a popup showing all
+the web content structures that exist in your currently selected scope. Here,
+you can add new web content structures, edit existing ones, manage the templates
+associated with a structure, edit the permissions of a structure, and copy or
+delete structures.
 
 Copying web content structures can be useful if you'd like to create a new web
 content structure that's similar to an existing one, but you don't want to start
@@ -103,7 +104,7 @@ templates or list templates associated with the structure. For information on
 detail templates and list templates, please refer to chapter 9 on [Dynamic Data
 Lists](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/dynamic-data-lists-in-liferay).
 
-![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page of the Control Panel.](../../images/manage-structures.png)
+![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page.](../../images/manage-structures.png)
 
 The second way to access the Manage Structures interface is directly from the
 web content article WYSIWYG editor. Click *Add* &rarr; *Basic Web Content* from
@@ -281,11 +282,11 @@ characteristics once for every sports article by creating default values for the
 structure. Creating default values is not part of creating a new structure, so
 make sure you have an existing structure.
 
-To edit a structure's default values, go to *Web Content* in the Control Panel
-and click *Manage* &rarr; *Structures* to see the structures list. Find the
-*Actions* button for the desired structure and select *Edit Default Values* from
-the menu to view a window like the one below. This form allows you to manage the
-structure settings.
+To edit a structure's default values, go to *Web Content* on the Site
+Administration page and click *Manage* &rarr; *Structures* to see the structures
+list. Find the *Actions* button for the desired structure and select *Edit
+Default Values* from the menu to view a window like the one below. This form
+allows you to manage the structure settings.
 
 ![Figure 3.3: You can edit default values via the *Actions* button of the Manage Structures interface.](../../images/structure-actions.png)
 
@@ -302,7 +303,7 @@ be able to create structures and templates. Users, of course, should be able to
 view structures. The *View* permission enables them to make use of the
 structures to create content.
 
-![Figure 3.5: View Permissions for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.5: You're able to assign structure permissions via the *Actions* button.](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles and this is the recommended way
 to handle permissions for structures.
@@ -335,8 +336,8 @@ understand.
 
 **FTL** (FreeMarker Template Language): Freemarker is a templating language
 which could be considered a successor to Velocity. It has some advantages over
-Velocity for which it sacrifices some simplicity, yet it is still easy to use. If
-you haven't used any of the template languages before, we recommend using
+Velocity for which it sacrifices some simplicity, yet it is still easy to use.
+If you haven't used any of the template languages before, we recommend using
 FreeMarker: you'll get up to speed the fastest.
 
 **VM** (Velocity Macro): Velocity is a scripting language that lets you mix
@@ -365,10 +366,8 @@ structure, link it to a template and then create content using them both. We'll
 use FreeMarker for our template and we'll lay out the structure fields
 systematically to go along with the format we've defined for our content.
 
-![Figure 3.6: You can create a new Web Content template by browsing a pre-made template or creating one in the script editor.](../../images/04-web-content-templates-create.png)
-
-1. Go back to the Web Content section of the Control Panel and click *Add*
-&rarr; *Basic Web Content*.
+1. Go back to the Web Content section of the Site Administration page and click
+*Add* &rarr; *Basic Web Content*.
 2. Click *Select* next to the Structures heading to access the Manage Structures
 interface.
 3. Click on the *Add* button.
@@ -436,8 +435,20 @@ When this template is rendered, it looks something like this:
 
 ![Figure 3.8: After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example2.png)
 
-Now that you've created a handsome template, it's time to decide who the lucky
-people are that get to use it.
+For cases where you're creating your template within Liferay, you can use the
+template editor. On the left side of the template editor, you'll notice a menu
+of common variables used for making web content templates. This is a great
+reference when creating your template. To place one of the variables into the
+template editor, simply position your cursor where you want it placed, and click
+the variable name. If the variable name doesn't give you enough information on
+the variable's functionality, you can hover your pointer over it for a more
+detailed description.
+
+![Figure 3.6: You can create a new Web Content template in the script editor.](../../images/04-web-content-templates-create.png)
+
+Now that you've created a handsome template and know how to use the template
+editor, it's time to decide who the lucky people are that get to use your new
+template.
 
 ### Assigning template permissions  
 
