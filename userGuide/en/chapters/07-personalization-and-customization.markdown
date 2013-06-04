@@ -218,14 +218,15 @@ make your portlet host that template. Custom templates let you re-skin your
 portlet and give you ultimate control over its appearance and functionality in
 your portal.
 
-Before attempting to change the ADT for your application, use the context menu
-in the Control Panel to choose the location for your custom template. The
-*Global* context makes your template available across all sites. If you select
-the Global context, the *Application Display Templates* page of the Control
-Panel's Content Menu shows you a list of sample templates available for your
-portlets. These sample templates differ from the default templates already
-configured in the portlets. If you choose a site to host your template, you must
-create a custom template for that site's portlets.
+Before attempting to change the ADT for your application, you'll need to select
+a site for your custom template to reside in. Choosing the *Global* context
+makes your template available across all sites. To choose a site to house your
+ADT, navigate to the Control Panel &rarr; *Sites* and click on a site from the
+list. If you select the Global context, the *Application Display Templates* page
+of the Control Panel's Configuration Menu shows you a list of sample templates
+available for your portlets. These sample templates differ from the default
+templates already configured in the portlets. If you choose a site to host your
+template, you must create a custom template for that site's portlets.
 
 ![Figure 7.5: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
 
@@ -270,7 +271,7 @@ template. For more information on how to create a custom template, visit the
 <!-- TODO: When the Dev Guide section for templates is complete, add the exact
 link above -->
 
-![Figure 7.6: Liferay offers multiple options to customize your ADT.](../../images/adt-setup-menu.png)
+![Figure 7.6: Liferay offers a versatile script editor to customize your ADT.](../../images/adt-script-editor.png)
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the wrench icon at the top right of the
