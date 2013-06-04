@@ -1,13 +1,13 @@
 # Liferay Developer Tools 
 
-If you're anything like Liferay's developers, you don't want to be forced to
-work with one development technology. Our developers build Liferay with the
-tools they prefer. That's why we strive to provide you with as much
+If you're anything like Liferay Portal's developers, you don't want to be
+forced to work with one development technology. Our developers build Liferay
+with the tools they prefer. That's why we strive to provide you with as much
 flexibility as possible. You can develop your Liferay-based portal with tools
-ranging in complexity from IDEs like Eclipse, Netbeans or IntelliJ Idea, to text
-editors like Notepad, Vim, or Emacs. You can write your persistence layer
-directly using SQL and JDBC, or use advanced object-relational mapping libraries
-like Hibernate or iBatis. You get the idea.
+ranging in complexity from IDEs like Eclipse, Netbeans or IntelliJ Idea, to
+text editors like Notepad, Vim, or Emacs. You can write your persistence layer
+directly using SQL and JDBC, or use advanced object-relational mapping
+libraries like Hibernate or iBatis. You get the idea. 
 
 Liferay's tool-agnosticism is great for experienced developers who understand
 the strengths and weaknesses of different development technologies; it can be
@@ -20,7 +20,7 @@ Development Environment based on Eclipse. Alternatively, there's the Plugins
 Software Development Kit (SDK), which is based on Apache Ant and can be used
 with any editor or Integrated Development Environment (IDE) you'd like. 
 
-In this chapter we'll discuss both development tools: 
+In this chapter we'll discuss both Liferay-specific development tools: 
 
 - Liferay IDE 
 
@@ -37,16 +37,16 @@ Liferay IDE.
 Liferay IDE is an extension for Eclipse IDE, and supports development of plugin
 projects for the Liferay Portal platform. You can install Liferay IDE as a set
 of Eclipse plugins from an update site. The latest version of Liferay IDE
-supports develoment of portlets, hooks, layout templates, themes, and ext
+supports development of portlets, hooks, layout templates, themes, and ext
 plugins. To use Liferay IDE, you need the Eclipse Java EE developer package
-using Helios or a later versions. 
+using Helios or a later version. 
 
 In this section we'll get you started by showing you how to install Liferay
 IDE, but we won't stop there; we'll take you through the setup process, get
 your runtime environment set up, and then develop some plugins with Liferay
 IDE.  Last we'll discuss Liferay IDE's Remote Server Adapter. 
 
-To install and set up Liferay IDE, follow the instruction in the first two
+To install and set up Liferay IDE, follow the instructions in the first two
 subsections below. If you're already using *Liferay Developer Studio* (the king
 of Liferay's development tools), which comes with Liferay Portal Enterprise
 Edition, skip to the section titled *Testing/Launching Liferay Tomcat
@@ -179,9 +179,10 @@ Let's set up your Liferay Plugins SDK.
 
 #### Setting Up Liferay Plugins SDK 
 
-Before you begin creating new Liferay plugin projects, an supported Liferay
+Before you begin creating new Liferay plugin projects, a supported Liferay
 Plugins SDK and Liferay Portal must be installed and configured in your Liferay
-IDE. 
+IDE. The second half of this chapter deals with the Plugins SDK on its own;
+here we'll just discuss it from the Liferay IDE perspective. 
 
 1. In Eclipse, open the *Installed Plugin SDKs* dialog box--from your *Windows*
 dropdown menu, click *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
@@ -325,8 +326,8 @@ existing projects into Liferay IDE.
 ### Importing Existing Projects into Liferay IDE 
 
 What if you have existing projectss that you want to work on in Liferay IDE?
-This section shows you how to import your existing projects into Liferay IDE so
-you don't have to recreate them. 
+This section shows you how to import your existing projects so you don't have
+to recreate them. 
 
 We'll cover the following import scenarios: 
 
@@ -345,27 +346,27 @@ PLugins SDK.
 
 #### Importing Existing Liferay Projects from the Plugins SDK 
 
-You can import Liferay projects you created with the Plugins SDK, but aren't yet
-in your Liferay IDE Eclipse workspace. These projects might already have
+You can import Liferay projects you created with the Plugins SDK, but aren't
+yet in your Liferay IDE Eclipse workspace. These projects might already have
 `.project` or `.classpth` files in them; regardless, we'll use the same
-procedure to import them.
+procedure to import them. 
 
 Do you want to create one project, or multiple projects, from your PLugins SDK?
-You can do either, and we'll show you how below. Regardless, any time you import
-a project into Liferay IDE, verify that it was successfully configured as a
-Liferay IDE project by using the process outlined in the section following the
-import instructions. 
+You can do either, and we'll show you how below. Regardless, any time you
+import a project into Liferay IDE, verify that it was successfully configured
+as a Liferay IDE project by using the process outlined in the section following
+the import instructions. 
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** The next two sections assume
- that you've created projects with the Plugins SDK and are familiar with the
- directory structure used by the Plugins SDK. 
+![note](../../images/tip-pen-paper.png)**Note:** The next two sections assume
+that you've created projects with the Plugins SDK and are familiar with the
+directory structure used by the Plugins SDK. 
 
 ---
 
-First let's look at the import process for creating a single Liferay IDE project
-from a Plugins SDK project. 
+First let's look at the import process for creating a single Liferay IDE
+project from a Plugins SDK project. 
 
 ##### Creating a Single Liferay IDE Project from One Plugin in an Existing Source 
 
