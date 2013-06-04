@@ -302,7 +302,7 @@ be able to create structures and templates. Users, of course, should be able to
 view structures. The *View* permission enables them to make use of the
 structures to create content.
 
-![Figure 3.5: View Permissions for a Structure](../../images/04-web-content-structure-permissions.png)
+![Figure 3.5: You're able to assign structure permissions via the *Actions* button.](../../images/04-web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles and this is the recommended way
 to handle permissions for structures.
@@ -364,8 +364,6 @@ same interface. Let's go through the entire flow of how you'd create a
 structure, link it to a template and then create content using them both. We'll
 use FreeMarker for our template and we'll lay out the structure fields
 systematically to go along with the format we've defined for our content.
-
-![Figure 3.6: You can create a new Web Content template by browsing a pre-made template or creating one in the script editor.](../../images/04-web-content-templates-create.png)
 
 1. Go back to the Web Content section of the Control Panel and click *Add*
 &rarr; *Basic Web Content*.
@@ -436,8 +434,20 @@ When this template is rendered, it looks something like this:
 
 ![Figure 3.8: After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example2.png)
 
-Now that you've created a handsome template, it's time to decide who the lucky
-people are that get to use it.
+For cases where you're creating your template within Liferay, you can use the
+template editor. On the left side of the template editor, you'll notice a menu
+of common variables used for making web content templates. This is a great
+reference when creating your template. To place one of the variables into the
+template editor, simply position your cursor where you want it placed, and click
+the variable name. If the variable name doesn't give you enough information on
+the variable's functionality, you can hover your pointer over it for a more
+detailed description.
+
+![Figure 3.6: You can create a new Web Content template in the script editor.](../../images/04-web-content-templates-create.png)
+
+Now that you've created a handsome template and know how to use the template
+editor, it's time to decide who the lucky people are that get to use your new
+template.
 
 ### Assigning template permissions  
 
