@@ -20,14 +20,14 @@ Just take good care of Lenore II, would you?
 "And the silken sad uncertain rustling of each purple curtain
 Thrilled me--filled me with *Ant*astic terrors never felt before;"
 
-Okay now you're being melodramatic; nobody can disdain *Apache Ant* thatf
-vehemnetly. What about customizing Liferay Portal using the Ant-based Plugins
+Okay now you're being melodramatic; nobody can disdain *Apache Ant* that
+vehemently. What about customizing Liferay Portal using the Ant-based Plugins
 SDK could make you feel sadness and terror? 
 
 "Deep into that darkness peering, long I stood there wondering, fearing..."
 
-We get it! You don't want to use our Ant-based Plugins SDK. Gives us surcease
-from the melodram, okay? 
+We get it! You don't want to use our Ant-based Plugins SDK. Give us surcease
+from the melodrama, okay? 
 
 "Open here I flung the shutter, when, with many a flirt and flutter,
 In there stepped a stately *Maven* of the saintly days of yore."
@@ -36,12 +36,11 @@ So, you'd rather use Apache Maven to develop your Liferay plugins?
 
 "But *Apache Maven* still beguiling all my sad soul into smiling..."
 
-Edgar Allen Poe liked Maven too, so you're in good company. Okay we admit it,
-we've heavily quoted and modified Poe's "The Raven" to suit our purposes. But if
-Apache Maven does indeed make your sad soul smile, especially if your soul was
-made sad because you thought you had to use Liferay's Ant-based Plugins SDK to
-develop your plugins, then by all means, use it! And please, take care of
-Lenore II for all of us animal lovers, would you? 
+Edgar Allen Poe liked Maven too, so you're in good company. Trust us; we know.
+But if your soul was made sad because you thought you had to use Liferay's
+Ant-based Plugins SDK to develop your plugins, Apache Maven will make your sad
+soul smile. And while you're at it, take care of Lenore II for all of us animal
+lovers, would you? 
 
 Quoth the Maven, "Let us proceed undaunted in exploration of these topics:" 
 
@@ -1380,16 +1379,20 @@ hooks. Let's round things out by learning to develop layout templates.
 You can create layout templates to customize the display of portlets on your
 page and to embed commonly used portlets. In our introduction to themes, we
 described a nice scene where you're relaxing in a luxurious chair, computer in
-your lap, LenoreII (your cat) purring on the mantle above a dancing fire. Sounds
-nice, doesn't it? It would be, but the chair's too small, so your knees are up
-in the air when your feet are flat on the ground, and your laptop is balanced
-precariously on top of them. The fire is also surprisingly large for that
-fireplace. In fact, its flames are already licking at the bottom of the
+your lap, Lenore II (your cat) purring on the mantle above a dancing fire.
+Sounds nice, doesn't it? It would be, but the chair's too small, so your knees
+are up in the air when your feet are flat on the ground, and your laptop is
+balanced precariously on top of them. The fire is also surprisingly large for
+that fireplace. In fact, its flames are already licking at the bottom of the
 mantle--which is made of wood! Remember Lenore II, softly purring on the mantle?
-She's going to cook (just like the original Lenore) if we don't do something!
+She's going to cook just like the original Lenore if we don't do something!
 But it's so hard to get out of this tiny chair. Someone save Lenore II! 
 
-Let's create a layout template plugin with Maven. 
+"Tell this soul with sorrow laden if, within the distant Aidenn,
+It shall clasp a sainted kitten whom the angels named Lenore II--"
+
+In memory of the late, now cripsy Lenore II, let's create a layout template
+plugin with Maven. 
 
 #### Creating a Layout Template Plugin [](id=liferay-6-1-create-layout-template-with-maven)
 
@@ -1486,7 +1489,7 @@ files.
 - SassToCSSBuilder - The `build-css` goal precompiles SASS in your css; this
 goal has been added to theme archetype. 
 
-You now have plenty of archetypes at your disposal!
+You now have plenty of archetypes at your disposal! 
 
 ## Summary [](id=summ-42)
 
@@ -1516,16 +1519,8 @@ at Liferay IDE in the next chapter.
  Maven, "Probably." 
 
 ---
+<!-- I thought Lenore II did make it through the chapter. Did you forget to kill
+her off? --> 
 
-<!-- I like the Raven/Maven stuff; however, the way it's implemented, it's
-inconsistent. We go from the Raven in the beginning of the chapter, to being a
-Maven maven, to the cat on the mantle, back to the Maven maven, and then back to
-the Raven. I think we should try to keep to one metaphor, or it'll get
-distracting. The cat on the mantle image is a good one; the Raven can be
-integrated into that (maybe the cat's name is Lenore and we can make a
-ridiculous prequel of sorts?). If we've kept the metaphor going through the
-chapter, this last note has more of an impact. -->
-
-<!--Hopefully the added detail in the introduction works, along with the
-modificaitons to the layout template and theme introductions. Removed the maven
-Maven jokes and the term "Mavenizing".  -Russ-->
+<!-- I tried to make this more explicit in the intro to layout templates.
+Hopefully not too explicit. -->
