@@ -56,13 +56,13 @@ Once you've satisfied the prerequisite, it's an easy matter to install Liferay
 IDE. Go to Liferay's [downloads page](http://www.liferay.com/downloads) and
 choose the *Liferay IDE* option. There's a separate download for each of the
 32-bit and 64-bit variants of Windows, Linux, and Mac OS X. Choose the one that
-matches your system and click the *Download* button. You'll receive a .zip file.
-To install Liferay IDE on your system, all you need to do is unzip it to the
-folder of your choice. 
+matches your system and click the *Download* button. You'll receive a `.zip`
+file. To install Liferay IDE on your system, all you need to do is unzip it to
+the folder of your choice. 
 
 If you already have Eclipse installed, you can add Liferay IDE to it. You can
 do this in one of two ways: install Liferay IDE via a URL to the update site
-or install from a .zip file. 
+or install from a `.zip` file. 
 
 Make sure you have a supported Java JRE and Eclipse release: 
 
@@ -147,8 +147,7 @@ Let's set up Liferay IDE now that you have it installed.
 In order to start writing code with Liferay IDE, you need to have a Liferay
 runtime to code against, as well as a Plugins SDK to store your projects. Both
 of these must be registered in Liferay IDE, and this is easy to do. To get
-started, make sure you've downloaded from Liferay and unzipped the following two
-items: 
+started, make sure you've downloaded and unzipped the following two items: 
 
 1. Liferay Portal 6.0.5 or greater
 
@@ -185,9 +184,9 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 ### Liferay Portal Tomcat Runtime and Server Setup [](id=lp-6-1-dgen07-liferay-portal-tomcat-runtime--server-setup-0)
 
 1. In Eclipse, go to *Window* &rarr; *Preferences* &rarr; *Server* &rarr;
-   *Runtime Environments*). 
+   *Runtime Environments*. 
 
-![Figure 9.2: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
+    ![Figure 9.2: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
 2. Click *Add* to add a new Liferay runtime; find *Liferay v6.1 (Tomcat 7)*
    under the *Liferay, Inc.* category and click *Next*.
@@ -199,7 +198,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
    is present, then you must select the JRE to use for launch by clicking
    *Installed JREs...*. 
 
-![Figure 9.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
+    ![Figure 9.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
 
 5. Click *Finish*; you should see your Liferay portal runtime listed in
 *Preferences* &rarr; *Server Runtime Environments*.
@@ -209,7 +208,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 7. If you haven't created a server, create one now from the *Servers*
 view in Liferay IDE; then you can test the server. 
 
-![Figure 9.4: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
+    ![Figure 9.4: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
 
 8. Scroll to the *Liferay, Inc* folder and select *Liferay v6... Server*. Choose
 the *Liferay v6...* runtime environment that you just created. 
@@ -242,6 +241,8 @@ menu though the server is running. -Russ -->
 
 <!-- You should never terminate the server. That kills the process without
 closing everything (transactions, database connections, etc.) correctly. -Rich--> 
+
+<!-- We should explain how to properly shutdown a server -Jim -->
 
 Once the server is launched, you can open Liferay portal home from the *Servers*
 tab by right clicking your Liferay Tomcat server and selecting *Open Liferay
@@ -342,10 +343,10 @@ from a Plugins SDK project. Follow these steps:
     You can invoke the same wizard from the Liferay shortcut bar; just click
     the *Create a New Liferay Project* button.
 
-![Figure 9.7: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
+    ![Figure 9.7: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
 
 2. Browse to your project folder. It should be a subdirectory of one of the
-   plugin types (e.g. portlets, hooks, themes, etc) or it won't import
+   plugin types (e.g., portlets, hooks, themes, etc) or it won't import
    correctly. Once you select the plugin project folder, its type and SDK
    version values are updated to the correct values. If the SDK isn't recent enough
    or the project type is incorrect, it gets marked with an error. 
@@ -358,9 +359,6 @@ from a Plugins SDK project. Follow these steps:
 4. Select the *Liferay target runtime* to configure on the project once it's
    imported. If you don't have a Liferay Portal Runtime, use the *New...* button
    to create one now.  
-
-<!-- Removed the statement about Tomcat being the only one supported. Liferay
-Developer Studio supports other server adapters, like WebSphere. -Rich --> 
 
 5. Click *Finish* to perform the import. 
 
@@ -379,7 +377,7 @@ plugin in your Plugins SDK as its own Liferay IDE project.
 1. In Eclipse go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
 Projects from Plugin SDK*. 
 
-![Figure 9.8: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
+    ![Figure 9.8: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
 
 2. In the *Import Projects* window, use the combo box to select the *Liferay
 Plugins SDK* you're importing plugins from. 
