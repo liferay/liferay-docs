@@ -768,23 +768,19 @@ Portal.
 
 ---
 
-To use Kaleo Designer for Java, install the *Kaleo Workflow EE*
-app from Liferay Marketplace. *Kaleo Workflow EE* includes three
-plugins--`kaleo-forms-portlet`, `kaleo-designer-portlet`, and `kaleo-web`
-plugins.
+To use Kaleo Designer for Java, install the *Kaleo Forms EE* app from Liferay
+Marketplace. The app includes three plugins--`kaleo-forms-portlet`,
+`kaleo-designer-portlet`, and `kaleo-web` plugins.
 
-Here's how to download and install *Kaleo Workflow EE*:
+Here's how to download and install *Kaleo Forms EE*:
 
 1. Go to [Liferay Marketplace](https://www.liferay.com/marketplace).
 2. Click on [EE
 Marketplace](http://www.liferay.com/marketplace/-/mp/category/12729032) in the
 left navigation area.
-3. Download and install the *Kaleo Workflow EE* app.
+3. Download and install the *Kaleo Forms EE* app.
 
-<!--I went to Marketplace and only saw *Kaleo Workflow EE*, not *Kaleo Forms
-EE*. -Russ -->
-
-After downloading and installing the Kaleo Workflow EE application, restart the
+After downloading and installing the Kaleo Forms EE application, restart the
 Liferay Server and a *Kaleo Workflows* folder automatically appears underneath
 the server instance in the Servers view of Developer Studio.
 
