@@ -26,7 +26,7 @@ SDK could make you feel sadness and terror?
 
 "Deep into that darkness peering, long I stood there wondering, fearing..."
 
-We get it! You don't want to use our Ant-based Plugins SDK. Gives us surcease
+We get it! You don't want to use our Ant-based Plugins SDK. Give us surcease
 from the melodrama, okay? 
 
 "Open here I flung the shutter, when, with many a flirt and flutter,
@@ -1388,7 +1388,11 @@ mantle--which is made of wood! Remember Lenore II, softly purring on the mantle?
 She's going to cook just like the original Lenore if we don't do something!
 But it's so hard to get out of this tiny chair. Someone save Lenore II! 
 
-Let's create a layout template plugin with Maven. 
+"Tell this soul with sorrow laden if, within the distant Aidenn,
+It shall clasp a sainted kitten whom the angels named Lenore II--"
+
+In memory of the late, now cripsy Lenore II, let's create a layout template
+plugin with Maven. 
 
 #### Creating a Layout Template Plugin [](id=liferay-6-1-create-layout-template-with-maven)
 
@@ -1485,7 +1489,7 @@ files.
 - SassToCSSBuilder - The `build-css` goal precompiles SASS in your css; this
 goal has been added to theme archetype. 
 
-You now have plenty of archetypes at your disposal!
+You now have plenty of archetypes at your disposal! 
 
 ## Summary [](id=summ-42)
 
@@ -1517,3 +1521,6 @@ at Liferay IDE in the next chapter.
 ---
 <!-- I thought Lenore II did make it through the chapter. Did you forget to kill
 her off? --> 
+
+<!-- I tried to make this more explicit in the intro to layout templates.
+Hopefully not too explicit. -->
