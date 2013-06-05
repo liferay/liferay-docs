@@ -425,7 +425,7 @@ Plugins SDK* you're importing plugins from.
 
     ---
 
-    ![note](../../images/tip-pen-paper.png)**Note:** If your SDK isn't
+    ![note](../../images/tip-pen-paper.png) **Note:** If your SDK isn't
     configured in Liferay IDE (i.e., it's not in the dropdown list of the *Import
     Projects* window) use the *Configure* link to add a setting that points to the
     Plugins SDK that you want to import projects from. To configure a Plugins SDK
@@ -464,14 +464,14 @@ the import steps below to convert your project.
 1. In Eclipse, right click the project in your project explorer then select
 *Liferay* &rarr; *Convert to Liferay plugin project*. 
 
----
+    ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** If you don't have a convert
- action available it means either that the project is already a Liferay IDE
- project, or that it is not faeted (i.e., Java and Dynamic Web project facets
- are not yet configured). Configure accordingly before moving on. 
+    ![note](../../images/tip-pen-paper.png) **Note:** If you don't have a convert
+    action available it means either that the project is already a Liferay IDE
+    project, or that it is not faeted (i.e., Java and Dynamic Web project facets
+    are not yet configured). Configure accordingly before moving on. 
 
----
+    ---
 
 2. In the *Convert Project* wizard, your project should be selected and the SDK
 location and SDK version should be detected automatically. If they aren't valid
