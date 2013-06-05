@@ -163,6 +163,10 @@ site, either manually or on a schedule.
 
 ![Figure 1.2: Staging supports publishing manually or on a schedule.](../../images/04-web-content-staging-publish.png)
 
+<!-- Need to replace image for 6.2 -->
+<!-- Still a lot of changes planned to go in for 6.2 Staging at this point. Not
+going to update at this point. -->
+
 Liferay Portal's web content creation tools are easy and intuitive to use at all
 levels. If you need only basic content management capabilities for your site,
 you can jump right in. From the Dockbar, you can add the Web Content Display
@@ -349,6 +353,9 @@ Portal's built-in OpenSocial gadget editor to create and serve your own
 OpenSocial gadgets. 
 
 ![Figure 1.7: Liferay Portal's OpenSocial gadget editor lets you rapidly create social applications that can be served across the web to any other OpenSocial container.](../../images/01-opensocial-gadget-editor.png)
+
+<!-- Need to replace image for 6.2 -->
+<!-- OpenSocial portlet was not deployable at time of image updating cycle -->
 
 Liferay Portal also supports the creation of Facebook applications; in fact, no
 additional coding is necessary to publish your Liferay applications on Facebook
