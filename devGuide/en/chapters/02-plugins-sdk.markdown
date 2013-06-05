@@ -174,7 +174,7 @@ already done this.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Earlier versions of Liferay
+![note](../../images/tip-pen-paper.png) **Note:** Earlier versions of Liferay
 (e.g., 5.2.x) are not supported by the Liferay IDE. 
 
 ---
@@ -202,7 +202,7 @@ Liferay Plugin SDKs*.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** You can have Multiple SDKs in
+![note](../../images/tip-pen-paper.png) **Note:** You can have Multiple SDKs in
 your preferences--set one as the default SDK by checking its box in the list of
 *Installed Liferay Plugin SDKs*. 
 
@@ -402,9 +402,9 @@ imported. If you don't have a Liferay Portal Runtime, use the *New...* button to
 create one now; Tomcat bundle is the only server runtime supported. 
 
 <!--Three figures were deleted here. One figure could be created to replace
-them if desirable. One figure to rule them all. This can be deleted once this
-is seen and decision is made; otherwise it ruins the numbering in this
-list. -Russ -->
+them if desirable. One figure to rule them all. This comment should be deleted
+once this is seen and decision is made; otherwise it ruins the numbering in
+this list. -Russ -->
 
 5. Click *Finish* to perform the import. 
 
@@ -507,7 +507,7 @@ anymore? Here's how you can import it into your current workspace:
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** There are two common errors
+![note](../../images/tip-pen-paper.png) **Note:** There are two common errors
 that occur when importing existing Liferay IDE projects into your workspace:
 
 - The SDK name used in that project doesn't exist in your new workspace. 
@@ -708,13 +708,13 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
 
 1. Right click on the server and choose *Add and Remove...*. 
 
----
+    ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** Make sure you have available
- projects configured in Liferay IDE. If not, you'll get an error message
- indicating there are no available resources to add or remove from the server. 
+    ![note](../../images/tip-pen-paper.png) **Note:** Make sure you have available
+    projects configured in Liferay IDE. If not, you'll get an error message
+    indicating there are no available resources to add or remove from the server. 
 
----
+    ---
 
 2. Select the Liferay projects to publish to your remote server; click *Add* to
 add them to your remote server, then click *Finish*. Deployment begins
@@ -740,7 +740,7 @@ On the *Forums* page, you can look up resolutions to specific errors and ask
 questions. Be sure to fully describe any problems you have to ensure you get a
 working asnwer. You can even track known issues from the *Issue Tracker* page. 
 
-<!--This feels much too broad to be stuck in the ## Using the Remote Server
+<!--This feels too broad to be stuck in the ## Using the Remote Server
 Adapter section. Maybe it should go in the introduction or at the end of the
 Liferay IDE section? -Russ-->
 
@@ -765,7 +765,7 @@ Liferay IDE, a plugin for Eclipse that simplifies development for Liferay.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip**: If you use Eclipse and intend to
+ ![tip](../../images/tip-pen-paper.png) **Tip**: If you use Eclipse and intend to
  use it from the very beginning, you might want to check out Chapter 9 first
  before reading this chapter.
 
@@ -795,7 +795,7 @@ Liferay Portal for development, our examples use the Tomcat bundle.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** In Liferay Developer Studio,
+![note](../../images/tip-pen-paper.png) **Note:** In Liferay Developer Studio,
 the SDK is already installed and ready to use. Liferay Portal Enterprise
 Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs
 EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
@@ -823,11 +823,11 @@ containing spaces, avoid using spaces when naming your folder.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png)**Tip**: By default, Liferay Portal
- Community Edition comes bundled with many plugins. It's common to remove them
- to speed up the server start-up. Just navigate to the
- `liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and delete
- all its subdirectories except for `ROOT` and `tunnel-web`. 
+![tip](../../images/tip-pen-paper.png) **Tip**: By default, Liferay Portal
+Community Edition comes bundled with many plugins. It's common to remove them
+to speed up the server start-up. Just navigate to the
+`liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and delete
+all its subdirectories except for `ROOT` and `tunnel-web`. 
 
 ---
 
@@ -865,10 +865,10 @@ properties:
 
 4. Set the `ANT_HOME` variable:
 
-    4.1. **Variable name:** `ANT_HOME`. 
+    4.1. *Variable name:* `ANT_HOME`. 
 
-    4.2. **Variable value:** *<Ant installation path>* (e.g.,
-    `C:\Java\apache-ant-<version>`). 
+    4.2. *Variable value:* *<Ant installation path>* (e.g.,
+`C:\Java\apache-ant-<version>`). 
 
     4.3. Click *OK*. 
 
@@ -974,8 +974,9 @@ New plugins are placed in their own subdirectory of the appropriate plugin type.
 For instance, a new portlet called "greeting-portlet" would reside in
 `liferay-plugins-[version]/portlets/greeting-portlet`. 
 
-There's an Ant build file (`build.xml`) in each of the plugins directories. Here
-are some Ant targets you'll commonly use in developing your plugins:
+There's an Ant build file called `build.xml` in each of the plugins
+directories. Here are some Ant targets you'll commonly use in developing your
+plugins: 
 
 - `build-service` - builds the service layer for a plugin, using Liferay Service
 Builder. 
@@ -1028,7 +1029,7 @@ Next, we'll start using these tools to develop portlets!
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** If you've read this far and
+![note](../../images/tip-pen-paper.png) **Note:** If you've read this far and
 don't want to develop your plugins using Liferay IDE *or*the Plugins SDK, you
 also have the option to leverage the Apache Maven build management framework.
 You'll be happy to know that we have archetypes to help you build various types
