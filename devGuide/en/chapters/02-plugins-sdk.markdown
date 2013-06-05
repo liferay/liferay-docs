@@ -734,9 +734,18 @@ questions. Be sure to fully describe any problems you have to ensure you get a
 working asnwer. You can even track known issues from the *Issue Tracker* page. 
 
 <!--This feels much too broad to be stuck in the ## Using the Remote Server
-Adapter section. Maybe it should go in the introduction or the summary -Russ-->
+Adapter section. Maybe it should go in the introduction or at the end of the
+Liferay IDE section? -Russ-->
 
-## The Plugins SDK
+### Using the Service Builder Graphical Editor 
+
+<!--Add content-->
+
+### Using Tag Library Snippets 
+
+<!--Add content-->
+
+## The Plugins SDK 
 
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
@@ -767,7 +776,7 @@ Apache Ant targets are available.
 
 Setting up the Plugins SDK is easy. Let's get to it. 
 
-## Installing the SDK
+### Installing the SDK
 
 The first thing you should do is install Liferay Portal. If you haven't already
 installed a Liferay bundle, follow the instructions in the [Installation and
@@ -779,12 +788,13 @@ Liferay Portal for development, our examples use the Tomcat bundle.
 
 ---
 
- ![note](../../images/tip-pen-paper.png)**Note:** In Liferay Developer Studio,
- the SDK is already installed and ready to use. Liferay Portal Enterprise
- Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs
- EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
- [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
- of Liferay Portal EE today. 
+![note](../../images/tip-pen-paper.png)**Note:** In Liferay Developer Studio,
+the SDK is already installed and ready to use. Liferay Portal Enterprise
+Edition (EE) comes with Liferay Developer Studio and much more (see [CE vs
+EE](http://www.liferay.com/downloads/liferay-portal/overview)). Download a
+[free
+trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
+of Liferay Portal EE today. 
 
 ---
 
@@ -817,7 +827,7 @@ containing spaces, avoid using spaces when naming your folder.
 Now that you've installed the Plugins SDK, let's configure Apache Ant for use in
 developing your plugins. 
 
-### Ant Configuration
+#### Ant Configuration
 
 Building projects in the Plugins SDK requires that you install Ant (version 1.7
 or higher) on your machine. Download the latest version of Ant from
@@ -874,7 +884,7 @@ referenced in your path.
 
 Now that Ant is configured, let's set up your Plugins SDK environment. 
 
-### Plugins SDK Configuration
+#### Plugins SDK Configuration
 
 Now we have the proper tools, but we need to configure the Plugins SDK to deploy
 into your Liferay instance. The Plugins SDK contains a `build.properties` file
@@ -905,7 +915,7 @@ Save the file.
 
 Next, let's consider the structure of the Plugins SDK. 
 
-## Structure of the SDK
+### Structure of the SDK
 
 Each folder in the Plugins SDK contains scripts for creating new plugins of that
 type. Here is the directory structure of the Plugins SDK: 
@@ -981,7 +991,7 @@ community wiki page for details.
 
 Next, let's consider some best practices for developing plugins using the SDK. 
 
-## Best Practices
+### Best Practices
 
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you
 can have separate Plugins SDK projects for each plugin. For example, if you have
@@ -999,20 +1009,16 @@ the Ant scripts, but this process makes it possible to create plugins with the
 Plugins SDK while conforming to the strict standards some organizations have for
 their Java projects.
 
-If you've read this far and aren't sure you want to develop your plugins using
-the Plugins SDK, you also have the option to use Maven.
-
-As an alternative to developing plugins using the SDK, you can leverage the
-Apache Maven build management framework. You'll be happy to know that we have
-archetypes to help you build various types of plugins including Liferay
-portlets, themes, and layout templates. 
-
-To learn more about developing plugins using Maven, see Chapter 8. 
-
 ## Summary
 
-Now your Plugins SDK is configured, you know the directory structure and
-available targets, and you've learned some best practices. You're ready to start
-developing plugins using Liferay's Plugins SDK! 
+Now you know all about two Liferay-specific development tools.  The Eclipse
+based Liferay IDE is more robust and complete, so your development process is
+as straightforward as can be. If you don't want to use Eclipse, you can still
+leverage some of the same funcitonality by using the Plugins SDK to develop in
+Liferay. is configured, you know the directory structure and available targets,
+and you've learned some best practices. You're ready to start developing
+plugins using Liferay's Plugins SDK! 
 
-Next, in Chapter 3, we'll start developing portlets! 
+Next, we'll start using these tools to develop portlets! 
+
+![note](../../images/tip-pen-paper.png)**Note:** If you're not interested in developing 
