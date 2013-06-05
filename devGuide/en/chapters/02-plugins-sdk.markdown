@@ -423,7 +423,7 @@ Plugin SDK Projects*.
 2. In the *Import Projects* window, use the combo box to select the *Liferay
 Plugins SDK* you're importing plugins from. 
 
----
+    ---
 
     ![note](../../images/tip-pen-paper.png)**Note:** If your SDK isn't
     configured in Liferay IDE (i.e., it's not in the dropdown list of the *Import
@@ -432,7 +432,7 @@ Plugins SDK* you're importing plugins from.
     on the Installed SDKs on the pref page just click *Add* and then Browse to the
     directory of the Plugins SDK root directory.
 
----
+    ---
 
 3. Once you select your Plugins SDK in the combo box, the *Liferay PLugin SDK
 Location* and *Liferay Plugin SDK Version* fields are automatically filled in,
