@@ -126,39 +126,41 @@ people are connected based on what their noses look like.
 First, a little housekeeping. If we're going to be *Nose-ster*, our portal
 should also be called Nose-ster. To set general information about your portal
 like the name and mail domain, go to the Control Panel and select *Portal
-Settings* under the Portal heading. You could set up the configuration for
-Nose-ster as follows.
+Settings* under the Configuration heading. You could set up the configuration
+for Nose-ster as follows.
 
-![Figure 2.1: Changing Portal Settings](../../images/04-web-content-changing-settings.png)
+![Figure 2.1: You can change the portal settings by navigating to the Control Panel and selecting *Portal Settings*.](../../images/04-web-content-changing-settings.png)
 
 You can also customize the logo in the top left corner of every page by
 selecting *Display Settings* under the *Miscellaneous* tab on the panel to the
 right. Once you've made the changes, we can begin creating pages.
 
 ### Creating and managing pages  
+You have a few options for accessing and configuring the page creation
+interface. There are two interfaces to be aware of: *Site Pages* and *Page*.
+Although both interfaces deal with your portal's pages, their settings are
+configurable in different places.
 
-You have a few options for accessing the page creation interface. To simplify
-this, we'll cover the Dockbar's *Manage* menu slightly out of order. There are
-two interfaces to be aware of: *Site Pages* and *Page*. You can get to these
-from multiple places. Depending on what you're editing and where you are on the
-portal, you'll use either the *Manage* menu or the Control Panel to work with
-your pages. From the Control Panel, make sure you have the correct site selected
-in the context menu selector and click the *Site Pages* link in the content
-section. If you've already navigated to the site you wish to manage, click
-*Manage* from the Dockbar and select *Site Pages*. This is the exact same
-interface you see in the Control Panel. To manage the specific page of the site
-you've navigated to, click *Manage* and select *Page*. 
+From the Site Administration page, your site pages can be accessed and
+configured. If you're already on your desired site, you can reach the Site
+Administration page by navigating to the *Admin* tab in the Dockbar and
+selecting *Site Administration*. If you're not currently on the site you'd like
+to edit, go to *Control Panel* &rarr; *Sites* and select your desired site. This
+will also bring you to the site's Site Administration page. Once you're on the Site Administration page, select *Site Pages* under the Main tab from the left panel.
 
-![Figure 2.2: Managing Individual Pages](../../images/04-web-content-managing-single-page.png)
+To manage the specific page of the site you've navigated to, click *Edit* from
+the Dockbar and select *Page*. This will only edit the specific page you're
+currently on.
 
-For convenience, you can also navigate to the Sites page under the Portal
-section of the Control Panel and click *Actions* &rarr; *Manage Pages*. To
-quickly add a single page while to the site you're browsing, click *Add* from
-the Dockbar and select *Page*. Just enter a name for the page and it's added
-immediately. Click the name of the page in the navigation menu to visit it and
-start working on it.
+![Figure 2.2: The *Page* interface allows you to edit specific pages.](../../images/04-web-content-managing-single-page.png)
 
-![Figure 2.3: Managing Site Pages](../../images/04-managing-site-pages.png)
+For convenience, you can also navigate to the Sites page under the Sites section
+of the Control Panel and click *Actions* &rarr; *Manage Pages*. To quickly add a
+single page while to the site you're browsing, click *Add* from the Dockbar and
+select *Page*. Just enter a name for the page and it's added immediately. Click
+the name of the page in the navigation menu to visit it and start working on it.
+
+![Figure 2.3: The *Site Pages* interface allows you to edit your site pages as a whole.](../../images/04-managing-site-pages.png)
 
 *Site Pages* is an interface to view existing pages, create new pages, view
 pages and export or import pages using Liferay Archive (LAR) files. Note that
@@ -182,30 +184,27 @@ interface to manage them. Let's look at this interface more closely.
 
 #### More page management tools  
 
-From the Manage Site Pages dialog box, you can add a page to the site by
-clicking the *Add Page* button. Because *Public Pages* is selected on the left,
-clicking *Add Page* here adds a top level page next to the Welcome page. You
-can, however, nest pages as deeply as you like. To create a sub-page under the
-Welcome page, select the *Welcome* page first and then create your page. If you
-later decide you don't like the order of your pages, you can drag and drop them
-in the list to put them in whatever order you want. Let's go ahead and add
-another top level page and name it *Community*. We'll use this page for the
-Recent Bloggers and Wiki portlets.
+From the Site Pages interface in Site Administration, you can add a page to the
+site by clicking the *Add Page* button. Because *Public Pages* is selected on
+the left, clicking *Add Page* here adds a top level page next to the Welcome
+page. You can, however, nest pages as deeply as you like. To create a sub-page
+under the Welcome page, select the *Welcome* page first and then create your
+page. If you later decide you don't like the order of your pages, you can drag
+and drop them in the list to put them in whatever order you want. Let's go ahead
+and add another top level page and name it *Community*. We'll use this page for
+the Recent Bloggers and Wiki portlets.
 
-![Figure 2.4: Adding Pages](../../images/04-web-content-add-page.png)
+![Figure 2.4: You can add a page to your site by giving it a name, page template, and page type.](../../images/04-web-content-add-page.png)
 
 When you create a new page, you can create either a blank page or a page
 prepopulated with portlets from a page template. When you're entering the name
 of the page, you can select from a list of page templates that are currently
 available. To view the pages once you add them, click the *View Pages* button.
 This is how you'd populate your pages with content and applications. This is
-covered in succeeding chapters.
-
-If you're using the Manage Pages interface to create a new page, you'll have
-some additional options to create different types of pages. There are **Portlet
-Pages**, **Panel Pages**, **Embedded Pages**, **URL Pages** and **Link to
-Page**. By default, all pages are created as portlet pages but in some
-situations you might want to use one of the other options.
+covered in succeeding chapters. Page types include **Portlet Pages**, **Panel
+Pages**, **Embedded Pages**, **URL Pages** and **Link to Page**. By default, all
+pages are created as portlet pages but in some situations you might want to use
+one of the other options. 
 
 **Portlet Pages** are the pages we're usually talking about. They have a layout
 which you can drag and drop portlets into. Most of the pages you create will be
@@ -215,8 +214,6 @@ portlet pages.
 administrator, but only one will be displayed at a time. Users select which
 portlet they want to use from a menu on the left side of the page and the
 selected portlet takes up the entire page. 
-
-![Figure 2.5: A panel page](../../images/web-content-panel-page.png)
 
 **Embedded Pages** display content from another website inside of your portal.
 An administrator can set a URL from in the page management interface and that
@@ -234,21 +231,23 @@ a dropdown in the page management interface. You could use a *Link to Page* to
 place a deeply nested page in the primary navigation menu of your site, for
 example.
 
+To use the Manage Page interface to create a page, navigate to *Edit* on the Dockbar and select *Page*. You'll notice it's not possible to add a new page. This is because you're only managing the current page, so your only option is to add a child page. 
+
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works. 
 
 ##### Backing up and Restoring Pages  
 
-Next to the *Add Page* button in the Manage Site Pages screen are two buttons
-labeled *Export* and *Import*. The Export button exports the pages you create
-into a single file, called a LAR (Liferay Archive). You can then import this
-file into any server running Liferay to re-create the pages. If you have a LAR
-you would like to import, use the *Import* button. Exporting and Importing LARs
-is a great way to take content from one environment (say, a development or QA
-environment) and move it all in one shot to your production server. Note that
+Next to the *Add Page* button in the Manage Site Pages screen, there are two
+buttons labeled *Export* and *Import*. The Export button exports the pages you
+create into a single file, called a LAR (Liferay Archive). You can then import
+this file into any server running Liferay to re-create the pages. If you have a
+LAR you would like to import, use the *Import* button. Exporting and Importing
+LARs is a great way to take content from one environment (say, a development or
+QA environment) and move it all in one shot to your production server. Note that
 you should not make this a regular occurrence. If you want to regularly move
 pages from one server to another, you should use Liferay's staging environment,
-which is covered in chapter 3. 
+which is covered in chapter 3.
 
 LARs are also a good way to back up your site's content. You can export them to
 a specific location on your server which is backed up, and if you ever have to
@@ -277,28 +276,28 @@ Feel.
 
 ##### Customizing the Look and Feel of Site Pages
 
-When you open the Manage Site Pages dialog box it defaults to the Look and Feel
-tab. On this tab, you're presented with an interface that allows you to choose a
-theme for the current site. Themes can transform the entire look of the portal.
-They are created by developers and are easily installed using the Liferay
-Marketplace. Since we don't have any themes beyond the default one installed
-yet, we'll use the default theme for our pages. 
+When you open *Site Pages* from within Site Administration, it defaults to the
+Look and Feel tab. On this tab, you're presented with an interface that allows
+you to choose a theme for the current site. Themes can transform the entire look
+of the portal. They are created by developers and are easily installed using the
+Liferay Marketplace. Since we don't have any themes beyond the default one
+installed yet, we'll use the default theme for our pages.
 
-![Figure 2.6: Look and Feel Interface](../../images/04-look-and-feel.png)
+![Figure 2.5: The Look and Feel interface allows you to choose a theme for the current site.](../../images/04-look-and-feel.png)
 
 Many themes include more than one color scheme. This allows you to keep the
 existing look and feel while giving your site a different flavor. Change the
 color scheme from blue to green by selecting *Green* under *Color Schemes*. If
 you now go back to the site (by clicking *Back to nosester.com* in the top left
-corner of the Control Panel), you'll see some parts of the page are now tinged
+corner of the Dockbar), you'll see some parts of the page are now tinged
 in a greenish hue. 
 
-If you apply a color scheme to a set of public or private pages it is, by
-default, applied to each page in the set. If, however, you open the Manage Pages
-dialog box for a particular page, you can select *Define a specific look and
-feel for this page* to make the color scheme apply to this page only. You can
-use this feature to choose a different color scheme for a particular page than
-the one defined for the set of public or private pages to which it belongs. 
+If you apply a color scheme to a set of public or private pages, it is, by
+default, applied to each page in the set. If, however, you click *Edit* &rarr;
+*Page*, you can select *Define a specific look and feel for this page* to make
+the color scheme apply to this page only. You can use this feature to choose a
+different color scheme for a particular page than the one defined for the set of
+public or private pages to which it belongs.
 
 There are a few more configurable settings for your theme. You can switch the
 bullet style between dots and arrows and you can choose whether or not to show
@@ -387,9 +386,9 @@ which you'll see in the next chapter. You can set a target for the page so that
 it either pops up in a particularly named window or appears in a frameset. And
 you can set an icon for the page that appears in the navigation menu. 
 
-**Mobile Rule Groups:** allows you to apply rules for how this page should be
+**Mobile Device Rules:** allows you to apply rules for how this page should be
 rendered for various mobile devices. You can set these up in the *Mobile Device
-Rules* section of the Control Panel. 
+Rules* section of Site Administration. 
 
 **Embedded Portlets:** only appears if you have embedded one or more portlets on
 the page. To embed a portlet on a page, first look up its portlet name in
@@ -420,8 +419,8 @@ visible.
 **Customization Settings:** lets you mark specific sections of the page you want
 users to be able to customize.
 
-Note that the *Manage &rarr; Page Layout* menu directs you to the same Layout
-tab that's in *Manage &rarr; Page*. 
+Note that the *Edit &rarr; Page Layout* menu directs you to the same Layout
+tab that's in *Edit &rarr; Page*. 
 
 #### Modifying Page Layouts  
 
@@ -430,7 +429,7 @@ want it to. Liferay comes with many layouts already defined. Developers can
 create more and they can be deployed to your portal for your use.
 
 To prepare for the portlets we'll soon be adding, let's change the layout of the
-Collaboration page. To access layouts, select *Manage &rarr; Page Layout* from
+Collaboration page. To access layouts, select *Edit &rarr; Page Layout* from
 the Dockbar.
 
 Now, select the *2 Columns (70/30)* layout and click *Save*. Once saved, you'll
@@ -446,7 +445,7 @@ This portlet is a container for other portlets. It lets you select from any of
 the layouts installed in Liferay, just like the layouts for a page. This gives
 you virtually unlimited options for laying out your pages.
 
-The next option in the *Manage* menu is page customizations. 
+The next option in the *Edit* menu is page customizations. 
 
 #### Page Customizations  
 
@@ -459,7 +458,7 @@ users customize a page, they have the option to use either their version or the
 default version of a page. Users can't see alternate versions of pages other
 than their own.
 
-![Figure 2.7: Setting Customizable Columns](../../images/04-web-content-personal-customization.png)
+![Figure 2.6: During page customization, individual columns change colors to indicate whether they are selected or not.](../../images/04-web-content-personal-customization.png)
 
 When an administrator activates page customizations for a page, any portlets
 that are in a *Customizable* row or column can be moved around the page or
@@ -475,10 +474,11 @@ for the site as a whole.
 
 #### Configuring Site Settings  
 
-As with Site Pages, you can access Site Settings through the Control Panel or
-directly from the site using the Dockbar (*Manage* &rarr; *Site Settings*). 
+As with Site Pages, you can access Site Settings by navigating to Site
+Administration and clicking *Site Settings* from the Configuration section on
+the left panel. 
 
-![Figure 2.8: Site Settings](../../images/web-content-site-settings.png)
+![Figure 2.7: The Site Settings window offers a plethora of options for your site.](../../images/web-content-site-settings.png)
 
 You'll find options to specify details and metadata about your site, set up
 friendly URLs and virtual hosts, configure search engine optimization settings,
@@ -595,37 +595,20 @@ a full explanation of Page Templates and Site Templates, see chapter 3.
 
 #### Site Content  
 
-Liferay 6.1 makes it easier to access Web Content management without using the
-Control Panel. You can now click *Manage* and then *Site Content* to access the
-same Web Content controls featured in the Control Panel right from your portal
-page. 
+Liferay 6.2 separates Web Content management from the Control Panel by placing
+it on the *Admin &rarr; Site Administration* page. From Site Administration,
+you'll notice the Content heading where all your portal's content can be
+managed, including web content. 
 
-![Figure 2.9: Site Content](../../images/web-content-site-content.png)
+![Figure 2.8: Your site's content resides on the Site Administration page.](../../images/web-content-site-content.png)
 
-You can manage the following kinds of content:
-
-- Recent Content
-- Web Content
-- Documents and Media
-- Bookmarks
-- Calendar
-- Message Boards
-- Blogs
-- Wiki
-- Polls
-- Software Catalog
-- Tags
-- Categories
-- Social Equity
-- Dynamic Data Lists
-
-For details about Liferay's social collaboration suite, see chapter 10. 
+For details about Liferay's social collaboration suite, see chapter 10. Next, let's learn more details about creating pages.
 
 ### Creating pages  
 
 There are a lot of other things you can do beyond placing portlets on a page. So
 let's start working on the Nose-ster site. You can do this by going up to the
-Dockbar and clicking *Go to &rarr; Nose-ster*.
+Dockbar and clicking *My Sites &rarr; Nose-ster*.
 
 We'll use the *Community* page you created earlier in the chapter. Navigate to
 the *Community* page and select *Manage &rarr; Page* from the Dockbar.
@@ -662,26 +645,26 @@ pages in Liferay at this point so let's look at what you'd put on a page.
 As we discussed earlier, Liferay Portal pages are composed of portlets. All of
 your site's functionality, from blogs to shopping, is composed of portlets. Even
 static web content can be displayed through Web Content Display portlets. To add
-a portlet to a page, just click *Add* &rrar; *More* from the Dockbar. You can
-either browse through the categories of available portlets until you find the
-one you're looking for or you can search for portlets by name. Once you've found
-a portlet, click the *Add* button to add it the current page. Once it's been
-added to the page, you can drag it to a new position. Alternatively, you can
-drag the portlet directly from the Dockbar's Add menu to a specific location on
-the page. Let's add some portlets to the Collaboration page of the Nose-ster
-site.
+a portlet to a page, just click *Add* &rrar; *Content and Applications* &rarr;
+*Applications* from the Dockbar. You can either browse through the categories of
+available portlets until you find the one you're looking for or you can search
+for portlets by name. Once you've found a portlet, click the *Add* button to add
+it the current page. Once it's been added to the page, you can drag it to a new
+position. Alternatively, you can drag the portlet directly from the Dockbar's
+Add menu to a specific location on the page. Let's add some portlets to the
+Collaboration page of the Nose-ster site.
 
-1. From the Dockbar, select *Add* &rarr; *More*.
+1. From the Dockbar, select *Add* &rarr; *Content and Applications* &rarr;
+*Applications*.
 2. In the menu that appears, expand the *Collaboration* category.
 3. Drag the *Blogs Aggregator* portlet off the Add Application window onto the
    right column of our page.
 4. Next, drag the *Wiki* portlet to the *left column*.
 
 See how easy it is to add applications to your pages? We've added the Wiki
-portlet, the Blogs Aggregator portlet, and a Nested Portlets portlet with a
-custom layout in addition to the Alerts, Search, and Dictionary portlets. 
+portlet and Blogs Aggregator portlet to the Community page. 
 
-![Figure 2.10: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
+![Figure 2.9: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
 
 You'll find it's easy to make your pages look exactly the way you want them to.
 If the layout options provided aren't enough, you can even develop your own.
@@ -700,8 +683,7 @@ users can view them.
 Let's say we wanted to create a page only for administrators to see. We can do
 this with the following procedure:
 
-1.  Go to the Dockbar and select *Manage &rarr; Control Panel*.
-2.  Ensure you've selected the default site in the context selector.
+1.  Go to the Dockbar and select *Admin &rarr; Site Administration*.
 3.  Click the *Site Pages* link.
 4.  Click the *Private Pages* tab to switch to the Private Pages. Remember,
     these pages by default are viewable only by members of the site.
@@ -711,7 +693,7 @@ this with the following procedure:
     role.
 8.  Click the *Save* button.
 
-![Figure 2.11: Permissions for Admin Tips](../../images/04-web-content-page-permissions.png)
+![Figure 2.10: The Permissions offer a plethora of options for each role.](../../images/04-web-content-page-permissions.png)
 
 Congratulations! You've just changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.
@@ -768,28 +750,29 @@ We'll begin by creating simple content using Liferay's WYSIWYG Editor and then
 we'll publish it to the home page of Nose-ster's web site. This is a fast and
 straightforward process that demonstrates how easy it is to create and publish
 content on your Liferay Portal instance. Let's learn about the Web Content
-section of the control panel so we can create and publish our first pieces of
+section in Site Administration so we can create and publish our first pieces of
 content.
 
-![Figure 2.12: Choosing a Site in the Content Section](../../images/04-web-content-context-dropdown.png)
+When you manage web content from the Site Administration page, you can select
+the location where the content resides. For instance, you can add content that's
+available to a specific site or globally across the portal. If you're on the
+site you wish to add content to, simply navigate to the *Admin* tab on the
+Dockbar and select *Site Administration*. Conversely, if you need to switch
+sites or would like to add content globally, navigate to the Control Panel and
+select *Sites*. From this window, you can change the scope of where you'd like
+to view, edit, or create content.
 
-When you manage web content from the Control Panel you can select the location
-where the content resides. For instance, you can add content that's available to
-a specific site or globally across the portal. The Content section of the
-Control Panel displays as its heading the name of the site you're currently
-working on. This heading is called the *Context Menu Selector*: you can change
-the scope of where you'd like to view, edit or create content by using the
-drop-down selector attached to the heading. 
+![Figure 2.11: You can choose where to create content by navigating to the Control Panel and selecting *Sites*.](../../images/sites-selector.png)
 
 Once you have the Nose-ster site selected, click on the *Web Content* link in
-the Control Panel. You'll see a folder structure containing all of the web
+Site Administration. You'll see a folder structure containing all of the web
 content articles that exist in the currently selected scope (the Nose-ster
 site). You can click *Add* &rarr; *Folder* to create a new folder. For sites
 with lots of content and web content articles, it can be very useful to use
 folders to group certain kinds of web content articles together. Click *Add*
 &rarr; *Basic Web Content* to create a new web content article.
 
-![Figure 2.13: Click *Add* &rarr; *Basic Web Content* to create a new simple web content article. To create a new web content article based on an existing web content structure, click *Add* and then click on the name of the structure you'd like to use.](../../images/web-content-add-menu.png)
+![Figure 2.12: Click *Add* &rarr; *Basic Web Content* to create a new simple web content article. To create a new web content article based on an existing web content structure, click *Add* and then click on the name of the structure you'd like to use.](../../images/web-content-add-menu.png)
 
 Existing web content structures also appear in the *Add* menu. This provides
 users with shortcuts for creating specific kinds of web content articles. For
@@ -815,7 +798,7 @@ already been created in your currently selected scope, you can select one for
 your new web content article by clicking *Select* next to the *Structure*
 heading.
 
-![Figure 2.14: If you'd like to select a web content structure for your web content article, click *Select* next to the *Structure* heading.](../../images/web-content-structure-select.png)
+![Figure 2.13: If you'd like to select a web content structure for your web content article, click *Select* next to the *Structure* heading.](../../images/web-content-structure-select.png)
 
 Type the words *Welcome to Nose-ster* in the *Name* field. Notice that content
 can be localized in whatever language you want. If you click on the *localize*
@@ -824,8 +807,6 @@ working in and the default language. You can enter translations of your content
 for any language in the list. The figure below shows this interface but for now,
 we won't be using it, so you can leave it unchecked. In the content field, add a
 short sentence announcing the web site is up and running.
-
-![Figure 2.15: The Web Content Editor provides many options for customization.](../../images/04-web-content-wysiwyg.png)
 
 Getting a new web site up and running is an exciting step for anyone, whether it
 is a large corporation or a small non-profit charity. To celebrate this
@@ -840,7 +821,7 @@ demonstrated in the screenshot below. You can also add bullets, numbering, links
 to another site or custom images. You can even add an emoticon. Let's add a
 smiley face at the end of our announcement.
 
-![Figure 2.16: View your content changes directly in the editor.](../../images/04-web-content-example2.png)
+![Figure 2.14: View your content changes directly in the editor.](../../images/04-web-content-example2.png)
 
 The WYSIWYG editor is a flexible tool that gives you the ability to add text,
 images, tables, links and more. Additionally, you can modify the display to
@@ -854,7 +835,7 @@ click the *Source* button and write your own HTML if you wish.
 On the right of the New Web Content form are options that allow you to
 customize your web content. 
 
-![Figure 2.17: New web content can be customized in various ways using the menu on the right.](../../images/wcm-abstract.png)
+![Figure 2.15: New web content can be customized in various ways using the menu on the right.](../../images/wcm-menu.png)
 
 **Abstract:** lets you to create a brief summary of the web content. You can
 also pair the text with a small image.
@@ -893,7 +874,7 @@ in a consistent fashion.
 There are two ways of creating a display page. You can use a *Content Display
 Page* template, which automatically creates everything you need, or you can
 create one manually. The Content Display Page template is found under *Page
-Templates* in the Portal section of the Control Panel.
+Templates* in the Sites section of the Control Panel.
 
 To create a display page manually, add an Asset Publisher to a page. Then make
 it the Default Asset Publisher for the page. This defines this Asset Publisher
@@ -927,7 +908,7 @@ category. You can connect your content to a Blogs Entry, Message Boards Message,
 Web Content, Calendar Event, Bookmarks Entry, Documents and Media Document, and
 a Wiki Page.
 
-![Figure 2.18: This blog entry has links to three Related Assets: one web content display and two blog entries.](../../images/related-assets-link.png)
+![Figure 2.16: This blog entry has links to three Related Assets: one web content and two message board entries.](../../images/related-assets-link.png)
 
 You'll learn how to publish links to related assets using the Related Assets
 portlet in the *Defining content relationships* section of chapter 5.
@@ -938,8 +919,6 @@ any Role from the drop-down or in the list. Additionally, Liferay Portal
 provides the ability to customize permissions in more detail. Select the *More
 Options* link next to the drop down button and you'll find the different
 activities you can grant or deny to your web content.
-
-![Figure 2.19: Permissions for Web Content allow you to fine-tune how your content is accessed.](../../images/04-web-content-content-permissions.png)
 
 **Custom fields:** customize metadata about the web content. The fields can
 represent anything you like, such as the web content's author or creation date.
@@ -962,28 +941,28 @@ it works.
 
 Now that we've created and published our first piece of web content for
 Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
-to our Welcome page by selecting *Add &rarr; Web Content Display* from the
-Dockbar.
+to our Welcome page by selecting *Add &rarr; Content and Applications &rarr;
+Applications* from the Dockbar.
 
-![Figure 2.20: Adding the Web Content Display Portlet](../../images/portal-admin-ch4_html_m5a656d59.jpg)
+![Figure 2.17: Adding the Web Content Display Portlet](../../images/add-web-content-display.png)
 
 Once the portlet appears, drag it to the position on the page where you want
 your content to appear. You can have as many Web Content Display portlets on a
 page as you need, which gives you the power to lay out your content exactly the
 way you want it. 
 
-To add existing web content, select the *gear* icon on the lower left of the
-portlet. You will see the message *Please select a web content from the list
-below*. You have several options here.
+To add existing web content, click the *Select Web Content* button on the lower
+left of the portlet. You will see the message *Please select a web content from
+the list below*. You have several options here.
 
 Naturally, if your content appears in the list, you can simply select it. If
 there is lots of published content available, you could search for the content
-by name, ID, type, version, content and site (click the *Advanced* link to see
+by name, ID, type, version, content and site (click the *Advanced* gear to see
 all the options). You can also show the available locales for your content. If
 you're working on the page for a particular language, you can select the
 translation of your content that goes with your locale.
 
-![Figure 2.21: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
+![Figure 2.18: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also
 enable document conversion for your content. This gives your users the ability
@@ -1015,17 +994,18 @@ or target the small screens of mobile devices with pertinent information and a
 lightweight page. For now, leave both checked and click the *Save* button. You
 can now close the configuration window.
 
-To publish new content, select the *page and green plus icon* on the lower left
-of the portlet. This launches the same full-featured editor you've already seen
-in the Control Panel, which lets you add and edit content in place as you are
-working on your page.
+To publish new content, select the *Add* button on the lower left of the
+portlet. This launches the same full-featured editor you've already seen in the
+Control Panel, which lets you add and edit content in place as you are working
+on your page.
 
 This is another example of the flexibility that Liferay Portal offers. At times,
 you may want to add content directly into the Web Content Display portlet of the
 page you're managing, especially if you are in the process of building the page.
-At other times, you may want to use the Control Panel to create content, because
-at that moment you're more concerned with the creation of the content and not
-where the content will later be displayed. Liferay WCM supports both processes. 
+At other times, you may want to navigate to Site Administration to create
+content, because at that moment you're more concerned with the creation of the
+content and not where the content will later be displayed. Liferay WCM supports
+both processes. 
 
 Editing content that's already been published is just as easy as creating new
 content is. You'll use the same exact tools. 
@@ -1035,21 +1015,21 @@ content is. You'll use the same exact tools.
 Once the content is displayed--whether you've selected content or created it in
 the Web Content Display portlet--you can edit the content directly from the Web
 Content Display portlet or from the Control Panel. To edit it from the Web
-Content Display portlet, select the *pencil* icon to the lower left of the
+Content Display portlet, select the *Edit* button to the lower left of the
 portlet. This launches the WYSIWYG editor and from there you can make any
 necessary changes.
 
-![Figure 2.22: Edit, Select and Add Icons of Web Content Display Portlet](../../images/web-content-display-icons.png)
+![Figure 2.19: The *Edit*, *Select Web Content*, and *Add* buttons appear when hovering over their icons.](../../images/web-content-display-icons.png)
 
 When you publish your content this way, it becomes available immediately
 (unless, of course, you have a workflow enabled, which we'll see below). This
-happens whether you edit it in place or in the Control Panel.
+happens whether you edit it in place or in Site Administration.
 
 Note: if you want to view your page the way your users will see it (i.e.,
 without all those portlet controls and icons), go up to the Dockbar and select
-*Toggle Edit Controls*. This makes all those extra controls you see as a portal
+*Edit Controls*. This makes all those extra controls you see as a portal
 administrator disappear. If you need to use those controls again, just select
-*Toggle Edit Controls* again. 
+*Edit Controls* again. 
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
@@ -1074,11 +1054,11 @@ content through any approval steps between creation and publication.
 
 You may have noticed something appears to be missing from the staging process
 discussed above. In particular, you might be asking the question, "How do I
-reject changes?" Starting with Liferay 6.1, Staging is integrated with Liferay's
-Workflow engine. To have a review process for staged pages, you need to make
-sure you have a workflow engine configured and you have staging set up in the
-workflow. To do this, select the workflow definition desired for page revisions
-in the Workflow Configuration. 
+reject changes?" Staging is integrated with Liferay's Workflow engine. To have a
+review process for staged pages, you need to make sure you have a workflow
+engine configured and you have staging set up in the workflow. To do this,
+select the workflow definition desired for page revisions in the Workflow
+Configuration.
 
 When using a workflow, clicking *Submit for Publication* submits the staged
 pages into the workflow. Once all necessary approvals have been completed, the
@@ -1090,7 +1070,11 @@ To enable workflow for Web Content, navigate to the Control Panel and select
 *Workflow Configuration*. From there, select a workflow that has been deployed
 to Liferay.
 
-![Figure 2.23: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+![Figure 2.20: Enabling Workflow for Content Management](../../images/04-web-content-workflow-config.png)
+
+<!-- Need to replace image for 6.2. -->
+<!-- Kaleo Workflow CE plugin was not compatible with 6.2 during snapshot
+changes. -->
 
 As you'll discover in chapter 10, you can design workflows to suit your
 organization's approval process. For Nose-ster's implementation we'll use the
@@ -1103,11 +1087,11 @@ Kaleo workflow plugin installed in order for the workflow categories to appear
 in the Control Panel. Liferay's Kaleo workflow engine ships with CE versions of
 Liferay. For installation instructions for Liferay EE, please see chapter 10.
 
-1.  Go to the Control Panel and select *Workflow Configuration* from the left
-    panel.
+1. Go to the Site Administration page and select *Workflow Configuration* from
+the left panel.
 
-2.  From the select box, choose *Single Approver* for Web Content. Click *Save.*
-    Note that you can add workflow to many of Liferay's portlets.
+2. From the select box, choose *Single Approver* for Web Content. Click *Save*.
+Note that you can add workflow to many of Liferay's portlets.
 
 That's all it takes to set up workflow for web content. Now that workflow is
 enabled, publishing content works a little bit differently. Let's go through the
@@ -1117,7 +1101,7 @@ portlet. Call the new content *Course Offerings* and enter some content. Notice
 that the Publish button is now gone. In its place is a *Submit for Publication*
 button. Go ahead and click it.
 
-Next, go to the *Workflow Tasks* in Control Panel and then select *My Workflow
+Next, go to the *Workflow Tasks* in Site Administration and select *My Workflow
 Tasks*. You will see the option to Review Content for Sales Goals. It shows
 because you are logged in as an Administrator. There is also a Content Approvers
 role which is defined by this workflow and anyone in this role can approve
