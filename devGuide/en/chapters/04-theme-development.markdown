@@ -290,7 +290,8 @@ The following is an example of the `CATALINA_OPTS` variable lines with the
     CATALINA_OPTS=
         "$CATALINA_OPTS
          -Dfile.encoding=UTF8
-         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
+         -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES\
+             =false
          -Duser.timezone=GMT
          -Xmx1024m
          -XX:MaxPermSize=256m"
@@ -758,7 +759,7 @@ Marketplace app.
  you might see a message like this:
  
     19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queueing test-theme
-    for deploy because it is missing resources-importer-web
+        for deploy because it is missing resources-importer-web
 
  Such a message appears if the resources importer is declared as a dependency in
  your theme's `liferay-plugin-package.properties` file but is not deployed. You
@@ -886,7 +887,8 @@ Let's examine a sample `sitemap.json` file:
                                 "articleId": "Custom Title.html",
                                 "groupId": "${groupId}",
                                 "portletSetupShowBorders": "true",
-                                "portletSetupTitle_en_US": "Web Content Display with Custom Title",
+                                "portletSetupTitle_en_US":
+                                    "Web Content Display with Custom Title",
                                 "portletSetupUseCustomTitle": "true"
                             }
                         }
@@ -915,10 +917,13 @@ Let's examine a sample `sitemap.json` file:
                                         {
                                             "portletId": "56",
                                             "portletPreferences": {
-                                                "articleId": "Child Web Content 1.xml",
+                                                "articleId":
+                                                    "Child Web Content 1.xml",
                                                 "groupId": "${groupId}",
                                                 "portletSetupShowBorders": "true",
-                                                "portletSetupTitle_en_US": "Web Content Display with Child Structure 1",
+                                                "portletSetupTitle_en_US":
+                                                    "Web Content Display with 
+                                                        Child Structure 1",
                                                 "portletSetupUseCustomTitle": "true"
                                             }
                                         }
@@ -927,10 +932,13 @@ Let's examine a sample `sitemap.json` file:
                                         {
                                             "portletId": "56",
                                             "portletPreferences": {
-                                                "articleId": "Child Web Content 2.xml",
+                                                "articleId":
+                                                    "Child Web Content 2.xml",
                                                 "groupId": "${groupId}",
                                                 "portletSetupShowBorders": "true",
-                                                "portletSetupTitle_en_US": "Web Content Display with Child Structure 2",
+                                                "portletSetupTitle_en_US":
+                                                    "Web Content Display with 
+                                                        Child Structure 2",
                                                 "portletSetupUseCustomTitle": "true"
                                             }
                                         }
