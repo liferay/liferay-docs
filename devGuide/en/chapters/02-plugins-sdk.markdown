@@ -44,7 +44,7 @@ using Helios or a later version.
 In this section we'll get you started by showing you how to install Liferay
 IDE, but we won't stop there; we'll take you through the setup process, get
 your runtime environment set up, and then develop some plugins with Liferay
-IDE.  Last we'll discuss Liferay IDE's Remote Server Adapter. 
+IDE. Last we'll discuss Liferay IDE's Remote Server Adapter. 
 
 To install and set up Liferay IDE, follow the instructions in the first two
 subsections below. If you're already using *Liferay Developer Studio* (the king
@@ -192,7 +192,7 @@ here we'll just discuss it from the Liferay IDE perspective.
 dropdown menu, click *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
 SDKs*.
 
-2.  Click *Add* to bring up the *Add SDK* Dialog. 
+2. Click *Add* to bring up the *Add SDK* Dialog. 
 
 3. Browse to your Plugins SDK installation. The default name is the directory
 name; you can change it if you want. 
@@ -242,7 +242,7 @@ view in Liferay IDE; then you can test the server.
 8. Scroll to the *Liferay, Inc* folder and select *Liferay v6... Server*. Choose
 the *Liferay v6...* runtime environment that you just created. 
 
-Now your server is set up.  Let's launch it and perform some tests! 
+Now your server is set up. Let's launch it and perform some tests! 
 
 ### Testing and Launching Liferay Tomcat Server 
 
@@ -278,9 +278,9 @@ Next you'll learn to create new Liferay projects in Lioferay IDE.
 
 ### Creating New Liferay Projects 
 
-Your Plugins SDK and portal server are configured--let's see how to create a new
-Liferay plugin project in Liferay IDE. Go to File &rarr; New Project... &rarr;
-Liferay &rarr; Liferay Plugin Project. 
+Your Plugins SDK and portal server are configured in Liferay IDE--let's see how
+to create a new Liferay plugin project in Liferay IDE. Go to File &rarr; New
+Project... &rarr; Liferay &rarr; Liferay Plugin Project. 
 
 In the *New Liferay Plugin Project* dialog box, your newly configured SDK and
 Liferay Runtime should be selected. The plugin type *portlet* is the default
@@ -333,7 +333,7 @@ existing projects into Liferay IDE.
 
 ### Importing Existing Projects into Liferay IDE 
 
-What if you have existing projectss that you want to work on in Liferay IDE?
+What if you have existing projects that you want to work on in Liferay IDE?
 This section shows you how to import your existing projects so you don't have
 to recreate them. 
 
@@ -360,16 +360,18 @@ yet in your Liferay IDE Eclipse workspace. These projects might already have
 procedure to import them. 
 
 Do you want to create one project, or multiple projects, from your PLugins SDK?
-You can do either, and we'll show you how below. Regardless, any time you
-import a project into Liferay IDE, verify that it was successfully configured
-as a Liferay IDE project by using the process outlined in the section following
-the import instructions. 
+You can do either, and we'll show you how below. Any time you import a project
+into Liferay IDE, verify that it was successfully configured as a Liferay IDE
+project by using the process outlined in the section following the import
+instructions. 
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** The next two sections assume
-that you've created projects with the Plugins SDK and are familiar with the
-directory structure used by the Plugins SDK. 
+![note](../../images/tip-pen-paper.png)**Note:** This section assumes that
+you've created projects with the Plugins SDK and are familiar with the
+directory structure used by the Plugins SDK. If you haven't and if you aren't,
+check out the *Plugins SDK* section of this chapter; it comes right after this
+section. 
 
 ---
 
@@ -388,7 +390,7 @@ project from a Plugins SDK project:
 plugin types (e.g. portlets, hooks, themes, etc) or it won't import correctly.
 Once you select the plugin project folder, its type and SDK version values are
 updated to the correct values. If the SDK isn't recent enough or the project
-type is incorrect it gets marked with an error. 
+type is incorrect, it's marked with an error. 
 
 3. After you select the plugin project folder you should see the *Liferay plugin
 type* and *Liferay plugin SDK version* values updated. If your Plugins SDK is
@@ -399,7 +401,10 @@ error.
 imported. If you don't have a Liferay Portal Runtime, use the *New...* button to
 create one now; Tomcat bundle is the only server runtime supported. 
 
-<!--Three figures were deleted here--one figure could be created to replace them if desirable. -Russ -->
+<!--Three figures were deleted here. One figure could be created to replace
+them if desirable. One figure to rule them all. This can be deleted once this
+is seen and decision is made; otherwise it ruins the numbering in this
+list. -Russ -->
 
 5. Click *Finish* to perform the import. 
 
@@ -477,7 +482,7 @@ an error message will be displayed.
 3. Select the Liferay runtime to set up for the project. If you don't have a
 Liferay Runtime defined, do so now by clicking *New...*. 
 
-4.  Click *Finish*. 
+4. Click *Finish*. 
 
 Remember to verify that your import was successful and that your project was
 configured correctly as a Liferay IDE project; the last subsection in this topic
@@ -662,7 +667,9 @@ validate your connection.
     6.2. Once you've purchased the application, navigate to the *Purchased* page
     of the Control Panel's Marketplace interface.
 
-    ![Figure 9.x: Click *Purchased* in the Marketplace section of the ControlPanel to download and install the Remote IDE Connector application that you purchased.](../../images/remote_server_adapter_marketplace_2.png)
+    ![Figure 9.x: Click *Purchased* in the Marketplace section of the
+ControlPanel to download and install the Remote IDE Connector application that
+you purchased.](../../images/remote_server_adapter_marketplace_2.png)
 
     6.3. Find your application in the list of purchased products. Then click on
     the buttons to download and install the application. Once it's been
@@ -1007,18 +1014,27 @@ generator. Create a plugin project using the Plugins SDK and then copy the
 resulting project folder to your IDE of choice. You'll have to manually modify
 the Ant scripts, but this process makes it possible to create plugins with the
 Plugins SDK while conforming to the strict standards some organizations have for
-their Java projects.
+their Java projects. 
 
 ## Summary
 
-Now you know all about two Liferay-specific development tools.  The Eclipse
+Now you know all about two Liferay-specific development tools. Our Eclipse
 based Liferay IDE is more robust and complete, so your development process is
 as straightforward as can be. If you don't want to use Eclipse, you can still
-leverage some of the same funcitonality by using the Plugins SDK to develop in
-Liferay. is configured, you know the directory structure and available targets,
-and you've learned some best practices. You're ready to start developing
-plugins using Liferay's Plugins SDK! 
+leverage some of the same functionality by using the Plugins SDK to develop in
+Liferay. 
 
 Next, we'll start using these tools to develop portlets! 
 
-![note](../../images/tip-pen-paper.png)**Note:** If you're not interested in developing 
+---
+
+![note](../../images/tip-pen-paper.png)**Note:** If you've read this far and
+don't want to develop your plugins using Liferay IDE *or*the Plugins SDK, you
+also have the option to leverage the Apache Maven build management framework.
+You'll be happy to know that we have archetypes to help you build various types
+of plugins including Liferay portlets, themes, and layout templates. 
+
+To learn more about developing plugins using Maven, see the *MAven* chapter in
+this guide. 
+
+---
