@@ -426,11 +426,11 @@ Plugins SDK* you're importing plugins from.
 ---
 
     ![note](../../images/tip-pen-paper.png)**Note:** If your SDK isn't
-configured in Liferay IDE (i.e., it's not in the dropdown list of the *Import
-Projects* window) use the *Configure* link to add a setting that points to the
-Plugins SDK that you want to import projects from. To configure a Plugins SDK
-on the Installed SDKs on the pref page just click *Add* and then Browse to the
-directory of the Plugins SDK root directory.
+    configured in Liferay IDE (i.e., it's not in the dropdown list of the *Import
+    Projects* window) use the *Configure* link to add a setting that points to the
+    Plugins SDK that you want to import projects from. To configure a Plugins SDK
+    on the Installed SDKs on the pref page just click *Add* and then Browse to the
+    directory of the Plugins SDK root directory.
 
 ---
 
