@@ -78,7 +78,7 @@ Next we'll show you how to install Liferay IDE.
 
 #### Installation steps 
 
-To install Liferay IDE and specify an Eclipse udpate URL, follow these steps: 
+To install Liferay IDE and specify an Eclipse update URL, follow these steps: 
 
 1. Install Eclipse Juno, Indigo, or Helios (you can download and unzip from one
 of the links provided above).
@@ -289,7 +289,7 @@ plugin type. Type a project name and cooresponding display name, then click
 
 ![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-project.png)
 
-Your new plugin project should apear in the package explorer. 
+Your new plugin project should appear in the package explorer. 
 
 Now you need to deploy your new plugin project to your Liferay Server. 
 
@@ -450,7 +450,7 @@ button.
 7. Click *Finish*. 
 
 Your plugins are imported! Now skip to the end of this section to verify that
-they were configured correctly as Liferay IDE projects. Wwe'll talk about a
+they were configured correctly as Liferay IDE projects. We'll talk about a
 different import scenario next; importing existing eclipse projects into Liferay
 IDE. 
 
@@ -577,7 +577,7 @@ with the adapter; the portal system administrator should use normal mechanisms
 to apply plugin updates and fixes. 
 
 To start deploying projects to a remote server, you'll need to download and
-install the following resources on your local devleopment machine:
+install the following resources on your local development machine:
 
 - Download [Liferay IDE
 1.6.2](http://www.liferay.com/downloads/liferay-projects/liferay-ide) from
@@ -734,11 +734,11 @@ server in the Servers view and select *Publish*.
 Have you noticed that there's a lot of depth to Liferay IDE? You can easily come
 across difficult questions and run into very specific problems, but someone else
 might have already solved your issue or answered your question. So where would
-you go to find out? Don't reinvent the wheel, vsit the [Liferay IDE Community
+you go to find out? Don't reinvent the wheel, visit the [Liferay IDE Community
 page](http://www.liferay.com/community/liferay-projects/liferay-ide/overview)!
 On the *Forums* page, you can look up resolutions to specific errors and ask
 questions. Be sure to fully describe any problems you have to ensure you get a
-working asnwer. You can even track known issues from the *Issue Tracker* page. 
+working answer. You can even track known issues from the *Issue Tracker* page. 
 
 <!--This feels too broad to be stuck in the ## Using the Remote Server
 Adapter section. Maybe it should go in the introduction or at the end of the
@@ -765,9 +765,9 @@ Liferay IDE, a plugin for Eclipse that simplifies development for Liferay.
 
 ---
 
- ![tip](../../images/tip-pen-paper.png) **Tip**: If you use Eclipse and intend to
- use it from the very beginning, you might want to check out Chapter 9 first
- before reading this chapter.
+![tip](../../images/tip-pen-paper.png) **Tip**: If you use Eclipse and intend
+to use it from the very beginning, you might want to check out Chapter 9 first
+before reading this chapter. 
 
 ---
 
@@ -901,7 +901,7 @@ but you shouldn't modify it directly (In fact, you will see the message "DO NOT
 EDIT THIS FILE" at the top if you open it). In order to override the default
 settings, create a new file named `build.[username].properties` in the same
 folder, where `[username]` is your user ID on your machine. For example, if your
-user name is jsmith, your file name would be `build.jsmith.properties`. 
+user name is *jsmith*, your file name would be `build.jsmith.properties`. 
 
 Edit this file and add the following lines: 
 
@@ -1030,10 +1030,11 @@ Next, we'll start using these tools to develop portlets!
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** If you've read this far and
-don't want to develop your plugins using Liferay IDE *or*the Plugins SDK, you
-also have the option to leverage the Apache Maven build management framework.
-You'll be happy to know that we have archetypes to help you build various types
-of plugins including Liferay portlets, themes, and layout templates. 
+still don't want to develop your plugins using Liferay IDE *or* the Plugins
+SDK, you also have the option to leverage the Apache Maven build management
+framework.  You'll be happy to know that we have archetypes to help you build
+various types of plugins including Liferay portlets, themes, and layout
+templates. 
 
 To learn more about developing plugins using Maven, see the *MAven* chapter in
 this guide. 
