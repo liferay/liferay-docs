@@ -2,9 +2,9 @@
 # Advanced Portal Operation  
 
 In this chapter we discuss several advanced features of Liferay Portal,
-including audit trails and portal maintainence, backup, and logging. Audit
+including audit trails and portal maintenance, backup, and logging. Audit
 trails allow portal administrators to track the activities of portal users--this
-can be very useful for troubleshooting or figuring out who's resposible for
+can be very useful for troubleshooting or figuring out who's responsible for
 certain actions that have taken place on your portal. It's generally not much
 more complicated to maintain a running Liferay instance than it is to maintain
 the application server upon which it's running. However, Liferay provides tools
@@ -14,7 +14,7 @@ instance's source code, database, and properties files.
 
 We'll discuss the following topics in this section:
 
--   Audit trails
+-   Audit Trails
 
 -   Liferay Monitoring using Google Analytics
 
@@ -557,8 +557,8 @@ As stated above, hot fixes are short term fixes provided as quickly as possible
 and fix packs are larger bundles of hot fixes provided to all customers at
 regular intervals. If you already have a hot fix installed, and the fix pack
 which contains that hot fix is released, you can rest assured the patching tool
-will manage this for you. Fix packs always supercede hot fixes, so when you
-install your fix pack, the hot fix that it already contains is  uninstalled, and
+will manage this for you. Fix packs always supersede hot fixes, so when you
+install your fix pack, the hot fix that it already contains is uninstalled, and
 the fix pack version is installed in its place. 
 
 Sometimes there can be a fix to a fix pack. This is also handled automatically.
