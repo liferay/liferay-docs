@@ -432,9 +432,7 @@ the abstract and the link created above, which sets the `read_more` parameter.
 
 When this template is rendered, it looks something like this:
 
-![Figure 3.5: The initial view for the Nose-ster News Article.](../../images/04-web-content-adv-example1.png)
-
-![Figure 3.6: After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example2.png)
+![Figure 3.5: The initial and expanded views for the Nose-ster News Article. After Clicking *Read More*, you're able to read the full text body.](../../images/04-web-content-adv-example1.png)
 
 For cases where you're creating your template within Liferay, you can use the
 template editor. On the left side of the template editor, you'll notice a menu
@@ -445,7 +443,7 @@ the variable name. If the variable name doesn't give you enough information on
 the variable's functionality, you can hover your pointer over it for a more
 detailed description.
 
-![Figure 3.7: You can create a new Web Content template in the script editor.](../../images/04-web-content-templates-create.png)
+![Figure 3.6: You can create a new Web Content template in the script editor.](../../images/04-web-content-templates-create.png)
 
 Now that you've created a handsome template and know how to use the template
 editor, it's time to decide who the lucky people are that get to use your new
@@ -493,7 +491,7 @@ can also use the Web Content administration portlet to manage their site's RSS
 feeds. Click *Manage* &rarr; *Feeds* if you'd like to add, edit, or delete RSS
 feeds.
 
-![Figure 3.8: Clicking *Manage* &rarr; *Feeds* from the Control Panel's Web Content administration portlet opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
+![Figure 3.7: Clicking *Manage* &rarr; *Feeds* from the Control Panel's Web Content administration portlet opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
 
 <!-- Needs to be replaced for 6.2. -->
 
@@ -517,7 +515,7 @@ select a target page for the feed. A feed's target page serves two purposes:
    target page. When users click on such links for "orphaned" articles, the full
    content of the "orphaned" article is displayed on the target page.
 
-![Figure 3.9: To create a new RSS feed, you only need to specify a name and a target page. Of course, you can also configure other features the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
+![Figure 3.8: To create a new RSS feed, you only need to specify a name and a target page. Of course, you can also configure other features the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
 
 <!-- Needs to be replaced for 6.2. -->
 
@@ -592,7 +590,7 @@ Once you've added the RSS portlet to a page, open the portlet's Configuration
 popup window by clicking on the wrench icon at the top right corner of the
 portlet and selecting *Configuration*.
 
-![Figure 3.10: The RSS portlet's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../images/rss-portlet-config.png)
+![Figure 3.9: The RSS portlet's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../images/rss-portlet-config.png)
 
 <!-- Needs to be replaced for 6.2. -->
 
@@ -623,7 +621,7 @@ in the RSS portlet either above all of the feeds or below all of the feeds. You
 can use these to provide an introduction, description, or footnotes about the
 feeds that you've selected to be displayed.
 
-![Figure 3.11: By default, the RSS portlet is configured to display feeds from Yahoo News and the New York Times. Open the portlet's configuration window to add, edit, or feeds.](../../images/rss-portlet-default-view.png)
+![Figure 3.10: By default, the RSS portlet is configured to display feeds from Yahoo News and the New York Times. Open the portlet's configuration window to add, edit, or feeds.](../../images/rss-portlet-default-view.png)
 
 <!-- Needs to be replaced for 6.2. -->
 
@@ -722,7 +720,7 @@ templates are created, they will appear in the Add menu as they become
 available. The following figure shows the form that needs to be filled when
 creating a *Blank Site*.
 
-![Figure 3.12: The New Site window appears to aid in your new site development.](../../images/01-add-site-screen.png)
+![Figure 3.11: The New Site window appears to aid in your new site development.](../../images/01-add-site-screen.png)
 
 **Name:** is the name of the site you wish to create.
 
@@ -743,7 +741,7 @@ Once the site has been created you can specify more details about the site using
 three categories: Basic Information, Search Engine Optimization, Advanced, and
 Miscellaneous.
 
-![Figure 3.13: On the right panel, you are given a plethora of options for your site's settings.](../../images/01-site-editor.png)
+![Figure 3.12: On the right panel, you are given a plethora of options for your site's settings.](../../images/01-site-editor.png)
 
 **Details:** lets you edit the information you entered when you created the site
 and allows you to choose a site template for the public or private pages of your
@@ -865,7 +863,7 @@ By default, the following site templates are provided:
 The following figure displays the form shown when editing the *Community Site*
 template:
 
-![Figure 3.14: Site templates have several configurable options including the option to allow site administrators to modify pages accociated with the site template.](../../images/01-site-templates.png)
+![Figure 3.13: Site templates have several configurable options including the option to allow site administrators to modify pages accociated with the site template.](../../images/01-site-templates.png)
 
 To view and manage the pages of a site template, click the *Open site template*
 link. This opens the template in a new browser window (or tab) and it can be
@@ -904,7 +902,7 @@ window that opened when you clicked *Open site template*. Changes to site
 templates are automatically saved as you make them, so you don't need to return
 to the Site Templates page of the Control Panel and select *Save*.
 
-![Figure 3.15: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
+![Figure 3.14: You can see the name of the site template you're currently editing](../../images/editing-site-template.png)
 
 <!-- Needs to be replaced for 6.2. -->
 
@@ -1004,7 +1002,7 @@ it's possible to select a theme, a layout template, to add portlets to the page
 and to configure portlet preferences. Both sites and site templates can utilize
 page templates for creating new pages.
 
-![Figure 3.16: The Blog page template is already available for use along with the Content Display Page and Wiki page templates.](../../images/server-configuration-page-templates.png)
+![Figure 3.15: The Blog page template is already available for use along with the Content Display Page and Wiki page templates.](../../images/server-configuration-page-templates.png)
 
 You can edit or delete existing page templates, configure their permissions, or
 add new page templates. By default, three sample page templates are provided:
@@ -1048,7 +1046,7 @@ page templates when creating a new page. If you want any user who can create a
 page to be able to use the page template, just check the *View* permission for
 the *User* role.
 
-![Figure 3.17: When creating a new site page, you're given options for the page template and page type.](../../images/control-panel-selecting-page-template.png)
+![Figure 3.16: When creating a new site page, you're given options for the page template and page type.](../../images/control-panel-selecting-page-template.png)
 
 To use your template to create a new page, just navigate to a page over which
 you have site administrator privileges and select *Add* &rarr; *Page* from the
@@ -1057,7 +1055,7 @@ page. Alternatively, you can use the Site Administration page.
 First, make sure you're on your desired site and navigate to *Admin* &rarr; *Site Administration*. Then click on *Site Pages* &rarr; *Add Page*, type a name, select your template from the drop down menu, and click *Add
 Page* to finish.
 
-![Figure 3.18: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
+![Figure 3.17: Choosing whether or not to automatically apply page template changes to live pages](../../images/automatic-application-page-template-changes.png)
 
 <!-- Needs to be replaced for 6.2. -->
 <!-- At the current time, Site Pages does not have the *Automatically apply
@@ -1131,7 +1129,7 @@ translation, you must finish creating the content in your default language and
 save it. Once you've done that, editing the content provides you with the option
 to *Add Translation*.
 
-![Figure 3.19: Adding a translation](../../images/04-web-content-content-translation.png)
+![Figure 3.18: Adding a translation](../../images/04-web-content-content-translation.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- Very few translation options available at present time (6) -->
@@ -1143,7 +1141,7 @@ you to easily compare the original with the new translation. Once you are done
 with the translation, click *Save* and the translation is added to the list of
 *Available Translations*.
 
-![Figure 3.20: Adding a translation](../../images/04-web-content-content-translation-2.png)
+![Figure 3.19: Adding a translation](../../images/04-web-content-content-translation-2.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- Unable to compare translations at this time -- window sizing issues -->
@@ -1194,7 +1192,7 @@ information. The scheduler is built right into the form your users access to add
 web content. Specifically, it can be found in the right panel listed with
 several other configurable settings.
 
-![Figure 3.21: The web content scheduler can be easily accessed from the right panel of the page.](../../images/04-web-content-schedule.png)
+![Figure 3.20: The web content scheduler can be easily accessed from the right panel of the page.](../../images/04-web-content-schedule.png)
 
 **Display Date:** Sets (within a minute) when content will be displayed.
 
@@ -1316,7 +1314,7 @@ site. Then click on *Site Settings* in the left menu and then on *Staging*
 listed under the Advanced tab. Select *Remote Live* under Staging Type and
 additional options appear.
 
-![Figure 3.22: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
+![Figure 3.21: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- Skipping Staging images at present time. Still a lot of development work to
@@ -1396,7 +1394,7 @@ it's important to quickly publish a fix. If you're following the Nose-ster
 example, check *Enabled On Public Pages* to enable page versioning for the
 Nose-ster site and then click *Save*.
 
-![Figure 3.23: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.22: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1428,7 +1426,7 @@ options are restored and you can access some new options related to staging. If
 you're following along with the Nose-ster example, navigate back to the News and
 Events page and click on *Staging* to get your page editing capabilities back.
 
-![Figure 3.24: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.23: You can see the new bar staging adds to the top of your screen.](../../images/04-web-content-staging-live-page.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1477,7 +1475,7 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for Calendar Events, the event needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.25: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+![Figure 3.24: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1493,7 +1491,7 @@ displayed in a Web Content Display portlet on one of your pages and then click
 popup, expand the Applications heading and scroll down until you see the section
 for Web Content.
 
-![Figure 3.26: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+![Figure 3.25: Uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1599,7 +1597,7 @@ For example, we could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 3.27: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.26: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -1653,7 +1651,7 @@ Sites* page and then select *Actions &rarr; Manage Memberships* for the site
 within which you want to create a team. Finally, click *View Teams* and
 click the *Add Team* button.
 
-![Figure 3.28: Creating teams within your site helps your users demonstrate teamwork and collaboration.](../../images/01-creating-a-team.png)
+![Figure 3.27: Creating teams within your site helps your users demonstrate teamwork and collaboration.](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
 click *Save*. Your new team will appear in the list. To add members, simply
@@ -1739,7 +1737,7 @@ and lets you add more. To add rules to a rule group, select *Actions*
 &rarr; *Manage Rules*, or click on a rule group to edit it, and then click
 the *Manage Rules* link.
 
-![Figure 3.29: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
+![Figure 3.28: You can manage device rules from the Mobile Device Rules administrative page.](../../images/mobile-device-rules.png)
 
 The rules defined for a rule group, along with the priorities of the rule groups
 selected for a particular site or page, determine which rule group's actions are
@@ -1751,7 +1749,7 @@ available.  The rules are designed, however, to be extensible, and additional
 rule types can be added by your developers. Once added, you can edit the rule to
 specify a device type and operating system.
 
-![Figure 3.30: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.29: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 <!-- Needs to be updated for 6.2 -->
 <!-- Unable to deploy Device Recognition plugin at time of image updating. -->
@@ -1773,7 +1771,7 @@ particular site or page and order them by priority. The rule groups are checked
 in decreasing order of priority: the actions defined by the first rule group
 that applies are executed.
 
-![Figure 3.31: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the Control Panel.](../../images/mobile-device-selection.png)
+![Figure 3.30: You can select a mobile device rule group to apply for a site or page from the Site Pages section of the Control Panel.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage
 Actions* button and then click *Add Action*. By default, there are four kinds of
@@ -1832,7 +1830,7 @@ under Tablet since we want our rule group to apply only to mobile phones, and
 click *Save*. Now we just need to define the redirect action for our rule group.
 Navigate back to *Site Administration* &rarr; *Site Pages* and click on *Mobile Device Rules* in the navigation menu to the right.
 
-![Figure 3.32: To apply a mobile device rule group to a page set of a site, click on *Mobile Device Rules*, click *Select Rule Group*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
+![Figure 3.31: To apply a mobile device rule group to a page set of a site, click on *Mobile Device Rules*, click *Select Rule Group*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
 
 Click *Select Rule Group* and then click the *Android and Bada Mobile Phones*
 rule group that you configured. Once you've selected your rule group, click 
