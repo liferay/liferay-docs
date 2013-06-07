@@ -76,8 +76,8 @@ letter spacing anywhere from -10 px to 50 px, with 1 px increments. 0 px is the
 default.
 
 The Background Styles tab allows you to specify the portlet's background color.
-You can enter any six digit hex color code or you click on the pencil icon to
-use the color palette.
+When you select the text space, you're given a color palette to choose your
+background color or you can manually enter any six digit hex color code.
 
 ![Figure 4.3: The Background Styles tab lets you specify the portlet's
 background color.](../../images/look-and-feel-background-styles.png)
@@ -102,7 +102,7 @@ All* box checked to apply the same settings to each side (top, right, bottom,
 and left) of the portlet.
 
 ![Figure 4.5: The Margin and Padding tab allows you to specify margin and
-paddings lengths for the sides of your
+padding lengths for the sides of your
 portlet.](../../images/look-and-feel-margin-and-padding.png)
 
 For both padding and margin, you can specify any % value, em value, or px
@@ -135,6 +135,8 @@ Next, let's discuss exporting and importing portlet data.
 
 ## Export/Import  
 
+<!-- This section needs to be tested against the new AlloyUI -->
+
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
 Message Boards portlets. To export or import portlet data, right-click on the
@@ -148,6 +150,8 @@ site.
 
 ![Figure 4.8: When exporting portlet data, you can choose which categories of
 information to include.](../../images/portlet-export.png)
+
+<!-- Needs to be replaced for 6.2 -->
 
 Each portlet has different configuration options. Checking the *Setup* box
 selects the portlet's saved configuration for export. Checking the *User
@@ -165,6 +169,8 @@ portlet data will be exported or imported, keeping their hierarchy.
 
 ![Figure 4.9: When importing portlet data, you can choose which categories of
 information to use.](../../images/portlet-import.png)
+
+<!-- Needs to be replaced for 6.2 -->
 
 When you import portlet data, only the data types you select will be
 overwritten. If you'd like to import portlet data, you have to select a `.lar`
@@ -231,8 +237,7 @@ configure the scope of a portlet with just a few simple steps.
 
 5.  Click *Save*.
 
-![Figure 4.10: Changing the scope of a
-portlet](../../images/05-changing-portlet-scope.png)
+![Figure 4.10: You can change the scope of your portlet by navigating to its Configuration menu.](../../images/05-changing-portlet-scope.png)
 
 That's all it takes to change the scope for a particular portlet instance. By
 setting the scope to *Current Page*, you can add as many of these portlets to a
@@ -273,7 +278,7 @@ of the portlet configuration dialog box. You can grant roles permission to add
 the portlet to a page, configure the portlet, or view the portlet. To set these
 permissions, go to the *Configuration* menu and click on *Permissions*. This
 shows you a table of roles defined in the portal. Use the check boxes to grant
-certain permissions to different roles. Click *Submit* after you have made your
+certain permissions to different roles. Click *Submit* after you've made your
 selections. 
 
 Beyond this, specific permissions are generally defined for specific
@@ -341,12 +346,12 @@ instance of a portlet running on your site into another site, such as Facebook.
 This opens up a whole new avenue of exposure to your web site that you would
 not have had otherwise. In fact, this is how all those Facebook games work.
 
-![Figure 4.12: Sharing Tab of the Portlet Configuration Dialog
-Box](../../images/liferay-collaboration-portlet-configuration-sharing.png)
+![Figure 4.12: The Sharing tab of the Portlet Configuration Dialog
+Box allows you to share your portlet in a variety of ways.](../../images/liferay-collaboration-portlet-configuration-sharing.png)
 
 To share one of your portlets as a widget, open the *Configuration* dialog box
 from the portlet's title bar and select the *Sharing* tab. There are five
-sub-tabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and
+sub-tabs under sharing: Any Web Site, Facebook, OpenSocial Gadget, Netvibes, and
 Friends.
 
 ### Any Web Site  
@@ -366,7 +371,7 @@ paste their values into the Facebook tab. Your portlet will now be available on
 Facebook as a Facebook application.
 
 ![Figure 4.13: Liferay's Forums on
-Facebook](../../images/05-liferay-forum-facebook.png)
+Facebook is an example of sharing the Message Boards portlet.](../../images/05-liferay-forum-facebook.png)
 
 Incidentally, this makes Liferay a fantastic platform upon which to build
 applications for Facebook. See the *Liferay Developer's Guide* or [*Liferay in
