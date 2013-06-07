@@ -339,26 +339,17 @@ Let's add a thumbnail image for our theme now.
 
 ## Thumbnails
 
-In the *Look and Feel* settings, the *Classic* theme has a thumbnail preview
-image, but our theme has only a broken image. To remedy this, create a PNG file
-named `screenshot.png` and place it in your theme's `docroot/_diffs/images`
-directory. The image must be precisely 1080 pixels wide by 864 pixels high. On
-redeployment, the thumbnail will be automatically generated from
-`screenshot.png`.
+Now that your theme is available in Liferay, it's time to dress it up for a
+stylistic appeal. Currently in the *Look and Feel* settings, your theme's
+thumbnail is a broken image. To remedy this, create a 1080 pixels wide by 864
+pixels high PNG file named `screenshot.png` and place it in your theme's
+`docroot/_diffs/images` directory (you may have to create this directory first).
+It is very important that you abide by the *exact* snapshot dimensions or your
+image will not display properly. On redeployment, the thumbnail will be
+automatically generated from `screenshot.png`.
 
 Now go to the *Look and Feel* settings. Your theme's thumbnail should appear
 there, along with the *Classic* theme's thumbnail. 
-
----
-
- ![tip](../../images/tip-pen-paper.png) **Tip:** To achieve the 1080x864
- resolution in a new browser window, use the button provided in the Resize
- Browser web content article displayed on the Welcome page.
-
----
- 
-<!-- This tip comes verbatim from the ADDING A SCREENSHOT/THUMBNAIL slide in the
-Themes course's 02-building-a-theme.fodp slideshow -->
  
 Let's talk about Liferay's JavaScript library next. 
 
