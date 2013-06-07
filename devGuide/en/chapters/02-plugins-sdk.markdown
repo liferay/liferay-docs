@@ -15,11 +15,13 @@ overwhelming for newcomers, though. So we removed some of the options,
 narrowing down your choices and forcing you to use a tool we like, right? No!
 We actually added to the list of technologies you can use by developing
 specific tools that soften the learning curve for Liferay plugin development,
-and providing ways for you to se alternative tools, as well.  The most
-significant of these tools is Liferay IDE, a fully featured Integrated
-Development Environment based on Eclipse. Alternatively, there's the Plugins
-Software Development Kit (SDK), which is based on Apache Ant and can be used
-with any editor or Integrated Development Environment (IDE) you'd like. 
+and providing ways for you to use alternative tools. The most significant
+Liferay-specific tool is Liferay IDE, a fully featured Integrated Development
+Environment based on Eclipse. Alternatively, there's the Plugins Software
+Development Kit (SDK), which is based on Apache Ant and can be used with any
+editor or Integrated Development Environment (IDE) you'd like. If you'd like,
+you can also use Apache Maven Archetypes; there are plenty of Liferay
+archetypes you can use to develop your plugins. 
 
 In this chapter we'll discuss two Liferay-specific development tools, and a
 viable alternative: 
@@ -403,8 +405,8 @@ outdated or you entered an incorrect project type, its field gets marked with an
 error. 
 
 4. Select the *Liferay target runtime* to configure on the project once it's
-imported. If you don't have a Liferay Portal Runtime, use the *New...* button to
-create one now; Tomcat bundle is the only server runtime supported. 
+   imported. If you don't have a Liferay Portal Runtime, use the *New...*
+button to create one now; Tomcat bundle is the only server runtime supported. 
 
 <!--Three figures were deleted here. One figure could be created to replace
 them if desirable. One figure to rule them all. This comment should be deleted
@@ -431,11 +433,11 @@ Plugins SDK* you're importing plugins from.
     ---
 
     ![note](../../images/tip-pen-paper.png) **Note:** If your SDK isn't
-    configured in Liferay IDE (i.e., it's not in the dropdown list of the *Import
-    Projects* window) use the *Configure* link to add a setting that points to the
-    Plugins SDK that you want to import projects from. To configure a Plugins SDK
-    on the Installed SDKs on the pref page just click *Add* and then Browse to the
-    directory of the Plugins SDK root directory.
+    configured in Liferay IDE (i.e., it's not in the dropdown list of the 
+    *Import Projects* window) use the *Configure* link to add a setting that
+    points to the Plugins SDK that you want to import projects from. To
+    configure a Plugins SDK on the Installed SDKs on the pref page just click
+    *Add* and then Browse to the directory of the Plugins SDK root directory.
 
     ---
 
@@ -762,29 +764,13 @@ Liferay IDE section? -Russ-->
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
 that work best for you. If you don't want to use Liferay IDE, we also provide a
-Plugins Software Development Kit (SDK) based on Apache Ant that can be used
-along with any editor or Integrated Development Environment (IDE). Much of this
-guide uses the Plugins SDK and a text editor, but use whatever tool you're most
-comfortable with. As an alternative to the Plugins SDK, in Chapter 9 we discuss
-Liferay IDE, a plugin for Eclipse that simplifies development for Liferay. 
-
----
-
-![tip](../../images/tip-pen-paper.png) **Tip**: If you use Eclipse and intend
-to use it from the very beginning, you might want to check out Chapter 9 first
-before reading this chapter. 
-
----
-
-We discuss the following topics in this chapter: 
-
-- **Initial Setup:** Install the Plugins SDK and configure it to use with your
-Liferay Portal server. 
-
-- **Structure of the SDK:** Where to develop your plugin within the SDK and what
-Apache Ant targets are available. 
-
-- **Best Practices:** Helpful ways for organizing your plugin projects. 
+Plugins Software Development Kit (SDK), the Plugins SDK is based on Apache Ant,
+and can be used along with any editor or Integrated Development Environment
+(IDE). 
+ 
+In this section we'll get you set up with the Plugins SDK, discuss its file
+structure and available ant targets, and share some best practices to help you
+get the most out of the Plugins SDK. 
 
 Setting up the Plugins SDK is easy. Let's get to it. 
 
@@ -1404,7 +1390,7 @@ from Liferay's source code next.
 #### Building CE Maven Artifacts from Source
 
 Downloading the Liferay Maven artifacts from Liferay's customer portal (EE) or
-from Sourceforge (CE) is useful if you're interested in using the artifacts for
+from SourceForge (CE) is useful if you're interested in using the artifacts for
 a particular release. However, if you'd like to use the very latest Liferay CE
 Maven artifacts, you can build them from source. To build the latest Liferay CE
 Maven artifacts from source, follow these steps:
@@ -1466,8 +1452,13 @@ Maven artifacts from source, follow these steps:
     `gpg --gen-key` and following the instructions. Once you've generated a GPG
     key, you can find your GPG keyname by running `gpg --list-keys`.
     
-    **Note**: The `releases.[user name].properties` is not required if you only
-    plan to install the Liferay artifacts locally and not deploy them.
+    ---
+
+    ![note](../../images/tip-pen-paper.png) **Note**: The `releases.[user
+    name].properties` is not required if you only plan to install the Liferay
+    artifacts locally and not deploy them. 
+
+    ---
 
 5. Open a command prompt, navigate to your Liferay home directory, and build the
    Liferay artifacts by running
@@ -2318,7 +2309,7 @@ But it's so hard to get out of this tiny chair. Someone save Lenore II!
 "Tell this soul with sorrow laden if, within the distant Aidenn,
 It shall clasp a sainted kitten whom the angels named Lenore II--"
 
-In memory of the late, now cripsy Lenore II, let's create a layout template
+In memory of the late, now crispy Lenore II, let's create a layout template
 plugin with Maven. 
 
 ##### Creating a Layout Template Plugin 
@@ -2436,8 +2427,8 @@ Maven, "Probably."
 
 ---
 
-<!-- I'm not sure this works stuck in here and I'm not sure what to do with it.
--->
+<!-- I'm not sure this Maven conclusion works stuck in here and I'm not sure
+what to do with it.  -->
 
 ## Summary
 
