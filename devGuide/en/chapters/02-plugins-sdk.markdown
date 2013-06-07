@@ -1482,20 +1482,20 @@ Maven artifacts from source, follow these steps:
 
     ant -f build-maven.xml deploy-artifacts
 
-   If you want the Liferay artifacts to be installed locally but don't have a
-   remote Maven repository or don't want the artifacts to be remotely deployed,
-   you can run the install target instead of the deploy
-   target: `ant -f build-maven.xml install-artifacts`. Once the Ant target
-   finishes, you should have a time-stamped directory containing the artifacts
-   in your Local Liferay Portal CE source project's root directory (e.g.,
-   `liferay-portal/20121105174417071`).
+    If you want the Liferay artifacts to be installed locally but don't have a
+    remote Maven repository or don't want the artifacts to be remotely deployed,
+    you can run the install target instead of the deploy target: `ant -f
+    build-maven.xml install-artifacts`. Once the Ant target finishes, you should
+    have a time-stamped directory containing the artifacts in your Local Liferay
+    Portal CE source project's root directory (e.g.,
+    `liferay-portal/20121105174417071`).
 
 ---
 
- ![note](../../images/tip-pen-paper.png) **Warning:** During the process of
- packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
- may experience sluggish performance or an insuffient amount of Java heap space.
- There are two solutions to this problem:
+![note](../../images/tip-pen-paper.png) **Warning:** During the process of
+packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
+may experience sluggish performance or an insuffient amount of Java heap space.
+There are two solutions to this problem: 
  
 - **Increase the memory available for the Javadoc packaging process:**
 Navigate to `[Liferay home]/build.xml` and search for the `javadoc` target.
@@ -1677,7 +1677,7 @@ insert the following lines:
                 <liferay.auto.deploy.dir>${liferay.auto.deploy.dir}</liferay.auto.deploy.dir>
                 <liferay.version>${liferay.version}</liferay.version>
             </properties>
-    
+
             <dependencies>
                 <dependency>
                     <groupId>com.liferay.portal</groupId>
@@ -2421,19 +2421,23 @@ You now have plenty of archetypes at your disposal!
 "But the chair whose violet lining with the lamp-light gloating o'er,
 Lenore II shall press, ah, nevermore!"
 
-Lenore II didn't make it through the Maven section, but you did. You can develop all
-your Liferay plugins using Maven; there's a standard process for generating the
-archetypes and selecting your plugin options for each plugin type. You can then
-customize the archetype to your liking. Using Maven to develop plugins offers an
-easy and effective way to customize your Liferay Portal. 
+Lenore II didn't make it through the Maven section, but you did. You can
+develop all your Liferay plugins using Maven; there's a standard process for
+generating the archetypes and selecting your plugin options for each plugin
+type. You can then customize the archetype to your liking. Using Maven to
+develop plugins offers an easy and effective way to customize your Liferay
+Portal. 
 
 ---
 
 ![note](../../images/tip-pen-paper.png) **Note:** Are you wondering if we're
- going to make more terrible jokes that steal from classic poetry? Quoth the
- Maven, "Probably." 
+going to make more terrible jokes that steal from classic poetry? Quoth the
+Maven, "Probably." 
 
 ---
+
+<!-- I'm not sure this works stuck in here and I'm not sure what to do with it.
+-->
 
 ## Summary
 
@@ -2441,14 +2445,13 @@ Now you know all about two Liferay-specific development tools. Our Eclipse
 based Liferay IDE is more robust and complete, so your development process is
 as straightforward as can be. If you don't want to use Eclipse, you can still
 leverage some of the same functionality by using the Plugins SDK to develop in
-Liferay. 
-
-Over the next several chapters we'll apply the knowledge you learned here to
-developing various plugins, starting with custom portlets! 
+Liferay. Over the next several chapters we'll apply the knowledge you learned
+here to developing various plugins using Liferay IDE and the PLugins SDK,
+starting with custom portlets! 
 
 You also learned all about developing Liferay plugins with the Maven build
-framework here. You configured Maven locally, downloaded and installed
-the required Liferay Maven artifacts, and learned to create Liferay plugins
-with Maven.  You're ready to create all kinds of Liferay plugins based on
-Liferay's plugin archetypes. Just don't let Lenore III near the fire this time.
+framework. You configured Maven locally, downloaded and installed the required
+Liferay Maven artifacts, and learned to create Liferay plugins with Maven.
+You're ready to create all kinds of Liferay plugins based on Liferay's plugin
+archetypes. Just don't let Lenore III sleep near the fire this time. 
 
