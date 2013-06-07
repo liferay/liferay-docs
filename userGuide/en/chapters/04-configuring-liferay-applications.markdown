@@ -38,10 +38,7 @@ a language from the Portlet Title drop-down menu. If you've provided a language
 key translation for the language you select, the your portlet's title will be
 displayed in the selected language.
 
-![Figure 4.1: The Portlet Configuration tab of the Look and Feel Box allows you
-to define a custom portlet title, link portlet URLs to a specific page, and
-select whether or not portlet borders should be
-displayed.](../../images/look-and-feel-portlet-configuration.png)
+![Figure 4.1: The Portlet Configuration tab of the Look and Feel Box allows you to define a custom portlet title, link portlet URLs to a specific page, and select whether or not portlet borders should be displayed.](../../images/look-and-feel-portlet-configuration.png)
 
 If you select a page in the *Link Portlet URLs to Page* drop-down menu, all
 portlet URLs will point to the page you selected. The current page is the
@@ -66,8 +63,7 @@ alignment to left, center, right, or justified. (Justified text is both left
 and right aligned.) You can set an underline, overline, or strikethrough as the
 text decoration. The default text decoration is none.
 
-![Figure 4.2: The Text Styles tab lets you configure the format of the text
-that appears in the portlet.](../../images/look-and-feel-text-styles.png)
+![Figure 4.2: The Text Styles tab lets you configure the format of the text that appears in the portlet.](../../images/look-and-feel-text-styles.png)
 
 You can set the word spacing anywhere from -1 em to 0.95 em, with 0.5 em
 increments. 0 em is the default. You can set the line height anywhere from 0 em
@@ -79,16 +75,13 @@ The Background Styles tab allows you to specify the portlet's background color.
 When you select the text space, you're given a color palette to choose your
 background color or you can manually enter any six digit hex color code.
 
-![Figure 4.3: The Background Styles tab lets you specify the portlet's
-background color.](../../images/look-and-feel-background-styles.png)
+![Figure 4.3: The Background Styles tab lets you specify the portlet's background color.](../../images/look-and-feel-background-styles.png)
 
 On the Border Styles tab, you can configure your portlet's border width, border
 style, and border color. For each of these attributes, leave the *Same for All*
 box checked to apply the same settings to top, right, bottom, and left borders. 
 
-![Figure 4.4: The Border Styles tab lets you specify a border width, style, and
-color for each side of the
-portlet.](../../images/look-and-feel-border-styles.png)
+![Figure 4.4: The Border Styles tab lets you specify a border width, style, and color for each side of the portlet.](../../images/look-and-feel-border-styles.png)
 
 For border width, you can specify any % value, em value, or px value. For
 border style, you can select dashed, double, dotted, groove, hidden, inset,
@@ -101,9 +94,7 @@ the edges of your portlet. Just like for border styles, leave the *Same for
 All* box checked to apply the same settings to each side (top, right, bottom,
 and left) of the portlet.
 
-![Figure 4.5: The Margin and Padding tab allows you to specify margin and
-padding lengths for the sides of your
-portlet.](../../images/look-and-feel-margin-and-padding.png)
+![Figure 4.5: The Margin and Padding tab allows you to specify margin and padding lengths for the sides of your portlet.](../../images/look-and-feel-margin-and-padding.png)
 
 For both padding and margin, you can specify any % value, em value, or px
 value.
@@ -111,9 +102,7 @@ value.
 The Advanced Styling tab displays current information about your portlet,
 including your portlet's Liferay ID and CSS classes.
 
-![Figure 4.6: The Advanced Styling tab displays your portlet's Liferay ID and
-allows you to enter CSS code to customize the look and feel of your
-portlet.](../../images/look-and-feel-advanced-styling.png)
+![Figure 4.6: The Advanced Styling tab displays your portlet's Liferay ID and allows you to enter CSS code to customize the look and feel of your portlet.](../../images/look-and-feel-advanced-styling.png)
 
 On this tab, you can also enter custom CSS class names for your portlet and
 custom CSS code. Clicking the *Add a CSS rule for just this portlet* or *Add a
@@ -127,9 +116,7 @@ displayed when mobile devices using the Wireless Application Protocol make page
 requests. You can also set the initial window state to normal or minimized.
 Normal is the default.
 
-![Figure 4.7: The WAP Styling tab lets you enter a custom portlet title to be
-displayed to devices making page requests via WAP; it also allows you to
-specify an initial window state.](../../images/look-and-feel-wap-styling.png)
+![Figure 4.7: The WAP Styling tab lets you enter a custom portlet title to be displayed to devices making page requests via WAP; it also allows you to specify an initial window state.](../../images/look-and-feel-wap-styling.png)
 
 Next, let's discuss exporting and importing portlet data.
 
@@ -148,8 +135,7 @@ site-specific `.lar` files. See the Backing up and Restoring Pages section of
 chapter 2 for a discussion of exporting and importing data across an entire
 site.
 
-![Figure 4.8: When exporting portlet data, you can choose which categories of
-information to include.](../../images/portlet-export.png)
+![Figure 4.8: When exporting portlet data, you can choose which categories of information to include.](../../images/portlet-export.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -167,8 +153,7 @@ the permissions assigned to roles. Finally, you can check the *Categories* box
 to include categories for export. When selected, all categories referenced by
 portlet data will be exported or imported, keeping their hierarchy.
 
-![Figure 4.9: When importing portlet data, you can choose which categories of
-information to use.](../../images/portlet-import.png)
+![Figure 4.9: When importing portlet data, you can choose which categories of information to use.](../../images/portlet-import.png)
 
 <!-- Needs to be replaced for 6.2 -->
 
@@ -298,8 +283,7 @@ this communication mechanism. To access this UI, open your portlet's
 configuration window by clicking on the wrench icon and selecting
 *Configuration*. Then click on the *Communication* tab. 
 
-![Figure 4.11: You can configure portlets to communicate with each other using
-public render parameters.](../../images/portlet-communication-tab.png)
+![Figure 4.11: You can configure portlets to communicate with each other using public render parameters.](../../images/portlet-communication-tab.png)
 
 The screenshot above is for the Wiki portlet, which has six public render
 parameters: categoryId, nodeId, nodeName, resetCur, tag, title. For each of
@@ -346,8 +330,7 @@ instance of a portlet running on your site into another site, such as Facebook.
 This opens up a whole new avenue of exposure to your web site that you would
 not have had otherwise. In fact, this is how all those Facebook games work.
 
-![Figure 4.12: The Sharing tab of the Portlet Configuration Dialog
-Box allows you to share your portlet in a variety of ways.](../../images/liferay-collaboration-portlet-configuration-sharing.png)
+![Figure 4.12: The Sharing tab of the Portlet Configuration Dialog Box allows you to share your portlet in a variety of ways.](../../images/liferay-collaboration-portlet-configuration-sharing.png)
 
 To share one of your portlets as a widget, open the *Configuration* dialog box
 from the portlet's title bar and select the *Sharing* tab. There are five
@@ -370,8 +353,7 @@ and canvas page URL from Facebook. Once you've done this, you can copy and
 paste their values into the Facebook tab. Your portlet will now be available on
 Facebook as a Facebook application.
 
-![Figure 4.13: Liferay's Forums on
-Facebook is an example of sharing the Message Boards portlet.](../../images/05-liferay-forum-facebook.png)
+![Figure 4.13: Liferay's Forums on Facebook is an example of sharing the Message Boards portlet.](../../images/05-liferay-forum-facebook.png)
 
 Incidentally, this makes Liferay a fantastic platform upon which to build
 applications for Facebook. See the *Liferay Developer's Guide* or [*Liferay in
@@ -474,9 +456,12 @@ searches in the Recycle Bin (default is 500).
 trash handler runs to delete trash entries that have been in the Recycle Bin
 longer than the maximum age (default is 60).
 
-Also, as we mentioned earlier, there is a property to enable the Recyle bin portal-wide. 
+Also, as we mentioned earlier, there is a property to enable the Recyle bin
+portal-wide.
 
-`trash.enabled=true`: set this property to true to enable the Recycle Bin for all sites in the portal while allowing site administrators to disable it per site.
+`trash.enabled=true`: set this property to true to enable the Recycle Bin for
+all sites in the portal while allowing site administrators to disable it per
+site.
 
 <!-- Visit the `portal.properties` file at <link> to view all of the
 configurable properties for the Recycle Bin. -->
