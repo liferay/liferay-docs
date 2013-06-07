@@ -1828,7 +1828,8 @@ the rule to edit it or click *Actions* &rarr; *Edit*. Under OS, select *Android*
 and *Bada OS* (hold down Control to make multiple selections), select *False*
 under Tablet since we want our rule group to apply only to mobile phones, and
 click *Save*. Now we just need to define the redirect action for our rule group.
-Navigate back to *Site Administration* &rarr; *Site Pages* and click on *Mobile Device Rules* in the navigation menu to the right.
+Navigate back to *Site Administration* &rarr; *Site Pages* and click on *Mobile
+Device Rules* in the navigation menu to the right.
 
 ![Figure 3.31: To apply a mobile device rule group to a page set of a site, click on *Mobile Device Rules*, click *Select Rule Group*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
 
