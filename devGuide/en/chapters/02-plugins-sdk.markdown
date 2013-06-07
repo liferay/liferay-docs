@@ -374,7 +374,7 @@ instructions.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** This section assumes that
+![note](../../images/tip-pen-paper.png) **Note:** This section assumes that
 you've created projects with the Plugins SDK and are familiar with the
 directory structure used by the Plugins SDK. If you haven't and if you aren't,
 check out the *Plugins SDK* section of this chapter; it comes right after this
@@ -473,10 +473,11 @@ the import steps below to convert your project.
 
     ---
 
-    ![note](../../images/tip-pen-paper.png) **Note:** If you don't have a convert
-    action available it means either that the project is already a Liferay IDE
-    project, or that it is not faeted (i.e., Java and Dynamic Web project facets
-    are not yet configured). Configure accordingly before moving on. 
+    ![note](../../images/tip-pen-paper.png) **Note:** If you don't have a
+    convert action available it means either that the project is already a
+    Liferay IDE project, or that it is not faceted (i.e., Java and Dynamic Web
+    project facets are not yet configured). Configure accordingly before moving
+    on. 
 
     ---
 
@@ -1078,13 +1079,13 @@ As an alternative to developing plugins using the Plugins SDK, you can leverage
 the Apache Maven build management framework. Here's a list of some exciting
 Maven features: 
 
--Offers a simple build process. 
+- Offers a simple build process. 
 
--Features a project object model. 
+- Features a project object model. 
 
--Has a defined project life cycle. 
+- Has a defined project life cycle. 
 
--Provides a dependency management system. 
+- Provides a dependency management system. 
 
 Maven's core installation is lightweight; there are core plugins for compiling
 source code and creating distributions, and there is an abundance of non-core
@@ -1201,13 +1202,13 @@ artifacts. We're installing release version artifacts into this repository, so
 specify *Release* as the repository policy. Below are examples of repository
 property values: 
 
-    - *Repository ID:* `liferay-releases`
+    *Repository ID:* `liferay-releases`
 
-    - *Repository Name:* `Liferay Release Repository`
+    *Repository Name:* `Liferay Release Repository`
 
-    - *Provider:* `Maven2`
+    *Provider:* `Maven2`
 
-    - *Repository Policy:* `Release`
+    *Repository Policy:* `Release`
 
 4. Click *Save*.
 
@@ -1228,13 +1229,13 @@ know. -->
 
 3. Specify repository properties like the following:
 
-    - *Repository ID:* `liferay-snapshots`
+    *Repository ID:* `liferay-snapshots`
 
-    - *Repository Name:* `Liferay Snapshot Repository`
+    *Repository Name:* `Liferay Snapshot Repository`
 
-    - *Provider:* `Maven2`
+    *Provider:* `Maven2`
 
-    - *Repository Policy:* `Snapshot`
+    *Repository Policy:* `Snapshot`
 
 4. Click *Save*.
 
@@ -1488,11 +1489,11 @@ packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
 may experience sluggish performance or an insuffient amount of Java heap space.
 There are two solutions to this problem: 
  
-- **Increase the memory available for the Javadoc packaging process:**
+- *Increase the memory available for the Javadoc packaging process:*
 Navigate to `[Liferay home]/build.xml` and search for the `javadoc` target.
 Find the `maxmemory` property and increase it as desired.
 
-- **Skip the Javadoc packaging process:** Navigate to
+- *Skip the Javadoc packaging process:* Navigate to
 `[Liferay home]/build-maven.xml` and find the `prepare-maven` target. Within
 this target, comment out the call to the `jar-javadoc` target, like below:
 
@@ -1865,7 +1866,7 @@ coordinates (properties) of your project. Here are some examples:
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
     
-6. Enter the letter `Y` to confirm your coordinates.
+6. Enter the letter *Y* to confirm your coordinates.
 
     Maven's Archetype tool creates a Liferay plugin project directory with a new
     `pom.xml` file and source code. 
@@ -2286,8 +2287,9 @@ Plugins with Maven* section.
 
 ##### More Information 
 
-For detailed information on creating hooks, see Chapter 6,
-[Hooks](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4). 
+For detailed information on creating hooks, see the
+[Hooks](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/hoo-4)
+Chapter of this guide. 
 
 You're nearly a Maven expert now; you're able to create portlets, themes, and
 hooks. Let's round things out by learning to develop layout templates. 
