@@ -497,7 +497,7 @@ the portal. Instead of offering a specific Recycle Bin for each asset type,
 Liferay provides a central master Recycle Bin where different asset types can be
 stored. This provides an easy search and recovery process.
 
-![Figure 4.16: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../images/recycle-bin-overview.png)
+![Figure 4.15: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../images/recycle-bin-overview.png)
 
 You can recycle several different types of assets, including:
 
@@ -548,7 +548,7 @@ the menu.
 
 9. You can restore or delete the content. Select *Restore*.
 
-	![Figure 4.17: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
+	![Figure 4.16: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
 
 10. Navigate back to the Web Content screen and notice that your sample web
 content was restored back to its original place.
@@ -583,7 +583,7 @@ Recycle Bin is highlighted, showing you where the files can be dropped. After
 you drop the asset onto the Recycle Bin portlet, the asset is removed from its
 original location and transferred to the Recycle Bin.
 
-![Figure 4.18: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
+![Figure 4.17: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
 
 Next, let's explore the Recycle Bin's intelligence and behind the scenes support
 that aids in a seamless recycling experience.
@@ -617,7 +617,7 @@ document library. If you try to restore the `file1` document, the Recycle Bin
 recognizes duplicate names and prompts you to overwrite the existing document
 in the document library or rename the document you're trying to restore.
 
-![Figure 4.19: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
+![Figure 4.18: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
 
 Although the Recycle Bin prohibits the restoration of files that match
 pre-existing file names in your site/portal, it will store files with matching
@@ -631,7 +631,7 @@ separate Recycle Bin: the *Staging* Recycle Bin. The original Recycle Bin, or
 *Live* Recycle Bin, holding unstaged material is still viewable while in
 staging; however, it is never used.
 
-![Figure 4.20: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
+![Figure 4.19: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
 
 During staging, everything you recycle is sent to the Staging Recycle Bin. This
 prevents staged and unstaged recycled content from mixing. Do you see why this
