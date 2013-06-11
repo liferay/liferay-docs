@@ -41,7 +41,10 @@ IDE.
 
 Even if you're a grizzled veteran of Java development, if you're going to be
 doing a lot of development for your Liferay Portal instance, consider using
-Liferay IDE. 
+Liferay IDE. When Liferay IDE is mated with the Plugins SDK and a Liferay
+runtime environment, you have a one stop development environment, where you can
+develop your Liferay plugins, build them, and deploy them onto your Liferay
+instance. 
 
 Liferay IDE is an extension for Eclipse IDE, and supports development of plugin
 projects for the Liferay Portal platform. You can install Liferay IDE as a set
@@ -52,8 +55,27 @@ using Helios or a later version.
 
 In this section we'll get you started by showing you how to install Liferay
 IDE, but we won't stop there; we'll take you through the setup process, get
-your runtime environment set up, and then develop some plugins with Liferay
-IDE. Last we'll discuss Liferay IDE's Remote Server Adapter. 
+your runtime environment set up, and start introducing you to some of Liferay
+IDE's cool features. More complete demonstrations of Liferay IDE and it's
+features can be found in the chapters specifically describing the development of
+a plugin type (e.g., the *portlets* chapter). There's a helpful code generation tool
+called Service Builder that we'll introduce here, but we've given it a separate
+chapter in this guide because it deserves a through description; check it out,
+we think you'll be impressed. how to developIn-depth then develop some plugins
+with Liferay IDE. Last we'll discuss Liferay IDE's Remote Server
+Adapter. 
+
+---
+
+![note](../../images/tip-pen-paper.png) **Note:** Our *Service Builder* code
+generation tool isn't like code generators that take away some of your ability
+to control your own code. With Service Builder, even the generated code is made
+free for you to customize as you see fit. 
+
+---
+
+<!--The above seemed important from our discussion so I stuck it in here.-->
+
 
 To install and set up Liferay IDE, follow the instructions in the first two
 subsections below. If you're already using *Liferay Developer Studio* (the king
@@ -196,10 +218,9 @@ Before you begin creating new Liferay plugin projects, a supported Liferay
 Plugins SDK and Liferay Portal must be installed and configured in your Liferay
 IDE. If you're thinking, "Wait a second buster, you told me in the chapter
 introduction that the Plguins SDK was an alternative to Liferay IDE!", then
-hold on to yor hat for a mionute and let us explain. The second half of this
-chapter deals with the Plugins SDK on its own; here we'll just discuss it from
-the
-Liferay IDE perspective. 
+hold on to yor hat for a minute and let us explain. In the second half of this
+chapter we'll cover the Plugins SDK on its own, as used with atext editor; here
+we're just interested in getting it running inside Liferay IDE. 
 
 1. In Eclipse, open the *Installed Plugin SDKs* dialog box--from your *Windows*
 dropdown menu, click *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
