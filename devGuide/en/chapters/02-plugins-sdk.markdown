@@ -9,6 +9,17 @@ text editors like Notepad, Vim, or Emacs. You can write your persistence layer
 directly using SQL and JDBC, or use advanced object-relational mapping
 libraries like Hibernate or iBatis. You get the idea. 
 
+In this chaper we'll introduce and show you how to set up a streamlined
+development environment specifically designed for developing your Liferay
+Portal, then  we'll look at developing your plugins with other tools. Here are
+the topics we'll cover along the way: 
+
+- Liferay IDE 
+
+- The Plugins SDK 
+
+- Maven 
+
 Liferay's tool-agnosticism is great for experienced developers who understand
 the strengths and weaknesses of different development technologies; it can be
 overwhelming for newcomers, though. So we removed some of the options,
@@ -23,16 +34,7 @@ editor or Integrated Development Environment (IDE) you'd like. If you'd like,
 you can also use Apache Maven Archetypes; there are plenty of Liferay
 archetypes you can use to develop your plugins. 
 
-In this chapter we'll discuss two Liferay-specific development tools, and a
-viable alternative: 
-
-- Liferay IDE 
-
-- Plugins SDK 
-
-- Apache Maven 
-
-First let's consider the more robust of the two Liferay-specific tools, Liferay
+First let's consider the most robust tool for Liferay development, Liferay
 IDE. 
 
 ## Liferay IDE 
@@ -176,7 +178,7 @@ requirements before proceeding:
 2. Liferay Plugins SDK 6.0.5 or greater is downloaded and unzipped. 
 
 3. You've installed an appropriate Eclipse IDE version for Java EE Development,
-and the Liferay IDE extension--see the *Installation* ssection if you haven't
+and the Liferay IDE extension--see the *Installation* section if you haven't
 already done this. 
 
 ---
@@ -192,8 +194,12 @@ Let's set up your Liferay Plugins SDK.
 
 Before you begin creating new Liferay plugin projects, a supported Liferay
 Plugins SDK and Liferay Portal must be installed and configured in your Liferay
-IDE. The second half of this chapter deals with the Plugins SDK on its own;
-here we'll just discuss it from the Liferay IDE perspective. 
+IDE. If you're thinking, "Wait a second buster, you told me in the chapter
+introduction that the Plguins SDK was an alternative to Liferay IDE!", then
+hold on to yor hat for a mionute and let us explain. The second half of this
+chapter deals with the Plugins SDK on its own; here we'll just discuss it from
+the
+Liferay IDE perspective. 
 
 1. In Eclipse, open the *Installed Plugin SDKs* dialog box--from your *Windows*
 dropdown menu, click *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
@@ -220,7 +226,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 #### Liferay Portal Tomcat Runtime and Server Setup 
 
 1. In Eclipse, open the *Server Runtime Environments* dialog box--go to *Window*
-&rarr; *Preferences* &rarr; *Server* &rarr; *Runtime Environments*). 
+&rarr; *Preferences* &rarr; *Server* &rarr; *Runtime Environments*. 
 
     ![Figure 8.6: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
@@ -759,6 +765,8 @@ Liferay IDE section? -Russ-->
 ### Using Tag Library Snippets 
 
 <!--Add content-->
+
+
 
 ## The Plugins SDK 
 
