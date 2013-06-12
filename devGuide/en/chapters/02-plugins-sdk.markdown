@@ -83,7 +83,7 @@ of Liferay's development tools), which comes with Liferay Portal Enterprise
 Edition, skip to the section titled *Testing/Launching Liferay Tomcat
 Server*--Liferay IDE comes preconfigured in Developer Studio. 
 
-### Installation of Liferay IDE 
+### Installing Liferay IDE 
 
 Liferay IDE is an extension of Eclipse IDE; before you install Liferay IDE,
 let's make sure your Eclipse release can run Liferay IDE, and that you're using
@@ -219,8 +219,8 @@ Plugins SDK and Liferay Portal must be installed and configured in your Liferay
 IDE. If you're thinking, "Wait a second buster, you told me in the chapter
 introduction that the Plguins SDK was an alternative to Liferay IDE!", then
 hold on to yor hat for a minute and let us explain. In the second half of this
-chapter we'll cover the Plugins SDK on its own, as used with atext editor; here
-we're just interested in getting it running inside Liferay IDE. 
+chapter we'll cover the Plugins SDK on its own, as used with a text editor;
+here we're just interested in getting it running inside Liferay IDE. 
 
 1. In Eclipse, open the *Installed Plugin SDKs* dialog box--from your *Windows*
 dropdown menu, click *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
@@ -312,9 +312,14 @@ Next you'll learn to create new Liferay projects in Lioferay IDE.
 
 ### Creating New Liferay Projects 
 
-Your Plugins SDK and portal server are configured in Liferay IDE--let's see how
-to create a new Liferay plugin project in Liferay IDE. Go to File &rarr; New
-Project... &rarr; Liferay &rarr; Liferay Plugin Project. 
+Let's create a project we can use throughout this guide. Have you heard of the
+hip new social networking site for noses, *nosester*? Well, the site's founder,
+Harry Schnozz, wants us to develop some plugins for him, so let's create a
+*nosester* project where we can develop plugins. 
+
+Your Plugins SDK and portal server are configured in Liferay IDE--let's create
+a new Liferay plugin project in Liferay IDE. Go to File &rarr; New Project...
+&rarr; Liferay &rarr; Liferay Plugin Project. 
 
 In the *New Liferay Plugin Project* dialog box, your newly configured SDK and
 Liferay Runtime should be selected. The plugin type *portlet* is the default
