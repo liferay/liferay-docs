@@ -57,13 +57,13 @@ In this section we'll get you started by showing you how to install Liferay
 IDE, but we won't stop there; we'll take you through the setup process, get
 your runtime environment set up, and start introducing you to some of Liferay
 IDE's cool features. More complete demonstrations of Liferay IDE and it's
-features can be found in the chapters specifically describing the development of
-a plugin type (e.g., the *portlets* chapter). There's a helpful code generation tool
-called Service Builder that we'll introduce here, but we've given it a separate
-chapter in this guide because it deserves a through description; check it out,
-we think you'll be impressed. how to developIn-depth then develop some plugins
-with Liferay IDE. Last we'll discuss Liferay IDE's Remote Server
-Adapter. 
+features can be found in the chapters specifically describing the development
+of a plugin type (e.g., the *portlets* chapter). There's a helpful code
+generation tool called Service Builder that we'll introduce here, but we've
+given it a separate chapter in this guide because it deserves a through
+description; check it out, we think you'll be impressed. how to develop
+in-depth then develop some plugins with Liferay IDE. Last we'll discuss Liferay
+IDE's Remote Server Adapter. 
 
 ---
 
@@ -312,10 +312,10 @@ Next you'll learn to create new Liferay projects in Lioferay IDE.
 
 ### Creating New Liferay Projects 
 
-Let's create a project we can use throughout this guide. Have you heard of the
-hip new social networking site for noses, *nosester*? Well, the site's founder,
-Harry Schnozz, wants us to develop some plugins for him, so let's create a
-*nosester* project where we can develop plugins. 
+Let's create a project to illustrate the process; have you heard of the hip new
+social networking site for noses, *Nose-ster*? Well, the site's founder, Harry
+Schnozz, wants us to develop some plugins for him, so let's create a
+*Nose-ster* project to hold the site's plugins. 
 
 Your Plugins SDK and portal server are configured in Liferay IDE--let's create
 a new Liferay plugin project in Liferay IDE. Go to File &rarr; New Project...
@@ -327,6 +327,10 @@ plugin type. Type a project name and cooresponding display name, then click
 *Finish*. 
 
 ![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-project.png)
+<!--replace above image with 6.2 image. i created it but it has the wrong
+portlet name (doesn't match Jesse's from the service builder chapter). i'll be
+making all image commits at once so it's easier for backporting to 6.1x (can
+just skip that commit).-->
 
 Your new plugin project should appear in the package explorer. 
 
