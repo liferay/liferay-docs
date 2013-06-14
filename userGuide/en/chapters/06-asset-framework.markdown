@@ -41,8 +41,7 @@ content is easy. You can do it at the bottom of the same form you use to add
 content. If you open the *Categorization* section of the form, you'll be
 presented with an interface for adding tags and categories.
 
-![Figure 6.1: Tagging and categorizing content can be done at the same time you
-create it.](../../images/04-web-content-categorization.png)
+![Figure 6.1: Tagging and categorizing content can be done at the same time you create it.](../../images/04-web-content-categorization.png)
 
 The Control Panel contains an interface for managing tags and categories for
 each site in the portal. This interface can be used to manage all your tags and
@@ -119,7 +118,7 @@ There are a several new enhancements to vocabularies and categories in Liferay
 6.1. The three main features are targeted vocabularies, single/multi-valued
 vocabularies, and separated widgets for every vocabulary.
 
-## Targeted Vocabularies  
+## Targeted Vocabularies 
 
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
@@ -127,9 +126,7 @@ configure these settings, go to the categories administration page and mouse
 over the vocabulary in the list until you see the edit icon to the right. Select
 the icon to reveal a dialog box like the one below.
 
-![Figure 6.4: You can target vocabularies by checking the *Allow Multiple 
-Categories* checkbox and then selecting the 
-Asset Types.](../../images/targeted-vocabularies.png)
+![Figure 6.4: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
 
 The default value for *Associated Asset Types* is *All Asset Types*. You can
 fine tune your choices by using the *+* and *-* buttons, which narrows the scope
@@ -138,29 +135,26 @@ vocabulary `Famous Noses` is configured to be available for Blogs and Web
 Content, but it is not required. It is mandatory, however, for Documents and
 Media Documents.
 
-### Single and Multi-valued Vocabularies  
+### Single and Multi-valued Vocabularies 
 
 You can now decide if the user can choose one or more categories from the same
 vocabulary to categorize an asset. If a vocabulary is single-valued you can only
 choose one, and if it allows more, you can choose several categories.
 
-![Figure 6.5: Single-valued vocabularies, on the left, use radio buttons while 
-multi-valued vocabularies use 
-checkboxes. .](../../images/multi-valued-vocabularies.png)
+![Figure 6.5: Single-valued vocabularies, on the left, use radio buttons while multi-valued vocabularies use checkboxes.](../../images/multi-valued-vocabularies.png)
 
 Setting vocabulary values is done through the categories administration page.
 Edit a vocabulary and deselect the *Allow Multiple Categories* checkbox to set
 single value vocabularies or use the default option to set multi-value
 vocabularies.
 
-### Separated Widgets  
+### Separated Widgets 
 
 The third important improvement is every vocabulary has its own separated
 widget. These widgets appear in the Categorization section of every asset and
 they allow users to easily select appropriate categories for that asset.
 
-![Figure 6.6: Now that vocabularies have their own widgets, it's easy to select 
-available  categories.](../../images/separated-widgets.png)
+![Figure 6.6: Now that vocabularies have their own widgets, it's easy to select available categories.](../../images/separated-widgets.png)
 
 It's important to use tags and categories with all your content, so that content
 is easier for users to find. Let's look at one of the ways users will make use
@@ -234,7 +228,7 @@ individual search result is a wiki article, a comment, or an attachment. In the
 next section, we'll see how the Search portlet can be used to search through
 multiple types of content on Liferay. Its faceted search feature is a powerful
 tool that allows users to include or not include specific types of assets in a
-search.  However, the Search portlet does not return comments or attachments as
+search. However, the Search portlet does not return comments or attachments as
 search results.
 
 ### Searching for Portal Content Using Facets
@@ -243,9 +237,7 @@ To get started using faceted search, drop the Search portlet on a page and
 search for something. You'll see a page with results on the right and a
 collection of *facets* on the left. 
 
-![Figure 6.7: The first set of facets is content types. You can drill down to
-specific types of content that contain the search terms you
-entered.](../../images/faceted-search-1.png)
+![Figure 6.7: The first set of facets is content types. You can drill down to specific types of content that contain the search terms you entered.](../../images/faceted-search-1.png)
 
 A facet is a combination of the information about a specific indexed field, its
 terms, and their frequency. Facets are typically named by the field in question.
@@ -259,8 +251,7 @@ you were looking for. If, however, your memory is more foggy than that, or
 you're searching for something you're not sure is actually there, then the asset
 tags or asset categories facets may be more helpful to you. 
 
-![Figure 6.8: Asset tag facets provide you with more information about content
-that contains the terms for which you searched.](../../images/faceted-search-2.png)
+![Figure 6.8: Asset tag facets provide you with more information about content that contains the terms for which you searched.](../../images/faceted-search-2.png)
 
 In this case, if you searched for a wireless phone, you may be more interested
 in content that has your search terms in it and has also been tagged by users.
@@ -273,8 +264,7 @@ works.
 To drill down into the search, click a facet to add it to the filter list, and
 the results to the right are refined by the facet you selected. 
 
-![Figure 6.9: Drilling down creates a list of what you selected at the top of
-the screen.](../../images/05-faceted-search-drill-down-1.png)
+![Figure 6.9: Drilling down creates a list of what you selected at the top of the screen.](../../images/05-faceted-search-drill-down-1.png)
 
 Here we can see that we've selected one of the tags, *liferay*, to further
 refine the search. The tag appears in a list at the top, and there's a red X
@@ -283,8 +273,7 @@ relevancy of our search. But maybe selecting only the tag isn't enough to filter
 our search into something small enough to sort through. In this case, we can
 further refine the search by selecting another facet, as below. 
 
-![Figure 6.10: Selecting another facet further refines the
-search.](../../images/05-faceted-search-drill-down-2.png)
+![Figure 6.10: Selecting another facet further refines the search.](../../images/05-faceted-search-drill-down-2.png)
 
 Now we've selected web content, which is one particular content type within
 Liferay, and the list of potential hits on our search terms has been
@@ -292,7 +281,7 @@ dramatically reduced. In this way, you can interactively tweak the search
 results to narrow them down, making it easier to find that proverbial needle
 within the haystack. 
 
-#### Asset Types  
+#### Asset Types 
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
@@ -307,7 +296,7 @@ wish to tweak the `frequency threshold` and the `max terms` settings to increase
 the number of asset types displayed past the default of 10. This is covered in
 the section below on search options. 
 
-#### Asset Tags  
+#### Asset Tags 
 
 If tags have been applied to any asset that appears in the result set, it may
 be displayed in the Asset Tag facet. Tags are handled in a similar way to how
@@ -316,7 +305,7 @@ the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
 setting `max terms` property.
 
-#### Asset Categories  
+#### Asset Categories 
 
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Yadda, yadda, yadda, same
@@ -325,7 +314,7 @@ you're still reading.
 
 Let's move on to advanced searching. 
 
-### Advanced Searching  
+### Advanced Searching 
 
 The Search portlet's search box is deceptively simple. Though you have only a
 single field for search, there's a search syntax inherited from
@@ -388,7 +377,7 @@ above.
 
 Next, we'll look at how the Search portlet can be configured. 
 
-### Setting Search Options  
+### Setting Search Options 
 
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
@@ -703,9 +692,7 @@ the Asset Publisher that you want to select content manually. You can select
 what you want to be published within the portlet, or you can create new content
 from within the Asset Publisher.
 
-![Figure 6.12: Selecting assets manually is very similar to the Web Content
-Display portlet, except you have many other content types to choose
-from.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 6.12: Selecting assets manually is very similar to the Web Content Display portlet, except you have many other content types to choose from.](../../images/04-web-content-asset-publisher-manual.png)
 
 Clicking *Add New* gives you a menu of options, enabling you to create the
 content right where you are. You can create blogs, bookmarks, calendar entries,
@@ -738,9 +725,7 @@ selected.
 specific type, such as only web content, only wiki entries, or any combinations
 of multiple types.
 
-![Figure 6.13: You can filter by tags and categories, and you can set up as many
-filter rules as you
-need.](../../images/04-web-content-asset-publisher-filter.png)
+![Figure 6.13: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 **Filter Rules:** Add as many filters on tags or categories as you like. You can
 choose whether the content contains or does not contain any or all categories or
@@ -829,8 +814,7 @@ print, enable comments, enable ratings, etc.
 **Show Metadata:** Allows you to select from the available metadata types (see
 below).
 
-![Figure 6.14: Available metadata
-types](../../images/available-metadata-fields.png)
+![Figure 6.14: Available metadata types](../../images/available-metadata-fields.png)
 
 **Enable RSS Subscription:** This lets users subscribe to the content via RSS
 Feeds.
@@ -971,9 +955,7 @@ the setup`, but there still aren't any assets displayed in the related assets
 portlet. Why? You cannot see any related assets until you select an
 asset in the Asset Publisher.
 
-![Figure 6.17: Select an asset in the Asset Publisher to see its related assets
-displayed in the Related Assets
-portlet.](../../images/related-assets-portlet-after.png)
+![Figure 6.17: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets portlet.](../../images/related-assets-portlet-after.png)
 
 Once you select an asset, its related assets will display in the Related Assets
 portlet, similar to the image above.
