@@ -38,10 +38,7 @@ a language from the Portlet Title drop-down menu. If you've provided a language
 key translation for the language you select, the your portlet's title will be
 displayed in the selected language.
 
-![Figure 4.1: The Portlet Configuration tab of the Look and Feel Box allows you
-to define a custom portlet title, link portlet URLs to a specific page, and
-select whether or not portlet borders should be
-displayed.](../../images/look-and-feel-portlet-configuration.png)
+![Figure 4.1: The Portlet Configuration tab of the Look and Feel Box allows you to define a custom portlet title, link portlet URLs to a specific page, and select whether or not portlet borders should be displayed.](../../images/look-and-feel-portlet-configuration.png)
 
 If you select a page in the *Link Portlet URLs to Page* drop-down menu, all
 portlet URLs will point to the page you selected. The current page is the
@@ -66,8 +63,7 @@ alignment to left, center, right, or justified. (Justified text is both left
 and right aligned.) You can set an underline, overline, or strikethrough as the
 text decoration. The default text decoration is none.
 
-![Figure 4.2: The Text Styles tab lets you configure the format of the text
-that appears in the portlet.](../../images/look-and-feel-text-styles.png)
+![Figure 4.2: The Text Styles tab lets you configure the format of the text that appears in the portlet.](../../images/look-and-feel-text-styles.png)
 
 You can set the word spacing anywhere from -1 em to 0.95 em, with 0.5 em
 increments. 0 em is the default. You can set the line height anywhere from 0 em
@@ -76,19 +72,16 @@ letter spacing anywhere from -10 px to 50 px, with 1 px increments. 0 px is the
 default.
 
 The Background Styles tab allows you to specify the portlet's background color.
-You can enter any six digit hex color code or you click on the pencil icon to
-use the color palette.
+When you select the text space, you're given a color palette to choose your
+background color or you can manually enter any six digit hex color code.
 
-![Figure 4.3: The Background Styles tab lets you specify the portlet's
-background color.](../../images/look-and-feel-background-styles.png)
+![Figure 4.3: The Background Styles tab lets you specify the portlet's background color.](../../images/look-and-feel-background-styles.png)
 
 On the Border Styles tab, you can configure your portlet's border width, border
 style, and border color. For each of these attributes, leave the *Same for All*
 box checked to apply the same settings to top, right, bottom, and left borders. 
 
-![Figure 4.4: The Border Styles tab lets you specify a border width, style, and
-color for each side of the
-portlet.](../../images/look-and-feel-border-styles.png)
+![Figure 4.4: The Border Styles tab lets you specify a border width, style, and color for each side of the portlet.](../../images/look-and-feel-border-styles.png)
 
 For border width, you can specify any % value, em value, or px value. For
 border style, you can select dashed, double, dotted, groove, hidden, inset,
@@ -101,9 +94,7 @@ the edges of your portlet. Just like for border styles, leave the *Same for
 All* box checked to apply the same settings to each side (top, right, bottom,
 and left) of the portlet.
 
-![Figure 4.5: The Margin and Padding tab allows you to specify margin and
-paddings lengths for the sides of your
-portlet.](../../images/look-and-feel-margin-and-padding.png)
+![Figure 4.5: The Margin and Padding tab allows you to specify margin and padding lengths for the sides of your portlet.](../../images/look-and-feel-margin-and-padding.png)
 
 For both padding and margin, you can specify any % value, em value, or px
 value.
@@ -111,9 +102,7 @@ value.
 The Advanced Styling tab displays current information about your portlet,
 including your portlet's Liferay ID and CSS classes.
 
-![Figure 4.6: The Advanced Styling tab displays your portlet's Liferay ID and
-allows you to enter CSS code to customize the look and feel of your
-portlet.](../../images/look-and-feel-advanced-styling.png)
+![Figure 4.6: The Advanced Styling tab displays your portlet's Liferay ID and allows you to enter CSS code to customize the look and feel of your portlet.](../../images/look-and-feel-advanced-styling.png)
 
 On this tab, you can also enter custom CSS class names for your portlet and
 custom CSS code. Clicking the *Add a CSS rule for just this portlet* or *Add a
@@ -127,13 +116,13 @@ displayed when mobile devices using the Wireless Application Protocol make page
 requests. You can also set the initial window state to normal or minimized.
 Normal is the default.
 
-![Figure 4.7: The WAP Styling tab lets you enter a custom portlet title to be
-displayed to devices making page requests via WAP; it also allows you to
-specify an initial window state.](../../images/look-and-feel-wap-styling.png)
+![Figure 4.7: The WAP Styling tab lets you enter a custom portlet title to be displayed to devices making page requests via WAP; it also allows you to specify an initial window state.](../../images/look-and-feel-wap-styling.png)
 
 Next, let's discuss exporting and importing portlet data.
 
 ## Export/Import  
+
+<!-- This section needs to be tested against the new AlloyUI -->
 
 Some Liferay portlets allow you to export or import portlet data. These include
 many of Liferay's collaborative applications, such as the Blogs, Wiki, and
@@ -146,8 +135,9 @@ site-specific `.lar` files. See the Backing up and Restoring Pages section of
 chapter 2 for a discussion of exporting and importing data across an entire
 site.
 
-![Figure 4.8: When exporting portlet data, you can choose which categories of
-information to include.](../../images/portlet-export.png)
+![Figure 4.8: When exporting portlet data, you can choose which categories of information to include.](../../images/portlet-export.png)
+
+<!-- Needs to be replaced for 6.2 -->
 
 Each portlet has different configuration options. Checking the *Setup* box
 selects the portlet's saved configuration for export. Checking the *User
@@ -163,8 +153,9 @@ the permissions assigned to roles. Finally, you can check the *Categories* box
 to include categories for export. When selected, all categories referenced by
 portlet data will be exported or imported, keeping their hierarchy.
 
-![Figure 4.9: When importing portlet data, you can choose which categories of
-information to use.](../../images/portlet-import.png)
+![Figure 4.9: When importing portlet data, you can choose which categories of information to use.](../../images/portlet-import.png)
+
+<!-- Needs to be replaced for 6.2 -->
 
 When you import portlet data, only the data types you select will be
 overwritten. If you'd like to import portlet data, you have to select a `.lar`
@@ -231,8 +222,7 @@ configure the scope of a portlet with just a few simple steps.
 
 5.  Click *Save*.
 
-![Figure 4.10: Changing the scope of a
-portlet](../../images/05-changing-portlet-scope.png)
+![Figure 4.10: You can change the scope of your portlet by navigating to its Configuration menu.](../../images/05-changing-portlet-scope.png)
 
 That's all it takes to change the scope for a particular portlet instance. By
 setting the scope to *Current Page*, you can add as many of these portlets to a
@@ -273,7 +263,7 @@ of the portlet configuration dialog box. You can grant roles permission to add
 the portlet to a page, configure the portlet, or view the portlet. To set these
 permissions, go to the *Configuration* menu and click on *Permissions*. This
 shows you a table of roles defined in the portal. Use the check boxes to grant
-certain permissions to different roles. Click *Submit* after you have made your
+certain permissions to different roles. Click *Submit* after you've made your
 selections. 
 
 Beyond this, specific permissions are generally defined for specific
@@ -293,8 +283,7 @@ this communication mechanism. To access this UI, open your portlet's
 configuration window by clicking on the wrench icon and selecting
 *Configuration*. Then click on the *Communication* tab. 
 
-![Figure 4.11: You can configure portlets to communicate with each other using
-public render parameters.](../../images/portlet-communication-tab.png)
+![Figure 4.11: You can configure portlets to communicate with each other using public render parameters.](../../images/portlet-communication-tab.png)
 
 The screenshot above is for the Wiki portlet, which has six public render
 parameters: categoryId, nodeId, nodeName, resetCur, tag, title. For each of
@@ -341,12 +330,11 @@ instance of a portlet running on your site into another site, such as Facebook.
 This opens up a whole new avenue of exposure to your web site that you would
 not have had otherwise. In fact, this is how all those Facebook games work.
 
-![Figure 4.12: Sharing Tab of the Portlet Configuration Dialog
-Box](../../images/liferay-collaboration-portlet-configuration-sharing.png)
+![Figure 4.12: The Sharing tab of the Portlet Configuration Dialog Box allows you to share your portlet in a variety of ways.](../../images/liferay-collaboration-portlet-configuration-sharing.png)
 
 To share one of your portlets as a widget, open the *Configuration* dialog box
 from the portlet's title bar and select the *Sharing* tab. There are five
-sub-tabs under sharing: Any Web Site, Facebook, Google Gadget, Netvibes, and
+sub-tabs under sharing: Any Web Site, Facebook, OpenSocial Gadget, Netvibes, and
 Friends.
 
 ### Any Web Site  
@@ -365,8 +353,7 @@ and canvas page URL from Facebook. Once you've done this, you can copy and
 paste their values into the Facebook tab. Your portlet will now be available on
 Facebook as a Facebook application.
 
-![Figure 4.13: Liferay's Forums on
-Facebook](../../images/05-liferay-forum-facebook.png)
+![Figure 4.13: Liferay's Forums on Facebook is an example of sharing the Message Boards portlet.](../../images/05-liferay-forum-facebook.png)
 
 Incidentally, this makes Liferay a fantastic platform upon which to build
 applications for Facebook. See the *Liferay Developer's Guide* or [*Liferay in
@@ -426,60 +413,31 @@ into how the Recycle Bin works, let's look at how to configure it.
 ### Configuring the Recycle Bin
 
 To begin using the Recycle Bin, you must enable it where you plan to use it. The
-Recycle Bin supports portal-wide scope or site-specific scope. For either
-scope, you can also set the expire time for recycled content, after which it is
-deleted. 
+Recycle Bin supports portal-wide scope or site-specific scope. The poral-wide
+scope of the Recycle Bin is set by adding the `trash.enabled` property to your
+`portal-ext.properties` file. We'll go into more detail for adding this property
+and several others to your properties file later in the section. First, let's
+explore the UI and see what the Recycle Bin can do.
 
-First, let's configure the Recycle Bin for portal-wide use. In the Control
-Panel, select *Global* from the Context Menu, and then click *Portal Settings*
-under the *Portal* heading. Next, click *Recycle Bin* in the portal settings
-menu under the *Configuration* heading. You'll notice a few configurable
-options: 
-
-**Enable Recycle Bin:** enable and disable settings for the Recycle Bin's portal
-scope.
-
-- *Enabled by Default:* enables the Recycle Bin while allowing site
-administrators to disable it per site (default).
-
-- *Disabled by Default:* disables the Recycle Bin while allowing site
-administrators to enable it per site.
-
-- *Disabled:* disables the Recycle Bin for all sites.
-
-**Number of Days That Files Will Be Kept in the Recycle Bin:** customize the
-number of days a file is kept in the Recycle Bin until its deletion (default is
-30 days).
-
-![Figure 4.14: The Recycle Bin offers several configurable options for your portal.](../../images/recycle-bin-portal-settings.png)
-
-Now let's explore the site-specific scoping of the Recycle Bin. In the Control
-Panel, select your site from the Context Menu, and then click *Site Settings*.
-Next, click *Recycle Bin* in the site settings menu under the *Advanced*
-heading. The options are nearly identical to the portal settings menu except for
-the *enabling* option.
+First, let's configure the Recycle Bin for site-specific scoping. Choose the
+site you'd like configure for the Recycle Bin from *My Sites* in the Dockbar.
+Then click *Admin* &rarr; *Site Administration* and select *Site Settings* from
+the Configuration heading. Next, click *Recycle Bin* on the right-side menu
+under the Advanced heading. You'll notice a few configurable options:
 
 **Enable Recycle Bin:** enable and disable settings for the Recycle Bin's
 site-specific scope.
 
-- *Use Portal Settings (Currently: \<PORTAL_SETTINGS_CONFIGURATION\>:* uses the
-Recycle Bin's portal settings (default).
+**Trash Entries Max Age:** customize the number of days a file is kept in the
+Recycle Bin until its deletion (default is 30 days).
 
-- *Enabled:* enables the Recycle Bin for the specific site only.
-
-- *Disabled:* disables the Recycle Bin for the specific site only.
-
-![Figure 4.15: The Recycle Bin also offers configurable options for your specific site.](../../images/recycle-bin-site-settings.png)
-
-<!-- TODO/UPDATE: These options are now different after rebuilding Portal from
-trunk. It seems none of these settings are final and are still being modified.
-Need to check status periodically. -->
+![Figure 4.14: The Recycle Bin offers several configurable options for your site.](../../images/recycle-bin-site-settings.png)
 
 When you've finished configuring your Recycle Bin settings, click *Save*.
 
 ---
 
- ![note](../../images/tip.png)**Note:** If you disable the Recycle Bin while
+ ![note](../../images/tip.png) **Note:** If you disable the Recycle Bin while
  it's still holding recycled items, the recycled items reappear in the Recycle
  Bin if it is re-enabled.
 
@@ -494,19 +452,19 @@ GUI that you can set:
 `trash.search.limit=500`: set the limit for results used when performing
 searches in the Recycle Bin (default is 500).
 
-`trash.entry.check.interval=1`: set the interval in days for how often the trash
-handler runs to delete trash entries that have been in the Recycle Bin longer
-than the maximum age (default is 1).
+`trash.entry.check.interval=60`: set the interval in minutes for how often the
+trash handler runs to delete trash entries that have been in the Recycle Bin
+longer than the maximum age (default is 60).
+
+Also, as we mentioned earlier, there is a property to enable the Recyle bin
+portal-wide.
+
+`trash.enabled=true`: set this property to true to enable the Recycle Bin for
+all sites in the portal while allowing site administrators to disable it per
+site.
 
 <!-- Visit the `portal.properties` file at <link> to view all of the
 configurable properties for the Recycle Bin. -->
-
-<!-- TODO/UPDATE: After updating master and building from trunk, the properties
-have been modified and the portal and site settings in the configuration section
-are now different. I have left the properties and options the same, for now. It
-appears these options are still in progress and not 100% implemented. I will
-need to check periodically with the progress of these options/configurations.
--->
 
 Next, you should make sure permissions are set properly for users who can
 handle/view the assets in the Recycle Bin. Users who had *View* permissions on
@@ -524,20 +482,20 @@ the portal. Instead of offering a specific Recycle Bin for each asset type,
 Liferay provides a central master Recycle Bin where different asset types can be
 stored. This provides an easy search and recovery process.
 
-![Figure 4.16: The Recycle Bin provides a seamless administration experience for deleting and removing content.](../../images/recycle-bin-overview.png)
+![Figure 4.15: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../images/recycle-bin-overview.png)
 
 You can recycle several different types of assets, including:
 
 - Blogs
 - Bookmarks
 - Documents and Media
-- Message Boards
+- Message Boards (and attachments)
 - Web Content
-- Wiki
+- Wiki (and attachments)
 
-<!-- TODO: Planned for RB compatibility - Calendar (LPS-28161), Attachments (for
-wiki and MB) (LPS-28165), Pages (LPS-29964), Structures (LPS-29970), Templates
-(LPS-29970). -->
+<!-- TODO: Planned for RB compatibility - Calendar (LPS-35264), Attachments (for
+wiki and MB) (LPS-28165 -> still some kinks), Pages (LPS-29964), Structures
+(LPS-29970), Templates (LPS-29970). -->
 
 <!-- NOTE: The wiki/MB attachments can currently be recycled, but the recycle
 button is currently listed as *Remove*. The attachment does not get sent to the
@@ -549,7 +507,7 @@ For a quick example to show how easy the Recycle Bin is to use, let's send a web
 content article to the Recycle Bin and then restore it. We'll run through two
 different methods of restoring the file.
 
-1. Navigate to *Control Panel* &rarr; *Web Content*.
+1. Navigate to *Site Administration* &rarr; *Web Content*.
 
 2. Select the *Add* button and click *Basic Web Content*.
 
@@ -568,13 +526,14 @@ stored in its original place.
 
 6. Select the *Move to the Recycle Bin* button again.
 
-7. Click the Recycle Bin button from the Control Panel menu.
+7. Navigate back to Site Administration and click the Recycle Bin button from
+the menu.
 
 8. Find your sample web content and click its *Actions* tab.
 
 9. You can restore or delete the content. Select *Restore*.
 
-	![Figure 4.17: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
+	![Figure 4.16: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../images/recycle-bin-restore.png)
 
 10. Navigate back to the Web Content screen and notice that your sample web
 content was restored back to its original place.
@@ -609,7 +568,7 @@ Recycle Bin is highlighted, showing you where the files can be dropped. After
 you drop the asset onto the Recycle Bin portlet, the asset is removed from its
 original location and transferred to the Recycle Bin.
 
-![Figure 4.18: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
+![Figure 4.17: A quick and easy way of disposing your items is the drag and drop method.](../../images/recycle-bin-drag.png)
 
 Next, let's explore the Recycle Bin's intelligence and behind the scenes support
 that aids in a seamless recycling experience.
@@ -643,7 +602,7 @@ document library. If you try to restore the `file1` document, the Recycle Bin
 recognizes duplicate names and prompts you to overwrite the existing document
 in the document library or rename the document you're trying to restore.
 
-![Figure 4.19: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
+![Figure 4.18: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../images/recycle-bin-duplicate-name.png)
 
 Although the Recycle Bin prohibits the restoration of files that match
 pre-existing file names in your site/portal, it will store files with matching
@@ -657,7 +616,7 @@ separate Recycle Bin: the *Staging* Recycle Bin. The original Recycle Bin, or
 *Live* Recycle Bin, holding unstaged material is still viewable while in
 staging; however, it is never used.
 
-![Figure 4.20: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
+![Figure 4.19: During staging, a separate Recycle Bin appears to keep staging and live content separate.](../../images/recycle-bin-staging.png)
 
 During staging, everything you recycle is sent to the Staging Recycle Bin. This
 prevents staged and unstaged recycled content from mixing. Do you see why this
