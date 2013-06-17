@@ -3,7 +3,7 @@
 <!-- Introduce Alloy UI -->
 
 Alloy UI is easy to use in your JavaScript and HTML anywhere on your web server.
-Let's demonstrate by using Alloy's `.aui-btn` button class in an HTML file.
+Let's demonstrate by using Alloy's `aui-btn` button class in an HTML file.
 
 1. Insert the body of an HTML file on your web server:
 
@@ -18,8 +18,8 @@ Let's demonstrate by using Alloy's `.aui-btn` button class in an HTML file.
         YUI().use(
           'node',
           'transition',
-          function (Y) {
-            Y.one('.aui-btn').on(
+          function (A) {
+            A.one('.aui-btn').on(
               'click', function() {
                 this.transition(
                   {
@@ -40,21 +40,51 @@ your script.
 
 <!-- TODO Add screenshot of demo -->
 
-Let's take a look at how we did this with Alloy UI. First, we used a script
-element to reference Alloy's "seed" file, `aui-min.js`. The seed file includes
-the bare minimum core code required for Alloy UI. Any additional code is loaded
-dynamically by YUI.
+Let's take a look at how we did this with Alloy UI. First we added our HTML -
+that displays a button of Alloy UI's `aui-btn` button class. 
+
+Then, we used a script element to reference Alloy's "seed" file, `aui-min.js`.
+The seed file includes the bare minimum core code required for Alloy UI. Any
+additional code is loaded dynamically by YUI.
 
     <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
 
-Then, we added a button of class `aui-btn`. This is an Alloy UI button class.
-Lastly, we specify a script to that finds the first button of class `aui-btn`
-and sets its width to 500 pixels on clicking it. How's that for dynamic content!
+Lastly, our script selects the first button of class `aui-btn` on the page and
+sets the button's width to 500 pixels on clicking it. How's that for dynamic
+content! 
 
-Now, let's try doing the same thing in a portlet. First, specify the Alloy
-UI's taglib as a dependency in the `liferay-plugin-package.properties` for the
-portlet's project. You can specify this dependency via *Design* view of the file
-in Liferay IDE. Or you could open the file and add the following assignment: 
+Let's take a closer look at this script. It uses YUI and Alloy UI in what is
+commonly referred to as a "sandbox". Sandbox is a pattern in which the content
+of one sandbox stays separate from that of other sandboxes. 
+
+I've entertained the analogy, thinking of the countless hours I spent as a child
+using my die-cast metal toy tractor to plant imaginary crops in my toy sandbox.
+It was wonderful place to let my imagination go wild and grow acres and acres of
+fictitious crops. 
+
+The UI sandbox is similar to a toy sandbox, but safer, and perhaps more fun.
+Unlike my childhood sandbox, that inevitably was raided by friends, siblings,
+and my dog, your UI sandbox keeps your code safe from namespace clashes with
+other code on your page. 
+
+The sandbox is simply a callback where you run your code. If follows this
+format: 
+
+`YUI().use(`*[package 1, ...  package n,]*` function(A) { // Your code goes here });`
+
+`YUI()` is a function call onto which you attach `.use(...)` to use your code.
+As parameters, you pass in packages required by your code and finally a function
+containing your code. Our example code required YUI's `event` and `node`
+packages. As our final argument, we passed in our function with *the* Alloy
+object as parameter `A`. Alloy's classes are stored in the `A` object. Within
+our function, we perform our presentation logic, leveraging Alloy's API via its
+mighty `A` object. We'll get into more details on the API shortly. 
+
+Now that we've disected our example, let's get the example to work in a portlet.
+First, specify the Alloy UI's taglib as a dependency in the
+`liferay-plugin-package.properties` for the portlet's project. You can specify
+this dependency via *Design* view of the file in Liferay IDE. Or you could open
+the file and add the following assignment: 
 
     portal-dependency-tlds=aui.tld
 
@@ -77,8 +107,8 @@ code in your JSP looks like the following:
     YUI().use(
       'node',
       'transition',
-      function (Y) {
-        Y.one('.aui-btn').on(
+      function (A) {
+        A.one('.aui-btn').on(
           'click', function() {
             this.transition(
               {
@@ -104,8 +134,8 @@ scripts. For example, you can try out your Alloy UI scripts in an HTML file on a
 simple web server on your machine. Let's download Alloy UI and set up a simple
 development environment.  
 
-You can download Alloy UI from [http://alloyui.com/](http://alloyui.com/). The `.zip` file you download
-from the Alloy UI website contains the following:
+You can download Alloy UI from [http://alloyui.com/](http://alloyui.com/). The
+`.zip` file you download from the Alloy UI website contains the following:
 
 - `alloy-[version]/` - Alloy UI project root directory.
 
