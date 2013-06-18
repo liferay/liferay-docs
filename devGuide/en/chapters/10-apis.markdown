@@ -6,18 +6,9 @@ directly through a Java invocation, or through web services. This chapter
 provides an overview of several essential Liferay APIs available to you for use
 in developing your Liferay Portal. 
 
-<!--Here and throughout the chapter I see "APIs" and "API". Is it singular or
-plural or doesn't it matter? I know there are many packages one could import,
-but is it allf rom on API, or is each one its own API?-->
-
-<!-- An API is an abbreviation for Application Programming Interface. It can
-therefore be used in the singular or the plural. If you were talking about two
-APIs, such as Liferay's Social API and Liferay's Collaboration API, you'd use
-the plural. -->
-
 Liferay comes with a host of APIs that provide powerful portal and portlet
 services. The following table shows you the entities for which services are
-available:
+available: 
 
 Portal Services      | Portlet Services              |
 --------------------- | ----------------------------- |
@@ -58,6 +49,8 @@ This chapter covers the following topics:
 
 - Device Detection
 
+- LIferay's Deprecation Policy
+
 Before learning to invoke an API, you need to know where to find Liferay APIs. 
 
 <!--I know it's more than wordsmithing and formatting, but it seems important to
@@ -91,9 +84,12 @@ with the com.liferay.portal.service link Russ -->
 <!-- The Packages frame is the top left frame, but it's much easier to do it
 from the main frame, so I've left it. -Rich -->
 
+<!--Jim I left these comments in from me and Rich so you can see what I did and
+whether you think it's appropriate.-->
+
 3. Find and click on the `-ServiceUtil` class (in this case,
-`OrganizationLocalServiceUtil`) in the *Class Summary* table or the *Classes*
-list at the bottom of the page. 
+   `OrganizationLocalServiceUtil`) in the *Class Summary* table or the
+*Classes* list at the bottom of the page. 
 
 That was easy! What if you want to find portlet services? 
 
@@ -113,12 +109,6 @@ Here's how you find services for a user's blogs statistics:
 2. Under *Portlet Services*, click the link for the
 `com.liferay.portlet.blogs.service` package in the *Packages* frame, since the
 services are a part of the *blogs portlet*. 
-
-<!--I changed this based on navigating to the link specified and looking for the
-link. There was no Packages frame, but there was a Portlet Services frame
-with the com.liferay.portlet.blogs.service link. Russ -->
-
-<!-- The Packages frame is the one on the top left. -Rich -->
 
 3. Find and click on the `-ServiceUtil` class (in this case
 `BlogsStatsUserLocalServiceUtil`) in the *Class Summary* table or the *Classes*
@@ -154,7 +144,7 @@ This JSP code invokes the static method `getOrganizationStatsUsers()` from the
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Permission checks are not
+![note](../../images/tip-pen-paper.png) **Note:** Permission checks are not
 performed when you invoke services locally (i.e., from the same JVM that's
 Liferay Portal runs on). To ensure permission checks are performed, use the
 remote variant of the API, even from a local context. 
@@ -173,9 +163,6 @@ can still access Liferay's service APIs. The main benefit of remotely accessing
 service APIs is that security checks are performed. Unless you want to avoid
 permission checking, develop your client (even if it's local) so it triggers the
 front-end security layer.
-
-<!-- I don't understand the second half of the last sentence in the paragraph
-above. I might have messed up the intent. Russ -->
 
 <!-- We should not be making this argument. The developer calling the service
 actually has no idea if the implementation of the service checks permissions or
@@ -239,7 +226,7 @@ services, pass in the appropriate user credentials, and upload the documents.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** The `portal.properties` file
+![note](../../images/tip-pen-paper.png) **Note:** The `portal.properties` file
 resides on the portal host machine and is controlled by the portal
 administrator. Portal administrators can configure security settings for the
 Axis Servlet, the Liferay Tunnel Servlet, the Spring Remoting Servlet, the JSON
@@ -287,7 +274,7 @@ can get Organization data with the following URL:
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Older Liferay versions let you
+![note](../../images/tip-pen-paper.png) **Note:** Older Liferay versions let you
 access services with `http://localhost:8080/tunnel-web/axis`. This path has
 changed in Liferay 6.1; if you enter it, you'll be redirected to the new one. 
 
@@ -296,12 +283,6 @@ changed in Liferay 6.1; if you enter it, you'll be redirected to the new one.
 The authentication type specified for your Liferay Portal instance dictates the
 authentication type you'll use to access your web service. The portal
 administrator can set the portal's authentication type to any of the following: 
-
-<!--Not sure which is better here, authentication type or authorization type.
-I went with authentication. Russ -->
-
-<!-- Best to use the one in the Liferay UI, which I believe is Authentication
--Rich -->
 
 - *screen name*
 - *user ID*
@@ -364,11 +345,6 @@ services specified in the *Web Services Definition Language* (*WSDL*) file for
 each service. The `-Soap` classes are the serializable implementations of the
 models. Let's look at how to determine the URLs for these services. 
 
-<!--Is SOAP related classes the proper way to refer to these? I just recycled
-the phrase from above. Russ -->
-
-<!-- That phraseology works. :-) -Rich --> 
-
 You can see a list of the services deployed on your portal by opening your
 browser to a URL following one of these formats: 
 
@@ -380,11 +356,20 @@ browser to a URL following one of these formats:
 
 Here's the list of *secure* web services for `UserGroup`: 
 
-![Figure 10.3: `UserGroup` Web Service listing](../../images/wsdl-summary-listing.png)
+- `Portal_UserGroupService` (wsdl)
+    - `addGroupUserGroups`
+    - `addTeamUserGroups`
+    - `addUserGroup`
+    - `deleteUserGroup`
+    - `getUserGroup`
+    - `getUserUserGroups`
+    - `unsetGroupUserGroups`
+    - `unsetTeamUserGroups`
+    - `updateUserGroup`
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** Liferay's developers use a tool
+![note](../../images/tip-pen-paper.png) **Note:** Liferay's developers use a tool
 called *Service Builder* to expose their services via SOAP automatically. If
 you're interested in using Service Builder, check out the *Service Builder*
 chapter in this guide. 
@@ -395,9 +380,15 @@ Each web service is listed with its name, operations, and a link to its WSDL
 file. The WSDL file is written in XML and provides a model for describing and
 locating the web service. 
 
-![Figure 10.4: WSDL Excerpt for the `addUserGroup` operation of `UserGroup`](../../images/wsdl-for-user-group-service.png)
+Here's the WSDL Excerpt for the `addUserGroup` operation of `UserGroup`: 
 
-<!-- This image and the previous one are too close together. -Rich --> 
+    <wsdl:operation name="addUserGroup" parametterOrder="name description
+    publicLayoutSetPropertyId privateLayoutSetPropertyId">
+        <wsdl:input message="impl:addUserGroupRequest" name="addUserGroupRequest"/>
+        <wsdl:outputMessage="impl:addUserGroupResponse" name="assUserGroupResponse"/>
+    </wsdl:operation>
+
+<!--Jim, I removed the screenshot of this XML and just typed it out. Is it okay?-->
 
 To use the service, you pass in the WSDL URL along with your login credentials
 to the SOAP service locator for your service. We'll show you an example in the
@@ -414,9 +405,8 @@ plan to consume in your client code. For our purposes, the client we're building
 needs a Web Service Client for the portal's `Company`, `User`, and `UserGroup`
 services. 
 
-![Figure 10.5: New Web Service Client](../../images/api-new-web-svc-client.png)
-
-<!-- This image is also too close to the previous one. -Rich --> 
+To add your Web Service Clients in Eclipse IDE, click *New* &rarr; *Other...*, then
+expand the *Web Services* category. Click *Web Service Client*.
 
 For each client you create, you're prompted to enter the service definition
 (WSDL) for the desired service. Here's an example WSDL: 
@@ -426,6 +416,8 @@ For each client you create, you're prompted to enter the service definition
 ![Figure 10.6: Service Definition](../../images/api-web-svc-wsdl.png)
 
 <!-- Again, too many screenshots. -Rich -->
+<!--Jim I removed three screenshots that were too close otgether to respond to
+Rich's comments and added some detail to the text. -->
 
 With the WSDL specified, Eclipse automatically adds the auxiliary files and
 libraries required to consume that web service.  Nifty!
@@ -557,11 +549,6 @@ Here's the code that locates and invokes operations to add a new UserGroup named
         }
     }
 
-<!--I believe the above code block is too long. Not sure how to reduce it. Russ
--->
-
-<!-- It's okay. -Rich -->
-
 Running this client should produce output like the following example: 
 
     userId for user named test is 10196
@@ -601,11 +588,6 @@ for the `-ServiceSOAP` classes `CompanyServiceSoap`, `UserServiceSoap` and
 `UserGroupServiceSoap` in the WSDL files. Information on parameter types,
 parameter order, request type, response type, and return type are conveniently
 specified in the WSDL for each Liferay web service. It's all there for you!
-
-<!--Needs to be more straightforward; a table? -->
-
-<!-- It's fine. This is just standard, non-Liferay-specific, web service stuff
-that developers should know anyway. -Rich -->
 
 Next let's implement a web service client implemented in PHP. 
 
@@ -677,7 +659,7 @@ We'll cover the following topics as we explore JSON Web Service functionality:
 
 - Results
 
-<!-- Need transition paragraph here; don't end a section with bullets. -->
+Let's talk about registering JSON Web Services next. 
 
 ### Registering JSON Web Services
 
@@ -796,6 +778,8 @@ Now the servlet can scan and register your portlet's JSON Web Services.
 also a missing transition here. -Rich
 -->
 
+Let's see how to form a mapped URL of the service next. 
+
 #### Mapping and naming conventions 
 
 You can form a mapped URL of an exposed service using the following naming
@@ -806,10 +790,7 @@ convention:
 <!-- We seem to have skipped something here. What's a mapped URL of an exposed
 service? -Rich -->
 
-The `[server]` and `[port]` items are self explanatory. Let's look at the other
-bracketed items more closely: 
-
-<!-- Never, ever say anything is self-explanatory: https://github.com/liferay/liferay-docs/blob/master/guidelines/writers-guidelines.markdown#common-documentation-and-phraseology-issues -->
+Let's look at the last two bracketed items more closely: 
 
 - `service-class-name` is generated from the service's class name by removing
 the `Service` or `ServiceImpl` suffix and making it lower case. 
@@ -857,7 +838,7 @@ portlet's context):
     in his current portal session. Liferay's JavaScript API for services calls
     plugin services using this method.
 
-<!-- Missing transition. -->
+NExt we'll learn to available JSON Web Services. 
 
 #### Listing available JSON Web Services 
 
@@ -967,7 +948,7 @@ disable them, specify this portal property setting:
 
     json.web.service.enabled=false
 
-<!--Missing transition. --> 
+Now let's look at strict HTTP methods. 
 
 #### Strict HTTP methods 
 
@@ -985,7 +966,11 @@ portal property:
 When using strict mode, you must use the correct HTTP methods in calling service
 methods. 
 
-<!-- Missing transition. --> 
+When strict HTTP mode is enabled, you still might have need to disable HTTP
+methods. We'll show you how next. 
+
+<!--This needed a transition, and I got tired of saying, "next let's...". Check
+for acuracy. -Russ-->
 
 #### Disabling HTTP methods 
 
@@ -998,7 +983,7 @@ For example:
 
 Now all requests that use HTTP methods from the list above are ignored.
 
-<!-- Missing transition. --> 
+Next we'll show you how to restrict public access to exposed JSON APIs. 
 
 #### Controlling public access 
 
@@ -1060,7 +1045,7 @@ example may be called like this:
 
 In this example, `param2` will automatically be set to `null`. 
 
-<!-- Missing transition. --> 
+Find out how to pass parameters as part of the URL path next. 
 
 #### Passing parameters as part of URL path 
 
@@ -1068,14 +1053,6 @@ You can pass parameters as part of the URL path. After the service URL, just
 specify method parameters in name-value pairs. Parameter names must be formed
 from method argument names by converting them from camelCase to names using all
 lower case and separated-by-dash. Here's an example: 
-
-<!--The hack Skynet thing might not work; I envision passing parameters in the
-URL being a sneaky thing to do, sort of a trick. I have to admit I don't really
-understand a lot of this chapter so if this joke doesn't work, by all means
-remove it.-->
-
-<!-- I took it out, because parameter passing is actually a vector for attack,
-and we don't want to sound cocky about it. --> 
 
     http://localhost:8080/api/secure/jsonws/dlapp/get-file-entries/repository-id/10172/folder-id/0
 
@@ -1085,10 +1062,6 @@ which the arguments specified in the method signatures.
 When a method name is overloaded, the *best match* will be used. It chooses the
 method that contains the least number of undefined arguments and invokes it for
 you. 
-
-<!--Again, if this doesn't work, get rid of it. -->
-
-<!-- Done. --> 
 
 You can also pass parameters in a URL query, and we'll show you how next. 
 
@@ -1144,7 +1117,7 @@ web service parameters for a `List<Locale>` Java method argument type:
 - *Step 2--Generification*: Each `String` is converted to the `Locale` (the
 generic type), resulting in the `List<Locale>` Java argument type. 
 
-<!-- Missing transition. --> 
+Now let's see how to specify an argument as `null`. 
 
 #### Sending NULL values 
 
@@ -1166,7 +1139,7 @@ without a prefix. Here's an example:
 
     "last-access-date":null
 
-<!-- Missing transition. --> 
+Now let's learn about encoding parameters. 
 
 #### Encoding Parameters
 
@@ -1191,7 +1164,7 @@ request parameters. The resulting value is the string
 received, this value is first going to be translated to an array of 10 bytes
 (URL decoded) and then converted to a UTF-8 string of the 5 original characters.
 
-<!-- Missing transition. --> 
+Did you know you can send files as arguments? Fins out how next. 
 
 #### Sending files as arguments 
 
@@ -1210,7 +1183,7 @@ Files can be uploaded using multipart forms and requests. Here's an example:
 This is common upload form that invokes the `addFileEntry` method of the
 `DLAppService` class. 
 
-<!-- Missing transition. --> 
+Now we'll show you how to invoke JSON Web Services using JSON RPC. 
 
 #### JSON RPC 
 
@@ -1230,7 +1203,8 @@ Here's an example of invoking a JSON web service using JSON RPC:
         "jsonrpc":"2.0"
     }
 
-<!-- Don't end a section with code; missing transition. --> 
+Let's talk about paramteters that are made available to secure JSON web
+services by default. 
 
 #### Default parameters 
 
@@ -1421,6 +1395,8 @@ from a chapter-long thing into a random, unexpected insertion, which may be
 funnier (YMMV), and doesn't make Liferay out to be a part of an evil,
 computer-generated, apocalypse-causing, malevolent force. --> 
 
+<!--Wait, we aren't?-->
+
 Next we'll show you how to optimize your use of JSON Web Services by using the
 *JSON Web Services Invoker*. 
 
@@ -1610,11 +1586,6 @@ thinking we shouldn't just use it like this without explaining what it is. -Rich
 
 In this section we'll look at the Service Context fields, learn how to create
 and populate a Service Context, and learn to access Service Context data.
-
-<!--I got rid of the list here and replaced it with a paragraph, since I've only
-seen a list of contents for the entire chapter, if memory serves. Russ -->
-
-<!-- Yup; that was good. -Rich --> 
 
 First we'll look at the fields of the `ServiceContext` class. 
 
@@ -1891,18 +1862,20 @@ and running asynchronous processes.
 
 You can leverage Message Bus to send messages between and within your plugins. 
 
-We'll cover these subtopics as we show you Message Bus: 
+As we show you Message Bus we'll talk about things like *synchronous* and
+*asynchronous* messaging , *serial* vs. *in-parallel* message dispatching, and
+Java and JSON style messages formats. 
 
-- The Message Bus System
-- Synchronous and Asynchronous messaging
-- Dispatching messages *serially* and *in-parallel* to multiple listeners
-- Java and JSON style message formats
+Before we get into those topics, let's first try to understand Message Bus
+System's architecture. 
 
 <!--Is a subtopic list okay? -->
 
 <!-- No; I changed it to a paragraph-based list. -Rich -->
 
-Let's first try to understand the architecture of Liferay's Message Bus System.
+<!--It looks like Rich changed the "common uses" list instead of the
+"subtopics" list, so I left his change and also changed the subtopics list into
+a paragraph. Russ--> 
 
 ### The Message Bus System 
 
@@ -1932,10 +1905,6 @@ The Message Bus supports *synchronous* and *asynchronous* messaging:
 - **Synchronous messaging**: After it sends a message, the sender blocks waiting
 for a response from a recipient. 
 
-<!--Des the above definition make sense? -->
-
-<!-- Yes. -Rich -->
-
 - **Asynchronous messaging**: After it sends a message, the sender is free to
 continue processing. The sender can be configured to receive a call-back or can
 simply send and forget. We'll show you how to implement both synchronous and
@@ -1960,7 +1929,7 @@ in this file.
 
 ---
 
-![note](../../images/tip-pen-paper.png)**Note:** The internal file
+![note](../../images/tip-pen-paper.png) **Note:** The internal file
 `META-INF/messaging-core-spring.xml` of `portal-impl.jar` specifies the default
 Message Bus class, default asynchronous message sender class, and default
 synchronous message sender class for Liferay. 
@@ -2009,18 +1978,6 @@ safety reviews discovered by the Legal department, because the Legal department
 forgot to copy the Sales department in their email to Procurement.  Tempers flew,
 feelings were hurt, and everybody avoided hanging out in the company breakroom
 for the next couple of weeks. 
-
-<!--I either needed to change the above use case to detail some process the
-Resistance would use or else stick with this and remove references to Skynet
-and Terminator throughout the chapter; Like the Maven chapter, the
-jokes/metaphors should be consistent. Instead I tried to make Jungle Gyms R-Us a
-front business the Resistance uses to obtain the parts they need to build their
-own automated cyborgs which will do battle with the T-1000000 that protects
-Skynet's core, but it seems convoluted. Needs more work most likely, or else
-just to be scrapped--> 
-
-<!-- I scrapped it. I thought the use case was itself entertaining enough, and
-Skynet is no longer runnning through this chapter, so it became confusing. -Rich -->
 
 <!-- Now that I see that this example is not a functional or even a potential
 real-world example, I think we need to scrap the whole thing and come up with
@@ -2611,13 +2568,6 @@ You can grab many other device capabilities, including `model_name`,
 `marketing_name`, and `release_date`. You can also get boolean values like
 `is_wireless_device`, `is_tablet`, etc. 
 
-<!--I was unsure whether  these values were a sort of filter for device
-capabilities or if these are the values, or capabilities, themselves that are
-returned.-->
-
-<!-- They're values that are returned, and then you are responsible for doing
-something with them. -Rich --> 
-
 With the Device Detection API, you can detect the capabilities of a device
 making request to your portal and render content accordingly; so your grandma's
 gnarly tablet and your cousin's awesome new mobile phone can make requests to
@@ -2628,29 +2578,34 @@ You're really getting the hang of Liferay's APIs. Way to go!
 ## Liferay's Deprecation Policy
 
 Methods in Liferay's APIs are deprecated when they're no longer called by
-Liferay internally. Method deprecation occurs during a maintenance release of
-Liferay. You'll know when there's a maintenance release if you understand
-Liferay's release version notation. Liferay version numbers consist of a three
-digit number. Knowing what each digit represents is key, so let's consider a
-case where you were using Liferay 6.0.2, and Liferay 6.0.3 has just been
-released:
+Liferay internally. Method deprecation occurs during major releases of Liferay.
+You'll know when there's a major release if you understand Liferay's
+release version notation. Liferay version numbers consist of a three digit
+number. Knowing what each digit represents is key, so let's consider a case
+where you were using Liferay 6.0.2, and Liferay 6.0.3 has just been released:
 
 - Digit 1 (**6**.0.3): The first digit represents the major release version,
-  which is a *feature release*; this simply means that new features have been
-released. In our example, this hasn't changed. 
+  which is a *feature release*. Along with changes to Liferay's architecture,
+internal schema, and the introduction of new functionality, API methods get
+deprecated during feature releases. In our example, this number hasn't changed,
+so any API methods we use in our custom development are intact. 
 
-- Digit 2 (6.**0**.3): The second digit is the minor release, which is also a
-  feature release. It also did not change in our example. 
+- Digit 2 (6.**0**.3): The second digit indicates the minor release. Minor
+  releases involve the introduction of new features and bug fixes. While
+customization might be affected when installing, API methods don't get
+deprecated. For our example, this didn't change.  feature release. It also did
+not change in our example. 
 
 - Digit 3 (6.0.**3**): The third digit represents the maintenance release, or
-  fix pack release. In our case, this changed from *2* to *3*, so we discovered
-a maintenance release, and we need to be aware that API methods might have been
-deprecated. If any have, you shouldn't use them for custom development.
-Deprecated methods won't be removed during the maintenance of a feature feature
-release, but they may be removed in future feature releases.
+  fix pack release. In our case, the third digit changed from *2* to *3*, so we
+discovered a maintenance release. In terms of API method deprecation, you're in
+the clear; in acoordince with our policy, methods you used in your custom
+development haven't been deprecated. 
 
 <!-- I think this whole section is incorrect. It should be synced with this
 (focusing on the deprecation policy, of course): https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/editions-of-lifer-4 -->
+
+<!--I updated it based on the user guide. Please review -Russ -->
 
 ## Summary  
 
