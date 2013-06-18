@@ -1,9 +1,31 @@
 # Designing User Interfaces with Alloy UI
 
-<!-- Introduce Alloy UI -->
+Alloy UI is a framework for building high performing user interface components.
+Liferay uses Alloy UI to provide a consistent look and feel across Liferay
+Portal. Liferay is build on Yahoo UI (YUI), leveraging all of its capabilities
+and extending it with even more cutting edge components and features to help you
+build terrific user interfaces (UIs).
+
+One of the reasons why Alloy UI was built on YUI is because YUI allows you to
+build quality production level widgets quickly. Alloy UI is easy to use on small
+scale projects as well as large scale projects. Since Alloy UI includes all of
+YUI, YUI's documentation applies to Alloy UI as well.
+
+<!-- TODO List what we'll cover in this chapter 
+
+- Introduce Alloy UI
+- Using Alloy UI - demonstrate using Alloy in HTML/JavaScript and within a JSP
+in Liferay Portal
+- Using Alloy UI taglibs
+- Alloy UI's extensions to the YUI language
+- Working with the Alloy UI project - describes the project files and how to
+build it.
+- Creating your own Alloy UI module and components
+
+-->
 
 Alloy UI is easy to use in your JavaScript and HTML anywhere on your web server.
-Let's demonstrate by using Alloy's `aui-btn` button class in an HTML file.
+Let's demonstrate by using Alloy's `aui-btn` module in an HTML file.
 
 1. Insert the body of an HTML file on your web server:
 
@@ -41,7 +63,7 @@ your script.
 <!-- TODO Add screenshot of demo -->
 
 Let's take a look at how we did this with Alloy UI. First we added our HTML -
-that displays a button of Alloy UI's `aui-btn` button class. 
+that displays a button of Alloy UI's `aui-btn` module. 
 
 Then, we used a script element to reference Alloy's "seed" file, `aui-min.js`.
 The seed file includes the bare minimum core code required for Alloy UI. Any
@@ -49,7 +71,7 @@ additional code is loaded dynamically by YUI.
 
     <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
 
-Lastly, our script selects the first button of class `aui-btn` on the page and
+Lastly, our script selects the first element of `aui-btn` class on the page and
 sets the button's width to 500 pixels on clicking it. How's that for dynamic
 content! 
 
@@ -60,12 +82,12 @@ of one sandbox stays separate from that of other sandboxes.
 I've entertained the analogy, thinking of the countless hours I spent as a child
 using my die-cast metal toy tractor to plant imaginary crops in my toy sandbox.
 It was wonderful place to let my imagination go wild and grow acres and acres of
-fictitious crops. 
+fictitious corn fields. 
 
 The UI sandbox is similar to a toy sandbox, but safer, and perhaps more fun.
 Unlike my childhood sandbox, that inevitably was raided by friends, siblings,
 and my dog, your UI sandbox keeps your code safe from namespace clashes with
-other code on your page. 
+code in other sandboxes on your page. 
 
 The sandbox is simply a callback where you run your code. If follows this
 format: 
@@ -80,7 +102,7 @@ object as parameter `A`. Alloy's classes are stored in the `A` object. Within
 our function, we perform our presentation logic, leveraging Alloy's API via its
 mighty `A` object. We'll get into more details on the API shortly. 
 
-Now that we've disected our example, let's get the example to work in a portlet.
+Now that we've disected our example, let's get it working in a portlet.
 First, specify the Alloy UI's taglib as a dependency in the
 `liferay-plugin-package.properties` for the portlet's project. You can specify
 this dependency via *Design* view of the file in Liferay IDE. Or you could open
