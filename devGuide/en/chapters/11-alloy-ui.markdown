@@ -164,7 +164,7 @@ You can download AlloyUI from [http://alloyui.com/](http://alloyui.com/). The
 
     - `demos/` - Contains basic examples of the AlloyUI components.
 
-    - `src/` - Contains the soruce code of the AlloyUI modules.
+    - `src/` - Contains the source code of the AlloyUI modules.
 
     - `.alloy.json` - Specifies how to build the modules.
 
