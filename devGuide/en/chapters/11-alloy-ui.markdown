@@ -1,10 +1,12 @@
 # Designing User Interfaces with Alloy UI
 
-Alloy UI is a framework for building high performing user interface components.
-Liferay uses Alloy UI to provide a consistent look and feel across Liferay
-Portal. Liferay is build on Yahoo UI (YUI), leveraging all of its capabilities
-and extending it with even more cutting edge components and features to help you
-build terrific user interfaces (UIs).
+Alloy UI is a framework for building high performing user interface (UI)
+components. Liferay uses Alloy UI for highly scalable JavaScript components that
+provide a consistent look and feel across Liferay Portal. Alloy UI is a set of
+extensions and modules built on top of and extending the Yahoo UI (YUI)
+framework. It leverages all of YUI's capabilities and adds even more cutting
+edge components and features to help you build terrific UIs. Alloy UI also
+incorporates Twitter Bootstrap to leverage its HTML/CSS capabilities. 
 
 One of the reasons why Alloy UI was built on YUI is because YUI allows you to
 build quality production level widgets quickly. Alloy UI is easy to use on small
