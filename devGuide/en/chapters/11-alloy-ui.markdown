@@ -29,11 +29,9 @@ Let's demonstrate by using Alloy's `aui-btn` module in an HTML file.
 
 1. Insert the body of an HTML file on your web server:
 
-        <div style="text-align: center;">
-            <button id="try-btn" class="aui-btn" type="button">
-            Try me now!
-            </button>
-        </div>
+        <button id="try-btn" class="aui-btn" type="button">
+        Try me now!
+        </button>
 
         <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
         <script>
