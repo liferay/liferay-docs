@@ -122,9 +122,7 @@ the replacement of the `<script>` tags with the `<aui:script>` tags the Alloy
 code in your JSP looks like the following:
 
 
-    <div style="text-align: center;">
-      <button id="try-btn" class="aui-btn" type="button">Try me now!</button>
-    </div>
+    <button id="try-btn" class="aui-btn" type="button">Try me now!</button>
 
     <aui:script>
     YUI().use(
