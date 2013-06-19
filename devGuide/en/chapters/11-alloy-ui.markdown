@@ -187,6 +187,8 @@ web server.
  ![important](../../images/tip-pen-paper.png) **Tip:** You may find it
  convenient to extract the AlloyUI installation into your web server, or
  create symbolic links from your AlloyUI installation to your web server.
+ However, you should keep in my mind that it's usually faster to use AlloyUI's
+ seed file from CDN for many [many reasons](http://www.liferay.com/web/zeno.rocha/blog/-/blogs/alloyui-and-the-importance-of-cdn).
 
 ---
 
