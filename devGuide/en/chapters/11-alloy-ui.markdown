@@ -11,7 +11,7 @@ build quality production level widgets quickly. Alloy UI is easy to use on small
 scale projects as well as large scale projects. Since Alloy UI includes all of
 YUI, YUI's documentation applies to Alloy UI as well.
 
-<!-- TODO List what we'll cover in this chapter 
+<!-- TODO List what we'll cover in this chapter
 
 - Introduce Alloy UI
 - Using Alloy UI - demonstrate using Alloy in HTML/JavaScript and within a JSP
@@ -34,7 +34,7 @@ Let's demonstrate by using Alloy's `aui-btn` module in an HTML file.
             Try me now!
             </button>
         </div>
-    
+
         <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
         <script>
         YUI().use(
@@ -63,7 +63,7 @@ your script.
 <!-- TODO Add screenshot of demo -->
 
 Let's take a look at how we did this with Alloy UI. First we added our HTML -
-that displays a button of Alloy UI's `aui-btn` module. 
+that displays a button of Alloy UI's `aui-btn` module.
 
 Then, we used a script element to reference Alloy's "seed" file, `aui-min.js`.
 The seed file includes the bare minimum core code required for Alloy UI. Any
@@ -73,24 +73,24 @@ additional code is loaded dynamically by YUI.
 
 Lastly, our script selects the first element of `aui-btn` class on the page and
 sets the button's width to 500 pixels on clicking it. How's that for dynamic
-content! 
+content!
 
 Let's take a closer look at this script. It uses YUI and Alloy UI in what is
 commonly referred to as a "sandbox". Sandbox is a pattern in which the content
-of one sandbox stays separate from that of other sandboxes. 
+of one sandbox stays separate from that of other sandboxes.
 
 I've entertained the analogy, thinking of the countless hours I spent as a child
 using my die-cast metal toy tractor to plant imaginary crops in my toy sandbox.
 It was wonderful place to let my imagination go wild and grow acres and acres of
-fictitious corn fields. 
+fictitious corn fields.
 
 The UI sandbox is similar to a toy sandbox, but safer, and perhaps more fun.
 Unlike my childhood sandbox, that inevitably was raided by friends, siblings,
 and my dog, your UI sandbox keeps your code safe from namespace clashes with
-code in other sandboxes on your page. 
+code in other sandboxes on your page.
 
 The sandbox is simply a callback where you run your code. If follows this
-format: 
+format:
 
 `YUI().use(`*[package 1, ...  package n,]*` function(A) { // Your code goes here });`
 
@@ -100,13 +100,13 @@ containing your code. Our example code required YUI's `event` and `node`
 packages. As our final argument, we passed in our function with *the* Alloy
 object as parameter `A`. Alloy's classes are stored in the `A` object. Within
 our function, we perform our presentation logic, leveraging Alloy's API via its
-mighty `A` object. We'll get into more details on the API shortly. 
+mighty `A` object. We'll get into more details on the API shortly.
 
 Now that we've disected our example, let's get it working in a portlet.
 First, specify the Alloy UI's taglib as a dependency in the
 `liferay-plugin-package.properties` for the portlet's project. You can specify
 this dependency via *Design* view of the file in Liferay IDE. Or you could open
-the file and add the following assignment: 
+the file and add the following assignment:
 
     portal-dependency-tlds=aui.tld
 
@@ -154,7 +154,7 @@ Portal and its core portlets. However, you can use Alloy UI in any web
 environment. You may want to take advantage of this as you develop Alloy UI
 scripts. For example, you can try out your Alloy UI scripts in an HTML file on a
 simple web server on your machine. Let's download Alloy UI and set up a simple
-development environment.  
+development environment.
 
 You can download Alloy UI from [http://alloyui.com/](http://alloyui.com/). The
 `.zip` file you download from the Alloy UI website contains the following:
@@ -181,7 +181,7 @@ fork it, and clone it to your machine. We'll show you how to build it later in
 this chapter. Regardless whether you're using Alloy UI from the `.zip` file or
 cloned from the repository on Github, Alloy UI's modules are avilable in the
 `build/` folder. You can access these modules from web pages deployed on a local
-web server. 
+web server.
 
 ---
 
