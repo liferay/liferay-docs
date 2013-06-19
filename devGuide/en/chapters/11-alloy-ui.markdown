@@ -107,6 +107,8 @@ First, specify the AlloyUI's taglib as a dependency in the
 this dependency via *Design* view of the file in Liferay IDE. Or you could open
 the file and add the following assignment:
 
+<!-- TODO Add screenshot of Liferay IDE's Design view -->
+
     portal-dependency-tlds=aui.tld
 
 Then, add the code for the button and the Alloy script to your portlet's JSP.
