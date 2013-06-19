@@ -96,9 +96,10 @@ format:
 As parameters, you pass in packages required by your code and finally a function
 containing your code. Our example code required YUI's `event` and `node`
 packages. As our final argument, we passed in our function with *the* Alloy
-object as parameter `A`. Alloy's classes are stored in the `A` object. Within
-our function, we perform our presentation logic, leveraging Alloy's API via its
-mighty `A` object. We'll get into more details on the API shortly.
+object as parameter `A` (we could name it with any other value, e.g. YUI uses `Y`).
+Alloy's classes are stored in the `A` object. Within our function, we perform
+our presentation logic, leveraging Alloy's API via its mighty `A` object. We'll
+get into more details on the API shortly.
 
 Now that we've disected our example, let's get it working in a portlet.
 First, specify the AlloyUI's taglib as a dependency in the
