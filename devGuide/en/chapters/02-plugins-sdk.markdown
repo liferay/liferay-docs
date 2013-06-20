@@ -76,7 +76,6 @@ free for you to customize as you see fit.
 
 <!--The above seemed important from our discussion so I stuck it in here.-->
 
-
 To install and set up Liferay IDE, follow the instructions in the first two
 subsections below. If you're already using *Liferay Developer Studio* (the king
 of Liferay's development tools), which comes with Liferay Portal Enterprise
@@ -314,8 +313,17 @@ Next you'll learn to create new Liferay projects in Lioferay IDE.
 
 Let's create a project to illustrate the process; have you heard of the hip new
 social networking site for noses, *Nose-ster*? Well, the site's founder, Harry
-Schnozz, wants us to develop some plugins for him, so let's create a
-*Nose-ster* project to hold the site's plugins. 
+Schnozz, wants us to develop some plugins for him, so let's create an
+*events-listing-portlet* project to hold the site's portlet plugins. 
+
+<!--So this is a project that can presumably hold multiple plugins. For Jesse's
+Service Builder chapter it's not a problem to have the project created simply
+for the events-listing portlet. But for our purposes here and through the rest
+of the guide, would it make more sense to have all the example plugins live in
+this first project we create here? If so we'd want to give it a less specific
+name, like Nosester-project or something. However, I'm clearly not the expert
+on developing in Liferay, so if this makes the most sense (do projects
+generally hold one plugin or multiple?) we can continue as is. -->
 
 Your Plugins SDK and portal server are configured in Liferay IDE--let's create
 a new Liferay plugin project in Liferay IDE. Go to File &rarr; New Project...
@@ -332,7 +340,44 @@ portlet name (doesn't match Jesse's from the service builder chapter). i'll be
 making all image commits at once so it's easier for backporting to 6.1x (can
 just skip that commit).-->
 
-Your new plugin project should appear in the package explorer. 
+Our *event-listing-portlet* plugin project should appear in the package
+explorer. Here's the project's directory structure: 
+
+- `PORTLET-NAME/`
+    
+    - `docroot/WEB-INF/src`
+
+    - `build.xml`
+    
+    - `docroot/`
+     
+        - `css/`
+        
+        - `js/`
+        
+        - `WEB-INF/`
+            
+            - `src/` - this folder is not created by default.
+            
+            - `liferay-display.xml`
+            
+            - `liferay-plugin-package.properties`
+            
+            - `liferay-portlet.xml`
+            
+            - `portlet.xml`
+            
+            - `web.xml` - this file is not created by default.
+        
+        - `icon.png`
+        
+        - `view.jsp`
+
+<!--I pulled the above structure from the portlets chapter. In IDE when I
+created the project though, there's also the docroot/WEB-INF/src folder and
+three libraries (is that the right word):JRE System Library, Liferay
+v6.2CE(Tomcat7), and Lifeay Portlet Plugin API. Should those be included here
+for completeness? I added docroot/WEB-INF/src already.-->
 
 Now you need to deploy your new plugin project to your Liferay Server. 
 
@@ -373,6 +418,16 @@ correctly deployed portlet on the page.
 
 Great, you can create projects in Liferay IDE! Let's find out how to import
 existing projects into Liferay IDE. 
+
+### Creating Plugins 
+
+Now your Liferay IDE contains a project where you can create plugins, but right
+now it just...  let's take the next step and look at what it takes to create
+plugins. It's
+easy: 
+
+
+
 
 ### Importing Existing Projects into Liferay IDE 
 
