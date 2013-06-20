@@ -777,6 +777,12 @@ Now the servlet can scan and register your portlet's JSON Web Services.
 <!--  Really? This is most decidedly unfriendly. Is this still the case? There's
 also a missing transition here. -Rich
 -->
+<!-- Jim I added the transition, but when I looked on the web for information
+on registering JSON web services from custom plugins I only found the dev guide
+and the wiki post (both of which obviously agree with what we have here). When
+I pinged Rich about it he mentioned that this seems like a hack and if this is
+still really true (having to add filters, filter mappings, and servlet
+declaration in web.xml), then we should explain why it's necessary. --> 
 
 Let's see how to form a mapped URL of the service next. 
 
@@ -789,6 +795,10 @@ convention:
 
 <!-- We seem to have skipped something here. What's a mapped URL of an exposed
 service? -Rich -->
+
+<!--Jim I can't answer this. My intuition since it follows registration of JSON
+web services from custom plugins is simply that this is the URL that leads you
+to the service? -->
 
 Let's look at the last two bracketed items more closely: 
 
@@ -913,6 +923,9 @@ service, and we don't want developers changing these annotations. Instead, these
 examples should be changed to use the service that Jesse is developing for the
 Service Builder chapter. We're also missing a transition here. -Rich -->
 
+Next we'll show you a different approach to exposing your methods as we discuss
+manual registration. 
+
 #### Manual registration mode 
 
 Up to now, it is assumed that you want to expose most of your service methods,
@@ -931,7 +944,6 @@ to you annotate only those methods that you want exposed.
 Now only the `addFileEntry` method and any other method annotated with
 `@JSONWebService` will be part of the JSON Web Service API; all other methods
 of this service will be excluded from the API.
-
 
 <!-- Russ, while I love this pun, unfortunately for the survival of the
 statements about how easy it is to annotate, annotations are a standard Java
@@ -1164,7 +1176,7 @@ request parameters. The resulting value is the string
 received, this value is first going to be translated to an array of 10 bytes
 (URL decoded) and then converted to a UTF-8 string of the 5 original characters.
 
-Did you know you can send files as arguments? Fins out how next. 
+Did you know you can send files as arguments? Find out how next. 
 
 #### Sending files as arguments 
 
@@ -1327,7 +1339,8 @@ arbitrary value like *Created using JSON WS*.
 
 3. Click *Invoke* and you'll get a result similar to the following: 
 
-        {"addedByLDAPImport":false,"companyId":10154,"description":"Created using JSON WS","name":"MyUserGroup33","parentUserGroupId":0,"userGroupId":13162}
+        {"addedByLDAPImport":false,"companyId":10154,"description":"Created
+        using JSON WS","name":"MyUserGroup33","parentUserGroupId":0,"userGroupId":13162}
 
 The returned `String` represents the `UserGroup` object you just created,
 serialized into a JSON string. To find out more about JSON strings, go to
@@ -1351,6 +1364,8 @@ for now. Which is preferred?  Are they long enough to warrant subsections? -->
 <!-- No, they're not long enough. In fact, that's been a problem with this whole
 chapter. I removed some sections already. One way to fix some of the "missing
 transition" problems above would be to combine some of the sections. -Rich -->
+
+<!--I just added the transitions for now. -Russ -->
 
 - Missing value for parameter 
         If you see this error, you didn't pass a parameter value along with the
@@ -1470,6 +1485,8 @@ The `$user` variable holds the returned user object. You can reference the
 user's contact ID using the syntax `$user.contactId`. 
 
 <!-- Missing transition. --> 
+NExt see how you can use nested service calls to join information from two
+related objects. 
 
 #### Nesting service calls 
 
@@ -1519,7 +1536,8 @@ before the parameter name.
 
 ---
 
-<!-- Missing transition. --> 
+Next let's talk about filtering object properties so only those you
+need are returned when you invoke a service. 
 
 #### Filtering results 
 
@@ -1545,7 +1563,7 @@ In this example, the returned user object has only the `firstName` and
 white-list properties, you simply place the properties in square brackets (e.g.,
 `[whiteList]`) immediately following the name of your variable. 
 
-<!-- Missing transition. --> 
+Let's talk about batching calls next. 
 
 #### Batching calls 
 
