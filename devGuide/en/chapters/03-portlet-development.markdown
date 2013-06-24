@@ -1115,7 +1115,7 @@ library. The second line defines the library's objects, providing access to the
 2. Replace the current welcome message tag,
 `<liferay-ui:message key="welcome" />`, in the JSP with the following:
 
-        <liferay-ui:message key="welcome" /> <%= user.getScreenName() %>
+        <liferay-ui:message key="welcome-x" /> <%= user.getScreenName() %>
 
 When you refesh your page, your "My Greeting" portlet greets you by your screen
 name!
