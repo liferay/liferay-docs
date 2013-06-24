@@ -250,10 +250,10 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 
     ![Figure 8.6: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
-2. Click *Add* to add a new Liferay runtime; find *Liferay v6.1 (Tomcat 7)*
-under the *Liferay, Inc.* category and click Next.
+2. Click *Add* to add a new Liferay runtime; find *Liferay v6.2 (Tomcat 7)*
+under the *Liferay, Inc.* category and click *Next*.
 
-3. Click *Browse* and select your `liferay-portal-6.1.x directory`. 
+3. Click *Browse* and select your `liferay-portal-6.2.x directory`. 
 
 4. If you've selected the Liferay portal directory and a bundle JRE is present,
 it will automatically be selected as the server's launch JRE. If no JRE bundle
@@ -423,8 +423,26 @@ existing projects into Liferay IDE.
 
 Now your Liferay IDE contains a project where you can create plugins, but right
 now it just...  let's take the next step and look at what it takes to create
-plugins. It's
-easy: 
+plugins. It's easy: 
+
+1. Go to File &rarr; New  &rarr; Liferay Portlet. 
+
+    Alternatively, right click on your `events-listing-portlet` project in
+    Liferay IDE's *Package Explorer*, and select *New* &rarr; *Liferay
+    Portlet*. 
+
+
+2. In the *New Liferay Portlet* dialog box, your newly configured SDK and
+Liferay Runtime should be selected. The plugin type *portlet* is the default
+plugin type. Type a project name and cooresponding display name, then click
+*Finish*. 
+
+By default, new portlets use the MVCPortlet framework, a light framework that
+hides part of the complexity of portlets and makes the most common operations
+easier. The default MVCPortlet project uses separate JSPs for each portlet
+mode: each of the registered portlet modes has a corresponding JSP with the
+same name as the mode. For example, 'edit.jsp' is for edit mode and 'help.jsp'
+is for help mode.
 
 
 
