@@ -2,8 +2,6 @@
 <!DOCTYPE project>
 
 <project name="build-common-ext">
-	<property name="project.dir" value="../.." />
-
 	<import file="../build-common-plugin.xml" />
 
 	<target name="build-db">
@@ -52,7 +50,6 @@ a portlet plugin.
 			<arg value="service.spring.file=${basedir}/docroot/WEB-INF/ext-impl/src/META-INF/ext-spring.xml" />
 			<arg value="service.api.dir=${basedir}/docroot/WEB-INF/ext-service/src" />
 			<arg value="service.impl.dir=${basedir}/docroot/WEB-INF/ext-impl/src" />
-			<arg value="service.json.file=${basedir}/docroot/WEB-INF/ext-web/docroot/html/js/liferay/service.js" />
 			<arg value="service.remoting.file=${basedir}/docroot/WEB-INF/ext-web/docroot/WEB-INF/remoting-servlet-ext.xml" />
 			<arg value="service.sql.dir=${basedir}/docroot/WEB-INF/sql" />
 			<arg value="service.sql.file=portal-tables.sql" />
@@ -310,7 +307,7 @@ loader.
 			<arg line="docroot/WEB-INF docroot/WEB-INF ${plugin.name}" />
 		</java>
 
-		<mkdir dir="${project.dir}/dist" />
+		<mkdir dir="${sdk.dir}/dist" />
 
 		<delete file="${plugin.file}" />
 

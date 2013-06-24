@@ -2,8 +2,6 @@
 <!DOCTYPE project>
 
 <project name="build-common-theme">
-	<property name="project.dir" value="../.." />
-
 	<import file="../build-common-plugin.xml" />
 
 	<target name="build-css">
@@ -121,13 +119,45 @@
 					<copy todir="docroot" overwrite="true" preservelastmodified="true">
 						<fileset
 							dir="${app.server.portal.dir}/html/themes/classic"
-							excludes="_diffs/**,templates/**"
+							excludes="**/.sass-cache/**,_diffs/**,templates/**"
+						/>
+					</copy>
+
+					<copy todir="docroot" overwrite="false" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/classic"
+							includes="**/.sass-cache/**"
 						/>
 					</copy>
 
 					<copy todir="docroot/templates" overwrite="true" preservelastmodified="true">
 						<fileset
 							dir="${app.server.portal.dir}/html/themes/classic/templates"
+							includes="*.${theme.type}"
+						/>
+					</copy>
+				</then>
+			</elseif>
+			<elseif>
+				<equals arg1="${theme.parent}" arg2="control_panel" />
+				<then>
+					<copy todir="docroot" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/control_panel"
+							excludes="**/.sass-cache/**,_diffs/**,templates/**"
+						/>
+					</copy>
+
+					<copy todir="docroot" overwrite="false" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/control_panel"
+							includes="**/.sass-cache/**"
+						/>
+					</copy>
+
+					<copy todir="docroot/templates" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/control_panel/templates"
 							includes="*.${theme.type}"
 						/>
 					</copy>
@@ -141,7 +171,14 @@
 					<copy todir="docroot" overwrite="true" preservelastmodified="true">
 						<fileset
 							dir="${theme.parent}/docroot"
-							excludes="_diffs/**,WEB-INF/*.properties,WEB-INF/*.xml"
+							excludes="**/.sass-cache/**,_diffs/**,WEB-INF/*.properties,WEB-INF/*.xml"
+						/>
+					</copy>
+
+					<copy todir="docroot" overwrite="false" preservelastmodified="true">
+						<fileset
+							dir="${theme.parent}/docroot"
+							includes="**/.sass-cache/**"
 						/>
 					</copy>
 				</then>
@@ -198,7 +235,7 @@
 			</then>
 		</if>
 
-		<mkdir dir="${project.dir}/dist" />
+		<mkdir dir="${sdk.dir}/dist" />
 
 		<delete file="${plugin.file}" />
 
