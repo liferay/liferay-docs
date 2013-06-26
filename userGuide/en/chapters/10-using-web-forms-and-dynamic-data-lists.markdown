@@ -444,10 +444,16 @@ From the control panel:
 Fill out the form with a title and a description. Next, choose a templating
 language. Just like web content templates, you can choose between FreeMarker or
 Velocity. There is no functional difference between the two. Once you choose the
-script language, you can upload a template file or choose *Launch Editor* to
-type in a script manually. Inside the editor you can also choose to use plain
-text editing or a rich editor that features line numbers and syntax
-highlighting.
+script language, you can upload a template file or use the display template
+editor to type in a script manually. Inside the editor, you have access to a
+palette featuring common variables related to your selected template language.
+Additionally, you can hover your pointer over a variable in the pallete for a
+more detailed description. To place a variable into the display template code,
+position your cursor where you want it placed, and click the variable name in
+the palette. Another useful tool in the display template editor is the
+autocomplete feature. It can be invoked by typing *${* which opens a drop-down
+menu of common variables. By clicking one of the variables, the editor inserts
+the variable into your display template code.
 
 We want to use our template to give us a summary of who is helping on the tasks
 in our move. To do that, we need to access the records for the list and pull out
