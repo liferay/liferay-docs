@@ -314,7 +314,7 @@ Next you'll learn to create new Liferay projects in Lioferay IDE.
 Let's create a project to illustrate the process; have you heard of the hip new
 social networking site for noses, *Nose-ster*? Well, the site's founder, Harry
 Schnozz, wants us to develop some plugins for him, so let's create an
-*events-listing-portlet* project to hold the site's portlet plugins. 
+*event-listing-portlet* project to hold the site's portlet plugins. 
 
 <!--So this is a project that can presumably hold multiple plugins. For Jesse's
 Service Builder chapter it's not a problem to have the project created simply
@@ -326,13 +326,16 @@ on developing in Liferay, so if this makes the most sense (do projects
 generally hold one plugin or multiple?) we can continue as is. -->
 
 Your Plugins SDK and portal server are configured in Liferay IDE--let's create
-a new Liferay plugin project in Liferay IDE. Go to File &rarr; New Project...
-&rarr; Liferay &rarr; Liferay Plugin Project. 
+a new Liferay plugin project in Liferay IDE. 
 
-In the *New Liferay Plugin Project* dialog box, your newly configured SDK and
-Liferay Runtime should be selected. The plugin type *portlet* is the default
-plugin type. Type a project name and cooresponding display name, then click
-*Finish*. 
+1. Go to File &rarr; New Project...  &rarr; Liferay &rarr; Liferay Plugin
+   Project. 
+
+2. In the *New Liferay Plugin Project* dialog box, your newly configured SDK
+   and Liferay Runtime should be selected. The plugin type *portlet* is the
+default plugin type. Here we'll create a portlet that will be used throughout
+htis guide, and we'll call it *event-listing-portlet* in the *Project Name*
+field. It should have a *Display Name* of *Event Listing*. Click *Finish*. 
 
 ![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-project.png)
 <!--replace above image with 6.2 image. i created it but it has the wrong
@@ -384,10 +387,10 @@ Now you need to deploy your new plugin project to your Liferay Server.
 ### Deploying New Liferay Projects to Liferay Server 
 
 You have a plugin project, but you need to deploy it onto your Liferay
-Server. Let's do it now:
+Server. Let's do it now: 
 
 1. Select your new plugin project then right click the Liferay Server in
-the *Servers* tab; 
+the *Servers* tab. 
 
 2. Select *Add and Remove...*. 
 
@@ -413,17 +416,17 @@ Log in within the following credentials:
 --> 
 
 Once you're logged in, click *Add* &rarr; *More*; expand the *Sample* category
-and click the *Add* link next to your demo application. You should see the
-correctly deployed portlet on the page. 
+and click the *Add* link next to your Event Listing application. You should see
+the correctly deployed portlet on the page. 
 
 Great, you can create projects in Liferay IDE! Let's find out how to import
 existing projects into Liferay IDE. 
 
 ### Creating Plugins 
 
-Now your Liferay IDE contains a project where you can create plugins, but right
-now it just...  let's take the next step and look at what it takes to create
-plugins. It's easy: 
+Now your Liferay IDE contains a plugin project with the skeleton of the Event
+Listing portlet.  Along with the Event Listing portlet, let's create a Location
+Listing porlet insdie the same project: 
 
 1. Go to File &rarr; New  &rarr; Liferay Portlet. 
 
@@ -431,21 +434,43 @@ plugins. It's easy:
     Liferay IDE's *Package Explorer*, and select *New* &rarr; *Liferay
     Portlet*. 
 
+2. The *New Liferay Portlet* dialog box will appear, with your newly created
+   plugin project *event-listing-portlet* selected as the *Portlet plugin
+project* by default. We recommend naming your *Portlet class* after the name of
+your portlet. We'll name the class *LocationListingPorlet* in this example.
+We'll name our *Java package* after the plugin project, so it will be
+*com.liferay.eventlistingportlet.portlets* for our example. You can deviate
+from the conventions we used here if you like. 
 
-2. In the *New Liferay Portlet* dialog box, your newly configured SDK and
-Liferay Runtime should be selected. The plugin type *portlet* is the default
-plugin type. Type a project name and cooresponding display name, then click
-*Finish*. 
+    Click *Next*.
+
+3. In the Next window of the *New Liferay Portlet* wizard, you'll specify
+   deployment descriptor dsetails for your portlet. First enter the *Name* of
+your portlet--in our example this will be *location-listing-portlet*.
+Subsequently enter the portlet's *Display name* and *Title*. Also in this
+window you can specify which portlet modes youd like your portlet to have.
+*View* mode is automatically selected. Click *Next*.
+
+    In the next window, set the location for your portlets custom icon, CSS, and
+JavaScript. You can also choose the category for your portlet (it's categorized
+under *Sample* by default), and add it to the *Control Panel* of your Liferay
+Portal. Click *Next*. 
+
+4. The last step is to specify modifiers, interfaces, and method stubs to
+   generate in the Portlet class. Once you're done, click *Finish*,  
 
 By default, new portlets use the MVCPortlet framework, a light framework that
 hides part of the complexity of portlets and makes the most common operations
 easier. The default MVCPortlet project uses separate JSPs for each portlet
 mode: each of the registered portlet modes has a corresponding JSP with the
 same name as the mode. For example, 'edit.jsp' is for edit mode and 'help.jsp'
-is for help mode.
+is for help mode. 
 
+To finish, we'll redeploy the plugin project. In the *Servers* tab, simply
+right click the *event-listing-portlet* project, then click *Redeploy*. 
 
-
+Now you've created and deployed the *Location Listing* portlet. Next we'll show
+you how to import existing projects into Liferay IDE. 
 
 ### Importing Existing Projects into Liferay IDE 
 
