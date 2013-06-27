@@ -69,8 +69,8 @@ IDE's Remote Server Adapter.
 
 ![note](../../images/tip-pen-paper.png) **Note:** Our *Service Builder* code
 generation tool isn't like code generators that take away some of your ability
-to control your own code. With Service Builder, even the generated code is made
-free for you to customize as you see fit. 
+to control your own code. With Service Builder, you can customize the generated
+code as you see fit. 
 
 ---
 
@@ -316,15 +316,6 @@ social networking site for noses, *Nose-ster*? Well, the site's founder, Harry
 Schnozz, wants us to develop some plugins for him, so let's create an
 *event-listing-portlet* project to hold the site's portlet plugins. 
 
-<!--So this is a project that can presumably hold multiple plugins. For Jesse's
-Service Builder chapter it's not a problem to have the project created simply
-for the events-listing portlet. But for our purposes here and through the rest
-of the guide, would it make more sense to have all the example plugins live in
-this first project we create here? If so we'd want to give it a less specific
-name, like Nosester-project or something. However, I'm clearly not the expert
-on developing in Liferay, so if this makes the most sense (do projects
-generally hold one plugin or multiple?) we can continue as is. -->
-
 Your Plugins SDK and portal server are configured in Liferay IDE--let's create
 a new Liferay plugin project in Liferay IDE. 
 
@@ -403,8 +394,8 @@ you'll see a message indicating your new portlet is available for use.
 
 ![Figure 8.20: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
 
-Open *Liferay Portal Home* (`http://localhost:8080/` in most cases) and follow
-the instructions in the setup wizard. 
+Open *Liferay Portal Home* (`http://localhost:8080/` in most cases), log in,
+and follow the instructions in the setup wizard. 
 
 <!--
 Log in within the following credentials: 
