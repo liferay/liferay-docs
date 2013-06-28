@@ -1,30 +1,51 @@
 # Designing User Interfaces with AlloyUI
 
-AlloyUI is a framework for building high performing user interface (UI)
-components. Liferay uses AlloyUI for highly scalable JavaScript components that
-provide a consistent look and feel across Liferay Portal. AlloyUI is a set of
-extensions and modules built on top of and extending the Yahoo UI (YUI)
-framework. It leverages all of YUI's capabilities and adds even more cutting
-edge components and features to help you build terrific UIs. AlloyUI also
-incorporates Twitter Bootstrap to leverage its HTML/CSS capabilities.
+Liferay uses AlloyUI to create highly scalable user interface (UI) components
+that provide a consistent look and feel across Liferay Portal. AlloyUI is a
+framework that contains a set of extensions and modules built on top of and
+extending the Yahoo UI (YUI) framework. It leverages all of YUI's capabilities
+and adds even more cutting edge components and features to help you build
+terrific UIs. AlloyUI also incorporates Twitter Bootstrap to leverage its HTML
+capabilities and cascading style sheet (CSS) capabilities.
 
-One of the reasons why AlloyUI was built on YUI is because YUI allows you to
-build quality production level widgets quickly. AlloyUI is easy to use on small
-scale projects as well as large scale projects. Since AlloyUI includes all of
-YUI, YUI's documentation applies to AlloyUI as well.
+AlloyUI was built on YUI because YUI facilitates building high quality
+production level widgets quickly. AlloyUI is easy to use on small scale projects
+as well as large scale projects. And AlloyUI extends YUI with additional methods
+to help you manipulate page data conveniently and quickly. And the framework
+provides scripts to help you create your own modules and taglibs. Lastly, since
+AlloyUI includes all of YUI, its documentation applies to AlloyUI as well.
 
-<!-- TODO List what we'll cover in this chapter
+For consistent powerful styling, AlloyUI includes Twitter Bootstrap. If you've
+been working with AlloyUI, you're probably already leveraging the Sass extension
+to CSS. Great! Even though Twitter Bootstrap uses the Less extension, the
+AlloyUI framework still uses Sass. The framework leverages a 1-to-1 mapping of
+LESS to Sass so you can continue using Sass. How's that for convenience!
 
-- Introduce AlloyUI
-- Using AlloyUI - demonstrate using Alloy in HTML/JavaScript and within a JSP
-in Liferay Portal
+---
+
+ ![note](../../images/tip-pen-paper.png) Given the popularity of jQuery,
+ you may be wondering why Liferay chose to build on YUI instead of jQuery
+ There are several reasons. First, YUI performs much better than jQuery. Second,
+ YUI's architecture is very flexible, elegant, and easy to use.
+ 
+ You can use jQuery in Liferay Portal, but we strongly recommend using AlloyUI.
+ AlloyUI is always loaded and available to you. If you use another library, then
+ your page will load more slowly as it will still load AlloyUI and also need to
+ load your other library.  
+
+---
+
+We'll go over the following topics as we explore AlloyUI:
+
+- Traversing the DOM with AlloyUI
 - Using AlloyUI taglibs
 - AlloyUI's extensions to the YUI language
-- Working with the AlloyUI project - describes the project files and how to
-build it.
-- Creating your own AlloyUI module and components
+- Styling your components with Twitter Bootstrap
+- Creating your own UI component modules
 
--->
+To start things off right, let's go over a simple example using AlloyUI.
+
+## A simple AlloyUI example
 
 AlloyUI is easy to use in your JavaScript and HTML anywhere on your web server.
 Let's demonstrate by using Alloy's `aui-btn` module in an HTML file.
@@ -147,8 +168,35 @@ code in your JSP looks like the following:
 Voila! You're using AlloyUI in Liferay!!
 
 We'll give you plenty of practice using AlloyUI as we teach you its
-fundamentals throughout this chapter. But first let's go over setting up a
-simple environment for experimenting with AlloyUI.
+fundamentals throughout this chapter. Next we're going to give you a real workout
+by taking you through an exercise in traversing a document object model (DOM).
+
+## Traversing the DOM with AlloyUI
+
+<!-- insert content -->
+
+<!-- insert transition -->
+
+## Using AlloyUI taglibs
+
+<!-- insert content -->
+
+<!-- insert transition -->
+
+## Styling your components with Twitter Bootstrap
+
+<!-- insert content -->
+
+<!-- insert transition -->
+
+## Creating your own UI component modules
+
+<!-- Explain the benefits of building UI components in the AlloyUI project -->
+
+Before we create components, let's go over setting up and using the AlloyUI
+project. 
+
+### Working with the AlloyUI project
 
 Liferay Portal comes with AlloyUI in it, as it is used throughout Liferay
 Portal and its core portlets. However, you can use AlloyUI in any web
@@ -227,8 +275,12 @@ The Yogi Alloy target prompts you before building different parts of the Alloy
 UI project. Upon completion of the target, Yogi Alloy reports `.yogi [success]
 done.`
 
-Congratulations on building AlloyUI! Now it's time to dive head first into
-developing your UI with AlloyUI.
+Congratulations on building AlloyUI! Now it's time to create your own UI
+components in AlloyUI.
 
+### Creating components is easy with AlloyUI
 
+<!-- Explain how to create components and modules in AlloyUI -->
+
+## Summary
 
