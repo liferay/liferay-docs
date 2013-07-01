@@ -1,12 +1,23 @@
 # Designing User Interfaces with AlloyUI
 
-Liferay's Liferay uses AlloyUI to create highly scalable user interface (UI)
-components that provide a consistent look and feel across Liferay Portal.
-AlloyUI is a framework that contains a set of extensions and modules built on
-top of and extending the Yahoo UI (YUI) framework. It leverages all of YUI's
-capabilities and adds even more cutting edge components and features to help you
-build terrific UIs. AlloyUI also incorporates Twitter Bootstrap to leverage its
-HTML capabilities and cascading style sheet (CSS) capabilities.  
+Liferay's User Interface (UI) Team continually strives to provide the most
+stylish lightning-fast components that are extensible and built to last. I liken
+the team to an elite band of metallurgists--you know, those cutting edge
+scientists that extract metals from craggy rocks found deep beneath the earth's
+crust. They purify these metals and mix them together to make some of the most
+awesome things known to mankind--bike frames that are seemingly weightless,
+bridges that have enough tensile strength to withstand huricanes, and swords
+that can cut through almost anything. The Liferay UI Team is no different from
+these scientists. They've put forth equal sweat and ingenuity to bring you a
+mixture, or *alloy*, of the best UI technologies and wrap it in one ultimate
+framework--AlloyUI! 
+
+With AlloyUI you can create highly scalable user UI components that provide a
+consistent look and feel across Liferay Portal. AlloyUI is a framework that
+contains a set of JavaScript extensions to Yahoo UI (YUI). It leverages all of
+YUI's modules and adds even more cutting edge components and features to help
+you build terrific UIs. AlloyUI also incorporates Twitter Bootstrap for you to
+use its HTML features and powerful cascading style sheets (CSS) capabilities. 
 
 AlloyUI was built on YUI for several reasons. Foremostly, YUI facilitates
 building high quality production level widgets quickly. YUI has an elegant
