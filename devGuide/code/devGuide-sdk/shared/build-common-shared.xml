@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-common-shared">
+	<import file="../build-common-plugin.xml" />
+
+	<if>
+		<available file="${sdk.dir}/shared/portal-compat-shared" />
+		<then>
+			<property name="plugin-lib.classpath.path" refid="plugin-lib.classpath" />
+
+			<path id="plugin-lib.classpath">
+				<pathelement path="${plugin-lib.classpath.path}" />
+				<pathelement location="${sdk.dir}/shared/portal-compat-shared/classes" />
+			</path>
+
+			<var name="plugin-lib.classpath.path" unset="true" />
+		</then>
+	</if>
+
+	<target name="clean">
+		<delete dir="classes" />
+
+		<antcall target="build-common-plugin.clean" />
+	</target>
+
+	<target name="compile">
+		<antcall target="compile-import-shared" />
+
+		<mkdir dir="classes" />
+
+		<copy todir="classes">
+			<fileset dir="src" excludes="**/*.java" />
+		</copy>
+
+		<antcall target="compile-java">
+			<param name="javac.classpathref" value="plugin.classpath" />
+			<param name="javac.destdir" value="classes" />
+			<param name="javac.srcdir" value="src" />
+		</antcall>
+	</target>
+
+	<target name="deploy" depends="jar">
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="${sdk.dir}/dist" />
+
+		<jar
+			basedir="classes"
+			jarfile="${plugin.file}"
+		/>
+	</target>
+
+	<target name="javadoc">
+		<antcall target="build-common-plugin.javadoc">
+			<param name="javac.classpathref" value="plugin.classpath" />
+			<param name="javac.srcdir" value="src" />
+		</antcall>
+	</target>
+
+	<target name="war">
+		<antcall target="jar" />
+	</target>
+</project>
