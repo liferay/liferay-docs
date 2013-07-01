@@ -52,7 +52,7 @@ By reading this chapter and following along with its exercises, you'll learn
 what AlloyUI is and how to use it in Liferay Portal. Consider it a sampling of
 what AlloyUI has to offer. For complete details on the AlloyUI project,
 tutorials, examples, and API documentation, be sure to visit
-[http://alloyui.com/](http://alloyui.com/). But we'll start showing you around
+[http://alloyui.com](http://alloyui.com). But we'll start showing you around
 AlloyUI in this chapter, by exploring the following topics: 
 
 - Traversing the DOM with AlloyUI
@@ -240,7 +240,7 @@ server on your machine. Let's download AlloyUI and set it up for developing
 AlloyUI scripts and components on a local web server. 
 
 You can download AlloyUI as a `.zip` file from
-[http://alloyui.com/](http://alloyui.com/). The file contains the following: 
+[http://alloyui.com](http://alloyui.com). The file contains the following: 
 
 - `alloy-[version]/` - AlloyUI project root directory. 
     - `build/` - Contains the AlloyUI and YUI modules used in Liferay. 
