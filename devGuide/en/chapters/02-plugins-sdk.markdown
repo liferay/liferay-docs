@@ -138,7 +138,7 @@ then press *Enter*. Your update site URL will be one of the following:
 8. After restarting Eclipse, go to *Help* &rarr; *About*; if you see a Liferay
 IDE icon badge as in the screenshot below, it's properly installed. 
 
-![Figure 8.3: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
+![Figure 8.1: The Liferay IDE logo in Eclipse](../../images/ide-about-eclipse-liferay.png)
 
 Next we'll show you how to install Liferay IDE without specifying an Eclipse
 update URL. 
@@ -248,7 +248,7 @@ Let's set up your Liferay Portal Tomcat runtime and server.
 1. In Eclipse, open the *Server Runtime Environments* dialog box--go to *Window*
 &rarr; *Preferences* &rarr; *Server* &rarr; *Runtime Environments*. 
 
-    ![Figure 8.6: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
+    ![Figure 8.2: Choosing a runtime environment](../../images/ide-prefs-runtime-env.png)
 
 2. Click *Add* to add a new Liferay runtime; find *Liferay v6.2 (Tomcat 7)*
 under the *Liferay, Inc.* category and click *Next*.
@@ -260,7 +260,7 @@ it will automatically be selected as the server's launch JRE. If no JRE bundle
 is present then you'll have to select the JRE to use for launch by clicking
 *Installed JREs...*. You'll have to do this if you're using MacOS or Linux. 
 
-    ![Figure 8.9: Choosing the JRE bundle](../../images/ide-server-jre.png)
+    ![Figure 8.3: Choosing the JRE bundle](../../images/ide-server-jre.png)
 
 5. Click *Finish*; you should see your Liferay portal runtime listed in
 *Preferences* &rarr; *Server Runtime Environments*.
@@ -270,7 +270,7 @@ is present then you'll have to select the JRE to use for launch by clicking
 7. If you haven't created a server, create one now from the *Servers*
 view in Liferay IDE; then you can test the server. 
 
-    ![Figure 8.11: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
+    ![Figure 8.4: Adding a runtime to the Servers view](../../images/ide-add-new-server.png)
 
 8. Scroll to the *Liferay, Inc* folder and select *Liferay v6... Server*. Choose
 the *Liferay v6...* runtime environment that you just created. 
@@ -328,7 +328,8 @@ default plugin type. Here we'll create a portlet that will be used throughout
 htis guide, and we'll call it *event-listing-portlet* in the *Project Name*
 field. It should have a *Display Name* of *Event Listing*. Click *Finish*. 
 
-![Figure 8.16: Entering the information for the new project](../../images/ide-new-liferay-project.png)
+    ![Figure 2.5: Entering the information for the new project](../../images/ide-new-liferay-project.png)
+
 <!--replace above image with 6.2 image. i created it but it has the wrong
 portlet name (doesn't match Jesse's from the service builder chapter). i'll be
 making all image commits at once so it's easier for backporting to 6.1x (can
@@ -392,7 +393,7 @@ the *Servers* tab.
 You should see the project get deployed to Liferay Tomcat server; in the console
 you'll see a message indicating your new portlet is available for use. 
 
-![Figure 8.20: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
+![Figure 2.6: Verifying the output in the Console view](../../images/ide-console-portlet-available.png)
 
 Open *Liferay Portal Home* (`http://localhost:8080/` in most cases), log in,
 and follow the instructions in the setup wizard. 
@@ -516,7 +517,7 @@ project from a Plugins SDK project:
     You can invoke the same wizard from the Liferay shortcut bar; just click
     the *Create a New Liferay Project* button.
 
-    ![Figure 8.23: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
+    ![Figure 2.7: Alternate method of Importing a project](../../images/ide-new-proj-existing-source.png)
 
 2. Browse to your project folder. It should be a subdirectory of one of the
 plugin types (e.g. portlets, hooks, themes, etc) or it won't import correctly.
@@ -548,9 +549,9 @@ Next we'll show you how to import all your Plugins SDK into multiple Liferay
 IDE projects. You can use these steps: 
 
 1. In Eclipse go to *File* &rarr; *Import*... &rarr; *Liferay* &rarr; *Liferay
-Plugin SDK Projects*. 
+Projects from Plugins SDK*. 
 
-    ![Figure 8.27: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
+    ![Figure 2.8: Choosing the project type for import](../../images/ide-import-from-plugin-sdk.png)
 
 2. In the *Import Projects* window, use the combo box to select the *Liferay
 Plugins SDK* you're importing plugins from. 
@@ -610,7 +611,7 @@ the import steps below to convert your project.
 location and SDK version should be detected automatically. If they aren't valid
 an error message will be displayed. 
 
-    ![Figure 8.33: Converting a project](../../images/ide-convert-plugin-project.png)
+    ![Figure 2.9: Converting a project](../../images/ide-convert-plugin-project.png)
 
 3. Select the Liferay runtime to set up for the project. If you don't have a
 Liferay Runtime defined, do so now by clicking *New...*. 
@@ -665,7 +666,7 @@ projects. Here's how you verify that your imports were successful:
 1. Once the project is imported, you should see a new project inside Eclipse and
 it should have an "L" overlay image; the "L" is for Liferay! 
 
-    ![Figure 8.35: Verifying that the import suceeded](../../images/ide-liferay-project-w-overlay-image.png)
+    ![Figure 2.10: Verifying that the import suceeded](../../images/ide-liferay-project-w-overlay-image.png)
 
 2. Let's check the project's target runtime and facets to make sure it's
 configured as a *Liferay IDE* project:
@@ -676,7 +677,7 @@ configured as a *Liferay IDE* project:
     2.2. In the *Properties* window, click *Project Facets* and make sure both
     Liferay runtime and Liferay plugin facets are properly configured. 
 
-    ![Figure 8.36: Project Facets](../../images/ide-project-facets.png)
+    ![Figure 2.11: Project Facets](../../images/ide-project-facets.png)
 
 Great! You've confirmed that your import was successful; you can now make
 revisions to your configured Liferay IDE project. Next, let's explore Liferay
