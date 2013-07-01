@@ -228,44 +228,37 @@ shippingFirstnameNode.val(billingFirstnameNode.val() );
 
 <!-- Explain the benefits of building UI components in the AlloyUI project -->
 
-Before we create components, let's go over setting up and using the AlloyUI
-project. 
+Before we create components, let's go over setting up the AlloyUI project.  
 
 ### Working with the AlloyUI project
 
-Liferay Portal comes with AlloyUI in it, as it is used throughout Liferay
-Portal and its core portlets. However, you can use AlloyUI in any web
-environment. You may want to take advantage of this as you develop AlloyUI
-scripts. For example, you can try out your AlloyUI scripts in an HTML file on a
-simple web server on your machine. Let's download AlloyUI and set up a simple
-development environment.
+Liferay Portal comes with AlloyUI packaged in it, as it uses it throughout the
+portal and core portlets. Conveniently, you're not restricted to using AlloyUI
+in the portal; you can use it on any web server. As you develop AlloyUI scripts
+and components for use in portal, you can simply try them out on a simple web
+server on your machine. Let's download AlloyUI and set it up for developing
+AlloyUI scripts and components on a local web server. 
 
-You can download AlloyUI from [http://alloyui.com/](http://alloyui.com/). The
-`.zip` file you download from the AlloyUI website contains the following:
+You can download AlloyUI as a `.zip` file from
+[http://alloyui.com/](http://alloyui.com/). The file contains the following: 
 
-- `alloy-[version]/` - AlloyUI project root directory.
+- `alloy-[version]/` - AlloyUI project root directory. 
+    - `build/` - Contains the AlloyUI and YUI modules used in Liferay. 
+    - `demos/` - Contains basic examples of the AlloyUI components. 
+    - `src/` - Contains the source code of the AlloyUI modules. 
+    - `.alloy.json` - Specifies how to build the modules. 
+    - `.shifter.json` - Specifies additional tasks used to build AlloyUI. 
+    - `LICENSE.md` - Defines AlloyUI's the license agreement. 
+    - `README.md` - Explains the AlloyUI project. 
 
-    - `build/` - Contains the AlloyUI and YUI3 modules used in Liferay.
-
-    - `demos/` - Contains basic examples of the AlloyUI components.
-
-    - `src/` - Contains the source code of the AlloyUI modules.
-
-    - `.alloy.json` - Specifies how to build the modules.
-
-    - `.shifter.json` - Specifies additional tasks used in building AlloyUI.
-
-    - `LICENSE.md` - Defines the license agreement for AlloyUI.
-
-    - `README.md` - Explains the AlloyUI project.
-
-If you'd rather get the latest AlloyUI source code, go to
+If you'd rather build AlloyUI from the its latest source code, go to the
+project's repository at
 [https://github.com/liferay/alloy-ui/tree/2.0.x](https://github.com/liferay/alloy-ui/tree/2.0.x),
-fork it, and clone it to your machine. We'll show you how to build it later in
-this chapter. Regardless whether you're using AlloyUI from the `.zip` file or
-cloned from the repository on Github, AlloyUI's modules are avilable in the
-`build/` folder. You can access these modules from web pages deployed on a local
-web server.
+fork the repository, and clone it to your machine. We'll show you how to build
+it shortly. Regardless of whether you're using AlloyUI pre-built from the `.zip`
+file or cloned from the repository on Github, AlloyUI's modules are available in
+the `alloy-[version]/build/` folder. You can access these modules from web pages deployed on
+your local web server. 
 
 ---
 
@@ -273,45 +266,49 @@ web server.
  convenient to extract the AlloyUI installation into your web server, or
  create symbolic links from your AlloyUI installation to your web server.
  However, you should keep in my mind that it's usually faster to use AlloyUI's
- seed file from CDN for many [many reasons](http://www.liferay.com/web/zeno.rocha/blog/-/blogs/alloyui-and-the-importance-of-cdn).
+ seed file from CDN for many
+ [many reasons](http://www.liferay.com/web/zeno.rocha/blog/-/blogs/alloyui-and-the-importance-of-cdn).
 
 ---
 
-As we did in our initial example, we'll refer to AlloyUI's seed file,
-`aui-min.js`, found in your `alloy-2.0.0/build/aui/` folder. For example, if
-your AlloyUI project root directory is `/home/joe.bloggs/alloy-[version]/`,
-you'd refer to the seed file like this:
+<!-- Extract the reasons to use the seed file from the CDN here in this document
+rather than refering to the blog -->
+
+As we did in our initial example, we'll refer to AlloyUI's `aui-min.js` seed
+file, found in your `alloy-[version]/build/aui/` folder. For example, if your
+AlloyUI project root directory is `/home/joe.bloggs/alloy-2.0.0/`, you'll refer
+to the seed file like this: 
 
     <script src="/home/joe.bloggs/alloy-2.0.0/build/aui/aui-min.js"></script>
 
-From that point on, you can use AlloyUI throughout your web page, like we did
-in the example earlier in this section.
+Now that you've specified your local seed file, you can use AlloyUI throughout
+your web page, like you've been doing throughout this chapter, only this time
+you'll be using your local AlloyUI installation. 
 
-Before we go onto hard-core AlloyUI development, I'll show you how to build
-AlloyUI. If you are not interested, feel free to skip these build instructions.
+Before we go on to creating your own AlloyUI components, let's build AlloyUI. If
+you are not interested, feel free to skip these build instructions. 
 
 As we mentioned earlier, the AlloyUI project repository is available at
-[https://github.com/liferay/alloy-ui/tree/2.0.x](https://github.com/liferay/alloy-ui/tree/2.0.x). You
-can fork the repository and clone it to your local machine.
+[https://github.com/liferay/alloy-ui/tree/2.0.x](https://github.com/liferay/alloy-ui/tree/2.0.x).
+You can fork the repository and clone it to your local machine. 
 
 AlloyUI uses Yogi Alloy
 ([https://github.com/liferay/yogi-alloy](https://github.com/liferay/yogi-alloy))
 to build its modules. For instructions on installing Yogi Alloy and its
-dependencies, see the Yogi Alloy README.md file at
+dependencies, follow the instructions in Yogi Alloy's `README.md` file at
 [https://github.com/liferay/yogi-alloy/blob/master/README.md](https://github.com/liferay/yogi-alloy/blob/master/README.md).
-AlloyUI's build instructions are found in this README.md file at
-[https://github.com/liferay/yogi-alloy#alloyui](https://github.com/liferay/yogi-alloy#alloyui).
 
-To build all of the AlloyUI project and its dependencies, simply execute:
+To build all of the AlloyUI project and its dependencies, simply execute: 
 
     ya init
 
-The Yogi Alloy target prompts you before building different parts of the Alloy
-UI project. Upon completion of the target, Yogi Alloy reports `.yogi [success]
-done.`
+The Yogi Alloy target prompts you before building different parts of the AlloyUI
+project. Upon completion of the target, Yogi Alloy reports `.yogi [success]
+done.` 
 
-Congratulations on building AlloyUI! Now it's time to create your own UI
-components in AlloyUI.
+Congratulations on building AlloyUI! For instructions on building AlloyUI, visit 
+[https://github.com/liferay/yogi-alloy#alloyui](https://github.com/liferay/yogi-alloy#alloyui).
+Now it's time to create your own UI components in AlloyUI. 
 
 ### Creating components is easy with AlloyUI
 
