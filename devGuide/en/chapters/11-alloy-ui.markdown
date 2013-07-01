@@ -236,8 +236,18 @@ Liferay Portal comes with AlloyUI packaged in it, as it uses it throughout the
 portal and core portlets. Conveniently, you're not restricted to using AlloyUI
 in the portal; you can use it on any web server. As you develop AlloyUI scripts
 and components for use in portal, you can simply try them out on a simple web
-server on your machine. Let's download AlloyUI and set it up for developing
-AlloyUI scripts and components on a local web server. 
+server on your machine.
+
+Here are some other cases that warrant using a local AlloyUI installation or
+AlloyUI project build:
+
+- Creating and testing your own new AlloyUI component modules. 
+- Using the latest AlloyUI project source code that is not yet released. 
+- Using AlloyUI on a closed network. 
+- Contributing and testing a fix or enhancement to AlloyUI. 
+
+Let's download AlloyUI and set it up for developing AlloyUI scripts and
+components on a local web server. 
 
 You can download AlloyUI as a `.zip` file from
 [http://alloyui.com](http://alloyui.com). The file contains the following: 
@@ -262,12 +272,9 @@ your local web server.
 
 ---
 
- ![important](../../images/tip-pen-paper.png) **Tip:** You may find it
- convenient to extract the AlloyUI installation into your web server, or
- create symbolic links from your AlloyUI installation to your web server.
- However, you should keep in my mind that it's usually faster to use AlloyUI's
- seed file from CDN for many
- [many reasons](http://www.liferay.com/web/zeno.rocha/blog/-/blogs/alloyui-and-the-importance-of-cdn).
+ ![tip](../../images/tip-pen-paper.png) **Tip:** You may find it
+ convenient to extract the AlloyUI installation into your web server installation, or
+ create symbolic links from your AlloyUI installation to your web server. 
 
 ---
 
