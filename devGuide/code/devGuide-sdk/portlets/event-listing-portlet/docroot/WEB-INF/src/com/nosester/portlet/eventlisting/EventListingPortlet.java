@@ -70,6 +70,4 @@ public class EventListingPortlet extends MVCPortlet {
 		return event;
 	}
 
-	private static Log _log = LogFactoryUtil.getLog(EventListingPortlet.class);
-
 }

@@ -837,8 +837,6 @@ Replace the contents of your `EventListingPortlet.java` file with the following:
             return event;
         }
 
-        private static Log _log = LogFactoryUtil.getLog(EventListingPortlet.class);
-
     }
 
 Our Event Listing portlet's add, update, and delete methods call the appropriate
@@ -1030,12 +1028,61 @@ description, and location name. Since the location name is not in the
 `Event_Event` table (although the locationId is), we can't implement this kind
 of search using the event entity's finder methods. We need to perform a joined
 searched across both the `Event_Event` and the `Event_Location` tables. To
-accomplish this, we can use a custom SQL query.
+accomplish this, we can implement a custom SQL query using the following steps:
 
-In order to use custom queries, we need to create a custom finder class. This
-class should be created in the `com.nosester.portlet.eventlisting` package of
-our project's `docroot/WEB-INF/src` folder. This package was created by Service
-Builder. The class we create should extend
+1. Create a folder called `custom-sql` in our project's `docroot/WEB-INF/src`
+   folder and create a file called `default.xml` in this new folder.
+
+2. Write the SQL query to be used by our custom finder and add it to
+   `default.xml`.
+
+3. Create a custom finder class called `EventFinderImpl` extending
+   `BasePersistenceImpl`, run Service Builder to generate the required
+   `EventFinder` interface and then make `EventFinderImpl` implement
+   `EventFinder`.
+
+4. Create a custom finder method in `EventFinderImpl` and run Service Builder
+   again to generate a corresponding method in `EventFinderUtil`.
+
+5. Since business logic should only be implemented in service classes and not in
+   portlet classes or JSPs, add a finder method to `EventLocalServiceImpl` that
+   calls the one created in `EventFinderImpl` and propagated by Service Builder
+   to `EventFinderUtil`.
+   
+6. Run Service Builder a third time to make the custom finder method available
+   to `EventLocalServiceUtil`. Portlet classes and JSPs can call
+   `EventLocalServiceUtil`'s custom finder method to perform the custom SQL
+   query.
+
+In order to use a custom SQL query in our portlet, our first step is to add the
+query in the appropriate location in our project. Let's create this file in our
+project in the appropriate location: create a folder called `custom-sql` in our
+project's `docroot/WEB-INF/src` folder and create the `default.xml` file in this
+folder.  Now let's add our custom SQL to this file:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <custom-sql>
+        <sql id="com.nosester.portlet.eventlisting.service.persistence.EventFinder.findByEventNameEventDescriptionLocationName">
+            SELECT Event_Event.*
+            FROM Event_Event
+            INNER JOIN 
+                Event_Location ON Event_Event.locationId = Event_Location.locationId
+            WHERE
+                (Event_Event.name LIKE ?) AND
+                (Event_Event.description LIKE ?) AND
+                (Event_Location.name LIKE ?)
+        </sql>
+    </custom-sql>
+
+Notice that the SQL query we define in `default.xml` has a unique id. It's
+possible to define multiple SQL queries in `default.xml` so long as each one has
+a unique id. Liferay has a class called `CustomSQLUtil` with methods that
+retrieve SQL queries by id.
+
+Next, we need to create a custom finder class. This class should be created in
+the `com.nosester.portlet.eventlisting` package of our project's
+`docroot/WEB-INF/src` folder. This package was created by Service Builder. The
+class we create should extend
 `com.liferay.portal.service.persistence.impl.BasePersistenceImpl<Event>`. For
 our example, we'll create a class called `EventFinderImpl` in this folder with
 the following contents:
@@ -1051,14 +1098,77 @@ the following contents:
 
 Once you've created this class, run Service Builder again. Service Builder
 generates `EventFinder` interface and the `EventFinderUtil` class for us in our
-project's `docroot/WEB-INF/service` folder. After running Service Builder again, make your `EventFinderImpl` class implement the generated `EventFinder` interface:
+project's `docroot/WEB-INF/service` folder. After running Service Builder again,
+make your `EventFinderImpl` class implement the generated `EventFinder`
+interface:
 
     public class EventFinderImpl extends BasePersistenceImpl<Event> implements EventFinder {
 
     }
 
-Don't forget to implement the generated interface! It's an easy step to forget.
-Now we can create our custom query method in our `EventFinderImpl` class.
+Make sure not to forget this step! Now we can create our custom query method in
+our `EventFinderImpl` class:
+
+    public List<Event> findByEventNameEventDescriptionLocationName(String eventName, String eventDescription, String locationName, int begin, int end) {
+                
+        Session session = null;
+        try {
+            session = openSession();
+
+            String sql = CustomSQLUtil.get(FIND_BY_EVENTNAME_EVENTDESCRIPTON_LOCATIONNAME);
+            
+            SQLQuery q = session.createSQLQuery(sql);
+            q.setCacheable(false);
+            q.addEntity("Event_Event", EventImpl.class);
+
+            QueryPos qPos = QueryPos.getInstance(q);  
+            qPos.add(eventName);
+            qPos.add(eventDescription);
+            qPos.add(locationName);
+            
+            return (List<Event>) QueryUtil.list(q, getDialect(), begin, end);
+        } catch (Exception e) {
+            try {
+                throw new SystemException(e);
+            } catch (SystemException se) {
+                se.printStackTrace();
+            }
+        } finally {
+            closeSession(session);
+        }
+
+        return null;
+    }	
+
+    public static final String FIND_BY_EVENTNAME_EVENTDESCRIPTON_LOCATIONNAME = EventFinder.class.getName() + ".findByEventNameEventDescriptionLocationName";
+
+In this custom finder method, we open a new Hibernate session and use Liferay's
+`CustomSQLUtil`'s `get(String id)` method to get the custom SQL to use for the
+database query. The `FIND_BY_EVENTNAME_EVENTDESCRIPTON_LOCATIONNAME` string
+contains the id of our custom SQL query. We define the
+`FIND_BY_EVENTNAME_EVENTDESCRIPTON_LOCATIONNAME` string based on the name of the
+`EventFinder` class and the name of the finder method.
+
+So far, we have created a `EventFinderImpl` class and generated a
+`EventFinderUtil` class. However, our Event Listing portlet class cannot use the
+`EventFinderUtil` class directly; only a local (`EventLocalServiceImpl`) or
+remote (`EventServiceImpl`) service class can. This encourages a proper
+separation of concerns: since only the service classes should contain a
+portlet's business logic, finders should not be directly accessed by portlet
+classes. A portlet should be able to call the finders only indirectly through
+the Util classes which wrap the \*ServiceImpl classes. Add the following method
+to `EventLocalServiceImpl`:
+
+    public List<Event> findByEventNameEventDescriptionLocationName(String eventName, String eventDescription, String locationName, 
+        int begin, int end) throws SystemException {
+		
+    return EventFinderUtil.findByEventNameEventDescriptionLocationName(eventName, eventDescription, locationName, begin, end);
+    }	
+
+Run Service Builder after adding this method to generate the interface and make
+this finder method available in `EventLocalServiceUtil`. Now we can indirectly
+call this finder method from our portlet class or from a JSP by calling
+`EventLocalServiceUtil.findByEventNameEventDescriptionLocationName(...)`.
 
 ### Overview of `portlet-model-hints.xml`
 
