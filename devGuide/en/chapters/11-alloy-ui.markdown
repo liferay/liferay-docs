@@ -115,11 +115,20 @@ your script.
 Let's take a look at how we did this with AlloyUI. First we added our HTML -
 that displays a button of AlloyUI's `aui-btn` module.
 
-Then, we used a script element to reference Alloy's "seed" file, `aui-min.js`.
-The seed file includes the bare minimum core code required for AlloyUI. Any
+Then, we used a script element to reference Alloy's "seed" file, `aui-min.js`
+from a content delivery network (CDN). The seed file includes the bare minimum core code required for AlloyUI. Any
 additional code is loaded dynamically by YUI.
 
     <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
+
+---
+
+ ![note](../../images/tip-pen-paper.png) **Note:** For performance reasons, it
+ is almost always best to reference the seed file from the CDN rather than from
+ a designated server. On receiving the request for the seed file, the CDN
+ returns it from the nearest server on the CDN, minimizing latency time.
+
+---
 
 Lastly, our script selects the first element of class `aui-btn` found on the
 page and sets a callback to set its width to 500 pixels when it is clicked.
@@ -277,9 +286,6 @@ your local web server.
  create symbolic links from your AlloyUI installation to your web server. 
 
 ---
-
-<!-- Extract the reasons to use the seed file from the CDN here in this document
-rather than refering to the blog -->
 
 As we did in our initial example, we'll refer to AlloyUI's `aui-min.js` seed
 file, found in your `alloy-[version]/build/aui/` folder. For example, if your
