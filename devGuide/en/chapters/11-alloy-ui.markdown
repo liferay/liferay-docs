@@ -103,9 +103,9 @@ additional code is loaded dynamically by YUI.
 
     <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
 
-Lastly, our script selects the first element of `aui-btn` class on the page and
-sets the button's width to 500 pixels on clicking it. How's that for dynamic
-content!
+Lastly, our script selects the first element of class `aui-btn` found on the
+page and sets a callback to set its width to 500 pixels when it is clicked.
+How's that for dynamic content!
 
 Let's take a closer look at this script. It uses YUI and AlloyUI in what is
 commonly referred to as a "sandbox". Sandbox is a pattern in which the content
@@ -185,6 +185,12 @@ by taking you through an exercise in traversing a document object model (DOM).
 ## Traversing the DOM with AlloyUI
 
 <!-- insert content -->
+
+- Select Node based on element ID
+A.one('#someId')
+
+- Set Node's value
+shippingFirstnameNode.val(billingFirstnameNode.val() );
 
 <!-- insert transition -->
 
