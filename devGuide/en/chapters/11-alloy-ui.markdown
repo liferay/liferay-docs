@@ -48,21 +48,29 @@ To start things off right, let's go over a simple example using AlloyUI.
 ## A simple AlloyUI example
 
 AlloyUI is easy to use in your JavaScript and HTML anywhere on your web server.
-Let's demonstrate by using Alloy's `aui-btn` module in an HTML file.
+Let's demonstrate by using Alloy's `node` module in an HTML file.
 
-1. Insert the body of an HTML file on your web server:
+1. Create an HTML page like this:
 
-        <button id="try-btn" class="aui-btn" type="button">
-        Try me now!
-        </button>
+    <!DOCTYPE html>
 
-        <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
-        <script>
-        YUI().use(
+    <head>
+      <link href="http://cdn.alloyui.com/2.0.0pr5/aui-css/css/bootstrap.css" rel="stylesheet">
+
+      <script src="http://cdn.alloyui.com/2.0.0pr5/aui/aui-min.js"></script>
+    </head>
+
+    <body>
+      <button id="try-btn" class="btn" type="button">
+      Try me now!
+      </button>
+
+      <script>
+        AUI().use(
           'node',
           'transition',
-          function (A) {
-            A.one('.aui-btn').on(
+          function(A) {
+            A.one('.btn').on(
               'click', function() {
                 this.transition(
                   {
@@ -73,7 +81,10 @@ Let's demonstrate by using Alloy's `aui-btn` module in an HTML file.
             );
           }
         );
-        </script>
+      </script>
+    </body>
+
+    </html>
 
 2. Navigate to this HTML on your web server in your browser.
 3. Click "Try me now!"
