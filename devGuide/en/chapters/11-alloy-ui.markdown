@@ -1,39 +1,39 @@
 # Designing User Interfaces with AlloyUI
 
-Liferay uses AlloyUI to create highly scalable user interface (UI) components
-that provide a consistent look and feel across Liferay Portal. AlloyUI is a
-framework that contains a set of extensions and modules built on top of and
-extending the Yahoo UI (YUI) framework. It leverages all of YUI's capabilities
-and adds even more cutting edge components and features to help you build
-terrific UIs. AlloyUI also incorporates Twitter Bootstrap to leverage its HTML
-capabilities and cascading style sheet (CSS) capabilities.
+Liferay's Liferay uses AlloyUI to create highly scalable user interface (UI)
+components that provide a consistent look and feel across Liferay Portal.
+AlloyUI is a framework that contains a set of extensions and modules built on
+top of and extending the Yahoo UI (YUI) framework. It leverages all of YUI's
+capabilities and adds even more cutting edge components and features to help you
+build terrific UIs. AlloyUI also incorporates Twitter Bootstrap to leverage its
+HTML capabilities and cascading style sheet (CSS) capabilities.  
 
-AlloyUI was built on YUI because YUI facilitates building high quality
-production level widgets quickly. AlloyUI is easy to use on small scale projects
-as well as large scale projects. And AlloyUI extends YUI with additional methods
-to help you manipulate page data conveniently and quickly. And the framework
-provides scripts to help you create your own modules and taglibs. Lastly, since
-AlloyUI includes all of YUI, its documentation applies to AlloyUI as well.
+AlloyUI was built on YUI for several reasons. Foremostly, YUI facilitates
+building high quality production level widgets quickly. YUI has an elegant
+architecture that is very flexible and easy to extend. It lends itself well for
+using in small scale projects as well as large scale projects. Lastly, YUI is
+documented well. As you use AlloyUI and YUI, you'll realize these benefits. 
+
+---
+
+ ![note](../../images/tip-pen-paper.png) Given the popularity of jQuery,
+ you may be wondering why Liferay chose to build on YUI instead of jQuery.
+ We've told you about YUI's benefits, but the most important reason for using
+ YUI over jQuery is that YUI performs so much better. You'll see for yourself as
+ you use AlloyUI in your portlets.  
+ 
+ Note, you *can* use jQuery in Liferay Portal, but we strongly recommend you use
+ AlloyUI. AlloyUI is always loaded and available to you. If you use another
+ library, then your page will load more slowly as it will still load AlloyUI and
+ also need to load your other library. 
+
+---
 
 For consistent powerful styling, AlloyUI includes Twitter Bootstrap. If you've
 been working with AlloyUI, you're probably already leveraging the Sass extension
 to CSS. Great! Even though Twitter Bootstrap uses the Less extension, the
 AlloyUI framework still uses Sass. The framework leverages a 1-to-1 mapping of
-LESS to Sass so you can continue using Sass. How's that for convenience!
-
----
-
- ![note](../../images/tip-pen-paper.png) Given the popularity of jQuery,
- you may be wondering why Liferay chose to build on YUI instead of jQuery
- There are several reasons. First, YUI performs much better than jQuery. Second,
- YUI's architecture is very flexible, elegant, and easy to use.
- 
- You can use jQuery in Liferay Portal, but we strongly recommend using AlloyUI.
- AlloyUI is always loaded and available to you. If you use another library, then
- your page will load more slowly as it will still load AlloyUI and also need to
- load your other library.  
-
----
+LESS to Sass so you can continue using it. How's that for convenience! 
 
 We'll go over the following topics as we explore AlloyUI:
 
