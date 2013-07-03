@@ -1,4 +1,3 @@
-
 # Liferay Marketplace 
 
 The **Liferay Marketplace** is an exciting new hub for sharing, browsing and
@@ -107,47 +106,40 @@ this guide. In addition to those, there are some Marketplace-specific
 requirements to keep in mind.
 
 - *WAR (`.war`) files*:
-
-	- WARs must contain a `WEB-INF/liferay-plugin-package.properties` file.
-
-	- WARs must not contain any `WEB-INF/liferay-plugin-package.xml` file.
-
-	- WAR file names must not contain any commas.
-	
-	- WAR file names must conform to the following naming convention:
-	
-	*context_name*`-` *plugin_type* `-`A`.`B`.`C`.`D`.war`
-
-    Where:
+    - WARs must contain a `WEB-INF/liferay-plugin-package.properties` file.
+    - WARs must not contain any `WEB-INF/liferay-plugin-package.xml` file.
+    - WAR file names must not contain any commas.
+    - WAR file names must conform to the following naming convention:
     
+      *context_name*`-` *plugin_type* `-`A`.`B`.`C`.`D`.war`
+
+      Where:
+
     - *context_name* - Alpha-numeric (including `-` and `_`) short name of
-    your app.  This name is used as the deployment context, and should not
-    duplicate any other app's context (you will see a warning if you use a
-    context name of any other app on the Marketplace).
-    
+      your app.  This name is used as the deployment context, and should not
+      duplicate any other app's context (you will see a warning if you use a
+      context name of any other app on the Marketplace).
+
     - *plugin_type* - one of the following: `ext`, `hook`, `layouttpl`,
-    `portlet`, `theme`, or `web`.
-    
+      `portlet`, `theme`, or `web`.
+
     - `A`.`B`.`C`.`D` - The 4 digit version of your WAR file.  4 digits must
-    be used.
-    
-    - Example: `my-super-app-1.0.0.0.war`
+       be used.
+
+      Example: `myapp-portlet-1.0.0.0.war`
 
 - *liferay-plugin-package.properties file*:
     - Property `recommended.deployment.context` must not be set.
     - Property `security-manager-enabled` must be set to `true`.  This enables
-    Liferay's Plugin Security Manager.  Read the
-[Plugin Security Management Chapter](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen11-plugin-security-management-0)
-    in this guide for information on developing secure apps.  Every
-    app you submit on the Marketplace must use this framework.
-    
+      Liferay's Plugin Security Manager.  Read the [Plugin Security Management
+      Chapter](http://www.liferay.com/documentation/liferay-portal/6.1/development/-/ai/lp-6-1-dgen11-plugin-security-management-0)
+      in this guide for information on developing secure apps.  Every
+      app you submit on the Marketplace must use this framework.
 - *Deployment contexts*:
-
-	- Liferay reserves the right to deny an application if any of its plugin
-	deployment contexts is the same as another plugin in the Marketplace.
-
-	- Liferay reserves the right to replace WAR files of app plugins that have
-	the same deployment context as plugins built by Liferay.
+    - Liferay reserves the right to deny an application if any of its plugin
+      deployment contexts is the same as another plugin in the Marketplace.
+    - Liferay reserves the right to replace WAR files of app plugins that have
+      the same deployment context as plugins built by Liferay.
 
 ### Things you need before you can publish 
 
@@ -324,16 +316,16 @@ is compatible with 6.1 EE GA2 release and *later*.
 
 Here are some additional examples:
 
-	# works with Liferay 6.1 CE and EE GA2 and later (NOT compatible with 6.1
-	# CE or EE GA1).  This is most likely what you want to use.
-	liferay-versions=6.1.1+,6.1.20+
+    # works with Liferay 6.1 CE and EE GA2 and later (NOT compatible with 6.1
+    # CE or EE GA1).  This is most likely what you want to use.
+    liferay-versions=6.1.1+,6.1.20+
 
-	# works with Liferay 6.1 CE GA2, GA3, and GA5 (but not GA4), and EE GA2
-	# and later
-	liferay-versions=6.1.1,6.1.2,6.1.4+,6.1.20+
-	
-	# works with Liferay 6.1 EE GA2 and later (NOT compatible with CE)
-	liferay-versions=6.1.20+
+    # works with Liferay 6.1 CE GA2, GA3, and GA5 (but not GA4), and EE GA2
+    # and later
+    liferay-versions=6.1.1,6.1.2,6.1.4+,6.1.20+
+    
+    # works with Liferay 6.1 EE GA2 and later (NOT compatible with CE)
+    liferay-versions=6.1.20+
 
 If some plugins within your app must be built for multiple releases, ensure that
 the respective plugins have appropriate versioning information in them. For
@@ -551,9 +543,9 @@ change is published to the Marketplace:
 
 - Submitting a new app
 - Changing details of an app (for example, changing the description or the
-screenshots)
+  screenshots)
 - Adding a new package (set of files) to an existing app, in order to support
-more Liferay releases
+  more Liferay releases
 - Adding a new version of an existing app
 
 While your submitted change is under review, you can view the status of your
@@ -729,12 +721,12 @@ your app.
 In this chapter we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. We looked at how to create,
 publish, maintain, and track apps. You do this through
-[liferay.com](http://liferay.com), using your own personal credentials and its features
-for Marketplace. Next, we covered the requirements for publishing apps, which
-did not differ significantly from requirements for general Liferay development.
-We then showed how you can publish a sample app on the Marketplace and how you
-can modify it as the app evolves. Finally, we looked at how to track the
-adoption of apps using view, download, and install metrics. We hope this
+[liferay.com](http://liferay.com), using your own personal credentials and its
+features for Marketplace. Next, we covered the requirements for publishing apps,
+which did not differ significantly from requirements for general Liferay
+development. We then showed how you can publish a sample app on the Marketplace
+and how you can modify it as the app evolves. Finally, we looked at how to track
+the adoption of apps using view, download, and install metrics. We hope this
 information helps you understand how to develop apps for Liferay!
 
 Next, we'll take a look at some helpful plugin developer references. So get
