@@ -10,25 +10,25 @@ In its quest for peace within your portal, the Plugin Security Manager pledges
 to:
 
 - Protect your portal and host system from unwanted side affects and malicious
-software introduced by plugins.
+  software introduced by plugins.
 - Control plugin access to your portal, host system, and network by requiring
-that plugins specify ahead of time the portal resources they intend to access.
+  that plugins specify ahead of time the portal resources they intend to access.
 
 Let's go over some scenarios that could apply to you with regard to trying new
 plugins, and then maybe the importance of this will be clear.
 
 - A flashy new plugin has arrived on Liferay Marketplace and you want to give it
-a whirl. But naturally, you want to know the parts of your system it will
-access.
+  a whirl. But naturally, you want to know the parts of your system it will
+  access.
 - A colleague finds an interesting plugin after scouring the web for something
-that can help streamline processes at your workplace. Of course, you don't know
-whether you can truly trust the plugin creator--this plugin was found outside
-the Liferay Marketplace. If the plugin isn't open source, you have no way of
-knowing if it does anything nefarious.
+  that can help streamline processes at your workplace. Of course, you don't
+  know whether you can truly trust the plugin creator--this plugin was found
+  outside the Liferay Marketplace. If the plugin isn't open source, you have no
+  way of knowing if it does anything nefarious.
 - Upper management requests your corporate branch and other branches use a
-standard set of plugins on your portal instances. This set of plugins, however,
-was written by an outside firm, and you need to know there will be no tampering
-with your proprietary files.
+  standard set of plugins on your portal instances. This set of plugins,
+  however, was written by an outside firm, and you need to know there will be no
+  tampering with your proprietary files.
 
 These are just a few scenarios that may ring true for you. When you're
 responsible for keeping your system running well 24x7, you can't be too cautious
@@ -66,9 +66,9 @@ may as well put the security manager to work and make it earn its keep.
 
 Here is the suggested plugin development approach: 
 
--	Develop your plugin
--	Turn on the Plugin Security Manager
--	Declare the PACL property values required to satisfy the security manager
+- Develop your plugin
+- Turn on the Plugin Security Manager
+- Declare the PACL property values required to satisfy the security manager
 
 The Plugin Security Manager intercepts requests for protected Liferay APIs,
 letting you know instantly the portal items which you are unauthorized to
@@ -501,5 +501,6 @@ with Security Manager turned on will know you're a "law abiding" citizen,
 because you've specified what services your applications need to access in order
 to function.
 
-Next, we'll show you what it takes to develop apps for publishing to *Liferay Marketplace*.
+Next, we'll show you what it takes to develop apps for publishing to
+*Liferay Marketplace*.
 
