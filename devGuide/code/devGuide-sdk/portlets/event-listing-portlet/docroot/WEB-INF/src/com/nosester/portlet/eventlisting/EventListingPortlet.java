@@ -20,7 +20,6 @@ public class EventListingPortlet extends MVCPortlet {
 
 		EventImpl event = new EventImpl();
 
-		event.setEventId(ParamUtil.getLong(request, "eventId"));
 		event.setName(ParamUtil.getString(request, "name"));
 		event.setDescription(ParamUtil.getString(request, "description"));
 		event.setLocationId(ParamUtil.getLong(request, "locationId"));

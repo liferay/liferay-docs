@@ -65,7 +65,7 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		} catch (SystemException e) {
 			e.printStackTrace();
 		}
-		Location location = LocationLocalServiceUtil.createLocation(locationId);
+		Location location = locationPersistence.create(locationId);
 		
 		location.setName(name);
 		location.setDescription(description);

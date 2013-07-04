@@ -648,11 +648,11 @@ Open the following file:
     /docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/impl/EventLocalServiceImpl.java
 
 We will add the database interaction methods to this service layer class. Add
-the following method to the `EventLocalServiceImpl` class:
+the following methods to the `EventLocalServiceImpl` class:
 
     public Event addEvent(Event event) throws SystemException {
         
-        long eventId = counterLocalService.increment();
+        long eventId = counterLocalService.increment(Event.class.getName());
         event.setEventId(eventId);
         
         Date now = new Date();
@@ -686,13 +686,13 @@ the following method to the `EventLocalServiceImpl` class:
     }	
 
 In order to add an Event to the database, we need an ID for the Event. Liferay
-provides a counter service which we use call to obtain a unique Id for adding a
-new Event. It's possible to use the increment() method of Liferay's
-CounterLocalServiceUtil class but Service Builder already makes an instance of
-CounterLocalService available to EventLocalServiceBaseImpl, which our
-EventLocalServiceImpl class extends by Spring via dependency injection. See
-EventLocalServiceBaseImpl for a list of all the beans that Spring makes
-available for use. These include the following:
+provides a counter service which we call to obtain a unique Id for adding a new
+Event. It's possible to use the increment() method of Liferay's
+`CounterLocalServiceUtil` class but Service Builder already makes a
+CounterLocalService instance available to `EventLocalServiceBaseImpl` by Spring
+via dependency injection. Our `EventLocalServiceImpl` class extends
+`EventLocalServiceBaseImpl`. See `EventLocalServiceBaseImpl` for a list of all
+the beans that Spring makes available for use. These include the following:
 
 - `eventLocalService`
 - `eventPersistence`
@@ -707,9 +707,9 @@ available for use. These include the following:
 - `userPersistence`
 
 It's a best practice to use the injected class's increment() method rather than
-calling Liferay's CounterLocalService's increment() method since using the
+calling Liferay's `CounterLocalService`'s increment() method since using the
 injected class does not require an extra database transaction whereas calling
-Liferay's CounterLocalServiceUtil class does.
+Liferay's `CounterLocalServiceUtil` class does.
 
     long eventId = counterLocalService.increment(Event.class.getName());
 
@@ -722,14 +722,17 @@ Lastly, we return the Event created by the generated addEvent(...) method of
 `EventLocalServiceBaseImpl`.
 
 Note: Our implementation of addEvent(...) is a simple one since we just called
-addEvent(...) method generated in `EventLocalServiceBaseImpl`. We could replace
-or overload the addEvent(...) method we added to `EventLocalServiceImpl` by
-adding another addEvent(...) method with a different signature: instead of
-passing an existing Event to the addEvent(...) method, we could instead pass the
-required parameters and call the `eventPersistence` object's create method to
-create a new Event. Then we could use the method's parameters to populate the
-new Event's fields and return the Event.  (`eventPersistence` is one of the
-Spring beans injected into `EventLocalServiceBaseImpl` by Service Builder.) 
+the addEvent(...) method generated in `EventLocalServiceBaseImpl`. We could
+overload the addEvent(...) method we added to `EventLocalServiceImpl` by adding
+another addEvent(...) method with a different signature: instead of passing an
+existing Event to the addEvent(...) method, we could instead pass the required
+parameters and call the `eventPersistence` object's create() method to create a
+new Event. Then we could use the method's parameters to populate the new Event's
+fields and return the Event. (`eventPersistence` is one of the Spring beans
+injected into `EventLocalServiceBaseImpl` by Service Builder.) To see this
+implementation of addEvent(...), please examine the complete
+`EventListingServiceImpl` class
+on [Github](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/impl/EventLocalServiceImpl.java).
 
 Before you can use any custom methods that you added to `EventLocalServiceImpl`
 class, you must add its signature to the `EventLocalService` interface by
@@ -778,10 +781,7 @@ Replace the contents of your `EventListingPortlet.java` file with the following:
 
     import javax.portlet.ActionRequest;
     import javax.portlet.ActionResponse;
-    import javax.portlet.PortletRequest;
 
-    import com.liferay.portal.kernel.log.Log;
-    import com.liferay.portal.kernel.log.LogFactoryUtil;
     import com.liferay.portal.kernel.util.ParamUtil;
     import com.liferay.portal.kernel.util.WebKeys;
     import com.liferay.portal.theme.ThemeDisplay;
@@ -794,35 +794,6 @@ Replace the contents of your `EventListingPortlet.java` file with the following:
 
         public void addEvent(ActionRequest request, ActionResponse response)
                         throws Exception {
-
-            Event event = eventFromRequest(request);
-
-            EventLocalServiceUtil.addEvent(event);
-
-            sendRedirect(request, response);
-        }
-        
-        public void updateEvent(ActionRequest request, ActionResponse response)
-                throws Exception {
-
-            Event event = eventFromRequest(request);
-
-            EventLocalServiceUtil.updateEvent(event);
-
-            sendRedirect(request, response);
-        }
-
-        public void deleteEvent(ActionRequest request, ActionResponse response)
-                throws Exception {
-
-            long eventId = ParamUtil.getLong(request, "eventId");
-
-            EventLocalServiceUtil.deleteEvent(eventId);
-
-            sendRedirect(request, response);
-        }	
-
-        private Event eventFromRequest(PortletRequest request) {
 
             EventImpl event = new EventImpl();
 
@@ -840,9 +811,48 @@ Replace the contents of your `EventListingPortlet.java` file with the following:
             event.setUserId(themeDisplay.getUserId());
             event.setCompanyId(themeDisplay.getCompanyId());
             event.setGroupId(themeDisplay.getScopeGroupId());
-            
-            return event;
+
+            EventLocalServiceUtil.addEvent(event);
+
+            sendRedirect(request, response);
         }
+            
+        public void updateEvent(ActionRequest request, ActionResponse response)
+                throws Exception {
+            
+            long eventId = ParamUtil.getLong(request, "eventId");
+
+            Event event = EventLocalServiceUtil.fetchEvent(eventId);
+            
+            event.setEventId(ParamUtil.getLong(request, "eventId"));
+            event.setName(ParamUtil.getString(request, "name"));
+            event.setDescription(ParamUtil.getString(request, "description"));
+            event.setLocationId(ParamUtil.getLong(request, "locationId"));
+            
+            SimpleDateFormat dateFormat = new SimpleDateFormat();
+            event.setDate(ParamUtil.getDate(request, "date", dateFormat));
+            
+            ThemeDisplay themeDisplay = (ThemeDisplay) request
+                            .getAttribute(WebKeys.THEME_DISPLAY);
+
+            event.setUserId(themeDisplay.getUserId());
+            event.setCompanyId(themeDisplay.getCompanyId());
+            event.setGroupId(themeDisplay.getScopeGroupId());	
+
+            EventLocalServiceUtil.updateEvent(event);
+
+            sendRedirect(request, response);
+        }
+
+        public void deleteEvent(ActionRequest request, ActionResponse response)
+                throws Exception {
+
+            long eventId = ParamUtil.getLong(request, "eventId");
+
+            EventLocalServiceUtil.deleteEvent(eventId);
+
+            sendRedirect(request, response);
+        }	
 
     }
 
@@ -851,21 +861,21 @@ methods of `EventLocalServiceUtil`. The eventFromRequest(...) method is a
 convenience method that returns an event from a portlet request, e.g., from the
 HTML form fields of the `edit_event.jsp` page. The getter methods of Liferay's
 ParamUtil class such as getLong(...) and getString(...) return default values
-like `0` or `""` if request parameter is not available from the portlet request.
-When adding a new event, for example, no eventId is available so
-`ParamUtil.getLong("request", "eventId")` returns `0`. The Event portlet's
-addEvent(...) method calls `EventLocalServiceUtil`'s addEvent(...) method. The
-eventId for the new event is generated at the service layer in the addEvent(...)
-method that we added to the `EventLocalServiceImpl` class. The
+like `0` or `""` if the specified request parameter is not available from the
+portlet request. When adding a new event, for example, no eventId is available
+so `ParamUtil.getLong("request", "eventId")` would return `0`. The Event
+portlet's addEvent(...) method calls `EventLocalServiceUtil`'s addEvent(...)
+method. The eventId for the new event is generated at the service layer in the
+addEvent(...) method that we added to the `EventLocalServiceImpl` class. The
 `EventLocalServiceUtil` generated for us by Service Builder contains various
 CRUD methods including the following:
 
-- createEvent
-- addEvent
-- deleteEvent
-- updateEvent
-- fetchEvent
-- getEvent
+- `createEvent(...)`
+- `addEvent(...)`
+- `deleteEvent(...)`
+- `updateEvent(...)`
+- `fetchEvent(...)`
+- `getEvent(...)`
 
 The methods listed in the following figure are all generated by Service Builder
 and are available to be called by our Event Listing portlet class.
@@ -873,9 +883,9 @@ and are available to be called by our Event Listing portlet class.
 ![Figure 10.4: Our Event Listing portlet class can access these methods of `EventLocalServiceUtil`, many of which enable CRUD operations.](../../images/local-service-util-outline.png)
 
 Portlet classes should only have access to the LocalServiceUtil classes.
-LocalServiceUtil classes, in turn, call the LocalServiceImpl classes. Notice in
-the figure above that `EventLocalServiceUtil` has a private instance variable
-called `_service`. `_service` is an instance variable of type
+LocalServiceUtil classes, in turn, call their injected LocalServiceImpl classes.
+Notice in the figure above that `EventLocalServiceUtil` has a private instance
+variable called `_service`. `_service` is an instance variable of type
 `EventLocalService` which gets an instance of `EventLocalServiceImpl` at runtime
 via dependency injection. So all the methods of `EventLocalServiceUtil`
 internally call corresponding methods of `EventLocalServiceImpl` at runtime to
@@ -937,7 +947,7 @@ following methods to your `EventServiceImpl` class:
 
     public Event deleteEvent(long eventId) throws PortalException, SystemException {
             
-            return eventLocalService.deleteEvent(eventId);
+        return eventLocalService.deleteEvent(eventId);
     }
 
 Notice the calls to `eventLocalService`'s add, update, and delete methods.
@@ -946,19 +956,19 @@ injected into `EventServiceBaseImpl` by Service Builder. See
 `EventServiceBaseImpl` for a complete list of the Spring beans available in
 `EventServiceImpl`. These include the following:
 
-- eventLocalService
-- eventService
-- eventPersistence
-- locationLocalService
-- locationService
-- locationPersistence
-- counterLocalService
-- resourceLocalService
-- resourceService
-- resourcePersistence
-- userLocalService
-- userService
-- userPersistence
+- `eventLocalService`
+- `eventService`
+- `eventPersistence`
+- `locationLocalService`
+- `locationService`
+- `locationPersistence`
+- `counterLocalService`
+- `resourceLocalService`
+- `resourceService`
+- `resourcePersistence`
+- `userLocalService`
+- `userService`
+- `userPersistence`
 
 Notice also that we overloaded the deleteEvent(...) method of
 `EventServiceImpl`. We did this to simplify our example of calling remote web
@@ -978,7 +988,9 @@ custom services can be registered with Liferay. This allows them to be called by
         {
                 addEvent: true,
                 update: true,
+                updateEvent: true,
                 delete: true
+                deleteEvent: true
         }
     )
 

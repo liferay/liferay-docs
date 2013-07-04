@@ -66,7 +66,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		} catch (SystemException e) {
 			e.printStackTrace();
 		}
-		Event event = EventLocalServiceUtil.createEvent(eventId);
+		Event event = eventPersistence.create(eventId);
 		
 		event.setName(name);
 		event.setDescription(description);

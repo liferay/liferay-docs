@@ -18,7 +18,6 @@ public class LocationListingPortlet extends MVCPortlet {
 
 		LocationImpl location = new LocationImpl();
 
-		location.setLocationId(ParamUtil.getLong(request, "locationId"));
 		location.setName(ParamUtil.getString(request, "name"));
 		location.setDescription(ParamUtil.getString(request, "description"));
 		location.setStreetAddress(ParamUtil.getString(request, "streetAddress"));
