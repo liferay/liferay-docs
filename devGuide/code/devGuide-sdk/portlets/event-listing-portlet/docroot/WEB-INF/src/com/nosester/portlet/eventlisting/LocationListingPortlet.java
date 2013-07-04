@@ -1,13 +1,9 @@
 package com.nosester.portlet.eventlisting;
 
-import java.text.SimpleDateFormat;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletRequest;
 
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.theme.ThemeDisplay;
@@ -31,7 +27,9 @@ public class LocationListingPortlet extends MVCPortlet {
 	public void updateLocation(ActionRequest request, ActionResponse response)
 		throws Exception {
 
-		Location location = locationFromRequest(request);
+		long locationId = ParamUtil.getLong(request, "locationId");
+		
+		Location location = LocationLocalServiceUtil.fetchLocation(locationId);
 
 		LocationLocalServiceUtil.updateLocation(location);
 
@@ -69,7 +67,5 @@ public class LocationListingPortlet extends MVCPortlet {
 		
 		return location;
 	}
-
-	private static Log _log = LogFactoryUtil.getLog(LocationListingPortlet.class);
 
 }

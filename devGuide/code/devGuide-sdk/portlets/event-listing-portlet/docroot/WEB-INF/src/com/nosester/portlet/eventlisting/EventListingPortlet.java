@@ -6,8 +6,6 @@ import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletRequest;
 
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.theme.ThemeDisplay;
@@ -30,8 +28,10 @@ public class EventListingPortlet extends MVCPortlet {
 	
 	public void updateEvent(ActionRequest request, ActionResponse response)
 		throws Exception {
+		
+		long eventId = ParamUtil.getLong(request, "eventId");
 
-		Event event = eventFromRequest(request);
+		Event event = EventLocalServiceUtil.fetchEvent(eventId);
 
 		EventLocalServiceUtil.updateEvent(event);
 
