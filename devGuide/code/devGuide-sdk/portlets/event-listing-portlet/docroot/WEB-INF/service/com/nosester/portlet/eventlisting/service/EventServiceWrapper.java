@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -61,10 +61,26 @@ public class EventServiceWrapper implements EventService,
 		return _eventService.addEvent(event);
 	}
 
+	public com.nosester.portlet.eventlisting.model.Event addEvent(
+		java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return _eventService.addEvent(name, description, date, locationId,
+			serviceContext);
+	}
+
 	public com.nosester.portlet.eventlisting.model.Event update(
 		com.nosester.portlet.eventlisting.model.Event event)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _eventService.update(event);
+	}
+
+	public com.nosester.portlet.eventlisting.model.Event updateEvent(
+		long eventId, java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return _eventService.updateEvent(eventId, name, description, date,
+			locationId, serviceContext);
 	}
 
 	public com.nosester.portlet.eventlisting.model.Event delete(

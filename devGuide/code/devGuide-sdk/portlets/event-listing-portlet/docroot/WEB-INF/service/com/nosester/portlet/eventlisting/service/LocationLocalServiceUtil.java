@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -271,6 +271,26 @@ public class LocationLocalServiceUtil {
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		return getService().invokeMethod(name, parameterTypes, arguments);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Location addLocation(
+		java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return getService()
+				   .addLocation(name, description, streetAddress, city,
+			stateOrProvince, country, serviceContext);
+	}
+
+	public static com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return getService()
+				   .updateLocation(locationId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
 	}
 
 	public static java.util.List<com.nosester.portlet.eventlisting.model.Location> getLocationsByGroupId(

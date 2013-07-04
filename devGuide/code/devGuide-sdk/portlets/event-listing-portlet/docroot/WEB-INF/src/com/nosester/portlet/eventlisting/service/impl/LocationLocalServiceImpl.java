@@ -17,8 +17,11 @@ package com.nosester.portlet.eventlisting.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.service.ServiceContext;
 import com.nosester.portlet.eventlisting.model.Location;
+import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
 
 /**
@@ -54,6 +57,51 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		return super.addLocation(location);
 	}
 	
+	public Location addLocation(String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+		
+		long locationId = 0;
+		try {
+			locationId = counterLocalService.increment(Location.class.getName());
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		Location location = LocationLocalServiceUtil.createLocation(locationId);
+		
+		location.setName(name);
+		location.setDescription(description);
+		location.setStreetAddress(streetAddress);
+		location.setCity(city);
+		location.setStateOrProvince(stateOrProvince);
+		location.setCountry(country);
+		
+		long companyId = serviceContext.getCompanyId();
+		location.setCompanyId(companyId);
+		
+		long groupId = serviceContext.getScopeGroupId();
+		location.setGroupId(groupId);
+		
+		long userId = 0;
+		try {
+			userId = serviceContext.getGuestOrUserId();
+		} catch (PortalException pe) {
+			pe.printStackTrace();
+		} catch (SystemException se) {
+			se.printStackTrace();
+		}
+		location.setUserId(userId);
+		
+		Date now = new Date();
+		location.setCreateDate(now.getTime());
+		location.setModifiedDate(now.getTime());
+		
+		try {
+			return super.addLocation(location);
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		return location;
+	}	
+	
 	public Location updateLocation(Location location) throws SystemException {
 		
 		Date now = new Date();
@@ -62,6 +110,49 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		return super.updateLocation(location);
 	}
 
+	public Location updateLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+		
+		Location location = null;
+		try {
+			location = LocationLocalServiceUtil.fetchLocation(locationId);
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		
+		location.setName(name);
+		location.setDescription(description);
+		location.setStreetAddress(streetAddress);
+		location.setCity(city);
+		location.setStateOrProvince(stateOrProvince);
+		location.setCountry(country);
+		
+		long companyId = serviceContext.getCompanyId();
+		location.setCompanyId(companyId);
+		
+		long groupId = serviceContext.getScopeGroupId();
+		location.setGroupId(groupId);
+		
+		long userId = 0;
+		try {
+			userId = serviceContext.getGuestOrUserId();
+		} catch (PortalException pe) {
+			pe.printStackTrace();
+		} catch (SystemException se) {
+			se.printStackTrace();
+		}
+		location.setUserId(userId);
+		
+		Date now = new Date();
+		location.setModifiedDate(now.getTime());
+		
+		try {
+			return super.addLocation(location);
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		return location;
+	}	
+	
 	public List<Location> getLocationsByGroupId(long groupId) throws SystemException {
 		
 		return locationPersistence.findByGroupId(groupId);

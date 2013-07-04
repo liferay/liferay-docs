@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -118,23 +118,39 @@ public class LocationLocalServiceClpInvoker {
 				"com.nosester.portlet.eventlisting.model.Location"
 			};
 
-		_methodName53 = "updateLocation";
+		_methodName53 = "addLocation";
 
 		_methodParameterTypes53 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName54 = "updateLocation";
+
+		_methodParameterTypes54 = new String[] {
 				"com.nosester.portlet.eventlisting.model.Location"
 			};
 
-		_methodName54 = "getLocationsByGroupId";
+		_methodName55 = "updateLocation";
 
-		_methodParameterTypes54 = new String[] { "long" };
+		_methodParameterTypes55 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
 
-		_methodName55 = "getLocationsByGroupId";
-
-		_methodParameterTypes55 = new String[] { "long", "int", "int" };
-
-		_methodName56 = "getLocationsCountByGroupId";
+		_methodName56 = "getLocationsByGroupId";
 
 		_methodParameterTypes56 = new String[] { "long" };
+
+		_methodName57 = "getLocationsByGroupId";
+
+		_methodParameterTypes57 = new String[] { "long", "int", "int" };
+
+		_methodName58 = "getLocationsCountByGroupId";
+
+		_methodParameterTypes58 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -243,23 +259,41 @@ public class LocationLocalServiceClpInvoker {
 
 		if (_methodName53.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
-			return LocationLocalServiceUtil.updateLocation((com.nosester.portlet.eventlisting.model.Location)arguments[0]);
+			return LocationLocalServiceUtil.addLocation((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
+				(java.lang.String)arguments[5],
+				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
 		if (_methodName54.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
-			return LocationLocalServiceUtil.getLocationsByGroupId(((Long)arguments[0]).longValue());
+			return LocationLocalServiceUtil.updateLocation((com.nosester.portlet.eventlisting.model.Location)arguments[0]);
 		}
 
 		if (_methodName55.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes55, parameterTypes)) {
+			return LocationLocalServiceUtil.updateLocation(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
+				(java.lang.String)arguments[5], (java.lang.String)arguments[6],
+				(com.liferay.portal.service.ServiceContext)arguments[7]);
+		}
+
+		if (_methodName56.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
+			return LocationLocalServiceUtil.getLocationsByGroupId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName57.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
 			return LocationLocalServiceUtil.getLocationsByGroupId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName56.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
+		if (_methodName58.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
 			return LocationLocalServiceUtil.getLocationsCountByGroupId(((Long)arguments[0]).longValue());
 		}
 
@@ -312,4 +346,8 @@ public class LocationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes55;
 	private String _methodName56;
 	private String[] _methodParameterTypes56;
+	private String _methodName57;
+	private String[] _methodParameterTypes57;
+	private String _methodName58;
+	private String[] _methodParameterTypes58;
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -53,6 +53,49 @@ public class LocationServiceWrapper implements LocationService,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable {
 		return _locationService.invokeMethod(name, parameterTypes, arguments);
+	}
+
+	public com.nosester.portlet.eventlisting.model.Location addLocation(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.addLocation(location);
+	}
+
+	public com.nosester.portlet.eventlisting.model.Location addLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return _locationService.addLocation(locationId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
+	}
+
+	public com.nosester.portlet.eventlisting.model.Location update(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.update(location);
+	}
+
+	public com.nosester.portlet.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		return _locationService.updateLocation(locationId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
+	}
+
+	public com.nosester.portlet.eventlisting.model.Location delete(
+		com.nosester.portlet.eventlisting.model.Location location)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.delete(location);
+	}
+
+	public com.nosester.portlet.eventlisting.model.Location deleteLocation(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.deleteLocation(locationId);
 	}
 
 	/**

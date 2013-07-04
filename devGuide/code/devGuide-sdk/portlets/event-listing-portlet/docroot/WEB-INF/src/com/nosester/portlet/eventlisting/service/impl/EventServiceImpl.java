@@ -18,7 +18,9 @@ import java.util.Date;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.service.ServiceContext;
 import com.nosester.portlet.eventlisting.model.Event;
+import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.EventServiceBaseImpl;
 
 /**
@@ -54,6 +56,11 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 		return eventLocalService.addEvent(event);
 	}
 	
+	public Event addEvent(String name, String description, Date date, long locationId, ServiceContext serviceContext) {
+		
+		return EventLocalServiceUtil.addEvent(name, description, date, locationId, serviceContext);
+	}
+	
 	public Event update(Event event) throws SystemException {
 		
 		Date now = new Date();
@@ -61,6 +68,11 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 		
 		return eventLocalService.updateEvent(event);
 	}	
+	
+	public Event updateEvent(long eventId, String name, String description, Date date, long locationId, ServiceContext serviceContext) {
+		
+		return EventLocalServiceUtil.updateEvent(eventId, name, description, date, locationId, serviceContext);
+	}
 	
 	public Event delete(Event event) throws SystemException {
 		

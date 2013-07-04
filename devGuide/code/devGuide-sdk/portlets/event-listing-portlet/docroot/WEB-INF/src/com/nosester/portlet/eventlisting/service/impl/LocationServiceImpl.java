@@ -14,6 +14,13 @@
 
 package com.nosester.portlet.eventlisting.service.impl;
 
+import java.util.Date;
+
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.service.ServiceContext;
+import com.nosester.portlet.eventlisting.model.Location;
+import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.LocationServiceBaseImpl;
 
 /**
@@ -36,4 +43,45 @@ public class LocationServiceImpl extends LocationServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.LocationServiceUtil} to access the location remote service.
 	 */
+	
+	public Location addLocation(Location location) throws SystemException {
+		
+		long locationId = counterLocalService.increment(Location.class.getName());
+		location.setLocationId(locationId);
+		
+		Date now = new Date();
+		location.setCreateDate(now.getTime());
+		location.setModifiedDate(now.getTime());
+		
+		return locationLocalService.addLocation(location);
+	}
+	
+	public Location addLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+		
+		return LocationLocalServiceUtil.addLocation(name, description, streetAddress, city, stateOrProvince, country, serviceContext);
+	}
+	
+	public Location update(Location location) throws SystemException {
+		
+		Date now = new Date();
+		location.setModifiedDate(now.getTime());
+		
+		return locationLocalService.updateLocation(location);
+	}	
+	
+	public Location updateLocation(long locationId, String name, String description, String streetAddress, String city, String stateOrProvince, String country, ServiceContext serviceContext) {
+		
+		return LocationLocalServiceUtil.updateLocation(locationId, name, description, streetAddress, city, stateOrProvince, country, serviceContext);
+	}
+	
+	public Location delete(Location location) throws SystemException {
+		
+		return locationLocalService.deleteLocation(location);
+	}
+	
+	public Location deleteLocation(long locationId) throws PortalException, SystemException {
+		
+		return locationLocalService.deleteLocation(locationId);
+	}
+	
 }

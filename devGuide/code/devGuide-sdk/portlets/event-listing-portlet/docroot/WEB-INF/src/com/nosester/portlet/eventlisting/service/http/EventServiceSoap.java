@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -81,12 +81,48 @@ public class EventServiceSoap {
 		}
 	}
 
+	public static com.nosester.portlet.eventlisting.model.EventSoap addEvent(
+		java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.addEvent(name,
+					description, date, locationId, serviceContext);
+
+			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static com.nosester.portlet.eventlisting.model.EventSoap update(
 		com.nosester.portlet.eventlisting.model.EventSoap event)
 		throws RemoteException {
 		try {
 			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.update(com.nosester.portlet.eventlisting.model.impl.EventModelImpl.toModel(
 						event));
+
+			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.nosester.portlet.eventlisting.model.EventSoap updateEvent(
+		long eventId, java.lang.String name, java.lang.String description,
+		java.util.Date date, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.nosester.portlet.eventlisting.model.Event returnValue = EventServiceUtil.updateEvent(eventId,
+					name, description, date, locationId, serviceContext);
 
 			return com.nosester.portlet.eventlisting.model.EventSoap.toSoapModel(returnValue);
 		}

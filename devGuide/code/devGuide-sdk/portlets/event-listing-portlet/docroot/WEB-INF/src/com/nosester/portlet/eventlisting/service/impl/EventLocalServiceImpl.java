@@ -17,8 +17,11 @@ package com.nosester.portlet.eventlisting.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.service.ServiceContext;
 import com.nosester.portlet.eventlisting.model.Event;
+import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
 import com.nosester.portlet.eventlisting.service.base.EventLocalServiceBaseImpl;
 import com.nosester.portlet.eventlisting.service.persistence.EventFinderUtil;
 
@@ -42,7 +45,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link com.nosester.portlet.eventlisting.service.EventLocalServiceUtil} to access the event local service.
 	 */
-
+	
 	public Event addEvent(Event event) throws SystemException {
 		
 		long eventId = counterLocalService.increment(Event.class.getName());
@@ -55,12 +58,95 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		return super.addEvent(event);
 	}
 	
+	public Event addEvent(String name, String description, Date date, long locationId, ServiceContext serviceContext) {
+		
+		long eventId = 0;
+		try {
+			eventId = counterLocalService.increment(Event.class.getName());
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		Event event = EventLocalServiceUtil.createEvent(eventId);
+		
+		event.setName(name);
+		event.setDescription(description);
+		event.setDate(date);
+		event.setLocationId(locationId);
+		
+		long companyId = serviceContext.getCompanyId();
+		event.setCompanyId(companyId);
+		
+		long groupId = serviceContext.getScopeGroupId();
+		event.setGroupId(groupId);
+		
+		long userId = 0;
+		try {
+			userId = serviceContext.getGuestOrUserId();
+		} catch (PortalException pe) {
+			pe.printStackTrace();
+		} catch (SystemException se) {
+			se.printStackTrace();
+		}
+		event.setUserId(userId);
+		
+		Date now = new Date();
+		event.setCreateDate(now.getTime());
+		event.setModifiedDate(now.getTime());
+		
+		try {
+			return super.addEvent(event);
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		return event;
+	}
+
 	public Event updateEvent(Event event) throws SystemException {
 		
 		Date now = new Date();
 		event.setModifiedDate(now.getTime());
 		
 		return super.updateEvent(event);
+	}
+	
+	public Event updateEvent(long eventId, String name, String description, Date date, long locationId, ServiceContext serviceContext) {
+		
+		Event event = null;
+		try {
+			event = EventLocalServiceUtil.fetchEvent(eventId);
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		
+		event.setName(name);
+		event.setDescription(description);
+		event.setDate(date);
+		event.setLocationId(locationId);
+		
+		long companyId = serviceContext.getCompanyId();
+		event.setCompanyId(companyId);
+		
+		long groupId = serviceContext.getScopeGroupId();
+		event.setGroupId(groupId);
+		
+		long userId = 0;
+		try {
+			userId = serviceContext.getGuestOrUserId();
+		} catch (PortalException pe) {
+			pe.printStackTrace();
+		} catch (SystemException se) {
+			se.printStackTrace();
+		}
+		event.setUserId(userId);
+		Date now = new Date();
+		event.setModifiedDate(now.getTime());
+		
+		try {
+			return super.updateEvent(event);
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		return event;
 	}
 	
 	public List<Event> findByEventNameEventDescriptionLocationName(String eventName, String eventDescription, String locationName, 
