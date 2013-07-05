@@ -52,8 +52,8 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		event.setEventId(eventId);
 		
 		Date now = new Date();
-		event.setCreateDate(now.getTime());
-		event.setModifiedDate(now.getTime());
+		event.setCreateDate(now);
+		event.setModifiedDate(now);
 		
 		return super.addEvent(event);
 	}
@@ -90,8 +90,8 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		event.setUserId(userId);
 		
 		Date now = new Date();
-		event.setCreateDate(now.getTime());
-		event.setModifiedDate(now.getTime());
+		event.setCreateDate(now);
+		event.setModifiedDate(now);
 		
 		try {
 			return super.addEvent(event);
@@ -104,7 +104,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 	public Event updateEvent(Event event) throws SystemException {
 		
 		Date now = new Date();
-		event.setModifiedDate(now.getTime());
+		event.setModifiedDate(now);
 		
 		return super.updateEvent(event);
 	}
@@ -139,7 +139,7 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		}
 		event.setUserId(userId);
 		Date now = new Date();
-		event.setModifiedDate(now.getTime());
+		event.setModifiedDate(now);
 		
 		try {
 			return super.updateEvent(event);

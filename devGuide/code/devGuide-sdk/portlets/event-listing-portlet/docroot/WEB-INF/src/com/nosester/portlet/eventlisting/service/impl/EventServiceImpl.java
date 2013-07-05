@@ -50,8 +50,8 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 		event.setEventId(eventId);
 		
 		Date now = new Date();
-		event.setCreateDate(now.getTime());
-		event.setModifiedDate(now.getTime());
+		event.setCreateDate(now);
+		event.setModifiedDate(now);
 		
 		return eventLocalService.addEvent(event);
 	}
@@ -64,7 +64,7 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 	public Event update(Event event) throws SystemException {
 		
 		Date now = new Date();
-		event.setModifiedDate(now.getTime());
+		event.setModifiedDate(now);
 		
 		return eventLocalService.updateEvent(event);
 	}	

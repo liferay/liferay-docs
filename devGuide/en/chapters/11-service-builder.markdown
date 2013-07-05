@@ -191,7 +191,7 @@ add the following contents:
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
     <service-builder package-path="com.nosester.portlet.eventlisting">
-        <author>jbloggs</author>
+        <author>Joe Bloggs</author>
         <namespace>Event</namespace>
 
         <entity name="Event" local-service="true" remote-service="true">
@@ -239,8 +239,8 @@ add the following contents:
             <column name="companyId" type="long" />
             <column name="groupId" type="long" />
             <column name="userId" type="long" />
-            <column name="createDate" type="long" />
-            <column name="modifiedDate" type="long" />
+            <column name="createDate" type="Date" />
+            <column name="modifiedDate" type="Date" />
 
             <!-- Other fields -->
 
@@ -417,7 +417,7 @@ for them. `<finder>`, like `<column>` and `<order>`, is a child element of the
 `<entity>` element.
 
     <finder name="GroupId" return-type="Collection">
-        <finder-column name="group" />
+        <finder-column name="groupId" />
     </finder>
 
 Service Builder creates a finder method for each `<finder>` element that you
@@ -656,8 +656,8 @@ the following methods to the `EventLocalServiceImpl` class:
         event.setEventId(eventId);
         
         Date now = new Date();
-        event.setCreateDate(now.getTime());
-        event.setModifiedDate(now.getTime());
+        event.setCreateDate(now);
+        event.setModifiedDate(now);
         
         return super.addEvent(event);
     }
@@ -665,7 +665,7 @@ the following methods to the `EventLocalServiceImpl` class:
     public Event updateEvent(Event event) throws SystemException {
         
         Date now = new Date();
-        event.setModifiedDate(now.getTime());
+        event.setModifiedDate(now);
         
         return super.updateEvent(event);
     }
@@ -926,8 +926,8 @@ following methods to your `EventServiceImpl` class:
         event.setEventId(eventId);
         
         Date now = new Date();
-        event.setCreateDate(now.getTime());
-        event.setModifiedDate(now.getTime());
+        event.setCreateDate(now);
+        event.setModifiedDate(now);
         
         return eventLocalService.addEvent(event);
     }
@@ -935,7 +935,7 @@ following methods to your `EventServiceImpl` class:
     public Event update(Event event) throws SystemException {
         
         Date now = new Date();
-        event.setModifiedDate(now.getTime());
+        event.setModifiedDate(now);
         
         return eventLocalService.updateEvent(event);
     }	
