@@ -90,17 +90,18 @@ how to use Service Builder.
 ### Configuring Service Builder and Defining Portlet Data
 
 In order to demonstrate how to use Service Builder, let's create an example
-portlet project that the Nose-ster organization can use to schedule events. For
-our example, we'll create a new Liferay portlet project called
-*event-listing-portlet*. If you'd like to examine the finished example project,
-you can view the code on Github
-[here](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
-or download the WAR file from
-[here](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/dist/event-listing-portlet-6.2.0.1.war).
-We'll define two entities called *events* and *locations*, representing events
-that can be scheduled and locations at which the events can take place. Since
-events take place at specific locations, an event entity should be able to take
-a location entity as an attribute.
+portlet project that the Nose-ster organization can use to schedule social
+events. For our example, we'll create a new Liferay portlet project for managing
+and listing our events. We'll define two entities called *events* and
+*locations*, representing events that can be scheduled and locations at which
+the events can take place. Since events take place at specific locations, an
+event entity should be able to take a location entity as an attribute. If you'd
+like to examine the finished example project, you can view the code on Github
+[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/event-listing-portlet)
+or download the `.war` file from
+[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/dist/event-listing-portlet-6.2.0.1.war](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/dist/event-listing-portlet-6.2.0.1.war).
+But we'll guide you through creating the project, its portlets, and its entities
+step-by-step using Liferay IDE/Developer Studio. 
 
 ---
 
@@ -115,47 +116,60 @@ a location entity as an attribute.
 ---
 
 Liferay portlet projects can contain multiple portlets. We'll create two
-portlets in our event-listing-portlet project called *Event Listing Portlet* and
-*Location Listing Portlet*. These portlets will allow users to add, edit, or
-remove events and locations, display lists of events and locations, search for
-particular events and locations, and view the details of individual events or
-locations. To follow this example, create a new Liferay portlet project in your
-Liferay Plugins SDK called *event-listing-portlet*. In your new project's
-`docroot/WEB-INF/src` folder, create a package called
-`com.nosester.portlet.eventlisting`.
+portlets in our `event-listing-portlet` project--one for managing Nose-ster
+events and the other for managing Nose-ster locations. These portlets will allow
+users to add, edit, or remove events and locations, display lists of events and
+locations, search for particular events and locations, and view the details of
+individual events or locations. We'll start by creating the event listing
+portlet as we create the `event-listing-portlet` plugin project. 
 
-In this new package, create a Java file called `EventListingPortlet.java` and
-add the following contents:
+To follow this example, create a new Liferay portlet project in your Liferay
+Plugins SDK using Liferay IDE or Developer Studio. In the IDE, go to File &rarr;
+New Liferay Project. We'll mention some key information to specify for the
+project and the event listing portlet as you create both in the wizard. Name the
+project `event-listing-portlet`, enter `Event Listing` as its display name, and
+select *Portlet* as its project type. Select the Liferay MVC portlet framework
+as the default framework for the project and select the checkbox to add a custom
+portlet class. This custom portlet class will be for your event listing portlet,
+which we'll continue to specifying in the wizard.
 
-    package com.nosester.portlet.eventlisting;
+Enter portlet class name `EventListingPortlet`, Java package
+`com.nosester.portlet.eventlisting`, and keep the superclass
+`com.liferay.util.bridges.mvc.MVCPortlet`. For your portlet's info, enter
+`eventlisting` as its name and `Event Listing Portlet` as its display name and
+title. For the portlet's modes, select *Edit* mode in addition to *View*.
+Selecting the edit mode is optional at this point, but it sets you up with a
+helpful skeleton JSP file to add logic for editing your Nose-ster events. While
+you're at it, select the checkbox for creating a resource bundle file so that you
+can add different language translations for your portlet's textual display
+values. Lastly, leave your portlet's category as `Sample`. Click *Finish* to
+complete creating your Liferay portlet plugin project and the Event Listing
+portlet.   
 
-    import com.liferay.util.bridges.mvc.MVCPortlet;
+Now, go ahead and create a Location Listing portlet in this same project by
+selecting the project in the *Package Explorer* first and going to  File &rarr;
+New  &rarr; Liferay Portlet.  Creating the Location Listing portlet in the IDE
+will be similar to how you created the Event Listing portlet. Only the portlet
+class name and other name values will be slightly different.
 
-    /**
-     * Portlet implementation class EventListingPortlet
-     */
-    public class EventListingPortlet extends MVCPortlet {
+Here is a summary of the values to specify in the Liferay Portlet wizard for
+creating the Location Listing portlet:    
 
-    }
+- Portlet class: `LocationListingPortlet`
+- Java package:`com.nosester.portlet.eventlisting`
+- Display name: `Location Listing Portlet`
+- Title: `Location Listing Portlet`
+- Superclass: `com.liferay.util.bridges.mvc.MVCPortlet`
+- Portlet name: `locationlisting`
+- Portlet modes: *View* and *Edit*
+- Create JSP files: yes
+- Category: `Sample`
 
-In the same package, create another Java file called
-`LocationListingPortlet.java` and add the following contents:
-
-    package com.nosester.portlet.eventlisting;
-
-    import com.liferay.util.bridges.mvc.MVCPortlet;
-
-    /**
-     * Portlet implementation class LocationListingPortlet
-     */
-    public class LocationListingPortlet extends MVCPortlet {
-
-    }
-
-Notice that for our custom Event Listing and Location Listing portlets, we are
-extending Liferay's MVC Portlet class. We'll add some business logic to these
-portlet classes after using Service Builder to create a service layer for our
-event and location entities.
+Expand your project's `docroot/WEB-INF/src` folder and the
+`com.nosester.portlet.eventlisting` package. Notice the
+`EventListingPortlet.java` and `LocationListingPortlet.java` files Liferay IDE
+created. We'll add some business logic to these portlet classes after using
+Service Builder to create a service layer for our event and location entities.
 
 The first step in using Service Builder is to define your model classes and
 their attributes in a `service.xml` file. In Service Builder terminology, your
@@ -170,7 +184,7 @@ Attribute | Attribute Type | Attribute Description
 `name` | String | The name of the event
 `description` | String | A description of the event
 `date` | Date | The date and time the event takes place
-`locationId` | int | An event takes place at a location and we use a location Id to specify the location
+`locationId` | long | An event takes place at a location and we use a location Id to specify the location
 
 Locations should have the attributes specified in the following table:
 
