@@ -199,8 +199,109 @@ Attribute | Attribute Type | Attribute Description
 `stateOrProvince` | String | The state or province of the location
 `country` | String | The country of the location
 
-Create a `service.xml` file in your project's `docroot/WEB-INF` directory and
-add the following contents:
+<!-- 
+Let's show how to build the service.xml from the ground up, using Liferay
+IDE. - Jim
+-->
+
+Let's create a `service.xml` file for our project and specify our services and
+their entities. Liferay's IDE makes it easy.
+
+To create a `service.xml` file for your project, use the following steps: 
+
+1.  Create the `service.xml` file.
+
+2.  Define global information such as the Service Builder package path, author,
+    and namespace.
+
+3.  Define one or more database entities. Decide whether Service Builder should
+    generate local services, remote services, or both.
+
+4.  Define the columns (attributes) that each entity should possess.
+
+<!--
+5.  Specify relationships between entities. - Jim
+-->
+
+5.  Define a default ordering of entities that are retrieved from the database.
+
+6.  Define the finder methods that retrieve objects from the database using
+    specified parameters.
+
+<!--
+7.  Provide the means to associate an asset and tags. //AssetEntry and AssetTag
+See sample-service-builder-portlet. - Jim
+-->
+
+You can create your `service.xml` file manually to your `docroot/WEB-INF/src`
+folder or do it with a click of the button in Liferay's IDE. To create it in the
+IDE, select your `event-listing-portlet` project in the Package Explorer
+and then select File &rarr; New &rarr; Liferay Service Builder. By default, Service
+Builder creates the `service.xml` file and displays it in *Overview* mode in the
+IDE. 
+
+Now, we're ready to define the service's global information. If not already
+selected, select *Service Builder* in the outline on the left of the view of
+`service.xml`. Then, enter `com.nosester.portlet.eventlisting` for package path,
+your name as author, and `Event` as the namespace. Save your `service.xml`.  
+
+Next, we'll add our Event and Location entities. Select *Entities* from under
+*Service Builder* in the outline on the left of the view. In the main part of
+the view, notice the *Entities* table is empty. Create an entity by clicking the
+add icon (a green plus sign) to the right of the table. Fill in `Event` for our
+entity's name and select both *Local Service* and *Remote Service* options for
+it. Create an entity named `Location` too, and select *Local Service* and
+*Remote Service* options for it. Great! We now have our Event and Location
+entities. Let's describe their attributes.
+
+To add attributes for our Event entity we'll need to drill down to its columns
+in the outline. From the outline, expand *Entities* and our new *Event* entity.
+Then, select *Columns*. Liferay IDE displays a table of the Event entity's
+columns. Similar to the table we used for adding entities, we'll add attributes
+for the *Event* entity and *Location* entity. Create each attribute by clicking
+the add icon and filling in the name of the attribute, select its type, and
+specify whether it is a primary key for the entity. Note, while your cursor is
+in a column's *Type* field, an option icon shows in the right hand side of the
+field. Click the options icon to select the appropriate type for your column.
+Use attribute information as specified for both entities in the tables listed
+previously in this section. 
+
+<!--
+We may want to move those tables down here. - Jim
+-->
+
+In addition to the attributes of each entity we must specify a primary key column for
+each entity. Create a column named `eventId` of type `long` for the Event entity
+and a column named `locationId` of type `long` for the Location entity. 
+
+Also, it is always worth considering adding two `long` fields called *groupId*
+and *companyId* to your data models. The *groupId* specifies a particular site
+within a portal instance and the *companyId* specifies a portal instance. These
+two fields allow your portlet to support the multi-tenancy features of Liferay
+so that each portal instance and each site within a portal instance can have
+independent sets of portlet data. You should also consider adding two additional
+fields called *createDate* and *modifiedDate*. You can use these fields to
+record the times entities were created and last edited. 
+
+
+<!--
+TODO - Instruct how to use IDE to create Order by. - Jim
+
+By now, you've added all of your attributes as columns. Let's specify the order
+in which to return records for each entity.
+
+TODO - Instruct how to use IDE to create Finders. - Jim
+-->
+
+<!--
+Consider reflecting on the service.xml after explaining step by step how to build
+using IDE. Perhaps put the heading here. - Jim
+
+### Overview of `service.xml`
+-->
+
+Now that you are done creating your `service.xml`, it should look similar to the
+following: 
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
@@ -278,25 +379,6 @@ add the following contents:
             </finder>
         </entity>
     </service-builder>
-
-Now let's discuss the tags and attributes that we've added to `service.xml`.
-
-### Overview of `service.xml`
-
-To create a `service.xml` file for your project, use the following steps:
-
-1. Define global information such as the Service Builder package path, author,
-   and namespace.
-
-2. Define one or more database entities. Decide whether Service Builder should
-   generate local services, remote services, or both.
-
-3. Define the columns (attributes) that each entity should possess.
-
-4. Define a default ordering of entities that are retrieved from the database.
-
-5. Define the finder methods that retrieve objects from the database using
-   specified parameters.
 
 We followed these steps to create the `service.xml` for our
 event-listing-project example. The first line of `service.xml`, `<?xml
@@ -455,6 +537,12 @@ Now let's run Service Builder and take a closer look at the generated code. To
 run Service Builder, run `ant build-service` from your project's root directory.
 The Ant tasks are provided by the Liferay Plugins SDK. The following section
 provides further details on running Service Builder.
+
+<!--
+I suggest leaving the `ant build-service` instruction for the next section. Let
+them read about using IDE and Ant for generating the services before deciding.
+- Jim
+-->
 
 ### Generating the Services
 
