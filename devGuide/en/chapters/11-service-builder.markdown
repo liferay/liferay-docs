@@ -454,6 +454,9 @@ you are in *Overview* mode. Then, click on the *Build Services* button.
 
 ![Figure 10.1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
 
+<!-- Need to highlight the build services icon in image (e.g., add red square
+around icon - Jim --> 
+
 You should receive a message in your console stating BUILD SUCCESSFUL along with
 a list of generated files. We discuss these files in more detail later on in
 this section.
@@ -467,12 +470,27 @@ graph structured background onto which you can add entities and relationships
 from the *Palette* available on the right hand side of the editor. Here is a
 view of the editor in *Diagram* mode:
 
+<!--
+Suggest, moving WSDD generation references later in this section, after we're done
+building the service. - Jim
+-->
+
 ![Figure 10.2: *Diagram* mode in editor](../../images/service-xml-diagram.png)
+
+<!--
+The view window need not be so tall as there is much empty space in the view - Jim
+-->
 
 Lastly, select *Source* mode to edit the XML source directly. Here is a view of
 our example `service.xml` shown in the editor's *Source* mode:
 
 ![Figure 10.3: *Source* mode in editor](../../images/service-xml-source.png)
+
+<!--
+Since the service.xml source is given as code in this section, there's no
+need to show the an image of the source view. Mentioning *Source* mode is enough.
+- Jim
+-->
 
 The tools provided by Developer Studio make it easy to edit your `service.xml`
 file to customize the generated interfaces and classes for your database model,
@@ -633,6 +651,10 @@ Freemarker template. You can find Service Builder's Freemarker templates in the
 `*ServiceImpl.java` file is generated, just look at the `service_impl.ftl`
 template.
 
+<!--
+Missing transition - Jim
+-->
+
 ### Writing the Local Service Class 
 
 In the file overview above, notice that `EventLocalService` is the interface for
@@ -684,6 +706,18 @@ the following methods to the `EventLocalServiceImpl` class:
         
         return eventPersistence.countByGroupId(groupId);
     }	
+
+<!--
+Mention importing the following, to help clarify from where
+the reader should import these classes ...
+
+com.nosester.portlet.eventlisting.model.Event
+com.liferay.portal.kernel.exception.SystemException
+java.util.Date
+java.util.List
+
+- Jim
+-->
 
 In order to add an Event to the database, we need an ID for the Event. Liferay
 provides a counter service which we call to obtain a unique Id for adding a new
@@ -993,6 +1027,11 @@ custom services can be registered with Liferay. This allows them to be called by
                 deleteEvent: true
         }
     )
+
+<!--
+Must we create service.js on our own first? I'm not seeing it after building
+services from IDE (with Eclipse Juno). -Jim 
+-->
 
 Liferay uses Apache Axis to make SOAP web services available. Axis requires a
 Web Service Deployment Descriptior (WSDD) to be generated in order to make the
