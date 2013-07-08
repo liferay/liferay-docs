@@ -15,7 +15,7 @@
 package com.nosester.portlet.eventlisting.service.persistence;
 
 /**
- * @author jbloggs
+ * @author Joe Bloggs
  */
 public interface EventFinder {
 	public java.util.List<com.nosester.portlet.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(

@@ -25,7 +25,7 @@ import com.nosester.portlet.eventlisting.model.Event;
  * Caching information and settings can be found in <code>portal.properties</code>
  * </p>
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see EventPersistenceImpl
  * @see EventUtil
  * @generated

@@ -25,7 +25,7 @@ import com.liferay.portal.service.InvokableLocalService;
  * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
  * </p>
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see LocationLocalService
  * @see com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl
  * @see com.nosester.portlet.eventlisting.service.impl.LocationLocalServiceImpl

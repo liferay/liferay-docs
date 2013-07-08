@@ -27,7 +27,7 @@ import java.util.Date;
 /**
  * The cache model class for representing Event in entity cache.
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see Event
  * @generated
  */
@@ -68,8 +68,20 @@ public class EventCacheModel implements CacheModel<Event>, Serializable {
 		eventImpl.setCompanyId(companyId);
 		eventImpl.setGroupId(groupId);
 		eventImpl.setUserId(userId);
-		eventImpl.setCreateDate(createDate);
-		eventImpl.setModifiedDate(modifiedDate);
+
+		if (createDate == Long.MIN_VALUE) {
+			eventImpl.setCreateDate(null);
+		}
+		else {
+			eventImpl.setCreateDate(new Date(createDate));
+		}
+
+		if (modifiedDate == Long.MIN_VALUE) {
+			eventImpl.setModifiedDate(null);
+		}
+		else {
+			eventImpl.setModifiedDate(new Date(modifiedDate));
+		}
 
 		if (name == null) {
 			eventImpl.setName(StringPool.BLANK);

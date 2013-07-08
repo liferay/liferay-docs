@@ -25,7 +25,7 @@ import java.util.Map;
  * This class is a wrapper for {@link Event}.
  * </p>
  *
- * @author    jbloggs
+ * @author    Joe Bloggs
  * @see       Event
  * @generated
  */
@@ -84,13 +84,13 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 			setUserId(userId);
 		}
 
-		Long createDate = (Long)attributes.get("createDate");
+		Date createDate = (Date)attributes.get("createDate");
 
 		if (createDate != null) {
 			setCreateDate(createDate);
 		}
 
-		Long modifiedDate = (Long)attributes.get("modifiedDate");
+		Date modifiedDate = (Date)attributes.get("modifiedDate");
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
@@ -236,7 +236,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the create date of this event
 	*/
-	public long getCreateDate() {
+	public java.util.Date getCreateDate() {
 		return _event.getCreateDate();
 	}
 
@@ -245,7 +245,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param createDate the create date of this event
 	*/
-	public void setCreateDate(long createDate) {
+	public void setCreateDate(java.util.Date createDate) {
 		_event.setCreateDate(createDate);
 	}
 
@@ -254,7 +254,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @return the modified date of this event
 	*/
-	public long getModifiedDate() {
+	public java.util.Date getModifiedDate() {
 		return _event.getModifiedDate();
 	}
 
@@ -263,7 +263,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	*
 	* @param modifiedDate the modified date of this event
 	*/
-	public void setModifiedDate(long modifiedDate) {
+	public void setModifiedDate(java.util.Date modifiedDate) {
 		_event.setModifiedDate(modifiedDate);
 	}
 

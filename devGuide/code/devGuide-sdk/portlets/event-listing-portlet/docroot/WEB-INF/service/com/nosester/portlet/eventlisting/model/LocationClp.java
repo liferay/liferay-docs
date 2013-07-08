@@ -27,11 +27,12 @@ import java.io.Serializable;
 
 import java.lang.reflect.Proxy;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author jbloggs
+ * @author Joe Bloggs
  */
 public class LocationClp extends BaseModelImpl<Location> implements Location {
 	public LocationClp() {
@@ -107,13 +108,13 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 			setUserId(userId);
 		}
 
-		Long createDate = (Long)attributes.get("createDate");
+		Date createDate = (Date)attributes.get("createDate");
 
 		if (createDate != null) {
 			setCreateDate(createDate);
 		}
 
-		Long modifiedDate = (Long)attributes.get("modifiedDate");
+		Date modifiedDate = (Date)attributes.get("modifiedDate");
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
@@ -196,19 +197,19 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 		_userUuid = userUuid;
 	}
 
-	public long getCreateDate() {
+	public Date getCreateDate() {
 		return _createDate;
 	}
 
-	public void setCreateDate(long createDate) {
+	public void setCreateDate(Date createDate) {
 		_createDate = createDate;
 	}
 
-	public long getModifiedDate() {
+	public Date getModifiedDate() {
 		return _modifiedDate;
 	}
 
-	public void setModifiedDate(long modifiedDate) {
+	public void setModifiedDate(Date modifiedDate) {
 		_modifiedDate = modifiedDate;
 	}
 
@@ -444,8 +445,8 @@ public class LocationClp extends BaseModelImpl<Location> implements Location {
 	private long _groupId;
 	private long _userId;
 	private String _userUuid;
-	private long _createDate;
-	private long _modifiedDate;
+	private Date _createDate;
+	private Date _modifiedDate;
 	private String _name;
 	private String _description;
 	private String _streetAddress;

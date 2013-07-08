@@ -50,8 +50,8 @@ public class LocationServiceImpl extends LocationServiceBaseImpl {
 		location.setLocationId(locationId);
 		
 		Date now = new Date();
-		location.setCreateDate(now.getTime());
-		location.setModifiedDate(now.getTime());
+		location.setCreateDate(now);
+		location.setModifiedDate(now);
 		
 		return locationLocalService.addLocation(location);
 	}
@@ -64,7 +64,7 @@ public class LocationServiceImpl extends LocationServiceBaseImpl {
 	public Location update(Location location) throws SystemException {
 		
 		Date now = new Date();
-		location.setModifiedDate(now.getTime());
+		location.setModifiedDate(now);
 		
 		return locationLocalService.updateLocation(location);
 	}	

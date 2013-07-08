@@ -58,7 +58,7 @@ import java.rmi.RemoteException;
  * The SOAP utility is only generated for remote services.
  * </p>
  *
- * @author    jbloggs
+ * @author    Joe Bloggs
  * @see       LocationServiceHttp
  * @see       com.nosester.portlet.eventlisting.model.LocationSoap
  * @see       com.nosester.portlet.eventlisting.service.LocationServiceUtil

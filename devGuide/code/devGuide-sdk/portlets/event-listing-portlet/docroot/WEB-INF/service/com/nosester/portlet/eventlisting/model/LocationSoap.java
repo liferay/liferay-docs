@@ -17,12 +17,13 @@ package com.nosester.portlet.eventlisting.model;
 import java.io.Serializable;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  * This class is used by SOAP remote services, specifically {@link com.nosester.portlet.eventlisting.service.http.LocationServiceSoap}.
  *
- * @author    jbloggs
+ * @author    Joe Bloggs
  * @see       com.nosester.portlet.eventlisting.service.http.LocationServiceSoap
  * @generated
  */
@@ -126,19 +127,19 @@ public class LocationSoap implements Serializable {
 		_userId = userId;
 	}
 
-	public long getCreateDate() {
+	public Date getCreateDate() {
 		return _createDate;
 	}
 
-	public void setCreateDate(long createDate) {
+	public void setCreateDate(Date createDate) {
 		_createDate = createDate;
 	}
 
-	public long getModifiedDate() {
+	public Date getModifiedDate() {
 		return _modifiedDate;
 	}
 
-	public void setModifiedDate(long modifiedDate) {
+	public void setModifiedDate(Date modifiedDate) {
 		_modifiedDate = modifiedDate;
 	}
 
@@ -194,8 +195,8 @@ public class LocationSoap implements Serializable {
 	private long _companyId;
 	private long _groupId;
 	private long _userId;
-	private long _createDate;
-	private long _modifiedDate;
+	private Date _createDate;
+	private Date _modifiedDate;
 	private String _name;
 	private String _description;
 	private String _streetAddress;

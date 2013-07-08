@@ -29,7 +29,7 @@ import com.liferay.portal.service.InvokableService;
  * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
  * </p>
  *
- * @author jbloggs
+ * @author Joe Bloggs
  * @see EventServiceUtil
  * @see com.nosester.portlet.eventlisting.service.base.EventServiceBaseImpl
  * @see com.nosester.portlet.eventlisting.service.impl.EventServiceImpl

@@ -17,7 +17,7 @@ package com.nosester.portlet.eventlisting.service;
 import com.liferay.portal.service.InvokableLocalService;
 
 /**
- * @author jbloggs
+ * @author Joe Bloggs
  */
 public class LocationLocalServiceClp implements LocationLocalService {
 	public LocationLocalServiceClp(InvokableLocalService invokableLocalService) {

@@ -51,8 +51,8 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		location.setLocationId(locationId);
 		
 		Date now = new Date();
-		location.setCreateDate(now.getTime());
-		location.setModifiedDate(now.getTime());
+		location.setCreateDate(now);
+		location.setModifiedDate(now);
 		
 		return super.addLocation(location);
 	}
@@ -91,8 +91,8 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		location.setUserId(userId);
 		
 		Date now = new Date();
-		location.setCreateDate(now.getTime());
-		location.setModifiedDate(now.getTime());
+		location.setCreateDate(now);
+		location.setModifiedDate(now);
 		
 		try {
 			return super.addLocation(location);
@@ -105,7 +105,7 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 	public Location updateLocation(Location location) throws SystemException {
 		
 		Date now = new Date();
-		location.setModifiedDate(now.getTime());
+		location.setModifiedDate(now);
 		
 		return super.updateLocation(location);
 	}
@@ -143,7 +143,7 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 		location.setUserId(userId);
 		
 		Date now = new Date();
-		location.setModifiedDate(now.getTime());
+		location.setModifiedDate(now);
 		
 		try {
 			return super.addLocation(location);

@@ -21,7 +21,7 @@ import com.liferay.portal.service.ServiceWrapper;
  * This class is a wrapper for {@link LocationService}.
  * </p>
  *
- * @author    jbloggs
+ * @author    Joe Bloggs
  * @see       LocationService
  * @generated
  */
