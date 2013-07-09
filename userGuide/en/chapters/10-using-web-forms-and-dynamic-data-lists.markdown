@@ -351,7 +351,7 @@ don't need the same level of detail provided by the Volunteer Sign-Up data
 definition you created. Liferay empowers you to customize both the input and
 output of your lists to unlimited levels. Dynamic data lists provide two areas
 to customize: form templates and display templates. This covers the forms of
-lists (*form templates*), as well as the display of the list contents (*list
+lists (*form templates*), as well as the display of the list contents (*display
 templates*). 
 
 ### Form templates  
